@@ -898,6 +898,7 @@ Residual eaves spaces may remain, but they should be treated as designed cavitie
 The roof build-up should be coordinated with the moisture doctrine. A warm-roof or otherwise conditioned-roof strategy should be investigated where it simplifies moisture control and service access, but the final build-up must be justified by hygrothermal analysis rather than selected by rule of thumb. Any junction between roof structure and brittle interior finishes should also accommodate predictable roof deflection and seasonal movement through designed interfaces rather than relying on plaster to remain crack-free.
 
 The roof itself should be designed to be maintained safely. The implementation should provide, where appropriate:
+
 - a proper roof-access hatch from an attic landing or technical area, preferably on a rear or secondary roof slope rather than the principal street elevation;
 - a stable and adequately sized landing or standing area immediately inside and outside the hatch;
 - engineered permanent restraint or anchor points located for real maintenance tasks rather than added after construction;
@@ -1797,6 +1798,7 @@ Fit-out should be treated as a shorter-lived layer installed within the permanen
 ### Removable floor systems
 
 Accessible floors should feel permanent and substantial under normal use.
+
 The floor pattern itself can form the access system. Possible upper-floor construction includes timber-faced structural cassettes seated within precision frames.
 
 ```text
