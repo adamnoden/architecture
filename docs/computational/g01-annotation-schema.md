@@ -1,6 +1,6 @@
 # G-01 Precedent Annotation Schema — D3 v0.1
 
-**Status:** annotation contract established; first qualitative trial started  
+**Status:** D3 semantic annotation v0.1 complete; contract validated across three deliberately different trial cases  
 **Purpose:** define how precedent evidence is converted into comparable architectural observations without prematurely converting observations into grammar rules.  
 **Related:** [G-01 Corpus Register](g01-corpus-register.md), [G-01 Research Brief](g01-research-brief.md)
 
