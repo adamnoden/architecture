@@ -1,7 +1,7 @@
-# House Design Doctrine — Publication Architecture v0.5
+# House Design Doctrine — Publication Architecture v0.6
 
 **Working form:** illustrated architectural design-research monograph + pattern catalogue + separate architect-facing implementation brief.  
-**Status:** v0.5 — tectonic integration working structure.
+**Status:** v0.6 — repose / low-vigilance integration working structure.
 
 ## Front matter
 
@@ -25,18 +25,18 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
    Service-life planning, Habraken, Duffy/Brand, Gordon; introduce coupling between lifespan layers.
 
 3. **Selective permanence**  
-   Long life without generic flexibility; introduce proportional serviceability.
+   Long life without generic flexibility; introduce proportional serviceability. Establish **repose** as a domestic requirement: the house should minimise unnecessary vigilance through coherence, controllability, privacy/retreat, physical comfort and perceptual settlement without collapsing into sensory poverty.
 
 4. **The architectural platform**  
    Permanent fabric, replaceable systems, designed interfaces, attachment discipline, assembly hierarchy and maintenance geography; introduce workmanship robustness as the requirement that ordinary construction variation be deliberately absorbed rather than exported into site improvisation.
 
-5. **Ten principles**  
-   Use the locked public principles; each principle receives a short spread and one primary figure.
+5. **Eleven principles**  
+   Use the locked public principles; each principle receives a short spread and one primary figure. Principle 8, **Design for repose**, is evidence-bounded explicitly: established environmental and housing evidence is separated from architectural hypotheses such as perceptual structural legibility.
 
 ## Part II — Architecture of the Platform
 
 6. **The designed interface**  
-   Tectonic honesty; deterministic load paths and bounded movement; separation of support, restraint, movement, sealing and finish; tolerance translation; workmanship robustness; mistake-proofing where consequential; fixing, access and replacement.
+   Tectonic honesty; deterministic load paths and bounded movement; separation of support, restraint, movement, sealing and finish; tolerance translation; workmanship robustness; mistake-proofing where consequential; fixing, access and replacement. Distinguish engineering legibility from **perceptual structural legibility**: concealment is legitimate, but principal domestic spaces should not gratuitously depend on apparent instability.
 
 7. **Failure architecture**  
    First defence / second consequence; water, overflow, drainage, drying, detection, isolation and recovery.
@@ -45,7 +45,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
    Spatial topology of approach, working space, disconnection and withdrawal; proportionality.
 
 9. **Environmental resilience without dependence**  
-   Future climate, passive-first design, source capture, measured ventilation and graceful degradation.
+   Future climate, passive-first design, source capture, measured ventilation and graceful degradation; treat intelligible local environmental control and manual fallback as forms of occupant agency, not merely controls engineering.
 
 10. **Boundaries**  
     Boundary debt created by access and disassembly: fire, smoke, acoustic, air, vapour, water, thermal, pests and security; preserve critical performance independently of routinely removable finish layers where practical.
@@ -93,7 +93,7 @@ The following systems are deliberately held outside the established core catalog
 ## Part IV — The Reference House
 
 13. Site and type  
-14. Architectural order and tectonic language  
+14. Architectural order, repose and tectonic language  
 15. Material, structural and assembly system  
 16. Maintenance geography  
 17. Water and environmental systems  
@@ -117,12 +117,12 @@ Each major non-standard decision shows:
 22. Prototype and disassemble before repetition  
 23. Procurement without dilution  
 24. Commission maintainability  
-25. Design review through failure scenarios
+25. Design review through failure and occupation scenarios
 
 ## Back matter
 
 A. Evidence and precedent notes  
-B. 63-item doctrine register mapped to ten principles  
+B. 63-item doctrine register mapped to eleven principles  
 C. Research agenda  
 D. Reference-house implementation schedule  
 E. Glossary  
