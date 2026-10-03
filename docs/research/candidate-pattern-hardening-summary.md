@@ -305,15 +305,13 @@ not a custom mechanism that cannot be remade.
 
 The physical systems now need to be developed in this order:
 
-## A. Fix the actual floor structure family
+## A. Working floor family — resolved for coordination
 
-Choose the reference-house structural floor family for option-study purposes:
+Use **engineered I-joists as the working reference-house baseline** for the next drawings.
 
-- engineered I-joist;
-- metal-web joist;
-- other engineered timber option.
+This is not a final engineering lock. Metal-web joists remain a comparator when actual spans, vibration, depth and cost are known. The baseline exists so the floor edge can stop being abstract.
 
-Without this, the seated-floor edge remains too abstract.
+See: `docs/research/primary-floor-structure-baseline.md`.
 
 ## B. Draw one complete vertical bay
 
