@@ -644,6 +644,25 @@ The following interpretations are rejected.
 - **“Implementation should begin immediately.”**  
   No. The concept first needs formalisation, prior-art research and a credible proof boundary.
 
+## Research programme and canonical follow-on documents
+
+The computational concept now has a structured pre-implementation research programme.
+
+Before adding new computational work, consult:
+
+- [Computational Track index](README.md);
+- [Research Programme](research-programme.md) — master workstreams, grand TODO register, dependency graph and implementation gates;
+- [Formal Architectural Model](formal-architectural-model.md) — semantic entity/relationship model;
+- [Validity and Obligations](validity-and-obligations.md) — what compile success/failure means and how obligations are discharged;
+- [Compiler Targets](compiler-targets.md) — versioned external normative environments;
+- [Prior Art Map](prior-art-map.md) — current reconnaissance and unanswered prior-art questions.
+
+These documents deliberately sit between the concept paper and any future implementation.
+
+The current governing rule is:
+
+> **No formal language or software architecture before an end-to-end paper compilation has demonstrated that the semantic model, obligation system and evidence model cohere on a real piece of the Reference House.**
+
 ## 19. Future development sequence
 
 No implementation work is authorised by this concept paper.

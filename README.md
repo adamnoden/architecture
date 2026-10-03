@@ -65,7 +65,13 @@ This is recorded as a computational expression of the doctrine, not a new govern
 - [W2 wall-bay SVG](docs/prototypes/w2-wall-bay-detail.svg) — vector detail of the gravity seat, separate top restraint, backplane and architectural release zones.
 
 ### Computational expression
-- [Executable Architecture — computational concept](docs/computational/executable-architecture.md) — canonical record of the future constrained-authoring / building-compiler proposition, including semantic primitives, architectural grammar, compiler targets, proof boundaries and evidence outputs. No implementation is selected yet.
+- [Computational track index](docs/computational/README.md) — entry point, document map and dependency order.
+- [Executable Architecture — computational concept](docs/computational/executable-architecture.md) — canonical statement of the constrained-authoring / building-compiler proposition.
+- [Computational research programme](docs/computational/research-programme.md) — master workstreams, grand TODO register, decision gates and implementation stop conditions.
+- [Formal architectural model](docs/computational/formal-architectural-model.md) — conceptual semantic model of overlapping spatial, structural, boundary, service, lifecycle and evidence graphs.
+- [Validity and obligations](docs/computational/validity-and-obligations.md) — compile-status taxonomy, obligation discharge and proof/evidence boundaries.
+- [Compiler targets](docs/computational/compiler-targets.md) — versioned regulatory/normative targets, beginning with England as the first jurisdictional research constraint.
+- [Prior art map](docs/computational/prior-art-map.md) — initial research map across IFC/openBIM, automated compliance, ontologies, shape grammars, digital building control and adjacent systems.
 
 ### Project delivery
 - [RIBA implementation brief template](docs/delivery/riba-implementation-brief-template.md) — translation layer from the publication into requirements for an appointed design team.
