@@ -55,16 +55,17 @@ Use only requirements genuinely fixed for this project.
 | N02 | Major replaceable plant has demonstrated withdrawal route | P5 | Dimensioned removal sequence | Architect + MEP | 4 |
 | N03 | High-consequence water failures are detectable and damage-limited | P4 | Failure scenario + test method | MEP + Architect | 4 |
 | N04 | Important service voids terminate at required fire/acoustic/pest boundaries | P3/P5 | Boundary/penetration schedule | Architect + specialists | 4 |
-| N05 | Critical building information remains current and transferable | P9 | Passport + physical index + change procedure | Architect | 6/7 |
-| N06 | Non-standard repeated interfaces are prototyped before multiplication | P3/P10 | First-article approval including removal/reinstatement where reversible | Architect | 4/5 |
+| N05 | Critical building information remains current and transferable | P10 | Passport + physical index + change procedure | Architect | 6/7 |
+| N06 | Non-standard repeated interfaces are prototyped before multiplication | P3/P11 | First-article approval including removal/reinstatement where reversible | Architect | 4/5 |
 | N07 | Permanent-fabric fixings are sparse, deliberate and documented | P2/P3 | Attachment map + no-uncontrolled-fixing review | Architect + SE | 3/4 |
 | N08 | Required restraint and permitted movement are separately identified at important interfaces | P3 | Movement map + interface details | Architect + SE + specialists | 3/4 |
-| N09 | Routinely removable layers do not casually destroy critical boundaries | P3/P10 | Boundary-independence review + reinstatement test | Architect + specialists | 4/5 |
-| N10 | Fast-changing custom assemblies are manufactured/remanufacturable through documented interface families | P6/P10 | Manufacturing schedule + fabrication record | Architect | 4/5 |
-| N11 | Visible technical interfaces receive explicit architectural resolution | P10 | Mock-up / material review | Architect | 4/5 |
+| N09 | Routinely removable layers do not casually destroy critical boundaries | P3/P11 | Boundary-independence review + reinstatement test | Architect + specialists | 4/5 |
+| N10 | Fast-changing custom assemblies are manufactured/remanufacturable through documented interface families | P6/P11 | Manufacturing schedule + fabrication record | Architect | 4/5 |
+| N11 | Visible technical interfaces receive explicit architectural resolution | P11 | Mock-up / material review | Architect | 4/5 |
 | N12 | Critical interfaces have a declared tolerance strategy rather than relying on site improvisation | P3/P6 | Incoming tolerance + datum + adjustment range + remediation threshold + verification method | Architect + relevant designer/fabricator | 4 |
 | N13 | Repeated non-standard assemblies are trialled by a representative competent installer | P3/P6 | Uncoached first-article installation record; design response to questions/workarounds | Architect + contractor/fabricator | 4/5 |
 | N14 | Consequential concealed interfaces are inspected before closure | P3/P6 | Hold point + measurement/photographic record where appropriate | Contractor + relevant designer | 5 |
+| N15 | Principal domestic spaces are designed for repose rather than continuous attentional demand | P8 | Room-by-room repose review covering physical comfort, spatial coherence, privacy/retreat, local control, sensory load and perceptual structural settlement; measurable items supported by relevant modelling/testing | Architect + relevant specialists | 2/3/4 |
 
 *Table above is illustrative; project team to confirm final non-negotiables.*
 
@@ -242,6 +243,7 @@ Do not assume the experimental service architecture is part of the project befor
 
 **Required outputs**
 - project-specific non-negotiables;
+- repose brief identifying principal recovery/sleep/quiet spaces, privacy needs, local-control expectations and where architectural drama is intentionally acceptable;
 - measurable maintenance-task brief;
 - project evidence/maturity legend;
 - initial consultant responsibility matrix;
@@ -268,6 +270,7 @@ The design team must be able to distinguish doctrine, selected patterns and open
 - initial permanence/assembly hierarchy;
 - initial attachment and movement concepts;
 - tectonic architectural-language concept for occupant-facing interfaces;
+- repose concept: spatial hierarchy, privacy/retreat, apparent structural settlement, daylight/outlook, acoustic strategy and intelligible local environmental control;
 - first proportionality appraisal for unusual voids/undercrofts/spare capacity.
 
 **Mandatory options studies**
@@ -291,7 +294,8 @@ No pattern advances merely because it is ideologically attractive.
 - room-by-room service-access logic;
 - drainage/condensate routes;
 - environmental modelling;
-- acoustic/fire/security coordination;
+- room-by-room repose review separating measurable environmental performance from architectural judgement;
+- acoustic/privacy/fire/security coordination;
 - updated cost and whole-life-carbon comparisons;
 - coordinated permanence map;
 - coordinated attachment map;
@@ -323,6 +327,7 @@ The project should now demonstrate that service architecture fits the actual bui
 - critical-interface tolerance/workmanship schedules;
 - representative-installer trial requirements for repeated non-standard assemblies;
 - commissioning and maintainability test plan;
+- final repose review of principal rooms and circulation sequences, including local/manual control where automation materially affects comfort;
 - building-passport data requirements.
 
 **Prototype candidates**
@@ -366,6 +371,7 @@ Where reversibility is part of the claimed performance, prototype approval requi
 
 **Required outputs**
 - measured commissioning results;
+- occupant-facing controls demonstrated for understandable operation and manual fallback where specified;
 - completed building passport;
 - layered user/building manual;
 - physical service index and stable labels;
@@ -392,7 +398,7 @@ A maintainability feature is not accepted solely because it appears on an as-bui
 ## Stage 7 — Use
 
 **Required activities**
-- early post-occupancy review;
+- early post-occupancy review including comfort, privacy, control, noise, glare and spaces of retreat;
 - seasonal performance checks where relevant;
 - update record after alterations;
 - record maintenance problems and unexpected access failures;
@@ -428,7 +434,7 @@ The publication should treat Stage 7 as research, not as an administrative after
 | PR01 |  |  |  |  |  |
 
 Prototype assessment should include:
-appearance / tectonic honesty / installation tolerance / declared tolerance recovery / datum clarity / sequence clarity / representative-installer questions and workarounds / stiffness / rattle / wear / cleaning / opening time / normal tools / component withdrawal / boundary reinstatement / removal / reinstatement / evidence of damage after cycles.
+appearance / tectonic honesty / contribution to repose / perceptual solidity and settlement / visual hierarchy / installation tolerance / declared tolerance recovery / datum clarity / sequence clarity / representative-installer questions and workarounds / stiffness / rattle / wear / cleaning / opening time / normal tools / component withdrawal / boundary reinstatement / removal / reinstatement / evidence of damage after cycles.
 
 For occupant-facing prototypes ask explicitly:
 
