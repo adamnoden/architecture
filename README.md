@@ -14,11 +14,9 @@ A further cross-cutting requirement is **workmanship robustness**: the design sh
 
 > **Give variation somewhere to go.**
 
-A further human requirement is **repose**: the house should minimise unnecessary vigilance. Its ordinary spaces should be physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled. Repose is not minimalism; richness and fascination are welcome when they resolve into a coherent whole.
+A further human requirement is **repose**: the house should minimise unnecessary vigilance. Its ordinary spaces should be physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled. Repose does not imply minimalism or low visual richness.
 
-> **A house may delight attention without continually demanding it.**
-
-The project treats this as an evidence-bounded design principle. Established findings on comfort, control, privacy, daylight and environmental stress are distinguished from architectural hypotheses—especially the proposal that visually legible equilibrium may contribute to domestic repose.
+The principle is evidence-bounded. Established environmental findings are kept separate from context-sensitive psychological evidence and from architectural hypotheses—most notably the proposal that visually legible structural equilibrium contributes to domestic repose.
 
 A further research trajectory asks whether the doctrine can become **executable architecture**: a constrained semantic model in which meaningful building primitives, architectural grammar, structure, selected compliance obligations and evidence compile together rather than being checked only after arbitrary geometry has been drawn.
 
@@ -53,6 +51,7 @@ This is recorded as a computational expression of the doctrine, not a new govern
 - [Preface precedents](docs/research/preface-precedents.md) — historical source selection, cautions and deliberately excluded analogies.
 - [Workmanship robustness](docs/research/workmanship-robustness.md) — research synthesis on tolerance management, buildability, mistake-proofing, human factors and the deliberate allocation of craft.
 - [Repose and low vigilance](docs/research/repose-and-low-vigilance.md) — evidence synthesis for domestic repose, environmental control, privacy, coherence, intuitive physics, neuroarchitecture guardrails and the structural-legibility research hypothesis.
+- [Repose evidence audit](docs/research/repose-evidence-audit.md) — claim-by-claim evidence grade, permitted wording, prohibited overclaims and checked sources.
 - [Candidate hardening decision matrix](docs/research/candidate-pattern-hardening-summary.md) — current evidence-backed direction, kill conditions and next decision sequence for all four experimental patterns.
 - [Primary floor structure baseline](docs/research/primary-floor-structure-baseline.md) — engineered I-joist baseline for the next coordination drawings.
 - [Seated floor structure options](docs/research/seated-floor-structure-options.md) — current structural interpretation and connection-family appraisal.
