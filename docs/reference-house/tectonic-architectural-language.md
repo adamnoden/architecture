@@ -110,6 +110,33 @@ They may:
 
 Stone, timber, brass or bronze should be selected for the actual wear/movement condition rather than decorative novelty.
 
+## Architectural depth as tolerance capacity
+
+The reference house should use traditional architectural depth to absorb ordinary construction variation where this coincides with a genuine compositional role.
+
+This does not mean inventing mouldings to hide bad work. It means recognising that robust architecture rarely requires every material to terminate on the same mathematical line.
+
+Useful examples include:
+
+- an architrave overlapping the frame/wall tolerance zone;
+- a substantial skirting covering the controlled perimeter of a floor platform;
+- a cornice spanning a real wall/ceiling movement and tolerance junction;
+- a panel moulding protecting and locating the edge of a removable lining field;
+- a threshold providing both wear protection and a controlled change of floor datum;
+- a scribed or sacrificial timber piece taking up local irregularity without altering the repeatable interface behind it.
+
+The hierarchy should be:
+
+**coarse permanent construction → designed adjustment → true architectural datum → precise assembly → architectural overlap/cover**
+
+The moulding or cover is the final architectural resolution, not the primary correction mechanism. It should not be asked to disguise work outside the declared tolerance.
+
+A useful review question is:
+
+> **Is this depth doing architectural work while giving ordinary variation somewhere legitimate to disappear?**
+
+Where the answer is no, the detail risks becoming cosmetic camouflage.
+
 ## Brass and bronze
 
 Brass and bronze are a **functional visual language**, not a theme.
