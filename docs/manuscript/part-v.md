@@ -541,11 +541,9 @@ For each scenario ask:
 - do structure and major masses appear settled rather than precarious?
 - are technical systems serving the room or demanding continual attention from it?
 
-Measured matters—thermal conditions, acoustic performance, daylight, glare, ventilation—should be tested with the appropriate method.
+Measured matters—thermal conditions, acoustic performance, daylight, glare and ventilation—should be tested with the appropriate method.
 
 The remaining questions are architectural judgements. They should be recorded as such, not disguised as neuroscience.
-
-> **A house may delight attention without continually demanding it.**
 
 ## Deception review
 
