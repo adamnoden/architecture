@@ -2,17 +2,16 @@
 
 **Status:** active integration record  
 **Canonical research note:** [Repose and Low Vigilance — Evidence Note](../research/repose-and-low-vigilance.md)  
+**Evidence audit:** [Repose — Evidence Audit](../research/repose-evidence-audit.md)  
 **Governing principle:** Principle 8 — **Design for repose**
 
 ## Canonical proposition
 
 > **A good home should minimise unnecessary vigilance.**
 
-Repose is the ordinary domestic condition in which the house is physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.
+In this doctrine, repose denotes a domestic environment that is physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.
 
 It is not a synonym for minimalism, low visual complexity, symmetry, historical style or sensory deprivation.
-
-> **A house may delight attention without continually demanding it.**
 
 ## Evidence discipline
 
@@ -91,7 +90,7 @@ For principal spaces, ask:
 6. **Richness** — is there fascination within larger order?
 7. **Recovery** — where can a tired, ill or overstimulated occupant withdraw?
 8. **Technology** — does it serve without continually advertising itself?
-9. **Drama** — where is tension intentional, and where does it subside?
+9. **Intensity** — where are surprise or tension intentional, and where should they subside?
 
 Measured items should use the appropriate building-science method. Architectural judgements should remain explicit judgements.
 
