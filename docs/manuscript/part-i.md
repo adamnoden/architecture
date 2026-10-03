@@ -1,7 +1,7 @@
 # The Long-Life House
 ## Part I — The Proposition
 
-**Draft v0.4 — tectonic integration; for editorial development, not publication**
+**Draft v0.5 — repose / low-vigilance integration; for editorial development, not publication**
 
 ---
 
@@ -134,6 +134,26 @@ The lesson here is not that a detached house should imitate either project. It i
 
 A room also need not physically transform in order to be adaptable. Well-proportioned rooms with good daylight, useful dimensions, sensible doors and adequate services can accommodate different patterns of occupation over time. A study becomes a bedroom; a drawing room becomes a family room; a ground-floor room can serve temporarily as sleeping accommodation. **Capacity and compatibility** may be more valuable than literal movement.
 
+## Repose as a domestic requirement
+
+Longevity is not sufficient if the resulting house is exhausting to inhabit.
+
+A dwelling is occupied differently from a museum, monument, airport or shop. It is used during sleep, illness, fatigue, solitude, family life and recovery. The ordinary domestic environment should therefore not be designed around continuous novelty, exposure, perceptual tension or the demand to understand a technical performance.
+
+This book uses **repose** for a simple architectural objective:
+
+> **A good home should minimise unnecessary vigilance.**
+
+That does not mean sensory poverty. Research on architectural interiors distinguishes **coherence**—the ease with which a scene can be organised and understood—from **fascination**, its informational richness and capacity to hold interest. A room can be ornamented, layered and visually rich while remaining coherent. Repose is therefore not minimalism. It is **richness within order**.[14]
+
+Control matters too. Building research consistently treats perceived control over environmental conditions as relevant to occupant satisfaction. Privacy research similarly treats the ability to regulate exposure as a substantive dimension of housing. The architectural implication is not a universal prescription for closed rooms, manual systems or any one plan type. It is that occupants should have intelligible means to alter ordinary conditions: to close a door, shade a window, adjust light or heat, admit air, withdraw from noise, or choose privacy where the programme calls for it.[15][16]
+
+The same caution applies to structural appearance. Vision research indicates that people rapidly and spontaneously infer physical properties such as support, stability, mass and the effects of gravity. The doctrine therefore proposes that principal domestic spaces should normally present a **plausible visual account of equilibrium**: substantial things should appear supported; the house should generally look content to stand up. This is a reasoned architectural inference from intuitive-physics research, not evidence that cantilevers are physiologically harmful or that any historical structural form is universally preferred.[17]
+
+Architectural drama remains legitimate. Compression and release, unusual geometry, long views, surprise and even apparent structural tension may enrich particular moments. But they should be deliberate events rather than the permanent background condition of ordinary domestic life.
+
+> **A house may delight attention without continually demanding it.**
+
 This is also a defence against over-engineering.
 
 If every floor panel is removable, every wall demountable, every facade bay reconfigurable and every structural load designed for an imagined future, the present building pays continually for hypothetical change. It becomes materially and intellectually complex. The maintenance system itself requires maintenance. It may also embody more carbon and capital than the future work it is intended to avoid. Longevity is therefore not automatically synonymous with sustainability: its provisions must be tested against plausible scenarios rather than rewarded merely for sounding future-minded.
@@ -252,7 +272,7 @@ Taken together, permanent fabric, replaceable systems, designed interfaces and m
 
 ---
 
-# 5. Ten principles
+# 5. Eleven principles
 
 The following principles compress the doctrine into a public-facing form. They operate beneath the governing constraints above and are deliberately stated at a level that should survive changes in construction method and architectural language.
 
@@ -276,7 +296,7 @@ The relevant unit of design is not merely the initial component but the sequence
 
 **Do not use long-lived fabric as the routine distribution or attachment zone for shorter-lived systems. Where services, fittings or replaceable assemblies must cross or attach to permanent construction, make those interfaces sparse, deliberate, concentrated where practical and documented.**
 
-The aim is not purity. It is to prevent the slower layers of the building being consumed at the renewal rate of the faster ones.
+The aim is not purity and it is not a prohibition on mechanical fasteners. Reversible screws, bolts and clips are often desirable. The objective is to prevent the slower layers of the building being repeatedly perforated, chased or consumed at the renewal rate of the faster ones.
 
 ## 3. Design the interface
 
@@ -314,24 +334,35 @@ The shorter-lived and more replaceable a layer is, the stronger the presumption 
 
 Functional longevity does not require a generic shell. Well-proportioned rooms, useful dimensions, good light, generous circulation and compatible services can support many lives without making the architecture physically indeterminate.
 
-## 8. Let passive architecture do the first work
+## 8. Design for repose
+
+**Treat the house as a place of repeated occupation and recovery. Its ordinary spaces should minimise unnecessary vigilance by being physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.**
+
+Repose does not mean emptiness, monotony or the elimination of surprise. A room may be rich, ornamented and fascinating while remaining coherent. Architectural drama may be used deliberately, but it should not become the permanent background condition of domestic life.
+
+The eye should ordinarily be able to form a plausible account of how the building stands. Principal masses should appear supported and at rest unless perceptual tension is intentionally sought. This is a qualified architectural inference from research on intuitive physics, not a claim that any particular structural form has a universal physiological effect.
+
+Occupants should be able to regulate ordinary exposure and environmental conditions through intelligible means: privacy, shade, light, ventilation, temperature and acoustic separation where relevant. A house may delight attention without continually demanding it.
+
+## 9. Let passive architecture do the first work
 
 **Use form, envelope, orientation, shading, mass, controllable openings, drainage and gravity to reduce demands on active systems before adding mechanical or electronic correction.**
 
 “First” does not mean “only”. Measured performance, health and resilience outrank ideological simplicity; mechanical systems are the correct answer when the building, climate or use requires them.
 
-## 9. Make the building legible across generations
+## 10. Make the building legible across generations
 
 **Preserve enough information—in records and, for critical systems, in the building itself—that future owners and trades can understand, isolate, maintain and alter it safely.**
 
 The building record should be current, transferable and comprehensible. A small amount of critical information should also survive the loss of software, accounts or archives.
 
-## 10. Resolve technology as architecture
+## 11. Resolve technology as architecture
 
 **Technical necessities encountered by occupants should be resolved through architectural composition, material and craft rather than treated as concealed accidents or gratuitous technical display.**
 
-The building should be tectonically honest: concealment is legitimate; falsification is not. Joints, access, wear, movement and replacement should be resolved through real material, composition and craft rather than counterfeit surfaces or cosmetic continuity. Bespoke architectural enclosures should, where practical, contain ordinary and replaceable technical components.
+The building should be tectonically honest: concealment is legitimate; falsification is not. Architecture may cover services, fixings and movement where the concealing element is itself real and coherent, but cosmetic continuity should not substitute for unresolved construction, and materials or structural relationships should not be counterfeited merely to create an appearance.
 
+Joints, access, wear, movement and replacement should become part of the architectural resolution. Bespoke architectural enclosures should, where practical, contain ordinary and replaceable technical components.
 ---
 
 # From principles to buildings
