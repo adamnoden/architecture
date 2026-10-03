@@ -170,7 +170,20 @@ Provide a deliberately visible prototype adjustment method:
 
 The adjustment should prove that imperfect masonry can be converted into a precise panel datum **without filler**.
 
+At least one build should use a deliberately imperfect but declared background condition rather than a perfectly prepared test wall. Introduce a realistic combination such as a modest out-of-plumb condition, a local set-out deviation and a floor datum offset, all within the range the prototype claims to accommodate.
+
+Before the trial, state:
+
+- incoming tolerance envelope;
+- target panel datum;
+- available adjustment range;
+- permitted packer/shim types;
+- maximum correction at any one fixing;
+- condition at which the background must be remediated rather than adjusted around.
+
 Record the achieved tolerance.
+
+For one assembly cycle, use a competent installer/fabricator who did not design the system. Issue the normal build information and parts; do not coach the intended sequence unless necessary for safety. Record every clarification request, improvised material, additional fixing, unplanned tool and workaround.
 
 ---
 
@@ -672,7 +685,10 @@ The prototype fails if:
 - fixing/release mechanism depends on an irreplaceable proprietary part;
 - access requires damaging skirting/cornice;
 - repeated cycling causes growing joint misalignment;
-- the background boundary is damaged during routine removal.
+- the background boundary is damaged during routine removal;
+- a background condition within the declared tolerance cannot be corrected by the designed adjustment system;
+- correct assembly depends on undocumented packers, filler, foam, adhesive or extra fixings;
+- the ordinary installation sequence cannot be understood without designer coaching.
 
 ## Conditional fail
 
