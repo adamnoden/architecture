@@ -36,15 +36,15 @@ The house should therefore prefer:
 - local, intelligible control of shade, light, ventilation and temperature;
 - material and ornamental richness organised by larger compositional order;
 - technical interfaces that recede into the room hierarchy rather than competing with it;
-- architectural drama as a bounded event rather than the ordinary background condition.
+- strong visual or spatial effects concentrated deliberately rather than used as a continuous background condition.
 
-The courtyard, long axes, garden views, stair and thresholds may provide moments of surprise, compression and release. Principal sitting, sleeping and working rooms should return to repose.
+The courtyard, long axes, garden views, stair and thresholds may provide moments of surprise, compression and release. Principal sitting, sleeping and working rooms should not depend on continual perceptual tension for their character.
 
 A useful house-wide question is:
 
 > **What, in this room, is asking the occupant to remain on alert?**
 
-Some answers will be measurable: noise, glare, overheating, poor ventilation or lack of privacy. Others will be architectural judgements: unresolved visual competition, apparent structural precariousness, confusing hierarchy or technical display.
+Some answers are measurable: noise, glare, overheating and ventilation performance. Others—privacy requirements, unresolved visual competition, apparent structural precariousness, confusing hierarchy or technical display—require explicit architectural judgement or user-specific briefing rather than invented physiological certainty.
 
 The first group should be tested. The second should be reviewed explicitly without pretending that subjective architectural judgement has become laboratory fact.
 
