@@ -20,6 +20,34 @@ Where a technical interface is visible to occupants, it should be resolved throu
 
 The result should not read as an engineering demonstrator.
 
+## Repose as a compositional requirement
+
+The reference house should feel **architecturally at rest**.
+
+This is not a claim that Georgian architecture is neurologically privileged. The doctrine's repose principle is style-neutral. The reference house simply uses a Georgian language whose mass, hierarchy, room structure, openings, mouldings and thresholds can be developed in ways that support the wider objective.
+
+The house should therefore prefer:
+
+- principal masses that appear clearly borne and settled under gravity;
+- openings whose support reads as plausible rather than precarious;
+- a legible hierarchy of entrance, circulation, shared rooms, private rooms and retreat;
+- rooms that can genuinely close where privacy or acoustic separation matters;
+- useful daylight and outlook without gratuitous exposure, glare or overheating;
+- local, intelligible control of shade, light, ventilation and temperature;
+- material and ornamental richness organised by larger compositional order;
+- technical interfaces that recede into the room hierarchy rather than competing with it;
+- architectural drama as a bounded event rather than the ordinary background condition.
+
+The courtyard, long axes, garden views, stair and thresholds may provide moments of surprise, compression and release. Principal sitting, sleeping and working rooms should return to repose.
+
+A useful house-wide question is:
+
+> **What, in this room, is asking the occupant to remain on alert?**
+
+Some answers will be measurable: noise, glare, overheating, poor ventilation or lack of privacy. Others will be architectural judgements: unresolved visual competition, apparent structural precariousness, confusing hierarchy or technical display.
+
+The first group should be tested. The second should be reviewed explicitly without pretending that subjective architectural judgement has become laboratory fact.
+
 ## The interface grammar
 
 ### Skirting
@@ -240,7 +268,8 @@ Review:
 - joint width;
 - alignment with room axes;
 - touch;
-- apparent solidity;
+- apparent solidity and perceptual structural settlement;
+- whether the detail contributes to repose or demands unnecessary attention;
 - sound when tapped/stepped on;
 - removal method;
 - whether the technical mechanism is too visible;
@@ -249,6 +278,8 @@ Review:
 - how the detail will age.
 
 The benchmark is not “does this access panel look acceptable?”
+
+The occupied room should also be reviewed as a whole for visual hierarchy, privacy, local environmental control, acoustic quiet where relevant, glare and whether technical features have become persistent attentional demands.
 
 It is:
 
