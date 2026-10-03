@@ -4,6 +4,12 @@ An architectural design-research project exploring how a domestic building can r
 
 > **Working thesis:** Change should be given deliberate places to occur so that architecture can afford to remain permanent elsewhere.
 
+A second project axis now governs the physical implementation:
+
+> **Build the permanent house. Assemble the changeable house inside it.**
+
+The project pursues **tectonic honesty**: concealment is legitimate; falsification is not. Movement, access, replacement and technical necessity should be resolved through real construction, material and architectural composition rather than cosmetic continuity.
+
 ## Documents
 
 ### Source corpus
@@ -17,6 +23,17 @@ An architectural design-research project exploring how a domestic building can r
 
 ### Pattern catalogue
 - [Core 12 patterns](docs/patterns/core-12.md) — the first architectural patterns developed in depth.
+- [Reversible assembly candidates](docs/patterns/reversible-assembly-candidates.md) — experimental development of seated floor structure, architectural backplanes, replaceable wall lining and finish-agnostic floor platforms.
+
+### Reference house
+- [Tectonic architectural language](docs/reference-house/tectonic-architectural-language.md) — Georgian interface grammar and restrained functional brass/bronze language for the worked house.
+
+### Development controls
+- [Tectonic integration register](docs/development/tectonic-integration-register.md) — traceability ledger for the current doctrine migration.
+- [Tectonic honesty](docs/development/tectonic-honesty.md) — position paper distinguishing concealment from falsification.
+- [Manufacturing strategy](docs/development/manufacturing-strategy.md) — lifespan-based manufacturing and dry-assembly strategy.
+- [Prototype programme](docs/development/tectonic-prototype-programme.md) — 1:1 engineering and architectural validation programme.
+- [Migration plan](docs/development/tectonic-migration-plan.md) — staged integration plan.
 
 ### Project delivery
 - [RIBA implementation brief template](docs/delivery/riba-implementation-brief-template.md) — translation layer from the publication into requirements for an appointed design team.
@@ -25,8 +42,8 @@ An architectural design-research project exploring how a domestic building can r
 
 The publication distinguishes:
 
-**Doctrine → Strategy → Pattern → Reference implementation**
+**Doctrine → Strategy → Pattern → Reference implementation → Delivery requirement → Test**
 
 The source doctrine is retained for traceability. New work should be developed in the manuscript, pattern catalogue and project-delivery documents rather than by rewriting v7 in place.
 
-The next major phase is architectural production and validation: conceptual figures, completion of the strongest pattern families, and a reference-house options appraisal.
+The current major phase is architectural production and validation: tectonic integration, 1:1 prototype development, completion of the strongest pattern families, and a reference-house options appraisal. Candidate reversible assemblies remain explicitly experimental until calculation and prototype work justify promotion.
