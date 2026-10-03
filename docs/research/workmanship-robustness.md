@@ -260,7 +260,7 @@ The design is.
 
 ## 10. Project integration
 
-Workmanship robustness is **not Principle 11**.
+Workmanship robustness is **not a standalone governing principle**.
 
 It cuts across the existing doctrine.
 
