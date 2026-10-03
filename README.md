@@ -29,6 +29,10 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 ### Reference house
 - [Tectonic architectural language](docs/reference-house/tectonic-architectural-language.md) — Georgian interface grammar and restrained functional brass/bronze language for the worked house.
 
+### Research and options appraisals
+- [Seated floor structure options](docs/research/seated-floor-structure-options.md) — current structural interpretation and connection-family appraisal.
+- [Replaceable wall system options](docs/research/replaceable-wall-system-options.md) — backplane, removable lining and plaster benchmark study.
+
 ### Development controls
 - [Tectonic integration register](docs/development/tectonic-integration-register.md) — traceability ledger for the current doctrine migration.
 - [Tectonic honesty](docs/development/tectonic-honesty.md) — position paper distinguishing concealment from falsification.
