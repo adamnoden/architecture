@@ -58,6 +58,7 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [Interface Obligation Bundles](interface-obligation-bundles.md) — Run-01 scaling response: recurring architectural interfaces hide proof complexity behind semantic relationships.
    - [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md) — shows bundles must contribute to shared graphs before canonical obligations are derived; avoids duplicate checklists one abstraction higher.
    - [S0 Run 01 Red Team](s0-red-team-run-01.md) — adversarial pass that finds missed Part K/Q/Regulation 7/B/F obligations, cross-domain window conflicts and target-versioning requirements.
+   - [S0-A Conventional Workmanship Route](s0-conventional-workmanship-route.md) — gives the ordinary control explicit datum, acceptance, remediation and evidence semantics without inventing unsupported numerical tolerances.
 
 11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.

@@ -631,7 +631,7 @@ These items should not be lost even if priorities change.
 | C-030 | Design paper compilation case | C-014,C-016,C-018,C-019 | **S0 fixture + source package v0.1 complete** |
 | C-030A | Define interface-obligation-bundle abstraction | C-030 | **two-family provisional validation complete** |
 | C-030B | Test bundle composition / shared-obligation merging | C-030A | **composition v0.1 passed; model corrected to contributions-before-obligations** |
-| C-030C | Formalise S0-A conventional workmanship/tolerance route | C-021,C-030 | open |
+| C-030C | Formalise S0-A conventional workmanship/tolerance route | C-021,C-030 | **process-model v0.1 complete; numeric/product envelopes open** |
 | C-031 | Execute paper compilation | C-030 | **Run 01 complete — research pass / release fail** |
 | C-031A | Execute S0 Run 02 only after abstraction red-team | C-030B,C-030C | blocked |
 | C-032 | Red-team proof claims with structural/regulatory expertise | C-031 | **internal S0 Run-01 red-team v0.1 complete; external competent review open** |
@@ -682,7 +682,7 @@ Exploratory notes should not silently redefine the canonical model.
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
 1. preserve the Run-01 red-team findings and use **target v0.2** rather than rewriting historical target v0.1;
-2. formalise the **S0-A conventional workmanship/tolerance route** and first wall/window boundary family;
+2. use the completed **S0-A conventional workmanship process model** to source real numeric/product envelopes only when technical families are selected;
 3. revise the window/interface model for operational roles: fall protection, egress, purge and security;
 4. choose whether H1 v0 gets a native bounded structural proof family or keeps member adequacy explicitly external;
 5. advance **G-01 D4–D6** in parallel;
