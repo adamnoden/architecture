@@ -45,6 +45,10 @@ Where proportionate, the entry zone may include spare sleeves or capacity for fo
 - seal unused future provisions robustly;
 - keep the transition from external/buried infrastructure to inspectable internal infrastructure as short and clear as practical.
 
+## Occupation / repose impact
+
+Direct impact should be low. The pattern is successful partly when meters, isolators, labels and incoming infrastructure are concentrated where they can be reached without becoming a persistent visual or acoustic presence in principal rooms. External intake equipment should also be checked for hum, drafts and night-time indicator light where these could reach occupied space.
+
 ## Failure modes
 
 Oversized unsealed openings; water tracking through sleeves; rodent entry; later services ignoring the controlled entry because the reserved capacity is unusable; utility meters/isolators becoming inaccessible behind storage or joinery.
@@ -68,7 +72,7 @@ A side/rear intake zone adjacent to the plant/service hub, architecturally subor
 # Pattern 02 — Plant room as service hub
 
 **Status:** Established  
-**Principles:** 1 Build for time; 5 Maintenance geography; 6 Ordinary parts; 10 Legibility
+**Principles:** 1 Build for time; 5 Maintenance geography; 6 Ordinary parts; 8 Repose; 10 Legibility
 
 ## Problem
 
@@ -95,6 +99,12 @@ Concentrate major distribution, controls and replaceable plant into a deliberate
 - preserve access to isolation without moving stored possessions;
 - maintain a clear relationship with the principal riser/distribution route.
 
+## Occupation / repose impact
+
+Concentration is beneficial only if the service hub is acoustically and thermally separated from ordinary occupation. Fan, pump and compressor noise; structure-borne vibration; transformer or relay hum; heat leakage; indicator light and alarm sound should be reviewed from adjacent bedrooms and principal rooms, including at night.
+
+The maintenance route should also avoid turning bedrooms or principal sitting rooms into routine service access where a reasonable alternative exists.
+
 ## Failure modes
 
 Plant room becoming general storage; door too small for replacement; equipment packed so tightly that filters/valves cannot be reached; noise transmitted structurally; floor drain or containment neglected; future plant forced elsewhere because the room was dimensioned only for the first equipment set.
@@ -118,7 +128,7 @@ Compact service hub adjacent to the main vertical route, with a clear equipment-
 # Pattern 03 — Horizontal service spine
 
 **Status:** Supported  
-**Principles:** 2 Preserve permanent fabric; 5 Maintenance geography; 6 Ordinary parts
+**Principles:** 2 Preserve permanent fabric; 5 Maintenance geography; 6 Ordinary parts; 8 Repose
 
 ## Problem
 
@@ -144,6 +154,12 @@ Bias horizontal distribution toward a coherent service edge, corridor, ceiling/f
 - provide local access at sensible intervals;
 - avoid making every room part of the maintenance route.
 
+## Occupation / repose impact
+
+A shared route can reduce disturbance elsewhere, but only if it remains architecturally subordinate. Access doors, grilles and removable bands should not turn ordinary circulation into a continuously technical interior. Fire and acoustic compartmentation are also repose issues: a route that carries speech, plumbing noise or equipment hum between rooms has failed even if it is easy to maintain.
+
+Where the spine lies in a corridor, the corridor should still read first as domestic circulation.
+
 ## Failure modes
 
 Continuous open void acting as sound/smoke/pest path; route too small once insulation/bends/clearances are included; access blocked by fitted furniture; all services forced into one zone despite incompatible geometry.
@@ -167,7 +183,7 @@ Use ordinary circulation and service-heavy edges as the default horizontal topol
 # Pattern 04 — High-service-room service wall
 
 **Status:** Supported  
-**Principles:** 2 Preserve permanent fabric; 4 Failure architecture; 5 Maintenance geography
+**Principles:** 2 Preserve permanent fabric; 4 Failure architecture; 5 Maintenance geography; 8 Repose
 
 ## Problem
 
@@ -193,6 +209,12 @@ Where plan geometry permits, arrange high-service fixtures against a deliberatel
 - keep waterproofing strategy independent from routine service opening where practical;
 - ensure failed water cannot run unseen into the service zone;
 - coordinate removal sequences for concealed cisterns, valves and fans.
+
+## Occupation / repose impact
+
+The service wall must preserve privacy as well as access. Plumbing noise, cistern operation, extract noise and maintenance activity should not be exported into adjoining bedrooms or quiet rooms. Access from the reverse side is valuable only when that route does not make another private room the service space.
+
+The finished occupied face should remain a convincing room surface; panel lines and access hardware should be subordinate unless deliberately integrated into the architectural composition.
 
 ## Failure modes
 
@@ -240,6 +262,10 @@ Treat required crossings as designed interfaces established during structural an
 - provide robust blanking for unused capacity;
 - make important penetrations identifiable and inspectable where practical;
 - document no-drill zones around them.
+
+## Occupation / repose impact
+
+The direct repose effect is usually secondary, but penetrations can become paths for noise, drafts and visible technical clutter. The interface should preserve the acoustic and environmental performance of the construction it crosses, and exposed collars, grilles or covers should be resolved as part of the room rather than left as residual engineering work.
 
 ## Failure modes
 
@@ -298,6 +324,12 @@ The pattern describes performance, not one product.
 - test the protective path before handover;
 - document what a detected/discharged condition means.
 
+## Occupation / repose impact
+
+The protective route should normally recede from everyday awareness. Detection needs to be clear when something is wrong without making alarms, inspection fittings or containment channels a constant presence in principal rooms. Pumps, automatic valves and sensors should be checked for nuisance noise and light as well as reliability.
+
+The pattern should reduce the need for occupants to monitor for hidden leakage, not replace one form of vigilance with another.
+
 ## Failure modes
 
 Leak path blocked; containment has no fall; sensor gives false confidence; water exits somewhere ambiguous; secondary tray corrodes; pipe insulation hides leakage.
@@ -321,7 +353,7 @@ Investigate pipe-in-pipe or accessible distribution first; use local passive con
 # Pattern 07 — Permanent opening / replaceable window
 
 **Status:** Supported  
-**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 7 Architectural permanence
+**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 7 Architectural permanence; 8 Repose
 
 ## Problem
 
@@ -346,6 +378,12 @@ Treat the opening as enduring architecture and the window as a replaceable assem
 - provide a replacement sequence for full frame, not only glazing;
 - ensure removal of internal trim does not destroy primary air/water layers;
 - protect masonry edges during repeated work.
+
+## Occupation / repose impact
+
+The window is one of the strongest links between repose and building physics. The assembly should support useful daylight and outlook while allowing glare, solar gain, privacy, ventilation and external noise to be moderated in ways the occupant can understand and use.
+
+Replacement detailing must not compromise these ordinary qualities. Deep technical interfaces, removable trims or subframes are acceptable only if the finished opening still feels solid, quiet and architecturally composed.
 
 ## Failure modes
 
@@ -408,6 +446,12 @@ A conventional shadow, overlap or trim may be the quietest answer. In the refere
 
 Record how the cover/trim is installed, what it is fixed to, how the movement gap remains free, how any seal is renewed, and how later decorators are prevented from bridging the joint.
 
+## Occupation / repose impact
+
+A movement joint should not become a source of persistent visual or tactile disturbance. Its width, shadow, cover and material should remain calm under ordinary viewing; the assembly should not click, rattle or telegraph small movements into adjacent finishes.
+
+Where the joint is visible, it should read as an intentional boundary in the architecture rather than as evidence that the building is coming apart.
+
 ## Failure modes
 
 Trim inadvertently fixed through both assemblies; paint bridges the slip joint; sealant is treated as permanent; movement gap is too small; detail rattles or shadows badly.
@@ -452,6 +496,12 @@ Arrange roof drainage so collection, outlets, overflows and principal downstream
 - coordinate discharge with ground drainage;
 - keep water away from vulnerable plinth/wall interfaces.
 
+## Occupation / repose impact
+
+Rainwater management affects occupation when outlets, hoppers or pipes create intrusive noise, splash, staining or maintenance immediately outside windows and entrances. Bedrooms and quiet rooms deserve particular review during heavy rain.
+
+The route should be visible enough to inspect where necessary without making the facade read primarily as drainage infrastructure.
+
 ## Failure modes
 
 Overflow enters cavity; downpipe blockage is invisible; maintenance requires unsafe ladder position; leaf guard itself blocks; ground gully saturates the wall base.
@@ -475,7 +525,7 @@ Compare external gutters/downpipes against deep-eaves discharge objectively rath
 # Pattern 10 — Source-capture kitchen extract
 
 **Status:** Established  
-**Principles:** 9 Passive first; 5 Maintenance geography
+**Principles:** 9 Passive first; 5 Maintenance geography; 8 Repose
 
 ## Problem
 
@@ -503,6 +553,12 @@ Capture the cooking plume close to source with an appropriately sized hood/canop
 - locate fan for acceptable noise and replacement access;
 - commission actual airflow;
 - coordinate with whole-house ventilation and combustion.
+
+## Occupation / repose impact
+
+The extract system must be quiet enough and simple enough to be used. A high-performing hood that occupants avoid because of noise, awkward controls or excessive make-up-air drafts is not a successful domestic system.
+
+The design should remove cooking pollution without making cooking feel like operation of plant: controls should be obvious, low settings genuinely quiet, lighting well integrated and cleaning straightforward.
 
 ## Failure modes
 
@@ -548,6 +604,12 @@ Where roof maintenance cannot be designed out, provide an intentional route from
 - coordinate hatches, guard/edge strategy and temporary-access provisions;
 - consider lifting/replacement of major equipment, not just inspection;
 - secure the maintenance route against unauthorised access.
+
+## Occupation / repose impact
+
+The route should have little effect on ordinary occupation. Hatches, ladders, anchors and access hardware should be placed so they do not dominate principal rooms, compromise bedroom privacy or create avoidable drafts and noise.
+
+Any rooftop equipment reached by the route should be assessed separately for visual, vibration and acoustic effects on occupied rooms.
 
 ## Failure modes
 
@@ -599,6 +661,12 @@ Typical physical content:
 - pair physical IDs with drawings and digital records;
 - include change-control responsibility in the house manual;
 - use durable, ordinary-readable formats.
+
+## Occupation / repose impact
+
+The index is intentionally concentrated information. It should sit where service activity begins—typically a utility, plant or entrance-service location—not where occupants are asked to read it throughout the day.
+
+Stable identifiers should reduce the amount of visible labelling needed elsewhere. The aim is operational clarity without distributing technical signage through the domestic interior.
 
 ## Failure modes
 
