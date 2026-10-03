@@ -65,7 +65,7 @@ Use only requirements genuinely fixed for this project.
 | N12 | Critical interfaces have a declared tolerance strategy rather than relying on site improvisation | P3/P6 | Incoming tolerance + datum + adjustment range + remediation threshold + verification method | Architect + relevant designer/fabricator | 4 |
 | N13 | Repeated non-standard assemblies are trialled by a representative competent installer | P3/P6 | Uncoached first-article installation record; design response to questions/workarounds | Architect + contractor/fabricator | 4/5 |
 | N14 | Consequential concealed interfaces are inspected before closure | P3/P6 | Hold point + measurement/photographic record where appropriate | Contractor + relevant designer | 5 |
-| N15 | Principal domestic spaces are designed for repose rather than continuous attentional demand | P8 | Room-by-room repose review covering physical comfort, spatial coherence, privacy/retreat, local control, sensory load and perceptual structural settlement; measurable items supported by relevant modelling/testing | Architect + relevant specialists | 2/3/4 |
+| N15 | Principal domestic spaces are designed to minimise unnecessary vigilance | P8 | Room-by-room review covering physical comfort, spatial coherence, privacy/retreat, local control, sensory load and perceptual structural settlement; measurable items supported by relevant modelling/testing and judgement-based items recorded as such | Architect + relevant specialists | 2/3/4 |
 
 *Table above is illustrative; project team to confirm final non-negotiables.*
 
@@ -243,7 +243,7 @@ Do not assume the experimental service architecture is part of the project befor
 
 **Required outputs**
 - project-specific non-negotiables;
-- repose brief identifying principal recovery/sleep/quiet spaces, privacy needs, local-control expectations and where architectural drama is intentionally acceptable;
+- repose brief identifying principal recovery/sleep/quiet spaces, privacy needs, local-control expectations and any locations where deliberately heightened spatial or structural effects are intended;
 - measurable maintenance-task brief;
 - project evidence/maturity legend;
 - initial consultant responsibility matrix;
