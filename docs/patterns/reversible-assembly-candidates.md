@@ -9,8 +9,8 @@ These patterns are intentionally demanding. They should be challenged by the arc
 
 # Candidate 01 — Seated Floor Structure
 
-**Evidence:** Proposed  
-**Maturity:** Drawn concept only  
+**Evidence:** Supported principle / implementation options under engineering review  
+**Maturity:** Evidence review complete; calculation and edge prototype pending  
 **Principles:** 2 Preserve permanent fabric; 3 Design the interface; 7 Let permanence be architectural
 
 ## Problem
@@ -131,16 +131,26 @@ A conventional engineered hanger may remain the best answer if it already provid
 - movement and squeak observation;
 - fire/acoustic edge-detail review.
 
+## Current evidence direction
+
+The evidence now supports the **decomposition principle** more strongly than a bespoke connection.
+
+A certified restraint-type masonry hanger is the baseline to beat. Direct bearing with separate restraint remains a credible comparator. A custom bearing ledge/shoe stays experimental and should not proceed unless it demonstrates a material advantage in inspection, repair, tolerance or architectural coordination.
+
+Do not create structural sliding freedom merely because the doctrine values movement accommodation. Put movement at the interface where the actual movement occurs.
+
+See: `docs/research/seated-floor-structure-options.md`.
+
 ## Reference-house direction
 
-Investigate a **seated-but-captured** engineered timber floor edge: clear gravity bearing, explicit anti-roll/unseating provision and discrete structural restraint rather than gratuitous rigidity.
+Investigate a **seated-but-captured** engineered timber floor edge, but begin with ordinary certified restraint hardware. The reference-house preference should be selected only after a structural-engineer options study compares the baseline against direct bearing and any custom seat.
 
 ---
 
 # Candidate 02 — Architectural Backplane
 
-**Evidence:** Proposed  
-**Maturity:** Drawn concept only  
+**Evidence:** Supported direction / project-specific implementation unproven  
+**Maturity:** Evidence review complete; wall-bay prototype pending  
 **Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 10 Resolve technology as architecture
 
 ## Problem
@@ -242,6 +252,14 @@ It is strongest on walls expected to carry repeated occupation loads, service di
 - repeated removal/reinstallation test;
 - acoustic and impact testing strategy.
 
+## Current evidence direction
+
+Independent lining, mechanical fixing and robust sheet materials are mature. The distinctive project move is a **sparse, non-proprietary, load-classified backplane** that takes relatively few permanent masonry anchors and lets future occupation remain on the room side of them.
+
+The backplane should remain selective rather than universal. It earns its depth on walls with repeated fixing, service access, replaceable lining or major joinery.
+
+See: `docs/research/replaceable-wall-system-options.md`.
+
 ## Reference-house direction
 
 Develop the backplane together with the Georgian lining grammar so that technical fixing zones coincide with real skirting, dado, picture-rail or panel divisions where useful.
@@ -250,8 +268,8 @@ Develop the backplane together with the Georgian lining grammar so that technica
 
 # Candidate 03 — Replaceable Wall Lining
 
-**Evidence:** Proposed  
-**Maturity:** Drawn concept only  
+**Evidence:** Supported direction / architectural system unproven  
+**Maturity:** Evidence review complete; full wall-bay prototype pending  
 **Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 10 Resolve technology as architecture
 
 ## Problem
@@ -377,16 +395,28 @@ Some long-lived masonry/plaster walls may be simpler, more durable and more beau
 - repeated panel removal/reinstallation;
 - compare site skim with factory-finished mineral surface in appearance and whole-life labour.
 
+## Current evidence direction
+
+The preferred research direction is now a **hybrid wall**:
+
+**permanent masonry / primary boundary → sparse adjustable backplane → optional shallow service/absorption zone → robust manufactured panel**
+
+This keeps structure, acoustic mass and other slow continuous obligations in the masonry/background rather than loading them onto a routinely removable decorative panel.
+
+The system should be deployed selectively. High-quality direct plaster remains the benchmark and may remain the correct answer on low-service walls.
+
+See: `docs/research/replaceable-wall-system-options.md`.
+
 ## Reference-house direction
 
-Develop at least one principal-room prototype that does **not** read as a technical panel system.
+Develop at least one principal-room prototype that does **not** read as a technical panel system. Compare it physically against a first-rate plaster wall and an ordinary independent drylining system.
 
 ---
 
 # Candidate 04 — Finish-Agnostic Floor Platform
 
-**Evidence:** Proposed  
-**Maturity:** Drawn concept only  
+**Evidence:** Strong external precedent / residential implementation unproven  
+**Maturity:** Evidence review complete; walkable multi-finish prototype pending  
 **Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 7 Architectural permanence
 
 ## Problem
@@ -503,9 +533,19 @@ Where no maintainable services or foreseeable finish change justify the complexi
 - rolling/impact load testing;
 - tactile and acoustic comparison against a conventional solid floor.
 
+## Current evidence direction
+
+Commercial raised-floor systems already prove removable dense mineral panels carrying stone, ceramic and parquet finishes. The project does not need to prove that such a floor can exist; it needs to prove that it can be **domesticated**.
+
+The preferred research direction is a **low-profile mineral platform on a continuous or semi-continuous support lattice**, with local deeper service zones rather than a tall whole-room plenum. A perimeter/corridor access-band strategy is a serious comparator and may be more proportionate than full-room removability.
+
+Underfloor heating should remain mechanically independent of routinely removable panels unless testing proves otherwise.
+
+See: `docs/research/finish-agnostic-floor-platform-options.md`.
+
 ## Reference-house direction
 
-Prototype at least three finish variants on one common platform interface and judge the result first as **flooring**, not as an access system.
+Prototype at least three finish variants on one common platform interface and judge the result first as **flooring**, not as an access system. If a blind walking test reveals “raised floor”, the full-room concept has failed.
 
 ---
 
