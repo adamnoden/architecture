@@ -62,6 +62,7 @@ This is recorded as a computational expression of the doctrine, not a new govern
 ### Development controls
 - [Preface architecture](docs/development/preface-architecture.md) — rhetorical structure, audience, voice and quality controls for the opening essay.
 - [Tectonic integration register](docs/development/tectonic-integration-register.md) — traceability ledger for the current doctrine migration.
+- [Repose integration register](docs/development/repose-integration-register.md) — traceability ledger for the low-vigilance principle, evidential boundaries, design-review tests and remaining research.
 - [Tectonic honesty](docs/development/tectonic-honesty.md) — position paper distinguishing concealment from falsification.
 - [Manufacturing strategy](docs/development/manufacturing-strategy.md) — lifespan-based manufacturing and dry-assembly strategy.
 - [Prototype programme](docs/development/tectonic-prototype-programme.md) — 1:1 engineering and architectural validation programme.
