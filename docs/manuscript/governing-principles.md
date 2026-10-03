@@ -65,11 +65,11 @@ Functional longevity does not require a generic shell. Well-proportioned rooms, 
 
 **Treat the house as a place of repeated occupation and recovery. Its ordinary spaces should minimise unnecessary vigilance by being physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.**
 
-Repose does not mean emptiness, monotony or the elimination of surprise. A room may be rich, ornamented and fascinating while remaining coherent. Architectural drama may be used deliberately, but it should not become the permanent background condition of domestic life.
+Repose does not require visual austerity. A room may be complex, ornamented or strongly characterised and still be easy to inhabit. What matters is that its richness resolves into an intelligible whole, and that moments of surprise or tension are deliberate rather than constant.
 
-The eye should ordinarily be able to form a plausible account of how the building stands. Principal masses should appear supported and at rest unless perceptual tension is intentionally sought. This is a qualified architectural inference from research on intuitive physics, not a claim that any particular structural form has a universal physiological effect.
+Where structure is architecturally expressed, major masses should present a plausible visual account of support and equilibrium. Apparent precariousness should be intentional rather than an incidental consequence of composition. Research strongly supports the perception of physical stability; its contribution to long-duration domestic comfort remains a doctrine hypothesis.
 
-Occupants should be able to regulate ordinary exposure and environmental conditions through intelligible means: privacy, shade, light, ventilation, temperature and acoustic separation where relevant. A house may delight attention without continually demanding it.
+Occupants should have intelligible means to regulate exposure and ordinary environmental conditions: privacy, shade, light, ventilation, temperature and acoustic separation where relevant. The objective is not to suppress attention, but to avoid requiring it continuously for the house to remain comfortable.
 
 ## 9. Let passive architecture do the first work
 
