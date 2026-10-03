@@ -15,7 +15,7 @@ They are additionally subject to a **repose gate** wherever the system enters oc
 
 **Evidence:** Supported principle / implementation options under engineering review  
 **Maturity:** Evidence review complete; calculation and edge prototype pending  
-**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 7 Let permanence be architectural
+**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 7 Let permanence be architectural; 8 Repose
 
 ## Problem
 
@@ -105,6 +105,12 @@ The connection should normally disappear into the floor/wall build-up. Tectonic 
 
 Where an edge interface is visible, its line should coincide with a real floor or wall junction rather than being cosmetically filled across expected movement.
 
+## Occupation / repose impact
+
+This candidate will be judged as much by the finished floor as by the connection detail. The floor must feel secure under ordinary walking: deflection, vibration, local movement, squeak, click and rattle should be controlled to a domestic standard established by engineering and prototype testing.
+
+The structural arrangement may be concealed. Where any part of the support is architecturally expressed, it should present a plausible visual account of bearing and restraint rather than relying on apparent precariousness for effect. This is an architectural preference under Principle 8, not a substitute for calculation.
+
 ## Assembly and replacement sequence
 
 The technical design must draw:
@@ -155,7 +161,7 @@ Investigate a **seated-but-captured** engineered timber floor edge, but begin wi
 
 **Evidence:** Supported direction / project-specific implementation unproven  
 **Maturity:** Evidence review complete; wall-bay prototype pending  
-**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 11 Resolve technology as architecture
+**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 8 Repose; 11 Resolve technology as architecture
 
 ## Problem
 
@@ -228,6 +234,12 @@ The backplane should normally be invisible.
 
 Its visible consequences should appear through ordinary architecture: picture rails, panelling, skirtings, mouldings, joinery or clean wall surfaces. A room should not look industrial merely because its attachment logic is sophisticated.
 
+## Occupation / repose impact
+
+The backplane should increase freedom of ordinary occupation without making the wall feel like equipment. Pictures, mirrors, shelves and suitable joinery should be easy to place, while rails, fixing zones and technical geometry remain visually subordinate unless intentionally expressed.
+
+The finished wall must retain convincing solidity under touch and use. A system that saves masonry from future drilling but produces hollow response, rattle, visible module pressure or a permanently technical aesthetic has not earned promotion.
+
 ## Assembly and replacement sequence
 
 1. verify permanent anchors;
@@ -274,7 +286,7 @@ Develop the backplane together with the Georgian lining grammar so that technica
 
 **Evidence:** Supported direction / architectural system unproven  
 **Maturity:** Evidence review complete; full wall-bay prototype pending  
-**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 11 Resolve technology as architecture
+**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 8 Repose; 11 Resolve technology as architecture
 
 ## Problem
 
@@ -366,6 +378,12 @@ A plaster-like visual field may also be possible using large panels and restrain
 
 Factory-applied mineral/plaster finishes are explicitly worth investigating: the surface may read as calm plaster while remaining the truthful finish of a removable panel.
 
+## Occupation / repose impact
+
+This candidate has a high repose burden because it is the surface occupants see and touch continuously. The prototype should test apparent solidity, impact response, acoustic character, joint hierarchy, shadow behaviour and the way ordinary pictures, furniture and decoration accumulate against it.
+
+Replaceability should not produce an office-partition or exhibition-system character by default. Panel boundaries may be visible where they belong to the architecture, but access logic should not become the dominant reading of the room.
+
 ## Assembly and replacement sequence
 
 Draw and prototype:
@@ -421,7 +439,7 @@ Develop at least one principal-room prototype that does **not** read as a techni
 
 **Evidence:** Strong external precedent / residential implementation unproven  
 **Maturity:** Evidence review complete; walkable multi-finish prototype pending  
-**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 7 Architectural permanence
+**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 7 Architectural permanence; 8 Repose
 
 ## Problem
 
@@ -506,6 +524,12 @@ The floor must feel permanent in use.
 Removal seams may align with board patterns, stone/tile geometry, room axes, borders or thresholds. Brass/bronze may be used selectively at genuine edge, wear or lifting interfaces in the reference house, but it is not required.
 
 The access grid should not force every finish to look like a raised access floor.
+
+## Occupation / repose impact
+
+The platform must disappear perceptually beneath the chosen floor finish during ordinary use. Walking should not reveal a maintenance system through bounce, rocking, rattle, hollow sound or recurrent joint movement. Thresholds and access boundaries should read as deliberate floor architecture rather than as a technical grid.
+
+Prototype evaluation should include quiet-room footfall, furniture loading, repeated lifting/reseating and transitions between finish types. Easy access does not compensate for a floor that feels provisional.
 
 ## Assembly and replacement sequence
 
