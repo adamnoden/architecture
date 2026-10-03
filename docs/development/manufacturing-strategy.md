@@ -12,6 +12,8 @@ It should use a **manufacturing gradient based on service life, replacement freq
 
 The shorter-lived and more replaceable a layer is, the stronger the presumption that it should be made under controlled conditions, documented as a component and assembled reversibly on site.
 
+The strategy also carries a workmanship rule: **demand precision where precision creates value; spend skilled workmanship where workmanship creates value.** Ordinary site variability should be translated by deliberate interfaces rather than pushed downstream as improvised correction.
+
 ## Four-layer construction hierarchy
 
 ### 1. Site-built permanent structure and enduring envelope
@@ -157,6 +159,38 @@ For each assembly ask:
 The answer may still be site fabrication.
 
 A one-off carved stone threshold, plaster repair or site-scribed timber detail may be entirely rational.
+
+## Workmanship allocation
+
+Controlled manufacture is useful where repeatability, interchangeability and future remanufacture matter. It is not automatically superior to skilled site work.
+
+For each repeated operation ask:
+
+- is the result improved by individual judgement and dexterity?
+- is that judgement architecturally visible or technically valuable?
+- could the same quality be achieved more reliably by a datum, jig, template, stop or standard interface?
+- is the site craft solving the intended work, or rescuing unresolved dimensional conflict?
+
+Preserve workmanship of risk where the workmanship itself matters: fine masonry, plaster, stone, decorative metalwork, site-scribed joinery and repair may all justify it.
+
+Move toward workmanship of certainty where variation creates no value: hidden mounting geometry, repeated hole patterns, interchangeable carriers, standard component interfaces and consequential sequences should usually locate themselves more deterministically.
+
+## Tolerance strategy
+
+Every interface between materially different construction processes should identify, where relevant:
+
+1. nominal geometry;
+2. expected incoming tolerance;
+3. controlling datum;
+4. adjustment mechanism and range;
+5. rejection/remediation threshold;
+6. verification before closure.
+
+The desired sequence is:
+
+**site-built work → tolerance envelope → adjustment interface → precise datum → replaceable/manufactured assembly**
+
+The adjustment layer may use designed shims, slots, threaded stand-offs, overlaps, scribable sacrificial pieces or another simple mechanism. It should not become an invitation to arbitrary site invention.
 
 ## Dry assembly
 
