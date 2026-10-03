@@ -515,7 +515,7 @@ For each uncertainty:
 
 ## 22. D3 Trial A — Marble Hill House: preliminary qualitative annotation
 
-**Status:** partial. Good enough to test the schema; not yet metric extraction.
+**Status:** source pack strengthened to A1 archive level; qualitative annotation remains partial and metric extraction is deliberately pending direct sheet access.
 
 ### Sources currently indexed
 
@@ -523,7 +523,10 @@ For each uncertainty:
 - MHH-S02 — MP/MHH0016, measured ground/first-floor plan, 1926, room functions indicated.
 - MHH-S03 — MP/MHH0116 / 0117, publication ground/first-floor measured plans, 1962.
 - MHH-S04 — MP/MHH0032, measured elevations and section, 1950.
-- MHH-S05 — English Heritage 2017 all-floor visitor/research plan, scale bar 0–10 m; explicitly distinguishes later-demolished service wing.
+- MHH-S05 — English Heritage all-floor visitor/research plan; explicitly distinguishes the later-demolished service wing.
+- MHH-S06 — PF/MHH/003, late-1920s/1930s job containing four measured sheets of plans, elevations and sections “as existing”.
+- MHH-S07 — MP/MHH0157 / 0158, 1964 restoration ground-floor plans; useful for distinguishing measured existing fabric from restoration intent.
+- MHH-S08 — PF/MHH archive volume: 563 measured drawings across survey, publication, restoration and later work; use as the source universe rather than treating one twentieth-century drawing as the eighteenth-century truth.
 
 ### Building facts already supportable
 
@@ -534,6 +537,17 @@ For each uncertainty:
 - lowest of three main storeys treated as architectural basement;
 - principal plan accompanied historically by a service wing;
 - current/public research plan explicitly marks that service wing as demolished in 1909.
+
+### Phase frame
+
+The source pack now requires at least four explicit phases:
+
+1. **early design / original-villa target phase, c.1724–29**;
+2. **later eighteenth-century occupation and service development**;
+3. **twentieth-century measured-existing state**;
+4. **twentieth-century restoration / publication reconstruction**.
+
+A measurement may be geometrically precise and still belong to the wrong historical phase. D3 therefore treats **phase confidence and geometric confidence as independent fields**.
 
 ### Ground-floor topology — preliminary
 
@@ -614,41 +628,108 @@ Before metric extraction:
 - measure room dimensions from a source licensed/suitable for research extraction;
 - map opening centres to rooms.
 
-## 23. D3 Trial B — Danson House: source-pack state
+## 23. D3 Trial B — Danson House: preliminary qualitative annotation
 
-**Status:** schema-ready; full plan annotation pending source extraction.
+**Status:** A2 textual/fabric evidence now supports topology, phase and structure observations; scaled plan extraction remains pending before metric geometry.
 
 ### Sources indexed
 
 - DAN-S01 — Historic England monograph *Danson House: The Anatomy of a Georgian Villa*.
 - DAN-S02 — Historic England Research Report 103/2000, 192 pages, building recording / architectural investigation.
 - DAN-S03 — Historic England listing/park research and early estate plans.
-- DAN-S04 — contemporary 1790 principal-floor plan identified in published historical research.
+- DAN-S04 — Michael Angelo Taylor's 1790 principal-floor plan as discussed in the published historical research.
+- DAN-S05 — Roger White, “Danson Park, Bexley”, *Archaeologia Cantiana* 98; useful independent plan/topology discussion but subordinate to the Historic England fabric report.
 
-### Facts already supportable
+### Phase frame
 
-- compact neo-Palladian villa by Robert Taylor;
-- principal apartments on the raised first/principal floor;
-- historical research describes four main reception rooms in the compact core;
-- basement and concealed sub-basement create a vertically layered service condition;
-- detached service wings were added during/soon after the initial campaign and later demolished;
-- canted bays were subsequently heightened.
+The authoritative Historic England research supports a deliberately non-single-date model:
 
-### Research significance
+- **1762–63:** main carcass substantially complete;
+- **c.1765–66:** principal interiors/fitting out;
+- **1770:** William Chambers called in for selected interior enhancement;
+- **before 1787:** Taylor's originally single-storey east/west canted bays heightened;
+- **c.1860s or later:** door from the saloon into the east-of-stair closet inserted;
+- **modern conservation/restoration:** later investigative/reinstatement evidence must not be mistaken for original fabric.
 
-Danson is an excellent stress test for:
+This is a particularly useful case for proving why a grammar corpus needs phase provenance at observation level.
 
-- compactness;
-- vertical hierarchy;
-- service morphology;
-- change during construction;
-- distinguishing original design from later completion/evolution.
+### Principal-floor topology — preliminary
 
-### Blocking D3 task
+The fabric report describes a tightly organised principal floor around an **elliptical, top-lit primary stair**, with a conventional service stair in the adjacent western rectangular bay.
 
-The relevant plan/reconstruction sheets must be extracted from the authoritative report/monograph before we create room IDs or metric/topological edges.
+The four principal rooms form a circuit around that core:
 
-Do not reconstruct the plan from secondary memory.
+- Entrance Hall — north;
+- Dining Room — east;
+- Saloon — south;
+- Library — west.
+
+Critically, the east-of-stair passage was originally a closet and did **not** connect the Entrance Hall directly to the Saloon. The original route from Hall to Saloon therefore passed through either the Dining Room or Library.
+
+Record this as a topological fact for the target phase, not merely an impression of the plan.
+
+Preliminary graph:
+
+~~~text
+                 ENTRANCE HALL
+                  /          \
+          DINING ROOM      LIBRARY
+                  \          /
+                    SALOON
+
+             [ELLIPTICAL STAIR]
+             [SERVICE STAIR W]
+~~~
+
+The diagram expresses connectivity only; it is not metric geometry.
+
+### Plan / elevation negotiation — preliminary
+
+The fabric report records blind windows at several side-wing positions which simulate the external appearance of the other principal-floor windows. It also notes an important conflict: at Danson some were centred internally and therefore did not coincide with the centre of the external elevation, whereas equivalent positions in several other Taylor villas were centred on the exterior face.
+
+This is strong evidence that the annotation schema needs to record **which ordering system is leading** when plan and façade do not agree.
+
+It also means a blind window is not “no opening”. It can be a deliberate compositional device with a distinct interior/exterior state.
+
+### Structural reading — preliminary
+
+The Historic England fabric investigation gives unusually useful direct evidence that architectural room geometry and physical structure interlock.
+
+In the Library, the floor frame includes a long north–south main beam spanning between the jambs of the north and south windows, with principal/common joists running east–west and continuing into the bay.
+
+This should be annotated as evidence for H6 — structure and grammar can co-evolve — **not** as a claim that G-01 should reproduce this exact framing solution.
+
+### Candidate observations
+
+**OBS-DAN-001**  
+A compact principal floor can be organised as a room circuit around a dominant circulation core rather than as a simple corridor tree.
+
+**OBS-DAN-002**  
+The lack of an original Hall→Saloon shortcut makes ceremonial/topological sequence architecturally meaningful; adjacency alone is insufficient to describe the plan.
+
+**OBS-DAN-003**  
+Primary and service stairs can be closely paired while remaining functionally and architecturally distinct.
+
+**OBS-DAN-004**  
+Plan and elevation can impose different centring logics on the same nominal opening position. G-01 needs directional plan/elevation-coupling annotations rather than assuming perfect alignment.
+
+**OBS-DAN-005**  
+Blind windows can carry façade grammar without being spatial openings. Absence/closure must therefore be representable as an intentional architectural state.
+
+**OBS-DAN-006**  
+The Library framing provides a concrete precedent for reading structural support paths alongside room/opening order.
+
+### D3 gaps
+
+Before metric extraction:
+
+- obtain/directly inspect the highest-confidence reconstructed principal-floor and section sheets;
+- assign stable room/opening IDs against those sheets;
+- measure only from a reliable scaled source;
+- reconcile the 1790 published plan with fabric evidence where they diverge;
+- distinguish original opening intent from executed blind-window revisions.
+
+Do not infer missing dimensions from secondary diagrams.
 
 ## 24. D3 Trial C — 76 Dean Street: preliminary qualitative annotation
 
@@ -657,8 +738,10 @@ Do not reconstruct the plan from secondary memory.
 ### Sources indexed
 
 - DS76-S01 — Historic England Grade II* listing.
-- DS76-S02 — Survey of London Vol. XXXIII, cited by the listing.
+- DS76-S02 — *Survey of London* Vols. 33–34, St Anne Soho, cited by the listing and available through the Survey of London/British History Online corpus.
 - DS76-S03 — Historic England early Georgian townhouse interpretive material.
+- DS76-S04 — Historic England Archive SN00359, *Details, Elevation, Plan, Section*, from the LCC/GLC Historic Buildings Survey Notes; catalogue record located, image not exposed by the archive page.
+- DS76-S05 — V&A E.371-2003, Greater London Council record print of 76 Dean Street containing ground- and first-floor plans with scale bar; source located for acquisition/inspection, not yet used for metric claims.
 
 ### Facts already supportable
 
@@ -702,15 +785,18 @@ Principal/service circulation distinction can coexist within a compact double-pi
 
 ### D3 gaps
 
-- retrieve Survey of London plan material;
+- acquire/inspect the located GLC/V&A plan reproduction and Historic England SN00359 material at usable resolution;
+- reconcile those drawings with the Survey of London account;
 - establish room functions by floor;
 - map stairs/doors/topological depth;
 - measure bay/opening geometry only from reliable scaled source;
 - distinguish original from later façade/interior alterations.
 
+The source gap has therefore narrowed from “does a useful plan exist?” to **“obtain and phase-check the located plan evidence before extracting geometry.”**
+
 ## 25. Schema trial result
 
-The schema survives the first qualitative pass, but two refinements are now clearly necessary.
+The schema survives the first qualitative pass, but four refinements are now clearly necessary.
 
 ### Refinement 1 — symmetry must be scoped
 
@@ -731,16 +817,46 @@ A doorway, wing or room topology may belong to a different phase from the rest o
 
 Future annotations should allow an observation to reference a phase explicitly.
 
+### Refinement 3 — plan/elevation coupling needs direction
+
+A generic field such as “plan and elevation are coupled” is insufficient.
+
+For a shared condition, record where evidence permits:
+
+- **MUTUAL** — the two views appear resolved together;
+- **PLAN_LEADS** — internal/spatial order governs the exterior position;
+- **ELEVATION_LEADS** — façade order governs despite internal inconvenience;
+- **CONFLICT / COMPROMISE** — neither system is perfectly satisfied;
+- **UNKNOWN** — evidence does not justify a directional reading.
+
+Danson's blind-window evidence demonstrates why this distinction matters.
+
+### Refinement 4 — intentional absence is architectural data
+
+The schema must distinguish:
+
+- true opening;
+- blind/simulated opening;
+- prohibited opening;
+- retained solid wall field;
+- void / reserved clear zone;
+- unknown condition.
+
+A grammar of placement alone cannot describe architecture whose order depends partly on what is deliberately **not** opened or occupied.
+
 These are exactly the kinds of discoveries D3 is meant to produce before software exists.
 
 ## 26. Next D3 action
 
-1. complete Marble Hill source-pack phase reconciliation;
-2. obtain/extract Danson principal-floor and section evidence;
-3. retrieve Survey of London material for 76 Dean Street;
-4. fill the same schema for all three;
-5. compare topology/hierarchy before any ratio analysis;
-6. only then begin candidate-rule register C-016C.
+1. obtain direct sheet/image access for the indexed Marble Hill A1 measured sources and complete phase reconciliation;
+2. extract/inspect the Danson principal-floor and section drawings that correspond to the now-indexed textual fabric evidence;
+3. acquire/inspect the located 76 Dean Street GLC/V&A and Historic England survey drawings;
+4. assign stable room/opening IDs and complete the same topology/hierarchy fields for all three;
+5. compare topology/hierarchy and plan/elevation authority **before** any ratio analysis;
+6. then begin D5 metric extraction from phase-checked scaled sources;
+7. only after D3–D6 evidence exists begin candidate-rule promotion.
+
+No G-01 rule should yet be promoted.
 
 No G-01 rule should yet be promoted.
 

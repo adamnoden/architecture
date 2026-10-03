@@ -268,7 +268,7 @@ Required distinction:
 
 **Output:** architectural-grammar position paper, followed eventually by one explicit grammar family.
 
-**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/method in the [G-01 Research Brief](g01-research-brief.md), D1/D2 in the [G-01 Corpus and Source-Quality Register](g01-corpus-register.md), and D3 annotation contract/trials in the [G-01 Precedent Annotation Schema](g01-annotation-schema.md). Active work is source-phase reconciliation and completion of the three trial annotations before candidate-rule extraction.
+**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/method in the [G-01 Research Brief](g01-research-brief.md), D1/D2 in the [G-01 Corpus and Source-Quality Register](g01-corpus-register.md), and D3 annotation contract/trials in the [G-01 Precedent Annotation Schema](g01-annotation-schema.md). D3 source work has now materially advanced: Marble Hill has an indexed A1 measured-drawing source universe; Danson has A2 topology, phase, blind-window and structural evidence extracted; 76 Dean Street has survey-plan sources located but not yet acquired at usable resolution. Active work remains direct source acquisition, phase reconciliation and comparable room/opening annotation before D5/D6 or candidate-rule promotion.
 
 ### W8 — Structural semantics
 

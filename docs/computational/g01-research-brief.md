@@ -767,11 +767,17 @@ The first annotation trials are:
 
 ## 20. Immediate next action
 
-The next concrete task is **D3: acquire/index the three trial source packs and test the annotation schema end-to-end**.
+The live task remains **D3**, but source discovery is now sufficiently advanced to make the next step more precise:
+
+1. obtain direct usable copies of the already-indexed Marble Hill measured sheets and reconcile target phase;
+2. extract the Danson principal-floor/section drawings corresponding to the A2 fabric evidence already annotated;
+3. acquire the located 76 Dean Street GLC/V&A and Historic England survey drawings;
+4. complete comparable topology/hierarchy/opening IDs across all three;
+5. only then begin D5 dimensional extraction and D6 plan/elevation coupling analysis.
 
 Do not begin by choosing room ratios.
 
-Begin by annotating architectural relationships from evidence.
+The next advance must come from **phase-checked architectural relationships and measured evidence**, not a more elaborate theory.
 
 ---
 

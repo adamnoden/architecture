@@ -281,7 +281,7 @@ Acquire/index:
 - later restoration drawings only where needed to distinguish original versus restored condition;
 - authoritative room-history/context source.
 
-**Status:** archive IDs confirmed.
+**Status:** **A1 SOURCE UNIVERSE INDEXED.** MP/MHH0016, MP/MHH0116/0117, PF/MHH/003 and 1964 restoration-plan records are identified; next step is direct sheet access + phase reconciliation before metrics.
 
 #### Danson — DAN-PACK-01
 
@@ -292,7 +292,7 @@ Acquire/index:
 - identify highest-confidence reconstructed original plan/elevations;
 - distinguish original Taylor design from later bay heightening and Victorian changes.
 
-**Status:** core reports confirmed.
+**Status:** **A2 TEXT/FABRIC EXTRACTION ACTIVE.** Principal-floor circuit, stair/service topology, blind-window plan/elevation conflict and Library floor-frame evidence are now indexed from the conservation research; scaled drawing extraction remains required for room/opening IDs and metrics.
 
 #### 76 Dean Street — DS76-PACK-01
 
@@ -304,7 +304,7 @@ Acquire/index:
 - floor hierarchy evidence;
 - original versus later alterations.
 
-**Status:** descriptive sources confirmed; measured source retrieval open.
+**Status:** **PLAN SOURCES LOCATED; ACQUISITION OPEN.** Historic England SN00359 records plan/elevation/section material; V&A E.371-2003 records GLC ground-/first-floor plan print. Neither is yet used for metric claims.
 
 ### Priority 2 — derivation cases
 
@@ -445,12 +445,16 @@ The immediate task is to upgrade the three trial source packs rather than expand
 
 See [G-01 Precedent Annotation Schema](g01-annotation-schema.md).
 
-The first pass has already forced two useful model refinements:
+The source-pack pass has already forced four useful model refinements:
 
 - symmetry must be represented with explicit domain/scope rather than a single building-level boolean;
-- architectural observations must carry historical-phase provenance because a geometrically authoritative drawing may represent a later state.
+- architectural observations must carry historical-phase provenance because a geometrically authoritative drawing may represent a later state;
+- plan/elevation coupling needs directional states rather than a generic “aligned” flag;
+- deliberate absence/closure (for example a blind window or protected solid field) must be representable as architectural data.
 
-Metric extraction and full topology remain incomplete and should not be inferred from the preliminary notes.
+Danson now supports a preliminary topology/structure annotation from A2 fabric evidence. Marble Hill has a strong A1 archive source universe indexed. At 76 Dean Street the problem is no longer locating whether plan evidence exists, but acquiring and phase-checking the identified survey material.
+
+Metric extraction and complete comparable topology remain incomplete and should not be inferred from the preliminary notes.
 
 ---
 
