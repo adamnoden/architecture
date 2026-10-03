@@ -268,7 +268,7 @@ Required distinction:
 
 **Output:** architectural-grammar position paper, followed eventually by one explicit grammar family.
 
-**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/corpus methodology established in the [G-01 Research Brief](g01-research-brief.md). The grammar-system architecture is defined; evidence extraction for the first actual grammar is now the active task.
+**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/method in the [G-01 Research Brief](g01-research-brief.md) and D1/D2 established in the [G-01 Corpus and Source-Quality Register](g01-corpus-register.md). The active task is source-pack acquisition and D3 annotation trials for Marble Hill, Danson and 76 Dean Street.
 
 ### W8 — Structural semantics
 
@@ -586,8 +586,10 @@ These items should not be lost even if priorities change.
 | C-014 | Define initial supported-domain candidates | C-002,C-006 | open |
 | C-015 | Research architectural grammars and proportion deeply | W1 | initial foundation complete; corpus research continues |
 | C-016 | Define layered architectural-grammar model | C-015 | first draft |
-| C-016A | Define G-01 scope and precedent corpus strategy | C-015,C-016 | first draft |
-| C-016B | Create semantic annotation schema for precedent corpus | C-002,C-016A | first draft |
+| C-016A | Define G-01 scope and precedent corpus strategy | C-015,C-016 | complete v0.1 |
+| C-016A1 | Build G-01 corpus + source-quality register | C-016A | complete v0.1 |
+| C-016A2 | Acquire/index source packs for Marble Hill, Danson and 76 Dean Street | C-016A1 | active |
+| C-016B | Create semantic annotation schema for precedent corpus | C-002,C-016A | first draft; trial pending |
 | C-016C | Extract candidate topology/hierarchy/proportion/elevation rules | C-016B | open |
 | C-016D | Mutation-test candidate grammar against strong precedents and near-misses | C-016C | open |
 | C-016E | Draft first executable-independent G-01 rule specification | C-016D | open |
@@ -655,7 +657,7 @@ Unless new evidence changes the order, the next non-implementation sequence shou
 
 1. deepen the **formal architectural model** through worked examples;
 2. harden the **validity / obligation / evidence** model;
-3. build the **G-01 corpus + source-quality register**, then derive candidate grammar rules and mutation tests;
+3. acquire the **G-01 trial source packs** and run D3 semantic annotation on Marble Hill, Danson and 76 Dean Street;
 4. define candidate **supported domains**;
 5. formalise the first **structural + boundary slice**;
 6. design and execute the **paper compilation**.

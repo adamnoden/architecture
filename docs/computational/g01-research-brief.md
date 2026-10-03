@@ -751,13 +751,25 @@ Possible legitimate outcome:
 
 That would be progress.
 
+## Corpus register status
+
+D1/D2 are now established in [G-01 Corpus and Source-Quality Register](g01-corpus-register.md).
+
+The seed corpus has been stratified and graded by evidence quality. A derivation/hold-out split has been declared before metric analysis to reduce overfitting.
+
+The first annotation trials are:
+
+1. Marble Hill House;
+2. Danson House;
+3. 76 Dean Street.
+
 ## 20. Immediate next action
 
-The next concrete task is **D1/D2: build the corpus and source-quality register**.
+The next concrete task is **D3: acquire/index the three trial source packs and test the annotation schema end-to-end**.
 
 Do not begin by choosing room ratios.
 
-Begin by choosing evidence.
+Begin by annotating architectural relationships from evidence.
 
 ---
 
