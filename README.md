@@ -30,6 +30,7 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 - [Tectonic architectural language](docs/reference-house/tectonic-architectural-language.md) — Georgian interface grammar and restrained functional brass/bronze language for the worked house.
 
 ### Research and options appraisals
+- [Candidate hardening decision matrix](docs/research/candidate-pattern-hardening-summary.md) — current evidence-backed direction, kill conditions and next decision sequence for all four experimental patterns.
 - [Seated floor structure options](docs/research/seated-floor-structure-options.md) — current structural interpretation and connection-family appraisal.
 - [Replaceable wall system options](docs/research/replaceable-wall-system-options.md) — backplane, removable lining and plaster benchmark study.
 - [Finish-agnostic floor platform options](docs/research/finish-agnostic-floor-platform-options.md) — residential adaptation of removable dense-mineral floor platforms across timber, tile and stone finishes.
