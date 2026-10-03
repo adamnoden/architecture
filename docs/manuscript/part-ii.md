@@ -1,7 +1,7 @@
 # The Long-Life House
 ## Part II — Architecture of the Platform
 
-**Draft v0.2 — tectonic and reversible-assembly integration; evidence-hardened working prose**
+**Draft v0.3 — repose / low-vigilance integration; evidence-hardened working prose**
 
 ---
 
@@ -57,6 +57,18 @@ The governing structural principle is:
 > **Deterministic load paths; bounded freedom of movement.**
 
 The building should be highly legible about where loads go and where restraint is required. It should be equally deliberate about movements that are harmless and therefore need not be suppressed.
+
+## Two kinds of structural legibility
+
+There is an important distinction between **engineering legibility** and **perceptual structural legibility**.
+
+Engineering legibility concerns the real building: the load path, restraint, bearings, ties and movement must be clear enough to calculate, detail, inspect and alter safely.
+
+Perceptual structural legibility concerns what the occupied architecture appears to be doing. The two need not be identical. A concealed beam may carry a wall; reinforcement may make a masonry opening possible; a frame may sit behind a finished surface. Principle 8 does not require literal structural exposure.
+
+It does, however, create a review question for principal domestic spaces: **does the visible architecture present a plausible account of equilibrium, or does it depend on apparent precariousness for its effect?**
+
+Vision research indicates that people rapidly infer support, stability, mass and gravity from scenes. The further claim—that visually settled construction contributes to long-duration domestic repose—is treated here as an architectural hypothesis rather than a demonstrated physiological law. The reference house therefore prefers apparent settlement without pretending that the visible finish is a structural diagram.
 
 ## Movement is ordinary
 
@@ -363,6 +375,16 @@ This is an order of operations, not an ideology.
 
 Mechanical ventilation can be the correct solution in an airtight house. Cooling can be justified where modelling demonstrates a need. Heat pumps, controls and automated shading can materially improve performance. The doctrine's concern is that active systems should not be forced to compensate for avoidable architectural problems, and that their eventual maintenance and replacement should have been anticipated.
 
+## Environmental control is also agency
+
+Comfort is not only the delivery of a target condition. Research on indoor environments repeatedly identifies **perceived control** as relevant to occupant satisfaction.
+
+The architectural implication is modest but important. Where practical, an occupant should be able to understand and alter the immediate condition of a room without negotiating an opaque building-management system. An operable window, local shade, closing door, intelligible thermostat, dimmable light or manual override can matter even when automation performs most routine control.
+
+This is not an argument against automation. It is an argument against making ordinary comfort dependent on a system whose state and failure mode are unintelligible to the person living with it.
+
+Privacy is a related form of agency. The ability to close a room, moderate a view, withdraw from household noise or occupy a less exposed position should be treated as part of the environmental brief where the room programme calls for it.
+
 ## Future climate
 
 A house intended to last for generations should not be tuned only to a historical weather file.
@@ -504,6 +526,18 @@ The alternative is not a completely demountable interior. That would create its 
 The proposition is more selective:
 
 > **The permanent building should provide a limited number of durable interfaces through which a much larger number of shorter-lived interior assemblies can attach, move and change.**
+
+## Repose constrains technical expression
+
+Replaceability is not permission to turn the dwelling into a permanently visible maintenance diagram.
+
+Access seams, removable trims, service routes, labels, grilles and fixing infrastructure should be hierarchically subordinate to the room unless there is a deliberate architectural reason for them not to be. The room may reveal how it is made; it should not require the occupant to keep reading its technical systems.
+
+The test is not whether every interface can be hidden. It is whether the collection of interfaces produces a coherent domestic field.
+
+> **A house may delight attention without continually demanding it.**
+
+This creates a useful restraint on the platform doctrine itself. A technically elegant system that causes persistent rattle, glare, visual competition, acoustic leakage, fragile-feeling surfaces or an atmosphere of provisional fit-out has failed at the level of occupation even if it is easy to maintain.
 
 ## The attachment hierarchy
 
@@ -744,6 +778,9 @@ A long-life building should prove, at the beginning of its life, that it can be 
 - No universal preference for removable finishes where a conventional durable assembly performs better.
 - No assumption that access is beneficial unless fire, acoustic, moisture, airtightness, pest and security boundaries are restored.
 - No claim that a visible external tell-tale is the universal form of safe leak detection.
+- No claim that perceptual structural legibility has been shown directly to reduce physiological stress in homes; it remains a qualified architectural inference from intuitive-physics research.
+- No claim that prospect-refuge theory, curvature preference, historical style or any specific proportion provides a universal neurological rule for domestic comfort.
+- No claim that repose means low visual complexity, minimalism or uniform calm; coherence and fascination can coexist.
 
 ## Evidence anchors for final footnoting
 
@@ -758,6 +795,14 @@ A long-life building should prove, at the beginning of its life, that it can be 
 - RIBA — *Plan for Use Guide* (layered Building Manual and post-handover information).
 - Building Safety Regulator — golden thread (current, usable, accessible, transferable information; cited only as precedent, not domestic legal duty).
 - RICS Whole Life Carbon Assessment (maintenance, repair, replacement and refurbishment within use-stage carbon).
+- Evans & McCoy (1998), *When Buildings Don't Work* — stress heuristic; stimulation, coherence, affordance, control and restoration; used with the authors' own evidential caution.
+- Coburn et al. (2020), *Cortex* — coherence, fascination and hominess as major dimensions of interior response.
+- Hellwig (2015), *Building Research & Information* — conceptual treatment of perceived control in indoor environments.
+- Macedo, Ornstein & Elali (2022), *Journal of Housing and the Built Environment* — systematic review of privacy in housing.
+- Bi & Yildirim (2026), *Annual Review of Vision Science* — intuitive physics as rapid, spontaneous visual processing; basis for the qualified structural-legibility hypothesis.
+- Jamrozik et al. (2024), *Journal of Environmental Psychology* — systematic review of restorative effects of daylight indoors.
+- Dosen & Ostwald (2016), *City, Territory and Architecture* — mixed quantitative evidence for prospect-refuge theory; guardrail against overclaim.
+- Current synthesis: [Repose and Low Vigilance — Evidence Note](../research/repose-and-low-vigilance.md).
 
 ### Workmanship robustness / tolerance / assembly
 - BS 5606:2022, *Accuracy and tolerance in design and construction — Guide* — project strategy for accuracy/tolerance, achievable construction accuracy, verification and control.
