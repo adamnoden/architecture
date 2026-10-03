@@ -211,6 +211,8 @@ The central derived object is the **load-path graph**.
 
 A semantic structural path should exist before detailed finite-element modelling is considered.
 
+See [Structural Semantics](structural-semantics.md), which separates physical structural fabric, structural topology and analytical idealisation and explicitly rejects load-path continuity as sufficient proof of capacity.
+
 ### E. Boundary entities
 
 A boundary should be first-class rather than inferred casually from visible materials.
@@ -255,6 +257,8 @@ One physical assembly may carry several boundaries.
 One boundary may cross many physical assemblies.
 
 That many-to-many relationship is precisely why boundary should not be reduced to a wall property.
+
+See [Boundary Semantics](boundary-semantics.md) for the first model of overlapping weather, thermal, air, moisture, fire, acoustic and related boundary graphs.
 
 ### F. Service-system entities
 

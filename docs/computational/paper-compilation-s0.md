@@ -281,6 +281,8 @@ The notation is illustrative.
 
 ## 8. Obligation families S0 must generate
 
+See [Structural Semantics](structural-semantics.md) and [Boundary Semantics](boundary-semantics.md) for the v0.1 domain models behind the structural and boundary obligation families.
+
 ### O-MOD — model integrity
 
 Examples:
@@ -605,8 +607,8 @@ Simplify the conceptual architecture first.
 
 Before executing S0 fully:
 
-- define first structural semantic/proof model far enough to represent the joist/wall/opening obligations honestly;
-- define first boundary semantic model;
+- **structural semantic model: v0.1 established**; select actual S0 proof envelopes/evidence families;
+- **boundary semantic model: v0.1 established**; instantiate the actual S0 wall/window/floor boundary graph;
 - select one provisional England-new-dwelling compiler target snapshot/coverage for the obligations being exercised;
 - freeze a nominal S0 geometry package;
 - state all assumptions;

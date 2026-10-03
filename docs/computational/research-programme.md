@@ -293,7 +293,7 @@ Do not attempt arbitrary structural engineering initially.
 
 **Output:** structural semantic model and definition of supported proof envelope.
 
-**Current state:** partly sketched in the concept paper only.
+**Current state:** conceptual v0.1 established in [Structural Semantics](structural-semantics.md). Exact S0 proof envelopes/member families remain open.
 
 ### W9 — Boundary and building-physics semantics
 
@@ -316,7 +316,7 @@ This work has direct overlap with existing Long-Life House doctrine.
 
 **Output:** boundary ontology / graph and obligation patterns.
 
-**Current state:** architectural concepts exist; formalisation open.
+**Current state:** conceptual v0.1 established in [Boundary Semantics](boundary-semantics.md). S0 wall/window/floor transition graph remains to be instantiated.
 
 ### W10 — Service-network and maintenance semantics
 
@@ -603,9 +603,15 @@ These items should not be lost even if priorities change.
 | C-016C | Extract candidate topology/hierarchy/proportion/elevation rules | C-016B | open |
 | C-016D | Mutation-test candidate grammar against strong precedents and near-misses | C-016C | open |
 | C-016E | Draft first executable-independent G-01 rule specification | C-016D | open |
-| C-017 | Formalise structural support/load graph | C-002 | open |
+| C-017 | Formalise structural support/load graph | C-002 | conceptual v0.1 |
+| C-017A | Separate physical/topological/analytical structural representations | C-017 | first draft |
+| C-017B | Define S0 structural obligation set | C-017 | first draft |
 | C-018 | Define first supported structural proof envelope | C-017,C-014 | open |
-| C-019 | Formalise critical boundary graph | C-002 | open |
+| C-018A | Select S0 I-joist/hanger evidence family | C-018 | open |
+| C-018B | Select S0 opening-head/lintel evidence family | C-018 | open |
+| C-019 | Formalise critical boundary graph | C-002 | conceptual v0.1 |
+| C-019A | Instantiate S0 wall/window/floor boundary graph | C-019,C-030 | open |
+| C-019B | Define first supported service-penetration boundary family | C-019 | open |
 | C-020 | Formalise service network + maintenance volumes | C-002 | open |
 | C-021 | Formalise interface/tolerance model | C-002 | open |
 | C-022 | Map doctrine principles to formal predicates/obligations | C-006 | open |

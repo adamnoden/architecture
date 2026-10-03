@@ -35,13 +35,19 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 
 7. [Compiler Targets](compiler-targets.md)
 
-8. [Supported Domain](supported-domain.md)  
+8. [Structural Semantics](structural-semantics.md)  
+   Separates physical structure, structural topology and analytical idealisation; defines load-path semantics, proof envelopes and S0 structural obligations.
+
+9. [Boundary Semantics](boundary-semantics.md)  
+   Models air, thermal, weather, moisture, fire, acoustic and related boundaries as overlapping first-class graphs with typed transitions and penetrations.
+
+10. [Supported Domain](supported-domain.md)  
    Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.
 
    - [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) — exact first manual integration test: wall/window/floor/service slice, obligations, evidence, outputs and deliberate mutations.  
    Defines the versioned regulatory/normative environment against which compilation occurs, beginning conceptually with England.
 
-9. [Prior Art Map](prior-art-map.md)  
+11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.
 
 ## Working dependency order
