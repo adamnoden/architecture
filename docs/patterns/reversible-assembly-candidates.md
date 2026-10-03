@@ -5,6 +5,8 @@
 
 These patterns are intentionally demanding. They should be challenged by the architect, structural engineer, services engineer, building physicist, acoustic consultant and relevant fabricators before they are treated as project requirements.
 
+They are also subject to a **workmanship-robustness gate**. Before promotion, each candidate must demonstrate how credible site variability reaches a controlling datum; how adjustment is bounded; when preceding work must instead be remediated; and whether a competent installer unfamiliar with the design can execute the intended sequence from the issued information without undocumented improvisation.
+
 ---
 
 # Candidate 01 — Seated Floor Structure

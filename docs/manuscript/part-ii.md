@@ -88,6 +88,56 @@ This hierarchy matters because a nominally “reversible” joint can still be d
 
 Every interface therefore carries a **boundary ledger**: structure, fire, smoke, sound, air, vapour, bulk water, pests and security. Only the boundaries that apply need be designed, but none may be silently sacrificed for access.
 
+## Workmanship robustness
+
+The drawn junction is an idealised geometry. The built junction is an encounter between materials and processes with different achievable accuracies.
+
+British tolerance guidance treats this as a design-management problem rather than something to be left to the final trade. The important question is not merely whether each component lies within its own permitted deviation, but whether the **assembly still works when credible deviations meet**. Research into construction tolerance management reaches the same conclusion: tolerance problems are strongest when identified, planned, communicated and measured before assembly rather than corrected ad hoc on site.
+
+The project uses **workmanship robustness** to describe this wider property.
+
+> **A robust detail should survive ordinary competent workmanship without requiring improvised correction, while still making poor or out-of-range work visible.**
+
+This is not a call for loose construction. It is a call for deliberate allocation of precision.
+
+A useful interface defines a **tolerance strategy** with at least five parts:
+
+1. **incoming condition** — what dimensional or geometric variation can credibly arrive from preceding work?
+2. **controlling datum** — which plane, axis, level or point governs the finished relationship?
+3. **adjustment capacity** — where and by what mechanism is acceptable variation absorbed?
+4. **remediation threshold** — when is the incoming work too far out to be adjusted legitimately?
+5. **verification** — how is the condition checked before later work conceals it?
+
+This produces a recurring hierarchy:
+
+**site-built work → known tolerance envelope → deliberate adjustment interface → precise datum → precise assembly → architectural cover**
+
+The hierarchy is not mandatory at every junction. It is especially useful where relatively coarse permanent construction meets a more precise replaceable layer: masonry to window, masonry to backplane, structural floor to removable platform, wet-room substrate to manufactured joinery.
+
+Traditional architectural elements can participate in this work. An architrave can overlap the imperfect meeting of frame and wall. A skirting can cover the residual perimeter of a floor. A cornice can give depth to the wall/ceiling junction. A rebate, scribe or cover moulding can allow two materials to meet without pretending that both arrived at mathematical perfection. These devices become stronger, not weaker, when their architectural depth coincides with a real constructional need.
+
+There is also a human-error dimension. Lean-construction research has applied the manufacturing idea of mistake-proofing to building systems: where worthwhile, products and details can be designed so that an incorrect assembly is impossible, awkward, conspicuous or detected before it propagates. The hierarchy should be proportional:
+
+1. remove unnecessary operations;
+2. simplify the operation;
+3. constrain orientation or position where useful;
+4. provide one clear datum or sequence;
+5. expose the result to inspection before concealment;
+6. make correction local and reversible;
+7. define when work must stop and be remediated rather than improvised around.
+
+The phrase “install carefully” should not be the primary control for a recurring high-consequence ambiguity that could have been removed by geometry.
+
+Human-factors practice makes a related point: reliability improves when the task, equipment and interface are designed around the people who must actually use them, and when those users are involved early. A repeated non-standard architectural system should therefore be trialled by a representative competent installer who did not design it. Every question, workaround and temptation to reach for unplanned foam, filler, adhesive, packers or extra fixings is information about the design.
+
+That test protects the project from a particular kind of prototype theatre: a detail that works beautifully only because its inventor already knows how it is supposed to work.
+
+Workmanship robustness does not eliminate craft. David Pye's distinction between *workmanship of risk* and *workmanship of certainty* is useful precisely because the project needs both. A hand-scribed timber junction may be better because it carries skilled judgement. A brick elevation may gain its character from the mason's hand. The error is not allowing workmanship to matter; it is spending scarce craft merely to compensate for unresolved interfaces that could have been designed to locate, adjust and verify themselves.
+
+A concise rule follows:
+
+> **Demand precision where precision creates value. Spend workmanship where workmanship creates value.**
+
 ## The window as a model interface
 
 A window demonstrates the principle particularly clearly.
@@ -708,3 +758,11 @@ A long-life building should prove, at the beginning of its life, that it can be 
 - RIBA — *Plan for Use Guide* (layered Building Manual and post-handover information).
 - Building Safety Regulator — golden thread (current, usable, accessible, transferable information; cited only as precedent, not domestic legal duty).
 - RICS Whole Life Carbon Assessment (maintenance, repair, replacement and refurbishment within use-stage carbon).
+
+### Workmanship robustness / tolerance / assembly
+- BS 5606:2022, *Accuracy and tolerance in design and construction — Guide* — project strategy for accuracy/tolerance, achievable construction accuracy, verification and control.
+- Saeed Talebi, Lauri Koskela, Patricia Tzortzopoulos Fazenda and Michail Kagioglou, “Tolerance Management in Construction: A Conceptual Framework”, *Sustainability* 12(3), 2020 — proactive tolerance management and assembly compatibility.
+- Iris D. Tommelein, “‘Poka Yoke’ or Quality by Mistake Proofing Design and Construction Systems”, IGLC16, 2008 — mistake-proofing applied to AEC products, details and systems.
+- HSE, *Human factors: Design* and *Maintenance error* — design for operability/maintainability and involvement of users and maintenance personnel.
+- CIRIA SP26, *Buildability: an assessment* — buildability as design that facilitates construction subject to the completed building's requirements.
+- David Pye, *The Nature and Art of Workmanship* — workmanship of risk and workmanship of certainty.

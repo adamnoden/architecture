@@ -158,7 +158,7 @@ Selective permanence requires a physical framework. This book uses the term **ar
 
 The word *platform* is deliberate but should not be mistaken for a technological aesthetic. It does not imply exposed services, plug-in rooms or visible modularity. It describes the underlying relationship between long-lived architecture and the systems that will change within it.
 
-The platform has four principal parts, joined by a deliberate assembly hierarchy.
+The platform has four principal parts, joined by a deliberate assembly hierarchy. A cross-cutting requirement governs all four: the platform must remain robust when it meets the ordinary variability of construction.
 
 ## Permanent fabric
 
@@ -197,6 +197,22 @@ A cornice may conceal a controlled slip junction between wall and ceiling. An ar
 The visible expression is optional. Not every joint requires brass, a shadow line or a declared seam. The principle concerns performance; the architectural language is project-specific.
 
 A further discipline follows. Support, restraint, movement, sealing, edge protection and finish are different functions. They may sometimes be combined successfully, but the design should not combine them merely because a final layer of plaster, grout or sealant can make the junction look continuous. Required load paths should be explicit. Harmless relative movement should be bounded rather than denied.
+
+## Workmanship robustness
+
+Drawings describe nominal geometry. Buildings are made from materials, processes and human operations that have tolerances. Masonry is not machining; a floor is not perfectly level because a line on a drawing is perfectly horizontal; several individually acceptable deviations can accumulate into an impossible junction.
+
+A long-life platform should therefore be designed not only for change after completion, but for **variation during its making**.
+
+This does not mean lowering standards. It means deciding where accuracy matters and refusing to demand exceptional precision where it creates no value. A site-built wall may be allowed an appropriate tolerance; a sparse adjustable interface can translate that wall into a precise datum; a manufactured lining or window assembly can then reference the datum rather than asking the wall itself to behave like a machined component.
+
+> **Give variation somewhere to go.**
+
+At important interfaces the design should define the incoming tolerance it expects, the datum that controls the finished work, the adjustment available, the limit beyond which the underlying work must be remediated, and the means by which the result is checked before it disappears behind later construction. Adjustment is not a licence for unlimited packing. The distinction between a designed correction and a bodge is that one has an intended range, method and stopping point.
+
+The same discipline applies to human error. Repeated non-standard assemblies should not depend unnecessarily on memory, unusual tools, hidden sequences or constant interpretation by the designer. Where the consequence matters, the correct construction should be comparatively easy to understand, an incorrect condition should be difficult to conceal, and recovery should remain local.
+
+None of this is an argument against craft. Fine brickwork, plasterwork, joinery and stonework can properly depend on judgement and skill because the workmanship itself produces architectural value. The project should spend skilled workmanship there—not on rescuing unresolved dimensional conflicts between systems.
 
 ## Assembly hierarchy
 
@@ -266,7 +282,9 @@ The aim is not purity. It is to prevent the slower layers of the building being 
 
 **Treat junctions between systems, materials and lifespan layers as designed building elements.**
 
-Required load paths and restraint should be deterministic; harmless movement should be given bounded places to occur. Where useful, distinguish support, restraint, movement, sealing, protection and finish. An interface should manage whichever technical obligations apply without asking brittle cosmetic continuity to substitute for the joint.
+Required load paths and restraint should be deterministic; harmless movement should be given bounded places to occur. Where useful, distinguish the functions of support, restraint, movement, sealing, protection and finish rather than asking one brittle junction to perform all of them.
+
+An interface should manage whichever of movement, construction tolerance, fixing, sealing, drainage, acoustic or fire separation, inspection, disassembly and renewal actually apply. Where constructions of different achievable accuracy meet, define the controlling datum, the expected incoming variation, the adjustment capacity and the point beyond which remediation is required. The visual expression may be quiet; the technical relationship should not be accidental.
 
 ## 4. Make foreseeable failure detectable, containable and repairable
 
@@ -284,7 +302,11 @@ Access is more than a hatch. A person needs a route, a working position, isolati
 
 **Prefer widely understood components, standard interfaces and ordinary fabrication methods; concentrate invention at the architectural arrangement and at interfaces that genuinely require it.**
 
-The decisive tests are understandability, breadth of supply or remanufacturability, ordinary tools and interfaces, and independence from proprietary software, consumables and unique mechanisms. The shorter-lived and more replaceable a layer is, the stronger the presumption that it should be manufactured under controlled conditions and assembled reversibly on site.
+The decisive tests are understandability, breadth of supply or remanufacturability, ordinary tools and interfaces, and independence from proprietary software, consumables and unique mechanisms.
+
+Repeated construction should, where practical, be intelligible to an ordinary competent trade without continuous designer interpretation. Critical operations should use clear datums, defined sequences and verifiable outcomes; significant mistakes should be difficult to conceal and straightforward to correct before they propagate.
+
+The shorter-lived and more replaceable a layer is, the stronger the presumption that it should be manufactured under controlled conditions and assembled reversibly on site. This is a presumption rather than a rule: site fabrication remains appropriate where it gives the better whole-life result. Skilled site craft should be preserved where judgement and workmanship create architectural value, not consumed merely to compensate for unresolved interfaces.
 
 ## 7. Let permanence be architectural
 

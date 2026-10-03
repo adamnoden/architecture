@@ -28,7 +28,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
    Long life without generic flexibility; introduce proportional serviceability.
 
 4. **The architectural platform**  
-   Permanent fabric, replaceable systems, designed interfaces, attachment discipline, assembly hierarchy and maintenance geography.
+   Permanent fabric, replaceable systems, designed interfaces, attachment discipline, assembly hierarchy and maintenance geography; introduce workmanship robustness as the requirement that ordinary construction variation be deliberately absorbed rather than exported into site improvisation.
 
 5. **Ten principles**  
    Use the locked public principles; each principle receives a short spread and one primary figure.
@@ -36,7 +36,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
 ## Part II — Architecture of the Platform
 
 6. **The designed interface**  
-   Tectonic honesty; deterministic load paths and bounded movement; separation of support, restraint, movement, sealing and finish; tolerance, fixing, access and replacement.
+   Tectonic honesty; deterministic load paths and bounded movement; separation of support, restraint, movement, sealing and finish; tolerance translation; workmanship robustness; mistake-proofing where consequential; fixing, access and replacement.
 
 7. **Failure architecture**  
    First defence / second consequence; water, overflow, drainage, drying, detection, isolation and recovery.
@@ -79,7 +79,7 @@ perimeter dry zone; rainwater route; kitchen source capture; bathroom extraction
 fixing infrastructure; physical service index.
 
 Every pattern uses:
-problem / forces / principle / diagram / variants / proportionality / boundary debt / permanent-fabric impact / architectural resolution / assembly and replacement sequence / failure modes / evidence / maturity / reference-house choice.
+problem / forces / principle / diagram / variants / proportionality / boundary debt / permanent-fabric impact / construction variability and workmanship / architectural resolution / assembly and replacement sequence / failure modes / evidence / maturity / reference-house choice.
 
 ### Candidate development track
 
@@ -113,7 +113,7 @@ Each major non-standard decision shows:
 
 19. Whole-life value and proportionality  
 20. Design governance and interface ownership  
-21. Standardisation and manufacture according to lifespan  
+21. Standardisation, manufacture and reliable assembly  
 22. Prototype and disassemble before repetition  
 23. Procurement without dilution  
 24. Commission maintainability  

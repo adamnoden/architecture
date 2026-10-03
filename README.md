@@ -10,6 +10,10 @@ A second project axis now governs the physical implementation:
 
 The project pursues **tectonic honesty**: concealment is legitimate; falsification is not. Movement, access, replacement and technical necessity should be resolved through real construction, material and architectural composition rather than cosmetic continuity.
 
+A further cross-cutting requirement is **workmanship robustness**: the design should distinguish where precision matters, where ordinary construction variation is harmless, and where an interface must absorb the difference. Critical assemblies should not depend unnecessarily on exceptional workmanship, designer supervision or improvised site correction.
+
+> **Give variation somewhere to go.**
+
 ## Documents
 
 ### Source corpus
@@ -35,6 +39,7 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 
 ### Research and options appraisals
 - [Preface precedents](docs/research/preface-precedents.md) — historical source selection, cautions and deliberately excluded analogies.
+- [Workmanship robustness](docs/research/workmanship-robustness.md) — research synthesis on tolerance management, buildability, mistake-proofing, human factors and the deliberate allocation of craft.
 - [Candidate hardening decision matrix](docs/research/candidate-pattern-hardening-summary.md) — current evidence-backed direction, kill conditions and next decision sequence for all four experimental patterns.
 - [Primary floor structure baseline](docs/research/primary-floor-structure-baseline.md) — engineered I-joist baseline for the next coordination drawings.
 - [Seated floor structure options](docs/research/seated-floor-structure-options.md) — current structural interpretation and connection-family appraisal.
@@ -64,4 +69,4 @@ The publication distinguishes:
 
 The source doctrine is retained for traceability. New work should be developed in the manuscript, pattern catalogue and project-delivery documents rather than by rewriting v7 in place.
 
-The current major phase is architectural production and validation: tectonic integration, 1:1 prototype development, completion of the strongest pattern families, and a reference-house options appraisal. Candidate reversible assemblies remain explicitly experimental until calculation and prototype work justify promotion.
+The current major phase is architectural production and validation: tectonic integration, workmanship-robustness testing, 1:1 prototype development, completion of the strongest pattern families, and a reference-house options appraisal. Candidate reversible assemblies remain explicitly experimental until calculation, representative-installer testing and prototype work justify promotion.

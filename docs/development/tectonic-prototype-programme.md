@@ -16,7 +16,7 @@ A beautiful panel tested on a bench proves little if the wall behind it, the aco
 
 ## Common acceptance framework
 
-Every candidate prototype should be reviewed against six categories.
+Every candidate prototype should be reviewed against seven categories.
 
 ### 1. Primary performance
 
@@ -96,6 +96,24 @@ Check:
 - tooling;
 - open digital fabrication files where relevant.
 
+### 7. Assembly robustness
+
+Can an ordinary competent installer achieve the intended result when the incoming building is imperfect but within its declared tolerance?
+
+For repeated non-standard assemblies:
+
+- introduce representative dimensional/geometric variation into the prototype background;
+- issue the intended drawings, parts and tools to a competent installer who did not design the system;
+- avoid coaching unless safety or irreversible damage requires intervention;
+- record questions, misunderstandings, sequence changes and improvised materials;
+- verify that the designed adjustment range restores the intended datum;
+- confirm that out-of-range work has an explicit stop/remediation response;
+- confirm that significant errors remain visible before closure.
+
+The trial evaluates the design and information, not the installer.
+
+A prototype that only works because its designer knows the hidden sequence has not passed.
+
 ---
 
 # Prototype P01 — Wall bay
@@ -107,7 +125,7 @@ Check:
 
 A full-height representative principal-room wall bay based on the current W2 hybrid hypothesis, including:
 
-- dense masonry or realistic rigid wall analogue;
+- dense masonry or realistic rigid wall analogue, with at least one deliberately introduced but acceptable plumb/level/set-out deviation for the assembly-robustness trial;
 - permanent parge/air-control treatment where relevant;
 - sparse adjustable architectural backplane;
 - shallow mineral-wool absorption/service zone where justified;
@@ -132,6 +150,9 @@ A full-height representative principal-room wall bay based on the current W2 hyb
 - Does the joint remain acceptable after repeated cycles?
 - Is factory finish superior enough to justify the system?
 - Can damaged components be remanufactured?
+- Can a competent installer unfamiliar with the design establish the correct datum and sequence from the issued information?
+- Does the system absorb the declared background tolerance without filler, arbitrary packing or designer improvisation?
+- Are out-of-range conditions obvious enough to stop rather than conceal?
 
 ## Comparative control
 

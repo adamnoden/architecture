@@ -122,7 +122,7 @@ The building passport is not merely an archive. It is part of the change-control
 
 ---
 
-# 21. Standardisation and manufacture according to lifespan
+# 21. Standardisation, manufacture and reliable assembly
 
 The project favours ordinary parts in extraordinary arrangements.
 
@@ -206,23 +206,90 @@ The doctrine is not an MMC manifesto.
 
 It is a service-life argument.
 
+## Allocate workmanship deliberately
+
+Not every desirable result should be converted into a factory process.
+
+David Pye's distinction between *workmanship of risk* and *workmanship of certainty* is useful here. Some work gains value because the outcome remains partly dependent on the judgement and dexterity of the maker. Other operations gain nothing from that uncertainty and should be located by geometry, tooling, templates or repeatable interfaces.
+
+The project should therefore ask of every important operation:
+
+- does skilled judgement improve the architecture here?
+- or is skill merely being spent to compensate for dimensional conflict, ambiguous information or a badly designed sequence?
+
+Fine masonry, plaster, stone and joinery may properly retain workmanship of risk. Repeated hidden mounting geometry usually should not.
+
+> **Spend workmanship where workmanship creates value.**
+
 ## Tolerance translation
 
 Precision components meet imperfect buildings.
 
 The interface therefore has to translate between them.
 
+For each important repeated interface record:
+
+- the nominal geometry;
+- the credible incoming dimensional/geometric variation;
+- the controlling datum;
+- the designed adjustment range and mechanism;
+- the acceptance limit beyond which the preceding work must be remediated;
+- the inspection or measurement used before closure.
+
 Use, where appropriate:
 
 - adjustment;
-- shims;
+- designed packers or shims;
+- slotted or threaded interfaces;
 - rebates;
 - overlaps;
 - slips;
 - controlled reveals;
 - removable perimeter trims.
 
+Adjustment should be bounded. A 15 mm designed correction range is not permission to solve a 30 mm error with an improvised spacer.
+
 Do not solve tolerance by smearing the last few millimetres with irreversible filler.
+
+## Mistake-proof the consequential operations
+
+Where a repeated operation is easy to misunderstand and the consequence matters, improve the assembly before increasing the instructions.
+
+Prefer, in order:
+
+1. remove unnecessary operations;
+2. reduce part and fastener variety;
+3. make orientation or location self-evident;
+4. use clear datums, stops, gauges or templates;
+5. make completed work inspectable before concealment;
+6. keep foreseeable correction local and reversible;
+7. define a stop/remediation condition for work outside the designed range.
+
+The objective is not an infantilised construction process. It is to reserve judgement for the places where judgement is useful.
+
+A recurring instruction such as “ensure carefully aligned” should trigger a design question: can the assembly establish its own alignment more reliably?
+
+## Representative-installer trial
+
+A repeated non-standard assembly should, where proportionate, be installed at least once by a competent person who did not design it.
+
+Issue the information and intended parts. Do not silently supply the missing logic.
+
+Observe:
+
+- questions asked;
+- sequence errors;
+- extra measuring or marking;
+- unplanned packers, filler, foam, adhesive or fixings;
+- specialist tools not identified in the information;
+- inaccessible operations;
+- ambiguity about datum or orientation;
+- whether an error remains visible before closure;
+- whether the defined recovery method is actually usable.
+
+The trial is not an examination of the installer. It is an examination of the design information and assembly logic.
+
+> **A detail that works only when its designer assembles it is not yet a resolved detail.**
 
 ---
 
