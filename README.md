@@ -33,6 +33,7 @@ This is recorded as a computational expression of the doctrine, not a new govern
 - [Preface — The Obvious, Eventually](docs/manuscript/preface.md) — first-person ideological and narrative foundation for the monograph.
 - [Publication architecture](docs/manuscript/publication-architecture.md) — current book structure.
 - [Governing principles](docs/manuscript/governing-principles.md) — eleven public-facing principles, including repose / low vigilance as a domestic design requirement.
+- [Principle 8 — Design for Repose](docs/manuscript/principle-08-repose.md) — developed publication spread and evidence-bounded review framework, with its primary SVG figure.
 - [Part I](docs/manuscript/part-i.md) — current opening argument.
 - [Part II](docs/manuscript/part-ii.md) — current architecture-of-the-platform chapters.
 - [Part V](docs/manuscript/part-v.md) — making, manufacturing, prototyping, procurement and maintainability testing.
