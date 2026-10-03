@@ -781,7 +781,7 @@ D3 semantic annotation is now closed at v0.1. Source discovery continues because
 2. extract the Danson principal-floor/section drawings corresponding to the A2 fabric evidence already annotated;
 3. acquire the located 76 Dean Street GLC/V&A and Historic England survey drawings;
 4. use those sources to close the remaining D4 topology uncertainties;
-5. begin D5 dimensional extraction and D6 plan/elevation coupling analysis without reopening D3 unless the common annotation contract itself proves defective.
+5. begin D5 dimensional extraction and D6 plan/section/elevation coupling analysis without reopening D3 unless the common annotation contract itself proves defective.
 
 Do not begin by choosing room ratios.
 
