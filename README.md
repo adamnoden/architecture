@@ -69,6 +69,7 @@ This is recorded as a computational expression of the doctrine, not a new govern
 - [Executable Architecture — computational concept](docs/computational/executable-architecture.md) — canonical statement of the constrained-authoring / building-compiler proposition.
 - [Computational research programme](docs/computational/research-programme.md) — master workstreams, grand TODO register, decision gates and implementation stop conditions.
 - [Formal architectural model](docs/computational/formal-architectural-model.md) — conceptual semantic model of overlapping spatial, structural, boundary, service, lifecycle and evidence graphs.
+- [Architectural grammar and proportion](docs/computational/architectural-grammar-and-proportion.md) — position on relational design languages, topology, hierarchy, proportion bands, plan/section/elevation coordination and the boundary between grammar and judgement.
 - [Validity and obligations](docs/computational/validity-and-obligations.md) — compile-status taxonomy, obligation discharge and proof/evidence boundaries.
 - [Compiler targets](docs/computational/compiler-targets.md) — versioned regulatory/normative targets, beginning with England as the first jurisdictional research constraint.
 - [Prior art map](docs/computational/prior-art-map.md) — initial research map across IFC/openBIM, automated compliance, ontologies, shape grammars, digital building control and adjacent systems.

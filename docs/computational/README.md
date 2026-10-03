@@ -20,13 +20,16 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 3. [Formal Architectural Model](formal-architectural-model.md)  
    First conceptual model of the building as overlapping semantic graphs rather than a collection of geometry.
 
-4. [Validity and Obligations](validity-and-obligations.md)  
+4. [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md)  
+   Defines the layered design-language model: topology, hierarchy, ordering, proportional families, plan/section/elevation coordination, evaluation and controlled exception.
+
+5. [Validity and Obligations](validity-and-obligations.md)  
    Defines what kinds of validity exist, what a compile failure means, how obligations are discharged and what a successful compile may legitimately claim.
 
-5. [Compiler Targets](compiler-targets.md)  
+6. [Compiler Targets](compiler-targets.md)  
    Defines the versioned regulatory/normative environment against which compilation occurs, beginning conceptually with England.
 
-6. [Prior Art Map](prior-art-map.md)  
+7. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.
 
 ## Working dependency order
@@ -38,6 +41,9 @@ ARCHITECTURAL DOCTRINE
 FORMAL ARCHITECTURAL MODEL
         │
         ├──────────────► ARCHITECTURAL GRAMMAR
+        │                        │
+        │                        ▼
+        │                SUPPORTED-DOMAIN WORK
         │
         ▼
 VALIDITY + OBLIGATION MODEL

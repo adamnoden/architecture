@@ -268,7 +268,7 @@ Required distinction:
 
 **Output:** architectural-grammar position paper, followed eventually by one explicit grammar family.
 
-**Current state:** open and high priority.
+**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md). The grammar-system architecture is defined; derivation of the first actual grammar remains open and high priority.
 
 ### W8 — Structural semantics
 
@@ -584,8 +584,13 @@ These items should not be lost even if priorities change.
 | C-012 | Determine standards licensing / machine-readable strategy | C-010 | open |
 | C-013 | Distinguish building-regulations target from planning constraints | C-010 | first draft |
 | C-014 | Define initial supported-domain candidates | C-002,C-006 | open |
-| C-015 | Research architectural grammars and proportion deeply | W1 | open |
-| C-016 | Draft first Long-Life House architectural grammar | C-015 | open |
+| C-015 | Research architectural grammars and proportion deeply | W1 | initial foundation complete; corpus research continues |
+| C-016 | Define layered architectural-grammar model | C-015 | first draft |
+| C-016A | Define G-01 scope and precedent corpus | C-015,C-016 | open |
+| C-016B | Create semantic annotation schema for precedent corpus | C-002,C-016A | open |
+| C-016C | Extract candidate topology/hierarchy/proportion/elevation rules | C-016B | open |
+| C-016D | Mutation-test candidate grammar against strong precedents and near-misses | C-016C | open |
+| C-016E | Draft first executable-independent G-01 rule specification | C-016D | open |
 | C-017 | Formalise structural support/load graph | C-002 | open |
 | C-018 | Define first supported structural proof envelope | C-017,C-014 | open |
 | C-019 | Formalise critical boundary graph | C-002 | open |
@@ -650,7 +655,7 @@ Unless new evidence changes the order, the next non-implementation sequence shou
 
 1. deepen the **formal architectural model** through worked examples;
 2. harden the **validity / obligation / evidence** model;
-3. research and draft the **architectural grammar and proportion** position;
+3. derive the first **G-01 architectural grammar** from a controlled precedent corpus and mutation tests;
 4. define candidate **supported domains**;
 5. formalise the first **structural + boundary slice**;
 6. design and execute the **paper compilation**.

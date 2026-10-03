@@ -224,6 +224,88 @@ It does not prove that a grammar produces universally good architecture.
 
 Our system should make the selected grammar explicit and contestable.
 
+## 8A. Palladian computational grammars — a particularly close precedent
+
+Stiny and Mitchell's 1978 **Palladian Grammar** is a direct historical precedent for treating an architectural style as a parametric generative language. Their work generated Palladian villa ground plans and was followed by enumeration and evaluation of possible plans.
+
+Hersey and Freedman's later **Possible Palladian Villas** is even more useful for the present project because it separates several ideas that are often conflated:
+
+- generation from explicit rules;
+- frequency/statistical tendencies in a precedent corpus;
+- dimensional/proportional bounds;
+- plan/facade negotiation;
+- aesthetic evaluation of generated results.
+
+Their computational experiments also challenge a simplistic proportion-first account of Palladian identity. They found that exact canonical room ratios were less determinative than relationships such as symmetry, rectangular subdivision, hierarchy, alignment and opening axes.
+
+### Lesson
+
+The first Long-Life House grammar should be **relational first and numerical second**.
+
+Proportion should probably be represented by admissible ranges and preferred families rather than universal equality constraints.
+
+### Important difference
+
+The proposed Long-Life House system must go beyond stylistic generation by coupling the architectural grammar to:
+
+- structure;
+- boundaries;
+- services;
+- maintenance;
+- construction;
+- regulation;
+- evidence.
+
+This is precisely where the prior art stops being a solution and becomes a foundation.
+
+## 8B. Space Syntax and topological grammar
+
+Space Syntax and Justified Plan Graph methods demonstrate that important architectural properties can be represented independently of metric geometry.
+
+Rooms may be represented as nodes and connections as edges, allowing analysis of:
+
+- depth;
+- centrality;
+- permeability;
+- alternative routes;
+- privacy;
+- access hierarchy.
+
+Research combining Justified Plan Graphs with grammars demonstrates that spatial topology itself can participate in identifying an architectural language.
+
+### Lesson
+
+The Long-Life House grammar should preserve a **spatial-topology layer** before dimensional resolution.
+
+A room is not first a rectangle of a particular size. It is first a semantically meaningful space participating in a network of relationships.
+
+## 8C. Pattern languages — useful warning
+
+Christopher Alexander's pattern language remains relevant as a precedent for transferring architectural knowledge through composable rules.
+
+The critical literature is equally valuable.
+
+Repeated criticisms include:
+
+- overly universal or singular claims about the “right” way to build;
+- weakly defined terms;
+- insufficient empirical validation;
+- rules that can become too controlling;
+- the fact that possessing patterns does not itself guarantee beautiful synthesis.
+
+### Lesson
+
+The Long-Life House should not turn architectural preferences into universal truths.
+
+Every grammar rule needs:
+
+- explicit scope;
+- stated authority;
+- evidence;
+- counterexamples;
+- versioning;
+- a distinction between invariant, preference and judgement.
+
 ## 9. Automated floorplan generation
 
 Research and commercial tools generate floorplans using combinations of:

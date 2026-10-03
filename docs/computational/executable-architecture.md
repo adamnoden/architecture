@@ -653,6 +653,7 @@ Before adding new computational work, consult:
 - [Computational Track index](README.md);
 - [Research Programme](research-programme.md) — master workstreams, grand TODO register, dependency graph and implementation gates;
 - [Formal Architectural Model](formal-architectural-model.md) — semantic entity/relationship model;
+- [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md) — layered architectural-language model and proportion strategy;
 - [Validity and Obligations](validity-and-obligations.md) — what compile success/failure means and how obligations are discharged;
 - [Compiler Targets](compiler-targets.md) — versioned external normative environments;
 - [Prior Art Map](prior-art-map.md) — current reconnaissance and unanswered prior-art questions.
