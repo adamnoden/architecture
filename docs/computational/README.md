@@ -23,6 +23,8 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 4. [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md)  
    Defines the layered design-language model: topology, hierarchy, ordering, proportional families, plan/section/elevation coordination, evaluation and controlled exception.
 
+   - [G-01 Research Brief](g01-research-brief.md) — scope, corpus strategy, annotation schema, candidate hypotheses and mutation-testing method for deriving the first Georgian-derived grammar from evidence rather than intuition.
+
 5. [Validity and Obligations](validity-and-obligations.md)  
    Defines what kinds of validity exist, what a compile failure means, how obligations are discharged and what a successful compile may legitimately claim.
 
