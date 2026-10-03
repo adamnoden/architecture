@@ -1,6 +1,6 @@
 # G-01 Corpus and Source-Quality Register — v0.1
 
-**Status:** D1/D2 reconnaissance complete; source acquisition and annotation now active  
+**Status:** D1/D2 complete v0.1; D3 semantic trial complete v0.1; source acquisition continues for D4/D5/D6  
 **Purpose:** define the first evidence corpus for deriving G-01 and record what each source can legitimately support before any architectural rules are locked.  
 **Related:** [G-01 Research Brief](g01-research-brief.md), [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md)
 
@@ -441,7 +441,13 @@ The immediate task is to upgrade the three trial source packs rather than expand
 
 ### D3 — annotation schema trial
 
-**v0.1 established; qualitative trial active.**
+**v0.1 complete.**
+
+The three trial cases are now recorded separately under [G-01 Trial Case Records](g01-cases/README.md):
+
+- Marble Hill House — semantic v0.1 complete;
+- Danson House — semantic v0.1 complete;
+- 76 Dean Street — semantic v0.1 complete with explicit unknowns.
 
 See [G-01 Precedent Annotation Schema](g01-annotation-schema.md).
 
@@ -454,7 +460,7 @@ The source-pack pass has already forced four useful model refinements:
 
 Danson now supports a preliminary topology/structure annotation from A2 fabric evidence. Marble Hill has a strong A1 archive source universe indexed. At 76 Dean Street the problem is no longer locating whether plan evidence exists, but acquiring and phase-checking the identified survey material.
 
-Metric extraction and complete comparable topology remain incomplete and should not be inferred from the preliminary notes.
+D3 completion does not imply metric completion. Direct source acquisition/phase reconciliation remains active for D4, D5 and D6; measurements or opening alignments must not be inferred beyond the evidence recorded in the case files.
 
 ---
 

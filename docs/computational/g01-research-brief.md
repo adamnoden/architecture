@@ -652,6 +652,8 @@ For each case, what drawings/data are available and how trustworthy they are.
 
 Annotate 3 very different examples end-to-end.
 
+**Status: COMPLETE v0.1.** See [G-01 Trial Case Records](g01-cases/README.md). Completion means the common semantic contract has been applied with explicit UNKNOWN states; it does not mean D5 metrics or D6 coupling analysis are complete.
+
 ### D4 — topology comparison
 
 Generate plan graphs and identify candidate spatial genotypes.
@@ -757,7 +759,7 @@ That would be progress.
 
 D1/D2 are now established in [G-01 Corpus and Source-Quality Register](g01-corpus-register.md).
 
-D3 is established in [G-01 Precedent Annotation Schema](g01-annotation-schema.md), including preliminary qualitative trials on Marble Hill, Danson and 76 Dean Street.
+D3 v0.1 is complete. The canonical contract remains [G-01 Precedent Annotation Schema](g01-annotation-schema.md), while the three completed semantic trial records live under [G-01 Trial Case Records](g01-cases/README.md).
 
 The seed corpus has been stratified and graded by evidence quality. A derivation/hold-out split has been declared before metric analysis to reduce overfitting.
 
@@ -769,13 +771,13 @@ The first annotation trials are:
 
 ## 20. Immediate next action
 
-The live task remains **D3**, but source discovery is now sufficiently advanced to make the next step more precise:
+D3 semantic annotation is now closed at v0.1. Source discovery continues because D4–D6 require stronger plan/section/elevation evidence. The next sequence is:
 
 1. obtain direct usable copies of the already-indexed Marble Hill measured sheets and reconcile target phase;
 2. extract the Danson principal-floor/section drawings corresponding to the A2 fabric evidence already annotated;
 3. acquire the located 76 Dean Street GLC/V&A and Historic England survey drawings;
-4. complete comparable topology/hierarchy/opening IDs across all three;
-5. only then begin D5 dimensional extraction and D6 plan/elevation coupling analysis.
+4. use those sources to close the remaining D4 topology uncertainties;
+5. begin D5 dimensional extraction and D6 plan/elevation coupling analysis without reopening D3 unless the common annotation contract itself proves defective.
 
 Do not begin by choosing room ratios.
 

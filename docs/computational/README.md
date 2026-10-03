@@ -25,7 +25,8 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 
    - [G-01 Research Brief](g01-research-brief.md) — scope, corpus strategy, annotation schema, candidate hypotheses and mutation-testing method for deriving the first Georgian-derived grammar from evidence rather than intuition.
    - [G-01 Corpus and Source-Quality Register](g01-corpus-register.md) — seed corpus, evidence grades, derivation/hold-out split and source-acquisition queue.
-   - [G-01 Precedent Annotation Schema](g01-annotation-schema.md) — D3 evidence contract plus preliminary Marble Hill, Danson and 76 Dean Street trials.
+   - [G-01 Precedent Annotation Schema](g01-annotation-schema.md) — D3 evidence contract, now validated across three deliberately different cases.
+   - [G-01 Trial Case Records](g01-cases/README.md) — completed D3 v0.1 semantic records for Marble Hill, Danson House and 76 Dean Street.
    - [G-01 Topology Comparison](g01-topology-comparison.md) — preliminary D4 comparison of morphology, connectivity, route/sequence, vertical hierarchy and scoped symmetry before dimensional analysis.
 
 5. [Validity and Obligations](validity-and-obligations.md)  

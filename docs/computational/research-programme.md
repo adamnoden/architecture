@@ -268,7 +268,7 @@ Required distinction:
 
 **Output:** architectural-grammar position paper, followed eventually by one explicit grammar family.
 
-**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/method in the [G-01 Research Brief](g01-research-brief.md), D1/D2 in the [G-01 Corpus and Source-Quality Register](g01-corpus-register.md), and D3 annotation contract/trials in the [G-01 Precedent Annotation Schema](g01-annotation-schema.md). D3 source work has now materially advanced: Marble Hill has an indexed A1 measured-drawing source universe; Danson has A2 topology, phase, blind-window and structural evidence extracted; 76 Dean Street has survey-plan sources located but not yet acquired at usable resolution. Active work remains direct source acquisition, phase reconciliation and comparable room/opening annotation before D5/D6 or candidate-rule promotion. A preliminary D4 comparison now records the first cross-case topological consequences without promoting rules: [G-01 Topology Comparison](g01-topology-comparison.md).
+**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/method in the [G-01 Research Brief](g01-research-brief.md), D1/D2 in the [G-01 Corpus and Source-Quality Register](g01-corpus-register.md), and D3 annotation contract/trials in the [G-01 Precedent Annotation Schema](g01-annotation-schema.md). D3 source work has now materially advanced: Marble Hill has an indexed A1 measured-drawing source universe; Danson has A2 topology, phase, blind-window and structural evidence extracted; 76 Dean Street has survey-plan sources located but not yet acquired at usable resolution. D3 semantic annotation is complete v0.1 across all three trial cases; direct source acquisition now serves D4–D6 rather than holding D3 open. A preliminary D4 comparison records the first cross-case topological consequences without promoting rules: [G-01 Topology Comparison](g01-topology-comparison.md). Active work is D4 source reconciliation plus D5 dimensional and D6 plan/section/elevation analysis.
 
 ### W8 — Structural semantics
 
@@ -597,11 +597,11 @@ These items should not be lost even if priorities change.
 | C-016 | Define layered architectural-grammar model | C-015 | first draft |
 | C-016A | Define G-01 scope and precedent corpus strategy | C-015,C-016 | complete v0.1 |
 | C-016A1 | Build G-01 corpus + source-quality register | C-016A | complete v0.1 |
-| C-016A2 | Acquire/index source packs for Marble Hill, Danson and 76 Dean Street | C-016A1 | active; first source IDs indexed |
-| C-016B | Create semantic annotation schema for precedent corpus | C-002,C-016A | D3 v0.1 established; qualitative trial started |
-| C-016B1 | Reconcile Marble Hill source phases and complete metric/topology annotation | C-016A2,C-016B | active |
-| C-016B2 | Extract authoritative Danson principal-floor/section evidence | C-016A2,C-016B | open |
-| C-016B3 | Retrieve Survey of London plan evidence for 76 Dean Street | C-016A2,C-016B | open |
+| C-016A2 | Acquire/index source packs for Marble Hill, Danson and 76 Dean Street | C-016A1 | D3 minimum complete; deeper acquisition active for D4–D6 |
+| C-016B | Create semantic annotation schema for precedent corpus | C-002,C-016A | **D3 v0.1 complete** |
+| C-016B1 | Reconcile Marble Hill source phases and complete metric/topology annotation | C-016A2,C-016B | D3 semantic complete; D5/D6 phase/metric work active |
+| C-016B2 | Extract authoritative Danson principal-floor/section evidence | C-016A2,C-016B | D3 complete; D5 dimensional seed established; scaled D6 extraction open |
+| C-016B3 | Retrieve historic plan evidence for 76 Dean Street | C-016A2,C-016B | GLC/V&A plan inspected; phase reconciliation / high-resolution extraction open |
 | C-016C | Extract candidate topology/hierarchy/proportion/elevation rules | C-016B | open |
 | C-016D | Mutation-test candidate grammar against strong precedents and near-misses | C-016C | open |
 | C-016E | Draft first executable-independent G-01 rule specification | C-016D | open |
@@ -675,7 +675,7 @@ Unless new evidence changes the order, the next non-implementation sequence shou
 
 1. deepen the **formal architectural model** through worked examples;
 2. apply the **validity / obligation / evidence** model to worked examples and paper-compilation dependencies;
-3. acquire the **G-01 trial source packs** and run D3 semantic annotation on Marble Hill, Danson and 76 Dean Street;
+3. advance **G-01 D4–D6** from the now-complete D3 semantic trial: reconcile topology, extract dimensions and map plan/section/elevation coupling;
 4. harden **Domain S0** for paper compilation and candidate H1 technical envelopes;
 5. formalise the first **structural + boundary slice**;
 6. design and execute the **paper compilation**.

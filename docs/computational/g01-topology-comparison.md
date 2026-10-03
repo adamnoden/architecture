@@ -75,9 +75,12 @@ Authoritative evidence confirms:
 
 Historic plan/elevation/section material is located at Historic England and the V&A/GLC collection, but direct usable source inspection remains incomplete.
 
-Current confidence for detailed topology: **MEDIUM/LOW**.
+A historic GLC/V&A survey-plan reproduction has now been directly inspected and supports the broad ground-/first-floor double-pile geometry, principal stair position and secondary/service stair condition. Historical room uses and exact P1 doorway states remain unresolved.
 
-Accordingly, 76 Dean Street is used here primarily as a **morphological falsification case**, not a fully resolved graph.
+Current confidence for broad survey-state topology: **MEDIUM/HIGH**.  
+Current confidence for exact 1732–33 topology: **MEDIUM/LOW**.
+
+Accordingly, 76 Dean Street remains a **morphological falsification case** for D4 until the survey state is phase-reconciled, but it is no longer planless.
 
 ## 3. A common comparison vocabulary
 
@@ -302,7 +305,7 @@ Therefore neither Marble Hill's distributor pattern nor Danson's circuit can be 
 
 ### What must remain unresolved
 
-Until the located GLC/V&A and Historic England survey plans are inspected at usable resolution, D4 should **not** invent:
+Until the directly inspected GLC/V&A survey plan and the located Historic England material are reconciled to the 1732–33 target phase, D4 should **not** invent:
 
 - exact room graph;
 - door sequence;
@@ -310,11 +313,13 @@ Until the located GLC/V&A and Historic England survey plans are inspected at usa
 - topological depth values;
 - metric bay relationships.
 
-The provisional morphology label is only:
+The survey-state plan supports a front/rear double-pile organisation with entrance/primary stair on one side and a distinct secondary/service stair condition continuing vertically. It also shows that the ground- and first-floor subdivisions are not identical.
+
+The provisional morphology label remains:
 
 > **urban double-pile + vertically expressed principal hierarchy + dual circulation**
 
-That is enough for falsification, not derivation.
+That is enough for morphological comparison, not yet for original-phase rule derivation.
 
 ## 7. Comparison matrix
 
