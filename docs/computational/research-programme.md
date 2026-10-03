@@ -293,7 +293,7 @@ Do not attempt arbitrary structural engineering initially.
 
 **Output:** structural semantic model and definition of supported proof envelope.
 
-**Current state:** conceptual v0.1 established in [Structural Semantics](structural-semantics.md). Exact S0 proof envelopes/member families remain open.
+**Current state:** conceptual v0.1 established in [Structural Semantics](structural-semantics.md). [Structural Assurance Boundary — H1 v0](structural-assurance-boundary-h1-v01.md) now fixes the first product boundary: topology/applicability/dependency reasoning is native; member/connection/stability/foundation adequacy may be discharged by scoped external engineering evidence. Native bounded proof families remain future extensions rather than an H1-v0 blocker.
 
 ### W9 — Boundary and building-physics semantics
 
@@ -316,7 +316,7 @@ This work has direct overlap with existing Long-Life House doctrine.
 
 **Output:** boundary ontology / graph and obligation patterns.
 
-**Current state:** conceptual v0.1 established in [Boundary Semantics](boundary-semantics.md). S0 wall/window/floor transition graph remains to be instantiated.
+**Current state:** conceptual v0.1 established in [Boundary Semantics](boundary-semantics.md). The first concrete supported-family candidate now exists: [BF-WIN-MCW-01](boundary-family-window-masonry-v01.md), covering the window-in-partial-fill-masonry-wall weather/moisture/thermal/air route. Floor-edge and service-penetration families remain to be hardened.
 
 ### W10 — Service-network and maintenance semantics
 
@@ -460,9 +460,9 @@ intent
 
 **Output:** paper-compilation case study.
 
-**Current state:** **Run 01 complete.** The frozen source package and first end-to-end manual compile are recorded in [S0 Frozen Source Package](s0-source-package.md) and [S0 Paper Compilation Run 01](s0-paper-compile-run-01.md). The research compile is coherent while the building release correctly fails on missing due-now technical evidence. Run 01 also exposed obligation explosion as a scaling risk and produced the provisional [Interface Obligation Bundle](interface-obligation-bundles.md) abstraction.
+**Current state:** **Run 01 and Run 02 complete.** Run 01 proved the basic end-to-end abstraction and exposed obligation explosion. Run 02 deliberately increased regulatory coverage and duplicated the bay while introducing target v0.3, BF-WIN-MCW-01, the H1 structural-assurance boundary and the [S0 Complexity Gate](s0-complexity-gate.md). The result is a provisional complexity pass: repeated occurrences reuse family/rule knowledge, shared issues group by action, local failures remain local, and release still correctly fails on missing evidence.
 
-This remains the principal **pre-implementation integration test**. A second run should test composition and proof-envelope improvements rather than merely add detail.
+Do **not** create S0 Run 03 merely to elaborate the same junction. The next integration fixture should move up one architectural scale to **S1 — one complete room-scale slice**.
 
 ## 4. Dependency structure
 
@@ -534,7 +534,7 @@ Must have:
 
 Required before software implementation.
 
-**Internal status after S0 Run 01: provisionally demonstrated, not implementation clearance.** The first slice has now been manually compiled end-to-end and passed the research acceptance test, while correctly failing building release. External competent red-team and Gate B/H1 work remain open.
+**Internal status after S0 Run 02: paper-compilation gate demonstrated at slice scale, including a provisional complexity pass.** This is still not implementation clearance. Gate B/H1 remains incomplete, external competent red-team remains open, and complexity must survive the larger S1 room-scale fixture.
 
 The exercise must demonstrate:
 
@@ -582,15 +582,15 @@ These items should not be lost even if priorities change.
 | C-008B | Test evidence invalidation on paper-compilation mutation | C-008 | blocked on W15 |
 | C-009 | Define compile status / release semantics | C-006,C-007 | first draft |
 | C-010 | Define compiler-target anatomy | — | first draft |
-| C-011 | Research England regulatory versioning / transition rules | C-010 | S0 v0.1 retained for Run 01; **v0.2 target revision established after red-team**; H1 mapping remains open |
-| C-011A | Test target transition logic on 2026 L/F and B amendment boundaries | C-011 | first draft |
+| C-011 | Research England regulatory versioning / transition rules | C-010 | **S0 v0.3 established**; L/F target applicability now depends explicitly on future commencement; H1 mapping remains open |
+| C-011A | Test target transition logic on 2026 L/F and B amendment boundaries | C-011 | **L/F transition case hardened in target v0.3; broader target regression remains active** |
 | C-011B | Map S0 target coverage by Approved Document source | C-011 | v0.2 expanded after red-team; H1 completeness open |
-| C-011C | Create regression/conformance cases for target applicability | C-011 | **S0-02 first suite established** |
+| C-011C | Create regression/conformance cases for target applicability | C-011 | **S0-03 transition + applicability suite established** |
 | C-012 | Determine standards licensing / machine-readable strategy | C-010 | open |
 | C-013 | Distinguish building-regulations target from planning constraints | C-010 | first draft |
 | C-014 | Define initial supported-domain candidates | C-002,C-006 | candidate v0.1 |
 | C-014A | Specify Domain S0 paper-compilation slice | C-014 | complete v0.1 |
-| C-014B | Define candidate H1 structural proof envelope | C-014,C-017 | open |
+| C-014B | Define candidate H1 structural proof envelope | C-014,C-017 | **SAB-H1-01 v0.1: native topology, scoped external adequacy** |
 | C-014C | Select first supported roof family | C-014 | open |
 | C-014D | Decide first foundation proof strategy | C-014 | open |
 | C-014E | Define initial native/external/unsupported capability matrix | C-014 | first draft |
@@ -612,11 +612,11 @@ These items should not be lost even if priorities change.
 | C-017 | Formalise structural support/load graph | C-002 | conceptual v0.1 |
 | C-017A | Separate physical/topological/analytical structural representations | C-017 | first draft |
 | C-017B | Define S0 structural obligation set | C-017 | first draft |
-| C-018 | Define first supported structural proof envelope | C-017,C-014 | open |
-| C-018A | Select S0 I-joist/hanger evidence family | C-018 | open |
-| C-018B | Select S0 opening-head/lintel evidence family | C-018 | open |
+| C-018 | Define first supported structural proof envelope | C-017,C-014 | **native member proof deliberately deferred from H1 v0; external evidence boundary established** |
+| C-018A | Select S0 I-joist/hanger evidence family | C-018 | future native-extension candidate; not required for H1-v0 structural route |
+| C-018B | Select S0 opening-head/lintel evidence family | C-018 | future native-extension candidate; scoped external proof permitted in H1 v0 |
 | C-019 | Formalise critical boundary graph | C-002 | conceptual v0.1 |
-| C-019A | Instantiate S0 wall/window/floor boundary graph | C-019,C-030 | open |
+| C-019A | Instantiate S0 wall/window/floor boundary graph | C-019,C-030 | **window/wall BF-WIN-MCW-01 v0.1 complete; floor-edge hardening open** |
 | C-019B | Define first supported service-penetration boundary family | C-019 | open |
 | C-020 | Formalise service network + maintenance volumes | C-002 | open |
 | C-021 | Formalise interface/tolerance model | C-002 | open |
@@ -633,8 +633,10 @@ These items should not be lost even if priorities change.
 | C-030B | Test bundle composition / shared-obligation merging | C-030A | **composition v0.1 passed; model corrected to contributions-before-obligations** |
 | C-030C | Formalise S0-A conventional workmanship/tolerance route | C-021,C-030 | **process-model v0.1 complete; numeric/product envelopes open** |
 | C-031 | Execute paper compilation | C-030 | **Run 01 complete — research pass / release fail** |
-| C-031A | Execute S0 Run 02 only after abstraction red-team | C-030B,C-030C | blocked |
-| C-032 | Red-team proof claims with structural/regulatory expertise | C-031 | **internal S0 Run-01 red-team v0.1 complete; external competent review open** |
+| C-031A | Execute S0 Run 02 only after abstraction red-team | C-030B,C-030C | **complete — research pass / complexity pass / release fail** |
+| C-032 | Red-team proof claims with structural/regulatory expertise | C-031 | **internal S0 red-team complete through Run 02; external competent review open** |
+| C-032A | Define and enforce computational complexity gate | C-030A,C-031 | **S0 gate v0.1 established; provisional Run-02 pass** |
+| C-032B | Design S1 room-scale integration fixture | C-031A,C-032A | open |
 | C-033 | Decide whether computational material enters monograph Part VI | C-031 | blocked |
 | C-034 | Design formal language / syntax | Gate C | deliberately deferred |
 | C-035 | Select implementation architecture | Gate C | deliberately deferred |
@@ -681,12 +683,12 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. preserve the Run-01 red-team findings and use **target v0.2** rather than rewriting historical target v0.1;
-2. use the completed **S0-A conventional workmanship process model** to source real numeric/product envelopes only when technical families are selected;
-3. revise the window/interface model for operational roles: fall protection, egress, purge and security;
-4. choose whether H1 v0 gets a native bounded structural proof family or keeps member adequacy explicitly external;
-5. advance **G-01 D4–D6** in parallel;
-6. execute **S0 Run 02 only if** those abstractions materially improve Run 01.
+1. **Freeze S0.** Run 02 has answered the current slice-scale question; do not create Run 03 without a new falsifiable hypothesis.
+2. design **S1 — a complete room-scale integration fixture**: two-wall corner, floor, ceiling, two windows, one door and one service route; run the same complexity gate at the larger scale.
+3. obtain an **external competent structural/building-control red-team** of the S0 proof/evidence boundaries before implementation.
+4. advance **G-01 D4–D6** far enough to supply a small number of candidate architectural-order constraints to S1; do not wait for a complete Georgian grammar.
+5. select the first roof family and retain foundations as scoped external proof for H1 v0 unless evidence changes the decision.
+6. revise **H1 capability matrix** from S0 + S1 + G-01 evidence, then reassess Gate B and only afterwards discuss implementation architecture.
 
 That sequence should produce enough information to decide whether the compiler concept is genuinely architectural infrastructure or merely an attractive analogy.
 

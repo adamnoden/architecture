@@ -42,12 +42,17 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 
    - [S0 Compiler Target Snapshot v0.1 — England / 2026-10-03](s0-target-snapshot.md) — immutable target used by Run 01; retained with its known omissions for reproducibility.
    - [S0 Compiler Target Snapshot v0.2](s0-target-snapshot-v02.md) — same normative date, corrected target-model coverage after red-team; adds K, Q, Regulation 7 and broader B/F applicability tests.
+   - [S0 Compiler Target Snapshot v0.3](s0-target-snapshot-v03.md) — hardens transitional applicability: an October-2026 application can retain the earlier L/F basis only if the relevant work commences before the March-2028 transition deadline.
 
 8. [Structural Semantics](structural-semantics.md)  
    Separates physical structure, structural topology and analytical idealisation; defines load-path semantics, proof envelopes and S0 structural obligations.
 
+   - [Structural Assurance Boundary — H1 v0](structural-assurance-boundary-h1-v01.md) — programme decision: native topology/dependency reasoning, with member/connection/stability/foundation adequacy allowed as scoped external engineering evidence in H1 v0.
+
 9. [Boundary Semantics](boundary-semantics.md)  
    Models air, thermal, weather, moisture, fire, acoustic and related boundaries as overlapping first-class graphs with typed transitions and penetrations.
+
+   - [BF-WIN-MCW-01 — Window in Partial-Fill Masonry Cavity Wall](boundary-family-window-masonry-v01.md) — first instantiated boundary-family candidate for weather, moisture, thermal and air continuity.
 
 10. [Supported Domain](supported-domain.md)  
    Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.
@@ -59,6 +64,9 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md) — shows bundles must contribute to shared graphs before canonical obligations are derived; avoids duplicate checklists one abstraction higher.
    - [S0 Run 01 Red Team](s0-red-team-run-01.md) — adversarial pass that finds missed Part K/Q/Regulation 7/B/F obligations, cross-domain window conflicts and target-versioning requirements.
    - [S0-A Conventional Workmanship Route](s0-conventional-workmanship-route.md) — gives the ordinary control explicit datum, acceptance, remediation and evidence semantics without inventing unsupported numerical tolerances.
+   - [S0 Complexity Gate](s0-complexity-gate.md) — explicit course guardrail: internal rigor may scale, authoring bureaucracy may not.
+   - [S0 Run 02 Source Overlay](s0-source-package-v02.md) — repeats the wall-bay condition twice and adds only the context needed to test scaling and operational-window semantics.
+   - [S0 Paper Compilation Run 02](s0-paper-compile-run-02.md) — broader regulatory/semantic coverage with two repeated bays; provisional complexity-gate pass and no release claim.
 
 11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.

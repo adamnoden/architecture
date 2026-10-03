@@ -238,6 +238,14 @@ Working baseline already established by the project:
 - structural deck provides diaphragm action;
 - routine services are not assumed to use the joist zone as their default distribution route.
 
+For **H1 v0**, [SAB-H1-01](structural-assurance-boundary-h1-v01.md) fixes the assurance boundary:
+
+- structural identity/topology/geometry/dependencies are native compiler concerns;
+- member, connection, stability and foundation adequacy may be discharged by scoped external engineering evidence;
+- later native proof families may be admitted incrementally.
+
+This avoids making general structural-design automation a prerequisite for the first product domain.
+
 ### Local beams / trimmers
 
 Permitted only through defined supported families and envelopes.
@@ -266,12 +274,9 @@ H1 cannot be called structurally supported until these are explicit.
 
 Do not fake a foundation domain before site/structural research exists.
 
-Candidate options:
+**H1 v0 decision:** foundations remain permitted only through scoped external geotechnical/structural evidence.
 
-1. support only a simple shallow-foundation family within a declared ground/site envelope; or
-2. require external geotechnical/structural evidence for foundations in the first paper/experimental compiler stage.
-
-The research programme should decide this before release-grade whole-house claims.
+A simple shallow-foundation family may later be promoted into native support once its site/ground envelope and proof route are explicit.
 
 ## 8. Candidate H1 — envelope family
 
@@ -591,7 +596,7 @@ This is preferable to half-support.
 | Basement | Unsupported | Add later if justified |
 | Orthogonal plan | Native candidate | Curvilinear special cases later |
 | Cavity masonry envelope | Native candidate | Finite wall-family library |
-| Engineered I-joist upper floor | Native candidate | Proof envelope still to define |
+| Engineered I-joist upper floor | Native topology / external adequacy in H1 v0 | SAB-H1-01; future bounded native proof family possible |
 | Conventional plaster/mineral lining | Native candidate | Trusted control |
 | W2 removable lining/backplane | Extension candidate | Requires prototype/evidence |
 | Full removable floor platform | Unsupported initially | Experimental |
@@ -599,14 +604,14 @@ This is preferable to half-support.
 | Simple pitched/hipped timber roof | Candidate | Roof study required |
 | Arbitrary steel frame | Unsupported | Local defined beams may be allowed |
 | Complex transfer structure | Unsupported | Outside initial purpose |
-| Simple masonry openings | Native candidate | Bounded families |
+| Simple masonry openings | Native semantics / external structural adequacy initially | Boundary family can be native while lintel/masonry capacity remains scoped external evidence |
 | Long-span opening | External/unsupported | Depends on future structural domain |
 | Controlled service spine | Native candidate | Strong doctrine/pattern basis |
 | High-service wall | Native candidate | Technical build-up to define |
 | Arbitrary service routing | Unsupported | Deliberately |
 | Ordinary site | Candidate | Site thresholds unresolved |
 | Complex retaining/site structures | Unsupported | Later extension |
-| Foundations | External initially / future native family | Requires dedicated research |
+| Foundations | **External in H1 v0** / future native family | Explicit programme decision under SAB-H1-01 |
 | Standard prescriptive fire strategy | Candidate | Tied to compiler target |
 | Fire-engineered alternative | External/unsupported | Not native H1 |
 | G-01 Georgian grammar | Separate input | Not domain capability |
@@ -752,29 +757,27 @@ This preserves the correct authority:
 - Which heating/ventilation strategies deserve native support?
 - How should sloping sites be parameterised?
 - Which fire/acoustic obligations become materially harder if party walls are added?
-- Should external professional proof be allowed inside release-grade H1, or should “native H1 release” be a stricter certification tier?
+- Should a later “all-native proof” tier exist in addition to H1-v0 release-grade compilation with scoped external professional evidence?
 - What is the smallest H1 that still produces enough architectural variety to justify a product?
 
 ## 28. Immediate work
 
-Run 01 has now completed the first S0-A paper compile and compared S0-B. The result is **research-coherent / release-fail**, which is the expected state before technical proof envelopes exist.
+Run 01 and Run 02 have now exercised S0. Run 02 deliberately duplicated the bay and expanded regulatory semantics while passing the paper [S0 Complexity Gate](s0-complexity-gate.md) provisionally. The result remains **research-coherent / release-fail**, which is correct while real technical evidence is absent.
 
 Before H1 can graduate from candidate to specification:
 
-1. **S0 domain/source package — complete v0.1**;
-2. **S0-A paper compilation — Run 01 complete**;
-3. **S0-B comparison — Run 01 complete**;
-4. red-team the Run 01 obligation/evidence graph;
-5. test interface-bundle composition and shared-obligation merging;
-6. select/engineer the first structural proof envelope, or explicitly retain external structural adequacy in H1 v0;
-7. instantiate the first supported wall/window boundary family;
-8. formalise the conventional-control workmanship/tolerance route;
-9. select the first roof family;
-10. decide the initial foundation strategy;
-11. deepen England-new-dwelling regulatory target coverage;
-12. decide initial service/heating/ventilation families;
-13. test whether G-01 can generate useful houses without constantly leaving H1;
-14. revise H1 from S0 and G-01 evidence.
+1. **S0 Run 02 — complete; freeze the fixture**;
+2. **H1 structural assurance boundary — decided v0.1**: native topology, scoped external adequacy;
+3. **BF-WIN-MCW-01 — first boundary-family candidate established**;
+4. **conventional workmanship process model — established**;
+5. design and run **S1 room-scale integration fixture** under the same complexity gate;
+6. obtain external competent red-team of S0 structural/regulatory evidence boundaries;
+7. select the first roof family;
+8. retain foundations as scoped external proof in H1 v0 and later research a native shallow-foundation family if useful;
+9. deepen England-new-dwelling target coverage/regression testing;
+10. decide initial service/heating/ventilation families;
+11. take G-01 through enough D4–D6/D7 work to provide a small candidate grammar constraint set;
+12. revise H1 from S0 + S1 + G-01 evidence.
 
 ## 29. Current conclusion
 
