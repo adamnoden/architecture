@@ -656,6 +656,8 @@ Annotate 3 very different examples end-to-end.
 
 Generate plan graphs and identify candidate spatial genotypes.
 
+**Preliminary analysis established:** [G-01 Topology Comparison](g01-topology-comparison.md). It already rules out a single universal Georgian plan graph and identifies morphology profile, route/sequence and vertical topology as likely first-class concepts. D4 remains incomplete until all three trial plans are directly inspected and phase-checked.
+
 ### D5 — dimensional analysis
 
 Measure room/elevation families without yet declaring rules.
