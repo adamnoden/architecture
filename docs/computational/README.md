@@ -28,6 +28,8 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [G-01 Precedent Annotation Schema](g01-annotation-schema.md) — D3 evidence contract, now validated across three deliberately different cases.
    - [G-01 Trial Case Records](g01-cases/README.md) — completed D3 v0.1 semantic records for Marble Hill, Danson House and 76 Dean Street.
    - [G-01 Topology Comparison](g01-topology-comparison.md) — preliminary D4 comparison of morphology, connectivity, route/sequence, vertical hierarchy and scoped symmetry before dimensional analysis.
+   - [G-01 Dimensional and Proportional Analysis](g01-dimensional-analysis.md) — D5 seed dataset and measurement discipline; currently strongest at Danson, deliberately sparse elsewhere.
+   - [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md) — D6 seed model for directional, attribute-level negotiation between spatial order, façade, section and technical structure.
 
 5. [Validity and Obligations](validity-and-obligations.md)  
    Defines what kinds of validity exist, what a compile failure means, how obligations are discharged and what a successful compile may legitimately claim.

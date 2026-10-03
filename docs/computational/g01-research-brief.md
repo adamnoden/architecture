@@ -664,9 +664,13 @@ Generate plan graphs and identify candidate spatial genotypes.
 
 Measure room/elevation families without yet declaring rules.
 
-### D6 — plan/elevation coupling study
+**Seed analysis established:** [G-01 Dimensional and Proportional Analysis](g01-dimensional-analysis.md). Direct values currently include Marble Hill's 24 ft cubic Great Room and unusually rich Danson principal-floor dimensions. D5 remains incomplete until phase-checked measured sources provide a comparable dataset across all three trial cases.
 
-Identify which variables genuinely coordinate both.
+### D6 — plan/section/elevation coupling study
+
+Identify which variables genuinely coordinate plan, section and elevation.
+
+**Seed analysis established:** [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md). The current model treats coupling as directional and attribute-specific rather than one generic alignment relation. D6 remains incomplete pending measured opening/room IDs and mutation tests.
 
 ### D7 — first candidate-rule register
 

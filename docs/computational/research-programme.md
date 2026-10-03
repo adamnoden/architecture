@@ -268,7 +268,7 @@ Required distinction:
 
 **Output:** architectural-grammar position paper, followed eventually by one explicit grammar family.
 
-**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/method in the [G-01 Research Brief](g01-research-brief.md), D1/D2 in the [G-01 Corpus and Source-Quality Register](g01-corpus-register.md), and D3 annotation contract/trials in the [G-01 Precedent Annotation Schema](g01-annotation-schema.md). D3 source work has now materially advanced: Marble Hill has an indexed A1 measured-drawing source universe; Danson has A2 topology, phase, blind-window and structural evidence extracted; 76 Dean Street has survey-plan sources located but not yet acquired at usable resolution. D3 semantic annotation is complete v0.1 across all three trial cases; direct source acquisition now serves D4–D6 rather than holding D3 open. A preliminary D4 comparison records the first cross-case topological consequences without promoting rules: [G-01 Topology Comparison](g01-topology-comparison.md). Active work is D4 source reconciliation plus D5 dimensional and D6 plan/section/elevation analysis.
+**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/method in the [G-01 Research Brief](g01-research-brief.md), D1/D2 in the [G-01 Corpus and Source-Quality Register](g01-corpus-register.md), and D3 annotation contract/trials in the [G-01 Precedent Annotation Schema](g01-annotation-schema.md). D3 source work has now materially advanced: Marble Hill has an indexed A1 measured-drawing source universe; Danson has A2 topology, phase, blind-window and structural evidence extracted; 76 Dean Street has survey-plan sources located but not yet acquired at usable resolution. D3 semantic annotation is complete v0.1 across all three trial cases; direct source acquisition now serves D4–D6 rather than holding D3 open. A preliminary D4 comparison records the first cross-case topological consequences without promoting rules: [G-01 Topology Comparison](g01-topology-comparison.md). Active work is D4 source reconciliation plus D5 dimensional and D6 plan/section/elevation analysis. D5 and D6 now have seed research documents: [Dimensional and Proportional Analysis](g01-dimensional-analysis.md) and [Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md).
 
 ### W8 — Structural semantics
 
@@ -602,7 +602,10 @@ These items should not be lost even if priorities change.
 | C-016B1 | Reconcile Marble Hill source phases and complete metric/topology annotation | C-016A2,C-016B | D3 semantic complete; D5/D6 phase/metric work active |
 | C-016B2 | Extract authoritative Danson principal-floor/section evidence | C-016A2,C-016B | D3 complete; D5 dimensional seed established; scaled D6 extraction open |
 | C-016B3 | Retrieve historic plan evidence for 76 Dean Street | C-016A2,C-016B | GLC/V&A plan inspected; phase reconciliation / high-resolution extraction open |
-| C-016C | Extract candidate topology/hierarchy/proportion/elevation rules | C-016B | open |
+| C-016B4 | Complete D4 topology comparison from phase-checked trial plans | C-016B | preliminary v0.1 active |
+| C-016B5 | Complete D5 dimensional/proportional analysis | C-016B | seed v0.1 established |
+| C-016B6 | Complete D6 plan/section/elevation coupling study | C-016B | seed v0.1 established |
+| C-016C | Extract candidate topology/hierarchy/proportion/elevation rules | C-016B4,C-016B5,C-016B6 | blocked until D4–D6 mature |
 | C-016D | Mutation-test candidate grammar against strong precedents and near-misses | C-016C | open |
 | C-016E | Draft first executable-independent G-01 rule specification | C-016D | open |
 | C-017 | Formalise structural support/load graph | C-002 | conceptual v0.1 |
