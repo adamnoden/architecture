@@ -757,18 +757,24 @@ This preserves the correct authority:
 
 ## 28. Immediate work
 
+Run 01 has now completed the first S0-A paper compile and compared S0-B. The result is **research-coherent / release-fail**, which is the expected state before technical proof envelopes exist.
+
 Before H1 can graduate from candidate to specification:
 
-1. define Domain S0 precisely for the paper compilation;
-2. select/engineer the first structural proof envelope;
-3. select the first roof family;
-4. decide the initial foundation strategy;
-5. map the first England-new-dwelling regulatory target coverage;
-6. decide initial service/heating/ventilation families;
-7. test whether G-01 can generate useful houses without leaving H1 constantly;
-8. paper-compile S0-A;
-9. optionally compare S0-B selective tectonic candidate;
-10. revise H1 from evidence.
+1. **S0 domain/source package — complete v0.1**;
+2. **S0-A paper compilation — Run 01 complete**;
+3. **S0-B comparison — Run 01 complete**;
+4. red-team the Run 01 obligation/evidence graph;
+5. test interface-bundle composition and shared-obligation merging;
+6. select/engineer the first structural proof envelope, or explicitly retain external structural adequacy in H1 v0;
+7. instantiate the first supported wall/window boundary family;
+8. formalise the conventional-control workmanship/tolerance route;
+9. select the first roof family;
+10. decide the initial foundation strategy;
+11. deepen England-new-dwelling regulatory target coverage;
+12. decide initial service/heating/ventilation families;
+13. test whether G-01 can generate useful houses without constantly leaving H1;
+14. revise H1 from S0 and G-01 evidence.
 
 ## 29. Current conclusion
 

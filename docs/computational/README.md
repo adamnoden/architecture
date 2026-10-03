@@ -51,7 +51,10 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 10. [Supported Domain](supported-domain.md)  
    Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.
 
-   - [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) — exact first manual integration test: wall/window/floor/service slice, obligations, evidence, outputs and deliberate mutations.
+   - [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) — exact first manual integration-test specification.
+   - [S0 Frozen Source Package](s0-source-package.md) — explicit nominal test geometry, assumptions, boundaries and four frozen mutations.
+   - [S0 Paper Compilation Run 01](s0-paper-compile-run-01.md) — first end-to-end manual compile; research model coherent, building release correctly fails on missing proof.
+   - [Interface Obligation Bundles](interface-obligation-bundles.md) — Run-01 scaling response: recurring architectural interfaces generate fine-grained proof obligations internally rather than exposing them as authoring chores.
 
 11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.

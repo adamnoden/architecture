@@ -715,6 +715,113 @@ The value of the representation is not the notation.
 
 The value is that a single design act—changing O01—can traverse several graphs and create consequences that cannot silently disappear.
 
+## 16A. Compositional obligation bundles — finding from S0 Run 01
+
+The first paper compilation exposed a scaling problem.
+
+A single ordinary junction—such as a window in a masonry cavity wall—can legitimately create many obligations across:
+
+- geometry;
+- structure;
+- weather;
+- moisture;
+- thermal performance;
+- airtightness;
+- fire;
+- acoustics;
+- replacement;
+- tolerance;
+- inspection;
+- evidence.
+
+Those obligations are useful internally.
+
+They are unacceptable as manually authored user-facing bureaucracy.
+
+The model therefore introduces a provisional research construct:
+
+> **Interface Obligation Bundle — a meaningful architectural/physical relationship that deterministically expands into the fine-grained obligations required to resolve it.**
+
+Examples now tested:
+
+- [Window in Masonry Cavity Wall](interface-bundle-window-masonry.md);
+- [Floor to Masonry Wall](interface-bundle-floor-masonry.md).
+
+Both use the same machinery:
+
+~~~text
+SEMANTIC RELATIONSHIP
+        ↓
+CONTEXT / TARGET / DOMAIN
+        ↓
+OBLIGATION GROUPS
+        ↓
+EVIDENCE + STATUS
+        ↓
+DEPENDENCY INVALIDATION
+~~~
+
+The ordinary author manipulates the meaningful relationship.
+
+The expert can inspect the expansion.
+
+### Bundles do not own duplicate truth
+
+A bundle must reference canonical source entities and dimensions.
+
+For example:
+
+**OPENING-O01.width**
+
+is authored once.
+
+Structural, thermal, weather, quantity and grammar views derive from it.
+
+Do not allow each analytical view to maintain a private copy.
+
+### Bundles preserve authority
+
+A child obligation retains whether it comes from:
+
+- physical/engineering validity;
+- compiler target/regulation;
+- product evidence;
+- Long-Life House doctrine;
+- architectural grammar;
+- project requirement.
+
+A high-level bundle status must never hide a failed mandatory child obligation.
+
+### Bundles are not product macros
+
+A bundle says **what the relationship commits the building to resolving**.
+
+An implementation family says **how** those obligations are discharged.
+
+This distinction allows several supported details to implement one semantic interface.
+
+### Next scaling test — bundle composition
+
+Do not create bundles for every noun.
+
+The next test is whether several bundles compose into an assembly without duplicating shared obligations.
+
+For S0:
+
+~~~text
+EXTERNAL WALL BAY
+  ├── WINDOW / WALL INTERFACE
+  ├── FLOOR / WALL INTERFACE
+  ├── SERVICE PENETRATION
+  └── WALL BOUNDARY FAMILY
+~~~
+
+Air/thermal/weather obligations shared by several children should merge into one coherent boundary graph.
+
+If composition instead creates duplicate obligations requiring manual reconciliation, the bundle abstraction has not solved the scaling problem.
+
+See [Interface Obligation Bundles](interface-obligation-bundles.md).
+
 ## 16. Open research problems
 
 - How many entity families are genuinely needed before the model becomes bloated?

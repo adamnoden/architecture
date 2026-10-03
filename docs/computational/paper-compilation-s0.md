@@ -1,10 +1,23 @@
 # Domain S0 — Paper Compilation Fixture v0.1
 
-**Status:** pre-implementation integration-test specification  
+**Status:** integration-test specification — first run executed 2026-10-03  
 **Purpose:** define the exact architectural slice, source assumptions, required semantic entities, obligations, mutations and outputs for the first end-to-end manual compilation.  
 **Implementation:** none. The exercise is to be performed on paper / in research documents.
 
 > **If we cannot compile one real junction coherently by hand, software will only automate confusion.**
+
+## Run record
+
+The first fixture execution is now recorded in:
+
+- [S0 Frozen Source Package v0.1](s0-source-package.md) — explicit nominal geometry, assumptions, boundaries and mutations;
+- [S0 Paper Compilation Run 01](s0-paper-compile-run-01.md) — end-to-end obligation/evidence run, mutation results and research verdict;
+- [Interface Obligation Bundles](interface-obligation-bundles.md) — abstraction introduced after Run 01 exposed obligation explosion.
+
+**Run 01 research result:** coherent / continue.  
+**Building release result:** FAIL, as expected, because due-now structural, product, thermal, weather, fire and workmanship evidence is incomplete.
+
+The failed release is an intended result, not a failed experiment.
 
 ## 1. What S0 is testing
 
@@ -603,18 +616,20 @@ If S0 fails, do **not** write software.
 
 Simplify the conceptual architecture first.
 
-## 16. Immediate prerequisites
+## 16. Post-Run-01 prerequisites for a second pass
 
-Before executing S0 fully:
+Run 01 has now frozen nominal geometry, assumptions, the partial target and the evidence distinction strongly enough to exercise the architecture.
 
-- **structural semantic model: v0.1 established**; select actual S0 proof envelopes/evidence families;
-- **boundary semantic model: v0.1 established**; instantiate the actual S0 wall/window/floor boundary graph;
-- **provisional England-new-dwelling target snapshot: established** in [S0 Compiler Target Snapshot](s0-target-snapshot.md); rule-level formalisation remains incomplete;
-- freeze a nominal S0 geometry package;
-- state all assumptions;
-- identify what evidence is real versus placeholder/external.
+Before a second S0 run:
 
-These are the next research tasks.
+- red-team the first obligation/evidence graph for missing obligations;
+- promote and test **interface obligation bundles** so author-facing complexity does not scale linearly with proof detail;
+- instantiate one reusable wall/window boundary family rather than leaving every transition bespoke;
+- formalise the conventional S0-A workmanship/tolerance route so the control is treated as fairly as S0-B;
+- select a bounded I-joist/hanger proof family **or explicitly decide that member adequacy remains external in H1 v0**;
+- test composition of window/wall + floor/wall + service penetration without duplicating shared air/thermal obligations.
+
+Do not make S0 more detailed merely for completeness. A second pass should test these abstractions, not repeat Run 01 with more prose.
 
 ---
 

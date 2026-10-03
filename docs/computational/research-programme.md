@@ -460,9 +460,9 @@ intent
 
 **Output:** paper-compilation case study.
 
-**Current state:** not started.
+**Current state:** **Run 01 complete.** The frozen source package and first end-to-end manual compile are recorded in [S0 Frozen Source Package](s0-source-package.md) and [S0 Paper Compilation Run 01](s0-paper-compile-run-01.md). The research compile is coherent while the building release correctly fails on missing due-now technical evidence. Run 01 also exposed obligation explosion as a scaling risk and produced the provisional [Interface Obligation Bundle](interface-obligation-bundles.md) abstraction.
 
-This is the principal **pre-implementation integration test**.
+This remains the principal **pre-implementation integration test**. A second run should test composition and proof-envelope improvements rather than merely add detail.
 
 ## 4. Dependency structure
 
@@ -534,7 +534,7 @@ Must have:
 
 Required before software implementation.
 
-At least one real Reference House slice must be manually compiled end-to-end.
+**Internal status after S0 Run 01: provisionally demonstrated, not implementation clearance.** The first slice has now been manually compiled end-to-end and passed the research acceptance test, while correctly failing building release. External competent red-team and Gate B/H1 work remain open.
 
 The exercise must demonstrate:
 
@@ -627,9 +627,13 @@ These items should not be lost even if priorities change.
 | C-027 | Define change-impact / recompilation model | C-004,C-007 | open |
 | C-028 | Define inspection/commissioning evidence feedback | C-008 | open |
 | C-029 | Define building-release manifest concept | C-008,C-009 | open |
-| C-030 | Design paper compilation case | C-014,C-016,C-018,C-019 | S0 fixture v0.1 established; technical prerequisites open |
-| C-031 | Execute paper compilation | C-030 | blocked |
-| C-032 | Red-team proof claims with structural/regulatory expertise | C-031 | blocked |
+| C-030 | Design paper compilation case | C-014,C-016,C-018,C-019 | **S0 fixture + source package v0.1 complete** |
+| C-030A | Define interface-obligation-bundle abstraction | C-030 | **two-family provisional validation complete** |
+| C-030B | Test bundle composition / shared-obligation merging | C-030A | open |
+| C-030C | Formalise S0-A conventional workmanship/tolerance route | C-021,C-030 | open |
+| C-031 | Execute paper compilation | C-030 | **Run 01 complete — research pass / release fail** |
+| C-031A | Execute S0 Run 02 only after abstraction red-team | C-030B,C-030C | blocked |
+| C-032 | Red-team proof claims with structural/regulatory expertise | C-031 | internal red-team begun; external competent review open |
 | C-033 | Decide whether computational material enters monograph Part VI | C-031 | blocked |
 | C-034 | Design formal language / syntax | Gate C | deliberately deferred |
 | C-035 | Select implementation architecture | Gate C | deliberately deferred |
@@ -676,12 +680,12 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. deepen the **formal architectural model** through worked examples;
-2. apply the **validity / obligation / evidence** model to worked examples and paper-compilation dependencies;
-3. advance **G-01 D4–D6** from the now-complete D3 semantic trial: reconcile topology, extract dimensions and map plan/section/elevation coupling;
-4. harden **Domain S0** for paper compilation and candidate H1 technical envelopes;
-5. formalise the first **structural + boundary slice**;
-6. design and execute the **paper compilation**.
+1. red-team **S0 Run 01** and the new interface-obligation-bundle abstraction;
+2. test **bundle composition** so shared air/thermal/structural obligations merge rather than duplicate;
+3. formalise the **S0-A conventional workmanship/tolerance route** and first wall/window boundary family;
+4. choose whether H1 v0 gets a native bounded structural proof family or keeps member adequacy explicitly external;
+5. advance **G-01 D4–D6** in parallel;
+6. execute **S0 Run 02 only if** those abstractions materially improve Run 01.
 
 That sequence should produce enough information to decide whether the compiler concept is genuinely architectural infrastructure or merely an attractive analogy.
 
