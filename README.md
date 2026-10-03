@@ -32,6 +32,7 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 ### Research and options appraisals
 - [Seated floor structure options](docs/research/seated-floor-structure-options.md) — current structural interpretation and connection-family appraisal.
 - [Replaceable wall system options](docs/research/replaceable-wall-system-options.md) — backplane, removable lining and plaster benchmark study.
+- [Finish-agnostic floor platform options](docs/research/finish-agnostic-floor-platform-options.md) — residential adaptation of removable dense-mineral floor platforms across timber, tile and stone finishes.
 
 ### Development controls
 - [Tectonic integration register](docs/development/tectonic-integration-register.md) — traceability ledger for the current doctrine migration.
