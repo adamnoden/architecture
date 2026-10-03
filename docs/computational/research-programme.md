@@ -586,7 +586,7 @@ These items should not be lost even if priorities change.
 | C-012 | Determine standards licensing / machine-readable strategy | C-010 | open |
 | C-013 | Distinguish building-regulations target from planning constraints | C-010 | first draft |
 | C-014 | Define initial supported-domain candidates | C-002,C-006 | candidate v0.1 |
-| C-014A | Specify Domain S0 paper-compilation slice | C-014 | active |
+| C-014A | Specify Domain S0 paper-compilation slice | C-014 | complete v0.1 |
 | C-014B | Define candidate H1 structural proof envelope | C-014,C-017 | open |
 | C-014C | Select first supported roof family | C-014 | open |
 | C-014D | Decide first foundation proof strategy | C-014 | open |
@@ -616,7 +616,7 @@ These items should not be lost even if priorities change.
 | C-027 | Define change-impact / recompilation model | C-004,C-007 | open |
 | C-028 | Define inspection/commissioning evidence feedback | C-008 | open |
 | C-029 | Define building-release manifest concept | C-008,C-009 | open |
-| C-030 | Design paper compilation case | C-014,C-016,C-018,C-019 | open |
+| C-030 | Design paper compilation case | C-014,C-016,C-018,C-019 | S0 fixture v0.1 established; technical prerequisites open |
 | C-031 | Execute paper compilation | C-030 | blocked |
 | C-032 | Red-team proof claims with structural/regulatory expertise | C-031 | blocked |
 | C-033 | Decide whether computational material enters monograph Part VI | C-031 | blocked |

@@ -669,6 +669,8 @@ This connects the physical prototype programme directly to future computational 
 
 ## 24. Paper compilation and S0
 
+See [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) for the exact v0.1 integration-test specification.
+
 The first paper compilation should **not** attempt the entire H1 house.
 
 Use Domain S0.
