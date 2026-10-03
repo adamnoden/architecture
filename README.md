@@ -14,6 +14,12 @@ A further cross-cutting requirement is **workmanship robustness**: the design sh
 
 > **Give variation somewhere to go.**
 
+A further research trajectory asks whether the doctrine can become **executable architecture**: a constrained semantic model in which meaningful building primitives, architectural grammar, structure, selected compliance obligations and evidence compile together rather than being checked only after arbitrary geometry has been drawn.
+
+> **The program should compile a habitat.**
+
+This is recorded as a computational expression of the doctrine, not a new governing principle and not yet an implementation commitment. The architectural doctrine remains primary; the software ambition is to make its formal subset enforceable, reproducible and verifiable.
+
 ## Documents
 
 ### Source corpus
@@ -58,6 +64,9 @@ A further cross-cutting requirement is **workmanship robustness**: the design sh
 - [W2 wall-bay build pack](docs/prototypes/w2-wall-bay-build-pack.md) — first buildable 1:1 mock-up specification for the replaceable wall system.
 - [W2 wall-bay SVG](docs/prototypes/w2-wall-bay-detail.svg) — vector detail of the gravity seat, separate top restraint, backplane and architectural release zones.
 
+### Computational expression
+- [Executable Architecture — computational concept](docs/computational/executable-architecture.md) — canonical record of the future constrained-authoring / building-compiler proposition, including semantic primitives, architectural grammar, compiler targets, proof boundaries and evidence outputs. No implementation is selected yet.
+
 ### Project delivery
 - [RIBA implementation brief template](docs/delivery/riba-implementation-brief-template.md) — translation layer from the publication into requirements for an appointed design team.
 
@@ -70,3 +79,5 @@ The publication distinguishes:
 The source doctrine is retained for traceability. New work should be developed in the manuscript, pattern catalogue and project-delivery documents rather than by rewriting v7 in place.
 
 The current major phase is architectural production and validation: tectonic integration, workmanship-robustness testing, 1:1 prototype development, completion of the strongest pattern families, and a reference-house options appraisal. Candidate reversible assemblies remain explicitly experimental until calculation, representative-installer testing and prototype work justify promotion.
+
+A parallel future research track is now recorded for **executable architecture**. Its intended chain is **Doctrine → Formal architectural model → Semantic primitives / invariants → Compiler target → Resolved building → Production outputs + evidence**. This track is concept-only for now and should not displace the current architectural and prototype work.

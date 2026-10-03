@@ -1,4 +1,4 @@
-# House Design Doctrine — Publication Architecture v0.4
+# House Design Doctrine — Publication Architecture v0.5
 
 **Working form:** illustrated architectural design-research monograph + pattern catalogue + separate architect-facing implementation brief.  
 **Status:** v0.5 — tectonic integration working structure.
@@ -129,6 +129,41 @@ E. Glossary
 F. Bibliography and standards
 
 ---
+
+## Computational development track — recorded, not yet promoted to a manuscript part
+
+The project now carries a further research proposition: the architectural doctrine may admit an **executable computational expression** in which a constrained semantic building model is compiled against explicit architectural, structural, construction and regulatory obligations.
+
+The canonical concept is recorded in [Executable Architecture — Computational Expression of the Long-Life House](../computational/executable-architecture.md).
+
+The computational direction should currently remain **parallel to the publication rather than being forced into Part I–V**. It is too consequential to be treated as a minor addendum, but insufficiently formalised to be presented as settled doctrine or as an implemented product.
+
+The current editorial position is:
+
+- it is **not Principle 11**;
+- it does not replace the doctrine;
+- the doctrine remains valid independently of software;
+- the future software would be an executable expression of the doctrine's formal subset;
+- a new intermediate layer — the **formal architectural model** — must be developed before language or compiler implementation;
+- the eventual publication form remains open: a Part VI, companion research volume, software/product specification, or some combination should be selected only after prior-art research and formalisation.
+
+The concept's provisional computational chain is:
+
+```text
+Doctrine
+   ↓
+Formal architectural model
+   ↓
+Semantic primitives + invariants + rules
+   ↓
+Compiler target
+   ↓
+Resolved building model
+   ↓
+Production outputs + evidence
+```
+
+The architectural manuscript should not become a software pitch. The computational track earns promotion only if it clarifies and strengthens the architecture.
 
 # Separate implementation brief
 
