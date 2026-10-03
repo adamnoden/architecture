@@ -304,7 +304,7 @@ Acquire/index:
 - floor hierarchy evidence;
 - original versus later alterations.
 
-**Status:** **PLAN SOURCES LOCATED; ACQUISITION OPEN.** Historic England SN00359 records plan/elevation/section material; V&A E.371-2003 records GLC ground-/first-floor plan print. Neither is yet used for metric claims.
+**Status:** **SURVEY PLAN INSPECTED; HIGH-RES/PHASE RECONCILIATION OPEN.** V&A E.371-2003 has been directly inspected for broad ground-/first-floor survey-state topology; Historic England SN00359 confirms plan/elevation/section material but its image is not exposed online. Neither source is yet used for D5 metric claims.
 
 ### Priority 2 — derivation cases
 
