@@ -100,6 +100,9 @@ Check:
 
 # Prototype P01 — Wall bay
 
+**Build pack:** `docs/prototypes/w2-wall-bay-build-pack.md`  
+**Detail SVG:** `docs/prototypes/w2-wall-bay-detail.svg`
+
 ## Scope
 
 A full-height representative principal-room wall bay based on the current W2 hybrid hypothesis, including:
