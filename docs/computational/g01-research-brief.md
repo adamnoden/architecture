@@ -755,6 +755,8 @@ That would be progress.
 
 D1/D2 are now established in [G-01 Corpus and Source-Quality Register](g01-corpus-register.md).
 
+D3 is established in [G-01 Precedent Annotation Schema](g01-annotation-schema.md), including preliminary qualitative trials on Marble Hill, Danson and 76 Dean Street.
+
 The seed corpus has been stratified and graded by evidence quality. A derivation/hold-out split has been declared before metric analysis to reduce overfitting.
 
 The first annotation trials are:

@@ -268,7 +268,7 @@ Required distinction:
 
 **Output:** architectural-grammar position paper, followed eventually by one explicit grammar family.
 
-**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/method in the [G-01 Research Brief](g01-research-brief.md) and D1/D2 established in the [G-01 Corpus and Source-Quality Register](g01-corpus-register.md). The active task is source-pack acquisition and D3 annotation trials for Marble Hill, Danson and 76 Dean Street.
+**Current state:** foundational position v0.1 established in [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md), with scope/method in the [G-01 Research Brief](g01-research-brief.md), D1/D2 in the [G-01 Corpus and Source-Quality Register](g01-corpus-register.md), and D3 annotation contract/trials in the [G-01 Precedent Annotation Schema](g01-annotation-schema.md). Active work is source-phase reconciliation and completion of the three trial annotations before candidate-rule extraction.
 
 ### W8 — Structural semantics
 
@@ -588,8 +588,11 @@ These items should not be lost even if priorities change.
 | C-016 | Define layered architectural-grammar model | C-015 | first draft |
 | C-016A | Define G-01 scope and precedent corpus strategy | C-015,C-016 | complete v0.1 |
 | C-016A1 | Build G-01 corpus + source-quality register | C-016A | complete v0.1 |
-| C-016A2 | Acquire/index source packs for Marble Hill, Danson and 76 Dean Street | C-016A1 | active |
-| C-016B | Create semantic annotation schema for precedent corpus | C-002,C-016A | first draft; trial pending |
+| C-016A2 | Acquire/index source packs for Marble Hill, Danson and 76 Dean Street | C-016A1 | active; first source IDs indexed |
+| C-016B | Create semantic annotation schema for precedent corpus | C-002,C-016A | D3 v0.1 established; qualitative trial started |
+| C-016B1 | Reconcile Marble Hill source phases and complete metric/topology annotation | C-016A2,C-016B | active |
+| C-016B2 | Extract authoritative Danson principal-floor/section evidence | C-016A2,C-016B | open |
+| C-016B3 | Retrieve Survey of London plan evidence for 76 Dean Street | C-016A2,C-016B | open |
 | C-016C | Extract candidate topology/hierarchy/proportion/elevation rules | C-016B | open |
 | C-016D | Mutation-test candidate grammar against strong precedents and near-misses | C-016C | open |
 | C-016E | Draft first executable-independent G-01 rule specification | C-016D | open |

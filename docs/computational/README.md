@@ -25,6 +25,7 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 
    - [G-01 Research Brief](g01-research-brief.md) — scope, corpus strategy, annotation schema, candidate hypotheses and mutation-testing method for deriving the first Georgian-derived grammar from evidence rather than intuition.
    - [G-01 Corpus and Source-Quality Register](g01-corpus-register.md) — seed corpus, evidence grades, derivation/hold-out split and source-acquisition queue.
+   - [G-01 Precedent Annotation Schema](g01-annotation-schema.md) — D3 evidence contract plus preliminary Marble Hill, Danson and 76 Dean Street trials.
 
 5. [Validity and Obligations](validity-and-obligations.md)  
    Defines what kinds of validity exist, what a compile failure means, how obligations are discharged and what a successful compile may legitimately claim.

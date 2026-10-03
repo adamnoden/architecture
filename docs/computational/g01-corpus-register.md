@@ -441,15 +441,16 @@ The immediate task is to upgrade the three trial source packs rather than expand
 
 ### D3 — annotation schema trial
 
-**Next active deliverable.**
+**v0.1 established; qualitative trial active.**
 
-Use:
+See [G-01 Precedent Annotation Schema](g01-annotation-schema.md).
 
-- Marble Hill;
-- Danson;
-- 76 Dean Street.
+The first pass has already forced two useful model refinements:
 
-The annotation trial should be done manually in research documents before any data schema or software is designed.
+- symmetry must be represented with explicit domain/scope rather than a single building-level boolean;
+- architectural observations must carry historical-phase provenance because a geometrically authoritative drawing may represent a later state.
+
+Metric extraction and full topology remain incomplete and should not be inferred from the preliminary notes.
 
 ---
 
