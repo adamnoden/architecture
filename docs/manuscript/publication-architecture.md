@@ -79,7 +79,7 @@ perimeter dry zone; rainwater route; kitchen source capture; bathroom extraction
 fixing infrastructure; physical service index.
 
 Every pattern uses:
-problem / forces / principle / diagram / variants / proportionality / boundary debt / permanent-fabric impact / construction variability and workmanship / architectural resolution / assembly and replacement sequence / failure modes / evidence / maturity / reference-house choice.
+problem / forces / principle / diagram / variants / proportionality / boundary debt / permanent-fabric impact / construction variability and workmanship / occupation and repose impact where relevant / architectural resolution / assembly and replacement sequence / failure modes / evidence / maturity / reference-house choice.
 
 ### Candidate development track
 
