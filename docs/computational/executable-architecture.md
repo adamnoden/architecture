@@ -656,6 +656,7 @@ Before adding new computational work, consult:
 - [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md) — layered architectural-language model and proportion strategy;
 - [Validity and Obligations](validity-and-obligations.md) — what compile success/failure means and how obligations are discharged;
 - [Compiler Targets](compiler-targets.md) — versioned external normative environments;
+- [Supported Domain](supported-domain.md) — bounded compiler competence, including Domain S0 and candidate H1;
 - [Prior Art Map](prior-art-map.md) — current reconnaissance and unanswered prior-art questions.
 
 These documents deliberately sit between the concept paper and any future implementation.

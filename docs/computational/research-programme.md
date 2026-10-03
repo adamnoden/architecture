@@ -237,7 +237,7 @@ The goal is not yet to choose the answer, but to find the **minimum credible dom
 
 **Output:** supported-domain specification with explicit inclusions, exclusions and extension rules.
 
-**Current state:** open.
+**Current state:** candidate v0.1 established in [Supported Domain](supported-domain.md). Domain S0 and candidate H1 are now separated; engineering envelopes remain open.
 
 ### W7 — Architectural grammar and proportion
 
@@ -585,7 +585,12 @@ These items should not be lost even if priorities change.
 | C-011 | Research England regulatory versioning / transition rules | C-010 | active |
 | C-012 | Determine standards licensing / machine-readable strategy | C-010 | open |
 | C-013 | Distinguish building-regulations target from planning constraints | C-010 | first draft |
-| C-014 | Define initial supported-domain candidates | C-002,C-006 | open |
+| C-014 | Define initial supported-domain candidates | C-002,C-006 | candidate v0.1 |
+| C-014A | Specify Domain S0 paper-compilation slice | C-014 | active |
+| C-014B | Define candidate H1 structural proof envelope | C-014,C-017 | open |
+| C-014C | Select first supported roof family | C-014 | open |
+| C-014D | Decide first foundation proof strategy | C-014 | open |
+| C-014E | Define initial native/external/unsupported capability matrix | C-014 | first draft |
 | C-015 | Research architectural grammars and proportion deeply | W1 | initial foundation complete; corpus research continues |
 | C-016 | Define layered architectural-grammar model | C-015 | first draft |
 | C-016A | Define G-01 scope and precedent corpus strategy | C-015,C-016 | complete v0.1 |
@@ -663,7 +668,7 @@ Unless new evidence changes the order, the next non-implementation sequence shou
 1. deepen the **formal architectural model** through worked examples;
 2. apply the **validity / obligation / evidence** model to worked examples and paper-compilation dependencies;
 3. acquire the **G-01 trial source packs** and run D3 semantic annotation on Marble Hill, Danson and 76 Dean Street;
-4. define candidate **supported domains**;
+4. harden **Domain S0** for paper compilation and candidate H1 technical envelopes;
 5. formalise the first **structural + boundary slice**;
 6. design and execute the **paper compilation**.
 
