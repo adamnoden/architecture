@@ -153,4 +153,5 @@ The computational programme should not convert a carefully qualified human princ
 - Do not imply that Georgian or traditional architecture is biologically correct.
 - Do not confuse a real structural load path with its visible expression.
 - Do not confuse repose with absence of interest.
-- Do not make the house quiet by making it lifeless.
+- Do not equate repose with low visual complexity or sensory impoverishment.
+- Prefer concrete architectural language over aphorisms; retain the canonical proposition and do not multiply slogans around it.
