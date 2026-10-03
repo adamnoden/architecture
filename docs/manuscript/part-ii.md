@@ -1,7 +1,7 @@
 # The Long-Life House
 ## Part II — Architecture of the Platform
 
-**Draft v0.1 — evidence-hardened working prose**
+**Draft v0.2 — tectonic and reversible-assembly integration; evidence-hardened working prose**
 
 ---
 
@@ -32,17 +32,45 @@ These functions are often assigned separately and late. The structural engineer 
 
 A designed interface reverses that sequence. The project first decides which layer is intended to endure, which layer is expected to move or be replaced, and what must remain continuous across the junction. The geometry, fixing and finish follow from those decisions.
 
+## Separate the functions
+
+Many domestic details fail because several distinct functions are silently collapsed into one junction.
+
+**Support is not restraint. Restraint is not sealing. Sealing is not finish. Finish is not movement control.**
+
+Sometimes one component can legitimately perform several of these tasks. But the combination should be deliberate rather than accidental.
+
+At an important interface the design should ask separately:
+
+- what carries gravity load?
+- what provides lateral or rotational restraint?
+- what movement is expected and where may it occur?
+- what maintains fire, acoustic, air, vapour, water or thermal performance?
+- what protects vulnerable edges?
+- what provides the visible finish?
+- what must be removed when the shorter-lived assembly is renewed?
+
+This distinction is particularly useful structurally. A floor member may be supported by bearing while separate details provide roll restraint, diaphragm action or wall restraint. If the functions are understood separately, the connection can be robust without becoming needlessly rigid.
+
+The governing structural principle is:
+
+> **Deterministic load paths; bounded freedom of movement.**
+
+The building should be highly legible about where loads go and where restraint is required. It should be equally deliberate about movements that are harmless and therefore need not be suppressed.
+
 ## Movement is ordinary
 
 Cracking is often treated as a cosmetic defect produced by imperfect workmanship. Sometimes it is. But movement itself is not a defect. Buildings expand and contract with temperature; timber changes dimension with moisture; structures deflect under load; masonry shrinks and creeps; adjoining materials respond differently to the same environment.
 
-The design problem is therefore not to command the building to remain motionless. It is to decide **where movement is allowed to appear harmlessly**.
+The design problem is therefore not to command the building to remain motionless. It is to decide **which movements are harmless, how large they are likely to be, and where they are allowed to occur without damage**.
 
 Conventional construction already recognises this at movement joints, facade interfaces and structural bearings. The proposition here is to extend the same seriousness to ordinary domestic junctions where brittle finishes are routinely asked to conceal relationships that are known to move.
 
 A plaster line between independently moving assemblies is not an interface. It is an instruction to crack later.
 
 This is particularly relevant where a replaceable component meets permanent construction: windows in masonry openings, doors in walls, removable panels within fixed floors, joinery against masonry, wet-room fit-out against structure, and service penetrations through boundaries.
+
+A useful detail does not merely tolerate movement somewhere inside an assembly. It defines a **movement budget**: the expected direction and order of movement, the clearance provided, the surfaces allowed to slide or rotate, and the condition at which inspection or intervention becomes necessary.
 
 ## Interface hierarchy
 
@@ -72,6 +100,24 @@ The precise detail may include a subframe, removable reveal pieces, accessible m
 
 The same question can then be asked of doors, thresholds, floor access, grilles, kitchen joinery and wet-room panels.
 
+## Tectonic honesty
+
+The interface is also where the project makes an architectural claim about how the building is made.
+
+The long-life house should be **tectonically honest**. This does not require exposed services, visible bolts or a modernist aesthetic. It means that construction may be concealed, but it should not be falsified.
+
+A real cornice may conceal a real movement gap. A removable architrave may conceal real window fixings. Timber panelling may conceal a service zone. These are honest forms of concealment because the architectural element has its own material reality and performs a genuine role.
+
+By contrast, brittle finish bridging two assemblies known to move independently creates apparent continuity by denying the real constructional relationship. A cosmetic seam that must crack before the building can move is not successful concealment; it is unresolved construction.
+
+The same discipline applies to material expression. Cladding, veneers, paint and render can be legitimate systems in their own right. The concern is not that every surface must reveal every layer behind it. The concern is **counterfeit construction**: using a material or joint pattern principally to imply a materially different structural, weathering or craft condition that the building does not possess.
+
+This distinction is intentionally stricter than ordinary visual preference but looser than structural exhibitionism. A non-loadbearing classical element can still be architecturally genuine if its actual role is compositional, protective, spatial or as an interface. Honesty does not require every pilaster to be a column; it requires the project to understand what the element really is.
+
+At an ambiguous case, the useful question is:
+
+> **What does this detail ask the observer, future owner or future craftsperson to believe about how the building works, and is that account substantially true?**
+
 ## Architectural expression
 
 An interface need not look technical.
@@ -81,6 +127,12 @@ A threshold may express a movement and wear junction in stone or metal. A timber
 The reference house developed later in this book uses traditional joinery and restrained metalwork as one language for these conditions. That is an architectural choice, not a requirement of the doctrine.
 
 The deeper proposition is that architecture should not be asked to hide the absence of detail. It should **be the detail**.
+
+Beauty is therefore part of technical completion. A maintainable junction that reads as an arbitrary access panel, crude gap or piece of commercial trunking in a principal room has solved only part of the problem. Every visible pattern should answer a second question after performance is secured:
+
+> **How does this become architecture rather than equipment?**
+
+The answer may be deliberately quiet: a moulding, a reveal, a threshold, a panel rhythm, a well-made removable trim or a fine metal line. The doctrine does not prescribe a style. It requires the visible result to be resolved rather than excused.
 
 ---
 
@@ -360,6 +412,21 @@ The doctrine therefore favours:
 
 A panel that makes maintenance easy while turning the bedroom into an acoustic failure is not a successful pattern.
 
+## Boundary independence
+
+Replaceable architecture creates a further requirement: where practical, **routine removal of a finish or access layer should not dismantle the building's primary safety and environmental boundaries**.
+
+This is not always achievable. A removable fire-rated access door may itself form part of a fire boundary; a window is necessarily part of the weather and air barrier; a bathroom finish may participate in water management. But the project should avoid making casually removed decorative panels the only thing standing between the building and failure.
+
+A useful hierarchy is:
+
+1. place the critical boundary in the slowest appropriate layer;
+2. let faster-changing layers sit inboard or outboard of it where practical;
+3. where the replaceable element must form part of the boundary, make the reinstatement method explicit and testable;
+4. prevent routine access from requiring destructive reconstruction of the boundary.
+
+This matters especially for proposed replaceable wall linings and floor platforms. Their removability is valuable only if lifting a panel does not casually puncture airtightness, bypass acoustic isolation, expose an unprotected fire path or compromise waterproofing that cannot be reliably restored.
+
 ## Security and pests
 
 Accessible routes must also remain secure against the wrong user.
@@ -374,29 +441,123 @@ The recurring lesson is simple:
 
 ---
 
-# 11. Occupation without consumption of fabric
+# 11. The Replaceable Interior
 
-Buildings are not only maintained by trades. They are continually altered by occupation.
+The interior is where the permanent building encounters the fastest-changing parts of domestic life.
 
-Pictures are hung. Shelves appear. Furniture changes. Kitchens are renewed. Bedrooms become studies. New screens, speakers, controls and data connections are added. These small interventions can gradually consume permanent fabric even when no major building work occurs.
+Pictures are hung. Shelves appear. Furniture changes. Kitchens are renewed. Bathrooms wear. Floor finishes are replaced. New screens, speakers, controls and data connections appear. A calm room may therefore conceal a surprisingly rapid cycle of technical and decorative change.
 
-A long-life platform should make ordinary occupation easy without pretending that every future use can be predicted.
+Conventional construction often responds by allowing these faster layers to attach directly to the slowest ones. Masonry is drilled repeatedly. Services are chased into walls. Joinery is bonded across junctions. Plaster makes separate assemblies appear monolithic. Tile and screed fuse finishes to substrates. Each intervention is locally understandable; over decades the permanent house is consumed by ordinary occupation.
 
-## Fixing infrastructure
+The alternative is not a completely demountable interior. That would create its own complexity.
 
-Selected walls can provide known fixing strategies.
+The proposition is more selective:
 
-The simplest precedent is the picture rail: an architectural element that allows repeated rearrangement without repeated holes in plaster and masonry. The same logic can be extended selectively through concealed fixing grounds, robust joinery panels or documented heavy-load points.
+> **The permanent building should provide a limited number of durable interfaces through which a much larger number of shorter-lived interior assemblies can attach, move and change.**
 
-The design should not turn every wall into a technical rack. It should identify where repeated fixing is likely and provide appropriate capacity there.
+## The attachment hierarchy
 
-Exceptional loads still require proper structural design.
+A useful hierarchy is:
+
+**permanent fabric → interface infrastructure → replaceable architectural assembly → fitting or commodity component**
+
+The layers need not all be physically distinct at every location. Their purpose is to clarify where future change should stop.
+
+A masonry wall, for example, might receive a small number of engineered anchors during construction. Those anchors carry a durable rail, frame or other **architectural backplane**. Wall linings, joinery, service carriers and ordinary occupation can then attach on the room side of that backplane without every generation drilling the masonry again.
+
+This is not a rule against screws. Screws, bolts and clips are among the most useful reversible fasteners available. The rule is about **where the fixing terminates**.
+
+Very few uncontrolled fixings should enter permanent fabric.
+
+Where permanent fabric must be penetrated, the fixing should be deliberate, structurally appropriate, coordinated with hidden services and boundaries, and documented. The number and location of permanent attachment points should be treated as an architectural resource rather than an unlimited blank surface.
+
+Exceptional loads still require proper structural design. An attachment system intended for pictures and ordinary cabinetry should not be treated as a universal substitute for engineered support.
+
+## The lining is not the wall
+
+A permanent masonry wall and the room surface presented to occupants do not necessarily need to be the same physical layer.
+
+This distinction opens an important line of research.
+
+A durable wall may carry a dry, mechanically mounted lining system whose panels provide the interior surface while leaving the permanent structure substantially untouched. Depending on the room, those panels might be timber, gypsum-fibre, mineral board, stone-faced construction, factory-finished mineral surfaces or another system compatible with fire, acoustics, moisture and impact requirements.
+
+The objective is not to produce an office fit-out aesthetic.
+
+> **Panelisation does not require a panelised appearance.**
+
+Panel boundaries can coincide with genuine architectural composition: skirting, dado, picture rail, panel mouldings, architraves and cornices can define fields that are both visually coherent and physically removable. Alternatively a large-format lining may use very fine controlled joints whose presence is accepted rather than cosmetically erased.
+
+The distinction is important. A narrow joint between two removable panels is not a defect merely because a plastered wall would have hidden it. If the joint expresses the actual assembly cleanly, it is tectonically more truthful than filler pretending the components are one continuous object.
+
+The system must still feel like a house. It should be solid under touch, resistant to impact, acoustically credible, fire-safe, dimensionally stable and capable of supporting ordinary occupation.
+
+## Wet work and dry assembly
+
+Wet construction is not an enemy.
+
+Mortar, masonry, lime, plaster, screed, grout and bonded finishes can be excellent where the assembly is genuinely intended to remain together for a comparable service life. The problem arises when an irreversible wet process is used casually to fuse layers that have different expected lives, different movement or a foreseeable need for access.
+
+The project therefore adopts a presumption:
+
+> **Site-applied wet or bonded finishes require justification where they bridge replaceable layers, movement interfaces or future access.**
+
+That is not a plaster ban.
+
+A durable plaster finish directly associated with long-lived masonry may be rational. A local repairable lime finish may outperform a complicated demountable panel. A wet-room waterproofing system may need bonded continuity for reliability.
+
+But using skim, filler or adhesive merely because it can erase a joint should not end the design discussion.
+
+This produces a broader construction rule:
+
+> **Wet trades belong naturally to layers intended to become one; dry assembly belongs naturally to layers expected to separate again.**
+
+The rule is directional, not absolute.
+
+## Floor as platform
+
+The same distinction applies horizontally.
+
+The primary structural floor should not have to be replaced merely because the occupant wants timber rather than tile.
+
+A useful floor hierarchy may be:
+
+**primary structural floor → service/acoustic/levelling layer → replaceable floor platform → finish carrier → finish**
+
+The exact number of physical layers will vary. The important distinction is between the **platform interface** and the finish.
+
+A timber room, tiled room and stone-finished room need not use identical substrates. Tile may require greater stiffness and different movement control; stone introduces mass; timber has its own acoustic and moisture behaviour. What can potentially be standardised is the interface beneath them:
+
+- finished datum;
+- panel/support geometry;
+- load limits;
+- edge condition;
+- lifting/removal method;
+- acoustic seating;
+- replacement sequence.
+
+The result is a **finish-agnostic floor platform** rather than a “removable timber floor”.
+
+It must not feel temporary. Under normal use the floor should be silent, rigid, heavy enough in character and visually composed as ordinary high-quality architecture. Removability is a maintenance state, not an everyday aesthetic.
+
+Critical structural diaphragm action should normally remain in the structural layer rather than depend on routinely removable finish panels.
+
+## Ceilings
+
+Ceilings deserve the same analysis but not necessarily the same answer.
+
+Making an entire ceiling demountable may create excessive joints, acoustic weakness and visual complexity. In many rooms the better strategy may be a durable ceiling with deliberate perimeter movement, local access at real maintenance points and service distribution elsewhere.
+
+Where a ceiling lining is panelised, its fire, acoustic and air-boundary obligations must remain explicit. A panel that can be removed easily but cannot be reseated without rattling, cracking or degrading compartmentation is not an improvement.
+
+The doctrine therefore resists symmetry for its own sake: floors, walls and ceilings may use different degrees of reversibility because their risks and maintenance needs differ.
 
 ## Kitchens as furniture
 
 A kitchen is normally renewed far sooner than the structure enclosing it.
 
 Treating cabinetry and appliances as fit-out rather than permanent construction makes this relationship explicit. Mechanical fixings, standard appliance envelopes, accessible isolation and service connections, and local containment beneath water-connected appliances can allow the kitchen to change without consuming primary walls or floors.
+
+A durable attachment plane or secondary joinery wall may carry cabinetry while protecting permanent masonry from successive kitchen generations.
 
 This does not mean kitchens must look modular. The finished joinery may be highly crafted. The logic behind it should remain reversible.
 
@@ -406,9 +567,9 @@ Bathrooms are more difficult because finish, waterproofing and services become t
 
 The doctrine's preferred direction is to separate permanent enclosure from replaceable wet-room systems where this can be achieved without reducing waterproofing reliability. Service access from the reverse side of a wall is often more valuable than attempting to make every tile demountable.
 
-This is an example of proportional serviceability.
+Mechanically mounted tile or stone panels are worth investigating where they can achieve the required water, movement, impact and cleaning performance. They should not be adopted merely because demountability sounds virtuous.
 
-A robust conventional bonded finish may be preferable to a complicated removable panel system if the high-risk valves, cisterns, wastes and joints remain accessible by another route.
+A robust conventional bonded finish may remain preferable where the high-risk valves, cisterns, wastes and joints are accessible by another route and replacement does not consume important permanent fabric.
 
 The doctrine therefore does not require “fully demountable bathrooms”. It requires the replacement sequence to be conscious.
 
@@ -418,11 +579,33 @@ Openings belong to the enduring spatial and facade order. The operating assembli
 
 The building should therefore preserve the opening while allowing frames, glazing, seals, hardware and thresholds to be renewed.
 
+Architraves, reveals, beads and thresholds can become genuine interface components rather than cosmetic closures over inaccessible fixings.
+
 This is a recurring expression of selective permanence: **keep the architectural relationship; renew the wearing assembly.**
+
+## Manufacture according to lifespan
+
+The replaceable interior creates a natural manufacturing gradient.
+
+The longest-lived work may rationally be site-built: masonry, major structure and enduring envelope construction benefit from continuity, mass and adaptation to the real site.
+
+As layers become shorter-lived and more dependent on precision interfaces, the case for controlled manufacture becomes stronger. Wall panels, floor platforms, joinery, access assemblies and technical housings can potentially be fabricated, finished and checked before they arrive at the building.
+
+The reason is not fashion or construction speed.
+
+It is **repeatability, quality control, remanufacturability and predictable replacement**.
+
+A factory-finished wall panel can be judged as a component. Its dimensions, fixing geometry, finish and replacement sequence can be recorded. A future fabricator can reproduce it without reconstructing the room in wet trades.
+
+This is a presumption, not an absolute rule. Site craft remains entirely legitimate where it gives the better architectural or whole-life result.
+
+The working construction proposition is:
+
+> **Build the permanent house. Assemble the changeable house inside it.**
 
 ## Adaptability without placelessness
 
-Occupation also changes at the scale of rooms.
+None of this requires the rooms themselves to become generic.
 
 The doctrine favours robust dimensions and compatible service capacity over indiscriminate movable partitions. A study can become a bedroom because it has good light, sensible dimensions and suitable connections, not because every wall is on a track.
 
