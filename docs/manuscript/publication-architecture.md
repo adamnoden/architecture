@@ -140,7 +140,7 @@ The computational direction should currently remain **parallel to the publicatio
 
 The current editorial position is:
 
-- it is **not Principle 11**;
+- it is **not a governing principle**;
 - it does not replace the doctrine;
 - the doctrine remains valid independently of software;
 - the future software would be an executable expression of the doctrine's formal subset;
