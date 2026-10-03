@@ -34,7 +34,8 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 6. [Evidence and Provenance Architecture](evidence-and-provenance.md)  
    Defines evidence classes, scope, lifecycle, future evidence plans, dependency invalidation and release manifests.
 
-7. [Compiler Targets](compiler-targets.md)
+7. [Compiler Targets](compiler-targets.md)  
+   Defines the versioned regulatory/normative environment against which compilation occurs, beginning conceptually with England.
 
    - [S0 Compiler Target Snapshot — England / 2026-10-03](s0-target-snapshot.md) — dated research target showing applicability, transition and partial coverage rather than relying on “latest document”.
 
@@ -47,8 +48,7 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 10. [Supported Domain](supported-domain.md)  
    Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.
 
-   - [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) — exact first manual integration test: wall/window/floor/service slice, obligations, evidence, outputs and deliberate mutations.  
-   Defines the versioned regulatory/normative environment against which compilation occurs, beginning conceptually with England.
+   - [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) — exact first manual integration test: wall/window/floor/service slice, obligations, evidence, outputs and deliberate mutations.
 
 11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.
