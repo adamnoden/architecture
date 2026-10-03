@@ -499,13 +499,43 @@ Provisional definition:
 
 - model integrity passes;
 - all mandatory obligations are PASS, PASS—EXTERNAL EVIDENCE, NOT APPLICABLE or otherwise explicitly accepted by a defined governance mechanism;
-- no hidden UNRESOLVED obligations;
+- no hidden UNRESOLVED **due-now** obligations;
+- future evidence obligations are explicitly planned with due phase/method/owner;
 - no unsupported condition is being represented as proven;
 - evidence/provenance manifest is complete;
 - assumptions are frozen and visible;
 - outputs derive from the same source version.
 
 The exact release contract requires substantial later work.
+
+## 13A. Time-phased obligations
+
+A release should only require evidence that is **due at the current lifecycle phase**.
+
+Some obligations can only be discharged later:
+
+- installation inspection;
+- pre-closure verification;
+- commissioning measurement;
+- completion evidence.
+
+These should not appear as hidden unresolved items.
+
+They should exist as **planned future evidence obligations** carrying:
+
+- due phase;
+- evidence method;
+- responsible party;
+- hold point where relevant;
+- failure/remediation response.
+
+Therefore a design-stage release may pass when:
+
+- every due-now mandatory obligation is resolved;
+- future evidence obligations are explicitly planned;
+- no future obligation is falsely represented as already proven.
+
+See [Evidence and Provenance Architecture](evidence-and-provenance.md).
 
 ## 14. Compilation does not equal statutory approval
 

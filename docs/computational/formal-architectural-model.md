@@ -375,6 +375,8 @@ These entities should not be hidden metadata.
 
 They form an explicit evidence graph.
 
+Evidence and provenance are developed further in [Evidence and Provenance Architecture](evidence-and-provenance.md). A key implication is that evidence has scope, dependencies and lifecycle state: a calculation or test is not a free-floating truth attached to an object.
+
 ## 5. Relationship families
 
 The eventual model should prefer a small, explicit relationship vocabulary over hundreds of ad-hoc object attributes.

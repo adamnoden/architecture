@@ -30,10 +30,13 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 5. [Validity and Obligations](validity-and-obligations.md)  
    Defines what kinds of validity exist, what a compile failure means, how obligations are discharged and what a successful compile may legitimately claim.
 
-6. [Compiler Targets](compiler-targets.md)  
+6. [Evidence and Provenance Architecture](evidence-and-provenance.md)  
+   Defines evidence classes, scope, lifecycle, future evidence plans, dependency invalidation and release manifests.
+
+7. [Compiler Targets](compiler-targets.md)  
    Defines the versioned regulatory/normative environment against which compilation occurs, beginning conceptually with England.
 
-7. [Prior Art Map](prior-art-map.md)  
+8. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.
 
 ## Working dependency order

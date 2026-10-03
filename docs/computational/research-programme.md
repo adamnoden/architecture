@@ -192,7 +192,7 @@ Research:
 
 **Output:** dedicated evidence/provenance specification.
 
-**Current state:** concept only. This is a near-term priority.
+**Current state:** conceptual v0.1 established in [Evidence and Provenance Architecture](evidence-and-provenance.md). The next test is application to the first paper-compilation slice.
 
 ### W5 — Compiler-target model
 
@@ -577,7 +577,9 @@ These items should not be lost even if priorities change.
 | C-005 | Define derived-view versus source-of-truth rules | C-002 | first draft |
 | C-006 | Define validity dimensions | C-002 | first draft |
 | C-007 | Define obligation object and lifecycle | C-006 | first draft |
-| C-008 | Define evidence/provenance object model | C-007 | open |
+| C-008 | Define evidence/provenance object model | C-007 | first draft |
+| C-008A | Define time-phased evidence obligations and evidence-plan semantics | C-008 | first draft |
+| C-008B | Test evidence invalidation on paper-compilation mutation | C-008 | blocked on W15 |
 | C-009 | Define compile status / release semantics | C-006,C-007 | first draft |
 | C-010 | Define compiler-target anatomy | — | first draft |
 | C-011 | Research England regulatory versioning / transition rules | C-010 | active |
@@ -659,7 +661,7 @@ Exploratory notes should not silently redefine the canonical model.
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
 1. deepen the **formal architectural model** through worked examples;
-2. harden the **validity / obligation / evidence** model;
+2. apply the **validity / obligation / evidence** model to worked examples and paper-compilation dependencies;
 3. acquire the **G-01 trial source packs** and run D3 semantic annotation on Marble Hill, Danson and 76 Dean Street;
 4. define candidate **supported domains**;
 5. formalise the first **structural + boundary slice**;
