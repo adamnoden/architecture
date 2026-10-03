@@ -250,7 +250,7 @@ Introduce:
 - beauty;
 - permanent house / changeable house.
 
-Do not preview all ten principles.
+Do not preview all eleven principles.
 
 Final movement should feel like opening a door into Part I.
 
