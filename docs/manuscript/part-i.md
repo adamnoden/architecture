@@ -212,6 +212,10 @@ The same logic can apply to floors. A primary structural floor may remain stable
 
 The aim is not universal modularity. It is to make the boundary between what should endure and what should change both technically and architecturally deliberate.
 
+A useful construction shorthand follows:
+
+> **Build the permanent house. Assemble the changeable house inside it.**
+
 ## Maintenance geography
 
 Individual access details do not by themselves make a maintainable building.
@@ -316,16 +320,18 @@ They do not prescribe a service undercroft, a removable floor, a masonry wall th
 
 The distinction is essential.
 
-A doctrine should survive the failure of one implementation idea. If a full walkable undercroft proves uneconomic, maintenance geography remains valid. If a removable floor cassette cannot achieve the acoustic and tactile quality required of a principal room, the need for accessible service distribution remains. If a metal containment trough creates more problems than it solves, the principle of visible, damage-limiting water failure remains. If a future project is modern rather than Georgian, the principle that technology should be architecturally resolved remains.
+A doctrine should survive the failure of one implementation idea. If a full walkable undercroft proves uneconomic, maintenance geography remains valid. If a finish-agnostic floor platform cannot achieve the acoustic and tactile quality required of a principal room, the need for accessible service distribution remains. If a metal containment trough creates more problems than it solves, the principle of visible, damage-limiting water failure remains. If a future project is modern rather than Georgian, the principle that technology should be architecturally resolved remains.
 
-The chapters that follow therefore move through four levels:
+The project therefore works through six linked levels:
 
 **Doctrine** establishes the durable proposition.  
 **Strategies** describe general ways of satisfying it.  
 **Patterns** define reusable architectural responses with explicit trade-offs and evidence status.  
-**Reference implementations** show how one particular house might choose among them.
+**Reference implementations** show how one particular house might choose among them.  
+**Delivery requirements** assign responsibility, stage, evidence and acceptance criteria.  
+**Tests** determine whether the claimed performance survives calculation, prototype, commissioning and real intervention.
 
-That hierarchy is intended to make disagreement useful. An architect should be able to reject a pattern without first rejecting the principle it was trying to serve.
+That hierarchy is intended to make disagreement useful. An architect should be able to reject a pattern without first rejecting the principle it was trying to serve, and a beautiful implementation should still be rejected if the test demonstrates that it does not work.
 
 ---
 
