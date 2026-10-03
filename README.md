@@ -20,6 +20,7 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 - [Governing principles](docs/manuscript/governing-principles.md) — ten public-facing principles.
 - [Part I](docs/manuscript/part-i.md) — current opening argument.
 - [Part II](docs/manuscript/part-ii.md) — current architecture-of-the-platform chapters.
+- [Part V](docs/manuscript/part-v.md) — making, manufacturing, prototyping, procurement and maintainability testing.
 
 ### Pattern catalogue
 - [Core 12 patterns](docs/patterns/core-12.md) — the first architectural patterns developed in depth.
