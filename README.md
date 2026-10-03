@@ -46,6 +46,10 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 - [Prototype programme](docs/development/tectonic-prototype-programme.md) — 1:1 engineering and architectural validation programme.
 - [Migration plan](docs/development/tectonic-migration-plan.md) — staged integration plan.
 
+### Prototypes
+- [W2 wall-bay build pack](docs/prototypes/w2-wall-bay-build-pack.md) — first buildable 1:1 mock-up specification for the replaceable wall system.
+- [W2 wall-bay SVG](docs/prototypes/w2-wall-bay-detail.svg) — vector detail of the gravity seat, separate top restraint, backplane and architectural release zones.
+
 ### Project delivery
 - [RIBA implementation brief template](docs/delivery/riba-implementation-brief-template.md) — translation layer from the publication into requirements for an appointed design team.
 
