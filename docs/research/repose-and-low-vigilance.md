@@ -1,7 +1,7 @@
 # Repose and Low Vigilance — Evidence Note
 
-**Status:** working research synthesis for doctrine integration.  
-**Purpose:** establish the evidential basis, limits and architectural consequences of treating domestic repose as a design requirement.  
+**Status:** audited research synthesis for doctrine integration.  
+**Purpose:** establish the evidential basis, limits and architectural consequences of treating domestic repose as a design requirement. See also the [claim-by-claim evidence audit](repose-evidence-audit.md).  
 **Scope:** ordinary dwellings. This note does not claim that architecture can determine mental state, diagnose health, or produce universal psychological responses.
 
 ---
@@ -17,8 +17,6 @@ The architectural proposition developed here is:
 The word **repose** is used for the resulting architectural condition.
 
 Repose does not mean sensory deprivation, blandness, symmetry, historical style or the elimination of surprise. It means that the ordinary background condition of the house should not continually demand monitoring, interpretation or corrective action from its occupants.
-
-A house may delight attention without continually demanding it.
 
 This proposition is a synthesis rather than a single experimentally proven law. Its constituent parts have different levels of evidential support and must not be presented as equally established.
 
@@ -77,11 +75,11 @@ Use as design principles rather than universal formulae.
 
 Use as an architectural hypothesis and research programme, not as settled causal fact.
 
-- visually legible support and apparent structural equilibrium as contributors to domestic repose;
-- the proposition that gratuitous apparent instability may impose low-level perceptual tension;
-- the proposition that a house whose structure appears “settled” may be more appropriate to domestic recovery than one designed around structural bravura.
+- visually legible support and apparent structural equilibrium as possible contributors to domestic repose;
+- the proposition that gratuitous apparent instability may contribute to perceptual tension;
+- the preference for principal domestic spaces whose structural expression is settled rather than intentionally precarious.
 
-The underlying perceptual science is strong: humans rapidly and spontaneously infer support, stability, mass, force and gravity from visual scenes. The architectural inference from that capability to long-duration domestic comfort has not yet been demonstrated strongly enough to present as a physiological law.
+The evidence that visual perception extracts support, stability and other physical properties is strong. The proposed contribution of apparent structural equilibrium to long-duration domestic comfort has not been established directly and remains an architectural inference.
 
 ### Level D — exploratory, contested or commonly overstated
 
@@ -97,7 +95,7 @@ Do not use as doctrine without stronger evidence.
 
 ---
 
-## 4. Environmental stress as the useful umbrella
+## 4. Environmental stress as a framing device
 
 Evans and McCoy’s 1998 paper *When Buildings Don’t Work: The Role of Architecture in Human Health* remains useful because it does not pretend to have discovered a catalogue of therapeutic shapes.
 
@@ -107,7 +105,7 @@ That caution should remain ours.
 
 The important conceptual move is that an environment can create **demands**, while occupants possess finite coping and attentional resources. Architecture therefore matters not only through measurable physical hazards but through the amount and character of adaptation it continually asks of its occupants.
 
-This provides a rigorous ancestor for the low-vigilance proposition without requiring neuro-determinism.
+This provides a useful conceptual basis for the low-vigilance proposition without requiring a direct neurological claim.
 
 **Source:** Evans, G. W. & McCoy, J. M. (1998), *Journal of Environmental Psychology* 18(1), 85–94. DOI: https://doi.org/10.1006/jevp.1998.0089
 
@@ -130,7 +128,7 @@ Useful forms of local agency include:
 - the ability to separate noisy and quiet activities;
 - manual fallback when automation fails.
 
-The doctrine should therefore prefer **legible local control** over systems that deliver nominally optimal conditions while making the occupant dependent on opaque automation.
+The doctrine should therefore prefer controls that are intelligible and effective at the point of use over systems that deliver nominally optimal conditions while leaving occupants unable to understand or alter them.
 
 This does not mean every environmental variable must be manually controlled. It means the design should take seriously the psychological and practical value of being able to alter one’s immediate condition.
 
@@ -156,13 +154,11 @@ This is important because it gives us a better formulation than “calm architec
 
 The target is not minimal stimulus.
 
-> **Repose requires coherence, not emptiness.**
-
 A room may contain ornament, books, patterned surfaces, joinery, artwork, texture, patina and complex natural materials while remaining easy to comprehend as a whole.
 
 Conversely, a sparse environment can remain perceptually demanding if its hierarchy is unclear, its scale is ambiguous or its technical elements compete for attention.
 
-Fascination should therefore be permitted and often welcomed. The domestic question is whether interest sits **within an intelligible order**.
+Fascination is not in conflict with repose. The relevant question is whether visual interest is organised by an intelligible larger order.
 
 **Sources:**
 
@@ -237,8 +233,6 @@ The design conclusion should therefore be modest and practical:
 
 **More glazing** is not the principle.
 
-**Better connection under occupant control** is closer to it.
-
 **Source:** Jamrozik et al. (2024), “Restorative effects of daylight in indoor environments — A systematic literature review”, *Journal of Environmental Psychology* 97, 102323. DOI: https://doi.org/10.1016/j.jenvp.2024.102323
 
 ---
@@ -299,7 +293,7 @@ For a house, the presumption should favour equilibrium.
 
 ---
 
-## 11. Prospect-refuge: useful question, weak law
+## 11. Prospect-refuge: limits of the evidence
 
 Prospect-refuge theory is attractive because it appears to explain why protected outlooks, alcoves, window seats and edge positions often feel good.
 
@@ -319,7 +313,7 @@ Deep reveals, bays, window seats, alcoves and chairs with a substantial wall beh
 
 ---
 
-## 12. Curvature: preference is not safety
+## 12. Curvature: evidence and limits
 
 An influential 2013 fMRI study found curvilinear interiors more likely to be judged beautiful than rectilinear interiors, but contour did not alter approach/avoidance decisions.
 
@@ -362,7 +356,7 @@ Repose is the baseline condition that allows these differences to exist without 
 
 ---
 
-## 14. Neuroarchitecture: use the field, distrust the theatre
+## 14. Neuroarchitecture: methodological caution
 
 “Neuroarchitecture” is a useful name for work at the boundary of neuroscience, cognition and architecture. It is not yet a licence to translate every biometric difference into a design command.
 
@@ -384,7 +378,7 @@ The doctrine should therefore adopt three rules:
 
 # 15. Doctrine translation
 
-The research supports a governing principle of **repose**, understood as reduction of unnecessary vigilance.
+The research supports the constituent concerns behind a governing principle of **repose**. Repose itself is a doctrine term: a synthesis of environmental performance, control, privacy, comprehensibility and architectural judgement rather than a single validated psychological measure.
 
 The principle should not prescribe a style. It should create a set of architectural burdens of proof.
 
@@ -464,13 +458,11 @@ Ask:
 - are technical elements visually subordinate unless deliberately celebrated?
 - does detail reward attention rather than demand it?
 
-## 15.8 Bounded drama
+## 15.8 Deliberate intensity
 
-Architectural excitement is legitimate, but should be located deliberately.
+Strong contrast, surprise, compression, release or unusual geometry can enrich a house when used deliberately.
 
-A stair, threshold, garden room, gallery or occasional long view may compress, release, surprise or even create tension.
-
-The ordinary domestic background should not depend on continual novelty, exposure, disorientation or apparent structural improbability.
+The ordinary domestic background should not depend on continual novelty, exposure, disorientation or apparent structural improbability. Where a space is intentionally more intense, the design should be clear about where that effect begins and ends.
 
 
 ---
@@ -493,7 +485,7 @@ Construction that appears coherent with material and support can reduce perceptu
 
 ### Maintenance geography
 
-Technical work should not colonise principal rooms. A home should not constantly advertise that it is a machine requiring attention.
+Technical work should not dominate principal rooms. Maintainability should not make ordinary occupation feel like continuous interaction with building systems.
 
 ### Replaceable interiors
 
@@ -501,7 +493,7 @@ Access seams, panels and service routes must not generate gratuitous visual comp
 
 ### Workmanship robustness
 
-Repose also depends on execution. Misaligned datums, wavering joints, rattling floors, loose trims and visibly unresolved interfaces are small but persistent signals that the building is not fully at rest.
+Execution matters. Misaligned datums, wavering joints, rattling floors, loose trims and visibly unresolved interfaces can create persistent visual, acoustic or tactile disturbance even when the underlying technical system is sound.
 
 ---
 
@@ -519,7 +511,7 @@ For each principal room and approach sequence ask:
 6. **Richness** — is there enough interest without unresolved competition?
 7. **Recovery** — where can a tired, ill or overstimulated occupant withdraw?
 8. **Technology** — does the house serve without continually announcing its systems?
-9. **Drama** — where is tension intentional, and where should it subside?
+9. **Intensity** — where are surprise or tension intentional, and where should they subside?
 
 This review is qualitative unless a claim can be tested quantitatively.
 
