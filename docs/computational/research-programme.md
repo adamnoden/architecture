@@ -629,7 +629,7 @@ These items should not be lost even if priorities change.
 | C-029 | Define building-release manifest concept | C-008,C-009 | open |
 | C-030 | Design paper compilation case | C-014,C-016,C-018,C-019 | **S0 fixture + source package v0.1 complete** |
 | C-030A | Define interface-obligation-bundle abstraction | C-030 | **two-family provisional validation complete** |
-| C-030B | Test bundle composition / shared-obligation merging | C-030A | open |
+| C-030B | Test bundle composition / shared-obligation merging | C-030A | **composition v0.1 passed; model corrected to contributions-before-obligations** |
 | C-030C | Formalise S0-A conventional workmanship/tolerance route | C-021,C-030 | open |
 | C-031 | Execute paper compilation | C-030 | **Run 01 complete — research pass / release fail** |
 | C-031A | Execute S0 Run 02 only after abstraction red-team | C-030B,C-030C | blocked |
@@ -680,8 +680,8 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. red-team **S0 Run 01** and the new interface-obligation-bundle abstraction;
-2. test **bundle composition** so shared air/thermal/structural obligations merge rather than duplicate;
+1. red-team **S0 Run 01** and the composed wall-bay model for missed obligations, valid-child conflicts and evidence-scope errors;
+2. preserve the new **contributions-before-obligations** composition model and test it against product/target changes;
 3. formalise the **S0-A conventional workmanship/tolerance route** and first wall/window boundary family;
 4. choose whether H1 v0 gets a native bounded structural proof family or keeps member adequacy explicitly external;
 5. advance **G-01 D4–D6** in parallel;

@@ -740,7 +740,7 @@ They are unacceptable as manually authored user-facing bureaucracy.
 
 The model therefore introduces a provisional research construct:
 
-> **Interface Obligation Bundle — a meaningful architectural/physical relationship that deterministically expands into the fine-grained obligations required to resolve it.**
+> **Interface Obligation Bundle — a meaningful architectural/physical relationship that contributes semantic graph fragments, local constraints, applicability facts and evidence dependencies from which local and composed obligations are derived.**
 
 Examples now tested:
 
@@ -763,7 +763,31 @@ DEPENDENCY INVALIDATION
 
 The ordinary author manipulates the meaningful relationship.
 
-The expert can inspect the expansion.
+The expert can inspect both the bundle contribution and the canonical obligations derived after composition.
+
+### Composition correction from ASM-S0-WALL-BAY-01
+
+The first assembly-composition test showed that bundles must **not** each emit final independent checklists and rely on later de-duplication.
+
+Instead:
+
+~~~text
+AUTHORING RELATIONSHIPS
+        ↓
+BUNDLE / ASSEMBLY CONTRIBUTIONS
+        ↓
+SHARED DOMAIN GRAPHS
+        ↓
+CANONICAL OBLIGATION DERIVATION
+        ↓
+EVIDENCE / STATUS
+~~~
+
+This matters most for continuous systems.
+
+The wall field, window transition, floor edge and service sleeve do not create four separate air boundaries. They contribute segments/transitions to one boundary graph, and the compiler asks whether that composed boundary is continuous.
+
+See [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md).
 
 ### Bundles do not own duplicate truth
 

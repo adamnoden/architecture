@@ -11,7 +11,7 @@ S0 Paper Compilation Run 01 exposed a scaling risk:
 
 The solution is not to delete those obligations.
 
-It is to make them **generated internals of compositional architectural interfaces**.
+It is to make them **generated internals of compositional architectural interfaces**, while deriving cross-interface obligations from the composed building graphs rather than concatenating independent checklists.
 
 The ordinary author should manipulate:
 
@@ -31,6 +31,10 @@ rather than maintain a compliance checklist by hand.
 
 The same bundle machinery survives two materially different interfaces.
 
+A subsequent composition test also corrected the abstraction: bundles contribute graph fragments, local constraints and evidence dependencies; canonical cross-interface obligations are derived from the composed graphs.
+
+See [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md).
+
 That justifies promoting **Interface Obligation Bundle** into the formal model as a research construct.
 
 It does not justify implementation syntax.
@@ -39,7 +43,7 @@ It does not justify implementation syntax.
 
 Do not proliferate bundles.
 
-The next test is **composition**:
+The first **composition** test is now complete conceptually:
 
 ~~~text
 EXTERNAL WALL BAY ASSEMBLY
@@ -49,6 +53,6 @@ EXTERNAL WALL BAY ASSEMBLY
   └── wall boundary family
 ~~~
 
-The key question is whether shared obligations can be merged.
+The result is that shared obligations should not be “merged” after independent generation. The bundles should contribute to a single AIR/THERMAL/STRUCTURAL/etc graph first, and canonical obligations should be derived from that composed state.
 
-If the same air-boundary continuity obligation appears separately in several child bundles and requires manual reconciliation, the abstraction has failed to solve obligation explosion.
+The next step is red-teaming the composed bay for missed obligations, valid-child conflicts, product substitution and target-context changes.

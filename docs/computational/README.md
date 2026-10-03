@@ -54,7 +54,8 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) — exact first manual integration-test specification.
    - [S0 Frozen Source Package](s0-source-package.md) — explicit nominal test geometry, assumptions, boundaries and four frozen mutations.
    - [S0 Paper Compilation Run 01](s0-paper-compile-run-01.md) — first end-to-end manual compile; research model coherent, building release correctly fails on missing proof.
-   - [Interface Obligation Bundles](interface-obligation-bundles.md) — Run-01 scaling response: recurring architectural interfaces generate fine-grained proof obligations internally rather than exposing them as authoring chores.
+   - [Interface Obligation Bundles](interface-obligation-bundles.md) — Run-01 scaling response: recurring architectural interfaces hide proof complexity behind semantic relationships.
+   - [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md) — shows bundles must contribute to shared graphs before canonical obligations are derived; avoids duplicate checklists one abstraction higher.
 
 11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.

@@ -39,7 +39,27 @@ The formal system therefore needs **compositional obligation bundles**.
 
 A bundle is not a shortcut around proof.
 
-It is a reusable semantic expansion.
+It is a reusable semantic/graph expansion.
+
+## 1A. Composition correction
+
+The first assembly-composition test refined this bundle after v0.1.
+
+Do **not** interpret the obligation groups below as independent final checklists emitted by this bundle.
+
+The bundle contributes:
+
+- semantic entities/relationships;
+- boundary/structural graph fragments;
+- local constraints;
+- applicability facts;
+- evidence dependencies.
+
+Local obligations may be evaluated here.
+
+Cross-interface obligations—especially air, thermal, weather and structural continuity—are derived against the **composed building graph**.
+
+See [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md).
 
 ## 2. Author-facing proposition
 

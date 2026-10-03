@@ -28,6 +28,18 @@ It is a junction where several systems meet:
 
 If the same obligation-bundle model works here, then the idea is more likely to be a reusable architectural/compiler primitive rather than a special case invented for windows.
 
+## 1A. Composition correction
+
+After composing this bundle with the window/wall interface, the project refined the model:
+
+- this bundle contributes structural/boundary graph fragments and local constraints;
+- it may create genuinely local obligations;
+- shared continuity obligations are derived from the composed building state.
+
+Do not concatenate a floor/wall checklist with a window/wall checklist and deduplicate later.
+
+See [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md).
+
 ## 2. Author-facing proposition
 
 At ordinary authoring level:
@@ -390,11 +402,12 @@ Both IF-WIN-MCW-01 and IF-FLR-MCW-01 use the same conceptual machinery:
 
 1. meaningful architectural/physical relationship;
 2. required contextual inputs;
-3. deterministic expansion into obligation groups;
-4. authority preserved per child obligation;
-5. evidence attached at child/group level;
-6. high-level summary with expert expansion;
-7. dependency-driven invalidation.
+3. deterministic contribution to shared semantic/domain graphs plus local constraints;
+4. canonical obligation derivation after composition;
+5. authority preserved per obligation;
+6. evidence attached by scope;
+7. high-level summary with expert expansion;
+8. dependency-driven invalidation.
 
 This is strong evidence that **interface obligation bundle** is a generalisable concept.
 
