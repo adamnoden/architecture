@@ -306,6 +306,6 @@ The following interpretations are rejected:
 - HSE, **Human factors: Design**: https://www.hse.gov.uk/humanfactors/topics/design.htm
 - HSE, **Maintenance error**: https://www.hse.gov.uk/humanfactors/topics/error.htm
 - CIRIA SP26, **Buildability: an assessment**: https://www.ciria.org/CIRIA/CIRIA/Item_Detail.aspx?Category=DOWNLOAD&iProductCode=SP26D
-- RIBA, **DfMA Overlay to the RIBA Plan of Work 2020**: https://www.architecture.com/knowledge-and-resources/resources-landing-page/dfma-overlay-to-the-riba-plan-of-work
+- RIBA, **DfMA Overlay to the RIBA Plan of Work 2020, 2nd edition**: https://www.architecture.com/-/media/GatherContent/Business-Benchmarking/Additional-Documents/DfMA-Overlay-to-the-RIBA-Plan-of-Work-2020-2nd-edpdf.pdf
 - Cabinet Office, **The Construction Playbook**: https://www.gov.uk/government/publications/the-construction-playbook
 - David Pye, **The Nature and Art of Workmanship**, Herbert Press.
