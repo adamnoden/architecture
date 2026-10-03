@@ -38,6 +38,7 @@ Nothing is considered integrated merely because it appears once in prose.
 | TH-18 | **Ordinary mechanisms, durable enclosures:** commodity technical components should sit inside beautiful, remanufacturable architectural housings where needed. | Principle 6 / Part V | standardisation hierarchy | Integrated |
 | TH-19 | **Build the permanent house; assemble the changeable house inside it.** | Part I / Part V | layer/manufacturing hierarchy | Integrated |
 | TH-20 | **First-article disassembly:** repeated non-standard assemblies should be removed and reinstated during prototype approval, not merely inspected visually. | Delivery / Part V | prototype acceptance criteria | Integrated |
+| TH-21 | **Workmanship robustness:** ordinary construction variation should be anticipated and translated through deliberate tolerance strategies; consequential repeated assembly should not depend unnecessarily on exceptional precision, hidden knowledge or improvised site correction. | Principle 3 / Principle 6 / Ch.6 / Part V | tolerance/workmanship schedule; representative-installer trial; prototype acceptance criteria | Integrated |
 
 ## Anti-drift controls
 
@@ -50,7 +51,9 @@ The following interpretations are explicitly **not** the intended doctrine:
 - “honesty means expose every technical mechanism” — wrong; concealment is legitimate when the concealing element is itself real, removable and architecturally coherent;
 - “prefabrication is inherently superior” — wrong; manufacture is preferred where it improves repeatability, quality, reversibility and replacement at the relevant lifespan layer;
 - “panelisation means a panelised aesthetic” — wrong; panel boundaries may be absorbed into architectural composition;
-- “replaceability outranks fire, acoustics, moisture, structure or comfort” — wrong; boundary and performance obligations remain non-negotiable.
+- “replaceability outranks fire, acoustics, moisture, structure or comfort” — wrong; boundary and performance obligations remain non-negotiable;
+- “design for ordinary workmanship means accepting poor workmanship” — wrong; the target is explicit achievable tolerances, clear datums, bounded adjustment and visible rejection of out-of-range work;
+- “mistake-proofing means eliminating craft” — wrong; skilled judgement should be preserved where it creates architectural or technical value rather than spent rescuing unresolved interfaces.
 
 ## Completion audit
 
