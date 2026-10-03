@@ -415,8 +415,8 @@ Develop at least one principal-room prototype that does **not** read as a techni
 
 # Candidate 04 — Finish-Agnostic Floor Platform
 
-**Evidence:** Proposed  
-**Maturity:** Drawn concept only  
+**Evidence:** Strong external precedent / residential implementation unproven  
+**Maturity:** Evidence review complete; walkable multi-finish prototype pending  
 **Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 7 Architectural permanence
 
 ## Problem
@@ -533,9 +533,19 @@ Where no maintainable services or foreseeable finish change justify the complexi
 - rolling/impact load testing;
 - tactile and acoustic comparison against a conventional solid floor.
 
+## Current evidence direction
+
+Commercial raised-floor systems already prove removable dense mineral panels carrying stone, ceramic and parquet finishes. The project does not need to prove that such a floor can exist; it needs to prove that it can be **domesticated**.
+
+The preferred research direction is a **low-profile mineral platform on a continuous or semi-continuous support lattice**, with local deeper service zones rather than a tall whole-room plenum. A perimeter/corridor access-band strategy is a serious comparator and may be more proportionate than full-room removability.
+
+Underfloor heating should remain mechanically independent of routinely removable panels unless testing proves otherwise.
+
+See: `docs/research/finish-agnostic-floor-platform-options.md`.
+
 ## Reference-house direction
 
-Prototype at least three finish variants on one common platform interface and judge the result first as **flooring**, not as an access system.
+Prototype at least three finish variants on one common platform interface and judge the result first as **flooring**, not as an access system. If a blind walking test reveals “raised floor”, the full-room concept has failed.
 
 ---
 
