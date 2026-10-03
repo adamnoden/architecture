@@ -523,7 +523,7 @@ For each uncertainty:
 - MHH-S02 — MP/MHH0016, measured ground/first-floor plan, 1926, room functions indicated.
 - MHH-S03 — MP/MHH0116 / 0117, publication ground/first-floor measured plans, 1962.
 - MHH-S04 — MP/MHH0032, measured elevations and section, 1950.
-- MHH-S05 — English Heritage all-floor visitor/research plan; explicitly distinguishes the later-demolished service wing.
+- MHH-S05 — English Heritage November 2024 all-floor plan, with scale bar and phase-coded fabric (1724–29 / 1739 / 1740s / 1950 / 1990s); explicitly identifies the site of the later-demolished service wing and the upper part of the double-height Great Room.
 - MHH-S06 — PF/MHH/003, late-1920s/1930s job containing four measured sheets of plans, elevations and sections “as existing”.
 - MHH-S07 — MP/MHH0157 / 0158, 1964 restoration ground-floor plans; useful for distinguishing measured existing fabric from restoration intent.
 - MHH-S08 — PF/MHH archive volume: 563 measured drawings across survey, publication, restoration and later work; use as the source universe rather than treating one twentieth-century drawing as the eighteenth-century truth.
@@ -562,7 +562,9 @@ Identifiable principal-block spaces include:
 - additional stair/circulation;
 - connection toward service wing.
 
-The published plan shows a strong central Hall as an organising space with principal rooms flanking it, while service/circulation conditions occupy the deeper/side portions.
+The 2024 phase-coded plan shows a strong central Hall as an organising space, with Breakfast Parlour and Dining Parlour flanking it. Great Stairs, Stone Staircase, Housekeeper's Room and the route toward the later service wing occupy the deeper/side portion of the ground-floor organisation.
+
+This strengthens the preliminary reading that **principal-room order and service/circulation order overlap but are not identical systems**.
 
 **Do not yet infer exact symmetry.**
 
@@ -858,16 +860,18 @@ These are exactly the kinds of discoveries D3 is meant to produce before softwar
 
 No G-01 rule should yet be promoted.
 
-No G-01 rule should yet be promoted.
-
 ---
 
 ## Current source anchors
 
-- English Heritage, Marble Hill all-floor plan: https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/marble-hill-house/history-and-stories/marble-hill-house-plans.pdf
+- English Heritage, Marble Hill all-floor plan (November 2024): https://www.english-heritage.org.uk/siteassets/home/visit/places-to-visit/marble-hill-house/history-and-stories/marble-hill-plans-2024.pdf
 - Historic England, Marble Hill listing: https://historicengland.org.uk/listing/the-list/list-entry/1285673
 - Historic England, Marble Hill archive: https://historicengland.org.uk/images-books/photos/volume/PF/MHH
 - Historic England, Danson monograph: https://historicengland.org.uk/images-books/publications/danson-house/
 - Historic England, Danson Research Report 103/2000: https://historicengland.org.uk/research/results/reports/103-2000
+- Bexley/ADS copy of the Danson fabric report used for searchable room/structure passages: https://www.bexley.gov.uk/sites/default/files/2022-12/the-house-and-park-at-danson-london-borough-of-bexley-the-anatomy-of-a-georgian-suburban-estate.pdf
 - Historic England, 76 Dean Street listing: https://historicengland.org.uk/listing/the-list/list-entry/1066917
+- Historic England Archive, 76 Dean Street plan/elevation/section record SN00359: https://historicengland.org.uk/images-books/photos/item/SN00359
+- Survey of London / British History Online, 76 Dean Street: https://www.british-history.ac.uk/survey-london/vols33-4/pp228-235
+- V&A, Greater London Council record print of 76 Dean Street, E.371-2003: https://collections.vam.ac.uk/item/O105658/record-of-76-dean-street-print-greater-london-council/
 - Historic England, early Georgian townhouse interpretation: https://historicengland.org.uk/campaigns/visit/walking-tours/spotter-guide-georgian-townhouse/
