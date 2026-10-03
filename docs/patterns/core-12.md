@@ -7,6 +7,8 @@ These are the first patterns worth developing into full illustrated spreads. The
 
 A pattern is not a requirement. Each must pass the project's proportionality and boundary-debt tests.
 
+Every pattern should also be reviewed for **workmanship robustness** where construction variability is relevant. The developed pattern spread should identify the controlling datum, credible incoming tolerance, adjustment/recovery method, remediation threshold and any operation that intentionally depends on specialist craft. A pattern should not export an unresolved dimensional problem to the last trade.
+
 ---
 
 # Pattern 01 — Controlled utility entry
