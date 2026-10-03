@@ -102,11 +102,13 @@ Check:
 
 ## Scope
 
-A full-height representative principal-room wall bay including:
+A full-height representative principal-room wall bay based on the current W2 hybrid hypothesis, including:
 
-- permanent wall analogue;
-- architectural backplane;
-- replaceable lining panels;
+- dense masonry or realistic rigid wall analogue;
+- permanent parge/air-control treatment where relevant;
+- sparse adjustable architectural backplane;
+- shallow mineral-wool absorption/service zone where justified;
+- robust dense mineral/gypsum-fibre lining panels;
 - skirting;
 - picture rail or other selected horizontal datum;
 - cornice/perimeter condition;
@@ -140,7 +142,7 @@ The candidate wins only if the additional complexity buys meaningful long-term v
 
 ## Scope
 
-A multi-panel bay large enough to walk on normally.
+A multi-panel **low-profile dense-mineral platform** bay large enough to walk on normally, with a local access-band/conventional floor comparator.
 
 Test at least:
 
@@ -152,6 +154,8 @@ All variants should meet the same underlying platform interface where practical.
 
 Include:
 
+- primary structural floor analogue;
+- low-profile support lattice rather than office-height pedestals;
 - perimeter condition;
 - representative threshold;
 - resilient/acoustic seating;
@@ -182,11 +186,13 @@ Conventional high-quality timber/tile floor build-ups should be benchmarked for 
 
 Full-scale representative masonry/floor junction developed with the structural engineer.
 
+Use an engineered I-joist as the current coordination baseline.
+
 Compare viable connection families such as:
 
-- conventional engineered joist hanger;
-- bearing ledge;
-- steel angle/shoe;
+- certified restraint-type masonry hanger;
+- direct/seated bearing with separate restraint;
+- steel angle/shoe only as an experimental challenger;
 - other seated/captured arrangements judged credible by the engineer.
 
 ## Questions
