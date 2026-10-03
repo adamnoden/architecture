@@ -37,7 +37,7 @@ The word **bounded** is essential. Strong guarantees become plausible by restric
 
 ## 2. Relationship to the architectural doctrine
 
-This is **not Principle 11**.
+This is **not a governing principle**.
 
 It is not a replacement for the architectural doctrine and should not be allowed to make the project subordinate to software.
 
