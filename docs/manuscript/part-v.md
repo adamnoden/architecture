@@ -470,7 +470,7 @@ An access strategy that cannot be reliably closed is not maintainable.
 
 ---
 
-# 25. Design review through failure and change scenarios
+# 25. Design review through failure, change and occupation scenarios
 
 The final design should be reviewed through events rather than abstract claims.
 
@@ -514,6 +514,38 @@ Which layer changes?
 Where does the work stop?
 
 Does permanent fabric remain largely untouched?
+
+## Occupation and repose scenarios
+
+The same discipline should be applied to ordinary human states, not only technical events.
+
+Review the principal rooms and circulation sequences through plausible periods of occupation:
+
+- an occupant is ill and spends most of the day at home;
+- someone returns exhausted and wants quiet without withdrawing from the household entirely;
+- one person is sleeping while another is awake;
+- summer sun reaches the principal living spaces;
+- external noise makes an open window undesirable;
+- a guest is present while a household member wants privacy;
+- automation or network control is unavailable;
+- the room has accumulated ordinary furniture, pictures, books and personal objects rather than remaining a photographed empty interior.
+
+For each scenario ask:
+
+- can exposure be regulated?
+- can light, shade, ventilation and temperature be altered intelligibly?
+- can noise be contained or escaped?
+- is there somewhere to withdraw?
+- does the spatial order remain comprehensible?
+- does the room tolerate ordinary visual occupation without becoming chaotic?
+- do structure and major masses appear settled rather than precarious?
+- are technical systems serving the room or demanding continual attention from it?
+
+Measured matters—thermal conditions, acoustic performance, daylight, glare, ventilation—should be tested with the appropriate method.
+
+The remaining questions are architectural judgements. They should be recorded as such, not disguised as neuroscience.
+
+> **A house may delight attention without continually demanding it.**
 
 ## Deception review
 
