@@ -7,6 +7,8 @@ These patterns are intentionally demanding. They should be challenged by the arc
 
 They are also subject to a **workmanship-robustness gate**. Before promotion, each candidate must demonstrate how credible site variability reaches a controlling datum; how adjustment is bounded; when preceding work must instead be remediated; and whether a competent installer unfamiliar with the design can execute the intended sequence from the issued information without undocumented improvisation.
 
+They are additionally subject to a **repose gate** wherever the system enters occupied space. A candidate does not earn promotion merely by being replaceable: it must not create persistent rattle, fragile-feeling surfaces, distracting access geometry, unnecessary technical display or visual complexity that overwhelms the room. Measurable acoustic, thermal and lighting effects should be tested; perceptual judgements should be recorded explicitly as judgements.
+
 ---
 
 # Candidate 01 — Seated Floor Structure
@@ -153,7 +155,7 @@ Investigate a **seated-but-captured** engineered timber floor edge, but begin wi
 
 **Evidence:** Supported direction / project-specific implementation unproven  
 **Maturity:** Evidence review complete; wall-bay prototype pending  
-**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 10 Resolve technology as architecture
+**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 11 Resolve technology as architecture
 
 ## Problem
 
@@ -272,7 +274,7 @@ Develop the backplane together with the Georgian lining grammar so that technica
 
 **Evidence:** Supported direction / architectural system unproven  
 **Maturity:** Evidence review complete; full wall-bay prototype pending  
-**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 10 Resolve technology as architecture
+**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 6 Ordinary parts; 11 Resolve technology as architecture
 
 ## Problem
 
