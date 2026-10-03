@@ -7,7 +7,7 @@ These patterns are intentionally demanding. They should be challenged by the arc
 
 They are also subject to a **workmanship-robustness gate**. Before promotion, each candidate must demonstrate how credible site variability reaches a controlling datum; how adjustment is bounded; when preceding work must instead be remediated; and whether a competent installer unfamiliar with the design can execute the intended sequence from the issued information without undocumented improvisation.
 
-They are additionally subject to a **repose gate** wherever the system enters occupied space. A candidate does not earn promotion merely by being replaceable: it must not create persistent rattle, fragile-feeling surfaces, distracting access geometry, unnecessary technical display or visual complexity that overwhelms the room. Measurable acoustic, thermal and lighting effects should be tested; perceptual judgements should be recorded explicitly as judgements.
+They are additionally subject to an **occupation / repose gate** wherever the system enters occupied space. A candidate does not earn promotion merely by being replaceable: it must not create persistent rattle, fragile-feeling surfaces, distracting access geometry, unnecessary technical display or visual complexity that overwhelms the room. Measurable acoustic, thermal and lighting effects should be tested; perceptual judgements should be recorded explicitly as judgements.
 
 ---
 
@@ -380,7 +380,7 @@ Factory-applied mineral/plaster finishes are explicitly worth investigating: the
 
 ## Occupation / repose impact
 
-This candidate has a high repose burden because it is the surface occupants see and touch continuously. The prototype should test apparent solidity, impact response, acoustic character, joint hierarchy, shadow behaviour and the way ordinary pictures, furniture and decoration accumulate against it.
+This candidate bears a high burden under Principle 8 because it is the surface occupants see and touch continuously. The prototype should test apparent solidity, impact response, acoustic character, joint hierarchy, shadow behaviour and the way ordinary pictures, furniture and decoration accumulate against it.
 
 Replaceability should not produce an office-partition or exhibition-system character by default. Panel boundaries may be visible where they belong to the architecture, but access logic should not become the dominant reading of the room.
 
