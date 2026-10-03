@@ -28,6 +28,9 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 
 ### Reference house
 - [Tectonic architectural language](docs/reference-house/tectonic-architectural-language.md) — Georgian interface grammar and restrained functional brass/bronze language for the worked house.
+- [Vertical bay coordination](docs/reference-house/vertical-bay-coordination.md) — first integrated external-wall / upper-floor coordination section.
+- [Vertical bay SVG](docs/reference-house/vertical-bay-coordination.svg) — actual vector coordination drawing for the selective-tectonic hypothesis.
+- [Vertical bay A/B/C options](docs/reference-house/vertical-bay-options.md) — conservative control versus selective-tectonic versus full-reversible comparison.
 
 ### Research and options appraisals
 - [Candidate hardening decision matrix](docs/research/candidate-pattern-hardening-summary.md) — current evidence-backed direction, kill conditions and next decision sequence for all four experimental patterns.
