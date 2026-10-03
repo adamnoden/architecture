@@ -31,7 +31,7 @@ The aim is not purity and it is not a prohibition on mechanical fasteners. Rever
 
 Required load paths and restraint should be deterministic; harmless movement should be given bounded places to occur. Where useful, distinguish the functions of support, restraint, movement, sealing, protection and finish rather than asking one brittle junction to perform all of them.
 
-An interface should manage whichever of movement, construction tolerance, fixing, sealing, drainage, acoustic or fire separation, inspection, disassembly and renewal actually apply. The visual expression may be quiet; the technical relationship should not be accidental.
+An interface should manage whichever of movement, construction tolerance, fixing, sealing, drainage, acoustic or fire separation, inspection, disassembly and renewal actually apply. Where constructions of different achievable accuracy meet, define the controlling datum, the expected incoming variation, the adjustment capacity and the point beyond which remediation is required. The visual expression may be quiet; the technical relationship should not be accidental.
 
 ## 4. Make foreseeable failure detectable, containable and repairable
 
@@ -51,7 +51,9 @@ Access is more than a hatch. A person needs a route, a working position, isolati
 
 The decisive tests are understandability, breadth of supply or remanufacturability, ordinary tools and interfaces, and independence from proprietary software, consumables and unique mechanisms.
 
-The shorter-lived and more replaceable a layer is, the stronger the presumption that it should be manufactured under controlled conditions and assembled reversibly on site. This is a presumption rather than a rule: site fabrication remains appropriate where it gives the better whole-life result.
+Repeated construction should, where practical, be intelligible to an ordinary competent trade without continuous designer interpretation. Critical operations should use clear datums, defined sequences and verifiable outcomes; significant mistakes should be difficult to conceal and straightforward to correct before they propagate.
+
+The shorter-lived and more replaceable a layer is, the stronger the presumption that it should be manufactured under controlled conditions and assembled reversibly on site. This is a presumption rather than a rule: site fabrication remains appropriate where it gives the better whole-life result. Skilled site craft should be preserved where judgement and workmanship create architectural value, not consumed merely to compensate for unresolved interfaces.
 
 ## 7. Let permanence be architectural
 
