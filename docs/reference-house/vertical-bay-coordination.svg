@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+  <defs>
+    <pattern id="brick" width="36" height="18" patternUnits="userSpaceOnUse">
+      <rect width="36" height="18" fill="#d8b2a1"/>
+      <path d="M0 0H36 M0 18H36 M0 9H36 M18 0V9 M0 9V18 M36 9V18" stroke="#7d5548" stroke-width="1"/>
+    </pattern>
+    <pattern id="masonry" width="48" height="24" patternUnits="userSpaceOnUse">
+      <rect width="48" height="24" fill="#d7d4cc"/>
+      <path d="M0 0H48 M0 24H48 M0 12H48 M24 0V12 M0 12V24 M48 12V24" stroke="#8a887f" stroke-width="1"/>
+    </pattern>
+    <pattern id="insulation" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#eee8c5"/>
+      <path d="M-4 20L8 8L20 20L32 8 M-4 8L8 20L20 8L32 20" fill="none" stroke="#b2a85f" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="mineral" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#e3e3dd"/>
+      <circle cx="5" cy="5" r="1.5" fill="#92928c"/>
+      <circle cx="15" cy="12" r="1.2" fill="#92928c"/>
+      <circle cx="8" cy="17" r="1" fill="#92928c"/>
+    </pattern>
+    <pattern id="timber" width="60" height="18" patternUnits="userSpaceOnUse">
+      <rect width="60" height="18" fill="#d6bd92"/>
+      <path d="M0 5C14 0 26 10 40 5S55 2 60 4 M0 13C13 8 28 18 43 12S56 10 60 12" fill="none" stroke="#9a7749" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#333"/>
+    </marker>
+    <marker id="arrowOpen" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#333" stroke-width="1.3"/>
+    </marker>
+    <style>
+      .title{font:700 30px Arial,sans-serif;fill:#111}
+      .subtitle{font:16px Arial,sans-serif;fill:#555}
+      .label{font:15px Arial,sans-serif;fill:#222}
+      .small{font:12px Arial,sans-serif;fill:#444}
+      .tiny{font:11px Arial,sans-serif;fill:#555}
+      .head{font:700 16px Arial,sans-serif;fill:#111}
+      .dim{font:12px Arial,sans-serif;fill:#333}
+      .call{stroke:#444;stroke-width:1.3;fill:none;marker-end:url(#arrow)}
+      .thin{stroke:#555;stroke-width:1;fill:none}
+      .dash{stroke:#777;stroke-width:1.3;stroke-dasharray:7 5;fill:none}
+      .heavy{stroke:#222;stroke-width:2;fill:none}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1200" fill="#fafaf8"/>
+
+  <text x="70" y="55" class="title">VERTICAL BAY COORDINATION 01 — SELECTIVE TECTONIC HYPOTHESIS</text>
+  <text x="70" y="83" class="subtitle">Representative external wall / upper-floor edge • conceptual coordination section • NOT FOR CONSTRUCTION • dimensions indicative only</text>
+
+  <!-- Zones -->
+  <text x="105" y="125" class="head">OUTSIDE</text>
+  <text x="825" y="125" class="head">ROOM</text>
+
+  <!-- External wall full height -->
+  <rect x="100" y="150" width="110" height="900" fill="url(#brick)" stroke="#333"/>
+  <rect x="210" y="150" width="50" height="900" fill="#fff" stroke="#777"/>
+  <line x1="225" y1="160" x2="225" y2="1040" class="dash"/>
+  <line x1="245" y1="160" x2="245" y2="1040" class="dash"/>
+  <rect x="260" y="150" width="150" height="900" fill="url(#insulation)" stroke="#666"/>
+  <rect x="410" y="150" width="215" height="900" fill="url(#masonry)" stroke="#333"/>
+
+  <!-- Parge/air layer -->
+  <rect x="625" y="150" width="8" height="900" fill="#9bb6c8" stroke="#4c7189"/>
+  <text x="635" y="173" class="tiny">possible permanent air/parge layer</text>
+
+  <!-- Backplane rail and wall panels upper/lower -->
+  <rect x="651" y="165" width="14" height="330" fill="#a8a8a2" stroke="#444"/>
+  <rect x="651" y="875" width="14" height="155" fill="#a8a8a2" stroke="#444"/>
+  <!-- sparse anchors -->
+  <line x1="651" y1="245" x2="610" y2="245" stroke="#555" stroke-width="3"/>
+  <circle cx="610" cy="245" r="5" fill="#555"/>
+  <line x1="651" y1="390" x2="610" y2="390" stroke="#555" stroke-width="3"/>
+  <circle cx="610" cy="390" r="5" fill="#555"/>
+  <line x1="651" y1="930" x2="610" y2="930" stroke="#555" stroke-width="3"/>
+  <circle cx="610" cy="930" r="5" fill="#555"/>
+
+  <!-- Shallow service/absorption zone -->
+  <rect x="665" y="165" width="42" height="330" fill="#f1efe5" stroke="#b2aa91" stroke-dasharray="4 3"/>
+  <rect x="665" y="875" width="42" height="155" fill="#f1efe5" stroke="#b2aa91" stroke-dasharray="4 3"/>
+  <path d="M675 420 C685 400 690 440 699 415" stroke="#845e3c" stroke-width="2" fill="none"/>
+  <circle cx="692" cy="420" r="3" fill="#845e3c"/>
+
+  <!-- Removable mineral wall panels -->
+  <rect x="707" y="165" width="18" height="330" fill="url(#mineral)" stroke="#333" stroke-width="1.5"/>
+  <rect x="707" y="875" width="18" height="155" fill="url(#mineral)" stroke="#333" stroke-width="1.5"/>
+  <line x1="706" y1="320" x2="727" y2="320" stroke="#777" stroke-width="1"/>
+  <line x1="706" y1="955" x2="727" y2="955" stroke="#777" stroke-width="1"/>
+
+  <!-- Upper floor: finish, carrier, platform, support/service layer, deck -->
+  <rect x="725" y="455" width="710" height="14" fill="url(#timber)" stroke="#333"/>
+  <rect x="725" y="469" width="710" height="12" fill="#cfc7b7" stroke="#555"/>
+  <rect x="725" y="481" width="710" height="32" fill="url(#mineral)" stroke="#333" stroke-width="1.5"/>
+  <rect x="725" y="513" width="710" height="42" fill="#eee9dd" stroke="#777" stroke-dasharray="5 4"/>
+  <!-- low profile support lattice -->
+  <line x1="755" y1="513" x2="755" y2="555" stroke="#555" stroke-width="4"/>
+  <line x1="955" y1="513" x2="955" y2="555" stroke="#555" stroke-width="4"/>
+  <line x1="1155" y1="513" x2="1155" y2="555" stroke="#555" stroke-width="4"/>
+  <line x1="1355" y1="513" x2="1355" y2="555" stroke="#555" stroke-width="4"/>
+  <!-- service line within shallow zone -->
+  <path d="M790 540H1050 M1050 540v-12h90" stroke="#8f5d38" stroke-width="3" fill="none"/>
+  <circle cx="790" cy="540" r="4" fill="#8f5d38"/>
+  <rect x="725" y="555" width="710" height="26" fill="#b8a98f" stroke="#333" stroke-width="1.5"/>
+  <text x="1190" y="575" class="tiny">primary structural deck / diaphragm</text>
+
+  <!-- Masonry hanger baseline -->
+  <path d="M625 565 h38 v120 h28" stroke="#4f5960" stroke-width="9" fill="none" stroke-linejoin="round"/>
+  <path d="M625 565 h58" stroke="#4f5960" stroke-width="9"/>
+  <path d="M638 560 v-35 h75" stroke="#65717a" stroke-width="5" fill="none"/>
+  <text x="455" y="590" class="small">certified restraint-type</text>
+  <text x="455" y="608" class="small">masonry hanger baseline</text>
+  <path d="M590 600 L647 600" class="call"/>
+
+  <!-- I-joist -->
+  <rect x="670" y="590" width="700" height="18" fill="url(#timber)" stroke="#333"/>
+  <rect x="670" y="808" width="700" height="18" fill="url(#timber)" stroke="#333"/>
+  <rect x="685" y="608" width="10" height="200" fill="#b09062" stroke="#555"/>
+  <path d="M695 616 L835 700 L695 800 M835 616 L695 700 L835 800 M835 616 L975 700 L835 800 M975 616 L835 700 L975 800 M975 616 L1115 700 L975 800 M1115 616 L975 700 L1115 800 M1115 616 L1255 700 L1115 800 M1255 616 L1115 700 L1255 800 M1255 616 L1360 680 L1255 800" stroke="#9b7b53" stroke-width="2" fill="none" opacity=".45"/>
+  <rect x="1360" y="608" width="10" height="200" fill="#b09062" stroke="#555"/>
+  <text x="1040" y="715" class="head">ENGINEERED I-JOIST ZONE</text>
+  <text x="1040" y="739" class="small">working baseline • routine services kept elsewhere</text>
+
+  <!-- Lower ceiling -->
+  <rect x="725" y="842" width="710" height="18" fill="#d7d2c8" stroke="#555"/>
+  <rect x="725" y="860" width="710" height="12" fill="#f2f0e8" stroke="#777"/>
+  <text x="1160" y="855" class="tiny">ceiling build-up / decoupling TBD</text>
+
+  <!-- Cornice slip joint lower room -->
+  <path d="M707 872 h95 v18 h-28 v18 h-35 v20 h-32 z" fill="#d3c4a8" stroke="#555"/>
+  <rect x="714" y="870" width="5" height="58" fill="#b18b3d" opacity=".85"/>
+  <line x1="725" y1="866" x2="725" y2="925" stroke="#555" stroke-dasharray="4 3"/>
+  <text x="805" y="900" class="small">functional cornice / slip zone</text>
+  <path d="M800 895 L735 895" class="call"/>
+
+  <!-- Skirting upper room -->
+  <rect x="690" y="425" width="58" height="30" fill="#c9b18c" stroke="#555"/>
+  <rect x="700" y="440" width="48" height="15" fill="#b18b3d" opacity=".65"/>
+  <text x="780" y="432" class="small">removable skirting:</text>
+  <text x="780" y="450" class="small">panel release + low-level service + floor perimeter</text>
+  <path d="M770 445 L743 445" class="call"/>
+
+  <!-- Movement arrows at cornice -->
+  <path d="M742 840 h45" stroke="#333" stroke-width="1.5" marker-end="url(#arrowOpen)"/>
+  <path d="M787 836 h-45" stroke="#333" stroke-width="1.5" marker-end="url(#arrowOpen)"/>
+  <text x="795" y="838" class="tiny">bounded relative movement</text>
+
+  <!-- Callouts -->
+  <text x="930" y="205" class="head">W2 REPLACEABLE WALL</text>
+  <text x="930" y="228" class="label">1. masonry remains the real wall</text>
+  <text x="930" y="251" class="label">2. sparse anchors carry adjustable backplane</text>
+  <text x="930" y="274" class="label">3. shallow zone for justified services / absorption</text>
+  <text x="930" y="297" class="label">4. robust manufactured mineral panel is removable</text>
+  <path d="M915 242 L690 300" class="call"/>
+
+  <text x="1030" y="390" class="head">LOW-PROFILE FLOOR PLATFORM</text>
+  <text x="1030" y="412" class="label">finish-specific carrier above common platform interface</text>
+  <path d="M1015 407 L980 495" class="call"/>
+
+  <text x="1080" y="965" class="head">LOWER ROOM</text>
+  <text x="1080" y="988" class="label">replaceable wall face below floor edge</text>
+  <text x="1080" y="1011" class="label">ceiling and wall meet through a real slip interface</text>
+  <path d="M1065 980 L720 950" class="call"/>
+
+  <!-- Layer dimensions at top -->
+  <line x1="100" y1="118" x2="725" y2="118" class="thin"/>
+  <line x1="100" y1="108" x2="100" y2="128" class="thin"/>
+  <line x1="210" y1="108" x2="210" y2="128" class="thin"/>
+  <line x1="260" y1="108" x2="260" y2="128" class="thin"/>
+  <line x1="410" y1="108" x2="410" y2="128" class="thin"/>
+  <line x1="625" y1="108" x2="625" y2="128" class="thin"/>
+  <line x1="725" y1="108" x2="725" y2="128" class="thin"/>
+  <text x="130" y="112" class="dim">≈102.5 facing brick</text>
+  <text x="218" y="103" class="dim">≈50 cavity</text>
+  <text x="292" y="112" class="dim">≈150 mineral wool</text>
+  <text x="463" y="112" class="dim">≈215 dense masonry</text>
+  <text x="640" y="103" class="dim">W2 zone: variable</text>
+
+  <!-- Floor layer legend -->
+  <g transform="translate(85 1080)">
+    <text x="0" y="0" class="head">COORDINATION PRINCIPLES</text>
+    <text x="0" y="26" class="small">• primary structure stays below removable floor platform</text>
+    <text x="0" y="46" class="small">• primary wall/boundaries stay behind removable wall panel</text>
+    <text x="0" y="66" class="small">• hanger is ordinary baseline; bespoke seat must earn its place</text>
+    <text x="0" y="86" class="small">• skirting and cornice are genuine interfaces, not cosmetic cover-ups</text>
+  </g>
+
+  <!-- Key -->
+  <g transform="translate(980 1060)">
+    <text x="0" y="0" class="head">KEY / STATUS</text>
+    <rect x="0" y="18" width="18" height="18" fill="url(#masonry)" stroke="#555"/><text x="28" y="32" class="small">permanent masonry</text>
+    <rect x="190" y="18" width="18" height="18" fill="url(#mineral)" stroke="#555"/><text x="218" y="32" class="small">replaceable mineral assembly</text>
+    <rect x="0" y="48" width="18" height="18" fill="#9bb6c8" stroke="#555"/><text x="28" y="62" class="small">possible permanent air layer</text>
+    <rect x="190" y="48" width="18" height="18" fill="#b18b3d" opacity=".75" stroke="#555"/><text x="218" y="62" class="small">functional brass / bronze interface</text>
+    <text x="0" y="92" class="tiny">Dashed / labelled TBD conditions remain unresolved by design.</text>
+  </g>
+
+  <!-- warning frame -->
+  <rect x="60" y="95" width="1480" height="1030" fill="none" stroke="#bbb" stroke-width="1"/>
+</svg>
