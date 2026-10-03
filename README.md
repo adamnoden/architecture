@@ -69,4 +69,4 @@ The publication distinguishes:
 
 The source doctrine is retained for traceability. New work should be developed in the manuscript, pattern catalogue and project-delivery documents rather than by rewriting v7 in place.
 
-The current major phase is architectural production and validation: tectonic integration, 1:1 prototype development, completion of the strongest pattern families, and a reference-house options appraisal. Candidate reversible assemblies remain explicitly experimental until calculation and prototype work justify promotion.
+The current major phase is architectural production and validation: tectonic integration, workmanship-robustness testing, 1:1 prototype development, completion of the strongest pattern families, and a reference-house options appraisal. Candidate reversible assemblies remain explicitly experimental until calculation, representative-installer testing and prototype work justify promotion.
