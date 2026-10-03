@@ -19,7 +19,7 @@ Nothing is considered integrated merely because it appears once in prose.
 | ID | Proposition | Primary home | Required downstream expression | Status |
 |---|---|---|---|---|
 | TH-01 | **Selective permanence:** every element should justify becoming part of the permanent building. | Part I / Principles | permanence map; replacement hierarchy | Integrated |
-| TH-02 | **Tectonic honesty:** construction may conceal complexity but should not falsify material, movement, construction or function. | Principle 10 / Part II | pattern architectural-resolution field; reference-house language | Integrated |
+| TH-02 | **Tectonic honesty:** construction may conceal complexity but should not falsify material, movement, construction or function. | Principle 11 / Part II | pattern architectural-resolution field; reference-house language | Integrated |
 | TH-03 | **Concealment is not deception.** A real architectural element may conceal a real technical condition; a cosmetic surface should not counterfeit a different material or structural relationship. | Tectonic-honesty position | reference-house review test | Integrated |
 | TH-04 | **Beauty is a technical requirement.** A serviceable detail is not finished until its visible resolution belongs to the architecture. | Pattern methodology / Delivery | architectural-resolution review | Integrated |
 | TH-05 | **Bounded movement:** do not attempt to suppress every movement; identify harmless movements and give them controlled places to occur. | Principle 3 / Ch.6 | movement map; movement/slip patterns | Integrated |
