@@ -126,6 +126,44 @@ Unknown inputs remain UNKNOWN.
 
 The bundle must not invent defaults that create false proof.
 
+## 3A. Operational window roles — red-team addition
+
+S0 Run 01 initially treated window geometry too statically.
+
+A window occurrence may carry several operational roles:
+
+- FIXED;
+- ORDINARY_OPENABLE;
+- PURGE_ROUTE;
+- EMERGENCY_EGRESS;
+- GUARDED / FALL_PROTECTION;
+- RESTRICTED;
+- SECURITY_CRITICAL.
+
+These are not decorative metadata.
+
+They can change:
+
+- effective opening area;
+- limiter/release requirements;
+- safety glazing;
+- security hardware;
+- frame fixing;
+- ventilation contribution;
+- egress evidence.
+
+A single product may carry several roles, and resolving one role must not silently invalidate another.
+
+The red-team examples include:
+
+- fall protection versus emergency egress;
+- fall restrictors versus purge-opening area;
+- security hardware versus egress/purge operation.
+
+The bundle should contribute those operational facts to the composed building model. Whole-room/whole-house obligations remain derived at the appropriate scale.
+
+See [S0 Run 01 Red Team](s0-red-team-run-01.md).
+
 ## 4. Bundle-generated obligation groups
 
 The bundle expands into groups.

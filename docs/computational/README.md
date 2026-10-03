@@ -40,7 +40,8 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 7. [Compiler Targets](compiler-targets.md)  
    Defines the versioned regulatory/normative environment against which compilation occurs, beginning conceptually with England.
 
-   - [S0 Compiler Target Snapshot — England / 2026-10-03](s0-target-snapshot.md) — dated research target showing applicability, transition and partial coverage rather than relying on “latest document”.
+   - [S0 Compiler Target Snapshot v0.1 — England / 2026-10-03](s0-target-snapshot.md) — immutable target used by Run 01; retained with its known omissions for reproducibility.
+   - [S0 Compiler Target Snapshot v0.2](s0-target-snapshot-v02.md) — same normative date, corrected target-model coverage after red-team; adds K, Q, Regulation 7 and broader B/F applicability tests.
 
 8. [Structural Semantics](structural-semantics.md)  
    Separates physical structure, structural topology and analytical idealisation; defines load-path semantics, proof envelopes and S0 structural obligations.
@@ -56,6 +57,7 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [S0 Paper Compilation Run 01](s0-paper-compile-run-01.md) — first end-to-end manual compile; research model coherent, building release correctly fails on missing proof.
    - [Interface Obligation Bundles](interface-obligation-bundles.md) — Run-01 scaling response: recurring architectural interfaces hide proof complexity behind semantic relationships.
    - [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md) — shows bundles must contribute to shared graphs before canonical obligations are derived; avoids duplicate checklists one abstraction higher.
+   - [S0 Run 01 Red Team](s0-red-team-run-01.md) — adversarial pass that finds missed Part K/Q/Regulation 7/B/F obligations, cross-domain window conflicts and target-versioning requirements.
 
 11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.

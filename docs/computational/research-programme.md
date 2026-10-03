@@ -582,9 +582,10 @@ These items should not be lost even if priorities change.
 | C-008B | Test evidence invalidation on paper-compilation mutation | C-008 | blocked on W15 |
 | C-009 | Define compile status / release semantics | C-006,C-007 | first draft |
 | C-010 | Define compiler-target anatomy | — | first draft |
-| C-011 | Research England regulatory versioning / transition rules | C-010 | S0 snapshot v0.1 established; H1 mapping remains open |
+| C-011 | Research England regulatory versioning / transition rules | C-010 | S0 v0.1 retained for Run 01; **v0.2 target revision established after red-team**; H1 mapping remains open |
 | C-011A | Test target transition logic on 2026 L/F and B amendment boundaries | C-011 | first draft |
-| C-011B | Map S0 target coverage by Approved Document source | C-011 | first draft |
+| C-011B | Map S0 target coverage by Approved Document source | C-011 | v0.2 expanded after red-team; H1 completeness open |
+| C-011C | Create regression/conformance cases for target applicability | C-011 | **S0-02 first suite established** |
 | C-012 | Determine standards licensing / machine-readable strategy | C-010 | open |
 | C-013 | Distinguish building-regulations target from planning constraints | C-010 | first draft |
 | C-014 | Define initial supported-domain candidates | C-002,C-006 | candidate v0.1 |
@@ -633,7 +634,7 @@ These items should not be lost even if priorities change.
 | C-030C | Formalise S0-A conventional workmanship/tolerance route | C-021,C-030 | open |
 | C-031 | Execute paper compilation | C-030 | **Run 01 complete — research pass / release fail** |
 | C-031A | Execute S0 Run 02 only after abstraction red-team | C-030B,C-030C | blocked |
-| C-032 | Red-team proof claims with structural/regulatory expertise | C-031 | internal red-team begun; external competent review open |
+| C-032 | Red-team proof claims with structural/regulatory expertise | C-031 | **internal S0 Run-01 red-team v0.1 complete; external competent review open** |
 | C-033 | Decide whether computational material enters monograph Part VI | C-031 | blocked |
 | C-034 | Design formal language / syntax | Gate C | deliberately deferred |
 | C-035 | Select implementation architecture | Gate C | deliberately deferred |
@@ -680,9 +681,9 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. red-team **S0 Run 01** and the composed wall-bay model for missed obligations, valid-child conflicts and evidence-scope errors;
-2. preserve the new **contributions-before-obligations** composition model and test it against product/target changes;
-3. formalise the **S0-A conventional workmanship/tolerance route** and first wall/window boundary family;
+1. preserve the Run-01 red-team findings and use **target v0.2** rather than rewriting historical target v0.1;
+2. formalise the **S0-A conventional workmanship/tolerance route** and first wall/window boundary family;
+3. revise the window/interface model for operational roles: fall protection, egress, purge and security;
 4. choose whether H1 v0 gets a native bounded structural proof family or keeps member adequacy explicitly external;
 5. advance **G-01 D4–D6** in parallel;
 6. execute **S0 Run 02 only if** those abstractions materially improve Run 01.
