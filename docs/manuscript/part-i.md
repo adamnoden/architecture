@@ -52,7 +52,7 @@ These questions sound operational. Taken together, they become architectural.
 
 They affect the plan because plant, risers and wet rooms benefit from proximity. They affect the section because drainage and air ducts require depth. They affect the structure because service crossings should be coordinated before beams and joists are made. They affect the envelope because windows are shorter-lived than masonry. They affect internal architecture because skirtings, architraves, panels, cornices and floors can either conceal inaccessible dependencies or become deliberate interfaces to them. They affect procurement because a removable custom panel is of little long-term value if it depends on an extinct proprietary mechanism. They affect beauty because the mechanisms of access and movement will either be resolved architecturally or appear later as compromises.
 
-The result is not a machine for living whose technical systems dominate the house. It is almost the opposite. The intention is that rooms may feel solid, composed and permanent precisely because the shorter-lived systems behind them have been given somewhere else to change.
+The intended result is quieter than the technical reasoning that produces it. Rooms may feel solid, composed and permanent precisely because the shorter-lived systems behind them have been given somewhere else to change.
 
 ---
 
