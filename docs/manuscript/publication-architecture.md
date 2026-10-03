@@ -6,12 +6,15 @@
 ## Front matter
 
 - Title / subtitle
-- Author's note: scope and origin of the enquiry
+- **Preface — The Obvious, Eventually**  
+  A first-person essay establishing the project's temperament: inherited arrangements, outsider perspective, respect for convention, scepticism toward novelty, tectonic beauty and the obligation to test every heresy.
 - Abstract
 - How to read the book
 - Definitions
 - Evidence and maturity legend
 - Governing constraints
+
+The preface carries the authorial voice and origin of the enquiry. A separate autobiographical author's note is not currently required; add one only if publication context later demands information that does not belong in the essay.
 
 ## Part I — The Proposition
 

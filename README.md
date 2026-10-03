@@ -16,6 +16,7 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 - [House Design Doctrine v7](docs/source/house-design-doctrine-v7.md) — the original doctrine from which the publication work is being developed. Preserved as source material rather than edited into the book.
 
 ### Publication manuscript
+- [Preface — The Obvious, Eventually](docs/manuscript/preface.md) — first-person ideological and narrative foundation for the monograph.
 - [Publication architecture](docs/manuscript/publication-architecture.md) — current book structure.
 - [Governing principles](docs/manuscript/governing-principles.md) — ten public-facing principles.
 - [Part I](docs/manuscript/part-i.md) — current opening argument.
@@ -33,6 +34,7 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 - [Vertical bay A/B/C options](docs/reference-house/vertical-bay-options.md) — conservative control versus selective-tectonic versus full-reversible comparison.
 
 ### Research and options appraisals
+- [Preface precedents](docs/research/preface-precedents.md) — historical source selection, cautions and deliberately excluded analogies.
 - [Candidate hardening decision matrix](docs/research/candidate-pattern-hardening-summary.md) — current evidence-backed direction, kill conditions and next decision sequence for all four experimental patterns.
 - [Primary floor structure baseline](docs/research/primary-floor-structure-baseline.md) — engineered I-joist baseline for the next coordination drawings.
 - [Seated floor structure options](docs/research/seated-floor-structure-options.md) — current structural interpretation and connection-family appraisal.
@@ -40,6 +42,7 @@ The project pursues **tectonic honesty**: concealment is legitimate; falsificati
 - [Finish-agnostic floor platform options](docs/research/finish-agnostic-floor-platform-options.md) — residential adaptation of removable dense-mineral floor platforms across timber, tile and stone finishes.
 
 ### Development controls
+- [Preface architecture](docs/development/preface-architecture.md) — rhetorical structure, audience, voice and quality controls for the opening essay.
 - [Tectonic integration register](docs/development/tectonic-integration-register.md) — traceability ledger for the current doctrine migration.
 - [Tectonic honesty](docs/development/tectonic-honesty.md) — position paper distinguishing concealment from falsification.
 - [Manufacturing strategy](docs/development/manufacturing-strategy.md) — lifespan-based manufacturing and dry-assembly strategy.
