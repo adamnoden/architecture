@@ -1,7 +1,7 @@
 # House Design Doctrine — Publication Architecture v0.4
 
 **Working form:** illustrated architectural design-research monograph + pattern catalogue + separate architect-facing implementation brief.  
-**Status:** structural lock candidate.
+**Status:** v0.5 — tectonic integration working structure.
 
 ## Front matter
 
@@ -25,7 +25,7 @@
    Long life without generic flexibility; introduce proportional serviceability.
 
 4. **The architectural platform**  
-   Permanent fabric, replaceable systems, designed interfaces and maintenance geography.
+   Permanent fabric, replaceable systems, designed interfaces, attachment discipline, assembly hierarchy and maintenance geography.
 
 5. **Ten principles**  
    Use the locked public principles; each principle receives a short spread and one primary figure.
@@ -33,7 +33,7 @@
 ## Part II — Architecture of the Platform
 
 6. **The designed interface**  
-   Movement, tolerance, fixing, sealing, boundary continuity, access and replacement.
+   Tectonic honesty; deterministic load paths and bounded movement; separation of support, restraint, movement, sealing and finish; tolerance, fixing, access and replacement.
 
 7. **Failure architecture**  
    First defence / second consequence; water, overflow, drainage, drying, detection, isolation and recovery.
@@ -45,10 +45,10 @@
    Future climate, passive-first design, source capture, measured ventilation and graceful degradation.
 
 10. **Boundaries**  
-    Boundary debt created by access: fire, smoke, acoustic, air, vapour, water, thermal, pests and security.
+    Boundary debt created by access and disassembly: fire, smoke, acoustic, air, vapour, water, thermal, pests and security; preserve critical performance independently of routinely removable finish layers where practical.
 
-11. **Occupation without consumption of fabric**  
-    Fixing infrastructure, kitchens, bathrooms, windows, doors and selective adaptability.
+11. **The Replaceable Interior**  
+    Attachment hierarchy, architectural backplanes, wall linings, floor platforms, ceilings, kitchens, bathrooms, windows, doors, fixing infrastructure, wet-trade discipline and selective adaptability.
 
 12. **Legibility and stewardship**  
     Building record, physical index, change control and maintainability commissioning.
@@ -76,13 +76,22 @@ perimeter dry zone; rainwater route; kitchen source capture; bathroom extraction
 fixing infrastructure; physical service index.
 
 Every pattern uses:
-problem / forces / principle / diagram / variants / proportionality / boundary debt / failure modes / evidence / maturity / reference-house choice.
+problem / forces / principle / diagram / variants / proportionality / boundary debt / permanent-fabric impact / architectural resolution / assembly and replacement sequence / failure modes / evidence / maturity / reference-house choice.
+
+### Candidate development track
+
+The following systems are deliberately held outside the established core catalogue until engineering and prototype work is sufficient:
+
+- Seated Floor Structure;
+- Architectural Backplane;
+- Replaceable Wall Lining;
+- Finish-Agnostic Floor Platform.
 
 ## Part IV — The Reference House
 
 13. Site and type  
-14. Architectural order  
-15. Material and structural system  
+14. Architectural order and tectonic language  
+15. Material, structural and assembly system  
 16. Maintenance geography  
 17. Water and environmental systems  
 18. Future maintenance scenarios
@@ -101,8 +110,8 @@ Each major non-standard decision shows:
 
 19. Whole-life value and proportionality  
 20. Design governance and interface ownership  
-21. Standardisation before invention  
-22. Prototype before repetition  
+21. Standardisation and manufacture according to lifespan  
+22. Prototype and disassemble before repetition  
 23. Procurement without dilution  
 24. Commission maintainability  
 25. Design review through failure scenarios

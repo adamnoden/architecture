@@ -1,6 +1,6 @@
 # The Long-Life House — Governing Principles v1.0
 
-**Status:** editorial lock candidate  
+**Status:** v1.1 working refinement — tectonic integration  
 **Purpose:** public-facing principles for the professional publication. These supersede the 63-item register as the primary doctrine, while the register remains as a traceability appendix.
 
 ## Governing constraints
@@ -21,15 +21,17 @@ The relevant unit of design is not merely the initial component but the sequence
 
 ## 2. Preserve the permanent fabric
 
-**Do not use long-lived fabric as the routine distribution zone for shorter-lived systems. Where services must cross or attach to permanent construction, make the interface deliberate, limited and documented.**
+**Do not use long-lived fabric as the routine distribution or attachment zone for shorter-lived systems. Where services, fittings or replaceable assemblies must cross or attach to permanent construction, make those interfaces sparse, deliberate, concentrated where practical and documented.**
 
-The aim is not purity. It is to prevent the slower layers of the building being consumed at the renewal rate of the faster ones.
+The aim is not purity and it is not a prohibition on mechanical fasteners. Reversible screws, bolts and clips are often desirable. The objective is to prevent the slower layers of the building being repeatedly perforated, chased or consumed at the renewal rate of the faster ones.
 
 ## 3. Design the interface
 
 **Treat junctions between systems, materials and lifespan layers as designed building elements.**
 
-Where required, an interface should manage movement, construction tolerance, fixing, sealing, drainage, acoustic or fire separation, inspection, disassembly and renewal. The visual expression may be quiet; the technical relationship should not be accidental.
+Required load paths and restraint should be deterministic; harmless movement should be given bounded places to occur. Where useful, distinguish the functions of support, restraint, movement, sealing, protection and finish rather than asking one brittle junction to perform all of them.
+
+An interface should manage whichever of movement, construction tolerance, fixing, sealing, drainage, acoustic or fire separation, inspection, disassembly and renewal actually apply. The visual expression may be quiet; the technical relationship should not be accidental.
 
 ## 4. Make foreseeable failure detectable, containable and repairable
 
@@ -48,6 +50,8 @@ Access is more than a hatch. A person needs a route, a working position, isolati
 **Prefer widely understood components, standard interfaces and ordinary fabrication methods; concentrate invention at the architectural arrangement and at interfaces that genuinely require it.**
 
 The decisive tests are understandability, breadth of supply or remanufacturability, ordinary tools and interfaces, and independence from proprietary software, consumables and unique mechanisms.
+
+The shorter-lived and more replaceable a layer is, the stronger the presumption that it should be manufactured under controlled conditions and assembled reversibly on site. This is a presumption rather than a rule: site fabrication remains appropriate where it gives the better whole-life result.
 
 ## 7. Let permanence be architectural
 
@@ -71,7 +75,9 @@ The building record should be current, transferable and comprehensible. A small 
 
 **Technical necessities encountered by occupants should be resolved through architectural composition, material and craft rather than treated as concealed accidents or gratuitous technical display.**
 
-The architecture may conceal normal operation while preserving honest access, movement and replacement. Bespoke architectural enclosures should, where practical, contain ordinary and replaceable technical components.
+The building should be tectonically honest: concealment is legitimate; falsification is not. Architecture may cover services, fixings and movement where the concealing element is itself real and coherent, but cosmetic continuity should not substitute for unresolved construction, and materials or structural relationships should not be counterfeited merely to create an appearance.
+
+Joints, access, wear, movement and replacement should become part of the architectural resolution. Bespoke architectural enclosures should, where practical, contain ordinary and replaceable technical components.
 
 ---
 

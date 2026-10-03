@@ -1,5 +1,5 @@
 # Long-Life House — Architect-Facing Implementation Brief
-## RIBA Plan of Work Template v0.1
+## RIBA Plan of Work Template v0.2 — tectonic integration
 
 **Purpose:** translate the monograph into project instructions an appointed architect and consultant team can act on without reinterpreting the whole doctrine.
 
@@ -56,7 +56,12 @@ Use only requirements genuinely fixed for this project.
 | N03 | High-consequence water failures are detectable and damage-limited | P4 | Failure scenario + test method | MEP + Architect | 4 |
 | N04 | Important service voids terminate at required fire/acoustic/pest boundaries | P3/P5 | Boundary/penetration schedule | Architect + specialists | 4 |
 | N05 | Critical building information remains current and transferable | P9 | Passport + physical index + change procedure | Architect | 6/7 |
-| N06 | Non-standard repeated interfaces are prototyped before multiplication | P3/P10 | First-article approval | Architect | 4/5 |
+| N06 | Non-standard repeated interfaces are prototyped before multiplication | P3/P10 | First-article approval including removal/reinstatement where reversible | Architect | 4/5 |
+| N07 | Permanent-fabric fixings are sparse, deliberate and documented | P2/P3 | Attachment map + no-uncontrolled-fixing review | Architect + SE | 3/4 |
+| N08 | Required restraint and permitted movement are separately identified at important interfaces | P3 | Movement map + interface details | Architect + SE + specialists | 3/4 |
+| N09 | Routinely removable layers do not casually destroy critical boundaries | P3/P10 | Boundary-independence review + reinstatement test | Architect + specialists | 4/5 |
+| N10 | Fast-changing custom assemblies are manufactured/remanufacturable through documented interface families | P6/P10 | Manufacturing schedule + fabrication record | Architect | 4/5 |
+| N11 | Visible technical interfaces receive explicit architectural resolution | P10 | Mock-up / material review | Architect | 4/5 |
 
 *Table above is illustrative; project team to confirm final non-negotiables.*
 
@@ -81,6 +86,12 @@ Use only requirements genuinely fixed for this project.
 | Source-capture kitchen extract | Established |  |  |  |  |  |
 | Roof maintenance route | Established principle |  |  |  |  |  |
 | Physical service index | Proposed |  |  |  |  |  |
+| Seated Floor Structure | Candidate / experimental |  |  |  | structural calculation + edge mock-up |  |
+| Architectural Backplane | Candidate / experimental |  |  |  | load/interface prototype |  |
+| Replaceable Wall Lining | Candidate / experimental |  |  |  | full wall-bay prototype |  |
+| Finish-Agnostic Floor Platform | Candidate / experimental |  |  |  | full floor-bay prototype |  |
+
+Candidate patterns remain optional until the relevant evidence, calculations and prototype gates are met.
 
 ---
 
@@ -99,6 +110,9 @@ These are project performance tests, not aspirations.
 | Replace primary heat source | Old equipment can leave; replacement can enter | No structural alteration | 3 / 4 |
 | Inspect/maintain roof outlet | Safe planned access method | No improvised ladder arrangement | 4 |
 | Update altered service route | Physical IDs and digital record remain consistent | Same works package | 6 / 7 |
+| Remove/reinstall representative wall panel | Permanent wall and primary boundaries remain intact | Designated trim/panel only | 4 / prototype |
+| Lift/reseat representative floor platform panel | Same datum; no rattle/rock/acoustic bypass | Designated border/panel only | 4 / prototype |
+| Change an ordinary wall-mounted fitting | No new permanent masonry penetration where backplane is intended to serve it | Use designated fixing infrastructure | 4 / 6 |
 
 ---
 
@@ -111,6 +125,77 @@ Every service route, access panel and replaceable interface must identify applic
 |  |  |  |  |  |  |  |  |  |  |  |
 
 No interface may be considered resolved while an applicable column remains unassigned.
+
+## Boundary-independence test
+
+For every routinely removable lining, panel, cover or platform record:
+
+- which critical boundaries sit behind it;
+- which boundaries the removable component itself provides;
+- what is disturbed during routine access;
+- how disturbed performance is reinstated;
+- how reinstatement is verified.
+
+A component is not successfully “accessible” if routine removal leaves a critical boundary in an ambiguous state.
+
+---
+
+# 6A. Tectonic control documents
+
+The following project-wide drawings/schedules are required where applicable.
+
+## Permanence map
+
+Classify major building elements as:
+
+- permanent fabric;
+- semi-permanent interface infrastructure;
+- replaceable architectural assembly;
+- commodity technical component.
+
+Record the intended replacement boundary for each important assembly.
+
+## Attachment map
+
+Show:
+
+- designed anchors into permanent fabric;
+- backplanes/fixing rails/grounds;
+- ordinary fixing zones;
+- exceptional structural fixing points;
+- no-drill/no-fix zones;
+- load classes where relevant.
+
+Uncontrolled future drilling should be reduced by making the intended attachment system obvious and useful.
+
+## Movement map
+
+Show significant differential movement interfaces and identify:
+
+- controlling assembly;
+- permitted direction/range of movement;
+- required restraint;
+- seal/boundary strategy;
+- visible architectural treatment;
+- inspection or renewal requirement.
+
+## Manufacturing schedule
+
+For repeated or important custom assemblies record:
+
+- site-built / site-fabricated / workshop-manufactured / commodity;
+- reason for the chosen production mode;
+- interface family;
+- responsible designer/fabricator;
+- fabrication information required;
+- first-article/prototype requirement;
+- remanufacture record.
+
+## Wet-trade justification schedule
+
+Record significant wet/bonded work that crosses assemblies with different expected lives or movement.
+
+For each item state why a wet/bonded solution is preferred over a reversible dry alternative and what future replacement will consume.
 
 ---
 
@@ -161,6 +246,9 @@ The design team must be able to distinguish doctrine, selected patterns and open
 - roof-maintenance concept;
 - environmental/passive design concept;
 - reference-house pattern shortlist;
+- initial permanence/assembly hierarchy;
+- initial attachment and movement concepts;
+- tectonic architectural-language concept for occupant-facing interfaces;
 - first proportionality appraisal for unusual voids/undercrofts/spare capacity.
 
 **Mandatory options studies**
@@ -185,7 +273,12 @@ No pattern advances merely because it is ideologically attractive.
 - drainage/condensate routes;
 - environmental modelling;
 - acoustic/fire/security coordination;
-- updated cost and whole-life-carbon comparisons.
+- updated cost and whole-life-carbon comparisons;
+- coordinated permanence map;
+- coordinated attachment map;
+- movement map for significant interfaces;
+- preliminary manufacturing schedule;
+- preliminary wet-trade justification schedule.
 
 **Gate**
 The project should now demonstrate that service architecture fits the actual building rather than an abstract diagram.
@@ -203,6 +296,10 @@ The project should now demonstrate that service architecture fits the actual bui
 - access-panel/floor-access details;
 - controls/isolation/label scheme;
 - maintenance and disassembly sequences;
+- replacement-sequence drawings for major replaceable assemblies;
+- final interface-family / attachment details;
+- final manufacturing schedule and remanufacture information requirements;
+- wet-trade justification schedule;
 - prototype/first-article specifications;
 - commissioning and maintainability test plan;
 - building-passport data requirements.
@@ -213,10 +310,15 @@ The project should now demonstrate that service architecture fits the actual bui
 - wet-room service wall;
 - floor access band;
 - functional cornice if retained;
-- representative water-failure-management detail.
+- representative water-failure-management detail;
+- seated floor edge if pursued;
+- architectural backplane + wall-lining bay if pursued;
+- finish-agnostic floor-platform bay if pursued.
 
 **Gate**
 Repeated bespoke work cannot proceed to multiplication before prototype review.
+
+Where reversibility is part of the claimed performance, prototype approval requires **physical removal and reinstatement**, not visual inspection alone.
 
 ---
 
@@ -224,7 +326,8 @@ Repeated bespoke work cannot proceed to multiplication before prototype review.
 
 **Required controls**
 - critical-interface hold points;
-- first-article approvals;
+- first-article approvals including disassembly/reinstatement where applicable;
+- architectural-resolution sign-off for occupant-facing technical details;
 - photography before closure;
 - record of deviations/substitutions;
 - confirmation that proprietary substitutions do not introduce lock-in;
@@ -232,7 +335,7 @@ Repeated bespoke work cannot proceed to multiplication before prototype review.
 - update of as-built service and boundary information.
 
 **Gate**
-“Equivalent performance” includes maintainability, replacement sequence and interface consequences, not only immediate functional output.
+“Equivalent performance” includes maintainability, replacement sequence, tectonic/architectural resolution, remanufacturability and interface consequences, not only immediate functional output.
 
 ---
 
@@ -287,6 +390,11 @@ The publication should treat Stage 7 as research, not as an administrative after
 | Service void ↔ compartment boundary | Architect/fire | MEP / acoustic | penetration schedule |  |
 | Plant ↔ structure | MEP | structural/acoustic | vibration + replacement geometry |  |
 | Roof maintenance access | Architect | H&S / roofer / structural | access method statement |  |
+| Seated floor edge | Structural engineer | Architect / acoustic / fire | calculation + movement/restraint detail + mock-up |  |
+| Permanent wall ↔ architectural backplane | Architect / structural | fabricator / MEP / acoustic | anchor loads + fixing/no-fix map + prototype |  |
+| Backplane ↔ replaceable wall lining | Architect | fabricator / fire / acoustic / MEP | interface drawing + wall-bay prototype |  |
+| Structural floor ↔ finish-agnostic platform | Architect / structural | acoustic / MEP / flooring fabricator | stiffness/acoustic detail + floor-bay prototype |  |
+| Visible movement/interface metalwork | Architect | fabricator / relevant engineer | 1:1 sample + actual interface function |  |
 
 ---
 
@@ -297,7 +405,11 @@ The publication should treat Stage 7 as research, not as an administrative after
 | PR01 |  |  |  |  |  |
 
 Prototype assessment should include:
-appearance / installation tolerance / stiffness / rattle / wear / cleaning / opening time / normal tools / component withdrawal / boundary reinstatement.
+appearance / tectonic honesty / installation tolerance / stiffness / rattle / wear / cleaning / opening time / normal tools / component withdrawal / boundary reinstatement / removal / reinstatement / evidence of damage after cycles.
+
+For occupant-facing prototypes ask explicitly:
+
+> **Would this detail still be desirable if nobody knew it was maintainable?**
 
 ---
 

@@ -1,7 +1,7 @@
 # The Long-Life House
 ## Part I — The Proposition
 
-**Draft v0.3 — principles locked candidate; maintenance/replacement/disassembly distinction added; for editorial development, not publication**
+**Draft v0.4 — tectonic integration; for editorial development, not publication**
 
 ---
 
@@ -124,6 +124,8 @@ The relevant distinction is therefore not **fixed versus flexible**, but **where
 
 This book calls that distinction **selective permanence**.
 
+Permanence is therefore a design commitment rather than an automatic virtue. An element made permanent acquires a claim on future owners: it becomes harder to alter, harder to replace and more likely to force surrounding work to adapt around it. The project should ask not only whether an element *can* be made durable, but whether it *benefits* from permanence. Every additional permanent layer should justify the coupling it creates.
+
 The principal spatial order may be deliberately enduring: structure, stairs, major rooms, important openings, axes and facade composition. Around and within that order, faster-changing layers are given more freedom: services, controls, fit-out, appliances, selected secondary partitions and interfaces. The result is not a neutral container. It is an architecture confident enough to remain itself while allowing its technical life to continue around it.
 
 Open Building provides important evidence that stability and change can coexist. Molenvliet, completed in the Netherlands in the 1970s, separated a durable support from resident-specific infill while maintaining a coherent architectural and urban character. Later projects such as NEXT21 demonstrate much more extensive residential reconfiguration using separated structural, service and infill systems.[9][10]
@@ -156,7 +158,7 @@ Selective permanence requires a physical framework. This book uses the term **ar
 
 The word *platform* is deliberate but should not be mistaken for a technological aesthetic. It does not imply exposed services, plug-in rooms or visible modularity. It describes the underlying relationship between long-lived architecture and the systems that will change within it.
 
-The platform has four principal parts.
+The platform has four principal parts, joined by a deliberate assembly hierarchy.
 
 ## Permanent fabric
 
@@ -166,13 +168,13 @@ This does not mean that permanent fabric is literally immortal. It can be repair
 
 The professional rule should therefore not be the absolute statement that no service may ever enter permanent fabric. Some crossings are necessary, and some integrated systems may be rational. The more defensible principle is:
 
-> **Permanent fabric should not be used as the routine distribution zone for shorter-lived services. Unavoidable crossings and attachments should be deliberate, limited and documented.**
+> **Permanent fabric should not be used as the routine distribution or attachment zone for shorter-lived systems. Unavoidable crossings and attachments should be sparse, deliberate, limited and documented.**
 
 This position has an interesting relationship to conservation practice. Historic England advises designers working with old buildings to minimise permanent scarring, use common and existing routes, provide accessible routes for future maintenance and replacement, and allow spare capacity where appropriate.[11] The long-life house applies the same respect **before** the fabric becomes historic.
 
 ## Replaceable systems
 
-**Replaceable systems** are the shorter-lived technical and fit-out layers expected to wear, fail, become obsolete or be altered repeatedly: water, drainage, electrical distribution, heating, ventilation, communications, controls, plant, fittings and technologies not yet known.
+**Replaceable systems** are the shorter-lived technical and fit-out layers expected to wear, fail, become obsolete or be altered repeatedly: water, drainage, electrical distribution, heating, ventilation, communications, controls, plant, linings, floor finishes, joinery, fittings and technologies not yet known.
 
 Their defining property is not cheapness. A beautifully made piece of joinery may be replaceable; a low-cost pipe may be difficult to replace. The distinction concerns intended life and removal relationship.
 
@@ -193,6 +195,26 @@ The idea is technically conventional in parts. Movement joints, drained facade i
 A cornice may conceal a controlled slip junction between wall and ceiling. An architrave can conceal a replaceable fixing zone rather than a plastered-over frame. A threshold can protect and articulate the meeting of two floor assemblies. A removable skirting can provide an architectural face to ordinary electrical containment.
 
 The visible expression is optional. Not every joint requires brass, a shadow line or a declared seam. The principle concerns performance; the architectural language is project-specific.
+
+A further discipline follows. Support, restraint, movement, sealing, edge protection and finish are different functions. They may sometimes be combined successfully, but the design should not combine them merely because a final layer of plaster, grout or sealant can make the junction look continuous. Required load paths should be explicit. Harmless relative movement should be bounded rather than denied.
+
+## Assembly hierarchy
+
+Between permanent fabric and replaceable systems there may be a deliberately limited layer of **interface infrastructure**: bearings, mounting frames, fixing rails, backplanes, edge frames, service carriers and other robust elements whose purpose is to let faster-changing work attach without repeatedly consuming the permanent structure.
+
+This produces a useful hierarchy:
+
+**permanent fabric → interface infrastructure → replaceable architectural assembly → commodity component**
+
+The hierarchy is not a requirement for four physical layers at every location. It is a way of asking where replacement should stop. A permanent masonry wall may receive a small number of engineered anchors for a long-lived attachment rail; future wall linings, joinery or fittings can then change on the room side of that interface without each generation drilling the masonry again.
+
+The same logic can apply to floors. A primary structural floor may remain stable while an acoustic/service layer and removable platform above it accommodate finishes that change on shorter cycles.
+
+The aim is not universal modularity. It is to make the boundary between what should endure and what should change both technically and architecturally deliberate.
+
+A useful construction shorthand follows:
+
+> **Build the permanent house. Assemble the changeable house inside it.**
 
 ## Maintenance geography
 
@@ -236,7 +258,7 @@ The relevant unit of design is not merely the initial component but the sequence
 
 ## 2. Preserve the permanent fabric
 
-**Do not use long-lived fabric as the routine distribution zone for shorter-lived systems. Where services must cross or attach to permanent construction, make the interface deliberate, limited and documented.**
+**Do not use long-lived fabric as the routine distribution or attachment zone for shorter-lived systems. Where services, fittings or replaceable assemblies must cross or attach to permanent construction, make those interfaces sparse, deliberate, concentrated where practical and documented.**
 
 The aim is not purity. It is to prevent the slower layers of the building being consumed at the renewal rate of the faster ones.
 
@@ -244,7 +266,7 @@ The aim is not purity. It is to prevent the slower layers of the building being 
 
 **Treat junctions between systems, materials and lifespan layers as designed building elements.**
 
-Where required, an interface should manage movement, construction tolerance, fixing, sealing, drainage, acoustic or fire separation, inspection, disassembly and renewal. The visual expression may be quiet; the technical relationship should not be accidental.
+Required load paths and restraint should be deterministic; harmless movement should be given bounded places to occur. Where useful, distinguish support, restraint, movement, sealing, protection and finish. An interface should manage whichever technical obligations apply without asking brittle cosmetic continuity to substitute for the joint.
 
 ## 4. Make foreseeable failure detectable, containable and repairable
 
@@ -262,7 +284,7 @@ Access is more than a hatch. A person needs a route, a working position, isolati
 
 **Prefer widely understood components, standard interfaces and ordinary fabrication methods; concentrate invention at the architectural arrangement and at interfaces that genuinely require it.**
 
-The decisive tests are understandability, breadth of supply or remanufacturability, ordinary tools and interfaces, and independence from proprietary software, consumables and unique mechanisms.
+The decisive tests are understandability, breadth of supply or remanufacturability, ordinary tools and interfaces, and independence from proprietary software, consumables and unique mechanisms. The shorter-lived and more replaceable a layer is, the stronger the presumption that it should be manufactured under controlled conditions and assembled reversibly on site.
 
 ## 7. Let permanence be architectural
 
@@ -286,7 +308,7 @@ The building record should be current, transferable and comprehensible. A small 
 
 **Technical necessities encountered by occupants should be resolved through architectural composition, material and craft rather than treated as concealed accidents or gratuitous technical display.**
 
-The architecture may conceal normal operation while preserving honest access, movement and replacement. Bespoke architectural enclosures should, where practical, contain ordinary and replaceable technical components.
+The building should be tectonically honest: concealment is legitimate; falsification is not. Joints, access, wear, movement and replacement should be resolved through real material, composition and craft rather than counterfeit surfaces or cosmetic continuity. Bespoke architectural enclosures should, where practical, contain ordinary and replaceable technical components.
 
 ---
 
@@ -298,16 +320,18 @@ They do not prescribe a service undercroft, a removable floor, a masonry wall th
 
 The distinction is essential.
 
-A doctrine should survive the failure of one implementation idea. If a full walkable undercroft proves uneconomic, maintenance geography remains valid. If a removable floor cassette cannot achieve the acoustic and tactile quality required of a principal room, the need for accessible service distribution remains. If a metal containment trough creates more problems than it solves, the principle of visible, damage-limiting water failure remains. If a future project is modern rather than Georgian, the principle that technology should be architecturally resolved remains.
+A doctrine should survive the failure of one implementation idea. If a full walkable undercroft proves uneconomic, maintenance geography remains valid. If a finish-agnostic floor platform cannot achieve the acoustic and tactile quality required of a principal room, the need for accessible service distribution remains. If a metal containment trough creates more problems than it solves, the principle of visible, damage-limiting water failure remains. If a future project is modern rather than Georgian, the principle that technology should be architecturally resolved remains.
 
-The chapters that follow therefore move through four levels:
+The project therefore works through six linked levels:
 
 **Doctrine** establishes the durable proposition.  
 **Strategies** describe general ways of satisfying it.  
 **Patterns** define reusable architectural responses with explicit trade-offs and evidence status.  
-**Reference implementations** show how one particular house might choose among them.
+**Reference implementations** show how one particular house might choose among them.  
+**Delivery requirements** assign responsibility, stage, evidence and acceptance criteria.  
+**Tests** determine whether the claimed performance survives calculation, prototype, commissioning and real intervention.
 
-That hierarchy is intended to make disagreement useful. An architect should be able to reject a pattern without first rejecting the principle it was trying to serve.
+That hierarchy is intended to make disagreement useful. An architect should be able to reject a pattern without first rejecting the principle it was trying to serve, and a beautiful implementation should still be rejected if the test demonstrates that it does not work.
 
 ---
 

@@ -374,6 +374,8 @@ Independently moving assemblies are routinely connected by brittle plaster, grou
 
 Where relative movement is expected, use a junction that allows it: deliberate gap, overlap, slip piece, movement joint, flexible replaceable seal or other technically appropriate interface.
 
+The joint should define **bounded movement**, not vague looseness. Required support and restraint remain deterministic. Where useful, separate support, restraint, movement, sealing and visible finish rather than asking one brittle edge condition to perform all functions.
+
 ## Forces
 
 - movement allowance can be visually conspicuous;
@@ -388,7 +390,19 @@ Where relative movement is expected, use a junction that allows it: deliberate g
 - use geometry to absorb tolerance;
 - make replaceable seals accessible;
 - protect fragile finish edges;
-- coordinate the visual language with the architecture.
+- coordinate the visual language with the architecture;
+- state which assembly controls the joint and which is permitted to move;
+- prevent paint, filler or later decoration from silently locking the slip condition.
+
+## Architectural resolution
+
+The movement allowance should become a controlled architectural line rather than a defect to be hidden.
+
+A conventional shadow, overlap or trim may be the quietest answer. In the reference house a fine brass or bronze element may be appropriate where it performs a real role in covering, protecting or articulating the joint. Metal is optional; the truthful joint is not.
+
+## Assembly and replacement sequence
+
+Record how the cover/trim is installed, what it is fixed to, how the movement gap remains free, how any seal is renewed, and how later decorators are prevented from bridging the joint.
 
 ## Failure modes
 
@@ -627,3 +641,30 @@ structure / fire / smoke / acoustic / air / vapour / water / thermal / pest / se
 ## Mandatory proportionality note
 
 Every pattern must say what future task it exists to support and why permanent provision is justified.
+
+## Mandatory permanent-fabric impact
+
+Every pattern must state what irreversible work, anchors, penetrations, chases or embedded components it requires in permanent fabric and why those interventions are justified.
+
+## Mandatory architectural resolution
+
+Every visible or occupant-facing pattern must answer:
+
+> **How does this become architecture rather than equipment?**
+
+The answer may be visually quiet. The requirement is that technical accessibility, movement or replacement is compositionally resolved rather than excused as an unavoidable technical appearance.
+
+## Mandatory assembly and replacement sequence
+
+Every pattern involving a replaceable component must identify:
+
+- what is removed first;
+- the fixing/release method;
+- required tools and working clearance;
+- the withdrawal path;
+- boundaries disturbed by the work;
+- the method for reliable reinstatement.
+
+## Tectonic honesty check
+
+Pattern development must distinguish concealment from falsification. A concealing architectural element is legitimate when it has a genuine material/function and the condition behind it is resolved. Cosmetic continuity must not substitute for movement, access or construction detailing.
