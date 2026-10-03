@@ -35,6 +35,8 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 
 7. [Compiler Targets](compiler-targets.md)
 
+   - [S0 Compiler Target Snapshot — England / 2026-10-03](s0-target-snapshot.md) — dated research target showing applicability, transition and partial coverage rather than relying on “latest document”.
+
 8. [Structural Semantics](structural-semantics.md)  
    Separates physical structure, structural topology and analytical idealisation; defines load-path semantics, proof envelopes and S0 structural obligations.
 

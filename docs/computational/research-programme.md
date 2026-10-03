@@ -582,7 +582,9 @@ These items should not be lost even if priorities change.
 | C-008B | Test evidence invalidation on paper-compilation mutation | C-008 | blocked on W15 |
 | C-009 | Define compile status / release semantics | C-006,C-007 | first draft |
 | C-010 | Define compiler-target anatomy | — | first draft |
-| C-011 | Research England regulatory versioning / transition rules | C-010 | active |
+| C-011 | Research England regulatory versioning / transition rules | C-010 | S0 snapshot v0.1 established; H1 mapping remains open |
+| C-011A | Test target transition logic on 2026 L/F and B amendment boundaries | C-011 | first draft |
+| C-011B | Map S0 target coverage by Approved Document source | C-011 | first draft |
 | C-012 | Determine standards licensing / machine-readable strategy | C-010 | open |
 | C-013 | Distinguish building-regulations target from planning constraints | C-010 | first draft |
 | C-014 | Define initial supported-domain candidates | C-002,C-006 | candidate v0.1 |

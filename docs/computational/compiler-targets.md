@@ -523,6 +523,18 @@ Before a real England target can exist:
 9. have target interpretation reviewed by competent regulatory practitioners;
 10. define how later amendments supersede but do not erase older targets.
 
+## S0 applied target fixture
+
+The compiler-target model is now exercised by [S0 Compiler Target Snapshot — England / 2026-10-03](s0-target-snapshot.md).
+
+That fixture demonstrates three important cases simultaneously:
+
+- a published future guidance edition that is not yet the applicable basis for the assumed project date;
+- an amendment that has just taken effect but still has transition rules;
+- deliberately partial compiler coverage even though the source target is wider.
+
+The fixture should be treated as a test of target architecture and provenance, not as a complete encoded compliance route.
+
 ## 20. Current conclusion
 
 The phrase **compiler target** survives scrutiny, but only if used carefully.

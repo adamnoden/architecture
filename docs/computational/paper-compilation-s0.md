@@ -609,7 +609,7 @@ Before executing S0 fully:
 
 - **structural semantic model: v0.1 established**; select actual S0 proof envelopes/evidence families;
 - **boundary semantic model: v0.1 established**; instantiate the actual S0 wall/window/floor boundary graph;
-- select one provisional England-new-dwelling compiler target snapshot/coverage for the obligations being exercised;
+- **provisional England-new-dwelling target snapshot: established** in [S0 Compiler Target Snapshot](s0-target-snapshot.md); rule-level formalisation remains incomplete;
 - freeze a nominal S0 geometry package;
 - state all assumptions;
 - identify what evidence is real versus placeholder/external.
