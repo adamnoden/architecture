@@ -36,8 +36,10 @@ Any future text that collapses those levels should be corrected.
 | Part II — environmental resilience | Treat intelligible local control as occupant agency | Integrated |
 | Part II — replaceable interior | Prevent maintainability from producing a technical / provisional atmosphere | Integrated |
 | Part II editorial controls | Record overclaim guardrails and evidence anchors | Integrated |
-| Part III pattern logic | Require occupation / repose impact review for occupant-facing patterns | Integrated |
-| Candidate reversible assemblies | Add repose promotion gate alongside engineering and workmanship gates | Integrated |
+| Evidence audit | Grade each public claim and control permitted wording | Complete — [audit](../research/repose-evidence-audit.md) |
+| Principle 8 publication spread | Produce publication-ready argument and primary figure | Complete — [spread](../manuscript/principle-08-repose.md) / [figure](../manuscript/figures/principle-08-repose.svg) |
+| Part III pattern logic | Require occupation / repose impact review for occupant-facing patterns | Integrated; all 12 core patterns backfilled |
+| Candidate reversible assemblies | Add repose promotion gate alongside engineering and workmanship gates | Integrated; all 4 candidates backfilled |
 | Reference house language | Translate repose into project-specific composition without claiming Georgian neurological privilege | Integrated |
 | Part V | Test through occupation and recovery scenarios as well as failure / change scenarios | Integrated |
 | RIBA implementation brief | Give repose project requirements, stage outputs, review and post-occupancy checks | Integrated |
@@ -96,7 +98,17 @@ Measured items should use the appropriate building-science method. Architectural
 
 ---
 
-## Open work
+## Completed in the current integration pass
+
+- editorial pass across the governing principle, manuscript, reference-house language, delivery brief and repose research;
+- claim-by-claim evidence audit with explicit permitted and prohibited wording;
+- occupation / repose impact backfilled across all 12 core patterns and all four reversible-assembly candidates;
+- Principle 8 publication spread written;
+- Figure 8.1 produced as a publication-native SVG with evidence status visible in the graphic.
+
+## Deferred work
+
+The remaining items require either a more mature reference-house design, post-occupancy evidence, or new primary research.
 
 ### R1 — structural-legibility experiment
 
