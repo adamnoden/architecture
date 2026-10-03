@@ -375,7 +375,7 @@ This is an order of operations, not an ideology.
 
 Mechanical ventilation can be the correct solution in an airtight house. Cooling can be justified where modelling demonstrates a need. Heat pumps, controls and automated shading can materially improve performance. The doctrine's concern is that active systems should not be forced to compensate for avoidable architectural problems, and that their eventual maintenance and replacement should have been anticipated.
 
-## Environmental control is also agency
+## Local environmental control
 
 Comfort is not only the delivery of a target condition. Research on indoor environments repeatedly identifies **perceived control** as relevant to occupant satisfaction.
 
@@ -531,11 +531,9 @@ The proposition is more selective:
 
 Replaceability is not permission to turn the dwelling into a permanently visible maintenance diagram.
 
-Access seams, removable trims, service routes, labels, grilles and fixing infrastructure should be hierarchically subordinate to the room unless there is a deliberate architectural reason for them not to be. The room may reveal how it is made; it should not require the occupant to keep reading its technical systems.
+Access seams, removable trims, service routes, labels, grilles and fixing infrastructure should be hierarchically subordinate to the room unless there is a deliberate architectural reason for them not to be. The room may reveal how it is made, but technical information should remain subordinate to the room's ordinary use.
 
 The test is not whether every interface can be hidden. It is whether the collection of interfaces produces a coherent domestic field.
-
-> **A house may delight attention without continually demanding it.**
 
 This creates a useful restraint on the platform doctrine itself. A technically elegant system that causes persistent rattle, glare, visual competition, acoustic leakage, fragile-feeling surfaces or an atmosphere of provisional fit-out has failed at the level of occupation even if it is easy to maintain.
 
@@ -803,6 +801,7 @@ A long-life building should prove, at the beginning of its life, that it can be 
 - Jamrozik et al. (2024), *Journal of Environmental Psychology* — systematic review of restorative effects of daylight indoors.
 - Dosen & Ostwald (2016), *City, Territory and Architecture* — mixed quantitative evidence for prospect-refuge theory; guardrail against overclaim.
 - Current synthesis: [Repose and Low Vigilance — Evidence Note](../research/repose-and-low-vigilance.md).
+- Claim control: [Repose — Evidence Audit](../research/repose-evidence-audit.md).
 
 ### Workmanship robustness / tolerance / assembly
 - BS 5606:2022, *Accuracy and tolerance in design and construction — Guide* — project strategy for accuracy/tolerance, achievable construction accuracy, verification and control.
