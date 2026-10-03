@@ -472,7 +472,6 @@ A stair, threshold, garden room, gallery or occasional long view may compress, r
 
 The ordinary domestic background should not depend on continual novelty, exposure, disorientation or apparent structural improbability.
 
-> **Drama is an event. Repose is the field.**
 
 ---
 
