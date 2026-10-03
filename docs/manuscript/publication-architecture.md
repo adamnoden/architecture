@@ -117,7 +117,7 @@ Each major non-standard decision shows:
 22. Prototype and disassemble before repetition  
 23. Procurement without dilution  
 24. Commission maintainability  
-25. Design review through failure and occupation scenarios
+25. Design review through failure, change and occupation scenarios
 
 ## Back matter
 
