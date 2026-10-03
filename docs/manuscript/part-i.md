@@ -144,15 +144,15 @@ This book uses **repose** for a simple architectural objective:
 
 > **A good home should minimise unnecessary vigilance.**
 
+Repose is a doctrine term, not a clinical construct or a single experimentally measured state.
+
 That does not mean sensory poverty. Research on architectural interiors distinguishes **coherence**—the ease with which a scene can be organised and understood—from **fascination**, its informational richness and capacity to hold interest. A room can be ornamented, layered and visually rich while remaining coherent. Repose is therefore not minimalism. It is **richness within order**.[21]
 
 Control matters too. Building research consistently treats perceived control over environmental conditions as relevant to occupant satisfaction. Privacy research similarly treats the ability to regulate exposure as a substantive dimension of housing. The architectural implication is not a universal prescription for closed rooms, manual systems or any one plan type. It is that occupants should have intelligible means to alter ordinary conditions: to close a door, shade a window, adjust light or heat, admit air, withdraw from noise, or choose privacy where the programme calls for it.[22][23]
 
 The same caution applies to structural appearance. Vision research indicates that people rapidly and spontaneously infer physical properties such as support, stability, mass and the effects of gravity. The doctrine therefore proposes that principal domestic spaces should normally present a **plausible visual account of equilibrium**: substantial things should appear supported; the house should generally look content to stand up. This is a reasoned architectural inference from intuitive-physics research, not evidence that cantilevers are physiologically harmful or that any historical structural form is universally preferred.[24]
 
-Architectural drama remains legitimate. Compression and release, unusual geometry, long views, surprise and even apparent structural tension may enrich particular moments. But they should be deliberate events rather than the permanent background condition of ordinary domestic life.
-
-> **A house may delight attention without continually demanding it.**
+Compression and release, unusual geometry, long views, surprise and even apparent structural tension may enrich particular moments. The objection is not to intensity itself, but to making continuous perceptual demand the ordinary condition of the dwelling.
 
 This is also a defence against over-engineering.
 
