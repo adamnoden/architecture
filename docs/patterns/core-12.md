@@ -1,7 +1,7 @@
 # The Long-Life House — Core Pattern Catalogue
 ## Twelve patterns for first publication development
 
-**Draft v0.1**
+**Draft v0.2 — repose integration**
 
 These are the first patterns worth developing into full illustrated spreads. They were selected because they either have strong professional foundations or express the doctrine with relatively low implementation risk.
 
@@ -9,12 +9,14 @@ A pattern is not a requirement. Each must pass the project's proportionality and
 
 Every pattern should also be reviewed for **workmanship robustness** where construction variability is relevant. The developed pattern spread should identify the controlling datum, credible incoming tolerance, adjustment/recovery method, remediation threshold and any operation that intentionally depends on specialist craft. A pattern should not export an unresolved dimensional problem to the last trade.
 
+Every pattern that affects occupied space should also record its **occupation / repose impact**. The review should ask whether the pattern changes noise, glare, privacy, local control, apparent solidity, visual hierarchy or the amount of technical information presented to the room. Maintainability does not excuse a result that keeps the occupant's attention on the building's systems.
+
 ---
 
 # Pattern 01 — Controlled utility entry
 
 **Status:** Established  
-**Principles:** 2 Preserve permanent fabric; 5 Maintenance geography; 9 Legibility
+**Principles:** 2 Preserve permanent fabric; 5 Maintenance geography; 10 Legibility
 
 ## Problem
 
@@ -66,7 +68,7 @@ A side/rear intake zone adjacent to the plant/service hub, architecturally subor
 # Pattern 02 — Plant room as service hub
 
 **Status:** Established  
-**Principles:** 1 Build for time; 5 Maintenance geography; 6 Ordinary parts; 9 Legibility
+**Principles:** 1 Build for time; 5 Maintenance geography; 6 Ordinary parts; 10 Legibility
 
 ## Problem
 
@@ -213,7 +215,7 @@ Stack bathrooms/utility strategically so one or two service walls do substantial
 # Pattern 05 — Designed structural penetration
 
 **Status:** Established  
-**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 10 Resolve technology as architecture
+**Principles:** 2 Preserve permanent fabric; 3 Design the interface; 11 Resolve technology as architecture
 
 ## Problem
 
@@ -258,7 +260,7 @@ A limited penetration catalogue with repeatable sizes/details rather than unique
 # Pattern 06 — Water-damage-safe service route
 
 **Status:** Established principle  
-**Principles:** 4 Failure architecture; 5 Maintenance geography; 8 Passive first
+**Principles:** 4 Failure architecture; 5 Maintenance geography; 9 Passive first
 
 ## Problem
 
@@ -366,7 +368,7 @@ Develop one 1:1 jamb/head/sill prototype and test water, air, thermal bridge and
 # Pattern 08 — Movement / slip junction
 
 **Status:** Established principle  
-**Principles:** 3 Design the interface; 10 Resolve technology as architecture
+**Principles:** 3 Design the interface; 11 Resolve technology as architecture
 
 ## Problem
 
@@ -423,7 +425,7 @@ Conventional quiet joints by default; functional cornice is a separate experimen
 # Pattern 09 — Accessible rainwater route
 
 **Status:** Established principle  
-**Principles:** 4 Failure architecture; 5 Maintenance geography; 8 Passive first
+**Principles:** 4 Failure architecture; 5 Maintenance geography; 9 Passive first
 
 ## Problem
 
@@ -473,7 +475,7 @@ Compare external gutters/downpipes against deep-eaves discharge objectively rath
 # Pattern 10 — Source-capture kitchen extract
 
 **Status:** Established  
-**Principles:** 8 Passive first; 5 Maintenance geography
+**Principles:** 9 Passive first; 5 Maintenance geography
 
 ## Problem
 
@@ -566,7 +568,7 @@ Rear/secondary roof access only if it materially improves real maintenance tasks
 # Pattern 12 — Physical service index
 
 **Status:** Proposed  
-**Principles:** 9 Legibility; 5 Maintenance geography; 6 Ordinary parts
+**Principles:** 10 Legibility; 5 Maintenance geography; 6 Ordinary parts
 
 ## Problem
 
