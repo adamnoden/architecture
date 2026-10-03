@@ -62,6 +62,9 @@ Use only requirements genuinely fixed for this project.
 | N09 | Routinely removable layers do not casually destroy critical boundaries | P3/P10 | Boundary-independence review + reinstatement test | Architect + specialists | 4/5 |
 | N10 | Fast-changing custom assemblies are manufactured/remanufacturable through documented interface families | P6/P10 | Manufacturing schedule + fabrication record | Architect | 4/5 |
 | N11 | Visible technical interfaces receive explicit architectural resolution | P10 | Mock-up / material review | Architect | 4/5 |
+| N12 | Critical interfaces have a declared tolerance strategy rather than relying on site improvisation | P3/P6 | Incoming tolerance + datum + adjustment range + remediation threshold + verification method | Architect + relevant designer/fabricator | 4 |
+| N13 | Repeated non-standard assemblies are trialled by a representative competent installer | P3/P6 | Uncoached first-article installation record; design response to questions/workarounds | Architect + contractor/fabricator | 4/5 |
+| N14 | Consequential concealed interfaces are inspected before closure | P3/P6 | Hold point + measurement/photographic record where appropriate | Contractor + relevant designer | 5 |
 
 *Table above is illustrative; project team to confirm final non-negotiables.*
 
@@ -178,6 +181,22 @@ Show significant differential movement interfaces and identify:
 - seal/boundary strategy;
 - visible architectural treatment;
 - inspection or renewal requirement.
+
+## Tolerance and workmanship schedule
+
+For important repeated interfaces record:
+
+- nominal geometry;
+- credible incoming tolerance / site variability;
+- controlling datum;
+- adjustment method and range;
+- permitted shims/packers or sacrificial trim where relevant;
+- acceptance / remediation threshold;
+- inspection or measurement before closure;
+- whether specialist craft is intentionally required and why;
+- whether representative-installer testing is required.
+
+The schedule should distinguish **designed adjustment** from unspecified site correction.
 
 ## Manufacturing schedule
 
@@ -301,6 +320,8 @@ The project should now demonstrate that service architecture fits the actual bui
 - final manufacturing schedule and remanufacture information requirements;
 - wet-trade justification schedule;
 - prototype/first-article specifications;
+- critical-interface tolerance/workmanship schedules;
+- representative-installer trial requirements for repeated non-standard assemblies;
 - commissioning and maintainability test plan;
 - building-passport data requirements.
 
@@ -325,8 +346,10 @@ Where reversibility is part of the claimed performance, prototype approval requi
 ## Stage 5 — Manufacturing and Construction
 
 **Required controls**
-- critical-interface hold points;
+- critical-interface hold points, including tolerance verification before closure where consequential;
 - first-article approvals including disassembly/reinstatement where applicable;
+- representative-installer trial for designated repeated non-standard assemblies;
+- record of out-of-tolerance conditions and whether the defined adjustment or remediation route was used;
 - architectural-resolution sign-off for occupant-facing technical details;
 - photography before closure;
 - record of deviations/substitutions;
@@ -405,7 +428,7 @@ The publication should treat Stage 7 as research, not as an administrative after
 | PR01 |  |  |  |  |  |
 
 Prototype assessment should include:
-appearance / tectonic honesty / installation tolerance / stiffness / rattle / wear / cleaning / opening time / normal tools / component withdrawal / boundary reinstatement / removal / reinstatement / evidence of damage after cycles.
+appearance / tectonic honesty / installation tolerance / declared tolerance recovery / datum clarity / sequence clarity / representative-installer questions and workarounds / stiffness / rattle / wear / cleaning / opening time / normal tools / component withdrawal / boundary reinstatement / removal / reinstatement / evidence of damage after cycles.
 
 For occupant-facing prototypes ask explicitly:
 
