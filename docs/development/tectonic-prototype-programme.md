@@ -16,7 +16,7 @@ A beautiful panel tested on a bench proves little if the wall behind it, the aco
 
 ## Common acceptance framework
 
-Every candidate prototype should be reviewed against six categories.
+Every candidate prototype should be reviewed against seven categories.
 
 ### 1. Primary performance
 
