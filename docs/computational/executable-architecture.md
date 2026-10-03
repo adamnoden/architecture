@@ -83,6 +83,8 @@ It is **formalise enough of the architecture that the important propositions can
 
 The software should be downstream of that formalisation.
 
+The existing architect-facing implementation brief remains the project's current **human translation layer** from doctrine into a real commission. A future compiler might formalise part of that translation, but does not supersede the implementation brief today.
+
 ## 3. Why a compiler rather than a checker
 
 Most digital building workflows begin with a model whose geometry can be almost arbitrarily authored. Structure, energy, code compliance, quantities and coordination are then analysed by separate processes.
@@ -122,6 +124,8 @@ Maximum valid movement under current configuration: +265 mm.
 
 This is fundamentally different from drawing freely and receiving a report afterwards.
 
+The software analogy is **type safety**. A short-lived service should not be attachable to a forbidden permanent zone without an explicit interface. A removable lining should not be capable of silently carrying a boundary that is required to survive its removal. A load-bearing opening should not exist without satisfying its support obligations. Where an invalid relationship is representable, it should become a compiler error rather than latent design debt.
+
 ## 4. The user should manipulate architectural meaning
 
 The system should operate on **semantic building primitives**, not generic meshes.
@@ -152,6 +156,8 @@ The long-term user-interface ambition is deliberately extreme:
 
 > **A person who can competently manipulate a house in a building game should be able to explore this system without first becoming an architect, structural engineer, quantity surveyor or BIM technician.**
 
+A deliberately provocative product test is: **could a twelve-year-old who understands a game such as *The Sims* manipulate the house while the system, rather than the child, carries the technical complexity?** The answer need not literally determine the audience. It captures the intended inversion: expert knowledge belongs in the constrained system rather than being demanded from every author.
+
 The sophistication belongs inside the system.
 
 The user may:
@@ -170,6 +176,18 @@ They should not need to manually draw every beam, calculate every reaction, rout
 The system should derive downstream consequences where it has authority to do so and reject unresolved consequences where it does not.
 
 This is an interface ambition, **not a claim that a non-professional user thereby acquires legal competence or that professional responsibility disappears**.
+
+### Product form
+
+If developed, this should be understood as a **software product**, not merely a research script or plug-in.
+
+The conceptual product is:
+
+**interactive 3D authoring environment + semantic building model + compiler + versioned target/rule packs + evidence/production output system.**
+
+The user experience may resemble unusually constrained CAD or a building game. The underlying product is closer to an integrated compiler toolchain. The 3D model is one view of the source and one compiled artefact; it is not the entire product.
+
+No decision is made here about desktop versus web delivery, modelling kernel, storage model, implementation language or commercial form.
 
 ## 6. Opinionated architecture and proportion
 
@@ -692,7 +710,7 @@ These are starting points for later research, not an exhaustive literature revie
 
 - buildingSMART International, **Industry Foundation Classes (IFC)** and openBIM standards: https://www.buildingsmart.org/standards/
 - buildingSMART International, **Information Delivery Specification (IDS)**: https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/
-- M. Solihin et al., **Rule-based compliance checking and generative design for building interiors using BIM**, *Automation in Construction* 120 (2020), 103368: https://doi.org/10.1016/j.autcon.2020.103368
+- Christoph Sydora and Eleni Stroulia, **Rule-based compliance checking and generative design for building interiors using BIM**, *Automation in Construction* 120 (2020), 103368: https://doi.org/10.1016/j.autcon.2020.103368
 - Hypar, **Documentation / computational building planning platform**: https://docs.hypar.io/
 - UK Government, **Approved Documents — Building Regulations guidance for England**: https://www.gov.uk/government/collections/approved-documents
 - UK Government, **Preparing information for a building control approval application**: https://www.gov.uk/guidance/preparing-information-for-a-building-control-approval-application
