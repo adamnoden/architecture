@@ -79,6 +79,7 @@ The tectonic migration is now distributed deliberately across the project:
 - **reference-house architectural expression:** `docs/reference-house/tectonic-architectural-language.md`;
 - **manufacturing logic:** `docs/development/manufacturing-strategy.md`;
 - **engineering and 1:1 validation:** `docs/development/tectonic-prototype-programme.md`;
+- **workmanship-robustness research/control:** `docs/research/workmanship-robustness.md`;
 - **project enforcement:** `docs/delivery/riba-implementation-brief-template.md`.
 
 “Integrated” means the idea now has the appropriate documentary chain. It does **not** promote experimental physical systems to proven construction. TH-07, TH-09, TH-10 and TH-13 remain candidates until the engineering/prototype programme produces enough evidence to select, modify or reject them.
