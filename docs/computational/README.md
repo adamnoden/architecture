@@ -30,6 +30,7 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [G-01 Topology Comparison](g01-topology-comparison.md) — preliminary D4 comparison of morphology, connectivity, route/sequence, vertical hierarchy and scoped symmetry before dimensional analysis.
    - [G-01 Dimensional and Proportional Analysis](g01-dimensional-analysis.md) — D5 seed dataset and measurement discipline; currently strongest at Danson, deliberately sparse elsewhere.
    - [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md) — D6 seed model for directional, attribute-level negotiation between spatial order, façade, section and technical structure.
+   - [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) — provisional D7/D8 seed: hierarchy, route, sequence, scoped order and coupling are testable; exact proportional rules remain explicitly unready.
 
 5. [Validity and Obligations](validity-and-obligations.md)  
    Defines what kinds of validity exist, what a compile failure means, how obligations are discharged and what a successful compile may legitimately claim.

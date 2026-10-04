@@ -674,11 +674,15 @@ Identify which variables genuinely coordinate plan, section and elevation.
 
 ### D7 — first candidate-rule register
 
-Every rule with supporting cases and counterexamples.
+**Seed v0.1 established:** [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md).
+
+The register deliberately distinguishes modelling corrections from architectural hypotheses and dimensional candidates. It is suitable for research fixtures, not for claiming G-01 v0.1 validation.
 
 ### D8 — mutation set
 
-At least 10 deliberate near-misses derived from strong precedents.
+**Seed started:** the candidate register defines the first six near-miss mutations across Danson, Marble Hill and 76 Dean Street. Their outcomes are not yet expert/hold-out validated.
+
+At least 10 deliberate near-misses remain the completion target.
 
 ### D9 — held-out validation
 
@@ -775,17 +779,31 @@ The first annotation trials are:
 
 ## 20. Immediate next action
 
-D3 semantic annotation is now closed at v0.1. Source discovery continues because D4–D6 require stronger plan/section/elevation evidence. The next sequence is:
+D3 is complete and D7 now has a deliberately provisional candidate register, but the evidence chain is not mature enough to promote G-01 rules.
+
+Continue in two lanes:
+
+### Evidence lane
 
 1. obtain direct usable copies of the already-indexed Marble Hill measured sheets and reconcile target phase;
 2. extract the Danson principal-floor/section drawings corresponding to the A2 fabric evidence already annotated;
 3. acquire the located 76 Dean Street GLC/V&A and Historic England survey drawings;
-4. use those sources to close the remaining D4 topology uncertainties;
-5. begin D5 dimensional extraction and D6 plan/section/elevation coupling analysis without reopening D3 unless the common annotation contract itself proves defective.
+4. use those sources to close D4–D6 gaps and quantify opening/room/coupling relationships.
+
+### Falsification lane
+
+1. run the D8 mutations defined in [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md);
+2. add at least four further near-miss cases;
+3. test the candidate constraints against held-out buildings before any promotion;
+4. separate morphology-specific constraints from genuinely transferable ones.
+
+S2 may use **G01-PILOT-P0** to test compiler grammar machinery.
+
+It may not cite an S2 pass as evidence that G-01 itself is validated.
 
 Do not begin by choosing room ratios.
 
-The next advance must come from **phase-checked architectural relationships and measured evidence**, not a more elaborate theory.
+The next architectural advance must still come from **phase-checked relationships, mutation and hold-out evidence**, not a more elaborate theory.
 
 ---
 

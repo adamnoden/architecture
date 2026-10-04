@@ -608,9 +608,9 @@ These items should not be lost even if priorities change.
 | C-016B4 | Complete D4 topology comparison from phase-checked trial plans | C-016B | preliminary v0.1 active |
 | C-016B5 | Complete D5 dimensional/proportional analysis | C-016B | seed v0.1 established |
 | C-016B6 | Complete D6 plan/section/elevation coupling study | C-016B | seed v0.1 established |
-| C-016C | Extract candidate topology/hierarchy/proportion/elevation rules | C-016B4,C-016B5,C-016B6 | blocked until D4–D6 mature |
-| C-016D | Mutation-test candidate grammar against strong precedents and near-misses | C-016C | open |
-| C-016E | Draft first executable-independent G-01 rule specification | C-016D | open |
+| C-016C | Extract candidate topology/hierarchy/proportion/elevation rules | C-016B4,C-016B5,C-016B6 | **D7 seed v0.1 established for research; no G-01 rules promoted** |
+| C-016D | Mutation-test candidate grammar against strong precedents and near-misses | C-016C | **D8 mutation definitions seeded; expert/hold-out evaluation open** |
+| C-016E | Draft first executable-independent G-01 rule specification | C-016D | blocked; S2 may use G01-PILOT-P0 only, not claim G-01 validation |
 | C-017 | Formalise structural support/load graph | C-002 | conceptual v0.1 |
 | C-017A | Separate physical/topological/analytical structural representations | C-017 | first draft |
 | C-017B | Define S0 structural obligation set | C-017 | first draft |
@@ -691,10 +691,10 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. **Advance G-01 D4–D7 to the first small candidate constraint set** for room/door/opening hierarchy and plan/section/elevation coupling; keep every candidate explicitly falsifiable and non-universal.
+1. **Revise the H1 capability matrix now** using S0/S1 and the new ordinary families; identify the remaining places where an ordinary two-storey house would still be mostly EXTERNAL/UNRESOLVED.
 2. obtain an **external competent structural/building-control red-team** of the S0/S1 proof, target and evidence boundaries.
 3. select the first roof family; retain foundations as scoped external proof in H1 v0 unless evidence changes the decision.
-4. revise the **H1 capability matrix** now that window, corner, ground-floor perimeter and room-service routes are explicit; identify where ordinary houses would still be mostly EXTERNAL/UNRESOLVED.
+4. use [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) only as **G01-PILOT-P0** in future S2 research; continue D4–D6 evidence work and D8 evaluation in parallel.
 5. only then design **S2 — a connected room cluster** to test topology, sequence, hierarchy and shared façade order at the next scale.
 
 That sequence should produce enough information to decide whether the compiler concept is genuinely architectural infrastructure or merely an attractive analogy.
