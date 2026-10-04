@@ -360,13 +360,21 @@ The roof is currently less developed than the wall/floor system.
 
 H1 should therefore not quietly assume arbitrary roof competence.
 
-Research should select a small supported family, likely from:
+The first family is now selected:
 
-- ordinary timber trussed rafter systems;
-- conventional cut/engineered timber pitched roof;
-- simple hipped derivative.
+- [RF-TRUSS-DUO-01 — Simple Duo-Pitched Trussed-Rafter Cold Roof](roof-family-trussed-duopitch-v01.md).
 
-Each roof family must eventually define:
+It deliberately uses:
+
+- prefabricated timber trussed rafters;
+- simple rectangular/duo-pitched geometry;
+- uninhabited roof void;
+- ceiling-level thermal/air boundary;
+- manufacturer/engineer structural design as scoped external evidence under SAB-H1-01.
+
+Later families may include conventional cut/engineered roofs or simple hipped derivatives.
+
+Each roof family must define:
 
 - supported geometry;
 - spans;
@@ -602,7 +610,7 @@ This is preferable to half-support.
 | W2 removable lining/backplane | Extension candidate | Requires prototype/evidence |
 | Full removable floor platform | Unsupported initially | Experimental |
 | Local floor-access band | Extension candidate | Prototype dependent |
-| Simple pitched/hipped timber roof | Candidate | Roof study required |
+| Simple duo-pitched trussed roof | **Supported candidate** | RF-TRUSS-DUO-01; truss adequacy external, geometry/boundaries native semantics |
 | Arbitrary steel frame | Unsupported | Local defined beams may be allowed |
 | Complex transfer structure | Unsupported | Outside initial purpose |
 | Simple masonry openings | Native semantics / external structural adequacy initially | Boundary family can be native while lintel/masonry capacity remains scoped external evidence |
@@ -778,6 +786,36 @@ Before H1 can graduate from candidate to specification:
 9. advance G-01 to the first small candidate constraint set needed for connected-room research;
 10. revise H1 and test whether ordinary houses are mostly supported rather than mostly external;
 11. design S2 only after the minimum G-01 candidate constraints and capability review are ready.
+
+## 28A. Post-S1 H1 capability audit
+
+The current whole-house audit is recorded in [H1 Capability Matrix — Post-S1](h1-capability-matrix-v01.md).
+
+Its main conclusion is:
+
+> **H1 is not yet Gate-B complete, but the remaining gaps are modular rather than foundational.**
+
+The compiler architecture now has credible paper evidence for:
+
+- semantic source-of-truth;
+- composition;
+- scoped obligations;
+- evidence/provenance;
+- selective invalidation;
+- repeated-family reuse;
+- complexity containment through room scale.
+
+The dominant remaining ordinary-house gaps are:
+
+- stair / vertical circulation;
+- external entrance door;
+- whole-house ventilation;
+- heating / water / drainage / wet-room strategy;
+- whole-house fire/escape family;
+- whole-dwelling L/O calculations;
+- external competent review.
+
+The first roof gap is now materially reduced by RF-TRUSS-DUO-01.
 
 ## 29. Current conclusion
 

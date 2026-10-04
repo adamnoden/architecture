@@ -593,9 +593,10 @@ These items should not be lost even if priorities change.
 | C-014 | Define initial supported-domain candidates | C-002,C-006 | candidate v0.1 |
 | C-014A | Specify Domain S0 paper-compilation slice | C-014 | complete v0.1 |
 | C-014B | Define candidate H1 structural proof envelope | C-014,C-017 | **SAB-H1-01 v0.1: native topology, scoped external adequacy** |
-| C-014C | Select first supported roof family | C-014 | open |
+| C-014C | Select first supported roof family | C-014 | **RF-TRUSS-DUO-01 v0.1 selected as first H1 candidate** |
 | C-014D | Decide first foundation proof strategy | C-014 | open |
 | C-014E | Define initial native/external/unsupported capability matrix | C-014 | first draft |
+| C-014F | Audit whole-house H1 capability after S1 | C-014,C-032B | **post-S1 capability matrix v0.1 complete; Gate B remains open** |
 | C-015 | Research architectural grammars and proportion deeply | W1 | initial foundation complete; corpus research continues |
 | C-016 | Define layered architectural-grammar model | C-015 | first draft |
 | C-016A | Define G-01 scope and precedent corpus strategy | C-015,C-016 | complete v0.1 |
@@ -691,11 +692,12 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. **Revise the H1 capability matrix now** using S0/S1 and the new ordinary families; identify the remaining places where an ordinary two-storey house would still be mostly EXTERNAL/UNRESOLVED.
-2. obtain an **external competent structural/building-control red-team** of the S0/S1 proof, target and evidence boundaries.
-3. select the first roof family; retain foundations as scoped external proof in H1 v0 unless evidence changes the decision.
-4. use [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) only as **G01-PILOT-P0** in future S2 research; continue D4–D6 evidence work and D8 evaluation in parallel.
-5. only then design **S2 — a connected room cluster** to test topology, sequence, hierarchy and shared façade order at the next scale.
+1. prepare an **external competent review pack** for structural/building-control practitioners covering S0/S1 proof boundaries, target applicability, evidence scoping and the H1 external-assurance strategy.
+2. define the first **stair / vertical-circulation family**, now the largest unavoidable architectural-technical gap for a two-storey H1 house.
+3. define the first **external entrance-door family**, completing the main envelope/access/security transition.
+4. select one **whole-house ventilation family** and one deliberately narrow heating/service strategy; do not broaden into arbitrary MEP.
+5. use [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) only as **G01-PILOT-P0** in future S2 research; continue D4–D6 evidence work and D8 evaluation in parallel.
+6. reassess the [H1 Capability Matrix](h1-capability-matrix-v01.md); design S2 only when the remaining domain gaps are few enough that S2 tests architecture/topology rather than merely rediscovering missing ordinary systems.
 
 That sequence should produce enough information to decide whether the compiler concept is genuinely architectural infrastructure or merely an attractive analogy.
 

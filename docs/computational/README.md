@@ -60,6 +60,9 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 
 10. [Supported Domain](supported-domain.md)
 
+   - [H1 Capability Matrix — Post-S1](h1-capability-matrix-v01.md) — Gate-B audit of what an ordinary two-storey detached house is actually supported, externally evidenced, candidate or unsupported.
+   - [RF-TRUSS-DUO-01 — Simple Duo-Pitched Trussed-Rafter Cold Roof](roof-family-trussed-duopitch-v01.md) — first H1 roof-family candidate; roof geometry/boundary semantics native, truss adequacy supplied by scoped manufacturer/engineer evidence.
+
    - [SR-ROOM-LOW-01 — Accessible Low-Level Room Service Route](service-family-room-low-level-v01.md) — first supported room-service geography for electrical/data plus a simple hydronic emitter branch, with technical services design external.  
    Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.
 
