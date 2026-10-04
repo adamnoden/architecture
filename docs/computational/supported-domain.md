@@ -415,6 +415,24 @@ A supported opening family should eventually carry:
 - opening component envelope;
 - evidence.
 
+## 12A. Candidate H1 — principal entrance
+
+The first entrance family is now:
+
+[ENTR-DOOR-MCW-01 — Principal External Doorset in Masonry Cavity Wall](entrance-family-principal-masonry-v01.md).
+
+It treats the threshold as one composed interface across:
+
+- Part-M access;
+- Part-Q security;
+- weather;
+- air;
+- thermal continuity;
+- wall/floor moisture strategy;
+- structural opening;
+- replacement;
+- architectural arrival.
+
 ## 13. Candidate H1 — service topology
 
 The domain should take advantage of established Long-Life House patterns that do not require exotic construction.
@@ -457,7 +475,21 @@ Examples for future decision:
 
 ### Ventilation
 
-- explicit natural/mechanical strategy families consistent with the selected regulatory route.
+First H1 family selected:
+
+- [VENT-CMEV-01 — Central Continuous Mechanical Extract](ventilation-family-cmev-v01.md).
+
+It uses:
+
+- one accessible central extract unit;
+- wet-room extract ducting in declared service zones;
+- designed habitable-room background inlets;
+- internal transfer-air routes;
+- openable-window purge ventilation.
+
+The choice is deliberate: it works for airtight dwellings under the selected Part-F routes while avoiding MVHR's second duct network, heat exchanger, filters and condensate as H1 prerequisites.
+
+[MVHR](h1-ventilation-strategy-decision-v01.md) remains a higher-performance extension candidate, and may be the stronger Reference House choice where comfort, filtration and heat recovery justify the maintenance/duct complexity.
 
 ### Electrical/data
 

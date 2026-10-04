@@ -65,6 +65,9 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [H1 Capability Matrix — Post-S1](h1-capability-matrix-v01.md) — Gate-B audit of what an ordinary two-storey detached house is actually supported, externally evidenced, candidate or unsupported.
    - [RF-TRUSS-DUO-01 — Simple Duo-Pitched Trussed-Rafter Cold Roof](roof-family-trussed-duopitch-v01.md) — first H1 roof-family candidate; roof geometry/boundary semantics native, truss adequacy supplied by scoped manufacturer/engineer evidence.
    - [ST-PRIVATE-01 — Private Timber Stair](stair-family-private-v01.md) — straight-flight/rectangular-landing H1 stair family; Part-K geometry native, floor-opening/structural adequacy external, fire/accessibility roles remain building/target scoped.
+   - [ENTR-DOOR-MCW-01 — Principal External Doorset](entrance-family-principal-masonry-v01.md) — first H1 entrance family combining threshold/accessibility, security, envelope continuity, structure and replacement.
+   - [H1 Ventilation Strategy Decision](h1-ventilation-strategy-decision-v01.md) — selects central continuous mechanical extract as the first trusted H1 route and retains MVHR as a higher-performance extension.
+   - [VENT-CMEV-01 — Central Continuous Mechanical Extract](ventilation-family-cmev-v01.md) — whole-house ventilation topology with accessible central extract plant, wet-room ducting, habitable-room background inlets and transfer-air semantics.
 
    - [SR-ROOM-LOW-01 — Accessible Low-Level Room Service Route](service-family-room-low-level-v01.md) — first supported room-service geography for electrical/data plus a simple hydronic emitter branch, with technical services design external.  
    Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.

@@ -598,6 +598,8 @@ These items should not be lost even if priorities change.
 | C-014E | Define initial native/external/unsupported capability matrix | C-014 | first draft |
 | C-014F | Audit whole-house H1 capability after S1 | C-014,C-032B | **post-S1 capability matrix v0.1 complete; Gate B remains open** |
 | C-014G | Select first supported private-stair family | C-014,C-017 | **ST-PRIVATE-01 v0.1 established** |
+| C-014H | Select first supported principal-entrance family | C-014,C-019 | **ENTR-DOOR-MCW-01 v0.1 established** |
+| C-014I | Select first whole-house ventilation family | C-014,C-020 | **VENT-CMEV-01 selected; MVHR retained as extension candidate** |
 | C-015 | Research architectural grammars and proportion deeply | W1 | initial foundation complete; corpus research continues |
 | C-016 | Define layered architectural-grammar model | C-015 | first draft |
 | C-016A | Define G-01 scope and precedent corpus strategy | C-015,C-016 | complete v0.1 |
@@ -695,9 +697,9 @@ Exploratory notes should not silently redefine the canonical model.
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
 1. **Obtain the actual external competent review** using [the prepared review pack](external-review-pack-s0-s1-h1-v01.md); do not treat preparation as validation.
-2. define the first **external entrance-door family**, completing the main envelope/access/security transition.
-3. select one **whole-house ventilation family** and one deliberately narrow heating/service strategy; do not broaden into arbitrary MEP.
-4. define the first **wet-service / drainage strategy** only after the ventilation/heating scope is bounded, because this is the largest remaining service-complexity risk.
+2. **ENTR-DOOR-MCW-01 established** — principal entrance/access/security/envelope transition is now bounded.
+3. **VENT-CMEV-01 selected** as the first whole-house ventilation family; MVHR remains the higher-performance extension candidate.
+4. define one deliberately narrow **heat-pump + low-temperature radiator** family, then define the first wet-service/drainage strategy around the same service geography.
 5. use [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) only as **G01-PILOT-P0** in future S2 research; continue D4–D6 evidence work and D8 evaluation in parallel.
 6. reassess the [H1 Capability Matrix](h1-capability-matrix-v01.md); design S2 only when the remaining domain gaps are few enough that S2 tests architecture/topology rather than merely rediscovering missing ordinary systems.
 

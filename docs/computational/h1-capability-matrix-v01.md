@@ -60,7 +60,7 @@ The weakness has shifted to **domain coverage**.
 | B Fire | PARTIAL | local contributions; whole-house strategy not yet supported as a family |
 | C Moisture | SUPPORTED/PARTIAL | wall/window/corner/floor-perimeter routes now explicit |
 | E Sound | PARTIAL | same-dwelling conditions only; no separating construction in H1 detached baseline |
-| F Ventilation | PARTIAL | room purge/transfer tested; whole-house system family unselected |
+| F Ventilation | **SUPPORTED FAMILY SELECTED** | VENT-CMEV-01; competent airflow design/commissioning external |
 | K Falling/glazing | PARTIAL | window applicability tested |
 | L Energy | PARTIAL | boundary semantics strong; full dwelling model not instantiated |
 | M Access | PARTIAL | Category-1 room/door/control route tested; whole-dwelling access not yet compiled |
@@ -90,8 +90,8 @@ Coverage is not yet complete enough for whole-house release.
 | internal loadbearing door heads | SUPPORTED + EXTERNAL EVIDENCE | engineering external |
 | foundations | EXTERNAL | explicit H1-v0 decision |
 | global stability | EXTERNAL | semantics required; calculation external |
-| roof structure | **GAP** | first family not yet selected |
-| stairs/opening trimmers | CANDIDATE/EXTERNAL | not yet a supported family |
+| roof structure | **SUPPORTED candidate** | RF-TRUSS-DUO-01; structural adequacy external |
+| stairs/opening trimmers | **SUPPORTED candidate** | ST-PRIVATE-01; trimmer/member adequacy external |
 | arbitrary steel transfers | UNSUPPORTED | deliberate |
 
 ### Assessment
@@ -100,7 +100,7 @@ The external-adequacy decision successfully prevents structural engineering from
 
 The major ordinary structural gap is now:
 
-**ROOF + STAIR/OPENING FAMILY**
+Roof and stair gaps are now materially reduced by RF-TRUSS-DUO-01 and ST-PRIVATE-01.
 
 rather than “structure in general”.
 
@@ -112,7 +112,7 @@ rather than “structure in general”.
 | window in cavity wall | SUPPORTED + EXTERNAL EVIDENCE | BF-WIN-MCW-01 |
 | 90° external masonry corner | SUPPORTED + EXTERNAL EVIDENCE | BF-CORNER-MCW-01 |
 | ground-floor/wall perimeter | SUPPORTED route + EXTERNAL evidence | BF-GF-MCW-01 |
-| ordinary external door in cavity wall | **GAP** | no dedicated family |
+| ordinary external door in cavity wall | **SUPPORTED candidate** | ENTR-DOOR-MCW-01 |
 | roof/wall/eaves junction | **GAP** | depends on roof family |
 | roof ridge/hip/valley | **GAP** | roof family absent |
 | service penetration through envelope | PARTIAL | S0 semantics; family not hardened |
@@ -123,11 +123,7 @@ rather than “structure in general”.
 
 S1 materially improved envelope coverage.
 
-The remaining ordinary gaps are concentrated around:
-
-- roof;
-- external entrance/door;
-- controlled envelope penetration.
+The remaining ordinary envelope gap is now concentrated around controlled service penetrations and roof/eaves detail hardening; the principal entrance is covered by ENTR-DOOR-MCW-01.
 
 ## 6. Ground floor / interior fabric
 
@@ -155,14 +151,14 @@ Interior ordinary-construction coverage is adequate for early H1 research.
 | window product family | SUPPORTED route / product unselected | shared + occurrence applicability |
 | internal door multi-role semantics | NATIVE concept | S1 |
 | Category-1 internal access route | SUPPORTED/PARTIAL | room-scale tested |
-| external entrance door | **GAP** | needs M/Q/weather/thermal family |
+| external entrance door | **SUPPORTED candidate** | ENTR-DOOR-MCW-01 |
 | stair semantic role | CANDIDATE | G-01 evidence exists, technical family absent |
-| stair technical family | **GAP** | necessary for two-storey H1 |
+| stair technical family | **SUPPORTED candidate** | ST-PRIVATE-01 |
 | service/secondary circulation rank | G01-PILOT candidate | not validated G-01 |
 
 ### Assessment
 
-For a two-storey dwelling, **stairs are now a hard Gate-B gap**.
+For a two-storey dwelling, the first private-stair family now exists; validation and floor-opening integration remain open.
 
 ## 8. Services
 
@@ -175,7 +171,7 @@ For a two-storey dwelling, **stairs are now a hard Gate-B gap**.
 | plant/service hub | CANDIDATE | doctrine mature; no computational family |
 | vertical riser | CANDIDATE | doctrine mature |
 | whole-house heating family | **GAP** | not selected |
-| whole-house ventilation family | **GAP** | Part F route requires selection |
+| whole-house ventilation family | **SUPPORTED candidate** | VENT-CMEV-01; MVHR extension reserved |
 | hot/cold water distribution | **GAP** | network/failure semantics not formalised |
 | sanitary drainage | **GAP** | no H1 family |
 | kitchen extract | CANDIDATE | topology understood, family not formalised |
