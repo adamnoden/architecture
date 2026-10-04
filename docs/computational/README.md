@@ -62,7 +62,8 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 
 10. [Supported Domain](supported-domain.md)
 
-   - [H1 Capability Matrix — Post-S1](h1-capability-matrix-v01.md) — Gate-B audit of what an ordinary two-storey detached house is actually supported, externally evidenced, candidate or unsupported.
+   - [H1 Capability Matrix — Post-S1](h1-capability-matrix-v01.md) — historical first whole-house audit.
+   - [H1 Capability Matrix — Post-Services v0.2](h1-capability-matrix-v02.md) — current Gate-B audit after entrance, ventilation, heating, wet core and fire-route convergence; S2 is now justified as research, Gate B remains closed.
    - [RF-TRUSS-DUO-01 — Simple Duo-Pitched Trussed-Rafter Cold Roof](roof-family-trussed-duopitch-v01.md) — first H1 roof-family candidate; roof geometry/boundary semantics native, truss adequacy supplied by scoped manufacturer/engineer evidence.
    - [ST-PRIVATE-01 — Private Timber Stair](stair-family-private-v01.md) — straight-flight/rectangular-landing H1 stair family; Part-K geometry native, floor-opening/structural adequacy external, fire/accessibility roles remain building/target scoped.
    - [ENTR-DOOR-MCW-01 — Principal External Doorset](entrance-family-principal-masonry-v01.md) — first H1 entrance family combining threshold/accessibility, security, envelope continuity, structure and replacement.
@@ -71,6 +72,7 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [H1 Heating Strategy Decision](h1-heating-strategy-decision-v01.md) — selects air-to-water heat pump + low-temperature radiators and rejects embedded wet UFH as the H1 baseline.
    - [HEAT-ASHP-RAD-01 — Air-to-Water Heat Pump + Low-Temperature Radiators](heating-family-ashp-radiators-v01.md) — accessible hydronic heating topology with competent heat-loss/sizing evidence external.
    - [H1 Services Target Extension](h1-services-target-extension-v01.md) — adds Part G/H and whole-house water/drainage/hot-water obligations to the research target.
+   - [FIRE-H1-2S-EGRESS-01 — Two-Storey Escape-Window Fire Route](fire-family-two-storey-egress-v01.md) — bounded B1 research route for ordinary two-storey dwellings; upper escape windows, alarm obligations and hall/final-exit topology; external review required.
    - [WET-CORE-01 — Clustered Wet Core with Zonal Service Walls](wet-service-family-core-v01.md) — short gravity routes, accessible riser, zonal isolation and high-consequence appliance geography.
 
    - [SR-ROOM-LOW-01 — Accessible Low-Level Room Service Route](service-family-room-low-level-v01.md) — first supported room-service geography for electrical/data plus a simple hydronic emitter branch, with technical services design external.  

@@ -600,6 +600,8 @@ These items should not be lost even if priorities change.
 | C-014G | Select first supported private-stair family | C-014,C-017 | **ST-PRIVATE-01 v0.1 established** |
 | C-014H | Select first supported principal-entrance family | C-014,C-019 | **ENTR-DOOR-MCW-01 v0.1 established** |
 | C-014I | Select first whole-house ventilation family | C-014,C-020 | **VENT-CMEV-01 selected; MVHR retained as extension candidate** |
+| C-014J | Define first two-storey H1 fire/escape family | C-014,C-011 | **FIRE-H1-2S-EGRESS-01 research candidate established; external review required** |
+| C-014K | Re-audit H1 after services convergence | C-014H,C-014I,C-020B,C-020C,C-014J | **capability matrix v0.2 complete; S2 research entry justified, Gate B open** |
 | C-015 | Research architectural grammars and proportion deeply | W1 | initial foundation complete; corpus research continues |
 | C-016 | Define layered architectural-grammar model | C-015 | first draft |
 | C-016A | Define G-01 scope and precedent corpus strategy | C-015,C-016 | complete v0.1 |
@@ -651,7 +653,7 @@ These items should not be lost even if priorities change.
 | C-032B | Design S1 room-scale integration fixture | C-031A,C-032A | **complete — S1 Run 01 research/complexity pass; release fail** |
 | C-032C | Formalise evaluation scope / contribution semantics from S1 | C-032B,C-002 | **first canonical position recorded** |
 | C-032D | Prevent role-bloated entity schema; model contextual roles relationally | C-032B,C-002 | **first canonical position recorded** |
-| C-032E | Define S2 connected-room-cluster fixture | C-032B,C-019C,C-019D,C-020A,C-016C | blocked until ordinary-family gaps + minimum G-01 constraints mature |
+| C-032E | Define S2 connected-room-cluster fixture | C-032B,C-019C,C-019D,C-020A,C-016C | **unblocked by H1 v0.2 audit; next integration fixture** |
 | C-032F | Prepare external competent S0/S1/H1 review pack | C-032 | **review pack v0.1 complete; actual external review not yet performed** |
 | C-033 | Decide whether computational material enters monograph Part VI | C-031 | blocked |
 | C-034 | Design formal language / syntax | Gate C | deliberately deferred |
@@ -704,7 +706,7 @@ Unless new evidence changes the order, the next non-implementation sequence shou
 3. **VENT-CMEV-01 selected** as the first whole-house ventilation family; MVHR remains the higher-performance extension candidate.
 4. **HEAT-ASHP-RAD-01 and WET-CORE-01 established.** Heating, potable water and gravity drainage now share a deliberate service geography without being collapsed into one network.
 5. use [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) only as **G01-PILOT-P0** in future S2 research; continue D4–D6 evidence work and D8 evaluation in parallel.
-6. reassess the [H1 Capability Matrix](h1-capability-matrix-v01.md); design S2 only when the remaining domain gaps are few enough that S2 tests architecture/topology rather than merely rediscovering missing ordinary systems.
+6. [H1 Capability Matrix v0.2](h1-capability-matrix-v02.md) now concludes **S2 may proceed as research**. Gate B remains closed pending competent external review and real evidence packages.
 
 That sequence should produce enough information to decide whether the compiler concept is genuinely architectural infrastructure or merely an attractive analogy.
 

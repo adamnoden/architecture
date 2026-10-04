@@ -636,6 +636,26 @@ That output is meaningful.
 
 The technical compiler competence and architectural doctrine must remain separable.
 
+## 19A. Candidate H1 — fire / escape family
+
+The first bounded whole-house fire/escape route is:
+
+[FIRE-H1-2S-EGRESS-01 — Two-Storey Dwelling with Escape-Window Route](fire-family-two-storey-egress-v01.md).
+
+It is intentionally narrow:
+
+- detached dwelling;
+- ground + one upper habitable storey;
+- upper storey within the selected <=4.5 m route;
+- one ordinary stair;
+- upper habitable rooms use emergency escape windows;
+- ordinary alarm-system obligation;
+- ground hall connects to the principal final exit.
+
+Protected-stair/open-plan/taller arrangements are other families.
+
+This fire family remains a **research candidate until competent external review**.
+
 ## 20. Native proof / external proof / unsupported
 
 Each H1 capability should ultimately be assigned one of three states.
@@ -860,7 +880,7 @@ Before H1 can graduate from candidate to specification:
 
 ## 28A. Post-S1 H1 capability audit
 
-The current whole-house audit is recorded in [H1 Capability Matrix — Post-S1](h1-capability-matrix-v01.md).
+The current whole-house audit is recorded in [H1 Capability Matrix — Post-Services v0.2](h1-capability-matrix-v02.md).
 
 Its main conclusion is:
 
@@ -876,17 +896,18 @@ The compiler architecture now has credible paper evidence for:
 - repeated-family reuse;
 - complexity containment through room scale.
 
-The dominant remaining ordinary-house gaps are:
+The major ordinary-house families now include roof, stair, principal entrance, whole-house CMEV ventilation, heat-pump/radiator heating, clustered wet services and a candidate two-storey fire/escape route.
 
-- stair / vertical circulation;
-- external entrance door;
-- whole-house ventilation;
-- heating / water / drainage / wet-room strategy;
-- whole-house fire/escape family;
-- whole-dwelling L/O calculations;
-- external competent review.
+The dominant remaining Gate-B work is now:
 
-The first roof gap is now materially reduced by RF-TRUSS-DUO-01.
+- competent external review;
+- real evidence-package trials;
+- wet-room waterproofing/detail family;
+- controlled envelope penetrations;
+- whole-dwelling L/O evidence integration;
+- selected product/installation families.
+
+S2 may proceed as a non-release research fixture.
 
 ## 29. Current conclusion
 
