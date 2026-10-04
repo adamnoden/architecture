@@ -470,8 +470,19 @@ Examples for future decision:
 
 ### Heating
 
-- one or two standard hydronic distribution strategies;
-- perhaps underfloor and/or radiator families.
+First H1 family selected:
+
+- [HEAT-ASHP-RAD-01 — Air-to-Water Heat Pump + Low-Temperature Radiators](heating-family-ashp-radiators-v01.md).
+
+The family deliberately uses:
+
+- replaceable external heat-pump plant;
+- accessible internal hydraulic/plant hub;
+- low-temperature replaceable room radiators;
+- accessible service-spine / low-level pipe routes;
+- competent external heat-loss, sizing and commissioning evidence.
+
+Embedded wet underfloor heating is **not** an H1 baseline because it places a large service network inside the floor fabric.
 
 ### Ventilation
 
@@ -513,15 +524,22 @@ Wet rooms should be deliberately constrained because they combine:
 - maintenance;
 - finishes.
 
-H1 should prefer:
+H1 now uses:
 
-- bathrooms/utility/kitchen arranged around explicit service zones;
-- defined drainage routes;
-- known accessible valves/components;
-- bounded waterproofing systems;
+- [WET-CORE-01 — Clustered Wet Core with Zonal Service Walls](wet-service-family-core-v01.md).
+
+It prefers:
+
+- bathrooms/utility/kitchen arranged around one accessible wet-service core;
+- short gravity branches to a small number of accessible stacks;
+- zonal hot/cold isolation close to each wet room rather than remote home-runs to every outlet;
+- plant/hot-water cylinder adjacent to the core;
+- explicit Part-G/H routes;
+- accessible traps/valves/rodding points;
+- high-consequence appliances inside failure-tolerant service zones;
 - no bespoke hidden wet-service labyrinths.
 
-The high-service-room service wall is a natural supported pattern candidate.
+Exact waterproofing assemblies remain a separate product/detail family.
 
 ## 16. Candidate H1 — site envelope
 
@@ -815,7 +833,7 @@ This preserves the correct authority:
 - How much local steel can exist before the domain is effectively arbitrary structural engineering?
 - What exact span/opening envelopes are technically useful?
 - Which wall families should exist beyond the Reference House masonry family?
-- Which heating/ventilation strategies deserve native support?
+- How much of HEAT-ASHP-RAD-01 / VENT-CMEV-01 technical design should eventually become native versus remain competent external evidence?
 - How should sloping sites be parameterised?
 - Which fire/acoustic obligations become materially harder if party walls are added?
 - Should a later “all-native proof” tier exist in addition to H1-v0 release-grade compilation with scoped external professional evidence?

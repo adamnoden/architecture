@@ -628,6 +628,9 @@ These items should not be lost even if priorities change.
 | C-019D | Define ground-floor / masonry-wall perimeter family | C-019,C-032B | **BF-GF-MCW-01 v0.1 established; floor implementation evidence external** |
 | C-020 | Formalise service network + maintenance volumes | C-002 | S1 semantic branch established; broader model open |
 | C-020A | Define basic accessible room-service-route family | C-020,C-032B | **SR-ROOM-LOW-01 v0.1 established** |
+| C-020B | Select first whole-house heating family | C-020,C-014 | **HEAT-ASHP-RAD-01 established** |
+| C-020C | Define first wet-service / drainage family | C-020,C-014 | **WET-CORE-01 established** |
+| C-020D | Extend H1 target to Part G/H service obligations | C-020C,C-011 | **target extension v0.1 established** |
 | C-021 | Formalise interface/tolerance model | C-002 | open |
 | C-022 | Map doctrine principles to formal predicates/obligations | C-006 | open |
 | C-023 | Map pattern catalogue to candidate standard-library entries | C-022 | open |
@@ -699,7 +702,7 @@ Unless new evidence changes the order, the next non-implementation sequence shou
 1. **Obtain the actual external competent review** using [the prepared review pack](external-review-pack-s0-s1-h1-v01.md); do not treat preparation as validation.
 2. **ENTR-DOOR-MCW-01 established** — principal entrance/access/security/envelope transition is now bounded.
 3. **VENT-CMEV-01 selected** as the first whole-house ventilation family; MVHR remains the higher-performance extension candidate.
-4. define one deliberately narrow **heat-pump + low-temperature radiator** family, then define the first wet-service/drainage strategy around the same service geography.
+4. **HEAT-ASHP-RAD-01 and WET-CORE-01 established.** Heating, potable water and gravity drainage now share a deliberate service geography without being collapsed into one network.
 5. use [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) only as **G01-PILOT-P0** in future S2 research; continue D4–D6 evidence work and D8 evaluation in parallel.
 6. reassess the [H1 Capability Matrix](h1-capability-matrix-v01.md); design S2 only when the remaining domain gaps are few enough that S2 tests architecture/topology rather than merely rediscovering missing ordinary systems.
 

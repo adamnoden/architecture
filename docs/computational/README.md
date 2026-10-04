@@ -68,6 +68,10 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [ENTR-DOOR-MCW-01 — Principal External Doorset](entrance-family-principal-masonry-v01.md) — first H1 entrance family combining threshold/accessibility, security, envelope continuity, structure and replacement.
    - [H1 Ventilation Strategy Decision](h1-ventilation-strategy-decision-v01.md) — selects central continuous mechanical extract as the first trusted H1 route and retains MVHR as a higher-performance extension.
    - [VENT-CMEV-01 — Central Continuous Mechanical Extract](ventilation-family-cmev-v01.md) — whole-house ventilation topology with accessible central extract plant, wet-room ducting, habitable-room background inlets and transfer-air semantics.
+   - [H1 Heating Strategy Decision](h1-heating-strategy-decision-v01.md) — selects air-to-water heat pump + low-temperature radiators and rejects embedded wet UFH as the H1 baseline.
+   - [HEAT-ASHP-RAD-01 — Air-to-Water Heat Pump + Low-Temperature Radiators](heating-family-ashp-radiators-v01.md) — accessible hydronic heating topology with competent heat-loss/sizing evidence external.
+   - [H1 Services Target Extension](h1-services-target-extension-v01.md) — adds Part G/H and whole-house water/drainage/hot-water obligations to the research target.
+   - [WET-CORE-01 — Clustered Wet Core with Zonal Service Walls](wet-service-family-core-v01.md) — short gravity routes, accessible riser, zonal isolation and high-consequence appliance geography.
 
    - [SR-ROOM-LOW-01 — Accessible Low-Level Room Service Route](service-family-room-low-level-v01.md) — first supported room-service geography for electrical/data plus a simple hydronic emitter branch, with technical services design external.  
    Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.
