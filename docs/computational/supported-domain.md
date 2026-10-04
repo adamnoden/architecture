@@ -530,6 +530,26 @@ Again, this is not an assertion that other houses are unsafe.
 
 It is a competence boundary.
 
+## 17A. Candidate H1 — stair family
+
+The first vertical-circulation family is now:
+
+[ST-PRIVATE-01 — Private Timber Stair with Straight Flights and Rectangular Landings](stair-family-private-v01.md).
+
+H1 v0 deliberately supports:
+
+- one/two straight flights;
+- rectangular landings;
+- closed risers;
+- conventional handrails/guarding;
+- private-dwelling Part-K geometry;
+- native floor-opening/headroom/circulation semantics;
+- external structural evidence for stair members, fixings and floor trimmers.
+
+Winders, spirals, alternating treads and sculptural stairs remain outside the first family.
+
+Fire/escape and accessibility roles remain contextual building/target obligations rather than properties permanently baked into the stair object.
+
 ## 18. Candidate H1 — architectural grammar independence
 
 H1 should be able to host more than one architectural grammar.
@@ -779,13 +799,14 @@ Before H1 can graduate from candidate to specification:
 2. **BF-CORNER-MCW-01 — established v0.1**;
 3. **BF-GF-MCW-01 — established v0.1**;
 4. **SR-ROOM-LOW-01 — established v0.1**;
-5. external competent red-team of S0/S1 structural/regulatory/evidence boundaries;
-6. select first roof family;
-7. retain foundations as scoped external proof in H1 v0;
-8. deepen England-new-dwelling target coverage/regression testing;
-9. advance G-01 to the first small candidate constraint set needed for connected-room research;
-10. revise H1 and test whether ordinary houses are mostly supported rather than mostly external;
-11. design S2 only after the minimum G-01 candidate constraints and capability review are ready.
+5. external competent review pack prepared; **actual review still required**;
+6. **RF-TRUSS-DUO-01 roof family established**;
+7. **ST-PRIVATE-01 private-stair family established**;
+8. retain foundations as scoped external proof in H1 v0;
+9. deepen England-new-dwelling target coverage/regression testing;
+10. G01-PILOT-P0 candidate set available for connected-room research;
+11. next domain gaps: external entrance, whole-house ventilation, narrow heating strategy and wet services;
+12. reassess H1 before S2.
 
 ## 28A. Post-S1 H1 capability audit
 

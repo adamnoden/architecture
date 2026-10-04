@@ -597,6 +597,7 @@ These items should not be lost even if priorities change.
 | C-014D | Decide first foundation proof strategy | C-014 | open |
 | C-014E | Define initial native/external/unsupported capability matrix | C-014 | first draft |
 | C-014F | Audit whole-house H1 capability after S1 | C-014,C-032B | **post-S1 capability matrix v0.1 complete; Gate B remains open** |
+| C-014G | Select first supported private-stair family | C-014,C-017 | **ST-PRIVATE-01 v0.1 established** |
 | C-015 | Research architectural grammars and proportion deeply | W1 | initial foundation complete; corpus research continues |
 | C-016 | Define layered architectural-grammar model | C-015 | first draft |
 | C-016A | Define G-01 scope and precedent corpus strategy | C-015,C-016 | complete v0.1 |
@@ -646,6 +647,7 @@ These items should not be lost even if priorities change.
 | C-032C | Formalise evaluation scope / contribution semantics from S1 | C-032B,C-002 | **first canonical position recorded** |
 | C-032D | Prevent role-bloated entity schema; model contextual roles relationally | C-032B,C-002 | **first canonical position recorded** |
 | C-032E | Define S2 connected-room-cluster fixture | C-032B,C-019C,C-019D,C-020A,C-016C | blocked until ordinary-family gaps + minimum G-01 constraints mature |
+| C-032F | Prepare external competent S0/S1/H1 review pack | C-032 | **review pack v0.1 complete; actual external review not yet performed** |
 | C-033 | Decide whether computational material enters monograph Part VI | C-031 | blocked |
 | C-034 | Design formal language / syntax | Gate C | deliberately deferred |
 | C-035 | Select implementation architecture | Gate C | deliberately deferred |
@@ -692,10 +694,10 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. prepare an **external competent review pack** for structural/building-control practitioners covering S0/S1 proof boundaries, target applicability, evidence scoping and the H1 external-assurance strategy.
-2. define the first **stair / vertical-circulation family**, now the largest unavoidable architectural-technical gap for a two-storey H1 house.
-3. define the first **external entrance-door family**, completing the main envelope/access/security transition.
-4. select one **whole-house ventilation family** and one deliberately narrow heating/service strategy; do not broaden into arbitrary MEP.
+1. **Obtain the actual external competent review** using [the prepared review pack](external-review-pack-s0-s1-h1-v01.md); do not treat preparation as validation.
+2. define the first **external entrance-door family**, completing the main envelope/access/security transition.
+3. select one **whole-house ventilation family** and one deliberately narrow heating/service strategy; do not broaden into arbitrary MEP.
+4. define the first **wet-service / drainage strategy** only after the ventilation/heating scope is bounded, because this is the largest remaining service-complexity risk.
 5. use [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) only as **G01-PILOT-P0** in future S2 research; continue D4–D6 evidence work and D8 evaluation in parallel.
 6. reassess the [H1 Capability Matrix](h1-capability-matrix-v01.md); design S2 only when the remaining domain gaps are few enough that S2 tests architecture/topology rather than merely rediscovering missing ordinary systems.
 
