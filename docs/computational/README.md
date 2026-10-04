@@ -43,6 +43,7 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [S0 Compiler Target Snapshot v0.1 — England / 2026-10-03](s0-target-snapshot.md) — immutable target used by Run 01; retained with its known omissions for reproducibility.
    - [S0 Compiler Target Snapshot v0.2](s0-target-snapshot-v02.md) — same normative date, corrected target-model coverage after red-team; adds K, Q, Regulation 7 and broader B/F applicability tests.
    - [S0 Compiler Target Snapshot v0.3](s0-target-snapshot-v03.md) — hardens transitional applicability: an October-2026 application can retain the earlier L/F basis only if the relevant work commences before the March-2028 transition deadline.
+   - [S1 Compiler Target Snapshot v0.1](s1-target-snapshot-v01.md) — room-scale target extension adding Part-M Category-1 accessibility, doorway/circulation, service controls and quantitative purge-role tests.
 
 8. [Structural Semantics](structural-semantics.md)  
    Separates physical structure, structural topology and analytical idealisation; defines load-path semantics, proof envelopes and S0 structural obligations.
@@ -67,6 +68,9 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [S0 Complexity Gate](s0-complexity-gate.md) — explicit course guardrail: internal rigor may scale, authoring bureaucracy may not.
    - [S0 Run 02 Source Overlay](s0-source-package-v02.md) — repeats the wall-bay condition twice and adds only the context needed to test scaling and operational-window semantics.
    - [S0 Paper Compilation Run 02](s0-paper-compile-run-02.md) — broader regulatory/semantic coverage with two repeated bays; provisional complexity-gate pass and no release claim.
+   - [S1 Research Brief](s1-research-brief.md) — next-scale falsification fixture: a complete ground-floor principal room with corner, two windows, door, floor/ceiling and service route.
+   - [S1 Frozen Source Package](s1-source-package.md) — fixed room geometry, multi-role openings/door, service branch, project-order profile and seven mutations.
+   - [S1 Paper Compilation Run 01](s1-paper-compile-run-01.md) — room-scale complexity pass; introduces obligation scope and contextual-role warnings while correctly failing release.
 
 11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.

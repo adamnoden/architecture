@@ -846,6 +846,105 @@ If composition instead creates duplicate obligations requiring manual reconcilia
 
 See [Interface Obligation Bundles](interface-obligation-bundles.md).
 
+## 16B. Evaluation scope and contribution — finding from S1
+
+S1 shows that the same source entity can participate in propositions evaluated at different semantic scales.
+
+A window can simultaneously contribute to:
+
+- an occurrence-level safety-glazing obligation;
+- an interface-level air/weather/thermal transition;
+- a room-level purge-ventilation calculation;
+- an elevation-level external-fire-spread analysis;
+- a whole-building overheating model;
+- a site/target applicability condition.
+
+These are not duplicate “window checks”.
+
+The obligation belongs to the **subject whose proposition is being evaluated**.
+
+Conceptually useful scopes now include:
+
+~~~text
+OCCURRENCE
+INTERFACE
+ROUTE
+ROOM
+ELEVATION
+SYSTEM
+BUILDING
+SITE / TARGET
+~~~
+
+This list is a research vocabulary, not an implementation enum.
+
+### Contribution is different from ownership
+
+Lower-level entities may contribute facts to higher-scale analyses.
+
+Examples:
+
+- window effective opening area → room purge route;
+- opening area → elevation B4 model;
+- glazing/orientation → whole-building overheating model;
+- door clear opening → accessible circulation route.
+
+Do not make the contributing component “own compliance” merely because it supplies an input.
+
+This distinction is essential for avoiding duplicated obligations and incorrect invalidation.
+
+## 16C. Contextual roles instead of role-bloated entities — finding from S1
+
+S1 also exposes a schema-risk.
+
+One door may participate in:
+
+- architectural arrival;
+- accessibility;
+- transfer air;
+- structure;
+- escape topology.
+
+One window may participate in:
+
+- architectural hierarchy;
+- purge;
+- security;
+- glazing safety;
+- envelope;
+- overheating;
+- external-fire-spread analysis.
+
+Do not respond by turning each physical entity into a god-object with a boolean/property for every possible role.
+
+Prefer the conceptual pattern:
+
+~~~text
+STABLE ENTITY
+    +
+TYPED RELATIONSHIPS / CONTEXT MEMBERSHIPS
+    +
+SCOPE-SPECIFIC DERIVED OBLIGATIONS
+~~~
+
+For example:
+
+~~~text
+WIN-S-01
+  PARTICIPATES_IN   PURGE_ROUTE-R01
+  LOCATED_ON        ELEVATION-SOUTH
+  HAS_ARCH_ROLE     PRIMARY_OPENING
+  IN_SECURITY_SCOPE GROUND_FLOOR_ACCESSIBLE
+~~~
+
+No syntax or role system is selected.
+
+The requirement is architectural:
+
+> **roles should remain compositional and contextual rather than permanently inflating the nouns of the model.**
+
+See [S1 Paper Compilation Run 01](s1-paper-compile-run-01.md).
+
 ## 16. Open research problems
 
 - How many entity families are genuinely needed before the model becomes bloated?

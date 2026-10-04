@@ -339,7 +339,7 @@ Research:
 
 **Output:** service and maintenance semantic model.
 
-**Current state:** doctrine is relatively mature; computational formalisation open.
+**Current state:** S1 now provides a first semantic room-service branch with source, route, ports, isolation and maintenance intent. The physical route/enclosure family remains unresolved; a basic room-service family is now a Gate-B prerequisite rather than an abstract future topic.
 
 ### W11 — Construction, tolerance and workmanship model
 
@@ -460,9 +460,11 @@ intent
 
 **Output:** paper-compilation case study.
 
-**Current state:** **Run 01 and Run 02 complete.** Run 01 proved the basic end-to-end abstraction and exposed obligation explosion. Run 02 deliberately increased regulatory coverage and duplicated the bay while introducing target v0.3, BF-WIN-MCW-01, the H1 structural-assurance boundary and the [S0 Complexity Gate](s0-complexity-gate.md). The result is a provisional complexity pass: repeated occurrences reuse family/rule knowledge, shared issues group by action, local failures remain local, and release still correctly fails on missing evidence.
+**Current state:** **S0 and S1 complete at paper-research scale.** S0 established the end-to-end compiler abstraction and first complexity gate. S1 then compiled a complete room-scale slice containing an external corner, two non-identical windows, one multi-role door, room-level purge ventilation, Category-1 access, upper-floor structure and a service branch. S1 provisionally passes the complexity gate while correctly failing release.
 
-Do **not** create S0 Run 03 merely to elaborate the same junction. The next integration fixture should move up one architectural scale to **S1 — one complete room-scale slice**.
+S1 also produced two formal-model corrections: obligation/evaluation scope must be explicit, and contextual roles should be represented relationally rather than accumulating flags on physical entities.
+
+Do **not** jump directly to a whole house or S2. First harden the ordinary family gaps S1 exposed.
 
 ## 4. Dependency structure
 
@@ -534,7 +536,7 @@ Must have:
 
 Required before software implementation.
 
-**Internal status after S0 Run 02: paper-compilation gate demonstrated at slice scale, including a provisional complexity pass.** This is still not implementation clearance. Gate B/H1 remains incomplete, external competent red-team remains open, and complexity must survive the larger S1 room-scale fixture.
+**Internal status after S1 Run 01: Gate C is demonstrated through room scale, including selective invalidation and a provisional complexity pass.** This remains short of implementation clearance. Gate B/H1 is now the dominant blocker: too many ordinary assembly families remain external/unresolved, and an external competent red-team is still required.
 
 The exercise must demonstrate:
 
@@ -618,7 +620,10 @@ These items should not be lost even if priorities change.
 | C-019 | Formalise critical boundary graph | C-002 | conceptual v0.1 |
 | C-019A | Instantiate S0 wall/window/floor boundary graph | C-019,C-030 | **window/wall BF-WIN-MCW-01 v0.1 complete; floor-edge hardening open** |
 | C-019B | Define first supported service-penetration boundary family | C-019 | open |
-| C-020 | Formalise service network + maintenance volumes | C-002 | open |
+| C-019C | Define external masonry-corner boundary family | C-019,C-032B | **S1-identified Gate-B gap** |
+| C-019D | Define ground-floor / masonry-wall perimeter family | C-019,C-032B | **S1-identified Gate-B gap** |
+| C-020 | Formalise service network + maintenance volumes | C-002 | S1 semantic branch established; broader model open |
+| C-020A | Define basic accessible room-service-route family | C-020,C-032B | **S1-identified Gate-B gap** |
 | C-021 | Formalise interface/tolerance model | C-002 | open |
 | C-022 | Map doctrine principles to formal predicates/obligations | C-006 | open |
 | C-023 | Map pattern catalogue to candidate standard-library entries | C-022 | open |
@@ -636,7 +641,10 @@ These items should not be lost even if priorities change.
 | C-031A | Execute S0 Run 02 only after abstraction red-team | C-030B,C-030C | **complete — research pass / complexity pass / release fail** |
 | C-032 | Red-team proof claims with structural/regulatory expertise | C-031 | **internal S0 red-team complete through Run 02; external competent review open** |
 | C-032A | Define and enforce computational complexity gate | C-030A,C-031 | **S0 gate v0.1 established; provisional Run-02 pass** |
-| C-032B | Design S1 room-scale integration fixture | C-031A,C-032A | open |
+| C-032B | Design S1 room-scale integration fixture | C-031A,C-032A | **complete — S1 Run 01 research/complexity pass; release fail** |
+| C-032C | Formalise evaluation scope / contribution semantics from S1 | C-032B,C-002 | **first canonical position recorded** |
+| C-032D | Prevent role-bloated entity schema; model contextual roles relationally | C-032B,C-002 | **first canonical position recorded** |
+| C-032E | Define S2 connected-room-cluster fixture | C-032B,C-019C,C-019D,C-020A,C-016C | blocked until ordinary-family gaps + minimum G-01 constraints mature |
 | C-033 | Decide whether computational material enters monograph Part VI | C-031 | blocked |
 | C-034 | Design formal language / syntax | Gate C | deliberately deferred |
 | C-035 | Select implementation architecture | Gate C | deliberately deferred |
@@ -683,12 +691,12 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. **Freeze S0.** Run 02 has answered the current slice-scale question; do not create Run 03 without a new falsifiable hypothesis.
-2. design **S1 — a complete room-scale integration fixture**: two-wall corner, floor, ceiling, two windows, one door and one service route; run the same complexity gate at the larger scale.
-3. obtain an **external competent structural/building-control red-team** of the S0 proof/evidence boundaries before implementation.
-4. advance **G-01 D4–D6** far enough to supply a small number of candidate architectural-order constraints to S1; do not wait for a complete Georgian grammar.
-5. select the first roof family and retain foundations as scoped external proof for H1 v0 unless evidence changes the decision.
-6. revise **H1 capability matrix** from S0 + S1 + G-01 evidence, then reassess Gate B and only afterwards discuss implementation architecture.
+1. **Harden ordinary families exposed by S1:** external masonry corner, ground-floor/wall perimeter, and one basic accessible room-service route. Treat unresolved-family gravity as the primary Gate-B risk.
+2. advance **G-01 D4–D7** only far enough to produce a small, falsifiable candidate constraint set for room/door/opening hierarchy and coupling.
+3. obtain an **external competent structural/building-control red-team** of the S0/S1 proof, target and evidence boundaries.
+4. select the first roof family; retain foundations as scoped external proof in H1 v0 unless evidence changes the decision.
+5. revise the **H1 capability matrix** and ask whether an ordinary two-storey house would be mostly NATIVE/SUPPORTED rather than mostly EXTERNAL/UNRESOLVED.
+6. only then design **S2 — a connected room cluster** to test topology, sequence, hierarchy and shared façade order at the next scale.
 
 That sequence should produce enough information to decide whether the compiler concept is genuinely architectural infrastructure or merely an attractive analogy.
 

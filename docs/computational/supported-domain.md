@@ -762,22 +762,21 @@ This preserves the correct authority:
 
 ## 28. Immediate work
 
-Run 01 and Run 02 have now exercised S0. Run 02 deliberately duplicated the bay and expanded regulatory semantics while passing the paper [S0 Complexity Gate](s0-complexity-gate.md) provisionally. The result remains **research-coherent / release-fail**, which is correct while real technical evidence is absent.
+S0 Run 01/02 and S1 Run 01 have now exercised the compiler from junction scale through a complete room. S1 adds an external corner, ground-floor perimeter dependency, multi-role door, two non-identical windows, room-level ventilation/accessibility and a service branch. Complexity remains provisionally contained, but S1 exposes **unresolved-family gravity** as the dominant Gate-B risk.
 
 Before H1 can graduate from candidate to specification:
 
-1. **S0 Run 02 — complete; freeze the fixture**;
-2. **H1 structural assurance boundary — decided v0.1**: native topology, scoped external adequacy;
-3. **BF-WIN-MCW-01 — first boundary-family candidate established**;
-4. **conventional workmanship process model — established**;
-5. design and run **S1 room-scale integration fixture** under the same complexity gate;
-6. obtain external competent red-team of S0 structural/regulatory evidence boundaries;
-7. select the first roof family;
-8. retain foundations as scoped external proof in H1 v0 and later research a native shallow-foundation family if useful;
-9. deepen England-new-dwelling target coverage/regression testing;
-10. decide initial service/heating/ventilation families;
-11. take G-01 through enough D4–D6/D7 work to provide a small candidate grammar constraint set;
-12. revise H1 from S0 + S1 + G-01 evidence.
+1. **S1 Run 01 — complete; freeze room-scale fixture**;
+2. **external masonry corner family — open Gate-B prerequisite**;
+3. **ground-floor / masonry-wall perimeter family — open Gate-B prerequisite**;
+4. **basic accessible room-service-route family — open Gate-B prerequisite**;
+5. external competent red-team of S0/S1 structural/regulatory/evidence boundaries;
+6. select first roof family;
+7. retain foundations as scoped external proof in H1 v0;
+8. deepen England-new-dwelling target coverage/regression testing;
+9. advance G-01 only to the first small candidate constraint set needed for connected-room research;
+10. revise H1 and test whether ordinary houses are mostly supported rather than mostly external;
+11. design S2 only after items 2–4 and minimum G-01 candidate rules are ready.
 
 ## 29. Current conclusion
 
