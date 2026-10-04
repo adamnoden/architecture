@@ -832,3 +832,53 @@ Its job may be:
 - UK Government, **Approved Document F 2026 — Ventilation**: https://www.gov.uk/government/publications/approved-document-f-2026
 - UK Government, **Approved Document O — Overheating**: https://www.gov.uk/government/publications/overheating-approved-document-o
 - existing project coordination: docs/reference-house/vertical-bay-coordination.md
+
+
+## 25. First supported boundary-family set
+
+S0/S1 have now forced three reusable routes out of the general boundary ontology.
+
+### BF-WIN-MCW-01
+
+[Window in Partial-Fill Masonry Cavity Wall](boundary-family-window-masonry-v01.md)
+
+Covers:
+
+- window weather;
+- moisture;
+- thermal;
+- air transition;
+- replacement contribution.
+
+### BF-CORNER-MCW-01
+
+[Orthogonal Masonry Cavity-Wall External Corner](boundary-family-external-masonry-corner-v01.md)
+
+Covers:
+
+- continuity of cavity/weather strategy;
+- insulation turn;
+- room-side air-control turn;
+- structural-corner identity;
+- workmanship/evidence.
+
+### BF-GF-MCW-01
+
+[Ground Floor to Masonry Cavity Wall Perimeter](boundary-family-ground-floor-masonry-v01.md)
+
+Covers:
+
+- DPC/DPM moisture continuity;
+- floor/wall thermal junction identity;
+- air-boundary transition;
+- ground/substructure evidence dependency.
+
+These families deliberately allow scoped external technical evidence.
+
+A supported boundary family means:
+
+- the semantic route is bounded and known;
+- required evidence is known;
+- unsupported combinations are explicit.
+
+It does **not** mean every physical performance calculation is native.

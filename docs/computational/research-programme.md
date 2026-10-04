@@ -316,7 +316,7 @@ This work has direct overlap with existing Long-Life House doctrine.
 
 **Output:** boundary ontology / graph and obligation patterns.
 
-**Current state:** conceptual v0.1 established in [Boundary Semantics](boundary-semantics.md). The first concrete supported-family candidate now exists: [BF-WIN-MCW-01](boundary-family-window-masonry-v01.md), covering the window-in-partial-fill-masonry-wall weather/moisture/thermal/air route. Floor-edge and service-penetration families remain to be hardened.
+**Current state:** conceptual v0.1 established in [Boundary Semantics](boundary-semantics.md). Three ordinary H1/S1 boundary routes are now explicit: [BF-WIN-MCW-01](boundary-family-window-masonry-v01.md), [BF-CORNER-MCW-01](boundary-family-external-masonry-corner-v01.md), and [BF-GF-MCW-01](boundary-family-ground-floor-masonry-v01.md). They preserve semantic/native boundary logic while scoping thermal/structural/product evidence externally. Service penetrations and later roof interfaces remain open.
 
 ### W10 — Service-network and maintenance semantics
 
@@ -339,7 +339,7 @@ Research:
 
 **Output:** service and maintenance semantic model.
 
-**Current state:** S1 now provides a first semantic room-service branch with source, route, ports, isolation and maintenance intent. The physical route/enclosure family remains unresolved; a basic room-service family is now a Gate-B prerequisite rather than an abstract future topic.
+**Current state:** S1 supplied the first room-service branch and [SR-ROOM-LOW-01](service-family-room-low-level-v01.md) now turns it into a supported semantic/route family for accessible electrical/data plus a simple hydronic emitter branch. Exact enclosure products and competent electrical/mechanical design remain external.
 
 ### W11 — Construction, tolerance and workmanship model
 
@@ -620,10 +620,10 @@ These items should not be lost even if priorities change.
 | C-019 | Formalise critical boundary graph | C-002 | conceptual v0.1 |
 | C-019A | Instantiate S0 wall/window/floor boundary graph | C-019,C-030 | **window/wall BF-WIN-MCW-01 v0.1 complete; floor-edge hardening open** |
 | C-019B | Define first supported service-penetration boundary family | C-019 | open |
-| C-019C | Define external masonry-corner boundary family | C-019,C-032B | **S1-identified Gate-B gap** |
-| C-019D | Define ground-floor / masonry-wall perimeter family | C-019,C-032B | **S1-identified Gate-B gap** |
+| C-019C | Define external masonry-corner boundary family | C-019,C-032B | **BF-CORNER-MCW-01 v0.1 established** |
+| C-019D | Define ground-floor / masonry-wall perimeter family | C-019,C-032B | **BF-GF-MCW-01 v0.1 established; floor implementation evidence external** |
 | C-020 | Formalise service network + maintenance volumes | C-002 | S1 semantic branch established; broader model open |
-| C-020A | Define basic accessible room-service-route family | C-020,C-032B | **S1-identified Gate-B gap** |
+| C-020A | Define basic accessible room-service-route family | C-020,C-032B | **SR-ROOM-LOW-01 v0.1 established** |
 | C-021 | Formalise interface/tolerance model | C-002 | open |
 | C-022 | Map doctrine principles to formal predicates/obligations | C-006 | open |
 | C-023 | Map pattern catalogue to candidate standard-library entries | C-022 | open |
@@ -691,12 +691,11 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. **Harden ordinary families exposed by S1:** external masonry corner, ground-floor/wall perimeter, and one basic accessible room-service route. Treat unresolved-family gravity as the primary Gate-B risk.
-2. advance **G-01 D4–D7** only far enough to produce a small, falsifiable candidate constraint set for room/door/opening hierarchy and coupling.
-3. obtain an **external competent structural/building-control red-team** of the S0/S1 proof, target and evidence boundaries.
-4. select the first roof family; retain foundations as scoped external proof in H1 v0 unless evidence changes the decision.
-5. revise the **H1 capability matrix** and ask whether an ordinary two-storey house would be mostly NATIVE/SUPPORTED rather than mostly EXTERNAL/UNRESOLVED.
-6. only then design **S2 — a connected room cluster** to test topology, sequence, hierarchy and shared façade order at the next scale.
+1. **Advance G-01 D4–D7 to the first small candidate constraint set** for room/door/opening hierarchy and plan/section/elevation coupling; keep every candidate explicitly falsifiable and non-universal.
+2. obtain an **external competent structural/building-control red-team** of the S0/S1 proof, target and evidence boundaries.
+3. select the first roof family; retain foundations as scoped external proof in H1 v0 unless evidence changes the decision.
+4. revise the **H1 capability matrix** now that window, corner, ground-floor perimeter and room-service routes are explicit; identify where ordinary houses would still be mostly EXTERNAL/UNRESOLVED.
+5. only then design **S2 — a connected room cluster** to test topology, sequence, hierarchy and shared façade order at the next scale.
 
 That sequence should produce enough information to decide whether the compiler concept is genuinely architectural infrastructure or merely an attractive analogy.
 

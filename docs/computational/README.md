@@ -54,8 +54,12 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    Models air, thermal, weather, moisture, fire, acoustic and related boundaries as overlapping first-class graphs with typed transitions and penetrations.
 
    - [BF-WIN-MCW-01 — Window in Partial-Fill Masonry Cavity Wall](boundary-family-window-masonry-v01.md) — first instantiated boundary-family candidate for weather, moisture, thermal and air continuity.
+   - [BF-CORNER-MCW-01 — Orthogonal Masonry Cavity-Wall External Corner](boundary-family-external-masonry-corner-v01.md) — supported corner route with shared boundary continuity and scoped external technical evidence.
+   - [BF-GF-MCW-01 — Ground Floor to Masonry Cavity Wall Perimeter](boundary-family-ground-floor-masonry-v01.md) — supported moisture/air/thermal perimeter route with ground/floor/structural evidence external.
 
-10. [Supported Domain](supported-domain.md)  
+10. [Supported Domain](supported-domain.md)
+
+   - [SR-ROOM-LOW-01 — Accessible Low-Level Room Service Route](service-family-room-low-level-v01.md) — first supported room-service geography for electrical/data plus a simple hydronic emitter branch, with technical services design external.  
    Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.
 
    - [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) — exact first manual integration-test specification.

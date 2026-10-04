@@ -417,6 +417,7 @@ Initial supported strategies may include:
 - compact plant/service hub;
 - planned vertical service routes;
 - horizontal service spine;
+- [SR-ROOM-LOW-01](service-family-room-low-level-v01.md) for accessible low-level room distribution;
 - high-service-room service wall;
 - designed structural penetrations;
 - water-damage-safe routes;
@@ -766,17 +767,17 @@ S0 Run 01/02 and S1 Run 01 have now exercised the compiler from junction scale t
 
 Before H1 can graduate from candidate to specification:
 
-1. **S1 Run 01 — complete; freeze room-scale fixture**;
-2. **external masonry corner family — open Gate-B prerequisite**;
-3. **ground-floor / masonry-wall perimeter family — open Gate-B prerequisite**;
-4. **basic accessible room-service-route family — open Gate-B prerequisite**;
+1. **S1 Run 01 — complete; room-scale fixture frozen**;
+2. **BF-CORNER-MCW-01 — established v0.1**;
+3. **BF-GF-MCW-01 — established v0.1**;
+4. **SR-ROOM-LOW-01 — established v0.1**;
 5. external competent red-team of S0/S1 structural/regulatory/evidence boundaries;
 6. select first roof family;
 7. retain foundations as scoped external proof in H1 v0;
 8. deepen England-new-dwelling target coverage/regression testing;
-9. advance G-01 only to the first small candidate constraint set needed for connected-room research;
+9. advance G-01 to the first small candidate constraint set needed for connected-room research;
 10. revise H1 and test whether ordinary houses are mostly supported rather than mostly external;
-11. design S2 only after items 2–4 and minimum G-01 candidate rules are ready.
+11. design S2 only after the minimum G-01 candidate constraints and capability review are ready.
 
 ## 29. Current conclusion
 
