@@ -14,8 +14,8 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 1. [Executable Architecture](executable-architecture.md)  
    The canonical concept paper: what the proposition is, why a compiler is different from a checker, the intended product form, the proof boundary and the relationship to the architectural doctrine.
 
-2. [Research Programme](research-programme.md)  
-   The master programme and grand TODO register. This is the document to consult before starting any new computational work.
+2. [Research Programme v0.2](research-programme-v02.md)  
+   Current programme-control layer and immediate sequence. It inherits every unresolved grand TODO from the original [Research Programme v0.1](research-programme.md), while recording post-S2 course corrections without rewriting history.
 
    - [External Competent Review Pack — S0/S1/H1](external-review-pack-s0-s1-h1-v01.md) — adversarial brief prepared for a structural engineer and building-control/regulatory practitioner. **Review not yet performed.**
 
@@ -63,18 +63,21 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 10. [Supported Domain](supported-domain.md)
 
    - [H1 Capability Matrix — Post-S1](h1-capability-matrix-v01.md) — historical first whole-house audit.
-   - [H1 Capability Matrix — Post-Services v0.2](h1-capability-matrix-v02.md) — current Gate-B audit after entrance, ventilation, heating, wet core and fire-route convergence; S2 is now justified as research, Gate B remains closed.
+   - [H1 Capability Matrix — Post-Services v0.2](h1-capability-matrix-v02.md) — historical audit used to authorize S2 research.
+   - [H1 Capability Matrix — Post-S2 / Environmental Correction v0.3](h1-capability-matrix-v03.md) — **current Gate-B audit**; preserves S2, reopens the preferred ventilation family and defines the final pre-H1-PAPER gates.
    - [RF-TRUSS-DUO-01 — Simple Duo-Pitched Trussed-Rafter Cold Roof](roof-family-trussed-duopitch-v01.md) — first H1 roof-family candidate; roof geometry/boundary semantics native, truss adequacy supplied by scoped manufacturer/engineer evidence.
    - [ST-PRIVATE-01 — Private Timber Stair](stair-family-private-v01.md) — straight-flight/rectangular-landing H1 stair family; Part-K geometry native, floor-opening/structural adequacy external, fire/accessibility roles remain building/target scoped.
    - [ENTR-DOOR-MCW-01 — Principal External Doorset](entrance-family-principal-masonry-v01.md) — first H1 entrance family combining threshold/accessibility, security, envelope continuity, structure and replacement.
-   - [H1 Ventilation Strategy Decision](h1-ventilation-strategy-decision-v01.md) — selects central continuous mechanical extract as the first trusted H1 route and retains MVHR as a higher-performance extension.
-   - [VENT-CMEV-01 — Central Continuous Mechanical Extract](ventilation-family-cmev-v01.md) — whole-house ventilation topology with accessible central extract plant, wet-room ducting, habitable-room background inlets and transfer-air semantics.
+   - [H1 Passive Environmental Strategy v0.1](h1-passive-environmental-strategy-v01.md) — establishes the current environmental hierarchy: reduce load, exploit passive capability, add bounded assistance, then use fully mechanical response where evidence justifies it.
+   - [H1 Ventilation Strategy Decision v0.1](h1-ventilation-strategy-decision-v01.md) — historical decision that selected CMEV before the post-S2 passive-first review.
+   - [H1 Ventilation Strategy Decision v0.2](h1-ventilation-strategy-decision-v02.md) — **current ventilation decision**; selects hybrid passive-stack ventilation as the preferred research route while preserving CMEV/MVHR alternatives and an explicit evidence gate.
+   - [VENT-HYBRID-STACK-01 — Hybrid Passive-Stack Ventilation](ventilation-family-hybrid-stack-v01.md) — preferred research-family candidate with purpose-provided inlets, transfer routes, near-vertical wet-room stacks and low-pressure assistance only where natural forces are insufficient; not yet promoted to trusted H1 support.
+   - [VENT-CMEV-01 — Central Continuous Mechanical Extract](ventilation-family-cmev-v01.md) — historical S2 family and current supported fallback; accessible central extract plant, wet-room ducting, habitable-room background inlets and transfer-air semantics.
    - [H1 Heating Strategy Decision](h1-heating-strategy-decision-v01.md) — selects air-to-water heat pump + low-temperature radiators and rejects embedded wet UFH as the H1 baseline.
    - [HEAT-ASHP-RAD-01 — Air-to-Water Heat Pump + Low-Temperature Radiators](heating-family-ashp-radiators-v01.md) — accessible hydronic heating topology with competent heat-loss/sizing evidence external.
    - [H1 Services Target Extension](h1-services-target-extension-v01.md) — adds Part G/H and whole-house water/drainage/hot-water obligations to the research target.
    - [FIRE-H1-2S-EGRESS-01 — Two-Storey Escape-Window Fire Route](fire-family-two-storey-egress-v01.md) — bounded B1 research route for ordinary two-storey dwellings; upper escape windows, alarm obligations and hall/final-exit topology; external review required.
    - [WET-CORE-01 — Clustered Wet Core with Zonal Service Walls](wet-service-family-core-v01.md) — short gravity routes, accessible riser, zonal isolation and high-consequence appliance geography.
-
    - [SR-ROOM-LOW-01 — Accessible Low-Level Room Service Route](service-family-room-low-level-v01.md) — first supported room-service geography for electrical/data plus a simple hydronic emitter branch, with technical services design external.  
    Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.
 
@@ -93,10 +96,23 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [S1 Paper Compilation Run 01](s1-paper-compile-run-01.md) — room-scale complexity pass; introduces obligation scope and contextual-role warnings while correctly failing release.
    - [S2 Research Brief](s2-research-brief.md) — connected two-storey cluster fixture testing hierarchy, sequence, stair arrival, service-core placement, façade order and candidate fire topology.
    - [S2 Frozen Source Package](s2-source-package.md) — fixed principal/secondary rooms, hall, stair, service core, representative bedroom, opening hierarchy and eight mutations.
-   - [S2 Paper Compilation Run 01](s2-paper-compile-run-01.md) — connected-cluster complexity pass; proves technical validity and architectural validity can diverge, and seeds a provisional “resolvable within current family” research state.
+   - [S2 Paper Compilation Run 01](s2-paper-compile-run-01.md) — connected-cluster complexity pass; proves technical validity and architectural validity can diverge, and seeds a provisional “resolvable within current family” research state. **Frozen historical run; do not rerun merely to substitute the later ventilation family.**
 
 11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.
+
+## Current pre-H1-PAPER sequence
+
+1. prove or reject the VENT-HYBRID-STACK-01 performance/evidence route;
+2. harden one ordinary wet-zone waterproofing assembly family;
+3. harden one controlled envelope-penetration family;
+4. run one structured real external-evidence exercise;
+5. obtain competent external review when available;
+6. freeze and run H1-PAPER-01;
+7. final red-team / capability freeze;
+8. stop expanding the paper ontology and move to external review, prototyping or implementation.
+
+See [Research Programme v0.2](research-programme-v02.md) for the gating logic and inherited grand TODOs.
 
 ## Working dependency order
 
