@@ -945,6 +945,68 @@ The requirement is architectural:
 
 See [S1 Paper Compilation Run 01](s1-paper-compile-run-01.md).
 
+## 16D. Route roles are authored semantics — finding from S2
+
+S2 demonstrates that two spatial graphs can have identical geometry/connectivity yet different architectural validity because the **intended route role** changed.
+
+Examples:
+
+- principal arrival;
+- secondary circulation;
+- service route;
+- escape route.
+
+Therefore route class is not merely analysis decoration added after geometry is drawn.
+
+It is part of source architectural intent.
+
+The author should be able to declare meaningful route roles without manually constructing separate discipline-specific graphs.
+
+Technical analyses then consume the same spatial graph and evaluate it at the appropriate scope.
+
+See [S2 Paper Compilation Run 01](s2-paper-compile-run-01.md).
+
+## 16E. Provisional resolvability state — research only
+
+S2-M08 exposed a useful state.
+
+After the upper floor moved, the existing stair occurrence/evidence became invalid. But the selected stair family still contained a valid re-parameterised solution.
+
+Conceptually:
+
+~~~text
+CURRENT OCCURRENCE
+  INVALID / STALE
+
+SELECTED FAMILY
+  still contains a valid solution
+~~~
+
+This suggests a possible authoring state:
+
+> **RESOLVABLE WITHIN CURRENT FAMILY**
+
+Possible UX:
+
+> Upper floor moved +250 mm. The private-stair family still contains a valid stair; re-solving will change geometry and stale four evidence items.
+
+This is **not** a release state and is not yet part of the canonical validity lattice.
+
+Before promotion it must survive unrelated examples such as:
+
+- window family after opening change;
+- ventilation family after wet-room addition;
+- heating family after room/envelope change;
+- roof family after support-line change.
+
+The system must never confuse:
+
+> a solution probably exists
+
+with:
+
+> the building is currently valid.
+
 ## 16. Open research problems
 
 - How many entity families are genuinely needed before the model becomes bloated?

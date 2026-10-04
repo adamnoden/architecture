@@ -677,3 +677,29 @@ It should turn the conceptual obligation/evidence relationship into a precise mo
 - UK Government, Building Regulations 2010: https://www.legislation.gov.uk/uksi/2010/2214
 - UK Government, Approved Documents: https://www.gov.uk/government/collections/approved-documents
 - UK Government, golden-thread guidance: https://www.gov.uk/guidance/keeping-information-about-a-higher-risk-building-the-golden-thread
+
+
+## Research note — post-S2
+
+### Research-only: resolvable within current family
+
+S2-M08 produced a candidate authoring state that is deliberately **not** part of release validity.
+
+A changed source condition may make the current occurrence/evidence stale while the already-selected supported family still contains another valid parameterisation.
+
+For now represent this as:
+
+~~~text
+CURRENT STATE: INVALID / STALE
+RESEARCH HINT: RESOLVABLE WITHIN CURRENT FAMILY
+~~~
+
+Do not permit the hint to satisfy an obligation.
+
+Promotion criteria:
+
+1. at least three materially different family examples;
+2. deterministic bounded search/derivation, not vague suggestion;
+3. exact downstream invalidation known;
+4. user can inspect the proposed change before accepting it;
+5. failure to find a solution returns ordinary INVALID/UNSUPPORTED without weakening proof semantics.

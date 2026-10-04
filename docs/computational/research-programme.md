@@ -653,8 +653,10 @@ These items should not be lost even if priorities change.
 | C-032B | Design S1 room-scale integration fixture | C-031A,C-032A | **complete — S1 Run 01 research/complexity pass; release fail** |
 | C-032C | Formalise evaluation scope / contribution semantics from S1 | C-032B,C-002 | **first canonical position recorded** |
 | C-032D | Prevent role-bloated entity schema; model contextual roles relationally | C-032B,C-002 | **first canonical position recorded** |
-| C-032E | Define S2 connected-room-cluster fixture | C-032B,C-019C,C-019D,C-020A,C-016C | **unblocked by H1 v0.2 audit; next integration fixture** |
+| C-032E | Define S2 connected-room-cluster fixture | C-032B,C-019C,C-019D,C-020A,C-016C | **S2 Run 01 complete — connected-cluster research/complexity pass; release fail** |
 | C-032F | Prepare external competent S0/S1/H1 review pack | C-032 | **review pack v0.1 complete; actual external review not yet performed** |
+| C-032G | Test provisional RESOLVABLE-within-family state | C-032E,C-003 | **seeded by S2-M08; not a release state** |
+| C-032H | Design first complete H1 paper-house compile | C-032E,C-032G | blocked until wet-room / envelope-penetration families + one structured external-evidence trial |
 | C-033 | Decide whether computational material enters monograph Part VI | C-031 | blocked |
 | C-034 | Design formal language / syntax | Gate C | deliberately deferred |
 | C-035 | Select implementation architecture | Gate C | deliberately deferred |
@@ -701,12 +703,13 @@ Exploratory notes should not silently redefine the canonical model.
 
 Unless new evidence changes the order, the next non-implementation sequence should be:
 
-1. **Obtain the actual external competent review** using [the prepared review pack](external-review-pack-s0-s1-h1-v01.md); do not treat preparation as validation.
-2. **ENTR-DOOR-MCW-01 established** — principal entrance/access/security/envelope transition is now bounded.
-3. **VENT-CMEV-01 selected** as the first whole-house ventilation family; MVHR remains the higher-performance extension candidate.
-4. **HEAT-ASHP-RAD-01 and WET-CORE-01 established.** Heating, potable water and gravity drainage now share a deliberate service geography without being collapsed into one network.
-5. use [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) only as **G01-PILOT-P0** in future S2 research; continue D4–D6 evidence work and D8 evaluation in parallel.
-6. [H1 Capability Matrix v0.2](h1-capability-matrix-v02.md) now concludes **S2 may proceed as research**. Gate B remains closed pending competent external review and real evidence packages.
+1. **Freeze S2.** Connected-cluster Run 01 is complete; do not create S2 Run 02 without a new falsifiable question.
+2. harden one ordinary **wet-room waterproofing / wet-zone assembly family** so WET-CORE-01 is not merely plumbing topology.
+3. harden one **controlled envelope-penetration family** for ordinary ducts/pipes/cables crossing the external wall/roof boundary.
+4. exercise at least one **structured external-evidence package** against a real public technical/manufacturer source; test scope and invalidation without pretending this is competent project review.
+5. **Obtain the actual external competent review** using [the prepared review pack](external-review-pack-s0-s1-h1-v01.md); preparation is not validation.
+6. keep the provisional **RESOLVABLE WITHIN CURRENT FAMILY** state in research only until multiple unrelated examples justify promotion.
+7. only after items 2–4, design **H1-PAPER-01 — first complete bounded house compile** as the final major paper gate before software architecture is reconsidered.
 
 That sequence should produce enough information to decide whether the compiler concept is genuinely architectural infrastructure or merely an attractive analogy.
 

@@ -907,7 +907,7 @@ The dominant remaining Gate-B work is now:
 - whole-dwelling L/O evidence integration;
 - selected product/installation families.
 
-S2 may proceed as a non-release research fixture.
+S2 Run 01 is now complete and frozen as a non-release research fixture. Its result supports moving toward H1-PAPER-01 only after the remaining wet-zone / penetration / external-evidence prerequisites are hardened.
 
 ## 29. Current conclusion
 

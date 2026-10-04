@@ -91,6 +91,9 @@ The architectural doctrine remains primary. The purpose of this track is to disc
    - [S1 Research Brief](s1-research-brief.md) — next-scale falsification fixture: a complete ground-floor principal room with corner, two windows, door, floor/ceiling and service route.
    - [S1 Frozen Source Package](s1-source-package.md) — fixed room geometry, multi-role openings/door, service branch, project-order profile and seven mutations.
    - [S1 Paper Compilation Run 01](s1-paper-compile-run-01.md) — room-scale complexity pass; introduces obligation scope and contextual-role warnings while correctly failing release.
+   - [S2 Research Brief](s2-research-brief.md) — connected two-storey cluster fixture testing hierarchy, sequence, stair arrival, service-core placement, façade order and candidate fire topology.
+   - [S2 Frozen Source Package](s2-source-package.md) — fixed principal/secondary rooms, hall, stair, service core, representative bedroom, opening hierarchy and eight mutations.
+   - [S2 Paper Compilation Run 01](s2-paper-compile-run-01.md) — connected-cluster complexity pass; proves technical validity and architectural validity can diverge, and seeds a provisional “resolvable within current family” research state.
 
 11. [Prior Art Map](prior-art-map.md)  
    Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.
