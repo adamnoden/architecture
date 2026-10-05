@@ -22,7 +22,13 @@ A further research trajectory asks whether the doctrine can become **executable 
 
 > **The program should compile a habitat.**
 
-This is recorded as a computational expression of the doctrine, not a new governing principle and not yet an implementation commitment. The architectural doctrine remains primary; the software ambition is to make its formal subset enforceable, reproducible and verifiable.
+The internal paper-compilation phase of that computational research is now complete through a bounded whole-house test. A minimal executable falsification prototype is authorised; heavy compiler/CAD implementation remains gated behind external review and software evidence. The architectural doctrine remains primary.
+
+## Project status
+
+For the current project-wide maturity map, unresolved risks and next gates, see **[STATUS.md](STATUS.md)**.
+
+The current overall phase is **convergence → validation**: complete the publication and reference house, physically/professionally test the non-standard architectural propositions, and begin only the smallest computational implementation justified by the paper research.
 
 ## Documents
 
@@ -73,9 +79,12 @@ This is recorded as a computational expression of the doctrine, not a new govern
 - [W2 wall-bay SVG](docs/prototypes/w2-wall-bay-detail.svg) — vector detail of the gravity seat, separate top restraint, backplane and architectural release zones.
 
 ### Computational expression
-- [Computational track index](docs/computational/README.md) — entry point, document map and dependency order.
+- [Computational track index](docs/computational/README.md) — current phase, document map and dependency order.
 - [Executable Architecture — computational concept](docs/computational/executable-architecture.md) — canonical statement of the constrained-authoring / building-compiler proposition.
-- [Computational research programme](docs/computational/research-programme.md) — master workstreams, grand TODO register, decision gates and implementation stop conditions.
+- [Current computational programme](docs/computational/research-programme-v04.md) — post-H1 control layer: paper research frozen; external review, physical evidence and minimal executable prototype next.
+- [Current H1 capability matrix](docs/computational/h1-capability-matrix-v05.md) — final pre-implementation internal capability audit.
+- [H1 final red team](docs/computational/h1-paper-final-red-team.md) — adversarial whole-house review and stop/continue decision.
+- [External competent review pack](docs/computational/external-review-pack-h1-paper-v02.md) — handoff for structural, fire/building-control and building-services attack.
 - [Formal architectural model](docs/computational/formal-architectural-model.md) — conceptual semantic model of overlapping spatial, structural, boundary, service, lifecycle and evidence graphs.
 - [Architectural grammar and proportion](docs/computational/architectural-grammar-and-proportion.md) — position on relational design languages, topology, hierarchy, proportion bands, plan/section/elevation coordination and the boundary between grammar and judgement.
 - [Validity and obligations](docs/computational/validity-and-obligations.md) — compile-status taxonomy, obligation discharge and proof/evidence boundaries.
@@ -93,6 +102,6 @@ The publication distinguishes:
 
 The source doctrine is retained for traceability. New work should be developed in the manuscript, pattern catalogue and project-delivery documents rather than by rewriting v7 in place.
 
-The current major phase is architectural production and validation: tectonic integration, workmanship-robustness testing, 1:1 prototype development, completion of the strongest pattern families, and a reference-house options appraisal. Candidate reversible assemblies remain explicitly experimental until calculation, representative-installer testing and prototype work justify promotion.
+The current major phase is architectural production and validation: tectonic integration, workmanship-robustness testing, 1:1 prototype development, completion of the strongest pattern families, a complete reference-house appraisal and publication convergence. Candidate reversible assemblies remain explicitly experimental until calculation, representative-installer testing and prototype work justify promotion.
 
-A parallel future research track is now recorded for **executable architecture**. Its intended chain is **Doctrine → Formal architectural model → Semantic primitives / invariants → Compiler target → Resolved building → Production outputs + evidence**. This track is concept-only for now and should not displace the current architectural and prototype work.
+The computational track has now completed its internal paper-compilation programme through H1-PAPER. Its next sequence is **competent external review + minimal executable vertical slice → reassess the thesis → only then decide whether heavy compiler/CAD work is justified**. It should not displace the architectural and prototype work.
