@@ -1,107 +1,77 @@
 # Long-Life House
 
-An architectural design-research project exploring how a domestic building can remain **architecturally permanent while allowing shorter-lived systems to be maintained, repaired, replaced and adapted without consuming the permanent fabric**.
+An architectural design-research project about **selective permanence**: make the durable architecture genuinely durable by giving shorter-lived systems, foreseeable failure, maintenance and change deliberate places to occur.
 
-> **Working thesis:** Change should be given deliberate places to occur so that architecture can afford to remain permanent elsewhere.
-
-A second project axis now governs the physical implementation:
-
+> **Change should be given deliberate places to occur so that architecture can afford to remain permanent elsewhere.**
+>
 > **Build the permanent house. Assemble the changeable house inside it.**
 
-The project pursues **tectonic honesty**: concealment is legitimate; falsification is not. Movement, access, replacement and technical necessity should be resolved through real construction, material and architectural composition rather than cosmetic continuity.
+The project is not a universal-flexibility system, a manifesto for exposed services, or a software project disguised as architecture. It asks how a domestic building can remain architecturally settled while being unusually maintainable, repairable and adaptable over a long life.
 
-A further cross-cutting requirement is **workmanship robustness**: the design should distinguish where precision matters, where ordinary construction variation is harmless, and where an interface must absorb the difference. Critical assemblies should not depend unnecessarily on exceptional workmanship, designer supervision or improvised site correction.
+## Architectural position
 
-> **Give variation somewhere to go.**
+The public doctrine is the [eleven governing principles](docs/manuscript/governing-principles.md). In compressed form:
 
-A further human requirement is **repose**: the house should minimise unnecessary vigilance. Its ordinary spaces should be physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled. Repose does not imply minimalism or low visual richness.
+- **Protect slow layers from fast ones.** Short-lived services, fittings and replaceable assemblies should not routinely consume long-lived fabric. Serviceability is pursued proportionately to the frequency, consequence and retrofit difficulty of the future event.
+- **Design interfaces, not just components.** Support, restraint, movement, sealing, finish, tolerance, access and disassembly should be deliberately resolved rather than left to brittle continuity or site improvisation.
+- **Design failure and maintenance spatially.** Foreseeable failures should be detectable, containable and repairable; maintenance needs approach routes, working space, isolation and withdrawal paths. This geography extends outside the envelope to façades, roofs, supporting ground, landscape, courtyards and site logistics.
+- **Prefer ordinary parts in robust arrangements.** Use standard components, familiar fabrication and clear datums where possible; concentrate invention where architectural arrangement or an interface genuinely earns it. The design should tolerate ordinary competent workmanship without depending on continual designer supervision.
+- **Let permanence remain architectural.** Adaptability belongs where change is useful; rooms, axes, stairs, structure and other defining relationships may deliberately endure. Maintainability must not make the house feel temporary, hollow or technical.
+- **Design for repose.** Ordinary domestic space should minimise unnecessary vigilance through physical comfort, spatial comprehensibility, privacy and retreat, local control and perceptual settlement. Richness is compatible with repose; gratuitous instability is not.
+- **Let passive architecture do the first work.** Form, envelope, orientation, shading, mass, openings, drainage and gravity should reduce dependence on active systems, while measured performance, health and resilience outrank ideological simplicity.
+- **Make construction and stewardship legible.** Tectonic honesty permits concealment but not falsification. Future owners and trades should be able to understand, isolate, maintain and alter the building without rediscovering it destructively.
 
-The principle is evidence-bounded. Established environmental findings are kept separate from context-sensitive psychological evidence and from architectural hypotheses—most notably the proposal that visually legible structural equilibrium contributes to domestic repose.
+No longevity measure receives a free pass from life safety, legal compliance, structural integrity, health, building physics, whole-life cost, carbon or construction risk. Evidence, context-sensitive findings and architectural hypotheses are kept distinct.
 
-A further research trajectory asks whether the doctrine can become **executable architecture**: a constrained semantic model in which meaningful building primitives, architectural grammar, structure, selected compliance obligations and evidence compile together rather than being checked only after arbitrary geometry has been drawn.
+## Project form
 
-> **The program should compile a habitat.**
+The project is deliberately split into different kinds of output rather than forcing everything into one document:
 
-The internal paper-compilation phase of that computational research is now complete through a bounded whole-house test. A minimal executable falsification prototype is authorised; heavy compiler/CAD implementation remains gated behind external review and software evidence. The architectural doctrine remains primary.
+1. **Illustrated monograph** — the architectural argument and governing principles.
+2. **Pattern catalogue** — reusable responses with forces, trade-offs, evidence, maturity and failure modes.
+3. **Reference house** — one coordinated worked interpretation used to expose cross-system conflicts; never evidence for the doctrine itself.
+4. **Prototype programme** — 1:1 and professional testing of the non-standard propositions before promotion.
+5. **Implementation brief** — architect-facing translation into project requirements, evidence, responsibilities and RIBA-stage decisions.
+6. **Computational track** — a parallel research programme asking which formal subset of the doctrine can become executable architecture: semantic building primitives, obligations, evidence and useful compile failures rather than arbitrary geometry checked only afterwards.
 
-## Project status
-
-For the current project-wide maturity map, unresolved risks and next gates, see **[STATUS.md](STATUS.md)**.
-
-The current overall phase is **convergence → validation**: complete the publication and reference house, physically/professionally test the non-standard architectural propositions, and begin only the smallest computational implementation justified by the paper research.
-
-## Documents
-
-### Source corpus
-- [House Design Doctrine v7](docs/source/house-design-doctrine-v7.md) — the original doctrine from which the publication work is being developed. Preserved as source material rather than edited into the book.
-
-### Publication manuscript
-- [Preface — The Obvious, Eventually](docs/manuscript/preface.md) — first-person ideological and narrative foundation for the monograph.
-- [Publication architecture](docs/manuscript/publication-architecture.md) — current book structure.
-- [Governing principles](docs/manuscript/governing-principles.md) — eleven public-facing principles, including repose / low vigilance as a domestic design requirement.
-- [Principle 8 — Design for Repose](docs/manuscript/principle-08-repose.md) — developed publication spread and evidence-bounded review framework, with its primary SVG figure.
-- [Part I](docs/manuscript/part-i.md) — current opening argument.
-- [Part II](docs/manuscript/part-ii.md) — current architecture-of-the-platform chapters.
-- [Part V](docs/manuscript/part-v.md) — making, manufacturing, prototyping, procurement and maintainability testing.
-
-### Pattern catalogue
-- [Core 12 patterns](docs/patterns/core-12.md) — the first architectural patterns developed in depth.
-- [Reversible assembly candidates](docs/patterns/reversible-assembly-candidates.md) — experimental development of seated floor structure, architectural backplanes, replaceable wall lining and finish-agnostic floor platforms.
-
-### Reference house
-- [Tectonic architectural language](docs/reference-house/tectonic-architectural-language.md) — Georgian interface grammar and restrained functional brass/bronze language for the worked house.
-- [Vertical bay coordination](docs/reference-house/vertical-bay-coordination.md) — first integrated external-wall / upper-floor coordination section.
-- [Vertical bay SVG](docs/reference-house/vertical-bay-coordination.svg) — actual vector coordination drawing for the selective-tectonic hypothesis.
-- [Vertical bay A/B/C options](docs/reference-house/vertical-bay-options.md) — conservative control versus selective-tectonic versus full-reversible comparison.
-
-### Research and options appraisals
-- [Preface precedents](docs/research/preface-precedents.md) — historical source selection, cautions and deliberately excluded analogies.
-- [Workmanship robustness](docs/research/workmanship-robustness.md) — research synthesis on tolerance management, buildability, mistake-proofing, human factors and the deliberate allocation of craft.
-- [Repose and low vigilance](docs/research/repose-and-low-vigilance.md) — evidence synthesis for domestic repose, environmental control, privacy, coherence, intuitive physics, neuroarchitecture guardrails and the structural-legibility research hypothesis.
-- [Repose evidence audit](docs/research/repose-evidence-audit.md) — claim-by-claim evidence grade, permitted wording, prohibited overclaims and checked sources.
-- [Candidate hardening decision matrix](docs/research/candidate-pattern-hardening-summary.md) — current evidence-backed direction, kill conditions and next decision sequence for all four experimental patterns.
-- [Primary floor structure baseline](docs/research/primary-floor-structure-baseline.md) — engineered I-joist baseline for the next coordination drawings.
-- [Seated floor structure options](docs/research/seated-floor-structure-options.md) — current structural interpretation and connection-family appraisal.
-- [Replaceable wall system options](docs/research/replaceable-wall-system-options.md) — backplane, removable lining and plaster benchmark study.
-- [Finish-agnostic floor platform options](docs/research/finish-agnostic-floor-platform-options.md) — residential adaptation of removable dense-mineral floor platforms across timber, tile and stone finishes.
-
-### Development controls
-- [Preface architecture](docs/development/preface-architecture.md) — rhetorical structure, audience, voice and quality controls for the opening essay.
-- [Tectonic integration register](docs/development/tectonic-integration-register.md) — traceability ledger for the current doctrine migration.
-- [Repose integration register](docs/development/repose-integration-register.md) — traceability ledger for the low-vigilance principle, evidential boundaries, design-review tests and remaining research.
-- [Tectonic honesty](docs/development/tectonic-honesty.md) — position paper distinguishing concealment from falsification.
-- [Manufacturing strategy](docs/development/manufacturing-strategy.md) — lifespan-based manufacturing and dry-assembly strategy.
-- [Prototype programme](docs/development/tectonic-prototype-programme.md) — 1:1 engineering and architectural validation programme.
-- [Migration plan](docs/development/tectonic-migration-plan.md) — staged integration plan.
-
-### Prototypes
-- [W2 wall-bay build pack](docs/prototypes/w2-wall-bay-build-pack.md) — first buildable 1:1 mock-up specification for the replaceable wall system.
-- [W2 wall-bay SVG](docs/prototypes/w2-wall-bay-detail.svg) — vector detail of the gravity seat, separate top restraint, backplane and architectural release zones.
-
-### Computational expression
-- [Computational track index](docs/computational/README.md) — current phase, document map and dependency order.
-- [Executable Architecture — computational concept](docs/computational/executable-architecture.md) — canonical statement of the constrained-authoring / building-compiler proposition.
-- [Current computational programme](docs/computational/research-programme-v04.md) — post-H1 control layer: paper research frozen; external review, physical evidence and minimal executable prototype next.
-- [Current H1 capability matrix](docs/computational/h1-capability-matrix-v05.md) — final pre-implementation internal capability audit.
-- [H1 final red team](docs/computational/h1-paper-final-red-team.md) — adversarial whole-house review and stop/continue decision.
-- [External competent review pack](docs/computational/external-review-pack-h1-paper-v02.md) — handoff for structural, fire/building-control and building-services attack.
-- [Formal architectural model](docs/computational/formal-architectural-model.md) — conceptual semantic model of overlapping spatial, structural, boundary, service, lifecycle and evidence graphs.
-- [Architectural grammar and proportion](docs/computational/architectural-grammar-and-proportion.md) — position on relational design languages, topology, hierarchy, proportion bands, plan/section/elevation coordination and the boundary between grammar and judgement.
-- [Validity and obligations](docs/computational/validity-and-obligations.md) — compile-status taxonomy, obligation discharge and proof/evidence boundaries.
-- [Compiler targets](docs/computational/compiler-targets.md) — versioned regulatory/normative targets, beginning with England as the first jurisdictional research constraint.
-- [Prior art map](docs/computational/prior-art-map.md) — initial research map across IFC/openBIM, automated compliance, ontologies, shape grammars, digital building control and adjacent systems.
-
-### Project delivery
-- [RIBA implementation brief template](docs/delivery/riba-implementation-brief-template.md) — translation layer from the publication into requirements for an appointed design team.
-
-## Working model
-
-The publication distinguishes:
+The working chain is:
 
 **Doctrine → Strategy → Pattern → Reference implementation → Delivery requirement → Test**
 
-The source doctrine is retained for traceability. New work should be developed in the manuscript, pattern catalogue and project-delivery documents rather than by rewriting v7 in place.
+## Current phase
 
-The current major phase is architectural production and validation: tectonic integration, workmanship-robustness testing, 1:1 prototype development, completion of the strongest pattern families, a complete reference-house appraisal and publication convergence. Candidate reversible assemblies remain explicitly experimental until calculation, representative-installer testing and prototype work justify promotion.
+**Convergence → validation.** The central architectural position is established; the project should no longer respond to every question by inventing another principle.
 
-The computational track has now completed its internal paper-compilation programme through H1-PAPER. Its next sequence is **competent external review + minimal executable vertical slice → reassess the thesis → only then decide whether heavy compiler/CAD work is justified**. It should not displace the architectural and prototype work.
+The highest-value work now is to:
+
+- complete and coordinate the reference house;
+- physically and professionally attack the non-standard assemblies and environmental/technical assumptions;
+- finish the pattern catalogue and publication against those results;
+- run competent external review of the computational model and build only the minimal executable kernel needed to falsify or strengthen it before considering heavy CAD/compiler implementation.
+
+For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.md](STATUS.md)**.
+
+## Repository map
+
+| Area | Purpose | Start here |
+|---|---|---|
+| **Project state** | Current maturity, risks and next gates | [STATUS.md](STATUS.md) |
+| **Source** | Preserved original doctrine; provenance rather than current publication | [House Design Doctrine v7](docs/source/house-design-doctrine-v7.md) |
+| **Manuscript** | Public architectural argument, governing principles and book structure | [Publication architecture](docs/manuscript/publication-architecture.md) · [Governing principles](docs/manuscript/governing-principles.md) · [Preface](docs/manuscript/preface.md) |
+| **Patterns** | Reusable architectural responses and experimental candidates | [Core patterns](docs/patterns/core-12.md) · [`docs/patterns/`](docs/patterns/) |
+| **Reference house** | Worked architectural/technical interpretation and coordination studies | [`docs/reference-house/`](docs/reference-house/) |
+| **Research** | Evidence syntheses, precedent, options appraisals and claim hardening | [`docs/research/`](docs/research/) |
+| **Development / prototypes** | Integration controls, manufacturing strategy, test programmes and build packs | [Prototype programme](docs/development/tectonic-prototype-programme.md) · [`docs/prototypes/`](docs/prototypes/) |
+| **Delivery** | Translation into requirements for an appointed design team | [RIBA implementation brief template](docs/delivery/riba-implementation-brief-template.md) |
+| **Computational** | Executable-architecture research, paper compilation, evidence model and compiler gates | [Computational track index](docs/computational/README.md) |
+
+## Repository rules
+
+- **`docs/source/house-design-doctrine-v7.md` is source material, not the live book.** Preserve it for traceability rather than rewriting it in place.
+- **The governing principles are the primary public doctrine.** The older detailed register remains useful as traceability, not as the publication's front-end structure.
+- **A pattern may fail without invalidating the principle it serves.** Experimental systems stay experimental until calculation, representative-installer work and physical testing justify promotion.
+- **The reference house is a test vehicle and worked interpretation, not proof.** Project-specific choices must remain distinguishable from general doctrine.
+- **Negative evidence is useful.** A prototype, engineer or external reviewer killing an attractive idea is successful research.
+- **Architectural quality remains the constraint.** Maintainability, reversibility and technical legibility do not justify a house that is spatially poor, visually unsettled, acoustically hollow or disproportionately complex.
+- **The computational track remains subordinate to the architecture.** Its internal paper-compilation phase is complete; post-freeze doctrine changes are audited explicitly, external review and a minimal executable vertical slice come next, and heavy implementation remains gated.
+- **`STATUS.md` is the canonical answer to “where are we now?”** Track-specific documents own detailed TODOs; the root README should remain a durable map of what the project is and how the repo is organised.
