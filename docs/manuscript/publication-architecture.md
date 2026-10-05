@@ -1,7 +1,7 @@
-# House Design Doctrine — Publication Architecture v0.6
+# House Design Doctrine — Publication Architecture v0.7
 
 **Working form:** illustrated architectural design-research monograph + pattern catalogue + separate architect-facing implementation brief.  
-**Status:** v0.6 — repose / low-vigilance integration working structure.
+**Status:** v0.7 — external maintenance geography integration.
 
 ## Front matter
 
@@ -42,7 +42,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
    First defence / second consequence; water, overflow, drainage, drying, detection, isolation and recovery.
 
 8. **Maintenance geography**  
-   Spatial topology of approach, working space, disconnection and withdrawal; proportionality.
+   Spatial topology of approach, working space, disconnection and withdrawal; proportionality. Extend the same logic beyond the weather envelope: the façade, roof, ground plane, landscape, courtyard and route from the site entrance together determine whether external work can be carried out by ordinary safe means. Introduce the **external maintenance envelope** as the task-specific space/support condition required for access, work, handling and replacement. The developed insert is [Maintenance Geography — The Exterior](maintenance-geography-external.md), supported by [External Maintenance Access — Research Synthesis](../research/external-maintenance-access.md).
 
 9. **Environmental resilience without dependence**  
    Future climate, passive-first design, source capture, measured ventilation and graceful degradation; treat intelligible local environmental control and manual fallback as forms of occupant agency, not merely controls engineering.
@@ -73,7 +73,7 @@ manifold; withdrawable pipe; water-damage-safe route; leak detection path; wet-s
 window; door; threshold; slip/movement joint; experimental functional cornice.
 
 ### E. Envelope and environment
-perimeter dry zone; rainwater route; kitchen source capture; bathroom extraction; roof-maintenance route.
+perimeter dry zone; rainwater route; kitchen source capture; bathroom extraction; roof-maintenance route; [ground-supported façade access](../patterns/ground-supported-facade-access.md).
 
 ### F. Occupation and stewardship
 fixing infrastructure; physical service index.
@@ -95,9 +95,9 @@ The following systems are deliberately held outside the established core catalog
 13. Site and type  
 14. Architectural order, repose and tectonic language  
 15. Material, structural and assembly system  
-16. Maintenance geography  
+16. Maintenance geography — internal service topology plus a coordinated [External Access & Maintenance Plan](../reference-house/external-access-maintenance-plan.md) covering façade, roof, courtyard, ground/support conditions, landscape and logistics from the site entrance  
 17. Water and environmental systems  
-18. Future maintenance scenarios
+18. Future maintenance scenarios — include upper masonry repair, gutter/eaves renewal, chimney/roof repair, window cleaning versus full-frame replacement, courtyard access and mature-landscape replay
 
 The reference house is explicitly **one interpretation**, not proof of the doctrine.
 
@@ -116,8 +116,8 @@ Each major non-standard decision shows:
 21. Standardisation, manufacture and reliable assembly  
 22. Prototype and disassemble before repetition  
 23. Procurement without dilution  
-24. Commission maintainability  
-25. Design review through failure, change and occupation scenarios
+24. Commission maintainability — include verification that final landscape, levels, drainage, external plant and access gates have not consumed the intended external maintenance geography  
+25. Design review through failure, change and occupation scenarios — include task-specific external access scenarios rather than a generic assertion of façade accessibility
 
 ## Back matter
 
@@ -165,6 +165,8 @@ Production outputs + evidence
 
 The architectural manuscript should not become a software pitch. The computational track earns promotion only if it clarifies and strengthens the architecture.
 
+**Integration boundary:** external-maintenance work in v0.7 deliberately does not modify computational documents. The architectural concept may later be consumed by that workstream once its maintainability representation is ready; the publication does not prescribe that implementation here.
+
 # Separate implementation brief
 
 A concise project document for the appointed architect, mapped to the RIBA Plan of Work.
@@ -180,6 +182,8 @@ For each requirement:
 - whole-life cost/carbon check where non-standard;
 - commissioning test;
 - deviation record.
+
+For external maintenance, the brief should specifically require the access strategy early enough that façade, roof, landscape, courtyard and site geometry can still change; a generic Stage 4 note saying “provide safe access” is too late.
 
 This is the direct solution to the “transpilation” problem: the monograph explains the architectural position; the implementation brief tells the design team what this project actually requires.
 
