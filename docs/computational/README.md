@@ -22,15 +22,20 @@ Current internal result:
 - professional external review is still open;
 - no further major paper-compilation scale is authorised;
 - a **minimal executable vertical slice** is authorised as a falsification prototype;
-- a heavy CAD/compiler product build is **not** yet authorised.
+- a heavy CAD/compiler product build is **not** yet authorised;
+- post-freeze doctrine changes are now audited explicitly so the doctrine and compiler cannot silently drift apart.
 
 Current control layer:
 
-[Research Programme v0.4](research-programme-v04.md)
+[Research Programme v0.5](research-programme-v05.md)
 
-Current capability audit:
+Frozen H1 capability audit:
 
 [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md)
+
+Current post-freeze doctrine delta:
+
+[Computational Doctrine Delta 01 — External Maintenance Geography](doctrine-delta-external-maintenance-v01.md)
 
 Current external-review handoff:
 
@@ -41,10 +46,11 @@ Current external-review handoff:
 1. [Executable Architecture](executable-architecture.md)  
    Canonical concept paper: proposition, compiler/checker distinction, product form, proof boundary and relationship to the architectural doctrine.
 
-2. [Research Programme v0.4](research-programme-v04.md)  
-   **Current programme-control layer.** Freezes speculative paper expansion, preserves inherited grand TODOs, and defines the transition to external review, physical prototyping and the minimal executable compiler kernel.
+2. [Research Programme v0.5](research-programme-v05.md)  
+   **Current programme-control layer.** Inherits the full v0.4 stop rules and transition programme, then adds the post-H1 doctrine-sync discipline and the external-maintenance implementation extension fixture.
 
    Historical programme layers remain important provenance:
+   - [v0.4](research-programme-v04.md) — H1 paper phase frozen; external review + minimal kernel next;
    - [v0.3](research-programme-v03.md) — H1-PAPER authorised;
    - [v0.2](research-programme-v02.md) — post-S2/passive-environment correction;
    - [v0.1](research-programme.md) — original full workstream map and grand-TODO register.
@@ -102,9 +108,13 @@ Current external-review handoff:
 
 10. **Supported Domain / H1**
 
-   Current audit:
+   Frozen H1 audit:
 
-   - [H1 Capability Matrix v0.5 — Post-H1-PAPER Freeze](h1-capability-matrix-v05.md) — **current capability/proof-boundary record**.
+   - [H1 Capability Matrix v0.5 — Post-H1-PAPER Freeze](h1-capability-matrix-v05.md) — the final internal H1 paper capability/proof-boundary record.
+
+   Important qualification added after the freeze:
+
+   - [Doctrine Delta 01 — External Maintenance Geography](doctrine-delta-external-maintenance-v01.md) — H1 demonstrated maintenance validity for internal/service cases; exterior scaffold/site logistics are conceptually representable but not yet demonstrated.
 
    Historical audits:
 
@@ -192,6 +202,14 @@ EXTERNAL PROFESSIONAL REVIEW    OPEN
 
 The initial H1 source contained an impossible dining→kitchen adjacency. The whole-house pass caught it; the source was corrected without weakening any family or proof rule. This is now explicit evidence that **machine-enforced source well-formedness is a first implementation requirement**.
 
+## Post-freeze doctrine deltas
+
+Material doctrine additions after H1 must receive an explicit computational coverage audit before the compiler is claimed to cover them.
+
+Current deltas:
+
+1. [External Maintenance Geography](doctrine-delta-external-maintenance-v01.md) — semantic architecture passes; H1 demonstration is partial; EXT-MAINT-01 is authorised as a post-kernel executable extension fixture.
+
 ## External review
 
 Historical pack:
@@ -214,13 +232,14 @@ Preparation is not validation.
 
 The default sequence is now:
 
-1. **freeze paper expansion** — complete;
+1. **freeze major paper expansion** — complete;
 2. obtain competent external attack using the H1-PAPER review pack;
-3. implement the **minimal executable semantic/compiler vertical slice** defined in [Research Programme v0.4](research-programme-v04.md);
+3. implement the **minimal executable semantic/compiler vertical slice** defined in [Research Programme v0.5](research-programme-v05.md);
 4. test machine-enforced source well-formedness, obligation derivation, evidence scope and selective invalidation;
-5. perform one small physical/product prototype where doctrine meets workmanship;
-6. incorporate only evidence-driven paper corrections;
-7. decide whether the result earns heavier geometry/CAD/solver/product architecture.
+5. after the kernel succeeds, run doctrine-driven extension fixtures beginning with **EXT-MAINT-01 external maintenance geography**;
+6. perform one small physical/product prototype where doctrine meets workmanship;
+7. incorporate only evidence-driven paper corrections;
+8. decide whether the result earns heavier geometry/CAD/solver/product architecture.
 
 ## Working dependency order after H1
 
@@ -239,6 +258,9 @@ H1-PAPER COMPLETE-HOUSE TEST
         │
         ▼
 MINIMAL EXECUTABLE COMPILER KERNEL
+        │
+        ▼
+DOCTRINE-DELTA EXTENSION FIXTURES
         │
         ▼
 FALSIFICATION / RED TEAM
