@@ -1,7 +1,7 @@
 # Computational Track
 
-**Status:** research programme — concept and formalisation only  
-**Implementation status:** deliberately deferred
+**Status:** internal paper-compilation phase complete; external review + minimal executable falsification prototype next  
+**Heavy implementation status:** deliberately gated
 
 This directory records the computational expression of the Long-Life House.
 
@@ -9,163 +9,260 @@ The architectural doctrine remains primary. The purpose of this track is to disc
 
 > **The program should compile a habitat.**
 
+## Current position
+
+The internal paper sequence is complete through one bounded whole house:
+
+**S0 → S1 → S2 → H1-PAPER-01 → final red team → capability freeze.**
+
+Current internal result:
+
+- the central semantic/obligation/evidence abstraction survives whole-house paper scale;
+- building release still correctly fails because competent technical/physical evidence is absent;
+- professional external review is still open;
+- no further major paper-compilation scale is authorised;
+- a **minimal executable vertical slice** is authorised as a falsification prototype;
+- a heavy CAD/compiler product build is **not** yet authorised.
+
+Current control layer:
+
+[Research Programme v0.4](research-programme-v04.md)
+
+Current capability audit:
+
+[H1 Capability Matrix v0.5](h1-capability-matrix-v05.md)
+
+Current external-review handoff:
+
+[External Competent Review Pack — H1-PAPER v0.2](external-review-pack-h1-paper-v02.md)
+
 ## Canonical documents
 
 1. [Executable Architecture](executable-architecture.md)  
-   The canonical concept paper: what the proposition is, why a compiler is different from a checker, the intended product form, the proof boundary and the relationship to the architectural doctrine.
+   Canonical concept paper: proposition, compiler/checker distinction, product form, proof boundary and relationship to the architectural doctrine.
 
-2. [Research Programme v0.2](research-programme-v02.md)  
-   Current programme-control layer and immediate sequence. It inherits every unresolved grand TODO from the original [Research Programme v0.1](research-programme.md), while recording post-S2 course corrections without rewriting history.
+2. [Research Programme v0.4](research-programme-v04.md)  
+   **Current programme-control layer.** Freezes speculative paper expansion, preserves inherited grand TODOs, and defines the transition to external review, physical prototyping and the minimal executable compiler kernel.
 
-   - [External Competent Review Pack — S0/S1/H1](external-review-pack-s0-s1-h1-v01.md) — adversarial brief prepared for a structural engineer and building-control/regulatory practitioner. **Review not yet performed.**
+   Historical programme layers remain important provenance:
+   - [v0.3](research-programme-v03.md) — H1-PAPER authorised;
+   - [v0.2](research-programme-v02.md) — post-S2/passive-environment correction;
+   - [v0.1](research-programme.md) — original full workstream map and grand-TODO register.
 
 3. [Formal Architectural Model](formal-architectural-model.md)  
-   First conceptual model of the building as overlapping semantic graphs rather than a collection of geometry.
+   Conceptual model of the building as overlapping semantic graphs rather than a collection of geometry.
 
 4. [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md)  
-   Defines the layered design-language model: topology, hierarchy, ordering, proportional families, plan/section/elevation coordination, evaluation and controlled exception.
+   Layered design-language model: topology, hierarchy, ordering, proportional families, plan/section/elevation coordination, evaluation and controlled exception.
 
-   - [G-01 Research Brief](g01-research-brief.md) — scope, corpus strategy, annotation schema, candidate hypotheses and mutation-testing method for deriving the first Georgian-derived grammar from evidence rather than intuition.
-   - [G-01 Corpus and Source-Quality Register](g01-corpus-register.md) — seed corpus, evidence grades, derivation/hold-out split and source-acquisition queue.
-   - [G-01 Precedent Annotation Schema](g01-annotation-schema.md) — D3 evidence contract, now validated across three deliberately different cases.
-   - [G-01 Trial Case Records](g01-cases/README.md) — completed D3 v0.1 semantic records for Marble Hill, Danson House and 76 Dean Street.
-   - [G-01 Topology Comparison](g01-topology-comparison.md) — preliminary D4 comparison of morphology, connectivity, route/sequence, vertical hierarchy and scoped symmetry before dimensional analysis.
-   - [G-01 Dimensional and Proportional Analysis](g01-dimensional-analysis.md) — D5 seed dataset and measurement discipline; currently strongest at Danson, deliberately sparse elsewhere.
-   - [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md) — D6 seed model for directional, attribute-level negotiation between spatial order, façade, section and technical structure.
-   - [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md) — provisional D7/D8 seed: hierarchy, route, sequence, scoped order and coupling are testable; exact proportional rules remain explicitly unready.
+   - [G-01 Research Brief](g01-research-brief.md)
+   - [G-01 Corpus and Source-Quality Register](g01-corpus-register.md)
+   - [G-01 Precedent Annotation Schema](g01-annotation-schema.md)
+   - [G-01 Trial Case Records](g01-cases/README.md)
+   - [G-01 Topology Comparison](g01-topology-comparison.md)
+   - [G-01 Dimensional and Proportional Analysis](g01-dimensional-analysis.md)
+   - [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md)
+   - [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md)
+
+   Current position: the pilot grammar machinery has been tested; **G-01 itself is not validated** and no universal room-ratio rule is promoted.
 
 5. [Validity and Obligations](validity-and-obligations.md)  
-   Defines what kinds of validity exist, what a compile failure means, how obligations are discharged and what a successful compile may legitimately claim.
+   Defines validity dimensions, compile failure, obligation discharge and what successful compilation may legitimately claim.
 
 6. [Evidence and Provenance Architecture](evidence-and-provenance.md)  
-   Defines evidence classes, scope, lifecycle, future evidence plans, dependency invalidation and release manifests.
+   Defines evidence classes, scope, lifecycle, future evidence plans, dependency invalidation and release-manifest concepts.
+
+   - [External Evidence Trial 01 — Mapeguard WP](external-evidence-trial-mapeguard-wp-v01.md) — first structured real product/system-evidence test; demonstrates applicability, scope and selective invalidation without inflating manufacturer evidence into whole-building proof.
 
 7. [Compiler Targets](compiler-targets.md)  
-   Defines the versioned regulatory/normative environment against which compilation occurs, beginning conceptually with England.
+   Versioned regulatory/normative environments, beginning with England.
 
-   - [S0 Compiler Target Snapshot v0.1 — England / 2026-10-03](s0-target-snapshot.md) — immutable target used by Run 01; retained with its known omissions for reproducibility.
-   - [S0 Compiler Target Snapshot v0.2](s0-target-snapshot-v02.md) — same normative date, corrected target-model coverage after red-team; adds K, Q, Regulation 7 and broader B/F applicability tests.
-   - [S0 Compiler Target Snapshot v0.3](s0-target-snapshot-v03.md) — hardens transitional applicability: an October-2026 application can retain the earlier L/F basis only if the relevant work commences before the March-2028 transition deadline.
-   - [S1 Compiler Target Snapshot v0.1](s1-target-snapshot-v01.md) — room-scale target extension adding Part-M Category-1 accessibility, doorway/circulation, service controls and quantitative purge-role tests.
+   - [S0 Target v0.1](s0-target-snapshot.md)
+   - [S0 Target v0.2](s0-target-snapshot-v02.md)
+   - [S0 Target v0.3](s0-target-snapshot-v03.md)
+   - [S1 Target v0.1](s1-target-snapshot-v01.md)
+
+   The target model preserves the distinction among legal requirements, statutory guidance/compliance routes, standards, product evidence and project/doctrine requirements.
 
 8. [Structural Semantics](structural-semantics.md)  
-   Separates physical structure, structural topology and analytical idealisation; defines load-path semantics, proof envelopes and S0 structural obligations.
+   Separates physical structure, structural topology and analytical idealisation.
 
-   - [Structural Assurance Boundary — H1 v0](structural-assurance-boundary-h1-v01.md) — programme decision: native topology/dependency reasoning, with member/connection/stability/foundation adequacy allowed as scoped external engineering evidence in H1 v0.
+   - [Structural Assurance Boundary — H1 v0](structural-assurance-boundary-h1-v01.md) — topology/applicability/dependency native; member/connection/stability/foundation adequacy may be scoped external evidence in H1 v0.
 
 9. [Boundary Semantics](boundary-semantics.md)  
-   Models air, thermal, weather, moisture, fire, acoustic and related boundaries as overlapping first-class graphs with typed transitions and penetrations.
+   Models air, thermal, weather, moisture, fire, acoustic and related boundaries as overlapping first-class graphs.
 
-   - [BF-WIN-MCW-01 — Window in Partial-Fill Masonry Cavity Wall](boundary-family-window-masonry-v01.md) — first instantiated boundary-family candidate for weather, moisture, thermal and air continuity.
-   - [BF-CORNER-MCW-01 — Orthogonal Masonry Cavity-Wall External Corner](boundary-family-external-masonry-corner-v01.md) — supported corner route with shared boundary continuity and scoped external technical evidence.
-   - [BF-GF-MCW-01 — Ground Floor to Masonry Cavity Wall Perimeter](boundary-family-ground-floor-masonry-v01.md) — supported moisture/air/thermal perimeter route with ground/floor/structural evidence external.
+   Supported/research families include:
 
-10. [Supported Domain](supported-domain.md)
+   - [BF-WIN-MCW-01 — Window / masonry wall](boundary-family-window-masonry-v01.md)
+   - [BF-CORNER-MCW-01 — External masonry corner](boundary-family-external-masonry-corner-v01.md)
+   - [BF-GF-MCW-01 — Ground floor / masonry wall perimeter](boundary-family-ground-floor-masonry-v01.md)
+   - [PEN-ENV-01 — Controlled service penetration](boundary-family-controlled-penetration-v01.md) — wall/roof service crossings treated as typed transitions across independent weather, cavity/moisture, air, thermal and maintenance obligations.
+   - [WZ-BSM-01 — Bonded sheet-membrane wet zone](wet-zone-family-bonded-sheet-v01.md) — waterproof boundary, corners, drain and penetration system rather than “tiles are waterproof”.
 
-   - [H1 Capability Matrix — Post-S1](h1-capability-matrix-v01.md) — historical first whole-house audit.
-   - [H1 Capability Matrix — Post-Services v0.2](h1-capability-matrix-v02.md) — historical audit used to authorize S2 research.
-   - [H1 Capability Matrix — Post-S2 / Environmental Correction v0.3](h1-capability-matrix-v03.md) — **current Gate-B audit**; preserves S2, reopens the preferred ventilation family and defines the final pre-H1-PAPER gates.
-   - [RF-TRUSS-DUO-01 — Simple Duo-Pitched Trussed-Rafter Cold Roof](roof-family-trussed-duopitch-v01.md) — first H1 roof-family candidate; roof geometry/boundary semantics native, truss adequacy supplied by scoped manufacturer/engineer evidence.
-   - [ST-PRIVATE-01 — Private Timber Stair](stair-family-private-v01.md) — straight-flight/rectangular-landing H1 stair family; Part-K geometry native, floor-opening/structural adequacy external, fire/accessibility roles remain building/target scoped.
-   - [ENTR-DOOR-MCW-01 — Principal External Doorset](entrance-family-principal-masonry-v01.md) — first H1 entrance family combining threshold/accessibility, security, envelope continuity, structure and replacement.
-   - [H1 Passive Environmental Strategy v0.1](h1-passive-environmental-strategy-v01.md) — establishes the current environmental hierarchy: reduce load, exploit passive capability, add bounded assistance, then use fully mechanical response where evidence justifies it.
-   - [H1 Ventilation Strategy Decision v0.1](h1-ventilation-strategy-decision-v01.md) — historical decision that selected CMEV before the post-S2 passive-first review.
-   - [H1 Ventilation Strategy Decision v0.2](h1-ventilation-strategy-decision-v02.md) — **current ventilation decision**; selects hybrid passive-stack ventilation as the preferred research route while preserving CMEV/MVHR alternatives and an explicit evidence gate.
-   - [VENT-HYBRID-STACK-01 — Hybrid Passive-Stack Ventilation](ventilation-family-hybrid-stack-v01.md) — preferred research-family candidate with purpose-provided inlets, transfer routes, near-vertical wet-room stacks and low-pressure assistance only where natural forces are insufficient; not yet promoted to trusted H1 support.
-   - [VENT-CMEV-01 — Central Continuous Mechanical Extract](ventilation-family-cmev-v01.md) — historical S2 family and current supported fallback; accessible central extract plant, wet-room ducting, habitable-room background inlets and transfer-air semantics.
-   - [H1 Heating Strategy Decision](h1-heating-strategy-decision-v01.md) — selects air-to-water heat pump + low-temperature radiators and rejects embedded wet UFH as the H1 baseline.
-   - [HEAT-ASHP-RAD-01 — Air-to-Water Heat Pump + Low-Temperature Radiators](heating-family-ashp-radiators-v01.md) — accessible hydronic heating topology with competent heat-loss/sizing evidence external.
-   - [H1 Services Target Extension](h1-services-target-extension-v01.md) — adds Part G/H and whole-house water/drainage/hot-water obligations to the research target.
-   - [FIRE-H1-2S-EGRESS-01 — Two-Storey Escape-Window Fire Route](fire-family-two-storey-egress-v01.md) — bounded B1 research route for ordinary two-storey dwellings; upper escape windows, alarm obligations and hall/final-exit topology; external review required.
-   - [WET-CORE-01 — Clustered Wet Core with Zonal Service Walls](wet-service-family-core-v01.md) — short gravity routes, accessible riser, zonal isolation and high-consequence appliance geography.
-   - [SR-ROOM-LOW-01 — Accessible Low-Level Room Service Route](service-family-room-low-level-v01.md) — first supported room-service geography for electrical/data plus a simple hydronic emitter branch, with technical services design external.  
-   Defines the compiler competence boundary, Domain S0 for paper compilation, and candidate H1 whole-house scope using conservative technical baselines.
+10. **Supported Domain / H1**
 
-   - [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) — exact first manual integration-test specification.
-   - [S0 Frozen Source Package](s0-source-package.md) — explicit nominal test geometry, assumptions, boundaries and four frozen mutations.
-   - [S0 Paper Compilation Run 01](s0-paper-compile-run-01.md) — first end-to-end manual compile; research model coherent, building release correctly fails on missing proof.
-   - [Interface Obligation Bundles](interface-obligation-bundles.md) — Run-01 scaling response: recurring architectural interfaces hide proof complexity behind semantic relationships.
-   - [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md) — shows bundles must contribute to shared graphs before canonical obligations are derived; avoids duplicate checklists one abstraction higher.
-   - [S0 Run 01 Red Team](s0-red-team-run-01.md) — adversarial pass that finds missed Part K/Q/Regulation 7/B/F obligations, cross-domain window conflicts and target-versioning requirements.
-   - [S0-A Conventional Workmanship Route](s0-conventional-workmanship-route.md) — gives the ordinary control explicit datum, acceptance, remediation and evidence semantics without inventing unsupported numerical tolerances.
-   - [S0 Complexity Gate](s0-complexity-gate.md) — explicit course guardrail: internal rigor may scale, authoring bureaucracy may not.
-   - [S0 Run 02 Source Overlay](s0-source-package-v02.md) — repeats the wall-bay condition twice and adds only the context needed to test scaling and operational-window semantics.
-   - [S0 Paper Compilation Run 02](s0-paper-compile-run-02.md) — broader regulatory/semantic coverage with two repeated bays; provisional complexity-gate pass and no release claim.
-   - [S1 Research Brief](s1-research-brief.md) — next-scale falsification fixture: a complete ground-floor principal room with corner, two windows, door, floor/ceiling and service route.
-   - [S1 Frozen Source Package](s1-source-package.md) — fixed room geometry, multi-role openings/door, service branch, project-order profile and seven mutations.
-   - [S1 Paper Compilation Run 01](s1-paper-compile-run-01.md) — room-scale complexity pass; introduces obligation scope and contextual-role warnings while correctly failing release.
-   - [S2 Research Brief](s2-research-brief.md) — connected two-storey cluster fixture testing hierarchy, sequence, stair arrival, service-core placement, façade order and candidate fire topology.
-   - [S2 Frozen Source Package](s2-source-package.md) — fixed principal/secondary rooms, hall, stair, service core, representative bedroom, opening hierarchy and eight mutations.
-   - [S2 Paper Compilation Run 01](s2-paper-compile-run-01.md) — connected-cluster complexity pass; proves technical validity and architectural validity can diverge, and seeds a provisional “resolvable within current family” research state. **Frozen historical run; do not rerun merely to substitute the later ventilation family.**
+   Current audit:
 
-11. [Prior Art Map](prior-art-map.md)  
-   Initial map of relevant work in IFC/openBIM, machine-readable information requirements, automated compliance checking, ontologies, shape grammars and automated planning.
+   - [H1 Capability Matrix v0.5 — Post-H1-PAPER Freeze](h1-capability-matrix-v05.md) — **current capability/proof-boundary record**.
 
-## Current pre-H1-PAPER sequence
+   Historical audits:
 
-1. prove or reject the VENT-HYBRID-STACK-01 performance/evidence route;
-2. harden one ordinary wet-zone waterproofing assembly family;
-3. harden one controlled envelope-penetration family;
-4. run one structured real external-evidence exercise;
-5. obtain competent external review when available;
-6. freeze and run H1-PAPER-01;
-7. final red-team / capability freeze;
-8. stop expanding the paper ontology and move to external review, prototyping or implementation.
+   - [v0.4 — Pre-H1-PAPER Freeze](h1-capability-matrix-v04.md)
+   - [v0.3 — Post-S2 / Environmental Correction](h1-capability-matrix-v03.md)
+   - [v0.2 — Post-Services](h1-capability-matrix-v02.md)
+   - [v0.1 — Post-S1](h1-capability-matrix-v01.md)
 
-See [Research Programme v0.2](research-programme-v02.md) for the gating logic and inherited grand TODOs.
+   Key H1 families/decisions:
 
-## Working dependency order
+   - [RF-TRUSS-DUO-01 — Simple duo-pitched trussed-rafter roof](roof-family-trussed-duopitch-v01.md)
+   - [ST-PRIVATE-01 — Private timber stair](stair-family-private-v01.md)
+   - [ENTR-DOOR-MCW-01 — Principal external doorset](entrance-family-principal-masonry-v01.md)
+   - [FIRE-H1-2S-EGRESS-01 — Two-storey escape-window fire route](fire-family-two-storey-egress-v01.md)
+   - [WET-CORE-01 — Clustered wet core](wet-service-family-core-v01.md)
+   - [SR-ROOM-LOW-01 — Accessible low-level room service route](service-family-room-low-level-v01.md)
+   - [H1 Services Target Extension](h1-services-target-extension-v01.md)
+
+### Environment / ventilation
+
+- [H1 Passive Environmental Strategy](h1-passive-environmental-strategy-v01.md) — governing hierarchy: reduce load → passive capability → bounded assistance → fully mechanical response where justified.
+- [H1 Ventilation Decision v0.1](h1-ventilation-strategy-decision-v01.md) — historical CMEV-first decision.
+- [H1 Ventilation Decision v0.2](h1-ventilation-strategy-decision-v02.md) — current passive-first/hybrid research posture.
+- [VENT-HYBRID-STACK-01](ventilation-family-hybrid-stack-v01.md) — research-supported topology; competent whole-house performance proof remains external.
+- [Hybrid Ventilation Evidence Trial 01](h1-hybrid-ventilation-evidence-trial-v01.md) — feasibility/evidence-boundary trial; not a performance certificate.
+- [VENT-CMEV-01](ventilation-family-cmev-v01.md) — supported fallback and historical S2 family.
+
+MVHR remains a legitimate higher-complexity alternative; no paper conclusion declares hybrid ventilation universally superior.
+
+### Heating
+
+- [H1 Heating Strategy Decision](h1-heating-strategy-decision-v01.md)
+- [HEAT-ASHP-RAD-01 — ASHP + low-temperature radiators](heating-family-ashp-radiators-v01.md)
+
+Heating topology is research-supported; real heat loss, plant/emitter sizing, hydraulics, controls and commissioning remain external.
+
+## Paper-compilation record
+
+### S0 — wall-bay scale
+
+- [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md)
+- [S0 Frozen Source Package](s0-source-package.md)
+- [S0 Paper Compilation Run 01](s0-paper-compile-run-01.md)
+- [Interface Obligation Bundles](interface-obligation-bundles.md)
+- [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md)
+- [S0 Run 01 Red Team](s0-red-team-run-01.md)
+- [S0-A Conventional Workmanship Route](s0-conventional-workmanship-route.md)
+- [S0 Complexity Gate](s0-complexity-gate.md)
+- [S0 Run 02 Source Overlay](s0-source-package-v02.md)
+- [S0 Paper Compilation Run 02](s0-paper-compile-run-02.md)
+
+### S1 — room scale
+
+- [S1 Research Brief](s1-research-brief.md)
+- [S1 Frozen Source Package](s1-source-package.md)
+- [S1 Paper Compilation Run 01](s1-paper-compile-run-01.md)
+
+Key findings: evaluation scope must be explicit; contextual roles should remain relational rather than accumulating on physical entity schemas.
+
+### S2 — connected-cluster scale
+
+- [S2 Research Brief](s2-research-brief.md)
+- [S2 Frozen Source Package](s2-source-package.md)
+- [S2 Paper Compilation Run 01](s2-paper-compile-run-01.md)
+
+Key findings: architectural and technical validity can diverge; route roles are authored semantics; `RESOLVABLE WITHIN CURRENT FAMILY` is useful only as a non-release advisory state.
+
+S2 remains a frozen historical run using CMEV. Do not rewrite it merely because later environmental research changed the preferred H1 route.
+
+### H1-PAPER-01 — complete bounded house
+
+- [H1-PAPER Research Brief](h1-paper-research-brief.md)
+- [H1-PAPER Corrected Frozen Source](h1-paper-source-package.md)
+- [H1-PAPER Run 01](h1-paper-compile-run-01.md)
+- [H1-PAPER Final Internal Red Team](h1-paper-final-red-team.md)
+
+Headline result:
+
+~~~text
+RESEARCH COMPILE                PASS
+WHOLE-HOUSE COMPLEXITY GATE     PROVISIONAL PASS
+BUILDING RELEASE                FAIL — EXPECTED
+EXTERNAL PROFESSIONAL REVIEW    OPEN
+~~~
+
+The initial H1 source contained an impossible dining→kitchen adjacency. The whole-house pass caught it; the source was corrected without weakening any family or proof rule. This is now explicit evidence that **machine-enforced source well-formedness is a first implementation requirement**.
+
+## External review
+
+Historical pack:
+
+- [S0/S1/H1 Review Pack v0.1](external-review-pack-s0-s1-h1-v01.md)
+
+Current pack:
+
+- [H1-PAPER External Review Pack v0.2](external-review-pack-h1-paper-v02.md)
+
+Minimum external attack now requested from:
+
+- structural engineer;
+- building-control/fire/regulatory practitioner;
+- building-services/ventilation engineer.
+
+Preparation is not validation.
+
+## Current development sequence
+
+The default sequence is now:
+
+1. **freeze paper expansion** — complete;
+2. obtain competent external attack using the H1-PAPER review pack;
+3. implement the **minimal executable semantic/compiler vertical slice** defined in [Research Programme v0.4](research-programme-v04.md);
+4. test machine-enforced source well-formedness, obligation derivation, evidence scope and selective invalidation;
+5. perform one small physical/product prototype where doctrine meets workmanship;
+6. incorporate only evidence-driven paper corrections;
+7. decide whether the result earns heavier geometry/CAD/solver/product architecture.
+
+## Working dependency order after H1
 
 ~~~text
 ARCHITECTURAL DOCTRINE
         │
         ▼
-FORMAL ARCHITECTURAL MODEL
-        │
-        ├──────────────► ARCHITECTURAL GRAMMAR
-        │                        │
-        │                        ▼
-        │                SUPPORTED-DOMAIN WORK
+PAPER SEMANTIC / OBLIGATION / EVIDENCE MODEL
         │
         ▼
-VALIDITY + OBLIGATION MODEL
+H1-PAPER COMPLETE-HOUSE TEST
         │
-        ├──────────────► EVIDENCE / PROVENANCE MODEL
+        ├────────────► EXTERNAL COMPETENT ATTACK
         │
-        ▼
-COMPILER TARGET MODEL
-        │
-        ▼
-SUPPORTED-DOMAIN DEFINITION
+        ├────────────► PHYSICAL / PRODUCT PROTOTYPE
         │
         ▼
-PAPER COMPILATION OF REFERENCE HOUSE
+MINIMAL EXECUTABLE COMPILER KERNEL
         │
         ▼
-FORMAL GRAMMAR / LANGUAGE DESIGN
+FALSIFICATION / RED TEAM
         │
         ▼
-IMPLEMENTATION
+ONLY THEN: HEAVIER CAD / SOLVERS / RULE PACKS / PRODUCT
 ~~~
-
-The arrows are dependencies, not a schedule.
 
 ## Current rule
 
-**Do not start implementation because an implementation idea is exciting.**
+**Do not mistake permission to prototype for permission to build the full product.**
 
-Before code, the project should be able to answer:
+The first executable milestone must prove the core mechanism with deliberately simple geometry:
 
-- what things exist in the model;
-- what relationships between them matter;
-- what is impossible to express;
-- what is expressible but invalid;
-- what is merely undesirable;
-- what obligations a design creates;
-- what counts as evidence that an obligation has been discharged;
-- what the compiler target means;
-- what lies outside the supported domain;
-- exactly what a successful compile claims;
-- how the claim survives versioning and later alteration.
+- semantic identity;
+- typed relationships;
+- geometric well-formedness;
+- obligation derivation;
+- evidence scope;
+- selective invalidation;
+- supported/unsupported distinction;
+- intelligible diagnostics;
+- deterministic reproducibility.
 
-Until those questions are substantially answered, software would mostly fossilise premature assumptions.
+Do **not** begin with polished 3D CAD, a general structural solver, a full Building Regulations engine, IFC round-tripping, optimisation or generative AI design.
+
+Those capabilities must be earned by the compiler kernel and external review.
