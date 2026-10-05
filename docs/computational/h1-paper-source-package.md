@@ -1,7 +1,7 @@
 # H1-PAPER-01 — Frozen Complete-House Source Package
 
 **Source ID:** H1-PAPER-SOURCE-01  
-**Status:** frozen paper-compilation input  
+**Status:** frozen paper-compilation input — source erratum incorporated  
 **Date:** 2026-10-05  
 **Target basis:** current H1 England research target + services extension + current transition logic  
 **Grammar basis:** G01-PILOT-P0 only  
@@ -17,32 +17,18 @@ External footprint:
 
 **10,800 × 9,000 mm**
 
-Plan area per level:
-
-**97.20 m² gross bounding area**
-
-Two-storey gross bounding area:
-
-**194.40 m²**
-
-Front elevation:
-
-**SOUTH**
+- plan area per level = **97.20 m²** gross bounding area;
+- two-storey gross bounding area = **194.40 m²**;
+- front elevation = **SOUTH**;
+- ground FFL = **0 mm**;
+- upper FFL = **+3000 mm**.
 
 Coordinate system:
 
 - origin at south-west external corner;
 - +X east;
 - +Y north;
-- Z from ground finished floor level.
-
-Ground FFL:
-
-**0 mm**
-
-Upper FFL:
-
-**+3000 mm**
+- Z from ground FFL.
 
 Primary external form:
 
@@ -51,41 +37,28 @@ Primary external form:
 - simple duo-pitched roof;
 - ridge east–west at Y = 4500 mm;
 - nominal roof pitch 35° — research assumption;
-- north roof slope used for ordinary service terminals where possible.
+- north roof slope preferred for ordinary service terminals.
 
 ## 2. Organising plan
 
-The plan uses three longitudinal fields:
+Three longitudinal fields:
 
 ~~~text
 WEST ROOMS     CENTRAL SPINE      EAST ROOMS
 0–4400         4400–6400          6400–10800
 ~~~
 
-The central 2000 mm field contains:
+The 2000 mm central field contains principal entrance/hall, stair, upper landing and rear secondary/service circulation.
 
-- principal entrance/hall;
-- private stair;
-- upper landing/circulation;
-- rear secondary/service circulation.
-
-This is an architectural and technical organising device, not a claim that every supported house needs a central spine.
+This is a fixture-specific organising device, not a universal house rule.
 
 ## 3. Ground floor
 
 ### G-LIV-01 — principal living room
 
-Coordinates:
-
 - X = 0–4400;
-- Y = 0–4500.
-
-Nominal area:
-
-**19.80 m²**
-
-Roles:
-
+- Y = 0–4500;
+- area = **19.80 m²**;
 - PRINCIPAL_HABITABLE_ROOM;
 - architectural rank H1;
 - principal arrival destination;
@@ -94,74 +67,43 @@ Roles:
 
 ### G-STUDY-01 — secondary habitable room
 
-Coordinates:
-
 - X = 6400–10800;
-- Y = 0–4500.
-
-Nominal area:
-
-**19.80 m²**
-
-Roles:
-
+- Y = 0–4500;
+- area = **19.80 m²**;
 - SECONDARY_HABITABLE_ROOM;
-- architectural rank H2;
+- rank H2;
 - habitable ventilation inlet zone.
 
 ### G-DIN-01 — rear dining/family room
 
-Coordinates:
-
 - X = 0–4400;
-- Y = 4500–9000.
-
-Nominal area:
-
-**19.80 m²**
-
-Roles:
-
+- Y = 4500–9000;
+- area = **19.80 m²**;
 - HABITABLE_ROOM;
-- architectural rank H2;
+- rank H2;
 - rear garden-facing room;
-- habitable ventilation inlet zone.
-
-It connects to the central rear circulation and to the kitchen.
+- habitable ventilation inlet zone;
+- connects to G-REARHALL-01.
 
 ### G-KIT-01 — kitchen
 
-Coordinates:
-
 - X = 6400–10800;
-- Y = 4500–7000.
-
-Nominal area:
-
-**11.00 m²**
-
-Roles:
-
+- Y = 4500–7200;
+- area = **11.88 m²**;
 - KITCHEN;
 - wet-service consumer;
 - whole-house ventilation extract source;
 - separate cooking-source-capture obligation.
 
-The kitchen is **not** open to the stair/hall in a way that creates the unsupported open-plan fire condition.
+G-KIT-01 shares a real wall boundary with the central rear circulation from Y = 6200–7200 and is accessed through D-KIT-01.
+
+The kitchen is separated from the stair/hall by ordinary construction in the baseline and does not create the unsupported open-plan fire condition.
 
 ### G-UTIL-01 — utility / WC / plant / service-core room
 
-Coordinates:
-
 - X = 6400–10800;
-- Y = 7000–9000.
-
-Nominal area:
-
-**8.80 m²**
-
-Roles:
-
+- Y = 7200–9000;
+- area = **7.92 m²**;
 - UTILITY;
 - SANITARY;
 - WET_SERVICE_ZONE;
@@ -178,65 +120,43 @@ Contains or provides access to:
 - ASHP hydraulic interface/plant;
 - electrical/service distribution interface;
 - low-level room-service route origin;
-- ventilation stack/service riser access.
+- ventilation stack/service-riser access.
 
 No active item is intentionally buried in permanent masonry.
 
 ### G-HALL-01 — front principal hall
 
-Central spine:
-
 - X = 4400–6400;
-- Y = 0–3600.
-
-Nominal clear width:
-
-**2000 mm**
-
-Roles:
-
+- Y = 0–3000;
+- nominal clear width = **2000 mm**;
 - PRINCIPAL_CIRCULATION;
 - ACCESS_ROUTE;
-- FINAL_EXIT route contribution;
+- FINAL_EXIT contribution;
 - architectural arrival.
 
 ### ST-01 — private stair
 
-Central spine:
-
 - X = 4400–6400;
-- Y = 3600–7400.
-
-Family:
-
-**ST-PRIVATE-01**
-
-Configuration:
-
-- two straight flights;
-- rectangular intermediate landing;
+- Y = 3000–6200;
+- family = **ST-PRIVATE-01**;
+- two straight flights + rectangular intermediate landing;
 - nominal width = 900 mm;
-- total risers = 18;
+- 18 risers;
 - nominal rise = 166.7 mm;
 - nominal going = 250 mm;
 - upper FFL = +3000 mm.
 
-The exact structural stair/floor-opening adequacy remains external evidence under SAB-H1-01.
+The 3200 mm plan field is a source-level spatial reservation. Exact stair/member/headroom/floor-opening adequacy remains subject to the family and external structural evidence.
 
 ### G-REARHALL-01 — rear secondary circulation
 
-Central spine:
-
 - X = 4400–6400;
-- Y = 7400–9000.
-
-Roles:
-
+- Y = 6200–9000;
 - SECONDARY_CIRCULATION;
 - service-route distribution;
-- connection to G-DIN-01 and G-UTIL-01.
+- connects to G-DIN-01, G-KIT-01 and G-UTIL-01.
 
-It is deliberately subordinate to G-HALL-01 as principal arrival.
+It remains subordinate to G-HALL-01 as principal arrival.
 
 ## 4. Principal entrance
 
@@ -246,19 +166,10 @@ Family:
 
 **ENTR-DOOR-MCW-01**
 
-South/front wall.
-
-Centreline:
-
-**X = 5400 mm**
-
-Nominal clear opening:
-
-**900 mm — research assumption**
-
-Threshold:
-
-**step-free**
+- south/front wall;
+- centreline X = **5400 mm**;
+- nominal clear opening = **900 mm — research assumption**;
+- threshold = **step-free**.
 
 Roles:
 
@@ -269,73 +180,27 @@ Roles:
 - WEATHER/AIR/THERMAL transition;
 - architectural entrance.
 
-ENTR-01 centreline defines:
+ENTR-01 defines **AXIS-A01**. ST-01 is intentionally organised on the same scoped central axis.
 
-**AXIS-A01**
-
-ST-01 is intentionally organised on the same scoped central axis.
-
-This does not assert whole-building bilateral symmetry as a grammar rule.
+This does not assert whole-building bilateral symmetry.
 
 ## 5. Ground-floor internal doors/routes
 
-### D-LIV-01
+- **D-LIV-01:** G-HALL-01 → G-LIV-01; 850 mm nominal clear; principal relationship.
+- **D-STUDY-01:** G-HALL-01 → G-STUDY-01; 800 mm nominal clear.
+- **D-DIN-01:** G-REARHALL-01 → G-DIN-01; 800 mm nominal clear.
+- **D-KIT-01:** G-REARHALL-01 → G-KIT-01; 800 mm nominal clear; ordinary separating door in baseline.
+- **D-UTIL-01:** G-REARHALL-01 → G-UTIL-01; 850 mm nominal clear.
 
-G-HALL-01 → G-LIV-01.
-
-Nominal clear opening:
-
-**850 mm — research assumption**
-
-Principal-route relationship.
-
-### D-STUDY-01
-
-G-HALL-01 → G-STUDY-01.
-
-Nominal clear opening:
-
-**800 mm — research assumption**
-
-### D-DIN-01
-
-G-REARHALL-01 → G-DIN-01.
-
-Nominal clear opening:
-
-**800 mm — research assumption**
-
-### D-UTIL-01
-
-G-REARHALL-01 → G-UTIL-01.
-
-Nominal clear opening:
-
-**850 mm — research assumption**
-
-### O-DIN-KIT-01
-
-Ordinary internal opening/door connection between G-DIN-01 and G-KIT-01.
-
-It does not connect the kitchen directly to the stair.
-
-Transfer-air requirements are derived from the selected ventilation design; door/transfer geometry remains shared physical source information rather than a ventilation-only duplicate.
+Transfer-air requirements are derived from the selected ventilation design. Door/transfer geometry remains shared physical source information rather than a ventilation-only duplicate.
 
 ## 6. Upper floor
 
 ### B-P01 — principal bedroom
 
-Coordinates:
-
 - X = 0–4400;
-- Y = 0–4500.
-
-Nominal area:
-
-**19.80 m²**
-
-Roles:
-
+- Y = 0–4500;
+- area = **19.80 m²**;
 - HABITABLE_BEDROOM;
 - upper rank H1;
 - habitable ventilation inlet zone;
@@ -343,61 +208,34 @@ Roles:
 
 ### B-S01 — secondary front bedroom
 
-Coordinates:
-
 - X = 6400–10800;
-- Y = 0–4500.
-
-Nominal area:
-
-**19.80 m²**
-
-Roles:
-
+- Y = 0–4500;
+- area = **19.80 m²**;
 - HABITABLE_BEDROOM;
-- upper rank H2;
-- habitable ventilation inlet zone;
+- rank H2;
+- inlet zone;
 - escape-window obligation.
 
 ### B-S02 — rear bedroom
 
-Coordinates:
-
 - X = 0–4400;
-- Y = 4500–9000.
-
-Nominal area:
-
-**19.80 m²**
-
-Roles:
-
+- Y = 4500–9000;
+- area = **19.80 m²**;
 - HABITABLE_BEDROOM;
-- upper rank H2;
-- habitable ventilation inlet zone;
+- rank H2;
+- inlet zone;
 - escape-window obligation.
 
 ### BATH-01 — upper bathroom / wet zone
 
-Coordinates:
-
 - X = 6400–10800;
-- Y = 4500–7200.
-
-Nominal area:
-
-**11.88 m²**
-
-Roles:
-
+- Y = 4500–7200;
+- area = **11.88 m²**;
 - BATHROOM;
 - WET_ZONE;
 - ventilation extract zone;
-- stacked wet-service consumer.
-
-Family:
-
-**WZ-BSM-01**
+- stacked wet-service consumer;
+- family = **WZ-BSM-01**.
 
 Research arrangement:
 
@@ -406,34 +244,22 @@ Research arrangement:
 - waterproof wall/floor extent declared by family/detail;
 - drain transition;
 - pipe/control penetrations use system accessories;
-- dry-side service access from service zone where possible;
+- dry-side service access where possible;
 - inspection hold point before finish concealment.
 
-Product/evidence test reference:
-
-**Mapeguard WP evidence trial is available as a scoped example.**
-
-This does not turn the product trial into installed-instance proof.
+The Mapeguard WP trial is available as a scoped product/system evidence example, not installed-instance proof.
 
 ### U-SVC-01 — upper service / linen zone
 
-Coordinates:
-
 - X = 6400–10800;
-- Y = 7200–9000.
-
-Nominal area:
-
-**7.92 m²**
-
-Roles:
-
+- Y = 7200–9000;
+- area = **7.92 m²**;
 - vertical service-riser access;
 - linen/storage secondary use;
 - hybrid-assist/service access zone;
 - dry-side access for relevant bathroom services.
 
-Active ventilation-assist components, where required by the external design, are located here or in another equally accessible service position rather than at an inaccessible roof terminal.
+Active ventilation-assist components, where required, must be serviceable here or in equally accessible technical geography rather than at an inaccessible roof terminal.
 
 ### L-01 — upper landing/circulation
 
@@ -449,99 +275,77 @@ No habitable room is authored as an unresolved upper inner room.
 
 ## 7. Window/opening schedule
 
-All external window interfaces use:
-
-**BF-WIN-MCW-01**
-
-unless a later occurrence-specific detail proves outside its supported envelope.
+All external window interfaces use **BF-WIN-MCW-01** unless occurrence-specific evidence shows otherwise.
 
 ### Front/south
 
-#### WIN-LIV-01
-
-G-LIV-01.
+**WIN-LIV-01 — G-LIV-01**
 
 - 1800 × 1800 mm nominal;
 - centreline X = 2200 mm;
 - sill = 750 mm AFFL;
-- architectural role = PRIMARY_OPENING;
+- PRIMARY_OPENING;
 - purge/overheating contribution;
-- habitable-room ventilation inlet host/candidate location as selected by ventilation design.
+- ventilation inlet host/candidate location as selected by ventilation design.
 
-#### WIN-STUDY-01
+**WIN-STUDY-01 — G-STUDY-01**
 
-G-STUDY-01.
-
-- 1500 × 1500 mm nominal;
+- 1500 × 1500 mm;
 - centreline X = 8600 mm;
-- sill = 900 mm AFFL;
-- architectural role = SECONDARY_OPENING.
+- sill = 900 mm;
+- SECONDARY_OPENING.
 
-#### WIN-BP01
+**WIN-BP01 — B-P01**
 
-B-P01.
-
-- 1600 × 1500 mm nominal;
+- 1600 × 1500 mm;
 - centreline X = 2200 mm;
-- sill / bottom of effective escape opening = 900 mm AFFL — research assumption;
-- vertically aligned with WIN-LIV-01;
+- bottom of effective escape opening = 900 mm AFFL — test assumption;
+- aligned with WIN-LIV-01;
 - ESCAPE role;
-- effective unobstructed openable area = 0.60 m² — test assumption;
+- unobstructed openable area = 0.60 m² — test assumption;
 - effective openable dimensions each >450 mm — test assumption.
 
-#### WIN-BS01
+**WIN-BS01 — B-S01**
 
-B-S01.
-
-- 1200 × 1500 mm nominal;
+- 1200 × 1500 mm;
 - centreline X = 8600 mm;
-- sill / bottom of effective escape opening = 900 mm AFFL — research assumption;
-- vertically aligned with WIN-STUDY-01;
+- bottom of effective escape opening = 900 mm AFFL — test assumption;
+- aligned with WIN-STUDY-01;
 - ESCAPE role;
-- effective unobstructed openable area = 0.60 m² — test assumption;
+- openable area = 0.60 m² — test assumption;
 - effective openable dimensions each >450 mm — test assumption.
 
 ### Rear/north
 
-#### WIN-DIN-01
+**WIN-DIN-01 — G-DIN-01**
 
-G-DIN-01.
-
-- 1800 × 1500 mm nominal;
+- 1800 × 1500 mm;
 - purge/overheating contribution;
-- habitable-room ventilation inlet host/candidate location.
+- ventilation inlet host/candidate location.
 
-#### WIN-BS02
+**WIN-BS02 — B-S02**
 
-B-S02.
-
-- 1500 × 1500 mm nominal;
+- 1500 × 1500 mm;
 - ESCAPE role;
-- bottom of effective escape opening = 900 mm AFFL — research assumption;
-- effective unobstructed openable area = 0.60 m² — test assumption;
+- bottom of effective escape opening = 900 mm AFFL — test assumption;
+- openable area = 0.60 m² — test assumption;
 - effective openable dimensions each >450 mm — test assumption.
 
-#### WIN-UTIL-01
+**WIN-UTIL-01 — G-UTIL-01**
 
-G-UTIL-01.
-
-- 900 × 900 mm nominal;
+- 900 × 900 mm;
 - ordinary secondary opening.
 
 ### East
 
-#### WIN-KIT-01
+**WIN-KIT-01 — G-KIT-01**
 
-G-KIT-01.
-
-- 1200 × 1200 mm nominal;
+- 1200 × 1200 mm;
 - ordinary kitchen opening/purge contribution.
 
-#### WIN-BATH-01
+**WIN-BATH-01 — BATH-01**
 
-BATH-01.
-
-- 900 × 1200 mm nominal;
+- 900 × 1200 mm;
 - natural light/openable purge contribution;
 - not relied upon as the normal extract system.
 
@@ -551,102 +355,67 @@ Research grammar:
 
 **G01-PILOT-P0**
 
-### Hierarchy
+Hierarchy:
 
-- G-LIV-01 = principal ground room H1;
-- G-STUDY-01/G-DIN-01 = secondary H2;
-- B-P01 = principal upper bedroom;
-- B-S01/B-S02 = secondary upper bedrooms;
+- G-LIV-01 = ground H1;
+- G-STUDY-01/G-DIN-01 = H2;
+- B-P01 = upper H1;
+- B-S01/B-S02 = H2;
 - G-HALL-01/ST-01 = principal circulation;
 - G-REARHALL-01/service routes = secondary/service circulation.
 
-### Principal sequence
+Principal sequence:
 
 ~~~text
-OUTSIDE
-  → ENTR-01
-  → G-HALL-01
-  → D-LIV-01
-  → G-LIV-01
+OUTSIDE → ENTR-01 → G-HALL-01 → D-LIV-01 → G-LIV-01
 ~~~
 
-### Vertical sequence
+Vertical sequence:
 
 ~~~text
-ENTR-01
-  → G-HALL-01
-  → ST-01
-  → L-01
-  → upper rooms
+ENTR-01 → G-HALL-01 → ST-01 → L-01 → upper rooms
 ~~~
 
-### Scoped axis
+AXIS-A01 scopes entrance/hall/stair only.
 
-AXIS-A01 contains:
-
-- ENTR-01;
-- G-HALL-01 principal arrival line;
-- ST-01 route.
-
-### Front opening hierarchy
+Front opening rank:
 
 - WIN-LIV-01 = PRIMARY;
 - WIN-STUDY-01 = SECONDARY;
-- upper opening alignments preserve two explicit vertical coupling relations.
+- upper openings carry explicit vertical alignments.
 
-No universal room-ratio rule is enforced.
-
-The result may be ordered/classically sympathetic without claiming validated Georgian grammar.
+No universal room-ratio rule is enforced. The fixture does not claim validated Georgian grammar.
 
 ## 9. Structural source topology
 
-Structural assurance boundary:
+Assurance boundary:
 
 **SAB-H1-01**
 
-### External walls
-
-Masonry cavity walls participate in the structural support graph.
-
-### Central spine
-
-The two principal longitudinal spine support lines at approximately X = 4400 and X = 6400 provide a simple upper-floor support geography where applicable.
-
-### Upper floor
-
-I-joist topology.
-
-Preferred wing spans are approximately:
-
-- west external wall ↔ west spine support;
-- east spine support ↔ east external wall.
-
-The stair opening lies inside the central field and generates trimmer/member/connection obligations without requiring a large transfer across a principal room.
+- masonry external walls participate in support graph;
+- spine support lines at approximately X = 4400 and X = 6400 provide simple upper-floor support geography;
+- I-joist upper-floor wings span approximately external wall ↔ spine support;
+- stair opening lies inside central field and generates trimmer/member/connection obligations;
+- opening heads generate support obligations;
+- roof support graph remains explicit.
 
 Native/semantic:
 
 - support identities;
-- spanning directions;
-- opening dependency;
+- spanning direction;
+- opening dependencies;
 - load-path continuity requirement.
 
 External:
 
-- joist sizes;
+- joist/member sizes;
 - reactions;
-- trimmers;
-- connections;
+- trimmers/connections;
 - wall/masonry capacity;
 - global stability;
-- foundation/geotechnical adequacy.
+- foundations/geotechnics.
 
-### Ground/foundation
-
-Ground floor uses the supported BF-GF-MCW-01 perimeter/boundary route.
-
-Foundation/geotechnical design remains explicitly external.
-
-The source does not invent footing dimensions.
+Ground floor uses BF-GF-MCW-01 perimeter/boundary semantics. No footing dimensions are invented.
 
 ## 10. Roof
 
@@ -654,21 +423,20 @@ Family:
 
 **RF-TRUSS-DUO-01**
 
-Source geometry:
-
 - ridge east–west at Y = 4500 mm;
-- nominal roof pitch = 35°;
-- north and south eaves;
+- nominal pitch = 35°;
+- north/south eaves;
 - east/west gables;
-- no hips/valleys/dormers.
+- no hips, valleys or dormers;
+- no habitable loft.
 
-Roof structural adequacy remains external manufacturer/engineer evidence.
+Nominal sloping area, ignoring eaves overhang:
 
-Source-derived nominal sloping roof area, ignoring eaves overhang:
+**≈118.7 m²**
 
-approximately **118.7 m²**.
+Structural adequacy remains external manufacturer/engineer evidence.
 
-Roof terminals are concentrated on the rear/north slope where technically feasible.
+Roof terminals are concentrated on the north/rear slope where feasible.
 
 ## 11. Fire / escape
 
@@ -676,35 +444,35 @@ Family:
 
 **FIRE-H1-2S-EGRESS-01**
 
-Source conditions:
+Baseline:
 
-- upper floor at +3.0 m;
-- one ordinary private stair;
-- no habitable loft;
-- no integral garage;
-- no unsupported open-plan kitchen/stair arrangement;
-- B-P01, B-S01 and B-S02 each carry an ESCAPE window role;
-- ground living/study/dining rooms connect to circulation leading to ENTR-01 final exit;
-- dwelling alarm-system obligation generated at building scope.
+- upper floor +3.0 m;
+- one private stair;
+- no habitable loft/garage;
+- kitchen separated from stair/hall;
+- B-P01/B-S01/B-S02 each have ESCAPE window role;
+- ground living/study/dining connect to circulation leading to ENTR-01 final exit;
+- alarm obligation generated at dwelling scope.
 
-Fire-family result remains research-supported and subject to competent external review.
+Status remains research-supported with competent external review required.
 
 ## 12. Accessibility
 
-Research target:
+Research baseline:
 
-**Category 1 / M4(1) route**
+**Category 1 / M4(1)**
 
-Source deliberately provides:
+Source provides:
 
-- step-free principal entrance;
-- wide principal hall;
-- ordinary entrance-storey habitable rooms;
-- ground-floor WC within G-UTIL-01;
-- direct accessible route from entrance/hall to the principal ground-floor rooms and WC;
-- service controls/outlets intended to remain within target-supported zones.
+- step-free entrance;
+- 2000 mm principal hall research width;
+- entrance-storey habitable rooms;
+- ground WC within G-UTIL-01;
+- direct route from entrance/hall to ground rooms and WC;
+- representative clear door openings;
+- accessible service-control intent.
 
-Exact target checks remain derived obligations; no Category 2/3 claim is made.
+Exact target checks remain compiler obligations. No M4(2)/M4(3) claim is made.
 
 ## 13. Wet/service core
 
@@ -712,7 +480,7 @@ Family:
 
 **WET-CORE-01**
 
-Vertical service geography is concentrated in the east-rear field:
+East-rear geography:
 
 ~~~text
 ROOF TERMINALS
@@ -724,83 +492,46 @@ G-UTIL-01 / G-KIT-01
 planned substructure/drainage route
 ~~~
 
-The compiler treats:
-
-- potable water;
-- hot water;
-- sanitary drainage;
-- ventilation;
-- heating hydraulics;
-- electrical/data
-
-as distinct networks that share geography where appropriate.
-
-They are not collapsed into one generic MEP network.
+Potable water, hot water, drainage, ventilation, heating hydraulics and electrical/data remain distinct networks that share geography where appropriate.
 
 ## 14. Potable water / drainage
 
-Authorised topology:
+Topology:
 
-- incoming water route to G-UTIL-01 service hub;
-- accessible isolation/valve cluster;
-- hot-water cylinder in G-UTIL-01;
-- short branch to G-KIT-01;
-- short branch to ground WC/utility fixtures;
-- vertical riser to BATH-01;
-- soil/waste stack aligned with the wet core;
-- upper shower drain/wastes descend through planned service/floor crossing;
-- rodding/access retained;
-- appliance leak/failure zone directed away from inaccessible permanent fabric where practicable.
+- incoming water to G-UTIL-01 service hub;
+- accessible isolation cluster;
+- cylinder in G-UTIL-01;
+- short kitchen/utility/WC branches;
+- vertical bathroom riser;
+- soil/waste stack aligned with wet core;
+- shower/wastes descend through planned floor/service crossing;
+- rodding/access retained.
 
-External competent evidence remains required for:
-
-- pipe sizing;
-- pressure/flow;
-- hot-water safety details;
-- waste/soil sizing;
-- falls;
-- underground drainage;
-- discharge arrangements.
+External competent evidence owns pipe sizing, pressure/flow, hot-water safety, waste/soil sizing, falls, underground drainage and discharge arrangements.
 
 ## 15. Wet-zone waterproofing
 
-Family:
-
-**WZ-BSM-01**
-
 Occurrence:
 
-**WZ-BATH-01 in BATH-01**
+**WZ-BATH-01**
 
-Source owns:
+Source owns wet-zone extent, substrate identity, shower fall/drain geometry, pipe/control penetrations, drain transition, junction/corner identities and dry-side access relationship.
 
-- wet-zone boundary extent;
-- substrate identity;
-- shower fall/drain geometry;
-- pipe/control penetrations;
-- drain transition identity;
-- junction/corner identities;
-- dry-side service-access relationship.
+Mapeguard WP may be referenced as candidate system evidence. Release still requires occurrence-specific applicability, selected product identity and construction evidence.
 
-The Mapeguard WP structured evidence trial may be referenced as the candidate system evidence example.
+Tiles/grout are finish, not waterproofing proof.
 
-Release still requires occurrence-specific applicability, product identity, substrate/drain compatibility and construction evidence.
+## 16. Ventilation / IAQ topology
 
-Tiles/grout are finish, not the waterproofing proof.
-
-## 16. Ventilation / indoor-air-quality topology
-
-Selected research family:
+Family:
 
 **VENT-HYBRID-STACK-01**
 
-Governing hierarchy:
+Hierarchy:
 
-**passive first; mechanical assistance only where natural driving force cannot reliably discharge the obligation.**
+> passive first; mechanical assistance only where natural driving force cannot reliably discharge the obligation.
 
-### Purpose-provided outdoor-air inlet zones
-
-Habitable rooms:
+Purpose-provided outdoor-air obligations:
 
 - G-LIV-01;
 - G-STUDY-01;
@@ -809,45 +540,21 @@ Habitable rooms:
 - B-S01;
 - B-S02.
 
-Exact inlet products/areas/locations remain part of the external ventilation design and site/acoustic/pollution evidence.
+Extract zones:
 
-### Extract zones
-
-- G-KIT-01 — whole-house extract contribution, separate from enhanced cooking-source capture;
-- G-UTIL-01 / WC;
+- G-KIT-01 — whole-house extract contribution distinct from enhanced cooking source capture;
+- G-UTIL-01/WC;
 - BATH-01.
 
-### Vertical stack geography
+Near-vertical stack routes use east-rear service geography and terminate through PEN-ROOF-TERM-01 on the north roof slope.
 
-Near-vertical stack routes use the east-rear service geography and terminate through the north roof slope using PEN-ROOF-TERM-01.
+The source does not assume unrelated extract streams may be combined merely because a shared shaft is convenient.
 
-The source permits separate stack/terminal occurrences as required by competent design.
+Any low-pressure assist component required by external design must remain accessible from U-SVC-01 or equivalent service geography. Stopped-fan/passive-path claims require evidence.
 
-It does not assume that several extract streams can be combined merely because a common shaft is convenient.
+Openable windows supply purge capability subject to actual Part-O analysis.
 
-### Mechanical assistance
-
-If external performance design requires low-pressure assistance, the active assist module must be serviceable from U-SVC-01 or equivalent accessible technical geography.
-
-Stopped-fan/passive-path claims require system evidence.
-
-### Purge / summer heat removal
-
-Openable external windows provide purge capability subject to target/whole-house Part-O analysis.
-
-No claim is made that openable windows alone discharge overheating obligations.
-
-### Cooking source capture
-
-A dedicated cooker-hood/source-capture obligation is generated separately.
-
-Its duct uses:
-
-**PEN-WALL-CORE-01**
-
-through the east or north external wall.
-
-Detailed hood/make-up-air/pressure/grease performance remains external and is not silently treated as solved by VENT-HYBRID-STACK-01.
+Cooking source capture is a separate obligation and uses PEN-WALL-CORE-01. Hood/make-up-air/grease/pressure performance remains external.
 
 ## 17. Controlled envelope penetrations
 
@@ -855,31 +562,17 @@ Family:
 
 **PEN-ENV-01**
 
-Planned occurrences include at least:
+Planned occurrences include:
 
-### Roof
+- hybrid ventilation roof terminal(s);
+- soil-vent terminal where required;
+- kitchen source-capture wall duct;
+- ASHP/hydronic wall crossing;
+- grouped incoming-service entry if final design requires it.
 
-- hybrid ventilation terminal(s);
-- soil-vent terminal where required by drainage design.
+Each occurrence carries independent weather, cavity/moisture, airtightness, thermal, service-support, product/evidence and maintenance obligations plus fire/acoustic branches where applicable.
 
-### Wall
-
-- kitchen source-capture duct;
-- ASHP/hydronic-service crossing;
-- any selected grouped incoming service entry required by the final technical design.
-
-Each occurrence carries independent obligations for:
-
-- weather;
-- cavity/moisture;
-- airtightness;
-- thermal continuity;
-- service support;
-- product/detail evidence;
-- maintenance/replacement;
-- fire/acoustic branches if applicable.
-
-No penetration receives a generic `sealed = true` flag.
+No generic `sealed = true` state exists.
 
 ## 18. Heating / hot water
 
@@ -887,26 +580,14 @@ Family:
 
 **HEAT-ASHP-RAD-01**
 
-Source:
-
-- external air-to-water heat-pump unit at rear/north-east service side;
+- external ASHP at north-east service side;
 - short controlled wall penetration to G-UTIL-01;
-- accessible hydraulic plant and cylinder in G-UTIL-01;
+- accessible hydraulic plant + cylinder;
 - low-temperature radiators in habitable rooms;
-- accessible low-level hydronic branch routes rather than embedded wet UFH.
+- accessible hydronic routes;
+- no embedded wet UFH baseline.
 
-External evidence required:
-
-- room heat loss;
-- whole-house demand;
-- ASHP capacity/performance;
-- emitter sizes;
-- hydraulic design;
-- controls;
-- noise/siting;
-- commissioning.
-
-Heating is downstream of fabric/environmental demand reduction.
+External evidence owns heat loss, plant/emitter sizing, hydraulics, controls, noise/siting and commissioning.
 
 ## 19. Electrical / data
 
@@ -914,34 +595,31 @@ Family:
 
 **SR-ROOM-LOW-01**
 
-Source geography:
-
-- accessible distribution origin near G-UTIL-01/service spine;
+- accessible distribution origin near service hub/spine;
 - low-level room routes;
-- sockets/data in replaceable/accessed service geography;
-- controls associated with doors/surrounds where project pattern selects them;
-- no routine cabling buried unpredictably in permanent structural masonry.
+- replaceable/accessed socket/data geography;
+- no routine unpredictable burial in structural masonry.
 
-Electrical technical design / Part-P competence remains external.
+Electrical technical design/Part-P competence remains external.
 
 ## 20. Maintenance geography
 
-The source declares first-class access for:
+First-class access is declared for:
 
-- G-UTIL-01 plant/valves/cylinder;
-- vertical service riser;
-- U-SVC-01 ventilation-assist components if used;
-- drain/rodding access;
+- cylinder/hydraulic plant/valves;
+- service riser;
+- ventilation assist if used;
+- rodding/drainage access;
 - radiator valves/connections;
 - room service routes;
-- wet-room dry-side service access where possible;
-- replaceable envelope penetration collars/terminal-side connections where detail permits.
+- wet-room dry-side access where possible;
+- maintainable penetration-side connections where detail requires.
 
-Maintenance validity is independent of whether the system could technically operate while inaccessible.
+Maintenance validity remains independent of whether an inaccessible system could still operate.
 
 ## 21. Boundary graph
 
-Primary boundaries include:
+Primary boundaries:
 
 - WEATHER;
 - AIR;
@@ -954,234 +632,166 @@ Primary boundaries include:
 
 Windows, entrance, corners, floor perimeter, roof and penetrations contribute to shared boundary graphs before canonical obligations are derived.
 
-Do not duplicate one air-boundary checklist per family occurrence.
-
 ## 22. Source-derived quantities
 
-These are geometric/source outputs only, not a QS cost plan.
+Geometric/source outputs only:
 
-- external footprint = 97.20 m²;
-- two-storey gross bounding area = 194.40 m²;
-- external perimeter = 39.60 m;
-- principal rectangular external-wall height basis = 3.0 m ground + 2.7 m upper research assumption where needed for rough quantity views;
-- nominal sloping roof area ≈ 118.7 m² before overhang/waste;
-- ground habitable room areas = 50.60 m² excluding kitchen/service/circulation;
-- upper bedroom area = 59.40 m²;
-- one bonded wet-zone bathroom occurrence;
-- nine scheduled external window occurrences;
-- one principal external doorset occurrence;
+- footprint = **97.20 m²**;
+- two-storey gross bounding area = **194.40 m²**;
+- external perimeter = **39.60 m**;
+- nominal sloping roof area ≈ **118.7 m²** before overhang/waste;
+- ground habitable-room source area = **59.40 m²** for G-LIV/G-STUDY/G-DIN;
+- upper bedroom source area = **59.40 m²**;
+- one bonded wet-zone occurrence;
+- nine scheduled external windows;
+- one principal external doorset;
 - three upper escape-window roles;
-- at least two planned wall-service-penetration occurrences plus roof/service terminals as technical design resolves them.
+- at least two planned wall-service penetrations plus roof/service terminals as technical design resolves them.
 
-Commercial rates, waste factors, labour and procurement remain outside this source.
+Commercial pricing/labour/waste/procurement are outside this source.
 
 ## 23. Evidence plan
 
-### Available research evidence
+Available research evidence:
 
 - current target/source register;
-- existing boundary-family research;
-- structured Mapeguard WP product/system trial;
+- existing family research;
+- Mapeguard WP structured evidence trial;
 - hybrid ventilation evidence-boundary trial;
-- source-derived geometry/topology.
+- source geometry/topology.
 
-### External design evidence required before release
+External design evidence required before release:
 
-- structural member/connection/stability calculations;
-- foundation/geotechnical design;
-- whole-dwelling Part-L/SAP evidence;
-- Part-O overheating analysis;
-- hybrid ventilation airflow/control/energy/acoustic/site analysis;
+- structure/foundations/geotechnics;
+- Part L/SAP;
+- Part O;
+- ventilation airflow/control/energy/acoustic/site analysis;
 - heating design;
 - water/drainage design;
 - electrical design;
-- occurrence-specific product selections/certifications;
+- occurrence-specific product certifications;
 - competent fire/building-control review.
 
-### Physical/as-built evidence required later
-
-- installed dimensions/levels;
-- airtightness testing;
-- ventilation commissioning/performance;
-- heating commissioning;
-- wet-zone installation hold-point evidence;
-- penetration photographs/inspection;
-- drainage/water tests;
-- alarm installation/commissioning;
-- substitutions/change records.
+Later physical evidence includes installed dimensions, airtightness, commissioning, wet-zone hold points, penetration inspection, drainage/water tests, alarm commissioning and substitution/change records.
 
 ## 24. Frozen baseline invariants
 
 1. one semantic source owns physical entities;
 2. contextual roles are relational;
-3. services stay in declared accessible geography except controlled crossings;
+3. services stay in accessible geography except controlled crossings;
 4. no active service is intentionally buried in permanent structural fabric;
 5. architecture remains primary to compiler convenience;
 6. airtightness and ventilation are separate propositions;
 7. wet-zone finish is not waterproofing proof;
 8. external evidence remains scoped and cannot silently become native PASS;
-9. unsupported is different from invalid;
-10. RESOLVABLE-within-family is not current validity;
-11. G01-PILOT-P0 is not validated Georgian grammar;
-12. foundation/whole-house analytical evidence may remain external without disappearing.
+9. unsupported ≠ invalid;
+10. RESOLVABLE-within-family ≠ current validity;
+11. G01-PILOT-P0 ≠ validated Georgian grammar;
+12. external whole-house technical proof may remain unresolved but visible.
 
 ## 25. Frozen mutations
 
 ### H1-M01 — move wet/service core west
 
-Relocate G-UTIL-01/U-SVC-01/BATH service alignment approximately 3000 mm west while keeping room identities and external form fixed.
+Relocate G-UTIL-01/U-SVC-01/service alignment ~3000 mm west while keeping room identities/external form fixed.
 
-Purpose:
-
-- attack service-network length;
-- stack verticality;
-- floor penetrations;
-- wet-zone dry-side access;
-- maintenance geography;
-- evidence invalidation.
+Tests network length, stack verticality, floor penetrations, wet-zone dry-side access, maintenance and evidence invalidation.
 
 ### H1-M02 — raise upper floor
 
-Upper FFL:
+Upper FFL **3000 → 3250 mm** without initially changing ST-01.
 
-**3000 → 3250 mm**
+Tests family re-solving and selective staleness while keeping RESOLVABLE distinct from valid.
 
-Do not initially change ST-01 geometry.
+### H1-M03 — remove escape function from WIN-BS01
 
-Purpose:
+Window becomes fixed glazing while masonry opening remains.
 
-- reproduce family re-solving at whole-house scale;
-- stale stair/structure/envelope/service evidence selectively;
-- keep `RESOLVABLE WITHIN CURRENT FAMILY` separate from valid.
+Tests fire-role failure without erasing window boundary.
 
-### H1-M03 — remove escape function from one bedroom window
+### H1-M04 — incomplete wet-zone product substitution
 
-WIN-BS01 becomes fixed glazing while masonry opening remains.
+Substitute the membrane but retain old tape/corner/drain accessory evidence.
 
-Purpose:
+Tests system-level evidence while geometry remains unchanged.
 
-- make fire fail without making the wall/window weather boundary disappear.
+### H1-M05 — lose ASHP penetration air seal
 
-### H1-M04 — substitute wet-zone membrane incompletely
+Retain exterior weather detail/service route but omit internal air-barrier collar.
 
-Replace the specified WZ-BSM-01 membrane product with an apparently similar sheet membrane but retain old tapes/corners/drain accessory evidence.
+Tests independent boundary states.
 
-Purpose:
+### H1-M06 — block B-P01 outdoor-air inlet
 
-- test system-level product evidence;
-- geometry remains unchanged;
-- waterproofing evidence becomes stale/invalid.
+Seal the purpose-provided normal inlet while leaving escape/purge window operational.
 
-### H1-M05 — lose the air-barrier seal at the ASHP penetration
-
-Retain exterior weather terminal/seal and service route but remove/omit the internal air-barrier collar connection.
-
-Purpose:
-
-- AIR boundary fails;
-- WEATHER may remain current;
-- heating network topology remains current.
-
-### H1-M06 — block one bedroom outdoor-air inlet
-
-Seal/obstruct the purpose-provided inlet serving B-P01 while leaving the escape/purge window otherwise operational.
-
-Purpose:
-
-- ventilation normal-operation obligation fails/stales;
-- fire escape and ordinary window boundary can remain valid.
+Tests ventilation-specific invalidation.
 
 ### H1-M07 — remove mechanical-assist availability
 
-Delete/disable the bounded assist capability from the selected hybrid family without replacing performance evidence.
+Keep passive stacks/inlets but delete/disable bounded assist with no replacement evidence.
 
-Purpose:
+Tests physical passive path versus proven normal-operation adequacy.
 
-- passive topology remains physically present;
-- whole-house ventilation adequacy becomes unresolved unless external evidence independently proves the operating envelope.
+### H1-M08 — move stair off AXIS-A01
 
-### H1-M08 — move stair off principal axis
+Shift ST-01 centreline ~+400 mm while preserving technically plausible geometry for the mutation.
 
-Shift ST-01 route centreline approximately +400 mm within a technically feasible central field while preserving rise/going/headroom assumptions.
-
-Purpose:
-
-- architectural scoped-axis validity changes;
-- technical stair geometry may remain valid;
-- demonstrates architectural ≠ technical validity.
+Tests architectural versus technical validity.
 
 ### H1-M09 — invert front opening hierarchy
 
-Enlarge WIN-STUDY-01 so its declared visual treatment/area clearly dominates WIN-LIV-01 while room ranks remain unchanged.
+Enlarge/promote WIN-STUDY-01 so it dominates WIN-LIV-01 while room ranks remain unchanged.
 
-Purpose:
-
-- G01-PILOT opening-rank relation fails/deviates;
-- structural/head/product evidence must re-evaluate;
-- ventilation role may remain satisfiable.
+Tests architectural hierarchy plus selective structural/product recalculation.
 
 ### H1-M10 — create unsupported structural transfer
 
-Remove a required spine support segment and demand that the upper floor/roof load route bridge across an enlarged opening without selecting a supported transfer family.
+Remove a required spine support segment and demand unsupported long-span transfer.
 
-Purpose:
-
-- leave the H1 supported structural domain;
-- return OUTSIDE SUPPORTED DOMAIN rather than inventing a beam.
+Tests OUTSIDE SUPPORTED DOMAIN behaviour.
 
 ### H1-M11 — open kitchen to stair route
 
-Remove the separation between G-KIT-01 and the stair/hall so the only ordinary circulation condition becomes an open-plan kitchen/stair arrangement.
+Remove the separating condition between G-KIT-01 and stair/hall to create an open-plan kitchen/stair arrangement.
 
-Purpose:
-
-- leave FIRE-H1-2S-EGRESS-01;
-- architecture may remain spatially attractive;
-- compiler must request another fire strategy rather than silently pass.
+Tests fire-family applicability without declaring the architecture itself malformed.
 
 ### H1-M12 — obstruct plant withdrawal/working volume
 
-Add fixed storage/joinery in G-UTIL-01 that prevents removal/service of the hot-water cylinder/hydraulic plant while leaving pipe connections and operating clearances superficially plausible.
+Add fixed storage/joinery blocking cylinder/hydraulic plant replacement while leaving connections superficially intact.
 
-Purpose:
-
-- maintenance geography fails;
-- heating/water topology may remain technically connected;
-- doctrine failure remains independently visible.
+Tests maintenance/doctrine validity independent of network connectivity.
 
 ## 26. Authoring burden
 
-The author supplies:
+The author supplies building/storeys, spaces, openings/doors, stair, hierarchy/routes, support intent, service-core location, supported system choices, major plant/terminal positions and selected evidence references.
 
-- building/storeys;
-- spaces;
-- openings/doors;
-- stair;
-- architectural hierarchy/routes;
-- support lines/spanning intent;
-- service-core location;
-- supported system-family choices;
-- exterior/site-side locations for major plant/terminals;
-- selected evidence references where known.
+The author does **not** manually author separate fire/ventilation/air-boundary/waterproofing/structural copies of the house or invalidation dependency lists.
 
-The author does **not** manually author:
+## 27. Erratum record
 
-- one fire checklist per bedroom;
-- one Part-F checklist per room;
-- one air-boundary checklist per penetration;
-- one waterproofing checklist per corner;
-- one structural checklist per opening;
-- duplicated room graphs for structure/fire/services;
-- invalidation dependencies.
+The first frozen draft accidentally declared a direct G-DIN-01 → G-KIT-01 opening even though the central spine geometrically separated those rooms.
 
-Those are derived compiler responsibilities.
+The first red-team pass caught the contradiction before final programme freeze.
 
-## 27. Freeze statement
+This revision corrects only the fixture topology:
 
-This source is now frozen for H1-PAPER-01.
+- front hall ends at Y = 3000;
+- stair occupies Y = 3000–6200;
+- rear hall begins at Y = 6200;
+- kitchen occupies Y = 4500–7200;
+- utility/service room occupies Y = 7200–9000;
+- dining, kitchen and utility connect independently to the rear hall.
 
-Do not improve the plan during compilation merely to make an obligation pass.
+No compiler abstraction, family selection or research conclusion was changed to force a pass.
 
-Do not add a new family merely because one mutation leaves the supported domain.
+## 28. Freeze statement
 
-The purpose of the run is to expose the limits of the current abstraction exactly as it stands.
+This corrected source is the final baseline for H1-PAPER-01.
+
+Do not improve the plan during compilation merely to satisfy obligations.
+
+Do not add a family merely because a mutation leaves the supported domain.
+
+The run exists to expose the limits of the current abstraction.
