@@ -1,6 +1,6 @@
 # The Long-Life House — Governing Principles v1.0
 
-**Status:** v1.2 working refinement — repose / low-vigilance integration  
+**Status:** v1.3 working refinement — external maintenance geography integration  
 **Purpose:** public-facing principles for the professional publication. These supersede the 63-item register as the primary doctrine, while the register remains as a traceability appendix.
 
 ## Governing constraints
@@ -41,9 +41,11 @@ The first question is not only “how does this work?” but “how does it fail
 
 ## 5. Give maintenance a geography
 
-**Organise maintenance-intensive systems, working spaces, access routes and replacement paths as a coherent spatial topology established during design.**
+**Organise maintenance-intensive systems, working spaces, access routes, supporting ground and replacement paths as a coherent spatial topology established during design.**
 
-Access is more than a hatch. A person needs a route, a working position, isolation, tools, light and—sometimes—the ability to withdraw a large component from the building.
+Access is more than a hatch or nominal clearance. A person needs an approach route, a safe working position, tools and handling space and—where components are replaced—a credible withdrawal and delivery path.
+
+The same rule applies outside the weather envelope. Façade and roof geometry, the ground plane, landscape, courtyards and routes from the site entrance should preserve ordinary safe means of inspection, cleaning, repair and replacement. A component is not meaningfully accessible merely because it can technically be reached.
 
 ## 6. Prefer ordinary parts in extraordinary arrangements
 
