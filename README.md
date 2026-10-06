@@ -56,13 +56,15 @@ For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.
 | Area | Purpose | Start here |
 |---|---|---|
 | **Project state** | Current maturity, risks and next gates | [STATUS.md](STATUS.md) |
+| **Documentation model** | What each documentation area owns, canonicality and placement rules | [`docs/README.md`](docs/README.md) |
 | **Source** | Preserved original doctrine; provenance rather than current publication | [House Design Doctrine v7](docs/source/house-design-doctrine-v7.md) |
 | **Manuscript** | Public architectural argument, governing principles and book structure | [Publication architecture](docs/manuscript/publication-architecture.md) · [Governing principles](docs/manuscript/governing-principles.md) · [Preface](docs/manuscript/preface.md) |
 | **Editorial** | Canonical prose modes, stylistic controls and rewrite protocol | [Editorial doctrine](docs/editorial/editorial-doctrine.md) |
 | **Patterns** | Reusable architectural responses and experimental candidates | [Core patterns](docs/patterns/core-12.md) · [`docs/patterns/`](docs/patterns/) |
 | **Reference house** | Worked architectural/technical interpretation and coordination studies | [`docs/reference-house/`](docs/reference-house/) |
 | **Research** | Evidence syntheses, precedent, options appraisals and claim hardening | [`docs/research/`](docs/research/) |
-| **Development / prototypes** | Integration controls, manufacturing strategy, test programmes and build packs | [Prototype programme](docs/development/tectonic-prototype-programme.md) · [`docs/prototypes/`](docs/prototypes/) |
+| **Development** | Internal integration, migration, manufacturing strategy and prototype/test programme control | [`docs/development/README.md`](docs/development/README.md) · [Prototype programme](docs/development/tectonic-prototype-programme.md) |
+| **Prototypes** | Concrete build/test artefacts, technical details and later test records/results | [`docs/prototypes/README.md`](docs/prototypes/README.md) · [W2 wall-bay build pack](docs/prototypes/w2-wall-bay-build-pack.md) |
 | **Delivery** | Translation into requirements for an appointed design team | [RIBA implementation brief template](docs/delivery/riba-implementation-brief-template.md) |
 | **Computational** | Executable-architecture research, paper compilation, evidence model and compiler gates | [Computational track index](docs/computational/README.md) |
 
@@ -75,4 +77,5 @@ For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.
 - **Negative evidence is useful.** A prototype, engineer or external reviewer killing an attractive idea is successful research.
 - **Architectural quality remains the constraint.** Maintainability, reversibility and technical legibility do not justify a house that is spatially poor, visually unsettled, acoustically hollow or disproportionately complex.
 - **The computational track remains subordinate to the architecture.** Its internal paper-compilation phase is complete; post-freeze doctrine changes are audited explicitly, external review and a minimal executable vertical slice come next, and heavy implementation remains gated.
+- **Repository structure and publication navigation are separate concerns.** A website may curate labels, routes and reading order, but the repository remains the source of truth and content should not be duplicated merely to serve the site.
 - **`STATUS.md` is the canonical answer to “where are we now?”** Track-specific documents own detailed TODOs; the root README should remain a durable map of what the project is and how the repo is organised.
