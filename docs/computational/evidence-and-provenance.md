@@ -1,36 +1,20 @@
-# Evidence and Provenance Architecture — Conceptual v0.1
+# Evidence and Provenance Architecture — Conceptual v0.2
 
 **Status:** foundational research draft  
-**Purpose:** define how a future compiled building can show its working, preserve the scope and origin of every material claim, plan evidence that can only be collected later, and invalidate stale conclusions when the building changes.  
-**Implementation:** none.
+**Purpose:** define how compiled claims retain origin, scope, lifecycle and invalidation  
+**Implementation:** none
 
-> **A green result is only trustworthy if another person can discover what was claimed, why it applied, how it was established, what assumptions it depended on and which building version it describes.**
+A green result is useful only if another person can answer: **what was claimed, why did it apply, how was it established, what did it depend on, and which building version does it describe?**
 
-## 1. Evidence is part of the architecture
+## 1. Different claims need different evidence
 
-The computational proposition is not merely to run rules against a model.
+A stair width may be established by geometry. A beam may need calculation. A wall may rely on tested evidence. Ground conditions come from investigation. Installation quality may require inspection before closure. Ventilation performance may not be known until commissioning.
 
-It is to create a resolved building whose important claims are accompanied by an auditable chain of reasoning and evidence.
+These are different epistemic acts. The system should preserve that difference rather than flattening them into one compliance Boolean.
 
-A house contains different kinds of truth:
+## 2. Evidence sits inside obligation discharge
 
-- a stair width can be established geometrically;
-- a beam may be justified by calculation;
-- a wall assembly may rely on tested evidence;
-- ground conditions may rely on site investigation;
-- an installation may need inspection before closure;
-- ventilation performance may only be known after commissioning;
-- an unusual route may require professional judgement.
-
-These are different epistemic acts.
-
-The system should preserve the difference rather than reducing them all to one compliance Boolean.
-
-## 2. Relationship to obligations
-
-The existing validity model defines compilation as **obligation discharge**.
-
-The evidence model makes that idea explicit:
+The validity model defines compilation as obligation discharge. The evidence model makes the chain inspectable:
 
 ~~~text
 REQUIREMENT SOURCE
@@ -50,218 +34,88 @@ DETERMINATION
 COMPILE STATUS
 ~~~
 
-Every arrow needs provenance.
+Each transition needs provenance.
 
-## 3. Do not collapse source, rule, evidence and decision
+## 3. Keep source, rule, evidence and decision separate
 
 ### Requirement source
-
-The authority or origin of a proposition.
-
-Examples:
-
-- legislation;
-- Approved Document;
-- British Standard;
-- manufacturer system requirement;
-- Long-Life House doctrine;
-- G-01 architectural grammar;
-- client brief.
+The authority or origin: legislation, Approved Document, standard, manufacturer requirement, Long-Life House doctrine, architectural grammar or client brief.
 
 ### Rule implementation
-
-The interpretation used by the compiler.
-
-A source document and its computational implementation are different versioned things.
-
-A bug may exist in a rule implementation even when the source requirement has not changed.
+The compiler's versioned interpretation of that source. A rule implementation can contain a bug even when the source has not changed.
 
 ### Applicability decision
-
-Why the rule applies to this entity/project.
-
-Examples:
-
-- this building is a new dwelling in England;
-- this wall is part of the thermal envelope;
-- this opening lies within structural family SF-01.
-
-Applicability should itself be inspectable.
+Why the rule applies to this project/entity. Applicability itself should be inspectable.
 
 ### Obligation
-
-A proposition that must be resolved.
-
-Example:
-
-> Opening O17 requires adequate structural support under the applicable action set.
+The proposition that must be resolved.
 
 ### Evidence
-
-Information capable of supporting or resolving that proposition within a declared scope.
+Information capable of supporting the proposition within a declared scope.
 
 ### Determination
+The result of applying the accepted method to the evidence.
 
-The result produced by applying the accepted method to the evidence.
+Evidence does not pass itself; a method determines whether it is sufficient for this obligation.
 
-Evidence does not magically pass itself.
+## 4. Conceptual evidence record
 
-A method determines whether that evidence is sufficient for this obligation.
+A significant evidence item should carry, where relevant:
 
-## 4. Evidence item model
-
-Every significant evidence item should conceptually carry:
-
-- stable ID;
-- evidence class;
-- subject(s);
-- proposition(s) supported;
-- producer / origin;
-- creation date;
-- method;
-- source artifact;
+- stable ID and class;
+- subject(s) and propositions supported;
+- producer/origin and creation date;
+- method and source artefact;
 - building/model version;
-- target/rule-pack version where relevant;
-- parameter scope;
-- geometric scope;
-- lifecycle phase;
-- assumptions;
-- dependencies;
-- validity period if relevant;
-- supersession state;
-- acceptance state;
-- rights/licensing/access metadata where relevant.
+- target/rule-pack version;
+- parameter, geometry and lifecycle scope;
+- assumptions and dependencies;
+- validity period where relevant;
+- supersession and acceptance state;
+- rights/licensing/access metadata.
 
 No storage format is implied.
 
 ## 5. Evidence classes
 
-### E1 — semantic inference
+### E1 — Semantic inference
+Derived directly from model relationships.
 
-Produced directly from the semantic model.
+### E2 — Geometric query
+Clearance, width, bearing length, opening area or other deterministic geometry.
 
-Example:
+### E3 — Engineering calculation
+Structural, thermal, ventilation, drainage or similar calculation. Preserve method, inputs, units, assumptions, parameters, implementation version and output.
 
-- no routine electrical route crosses a prohibited permanent-fabric zone.
+### E4 — Bounded design table / verified envelope
+A family selection valid only inside a declared parameter range.
 
-### E2 — geometric query
+### E5 — Tested assembly / classification
+Fire, acoustic, weather or other tested system. Preserve construction and permitted field of application.
 
-Examples:
+### E6 — Product / manufacturer evidence
+Declared properties, ratings and installation requirements. Product evidence does not automatically prove an arbitrary assembly containing the product.
 
-- clear width;
-- bearing length;
-- maintenance clearance;
-- opening area.
+### E7 — Site / survey evidence
+Topographic survey, ground investigation, existing-building survey.
 
-### E3 — engineering calculation
+### E8 — Inspection evidence
+Measured bearing, concealed-work photograph, fixing spacing, installed product identity.
 
-Examples:
+### E9 — Commissioning / test evidence
+Airtightness, ventilation flow, electrical test, functional water test and similar completion evidence.
 
-- beam utilisation;
-- thermal transmittance;
-- ventilation sizing;
-- drainage calculation.
+### E10 — External professional determination
+A competent person resolves a proposition outside native compiler authority. Record the exact proposition and scope.
 
-Must preserve method, inputs, units, assumptions, parameters, implementation version and output.
+### E11 — Statutory / regulatory decision
+Approval, certificate or planning decision where relevant. This is evidence about a legal process, not native compiler proof.
 
-### E4 — bounded design table / verified envelope
+## 6. Scope is part of the evidence
 
-Example:
+Every evidence item must answer **what exactly does this establish?**
 
-- member or lintel selection from a verified family within a declared span/loading range.
-
-The evidence must state the envelope.
-
-### E5 — tested assembly / classification
-
-Examples:
-
-- fire-resistance test;
-- acoustic test;
-- weather test.
-
-Preserve the tested construction and permitted field of application.
-
-### E6 — product declaration / manufacturer evidence
-
-Examples:
-
-- thermal property;
-- dimensional tolerance;
-- load rating;
-- installation requirements.
-
-A product declaration does not automatically prove an arbitrary assembly containing that product.
-
-### E7 — site / survey evidence
-
-Examples:
-
-- topographic survey;
-- ground investigation;
-- existing-building survey.
-
-### E8 — inspection evidence
-
-Examples:
-
-- measured bearing before closure;
-- photograph of cavity/fire-stop condition;
-- installed fixing spacing;
-- product identity.
-
-### E9 — commissioning / test evidence
-
-Examples:
-
-- air-tightness;
-- ventilation flow;
-- electrical test;
-- functional water test.
-
-### E10 — external professional determination
-
-Examples:
-
-- structural engineer accepts an out-of-domain connection;
-- fire engineer supplies a specialist strategy;
-- competent reviewer accepts an alternative solution.
-
-The exact proposition determined and scope must be recorded.
-
-### E11 — statutory / regulatory decision
-
-Examples:
-
-- building control approval;
-- completion certificate;
-- planning decision where relevant.
-
-A regulatory decision is evidence about a legal process.
-
-It is not the same thing as native compiler proof.
-
-## 6. Evidence scope is fundamental
-
-Evidence must answer:
-
-> **What exactly does this establish?**
-
-Potential scope dimensions:
-
-- entity;
-- assembly family;
-- occurrence;
-- geometry;
-- dimensions;
-- loading;
-- material;
-- environment;
-- installation condition;
-- target version;
-- lifecycle phase.
-
-For example:
+Scope may depend on entity, family, occurrence, geometry, dimensions, loading, material, environment, installation condition, target version and lifecycle phase.
 
 ~~~text
 Test T-004
@@ -274,35 +128,15 @@ applies to:
   penetration condition = P
 ~~~
 
-Changing a scoped parameter may invalidate the inheritance.
+Change a scoped parameter and inheritance may disappear. This is why `wall-is-fire-safe = true` is an inadequate evidence model.
 
-This is why evidence cannot be stored as a field such as wall-is-fire-safe = true.
+## 7. Family versus occurrence evidence
 
-## 7. Family evidence and occurrence evidence
+**Family-level evidence** supports a reusable design envelope: a tested wall assembly, engineered joist table or certified window family.
 
-The system should distinguish:
+**Occurrence-level evidence** supports a particular installed instance: the specified board was actually installed, bearing was measured, the fire stop was inspected.
 
-### Family-level evidence
-
-Evidence applies to a reusable design envelope.
-
-Examples:
-
-- tested wall assembly;
-- engineered joist table;
-- certified window family.
-
-### Occurrence-level evidence
-
-Evidence applies to a particular installed instance.
-
-Examples:
-
-- this wall used the specified board;
-- this beam has the required bearing;
-- this fire stop was inspected before closure.
-
-A future compiled house may therefore reason:
+A future release may therefore say:
 
 ~~~text
 FAMILY WF-03
@@ -318,98 +152,50 @@ current phase:
   PHYSICAL CONFORMANCE = NOT YET DUE
 ~~~
 
-## 8. Time-phased obligations
+## 8. Evidence has a lifecycle
 
-A major refinement is that evidence has a lifecycle.
-
-At design stage, some obligations cannot yet be physically evidenced.
-
-Every obligation should therefore carry a **due phase**.
+Some evidence cannot exist at design stage. Every obligation therefore needs a **due phase**.
 
 Candidate phases:
 
-- CONCEPT;
-- COORDINATED DESIGN;
-- TECHNICAL DESIGN;
-- PRE-MANUFACTURE;
-- PRE-CLOSURE;
-- INSTALLATION;
-- COMMISSIONING;
-- COMPLETION;
-- IN-USE;
-- ALTERATION.
+`CONCEPT` / `COORDINATED DESIGN` / `TECHNICAL DESIGN` / `PRE-MANUFACTURE` / `PRE-CLOSURE` / `INSTALLATION` / `COMMISSIONING` / `COMPLETION` / `IN-USE` / `ALTERATION`
 
-### Due-now obligation
+A **due-now** obligation blocks the current release if unresolved.
 
-Must be discharged before the current release can pass.
+A **future evidence obligation** is legitimate when method, owner, due phase/hold point and failure response are already defined.
 
-### Future evidence obligation
+This lets compilation produce an evidence plan for construction rather than pretending design-stage information can prove future workmanship.
 
-The method is known, but the evidence can only be generated later.
+## 9. Evidence plan
 
-Example:
-
-> verify backplane fixing installation before lining closure.
-
-A design release can pass if:
-
-- the future obligation is explicitly planned;
-- the evidence method is defined;
-- responsible party is defined;
-- hold point / due phase is defined;
-- failure response is defined.
-
-This turns compilation into an **evidence plan for construction**, not merely a design report.
-
-## 9. Evidence plans
-
-A compiled technical design should be capable of outputting an evidence plan.
+A technical-design compile should be able to produce something like:
 
 | Obligation | Evidence required | Due phase | Responsible party | Hold point | Failure response |
 |---|---|---|---|---|---|
-| INT-017 | measure panel datum after backplane adjustment | pre-closure | installer / inspector | HP-12 | remediate before lining |
+| INT-017 | measure panel datum after adjustment | pre-closure | installer / inspector | HP-12 | remediate before lining |
 | STR-044 | verify beam bearing | pre-closure | contractor | HP-21 | stop / engineer review |
 | VENT-012 | measured extract flow | commissioning | commissioning engineer | CP-03 | rebalance / rectify |
 | PROD-008 | product identity | installation | contractor | — | reject substitution |
 
-The table is illustrative.
-
-The important concept is:
-
-> **future proof obligations become explicit construction tasks.**
-
-This aligns directly with the existing workmanship-robustness and hold-point doctrine.
+Future proof obligations become explicit construction tasks.
 
 ## 10. Evidence states
 
-Evidence should have its own state independent of obligation result.
+Evidence state is independent of obligation result.
 
-### PLANNED
-Required later; method, owner and due phase are defined.
+- **PLANNED** — required later; method, owner and phase known.
+- **PRESENT** — artefact exists but has not been accepted for this obligation.
+- **ACCEPTED** — checked as applicable and sufficient.
+- **REJECTED** — exists but does not satisfy scope/quality requirements.
+- **STALE** — a dependency changed; re-evaluation required.
+- **SUPERSEDED** — replaced by newer accepted evidence but retained historically.
+- **WITHDRAWN** — source/product/certification formally withdrawn where relevant.
 
-### PRESENT
-Artifact/data exists but has not yet been validated for this obligation.
+An old calculation may therefore remain stored without governing the current release.
 
-### ACCEPTED
-Evidence has been checked as applicable and sufficient for the method.
+## 11. Dependencies and invalidation
 
-### REJECTED
-Evidence exists but does not satisfy scope/quality requirements.
-
-### STALE
-A dependency changed and the evidence must be regenerated or re-evaluated.
-
-### SUPERSEDED
-A newer accepted item replaces it; history remains.
-
-### WITHDRAWN
-The evidence source/product/certification has been formally withdrawn where that distinction matters.
-
-This allows the system to explain why an old calculation remains stored but no longer governs the release.
-
-## 11. Dependency and invalidation
-
-Evidence must know what it depends on.
+Evidence should declare the facts it depends on.
 
 ~~~text
 CALC-221 Beam B14
@@ -421,7 +207,7 @@ depends on:
   target parameters NA-ENG-01
 ~~~
 
-If a design change alters SUP-W12:
+If `SUP-W12` changes:
 
 ~~~text
 SUP-W12 changed
@@ -433,15 +219,11 @@ STR-044 becomes UNRESOLVED
 release status changes
 ~~~
 
-The old calculation is not deleted.
+The old calculation remains historical evidence for the earlier building version. This is the basis of incremental recompilation.
 
-It becomes historical evidence for the earlier building version.
+## 12. Assumptions are dependencies too
 
-This is the conceptual foundation of incremental recompilation.
-
-## 12. Assumptions are dependencies
-
-An assumption should never live only in narrative notes.
+Assumptions should be structured facts rather than narrative caveats.
 
 ~~~text
 ASSUMPTION GEO-004
@@ -452,17 +234,11 @@ must be replaced by = site investigation
 due phase = TECHNICAL DESIGN
 ~~~
 
-Any result depending on GEO-004 inherits the provisional condition.
+Dependent results inherit that provisional status. When real evidence replaces the assumption, compare the value, invalidate affected evidence and recompile.
 
-When real site evidence replaces the assumption:
+## 13. Rule and applicability provenance
 
-- compare actual value;
-- invalidate dependent evidence where necessary;
-- recompile.
-
-## 13. Rule provenance and applicability provenance
-
-Every machine rule should be traceable through:
+A machine rule should be traceable through:
 
 ~~~text
 machine rule ID
@@ -476,11 +252,9 @@ source requirement / guidance / standard
 source version / date
 ~~~
 
-Where a source is copyrighted, provenance can reference it without reproducing protected text.
+Copyrighted sources can be referenced without reproducing protected text.
 
-The system should also preserve **why a rule ran**.
-
-Example:
+Also retain **why the rule ran**:
 
 ~~~text
 RULE STAIR-017 applies because:
@@ -491,86 +265,42 @@ RULE STAIR-017 applies because:
   exception E4 = false
 ~~~
 
-A NOT-APPLICABLE result should also retain its reason.
+`NOT APPLICABLE` should carry the same kind of explanation.
 
 ## 14. Human judgement provenance
 
-Some conditions cannot legitimately be reduced to deterministic logic.
-
-When a competent person makes a determination, preserve:
+Where a competent person determines a proposition, record:
 
 - person/role/organisation;
 - competence basis where relevant;
-- exact proposition determined;
+- exact proposition;
 - material reviewed;
 - assumptions;
-- date;
-- scope;
+- date and scope;
 - limitations;
-- changes that trigger re-review.
+- changes requiring re-review.
 
-Avoid a vague record such as “engineer approved”.
+“Engineer approved” is not enough. The determination should be tied to the state it actually covers.
 
-Prefer a scoped determination tied to a calculation, geometry and load/material state.
+## 15. Do not fake evidence strength
 
-## 15. Evidence strength is not a fake probability
+Avoid invented percentages such as “97% compliant” without a real probabilistic method.
 
-The project should resist invented percentages such as “97% compliant” unless a real probabilistic method justifies them.
+Prefer explicit attributes: direct/indirect, native/external, family/occurrence, current/stale, complete/incomplete, within/outside scope, design/physical, deterministic/judgement-based.
 
-Prefer explicit characteristics:
+## 16. Design, physical and in-use evidence
 
-- direct / indirect;
-- native / external;
-- family / occurrence;
-- current / stale;
-- complete / incomplete;
-- within / outside scope;
-- design / physical;
-- deterministic / judgement-based.
+**Design evidence** supports the resolved model: geometry, calculations, specification, product selection.
 
-## 16. Design evidence and physical evidence
+**Physical-conformance evidence** supports the claim that construction corresponds to that model: identity, measurement, inspection, test and commissioning.
 
-### Design evidence
+**In-use evidence** records later stewardship: maintenance, replacement, failure and measured performance.
 
-Supports claims about the proposed/resolved model.
-
-Examples:
-
-- structural calculation;
-- geometry;
-- specification;
-- product selection.
-
-### Physical-conformance evidence
-
-Supports claims that the built thing corresponds to the design.
-
-Examples:
-
-- installed product identity;
-- measured dimension;
-- photograph;
-- inspection;
-- test;
-- commissioning.
-
-### In-use evidence
-
-Supports later stewardship.
-
-Examples:
-
-- maintenance record;
-- replacement;
-- inspection;
-- failure event;
-- measured performance where collected.
-
-One building record can eventually contain all three without pretending they are interchangeable.
+One building record can contain all three without treating them as interchangeable.
 
 ## 17. Change control
 
-A building change should be a first-class event.
+A change should be a first-class event whose impact is derived from dependencies.
 
 ~~~text
 CHANGE C-017
@@ -589,129 +319,54 @@ impact:
   rainwater detail WT-008           unchanged
 ~~~
 
-The dependency graph, rather than memory, determines which evidence is affected.
+The dependency graph, not memory, decides what must be revisited.
 
-## 18. Regulatory precedent — use carefully
+## 18. Regulatory precedent, carefully bounded
 
-England's higher-risk-building regime provides a useful information-management precedent.
+England's higher-risk-building regime is useful precedent for information architecture: digital records, version control, controlled change, compliance evidence, construction control and as-built records.
 
-Government guidance requires relevant projects to maintain digital building information, use version control, record controlled changes and keep evidence showing how building work complies. Building-control application guidance also calls for:
+The initial Long-Life House domain is an ordinary low-rise dwelling. Those higher-risk-building duties must not be presented as legal requirements for it.
 
-- a building-regulations compliance statement;
-- referenced drawings and plans;
-- a change-control plan and log;
-- a construction-control plan;
-- a list of expected construction evidence;
-- as-built evidence for completion.
-
-This maps surprisingly well to the proposed evidence graph.
-
-But the initial Long-Life House domain is an ordinary low-rise dwelling.
-
-Therefore:
-
-> **higher-risk-building golden-thread duties are precedent for rigorous information architecture, not legal requirements we may falsely impose on every house.**
-
-The project may voluntarily adopt analogous discipline because it is useful.
+The project may adopt analogous discipline voluntarily because it is useful.
 
 ## 19. Evidence graph versus document folder
 
-A folder may contain:
+A folder of calculations, drawings, certificates and photographs does not by itself tell a future reader which entity each file supports, which model version it describes, whether a product changed or whether the evidence still applies.
 
-- structural PDF;
-- drawings;
-- product certificates;
-- photos;
-- commissioning reports.
+Documents may remain ordinary files. The evidence graph supplies their semantic context.
 
-Without explicit relationships, a future owner cannot easily know:
-
-- which entity each file supports;
-- which model version it refers to;
-- whether the product was substituted;
-- whether the geometry changed;
-- whether the evidence still applies.
-
-Documents can remain ordinary files.
-
-The evidence graph supplies semantic context.
-
-## 20. Evidence granularity and sampling
+## 20. Granularity and sampling
 
 Do not create one obligation per screw.
 
-Evidence granularity should be proportionate to:
+Evidence granularity should reflect consequence, repeatability, replaceability, difficulty of later inspection and evidence reuse.
 
-- consequence;
-- repeatability;
-- replaceability;
-- difficulty of later inspection;
-- extent of evidence reuse.
+Valid scopes may include building, system, assembly family, representative sample, occurrence or critical interface. Repeated work may use type tests, first article, representative-installer trial, sampling or 100% inspection where consequence warrants it.
 
-Possible scopes:
-
-- building;
-- system;
-- assembly family;
-- representative sample;
-- occurrence;
-- critical interface.
-
-Repeated work may use:
-
-- type testing;
-- first article;
-- representative-installer trial;
-- sample inspection;
-- 100% inspection for critical conditions.
-
-The evidence plan should state the strategy rather than pretending every occurrence was individually verified.
+The evidence plan should state the strategy honestly.
 
 ## 21. Workmanship robustness becomes auditable
 
-A tolerance strategy already asks:
+A tolerance strategy already defines incoming condition, datum, adjustment, remediation threshold and verification.
 
-- incoming condition;
-- datum;
-- adjustment;
-- remediation threshold;
-- verification.
+The evidence layer adds who verifies, when, what artefact is retained, which obligation it discharges and which occurrence/version it describes.
 
-The evidence architecture adds:
+The aim is not maximum documentation. It is the smallest evidence set that proves the things worth proving.
 
-- who verifies;
-- when;
-- what artifact is retained;
-- which obligation it discharges;
-- which building occurrence/version it describes.
+## 22. Building-record views
 
-Thus:
+One evidence graph can produce different views.
 
-> **workmanship robustness becomes auditable without becoming bureaucratic theatre.**
+- **Occupant:** isolation, maintenance, replacement and emergency information.
+- **Trade:** service routes, IDs, access/replacement method and compatible parts.
+- **Professional:** calculations, boundaries/interfaces, assumptions, deviations and evidence scope.
+- **Regulatory/submission:** requirement-by-requirement evidence, referenced drawings, standards, decisions and commissioning results.
 
-The aim is the smallest evidence set that proves the things worth proving.
-
-## 22. Building record views
-
-At handover, one evidence graph could generate different views.
-
-### Occupant view
-Isolation, maintenance, replacement and emergency information.
-
-### Trade view
-Service routes, component IDs, access/replacement method and compatible replacements.
-
-### Professional view
-Calculations, boundary/interface records, assumptions, deviations and evidence scope.
-
-### Regulatory/submission view
-Requirement-by-requirement compliance statement, referenced drawings, standards, decisions and inspection/commissioning results.
-
-Different audiences receive different projections of one building identity.
+Different projections retain one building identity.
 
 ## 23. Building release manifest
 
-Every significant release should produce a compact manifest.
+Each significant release should produce a compact manifest, for example:
 
 ~~~text
 BUILD RELEASE BR-00023
@@ -759,113 +414,60 @@ Exact fields remain open.
 
 ## 24. Reproducibility and integrity
 
-Given the same:
+Given the same source model, compiler version, target, rule packs, datasets and accepted external evidence, deterministic portions of compilation should reproduce the same result.
 
-- source model;
-- compiler version;
-- target;
-- rule packs;
-- input datasets;
-- accepted external evidence;
+Future implementation may use hashes, signatures or append-only logs. The present requirement is simply that silent mutation of a released evidence bundle should be detectable.
 
-the deterministic portions of compilation should reproduce the same result.
+## 25. Retention and access
 
-Future implementation may use hashes, signatures or append-only logs.
+Stale evidence should not be deleted merely because it no longer governs the current building. It explains earlier versions, past decisions and maintenance history.
 
-Do not design those mechanisms yet.
+Some artefacts may be copyrighted, confidential, personal or security-sensitive. The evidence model therefore separates technical identity and existence from storage location, access rights and redistribution rights.
 
-The conceptual requirement is:
-
-> **a released evidence bundle should make silent mutation detectable.**
-
-## 25. Evidence retention and access
-
-Do not delete evidence merely because it becomes stale.
-
-Historical evidence helps explain:
-
-- prior building versions;
-- why a change was made;
-- what was believed at the time;
-- maintenance and alteration history.
-
-Some evidence may also be copyrighted, confidential, personal or safety-sensitive.
-
-The model therefore needs separate metadata for:
-
-- technical existence;
-- storage location;
-- access;
-- rights;
-- identity/hash/reference.
-
-Traceability should survive even when the artifact cannot be openly redistributed.
+Traceability should survive even when the underlying artefact cannot be shared openly.
 
 ## 26. Anti-drift rules
 
-Reject the following.
+Reject these shortcuts:
 
-- **“Upload the structural PDF and tick complete.”**  
-  Evidence must be related to subjects, obligations, versions and scope.
-
-- **“Approval means the compiler proved it.”**  
-  Regulatory decision and native proof are distinct evidence classes.
-
-- **“The product certificate proves the wall.”**  
-  Only if the assembly and parameter scope actually match.
-
-- **“We will inspect it later.”**  
-  Future evidence needs method, owner, due phase and failure response.
-
-- **“Every future inspection blocks design release.”**  
-  Time-phased evidence distinguishes due-now from planned-later proof.
-
-- **“Keep only the latest report.”**  
-  Preserve superseded evidence and its building version.
-
-- **“Nothing important changed, so the old calculation is fine.”**  
-  The dependency graph decides.
-
-- **“Golden-thread duties apply to every house.”**  
-  No. We borrow useful information discipline voluntarily unless the legal regime actually applies.
-
-- **“More evidence is always safer.”**  
-  No. Evidence should be proportionate, legible and useful.
+- **“Upload the structural PDF and tick complete.”** Evidence needs subjects, obligations, versions and scope.
+- **“Approval means native compiler proof.”** Regulatory decision and native proof are different classes.
+- **“The product certificate proves the wall.”** Only if assembly and parameter scope match.
+- **“We will inspect it later.”** Future evidence needs method, owner, phase and failure response.
+- **“Every future inspection blocks design release.”** Time-phased obligations separate due-now from due-later.
+- **“Keep only the latest report.”** Superseded evidence remains historical record.
+- **“Nothing important changed, so the old calculation is fine.”** Dependencies decide.
+- **“Golden-thread duties apply to every house.”** They do not; the discipline is borrowed voluntarily unless legally applicable.
+- **“More evidence is always safer.”** Evidence should be proportionate and legible.
 
 ## 27. Open questions
 
-- What minimum evidence graph is enough for an ordinary house without administrative overload?
-- Which evidence can be generated automatically?
-- Which should be externally signed?
-- How should external evidence be accepted/governed?
-- What does evidence inheritance across an assembly family formally require?
+- What is the minimum useful evidence graph for an ordinary house?
+- Which evidence can be generated automatically and which should be externally signed?
+- How should external evidence be accepted and governed?
+- What formally permits family evidence to pass to occurrences?
 - How should probabilistic geotechnical/material evidence be represented?
-- When does a change make evidence STALE versus definitely INVALID?
+- When does a change make evidence stale rather than definitely invalid?
 - How should sampling plans be represented?
-- Which site inspections are worth making mandatory for a low-rise house?
+- Which site inspections justify mandatory status in a low-rise house?
 - How can the record remain readable if the original software disappears?
-- What open export format can preserve the evidence graph?
-- How should contested regulatory interpretations be recorded?
-- How should target migration affect historical evidence?
+- What open export can preserve the graph?
+- How should contested regulatory interpretations and target migration be recorded?
 
-## 28. Immediate validation
+## 28. Validation
 
-Do not elaborate the ontology indefinitely.
-
-Test it during the first paper compilation.
-
-For one Reference House wall/window/floor slice:
+Test the model on a real Reference House slice rather than elaborating it indefinitely:
 
 1. generate obligations;
-2. identify the evidence method for each;
+2. identify an evidence method for each;
 3. assign due phase;
 4. distinguish native from external evidence;
 5. create a small dependency graph;
 6. mutate one input;
-7. verify the correct evidence becomes stale;
+7. verify the right evidence becomes stale;
 8. generate a release manifest.
 
-If this is harder to understand than reviewing the building manually, simplify it.
+If that is harder to understand than reviewing the building manually, simplify the model.
 
 ---
 
