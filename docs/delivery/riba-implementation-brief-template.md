@@ -1,9 +1,9 @@
 # Long-Life House — Architect-Facing Implementation Brief
-## RIBA Plan of Work Template v0.2 — tectonic integration
+## RIBA Plan of Work Template v0.3 — editorial refinement
 
 **Purpose:** translate the monograph into project instructions an appointed architect and consultant team can act on without reinterpreting the whole doctrine.
 
-This is deliberately separate from the publication. The monograph explains **why**. This brief records **what this project requires, who decides it, when it must be resolved, and how compliance will be demonstrated**.
+The publication explains **why**. This brief records **what this project requires, who decides it, when it must be resolved, and how compliance will be demonstrated**.
 
 ---
 
@@ -27,21 +27,21 @@ This is deliberately separate from the publication. The monograph explains **why
 
 # 2. Governing constraints
 
-The project must satisfy life safety, law, structural integrity, health and environmental performance before doctrine preferences are considered.
+Life safety, law, structural integrity, health and environmental performance take precedence over doctrine preferences.
 
 No unusual serviceability provision is accepted without proportionate whole-life justification.
 
 For every non-standard intervention record:
 
-- future task/event served;
+- future task or event served;
 - frequency;
 - consequence of failure/change;
 - retrofit difficulty without the provision;
-- capital/material/floor-area cost;
+- capital, material and floor-area cost;
 - whole-life cost implication;
 - whole-life-carbon implication;
 - boundary penalties;
-- evidence/maturity level.
+- evidence and maturity level.
 
 ---
 
@@ -67,7 +67,7 @@ Use only requirements genuinely fixed for this project.
 | N14 | Consequential concealed interfaces are inspected before closure | P3/P6 | Hold point + measurement/photographic record where appropriate | Contractor + relevant designer | 5 |
 | N15 | Principal domestic spaces are designed to minimise unnecessary vigilance | P8 | Room-by-room review covering physical comfort, spatial coherence, privacy/retreat, local control, sensory load and perceptual structural settlement; measurable items supported by relevant modelling/testing and judgement-based items recorded as such | Architect + relevant specialists | 2/3/4 |
 
-*Table above is illustrative; project team to confirm final non-negotiables.*
+*Illustrative schedule; the project team should confirm the final non-negotiables.*
 
 ---
 
@@ -95,7 +95,7 @@ Use only requirements genuinely fixed for this project.
 | Replaceable Wall Lining | Candidate / experimental |  |  |  | full wall-bay prototype |  |
 | Finish-Agnostic Floor Platform | Candidate / experimental |  |  |  | full floor-bay prototype |  |
 
-Candidate patterns remain optional until the relevant evidence, calculations and prototype gates are met.
+Candidate patterns remain optional until their evidence, calculation and prototype gates are met.
 
 ---
 
@@ -128,29 +128,29 @@ Every service route, access panel and replaceable interface must identify applic
 |---|---|---|---|---|---|---|---|---|---|---|
 |  |  |  |  |  |  |  |  |  |  |  |
 
-No interface may be considered resolved while an applicable column remains unassigned.
+No interface is resolved while an applicable column remains unassigned.
 
 ## Boundary-independence test
 
 For every routinely removable lining, panel, cover or platform record:
 
-- which critical boundaries sit behind it;
-- which boundaries the removable component itself provides;
-- what is disturbed during routine access;
-- how disturbed performance is reinstated;
+- critical boundaries behind it;
+- boundaries provided by the removable component;
+- what routine access disturbs;
+- how performance is reinstated;
 - how reinstatement is verified.
 
-A component is not successfully “accessible” if routine removal leaves a critical boundary in an ambiguous state.
+Routine access is not successful if it leaves a critical boundary ambiguous.
 
 ---
 
 # 6A. Tectonic control documents
 
-The following project-wide drawings/schedules are required where applicable.
+Provide the following project-wide drawings or schedules where applicable.
 
 ## Permanence map
 
-Classify major building elements as:
+Classify major elements as:
 
 - permanent fabric;
 - semi-permanent interface infrastructure;
@@ -164,17 +164,17 @@ Record the intended replacement boundary for each important assembly.
 Show:
 
 - designed anchors into permanent fabric;
-- backplanes/fixing rails/grounds;
+- backplanes, fixing rails and grounds;
 - ordinary fixing zones;
 - exceptional structural fixing points;
 - no-drill/no-fix zones;
 - load classes where relevant.
 
-Uncontrolled future drilling should be reduced by making the intended attachment system obvious and useful.
+Make the intended attachment system obvious and useful enough to reduce uncontrolled future drilling.
 
 ## Movement map
 
-Show significant differential movement interfaces and identify:
+Show significant differential-movement interfaces and identify:
 
 - controlling assembly;
 - permitted direction/range of movement;
@@ -188,23 +188,23 @@ Show significant differential movement interfaces and identify:
 For important repeated interfaces record:
 
 - nominal geometry;
-- credible incoming tolerance / site variability;
+- credible incoming tolerance/site variation;
 - controlling datum;
 - adjustment method and range;
-- permitted shims/packers or sacrificial trim where relevant;
-- acceptance / remediation threshold;
+- permitted shims, packers or sacrificial trim where relevant;
+- acceptance/remediation threshold;
 - inspection or measurement before closure;
-- whether specialist craft is intentionally required and why;
-- whether representative-installer testing is required.
+- intentionally required specialist craft and why;
+- representative-installer test requirement.
 
-The schedule should distinguish **designed adjustment** from unspecified site correction.
+Distinguish **designed adjustment** from unspecified site correction.
 
 ## Manufacturing schedule
 
 For repeated or important custom assemblies record:
 
 - site-built / site-fabricated / workshop-manufactured / commodity;
-- reason for the chosen production mode;
+- reason for the production mode;
 - interface family;
 - responsible designer/fabricator;
 - fabrication information required;
@@ -213,9 +213,7 @@ For repeated or important custom assemblies record:
 
 ## Wet-trade justification schedule
 
-Record significant wet/bonded work that crosses assemblies with different expected lives or movement.
-
-For each item state why a wet/bonded solution is preferred over a reversible dry alternative and what future replacement will consume.
+Record significant wet or bonded work crossing assemblies with different expected lives or movement. State why it is preferred to a reversible dry alternative and what future replacement will consume.
 
 ---
 
@@ -224,9 +222,9 @@ For each item state why a wet/bonded solution is preferred over a reversible dry
 ## Stage 0 — Strategic Definition
 
 **Questions**
-- Is a new build actually the correct strategic response?
-- What intended service life and stewardship assumptions are realistic?
-- What unusual doctrine measures could materially affect site, budget or gross area?
+- Is new build the correct strategic response?
+- What service life and stewardship assumptions are realistic?
+- Which unusual doctrine measures could materially affect site, budget or gross area?
 
 **Required outputs**
 - client objectives and building-life ambition;
@@ -235,7 +233,7 @@ For each item state why a wet/bonded solution is preferred over a reversible dry
 - precedent/research brief.
 
 **Gate**
-Do not assume the experimental service architecture is part of the project before strategic options have been compared.
+Do not assume experimental service architecture belongs in the project before strategic options are compared.
 
 ---
 
@@ -243,16 +241,16 @@ Do not assume the experimental service architecture is part of the project befor
 
 **Required outputs**
 - project-specific non-negotiables;
-- repose brief identifying principal recovery/sleep/quiet spaces, privacy needs, local-control expectations and any locations where deliberately heightened spatial or structural effects are intended;
+- repose brief identifying recovery/sleep/quiet spaces, privacy needs, local-control expectations and locations intended to carry heightened spatial or structural effects;
 - measurable maintenance-task brief;
 - project evidence/maturity legend;
 - initial consultant responsibility matrix;
-- initial whole-life carbon/cost objectives;
-- required specialist appointments;
+- whole-life carbon/cost objectives;
+- specialist appointments;
 - information-management/building-passport strategy.
 
 **Gate**
-The design team must be able to distinguish doctrine, selected patterns and open decisions.
+The team must distinguish doctrine, selected patterns and open decisions.
 
 ---
 
@@ -270,8 +268,8 @@ The design team must be able to distinguish doctrine, selected patterns and open
 - initial permanence/assembly hierarchy;
 - initial attachment and movement concepts;
 - tectonic architectural-language concept for occupant-facing interfaces;
-- repose concept: spatial hierarchy, privacy/retreat, apparent structural settlement, daylight/outlook, acoustic strategy and intelligible local environmental control;
-- first proportionality appraisal for unusual voids/undercrofts/spare capacity.
+- repose concept covering spatial hierarchy, privacy/retreat, apparent structural settlement, daylight/outlook, acoustic strategy and intelligible local environmental control;
+- first proportionality appraisal for unusual voids, undercrofts and spare capacity.
 
 **Mandatory options studies**
 - ground/service-section options;
@@ -297,37 +295,34 @@ No pattern advances merely because it is ideologically attractive.
 - room-by-room repose review separating measurable environmental performance from architectural judgement;
 - acoustic/privacy/fire/security coordination;
 - updated cost and whole-life-carbon comparisons;
-- coordinated permanence map;
-- coordinated attachment map;
+- coordinated permanence and attachment maps;
 - movement map for significant interfaces;
 - preliminary manufacturing schedule;
 - preliminary wet-trade justification schedule.
 
 **Gate**
-The project should now demonstrate that service architecture fits the actual building rather than an abstract diagram.
+Service architecture must now fit the actual building rather than an abstract diagram.
 
 ---
 
 ## Stage 4 — Technical Design
 
 **Required outputs**
-- interface-family details;
-- service-wall details;
+- interface-family and service-wall details;
 - penetration schedule;
 - water-damage-safe details;
 - window/door replacement details;
 - access-panel/floor-access details;
 - controls/isolation/label scheme;
-- maintenance and disassembly sequences;
-- replacement-sequence drawings for major replaceable assemblies;
-- final interface-family / attachment details;
-- final manufacturing schedule and remanufacture information requirements;
+- maintenance, disassembly and replacement sequences;
+- final attachment details;
+- final manufacturing schedule and remanufacture requirements;
 - wet-trade justification schedule;
 - prototype/first-article specifications;
 - critical-interface tolerance/workmanship schedules;
-- representative-installer trial requirements for repeated non-standard assemblies;
+- representative-installer trial requirements;
 - commissioning and maintainability test plan;
-- final repose review of principal rooms and circulation sequences, including local/manual control where automation materially affects comfort;
+- final repose review, including local/manual control where automation affects comfort;
 - building-passport data requirements.
 
 **Prototype candidates**
@@ -342,28 +337,26 @@ The project should now demonstrate that service architecture fits the actual bui
 - finish-agnostic floor-platform bay if pursued.
 
 **Gate**
-Repeated bespoke work cannot proceed to multiplication before prototype review.
-
-Where reversibility is part of the claimed performance, prototype approval requires **physical removal and reinstatement**, not visual inspection alone.
+Repeated bespoke work cannot be multiplied before prototype review. Where reversibility is claimed, approval requires **physical removal and reinstatement**, not visual inspection alone.
 
 ---
 
 ## Stage 5 — Manufacturing and Construction
 
 **Required controls**
-- critical-interface hold points, including tolerance verification before closure where consequential;
+- critical-interface hold points, including consequential tolerance verification before closure;
 - first-article approvals including disassembly/reinstatement where applicable;
 - representative-installer trial for designated repeated non-standard assemblies;
-- record of out-of-tolerance conditions and whether the defined adjustment or remediation route was used;
+- record of out-of-tolerance conditions and use of defined adjustment/remediation routes;
 - architectural-resolution sign-off for occupant-facing technical details;
 - photography before closure;
 - record of deviations/substitutions;
-- confirmation that proprietary substitutions do not introduce lock-in;
-- protection of designated service routes and no-drill zones;
+- confirmation that substitutions do not introduce proprietary lock-in;
+- protection of service routes and no-drill zones;
 - update of as-built service and boundary information.
 
 **Gate**
-“Equivalent performance” includes maintainability, replacement sequence, tectonic/architectural resolution, remanufacturability and interface consequences, not only immediate functional output.
+“Equivalent performance” includes maintainability, replacement sequence, tectonic resolution, remanufacturability and interface consequences as well as immediate function.
 
 ---
 
@@ -371,24 +364,17 @@ Where reversibility is part of the claimed performance, prototype approval requi
 
 **Required outputs**
 - measured commissioning results;
-- occupant-facing controls demonstrated for understandable operation and manual fallback where specified;
+- demonstration of occupant-facing controls and manual fallback where specified;
 - completed building passport;
 - layered user/building manual;
 - physical service index and stable labels;
-- as-built plans/sections/routes;
+- as-built plans, sections and routes;
 - maintenance schedule;
 - prototype/fabrication information;
 - unresolved defects and seasonal commissioning plan.
 
 **Maintainability commissioning**
-Demonstrate selected tasks physically:
-- isolate;
-- open;
-- inspect;
-- disconnect;
-- remove;
-- reinstate;
-- verify boundary/performance.
+Demonstrate selected tasks physically: isolate, open, inspect, disconnect, remove, reinstate and verify boundary/performance.
 
 **Gate**
 A maintainability feature is not accepted solely because it appears on an as-built drawing.
@@ -398,14 +384,14 @@ A maintainability feature is not accepted solely because it appears on an as-bui
 ## Stage 7 — Use
 
 **Required activities**
-- early post-occupancy review including comfort, privacy, control, noise, glare and spaces of retreat;
+- early post-occupancy review including comfort, privacy, control, noise, glare and retreat;
 - seasonal performance checks where relevant;
-- update record after alterations;
-- record maintenance problems and unexpected access failures;
-- compare real maintenance tasks against the original brief;
-- feed lessons back into the pattern catalogue.
+- record updates after alterations;
+- maintenance problems and unexpected access failures recorded;
+- real maintenance tasks compared with the original brief;
+- lessons fed back into the pattern catalogue.
 
-The publication should treat Stage 7 as research, not as an administrative afterthought.
+Stage 7 is part of the research cycle, not an administrative afterthought.
 
 ---
 
@@ -433,10 +419,9 @@ The publication should treat Stage 7 as research, not as an administrative after
 |---|---|---|---|---|---|
 | PR01 |  |  |  |  |  |
 
-Prototype assessment should include:
-appearance / tectonic honesty / contribution to repose / perceptual solidity and settlement / visual hierarchy / installation tolerance / declared tolerance recovery / datum clarity / sequence clarity / representative-installer questions and workarounds / stiffness / rattle / wear / cleaning / opening time / normal tools / component withdrawal / boundary reinstatement / removal / reinstatement / evidence of damage after cycles.
+Prototype assessment should cover appearance, tectonic honesty, repose, perceptual solidity/settlement, visual hierarchy, installation tolerance, recovery range, datum/sequence clarity, representative-installer workarounds, stiffness, rattle, wear, cleaning, access time, tools, component withdrawal, boundary reinstatement, removal/reinstallation and damage after cycling.
 
-For occupant-facing prototypes ask explicitly:
+For occupant-facing prototypes ask:
 
 > **Would this detail still be desirable if nobody knew it was maintainable?**
 
@@ -444,15 +429,13 @@ For occupant-facing prototypes ask explicitly:
 
 # 10. Deviation register
 
-The doctrine is not a trap. A better project-specific solution may replace a preferred pattern.
+A better project-specific solution may replace a preferred pattern.
 
 | ID | Doctrine/pattern affected | Proposed deviation | Reason | Evidence | Approved by |
 |---|---|---|---|---|---|
 | D01 |  |  |  |  |  |
 
-A deviation from a preferred implementation is normal.
-
-A deviation from a governing principle should identify the competing requirement that justifies it.
+Deviation from a preferred implementation is normal. Deviation from a governing principle should identify the competing requirement that justifies it.
 
 ---
 
@@ -464,9 +447,9 @@ Following the RIBA Plan for Use logic, provide:
 Simple operation of everyday systems.
 
 ### Level 2 — Quick-start / emergency / service index
-Main isolations, critical routes, emergency information, basic system topology.
+Main isolations, critical routes, emergency information and basic system topology.
 
 ### Level 3 — Building passport / O&M record
 Detailed as-built information, commissioning, interfaces, replacement sequences, maintenance, photographs and change history.
 
-The three levels must use the same stable identifiers.
+All three levels must use the same stable identifiers.

@@ -5,109 +5,87 @@
 
 ## Problem
 
-Upper-storey façades require inspection, cleaning, repair and eventual renewal, yet the geometry of the building and surrounding site can quietly remove ordinary access methods.
+Upper-storey façades need inspection, cleaning, repair and eventual renewal, yet building geometry and the surrounding site can quietly remove ordinary access methods.
 
-Bay windows, porches, canopies, low roofs, balconies, lightwells, retaining walls, drains, ponds, dense planting and narrow passages may each be architecturally reasonable in isolation. In combination they can turn routine work such as repointing, gutter renewal or window replacement into a specialist-access problem.
+Bays, porches, low roofs, lightwells, retaining walls, ponds, planting and narrow passages may each be reasonable in isolation. Together they can turn routine work such as repointing, gutter renewal or window replacement into a specialist-access problem.
 
 A façade is not maintainable merely because someone can theoretically reach it.
 
 ## Pattern
 
-Coordinate the façade, ground plane and landscape so that foreseeable external maintenance tasks retain one or more credible ordinary access methods.
+Coordinate façade, ground plane and landscape so foreseeable maintenance retains one or more credible ordinary access methods.
 
-For ground-supported access, identify where scaffold, tower or other suitable access equipment can be brought to the work face, where it can bear safely, what working geometry it requires and how people, materials, removed components and waste reach that position.
+For ground-supported access, identify how scaffold, tower or other suitable equipment reaches the work face, where it bears, what geometry it occupies and how workers, materials, replacement components and waste move through the route.
 
-The pattern does **not** require a permanently empty strip around the building and does not privilege one access technology. It preserves the spatial conditions required by the access methods selected for the actual tasks.
+The pattern does **not** require an empty strip around the building or privilege one access technology. It preserves the spatial conditions needed by the methods selected for actual tasks.
 
 ## Forces
 
-- Good architecture legitimately projects, recesses and changes level.
-- Compact sites may have little spare perimeter space.
-- Different maintenance tasks require different access systems.
-- Scaffold, towers and MEWPs impose different ground, footprint and clearance requirements.
-- Planting and landscape are part of domestic quality and should not be subordinated indiscriminately to rare maintenance events.
-- Permanent access infrastructure can be visually intrusive and itself require maintenance.
-- Access from neighbouring land or the public highway may sometimes be unavoidable.
-- Designing for every imaginable future operation would waste land and material.
+- architecture legitimately projects, recesses and changes level;
+- compact sites may have little spare perimeter space;
+- different tasks need different access systems;
+- scaffold, towers and MEWPs have different ground and clearance requirements;
+- landscape quality should not be subordinated indiscriminately to rare maintenance events;
+- permanent access infrastructure can be intrusive and itself need maintenance;
+- neighbour or highway access may sometimes be unavoidable;
+- designing for every imaginable operation would waste land and material.
 
 ## Access hierarchy
 
 Apply the work-at-height hierarchy architecturally:
 
-1. remove the need for work at height where practical;
-2. perform work from inside, ground level or another already-safe position where possible;
-3. preserve ordinary collective access methods for tasks that remain;
-4. use ladders only where the actual task is suitable for them;
-5. accept specialist access only where its cost and risk are proportionate to the architectural condition being created.
+1. remove work at height where practical;
+2. work from inside, ground level or another already-safe position where possible;
+3. preserve ordinary collective access methods for remaining tasks;
+4. use ladders only for tasks suited to them;
+5. accept specialist access where its cost and risk are proportionate to the architecture being created.
 
-The hierarchy is task-specific. An elevation can rationally use different access methods for different operations.
+The hierarchy is task-specific. One elevation may rationally use different methods for different operations.
 
 ## Design requirements
 
 For each significant façade-maintenance scenario:
 
-- identify the target component or surface;
-- distinguish inspection, cleaning, repair and full replacement where these require different access;
-- nominate at least one credible access method;
-- draw the approach route from the site/service entrance;
-- identify the required equipment/support position;
-- confirm that the support condition is compatible with the selected method;
-- draw relevant setup, stabiliser, scaffold or swept clearances;
-- test projections, recesses, eaves and low roofs against the access geometry;
-- test the route for materials, replacement components and waste;
-- identify any dependence on neighbouring land or highway occupation;
-- record landscape or later-build zones that must remain removable or clear enough to preserve the strategy.
+- identify the target and distinguish inspection, cleaning, repair and full replacement where necessary;
+- nominate a credible access method;
+- draw the approach from the site or service entrance;
+- identify equipment and support positions;
+- confirm the ground or structure suits the selected method;
+- draw relevant setup, stabiliser or scaffold clearances;
+- test projections, recesses, eaves and low roofs against that geometry;
+- test routes for materials, replacement components and waste;
+- identify dependence on neighbouring land or highway occupation;
+- record landscape or later-build zones whose occupation would destroy the strategy.
 
-Where exact temporary-works geometry depends on a future contractor, the design need not pretend to engineer that future scaffold. It must nevertheless avoid knowingly consuming the only credible support and access positions.
+The architect need not pretend to engineer a future scaffold. The design should simply not consume the only credible support and access positions unknowingly.
 
 ## Ground and support
 
-The intended support area should be reviewed for:
+Review intended support areas for bearing capacity, level and slope, basements or voids, drains and chambers, soft fill, fragile finishes and retaining walls or level changes.
 
-- bearing capacity appropriate to the assumed access method;
-- local level and slope;
-- basements, lightwells, voids and undercrofts;
-- drains, inspection chambers and service trenches;
-- soft fill or ground liable to settlement;
-- fragile finishes;
-- retaining walls or abrupt changes in level.
-
-A paved path is not automatically a scaffold foundation. Conversely, a planted or gravel area is not automatically unusable. The requirement is that the maintenance method has a credible support strategy.
+A paved path is not automatically a scaffold foundation; a gravel or planted area is not automatically unusable. The maintenance method needs a credible support strategy.
 
 ## Architectural projections
 
 A projection is not prohibited because it complicates access.
 
-For bays, porticos, porches, canopies, balconies and similar elements, review:
-
-- whether ordinary scaffold/tower geometry can pass, bridge or work around the element;
-- whether the projection removes a useful support position at ground level;
-- whether the projection itself can support work safely if designed to do so;
-- whether a modest geometric change materially reduces future access complexity without weakening the architecture.
+For bays, porticos, canopies and balconies, ask whether ordinary access geometry can pass or bridge the element, whether useful support positions are lost, and whether a modest geometric change would materially simplify future work without weakening the architecture.
 
 The preferred outcome is **known complexity**, not geometric purity.
 
 ## Landscape integration
 
-Landscape should be designed in maintenance states as well as occupied states.
+Landscape should be designed in maintenance states as well as occupied states. Critical support positions may coincide with gravel, paving or ordinary clearings; planting may be removable or capable of being cut back; gates and passages should admit the equipment or components that must pass beyond them.
 
-Potential strategies include:
+Avoid permanent water features, masonry planters or mature-tree positions in uniquely valuable access zones unless the consequence has been accepted deliberately.
 
-- durable gravel or paving at critical support positions;
-- planting that can be cut back or temporarily removed without destroying the garden structure;
-- trees positioned so their mature form does not erase the sole access route to a major elevation;
-- avoiding permanent water features or masonry planters in uniquely valuable support zones;
-- preserving gates and passages capable of carrying the equipment or components needed beyond them.
-
-The external maintenance envelope should normally remain visually latent.
+The external maintenance envelope should remain visually latent.
 
 ## Courtyards and enclosed gardens
 
-Where an upper façade faces a courtyard or enclosed garden, access to the space is only the first test.
+A route into a courtyard must carry more than a person. Verify that it can carry the selected access equipment and the largest foreseeable replacement units. The surface should tolerate temporary loading or reveal deliberate support points beneath delicate finishes.
 
-Verify that the route can carry the components of the selected access method and the largest foreseeable replacement units. The courtyard surface should also tolerate the temporary loading or expose deliberate support locations beneath delicate finishes.
-
-A generous courtyard reached through an undersized passage can be maintenance-isolated despite being perfectly accessible to occupants.
+A generous courtyard behind an undersized passage can be maintenance-isolated despite being easy to occupy.
 
 ## Proportionality
 
@@ -115,121 +93,95 @@ Permanent provision should reflect:
 
 **frequency × consequence × access difficulty × retrofit difficulty**
 
-A two-storey masonry wall likely to require periodic repointing merits credible conventional access. A tiny decorative feature reached once in a century may not justify a permanent support zone of its own.
-
-Do not reserve large areas for hypothetical equipment merely because it is possible that somebody may want to use it.
+A two-storey masonry wall likely to need periodic repointing merits credible conventional access. A tiny feature reached once in a century may not justify a permanent support zone.
 
 ## Boundary debt
 
-This pattern normally creates little direct boundary debt because it is primarily spatial. But access provisions can interact with:
+The pattern is mainly spatial but can interact with:
 
-- waterproofing where anchors, tie provisions or roof transitions are introduced;
-- security where maintenance gates or roof routes are provided;
-- drainage where support zones overlap gullies or perimeter falls;
+- waterproofing where anchors or roof transitions are introduced;
+- security at maintenance gates or roof routes;
+- drainage where support zones overlap falls or gullies;
 - structure where temporary loads bear over basements, lightwells or suspended slabs.
 
-Any permanent tie, anchor or penetration must be designed as an interface rather than added as generic “access hardware”.
+Permanent ties, anchors or penetrations must be designed as interfaces rather than generic access hardware.
 
 ## Permanent-fabric impact
 
-The preferred pattern works primarily through geometry and landscape planning and may require no permanent fixing to the house.
+The preferred pattern works through geometry and landscape planning and may require no permanent fixing to the house.
 
-Where permanent anchors, tie sockets, guard sockets or other interfaces are justified, they should be sparse, inspectable, structurally resolved and documented. Their own inspection/replacement needs become part of the maintenance strategy.
+Where anchors, tie sockets or guard sockets are justified, keep them sparse, inspectable, structurally resolved and documented. Their own inspection and replacement become part of the strategy.
 
 ## Construction variability and workmanship
 
-The final as-built landscape and external works matter.
+The as-built landscape matters. A coordinated access zone can disappear when chambers move, levels rise, gates narrow, planters grow or external plant is placed opportunistically.
 
-A design-stage access zone can disappear if:
-
-- drainage chambers move into it;
-- levels rise;
-- planters are enlarged;
-- retaining walls shift;
-- gates narrow;
-- external plant is placed opportunistically;
-- final paving/support conditions differ materially from the coordinated design.
-
-External maintenance geography should therefore be checked at completion, not only on the architect's Stage 3 drawing.
+External maintenance geography should therefore be checked at completion, not only on the Stage 3 drawing.
 
 ## Occupation / repose impact
 
-The pattern should have almost no perceptible effect in ordinary life.
+The pattern should be almost invisible in ordinary life. Critical space can coincide with paths, gravel margins, quiet hard landscape and normal garden clearings.
 
-The house should not look surrounded by a permanent service yard. Critical access space can coincide with paths, gravel margins, quiet hard landscape and ordinary garden clearings.
-
-The landscape remains landscape; its geometry simply retains a second, occasional use.
+The landscape remains landscape; its geometry simply retains an occasional second use.
 
 ## Architectural resolution
 
-The architectural task is to make maintenance capability **latent rather than absent**.
+The task is to make maintenance capability **latent rather than absent**. A gravel margin may protect the wall base and preserve scaffold territory. A side path may be both pleasant circulation and the material route to a courtyard. A portico may retain its composition while leaving temporary works a straightforward way around it.
 
-A gravel margin may simultaneously protect the wall base and provide future scaffold bearing territory. A side path may be both pleasant circulation and the route by which materials reach the courtyard. A portico may be dimensioned so temporary access can bridge it cleanly without changing its classical composition.
-
-The maintenance strategy should strengthen the architectural order where possible rather than appear as appended equipment.
+Where possible, the maintenance strategy should reinforce architectural order rather than appear as appended equipment.
 
 ## Assembly and replacement sequence
 
-For the pattern itself, the relevant sequence is the temporary works sequence:
+For this pattern, the relevant sequence is temporary works:
 
-1. bring equipment/components from site entrance to support position;
-2. prepare/protect ground and adjacent finishes as required;
-3. establish access equipment without destructive alteration of permanent fabric;
+1. move equipment or components from site entrance to support position;
+2. protect or prepare ground and adjacent finishes;
+3. establish access without destructive alteration of permanent fabric;
 4. create the working position;
-5. perform the maintenance/replacement task;
-6. remove waste/replaced component by the planned route;
+5. perform the maintenance or replacement task;
+6. remove waste or the replaced component by the planned route;
 7. dismantle access equipment;
-8. reinstate any removable landscape or protection layer.
+8. reinstate removable landscape or protection.
 
-The design should be reviewed for whether any one of these steps requires an unplanned destructive intervention.
+Review whether any step demands unplanned destructive work.
 
 ## Failure modes
 
-- upper wall technically visible but conventional scaffold cannot be erected;
-- bay/porch/low roof forces complex cantilevered access for routine work;
-- support position lies over a lightwell, basement, drain or soft ground;
-- access route admits people but not scaffold components or replacement units;
-- mature tree or permanent planter occupies the sole usable access zone;
-- courtyard is operationally isolated;
-- all practical access depends on neighbour consent that was never identified;
-- external plant is later installed in the reserved working position;
-- ladder becomes the default solution for work too long, heavy or risky for a ladder;
-- access provision exists on drawings but final landscape levels make it unusable.
+- upper wall is visible but conventional scaffold cannot be erected;
+- bay or low roof makes routine work depend on complex cantilevered access;
+- support lies over a lightwell, basement, drain or soft ground;
+- route admits people but not scaffold parts or replacement units;
+- mature landscape occupies the only useful access zone;
+- courtyard becomes operationally isolated;
+- routine work depends on unidentified neighbour consent;
+- later external plant consumes the reserved working position;
+- ladders become the default for work unsuited to them;
+- final levels make the drawn access strategy unusable.
 
 ## Evidence
 
-HSE's CDM guidance establishes designers' responsibility to eliminate, reduce or control foreseeable risks affecting those who later maintain buildings. HSE work-at-height guidance establishes the hierarchy of avoiding work at height, preventing falls and preferring collective protection before lower-order measures. HSE scaffolding guidance requires firm, level support capable of carrying scaffold and imposed loads and warns specifically about drains, basements, voids and soft ground.
+HSE CDM guidance establishes designers' responsibility to eliminate, reduce or control foreseeable risks affecting later maintenance. Work-at-height guidance establishes the hierarchy of avoidance, fall prevention and collective protection. HSE scaffolding guidance requires firm, level support capable of carrying scaffold and imposed loads and warns about drains, basements, voids and soft ground.
 
-CWCT guidance states that ease and requirements of safe façade access are substantially determined at scheme-design stage because building geometry must be matched with access arrangements. BCA Design for Maintainability provides a mature professional precedent for considering façade access and surrounding site constraints upstream in design.
+CWCT guidance notes that safe façade access is substantially determined at scheme-design stage because geometry and access arrangements must be coordinated. BCA Design for Maintainability provides a mature professional precedent for considering façade access and surrounding-site constraints upstream.
 
 ## Does not prove
 
 These sources do not establish:
 
-- a universal maintenance-strip width for houses;
+- a universal maintenance-strip width;
 - that every elevation must admit a MEWP;
 - that ladders should never be used;
 - that bays, porticos, trees or water features are bad architecture;
 - that permanent façade-access equipment is justified on a two-storey house;
-- that the same access strategy suits every site.
+- that one access strategy suits every site.
 
-The pattern requires an explicit credible strategy, not a single standard solution.
+The pattern requires a credible explicit strategy, not a standard solution.
 
 ## Reference-house direction
 
-Prepare a coordinated external-access plan covering the principal façades and courtyard.
+Prepare a coordinated external-access plan covering principal façades and courtyard. Test Georgian-derived projections against ordinary scaffold geometry, the perimeter dry zone as possible support territory, passage/gate logistics, full-frame window replacement, mature landscape, neighbour/highway dependence and the roof-maintenance route.
 
-The reference house should specifically test:
-
-- Georgian-derived bays/porticos against ordinary scaffold geometry;
-- the perimeter dry zone as possible maintenance support territory;
-- passage/gate logistics into the courtyard;
-- upper-window full-frame replacement separately from cleaning;
-- mature landscape and tree positions;
-- dependence on neighbour/highway access;
-- interaction with the roof-maintenance route.
-
-No exact support-strip or gate dimension is fixed at doctrine stage. Dimensions should follow from the selected access scenarios and the developed reference-house geometry.
+No universal support-strip or gate dimension is fixed at doctrine stage. Dimensions follow from selected scenarios and developed geometry.
 
 **Evidence anchors:**
 

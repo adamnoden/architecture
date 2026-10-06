@@ -4,17 +4,13 @@
 **Location:** representative external wall at upper floor  
 **Purpose:** force the principal tectonic systems to coexist in one section before any one pattern is developed further in isolation.
 
-This is not a construction detail.
-
-It is a **coordination object**: a single bay in which the project must reconcile permanent masonry, structural floor support, wall restraint, wall lining, floor platform, service zones, ceiling, movement, acoustics, fire, airtightness and architectural expression.
+This is not a construction detail. It is a **coordination object**: one bay in which permanent masonry, floor support, restraint, wall lining, floor platform, services, ceiling, movement, acoustics, fire, airtightness and architectural expression must coexist.
 
 Companion drawing: [vertical-bay-coordination.svg](vertical-bay-coordination.svg)
 
 ---
 
 # 1. Current assumptions
-
-The section uses the project's present reference-house assumptions:
 
 ## External wall
 
@@ -26,14 +22,14 @@ Outside to inside:
 - approximately 215 mm dense masonry inner leaf;
 - internal tectonic lining system where selected.
 
-The dimensions remain subject to thermal, structural and moisture design. The functional separation is more important than the exact thickness.
+Thermal, structural and moisture design may change the dimensions. The functional separation matters more than the present thicknesses.
 
 ## Primary floor
 
 Working baseline:
 
 - engineered timber I-joists;
-- certified restraint-type masonry hanger as the baseline floor-to-wall connection;
+- certified restraint-type masonry hanger as the baseline wall connection;
 - structural deck providing primary diaphragm action;
 - no routine service distribution through the joist zone;
 - removable floor platform not responsible for primary diaphragm stability.
@@ -43,11 +39,11 @@ Working baseline:
 Working W2 hypothesis:
 
 - dense masonry remains the real wall;
-- permanent parge / air-control treatment on the room face of masonry where required;
+- permanent parge / air-control treatment on the room face where required;
 - sparse adjustable backplane anchored deliberately to masonry;
-- shallow service / acoustic absorption zone where useful;
+- shallow service / acoustic zone where useful;
 - robust manufactured removable panel;
-- skirting / picture rail / cornice used as genuine interface elements.
+- skirting, picture rail and cornice used as genuine interfaces.
 
 ## Floor platform
 
@@ -57,15 +53,15 @@ Working hypothesis:
 - shallow service / acoustic / levelling zone above;
 - low-profile support lattice;
 - dense removable mineral platform;
-- finish-specific carrier / finish above;
+- finish-specific carrier and finish above;
 - full-room platform remains experimental;
 - local access-band version remains a serious comparator.
 
 ---
 
-# 2. The section must keep seven systems distinct
+# 2. Keep seven systems distinct
 
-The entire purpose of this bay is to prevent one assembly from quietly swallowing another.
+The bay exists to stop one assembly quietly swallowing another.
 
 ## A. Weathering wall
 
@@ -77,91 +73,37 @@ Mineral wool provides the principal external-wall insulation.
 
 ## C. Permanent structural / mass wall
 
-Dense inner masonry provides:
-
-- primary structural role where applicable;
-- acoustic mass;
-- thermal mass;
-- physical robustness;
-- long-lived substrate for designed structural and backplane fixings.
+Dense inner masonry provides primary structural role where applicable, acoustic and thermal mass, physical robustness and the long-lived substrate for designed structural/backplane fixings.
 
 ## D. Primary environmental boundary
 
-The airtight / vapour-control strategy must be explicit.
+The airtight / vapour-control strategy must be explicit. The drawing currently shows a permanent parge or equivalent treatment at the masonry face as a **possible** primary air-control layer, not a fixed specification.
 
-The current concept shows a permanent parge or equivalent continuous treatment at the masonry face as a **possible** primary air-control layer.
-
-This is not yet a fixed specification.
-
-The principle is:
-
-> routine removal of wall panels should not dismantle the primary air boundary.
+> **Routine removal of wall panels should not dismantle the primary air boundary.**
 
 ## E. Replaceable wall architecture
 
-The backplane / panel assembly exists on the room side of the permanent wall.
-
-Its job is:
-
-- tolerance;
-- access;
-- fixing infrastructure;
-- local service distribution;
-- room finish;
-- movement resolution.
-
-It should not silently inherit every duty of the external wall.
+The backplane and panel sit on the room side of the permanent wall. They provide tolerance, access, fixing infrastructure, selected service distribution, finish and movement resolution without inheriting every duty of the external wall.
 
 ## F. Primary floor structure
 
-The I-joist and structural deck carry the floor.
-
-The floor-to-wall edge must separately resolve:
-
-- vertical support;
-- joist stability;
-- wall restraint;
-- diaphragm transfer;
-- fire;
-- acoustics;
-- corrosion;
-- movement;
-- ceiling termination.
+The I-joist and structural deck carry the floor. The edge must separately resolve vertical support, joist stability, wall restraint, diaphragm transfer, fire, acoustics, corrosion, movement and ceiling termination.
 
 ## G. Replaceable floor architecture
 
-The upper platform and finish sit above the structural deck.
-
-The removable layer is not the structure.
+The platform and finish sit above the structural deck. The removable layer is not the structure.
 
 ---
 
 # 3. Critical junction — floor into masonry
 
-The drawing uses a **restraint-type masonry hanger as the baseline**, not a bespoke sliding shoe.
+The baseline is a **restraint-type masonry hanger**, not a bespoke sliding shoe.
 
-This is deliberate.
+The research conclusion is that the important move is to separate bearing, restraint, movement and finish rather than invent a connector for its own sake.
 
-The current research conclusion is that the doctrine's important move is to separate the questions of:
+The structural engineer must determine hanger family, joist depth and centres, lateral and wall restraint, diaphragm connection, robustness, and the fire/acoustic build-up.
 
-- bearing;
-- restraint;
-- movement;
-- finish;
-
-rather than to invent a novel connector for its own sake.
-
-The structural engineer must eventually determine:
-
-- hanger family;
-- joist depth / centres;
-- lateral restraint;
-- diaphragm connection;
-- wall restraint;
-- robustness;
-- fire and acoustic build-up.
-
-The bay deliberately keeps enough conceptual room for a future seated/bearing comparator.
+The bay keeps enough conceptual room for a future direct-bearing or seated comparator.
 
 ---
 
@@ -169,170 +111,107 @@ The bay deliberately keeps enough conceptual room for a future seated/bearing co
 
 The backplane should **not** be fixed continuously into masonry.
 
-The conceptual section therefore assumes:
+The concept assumes sparse engineered anchors, an adjustable vertical rail or ground, panel fixings terminating in that interface and a shallow room-side zone for selected services and acoustic absorption.
 
-- discrete engineered anchors at a sparse spacing;
-- an adjustable vertical rail / ground;
-- panel fixings terminating in that rail rather than the masonry;
-- a shallow room-side zone for minor services and acoustic absorption.
-
-The exact orientation of rails remains open.
-
-Possible arrangements:
+Rail orientation remains open:
 
 ### Vertical primary rails
 
-Advantages:
-- simple tolerance adjustment;
-- natural full-height panel support;
-- services can cross horizontally locally.
+Simple tolerance adjustment and natural full-height support; local services can cross horizontally.
 
 ### Horizontal rails
 
-Advantages:
-- compatible with dado / picture-rail logic;
-- simple support of panel courses.
+Potentially compatible with dado / picture-rail logic and panel courses.
 
 ### Two-direction frame
 
-Advantages:
-- maximum flexibility.
-
-Disadvantage:
-- too much material and complexity.
+Maximum flexibility at the cost of more material and complexity.
 
 Current bias:
 
-> **simple vertical primary rails with local horizontal grounds only where they perform real work.**
+> **Simple vertical primary rails with local horizontal grounds only where they perform real work.**
 
 ---
 
 # 5. Wall-panel edge strategy
 
-The section should be read as **one panel field**, not an office-access panel.
+The section should read as a wall field, not an office access system.
 
-Possible visible joint strategies remain:
+Possible joint strategies include true panel moulding, fine shadow/reveal, removable trim, restrained functional brass/bronze, or a nearly flush mineral-panel joint.
 
-- true panel moulding;
-- fine shadow/reveal;
-- removable trim;
-- restrained brass/bronze line where it genuinely protects or locates;
-- nearly flush mineral-panel joint.
-
-The drawing does not assume filler across the removable joint.
-
-A panel should be capable of removal without wet making-good.
+Do not assume filler across a removable joint. A panel should come out without wet making-good.
 
 ---
 
 # 6. Skirting
 
-The skirting is doing real work.
+The skirting may hide the lower panel release, protect the panel edge, carry low-level service access, conceal the floor-platform perimeter and let wall and floor terminate independently.
 
-In this bay it may:
-
-- hide the lower panel release/fixing condition;
-- protect the panel edge;
-- provide a low-level service access route;
-- conceal the perimeter of the floor platform;
-- allow the wall and floor systems to terminate independently.
-
-The skirting should itself be mechanically removable.
-
-The exact fastening method remains open.
+It should itself be mechanically removable. The fastening method remains open.
 
 ---
 
 # 7. Cornice / ceiling interface
 
-The cornice is treated as a **functional slip junction**.
+Treat the cornice as a **functional slip junction**.
 
-The section assumes:
+The concept assumes independent ceiling movement, a wall panel terminating below it, a deliberate movement gap, trim controlled from one side of the joint and no paint/plaster bridge across the slip condition.
 
-- ceiling assembly can deflect / move independently of masonry;
-- wall panel terminates below the ceiling;
-- a deliberate movement gap exists;
-- cornice or trim is controlled from one side of the joint;
-- paint / plaster must not bridge the slip condition.
-
-A restrained brass/bronze slip element remains a reference-house option, not a requirement.
+A restrained brass/bronze element remains a reference-house option, not doctrine.
 
 ---
 
 # 8. Floor platform
 
-The section intentionally separates:
+Keep structural deck, service/acoustic/levelling layer, removable platform and finish distinct.
 
-- structural deck;
-- service / acoustic / levelling layer;
-- removable platform;
-- visible finish.
+The first prototype should investigate a **dense mineral platform** informed by calcium-sulphate raised-floor precedent, using a low-profile support system rather than tall office pedestals.
 
-The first prototype should investigate a **dense mineral platform**, informed by calcium-sulphate raised-floor precedent.
+Requirements:
 
-The bay assumes a low-profile support system rather than tall office pedestals.
-
-Key requirements:
-
-- no rattle;
-- no rocking;
+- no rattle or rocking;
 - no characteristic raised-floor footfall sound;
-- platform can be lifted locally;
-- perimeter and threshold conditions remain architecturally controlled;
-- structural diaphragm remains below.
+- local lifting possible;
+- perimeter and threshold conditions architecturally controlled;
+- primary diaphragm remains below.
 
 ---
 
 # 9. Services
 
-The section follows the project's service hierarchy.
-
-## Preferred
+Preferred topology:
 
 - horizontal services biased toward corridor / service spines;
-- room distribution in skirting / wall-side zones;
+- room distribution in skirting or wall-side zones;
 - planned vertical routes;
-- larger ducts / drainage kept in deeper dedicated zones.
+- larger ducts and drainage in deeper dedicated zones.
 
-## Not preferred
+Avoid using the I-joist zone as the default future service corridor, random masonry chasing, or filling every lining cavity merely because space exists.
 
-- treating the I-joist web zone as the default future service corridor;
-- random chasing of masonry;
-- running everything behind every wall panel simply because a cavity exists.
-
-The shallow wall and floor zones should carry **only the services that justify being there**.
+The shallow zones should carry **only services that justify being there**.
 
 ---
 
 # 10. Acoustic strategy
 
-The bay currently assumes:
+Current assumptions:
 
-- masonry provides the primary wall mass;
+- masonry supplies primary wall mass;
 - shallow wall cavity may contain mineral-wool absorption;
-- panels are resiliently seated / mechanically captured to avoid rattle;
+- panels are resiliently seated and captured to avoid rattle;
 - floor platform has a resilient support interface;
-- floor edge avoids rigid acoustic shortcuts where decoupling is required;
-- ceiling edge is detailed independently of wall lining.
+- floor edge avoids rigid shortcuts where decoupling is required;
+- ceiling edge terminates independently of wall lining.
 
-The wall panel and floor platform must be judged acoustically by prototype, not by appearance.
+Prototype performance matters more than the apparent elegance of the build-up.
 
 ---
 
 # 11. Fire strategy
 
-The bay intentionally shows the replaceable lining **inside** the slow wall boundary.
+The replaceable lining sits **inside** the slow wall boundary, but the hidden wall cavity and floor void are still cavities.
 
-However the hidden wall cavity and floor void remain cavities in their own right.
-
-Technical design must establish:
-
-- cavity closure at floor and ceiling;
-- closure around openings;
-- relation to compartment walls / protected routes;
-- reaction-to-fire of visible panels;
-- service penetration control;
-- whether removal exposes any fire-critical material.
+Technical design must establish cavity closure at floors, ceilings and openings; relation to compartment walls or protected routes; reaction-to-fire of visible panels; service penetration control; and whether removal exposes fire-critical material.
 
 Routine panel access must not leave fire performance ambiguous.
 
@@ -340,45 +219,27 @@ Routine panel access must not leave fire performance ambiguous.
 
 # 12. Water and moisture
 
-The wall panel is not intended to become a moisture trap.
+The external wall needs a complete wetting, drainage and drying strategy independent of the decorative lining.
 
-The external wall must have a complete wetting / drainage / drying strategy independent of the decorative lining.
+Avoid vulnerable organic material against damp masonry, water-bearing joints that can leak unseen and blocked inspection or drying routes.
 
-The internal cavity should therefore avoid:
-
-- vulnerable organic material against damp masonry;
-- water-bearing joints that can leak invisibly;
-- blocked inspection / drying routes.
-
-Where the primary air / vapour strategy sits on the masonry face, all backplane anchors and service crossings must be designed around that boundary rather than casually puncturing it.
+If the primary air/vapour layer sits on the masonry face, anchors and service crossings must be designed around it rather than casually puncturing it.
 
 ---
 
 # 13. Tectonic reading
 
-The bay should read in the completed room as:
+The completed room should read as heavy masonry architecture with a substantial floor, ordinary Georgian wall composition, real timber/mineral/metal surfaces and restrained interface lines. It should not advertise commercial access-floor or hatch language.
 
-- heavy masonry architecture;
-- substantial floor;
-- ordinary Georgian wall composition;
-- real timber / mineral / metal finishes;
-- restrained interface lines;
-- no visible commercial-access-floor language;
-- no arbitrary access hatches.
+The technical hierarchy should recede during ordinary occupation and become legible when opened.
 
-The technical hierarchy should be largely invisible in normal occupation.
-
-When opened, however, it should become immediately legible.
-
-That is the intended meaning of tectonic honesty here:
-
-> **normal operation may be concealed; the constructional relationship is not falsified.**
+> **Normal operation may be concealed; the constructional relationship is not falsified.**
 
 ---
 
 # 14. Current unresolved decisions
 
-The drawing should carry these explicitly as unresolved rather than invent false precision.
+Keep these explicitly unresolved rather than inventing precision.
 
 ## Structure
 
@@ -390,14 +251,12 @@ The drawing should carry these explicitly as unresolved rather than invent false
 
 ## Wall
 
-- masonry inner-leaf thickness after engineering / thermal study;
+- inner-leaf thickness after engineering / thermal study;
 - airtight / vapour-control layer;
 - backplane material and section;
 - anchor spacing / load classes;
-- panel substrate;
-- panel module;
-- cavity thickness;
-- acoustic absorption;
+- panel substrate and module;
+- cavity thickness and acoustic absorption;
 - release hardware.
 
 ## Floor
@@ -415,15 +274,14 @@ The drawing should carry these explicitly as unresolved rather than invent false
 
 - ceiling support / decoupling;
 - service relationship;
-- cornice assembly;
-- slip geometry;
+- cornice assembly and slip geometry;
 - fire / acoustic closure.
 
 ---
 
 # 15. Next design output
 
-The next iteration of this bay should be developed as **three alternatives**, not one polished detail:
+Develop the next iteration as **three alternatives**, not one polished detail.
 
 ### Bay A — Conservative
 
@@ -452,4 +310,4 @@ Purpose: test whether most doctrine value can be achieved without a full-room pl
 
 Purpose: expose the maximum benefits and penalties of the complete concept.
 
-The three bays should be compared before any becomes the reference-house detail.
+Compare the three bays before any becomes the reference-house detail.

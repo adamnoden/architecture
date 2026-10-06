@@ -1,21 +1,19 @@
 # The Long-Life House
 ## Part II — Architecture of the Platform
 
-**Draft v0.3 — repose / low-vigilance integration; evidence-hardened working prose**
+**Draft v0.4 — editorial refinement; evidence-hardened working prose**
 
 ---
 
 # 6. The designed interface
 
-Buildings are usually described by their elements: wall, floor, roof, window, door, service, lining. Yet many failures occur not in the centre of those elements but where one becomes another.
+Buildings are usually described by their elements: wall, floor, roof, window, door, service, lining. Many failures occur where one becomes another.
 
-The junction is where different materials meet, different trades hand work to one another, different environmental conditions converge and different service lives become entangled. It is also where construction tolerance has to be absorbed. A wall does not arrive at exactly the dimension shown in a drawing. Timber moves. Masonry dries. Structure deflects. Windows are replaced. Sealants age. A floor is renewed while the wall beside it remains.
+A junction has to reconcile different materials, trades, environmental conditions, tolerances and service lives. Walls do not arrive at exactly the dimensions shown on drawings. Timber moves, masonry dries, structure deflects, sealants age and windows are eventually replaced. The **interface** is therefore a building element in its own right.
 
-The long-life house therefore treats the **interface** as a building element in its own right.
+That does not require a conspicuous joint everywhere. Many good interfaces are conventional and visually quiet. The requirement is that the relationship be deliberate.
 
-This does not mean inventing a conspicuous joint everywhere. In many places the correct interface will be conventional and visually silent. The requirement is more basic: the relationship must be deliberate.
-
-An interface may have to perform several jobs at once:
+An interface may need to:
 
 - transfer or deliberately avoid transferring load;
 - accommodate differential movement;
@@ -28,19 +26,13 @@ An interface may have to perform several jobs at once:
 - permit one component to be removed without destroying another;
 - provide a replaceable wear surface.
 
-These functions are often assigned separately and late. The structural engineer defines support; the window supplier defines frame tolerances; the plasterer closes the reveal; the sealant resolves the remaining gap. The finished junction works initially, but no single person has designed what happens when the window is renewed or the surrounding construction moves.
+These functions are often assigned separately and late. The structural engineer defines support, the supplier defines frame tolerances, the plasterer closes the reveal and sealant resolves what remains. The junction may work at completion while nobody has designed what happens when the window is renewed or the surrounding construction moves.
 
-A designed interface reverses that sequence. The project first decides which layer is intended to endure, which layer is expected to move or be replaced, and what must remain continuous across the junction. The geometry, fixing and finish follow from those decisions.
+A designed interface starts earlier. Decide which layer should endure, which is expected to move or be replaced, and what must remain continuous across the junction. Geometry, fixing and finish follow from those decisions.
 
 ## Separate the functions
 
-Many domestic details fail because several distinct functions are silently collapsed into one junction.
-
-**Support is not restraint. Restraint is not sealing. Sealing is not finish. Finish is not movement control.**
-
-Sometimes one component can legitimately perform several of these tasks. But the combination should be deliberate rather than accidental.
-
-At an important interface the design should ask separately:
+Several distinct jobs are often collapsed into one domestic detail. At an important interface, ask separately:
 
 - what carries gravity load?
 - what provides lateral or rotational restraint?
@@ -50,39 +42,39 @@ At an important interface the design should ask separately:
 - what provides the visible finish?
 - what must be removed when the shorter-lived assembly is renewed?
 
-This distinction is particularly useful structurally. A floor member may be supported by bearing while separate details provide roll restraint, diaphragm action or wall restraint. If the functions are understood separately, the connection can be robust without becoming needlessly rigid.
+One component may legitimately perform several jobs, but the combination should be intentional.
+
+This is especially useful structurally. A floor member may be supported by bearing while separate details provide roll restraint, diaphragm action or wall restraint. Separating the functions can make the connection robust without making it needlessly rigid.
 
 The governing structural principle is:
 
 > **Deterministic load paths; bounded freedom of movement.**
 
-The building should be highly legible about where loads go and where restraint is required. It should be equally deliberate about movements that are harmless and therefore need not be suppressed.
+Loads and required restraint should be unambiguous. Harmless movement should be allowed where it does no damage.
 
 ## Two kinds of structural legibility
 
-There is an important distinction between **engineering legibility** and **perceptual structural legibility**.
+**Engineering legibility** concerns the real building: load paths, bearings, ties, restraint and movement must be clear enough to calculate, detail, inspect and alter safely.
 
-Engineering legibility concerns the real building: the load path, restraint, bearings, ties and movement must be clear enough to calculate, detail, inspect and alter safely.
+**Perceptual structural legibility** concerns what the occupied architecture appears to be doing. The two need not coincide literally. A concealed beam may carry a wall; reinforcement may make a masonry opening possible; a frame may sit behind a finished surface. Principle 8 does not require structural exhibition.
 
-Perceptual structural legibility concerns what the occupied architecture appears to be doing. The two need not be identical. A concealed beam may carry a wall; reinforcement may make a masonry opening possible; a frame may sit behind a finished surface. Principle 8 does not require literal structural exposure.
+It does create a review question for principal domestic spaces: **does the visible architecture present a plausible account of equilibrium, or depend on apparent precariousness for its effect?**
 
-It does, however, create a review question for principal domestic spaces: **does the visible architecture present a plausible account of equilibrium, or does it depend on apparent precariousness for its effect?**
-
-Vision research indicates that people rapidly infer support, stability, mass and gravity from scenes. The further claim—that visually settled construction contributes to long-duration domestic repose—is treated here as an architectural hypothesis rather than a demonstrated physiological law. The reference house therefore prefers apparent settlement without pretending that the visible finish is a structural diagram.
+Vision research indicates that people rapidly infer support, stability, mass and gravity from scenes. The further claim—that visually settled construction contributes to long-duration domestic repose—remains an architectural hypothesis rather than a demonstrated physiological law. The reference house therefore prefers apparent settlement without pretending that its visible finish is a structural diagram.
 
 ## Movement is ordinary
 
-Cracking is often treated as a cosmetic defect produced by imperfect workmanship. Sometimes it is. But movement itself is not a defect. Buildings expand and contract with temperature; timber changes dimension with moisture; structures deflect under load; masonry shrinks and creeps; adjoining materials respond differently to the same environment.
+Movement is not itself a defect. Buildings expand and contract with temperature, timber changes dimension with moisture, structures deflect under load and masonry shrinks and creeps. Problems arise when known movement has nowhere harmless to occur.
 
-The design problem is therefore not to command the building to remain motionless. It is to decide **which movements are harmless, how large they are likely to be, and where they are allowed to occur without damage**.
+The design task is to establish **which movements are expected, how large they may be, and where they can occur without damage**.
 
-Conventional construction already recognises this at movement joints, facade interfaces and structural bearings. The proposition here is to extend the same seriousness to ordinary domestic junctions where brittle finishes are routinely asked to conceal relationships that are known to move.
+Conventional construction already does this at movement joints, facade interfaces and structural bearings. The same seriousness should extend to ordinary domestic junctions where brittle finishes are often asked to conceal independently moving assemblies.
 
-A plaster line between independently moving assemblies is not an interface. It is an instruction to crack later.
+A plaster line between such assemblies is not a movement strategy. It is likely to become the crack.
 
-This is particularly relevant where a replaceable component meets permanent construction: windows in masonry openings, doors in walls, removable panels within fixed floors, joinery against masonry, wet-room fit-out against structure, and service penetrations through boundaries.
+This matters particularly where replaceable work meets permanent construction: windows in masonry, doors in walls, removable floor panels, joinery against masonry, wet-room fit-out and service penetrations.
 
-A useful detail does not merely tolerate movement somewhere inside an assembly. It defines a **movement budget**: the expected direction and order of movement, the clearance provided, the surfaces allowed to slide or rotate, and the condition at which inspection or intervention becomes necessary.
+A useful detail defines a **movement budget**: expected direction and order of movement, available clearance, permitted sliding or rotation, and the point at which inspection or intervention becomes necessary.
 
 ## Interface hierarchy
 
@@ -91,44 +83,44 @@ The preferred sequence is:
 1. avoid unnecessary coupling;
 2. define which assembly controls the junction;
 3. provide tolerance and movement geometrically;
-4. maintain the required environmental and safety boundaries;
-5. expose or make reachable the fixings needed for replacement;
+4. maintain required environmental and safety boundaries;
+5. make replacement fixings reachable;
 6. use replaceable seals, gaskets or wear parts where unavoidable;
 7. conceal the mechanism architecturally only after the technical relationship is resolved.
 
-This hierarchy matters because a nominally “reversible” joint can still be destructive if the access to its fasteners is buried behind bonded finish. Likewise, an accessible fixing is not acceptable if reaching it breaks an airtight, acoustic or fire boundary that cannot be reliably reinstated.
+A nominally reversible joint is still destructive if its fasteners are buried behind bonded finish. An accessible fixing is equally poor if reaching it breaks an airtight, acoustic or fire boundary that cannot be reliably reinstated.
 
-Every interface therefore carries a **boundary ledger**: structure, fire, smoke, sound, air, vapour, bulk water, pests and security. Only the boundaries that apply need be designed, but none may be silently sacrificed for access.
+Every interface therefore carries a **boundary ledger**: structure, fire, smoke, sound, air, vapour, bulk water, pests and security. Only the relevant boundaries need to be designed, but none may disappear silently in the pursuit of access.
 
 ## Workmanship robustness
 
-The drawn junction is an idealised geometry. The built junction is an encounter between materials and processes with different achievable accuracies.
+The drawn junction is idealised geometry. The built junction brings together materials and processes with different achievable accuracies.
 
-British tolerance guidance treats this as a design-management problem rather than something to be left to the final trade. The important question is not merely whether each component lies within its own permitted deviation, but whether the **assembly still works when credible deviations meet**. Research into construction tolerance management reaches the same conclusion: tolerance problems are strongest when identified, planned, communicated and measured before assembly rather than corrected ad hoc on site.
+British tolerance guidance treats this as a design-management problem. The important question is not simply whether each component lies within its own permitted deviation, but whether the **assembly still works when credible deviations meet**. Construction-tolerance research reaches the same conclusion: variation is best identified, allocated, communicated and measured before assembly rather than corrected ad hoc at the end.
 
-The project uses **workmanship robustness** to describe this wider property.
+The project calls this wider property **workmanship robustness**.
 
 > **A robust detail should survive ordinary competent workmanship without requiring improvised correction, while still making poor or out-of-range work visible.**
 
-This is not a call for loose construction. It is a call for deliberate allocation of precision.
+This is an allocation of precision, not a call for loose construction.
 
 A useful interface defines a **tolerance strategy** with at least five parts:
 
-1. **incoming condition** — what dimensional or geometric variation can credibly arrive from preceding work?
+1. **incoming condition** — what variation can credibly arrive from preceding work?
 2. **controlling datum** — which plane, axis, level or point governs the finished relationship?
-3. **adjustment capacity** — where and by what mechanism is acceptable variation absorbed?
-4. **remediation threshold** — when is the incoming work too far out to be adjusted legitimately?
+3. **adjustment capacity** — where and how is acceptable variation absorbed?
+4. **remediation threshold** — when is the incoming work too far out to adjust legitimately?
 5. **verification** — how is the condition checked before later work conceals it?
 
-This produces a recurring hierarchy:
+A recurring hierarchy follows:
 
 **site-built work → known tolerance envelope → deliberate adjustment interface → precise datum → precise assembly → architectural cover**
 
-The hierarchy is not mandatory at every junction. It is especially useful where relatively coarse permanent construction meets a more precise replaceable layer: masonry to window, masonry to backplane, structural floor to removable platform, wet-room substrate to manufactured joinery.
+It is especially useful where relatively coarse permanent construction meets a precise replaceable layer: masonry to window or backplane, structural floor to removable platform, wet-room substrate to manufactured joinery.
 
-Traditional architectural elements can participate in this work. An architrave can overlap the imperfect meeting of frame and wall. A skirting can cover the residual perimeter of a floor. A cornice can give depth to the wall/ceiling junction. A rebate, scribe or cover moulding can allow two materials to meet without pretending that both arrived at mathematical perfection. These devices become stronger, not weaker, when their architectural depth coincides with a real constructional need.
+Traditional elements can perform this work. An architrave can overlap the frame/wall tolerance zone, a skirting can cover a floor perimeter, and a cornice can give depth to the wall/ceiling junction. Rebate, scribe and cover moulding likewise allow materials of different accuracy to meet without pretending both arrived at mathematical perfection. Their architectural depth becomes more convincing when it coincides with a real constructional need.
 
-There is also a human-error dimension. Lean-construction research has applied the manufacturing idea of mistake-proofing to building systems: where worthwhile, products and details can be designed so that an incorrect assembly is impossible, awkward, conspicuous or detected before it propagates. The hierarchy should be proportional:
+Human error requires the same attention. Lean-construction research has applied mistake-proofing to building systems: where worthwhile, an incorrect assembly can be made impossible, awkward, conspicuous or detectable before later work hides it. The proportional hierarchy is:
 
 1. remove unnecessary operations;
 2. simplify the operation;
@@ -138,75 +130,61 @@ There is also a human-error dimension. Lean-construction research has applied th
 6. make correction local and reversible;
 7. define when work must stop and be remediated rather than improvised around.
 
-The phrase “install carefully” should not be the primary control for a recurring high-consequence ambiguity that could have been removed by geometry.
+“Install carefully” is a weak primary control for a recurring, high-consequence ambiguity that geometry could have removed.
 
-Human-factors practice makes a related point: reliability improves when the task, equipment and interface are designed around the people who must actually use them, and when those users are involved early. A repeated non-standard architectural system should therefore be trialled by a representative competent installer who did not design it. Every question, workaround and temptation to reach for unplanned foam, filler, adhesive, packers or extra fixings is information about the design.
+Human-factors practice makes a related point: reliability improves when tasks and interfaces are designed around the people who must use them. Repeated non-standard systems should therefore be trialled by a representative competent installer who did not design them. Questions, workarounds and unplanned foam, filler, packers or extra fixings are evidence about the design.
 
-That test protects the project from a particular kind of prototype theatre: a detail that works beautifully only because its inventor already knows how it is supposed to work.
+This avoids prototype theatre: a detail that works only because its inventor already knows its intended sequence.
 
-Workmanship robustness does not eliminate craft. David Pye's distinction between *workmanship of risk* and *workmanship of certainty* is useful precisely because the project needs both. A hand-scribed timber junction may be better because it carries skilled judgement. A brick elevation may gain its character from the mason's hand. The error is not allowing workmanship to matter; it is spending scarce craft merely to compensate for unresolved interfaces that could have been designed to locate, adjust and verify themselves.
-
-A concise rule follows:
+Workmanship robustness does not eliminate craft. David Pye's distinction between *workmanship of risk* and *workmanship of certainty* is useful because the project needs both. Hand-scribed timber or fine masonry may gain value from skilled judgement. Scarce craft should not be spent merely compensating for an unresolved interface that could have located and verified itself.
 
 > **Demand precision where precision creates value. Spend workmanship where workmanship creates value.**
 
 ## The window as a model interface
 
-A window demonstrates the principle particularly clearly.
+A window makes the principle concrete. The masonry opening may outlast several generations of glazing, seals, hardware and eventually frames. The opening can therefore be understood as enduring architecture and the window as a replaceable assembly within it.
 
-The masonry opening may be capable of lasting far longer than the window assembly. Glazing units, seals, hinges, handles and eventually the frame itself will be renewed on shorter cycles. The opening should therefore be understood as permanent architecture and the window as a replaceable assembly installed within it.
+That does not demand a novel window system. It demands a mounting zone, drainage logic and finishing strategy that allow adjustment, service and eventual removal without rebuilding the opening.
 
-That does not demand a novel window system. It argues for a deliberate mounting zone, drainage logic and internal finishing strategy that permit the window to be adjusted, serviced and eventually removed without rebuilding the opening.
+The detail might use a subframe, removable reveal pieces, accessible mechanical fixings or another arrangement. The doctrine does not prescribe which. It requires the replacement sequence to be drawn before construction.
 
-The precise detail may include a subframe, removable reveal pieces, accessible mechanical fixings or another arrangement. The doctrine does not prescribe which. It requires the replacement sequence to be drawn before construction.
-
-The same question can then be asked of doors, thresholds, floor access, grilles, kitchen joinery and wet-room panels.
+The same test can be applied to doors, thresholds, floor access and wet-room panels.
 
 ## Tectonic honesty
 
 The interface is also where the project makes an architectural claim about how the building is made.
 
-The long-life house should be **tectonically honest**. This does not require exposed services, visible bolts or a modernist aesthetic. It means that construction may be concealed, but it should not be falsified.
+The Long-Life House should be **tectonically honest**. Construction may be concealed; it should not be falsified. A cornice can conceal a real movement gap, an architrave real window fixings and timber panelling a real service zone. The architectural element has its own material existence while performing genuine technical work.
 
-A real cornice may conceal a real movement gap. A removable architrave may conceal real window fixings. Timber panelling may conceal a service zone. These are honest forms of concealment because the architectural element has its own material reality and performs a genuine role.
+By contrast, a brittle finish bridging assemblies known to move independently creates apparent continuity by denying the actual constructional relationship. If it must crack before the building can move, the junction is unresolved.
 
-By contrast, brittle finish bridging two assemblies known to move independently creates apparent continuity by denying the real constructional relationship. A cosmetic seam that must crack before the building can move is not successful concealment; it is unresolved construction.
+The same discipline applies to material expression. Cladding, veneers, paint and render can be legitimate systems. The concern is **counterfeit construction**: using material or joint pattern principally to imply a materially different structural, weathering or craft condition.
 
-The same discipline applies to material expression. Cladding, veneers, paint and render can be legitimate systems in their own right. The concern is not that every surface must reveal every layer behind it. The concern is **counterfeit construction**: using a material or joint pattern principally to imply a materially different structural, weathering or craft condition that the building does not possess.
+This is stricter than ordinary visual preference but looser than structural exhibitionism. A non-loadbearing classical element can be architecturally genuine when its real role is compositional, protective, spatial or as an interface. Honesty does not require every pilaster to be a column; it requires the project to know what the pilaster is doing.
 
-This distinction is intentionally stricter than ordinary visual preference but looser than structural exhibitionism. A non-loadbearing classical element can still be architecturally genuine if its actual role is compositional, protective, spatial or as an interface. Honesty does not require every pilaster to be a column; it requires the project to understand what the element really is.
-
-At an ambiguous case, the useful question is:
+At an ambiguous junction, ask:
 
 > **What does this detail ask the observer, future owner or future craftsperson to believe about how the building works, and is that account substantially true?**
 
 ## Architectural expression
 
-An interface need not look technical.
+An interface need not look technical. A threshold can resolve movement and wear in stone or metal; a removable architrave can conceal fixings; a skirting can carry a service route without resembling commercial trunking.
 
-A threshold may express a movement and wear junction in stone or metal. A timber architrave can conceal fixings while remaining removable. A skirting may carry a service route without resembling commercial trunking. A cornice may conceal a slip relationship between ceiling and wall.
+The reference house uses traditional joinery and restrained metalwork as one language for these conditions. That is a project choice, not doctrine.
 
-The reference house developed later in this book uses traditional joinery and restrained metalwork as one language for these conditions. That is an architectural choice, not a requirement of the doctrine.
+Technical performance is incomplete if a maintainable junction appears in a principal room as an arbitrary access panel, crude gap or piece of commercial equipment. Once performance is secure, the visible result still needs architectural resolution.
 
-The deeper proposition is that architecture should not be asked to hide the absence of detail. It should **be the detail**.
-
-Beauty is therefore part of technical completion. A maintainable junction that reads as an arbitrary access panel, crude gap or piece of commercial trunking in a principal room has solved only part of the problem. Every visible pattern should answer a second question after performance is secured:
-
-> **How does this become architecture rather than equipment?**
-
-The answer may be deliberately quiet: a moulding, a reveal, a threshold, a panel rhythm, a well-made removable trim or a fine metal line. The doctrine does not prescribe a style. It requires the visible result to be resolved rather than excused.
+That resolution may be quiet: a moulding, reveal, threshold, panel rhythm, removable trim or fine metal line. The doctrine does not prescribe a style. It requires the result to be resolved rather than excused.
 
 ---
 
 # 7. Failure architecture
 
-Design drawings normally describe intended operation. Water remains inside pipes. Rain follows the gutter. Condensate finds its drain. A seal remains sealed. A pump runs. A valve closes.
+Design drawings normally describe intended operation: water remains in pipes, rain follows the gutter, condensate reaches its drain and valves close when required. A long-lived building also needs a design for the first departure from that state.
 
-A long-lived building must also be designed for the first departure from that ideal state.
+A detail that requires every seal, joint and human action to remain perfect for decades is not robust merely because it works at completion.
 
-This is not pessimism. It is recognition that a building will experience thousands of operating cycles, weather events and maintenance interventions. A detail that requires every seal, joint and human action to remain perfect for decades is not robust merely because it works on completion day.
-
-The appropriate question is:
+The useful question is:
 
 > **If the first defence fails, what happens next?**
 
@@ -215,56 +193,46 @@ The appropriate question is:
 The preferred sequence is:
 
 1. remove avoidable sources of failure;
-2. use geometry and passive physics to reduce the probability of failure;
+2. use geometry and passive physics to reduce failure probability;
 3. contain or limit credible failures where proportionate;
-4. make the abnormal condition detectable;
+4. make abnormal conditions detectable;
 5. provide rapid isolation;
 6. provide access for diagnosis and repair;
 7. provide a route for drying and recovery.
 
-Different systems require different answers. There is no universal secondary tray, tell-tale or sensor.
+Different systems require different answers; there is no universal tray, tell-tale or sensor.
 
-For water-bearing systems, Scandinavian practice offers a mature example of the principle. Norwegian building guidance requires internal water installations to be arranged so leakage can be detected easily and does not unnecessarily damage other construction. Pipe-in-pipe distribution, drained cabinets and similar systems embody a simple idea: concealment need not mean invisible damage.
+For water-bearing systems, Norwegian guidance provides a mature example: internal water installations should be arranged so leakage is readily detected and does not unnecessarily damage other construction. Pipe-in-pipe distribution, drained cabinets and related systems embody a simple idea: concealment need not mean invisible damage.
 
-British hot-water safety guidance contains a narrower but instructive analogue. A tundish makes safety discharge observable; where discharge may not be apparent, additional warning may be appropriate. The principle is not that all failures must literally pour into view. It is that abnormal operation should not remain unknowable while damage accumulates.
+British hot-water guidance contains a narrower analogue. A tundish makes safety discharge observable; where discharge may not be apparent, additional warning may be appropriate. The transferable principle is not that every failure must pour into view, but that abnormal operation should not remain unknowable while damage accumulates.
 
 ## Passive first, active second
 
-Electronic leak sensors and automatic shut-off valves can be valuable. They should not be dismissed merely because they are electronic.
+Electronic leak sensors and automatic shut-off valves can be valuable. Their strongest use is as an addition to a safe physical arrangement rather than compensation for a dangerous one. Batteries, networks and controllers can fail; a passive fall, overflow or drainage path continues to exist.
 
-But sensing is most robust when it augments a safe physical arrangement rather than compensating for a dangerous one. A battery, network or controller may fail. A passive fall, drainage path, overflow or accessible tray continues to exist.
+The preferred hierarchy is therefore **physical damage limitation as the base layer, with detection and automation added where consequence warrants them**.
 
-The preferred hierarchy is therefore **physical damage limitation as the base layer, detection and automation as additional layers where consequence warrants them**.
+The same logic applies elsewhere. Roof overflows should reveal blocked drainage without sending water into concealed construction. Ventilation condensate routes should be traceable. Window interfaces should direct incidental water outward. An underfloor service space should not let a small leak disappear into insulation or timber.
 
-The same logic applies beyond plumbing.
+## Drying is part of recovery
 
-A roof overflow should discharge somewhere that reveals blockage without driving water into concealed construction. A ventilation condensate route should be traceable and accessible. A window interface should direct incidental water outward. An underfloor service space should not allow a small leak to disappear into insulation or timber.
+Containment is only part of failure recovery. An assembly that can become wet also needs a credible route to drain, evaporate, be inspected or be opened for drying. Low-permeability layers can turn minor wetting into long-term decay if they trap moisture between them.
 
-## Drying is part of failure recovery
+“Waterproof” is therefore not a complete durability strategy. The building needs a theory of wetting, drainage, drying and observation.
 
-Containment is not enough.
-
-An assembly that can become wet must also have a credible recovery path. Moisture that has bypassed the first line of defence may need to drain, evaporate, be inspected or be opened for drying. Low-permeability layers can turn a minor wetting event into long-term decay if water becomes trapped between them.
-
-This is why “waterproof” is not a complete durability strategy. The building needs a theory of wetting, drainage, drying and observation.
-
-Historic-building guidance is useful here not because a new house should imitate historic construction, but because conservation practice is acutely aware that repair decisions can make moisture behaviour worse. The lesson is transferable: diagnose the mechanism, preserve a drying route, and avoid solutions that merely hide symptoms.
+Conservation practice is useful here because it is acutely aware that repairs can worsen moisture behaviour. The transferable lesson is to diagnose the mechanism, preserve a drying route and avoid solutions that merely conceal symptoms.
 
 ## Failure should be local
 
-Where practical, failure should stop at the smallest useful boundary.
+Where practical, failure should stop at the smallest useful boundary. A washing-machine hose should test the utility-room containment strategy, not the ground-floor structure. A failed shower connection should test the wet-room assembly, not the ceiling below. A blocked rainwater outlet should test an overflow route, not the wall cavity.
 
-A washing-machine hose should test the utility-room containment strategy, not the ground-floor structure. A failed shower connection should test the wet-room assembly, not the ceiling below. A blocked rainwater outlet should test an overflow route, not the wall cavity.
+Locality reduces damage and diagnostic uncertainty.
 
-Locality reduces both damage and diagnostic uncertainty.
-
-This is also an argument for granular isolation. The ability to shut off one fixture, circuit or plant item can prevent a small defect from becoming a whole-house emergency. Granularity should remain proportionate; a building with hundreds of valves nobody can identify is not more maintainable.
+It also supports granular isolation. Shutting off one fixture, circuit or plant item can stop a local defect becoming a whole-house emergency. Granularity still needs restraint: hundreds of unidentifiable valves do not produce maintainability.
 
 ## Failure scenarios as design tools
 
-Failure architecture is best tested through scenarios rather than slogans.
-
-For each important system the design team should ask:
+For each important system, ask:
 
 - what is the credible first failure?
 - how will it be detected?
@@ -275,125 +243,95 @@ For each important system the design team should ask:
 - how will the assembly dry or be reinstated afterward?
 - what maintenance burden does the protective system itself create?
 
-These questions should appear in design reviews and commissioning.
-
-A containment route that has never been water-tested is a drawing, not a protection system.
+These questions belong in design reviews and commissioning. A containment route that has never been water-tested remains a drawing, not a protection system.
 
 ---
 
 # 8. Maintenance geography
 
-A component may be visible and still be effectively inaccessible.
+A component may be visible and still be unusable for maintenance. A technician can stand in front of a boiler that will not fit through the door. A valve may be reachable by hand but not by the required tool. A roof outlet may be visible from a window while still demanding improvised work at height.
 
-A technician standing in front of a boiler can inspect it, yet the unit may be impossible to withdraw through the door. A valve behind a panel may be reachable by hand but impossible to operate with the required tool. A roof outlet may be visible from a window while still requiring improvised work at height. A fan may be removable only after a finished ceiling has been dismantled.
+Access therefore has scale. At one end is clearance around a fixing; at the other is the route by which people, tools, replacement equipment and waste move through the building.
 
-Access therefore has scale.
-
-At the smallest scale there is clearance around a fixing. At the largest there is the route by which people, tools, replacement equipment and waste move through the building.
-
-**Maintenance geography** is the deliberate organisation of that whole spatial system.
-
-The term is used here prospectively: the topology by which maintenance work has been given places to occur. It is related to, but distinct from, scholarship describing the geography of maintenance as lived work.
+**Maintenance geography** is the deliberate organisation of that spatial system. The term is used here prospectively: the topology by which maintenance work is given places to occur. It is related to, but distinct from, scholarship describing maintenance as lived spatial practice.
 
 ## From component access to spatial order
 
-Professional guidance already treats maintenance as a design concern. CDM makes designers consider people who will maintain, repair, clean and eventually demolish the building. CIBSE maintenance guidance places maintainability within building-services design. Circular-design guidance goes further, calling for visibility of reversible connections, safe access, working platforms and enough room to remove components.
+Professional guidance already treats maintenance as a design concern. CDM makes designers consider future maintenance, repair and cleaning; CIBSE places maintainability within building-services design; circular-design guidance calls for visible reversible connections, safe access, working platforms and enough space to remove components.
 
-The architectural move is to stop treating these as isolated clearances.
+The architectural move is to coordinate these requirements as a spatial system. Plant rooms, risers, wet rooms, service walls, drainage routes, roof access, external utility entry and major replacement paths should form a coherent map.
 
-Plant rooms, risers, wet rooms, service walls, drainage routes, roof access, external utility entry and major replacement paths should form a coherent map.
-
-In a large laboratory this may produce interstitial floors and dedicated service circulation. In a house it should usually be much quieter. A hallway can also be the horizontal service spine. A cupboard can form the accessible side of a wet-room wall. A stair can provide the route to a proper attic maintenance space. A side entrance can serve both daily life and trades.
-
-The objective is not a second hidden house for technicians. It is to prevent maintenance from being spatially accidental.
+In a laboratory this may justify interstitial floors and dedicated service circulation. In a house it should usually be quieter. A hallway may double as the horizontal service spine; a cupboard may form the accessible side of a wet-room wall; an ordinary stair may lead to a proper attic maintenance space. The objective is not a hidden second house for technicians, but an end to spatially accidental maintenance.
 
 ## The maintenance route
 
-For every important replaceable item, four geometries should be drawn:
+For every important replaceable item, draw four geometries:
 
 **Approach** — how a person reaches the component.  
 **Working space** — where the person stands, kneels or places tools.  
 **Disconnection** — the clearances required to isolate and detach it.  
-**Withdrawal** — the path by which the component leaves and its replacement arrives.
+**Withdrawal** — how the component leaves and its replacement arrives.
 
-The last is routinely neglected.
-
-A plant room whose door is narrower than its largest replaceable item is not serviceable. Neither is a roof-mounted unit with no route for lifting or safe handling. Replacement geometry belongs in the architectural plan and section before the equipment is selected.
+Withdrawal is routinely missed. A plant room whose door is narrower than its largest replaceable item is not serviceable. Neither is roof plant with no credible lifting or handling route. Replacement geometry belongs in plan and section before equipment selection is finalised.
 
 ## Frequency and consequence
 
-Not every component deserves generous access.
-
-The doctrine uses a proportionality test:
+Not every component deserves generous access. The proportionality test remains:
 
 **frequency × consequence × retrofit difficulty**
 
-A frequently cleaned filter deserves fast access. A valve whose failure can flood the house deserves obvious isolation. A heavy plant item replaced once every two decades may justify a withdrawal route but not a permanently empty corridor around it. A buried pipe with no joints and an expected life compatible with the surrounding assembly may rationally receive less access than a pump.
-
-This avoids turning maintainability into spatial extravagance.
+A frequently cleaned filter deserves fast access. A valve capable of flooding the house deserves obvious isolation. A heavy item replaced once every two decades may justify a withdrawal route without demanding permanently empty space around it. A joint-free buried pipe whose life is compatible with the surrounding assembly may rationally receive less access than a pump.
 
 ## Clustering and service density
 
-Maintenance geography favours clustering where clustering does not create other problems.
+Maintenance geography favours clustering where clustering does not create a worse problem. Wet rooms can share routes, plant can sit near the main riser and high-service rooms can align vertically.
 
-Wet rooms can share drainage and water routes. Plant can sit near the principal riser. High-service rooms can align vertically. Corridor edges can carry horizontal distribution. External utilities can enter through a controlled zone rather than several unrelated penetrations.
-
-But clustering is not absolute. Acoustic privacy, fire safety, daylight, structural logic and architectural composition may require separation. The service plan is one layer of the architecture, not its master.
-
-The design problem is coordination.
+Acoustic privacy, fire safety, daylight, structure and architectural composition may require separation. The service plan is one layer of the architecture, not its master.
 
 ## Six domestic maintenance scenarios
 
-The following scenarios are useful tests for the reference house:
+The reference house should test at least these scenarios:
 
 1. **Replace the principal ventilation fan.** Can it be isolated, reached, disconnected and removed without opening finished construction?
-2. **Add a cable to a principal room.** Is there a route that does not require chasing masonry or randomly drilling structure?
-3. **Renew a bathroom valve and waste.** Can both pressure and drainage connections be reached without demolishing the room?
-4. **Replace a full window frame.** Can the frame be removed while the permanent opening and adjacent room finishes survive?
+2. **Add a cable to a principal room.** Is there a route that avoids chasing masonry or randomly drilling structure?
+3. **Renew a bathroom valve and waste.** Can pressure and drainage connections be reached without demolishing the room?
+4. **Replace a full window frame.** Can the frame leave while the permanent opening and adjacent finishes survive?
 5. **Clear a drainage blockage.** Are changes of direction and transitions reachable from intentional access points?
-6. **Replace the primary heat source.** Can the old item leave the building and a materially different future system reach the service hub?
+6. **Replace the primary heat source.** Can the old item leave and a materially different future system reach the service hub?
 
-These are more useful than saying a plant room should be “generous”.
-
-They turn serviceability into a performance requirement.
+These are more useful than describing a plant room as merely “generous”. They turn serviceability into a testable requirement.
 
 ---
 
 # 9. Environmental resilience without dependence
 
-A repairable building that overheats, traps pollutants or wastes energy is not a successful long-life building.
+A repairable building that overheats, traps pollutants or wastes energy is not a successful long-life building. Longevity and environmental performance have to be designed together.
 
-Longevity does not outrank environmental performance. The two have to be designed together.
-
-In England, current regulation separately addresses energy and greenhouse-gas performance, ventilation and overheating. CIBSE's 2026 TM59 methodology also tests overheating with future weather and explicitly emphasises passive optimisation before active correction. The implication for this doctrine is straightforward: a long-life platform must remain environmentally credible under the climate in which it is expected to operate, not only the climate at completion.
+In England, regulation separately addresses energy and greenhouse-gas performance, ventilation and overheating. CIBSE's 2026 TM59 methodology tests overheating with future weather and emphasises passive optimisation before active correction. A long-life platform must therefore remain credible under the climate it is expected to encounter, not only the climate at completion.
 
 ## Passive architecture does the first work
 
-Orientation, window area, external shading, useful thermal mass, insulation continuity, airtightness, controllable openings and landscape should reduce the environmental load before plant is sized.
+Orientation, window area, external shading, useful thermal mass, insulation continuity, airtightness, controllable openings and landscape should reduce environmental loads before plant is sized.
 
-This is an order of operations, not an ideology.
-
-Mechanical ventilation can be the correct solution in an airtight house. Cooling can be justified where modelling demonstrates a need. Heat pumps, controls and automated shading can materially improve performance. The doctrine's concern is that active systems should not be forced to compensate for avoidable architectural problems, and that their eventual maintenance and replacement should have been anticipated.
+This is an order of operations, not an ideology. Mechanical ventilation can be the correct solution in an airtight house. Cooling can be justified where modelling shows a need. Heat pumps, controls and automated shading can improve performance materially. Active systems should not be forced to compensate for avoidable architectural problems, and their eventual maintenance and replacement should be anticipated.
 
 ## Local environmental control
 
 Comfort is not only the delivery of a target condition. Research on indoor environments repeatedly identifies **perceived control** as relevant to occupant satisfaction.
 
-The architectural implication is modest but important. Where practical, an occupant should be able to understand and alter the immediate condition of a room without negotiating an opaque building-management system. An operable window, local shade, closing door, intelligible thermostat, dimmable light or manual override can matter even when automation performs most routine control.
+Where practical, an occupant should be able to understand and alter the immediate condition of a room without negotiating an opaque building-management system. Operable windows, local shade, closing doors, intelligible thermostats, dimmable lights and manual overrides are ordinary examples.
 
-This is not an argument against automation. It is an argument against making ordinary comfort dependent on a system whose state and failure mode are unintelligible to the person living with it.
+This is not an argument against automation. Ordinary comfort should not depend entirely on a system whose state and failure mode are unintelligible to the person living with it.
 
-Privacy is a related form of agency. The ability to close a room, moderate a view, withdraw from household noise or occupy a less exposed position should be treated as part of the environmental brief where the room programme calls for it.
+Privacy is a related form of agency. Where the programme calls for it, people should be able to close a room, moderate a view, withdraw from household noise or occupy a less exposed position.
 
 ## Future climate
 
-A house intended to last for generations should not be tuned only to a historical weather file.
+A house intended to last for generations should not be tuned only to a historical weather file. Overheating analysis should consider credible future summer conditions.
 
-Overheating analysis should consider credible future summer conditions. External shading deserves particular weight because solar heat stopped outside the envelope need not later be removed mechanically. Secure night purge, cross-ventilation and ceiling fans may extend the useful passive range, but their effectiveness must be modelled rather than assumed.
+External shading deserves particular weight because solar heat stopped outside the envelope does not later need to be removed mechanically. Secure night purge, cross-ventilation and ceiling fans may extend the passive range, but their effectiveness must be modelled rather than assumed.
 
-The correct result may still include active cooling.
-
-If it does, refrigerant routes, condensate, plant access, acoustics and future replacement become part of the platform.
+The correct result may still include active cooling. If it does, refrigerant routes, condensate, plant access, acoustics and future replacement become part of the platform.
 
 ## Indoor air quality and source capture
 
@@ -405,37 +343,31 @@ The preferred hierarchy is:
 4. filter incoming air where external conditions justify it;
 5. use monitoring and controls as supplementary layers.
 
-Kitchen extraction is a clear example. Removing cooking products at the hood is fundamentally different from allowing them to spread through the dwelling and attempting to dilute them later. Bathrooms and laundry spaces similarly benefit from source extraction of moisture.
+Kitchen extraction makes the principle obvious: removing cooking products at the hood is different from allowing them to spread through the dwelling and attempting to dilute them later. Bathrooms and laundry spaces likewise benefit from source extraction of moisture.
 
 Ventilation terminals, filters and fans are maintenance items. Their performance should not depend on inaccessible filters or ducts that cannot be cleaned.
 
-Current Approved Document F requires mechanical ventilation systems to be commissioned, and for new dwellings measured airflow rates to be recorded. That principle should be embraced rather than treated as paperwork: installed performance matters more than catalogue performance.
+Approved Document F requires mechanical ventilation systems to be commissioned and, for new dwellings, measured airflow rates to be recorded. That should be treated as performance evidence rather than paperwork: installed performance matters more than catalogue performance.
 
 ## Passive survivability
 
-A long-life house should also have a sensible failure state.
+A long-life house should have a sensible failure state. If electrical power, heating or mechanical ventilation is unavailable, conditions should deteriorate gradually rather than become immediately dangerous. Operable windows, useful thermal mass, shading, compartmentalisation and the basic envelope can provide resilience even when they cannot maintain full comfort.
 
-If electrical power, heating or mechanical ventilation is unavailable, conditions should deteriorate gradually rather than become immediately dangerous. Operable windows, useful thermal mass, shading, compartmentalisation and the basic envelope can provide resilience even when they cannot maintain full comfort.
+Essential isolation and basic operation should also remain understandable if automation is unavailable.
 
-Manual fallback belongs here too. Essential isolation and basic operation should remain understandable if a home-automation platform is unavailable.
-
-The aim is not technological abstinence. It is **graceful degradation**.
+The objective is **graceful degradation**, not technological abstinence.
 
 ---
 
 # 10. Boundaries
 
-The platform doctrine creates voids, routes, access panels, penetrations and removable components.
+The platform creates voids, routes, access panels, penetrations and removable components. Each can interrupt something the surrounding construction was doing.
 
-Every one of them threatens a boundary.
-
-A service void can transmit smoke. A pipe can bridge acoustic isolation. A removable floor panel can compromise impact sound. A riser can become a vertical fire and pest route. A poorly sealed access door can puncture an airtight layer. A cable route can carry sound between bedrooms. A service opening in the external wall can admit rain or rodents.
-
-This is why access cannot be evaluated alone.
+A service void can transmit smoke, a pipe can bridge acoustic isolation, a removable floor panel can compromise impact sound and an access door can puncture an airtight layer. Access cannot therefore be evaluated alone.
 
 ## Boundary debt
 
-Every opening creates **boundary debt**: the technical work required to restore all the properties the interrupted construction was providing.
+Every opening creates **boundary debt**: the work required to restore the properties of the interrupted construction.
 
 Depending on location, these may include:
 
@@ -451,27 +383,19 @@ Depending on location, these may include:
 - pest resistance;
 - physical security.
 
-Not every junction owes every debt. But the list must be consciously checked.
+Not every junction owes every debt, but the applicable ones must be checked consciously.
 
-The principle is already embedded in regulation. Approved Document P, for example, explicitly reminds electrical designers that service work interacts with structure, fire, moisture and sound requirements. The doctrine turns that cross-disciplinary fact into an architectural rule.
+This cross-disciplinary principle already appears in regulation. Approved Document P, for example, reminds electrical designers that service work interacts with structure, fire, moisture and sound. The doctrine makes that fact an architectural rule.
 
 ## Compartment rather than tunnel
 
-The most important consequence concerns continuous service space.
+A convenient service void should not become an uninterrupted path through the building. Horizontal and vertical routes should stop at appropriate boundaries. Individual services may cross through designed penetrations, but the surrounding air volume should not casually continue with them. Fire, acoustic and pest strategies can often share the same compartment line.
 
-A convenient void should not become an uninterrupted path through the building.
-
-Horizontal and vertical routes should be subdivided at appropriate boundaries. Individual services may cross through designed penetrations, but the surrounding air volume should stop. The fire, acoustic and pest strategies can often share the same compartment line.
-
-This is more demanding than simply putting a lid on a service trench. Every later alteration must reinstate the boundary.
-
-That is partly a documentation problem and partly a physical-design problem: penetrations should be visible or inspectable where practical, and future routes should be anticipated so later trades are not encouraged to make arbitrary holes.
+Later alterations must reinstate the boundary. This is both an information problem and a physical-design problem: penetrations should be visible or inspectable where practical, and future routes should be anticipated so later trades are not encouraged to make arbitrary holes.
 
 ## Acoustic consequences
 
-Serviceability and acoustic performance frequently pull in opposite directions.
-
-Massive walls and decoupled ceilings are effective partly because they are continuous. Removable construction introduces seams, cavities and potential rigid bridges. Ventilation creates intentional air paths through boundaries. Pipework and ducts can carry vibration around otherwise successful isolation.
+Serviceability and acoustic performance often pull in opposite directions. Massive walls and decoupled ceilings work partly because they are continuous; removable construction introduces seams and potential rigid bridges; ventilation creates intentional air paths; pipework and ducts can carry vibration around otherwise successful isolation.
 
 The doctrine therefore favours:
 
@@ -479,35 +403,31 @@ The doctrine therefore favours:
 - resilient mounting and flexible connections where required;
 - no open service void across an acoustic boundary;
 - deliberate attenuated transfer-air routes;
-- service penetrations that do not rigidly reconnect decoupled assemblies;
+- penetrations that do not rigidly reconnect decoupled assemblies;
 - removable panels that seat without rattling or bypassing resilient layers.
 
-A panel that makes maintenance easy while turning the bedroom into an acoustic failure is not a successful pattern.
+A panel that makes maintenance easy while making a bedroom acoustically poor is not a successful pattern.
 
 ## Boundary independence
 
-Replaceable architecture creates a further requirement: where practical, **routine removal of a finish or access layer should not dismantle the building's primary safety and environmental boundaries**.
+Where practical, **routine removal of a finish or access layer should not dismantle the building's primary safety and environmental boundaries**.
 
-This is not always achievable. A removable fire-rated access door may itself form part of a fire boundary; a window is necessarily part of the weather and air barrier; a bathroom finish may participate in water management. But the project should avoid making casually removed decorative panels the only thing standing between the building and failure.
+This cannot always be achieved. A fire-rated access door may itself form part of a fire boundary; a window necessarily belongs to the weather and air barrier; a bathroom finish may participate in water management. The project should nevertheless avoid making casually removable decorative work the only thing standing between the building and failure.
 
 A useful hierarchy is:
 
 1. place the critical boundary in the slowest appropriate layer;
-2. let faster-changing layers sit inboard or outboard of it where practical;
-3. where the replaceable element must form part of the boundary, make the reinstatement method explicit and testable;
+2. let faster-changing layers sit inboard or outboard where practical;
+3. where a replaceable element forms part of the boundary, make reinstatement explicit and testable;
 4. prevent routine access from requiring destructive reconstruction of the boundary.
 
-This matters especially for proposed replaceable wall linings and floor platforms. Their removability is valuable only if lifting a panel does not casually puncture airtightness, bypass acoustic isolation, expose an unprotected fire path or compromise waterproofing that cannot be reliably restored.
+This is especially important for replaceable wall linings and floor platforms. Removability has little value if lifting a panel casually punctures airtightness, bypasses acoustic isolation, opens a fire path or damages waterproofing that cannot be restored reliably.
 
 ## Security and pests
 
-Accessible routes must also remain secure against the wrong user.
+Accessible routes must remain secure against the wrong user. Undercrofts, roof hatches, plant entrances and utility routes should not bypass the dwelling's physical security. In England, Part Q provides the wider regulatory context for robust doors and windows in new dwellings.
 
-Undercrofts, roof hatches, plant entrances and utility routes should not create bypasses around the dwelling's physical security. In England, Part Q gives the broader regulatory context for robust doors and windows in new dwellings.
-
-Pest defence follows the same logic. A void intended for a cable should not become a route for rodents from an external cavity to an occupied room. Durable barriers, close-fitting penetrations and compartmentation are more reliable than soft fillers and expanding foam as primary defences.
-
-The recurring lesson is simple:
+Pest defence follows the same logic. A cable route should not become a rodent route from external cavity to occupied room. Durable barriers, close-fitting penetrations and compartmentation are more reliable primary defences than soft filler or expanding foam.
 
 > **Access is complete only when the boundary can be opened, serviced and reliably made whole again.**
 
@@ -515,27 +435,19 @@ The recurring lesson is simple:
 
 # 11. The Replaceable Interior
 
-The interior is where the permanent building encounters the fastest-changing parts of domestic life.
+The interior is where the permanent building meets the fastest-changing parts of domestic life. Shelves appear, kitchens and bathrooms are renewed, floor finishes change and new electrical or data equipment arrives.
 
-Pictures are hung. Shelves appear. Furniture changes. Kitchens are renewed. Bathrooms wear. Floor finishes are replaced. New screens, speakers, controls and data connections appear. A calm room may therefore conceal a surprisingly rapid cycle of technical and decorative change.
+Conventional construction often lets these faster layers attach directly to the slowest ones. Masonry is drilled repeatedly, services are chased into walls, joinery is bonded across junctions and wet finishes fuse layers with different lives. Each intervention can be reasonable in isolation while the permanent house is gradually consumed by ordinary occupation.
 
-Conventional construction often responds by allowing these faster layers to attach directly to the slowest ones. Masonry is drilled repeatedly. Services are chased into walls. Joinery is bonded across junctions. Plaster makes separate assemblies appear monolithic. Tile and screed fuse finishes to substrates. Each intervention is locally understandable; over decades the permanent house is consumed by ordinary occupation.
-
-The alternative is not a completely demountable interior. That would create its own complexity.
-
-The proposition is more selective:
+The alternative is not a completely demountable interior. The proposition is selective:
 
 > **The permanent building should provide a limited number of durable interfaces through which a much larger number of shorter-lived interior assemblies can attach, move and change.**
 
 ## Repose constrains technical expression
 
-Replaceability is not permission to turn the dwelling into a permanently visible maintenance diagram.
+Replaceability is not permission to turn the dwelling into a visible maintenance diagram. Access seams, service routes, labels, grilles and fixing infrastructure should remain subordinate to the room unless there is a deliberate architectural reason otherwise.
 
-Access seams, removable trims, service routes, labels, grilles and fixing infrastructure should be hierarchically subordinate to the room unless there is a deliberate architectural reason for them not to be. The room may reveal how it is made, but technical information should remain subordinate to the room's ordinary use.
-
-The test is not whether every interface can be hidden. It is whether the collection of interfaces produces a coherent domestic field.
-
-This creates a useful restraint on the platform doctrine itself. A technically elegant system that causes persistent rattle, glare, visual competition, acoustic leakage, fragile-feeling surfaces or an atmosphere of provisional fit-out has failed at the level of occupation even if it is easy to maintain.
+The question is not whether every interface is hidden, but whether the collection of interfaces produces a coherent domestic field. A technically elegant system that rattles, leaks sound, feels fragile or leaves the room visually dominated by its maintenance logic has failed at the level of occupation.
 
 ## The attachment hierarchy
 
@@ -543,71 +455,53 @@ A useful hierarchy is:
 
 **permanent fabric → interface infrastructure → replaceable architectural assembly → fitting or commodity component**
 
-The layers need not all be physically distinct at every location. Their purpose is to clarify where future change should stop.
+The layers need not all be physically distinct. Their purpose is to establish where future change should stop.
 
-A masonry wall, for example, might receive a small number of engineered anchors during construction. Those anchors carry a durable rail, frame or other **architectural backplane**. Wall linings, joinery, service carriers and ordinary occupation can then attach on the room side of that backplane without every generation drilling the masonry again.
+A masonry wall, for example, might receive a small number of engineered anchors carrying a durable rail or **architectural backplane**. Wall linings, joinery and service carriers can then attach on the room side without every generation drilling the masonry again.
 
-This is not a rule against screws. Screws, bolts and clips are among the most useful reversible fasteners available. The rule is about **where the fixing terminates**.
+This is not a rule against screws, bolts or clips. It is a rule about **where the fixing terminates**. Uncontrolled fixings into permanent fabric should be few. Where permanent fabric must be penetrated, the fixing should be deliberate, structurally appropriate, coordinated with hidden services and boundaries, and documented.
 
-Very few uncontrolled fixings should enter permanent fabric.
-
-Where permanent fabric must be penetrated, the fixing should be deliberate, structurally appropriate, coordinated with hidden services and boundaries, and documented. The number and location of permanent attachment points should be treated as an architectural resource rather than an unlimited blank surface.
-
-Exceptional loads still require proper structural design. An attachment system intended for pictures and ordinary cabinetry should not be treated as a universal substitute for engineered support.
+Exceptional loads still require proper structural design. Infrastructure intended for pictures and ordinary cabinetry is not a universal substitute for engineered support.
 
 ## The lining is not the wall
 
-A permanent masonry wall and the room surface presented to occupants do not necessarily need to be the same physical layer.
+A permanent masonry wall and the room surface need not be the same physical layer.
 
-This distinction opens an important line of research.
-
-A durable wall may carry a dry, mechanically mounted lining system whose panels provide the interior surface while leaving the permanent structure substantially untouched. Depending on the room, those panels might be timber, gypsum-fibre, mineral board, stone-faced construction, factory-finished mineral surfaces or another system compatible with fire, acoustics, moisture and impact requirements.
-
-The objective is not to produce an office fit-out aesthetic.
+A durable wall may carry a dry, mechanically mounted lining whose panels form the interior surface while leaving permanent structure substantially untouched. Depending on the room, the panel might use timber, gypsum-fibre, mineral board, stone-faced construction or another system compatible with fire, acoustics, moisture and impact requirements.
 
 > **Panelisation does not require a panelised appearance.**
 
-Panel boundaries can coincide with genuine architectural composition: skirting, dado, picture rail, panel mouldings, architraves and cornices can define fields that are both visually coherent and physically removable. Alternatively a large-format lining may use very fine controlled joints whose presence is accepted rather than cosmetically erased.
+Panel boundaries can coincide with real architectural composition—skirting, dado, picture rail, panel mouldings, architraves and cornices—or use fine controlled joints. A joint between removable panels is not automatically a defect because plaster would have erased it. If it expresses the assembly cleanly, it may be more truthful than filler pretending the components are one object.
 
-The distinction is important. A narrow joint between two removable panels is not a defect merely because a plastered wall would have hidden it. If the joint expresses the actual assembly cleanly, it is tectonically more truthful than filler pretending the components are one continuous object.
-
-The system must still feel like a house. It should be solid under touch, resistant to impact, acoustically credible, fire-safe, dimensionally stable and capable of supporting ordinary occupation.
+The system must still feel like a house: solid under touch, impact-resistant, acoustically credible, fire-safe, stable and capable of supporting ordinary occupation.
 
 ## Wet work and dry assembly
 
-Wet construction is not an enemy.
+Wet construction is not an enemy. Mortar, masonry, lime, plaster, screed, grout and bonded finishes can be excellent where the layers are genuinely intended to remain together for a comparable service life.
 
-Mortar, masonry, lime, plaster, screed, grout and bonded finishes can be excellent where the assembly is genuinely intended to remain together for a comparable service life. The problem arises when an irreversible wet process is used casually to fuse layers that have different expected lives, different movement or a foreseeable need for access.
-
-The project therefore adopts a presumption:
+The problem arises when an irreversible wet process casually fuses layers with different expected lives, movements or access needs. The project therefore adopts a presumption:
 
 > **Site-applied wet or bonded finishes require justification where they bridge replaceable layers, movement interfaces or future access.**
 
-That is not a plaster ban.
+This is not a plaster ban. Durable plaster associated with long-lived masonry may be rational; a repairable lime finish may outperform a complicated panel; wet-room waterproofing may need bonded continuity. Skim, filler or adhesive should simply not end the design discussion by erasing a joint.
 
-A durable plaster finish directly associated with long-lived masonry may be rational. A local repairable lime finish may outperform a complicated demountable panel. A wet-room waterproofing system may need bonded continuity for reliability.
-
-But using skim, filler or adhesive merely because it can erase a joint should not end the design discussion.
-
-This produces a broader construction rule:
+A useful directional rule is:
 
 > **Wet trades belong naturally to layers intended to become one; dry assembly belongs naturally to layers expected to separate again.**
 
-The rule is directional, not absolute.
+It is not absolute.
 
 ## Floor as platform
 
-The same distinction applies horizontally.
+The primary structural floor should not need replacement because the occupant changes a finish.
 
-The primary structural floor should not have to be replaced merely because the occupant wants timber rather than tile.
-
-A useful floor hierarchy may be:
+A useful hierarchy may be:
 
 **primary structural floor → service/acoustic/levelling layer → replaceable floor platform → finish carrier → finish**
 
-The exact number of physical layers will vary. The important distinction is between the **platform interface** and the finish.
+The exact number of layers will vary. The important distinction is between the **platform interface** and the finish.
 
-A timber room, tiled room and stone-finished room need not use identical substrates. Tile may require greater stiffness and different movement control; stone introduces mass; timber has its own acoustic and moisture behaviour. What can potentially be standardised is the interface beneath them:
+Timber, tile and stone do not require identical substrates. Tile may need greater stiffness and different movement control; stone adds mass; timber has its own moisture and acoustic behaviour. What may be standardised is the interface beneath them:
 
 - finished datum;
 - panel/support geometry;
@@ -617,93 +511,71 @@ A timber room, tiled room and stone-finished room need not use identical substra
 - acoustic seating;
 - replacement sequence.
 
-The result is a **finish-agnostic floor platform** rather than a “removable timber floor”.
+The result is a **finish-agnostic floor platform** rather than a removable timber floor.
 
-It must not feel temporary. Under normal use the floor should be silent, rigid, heavy enough in character and visually composed as ordinary high-quality architecture. Removability is a maintenance state, not an everyday aesthetic.
-
-Critical structural diaphragm action should normally remain in the structural layer rather than depend on routinely removable finish panels.
+It must not feel temporary. In ordinary use the floor should be quiet, rigid and convincingly solid. Removability is a maintenance state, not an everyday aesthetic. Critical diaphragm action should normally remain in the structural layer rather than depend on routinely removable finish panels.
 
 ## Ceilings
 
-Ceilings deserve the same analysis but not necessarily the same answer.
+Ceilings deserve the same analysis without necessarily receiving the same answer. Making an entire ceiling demountable may create too many joints, acoustic weaknesses or visual interruptions. A durable ceiling with deliberate perimeter movement and local access may be better.
 
-Making an entire ceiling demountable may create excessive joints, acoustic weakness and visual complexity. In many rooms the better strategy may be a durable ceiling with deliberate perimeter movement, local access at real maintenance points and service distribution elsewhere.
+Where ceiling linings are panelised, fire, acoustic and air-boundary obligations remain explicit. A panel that cannot be reseated without rattling, cracking or degrading compartmentation is not an improvement.
 
-Where a ceiling lining is panelised, its fire, acoustic and air-boundary obligations must remain explicit. A panel that can be removed easily but cannot be reseated without rattling, cracking or degrading compartmentation is not an improvement.
-
-The doctrine therefore resists symmetry for its own sake: floors, walls and ceilings may use different degrees of reversibility because their risks and maintenance needs differ.
+Floors, walls and ceilings may therefore use different degrees of reversibility because their risks and maintenance needs differ.
 
 ## Kitchens as furniture
 
-A kitchen is normally renewed far sooner than the structure enclosing it.
+A kitchen is usually renewed far sooner than the structure around it. Treating cabinetry and appliances as fit-out makes that relationship explicit.
 
-Treating cabinetry and appliances as fit-out rather than permanent construction makes this relationship explicit. Mechanical fixings, standard appliance envelopes, accessible isolation and service connections, and local containment beneath water-connected appliances can allow the kitchen to change without consuming primary walls or floors.
+Mechanical fixings, standard appliance envelopes, accessible isolation and service connections can let a kitchen change without consuming primary walls or floors. A durable attachment plane or secondary joinery wall may carry cabinetry while protecting permanent masonry from successive kitchen generations.
 
-A durable attachment plane or secondary joinery wall may carry cabinetry while protecting permanent masonry from successive kitchen generations.
-
-This does not mean kitchens must look modular. The finished joinery may be highly crafted. The logic behind it should remain reversible.
+The finished joinery can still be highly crafted. Reversibility concerns the logic behind it, not a modular appearance.
 
 ## Bathrooms as high-service fit-out
 
-Bathrooms are more difficult because finish, waterproofing and services become tightly coupled.
+Bathrooms are harder because finish, waterproofing and services are tightly coupled.
 
-The doctrine's preferred direction is to separate permanent enclosure from replaceable wet-room systems where this can be achieved without reducing waterproofing reliability. Service access from the reverse side of a wall is often more valuable than attempting to make every tile demountable.
+The preferred direction is to separate permanent enclosure from replaceable wet-room systems where this can be done without reducing waterproofing reliability. Reverse-side service access is often more useful than attempting to make every tile demountable.
 
-Mechanically mounted tile or stone panels are worth investigating where they can achieve the required water, movement, impact and cleaning performance. They should not be adopted merely because demountability sounds virtuous.
+Mechanically mounted tile or stone panels are worth investigating only if they meet the water, movement, impact and cleaning requirements. A robust conventional bonded finish may remain preferable where high-risk valves, cisterns, wastes and joints are accessible by another route and replacement does not consume important permanent fabric.
 
-A robust conventional bonded finish may remain preferable where the high-risk valves, cisterns, wastes and joints are accessible by another route and replacement does not consume important permanent fabric.
-
-The doctrine therefore does not require “fully demountable bathrooms”. It requires the replacement sequence to be conscious.
+The doctrine therefore does not require fully demountable bathrooms. It requires a conscious replacement sequence.
 
 ## Windows and doors
 
-Openings belong to the enduring spatial and facade order. The operating assemblies fitted into them do not necessarily share the same life.
+Openings belong to the enduring spatial and facade order. Frames, glazing, seals, hardware and thresholds do not necessarily share the same life.
 
-The building should therefore preserve the opening while allowing frames, glazing, seals, hardware and thresholds to be renewed.
+The building should therefore preserve the opening while allowing the operating assembly to be renewed. Architraves, reveals, beads and thresholds can become real interface components rather than cosmetic closures over inaccessible fixings.
 
-Architraves, reveals, beads and thresholds can become genuine interface components rather than cosmetic closures over inaccessible fixings.
-
-This is a recurring expression of selective permanence: **keep the architectural relationship; renew the wearing assembly.**
+This is selective permanence in a compact form: **keep the architectural relationship; renew the wearing assembly.**
 
 ## Manufacture according to lifespan
 
-The replaceable interior creates a natural manufacturing gradient.
+The replaceable interior creates a manufacturing gradient. Long-lived work such as masonry and primary structure may rationally be site-built because continuity, mass and adaptation to the actual site matter. As layers become shorter-lived and more dependent on precise interfaces, controlled manufacture becomes more attractive.
 
-The longest-lived work may rationally be site-built: masonry, major structure and enduring envelope construction benefit from continuity, mass and adaptation to the real site.
+Wall panels, floor platforms, joinery and technical enclosures can be fabricated, finished and checked before installation. The value is **repeatability, quality control, remanufacturability and predictable replacement**, not off-site manufacture for its own sake.
 
-As layers become shorter-lived and more dependent on precision interfaces, the case for controlled manufacture becomes stronger. Wall panels, floor platforms, joinery, access assemblies and technical housings can potentially be fabricated, finished and checked before they arrive at the building.
+A future fabricator can reproduce a documented component—its dimensions, fixing geometry, finish and replacement sequence—without reconstructing the original wet-trade process.
 
-The reason is not fashion or construction speed.
-
-It is **repeatability, quality control, remanufacturability and predictable replacement**.
-
-A factory-finished wall panel can be judged as a component. Its dimensions, fixing geometry, finish and replacement sequence can be recorded. A future fabricator can reproduce it without reconstructing the room in wet trades.
-
-This is a presumption, not an absolute rule. Site craft remains entirely legitimate where it gives the better architectural or whole-life result.
-
-The working construction proposition is:
+This remains a presumption, not a rule. Site craft is legitimate where it gives the better architectural or whole-life result.
 
 > **Build the permanent house. Assemble the changeable house inside it.**
 
 ## Adaptability without placelessness
 
-None of this requires the rooms themselves to become generic.
+None of this requires generic rooms. The doctrine favours robust dimensions and compatible service capacity over indiscriminate movable partitions. A study can become a bedroom because it has useful dimensions, good light and suitable connections, not because every wall is on a track.
 
-The doctrine favours robust dimensions and compatible service capacity over indiscriminate movable partitions. A study can become a bedroom because it has good light, sensible dimensions and suitable connections, not because every wall is on a track.
+Where future mobility is credible, step-free access, adaptable sanitary provision, support-fixing capacity and a plausible route for vertical assistance should be considered early. They are cheapest when integrated into the original order and most destructive when improvised later.
 
-Where future mobility is credible, step-free access, adaptable sanitary provision, support-fixing capacity and a plausible route for vertical assistance should be considered early. These are cheapest when integrated into the initial order and most destructive when improvised later.
-
-The house remains specific architecture. Its specificity is simply designed to tolerate more than one life.
+The house remains specific architecture, designed to tolerate more than one life.
 
 ---
 
 # 12. Legibility and stewardship
 
-A carefully designed building can become unmaintainable in one generation if nobody knows what was built.
+A carefully designed building can become unmaintainable within one generation if nobody knows what was built. Routes disappear from memory, valves lose labels, abandoned services accumulate and alterations puncture boundaries whose purpose is no longer understood. A digital model is no help if nobody can open it.
 
-Routes disappear from memory. Valves lose labels. A future contractor cannot distinguish a structural wall from a lightweight partition. A redundant cable remains beside the live one. A penetration is enlarged without restoring the fire or acoustic boundary. The original BIM model exists, but nobody has the software or account needed to open it.
-
-Longevity therefore depends on information as much as material.
+Longevity therefore depends on information as well as material.
 
 ## The building record
 
@@ -722,47 +594,29 @@ The building should begin life with an intelligible record containing, as approp
 - disassembly or replacement instructions for important custom assemblies;
 - inspection and maintenance requirements.
 
-The record is not a ceremonial handover archive. It is an operating instrument.
+This is an operating instrument, not a ceremonial handover archive.
 
-RIBA's Plan for Use is useful here because it explicitly warns against overwhelming building managers with an impenetrable manual. It proposes layered information: simple user material, a quick-start/emergency overview, and detailed operation and maintenance information underneath.
-
-The same hierarchy suits a house.
+RIBA's Plan for Use is useful because it warns against overwhelming building managers with an impenetrable manual. It proposes layered information: simple user material, a quick-start or emergency overview, and detailed operation and maintenance information beneath it. The same hierarchy suits a house.
 
 ## Physical redundancy
 
-The detailed record should be digital and maintainable. But a small amount of critical knowledge deserves physical redundancy.
+The detailed record should be digital and maintainable, but a small amount of critical knowledge deserves physical redundancy. Main water and electrical isolation, stable service identifiers, major route names and emergency information can be labelled at the building itself. A concise service index in the plant area can map those identifiers to the detailed record.
 
-Main water isolation, principal electrical isolation, stable service identifiers, major route names and emergency information can be labelled at the building itself. A concise service index in the plant area can map those identifiers to the detailed record.
-
-The physical layer should remain intentionally small. An engraved diagram that becomes false after alteration is worse than no diagram.
-
-Therefore physical legibility requires change control.
+The physical layer should remain small. An engraved diagram that becomes false after alteration is worse than no diagram, so physical legibility depends on change control.
 
 ## Change control
 
-Future work should leave the building at least as understandable as it found it.
+Future work should leave the building at least as understandable as it found it. When a route changes, the record changes. When a component is removed, abandoned services should be removed or marked. When a boundary is penetrated, its performance and record should be reinstated. When an interface family changes, the new detail becomes part of the building passport.
 
-When a route changes, the record changes. When a component is removed, abandoned services should be removed or clearly marked. When a boundary is penetrated, its performance and record should be reinstated. When an interface family is modified, the new detail becomes part of the building passport.
-
-The higher-risk-building “golden thread” regime is not a legal requirement for an ordinary detached house, but its information principle is instructive: information must be current, accessible, understandable and transferable through the building's life.
-
-The long-life house applies that principle voluntarily and proportionately.
+The higher-risk-building “golden thread” regime is not a legal requirement for an ordinary detached house, but its information principle is instructive: information should remain current, accessible, understandable and transferable through the building's life. The Long-Life House applies that principle voluntarily and proportionately.
 
 ## Commissioning as the beginning of stewardship
 
-At completion, drawings describe intention. Commissioning establishes reality.
+At completion, drawings describe intention; commissioning establishes reality.
 
-Ventilation airflow should be measured. Isolation should be operated. Drainage and containment paths should be tested where appropriate. Labels should be checked against actual routes. Major plant should have a credible replacement path. Access panels should actually open with the intended tools. The building should be handed over with a measured baseline rather than a stack of assumptions.
+Ventilation airflow should be measured. Isolation should be operated. Drainage and containment paths should be tested where appropriate. Labels should be checked against actual routes. Access panels should open with the intended tools. Major plant should have a credible replacement path.
 
-This suggests a broader form of commissioning:
-
-**commission maintainability.**
-
-For important patterns, do not merely inspect that they exist. Demonstrate the task they were designed to support.
-
-Remove the panel. Operate the valve. Withdraw the filter. Lift the access strip. Trace the cable. Test the leak path. Walk the roof-maintenance route. Simulate removal of the principal plant item.
-
-A long-life building should prove, at the beginning of its life, that it can be maintained.
+Important maintainability claims should also be demonstrated. Remove the panel, operate the valve, withdraw the filter, lift the access strip, trace the cable, test the leak path and walk the roof-maintenance route. A long-life building should begin its life by proving that its intended maintenance tasks can actually be performed.
 
 ---
 

@@ -1,7 +1,7 @@
-# House Design Doctrine — Publication Architecture v0.7
+# House Design Doctrine — Publication Architecture v0.8
 
 **Working form:** illustrated architectural design-research monograph + pattern catalogue + separate architect-facing implementation brief.  
-**Status:** v0.7 — external maintenance geography integration.
+**Status:** v0.8 — editorial and computational-state sync after external-maintenance integration.
 
 ## Front matter
 
@@ -132,22 +132,24 @@ F. Bibliography and standards
 
 ## Computational development track — recorded, not yet promoted to a manuscript part
 
-The project now carries a further research proposition: the architectural doctrine may admit an **executable computational expression** in which a constrained semantic building model is compiled against explicit architectural, structural, construction and regulatory obligations.
+The project carries a parallel computational proposition: a constrained semantic building model may be compiled against explicit architectural, structural, construction, regulatory and evidence obligations.
 
-The canonical concept is recorded in [Executable Architecture — Computational Expression of the Long-Life House](../computational/executable-architecture.md).
+The canonical concept is [Executable Architecture — Computational Expression of the Long-Life House](../computational/executable-architecture.md); the current state and control documents are indexed in the [Computational Track](../computational/README.md).
 
-The computational direction should currently remain **parallel to the publication rather than being forced into Part I–V**. It is too consequential to be treated as a minor addendum, but insufficiently formalised to be presented as settled doctrine or as an implemented product.
+The computational direction should remain **parallel to the publication rather than being forced into Part I–V**. It is consequential enough to deserve its own research track, but the publication should not present a paper-validated computational architecture as a finished software product.
 
-The current editorial position is:
+The current position is:
 
-- it is **not a governing principle**;
-- it does not replace the doctrine;
-- the doctrine remains valid independently of software;
-- the future software would be an executable expression of the doctrine's formal subset;
-- a new intermediate layer — the **formal architectural model** — must be developed before language or compiler implementation;
-- the eventual publication form remains open: a Part VI, companion research volume, software/product specification, or some combination should be selected only after prior-art research and formalisation.
+- it is **not a governing principle** and does not replace the doctrine;
+- the doctrine remains meaningful independently of software;
+- the formal architectural model, obligation/evidence architecture and bounded H1 paper tests now exist;
+- the internal paper sequence is complete through H1-PAPER-01 and the capability freeze;
+- external competent review remains open;
+- a minimal executable semantic/compiler kernel is authorised as the next falsification step;
+- heavy CAD/compiler/product implementation remains gated;
+- the eventual publication form remains open: later monograph material, companion research volume, software/product specification or some combination should be chosen only after external and executable validation.
 
-The concept's provisional computational chain is:
+The computational chain remains:
 
 ```text
 Doctrine
@@ -163,9 +165,9 @@ Resolved building model
 Production outputs + evidence
 ```
 
-The architectural manuscript should not become a software pitch. The computational track earns promotion only if it clarifies and strengthens the architecture.
+The architectural manuscript should not become a software pitch. The computational track earns publication space only where it clarifies or strengthens the architecture.
 
-**Integration boundary:** external-maintenance work in v0.7 deliberately does not modify computational documents. The architectural concept may later be consumed by that workstream once its maintainability representation is ready; the publication does not prescribe that implementation here.
+**Integration boundary:** external maintenance geography has now received an explicit post-freeze computational coverage audit. Its semantics are representable, but whole-house external access/logistics have not yet been demonstrated in H1. The authorised executable extension fixture `EXT-MAINT-01` comes only after the minimal kernel succeeds.
 
 # Separate implementation brief
 

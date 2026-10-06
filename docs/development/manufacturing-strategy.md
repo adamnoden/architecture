@@ -4,176 +4,78 @@
 
 ## Proposition
 
-The project should not adopt prefabrication as a universal ideology.
-
-It should use a **manufacturing gradient based on service life, replacement frequency, interface precision and whole-life value**.
+The project does not treat prefabrication as a universal good. It uses a **manufacturing gradient based on service life, replacement frequency, interface precision and whole-life value**.
 
 > **Build the permanent house. Assemble the changeable house inside it.**
 
-The shorter-lived and more replaceable a layer is, the stronger the presumption that it should be made under controlled conditions, documented as a component and assembled reversibly on site.
+The shorter-lived and more replaceable a layer is, the stronger the presumption for controlled manufacture, component-level documentation and reversible site assembly.
 
-The strategy also carries a workmanship rule: **demand precision where precision creates value; spend skilled workmanship where workmanship creates value.** Ordinary site variability should be translated by deliberate interfaces rather than pushed downstream as improvised correction.
+The accompanying workmanship rule is: **demand precision where precision creates value; spend skilled workmanship where workmanship creates value.** Ordinary site variation should be absorbed by designed interfaces rather than exported downstream as improvised correction.
 
 ## Four-layer construction hierarchy
 
 ### 1. Site-built permanent structure and enduring envelope
 
-Typical examples:
+Typical examples include foundations, primary masonry, major structural members, long-lived envelope work, major stairs and enduring spatial structure.
 
-- foundations;
-- primary masonry;
-- major structural members;
-- long-lived portions of the external envelope;
-- major stairs and enduring spatial structure.
-
-Reasons to site-build may include:
-
-- continuity;
-- mass;
-- adaptation to actual site geometry;
-- structural integration;
-- weathering;
-- craft and architectural permanence.
-
-These layers are expected to remain and therefore can legitimately contain more irreversible work where that work serves their own long service life.
+Site construction may be preferable because continuity, mass, adaptation to real site geometry, structural integration, weathering and craft matter. These layers are intended to remain and may legitimately contain more irreversible work where it serves the same long life.
 
 ### 2. Semi-permanent interface infrastructure
 
-Typical examples:
+Typical examples include structural bearing seats, mounting frames, architectural backplanes, fixing rails, justified window/door subframes, edge frames, controlled service carriers, sleeves and designed penetrations.
 
-- structural bearing seats;
-- mounting frames;
-- architectural backplanes;
-- fixing rails;
-- window/door subframes where justified;
-- edge frames;
-- controlled service carriers;
-- permanent sleeves and penetrations.
+These mediate between permanent fabric and faster-changing work. They should be simple, robust, geometrically documented, based on common materials and fasteners, inspectable where risk justifies it and locally replaceable or remanufacturable where practical.
 
-These components mediate between the permanent fabric and faster-changing work.
-
-They should be:
-
-- robust;
-- simple;
-- inspectable where risk justifies it;
-- remanufacturable;
-- based on common materials and fasteners;
-- geometrically documented;
-- replaceable locally where practical.
-
-This layer should remain deliberately small. It is not an excuse to create a second proprietary building inside the first.
+Keep this layer deliberately small. It is not a licence to build a proprietary second structure inside the first.
 
 ### 3. Manufactured replaceable architectural assemblies
 
-Typical examples:
+Wall linings, floor platforms, removable interface pieces, joinery, wet-room access assemblies, thresholds and service enclosures are stronger candidates for workshop or factory production.
 
-- wall-lining panels;
-- floor platforms;
-- removable skirting/cornice/interface pieces;
-- joinery;
-- wet-room access assemblies;
-- removable thresholds;
-- architectural service enclosures.
-
-These are prime candidates for workshop/factory production because controlled manufacture can improve:
-
-- dimensional repeatability;
-- surface finish;
-- interface consistency;
-- pre-fitting;
-- testability;
-- remanufacturability;
-- installation speed;
-- cleanliness on site;
-- future replacement.
+Controlled manufacture can improve dimensional repeatability, finish, interface consistency, pre-fitting, testing, remanufacture and future replacement. Those benefits matter more here than programme acceleration.
 
 ### 4. Commodity technical components
 
-Typical examples:
-
-- fans;
-- pumps;
-- valves;
-- sockets;
-- switches;
-- controls;
-- appliances;
-- sensors;
-- luminaires where appropriate.
-
-These should remain standard products wherever practical.
+Fans, pumps, valves, sockets, switches, controls, appliances, sensors and suitable luminaires should remain standard products wherever practical.
 
 The architecture should adapt around them rather than redesigning commodity mechanisms without reason.
 
 ## Why manufacturing matters here
 
-The project values manufacture primarily for **replacement quality**, not programme acceleration.
+A component made under controlled conditions can retain a durable definition: dimensions, materials, fixing locations, tolerances, finish, allowable loads, disassembly method and drawing or file reference.
 
-A component made under controlled conditions can carry a durable definition:
-
-- dimensions;
-- materials;
-- fixing locations;
-- tolerances;
-- finish;
-- allowable loads;
-- disassembly method;
-- file/drawing reference.
-
-A future owner can then repair or remanufacture the component without reconstructing the original site craft process.
+That makes later repair or remanufacture possible without reconstructing the original site craft process.
 
 ## Standardise the invisible interface
 
-The strongest standardisation target is often not the visible object.
+The strongest standardisation target is often hidden.
 
-A wall panel may vary in material, proportion and moulding while sharing:
+Wall panels can vary in material, proportion and moulding while sharing fixing geometry, tolerance adjustment, edge protection and removal method. Floor finishes can differ while sharing support geometry, datum, capture and lifting logic.
 
-- fixing geometry;
-- tolerance adjustment;
-- edge protection;
-- removal method.
-
-A floor module may carry timber, tile or stone while sharing:
-
-- support geometry;
-- datum;
-- location/capture method;
-- lifting logic.
-
-This allows architectural richness above a small number of repeatable technical families.
+This permits architectural variety above a small number of repeatable technical families.
 
 ## Manufacture versus fabrication on site
 
 For each assembly ask:
 
-1. Does factory/workshop manufacture materially improve precision?
-2. Is the component likely to require future replacement or remanufacture?
-3. Can it be transported and installed without damage?
+1. Does workshop manufacture materially improve precision?
+2. Is future replacement or remanufacture plausible?
+3. Can the component be transported and installed without damage?
 4. Does site trimming destroy the value of standardisation?
-5. Is the assembly sufficiently repeated to justify production information?
-6. Would workshop finishing reduce wet trades and contamination?
+5. Is there enough repetition to justify production information?
+6. Would workshop finishing reduce wet work or contamination?
 7. Does site craft produce a better, simpler or more repairable result?
-8. What carbon, cost and logistics burden does off-site manufacture add?
+8. What cost, carbon and logistics burden does off-site manufacture add?
 
-The answer may still be site fabrication.
-
-A one-off carved stone threshold, plaster repair or site-scribed timber detail may be entirely rational.
+The answer may still be site fabrication. A one-off stone threshold, plaster repair or site-scribed timber detail may be entirely rational.
 
 ## Workmanship allocation
 
-Controlled manufacture is useful where repeatability, interchangeability and future remanufacture matter. It is not automatically superior to skilled site work.
+Controlled manufacture is useful where repeatability, interchangeability and future remanufacture matter. It is not inherently superior to skilled site work.
 
-For each repeated operation ask:
+For repeated operations ask whether individual judgement improves the architecture or merely compensates for ambiguous information, dimensional conflict or a poor sequence.
 
-- is the result improved by individual judgement and dexterity?
-- is that judgement architecturally visible or technically valuable?
-- could the same quality be achieved more reliably by a datum, jig, template, stop or standard interface?
-- is the site craft solving the intended work, or rescuing unresolved dimensional conflict?
-
-Preserve workmanship of risk where the workmanship itself matters: fine masonry, plaster, stone, decorative metalwork, site-scribed joinery and repair may all justify it.
-
-Move toward workmanship of certainty where variation creates no value: hidden mounting geometry, repeated hole patterns, interchangeable carriers, standard component interfaces and consequential sequences should usually locate themselves more deterministically.
+Preserve workmanship of risk where the workmanship itself matters: fine masonry, plaster, stone, decorative metalwork, site-scribed joinery and repair may all justify it. Move toward workmanship of certainty where variation adds no value: hidden mounting geometry, repeated hole patterns, interchangeable carriers and consequential sequences should usually locate themselves more deterministically.
 
 ## Tolerance strategy
 
@@ -183,82 +85,36 @@ Every interface between materially different construction processes should ident
 2. expected incoming tolerance;
 3. controlling datum;
 4. adjustment mechanism and range;
-5. rejection/remediation threshold;
+5. rejection or remediation threshold;
 6. verification before closure.
 
 The desired sequence is:
 
 **site-built work → tolerance envelope → adjustment interface → precise datum → replaceable/manufactured assembly**
 
-The adjustment layer may use designed shims, slots, threaded stand-offs, overlaps, scribable sacrificial pieces or another simple mechanism. It should not become an invitation to arbitrary site invention.
+Adjustment may use designed shims, slots, threaded stand-offs, rebates, overlaps, shadow lines, removable trims, controlled perimeter zones or scribable sacrificial pieces. It should be bounded, not an invitation to site invention.
+
+Do not demand millimetre-perfect masonry merely because a manufactured component is precise. The interface translates between the two manufacturing cultures.
 
 ## Dry assembly
 
-Fast-changing layers should prefer reversible assembly:
+Faster-changing layers should prefer reversible assembly: screws, bolts, clips, gravity seating, removable beads, captive fasteners and accessible standard fixings.
 
-- screws;
-- bolts;
-- clips;
-- gravity seating;
-- removable beads;
-- captive fasteners;
-- accessible standard fixings.
-
-Adhesive and irreversible bonding are not banned. They require an explicit account of what will be destroyed when the bonded layer reaches end of life.
+Adhesives and irreversible bonds are not banned. They require an explicit account of what will be destroyed when the bonded layer reaches end of life.
 
 ## Wet-trade discipline
 
-Wet trades are natural where layers are intended to become one durable assembly.
+Wet trades are natural where layers are intended to become one durable assembly. They are suspect when used merely to erase a removable joint, lock fast work to slow work, absorb unplanned tolerance, hide movement or avoid designing an interface.
 
-They are suspect where used merely to:
-
-- erase a removable joint;
-- lock a fast layer to a slow layer;
-- compensate for unplanned tolerance;
-- hide movement;
-- avoid designing an interface.
-
-The project should maintain a **wet-trade justification schedule** for non-trivial wet/bonded work that crosses lifespan layers.
-
-## Tolerance strategy
-
-Prefabricated components only work if the site-built structure can be imperfect without forcing destructive making-good.
-
-Interface families should use:
-
-- adjustable brackets;
-- shims;
-- rebates;
-- overlaps;
-- shadow lines;
-- removable trims;
-- controlled perimeter zones.
-
-Do not demand millimetre-perfect masonry merely because a factory component is precise.
-
-The interface must translate between the two manufacturing cultures.
+Maintain a **wet-trade justification schedule** for non-trivial wet or bonded work crossing lifespan layers.
 
 ## First article
 
-Repeated custom work should not move directly from drawing to mass production.
+Repeated custom work should pass through a first article before repetition.
 
-The first article must be reviewed for:
+Review appearance, fit and tolerance, stiffness, sound or rattle, wear, cleaning, access, disassembly, withdrawal, boundary reinstatement and remanufacturability.
 
-- appearance;
-- fit/tolerance;
-- normal-use stiffness;
-- sound/rattle;
-- wear surfaces;
-- cleaning;
-- access;
-- disassembly;
-- component withdrawal;
-- boundary reinstatement;
-- remanufacturability.
-
-Where the assembly is meant to be reversible, approval requires **removal and reinstatement**.
-
-Looking at it is not enough.
+Where reversibility is claimed, approval requires **removal and reinstatement**. Looking at the assembled object is not enough.
 
 ## Documentation for future manufacture
 
@@ -267,26 +123,18 @@ For each important custom family retain:
 - dimensioned fabrication drawings;
 - interface geometry;
 - material specification;
-- standard fastener specification;
+- standard fasteners;
 - tolerance range;
 - finish specification;
-- CNC/digital files where genuinely useful, in open/exportable formats;
-- photographs of first article;
+- CNC/digital files where genuinely useful, in open or exportable formats;
+- first-article photographs;
 - installation and removal sequence;
 - approved substitutions.
 
-The objective is that a competent future fabricator can reproduce the part without access to a vanished supplier.
+A competent future fabricator should be able to reproduce the part without access to a vanished supplier.
 
 ## Procurement implication
 
-The architect/lead designer should own the system-level intent.
-
-Fabricators should contribute manufacturing intelligence early, but specialist design must not silently redefine the principles of:
-
-- permanence;
-- movement;
-- boundary continuity;
-- replacement;
-- architectural resolution.
+The architect or lead designer should own the system-level intent. Fabricators should contribute manufacturing intelligence early, but specialist design must not silently redefine permanence, movement, boundary continuity, replacement or architectural resolution.
 
 Shop drawings are part of design development, not a transfer of architectural responsibility into a black box.

@@ -4,15 +4,11 @@
 
 ## Purpose
 
-The current tectonic development contains several propositions that are architecturally compelling but not yet sufficiently proven to become project requirements.
-
-This programme defines the work needed to move them from **candidate** to **selected pattern**.
-
-The governing rule is:
+Several current tectonic propositions are architecturally promising but not proven enough to become project requirements. This programme defines the work needed to move them from **candidate** to **selected pattern**.
 
 > **Prototype the interface, not merely the object.**
 
-A beautiful panel tested on a bench proves little if the wall behind it, the acoustic boundary, the fixing system and the removal sequence have not been tested together.
+A panel tested on a bench proves little if the wall, acoustic boundary, fixing system and removal sequence have not been tested with it.
 
 ## Common acceptance framework
 
@@ -22,97 +18,53 @@ Every candidate prototype should be reviewed against seven categories.
 
 Does it perform its ordinary building function?
 
-Examples:
-- floor stiffness and vibration;
-- wall impact resistance;
-- fixing capacity;
-- structural bearing and restraint;
-- fire/acoustic/environmental requirements.
+Examples include floor stiffness/vibration, wall impact resistance, fixing capacity, structural bearing/restraint and applicable fire, acoustic or environmental requirements.
 
 ### 2. Normal-use quality
 
 Does it feel permanent in daily life?
 
-Check:
-- rattle;
-- squeak;
-- rocking;
-- hollow sound;
-- visible waviness;
-- joint quality;
-- tactile solidity;
-- cleaning;
-- wear.
+Check rattle, squeak, rocking, hollow sound, waviness, joint quality, tactile solidity, cleaning and wear.
 
 ### 3. Tectonic quality
 
-Does the visible result honestly express or quietly conceal the real construction?
+Does the visible result truthfully express or quietly conceal the real construction?
 
-Check:
-- cosmetic bridges across moving joints;
-- fake material expression;
-- gratuitous technical exposure;
-- whether visible metal performs real work;
-- whether the joint belongs to the architectural composition.
+Check cosmetic bridges across moving joints, false material expression, gratuitous technical exposure, whether visible metal performs real work, and whether the joint belongs to the composition.
 
 ### 4. Reversibility
 
 Can the intended component actually be removed?
 
-Record:
-- tools;
-- access time;
-- order of operations;
-- working space;
-- weight/handling;
-- collateral components removed;
-- damage after removal.
+Record tools, access time, order of operations, working space, weight/handling, collateral removal and damage.
 
 ### 5. Reinstatement
 
-Can it be put back with equivalent performance?
+Can it be returned to equivalent performance?
 
-Check:
-- datum;
-- alignment;
-- rattle;
-- seals;
-- acoustic continuity;
-- fire continuity;
-- waterproofing;
-- finish quality;
-- repeatability after multiple cycles.
+Check datum, alignment, rattle, seals, acoustic/fire continuity, waterproofing, finish quality and repeatability after cycling.
 
 ### 6. Future reproducibility
 
-Could a competent future fabricator remake the component?
+Could a competent future fabricator remake it?
 
-Check:
-- standard materials;
-- fastener availability;
-- drawings;
-- tolerances;
-- proprietary dependence;
-- tooling;
-- open digital fabrication files where relevant.
+Check standard materials, fastener availability, drawings, tolerances, proprietary dependence, tooling and open digital fabrication files where relevant.
 
 ### 7. Assembly robustness
 
-Can an ordinary competent installer achieve the intended result when the incoming building is imperfect but within its declared tolerance?
+Can an ordinary competent installer achieve the intended result when the incoming building is imperfect but within declared tolerance?
 
 For repeated non-standard assemblies:
 
-- introduce representative dimensional/geometric variation into the prototype background;
-- issue the intended drawings, parts and tools to a competent installer who did not design the system;
+- introduce representative dimensional variation into the prototype background;
+- issue the intended information, parts and tools to an installer who did not design the system;
 - avoid coaching unless safety or irreversible damage requires intervention;
 - record questions, misunderstandings, sequence changes and improvised materials;
-- verify that the designed adjustment range restores the intended datum;
-- confirm that out-of-range work has an explicit stop/remediation response;
-- confirm that significant errors remain visible before closure.
+- verify that designed adjustment restores the intended datum;
+- define a stop/remediation response for out-of-range work;
+- confirm significant errors remain visible before closure.
 
-The trial evaluates the design and information, not the installer.
-
-A prototype that only works because its designer knows the hidden sequence has not passed.
+The trial tests the design and information, not the installer. A system that works only because its designer knows the hidden sequence has not passed.
 
 ---
 
@@ -123,42 +75,39 @@ A prototype that only works because its designer knows the hidden sequence has n
 
 ## Scope
 
-A full-height representative principal-room wall bay based on the current W2 hybrid hypothesis, including:
+Build a full-height representative principal-room bay based on the W2 hybrid hypothesis, including:
 
-- dense masonry or realistic rigid wall analogue, with at least one deliberately introduced but acceptable plumb/level/set-out deviation for the assembly-robustness trial;
+- dense masonry or realistic rigid wall analogue with at least one declared acceptable geometric deviation;
 - permanent parge/air-control treatment where relevant;
-- sparse adjustable architectural backplane;
-- shallow mineral-wool absorption/service zone where justified;
-- robust dense mineral/gypsum-fibre lining panels;
-- skirting;
-- picture rail or other selected horizontal datum;
+- sparse adjustable backplane;
+- shallow absorption/service zone where justified;
+- robust dense mineral/gypsum-fibre panels;
+- skirting and selected horizontal datum;
 - cornice/perimeter condition;
-- one internal or external corner;
+- one corner;
 - one socket/control;
 - one ordinary fixing load;
 - one exceptional-load interface or explicit exclusion;
 - representative panel joint;
-- brass/bronze element only where functionally justified.
+- brass/bronze only where functionally justified.
 
 ## Questions
 
-- Does it look like a serious Georgian room rather than a technical fit-out?
+- Does it read as a serious Georgian room rather than technical fit-out?
 - Does the wall feel solid?
-- Can one panel be removed without dismantling the whole bay?
-- Are primary boundaries independent of routine panel removal?
+- Can one panel be removed without dismantling the bay?
+- Are primary boundaries independent of routine removal?
 - Can outlet/control interfaces be removed cleanly?
-- Does the joint remain acceptable after repeated cycles?
-- Is factory finish superior enough to justify the system?
+- Does the joint survive repeated cycles?
+- Is factory finish good enough to justify the system?
 - Can damaged components be remanufactured?
-- Can a competent installer unfamiliar with the design establish the correct datum and sequence from the issued information?
-- Does the system absorb the declared background tolerance without filler, arbitrary packing or designer improvisation?
+- Can an unfamiliar competent installer establish datum and sequence from the issued information?
+- Does the system absorb declared background tolerance without arbitrary packing or filler?
 - Are out-of-range conditions obvious enough to stop rather than conceal?
 
 ## Comparative control
 
-Build or retain a conventional high-quality plastered-wall benchmark for visual, acoustic/tactile, cost and labour comparison.
-
-The candidate wins only if the additional complexity buys meaningful long-term value.
+Retain a high-quality conventional plastered-wall benchmark for visual, tactile/acoustic, cost and labour comparison. The candidate wins only if its additional complexity buys meaningful long-term value.
 
 ---
 
@@ -166,41 +115,26 @@ The candidate wins only if the additional complexity buys meaningful long-term v
 
 ## Scope
 
-A multi-panel **low-profile dense-mineral platform** bay large enough to walk on normally, with a local access-band/conventional floor comparator.
+Build a walkable multi-panel **low-profile dense-mineral platform** with a local access-band/conventional-floor comparator.
 
-Test at least:
+Test timber, tile and, if structurally credible, stone or another high-mass finish on the same underlying interface where practical.
 
-- timber finish;
-- tile finish;
-- stone or stone-like high-mass finish if structurally credible.
-
-All variants should meet the same underlying platform interface where practical.
-
-Include:
-
-- primary structural floor analogue;
-- low-profile support lattice rather than office-height pedestals;
-- perimeter condition;
-- representative threshold;
-- resilient/acoustic seating;
-- at least one access event;
-- representative service below or beneath platform;
-- lifting/release method.
+Include primary floor analogue, low-profile support lattice, perimeter and threshold conditions, resilient seating, a representative service below and the intended lifting/release method.
 
 ## Questions
 
-- Can a blind user tell it is an access floor from sound or movement?
+- Can a blind user detect access-floor sound or movement?
 - Does furniture loading cause rocking?
-- What happens at panel edges under repeated footfall?
-- Can one panel be lifted without damaging adjacent finishes?
-- Can tile/stone tolerate the platform deflection?
-- Is impact sound materially worse than the conventional control?
-- Can the panel be reseated to identical datum after repeated cycles?
-- Does the access geometry force an ugly visible grid?
+- What happens at edges under repeated footfall?
+- Can one panel be lifted without damaging neighbours?
+- Can tile/stone tolerate platform deflection?
+- Is impact sound worse than the conventional control?
+- Can the panel repeatedly return to the same datum?
+- Does access geometry force an undesirable visible grid?
 
 ## Comparative control
 
-Conventional high-quality timber/tile floor build-ups should be benchmarked for stiffness, acoustics, cost and tactile quality.
+Benchmark conventional high-quality timber/tile floor build-ups for stiffness, acoustics, cost and tactile quality.
 
 ---
 
@@ -208,32 +142,30 @@ Conventional high-quality timber/tile floor build-ups should be benchmarked for 
 
 ## Scope
 
-Full-scale representative masonry/floor junction developed with the structural engineer.
+Build a full-scale representative masonry/floor junction with the structural engineer, using engineered I-joists as the coordination baseline.
 
-Use an engineered I-joist as the current coordination baseline.
-
-Compare viable connection families such as:
+Compare viable families such as:
 
 - certified restraint-type masonry hanger;
 - direct/seated bearing with separate restraint;
 - steel angle/shoe only as an experimental challenger;
-- other seated/captured arrangements judged credible by the engineer.
+- other seated/captured arrangements the engineer judges credible.
 
 ## Questions
 
 - What carries vertical reaction?
-- What prevents roll/unseating?
+- What prevents roll or unseating?
 - What provides wall restraint?
 - What provides diaphragm/shear transfer?
-- What movement is actually beneficial?
-- Is any proposed sliding freedom meaningful or merely complication?
+- What movement is genuinely beneficial?
+- Is any sliding freedom useful or merely complication?
 - Can the connection be inspected?
 - What is the fire/acoustic edge detail?
 - Does the seated concept improve repairability enough to justify departure from standard practice?
 
 ## Gate
 
-No reference-house preference should be recorded until a structural engineer has compared the candidate arrangement against conventional engineered hangers.
+Record no reference-house preference until a structural engineer has compared the candidate with conventional engineered hangers.
 
 ---
 
@@ -241,7 +173,7 @@ No reference-house preference should be recorded until a structural engineer has
 
 ## Scope
 
-1:1 cornice / wall-lining / ceiling junction.
+Build a 1:1 cornice / wall-lining / ceiling junction.
 
 Test:
 
@@ -253,8 +185,8 @@ Test:
 
 - What movement is accommodated?
 - Is the cover fixed only to the controlling assembly?
-- Can paint/decorating accidentally lock the joint?
-- Does the brass line look structural/functional rather than decorative garnish?
+- Can decoration accidentally lock the joint?
+- Does any metal read as functional rather than garnish?
 - Can the cornice be removed locally?
 - Are fire/acoustic/air obligations maintained?
 - Does the detail improve the room even if movement never becomes visible?
@@ -265,77 +197,37 @@ Test:
 
 ## Structural
 
-Lead questions:
-- seated floor connection;
-- backplane anchor loads;
-- exceptional wall loads;
-- platform stiffness/load limits;
-- structural separation between removable layers and primary diaphragm.
+Resolve seated floor connection, backplane anchor loads, exceptional wall loads, platform stiffness/load limits and separation between removable layers and primary diaphragm.
 
 ## Fire
 
-Lead questions:
-- removable wall linings;
-- access panels;
-- cavities/backplanes;
-- floor edge;
-- ceiling joints;
-- reinstatement after access.
+Resolve removable linings, access panels, cavities/backplanes, floor edge, ceiling joints and reinstatement after access.
 
 ## Acoustic
 
-Lead questions:
-- panel resonance;
-- flanking through backplanes;
-- removable floor joints;
-- resilient seating;
-- floor/wall edge;
-- service cavities.
+Resolve panel resonance, flanking through backplanes, floor joints, resilient seating, floor/wall edge and service cavities.
 
 ## Building physics
 
-Lead questions:
-- whether replaceable wall linings sit inside primary air/vapour control;
-- condensation risk in cavities;
-- external-wall hygrothermal consequences;
-- floor thermal response;
-- underfloor heating compatibility.
+Resolve the location of air/vapour control relative to removable linings, cavity condensation risk, external-wall hygrothermal consequences, floor thermal response and underfloor-heating compatibility.
 
 ## Fabrication
 
-Lead questions:
-- repeatable adjustment;
-- standard fasteners;
-- manufacturing tolerances;
-- transport/handling;
-- surface repair;
-- remanufacture after supplier loss.
+Resolve repeatable adjustment, standard fasteners, manufacturing tolerances, transport/handling, surface repair and remanufacture after supplier loss.
 
 ## Cost and carbon
 
-Every candidate should be compared with the best conventional alternative.
-
-Record:
-- initial material/labour;
-- extra floor/wall depth;
-- embodied impact;
-- likely replacement cycles;
-- avoided destructive work;
-- remanufacture assumptions;
-- sensitivity to whether future access is actually used.
+Compare every candidate with the best conventional alternative. Record initial material/labour, added depth, embodied impact, likely replacement cycles, avoided destructive work, remanufacture assumptions and sensitivity to whether future access is actually used.
 
 ---
 
 # Promotion decisions
 
-After prototype review each candidate receives one decision:
+After prototype review assign one outcome:
 
-**Promote** — sufficiently robust to enter the main pattern catalogue.
+**Promote** — sufficiently robust for the main pattern catalogue.  
+**Reference-house experimental** — suitable for controlled use but not general recommendation.  
+**Hold** — plausible but needs more work.  
+**Reject** — complexity, performance or architectural cost exceeds demonstrated benefit.
 
-**Reference-house experimental** — worth using in a controlled location but not mature enough for general recommendation.
-
-**Hold** — plausible but needs further work.
-
-**Reject** — complexity, performance or architectural cost exceeds the demonstrated benefit.
-
-Rejection is a successful research outcome. The doctrine should survive the failure of any particular implementation.
+Rejection is a successful research result. The doctrine should survive the failure of any particular implementation.

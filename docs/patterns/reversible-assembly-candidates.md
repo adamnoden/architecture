@@ -1,13 +1,13 @@
 # Reversible Assembly — Candidate Patterns
 
 **Status:** development catalogue  
-**Purpose:** hold high-value but not-yet-proven physical systems outside the established Core 12 until calculation, detailing, costing and prototype work justify promotion.
+**Purpose:** hold high-value but unproven physical systems outside the established Core 12 until calculation, detailing, costing and prototype work justify promotion.
 
-These patterns are intentionally demanding. They should be challenged by the architect, structural engineer, services engineer, building physicist, acoustic consultant and relevant fabricators before they are treated as project requirements.
+These candidates should be challenged by the relevant architect, engineers, building physicist, acoustic consultant and fabricators before becoming project requirements.
 
-They are also subject to a **workmanship-robustness gate**. Before promotion, each candidate must demonstrate how credible site variability reaches a controlling datum; how adjustment is bounded; when preceding work must instead be remediated; and whether a competent installer unfamiliar with the design can execute the intended sequence from the issued information without undocumented improvisation.
+Each is subject to a **workmanship-robustness gate**: show how credible site variation reaches a controlling datum, how adjustment is bounded, when preceding work must instead be remediated, and whether a competent unfamiliar installer can execute the intended sequence without undocumented improvisation.
 
-They are additionally subject to an **occupation / repose gate** wherever the system enters occupied space. A candidate does not earn promotion merely by being replaceable: it must not create persistent rattle, fragile-feeling surfaces, distracting access geometry, unnecessary technical display or visual complexity that overwhelms the room. Measurable acoustic, thermal and lighting effects should be tested; perceptual judgements should be recorded explicitly as judgements.
+Where a system enters occupied space it also faces an **occupation / repose gate**. Replaceability does not compensate for rattle, fragile-feeling surfaces, distracting access geometry or technical display that dominates the room. Measure acoustic, thermal and lighting effects where appropriate; record perceptual judgements as judgements.
 
 ---
 
@@ -19,26 +19,24 @@ They are additionally subject to an **occupation / repose gate** wherever the sy
 
 ## Problem
 
-A floor structure needs clear gravity support, lateral stability, diaphragm action and—depending on the wall system—restraint of the surrounding structure.
-
-Those requirements are often collapsed into a single “fixed connection”. The result can be structurally sound but unnecessarily rigid, difficult to inspect, difficult to replace and poorly suited to differential movement between timber and masonry.
+A floor needs gravity support, lateral stability, diaphragm action and, depending on the wall system, restraint of surrounding structure. These functions are often collapsed into one “fixed connection”, producing a sound but needlessly rigid or opaque junction.
 
 ## Proposition
 
 > **Support by bearing; restrain only where restraint is required.**
 
-Treat the joist-end interface as a set of separate structural functions rather than assuming that every floor member should be rigidly locked to masonry.
+Treat the joist end as a set of structural functions rather than assuming every member should be rigidly locked to masonry.
 
 A conceptual arrangement may include:
 
-- a durable bearing seat, ledge, shoe or hanger carrying vertical reaction;
+- durable bearing carrying vertical reaction;
 - positive anti-roll or anti-unseating restraint;
-- blocking, decking or other means of joist stability;
+- blocking, decking or other joist-stability measures;
 - separately designed diaphragm and wall-restraint connections;
-- controlled clearance where longitudinal timber movement or construction tolerance should not be forcibly suppressed;
-- inspectable and replaceable vulnerable components where practical.
+- controlled clearance where timber movement or construction tolerance should not be suppressed;
+- inspectable vulnerable components where practical.
 
-The exact connection is a structural-engineering decision.
+The exact connection remains a structural-engineering decision.
 
 ## Conceptual section
 
@@ -66,20 +64,19 @@ unseating, roll and required wall movement are not left uncontrolled.
 
 ## Forces
 
-- gravity bearing must remain adequate under all design actions;
-- floor diaphragm action may require positive mechanical connection;
-- masonry walls may require lateral restraint from floors;
+- bearing must remain adequate under all design actions;
+- diaphragm action and wall restraint may require positive connection;
 - timber changes dimension with moisture;
-- joist rollover and accidental unseating must be prevented;
-- fire and acoustic performance at the floor edge may depend on continuity;
-- concealed steelwork can corrode if exposed to moisture;
-- a theoretically replaceable joist is of little value if replacement requires dismantling half the room.
+- rollover and accidental unseating must be prevented;
+- floor-edge fire and acoustic performance may depend on continuity;
+- concealed steelwork may corrode;
+- theoretical replaceability is worthless if replacement requires dismantling half the room.
 
 ## Structural and boundary obligations
 
-The structural engineer must explicitly resolve:
+The structural engineer must resolve:
 
-- bearing length and bearing stress;
+- bearing length and stress;
 - horizontal reactions;
 - wall restraint;
 - diaphragm/shear transfer;
@@ -87,73 +84,65 @@ The structural engineer must explicitly resolve:
 - progressive-collapse/local-robustness requirements;
 - vibration and deflection;
 - fire resistance;
-- acoustic flanking paths;
+- acoustic flanking;
 - corrosion and moisture exposure;
 - construction sequence.
 
-**Bounded movement must never be used as a euphemism for inadequate restraint.**
+**Bounded movement must never be a euphemism for inadequate restraint.**
 
 ## Permanent-fabric impact
 
-Prefer a small number of deliberate structural interfaces formed during original construction over repeated ad-hoc cutting or drilling of masonry.
-
-Any embedded plate, seat or fixing should be documented as part of the permanent structural record.
+Prefer a small number of deliberate structural interfaces formed during original construction over repeated ad-hoc cutting or drilling of masonry. Document embedded plates, seats and fixings in the structural record.
 
 ## Architectural resolution
 
-The connection should normally disappear into the floor/wall build-up. Tectonic honesty does not require exposed steelwork in occupied rooms.
-
-Where an edge interface is visible, its line should coincide with a real floor or wall junction rather than being cosmetically filled across expected movement.
+The connection should normally disappear into the floor/wall build-up. Tectonic honesty does not require exposed steelwork. Where an edge remains visible, let it coincide with a real junction rather than filling across expected movement.
 
 ## Occupation / repose impact
 
-This candidate will be judged as much by the finished floor as by the connection detail. The floor must feel secure under ordinary walking: deflection, vibration, local movement, squeak, click and rattle should be controlled to a domestic standard established by engineering and prototype testing.
+Judge the finished floor as rigorously as the connection. Deflection, vibration, local movement, squeak, click and rattle should meet an appropriate domestic standard established through engineering and prototype work.
 
-The structural arrangement may be concealed. Where any part of the support is architecturally expressed, it should present a plausible visual account of bearing and restraint rather than relying on apparent precariousness for effect. This is an architectural preference under Principle 8, not a substitute for calculation.
+If support is expressed architecturally, it should present a plausible account of bearing and restraint. That is an architectural preference, not a substitute for calculation.
 
 ## Assembly and replacement sequence
 
-The technical design must draw:
+Draw:
 
-1. how the floor member is installed;
-2. what prevents roll and unseating;
-3. which components can be released;
-4. what must be removed to inspect the seat;
-5. whether an individual joist could realistically be replaced;
-6. which fire/acoustic boundaries must be reinstated.
+1. floor-member installation;
+2. anti-roll and anti-unseating restraint;
+3. releasable components;
+4. access needed to inspect the seat;
+5. realistic individual-joist replacement;
+6. fire/acoustic boundaries requiring reinstatement.
 
 ## Failure modes
 
-Insufficient bearing; joist end split or crushed; restraint omitted because “movement is allowed”; excessive movement at finishes; hidden corrosion; floor diaphragm weakened by detachable details; acoustic flanking at the wall edge; replacement theoretically possible but physically blocked.
+Insufficient bearing; split or crushed joist end; omitted restraint; excessive finish movement; hidden corrosion; weakened diaphragm; acoustic flanking; nominal replaceability blocked physically.
 
 ## Does not prove
 
-This pattern does not prove that a seated or partially sliding joist detail is superior to a conventional joist hanger in the reference house.
-
-A conventional engineered hanger may remain the best answer if it already provides the required movement tolerance, structural behaviour and replacement logic.
+This does not establish a seated or partially sliding detail as superior to an ordinary engineered hanger. A certified hanger may remain best if it already meets movement, structural and replacement requirements.
 
 ## Research / prototype requirements
 
 - structural-engineer options appraisal;
 - compare masonry hanger, bearing ledge, steel angle/shoe and other appropriate systems;
-- calculate all required restraint separately from gravity support;
+- calculate restraint separately from gravity support;
 - full-scale wall/floor-edge mock-up;
 - movement and squeak observation;
-- fire/acoustic edge-detail review.
+- fire/acoustic edge review.
 
 ## Current evidence direction
 
-The evidence now supports the **decomposition principle** more strongly than a bespoke connection.
+Evidence supports the **decomposition principle** more strongly than a bespoke connection. A certified restraint-type masonry hanger is the baseline to beat; direct bearing with separate restraint is a credible comparator. A custom ledge or shoe remains experimental unless it materially improves inspection, repair, tolerance or architectural coordination.
 
-A certified restraint-type masonry hanger is the baseline to beat. Direct bearing with separate restraint remains a credible comparator. A custom bearing ledge/shoe stays experimental and should not proceed unless it demonstrates a material advantage in inspection, repair, tolerance or architectural coordination.
-
-Do not create structural sliding freedom merely because the doctrine values movement accommodation. Put movement at the interface where the actual movement occurs.
+Do not create sliding freedom merely because the doctrine values movement. Put movement where the real movement occurs.
 
 See: `docs/research/seated-floor-structure-options.md`.
 
 ## Reference-house direction
 
-Investigate a **seated-but-captured** engineered timber floor edge, but begin with ordinary certified restraint hardware. The reference-house preference should be selected only after a structural-engineer options study compares the baseline against direct bearing and any custom seat.
+Investigate a **seated-but-captured** timber floor edge, beginning with ordinary certified restraint hardware. Select a preference only after structural-engineer comparison with direct bearing and any custom seat.
 
 ---
 
@@ -165,15 +154,13 @@ Investigate a **seated-but-captured** engineered timber floor edge, but begin wi
 
 ## Problem
 
-Permanent walls are normally treated as unlimited fixing surfaces.
-
-Over decades, pictures, televisions, cabinets, radiators, controls, panelling and replacement fit-out generate repeated drilling, plugging, chasing and patching. Even if each intervention is minor, ordinary occupation progressively consumes the permanent wall.
+Permanent walls are usually treated as unlimited fixing surfaces. Over time pictures, cabinets, radiators, controls and replacement fit-out generate repeated drilling, chasing and patching.
 
 ## Proposition
 
 Create a durable **attachment plane** between permanent fabric and faster-changing interior work.
 
-The permanent wall receives relatively few engineered, documented fixings. Those fixings support a repeatable rail, frame, ground or backplane. Replaceable wall linings, joinery and suitable fittings then attach primarily to that interface.
+The permanent wall receives relatively few engineered, documented fixings supporting a repeatable rail, frame, ground or backplane. Replaceable linings, joinery and suitable fittings then attach primarily to that interface.
 
 ```text
 PERMANENT MASONRY
@@ -192,93 +179,76 @@ ordinary occupation
 
 ## Forces
 
-- the system must not turn rooms into technical racks;
-- general fixing loads and exceptional structural loads are different;
-- continuous rails may create acoustic or thermal bridges in some locations;
-- hidden services must remain protected from future fixings;
-- the backplane itself may become obsolete if it depends on a proprietary clip;
-- tolerances between site-built masonry and manufactured panels need adjustment;
-- depth consumed by the system must justify itself.
+- rooms must not become technical racks;
+- ordinary fixing loads differ from structural loads;
+- rails may create acoustic or thermal bridges;
+- hidden services need protection;
+- proprietary clips may outlive their supply chain;
+- site-built masonry and manufactured panels need tolerance adjustment;
+- the system's depth must earn itself.
 
 ## Design requirements
 
 - establish load classes;
-- distinguish ordinary occupation loads from exceptional engineered loads;
-- use non-proprietary or remanufacturable geometry where practical;
-- define safe fixing zones and no-fix zones;
-- coordinate with electrical/service routes;
-- permit local adjustment for construction tolerance;
-- keep future fasteners on the replaceable side of the permanent interface wherever practical;
-- document anchors and allowable loads physically and digitally.
+- distinguish ordinary from engineered loads;
+- prefer non-proprietary or remanufacturable geometry;
+- define safe fixing and no-fix zones;
+- coordinate electrical/service routes;
+- provide bounded adjustment;
+- keep future fasteners on the replaceable side where practical;
+- record anchors and allowable loads physically and digitally.
 
 ## Boundary obligations
 
-Check fire, acoustic, air/vapour and moisture consequences of any cavity or continuous rail.
-
-The backplane must not become an uncontrolled service void or flanking path.
+Check fire, acoustic, air/vapour and moisture consequences of cavities or continuous rails. The backplane must not become an uncontrolled service void or flanking path.
 
 ## Permanent-fabric impact
 
-This pattern exists specifically to reduce permanent-fabric penetrations.
-
-The design should record:
-
-- number and type of permanent anchors;
-- load they are intended to carry;
-- zones where later drilling is prohibited;
-- replacement method for the backplane itself.
+Record the number and type of permanent anchors, intended loads, no-drill zones and replacement method for the backplane itself.
 
 ## Architectural resolution
 
-The backplane should normally be invisible.
-
-Its visible consequences should appear through ordinary architecture: picture rails, panelling, skirtings, mouldings, joinery or clean wall surfaces. A room should not look industrial merely because its attachment logic is sophisticated.
+The backplane should normally be invisible. Its consequences can appear through ordinary architecture: picture rails, panelling, skirtings, mouldings, joinery or clean wall surfaces.
 
 ## Occupation / repose impact
 
-The backplane should increase freedom of ordinary occupation without making the wall feel like equipment. Pictures, mirrors, shelves and suitable joinery should be easy to place, while rails, fixing zones and technical geometry remain visually subordinate unless intentionally expressed.
-
-The finished wall must retain convincing solidity under touch and use. A system that saves masonry from future drilling but produces hollow response, rattle, visible module pressure or a permanently technical aesthetic has not earned promotion.
+The wall must retain convincing solidity. A system that saves masonry but produces hollow response, rattle, visible module pressure or an industrial aesthetic has not earned promotion.
 
 ## Assembly and replacement sequence
 
 1. verify permanent anchors;
-2. install/level the backplane;
-3. install any service carriers;
+2. install and level backplane;
+3. install service carriers where required;
 4. attach replaceable lining;
-5. attach ordinary fittings to defined interface positions;
-6. remove lining/fittings without enlarging the original permanent anchors.
+5. attach ordinary fittings to defined positions;
+6. remove lining/fittings without enlarging original permanent anchors.
 
 ## Failure modes
 
-Rail system becomes proprietary and irreplaceable; insufficient load capacity encourages occupants to bypass it; heavy loads are attached without engineering; hidden service conflicts; rattling lining; excessive build-up depth; backplane cavity bypasses acoustic or fire separation.
+Proprietary rail becomes unavailable; load capacity encourages bypass fixing; heavy loads are misused; hidden services conflict; lining rattles; depth becomes excessive; cavity bypasses acoustic or fire separation.
 
 ## Does not prove
 
-The pattern does not justify covering every masonry wall with a technical subframe.
-
-It is strongest on walls expected to carry repeated occupation loads, service distribution, replaceable lining or major joinery.
+The pattern does not justify a technical subframe on every masonry wall. It is strongest where repeated fixing, service access, replaceable lining or major joinery justify the depth.
 
 ## Research / prototype requirements
 
-- establish useful domestic load classes;
-- compare timber grounds, metal rails, slotted sections and bespoke-but-remanufacturable profiles;
-- pull-out/load testing of representative anchors;
-- full wall-bay prototype;
-- repeated removal/reinstallation test;
-- acoustic and impact testing strategy.
+- establish domestic load classes;
+- compare timber grounds, metal rails, slotted sections and remanufacturable profiles;
+- test representative anchors;
+- build a full wall-bay prototype;
+- repeat removal/reinstallation;
+- develop acoustic and impact tests.
 
 ## Current evidence direction
 
-Independent lining, mechanical fixing and robust sheet materials are mature. The distinctive project move is a **sparse, non-proprietary, load-classified backplane** that takes relatively few permanent masonry anchors and lets future occupation remain on the room side of them.
-
-The backplane should remain selective rather than universal. It earns its depth on walls with repeated fixing, service access, replaceable lining or major joinery.
+Independent lining, mechanical fixing and robust sheet materials are mature. The distinctive move is a **sparse, non-proprietary, load-classified backplane** taking relatively few permanent masonry anchors.
 
 See: `docs/research/replaceable-wall-system-options.md`.
 
 ## Reference-house direction
 
-Develop the backplane together with the Georgian lining grammar so that technical fixing zones coincide with real skirting, dado, picture-rail or panel divisions where useful.
+Develop the backplane with the Georgian lining grammar so technical fixing zones can coincide with real skirting, dado, picture-rail or panel divisions where useful.
 
 ---
 
@@ -290,15 +260,11 @@ Develop the backplane together with the Georgian lining grammar so that technica
 
 ## Problem
 
-Conventional internal finishes often use wet plaster, skim, filler, adhesive or bonded board to turn several layers into one apparently continuous surface.
-
-This can be durable where the assembly should genuinely remain together. It performs badly as a philosophy for walls that contain services, need future access, move relative to adjacent assemblies or are expected to change on a shorter cycle than the masonry behind them.
+Wet plaster, skim, filler, adhesive or bonded board can turn several layers into one continuous surface. That may be durable where the assembly should remain together, but is a poor default for walls containing services, needing access, moving independently or changing faster than the masonry behind them.
 
 ## Proposition
 
-Treat the **room surface as a replaceable architectural lining** rather than automatically as the final wet finish of the permanent wall.
-
-A typical arrangement may be:
+Treat the **room surface as a replaceable architectural lining** where the service-life case justifies it.
 
 ```text
 PERMANENT WALL / PRIMARY BOUNDARIES
@@ -316,122 +282,85 @@ PERMANENT WALL / PRIMARY BOUNDARIES
 ROOM
 ```
 
-Possible panel materials include, subject to testing:
-
-- timber;
-- gypsum-fibre or other dense mineral board;
-- calcium-silicate or other mineral systems where appropriate;
-- factory-finished plaster/mineral surfaces;
-- stone or stone-faced assemblies;
-- specialist wet-room panels.
-
-The pattern is performance-led rather than material-prescriptive.
+Possible materials, subject to testing, include timber, dense mineral boards, factory-finished mineral/plaster surfaces, stone-faced assemblies and specialist wet-room panels. The pattern is performance-led, not material-prescriptive.
 
 ## Forces
 
 - walls must feel solid under touch and impact;
-- fire performance may depend on lining composition;
-- acoustic mass and airtightness may depend on continuity;
-- panel joints can become visually weak or excessively repetitive;
-- large panels become heavy and difficult to handle;
-- small panels create too many joints;
-- factory finish must tolerate transport and installation;
-- corners, reveals, sockets and switches complicate panel removal;
-- furniture and joinery loads must not overload decorative panels.
+- fire, acoustic mass and airtightness may depend on lining composition or continuity;
+- panel scale trades joint count against weight;
+- factory finishes must survive transport and installation;
+- corners, reveals and services complicate removal;
+- decorative panels must not be overloaded by furniture or joinery.
 
 ## Design requirements
 
-- define which primary boundaries sit behind the removable lining;
-- keep routine panel removal from casually destroying those boundaries;
+- define primary boundaries behind the removable lining;
+- keep routine removal from destroying them;
 - provide realistic tolerance and adjustment;
 - coordinate outlets, controls and service access;
 - protect panel edges;
-- design internal/external corners and opening reveals as first-class interfaces;
-- make damaged panels locally replaceable where practical;
+- design corners and reveals as first-class interfaces;
+- make local damage replaceable where practical;
 - retain a reproducible fabrication record.
 
 ## Wet-trade rule
 
-A wet or bonded finish may still be preferable where it offers better durability, fire, moisture or visual performance.
-
-The comparison should be explicit.
-
-The project should not replace a simple good plaster wall with a complicated removable system merely because demountability is fashionable.
+Wet or bonded finishes may remain better where they offer superior durability, fire, moisture or visual performance. Do not replace a good plaster wall with a complicated removable system merely because demountability sounds virtuous.
 
 ## Architectural resolution
 
 > **Panelisation does not require a panelised aesthetic.**
 
-The joint strategy is part of the room architecture.
-
-For the reference house, joints may coincide with:
-
-- skirting;
-- dado;
-- picture rail;
-- cornice;
-- architrave;
-- true panel mouldings;
-- deliberately proportioned wall fields.
-
-A plaster-like visual field may also be possible using large panels and restrained joints, but the joint should not depend on brittle filler that defeats removability.
-
-Factory-applied mineral/plaster finishes are explicitly worth investigating: the surface may read as calm plaster while remaining the truthful finish of a removable panel.
+Joints may coincide with skirting, dado, picture rail, cornice, architrave or real panel composition. A plaster-like field may use large panels and restrained joints, but not brittle filler that defeats removability. Factory-applied mineral/plaster finishes are worth testing for exactly this reason.
 
 ## Occupation / repose impact
 
-This candidate bears a high burden under Principle 8 because it is the surface occupants see and touch continuously. The prototype should test apparent solidity, impact response, acoustic character, joint hierarchy, shadow behaviour and the way ordinary pictures, furniture and decoration accumulate against it.
-
-Replaceability should not produce an office-partition or exhibition-system character by default. Panel boundaries may be visible where they belong to the architecture, but access logic should not become the dominant reading of the room.
+This candidate bears a high burden because occupants see and touch it continuously. Test apparent solidity, impact response, acoustic character, joint hierarchy, shadow behaviour and ordinary decoration. Replaceability should not default to office-partition character.
 
 ## Assembly and replacement sequence
 
-Draw and prototype:
+Prototype:
 
-1. backplane/tolerance adjustment;
+1. backplane and tolerance adjustment;
 2. panel location;
 3. mechanical capture;
 4. edge/joint closure;
 5. outlet/interface removal;
 6. individual-panel withdrawal;
-7. replacement/reinstallation without wet making-good.
+7. reinstallation without wet making-good.
 
 ## Failure modes
 
-Office-fit-out appearance; hollow/rattling wall; poor impact resistance; excessive joints; panel too heavy to remove; fire/acoustic boundary accidentally assigned to decorative panel; proprietary clips become unavailable; factory finish chips during removal; corners require destructive sealant/filler.
+Office-fit-out appearance; hollow or rattling wall; poor impact resistance; too many joints; excessive panel weight; primary fire/acoustic boundary accidentally assigned to decorative panel; unavailable clips; chipped finish; destructive filler at corners.
 
 ## Does not prove
 
-The pattern does not establish that all rooms should use removable lining.
-
-Some long-lived masonry/plaster walls may be simpler, more durable and more beautiful. The pattern is strongest where access, services, repeated occupation fixing or differential movement justify the additional layer.
+The pattern does not establish removable lining for every room. Direct masonry/plaster may remain simpler and better on low-service walls.
 
 ## Research / prototype requirements
 
-- material/substrate comparison;
+- compare materials/substrates;
 - impact and fixing-load tests;
-- fire strategy review;
-- acoustic build-up options;
+- fire and acoustic review;
 - moisture/hygrothermal review;
-- full-scale wall bay including corner, skirting, picture rail, socket and opening reveal;
-- repeated panel removal/reinstallation;
+- full wall bay including corner, skirting, picture rail, socket and reveal;
+- repeated removal/reinstallation;
 - compare site skim with factory-finished mineral surface in appearance and whole-life labour.
 
 ## Current evidence direction
 
-The preferred research direction is now a **hybrid wall**:
+The preferred research direction is a **hybrid wall**:
 
 **permanent masonry / primary boundary → sparse adjustable backplane → optional shallow service/absorption zone → robust manufactured panel**
 
-This keeps structure, acoustic mass and other slow continuous obligations in the masonry/background rather than loading them onto a routinely removable decorative panel.
-
-The system should be deployed selectively. High-quality direct plaster remains the benchmark and may remain the correct answer on low-service walls.
+Slow continuous obligations remain in the masonry/background rather than a routinely removable decorative panel. High-quality direct plaster remains the benchmark.
 
 See: `docs/research/replaceable-wall-system-options.md`.
 
 ## Reference-house direction
 
-Develop at least one principal-room prototype that does **not** read as a technical panel system. Compare it physically against a first-rate plaster wall and an ordinary independent drylining system.
+Develop at least one principal-room prototype that does **not** read as a technical panel system. Compare it physically with a first-rate plaster wall and ordinary independent drylining.
 
 ---
 
@@ -443,11 +372,9 @@ Develop at least one principal-room prototype that does **not** read as a techni
 
 ## Problem
 
-Floor finish, substrate, acoustic layer, services and primary structure are often fused into one construction sequence.
+Floor finish, substrate, acoustic layer, services and primary structure are often fused into one construction sequence. Changing finish or reaching services can therefore consume layers with much longer remaining lives.
 
-Changing tile to timber, replacing damaged stone, or reaching services can therefore destroy layers with much longer remaining lives.
-
-Earlier project work described removable timber or stone “floor cassettes”. That formulation couples the access system too closely to the finish.
+Earlier project work described removable timber or stone “floor cassettes”. That coupled the access system too closely to the finish.
 
 ## Proposition
 
@@ -469,103 +396,69 @@ carrier A          carrier B         carrier C
         primary structural floor
 ```
 
-Different finishes may require different carriers, stiffness, mass and movement details.
-
-What should remain common where practical is:
-
-- finished floor datum;
-- support geometry;
-- module family;
-- edge and threshold condition;
-- allowable mass/load range;
-- locating/capture method;
-- lifting/removal method;
-- acoustic seating;
-- replacement sequence.
+Different finishes may require different carriers, stiffness, mass and movement details. Common features may include finished datum, support geometry, module family, edge/threshold condition, allowable loads, capture method, lifting method, acoustic seating and replacement sequence.
 
 ## Forces
 
 - tile and stone are sensitive to deflection;
-- removable panels can squeak, rattle or rock;
+- panels can squeak, rattle or rock;
 - joints may compromise impact-sound isolation;
-- mass varies substantially between finishes;
-- underfloor heating complicates removability;
-- waterproof floors require special treatment;
-- panel size trades off joint count against lifting weight;
-- room geometry rarely divides into perfect modules;
-- thresholds and perimeter cuts can become bespoke.
+- finish masses vary greatly;
+- underfloor heating and waterproofing complicate removal;
+- panel size trades joint count against lifting weight;
+- irregular rooms create perimeter exceptions.
 
 ## Structural and boundary obligations
 
-The routinely removable platform should normally **not** be the sole element providing critical whole-building diaphragm stability.
+The removable platform should normally **not** be the sole source of critical building diaphragm stability.
 
-The design must also check:
-
-- point and distributed loads;
-- panel deflection;
-- impact and airborne acoustics;
-- fire contribution;
-- underfloor service clearances;
-- moisture;
-- thermal response;
-- movement;
-- trip/edge safety.
+Check point/distributed loads, panel deflection, acoustics, fire contribution, service clearances, moisture, thermal response, movement and edge/trip safety.
 
 ## Permanent-fabric impact
 
-Services and finish renewal should occur above the primary structure wherever practical.
-
-Penetrations through structural members remain deliberately designed rather than becoming a consequence of floor access.
+Keep services and finish renewal above the primary structure where practical. Structural penetrations remain designed interfaces rather than consequences of access.
 
 ## Architectural resolution
 
-The floor must feel permanent in use.
-
-Removal seams may align with board patterns, stone/tile geometry, room axes, borders or thresholds. Brass/bronze may be used selectively at genuine edge, wear or lifting interfaces in the reference house, but it is not required.
-
-The access grid should not force every finish to look like a raised access floor.
+The floor must feel permanent in use. Removal seams may align with board patterns, stone/tile geometry, room axes, borders or thresholds. The access grid should not force every finish to read as raised access flooring.
 
 ## Occupation / repose impact
 
-The platform must disappear perceptually beneath the chosen floor finish during ordinary use. Walking should not reveal a maintenance system through bounce, rocking, rattle, hollow sound or recurrent joint movement. Thresholds and access boundaries should read as deliberate floor architecture rather than as a technical grid.
-
-Prototype evaluation should include quiet-room footfall, furniture loading, repeated lifting/reseating and transitions between finish types. Easy access does not compensate for a floor that feels provisional.
+Walking should not reveal the maintenance system through bounce, rocking, rattle, hollow sound or recurring joint movement. Test quiet-room footfall, furniture loading, repeated lifting and finish transitions. Easy access does not compensate for a provisional-feeling floor.
 
 ## Assembly and replacement sequence
 
-1. remove any deliberate perimeter/border piece;
-2. release or lift the affected platform panel;
+1. remove deliberate perimeter/border piece where required;
+2. release or lift the affected panel;
 3. preserve adjacent acoustic seating;
-4. reach the service or replace the finish module;
+4. service or replace the finish module;
 5. reseat to the same datum;
 6. verify no rocking, rattle, acoustic bypass or edge misalignment.
 
 ## Failure modes
 
-Floor feels hollow or temporary; joints telegraph through tile; panels rock; resilient layers are bypassed; panel cannot be lifted because furniture/thresholds trap it; interchangeable finishes exceed structural load assumptions; underfloor heating becomes inaccessible; water enters the access layer.
+Hollow or temporary feel; tile cracking over joints; rocking panels; acoustic bypass; trapped panel at threshold; finish mass exceeds assumptions; inaccessible heating; water enters the access layer.
 
 ## Does not prove
 
-The pattern does not establish that every room needs accessible flooring.
-
-Where no maintainable services or foreseeable finish change justify the complexity, a conventional durable floor may be preferable.
+Not every room needs accessible flooring. Where no service or finish-change case justifies the complexity, a conventional durable floor may be better.
 
 ## Research / prototype requirements
 
 - define support-grid options;
-- stiffness and mass modelling for timber/tile/stone variants;
-- acoustic consultant input;
+- model stiffness and mass for timber/tile/stone variants;
+- acoustic input;
 - underfloor-heating options appraisal;
-- full-scale multi-panel floor bay;
+- full-scale multi-panel bay;
 - repeated lifting/reseating;
-- rolling/impact load testing;
-- tactile and acoustic comparison against a conventional solid floor.
+- rolling/impact testing;
+- tactile and acoustic comparison with a conventional solid floor.
 
 ## Current evidence direction
 
-Commercial raised-floor systems already prove removable dense mineral panels carrying stone, ceramic and parquet finishes. The project does not need to prove that such a floor can exist; it needs to prove that it can be **domesticated**.
+Commercial raised-floor systems already prove removable dense mineral panels carrying stone, ceramic and parquet finishes. The unresolved question is whether that system can be **domesticated**.
 
-The preferred research direction is a **low-profile mineral platform on a continuous or semi-continuous support lattice**, with local deeper service zones rather than a tall whole-room plenum. A perimeter/corridor access-band strategy is a serious comparator and may be more proportionate than full-room removability.
+The preferred direction is a **low-profile mineral platform on a continuous or semi-continuous support lattice**, with local deeper service zones rather than a tall whole-room plenum. A perimeter or corridor access band is a serious comparator and may prove more proportionate than full-room removability.
 
 Underfloor heating should remain mechanically independent of routinely removable panels unless testing proves otherwise.
 
@@ -573,13 +466,13 @@ See: `docs/research/finish-agnostic-floor-platform-options.md`.
 
 ## Reference-house direction
 
-Prototype at least three finish variants on one common platform interface and judge the result first as **flooring**, not as an access system. If a blind walking test reveals “raised floor”, the full-room concept has failed.
+Prototype at least three finish variants on one interface and judge the result first as **flooring**, not as an access system. If a blind walking test reveals “raised floor”, the full-room concept has failed.
 
 ---
 
 # Promotion rule
 
-No candidate enters the Core Pattern Catalogue merely because it is conceptually attractive.
+No candidate enters the Core Pattern Catalogue merely because it is attractive in theory.
 
 Promotion requires, proportionate to risk:
 
@@ -592,6 +485,4 @@ Promotion requires, proportionate to risk:
 - maintenance/disassembly test;
 - explicit statement of where the conventional alternative remains better.
 
-The objective is not maximum novelty.
-
-It is to discover which reversible assemblies can become **ordinary, beautiful, robust building practice**.
+The objective is to discover which reversible assemblies can become **ordinary, beautiful, robust building practice**, not to maximise novelty.
