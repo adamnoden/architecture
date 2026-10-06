@@ -58,6 +58,7 @@ For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.
 | **Project state** | Current maturity, risks and next gates | [STATUS.md](STATUS.md) |
 | **Source** | Preserved original doctrine; provenance rather than current publication | [House Design Doctrine v7](docs/source/house-design-doctrine-v7.md) |
 | **Manuscript** | Public architectural argument, governing principles and book structure | [Publication architecture](docs/manuscript/publication-architecture.md) · [Governing principles](docs/manuscript/governing-principles.md) · [Preface](docs/manuscript/preface.md) |
+| **Editorial** | Canonical prose modes, stylistic controls and rewrite protocol | [Editorial doctrine](docs/editorial/editorial-doctrine.md) |
 | **Patterns** | Reusable architectural responses and experimental candidates | [Core patterns](docs/patterns/core-12.md) · [`docs/patterns/`](docs/patterns/) |
 | **Reference house** | Worked architectural/technical interpretation and coordination studies | [`docs/reference-house/`](docs/reference-house/) |
 | **Research** | Evidence syntheses, precedent, options appraisals and claim hardening | [`docs/research/`](docs/research/) |
