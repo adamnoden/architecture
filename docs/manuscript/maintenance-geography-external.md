@@ -3,11 +3,11 @@
 **Status:** developed manuscript insert for Part II §8  
 **Principles:** 1 Build for time; 4 Failure architecture; 5 Give maintenance a geography; 6 Prefer ordinary parts; 11 Resolve technology as architecture
 
-The exterior of a house is usually drawn as an object to be seen from outside and occupied from within. Maintenance reveals a third condition: the building as a place of work.
+The exterior of a house is usually drawn as an object seen from outside and occupied from within. Maintenance reveals a third condition: the building as a place of work.
 
-That work is not exceptional. Mortar is repointed. Gutters are cleared and renewed. Windows are cleaned, adjusted, reglazed and eventually replaced. Flashings fail. Roof coverings wear. Chimneys are inspected. Rainwater routes block. Sealants and coatings age. A mature tree needs pruning away from the roof. None of these events should surprise a building intended to outlive several generations of its equipment and finishes.
+That work is ordinary. Mortar is repointed, gutters are cleared and renewed, windows are cleaned and eventually replaced, flashings fail and roofs need inspection. None of this should surprise a building intended to outlive several generations of its equipment and finishes.
 
-Yet external access is often considered only after the architecture has fixed the problem. A projecting bay removes the obvious scaffold line. A pond occupies the only firm ground beside an upper wall. A narrow side passage admits a person but not a scaffold component or replacement window. A roof hatch opens onto a steep slope with no credible onward route. A courtyard is visually generous yet operationally sealed from the equipment required to maintain its upper storey.
+External access is often considered only after the architecture has fixed the problem. A projecting bay removes the obvious scaffold line. A pond occupies the only firm ground beside an upper wall. A narrow side passage admits a person but not the equipment or replacement component. A roof hatch opens onto a steep slope with no credible onward route.
 
 The mistake is to ask only whether the component can be reached.
 
@@ -17,9 +17,9 @@ This is the external extension of maintenance geography.
 
 ## The maintenance route begins before the wall
 
-For internal plant, the maintenance route begins at a door or circulation space. Externally it begins earlier.
+For internal plant, the maintenance route may begin at a door. Externally it begins earlier.
 
-A façade repair may depend on a van reaching the site, scaffold components passing through a gate, standards bearing on suitable ground, a working platform rising past architectural projections, materials reaching the platform, waste leaving by the same route and the entire temporary arrangement being erected without destroying the landscape it was supposed to preserve.
+A façade repair may depend on a van reaching the site, scaffold components passing through a gate, standards bearing on suitable ground, a platform rising past projections, and materials and waste moving through the same route without destroying the landscape.
 
 The useful sequence is:
 
@@ -39,213 +39,144 @@ TARGET COMPONENT
 WITHDRAWAL / WASTE / REPLACEMENT ROUTE
 ```
 
-Different tasks occupy different versions of this sequence. Cleaning glass is not the same access problem as replacing the complete frame. Clearing a gutter is not the same as rebuilding a chimney. Repointing masonry may require a stable platform for days; inspecting a simple low-level item may require only ground access.
-
-Maintenance geography therefore describes **task-specific spatial obligations**, not a generic claim that the façade is “accessible”.
+Different tasks occupy different versions of this sequence. Cleaning glass is not the same access problem as replacing a complete frame; clearing a gutter is not rebuilding a chimney. Maintenance geography therefore describes **task-specific spatial obligations**, not a generic claim that the façade is “accessible”.
 
 ## An external maintenance envelope
 
-The project uses **external maintenance envelope** to describe the space and supporting conditions required by a specified exterior maintenance task. The term is spatial; it is not the building's weather or thermal envelope.
+The project uses **external maintenance envelope** for the space and supporting conditions required by a specified exterior task. The term is spatial; it is not the weather or thermal envelope.
 
-An external maintenance envelope may include:
+It may include:
 
 - the route by which workers and materials reach the work face;
-- the ground or structure on which access equipment bears;
-- the footprint and setup geometry of scaffold, tower or mobile access equipment;
-- clearance around projections, planting and neighbouring boundaries;
-- the working platform or standing position;
+- the ground or structure supporting access equipment;
+- setup geometry and clearance around projections or planting;
+- the working or standing position;
 - opening, lifting and handling space;
-- the route by which a removed component or waste leaves and its replacement arrives.
+- the route by which removed work leaves and its replacement arrives.
 
-This space is usually empty during ordinary occupation. That does not make it undesigned.
+This space is usually empty during ordinary occupation. It still has a future function. A tree, planter or later extension can consume maintenance capability without touching the building itself.
 
-Empty space can carry a future function as real as a cupboard, stair or service zone. A tree, planter or later extension may therefore consume maintenance capability without touching the building itself.
-
-The design should preserve enough of that capability deliberately that ordinary maintenance does not become specialist access work by accident.
+The design should preserve enough of that capability that ordinary maintenance does not become specialist access work by accident.
 
 ## Use the work-at-height hierarchy as an architectural hierarchy
 
 The house should not be designed around the ladder.
 
-The proper order is stronger:
+The order is:
 
-1. **Remove the work at height where practical.** Put filters, controls and maintainable equipment where they can be reached safely. Make windows cleanable or serviceable from inside where this can be achieved without compromising the architecture or performance.
-2. **Use an existing safe place of work where one can reasonably exist.** A guarded flat roof, accessible terrace, internal opening or stable maintenance position can sometimes remove the need for temporary access equipment.
-3. **Allow ordinary collective access equipment to work.** Scaffold, towers and mobile elevating equipment should not be made needlessly difficult by the geometry of the building or its immediate site.
-4. **Use ladders for the tasks to which ladders are actually suited.** Light, short-duration, low-risk work may justify them; they are not the default model for maintaining an upper storey.
-5. **Use specialist access where the architecture genuinely warrants it, not because an avoidable obstruction was designed in unknowingly.**
+1. **Remove the work at height where practical.** Put maintainable equipment where it can be reached safely; make windows cleanable or serviceable from inside where this does not compromise the architecture or performance.
+2. **Use an existing safe place of work where one can reasonably exist.** A guarded flat roof, accessible terrace, internal opening or stable maintenance position may remove the need for temporary access equipment.
+3. **Allow ordinary collective access equipment to work.** Scaffold, towers and mobile elevating equipment should not be made needlessly difficult by the building or immediate site.
+4. **Use ladders only for tasks suited to ladders.** Light, short-duration, low-risk work may justify them; they are not the default model for upper-storey maintenance.
+5. **Use specialist access where the architecture genuinely warrants it, not because avoidable obstruction was designed in unknowingly.**
 
-This hierarchy matters because a supposedly maintenance-friendly detail can still export risk to the person who must reach it.
-
-An accessible gutter reached only from an improvised ladder position has not been fully designed for maintenance.
+A gutter that can technically be reached only from an improvised ladder position has not been fully designed for maintenance.
 
 ## The ground beside the house is temporary infrastructure
 
-The immediate landscape has two lives.
+The immediate landscape has two lives. Ordinarily it may be a path, gravel margin, planted border, terrace or garden. During maintenance it may become the foundation of a temporary work system.
 
-In ordinary life it may be a path, gravel margin, planted border, terrace or garden. During maintenance it may become the foundation of a temporary work system.
+This does not require a sterile paved strip around the building. It requires coordination.
 
-This does not require a sterile paved strip around the house. It does require the landscape and building to be coordinated.
+Where scaffold, towers or mobile access equipment are credible future methods, ask:
 
-Where scaffold, towers or mobile access equipment are credible future methods, the design should ask:
-
-- what supports them?
-- is that support firm and level enough for the intended method?
-- is there a basement, lightwell, drain, inspection chamber or soft fill below it?
+- what supports them and is it suitable for the intended method?
+- is there a basement, lightwell, drain, chamber or soft fill beneath?
 - can stabilisers or outriggers occupy the required space?
 - can equipment reach the position from the site entrance?
-- what planting can be temporarily removed and what would be permanently destroyed?
-- does a retaining wall or abrupt level change make the nominal access zone unusable?
+- what planting can be removed and what would be destroyed?
+- do retaining walls or level changes make the nominal access zone unusable?
 
-The existing **perimeter dry zone** may be especially valuable here. It can potentially perform three jobs at once: moisture management at the wall base, architectural transition between house and garden, and latent support territory for future maintenance.
-
-The overlap should be exploited where it works, but it should not become a universal dimensional rule. Different elevations and tasks may justify different arrangements.
+The existing **perimeter dry zone** may be valuable here, combining moisture management at the wall base, transition to the garden and latent support territory for maintenance. The overlap should be exploited where it works, not turned into a universal dimensional rule.
 
 ## Architectural projections should carry their access consequences
 
-Bay windows, porticos, canopies, balconies and deep eaves are not maintenance defects. They are architecture.
+Bay windows, porticos, canopies, balconies and deep eaves are architecture, not maintenance defects. They should still be drawn with their likely access method visible.
 
-The error is to draw them as though maintenance equipment were dimensionless.
+For a ground-supported façade, ask where the access structure rises, how it passes projections and where it can be tied or stabilised if required. The useful test is not whether a projection interferes with scaffolding—most do in some way—but whether ordinary temporary works can accommodate it without disproportionate cost or risk.
 
-At scheme design the elevation should be reviewed with its likely access method visible. For a ground-supported façade this means asking where the access structure rises, how it passes projections, where it can be tied or stabilised if required, and whether the building geometry turns an ordinary operation into an exceptional one.
+A small geometric adjustment may preserve the architectural intent while simplifying future access materially. A projection may also remain exactly as designed if its maintenance consequence is worth the architectural gain. It should remain knowingly.
 
-The governing test is not “does the bay interfere with scaffolding?” Almost every projection interferes in some sense.
+## Do not depend on neighbouring land by accident
 
-The better questions are:
+Compact plots can create another access debt: dependency on someone else's property.
 
-- can ordinary temporary works accommodate it straightforwardly?
-- does it multiply cost or risk materially?
-- is the consequence proportionate to the architectural value gained?
-- could a small adjustment preserve the architectural intent while making access much simpler?
+Some work may unavoidably require a licence, highway occupation, neighbour access or specialist temporary works. The doctrine does not pretend every detached house can be maintained entirely from its own land.
 
-This is exactly the kind of trade the doctrine is intended to expose early.
-
-A beautiful projection may remain. It should remain knowingly.
-
-## Do not make the façade depend on neighbouring land by accident
-
-Compact urban and suburban plots create another form of access debt: dependency on someone else's property.
-
-Some future work may unavoidably require licences, highway occupation, neighbour access or specialist temporary works. The doctrine does not pretend every detached house can be maintained entirely from its own land.
-
-But avoidable dependence should be visible during design.
-
-Where an elevation lies close to a boundary, the design should ask whether ordinary repair can occur from the project's own site, from inside, or by another credible route. If the only method requires future cooperation from a neighbour, that is a whole-life dependency and should be treated as such.
+Avoidable dependence should nevertheless be visible during design. If the only credible method for routine repair depends on future cooperation from a neighbour, that is a whole-life dependency and should be treated as such.
 
 ## Roof access is a route, not a hole
 
-A roof hatch can be extremely useful. It can also create a false sense of completion.
+A roof hatch can be useful and still solve only the first transition.
 
-The full roof route is:
+The full route is:
 
 **internal approach → hatch or other access method → safe arrival → onward movement → working position → material handling → return.**
 
-Every link matters.
+A hatch opening directly onto a steep slate field does not by itself create safe access to a chimney, valley or outlet. Nor does an anchor point. The access and fall-control strategy must correspond to the actual task.
 
-A hatch that opens directly onto a steep slate field without a credible means of reaching the chimney, valley or outlet has solved only the first transition. Likewise, an anchor point does not by itself make the route safe. The selected access and fall-control strategy must correspond to the actual task.
+The roof should first minimise recurrent attendance. Plant should not migrate there merely because the space is available. Rooflights, outlets, flashings, solar equipment and chimneys should be composed so the remaining tasks have a coherent route.
 
-The roof should first minimise the number of things that demand recurrent attendance. Plant should not migrate to the roof merely because the roof is empty. Debris-prone outlets, rooflights, flashings, solar equipment and chimneys should be composed so the remaining maintenance tasks can be reached by a coherent method.
+Where a hatch materially improves that route, the reference house should probably include one, preferably on a secondary elevation. The doctrine requires the route, not the hatch.
 
-Where a roof hatch materially improves that method, the reference house should probably have one, preferably on a secondary elevation. But the doctrine should require the route, not the hatch.
-
-Rooflights need particular care. They should not casually occupy the natural maintenance path or create a fragile hazard exactly where someone must travel to service another component.
+Rooflights need particular care: they should not casually occupy the natural maintenance path or create a fragile hazard exactly where someone must travel to service another component.
 
 ## Openings have several maintenance lives
 
-The doctrine already treats the opening as enduring architecture and the window as a shorter-lived assembly. External maintenance adds another distinction.
+A window does not have one access scenario. It may need cleaning, hardware adjustment, seal or bead replacement, glazing replacement, complete frame replacement, and eventually repair to surrounding masonry or weathering details.
 
-A window has several access scenarios:
+Where sensible, routine work on glass, hardware, seals and movable parts should be biased toward the interior. This can remove repeated work-at-height without changing the outward architecture.
 
-1. clean the glass;
-2. adjust or replace ironmongery;
-3. replace seals or beads;
-4. replace a glazing unit or sash/casement;
-5. replace the complete frame;
-6. repair the surrounding masonry, lintel, sill or seal interface.
-
-Where sensible, the first four should be biased toward internal work. That can eliminate many repetitive work-at-height tasks without changing the outward architectural character.
-
-But internal serviceability should not be confused with total façade independence. Masonry and external weathering details will still need external work eventually. The building should therefore solve both scales rather than declaring the window “accessible” because one part of it can be reached from the room.
+That does not make the façade independent of external access. Full-frame replacement and masonry repair will still require it. The design should solve both scales rather than call the window “accessible” because one part can be reached from the room.
 
 ## The courtyard is not exempt from logistics
 
-An internal courtyard is one of the clearest tests of the principle because it can appear accessible while being operationally isolated.
+An internal courtyard can look accessible while being operationally isolated. A person walking easily into it proves little about whether maintenance equipment or replacement components can follow.
 
-A person may walk easily from garden to courtyard. That does not prove that maintenance materials can.
+The reference house should test whether its courtyard route can carry the selected access equipment, replacement openings, roof and rainwater components, masonry materials and waste. The surface must also survive temporary works or provide deliberate support positions beneath a more delicate finish.
 
-The reference house should eventually test whether the route into the courtyard can carry:
+The courtyard need not read as a service yard. The capability should normally remain latent.
 
-- scaffold tubes, boards or modular frames as appropriate;
-- a mobile tower where that is the selected method;
-- replacement window or door assemblies;
-- roofing and rainwater components;
-- masonry materials and waste;
-- any temporary edge-protection or lifting equipment required by the chosen roof strategy.
+## Landscape can change without erasing serviceability
 
-The courtyard surface must likewise survive the temporary work or provide deliberate support positions beneath a more delicate finish.
+A long-lived house will outlive its first planting scheme. Trees mature; owners add sheds, planters, pergolas and ponds. The maintenance strategy cannot assume that every square metre remains empty.
 
-This requirement need not make the courtyard read as a service yard. The maintenance capability should normally remain latent.
+It can distinguish between areas that may be occupied freely, areas suited to lightweight or removable landscape, and positions unusually important to maintaining the building. Those critical positions should enter the building record.
 
-## Landscape is allowed to change — but not to erase the building's serviceability unknowingly
-
-A long-lived house will outlive its first planting scheme.
-
-Trees mature. Shrubs expand. Owners add sheds, planters, pergolas and ponds. The maintenance strategy therefore cannot rely on every square metre remaining permanently empty.
-
-What it can do is distinguish between:
-
-- areas whose future occupation is largely harmless;
-- areas where lightweight/removable landscape is appropriate;
-- positions that should remain available because they are unusually important to the maintenance of the building.
-
-Those critical positions should enter the building record.
-
-A future owner should be able to discover that a seemingly arbitrary patch of reinforced paving, gravel margin or open route exists because it preserves access to a particular elevation or courtyard.
-
-That is another form of stewardship.
+A future owner should be able to discover why an apparently arbitrary open route, gravel margin or reinforced patch exists.
 
 ## Ordinary access is an architectural virtue
 
-The doctrine repeatedly prefers ordinary components, ordinary trades and ordinary tools where they can perform the job well.
+The doctrine prefers ordinary components, trades and tools where they perform well. The same preference applies to access.
 
-The same preference should apply to access.
+A two-storey house whose routine external repairs require elaborate bespoke access has acquired a dependency that should be justified like any other specialist system. This does not mean the cheapest scaffold arrangement governs the architecture. It means maintenance complexity is acknowledged as an architectural consequence.
 
-A two-storey house whose normal external repairs require elaborate bespoke access equipment has acquired a dependency that should be justified just as carefully as a proprietary valve or control system.
-
-This does not mean the cheapest scaffold arrangement governs the architecture. It means the cost and complexity of maintaining the architecture are acknowledged as real architectural consequences.
-
-The objective is therefore not to make maintenance invisible at design stage. It is to make it **ordinary in use**.
+The objective is to make maintenance **ordinary in use**.
 
 ## Design review
 
-The external maintenance strategy should be tested through scenarios rather than general assurances.
-
-For the reference house, useful scenarios include:
+The external strategy should be tested through scenarios rather than general assurances. For the reference house, test at least:
 
 1. repoint an upper-storey masonry bay;
 2. renew a gutter or eaves detail;
-3. inspect and repair a chimney flashing;
-4. replace one complete upper-storey window frame;
+3. inspect and repair chimney flashing;
+4. replace a complete upper-storey window frame;
 5. reach and clear a blocked roof outlet;
 6. erect access to the courtyard elevation;
-7. carry the removed/replacement component between work face and site entrance;
+7. move the removed and replacement component between work face and site entrance;
 8. repeat the exercise after the proposed landscape has matured.
 
 For each scenario ask:
 
-- can the task be moved to ground or inside?
-- what access method is assumed?
-- how does that method reach the work location?
-- what supports it?
-- what geometry does it occupy?
+- can the task move to ground level or inside?
+- what access method is assumed and how does it reach the work?
+- what supports it and what volume does it occupy?
 - what permanent or landscape elements obstruct it?
-- what materials/components have to move through the route?
+- what components or waste must move through the route?
 - what does the method depend on beyond the property boundary?
-- what is damaged or dismantled merely to create access?
+- what must be damaged or dismantled merely to create access?
 
-A good answer is not necessarily zero inconvenience.
-
-A good answer is that the inconvenience is proportionate, anticipated and compatible with ordinary competent practice.
+A good answer is not necessarily zero inconvenience. It is inconvenience that is proportionate, anticipated and compatible with ordinary competent practice.
 
 > **External maintenance begins at the site entrance, not at the wall.**
 
