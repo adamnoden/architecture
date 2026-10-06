@@ -1,0 +1,65 @@
+:root {
+  --vp-layout-max-width: 1440px;
+}
+
+.vp-doc {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.72;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4,
+.vp-doc h5,
+.vp-doc h6,
+.vp-doc table,
+.vp-doc .custom-block,
+.vp-doc code {
+  font-family: var(--vp-font-family-base);
+}
+
+.vp-doc h1 {
+  letter-spacing: -0.025em;
+}
+
+.vp-doc h2 {
+  margin-top: 2.25em;
+}
+
+.vp-doc p,
+.vp-doc li {
+  max-width: 72ch;
+}
+
+.vp-doc blockquote {
+  font-style: italic;
+}
+
+.vp-doc img,
+.vp-doc svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.vp-doc table {
+  font-size: 0.9em;
+}
+
+@media (min-width: 960px) {
+  .VPDoc.has-aside .content-container {
+    max-width: 780px;
+  }
+
+  .VPDoc:not(.has-aside) .content-container {
+    max-width: 860px;
+  }
+}
+
+@media (max-width: 639px) {
+  .vp-doc {
+    font-size: 16.5px;
+    line-height: 1.68;
+  }
+}
