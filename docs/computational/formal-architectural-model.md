@@ -1,115 +1,61 @@
-# Formal Architectural Model — Conceptual v0.1
+# Formal Architectural Model — Conceptual v0.2
 
 **Status:** foundational research draft  
-**Purpose:** define what the future computational system must be capable of representing before language syntax, database schema or CAD implementation is chosen.
+**Purpose:** define what the future computational system must represent before syntax, database schema or CAD implementation is chosen
 
 ## 1. Premise
 
-A house is not a mesh.
+A CAD model is usually organised around objects and geometry. That is not enough for this project because the same piece of building participates in several systems at once.
 
-Nor is it adequately described by a single object hierarchy.
+One external wall may bound a room, support a floor, carry thermal and air boundaries, contain an opening, exclude routine services, receive a backplane, separate sound and create maintenance obligations.
 
-A house simultaneously has:
+Those are not alternative descriptions. They are simultaneous relationships.
+
+The formal model should therefore be a **multi-view semantic graph with stable identity**, not a single object hierarchy.
+
+The relevant views include:
 
 - spatial organisation;
 - physical composition;
 - structural behaviour;
-- environmental boundaries;
+- environmental and safety boundaries;
 - service networks;
-- interfaces and joints;
-- maintenance geography;
-- lifecycle relationships;
+- interfaces;
+- maintenance and lifecycle relationships;
 - regulatory obligations;
 - evidence and provenance.
 
-These structures overlap.
+## 2. Source model, derived views and outputs
 
-The same wall may:
-
-- bound a room;
-- support a floor;
-- form part of the thermal envelope;
-- carry an air-control layer;
-- contain a window opening;
-- exclude routine service routes;
-- provide a backplane interface;
-- participate in an acoustic separation;
-- create maintenance constraints;
-- discharge several regulatory obligations.
-
-The formal model should therefore be conceived as a **multi-view semantic graph with stable identity**, not a tree of CAD objects.
-
-## 2. Source model, derived models and outputs
-
-The project should distinguish three things.
+Keep three layers distinct.
 
 ### Source semantic model
 
-The authoritative description of architectural intent and selected physical systems.
-
-It contains meaningful entities and relationships.
+The authoritative description of architectural intent and selected physical systems: meaningful entities and relationships authored or selected by the design process.
 
 ### Derived analytical views
 
-Projections generated from the source for particular purposes:
+Purpose-specific projections such as structural, boundary, service, thermal, quantity, maintenance, obligation and geometric models.
 
-- structural graph;
-- boundary graph;
-- service network;
-- thermal model;
-- quantity model;
-- maintenance graph;
-- regulatory obligation graph;
-- geometric representation.
-
-These may add derived values but should not silently create contradictory source truth.
+They may derive values from the source but should not create contradictory private versions of source truth.
 
 ### Production outputs
 
-Human- or machine-facing artefacts:
+Human- and machine-facing artefacts: 3D geometry, IFC, drawings, schedules, calculations, quantities, compliance reports, assembly information and the building record.
 
-- 3D geometry;
-- IFC;
-- plans / sections / elevations;
-- details;
-- schedules;
-- calculations;
-- quantities;
-- compliance reports;
-- assembly information;
-- building record.
-
-A drawing is therefore an output view of the building model, not the building's primary ontology.
+A drawing is therefore a view of the source model, not the primary ontology of the building.
 
 ## 3. Stable identity
 
-Every meaningful entity should have stable identity across views.
+Every meaningful entity needs stable identity across views and over regeneration.
 
-The same window must remain the same semantic thing when appearing as:
+A window appearing in geometry, the thermal model, a quantity schedule, a replacement sequence and a later alteration must remain the same semantic occurrence.
 
-- geometry;
-- an opening in an envelope;
-- a structural interruption;
-- a thermal bridge context;
-- an item in the quantity schedule;
-- a replacement unit;
-- an evidence subject;
-- a later alteration.
-
-Identity should survive regeneration of geometry.
-
-This is necessary for:
-
-- traceability;
-- versioning;
-- change impact;
-- evidence;
-- inspection;
-- maintenance history.
+Stable identity enables traceability, versioning, change impact, evidence attachment, inspection and maintenance history.
 
 ## 4. Core entity families
 
-The following families are conceptual. They do not prescribe programming classes.
+These families are conceptual; they do not prescribe programming classes.
 
 ### A. Project and context
 
@@ -126,518 +72,220 @@ Candidate entities:
 - **Supported-domain profile**
 - **Architectural grammar reference**
 
-These describe the environment in which the building exists.
-
 ### B. Spatial entities
 
 Candidate entities:
 
-- **Building**
-- **Building part**
-- **Storey**
-- **Space**
-- **Room**
-- **Circulation space**
-- **Void**
-- **Courtyard**
-- **External space**
-- **Maintenance zone**
-- **Working volume**
-- **Withdrawal volume**
+- **Building / building part / storey**
+- **Space / room / circulation space / void / courtyard / external space**
+- **Maintenance zone / working volume / withdrawal volume**
 
-Important relationships:
+Important relationships include `contains`, `overlaps`, `adjacent-to`, `connected-to`, `accessible-from`, `visible-from`, `served-by` and `bounded-by`.
 
-- contains;
-- overlaps;
-- adjacent-to;
-- connected-to;
-- accessible-from;
-- visible-from;
-- served-by;
-- bounded-by.
-
-A room is not merely a closed polyhedron. It has role, hierarchy, occupation, adjacency and architectural relationships.
+A room is not merely a closed polyhedron. It has role, hierarchy, occupation and adjacency.
 
 ### C. Physical entities
 
 Candidate entities:
 
-- **Assembly**
-- **Element**
-- **Layer**
-- **Component**
-- **Opening**
-- **Finish**
-- **Fastener**
-- **Seal**
-- **Cover**
-- **Replaceable unit**
-- **Permanent-fabric element**
+- **Assembly / element / layer / component**
+- **Opening / finish / fastener / seal / cover**
+- **Replaceable unit / permanent-fabric element**
 
-Useful distinctions include:
-
-- assembly versus occurrence;
-- generic family versus selected instance;
-- permanent versus replaceable;
-- site-made versus manufactured;
-- architectural element versus commodity component.
+The model needs to distinguish family from occurrence, permanent from replaceable, site-made from manufactured, and architectural element from commodity component.
 
 ### D. Structural entities
 
 Candidate entities:
 
-- **Structural element**
-- **Support**
-- **Bearing**
-- **Connection**
-- **Load / action**
-- **Load case / combination**
+- **Structural element / support / bearing / connection**
+- **Load / action / load case / combination**
 - **Stability system**
-- **Foundation support**
-- **Ground support condition**
+- **Foundation support / ground support condition**
 
-Core relationships:
+Core relationships include `supports`, `spans-between`, `bears-on`, `restrains`, `transfers-to`, `stabilises` and `reacts-at`.
 
-- supports;
-- supported-by;
-- spans-between;
-- bears-on;
-- restrains;
-- transfers-to;
-- stabilises;
-- reacts-at.
+The key derived object is the **load-path graph**. A semantic path should exist before detailed analytical idealisation.
 
-The central derived object is the **load-path graph**.
-
-A semantic structural path should exist before detailed finite-element modelling is considered.
-
-See [Structural Semantics](structural-semantics.md), which separates physical structural fabric, structural topology and analytical idealisation and explicitly rejects load-path continuity as sufficient proof of capacity.
+See [Structural Semantics](structural-semantics.md). Load-path continuity is necessary but does not prove capacity.
 
 ### E. Boundary entities
 
-A boundary should be first-class rather than inferred casually from visible materials.
+A boundary should be first-class rather than inferred from visible materials.
 
-Candidate boundary roles:
+Roles may include thermal, air, vapour, rain/water, drainage, fire, smoke, acoustic, security and pest control.
 
-- thermal;
-- air;
-- vapour;
-- rain / water;
-- drainage;
-- fire;
-- smoke;
-- acoustic;
-- security;
-- pest.
+Candidate entities include **Boundary**, **Boundary segment**, **Transition**, **Penetration**, **Opening**, **Seal**, **Drainage path** and **Failure path**.
 
-Candidate entities:
+A physical assembly can carry several boundaries, and one boundary can cross several assemblies. That many-to-many relationship is why “air boundary” should not be reduced to a property on a wall object.
 
-- **Boundary**
-- **Boundary segment**
-- **Transition**
-- **Penetration**
-- **Opening**
-- **Seal**
-- **Drainage path**
-- **Failure path**
-
-Core relationships:
-
-- separates;
-- continues-through;
-- transitions-to;
-- penetrated-by;
-- sealed-by;
-- drained-by;
-- interrupted-by;
-- reinstated-by.
-
-One physical assembly may carry several boundaries.
-
-One boundary may cross many physical assemblies.
-
-That many-to-many relationship is precisely why boundary should not be reduced to a wall property.
-
-See [Boundary Semantics](boundary-semantics.md) for the first model of overlapping weather, thermal, air, moisture, fire, acoustic and related boundary graphs.
+See [Boundary Semantics](boundary-semantics.md).
 
 ### F. Service-system entities
 
 Candidate entities:
 
-- **System**
-- **Network**
-- **Node**
-- **Port**
-- **Route segment**
-- **Source**
-- **Sink**
-- **Equipment**
-- **Valve / isolator**
-- **Distribution point**
-- **Drain / discharge point**
+- **System / network / node / port / route segment**
+- **Source / sink / equipment / isolator / distribution point / discharge point**
 
-Core relationships:
+Core relationships include `connects-to`, `feeds`, `returns-to`, `drains-to`, `isolated-by`, `routes-through`, `serves` and `requires-access-to`.
 
-- connects-to;
-- feeds;
-- returns-to;
-- drains-to;
-- isolated-by;
-- routes-through;
-- serves;
-- requires-access-to.
-
-The physical route and the functional network are related but not identical.
+The functional network and its physical route are related but not identical.
 
 ### G. Interface entities
 
-The Long-Life House places unusual emphasis on the interface.
-
 Candidate entities:
 
-- **Interface**
-- **Joint**
-- **Datum**
-- **Tolerance envelope**
-- **Adjustment mechanism**
-- **Fixing interface**
-- **Release mechanism**
-- **Movement allowance**
-- **Remediation threshold**
+- **Interface / joint / datum / tolerance envelope**
+- **Adjustment mechanism / fixing interface / release mechanism**
+- **Movement allowance / remediation threshold**
 
-Core relationships:
+Relationships include `joins`, `locates`, `attaches`, `restrains`, `permits-movement`, `seals`, `adjusts-to`, `references-datum` and `releases-from`.
 
-- joins;
-- locates;
-- attaches;
-- restrains;
-- permits-movement;
-- seals;
-- adjusts-to;
-- references-datum;
-- releases-from.
-
-An interface may itself carry obligations for:
-
-- load;
-- movement;
-- tolerance;
-- seal;
-- fire;
-- acoustics;
-- removal;
-- inspection.
+An interface may itself create load, movement, tolerance, boundary, removal and inspection obligations.
 
 ### H. Lifecycle and stewardship entities
 
 Candidate entities:
 
-- **Permanence class**
-- **Expected service-life band**
-- **Replacement unit**
-- **Maintenance task**
-- **Inspection task**
-- **Replacement sequence**
-- **Access path**
-- **Working position**
-- **Withdrawal path**
-- **Commissioning test**
-- **Change event**
+- **Permanence class / expected service-life band / replacement unit**
+- **Maintenance task / inspection task / replacement sequence**
+- **Access path / working position / withdrawal path**
+- **Commissioning test / change event**
 
-Core relationships:
-
-- maintained-by;
-- inspected-by;
-- replaceable-as;
-- accessed-via;
-- withdrawn-via;
-- depends-on-removal-of;
-- expected-to-outlive;
-- supersedes;
-- changed-by.
-
-This is where the building becomes more than a design-stage object.
+Core relationships include `maintained-by`, `inspected-by`, `replaceable-as`, `accessed-via`, `withdrawn-via`, `depends-on-removal-of`, `expected-to-outlive`, `supersedes` and `changed-by`.
 
 ### I. Requirement, obligation and evidence entities
 
 Candidate entities:
 
-- **Requirement source**
-- **Rule**
-- **Applicability condition**
-- **Obligation**
-- **Assumption**
-- **Evidence item**
-- **Calculation**
-- **Test result**
-- **Product declaration**
-- **External professional determination**
-- **Deviation**
-- **Accepted alternative**, where legally and procedurally meaningful.
+- **Requirement source / rule / applicability condition / obligation / assumption**
+- **Evidence item / calculation / test result / product declaration**
+- **External professional determination / deviation / accepted alternative** where procedurally meaningful
 
-These entities should not be hidden metadata.
+These are not incidental metadata. They form the evidence graph.
 
-They form an explicit evidence graph.
+Evidence has scope, dependencies and lifecycle state; see [Evidence and Provenance Architecture](evidence-and-provenance.md).
 
-Evidence and provenance are developed further in [Evidence and Provenance Architecture](evidence-and-provenance.md). A key implication is that evidence has scope, dependencies and lifecycle state: a calculation or test is not a free-floating truth attached to an object.
+## 5. Relationship vocabulary
 
-## 5. Relationship families
-
-The eventual model should prefer a small, explicit relationship vocabulary over hundreds of ad-hoc object attributes.
+Prefer a small explicit relationship vocabulary over hundreds of ad-hoc object properties.
 
 Provisional families:
 
-### Spatial
-contains / adjacent-to / connected-to / accessible-from / visible-from / bounded-by
+- **Spatial:** contains / adjacent-to / connected-to / accessible-from / visible-from / bounded-by
+- **Composition:** composed-of / layer-of / hosted-by / inserted-in / covers / protects
+- **Structural:** supports / spans-between / bears-on / restrains / transfers-to / stabilises
+- **Boundary:** separates / continues / transitions / penetrates / seals / drains / reinstates
+- **Services:** connects / supplies / returns / drains / isolates / routes-through / serves
+- **Interface:** attaches / locates / references-datum / adjusts / permits-movement / releases
+- **Lifecycle:** outlives / replaceable-as / maintained-by / inspected-by / withdrawn-through / supersedes
+- **Requirement:** creates-obligation / applies-to / discharged-by / depends-on / evidenced-by / derived-from
 
-### Physical composition
-composed-of / layer-of / hosted-by / inserted-in / covers / protects
-
-### Structural
-supports / spans-between / bears-on / restrains / transfers-to / stabilises
-
-### Boundary
-separates / continues / transitions / penetrates / seals / drains / reinstates
-
-### Services
-connects / supplies / returns / drains / isolates / routes-through / serves
-
-### Interface
-attaches / locates / references-datum / adjusts / permits-movement / releases
-
-### Lifecycle
-outlives / replaceable-as / maintained-by / inspected-by / withdrawn-through / supersedes
-
-### Requirement
-creates-obligation / applies-to / discharged-by / depends-on / evidenced-by / derived-from
-
-The exact vocabulary needs testing against real details before formalisation.
+The exact vocabulary should grow from worked cases rather than brainstorming.
 
 ## 6. Overlapping graphs
 
-A central design decision is that the same semantic source should admit several overlapping graphs.
+The same source model should generate several coordinated graphs.
 
 ### Spatial graph
-
-Answers:
-
-- what spaces exist?
-- how do people move between them?
-- which spaces are adjacent?
-- what hierarchy do they form?
+What spaces exist, how are they connected and what hierarchy do they form?
 
 ### Structural graph
-
-Answers:
-
-- what supports what?
-- where do actions travel?
-- where are stability paths?
-- where do reactions terminate?
+What supports what, how do actions travel and where do reactions terminate?
 
 ### Boundary graph
-
-Answers:
-
-- what environmental / safety boundaries exist?
-- where are they continuous?
-- where do they transition or get penetrated?
+Which safety/environmental boundaries exist, where are they continuous and where do they transition or get penetrated?
 
 ### Service graph
-
-Answers:
-
-- what supplies what?
-- how are flows routed?
-- where can systems be isolated?
-- where do they discharge?
+What supplies what, how do flows move, and where can systems be isolated or discharged?
 
 ### Maintenance graph
-
-Answers:
-
-- how does a person reach the component?
-- where do they stand?
-- what must be removed?
-- where does the old/new component travel?
+How does a person reach the component, where can they work, what is removed and where does the replacement travel?
 
 ### Lifecycle graph
-
-Answers:
-
-- what outlives what?
-- what changes together?
-- what is the replacement unit?
-- what permanent fabric is touched by the change?
+What outlives what, what changes together and what permanent fabric is touched?
 
 ### Evidence graph
+What claim applies, what created it, what discharged it and which assumptions does that evidence depend on?
 
-Answers:
-
-- what claim applies to this element?
-- why?
-- what rule created it?
-- what evidence discharged it?
-- which assumptions does that evidence depend on?
-
-No single graph is the building.
-
-The useful object is the coordinated set.
+No graph is the building by itself. The useful model is the coordinated set.
 
 ## 7. Geometry
 
-Geometry remains essential.
+Geometry remains essential; it simply does not have sole semantic authority.
 
-The claim is not that geometry becomes secondary in importance. It becomes secondary in **semantic authority**.
+The model must support exact and relational geometry, derived geometry, geometric queries, tolerances and a distinction between nominal design geometry and acceptance ranges.
 
-The model must support:
+A useful relationship is:
 
-- exact geometry where required;
-- parametric / relational geometry;
-- derived geometry;
-- geometric queries;
-- tolerances;
-- clear distinction between nominal design geometry and physical acceptance ranges.
+> **Semantics create geometric obligations; geometry can discharge some of them.**
 
-Potential principle:
+A room creates a usable-width obligation; a query proves the clear width. A support relationship creates a bearing obligation; geometry proves the bearing length. A maintenance task creates working/withdrawal-volume obligations; clearance analysis proves whether they exist.
 
-> **Semantics constrain geometry; geometry discharges some semantic obligations.**
+## 8. Relationship-level type safety
+
+Some relationships should be invalid by construction or become explicit compile failures.
 
 Examples:
 
-- Room semantics establish that usable dimensions matter.
-- geometric calculation proves the actual clear width.
-- Support semantics establish that bearing is required.
-- geometric calculation proves bearing length.
-- MaintenanceVolume semantics establish required access.
-- collision/clearance analysis proves it exists.
+- a forbidden service route cannot attach to permanent fabric without a permitted interface;
+- a removable element cannot silently become the sole carrier of a boundary required to survive its removal;
+- a structural opening cannot exist without support resolution;
+- “accessible” maintenance cannot pass without the required approach, working and withdrawal geometry;
+- “replaceable” cannot pass where replacement destroys a longer-lived element contrary to selected doctrine constraints.
 
-## 8. Type safety
+These need not all become programming-language type rules. The model requirement is simpler: **invalid architectural relationships must be explicit states, not latent facts hidden in drawings.**
 
-The software analogy of type safety should operate at relationship level.
+## 9. Authored, derived and proven facts
 
-Examples:
+Not every fact should be hand-authored.
 
-- a service route that is forbidden from a permanent zone cannot attach without an explicit permitted interface;
-- an element declared removable cannot be the sole carrier of a boundary declared to survive routine removal;
-- a structural opening cannot exist without a support resolution;
-- a maintenance task cannot claim accessibility without an access/working/withdrawal path appropriate to the task;
-- a component cannot claim replaceability if its replacement sequence destroys a longer-lived element contrary to the selected doctrine constraints.
+**Authored:** this is the principal drawing room; this wall uses family W2; this route is the service spine; this grammar is selected.
 
-These are not necessarily all compile-time type rules in a programming-language sense.
+**Derived:** room area, span, masonry quantity, collision state, reaction, external-wall area.
 
-The conceptual point is:
+**Proven:** an authored or derived proposition for which an applicable validation method and evidence exist.
 
-> **invalid architectural relationships should be explicit model states, not latent facts hidden in drawings.**
-
-## 9. Source truth versus derived truth
-
-Not every fact should be manually authored.
-
-### Authored facts
-
-Examples:
-
-- this space is the principal drawing room;
-- this wall belongs to construction family W2;
-- this route is designated as the horizontal service spine;
-- this architectural grammar is selected.
-
-### Derived facts
-
-Examples:
-
-- room area;
-- span;
-- quantity of masonry;
-- whether a maintenance volume collides;
-- calculated reaction;
-- total external-wall area.
-
-### Proven facts
-
-Derived or authored facts that have an applicable validation method and evidence.
-
-Example:
-
-- “beam B14 is structurally adequate under target T” is not merely an authored boolean. It must be produced from calculation/evidence.
-
-The system should resist allowing users to hand-author conclusions that exist specifically to be proved.
+“Beam B14 is adequate under target T” should not be a user-set boolean. It should arise from evidence or calculation.
 
 ## 10. Unknowns and assumptions
 
-A model must be able to represent uncertainty without fabricating certainty.
+The model must represent uncertainty without converting it into certainty.
 
-Examples:
-
-- ground bearing capacity not yet investigated;
-- exact product not selected;
-- exposure condition awaiting site data;
-- acoustic performance awaiting test evidence.
-
-An unknown may:
-
-- block compilation;
-- create an external proof obligation;
-- permit an exploratory compile under an explicitly named assumption.
+Unknown ground capacity, unselected products, unresolved exposure or pending acoustic evidence may block compilation, create an external proof obligation, or permit an exploratory compile under an explicit assumption.
 
 Assumptions must be visible and traceable.
 
-## 11. Occurrence, family and evidence scope
+## 11. Family, occurrence and evidence scope
 
-The model should distinguish:
+Keep three ideas separate:
 
-- **family / type** — a reusable design or product concept;
-- **occurrence** — a particular installed instance;
-- **evidence scope** — what instances and parameter ranges a calculation, test or certification actually covers.
+- **family/type** — reusable design or product concept;
+- **occurrence** — one installed instance;
+- **evidence scope** — the parameter range and occurrences actually covered by a calculation, test or certification.
 
-This matters enormously.
+A tested wall family does not prove every geometric mutation. A lintel table does not cover spans outside its conditions. A product certificate does not prove every novel assembly that contains the product.
 
-A tested wall family does not prove every geometrical mutation of that wall.
-
-A lintel table does not prove spans outside its stated conditions.
-
-A product certificate does not automatically prove a novel assembly that merely contains the product.
-
-The formal model must preserve evidence applicability.
+The formal model must preserve applicability.
 
 ## 12. Time
 
-The building model should eventually be temporal.
+The model should eventually distinguish proposed, agreed, manufactured, installed, commissioned, in-service, altered, replaced and removed states.
 
-At minimum distinguish:
+A future version should be able to retain statements such as:
 
-- proposed;
-- approved/agreed design;
-- manufactured;
-- installed;
-- commissioned;
-- in service;
-- altered;
-- replaced;
-- removed.
+> Opening O17 superseded O12 under Change C17 and Target T2; evidence for O12 remains attached to historical Version V1.
 
-A future building version should be able to say:
+The first implementation need not support the full lifecycle, but the ontology should not make temporal identity impossible later.
 
-> this opening exists because Change C17 superseded Opening W12 under Target T2, while the original evidence remains attached to historical Version V1.
+## 13. IFC and open standards
 
-This is not needed for the first formalisation, but the ontology should avoid making temporal identity impossible later.
+IFC is relevant but should not automatically become the internal ontology.
 
-## 13. Relationship to IFC and open standards
+Its useful precedents include stable identifiers, semantic objects, objectified relationships, properties, spatial structure, system connectivity and model views.
 
-IFC is highly relevant but should not automatically become the internal semantic model.
-
-Useful precedents include:
-
-- stable identifiers;
-- semantically treated objects;
-- first-class objectified relationships;
-- properties;
-- spatial structure;
-- distribution-system connectivity;
-- model views.
-
-The future project should attempt a mapping:
+The intended relationship is:
 
 ~~~text
 Long-Life House semantic model
@@ -647,38 +295,28 @@ interoperability mapping
 IFC / bSDD / IDS where appropriate
 ~~~
 
-rather than:
+The internal model may need concepts that do not map cleanly to present IFC constructs, such as maintenance withdrawal volumes, permanence classes, doctrine constraints or evidence obligations. That is an interoperability problem, not a reason to discard them.
 
-~~~text
-IFC schema
-   =
-the complete ontology of the Long-Life House
-~~~
+## 14. Model integrity invariants
 
-The internal model is allowed to express concepts—maintenance withdrawal volumes, permanence classes, doctrine constraints, evidence obligations—that may not map cleanly to current IFC constructs.
+Before architectural rules, the semantic model itself should enforce basic integrity:
 
-That is an interoperability problem, not a reason to erase the concept.
+- stable identity for every entity;
+- relationships reference existing entities;
+- containment has no impossible cycles;
+- occurrences belong to valid project/building context;
+- replacement units have defined extent;
+- boundary segments declare their role;
+- support relationships declare direction;
+- obligations identify subject and source;
+- evidence declares applicability;
+- assumptions are explicit rather than hidden in comments.
 
-## 14. Initial invariants for the model itself
+These are model invariants, not architectural doctrine.
 
-Before domain rules, the semantic model should eventually enforce basic integrity such as:
+## 15. Worked wall-bay example
 
-- every entity has stable identity;
-- every relationship references existing entities;
-- containment does not create impossible cycles;
-- every occurrence belongs to an appropriate project/building context;
-- a replacement unit has a defined extent;
-- a boundary segment has a declared boundary role;
-- a structural support relationship identifies direction of support;
-- an obligation identifies its subject and source;
-- evidence identifies its applicability scope;
-- assumptions are explicit rather than hidden text comments.
-
-These are model invariants, not architecture.
-
-## 15. Worked example — one wall bay
-
-A future paper compilation might represent one external wall bay as overlapping facts:
+A single external bay might be represented as overlapping facts:
 
 ~~~text
 ROOM R01
@@ -711,43 +349,24 @@ BACKPLANE BP01
   absorbs declared incoming tolerance through ADJUSTMENT A01
 ~~~
 
-The value of the representation is not the notation.
+The notation is not the point. Changing O01 can now propagate through several graphs without its consequences silently disappearing.
 
-The value is that a single design act—changing O01—can traverse several graphs and create consequences that cannot silently disappear.
+## 16. Findings from paper compilation
 
-## 16A. Compositional obligation bundles — finding from S0 Run 01
+### 16.1 Obligation bundles — S0 Run 01
 
-The first paper compilation exposed a scaling problem.
+An ordinary junction such as a window in a cavity wall can create legitimate obligations across geometry, structure, weather, moisture, thermal performance, air, fire, acoustics, replacement, tolerance, inspection and evidence.
 
-A single ordinary junction—such as a window in a masonry cavity wall—can legitimately create many obligations across:
+Those obligations are useful internally but unacceptable as manually authored bureaucracy.
 
-- geometry;
-- structure;
-- weather;
-- moisture;
-- thermal performance;
-- airtightness;
-- fire;
-- acoustics;
-- replacement;
-- tolerance;
-- inspection;
-- evidence.
+The project therefore introduced an **Interface Obligation Bundle**: a meaningful relationship that contributes semantic graph fragments, local constraints, applicability facts and evidence dependencies from which obligations are derived.
 
-Those obligations are useful internally.
+Tested examples:
 
-They are unacceptable as manually authored user-facing bureaucracy.
+- [Window in Masonry Cavity Wall](interface-bundle-window-masonry.md)
+- [Floor to Masonry Wall](interface-bundle-floor-masonry.md)
 
-The model therefore introduces a provisional research construct:
-
-> **Interface Obligation Bundle — a meaningful architectural/physical relationship that contributes semantic graph fragments, local constraints, applicability facts and evidence dependencies from which local and composed obligations are derived.**
-
-Examples now tested:
-
-- [Window in Masonry Cavity Wall](interface-bundle-window-masonry.md);
-- [Floor to Masonry Wall](interface-bundle-floor-masonry.md).
-
-Both use the same machinery:
+The common machinery is:
 
 ~~~text
 SEMANTIC RELATIONSHIP
@@ -761,13 +380,11 @@ EVIDENCE + STATUS
 DEPENDENCY INVALIDATION
 ~~~
 
-The ordinary author manipulates the meaningful relationship.
+The author manipulates the architectural relationship; the expert can inspect the resulting obligations.
 
-The expert can inspect both the bundle contribution and the canonical obligations derived after composition.
+### 16.2 Composition correction — ASM-S0-WALL-BAY-01
 
-### Composition correction from ASM-S0-WALL-BAY-01
-
-The first assembly-composition test showed that bundles must **not** each emit final independent checklists and rely on later de-duplication.
+The first composition test showed that bundles should not emit final independent checklists and rely on later de-duplication.
 
 Instead:
 
@@ -783,87 +400,25 @@ CANONICAL OBLIGATION DERIVATION
 EVIDENCE / STATUS
 ~~~
 
-This matters most for continuous systems.
-
-The wall field, window transition, floor edge and service sleeve do not create four separate air boundaries. They contribute segments/transitions to one boundary graph, and the compiler asks whether that composed boundary is continuous.
+A wall field, window transition, floor edge and service sleeve do not create four separate air boundaries. They contribute to one boundary graph whose continuity is evaluated after composition.
 
 See [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md).
 
-### Bundles do not own duplicate truth
+Bundles must also reference canonical source facts rather than duplicate them. `OPENING-O01.width` is authored once; structural, thermal, weather, quantity and grammar views derive from it.
 
-A bundle must reference canonical source entities and dimensions.
+Authority remains attached to each obligation: engineering validity, regulation/target, product evidence, doctrine, grammar or project requirement. A bundle-level status must never hide a failed mandatory child obligation.
 
-For example:
+A bundle defines **what a relationship commits the building to resolving**. An implementation family defines **how those obligations are discharged**.
 
-**OPENING-O01.width**
+### 16.3 Evaluation scope and contribution — S1
 
-is authored once.
+The same source entity can contribute to propositions evaluated at different scales.
 
-Structural, thermal, weather, quantity and grammar views derive from it.
+A window may contribute to occurrence-level safety glazing, interface-level envelope continuity, room purge ventilation, elevation fire analysis and whole-building overheating.
 
-Do not allow each analytical view to maintain a private copy.
+Those are not duplicate window checks. The obligation belongs to the subject whose proposition is being evaluated.
 
-### Bundles preserve authority
-
-A child obligation retains whether it comes from:
-
-- physical/engineering validity;
-- compiler target/regulation;
-- product evidence;
-- Long-Life House doctrine;
-- architectural grammar;
-- project requirement.
-
-A high-level bundle status must never hide a failed mandatory child obligation.
-
-### Bundles are not product macros
-
-A bundle says **what the relationship commits the building to resolving**.
-
-An implementation family says **how** those obligations are discharged.
-
-This distinction allows several supported details to implement one semantic interface.
-
-### Next scaling test — bundle composition
-
-Do not create bundles for every noun.
-
-The next test is whether several bundles compose into an assembly without duplicating shared obligations.
-
-For S0:
-
-~~~text
-EXTERNAL WALL BAY
-  ├── WINDOW / WALL INTERFACE
-  ├── FLOOR / WALL INTERFACE
-  ├── SERVICE PENETRATION
-  └── WALL BOUNDARY FAMILY
-~~~
-
-Air/thermal/weather obligations shared by several children should merge into one coherent boundary graph.
-
-If composition instead creates duplicate obligations requiring manual reconciliation, the bundle abstraction has not solved the scaling problem.
-
-See [Interface Obligation Bundles](interface-obligation-bundles.md).
-
-## 16B. Evaluation scope and contribution — finding from S1
-
-S1 shows that the same source entity can participate in propositions evaluated at different semantic scales.
-
-A window can simultaneously contribute to:
-
-- an occurrence-level safety-glazing obligation;
-- an interface-level air/weather/thermal transition;
-- a room-level purge-ventilation calculation;
-- an elevation-level external-fire-spread analysis;
-- a whole-building overheating model;
-- a site/target applicability condition.
-
-These are not duplicate “window checks”.
-
-The obligation belongs to the **subject whose proposition is being evaluated**.
-
-Conceptually useful scopes now include:
+Useful conceptual scopes include:
 
 ~~~text
 OCCURRENCE
@@ -876,48 +431,15 @@ BUILDING
 SITE / TARGET
 ~~~
 
-This list is a research vocabulary, not an implementation enum.
+This remains research vocabulary, not an implementation enum.
 
-### Contribution is different from ownership
+A lower-level entity may contribute facts without owning the higher-level compliance claim. Effective opening area can feed a room purge calculation; glazing/orientation can feed a whole-building overheating model. Keeping contribution separate from ownership prevents duplicated obligations and incorrect invalidation.
 
-Lower-level entities may contribute facts to higher-scale analyses.
+### 16.4 Contextual roles — S1
 
-Examples:
+The same door or window can participate in many analyses. Do not respond by turning physical entities into god-objects with permanent properties for every possible role.
 
-- window effective opening area → room purge route;
-- opening area → elevation B4 model;
-- glazing/orientation → whole-building overheating model;
-- door clear opening → accessible circulation route.
-
-Do not make the contributing component “own compliance” merely because it supplies an input.
-
-This distinction is essential for avoiding duplicated obligations and incorrect invalidation.
-
-## 16C. Contextual roles instead of role-bloated entities — finding from S1
-
-S1 also exposes a schema-risk.
-
-One door may participate in:
-
-- architectural arrival;
-- accessibility;
-- transfer air;
-- structure;
-- escape topology.
-
-One window may participate in:
-
-- architectural hierarchy;
-- purge;
-- security;
-- glazing safety;
-- envelope;
-- overheating;
-- external-fire-spread analysis.
-
-Do not respond by turning each physical entity into a god-object with a boolean/property for every possible role.
-
-Prefer the conceptual pattern:
+Prefer:
 
 ~~~text
 STABLE ENTITY
@@ -927,7 +449,7 @@ TYPED RELATIONSHIPS / CONTEXT MEMBERSHIPS
 SCOPE-SPECIFIC DERIVED OBLIGATIONS
 ~~~
 
-For example:
+Example:
 
 ~~~text
 WIN-S-01
@@ -937,40 +459,21 @@ WIN-S-01
   IN_SECURITY_SCOPE GROUND_FLOOR_ACCESSIBLE
 ~~~
 
-No syntax or role system is selected.
-
-The requirement is architectural:
-
-> **roles should remain compositional and contextual rather than permanently inflating the nouns of the model.**
+The implementation mechanism is open. The architectural requirement is that roles remain contextual and compositional rather than permanently inflating the nouns of the model.
 
 See [S1 Paper Compilation Run 01](s1-paper-compile-run-01.md).
 
-## 16D. Route roles are authored semantics — finding from S2
+### 16.5 Route roles are authored semantics — S2
 
-S2 demonstrates that two spatial graphs can have identical geometry/connectivity yet different architectural validity because the **intended route role** changed.
+S2 showed that identical spatial connectivity can have different architectural validity when the intended route role changes: principal arrival, secondary circulation, service route or escape route.
 
-Examples:
-
-- principal arrival;
-- secondary circulation;
-- service route;
-- escape route.
-
-Therefore route class is not merely analysis decoration added after geometry is drawn.
-
-It is part of source architectural intent.
-
-The author should be able to declare meaningful route roles without manually constructing separate discipline-specific graphs.
-
-Technical analyses then consume the same spatial graph and evaluate it at the appropriate scope.
+Route class therefore belongs to source architectural intent, not merely downstream analysis decoration. Technical analyses consume that authored semantic role at the relevant scope.
 
 See [S2 Paper Compilation Run 01](s2-paper-compile-run-01.md).
 
-## 16E. Provisional resolvability state — research only
+### 16.6 `RESOLVABLE WITHIN CURRENT FAMILY` — provisional research state
 
-S2-M08 exposed a useful state.
-
-After the upper floor moved, the existing stair occurrence/evidence became invalid. But the selected stair family still contained a valid re-parameterised solution.
+S2-M08 exposed a useful distinction. After an upper-floor change, the current stair occurrence/evidence became stale while the selected stair family still contained a valid re-parameterised solution.
 
 Conceptually:
 
@@ -982,56 +485,33 @@ SELECTED FAMILY
   still contains a valid solution
 ~~~
 
-This suggests a possible authoring state:
+A possible authoring state is:
 
 > **RESOLVABLE WITHIN CURRENT FAMILY**
 
-Possible UX:
+It is **not** a release state and is not part of the canonical validity lattice. It must survive unrelated cases before promotion, and must never blur the difference between “a solution probably exists” and “the current building is valid”.
 
-> Upper floor moved +250 mm. The private-stair family still contains a valid stair; re-solving will change geometry and stale four evidence items.
+## 17. Open research problems
 
-This is **not** a release state and is not yet part of the canonical validity lattice.
+- How many entity families are actually needed?
+- Which relationships deserve first-class identity rather than properties?
+- How should overlapping zones with different purposes be represented?
+- How should continuous materials coexist with discrete component identity?
+- How should sacrificial or in-place-renewed finishes be represented?
+- Where does an architectural room differ from a regulatory space?
+- What is the right representation of an interface spanning several components?
+- How should tolerance be represented without turning all geometry into interval arithmetic?
+- How do assemblies declare the transformations covered by their evidence?
+- How should geometric and graph constraints interact?
+- What should be authored explicitly and what can be inferred safely?
 
-Before promotion it must survive unrelated examples such as:
+## 18. Next validation step
 
-- window family after opening change;
-- ventilation family after wet-room addition;
-- heating family after room/envelope change;
-- roof family after support-line change.
+Do not expand the ontology by brainstorming.
 
-The system must never confuse:
+Use real Reference House slices. Add a concept only when the worked architecture requires it; challenge any concept that never participates in a useful rule, output or explanation.
 
-> a solution probably exists
-
-with:
-
-> the building is currently valid.
-
-## 16. Open research problems
-
-- How many entity families are genuinely needed before the model becomes bloated?
-- Which relationships deserve first-class identity versus ordinary properties?
-- How should zones that overlap geometrically but have different purposes be represented?
-- How should continuous materials be reconciled with discrete component identities?
-- How should finishes that are sacrificial or renewed in place be represented?
-- Where does an architectural “room” differ from a regulatory “space”?
-- What is the best representation of an interface spanning several physical components?
-- How are tolerances represented without turning every coordinate into an interval-arithmetic problem?
-- How should assemblies declare which transformations remain inside their evidence envelope?
-- How should geometric constraints and graph constraints interact?
-- How much of the model should be authored explicitly versus inferred?
-
-## 17. Next validation step
-
-Do not add more entity types merely by brainstorming.
-
-Take a real Reference House slice and attempt to describe it using this model.
-
-Every missing concept should be added because the worked example requires it.
-
-Every concept that never participates in a useful rule, output or explanation should be challenged.
-
-The ontology should grow under pressure from architecture, not under pressure from software neatness.
+The ontology should grow under pressure from architecture, not software neatness.
 
 ## External anchors
 
@@ -1039,4 +519,4 @@ The ontology should grow under pressure from architecture, not under pressure fr
 - buildingSMART, IFC Kernel and objectified relationships: https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/ifckernel/content.html
 - buildingSMART, spatial structure: https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/concepts/Object_Connectivity/Spatial_Structure/content.html
 - buildingSMART Data Dictionary: https://www.buildingsmart.org/users/services/buildingsmart-data-dictionary/
-- Karim Farghaly, Ranjith K. Soman and Shanjing Alexander Zhou, “The evolution of ontology in AEC: A two-decade synthesis, application domains, and future directions”, Journal of Industrial Information Integration 36 (2023), 100519: https://doi.org/10.1016/j.jii.2023.100519
+- Karim Farghaly, Ranjith K. Soman and Shanjing Alexander Zhou, “The evolution of ontology in AEC: A two-decade synthesis, application domains, and future directions”, *Journal of Industrial Information Integration* 36 (2023), 100519: https://doi.org/10.1016/j.jii.2023.100519
