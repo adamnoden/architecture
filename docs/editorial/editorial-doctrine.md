@@ -1,6 +1,6 @@
 # Editorial Doctrine
 
-**Status:** v0.1 — working editorial standard  
+**Status:** v0.2 — working editorial standard  
 **Scope:** public-facing manuscript prose, governing principles, pattern prose, reference-house writing and related explanatory material  
 **Purpose:** make the project's editorial judgement reproducible without changing its architectural substance
 
@@ -385,7 +385,7 @@ Never replace a precise ordinary word with a more elevated near-synonym merely t
 
 ---
 
-## 9. Sentence and paragraph rhythm
+## 9. Sentence, paragraph and example economy
 
 Good prose does not require visible variety for its own sake, but monotonous rhetorical patterning makes the authorial machinery audible.
 
@@ -405,11 +405,27 @@ Avoid strings of one-sentence paragraphs. They create artificial drama and force
 
 Avoid the inverse failure too: dense academic blocks that contain several logical moves simply because the subject is technical.
 
+### Example density
+
+Examples should establish a category, not exhaust it.
+
+Once the reader can see the class of thing being described, stop. Two or three representative examples are often stronger than a long inventory. Add further examples only when they expose a genuinely different case, establish scope, or are needed for technical completeness.
+
+This matters especially in domestic prose, where lists of states, objects, materials or conditions can easily continue after the point is already clear. Enumeration should buy understanding, not merely breadth.
+
 ### Lists
 
 Use lists where the items are genuinely parallel or where inspection matters.
 
-Do not convert ordinary prose into lists simply because lists look organised. Do not default to three items because three has rhetorical neatness.
+Do not convert ordinary prose into lists simply because lists look organised. Do not default to three items because three has rhetorical neatness. Do not keep adding examples simply because more examples are available.
+
+### Default compression
+
+The first competent rewrite is often still slightly too long. After meaning and sequence are secure, attempt a modest compression pass — roughly five per cent is a useful calibration, not a quota.
+
+Remove surplus examples, repeated implications, explanatory tails and words that merely smooth the transition. Restore anything whose removal costs precision, rhythm or necessary qualification.
+
+The aim is not terse prose. It is prose with little inert mass.
 
 ### Punctuation
 
@@ -505,6 +521,14 @@ Beware phrases that could be attached to almost any ambitious design project:
 - "a rich interplay of material, space and time".
 
 If the phrase could survive transplantation into an unrelated architecture brochure, it is probably saying too little.
+
+### 10.9 Enumeration creep
+
+AI-assisted prose often keeps supplying examples after the reader already understands the category.
+
+A sentence beginning with three useful particulars can become six or eight because each additional example is locally plausible. The result feels comprehensive but weakens the prose by delaying the actual point.
+
+Keep the smallest representative set that establishes the class. Continue only when the next example changes the reader's model.
 
 ---
 
@@ -606,6 +630,22 @@ Current governing principle:
 
 This kind of sentence is effective because it is not trying to become profound. It states a concrete performance consequence in ordinary language. Keep this register available.
 
+### 13.7 Pilot calibration — stop the list when the reader has the category
+
+An early rewrite of the repose principle opened with:
+
+> People are tired, ill, distracted, working, arguing, sleeping badly, cooking, carrying things, listening through walls and opening windows because the weather has changed.
+
+Nothing in that list is wrong. The problem is that the category is established well before the sentence ends.
+
+The calibrated version became:
+
+> People are tired, ill, distracted, working, sleeping badly.
+
+The shorter version does not lose the point. It trusts the reader to generalise from a representative set rather than making the prose perform completeness.
+
+The same pilot benefited from a small overall reduction in word count after the first rewrite was already competent. This is now the default expectation: once substance and sequence are right, look for a modest further cut.
+
 ---
 
 ## 14. Editing workflow
@@ -662,19 +702,27 @@ Inspect for:
 
 Keep only the instances that perform intellectual work.
 
-### Pass 6 — test analogies
+### Pass 6 — test examples and analogies
 
-State the shared mechanism in one plain sentence. If that cannot be done, remove the analogy.
+For examples, stop once the class is clear unless another example adds a distinct case or necessary scope.
+
+For analogies, state the shared mechanism in one plain sentence. If that cannot be done, remove the analogy.
 
 ### Pass 7 — claim-fidelity comparison
 
 Compare the rewrite against the source. Check modality, scope, evidence, exceptions and terminology.
 
-### Pass 8 — read for cadence
+### Pass 8 — compression pass
+
+Assume the first competent rewrite may still carry a little inert mass. Try a modest further cut — around five per cent is a useful prompt — without changing substance.
+
+Look first at surplus examples, duplicated implications, explanatory tails and transition words. Do not cut qualification merely because qualification takes space.
+
+### Pass 9 — read for cadence
 
 Look for sentences that all arrive with the same degree of finish. Insert no deliberate roughness, but allow ordinary explanatory prose to remain ordinary.
 
-### Pass 9 — red-team the result
+### Pass 10 — red-team the result
 
 Use the checklist below.
 
@@ -691,6 +739,7 @@ Before accepting public-facing prose, ask:
 - Did I manufacture a contrast because `not X but Y` sounded good?
 - Am I telling the reader that something is important instead of showing why?
 - Is a list genuinely categorical, or did I choose three items because three sounds complete?
+- Have I kept supplying examples after the category was already clear?
 - Does an abstract noun conceal a concrete actor, object or action that should be named?
 - Has a specialist term been used because it is precise, or because it sounds professional?
 - Does the analogy reveal the same mechanism in another domain?
@@ -700,6 +749,7 @@ Before accepting public-facing prose, ask:
 - Does every one-sentence paragraph genuinely require isolation?
 - Is the conclusion already obvious from the preceding material?
 - Could one sentence be deleted with no loss of information or rhythm?
+- Could the passage lose roughly five per cent without losing meaning, precision or necessary qualification?
 - Would a diagram be clearer than another paragraph?
 - Does the passage sound more certain than the evidence permits?
 - Does it sound as though the author is trying to impress an architect rather than communicate with one?
@@ -712,7 +762,7 @@ If the answer to the last question is yes, rewrite.
 
 When context is limited, use this as the compressed form of the doctrine:
 
-> Preserve substance exactly. Identify the prose mode before editing. Prefer physical mechanism, concrete cases and explanatory sequence over abstract significance claims. Use cross-domain analogy only when a shared mechanism can be stated precisely. Introduce terminology only when it buys precision or compression. Keep rhetoric sparse: do not default to antithesis, triads, one-line dramatic paragraphs, aphorisms, importance signalling or polished paragraph morals. Allow ordinary sentences to remain ordinary so that genuinely strong sentences retain force. Technical prose should correct the reader's intuitive model step by step. Doctrine should be compact and bounded. The preface may carry more personality, but not continuous performance. After rewriting, compare modality, scope, evidence status, exceptions and defined terms against the source.
+> Preserve substance exactly. Identify the prose mode before editing. Prefer physical mechanism, concrete cases and explanatory sequence over abstract significance claims. Use cross-domain analogy only when a shared mechanism can be stated precisely. Introduce terminology only when it buys precision or compression. Keep rhetoric sparse: do not default to antithesis, triads, one-line dramatic paragraphs, aphorisms, importance signalling or polished paragraph morals. Stop enumerating examples once the reader can see the category. Allow ordinary sentences to remain ordinary so that genuinely strong sentences retain force. Technical prose should correct the reader's intuitive model step by step. Doctrine should be compact and bounded. The preface may carry more personality, but not continuous performance. After the first competent rewrite, attempt a modest further compression without sacrificing qualification or mechanism. Then compare modality, scope, evidence status, exceptions and defined terms against the source.
 
 This paragraph is a fallback, not a replacement for the full document.
 
