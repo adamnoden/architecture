@@ -1,36 +1,28 @@
-# Validity and Obligations — Conceptual v0.1
+# Validity and Obligations — Conceptual v0.2
 
 **Status:** foundational research draft  
-**Purpose:** define what “valid”, “failed”, “unsupported” and “compiled” mean before the project attempts to encode rules.
+**Purpose:** define what `valid`, `failed`, `unsupported` and `compiled` mean before rules are encoded
 
-## 1. The central warning
+## 1. Validity is multidimensional
 
-A single green/red notion of validity would be dangerously crude.
+A single green/red result would hide distinctions the system needs to preserve.
 
-A house can be:
+A design can be geometrically well formed but structurally unresolved; structurally adequate but outside the selected grammar; technically compliant but poorly evidenced; digitally resolved but badly built; legally compliant but inconsistent with the Long-Life House doctrine.
 
-- geometrically well formed but structurally unresolved;
-- structurally adequate but outside the selected architectural grammar;
-- compliant with one prescriptive guidance route but not another;
-- compliant yet inconsistent with the Long-Life House doctrine;
-- technically valid yet poorly evidenced;
-- fully resolved digitally but badly constructed;
-- beautiful but non-compliant;
-- compliant but architecturally poor.
+The model therefore reports several kinds of validity rather than one universal score.
 
-Therefore:
+In particular:
 
-> **Valid is not synonymous with good. Good is not synonymous with compliant. Compliant is not synonymous with approved. Compiled is not synonymous with built.**
+- **good** is not the same as **valid**;
+- **valid** is not the same as **compliant**;
+- **compliant** is not the same as **approved**;
+- **compiled** is not the same as **built**.
 
-The system must preserve those distinctions.
+## 2. Compilation means discharging obligations
 
-## 2. Compilation as obligation discharge
+A design change creates consequences. The system should turn those consequences into explicit **obligations**.
 
-A design decision creates consequences.
-
-Those consequences should become explicit **obligations**.
-
-Example:
+For example:
 
 ~~~text
 User enlarges opening O17
@@ -45,36 +37,34 @@ User enlarges opening O17
         └─► maintenance/replacement consequence
 ~~~
 
-Compilation is the process of:
+Compilation then:
 
-1. determining which obligations apply;
-2. attempting to discharge them;
-3. preserving the evidence of discharge;
-4. refusing to hide obligations that remain unresolved.
+1. determines which obligations apply;
+2. attempts to discharge them;
+3. preserves the evidence used;
+4. leaves unresolved obligations visible.
 
-This framing is stronger than “run a collection of checks”.
+This is more useful than treating the compiler as a bag of unrelated checks because the obligation retains its subject, authority, dependencies and evidence.
 
-## 3. Obligation object
+## 3. Conceptual obligation record
 
-A future obligation should conceptually carry:
+A future obligation should carry enough information to answer: **what must be true, why, for what, under which target, and how do we know?**
+
+Candidate fields include:
 
 - stable identifier;
 - subject entity/entities;
-- obligation class;
-- source;
-- applicability conditions;
+- obligation class and source;
+- applicability condition;
 - target/profile version;
 - required proposition;
 - resolution method;
-- dependency obligations;
-- assumptions;
+- dependencies and assumptions;
 - evidence;
-- result;
-- status;
-- explanation;
+- result/status/explanation;
 - supersession/version history.
 
-Illustrative record:
+Illustratively:
 
 ~~~text
 Obligation: STR-017
@@ -90,271 +80,138 @@ Depends on:
   - GEO-119 clear bearing geometry
 ~~~
 
-No syntax is proposed here.
+No storage or syntax model is implied.
 
 ## 4. Sources of obligation
 
-Obligations should retain their origin because different origins have different authority.
+Keep source authority visible.
 
-### Model-integrity obligations
+### Model integrity
+Created by the formal model itself: identities resolve, relationships are well formed, units/types are valid.
 
-Created by the formal model itself.
+### Physical / engineering
+Created by geometry, material behaviour, structure or building physics.
 
-Example: a relationship may not point to a missing entity.
-
-### Physical / engineering obligations
-
-Created by structural behaviour, geometry, materials or building physics.
-
-Example: a floor requires support.
-
-### Regulatory obligations
-
+### Regulatory
 Created by applicable legal requirements and the selected compliance route.
 
-### Standards obligations
+### Standards
+Created because the selected design/calculation route incorporates a standard-based method.
 
-Created because the chosen calculation/design route incorporates a standard or a declared standard-based method.
+### Product evidence
+Created by installation limits, conditions or declared performance of a selected product/system.
 
-### Product-evidence obligations
+### Long-Life House doctrine
+Created only where the project claims conformance with a formalised doctrine proposition.
 
-Created by limitations or installation conditions attached to a selected product/system.
-
-### Long-Life House doctrine obligations
-
-Created only when the project claims conformance with the doctrine.
-
-### Architectural-grammar obligations
-
+### Architectural grammar
 Created by the selected architectural language.
 
-### Project requirements
+### Project requirement
+Created by the client brief or project-specific target.
 
-Created by the client's brief or project-specific performance targets.
+### Process / evidence
+Created because a proposition requires inspection, test, commissioning, professional review or another evidence-producing act.
 
-### Process / evidence obligations
-
-Created because a claim requires inspection, test, commissioning, professional review or another evidence-producing act.
-
-These sources should remain distinguishable in outputs.
+Outputs should preserve these distinctions. A grammar failure and a regulatory failure may both block a chosen compile mode without acquiring the same authority.
 
 ## 5. Dimensions of validity
 
-The proposed model should report validity across dimensions rather than collapse everything into one score.
-
 ### V0 — Model integrity
 
-Is the semantic model well formed?
-
-Examples:
-
-- identities resolve;
-- required relationships exist;
-- graph structure is coherent;
-- values have valid units/types.
+Is the semantic model coherent? Do identities, relationships, graph structure, units and types resolve?
 
 ### V1 — Supported-domain status
 
-Is the proposition within a domain the system claims to understand?
+Does the proposition lie inside the domain the system claims to understand: supported house type, structural family, parameter range or construction family?
 
-Examples:
-
-- supported house type;
-- supported structural family;
-- span inside verified parameter envelope;
-- recognised construction family.
-
-Leaving the domain is not necessarily a design failure.
-
-It is a **proof-system boundary**.
+Leaving the domain is not necessarily a design failure. It is a **proof-system boundary**.
 
 ### V2 — Geometric / spatial validity
 
-Are mandatory geometric and spatial relationships satisfied?
-
-Examples:
-
-- non-zero spaces;
-- required clearance;
-- no impossible physical intersection;
-- maintenance working volume;
-- stair geometry.
+Are mandatory geometric relationships satisfied: clearances, non-intersection, maintenance volumes, stair geometry and other spatial conditions?
 
 ### V3 — Structural resolution
 
-Are structural obligations resolved within the supported engineering envelope?
-
-Examples:
-
-- continuous load path;
-- member capacity;
-- bearing;
-- stability;
-- reaction transfer;
-- foundation support.
+Are structural obligations resolved within the supported engineering envelope: load path, capacity, bearing, stability, reaction transfer and foundation support?
 
 ### V4 — Boundary / building-physics resolution
 
-Are required boundaries and performance conditions resolved?
-
-Examples:
-
-- thermal continuity;
-- air barrier;
-- water shedding/drainage;
-- condensation/moisture strategy;
-- acoustic separation;
-- fire/smoke boundary.
+Are applicable thermal, air, water, moisture, acoustic, fire/smoke and related boundary obligations resolved?
 
 ### V5 — Regulatory-route conformance
 
-Does the model satisfy the explicit selected target and route under declared assumptions?
+Does the model satisfy the named target and compliance route under declared assumptions?
 
-This should never be reported without naming the target.
+Never report this dimension without naming the target.
 
 ### V6 — Doctrine conformance
 
-Does the building satisfy whichever Long-Life House propositions have been formalised as mandatory for this project?
-
-Examples:
-
-- prohibited routine service route through permanent fabric;
-- required maintenance access;
-- boundary independence across removable layers.
+Does the design satisfy the Long-Life House propositions formalised as mandatory for this project?
 
 ### V7 — Architectural-grammar conformance
 
-Does the design conform to the selected architectural grammar?
+Is the design a valid member of the selected architectural language?
 
-Failure here means:
-
-> not a valid member of this declared architectural language.
-
-It does **not** mean objectively ugly or legally invalid.
+Failure here means exactly that. It does not mean objectively ugly or legally invalid.
 
 ### V8 — Constructability / workmanship resolution
 
-Have consequential assemblies declared:
-
-- datum;
-- tolerance envelope;
-- adjustment;
-- sequence;
-- remediation threshold;
-- inspection point?
+Do consequential assemblies declare the datum, tolerance envelope, adjustment, sequence, remediation threshold and inspection point required by their chosen implementation?
 
 ### V9 — Evidence completeness
 
-Is every mandatory claim backed by evidence of the correct scope and version?
+Is each mandatory proposition backed by evidence of the correct scope, version and lifecycle status?
 
-This is where a technically plausible design may still be un-releasable.
+A technically plausible design can still fail release here.
 
 ## 6. Status vocabulary
 
-Avoid vague “pass / fail” where more precision is available.
+Use status to communicate epistemic state, not merely colour a UI.
 
-### PASS
+### `PASS`
+Resolved by an accepted method within native supported scope.
 
-The obligation has been discharged by an accepted method within the system's supported scope.
+### `PASS — EXTERNAL EVIDENCE`
+The proposition is discharged by an explicitly referenced external evidence item accepted by project governance: engineer calculation, specialist analysis, site investigation, accredited test, etc.
 
-### PASS — EXTERNAL EVIDENCE
+Keep this visibly distinct from native proof.
 
-The system cannot itself establish the proposition, but an explicitly referenced external evidence item accepted by the project discharges it.
+### `WARNING`
+The design is valid but departs from a preference, target quality or recommended condition. Never use warning to hide a mandatory unresolved obligation.
 
-Examples:
-
-- engineer's calculation;
-- specialist fire analysis;
-- site investigation;
-- accredited test result.
-
-This status should remain visibly different from native proof.
-
-### WARNING
-
-The proposition is valid but departs from a preference, target quality or recommended condition.
-
-Warnings must never stand in for unresolved safety/compliance obligations.
-
-### FAIL
-
+### `FAIL`
 A known applicable requirement is violated.
 
-### UNSUPPORTED
+### `UNSUPPORTED`
+The system does not know how to establish the proposition. This is epistemic, not normative.
 
-The condition lies outside what the system knows how to reason about.
+### `UNRESOLVED`
+The system understands the obligation but information or evidence is missing.
 
-Unsupported is epistemic, not normative.
+### `NOT APPLICABLE`
+The rule exists but its applicability condition is false. Retain the reason.
 
-It means:
+### `SUPERSEDED`
+The obligation/evidence belongs to an earlier model or target version and remains only as history.
 
-> **the compiler cannot establish this claim.**
+## 7. Authoring feedback versus release semantics
 
-### UNRESOLVED
+Distinguish:
 
-The system understands the required obligation but lacks information or evidence needed to determine it.
+- **immediate invalid relationship** — a state that ideally cannot persist, such as connecting incompatible network types;
+- **compile error** — a representable design state that fails the current compile, such as an opening beyond a supported lintel range;
+- **external proof obligation** — a valid route forward requiring evidence outside native capability;
+- **warning** — non-blocking departure;
+- **optimisation feedback** — comparative suggestion.
 
-Examples:
+The interface may render all of these elegantly. The semantics must remain distinct.
 
-- soil parameter missing;
-- product not selected;
-- external calculation promised but absent.
+## 8. State the authority of architectural judgement
 
-### NOT APPLICABLE
+Opinionated architecture is allowed. Hidden authority is not.
 
-The rule exists in the target but its applicability condition is false for this project/entity.
-
-The reason should be traceable.
-
-### SUPERSEDED
-
-The obligation/evidence belongs to an earlier building or target version.
-
-It is retained historically but does not govern the current release.
-
-## 7. Hard error versus design feedback
-
-The authoring environment should distinguish:
-
-### Immediate invalid relationship
-
-A state that should ideally never persist.
-
-Example:
-
-- linking a drainage outlet to an incompatible network type.
-
-### Compile error
-
-A representable design state that cannot produce a successful compile.
-
-Example:
-
-- opening exceeds the supported lintel/span envelope.
-
-### External proof obligation
-
-A valid route forward that requires evidence outside the native compiler.
-
-### Warning
-
-A non-blocking departure.
-
-### Optimisation feedback
-
-A suggestion about competing objectives.
-
-The UI may display all of these beautifully.
-
-The semantics must remain distinct.
-
-## 8. Architectural quality must not be smuggled into physics
-
-The system is intentionally opinionated.
-
-But it should state the authority of each opinion.
-
-Example:
+For example:
 
 ~~~text
 ERROR — required landing depth not achieved
@@ -370,78 +227,37 @@ INFO — alternative bay arrangement would reduce steel tonnage
   authority: optimisation suggestion
 ~~~
 
-This is a crucial trust feature.
+This lets the system be architecturally committed without pretending its preferences are physics or law.
 
-## 9. Evidence types
+## 9. Evidence classes
 
-An obligation may be discharged by different evidence classes.
+An obligation may be discharged by:
 
-### Deterministic semantic inference
+- **deterministic semantic inference** — e.g. prohibited service route does not traverse permanent structure;
+- **geometry query** — e.g. clear stair width;
+- **calculation** — e.g. beam utilisation;
+- **bounded design table/rule** — e.g. supported lintel family within stated limits;
+- **tested/certified assembly** — within its evidenced scope;
+- **product/manufacturer evidence** — with exact applicability/version;
+- **inspection evidence** — e.g. measured cavity closure before concealment;
+- **commissioning result** — e.g. measured ventilation flow;
+- **external professional determination** — e.g. engineer validates an out-of-domain connection.
 
-Example: a prohibited service does not traverse the permanent structural zone.
+Every evidence item declares its scope.
 
-### Geometry query
+## 10. Proof is scoped
 
-Example: clear stair width.
+The system should be careful with the word **proof**.
 
-### Calculation
+A geometry query can be close to mathematical proof. A structural calculation establishes adequacy only relative to its analytical model, loads, material properties, method, safety factors and applicability. A product test supports the tested system and permitted extensions. An inspection establishes something about physical reality at a particular time.
 
-Example: beam utilisation.
+The compiled building is therefore better understood as a **structured argument with auditable evidence** than as one universal proof.
 
-### Table / bounded design rule
-
-Example: supported lintel family within declared span/loading conditions.
-
-### Tested/certified assembly
-
-Example: a fire-resistance claim within the tested scope.
-
-### Product declaration / manufacturer evidence
-
-Subject to exact applicability and version.
-
-### Inspection evidence
-
-Example: photographed and measured cavity closure before concealment.
-
-### Commissioning result
-
-Example: measured ventilation flow.
-
-### External professional determination
-
-Example: project structural engineer validates an out-of-domain connection.
-
-Every evidence item should declare its scope.
-
-## 10. Proof and evidence are not the same thing
-
-The word “proof” should be reserved carefully.
-
-A deterministic geometry result may be very close to mathematical proof.
-
-A structural calculation is proof only relative to:
-
-- its model;
-- load assumptions;
-- material properties;
-- calculation method;
-- relevant safety factors;
-- domain applicability.
-
-A product test is evidence for the tested system and permitted extensions.
-
-An inspection is evidence about physical reality at a particular time.
-
-Therefore the compiled building is better understood as a **structured argument with auditable evidence** than as one universal mathematical proof.
-
-“Proof-carrying building” remains a useful aspiration if this nuance is preserved.
+“Proof-carrying building” remains useful shorthand only if that qualification survives.
 
 ## 11. Dependency graph
 
-Obligations can depend on other obligations.
-
-Example:
+Obligations depend on other propositions.
 
 ~~~text
 REG-A-017 structure adequate
@@ -454,74 +270,46 @@ REG-A-017 structure adequate
                      └─ depends on SUP-007 bearing support
 ~~~
 
-If a dependency changes, downstream evidence may become stale.
-
-This is the basis of future **incremental recompilation** and change impact.
+Change a dependency and downstream evidence may become stale. This graph supports future change-impact analysis and incremental recompilation.
 
 ## 12. Evidence invalidation
 
-A major requirement for versioned architecture is knowing when evidence stops applying.
+Evidence must be reviewed or invalidated when a dependency it relies on changes: opening width, product, loading, target version, supporting material, site condition or another scoped input.
 
-Evidence should be invalidated or flagged for review when relevant dependencies change.
+An old PDF existing in the repository is not evidence that its conclusion still applies.
 
-Examples:
+## 13. Compile modes
 
-- opening widened;
-- product substituted;
-- floor loading changed;
-- target standard version changed;
-- supporting wall material changed;
-- site assumption replaced by investigation result.
-
-The system should never carry forward a green result merely because an old PDF still exists.
-
-## 13. Compile levels
-
-The project should eventually distinguish at least conceptual compile modes.
+Different design stages can legitimately tolerate different evidence states.
 
 ### Exploratory compile
 
-May run with named assumptions and unresolved external obligations.
-
-Purpose: design exploration.
-
-Output must visibly state that it is not release-grade.
+May run under named assumptions and contain unresolved external obligations. It is for design exploration and must be labelled non-release.
 
 ### Coordinated design compile
 
-Requires major technical systems to be resolved but may still contain controlled external evidence obligations.
-
-Purpose: design coordination / review.
+Requires major technical systems to be resolved while allowing controlled external evidence obligations appropriate to that phase.
 
 ### Release-grade compile
 
-Provisional definition:
+A provisional contract requires:
 
 - model integrity passes;
-- all mandatory obligations are PASS, PASS—EXTERNAL EVIDENCE, NOT APPLICABLE or otherwise explicitly accepted by a defined governance mechanism;
-- no hidden UNRESOLVED **due-now** obligations;
-- future evidence obligations are explicitly planned with due phase/method/owner;
-- no unsupported condition is being represented as proven;
-- evidence/provenance manifest is complete;
+- mandatory due-now obligations are `PASS`, `PASS — EXTERNAL EVIDENCE`, `NOT APPLICABLE`, or explicitly accepted through a defined governance route;
+- no hidden due-now `UNRESOLVED` obligations;
+- future evidence obligations have declared phase, method and owner;
+- no `UNSUPPORTED` condition is presented as proven;
+- provenance manifest is complete;
 - assumptions are frozen and visible;
 - outputs derive from the same source version.
 
-The exact release contract requires substantial later work.
+The precise release contract remains research work.
 
-## 13A. Time-phased obligations
+## 14. Time-phased obligations
 
-A release should only require evidence that is **due at the current lifecycle phase**.
+Some evidence cannot exist at design release: installation inspection, pre-closure verification, commissioning or completion evidence.
 
-Some obligations can only be discharged later:
-
-- installation inspection;
-- pre-closure verification;
-- commissioning measurement;
-- completion evidence.
-
-These should not appear as hidden unresolved items.
-
-They should exist as **planned future evidence obligations** carrying:
+Represent these as **planned future evidence obligations**, not unresolved noise. Each should carry:
 
 - due phase;
 - evidence method;
@@ -529,45 +317,21 @@ They should exist as **planned future evidence obligations** carrying:
 - hold point where relevant;
 - failure/remediation response.
 
-Therefore a design-stage release may pass when:
-
-- every due-now mandatory obligation is resolved;
-- future evidence obligations are explicitly planned;
-- no future obligation is falsely represented as already proven.
+A design-stage release can then pass when everything due now is resolved and everything genuinely due later is explicitly planned.
 
 See [Evidence and Provenance Architecture](evidence-and-provenance.md).
 
-## 14. Compilation does not equal statutory approval
+## 15. Compilation, approval and physical conformance
 
-A release-grade compile may eventually mean:
+A release-grade compile may eventually claim:
 
-> **the design conforms to the rules and proof system represented by Target T, Domain D and Project Configuration P, under assumptions A, with evidence set E.**
+> the model conforms to Target T, Domain D and Project Configuration P under assumptions A with evidence set E.
 
-It does not mean:
+It does **not** claim statutory approval or correct physical construction.
 
-> building control has legally approved the project.
+Those remain separate processes.
 
-Nor does it mean:
-
-> the physical building was constructed correctly.
-
-Those are separate events with their own evidence.
-
-## 15. Physical conformance
-
-The digital proof boundary should eventually connect to the site.
-
-Potential feedback evidence:
-
-- material/product identity;
-- dimensional inspection;
-- photographs before closure;
-- test certificates;
-- commissioning measurements;
-- deviation records;
-- as-built changes.
-
-Conceptually:
+The evidence chain can nevertheless continue onto site:
 
 ~~~text
 DESIGN OBLIGATION
@@ -583,41 +347,23 @@ PHYSICAL VERIFICATION
 AS-BUILT / COMMISSIONED EVIDENCE
 ~~~
 
-The long-term ambition is one evidence graph spanning design and stewardship.
+Product identity, dimensional inspection, pre-closure photographs, certificates, commissioning data, deviations and as-built changes can extend the same evidence graph through stewardship.
 
-## 16. Human judgement
+## 16. Human judgement is a legitimate resolution method
 
-Some obligations should explicitly require judgement rather than fake automation.
+Some questions should remain explicitly human: unusual alternative compliance, heritage significance, subtle composition, novel fire engineering or geotechnical interpretation.
 
-Potential examples:
+A legitimate method may therefore be conceptually represented as:
 
-- whether an unusual alternative solution satisfies a functional regulation;
-- heritage significance;
-- subtle architectural composition;
-- novel fire-engineered strategy;
-- unusual geotechnical interpretation.
+`REQUIRES_AUTHORISED_HUMAN_DETERMINATION`
 
-A legitimate obligation method may therefore be:
+The requirement is not to automate everything, but to record the judgement, authority and scope rather than hide it outside the model.
 
-REQUIRES_AUTHORISED_HUMAN_DETERMINATION
+## 17. No aggregate quality score
 
-The important thing is that the human determination is explicit, scoped and recorded.
+Do not collapse architecture into one scalar.
 
-## 17. No aggregate “quality score”
-
-The system should resist turning the house into a single numerical score.
-
-A scalar hides trade-offs and authority.
-
-Prefer:
-
-- explicit pass/fail dimensions;
-- objective vectors;
-- warnings;
-- comparative alternatives;
-- provenance.
-
-If optimisation is introduced later, the weights should be declared and adjustable rather than masquerading as universal architectural truth.
+Prefer explicit validity dimensions, objective vectors, warnings, alternative comparisons and provenance. If optimisation is introduced, weights should be declared and adjustable rather than presented as universal architectural truth.
 
 ## 18. Example compile summary
 
@@ -647,59 +393,28 @@ Result:
   RELEASE FAILED
 ~~~
 
-A failure like this is a feature.
+This is a useful failure: the system distinguishes a resolved design from an evidenced release.
 
 ## 19. Open questions
 
-- Can regulatory applicability itself always be deterministic?
-- What governance is required to accept external evidence?
+- Can regulatory applicability always be deterministic?
+- What governance accepts external evidence?
 - How should professional judgement be scoped and versioned?
-- When should a warning escalate to a hard failure?
-- What evidence can be inherited from a family/type to occurrences?
-- How are probabilistic engineering conditions represented?
+- When does a warning become a failure?
+- What evidence can a family/type pass to its occurrences?
+- How should probabilistic engineering conditions be represented?
 - How should tolerances affect binary geometric checks?
-- How should conflicts between doctrine and project brief be surfaced?
-- Can evidence be cryptographically signed or otherwise made tamper-evident later?
-- What constitutes sufficient evidence for a product substitution?
-- How should the system report regulatory ambiguity or conflicting interpretations?
+- How should doctrine/brief conflicts surface?
+- What is sufficient evidence for a product substitution?
+- How should ambiguity or competing regulatory interpretations be reported?
 - What does recompilation against a newer target mean for an existing lawful building?
 
 ## 20. Next work
 
-The immediate successor to this document should be a dedicated **Evidence and Provenance Architecture**.
-
-It should turn the conceptual obligation/evidence relationship into a precise model and test it on the Reference House paper compilation.
+The immediate companion is [Evidence and Provenance Architecture](evidence-and-provenance.md), which develops evidence scope, dependencies, lifecycle and invalidation in more detail.
 
 ## External anchors
 
-- Purushotham, Kailashnath & Mutis, “Framework for automated building code compliance checking to improve transparency, trust, validation, and design interpretation”, Automation in Construction 181 (2026), 106598: https://doi.org/10.1016/j.autcon.2025.106598
-- Zentgraf, Hagedorn & König, “A BIM-based framework for automated building code extraction and compliance checking”, Advanced Engineering Informatics 74 (2026), 104735: https://doi.org/10.1016/j.aei.2026.104735
-- UK Government, Building Regulations 2010: https://www.legislation.gov.uk/uksi/2010/2214
-- UK Government, Approved Documents: https://www.gov.uk/government/collections/approved-documents
-- UK Government, golden-thread guidance: https://www.gov.uk/guidance/keeping-information-about-a-higher-risk-building-the-golden-thread
-
-
-## Research note — post-S2
-
-### Research-only: resolvable within current family
-
-S2-M08 produced a candidate authoring state that is deliberately **not** part of release validity.
-
-A changed source condition may make the current occurrence/evidence stale while the already-selected supported family still contains another valid parameterisation.
-
-For now represent this as:
-
-~~~text
-CURRENT STATE: INVALID / STALE
-RESEARCH HINT: RESOLVABLE WITHIN CURRENT FAMILY
-~~~
-
-Do not permit the hint to satisfy an obligation.
-
-Promotion criteria:
-
-1. at least three materially different family examples;
-2. deterministic bounded search/derivation, not vague suggestion;
-3. exact downstream invalidation known;
-4. user can inspect the proposed change before accepting it;
-5. failure to find a solution returns ordinary INVALID/UNSUPPORTED without weakening proof semantics.
+- Purushotham, Kailashnath & Mutis, “Framework for automated building code compliance checking to improve transparency, trust, validation, and design interpretation”, *Automation in Construction* 181 (2026), 106598: https://doi.org/10.1016/j.autcon.2025.106598
+- Zentgraf, Hagedorn & König, “A BIM-based framework for automated building code extraction and compliance checking”, *Advanced Engineering Informatics* 65 (2025), 103270: https://doi.org/10.1016/j.aei.2025.103270
+- buildingSMART, Information Delivery Specification: https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/
