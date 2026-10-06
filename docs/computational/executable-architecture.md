@@ -1,51 +1,32 @@
 # Executable Architecture — Computational Expression of the Long-Life House
 
-**Status:** concept paper v0.1 — research trajectory, not an implementation specification  
-**Purpose:** preserve the complete computational proposition in a form that can be understood and developed later with no prior conversation context.  
-**Scope:** conceptual architecture only. No programming language, solver, CAD kernel, regulatory rule pack or product implementation is selected here.
+**Status:** concept paper v0.2 — research trajectory, not an implementation specification  
+**Purpose:** preserve the computational proposition in a form understandable without prior conversation context  
+**Scope:** conceptual architecture only; no programming language, solver, CAD kernel, regulatory rule pack or product implementation is selected here
 
 > **The program should compile a habitat.**
 
 ## 1. The proposition
 
-The Long-Life House has so far been expressed as architectural doctrine, strategies, patterns, reference implementations, delivery requirements and physical tests.
+The Long-Life House already has several human-readable layers: doctrine, strategies, patterns, reference implementations, delivery requirements and tests. A computational expression would add another layer, but only for the subset that can be formalised honestly.
 
-A further possibility follows from that work.
+The intuitive model is “draw a house, then run checks”. The stronger proposal reverses that order.
 
-The project could also be expressed as a **constrained computational system for authoring and compiling houses**.
+The user works with meaningful architectural objects and relationships inside a deliberately bounded system. A wall is not merely geometry: it may know that it is load-bearing, forms part of several environmental boundaries, contains openings, supports a floor and permits only controlled service penetrations. A window knows that it crosses those layers. A maintenance route knows that a person and replacement component need real space to move through it.
 
-The user would not primarily draw arbitrary geometry and then ask a collection of downstream tools whether it is acceptable. They would manipulate meaningful architectural objects and relationships inside a deliberately opinionated system. The system would know that an object is a room, wall, opening, floor, structural support, service route, boundary, replaceable lining or maintenance path rather than merely a collection of surfaces and solids.
+Compilation derives the consequences of those relationships and asks whether the resulting obligations have been discharged.
 
-Those objects would carry enough semantics for the system to reason about:
+Within its supported domain, a release-grade compile should therefore mean something stronger than “the geometry is drawable”:
 
-- architectural topology and proportion;
-- structure and load paths;
-- construction systems and interfaces;
-- services and maintenance geography;
-- fire, acoustic, thermal, moisture and other boundaries;
-- regulatory and standards obligations;
-- quantities, materials and replaceability;
-- assembly, inspection and future change.
+> **The required relationships, supported structural conditions and selected compliance obligations are either discharged by the system or backed by explicit evidence within a declared proof boundary.**
 
-Compilation would elaborate that semantic model into a coordinated building and a body of evidence.
-
-The strongest version of the ambition is:
-
-> **Within a deliberately bounded domain, a successful compile should mean that the proposed house is not merely drawable but resolved: its required relationships, supported structural conditions and selected compliance obligations have been discharged or explicitly evidenced.**
-
-The word **bounded** is essential. Strong guarantees become plausible by restricting what the system is allowed to express.
+The phrase **supported domain** matters more than the slogan. Stronger guarantees are possible because the system refuses to claim competence over arbitrary architecture.
 
 ## 2. Relationship to the architectural doctrine
 
-This is **not a governing principle**.
+Executable architecture is **not a governing principle** and does not replace the architectural project. The doctrine remains meaningful if no software is ever written.
 
-It is not a replacement for the architectural doctrine and should not be allowed to make the project subordinate to software.
-
-The doctrine should remain meaningful if no software is ever written.
-
-The computational project is better understood as an **executable expression of the doctrine**.
-
-The existing architectural chain remains:
+The existing chain is:
 
 ```text
 Doctrine
@@ -61,7 +42,7 @@ Delivery requirement
 Test
 ```
 
-The possible computational chain is:
+The proposed computational chain is:
 
 ```text
 Doctrine
@@ -77,39 +58,19 @@ Resolved building model
 Production outputs + evidence
 ```
 
-The missing intellectual layer is therefore not “write a CAD program”.
+The missing intellectual work is not “build CAD”. It is to formalise enough architectural meaning that important propositions can be represented and tested without pretending that geometry is the whole building.
 
-It is **formalise enough of the architecture that the important propositions can be represented, reasoned about and tested computationally without reducing architecture to geometry**.
+The architect-facing implementation brief remains the current human translation from doctrine into a commission. A future compiler may formalise part of that translation; it does not supersede it today.
 
-The software should be downstream of that formalisation.
+## 3. Compiler rather than checker
 
-The existing architect-facing implementation brief remains the project's current **human translation layer** from doctrine into a real commission. A future compiler might formalise part of that translation, but does not supersede the implementation brief today.
+Conventional digital workflows allow a great deal of source geometry and then analyse structure, energy, code, quantities and coordination downstream. That is useful, but the source model can still encode nonsense.
 
-## 3. Why a compiler rather than a checker
+The compiler proposal is closer to **correct-by-construction authoring**. Some invalid states should be impossible to express; others should fail compilation with an intelligible reason.
 
-Most digital building workflows begin with a model whose geometry can be almost arbitrarily authored. Structure, energy, code compliance, quantities and coordination are then analysed by separate processes.
+Move a wall 400 mm and the consequence is not merely a translated surface. The move may change room proportion, an elevation bay, floor span, beam bearing, stair clearance, service route, boundary, quantity and maintenance path.
 
-That is useful, but it leaves a fundamental freedom intact: the source model can represent nonsense.
-
-The stronger proposition is **correct-by-construction authoring**.
-
-The author works in a language whose objects already know what kinds of relationships are permitted. The system prevents some invalid states from being expressed at all and rejects others during compilation.
-
-A wall moved by 400 mm should not simply produce a new wall location. The move may alter:
-
-- the proportion of two rooms;
-- an elevation bay;
-- a floor span;
-- the bearing available to a beam;
-- a stair or circulation dimension;
-- a service route;
-- a fire or acoustic boundary;
-- a quantity and cost;
-- a maintenance withdrawal route.
-
-The authoring interface can remain simple because complexity is held by the model and compiler.
-
-A representative interaction might be:
+A useful diagnostic might be:
 
 ```text
 Cannot move Wall W17 +400 mm.
@@ -122,15 +83,15 @@ Failed obligations:
 Maximum valid movement under current configuration: +265 mm.
 ```
 
-This is fundamentally different from drawing freely and receiving a report afterwards.
+The software analogy is type safety. A short-lived service should not attach to a forbidden permanent zone without an explicit interface. A removable lining should not silently carry a boundary required to survive its removal. A load-bearing opening should not exist without support obligations.
 
-The software analogy is **type safety**. A short-lived service should not be attachable to a forbidden permanent zone without an explicit interface. A removable lining should not be capable of silently carrying a boundary that is required to survive its removal. A load-bearing opening should not exist without satisfying its support obligations. Where an invalid relationship is representable, it should become a compiler error rather than latent design debt.
+When the system can identify such relationships, invalidity becomes a compile error instead of latent design debt.
 
-## 4. The user should manipulate architectural meaning
+## 4. Semantic building primitives
 
 The system should operate on **semantic building primitives**, not generic meshes.
 
-Conceptually, a load-bearing external wall might carry information such as:
+An illustrative wall record might be:
 
 ```text
 ExternalWall
@@ -144,113 +105,51 @@ ExternalWall
   service-policy: controlled-penetrations-only
 ```
 
-This notation is illustrative only. It is not a proposed syntax.
+This is not proposed syntax. It shows the level of meaning required.
 
-A room should know that it is a room. A window should know that it is an opening through several coordinated layers. A removable lining should know which critical boundaries remain intact when it is removed. A structural member should participate in a load path rather than simply occupy space.
+A room should know that it is a room. A structural member should participate in a load path rather than merely occupy space. Geometry remains essential, but it is one representation of the building rather than the definition of the building.
 
-Geometry becomes one representation of the building, not the definition of the building.
+## 5. Authoring experience and product form
 
-## 5. The authoring experience
+The long-term interface ambition is simple to state: **move complexity into the system rather than demanding it from every author**.
 
-The long-term user-interface ambition is deliberately extreme:
+A provocative test remains useful: could someone comfortable manipulating a house in *The Sims* explore the design without first learning BIM, structural analysis and every dimensional rule? This does not make that user legally competent. It describes the desired division of labour between interface and system.
 
-> **A person who can competently manipulate a house in a building game should be able to explore this system without first becoming an architect, structural engineer, quantity surveyor or BIM technician.**
+A user might add or resize a room, move an opening, add a bay, change roof family or storey height, or choose among supported construction families. The system derives consequences where it has authority and exposes unresolved obligations where it does not.
 
-A deliberately provocative product test is: **could a twelve-year-old who understands a game such as *The Sims* manipulate the house while the system, rather than the child, carries the technical complexity?** The answer need not literally determine the audience. It captures the intended inversion: expert knowledge belongs in the constrained system rather than being demanded from every author.
+If developed as a product, the conceptual stack is:
 
-The sophistication belongs inside the system.
+**interactive authoring environment + semantic building model + compiler + versioned targets/rule packs + evidence/production outputs.**
 
-The user may:
+The 3D model is one view and one artefact, not the product itself. No decision is made here about web/desktop delivery, modelling kernel, implementation language, storage model or commercial form.
 
-- add or remove a room;
-- enlarge a room;
-- move an opening;
-- add a bay;
-- change a roof family;
-- alter a storey height;
-- select between supported construction families;
-- choose between valid layout alternatives.
+## 6. Architectural grammar without pretending to prove beauty
 
-They should not need to manually draw every beam, calculate every reaction, route every service or remember every dimensional rule.
+The system is intentionally opinionated. It may encode a declared architectural grammar governing relationships among rooms, heights, openings, axes, bays, circulation, hierarchy and façade composition.
 
-The system should derive downstream consequences where it has authority to do so and reject unresolved consequences where it does not.
-
-This is an interface ambition, **not a claim that a non-professional user thereby acquires legal competence or that professional responsibility disappears**.
-
-### Product form
-
-If developed, this should be understood as a **software product**, not merely a research script or plug-in.
-
-The conceptual product is:
-
-**interactive 3D authoring environment + semantic building model + compiler + versioned target/rule packs + evidence/production output system.**
-
-The user experience may resemble unusually constrained CAD or a building game. The underlying product is closer to an integrated compiler toolchain. The 3D model is one view of the source and one compiled artefact; it is not the entire product.
-
-No decision is made here about desktop versus web delivery, modelling kernel, storage model, implementation language or commercial form.
-
-## 6. Opinionated architecture and proportion
-
-The system is not intended to be geometrically neutral.
-
-A central proposition is that architectural quality can be assisted by embedding a **declared architectural grammar**: relationships among room dimensions, heights, openings, axes, bays, circulation, hierarchy and façade composition.
-
-This should not be confused with claiming that beauty is mathematically provable.
-
-The system should distinguish at least three kinds of rule:
+Three rule classes should remain distinct.
 
 ### Hard invariants
 
-Conditions that must be true for the model to compile within its supported domain.
-
-Examples may include:
-
-- a resolved structural load path;
-- required clearances;
-- boundary continuity;
-- permitted span ranges for a selected assembly;
-- non-negotiable regulatory conditions;
-- declared doctrine constraints where the system claims conformance.
+Conditions required for compilation within the supported domain: load-path continuity, clearances, boundary continuity, supported span ranges, non-negotiable regulatory conditions and doctrine constraints the system explicitly claims to enforce.
 
 ### Grammar constraints
 
-Conditions that are mandatory **within a selected architectural language**.
+Conditions required by a selected architectural language: room proportion ranges, storey-height relationships, bay rhythms, opening families, alignments and hierarchy.
 
-A chosen grammar may constrain:
-
-- room proportion ranges;
-- storey-height relationships;
-- bay rhythms;
-- opening families;
-- alignments;
-- hierarchy between principal and secondary spaces.
-
-These rules are architectural commitments, not laws of nature. A different architectural grammar may make different commitments.
+These are architectural commitments, not laws of nature. Another grammar may choose differently.
 
 ### Objectives and preferences
 
-Conditions that can be optimised, ranked or warned about without pretending they are binary truth.
+Conditions that can be ranked or warned about without becoming binary truth: daylight quality, circulation efficiency, symmetry, economy, material use, maintenance effort, views or degree of proportional fit.
 
-Examples may include:
+The system may be opinionated. It must not disguise taste as structure, regulation or evidence.
 
-- daylight quality;
-- efficiency of circulation;
-- symmetry;
-- economy;
-- material use;
-- maintenance effort;
-- preferred views;
-- degree of proportional fit.
+## 7. Structural semantics and the supported envelope
 
-The distinction is essential. The compiler should be opinionated without disguising taste as structural or regulatory fact.
+Structure belongs in the semantic model rather than appearing only as a late check.
 
-## 7. Structure is part of the semantic model
-
-Structure should not be a late check against finished geometry.
-
-Every load-bearing object should participate in an explicit structural graph.
-
-At the simplest conceptual level:
+At minimum, load-bearing objects participate in an explicit graph:
 
 ```text
 roof
@@ -266,32 +165,24 @@ foundation
 ground
 ```
 
-An unresolved load path should be a compile failure.
+An unresolved load path is a compile failure.
 
-Changing an opening in a load-bearing wall should trigger whatever downstream structural consequences belong to that operation: lintel or beam selection, bearing, reactions, supporting construction and foundation effects.
+The first system need not solve arbitrary structural engineering. A more credible approach is a closed library of supported systems and parameter ranges backed by declared calculation methods, engineering evidence and tests.
 
-The system need not initially solve arbitrary structural engineering.
-
-The more credible path is a **closed library of supported structural systems and parameter ranges**, each backed by declared calculation methods, engineering evidence and test cases.
-
-Where the model leaves that supported envelope, the correct output is not a guess.
-
-It is:
+Outside that envelope, the correct result is:
 
 ```text
 OUTSIDE SUPPORTED DOMAIN
 External structural proof required.
 ```
 
-Unsupported is not equivalent to invalid, but it is never equivalent to proven.
+Unsupported is not invalid. It is also not proven.
 
 ## 8. Compiler targets
 
-A house does not compile against “the building regulations” in the abstract.
+A house never compiles against “the Building Regulations” in the abstract. Compilation is relative to an explicit, versioned **target**.
 
-Compilation must be against an explicit, versioned **target**.
-
-A target may eventually bind together:
+A target may bind:
 
 - jurisdiction;
 - regulatory date / transition regime;
@@ -302,51 +193,29 @@ A target may eventually bind together:
 - environmental and exposure assumptions;
 - project-specific requirements.
 
-A conceptual target might resemble:
+The first jurisdiction should be **England**, not “the UK”. The four UK nations have distinct regulatory systems. A first implementation should probably narrow further to new dwellings, a small range of one- and two-storey types, finite construction families and explicit site assumptions.
 
-```text
-England.NewDwelling.<regulatory-version>
-```
+Restriction is how the system earns stronger claims.
 
-The name is illustrative. The important idea is that a compiled result is always relative to a declared body of rules and assumptions.
+### Keep normative sources distinct
 
-### England as the first jurisdiction
+A target must distinguish:
 
-The initial research constraint should be **England**, not “the UK”.
-
-England, Wales, Scotland and Northern Ireland have distinct regulatory systems. Attempting to universalise them at the outset would weaken the proposition.
-
-An eventual first implementation should probably narrow further:
-
-- new-build dwellings;
-- a small range of one- and two-storey house types;
-- a finite catalogue of construction systems;
-- known material and structural families;
-- explicit site assumptions.
-
-Restriction is not a defect here. It is the source of stronger guarantees.
-
-### Regulation, guidance and standards are different things
-
-The target must preserve the distinction between:
-
-1. **legal requirements** — the applicable Building Regulations and other law;
-2. **statutory guidance / accepted compliance routes** — for example the relevant Approved Documents;
+1. **legal requirements** — applicable law and Building Regulations;
+2. **statutory guidance / accepted compliance routes** — for example Approved Documents;
 3. **technical standards** — British Standards, adopted European standards, Eurocodes and National Annexes where applicable;
-4. **product evidence** — declarations, certifications, manufacturer data and tested systems;
-5. **project requirements** — constraints chosen by the client or doctrine.
+4. **product evidence** — declarations, certification, manufacturer data and tested systems;
+5. **project requirements** — client or doctrine constraints.
 
-These should not be collapsed into one undifferentiated rule set.
+Approved Documents are not the legal requirements themselves. A compiler must say which compliance route it implements rather than silently treating guidance as law.
 
-Approved Documents provide guidance for common ways of satisfying the Building Regulations; they are not identical to the legal requirements themselves. A compiler target must therefore record **which compliance route it is implementing**, not silently redefine guidance as law.
-
-Likewise, British Standards and many related standards are copyrighted works. Any future machine-executable standards layer will require a deliberate licensing and provenance strategy rather than simply copying standards text into a repository.
+Standards also create licensing and provenance issues. A future executable standards layer cannot simply copy copyrighted text into the repository.
 
 ## 9. Compilation as obligation discharge
 
-A useful mental model is that compilation creates and attempts to discharge a graph of **obligations**.
+The central computational model is an **obligation graph**.
 
-For example:
+An opening might create:
 
 ```text
 opening W12
@@ -359,91 +228,50 @@ opening W12
   └─ replacement/access obligation
 ```
 
-An obligation may be discharged by:
+An obligation may be discharged by a deterministic rule, calculation, geometry query, tested library assembly, product evidence or approved external professional evidence.
 
-- a deterministic rule;
-- a calculation;
-- a geometry query;
-- a tested library assembly;
-- product evidence;
-- an approved external calculation or professional evidence item.
+If it cannot be discharged, it remains visible. The system fails closed rather than translating uncertainty into a green tick.
 
-An obligation that cannot be discharged must remain visible.
+A mature result should distinguish:
 
-The system should fail closed rather than converting uncertainty into a green tick.
-
-A mature compilation result might therefore distinguish:
-
-- **passed** — obligation resolved within the supported system;
-- **passed by declared external evidence** — obligation resolved by a referenced evidence item outside the compiler;
+- **passed** — resolved within the supported system;
+- **passed by declared external evidence** — resolved by referenced evidence outside it;
 - **warning / preference deviation** — valid but outside a preferred condition;
 - **failed** — rule violated;
-- **unsupported / unresolved** — the system does not know how to prove the condition.
+- **unsupported / unresolved** — the system cannot prove the condition.
 
-A successful release-grade compile should contain **no hidden unresolved obligations**.
+A release-grade compile contains no hidden unresolved obligations.
 
-## 10. The evidence bundle
+## 10. Evidence and outputs
 
-The output should not merely be a 3D model.
-
-The compiled building should carry enough provenance that another person can understand **why the system believes it is resolved**.
+The output is not merely geometry. Another person should be able to inspect **why** the system considers the design resolved.
 
 Potential outputs include:
 
 - coordinated semantic model;
 - 3D geometry and open exchange formats such as IFC where useful;
-- plans, sections, elevations and detail drawings;
-- structural calculation outputs and load-path records;
-- regulatory compliance matrix;
-- rule-by-rule evidence trace;
-- assumptions register;
-- standards and source-version register;
-- boundary register;
-- interface register;
+- plans, sections, elevations and details;
+- structural calculations and load-path records;
+- compliance matrix and rule-by-rule evidence trace;
+- assumptions and source-version registers;
+- boundary and interface registers;
 - tolerance/workmanship requirements;
-- quantity take-off;
-- bill of materials;
-- bill of quantities / cost-plan inputs;
+- quantity take-off, material schedules and cost-plan inputs;
 - embodied-carbon quantities where datasets permit;
-- component and product schedules;
-- assembly and inspection information;
-- maintenance and replacement information;
-- building record / handover dataset;
+- component/product schedules;
+- assembly, inspection, maintenance and replacement information;
+- handover/building-record data;
 - machine-readable compilation manifest.
 
-A manifest might eventually identify:
+A manifest should eventually identify source-model version or hash, compiler and target versions, rule packs, datasets, warnings, external evidence and generated artefacts.
 
-- source-model version or hash;
-- compiler version;
-- compiler target and version;
-- rule-pack versions;
-- input datasets;
-- unresolved warnings;
-- external evidence;
-- generated artefacts.
+The useful outcome is a reproducible building release, not an unexplained pass badge.
 
-The aspiration is a **verifiable, reproducible building release**, not an unexplained green badge.
+## 11. Proof boundary
 
-## 11. The proof boundary
+Compilation can prove propositions about **the model, under declared assumptions, inside the supported domain**. It cannot prove that the physical building matches the model simply because the model compiled.
 
-“Proof” is useful language only if its boundary remains explicit.
-
-A compiler can potentially prove propositions about **its model under declared assumptions and within its supported domain**.
-
-It cannot prove, merely by compiling, that physical construction will match that model.
-
-Examples of facts that may remain external include:
-
-- actual ground conditions before adequate site investigation;
-- material substitutions;
-- workmanship;
-- installation quality;
-- hidden site changes;
-- damage during construction;
-- commissioning results;
-- later unauthorised alterations.
-
-The computational system therefore divides the problem:
+Ground conditions, substitutions, workmanship, installation quality, concealed changes, construction damage, commissioning results and later alteration may remain external facts.
 
 ```text
 DESIGN CONFORMANCE
@@ -457,17 +285,13 @@ RESOLVED DIGITAL BUILDING
 PHYSICAL CONFORMANCE
 ```
 
-The design system proves what it legitimately can.
+Construction records, inspection, testing and commissioning establish whether reality corresponds sufficiently to the resolved design. Building control and professional responsibility remain real-world processes.
 
-Construction records, inspection, testing and commissioning establish whether reality corresponds sufficiently to the resolved design.
+The opportunity is not to compile them away, but to give them a more explicit and traceable evidence base.
 
-Building control and statutory responsibility are not “compiled away”.
+## 12. Mapping the doctrine into computation
 
-The stronger opportunity is to give them a far more explicit, traceable and inspectable body of evidence.
-
-## 12. Relationship to the Long-Life House principles
-
-The computational direction is unusually compatible with the existing doctrine because many of the doctrine's concerns are already about explicit relationships.
+Many Long-Life House principles concern relationships that are plausible candidates for formalisation.
 
 | Architectural doctrine | Possible computational expression |
 |---|---|
@@ -477,257 +301,129 @@ The computational direction is unusually compatible with the existing doctrine b
 | Failure architecture | failure paths and consequence zones become checkable obligations |
 | Maintenance geography | approach, working and withdrawal volumes become spatial constraints |
 | Ordinary parts in extraordinary arrangements | finite standard libraries and stable interfaces |
-| Let permanence be architectural | permanent spatial order can be a first-class constraint |
-| Passive architecture does the first work | passive performance strategies precede active-system elaboration |
+| Let permanence be architectural | permanent spatial order becomes a first-class constraint |
+| Passive architecture does the first work | passive strategies precede active-system elaboration |
 | Legibility across generations | compiled records preserve semantic intent and provenance |
 | Resolve technology as architecture | technical elements remain subject to the architectural grammar |
 
-Workmanship robustness also maps naturally:
+Workmanship robustness maps similarly: incoming tolerance becomes data; controlling datums become relationships; adjustment ranges and remediation thresholds become constraints; inspection points become explicit requirements.
 
-- incoming tolerance becomes declared data;
-- controlling datums become model relationships;
-- adjustment range becomes explicit;
-- remediation thresholds become constraints;
-- inspection points become compilation / construction requirements.
+This compatibility is a research opportunity, not proof that every doctrine proposition should become machine-enforceable.
 
-This compatibility is significant, but it should be investigated rather than used as proof that every doctrine proposition must become machine-enforceable.
+## 13. Patterns as a possible standard library
 
-## 13. Patterns may become a standard library
+A mature pattern could eventually have two representations:
 
-The pattern catalogue is a plausible bridge between doctrine and implementation.
+1. the architectural pattern — problem, forces, trade-offs, evidence and architectural resolution;
+2. a computational counterpart — typed inputs, constraints, compatible assemblies, obligations and outputs.
 
-A mature pattern might eventually have two representations:
+The analogy with a software standard library is useful but limited. Architectural patterns admit judgement and variants. The formal counterpart should encode only the subset that survives formalisation.
 
-1. the architectural pattern as published — problem, forces, trade-offs, evidence and architectural resolution;
-2. a formalised computational counterpart — typed inputs, constraints, compatible assemblies, obligations and generated outputs.
+## 14. Closed world by design
 
-That would make the catalogue resemble a **standard library of architectural responses**.
+The first compiler should **not** support arbitrary architecture.
 
-The analogy should not be pushed too far. A pattern is richer than a function and often admits judgement and variants.
+A small trusted language may support only a handful of house topologies, one jurisdiction, finite structural/span families, tested wall/floor/roof assemblies, known opening types, explicit service strategies, limited architectural grammars and predefined interfaces.
 
-Nevertheless, the distinction already present in the project is promising:
+Outside that language the legitimate options are to choose another supported solution, introduce external evidence, extend the language after research or leave the system.
 
-> doctrine says **why**;  
-> patterns describe reusable **ways**;  
-> a compiler could enforce the formal subset of **how**.
+Unsupported ideas should never acquire confidence merely because the software can draw them.
 
-## 14. A closed world is a feature
+## 15. A versionable building
 
-The first computational system should **not** attempt to compile arbitrary architecture.
+The same semantic source can outlive first construction.
 
-A small trusted language is more valuable than a vast permissive one if the purpose is strong guarantees.
+A future alteration could expose which permanent fabric, interfaces, boundaries and structural relationships change; which target applies; which components become obsolete; and what new evidence is required.
 
-The initial system might support only:
-
-- a handful of house topologies;
-- one jurisdiction;
-- a small set of structural grids and span families;
-- several tested wall/floor/roof assemblies;
-- known opening types;
-- explicit service strategies;
-- limited architectural grammars;
-- predefined interface families.
-
-A user who wants something outside the language has several legitimate outcomes:
-
-- choose another supported solution;
-- introduce an externally evidenced exception;
-- extend the language after proper engineering and research;
-- leave the system.
-
-The compiler should never respond to an unsupported architectural idea by quietly inventing confidence.
-
-## 15. The building becomes versionable
-
-The computational idea extends naturally beyond first construction.
-
-A future alteration could be represented as a change to the same semantic source model.
-
-The system could then expose:
-
-- what permanent fabric is affected;
-- what interfaces change;
-- what boundaries are disturbed;
-- what structure changes;
-- which rule target applies;
-- what components become obsolete;
-- what new evidence is required.
-
-This gives the building record an unusually strong form.
-
-The house is not merely handed over with drawings.
-
-It retains a **versioned description of what it is and why**.
-
-That directly serves the existing stewardship doctrine.
+The building record then becomes more than a set of drawings. It retains a versioned account of **what the building is and why**.
 
 ## 16. Trust architecture
 
-If this system is ever used to make safety or compliance claims, its own trustworthiness becomes part of the architectural problem.
+If the system makes safety or compliance claims, its own behaviour must be inspectable.
 
-The future implementation should therefore favour:
+Prefer deterministic checks for hard obligations, explicit provenance, versioned targets and datasets, conformance tests, inspectable calculations, audit logs, stable identifiers, declared assumptions, visible external proof obligations and open exchange formats where practical.
 
-- deterministic and reproducible checks for hard obligations;
-- explicit rule provenance;
-- versioned targets and datasets;
-- conformance test suites for rule implementations;
-- inspectable calculations;
-- audit logs;
-- stable identifiers for model entities and requirements;
-- declared assumptions;
-- visible external proof obligations;
-- open exchange formats where practical.
-
-AI may eventually be useful for:
-
-- interpreting user intent;
-- suggesting arrangements;
-- explaining failures;
-- navigating standards;
-- generating alternatives.
-
-It should not become an opaque authority whose unsupported assertion is treated as structural or regulatory proof.
+AI may help interpret intent, suggest arrangements, explain failures, navigate standards or generate alternatives. It should not become an opaque authority whose assertion is treated as structural or regulatory proof.
 
 The pass/fail path must remain auditable.
 
-## 17. Existing work and prior art
+## 17. Prior art and the actual research question
 
-This concept does not begin from a claim that computational design, BIM compliance checking or machine-readable rules are new.
+Computational design, BIM semantics and automated compliance checking are not new. Relevant directions include IFC/openBIM, IDS, rule-based BIM compliance and generative design, platforms such as Hypar, and increasingly structured digital building-control processes.
 
-Relevant existing directions include:
+The project should therefore make no novelty claim without a serious prior-art review.
 
-- **Industry Foundation Classes (IFC)** and the wider buildingSMART openBIM ecosystem for semantic building data and interoperability;
-- **Information Delivery Specification (IDS)**, which defines machine-interpretable information requirements and supports automated checking of IFC model information, while currently excluding general geometric checking;
-- research into **rule-based BIM compliance checking and generative design**, including systems in which formal rules can both evaluate and generate compliant arrangements;
-- computational building platforms such as **Hypar**, which package and execute building design logic and support rapid constrained planning;
-- digital building-control and change-control processes that increasingly depend on structured, traceable project information.
-
-The Long-Life House computational proposition should therefore be positioned as a **specific synthesis and extension**, not as a claim to have invented rule-based design.
-
-Its distinctive research question is narrower and stronger:
+Its narrower research question is:
 
 > **Can an architecturally opinionated, deliberately bounded domestic design language unify spatial grammar, tectonics, long-life doctrine, structure, selected regulatory obligations, quantities and evidence strongly enough that compilation produces a genuinely buildable house rather than merely a plausible model?**
-
-That question still requires a serious prior-art review before any novelty claim is made.
 
 ## 18. Anti-drift rules
 
 The following interpretations are rejected.
 
-- **“This is just BIM.”**  
-  No. BIM may be an interchange/output technology. The proposition is semantic constraint and compilation from a controlled architectural language.
+- **“This is just BIM.”** BIM may be an interchange/output technology; the proposition is semantic constraint and compilation from a controlled architectural language.
+- **“This is generative AI for houses.”** Generation may assist exploration; validity comes from explicit constraints, calculations and evidence.
+- **“The compiler replaces architects and engineers.”** It formalises repeatable knowledge. Competent judgement remains necessary outside the supported domain and wherever professional responsibility requires it.
+- **“A green compile means building-control approval.”** Compilation can assemble evidence against a target; statutory approval remains a legal process.
+- **“Approved Documents are the Building Regulations.”** The target must preserve the distinction between legal requirement and compliance route.
+- **“Beauty can be reduced to equations.”** The system can implement a declared grammar; it should not pretend to prove beauty.
+- **“Any geometry should be supported.”** The closed domain is what makes strong guarantees plausible.
+- **“Unsupported means probably fine.”** Unsupported produces an explicit proof obligation or failure.
+- **“The 3D model is the product.”** The product is the semantic building plus production information and evidence.
+- **“Implementation should begin immediately.”** Formalisation, prior-art work and a credible proof boundary come first.
 
-- **“This is generative AI for houses.”**  
-  No. Generation may assist exploration, but validity must come from explicit constraints, calculations and evidence.
+## 19. Canonical follow-on documents
 
-- **“The compiler replaces architects and engineers.”**  
-  Not as a premise. It relocates and formalises repeatable knowledge. Competent judgement remains necessary wherever the system's supported domain ends or where regulation, engineering and architecture require it.
-
-- **“A green compile means building control approval.”**  
-  No. Compilation can assemble evidence against a declared target. Statutory approval remains a real-world legal process.
-
-- **“Approved Documents are the Building Regulations.”**  
-  No. The target must preserve the distinction between legal requirement and a selected compliance route.
-
-- **“Anything aesthetically good can be reduced to equations.”**  
-  No. The system can implement a declared architectural grammar and evaluate defined relationships. It should not pretend to prove beauty.
-
-- **“Any geometry should be supported.”**  
-  No. The closed domain is the mechanism by which meaningful guarantees become possible.
-
-- **“Unsupported means probably fine.”**  
-  No. Unsupported conditions produce explicit proof obligations or failure.
-
-- **“The 3D model is the product.”**  
-  No. The product is the resolved semantic building plus its production information and evidence.
-
-- **“Implementation should begin immediately.”**  
-  No. The concept first needs formalisation, prior-art research and a credible proof boundary.
-
-## Research programme and canonical follow-on documents
-
-The computational concept now has a structured pre-implementation research programme.
-
-Before adding new computational work, consult:
+Before adding computational work, consult:
 
 - [Computational Track index](README.md);
-- [Research Programme](research-programme.md) — master workstreams, grand TODO register, dependency graph and implementation gates;
-- [Formal Architectural Model](formal-architectural-model.md) — semantic entity/relationship model;
-- [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md) — layered architectural-language model and proportion strategy;
-- [Validity and Obligations](validity-and-obligations.md) — what compile success/failure means and how obligations are discharged;
-- [Compiler Targets](compiler-targets.md) — versioned external normative environments;
-- [Supported Domain](supported-domain.md) — bounded compiler competence, including Domain S0 and candidate H1;
-- [Prior Art Map](prior-art-map.md) — current reconnaissance and unanswered prior-art questions.
+- [Research Programme](research-programme.md) — workstreams, grand TODOs, dependencies and implementation gates;
+- [Formal Architectural Model](formal-architectural-model.md) — entities and relationships;
+- [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md) — design-language model;
+- [Validity and Obligations](validity-and-obligations.md) — compile success/failure and discharge;
+- [Compiler Targets](compiler-targets.md) — versioned normative environments;
+- [Supported Domain](supported-domain.md) — bounded competence;
+- [Prior Art Map](prior-art-map.md) — reconnaissance and unanswered questions.
 
-These documents deliberately sit between the concept paper and any future implementation.
+These documents sit deliberately between concept and implementation.
 
-The current governing rule is:
+The original pre-implementation rule was:
 
 > **No formal language or software architecture before an end-to-end paper compilation has demonstrated that the semantic model, obligation system and evidence model cohere on a real piece of the Reference House.**
 
-## 19. Future development sequence
+That gate has since been exercised through the paper-compilation programme recorded in the track index. Current implementation authority is controlled by the latest research programme, not by this concept paper.
 
-No implementation work is authorised by this concept paper.
+## 20. Development sequence
 
-When the computational track is resumed, the recommended sequence is:
+The conceptual sequence remains:
 
-1. **Prior-art review**  
-   Map existing generative design, BIM semantics, automated code checking, structural design automation, digital permitting, formal methods and building-product data.
+1. prior-art review;
+2. supported-domain definition;
+3. semantic model;
+4. obligation taxonomy;
+5. compiler-target model;
+6. proof/evidence model;
+7. minimal formal grammar;
+8. bounded Reference House conformance case;
+9. smallest interactive implementation capable of falsifying the central proposition.
 
-2. **Supported-domain definition**  
-   Define the first house types, jurisdiction, construction systems and exclusions.
+The first useful software milestone is not “draw a house in 3D”. It is:
 
-3. **Semantic model**  
-   Define what entities exist and what relationships matter before choosing syntax or CAD technology.
+> **Represent one small but real piece of domestic architecture semantically enough that an invalid change produces an intelligible failure and a valid change produces traceable downstream evidence.**
 
-4. **Obligation taxonomy**  
-   Separate architectural grammar, doctrine invariants, structure, regulation, standards, product evidence, project requirements and preferences.
+## 21. Repository position
 
-5. **Compiler-target model**  
-   Define how jurisdiction, date, standards, compliance routes and assumptions are versioned.
+This document remains the canonical statement of the computational concept. It is not a governing principle or numbered manuscript part.
 
-6. **Proof / evidence model**  
-   Define what a successful compile claims, how claims are evidenced, and which conditions remain external.
-
-7. **Minimal formal grammar**  
-   Only then define the first machine-readable primitives, types and rules.
-
-8. **Reference-house conformance case**  
-   Attempt to express a tightly bounded fragment of the Reference House and discover where the model fails.
-
-9. **Prototype authoring environment**  
-   Build the smallest interactive environment capable of proving or disproving the central idea.
-
-The first software milestone should not be “draw a house in 3D”.
-
-It should be:
-
-> **Represent one small but real piece of domestic architecture semantically enough that an invalid change produces an intelligible compile failure and a valid change produces traceable downstream evidence.**
-
-## 20. Current repository position
-
-For now, this document is the canonical record of the computational concept.
-
-It is deliberately **not yet integrated as a new governing principle or a numbered manuscript part**.
-
-The next publication-level decision should be made only after the formal model and prior-art work establish whether executable architecture belongs:
-
-- as a final part of the monograph;
-- as a companion research volume;
-- as a separate software/product specification;
-- or as some combination of the above.
+Whether executable architecture eventually belongs in the monograph, a companion research volume, a software/product specification or some combination should be decided only after the formal model, external review and executable falsification work justify it.
 
 The architectural project remains primary.
-
-The computational ambition is to make more of that architecture **executable, constrained, reproducible and verifiable**.
-
-> **Do not merely draw a house and check it afterwards. Define a language in which a resolved house can be compiled.**
 
 ---
 
 ## Initial reference points
 
-These are starting points for later research, not an exhaustive literature review.
+Starting points for later research, not an exhaustive literature review:
 
 - buildingSMART International, **Industry Foundation Classes (IFC)** and openBIM standards: https://www.buildingsmart.org/standards/
 - buildingSMART International, **Information Delivery Specification (IDS)**: https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/
