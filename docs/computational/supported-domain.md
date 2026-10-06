@@ -1,49 +1,22 @@
-# Supported Domain — Candidate v0.1
+# Supported Domain — Candidate v0.2
 
 **Status:** Gate-B capability definition draft  
-**Purpose:** define the bounded world within which a future compiler may eventually make strong claims, without confusing architectural grammar, regulation or project ambition with what the system can actually prove.  
-**Implementation:** none.
+**Purpose:** define the bounded world within which a future compiler may make strong claims without confusing architecture, regulation or project ambition with what the system can actually establish  
+**Implementation:** none
 
 > **The supported domain is the compiler's competence boundary. It is not the limit of architecture.**
 
 ## 1. Why the domain exists
 
-The executable-architecture proposition depends on strong guarantees.
+Strong guarantees require narrow competence.
 
-Strong guarantees become credible only when the system is explicit about what it understands.
+A universal building compiler would need to understand every structural system, site condition, building type, regulatory route, material, fire strategy, construction process and architectural morphology. That is not a credible first research target.
 
-A universal building compiler would need to reason across:
+The better model is **closed but extensible**.
 
-- every structural system;
-- every site condition;
-- every building type;
-- every regulatory route;
-- every material;
-- every fire strategy;
-- every construction process;
-- every architectural morphology.
+Inside the domain, entities and relationships are known, technical families have bounded proof routes, interfaces are understood and evidence expectations are explicit. Outside it, a design is not automatically wrong or unlawful; the compiler simply stops claiming native proof.
 
-That is not a sensible first research target.
-
-The better strategy is a **closed but extensible domain**.
-
-Inside the domain:
-
-- entities and relationships are known;
-- structural families have bounded proof envelopes;
-- construction interfaces are known;
-- regulatory routes are supported;
-- evidence expectations are defined;
-- outputs can be generated confidently.
-
-Outside the domain:
-
-- the design is not automatically rejected as bad or illegal;
-- the compiler simply does not claim native proof.
-
-## 2. Domain is distinct from target, grammar and project
-
-The supported domain is one part of the build configuration.
+## 2. Domain is not target, grammar, doctrine or project
 
 ~~~text
 BUILD CONFIGURATION
@@ -61,569 +34,237 @@ PROJECT / SITE CONFIGURATION
 SOURCE MODEL
 ~~~
 
-These layers answer different questions.
+These answer different questions:
 
-### Compiler target
+- **Compiler target:** which external normative environment applies?
+- **Supported domain:** what building types, systems and parameter ranges can the compiler reason about?
+- **Architectural grammar:** what design language is selected?
+- **Doctrine profile:** which Long-Life House propositions are mandatory?
+- **Project/site configuration:** what particular site, brief, climate, ground and client facts apply?
 
-What external normative environment applies?
+A detached masonry house can be technically inside H1 and fail G-01. A beautiful G-01 house can sit outside supported structural competence. Those distinctions should remain visible.
 
-Example:
+## 3. First prove the compiler on ordinary construction
 
-- England;
-- new dwelling;
-- a defined regulatory snapshot and compliance-route set.
+The Long-Life House contains experimental systems such as the seated floor structure, architectural backplane, replaceable wall lining and finish-agnostic floor platform.
 
-### Supported domain
+None should define the trusted baseline before its own calculation, prototype and evidence work is complete.
 
-What kinds of buildings, systems and parameter ranges does the compiler know how to reason about?
+The first whole-house domain should therefore use the best conventional or already established technical answer wherever practical.
 
-### Architectural grammar
+That isolates the computational research question:
 
-What design language should the house belong to?
+> **Can the compiler architecture work on a technically ordinary house?**
 
-### Doctrine profile
+Experimental assemblies can enter later as explicit domain extensions once they earn promotion.
 
-Which Long-Life House propositions are mandatory for this project?
+## 4. Two useful domain scales
 
-### Project/site configuration
+### S0 — reference-slice domain
 
-What are the particular site, brief, ground, climate and client facts?
+The smallest integrated fixture: one principal room edge, one external masonry wall bay, one window opening, one upper-floor bearing, one local service/interface condition and the relevant boundary/evidence obligations.
 
-Do not collapse these.
+S0 exists to test semantics, obligation generation, evidence dependencies, target interaction and controlled mutation. It is a research fixture, not a miniature product.
 
-A detached masonry house may be inside the technical domain while failing G-01.
+### H1 — first whole-house trusted domain
 
-A beautiful G-01 house may be outside the supported structural domain.
+A deliberately narrow family of complete houses. H1 should be defined before software implementation, while exact engineering envelopes remain open until competent evidence exists.
 
-Those are useful distinctions.
-
-## 3. The first whole-house domain should be conservative
-
-The current Long-Life House project contains several experimental assemblies:
-
-- seated floor structure;
-- architectural backplane;
-- replaceable wall lining;
-- finish-agnostic floor platform.
-
-None is yet mature enough to define the trusted compiler baseline.
-
-The first supported whole-house domain should therefore use the **best conventional or already well-established technical answer** wherever possible.
-
-This is strategically important.
-
-If the compiler concept only works when paired with unproven construction inventions, two research problems become entangled.
-
-The first compiler domain should answer:
-
-> **Can the computational architecture work on a technically ordinary house?**
-
-Only later should experimental Long-Life House assemblies be promoted into supported-domain extensions after calculation, prototype and evidence work.
-
-## 4. Two domain levels
-
-The project should distinguish two pre-implementation domain concepts.
-
-### Domain S0 — reference-slice domain
-
-The smallest domain needed for the first paper compilation.
-
-It should cover one real integrated slice:
-
-- one principal room edge;
-- one external masonry wall bay;
-- one window opening;
-- one upper floor bearing;
-- one local service/interface condition;
-- relevant boundaries;
-- relevant evidence obligations.
-
-Purpose:
-
-- test semantic model;
-- test obligation generation;
-- test evidence dependencies;
-- test compiler-target interaction;
-- test one deliberate mutation.
-
-S0 is not a miniature product.
-
-It is the **research integration fixture**.
-
-### Candidate Domain H1 — first whole-house trusted domain
-
-A deliberately narrow family of complete houses.
-
-H1 should be defined before software implementation, but exact engineering envelopes should remain blank until competent technical work provides them.
-
-## 5. Candidate H1 — building/use scope
+## 5. H1 building/use scope
 
 Provisional inclusion:
 
 - new-build;
-- single household;
-- dwelling;
-- low-rise;
-- detached;
+- single-household dwelling;
+- low-rise and detached;
 - private domestic occupation;
 - no change of use;
 - no existing-building fabric;
-- no heritage designation dependency.
-
-Provisional vertical form:
-
+- no heritage-designation dependency;
 - one or two principal storeys;
-- roof space only where it remains inside a supported roof/use condition;
+- roof space only within a supported roof/use condition;
 - no basement in H1.
 
-Why detached first?
+Detached comes first because it removes party-wall, attached-neighbour fire/acoustic, ownership and adjoining-construction complications that are not central to testing the compiler concept.
 
-Because this removes several complications that are not central to proving the compiler concept:
-
-- party-wall interfaces;
-- attached-neighbour fire/acoustic conditions;
-- ownership interfaces;
-- heterogeneous adjoining construction.
-
-Semi-detached and terraced houses can become later domain extensions.
-
-## 6. Candidate H1 — morphology
+## 6. H1 morphology
 
 Initial geometry should be intentionally legible.
 
-Provisional inclusion:
+Include orthogonal primary plans, rectangular or composited-rectangular rooms, simple projections/recesses, conventional openings, one coherent volume or a few clearly related volumes, conventional stairs and simple pitched/hipped roof families once defined.
 
-- orthogonal primary plan geometry;
-- rectangular and composited-rectangular rooms;
-- simple projections/recesses;
-- conventional openings;
-- one coherent primary building volume or a small number of clearly related volumes;
-- conventional stairs;
-- simple pitched or hipped roof families once technically defined.
+Exclude initially: doubly curved structure, free-form shells, major cantilevers, complex transfers, highly irregular floors, extreme split levels, occupiable bridges, long-span halls and deep atria needing unusual smoke/fire engineering.
 
-Provisional exclusions:
+These are competence exclusions, not aesthetic judgements.
 
-- doubly curved structure;
-- free-form shells;
-- large unsupported cantilevers;
-- complex transfer structures;
-- highly irregular floor plates;
-- extreme split-level conditions;
-- occupiable bridges;
-- long-span halls;
-- deep atria requiring unusual smoke/fire engineering.
-
-These exclusions are not aesthetic judgements.
-
-They remove geometries whose technical resolution would dominate the research.
-
-## 7. Candidate H1 — structural family
+## 7. H1 structural family
 
 ### Walls
 
-Working baseline:
-
-- conventional masonry construction;
-- dense masonry inner leaf where consistent with the selected wall family;
-- ordinary lintel/opening families within declared limits;
-- no assumption that the removable wall lining is structural.
+Working baseline: conventional masonry, dense inner leaf where compatible with the selected family, ordinary opening/lintel families within declared limits, and no assumption that removable lining is structural.
 
 ### Upper floors
 
-Working baseline already established by the project:
+Working baseline:
 
 - engineered timber I-joists;
-- manufacturer/engineer-supported span/depth/centres;
+- manufacturer/engineer-supported span, depth and centres;
 - certified restraint-type masonry hanger or another ordinary supported connection family;
-- structural deck provides diaphragm action;
-- routine services are not assumed to use the joist zone as their default distribution route.
+- structural deck providing diaphragm action;
+- routine service distribution kept out of the joist zone by default.
 
-For **H1 v0**, [SAB-H1-01](structural-assurance-boundary-h1-v01.md) fixes the assurance boundary:
-
-- structural identity/topology/geometry/dependencies are native compiler concerns;
-- member, connection, stability and foundation adequacy may be discharged by scoped external engineering evidence;
-- later native proof families may be admitted incrementally.
-
-This avoids making general structural-design automation a prerequisite for the first product domain.
+For **H1 v0**, [SAB-H1-01](structural-assurance-boundary-h1-v01.md) fixes the assurance boundary: structural identity, topology, geometry and dependencies are native; member, connection, stability and foundation adequacy may use scoped external engineering evidence. Native proof families can be admitted later.
 
 ### Local beams / trimmers
 
-Permitted only through defined supported families and envelopes.
-
-LVL or steel may eventually be included for:
-
-- stair trimmers;
-- larger openings;
-- local collectors;
-- concentrated conditions.
-
-But H1 should not depend on arbitrary steel transfer design.
+Only through defined families and envelopes. LVL or steel may eventually serve stairs, larger openings, local collectors or concentrated conditions, but H1 should not depend on arbitrary transfer design.
 
 ### Stability
 
-The domain must eventually define:
-
-- lateral load path;
-- wall restraint;
-- diaphragm assumptions;
-- robustness/tie strategy where applicable.
-
-H1 cannot be called structurally supported until these are explicit.
+H1 must eventually declare the lateral load path, wall restraint, diaphragm assumptions and robustness/tie strategy where applicable. It cannot be called structurally supported until these are explicit.
 
 ### Foundations
 
-Do not fake a foundation domain before site/structural research exists.
+Do not invent a native foundation domain ahead of geotechnical/structural research. **H1 v0 uses scoped external foundation/ground evidence.** A simple shallow-foundation family may be promoted later when its site envelope and proof route are bounded.
 
-**H1 v0 decision:** foundations remain permitted only through scoped external geotechnical/structural evidence.
+## 8. H1 envelope family
 
-A simple shallow-foundation family may later be promoted into native support once its site/ground envelope and proof route are explicit.
-
-## 8. Candidate H1 — envelope family
-
-The current Reference House coordination study provides a useful candidate family, but dimensions remain provisional.
-
-Conceptual baseline:
+Candidate baseline:
 
 - facing-brick outer leaf;
 - drained cavity;
-- insulation layer;
+- insulation;
 - dense masonry inner leaf;
 - explicit primary environmental boundary;
-- conventional internal finish as trusted baseline.
+- conventional internal finish as trusted control.
 
-The domain should support a **small finite family of wall assemblies**, not arbitrary user-built layer stacks.
+Support a small finite set of wall families rather than arbitrary user-built layer stacks.
 
-Every supported wall family must eventually declare:
+Each family should eventually declare structural role, thermal route/properties, moisture strategy, air-control strategy, opening/detail families, permitted penetrations, floor/roof compatibility and evidence envelope.
 
-- structural role;
-- thermal properties and calculation route;
-- moisture strategy;
-- air-control strategy;
-- opening/detail families;
-- allowable penetrations;
-- compatibility with floor/roof interfaces;
-- evidence envelope.
-
-## 9. Candidate H1 — internal finish baseline
-
-The trusted baseline should initially be:
+## 9. H1 internal finish baseline
 
 ### W1 — conventional mineral/plaster finish
 
-Use where service/fixing demand is low.
-
-Why start here?
-
-Because:
-
-- it is technically ordinary;
-- it provides a control;
-- it avoids making compiler research depend on W2 success.
+Trusted control for low-service walls because it is technically ordinary and does not make compiler research depend on W2.
 
 ### W2 — backplane + removable mineral lining
 
-Remain a **domain extension candidate**.
+An extension candidate only. Promotion requires successful wall-bay prototype, load classes, boundary behaviour, acoustic/tactile acceptance, tolerance strategy, representative-installer success and evidence package.
 
-Promotion conditions should include:
+## 10. H1 floor-finish baseline
 
-- wall-bay prototype success;
-- load-class definition;
-- boundary behaviour;
-- acoustic/tactile acceptance;
-- tolerance strategy;
-- representative-installer success;
-- evidence package.
+Start with structural deck, conventional acoustic/levelling build-up and conventional finish-specific timber/tile/stone systems.
 
-The compiler should eventually be able to support W2.
+The full finish-agnostic removable platform remains outside H1. A local access band can become an extension if physical evidence justifies it.
 
-It should not pretend to already.
+Conventional construction remains the baseline; novelty earns promotion.
 
-## 10. Candidate H1 — floor finish baseline
+## 11. H1 roof family
 
-Initial trusted floor:
-
-- structural deck;
-- conventional acoustic/levelling build-up;
-- conventional timber/tile/stone finish-specific systems as appropriate.
-
-The full finish-agnostic removable platform remains outside H1.
-
-A local access band may eventually become an extension if prototype evidence justifies it.
-
-This preserves the project principle:
-
-> **conventional construction is the baseline; novelty earns promotion.**
-
-## 11. Candidate H1 — roof family
-
-The roof is currently less developed than the wall/floor system.
-
-H1 should therefore not quietly assume arbitrary roof competence.
-
-The first family is now selected:
+The first selected family is:
 
 - [RF-TRUSS-DUO-01 — Simple Duo-Pitched Trussed-Rafter Cold Roof](roof-family-trussed-duopitch-v01.md).
 
-It deliberately uses:
+It uses prefabricated timber trussed rafters, simple rectangular/duo-pitched geometry, an uninhabited roof void, ceiling-level thermal/air boundary and manufacturer/engineer structural design as scoped external evidence under SAB-H1-01.
 
-- prefabricated timber trussed rafters;
-- simple rectangular/duo-pitched geometry;
-- uninhabited roof void;
-- ceiling-level thermal/air boundary;
-- manufacturer/engineer structural design as scoped external evidence under SAB-H1-01.
+A supported roof family must define geometry, spans, bearings, stability, openings, insulation/air/moisture strategy, drainage, maintenance access and evidence route.
 
-Later families may include conventional cut/engineered roofs or simple hipped derivatives.
+Complex flat/green roofs, large rooflights and unusual structures remain later extensions unless separately researched.
 
-Each roof family must define:
+## 12. H1 openings
 
-- supported geometry;
-- spans;
-- bearing/support;
-- stability;
-- openings;
-- insulation/air/moisture strategy;
-- drainage;
-- maintenance access;
-- evidence route.
+Openings should be finite supported families: ordinary window in cavity masonry, external door, internal door and selected larger opening within declared support limits.
 
-Complex flat roofs, green roofs, large rooflights and unusual roof structures should be later extensions unless deliberately researched.
+The Long-Life House pattern **permanent opening / replaceable window** fits particularly well. A supported opening family should carry its head support, jamb/sill/head geometry, weather/thermal/air transition, fixing/replacement interface, opening-component envelope and evidence.
 
-## 12. Candidate H1 — openings
+### Principal entrance
 
-Supported openings should be finite families.
+The first entrance family is [ENTR-DOOR-MCW-01 — Principal External Doorset in Masonry Cavity Wall](entrance-family-principal-masonry-v01.md), treating threshold/access, security, weather, air, thermal continuity, moisture, structure, replacement and arrival as one composed interface.
 
-Examples:
+## 13. H1 service topology
 
-- ordinary window opening in cavity masonry;
-- external door opening;
-- internal door;
-- standard-width larger opening within declared lintel/beam envelope.
-
-The existing Long-Life House pattern:
-
-**permanent opening / replaceable window**
-
-is particularly compatible with the computational approach.
-
-A supported opening family should eventually carry:
-
-- structural-head solution;
-- jamb/sill/head geometry;
-- weather/water strategy;
-- thermal/air-boundary transition;
-- fixing/replacement interface;
-- opening component envelope;
-- evidence.
-
-## 12A. Candidate H1 — principal entrance
-
-The first entrance family is now:
-
-[ENTR-DOOR-MCW-01 — Principal External Doorset in Masonry Cavity Wall](entrance-family-principal-masonry-v01.md).
-
-It treats the threshold as one composed interface across:
-
-- Part-M access;
-- Part-Q security;
-- weather;
-- air;
-- thermal continuity;
-- wall/floor moisture strategy;
-- structural opening;
-- replacement;
-- architectural arrival.
-
-## 13. Candidate H1 — service topology
-
-The domain should take advantage of established Long-Life House patterns that do not require exotic construction.
-
-Initial supported strategies may include:
+Early supported strategies may include:
 
 - controlled utility entry;
 - compact plant/service hub;
-- planned vertical service routes;
+- planned vertical routes;
 - horizontal service spine;
 - [SR-ROOM-LOW-01](service-family-room-low-level-v01.md) for accessible low-level room distribution;
 - high-service-room service wall;
 - designed structural penetrations;
 - water-damage-safe routes;
-- source-capture kitchen extract;
-- bathroom extraction;
+- source-capture kitchen and bathroom extraction;
 - accessible principal isolation;
 - explicit drainage/fall routes.
 
-These are strong candidates for early computational formalisation because their value is largely topological and relational.
+These are attractive first computational targets because much of their value is topological.
 
-The domain should **not** initially support:
+Do not initially permit arbitrary routing through any available void, random masonry chasing or uncontrolled drilling/notching of primary structure.
 
-- arbitrary routing anywhere a void exists;
-- random chasing of permanent masonry;
-- uncontrolled drilling/notching of primary structure.
+## 14. H1 heating, ventilation and electrical systems
 
-## 14. Candidate H1 — heating / ventilation / electrical systems
-
-Do not attempt to support every domestic system.
-
-The domain should eventually select explicit system families.
-
-Examples for future decision:
+The domain should support named families rather than generic “HVAC”.
 
 ### Heating
 
-First H1 family selected:
+First family:
 
 - [HEAT-ASHP-RAD-01 — Air-to-Water Heat Pump + Low-Temperature Radiators](heating-family-ashp-radiators-v01.md).
 
-The family deliberately uses:
+It uses replaceable external plant, accessible internal hydraulic hub, replaceable low-temperature radiators, accessible distribution routes and competent external heat-loss/sizing/commissioning evidence.
 
-- replaceable external heat-pump plant;
-- accessible internal hydraulic/plant hub;
-- low-temperature replaceable room radiators;
-- accessible service-spine / low-level pipe routes;
-- competent external heat-loss, sizing and commissioning evidence.
-
-Embedded wet underfloor heating is **not** an H1 baseline because it places a large service network inside the floor fabric.
+Embedded wet underfloor heating is not an H1 baseline because it places a large service network inside the floor fabric.
 
 ### Ventilation
 
-First H1 family selected:
+First family:
 
 - [VENT-CMEV-01 — Central Continuous Mechanical Extract](ventilation-family-cmev-v01.md).
 
-It uses:
+It uses one accessible extract unit, wet-room extract ducting in declared service zones, designed habitable-room background inlets, transfer-air routes and openable-window purge ventilation.
 
-- one accessible central extract unit;
-- wet-room extract ducting in declared service zones;
-- designed habitable-room background inlets;
-- internal transfer-air routes;
-- openable-window purge ventilation.
+[MVHR](h1-ventilation-strategy-decision-v01.md) remains a higher-performance extension candidate and may be preferable in a Reference House where heat recovery, comfort and filtration justify the added duct/filter/condensate burden.
 
-The choice is deliberate: it works for airtight dwellings under the selected Part-F routes while avoiding MVHR's second duct network, heat exchanger, filters and condensate as H1 prerequisites.
+### Electrical / data
 
-[MVHR](h1-ventilation-strategy-decision-v01.md) remains a higher-performance extension candidate, and may be the stronger Reference House choice where comfort, filtration and heat recovery justify the maintenance/duct complexity.
+Use competent electrical topology, room-side service zones/defined routes and controlled structural crossings. Native support still requires named families rather than an assertion that all systems are understood.
 
-### Electrical/data
+## 15. H1 wet rooms
 
-- radial/ring/lighting topology as required by competent electrical design;
-- room-side service zones / defined routes;
-- controlled structural crossings.
+Wet rooms combine water, drainage, ventilation, electrical zones, waterproofing, maintenance and finish; the first domain should constrain them deliberately.
 
-The point is not to settle these systems here.
+H1 uses [WET-CORE-01 — Clustered Wet Core with Zonal Service Walls](wet-service-family-core-v01.md), preferring clustered bathrooms/utility/kitchen, short gravity branches, accessible stacks, zonal hot/cold isolation, adjacent plant/hot-water cylinder, explicit Part G/H routes and accessible traps, valves and rodding points.
 
-It is to require **named supported families** before native proof.
+Exact waterproofing remains a separate product/detail family.
 
-## 15. Candidate H1 — wet rooms
+## 16. H1 site envelope
 
-Wet rooms should be deliberately constrained because they combine:
+Whole-house proof needs a bounded site context. Candidate restrictions include ordinary low-rise residential site, non-extreme topography, no basement or retaining-wall-dominated design, no known flood-driven special structural form, no unresolved contamination constraint, ordinary construction access, and declared wind/exposure and ground conditions.
 
-- water;
-- drainage;
-- ventilation;
-- electrical zones;
-- waterproofing;
-- maintenance;
-- finishes.
+Do not invent exact thresholds until the technical research exists. Unknown site facts become explicit assumptions or external evidence obligations.
 
-H1 now uses:
+## 17. H1 fire and vertical circulation
 
-- [WET-CORE-01 — Clustered Wet Core with Zonal Service Walls](wet-service-family-core-v01.md).
+The first domain should avoid novel fire engineering: simple single-family strategy, ordinary escape/protection routes inside supported targets, no atrium smoke-control system, mixed use, basement complexity or unusual compartmentation.
 
-It prefers:
+### Stair family
 
-- bathrooms/utility/kitchen arranged around one accessible wet-service core;
-- short gravity branches to a small number of accessible stacks;
-- zonal hot/cold isolation close to each wet room rather than remote home-runs to every outlet;
-- plant/hot-water cylinder adjacent to the core;
-- explicit Part-G/H routes;
-- accessible traps/valves/rodding points;
-- high-consequence appliances inside failure-tolerant service zones;
-- no bespoke hidden wet-service labyrinths.
+[ST-PRIVATE-01 — Private Timber Stair with Straight Flights and Rectangular Landings](stair-family-private-v01.md) supports one/two straight flights, rectangular landings, closed risers, conventional guarding/handrails, private-dwelling Part K geometry and native floor-opening/headroom/circulation semantics. Member, fixing and floor-trimmer adequacy remain scoped external structural evidence.
 
-Exact waterproofing assemblies remain a separate product/detail family.
+Winders, spirals, alternating treads and sculptural stairs remain outside the first family. Fire/escape and accessibility roles remain contextual obligations rather than permanent properties of the stair entity.
 
-## 16. Candidate H1 — site envelope
+### Fire / escape family
 
-A whole-house compiler cannot make trustworthy claims with arbitrary site conditions.
+[FIRE-H1-2S-EGRESS-01 — Two-Storey Dwelling with Escape-Window Route](fire-family-two-storey-egress-v01.md) is intentionally narrow: detached ground+one-upper-storey dwelling, upper storey within the selected ≤4.5 m route, one ordinary stair, escape windows to upper habitable rooms, ordinary alarm obligation and ground hall connection to the principal final exit.
 
-The project should eventually define a supported site envelope.
+Protected-stair, open-plan and taller arrangements are separate families. This family remains a research candidate until competent external review.
 
-Candidate restrictions for H1:
+## 18. Grammar and doctrine remain independent
 
-- ordinary low-rise residential site;
-- non-extreme topography;
-- no retaining-wall-dominated design;
-- no basement excavation;
-- no known flood-driven special structural form;
-- no unresolved contamination constraints;
-- ordinary access for construction;
-- declared wind/exposure inputs;
-- declared ground conditions.
+H1 must not encode “Georgian”, symmetry, classical openings or Palladian proportions. Those belong to G-01 or another grammar.
 
-Do not turn these into exact thresholds until appropriate technical research exists.
-
-Where site facts are unknown, they become explicit assumptions or external evidence obligations.
-
-## 17. Candidate H1 — fire and complexity
-
-The first domain should deliberately avoid designs that require novel fire engineering.
-
-Prefer:
-
-- simple single-family dwelling fire strategy;
-- ordinary protected/escape arrangements within supported regulatory routes;
-- no atrium/smoke-control system;
-- no mixed use;
-- no basement complexity;
-- no unusual compartmentation strategy.
-
-Again, this is not an assertion that other houses are unsafe.
-
-It is a competence boundary.
-
-## 17A. Candidate H1 — stair family
-
-The first vertical-circulation family is now:
-
-[ST-PRIVATE-01 — Private Timber Stair with Straight Flights and Rectangular Landings](stair-family-private-v01.md).
-
-H1 v0 deliberately supports:
-
-- one/two straight flights;
-- rectangular landings;
-- closed risers;
-- conventional handrails/guarding;
-- private-dwelling Part-K geometry;
-- native floor-opening/headroom/circulation semantics;
-- external structural evidence for stair members, fixings and floor trimmers.
-
-Winders, spirals, alternating treads and sculptural stairs remain outside the first family.
-
-Fire/escape and accessibility roles remain contextual building/target obligations rather than properties permanently baked into the stair object.
-
-## 18. Candidate H1 — architectural grammar independence
-
-H1 should be able to host more than one architectural grammar.
-
-Therefore H1 must not encode:
-
-- “Georgian”;
-- symmetry;
-- classical openings;
-- Palladian proportions.
-
-Those belong to G-01.
-
-The same technical H1 house might theoretically compile under another architectural grammar.
-
-This separation is one of the strongest tests that the architecture of the system is correct.
-
-## 19. Candidate H1 — doctrine independence
-
-Likewise, H1 should not assume every Long-Life House preference.
-
-A project may technically compile inside H1 while failing the doctrine profile.
-
-Example:
+Likewise, a project may pass the technical domain and regulatory target while failing the Long-Life House doctrine:
 
 ~~~text
 SUPPORTED DOMAIN       PASS
@@ -632,306 +273,155 @@ STRUCTURE              PASS
 LONG-LIFE DOCTRINE     FAIL
 ~~~
 
-That output is meaningful.
+This separation is a test of the system architecture, not an inconvenience.
 
-The technical compiler competence and architectural doctrine must remain separable.
+## 19. Native, external and unsupported capability
 
-## 19A. Candidate H1 — fire / escape family
-
-The first bounded whole-house fire/escape route is:
-
-[FIRE-H1-2S-EGRESS-01 — Two-Storey Dwelling with Escape-Window Route](fire-family-two-storey-egress-v01.md).
-
-It is intentionally narrow:
-
-- detached dwelling;
-- ground + one upper habitable storey;
-- upper storey within the selected <=4.5 m route;
-- one ordinary stair;
-- upper habitable rooms use emergency escape windows;
-- ordinary alarm-system obligation;
-- ground hall connects to the principal final exit.
-
-Protected-stair/open-plan/taller arrangements are other families.
-
-This fire family remains a **research candidate until competent external review**.
-
-## 20. Native proof / external proof / unsupported
-
-Each H1 capability should ultimately be assigned one of three states.
+Each capability should be classified as:
 
 ### NATIVE
-
-The compiler can discharge the obligation using trusted internal rules/calculations/evidence families.
+The compiler discharges the obligation with trusted internal rules/calculations/evidence families.
 
 ### EXTERNAL
-
-The condition is permitted, but proof must be supplied by an external competent source.
-
-Example:
-
-- early foundation/geotechnical evidence;
-- unusual local beam connection;
-- specialist product-specific calculation.
+The condition is permitted, but proof comes from a competent external source.
 
 ### UNSUPPORTED
+No accepted proof route exists. Change the design, extend the domain or leave the compiler guarantee.
 
-The system has no accepted route.
+Half-support is worse than an explicit boundary.
 
-The project must:
-
-- alter the design;
-- extend the domain;
-- or leave the compiler's guarantee.
-
-This is preferable to half-support.
-
-## 21. Domain capability matrix — provisional
+## 20. Provisional H1 capability matrix
 
 | Area | H1 initial posture | Notes |
 |---|---|---|
 | New detached single-family house | Native candidate | First whole-house typology |
 | One/two storeys | Native candidate | Exact constraints later |
-| Basement | Unsupported | Add later if justified |
+| Basement | Unsupported | Later extension |
 | Orthogonal plan | Native candidate | Curvilinear special cases later |
-| Cavity masonry envelope | Native candidate | Finite wall-family library |
-| Engineered I-joist upper floor | Native topology / external adequacy in H1 v0 | SAB-H1-01; future bounded native proof family possible |
+| Cavity masonry envelope | Native candidate | Finite family library |
+| Engineered I-joist upper floor | Native topology / external adequacy in H1 v0 | SAB-H1-01 |
 | Conventional plaster/mineral lining | Native candidate | Trusted control |
-| W2 removable lining/backplane | Extension candidate | Requires prototype/evidence |
+| W2 removable lining/backplane | Extension candidate | Prototype/evidence required |
 | Full removable floor platform | Unsupported initially | Experimental |
 | Local floor-access band | Extension candidate | Prototype dependent |
-| Simple duo-pitched trussed roof | **Supported candidate** | RF-TRUSS-DUO-01; truss adequacy external, geometry/boundaries native semantics |
-| Arbitrary steel frame | Unsupported | Local defined beams may be allowed |
+| Simple duo-pitched trussed roof | Supported candidate | RF-TRUSS-DUO-01; adequacy external, geometry/boundaries semantic/native |
+| Arbitrary steel frame | Unsupported | Defined local beams may be allowed |
 | Complex transfer structure | Unsupported | Outside initial purpose |
-| Simple masonry openings | Native semantics / external structural adequacy initially | Boundary family can be native while lintel/masonry capacity remains scoped external evidence |
-| Long-span opening | External/unsupported | Depends on future structural domain |
-| Controlled service spine | Native candidate | Strong doctrine/pattern basis |
-| High-service wall | Native candidate | Technical build-up to define |
-| Arbitrary service routing | Unsupported | Deliberately |
-| Ordinary site | Candidate | Site thresholds unresolved |
+| Simple masonry openings | Native semantics / external structural adequacy initially | Boundary family can be native while capacity remains external |
+| Long-span opening | External/unsupported | Future structural domain |
+| Controlled service spine | Native candidate | Strong pattern basis |
+| High-service wall | Native candidate | Build-up to define |
+| Arbitrary service routing | Unsupported | Deliberate |
+| Ordinary site | Candidate | Thresholds unresolved |
 | Complex retaining/site structures | Unsupported | Later extension |
-| Foundations | **External in H1 v0** / future native family | Explicit programme decision under SAB-H1-01 |
-| Standard prescriptive fire strategy | Candidate | Tied to compiler target |
+| Foundations | External in H1 v0 / future native family | SAB-H1-01 |
+| Standard prescriptive fire strategy | Candidate | Target-dependent |
 | Fire-engineered alternative | External/unsupported | Not native H1 |
 | G-01 Georgian grammar | Separate input | Not domain capability |
 | Long-Life doctrine | Separate profile | Not domain capability |
 
-Nothing marked “Native candidate” is yet a software capability.
+Nothing marked “native candidate” is yet a software capability. The table records research intent.
 
-The table defines research intent.
+## 21. Domain extensions are admitted deliberately
 
-## 22. Domain extensions
+An extension should state:
 
-The supported domain should grow by **admission**, not by casual feature creep.
-
-A proposed extension should state:
-
-1. new entity/relationship semantics;
+1. new semantics;
 2. affected obligations;
 3. engineering evidence;
 4. regulatory implications;
-5. interaction with existing assemblies;
+5. interactions with existing assemblies;
 6. conformance tests;
 7. reference example;
 8. failure/unsupported behaviour.
 
-Potential future extensions:
+Potential future extensions include W2 removable lining, local access floor, semi-detached/party wall, terrace, basement, alternative structure and flat-roof families.
 
-- H1-W2 removable lining;
-- H1-FP local access floor;
-- H2 semi-detached/party wall;
-- H3 terrace;
-- H4 basement;
-- H5 alternative structure;
-- H6 flat-roof family.
+## 22. Promotion rule for experimental Long-Life systems
 
-Names are illustrative.
+An experimental assembly enters the native domain only after:
 
-## 23. Promotion rule for experimental Long-Life systems
+- **architectural evidence** — tactile, visual and tectonic acceptance;
+- **technical evidence** — relevant structure, fire, acoustics, moisture and other performance resolved;
+- **workmanship evidence** — competent installers can achieve it within declared tolerances;
+- **replacement evidence** — claimed reversibility works at 1:1;
+- **domain specification** — parameter envelope and incompatible conditions explicit;
+- **conformance cases** — known passes and failures exist.
 
-An experimental assembly should enter the native supported domain only after:
+Physical prototypes therefore feed computational capability directly.
 
-### Architectural evidence
-It meets tactile/visual/tectonic acceptance.
+## 23. S0 paper compilation
 
-### Technical evidence
-Structure, fire, acoustics, moisture and other relevant performance are resolved.
+See [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md).
 
-### Workmanship evidence
-Ordinary competent installers can achieve the intended result within declared tolerances.
+The first fixture uses a principal room edge, cavity masonry wall, replaceable window, I-joist bearing, conventional W1 finish, one local service route/penetration, relevant boundary obligations, maintenance route and evidence plan.
 
-### Replacement evidence
-The claimed reversible/replaceable behaviour actually works at 1:1 scale.
-
-### Domain specification
-Parameter envelope and incompatible conditions are explicit.
-
-### Conformance cases
-Known-pass and known-fail examples exist.
-
-This connects the physical prototype programme directly to future computational capability.
-
-## 24. Paper compilation and S0
-
-See [Domain S0 — Paper Compilation Fixture](paper-compilation-s0.md) for the exact v0.1 integration-test specification.
-
-The first paper compilation should **not** attempt the entire H1 house.
-
-Use Domain S0.
-
-Recommended slice:
-
-- principal room edge;
-- cavity masonry external wall;
-- replaceable window/opening pattern;
-- I-joist upper-floor bearing;
-- conventional W1 internal finish for the trusted baseline;
-- one local service route/penetration;
-- relevant thermal/air/water/acoustic/fire obligations;
-- maintenance/replacement route;
-- evidence plan.
-
-Optionally run a **second comparative paper compile** using the candidate W2 wall system.
-
-This gives:
+A comparative candidate compile may substitute W2:
 
 ~~~text
 S0-A  conventional trusted baseline
 S0-B  selective tectonic candidate
 ~~~
 
-That comparison would be highly informative.
+This tests the compiler architecture without pretending W2 has earned native support.
 
-The compiler model could be tested without pretending W2 has already earned native support.
+## 24. What H1 deliberately leaves out
 
-## 25. What H1 deliberately does not solve
-
-H1 is not intended to answer:
-
-- arbitrary architecture;
-- conservation;
-- listed buildings;
-- conversions;
-- apartments;
-- high-rise;
-- commercial buildings;
-- complex fire engineering;
-- basements;
-- extreme sites;
-- arbitrary structural systems;
-- sculptural free-form geometry;
-- every HVAC system;
-- every product;
-- every compliance route.
+H1 does not attempt arbitrary architecture, conservation/listed work, conversions, apartments/high-rise/commercial uses, complex fire engineering, basements, extreme sites, arbitrary structural systems, free-form geometry, every HVAC system, every product or every compliance route.
 
 A narrow useful compiler is more credible than a broad dishonest one.
 
-## 26. Relationship to the Reference House
+## 25. Reference House may exceed H1
 
-The Reference House is allowed to exceed H1.
+The architecture should not be constrained by current compiler research merely because the compiler is incomplete.
 
-That is important.
-
-The architecture should not be constrained by today's compiler research merely because the compiler is incomplete.
-
-Where the Reference House uses an unsupported condition, the research record should say:
+Where necessary, record:
 
 > **Reference House design exceeds current supported-domain capability here.**
 
-The compiler domain can later grow to meet the architecture if the condition proves valuable and supportable.
+The domain can later grow if the condition proves valuable and supportable.
 
-This preserves the correct authority:
+Architecture leads; the compiler earns coverage.
 
-> **architecture leads; the compiler earns coverage.**
+## 26. Open questions
 
-## 27. Open questions
-
-- Should H1 permit semi-detached houses, or is detached-only materially cleaner?
-- Is two storeys enough, or should a third/light attic storey be included?
+- Is detached-only materially cleaner than including semi-detached housing?
+- Is two storeys enough, or should a light attic/third level enter?
 - Which foundation family gives the best first native proof envelope?
-- Which roof family is ordinary, flexible and computationally tractable?
-- How much local steel can exist before the domain is effectively arbitrary structural engineering?
-- What exact span/opening envelopes are technically useful?
-- Which wall families should exist beyond the Reference House masonry family?
-- How much of HEAT-ASHP-RAD-01 / VENT-CMEV-01 technical design should eventually become native versus remain competent external evidence?
-- How should sloping sites be parameterised?
-- Which fire/acoustic obligations become materially harder if party walls are added?
-- Should a later “all-native proof” tier exist in addition to H1-v0 release-grade compilation with scoped external professional evidence?
-- What is the smallest H1 that still produces enough architectural variety to justify a product?
+- How much local steel can exist before H1 becomes arbitrary structural engineering?
+- What exact span/opening envelopes are useful?
+- Which wall families belong beyond the Reference House masonry family?
+- How much of heating/ventilation design should become native rather than external evidence?
+- How should sloping sites be bounded?
+- What changes materially when party walls enter?
+- Should a later “all-native proof” tier exist beside H1 v0's scoped external-evidence model?
+- What is the smallest H1 that still permits enough architectural variety to justify a product?
 
-## 28. Immediate work
+## 27. Current programme position
 
-S0 Run 01/02 and S1 Run 01 have now exercised the compiler from junction scale through a complete room. S1 adds an external corner, ground-floor perimeter dependency, multi-role door, two non-identical windows, room-level ventilation/accessibility and a service branch. Complexity remains provisionally contained, but S1 exposes **unresolved-family gravity** as the dominant Gate-B risk.
+S0 Run 01/02 and S1 Run 01 exercised the model from junction to complete-room scale. S1 added an external corner, ground-floor perimeter dependency, multi-role door, non-identical windows, room-level ventilation/accessibility and a service branch. Complexity remained provisionally contained while unresolved-family gravity emerged as the dominant Gate-B risk.
 
-Before H1 can graduate from candidate to specification:
+Completed or established work includes:
 
-1. **S1 Run 01 — complete; room-scale fixture frozen**;
-2. **BF-CORNER-MCW-01 — established v0.1**;
-3. **BF-GF-MCW-01 — established v0.1**;
-4. **SR-ROOM-LOW-01 — established v0.1**;
-5. external competent review pack prepared; **actual review still required**;
-6. **RF-TRUSS-DUO-01 roof family established**;
-7. **ST-PRIVATE-01 private-stair family established**;
-8. retain foundations as scoped external proof in H1 v0;
-9. deepen England-new-dwelling target coverage/regression testing;
-10. G01-PILOT-P0 candidate set available for connected-room research;
-11. next domain gaps: external entrance, whole-house ventilation, narrow heating strategy and wet services;
-12. reassess H1 before S2.
+- S1 room-scale fixture frozen;
+- `BF-CORNER-MCW-01`;
+- `BF-GF-MCW-01`;
+- `SR-ROOM-LOW-01`;
+- roof family `RF-TRUSS-DUO-01`;
+- stair family `ST-PRIVATE-01`;
+- foundations retained as scoped external proof;
+- G01-PILOT-P0 candidate set available for connected-room research.
 
-## 28A. Post-S1 H1 capability audit
+External competent review is still required. Further target coverage and ordinary-house families remain programme work.
 
-The current whole-house audit is recorded in [H1 Capability Matrix — Post-Services v0.2](h1-capability-matrix-v02.md).
+The whole-house audit recorded in [H1 Capability Matrix — Post-Services v0.2](h1-capability-matrix-v02.md) concluded that the remaining gaps were modular rather than foundational. The dominant work at that point included external review, real evidence-package trials, wet-zone waterproofing/detail family, controlled envelope penetrations, whole-dwelling L/O evidence integration and selected product/installation families.
 
-Its main conclusion is:
+S2 Run 01 subsequently completed and froze a non-release connected-cluster research fixture. Its result supported moving toward H1-PAPER-01 only after remaining wet-zone, penetration and external-evidence prerequisites were hardened.
 
-> **H1 is not yet Gate-B complete, but the remaining gaps are modular rather than foundational.**
+## 28. Current conclusion
 
-The compiler architecture now has credible paper evidence for:
+The first supported domain should be **boring in exactly the right ways**: ordinary masonry, certified structural families, pitched roofs, known service routes and conventional finishes wherever experimental alternatives have not yet earned admission.
 
-- semantic source-of-truth;
-- composition;
-- scoped obligations;
-- evidence/provenance;
-- selective invalidation;
-- repeated-family reuse;
-- complexity containment through room scale.
-
-The major ordinary-house families now include roof, stair, principal entrance, whole-house CMEV ventilation, heat-pump/radiator heating, clustered wet services and a candidate two-storey fire/escape route.
-
-The dominant remaining Gate-B work is now:
-
-- competent external review;
-- real evidence-package trials;
-- wet-room waterproofing/detail family;
-- controlled envelope penetrations;
-- whole-dwelling L/O evidence integration;
-- selected product/installation families.
-
-S2 Run 01 is now complete and frozen as a non-release research fixture. Its result supports moving toward H1-PAPER-01 only after the remaining wet-zone / penetration / external-evidence prerequisites are hardened.
-
-## 29. Current conclusion
-
-The first supported domain should be **boring in exactly the right ways**.
-
-It should use:
-
-- ordinary masonry;
-- ordinary certified structural families;
-- ordinary pitched roofs;
-- known service routes;
-- conventional finishes where experimental alternatives are not yet proven.
-
-The architectural ambition then lives in:
-
-- spatial grammar;
-- proportion;
-- hierarchy;
-- service topology;
-- interface design;
-- maintainability;
-- evidence;
-- selective later extensions.
-
-This separation is crucial.
+Architectural ambition can then live in spatial grammar, proportion, hierarchy, service topology, interface design, maintainability and later evidence-backed extensions.
 
 > **The compiler should prove itself on ordinary construction before asking novel construction to prove itself through the compiler.**
