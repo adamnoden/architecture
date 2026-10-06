@@ -1,7 +1,7 @@
 # The Long-Life House
 ## Part V — Making and Testing the Platform
 
-**Draft v0.1 — tectonic integration working prose**
+**Draft v0.2 — editorial refinement**
 
 ---
 
@@ -9,35 +9,25 @@
 
 A long-life building can become wasteful in the name of avoiding waste.
 
-Every additional void, rail, removable panel, spare conduit, structural allowance and secondary containment system consumes material, labour, floor area and design attention at the beginning of the building's life. Some will prevent destructive work later. Others may never be used.
+Every additional void, rail, removable panel, spare conduit, structural allowance or containment system consumes material, labour, space and design attention at the beginning of the building's life. Some will prevent destructive work later. Others may never be used.
 
-The project therefore treats serviceability as a **whole-life investment**, not an automatic good.
+Serviceability is therefore a **whole-life investment**, not an automatic good.
 
 The basic test remains:
 
 **frequency × consequence × retrofit difficulty**
 
-A provision is strongest where the future event is reasonably likely, expensive or destructive if ignored, and cheap to support at first construction.
+A provision is strongest where the future event is reasonably likely, expensive or destructive if ignored, and cheap to support at first construction. A spare conduit may make sense for future cabling; working clearance makes sense around replaceable plant; passive containment may be justified around a high-consequence concealed water joint. A fully demountable wall in a low-service room may not earn its complexity.
 
-A future cable route can justify a spare conduit. A replaceable fan justifies working clearance. A high-consequence concealed water joint may justify passive containment. A fully demountable wall in a room with no services and little expected change may not justify its complexity.
-
-The same discipline applies to permanence.
-
-An element should not become permanent merely because it can be made durable. Permanence creates future coupling. The project should ask whether the architectural, structural, environmental or material value of permanence outweighs the cost of making future change occur around it.
+The same discipline applies to permanence. Making an element permanent creates future coupling, so the architectural, structural or material value of permanence should justify the change it forces around itself.
 
 ## Compare against the best conventional answer
 
-Novelty receives no credit by itself.
+Novelty earns nothing by itself. Every non-standard pattern should be compared with the best plausible conventional alternative, not a deliberately weak baseline.
 
-Every non-standard pattern should be compared with the best plausible conventional alternative, not with a deliberately poor baseline.
+A replaceable wall lining should compete with a good durable plaster or drylining system. A finish-agnostic floor platform should compete with a high-quality conventional floor. A seated floor connection should compete with an ordinary engineered joist hanger.
 
-A replaceable wall lining should therefore be compared with a well-executed durable plaster or drylining system.
-
-A finish-agnostic floor platform should be compared with a high-quality conventional floor build-up.
-
-A seated floor connection should be compared with an ordinary engineered joist hanger.
-
-The candidate wins only if its long-term serviceability, quality, resilience or architectural value justifies the added burden.
+The candidate wins only if its serviceability, quality, resilience or architectural value justifies the added burden.
 
 ## The option record
 
@@ -48,41 +38,33 @@ For major non-standard decisions record:
 - candidate options;
 - capital cost;
 - embodied impact;
-- floor/section depth;
+- floor or section depth;
 - maintenance scenario;
 - replacement scenario;
 - boundary penalties;
 - evidence maturity;
 - uncertainty;
-- prototype/test required.
+- prototype or test required.
 
-A decision can remain open.
-
-False certainty is more dangerous than a documented unresolved question.
+A decision may remain open. Documented uncertainty is preferable to false certainty.
 
 ---
 
 # 20. Design governance and interface ownership
 
-The doctrine creates unusual design work at interfaces.
+The doctrine creates unusual work at interfaces, precisely where professional appointments are most likely to fragment responsibility.
 
-That work is especially vulnerable to fragmentation because it sits between appointments.
+A structural engineer may define bearing, an acoustic consultant decoupling, a services engineer a route, a fabricator tolerances and a fire specialist continuity. The architect composes the visible junction. Each discipline can be locally correct while the combined detail fails.
 
-A structural engineer may define bearing. An acoustic consultant may require decoupling. A services engineer needs a route. A fabricator needs tolerances. A fire specialist needs continuity. The architect composes the visible junction. If no one owns the relationship, each discipline can produce a locally correct detail whose combination fails.
-
-The project therefore requires **explicit interface ownership**.
+Important interfaces therefore need **explicit ownership**.
 
 ## Lead designer responsibility
 
-The architect or lead designer should remain responsible for the coherence of the architectural platform.
+The architect or lead designer should remain responsible for the coherence of the architectural platform. This does not mean designing structures, fire systems or specialist fabrication outside professional competence. It means ensuring that:
 
-This does not mean designing structures, fire systems or specialist fabrication outside professional competence.
-
-It means ensuring that:
-
-- the required disciplines have actually resolved the same junction;
-- no boundary obligation has silently disappeared between drawings;
-- a specialist substitution has not destroyed replacement logic;
+- the relevant disciplines have resolved the same junction;
+- no boundary obligation has disappeared between drawings;
+- a substitution has not destroyed replacement logic;
 - visible technical work remains architecturally resolved;
 - the intended disassembly sequence still exists after detailed design.
 
@@ -93,7 +75,7 @@ Important interfaces should identify:
 - controlling designer;
 - consulted disciplines;
 - permanent and replaceable layers;
-- loads/restraint;
+- loads and restraint;
 - permitted movement;
 - boundaries;
 - fixing method;
@@ -102,63 +84,37 @@ Important interfaces should identify:
 - replacement sequence;
 - commissioning or test requirement.
 
-The record can be compact. Its purpose is to make ownership explicit.
+The record can be compact. Its purpose is to make ownership visible.
 
 ## Change control
 
-A future alteration can undo the platform faster than original construction created it.
+Later alterations can undo the platform quickly. Changes to service routes, fire or acoustic boundaries, permanent anchors, no-drill zones, movement joints, interface families and custom fabrication geometry should therefore be recorded.
 
-Later work should therefore record changes to:
-
-- service routes;
-- fire/acoustic boundaries;
-- permanent anchors;
-- no-drill zones;
-- movement joints;
-- interface families;
-- custom fabrication geometry.
-
-The building passport is not merely an archive. It is part of the change-control system.
+The building passport is part of the change-control system, not merely an archive.
 
 ---
 
 # 21. Standardisation, manufacture and reliable assembly
 
-The project favours ordinary parts in extraordinary arrangements.
-
-That principle now extends into a manufacturing hierarchy.
+The project favours ordinary parts in extraordinary arrangements. That principle extends into a manufacturing gradient:
 
 > **Build the permanent house. Assemble the changeable house inside it.**
-
-The phrase describes a gradient rather than two absolute categories.
 
 ## The four layers
 
 ### Permanent construction
 
-Foundations, primary masonry, major structure and enduring envelope components may rationally be site-built and materially integrated.
-
-Their value lies partly in continuity, mass, weathering, structural clarity and architectural permanence.
+Foundations, primary masonry, major structure and enduring envelope components may rationally be site-built and materially integrated. Their value lies partly in continuity, mass, weathering, structural clarity and permanence.
 
 ### Interface infrastructure
 
-Between permanent fabric and fast-changing systems may sit a deliberately small family of durable interfaces:
+Between permanent fabric and faster-changing systems may sit a deliberately small family of durable interfaces: bearings, mounting frames, backplanes, fixing rails, edge frames, controlled service carriers, sleeves and designed penetrations.
 
-- bearings;
-- mounting frames;
-- backplanes;
-- fixing rails;
-- edge frames;
-- controlled service carriers;
-- sleeves and designed penetrations.
-
-These should be simple, robust and remanufacturable.
-
-They should not become a proprietary second structure whose future availability is less certain than the building it serves.
+These should be simple, robust and remanufacturable. They should not become a proprietary second structure whose future availability is less certain than the building it serves.
 
 ### Replaceable architectural assemblies
 
-Wall linings, floor platforms, joinery, access pieces, thresholds and similar components are stronger candidates for controlled manufacture.
+Wall linings, floor platforms, joinery, access pieces and thresholds are stronger candidates for controlled manufacture.
 
 The shorter-lived and more replaceable the layer, the stronger the presumption that it should be:
 
@@ -171,21 +127,11 @@ The shorter-lived and more replaceable the layer, the stronger the presumption t
 
 ### Commodity components
 
-Fans, pumps, valves, switches, sockets, appliances and controls should remain commodity products wherever practical.
-
-Do not reinvent the valve to make the valve architectural.
-
-Design the enclosure, access, route and interface so an ordinary valve can remain ordinary.
+Fans, pumps, valves, switches, sockets, appliances and controls should remain commodity products wherever practical. Do not redesign the valve to make it architectural; design the enclosure, access and interface so an ordinary valve can remain ordinary.
 
 ## Standardise the interface before the appearance
 
-The most valuable standardisation is often hidden.
-
-A family of wall panels can vary visibly while sharing one fixing geometry.
-
-A floor can accept timber, tile or stone variants while sharing one platform datum.
-
-A series of access doors can have different proportions while using the same hinge, latch and edge logic.
+The most valuable standardisation is often hidden. Wall panels can vary in material and proportion while sharing fixing geometry; floor finishes can differ while sharing a platform datum; access doors can vary in size while using one hinge and edge logic.
 
 This permits architectural specificity without creating hundreds of unrelated technical inventions.
 
@@ -194,66 +140,41 @@ This permits architectural specificity without creating hundreds of unrelated te
 For a faster-changing layer ask:
 
 - can it be fabricated more accurately away from the site?
-- can it be finished before installation?
-- can its interfaces be tested before arrival?
+- can it be finished and its interfaces tested before installation?
 - can its fabrication data survive for remanufacture?
-- does factory production reduce destructive wet work?
+- does controlled manufacture reduce destructive wet work?
 - can it still tolerate the imperfect geometry of the real building?
 
-Off-site manufacture is rejected where logistics, carbon, one-off geometry or craftsmanship make site work superior.
-
-The doctrine is not an MMC manifesto.
-
-It is a service-life argument.
+Off-site manufacture should lose where logistics, carbon, one-off geometry or craftsmanship make site work better. The doctrine is a service-life argument, not an MMC manifesto.
 
 ## Allocate workmanship deliberately
 
-Not every desirable result should be converted into a factory process.
+David Pye's distinction between *workmanship of risk* and *workmanship of certainty* is useful here. Some work gains value from the judgement and dexterity of the maker. Other operations gain nothing from variability and should be located by geometry, tooling, templates or repeatable interfaces.
 
-David Pye's distinction between *workmanship of risk* and *workmanship of certainty* is useful here. Some work gains value because the outcome remains partly dependent on the judgement and dexterity of the maker. Other operations gain nothing from that uncertainty and should be located by geometry, tooling, templates or repeatable interfaces.
-
-The project should therefore ask of every important operation:
-
-- does skilled judgement improve the architecture here?
-- or is skill merely being spent to compensate for dimensional conflict, ambiguous information or a badly designed sequence?
-
-Fine masonry, plaster, stone and joinery may properly retain workmanship of risk. Repeated hidden mounting geometry usually should not.
+For each important operation ask whether skill is improving the architecture or merely compensating for dimensional conflict, ambiguous information or a badly designed sequence. Fine masonry, plaster, stone and joinery may properly retain workmanship of risk; repeated hidden mounting geometry usually should not.
 
 > **Spend workmanship where workmanship creates value.**
 
 ## Tolerance translation
 
-Precision components meet imperfect buildings.
-
-The interface therefore has to translate between them.
+Precision components meet imperfect buildings. Their interface must translate between them.
 
 For each important repeated interface record:
 
-- the nominal geometry;
-- the credible incoming dimensional/geometric variation;
-- the controlling datum;
-- the designed adjustment range and mechanism;
-- the acceptance limit beyond which the preceding work must be remediated;
-- the inspection or measurement used before closure.
+- nominal geometry;
+- credible incoming variation;
+- controlling datum;
+- designed adjustment range and mechanism;
+- acceptance limit beyond which preceding work must be remediated;
+- inspection or measurement before closure.
 
-Use, where appropriate:
+Adjustment may use packers, shims, slots, threads, rebates, overlaps, slips, controlled reveals or removable trims as appropriate. It must remain bounded. A 15 mm correction range does not justify solving a 30 mm error with an improvised spacer.
 
-- adjustment;
-- designed packers or shims;
-- slotted or threaded interfaces;
-- rebates;
-- overlaps;
-- slips;
-- controlled reveals;
-- removable perimeter trims.
+Tolerance should not default to irreversible filler at the last few millimetres.
 
-Adjustment should be bounded. A 15 mm designed correction range is not permission to solve a 30 mm error with an improvised spacer.
+## Mistake-proof consequential operations
 
-Do not solve tolerance by smearing the last few millimetres with irreversible filler.
-
-## Mistake-proof the consequential operations
-
-Where a repeated operation is easy to misunderstand and the consequence matters, improve the assembly before increasing the instructions.
+Where a repeated operation is easy to misunderstand and the consequence matters, improve the assembly before adding more instructions.
 
 Prefer, in order:
 
@@ -261,33 +182,19 @@ Prefer, in order:
 2. reduce part and fastener variety;
 3. make orientation or location self-evident;
 4. use clear datums, stops, gauges or templates;
-5. make completed work inspectable before concealment;
+5. expose completed work to inspection before concealment;
 6. keep foreseeable correction local and reversible;
-7. define a stop/remediation condition for work outside the designed range.
+7. define a stop or remediation condition outside the designed range.
 
-The objective is not an infantilised construction process. It is to reserve judgement for the places where judgement is useful.
-
-A recurring instruction such as “ensure carefully aligned” should trigger a design question: can the assembly establish its own alignment more reliably?
+The objective is not to remove judgement from construction. It is to reserve judgement for places where it adds value.
 
 ## Representative-installer trial
 
-A repeated non-standard assembly should, where proportionate, be installed at least once by a competent person who did not design it.
+A repeated non-standard assembly should, where proportionate, be installed at least once by a competent person who did not design it. Issue the intended information and parts without silently supplying missing logic.
 
-Issue the information and intended parts. Do not silently supply the missing logic.
+Observe questions, sequence errors, extra measuring, unplanned packers or fixings, unexpected tools, inaccessible operations, ambiguous datums and whether errors remain visible before closure.
 
-Observe:
-
-- questions asked;
-- sequence errors;
-- extra measuring or marking;
-- unplanned packers, filler, foam, adhesive or fixings;
-- specialist tools not identified in the information;
-- inaccessible operations;
-- ambiguity about datum or orientation;
-- whether an error remains visible before closure;
-- whether the defined recovery method is actually usable.
-
-The trial is not an examination of the installer. It is an examination of the design information and assembly logic.
+The trial examines the design information and assembly logic, not the installer.
 
 > **A detail that works only when its designer assembles it is not yet a resolved detail.**
 
@@ -295,21 +202,13 @@ The trial is not an examination of the installer. It is an examination of the de
 
 # 22. Prototype and disassemble before repetition
 
-A drawing can prove geometry.
-
-It cannot prove touch, sound, removal effort, rattle, patina, cleaning or the experience of a joint in a real room.
+A drawing can prove geometry. It cannot prove touch, sound, removal effort, rattle, patina, cleaning or the experience of a joint in a real room.
 
 Repeated non-standard architecture should therefore pass through a **first article**.
 
 ## What is being tested
 
-The prototype should include the real interfaces around the object.
-
-A wall panel without its corner, skirting, outlet, backplane and neighbouring panels is not a wall-system prototype.
-
-A floor panel on a table is not a floor prototype.
-
-A cornice profile without the moving wall/ceiling relationship behind it proves only the moulding.
+The prototype should include the real interfaces around the object. A wall panel without its corner, skirting, outlet, backplane and neighbouring panels is not a wall-system prototype. A floor panel on a table is not a floor prototype. A cornice profile without the moving junction behind it proves only the moulding.
 
 ## First-article sequence
 
@@ -317,7 +216,7 @@ Where relevant:
 
 1. install;
 2. inspect;
-3. use/load;
+3. use or load;
 4. remove;
 5. inspect what remains;
 6. replace or service the intended component;
@@ -328,29 +227,13 @@ If reversibility is claimed, **removal is part of acceptance**.
 
 ## Architectural acceptance
 
-The project should judge prototypes as architecture, not merely as maintenance equipment.
+The prototype is also architecture. Ask whether it belongs to the room, feels solid, sounds hollow or temporary, carries well-proportioned joints, and remains desirable even if nobody knows it can be removed.
 
-Ask:
-
-- does it belong to the room?
-- does it feel solid?
-- are joints proportioned?
-- does it sound hollow, loose or temporary?
-- has metal become decoration rather than function?
-- is technical visibility quieter or louder than intended?
-- would the detail still be desirable if nobody knew it could be removed?
-
-This final question prevents maintainability from becoming an excuse for mediocre architecture.
+That last test prevents maintainability becoming an excuse for mediocre architecture.
 
 ## Failed prototypes
 
-Failure is valuable.
-
-If a removable floor cannot achieve the acoustic and tactile quality of a conventional floor, reject it.
-
-If panelised wall lining needs so many clips, gaskets and special pieces that future repair becomes less understandable than plaster, reject it.
-
-If a seated floor detail adds structural ambiguity without meaningful service-life benefit, use the conventional hanger.
+Failure is useful. If a removable floor cannot match the acoustic and tactile quality of a conventional floor, reject it. If panelised lining requires so many special clips and gaskets that repair becomes less intelligible than plaster, reject it. If a seated floor detail adds structural ambiguity without meaningful benefit, use the conventional hanger.
 
 The doctrine should survive the death of its favourite implementation.
 
@@ -358,21 +241,9 @@ The doctrine should survive the death of its favourite implementation.
 
 # 23. Procurement without dilution
 
-The platform can be lost during procurement even when the drawings are good.
+The platform can be lost during procurement even when the drawings are good. A substitute can match the nominal U-value, flow rate, fire rating or load capacity while changing access, proprietary dependence, replacement geometry, movement, interface dimensions or architectural resolution.
 
-Value engineering tends to compare immediate functions.
-
-A replacement product may have the same nominal U-value, flow rate, fire rating or load capacity while changing:
-
-- access;
-- proprietary dependence;
-- replacement geometry;
-- movement;
-- interface dimensions;
-- future remanufacture;
-- visual resolution.
-
-“Equivalent” must therefore be defined more broadly.
+“Equivalent” therefore needs a wider meaning.
 
 ## Equivalent performance
 
@@ -392,79 +263,32 @@ A cheaper sealed proprietary cassette may not be equivalent to an ordinary repai
 
 ## Fabricator engagement
 
-Specialist fabricators should be engaged early where their knowledge affects:
+Specialist fabricators should be engaged early where their knowledge affects sheet or section sizes, folds, joints, tolerances, finishes, transport, fixing access or realistic remanufacture.
 
-- sheet/section sizes;
-- folds and joints;
-- achievable tolerances;
-- finishing;
-- transport;
-- fixing access;
-- realistic remanufacture.
-
-Their knowledge should simplify the design.
-
-It should not silently turn a simple architectural idea into a supplier-locked mechanism.
+Their knowledge should simplify the design, not quietly turn a simple architectural idea into supplier lock-in.
 
 ## Shop drawings
 
-Shop drawings should record rather than obscure the interface logic.
-
-They should preserve:
-
-- common datums;
-- fixing families;
-- tolerance strategy;
-- standard fasteners;
-- replacement sequence;
-- visible joint intent.
-
-The final fabrication information belongs in the building record.
+Shop drawings should preserve common datums, fixing families, tolerance strategy, standard fasteners, replacement sequence and visible joint intent. Final fabrication information belongs in the building record.
 
 ---
 
 # 24. Commission maintainability
 
-Commissioning normally concentrates on whether systems operate.
+Commissioning normally asks whether systems operate. A long-life house should also ask whether they can be maintained.
 
-A long-life house should also verify whether they can be maintained.
-
-The building should therefore be commissioned in two modes:
+Commission in two modes:
 
 **operation** — does the system perform?  
-**intervention** — can the system be reached, isolated, removed and made whole again?
+**intervention** — can it be reached, isolated, removed and made whole again?
 
 ## Maintainability commissioning
 
-Selected tasks should be physically demonstrated.
-
-Examples:
-
-- isolate one fixture;
-- remove a ventilation filter or fan;
-- open a service route;
-- lift and reseat a floor panel;
-- remove and reinstall a representative wall-lining panel;
-- access a wet-room valve;
-- trace an identified circuit;
-- remove a designated window trim;
-- demonstrate major plant withdrawal geometry.
-
-The demonstration should use the intended ordinary tools and access route.
+Selected tasks should be demonstrated physically using the intended tools and access route: isolate a fixture, remove a ventilation filter or fan, open a service route, lift and reseat a floor panel, access a wet-room valve, trace a circuit or demonstrate major plant withdrawal geometry.
 
 ## Reinstatement matters
 
-The task does not end when the component is reached.
-
-After intervention verify:
-
-- panel seats correctly;
-- no new rattle exists;
-- seals are restored;
-- fire stopping remains valid;
-- acoustic isolation is not bypassed;
-- waterproofing is intact;
-- labels/records still match reality.
+Intervention does not end when the component is reached. Afterward verify that panels seat correctly, seals and fire stopping are restored, acoustic isolation is intact, waterproofing remains sound and labels or records still match reality.
 
 An access strategy that cannot be reliably closed is not maintainable.
 
@@ -476,59 +300,17 @@ The final design should be reviewed through events rather than abstract claims.
 
 ## Failure scenarios
 
-Ask:
-
-- a hose leaks;
-- a condensate drain blocks;
-- a roof outlet overflows;
-- a pump fails;
-- a window seal fails;
-- a control system loses power;
-- a rodent enters a service zone.
-
-Where does the consequence travel?
-
-How is it detected?
-
-How is it isolated?
-
-What dries?
-
-What has to be opened?
+Test credible failures such as a leaking hose, blocked condensate drain, overflowing roof outlet, failed pump or loss of control power. Ask where the consequence travels, how it is detected and isolated, what must be opened and how recovery occurs.
 
 ## Change scenarios
 
-Ask:
+Test ordinary future changes: a new cable, kitchen or bathroom renewal, a room changing use, a floor finish changing, the heat source being replaced or a window frame reaching end of life.
 
-- a new cable is required;
-- a principal room changes use;
-- a kitchen is replaced;
-- a bathroom is renewed;
-- a wall-mounted object moves;
-- timber floor becomes tile;
-- the heat source changes;
-- a window frame reaches end of life.
-
-Which layer changes?
-
-Where does the work stop?
-
-Does permanent fabric remain largely untouched?
+For each, ask which layer changes, where the work stops and how much permanent fabric remains untouched.
 
 ## Occupation and repose scenarios
 
-The same discipline should be applied to ordinary human states, not only technical events.
-
-Review the principal rooms and circulation sequences through plausible periods of occupation:
-
-- an occupant is ill and spends most of the day at home;
-- someone returns exhausted and wants quiet without withdrawing from the household entirely;
-- one person is sleeping while another is awake;
-- summer sun reaches the principal living spaces;
-- external noise makes an open window undesirable;
-- a guest is present while a household member wants privacy;
-- automation or network control is unavailable;
-- the room has accumulated ordinary furniture, pictures, books and personal objects rather than remaining a photographed empty interior.
+Technical events are not the only tests. Review principal rooms through plausible states of occupation: illness, fatigue, simultaneous sleeping and waking, summer sun, external noise, guests, loss of automation, and the accumulation of ordinary furniture and possessions.
 
 For each scenario ask:
 
@@ -537,17 +319,13 @@ For each scenario ask:
 - can noise be contained or escaped?
 - is there somewhere to withdraw?
 - does the spatial order remain comprehensible?
-- does the room tolerate ordinary visual occupation without becoming chaotic?
+- does the room tolerate ordinary visual occupation?
 - do structure and major masses appear settled rather than precarious?
 - are technical systems serving the room or demanding continual attention from it?
 
-Measured matters—thermal conditions, acoustic performance, daylight, glare and ventilation—should be tested with the appropriate method.
-
-The remaining questions are architectural judgements. They should be recorded as such, not disguised as neuroscience.
+Thermal conditions, acoustic performance, daylight, glare and ventilation should be tested with appropriate methods. The remaining questions are architectural judgements and should be recorded as such, not disguised as neuroscience.
 
 ## Deception review
-
-The project should also perform a specifically architectural review.
 
 For significant visible interfaces ask:
 
@@ -556,17 +334,13 @@ For significant visible interfaces ask:
 - does a decorative element imply a false structural or weathering condition?
 - is concealment achieved through a real architectural element?
 - is a joint hidden because it is resolved, or because nobody designed it?
-- is brass/bronze performing a genuine function?
+- is brass or bronze performing a genuine function?
 
-This is not an attempt to police taste.
-
-It is a check that the finished building still tells a coherent story about how it is made.
+This is not a policing of taste. It checks that the finished building still tells a coherent story about how it is made.
 
 ## The final test
 
-A long-life house should not look provisional.
-
-The objective is a building whose rooms can feel settled, weighty and permanent because the parts that actually need to change have been given disciplined places to do so.
+A long-life house should not look provisional. Its rooms should be able to feel settled and permanent because the parts that need to change have disciplined places to do so.
 
 The platform succeeds when maintenance becomes less destructive **without making ordinary life feel like maintenance**.
 
