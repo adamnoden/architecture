@@ -55,7 +55,7 @@ Test for understandability, breadth of supply or remanufacturability, ordinary t
 
 Repeated construction should, where practical, be intelligible to an ordinary competent trade without continuous designer interpretation. Critical operations should use clear datums, defined sequences and verifiable outcomes. Significant mistakes should be hard to conceal and straightforward to correct before they propagate.
 
-The shorter-lived and more replaceable a layer is, the stronger the presumption for controlled manufacture and reversible site assembly. Site fabrication remains appropriate where it gives the better whole-life result. Skilled site craft should be spent where judgement and workmanship create architectural value, not merely to rescue unresolved interfaces.
+The shorter-lived and more replaceable a layer is, the stronger the presumption for controlled manufacture and reversible site assembly. This remains a presumption, not a rule: site fabrication is appropriate where it gives the better whole-life result. Skilled site craft should be spent where judgement and workmanship create architectural value, not merely to rescue unresolved interfaces.
 
 ## 7. Let permanence be architectural
 
