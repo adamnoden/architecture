@@ -1,12 +1,10 @@
-# W2 Replaceable Wall — Prototype Build Pack v0.1
+# W2 Replaceable Wall — Prototype Build Pack v0.2
 
 **Status:** 1:1 mock-up specification for design development  
 **Prototype ID:** P01-W2  
-**Purpose:** test whether a replaceable mineral wall lining can match a first-rate plaster wall for solidity, calmness and domestic character while delivering genuinely reversible access.
+**Purpose:** test whether a replaceable mineral wall lining can match a first-rate plaster wall for solidity, calmness and domestic character while providing genuinely reversible access.
 
-This is a **prototype specification**, not a construction specification for the house.
-
-The prototype is intended to fail cheaply and inform the next detail.
+This is a prototype specification, not a construction specification for the house. It is intended to fail cheaply and inform the next detail.
 
 ---
 
@@ -20,17 +18,15 @@ Can the project make a wall that:
 - supports ordinary domestic objects;
 - allows one panel to be removed without wet making-good;
 - preserves the permanent wall and primary boundary behind;
-- can be reinstalled repeatedly without joint degradation;
+- survives repeated reinstallation without joint degradation;
 - uses simple, remanufacturable hardware;
-- does not look like office fit-out or a hidden access system?
+- does not read as office fit-out or a hidden access system?
 
-If not, the project should prefer high-quality plaster on low-service walls.
+If not, prefer high-quality plaster on low-service walls.
 
 ---
 
 # 2. Prototype architecture
-
-The prototype uses the current W2 hierarchy:
 
 ```text
 RIGID BACKGROUND / MASONRY ANALOGUE
@@ -59,64 +55,40 @@ TOP RESTRAINT HIDDEN BY ARCHITECTURAL TRIM
 ──────────────────────────────────────────
 ```
 
-The key mechanical principle is:
-
 > **Carry panel weight by bearing. Use separate concealed restraint only to prevent tip-out, rattle and accidental unseating.**
 
-This avoids asking small concealed screws to carry the full dead weight of each panel.
+Small concealed screws should not carry the full panel dead load.
 
 ---
 
 # 3. Prototype size
 
-Build a representative wall bay approximately:
+Build approximately:
 
 - **width:** 2400 mm minimum;
 - **height:** 2400–2700 mm;
 - **panels:** four nominal 600 mm vertical fields;
-- **one corner condition:** preferred if workshop space permits;
+- **one corner condition:** preferred if space permits;
 - **one socket/control interface**;
 - **one picture-rail datum**;
 - **one removable skirting condition**;
 - **one upper trim/cornice interface**.
 
-The 600 mm field is a starting test module, not a reference-house mandate.
+The 600 mm field is a test module, not a reference-house mandate.
 
-At approximately 16 kg/m² for a dense 12.5 mm gypsum-fibre board, a nominal 600 × 2400 mm panel is approximately 23 kg before finish/hardware.
-
-That is intentionally near the upper end of comfortable two-person handling while remaining materially substantial.
-
-A second narrower panel should be trialled if removal proves awkward.
+At roughly 16 kg/m² for a dense 12.5 mm gypsum-fibre board, a 600 × 2400 mm panel is about 23 kg before finish/hardware. Trial a narrower panel if removal is awkward.
 
 ---
 
 # 4. Background wall
 
-## Prototype version
+Use dense blockwork, a rigid concrete/block workshop wall, or a sufficiently stiff heavy timber test frame. The background must not flex with the panel.
 
-Use one of:
+Apply a continuous visible layer behind the rails to represent the future slow boundary: parge/plaster, sealed board or another robust continuous test surface.
 
-- dense blockwork panel / masonry mock-up;
-- rigid concrete/block workshop wall;
-- heavy timber test frame sheeted sufficiently to mimic an immovable background.
+The prototype is not validating airtightness. It is enforcing one geometric condition:
 
-The important property is that the **background does not flex with the removable panel**.
-
-## Permanent-boundary analogue
-
-Apply a continuous visible layer behind the rails to represent the future slow boundary.
-
-This may simply be:
-
-- parge/plaster coat;
-- sealed board;
-- other robust continuous test surface.
-
-The prototype is not validating airtightness performance.
-
-Its purpose is to enforce the geometry:
-
-> **panel removal must expose a complete background, not raw uncoordinated construction.**
+> **Panel removal must expose a complete background, not raw uncoordinated construction.**
 
 ---
 
@@ -128,86 +100,48 @@ Use simple galvanised steel or timber vertical rails.
 
 Preferred first test:
 
-- **simple galvanised steel top-hat / channel section**;
+- common galvanised steel top-hat / channel;
 - approximately 40–60 mm face/depth range;
-- common stock section;
 - no proprietary clipping geometry.
 
-The exact section can be substituted to suit available workshop material.
+Substitute an available stock section where necessary.
 
 ## Rail spacing
 
-Start with:
-
-- one rail behind each panel edge;
-- one intermediate rail where panel stiffness requires it.
-
-Do not add rails merely to make the prototype easier.
-
-The aim is to discover the **minimum infrastructure that still produces a solid wall**.
+Start with one rail at each panel edge plus one intermediate rail where stiffness requires it. Do not add rails merely to make the prototype easier; find the minimum infrastructure that still produces a solid wall.
 
 ## Background anchors
 
-Use sparse mechanical anchors.
+Use sparse mechanical anchors. A reasonable prototype starting point is top, lower and one intermediate adjustable point per primary rail. Final house spacing will require fixing/structural design.
 
-For prototype purposes:
+## Adjustment and installer trial
 
-- top;
-- lower;
-- one intermediate adjustable point;
+Provide an explicit adjustment method: packers/shims, slotted stand-off or threaded spacer.
 
-per primary rail is a reasonable starting geometry.
+At least one build must use a declared imperfect background rather than a perfectly prepared wall. Introduce realistic out-of-plumb, set-out and floor-datum variation within the range the system claims to absorb.
 
-The final house anchor spacing will require structural/fixing design.
-
-## Adjustment
-
-Provide a deliberately visible prototype adjustment method:
-
-- packers/shims; or
-- slotted stand-off bracket; or
-- threaded spacer.
-
-The adjustment should prove that imperfect masonry can be converted into a precise panel datum **without filler**.
-
-At least one build should use a deliberately imperfect but declared background condition rather than a perfectly prepared test wall. Introduce a realistic combination such as a modest out-of-plumb condition, a local set-out deviation and a floor datum offset, all within the range the prototype claims to accommodate.
-
-Before the trial, state:
+Before the trial record:
 
 - incoming tolerance envelope;
 - target panel datum;
-- available adjustment range;
+- adjustment range;
 - permitted packer/shim types;
-- maximum correction at any one fixing;
-- condition at which the background must be remediated rather than adjusted around.
+- maximum correction at one fixing;
+- remediation threshold.
 
 Record the achieved tolerance.
 
-For one assembly cycle, use a competent installer/fabricator who did not design the system. Issue the normal build information and parts; do not coach the intended sequence unless necessary for safety. Record every clarification request, improvised material, additional fixing, unplanned tool and workaround.
+For one assembly cycle, use a competent installer/fabricator who did not design the system. Issue normal build information and parts. Do not coach the sequence except for safety. Record clarification requests, improvised material, extra fixings, unplanned tools and workarounds.
 
 ---
 
 # 6. Shallow cavity
 
-Target an initial finished cavity between permanent wall and panel of approximately:
+Target **40–60 mm** finished depth including rails.
 
-- **40–60 mm**, including rails.
+The cavity is not a general plumbing or duct zone. Use it to test cable routing, one outlet box, acoustic absorption, backplane access and fixing geometry.
 
-This is deliberately shallow.
-
-The cavity is not intended to become a general plumbing/duct zone.
-
-Use it for prototype testing of:
-
-- cable route;
-- outlet box;
-- acoustic absorption;
-- backplane access;
-- fixing geometry.
-
-Install mineral wool between rails for one half of the bay and leave the other half empty.
-
-This gives an immediate tap/impact acoustic comparison.
+Install mineral wool in half the bay and leave half empty for immediate tap/impact comparison.
 
 ---
 
@@ -215,30 +149,13 @@ This gives an immediate tap/impact acoustic comparison.
 
 ## First substrate
 
-Use **12.5 mm dense gypsum-fibre board** as the initial mineral-panel proxy.
+Use **12.5 mm dense gypsum-fibre board** as the initial mineral-panel proxy. British Gypsum Rigidur H is one suitable prototype reference because available data describes it as dense, robust and appropriate to off-site panel manufacture and fixing applications.
 
-A product such as British Gypsum Rigidur H is suitable for prototype purposes because existing data describes it as:
-
-- dense;
-- robust;
-- impact resistant as part of systems;
-- suitable for off-site manufactured panels;
-- capable of useful fixing performance.
-
-This is **not** a product selection for the house.
-
-The project is testing the material family.
+This is a material-family test, not a house product selection.
 
 ## Panel dimensions
 
-Start with nominal:
-
-- 600 mm width;
-- full room-height field where handling permits.
-
-If the height creates excessive weight, test:
-
-- horizontal split behind a genuine dado/picture-rail datum rather than an arbitrary mid-wall access seam.
+Start with nominal 600 mm full-height fields where handling permits. If weight becomes excessive, test a horizontal split behind a genuine dado or picture-rail datum rather than an arbitrary access seam.
 
 ## Edge treatment
 
@@ -246,14 +163,14 @@ Test two adjacent edges:
 
 ### Edge A — plain controlled reveal
 
-- machined/cut clean;
+- clean cut/machined edge;
 - 2–4 mm designed gap;
-- dark/recessed background.
+- dark or recessed background.
 
 ### Edge B — architectural cover
 
-- narrow removable timber moulding;
-- or fine metal edge piece where it protects/locates the panels.
+- narrow removable timber moulding; or
+- fine metal edge where it genuinely protects or locates.
 
 Do **not** fill either joint.
 
@@ -261,201 +178,83 @@ Do **not** fill either joint.
 
 # 8. Panel support — lower gravity seat
 
-The preferred first mechanism is a continuous or intermittent lower bearing rail.
+Use a continuous or intermittent lower bearing rail to carry panel dead load and establish vertical position.
 
-## Function
+Prototype with steel/aluminium angle or hardwood ledge fixed to the backplane where practical. Provide positive horizontal location and a thin resilient seating strip.
 
-The lower seat carries:
-
-- panel dead load;
-- vertical positioning.
-
-It should not rely on friction alone.
-
-## Prototype form
-
-Use:
-
-- steel/aluminium angle; or
-- hardwood ledge;
-
-fixed to the backplane, not directly to masonry where practical.
-
-Provide:
-
-- positive horizontal location;
-- thin resilient seating strip;
-- drainage/dirt logic if used near floor.
-
-## Resilient interface
-
-Trial:
-
-- thin EPDM;
-- cork/rubber composite;
-- another durable compressible strip.
-
-The material should:
-
-- eliminate rattle;
-- avoid excessive compression creep;
-- allow panel removal;
-- avoid adhesive dependence.
+Trial EPDM, cork/rubber composite or another durable compressible strip. It should suppress rattle without excessive creep, adhesive dependence or loss of removability.
 
 ---
 
 # 9. Panel restraint — top capture
 
-The top fixing has one job:
+The top fixing should prevent tipping, rattle and unintended lifting, not carry primary gravity load.
 
-> **prevent the panel tipping, rattling or lifting unintentionally.**
+Build both variants.
 
-It should not be the principal gravity support.
+## T1 — concealed mechanical screw / captive plate
 
-Test two mechanisms.
+Use ordinary screw hardware engaging a steel plate, threaded insert or timber ground on the backplane. Hide access behind a removable picture rail or upper moulding.
 
-## Variant T1 — concealed mechanical screw/captive plate
+Test whether the fixing can be reached quickly without making the rail read as access equipment.
 
-A standard machine screw or woodscrew engages:
+## T2 — gravity hook / French-cleat-style restraint
 
-- a steel plate;
-- threaded insert;
-- timber ground;
+Use a simple opposing profile to locate the panel and permit lift-and-release after trim removal.
 
-on the backplane.
+Check lifting clearance, cornice conflict and tolerance/rattle risk.
 
-Access is hidden by a removable picture rail / upper moulding.
-
-### Advantages
-
-- ordinary hardware;
-- obvious future replacement;
-- adjustable clamping;
-- no proprietary clip.
-
-### Question
-
-Can the fixing be accessed quickly without making the rail look removable?
-
-## Variant T2 — gravity hook / French-cleat-style upper restraint
-
-Use a simple opposing metal/timber profile that:
-
-- locates the panel;
-- permits lift-and-release after lower trim is removed.
-
-### Advantages
-
-- no visible screws;
-- very simple geometry.
-
-### Risks
-
-- panel needs vertical lifting clearance;
-- full-height panels may clash with cornice;
-- tolerance/rattle may be worse.
-
-### Prototype rule
-
-Build **both**.
-
-Do not decide this on paper.
+Do not choose between T1 and T2 on paper.
 
 ---
 
 # 10. Skirting
 
-The skirting should be an active interface.
+Use real timber and make the skirting an active removable interface. It should conceal the lower seat/release, cover floor/wall tolerance, protect panel edges and offer low-level cable access.
 
-Prototype functions:
-
-- conceal lower panel seat/release;
-- cover floor/wall tolerance;
-- protect panel edge;
-- offer low-level cable access;
-- remain removable.
-
-## Prototype construction
-
-Use real timber.
-
-Avoid MDF for the primary prototype if possible; the point is to judge the system at the intended architectural quality.
-
-Fix skirting mechanically to:
-
-- the backplane / dedicated grounds;
-
-not repeatedly through to the masonry.
-
-Test:
-
-- concealed screws behind removable plugs;
-- magnetic retention only as a secondary aid;
-- spring clips only if generic/remanufacturable.
+Fix to the backplane or dedicated grounds rather than repeatedly into masonry.
 
 Preferred baseline:
 
-> **ordinary concealed screws into known grounds.**
+> **Ordinary concealed screws into known grounds.**
 
-Simple beats clever.
+Magnets may assist secondarily; spring clips should be generic/remanufacturable if tested.
 
 ---
 
 # 11. Picture rail / upper release datum
 
-The picture rail should perform at least two genuine roles.
+The picture rail should serve at least two real roles among architectural datum, cover for top restraint and tested light/medium hanging interface.
 
-Prototype roles:
-
-1. architectural horizontal datum;
-2. access cover for panel top restraint;
-3. optional tested light/medium hanging interface.
-
-The rail should not be a fake moulding glued over a technical seam.
-
-Mechanically fix it to dedicated grounds on the backplane.
+Mechanically fix it to dedicated backplane grounds. Do not glue a fake moulding over a technical seam.
 
 ---
 
 # 12. Cornice condition
 
-The prototype should include at least 600 mm of cornice / wall-ceiling edge.
+Include at least 600 mm of wall/ceiling edge.
 
-The wall panel should terminate independently of the ceiling.
+The panel should terminate independently of the ceiling with a real gap and overlap/cover, without rigid filler bridging the joint. Fix the cornice to one controlling side.
 
-Provide:
-
-- real gap;
-- overlap / cover;
-- no rigid filler bridge.
-
-The cornice should attach to one controlling side of the movement joint.
-
-Test one short section with a fine brass/bronze slip line only if the metal actually:
-
-- protects an edge;
-- covers the movement gap; or
-- forms the sliding interface.
-
-Do not add brass simply to make the prototype look special.
+Test a short brass/bronze slip line only if the metal protects an edge, covers the movement gap or forms the sliding interface.
 
 ---
 
 # 13. Socket / control interface
 
-Install one real electrical back box / faceplate.
+Install one real electrical back box and faceplate.
 
-The test should answer:
+Test:
 
-- does the box belong to the panel or the backplane?
-- can the panel be removed without rewiring?
-- can the faceplate and box disconnect simply?
-- does the cable remain within the service zone?
-- can a replacement panel reproduce the opening accurately?
+- whether the box belongs to panel or backplane;
+- panel removal without rewiring;
+- simple faceplate/box disconnection;
+- cable retention within the service zone;
+- accurate reproduction of the opening in a replacement panel.
 
-Preferred prototype direction:
+Preferred direction:
 
-> **box fixed to backplane/service carrier; removable panel fits around or interfaces with it.**
+> **Box fixed to backplane/service carrier; removable panel interfaces around it.**
 
 The wiring infrastructure should not depend structurally on the decorative panel.
 
@@ -463,206 +262,135 @@ The wiring infrastructure should not depend structurally on the decorative panel
 
 # 14. Ordinary fixing test
 
-The wall should support ordinary occupation without automatically reaching through to masonry.
+Test at least a picture, coat hook, small shelf and medium wall-mounted object without automatically fixing through to masonry.
 
-Test at least:
-
-- picture;
-- coat hook;
-- small shelf;
-- medium wall-mounted object.
-
-Use the panel itself for the lightest class if supported by manufacturer/test evidence.
-
-Use dedicated backplane grounds for heavier loads.
-
-Mark the intended fixing classes during testing.
+Use the panel for the lightest class only where evidence supports it; use dedicated backplane grounds for heavier loads. Mark load classes during testing.
 
 ---
 
 # 15. Surface finish variants
 
-Test at least three panel finishes.
+Test at least three finishes.
 
-## F1 — mineral/painted board
+## F1 — mineral / painted board
 
-Minimal finish build-up.
+Minimal finish build-up. Test whether dense board can read as a calm wall without site skim.
 
-Purpose:
-- evaluate whether a dense board can read as a calm architectural wall without a site skim.
+## F2 — workshop-applied plaster / mineral skim
 
-## F2 — workshop-applied plaster/mineral skim
-
-Apply off-site / on the bench.
-
-Purpose:
-- test the user's original intuition directly: can “plaster” become a manufactured panel finish rather than a messy site process?
-
-The exact plaster/primer compatibility must follow the selected substrate manufacturer's guidance before a final system is proposed.
+Apply off-site or on the bench. Test whether a plaster-like finish can become part of a manufactured panel rather than a site process. Final compatibility must follow substrate-manufacturer guidance.
 
 ## F3 — true timber panel
 
-At least one adjacent panel or smaller sample in real timber.
-
-Purpose:
-- compare a naturally panelised architectural material against a mineral panel pretending to be continuous.
+Use at least one adjacent panel or meaningful sample. Compare a naturally panelised material with the mineral-panel strategy.
 
 ---
 
-# 16. Joint families to test
+# 16. Joint families
 
-The prototype must include:
+Test:
 
 ### J1 — fine open reveal
-
-2–4 mm range.
+2–4 mm.
 
 ### J2 — timber moulded cover
-
 Real removable architectural trim.
 
 ### J3 — functional metal line
+Fine brass/bronze or prototype substitute only where it performs edge or joint work.
 
-Fine brass/bronze or prototype substitute only where it performs edge/joint work.
-
-Evaluate:
-
-- visual calm;
-- dust;
-- paint behaviour;
-- edge damage;
-- removal;
-- repeat alignment;
-- whether the joint feels designed or apologetic.
+Evaluate visual calm, dust, paint behaviour, edge damage, removal, repeat alignment and whether the joint reads as intentional.
 
 ---
 
 # 17. Removal test
 
-Run a minimum of **10 complete removal/reinstallation cycles** on one panel.
+Run at least **10 complete removal/reinstallation cycles** on one panel.
 
-Record each cycle:
+Record:
 
 - time to expose fixing;
 - tool count;
 - release time;
 - number of people;
-- damage;
-- edge chips;
+- damage and edge chips;
 - screw/insert wear;
 - seating degradation;
 - rattle after reinstallation;
 - joint alignment;
 - repaint/touch-up required.
 
-The target is **zero wet making-good**.
+Target: **zero wet making-good**.
 
-If repainting the entire panel edge becomes necessary after normal access, the joint is not solved.
+If normal access requires repainting the full panel edge, the joint is not solved.
 
 ---
 
 # 18. Impact / solidity test
 
-The prototype does not need formal laboratory certification yet.
+Place a plastered-masonry or high-quality conventional independent-lining control beside the prototype.
 
-It does need comparative physical abuse.
+Compare palm strike, knuckle tap, shoulder lean, moderate furniture impact, repeated local contact, shelf load and vibration after impact. Record subjective observations and visible damage.
 
-Beside the prototype place a control:
-
-- plastered masonry; or
-- high-quality conventional independent lining.
-
-Perform repeat comparative observations:
-
-- palm strike;
-- knuckle tap;
-- shoulder lean;
-- moderate furniture impact;
-- repeated door-stop-like local contact;
-- shelf load;
-- vibration after impact.
-
-Record subjective observations and any visible damage.
-
-The project is specifically trying to eliminate the sensation:
-
-> “this is an access panel.”
+The wall should not announce itself as an access panel.
 
 ---
 
 # 19. Acoustic observation
 
-At prototype stage record:
+Record tap sound, low-frequency boom, panel rattle, rail ringing, difference between filled and empty cavity, sound at joints and sound after 10 cycles.
 
-- tap sound;
-- low-frequency boom;
-- panel rattle;
-- rail ringing;
-- difference between mineral-wool-filled and empty cavity;
-- sound at joint;
-- sound after 10 removal cycles.
-
-A later room-scale or laboratory acoustic test may follow.
+Room-scale or laboratory testing may follow later.
 
 ---
 
 # 20. Prototype materials list
 
-Indicative, subject to workshop availability:
-
 ### Background
-
 - masonry / rigid test wall;
-- parge/sealed background layer.
+- parge or sealed background layer.
 
 ### Backplane
-
 - galvanised steel top-hat/channel or straight timber rails;
 - standard masonry anchors;
-- adjustable packers / slotted stand-offs;
+- adjustable packers or slotted stand-offs;
 - mineral wool.
 
 ### Panels
-
 - 12.5 mm dense gypsum-fibre board;
-- spare sheet for damage/replacement testing;
+- spare sheet for replacement testing;
 - one timber sample/panel.
 
 ### Support
-
 - lower steel/aluminium angle or hardwood ledge;
 - thin resilient seating strip.
 
 ### Restraint
-
 - standard screws / threaded inserts / plates;
-- simple cleat profiles for T2 comparator.
+- simple cleat profiles for T2.
 
 ### Architecture
-
 - real timber skirting;
 - real timber picture rail;
 - representative cornice;
-- small brass/bronze strip or substitute for the functional-metal joint test.
+- small brass/bronze strip or substitute for functional-metal testing.
 
 ### Services
-
 - electrical back box;
-- socket / switch;
+- socket/switch;
 - cable conduit or containment.
 
 ---
 
 # 21. Measurements to record
 
-Before and after cycling:
+Before and after cycling record:
 
 - rail plane deviation;
 - panel face deviation;
-- vertical joint width at top / middle / bottom;
+- vertical joint width at top/middle/bottom;
 - panel weight;
-- removal time;
-- reinstatement time;
+- removal and reinstatement time;
 - force/effort observations;
 - gap change;
 - visible edge damage;
@@ -677,43 +405,43 @@ Photograph every interface before closure.
 
 ## Immediate fail
 
-The prototype fails if:
+Fail if:
 
-- the wall visibly looks like commercial access panelling;
+- the wall reads as commercial access panelling;
 - normal contact produces rattle;
-- panel cannot be removed without wet repair;
-- fixing/release mechanism depends on an irreplaceable proprietary part;
-- access requires damaging skirting/cornice;
-- repeated cycling causes growing joint misalignment;
-- the background boundary is damaged during routine removal;
-- a background condition within the declared tolerance cannot be corrected by the designed adjustment system;
+- removal requires wet repair;
+- release depends on an irreplaceable proprietary part;
+- access damages skirting or cornice;
+- cycling produces growing joint misalignment;
+- routine removal damages the background boundary;
+- declared background tolerance cannot be corrected by the designed adjustment;
 - correct assembly depends on undocumented packers, filler, foam, adhesive or extra fixings;
-- the ordinary installation sequence cannot be understood without designer coaching.
+- the normal sequence cannot be understood without designer coaching.
 
 ## Conditional fail
 
-Redesign required if:
+Redesign if:
 
 - two-person handling is unreasonably awkward;
-- wall sounds substantially hollower than control;
+- the wall sounds substantially hollower than the control;
 - cavity depth becomes excessive;
-- release method is visually obvious;
+- release is visually obvious;
 - too many hidden fasteners are required.
 
 ## Strong pass
 
-The concept is successful if:
+Pass strongly if:
 
-- the room face is desirable independent of maintainability;
-- panel joints read as deliberate architecture;
-- panel can be removed and reinstated quickly with ordinary tools;
-- wall remains solid and quiet;
+- the room face is desirable without knowing it is maintainable;
+- joints read as deliberate architecture;
+- a panel can be removed and reinstated quickly with ordinary tools;
+- the wall remains solid and quiet;
 - the permanent background remains untouched;
-- future panel remanufacture looks straightforward.
+- future remanufacture appears straightforward.
 
 ---
 
-# 23. Prototype variants worth building side-by-side
+# 23. Side-by-side variants
 
 Build two 600 mm fields differently.
 
@@ -731,16 +459,13 @@ Build two 600 mm fields differently.
 - optional functional metal edge;
 - same hidden backplane.
 
-This determines whether the project should:
-
-- visually suppress panelisation; or
-- positively integrate it into Georgian wall composition.
+Use the comparison to decide whether panelisation should recede visually or become part of the Georgian wall composition.
 
 ---
 
-# 24. What this prototype is not testing yet
+# 24. What P01 does not validate
 
-Do not pretend P01 validates:
+P01 does not validate:
 
 - final fire resistance;
 - final acoustic insulation;
@@ -752,6 +477,6 @@ Do not pretend P01 validates:
 
 Those require specialist design and system-level evidence.
 
-P01 answers a more fundamental architectural question first:
+P01 answers the earlier question:
 
 > **Can the reversible wall be good enough to deserve engineering?**
