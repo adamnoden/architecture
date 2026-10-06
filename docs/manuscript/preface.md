@@ -42,7 +42,7 @@ Early containerisation still had a boundary problem. Shipping companies used dif
 
 Common dimensions and interfaces changed that. Independently owned ships, cranes, ports, trains and lorries could participate in the same physical language. ISO's freight-container work, begun through a technical committee created in 1961, helped formalise that language internationally; its first freight-container standard appeared in 1968.[3]
 
-Malcom McLean is rightly central to this history, but the useful lesson is larger than the inventor. Engineers, ports, manufacturers, unions, shipping companies, military requirements and standards committees turned competing private systems into interoperable infrastructure. The breakthrough survived because the interface became larger than its originator.
+Malcolm McLean is rightly central to this history, but the useful lesson is larger than the inventor. Engineers, ports, manufacturers, unions, shipping companies, military requirements and standards committees turned competing private systems into interoperable infrastructure. The breakthrough survived because the interface became larger than its originator.
 
 Standardisation is often imagined as the enemy of variety. At the right layer it can produce the opposite. A stable interface allows enormous variety on either side because neither side must be redesigned whenever the other changes. The container does not need to know which crane will lift it, and the crane does not need to know what is inside.
 
