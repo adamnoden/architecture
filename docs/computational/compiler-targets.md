@@ -1,83 +1,35 @@
-# Compiler Targets — Conceptual v0.1
+# Compiler Targets — Conceptual v0.2
 
 **Status:** foundational research draft  
-**Purpose:** define what a building is compiled *against* without mixing regulation, architectural taste, software capability and project facts into one undifferentiated rule set.
+**Purpose:** define what a building is compiled *against* without mixing regulation, architectural preference, software capability and project facts into one rule set
 
-## 1. The concept
+## 1. A compile result needs a named normative environment
 
-A house does not simply “comply with 2026”.
+A house does not simply “comply with 2026”. Its obligations depend on jurisdiction, applicable legislation and amendments, dates and transitional provisions, building/work classification, selected compliance routes and the technical standards those routes rely on.
 
-It exists within a specific normative environment.
-
-That environment depends on:
-
-- jurisdiction;
-- the legislation and amendments applicable to the work;
-- date and transitional provisions;
-- building/work classification;
-- the compliance routes selected for applicable functional requirements;
-- referenced technical standards and national parameters.
-
-The future compiler should package that external normative environment as a **versioned compiler target**.
+The future compiler packages that external normative environment as a **versioned compiler target**.
 
 > **A compile result is meaningless unless the target is named.**
 
-## 2. Do not overload the target
+## 2. Keep four configuration layers separate
 
-The first concept paper used “compiler target” broadly.
-
-That analogy is useful, but it should now be made precise.
-
-Four separate configuration layers should exist conceptually.
+Earlier work used “compiler target” too broadly. The useful model separates:
 
 ### A. Compiler target
 
-External normative environment.
-
-Examples:
-
-- England;
-- applicable Building Regulations snapshot;
-- new dwelling;
-- applicable transitional basis;
-- selected compliance routes;
-- incorporated standards versions.
+The external normative environment: England, applicable Building Regulations snapshot, new dwelling, transitional basis, selected compliance routes and incorporated standards versions.
 
 ### B. Supported-domain profile
 
-What the compiler itself knows how to prove.
-
-Examples:
-
-- supported masonry wall families;
-- supported engineered-timber floor spans;
-- permitted roof forms;
-- structural proof envelopes;
-- service strategies.
+What the compiler itself knows how to establish: supported construction families, span ranges, roof forms, structural proof envelopes and service strategies.
 
 ### C. Architectural grammar
 
-The selected architectural language.
-
-Examples:
-
-- Georgian-derived grammar G-01;
-- allowed room/bay/opening relationships;
-- hierarchy and proportional rules.
+The selected design language: for example Georgian-derived grammar G-01 and its room, bay, opening, hierarchy and proportion rules.
 
 ### D. Project configuration
 
-Facts and requirements particular to the project.
-
-Examples:
-
-- site;
-- ground investigation;
-- climate/exposure data;
-- client brief;
-- budget;
-- room programme;
-- chosen performance targets.
+Facts and requirements particular to the job: site, ground evidence, climate/exposure, client brief, budget, room programme and chosen performance targets.
 
 Conceptually:
 
@@ -95,143 +47,61 @@ PROJECT CONFIGURATION
 SOURCE BUILDING MODEL
 ~~~
 
-Keeping these separate prevents regulatory authority from being confused with architectural preference.
+The separation matters because a grammar preference, an unsupported condition and a legal failure should never acquire the same authority merely because all can block one workflow.
 
-## 3. Why targets must be versioned
+## 3. Targets are temporal
 
-Building regulation is temporal.
-
-A current guidance document may differ from the version applicable to work already within a transitional regime.
-
-As of 2026, England is actively changing several Approved Documents and the Future Homes and Buildings Standards have introduced further amendments. Earlier guidance may remain relevant to projects falling under earlier regulatory standards.
+Regulation changes through amendments, new guidance and transitional provisions. A recently published document may not be the applicable basis for a project already inside an earlier regime.
 
 Therefore:
 
 > **“Use the latest rules” is not a valid target-selection algorithm.**
 
-The target needs to identify the actual regulatory basis applicable to the project.
+A target needs enough provenance to explain why its regulatory basis applies to this particular project.
 
 ## 4. Target anatomy
 
-A target should eventually identify at least the following.
-
 ### Jurisdiction
 
-For the initial research:
+Initial research target: **England**.
 
-**England**
-
-Not “UK”.
-
-Scotland, Wales and Northern Ireland must be separate targets if ever supported.
+Not “UK”. Scotland, Wales and Northern Ireland require separate targets if supported later.
 
 ### Legal snapshot
 
-The applicable primary/secondary legislation and amendments.
-
-For England this includes the Building Regulations 2010 as amended, but the exact future machine representation must preserve amendment history and applicability.
+The applicable legislation and amendments, including the Building Regulations 2010 as amended where relevant. A future machine representation must preserve amendment history and applicability.
 
 ### Effective / transitional basis
 
-The target must explain why this regulatory snapshot applies.
+Record the dates, commencement conditions, transition provisions and project status that make the snapshot applicable. Superseded provisions may still govern a transitional project.
 
-Potential data:
+### Building / work classification
 
-- relevant work/application dates;
-- commencement conditions;
-- transitional provisions;
-- project status;
-- superseded provisions that remain applicable.
-
-### Building/work classification
-
-Examples:
-
-- new dwelling;
-- material change of use;
-- extension;
-- alteration;
-- higher-risk building, where applicable.
-
-The first supported domain should be much narrower than the universe of categories.
+Examples include new dwelling, extension, alteration, material change of use and higher-risk building. The first supported domain should cover only a narrow subset.
 
 ### Requirement set
 
-Which functional requirements apply.
-
-Examples:
-
-- structure;
-- fire;
-- moisture;
-- ventilation;
-- sound;
-- sanitation;
-- energy;
-- access;
-- overheating;
-- electrical safety;
-- EV charging infrastructure;
-- gigabit-ready infrastructure;
-- toilet accommodation, as applicable.
-
-The list is illustrative and target-version-dependent.
+Which functional requirements apply: structure, fire, moisture, ventilation, sound, sanitation, energy, access, overheating, electrical safety and other applicable requirements. The actual set is target-dependent.
 
 ### Compliance-route selection
 
-A functional legal requirement and a published Approved Document are not the same thing.
-
-The target should identify the route by which compliance is intended to be demonstrated.
-
-Possible route classes:
-
-- Approved Document prescriptive/common route;
-- calculation route;
-- referenced standard route;
-- tested/certified system;
-- specialist engineered alternative;
-- explicit human/professional determination.
-
-A future target might mix routes across requirements.
+Legal functional requirements and Approved Documents are not the same thing. A target should state how each supported requirement is intended to be demonstrated: Approved Document route, calculation, referenced standard, tested/certified system, specialist engineering or explicit professional determination.
 
 ### Referenced standards set
 
-The exact technical standards/version/national annex relied upon by selected routes.
-
-This should be reference metadata, not a pirated copy of copyrighted standard text.
+Record the exact standard, edition and national parameters relied upon by the selected route. This is reference metadata, not permission to copy copyrighted standards into the repository.
 
 ### Official-source provenance
 
-Every target rule should point back to its source/version where licensing permits.
+Useful metadata includes source title, issuer, identifier, edition, publication/effective dates, supersession, source URI where appropriate and the version of the machine-rule implementation.
 
-Potential metadata:
+## 5. Planning is a separate target family
 
-- source title;
-- issuer;
-- identifier;
-- version/edition;
-- publication date;
-- effective date;
-- supersession information;
-- source URI where appropriate;
-- machine-rule implementation version.
+Planning and Building Regulations are different legal and decision systems.
 
-## 5. Target is not planning
+The project may eventually need planning constraints such as development-plan policy, conservation area, listed status, permitted development, design codes or site conditions, but these should not be folded into the building-control target.
 
-Town and country planning is a different legal/decision system from Building Regulations.
-
-The project may eventually support planning constraints such as:
-
-- local development plan;
-- conservation area;
-- listed status;
-- permitted development;
-- design codes;
-- site-specific conditions.
-
-But they should not be quietly mixed into the Building Regulations target.
-
-A future architecture may use separate target families:
+A future build may combine:
 
 ~~~text
 BUILDING-CONTROL TARGET
@@ -240,44 +110,19 @@ ENVIRONMENTAL / SITE TARGET
 CLIENT / DOCTRINE PROFILE
 ~~~
 
-A build may need all of them.
+They retain different authorities and processes.
 
-They have different authorities and decision processes.
+## 6. The building-control body is not the target
 
-## 6. Target is not the building-control body
+A local-authority building-control body or registered building-control approver reviews evidence and performs statutory functions. Its identity does not ordinarily change the substantive regulatory target.
 
-A local authority building control body or registered building control approver reviews evidence and performs statutory functions.
+A separate submission/review profile may still describe document packaging, naming, contacts, metadata and change-control procedures. That belongs downstream of the normative target.
 
-Their identity should not ordinarily redefine the substantive regulatory target.
+## 7. Approved Documents are compliance guidance, not the law itself
 
-However, a future workflow may need a separate **submission/review profile** describing:
+Approved Documents provide statutory guidance and common ways of meeting functional requirements. They are therefore attractive supported routes for a bounded compiler.
 
-- document packaging;
-- naming;
-- expected evidence structure;
-- submission metadata;
-- project contacts;
-- change-control procedures.
-
-That is downstream delivery configuration, not the core normative target.
-
-## 7. Approved Documents
-
-Approved Documents are statutory guidance describing ways of meeting the Building Regulations.
-
-They contain:
-
-- general guidance;
-- expected performance;
-- practical examples and solutions for common situations.
-
-They are therefore excellent candidates for supported compliance routes in a bounded compiler.
-
-But the system should never encode the false proposition:
-
-> Approved Document requirement = legal functional requirement.
-
-The target must preserve:
+The target should preserve the chain:
 
 ~~~text
 LEGAL REQUIREMENT
@@ -287,105 +132,47 @@ SELECTED COMPLIANCE STRATEGY
 GUIDANCE / STANDARD / CALCULATION / EVIDENCE
 ~~~
 
-This also allows alternative solutions to exist without corrupting the model.
+This keeps alternative compliant routes possible without pretending the guidance text *is* the legal requirement.
 
-## 8. British and other technical standards
+## 8. Standards create technical and rights problems
 
-Standards present two distinct problems.
+Technical standards are often textual, tabular, mathematical, conditional, cross-referenced and scope-limited. Formalising them is substantial work.
 
-### Technical problem
+They are also commonly copyrighted and licensed. Buying access to a standard does not imply a right to redistribute its text as executable rules.
 
-Requirements may be:
+Possible future approaches include licensed machine-readable services, BSI SMART standards, APIs, rule implementations that reference but do not reproduce protected content, open standards where available and independently derived algorithms where lawful and properly verified.
 
-- textual;
-- tabular;
-- mathematical;
-- conditional;
-- cross-referenced;
-- scope-limited;
-- dependent on other standards.
+This is a programme-level risk, not a documentation detail.
 
-Their machine representation is a substantial research problem.
+## 9. SMART standards may change the ingestion problem
 
-### Rights/licensing problem
+BSI's work on Machine Applicable, Readable and Transferrable standards is strategically relevant. Authoritative structured semantics would be safer than reverse-engineering complex standards from PDFs.
 
-Many British Standards are copyrighted and licensed.
+Do not commit to a standards-ingestion architecture before understanding that ecosystem.
 
-The project must not assume that buying a PDF creates a right to redistribute the standard as executable source code.
+## 10. Target snapshots are immutable releases
 
-Possible future strategies to investigate:
+Once Building Release B claims Target T, the meaning of T must not silently change.
 
-- licensed machine-readable standards services;
-- BSI SMART standards;
-- APIs;
-- rule implementations that reference but do not reproduce protected content;
-- open standards where available;
-- independently derived algorithms where legally appropriate and properly verified.
+If source guidance or a machine implementation changes, create T+1, preserve T, record supersession and decide explicitly whether existing projects should migrate.
 
-This is a first-class programme risk.
+The building should always be able to answer: **what exactly did this release compile against?**
 
-## 9. SMART standards are strategically relevant
+## 11. Source version and rule-implementation version are different
 
-BSI reports active work on standards that are **Machine Applicable, Readable and Transferrable (SMART)**.
+Suppose source guidance edition 2026 is implemented as machine rule pack `RP-X-3`. Record both.
 
-That direction matters because the compiler-target problem becomes materially easier if authoritative standards are distributed with reliable structured semantics rather than reverse-engineered from PDFs.
+The authoritative source can stay unchanged while the machine implementation contains a bug. A corrected rule pack therefore needs its own version and regression history.
 
-The project should monitor this area before designing its standards ingestion architecture.
+## 12. Targets need their own tests
 
-## 10. Target snapshots should be immutable
+Before trusting a machine rule pack, exercise it against known compliant cases, known failures, boundary cases, exceptions, cross-rule dependencies and historical regressions.
 
-Once a building release claims compilation against Target T, the meaning of T should not silently mutate.
+Where interpretation remains ambiguous, expose the ambiguity rather than manufacturing determinism.
 
-If source guidance or a rule implementation changes:
+## 13. Alternative compliance routes remain first-class
 
-- create Target T+1;
-- preserve T;
-- record supersession;
-- explain whether existing projects should migrate.
-
-This is analogous to dependency lockfiles and reproducible software builds.
-
-A building designed five years ago must still be able to answer:
-
-> what exactly did we compile against?
-
-## 11. Rule implementation version is distinct from source version
-
-Suppose Approved Document X version 2026 is formalised into machine rule pack RP-X-3.
-
-The target must record both:
-
-- **source authority/version**;
-- **machine interpretation implementation/version**.
-
-Why?
-
-Because a bug can exist in the implementation even if the source document did not change.
-
-A corrected rule pack should therefore be independently versionable.
-
-This also enables validation suites for rule implementations.
-
-## 12. Target validation
-
-A target itself should have conformance tests.
-
-Before it can be trusted, its machine rule pack should be tested against:
-
-- known compliant examples;
-- known non-compliant examples;
-- boundary cases;
-- exceptions;
-- cross-rule dependencies;
-- historical regression cases.
-
-Where interpretation remains ambiguous, the target should expose that ambiguity rather than inventing false determinism.
-
-## 13. Alternative compliance routes
-
-The target model should not force one route when several legitimate routes exist.
-
-Conceptually:
+One requirement may legitimately admit several proof routes:
 
 ~~~text
 Requirement Bx
@@ -394,17 +181,11 @@ Requirement Bx
    └─ Route C: EXTERNAL PROFESSIONAL EVIDENCE
 ~~~
 
-This implies the compiler is not merely a validator.
+The compiler is therefore not only a validator. It plans and tracks proof obligations.
 
-It is also a planner of proof obligations.
+## 14. Early targets will be incomplete
 
-## 14. Machine-readable target incompleteness
-
-No early target is likely to formalise an entire regulatory system.
-
-Therefore targets need explicit coverage declarations.
-
-Example:
+A target must declare its coverage explicitly.
 
 ~~~text
 Target T-ENG-NDW-01
@@ -418,68 +199,32 @@ Coverage:
   unusual fire engineering  unsupported
 ~~~
 
-A compile cannot claim “regulatory compliance” beyond target coverage.
+The system may report native resolution, external evidence required or unsupported. It must not claim regulatory coverage beyond what the target actually implements.
 
-It can instead report:
+## 15. Site facts belong to project configuration
 
-- natively resolved;
-- external evidence required;
-- unsupported.
+Radon, flood risk, wind exposure, ground bearing, local climate and neighbouring conditions may change which obligations apply, but they are facts about the site/project.
 
-## 15. Site facts do not belong in target
+The target supplies the conditional rule; project evidence says whether the condition is true, false or unknown.
 
-Examples:
+## 16. Product evidence belongs to the evidence graph
 
-- radon;
-- flood risk;
-- wind exposure;
-- ground bearing;
-- local climate;
-- neighbouring conditions.
+A lintel, membrane or ventilation unit brings its own performance and limitations. Those facts belong to product libraries, assembly families, project selections and evidence records.
 
-These can affect applicable obligations.
+The target may require a performance level. It should not ordinarily hard-code a commercial product.
 
-But they belong in **project/site configuration**, not the jurisdictional target itself.
+## 17. Architectural doctrine is not regulation
 
-The target supplies the rule:
-
-> if condition X, obligation Y applies.
-
-The project supplies whether condition X is true or unknown.
-
-## 16. Product evidence does not belong in target
-
-A selected lintel, membrane or ventilation unit may carry evidence and limitations.
-
-That belongs to:
-
-- product library;
-- assembly family;
-- project selection;
-- evidence graph.
-
-The target may require certain performance.
-
-It should not usually hard-code one commercial product.
-
-## 17. Architectural doctrine does not belong in target
-
-The Long-Life House doctrine is project/architectural governance.
-
-It may be stricter than regulation.
-
-Its obligations should remain distinguishable:
+The Long-Life House doctrine can be stricter than regulation and should remain independently reportable.
 
 ~~~text
 REGULATORY PASS
 DOCTRINE FAIL
 ~~~
 
-That result is meaningful.
+That is useful information. Collapsing the two would make it impossible to tell whether a design is unlawful or merely outside this architectural system.
 
-If the two are collapsed, it becomes impossible to explain whether a rejected design is illegal or merely outside our architectural system.
-
-## 18. Example conceptual build manifest
+## 18. Conceptual build manifest
 
 ~~~text
 Build configuration: HOUSE-R01
@@ -488,7 +233,7 @@ Target:
   jurisdiction: England
   building class: new dwelling
   regulatory snapshot: T-ENG-NDW-2026-A
-  transition basis: declared in REG-BASIS-01
+  transition basis: REG-BASIS-01
   compliance route pack: CRP-04
 
 Supported domain:
@@ -506,48 +251,42 @@ Source model:
   HOUSE-MODEL-V23
 ~~~
 
-Every compile output should carry this identity.
+Every compile output should retain this identity.
 
 ## 19. England-first research backlog
 
-Before a real England target can exist:
+Before a real England target exists:
 
-1. map the applicable Building Regulations functional requirements for a tightly defined new-dwelling case;
-2. map current 2026 Approved Document editions and transitional conditions;
-3. identify which compliance routes are realistically formalizable;
-4. map incorporated British/European standards;
-5. identify licensing and access constraints;
-6. determine which rules need specialist engineering rather than prescriptive automation;
+1. define a tightly bounded new-dwelling case;
+2. map the applicable functional requirements;
+3. map the relevant Approved Document editions and transitional conditions;
+4. identify realistically formalizable compliance routes;
+5. map incorporated British/European standards and licensing constraints;
+6. identify conditions requiring specialist engineering;
 7. create applicability tests;
 8. build known-pass/known-fail conformance examples;
-9. have target interpretation reviewed by competent regulatory practitioners;
-10. define how later amendments supersede but do not erase older targets.
+9. obtain review by competent regulatory practitioners;
+10. define supersession and migration between target versions.
 
-## S0 applied target fixture
+## 20. Applied S0 target fixture
 
-The compiler-target model is now exercised by [S0 Compiler Target Snapshot — England / 2026-10-03](s0-target-snapshot.md).
+[S0 Compiler Target Snapshot — England / 2026-10-03](s0-target-snapshot.md) exercises the target architecture against three awkward realities at once:
 
-That fixture demonstrates three important cases simultaneously:
+- published future guidance that is not yet the applicable basis for the assumed project date;
+- an amendment in force but subject to transition;
+- deliberately partial compiler coverage of a wider source target.
 
-- a published future guidance edition that is not yet the applicable basis for the assumed project date;
-- an amendment that has just taken effect but still has transition rules;
-- deliberately partial compiler coverage even though the source target is wider.
+It is a provenance/target-architecture test, not a complete encoded compliance route.
 
-The fixture should be treated as a test of target architecture and provenance, not as a complete encoded compliance route.
+## 21. Current definition
 
-## 20. Current conclusion
+Use **compiler target** narrowly:
 
-The phrase **compiler target** survives scrutiny, but only if used carefully.
+> **A named, immutable, versioned representation of the external normative environment against which defined claims are compiled.**
 
-It should mean:
+It is not the container for every preference, product, capability and project fact.
 
-> **a named, immutable, versioned representation of the external normative environment against which defined claims are compiled.**
-
-It should not mean:
-
-> every preference and fact associated with the project.
-
-That separation makes the compiler metaphor substantially stronger.
+---
 
 ## External anchors
 
