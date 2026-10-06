@@ -1,15 +1,15 @@
 # External Maintenance Access — Implementation Brief Module
 
-**Status:** delivery module to be incorporated into the architect-facing RIBA implementation brief  
+**Status:** delivery module for the architect-facing RIBA implementation brief  
 **Parent principle:** P5 — Give maintenance a geography
 
 ## Project requirement
 
 The design team shall demonstrate a coherent external maintenance strategy before façade, roof and landscape geometry are fixed.
 
-The strategy shall cover foreseeable inspection, cleaning, repair and replacement tasks and shall coordinate the building with the ground/support conditions, landscape, courtyards, site circulation and any dependence on neighbouring land or highway occupation.
+The strategy shall cover foreseeable inspection, cleaning, repair and replacement, coordinating the building with support conditions, landscape, courtyards, site circulation and any dependence on neighbouring land or highway occupation.
 
-A note stating only “provide safe maintenance access” is not sufficient evidence.
+“Provide safe maintenance access” is not sufficient evidence.
 
 ## Proposed non-negotiable
 
@@ -40,13 +40,13 @@ A note stating only “provide safe maintenance access” is not sufficient evid
 
 The architect shall:
 
-- identify the intended access hierarchy for major exterior zones;
-- identify elevations/courtyards where access is likely to be constrained;
-- test gross roof form, bays, porticos, low roofs and boundary setbacks against foreseeable maintenance;
-- reserve plausible logistics from the site entrance to enclosed gardens/courtyards;
-- flag likely dependence on neighbour/highway access.
+- identify the access hierarchy for major exterior zones;
+- flag constrained elevations and courtyards;
+- test roof form, bays, porticos, low roofs and setbacks against foreseeable maintenance;
+- reserve plausible logistics from site entrance to enclosed gardens or courtyards;
+- flag likely neighbour/highway dependence.
 
-**Gate:** no principal external geometry should become conceptually fixed while its maintenance route is wholly unknown.
+**Gate:** no principal external geometry should become conceptually fixed while its maintenance route remains wholly unknown.
 
 ### Stage 3 — Spatial Coordination
 
@@ -55,25 +55,25 @@ Prepare the External Access & Maintenance Plan and test representative task-spec
 Coordinate:
 
 - support positions with basements, lightwells, undercrofts and structure;
-- access positions with drainage chambers/gullies and external services;
+- access positions with chambers, gullies and external services;
 - landscape/hardscape with critical support and approach routes;
-- gates/passages with access equipment and replacement-unit logistics;
+- gates/passages with equipment and replacement-unit logistics;
 - roof access with safe arrival and onward work routes;
-- upper-window maintenance/replacement with internal and external access options;
+- upper-window service/replacement with internal and external options;
 - neighbour/highway dependencies.
 
-**Gate:** the design must identify at least one credible route for each selected representative scenario.
+**Gate:** at least one credible route must exist for each selected representative scenario.
 
 ### Stage 4 — Technical Design
 
 Where applicable resolve:
 
 - permanent anchors, tie sockets, guard sockets or other access interfaces;
-- permanent-structure checks for temporary access loads over suspended slabs/undercrofts;
-- roof hatch, landing and onward route if a hatch is selected;
-- window release/handling sequences;
-- rainwater/roof details against actual access method;
-- durable records of critical access/support positions.
+- structural checks for temporary loads over suspended slabs or undercrofts;
+- roof hatch, landing and onward route if selected;
+- window release and handling sequences;
+- rainwater/roof details against the actual access method;
+- durable records of critical support positions.
 
 Permanent access hardware is not required by default. It must justify its own inspection, boundary and whole-life burden.
 
@@ -81,54 +81,42 @@ Permanent access hardware is not required by default. It must justify its own in
 
 Prevent site changes from silently consuming the designed maintenance geography.
 
-Hold-point review should cover material changes to:
-
-- external levels;
-- drainage chamber positions;
-- gates and passages;
-- retaining walls;
-- external plant;
-- lightwells;
-- paving/support build-up;
-- tree/large-plant positions;
-- bay/portico/roof geometry.
+Hold-point review should cover material changes to external levels, drainage chambers, gates/passages, retaining walls, external plant, lightwells, paving/support build-up, major planting and bay/portico/roof geometry.
 
 ### Stage 6 — Handover
 
-Verify and record the as-built strategy.
-
-Provide:
+Verify and record the as-built strategy. Provide:
 
 - final External Access & Maintenance Plan;
-- photographs of critical support/access zones where useful;
-- below-ground/underfoot constraints relevant to temporary works;
+- useful photographs of critical support/access zones;
+- underfoot constraints relevant to temporary works;
 - permanent anchor/tie information where present;
 - roof-access information;
-- landscape zones whose obstruction would materially impair future access;
+- landscape zones whose obstruction would impair future access;
 - representative full-window replacement sequence.
 
 ## Acceptance questions
 
-For each representative external maintenance task:
+For each representative task ask:
 
-1. Can the work be moved to ground level or inside?
+1. Can the work move to ground level or inside?
 2. What access method is assumed?
-3. How do people/equipment/materials reach the work face?
+3. How do people, equipment and materials reach the work face?
 4. What supports the access method?
-5. What clear/setup/working geometry does it require?
-6. What architectural or landscape element occupies that geometry?
-7. What component/waste must travel back through the route?
-8. Does the strategy depend on land outside the project boundary?
-9. What permanent fabric or landscape must be dismantled purely to obtain access?
-10. Is the complexity proportionate to the architectural value or site constraint that created it?
+5. What setup and working geometry does it require?
+6. What architecture or landscape occupies that geometry?
+7. What component or waste must return through the route?
+8. Does the strategy depend on land outside the boundary?
+9. What permanent fabric or landscape must be dismantled purely for access?
+10. Is the complexity proportionate to the architecture or site constraint that created it?
 
 ## Evidence boundary
 
-The brief should distinguish:
+Distinguish:
 
-- **regulatory/professional basis:** CDM designer duties and work-at-height risk hierarchy;
+- **regulatory/professional basis:** CDM designer duties and work-at-height hierarchy;
 - **professional guidance:** HSG33, CWCT façade-access guidance, scaffold support requirements and maintainability practice;
-- **project choice:** exact access method, support-zone geometry, roof hatch, landscape arrangement and projection geometry.
+- **project choice:** exact access method, support geometry, roof hatch, landscape arrangement and projection geometry.
 
 Do not present project preferences as statutory requirements.
 
