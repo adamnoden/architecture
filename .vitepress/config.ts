@@ -7,12 +7,9 @@ export default defineConfig({
   base: '/architecture/',
   cleanUrls: true,
 
-  rewrites: {
-    'README.md': 'index.md',
-    'docs/README.md': 'docs/index.md',
-    'docs/computational/README.md': 'docs/computational/index.md',
-    'docs/development/README.md': 'docs/development/index.md',
-    'docs/prototypes/README.md': 'docs/prototypes/index.md'
+  rewrites(id) {
+    if (id === 'README.md') return 'index.md'
+    return id.replace(/\/README\.md$/, '/index.md')
   },
 
   themeConfig: {
@@ -28,17 +25,18 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/adamnoden/architecture' }
     ],
     nav: [
-      { text: 'Read', link: '/docs/manuscript/preface' },
-      { text: 'Patterns', link: '/docs/patterns/core-12' },
-      { text: 'Reference House', link: '/docs/reference-house/tectonic-architectural-language' },
-      { text: 'Research', link: '/docs/research/repose-and-low-vigilance' },
+      { text: 'Read', link: '/docs/manuscript/' },
+      { text: 'Patterns', link: '/docs/patterns/' },
+      { text: 'Reference House', link: '/docs/reference-house/' },
+      { text: 'Research', link: '/docs/research/' },
       {
         text: 'Project',
         items: [
           { text: 'Status', link: '/STATUS' },
           { text: 'Computational', link: '/docs/computational/' },
-          { text: 'Delivery', link: '/docs/delivery/riba-implementation-brief-template' },
+          { text: 'Delivery', link: '/docs/delivery/' },
           { text: 'Development', link: '/docs/development/' },
+          { text: 'Prototypes', link: '/docs/prototypes/' },
           { text: 'Repository map', link: '/docs/' }
         ]
       }
@@ -48,6 +46,7 @@ export default defineConfig({
         {
           text: 'Read',
           items: [
+            { text: 'Manuscript index', link: '/docs/manuscript/' },
             { text: 'Preface', link: '/docs/manuscript/preface' },
             { text: 'Governing principles', link: '/docs/manuscript/governing-principles' },
             { text: 'Part I', link: '/docs/manuscript/part-i' },
@@ -70,6 +69,7 @@ export default defineConfig({
         {
           text: 'Patterns',
           items: [
+            { text: 'Pattern index', link: '/docs/patterns/' },
             { text: 'Core catalogue', link: '/docs/patterns/core-12' },
             { text: 'Ground-supported facade access', link: '/docs/patterns/ground-supported-facade-access' },
             { text: 'Reversible assembly candidates', link: '/docs/patterns/reversible-assembly-candidates' }
@@ -81,6 +81,7 @@ export default defineConfig({
         {
           text: 'Reference House',
           items: [
+            { text: 'Reference House index', link: '/docs/reference-house/' },
             { text: 'Tectonic architectural language', link: '/docs/reference-house/tectonic-architectural-language' },
             { text: 'Vertical bay options', link: '/docs/reference-house/vertical-bay-options' },
             { text: 'Vertical bay coordination', link: '/docs/reference-house/vertical-bay-coordination' },
@@ -93,6 +94,7 @@ export default defineConfig({
         {
           text: 'Research',
           items: [
+            { text: 'Research index', link: '/docs/research/' },
             { text: 'Repose & low vigilance', link: '/docs/research/repose-and-low-vigilance' },
             { text: 'Repose evidence audit', link: '/docs/research/repose-evidence-audit' },
             { text: 'Workmanship robustness', link: '/docs/research/workmanship-robustness' },
@@ -137,6 +139,7 @@ export default defineConfig({
         {
           text: 'Delivery',
           items: [
+            { text: 'Delivery index', link: '/docs/delivery/' },
             { text: 'RIBA implementation brief', link: '/docs/delivery/riba-implementation-brief-template' },
             { text: 'External maintenance access requirements', link: '/docs/delivery/external-maintenance-access-requirements' }
           ]
@@ -166,6 +169,7 @@ export default defineConfig({
         {
           text: 'Editorial',
           items: [
+            { text: 'Editorial index', link: '/docs/editorial/' },
             { text: 'Editorial doctrine', link: '/docs/editorial/editorial-doctrine' },
             { text: 'Editorial overhaul plan', link: '/docs/editorial/editorial-overhaul-plan' }
           ]
@@ -176,6 +180,7 @@ export default defineConfig({
         {
           text: 'Source',
           items: [
+            { text: 'Source index', link: '/docs/source/' },
             { text: 'House Design Doctrine v7', link: '/docs/source/house-design-doctrine-v7' }
           ]
         }
