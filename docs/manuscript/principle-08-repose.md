@@ -1,36 +1,34 @@
 # Principle 8 — Design for Repose
 
-**Status:** publication-spread draft v1.0  
+**Status:** publication-spread draft v1.1  
 **Evidence control:** [Repose — Evidence Audit](../research/repose-evidence-audit.md)  
 **Research synthesis:** [Repose and Low Vigilance](../research/repose-and-low-vigilance.md)
 
 > **Treat the house as a place of repeated occupation and recovery. Its ordinary spaces should minimise unnecessary vigilance by being physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.**
 
-A dwelling is occupied under conditions that architectural photography rarely records: tiredness, illness, interrupted sleep, work, solitude, conversation, domestic noise, changing weather and the accumulation of ordinary possessions. A house that performs well only when empty, controlled and consciously admired is not enough.
+A house is lived in under conditions architectural photography rarely records. People are tired, ill, distracted, working, sleeping badly. Possessions accumulate. Rooms are used in ways the designer did not stage. A house that works only when empty, orderly and consciously admired is not working hard enough.
 
-The principle of repose asks how much attention the building requires simply to remain comfortable.
+Repose begins with a simple question: how much attention does the building require from the people living in it? Some answers are measurable. A room that overheats, admits too much noise or has poor air is uncomfortable before any subtler question of atmosphere arises. A serene composition beside an audible plant room is still a bad bedroom.
 
-Some of that burden is straightforward to measure. Overheating, cold, poor air quality, intrusive noise and disabling glare are direct environmental problems. They take priority over more speculative psychological claims. A visually serene bedroom beside an audible plant room is not a successful application of this principle.
+Other burdens come from the occupant’s ability to regulate ordinary conditions. Can the room be made private? Can direct sun be shaded? Can a window be opened or a light dimmed without negotiating an opaque control system? Is there somewhere to withdraw without leaving the household altogether? Research on privacy and perceived control gives these questions real weight, while warning against pretending that one arrangement suits everyone.
 
-Other burdens concern the occupant’s relationship with the house. Can a room be made private? Can direct sun be shaded? Can a window be opened, a light dimmed or the temperature altered without deciphering an opaque control system? Is there somewhere to withdraw while remaining within the household? Research on perceived control and housing privacy supports treating these as substantive design questions, while also showing why no single arrangement can be universal.
+This does not imply sparse rooms or visual restraint. A room can be rich in books, materials, pattern and the marks of ordinary life without becoming exhausting. The more useful distinction is between richness and confusion. Architectural order should be strong enough to receive occupation rather than depend on its absence.
 
-Repose does not require sparse interiors. Experimental work on architectural interiors distinguishes coherence from fascination: a scene can be rich in information while remaining comprehensible. Ornament, books, paintings, timber, stone, patterned textiles and the marks of occupation are therefore not enemies of repose. The architectural task is to give them an order capable of receiving further life.
+Structure is a more tentative part of the argument. Human vision rapidly extracts support, stability and other physical properties from what it sees. The doctrine therefore prefers principal domestic spaces in which major masses appear plausibly borne and at equilibrium. This does not show that cantilevers are harmful, that arches are therapeutic or that the visible load path must reproduce the engineer’s structural diagram. The inference remains weaker than the environmental claims above.
 
-Structure introduces a more tentative proposition. Human vision rapidly extracts support, stability and other physical properties from what it sees. The doctrine therefore prefers principal domestic spaces in which major masses appear plausibly borne and at equilibrium. This is not a claim that cantilevers are harmful, that arches are therapeutic, or that a visible load path must reproduce the engineer’s structural diagram. It is an architectural inference whose evidential status remains lower than the environmental claims above.
+Repose also constrains the technical agenda of the Long-Life House. Access, replacement and legibility are means, not ends. A removable wall that rattles, a corridor crowded with hatches or a floor that feels temporary underfoot has solved one maintenance problem by creating an occupation problem.
 
-The same principle constrains the technical agenda of the Long-Life House. Access, replacement and legibility are not ends in themselves. A removable wall system that rattles, a service route that fills a corridor with hatches, or an ingenious floor that feels temporary underfoot has solved the maintenance problem by creating an occupation problem.
-
-Repose is therefore not a style. It is a burden placed on design: the house should do more of the work, and ask less routine monitoring and correction of the people living in it.
+The principle is therefore less a style than a design burden: the house should ask for as little routine monitoring and correction as ordinary comfort allows.
 
 ![Principle 8 — Repose review](figures/principle-08-repose.svg)
 
-*Figure 8.1 — Repose review. The six domains are deliberately not presented as one scientific scale. Physical environmental performance can often be measured directly; control, privacy and comprehensibility are supported but context-sensitive; apparent structural equilibrium remains a doctrine hypothesis; technical expression remains architectural judgement.*
+*Figure 8.1 — Repose review. The six domains are not presented as one scientific scale. Physical environmental performance can often be measured directly; control, privacy and comprehensibility are supported but context-sensitive; apparent structural equilibrium remains a doctrine hypothesis; technical expression remains architectural judgement.*
 
 ## Design consequences
 
 ### Physical conditions first
 
-Thermal comfort, indoor air quality, acoustic conditions, daylight and glare should be resolved through appropriate building-science methods. The language of repose must never be used to obscure poor measurable performance.
+Thermal comfort, indoor air quality, acoustic conditions, daylight and glare should be resolved through appropriate building-science methods. Repose must not become language for excusing poor measurable performance.
 
 ### Comprehensible space
 
@@ -38,7 +36,7 @@ The plan need not be simple, but its hierarchy should be learnable. Principal ro
 
 ### Regulated exposure
 
-Shared life and privacy are both legitimate domestic needs. The house should provide meaningful choices between them rather than forcing either complete enclosure or permanent mutual exposure.
+Shared life and privacy are both legitimate domestic needs. The house should offer meaningful choices between them rather than forcing complete enclosure or permanent mutual exposure.
 
 ### Effective local control
 
@@ -46,11 +44,11 @@ Where an occupant reasonably needs to alter a condition, the means should be int
 
 ### Apparent equilibrium
 
-Where structure is visible or strongly implied, support and mass should form a plausible visual relationship. Apparent precariousness is not prohibited; it should be an intentional architectural effect rather than the accidental background condition of a principal room.
+Where structure is visible or strongly implied, support and mass should form a plausible visual relationship. Apparent precariousness is not prohibited, but it should be an intentional effect rather than the accidental background condition of a principal room.
 
 ### Technical subordination
 
-Services, labels, access panels, joints and replacement interfaces should be as visible as their function and architectural role require—no more and no less. Maintainability should not make the house feel provisional or continuously technical.
+Services, labels, access panels, joints and replacement interfaces should be as visible as their function and architectural role require. Maintainability should not make the house feel provisional or continuously technical.
 
 ## Review questions
 
@@ -62,6 +60,6 @@ For each principal room, ask:
 4. Can important immediate conditions be altered without unnecessary complexity?
 5. Does the structural expression appear settled, or is tension being used deliberately?
 6. Do technical systems remain subordinate to ordinary occupation?
-7. Will the room remain coherent after furniture, books, pictures and everyday objects arrive?
+7. Will the room remain coherent after furniture and everyday possessions arrive?
 
 Where the answer can be measured, measure it. Where it depends on programme or occupants, brief it. Where it remains architectural judgement, say so.
