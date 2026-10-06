@@ -1,4 +1,4 @@
-# Supported Domain — Candidate v0.2
+# Supported Domain — Candidate v0.3
 
 **Status:** Gate-B capability definition draft  
 **Purpose:** define the bounded world within which a future compiler may make strong claims without confusing architecture, regulation or project ambition with what the system can actually establish  
@@ -194,7 +194,7 @@ Early supported strategies may include:
 - high-service-room service wall;
 - designed structural penetrations;
 - water-damage-safe routes;
-- source-capture kitchen and bathroom extraction;
+- source-capture kitchen extraction;
 - accessible principal isolation;
 - explicit drainage/fall routes.
 
@@ -218,13 +218,13 @@ Embedded wet underfloor heating is not an H1 baseline because it places a large 
 
 ### Ventilation
 
-First family:
+The current H1 posture is **passive first, with bounded mechanical assistance where passive driving forces cannot discharge the performance obligation**.
 
-- [VENT-CMEV-01 — Central Continuous Mechanical Extract](ventilation-family-cmev-v01.md).
+The preferred research family is [VENT-HYBRID-STACK-01](ventilation-family-hybrid-stack-v01.md): purpose-provided supply openings, explicit transfer routes and near-vertical extract stacks arranged so useful passive flow remains possible, with low-pressure mechanical assistance available when required. It is **research-supported, not yet promoted to trusted H1 status**; competent whole-house airflow/performance proof remains external.
 
-It uses one accessible extract unit, wet-room extract ducting in declared service zones, designed habitable-room background inlets, transfer-air routes and openable-window purge ventilation.
+[VENT-CMEV-01](ventilation-family-cmev-v01.md) remains a supported fallback and the historical S2 family. MVHR remains a legitimate higher-complexity alternate where heat recovery, filtration, external noise/pollution or winter comfort justify the second duct network and additional maintenance burden.
 
-[MVHR](h1-ventilation-strategy-decision-v01.md) remains a higher-performance extension candidate and may be preferable in a Reference House where heat recovery, comfort and filtration justify the added duct/filter/condensate burden.
+The current decision is recorded in [H1 Ventilation Strategy Decision v0.2](h1-ventilation-strategy-decision-v02.md), which supersedes the earlier CMEV-first planning decision without rewriting frozen S2 evidence.
 
 ### Electrical / data
 
@@ -312,6 +312,9 @@ Half-support is worse than an explicit boundary.
 | Controlled service spine | Native candidate | Strong pattern basis |
 | High-service wall | Native candidate | Build-up to define |
 | Arbitrary service routing | Unsupported | Deliberate |
+| Hybrid passive-stack ventilation | Preferred research family / external performance proof | VENT-HYBRID-STACK-01; evidence gate open |
+| Central mechanical extract | Supported fallback | VENT-CMEV-01; historical S2 family |
+| MVHR | Supported-domain alternate | Higher complexity; site/evidence dependent |
 | Ordinary site | Candidate | Thresholds unresolved |
 | Complex retaining/site structures | Unsupported | Later extension |
 | Foundations | External in H1 v0 / future native family | SAB-H1-01 |
@@ -399,24 +402,20 @@ Architecture leads; the compiler earns coverage.
 
 ## 27. Current programme position
 
-S0 Run 01/02 and S1 Run 01 exercised the model from junction to complete-room scale. S1 added an external corner, ground-floor perimeter dependency, multi-role door, non-identical windows, room-level ventilation/accessibility and a service branch. Complexity remained provisionally contained while unresolved-family gravity emerged as the dominant Gate-B risk.
+The internal paper sequence is now complete through **H1-PAPER-01** and the final internal red team. The current frozen capability record is [H1 Capability Matrix v0.5 — Post-H1-PAPER Freeze](h1-capability-matrix-v05.md).
 
-Completed or established work includes:
+The whole-house paper test supports the central semantic / obligation / evidence architecture at bounded-house scale, but it does **not** authorise a release claim: competent technical and physical evidence remains absent, and external professional review is still open.
 
-- S1 room-scale fixture frozen;
-- `BF-CORNER-MCW-01`;
-- `BF-GF-MCW-01`;
-- `SR-ROOM-LOW-01`;
-- roof family `RF-TRUSS-DUO-01`;
-- stair family `ST-PRIVATE-01`;
-- foundations retained as scoped external proof;
-- G01-PILOT-P0 candidate set available for connected-room research.
+The current development sequence is therefore:
 
-External competent review is still required. Further target coverage and ordinary-house families remain programme work.
+1. obtain competent external attack using the [H1-PAPER External Review Pack v0.2](external-review-pack-h1-paper-v02.md);
+2. implement the minimal executable semantic/compiler vertical slice defined in [Research Programme v0.5](research-programme-v05.md);
+3. test source well-formedness, obligation derivation, evidence scope and selective invalidation in executable form;
+4. after that kernel succeeds, exercise doctrine-driven extensions beginning with external maintenance geography;
+5. use physical/product prototyping where doctrine meets workmanship;
+6. decide only then whether heavier geometry, CAD, solver and product architecture have been earned.
 
-The whole-house audit recorded in [H1 Capability Matrix — Post-Services v0.2](h1-capability-matrix-v02.md) concluded that the remaining gaps were modular rather than foundational. The dominant work at that point included external review, real evidence-package trials, wet-zone waterproofing/detail family, controlled envelope penetrations, whole-dwelling L/O evidence integration and selected product/installation families.
-
-S2 Run 01 subsequently completed and froze a non-release connected-cluster research fixture. Its result supported moving toward H1-PAPER-01 only after remaining wet-zone, penetration and external-evidence prerequisites were hardened.
+S0, S1 and S2 remain valuable frozen research fixtures. In particular, S2's CMEV assumption is historical evidence and is not retroactively rewritten to match the later passive-first ventilation decision.
 
 ## 28. Current conclusion
 
