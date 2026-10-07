@@ -1,6 +1,6 @@
 # Computational Track
 
-**Status:** internal paper-compilation phase complete; external review + minimal executable falsification prototype next  
+**Status:** internal paper-compilation and pattern-crosswalk research complete; external review + minimal executable falsification prototype next  
 **Heavy implementation status:** deliberately gated
 
 This directory records the computational expression of **House Systems Architecture**.
@@ -17,17 +17,25 @@ The internal paper sequence is complete:
 
 **S0 → S1 → S2 → H1-PAPER-01 → final red team → capability freeze.**
 
-The result is deliberately mixed:
+The pattern-language computational crosswalk is also complete at internal research scope:
+
+**Phase 8 → all 21 active patterns + three strategies + four held candidates → implementation handoff.**
+
+The result is deliberately bounded:
 
 - the semantic / obligation / evidence abstraction survives whole-house paper scale;
+- the canonical pattern language maps onto that architecture without becoming a second compiler ontology;
+- pattern provenance may inform project requirements, but technical obligations still derive from actual composed building graphs;
+- no universal whole-pattern machine `PASS` is authorised;
 - building release still fails because competent technical and physical evidence is absent;
 - professional external review remains open;
-- no further major paper-compilation scale is authorised;
-- a **minimal executable vertical slice** is authorised as a falsification prototype;
-- a heavy CAD/compiler product build is **not** authorised;
-- post-freeze doctrine changes must receive explicit coverage audits so doctrine and compiler cannot drift silently apart.
+- no further major paper-compilation or crosswalk expansion is authorised;
+- a **minimal executable vertical slice** is authorised as the next computational falsification step;
+- `PAT-XW-01` is authorised only **after** that kernel succeeds;
+- a heavy CAD/compiler product build is **not** authorised.
 
-Current programme control: [Research Programme v0.5](research-programme-v05.md)  
+Current programme control: [Research Programme v0.6](research-programme-v06.md)  
+Pattern crosswalk handoff: [Pattern Crosswalk — Implementation Handoff](pattern-crosswalk-implementation-handoff.md)  
 Frozen H1 capability audit: [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md)  
 Current doctrine delta: [Computational Doctrine Delta 01 — External Maintenance Geography](doctrine-delta-external-maintenance-v01.md)  
 Current external-review handoff: [External Competent Review Pack — H1-PAPER v0.2](external-review-pack-h1-paper-v02.md)
@@ -38,12 +46,13 @@ Current external-review handoff: [External Competent Review Pack — H1-PAPER v0
 
 Canonical concept paper: proposition, compiler/checker distinction, bounded domain, proof boundary, product form and relationship to the architectural doctrine.
 
-### 2. [Research Programme v0.5](research-programme-v05.md)
+### 2. [Research Programme v0.6](research-programme-v06.md)
 
-**Current programme-control layer.** It inherits the v0.4 stop rules and transition programme, then adds post-H1 doctrine-sync discipline and the external-maintenance extension fixture.
+**Current programme-control layer.** It inherits the frozen paper programme and post-H1 doctrine-sync controls, records the completed Phase-8 crosswalk, keeps P0 unchanged and defines `PAT-XW-01` as the first post-kernel pattern-provenance test.
 
 Historical programme layers remain provenance:
 
+- [v0.5](research-programme-v05.md) — post-H1 doctrine sync and external-maintenance extension fixture;
 - [v0.4](research-programme-v04.md) — H1 paper phase frozen; external review + minimal kernel next;
 - [v0.3](research-programme-v03.md) — H1-PAPER authorised;
 - [v0.2](research-programme-v02.md) — post-S2/passive-environment correction;
@@ -109,7 +118,22 @@ Supported/research families include:
 - [PEN-ENV-01 — Controlled service penetration](boundary-family-controlled-penetration-v01.md) — typed transitions across independent weather, cavity/moisture, air, thermal and maintenance obligations;
 - [WZ-BSM-01 — Bonded sheet-membrane wet zone](wet-zone-family-bonded-sheet-v01.md) — waterproof boundary, corners, drain and penetrations treated as a system rather than assuming “tiles are waterproof”.
 
-### 10. Supported Domain / H1
+### 10. [Pattern → Computational Crosswalk](pattern-crosswalk-model.md)
+
+Defines how architectural pattern intent may project into ordinary semantic facts, project requirements, diagnostics and human judgement without making patterns compiler primitives.
+
+Canonical Phase-8 records:
+
+- [Service-Topology Pattern Crosswalk — Pilot 01](pattern-crosswalk-service-topology-pilot.md)
+- [Remaining Active Pattern Crosswalk](pattern-crosswalk-remaining-active.md)
+- [Strategies and Held Candidates Audit](pattern-crosswalk-strategies-candidates.md)
+- [Implementation Handoff](pattern-crosswalk-implementation-handoff.md)
+- [Phase-8 Pilot Red-Team](../development/pattern-language-phase8-pilot-review.md)
+- [Phase-8 Gate Review](../development/pattern-language-phase8-review.md)
+
+Key result: all active patterns are representable through the existing semantic / obligation / evidence architecture. Computational representability does not imply architectural promotion or validation.
+
+### 11. Supported Domain / H1
 
 Frozen audit:
 
@@ -205,13 +229,14 @@ EXTERNAL PROFESSIONAL REVIEW    OPEN
 
 The initial H1 source contained an impossible dining→kitchen adjacency. The whole-house pass caught it; the source was corrected without weakening a family or proof rule. This is direct evidence that **machine-enforced source well-formedness belongs in the first implementation milestone**.
 
-## Post-freeze doctrine deltas
+## Post-freeze doctrine / language deltas
 
-Material doctrine additions after H1 require explicit computational coverage audits before the compiler can claim to cover them.
+Material doctrine or language additions after H1 require explicit computational coverage audits before the compiler can claim to cover them.
 
-Current delta:
+Current closed deltas:
 
 1. [External Maintenance Geography](doctrine-delta-external-maintenance-v01.md) — semantic architecture passes; H1 demonstration is partial; `EXT-MAINT-01` is authorised as a post-kernel executable extension fixture.
+2. [Pattern-language Phase 8 crosswalk](../development/pattern-language-phase8-review.md) — all canonical patterns/strategies/candidates fit the existing semantic architecture; `PAT-XW-01` is authorised after P0.
 
 ## External review
 
@@ -231,35 +256,36 @@ Preparing a review pack is not validation.
 
 ## Current development sequence
 
-1. **Freeze major paper expansion** — complete.
+1. **Freeze major paper/crosswalk expansion** — complete.
 2. Obtain competent external attack using the H1-PAPER review pack.
-3. Implement the **minimal executable semantic/compiler vertical slice** defined in [Research Programme v0.5](research-programme-v05.md).
-4. Test machine-enforced source well-formedness, obligation derivation, evidence scope and selective invalidation.
-5. After the kernel succeeds, run doctrine-driven extension fixtures beginning with **EXT-MAINT-01 external maintenance geography**.
-6. Perform one small physical/product prototype where doctrine meets workmanship.
-7. Incorporate only evidence-driven paper corrections.
-8. Decide whether the result earns heavier geometry, CAD, solver and product architecture.
+3. Implement the **minimal executable semantic/compiler P0 vertical slice** defined by [Research Programme v0.6](research-programme-v06.md), without a pattern subsystem.
+4. Test machine-enforced source well-formedness, obligation derivation, evidence scope, selective invalidation and diagnostics.
+5. If P0 passes, run **`PAT-XW-01`** to test pattern provenance/project-intent separation from technical validity.
+6. Choose the next extension fixture from unresolved uncertainty: external maintenance, rainwater, source capture, water failure, room-service boundaries or prototype-linked interfaces.
+7. Continue physical/product prototype work in parallel.
+8. Incorporate only evidence-driven paper corrections.
+9. Decide whether the result earns heavier geometry, CAD, solver and product architecture.
 
-## Working dependency order after H1
+## Working dependency order
 
 ~~~text
-ARCHITECTURAL DOCTRINE
+ARCHITECTURAL DOCTRINE + PATTERN LANGUAGE
         │
         ▼
 PAPER SEMANTIC / OBLIGATION / EVIDENCE MODEL
         │
         ▼
-H1-PAPER COMPLETE-HOUSE TEST
+H1-PAPER + PHASE-8 CROSSWALK FREEZE
         │
         ├────────────► EXTERNAL COMPETENT ATTACK
         │
         ├────────────► PHYSICAL / PRODUCT PROTOTYPE
         │
         ▼
-MINIMAL EXECUTABLE COMPILER KERNEL
+MINIMAL EXECUTABLE COMPILER KERNEL (P0)
         │
         ▼
-DOCTRINE-DELTA EXTENSION FIXTURES
+PAT-XW-01 + EVIDENCE-SELECTED EXTENSION FIXTURES
         │
         ▼
 FALSIFICATION / RED TEAM
@@ -284,4 +310,4 @@ The first executable milestone uses deliberately simple geometry to test:
 - intelligible diagnostics;
 - deterministic reproducibility.
 
-Do **not** begin with polished 3D CAD, a general structural solver, a full Building Regulations engine, IFC round-tripping, optimisation or generative-AI design. Those capabilities must be earned by the compiler kernel and external review.
+Do **not** begin with polished 3D CAD, a general structural solver, a full Building Regulations engine, IFC round-tripping, optimisation, generative-AI design or pattern-specific rule packs. Those capabilities must be earned by the compiler kernel and external review.
