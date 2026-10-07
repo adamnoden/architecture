@@ -1,10 +1,13 @@
-# W2 Replaceable Wall — Prototype Build Pack v0.2
+# W2 Replaceable Wall — Prototype Build Pack v0.3
 
 **Status:** 1:1 mock-up specification for design development  
 **Prototype ID:** P01-W2  
-**Purpose:** test whether a replaceable mineral wall lining can match a first-rate plaster wall for solidity, calmness and domestic character while providing genuinely reversible access.
+**Purpose:** test whether a replaceable mineral wall lining can match a first-rate plaster wall for solidity, calmness and domestic character while providing genuinely reversible access.  
+**Test authority:** [P01-W2 Evidence Protocol](w2-wall-bay-test-protocol.md)
 
 This is a prototype specification, not a construction specification for the house. It is intended to fail cheaply and inform the next detail.
+
+The build pack defines **what to make**. The evidence protocol defines **how the result is judged**. Freeze a test revision before fabrication; any later tuning must be logged as a deviation rather than silently absorbed into the prototype.
 
 ---
 
@@ -48,7 +51,6 @@ REMOVABLE DENSE MINERAL PANELS
 ┌────────────┬────────────┬────────────┐
 │            │            │            │
 │            │            │            │
-│            │            │            │
 └────────────┴────────────┴────────────┘
 
 TOP RESTRAINT HIDDEN BY ARCHITECTURAL TRIM
@@ -76,7 +78,9 @@ Build approximately:
 
 The 600 mm field is a test module, not a reference-house mandate.
 
-At roughly 16 kg/m² for a dense 12.5 mm gypsum-fibre board, a 600 × 2400 mm panel is about 23 kg before finish/hardware. Trial a narrower panel if removal is awkward.
+The current British Gypsum product data sheet for Rigidur H 12.5 mm gives a **minimum board mass of 12.3 kg/m²**. On that nominal minimum, a 600 × 2400 mm field is about **17.7 kg before finish and hardware**. Historical test specimens have reported higher actual surface density, so do not design the handling sequence from a catalogue calculation: **weigh the finished prototype panel and assess the actual handling task.**
+
+There is no arbitrary one-person weight gate. Full-height sheet geometry can be awkward independently of mass; use an appropriate manual-handling assessment and redesign the module/release where handling risk is disproportionate.
 
 ---
 
@@ -89,6 +93,8 @@ Apply a continuous visible layer behind the rails to represent the future slow b
 The prototype is not validating airtightness. It is enforcing one geometric condition:
 
 > **Panel removal must expose a complete background, not raw uncoordinated construction.**
+
+Survey the raw background before any rail/packer work. The evidence protocol requires the incoming geometry to be retained as raw evidence.
 
 ---
 
@@ -104,7 +110,7 @@ Preferred first test:
 - approximately 40–60 mm face/depth range;
 - no proprietary clipping geometry.
 
-Substitute an available stock section where necessary.
+Substitute an available stock section where necessary, but log the substitution before assembly.
 
 ## Rail spacing
 
@@ -118,11 +124,12 @@ Use sparse mechanical anchors. A reasonable prototype starting point is top, low
 
 Provide an explicit adjustment method: packers/shims, slotted stand-off or threaded spacer.
 
-At least one build must use a declared imperfect background rather than a perfectly prepared wall. Introduce realistic out-of-plumb, set-out and floor-datum variation within the range the system claims to absorb.
+At least one build must use a declared imperfect background rather than a perfectly prepared wall. Introduce or select realistic out-of-plumb, set-out and floor-datum variation within the range the system claims to absorb.
 
 Before the trial record:
 
 - incoming tolerance envelope;
+- actual measured background geometry;
 - target panel datum;
 - adjustment range;
 - permitted packer/shim types;
@@ -131,7 +138,9 @@ Before the trial record:
 
 Record the achieved tolerance.
 
-For one assembly cycle, use a competent installer/fabricator who did not design the system. Issue normal build information and parts. Do not coach the sequence except for safety. Record clarification requests, improvised material, extra fixings, unplanned tools and workarounds.
+For one assembly cycle, use a competent installer/fabricator who did not design the system. Issue normal build information and parts. Do not coach the sequence except for safety or prevention of irreversible damage. Record clarification requests, improvised material, extra fixings, unplanned tools and workarounds.
+
+**Do not repair the test invisibly.** Any unplanned packing, drilling, filler, foam, adhesive, hardware or sequence change belongs in the deviation log required by the evidence protocol.
 
 ---
 
@@ -149,13 +158,13 @@ Install mineral wool in half the bay and leave half empty for immediate tap/impa
 
 ## First substrate
 
-Use **12.5 mm dense gypsum-fibre board** as the initial mineral-panel proxy. British Gypsum Rigidur H is one suitable prototype reference because available data describes it as dense, robust and appropriate to off-site panel manufacture and fixing applications.
+Use **12.5 mm dense gypsum-fibre board** as the initial mineral-panel proxy. British Gypsum Rigidur H is one suitable prototype reference because current manufacturer information describes it as dense, robust and suited to off-site panel manufacture/fixing applications.
 
-This is a material-family test, not a house product selection.
+This is a material-family test, not a house product selection. Manufacturer performance for Rigidur H in a tested proprietary wall system does **not** transfer automatically to this custom removable assembly.
 
 ## Panel dimensions
 
-Start with nominal 600 mm full-height fields where handling permits. If weight becomes excessive, test a horizontal split behind a genuine dado or picture-rail datum rather than an arbitrary access seam.
+Start with nominal 600 mm full-height fields where handling permits. If handling becomes disproportionate, test a horizontal split behind a genuine dado or picture-rail datum rather than an arbitrary access seam.
 
 ## Edge treatment
 
@@ -190,7 +199,7 @@ Trial EPDM, cork/rubber composite or another durable compressible strip. It shou
 
 The top fixing should prevent tipping, rattle and unintended lifting, not carry primary gravity load.
 
-Build both variants.
+Build both variants before selecting the field used for the 10-cycle test.
 
 ## T1 — concealed mechanical screw / captive plate
 
@@ -204,7 +213,7 @@ Use a simple opposing profile to locate the panel and permit lift-and-release af
 
 Check lifting clearance, cornice conflict and tolerance/rattle risk.
 
-Do not choose between T1 and T2 on paper.
+Do not choose between T1 and T2 on paper. Freeze the selected cycling variant before cycle 1.
 
 ---
 
@@ -264,7 +273,9 @@ The wiring infrastructure should not depend structurally on the decorative panel
 
 Test at least a picture, coat hook, small shelf and medium wall-mounted object without automatically fixing through to masonry.
 
-Use the panel for the lightest class only where evidence supports it; use dedicated backplane grounds for heavier loads. Mark load classes during testing.
+Use the panel for the lightest class only where evidence supports it; use dedicated backplane grounds for heavier loads. Freeze the actual mass, lever arm, fastener and support route before loading and follow the evidence protocol result sheet.
+
+Do not infer general safe working loads from a workshop use-case test.
 
 ---
 
@@ -305,40 +316,44 @@ Evaluate visual calm, dust, paint behaviour, edge damage, removal, repeat alignm
 
 # 17. Removal test
 
-Run at least **10 complete removal/reinstallation cycles** on one panel.
+Run at least **10 complete removal/reinstallation cycles** on one frozen panel/support/restraint variant.
 
-Record:
+Record the complete cycle table required by the [evidence protocol](w2-wall-bay-test-protocol.md), including:
 
 - time to expose fixing;
 - tool count;
-- release time;
+- release/reinstatement time;
 - number of people;
 - damage and edge chips;
 - screw/insert wear;
 - seating degradation;
 - rattle after reinstallation;
 - joint alignment;
-- repaint/touch-up required.
+- repaint/touch-up/wet making-good required.
 
 Target: **zero wet making-good**.
 
-If normal access requires repainting the full panel edge, the joint is not solved.
+If normal access requires repainting/filling the full panel edge, the joint is not solved.
 
 ---
 
 # 18. Impact / solidity test
 
-Place a plastered-masonry or high-quality conventional independent-lining control beside the prototype.
+Build the high-quality conventional control required by the evidence protocol beside the prototype.
 
-Compare palm strike, knuckle tap, shoulder lean, moderate furniture impact, repeated local contact, shelf load and vibration after impact. Record subjective observations and visible damage.
+Compare palm strike, knuckle tap, shoulder/steady pressure, moderate furniture-like contact, repeated local contact, shelf load and vibration after impact. The evidence protocol adds a documented repeatable low-energy impact screen and independent room-quality assessment.
 
 The wall should not announce itself as an access panel.
+
+Do not describe workshop screening as a BS 5234-2 duty classification. Formal robustness testing is a later escalation if the candidate survives P01.
 
 ---
 
 # 19. Acoustic observation
 
 Record tap sound, low-frequency boom, panel rattle, rail ringing, difference between filled and empty cavity, sound at joints and sound after 10 cycles.
+
+Where simple recording/measurement is used, retain raw comparative data from candidate and control. Do not infer laboratory acoustic performance.
 
 Room-scale or laboratory testing may follow later.
 
@@ -380,22 +395,34 @@ Room-scale or laboratory testing may follow later.
 - socket/switch;
 - cable conduit or containment.
 
+### Evidence / measurement
+- scales capable of weighing finished panel;
+- 2 m straightedge / laser as appropriate;
+- feeler/taper gauge or equivalent for joint/step measurement;
+- timer;
+- documented impact mass/pendulum apparatus for the screening test;
+- camera;
+- load masses/fixture for the declared domestic fixing tests.
+
 ---
 
 # 21. Measurements to record
 
 Before and after cycling record:
 
+- raw background survey;
 - rail plane deviation;
 - panel face deviation;
 - vertical joint width at top/middle/bottom;
-- panel weight;
+- face step at joints;
+- panel mass;
 - removal and reinstatement time;
-- force/effort observations;
+- handling method;
 - gap change;
 - visible edge damage;
 - fixing wear;
-- acoustic observations.
+- comparative acoustic/solidity observations;
+- labour and materials used.
 
 Photograph every interface before closure.
 
@@ -403,12 +430,14 @@ Photograph every interface before closure.
 
 # 22. Pass / fail criteria
 
+The [evidence protocol](w2-wall-bay-test-protocol.md) is controlling where it is more specific.
+
 ## Immediate fail
 
 Fail if:
 
-- the wall reads as commercial access panelling;
-- normal contact produces rattle;
+- the wall reads as commercial access panelling under independent assessment;
+- normal contact produces rattle or loose-panel movement;
 - removal requires wet repair;
 - release depends on an irreplaceable proprietary part;
 - access damages skirting or cornice;
@@ -418,15 +447,16 @@ Fail if:
 - correct assembly depends on undocumented packers, filler, foam, adhesive or extra fixings;
 - the normal sequence cannot be understood without designer coaching.
 
-## Conditional fail
+## Conditional fail / redesign
 
 Redesign if:
 
-- two-person handling is unreasonably awkward;
+- handling is unreasonably awkward under the actual assessed task;
 - the wall sounds substantially hollower than the control;
 - cavity depth becomes excessive;
 - release is visually obvious;
-- too many hidden fasteners are required.
+- too many hidden fasteners are required;
+- cost/material/labour premium appears disproportionate to the access benefit.
 
 ## Strong pass
 
@@ -434,10 +464,12 @@ Pass strongly if:
 
 - the room face is desirable without knowing it is maintainable;
 - joints read as deliberate architecture;
-- a panel can be removed and reinstated quickly with ordinary tools;
-- the wall remains solid and quiet;
+- a panel can be removed and reinstated repeatedly with ordinary tools and without wet making-good;
+- the wall remains solid and quiet after cycling;
 - the permanent background remains untouched;
-- future remanufacture appears straightforward.
+- an unfamiliar competent installer can establish the intended datum from the issued information;
+- future remanufacture appears straightforward;
+- the candidate remains credible beside the conventional control rather than merely in isolation.
 
 ---
 
@@ -461,6 +493,8 @@ Build two 600 mm fields differently.
 
 Use the comparison to decide whether panelisation should recede visually or become part of the Georgian wall composition.
 
+Do not change the chosen 10-cycle field midway because another variant looks more promising; record the failed choice and freeze a new revision if a second run is required.
+
 ---
 
 # 24. What P01 does not validate
@@ -473,10 +507,13 @@ P01 does not validate:
 - final moisture behaviour;
 - final structural fixing capacity;
 - final approved electrical detail;
-- final material warranty.
+- final material warranty;
+- BS 5234-2 duty classification.
 
 Those require specialist design and system-level evidence.
 
 P01 answers the earlier question:
 
 > **Can the reversible wall be good enough to deserve engineering?**
+
+The evidence protocol turns that question into a recorded gate rather than a design-team impression.

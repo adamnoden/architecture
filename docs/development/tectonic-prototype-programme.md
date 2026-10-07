@@ -1,14 +1,17 @@
 # Tectonic Prototype and Engineering Programme
 
-**Status:** validation programme for candidate reversible assemblies.
+**Status:** validation programme for candidate reversible assemblies.  
+**Current first gate:** P01-W2 wall bay, governed by the [P01-W2 Evidence Protocol](../prototypes/w2-wall-bay-test-protocol.md).
 
 ## Purpose
 
-Several current tectonic propositions are architecturally promising but not proven enough to become project requirements. This programme defines the work needed to move them from **candidate** to **selected pattern**.
+Several current tectonic propositions are architecturally promising but not proven enough to become project requirements. This programme defines the work needed to move them from **candidate** toward selected/project use and, where warranted, eventual pattern promotion.
 
 > **Prototype the interface, not merely the object.**
 
 A panel tested on a bench proves little if the wall, acoustic boundary, fixing system and removal sequence have not been tested with it.
+
+A prototype is an evidence-generating experiment. Freeze the proposition and acceptance criteria before building; record deviations rather than silently redesigning through the test.
 
 ## Common acceptance framework
 
@@ -24,7 +27,7 @@ Examples include floor stiffness/vibration, wall impact resistance, fixing capac
 
 Does it feel permanent in daily life?
 
-Check rattle, squeak, rocking, hollow sound, waviness, joint quality, tactile solidity, cleaning and wear.
+Check rattle, squeak, rocking, hollow sound, waviness, joint quality, tactile solidity, cleaning and wear. Compare directly with an excellent conventional control wherever practical.
 
 ### 3. Tectonic quality
 
@@ -70,7 +73,8 @@ The trial tests the design and information, not the installer. A system that wor
 
 # Prototype P01 — Wall bay
 
-**Build pack:** `docs/prototypes/w2-wall-bay-build-pack.md`  
+**Build pack:** [`docs/prototypes/w2-wall-bay-build-pack.md`](../prototypes/w2-wall-bay-build-pack.md)  
+**Evidence protocol:** [`docs/prototypes/w2-wall-bay-test-protocol.md`](../prototypes/w2-wall-bay-test-protocol.md)  
 **Detail SVG:** `docs/prototypes/w2-wall-bay-detail.svg`
 
 ## Scope
@@ -91,6 +95,8 @@ Build a full-height representative principal-room bay based on the W2 hybrid hyp
 - representative panel joint;
 - brass/bronze only where functionally justified.
 
+Build an excellent conventional control beside it or under directly comparable conditions.
+
 ## Questions
 
 - Does it read as a serious Georgian room rather than technical fit-out?
@@ -105,9 +111,29 @@ Build a full-height representative principal-room bay based on the W2 hybrid hyp
 - Does the system absorb declared background tolerance without arbitrary packing or filler?
 - Are out-of-range conditions obvious enough to stop rather than conceal?
 
+## Evidence gate
+
+P01 is governed by the evidence protocol, which requires:
+
+- a frozen pre-build definition and deviation log;
+- measured background geometry;
+- measured finished-panel mass and handling assessment;
+- direct conventional control;
+- independent-installer assembly;
+- 10 removal/reinstatement cycles;
+- repeatable impact/fixing screens;
+- independent room-quality assessment;
+- geometry before/after cycling;
+- labour/material/depth account;
+- explicit promote / experimental / hold / reject decision.
+
+Do not substitute a design-team walkthrough for the result sheet.
+
 ## Comparative control
 
 Retain a high-quality conventional plastered-wall benchmark for visual, tactile/acoustic, cost and labour comparison. The candidate wins only if its additional complexity buys meaningful long-term value.
+
+A workshop pass does not constitute BS 5234, fire, acoustic, airtightness or structural certification. Those are later gates if the concept survives.
 
 ---
 
@@ -225,9 +251,11 @@ Compare every candidate with the best conventional alternative. Record initial m
 
 After prototype review assign one outcome:
 
-**Promote** — sufficiently robust for the main pattern catalogue.  
+**Advance toward promotion** — normal-use quality, robustness and lifecycle value justify specialist technical validation; not yet a general pattern merely because a mock-up passed.  
 **Reference-house experimental** — suitable for controlled use but not general recommendation.  
 **Hold** — plausible but needs more work.  
 **Reject** — complexity, performance or architectural cost exceeds demonstrated benefit.
+
+Pattern promotion should require the evidence appropriate to the claim, not only prototype enthusiasm. For occupied surface systems this normally includes competent review of structural/fixing, fire, acoustic and building-physics consequences in addition to full-scale normal-use evidence.
 
 Rejection is a successful research result. The doctrine should survive the failure of any particular implementation.
