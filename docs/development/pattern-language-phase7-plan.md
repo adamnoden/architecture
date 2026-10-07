@@ -1,8 +1,8 @@
 # Pattern-Language Overhaul — Phase 7 Canonical Migration Plan
 
-**Status:** active — P7.1, P7.2 and P7.3 complete; P7.4 next  
-**Current branch:** `pattern-language-phase7-new-identities`  
-**P7.3 starting point:** `main@722e883c6b2e4c8f3bad4ae232ab5d73125943d3`  
+**Status:** active — P7.1 through P7.4 complete; P7.5 next  
+**Current branch:** `pattern-language-phase7-nonpattern-homes`  
+**P7.4 starting point:** `main@4d831efb08f619799cfd0a2bc5d9c07a9273c08c`  
 **Authority:** [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md)
 
 This is the durable Phase-7 control point. It is written so migration can resume safely after loss of conversational context.
@@ -31,7 +31,7 @@ This is the durable Phase-7 control point. It is written so migration can resume
 
 ### P7.3 — newly admitted identities
 
-Canonical pages now exist for all ten Phase-6 admissions:
+Canonical pages exist for all ten Phase-6 admissions:
 
 - `HSA-P-013` Ground-Supported Façade Access;
 - `HSA-P-014` Accessible Vertical Service Zone;
@@ -44,21 +44,40 @@ Canonical pages now exist for all ten Phase-6 admissions:
 - `HSA-P-021` Source-Capture Bathroom Extract;
 - `HSA-P-022` Controlled Attachment Plane.
 
-P7.3 disciplines preserved:
+P7.3 preserved evidence/maturity limits, kept thin admissions concise, and did not invent graph edges merely to make the language appear connected.
 
-- `P-013` and `P-014` migrated from developed source material without evidence inflation;
-- the thinner `P-015..P-022` pages remain deliberately concise;
-- new identities are `supported` where the architectural pattern itself remains a transfer/generalisation even if an underlying regulation or technical principle is established;
-- Reference House use did not increase maturity;
-- no graph edges were invented merely to make the language look connected;
-- the generated index scans canonical root pattern pages plus retired identities, while excluding pilot duplicates;
-- legacy candidate/pilot/aggregate pages remain explicit migration provenance rather than competing canonical records.
+### P7.4 — non-pattern homes
+
+The material deliberately kept outside the pattern graph now has explicit canonical homes.
+
+**Strategies**
+
+- [Fail-Safe Water Distribution](../patterns/strategies/fail-safe-water-distribution.md)
+- [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md)
+- [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md)
+
+**Held candidates — no HSA IDs**
+
+- [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md)
+- [Individually Isolatable Manifold Distribution](../patterns/candidates/individually-isolatable-manifold-distribution.md)
+- [Local Deep Service Zone](../patterns/candidates/local-deep-service-zone.md)
+- [Selective Floor Access](../patterns/candidates/selective-floor-access.md)
+
+P7.4 disciplines preserved:
+
+- candidates use `kind: candidate`, `state: held` and no `HSA-P-*` IDs;
+- strategies use `kind: strategy` and remain outside the graph;
+- each held candidate states the specific admission gate rather than accumulating generic research TODOs;
+- Seated Floor Structure and Finish-Agnostic Floor Platform remain implementation challengers/provenance, not patterns;
+- the old reversible-assembly aggregate remains untouched historical source material;
+- the pre-admission Accessible Vertical Service Zone candidate remains provenance for canonical `HSA-P-014`;
+- navigation now distinguishes canonical patterns, strategies, held candidates, retired identities and migration provenance explicitly.
 
 ## Next
 
-**P7.4 — normalise non-pattern homes.**
+**P7.5 — Reference House + publication reconciliation.**
 
-Do not begin publication rewrite or computational crosswalk until P7.4 is complete and the canonical/non-canonical corpus is structurally unambiguous.
+This is integration work, not taxonomy work.
 
 ---
 
@@ -93,10 +112,10 @@ docs/patterns/
   service-topology-sequence.md
   <active canonical patterns>.md
 
-  strategies/
-  candidates/
-  retired/
-  pilot/                  # migration provenance until final cleanup
+  strategies/              # canonical non-pattern strategies
+  candidates/              # explicitly held, unnumbered pattern candidates
+  retired/                 # retired stable identities, never reused
+  pilot/                   # migration provenance until final cleanup
 ```
 
 Historical aggregate/source files stay in place until every reusable claim has a canonical destination and navigation/build validation passes.
@@ -159,59 +178,34 @@ The active/retired index is generated from canonical frontmatter; do not create 
 
 # 6. Remaining Phase-7 sequence
 
-## P7.4 — non-pattern homes — **NEXT**
+## P7.5 — publication + Reference House reconciliation — **NEXT**
 
-Normalise the material Phase 6 explicitly kept outside the canonical graph.
+### Reference House
 
-### Strategies
+- replace provisional/legacy pattern names with canonical IDs and titles where actual occurrences exist;
+- distinguish **selected pattern**, **project occurrence**, **implementation family** and **evidence obligation**;
+- do not add a pattern to the house merely because it exists in the language;
+- preserve rejected/deferred decisions and rewind events from the Phase-5 run;
+- keep Reference House use separate from evidence for the pattern.
 
-- **Fail-Safe Water Distribution** — already complete;
-- **Decompose Structural Interface Functions** — create canonical strategy page from the durable abstraction in Seated Floor Structure research;
-- **Separate Structural Floor from Changeable Layers Where Proportionate** — create canonical strategy page from the floor-platform work without promoting a removable platform.
+### Publication
 
-### Held candidates — no stable IDs
+- replace the obsolete 30-slot Part-III inventory with the actual canonical language;
+- group patterns for reading without encoding category into IDs;
+- make strategies and held candidates visible where editorially useful but not part of the canonical pattern count;
+- incorporate the service-topology generative sequence as method, not as a fake hierarchy;
+- demote old aggregate pattern pages from primary reading paths while preserving provenance.
 
-Create or normalise explicit candidate homes for:
-
-- Replaceable Architectural Lining;
-- Individually Isolatable Manifold Distribution;
-- Local Deep Service Zone;
-- Selective Floor Access / Selective Accessible Floor Zone.
-
-Candidate pages must state their unresolved admission gate. They do not receive `HSA-P-*` IDs.
-
-### Implementation-family/provenance material
-
-Keep source research and prototypes where they are unless moving them clearly improves ownership. In particular, do not erase:
-
-- service skirting;
-- door-surround service routing;
-- undercroft topology;
-- pipe-in-pipe / withdrawable pipe;
-- Seated Floor Structure;
-- Finish-Agnostic Floor Platform;
-- functional cornice;
-- specific backplane rail/frame systems.
-
-These remain useful implementations, experiments or project expressions rather than canonical patterns.
-
-## P7.5 — publication + Reference House reconciliation
-
-Only after P7.4:
-
-- update Reference House occurrence names/IDs;
-- replace the obsolete Part-III 30-slot inventory;
-- demote aggregate pattern prose from primary navigation;
-- preserve provenance links.
+P7.5 passes only when the Reference House and publication no longer use obsolete pattern taxonomy as if it were canonical.
 
 ## P7.6 — lightweight validation/tooling
 
-Add only useful automation:
+After P7.5, add only useful automation:
 
-- ID uniqueness;
+- duplicate-ID detection;
 - relationship-reference validity;
 - active/retired state checks;
-- reverse-link/index generation;
+- reverse links where they reduce navigation friction;
 - useful orphan warnings.
 
 No D3 graph in Phase 7.
@@ -242,12 +236,14 @@ Do not delete/demote an aggregate or source page until:
 3. provenance points to the superseding destination;
 4. docs build passes.
 
-Expected later actions:
+Current provenance disposition:
 
-- `core-12.md` → superseded/provenance pointer only after all Core destinations are reviewed as a set;
-- `candidates/accessible-vertical-service-zone.md` → pre-admission provenance after canonical `HSA-P-014` is established;
-- `reversible-assembly-candidates.md` → retain until candidate/strategy/implementation destinations exist;
-- `pilot/` → keep through Phase 7 as migration evidence, then decide whether to archive/demote.
+- `core-12.md` — legacy aggregate; canonical replacements now exist;
+- `candidates/accessible-vertical-service-zone.md` — pre-admission provenance for `HSA-P-014`;
+- `reversible-assembly-candidates.md` — mixed historical source whose strategy/candidate destinations now exist; implementation/prototype material remains useful;
+- `pilot/` — migration evidence for the first linked language experiment.
+
+P7.5 may demote these further in reading/navigation structure, but should not erase the historical record merely for neatness.
 
 ---
 
@@ -273,8 +269,9 @@ Read in order:
 1. root `README.md`;
 2. `STATUS.md`;
 3. [`pattern-language-overhaul.md`](pattern-language-overhaul.md);
-4. [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md);
-5. this file;
-6. [`../patterns/language-model.md`](../patterns/language-model.md).
+4. this file;
+5. [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md) only when classification rationale is needed;
+6. [`../patterns/language-model.md`](../patterns/language-model.md);
+7. Phase-5 Reference House run when occurrence/rejection context is needed.
 
-Then continue **P7.4**. Do not reopen Phase-6 taxonomy unless new evidence reveals a genuine contradiction.
+Then continue **P7.5**. Do not reopen Phase-6 taxonomy unless new evidence reveals a genuine contradiction.
