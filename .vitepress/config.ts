@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Long-Life House',
-  description: 'Architectural design research on selective permanence, maintainability and long-lived domestic construction.',
+  title: 'House Systems Architecture',
+  description: 'Architectural systems research for houses designed to be maintained, repaired, renewed and adapted across time.',
   lang: 'en-GB',
   base: '/architecture/',
   cleanUrls: true,
@@ -13,7 +13,7 @@ export default defineConfig({
   },
 
   themeConfig: {
-    siteTitle: 'Long-Life House',
+    siteTitle: 'House Systems Architecture',
     search: {
       provider: 'local'
     },
