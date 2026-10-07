@@ -31,6 +31,27 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     page('Pattern overview', '/docs/patterns/'),
     page('Pattern-language model', '/docs/patterns/language-model'),
     page('Service-topology sequence', '/docs/patterns/service-topology-sequence'),
+    group('Canonical patterns', [
+      page('HSA-P-001 — Controlled Utility Entry', '/docs/patterns/controlled-utility-entry'),
+      page('HSA-P-002 — Plant Room as Service Hub', '/docs/patterns/plant-room-service-hub'),
+      page('HSA-P-003 — Coherent Horizontal Service Route', '/docs/patterns/coherent-horizontal-service-route'),
+      page('HSA-P-004 — High-Service-Room Service Wall', '/docs/patterns/high-service-room-service-wall'),
+      page('HSA-P-005 — Designed Structural Penetration', '/docs/patterns/designed-structural-penetration'),
+      page('HSA-P-007 — Permanent Opening / Replaceable Window', '/docs/patterns/permanent-opening-replaceable-window'),
+      page('HSA-P-008 — Movement / Slip Junction', '/docs/patterns/movement-slip-junction'),
+      page('HSA-P-009 — Accessible Rainwater Route', '/docs/patterns/accessible-rainwater-route'),
+      page('HSA-P-010 — Source-Capture Kitchen Extract', '/docs/patterns/source-capture-kitchen-extract'),
+      page('HSA-P-011 — Roof Maintenance Route', '/docs/patterns/roof-maintenance-route'),
+      page('HSA-P-012 — Physical Service Index', '/docs/patterns/physical-service-index')
+    ], false),
+    group('Strategies', [
+      page('Strategy overview', '/docs/patterns/strategies/'),
+      page('Fail-Safe Water Distribution', '/docs/patterns/strategies/fail-safe-water-distribution')
+    ]),
+    group('Retired identities', [
+      page('Retired pattern overview', '/docs/patterns/retired/'),
+      page('HSA-P-006 — Water-Damage-Safe Service Route', '/docs/patterns/retired/hsa-p-006-water-damage-safe-service-route')
+    ]),
     group('Service-topology pilot', [
       page('Pilot index', '/docs/patterns/pilot/'),
       page('HSA-P-001 — Controlled Utility Entry', '/docs/patterns/pilot/controlled-utility-entry'),
@@ -93,6 +114,7 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     group('Development', [
       page('Development overview', '/docs/development/'),
       page('Pattern-language overhaul', '/docs/development/pattern-language-overhaul'),
+      page('Pattern-language Phase 7 plan', '/docs/development/pattern-language-phase7-plan'),
       page('Pattern-language Phase 6 review', '/docs/development/pattern-language-phase6-review'),
       page('Pattern-language corpus audit', '/docs/development/pattern-language-corpus-audit'),
       page('Pattern-language Phase 5 review', '/docs/development/pattern-language-phase5-review'),
