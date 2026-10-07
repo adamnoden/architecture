@@ -2,13 +2,13 @@
 
 **Canonical project-wide status overview**  
 **Last updated:** 2026-10-07  
-**Current phase:** **convergence → validation / implementation falsification**
+**Current phase:** **validation / implementation falsification**
 
 This file answers one question:
 
 > **Where is the House Systems Architecture project actually at?**
 
-The central architectural position, canonical pattern language and pattern→computational crosswalk are established. The project should now obtain qualitatively different evidence: physical prototypes, competent professional attack, continued Reference House coordination, publication completion and the already-authorised minimal executable compiler kernel.
+The central architectural position, canonical pattern language and pattern→computational crosswalk are established. The minimal executable compiler kernel and first executable pattern-crosswalk fixture have both passed. The project's highest-value remaining evidence is now physical, professional and whole-house architectural: prototypes, competent external attack, continued Reference House coordination and publication completion.
 
 ---
 
@@ -33,7 +33,7 @@ The central architectural position, canonical pattern language and pattern→com
 | **Public architectural position / governing principles** | **L3** | selective permanence, designed interfaces, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy established | evidence/figure hardening and final proof |
 | **Publication architecture** | **L3–L4 structurally** | v0.11 organises Part III around canonical language, strategies, held candidates and generative method | develop finished Part III/IV content and figures |
 | **Pattern-language migration** | **L4 — complete** | Phases 0–7 complete; canonical corpus, non-pattern homes, Reference House mapping, publication integration and metadata validation all passed | reopen only when new architectural/physical evidence requires classification change |
-| **Pattern→computational crosswalk** | **L4 at internal mapping scope — complete** | Phase 8 crosswalked all 21 active patterns, three strategies and four held candidates; no new fundamental compiler abstraction required | build P0 kernel; after P0 passes run `PAT-XW-01` |
+| **Pattern→computational crosswalk** | **L4 at internal mapping scope — complete** | Phase 8 crosswalked all 21 active patterns, three strategies and four held candidates; no new fundamental compiler abstraction required | maintain as provenance layer; reopen only if executable/physical evidence exposes a defect |
 | **Preface** | **L3** | full editorial rewrite complete | final proof against completed book |
 | **Part I — The Proposition** | **L3** | substantial evidence-backed draft; editorial overhaul complete | diagrams, evidence presentation and whole-book integration |
 | **Part II — Architecture of the Platform** | **L3** | interface/failure/maintenance/tolerance argument coordinated and editorially hardened | complete figures and remaining evidence/technical integration |
@@ -44,9 +44,9 @@ The central architectural position, canonical pattern language and pattern→com
 | **Candidate reversible assemblies** | **L3 conceptually** | stronger strategies/candidates explicit; implementation validity unresolved | engineering + 1:1 testing + conventional comparators |
 | **Physical prototype programme** | **L1–L2** | programme, acceptance criteria and W2 wall-bay build pack/drawings exist; no physical validation recorded | build/test wall bay; engineer/test floor edge; then floor platform/joint |
 | **Reference-house structural/technical design** | **L1–L2** | whole-house coordination geometry exists; structure, services, building physics/products remain concept-level | competent multidisciplinary coordination |
-| **Computational paper research** | **L4** | S0→S1→S2→H1 paper sequence, mutations, red team and capability freeze complete | **stop major paper expansion** |
+| **Computational paper research** | **L4 — frozen** | S0→S1→S2→H1 paper sequence, mutations, red team and capability freeze complete | stop major paper expansion |
 | **Computational external validation** | **L1** | adversarial review pack exists; review not yet performed | structural + fire/building-control + building-services review |
-| **Compiler software implementation** | **L1** | minimal P0 vertical slice authorised; Phase 8 explicitly leaves its scope unchanged | identity → well-formedness → obligations → evidence → invalidation → diagnostics |
+| **Compiler software implementation** | **L3 at P0 falsification scope** | P0 kernel passed 17/17 executable tests; PAT-XW-01 passed 6/6; CI also typechecks and builds docs | freeze generic growth; add a fixture only when another workstream exposes a concrete high-value question |
 | **Architect-facing delivery / RIBA brief** | **L2** | strong implementation-brief template exists | populate only as decisions mature into requirements |
 | **Publication graphics / drawing language** | **L1–L2** | repose, vertical-bay and whole-house coordination SVGs exist | establish consistent figure language as content stabilises |
 
@@ -60,7 +60,7 @@ The project has enough governing ideas. New findings should normally refine an e
 
 ## 2. Computational paper-compilation research
 
-The internal paper sequence is complete through a bounded whole house. Next computational evidence must come from competent external attack, executable implementation and physical/product evidence.
+The internal paper sequence is complete through a bounded whole house. Further paper expansion is not authorised unless executable or external evidence exposes a real model defect.
 
 ## 3. Repo-wide prose migration
 
@@ -94,13 +94,35 @@ Locked outcomes:
 - there is no universal whole-pattern machine `PASS`;
 - architectural judgement remains explicit rather than converted into arbitrary thresholds;
 - all 21 active patterns fit the existing semantic model;
-- all strategies/candidates are representable without promotion;
-- P0 kernel scope remains unchanged;
-- first post-P0 pattern fixture is `PAT-XW-01`, primarily exercising `P-003` and `P-005` with optional `P-012`.
-
-Current computational programme control: `docs/computational/research-programme-v06.md`.
+- all strategies/candidates are representable without promotion.
 
 Do not produce more paper crosswalks unless implementation or external/physical evidence exposes a real model defect.
+
+## 6. P0 executable kernel + PAT-XW-01
+
+**Both executable gates have passed.** See [P0 + PAT-XW-01 Executable Gate Result](docs/computational/p0-pat-xw-01-result.md).
+
+P0 demonstrated:
+
+- stable semantic identity and typed relationships;
+- simple deterministic source/geometry well-formedness;
+- obligation derivation;
+- scoped evidence and selective invalidation;
+- distinct model / architectural / technical / evidence state;
+- clean unsupported-domain behaviour;
+- deterministic replay.
+
+`PAT-XW-01` demonstrated:
+
+- `P-003` and `P-005` provenance can be carried by ordinary project requirements without becoming compiler entities;
+- HSA project intent can fail while technical state remains unchanged;
+- formal pattern commitments can remain resolved while a technical obligation becomes unresolved;
+- a new boundary role creates only its dependent technical obligation and does not broaden old evidence;
+- the report can group project commitments and technical obligations without inventing a whole-pattern PASS.
+
+`P-012` physical-index semantics remain deliberately deferred. Do not add a generic physical `identifies` relation until a real use case earns it.
+
+**Generic compiler/crosswalk growth is now frozen.** Keep the executable suites as regression tests.
 
 ---
 
@@ -108,7 +130,7 @@ Do not produce more paper crosswalks unless implementation or external/physical 
 
 ## A. Physical / engineering validation
 
-This remains the largest gap between an intellectually coherent doctrine and a credible building system.
+This is now the largest gap between an intellectually coherent doctrine and a credible building system.
 
 Immediate gates:
 
@@ -133,7 +155,17 @@ Next work should:
 
 Reference House use is never evidence for doctrine/pattern validity.
 
-## C. Publication development
+## C. External professional attack
+
+High-value reviews:
+
+- **structural engineer** — floor/interface propositions, Reference House structure, computational structural proof boundary;
+- **building-control / fire practitioner** — boundary/fire/access assumptions, service-void/vertical-zone treatment, computational target interpretation;
+- **building-services / ventilation engineer** — passive-first strategy, service geography, domestic vertical-zone proportionality and computational evidence boundary.
+
+Negative findings are successful research outcomes.
+
+## D. Publication development
 
 The publication architecture is structurally correct. Remaining work is publication work rather than taxonomy repair:
 
@@ -143,41 +175,21 @@ The publication architecture is structurally correct. Remaining work is publicat
 4. close evidence/citation/glossary/back-matter gaps;
 5. final proof after physical/professional findings land.
 
-## D. Minimal executable compiler kernel
+## E. Targeted computational extensions — only when earned
 
-This is now the next computational falsification step.
+The P0/PAT-XW line is no longer the default project workstream.
 
-P0 should implement only:
+Possible fixtures remain available when another workstream exposes the corresponding uncertainty:
 
-1. stable identity;
-2. typed relationships;
-3. simple deterministic geometry/source well-formedness;
-4. obligation derivation;
-5. PASS / FAIL / UNRESOLVED / UNSUPPORTED / external-evidence separation;
-6. scoped evidence;
-7. selective invalidation;
-8. intelligible diagnostics;
-9. deterministic reproduction of a frozen source/target/evidence set.
+- `EXT-MAINT-01` — roof/facade maintenance geography;
+- `RAIN-XW-01` — rainwater route;
+- `KEX-XW-01` — kitchen source capture;
+- `WATER-XW-01` — water failure / visible leakage / wet-service room;
+- `ROOM-XW-01` — room service route + compartmented void;
+- `OPEN-XW-01` — replaceable openings, movement and thresholds;
+- `ATTACH-XW-01` — Controlled Attachment Plane + Replaceable Architectural Lining, ideally after W2 physical evidence.
 
-Do **not** add a pattern subsystem to P0.
-
-If P0 passes, run [`PAT-XW-01`](docs/computational/pattern-crosswalk-implementation-handoff.md):
-
-- `P-003` Coherent Horizontal Service Route;
-- `P-005` Designed Structural Penetration;
-- optional `P-012` Physical Service Index extension.
-
-Then choose later extension fixtures from actual uncertainty, not from a desire to automate every pattern.
-
-## E. External professional attack
-
-High-value reviews:
-
-- **structural engineer** — floor/interface propositions, Reference House structure, computational structural proof boundary;
-- **building-control / fire practitioner** — boundary/fire/access assumptions, service-void/vertical-zone treatment, computational target interpretation;
-- **building-services / ventilation engineer** — passive-first strategy, service geography, domestic vertical-zone proportionality and computational evidence boundary.
-
-Negative findings are successful research outcomes.
+Do not implement these in sequence for coverage. Select from actual evidence and uncertainty.
 
 ---
 
@@ -197,7 +209,7 @@ A detail that works only under designer supervision fails the project.
 
 ### R4 — compiler externalisation
 
-If most useful technical results become `EXTERNAL_EVIDENCE_REQUIRED`, the compiler risks degenerating into an evidence manager.
+If most useful technical results become external-evidence requirements, the compiler risks degenerating into an evidence manager. P0 has shown the distinction can be represented; competent external evidence is still required to test whether it is useful in practice.
 
 ### R5 — passive environmental strategy
 
@@ -213,7 +225,7 @@ The language/crosswalk work is complete. Resist accreting taxonomy or tooling ar
 
 ### R8 — crosswalk authority leakage
 
-Pattern provenance must never masquerade as regulatory, engineering or product authority. `PAT-XW-01` is specifically required to test this separation in code.
+`PAT-XW-01` passed the first executable authority-separation test. Preserve that architecture as new fixtures arrive; pattern provenance must never masquerade as regulation, engineering or product authority.
 
 ---
 
@@ -221,7 +233,11 @@ Pattern provenance must never masquerade as regulatory, engineering or product a
 
 ### Architectural / physical
 
-**prototype + engineer in parallel with whole-house Reference House coordination → feed validated results back into language/manuscript → final publication proof**
+**W2 wall-bay + structural floor-edge engineering + whole-house Reference House coordination → feed validated findings back into language/manuscript**
+
+### Professional validation
+
+**structural + fire/building-control + building-services attack → record negative findings as evidence → revise only where findings require it**
 
 ### Pattern language
 
@@ -229,7 +245,11 @@ Pattern provenance must never masquerade as regulatory, engineering or product a
 
 ### Computational
 
-**external review + P0 executable kernel → PAT-XW-01 if P0 passes → evidence-selected extension fixture → reassess before heavy CAD/solvers**
+**P0 PASS + PAT-XW-01 PASS → freeze generic growth → targeted fixture only when an architectural/physical/professional question earns one**
+
+### Publication
+
+**continue Part III/IV figures and integration in parallel → final proof after physical/professional findings land**
 
 ### Delivery
 

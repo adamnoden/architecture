@@ -3,11 +3,23 @@ import { assertNavigationCoverage, sidebar } from './navigation'
 
 const computational = sidebar.find((item) => item.text === 'Computational track')
 const currentProgramme = computational?.items?.find((item) => item.text === 'Current programme & review')
-if (currentProgramme?.items && !currentProgramme.items.some((item) => item.link === '/docs/computational/p0-implementation-plan')) {
-  currentProgramme.items.splice(1, 0, {
-    text: 'P0 implementation plan',
-    link: '/docs/computational/p0-implementation-plan'
-  })
+if (currentProgramme?.items) {
+  const additions = [
+    {
+      text: 'P0 implementation plan',
+      link: '/docs/computational/p0-implementation-plan'
+    },
+    {
+      text: 'P0 + PAT-XW-01 executable result',
+      link: '/docs/computational/p0-pat-xw-01-result'
+    }
+  ]
+
+  for (const addition of additions.reverse()) {
+    if (!currentProgramme.items.some((item) => item.link === addition.link)) {
+      currentProgramme.items.splice(1, 0, addition)
+    }
+  }
 }
 
 assertNavigationCoverage()

@@ -1,24 +1,29 @@
 # Executable Architecture — Research Programme v0.6
 
-**Status:** current programme-control delta — post pattern-language crosswalk  
+**Status:** current programme control — Phase 8, P0 and PAT-XW-01 complete  
 **Date:** 2026-10-07  
 **Inherits:** [v0.5](research-programme-v05.md) and all prior stop rules / open TODOs unless explicitly superseded here  
 **Paper phase:** frozen  
-**Implementation:** minimal P0 falsification kernel remains first; pattern crosswalk begins only after P0 succeeds
+**Generic implementation growth:** frozen after successful P0 + PAT-XW-01 falsification gates
 
 ---
 
-## 1. Why v0.6 exists
+## 1. Current programme position
 
-Phase 7 converted HSA's architectural pattern catalogue into a canonical evidence-qualified pattern language. Phase 8 then audited the entire active language, all canonical strategies and all held candidates against the computational model.
+Phase 7 established the canonical evidence-qualified pattern language. Phase 8 audited that language against the computational model and found no need for a pattern ontology or new fundamental semantic graph.
 
-The question was whether this new architectural layer exposed a missing compiler abstraction or required patterns to become computational primitives.
+That conclusion has now survived executable testing.
 
-It did not.
+- **P0 executable kernel: PASS**
+- **PAT-XW-01 executable crosswalk: PASS**
+
+Canonical executable result: [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md).
+
+The computational track should no longer expand by default. Its next work must be triggered by a concrete architectural, physical or professional-review uncertainty.
 
 ---
 
-## 2. Phase-8 result
+## 2. Phase-8 result — retained
 
 **SEMANTIC ARCHITECTURE: PASS.**
 
@@ -26,76 +31,91 @@ All 21 active patterns can express their machine-readable consequences through t
 
 No new fundamental graph or pattern-specific compiler subsystem is justified.
 
-The pattern language therefore remains an **architectural authoring/provenance layer above the compiler model**, not the compiler ontology itself.
+The pattern language remains an **architectural authoring/provenance layer above the compiler model**, not the compiler ontology itself.
 
-The critical implementation distinction is:
+The critical distinction remains:
 
 - pattern-derived project requirements test the deterministic subset of selected architectural intent;
-- actual building relationships generate technical obligations through their normal structural/boundary/service/maintenance graphs;
+- actual building relationships generate technical obligations through normal structural/boundary/service/maintenance graphs;
 - non-formalisable architectural judgement remains human.
 
-No new whole-pattern PASS/FAIL validity dimension is added.
+No whole-pattern PASS/FAIL validity dimension is authorised.
 
 ---
 
-## 3. P0 kernel remains unchanged
+## 3. P0 executable gate — complete
 
-The first executable milestone still implements only enough to falsify:
+P0 implemented only enough to falsify the core mechanism:
 
 - stable identity;
 - typed relationships;
 - deterministic source/geometry well-formedness;
 - obligation derivation;
-- status separation;
-- evidence scope;
+- model / architectural / technical / evidence status separation;
+- scoped evidence;
 - selective invalidation;
 - diagnostics;
 - unsupported-domain behaviour;
 - reproducibility.
 
-**Pattern provenance is not a P0 prerequisite.**
+The production CI gate passed:
 
-Do not add `Pattern`, `PatternIntent`, pattern rule packs or a pattern graph to the kernel simply because Phase 8 exists.
+- TypeScript typecheck;
+- **17/17 P0 tests**;
+- documentation build/navigation coverage;
+- Pages artifact creation.
+
+The executable result therefore supports the paper architecture at the deliberately narrow P0 scale. It does not establish whole-house technical adequacy.
+
+No `Pattern`, `PatternIntent`, pattern rule pack or pattern graph was added to the kernel.
 
 ---
 
-## 4. First post-P0 crosswalk fixture
+## 4. PAT-XW-01 executable gate — complete
 
-After P0 passes, run:
+`PAT-XW-01` exercised:
 
-**`PAT-XW-01 — Pattern Provenance / Crosswalk Fixture`**
-
-Primary patterns:
-
-- `HSA-P-005 — Designed Structural Penetration`;
 - `HSA-P-003 — Coherent Horizontal Service Route`;
-- optional second-stage `HSA-P-012 — Physical Service Index`.
+- `HSA-P-005 — Designed Structural Penetration`.
 
-Required mutations:
+The production CI gate passed:
 
-- route crosses boundary without owned transition;
-- penetration exists but one technical evidence item is absent;
-- technically valid branch departs from selected HSA route geography;
-- boundary role changes and selectively invalidates evidence;
-- optional physical identifier becomes stale after semantic identity change.
+- full P0 regression suite;
+- **6/6 PAT-XW-01 tests**;
+- documentation build.
 
-The fixture must demonstrate that architectural project-intent status and technical/evidence status can diverge without authority leakage.
+The fixture demonstrated:
 
-Canonical handoff: [Pattern Crosswalk — Implementation Handoff](pattern-crosswalk-implementation-handoff.md).
+1. pattern provenance can sit on project requirements without becoming a building entity;
+2. HSA project intent can fail while technical state remains unchanged;
+3. formal `P-005` commitments can remain resolved while a technical obligation is `UNRESOLVED`;
+4. changing a boundary role derives a new technical obligation without broadening unrelated evidence;
+5. architectural judgement can remain `HUMAN_DETERMINATION` without fabricating a whole-pattern Boolean;
+6. crosswalk output is deterministic for a frozen source.
+
+This is the authority-separation result Phase 8 required.
 
 ---
 
-## 5. Authorised bounded refinements
+## 5. P-012 remains deliberately deferred
 
-Phase 8 adds no required P0 schema.
+The optional `HSA-P-012 — Physical Service Index` extension was not required to pass PAT-XW-01.
 
-Post-P0 refinements are authorised only if implementation demonstrates the need:
+A future physical-information use case may justify generic `identifies` / `refers-to` semantics and correspondence/staleness behaviour. Do not add those abstractions merely to complete pattern coverage.
 
-1. project-requirement provenance reference to an `HSA-P-xxx` identity;
-2. report grouping that gathers relevant project commitments and induced technical obligations under one architectural pattern scope;
-3. generic physical-information `identifies` / `refers-to` semantics if `P-012` cannot be expressed cleanly otherwise.
+`C-052` remains open but deferred until physical information actually requires it.
 
-Previously authorised v0.5 refinements remain:
+---
+
+## 6. Bounded refinements now demonstrated
+
+Phase 8 authorised three possible post-P0 refinements. Current outcome:
+
+1. **project-requirement provenance reference to `HSA-P-xxx`** — demonstrated by PAT-XW-01;
+2. **crosswalk report grouping without a new validity dimension** — demonstrated by PAT-XW-01;
+3. **generic physical-information identity/reference semantics** — not yet justified; deferred.
+
+Previously authorised maintenance-process refinements remain available only when the external-maintenance fixture is actually selected:
 
 - `AccessMethod` or equivalent maintenance-process concept;
 - approach/support/setup/work/withdrawal path/zone roles;
@@ -104,39 +124,39 @@ Previously authorised v0.5 refinements remain:
 
 ---
 
-## 6. Extension fixture map
+## 7. Extension fixture map — not a queue
 
-After `PAT-XW-01`, prioritise evidence-rich extensions rather than generic pattern automation.
+These are available experiments, not an implementation roadmap.
 
-| Fixture | Architectural coverage | Existing programme relation |
+| Fixture | Architectural coverage | Trigger |
 |---|---|---|
-| `EXT-MAINT-01` | `P-011` Roof Maintenance Route + `P-013` Ground-Supported Façade Access | inherited from v0.5 |
-| `RAIN-XW-01` | `P-009` Accessible Rainwater Route | can discharge/extend `C-043` |
-| `KEX-XW-01` | `P-010` Source-Capture Kitchen Extract | can discharge/extend `C-044` |
-| `WATER-XW-01` | Fail-Safe Water Distribution + `P-017` + `P-018` | post-kernel water-failure test |
-| `ROOM-XW-01` | `P-015` Accessible Room Service Route + `P-016` Compartmented Service Void | service/boundary composition |
-| `OPEN-XW-01` | `P-007`, `P-008`, `P-019`, `P-020` | interface / replacement / prototype-linked |
-| `ATTACH-XW-01` | `P-022` + Replaceable Architectural Lining candidate | pair with W2 physical wall-bay evidence |
+| `EXT-MAINT-01` | `P-011` Roof Maintenance Route + `P-013` Ground-Supported Façade Access | Reference House / maintenance-geometry uncertainty |
+| `RAIN-XW-01` | `P-009` Accessible Rainwater Route | rainwater design exposes a formalisation question |
+| `KEX-XW-01` | `P-010` Source-Capture Kitchen Extract | ventilation/extract review exposes a formalisation question |
+| `WATER-XW-01` | Fail-Safe Water Distribution + `P-017` + `P-018` | physical/plumbing failure work needs machine support |
+| `ROOM-XW-01` | `P-015` Accessible Room Service Route + `P-016` Compartmented Service Void | service/boundary coordination exposes a defect |
+| `OPEN-XW-01` | `P-007`, `P-008`, `P-019`, `P-020` | opening/interface prototype or professional review requires it |
+| `ATTACH-XW-01` | `P-022` + Replaceable Architectural Lining candidate | preferably after W2 physical wall-bay evidence |
 
-Do not implement all fixtures merely because they are listed. Select the next one from the uncertainty that remains after P0 / external review / physical prototype work.
+**Do not implement these in sequence for coverage.** Select the next fixture from evidence and uncertainty.
 
 ---
 
-## 7. Grand TODO additions
+## 8. Grand TODO delta
 
 | ID | TODO | Status |
 |---|---|---|
 | `C-050` | Full canonical pattern → computational crosswalk | **COMPLETE — Phase 8** |
-| `C-051` | `PAT-XW-01` post-P0 executable crosswalk fixture | **OPEN — blocked by P0 success gate** |
-| `C-052` | Test generic physical identity/reference relation with `P-012` | **OPEN — optional post-P0 refinement** |
-| `C-053` | Crosswalk report grouping without new validity dimension | **OPEN — deliver with `PAT-XW-01` if useful** |
+| `C-051` | `PAT-XW-01` post-P0 executable crosswalk fixture | **COMPLETE — PASS** |
+| `C-052` | Test generic physical identity/reference relation with `P-012` | **DEFERRED — no current need** |
+| `C-053` | Crosswalk report grouping without new validity dimension | **COMPLETE — PAT-XW-01** |
 | `C-054` | Link W2 physical prototype evidence to `P-022` / lining crosswalk | **OPEN — physical programme dependency** |
 
-All unresolved TODOs from earlier programme versions remain inherited.
+All unresolved TODOs from earlier programme versions remain inherited unless superseded by evidence.
 
 ---
 
-## 8. Important negative findings
+## 9. Important negative findings — now executable stop rules
 
 ### No pattern ontology
 
@@ -144,59 +164,56 @@ The project does not need a second semantic building model composed of HSA patte
 
 ### No pattern rule pack
 
-Technical obligations should not be generated independently by every pattern. They derive once from composed shared graphs.
+Technical obligations derive once from composed shared graphs. They should not be regenerated independently by every pattern.
 
 ### No whole-pattern Boolean
 
-A pattern may have:
-
-- resolved formal commitments;
-- unresolved technical obligations;
-- external evidence requirements;
-- open architectural judgement.
-
-Flattening that to `PASS` would destroy useful distinctions.
+A pattern/project occurrence may simultaneously have resolved formal commitments, unresolved technical obligations, external evidence requirements and open architectural judgement.
 
 ### No evidence laundering
 
-`evidence: established` on a pattern page does not prove a project occurrence or its implementation.
+Pattern evidence or project provenance does not prove a project occurrence or technical implementation.
 
-### No P0 expansion
+### No generic compiler growth
 
-The crosswalk is not permission to delay the first executable test with more abstractions.
+P0 and PAT-XW-01 passed without heavier architecture. Do not use success as permission to build CAD, a general solver, a full regulations engine or pattern automation.
 
----
+### No coverage-for-coverage's-sake
 
-## 9. Current development sequence
-
-1. **Major paper expansion remains frozen.**
-2. Obtain competent external attack of H1 using the existing review pack.
-3. Build the minimal P0 semantic/compiler kernel.
-4. Run P0 mutation/evidence/invalidation gate.
-5. If P0 passes, run `PAT-XW-01`.
-6. Run the highest-value extension fixture selected from evidence/uncertainty, not from pattern count.
-7. Continue physical prototype programme in parallel.
-8. Reassess whether heavier CAD/solver/product architecture has been earned.
+The remaining pattern inventory is not a software backlog.
 
 ---
 
-## 10. Kill / weakening conditions added by Phase 8
+## 10. Current development sequence
 
-Weaken the crosswalk or remove it from implementation if:
+1. **Major paper/crosswalk expansion remains frozen.**
+2. **P0 and PAT-XW-01 remain in CI as regression tests.**
+3. Obtain competent external attack of H1 using the existing review pack.
+4. Advance the physical prototype programme, beginning with the W2 wall-bay and structural floor-edge questions.
+5. Continue whole-house Reference House architectural/structural/environmental coordination.
+6. Select a targeted executable fixture only if one of those workstreams exposes a concrete, high-value computational question.
+7. Feed negative and positive findings back into doctrine/patterns/manuscript only where warranted.
+8. Reassess heavier CAD/solver/product architecture only after materially different evidence has accumulated.
 
-- pattern provenance requires invasive schema changes;
+---
+
+## 11. Kill / weakening conditions
+
+Weaken or remove the crosswalk layer if:
+
+- provenance requires invasive schema changes;
 - source building facts are duplicated inside pattern records;
-- architectural project requirements and technical obligations cannot stay separate;
+- architectural project requirements and technical obligations cease to remain separate;
 - reports need arbitrary aesthetic thresholds to look complete;
 - every new pattern requires custom compiler code;
 - crosswalk metadata becomes specialist clerical work with little design feedback;
 - whole-pattern status encourages false claims of architectural proof.
 
-The correct outcome may be a very thin provenance/reporting layer. That is acceptable.
+The correct long-term outcome may remain a thin provenance/reporting layer. PAT-XW-01 provides evidence that this thin architecture is viable.
 
 ---
 
-## 11. Canonical Phase-8 records
+## 12. Canonical records
 
 - [Architectural Pattern → Computational Crosswalk](pattern-crosswalk-model.md)
 - [Service-Topology Pattern Crosswalk — Pilot 01](pattern-crosswalk-service-topology-pilot.md)
@@ -204,5 +221,7 @@ The correct outcome may be a very thin provenance/reporting layer. That is accep
 - [Remaining Active Pattern Crosswalk](pattern-crosswalk-remaining-active.md)
 - [Strategies and Held Candidates Audit](pattern-crosswalk-strategies-candidates.md)
 - [Implementation Handoff](pattern-crosswalk-implementation-handoff.md)
+- [P0 Implementation Plan](p0-implementation-plan.md)
+- **[P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md)**
 
-The pattern language itself remains canonical under `docs/patterns/`; these documents only describe its computational projection.
+The pattern language itself remains canonical under `docs/patterns/`; these records describe only its computational projection and executable falsification.
