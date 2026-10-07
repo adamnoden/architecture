@@ -1,25 +1,24 @@
 # Pattern Language Overhaul — Phase 8 Computational Crosswalk Plan
 
-**Status:** active — P8.0 model alignment complete; P8.1 service-topology pilot next  
+**Status:** **COMPLETE — P8.0 through P8.5 PASS**  
 **Starting point:** Phase 7 closed on `main@d48ef1eb5fc7507b68622bd9ea66277115e374ac`  
-**Purpose:** connect the canonical architectural pattern language to the existing semantic / obligation / evidence model without turning patterns into compiler rules or creating a parallel ontology.
+**Purpose:** connect the canonical architectural pattern language to the existing semantic / obligation / evidence model without turning patterns into compiler rules or creating a parallel ontology.  
+**Gate review:** [`pattern-language-phase8-review.md`](pattern-language-phase8-review.md)
 
-This is the durable Phase-8 control point. It is written so work can resume safely after loss of conversational context.
+This is the durable Phase-8 control record. The research question is now closed enough that future work should implement/test the result rather than extend the crosswalk on paper.
 
 ---
 
-# 1. Phase-8 proposition
+# 1. Final Phase-8 proposition
 
-Phase 7 established the architectural language. Phase 8 asks a narrower question:
-
-> **When a project selects and realises an HSA pattern, which consequences can legitimately be represented, derived, checked, evidenced or diagnosed by the computational model — and which must remain architectural judgement?**
-
-The answer is **not** “encode every pattern as a rule”.
-
-The existing computational architecture remains authoritative:
+The pattern language sits above the computational architecture as an architectural authoring/provenance layer:
 
 ```text
-SOURCE SEMANTIC MODEL
+SELECTED ARCHITECTURAL INTENT
+        ↓
+project requirement / provenance
+        ↓
+ordinary source-model entities + relationships
         ↓
 SHARED DERIVED GRAPHS
         ↓
@@ -30,284 +29,220 @@ EVIDENCE / DETERMINATION
 VALIDITY + DIAGNOSTICS
 ```
 
-Patterns sit above this as an architectural authoring layer:
-
-```text
-SELECTED PATTERN / DESIGN INTENT
-        ↓
-semantic commitments proposed by the pattern
-        ↓
-ordinary source-model entities + relationships
-        ↓
-existing compiler machinery
-```
-
 A pattern label is never proof.
 
 ---
 
-# 2. Non-negotiable boundaries
+# 2. Locked findings
 
-1. **Do not rebase the compiler around pattern objects.**
-2. A selected pattern may retain stable provenance (`HSA-P-xxx`) but must resolve into ordinary semantic facts.
-3. Pattern selection never discharges an obligation by itself.
-4. Pattern identity, pattern evidence maturity and project technical validity remain separate.
-5. Architecture that cannot be honestly reduced to a deterministic proposition remains architectural judgement.
-6. Regulation, engineering, product evidence and HSA architectural intent retain distinct authorities.
-7. A pattern must not duplicate source facts already owned elsewhere in the semantic model.
-8. Crosswalk work must reuse existing graph/entity vocabulary before proposing new concepts.
-9. New semantic primitives require a worked-case failure showing the existing model is insufficient.
-10. Frozen paper-compilation runs remain history and are not rewritten to make Phase 8 neat.
+## F1 — no pattern ontology
 
----
+Do not rebase the compiler around pattern objects. No active pattern, strategy or held candidate exposed a need for a second semantic building model.
 
-# 3. Crosswalk record
+## F2 — pattern provenance may create project requirements
 
-Each canonical pattern receives a crosswalk record with the following fields.
+A selected pattern can explain why a project architectural requirement exists and can group a useful crosswalk report.
 
-## A. Architectural invariant
+The source building facts still live in the ordinary semantic model.
 
-One sentence stating what the pattern is actually trying to preserve.
+## F3 — technical obligations remain graph-derived
 
-## B. Computational coverage state
+Structure, fire, water, acoustics, ventilation, maintenance and other technical obligations derive from actual composed building relationships.
 
-One of:
+Do not generate duplicate technical checklists once per pattern.
 
-- **NATIVE** — existing semantic model can represent the important formal consequences;
-- **NATIVE + FIXTURE NEEDED** — representable, but not yet exercised in a worked compiler fixture;
-- **SMALL REFINEMENT** — existing model is sound but needs one bounded semantic role/entity/relationship;
-- **EXTERNAL / ADVISORY HEAVY** — most validity depends on external evidence or architectural judgement;
-- **NO DIRECT CROSSWALK** — pattern is primarily architectural/stewardship intent and should not generate substantial compiler semantics.
+## F4 — no whole-pattern machine Boolean
 
-This classification describes computational coverage, not pattern quality.
+Do not create a universal `HSA-P-xxx = PASS` result.
 
-## C. Authoring / provenance
+A crosswalk report may contain:
 
-Record whether selecting the pattern should be retained as project intent/provenance. If so, selection creates a **claim of intended conformance**, not a pass result.
+- formal project commitments: resolved / failed / unresolved;
+- induced technical obligations with their own statuses/authorities;
+- diagnostics;
+- explicit human architectural judgement.
 
-## D. Source-model commitments
+## F5 — pattern evidence is not occurrence evidence
 
-The minimum ordinary semantic facts that would make a claimed occurrence meaningful: entities, typed relationships, route roles, maintenance volumes, boundary transitions, stable identities, etc.
+Pattern publication maturity/evidence never proves a project occurrence or implementation.
 
-Do not duplicate geometry or facts already canonical elsewhere.
+## F6 — computational representability does not imply architectural promotion
 
-## E. Derived obligations
+All three strategies and four held candidates are representable. They remain strategies/candidates because their architectural/physical admission questions are independent.
 
-Obligation families that should arise from the composed semantic state. State the authority where it matters:
+## F7 — P0 kernel scope remains unchanged
 
-- model integrity;
-- physical / engineering;
-- regulatory / standards;
-- product evidence;
-- HSA doctrine;
-- architectural grammar;
-- project requirement;
-- process / evidence.
+Pattern-crosswalk machinery is not a prerequisite for the minimal executable compiler kernel.
 
-A selected pattern normally enters the normative system as **project architectural intent with provenance to the HSA pattern**, unless a consequence is independently created by another authority.
-
-## F. Evidence / resolution methods
-
-Use existing evidence classes where possible:
-
-- semantic inference;
-- geometric query;
-- calculation;
-- bounded design family/table;
-- tested assembly;
-- product evidence;
-- survey/site evidence;
-- inspection;
-- commissioning;
-- external professional determination.
-
-## G. Diagnostics / optimisation
-
-Useful non-blocking feedback that can be derived without pretending to prove architectural quality.
-
-## H. Non-formalisable residue
-
-State explicitly what the compiler should **not** claim: proportion, repose, visual integration, domestic character, architectural generosity, quality of spatial consequence, etc.
-
-## I. Anti-formalisation warning
-
-Record the tempting but invalid reduction to avoid — for example `has_service_hub = true` or “pattern selected therefore PASS”.
-
-## J. Test fixture / mutation
-
-Identify the smallest executable or paper fixture needed to demonstrate the crosswalk and at least one mutation that should invalidate or weaken it.
+Build P0 first.
 
 ---
 
-# 4. Pattern-selection semantics
+# 3. Completed phase sequence
 
-The preferred relationship is:
+## P8.0 — model alignment — **PASS**
 
-```text
-PATTERN SELECTION
-    │
-    ├── provenance: HSA-P-xxx
-    ├── intended occurrence scope
-    └── selected architectural commitments
-                 ↓
-      SOURCE SEMANTIC MODEL
-                 ↓
-      obligations / evidence
-                 ↓
-       conformance result
-```
+Reviewed the stable pattern language against:
 
-The system may therefore report:
-
-```text
-Pattern intent: HSA-P-002 Plant Room as Service Hub
-Occurrence: RH-P002-01
-Semantic commitments: PRESENT
-Working clearance: PASS
-Replacement path: PASS
-Acoustic evidence: UNRESOLVED
-Plant sizing: EXTERNAL EVIDENCE REQUIRED
-Architectural proportionality: HUMAN JUDGEMENT
-
-Pattern conformance: PARTIALLY RESOLVED
-```
-
-This is preferable to storing `pattern_conforms = true`.
-
----
-
-# 5. Phase sequence
-
-## P8.0 — model alignment — **COMPLETE**
-
-Reviewed the current computational architecture against the Phase-7 language.
-
-Finding: **no fundamental new compiler abstraction is required merely because patterns now exist.** The existing multi-view semantic graph, obligation, evidence, target and supported-domain architecture is the correct substrate.
-
-Key existing mechanisms to reuse:
-
-- stable entity identity;
-- spatial / structural / boundary / service / interface / maintenance / lifecycle graphs;
+- Formal Architectural Model;
+- Validity and Obligations;
+- Evidence and Provenance;
+- Compiler Targets;
 - interface obligation bundles;
-- source facts vs derived analytical views;
-- obligation authority and scope;
-- evidence classes, lifecycle and selective invalidation;
-- supported-domain reporting;
-- diagnostics that distinguish `FAIL`, `UNRESOLVED`, `UNSUPPORTED`, warnings and external evidence.
+- current programme-control documents.
 
-## P8.1 — worked service-topology crosswalk — **NEXT**
+Result: existing semantic architecture is the correct substrate.
 
-Crosswalk only the seven patterns with current Reference House occurrences:
+## P8.1 — service-topology pilot — **PASS**
 
-- `HSA-P-001` Controlled Utility Entry;
-- `HSA-P-002` Plant Room as Service Hub;
-- `HSA-P-003` Coherent Horizontal Service Route;
-- `HSA-P-004` High-Service-Room Service Wall;
-- `HSA-P-005` Designed Structural Penetration;
-- `HSA-P-012` Physical Service Index;
-- `HSA-P-014` Accessible Vertical Service Zone.
+Crosswalked current Reference House occurrences for:
 
-Use the current Reference House Pattern Occurrence Register as the worked context.
+- `P-001` Controlled Utility Entry;
+- `P-002` Plant Room as Service Hub;
+- `P-003` Coherent Horizontal Service Route;
+- `P-004` High-Service-Room Service Wall;
+- `P-005` Designed Structural Penetration;
+- `P-012` Physical Service Index;
+- `P-014` Accessible Vertical Service Zone.
 
-### P8.1 pass gate
+Canonical record: [`../computational/pattern-crosswalk-service-topology-pilot.md`](../computational/pattern-crosswalk-service-topology-pilot.md).
 
-Proceed only if the pilot:
+## P8.2 — pilot red-team — **PASS WITH CORRECTIONS**
 
-1. adds useful formal consequences beyond restating pattern prose;
-2. maps mostly onto existing semantic vocabulary;
-3. keeps architectural judgement visibly outside machine proof;
-4. does not need pattern-specific compiler subsystems;
-5. exposes at least one useful mutation/invalidation test;
-6. clarifies rather than duplicates the Reference House occurrence model.
+Main correction: pattern conformance is not a new universal validity dimension. The machine-checkable subset is reported alongside technical obligation state and retained human judgement.
 
-If the pilot mostly creates metadata bureaucracy, stop and simplify.
+Also decided:
 
-## P8.2 — crosswalk schema review
+- no required `PatternIntent` core entity;
+- no new P0 scope;
+- `P-012` may later justify a generic physical-information `identifies` relation, but no foundational-model edit is warranted yet.
 
-Red-team P8.1 for:
+Canonical review: [`pattern-language-phase8-pilot-review.md`](pattern-language-phase8-pilot-review.md).
 
-- duplicate source facts;
-- authority leakage;
-- hidden architectural judgement;
-- obligations that should instead derive from shared graphs;
-- evidence that is too broad for its scope;
-- pattern-selection magic;
-- new semantic vocabulary without necessity.
+## P8.3 — remaining active patterns — **PASS**
 
-Freeze the crosswalk schema only after this review.
+Crosswalked all remaining active identities:
 
-## P8.3 — remaining active patterns
+`P-007..011`, `P-013`, `P-015..022`.
 
-Crosswalk `HSA-P-007..011`, `P-013`, `P-015..022` in coherent thematic groups.
+No pattern forced a new fundamental graph or subsystem.
 
-Do not force equal computational density. Some patterns may legitimately be mostly human judgement with only a few machine-checkable consequences.
+Canonical record: [`../computational/pattern-crosswalk-remaining-active.md`](../computational/pattern-crosswalk-remaining-active.md).
 
-## P8.4 — strategies and candidates audit
+## P8.4 — strategies and held candidates — **PASS**
 
-Audit the three canonical strategies and four held candidates only to determine:
+Audited:
 
-- whether the existing compiler can represent their relevant consequences;
-- whether a future fixture is useful;
-- whether any semantic gap exists.
+**Strategies**
 
-Do **not** treat them as pattern nodes or assign stable pattern IDs.
+- Fail-Safe Water Distribution;
+- Decompose Structural Interface Functions;
+- Separate Structural Floor from Changeable Layers Where Proportionate.
 
-## P8.5 — implementation handoff
+**Held candidates**
 
-Produce a bounded implementation brief for the minimal executable kernel / post-kernel fixtures:
+- Replaceable Architectural Lining;
+- Individually Isolatable Manifold Distribution;
+- Local Deep Service Zone;
+- Selective Floor Access.
 
-- semantic facts actually required;
-- obligation families;
-- mutation cases;
-- external evidence boundaries;
-- new refinements, if any, justified by worked failures.
+All are representable without promotion or new fundamental semantics.
 
-This phase does not itself implement a heavy compiler.
+Canonical record: [`../computational/pattern-crosswalk-strategies-candidates.md`](../computational/pattern-crosswalk-strategies-candidates.md).
+
+## P8.5 — implementation handoff — **PASS**
+
+Produced the bounded implementation sequence and mutation suite.
+
+Canonical record: [`../computational/pattern-crosswalk-implementation-handoff.md`](../computational/pattern-crosswalk-implementation-handoff.md).
+
+Programme effect is recorded in [`../computational/research-programme-v06.md`](../computational/research-programme-v06.md).
 
 ---
 
-# 6. Initial expectation for the pilot
+# 4. Crosswalk schema
 
-The seven-pattern service-topology set should primarily exercise existing concepts:
+The frozen schema for future pattern additions/changes is:
 
-- `System`, `Network`, `RouteSegment`, `Node`, `Equipment`, `Isolator`, `DistributionPoint`;
-- `Space`, `MaintenanceZone`, `WorkingVolume`, `WithdrawalVolume`, `AccessPath`;
-- `Opening`, `Penetration`, `Boundary`, `BoundaryTransition`;
-- `routes-through`, `serves`, `isolated-by`, `requires-access-to`, `accessible-from`, `withdrawn-via`;
-- shared boundary and structural obligations;
-- stable identity / physical-record correspondence.
+1. architectural invariant;
+2. computational coverage state;
+3. project-requirement / provenance role;
+4. source semantic commitments (`S`);
+5. genuinely deterministic project commitments;
+6. induced technical obligations (`O`) referenced to shared graph machinery;
+7. evidence/resolution methods;
+8. diagnostics (`D`);
+9. retained human judgement (`J`);
+10. anti-formalisation warning;
+11. mutation/fixture;
+12. implementation timing.
 
-Likely refinements must be justified by the pilot rather than pre-authorised.
-
----
-
-# 7. Stop rules
-
-Stop or revise the crosswalk if:
-
-- each pattern starts acquiring its own special compiler schema;
-- pattern metadata begins duplicating the source building model;
-- selecting a pattern creates a pass without geometric/semantic/evidence resolution;
-- architectural judgements are converted into arbitrary thresholds solely to make them machine-checkable;
-- obligations are generated from pattern pages when they should derive from the composed structural/boundary/service graphs;
-- the same technical obligation appears once per pattern rather than once per actual subject/proposition;
-- Phase 8 starts rewriting frozen computational research rather than referencing it;
-- implementation work expands beyond what the current minimal-kernel programme authorises.
+Use this only where useful. Do not turn ordinary pattern editing into compulsory metadata bureaucracy.
 
 ---
 
-# 8. Resume protocol
+# 5. Small semantic refinements in view
 
-Read in order:
+Only two generic refinements remain relevant:
+
+1. `AccessMethod` + approach/support/setup/work/withdrawal roles for exterior maintenance — already authorised independently by Research Programme v0.5;
+2. possible generic physical-information `identifies` / `refers-to` relationship for `P-012`, to be added only if implementation proves existing generic relationships insufficient.
+
+Neither is a pattern-specific ontology.
+
+---
+
+# 6. Implementation handoff
+
+## P0 — first
+
+Implement the already-authorised minimal semantic/compiler kernel. Do not add pattern machinery to the success gate.
+
+## `PAT-XW-01` — first post-P0 crosswalk fixture
+
+Primary scope:
+
+- `P-003` Coherent Horizontal Service Route;
+- `P-005` Designed Structural Penetration;
+- optional `P-012` Physical Service Index extension.
+
+Required proof includes:
+
+- architectural project-intent failure can coexist with technical PASS;
+- technical evidence failure can coexist with resolved formal pattern commitments;
+- dependency invalidation remains local;
+- human judgement remains explicit;
+- pattern provenance does not require invasive schema expansion.
+
+Later extension fixture map is recorded in the implementation handoff and Research Programme v0.6.
+
+---
+
+# 7. Stop rules after Phase 8
+
+Do not reopen the crosswalk merely to produce more prose.
+
+Reopen only if implementation, professional review, physical prototype work or a genuinely new architectural pattern demonstrates one of:
+
+- the existing semantic model cannot represent an important consequence;
+- authority cannot remain separated cleanly;
+- source facts must be duplicated to support pattern provenance;
+- a new generic relationship is proven necessary by an executable failure.
+
+If a pattern needs custom compiler code merely to preserve its label, simplify the crosswalk.
+
+---
+
+# 8. Resume protocol after chat/context loss
+
+Read:
 
 1. root `README.md`;
 2. `STATUS.md`;
 3. [`pattern-language-phase7-review.md`](pattern-language-phase7-review.md);
-4. this file;
-5. [`../patterns/language-model.md`](../patterns/language-model.md);
-6. [`../reference-house/pattern-occurrence-register.md`](../reference-house/pattern-occurrence-register.md);
-7. [`../computational/formal-architectural-model.md`](../computational/formal-architectural-model.md);
-8. [`../computational/validity-and-obligations.md`](../computational/validity-and-obligations.md);
-9. [`../computational/evidence-and-provenance.md`](../computational/evidence-and-provenance.md).
+4. [`pattern-language-phase8-review.md`](pattern-language-phase8-review.md);
+5. [`../computational/research-programme-v06.md`](../computational/research-programme-v06.md);
+6. [`../computational/pattern-crosswalk-implementation-handoff.md`](../computational/pattern-crosswalk-implementation-handoff.md);
+7. the core computational model documents as required.
 
-Then continue **P8.1**. Do not restart the Phase-7 taxonomy migration absent genuinely new evidence.
+Then proceed with **P0 implementation / external review / physical validation**, not another paper crosswalk expansion.
