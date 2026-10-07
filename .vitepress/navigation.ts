@@ -89,13 +89,16 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
 
   group('Reference house', [
     page('Reference house overview', '/docs/reference-house/'),
+    page('Pattern occurrence register', '/docs/reference-house/pattern-occurrence-register'),
     page('Tectonic architectural language', '/docs/reference-house/tectonic-architectural-language'),
     page('Whole-house coordination fixture', '/docs/reference-house/whole-house-coordination-fixture'),
-    page('Service topology run 01', '/docs/reference-house/service-topology-run-01'),
+    page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan'),
     page('Vertical bay options', '/docs/reference-house/vertical-bay-options'),
     page('Vertical bay coordination', '/docs/reference-house/vertical-bay-coordination'),
-    page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan'),
-    page('Service topology coordination', '/docs/reference-house/service-topology-coordination')
+    group('Phase-5 pattern-language history', [
+      page('Service topology coordination brief', '/docs/reference-house/service-topology-coordination'),
+      page('Service topology run 01', '/docs/reference-house/service-topology-run-01')
+    ])
   ]),
 
   group('Research', [
