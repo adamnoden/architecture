@@ -22,6 +22,15 @@ if (currentProgramme?.items) {
   }
 }
 
+const deliveryAndTesting = sidebar.find((item) => item.text === 'Delivery & testing')
+const prototypes = deliveryAndTesting?.items?.find((item) => item.text === 'Prototypes')
+if (prototypes?.items && !prototypes.items.some((item) => item.link === '/docs/prototypes/w2-wall-bay-test-protocol')) {
+  prototypes.items.push({
+    text: 'W2 wall-bay evidence protocol',
+    link: '/docs/prototypes/w2-wall-bay-test-protocol'
+  })
+}
+
 assertNavigationCoverage()
 
 export default defineConfig({
