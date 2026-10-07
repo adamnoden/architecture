@@ -1,9 +1,34 @@
-# Pattern — Ground-Supported Façade Access
+---
+id: HSA-P-013
+title: Ground-Supported Façade Access
+kind: pattern
+state: active
+evidence: supported
+maturity: []
+scales:
+  - site
+  - building
+domains:
+  - maintenance
+  - architecture
+  - envelope
+  - lifecycle
+  - workmanship
+principles:
+  - 1
+  - 5
+  - 6
+  - 11
+requires: []
+completes: []
+alternative_to: []
+tension_with: []
+sequences: []
+---
 
-**Status:** Supported  
-**Principles:** 1 Build for time; 5 Give maintenance a geography; 6 Prefer ordinary parts; 11 Resolve technology as architecture
+# HSA-P-013 — Ground-Supported Façade Access
 
-## Problem
+## Context
 
 Upper-storey façades need inspection, cleaning, repair and eventual renewal, yet building geometry and the surrounding site can quietly remove ordinary access methods.
 
@@ -13,7 +38,7 @@ A façade is not maintainable merely because someone can theoretically reach it.
 
 ## Pattern
 
-Coordinate façade, ground plane and landscape so foreseeable maintenance retains one or more credible ordinary access methods.
+**Coordinate façade, ground plane and landscape so foreseeable maintenance retains one or more credible ordinary access methods.**
 
 For ground-supported access, identify how scaffold, tower or other suitable equipment reaches the work face, where it bears, what geometry it occupies and how workers, materials, replacement components and waste move through the route.
 
@@ -97,14 +122,7 @@ A two-storey masonry wall likely to need periodic repointing merits credible con
 
 ## Boundary debt
 
-The pattern is mainly spatial but can interact with:
-
-- waterproofing where anchors or roof transitions are introduced;
-- security at maintenance gates or roof routes;
-- drainage where support zones overlap falls or gullies;
-- structure where temporary loads bear over basements, lightwells or suspended slabs.
-
-Permanent ties, anchors or penetrations must be designed as interfaces rather than generic access hardware.
+The pattern is mainly spatial but can interact with waterproofing, security, drainage and structure. Permanent ties, anchors or penetrations must be designed as interfaces rather than generic access hardware.
 
 ## Permanent-fabric impact
 
@@ -126,13 +144,9 @@ The landscape remains landscape; its geometry simply retains an occasional secon
 
 ## Architectural resolution
 
-The task is to make maintenance capability **latent rather than absent**. A gravel margin may protect the wall base and preserve scaffold territory. A side path may be both pleasant circulation and the material route to a courtyard. A portico may retain its composition while leaving temporary works a straightforward way around it.
+The task is to make maintenance capability **latent rather than absent**. Where possible, the maintenance strategy should reinforce architectural order rather than appear as appended equipment.
 
-Where possible, the maintenance strategy should reinforce architectural order rather than appear as appended equipment.
-
-## Assembly and replacement sequence
-
-For this pattern, the relevant sequence is temporary works:
+## Maintenance sequence
 
 1. move equipment or components from site entrance to support position;
 2. protect or prepare ground and adjacent finishes;
@@ -155,39 +169,26 @@ Review whether any step demands unplanned destructive work.
 - courtyard becomes operationally isolated;
 - routine work depends on unidentified neighbour consent;
 - later external plant consumes the reserved working position;
-- ladders become the default for work unsuited to them;
 - final levels make the drawn access strategy unusable.
 
 ## Evidence
 
-HSE CDM guidance establishes designers' responsibility to eliminate, reduce or control foreseeable risks affecting later maintenance. Work-at-height guidance establishes the hierarchy of avoidance, fall prevention and collective protection. HSE scaffolding guidance requires firm, level support capable of carrying scaffold and imposed loads and warns about drains, basements, voids and soft ground.
-
-CWCT guidance notes that safe façade access is substantially determined at scheme-design stage because geometry and access arrangements must be coordinated. BCA Design for Maintainability provides a mature professional precedent for considering façade access and surrounding-site constraints upstream.
+HSE CDM and work-at-height guidance establish the need to address foreseeable maintenance risks and the hierarchy of safer access. HSE scaffolding guidance addresses support conditions. CWCT and BCA maintainability guidance provide professional precedent for coordinating façade geometry and access upstream.
 
 ## Does not prove
 
-These sources do not establish:
-
-- a universal maintenance-strip width;
-- that every elevation must admit a MEWP;
-- that ladders should never be used;
-- that bays, porticos, trees or water features are bad architecture;
-- that permanent façade-access equipment is justified on a two-storey house;
-- that one access strategy suits every site.
+These sources do not establish a universal maintenance-strip width, that every elevation must admit a MEWP, that projections or mature landscape are bad architecture, or that permanent façade-access equipment is justified on a two-storey house.
 
 The pattern requires a credible explicit strategy, not a standard solution.
 
-## Reference-house direction
+## Reference House application
 
-Prepare a coordinated external-access plan covering principal façades and courtyard. Test Georgian-derived projections against ordinary scaffold geometry, the perimeter dry zone as possible support territory, passage/gate logistics, full-frame window replacement, mature landscape, neighbour/highway dependence and the roof-maintenance route.
+The Reference House coordinates principal façades and courtyard against ordinary scaffold geometry, gate/material logistics, full-frame window replacement, mature landscape, neighbour/highway dependence and the roof-maintenance route. No universal support-strip dimension is fixed at doctrine stage.
 
-No universal support-strip or gate dimension is fixed at doctrine stage. Dimensions follow from selected scenarios and developed geometry.
+## Formalisation boundary
 
-**Evidence anchors:**
+Maintenance targets, approach paths, support/working zones, equipment envelopes and replacement routes can be represented formally. Ground adequacy, safe temporary-works design, proportionality and landscape quality remain project-specific evidence and judgement.
 
-- HSE, *Designers: roles and responsibilities — CDM 2015*;
-- HSE, *Introduction to working at height safely*;
-- HSE, *Scaffolds*;
-- CWCT, *Design* and *Design of facades for safety*;
-- BCA, *Design for Maintainability* and *Facade Access Design Guide*;
-- Liu & Issa (2014), “Design for maintenance accessibility using BIM tools” (supporting research precedent).
+---
+
+**Provenance:** promoted to `HSA-P-013` by the Phase-6 gate review from the previously developed specialised pattern. Promotion assigns stable identity only; it does not increase evidence or maturity.
