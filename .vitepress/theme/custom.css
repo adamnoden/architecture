@@ -1,5 +1,6 @@
 :root {
-  --vp-layout-max-width: 1440px;
+  --vp-layout-max-width: 1520px;
+  --vp-sidebar-width: 320px;
 }
 
 .vp-doc {
@@ -45,6 +46,10 @@
 
 .vp-doc table {
   font-size: 0.9em;
+}
+
+.VPSidebar .item .text {
+  line-height: 1.35;
 }
 
 @media (min-width: 960px) {
