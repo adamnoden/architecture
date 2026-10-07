@@ -8,15 +8,11 @@ This file answers one question:
 
 > **Where is the House Systems Architecture project actually at?**
 
-It is intentionally higher-level than the detailed research programmes, integration registers and track-specific TODOs.
-
-The central architectural position is established. The current work is to coordinate the reference house, physically and professionally test the non-standard propositions, audit the pattern corpus now that the pattern-language method has passed its Reference House gate, finish the publication around those results, and begin only the smallest computational implementation justified by the completed paper research.
+The central architectural position is established. The current work is to coordinate and test the Reference House, physically/professionally attack the non-standard propositions, execute the now-authorised canonical pattern-language migration from the completed corpus audit, finish the publication around those results, and begin only the smallest computational implementation justified by the completed paper research.
 
 ---
 
 ## Maturity scale
-
-The maturity level below is not a percentage of words written.
 
 | Level | Meaning |
 |---|---|
@@ -24,10 +20,8 @@ The maturity level below is not a percentage of words written.
 | **L1 — Framed** | scope/question defined; little resolved work |
 | **L2 — Developed** | substantial content/design exists; important gaps remain |
 | **L3 — Coordinated** | internally coherent across adjacent project concerns; ready for serious testing/editorial hardening |
-| **L4 — Internally validated / frozen** | current internal research question has been answered; further progress requires a qualitatively different evidence source |
+| **L4 — Internally validated / frozen** | current internal research question answered; further progress requires a qualitatively different evidence source |
 | **L5 — Externally validated / release-ready** | competent external/physical validation complete for the stated scope |
-
-A frozen source document can be L4 even though the publication derived from it is unfinished. A computational concept can be L4 at paper-research scope while the software implementation remains L0/L1.
 
 ---
 
@@ -35,274 +29,257 @@ A frozen source document can be L4 even though the publication derived from it i
 
 | Workstream | Maturity | Current state | Next meaningful gate |
 |---|---:|---|---|
-| **Original doctrine / source corpus** | **L4** | House Design Doctrine v7 is preserved as source material; it should not be rewritten in place | maintain traceability while publication supersedes raw source prose |
-| **Public architectural position / governing principles** | **L3** | core thesis, selective permanence, tectonic honesty, workmanship robustness, repose and passive-first hierarchy are established | evidence/figure hardening and later final proof in publication context |
-| **Publication architecture** | **L3** | monograph + reusable pattern layer + separate implementation brief remain the form; Part III now waits on the corpus audit rather than the earlier Reference House gate | complete Phase-6 corpus audit before rearchitecting Part III |
-| **Pattern-language migration** | **L3** | metamodel, contract, six-pattern pilot, generative sequence and whole-house Reference House test are complete; Phase 5 passed because the method produced real rewinds, a missing candidate and taxonomy correction | complete Phase-6 migration matrix; only then authorise/reject full migration |
-| **Preface** | **L3** | full editorial rewrite complete; authorial/historical voice retained with reduced rhetorical density | final proof against completed book and citation presentation |
+| **Original doctrine / source corpus** | **L4** | House Design Doctrine v7 preserved as source material | maintain traceability while publication supersedes raw source prose |
+| **Public architectural position / governing principles** | **L3** | selective permanence, designed interfaces, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy established | evidence/figure hardening and final proof in publication context |
+| **Publication architecture** | **L3** | monograph + evidence-qualified pattern language + implementation brief remains the form; old 30-slot Part III is no longer authoritative | finish Phase 7 canonical language, then rebuild Part III around it |
+| **Pattern-language migration** | **L3–L4 at taxonomy scope** | Phases 0–6 complete; Reference House method gate and whole-corpus audit both passed; controlled Phase 7 migration authorised | migrate canonical identities/strategies/candidates without duplicating or inflating the corpus |
+| **Preface** | **L3** | full editorial rewrite complete | final proof against completed book and citation presentation |
 | **Part I — The Proposition** | **L3** | substantial evidence-backed draft; editorial overhaul complete | diagrams, evidence presentation and whole-book integration |
-| **Part II — Architecture of the Platform** | **L3** | core interface/failure/maintenance/tolerance argument is coordinated and editorially hardened | complete figures and any remaining evidence/technical integration |
-| **Part III — Pattern layer** | **L2** | Core 12, specialised pattern material and experimental candidates exist; Phase 6 will now decide which are patterns, strategies, implementation families, splits, merges or retirements | complete corpus audit before canonical prose migration |
-| **Part IV — Reference House** | **L2–L3** | tectonic language, vertical-bay work, external maintenance plan, provisional whole-house courtyard coordination fixture and completed service-topology run now coexist; the house remains unengineered and architecturally provisional | continue whole-house architectural/structural/environmental coordination and challenge footprint/proportionality |
-| **Part V — Making and Testing** | **L3** | substantial draft and validation philosophy exist; editorial overhaul complete | align with actual prototype/engineering results as they arrive |
-| **Evidence / precedent research** | **L3** | several deep evidence packages exist; coverage is strong but uneven across the eventual book | continue claim-by-claim hardening as chapters/patterns approach publication |
-| **Candidate reversible assemblies** | **L3** | four major candidates have survived first-principles/evidence hardening in constrained forms | structural engineering + 1:1 physical testing + conventional comparators |
-| **Physical prototype programme** | **L1–L2** | programme, acceptance criteria, W2 wall-bay build pack and drawings exist; no recorded physical validation yet | build/test P01 wall bay; engineer/test P03 floor edge; then P02 floor platform/P04 joint |
-| **Reference-house structural/technical design** | **L1–L2** | whole-house coordination geometry now exists, but structure, services, building physics and products remain concept-level | competent structural/building-physics/services coordination on the worked house |
-| **Computational paper research** | **L4** | S0→S1→S2→H1 whole-house paper sequence, mutations, red team and capability freeze complete | **stop major paper expansion** |
-| **Computational external validation** | **L1** | adversarial review pack exists; review has not occurred | structural + fire/building-control + building-services review |
-| **Compiler software implementation** | **L1** | minimal vertical slice is authorised; heavy implementation is not | source model → geometric well-formedness → obligations → evidence → selective invalidation → useful errors |
-| **Architect-facing delivery / RIBA brief** | **L2** | strong implementation-brief template exists | populate only as patterns/reference-house decisions become mature project requirements |
-| **Publication graphics / drawing language** | **L1–L2** | several useful SVGs now include repose, vertical-bay and whole-house coordination material | establish a consistent drawing/figure system and replace remaining prose/ASCII where diagrams carry the idea better |
+| **Part II — Architecture of the Platform** | **L3** | interface/failure/maintenance/tolerance argument coordinated and editorially hardened | complete figures and remaining evidence/technical integration |
+| **Part III — Pattern language** | **L2–L3** | audit now defines 11 surviving existing identities, 10 new admitted identities, retired P-006, strategies and a held-candidate bench; prose still lives partly in aggregate legacy files | Phase 7: one canonical page per active pattern + strategy/candidate homes + provenance |
+| **Part IV — Reference House** | **L2–L3** | tectonic language, vertical-bay work, external maintenance plan, provisional whole-house courtyard fixture and complete service-topology run coexist; house remains architecturally provisional/unengineered | continue whole-house architectural/structural/environmental coordination and challenge footprint/proportionality |
+| **Part V — Making and Testing** | **L3** | substantial draft and validation philosophy exist | align with actual prototype/engineering results |
+| **Evidence / precedent research** | **L3** | several deep packages exist; targeted Phase-6 evidence closed taxonomy ambiguities without reopening general doctrine discovery | continue claim-by-claim hardening where publication/pattern maturity needs it |
+| **Candidate reversible assemblies** | **L3** | Phase 6 separated reusable abstractions from implementation-shaped candidates; physical validity remains unresolved | structural engineering + 1:1 testing + conventional comparators |
+| **Physical prototype programme** | **L1–L2** | programme, acceptance criteria, W2 wall-bay build pack/drawings exist; no physical validation recorded | build/test wall bay; engineer/test floor edge; then floor platform/joint |
+| **Reference-house structural/technical design** | **L1–L2** | whole-house coordination geometry exists; structure, services, building physics/products remain concept-level | competent multidisciplinary coordination on worked house |
+| **Computational paper research** | **L4** | S0→S1→S2→H1 paper sequence, mutations, red team and capability freeze complete | **stop major paper expansion** |
+| **Computational external validation** | **L1** | adversarial review pack exists; review not yet performed | structural + fire/building-control + building-services review |
+| **Compiler software implementation** | **L1** | minimal vertical slice authorised; heavy implementation not authorised | source model → well-formedness → obligations → evidence → invalidation → diagnostics |
+| **Architect-facing delivery / RIBA brief** | **L2** | strong implementation-brief template exists | populate only as decisions mature into project requirements |
+| **Publication graphics / drawing language** | **L1–L2** | repose, vertical-bay and whole-house coordination SVGs exist | establish consistent figure language as publication content stabilises |
 
 ---
 
-# What is genuinely complete enough to stop working on for now
+# Complete enough to stop working on for now
 
 ## 1. Raw doctrine discovery
 
 The project has enough governing ideas.
 
-Do **not** respond to every new design question by inventing another doctrine principle. New findings should normally:
-
-- refine an existing principle;
-- become a strategy or pattern;
-- become a reference-house decision;
-- become a test/evidence requirement;
-- or be rejected as unnecessary complexity.
+New findings should normally refine an existing principle, become a strategy/pattern, become a Reference House decision, become evidence/test work, or be rejected—not create another governing principle by default.
 
 ## 2. Computational paper-compilation research
 
-The internal paper sequence is complete through a whole bounded house.
+The internal paper sequence is complete through a bounded whole house.
 
-Canonical control:
-
-- `docs/computational/research-programme-v05.md`
-- `docs/computational/h1-capability-matrix-v05.md`
-- `docs/computational/h1-paper-final-red-team.md`
-- `docs/computational/external-review-pack-h1-paper-v02.md`
-
-The next computational information must come from:
+Next computational information must come from:
 
 1. competent external attack;
 2. a minimal executable prototype;
 3. physical/product evidence.
 
-Do **not** create another large paper scale, speculative ontology, full regulations transcription or general solver architecture first.
+Do not create another large paper scale, speculative ontology, full regulations transcription or general solver architecture first.
 
 ## 3. Repo-wide prose migration
 
-The controlled editorial overhaul is complete across the public manuscript, patterns, reference-house explainers, delivery/prototype material and canonical computational explainers.
+The controlled global editorial overhaul is complete. Further prose work should be local, structural and evidence-driven.
 
-The migration deliberately did **not** rewrite frozen source, research syntheses, historical computational runs or evidence records. Those remain provenance.
+## 4. Pattern-language method + taxonomy
 
-Further prose work should now be local and evidence-driven rather than another global style pass.
+**Phases 0–6 are complete.**
 
-## 4. Pattern-language method pilot
+The method survived a worked Reference House test, then the whole corpus was audited against one admission model.
 
-Phases 0–5 of the pattern-language overhaul are complete.
+Key locked Phase-6 outcomes:
 
-The method survived a worked Reference House test and produced information the old catalogue did not:
+- `HSA-P-001..005` and `HSA-P-007..012` survive;
+- `HSA-P-003` becomes **Coherent Horizontal Service Route** without changing identity;
+- `HSA-P-006` is retired as a pattern and its durable content becomes the **Fail-Safe Water Distribution** strategy;
+- ten new pattern identities are authorised for Phase 7;
+- weak/physical candidates remain unnumbered;
+- strategies and implementation families stay outside the pattern graph;
+- the old 30-slot publication inventory is not the canonical language.
 
-- real pattern occurrences;
-- explicit upstream rewinds;
-- the `Accessible Vertical Service Zone` candidate;
-- likely demotion of `Water-Damage-Safe Service Route` to strategy;
-- clarification that horizontal service distribution must remain service-aware rather than one universal duct.
+Do not reopen taxonomy generally during Phase 7 unless the migration exposes a genuine contradiction.
 
-Do not rerun the pilot. The next question is corpus classification.
+Canonical control: `docs/development/pattern-language-overhaul.md` and `docs/development/pattern-language-phase6-review.md`.
 
 ---
 
 # Highest-value unfinished work
 
-## A. Physical / engineering validation of the architecture
+## A. Physical / engineering validation
 
 This remains the largest gap between an intellectually coherent doctrine and a credible building system.
 
-Immediate candidates already have explicit gates:
+Immediate gates:
 
-1. **P01 wall bay / Architectural Backplane + Replaceable Wall Lining**  
-   Build the existing W2 pack at 1:1, against a conventional plaster control, including deliberately imperfect background geometry and an installer who did not design the system.
+1. **Architectural Backplane + Replaceable Wall Lining wall bay** — build 1:1 against first-rate plaster control, including imperfect background geometry and an unfamiliar competent installer.
+2. **Structural floor edge / Seated Floor challenger** — engineer comparison of ordinary certified restraint hanger, direct bearing + separate restraint and any custom alternative.
+3. **Finish-agnostic floor platform** — walkable multi-panel comparison including a local-access-band alternative; tactile/acoustic solidity is non-negotiable.
+4. **Wall/ceiling tectonic joint** — conventional quiet joint versus mechanically honest/removable alternatives.
 
-2. **P03 structural floor edge / Seated Floor Structure**  
-   Structural-engineer comparison of certified restraint hanger, direct bearing + separate restraint, and any custom seated challenger. Novelty must demonstrate an actual advantage.
+The Phase-6 audit does not promote these assemblies merely because stronger abstractions were extracted from them.
 
-3. **P02 finish-agnostic floor platform**  
-   Walkable multi-panel test with timber/tile/stone-like finishes and a local-access-band comparator. Acoustic/tactile solidity is a hard acceptance criterion.
+## B. Continue the Reference House
 
-4. **P04 wall/ceiling tectonic joint**  
-   Test conventional quiet joint versus mechanically honest/removable alternatives.
+The house now has enough geometry to test service composition but is not a finished design.
 
-The physical programme is defined in `docs/development/tectonic-prototype-programme.md`.
+Next work should:
 
-## B. Continue the Reference House beyond the Phase-5 fixture
-
-The Reference House now has enough house-scale geometry to test service composition, but it is not a finished design.
-
-Current assets:
-
-- tectonic architectural language;
-- vertical-bay coordination and A/B/C option study;
-- external access/maintenance plan;
-- provisional two-storey courtyard coordination fixture;
-- complete service-demand / utility / plant / vertical / horizontal / crossing / water-failure run;
-- initial pattern-occurrence register.
-
-Next architectural work should:
-
-1. challenge the provisional 12.6 × 11.4 m footprint for area/proportionality;
-2. resolve actual stair/circulation/courtyard relationships rather than schematic blocks;
+1. challenge the provisional **12.6 × 11.4 m** footprint for area/proportionality;
+2. resolve real stair/circulation/courtyard relationships;
 3. coordinate structure and service crossings with an engineer;
-4. develop passive-first environmental strategy against real orientation/opening geometry;
-5. coordinate roof, courtyard drainage and external maintenance with the whole-house form;
+4. develop passive-first environmental strategy against real orientation/openings;
+5. coordinate roof, courtyard drainage and external maintenance with whole-house form;
 6. feed prototype outcomes back into wall/floor/interface choices.
 
-The Reference House remains one worked interpretation, never evidence for the doctrine itself.
+The Reference House remains one worked interpretation, never evidence for doctrine/pattern validity.
 
-## C. Pattern language — Phase 6 corpus audit
+## C. Pattern language — Phase 7 canonical migration
 
-The gate has passed. The active migration task is now classification, **not prose rewriting**.
+This is now the active structural migration task.
 
-Audit:
+### Existing identities
 
-- Core 12;
-- ground-supported façade access;
-- reversible-assembly candidates;
-- the 30-item publication inventory;
-- Accessible Vertical Service Zone;
-- stronger abstractions hidden inside implementation candidates.
+Retain:
 
-For each proposition decide: retain / rename / split / merge / demote / retire, with evidence state, likely relations, sequence role and formalisation boundary.
+- `HSA-P-001` Controlled Utility Entry
+- `HSA-P-002` Plant Room as Service Hub
+- `HSA-P-003` **Coherent Horizontal Service Route**
+- `HSA-P-004` High-Service-Room Service Wall
+- `HSA-P-005` Designed Structural Penetration
+- `HSA-P-007` Permanent Opening / Replaceable Window
+- `HSA-P-008` Movement / Slip Junction
+- `HSA-P-009` Accessible Rainwater Route
+- `HSA-P-010` Source-Capture Kitchen Extract
+- `HSA-P-011` Roof Maintenance Route
+- `HSA-P-012` Physical Service Index
 
-Starting findings to challenge rather than blindly accept:
+Retire but preserve provenance:
 
-- `HSA-P-003 Horizontal Service Spine` may need clearer naming/scope;
-- current Core Pattern 06 likely becomes a strategy;
-- Accessible Vertical Service Zone passes the conceptual admission test but should remain unnumbered until the corpus audit checks overlap;
-- specific assemblies such as Seated Floor Structure may hide stronger general patterns than their current implementation-shaped names.
+- `HSA-P-006` Water-Damage-Safe Service Route
 
-Canonical control: `docs/development/pattern-language-overhaul.md`.
+### New admitted identities
 
-**Do not begin Phase 7 canonical migration until the complete matrix has been reviewed.**
+- Ground-Supported Façade Access
+- Accessible Vertical Service Zone
+- Accessible Room Service Route
+- Compartmented Service Void
+- Visible Leakage Path
+- Failure-Tolerant Wet Service Room
+- Permanent Opening / Replaceable Door
+- Designed Threshold
+- Source-Capture Bathroom Extract
+- Controlled Attachment Plane
+
+### Held candidates — no stable IDs
+
+- Replaceable Architectural Lining
+- Individually Isolatable Manifold Distribution
+- Local Deep Service Zone
+- Selective Floor Access / Selective Accessible Floor Zone
+
+Phase 7 must create replacement canonical pages before retiring aggregate prose, keep strategies/candidates visibly distinct, preserve `P-006` as retired, and avoid graph/tooling work beyond what materially supports the corpus.
 
 ## D. Finish the publication as a publication
 
-The global prose migration is no longer the main publication task. The remaining work is more architectural and editorially specific:
+Do not polish Part III around the obsolete 30-slot outline.
 
-1. wait for Phase 6/7 before rearchitecting Part III;
-2. develop Part IV from the evolving Reference House work;
-3. add/standardise diagrams and figure language where graphics explain better than prose;
-4. close remaining evidence, citation, glossary and back-matter gaps;
-5. perform a final proof only after the missing content and physical/professional findings have landed.
+After Phase 7:
 
-The publication should remain an architectural work, not become a software pitch or taxonomy manual.
+1. rearchitect Part III around the canonical language and useful sequences;
+2. develop Part IV from the evolving Reference House;
+3. standardise diagrams where graphics outperform prose;
+4. close evidence/citation/glossary/back-matter gaps;
+5. perform final proof after physical/professional findings land.
+
+The publication must remain architectural—not a software pitch or taxonomy manual.
 
 ## E. External professional attack
 
-Three reviews would now create disproportionately valuable information:
+High-value reviews:
 
-- **structural engineer** — reversible/seated floor proposition, support/restraint semantics, reference-house structure and computational structural proof boundary;
-- **building-control / fire practitioner** — boundary/fire/access assumptions, vertical service-zone boundary treatment and computational target/rule interpretation;
-- **building-services / ventilation engineer** — passive-first/hybrid ventilation strategy, service geography, domestic vertical-zone proportionality and computational evidence boundary.
+- **structural engineer** — floor/interface propositions, Reference House structure, computational structural proof boundary;
+- **building-control / fire practitioner** — boundary/fire/access assumptions, service-void/vertical-zone treatment, computational target interpretation;
+- **building-services / ventilation engineer** — passive-first strategy, service geography, domestic vertical-zone proportionality and computational evidence boundary.
 
 Negative findings are successful research outcomes.
 
 ## F. Minimal compiler kernel
 
-The software track is allowed to begin, but only as a falsification instrument.
+Allowed only as a falsification instrument.
 
-The first vertical slice should demonstrate:
+First vertical slice:
 
-1. semantic source identities and relationships;
-2. deterministic geometric/source well-formedness;
+1. semantic identities/relationships;
+2. geometric/source well-formedness;
 3. derived obligations;
-4. scoped evidence objects;
-5. selective invalidation after change;
+4. scoped evidence;
+5. selective invalidation;
 6. supported/unsupported distinction;
-7. intelligible author-facing errors.
+7. intelligible diagnostics.
 
-Do not rebase the compiler around “pattern objects”. Patterns may later expose formal consequences; the semantic/obligation/evidence architecture remains primary.
-
-Do not begin with polished CAD, IFC round-tripping, general structural solving, a complete regulations engine or a Sims-like UI.
+Do **not** rebase the compiler around pattern objects. Patterns may expose formal consequences; the semantic/obligation/evidence model remains primary.
 
 ---
 
 # Important unresolved risks
 
-These are not ordinary TODOs; they can change the project direction.
+### R1 — physical quality
 
-### R1 — physical quality risk
+Replaceable walls/floors may work technically and still feel hollow, temporary or over-detailed. Maintainability never excuses loss of repose/solidity.
 
-Replaceable walls/floors may calculate correctly and still feel hollow, temporary, noisy or over-detailed. The house loses if maintainability destroys repose or solidity.
+### R2 — complexity / proportionality
 
-### R2 — complexity / proportionality risk
+Serviceability infrastructure can consume more space, money, carbon and maintenance than the future change it avoids. The provisional Reference House footprint must face this explicitly.
 
-The doctrine can become self-defeating if serviceability infrastructure costs more space, money, carbon and maintenance than the future change it avoids.
+### R3 — workmanship
 
-The provisional Reference House footprint must now face this test explicitly.
+A detail that works only under designer supervision fails the project. Representative variation and unfamiliar competent installers belong in prototype tests.
 
-### R3 — workmanship risk
+### R4 — compiler externalisation
 
-A detail that only works when its designer supervises assembly has failed the project. Prototype trials must include ordinary competent installers and representative dimensional variation.
+If most technical results become `EXTERNAL_EVIDENCE_REQUIRED`, the compiler degenerates into an evidence manager. The kernel must demonstrate native value.
 
-### R4 — compiler externalisation risk
+### R5 — passive environmental strategy
 
-If nearly every meaningful technical result becomes `EXTERNAL_EVIDENCE_REQUIRED`, the software proposition weakens into an evidence manager. The executable prototype must demonstrate real native value.
+Passive-first is a hierarchy, not a predetermined system answer. Hybrid stack, CMEV, MVHR or another route must win on project evidence.
 
-### R5 — passive environmental strategy risk
+### R6 — publication drift
 
-Passive-first is the governing hierarchy, not a predetermined system result. Hybrid stack, CMEV, MVHR or another supported route must be selected by actual project evidence rather than doctrine purity.
+The repo can expand indefinitely. The monograph must select, compress and omit.
 
-### R6 — publication drift risk
+### R7 — pattern-language bureaucracy
 
-The research repo can expand indefinitely. The monograph must eventually select, compress and omit. Not every useful research document belongs in the publication.
+The migration fails if it creates duplicate canonical prose, dense meaningless graph edges, pattern-shaped implementation notes or metadata authors will not maintain.
 
-### R7 — pattern-language bureaucracy risk
-
-The pattern language fails if it becomes an ontology hobby, duplicates canonical prose, calls every good idea a pattern, or encodes chronology as a web of fake dependencies.
-
-Phase 6 should reduce and clarify the corpus. A larger catalogue is not success.
+Phase 7 should make the project **easier** to reason about. If it does not, stop and simplify.
 
 ---
 
 # Near-term project sequence
 
-This is the current recommended order, not a rigid schedule.
+### Architectural / physical
 
-### Architectural / physical track
+**prototype + engineer in parallel with whole-house Reference House coordination → feed validated results back into language/manuscript → final publication proof**
 
-**prototype + engineer in parallel with continued whole-house Reference House coordination → feed validated results back into language/manuscript → final publication proof**
+### Pattern language
 
-### Pattern-language track
+**Phase 7 canonical migration → verify corpus/navigation → then Part III rearchitecture + limited tooling**
 
-**Phase-6 corpus audit → explicit migration decision → Phase 7 only for items that survive → publication rearchitecture**
+### Computational
 
-### Computational track
+**external review + minimal executable kernel → reassess thesis → only then heavier CAD/solvers/rule packs**
 
-**external review + minimal executable kernel → reassess thesis → only then decide whether heavy compiler/CAD work is justified**
+### Delivery
 
-### Delivery track
-
-**populate RIBA implementation brief only when a doctrine/pattern/reference-house decision is mature enough to become a real project requirement**
-
-These tracks should inform one another, but none should be allowed to block all progress elsewhere.
+**populate implementation brief only when architecture/pattern/reference-house decisions are mature enough to become requirements**
 
 ---
 
 # Status-maintenance rule
 
-This file is the canonical high-level project state.
+Update this file when:
 
-Update it when any of the following happens:
-
-- a major workstream crosses a maturity level;
-- a candidate pattern is promoted, held, split, reclassified or rejected;
+- a major workstream crosses maturity;
+- a pattern is admitted, held, retired, split or materially reclassified;
 - the pattern-language migration crosses a phase gate;
-- a prototype or competent external review materially changes a conclusion;
-- the Reference House reaches a new integration stage;
-- the computational programme changes phase;
-- the publication architecture changes materially;
-- the recommended next three-to-five project actions change.
+- prototype/professional review changes a conclusion;
+- Reference House reaches a new integration stage;
+- computational programme changes phase;
+- publication architecture changes materially;
+- recommended next actions change.
 
-Detailed TODOs remain in their track-specific control documents. This file should stay short enough that a returning collaborator can understand the state of the entire project in a few minutes.
+Detailed TODOs live in track-specific control documents. This file should remain readable in a few minutes.
