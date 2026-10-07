@@ -1,191 +1,151 @@
 # Pattern-Language Overhaul — Phase 7 Canonical Migration Plan
 
-**Status:** active — P7.1 through P7.5 complete; P7.6 next  
-**Current branch:** `pattern-language-phase7-integration`  
-**P7.5 starting point:** `main@f4c67caed03eb1eb383dfb4738b5e1ebcaf5842e`  
+**Status:** **complete — P7.1 through P7.6 passed**  
+**Validated checkpoint:** `main@d2788191b546d1049f84e50fe1644e1007715179`  
+**Gate review:** [`pattern-language-phase7-review.md`](pattern-language-phase7-review.md)  
 **Authority:** [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md)
 
-This is the durable Phase-7 control point. It is written so migration can resume safely after loss of conversational context.
+Phase 7 converted the audited corpus into one canonical architectural language without erasing research history or promoting unresolved systems for neatness.
 
 ---
 
-# 1. Completed checkpoints
+# 1. Completed sequence
 
 ## P7.1 — identity and layout
 
-- stable ID map fixed;
-- canonical file layout fixed;
-- generated active/retired index established from Markdown frontmatter;
-- authoring contract aligned to canonical names;
-- navigation distinguishes canonical material from provenance.
+- stable IDs fixed;
+- active canonical patterns live directly under `docs/patterns/`;
+- retired identities live under `docs/patterns/retired/`;
+- the pattern index derives from Markdown frontmatter;
+- navigation distinguishes current authority from migration provenance.
 
 ## P7.2 — surviving Core identities
 
-- canonical pages created for `HSA-P-001..005`, `HSA-P-007..012`;
-- `HSA-P-003` preserved but renamed **Coherent Horizontal Service Route**;
-- `HSA-P-006` retired permanently and never reused;
-- its durable umbrella proposition moved to **Fail-Safe Water Distribution**.
+- `HSA-P-001..005` and `HSA-P-007..012` migrated to individual canonical pages;
+- `HSA-P-003` retained its identity but became **Coherent Horizontal Service Route**;
+- `HSA-P-006` was permanently retired;
+- its durable umbrella proposition became the **Fail-Safe Water Distribution** strategy.
 
 ## P7.3 — newly admitted identities
 
 Canonical pages created for `HSA-P-013..022` without evidence or maturity inflation.
 
-## P7.4 — non-pattern ownership
+## P7.4 — non-pattern homes
 
-Canonical strategy homes:
+Canonical strategies:
 
 - [Fail-Safe Water Distribution](../patterns/strategies/fail-safe-water-distribution.md)
 - [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md)
 - [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md)
 
-Held candidates, deliberately unnumbered:
+Held candidates — deliberately without HSA IDs:
 
 - [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md)
 - [Individually Isolatable Manifold Distribution](../patterns/candidates/individually-isolatable-manifold-distribution.md)
 - [Local Deep Service Zone](../patterns/candidates/local-deep-service-zone.md)
 - [Selective Floor Access](../patterns/candidates/selective-floor-access.md)
 
-Implementation challengers and old aggregate records remain provenance/research rather than being promoted for tidiness.
+Implementation challengers and research history remained outside the graph.
 
-## P7.5 — Reference House + publication reconciliation
+## P7.5 — Reference House + publication integration
 
-### Reference House
+- created the canonical [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md);
+- separated pattern selection, actual occurrence, implementation direction and evidence obligation;
+- retained Phase-5 run/brief terminology as historical discovery records;
+- advanced Publication Architecture to v0.11 and replaced the obsolete 30-slot inventory with the actual language;
+- removed the rejected bundled **Perimeter Dry Zone** assumption from the current external-maintenance plan.
 
-Created the canonical [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md), which distinguishes:
+## P7.6 — lightweight validation
 
-- selected pattern;
-- actual project occurrence;
-- implementation direction;
-- outstanding evidence/design obligation;
-- selected strategy;
-- held candidate;
-- rejected/rewound design move.
+The normal documentation build now rejects:
 
-Confirmed current coordination occurrences:
+- malformed stable IDs;
+- duplicate stable IDs;
+- invalid active/retired state;
+- canonical-location/state mismatch;
+- relationship references to unknown IDs;
+- self-referential graph edges.
 
-- `RH-P001-01` — `HSA-P-001` Controlled Utility Entry;
-- `RH-P002-01` — `HSA-P-002` Plant Room as Service Hub;
-- `RH-P014-01` — `HSA-P-014` Accessible Vertical Service Zone;
-- `RH-P004-01/02` — `HSA-P-004` High-Service-Room Service Wall;
-- `RH-P003-01` — `HSA-P-003` Coherent Horizontal Service Route;
-- `RH-P005-01..06` — `HSA-P-005` Designed Structural Penetration;
-- `RH-P012-01` — `HSA-P-012` Physical Service Index.
+Reverse-reference data is derived from the same Markdown frontmatter. No second registry or graph database was introduced.
 
-Other patterns remain selected intent or simply unselected until geometry justifies an occurrence. Reference House use does not raise evidence/maturity.
-
-The Phase-5 service-topology brief/run remain historical records; current navigation and Reference House overview identify them as such rather than rewriting their discovery-era terminology.
-
-The External Access & Maintenance Plan was corrected to remove the old bundled **Perimeter Dry Zone** assumption. Wall-base moisture, drainage, inspection and temporary maintenance support are now coordinated as distinct functions and combined only where technically compatible.
-
-### Publication
-
-`publication-architecture.md` advanced to v0.11 and Part III now uses the actual canonical language:
-
-- 21 active patterns;
-- one visibly retired identity (`HSA-P-006`);
-- three strategies alongside, not inside, the graph;
-- four held candidates shown as a research frontier;
-- editorial reading groups that do not encode taxonomy into IDs;
-- the service-topology sequence presented as generative method, separate from graph relationships;
-- migration provenance removed from the primary Part-III reading model.
-
-P7.5 therefore passes: neither current Reference House state nor publication architecture treats the superseded catalogue/audit taxonomy as canonical.
+The first production build with validation active passed on 2026-10-07.
 
 ---
 
-# 2. Canonical identity state
+# 2. Final canonical identity state
 
-Active pattern identities:
+Active patterns:
 
-`HSA-P-001..005`, `HSA-P-007..022`.
+`HSA-P-001..005`, `HSA-P-007..022` — **21 active identities**.
 
 Retired permanently:
 
 `HSA-P-006 — Water-Damage-Safe Service Route`.
 
-IDs carry identity only. They do not encode domain, scale, publication order or evidence level.
+IDs encode identity only. They do not encode domain, scale, publication order or evidence level.
 
 ---
 
-# 3. Graph / evidence discipline
+# 3. Rules that remain binding
 
-- graph relations remain `requires`, `completes`, `alternative-to`, `tension-with`;
-- chronology belongs in generative sequences;
-- no generic `related-to` graph;
-- evidence and maturity remain independent from identity;
+- graph relations remain sparse: `requires`, `completes`, `alternative-to`, `tension-with`;
+- chronology belongs in generative sequences, not graph edges;
+- evidence/maturity are independent from identity;
 - Reference House occurrence is not evidence;
-- strategy is not a pattern node;
-- implementation family is not a pattern merely because it has a reusable detail.
+- strategies are not pattern nodes;
+- candidates receive no stable pattern IDs until admission;
+- implementation families are not promoted merely because they are reusable;
+- retired IDs are never reused;
+- Markdown remains the source of truth;
+- research/prototype history is preserved rather than rewritten to match current taxonomy.
 
 ---
 
-# 4. P7.6 — lightweight validation/tooling — **NEXT**
+# 4. Phase-7 close gate
 
-Add only tooling that reduces maintenance error.
+All close conditions passed:
 
-Required gate:
+- one canonical page per active pattern;
+- visible retired `P-006`;
+- explicit strategy and held-candidate homes;
+- current Reference House state reconciled to canonical IDs;
+- publication Part III rebuilt around the canonical language;
+- provenance preserved but demoted from current authority;
+- navigation/build validation green;
+- identity/state/relationship validation green.
 
-1. stable pattern IDs are unique;
-2. IDs match the canonical `HSA-P-xxx` form;
-3. active/retired state is consistent with canonical location;
-4. graph relationship references resolve to a known stable identity;
-5. self-referential graph edges are rejected;
-6. validation runs automatically during the documentation build;
-7. reverse-reference information may be derived if useful, but no second registry/database is introduced.
-
-Explicitly **do not** add:
-
-- D3/graph visualisation;
-- automatic graph-density targets;
-- orphan warnings that punish intentionally standalone patterns;
-- a second content store;
-- compiler semantics in pattern metadata.
-
-P7.6 passes when malformed identity/relationship metadata cannot silently enter the published language and the ordinary docs build remains green.
+See [`pattern-language-phase7-review.md`](pattern-language-phase7-review.md) for the formal gate review.
 
 ---
 
-# 5. Phase-7 close gate
+# 5. What comes next
 
-After P7.6, close Phase 7 only if:
+## Phase 8 — computational crosswalk
 
-- every active pattern has exactly one canonical page;
-- `P-006` remains visibly retired;
-- strategies/candidates remain outside the graph;
-- Reference House current state uses canonical identities;
-- publication architecture uses canonical Part III;
-- provenance remains recoverable but is not presented as current authority;
-- build/navigation/metadata validation passes;
-- the resulting structure is easier to understand than the pre-migration catalogue.
+Map only **formalisable consequences** of stable patterns into the existing semantic relationship / obligation / evidence model.
 
-Then Phase 8 (computational crosswalk) and the remaining publication development may proceed from the stable architectural language.
+Do not make pattern objects the compiler ontology.
 
----
+## Publication development
 
-# 6. Preservation / stop rules
+The taxonomy/structure problem is solved. Continue with publication-quality Part III/IV synthesis, figures, evidence presentation and editing.
 
-Never:
+## Continuous validation
 
-- rewrite `docs/source/house-design-doctrine-v7.md`;
-- rewrite frozen computational runs merely to match terminology;
-- erase research/prototype history because classification changed;
-- assign a stable ID to a held candidate for convenience;
-- add graph edges merely because two patterns are related;
-- treat formalizability as architectural validity;
-- let migration tooling become a new ontology project.
+Physical prototypes, engineering and professional review may change evidence/maturity or force future pattern retirement. Phase 7 completion does not freeze knowledge against new evidence.
 
 ---
 
-# 7. Resume protocol
+# 6. Resume protocol
 
 Read:
 
 1. root `README.md`;
 2. `STATUS.md`;
 3. [`pattern-language-overhaul.md`](pattern-language-overhaul.md);
-4. this file;
-5. [`../patterns/language-model.md`](../patterns/language-model.md);
-6. [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md);
-7. [`publication-architecture.md`](../manuscript/publication-architecture.md).
+4. [`pattern-language-phase7-review.md`](pattern-language-phase7-review.md);
+5. [`../patterns/README.md`](../patterns/README.md);
+6. [`../reference-house/pattern-occurrence-register.md`](../reference-house/pattern-occurrence-register.md);
+7. [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md).
 
-Then execute **P7.6 only**. Do not reopen taxonomy unless new evidence exposes a genuine contradiction.
+Do **not** restart Phase 7 or reopen taxonomy by default. Reclassification now requires new architectural, physical or professional evidence.
