@@ -1,9 +1,9 @@
-# House Systems Architecture — Publication Architecture v0.10
+# House Systems Architecture — Publication Architecture v0.11
 
 **Working form:** illustrated architectural design-research monograph + evidence-qualified pattern language + separate architect-facing implementation brief.  
-**Status:** v0.10 — pattern-language Phase 5 passed; Part III content now awaits the Phase-6 corpus audit.
+**Status:** v0.11 — canonical Phase-7 pattern corpus established; Part III now organised around the actual language rather than the superseded 30-slot inventory.
 
-The existing 30-pattern catalogue plan below is a **candidate inventory under audit**, not a locked taxonomy. The active migration is defined in [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md). The Reference House has now demonstrated that the language/sequence method is useful; do not reorganise the publication around the old 30-item list until Phase 6 establishes what actually survives as pattern, strategy, implementation family, split, merge or retirement.
+The pattern-language migration is controlled by [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md). The active language contains 21 patterns, one retired identity, three canonical strategies and four explicitly held candidates. Pattern count is an outcome, not a target.
 
 ## Front matter
 
@@ -53,36 +53,85 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
     Boundary debt created by access and disassembly: fire, smoke, acoustic, air, vapour, water, thermal, pests and security; preserve critical performance independently of routinely removable finish layers where practical.
 
 11. **The Replaceable Interior**  
-    Attachment hierarchy, architectural backplanes, wall linings, floor platforms, ceilings, kitchens, bathrooms, windows, doors, fixing infrastructure, wet-trade discipline and selective adaptability.
+    Attachment hierarchy, controlled attachment planes, wall linings, floor layers, ceilings, kitchens, bathrooms, windows, doors, wet-trade discipline and selective adaptability. Distinguish canonical patterns from still-unproven implementation challengers such as replaceable lining and full-room removable floor platforms.
 
 12. **Legibility and stewardship**  
     Building record, physical index, change control and maintainability commissioning.
 
 ## Part III — Pattern Language
 
-The intended publication form is a browsable professional reference containing reusable patterns **and the relationships/sequences that materially help designers combine them**.
+Part III is a browsable professional reference: **patterns plus the relationships and generative sequences that help designers combine them**. It is not a second version of Part II and not a catalogue of every technical idea in the project.
 
-The method is documented in [HSA Pattern Language — Model and Authoring Contract](../patterns/language-model.md), the [Service-Topology Pilot](../patterns/pilot/README.md), the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md) and the [Phase-5 Gate Review](../development/pattern-language-phase5-review.md).
+The method is defined by the [HSA Pattern Language — Model and Authoring Contract](../patterns/language-model.md). The canonical pattern index is [Patterns](../patterns/README.md). The first worked generative method is the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md).
 
-The Reference House test passed. The next task is therefore not to preserve the old catalogue but to audit it. The following remains an **input inventory** until Phase 6 is complete:
+### Reading structure
 
-### A. Service topology
-utility entry; plant hub; riser / vertical service zone; horizontal spine/route; high-service wall; local deep zone; undercroft option.
+The groups below are editorial reading aids only. IDs remain stable identity and do not encode category, scale or publication order. A pattern may span several domains even if it appears once in the book.
 
-### B. Distribution and access
-service skirting; vertical joinery route; controlled penetration; compartmented void; floor access.
+### A. Service geography and distribution
 
-### C. Water and failure
-manifold; withdrawable pipe; water-damage-safe route/strategy; leak detection path; wet-service room.
+1. [`HSA-P-001 — Controlled Utility Entry`](../patterns/controlled-utility-entry.md)
+2. [`HSA-P-002 — Plant Room as Service Hub`](../patterns/plant-room-service-hub.md)
+3. [`HSA-P-014 — Accessible Vertical Service Zone`](../patterns/accessible-vertical-service-zone.md)
+4. [`HSA-P-003 — Coherent Horizontal Service Route`](../patterns/coherent-horizontal-service-route.md)
+5. [`HSA-P-015 — Accessible Room Service Route`](../patterns/accessible-room-service-route.md)
+6. [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md)
+7. [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md)
+8. [`HSA-P-016 — Compartmented Service Void`](../patterns/compartmented-service-void.md)
 
-### D. Openings and interfaces
-window; door; threshold; slip/movement joint; experimental functional cornice.
+This section should be read alongside the service-topology sequence. The sequence supplies decision order and rewind conditions; the pattern graph supplies reusable compositional relationships. Do not collapse the two.
 
-### E. Envelope and environment
-perimeter dry zone; rainwater route; kitchen source capture; bathroom extraction; roof-maintenance route; [ground-supported façade access](../patterns/ground-supported-facade-access.md).
+### B. Water, leakage and failure
 
-### F. Occupation and stewardship
-fixing infrastructure; physical service index.
+9. [`HSA-P-017 — Visible Leakage Path`](../patterns/visible-leakage-path.md)
+10. [`HSA-P-018 — Failure-Tolerant Wet Service Room`](../patterns/failure-tolerant-wet-service-room.md)
+11. [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md)
+
+The umbrella [Fail-Safe Water Distribution](../patterns/strategies/fail-safe-water-distribution.md) proposition is a **strategy**, not a pattern. It may invoke different patterns and implementation families for different route classes.
+
+### C. Openings, movement and attachment
+
+12. [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md)
+13. [`HSA-P-019 — Permanent Opening / Replaceable Door`](../patterns/permanent-opening-replaceable-door.md)
+14. [`HSA-P-020 — Designed Threshold`](../patterns/designed-threshold.md)
+15. [`HSA-P-008 — Movement / Slip Junction`](../patterns/movement-slip-junction.md)
+16. [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md)
+
+### D. Environmental and external maintenance geography
+
+17. [`HSA-P-010 — Source-Capture Kitchen Extract`](../patterns/source-capture-kitchen-extract.md)
+18. [`HSA-P-021 — Source-Capture Bathroom Extract`](../patterns/source-capture-bathroom-extract.md)
+19. [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md)
+20. [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md)
+
+### E. Stewardship
+
+21. [`HSA-P-012 — Physical Service Index`](../patterns/physical-service-index.md)
+
+### Retired identity
+
+`HSA-P-006 — Water-Damage-Safe Service Route` remains visible as a [retired identity](../patterns/retired/hsa-p-006-water-damage-safe-service-route.md). Its ID is never reused. The useful umbrella proposition survives as Fail-Safe Water Distribution rather than being forced to remain one physical pattern.
+
+### Strategies beside the language
+
+Strategies sit between doctrine and patterns but are not pattern nodes:
+
+- [Fail-Safe Water Distribution](../patterns/strategies/fail-safe-water-distribution.md)
+- [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md)
+- [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md)
+
+They should appear in Part II/III where they clarify design reasoning, without being counted as patterns.
+
+### Held candidate bench
+
+The publication should make unresolved propositions visible without laundering them into the language:
+
+- [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md)
+- [Individually Isolatable Manifold Distribution](../patterns/candidates/individually-isolatable-manifold-distribution.md)
+- [Local Deep Service Zone](../patterns/candidates/local-deep-service-zone.md)
+- [Selective Floor Access](../patterns/candidates/selective-floor-access.md)
+
+Each candidate has an explicit admission gate. The candidate bench is a research frontier, not an appendix of patterns waiting automatically for numbers.
 
 ### Pattern-page target
 
@@ -94,17 +143,9 @@ Stable pattern IDs are identity only. They do not encode category, scale, eviden
 
 Pattern relationships should remain sparse. Generative sequence order is a separate structure and should include explicit **rewind conditions** where downstream complexity is evidence that an earlier architectural decision should change.
 
-### Candidate development track
+### Migration provenance
 
-The following systems remain outside the established pattern set until the corpus audit and, where applicable, engineering/prototype work justify their classification:
-
-- Seated Floor Structure;
-- Architectural Backplane;
-- Replaceable Wall Lining;
-- Finish-Agnostic Floor Platform;
-- [Accessible Vertical Service Zone](../patterns/candidates/accessible-vertical-service-zone.md).
-
-The migration may reclassify some as implementation families or stronger abstract patterns. Migration itself is not promotion.
+The original Core 12 catalogue, service-topology pilot and reversible-assembly catalogue remain available as development history. They should not sit in the primary Part-III reading path once Phase 7 closes.
 
 ## Part IV — The Reference House
 
@@ -117,13 +158,14 @@ The migration may reclassify some as implementation families or stronger abstrac
 
 The Reference House is explicitly **one interpretation**, not proof of the doctrine or pattern language.
 
-During the pattern-language migration it also acts as an integration test. The first complete whole-house trial now consists of the [Whole-House Coordination Fixture 01](../reference-house/whole-house-coordination-fixture.md) and [Service Topology Run 01](../reference-house/service-topology-run-01.md).
+During the pattern-language work it acts as an integration test. The first whole-house trial consists of the [Whole-House Coordination Fixture 01](../reference-house/whole-house-coordination-fixture.md) and historical [Service Topology Run 01](../reference-house/service-topology-run-01.md). The current canonical mapping is the [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md).
 
 As the house develops, continue recording:
 
 - selected pattern IDs;
 - actual project occurrences rather than mere intentions;
 - selected implementation families;
+- outstanding evidence obligations;
 - conflicts between patterns;
 - rejected patterns/locations;
 - rewind events where later constraints force earlier architectural change;
@@ -153,7 +195,7 @@ A. Evidence and precedent notes
 B. 63-item doctrine register mapped to eleven principles  
 C. Research agenda  
 D. Reference-house implementation schedule  
-E. Pattern-language map / sequence notes after Phase 6/7 settles the surviving language  
+E. Pattern-language map and generative-sequence notes  
 F. Glossary  
 G. Bibliography and standards
 
@@ -228,6 +270,6 @@ This is the direct solution to the “transpilation” problem: the monograph ex
 
 **Do not merge Part III pattern language back into Part II.**
 
-Part II should remain readable as architectural argument. The pattern-language method has now survived the Reference House gate; Part III should remain browsable as professional reference, but its actual contents wait on the corpus audit rather than inheriting the old catalogue unchanged. Cross-references connect them.
+Part II remains the architectural argument. Part III is the reusable language and generative method. The corpus is now sufficiently stable that the publication should use the canonical 21-pattern language rather than the superseded 30-slot inventory. Cross-references connect argument, pattern and worked house without making any one of them evidence for the others.
 
 Likewise, **do not make the Reference House the evidence for the doctrine or patterns.** It is a worked interpretation, integration test and research vehicle.

@@ -13,6 +13,8 @@ The central test is:
 
 > **Can a competent future trade perform the foreseeable task using ordinary appropriate equipment without first improvising around the architecture?**
 
+The canonical patterns most directly implicated are [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md), [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md), [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) and [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md). This brief does not itself create project occurrences; those enter the [Pattern Occurrence Register](pattern-occurrence-register.md) only when geometry is specific enough.
+
 ## 2. Required project deliverable
 
 By developed design, prepare one coordinated **External Access & Maintenance Plan** covering:
@@ -80,13 +82,19 @@ Assume repointing, gutter/eaves work and full-frame window replacement. Check pa
 
 Repeat the review using the intended mature size of major trees and permanent planting. Identify what can be cut back or removed and which positions must remain substantially open.
 
-## 5. Ground plane and perimeter dry zone
+## 5. Ground plane, wall base and temporary support
 
-Investigate whether the perimeter dry zone can also support external maintenance. One detail may provide wall-base moisture separation, inspectable drainage, pedestrian access and latent scaffold/tower territory.
+Do **not** assume one universal “perimeter dry zone”. Phase-6 review rejected that old catalogue slot because wall-base drying, drainage, inspection and maintenance-support territory are distinct functions that can conflict.
 
-Do not set a universal width. Let actual scenarios determine the geometry.
+Instead coordinate them deliberately:
 
-Record where support would bear over basements, lightwells or undercrofts; where drains or chambers interrupt it; where landscape must remain removable; and where temporary loads require structural coordination.
+- identify where ordinary scaffold/tower support positions are valuable;
+- identify wall-base inspection and splashback/moisture concerns separately;
+- design drainage from actual levels, soils, foundations and discharge routes rather than assuming gravel or a French drain is beneficial;
+- allow one piece of ground geometry to serve several functions only where those functions are technically compatible;
+- keep critical maintenance support territory free of uniquely difficult permanent obstructions.
+
+Record where temporary support would bear over basements, lightwells or undercrofts; where drains or chambers interrupt it; where landscape must remain removable; and where temporary loads require structural coordination.
 
 ## 6. Bays, porticos and projections
 
@@ -193,15 +201,18 @@ These remain open until the Reference House geometry develops:
 - roof-hatch inclusion and location;
 - permanent roof anchors or edge-protection provisions, if any;
 - extent of internal full-frame window replacement;
-- relationship between perimeter dry zone and temporary support;
+- wall-base/drainage relationship at critical maintenance positions;
 - landscape species/positions around critical zones.
 
 These are implementation questions. The doctrine requirement is fixed: the answers must be deliberate and demonstrated rather than left to future improvisation.
 
 ## Related documents
 
+- [Pattern Occurrence Register](pattern-occurrence-register.md)
 - [Governing Principles](../manuscript/governing-principles.md) — Principle 5
 - [Maintenance Geography — The Exterior](../manuscript/maintenance-geography-external.md)
 - [External Maintenance Access — Research Synthesis](../research/external-maintenance-access.md)
-- [Ground-Supported Façade Access Pattern](../patterns/ground-supported-facade-access.md)
-- [Core Pattern Catalogue](../patterns/core-12.md) — especially rainwater, window and roof-maintenance patterns
+- [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md)
+- [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md)
+- [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md)
+- [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md)
