@@ -31,17 +31,34 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     page('Pattern overview', '/docs/patterns/'),
     page('Pattern-language model', '/docs/patterns/language-model'),
     page('Service-topology sequence', '/docs/patterns/service-topology-sequence'),
+    group('Canonical existing identities', [
+      page('HSA-P-001 — Controlled Utility Entry', '/docs/patterns/controlled-utility-entry'),
+      page('HSA-P-002 — Plant Room as Service Hub', '/docs/patterns/plant-room-service-hub'),
+      page('HSA-P-003 — Coherent Horizontal Service Route', '/docs/patterns/coherent-horizontal-service-route'),
+      page('HSA-P-004 — High-Service-Room Service Wall', '/docs/patterns/high-service-room-service-wall'),
+      page('HSA-P-005 — Designed Structural Penetration', '/docs/patterns/designed-structural-penetration'),
+      page('HSA-P-007 — Permanent Opening / Replaceable Window', '/docs/patterns/permanent-opening-replaceable-window'),
+      page('HSA-P-008 — Movement / Slip Junction', '/docs/patterns/movement-slip-junction'),
+      page('HSA-P-009 — Accessible Rainwater Route', '/docs/patterns/accessible-rainwater-route'),
+      page('HSA-P-010 — Source-Capture Kitchen Extract', '/docs/patterns/source-capture-kitchen-extract'),
+      page('HSA-P-011 — Roof Maintenance Route', '/docs/patterns/roof-maintenance-route'),
+      page('HSA-P-012 — Physical Service Index', '/docs/patterns/physical-service-index')
+    ], false),
+    group('Strategies & retired identities', [
+      page('Fail-Safe Water Distribution', '/docs/patterns/strategies/fail-safe-water-distribution'),
+      page('Retired HSA-P-006', '/docs/patterns/retired/hsa-p-006-water-damage-safe-service-route')
+    ]),
     group('Service-topology pilot', [
       page('Pilot index', '/docs/patterns/pilot/'),
-      page('HSA-P-001 — Controlled Utility Entry', '/docs/patterns/pilot/controlled-utility-entry'),
-      page('HSA-P-002 — Plant Room as Service Hub', '/docs/patterns/pilot/plant-room-service-hub'),
-      page('HSA-P-003 — Horizontal Service Spine', '/docs/patterns/pilot/horizontal-service-spine'),
-      page('HSA-P-004 — High-Service-Room Service Wall', '/docs/patterns/pilot/high-service-room-service-wall'),
-      page('HSA-P-005 — Designed Structural Penetration', '/docs/patterns/pilot/designed-structural-penetration'),
-      page('HSA-P-012 — Physical Service Index', '/docs/patterns/pilot/physical-service-index')
+      page('HSA-P-001 — Controlled Utility Entry (pilot)', '/docs/patterns/pilot/controlled-utility-entry'),
+      page('HSA-P-002 — Plant Room as Service Hub (pilot)', '/docs/patterns/pilot/plant-room-service-hub'),
+      page('HSA-P-003 — Horizontal Service Spine (pilot)', '/docs/patterns/pilot/horizontal-service-spine'),
+      page('HSA-P-004 — High-Service-Room Service Wall (pilot)', '/docs/patterns/pilot/high-service-room-service-wall'),
+      page('HSA-P-005 — Designed Structural Penetration (pilot)', '/docs/patterns/pilot/designed-structural-penetration'),
+      page('HSA-P-012 — Physical Service Index (pilot)', '/docs/patterns/pilot/physical-service-index')
     ]),
     page('Accessible Vertical Service Zone candidate', '/docs/patterns/candidates/accessible-vertical-service-zone'),
-    page('Core patterns', '/docs/patterns/core-12'),
+    page('Core patterns — legacy aggregate', '/docs/patterns/core-12'),
     page('Ground-supported façade access', '/docs/patterns/ground-supported-facade-access'),
     page('Reversible assembly candidates', '/docs/patterns/reversible-assembly-candidates')
   ]),
@@ -93,6 +110,7 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     group('Development', [
       page('Development overview', '/docs/development/'),
       page('Pattern-language overhaul', '/docs/development/pattern-language-overhaul'),
+      page('Pattern-language Phase 7 migration plan', '/docs/development/pattern-language-phase7-migration-plan'),
       page('Pattern-language Phase 6 review', '/docs/development/pattern-language-phase6-review'),
       page('Pattern-language corpus audit', '/docs/development/pattern-language-corpus-audit'),
       page('Pattern-language Phase 5 review', '/docs/development/pattern-language-phase5-review'),
