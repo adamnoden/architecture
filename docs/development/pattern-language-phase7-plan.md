@@ -1,8 +1,8 @@
 # Pattern-Language Overhaul — Phase 7 Canonical Migration Plan
 
-**Status:** active — P7.1 and P7.2 complete; P7.3 next  
-**Branch:** `pattern-language-phase7`  
-**Starting point:** `main@5eba14402b333836add71739395385a7686edf4e`  
+**Status:** active — P7.1, P7.2 and P7.3 complete; P7.4 next  
+**Current branch:** `pattern-language-phase7-new-identities`  
+**P7.3 starting point:** `main@722e883c6b2e4c8f3bad4ae232ab5d73125943d3`  
 **Authority:** [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md)
 
 This is the durable Phase-7 control point. It is written so migration can resume safely after loss of conversational context.
@@ -13,26 +13,52 @@ This is the durable Phase-7 control point. It is written so migration can resume
 
 ## Complete
 
-- **P7.1 — identity/layout checkpoint**
-  - Phase-7 branch created from the Phase-6 checkpoint;
-  - stable ID map fixed;
-  - canonical file layout fixed;
-  - pattern index now derives active/retired entries from Markdown frontmatter through `docs/patterns/patterns.data.ts`;
-  - authoring contract updated to the `HSA-P-003 — Coherent Horizontal Service Route` identity;
-  - global navigation includes the migrated corpus.
+### P7.1 — identity/layout checkpoint
 
-- **P7.2 — surviving Core identities**
-  - canonical pages created for `HSA-P-001..005`, `HSA-P-007..012`;
-  - `HSA-P-003` renamed/scope-corrected without changing identity;
-  - `HSA-P-006` retired permanently and recorded under `docs/patterns/retired/`;
-  - durable `P-006` content moved to the canonical **Fail-Safe Water Distribution** strategy;
-  - `core-12.md` remains untouched provenance and is not yet demoted.
+- stable ID map fixed;
+- canonical file layout fixed;
+- pattern index derives active/retired entries from Markdown frontmatter through `docs/patterns/patterns.data.ts`;
+- authoring contract updated to the `HSA-P-003 — Coherent Horizontal Service Route` identity;
+- global navigation carries canonical and provenance material explicitly.
+
+### P7.2 — surviving Core identities
+
+- canonical pages exist for `HSA-P-001..005`, `HSA-P-007..012`;
+- `HSA-P-003` was renamed/scope-corrected without changing identity;
+- `HSA-P-006` is permanently retired under `docs/patterns/retired/`;
+- durable `P-006` content became the **Fail-Safe Water Distribution** strategy;
+- `core-12.md` remains untouched provenance pending final Phase-7 cleanup.
+
+### P7.3 — newly admitted identities
+
+Canonical pages now exist for all ten Phase-6 admissions:
+
+- `HSA-P-013` Ground-Supported Façade Access;
+- `HSA-P-014` Accessible Vertical Service Zone;
+- `HSA-P-015` Accessible Room Service Route;
+- `HSA-P-016` Compartmented Service Void;
+- `HSA-P-017` Visible Leakage Path;
+- `HSA-P-018` Failure-Tolerant Wet Service Room;
+- `HSA-P-019` Permanent Opening / Replaceable Door;
+- `HSA-P-020` Designed Threshold;
+- `HSA-P-021` Source-Capture Bathroom Extract;
+- `HSA-P-022` Controlled Attachment Plane.
+
+P7.3 disciplines preserved:
+
+- `P-013` and `P-014` migrated from developed source material without evidence inflation;
+- the thinner `P-015..P-022` pages remain deliberately concise;
+- new identities are `supported` where the architectural pattern itself remains a transfer/generalisation even if an underlying regulation or technical principle is established;
+- Reference House use did not increase maturity;
+- no graph edges were invented merely to make the language look connected;
+- the generated index scans canonical root pattern pages plus retired identities, while excluding pilot duplicates;
+- legacy candidate/pilot/aggregate pages remain explicit migration provenance rather than competing canonical records.
 
 ## Next
 
-**P7.3 — migrate/admit `HSA-P-013..022`.**
+**P7.4 — normalise non-pattern homes.**
 
-Do not start destructive cleanup, publication rewrite or computational crosswalk yet.
+Do not begin publication rewrite or computational crosswalk until P7.4 is complete and the canonical/non-canonical corpus is structurally unambiguous.
 
 ---
 
@@ -79,8 +105,6 @@ Historical aggregate/source files stay in place until every reusable claim has a
 
 # 4. Stable identity map
 
-## Migrated existing identities
-
 | ID | Canonical title | State |
 |---|---|---|
 | `HSA-P-001` | Controlled Utility Entry | active |
@@ -95,25 +119,18 @@ Historical aggregate/source files stay in place until every reusable claim has a
 | `HSA-P-010` | Source-Capture Kitchen Extract | active |
 | `HSA-P-011` | Roof Maintenance Route | active |
 | `HSA-P-012` | Physical Service Index | active |
+| `HSA-P-013` | Ground-Supported Façade Access | active |
+| `HSA-P-014` | Accessible Vertical Service Zone | active |
+| `HSA-P-015` | Accessible Room Service Route | active |
+| `HSA-P-016` | Compartmented Service Void | active |
+| `HSA-P-017` | Visible Leakage Path | active |
+| `HSA-P-018` | Failure-Tolerant Wet Service Room | active |
+| `HSA-P-019` | Permanent Opening / Replaceable Door | active |
+| `HSA-P-020` | Designed Threshold | active |
+| `HSA-P-021` | Source-Capture Bathroom Extract | active |
+| `HSA-P-022` | Controlled Attachment Plane | active |
 
-`HSA-P-006` is never reused.
-
-## Authorised new identities — P7.3
-
-| ID | Canonical title | Target file |
-|---|---|---|
-| `HSA-P-013` | Ground-Supported Façade Access | `ground-supported-facade-access.md` |
-| `HSA-P-014` | Accessible Vertical Service Zone | `accessible-vertical-service-zone.md` |
-| `HSA-P-015` | Accessible Room Service Route | `accessible-room-service-route.md` |
-| `HSA-P-016` | Compartmented Service Void | `compartmented-service-void.md` |
-| `HSA-P-017` | Visible Leakage Path | `visible-leakage-path.md` |
-| `HSA-P-018` | Failure-Tolerant Wet Service Room | `failure-tolerant-wet-service-room.md` |
-| `HSA-P-019` | Permanent Opening / Replaceable Door | `permanent-opening-replaceable-door.md` |
-| `HSA-P-020` | Designed Threshold | `designed-threshold.md` |
-| `HSA-P-021` | Source-Capture Bathroom Extract | `source-capture-bathroom-extract.md` |
-| `HSA-P-022` | Controlled Attachment Plane | `controlled-attachment-plane.md` |
-
-The numbering has no design meaning.
+`HSA-P-006` is never reused. The numbering has no design meaning.
 
 ---
 
@@ -142,40 +159,45 @@ The active/retired index is generated from canonical frontmatter; do not create 
 
 # 6. Remaining Phase-7 sequence
 
-## P7.3 — ten newly admitted identities — **NEXT**
+## P7.4 — non-pattern homes — **NEXT**
 
-Migrate/admit `P-013..P-022` individually or in tightly related pairs.
-
-Rules:
-
-- use existing developed material where it exists;
-- do not fabricate evidence for thin old publication placeholders;
-- keep prose concise when the evidence base is thin;
-- preserve Phase-6 evidence classification;
-- do not infer maturity from Reference House use.
-
-## P7.4 — non-pattern homes
-
-After P7.3, normalise:
+Normalise the material Phase 6 explicitly kept outside the canonical graph.
 
 ### Strategies
 
-- Fail-Safe Water Distribution — **already complete**;
-- Decompose Structural Interface Functions;
-- Separate Structural Floor from Changeable Layers Where Proportionate.
+- **Fail-Safe Water Distribution** — already complete;
+- **Decompose Structural Interface Functions** — create canonical strategy page from the durable abstraction in Seated Floor Structure research;
+- **Separate Structural Floor from Changeable Layers Where Proportionate** — create canonical strategy page from the floor-platform work without promoting a removable platform.
 
 ### Held candidates — no stable IDs
+
+Create or normalise explicit candidate homes for:
 
 - Replaceable Architectural Lining;
 - Individually Isolatable Manifold Distribution;
 - Local Deep Service Zone;
 - Selective Floor Access / Selective Accessible Floor Zone.
 
-Implementation-family/research records remain where they are unless moving them genuinely improves ownership. Do not tidy history for aesthetics.
+Candidate pages must state their unresolved admission gate. They do not receive `HSA-P-*` IDs.
+
+### Implementation-family/provenance material
+
+Keep source research and prototypes where they are unless moving them clearly improves ownership. In particular, do not erase:
+
+- service skirting;
+- door-surround service routing;
+- undercroft topology;
+- pipe-in-pipe / withdrawable pipe;
+- Seated Floor Structure;
+- Finish-Agnostic Floor Platform;
+- functional cornice;
+- specific backplane rail/frame systems.
+
+These remain useful implementations, experiments or project expressions rather than canonical patterns.
 
 ## P7.5 — publication + Reference House reconciliation
 
-Only after all canonical identities exist:
+Only after P7.4:
 
 - update Reference House occurrence names/IDs;
 - replace the obsolete Part-III 30-slot inventory;
@@ -223,7 +245,7 @@ Do not delete/demote an aggregate or source page until:
 Expected later actions:
 
 - `core-12.md` → superseded/provenance pointer only after all Core destinations are reviewed as a set;
-- `candidates/accessible-vertical-service-zone.md` → superseded after `HSA-P-014` lands;
+- `candidates/accessible-vertical-service-zone.md` → pre-admission provenance after canonical `HSA-P-014` is established;
 - `reversible-assembly-candidates.md` → retain until candidate/strategy/implementation destinations exist;
 - `pilot/` → keep through Phase 7 as migration evidence, then decide whether to archive/demote.
 
@@ -255,4 +277,4 @@ Read in order:
 5. this file;
 6. [`../patterns/language-model.md`](../patterns/language-model.md).
 
-Then continue **P7.3**, beginning with the strongest already-developed sources (`P-013` and `P-014`) before drafting thinner new pages.
+Then continue **P7.4**. Do not reopen Phase-6 taxonomy unless new evidence reveals a genuine contradiction.

@@ -1,11 +1,13 @@
 # Pattern Language Overhaul — Migration Control
 
-**Status:** active migration programme; Phases 0–6 complete; Phase 7 controlled canonical migration authorised  
+**Status:** active migration programme; Phases 0–6 complete; Phase 7 P7.1–P7.3 complete; P7.4 next  
 **Baseline:** `main@974d3bf25df2f9406262384e2b8b2197403be43b` before pattern-language work  
-**Phase-5 checkpoint:** merged as `eccf8ff5721942e1cba5e7e36eb6aaf19476f49e`  
+**Phase-5 checkpoint:** `eccf8ff5721942e1cba5e7e36eb6aaf19476f49e`  
+**Phase-6 checkpoint:** `5eba14402b333836add71739395385a7686edf4e`  
+**Phase-7 Core checkpoint:** `722e883c6b2e4c8f3bad4ae232ab5d73125943d3`  
 **Purpose:** transform the existing pattern catalogue into an evidence-qualified pattern language and generative design process without losing doctrine, research provenance, Reference House work, prototype records or the computational evidence model.
 
-This is the durable control point for the migration. It is written so the work can resume after loss of conversational context.
+This is the durable project-level control point for the migration. Detailed Phase-7 execution is tracked in [`pattern-language-phase7-plan.md`](pattern-language-phase7-plan.md).
 
 ---
 
@@ -108,34 +110,35 @@ The key discipline is to change an upstream architectural decision where downstr
 | **3 — Pilot language** | six connected service-topology records | **Complete** | graph added useful compositional knowledge |
 | **4 — Pilot sequence** | first service-topology generative sequence | **Complete** | ordering + rewind logic proved non-trivial |
 | **5 — Reference House trial** | whole-house service-topology application | **Complete — PASS** | real occurrences, rewinds, missing pattern and taxonomy correction produced |
-| **6 — Corpus audit** | classify Core 12, specialised patterns, candidates and old 30-slot inventory | **Complete — PASS** | controlled Phase-7 migration authorised by [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md) |
-| **7 — Canonical migration** | build canonical individual pattern pages, strategies and candidate bench | **Authorised — next active phase** | acceptance criteria in Phase-6 review |
-| **8 — Computational crosswalk** | map formal consequences to semantic relationships/obligations | **Blocked by Phase 7** | pattern identities must stabilise first |
+| **6 — Corpus audit** | classify Core 12, specialised patterns, candidates and old 30-slot inventory | **Complete — PASS** | controlled Phase-7 migration authorised |
+| **7 — Canonical migration** | canonical pattern pages, strategies and candidate bench | **Active — P7.1–P7.3 complete** | P7.4 non-pattern homes next; then publication/Reference House reconciliation and validation tooling |
+| **8 — Computational crosswalk** | map formal consequences to semantic relationships/obligations | **Blocked by Phase 7** | canonical/non-canonical corpus must stabilise first |
 | **9 — Publication rearchitecture** | rebuild Part III around actual language + sequences | **Blocked by Phase 7** | publication must follow canonical corpus, not old outline |
-| **10 — Site tooling** | generated indexes, reverse links, validation, later optional visualisation | **Only lightweight tooling during/after Phase 7** | no graph UI until language is stable |
+| **10 — Site tooling** | generated indexes, reverse links, validation, later optional visualisation | **Lightweight tooling only during Phase 7** | no graph UI until language is stable |
 | **11 — Validation** | ongoing prototype/professional/Reference House attack | **Continuous** | maturity earned independently from migration |
 
 ---
 
 # 7. Durable artefacts
 
-## Model + pilot
+## Model + sequence
 
 - [`../patterns/language-model.md`](../patterns/language-model.md)
-- [`../patterns/pilot/README.md`](../patterns/pilot/README.md)
 - [`../patterns/service-topology-sequence.md`](../patterns/service-topology-sequence.md)
+- [`../patterns/pilot/README.md`](../patterns/pilot/README.md) — migration provenance
 
-## Reference House gate
+## Reference House gates
 
 - [`../reference-house/whole-house-coordination-fixture.md`](../reference-house/whole-house-coordination-fixture.md)
 - [`../reference-house/service-topology-run-01.md`](../reference-house/service-topology-run-01.md)
 - [`pattern-language-phase5-review.md`](pattern-language-phase5-review.md)
 
-## Corpus audit
+## Audit + migration control
 
 - [`pattern-language-corpus-audit.md`](pattern-language-corpus-audit.md)
 - [`../research/pattern-language-phase6-targeted-evidence.md`](../research/pattern-language-phase6-targeted-evidence.md)
 - [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md)
+- [`pattern-language-phase7-plan.md`](pattern-language-phase7-plan.md)
 
 ---
 
@@ -162,11 +165,9 @@ A project may select a pattern, instantiate it in one or more occurrences, and s
 
 ## F4 — existing identity should be preserved where meaning survives
 
-Phase 6 found that most Core-12 identities are sound. Migration should not rename for novelty.
-
 - `HSA-P-001..005` survive;
 - `HSA-P-003` keeps identity but becomes **Coherent Horizontal Service Route**;
-- `HSA-P-006` is retired as a pattern and becomes water-failure strategy material;
+- `HSA-P-006` is retired as a pattern and its durable content becomes water-failure strategy material;
 - `HSA-P-007..012` survive.
 
 Retired IDs are never reused.
@@ -177,8 +178,6 @@ Several slots were strategies, implementation families or undeveloped placeholde
 
 ## F6 — implementation-shaped names were hiding stronger abstractions
 
-Examples:
-
 - `service skirting` + `vertical joinery route` → **Accessible Room Service Route**;
 - `Architectural Backplane` + `Fixing Infrastructure` → **Controlled Attachment Plane**;
 - `Seated Floor Structure` → structural-interface decomposition strategy + implementation challengers;
@@ -187,13 +186,17 @@ Examples:
 
 ## F7 — evidence maturity remains independent
 
-Phase-7 admission gives stable language identity; it does not claim physical validation. Patterns may remain Supported/Proposed while prototypes and professional review continue.
+Admission gives stable language identity; it does not claim physical validation. Pattern pages retain evidence/maturity limits independently from taxonomy.
+
+## F8 — canonical identity is now materially established
+
+P7.1–P7.3 produced one canonical page for every active pattern identity and a visible retired record for `P-006`. The remaining Phase-7 problem is no longer pattern admission; it is clear ownership of strategies, held candidates, provenance and project occurrences.
 
 ---
 
-# 9. Phase-6 classification result
+# 9. Canonical identity state after P7.3
 
-## Existing active identities after migration
+## Active patterns
 
 - `HSA-P-001` Controlled Utility Entry
 - `HSA-P-002` Plant Room as Service Hub
@@ -206,25 +209,22 @@ Phase-7 admission gives stable language identity; it does not claim physical val
 - `HSA-P-010` Source-Capture Kitchen Extract
 - `HSA-P-011` Roof Maintenance Route
 - `HSA-P-012` Physical Service Index
+- `HSA-P-013` Ground-Supported Façade Access
+- `HSA-P-014` Accessible Vertical Service Zone
+- `HSA-P-015` Accessible Room Service Route
+- `HSA-P-016` Compartmented Service Void
+- `HSA-P-017` Visible Leakage Path
+- `HSA-P-018` Failure-Tolerant Wet Service Room
+- `HSA-P-019` Permanent Opening / Replaceable Door
+- `HSA-P-020` Designed Threshold
+- `HSA-P-021` Source-Capture Bathroom Extract
+- `HSA-P-022` Controlled Attachment Plane
 
-`HSA-P-006` remains a retired historical identity.
+## Retired identity
 
-## New patterns authorised for stable IDs in Phase 7
+- `HSA-P-006` Water-Damage-Safe Service Route — permanently retired; never reused.
 
-- Ground-Supported Façade Access
-- Accessible Vertical Service Zone
-- Accessible Room Service Route
-- Compartmented Service Void
-- Visible Leakage Path
-- Failure-Tolerant Wet Service Room
-- Permanent Opening / Replaceable Door
-- Designed Threshold
-- Source-Capture Bathroom Extract
-- Controlled Attachment Plane
-
-If migration finds no contradiction, this yields 21 active identities plus retired `P-006`. The number itself is meaningless.
-
-## Held candidates — no stable IDs yet
+## Held candidates — no stable IDs
 
 - Replaceable Architectural Lining
 - Individually Isolatable Manifold Distribution
@@ -233,9 +233,9 @@ If migration finds no contradiction, this yields 21 active identities plus retir
 
 ## Strategies, not patterns
 
-- Fail-Safe Water Distribution
-- Decompose Structural Interface Functions
-- Separate Structural Floor from Changeable Layers Where Proportionate
+- Fail-Safe Water Distribution — canonical page already exists;
+- Decompose Structural Interface Functions — P7.4 destination required;
+- Separate Structural Floor from Changeable Layers Where Proportionate — P7.4 destination required.
 
 ## Implementation families / expressions, not patterns
 
@@ -255,8 +255,6 @@ If migration finds no contradiction, this yields 21 active identities plus retir
 ---
 
 # 10. Phase-7 migration rules
-
-The controlling detailed order/acceptance criteria are in [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md).
 
 Non-negotiable rules:
 
@@ -293,12 +291,12 @@ A future collaborator/chat should read, in order:
 1. root `README.md`;
 2. `STATUS.md`;
 3. this file;
-4. [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md);
-5. [`pattern-language-corpus-audit.md`](pattern-language-corpus-audit.md) for detailed rationale;
+4. [`pattern-language-phase7-plan.md`](pattern-language-phase7-plan.md);
+5. [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md) when classification rationale is needed;
 6. [`../patterns/language-model.md`](../patterns/language-model.md);
 7. Phase-5 Reference House run only when worked architectural context is needed.
 
-Then continue **Phase 7**, not another taxonomy discussion, unless new evidence genuinely contradicts the Phase-6 decision.
+Then continue **P7.4**, not another taxonomy discussion, unless new evidence genuinely contradicts the Phase-6 decision.
 
 When a phase crosses a gate, update this file and `STATUS.md` in the same work session.
 
@@ -306,9 +304,9 @@ When a phase crosses a gate, update this file and `STATUS.md` in the same work s
 
 # 13. Current next actions
 
-1. start Phase 7 on a fresh branch from the Phase-6 checkpoint;
-2. design the final file layout + identity/frontmatter map before moving prose;
-3. migrate surviving existing IDs first, including the P-003 rename and P-006 retirement;
-4. add the ten newly admitted identities;
-5. normalise strategies/implementation/candidate homes only after replacement pages exist;
-6. reconcile Part III and navigation after the canonical corpus is structurally complete.
+1. complete P7.4 strategy homes for structural-interface decomposition and structural-floor/changeable-layer separation;
+2. create/normalise explicit non-canonical homes for the four held candidates without assigning IDs;
+3. preserve implementation/prototype source material and mark legacy aggregate pages as provenance rather than rewriting history;
+4. run a P7.4 checkpoint before publication/Reference House reconciliation;
+5. then execute P7.5: update Reference House occurrences and rebuild Part III around the canonical language;
+6. only after corpus structure is stable, add P7.6 validation/reverse-link tooling and unlock Phase 8/9 gates as appropriate.

@@ -10,7 +10,7 @@ export interface PatternIndexRecord {
   url: string
 }
 
-export default createContentLoader('*.md', {
+export default createContentLoader(['*.md', 'retired/*.md'], {
   transform(pages): PatternIndexRecord[] {
     return pages
       .filter(({ frontmatter }) => frontmatter.kind === 'pattern' && frontmatter.id)

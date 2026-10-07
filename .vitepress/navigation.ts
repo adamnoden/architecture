@@ -42,7 +42,17 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
       page('HSA-P-009 — Accessible Rainwater Route', '/docs/patterns/accessible-rainwater-route'),
       page('HSA-P-010 — Source-Capture Kitchen Extract', '/docs/patterns/source-capture-kitchen-extract'),
       page('HSA-P-011 — Roof Maintenance Route', '/docs/patterns/roof-maintenance-route'),
-      page('HSA-P-012 — Physical Service Index', '/docs/patterns/physical-service-index')
+      page('HSA-P-012 — Physical Service Index', '/docs/patterns/physical-service-index'),
+      page('HSA-P-013 — Ground-Supported Façade Access', '/docs/patterns/ground-supported-facade-access'),
+      page('HSA-P-014 — Accessible Vertical Service Zone', '/docs/patterns/accessible-vertical-service-zone'),
+      page('HSA-P-015 — Accessible Room Service Route', '/docs/patterns/accessible-room-service-route'),
+      page('HSA-P-016 — Compartmented Service Void', '/docs/patterns/compartmented-service-void'),
+      page('HSA-P-017 — Visible Leakage Path', '/docs/patterns/visible-leakage-path'),
+      page('HSA-P-018 — Failure-Tolerant Wet Service Room', '/docs/patterns/failure-tolerant-wet-service-room'),
+      page('HSA-P-019 — Permanent Opening / Replaceable Door', '/docs/patterns/permanent-opening-replaceable-door'),
+      page('HSA-P-020 — Designed Threshold', '/docs/patterns/designed-threshold'),
+      page('HSA-P-021 — Source-Capture Bathroom Extract', '/docs/patterns/source-capture-bathroom-extract'),
+      page('HSA-P-022 — Controlled Attachment Plane', '/docs/patterns/controlled-attachment-plane')
     ], false),
     group('Strategies', [
       page('Strategy overview', '/docs/patterns/strategies/'),
@@ -52,19 +62,20 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
       page('Retired pattern overview', '/docs/patterns/retired/'),
       page('HSA-P-006 — Water-Damage-Safe Service Route', '/docs/patterns/retired/hsa-p-006-water-damage-safe-service-route')
     ]),
-    group('Service-topology pilot', [
-      page('Pilot index', '/docs/patterns/pilot/'),
-      page('HSA-P-001 — Controlled Utility Entry', '/docs/patterns/pilot/controlled-utility-entry'),
-      page('HSA-P-002 — Plant Room as Service Hub', '/docs/patterns/pilot/plant-room-service-hub'),
-      page('HSA-P-003 — Horizontal Service Spine', '/docs/patterns/pilot/horizontal-service-spine'),
-      page('HSA-P-004 — High-Service-Room Service Wall', '/docs/patterns/pilot/high-service-room-service-wall'),
-      page('HSA-P-005 — Designed Structural Penetration', '/docs/patterns/pilot/designed-structural-penetration'),
-      page('HSA-P-012 — Physical Service Index', '/docs/patterns/pilot/physical-service-index')
-    ]),
-    page('Accessible Vertical Service Zone candidate', '/docs/patterns/candidates/accessible-vertical-service-zone'),
-    page('Core patterns', '/docs/patterns/core-12'),
-    page('Ground-supported façade access', '/docs/patterns/ground-supported-facade-access'),
-    page('Reversible assembly candidates', '/docs/patterns/reversible-assembly-candidates')
+    group('Migration provenance', [
+      group('Service-topology pilot', [
+        page('Pilot index', '/docs/patterns/pilot/'),
+        page('HSA-P-001 — Controlled Utility Entry', '/docs/patterns/pilot/controlled-utility-entry'),
+        page('HSA-P-002 — Plant Room as Service Hub', '/docs/patterns/pilot/plant-room-service-hub'),
+        page('HSA-P-003 — Horizontal Service Spine', '/docs/patterns/pilot/horizontal-service-spine'),
+        page('HSA-P-004 — High-Service-Room Service Wall', '/docs/patterns/pilot/high-service-room-service-wall'),
+        page('HSA-P-005 — Designed Structural Penetration', '/docs/patterns/pilot/designed-structural-penetration'),
+        page('HSA-P-012 — Physical Service Index', '/docs/patterns/pilot/physical-service-index')
+      ]),
+      page('Accessible Vertical Service Zone — pre-admission candidate', '/docs/patterns/candidates/accessible-vertical-service-zone'),
+      page('Core 12 — legacy aggregate', '/docs/patterns/core-12'),
+      page('Reversible assembly candidates — legacy aggregate', '/docs/patterns/reversible-assembly-candidates')
+    ])
   ]),
 
   group('Reference house', [
