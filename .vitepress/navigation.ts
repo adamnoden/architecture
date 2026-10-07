@@ -137,6 +137,9 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     group('Development', [
       page('Development overview', '/docs/development/'),
       page('Pattern-language overhaul', '/docs/development/pattern-language-overhaul'),
+      page('Pattern-language Phase 8 plan', '/docs/development/pattern-language-phase8-plan'),
+      page('Pattern-language Phase 8 review', '/docs/development/pattern-language-phase8-review'),
+      page('Phase 8 pilot red-team', '/docs/development/pattern-language-phase8-pilot-review'),
       page('Pattern-language Phase 7 plan', '/docs/development/pattern-language-phase7-plan'),
       page('Pattern-language Phase 7 review', '/docs/development/pattern-language-phase7-review'),
       page('Pattern-language Phase 6 review', '/docs/development/pattern-language-phase6-review'),
@@ -171,8 +174,16 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
       page('Prior-art map', '/docs/computational/prior-art-map')
     ], false),
 
+    group('Pattern crosswalk', [
+      page('Crosswalk model', '/docs/computational/pattern-crosswalk-model'),
+      page('Service-topology pilot', '/docs/computational/pattern-crosswalk-service-topology-pilot'),
+      page('Remaining active patterns', '/docs/computational/pattern-crosswalk-remaining-active'),
+      page('Strategies & held candidates', '/docs/computational/pattern-crosswalk-strategies-candidates'),
+      page('Implementation handoff', '/docs/computational/pattern-crosswalk-implementation-handoff')
+    ]),
+
     group('Current programme & review', [
-      page('Research programme v0.5', '/docs/computational/research-programme-v05'),
+      page('Research programme v0.6', '/docs/computational/research-programme-v06'),
       page('H1 capability matrix v0.5', '/docs/computational/h1-capability-matrix-v05'),
       page('Doctrine delta — external maintenance', '/docs/computational/doctrine-delta-external-maintenance-v01'),
       page('External review pack — H1 paper v0.2', '/docs/computational/external-review-pack-h1-paper-v02'),
@@ -270,7 +281,8 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
       page('Research programme v0.1', '/docs/computational/research-programme'),
       page('Research programme v0.2', '/docs/computational/research-programme-v02'),
       page('Research programme v0.3', '/docs/computational/research-programme-v03'),
-      page('Research programme v0.4', '/docs/computational/research-programme-v04')
+      page('Research programme v0.4', '/docs/computational/research-programme-v04'),
+      page('Research programme v0.5', '/docs/computational/research-programme-v05')
     ])
   ]),
 

@@ -1,13 +1,14 @@
 # Pattern Language Overhaul — Migration Control
 
-**Status:** **complete through Phase 7**  
+**Status:** **complete through Phase 8**  
 **Baseline:** `main@974d3bf25df2f9406262384e2b8b2197403be43b`  
-**Validated Phase-7 checkpoint:** `main@d2788191b546d1049f84e50fe1644e1007715179`  
-**Gate review:** [`pattern-language-phase7-review.md`](pattern-language-phase7-review.md)
+**Phase-7 close:** `main@d48ef1eb5fc7507b68622bd9ea66277115e374ac`  
+**Phase-7 gate review:** [`pattern-language-phase7-review.md`](pattern-language-phase7-review.md)  
+**Phase-8 gate review:** [`pattern-language-phase8-review.md`](pattern-language-phase8-review.md)
 
-The catalogue-to-language migration is complete. The project now has a stable evidence-qualified pattern language, explicit non-pattern homes, a canonical Reference House occurrence model, publication integration and build-time metadata validation.
+The catalogue-to-language migration and the architectural→computational crosswalk are complete at internal research scope. The project has a stable evidence-qualified pattern language, explicit non-pattern homes, a canonical Reference House occurrence model, publication integration, build-time metadata validation and a bounded implementation handoff into the existing semantic/compiler programme.
 
-Do not restart taxonomy work by default. Future classification changes require new architectural, physical or professional evidence.
+Do not restart taxonomy or paper-crosswalk work by default. Future changes require new architectural, physical, professional or executable evidence.
 
 ---
 
@@ -37,7 +38,10 @@ Hard constraints:
 - graph relationships are not generative sequence order;
 - evidence/maturity are independent from pattern identity;
 - Reference House use is not evidence for a pattern;
-- strategy, pattern, implementation family and occurrence remain distinct.
+- strategy, pattern, implementation family and occurrence remain distinct;
+- pattern provenance may explain a project requirement but does not replace source-model facts or technical authority;
+- technical obligations derive from actual composed building relationships, not duplicate pattern checklists;
+- there is no universal whole-pattern machine `PASS`.
 
 ---
 
@@ -102,8 +106,9 @@ Examples: service skirting; door-surround routing; undercroft topology; pipe-in-
 | **5 — Reference House trial** | real occurrences, rewinds and taxonomy corrections produced |
 | **6 — Corpus audit** | existing/candidate inventory classified under one admission model |
 | **7 — Canonical migration** | **PASS** — canonical corpus, non-pattern homes, Reference House/publication integration and build-time validation complete |
+| **8 — Computational crosswalk** | **PASS** — all patterns/strategies/candidates map onto existing semantic/obligation/evidence architecture; no pattern ontology required; P0 unchanged |
 
-Phase 8 is now unblocked.
+The crosswalk research question is closed enough to stop expanding it on paper.
 
 ---
 
@@ -153,11 +158,23 @@ Phase-5 pilot/run material keeps its discovery-era terminology as provenance. Cu
 
 Removing the old **Perimeter Dry Zone** category exposed that wall-base moisture, drainage, inspection and scaffold/support territory should not be bundled automatically.
 
+### F10 — pattern provenance is not compiler truth
+
+Phase 8 established that selected HSA intent may become a project requirement with pattern provenance, while ordinary source-model entities and relationships remain the thing being compiled.
+
+### F11 — technical obligations remain canonical at the shared-graph layer
+
+A penetration, route, boundary or maintenance relationship creates its technical obligations once. Multiple patterns touching the same condition do not create duplicate engineering/compliance checklists.
+
+### F12 — architectural judgement remains visible
+
+Proportionality, domestic character, repose, visual integration and similar architectural questions are not assigned arbitrary thresholds merely to produce machine completeness.
+
 ---
 
 ## 6. Integrity tooling
 
-`docs/patterns/patterns.data.ts` now validates the canonical language during the normal docs build.
+`docs/patterns/patterns.data.ts` validates the canonical language during the normal docs build.
 
 It rejects:
 
@@ -168,13 +185,15 @@ It rejects:
 - unknown relationship targets;
 - self-referential graph edges.
 
-It also derives reverse references from the same frontmatter. Markdown remains the sole content source.
+It also derives reverse references from the same frontmatter. Markdown remains the sole pattern content source.
 
 Do not add graph visualisation, a second registry, graph-density scoring or orphan enforcement unless a real maintenance problem later justifies them.
 
 ---
 
 ## 7. Durable artefacts
+
+### Architectural language
 
 - Pattern model: [`../patterns/language-model.md`](../patterns/language-model.md)
 - Canonical index: [`../patterns/README.md`](../patterns/README.md)
@@ -183,8 +202,19 @@ Do not add graph visualisation, a second registry, graph-density scoring or orph
 - Held candidates: [`../patterns/candidates/README.md`](../patterns/candidates/README.md)
 - Reference House current state: [`../reference-house/pattern-occurrence-register.md`](../reference-house/pattern-occurrence-register.md)
 - Publication architecture: [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)
+
+### Migration / crosswalk control
+
 - Phase-7 execution record: [`pattern-language-phase7-plan.md`](pattern-language-phase7-plan.md)
 - Phase-7 gate review: [`pattern-language-phase7-review.md`](pattern-language-phase7-review.md)
+- Phase-8 execution record: [`pattern-language-phase8-plan.md`](pattern-language-phase8-plan.md)
+- Phase-8 gate review: [`pattern-language-phase8-review.md`](pattern-language-phase8-review.md)
+
+### Computational handoff
+
+- Crosswalk model: [`../computational/pattern-crosswalk-model.md`](../computational/pattern-crosswalk-model.md)
+- Implementation handoff: [`../computational/pattern-crosswalk-implementation-handoff.md`](../computational/pattern-crosswalk-implementation-handoff.md)
+- Current programme: [`../computational/research-programme-v06.md`](../computational/research-programme-v06.md)
 
 Historical Core-12, pilot, candidate and Phase-5 records remain recoverable provenance, not current authority.
 
@@ -192,11 +222,21 @@ Historical Core-12, pilot, candidate and Phase-5 records remain recoverable prov
 
 ## 8. What is now unlocked
 
-### Phase 8 — computational crosswalk
+### Minimal executable compiler kernel — P0
 
-Map only **formalisable consequences** of stable patterns into the existing semantic relationship / obligation / evidence model.
+The computational programme should now stop designing more paper abstractions and implement the already-authorised minimal semantic/compiler kernel.
 
-Do not rebase the compiler around pattern objects.
+Phase 8 explicitly leaves P0 scope unchanged.
+
+### `PAT-XW-01` — only after P0 passes
+
+The first executable pattern-provenance fixture exercises primarily:
+
+- `P-003` Coherent Horizontal Service Route;
+- `P-005` Designed Structural Penetration;
+- optional `P-012` Physical Service Index.
+
+Its purpose is to prove that project architectural intent and technical/evidence validity can diverge cleanly without authority leakage or invasive schema growth.
 
 ### Publication development
 
@@ -216,8 +256,9 @@ Read:
 2. `STATUS.md`;
 3. this file;
 4. [`pattern-language-phase7-review.md`](pattern-language-phase7-review.md);
-5. [`../patterns/README.md`](../patterns/README.md);
-6. [`../reference-house/pattern-occurrence-register.md`](../reference-house/pattern-occurrence-register.md);
-7. [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md).
+5. [`pattern-language-phase8-review.md`](pattern-language-phase8-review.md);
+6. [`../computational/research-programme-v06.md`](../computational/research-programme-v06.md);
+7. [`../computational/pattern-crosswalk-implementation-handoff.md`](../computational/pattern-crosswalk-implementation-handoff.md);
+8. [`../reference-house/pattern-occurrence-register.md`](../reference-house/pattern-occurrence-register.md) when worked-house context is needed.
 
-Then continue Phase 8, publication development, Reference House coordination or physical validation as appropriate. Do **not** restart the catalogue migration unless new evidence genuinely requires it.
+Then proceed with P0 implementation, external review, physical validation, Reference House coordination or publication development as appropriate. Do **not** restart the catalogue migration or paper crosswalk unless new evidence genuinely requires it.
