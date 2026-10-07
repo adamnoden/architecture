@@ -1,9 +1,9 @@
-# House Systems Architecture — Publication Architecture v0.9
+# House Systems Architecture — Publication Architecture v0.10
 
 **Working form:** illustrated architectural design-research monograph + evidence-qualified pattern language + separate architect-facing implementation brief.  
-**Status:** v0.9 — pattern-language migration target recorded; Part III rearchitecture remains gated by the Reference House pilot.
+**Status:** v0.10 — pattern-language Phase 5 passed; Part III content now awaits the Phase-6 corpus audit.
 
-The existing 30-pattern catalogue plan below is currently a **candidate inventory**, not a locked taxonomy. The active migration is defined in [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md). Do not reorganise the full publication around the language model until that programme passes its Phase 5 Reference House gate.
+The existing 30-pattern catalogue plan below is a **candidate inventory under audit**, not a locked taxonomy. The active migration is defined in [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md). The Reference House has now demonstrated that the language/sequence method is useful; do not reorganise the publication around the old 30-item list until Phase 6 establishes what actually survives as pattern, strategy, implementation family, split, merge or retirement.
 
 ## Front matter
 
@@ -33,7 +33,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
    Permanent fabric, replaceable systems, designed interfaces, attachment discipline, assembly hierarchy and maintenance geography; introduce workmanship robustness as the requirement that ordinary construction variation be deliberately absorbed rather than exported into site improvisation.
 
 5. **Eleven principles**  
-   Use the locked public principles; each principle receives a short spread and one primary figure. Principle 8, **Design for repose**, is evidence-bounded explicitly: established environmental and housing evidence is separated from architectural hypotheses such as perceptual structural legibility. The developed spread is [Principle 8 — Design for Repose](principle-08-repose.md), with [Figure 8.1](figures/principle-08-repose.svg).
+   Use the locked public principles; each principle receives a short spread and one primary figure. Principle 8, **Design for Repose**, is evidence-bounded explicitly: established environmental and housing evidence is separated from architectural hypotheses such as perceptual structural legibility. The developed spread is [Principle 8 — Design for Repose](principle-08-repose.md), with [Figure 8.1](figures/principle-08-repose.svg).
 
 ## Part II — Architecture of the Platform
 
@@ -62,18 +62,18 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
 
 The intended publication form is a browsable professional reference containing reusable patterns **and the relationships/sequences that materially help designers combine them**.
 
-The first pilot is documented in [HSA Pattern Language — Model and Authoring Contract](../patterns/language-model.md), the [Service-Topology Pilot](../patterns/pilot/README.md) and the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md).
+The method is documented in [HSA Pattern Language — Model and Authoring Contract](../patterns/language-model.md), the [Service-Topology Pilot](../patterns/pilot/README.md), the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md) and the [Phase-5 Gate Review](../development/pattern-language-phase5-review.md).
 
-Until the Reference House gate passes, the following remains a candidate inventory rather than a promise that all entries are correctly classified as patterns:
+The Reference House test passed. The next task is therefore not to preserve the old catalogue but to audit it. The following remains an **input inventory** until Phase 6 is complete:
 
 ### A. Service topology
-utility entry; plant hub; riser; horizontal spine; high-service wall; local deep zone; undercroft option.
+utility entry; plant hub; riser / vertical service zone; horizontal spine/route; high-service wall; local deep zone; undercroft option.
 
 ### B. Distribution and access
 service skirting; vertical joinery route; controlled penetration; compartmented void; floor access.
 
 ### C. Water and failure
-manifold; withdrawable pipe; water-damage-safe route; leak detection path; wet-service room.
+manifold; withdrawable pipe; water-damage-safe route/strategy; leak detection path; wet-service room.
 
 ### D. Openings and interfaces
 window; door; threshold; slip/movement joint; experimental functional cornice.
@@ -96,14 +96,15 @@ Pattern relationships should remain sparse. Generative sequence order is a separ
 
 ### Candidate development track
 
-The following systems are deliberately held outside the established core catalogue until engineering and prototype work is sufficient:
+The following systems remain outside the established pattern set until the corpus audit and, where applicable, engineering/prototype work justify their classification:
 
 - Seated Floor Structure;
 - Architectural Backplane;
 - Replaceable Wall Lining;
-- Finish-Agnostic Floor Platform.
+- Finish-Agnostic Floor Platform;
+- [Accessible Vertical Service Zone](../patterns/candidates/accessible-vertical-service-zone.md).
 
-The migration may reclassify some of these as implementation families rather than patterns. Migration itself is not promotion.
+The migration may reclassify some as implementation families or stronger abstract patterns. Migration itself is not promotion.
 
 ## Part IV — The Reference House
 
@@ -116,9 +117,9 @@ The migration may reclassify some of these as implementation families rather tha
 
 The Reference House is explicitly **one interpretation**, not proof of the doctrine or pattern language.
 
-During the pattern-language migration it also acts as an integration test. Service topology is the first trial; its current coordination brief is [Reference House — Service Topology Coordination](../reference-house/service-topology-coordination.md).
+During the pattern-language migration it also acts as an integration test. The first complete whole-house trial now consists of the [Whole-House Coordination Fixture 01](../reference-house/whole-house-coordination-fixture.md) and [Service Topology Run 01](../reference-house/service-topology-run-01.md).
 
-As the house becomes geometrically real, record:
+As the house develops, continue recording:
 
 - selected pattern IDs;
 - actual project occurrences rather than mere intentions;
@@ -152,7 +153,7 @@ A. Evidence and precedent notes
 B. 63-item doctrine register mapped to eleven principles  
 C. Research agenda  
 D. Reference-house implementation schedule  
-E. Pattern-language map / sequence notes if Phase 5 earns them  
+E. Pattern-language map / sequence notes after Phase 6/7 settles the surviving language  
 F. Glossary  
 G. Bibliography and standards
 
@@ -227,6 +228,6 @@ This is the direct solution to the “transpilation” problem: the monograph ex
 
 **Do not merge Part III pattern language back into Part II.**
 
-Part II should remain readable as architectural argument. Part III should remain browsable as professional reference if the language model survives the Reference House gate. Cross-references connect them.
+Part II should remain readable as architectural argument. The pattern-language method has now survived the Reference House gate; Part III should remain browsable as professional reference, but its actual contents wait on the corpus audit rather than inheriting the old catalogue unchanged. Cross-references connect them.
 
 Likewise, **do not make the Reference House the evidence for the doctrine or patterns.** It is a worked interpretation, integration test and research vehicle.
