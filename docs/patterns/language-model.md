@@ -1,6 +1,6 @@
 # HSA Pattern Language — Model and Authoring Contract
 
-**Status:** migration contract v0.1  
+**Status:** migration contract v0.2  
 **Scope:** canonical definition of what a House Systems Architecture pattern is, how patterns relate, and how pattern records are authored during the current migration.
 
 This document controls the pattern layer. It does not replace the governing principles, research evidence, implementation families, reference-house decisions or computational semantic model.
@@ -99,7 +99,7 @@ Where an existing Core 12 pattern is migrated without changing its essential ide
 - ...
 - Pattern 12 → `HSA-P-012`
 
-A renamed pattern retains its ID if the recurring problem and invariant response remain substantially the same.
+A renamed pattern retains its ID if the recurring problem and invariant response remain substantially the same. `HSA-P-003`, for example, became **Coherent Horizontal Service Route** when Phase 6 showed that the invariant was route coherence rather than one literal spine.
 
 A proposition that splits into two materially distinct patterns receives new IDs. Do not preserve numbering at the cost of conceptual clarity.
 
@@ -253,17 +253,16 @@ Migration itself never increases either axis.
 
 ## 8. Pattern frontmatter contract
 
-During the pilot, use ordinary Markdown frontmatter as the machine-readable source.
+Use ordinary Markdown frontmatter as the machine-readable source.
 
 ```yaml
 ---
 id: HSA-P-003
-title: Horizontal Service Spine
+title: Coherent Horizontal Service Route
 kind: pattern
 state: active
 evidence: supported
-maturity:
-  - drawn
+maturity: []
 scales:
   - building
   - zone
@@ -276,10 +275,9 @@ principles:
   - 5
   - 6
   - 8
-requires:
-  - HSA-P-002
+requires: []
 completes:
-  - HSA-P-004
+  - HSA-P-002
 alternative_to: []
 tension_with: []
 sequences:
@@ -287,7 +285,7 @@ sequences:
 ---
 ```
 
-### Required pilot fields
+### Required fields
 
 - `id`
 - `title`
@@ -301,7 +299,7 @@ sequences:
 - the four relationship arrays
 - `sequences`
 
-### Deliberately excluded for now
+### Deliberately excluded
 
 Do not encode prose, evidence citations, implementation options, failure modes, compiler rules or reference-house occurrences in frontmatter.
 
@@ -340,11 +338,7 @@ Not every small pattern needs equal prose under all headings. Omit genuinely irr
 
 A recurring warning sign is a proposition whose “variants” solve the problem through fundamentally different relationships.
 
-Example under review:
-
-**Water-Damage-Safe Service Route** currently admits pipe-in-pipe, fully accessible distribution, drained containment, passive fall and electronic isolation.
-
-If the common invariant proves to be only “credible leakage must not silently damage vulnerable fabric”, that may be a **strategy or performance requirement**, with several separate patterns beneath it.
+The former `HSA-P-006 — Water-Damage-Safe Service Route` admitted pipe-in-pipe, fully accessible distribution, drained containment, passive fall and electronic isolation. Phase 6 therefore retired the pattern identity and moved the durable proposition to the **Fail-Safe Water Distribution** strategy.
 
 Do not preserve an existing pattern identity merely because its prose is useful.
 
@@ -354,9 +348,7 @@ Do not preserve an existing pattern identity merely because its prose is useful.
 
 A proposition is probably an implementation family when its identity depends on a particular assembly concept rather than the more general relationship being solved.
 
-Example under review:
-
-**Seated Floor Structure** currently contains a stronger general idea — separate gravity support, restraint, movement and boundary obligations — than the specific seated connection itself.
+For example, **Seated Floor Structure** contains a stronger general idea — separate gravity support, restraint, movement and boundary obligations — than the specific seated connection itself. Phase 6 therefore classifies the general proposition as strategy and the seated construction as an implementation challenger.
 
 The language migration should preserve the general architectural knowledge while allowing the particular construction family to remain experimental.
 
@@ -432,31 +424,21 @@ This separation is a hard project constraint.
 
 ---
 
-## 15. Pilot IDs
+## 15. Current stable identities
 
-The service-topology pilot preserves existing Core 12 identities:
+Phase 7 preserves the existing Core identities where meaning survives, keeps `HSA-P-006` retired, and assigns new IDs only to propositions admitted by the Phase-6 audit.
 
-| ID | Pattern |
-|---|---|
-| `HSA-P-001` | Controlled Utility Entry |
-| `HSA-P-002` | Plant Room as Service Hub |
-| `HSA-P-003` | Horizontal Service Spine |
-| `HSA-P-004` | High-Service-Room Service Wall |
-| `HSA-P-005` | Designed Structural Penetration |
-| `HSA-P-012` | Physical Service Index |
-
-Possible missing **Vertical Service Riser** remains an open language gap, not an assigned ID.
+The canonical active/retired lists are generated from individual pattern frontmatter in [`README.md`](README.md). The full Phase-7 identity map and migration state are controlled by [`../development/pattern-language-phase7-plan.md`](../development/pattern-language-phase7-plan.md).
 
 ---
 
 ## 16. Change discipline
 
-During the pilot:
-
 - relationship changes require a reason in prose, not just frontmatter edits;
 - new patterns require the admission test;
 - new relationship types require evidence from repeated worked cases;
-- reclassification of an existing pattern must be recorded in the migration control document;
-- no full-corpus migration begins until the reference-house pilot has been evaluated.
-
-The language should become more useful faster than it becomes more complicated.
+- reclassification of an existing pattern must be recorded in the migration control documents;
+- migration does not increase evidence or maturity;
+- retired IDs are never reused;
+- sequences remain separate from graph relationships;
+- the Reference House remains an integration test, not evidence for pattern validity.
