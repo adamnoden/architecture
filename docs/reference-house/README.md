@@ -4,6 +4,14 @@ One coordinated worked interpretation of the doctrine. Its purpose is to force a
 
 It is a test vehicle, not proof.
 
+## Architectural scope
+
+The current Reference House deliberately selects a **Georgian-derived architectural language**, provisionally represented by the G-01 research programme, together with its own courtyard morphology and tectonic dialect. Those are project choices, not House Systems Architecture doctrine.
+
+The distinction matters in both directions: HSA propositions must survive a different architectural language, while G-01 is allowed to be strongly opinionated about composition, hierarchy and element families without pretending those choices are universal.
+
+See the project-wide [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md) and the computational [G-01 Research Brief](../computational/g01-research-brief.md).
+
 Start with the [Tectonic Architectural Language](tectonic-architectural-language.md), then the [Vertical Bay Options](vertical-bay-options.md), [Vertical Bay Coordination](vertical-bay-coordination.md) and [External Access & Maintenance Plan](external-access-maintenance-plan.md).
 
 ## Current pattern-language state
