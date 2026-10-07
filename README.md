@@ -1,12 +1,10 @@
-# Long-Life House
+# House Systems Architecture
 
-An architectural design-research project about **selective permanence**: make the durable architecture genuinely durable by giving shorter-lived systems, foreseeable failure, maintenance and change deliberate places to occur.
+House Systems Architecture is an architectural design-research programme for treating the house as a **coherent, evolving system rather than a finished object**. It asks how spatial order, structure, envelope, services, fittings, interfaces, maintenance, failure and future change can be deliberately organised across different lifetimes so that the house can be repaired, renewed and adapted without sacrificing architectural quality.
 
-> **Change should be given deliberate places to occur so that architecture can afford to remain permanent elsewhere.**
->
-> **Build the permanent house. Assemble the changeable house inside it.**
+The project develops that systems architecture at several levels: governing principles define the invariants; patterns encode reusable responses; a reference house forces them to compose; prototypes and professional review attack the weak points; an implementation brief translates mature findings into delivery requirements; and a bounded computational track asks which relationships can be made explicit enough to check or compile.
 
-The project is not a universal-flexibility system, a manifesto for exposed services, or a software project disguised as architecture. It asks how a domestic building can remain architecturally settled while being unusually maintainable, repairable and adaptable over a long life.
+The aim is not universal flexibility, technological maximalism or a software model disguised as architecture. It is a house whose systems are legible, serviceable and replaceable where useful; whose passive form and architectural order do the first work; and whose technical organisation supports rather than compromises solidity, repose and ordinary domestic life.
 
 ## Architectural position
 
@@ -21,7 +19,7 @@ The public doctrine is the [eleven governing principles](docs/manuscript/governi
 - **Let passive architecture do the first work.** Form, envelope, orientation, shading, mass, openings, drainage and gravity should reduce dependence on active systems, while measured performance, health and resilience outrank ideological simplicity.
 - **Make construction and stewardship legible.** Tectonic honesty permits concealment but not falsification. Future owners and trades should be able to understand, isolate, maintain and alter the building without rediscovering it destructively.
 
-No longevity measure receives a free pass from life safety, legal compliance, structural integrity, health, building physics, whole-life cost, carbon or construction risk. Evidence, context-sensitive findings and architectural hypotheses are kept distinct.
+No systems principle receives a free pass from life safety, legal compliance, structural integrity, health, building physics, whole-life cost, carbon or construction risk. Evidence, context-sensitive findings and architectural hypotheses are kept distinct.
 
 ## Project form
 
