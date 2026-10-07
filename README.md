@@ -6,7 +6,7 @@ Most architectural information describes a house at or near completion, while th
 
 Change is concentrated where it is useful rather than spread indiscriminately through the building. The project therefore pairs serviceability with settled spatial order, passive-first environmental design, ordinary replaceable parts and explicit interfaces. Any non-standard proposition still has to earn its place against life safety, building physics, whole-life cost, carbon, workmanship and architectural quality.
 
-The work moves from architectural principles to reusable patterns, then tests those patterns against research, a coordinated reference house, physical prototypes and professional review. Mature findings are translated into an architect-facing implementation brief. A parallel computational track investigates the smaller subset of architectural relationships that can be represented strongly enough for invalid arrangements to fail during authoring or compilation.
+The work moves from architectural principles to strategies and reusable patterns, then asks whether those patterns form a coherent **language**: which recur together, which conflict, and in what order consequential decisions should be made. Generative sequences are being tested against the Reference House before the existing catalogue is migrated wholesale. Research, physical prototypes and professional review qualify the patterns; the Reference House tests whether they can coexist. A parallel computational track investigates the smaller subset of architectural relationships that can be represented strongly enough for invalid arrangements to fail during authoring or compilation.
 
 ## Architectural position
 
@@ -28,17 +28,17 @@ The programme has six linked outputs:
 | Output | Role |
 |---|---|
 | **Illustrated monograph** | Develops the architectural argument and governing principles for a professional reader. |
-| **Pattern catalogue** | Records reusable responses with their forces, trade-offs, evidence, maturity and failure modes. |
-| **Reference house** | Forces the principles and patterns to coexist in one coordinated house so that cross-system conflicts become visible. It is a worked interpretation, not evidence for the doctrine. |
+| **Pattern language** | Records reusable responses with their forces, trade-offs, evidence, maturity and failure modes; typed relationships and generative sequences are added only where they survive worked design. |
+| **Reference house** | Forces the principles and patterns to coexist in one coordinated house so that cross-system conflicts become visible. It is a worked interpretation and language-integration test, not evidence for the doctrine. |
 | **Prototype programme** | Subjects non-standard assemblies and details to 1:1 testing, conventional comparators and competent external attack before promotion. |
 | **Implementation brief** | Translates mature findings into project requirements, evidence, responsibilities and RIBA-stage decisions for an appointed design team. |
 | **Computational track** | Tests which bounded parts of the architecture can be expressed as semantic building relationships, obligations and evidence strongly enough to produce useful compile failures. |
 
-The working chain is:
+The intended design-research chain is:
 
-**Doctrine → Strategy → Pattern → Reference implementation → Delivery requirement → Test**
+**Doctrine → Strategy → Pattern language → Generative sequence → Reference implementation → Delivery requirement → Test**
 
-Research, professional review and physical testing can qualify or kill a proposition at any stage. Negative evidence is a successful result when it prevents a weak idea from being promoted.
+This is not a rigid waterfall. Evidence, professional review, physical testing and later conflicts can send the work upstream. The current pattern-language migration is deliberately held at a Reference House gate before the full catalogue is reclassified or moved.
 
 ## Current phase
 
@@ -46,12 +46,12 @@ Research, professional review and physical testing can qualify or kill a proposi
 
 The highest-value work is to:
 
-- complete the reference house and force the architectural, structural, environmental and maintenance systems to resolve together;
+- complete enough of the Reference House to run the service-topology pattern-language gate honestly, then decide whether full pattern-corpus migration is earned;
 - test the non-standard assemblies and technical assumptions through prototypes and professional review;
-- finish the pattern catalogue and publication against those results;
+- complete the Reference House and feed those findings back into the patterns and publication;
 - externally review the computational model and build only the minimal executable kernel needed to test whether the formal proposition survives contact with software.
 
-For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.md](STATUS.md)**.
+For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.md](STATUS.md)**. The pattern-language migration has its own durable control document at **[docs/development/pattern-language-overhaul.md](docs/development/pattern-language-overhaul.md)**.
 
 ## Repository map
 
@@ -62,10 +62,10 @@ For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.
 | **Source** | Preserved original doctrine; provenance rather than current publication | [House Design Doctrine v7](docs/source/house-design-doctrine-v7.md) |
 | **Manuscript** | Public architectural argument, governing principles and book structure | [Publication architecture](docs/manuscript/publication-architecture.md) · [Governing principles](docs/manuscript/governing-principles.md) · [Preface](docs/manuscript/preface.md) |
 | **Editorial** | Canonical prose modes, stylistic controls and rewrite protocol | [Editorial doctrine](docs/editorial/editorial-doctrine.md) |
-| **Patterns** | Reusable architectural responses and experimental candidates | [Core patterns](docs/patterns/core-12.md) · [`docs/patterns/`](docs/patterns/) |
-| **Reference house** | Worked architectural/technical interpretation and coordination studies | [`docs/reference-house/`](docs/reference-house/) |
+| **Patterns** | Reusable architectural responses; current language model, service-topology pilot and existing developed catalogue | [Pattern-language model](docs/patterns/language-model.md) · [Service-topology pilot](docs/patterns/pilot/README.md) · [Core patterns](docs/patterns/core-12.md) |
+| **Reference house** | Worked architectural/technical interpretation and coordination studies | [Reference House](docs/reference-house/README.md) · [Service-topology coordination](docs/reference-house/service-topology-coordination.md) |
 | **Research** | Evidence synthesis, precedent, options appraisal and claim hardening | [`docs/research/`](docs/research/) |
-| **Development** | Internal integration, manufacturing strategy and prototype/test programme control | [`docs/development/README.md`](docs/development/README.md) · [Prototype programme](docs/development/tectonic-prototype-programme.md) |
+| **Development** | Internal integration, migration controls, manufacturing strategy and prototype/test programme control | [`docs/development/README.md`](docs/development/README.md) · [Pattern-language overhaul](docs/development/pattern-language-overhaul.md) · [Prototype programme](docs/development/tectonic-prototype-programme.md) |
 | **Prototypes** | Build packs, drawings, test details and later test records/results | [`docs/prototypes/README.md`](docs/prototypes/README.md) · [W2 wall-bay build pack](docs/prototypes/w2-wall-bay-build-pack.md) |
 | **Delivery** | Translation into requirements for an appointed design team | [RIBA implementation brief template](docs/delivery/riba-implementation-brief-template.md) |
 | **Computational** | Executable-architecture research, evidence model, paper compilation and compiler gates | [Computational track index](docs/computational/README.md) |
@@ -73,8 +73,9 @@ For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.
 ## Repository rules
 
 - **The governing principles are the primary public doctrine.** [`docs/source/house-design-doctrine-v7.md`](docs/source/house-design-doctrine-v7.md) is preserved source material and should not be rewritten in place.
-- **Patterns carry their own maturity.** An experimental response stays experimental until calculation, representative workmanship and physical or professional evidence justify promotion.
-- **The reference house is a coordination and test vehicle.** Project-specific choices must remain distinguishable from general doctrine.
+- **Pattern identity does not imply truth.** Patterns carry evidence and maturity separately; experimental responses remain experimental until calculation, representative workmanship and physical or professional evidence justify promotion.
+- **The language is not the compiler.** Pattern relationships and generative sequences guide architectural design; only scoped formal consequences should become semantic rules, obligations or queries.
+- **The reference house is a coordination and test vehicle.** Project-specific choices and pattern occurrences must remain distinguishable from general doctrine.
 - **Architectural quality remains a hard constraint.** Maintainability, reversibility and technical legibility do not justify a house that is spatially poor, visually unsettled, acoustically hollow or disproportionately complex.
 - **The computational track remains subordinate to the architecture.** Its current purpose is to falsify or strengthen a bounded formal model, not to turn the project into a software pitch.
 - **Repository structure and publication navigation are separate concerns.** The repository remains the source of truth even where the documentation site presents a different reading order.
