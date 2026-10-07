@@ -13,7 +13,8 @@ Typical contents include:
 ## Active programme controls
 
 - [Pattern Language Overhaul — Migration Control](pattern-language-overhaul.md) — canonical state, gates, stop rules and resume protocol for the current pattern-language migration;
-- [Pattern-Language Pilot — Reference-House Trial 01](service-topology-reference-house-trial.md) — first worked test of the service-topology language against the actual Reference House;
+- [Pattern-Language Phase 5 Gate Review](pattern-language-phase5-review.md) — formal PASS decision authorising the Phase-6 corpus audit while keeping full migration gated;
+- [Pattern-Language Pilot — Reference-House Trial 01](service-topology-reference-house-trial.md) — initial test that exposed the whole-house information gap before the completed Phase-5 run;
 - [Tectonic Prototype Programme](tectonic-prototype-programme.md) — physical validation programme for non-standard assemblies.
 
 It does **not** contain the prototype artefacts themselves. Build packs, test details, drawings and later test records belong in [`../prototypes/`](../prototypes/).
