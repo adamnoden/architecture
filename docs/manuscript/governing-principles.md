@@ -1,4 +1,4 @@
-# The Long-Life House — Governing Principles v1.0
+# House Systems Architecture — Governing Principles v1.0
 
 **Status:** v1.4 editorial refinement  
 **Purpose:** public-facing principles for the professional publication. These supersede the 63-item register as the primary doctrine, while the register remains as a traceability appendix.
