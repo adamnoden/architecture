@@ -7,9 +7,9 @@ const activePatterns = patterns.filter((pattern) => pattern.state === 'active')
 const retiredPatterns = patterns.filter((pattern) => pattern.state === 'retired')
 </script>
 
-This area holds reusable architectural responses developed from the doctrine.
+This area holds the reusable architectural responses developed from the doctrine.
 
-The project is migrating from a **pattern catalogue** to an evidence-qualified **pattern language**: stable identities, sparse typed relationships and separate generative sequences. Phase 6 has completed the corpus audit; Phase 7 is now building the canonical individual pattern pages under the controls in the [Phase 7 Migration Plan](../development/pattern-language-phase7-plan.md).
+The project now has an evidence-qualified **pattern language**: stable pattern identities, sparse typed relationships and separate generative sequences. Phase 7 has completed canonical pattern identity migration; the remaining work is to normalise non-pattern material, reconcile the Reference House/publication, and add only lightweight validation tooling.
 
 Pattern identity is independent from evidence maturity. A pattern can have a stable place in the language while still requiring calculation, prototype work or professional review.
 
@@ -24,10 +24,6 @@ Pattern identity is independent from evidence maturity. A pattern can have a sta
   </ul>
 </div>
 
-<div v-else>
-  Canonical individual pages are being created during Phase 7. Until the first migration set lands, use the audited migration material below rather than treating the old aggregate catalogue as the final language.
-</div>
-
 ## Retired identities
 
 <div v-if="retiredPatterns.length">
@@ -40,23 +36,32 @@ Pattern identity is independent from evidence maturity. A pattern can have a sta
 
 Retired IDs remain visible for provenance and are never reused.
 
+## Non-pattern layers
+
+Not every useful recurring proposition belongs in the pattern graph.
+
+- [Strategies](strategies/) hold broad approaches whose valid physical responses differ too much to form one pattern.
+- [Held Pattern Candidates](candidates/) hold plausible future patterns whose evidence, scope, domestic proportionality or physical quality has not yet crossed the admission gate.
+- implementation families and prototypes remain in their research/prototype records rather than being promoted by naming.
+
+These distinctions are intentional. They keep the language small enough to mean something.
+
 ## Language and migration controls
 
 - [Pattern Language — Model and Authoring Contract](language-model.md)
 - [Service Topology — Generative Sequence](service-topology-sequence.md)
 - [Phase 7 Migration Plan](../development/pattern-language-phase7-plan.md)
+- [Pattern-Language Overhaul Control](../development/pattern-language-overhaul.md)
 - [Phase 6 Gate Review](../development/pattern-language-phase6-review.md)
 - [Phase 6 Corpus Audit](../development/pattern-language-corpus-audit.md)
-- [Targeted Evidence Review](../research/pattern-language-phase6-targeted-evidence.md)
 
-## Transitional source material
+## Migration provenance
 
-These remain useful while their content is migrated, but they are not the target information architecture:
+These pages remain available because they preserve the path by which the language was derived. They are not competing canonical sources:
 
-- [Core Pattern Catalogue](core-12.md) — legacy aggregate prose for `HSA-P-001..012`;
-- [Service-Topology Pilot](pilot/README.md) — migration provenance for the first linked pattern records;
-- [Ground-Supported Façade Access](ground-supported-facade-access.md) — developed page being promoted to `HSA-P-013`;
-- [Reversible Assembly Candidates](reversible-assembly-candidates.md) — mixed candidate/strategy/implementation material being normalised in Phase 7;
-- [Accessible Vertical Service Zone](candidates/accessible-vertical-service-zone.md) — developed candidate admitted as `HSA-P-014`.
+- [Core Pattern Catalogue](core-12.md) — legacy aggregate prose for the original Core 12;
+- [Service-Topology Pilot](pilot/README.md) — the first linked language experiment;
+- [Reversible Assembly Candidates](reversible-assembly-candidates.md) — legacy mixed strategy/candidate/implementation material now being normalised;
+- [Accessible Vertical Service Zone — pre-admission candidate](candidates/accessible-vertical-service-zone.md) — provenance for canonical `HSA-P-014`.
 
 The generated lists above derive from canonical pattern frontmatter. Do not maintain a second manual ID registry here.

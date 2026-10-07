@@ -1,10 +1,11 @@
 # Pattern Language Overhaul — Migration Control
 
-**Status:** active migration programme; Phases 0–6 complete; Phase 7 P7.1–P7.3 complete; P7.4 next  
+**Status:** active migration programme; Phases 0–6 complete; Phase 7 P7.1–P7.4 complete; P7.5 next  
 **Baseline:** `main@974d3bf25df2f9406262384e2b8b2197403be43b` before pattern-language work  
 **Phase-5 checkpoint:** `eccf8ff5721942e1cba5e7e36eb6aaf19476f49e`  
 **Phase-6 checkpoint:** `5eba14402b333836add71739395385a7686edf4e`  
 **Phase-7 Core checkpoint:** `722e883c6b2e4c8f3bad4ae232ab5d73125943d3`  
+**Phase-7 identity checkpoint:** `4d831efb08f619799cfd0a2bc5d9c07a9273c08c`  
 **Purpose:** transform the existing pattern catalogue into an evidence-qualified pattern language and generative design process without losing doctrine, research provenance, Reference House work, prototype records or the computational evidence model.
 
 This is the durable project-level control point for the migration. Detailed Phase-7 execution is tracked in [`pattern-language-phase7-plan.md`](pattern-language-phase7-plan.md).
@@ -111,9 +112,9 @@ The key discipline is to change an upstream architectural decision where downstr
 | **4 — Pilot sequence** | first service-topology generative sequence | **Complete** | ordering + rewind logic proved non-trivial |
 | **5 — Reference House trial** | whole-house service-topology application | **Complete — PASS** | real occurrences, rewinds, missing pattern and taxonomy correction produced |
 | **6 — Corpus audit** | classify Core 12, specialised patterns, candidates and old 30-slot inventory | **Complete — PASS** | controlled Phase-7 migration authorised |
-| **7 — Canonical migration** | canonical pattern pages, strategies and candidate bench | **Active — P7.1–P7.3 complete** | P7.4 non-pattern homes next; then publication/Reference House reconciliation and validation tooling |
-| **8 — Computational crosswalk** | map formal consequences to semantic relationships/obligations | **Blocked by Phase 7** | canonical/non-canonical corpus must stabilise first |
-| **9 — Publication rearchitecture** | rebuild Part III around actual language + sequences | **Blocked by Phase 7** | publication must follow canonical corpus, not old outline |
+| **7 — Canonical migration** | canonical pattern pages, strategies, candidate bench, integration + validation | **Active — P7.1–P7.4 complete** | P7.5 Reference House/publication reconciliation next; then P7.6 validation tooling |
+| **8 — Computational crosswalk** | map formal consequences to semantic relationships/obligations | **Blocked by Phase 7** | canonical/non-canonical corpus and project occurrence mapping must stabilise first |
+| **9 — Publication rearchitecture** | rebuild Part III around actual language + sequences | **Blocked by Phase 7** | P7.5 must reconcile publication inventory first |
 | **10 — Site tooling** | generated indexes, reverse links, validation, later optional visualisation | **Lightweight tooling only during Phase 7** | no graph UI until language is stable |
 | **11 — Validation** | ongoing prototype/professional/Reference House attack | **Continuous** | maturity earned independently from migration |
 
@@ -126,6 +127,11 @@ The key discipline is to change an upstream architectural decision where downstr
 - [`../patterns/language-model.md`](../patterns/language-model.md)
 - [`../patterns/service-topology-sequence.md`](../patterns/service-topology-sequence.md)
 - [`../patterns/pilot/README.md`](../patterns/pilot/README.md) — migration provenance
+
+## Canonical non-pattern layers
+
+- [`../patterns/strategies/README.md`](../patterns/strategies/README.md)
+- [`../patterns/candidates/README.md`](../patterns/candidates/README.md)
 
 ## Reference House gates
 
@@ -180,21 +186,25 @@ Several slots were strategies, implementation families or undeveloped placeholde
 
 - `service skirting` + `vertical joinery route` → **Accessible Room Service Route**;
 - `Architectural Backplane` + `Fixing Infrastructure` → **Controlled Attachment Plane**;
-- `Seated Floor Structure` → structural-interface decomposition strategy + implementation challengers;
-- `Finish-Agnostic Floor Platform` → floor-layer strategy + experimental implementation;
+- `Seated Floor Structure` → **Decompose Structural Interface Functions** strategy + implementation challengers;
+- `Finish-Agnostic Floor Platform` → **Separate Structural Floor from Changeable Layers Where Proportionate** strategy + experimental implementation;
 - `functional cornice` → Reference House expression of other patterns, not its own pattern.
 
 ## F7 — evidence maturity remains independent
 
 Admission gives stable language identity; it does not claim physical validation. Pattern pages retain evidence/maturity limits independently from taxonomy.
 
-## F8 — canonical identity is now materially established
+## F8 — canonical identity is established
 
-P7.1–P7.3 produced one canonical page for every active pattern identity and a visible retired record for `P-006`. The remaining Phase-7 problem is no longer pattern admission; it is clear ownership of strategies, held candidates, provenance and project occurrences.
+P7.1–P7.3 produced one canonical page for every active pattern identity and a visible retired record for `P-006`.
+
+## F9 — non-pattern knowledge now has explicit ownership
+
+P7.4 created canonical strategy pages and a held-candidate bench. No held candidate received an HSA ID, and no implementation challenger was promoted merely because its general lesson became clearer.
 
 ---
 
-# 9. Canonical identity state after P7.3
+# 9. Canonical corpus after P7.4
 
 ## Active patterns
 
@@ -224,18 +234,18 @@ P7.1–P7.3 produced one canonical page for every active pattern identity and a 
 
 - `HSA-P-006` Water-Damage-Safe Service Route — permanently retired; never reused.
 
+## Canonical strategies
+
+- Fail-Safe Water Distribution
+- Decompose Structural Interface Functions
+- Separate Structural Floor from Changeable Layers Where Proportionate
+
 ## Held candidates — no stable IDs
 
 - Replaceable Architectural Lining
 - Individually Isolatable Manifold Distribution
 - Local Deep Service Zone
-- Selective Floor Access / Selective Accessible Floor Zone
-
-## Strategies, not patterns
-
-- Fail-Safe Water Distribution — canonical page already exists;
-- Decompose Structural Interface Functions — P7.4 destination required;
-- Separate Structural Floor from Changeable Layers Where Proportionate — P7.4 destination required.
+- Selective Floor Access
 
 ## Implementation families / expressions, not patterns
 
@@ -292,11 +302,11 @@ A future collaborator/chat should read, in order:
 2. `STATUS.md`;
 3. this file;
 4. [`pattern-language-phase7-plan.md`](pattern-language-phase7-plan.md);
-5. [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md) when classification rationale is needed;
-6. [`../patterns/language-model.md`](../patterns/language-model.md);
-7. Phase-5 Reference House run only when worked architectural context is needed.
+5. [`../patterns/language-model.md`](../patterns/language-model.md);
+6. Phase-5 Reference House run when worked occurrence/rejection context is needed;
+7. [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md) only when classification rationale is needed.
 
-Then continue **P7.4**, not another taxonomy discussion, unless new evidence genuinely contradicts the Phase-6 decision.
+Then continue **P7.5**, not another taxonomy discussion, unless new evidence genuinely contradicts the Phase-6 decision.
 
 When a phase crosses a gate, update this file and `STATUS.md` in the same work session.
 
@@ -304,9 +314,10 @@ When a phase crosses a gate, update this file and `STATUS.md` in the same work s
 
 # 13. Current next actions
 
-1. complete P7.4 strategy homes for structural-interface decomposition and structural-floor/changeable-layer separation;
-2. create/normalise explicit non-canonical homes for the four held candidates without assigning IDs;
-3. preserve implementation/prototype source material and mark legacy aggregate pages as provenance rather than rewriting history;
-4. run a P7.4 checkpoint before publication/Reference House reconciliation;
-5. then execute P7.5: update Reference House occurrences and rebuild Part III around the canonical language;
-6. only after corpus structure is stable, add P7.6 validation/reverse-link tooling and unlock Phase 8/9 gates as appropriate.
+1. P7.5: reconcile Reference House pattern selections/occurrences with canonical IDs and titles;
+2. distinguish project occurrence, implementation family and outstanding evidence obligation explicitly;
+3. replace the obsolete Part-III 30-slot inventory with the actual language and strategy/candidate context;
+4. demote legacy aggregate pattern pages from primary reading paths while preserving provenance;
+5. checkpoint P7.5 before tooling;
+6. P7.6: add only useful identity/reference/reverse-link validation;
+7. after Phase 7 closes, unlock the computational crosswalk and full publication rearchitecture gates.

@@ -8,7 +8,7 @@ This file answers one question:
 
 > **Where is the House Systems Architecture project actually at?**
 
-The central architectural position is established. Current work is to coordinate and test the Reference House, physically/professionally attack the non-standard propositions, finish the controlled pattern-language migration now that all active pattern identities have canonical pages, finish the publication around those results, and begin only the smallest computational implementation justified by the completed paper research.
+The central architectural position is established. Current work is to coordinate and test the Reference House, physically/professionally attack the non-standard propositions, finish the last integration/validation stages of the pattern-language migration now that both pattern and non-pattern homes are explicit, finish the publication around those results, and begin only the smallest computational implementation justified by the completed paper research.
 
 ---
 
@@ -31,16 +31,16 @@ The central architectural position is established. Current work is to coordinate
 |---|---:|---|---|
 | **Original doctrine / source corpus** | **L4** | House Design Doctrine v7 preserved as source material | maintain traceability while publication supersedes raw source prose |
 | **Public architectural position / governing principles** | **L3** | selective permanence, designed interfaces, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy established | evidence/figure hardening and final proof in publication context |
-| **Publication architecture** | **L3** | monograph + evidence-qualified pattern language + implementation brief remains the form; old 30-slot Part III is no longer authoritative | finish Phase 7 non-pattern homes/reconciliation, then rebuild Part III around the canonical language |
-| **Pattern-language migration** | **L3–L4 at taxonomy/structure scope** | Phases 0–6 complete; P7.1–P7.3 complete; all 21 active identities now have canonical pages and P-006 remains visibly retired | P7.4 strategies/candidate homes → P7.5 publication/Reference House reconciliation → P7.6 validation tooling |
+| **Publication architecture** | **L3** | monograph + evidence-qualified pattern language + implementation brief remains the form; old 30-slot Part III is no longer authoritative | P7.5 reconcile Part III with the canonical language, then final editorial/figure hardening |
+| **Pattern-language migration** | **L3–L4 at taxonomy/structure scope** | Phases 0–6 complete; P7.1–P7.4 complete; 21 active patterns, retired P-006, three strategies and four held candidates now have explicit homes | P7.5 Reference House/publication reconciliation → P7.6 validation tooling → close Phase 7 |
 | **Preface** | **L3** | full editorial rewrite complete | final proof against completed book and citation presentation |
 | **Part I — The Proposition** | **L3** | substantial evidence-backed draft; editorial overhaul complete | diagrams, evidence presentation and whole-book integration |
 | **Part II — Architecture of the Platform** | **L3** | interface/failure/maintenance/tolerance argument coordinated and editorially hardened | complete figures and remaining evidence/technical integration |
-| **Part III — Pattern language** | **L3 structurally** | canonical pages now exist for `HSA-P-001..022` except permanently retired P-006; non-pattern strategies/candidates and legacy aggregate provenance still need normalization | complete P7.4/P7.5 and replace obsolete publication inventory |
-| **Part IV — Reference House** | **L2–L3** | tectonic language, vertical-bay work, external maintenance plan, provisional whole-house courtyard fixture and complete service-topology run coexist; house remains architecturally provisional/unengineered | continue whole-house architectural/structural/environmental coordination and challenge footprint/proportionality |
+| **Part III — Pattern language** | **L3 structurally** | canonical patterns, strategies and held-candidate bench are now structurally explicit; legacy aggregate/provenance remains available | P7.5 replace obsolete publication inventory and align reading order/sequence material |
+| **Part IV — Reference House** | **L2–L3** | tectonic language, vertical-bay work, external maintenance plan, provisional whole-house courtyard fixture and complete service-topology run coexist; house remains architecturally provisional/unengineered | P7.5 canonical occurrence reconciliation, then continue whole-house architectural/structural/environmental coordination |
 | **Part V — Making and Testing** | **L3** | substantial draft and validation philosophy exist | align with actual prototype/engineering results |
 | **Evidence / precedent research** | **L3** | several deep packages exist; targeted Phase-6 evidence closed taxonomy ambiguities without reopening general doctrine discovery | continue claim-by-claim hardening where publication/pattern maturity needs it |
-| **Candidate reversible assemblies** | **L3** | Phase 6 separated reusable abstractions from implementation-shaped candidates; physical validity remains unresolved | structural engineering + 1:1 testing + conventional comparators |
+| **Candidate reversible assemblies** | **L3** | stronger strategy/candidate abstractions now have explicit homes; physical implementation validity remains unresolved | structural engineering + 1:1 testing + conventional comparators |
 | **Physical prototype programme** | **L1–L2** | programme, acceptance criteria, W2 wall-bay build pack/drawings exist; no physical validation recorded | build/test wall bay; engineer/test floor edge; then floor platform/joint |
 | **Reference-house structural/technical design** | **L1–L2** | whole-house coordination geometry exists; structure, services, building physics/products remain concept-level | competent multidisciplinary coordination on worked house |
 | **Computational paper research** | **L4** | S0→S1→S2→H1 paper sequence, mutations, red team and capability freeze complete | **stop major paper expansion** |
@@ -75,20 +75,21 @@ Do not create another large paper scale, speculative ontology, full regulations 
 
 The controlled global editorial overhaul is complete. Further prose work should be local, structural and evidence-driven.
 
-## 4. Pattern-language method + identity taxonomy
+## 4. Pattern-language method + taxonomy + non-pattern ownership
 
-**Phases 0–6 are complete and Phase 7 has completed P7.1–P7.3.**
+**Phases 0–6 are complete and Phase 7 has completed P7.1–P7.4.**
 
-The method survived a worked Reference House test, then the whole corpus was audited against one admission model. The identity migration has now produced one canonical page for every active pattern.
+The method survived a worked Reference House test, then the whole corpus was audited against one admission model. The identity migration produced one canonical page for every active pattern, and P7.4 gave explicit homes to strategies and held candidates without promoting them.
 
 Locked outcomes:
 
 - `HSA-P-001..005` and `HSA-P-007..012` survive;
 - `HSA-P-003` is **Coherent Horizontal Service Route** without changing identity;
 - `HSA-P-006` is retired permanently and its durable content is owned by **Fail-Safe Water Distribution**;
-- `HSA-P-013..022` are now canonical active identities;
-- held candidates remain unnumbered;
-- strategies and implementation families remain outside the pattern graph;
+- `HSA-P-013..022` are canonical active identities;
+- canonical strategies are **Fail-Safe Water Distribution**, **Decompose Structural Interface Functions**, and **Separate Structural Floor from Changeable Layers Where Proportionate**;
+- held candidates remain unnumbered: **Replaceable Architectural Lining**, **Individually Isolatable Manifold Distribution**, **Local Deep Service Zone**, and **Selective Floor Access**;
+- implementation challengers such as Seated Floor Structure and Finish-Agnostic Floor Platform remain outside the pattern graph;
 - the old 30-slot publication inventory is not the canonical language;
 - pilot/Core/candidate aggregate pages are migration provenance, not competing canonical sources.
 
@@ -106,9 +107,9 @@ This remains the largest gap between an intellectually coherent doctrine and a c
 
 Immediate gates:
 
-1. **Architectural Backplane / Controlled Attachment Plane + Replaceable Architectural Lining wall bay** — build 1:1 against first-rate plaster control, including imperfect background geometry and an unfamiliar competent installer.
+1. **Controlled Attachment Plane + Replaceable Architectural Lining wall bay** — build 1:1 against first-rate plaster control, including imperfect background geometry and an unfamiliar competent installer.
 2. **Structural floor edge / Seated Floor challenger** — engineer comparison of ordinary certified restraint hanger, direct bearing + separate restraint and any custom alternative.
-3. **Finish-agnostic floor platform** — walkable multi-panel comparison including a local-access-band alternative; tactile/acoustic solidity is non-negotiable.
+3. **Finish-Agnostic Floor Platform** — walkable multi-panel comparison including a local-access-band alternative; tactile/acoustic solidity is non-negotiable.
 4. **Wall/ceiling tectonic joint** — conventional quiet joint versus mechanically honest/removable alternatives.
 
 The pattern migration does not promote these assemblies merely because stronger abstractions were extracted from them.
@@ -130,62 +131,34 @@ The Reference House remains one worked interpretation, never evidence for doctri
 
 ## C. Pattern language — finish Phase 7
 
-### Active canonical identities
+### P7.5 — next
 
-The language now contains 21 active identities:
+Reconcile the canonical language into actual use:
 
-- `HSA-P-001` Controlled Utility Entry
-- `HSA-P-002` Plant Room as Service Hub
-- `HSA-P-003` Coherent Horizontal Service Route
-- `HSA-P-004` High-Service-Room Service Wall
-- `HSA-P-005` Designed Structural Penetration
-- `HSA-P-007` Permanent Opening / Replaceable Window
-- `HSA-P-008` Movement / Slip Junction
-- `HSA-P-009` Accessible Rainwater Route
-- `HSA-P-010` Source-Capture Kitchen Extract
-- `HSA-P-011` Roof Maintenance Route
-- `HSA-P-012` Physical Service Index
-- `HSA-P-013` Ground-Supported Façade Access
-- `HSA-P-014` Accessible Vertical Service Zone
-- `HSA-P-015` Accessible Room Service Route
-- `HSA-P-016` Compartmented Service Void
-- `HSA-P-017` Visible Leakage Path
-- `HSA-P-018` Failure-Tolerant Wet Service Room
-- `HSA-P-019` Permanent Opening / Replaceable Door
-- `HSA-P-020` Designed Threshold
-- `HSA-P-021` Source-Capture Bathroom Extract
-- `HSA-P-022` Controlled Attachment Plane
+1. update Reference House selections/occurrences to canonical IDs and names;
+2. distinguish selected pattern, project occurrence, implementation family and evidence obligation;
+3. preserve rejected/deferred patterns and rewind history;
+4. replace Part III's obsolete 30-slot inventory with the actual canonical language;
+5. keep strategies and held candidates editorially visible without counting them as patterns;
+6. demote legacy aggregate pages from primary reading paths while preserving provenance.
 
-Retired but preserved:
+### P7.6 — after P7.5
 
-- `HSA-P-006` Water-Damage-Safe Service Route.
+Add only useful validation/tooling:
 
-### P7.4 — next
+- duplicate stable-ID checks;
+- relationship-reference checks;
+- state checks;
+- reverse links where they reduce navigation friction;
+- useful orphan warnings.
 
-Create/normalise clear non-pattern homes for:
-
-**Strategies**
-
-- Decompose Structural Interface Functions;
-- Separate Structural Floor from Changeable Layers Where Proportionate;
-- Fail-Safe Water Distribution is already complete.
-
-**Held candidates — no IDs**
-
-- Replaceable Architectural Lining;
-- Individually Isolatable Manifold Distribution;
-- Local Deep Service Zone;
-- Selective Floor Access / Selective Accessible Floor Zone.
-
-Then P7.5 should reconcile Reference House occurrences and Part III, and P7.6 should add only lightweight validation/reverse-link tooling.
+No graph visualisation merely because metadata exists.
 
 ## D. Finish the publication as a publication
 
-Do not polish Part III around the obsolete 30-slot outline.
+After P7.5:
 
-After Phase 7:
-
-1. rearchitect Part III around the canonical language and useful sequences;
+1. develop Part III around the canonical language and useful sequences;
 2. develop Part IV from the evolving Reference House;
 3. standardise diagrams where graphics outperform prose;
 4. close evidence/citation/glossary/back-matter gaps;
@@ -263,7 +236,7 @@ Phase 7 should make the project **easier** to reason about. If it does not, stop
 
 ### Pattern language
 
-**P7.4 non-pattern homes → P7.5 Reference House/publication reconciliation → P7.6 lightweight validation → then Phase 8/9**
+**P7.5 Reference House/publication reconciliation → P7.6 lightweight validation → close Phase 7 → then Phase 8/9**
 
 ### Computational
 
