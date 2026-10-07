@@ -1,19 +1,15 @@
 # Pattern Language Overhaul — Migration Control
 
-**Status:** active migration programme; Phase 5 passed, Phase 6 corpus audit authorised  
+**Status:** active migration programme; Phases 0–6 complete; Phase 7 controlled canonical migration authorised  
 **Baseline:** `main@974d3bf25df2f9406262384e2b8b2197403be43b` before pattern-language work  
-**First migration tranche:** merged to `main` via PR #9 (`18ff519`)  
-**Purpose:** transform the existing pattern catalogue into an evidence-qualified pattern language and generative design process without losing the existing doctrine, research record, reference-house work, prototype programme or computational evidence model.
+**Phase-5 checkpoint:** merged as `eccf8ff5721942e1cba5e7e36eb6aaf19476f49e`  
+**Purpose:** transform the existing pattern catalogue into an evidence-qualified pattern language and generative design process without losing doctrine, research provenance, Reference House work, prototype records or the computational evidence model.
 
-This document is the durable control point for the migration. It is written so the work can be resumed after loss of conversational context.
+This is the durable control point for the migration. It is written so the work can resume after loss of conversational context.
 
 ---
 
-## 1. Decision
-
-The project will not merely expand its existing catalogue of pattern cards.
-
-The target architecture is:
+## 1. Target architecture
 
 ```text
 DOCTRINE
@@ -33,270 +29,286 @@ PROJECT / REFERENCE-HOUSE APPLICATION
                          COMPILER
 ```
 
-The architectural layer remains primary. Patterns are not compiler rules, and compiler rules are not architectural judgement.
+The architectural layer remains primary.
 
-The existing evidence discipline is retained and strengthened. Christopher Alexander is a methodological precedent for pattern connectivity and generation, not an authority whose individual claims are imported wholesale.
-
----
-
-## 2. Migration boundary
-
-### Major change
-
-- `docs/patterns/` moves from a catalogue toward a connected language with stable identities, typed relationships and explicit sequence participation.
-- Part III of the publication will move from a grouped catalogue toward a browsable pattern language supported by maps and generative sequences **only after the corpus audit establishes what the language actually contains**.
-- the Reference House is an integration test of the language as well as a worked interpretation of the doctrine.
-
-### Moderate change
-
-- the project gains generative sequences: partially ordered design processes with explicit feedback / rewind conditions;
-- delivery documents can later reference mature pattern IDs and selected implementation families;
-- the computational track can later gain a crosswalk from architectural patterns to formalised consequences where justified.
-
-### Presumed unchanged
-
-- frozen source doctrine;
-- eleven governing principles unless independent evidence requires change;
-- research syntheses as evidence records;
-- prototype/test records;
-- frozen computational paper-compilation history;
-- the formal architectural model based on semantic relationships, overlapping graphs, obligations and evidence.
-
-This is an information-architecture and design-method migration, not another repo-wide prose rewrite.
+- a **pattern is not a compiler rule**;
+- graph relationships are not generative sequence order;
+- evidence maturity is independent from pattern identity;
+- Christopher Alexander is a methodological precedent, not an authority whose individual claims are imported wholesale.
 
 ---
 
-## 3. Definitions
+## 2. Canonical definitions
 
 **Doctrine** — durable architectural proposition.  
-**Strategy** — broad way of pursuing one or more principles; may admit several substantially different patterns.  
+**Strategy** — broad way of pursuing one or more principles; may admit several materially different patterns/implementations.  
 **Pattern** — recurring architectural response to a recurring context and set of forces; specific enough to guide design, general enough to admit multiple implementations.  
-**Pattern language** — connected set of patterns whose relationships help designers combine them coherently across scales and domains.  
-**Generative sequence** — ordered or partially ordered series of design moves in which each move establishes context for later moves and may expose a reason to revisit an earlier move.  
-**Implementation family** — a concrete construction/system family that can realise a pattern.  
+**Pattern language** — connected set of patterns whose sparse relationships help designers combine them coherently across scales/domains.  
+**Generative sequence** — ordered or partially ordered design moves in which each move establishes context for later work and may expose a reason to rewind an earlier decision.  
+**Implementation family** — a concrete construction/system family that can realise a pattern or strategy.  
 **Occurrence** — one project-specific use of a pattern or implementation family.  
-**Rule / obligation** — a proposition formal enough to be checked, calculated, evidenced or rejected.  
+**Rule / obligation** — proposition formal enough to be checked, calculated, evidenced or rejected.  
 **Evidence** — research, precedent, calculation, prototype, observation or professional determination supporting a scoped claim.
 
-These categories must not collapse into one another.
-
-The canonical detailed contract is [`../patterns/language-model.md`](../patterns/language-model.md).
+Detailed authoring contract: [`../patterns/language-model.md`](../patterns/language-model.md).
 
 ---
 
-## 4. Pattern admission test
+## 3. Pattern admission test
 
-A proposition should become a pattern only when it passes these tests strongly enough to be useful:
+A pattern should materially satisfy:
 
-1. **Recurrence** — the problem plausibly recurs across more than one project condition.
-2. **Context** — the pattern can state when the problem exists and when it does not.
-3. **Forces** — it exposes competing pressures rather than simply stating a preference.
-4. **Relationship** — it resolves a meaningful spatial, physical, lifecycle or operational relationship.
-5. **Variation** — materially different implementations can realise the same pattern.
-6. **Diagrammability** — the invariant can be communicated spatially or systemically.
-7. **Consequences** — benefits, costs, boundary debt and failure modes can be stated.
-8. **Composition** — it meaningfully connects to other patterns.
-9. **Evidence state** — its evidential status can be declared honestly, including `Proposed` or `Experimental`.
+1. recurrence;
+2. explicit context;
+3. competing forces;
+4. a meaningful spatial/physical/lifecycle/operational relationship;
+5. multiple possible implementations;
+6. diagrammability;
+7. identifiable consequences/trade-offs/failure modes;
+8. meaningful composition with other patterns;
+9. honest evidence state.
 
-Failure does not make an idea invalid. It means the idea probably belongs as doctrine, strategy, implementation family, reference-house decision, rule, evidence or research question instead.
-
----
-
-## 5. Initial relationship vocabulary
-
-Keep the graph deliberately small.
-
-- **requires** — another pattern or condition normally needs to be resolved first for this pattern to make architectural sense;
-- **completes** — this pattern commonly develops or localises another pattern;
-- **alternative-to** — the patterns solve materially overlapping problems and should normally be chosen between rather than blindly accumulated;
-- **tension-with** — adopting both creates a known trade-off that must be resolved explicitly.
-
-Sequence order does **not** belong in graph edges merely because one decision is usually made before another.
-
-Scale and domain are metadata, not graph edges.
+Failure does not invalidate the idea; it normally means the idea belongs as strategy, implementation family, project decision, rule, evidence or research question instead.
 
 ---
 
-## 6. Sequence rules
+## 4. Relationship vocabulary
 
-A generative sequence is not a rigid linear recipe.
+Keep the graph sparse:
 
-It may contain:
+- **requires** — another pattern/condition normally needs resolution first for this pattern to make architectural sense;
+- **completes** — commonly develops/localises another pattern;
+- **alternative-to** — overlapping solutions normally chosen between;
+- **tension-with** — known trade-off requiring explicit resolution.
 
-- **hard precedence** — later work is meaningless or unsafe before an earlier decision exists;
-- **soft precedence** — earlier resolution usually reduces rework but can legitimately be revisited;
-- **parallel work** — two concerns can develop together;
-- **rewind condition** — a later conflict requires an earlier architectural decision to change rather than being patched locally.
-
-The project should prefer changing an upstream decision over inventing downstream technical complexity where the latter merely hides a bad earlier choice.
+Scale/domain are metadata. Chronology belongs in generative sequences, not fake graph dependencies.
 
 ---
 
-## 7. Programme state
+## 5. Sequence rules
 
-| Phase | Scope | Status | Exit gate |
+A sequence may contain:
+
+- hard precedence;
+- soft precedence;
+- parallel work;
+- rewind conditions.
+
+The key discipline is to change an upstream architectural decision where downstream complexity is merely evidence of a bad earlier choice.
+
+---
+
+# 6. Programme state
+
+| Phase | Scope | Status | Result / next gate |
 |---|---|---|---|
-| **0 — Baseline** | freeze recoverable starting point and record migration boundary | **Complete** | dedicated recoverable baseline recorded |
-| **1 — Metamodel** | define doctrine / strategy / pattern / language / sequence / family / occurrence / rule / evidence | **Complete for migration** | definitions survived current Core 12 / reversible-assembly adversarial examples and Reference House pilot |
-| **2 — Pattern contract** | define admission test, IDs, metadata, relations, evidence/maturity fields and page anatomy | **Complete for migration** | small frontmatter contract + authoring anatomy established |
-| **3 — Pilot language** | create connected service-topology fragment with stable IDs and sparse typed links | **Complete** | six thin language records + graph expose useful relationships without duplicating publication prose |
-| **4 — Pilot sequence** | create one service-topology generative sequence | **Complete** | sequence produced non-trivial ordering, rewind logic and taxonomy findings |
-| **5 — Reference-house trial** | apply pilot language/sequence to worked whole-house geometry | **Complete — PASS** | whole-house coordination fixture + sequence run produced real occurrences, rewinds, missing-pattern and reclassification findings |
-| **6 — Corpus audit** | classify current/planned reusable content as principle / strategy / pattern / family / rule / instance / evidence | **Authorised — next active phase** | complete migration matrix with no silent category changes |
-| **7 — Full migration** | split, merge, promote, demote and link pattern material systematically | **Blocked by Phase 6** | no duplicated canonical pattern content; stable IDs and links |
-| **8 — Computational crosswalk** | map pattern consequences to existing semantic relationships / obligations where justified | **Blocked by Phase 6** | no pattern is treated as a compiler rule by default |
-| **9 — Publication rearchitecture** | revise Part III and surrounding material around language + sequence | **Blocked by Phase 6/7** | publication explains and exposes the same system the repo uses |
-| **10 — Site tooling** | derive indexes, reverse links, filters, orphan checks and later visualisation from Markdown metadata | **Partially blocked** | no graph UI before Phase 6; lightweight validation may follow corpus stability |
-| **11 — Validation** | continue evidence, prototype, reference-house and professional attack against migrated language | **Continuous** | maturity is earned by evidence, not migration status |
+| **0 — Baseline** | record recoverable starting point | **Complete** | baseline preserved |
+| **1 — Metamodel** | distinguish doctrine / strategy / pattern / sequence / family / occurrence / rule / evidence | **Complete** | model survived adversarial examples |
+| **2 — Pattern contract** | IDs, metadata, relations, evidence/maturity and page anatomy | **Complete** | deliberately small contract established |
+| **3 — Pilot language** | six connected service-topology records | **Complete** | graph added useful compositional knowledge |
+| **4 — Pilot sequence** | first service-topology generative sequence | **Complete** | ordering + rewind logic proved non-trivial |
+| **5 — Reference House trial** | whole-house service-topology application | **Complete — PASS** | real occurrences, rewinds, missing pattern and taxonomy correction produced |
+| **6 — Corpus audit** | classify Core 12, specialised patterns, candidates and old 30-slot inventory | **Complete — PASS** | controlled Phase-7 migration authorised by [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md) |
+| **7 — Canonical migration** | build canonical individual pattern pages, strategies and candidate bench | **Authorised — next active phase** | acceptance criteria in Phase-6 review |
+| **8 — Computational crosswalk** | map formal consequences to semantic relationships/obligations | **Blocked by Phase 7** | pattern identities must stabilise first |
+| **9 — Publication rearchitecture** | rebuild Part III around actual language + sequences | **Blocked by Phase 7** | publication must follow canonical corpus, not old outline |
+| **10 — Site tooling** | generated indexes, reverse links, validation, later optional visualisation | **Only lightweight tooling during/after Phase 7** | no graph UI until language is stable |
+| **11 — Validation** | ongoing prototype/professional/Reference House attack | **Continuous** | maturity earned independently from migration |
 
 ---
 
-## 8. Pilot and Phase-5 artefacts
+# 7. Durable artefacts
 
-Pilot index: [`../patterns/pilot/README.md`](../patterns/pilot/README.md)  
-Generative sequence: [`../patterns/service-topology-sequence.md`](../patterns/service-topology-sequence.md)  
-Initial Reference House trial: [`service-topology-reference-house-trial.md`](service-topology-reference-house-trial.md)  
-Whole-house coordination fixture: [`../reference-house/whole-house-coordination-fixture.md`](../reference-house/whole-house-coordination-fixture.md)  
-Completed sequence run: [`../reference-house/service-topology-run-01.md`](../reference-house/service-topology-run-01.md)  
-Phase-5 gate review: [`pattern-language-phase5-review.md`](pattern-language-phase5-review.md)  
-Vertical-zone candidate: [`../patterns/candidates/accessible-vertical-service-zone.md`](../patterns/candidates/accessible-vertical-service-zone.md)
+## Model + pilot
 
-The six original pilot patterns are:
+- [`../patterns/language-model.md`](../patterns/language-model.md)
+- [`../patterns/pilot/README.md`](../patterns/pilot/README.md)
+- [`../patterns/service-topology-sequence.md`](../patterns/service-topology-sequence.md)
 
-- `HSA-P-001` Controlled Utility Entry;
-- `HSA-P-002` Plant Room as Service Hub;
-- `HSA-P-003` Horizontal Service Spine;
-- `HSA-P-004` High-Service-Room Service Wall;
-- `HSA-P-005` Designed Structural Penetration;
-- `HSA-P-012` Physical Service Index.
+## Reference House gate
 
-Their full developed prose remains in `core-12.md` until Phase 7. The pilot files remain intentionally thin language records so the experiment does not create duplicate canonical prose.
+- [`../reference-house/whole-house-coordination-fixture.md`](../reference-house/whole-house-coordination-fixture.md)
+- [`../reference-house/service-topology-run-01.md`](../reference-house/service-topology-run-01.md)
+- [`pattern-language-phase5-review.md`](pattern-language-phase5-review.md)
+
+## Corpus audit
+
+- [`pattern-language-corpus-audit.md`](pattern-language-corpus-audit.md)
+- [`../research/pattern-language-phase6-targeted-evidence.md`](../research/pattern-language-phase6-targeted-evidence.md)
+- [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md)
 
 ---
 
-## 9. Findings from Phases 3–5
+# 8. Findings that must survive future edits
 
-### F1 — graph and sequence must remain separate
+## F1 — graph and sequence are separate structures
 
-The graph describes conceptual composition. The sequence describes decision order.
+Conceptual composition does not equal decision order. Do not encode sequence chronology as `requires` edges merely to reproduce a flow chart.
 
-`HSA-P-004` can conceptually complete `HSA-P-003` at room scale while the sequence still examines service-wall opportunities **before** the horizontal spine is finalised because room adjacency is expensive to change later.
+## F2 — rewind conditions are the main generative value
 
-### F2 — rewind conditions are a core feature
+The Reference House run rejected:
 
-The strongest added value is not merely “do A then B”. It is explicit recognition that downstream complexity can invalidate upstream architecture.
-
-The worked Reference House run rejected:
-
-- a universal deep mixed-services horizontal duct;
+- a universal deep mixed-services duct;
 - scattered upper wet rooms;
 - plant hidden in ordinary kitchen cabinetry;
 - blanket leak containment everywhere.
 
-### F3 — vertical distribution is a genuine language gap
+The sequence changed the design instead of decorating it.
 
-The worked run produced the candidate **Accessible Vertical Service Zone**.
+## F3 — pattern occurrence is distinct from selection and evidence
 
-It passes the conceptual admission test and has credible professional/regulatory evidence anchors, but remains unnumbered until Phase 6 checks its scope and overlap against the full corpus.
+A project may select a pattern, instantiate it in one or more occurrences, and still owe technical evidence. The Reference House is never evidence for the pattern itself.
 
-### F4 — Water-Damage-Safe Service Route is probably a strategy
+## F4 — existing identity should be preserved where meaning survives
 
-The worked house required materially different physical responses for plant/manifold leakage, vertical pressurised water, kitchen branches, bathroom branches and drainage.
+Phase 6 found that most Core-12 identities are sound. Migration should not rename for novelty.
 
-Their shared invariant is failure performance rather than one physical relationship.
+- `HSA-P-001..005` survive;
+- `HSA-P-003` keeps identity but becomes **Coherent Horizontal Service Route**;
+- `HSA-P-006` is retired as a pattern and becomes water-failure strategy material;
+- `HSA-P-007..012` survive.
 
-**Phase-6 starting presumption:** demote current Core Pattern 06 to strategy and test narrower children separately.
+Retired IDs are never reused.
 
-### F5 — pattern occurrence is distinct from project intention
+## F5 — the old 30-slot publication inventory is not the language
 
-The Reference House now records provisional project occurrences separately from selected pattern identities and evidence state.
+Several slots were strategies, implementation families or undeveloped placeholders. Phase 6 reduced the target rather than preserving the count.
 
-This distinction should survive the migration.
+## F6 — implementation-shaped names were hiding stronger abstractions
 
-### F6 — horizontal distribution must remain service-aware
+Examples:
 
-The worked house did **not** justify one universal mixed-services spine.
+- `service skirting` + `vertical joinery route` → **Accessible Room Service Route**;
+- `Architectural Backplane` + `Fixing Infrastructure` → **Controlled Attachment Plane**;
+- `Seated Floor Structure` → structural-interface decomposition strategy + implementation challengers;
+- `Finish-Agnostic Floor Platform` → floor-layer strategy + experimental implementation;
+- `functional cornice` → Reference House expression of other patterns, not its own pattern.
 
-`HSA-P-003` survived only when interpreted as coherent horizontal route topology whose contents and geometry vary by service class. Phase 6 should test whether its current name encourages the wrong reading.
+## F7 — evidence maturity remains independent
 
-### F7 — Phase 5 passed because the method changed the design
-
-The sequence created real project geometry, rejected bad downstream patches, exposed missing reusable knowledge and corrected taxonomy.
-
-That is enough to justify auditing the rest of the corpus.
-
----
-
-## 10. Phase-5 gate decision
-
-**PASS.** Full-corpus **audit** is authorised.
-
-This does **not** authorise automatic full migration.
-
-Phase 7 remains blocked until Phase 6 produces a complete reviewed migration matrix.
-
-The Reference House itself remains provisional and continues independently as architectural/technical work.
+Phase-7 admission gives stable language identity; it does not claim physical validation. Patterns may remain Supported/Proposed while prototypes and professional review continue.
 
 ---
 
-## 11. Phase-6 mandate
+# 9. Phase-6 classification result
 
-Audit at minimum:
+## Existing active identities after migration
 
-- `docs/patterns/core-12.md`;
-- `docs/patterns/ground-supported-facade-access.md`;
-- `docs/patterns/reversible-assembly-candidates.md`;
-- the 30-item candidate inventory in `docs/manuscript/publication-architecture.md`;
-- `Accessible Vertical Service Zone`;
-- stronger abstractions hiding inside candidate assemblies.
+- `HSA-P-001` Controlled Utility Entry
+- `HSA-P-002` Plant Room as Service Hub
+- `HSA-P-003` Coherent Horizontal Service Route
+- `HSA-P-004` High-Service-Room Service Wall
+- `HSA-P-005` Designed Structural Penetration
+- `HSA-P-007` Permanent Opening / Replaceable Window
+- `HSA-P-008` Movement / Slip Junction
+- `HSA-P-009` Accessible Rainwater Route
+- `HSA-P-010` Source-Capture Kitchen Extract
+- `HSA-P-011` Roof Maintenance Route
+- `HSA-P-012` Physical Service Index
 
-For each proposition, record:
+`HSA-P-006` remains a retired historical identity.
 
-1. current identity/name;
-2. recommended classification;
-3. retain / rename / split / merge / demote / retire action;
-4. evidence state;
-5. likely pattern relations only where useful;
-6. sequence participation where known;
-7. formalisation boundary;
-8. migration risk / unresolved evidence.
+## New patterns authorised for stable IDs in Phase 7
 
-The objective is **fewer, clearer, more composable concepts**, not preservation of the old catalogue count.
+- Ground-Supported Façade Access
+- Accessible Vertical Service Zone
+- Accessible Room Service Route
+- Compartmented Service Void
+- Visible Leakage Path
+- Failure-Tolerant Wet Service Room
+- Permanent Opening / Replaceable Door
+- Designed Threshold
+- Source-Capture Bathroom Extract
+- Controlled Attachment Plane
+
+If migration finds no contradiction, this yields 21 active identities plus retired `P-006`. The number itself is meaningless.
+
+## Held candidates — no stable IDs yet
+
+- Replaceable Architectural Lining
+- Individually Isolatable Manifold Distribution
+- Local Deep Service Zone
+- Selective Floor Access / Selective Accessible Floor Zone
+
+## Strategies, not patterns
+
+- Fail-Safe Water Distribution
+- Decompose Structural Interface Functions
+- Separate Structural Floor from Changeable Layers Where Proportionate
+
+## Implementation families / expressions, not patterns
+
+- service skirting;
+- door-surround electrical route;
+- undercroft service topology;
+- pipe-in-pipe / withdrawable pipe;
+- Seated Floor Structure;
+- Finish-Agnostic Floor Platform;
+- functional cornice;
+- specific backplane rail/frame systems.
+
+## Explicitly rejected old slot
+
+- `Perimeter Dry Zone` — do not migrate as a canonical pattern; its bundled moisture/drainage/access functions are context-sensitive and partly conflict.
 
 ---
 
-## 12. Rollback and preservation rules
+# 10. Phase-7 migration rules
 
-- Do not rewrite `docs/source/house-design-doctrine-v7.md`.
-- Do not rewrite frozen computational runs merely to match new terminology.
-- Do not delete existing pattern prose until its replacement location is canonical and links are repaired.
-- Do not promote an experimental assembly because it has been assigned a pattern-shaped page.
-- Do not create a second database or registry as the source of truth; canonical content remains Markdown in the repository.
-- Do not build a graph visualisation before the graph survives the corpus audit.
-- Keep migration commits phase-oriented and reversible.
+The controlling detailed order/acceptance criteria are in [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md).
 
----
+Non-negotiable rules:
 
-## 13. Resume-from-here protocol
-
-A future collaborator or chat should recover context in this order:
-
-1. read root `README.md`;
-2. read `STATUS.md`;
-3. read this file;
-4. read [`../patterns/language-model.md`](../patterns/language-model.md);
-5. read [`pattern-language-phase5-review.md`](pattern-language-phase5-review.md);
-6. inspect the Phase-5 Reference House fixture/run if architectural context is needed;
-7. continue Phase 6 from the corpus audit matrix.
-
-When a phase changes state, update **this table and `STATUS.md` in the same work session**.
+1. create replacement canonical pages before deleting/superseding aggregate prose;
+2. assign stable IDs only to admitted patterns;
+3. keep `HSA-P-006` visibly retired for provenance;
+4. preserve source/research/prototype records rather than rewriting history;
+5. keep held candidates visibly non-canonical;
+6. keep strategies outside the pattern graph;
+7. keep graph links sparse;
+8. keep sequences separate;
+9. update Reference House occurrences only after canonical identities exist;
+10. no D3/graph visualisation during structural migration;
+11. docs build/navigation must pass at every merge checkpoint;
+12. if migration adds more bureaucracy than clarity, stop and simplify.
 
 ---
 
-## 14. Current next actions
+# 11. Rollback / preservation
 
-1. create the Phase-6 corpus audit matrix before editing canonical pattern prose;
-2. classify every Core 12 item and the reversible-assembly candidates first;
-3. reconcile those results with the 30-item publication inventory rather than assuming all 30 survive;
-4. decide the fate/name of `HSA-P-003`, Core Pattern 06 and Accessible Vertical Service Zone;
-5. only after the matrix is reviewed, authorise or reject Phase 7 full migration.
+- never rewrite `docs/source/house-design-doctrine-v7.md`;
+- never rewrite frozen computational runs merely to match new terminology;
+- never delete useful research/prototype evidence because classification changed;
+- never promote an assembly merely because a pattern-shaped page could be written;
+- Markdown remains the canonical content source; no parallel database/registry;
+- keep migration commits/PRs small enough to reverse coherently.
+
+---
+
+# 12. Resume-from-here protocol
+
+A future collaborator/chat should read, in order:
+
+1. root `README.md`;
+2. `STATUS.md`;
+3. this file;
+4. [`pattern-language-phase6-review.md`](pattern-language-phase6-review.md);
+5. [`pattern-language-corpus-audit.md`](pattern-language-corpus-audit.md) for detailed rationale;
+6. [`../patterns/language-model.md`](../patterns/language-model.md);
+7. Phase-5 Reference House run only when worked architectural context is needed.
+
+Then continue **Phase 7**, not another taxonomy discussion, unless new evidence genuinely contradicts the Phase-6 decision.
+
+When a phase crosses a gate, update this file and `STATUS.md` in the same work session.
+
+---
+
+# 13. Current next actions
+
+1. start Phase 7 on a fresh branch from the Phase-6 checkpoint;
+2. design the final file layout + identity/frontmatter map before moving prose;
+3. migrate surviving existing IDs first, including the P-003 rename and P-006 retirement;
+4. add the ten newly admitted identities;
+5. normalise strategies/implementation/candidate homes only after replacement pages exist;
+6. reconcile Part III and navigation after the canonical corpus is structurally complete.
