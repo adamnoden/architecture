@@ -1,4 +1,4 @@
-# House Design Doctrine — Publication Architecture v0.8
+# House Systems Architecture — Publication Architecture v0.8
 
 **Working form:** illustrated architectural design-research monograph + pattern catalogue + separate architect-facing implementation brief.  
 **Status:** v0.8 — editorial and computational-state sync after external-maintenance integration.
@@ -134,7 +134,7 @@ F. Bibliography and standards
 
 The project carries a parallel computational proposition: a constrained semantic building model may be compiled against explicit architectural, structural, construction, regulatory and evidence obligations.
 
-The canonical concept is [Executable Architecture — Computational Expression of the Long-Life House](../computational/executable-architecture.md); the current state and control documents are indexed in the [Computational Track](../computational/README.md).
+The canonical concept is [Executable Architecture — Computational Expression of House Systems Architecture](../computational/executable-architecture.md); the current state and control documents are indexed in the [Computational Track](../computational/README.md).
 
 The computational direction should remain **parallel to the publication rather than being forced into Part I–V**. It is consequential enough to deserve its own research track, but the publication should not present a paper-validated computational architecture as a finished software product.
 
