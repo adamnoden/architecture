@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House whole-house coordination fixture</title>
+  <desc id="desc">Schematic ground and upper floor plans of a two-storey courtyard house used to coordinate service topology. Front is south, rear garden is north, and the service-heavy zone is on the east and north-east.</desc>
+  <defs>
+    <style>
+      .outline{fill:#fff;stroke:#111;stroke-width:3}
+      .room{fill:#f7f7f7;stroke:#555;stroke-width:1.5}
+      .service{fill:#e8ecef;stroke:#222;stroke-width:1.8}
+      .court{fill:#fafafa;stroke:#111;stroke-width:2;stroke-dasharray:7 5}
+      .axis{stroke:#111;stroke-width:2;stroke-dasharray:8 7}
+      .route{fill:none;stroke:#444;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+      .riser{fill:#d7dce0;stroke:#111;stroke-width:2}
+      .label{font: 15px system-ui, sans-serif;fill:#111}
+      .small{font: 12px system-ui, sans-serif;fill:#333}
+      .head{font: 700 22px system-ui, sans-serif;fill:#111}
+      .sub{font: 14px system-ui, sans-serif;fill:#333}
+      .dim{font: 12px system-ui, sans-serif;fill:#555}
+      .north{font: 700 14px system-ui, sans-serif;fill:#111}
+    </style>
+  </defs>
+
+  <text x="60" y="42" class="head">Reference House — Whole-House Coordination Fixture 01</text>
+  <text x="60" y="66" class="sub">Phase-5 schematic only · 12.6 m × 11.4 m outer reservation · 3.6 m × 3.6 m open courtyard · front/south at bottom</text>
+
+  <!-- Ground floor -->
+  <g transform="translate(70,110)">
+    <text x="0" y="-18" class="head">Ground floor</text>
+    <rect x="0" y="0" width="504" height="456" class="outline"/>
+    <rect x="180" y="156" width="144" height="144" class="court"/>
+    <text x="252" y="225" text-anchor="middle" class="label">C-01</text>
+    <text x="252" y="245" text-anchor="middle" class="small">open courtyard</text>
+
+    <!-- south rooms -->
+    <rect x="0" y="300" width="180" height="156" class="room"/>
+    <text x="90" y="372" text-anchor="middle" class="label">G-DRAW-01</text>
+    <text x="90" y="392" text-anchor="middle" class="small">drawing / living</text>
+
+    <rect x="180" y="300" width="144" height="156" class="room"/>
+    <text x="252" y="372" text-anchor="middle" class="label">G-HALL-01</text>
+    <text x="252" y="392" text-anchor="middle" class="small">entrance + stair</text>
+
+    <rect x="324" y="300" width="180" height="156" class="room"/>
+    <text x="414" y="372" text-anchor="middle" class="label">G-STUDY-01</text>
+    <text x="414" y="392" text-anchor="middle" class="small">study / guest-capable</text>
+
+    <!-- west / north living -->
+    <rect x="0" y="156" width="180" height="144" class="room"/>
+    <text x="90" y="220" text-anchor="middle" class="label">G-FAM-01</text>
+    <text x="90" y="240" text-anchor="middle" class="small">family / dining</text>
+
+    <rect x="0" y="0" width="180" height="156" class="room"/>
+    <text x="90" y="72" text-anchor="middle" class="label">G-FAM-01</text>
+    <text x="90" y="92" text-anchor="middle" class="small">garden-facing territory</text>
+
+    <rect x="180" y="0" width="144" height="156" class="room"/>
+    <text x="252" y="70" text-anchor="middle" class="label">G-GARDEN-01</text>
+    <text x="252" y="90" text-anchor="middle" class="small">axial garden hall</text>
+
+    <!-- east service-heavy side -->
+    <rect x="324" y="156" width="180" height="144" class="service"/>
+    <text x="414" y="220" text-anchor="middle" class="label">G-KIT-01</text>
+    <text x="414" y="240" text-anchor="middle" class="small">high-service kitchen</text>
+
+    <rect x="324" y="0" width="180" height="156" class="service"/>
+    <line x1="390" y1="0" x2="390" y2="156" stroke="#555" stroke-width="1.3"/>
+    <line x1="456" y1="0" x2="456" y2="156" stroke="#555" stroke-width="1.3"/>
+    <text x="357" y="70" text-anchor="middle" class="small">back hall</text>
+    <text x="423" y="70" text-anchor="middle" class="small">utility / WC</text>
+    <text x="480" y="70" text-anchor="middle" class="small">plant</text>
+    <text x="414" y="124" text-anchor="middle" class="label">G-SVC-01</text>
+
+    <rect x="356" y="126" width="34" height="30" class="riser"/>
+    <text x="373" y="145" text-anchor="middle" class="small">R</text>
+
+    <!-- axis and service route -->
+    <line x1="252" y1="456" x2="252" y2="0" class="axis"/>
+    <polyline points="496,92 456,92 390,92 373,141 373,215 414,228" class="route"/>
+
+    <text x="252" y="480" text-anchor="middle" class="small">SOUTH / STREET / PRINCIPAL ENTRANCE</text>
+    <text x="252" y="-10" text-anchor="middle" class="small">NORTH / REAR GARDEN</text>
+    <text x="520" y="90" class="small">east service side</text>
+    <text x="520" y="108" class="small">utility + replacement route</text>
+  </g>
+
+  <!-- Upper floor -->
+  <g transform="translate(760,110)">
+    <text x="0" y="-18" class="head">Upper floor</text>
+    <rect x="0" y="0" width="504" height="456" class="outline"/>
+    <rect x="180" y="156" width="144" height="144" class="court"/>
+    <text x="252" y="225" text-anchor="middle" class="label">C-01</text>
+    <text x="252" y="245" text-anchor="middle" class="small">open to sky</text>
+
+    <rect x="0" y="300" width="180" height="156" class="room"/>
+    <text x="90" y="372" text-anchor="middle" class="label">B-S01</text>
+    <text x="90" y="392" text-anchor="middle" class="small">bedroom</text>
+
+    <rect x="180" y="300" width="144" height="156" class="room"/>
+    <text x="252" y="372" text-anchor="middle" class="label">L-01</text>
+    <text x="252" y="392" text-anchor="middle" class="small">landing / stair</text>
+
+    <rect x="324" y="300" width="180" height="156" class="room"/>
+    <text x="414" y="372" text-anchor="middle" class="label">B-S02</text>
+    <text x="414" y="392" text-anchor="middle" class="small">bedroom</text>
+
+    <rect x="0" y="156" width="180" height="144" class="room"/>
+    <text x="90" y="220" text-anchor="middle" class="label">B-S03</text>
+    <text x="90" y="240" text-anchor="middle" class="small">bedroom</text>
+
+    <rect x="0" y="0" width="324" height="156" class="room"/>
+    <text x="162" y="70" text-anchor="middle" class="label">B-P01</text>
+    <text x="162" y="90" text-anchor="middle" class="small">principal bedroom territory</text>
+
+    <rect x="324" y="156" width="180" height="144" class="service"/>
+    <line x1="414" y1="156" x2="414" y2="300" stroke="#555" stroke-width="1.3"/>
+    <text x="369" y="220" text-anchor="middle" class="label">BATH-01</text>
+    <text x="459" y="220" text-anchor="middle" class="label">ENS-01</text>
+    <text x="414" y="248" text-anchor="middle" class="small">shared service geography</text>
+
+    <rect x="324" y="0" width="180" height="156" class="service"/>
+    <text x="414" y="70" text-anchor="middle" class="label">U-SVC-01</text>
+    <text x="414" y="90" text-anchor="middle" class="small">linen / service access</text>
+
+    <rect x="356" y="126" width="34" height="30" class="riser"/>
+    <text x="373" y="145" text-anchor="middle" class="small">R</text>
+
+    <polyline points="373,141 373,215 414,228" class="route"/>
+    <line x1="252" y1="456" x2="252" y2="300" class="axis"/>
+
+    <text x="252" y="480" text-anchor="middle" class="small">SOUTH / FRONT</text>
+    <text x="252" y="-10" text-anchor="middle" class="small">NORTH / REAR</text>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(70,650)">
+    <rect x="0" y="0" width="18" height="18" class="room"/>
+    <text x="28" y="14" class="small">ordinary occupied room</text>
+    <rect x="180" y="0" width="18" height="18" class="service"/>
+    <text x="208" y="14" class="small">service-heavy / service-support zone</text>
+    <rect x="448" y="0" width="18" height="18" class="riser"/>
+    <text x="476" y="14" class="small">provisional vertical service reservation</text>
+    <line x1="750" y1="9" x2="800" y2="9" class="route"/>
+    <text x="815" y="14" class="small">primary service-topology path, schematic</text>
+  </g>
+  <text x="70" y="710" class="dim">Diagram is intentionally schematic. Wall thicknesses, doors, furniture, exact stair geometry and final room partitions are unresolved.</text>
+</svg>

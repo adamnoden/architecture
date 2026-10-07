@@ -40,6 +40,7 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
       page('HSA-P-005 — Designed Structural Penetration', '/docs/patterns/pilot/designed-structural-penetration'),
       page('HSA-P-012 — Physical Service Index', '/docs/patterns/pilot/physical-service-index')
     ]),
+    page('Accessible Vertical Service Zone candidate', '/docs/patterns/candidates/accessible-vertical-service-zone'),
     page('Core patterns', '/docs/patterns/core-12'),
     page('Ground-supported façade access', '/docs/patterns/ground-supported-facade-access'),
     page('Reversible assembly candidates', '/docs/patterns/reversible-assembly-candidates')
@@ -48,6 +49,8 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
   group('Reference house', [
     page('Reference house overview', '/docs/reference-house/'),
     page('Tectonic architectural language', '/docs/reference-house/tectonic-architectural-language'),
+    page('Whole-house coordination fixture', '/docs/reference-house/whole-house-coordination-fixture'),
+    page('Service topology run 01', '/docs/reference-house/service-topology-run-01'),
     page('Vertical bay options', '/docs/reference-house/vertical-bay-options'),
     page('Vertical bay coordination', '/docs/reference-house/vertical-bay-coordination'),
     page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan'),
@@ -89,6 +92,7 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     group('Development', [
       page('Development overview', '/docs/development/'),
       page('Pattern-language overhaul', '/docs/development/pattern-language-overhaul'),
+      page('Pattern-language Phase 5 review', '/docs/development/pattern-language-phase5-review'),
       page('Service-topology Reference House trial', '/docs/development/service-topology-reference-house-trial'),
       page('Manufacturing strategy', '/docs/development/manufacturing-strategy'),
       page('Prototype programme', '/docs/development/tectonic-prototype-programme'),
