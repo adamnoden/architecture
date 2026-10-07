@@ -1,51 +1,55 @@
 # House Systems Architecture
 
-House Systems Architecture is an architectural design-research programme for treating the house as a **coherent, evolving system rather than a finished object**. It asks how spatial order, structure, envelope, services, fittings, interfaces, maintenance, failure and future change can be deliberately organised across different lifetimes so that the house can be repaired, renewed and adapted without sacrificing architectural quality.
+Most architectural information describes a house at or near completion, while the building spends almost all of its life in use. Pipes leak, equipment is replaced, finishes wear, rooms are altered, and access that looked adequate on a drawing can prove useless once a person, tool or replacement component has to pass through it. Structure, envelope, services and fit-out change at different rates, but they continue to occupy the same building.
 
-The project develops that systems architecture at several levels: governing principles define the invariants; patterns encode reusable responses; a reference house forces them to compose; prototypes and professional review attack the weak points; an implementation brief translates mature findings into delivery requirements; and a bounded computational track asks which relationships can be made explicit enough to check or compile.
+**House Systems Architecture** is a design-research programme for that longer life. It treats the house as a set of interacting architectural and technical systems with different jobs, lifetimes and rates of change. The central design problem is how those systems should meet: how repair and replacement can remain local, how foreseeable failures can be detected and contained, how maintenance can be given real working space, and how one changing layer can avoid needlessly consuming another.
 
-The aim is not universal flexibility, technological maximalism or a software model disguised as architecture. It is a house whose systems are legible, serviceable and replaceable where useful; whose passive form and architectural order do the first work; and whose technical organisation supports rather than compromises solidity, repose and ordinary domestic life.
+Change is concentrated where it is useful rather than spread indiscriminately through the building. The project therefore pairs serviceability with settled spatial order, passive-first environmental design, ordinary replaceable parts and explicit interfaces. Any non-standard proposition still has to earn its place against life safety, building physics, whole-life cost, carbon, workmanship and architectural quality.
+
+The work moves from architectural principles to reusable patterns, then tests those patterns against research, a coordinated reference house, physical prototypes and professional review. Mature findings are translated into an architect-facing implementation brief. A parallel computational track investigates the smaller subset of architectural relationships that can be represented strongly enough for invalid arrangements to fail during authoring or compilation.
 
 ## Architectural position
 
-The public doctrine is the [eleven governing principles](docs/manuscript/governing-principles.md). In compressed form:
+The canonical public doctrine is the [eleven governing principles](docs/manuscript/governing-principles.md). At root level, the recurring moves are:
 
-- **Protect slow layers from fast ones.** Short-lived services, fittings and replaceable assemblies should not routinely consume long-lived fabric. Serviceability is pursued proportionately to the frequency, consequence and retrofit difficulty of the future event.
-- **Design interfaces, not just components.** Support, restraint, movement, sealing, finish, tolerance, access and disassembly should be deliberately resolved rather than left to brittle continuity or site improvisation.
-- **Design failure and maintenance spatially.** Foreseeable failures should be detectable, containable and repairable; maintenance needs approach routes, working space, isolation and withdrawal paths. This geography extends outside the envelope to façades, roofs, supporting ground, landscape, courtyards and site logistics.
-- **Prefer ordinary parts in robust arrangements.** Use standard components, familiar fabrication and clear datums where possible; concentrate invention where architectural arrangement or an interface genuinely earns it. The design should tolerate ordinary competent workmanship without depending on continual designer supervision.
-- **Let permanence remain architectural.** Adaptability belongs where change is useful; rooms, axes, stairs, structure and other defining relationships may deliberately endure. Maintainability must not make the house feel temporary, hollow or technical.
-- **Design for repose.** Ordinary domestic space should minimise unnecessary vigilance through physical comfort, spatial comprehensibility, privacy and retreat, local control and perceptual settlement. Richness is compatible with repose; gratuitous instability is not.
-- **Let passive architecture do the first work.** Form, envelope, orientation, shading, mass, openings, drainage and gravity should reduce dependence on active systems, while measured performance, health and resilience outrank ideological simplicity.
-- **Make construction and stewardship legible.** Tectonic honesty permits concealment but not falsification. Future owners and trades should be able to understand, isolate, maintain and alter the building without rediscovering it destructively.
+- **Design for the building after handover.** Maintenance, repair, replacement, adaptation and renewal are design events. Cheap provision for foreseeable change is valuable; speculative flexibility must justify itself.
+- **Separate lifetimes where separation buys something.** Short-lived services, fittings and replaceable assemblies should not routinely require long-lived fabric to be chased, perforated or demolished with them.
+- **Design the interface.** Support, restraint, movement, sealing, tolerance, access and disassembly are relationships to resolve explicitly rather than leftovers between components.
+- **Give failure and maintenance real geometry.** A visible component is not necessarily maintainable. Approach, working space, isolation, disconnection and withdrawal have to fit in the building and, where necessary, around it.
+- **Prefer ordinary parts in robust arrangements.** Standard components, familiar fabrication and clear datums are the default. Novelty belongs where an arrangement or interface earns it, and details should tolerate ordinary competent workmanship.
+- **Keep the house architectural.** Serviceability cannot justify poor rooms, technical clutter, hollow construction or fragile comfort. Repose, passive-first environmental design and tectonic honesty remain constraints on the system.
 
-No systems principle receives a free pass from life safety, legal compliance, structural integrity, health, building physics, whole-life cost, carbon or construction risk. Evidence, context-sensitive findings and architectural hypotheses are kept distinct.
+Evidence, context-sensitive findings and architectural hypotheses are kept distinct. A pattern may fail without invalidating the principle it was intended to serve.
 
-## Project form
+## How the project is organised
 
-The project is deliberately split into different kinds of output rather than forcing everything into one document:
+The programme has six linked outputs:
 
-1. **Illustrated monograph** — the architectural argument and governing principles.
-2. **Pattern catalogue** — reusable responses with forces, trade-offs, evidence, maturity and failure modes.
-3. **Reference house** — one coordinated worked interpretation used to expose cross-system conflicts; never evidence for the doctrine itself.
-4. **Prototype programme** — 1:1 and professional testing of the non-standard propositions before promotion.
-5. **Implementation brief** — architect-facing translation into project requirements, evidence, responsibilities and RIBA-stage decisions.
-6. **Computational track** — a parallel research programme asking which formal subset of the doctrine can become executable architecture: semantic building primitives, obligations, evidence and useful compile failures rather than arbitrary geometry checked only afterwards.
+| Output | Role |
+|---|---|
+| **Illustrated monograph** | Develops the architectural argument and governing principles for a professional reader. |
+| **Pattern catalogue** | Records reusable responses with their forces, trade-offs, evidence, maturity and failure modes. |
+| **Reference house** | Forces the principles and patterns to coexist in one coordinated house so that cross-system conflicts become visible. It is a worked interpretation, not evidence for the doctrine. |
+| **Prototype programme** | Subjects non-standard assemblies and details to 1:1 testing, conventional comparators and competent external attack before promotion. |
+| **Implementation brief** | Translates mature findings into project requirements, evidence, responsibilities and RIBA-stage decisions for an appointed design team. |
+| **Computational track** | Tests which bounded parts of the architecture can be expressed as semantic building relationships, obligations and evidence strongly enough to produce useful compile failures. |
 
 The working chain is:
 
 **Doctrine → Strategy → Pattern → Reference implementation → Delivery requirement → Test**
 
+Research, professional review and physical testing can qualify or kill a proposition at any stage. Negative evidence is a successful result when it prevents a weak idea from being promoted.
+
 ## Current phase
 
-**Convergence → validation.** The central architectural position is established; the project should no longer respond to every question by inventing another principle.
+**Convergence → validation.** The governing position is established. The main unanswered questions now require coordination, physical work or competent external judgement rather than more doctrine.
 
-The highest-value work now is to:
+The highest-value work is to:
 
-- complete and coordinate the reference house;
-- physically and professionally attack the non-standard assemblies and environmental/technical assumptions;
+- complete the reference house and force the architectural, structural, environmental and maintenance systems to resolve together;
+- test the non-standard assemblies and technical assumptions through prototypes and professional review;
 - finish the pattern catalogue and publication against those results;
-- run competent external review of the computational model and build only the minimal executable kernel needed to falsify or strengthen it before considering heavy CAD/compiler implementation.
+- externally review the computational model and build only the minimal executable kernel needed to test whether the formal proposition survives contact with software.
 
 For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.md](STATUS.md)**.
 
@@ -60,20 +64,18 @@ For the canonical maturity map, risks, stop rules and next gates, see **[STATUS.
 | **Editorial** | Canonical prose modes, stylistic controls and rewrite protocol | [Editorial doctrine](docs/editorial/editorial-doctrine.md) |
 | **Patterns** | Reusable architectural responses and experimental candidates | [Core patterns](docs/patterns/core-12.md) · [`docs/patterns/`](docs/patterns/) |
 | **Reference house** | Worked architectural/technical interpretation and coordination studies | [`docs/reference-house/`](docs/reference-house/) |
-| **Research** | Evidence syntheses, precedent, options appraisals and claim hardening | [`docs/research/`](docs/research/) |
-| **Development** | Internal integration, migration, manufacturing strategy and prototype/test programme control | [`docs/development/README.md`](docs/development/README.md) · [Prototype programme](docs/development/tectonic-prototype-programme.md) |
-| **Prototypes** | Concrete build/test artefacts, technical details and later test records/results | [`docs/prototypes/README.md`](docs/prototypes/README.md) · [W2 wall-bay build pack](docs/prototypes/w2-wall-bay-build-pack.md) |
+| **Research** | Evidence synthesis, precedent, options appraisal and claim hardening | [`docs/research/`](docs/research/) |
+| **Development** | Internal integration, manufacturing strategy and prototype/test programme control | [`docs/development/README.md`](docs/development/README.md) · [Prototype programme](docs/development/tectonic-prototype-programme.md) |
+| **Prototypes** | Build packs, drawings, test details and later test records/results | [`docs/prototypes/README.md`](docs/prototypes/README.md) · [W2 wall-bay build pack](docs/prototypes/w2-wall-bay-build-pack.md) |
 | **Delivery** | Translation into requirements for an appointed design team | [RIBA implementation brief template](docs/delivery/riba-implementation-brief-template.md) |
-| **Computational** | Executable-architecture research, paper compilation, evidence model and compiler gates | [Computational track index](docs/computational/README.md) |
+| **Computational** | Executable-architecture research, evidence model, paper compilation and compiler gates | [Computational track index](docs/computational/README.md) |
 
 ## Repository rules
 
-- **`docs/source/house-design-doctrine-v7.md` is source material, not the live book.** Preserve it for traceability rather than rewriting it in place.
-- **The governing principles are the primary public doctrine.** The older detailed register remains useful as traceability, not as the publication's front-end structure.
-- **A pattern may fail without invalidating the principle it serves.** Experimental systems stay experimental until calculation, representative-installer work and physical testing justify promotion.
-- **The reference house is a test vehicle and worked interpretation, not proof.** Project-specific choices must remain distinguishable from general doctrine.
-- **Negative evidence is useful.** A prototype, engineer or external reviewer killing an attractive idea is successful research.
-- **Architectural quality remains the constraint.** Maintainability, reversibility and technical legibility do not justify a house that is spatially poor, visually unsettled, acoustically hollow or disproportionately complex.
-- **The computational track remains subordinate to the architecture.** Its internal paper-compilation phase is complete; post-freeze doctrine changes are audited explicitly, external review and a minimal executable vertical slice come next, and heavy implementation remains gated.
-- **Repository structure and publication navigation are separate concerns.** A website may curate labels, routes and reading order, but the repository remains the source of truth and content should not be duplicated merely to serve the site.
-- **`STATUS.md` is the canonical answer to “where are we now?”** Track-specific documents own detailed TODOs; the root README should remain a durable map of what the project is and how the repo is organised.
+- **The governing principles are the primary public doctrine.** [`docs/source/house-design-doctrine-v7.md`](docs/source/house-design-doctrine-v7.md) is preserved source material and should not be rewritten in place.
+- **Patterns carry their own maturity.** An experimental response stays experimental until calculation, representative workmanship and physical or professional evidence justify promotion.
+- **The reference house is a coordination and test vehicle.** Project-specific choices must remain distinguishable from general doctrine.
+- **Architectural quality remains a hard constraint.** Maintainability, reversibility and technical legibility do not justify a house that is spatially poor, visually unsettled, acoustically hollow or disproportionately complex.
+- **The computational track remains subordinate to the architecture.** Its current purpose is to falsify or strengthen a bounded formal model, not to turn the project into a software pitch.
+- **Repository structure and publication navigation are separate concerns.** The repository remains the source of truth even where the documentation site presents a different reading order.
+- **`STATUS.md` owns current project state.** Track-specific documents own detailed TODOs; this README should remain a durable explanation of what the project is, how the work fits together and where to go next.
