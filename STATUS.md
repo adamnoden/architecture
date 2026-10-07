@@ -10,7 +10,7 @@ This file answers one question:
 
 It is intentionally higher-level than the detailed research programmes, integration registers and track-specific TODOs.
 
-The project is no longer primarily in open-ended doctrine discovery. The central architectural position is established. The current work is to complete the publication, coordinate the reference house, physically and professionally test the non-standard propositions, and begin only the smallest computational implementation justified by the completed paper research.
+The central architectural position is established. The current work is to coordinate the reference house, physically and professionally test the non-standard propositions, evolve the existing pattern catalogue into a tested pattern language without outrunning the architecture, finish the publication around those results, and begin only the smallest computational implementation justified by the completed paper research.
 
 ---
 
@@ -36,13 +36,14 @@ A frozen source document can be L4 even though the publication derived from it i
 | Workstream | Maturity | Current state | Next meaningful gate |
 |---|---:|---|---|
 | **Original doctrine / source corpus** | **L4** | House Design Doctrine v7 is preserved as source material; it should not be rewritten in place | maintain traceability while publication supersedes raw source prose |
-| **Public architectural position / governing principles** | **L3** | core thesis, selective permanence, tectonic honesty, workmanship robustness, repose and passive-first hierarchy are established; editorial overhaul complete on `editorial-overhaul` | evidence/figure hardening and later final proof in publication context |
-| **Publication architecture** | **L3** | monograph + pattern catalogue + separate implementation brief structure is established | complete missing publication content, graphic system and back matter |
-| **Preface** | **L3** | full editorial rewrite complete on `editorial-overhaul`; authorial/historical voice retained with reduced rhetorical density | final proof against completed book and citation presentation |
+| **Public architectural position / governing principles** | **L3** | core thesis, selective permanence, tectonic honesty, workmanship robustness, repose and passive-first hierarchy are established | evidence/figure hardening and later final proof in publication context |
+| **Publication architecture** | **L3** | monograph + reusable pattern layer + separate implementation brief remain the form; the pattern layer is being tested as a connected language before Part III is rearchitected | pass the pattern-language Reference House gate before rewriting Part III |
+| **Pattern-language migration** | **L2** | metamodel, authoring contract, six-pattern service-topology pilot and first generative sequence exist; first Reference House trial produced useful findings but correctly failed the whole-house composition gate | complete the Reference House service-topology coordination package, rerun Phase 5, then explicitly authorise/reject full corpus audit |
+| **Preface** | **L3** | full editorial rewrite complete; authorial/historical voice retained with reduced rhetorical density | final proof against completed book and citation presentation |
 | **Part I — The Proposition** | **L3** | substantial evidence-backed draft; editorial overhaul complete | diagrams, evidence presentation and whole-book integration |
 | **Part II — Architecture of the Platform** | **L3** | core interface/failure/maintenance/tolerance argument is coordinated and editorially hardened | complete figures and any remaining evidence/technical integration |
-| **Part III — Pattern Catalogue** | **L2** | core patterns and experimental candidates exist and have received an editorial consistency pass, but the planned catalogue is not complete | finish strongest patterns; keep experimental systems out until prototypes justify promotion |
-| **Part IV — Reference House** | **L2** | tectonic language, one coordinated vertical bay and A/B/C option study exist; no complete reference-house design yet | expand to a complete worked house and use it to expose cross-system conflicts |
+| **Part III — Pattern layer** | **L2** | Core 12 and experimental candidates exist; pilot now tests stable IDs, sparse pattern relations and generative sequences without duplicating canonical prose | do not migrate full catalogue until pattern-language Phase 5 passes |
+| **Part IV — Reference House** | **L2** | tectonic language, one coordinated vertical bay, A/B/C option study and new service-topology coordination brief exist; no complete reference-house design yet | provisional whole-house plan + service-demand/utility/hub/vertical/horizontal topology package |
 | **Part V — Making and Testing** | **L3** | substantial draft and validation philosophy exist; editorial overhaul complete | align with actual prototype/engineering results as they arrive |
 | **Evidence / precedent research** | **L3** | several deep evidence packages exist; coverage is strong but uneven across the eventual book | continue claim-by-claim hardening as chapters/patterns approach publication |
 | **Candidate reversible assemblies** | **L3** | four major candidates have survived first-principles/evidence hardening in constrained forms | structural engineering + 1:1 physical testing + conventional comparators |
@@ -51,7 +52,7 @@ A frozen source document can be L4 even though the publication derived from it i
 | **Computational paper research** | **L4** | S0→S1→S2→H1 whole-house paper sequence, mutations, red team and capability freeze complete | **stop major paper expansion** |
 | **Computational external validation** | **L1** | adversarial review pack exists; review has not occurred | structural + fire/building-control + building-services review |
 | **Compiler software implementation** | **L1** | minimal vertical slice is authorised; heavy implementation is not | source model → geometric well-formedness → obligations → evidence → selective invalidation → useful errors |
-| **Architect-facing delivery / RIBA brief** | **L2** | strong implementation-brief template exists and has received a controlled editorial pass | populate only as patterns/reference-house decisions become mature project requirements |
+| **Architect-facing delivery / RIBA brief** | **L2** | strong implementation-brief template exists | populate only as patterns/reference-house decisions become mature project requirements |
 | **Publication graphics / drawing language** | **L1–L2** | several useful SVGs exist, including repose and vertical-bay material | establish a consistent drawing/figure system and replace remaining prose/ASCII where diagrams carry the idea better |
 
 ---
@@ -65,7 +66,7 @@ The project has enough governing ideas.
 Do **not** respond to every new design question by inventing another doctrine principle. New findings should normally:
 
 - refine an existing principle;
-- become a pattern;
+- become a strategy or pattern;
 - become a reference-house decision;
 - become a test/evidence requirement;
 - or be rejected as unnecessary complexity.
@@ -91,7 +92,7 @@ Do **not** create another large paper scale, speculative ontology, full regulati
 
 ## 3. Repo-wide prose migration
 
-The controlled editorial overhaul is complete on `editorial-overhaul` across the public manuscript, patterns, reference-house explainers, delivery/prototype material and canonical computational explainers.
+The controlled editorial overhaul is complete across the public manuscript, patterns, reference-house explainers, delivery/prototype material and canonical computational explainers.
 
 The migration deliberately did **not** rewrite frozen source, research syntheses, historical computational runs or evidence records. Those remain provenance.
 
@@ -103,7 +104,7 @@ Further prose work should now be local and evidence-driven rather than another g
 
 ## A. Physical / engineering validation of the architecture
 
-This is currently the largest gap between an intellectually coherent doctrine and a credible building system.
+This remains the largest gap between an intellectually coherent doctrine and a credible building system.
 
 Immediate candidates already have explicit gates:
 
@@ -121,44 +122,63 @@ Immediate candidates already have explicit gates:
 
 The physical programme is defined in `docs/development/tectonic-prototype-programme.md`.
 
-## B. Complete the reference house
+## B. Complete the reference house — now also the pattern-language gate
 
-The reference house must become more than isolated detail research.
+The Reference House must become more than isolated detail research.
 
 Current assets:
 
 - tectonic architectural language;
 - complete vertical-bay coordination;
-- vertical-bay A/B/C option appraisal.
+- vertical-bay A/B/C option appraisal;
+- external access/maintenance plan;
+- service-topology generative sequence and Reference House coordination brief.
 
-Next work should coordinate one complete ordinary house across:
+The pattern-language pilot has made the next package unusually explicit. Advance a provisional whole-house plan far enough to produce:
 
-- architectural order;
-- permanent/changeable assembly hierarchy;
-- maintenance geography;
-- structure;
-- water/failure management;
-- passive-first environmental strategy;
-- service access;
-- openings/thresholds;
-- roof/external maintenance;
-- selected prototype outcomes.
+1. service-demand overlay;
+2. controlled utility-entry occurrence;
+3. actual plant/service hub with replacement geometry;
+4. vertical-distribution proposal plus at least one rejected alternative;
+5. high-service-room/service-wall opportunities;
+6. primary horizontal route with real depth/fall constraints;
+7. representative structural/boundary crossing register;
+8. water-failure strategy applied to real routes;
+9. initial pattern-occurrence register.
 
-The reference house remains **one worked interpretation**, never the evidence for the doctrine itself.
+Then rerun `docs/development/service-topology-reference-house-trial.md`.
 
-## C. Finish the publication as a publication
+**Do not begin the full pattern-corpus migration before this gate passes.**
+
+The Reference House remains one worked interpretation, never evidence for the doctrine itself.
+
+## C. Pattern language — preserve the gain, resist taxonomy work
+
+The first pilot has already produced useful findings:
+
+- graph relationships and generative sequence order are different structures and should remain separate;
+- explicit rewind conditions add real design value;
+- vertical service distribution is a confirmed missing pattern candidate;
+- current `Water-Damage-Safe Service Route` may be a strategy rather than one pattern;
+- project intention must be distinguished from an actual pattern occurrence.
+
+The next information should come from the Reference House, **not** from expanding the taxonomy in the abstract.
+
+Canonical control: `docs/development/pattern-language-overhaul.md`.
+
+## D. Finish the publication as a publication
 
 The global prose migration is no longer the main publication task. The remaining work is more architectural and editorially specific:
 
-1. finish the pattern catalogue to the level actually justified by evidence;
-2. develop Part IV from the completed reference-house work;
+1. let the pattern-language pilot settle before rearchitecting Part III;
+2. develop Part IV from the completed Reference House work;
 3. add/standardise diagrams and figure language where graphics explain better than prose;
 4. close remaining evidence, citation, glossary and back-matter gaps;
 5. perform a final proof only after the missing content and physical/professional findings have landed.
 
-The publication should remain an architectural work, not become a software pitch.
+The publication should remain an architectural work, not become a software pitch or taxonomy manual.
 
-## D. External professional attack
+## E. External professional attack
 
 Three reviews would now create disproportionately valuable information:
 
@@ -168,9 +188,9 @@ Three reviews would now create disproportionately valuable information:
 
 Negative findings are successful research outcomes.
 
-## E. Minimal compiler kernel
+## F. Minimal compiler kernel
 
-The software track is now allowed to begin, but only as a falsification instrument.
+The software track is allowed to begin, but only as a falsification instrument.
 
 The first vertical slice should demonstrate:
 
@@ -181,6 +201,8 @@ The first vertical slice should demonstrate:
 5. selective invalidation after change;
 6. supported/unsupported distinction;
 7. intelligible author-facing errors.
+
+Do not rebase the compiler around “pattern objects”. Patterns may later expose formal consequences; the semantic/obligation/evidence architecture remains primary.
 
 Do not begin with polished CAD, IFC round-tripping, general structural solving, a complete regulations engine or a Sims-like UI.
 
@@ -214,6 +236,10 @@ Passive-first is the governing hierarchy, not a predetermined system result. Hyb
 
 The research repo can expand indefinitely. The monograph must eventually select, compress and omit. Not every useful research document belongs in the publication.
 
+### R7 — pattern-language bureaucracy risk
+
+The pattern language fails if it becomes an ontology hobby, duplicates canonical prose, calls every good idea a pattern, or encodes chronology as a web of fake dependencies. The Reference House gate exists specifically to kill or simplify the migration before that happens.
+
 ---
 
 # Near-term project sequence
@@ -222,7 +248,11 @@ This is the current recommended order, not a rigid schedule.
 
 ### Architectural / physical track
 
-**prototype + engineer → complete reference house → feed results back into patterns/manuscript → final publication proof**
+**prototype + engineer in parallel with provisional whole-house Reference House → run service-topology coordination / Phase 5 gate → complete Reference House → feed validated results back into patterns/manuscript → final publication proof**
+
+### Pattern-language track
+
+**hold taxonomy expansion → get information from Reference House → rerun Phase 5 → only then corpus audit / full migration / publication rearchitecture**
 
 ### Computational track
 
@@ -243,9 +273,10 @@ This file is the canonical high-level project state.
 Update it when any of the following happens:
 
 - a major workstream crosses a maturity level;
-- a candidate pattern is promoted, held or rejected;
+- a candidate pattern is promoted, held, split, reclassified or rejected;
+- the pattern-language migration crosses a phase gate;
 - a prototype or competent external review materially changes a conclusion;
-- the reference house reaches a new integration stage;
+- the Reference House reaches a new integration stage;
 - the computational programme changes phase;
 - the publication architecture changes materially;
 - the recommended next three-to-five project actions change.
