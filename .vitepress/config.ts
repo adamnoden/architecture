@@ -24,6 +24,7 @@ export default defineConfig({
       level: [2, 3],
       label: 'On this page'
     },
+    sidebarMenuLabel: 'Contents',
     nav: [
       { text: 'Start reading', link: '/docs/reading-guide' }
     ],
