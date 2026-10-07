@@ -1,4 +1,4 @@
-# Executable Architecture — Computational Expression of the Long-Life House
+# Executable Architecture — Computational Expression of House Systems Architecture
 
 **Status:** concept paper v0.2 — research trajectory, not an implementation specification  
 **Purpose:** preserve the computational proposition in a form understandable without prior conversation context  
@@ -8,7 +8,7 @@
 
 ## 1. The proposition
 
-The Long-Life House already has several human-readable layers: doctrine, strategies, patterns, reference implementations, delivery requirements and tests. A computational expression would add another layer, but only for the subset that can be formalised honestly.
+House Systems Architecture already has several human-readable layers: doctrine, strategies, patterns, reference implementations, delivery requirements and tests. A computational expression would add another layer, but only for the subset that can be formalised honestly.
 
 The intuitive model is “draw a house, then run checks”. The stronger proposal reverses that order.
 
@@ -291,7 +291,7 @@ The opportunity is not to compile them away, but to give them a more explicit an
 
 ## 12. Mapping the doctrine into computation
 
-Many Long-Life House principles concern relationships that are plausible candidates for formalisation.
+Many of the project's governing principles concern relationships that are plausible candidates for formalisation.
 
 | Architectural doctrine | Possible computational expression |
 |---|---|
