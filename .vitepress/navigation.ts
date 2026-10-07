@@ -28,7 +28,18 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
   ], false),
 
   group('Patterns', [
-    page('Pattern catalogue', '/docs/patterns/'),
+    page('Pattern overview', '/docs/patterns/'),
+    page('Pattern-language model', '/docs/patterns/language-model'),
+    page('Service-topology sequence', '/docs/patterns/service-topology-sequence'),
+    group('Service-topology pilot', [
+      page('Pilot index', '/docs/patterns/pilot/'),
+      page('HSA-P-001 — Controlled Utility Entry', '/docs/patterns/pilot/controlled-utility-entry'),
+      page('HSA-P-002 — Plant Room as Service Hub', '/docs/patterns/pilot/plant-room-service-hub'),
+      page('HSA-P-003 — Horizontal Service Spine', '/docs/patterns/pilot/horizontal-service-spine'),
+      page('HSA-P-004 — High-Service-Room Service Wall', '/docs/patterns/pilot/high-service-room-service-wall'),
+      page('HSA-P-005 — Designed Structural Penetration', '/docs/patterns/pilot/designed-structural-penetration'),
+      page('HSA-P-012 — Physical Service Index', '/docs/patterns/pilot/physical-service-index')
+    ]),
     page('Core patterns', '/docs/patterns/core-12'),
     page('Ground-supported façade access', '/docs/patterns/ground-supported-facade-access'),
     page('Reversible assembly candidates', '/docs/patterns/reversible-assembly-candidates')
@@ -39,7 +50,8 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     page('Tectonic architectural language', '/docs/reference-house/tectonic-architectural-language'),
     page('Vertical bay options', '/docs/reference-house/vertical-bay-options'),
     page('Vertical bay coordination', '/docs/reference-house/vertical-bay-coordination'),
-    page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan')
+    page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan'),
+    page('Service topology coordination', '/docs/reference-house/service-topology-coordination')
   ]),
 
   group('Research', [
@@ -76,6 +88,8 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     ]),
     group('Development', [
       page('Development overview', '/docs/development/'),
+      page('Pattern-language overhaul', '/docs/development/pattern-language-overhaul'),
+      page('Service-topology Reference House trial', '/docs/development/service-topology-reference-house-trial'),
       page('Manufacturing strategy', '/docs/development/manufacturing-strategy'),
       page('Prototype programme', '/docs/development/tectonic-prototype-programme'),
       page('Tectonic honesty', '/docs/development/tectonic-honesty'),
