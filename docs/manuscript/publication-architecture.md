@@ -1,7 +1,9 @@
-# House Systems Architecture — Publication Architecture v0.8
+# House Systems Architecture — Publication Architecture v0.9
 
-**Working form:** illustrated architectural design-research monograph + pattern catalogue + separate architect-facing implementation brief.  
-**Status:** v0.8 — editorial and computational-state sync after external-maintenance integration.
+**Working form:** illustrated architectural design-research monograph + evidence-qualified pattern language + separate architect-facing implementation brief.  
+**Status:** v0.9 — pattern-language migration target recorded; Part III rearchitecture remains gated by the Reference House pilot.
+
+The existing 30-pattern catalogue plan below is currently a **candidate inventory**, not a locked taxonomy. The active migration is defined in [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md). Do not reorganise the full publication around the language model until that programme passes its Phase 5 Reference House gate.
 
 ## Front matter
 
@@ -56,9 +58,13 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
 12. **Legibility and stewardship**  
     Building record, physical index, change control and maintainability commissioning.
 
-## Part III — Pattern Catalogue
+## Part III — Pattern Language
 
-30 controlled patterns grouped as:
+The intended publication form is a browsable professional reference containing reusable patterns **and the relationships/sequences that materially help designers combine them**.
+
+The first pilot is documented in [HSA Pattern Language — Model and Authoring Contract](../patterns/language-model.md), the [Service-Topology Pilot](../patterns/pilot/README.md) and the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md).
+
+Until the Reference House gate passes, the following remains a candidate inventory rather than a promise that all entries are correctly classified as patterns:
 
 ### A. Service topology
 utility entry; plant hub; riser; horizontal spine; high-service wall; local deep zone; undercroft option.
@@ -78,8 +84,15 @@ perimeter dry zone; rainwater route; kitchen source capture; bathroom extraction
 ### F. Occupation and stewardship
 fixing infrastructure; physical service index.
 
-Every pattern uses:
-problem / forces / principle / diagram / variants / proportionality / boundary debt / permanent-fabric impact / construction variability and workmanship / occupation and repose impact where relevant / architectural resolution / assembly and replacement sequence / failure modes / evidence / maturity / reference-house choice.
+### Pattern-page target
+
+A mature pattern should contain, where applicable:
+
+context / problem / invariant pattern / forces / language relationships / diagram / variants or implementation families / proportionality / boundary debt / permanent-fabric impact / construction variability and workmanship / occupation and repose impact / architectural resolution / assembly and replacement sequence / failure modes / evidence / does-not-prove boundary / evidence + maturity / reference-house application / formalisation boundary.
+
+Stable pattern IDs are identity only. They do not encode category, scale, evidence state or publication order.
+
+Pattern relationships should remain sparse. Generative sequence order is a separate structure and should include explicit **rewind conditions** where downstream complexity is evidence that an earlier architectural decision should change.
 
 ### Candidate development track
 
@@ -90,6 +103,8 @@ The following systems are deliberately held outside the established core catalog
 - Replaceable Wall Lining;
 - Finish-Agnostic Floor Platform.
 
+The migration may reclassify some of these as implementation families rather than patterns. Migration itself is not promotion.
+
 ## Part IV — The Reference House
 
 13. Site and type  
@@ -99,7 +114,19 @@ The following systems are deliberately held outside the established core catalog
 17. Water and environmental systems  
 18. Future maintenance scenarios — include upper masonry repair, gutter/eaves renewal, chimney/roof repair, window cleaning versus full-frame replacement, courtyard access and mature-landscape replay
 
-The reference house is explicitly **one interpretation**, not proof of the doctrine.
+The Reference House is explicitly **one interpretation**, not proof of the doctrine or pattern language.
+
+During the pattern-language migration it also acts as an integration test. Service topology is the first trial; its current coordination brief is [Reference House — Service Topology Coordination](../reference-house/service-topology-coordination.md).
+
+As the house becomes geometrically real, record:
+
+- selected pattern IDs;
+- actual project occurrences rather than mere intentions;
+- selected implementation families;
+- conflicts between patterns;
+- rejected patterns/locations;
+- rewind events where later constraints force earlier architectural change;
+- missing reusable patterns exposed by the worked house.
 
 Each major non-standard decision shows:
 - option set;
@@ -117,7 +144,7 @@ Each major non-standard decision shows:
 22. Prototype and disassemble before repetition  
 23. Procurement without dilution  
 24. Commission maintainability — include verification that final landscape, levels, drainage, external plant and access gates have not consumed the intended external maintenance geography  
-25. Design review through failure, change and occupation scenarios — include task-specific external access scenarios rather than a generic assertion of façade accessibility
+25. Design review through failure, change and occupation scenarios — include task-specific external access scenarios rather than a generic assertion of façade accessibility; where useful, review whether technical difficulty is exposing a reason to rewind an earlier architectural decision
 
 ## Back matter
 
@@ -125,8 +152,9 @@ A. Evidence and precedent notes
 B. 63-item doctrine register mapped to eleven principles  
 C. Research agenda  
 D. Reference-house implementation schedule  
-E. Glossary  
-F. Bibliography and standards
+E. Pattern-language map / sequence notes if Phase 5 earns them  
+F. Glossary  
+G. Bibliography and standards
 
 ---
 
@@ -142,6 +170,7 @@ The current position is:
 
 - it is **not a governing principle** and does not replace the doctrine;
 - the doctrine remains meaningful independently of software;
+- the pattern language is also not the compiler ontology;
 - the formal architectural model, obligation/evidence architecture and bounded H1 paper tests now exist;
 - the internal paper sequence is complete through H1-PAPER-01 and the capability freeze;
 - external competent review remains open;
@@ -152,7 +181,7 @@ The current position is:
 The computational chain remains:
 
 ```text
-Doctrine
+Doctrine / selected architectural intent
    ↓
 Formal architectural model
    ↓
@@ -165,6 +194,8 @@ Resolved building model
 Production outputs + evidence
 ```
 
+Patterns may expose formal consequences that enter this chain, but do not become compiler rules by default.
+
 The architectural manuscript should not become a software pitch. The computational track earns publication space only where it clarifies or strengthens the architecture.
 
 **Integration boundary:** external maintenance geography has now received an explicit post-freeze computational coverage audit. Its semantics are representable, but whole-house external access/logistics have not yet been demonstrated in H1. The authorised executable extension fixture `EXT-MAINT-01` comes only after the minimal kernel succeeds.
@@ -176,7 +207,8 @@ A concise project document for the appointed architect, mapped to the RIBA Plan 
 For each requirement:
 - governing principle;
 - project requirement / target;
-- selected pattern or allowed alternatives;
+- selected mature pattern or allowed alternatives where relevant;
+- selected implementation family where the project has one;
 - performance evidence required;
 - owner;
 - decision deadline / RIBA stage;
@@ -193,8 +225,8 @@ This is the direct solution to the “transpilation” problem: the monograph ex
 
 # Structural decision
 
-**Do not merge Part III pattern catalogue back into Part II.**
+**Do not merge Part III pattern language back into Part II.**
 
-Part II should remain readable as architectural argument. The pattern catalogue should remain browsable as professional reference. Cross-references connect them.
+Part II should remain readable as architectural argument. Part III should remain browsable as professional reference if the language model survives the Reference House gate. Cross-references connect them.
 
-Likewise, **do not make the Reference House the evidence for the doctrine.** It is a worked interpretation and research vehicle.
+Likewise, **do not make the Reference House the evidence for the doctrine or patterns.** It is a worked interpretation, integration test and research vehicle.
