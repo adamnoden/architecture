@@ -8,7 +8,7 @@ This file answers one question:
 
 > **Where is the House Systems Architecture project actually at?**
 
-The central architectural position is established. The pattern-language overhaul is now through project/publication integration and has only lightweight metadata validation left before Phase 7 closes. The highest-value work outside that migration remains physical/professional validation and continued Reference House development.
+The central architectural position is established. The pattern-language overhaul is complete. Current work should now move to physical/professional validation, continued Reference House development, publication development from the stable language, and the bounded computational crosswalk/minimal kernel.
 
 ---
 
@@ -31,19 +31,20 @@ The central architectural position is established. The pattern-language overhaul
 |---|---:|---|---|
 | **Original doctrine / source corpus** | **L4** | House Design Doctrine v7 preserved as source material | maintain traceability while publication supersedes raw source prose |
 | **Public architectural position / governing principles** | **L3** | selective permanence, designed interfaces, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy established | evidence/figure hardening and final proof |
-| **Publication architecture** | **L3–L4 structurally** | v0.11 now organises Part III around the canonical 21-pattern language, strategies, held candidates and generative method | develop finished Part III/IV content and figures after Phase-7 close |
-| **Pattern-language migration** | **L4 at internal structure scope** | Phases 0–6 complete; P7.1–P7.5 complete; corpus, non-pattern homes, Reference House mapping and publication architecture are reconciled | P7.6 build-time identity/relationship validation → close Phase 7 |
+| **Publication architecture** | **L3–L4 structurally** | v0.11 organises Part III around the canonical 21-pattern language, strategies, held candidates and generative method | develop finished Part III/IV content and figures |
+| **Pattern-language migration** | **L4 — complete** | Phases 0–7 complete; canonical corpus, non-pattern homes, Reference House mapping, publication integration and build-time metadata validation all passed | reopen only if new architectural/physical evidence requires classification change |
 | **Preface** | **L3** | full editorial rewrite complete | final proof against completed book |
 | **Part I — The Proposition** | **L3** | substantial evidence-backed draft; editorial overhaul complete | diagrams, evidence presentation and whole-book integration |
 | **Part II — Architecture of the Platform** | **L3** | interface/failure/maintenance/tolerance argument coordinated and editorially hardened | complete figures and remaining evidence/technical integration |
-| **Part III — Pattern language** | **L3–L4 structurally** | primary architecture now uses 21 canonical patterns; old 30-slot inventory removed; strategies/candidates visibly distinct | P7.6 validation, then develop publication-quality figures/cross-links |
-| **Part IV — Reference House** | **L2–L3** | canonical Pattern Occurrence Register now separates actual occurrences, selected intent, strategies, candidates and evidence obligations; house remains provisional/unengineered | continue whole-house architectural/structural/environmental coordination |
+| **Part III — Pattern language** | **L3–L4 structurally** | canonical 21-pattern language is stable; old 30-slot inventory removed; strategies/candidates visibly distinct; metadata integrity enforced by docs build | publication-quality figures, evidence presentation and cross-links |
+| **Part IV — Reference House** | **L2–L3** | canonical Pattern Occurrence Register separates actual occurrences, selected intent, strategies, candidates and evidence obligations; house remains provisional/unengineered | continue whole-house architectural/structural/environmental coordination |
 | **Part V — Making and Testing** | **L3** | substantial draft and validation philosophy exist | align with actual prototype/engineering results |
 | **Evidence / precedent research** | **L3** | deep packages exist; targeted evidence closed taxonomy ambiguities | continue claim-by-claim hardening where physical/publication maturity needs it |
 | **Candidate reversible assemblies** | **L3 conceptually** | stronger strategies/candidates have explicit homes; implementation validity unresolved | structural engineering + 1:1 testing + conventional comparators |
 | **Physical prototype programme** | **L1–L2** | programme, acceptance criteria, W2 wall-bay build pack/drawings exist; no physical validation recorded | build/test wall bay; engineer/test floor edge; then floor platform/joint |
 | **Reference-house structural/technical design** | **L1–L2** | whole-house coordination geometry exists; structure, services, building physics/products remain concept-level | competent multidisciplinary coordination |
 | **Computational paper research** | **L4** | S0→S1→S2→H1 paper sequence, mutations, red team and capability freeze complete | stop major paper expansion |
+| **Computational crosswalk** | **L1** | now unblocked by stable pattern language; patterns must remain distinct from compiler ontology | map only formalisable pattern consequences into existing semantic/obligation/evidence model |
 | **Computational external validation** | **L1** | adversarial review pack exists; review not yet performed | structural + fire/building-control + building-services review |
 | **Compiler software implementation** | **L1** | minimal vertical slice authorised; heavy implementation not authorised | source model → well-formedness → obligations → evidence → invalidation → diagnostics |
 | **Architect-facing delivery / RIBA brief** | **L2** | strong implementation-brief template exists | populate only as decisions mature into requirements |
@@ -65,9 +66,9 @@ The internal paper sequence is complete through a bounded whole house. Next info
 
 The controlled global editorial overhaul is complete. Further prose work should be local, structural and evidence-driven.
 
-## 4. Pattern-language taxonomy and integration
+## 4. Pattern-language overhaul
 
-**Phases 0–6 and P7.1–P7.5 are complete.**
+**Phases 0–7 are complete.** See the [Phase 7 Gate Review](docs/development/pattern-language-phase7-review.md).
 
 Locked outcomes:
 
@@ -80,9 +81,10 @@ Locked outcomes:
 - current Reference House state is recorded in `docs/reference-house/pattern-occurrence-register.md`;
 - Phase-5 run/brief remain historical research records rather than current taxonomy;
 - Publication Architecture v0.11 uses the canonical language rather than the superseded 30-slot inventory;
-- the rejected **Perimeter Dry Zone** bundling has been removed from the current external-maintenance plan.
+- the rejected **Perimeter Dry Zone** bundling has been removed from the current external-maintenance plan;
+- the ordinary docs build now rejects malformed/duplicate IDs, invalid state/location combinations, unknown relationship targets and self-referential edges.
 
-Do not reopen taxonomy generally unless new evidence exposes a genuine contradiction.
+Do not restart catalogue/taxonomy migration. Reopen classification only when new evidence genuinely demands it.
 
 ---
 
@@ -101,7 +103,7 @@ Immediate gates:
 
 ## B. Continue the Reference House
 
-The [Pattern Occurrence Register](docs/reference-house/pattern-occurrence-register.md) is now the canonical pattern/project-state layer. The house itself remains provisional.
+The [Pattern Occurrence Register](docs/reference-house/pattern-occurrence-register.md) is the canonical pattern/project-state layer. The house itself remains provisional.
 
 Next work should:
 
@@ -109,38 +111,33 @@ Next work should:
 2. resolve stair/circulation/courtyard relationships;
 3. coordinate structure and `RH-P005-*` crossings with an engineer;
 4. develop passive-first environmental strategy against real orientation/openings;
-5. turn selected-intent patterns (window replacement, rainwater, extract, roof/façade access) into actual occurrences only when geometry supports them;
+5. turn selected-intent patterns into actual occurrences only when geometry supports them;
 6. coordinate courtyard drainage/external maintenance without recreating the rejected Perimeter Dry Zone bundle;
 7. feed prototype outcomes back into wall/floor/interface choices.
 
 Reference House use is never evidence for doctrine/pattern validity.
 
-## C. Pattern language — final Phase-7 task
+## C. Publication development
 
-### P7.6 — next
-
-Add build-time validation only:
-
-- unique stable IDs;
-- canonical ID format;
-- active/retired state/location consistency;
-- valid relationship references;
-- no self-referential graph edges;
-- optionally derived reverse references from the same frontmatter.
-
-Do not add D3, a second registry, graph-density scoring, noisy orphan checks or compiler semantics.
-
-When the normal docs build passes these checks, close Phase 7.
-
-## D. Publication development
-
-The publication architecture is now structurally correct. Remaining work is publication work rather than taxonomy repair:
+The publication architecture is structurally correct. Remaining work is publication work rather than taxonomy repair:
 
 1. develop Part III pages/figures around the canonical language;
 2. develop Part IV from the evolving Reference House/current occurrence register;
 3. standardise diagrams where graphics outperform prose;
 4. close evidence/citation/glossary/back-matter gaps;
 5. final proof after physical/professional findings land.
+
+## D. Computational crosswalk + minimal kernel
+
+Phase 8 is now unblocked, but the boundary remains strict: **patterns do not become compiler entities by default**.
+
+First crosswalk/kernel work should:
+
+1. identify only formalisable consequences of stable patterns;
+2. map those consequences into existing semantic relationships / obligations / evidence requirements;
+3. preserve architectural judgement outside the executable core;
+4. continue the minimal kernel: source model → well-formedness → obligations → evidence → invalidation → diagnostics;
+5. reassess before heavier CAD/solver/rule-pack work.
 
 ## E. External professional attack
 
@@ -151,20 +148,6 @@ High-value reviews:
 - **building-services / ventilation engineer** — passive-first strategy, service geography, domestic vertical-zone proportionality and computational evidence boundary.
 
 Negative findings are successful research outcomes.
-
-## F. Minimal compiler kernel
-
-Allowed only as a falsification instrument. First vertical slice:
-
-1. semantic identities/relationships;
-2. geometric/source well-formedness;
-3. derived obligations;
-4. scoped evidence;
-5. selective invalidation;
-6. supported/unsupported distinction;
-7. intelligible diagnostics.
-
-Do **not** rebase the compiler around pattern objects.
 
 ---
 
@@ -196,7 +179,7 @@ The repo can expand indefinitely. The monograph must select, compress and omit.
 
 ### R7 — pattern-language bureaucracy
 
-Phase 7 fails if the resulting structure is harder to author or understand than the catalogue it replaced. P7.6 must remain tiny.
+The migration is complete; resist accreting tooling or taxonomy around it unless a real maintenance problem appears.
 
 ---
 
@@ -208,11 +191,11 @@ Phase 7 fails if the resulting structure is harder to author or understand than 
 
 ### Pattern language
 
-**P7.6 lightweight validation → close Phase 7 → unlock Phase 8 crosswalk / remaining publication development**
+**Phase 7 closed → maintain canonical corpus under build-time validation; reopen classification only on real evidence**
 
 ### Computational
 
-**external review + minimal executable kernel → reassess thesis → only then heavier CAD/solvers/rule packs**
+**Phase 8 formalisable-consequence crosswalk + external review + minimal executable kernel → reassess thesis → only then heavier CAD/solvers/rule packs**
 
 ### Delivery
 
@@ -222,6 +205,6 @@ Phase 7 fails if the resulting structure is harder to author or understand than 
 
 # Status-maintenance rule
 
-Update this file when a major workstream crosses maturity, the language migration crosses a gate, prototype/professional review changes a conclusion, Reference House reaches a new integration stage, the computational programme changes phase, or recommended next actions materially change.
+Update this file when a major workstream crosses maturity, new evidence changes the language, prototype/professional review changes a conclusion, Reference House reaches a new integration stage, the computational programme changes phase, or recommended next actions materially change.
 
 Detailed TODOs live in track-specific control documents. This file should remain readable in a few minutes.
