@@ -3,7 +3,7 @@
 **Status:** internal paper-compilation phase complete; external review + minimal executable falsification prototype next  
 **Heavy implementation status:** deliberately gated
 
-This directory records the computational expression of the Long-Life House.
+This directory records the computational expression of **House Systems Architecture**.
 
 The architectural doctrine remains primary. The computational question is narrower: **which parts of that doctrine, together with structure, construction, regulation and evidence, can be represented strongly enough that invalid relationships are rejected during authoring or compilation rather than discovered only after drawing?**
 
