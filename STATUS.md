@@ -1,12 +1,12 @@
 # Project Status
 
 **Canonical project-wide status overview**  
-**Last updated:** 2026-10-06  
+**Last updated:** 2026-10-07  
 **Current phase:** **convergence → validation**
 
 This file answers one question:
 
-> **Where is the Long-Life House project actually at?**
+> **Where is the House Systems Architecture project actually at?**
 
 It is intentionally higher-level than the detailed research programmes, integration registers and track-specific TODOs.
 
