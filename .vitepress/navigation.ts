@@ -138,6 +138,7 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
       page('Development overview', '/docs/development/'),
       page('Pattern-language overhaul', '/docs/development/pattern-language-overhaul'),
       page('Pattern-language Phase 7 plan', '/docs/development/pattern-language-phase7-plan'),
+      page('Pattern-language Phase 7 review', '/docs/development/pattern-language-phase7-review'),
       page('Pattern-language Phase 6 review', '/docs/development/pattern-language-phase6-review'),
       page('Pattern-language corpus audit', '/docs/development/pattern-language-corpus-audit'),
       page('Pattern-language Phase 5 review', '/docs/development/pattern-language-phase5-review'),
