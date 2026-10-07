@@ -56,7 +56,16 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     ], false),
     group('Strategies', [
       page('Strategy overview', '/docs/patterns/strategies/'),
-      page('Fail-Safe Water Distribution', '/docs/patterns/strategies/fail-safe-water-distribution')
+      page('Fail-Safe Water Distribution', '/docs/patterns/strategies/fail-safe-water-distribution'),
+      page('Decompose Structural Interface Functions', '/docs/patterns/strategies/decompose-structural-interface-functions'),
+      page('Separate Structural Floor from Changeable Layers', '/docs/patterns/strategies/separate-structural-floor-changeable-layers')
+    ]),
+    group('Held candidates', [
+      page('Candidate overview', '/docs/patterns/candidates/'),
+      page('Replaceable Architectural Lining', '/docs/patterns/candidates/replaceable-architectural-lining'),
+      page('Individually Isolatable Manifold Distribution', '/docs/patterns/candidates/individually-isolatable-manifold-distribution'),
+      page('Local Deep Service Zone', '/docs/patterns/candidates/local-deep-service-zone'),
+      page('Selective Floor Access', '/docs/patterns/candidates/selective-floor-access')
     ]),
     group('Retired identities', [
       page('Retired pattern overview', '/docs/patterns/retired/'),
