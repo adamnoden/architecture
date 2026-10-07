@@ -12,6 +12,7 @@ Typical contents include:
 
 ## Active programme controls
 
+- [Architectural Specificity Boundary](architectural-specificity-boundary.md) — scope firewall between general HSA propositions, technical-domain restrictions, architectural grammars and Reference House choices;
 - [Pattern Language Overhaul — Migration Control](pattern-language-overhaul.md) — canonical state, phase table, preservation rules and resume protocol;
 - [Pattern-Language Phase 6 Gate Review](pattern-language-phase6-review.md) — formal PASS decision and controlling Phase-7 migration set/order;
 - [Pattern-Language Phase 6 Corpus Audit](pattern-language-corpus-audit.md) — full classification matrix across Core 12, specialised patterns, reversible candidates and old publication inventory;

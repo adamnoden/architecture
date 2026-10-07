@@ -51,6 +51,22 @@ A structural idea supported by research may therefore have:
 
 That separation is deliberate. Cross-link rather than duplicate.
 
+## Architectural specificity boundary
+
+Architectural specificity should enter at the narrowest layer that actually owns it.
+
+- **Doctrine** should survive a change of architectural style.
+- **Strategies and patterns** should remain reusable unless their scope explicitly names a grammar, typology or construction family.
+- **Supported-domain restrictions** describe technical competence, not architectural virtue.
+- **Architectural grammars** may be strongly opinionated about hierarchy, topology, proportion, composition, element families and historical lineage.
+- **Project and Reference House choices** may be more specific still.
+
+The current Reference House may therefore select a Georgian-derived grammar without making Georgian architecture part of House Systems Architecture itself. The same rule applies to less obvious assumptions such as symmetry, courtyard planning, cavity masonry, two storeys or a pitched roof: each must retain the scope that justifies it.
+
+A downstream preference may move upstream only after the underlying reason has been generalised and independently justified. Preserve the general principle upstream; keep the stylistic or project-specific implementation downstream.
+
+The active audit and promotion test are recorded in [`development/architectural-specificity-boundary.md`](development/architectural-specificity-boundary.md).
+
 ## Figures and assets
 
 Keep figures close to the material that owns them. SVG is preferred for technical diagrams where practical. A local `figures/` directory is appropriate when a document family accumulates several assets; otherwise a figure may sit beside its owning document.
