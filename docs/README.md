@@ -1,6 +1,6 @@
 # Documentation structure
 
-This directory is the source-of-truth corpus for the Long-Life House. Its structure reflects the **role a document plays in the project**, not the navigation of any particular website or publication.
+This directory is the source-of-truth corpus for **House Systems Architecture**. Its structure reflects the **role a document plays in the project**, not the navigation of any particular website or publication.
 
 A future documentation site may present these files through a different, curated information architecture. It should not duplicate or fork the underlying content.
 
