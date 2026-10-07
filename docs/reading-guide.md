@@ -1,3 +1,9 @@
+---
+next:
+  text: Preface
+  link: /docs/manuscript/preface
+---
+
 # How to read this project
 
 House Systems Architecture is not one document. It is a layered research programme in which different documents do different jobs. The website is organised to make those layers visible without turning the repository into a single linear book.
@@ -59,7 +65,7 @@ The **computational track** is subordinate to the architecture. It formalises on
 
 The left-hand navigation is the map of the whole published corpus. It is intentionally the same on every page. Major branches are collapsible, but every page published by the site appears somewhere in that tree.
 
-The right-hand **On this page** outline describes the structure of the document you are currently reading. Previous/next links at the bottom follow the order of the global tree, so the main manuscript can also be read sequentially.
+The right-hand **On this page** outline describes the structure of the document you are currently reading. Previous/next links at the bottom follow the global tree except where a deliberate reading route overrides them; from this page, **Next** enters the manuscript at the Preface.
 
 The repository remains the source of truth. The website is only a curated reading interface over the same Markdown and figures.
 
