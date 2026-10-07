@@ -59,6 +59,7 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
 
   group('Research', [
     page('Research overview', '/docs/research/'),
+    page('Pattern-language Phase 6 evidence', '/docs/research/pattern-language-phase6-targeted-evidence'),
     group('Human factors & repose', [
       page('Repose & low vigilance', '/docs/research/repose-and-low-vigilance'),
       page('Repose evidence audit', '/docs/research/repose-evidence-audit')
@@ -92,6 +93,8 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     group('Development', [
       page('Development overview', '/docs/development/'),
       page('Pattern-language overhaul', '/docs/development/pattern-language-overhaul'),
+      page('Pattern-language Phase 6 review', '/docs/development/pattern-language-phase6-review'),
+      page('Pattern-language corpus audit', '/docs/development/pattern-language-corpus-audit'),
       page('Pattern-language Phase 5 review', '/docs/development/pattern-language-phase5-review'),
       page('Service-topology Reference House trial', '/docs/development/service-topology-reference-house-trial'),
       page('Manufacturing strategy', '/docs/development/manufacturing-strategy'),
