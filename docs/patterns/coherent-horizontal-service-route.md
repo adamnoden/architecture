@@ -42,8 +42,6 @@ Room-by-room routing creates repeated crossings of structure and boundaries, sca
 
 **Bias horizontal distribution toward a coherent route or small family of routes from which shorter local branches serve rooms. The route may be an edge, circulation band, ceiling zone, floor-side zone or other proportionate architectural condition; it need not be one literal spine.**
 
-The Phase-6 migration deliberately changes the name from **Horizontal Service Spine**. The stable identity survives because the recurring problem and response are unchanged; the new title avoids implying one continuous central duct as the preferred implementation.
-
 ## Forces
 
 - the shortest individual route may not be the best whole-building route;
