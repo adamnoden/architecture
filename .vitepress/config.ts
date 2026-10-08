@@ -22,6 +22,16 @@ if (currentProgramme?.items) {
   }
 }
 
+const grammarStudy = computational?.items?.find((item) => item.text === 'Architectural grammar study')
+if (grammarStudy?.items && !grammarStudy.items.some((item) => item.link === '/docs/computational/g01-grammar-charter')) {
+  const researchBriefIndex = grammarStudy.items.findIndex((item) => item.link === '/docs/computational/g01-research-brief')
+  const insertionIndex = researchBriefIndex >= 0 ? researchBriefIndex : 1
+  grammarStudy.items.splice(insertionIndex, 0, {
+    text: 'G-01 grammar charter',
+    link: '/docs/computational/g01-grammar-charter'
+  })
+}
+
 const deliveryAndTesting = sidebar.find((item) => item.text === 'Delivery & testing')
 const prototypes = deliveryAndTesting?.items?.find((item) => item.text === 'Prototypes')
 if (prototypes?.items && !prototypes.items.some((item) => item.link === '/docs/prototypes/w2-wall-bay-test-protocol')) {
@@ -29,6 +39,35 @@ if (prototypes?.items && !prototypes.items.some((item) => item.link === '/docs/p
     text: 'W2 wall-bay evidence protocol',
     link: '/docs/prototypes/w2-wall-bay-test-protocol'
   })
+}
+
+const development = deliveryAndTesting?.items?.find((item) => item.text === 'Development')
+if (development?.items) {
+  const specificityPages = [
+    {
+      text: 'Architectural specificity boundary',
+      link: '/docs/development/architectural-specificity-boundary'
+    },
+    {
+      text: 'Architectural specificity audit',
+      link: '/docs/development/architectural-specificity-audit'
+    },
+    {
+      text: 'Architectural specificity claim ledger',
+      link: '/docs/development/architectural-specificity-ledger'
+    },
+    {
+      text: 'Architectural specificity adversarial test',
+      link: '/docs/development/architectural-specificity-adversarial-test'
+    }
+  ]
+
+  const insertionIndex = Math.min(1, development.items.length)
+  for (const addition of specificityPages.reverse()) {
+    if (!development.items.some((item) => item.link === addition.link)) {
+      development.items.splice(insertionIndex, 0, addition)
+    }
+  }
 }
 
 assertNavigationCoverage()

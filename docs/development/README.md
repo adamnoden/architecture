@@ -13,13 +13,15 @@ Typical contents include:
 ## Active programme controls
 
 - [Architectural Specificity Boundary](architectural-specificity-boundary.md) — scope firewall between general HSA propositions, technical-domain restrictions, architectural grammars and Reference House choices;
-- [Architectural Specificity Audit — Programme Control](architectural-specificity-audit.md) — phased repo-wide audit plan, claim dispositions, gates, stop rules and resume protocol for correcting style/morphology/construction authority leakage;
+- [Architectural Specificity Audit — Programme Control](architectural-specificity-audit.md) — phased repo-wide audit control and final gate state;
+- [Architectural Specificity Audit — Claim Ledger](architectural-specificity-ledger.md) — material claim-by-claim findings, dispositions and repair state;
+- [Architectural Specificity Audit — Adversarial Verification](architectural-specificity-adversarial-test.md) — materially different grammar/domain tests used to verify the abstraction outside G-01;
 - [Pattern Language Overhaul — Migration Control](pattern-language-overhaul.md) — canonical state, phase table, preservation rules and resume protocol;
 - [Pattern-Language Phase 6 Gate Review](pattern-language-phase6-review.md) — formal PASS decision and controlling Phase-7 migration set/order;
 - [Pattern-Language Phase 6 Corpus Audit](pattern-language-corpus-audit.md) — full classification matrix across Core 12, specialised patterns, reversible candidates and old publication inventory;
 - [Pattern-Language Phase 5 Gate Review](pattern-language-phase5-review.md) — worked-house method gate and provenance for the Phase-6 audit;
 - [Pattern-Language Pilot — Reference-House Trial 01](service-topology-reference-house-trial.md) — initial test that exposed the whole-house information gap;
-- [Tectonic Prototype Programme](tectonic-prototype-programme.md) — physical validation programme for non-standard assemblies.
+- [Tectonic Prototype Programme](tectonic-prototype-programme.md) — physical validation programme for non-standard assemblies and the general-evidence / Reference-House-fit authority split.
 
 It does **not** contain the prototype artefacts themselves. Build packs, test details, drawings and later test records belong in [`../prototypes/`](../prototypes/).
 

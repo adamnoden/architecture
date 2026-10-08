@@ -13,6 +13,24 @@ A panel tested on a bench proves little if the wall, acoustic boundary, fixing s
 
 A prototype is an evidence-generating experiment. Freeze the proposition and acceptance criteria before building; record deviations rather than silently redesigning through the test.
 
+## Evidence authority
+
+A prototype may answer two different architectural questions at once. Keep their verdicts separate.
+
+### General HSA evidence
+
+Does the proposition perform well enough, across its stated scope, to support a strategy, candidate or pattern claim?
+
+This evidence may include normal-use quality, robustness, reversibility, reinstatement, installer comprehension, tolerance recovery, technical performance, proportionality and comparison with excellent conventional construction.
+
+### Reference House / selected-grammar fit
+
+Does this particular implementation belong in the Reference House and its selected architectural language?
+
+For the current house this may include Georgian-derived composition, moulding hierarchy, joint placement, material expression and the project tectonic dialect.
+
+A Reference House fit pass **cannot promote a general HSA proposition**. A general HSA evidence pass likewise does not require the Reference House to select that implementation. Record both decisions independently whenever one specimen is used for both purposes.
+
 ## Common acceptance framework
 
 Every candidate prototype should be reviewed against seven categories.
@@ -33,7 +51,9 @@ Check rattle, squeak, rocking, hollow sound, waviness, joint quality, tactile so
 
 Does the visible result truthfully express or quietly conceal the real construction?
 
-Check cosmetic bridges across moving joints, false material expression, gratuitous technical exposure, whether visible metal performs real work, and whether the joint belongs to the composition.
+Check cosmetic bridges across moving joints, false material expression, gratuitous technical exposure, whether visible material or trim performs real work where it claims to, and whether the joint belongs to the composition.
+
+Target-language fit is a separate Reference House judgement where the specimen also tests a selected grammar.
 
 ### 4. Reversibility
 
@@ -79,7 +99,7 @@ The trial tests the design and information, not the installer. A system that wor
 
 ## Scope
 
-Build a full-height representative principal-room bay based on the W2 hybrid hypothesis, including:
+Build a full-height representative Reference House principal-room bay based on the W2 hybrid hypothesis, including:
 
 - dense masonry or realistic rigid wall analogue with at least one declared acceptable geometric deviation;
 - permanent parge/air-control treatment where relevant;
@@ -93,13 +113,14 @@ Build a full-height representative principal-room bay based on the W2 hybrid hyp
 - one ordinary fixing load;
 - one exceptional-load interface or explicit exclusion;
 - representative panel joint;
-- brass/bronze only where functionally justified.
+- brass/bronze only where functionally justified within the Reference House dialect.
 
 Build an excellent conventional control beside it or under directly comparable conditions.
 
-## Questions
+The specimen is deliberately Reference-House-specific in visible architecture. The evidence protocol determines which results may travel beyond that project expression.
 
-- Does it read as a serious Georgian room rather than technical fit-out?
+## General evidence questions
+
 - Does the wall feel solid?
 - Can one panel be removed without dismantling the bay?
 - Are primary boundaries independent of routine removal?
@@ -110,6 +131,12 @@ Build an excellent conventional control beside it or under directly comparable c
 - Can an unfamiliar competent installer establish datum and sequence from the issued information?
 - Does the system absorb declared background tolerance without arbitrary packing or filler?
 - Are out-of-range conditions obvious enough to stop rather than conceal?
+
+## Reference House / G-01 fit question
+
+- Does this particular visible implementation read as convincing architecture within the Georgian-derived Reference House rather than technical fit-out?
+
+Record this separately from the general evidence result. Failure of G-01 fit may reject the implementation for this house without invalidating the general candidate; success does not promote the candidate.
 
 ## Evidence gate
 
@@ -195,27 +222,35 @@ Record no reference-house preference until a structural engineer has compared th
 
 ---
 
-# Prototype P04 — Wall/ceiling tectonic joint
+# Prototype P04 — Reference House wall/ceiling tectonic joint
 
 ## Scope
 
-Build a 1:1 cornice / wall-lining / ceiling junction.
+Build a 1:1 Reference House cornice / wall-lining / ceiling junction.
+
+This is a project/tectonic-dialect prototype. Its general evidence concerns movement, removal, reinstatement and boundary performance; the use of cornice or brass/bronze belongs to the Reference House language.
 
 Test:
 
 - conventional quiet movement joint;
 - mechanically fixed cornice with concealed slip geometry;
-- restrained brass/bronze interface where appropriate.
+- restrained brass/bronze interface where appropriate to the Reference House dialect.
 
-## Questions
+## General evidence questions
 
 - What movement is accommodated?
 - Is the cover fixed only to the controlling assembly?
 - Can decoration accidentally lock the joint?
-- Does any metal read as functional rather than garnish?
-- Can the cornice be removed locally?
+- Can the cover be removed locally?
 - Are fire/acoustic/air obligations maintained?
-- Does the detail improve the room even if movement never becomes visible?
+- Does the detail remain robust after removal/reinstatement?
+
+## Reference House fit questions
+
+- Does any metal read as functional rather than garnish within the selected tectonic dialect?
+- Does the cornice/joint improve the room even if movement never becomes visible?
+
+Do not generalise the cornice or metal vocabulary from this prototype. Generalise only the interface behaviour that survives independent justification.
 
 ---
 
@@ -249,13 +284,22 @@ Compare every candidate with the best conventional alternative. Record initial m
 
 # Promotion decisions
 
-After prototype review assign one outcome:
+After prototype review assign two decisions where the specimen carries project-specific architectural expression.
+
+## General HSA evidence decision
 
 **Advance toward promotion** — normal-use quality, robustness and lifecycle value justify specialist technical validation; not yet a general pattern merely because a mock-up passed.  
-**Reference-house experimental** — suitable for controlled use but not general recommendation.  
 **Hold** — plausible but needs more work.  
 **Reject** — complexity, performance or architectural cost exceeds demonstrated benefit.
 
 Pattern promotion should require the evidence appropriate to the claim, not only prototype enthusiasm. For occupied surface systems this normally includes competent review of structural/fixing, fire, acoustic and building-physics consequences in addition to full-scale normal-use evidence.
+
+## Reference House selection decision
+
+**Reference-house selected** — the implementation satisfies the project's selected grammar/dialect strongly enough to continue, subject to its unresolved technical evidence.  
+**Reference-house experimental** — suitable only for controlled project development.  
+**Reference-house reject** — does not belong in this house even if the underlying general proposition remains viable.
+
+A Reference House selection decision never raises general pattern evidence or maturity by itself.
 
 Rejection is a successful research result. The doctrine should survive the failure of any particular implementation.

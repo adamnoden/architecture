@@ -1,14 +1,14 @@
 # Project Status
 
 **Canonical project-wide status overview**  
-**Last updated:** 2026-10-07  
+**Last updated:** 2026-10-08  
 **Current phase:** **validation / implementation falsification**
 
 This file answers one question:
 
 > **Where is the House Systems Architecture project actually at?**
 
-The central architectural position, canonical pattern language and pattern→computational crosswalk are established. The minimal executable compiler kernel and first executable pattern-crosswalk fixture have both passed. The project's highest-value remaining evidence is now physical, professional and whole-house architectural: prototypes, competent external attack, continued Reference House coordination and publication completion.
+The central architectural position, canonical pattern language and pattern→computational crosswalk are established. The minimal executable compiler kernel and first executable pattern-crosswalk fixture have passed. The architectural-specificity audit is also closed: HSA doctrine/patterns and the generic grammar/computational framework are explicitly separated from G-01, H1 technical scope and Reference House choices. The project's highest-value remaining evidence is physical, professional and whole-house architectural: prototypes, competent external attack, continued Reference House coordination and publication completion.
 
 ---
 
@@ -29,21 +29,23 @@ The central architectural position, canonical pattern language and pattern→com
 
 | Workstream | Maturity | Current state | Next meaningful gate |
 |---|---:|---|---|
-| **Original doctrine / source corpus** | **L4** | House Design Doctrine v7 preserved as source material | maintain traceability while publication supersedes raw source prose |
-| **Public architectural position / governing principles** | **L3** | selective permanence, designed interfaces, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy established | evidence/figure hardening and final proof |
-| **Publication architecture** | **L3–L4 structurally** | v0.11 organises Part III around canonical language, strategies, held candidates and generative method | develop finished Part III/IV content and figures |
+| **Original doctrine / source corpus** | **L4** | House Design Doctrine v7 preserved as source material, including historical style leakage | maintain provenance; do not rewrite frozen source to resemble current doctrine |
+| **Public architectural position / governing principles** | **L3** | selective permanence, designed interfaces, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy established and style-neutral | evidence/figure hardening and final proof |
+| **Architectural specificity / authority boundary** | **L4 — complete** | Gates 0–7 passed; doctrine, patterns, technical domain, grammar, project morphology/dialect and prototype evidence authority are explicitly separated | reopen only on real authority drift or when a materially different second grammar exposes a defect |
+| **Publication architecture** | **L3–L4 structurally** | v0.11 organises Part III around canonical language, strategies, held candidates and generative method; Reference House remains one interpretation rather than proof | develop finished Part III/IV content and figures |
 | **Pattern-language migration** | **L4 — complete** | Phases 0–7 complete; canonical corpus, non-pattern homes, Reference House mapping, publication integration and metadata validation all passed | reopen only when new architectural/physical evidence requires classification change |
 | **Pattern→computational crosswalk** | **L4 at internal mapping scope — complete** | Phase 8 crosswalked all 21 active patterns, three strategies and four held candidates; no new fundamental compiler abstraction required | maintain as provenance layer; reopen only if executable/physical evidence exposes a defect |
-| **Preface** | **L3** | full editorial rewrite complete | final proof against completed book |
-| **Part I — The Proposition** | **L3** | substantial evidence-backed draft; editorial overhaul complete | diagrams, evidence presentation and whole-book integration |
-| **Part II — Architecture of the Platform** | **L3** | interface/failure/maintenance/tolerance argument coordinated and editorially hardened | complete figures and remaining evidence/technical integration |
-| **Part III — Pattern language** | **L3–L4 structurally** | canonical 21-pattern language stable; strategies/candidates distinct; metadata integrity enforced | publication-quality figures, evidence presentation and cross-links |
-| **Part IV — Reference House** | **L2–L3** | Pattern Occurrence Register separates actual occurrences, selected intent, strategies, candidates and evidence obligations; house remains provisional/unengineered | continue whole-house architectural/structural/environmental coordination |
-| **Part V — Making and Testing** | **L3** | substantial draft and validation philosophy exist | align with actual prototype/engineering results |
+| **Preface** | **L3** | full editorial rewrite complete; situated material/architectural preferences remain authorial context rather than doctrine | final proof against completed book |
+| **Part I — The Proposition** | **L3** | substantial evidence-backed draft; explicitly distinguishes doctrine from Georgian/reference implementations | diagrams, evidence presentation and whole-book integration |
+| **Part II — Architecture of the Platform** | **L3** | interface/failure/maintenance/tolerance argument coordinated; specific traditional details explicitly treated as examples/project language | complete figures and remaining evidence/technical integration |
+| **Part III — Pattern language** | **L3–L4 structurally** | canonical 21-pattern language stable; strategies/candidates distinct; specificity audit found no style-bound invariant requiring migration | publication-quality figures, evidence presentation and cross-links |
+| **Part IV — Reference House** | **L2–L3** | Pattern Occurrence Register plus explicit authority stack separates HSA, technical families, G-01, site/programme, courtyard morphology, local dialect and tectonic dialect | continue whole-house architectural/structural/environmental coordination |
+| **Part V — Making and Testing** | **L3** | validation philosophy coordinated; material-specific wording generalised and prototype target-fit evidence separated from general evidence | align with actual prototype/engineering results |
 | **Evidence / precedent research** | **L3** | deep packages exist; targeted research closed taxonomy ambiguities | continue claim-by-claim hardening where physical/publication maturity needs it |
 | **Candidate reversible assemblies** | **L3 conceptually** | stronger strategies/candidates explicit; implementation validity unresolved | engineering + 1:1 testing + conventional comparators |
-| **Physical prototype programme** | **L1–L2** | programme, acceptance criteria and W2 wall-bay build pack/drawings exist; no physical validation recorded | build/test wall bay; engineer/test floor edge; then floor platform/joint |
+| **Physical prototype programme** | **L1–L2** | programme, acceptance criteria and W2 wall-bay build pack/drawings exist; general HSA evidence and Reference House/G-01 fit now require separate verdicts; no physical validation recorded | build/test wall bay; engineer/test floor edge; then floor platform/joint |
 | **Reference-house structural/technical design** | **L1–L2** | whole-house coordination geometry exists; structure, services, building physics/products remain concept-level | competent multidisciplinary coordination |
+| **Architectural grammar framework** | **L3 conceptually** | framework style-neutral; G-01 has independent domestic-grammar charter; G-01 rule set remains research-incomplete | continue G-01 derivation only where evidence warrants; later second grammar is strongest neutrality test |
 | **Computational paper research** | **L4 — frozen** | S0→S1→S2→H1 paper sequence, mutations, red team and capability freeze complete | stop major paper expansion |
 | **Computational external validation** | **L1** | adversarial review pack exists; review not yet performed | structural + fire/building-control + building-services review |
 | **Compiler software implementation** | **L3 at P0 falsification scope** | P0 kernel passed 17/17 executable tests; PAT-XW-01 passed 6/6; CI also typechecks and builds docs | freeze generic growth; add a fixture only when another workstream exposes a concrete high-value question |
@@ -124,6 +126,24 @@ P0 demonstrated:
 
 **Generic compiler/crosswalk growth is now frozen.** Keep the executable suites as regression tests.
 
+## 7. Architectural specificity audit
+
+**Gates 0–7 are complete.** See [programme control](docs/development/architectural-specificity-audit.md), [claim ledger](docs/development/architectural-specificity-ledger.md) and [adversarial verification](docs/development/architectural-specificity-adversarial-test.md).
+
+Locked outcomes:
+
+- HSA doctrine is style-neutral without becoming architecturally neutral;
+- all 21 active patterns and three strategies passed the portability audit;
+- H1 construction/morphology restrictions remain supported-domain competence, not architectural virtue;
+- the generic grammar framework does not require G-01 concepts;
+- G-01 is a Georgian-derived domestic grammar, independently selectable from HSA doctrine;
+- courtyard morphology and local Andalusian influence remain Reference House/project layers, not G-01 core by default;
+- Reference House tectonic language may remain Georgian/traditional and use brass/bronze without promoting that vocabulary upstream;
+- prototype general evidence and selected-grammar/Reference-House fit require separate verdicts;
+- a materially different architectural language and technical family passed the adversarial authority test.
+
+Do not reopen this as a standing taxonomy exercise. Reopen only if actual future work collapses those authority boundaries.
+
 ---
 
 # Highest-value unfinished work
@@ -134,14 +154,16 @@ This is now the largest gap between an intellectually coherent doctrine and a cr
 
 Immediate gates:
 
-1. **Controlled Attachment Plane + Replaceable Architectural Lining wall bay** — build 1:1 against first-rate plaster control, including imperfect background geometry and an unfamiliar competent installer.
+1. **Controlled Attachment Plane + Replaceable Architectural Lining wall bay** — build 1:1 against first-rate plaster control, including imperfect background geometry and an unfamiliar competent installer; record general HSA evidence separately from Reference House/G-01 fit.
 2. **Structural floor edge / Seated Floor challenger** — engineer comparison of ordinary certified restraint hanger, direct bearing + separate restraint and any custom alternative.
 3. **Finish-Agnostic Floor Platform** — walkable multi-panel comparison including a local-access-band alternative; tactile/acoustic solidity is non-negotiable.
-4. **Wall/ceiling tectonic joint** — conventional quiet joint versus mechanically honest/removable alternatives.
+4. **Reference House wall/ceiling tectonic joint** — conventional quiet joint versus mechanically honest/removable alternatives; generalise interface behaviour, not cornice/brass vocabulary.
 
 ## B. Continue the Reference House
 
 The [Pattern Occurrence Register](docs/reference-house/pattern-occurrence-register.md) is the canonical pattern/project-state layer. The house itself remains provisional.
+
+Use the [Reference House authority stack](docs/reference-house/README.md) while developing it.
 
 Next work should:
 
@@ -151,7 +173,8 @@ Next work should:
 4. develop passive-first environmental strategy against real orientation/openings;
 5. turn selected-intent patterns into actual occurrences only when geometry supports them;
 6. coordinate courtyard drainage/external maintenance without recreating the rejected Perimeter Dry Zone bundle;
-7. feed prototype outcomes back into wall/floor/interface choices.
+7. feed prototype outcomes back into wall/floor/interface choices;
+8. keep G-01 rules, courtyard project morphology and tectonic dialect distinguishable as the architecture develops.
 
 Reference House use is never evidence for doctrine/pattern validity.
 
@@ -174,6 +197,8 @@ The publication architecture is structurally correct. Remaining work is publicat
 3. standardise diagrams where graphics outperform prose;
 4. close evidence/citation/glossary/back-matter gaps;
 5. final proof after physical/professional findings land.
+
+Specific architectural examples are welcome; their authority must remain clear.
 
 ## E. Targeted computational extensions — only when earned
 
@@ -227,13 +252,19 @@ The language/crosswalk work is complete. Resist accreting taxonomy or tooling ar
 
 `PAT-XW-01` passed the first executable authority-separation test. Preserve that architecture as new fixtures arrive; pattern provenance must never masquerade as regulation, engineering or product authority.
 
+### R9 — worked-example authority drift
+
+The Reference House is the project's dominant concrete example. Repetition can make its Georgian grammar, courtyard morphology, masonry family or tectonic dialect feel inevitable even when the canonical layers remain formally separate.
+
+Control: **generalise the reason; localise the taste.** Use the architectural-specificity boundary when promoting any Reference House result upstream.
+
 ---
 
 # Near-term project sequence
 
 ### Architectural / physical
 
-**W2 wall-bay + structural floor-edge engineering + whole-house Reference House coordination → feed validated findings back into language/manuscript**
+**W2 wall-bay + structural floor-edge engineering + whole-house Reference House coordination → feed validated findings back into language/manuscript with evidence authority preserved**
 
 ### Professional validation
 
@@ -242,6 +273,10 @@ The language/crosswalk work is complete. Resist accreting taxonomy or tooling ar
 ### Pattern language
 
 **Phases 0–8 closed → maintain canonical corpus/crosswalk; reopen only on evidence**
+
+### Architectural specificity
+
+**Audit closed → ordinary boundary rule only → reopen on demonstrated authority drift or second-grammar failure**
 
 ### Computational
 

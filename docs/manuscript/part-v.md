@@ -1,7 +1,7 @@
 # The Long-Life House
 ## Part V — Making and Testing the Platform
 
-**Draft v0.2 — editorial refinement**
+**Draft v0.3 — architectural-specificity refinement**
 
 ---
 
@@ -104,7 +104,9 @@ The project favours ordinary parts in extraordinary arrangements. That principle
 
 ### Permanent construction
 
-Foundations, primary masonry, major structure and enduring envelope components may rationally be site-built and materially integrated. Their value lies partly in continuity, mass, weathering, structural clarity and permanence.
+Foundations, primary structure and enduring envelope components may rationally be site-built and materially integrated. Depending on the selected construction family, their value may lie in continuity, mass, weathering, structural clarity, craft or permanence.
+
+No one material family is implied by this layer. Masonry is one strong implementation where selected; another HSA house may establish permanence through a different construction system.
 
 ### Interface infrastructure
 
@@ -208,7 +210,7 @@ Repeated non-standard architecture should therefore pass through a **first artic
 
 ## What is being tested
 
-The prototype should include the real interfaces around the object. A wall panel without its corner, skirting, outlet, backplane and neighbouring panels is not a wall-system prototype. A floor panel on a table is not a floor prototype. A cornice profile without the moving junction behind it proves only the moulding.
+The prototype should include the real interfaces around the object. A wall panel without its corner, skirting, outlet, backplane and neighbouring panels is not a wall-system prototype. A floor panel on a table is not a floor prototype. A moulded or covered movement joint without the moving junction behind it proves only the visible piece.
 
 ## First-article sequence
 
@@ -230,6 +232,8 @@ If reversibility is claimed, **removal is part of acceptance**.
 The prototype is also architecture. Ask whether it belongs to the room, feels solid, sounds hollow or temporary, carries well-proportioned joints, and remains desirable even if nobody knows it can be removed.
 
 That last test prevents maintainability becoming an excuse for mediocre architecture.
+
+Where the specimen is designed for a selected grammar or project dialect, record that fit separately from the general performance evidence. A successful Reference House detail does not become a general HSA requirement by surviving a prototype.
 
 ## Failed prototypes
 
@@ -334,9 +338,11 @@ For significant visible interfaces ask:
 - does a decorative element imply a false structural or weathering condition?
 - is concealment achieved through a real architectural element?
 - is a joint hidden because it is resolved, or because nobody designed it?
-- is brass or bronze performing a genuine function?
+- where a conspicuous material, trim or joint is being used to signal movement, access, wear, protection or disassembly, is that signal grounded in a genuine role?
 
 This is not a policing of taste. It checks that the finished building still tells a coherent story about how it is made.
+
+A selected grammar or project dialect may add narrower material rules. The Reference House, for example, may ask the same question specifically of visible brass/bronze; HSA itself does not require that material vocabulary.
 
 ## The final test
 
