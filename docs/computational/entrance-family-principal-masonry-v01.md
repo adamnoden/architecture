@@ -1,12 +1,13 @@
 # Entrance Family ENTR-DOOR-MCW-01 — Principal External Doorset in Masonry Cavity Wall
 
-**Status:** H1 supported-family candidate v0.1  
-**Purpose:** represent the principal entrance as one composed interface spanning accessibility, threshold, security, weather, air, thermal continuity, structure, replacement and architectural arrival.  
-**Structural status:** opening/support topology native; head/masonry adequacy external under SAB-H1-01.
+**Status:** H1 paper-domain entrance family v0.1; product/junction/structural proof remains external  
+**Purpose:** represent one principal entrance as a composed interface spanning accessibility, threshold, security, weather, air, thermal continuity, structure, replacement and architectural arrival.  
+**Structural status:** opening/support topology belongs to the semantic model; head/masonry adequacy remains external under SAB-H1-01.  
+**Authority:** bounded H1 research family, not a Reference House doorset specification or universal HSA entrance type.
 
 > **The entrance is one threshold with several authorities, not a door plus six independent checklists.**
 
-## 1. Supported base family
+## 1. Base family
 
 - new detached dwelling;
 - principal private entrance;
@@ -16,29 +17,29 @@
 - ordinary external landing/approach;
 - explicit weather/air/thermal transitions;
 - Part-Q secure-doorset route;
-- permanent masonry opening / replaceable doorset.
+- longer-lived masonry opening / replaceable doorset relationship.
 
-Later families may add paired doors, sidelights or fanlights.
+Paired doors, sidelights, fanlights and other entrance architectures require another family or explicit extension.
 
 ## 2. Semantic composition
 
-The entrance participates in:
+The entrance may participate in:
 
-- PRINCIPAL_ARRIVAL;
-- ACCESS_ROUTE;
-- SECURITY;
-- WEATHER;
-- AIR;
-- THERMAL;
-- REPLACEMENT;
-- EGRESS contribution;
+- principal arrival;
+- access route;
+- security;
+- weather;
+- air;
+- thermal continuity;
+- replacement;
+- egress;
 - architectural hierarchy.
 
 These remain contextual relationships rather than permanent flags on the physical door object.
 
 ## 3. Accessibility
 
-For the frozen Category-1 H1 target, the principal entrance relationship contributes:
+For the bounded H1 target, the principal entrance relationship contributes:
 
 - site/approach route;
 - landing;
@@ -48,9 +49,7 @@ For the frozen Category-1 H1 target, the principal entrance relationship contrib
 
 The target owns the exact regulatory dimensions.
 
-The family chooses the stronger H1 base condition:
-
-**step-free accessible threshold**.
+H1 selects a **step-free accessible threshold** as its base research condition. That choice is deliberately stronger than simply leaving threshold form unresolved; it is still a domain/project choice rather than universal doctrine.
 
 The doorset itself never owns a whole Part-M pass.
 
@@ -66,22 +65,20 @@ The threshold must reconcile:
 - door operation;
 - replacement.
 
-It therefore composes directly with BF-GF-MCW-01.
+It composes directly with the selected ground-floor/wall perimeter family.
 
 A geometry change that improves accessibility but breaks drainage is not a pass.
 
 ## 5. Security
 
-The principal external doorset is in Part-Q scope for the H1 new-dwelling target.
-
-The compiler derives:
+Where the principal external doorset is in Part-Q scope, the target derives:
 
 - security applicability;
 - product-evidence requirement;
 - installation/fixing evidence;
-- any target-required principal-entrance provisions.
+- target-specific principal-entrance provisions.
 
-It does not hard-code one lock or proprietary doorset.
+The model does not hard-code one lock or commercial doorset.
 
 ## 6. Envelope contribution
 
@@ -97,19 +94,19 @@ THRESHOLD
 GROUND-FLOOR / WALL PERIMETER
 ~~~
 
-Changing the doorset may stale product/thermal/security evidence without changing the masonry opening.
+Changing the doorset may stale product, thermal or security evidence without changing the longer-lived masonry opening.
 
 ## 7. Structure
 
-Native:
+The semantic model may own:
 
 - opening identity;
 - head-support obligation;
 - jamb/residual-wall geometry;
-- fixing substrate identity;
+- fixing-substrate identity;
 - dependency graph.
 
-External:
+External evidence owns:
 
 - lintel/head adequacy;
 - masonry capacity;
@@ -118,22 +115,22 @@ External:
 
 ## 8. Replacement
 
-The doorset is replaceable independently of the permanent masonry opening.
+The doorset is intended to be replaceable independently of the masonry opening.
 
-Replacement must preserve/reinstate:
+Replacement must preserve or reinstate applicable:
 
 - security;
 - weather;
 - air;
-- thermal;
-- threshold;
+- thermal continuity;
+- threshold performance;
 - installation evidence.
 
-Routine replacement should not require destruction of permanent masonry.
+Routine doorset replacement should not require unnecessary reconstruction of the longer-lived opening.
 
 ## 9. Architectural arrival
 
-The entrance may be constrained by a grammar/project profile for:
+A grammar/project profile may constrain:
 
 - rank;
 - axis;
@@ -141,45 +138,47 @@ The entrance may be constrained by a grammar/project profile for:
 - surround;
 - relation to hall.
 
-Those obligations are separate from M/Q/envelope validity.
+Those obligations are separate from accessibility, security and envelope validity. A technically adequate entrance can fail the selected grammar, and architectural prominence cannot prove technical performance.
 
 ## 10. Workmanship and evidence
 
-Required process:
+A useful construction/evidence sequence is:
 
-1. construct permanent opening;
+1. construct longer-lived opening;
 2. survey opening and levels;
 3. confirm threshold/landing compatibility;
 4. select supported doorset;
 5. install/fix;
 6. complete envelope transitions;
-7. inspect before concealment.
+7. inspect consequential interfaces before concealment.
 
-Evidence may be shared at product-family level but installation remains occurrence-specific.
+Evidence may be reusable at product-family level, while installation remains occurrence-specific.
 
 ## 11. Mutations
 
 - reduce clear opening → accessibility re-evaluates;
 - add threshold upstand → access may fail while weather remains valid;
 - flatten threshold but remove drainage → access may pass while moisture fails;
-- substitute uncertified lookalike doorset → security evidence fails while geometry remains;
+- substitute unsupported lookalike doorset → security/product evidence fails while geometry remains;
 - change external landing level → access + moisture + threshold re-evaluate;
-- move entrance off architectural axis → grammar may fail while technical validity remains.
+- move entrance off a selected architectural axis → grammar may fail while technical validity remains.
 
-## 12. H1 posture
+## 12. H1 paper posture
 
 ~~~text
-principal-arrival semantics   NATIVE
-access applicability          TARGET/NATIVE
-threshold composition         SUPPORTED ROUTE
-weather/air/thermal           SUPPORTED ROUTE + EXTERNAL PRODUCT/JUNCTION EVIDENCE
-security applicability        TARGET/NATIVE
+principal-arrival semantics   H1 PAPER MODEL
+access applicability          TARGET
+threshold composition         BOUNDED FAMILY
+weather/air/thermal           FAMILY + EXTERNAL PRODUCT/JUNCTION EVIDENCE
+security applicability        TARGET
 secure doorset performance    EXTERNAL PRODUCT EVIDENCE
-structural topology           NATIVE
+structural topology           SEMANTIC
 head/masonry adequacy         EXTERNAL STRUCTURAL EVIDENCE
-replacement                   NATIVE SEMANTICS
+replacement                   SEMANTIC / PROJECT REQUIREMENT
 fire/escape contribution      BUILDING-SCOPE
 ~~~
+
+The family closed one H1 interface-composition problem. It did not select the Reference House entrance or establish a release-ready doorset detail.
 
 ## 13. Source anchors
 
