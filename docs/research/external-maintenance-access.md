@@ -1,6 +1,6 @@
 # External Maintenance Access — Research Synthesis
 
-**Status:** evidence synthesis for doctrine integration  
+**Status:** current evidence synthesis supporting Principle 5 and the Reference House external-maintenance strategy  
 **Purpose:** establish the professional and regulatory basis for extending Maintenance Geography from internal service access to the exterior of the house.
 
 ## Research question
@@ -81,7 +81,7 @@ A credible roof-maintenance strategy must continue beyond the point of arrival. 
 
 HSE's fragile-surface guidance reinforces this. Work on or near fragile surfaces requires precautions regardless of duration; rooflights are specifically identified as a recurring hazard.
 
-The doctrine should therefore prefer reducing roof-mounted maintenance demand first, then providing a coherent route for what remains. A rear roof hatch may be an excellent reference-house solution, but it should be selected only if it materially improves the complete work sequence.
+The doctrine should therefore prefer reducing roof-mounted maintenance demand first, then providing a coherent route for what remains. A rear roof hatch may be an excellent Reference House solution, but it should be selected only if it materially improves the complete work sequence.
 
 **Primary sources**
 
@@ -126,7 +126,7 @@ That changes the architectural reading of the land immediately around a building
 
 Singapore's Building and Construction Authority has developed this idea further through Design for Maintainability and its Façade Access Design Guide. The useful transferable principle is not any particular Singaporean dimension or scoring system, but the explicit treatment of façade access, maintenance routes, working/landing areas and obstruction by surrounding site elements as upstream design matters.
 
-For a house, this suggests that the perimeter dry zone, paths, hard landscape and selected planted areas should be coordinated with future access rather than designed independently.
+For a house, the immediate ground plane, paths, hard landscape and selected planted areas should therefore be coordinated with future access rather than designed independently. Where wall-base drainage or splashback control also needs a margin beside the building, the same geometry may serve both purposes only when the moisture and temporary-support requirements are technically compatible.
 
 The doctrine should **not** prescribe a universal clear strip around every house. Scaffold, tower and MEWP requirements vary. A blanket dimension would produce wasted site area on some elevations and insufficient provision on others.
 
@@ -183,7 +183,7 @@ The architectural implication is independent of software:
 
 A credible maintenance task may require an approach path, working volume, equipment footprint, opening/swept volume, disconnection clearance and withdrawal path. If another element occupies that space, the conflict is real even though no two constructed components clash.
 
-This aligns closely with the doctrine's existing Maintenance Geography concept and should be allowed to inform future computational work, but that implementation is intentionally left to the separate computational workstream.
+This aligns closely with the doctrine's existing Maintenance Geography concept and can inform future evidence-selected computational fixtures without making this research note a compiler specification.
 
 **Research source**
 
@@ -191,9 +191,9 @@ This aligns closely with the doctrine's existing Maintenance Geography concept a
 
 ---
 
-## 8. Proposed doctrinal concept: the external maintenance envelope
+## 8. External maintenance envelope
 
-The project should use **external maintenance envelope** to mean the spatial provision necessary for a specified exterior maintenance task. It is not the weather/thermal envelope of the building.
+The project uses **external maintenance envelope** to mean the spatial provision necessary for a specified exterior maintenance task. It is not the weather/thermal envelope of the building.
 
 For a given task, the envelope may include:
 
@@ -225,11 +225,9 @@ And for external work:
 
 ---
 
-## 9. Reference-house consequences
+## 9. Reference House consequences
 
-The reference house should eventually demonstrate the doctrine through an **External Access & Maintenance Plan**, not merely through notes on individual details.
-
-That plan should test at least:
+The research is carried into the [Reference House External Access & Maintenance Plan](../reference-house/external-access-maintenance-plan.md), which tests:
 
 - principal and courtyard façade scaffold/tower access;
 - effects of bays, porticos and low roofs;
@@ -242,24 +240,22 @@ That plan should test at least:
 - dependence on neighbouring land or highway occupation;
 - movement of materials and waste from work face to site entrance.
 
-The current architectural preference for a courtyard and potentially Georgian-derived projections remains valid. The maintenance analysis is a coordination discipline, not a reason to flatten the architecture.
+The current courtyard morphology and G-01-derived projections remain project choices. Maintenance analysis is a coordination discipline, not a reason to flatten the architecture.
 
 ---
 
-## 10. Integration decision
+## 10. Integration state
 
-This research does **not** justify a new governing principle.
+This research does **not** justify a new governing principle. It deepens Principle 5 — **Give maintenance a geography**.
 
-It deepens Principle 5 — **Give maintenance a geography**.
+Its current homes are:
 
-The appropriate publication architecture is:
-
-- governing principle: one concise extension covering exterior access and support geography;
-- Part II §8: developed argument for internal and external maintenance topology;
-- pattern catalogue: dedicated ground-supported façade-access pattern, plus strengthened reading of roof-maintenance, rainwater and opening patterns;
+- governing principle: exterior access and support geography within Principle 5;
+- Part II §8 and the external-maintenance manuscript insert: developed architectural argument;
+- canonical patterns: [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md), [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md), [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) and related opening patterns;
 - Reference House: project-specific external access and maintenance plan;
-- implementation brief: require the access strategy early enough that façade, roof, landscape and site geometry can still change;
-- computational workstream: no change in this integration pass; future implementation may consume the architectural requirements once its maintainability model is ready.
+- delivery brief: access requirements early enough that façade, roof, landscape and site geometry can still change;
+- computational track: possible evidence-selected maintainability fixtures only where a concrete workstream earns them; this note does not authorise generic compiler growth.
 
 ## Evidence boundary
 
@@ -279,4 +275,4 @@ The following remain project-specific design decisions rather than universal rul
 - whether every elevation requires the same access method;
 - whether a specific bay, portico, tree or landscape element is acceptable;
 - whether internal window cleaning is always preferable;
-- the precise geometry of the reference house's external maintenance envelope.
+- the precise geometry of the Reference House external maintenance envelope.
