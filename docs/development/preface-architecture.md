@@ -1,9 +1,12 @@
 # Preface Architecture — *The Obvious, Eventually*
 
-**Status:** rhetorical control for first draft  
-**Target length:** approximately 3,000–4,000 words  
+**Status:** historical rhetorical control — first-draft architecture completed; retained as editorial provenance  
+**Published working manuscript:** [Preface — The Obvious, Eventually](../manuscript/preface.md)  
+**Target length at the time:** approximately 3,000–4,000 words  
 **Form:** first-person literary essay with quiet section breaks; no numbered headings in publication  
 **Audience:** architects, engineers, fabricators, building physicists, conservation-minded practitioners and serious clients.
+
+> The instructions below record the architecture used to produce the preface. Imperatives such as “must”, “should” and “candidate” describe that editorial stage; the manuscript itself is now the reader-facing authority.
 
 ## Job of the preface
 
