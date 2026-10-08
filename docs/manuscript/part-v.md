@@ -1,8 +1,6 @@
 # The Long-Life House
 ## Part V — Making and Testing the Platform
 
-**Draft v0.3 — architectural-specificity refinement**
-
 ---
 
 # 19. Whole-life value and proportionality
@@ -27,7 +25,7 @@ Novelty earns nothing by itself. Every non-standard pattern should be compared w
 
 A replaceable wall lining should compete with a good durable plaster or drylining system. A finish-agnostic floor platform should compete with a high-quality conventional floor. A seated floor connection should compete with an ordinary engineered joist hanger.
 
-The candidate wins only if its serviceability, quality, resilience or architectural value justifies the added burden.
+The candidate is justified only if its serviceability, quality, resilience or architectural value outweighs the added burden.
 
 ## The option record
 
@@ -147,7 +145,7 @@ For a faster-changing layer ask:
 - does controlled manufacture reduce destructive wet work?
 - can it still tolerate the imperfect geometry of the real building?
 
-Off-site manufacture should lose where logistics, carbon, one-off geometry or craftsmanship make site work better. The doctrine is a service-life argument, not an MMC manifesto.
+Off-site manufacture should lose where logistics, carbon, one-off geometry or craftsmanship make site work better. The relevant test is the whole-life result; off-site manufacture is not an end in itself.
 
 ## Allocate workmanship deliberately
 
@@ -239,7 +237,7 @@ Where the specimen is designed for a selected grammar or project dialect, record
 
 Failure is useful. If a removable floor cannot match the acoustic and tactile quality of a conventional floor, reject it. If panelised lining requires so many special clips and gaskets that repair becomes less intelligible than plaster, reject it. If a seated floor detail adds structural ambiguity without meaningful benefit, use the conventional hanger.
 
-The doctrine should survive the death of its favourite implementation.
+A failed implementation should be rejected without protecting it for doctrinal reasons.
 
 ---
 
