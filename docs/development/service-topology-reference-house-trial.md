@@ -1,8 +1,10 @@
 # Pattern-Language Pilot — Reference-House Trial 01
 
-**Status:** Phase 5 in progress; first application complete, gate not yet passed  
-**Sequence under test:** [`../patterns/service-topology-sequence.md`](../patterns/service-topology-sequence.md)  
-**Reference material reviewed:** [`../reference-house/README.md`](../reference-house/README.md), [`../reference-house/tectonic-architectural-language.md`](../reference-house/tectonic-architectural-language.md), [`../reference-house/vertical-bay-coordination.md`](../reference-house/vertical-bay-coordination.md)
+**Status:** historical Phase-5 trial — superseded by completed Phase 5–8 work  
+**Sequence tested at the time:** the service-topology pilot that preceded the current [canonical sequence](../patterns/service-topology-sequence.md)  
+**Current project state:** [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md)
+
+> **Historical record.** This trial captured the first honest failure to run the service-topology sequence against an underdeveloped Reference House. Its findings were subsequently acted on: whole-house coordination geometry was created; vertical distribution became canonical `HSA-P-014 — Accessible Vertical Service Zone`; `HSA-P-003` became **Coherent Horizontal Service Route**; water-failure material was reclassified under the **Fail-Safe Water Distribution** strategy; the Reference House now has explicit project occurrences; and Phases 6–8 have passed. The body below is preserved as the Phase-5 reasoning that produced those outcomes. Statements such as “current state”, “required decision” and “next gate” refer to that historical trial.
 
 ## Purpose
 
