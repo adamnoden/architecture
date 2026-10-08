@@ -98,7 +98,7 @@ External gutters, internal drainage and deep/gutterless eaves each remain contex
 
 ## Reference House application
 
-The Reference House compares ordinary external gutters/downpipes with deeper-eaves alternatives rather than preserving any earlier preference automatically. The chosen route must also coordinate with external maintenance geography.
+The Reference House compares ordinary external gutters/downpipes with deeper-eaves alternatives. The chosen route must also coordinate with external maintenance geography.
 
 ## Formalisation boundary
 
