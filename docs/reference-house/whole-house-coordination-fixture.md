@@ -1,12 +1,12 @@
 # Reference House — Whole-House Coordination Fixture 01
 
-**Status:** provisional Phase-5 coordination fixture; not a final architectural design  
-**Purpose:** provide enough honest whole-house geometry to test service topology, maintenance geography and pattern composition before the Reference House is developed in detail.  
+**Status:** provisional whole-house coordination fixture; not a final architectural design  
+**Purpose:** provide enough explicit whole-house geometry to coordinate service topology, maintenance geography and pattern composition.  
 **Companion drawing:** [whole-house-coordination-fixture.svg](whole-house-coordination-fixture.svg)
 
-This fixture exists because the pattern-language migration reached a legitimate gate: the project had strong doctrine and detail-scale work but no whole-house geometry against which service patterns could actually compose.
+This fixture is the current provisional geometry for whole-house coordination. It gives the Reference House enough spatial definition to test relationships that cannot be resolved at detail scale alone.
 
-The fixture is therefore deliberately **minimum viable architecture**. It preserves established Reference House directions where they matter to the test—two storeys, Georgian-derived order, an open courtyard, a strong front-to-courtyard-to-garden axis, permanent masonry architecture and explicit maintenance geography—without pretending that room proportions, elevations or dimensions have been architecturally finalised.
+It is deliberately schematic. It preserves established Reference House directions where they matter—two storeys, Georgian-derived order, an open courtyard, a strong front-to-courtyard-to-garden axis, permanent masonry architecture and explicit maintenance geography—without implying that room proportions, elevations or dimensions are final.
 
 Dimensions below are **coordination assumptions**, not construction information.
 
@@ -16,9 +16,9 @@ Dimensions below are **coordination assumptions**, not construction information.
 
 The frozen H1 paper-compilation house is a useful internal comparator, not the Reference House.
 
-H1 demonstrated that a compact rectangular house can cluster kitchen, utility, bathroom, plant and vertical services at one rear corner. This Reference House fixture tests whether the same serviceability logic survives a courtyard plan with stronger architectural axes and more perimeter.
+H1 demonstrated that a compact rectangular house can cluster kitchen, utility, bathroom, plant and vertical services at one rear corner. This Reference House fixture asks whether the same serviceability logic survives a courtyard plan with stronger architectural axes and more perimeter.
 
-Do not copy H1 geometry or treat H1 as evidence for this design. The comparison is architectural:
+H1 geometry is not evidence for this design. The useful comparison is architectural:
 
 > **Can the courtyard house remain service-coherent without paying for its spatial order through long routes, duplicated cores or technical corridors?**
 
@@ -26,7 +26,7 @@ Do not copy H1 geometry or treat H1 as evidence for this design. The comparison 
 
 ## 2. Site and orientation assumptions
 
-For this coordination run only:
+Current coordination assumptions:
 
 - **front / street:** south;
 - **rear garden:** north;
@@ -37,7 +37,7 @@ For this coordination run only:
 - **external plant candidate zone:** north-east, beside the internal service hub;
 - **utility approach assumption:** from the south-east/front boundary, continuing along the east service side.
 
-The utility approach is deliberately reversible. Actual site searches, statutory undertaker information and levels may invalidate it later.
+The utility approach remains provisional. Actual site searches, statutory undertaker information and levels may invalidate it.
 
 The site plan must preserve an ordinary external route along the east side wide enough for plant replacement, maintenance equipment and movement between front and rear. Exact site-boundary offsets are not fixed here.
 
@@ -50,8 +50,8 @@ Provisional outer rectangle:
 - **12,600 mm east–west**;
 - **11,400 mm south–north**;
 - two principal storeys;
-- no basement assumed for this test;
-- no habitable roof storey assumed for this test.
+- no basement currently assumed;
+- no habitable roof storey currently assumed.
 
 Open courtyard reservation:
 
@@ -66,7 +66,7 @@ This creates four gross wings:
 - west wing width ≈ **4,500 mm**;
 - east wing width ≈ **4,500 mm**.
 
-Gross ring area is approximately **130.6 m² per storey** before wall thicknesses, gallery/circulation and local voids. The fixture is deliberately not area-optimised. A later architectural pass must challenge whether the same relationships can be achieved more compactly.
+Gross ring area is approximately **130.6 m² per storey** before wall thicknesses, gallery/circulation and local voids. The fixture is deliberately not area-optimised. The footprint remains open to reduction if the same architectural and service relationships can be preserved more compactly.
 
 ### Coordinate system
 
@@ -114,7 +114,7 @@ This asymmetry is intentional. Georgian-derived architectural order does not req
 
 ## 5. Upper-floor organisation
 
-The upper floor is a four-bedroom test programme. Five bedrooms are not required to test the service language.
+The current upper-floor programme uses four bedrooms.
 
 | ID | Zone | Approximate role | Service intensity |
 |---|---|---|---|
@@ -127,7 +127,7 @@ The upper floor is a four-bedroom test programme. Five bedrooms are not required
 | `U-SVC-01` | north-east | linen / service-access zone / riser head | high-service support |
 | `L-01` | inner circulation | landing/gallery around the courtyard where required | low–medium |
 
-The exact partitioning of the upper east wing remains adjustable. The critical Phase-5 proposition is that `BATH-01`, `ENS-01` and `U-SVC-01` can share the same service geography rather than creating independent wet cores.
+The exact partitioning of the upper east wing remains adjustable. The current proposition is that `BATH-01`, `ENS-01` and `U-SVC-01` can share the same service geography rather than creating independent wet cores.
 
 Dry-side access to selected bathroom components should occur from `L-01` or `U-SVC-01`, not from another bedroom.
 
@@ -146,7 +146,7 @@ The fixture keeps structure intentionally simple:
 
 No member sizes, foundation capacities, transfer beams or connection capacities are asserted here.
 
-For Phase 5, the structural question is only whether the proposed service topology can avoid repeated arbitrary crossings and whether the remaining crossings can be owned explicitly.
+The current structural question is whether the proposed service topology can avoid repeated arbitrary crossings and whether the remaining crossings can be owned explicitly.
 
 ---
 
@@ -154,7 +154,7 @@ For Phase 5, the structural question is only whether the proposed service topolo
 
 The house remains **passive first**.
 
-For this coordination test:
+Current assumptions:
 
 - openable external windows and courtyard openings provide daylight/purge opportunities;
 - kitchen source capture remains a separate direct-to-outside system;
@@ -182,9 +182,9 @@ A service topology that turns the courtyard into a technical yard fails the arch
 
 ---
 
-## 9. Fixed for this test vs free to rewind
+## 9. Current invariants and open geometry
 
-### Hold fixed during the first sequence run
+### Retained for current coordination
 
 - two storeys;
 - open courtyard;
@@ -192,7 +192,7 @@ A service topology that turns the courtyard into a technical yard fails the arch
 - permanent masonry architectural character;
 - service-heavy east/rear bias as the **starting hypothesis**, not a conclusion.
 
-### Explicitly free to rewind
+### Open to revision
 
 - exact room boundaries;
 - plant-room size;
@@ -202,15 +202,15 @@ A service topology that turns the courtyard into a technical yard fails the arch
 - stair form;
 - horizontal route depth/location;
 - external plant location within the service side;
-- overall footprint if the service test reveals disproportionate area or route consequences.
+- overall footprint if later coordination reveals disproportionate area or route consequences.
 
-The generative sequence earns its keep only if it is allowed to move these items.
+These remain open wherever later structural, environmental, maintenance or architectural work gives a better answer.
 
 ---
 
-## 10. Phase-5 success criterion for this fixture
+## 10. Coordination adequacy
 
-This fixture is sufficient only if the project can now answer, with identifiable geometry:
+The fixture is useful only if it permits identifiable answers to:
 
 1. where services enter;
 2. where plant is maintained and replaced;
@@ -221,4 +221,4 @@ This fixture is sufficient only if the project can now answer, with identifiable
 7. how water failure is handled along actual route classes;
 8. where pattern occurrences exist rather than merely being intended.
 
-If those answers require pretending that unresolved dimensions or technical performance are proven, the fixture has failed and must remain a brief rather than a design.
+If those answers depend on pretending that unresolved dimensions or technical performance are proven, the fixture remains a coordination brief rather than a resolved design.
