@@ -12,6 +12,6 @@ Current canonical strategy set:
 - [Decompose Structural Interface Functions](decompose-structural-interface-functions.md)
 - [Separate Structural Floor from Changeable Layers Where Proportionate](separate-structural-floor-changeable-layers.md)
 
-The strategy set is intentionally small. Do not create a strategy merely as a category heading for several patterns.
+The strategy set is intentionally small. A category heading for several patterns is not, by itself, a strategy.
 
-See the [Pattern Language Model](../language-model.md) and [Phase 7 Migration Plan](../../development/pattern-language-phase7-plan.md) for the classification rules.
+See the [Pattern Language Model](../language-model.md) for the classification and authority rules. Historical migration controls remain available in the development records.
