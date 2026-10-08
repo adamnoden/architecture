@@ -1,12 +1,11 @@
 # Reference House — Service Topology Coordination
 
-**Status:** coordination brief / unresolved whole-house work  
-**Method:** [`../patterns/service-topology-sequence.md`](../patterns/service-topology-sequence.md)  
-**Purpose:** turn the Reference House's serviceability doctrine into explicit house-scale geometry without inventing detail before the plan is ready.
+**Status:** historical Phase-5 coordination brief; superseded as current project state  
+**Historical method:** the service-topology pilot that preceded the current [canonical sequence](../patterns/service-topology-sequence.md)
 
-The existing [Vertical Bay Coordination](vertical-bay-coordination.md) establishes a preferred direction: horizontal services biased toward coherent spines, room distribution in wall-side/skirting zones, planned vertical routes, and deeper dedicated zones for ducts and drainage. This document owns the next house-scale coordination step.
+> **Historical record.** This brief predates the completed Reference House service-topology run, the admission of `HSA-P-014 — Accessible Vertical Service Zone`, the rename of `HSA-P-003` to **Coherent Horizontal Service Route**, and the reclassification of water-failure material into the **Fail-Safe Water Distribution** strategy. It is retained as design provenance. For current project state, use the [Pattern Occurrence Register](pattern-occurrence-register.md) and current canonical pattern pages.
 
-It is intentionally a **brief, not a solved design**. No pattern is recorded as a Reference House occurrence until actual geometry exists.
+The document below records the coordination brief as it stood before those decisions were resolved.
 
 ---
 
