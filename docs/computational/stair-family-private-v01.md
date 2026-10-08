@@ -1,115 +1,80 @@
 # Stair Family ST-PRIVATE-01 — Private Timber Stair with Straight Flights and Rectangular Landings
 
-**Status:** supported-family research candidate v0.1  
-**Purpose:** close the first unavoidable vertical-circulation gap in a two-storey H1 dwelling without turning the compiler into a bespoke staircase-design system.  
-**Structural status:** stair geometry and opening/support topology native; member/fixing/trimmer adequacy scoped external evidence under SAB-H1-01.  
-**Regulatory status:** Part-K route modelled; whole-house fire/accessibility roles remain target/context dependent.  
-**Construction status:** research family, not construction specification.
+**Status:** H1 paper-domain stair family v0.1; structural/product adequacy remains external evidence  
+**Purpose:** give the bounded two-storey H1 research house a credible vertical-circulation family without turning the computational model into a bespoke staircase-design system.  
+**Structural status:** stair geometry and opening/support topology belong to the semantic model; member/fixing/trimmer adequacy remains scoped external evidence under SAB-H1-01.  
+**Regulatory status:** Part-K route represented conceptually; whole-house fire/accessibility roles remain target/context dependent.  
+**Construction status:** research family, not construction specification or Reference House stair selection.
 
-> **The stair is simultaneously geometry, circulation, structure, guarding and escape topology. The compiler must keep those roles coordinated without turning “stair” into one giant compliance flag.**
+> **The stair is simultaneously geometry, circulation, structure, guarding and escape topology. Those roles must remain coordinated without turning “stair” into one giant compliance flag.**
 
 ## 1. Base family
 
-ST-PRIVATE-01 supports:
+ST-PRIVATE-01 covers:
 
 - one private stair serving one dwelling;
 - ground-to-first-floor circulation;
 - one or two straight flights;
 - rectangular landings;
 - closed risers;
-- conventional timber stair construction;
+- conventional timber construction;
 - conventional handrail/guarding;
 - ordinary floor opening/trimmer condition;
-- no winder treads in v0.1;
-- no spiral/helical stair;
-- no alternating-tread stair;
+- no winders, spiral/helical or alternating-tread geometry in v0.1;
 - no sculptural/cantilevered stair;
-- no basement stair in the first family.
+- no basement stair in the base family.
 
-The stair may be:
+A 90° or 180° change of direction can be represented through a rectangular landing rather than tapered treads.
 
-- one straight flight; or
-- two straight flights joined by a rectangular intermediate landing.
-
-A 90° or 180° change of direction can be represented through the landing relationship rather than tapered treads.
+This is a competence boundary, not a judgement that other stairs are architecturally inferior.
 
 ## 2. Why this family
 
-The current H1 domain needs a credible two-storey circulation route.
+The H1 domain requires one credible two-storey circulation route.
 
-A simple private timber stair is:
+A simple private timber stair is ordinary, geometrically bounded, compatible with conventional floor openings and sufficient to test topology, hierarchy, section and cross-domain consequences.
 
-- ordinary;
-- architecturally legible;
-- geometrically bounded;
-- compatible with standard floor openings/trimmers;
-- separable from the more difficult whole-house fire strategy;
-- sufficient to test topology, hierarchy and section in S2/S3.
-
-Winders and bespoke stair geometry can be later extensions.
+Winders and bespoke stair geometry can become separate families if real architectural work earns them.
 
 ## 3. Semantic entities
 
 The family can contribute:
 
-- STAIR-S01;
-- FLIGHT-F01;
-- optional FLIGHT-F02;
-- LANDING-L0 bottom;
-- optional LANDING-L1 intermediate;
-- LANDING-L2 top;
-- TREAD/RISER pattern;
-- HANDRAIL-HR01 / HR02;
-- GUARDING-G01;
-- STAIR-VOID / FLOOR-OPENING OPN-S01;
-- FLOOR-TRIMMER relationship;
-- lower circulation node;
-- upper circulation node;
+- stair and flight identities;
+- bottom/intermediate/top landings;
+- tread/riser pattern;
+- handrail and guarding occurrences;
+- stair void / floor opening;
+- floor-trimmer relationship;
+- lower and upper circulation nodes;
 - headroom volume;
 - under-stair volume.
 
-These are conceptual identities.
-
-The author should normally place/configure the stair as one meaningful circulation object.
+These are conceptual identities. The author should normally place/configure the stair as one meaningful circulation object rather than manually assembling a regulatory checklist.
 
 ## 4. Part-K geometry route
 
-For a private stair in a dwelling, the current Approved Document K guidance gives the research envelope:
+For a private stair in a dwelling, the current Approved Document K route provides the research envelope used by the H1 family:
 
 - rise: **150–220 mm**;
 - going: **220–300 mm**;
 - maximum pitch: **42°**;
 - ordinary relationship: **2R + G between 550 and 700 mm**;
-- rise/going consistent through a flight;
+- consistent rise/going through a flight;
 - minimum headroom: **2.0 m** over the stair access route;
 - landings at top and bottom of each flight with width and length at least as great as the smallest flight width.
 
-These are target-route values, not eternal stair-design truths.
-
-The compiler target owns them.
-
-The stair family supplies the semantic geometry to which they apply.
+These values belong to the selected target route, not to timeless stair doctrine.
 
 ## 5. H1 family width
 
-Approved Document K does not give a general minimum width for an ordinary internal private stair in the same way it does for several non-domestic stair categories.
-
-H1 therefore needs its own bounded family envelope.
-
 For v0.1:
 
-**nominal clear stair width: >=900 mm — H1 PROJECT/DOMAIN REQUIREMENT**
+**nominal clear stair width: >=900 mm — H1 DOMAIN REQUIREMENT**
 
-This is deliberately labelled as a domain requirement, not Part K.
+This is not presented as a universal Part-K minimum.
 
-Why use it?
-
-- gives a useful ordinary domestic circulation width;
-- keeps landings/openings predictable;
-- avoids optimising H1 around unusually tight stairs;
-- gives S2 a clear circulation geometry.
-
-A future accessibility profile may require a different stair family/envelope.
+It gives the research family a useful ordinary domestic envelope and avoids optimising H1 around unusually tight stairs. A different project/accessibility profile may select another family or width.
 
 ## 6. Rise / floor-height derivation
 
@@ -120,33 +85,13 @@ The source should author:
 - available plan envelope;
 - stair family.
 
-The compiler derives/selects a valid integer riser count and corresponding rise/going state inside the target/family envelope.
+A future implementation may derive/select a valid integer riser count and corresponding rise/going state inside the target/family envelope.
 
-Example only:
+The model must not silently alter the upper floor datum merely to make the stair fit. If no supported geometry fits, that is a legitimate design failure.
 
-~~~text
-floor-to-floor height = H
-number of risers = N
-rise = H / N
-~~~
+## 7. Landings and headroom
 
-The compiler must not silently alter the upper floor datum merely to make the stair fit.
-
-If no integer riser count / going / headroom arrangement fits the authored geometry:
-
-**COMPILE FAIL / STAIR ENVELOPE DOES NOT FIT**
-
-That is a useful early design failure.
-
-## 7. Landings
-
-Each flight has:
-
-- bottom landing;
-- top landing;
-- optional intermediate landing.
-
-Landing geometry participates in:
+Landings participate in:
 
 - stair safety;
 - circulation route;
@@ -154,67 +99,19 @@ Landing geometry participates in:
 - architectural arrival;
 - fire/escape topology.
 
-The landing must not be treated as dead stair-component geometry.
+Headroom should be represented as a spatial clearance volume over flights, landings and the upper-floor opening.
 
-A door swing or obstruction can invalidate the circulation route even if the stair flight itself remains dimensionally valid.
+This exposes an important dependency: **floor geometry and stair geometry are co-dependent**. The stair cannot be checked meaningfully after the floor opening has become dumb geometry.
 
-## 8. Headroom volume
+## 8. Handrails and guarding
 
-Headroom is represented as a spatial clearance volume over:
+Target-derived handrail and guarding obligations remain distinct from H1 family preferences.
 
-- flights;
-- landings;
-- the upper-floor opening.
+For example, H1's preference for handrails on both sides can be a project/domain quality choice even where the regulatory route would not require both at the selected width.
 
-For the base family:
+Similarly, guarding geometry and structural adequacy belong to different proof classes: the target may establish where guarding is required, while product/structural evidence establishes its capacity.
 
-**minimum target-route headroom = 2.0 m**
-
-The floor/ceiling model must therefore know where:
-
-- the stair opening begins;
-- upper floor edges/trimmers occur;
-- soffits/structure intrude.
-
-This is an excellent compiler relationship:
-
-> floor geometry and stair geometry are co-dependent.
-
-The stair cannot be checked after the floor opening has become dumb geometry.
-
-## 9. Handrails
-
-For the target route:
-
-- handrail top is modelled 900–1000 mm above pitch line/floor;
-- where the stair is 1000 mm or wider, both sides require handrails under the referenced guidance.
-
-For H1 v0, the preferred family default is:
-
-**handrail on both sides**
-
-even at the 900 mm family width.
-
-This is a **project/domain quality choice**, not a claim that Part K universally requires it below 1000 mm.
-
-A future architectural profile may integrate one handrail into wall/guarding design.
-
-## 10. Guarding
-
-Where the stair/landing edge creates the relevant fall risk, guarding is required.
-
-For single-family dwellings, the current Part-K route uses:
-
-- **900 mm guarding height** at stairs, landings, ramps and internal floor edges.
-
-Where the building may be used by children under five:
-
-- openings should not admit a 100 mm sphere;
-- guarding should avoid readily climbable horizontal rails.
-
-Guarding load/capacity and product design remain evidence-bearing technical propositions.
-
-## 11. Riser/tread family
+## 9. Riser/tread family
 
 H1 v0 uses:
 
@@ -223,194 +120,76 @@ H1 v0 uses:
 - ordinary slip-resistant domestic finish;
 - no open-riser option.
 
-Part K permits certain open risers in dwellings if specific conditions are met.
+That simplifies the first family. It is not a doctrine against open risers.
 
-H1 excludes them initially because they add:
+## 10. Structural graph contribution
 
-- child-safety geometry;
-- visual/tactile variation;
-- another implementation branch
-
-without increasing the first-domain value.
-
-## 12. Structural graph contribution
-
-The stair creates at least these structural relations:
+The stair creates support relationships and a floor opening:
 
 ~~~text
 STAIR FLIGHT
     ↓
-BOTTOM SUPPORT / LANDING
-    ↓
-GROUND / LOWER FLOOR
-
-STAIR FLIGHT
-    ↓
-TOP / INTERMEDIATE SUPPORT
+BOTTOM / INTERMEDIATE / TOP SUPPORT
     ↓
 FLOOR TRIMMER / WALL / LANDING STRUCTURE
     ↓
 BUILDING STRUCTURE
 ~~~
 
-The stair also creates/removes floor area through:
-
-**FLOOR OPENING OPN-S01**
-
-That opening generates:
+The floor opening generates:
 
 - joist interruption;
 - trimming;
 - edge support;
 - guarding;
-- headroom.
+- headroom obligations.
 
-These are canonical derived consequences of placing the stair.
+Under SAB-H1-01, external structural evidence may cover stair members, fixings, landings, floor trimmers, local reactions and guarding loads while the semantic model retains source geometry, support topology and evidence dependencies.
 
-## 13. External structural evidence
-
-Under SAB-H1-01, external evidence may cover:
-
-- timber stair member/stringer adequacy;
-- fixings;
-- landing support;
-- floor trimmers;
-- local joist reactions;
-- guarding structural loads;
-- unusual support conditions.
-
-The compiler retains:
-
-- source geometry;
-- support topology;
-- evidence scope;
-- dependencies.
-
-Moving the stair opening or changing floor-to-floor height can stale the relevant evidence.
-
-## 14. Circulation topology
+## 11. Circulation topology
 
 The stair is a vertical route, not only an assembly.
 
-It connects:
+It connects lower and upper circulation nodes and may carry contextual roles such as:
 
-~~~text
-LOWER-CIRCULATION-NODE
-    ↕
-STAIR ROUTE
-    ↕
-UPPER-CIRCULATION-NODE
-~~~
-
-The route can carry:
-
-- PRINCIPAL circulation role;
-- SECONDARY circulation role;
-- ESCAPE contribution;
+- principal circulation;
+- secondary circulation;
+- escape contribution;
 - accessibility-profile role.
 
-Those are contextual relationships.
+Those are relationships, not permanent properties such as `isMainStair = true` or `isEscapeStair = true`.
 
-Do not encode one permanent `isMainStair` or `isEscapeStair` truth into the physical stair object.
+## 12. Fire / means-of-escape contribution
 
-## 15. Fire / means-of-escape contribution
+The stair family contributes route identity, connected storeys, landings, enclosure/wall relationships and destinations.
 
-Approved Document K itself directs means-of-escape questions to Approved Document B.
+The whole-house fire strategy decides whether the stair must be protected, enclosed or associated with particular doorsets/escape provisions.
 
-The stair family therefore contributes:
+ST-PRIVATE-01 does **not** self-declare `FIRE COMPLIANT`.
 
-- vertical route identity;
-- connected storeys;
-- landings;
-- enclosure/wall relationships;
-- doors opening onto/near the route;
-- upper/lower destination.
+## 13. Accessibility contribution
 
-The whole-house fire strategy decides whether the stair must be:
+The selected accessibility target may create different circulation requirements. Migration between accessibility profiles should therefore invalidate affected stair/circulation evidence where appropriate.
 
-- protected;
-- enclosed;
-- associated with particular fire doorsets;
-- part of another accepted escape route.
+H1 must not bake one occupancy/accessibility category into the stair ontology permanently.
 
-ST-PRIVATE-01 does **not** self-declare:
+## 14. Architectural grammar and hierarchy
 
-**FIRE COMPLIANT**
+The stair can carry architectural rank, arrival sequence, axis relationships and sectional prominence.
 
-That belongs at building/route scope.
+Those belong to G-01/project grammar or another architectural language, not the technical stair family.
 
-## 16. Accessibility contribution
+A technically valid stair can fail architectural order; an architecturally compelling stair can sit outside this technical family.
 
-For the current S1 M4(1) profile, Part M is primarily concerned with entrance-storey access/use rather than making every private upper-storey stair into a wheelchair-accessible route.
+## 15. Under-stair space and service conflicts
 
-However:
+Under-stair volume should remain explicit. It may be solid/inaccessible, storage, service access or another project use.
 
-- the stair remains a circulation object;
-- optional M4(2)/M4(3) target changes can create different stair/vertical-circulation requirements;
-- an accessibility-category migration must therefore invalidate affected stair/circulation evidence where appropriate.
+The stair opening also creates a no-go/coordination zone for floor/ceiling services and structural members. Moving the stair can therefore re-route or invalidate service and structural evidence.
 
-H1 should not bake Category 1 forever into the stair family.
+The stair family does not own those systems; it exposes the dependency.
 
-## 17. Architectural grammar / hierarchy
-
-The stair can carry strong architectural rank.
-
-G01-PILOT-P0 already suggests:
-
-- principal versus service/secondary circulation distinction;
-- vertical hierarchy as first-class;
-- stair arrival as part of spatial order.
-
-The technical stair family therefore exposes relationships such as:
-
-- route class;
-- arrival room/landing;
-- axis relation;
-- sectional prominence.
-
-It does not prescribe:
-
-- a Georgian stair;
-- symmetry;
-- one stair location.
-
-A technically valid stair can fail architectural order.
-
-## 18. Under-stair space
-
-The under-stair volume is explicit.
-
-Potential states:
-
-- inaccessible/solid architectural volume;
-- storage;
-- service access;
-- circulation conflict.
-
-The compiler should know:
-
-- headroom;
-- guarding/collision risk;
-- fire-strategy implications if enclosed/used;
-- maintenance/service consequences.
-
-It should not automatically fill the volume because it exists.
-
-## 19. Service conflicts
-
-The stair/floor opening creates a no-go/coordination zone for:
-
-- floor services;
-- ceiling services;
-- structural joists/trimmers.
-
-Moving the stair can therefore re-route or invalidate services.
-
-This is an S2/S3 integration target.
-
-The stair family itself does not own service design.
-
-## 20. Evidence model
+## 16. Evidence model
 
 ### Target evidence
 
@@ -427,7 +206,7 @@ The stair family itself does not own service design.
 
 - stringers/landings/trimmers/fixings/guarding loads.
 
-### Occurrence evidence
+### Occurrence/as-built evidence
 
 - actual floor-to-floor height;
 - riser consistency;
@@ -435,131 +214,64 @@ The stair family itself does not own service design.
 - headroom;
 - landing clearances;
 - guarding/handrails;
-- installed product identity.
+- installed product identity;
+- measured construction where required.
 
-### Construction evidence
-
-- measured stair geometry;
-- fixings/support;
-- guarding;
-- floor-opening protection.
-
-## 21. Mutations
+## 17. Mutations
 
 ### ST-M01 — raise upper floor
 
-Change upper finished-floor level without reconfiguring stair.
-
-Expected:
-
-- riser geometry invalid/stale;
-- stair product evidence stale;
-- room/window evidence unaffected.
+Expected: riser geometry and product evidence become stale while unrelated room/window evidence may remain current.
 
 ### ST-M02 — shrink stair plan envelope
 
-Reduce available run.
-
-Expected:
-
-- pitch/rise/going solver may find no supported solution;
-- compile fails rather than silently steepening beyond target route.
+Expected: no supported rise/going/pitch solution may exist; fail rather than silently steepen beyond the target route.
 
 ### ST-M03 — move upper-floor opening
 
-Headroom becomes <2.0 m.
+Expected: headroom and trimmer evidence re-evaluate independently.
 
-Expected:
+### ST-M04 — remove guarding
 
-- K route fails;
-- structural trimmer evidence stale;
-- architectural stair route may remain conceptually present.
-
-### ST-M04 — remove one guarding side
-
-Where drop >600 mm:
-
-- fall-protection obligation fails;
-- stair rise/going remains valid.
+Expected: fall-protection obligation fails while rise/going can remain valid.
 
 ### ST-M05 — add door swing onto landing
 
-Expected:
+Expected: landing/circulation conflict while member capacity may remain current.
 
-- landing/circulation conflict generated;
-- stair member capacity may remain current.
+### ST-M06 — migrate accessibility target
 
-### ST-M06 — change target M4(1) → M4(2)
+Expected: accessibility-dependent circulation evidence re-evaluates while unrelated Part-K evidence may remain current.
 
-Expected:
+### ST-M07 — convert to open risers or winders
 
-- accessibility-dependent stair/circulation evidence re-evaluates;
-- Part-K target evidence remains current unless target itself changes.
+Expected: leave the base family and require a supported extension/alternate route rather than silently stretching v0.1.
 
-### ST-M07 — convert closed to open risers
+## 18. H1 paper result
 
-Base family leaves supported domain.
-
-Return:
-
-**SUPPORTED EXTENSION REQUIRED**, even if another legal route may exist.
-
-## 22. Complexity behavior
-
-Ordinary authoring should look like:
-
-> place/configure stair between Level 0 and Level 1, choose straight or two-flight landing form, select route role.
-
-The system derives:
-
-- riser count/rise/going;
-- pitch;
-- landings;
-- headroom volume;
-- floor opening;
-- trimmer obligation;
-- guarding;
-- handrails;
-- fire/accessibility contributions;
-- evidence dependencies.
-
-The user should not manually author a stair checklist.
-
-## 23. H1 posture
-
-ST-PRIVATE-01 is suitable as the first H1 stair candidate.
-
-Current status:
+ST-PRIVATE-01 closed the bounded paper programme's vertical-circulation gap at the required research level:
 
 ~~~text
-vertical route semantics        NATIVE
-rise/going/pitch target checks  NATIVE
-landing/headroom geometry       NATIVE
-guarding/handrail applicability NATIVE / PRODUCT EVIDENCE
-floor opening/trimmer topology  NATIVE
+vertical route semantics        H1 PAPER SEMANTICS
+rise/going/pitch target checks  TARGET-RULE CONCEPT
+landing/headroom geometry       MODELLED RELATIONSHIPS
+guarding/handrail applicability TARGET + PRODUCT EVIDENCE
+floor opening/trimmer topology  MODELLED RELATIONSHIPS
 stair structural adequacy       EXTERNAL ENGINEERING
-whole-house fire role           BUILDING-SCOPE / UNRESOLVED
-M4 optional-category impacts    TARGET-SCOPE
-architectural hierarchy         G01/PROJECT-SCOPE
-installation evidence           FUTURE
+whole-house fire role           BUILDING-SCOPE
+architectural hierarchy         G-01 / PROJECT SCOPE
+installation evidence           PHYSICAL EVIDENCE
 ~~~
 
-This materially closes the two-storey vertical-circulation gap without supporting arbitrary staircase design.
+It did not create an executable general stair solver or release-ready stair design.
 
-## 24. Remaining stair work
+## 19. Current boundary
 
-Before H1 release:
+A real project still requires an actual stair construction/product route, floor-opening/trimmer engineering, fire/escape coordination, accessibility review and competent professional attack.
 
-- choose one actual timber stair construction/product route;
-- define floor-opening/trimmer interface family;
-- test against the eventual H1 whole-house fire/escape family;
-- test M4(2) migration;
-- obtain competent external review;
-- decide whether one quarter-turn / half-turn configuration is enough for Reference House needs or whether a second stair family is justified.
+Those are project proof requirements, not an unfinished H1-paper queue. Reference House may require a different stair family or geometry; H1 does not constrain the architecture merely because this family was useful for computational research.
 
-Do not add winders merely because they are common.
-
-## 25. Source anchors
+## 20. Source anchors
 
 - Approved Document K: https://www.gov.uk/government/publications/protection-from-falling-collision-and-impact-approved-document-k
 - Approved Document M Volume 1: https://www.gov.uk/government/publications/access-to-and-use-of-buildings-approved-document-m
