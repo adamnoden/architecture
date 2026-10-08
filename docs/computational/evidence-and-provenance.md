@@ -1,10 +1,12 @@
 # Evidence and Provenance Architecture — Conceptual v0.2
 
-**Status:** foundational research draft  
+**Status:** foundational model; minimally exercised by P0, broader architecture remains research  
 **Purpose:** define how compiled claims retain origin, scope, lifecycle and invalidation  
-**Implementation:** none
+**Executable evidence:** the P0 kernel implements a bounded subset of scoped evidence and selective invalidation; see [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md)
 
 A green result is useful only if another person can answer: **what was claimed, why did it apply, how was it established, what did it depend on, and which building version does it describe?**
+
+P0 does not implement this whole paper. It demonstrated the minimum proposition that evidence can be scoped to particular subjects and obligations, remain distinct from validity, and become stale selectively when a dependency changes. The richer lifecycle, regulatory and building-record architecture below remains conceptual unless a later evidence-selected fixture earns it.
 
 ## 1. Different claims need different evidence
 
@@ -39,7 +41,7 @@ Each transition needs provenance.
 ## 3. Keep source, rule, evidence and decision separate
 
 ### Requirement source
-The authority or origin: legislation, Approved Document, standard, manufacturer requirement, Long-Life House doctrine, architectural grammar or client brief.
+The authority or origin: legislation, Approved Document, standard, manufacturer requirement, HSA doctrine, architectural grammar or client brief.
 
 ### Rule implementation
 The compiler's versioned interpretation of that source. A rule implementation can contain a bug even when the source has not changed.
@@ -136,7 +138,7 @@ Change a scoped parameter and inheritance may disappear. This is why `wall-is-fi
 
 **Occurrence-level evidence** supports a particular installed instance: the specified board was actually installed, bearing was measured, the fire stop was inspected.
 
-A future release may therefore say:
+A release model may therefore say:
 
 ~~~text
 FAMILY WF-03
@@ -325,7 +327,7 @@ The dependency graph, not memory, decides what must be revisited.
 
 England's higher-risk-building regime is useful precedent for information architecture: digital records, version control, controlled change, compliance evidence, construction control and as-built records.
 
-The initial Long-Life House domain is an ordinary low-rise dwelling. Those higher-risk-building duties must not be presented as legal requirements for it.
+The initial HSA research domain is an ordinary low-rise dwelling. Those higher-risk-building duties must not be presented as legal requirements for it.
 
 The project may adopt analogous discipline voluntarily because it is useful.
 
@@ -384,7 +386,7 @@ architectural grammar
   G-01.3
 
 doctrine profile
-  LLH-01
+  HSA-01
 
 rule packs
   structure: RP-STR-04
@@ -416,7 +418,7 @@ Exact fields remain open.
 
 Given the same source model, compiler version, target, rule packs, datasets and accepted external evidence, deterministic portions of compilation should reproduce the same result.
 
-Future implementation may use hashes, signatures or append-only logs. The present requirement is simply that silent mutation of a released evidence bundle should be detectable.
+A later implementation may use hashes, signatures or append-only logs. The present requirement is simply that silent mutation of a released evidence bundle should be detectable.
 
 ## 25. Retention and access
 
@@ -442,7 +444,7 @@ Reject these shortcuts:
 
 ## 27. Open questions
 
-- What is the minimum useful evidence graph for an ordinary house?
+- What is the minimum useful evidence graph for an ordinary house beyond the P0 fixture?
 - Which evidence can be generated automatically and which should be externally signed?
 - How should external evidence be accepted and governed?
 - What formally permits family evidence to pass to occurrences?
@@ -454,20 +456,23 @@ Reject these shortcuts:
 - What open export can preserve the graph?
 - How should contested regulatory interpretations and target migration be recorded?
 
-## 28. Validation
+## 28. Executable validation
 
-Test the model on a real Reference House slice rather than elaborating it indefinitely:
+The minimal evidence proposition has now been exercised rather than left as a paper-only validation instruction.
 
-1. generate obligations;
-2. identify an evidence method for each;
-3. assign due phase;
-4. distinguish native from external evidence;
-5. create a small dependency graph;
-6. mutate one input;
-7. verify the right evidence becomes stale;
-8. generate a release manifest.
+P0 demonstrated that a small source model can:
 
-If that is harder to understand than reviewing the building manually, simplify the model.
+1. derive obligations;
+2. attach scoped evidence;
+3. distinguish evidence from obligation result;
+4. reject evidence applied outside its declared subject scope;
+5. make dependent evidence stale after a source fact changes;
+6. leave the affected obligation unresolved without invalidating unrelated evidence;
+7. reproduce deterministic results.
+
+See [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md).
+
+The richer evidence-plan, lifecycle and release-manifest architecture in this paper remains unimplemented. Reopen it only when an architectural, physical or professional-review workstream exposes a concrete need rather than extending the graph for completeness.
 
 ---
 
