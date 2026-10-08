@@ -90,7 +90,7 @@ A good door should feel solid, quiet and predictable in daily use. Replaceabilit
 
 ## Evidence
 
-Replaceable doorsets, mechanical frame fixing, adjustable hardware and removable trims are mature practice. Phase 6 retained a distinct door pattern because repeated use, wear, privacy/security and threshold forces differ materially from the window condition.
+Replaceable doorsets, mechanical frame fixing, adjustable hardware and removable trims are mature practice. Door assemblies also carry repeated-use, wear, privacy, security and threshold forces that differ materially from the window condition.
 
 ## Does not prove
 
