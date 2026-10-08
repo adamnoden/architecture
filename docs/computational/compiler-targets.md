@@ -1,13 +1,13 @@
 # Compiler Targets — Conceptual v0.2
 
-**Status:** foundational research draft  
+**Status:** conceptual foundation; target architecture exercised in the paper programme, no release-grade regulatory target implemented  
 **Purpose:** define what a building is compiled *against* without mixing regulation, architectural preference, software capability and project facts into one rule set
 
 ## 1. A compile result needs a named normative environment
 
 A house does not simply “comply with 2026”. Its obligations depend on jurisdiction, applicable legislation and amendments, dates and transitional provisions, building/work classification, selected compliance routes and the technical standards those routes rely on.
 
-The future compiler packages that external normative environment as a **versioned compiler target**.
+A release-capable compiler would package that external normative environment as a **versioned compiler target**.
 
 > **A compile result is meaningless unless the target is named.**
 
@@ -57,7 +57,7 @@ Therefore:
 
 > **“Use the latest rules” is not a valid target-selection algorithm.**
 
-A target needs enough provenance to explain why its regulatory basis applies to this particular project.
+A target needs enough provenance to explain why its regulatory basis applies to the particular project.
 
 ## 4. Target anatomy
 
@@ -69,15 +69,15 @@ Not “UK”. Scotland, Wales and Northern Ireland require separate targets if s
 
 ### Legal snapshot
 
-The applicable legislation and amendments, including the Building Regulations 2010 as amended where relevant. A future machine representation must preserve amendment history and applicability.
+The applicable legislation and amendments, including the Building Regulations 2010 as amended where relevant. A machine representation must preserve amendment history and applicability.
 
 ### Effective / transitional basis
 
-Record the dates, commencement conditions, transition provisions and project status that make the snapshot applicable. Superseded provisions may still govern a transitional project.
+Record dates, commencement conditions, transition provisions and project status that make the snapshot applicable. Superseded provisions may still govern a transitional project.
 
 ### Building / work classification
 
-Examples include new dwelling, extension, alteration, material change of use and higher-risk building. The first supported domain should cover only a narrow subset.
+Examples include new dwelling, extension, alteration, material change of use and higher-risk building. A supported domain should cover only the classes it can defend.
 
 ### Requirement set
 
@@ -99,7 +99,7 @@ Useful metadata includes source title, issuer, identifier, edition, publication/
 
 Planning and Building Regulations are different legal and decision systems.
 
-The project may eventually need planning constraints such as development-plan policy, conservation area, listed status, permitted development, design codes or site conditions, but these should not be folded into the building-control target.
+A project may also need planning constraints such as development-plan policy, conservation area, listed status, permitted development, design codes or site conditions, but these should not be folded into the building-control target.
 
 A future build may combine:
 
@@ -107,7 +107,7 @@ A future build may combine:
 BUILDING-CONTROL TARGET
 PLANNING TARGET
 ENVIRONMENTAL / SITE TARGET
-CLIENT / DOCTRINE PROFILE
+HSA / CLIENT PROJECT REQUIREMENTS
 ~~~
 
 They retain different authorities and processes.
@@ -213,16 +213,18 @@ A lintel, membrane or ventilation unit brings its own performance and limitation
 
 The target may require a performance level. It should not ordinarily hard-code a commercial product.
 
-## 17. Architectural doctrine is not regulation
+## 17. HSA project requirements are not regulation
 
-The Long-Life House doctrine can be stricter than regulation and should remain independently reportable.
+HSA-derived project requirements may be stricter than regulation and should remain independently reportable.
 
 ~~~text
 REGULATORY PASS
-DOCTRINE FAIL
+HSA PROJECT REQUIREMENT FAIL
 ~~~
 
-That is useful information. Collapsing the two would make it impossible to tell whether a design is unlawful or merely outside this architectural system.
+That is useful information. Collapsing the two would make it impossible to tell whether a design is unlawful or simply fails an architectural requirement selected by the project.
+
+A pattern reference or HSA provenance never upgrades project authority into regulation, engineering or product evidence.
 
 ## 18. Conceptual build manifest
 
@@ -240,7 +242,7 @@ Supported domain:
   DOMAIN-HOUSE-01
 
 Architectural grammar:
-  GRAMMAR-GEORGIAN-01
+  G-01
 
 Project:
   SITE-S17
@@ -253,20 +255,22 @@ Source model:
 
 Every compile output should retain this identity.
 
-## 19. England-first research backlog
+## 19. England-target research requirements
 
-Before a real England target exists:
+A release-grade England target would still need:
 
-1. define a tightly bounded new-dwelling case;
-2. map the applicable functional requirements;
-3. map the relevant Approved Document editions and transitional conditions;
-4. identify realistically formalizable compliance routes;
-5. map incorporated British/European standards and licensing constraints;
-6. identify conditions requiring specialist engineering;
-7. create applicability tests;
-8. build known-pass/known-fail conformance examples;
-9. obtain review by competent regulatory practitioners;
-10. define supersession and migration between target versions.
+1. a tightly bounded new-dwelling case;
+2. mapping of applicable functional requirements;
+3. exact Approved Document editions and transitional conditions;
+4. realistically formalizable compliance routes;
+5. incorporated British/European standards and licensing constraints;
+6. conditions requiring specialist engineering;
+7. applicability tests;
+8. known-pass/known-fail conformance examples;
+9. review by competent regulatory practitioners;
+10. supersession and migration rules between target versions.
+
+The H1 paper target work exercised the architecture of these concerns. It did not produce a release-grade regulations engine.
 
 ## 20. Applied S0 target fixture
 
@@ -278,6 +282,8 @@ Before a real England target exists:
 
 It is a provenance/target-architecture test, not a complete encoded compliance route.
 
+P0 did not add regulatory rule-pack implementation; it exercised the lower-level semantic, obligation and evidence mechanisms.
+
 ## 21. Current definition
 
 Use **compiler target** narrowly:
@@ -285,6 +291,8 @@ Use **compiler target** narrowly:
 > **A named, immutable, versioned representation of the external normative environment against which defined claims are compiled.**
 
 It is not the container for every preference, product, capability and project fact.
+
+Generic target/rule-pack expansion is not currently authorised. External building-control/fire review should first test whether these boundaries and interpretations are professionally sound.
 
 ---
 
