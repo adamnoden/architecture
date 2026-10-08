@@ -1,9 +1,6 @@
 # HSA Pattern Language — Model and Authoring Contract
 
-**Status:** migration contract v0.2  
-**Scope:** canonical definition of what a House Systems Architecture pattern is, how patterns relate, and how pattern records are authored during the current migration.
-
-This document controls the pattern layer. It does not replace the governing principles, research evidence, implementation families, reference-house decisions or computational semantic model.
+This document defines what a House Systems Architecture pattern is, how patterns relate, and how canonical pattern records are authored. It controls the pattern layer without replacing the governing principles, research evidence, implementation families, Reference House decisions or computational semantic model.
 
 ---
 
@@ -92,18 +89,11 @@ HSA-P-002
 
 The number is identity only. It does **not** encode category, scale, evidence state or publication order.
 
-Where an existing Core 12 pattern is migrated without changing its essential identity, retain its present number:
+A renamed pattern retains its ID if the recurring problem and invariant response remain substantially the same. `HSA-P-003`, for example, retained its identity when **Horizontal Service Spine** became **Coherent Horizontal Service Route** because route coherence, not one literal spine, was the stable architectural relationship.
 
-- Pattern 01 → `HSA-P-001`
-- Pattern 02 → `HSA-P-002`
-- ...
-- Pattern 12 → `HSA-P-012`
+A proposition that splits into two materially distinct patterns receives new IDs. Numbering should not be preserved at the cost of conceptual clarity.
 
-A renamed pattern retains its ID if the recurring problem and invariant response remain substantially the same. `HSA-P-003`, for example, became **Coherent Horizontal Service Route** when Phase 6 showed that the invariant was route coherence rather than one literal spine.
-
-A proposition that splits into two materially distinct patterns receives new IDs. Do not preserve numbering at the cost of conceptual clarity.
-
-IDs are never reused after retirement.
+IDs are never reused after retirement. `HSA-P-006` therefore remains retired permanently even though some of its durable content survives at strategy level and in narrower patterns.
 
 ---
 
@@ -231,7 +221,7 @@ Preserve two independent axes.
 - **Established** — strong professional, regulatory, empirical or long-standing practice basis for the underlying proposition within its stated scope.
 - **Supported** — credible evidence and precedent exist, but important transfer, scope or comparative questions remain.
 - **Proposed** — plausible and reasoned, but evidence is incomplete.
-- **Experimental** — intentionally under test; should not be presented as general project requirement.
+- **Experimental** — intentionally under test; should not be presented as a general project requirement.
 
 ### Maturity
 
@@ -247,7 +237,7 @@ Use the existing project vocabulary as applicable:
 
 Evidence describes confidence in the proposition. Maturity describes what the project has actually done with it.
 
-Migration itself never increases either axis.
+Reclassification, renaming or migration of a record does not increase either axis.
 
 ---
 
@@ -301,7 +291,7 @@ sequences:
 
 ### Deliberately excluded
 
-Do not encode prose, evidence citations, implementation options, failure modes, compiler rules or reference-house occurrences in frontmatter.
+Do not encode prose, evidence citations, implementation options, failure modes, compiler rules or Reference House occurrences in frontmatter.
 
 Those belong in readable content or separate domain-specific records. Frontmatter should help navigate and validate the language, not become a second ontology.
 
@@ -327,7 +317,7 @@ Each mature pattern page should contain, where applicable:
 14. **Failure modes** — how the pattern itself can fail.
 15. **Evidence** — scoped support, not a bibliography dump.
 16. **Does not prove** — mandatory where evidence could be overextended.
-17. **Reference-house application** — one project interpretation, clearly not general proof.
+17. **Reference House application** — one project interpretation, clearly not general proof.
 18. **Formalisation boundary** — optional short note identifying consequences that may be formalised and judgements that should remain architectural.
 
 Not every small pattern needs equal prose under all headings. Omit genuinely irrelevant sections rather than filling templates mechanically.
@@ -338,9 +328,9 @@ Not every small pattern needs equal prose under all headings. Omit genuinely irr
 
 A recurring warning sign is a proposition whose “variants” solve the problem through fundamentally different relationships.
 
-The former `HSA-P-006 — Water-Damage-Safe Service Route` admitted pipe-in-pipe, fully accessible distribution, drained containment, passive fall and electronic isolation. Phase 6 therefore retired the pattern identity and moved the durable proposition to the **Fail-Safe Water Distribution** strategy.
+The retired `HSA-P-006 — Water-Damage-Safe Service Route` grouped pipe-in-pipe, fully accessible distribution, drained containment, passive fall and electronic isolation. Those responses do not form one stable spatial relationship. The durable proposition therefore belongs to the [Fail-Safe Water Distribution](strategies/fail-safe-water-distribution.md) strategy, with narrower patterns beneath it where a recurring physical relationship exists.
 
-Do not preserve an existing pattern identity merely because its prose is useful.
+Do not preserve a pattern identity merely because its prose remains useful.
 
 ---
 
@@ -348,9 +338,9 @@ Do not preserve an existing pattern identity merely because its prose is useful.
 
 A proposition is probably an implementation family when its identity depends on a particular assembly concept rather than the more general relationship being solved.
 
-For example, **Seated Floor Structure** contains a stronger general idea — separate gravity support, restraint, movement and boundary obligations — than the specific seated connection itself. Phase 6 therefore classifies the general proposition as strategy and the seated construction as an implementation challenger.
+**Seated Floor Structure**, for example, exposes a stronger general idea: separate gravity support, restraint, movement and boundary obligations before choosing the connection. That general knowledge is captured by the [Decompose Structural Interface Functions](strategies/decompose-structural-interface-functions.md) strategy, while a seated connection remains an implementation challenger to be compared with ordinary engineered alternatives.
 
-The language migration should preserve the general architectural knowledge while allowing the particular construction family to remain experimental.
+The language should preserve the general architectural knowledge without promoting every promising construction family into a canonical pattern.
 
 ---
 
@@ -369,35 +359,25 @@ A useful sequence should state:
 - rewind conditions;
 - unresolved branches or alternatives.
 
-Sequences may overlap. A service-topology sequence can intersect later with envelope, maintenance, environmental and room-order sequences.
+Sequences may overlap. The [service-topology sequence](service-topology-sequence.md), for example, intersects with envelope, maintenance, environmental and room-order decisions without attempting to become a universal master sequence.
 
-Do not attempt one universal master sequence until smaller sequences survive worked projects.
+Keep graph relationships and sequence ordering separate: they answer different questions.
 
 ---
 
-## 13. Reference-house relationship
+## 13. Reference House relationship
 
-The reference house is a **language integration test**.
+The Reference House is a **language integration test**. Its [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md) records selected pattern IDs, actual project occurrences, implementation directions and outstanding obligations.
 
-It should eventually record:
+The house can also expose rejected patterns, conflicts, rewind events and missing reusable knowledge. None of those outcomes validates or invalidates the language by project use alone.
 
-- selected pattern IDs;
-- selected implementation families;
-- project-specific occurrences;
-- sequence decisions;
-- deviations;
-- rejected patterns;
-- conflicts between patterns;
-- rewind events where a later concern forced an earlier architectural change;
-- missing patterns exposed by the worked design.
-
-The reference house does not validate the language merely by using it.
+A Reference House occurrence is evidence about coordination in one project. General pattern evidence remains separately controlled.
 
 ---
 
 ## 14. Computational boundary
 
-The computational track continues to model the building through stable semantic identity, typed relationships, geometry, overlapping domain graphs, obligations and scoped evidence.
+The computational track models the building through stable semantic identity, typed relationships, geometry, overlapping domain graphs, obligations and scoped evidence.
 
 Pattern pages may identify **formalisable consequences** such as:
 
@@ -420,15 +400,15 @@ compiler rule
 evidence of adequacy
 ```
 
-This separation is a hard project constraint.
+This separation is a hard project constraint. Pattern provenance may inform project requirements, but technical obligations derive from the composed building relationships represented in the model.
 
 ---
 
-## 15. Current stable identities
+## 15. Canonical identities
 
-Phase 7 preserves the existing Core identities where meaning survives, keeps `HSA-P-006` retired, and assigns new IDs only to propositions admitted by the Phase-6 audit.
+The current language contains 21 active canonical patterns. `HSA-P-006` is retired permanently and its ID will not be reused.
 
-The canonical active/retired lists are generated from individual pattern frontmatter in [`README.md`](README.md). The full Phase-7 identity map and migration state are controlled by [`../development/pattern-language-phase7-plan.md`](../development/pattern-language-phase7-plan.md).
+The canonical active and retired lists are generated from individual pattern frontmatter in [`README.md`](README.md). Historical identity maps and migration decisions remain in the development records as provenance rather than current language authority.
 
 ---
 
@@ -437,8 +417,8 @@ The canonical active/retired lists are generated from individual pattern frontma
 - relationship changes require a reason in prose, not just frontmatter edits;
 - new patterns require the admission test;
 - new relationship types require evidence from repeated worked cases;
-- reclassification of an existing pattern must be recorded in the migration control documents;
-- migration does not increase evidence or maturity;
+- reclassification of an existing pattern must preserve provenance;
+- reclassification or renaming does not increase evidence or maturity;
 - retired IDs are never reused;
 - sequences remain separate from graph relationships;
 - the Reference House remains an integration test, not evidence for pattern validity.
