@@ -27,7 +27,7 @@ sequences:
 
 # HSA-P-001 — Controlled Utility Entry
 
-**Pilot language record.** The full developed pattern prose remains in [`../core-12.md`](../core-12.md) during the migration pilot. This page tests stable identity, language relationships and sequence participation without duplicating the publication text.
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-001 — Controlled Utility Entry`](../controlled-utility-entry.md).
 
 ## Context
 
@@ -45,7 +45,7 @@ The recurring problem is not merely “services need holes”. It is the relatio
 
 This is an upstream service-topology pattern. It establishes where external utility networks become controlled internal infrastructure.
 
-It deliberately has no hard `requires` edge in the pilot. Site constraints, statutory supplier requirements and existing infrastructure may determine the entry independently of other HSA patterns.
+It deliberately had no hard `requires` edge in the pilot. Site constraints, statutory supplier requirements and existing infrastructure may determine the entry independently of other HSA patterns.
 
 Later internal concentration patterns may **complete** this one without being prerequisites for it.
 
@@ -59,6 +59,6 @@ Potentially formalisable consequences include identified entry occurrences, decl
 
 The architectural judgement about whether several utilities should share one zone, several adjacent zones or separate entries remains project-specific.
 
-## Current source
+## Canonical successor
 
-See **Pattern 01 — Controlled utility entry** in the [Core Pattern Catalogue](../core-12.md).
+See [`HSA-P-001 — Controlled Utility Entry`](../controlled-utility-entry.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
