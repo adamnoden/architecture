@@ -31,7 +31,7 @@ sequences:
 
 # HSA-P-002 — Plant Room as Service Hub
 
-**Pilot language record.** The full developed pattern prose remains in [`../core-12.md`](../core-12.md) during the migration pilot.
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-002 — Plant Room as Service Hub`](../plant-room-service-hub.md).
 
 ## Context
 
@@ -63,6 +63,6 @@ Potentially formalisable consequences include equipment occurrences, required wo
 
 Whether the hub is architecturally proportionate, quiet enough and appropriately placed remains partly architectural and engineering judgement.
 
-## Current source
+## Canonical successor
 
-See **Pattern 02 — Plant room as service hub** in the [Core Pattern Catalogue](../core-12.md).
+See [`HSA-P-002 — Plant Room as Service Hub`](../plant-room-service-hub.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
