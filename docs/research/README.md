@@ -1,9 +1,9 @@
 # Research
 
-Evidence synthesis, precedent, options appraisal and claim hardening. Research exists to support, qualify or kill propositions elsewhere in the project; it is not silently promoted into doctrine.
+The research area holds evidence synthesis, precedent, options appraisal and claim hardening for propositions used elsewhere in House Systems Architecture.
 
-The work here spans building systems, workmanship, maintainability and the evidence base behind architectural claims. Use the site search or the repository map to move from a doctrine or pattern into its supporting research.
+Its role is evidential rather than doctrinal. Research may support a proposition, narrow its scope or give reason to abandon it. A finding does not become doctrine merely because the supporting work is detailed or well evidenced.
 
-Current migration-specific evidence:
+The work spans building systems, workmanship, maintainability, human factors, construction families and precedent. Where possible, research records distinguish established professional knowledge from project inference and unresolved hypothesis.
 
-- [Pattern-Language Phase 6 — Targeted Evidence Review](pattern-language-phase6-targeted-evidence.md) — focused evidence used to resolve ambiguous corpus classifications without reopening general doctrine discovery.
+Use the site navigation or search to move between a doctrine or pattern and the evidence behind it. Historical evidence work undertaken for the pattern-language migration remains available, including the [Phase-6 Targeted Evidence Review](pattern-language-phase6-targeted-evidence.md).
