@@ -28,7 +28,7 @@ sequences:
 
 # HSA-P-012 — Physical Service Index
 
-**Pilot language record.** The full developed pattern prose remains in [`../core-12.md`](../core-12.md) during the migration pilot.
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-012 — Physical Service Index`](../physical-service-index.md).
 
 ## Context
 
@@ -60,6 +60,6 @@ Stable semantic identities and their correspondence to physical labels are stron
 
 The project should not assume that a digital model is durable merely because it exists. The pattern's value lies partly in preserving a small amount of critical information outside software dependencies.
 
-## Current source
+## Canonical successor
 
-See **Pattern 12 — Physical service index** in the [Core Pattern Catalogue](../core-12.md).
+See [`HSA-P-012 — Physical Service Index`](../physical-service-index.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
