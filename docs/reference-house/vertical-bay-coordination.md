@@ -2,7 +2,7 @@
 
 **Status:** coordinated concept section / pre-engineering  
 **Location:** representative external wall at upper floor  
-**Purpose:** force the principal tectonic systems to coexist in one section before any one pattern is developed further in isolation.
+**Purpose:** coordinate the principal tectonic systems in one section before any is developed further in isolation.
 
 This is not a construction detail. It is a **coordination object**: one bay in which permanent masonry, floor support, restraint, wall lining, floor platform, services, ceiling, movement, acoustics, fire, airtightness and architectural expression must coexist.
 
@@ -50,12 +50,10 @@ Working W2 hypothesis:
 Working hypothesis:
 
 - structural deck remains permanent;
-- shallow service / acoustic / levelling zone above;
-- low-profile support lattice;
-- dense removable mineral platform;
-- finish-specific carrier and finish above;
-- full-room platform remains experimental;
-- local access-band version remains a serious comparator.
+- shallow service / acoustic / levelling zone above where justified;
+- local access-band or perimeter access is preferred for the first comparison;
+- a low-profile dense removable mineral platform remains an experimental full-room comparator;
+- finish-specific carrier and finish remain distinct from the primary structure.
 
 ---
 
@@ -91,7 +89,7 @@ The I-joist and structural deck carry the floor. The edge must separately resolv
 
 ## G. Replaceable floor architecture
 
-The platform and finish sit above the structural deck. The removable layer is not the structure.
+Any access/platform layer and finish sit above the structural deck. The removable layer is not the structure.
 
 ---
 
@@ -157,21 +155,21 @@ Treat the cornice as a **functional slip junction**.
 
 The concept assumes independent ceiling movement, a wall panel terminating below it, a deliberate movement gap, trim controlled from one side of the joint and no paint/plaster bridge across the slip condition.
 
-A restrained brass/bronze element remains a reference-house option, not doctrine.
+A restrained brass/bronze element remains a Reference House option, not doctrine.
 
 ---
 
 # 8. Floor platform
 
-Keep structural deck, service/acoustic/levelling layer, removable platform and finish distinct.
+Keep structural deck, service/acoustic/levelling layer, access layer and finish distinct where those layers are justified.
 
-The first prototype should investigate a **dense mineral platform** informed by calcium-sulphate raised-floor precedent, using a low-profile support system rather than tall office pedestals.
+The first physical comparison should test a **selective access condition** against an excellent conventional floor. A full-room dense mineral platform informed by calcium-sulphate raised-floor precedent remains a more demanding comparator and should follow only if the selective arrangement earns further development.
 
-Requirements:
+Requirements for any accessible floor condition:
 
 - no rattle or rocking;
 - no characteristic raised-floor footfall sound;
-- local lifting possible;
+- local lifting possible where access is claimed;
 - perimeter and threshold conditions architecturally controlled;
 - primary diaphragm remains below.
 
@@ -181,8 +179,8 @@ Requirements:
 
 Preferred topology:
 
-- horizontal services biased toward corridor / service spines;
-- room distribution in skirting or wall-side zones;
+- horizontal services biased toward coherent circulation/service routes;
+- room distribution in skirting or wall-side zones where justified;
 - planned vertical routes;
 - larger ducts and drainage in deeper dedicated zones.
 
@@ -199,7 +197,7 @@ Current assumptions:
 - masonry supplies primary wall mass;
 - shallow wall cavity may contain mineral-wool absorption;
 - panels are resiliently seated and captured to avoid rattle;
-- floor platform has a resilient support interface;
+- any floor access/platform layer has a resilient support interface where required;
 - floor edge avoids rigid shortcuts where decoupling is required;
 - ceiling edge terminates independently of wall lining.
 
@@ -209,7 +207,7 @@ Prototype performance matters more than the apparent elegance of the build-up.
 
 # 11. Fire strategy
 
-The replaceable lining sits **inside** the slow wall boundary, but the hidden wall cavity and floor void are still cavities.
+The replaceable lining sits **inside** the slow wall boundary, but the hidden wall cavity and any floor void are still cavities.
 
 Technical design must establish cavity closure at floors, ceilings and openings; relation to compartment walls or protected routes; reaction-to-fire of visible panels; service penetration control; and whether removal exposes fire-critical material.
 
@@ -263,8 +261,9 @@ Keep these explicitly unresolved rather than inventing precision.
 
 - structural deck;
 - resilient build-up;
-- platform thickness / material;
-- support lattice;
+- selective access geometry;
+- full-platform comparator thickness / material;
+- support geometry;
 - underfloor-heating position;
 - service depth;
 - perimeter lifting strategy;
@@ -279,35 +278,12 @@ Keep these explicitly unresolved rather than inventing precision.
 
 ---
 
-# 15. Next design output
+# 15. Comparison path
 
-Develop the next iteration as **three alternatives**, not one polished detail.
+The three current alternatives are developed in [Vertical Bay Options — A / B / C Comparison](vertical-bay-options.md):
 
-### Bay A — Conservative
+- **Bay A — Conservative:** excellent conventional construction as the control;
+- **Bay B — Selective tectonic:** W2 wall system plus local/perimeter floor access and functional interfaces;
+- **Bay C — Full reversible assembly:** the upper-bound full platform and interface system.
 
-- certified restraint hanger;
-- plaster wall;
-- conventional floor;
-- functional cornice only.
-
-Purpose: establish the best conventional control.
-
-### Bay B — Selective tectonic
-
-- certified restraint hanger;
-- W2 backplane + removable wall lining;
-- local/perimeter floor access band;
-- functional skirting / cornice.
-
-Purpose: test whether most doctrine value can be achieved without a full-room platform.
-
-### Bay C — Full reversible assembly
-
-- W2 wall;
-- full low-profile finish-agnostic floor platform;
-- full interface grammar;
-- same primary structure.
-
-Purpose: expose the maximum benefits and penalties of the complete concept.
-
-Compare the three bays before any becomes the reference-house detail.
+Bay B is the preferred first prototype against Bay A. Bay C remains on paper until the selective arrangement demonstrates that the additional interface architecture can match excellent conventional construction for solidity, acoustics and room quality.
