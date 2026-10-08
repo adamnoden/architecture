@@ -1,7 +1,5 @@
 # Preface — The Obvious, Eventually
 
-**Draft v0.2 — editorial refinement**
-
 Somewhere between 1595 and 1603, John Thorpe drew a line through a house.
 
 The drawing was for Beaufort House in Chelsea. The line passes through the centre of the plan and gives access to rooms on either side. We would call it a corridor. The Sir John Soane's Museum describes its use here as innovative; nearly four centuries later, Robin Evans cautiously identified Beaufort House as the earliest English example he had found of a corridor used to remove traffic from rooms.[1]
