@@ -31,7 +31,7 @@ sequences:
 
 # HSA-P-005 — Designed Structural Penetration
 
-**Pilot language record.** The full developed pattern prose remains in [`../core-12.md`](../core-12.md) during the migration pilot.
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-005 — Designed Structural Penetration`](../designed-structural-penetration.md).
 
 ## Context
 
@@ -67,6 +67,6 @@ This pattern has unusually strong formal potential: opening identity, host ident
 
 Structural adequacy, fire performance, acoustic performance and product/system applicability still require scoped evidence; the compiler must not infer adequacy merely from the existence of a penetration object.
 
-## Current source
+## Canonical successor
 
-See **Pattern 05 — Designed structural penetration** in the [Core Pattern Catalogue](../core-12.md).
+See [`HSA-P-005 — Designed Structural Penetration`](../designed-structural-penetration.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
