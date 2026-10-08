@@ -1,7 +1,7 @@
 # Structural Semantics — Conceptual v0.2
 
-**Status:** Gate-B foundational research draft  
-**Purpose:** define the minimum structural representation needed before selecting a solver, calculation engine or member-sizing implementation  
+**Status:** conceptual foundation exercised through S0→H1 paper research; H1 adequacy remains externally evidenced and externally unvalidated  
+**Purpose:** define the minimum structural representation needed to keep architectural source, support topology and engineering proof distinct  
 **Engineering status:** conceptual only; this document does not size members or certify structural adequacy
 
 > **A continuous load path is a semantic requirement. Structural adequacy is a separate proof obligation.**
@@ -190,9 +190,7 @@ This is one of the main boundaries between automation and engineering judgement.
 
 ## 14. Native proof envelopes
 
-The first compiler should not attempt arbitrary structural engineering.
-
-A supported structural family should instead define a **proof envelope** covering, as relevant:
+The computational architecture can support native proof only where a structural family has an explicit **proof envelope** covering, as relevant:
 
 - member or assembly family;
 - geometry and span range;
@@ -207,11 +205,13 @@ A supported structural family should instead define a **proof envelope** coverin
 - evidence source/version;
 - exclusions.
 
-Inside the envelope, native structural proof may be possible. Outside it, require external evidence, a formal domain extension or an `UNSUPPORTED` result.
+Inside such an envelope, native structural proof may be possible. Outside it, require external evidence, a formal domain extension or an `UNSUPPORTED` result.
+
+No release-grade native structural proof family has been implemented by P0.
 
 ## 15. Candidate I-joist floor envelope
 
-Engineered timber I-joists remain the working Reference House floor baseline. A future supported envelope would need evidence for the exact family/class, depth, centres, clear span, end support, deck/diaphragm assumptions, restraint, actions, deflection, vibration, fire/acoustic interactions, permitted holes and trimmer/opening conditions.
+Engineered timber I-joists remain the working Reference House floor baseline. A supported envelope would need evidence for the exact family/class, depth, centres, clear span, end support, deck/diaphragm assumptions, restraint, actions, deflection, vibration, fire/acoustic interactions, permitted holes and trimmer/opening conditions.
 
 Do not invent those numerical bounds in the architectural repository. The semantic model can be designed before the product and engineering evidence exists.
 
@@ -239,9 +239,9 @@ A supported family should define connected element types, structural functions, 
 
 A model can have correct local gravity support and still lack a coherent stability system.
 
-Whole-house release must eventually answer what resists lateral action, what stabilises walls, how floors and roofs distribute those actions, where diaphragms connect, what prevents local instability and how loads reach the ground.
+Whole-house release would need to answer what resists lateral action, what stabilises walls, how floors and roofs distribute those actions, where diaphragms connect, what prevents local instability and how loads reach the ground.
 
-An early S0 slice may deliberately leave global stability external. That is acceptable if the boundary is explicit.
+The H1 paper model deliberately leaves substantial structural adequacy external. That is acceptable because the boundary is explicit; it is also why H1-PAPER never became a building-release claim.
 
 ## 19. Foundations and ground
 
@@ -256,7 +256,7 @@ Keep distinct:
 - bearing/settlement assumptions;
 - geotechnical determination.
 
-Early work may rely on external ground/foundation proof. A native foundation family should be added only when the ground envelope, geometry/load limits, required inputs and bearing/settlement methods are explicit.
+H1 v0 relies on external ground/foundation proof. A native foundation family should be added only if a real project need justifies a bounded ground envelope, geometry/load limits, required inputs and bearing/settlement methods.
 
 ## 20. Structural results are not one Boolean
 
@@ -306,9 +306,9 @@ The internal model may still require additional concepts for proof envelopes, ob
 
 Map to IFC later; do not use IFC classes prematurely as the internal type system.
 
-## 25. S0 minimum structural obligations
+## 25. S0 minimum structural obligations — historical fixture
 
-For the first wall/window/floor paper-compilation slice:
+The first wall/window/floor paper-compilation slice exercised:
 
 ### STR-S0-01 — Floor support path
 The joist/floor region has an explicit gravity path into `WALL-W01`.
@@ -334,7 +334,7 @@ Service penetration `P01` does not violate a declared no-go region or unverified
 ### STR-S0-08 — Evidence state
 Every structural obligation is natively resolved, externally evidenced, unresolved or unsupported.
 
-## 26. S0 mutation expectations
+## 26. S0 mutation expectations — historical fixture
 
 ### M1 — Widen window
 
@@ -350,7 +350,7 @@ Do **not** invalidate structural evidence unless structural geometry or loading 
 
 ### M4 — W2 tolerance failure
 
-Ordinarily remain a workmanship/interface issue unless backplane anchorage or loading leaves its structural evidence envelope. This tests domain separation.
+Ordinarily remain a workmanship/interface issue unless attachment anchorage or loading leaves its structural evidence envelope. This tests domain separation.
 
 ## 27. Anti-drift rules
 
@@ -362,18 +362,13 @@ Ordinarily remain a workmanship/interface issue unless backplane anchorage or lo
 - A supported product family does not make every use of that product supported.
 - Architecture and structure negotiate; structural truth remains non-negotiable.
 
-## 28. Immediate research tasks
+## 28. Current research boundary
 
-1. select an exact I-joist/hanger family or neutral engineered family for S0 research;
-2. obtain its declared design/installation envelope;
-3. define one opening-head/lintel family;
-4. define semantic action/load categories for S0;
-5. define the minimum stability declaration for the slice;
-6. identify ground/foundation obligations that remain external;
-7. create one structural obligation/evidence trace manually;
-8. execute S0 Mutation M1 and observe evidence invalidation.
+The original S0 tasks—selecting a joist/hanger research family, defining opening-head obligations, creating evidence traces and testing mutation invalidation—were subsequently exercised through S0→H1 paper work. The later [Structural Assurance Boundary — H1](structural-assurance-boundary-h1-v01.md) records the frozen H1 proof boundary.
 
-Only after this should the project choose a structural-engine strategy.
+P0 demonstrates generic semantic identity, typed relationships, obligation derivation and evidence invalidation. It does not implement native structural design.
+
+The live next step is competent structural attack on the Reference House and H1 proof boundary. Generic solver or structural-ontology expansion remains frozen unless that work exposes a concrete model defect or a narrowly valuable executable case.
 
 ---
 
