@@ -1,10 +1,10 @@
 # Heating Family HEAT-ASHP-RAD-01 — Air-to-Water Heat Pump + Low-Temperature Radiators
 
-**Status:** H1 supported-family candidate v0.1  
-**Purpose:** provide one maintainable whole-house heating topology compatible with the Long-Life service geography.  
+**Status:** H1 paper-domain heating family v0.1; technical performance remains external evidence  
+**Purpose:** provide one bounded, maintainable whole-house heating topology for H1 research without making the floor assembly itself the primary heat-distribution network.  
 **Engineering status:** heat-loss calculation, heat-pump sizing, emitter sizing, hydraulics and commissioning are competent external design/evidence.
 
-> **The compiler owns where heat must go and whether the system remains maintainable. The heating engineer owns how many watts and litres per minute make that true.**
+> **The computational model may own heat-demand relationships and maintenance geography. The heating engineer owns the technical design that proves performance.**
 
 ## 1. Base topology
 
@@ -16,7 +16,7 @@ DESIGNED WALL / SERVICE ENTRY
 ACCESSIBLE PLANT / HYDRAULIC HUB
         ├── SPACE-HEATING FLOW/RETURN
         │      ↓
-        │   VERTICAL / HORIZONTAL SERVICE SPINE
+        │   VERTICAL / HORIZONTAL SERVICE ROUTE
         │      ↓
         │   ROOM BRANCHES
         │      ↓
@@ -27,19 +27,22 @@ ACCESSIBLE PLANT / HYDRAULIC HUB
           DHW STORAGE
 ~~~
 
-The potable water leaving the cylinder belongs to WET-CORE-01, not the heating circuit.
+Potable water leaving the cylinder belongs to the wet-service system, not the heating circuit.
 
-## 2. H1 supported arrangement
+## 2. H1 arrangement
+
+The bounded family assumes:
 
 - external air-to-water heat-pump unit;
 - replaceable plant;
 - accessible internal hydraulic components;
 - room-by-room hydronic radiator emitters;
-- heating pipes routed through declared service zones;
-- no wet underfloor loops embedded in permanent floor fabric;
+- heating pipes routed through declared service geography;
 - accessible isolation and balancing components;
-- weather compensation / accepted heat-pump controls;
-- hot-water cylinder in accessible plant/service core where DHW is heat-pump supplied.
+- weather compensation or another accepted heat-pump control strategy;
+- hot-water cylinder in accessible plant/service geography where DHW is heat-pump supplied.
+
+Embedded wet underfloor loops are outside the H1 baseline. That is a domain choice, not an HSA prohibition. Another project may legitimately use them where their performance, construction, failure and replacement consequences are well resolved.
 
 ## 3. Room semantics
 
@@ -52,9 +55,7 @@ Each heated room contributes:
 - emitter location;
 - accessibility/maintenance volume.
 
-The heat-loss engine/design evidence determines required output.
-
-The compiler does not invent room watts.
+The competent heating design determines required output. The compiler does not invent room watts.
 
 ## 4. Emitter family
 
@@ -65,29 +66,30 @@ H1 baseline emitter:
 Requirements:
 
 - sized by competent design at the selected low-temperature regime;
-- independently replaceable;
+- replaceable without disproportionate destruction of longer-lived construction;
 - isolatable;
-- no permanent-fabric destruction for replacement;
 - not placed inside access/door/maintenance clearances;
-- route to emitter remains accessible.
+- served by a deliberate route.
 
-Fan-coils and active emitters are later families.
+Fan-coils and other active emitters would be separate families.
 
 ## 5. Distribution geography
 
-Heating flow/return lives in:
+Heating flow/return may use:
 
 - service riser;
-- accessible corridor/service spine;
-- SR-ROOM-LOW-01-compatible low-level room zone;
+- accessible corridor/service route;
+- `SR-ROOM-LOW-01`-compatible low-level room zone;
 - designed sleeves/crossings.
 
-Avoid:
+Avoid as the H1 baseline:
 
 - arbitrary masonry chasing;
-- concealed inaccessible pipework in permanent floors;
+- concealed inaccessible pipework in floor build-ups;
 - uncontrolled joist drilling;
 - long inaccessible pipe loops.
+
+The governing reason is lifecycle separation and maintainability, not a universal ban on pipes crossing or entering long-lived construction.
 
 ## 6. Isolation
 
@@ -99,21 +101,21 @@ At minimum the semantic model records:
 - room/zone/branch isolation where selected;
 - radiator valves.
 
-Isolation devices must remain accessible.
+Isolation devices must remain accessible for their intended task.
 
 ## 7. Heat-pump occurrence
 
 The outdoor unit needs:
 
 - service/replacement clearance;
-- air-flow clearance;
+- airflow clearance;
 - drainage/defrost condensate route;
 - vibration/noise context;
 - planned hydraulic/refrigerant interface according to selected product subfamily;
 - electrical supply;
 - maintenance route.
 
-The compiler treats neighbour/noise/planning context as a site dependency.
+Neighbour/noise/planning context remains a site dependency rather than a property of the heat-pump label.
 
 ## 8. Competent design evidence
 
@@ -131,9 +133,7 @@ External evidence must cover:
 - frost/defrost strategy;
 - commissioning.
 
-Evidence dependencies must reference source geometry and envelope performance.
-
-A window/fabric change can therefore stale heat-loss and emitter evidence.
+Evidence dependencies must reference source geometry and envelope performance. A window/fabric change can therefore stale heat-loss and emitter evidence without invalidating unrelated system facts.
 
 ## 9. Controls
 
@@ -144,7 +144,7 @@ The family supports:
 - time/temperature control;
 - room/zone controls compatible with heat-pump operation.
 
-Do not make cloud connectivity or proprietary smart-home services a proof dependency.
+Cloud connectivity or proprietary smart-home services should not become a proof dependency.
 
 ## 10. Hot-water cylinder relation
 
@@ -157,45 +157,51 @@ The family may include:
 
 Part-G hot-water safety and potable-water quality belong to the H1 wet-service target/family.
 
-## 11. Failure behavior
+## 11. Failure behaviour
 
 ### Heat pump fails
 
 - heating/DHW charge unavailable;
-- plant is replaceable without demolition;
-- room distribution remains intact.
+- plant remains replaceable through the designed route;
+- room distribution remains physically present.
 
 ### One radiator/valve fails
 
-- local branch can be isolated;
+- local branch can be isolated where the selected design provides it;
 - remaining distribution stays serviceable.
 
 ### Pipe leak
 
-- route should be inspectable/accessible;
-- leak consequence must not rely on hidden permanent fabric absorbing the failure.
+- failure consequence follows the actual route and surrounding construction;
+- hidden permanent fabric must not be assumed to absorb or conceal leakage harmlessly.
 
-This is a strong reason not to embed H1 wet heating in floors.
+The H1 baseline avoids embedded floor loops partly because their failure and replacement geography is harder to bound.
 
 ## 12. Mutations
 
-- enlarge/upgrade envelope → heat-loss evidence stale/downsizes possible;
+- improve/enlarge envelope → heat-loss evidence stale; downsizing may be possible;
 - add room → heating branch/emitter/evidence required;
-- move radiator into door access zone → architectural/accessibility conflict;
-- route pipe through structural wall without designed sleeve → doctrine/interface failure;
-- change design flow temperature → all emitter capacity evidence re-evaluates;
-- substitute heat pump → hydraulic/control/noise/cylinder evidence re-evaluates, room geometry remains.
+- move radiator into door/access zone → architectural/accessibility conflict;
+- route pipe through structure without a designed crossing → source/interface failure;
+- change design flow temperature → emitter-capacity evidence re-evaluates;
+- substitute heat pump → hydraulic/control/noise/cylinder evidence re-evaluates while unrelated room geometry remains.
 
 ## 13. H1 posture
 
 ~~~text
-heating topology                 SUPPORTED
-room/emitter identity            NATIVE
-service geography                SUPPORTED
+heating topology                 RESEARCH-SUPPORTED H1 FAMILY
+room/emitter identity            SEMANTIC
+service geography                RESEARCH-SUPPORTED
 heat-loss calculation            EXTERNAL COMPETENT EVIDENCE
 heat-pump sizing/performance     EXTERNAL COMPETENT/PRODUCT EVIDENCE
 radiator sizing                  EXTERNAL COMPETENT EVIDENCE
-controls                         SUPPORTED ROUTE + PRODUCT EVIDENCE
-plant maintenance/replacement    NATIVE SEMANTICS
-installation/commissioning       FUTURE PHYSICAL EVIDENCE
+controls                         PRODUCT / DESIGN EVIDENCE
+plant maintenance/replacement    SEMANTIC + GEOMETRIC
+installation/commissioning       PHYSICAL EVIDENCE
 ~~~
+
+## 14. Reference House boundary
+
+HEAT-ASHP-RAD-01 is a useful H1 technical family, not the Reference House heating decision. The actual house must compare fabric demand, emitter requirements, summer strategy, plant placement, noise, domestic hot water, maintenance and credible alternatives.
+
+The computational family exists to bound a research problem. It does not turn one current low-carbon system into architectural doctrine.
