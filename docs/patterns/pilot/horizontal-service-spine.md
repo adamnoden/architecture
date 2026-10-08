@@ -30,7 +30,7 @@ sequences:
 
 # HSA-P-003 — Horizontal Service Spine
 
-**Pilot language record.** The full developed pattern prose remains in [`../core-12.md`](../core-12.md) during the migration pilot.
+> **Historical Phase-3 pilot record.** This page preserves the earlier “spine” formulation. The canonical pattern is now [`HSA-P-003 — Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md), which retains the identity while broadening the invariant beyond one literal spine.
 
 ## Context
 
@@ -62,6 +62,6 @@ Potentially formalisable consequences include route continuity, capacity envelop
 
 Whether the route produces a domestic rather than institutional interior remains architectural judgement.
 
-## Current source
+## Canonical successor
 
-See **Pattern 03 — Horizontal service spine** in the [Core Pattern Catalogue](../core-12.md).
+See [`HSA-P-003 — Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
