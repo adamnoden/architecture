@@ -140,6 +140,7 @@ if (development?.items) {
 
 assertNavigationCoverage()
 
+// Mermaid stays authored as fenced Markdown; the wrapper only supplies VitePress rendering.
 export default withMermaid(
   defineConfig({
     title: 'House Systems Architecture',
