@@ -1,7 +1,7 @@
-# Long-Life House — Architect-Facing Implementation Brief
-## RIBA Plan of Work Template v0.3 — editorial refinement
+# House Systems Architecture — Architect-Facing Implementation Brief
+## RIBA Plan of Work Template
 
-**Purpose:** translate the monograph into project instructions an appointed architect and consultant team can act on without reinterpreting the whole doctrine.
+**Purpose:** translate House Systems Architecture into project instructions an appointed architect and consultant team can act on without reinterpreting the whole doctrine.
 
 The publication explains **why**. This brief records **what this project requires, who decides it, when it must be resolved, and how compliance will be demonstrated**.
 
@@ -71,42 +71,41 @@ Use only requirements genuinely fixed for this project.
 
 ---
 
-# 4. Selected pattern schedule
+# 4. Selected HSA knowledge
 
-| Pattern | Status | Selected? | Variant | Why selected | Proof required | Deviation allowed? |
-|---|---|---:|---|---|---|---|
-| Controlled utility entry | Established |  |  |  |  |  |
-| Plant/service hub | Established |  |  |  |  |  |
-| Accessible primary riser | Supported |  |  |  |  |  |
-| Horizontal service spine | Supported |  |  |  |  |  |
-| High-service-room service wall | Supported |  |  |  |  |  |
-| Local deep service zone | Supported |  |  |  |  |  |
-| Whole-house undercroft | Experimental |  |  |  |  |  |
-| Service skirting | Proposed |  |  |  |  |  |
-| Water-damage-safe route | Established principle |  |  |  |  |  |
-| Permanent opening / replaceable window | Supported |  |  |  |  |  |
-| Movement / slip interface | Established principle |  |  |  |  |  |
-| Perimeter dry zone | Supported |  |  |  |  |  |
-| Source-capture kitchen extract | Established |  |  |  |  |  |
-| Roof maintenance route | Established principle |  |  |  |  |  |
-| Physical service index | Proposed |  |  |  |  |  |
-| Seated Floor Structure | Candidate / experimental |  |  |  | structural calculation + edge mock-up |  |
-| Architectural Backplane | Candidate / experimental |  |  |  | load/interface prototype |  |
-| Replaceable Wall Lining | Candidate / experimental |  |  |  | full wall-bay prototype |  |
-| Finish-Agnostic Floor Platform | Candidate / experimental |  |  |  | full floor-bay prototype |  |
+Do not copy a frozen catalogue into the project brief. Populate this section from the current [canonical pattern language](../patterns/), [strategies](../patterns/strategies/) and [held candidates](../patterns/candidates/) at the start of the project and update it when project selections change.
 
-Candidate patterns remain optional until their evidence, calculation and prototype gates are met.
+A project may select a pattern without fixing its implementation. A held candidate or implementation challenger does not become canonical merely because the project chooses to test it.
+
+## Canonical patterns and strategies
+
+| HSA ID / strategy | Title | Authority | Selected? | Project occurrence / implementation direction | Why selected | Proof required | Deviation allowed? |
+|---|---|---|---:|---|---|---|---|
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+
+Use stable `HSA-P-*` identities for canonical patterns. Strategies remain strategies and receive no pattern ID.
+
+## Held candidates and implementation challengers
+
+| Proposition | Current authority | Selected for project test? | Project role | Gate before adoption | Result / decision |
+|---|---|---:|---|---|---|
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+
+Keep this schedule separate from canonical selections. Record the evidence, calculation or prototype gate that would allow the project to adopt the proposition without implying wider HSA validation.
 
 ---
 
 # 5. Representative maintenance tasks
 
-These are project performance tests, not aspirations.
+These are project performance tests, not aspirations. Include only tasks relevant to the selected building and systems.
 
 | Task | Required outcome | Max acceptable disruption | Evidence stage |
 |---|---|---|---|
 | Isolate one basin | No whole-house water shutdown | Operate labelled local isolation | 4 / 6 |
-| Replace principal ventilation fan | Remove without destructive opening | Remove designated panels only | 4 / 6 |
+| Replace principal ventilation fan, where used | Remove without destructive opening | Open only designated access layers | 4 / 6 |
 | Add data cable to principal room | No masonry chase / structural drilling | Open designated service route | 4 / 6 |
 | Renew shower valve | No destruction of permanent wall | Access from service side or designated panel | 4 / 6 |
 | Clear main drainage blockage | Reach rodding/inspection point directly | No finished construction removal | 4 / 6 |
@@ -114,9 +113,9 @@ These are project performance tests, not aspirations.
 | Replace primary heat source | Old equipment can leave; replacement can enter | No structural alteration | 3 / 4 |
 | Inspect/maintain roof outlet | Safe planned access method | No improvised ladder arrangement | 4 |
 | Update altered service route | Physical IDs and digital record remain consistent | Same works package | 6 / 7 |
-| Remove/reinstall representative wall panel | Permanent wall and primary boundaries remain intact | Designated trim/panel only | 4 / prototype |
-| Lift/reseat representative floor platform panel | Same datum; no rattle/rock/acoustic bypass | Designated border/panel only | 4 / prototype |
-| Change an ordinary wall-mounted fitting | No new permanent masonry penetration where backplane is intended to serve it | Use designated fixing infrastructure | 4 / 6 |
+| Remove/reinstall representative lining panel, where selected | Permanent wall and primary boundaries remain intact | Designated trim/panel only | 4 / prototype |
+| Open/reinstate representative floor-access condition, where selected | Same datum; no rattle/rock/acoustic bypass | Designated access layer only | 4 / prototype |
+| Change an ordinary wall-mounted fitting where a controlled attachment plane is selected | No unnecessary new permanent-fabric penetration | Use designated fixing infrastructure | 4 / 6 |
 
 ---
 
@@ -132,7 +131,7 @@ No interface is resolved while an applicable column remains unassigned.
 
 ## Boundary-independence test
 
-For every routinely removable lining, panel, cover or platform record:
+For every routinely removable lining, panel, cover or access layer record:
 
 - critical boundaries behind it;
 - boundaries provided by the removable component;
@@ -164,7 +163,7 @@ Record the intended replacement boundary for each important assembly.
 Show:
 
 - designed anchors into permanent fabric;
-- backplanes, fixing rails and grounds;
+- controlled attachment planes, fixing rails and grounds;
 - ordinary fixing zones;
 - exceptional structural fixing points;
 - no-drill/no-fix zones;
@@ -224,12 +223,12 @@ Record significant wet or bonded work crossing assemblies with different expecte
 **Questions**
 - Is new build the correct strategic response?
 - What service life and stewardship assumptions are realistic?
-- Which unusual doctrine measures could materially affect site, budget or gross area?
+- Which unusual HSA measures could materially affect site, budget or gross area?
 
 **Required outputs**
 - client objectives and building-life ambition;
 - initial whole-life-value position;
-- site constraints relevant to raised floors, undercroft, drainage, maintenance access and future change;
+- site constraints relevant to service/access zones, drainage, maintenance access and future change;
 - precedent/research brief.
 
 **Gate**
@@ -250,7 +249,7 @@ Do not assume experimental service architecture belongs in the project before st
 - information-management/building-passport strategy.
 
 **Gate**
-The team must distinguish doctrine, selected patterns and open decisions.
+The team must distinguish governing doctrine, selected strategies/patterns, held propositions and open project decisions.
 
 ---
 
@@ -259,17 +258,17 @@ The team must distinguish doctrine, selected patterns and open decisions.
 **Required outputs**
 - principal spatial order;
 - maintenance-geography diagrams;
-- plant/service hub location;
+- plant/service hub location where selected;
 - vertical and horizontal route options;
 - wet-room stacking/service-wall options;
 - roof-maintenance concept;
 - environmental/passive design concept;
-- reference-house pattern shortlist;
+- selected HSA strategies/patterns and unresolved candidates;
 - initial permanence/assembly hierarchy;
 - initial attachment and movement concepts;
-- tectonic architectural-language concept for occupant-facing interfaces;
+- project architectural-language concept for occupant-facing interfaces;
 - repose concept covering spatial hierarchy, privacy/retreat, apparent structural settlement, daylight/outlook, acoustic strategy and intelligible local environmental control;
-- first proportionality appraisal for unusual voids, undercrofts and spare capacity.
+- first proportionality appraisal for unusual service/access voids and spare capacity.
 
 **Mandatory options studies**
 - ground/service-section options;
@@ -278,7 +277,7 @@ The team must distinguish doctrine, selected patterns and open decisions.
 - water-distribution/failure-management strategy.
 
 **Gate**
-No pattern advances merely because it is ideologically attractive.
+No pattern or experimental proposition advances merely because it is ideologically attractive.
 
 ---
 
@@ -310,9 +309,9 @@ Service architecture must now fit the actual building rather than an abstract di
 **Required outputs**
 - interface-family and service-wall details;
 - penetration schedule;
-- water-damage-safe details;
+- water-failure-management details appropriate to the selected strategy;
 - window/door replacement details;
-- access-panel/floor-access details;
+- selected access-layer details;
 - controls/isolation/label scheme;
 - maintenance, disassembly and replacement sequences;
 - final attachment details;
@@ -325,16 +324,16 @@ Service architecture must now fit the actual building rather than an abstract di
 - final repose review, including local/manual control where automation affects comfort;
 - building-passport data requirements.
 
-**Prototype candidates**
-- service skirting / vertical joinery;
-- window interface;
-- wet-room service wall;
-- floor access band;
-- functional cornice if retained;
+**Prototype candidates, only where selected by the project**
+- representative [`HSA-P-015 — Accessible Room Service Route`](../patterns/accessible-room-service-route.md) implementation;
+- window/opening interface;
+- high-service-room service wall;
+- selective floor-access condition;
+- functional cornice or other movement interface where retained;
 - representative water-failure-management detail;
-- seated floor edge if pursued;
-- architectural backplane + wall-lining bay if pursued;
-- finish-agnostic floor-platform bay if pursued.
+- structural floor-edge challenger under [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md);
+- [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) with [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) where the held lining candidate is being tested;
+- full-room floor platform only if a simpler selective-access strategy leaves a material problem unresolved.
 
 **Gate**
 Repeated bespoke work cannot be multiplied before prototype review. Where reversibility is claimed, approval requires **physical removal and reinstatement**, not visual inspection alone.
@@ -389,13 +388,15 @@ A maintainability feature is not accepted solely because it appears on an as-bui
 - record updates after alterations;
 - maintenance problems and unexpected access failures recorded;
 - real maintenance tasks compared with the original brief;
-- lessons fed back into the pattern catalogue.
+- lessons fed back into HSA research and pattern evidence where appropriate.
 
-Stage 7 is part of the research cycle, not an administrative afterthought.
+Stage 7 closes the loop between project use and future HSA development.
 
 ---
 
 # 8. Interface responsibility matrix
+
+Populate only interfaces that actually exist in the project.
 
 | Interface family | Lead | Consulted | Required evidence | Approval |
 |---|---|---|---|---|
@@ -404,11 +405,11 @@ Stage 7 is part of the research cycle, not an administrative afterthought.
 | Wet-room ↔ service wall | Architect | MEP / waterproofing / acoustic | mock-up + water/access review |  |
 | Service void ↔ compartment boundary | Architect/fire | MEP / acoustic | penetration schedule |  |
 | Plant ↔ structure | MEP | structural/acoustic | vibration + replacement geometry |  |
-| Roof maintenance access | Architect | H&S / roofer / structural | access method statement |  |
-| Seated floor edge | Structural engineer | Architect / acoustic / fire | calculation + movement/restraint detail + mock-up |  |
-| Permanent wall ↔ architectural backplane | Architect / structural | fabricator / MEP / acoustic | anchor loads + fixing/no-fix map + prototype |  |
-| Backplane ↔ replaceable wall lining | Architect | fabricator / fire / acoustic / MEP | interface drawing + wall-bay prototype |  |
-| Structural floor ↔ finish-agnostic platform | Architect / structural | acoustic / MEP / flooring fabricator | stiffness/acoustic detail + floor-bay prototype |  |
+| Roof maintenance access | Architect | H&S / roofer / structural | access strategy + task geometry |  |
+| Structural floor ↔ masonry | Structural engineer | Architect / acoustic / fire | calculation + support/restraint/movement/boundary detail |  |
+| Permanent wall ↔ controlled attachment plane | Architect / structural | fabricator / MEP / acoustic | anchor loads + fixing/no-fix map + prototype where required |  |
+| Controlled attachment plane ↔ replaceable lining, where selected | Architect | fabricator / fire / acoustic / MEP | interface drawing + wall-bay prototype |  |
+| Structural floor ↔ selective access layer, where selected | Architect / structural | acoustic / MEP / flooring fabricator | stiffness/acoustic/interface detail + prototype |  |
 | Visible movement/interface metalwork | Architect | fabricator / relevant engineer | 1:1 sample + actual interface function |  |
 
 ---
@@ -429,9 +430,9 @@ For occupant-facing prototypes ask:
 
 # 10. Deviation register
 
-A better project-specific solution may replace a preferred pattern.
+A better project-specific solution may replace a preferred pattern or implementation.
 
-| ID | Doctrine/pattern affected | Proposed deviation | Reason | Evidence | Approved by |
+| ID | Doctrine / strategy / pattern / requirement affected | Proposed deviation | Reason | Evidence | Approved by |
 |---|---|---|---|---|---|
 | D01 |  |  |  |  |  |
 
