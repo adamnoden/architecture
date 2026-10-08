@@ -1,6 +1,6 @@
 # Boundary Family PEN-ENV-01 — Controlled Service Penetration Through External Envelope
 
-**Status:** H1 supported research family v0.1 — product/detail evidence required  
+**Status:** H1 paper-domain research family v0.1 — product/detail evidence required; not a native executable family  
 **Purpose:** make ordinary pipe, cable and duct penetrations deliberate transitions through the building envelope rather than site-cut holes repaired with generic sealant.  
 **Primary H1 construction:** masonry cavity walls + simple duo-pitched roof.  
 **Date:** 2026-10-04
@@ -51,7 +51,7 @@ SERVICE ZONE
 INSIDE
 ~~~
 
-The compiler therefore represents a penetration as:
+The computational model therefore represents a penetration as:
 
 > **service + host assembly + boundary transitions + reinstatement details + maintenance/replacement path**
 
@@ -72,7 +72,7 @@ A poor penetration can create:
 - uncontrolled fire/smoke paths where a fire-resisting assembly is crossed;
 - an unmaintainable service trapped in permanent fabric.
 
-The family applies the wider doctrine:
+The family applies the wider HSA interface rule:
 
 > **Component A + designed interface + Component B.**
 
@@ -245,7 +245,7 @@ The detail must accommodate expected differential movement between service and w
 
 The service opening should not unnecessarily break the insulation layer.
 
-The compiler records:
+The model records:
 
 - penetrant/sleeve geometry through insulation;
 - local insulation closure/reinstatement;
@@ -356,7 +356,7 @@ PEN-ENV-01 owns the boundary crossing; VENT-HYBRID-STACK-01 or the relevant serv
 
 For an ordinary detached external wall/roof penetration, fire-stopping may not always be a separate compartmentation obligation.
 
-But the compiler must ask rather than assume.
+But the computational model must ask rather than assume.
 
 If the host assembly carries:
 
@@ -377,7 +377,7 @@ The terminal should provide appropriate insect/bird/vermin protection without in
 
 For ventilation systems, an arbitrary fine mesh may be a performance change and must not be added without considering airflow resistance and maintenance.
 
-## 20. Replacement doctrine
+## 20. Lifecycle and replacement
 
 The family is successful only if the service can plausibly be replaced without rebuilding the permanent envelope interface unnecessarily.
 
@@ -389,6 +389,8 @@ Preferred hierarchy:
 4. permanent masonry/roof structure remains intact.
 
 Where a roof terminal itself is life-limited, its roof-covering detail should be designed as a replaceable roofing component rather than a cast-in permanent object.
+
+This is an HSA lifecycle objective, not evidence that every service penetration must use the same physical solution.
 
 ## 21. Inspection hold points
 
@@ -426,9 +428,9 @@ A preliminary airtightness test before finishes is strongly compatible with this
 
 ## 22. Evidence boundary
 
-### Native / semantic
+### Semantic / modelled
 
-The compiler may know:
+The conceptual model can represent:
 
 - penetrant identity and role;
 - host assembly;
@@ -441,6 +443,8 @@ The compiler may know:
 - roof-underlay occurrence;
 - support/access relationship;
 - dependent service/product evidence.
+
+P0 has not implemented this complete penetration family.
 
 ### External product/detail evidence
 
@@ -466,7 +470,7 @@ May include:
 
 ## 23. Supported-domain rules
 
-PEN-ENV-01 v0.1 supports ordinary H1 penetrations where:
+PEN-ENV-01 v0.1 supports ordinary H1 paper-research penetrations where:
 
 - host wall is the supported masonry cavity-wall family, or host roof is RF-TRUSS-DUO-01;
 - penetration is planned and bounded;
@@ -585,13 +589,13 @@ Specific products/details enter as evidence-backed subtypes.
 
 This is consistent with the earlier interface-obligation-bundle result: interfaces contribute facts to shared graphs before canonical obligations are derived.
 
-## 26. H1 status
+## 26. H1 paper result
 
 ~~~text
-penetration occurrence              NATIVE / SUPPORTED
-boundary layers crossed             NATIVE
-wall core-drilled subtype           SUPPORTED RESEARCH FAMILY
-roof terminal subtype               SUPPORTED RESEARCH FAMILY
+penetration occurrence              H1 PAPER SEMANTICS
+boundary layers crossed             H1 PAPER SEMANTICS
+wall core-drilled subtype           RESEARCH FAMILY
+roof terminal subtype               RESEARCH FAMILY
 weather detail                      PRODUCT / DETAIL EVIDENCE
 air-barrier collar                  PRODUCT / DETAIL EVIDENCE
 thermal consequence                 TARGET / EXTERNAL ANALYSIS AS NEEDED
@@ -600,11 +604,13 @@ fire/acoustic branch                TARGET + EXTERNAL EVIDENCE IF APPLICABLE
 as-built seal continuity            PHYSICAL EVIDENCE
 ~~~
 
-PEN-ENV-01 closes C-019B at H1 paper-research scale.
+The family closed the historical `C-019B` paper-research item. It does not make arbitrary service crossings release-valid and does not imply that P0 contains a native penetration engine.
 
-It does not make every arbitrary service crossing release-valid.
+## 27. Current boundary
 
-## 27. Source anchors
+A real project still needs an actual host assembly, service type, penetration detail, product compatibility and applicable structural/fire/acoustic/environmental evidence. Further executable work is warranted only if project coordination or professional review exposes a concrete question that benefits from formalisation.
+
+## 28. Source anchors
 
 - Approved Document L Volume 1, 2026 edition, airtightness guidance (paragraph 3.22): https://www.gov.uk/government/publications/approved-document-l-2026
 - Approved Document L Volume 1, 2021 edition incorporating 2023 amendments, equivalent airtightness principles for earlier targets: https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l
