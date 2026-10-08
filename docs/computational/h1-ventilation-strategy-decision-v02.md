@@ -1,31 +1,32 @@
 # H1 Ventilation Strategy Decision — v0.2
 
-**Status:** programme decision — supersedes v0.1 for current H1 planning  
+**Status:** H1 paper-domain ventilation decision; supersedes v0.1 within the frozen H1 research record  
 **Date:** 2026-10-04  
 **Supersedes:** [H1 Ventilation Strategy Decision v0.1](h1-ventilation-strategy-decision-v01.md)  
+**Current evidence boundary:** [Hybrid Ventilation Evidence Trial 01](h1-hybrid-ventilation-evidence-trial-v01.md) established the hybrid family as a research-supported topology with external specialist performance proof required.  
 **Historical note:** S2-RUN-01 remains frozen against VENT-CMEV-01 and is not retrospectively changed.
 
-## 1. Decision in one sentence
+## 1. Decision
 
-H1 will now **attempt ventilation through a passive-stack architecture with bounded mechanical assistance**, while retaining CMEV and MVHR as legitimate alternate families if evidence shows that the hybrid route is inferior or cannot be proved for the house/site.
+For the bounded H1 paper domain, ventilation is approached through a **passive-stack architecture with bounded mechanical assistance**, while CMEV and MVHR remain legitimate alternatives where evidence shows that the hybrid route is inferior or cannot be proved for the house and site.
 
-The preferred research family is:
+The selected research family is:
 
 **VENT-HYBRID-STACK-01**
 
-It is not yet promoted to trusted/supported status.
+This is not a trusted technical family, a Reference House mandate or a general HSA prescription.
 
-## 2. Why v0.1 is superseded
+## 2. Why v0.1 was superseded
 
 v0.1 selected central continuous mechanical extract because it reduced compiler complexity.
 
-That logic was internally coherent but architecturally backwards.
+That logic was computationally convenient but architecturally backwards.
 
-The compiler is downstream of the Long-Life House doctrine. A system should not become the architectural baseline merely because it produces the easiest computational family.
+The computational track is downstream of HSA. A system should not become the architectural baseline merely because it produces the easiest computational family.
 
 The revised ordering is established in [H1 Passive Environmental Strategy](h1-passive-environmental-strategy-v01.md):
 
-**passive response → bounded mechanical assistance → fully mechanical response**.
+**reduce load → passive response → bounded mechanical assistance → fully mechanical response where justified**.
 
 ## 3. Regulatory finding
 
@@ -49,7 +50,7 @@ Therefore:
 
 > **absence from the prescriptive table is not a prohibition; it changes the proof route.**
 
-This is exactly the kind of distinction the compiler-target/evidence model is intended to preserve.
+This is exactly the distinction the compiler-target/evidence model is intended to preserve.
 
 ## 4. Airtightness remains deliberate
 
@@ -65,15 +66,15 @@ The revised family assumes:
 
 Unintended infiltration does not count as the designed air path.
 
-## 5. Candidate routes reconsidered
+## 5. Candidate routes
 
 ### 5.1 Natural ventilation with intermittent extract
 
 This remains simple and legitimate within the scope of the prescriptive route for less-airtight dwellings.
 
-It is not the preferred Long-Life House baseline because it still relies on intermittent mechanical wet-room extract and does not answer the project question about whether a deliberately airtight dwelling can make useful passive stack forces carry more of the normal duty.
+It is not the selected H1 research family because it still relies on intermittent mechanical wet-room extract and does not test whether a deliberately airtight dwelling can make useful passive stack forces carry more of the normal duty.
 
-**H1 posture:** supported-domain alternate for appropriate airtightness/context; not preferred research family.
+**H1 paper posture:** alternate for appropriate airtightness/context.
 
 ### 5.2 Pure passive stack ventilation
 
@@ -86,11 +87,10 @@ Principle:
 
 Strengths:
 
-- almost no moving parts;
-- excellent graceful degradation because there may be no powered central dependency;
+- very few moving parts;
+- graceful degradation because there may be no powered central dependency;
 - low electrical demand;
-- strong compatibility with the wet-core/service-riser concept;
-- potentially long-lived and comprehensible.
+- compatibility with compact wet/service geography.
 
 Weaknesses:
 
@@ -100,37 +100,37 @@ Weaknesses:
 - terminal pressure and surrounding geometry matter;
 - reverse flow and cross-flow need attention;
 - no inherent heat recovery;
-- specialist design/evidence is required for the intended airtight H1 house.
+- specialist design/evidence is required for an airtight house.
 
-**H1 posture:** valuable passive capability, but not trusted as a stand-alone guaranteed family without house-specific performance proof.
+**H1 paper posture:** useful passive capability, not a stand-alone guaranteed family without house-specific proof.
 
 ### 5.3 Hybrid passive stack with mechanical assistance
 
 Principle:
 
-Use the same passive supply/transfer/extract topology, but provide low-pressure mechanical assistance that operates only when natural driving forces or pollutant/moisture demand would otherwise leave the performance obligation unresolved.
+Use the same passive supply/transfer/extract topology, but provide low-pressure mechanical assistance when natural driving forces or pollutant/moisture demand would otherwise leave the performance obligation unresolved.
 
 The preferred arrangement keeps the passive path useful when the fan is stopped.
 
 Strengths:
 
-- natural forces can carry normal duty when available;
+- natural forces can carry duty when available;
 - mechanical power is available as a performance guarantee rather than the first mover;
 - one-way extract geography remains simpler than MVHR;
-- can fail toward a residual passive route rather than a completely dead duct network;
-- compatible with a compact wet core and near-vertical riser;
-- gives the compiler a meaningful passive/assisted capability model rather than a binary named-system flag.
+- failure can retain a useful passive route rather than a completely dead duct network;
+- compatible with compact wet/service geography;
+- exposes passive/assisted capability explicitly rather than reducing ventilation to a named-system flag.
 
 Weaknesses:
 
-- not a simple prescriptive H1 compliance route;
-- requires specialist airflow design and a credible control strategy;
+- not a simple prescriptive compliance route;
+- requires specialist airflow design and control strategy;
 - passive-mode pressure/flow must be demonstrated rather than assumed;
-- there is a risk of creating a nominally “passive” system whose fan actually runs most of the time;
+- there is a risk of creating a nominally “passive” system whose fan runs most of the time;
 - no heat recovery in the base family;
-- current product precedents do not by themselves prove the exact detached-house configuration.
+- available products do not by themselves prove the exact detached-house configuration.
 
-**H1 posture:** **PREFERRED RESEARCH FAMILY — EVIDENCE GATE OPEN.**
+**H1 paper posture:** **RESEARCH-SUPPORTED TOPOLOGY / EXTERNAL PERFORMANCE PROOF REQUIRED.**
 
 Identifier:
 
@@ -148,22 +148,22 @@ It retains:
 - transfer routes;
 - purge ventilation.
 
-Its key disadvantage is now doctrinal rather than regulatory: the fan is the normal driving force by default.
+Its principal HSA disadvantage is that the fan is the normal driving force by default, adding a continuous active dependency where a credible passive contribution may exist.
 
-**H1 posture:** **SUPPORTED FALLBACK / ALTERNATE FAMILY.**
+**H1 paper posture:** **SUPPORTED FALLBACK / ALTERNATE FAMILY.**
 
 It remains especially credible if the hybrid stack cannot be demonstrated or if the passive-stack geometry becomes awkward enough that the active fallback is effectively continuous anyway.
 
 ### 5.5 MVHR
 
-MVHR remains the most controlled of the candidates and offers:
+MVHR offers:
 
 - heat recovery;
 - filtered/located supply air;
 - strong acoustic/pollution-site options;
 - good compatibility with very airtight construction when designed and commissioned well.
 
-Its burdens remain:
+Its burdens include:
 
 - two duct networks;
 - filters;
@@ -175,13 +175,13 @@ Its burdens remain:
 
 Those burdens do not make MVHR doctrinally wrong.
 
-If ventilation heat loss, external noise/pollution, filtration or winter comfort dominate, MVHR may be the best Long-Life House system despite its machinery.
+If ventilation heat loss, external noise/pollution, filtration or winter comfort dominate, MVHR may be the best project system despite its additional machinery.
 
-**H1 posture:** higher-complexity supported-domain alternate; promotion to Reference-House baseline remains evidence/site dependent.
+**H1 paper posture:** higher-complexity alternate; Reference House selection remains evidence- and site-dependent.
 
 ## 6. Family-selection logic
 
-H1 should reason approximately as follows:
+The research logic is approximately:
 
 ~~~text
 START
@@ -198,14 +198,16 @@ across the required operating envelope?
 Does site noise/pollution or ventilation heat loss make
 background inlets / no-heat-recovery architecture poor?
   ├─ YES → compare especially MVHR
-  └─ NO → VENT-HYBRID-STACK-01 remains preferred
+  └─ NO → VENT-HYBRID-STACK-01 remains credible
 ~~~
 
-No branch is allowed to pass merely because its family name sounds desirable.
+No branch passes merely because its family name sounds desirable.
 
-## 7. What the hybrid family must prove
+## 7. What the hybrid family still must prove for a real project
 
-Before promotion to H1 supported status, the family requires competent design evidence for:
+The [Hybrid Ventilation Evidence Trial](h1-hybrid-ventilation-evidence-trial-v01.md) passed the feasibility/evidence-boundary question. It did **not** prove project performance.
+
+A real implementation still requires competent evidence for:
 
 1. whole-dwelling outdoor-air provision;
 2. local wet-room moisture/pollutant extraction;
@@ -220,16 +222,16 @@ Before promotion to H1 supported status, the family requires competent design ev
 11. assisted-mode fan/duct performance;
 12. failure with the fan or electrical supply unavailable;
 13. interaction with cooker source capture;
-14. interaction with purge / Part-O overheating strategy;
+14. interaction with purge / overheating strategy;
 15. whole-house energy consequences compared with plausible CMEV/MVHR alternatives.
 
-The 2026 Approved Document F Appendix-B moisture/IAQ performance criteria provide one useful performance reference for future-target work; the exact compiler target still owns applicability and compliance route.
+The exact compiler target owns regulatory applicability and compliance route.
 
 ## 8. Control philosophy
 
 The base family should not require cloud services or proprietary home-automation logic.
 
-A valid assisted system needs a local, inspectable control strategy capable of deciding when mechanical help is required.
+An assisted system needs a local, inspectable control strategy capable of deciding when mechanical help is required.
 
 Potential inputs may include:
 
@@ -240,17 +242,15 @@ Potential inputs may include:
 - occupancy/pollutant demand;
 - manual boost.
 
-H1 does not yet choose the exact sensor/control algorithm.
-
-The performance evidence must justify it.
+H1 does not choose the exact sensor/control algorithm. The performance evidence must justify it.
 
 ## 9. Source-capture cooking remains separate
 
 Cooking can generate a short, high pollutant load that should preferably be captured at source.
 
-The hybrid background system therefore does not automatically absorb the cooker hood.
+The hybrid background system therefore does not automatically absorb cooker extract.
 
-A future KITCHEN-SOURCE-CAPTURE family should coordinate:
+A source-capture family must coordinate:
 
 - direct exhaust;
 - make-up air;
@@ -266,18 +266,18 @@ Openable windows, cross ventilation, secure night openings and stack purge can c
 
 They are not used to excuse inadequate background ventilation.
 
-Conversely, proving the Part-F background system does not prove Part-O overheating performance.
+Conversely, proving the background ventilation system does not prove overheating performance.
 
-The whole-house paper compile must carry these as related but distinct obligations.
+These remain related but distinct obligations.
 
 ## 11. Evidence/provenance consequence
 
-VENT-HYBRID-STACK-01 is a useful test of the compiler model precisely because it does not fit a simple prescriptive checklist.
+VENT-HYBRID-STACK-01 is a useful test of the computational model precisely because it does not fit a simple prescriptive checklist.
 
-A release result may need to say:
+A release result may need to distinguish:
 
 ~~~text
-SYSTEM TOPOLOGY                    NATIVE / SUPPORTED CANDIDATE
+SYSTEM TOPOLOGY                    SUPPORTED / PROJECT SELECTED
 REGULATORY APPLICABILITY           TARGET-DERIVED
 PASSIVE AIRFLOW PERFORMANCE        EXTERNAL SPECIALIST EVIDENCE
 ASSISTED AIRFLOW PERFORMANCE       EXTERNAL SPECIALIST + PRODUCT EVIDENCE
@@ -297,33 +297,38 @@ The ventilation-family decision changed **after** the run.
 
 Do not rewrite S2 to make its history cleaner.
 
-## 13. H1-PAPER-01 gate
+## 13. H1-PAPER gate outcome
 
-Before the complete bounded house compile begins, one of the following must be true:
+The original gate required either enough evidence to admit the hybrid topology into H1 paper research or an explicit rejection in favour of another family.
 
-### Route A — hybrid promoted
+The [Hybrid Ventilation Evidence Trial](h1-hybrid-ventilation-evidence-trial-v01.md) closed that internal gate:
 
-VENT-HYBRID-STACK-01 has enough credible specialist/performance evidence to be treated as the selected H1 research family.
+```text
+FEASIBILITY / EVIDENCE BOUNDARY      PASS
+PROJECT PERFORMANCE / RELEASE        NOT PROVEN
+```
 
-### Route B — hybrid rejected
+H1-PAPER subsequently proceeded with `VENT-HYBRID-STACK-01` as a research-supported topology whose airflow adequacy remained external evidence. H1-PAPER is now complete.
 
-The evidence shows it is a worse fit than CMEV or MVHR for the bounded H1 house, and the alternate family is selected explicitly with reasons.
-
-The important outcome is not that passive stack wins.
-
-The important outcome is that the environmental strategy is selected by architectural/building-physics reasoning rather than compiler convenience.
+The unresolved question is therefore no longer “may H1-PAPER begin?” It is whether a real Reference House/site can demonstrate that this family outperforms credible CMEV/MVHR alternatives under the passive-first hierarchy.
 
 ## 14. Current decision table
 
-| Family | H1 status | Normal motive force | Heat recovery | Key proof burden |
+| Family | H1 paper status | Normal motive force | Heat recovery | Key proof burden |
 |---|---|---|---|---|
 | natural + intermittent extract | alternate | natural supply + intermittent fans | no | target/airtightness scope |
 | pure PSV | research capability | wind + buoyancy | no | variable airflow performance |
-| **VENT-HYBRID-STACK-01** | **preferred research candidate** | wind + buoyancy, assisted as required | no | specialist whole-envelope performance |
+| **VENT-HYBRID-STACK-01** | **research-supported topology** | wind + buoyancy, assisted as required | no | specialist whole-envelope performance |
 | VENT-CMEV-01 | supported fallback | continuous fan | no | fan/duct/inlet design + commissioning |
 | MVHR | higher-complexity alternate | continuous supply + extract fans | yes | ducting, balancing, filters, condensate, commissioning |
 
-## 15. Source anchors
+## 15. Reference House boundary
+
+No H1 ventilation family is automatically selected for the Reference House.
+
+Reference House environmental design must test the passive-first hierarchy against the actual orientation, openings, stack geometry, external noise/pollution, winter comfort, summer risk, maintenance geography and competent airflow modelling. The H1 family records provide bounded alternatives and proof questions; they do not decide the architecture.
+
+## 16. Source anchors
 
 - Approved Document F, Volume 1, 2026 edition: https://www.gov.uk/government/publications/approved-document-f-2026
 - Future Homes Standard consultation government response (2021): https://www.gov.uk/government/consultations/the-future-homes-standard-changes-to-part-l-and-part-f-of-the-building-regulations-for-new-dwellings
