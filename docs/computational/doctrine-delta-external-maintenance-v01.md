@@ -1,15 +1,16 @@
 # Computational Doctrine Delta 01 — External Maintenance Geography
 
-**Status:** post-H1 doctrine-sync audit  
+**Status:** post-H1 doctrine-sync audit; executable extension candidate, not a standing implementation task  
 **Date:** 2026-10-05  
 **Doctrine change:** commit `fa883693` — external maintenance geography  
-**Paper compiler state:** H1-PAPER remains frozen; this document does not reopen the completed paper-compilation programme.
+**Paper compiler state:** H1-PAPER remains frozen; this document does not reopen the completed paper-compilation programme.  
+**Executable state:** P0 and `PAT-XW-01` have since passed. External-maintenance semantics remain unexercised in software.
 
 ## 1. Question
 
-Recent doctrine work extends **Give maintenance a geography** beyond internal plant/service access to the exterior of the building.
+The doctrine **Give maintenance a geography** extends beyond internal plant/service access to the exterior of the building.
 
-The new doctrine requires maintenance to be understood as a task-specific spatial route involving, where relevant:
+Exterior maintenance must be understood as a task-specific spatial route involving, where relevant:
 
 - site/service entrance;
 - approach and material route;
@@ -60,17 +61,17 @@ The model also already states the critical invariant:
 
 > a maintenance task cannot claim accessibility without an access / working / withdrawal path appropriate to the task.
 
-This is the correct conceptual foundation for the new doctrine.
+This is the correct conceptual foundation for the doctrine.
 
-However, the post-H1 capability statement must be read narrowly: H1 demonstrated maintenance validity through **internal/service examples**, principally plant, riser, valve, service-route and component-withdrawal access. It did not exercise the exterior task chain now required by the doctrine.
+However, the H1 capability statement must be read narrowly: H1 demonstrated maintenance validity through **internal/service examples**, principally plant, riser, valve, service-route and component-withdrawal access. It did not exercise the exterior task chain.
 
 Current status:
 
-**EXTERNAL MAINTENANCE GEOGRAPHY = CONCEPTUALLY REPRESENTABLE / NOT YET PAPER- OR SOFTWARE-DEMONSTRATED.**
+**EXTERNAL MAINTENANCE GEOGRAPHY = CONCEPTUALLY REPRESENTABLE / NOT YET SOFTWARE-DEMONSTRATED.**
 
 ## 3. Doctrine → computational mapping
 
-| New doctrine requirement | Existing computational concept | Coverage |
+| Doctrine requirement | Existing computational concept | Coverage |
 |---|---|---|
 | target façade/roof component | physical entity + maintenance task | STRONG |
 | distinguish inspect / clean / repair / replace | MaintenanceTask / InspectionTask / ReplacementSequence | STRONG; role taxonomy needs formalisation |
@@ -160,9 +161,9 @@ At minimum support assumptions such as:
 - selected access method;
 - as-built levels / drainage / external plant positions.
 
-The first implementation can treat these as explicit scenario facts/assumptions rather than inventing a horticultural growth simulator.
+A first implementation can treat these as explicit scenario facts/assumptions rather than inventing a horticultural growth simulator.
 
-## 5. New obligations the compiler should be able to derive
+## 5. Obligations a future fixture should derive
 
 Given:
 
@@ -201,9 +202,11 @@ The compiler should **not** claim to prove:
 
 It may prove or flag architectural preconditions and generate scoped external evidence obligations.
 
-## 7. Required executable extension test
+## 7. Evidence-selected executable fixture
 
-This should become an **implementation extension test after the minimal kernel proves itself**, not a reason to reopen H1 paper research.
+P0 has now demonstrated the minimal identity / relationship / obligation / evidence mechanism. That makes an exterior-maintenance fixture technically eligible; it does not make it automatically next.
+
+`EXT-MAINT-01` should run only when Reference House coordination, physical work or professional review exposes a live question that the fixture can answer better than drawings and direct review.
 
 Suggested fixture:
 
@@ -252,34 +255,34 @@ But the phrase:
 
 must be interpreted as:
 
-> **maintenance / replacement validity demonstrated internally for the H1 internal/service cases exercised. Exterior maintenance geography is newly strengthened doctrine and has not yet been demonstrated by the compiler.**
+> **maintenance / replacement validity demonstrated internally for the H1 internal/service cases exercised. Exterior maintenance geography is strengthened doctrine and has not yet been demonstrated by the compiler.**
 
 Do not retroactively claim that H1 tested exterior scaffold/site logistics.
 
-## 9. Programme decision
+## 9. Programme consequence
 
 ### Reopen the paper compiler programme?
 
 **NO.**
 
-The new doctrine does not expose a missing fundamental abstraction. It lands naturally in the existing maintenance + spatial + structural + evidence graphs.
+The doctrine does not expose a missing fundamental abstraction. It lands naturally in the existing maintenance + spatial + structural + evidence graphs.
 
-### Change the first executable prototype scope?
+### Reopen generic P0/crosswalk growth?
 
 **NO.**
 
-The first kernel should stay small.
+P0 and `PAT-XW-01` have passed and generic growth remains frozen.
 
-### Add an implementation extension gate?
+### Is `EXT-MAINT-01` authorised as a standing next task?
 
-**YES.**
+**NO.**
 
-After the kernel demonstrates identity, geometry, obligations, evidence and invalidation, external maintenance geography is an unusually good second fixture because it tests the compiler on **empty-but-functional space, site context, temporary methods and future change** rather than another permanent building assembly.
+It is an evidence-selected candidate fixture. Run it only when a real unresolved architectural, physical or professional-review question justifies the implementation cost.
 
 ### Overall compiler-coverage verdict
 
 **SEMANTIC ARCHITECTURE: PASS**  
 **H1 DEMONSTRATION COVERAGE: PARTIAL**  
-**EXTERNAL-MAINTENANCE RULE/SCENARIO IMPLEMENTATION: OPEN**
+**EXTERNAL-MAINTENANCE SOFTWARE DEMONSTRATION: OPEN**
 
-This is a useful doctrine delta, not a reason to abandon or substantially redesign the compiler model.
+This doctrine delta remains useful as a computational boundary test. It is not a reason to abandon, substantially redesign or automatically extend the compiler model.
