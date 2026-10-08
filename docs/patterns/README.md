@@ -7,11 +7,9 @@ const activePatterns = patterns.filter((pattern) => pattern.state === 'active')
 const retiredPatterns = patterns.filter((pattern) => pattern.state === 'retired')
 </script>
 
-This area holds the reusable architectural responses developed from the doctrine.
+The pattern language records reusable architectural responses developed from the governing principles. Patterns sit between doctrine and project-specific construction: specific enough to shape design, general enough to admit materially different implementations.
 
-The project now has an evidence-qualified **pattern language**: stable pattern identities, sparse typed relationships and separate generative sequences. Phase 7 has completed canonical pattern identity migration; the remaining work is to normalise non-pattern material, reconcile the Reference House/publication, and add only lightweight validation tooling.
-
-Pattern identity is independent from evidence maturity. A pattern can have a stable place in the language while still requiring calculation, prototype work or professional review.
+The canonical language currently contains **21 active patterns**, three strategies and four held candidates. Pattern identity is independent from evidence maturity. A pattern can have a stable place in the language while still requiring calculation, prototype work or professional review.
 
 ## Active canonical patterns
 
@@ -36,32 +34,29 @@ Pattern identity is independent from evidence maturity. A pattern can have a sta
 
 Retired IDs remain visible for provenance and are never reused.
 
-## Non-pattern layers
+## Other layers
 
 Not every useful recurring proposition belongs in the pattern graph.
 
 - [Strategies](strategies/) hold broad approaches whose valid physical responses differ too much to form one pattern.
-- [Held Pattern Candidates](candidates/) hold plausible future patterns whose evidence, scope, domestic proportionality or physical quality has not yet crossed the admission gate.
-- implementation families and prototypes remain in their research/prototype records rather than being promoted by naming.
+- [Held candidates](candidates/) contain plausible future patterns whose evidence, scope, domestic proportionality or physical quality has not crossed the admission gate.
+- implementation families and prototypes remain in their research or prototype records rather than acquiring pattern status through naming alone.
 
-These distinctions are intentional. They keep the language small enough to mean something.
+These distinctions keep the language selective and preserve the difference between a reusable architectural relationship and a particular way of building it.
 
-## Language and migration controls
+## How the language works
 
-- [Pattern Language — Model and Authoring Contract](language-model.md)
-- [Service Topology — Generative Sequence](service-topology-sequence.md)
-- [Phase 7 Migration Plan](../development/pattern-language-phase7-plan.md)
-- [Pattern-Language Overhaul Control](../development/pattern-language-overhaul.md)
-- [Phase 6 Gate Review](../development/pattern-language-phase6-review.md)
-- [Phase 6 Corpus Audit](../development/pattern-language-corpus-audit.md)
+The [Pattern Language — Model and Authoring Contract](language-model.md) defines pattern identity, evidence, relationships and admission. The [Service Topology — Generative Sequence](service-topology-sequence.md) shows how patterns can be invoked in a consequential design order without turning the graph into a universal procedure.
+
+The Reference House records actual project selections and occurrences in its [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md). Use in that house does not increase a pattern's general evidence or maturity.
 
 ## Migration provenance
 
-These pages remain available because they preserve the path by which the language was derived. They are not competing canonical sources:
+The language was derived through earlier catalogue and pilot work. Those records remain available as provenance rather than competing canonical sources:
 
 - [Core Pattern Catalogue](core-12.md) — legacy aggregate prose for the original Core 12;
-- [Service-Topology Pilot](pilot/README.md) — the first linked language experiment;
-- [Reversible Assembly Candidates](reversible-assembly-candidates.md) — legacy mixed strategy/candidate/implementation material now being normalised;
+- [Service-Topology Pilot](pilot/README.md) — the first linked-language experiment;
+- [Reversible Assembly Candidates](reversible-assembly-candidates.md) — legacy material later separated into strategies, candidates and implementation families;
 - [Accessible Vertical Service Zone — pre-admission candidate](candidates/accessible-vertical-service-zone.md) — provenance for canonical `HSA-P-014`.
 
-The generated lists above derive from canonical pattern frontmatter. Do not maintain a second manual ID registry here.
+The active and retired lists above are generated from canonical pattern frontmatter; individual pattern records remain the source of pattern identity and metadata.
