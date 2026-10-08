@@ -19,7 +19,7 @@ Possible forms include an access band, service edge, corridor strip or other bou
 
 ## Why it remains held
 
-The Phase-6 audit found this more proportionate than assuming a full-room removable platform, but still too unresolved for pattern admission. “Access where needed” is not enough: the project needs a repeatable spatial relationship that survives real acoustic, tactile and architectural constraints.
+Selective access is more proportionate than assuming a full-room removable platform, but the proposition remains too unresolved for pattern admission. “Access where needed” is not enough: the project needs a repeatable spatial relationship that survives real acoustic, tactile and architectural constraints.
 
 ## Admission gate
 
