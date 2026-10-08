@@ -1,27 +1,17 @@
 # Prototypes
 
-This directory contains **concrete test artefacts** used to attack uncertain or non-standard propositions before they are promoted into the architecture.
+The prototype area records physical tests of uncertain or non-standard propositions before they are relied upon more widely in the architecture.
 
-Typical contents include:
+A prototype record may include build packs, technical drawings, fabrication information, test procedures, measured results, failures and post-test observations. The [development programme](../development/tectonic-prototype-programme.md) decides what should be tested and why; this area records the specimen and what happened to it.
 
-- build packs;
-- technical drawings and SVG details;
-- fabrication information;
-- test setups and procedures;
-- measured results, failures and post-test records.
-
-The programme that decides **what** should be prototyped and **why** belongs in [`../development/`](../development/). This directory records the thing built, tested or measured.
-
-A successful prototype does not by itself make a proposition universal, and a failed prototype is useful evidence rather than a failed research programme.
+A successful specimen supports only the claims it actually tested. A failed specimen is useful evidence when it exposes a weakness in the proposition, assembly or test assumption.
 
 ## Evidence authority
 
-One specimen can legitimately answer both a general systems question and a project-specific architectural question. Keep the verdicts separate.
+One specimen may answer both a general systems question and a project-specific architectural question, but those verdicts remain separate.
 
-For example, the P01-W2 wall bay is visibly developed for the Georgian-derived Reference House. Its solidity, reversibility, tolerance recovery, installer robustness and comparison with excellent conventional construction may contribute to the evidence for a general HSA proposition. Whether the same specimen looks convincing inside G-01 is a **Reference House selection criterion only**.
+The P01-W2 wall bay, for example, is developed for the Georgian-derived Reference House. Its solidity, reversibility, tolerance recovery, installer robustness and performance against excellent conventional construction may contribute to evidence for a general HSA proposition. Whether the same specimen belongs architecturally within G-01 is a Reference House selection question.
 
-A selected-grammar or Reference House aesthetic success must never increase general pattern evidence or maturity by itself. Conversely, a generally successful assembly need not be selected for the Reference House if it does not belong in that architecture.
+Project-specific aesthetic success does not increase general pattern evidence or maturity. Conversely, an assembly may perform well as a general proposition and still be rejected from the Reference House because it does not belong in that architecture.
 
 The controlling separation is defined in the [Tectonic Prototype and Engineering Programme](../development/tectonic-prototype-programme.md) and the project-wide [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md).
-
-See [`../README.md`](../README.md) for the repository-wide documentation model.
