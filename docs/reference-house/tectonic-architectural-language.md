@@ -1,14 +1,14 @@
 # Reference House — Tectonic Architectural Language
 
-**Status:** reference-house design language; not universal doctrine.
+**Status:** Reference House design language; not universal HSA doctrine.
 
 ## Purpose
 
-The Long-Life House doctrine does not require Georgian architecture, brass details or visible joints. The reference house does.
+House Systems Architecture does not prescribe a historical style, material palette or visible joint language. The Reference House currently selects **G-01**, a Georgian-derived architectural grammar. Brass or bronze details, expressed joints and other tectonic devices remain project-level choices within that grammar; they are not requirements in themselves.
 
 The task is not to hide a technical platform inside a period-looking shell, but to make the **visible architectural grammar and real constructional grammar coincide**.
 
-Georgian interiors already organise rooms through edges, fields, mouldings and thresholds. Those elements can carry genuine technical work so serviceability, movement and replacement belong to the room rather than appearing as later compromises.
+Within G-01, traditional interior elements—skirtings, architraves, mouldings, thresholds and related datums—can carry genuine technical work so serviceability, movement and replacement belong to the room rather than appearing as later compromises.
 
 ## Governing rule
 
@@ -18,9 +18,9 @@ Visible interfaces should be resolved through proportion, material, hierarchy an
 
 ## Repose as a compositional requirement
 
-The reference house should feel **architecturally at rest**.
+The Reference House should feel **architecturally at rest**.
 
-This does not imply that Georgian architecture is neurologically privileged. Repose is style-neutral; Georgian language is simply the chosen vehicle for this house.
+This does not imply that Georgian architecture is neurologically privileged. Repose is style-neutral; G-01 is simply the architectural grammar selected for this house.
 
 The house should favour:
 
@@ -46,7 +46,7 @@ Noise, glare, overheating and ventilation performance can often be measured. Pri
 
 ### Skirting
 
-The skirting is the natural datum at the floor/wall junction. Where useful it may conceal low-level service distribution, cover the edge of a removable floor platform, protect lining edges, absorb floor-level tolerance and provide access without cutting the wall finish.
+Skirting can provide a strong floor/wall datum. Where useful it may conceal low-level service distribution, cover the edge of an accessible floor condition, protect lining edges, absorb floor-level tolerance and provide access without cutting the wall finish.
 
 It should remain substantial domestic joinery, not commercial trunking in disguise.
 
@@ -64,9 +64,9 @@ Document its load capacity and fixing method.
 
 ### Cornice
 
-The cornice can become a genuine wall/ceiling interface: concealing a controlled movement gap, protecting lining edges, forming a removable perimeter piece or carrying a restrained technical route where fire and acoustic performance allow it.
+A cornice can become a genuine wall/ceiling interface: concealing a controlled movement gap, protecting lining edges, forming a removable perimeter piece or carrying a restrained technical route where fire and acoustic performance allow it.
 
-It must not become a catch-all service duct. Its first job is architectural.
+It must not become a catch-all service duct. Its architectural role remains primary.
 
 ### Architrave
 
@@ -80,13 +80,13 @@ Where practical, removing the architrave should expose the serviceable interface
 
 ### Panel mouldings
 
-Panel mouldings may define real removable lining fields, turning an access seam into a proportioned architectural subdivision.
+Where a real removable lining field exists, panel mouldings may define its boundary and turn an access seam into a proportioned architectural subdivision.
 
-Do not fake a panel boundary where no panel exists merely to simulate construction. Where a real removable panel exists, the moulding may honestly express its edge.
+Do not invent a panel boundary merely to simulate construction. Where a real panel exists, the moulding may honestly express its edge.
 
 ### Thresholds
 
-Thresholds are legitimate places to change floor construction. They may resolve finish carriers, protect platform edges, accommodate movement, provide a wear surface or terminate removable floor modules.
+Thresholds are legitimate places to change floor construction. They may resolve finish carriers, protect platform edges, accommodate movement, provide a wear surface or terminate accessible floor conditions.
 
 Select stone, timber, brass or bronze for the actual wear and movement condition, not decorative novelty.
 
@@ -94,7 +94,7 @@ Select stone, timber, brass or bronze for the actual wear and movement condition
 
 Traditional architectural depth can absorb ordinary construction variation where it already has a compositional role.
 
-An architrave can overlap the frame/wall tolerance zone; a substantial skirting can cover the controlled perimeter of a floor platform; a cornice can span a real wall/ceiling movement junction; a threshold can provide wear protection while managing a change of datum.
+An architrave can overlap the frame/wall tolerance zone; a substantial skirting can cover a controlled floor perimeter; a cornice can span a real wall/ceiling movement junction; a threshold can provide wear protection while managing a change of datum.
 
 The hierarchy is:
 
@@ -104,11 +104,11 @@ The moulding or cover is the final resolution, not the primary correction mechan
 
 ## Brass and bronze
 
-Brass and bronze are a **functional visual language**, not a theme.
+Brass and bronze form a **functional visual language**, not a theme.
 
 Use them selectively where metal is doing real work: slip interfaces, sacrificial edges, thresholds, functional panel borders, access covers, removable trims, touch hardware, ventilation grilles and durable labels or indexes.
 
-A useful house-wide rule is:
+A useful Reference House rule is:
 
 > **Visible brass or bronze should usually indicate that something moves, opens, wears, protects, indexes or comes apart.**
 
@@ -122,15 +122,15 @@ The preferred construction is often:
 
 ## Panelisation without a panelised aesthetic
 
-Replaceable linings and floor platforms should not force a repetitive modular appearance unless that is architecturally desired.
+Where replaceable linings or accessible floor layers are selected, they should not force a repetitive modular appearance unless that is architecturally desired.
 
-The Georgian room already offers room bays, symmetrical fields, opening axes, panel mouldings, skirting/dado/picture-rail/cornice datums, fireplaces and thresholds as places where module boundaries can fall naturally.
+G-01 already provides room bays, symmetrical fields, opening axes, panel mouldings, skirting/dado/picture-rail/cornice datums, fireplaces and thresholds as places where module boundaries can fall naturally.
 
 Module geometry should therefore come from room composition and replacement logic together. Do not begin with a manufacturer's grid and force the architecture to obey it; equally, do not make every panel a bespoke one-off. The aim is a small family of standard interface geometries with variable visible faces.
 
 ## Material truth
 
-The reference house strongly disfavors architectural simulation. Legitimate cladding, veneer, paint, render and layered finishes remain possible, but appearance should not casually imply a different structural, weathering or craft reality.
+The Reference House strongly disfavors architectural simulation. Legitimate cladding, veneer, paint, render and layered finishes remain possible, but appearance should not casually imply a different structural, weathering or craft reality.
 
 Prefer real timber, stone, metal and mineral surfaces where they are selected for their actual qualities. Avoid fake brick, moulded plastic pretending to be carved material and false joints that imply constructional divisions which do not exist unless there is a clear decorative tradition and no misleading technical consequence.
 
