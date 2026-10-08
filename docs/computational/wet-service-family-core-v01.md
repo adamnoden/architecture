@@ -1,14 +1,14 @@
 # Wet-Service Family WET-CORE-01 — Clustered Wet Core with Zonal Service Walls
 
-**Status:** H1 supported-family candidate v0.1  
-**Purpose:** give water, sanitary drainage and high-consequence domestic appliances a deliberate whole-house geography rather than allowing plumbing to spread opportunistically through permanent fabric.  
+**Status:** H1 paper-domain wet-service family v0.1  
+**Purpose:** give water, sanitary drainage and high-consequence domestic appliances a deliberate whole-house geography rather than allowing plumbing to accumulate through unrelated construction.  
 **Engineering status:** pipe sizing, hydraulic design, drainage sizing/gradients and hot-water safety require competent design/evidence against the selected target.
 
-> **Keep water close to the core, keep gravity routes short, and make isolation/repair visible before the bad day arrives.**
+> **Keep water close to the core, keep gravity routes short, and make isolation and repair legible before failure occurs.**
 
 ## 1. Architectural proposition
 
-H1 groups:
+The bounded H1 family groups:
 
 - bathrooms;
 - shower rooms;
@@ -16,24 +16,24 @@ H1 groups:
 - kitchen high-service edge;
 - hot-water plant
 
-around one deliberately accessible wet-service core.
+around one deliberately accessible wet-service geography.
 
 The core contains or directly adjoins:
 
 - vertical water mains;
 - soil/waste stack(s);
-- ventilation extract riser/duct routes where coordinated;
+- ventilation extract routes where coordinated;
 - hot-water cylinder/plant;
 - zonal valve clusters;
 - service access.
 
-This is a planning constraint with architectural consequences.
+This is a planning proposition with architectural consequences, not a requirement that every HSA house use one central core.
 
 ## 2. Why not one giant central manifold
 
 A whole-house home-run manifold is superficially attractive because every outlet is individually legible.
 
-But it can also create:
+It can also create:
 
 - long hot/cold branches;
 - more pipe;
@@ -41,13 +41,9 @@ But it can also create:
 - stagnation/wait-time risk;
 - a large proprietary distribution hub.
 
-H1 therefore prefers:
+The H1 family therefore uses **zonal distribution** rather than requiring every outlet to home-run to one remote manifold.
 
-> **zonal distribution**
-
-rather than:
-
-> every tap home-run to one remote manifold.
+This does not settle the general HSA question of individually isolatable manifold distribution; that remains a held candidate assessed by context and evidence.
 
 ## 3. Zonal water topology
 
@@ -91,11 +87,7 @@ The model records:
 - appliance-specific isolation where useful;
 - access.
 
-The goal is:
-
-> a leak or fixture replacement can be isolated locally without searching through the house.
-
-The exact valve/manifold product remains replaceable.
+The objective is local, intelligible isolation without searching through the house. The exact valve/manifold product remains replaceable.
 
 ## 5. Service walls
 
@@ -107,17 +99,17 @@ Wet rooms use a high-service wall or accessible service zone that can carry:
 - ventilation terminal/duct coordination;
 - electrical/control interfaces with required segregation.
 
-Service access is provided through:
+Service access may come through:
 
 - removable panels;
 - adjacent service corridor/riser;
 - another deliberate access face.
 
-No brittle decorative finish should be the only route to a valve or trap.
+A brittle decorative finish should not be the only route to a valve or trap.
 
 ## 6. Drainage topology
 
-Gravity drainage is organised around one or a small number of vertical stacks in the wet core.
+Gravity drainage is organised around one or a small number of vertical stacks in the wet-service geography.
 
 Conceptually:
 
@@ -135,7 +127,7 @@ BELOW-GROUND DRAIN
 EXTERNAL INSPECTION / SITE DRAINAGE
 ~~~
 
-The compiler stores:
+The semantic model records:
 
 - source fixture;
 - branch length;
@@ -147,34 +139,25 @@ The compiler stores:
 
 ## 7. Drainage cannot cheat gravity
 
-If fixture and stack geometry cannot achieve the selected Part-H route without:
+If fixture and stack geometry cannot achieve the selected Part-H route without cutting structure, hiding a long flat pipe, dropping below an inaccessible zone or creating an unsupported branch, the source arrangement must change or leave the supported family.
 
-- cutting structure;
-- hiding a long flat pipe;
-- dropping below an inaccessible zone;
-- creating an unsupported branch,
+The compiler must not “solve” drainage after the plan is finished by inventing an impossible route.
 
-the compiler returns:
-
-**FAIL / UNSUPPORTED LAYOUT**
-
-It does not “solve” drainage after the plan is finished.
-
-This is one of the strongest reasons for clustering wet rooms early.
+This is one reason to coordinate wet-room adjacency early.
 
 ## 8. Stack access
 
-The stack lives in a first-class accessible riser.
+The stack lives in deliberate vertical service geography.
 
 The model provides for:
 
 - rodding/clearing access;
 - repair access;
 - vent/AAV access where selected;
-- removable panels;
-- working space.
+- removable access where needed;
+- working space appropriate to the task.
 
-Approved Document H's expectation that pipework be reasonably accessible for repair is treated as architecture, not an afterthought.
+Approved Document H's repair/access requirements align with HSA maintenance geography but retain their own regulatory authority.
 
 ## 9. Floor/substructure crossing
 
@@ -185,25 +168,21 @@ Where a stack or drain crosses the ground-floor assembly:
 - record below-ground drainage as site infrastructure;
 - connect to an accessible external inspection strategy.
 
-Do not cast an arbitrary drainage route inside structural floor fabric.
-
-The pipe passes through a designed interface.
+The route passes through a designed interface rather than becoming an arbitrary cast-in service path.
 
 ## 10. Hot-water plant
 
-The heat-pump-compatible hot-water cylinder sits adjacent to the wet-service core where practical.
+The H1 family places the heat-pump-compatible hot-water cylinder adjacent to the wet-service core where practical.
 
-Benefits:
+Benefits include:
 
-- short main hot-water routes;
+- shorter principal hot-water routes;
 - shared plant access;
-- safety-discharge route can be designed visibly;
+- visible safety-discharge geography;
 - easier cylinder replacement;
 - reduced distribution loss/wait time.
 
-The cylinder is replaceable plant.
-
-It is not permanent fabric.
+The cylinder is replaceable plant, not permanent fabric.
 
 ## 11. Hot-water safety
 
@@ -216,39 +195,34 @@ Where an unvented cylinder is used, the family must accommodate:
 - required fall/termination;
 - maintenance access.
 
-The exact design is competent Part-G/installer evidence.
-
-The compiler owns the route and access dependency.
+The exact design is competent Part-G/installer evidence. The computational model can own route and access dependencies without claiming to be the hot-water designer.
 
 ## 12. Water quality
 
-H1 principles:
+H1 preferences include:
 
 - keep cold water cold;
 - keep hot water hot;
-- keep water moving;
-- avoid dead legs;
-- avoid unnecessary pipe length;
-- keep rarely used branches visible in the model.
+- avoid unnecessary dead legs;
+- avoid unnecessary pipe length and stored branch volume;
+- keep rarely used branches explicit in the model.
 
-A low-use remote outlet should generate a design review rather than disappear into plumbing topology.
+A low-use remote outlet should trigger review rather than disappear into generic plumbing topology.
 
 ## 13. Appliance failure architecture
 
-Dishwasher and washing machine belong in high-consequence wet/service zones.
+Dishwasher and washing machine belong in high-consequence wet/service zones where practical.
 
-Base H1 requirements:
+The H1 family expects:
 
 - accessible isolation;
 - replaceable hoses/connections;
 - inspectable connection zone;
-- local leak containment where practical;
-- floor/wall finishes that tolerate foreseeable leakage long enough for detection;
-- no critical junction hidden behind permanently fixed cabinetry.
+- local containment/drainage where proportionate;
+- surrounding finishes capable of tolerating foreseeable leakage long enough for detection;
+- no critical junction made inaccessible by fixed cabinetry without a deliberate access method.
 
-Electronic leak sensors/automatic shutoff may be added.
-
-They are not allowed to be the only failure-containment strategy.
+Electronic leak sensors/automatic shutoff may assist. They are not the only failure-containment strategy.
 
 ## 14. Bathroom failure architecture
 
@@ -269,44 +243,33 @@ The exact waterproofing assembly remains a dedicated product/detail family.
 
 ## 15. Kitchen
 
-The kitchen is connected to the wet core through one compact service edge.
+The kitchen connects to the wet-service geography through a compact service edge where practical.
 
-Prefer:
+Prefer sink, dishwasher and other water-consuming equipment near that edge when doing so does not damage the architecture.
 
-- sink;
-- dishwasher;
-- water-consuming equipment
+Moving the sink or appliances can legitimately create:
 
-near the service wall/core.
+- longer water branches;
+- longer waste route;
+- new crossings;
+- drainage-fall conflicts.
 
-The kitchen layout remains architectural.
-
-The compiler can warn when moving the sink across the room creates:
-
-- long water branches;
-- long waste route;
-- new floor penetrations;
-- drainage conflicts.
+Those consequences belong in the design decision; the kitchen layout is not reduced to plumbing efficiency.
 
 ## 16. Ventilation coordination
 
-VENT-CMEV-01 extracts from wet rooms.
+The wet core can share a vertical technical geography with the selected ventilation family for wet-room extract routes, subject to separation, fire/acoustic obligations, maintainability and actual duct geometry.
 
-Therefore the wet core can share a vertical technical geography for:
+H1 research has used both:
 
-- drainage stack;
-- water risers;
-- extract ducts,
+- `VENT-CMEV-01` — supported fallback / historical S2 family;
+- `VENT-HYBRID-STACK-01` — later research-supported passive/assisted topology.
 
-with appropriate separation/access.
-
-They remain distinct networks.
-
-A shared shaft is not permission to merge boundaries, fire requirements or access blindly.
+Water, drainage and ventilation remain distinct systems even when they occupy adjacent service geography.
 
 ## 17. Heating coordination
 
-HEAT-ASHP-RAD-01 may use the same plant/service core for:
+`HEAT-ASHP-RAD-01` may use the same plant/service geography for:
 
 - heat-pump hydraulic interface;
 - cylinder;
@@ -356,14 +319,14 @@ Expected:
 
 - longer water/drain branches;
 - drainage fall/structure conflicts;
-- may leave supported domain.
+- family may become a poor or unsupported fit.
 
 ### WET-M02 — move WC across joist field
 
 Expected:
 
 - branch route re-evaluates;
-- arbitrary joist cutting forbidden;
+- arbitrary joist cutting is not accepted as an implicit solution;
 - plan may fail despite geometric room fit.
 
 ### WET-M03 — hide valve cluster behind fixed tiling/joinery
@@ -392,31 +355,35 @@ Expected:
 - water-quality/stagnation warning;
 - branch quantities and hot-water performance re-evaluate.
 
-### WET-M07 — appliance moved outside wet/failure-tolerant zone
+### WET-M07 — appliance moved outside failure-tolerant wet geography
 
 Expected:
 
-- leak-consequence/doctrine warning or failure depending project profile.
+- leakage consequence and project requirements re-evaluate rather than producing a generic doctrine failure.
 
 ## 20. H1 posture
 
 ~~~text
-wet-room clustering              SUPPORTED ARCHITECTURAL STRATEGY
-hot/cold topology                SUPPORTED
-zonal isolation                  SUPPORTED
-gravity drainage topology        SUPPORTED
-stack/service-riser geography    SUPPORTED
+wet-room clustering              H1 ARCHITECTURAL / SYSTEM FAMILY
+hot/cold topology                RESEARCH-SUPPORTED
+zonal isolation                  RESEARCH-SUPPORTED
+gravity drainage topology        RESEARCH-SUPPORTED
+stack/service geography          RESEARCH-SUPPORTED
 pipe sizing / hydraulics         EXTERNAL COMPETENT DESIGN
 drain sizing / gradients         TARGET + EXTERNAL DESIGN
 hot-water safety                 TARGET + COMPETENT EVIDENCE
 water efficiency                 TARGET / CALCULATION
 waterproofing                    PRODUCT/FAMILY EVIDENCE
-construction testing             FUTURE PHYSICAL EVIDENCE
+construction testing             PHYSICAL EVIDENCE
 ~~~
 
 WET-CORE-01 is deliberately a **geography + network family**, not a universal plumbing design engine.
 
-## 21. Source anchors
+## 21. Reference House boundary
+
+The Reference House may select, modify or reject this family as its plan develops. The general HSA proposition is that wet services, gravity, isolation, failure consequences and maintenance geography should be coordinated deliberately. The exact number of cores, stacks, valve groups and room adjacencies belongs to the project.
+
+## 22. Source anchors
 
 - Approved Document G: https://www.gov.uk/government/publications/sanitation-hot-water-safety-and-water-efficiency-approved-document-g
 - Approved Document H: https://www.gov.uk/government/publications/drainage-and-waste-disposal-approved-document-h
