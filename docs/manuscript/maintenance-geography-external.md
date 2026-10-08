@@ -1,8 +1,5 @@
 # Maintenance Geography — The Exterior
 
-**Status:** developed manuscript insert for Part II §8  
-**Principles:** 1 Build for time; 4 Failure architecture; 5 Give maintenance a geography; 6 Prefer ordinary parts; 11 Resolve technology as architecture
-
 The exterior of a house is usually drawn as an object seen from outside and occupied from within. Maintenance reveals a third condition: the building as a place of work.
 
 That work is ordinary. Mortar is repointed, gutters are cleared and renewed, windows are cleaned and eventually replaced, flashings fail and roofs need inspection. None of this should surprise a building intended to outlive several generations of its equipment and finishes.
@@ -87,7 +84,7 @@ Where scaffold, towers or mobile access equipment are credible future methods, a
 - what planting can be removed and what would be destroyed?
 - do retaining walls or level changes make the nominal access zone unusable?
 
-The existing **perimeter dry zone** may be valuable here, combining moisture management at the wall base, transition to the garden and latent support territory for maintenance. The overlap should be exploited where it works, not turned into a universal dimensional rule.
+A drained or hard landscape margin may sometimes serve several purposes at once: managing the wall base, mediating the transition to the garden and providing latent support territory for maintenance. The overlap is useful where the actual site and construction justify it; it is not a universal perimeter detail or dimensional rule.
 
 ## Architectural projections should carry their access consequences
 
@@ -117,7 +114,7 @@ A hatch opening directly onto a steep slate field does not by itself create safe
 
 The roof should first minimise recurrent attendance. Plant should not migrate there merely because the space is available. Rooflights, outlets, flashings, solar equipment and chimneys should be composed so the remaining tasks have a coherent route.
 
-Where a hatch materially improves that route, the reference house should probably include one, preferably on a secondary elevation. The doctrine requires the route, not the hatch.
+Where a hatch materially improves that route, it may be an appropriate part of the solution. Its position should follow the access strategy and architectural composition rather than becoming a doctrine requirement. The doctrine requires the route, not the hatch.
 
 Rooflights need particular care: they should not casually occupy the natural maintenance path or create a fragile hazard exactly where someone must travel to service another component.
 
@@ -133,7 +130,7 @@ That does not make the façade independent of external access. Full-frame replac
 
 An internal courtyard can look accessible while being operationally isolated. A person walking easily into it proves little about whether maintenance equipment or replacement components can follow.
 
-The reference house should test whether its courtyard route can carry the selected access equipment, replacement openings, roof and rainwater components, masonry materials and waste. The surface must also survive temporary works or provide deliberate support positions beneath a more delicate finish.
+In the Reference House, the courtyard route is tested against the selected access equipment, replacement openings, roof and rainwater components, masonry materials and waste. The surface must also survive temporary works or provide deliberate support positions beneath a more delicate finish.
 
 The courtyard need not read as a service yard. The capability should normally remain latent.
 
@@ -155,7 +152,7 @@ The objective is to make maintenance **ordinary in use**.
 
 ## Design review
 
-The external strategy should be tested through scenarios rather than general assurances. For the reference house, test at least:
+The external strategy should be tested through scenarios rather than general assurances. For the Reference House, test at least:
 
 1. repoint an upper-storey masonry bay;
 2. renew a gutter or eaves detail;
@@ -188,4 +185,4 @@ That is the exterior meaning of maintenance geography.
 
 The architectural argument is grounded principally in HSE CDM designer duties, the Work at Height hierarchy, HSG33 roof guidance, HSE scaffold-foundation guidance, CWCT safe-access/façade-design guidance and BCA Design for Maintainability practice. A research synthesis and source list is maintained in [External Maintenance Access — Research Synthesis](../research/external-maintenance-access.md).
 
-The doctrine does not claim that these sources prescribe the specific geometry of a detached house. They establish the underlying duties and professional logic; the house-specific response remains an architectural design decision.
+These sources establish the underlying duties and professional logic rather than prescribing the geometry of a detached house. The house-specific response remains an architectural design decision.
