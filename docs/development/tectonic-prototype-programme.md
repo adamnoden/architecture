@@ -1,11 +1,11 @@
 # Tectonic Prototype and Engineering Programme
 
-**Status:** validation programme for candidate reversible assemblies.  
+**Status:** validation programme for unresolved tectonic assemblies.  
 **Current first gate:** P01-W2 wall bay, governed by the [P01-W2 Evidence Protocol](../prototypes/w2-wall-bay-test-protocol.md).
 
 ## Purpose
 
-Several current tectonic propositions are architecturally promising but not proven enough to become project requirements. This programme defines the work needed to move them from **candidate** toward selected/project use and, where warranted, eventual pattern promotion.
+Several tectonic propositions are promising but not proven enough for project adoption at full scale. Their authority is not uniform: some general relationships are already canonical HSA patterns or strategies, while particular occupied-surface and structural implementations remain held candidates or challengers. This programme defines the physical and engineering work needed to select, modify or reject those implementations and, where warranted, strengthen the evidence behind the general proposition.
 
 > **Prototype the interface, not merely the object.**
 
@@ -19,7 +19,7 @@ A prototype may answer two different architectural questions at once. Keep their
 
 ### General HSA evidence
 
-Does the proposition perform well enough, across its stated scope, to support a strategy, candidate or pattern claim?
+Does the proposition perform well enough, across its stated scope, to support or challenge a strategy, candidate or pattern claim?
 
 This evidence may include normal-use quality, robustness, reversibility, reinstatement, installer comprehension, tolerance recovery, technical performance, proportionality and comparison with excellent conventional construction.
 
@@ -27,13 +27,13 @@ This evidence may include normal-use quality, robustness, reversibility, reinsta
 
 Does this particular implementation belong in the Reference House and its selected architectural language?
 
-For the current house this may include Georgian-derived composition, moulding hierarchy, joint placement, material expression and the project tectonic dialect.
+For the current house this may include G-01 composition, moulding hierarchy, joint placement, material expression and the project tectonic dialect.
 
 A Reference House fit pass **cannot promote a general HSA proposition**. A general HSA evidence pass likewise does not require the Reference House to select that implementation. Record both decisions independently whenever one specimen is used for both purposes.
 
 ## Common acceptance framework
 
-Every candidate prototype should be reviewed against seven categories.
+Every prototype should be reviewed against seven categories.
 
 ### 1. Primary performance
 
@@ -91,7 +91,7 @@ The trial tests the design and information, not the installer. A system that wor
 
 ---
 
-# Prototype P01 — Wall bay
+# Prototype P01 — W2 wall bay
 
 **Build pack:** [`docs/prototypes/w2-wall-bay-build-pack.md`](../prototypes/w2-wall-bay-build-pack.md)  
 **Evidence protocol:** [`docs/prototypes/w2-wall-bay-test-protocol.md`](../prototypes/w2-wall-bay-test-protocol.md)  
@@ -103,7 +103,7 @@ Build a full-height representative Reference House principal-room bay based on t
 
 - dense masonry or realistic rigid wall analogue with at least one declared acceptable geometric deviation;
 - permanent parge/air-control treatment where relevant;
-- sparse adjustable backplane;
+- sparse adjustable controlled attachment plane / backplane implementation;
 - shallow absorption/service zone where justified;
 - robust dense mineral/gypsum-fibre panels;
 - skirting and selected horizontal datum;
@@ -118,6 +118,11 @@ Build a full-height representative Reference House principal-room bay based on t
 Build an excellent conventional control beside it or under directly comparable conditions.
 
 The specimen is deliberately Reference-House-specific in visible architecture. The evidence protocol determines which results may travel beyond that project expression.
+
+## Authority under test
+
+- [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is already canonical; the prototype may confirm, qualify or challenge its project implementation but does not need to re-earn pattern identity from zero.
+- [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains held; P01 is its principal physical admission/project-selection gate.
 
 ## General evidence questions
 
@@ -134,7 +139,7 @@ The specimen is deliberately Reference-House-specific in visible architecture. T
 
 ## Reference House / G-01 fit question
 
-- Does this particular visible implementation read as convincing architecture within the Georgian-derived Reference House rather than technical fit-out?
+- Does this particular visible implementation read as convincing architecture within G-01 rather than technical fit-out?
 
 Record this separately from the general evidence result. Failure of G-01 fit may reject the implementation for this house without invalidating the general candidate; success does not promote the candidate.
 
@@ -158,36 +163,48 @@ Do not substitute a design-team walkthrough for the result sheet.
 
 ## Comparative control
 
-Retain a high-quality conventional plastered-wall benchmark for visual, tactile/acoustic, cost and labour comparison. The candidate wins only if its additional complexity buys meaningful long-term value.
+Retain a high-quality conventional plastered-wall benchmark for visual, tactile/acoustic, cost and labour comparison. The W2 implementation wins only if its additional complexity buys meaningful long-term value.
 
 A workshop pass does not constitute BS 5234, fire, acoustic, airtightness or structural certification. Those are later gates if the concept survives.
 
 ---
 
-# Prototype P02 — Floor bay
+# Prototype P02 — Selective floor access
 
 ## Scope
 
-Build a walkable multi-panel **low-profile dense-mineral platform** with a local access-band/conventional-floor comparator.
+Build a walkable conventional floor control with a **bounded local/perimeter/corridor access condition** where a real service route justifies it.
 
-Test timber, tile and, if structurally credible, stone or another high-mass finish on the same underlying interface where practical.
+The first comparison is selective access against excellent conventional construction. A low-profile dense-mineral full-room platform remains an upper-bound challenger and should be built only if the selective arrangement passes normal-use quality yet leaves a material access problem unresolved.
 
-Include primary floor analogue, low-profile support lattice, perimeter and threshold conditions, resilient seating, a representative service below and the intended lifting/release method.
+Include, as appropriate:
+
+- primary floor analogue;
+- conventional principal walking field;
+- bounded accessible strip or edge;
+- realistic service below;
+- perimeter and threshold conditions;
+- resilient seating / locating method;
+- intended lifting/release method.
 
 ## Questions
 
-- Can a blind user detect access-floor sound or movement?
+- Can a blind user detect the access condition by sound or movement?
 - Does furniture loading cause rocking?
-- What happens at edges under repeated footfall?
-- Can one panel be lifted without damaging neighbours?
-- Can tile/stone tolerate platform deflection?
+- What happens at the access edge under repeated footfall?
+- Can the selected access piece be lifted without damaging neighbours?
 - Is impact sound worse than the conventional control?
-- Can the panel repeatedly return to the same datum?
-- Does access geometry force an undesirable visible grid?
+- Can the accessible assembly repeatedly return to the same datum?
+- Does access geometry force an undesirable visible band or grid?
+- Does the bounded condition actually reach services likely to change?
 
 ## Comparative control
 
-Benchmark conventional high-quality timber/tile floor build-ups for stiffness, acoustics, cost and tactile quality.
+Benchmark conventional high-quality floor build-ups for stiffness, acoustics, cost and tactile quality.
+
+## Escalation
+
+Only if selective access earns further development should P02 expand to the full-room mineral-platform challenger with multiple finish carriers. Full-room removability is not the default success state.
 
 ---
 
@@ -204,6 +221,8 @@ Compare viable families such as:
 - steel angle/shoe only as an experimental challenger;
 - other seated/captured arrangements the engineer judges credible.
 
+The reusable HSA proposition is already captured by [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md). This prototype chooses between implementation families; it is not an attempt to promote **Seated Floor Structure** as a pattern.
+
 ## Questions
 
 - What carries vertical reaction?
@@ -218,7 +237,7 @@ Compare viable families such as:
 
 ## Gate
 
-Record no reference-house preference until a structural engineer has compared the candidate with conventional engineered hangers.
+Record no Reference House preference until a structural engineer has compared the challenger with conventional engineered hangers.
 
 ---
 
@@ -258,15 +277,15 @@ Do not generalise the cornice or metal vocabulary from this prototype. Generalis
 
 ## Structural
 
-Resolve seated floor connection, backplane anchor loads, exceptional wall loads, platform stiffness/load limits and separation between removable layers and primary diaphragm.
+Resolve floor support/restraint alternatives, controlled-attachment-plane anchor loads, exceptional wall loads, any accessible-floor stiffness/load limits and separation between removable layers and primary diaphragm.
 
 ## Fire
 
-Resolve removable linings, access panels, cavities/backplanes, floor edge, ceiling joints and reinstatement after access.
+Resolve removable linings, access panels, cavities/attachment planes, floor edge, ceiling joints and reinstatement after access.
 
 ## Acoustic
 
-Resolve panel resonance, flanking through backplanes, floor joints, resilient seating, floor/wall edge and service cavities.
+Resolve panel resonance, flanking through attachment infrastructure, accessible-floor joints, resilient seating, floor/wall edge and service cavities.
 
 ## Building physics
 
@@ -278,28 +297,30 @@ Resolve repeatable adjustment, standard fasteners, manufacturing tolerances, tra
 
 ## Cost and carbon
 
-Compare every candidate with the best conventional alternative. Record initial material/labour, added depth, embodied impact, likely replacement cycles, avoided destructive work, remanufacture assumptions and sensitivity to whether future access is actually used.
+Compare every challenger with the best conventional alternative. Record initial material/labour, added depth, embodied impact, likely replacement cycles, avoided destructive work, remanufacture assumptions and sensitivity to whether future access is actually used.
 
 ---
 
-# Promotion decisions
+# Evidence and selection decisions
 
-After prototype review assign two decisions where the specimen carries project-specific architectural expression.
+After prototype review assign separate decisions where a specimen carries project-specific architectural expression.
 
 ## General HSA evidence decision
 
-**Advance toward promotion** — normal-use quality, robustness and lifecycle value justify specialist technical validation; not yet a general pattern merely because a mock-up passed.  
+**Confirm / strengthen** — the result supports the existing pattern/strategy proposition within its stated scope.  
+**Qualify** — useful result, but scope or wording needs narrowing.  
+**Advance held candidate** — a held proposition has crossed enough of its stated gate to warrant the next evidence stage; not yet canonical merely because a mock-up passed.  
 **Hold** — plausible but needs more work.  
-**Reject** — complexity, performance or architectural cost exceeds demonstrated benefit.
+**Reject / challenge** — complexity, performance or architectural cost exceeds demonstrated benefit, or the result challenges the general proposition.
 
 Pattern promotion should require the evidence appropriate to the claim, not only prototype enthusiasm. For occupied surface systems this normally includes competent review of structural/fixing, fire, acoustic and building-physics consequences in addition to full-scale normal-use evidence.
 
 ## Reference House selection decision
 
-**Reference-house selected** — the implementation satisfies the project's selected grammar/dialect strongly enough to continue, subject to its unresolved technical evidence.  
-**Reference-house experimental** — suitable only for controlled project development.  
-**Reference-house reject** — does not belong in this house even if the underlying general proposition remains viable.
+**Reference House selected** — the implementation satisfies the project's selected grammar/dialect strongly enough to continue, subject to unresolved technical evidence.  
+**Reference House experimental** — suitable only for controlled project development.  
+**Reference House reject** — does not belong in this house even if the underlying general proposition remains viable.
 
 A Reference House selection decision never raises general pattern evidence or maturity by itself.
 
-Rejection is a successful research result. The doctrine should survive the failure of any particular implementation.
+Rejection is a successful research result. HSA should survive the failure of any particular implementation.
