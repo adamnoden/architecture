@@ -1,13 +1,13 @@
 # Formal Architectural Model — Conceptual v0.2
 
-**Status:** foundational research draft  
-**Purpose:** define what the future computational system must represent before syntax, database schema or CAD implementation is chosen
+**Status:** conceptual foundation; core identity, relationship and obligation mechanisms exercised by P0, broader entity families remain research  
+**Purpose:** define the semantic building model independently of any particular syntax, database schema or CAD implementation
 
 ## 1. Premise
 
 A CAD model is usually organised around objects and geometry. That is not enough for this project because the same piece of building participates in several systems at once.
 
-One external wall may bound a room, support a floor, carry thermal and air boundaries, contain an opening, exclude routine services, receive a backplane, separate sound and create maintenance obligations.
+One external wall may bound a room, support a floor, carry thermal and air boundaries, contain an opening, exclude routine services, receive an attachment plane, separate sound and create maintenance obligations.
 
 Those are not alternative descriptions. They are simultaneous relationships.
 
@@ -233,7 +233,7 @@ Examples:
 - a removable element cannot silently become the sole carrier of a boundary required to survive its removal;
 - a structural opening cannot exist without support resolution;
 - “accessible” maintenance cannot pass without the required approach, working and withdrawal geometry;
-- “replaceable” cannot pass where replacement destroys a longer-lived element contrary to selected doctrine constraints.
+- “replaceable” cannot pass where replacement destroys a longer-lived element contrary to selected project constraints.
 
 These need not all become programming-language type rules. The model requirement is simpler: **invalid architectural relationships must be explicit states, not latent facts hidden in drawings.**
 
@@ -241,7 +241,7 @@ These need not all become programming-language type rules. The model requirement
 
 Not every fact should be hand-authored.
 
-**Authored:** this is the principal drawing room; this wall uses family W2; this route is the service spine; this grammar is selected.
+**Authored:** this is the principal drawing room; this wall uses family W2; this route is the primary service route; this grammar is selected.
 
 **Derived:** room area, span, masonry quantity, collision state, reaction, external-wall area.
 
@@ -273,11 +273,11 @@ The formal model must preserve applicability.
 
 The model should eventually distinguish proposed, agreed, manufactured, installed, commissioned, in-service, altered, replaced and removed states.
 
-A future version should be able to retain statements such as:
+A later implementation should be able to retain statements such as:
 
 > Opening O17 superseded O12 under Change C17 and Target T2; evidence for O12 remains attached to historical Version V1.
 
-The first implementation need not support the full lifecycle, but the ontology should not make temporal identity impossible later.
+P0 does not support the full lifecycle. The ontology should nevertheless avoid making temporal identity impossible later.
 
 ## 13. IFC and open standards
 
@@ -288,14 +288,14 @@ Its useful precedents include stable identifiers, semantic objects, objectified 
 The intended relationship is:
 
 ~~~text
-Long-Life House semantic model
+HSA semantic model
         ↕
 interoperability mapping
         ↕
 IFC / bSDD / IDS where appropriate
 ~~~
 
-The internal model may need concepts that do not map cleanly to present IFC constructs, such as maintenance withdrawal volumes, permanence classes, doctrine constraints or evidence obligations. That is an interoperability problem, not a reason to discard them.
+The internal model may need concepts that do not map cleanly to present IFC constructs, such as maintenance withdrawal volumes, permanence classes, HSA/project constraints or evidence obligations. That is an interoperability problem, not a reason to discard them.
 
 ## 14. Model integrity invariants
 
@@ -314,6 +314,8 @@ Before architectural rules, the semantic model itself should enforce basic integ
 
 These are model invariants, not architectural doctrine.
 
+P0 has exercised a deliberately small subset of these invariants in software: stable identity, relationship endpoints, simple spatial overlap/adjacency and hosted-opening conditions. That executable subset should not be mistaken for implementation of the full conceptual model.
+
 ## 15. Worked wall-bay example
 
 A single external bay might be represented as overlapping facts:
@@ -329,7 +331,7 @@ WALL W01
   participates-in THERMAL-BOUNDARY TB01
   participates-in AIR-BOUNDARY AB01
   excludes ROUTINE-SERVICE-ROUTING
-  carries BACKPLANE BP01
+  carries ATTACHMENT-PLANE AP01
 
 OPENING O01
   receives WINDOW WIN01
@@ -342,7 +344,7 @@ FLOOR F01
   bears-on WALL W01
   creates reaction R17 at bearing B01
 
-BACKPLANE BP01
+ATTACHMENT-PLANE AP01
   attaches-to WALL W01 through INTERFACE I01
   supports REPLACEABLE-LINING L01
   references DATUM D01
@@ -406,7 +408,7 @@ See [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md).
 
 Bundles must also reference canonical source facts rather than duplicate them. `OPENING-O01.width` is authored once; structural, thermal, weather, quantity and grammar views derive from it.
 
-Authority remains attached to each obligation: engineering validity, regulation/target, product evidence, doctrine, grammar or project requirement. A bundle-level status must never hide a failed mandatory child obligation.
+Authority remains attached to each obligation: engineering validity, regulation/target, product evidence, HSA/project requirement, grammar or client requirement. A bundle-level status must never hide a failed mandatory child obligation.
 
 A bundle defines **what a relationship commits the building to resolving**. An implementation family defines **how those obligations are discharged**.
 
@@ -505,18 +507,18 @@ It is **not** a release state and is not part of the canonical validity lattice.
 - How should geometric and graph constraints interact?
 - What should be authored explicitly and what can be inferred safely?
 
-## 18. Next validation step
+## 18. Current validation discipline
 
 Do not expand the ontology by brainstorming.
 
-Use real Reference House slices. Add a concept only when the worked architecture requires it; challenge any concept that never participates in a useful rule, output or explanation.
+P0 and `PAT-XW-01` have already demonstrated that a small subset of stable identity, typed relationships, obligation derivation, scoped evidence and local invalidation can survive executable mutation tests. That is enough to freeze generic ontology growth.
 
-The ontology should grow under pressure from architecture, not software neatness.
+Add a concept only when Reference House work, physical testing or competent professional review exposes a real relationship that the existing model cannot express cleanly. Challenge any concept that never participates in a useful rule, output or explanation.
+
+See [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md).
 
 ## External anchors
 
 - buildingSMART, IFC 4.3 official documentation: https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/
 - buildingSMART, IFC Kernel and objectified relationships: https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/ifckernel/content.html
 - buildingSMART, spatial structure: https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/concepts/Object_Connectivity/Spatial_Structure/content.html
-- buildingSMART Data Dictionary: https://www.buildingsmart.org/users/services/buildingsmart-data-dictionary/
-- Karim Farghaly, Ranjith K. Soman and Shanjing Alexander Zhou, “The evolution of ontology in AEC: A two-decade synthesis, application domains, and future directions”, *Journal of Industrial Information Integration* 36 (2023), 100519: https://doi.org/10.1016/j.jii.2023.100519
