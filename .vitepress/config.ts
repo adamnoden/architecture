@@ -29,6 +29,17 @@ if (currentProgramme?.items) {
   if (!currentProgramme.items.some((item) => item.link === result.link)) {
     currentProgramme.items.unshift(result)
   }
+
+  const currentLabels = new Map([
+    ['/docs/computational/h1-capability-matrix-v05', 'H1 capability matrix v0.5 — frozen paper baseline'],
+    ['/docs/computational/doctrine-delta-external-maintenance-v01', 'External-maintenance doctrine delta — open fixture candidate'],
+    ['/docs/computational/external-review-pack-h1-paper-v02', 'External review pack — H1 paper — open'],
+    ['/docs/computational/external-evidence-trial-mapeguard-wp-v01', 'External evidence trial — Mapeguard WP — completed']
+  ])
+
+  for (const item of currentProgramme.items) {
+    if (item.link && currentLabels.has(item.link)) item.text = currentLabels.get(item.link)
+  }
 }
 
 if (programmeHistory?.items) {
@@ -44,6 +55,9 @@ if (programmeHistory?.items) {
 
 const grammarStudy = computational?.items?.find((item) => item.text === 'Architectural grammar study')
 if (grammarStudy?.items) {
+  const researchBrief = grammarStudy.items.find((item) => item.link === '/docs/computational/g01-research-brief')
+  if (researchBrief) researchBrief.text = 'G-01 research brief — baseline'
+
   const grammarPages = [
     {
       text: 'G-01 grammar charter',
@@ -54,11 +68,11 @@ if (grammarStudy?.items) {
       link: '/docs/computational/architectural-grammar-modelling-corrections-v01'
     },
     {
-      text: 'G-01 D5/D6 web pass v0.2',
+      text: 'G-01 D5/D6 web pass v0.2 — superseded',
       link: '/docs/computational/g01-d5-d6-web-pass-v02'
     },
     {
-      text: 'G-01 D5/D6 web pass v0.3',
+      text: 'G-01 D5/D6 evidence gate v0.3 — current',
       link: '/docs/computational/g01-d5-d6-web-pass-v03'
     },
     {
