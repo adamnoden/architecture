@@ -1,9 +1,10 @@
 # Ventilation Family VENT-HYBRID-STACK-01 — Hybrid Passive-Stack Ventilation
 
-**Status:** H1 preferred research-family candidate v0.1 — NOT YET TRUSTED/SUPPORTED  
-**Purpose:** test a predominantly passive whole-house ventilation topology with bounded mechanical assistance available to guarantee performance when natural driving forces are insufficient.  
-**Regulatory posture:** non-prescriptive/specialist route; exact compliance claim belongs to the selected compiler target and external performance evidence.  
-**Engineering status:** airflow design, control logic, terminal/inlet performance and verification require competent specialist evidence.
+**Status:** H1 research-supported topology — external specialist performance proof required  
+**Purpose:** define a passive-first whole-house ventilation topology with bounded mechanical assistance available when natural driving forces are insufficient.  
+**Regulatory posture:** non-prescriptive/specialist route; exact compliance belongs to the selected compiler target and scoped external evidence.  
+**Engineering status:** airflow design, control logic, terminal/inlet performance and verification require competent specialist evidence.  
+**Evidence gate:** [Hybrid Ventilation Evidence Trial 01](h1-hybrid-ventilation-evidence-trial-v01.md) passed feasibility/evidence-boundary review, not project performance.
 
 ## 1. Principle
 
@@ -45,9 +46,9 @@ ROOM / DWELLING
 CROSS / STACK PURGE PATH
 ~~~
 
-## 2. Supported H1 geometry candidate
+## 2. H1 geometry
 
-The first bounded arrangement assumes:
+The bounded H1 research arrangement assumes:
 
 - detached two-storey dwelling;
 - deliberate low-infiltration envelope;
@@ -60,7 +61,7 @@ The first bounded arrangement assumes:
 - optional low-pressure assist located at or near the high point of the stack system, or another location whose stopped-state resistance is proven acceptable;
 - openable-window/secure-opening purge route independent of the background system.
 
-The family is deliberately not yet generalized to flats, tall dwellings or complex shared shafts.
+This is an H1 research boundary, not a generic HSA restriction. Flats, tall dwellings and complex shared shafts would require separate family work.
 
 ## 3. Airtight envelope
 
@@ -90,7 +91,7 @@ The family records for each inlet:
 
 A night-latch window position is not the background-air strategy.
 
-Automatic or humidity-sensitive inlets may be supported later where their performance evidence is explicit; they are not assumed by the base semantic family.
+Automatic or humidity-sensitive inlets may be supported where their performance evidence is explicit; they are not assumed by the base semantic family.
 
 ## 5. Internal transfer
 
@@ -103,7 +104,7 @@ Possible transfer elements include:
 - open circulation routes;
 - other evidence-backed low-resistance transfer elements.
 
-The compiler records the route rather than merely recording that a door exists.
+The model records the route rather than merely recording that a door exists.
 
 Flooring or door replacement can therefore stale the ventilation route without changing the room geometry.
 
@@ -117,7 +118,7 @@ Candidate nodes include:
 - WC/sanitary accommodation;
 - kitchen background extract where coordinated with separate cooking source capture.
 
-The wet-core arrangement is valuable because it can place several stack ducts inside one accessible vertical service geography without requiring long horizontal extract branches.
+The wet-core arrangement is useful because it can place several stack ducts inside one accessible vertical service geography without requiring long horizontal extract branches.
 
 The default is **not** to combine arbitrary wet-room branches into one duct merely to save space.
 
@@ -130,13 +131,13 @@ Any shared-stack/manifold arrangement must address:
 - cleaning/access;
 - product/system evidence.
 
-Parallel segregated ducts inside one riser remain a valid H1 base arrangement.
+Parallel segregated ducts inside one riser remain a valid H1 research arrangement.
 
 ## 7. Stack geometry
 
 Passive performance is sensitive to resistance and driving pressure.
 
-Therefore the H1 family prefers:
+Therefore the family prefers:
 
 - short routes;
 - near-vertical ducts;
@@ -146,7 +147,7 @@ Therefore the H1 family prefers:
 - protected/insulated treatment through cold spaces where required to manage condensation and preserve buoyancy;
 - planned roof penetrations and terminals.
 
-Exact permitted offsets, diameters and pressure-loss limits are **external technical design**, not invented compiler constants in v0.1.
+Exact permitted offsets, diameters and pressure-loss limits are **external technical design**, not invented compiler constants.
 
 Geometry outside the evidence envelope returns:
 
@@ -169,7 +170,7 @@ It must carry evidence for relevant:
 - roof-boundary penetration;
 - visual/architectural integration.
 
-The compiler must coordinate the terminal with RF-TRUSS-DUO-01 and the future controlled envelope-penetration family.
+Any computational representation must coordinate the terminal with the selected roof and controlled envelope-penetration families rather than treating it as an isolated product.
 
 ## 9. Mechanical assistance
 
@@ -186,7 +187,7 @@ Preferred characteristics:
 - manual boost/override where appropriate;
 - no demolition required for replacement.
 
-The family does not yet select a manufacturer or exact fan form.
+The family does not select a manufacturer or exact fan form.
 
 A roof-mounted hybrid fan is one precedent, not a default product specification.
 
@@ -218,7 +219,7 @@ The passive airflow path should remain physically open where the chosen product/
 
 This is **graceful degradation**, not an assertion of continued regulatory compliance.
 
-The compiler/handover record must distinguish:
+The building record must distinguish:
 
 - residual passive capability;
 - required repair obligation;
@@ -243,7 +244,7 @@ A control scheme that merely waits for visible condensation is not adequate.
 
 ## 12. Performance envelope
 
-The family cannot become trusted merely because the topology is plausible.
+The family is not trusted merely because the topology is plausible.
 
 External competent analysis must cover representative adverse conditions including:
 
@@ -299,7 +300,7 @@ The base family has no heat recovery.
 
 That is a significant trade-off, not a footnote.
 
-The whole-house energy study must compare:
+A real whole-house energy study must compare:
 
 - ventilation heat loss;
 - fan energy in assisted operation;
@@ -313,7 +314,7 @@ If MVHR produces materially better whole-building energy/comfort with an accepta
 
 Grease- and pollutant-heavy cooker extract is not routed through passive background stacks by default.
 
-A future KITCHEN-SOURCE-CAPTURE-01 should coordinate with this family for:
+Cooking source capture should coordinate with this family for:
 
 - direct external exhaust;
 - make-up air;
@@ -332,7 +333,7 @@ VENT-HYBRID-STACK-01 contributes to background ventilation and source moisture r
 
 It may also contribute useful stack flow in summer, but no such credit is assumed automatically.
 
-Part-O / overheating obligations remain separate and may be discharged through:
+Overheating obligations remain separate and may be discharged through:
 
 - solar-gain control;
 - cross ventilation;
@@ -353,9 +354,9 @@ Routine access should be possible for:
 - accessible stack inspection points where the technical design requires them;
 - terminal inspection from a safe planned route.
 
-The roof-terminal maintenance obligation composes with the project's roof-access doctrine.
+The roof-terminal maintenance obligation composes with HSA maintenance geography.
 
-No active component should be trapped behind permanent fabric.
+The relevant principle is not “no active component may ever enter permanent fabric”; it is that shorter-lived components and their maintenance/replacement paths should be deliberately separated from longer-lived construction where proportionate.
 
 ## 17. Evidence model
 
@@ -462,11 +463,7 @@ Expected:
 
 The author should not draw a fluid-dynamics network manually.
 
-They should select:
-
-> hybrid passive-stack ventilation
-
-and identify:
+They should select a supported or project-approved ventilation family and identify:
 
 - habitable/dry rooms;
 - wet rooms;
@@ -474,7 +471,7 @@ and identify:
 - candidate roof termination zone;
 - external context constraints.
 
-The compiler may derive candidate:
+A future implementation may derive candidate:
 
 - inlet occurrences;
 - transfer routes;
@@ -483,31 +480,29 @@ The compiler may derive candidate:
 - evidence obligations;
 - maintenance obligations.
 
-A specialist then discharges the actual airflow/performance proof.
+A specialist discharges the actual airflow/performance proof.
 
 ## 20. H1 posture
 
 ~~~text
-passive/assisted topology               CANDIDATE NATIVE SEMANTICS
-purpose-provided inlet route            CANDIDATE
-transfer-air route                      SUPPORTED SEMANTICS
-stack geography                         CANDIDATE
-passive airflow performance              EXTERNAL SPECIALIST EVIDENCE
-assist fan performance                   EXTERNAL PRODUCT + DESIGN EVIDENCE
+passive/assisted topology               RESEARCH-SUPPORTED
+purpose-provided inlet route            RESEARCH-SUPPORTED SEMANTICS
+transfer-air route                      RESEARCH-SUPPORTED SEMANTICS
+stack geography                         RESEARCH-SUPPORTED SEMANTICS
+passive airflow performance             EXTERNAL SPECIALIST EVIDENCE
+assist fan performance                  EXTERNAL PRODUCT + DESIGN EVIDENCE
 control logic                            EXTERNAL DESIGN / PRODUCT EVIDENCE
-site noise/pollution suitability         CONTEXT + EXTERNAL EVIDENCE
-purge contribution                       SEPARATE TARGET OBLIGATION
-energy comparison                        EXTERNAL WHOLE-HOUSE ANALYSIS
-as-built verification                    FUTURE PHYSICAL EVIDENCE
+site noise/pollution suitability        CONTEXT + EXTERNAL EVIDENCE
+purge contribution                      SEPARATE TARGET OBLIGATION
+energy comparison                       EXTERNAL WHOLE-HOUSE ANALYSIS
+as-built verification                   PHYSICAL EVIDENCE
 ~~~
 
-## 21. Promotion rule
+## 21. Promotion boundary
 
-VENT-HYBRID-STACK-01 may be promoted from preferred research candidate to supported H1 family only after a real bounded house configuration demonstrates a credible design/evidence route.
+The [Hybrid Ventilation Evidence Trial](h1-hybrid-ventilation-evidence-trial-v01.md) has already promoted the **topology** from candidate to research-supported H1 status. It has not promoted technical performance to native compiler proof or established a Reference House selection.
 
-Failure to promote is an acceptable research result.
-
-If it fails, H1 should select CMEV or MVHR explicitly rather than weaken the proof standard.
+Further promotion would require a real bounded house configuration with competent airflow design, product/system evidence and as-built verification. Failure to promote remains an acceptable result; CMEV or MVHR may be the better project family.
 
 ## 22. Source anchors
 
