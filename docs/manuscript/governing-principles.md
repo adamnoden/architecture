@@ -1,7 +1,4 @@
-# House Systems Architecture — Governing Principles v1.0
-
-**Status:** v1.4 editorial refinement  
-**Purpose:** public-facing principles for the professional publication. These supersede the 63-item register as the primary doctrine, while the register remains as a traceability appendix.
+# House Systems Architecture — Governing Principles
 
 ## Governing constraints
 
@@ -95,15 +92,13 @@ Joints, access, wear, movement and replacement should become part of the archite
 
 ---
 
-## Editorial rule
+## From doctrine to implementation
 
-These principles are **not construction instructions**.
-
-The publication distinguishes:
+These principles are not construction instructions. They sit above more specific layers of the project:
 
 **Doctrine** — durable proposition.  
 **Strategy** — general way to satisfy it.  
 **Pattern** — reusable architectural response with stated trade-offs and evidence.  
 **Reference implementation** — one project-specific choice.
 
-A pattern may fail or be rejected without invalidating the principle it attempted to serve.
+A pattern or implementation can fail, be rejected or prove disproportionate without invalidating the principle it was intended to serve.
