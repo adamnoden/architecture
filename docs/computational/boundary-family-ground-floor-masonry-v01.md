@@ -1,15 +1,15 @@
 # Boundary Family BF-GF-MCW-01 — Ground Floor to Masonry Cavity Wall Perimeter
 
-**Status:** supported-family research candidate v0.1  
-**Purpose:** define one ordinary ground-floor / external-wall perimeter route so S1 does not leave the base of every room as an undefined envelope gap.  
-**Structural status:** ground/foundation/slab adequacy external under SAB-H1-01.  
-**Construction status:** research family, not construction specification.
+**Status:** H1/S1 paper-domain boundary family v0.1; floor, ground and structural evidence remain external  
+**Purpose:** define one ordinary ground-floor / external-wall perimeter route so the base of the enclosure is represented as a coordinated boundary junction rather than an undefined gap.  
+**Structural status:** ground/foundation/slab adequacy remains external under SAB-H1-01.  
+**Construction status:** research family, not construction specification or Reference House floor selection.
 
 > **The floor/wall perimeter is one environmental junction with several layers of responsibility. It is not solved by saying “DPC” or “insulation” in isolation.**
 
-## 1. Supported condition
+## 1. Bounded condition
 
-The initial family assumes:
+The family assumes:
 
 - detached low-rise dwelling;
 - masonry cavity external wall;
@@ -24,11 +24,11 @@ The initial family assumes:
 
 The exact floor product/build-up remains a separate implementation family.
 
+These are H1 research restrictions, not HSA doctrine.
+
 ## 2. Why this family is needed
 
-S1 needs a finished ground-floor datum and room area.
-
-But a whole-house compiler must eventually understand that the floor perimeter also affects:
+A ground-floor datum participates in much more than room geometry. The perimeter can affect:
 
 - ground moisture;
 - wall moisture;
@@ -39,15 +39,13 @@ But a whole-house compiler must eventually understand that the floor perimeter a
 - accessible thresholds elsewhere;
 - structural/substructure interfaces.
 
-Leaving this as generic “external evidence” would make a common junction undefined.
+The family makes those relationships explicit without pretending to prove the foundation or floor construction itself.
 
 ## 3. Moisture contribution
 
-Approved Document C illustrates the fundamental relationship:
+Approved Document C illustrates the fundamental relationship between floor damp-proofing and wall damp protection.
 
-> wall damp-proof course and floor damp-proof membrane should form a continuous damp-protection strategy.
-
-The family therefore contributes:
+Conceptually:
 
 ~~~text
 GROUND / MOISTURE
@@ -65,9 +63,9 @@ Required propositions include:
 
 - ground moisture cannot bypass the floor membrane at the perimeter;
 - wall DPC and floor membrane are compatibly connected;
-- the inner leaf is protected by the selected wall-base strategy;
-- cavity drainage/moisture behavior remains coherent above/below the junction;
-- any site-specific gas/radon/flood requirement is separately represented.
+- inner-leaf protection remains coherent;
+- cavity drainage/moisture behaviour remains coherent above/below the junction;
+- site-specific gas/radon/flood requirements are separately represented where applicable.
 
 ## 4. Thermal contribution
 
@@ -79,17 +77,9 @@ The family contributes:
 - wall insulation field;
 - perimeter connection/junction identity.
 
-The exact junction thermal performance remains:
+Exact junction thermal performance remains **external / trusted junction evidence** until a bounded assessed detail is deliberately admitted.
 
-**EXTERNAL / TRUSTED JUNCTION EVIDENCE**
-
-until a native assessed detail is admitted.
-
-The compiler can still:
-
-- preserve the junction identity;
-- prevent an unrepresented insulation gap;
-- invalidate evidence when geometry/materials change.
+The semantic model can still preserve junction identity, detect an unrepresented gap and invalidate evidence when geometry/materials change.
 
 ## 5. Air contribution
 
@@ -98,18 +88,14 @@ The room-side air-control system must connect at the wall/floor perimeter.
 For the current wall hypothesis:
 
 ~~~text
-WALL PARGE / AIR LAYER
+WALL AIR-CONTROL LAYER
     ↓
 PERIMETER AIR TRANSITION
     ↓
 FLOOR / DPM / AIR-CONTROL ROUTE
 ~~~
 
-The exact air-control implementation depends on the chosen floor family.
-
-The semantic obligation is stable:
-
-> the enclosure air boundary cannot simply stop at finished floor level.
+The exact implementation depends on the selected floor family. The stable proposition is simply that the enclosure air boundary cannot stop accidentally at finished floor level.
 
 ## 6. Structural / ground contribution
 
@@ -123,7 +109,7 @@ The family does not prove:
 - ground improvement;
 - local wall support.
 
-Those remain external structural/geotechnical evidence under H1 v0.
+Those remain external structural/geotechnical evidence.
 
 The source model must still identify:
 
@@ -133,32 +119,24 @@ The source model must still identify:
 
 ## 7. Site-condition inputs
 
-The family requires explicit site inputs or external evidence for:
+The family requires explicit project facts or external evidence for relevant:
 
 - ground conditions;
 - contamination;
-- radon/ground gas where relevant;
-- flood/groundwater conditions where relevant;
+- radon/ground gas;
+- flood/groundwater conditions;
 - external ground level;
-- drainage/subsoil conditions where relevant.
+- drainage/subsoil conditions.
 
-UNKNOWN is legitimate at early design stage.
-
-Release-grade compilation is not.
+Unknown is legitimate during early design. It is not equivalent to release-grade proof.
 
 ## 8. External ground / DPC relation
 
-The family preserves the ordinary moisture-control relationship between:
+The family preserves the relationship between external ground level, wall DPC and floor moisture strategy.
 
-- external ground level;
-- wall DPC;
-- floor moisture strategy.
+Exact dimensional requirements remain target/detail dependent.
 
-Exact dimensional compliance remains tied to the selected target/detail.
-
-Do not hide changes in finished external ground level as landscaping-only information.
-
-A later level change can invalidate the wall-base moisture evidence.
+A later landscaping or level change can therefore invalidate wall-base moisture evidence; it is not automatically “external works only”.
 
 ## 9. Workmanship / inspection
 
@@ -169,17 +147,13 @@ Critical hidden conditions include:
 - insulation continuity at perimeter;
 - cavity cleanliness/base condition;
 - air-seal/perimeter transition;
-- service penetrations through the floor/perimeter where any exist.
+- service penetrations through the floor/perimeter where present.
 
-Hold points must occur before:
-
-- screed/finish conceals the floor membrane;
-- skirting/lining conceals the internal perimeter;
-- external work makes wall-base defects inaccessible.
+Hold points should occur before consequential layers are concealed.
 
 ## 10. Evidence contract
 
-Depending on the selected implementation, release evidence may include:
+Depending on the selected implementation, evidence may include:
 
 - ground/site report;
 - structural/foundation design;
@@ -189,78 +163,45 @@ Depending on the selected implementation, release evidence may include:
 - air-continuity detail;
 - construction inspections.
 
-One detail/evidence family may support many room perimeters if its parameter scope genuinely covers them.
+One family-level detail may support multiple occurrences only where its parameter scope genuinely covers them.
 
-## 11. S1 baseline result
+## 11. S1 provenance
 
-S1 supplies:
+S1 supplied external masonry walls, a finished ground-floor plane, ordinary detached-house context, no basement and no exceptional ground condition asserted.
 
-- external masonry walls;
-- finished ground-floor plane;
-- ordinary detached-house context;
-- no basement;
-- no exceptional ground condition asserted.
+It did not select a ground-floor construction family or supply ground/thermal-junction evidence.
 
-It does **not** yet supply:
-
-- selected ground-floor construction family;
-- ground/site evidence;
-- thermal junction assessment.
-
-Therefore:
-
-**BF-GF-MCW-01 FAMILY APPLICABILITY: CANDIDATE / ROUTE KNOWN**
-
-**MOISTURE TOPOLOGY: PASS SEMANTICALLY**
-
-**AIR / THERMAL TOPOLOGY: PASS SEMANTICALLY**
-
-**FLOOR IMPLEMENTATION FAMILY: UNSELECTED**
-
-**GROUND / STRUCTURAL / THERMAL EVIDENCE: EXTERNAL**
-
-This turns the S1 gap into a bounded evidence problem rather than an undefined junction.
+The paper result was therefore a **known boundary route with incomplete external evidence**, not a completed floor design.
 
 ## 12. Mutations
 
 ### External ground level changes
 
-Re-evaluate:
-
-- wall-base moisture/DPC relation;
-- drainage;
-- accessibility implications at doors elsewhere.
-
-Do not automatically invalidate upper-floor structure.
+Re-evaluate wall-base moisture/DPC relation, drainage and threshold/access implications where connected.
 
 ### Floor build-up changes
 
-Re-evaluate:
-
-- finished floor datum;
-- door/control/window sill heights measured from AFFL;
-- insulation/junction evidence;
-- DPM/air transition.
-
-This is an important dependency.
-
-A “floor finish” change can alter accessibility/window-control semantics if finished floor level changes.
+Re-evaluate finished-floor datum, dependent sill/control/door heights, insulation/junction evidence and DPM/air transition.
 
 ### Wall family changes
 
-Re-evaluate:
+Re-evaluate DPC/DPM compatibility, insulation continuity, air transition and thermal evidence.
 
-- DPC/DPM compatibility;
-- insulation continuity;
-- air transition;
-- thermal evidence.
+These dependencies are the value of the family: changing one occurrence need not invalidate unrelated systems.
 
-## 13. H1 posture
+## 13. H1 paper posture
 
-For H1 v0 this can be a:
+~~~text
+boundary topology              H1 PAPER FAMILY
+moisture continuity            SEMANTIC + DETAIL EVIDENCE
+air/thermal continuity         SEMANTIC + JUNCTION EVIDENCE
+floor implementation           EXTERNAL / UNSELECTED IN PAPER FAMILY
+ground/foundation adequacy     EXTERNAL STRUCTURAL/GEOTECHNICAL EVIDENCE
+as-built continuity            PHYSICAL EVIDENCE
+~~~
 
-**SUPPORTED BOUNDARY ROUTE + EXTERNAL FLOOR/GROUND/STRUCTURAL EVIDENCE**
+The family closes a conceptual junction in the H1 paper model. It does not create a native executable floor/foundation family or choose the Reference House ground-floor construction.
 
-The next technical step is not a larger ontology.
+## 14. Current boundary
 
-It is selecting one ordinary ground-floor implementation family that can instantiate this boundary route.
+A real project must select and evidence the actual floor, foundation, ground-moisture, thermal and air-continuity details. Further computational work is justified only if that project work exposes a useful semantic or invalidation problem; a larger ground-floor ontology is not a standing task.
