@@ -1,29 +1,29 @@
 # Structural Assurance Boundary — H1 v0
 
 **Identifier:** SAB-H1-01  
-**Status:** programme decision v0.1  
-**Applies to:** S0 Run 02 and candidate H1 v0  
-**Purpose:** define what the compiler itself is expected to establish structurally before the project attempts any native member-design engine.
+**Status:** frozen H1 paper-domain assurance boundary; external structural review remains open  
+**Applies to:** S0/H1 paper research and any later H1-family reasoning that explicitly adopts this boundary  
+**Purpose:** define what the computational system may establish structurally before any native member-design engine is justified.
 
-> **The first compiler should know where the loads go before it claims to know exactly how strong every member is.**
+> **The system should know where the loads go before it claims to know exactly how strong every member is.**
 
 ## 1. Decision
 
-For H1 v0:
+For H1:
 
-> **Native compilation will establish structural semantics, topology, applicability and evidence dependencies. Final member, connection, stability and foundation adequacy may be discharged by scoped external engineering evidence.**
+> **Native computation may establish structural semantics, topology, applicability and evidence dependencies. Final member, connection, stability and foundation adequacy may be discharged by scoped external engineering evidence.**
 
-This is a deliberate product boundary.
+This is a proof boundary, not a claim that native structural calculation is impossible or desirable by default.
 
-It is not a statement that native structural proof is impossible or undesirable later.
+P0 has since demonstrated the lower-level semantic/evidence mechanisms in software. It does not implement H1 structural adequacy.
 
-## 2. Why this boundary is preferable now
+## 2. Why this boundary is preferable
 
 ### Complexity
 
-The computational project is already integrating architecture, structure, boundaries, regulation, maintenance, workmanship and evidence.
+The computational project already coordinates architecture, structure, boundaries, maintenance, workmanship and evidence.
 
-Making automated structural member design a prerequisite for the first credible whole-house system would multiply the hardest part of the programme before the wider compiler architecture has been proved.
+Making automated structural member design a prerequisite for the first useful semantic system would multiply one of the hardest technical problems before the architectural value of doing so is established.
 
 ### Safety
 
@@ -33,9 +33,9 @@ An under-scoped native solver creates false confidence more readily than value.
 
 ### Product value
 
-The core product proposition does not require removing the structural engineer.
+The core proposition does not require removing the structural engineer.
 
-A useful compiler can already:
+A useful computational model can already aim to:
 
 - make unsupported geometry impossible to ignore;
 - maintain an explicit load-path graph;
@@ -44,11 +44,9 @@ A useful compiler can already:
 - prevent stale calculations from surviving mutations;
 - package a coherent model for engineer review.
 
-That is substantial.
-
 ## 3. Native structural responsibilities
 
-H1 v0 should establish natively:
+H1 semantics should establish:
 
 ### Identity
 
@@ -57,29 +55,29 @@ H1 v0 should establish natively:
 
 ### Topology
 
-- every load-bearing element has an explicit support destination;
+- load-bearing elements have explicit support destinations;
 - support chains do not terminate silently inside the model;
 - openings create support obligations;
 - floor/roof systems identify support lines;
-- lateral-restraint/stability roles are explicit.
+- lateral-restraint/stability roles are explicit where required.
 
 ### Relationship typing
 
-Distinguish:
+Distinguish relationships such as:
 
-- SUPPORTS;
-- RESTRAINS;
-- BEARS_ON;
-- CONNECTS;
-- SPANS_BETWEEN;
-- TRANSFERS_TO;
-- STABILISES.
+- `SUPPORTS`;
+- `RESTRAINS`;
+- `BEARS_ON`;
+- `CONNECTS`;
+- `SPANS_BETWEEN`;
+- `TRANSFERS_TO`;
+- `STABILISES`.
 
 A generic connected edge is insufficient.
 
 ### Geometry extraction
 
-Generate engineering-relevant values from canonical source geometry:
+Generate engineering-relevant values from canonical source geometry where the model has authority:
 
 - spans;
 - opening widths;
@@ -102,11 +100,11 @@ A design change must identify which structural evidence becomes stale.
 
 ### Evidence contract
 
-The compiler knows what external structural propositions remain to be proved.
+The model must state which external structural propositions remain to be proved.
 
 ## 4. External structural responsibilities
 
-Unless/until a verified native proof family is deliberately added, external professional evidence discharges:
+Unless a verified native proof family is deliberately added, external professional evidence discharges:
 
 - design actions/load combinations;
 - member sizing/capacity;
@@ -125,7 +123,7 @@ The unsafe form is:
 
 > engineer.pdf attached to project → STRUCTURE PASS.
 
-The evidence contract should instead say what proposition the external evidence covers.
+The evidence contract should state what proposition the external evidence covers.
 
 Example:
 
@@ -152,9 +150,6 @@ depends on:
 author:
   competent structural engineer
 
-version/date:
-  ...
-
 result:
   PASS — EXTERNAL EVIDENCE
 ~~~
@@ -163,7 +158,7 @@ If a dependency leaves the evidence envelope, the pass becomes stale.
 
 ## 6. Structural compile status
 
-A credible H1 result can therefore be:
+A credible future H1 result could distinguish:
 
 ~~~text
 STRUCTURAL TOPOLOGY        PASS
@@ -174,17 +169,15 @@ FOUNDATION / GROUND        PASS — EXTERNAL EVIDENCE
 EVIDENCE CURRENT           PASS
 ~~~
 
-This is a successful structural compile.
+That would be a successful structural result without pretending the compiler performed every calculation.
 
-It is not a claim that the compiler personally performed every calculation.
-
-## 7. What the compiler must refuse
+## 7. What the model must refuse
 
 ### Orphan load path
 
 **ERROR**
 
-No external engineer attachment should be allowed to hide an unrepresented support relationship.
+External engineering evidence should not hide an unrepresented support relationship.
 
 ### Changed geometry outside evidence scope
 
@@ -193,9 +186,9 @@ No external engineer attachment should be allowed to hide an unrepresented suppo
 Example:
 
 - engineer evidence covers opening widths ≤ 1500 mm;
-- user widens to 1800 mm.
+- source widens to 1800 mm.
 
-The system must invalidate the affected evidence.
+Affected evidence must be invalidated.
 
 ### Unmodelled transfer
 
@@ -207,11 +200,11 @@ Do not silently treat geometry as self-supporting because an engineer might solv
 
 **UNRESOLVED / AUTHORING ERROR**
 
-The source must say whether an element is load-bearing if that distinction affects proof.
+The source must distinguish load-bearing and non-load-bearing roles where that distinction affects proof.
 
 ## 8. Future native proof families
 
-Later versions may internalise bounded engineering families such as:
+A later implementation could internalise bounded engineering families such as:
 
 - manufacturer-backed joist span/spacing envelopes;
 - simple lintel tables;
@@ -219,7 +212,7 @@ Later versions may internalise bounded engineering families such as:
 - standard connection families;
 - simple roof/truss packages.
 
-Each must have:
+Each would require:
 
 - explicit parameter envelope;
 - calculation/rule version;
@@ -228,45 +221,41 @@ Each must have:
 - regression cases;
 - clear fallback to external evidence outside the envelope.
 
-Native proof should grow incrementally, not be assumed from day one.
+No such expansion is currently authorised merely because it is technically possible.
 
-## 9. Why this helps the 12-year-old UX
+## 9. User experience consequence
 
-The user can still add a window, widen a room or move a wall.
+A non-engineer can still add a window, widen a room or move a wall.
 
 The system can respond:
 
 > this change makes the existing structural evidence stale; engineer review is required.
 
-That is vastly better than letting the change silently invalidate the structure or forcing the user to become a structural engineer.
+That contains dependency complexity without transferring professional responsibility to the user.
 
-The compiler contains the dependency complexity.
+## 10. What P0 established — and did not
 
-It does not transfer professional responsibility to the child/user.
+P0 demonstrated a deliberately small subset of the required mechanism:
 
-## 10. H1 gate
+1. stable semantic identity;
+2. typed relationships;
+3. source/geometry well-formedness;
+4. obligation derivation;
+5. scoped evidence;
+6. local invalidation;
+7. explicit unsupported/unresolved states.
 
-H1 v0 does not need a general native structural solver before implementation research can begin.
+It did **not** demonstrate H1 structural topology in full, native member design, stability, connections or foundations.
 
-It does need to prove that:
-
-1. structural topology is explicit;
-2. engineering inputs are deterministic;
-3. external evidence is scoped;
-4. change invalidation works;
-5. unsupported conditions cannot masquerade as passed.
-
-If those five conditions fail, implementation should remain blocked.
+The next high-value structural step is competent external review of this boundary and the Reference House's actual structural/interface propositions, not generic solver growth.
 
 ## 11. Course-change trigger
 
-Reconsider this boundary if external structural evidence becomes so coarse that:
+Reconsider this boundary if external structural evidence proves so coarse that:
 
 - most design changes invalidate the entire building;
 - engineers must manually reinterpret an opaque model;
 - evidence cannot be scoped to source entities;
-- the user receives no useful early structural feedback.
+- the author receives no useful early structural feedback.
 
-In that case, a larger native proof kernel may be necessary.
-
-For now, the external-adequacy boundary is the lower-risk path.
+Only then would a larger native proof kernel have a clear architectural reason to exist.
