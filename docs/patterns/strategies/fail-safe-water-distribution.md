@@ -1,7 +1,7 @@
 # Fail-Safe Water Distribution
 
 **Kind:** strategy  
-**Status:** canonical Phase-7 strategy  
+**Status:** canonical strategy  
 **Origin:** durable content previously bundled into retired `HSA-P-006 — Water-Damage-Safe Service Route`
 
 ## Proposition
@@ -56,9 +56,9 @@ Do not stack every layer by default. Redundancy itself has cost, maintenance and
 The strategy may invoke several patterns, including:
 
 - `HSA-P-004 — High-Service-Room Service Wall` where water-bearing components benefit from dry-side access;
-- `HSA-P-017 — Visible Leakage Path` once its canonical page lands;
-- `HSA-P-018 — Failure-Tolerant Wet Service Room` once its canonical page lands;
-- `HSA-P-005 — Designed Structural Penetration` where water routes cross permanent structure/boundaries.
+- `HSA-P-017 — Visible Leakage Path` where concealed leakage needs a passive path to a legible destination;
+- `HSA-P-018 — Failure-Tolerant Wet Service Room` where concentrated room-scale water risk justifies local failure tolerance;
+- `HSA-P-005 — Designed Structural Penetration` where water routes cross permanent structure or boundaries.
 
 It may also use implementation families that are not architectural patterns, such as pipe-in-pipe distribution or automatic shut-off systems.
 
@@ -77,7 +77,7 @@ The evidence supports the strategic outcome more strongly than any one HSA imple
 
 ## Reference House direction
 
-The Reference House begins with joint-minimised and accessible distribution. It adds visible leakage paths or local containment only where the whole-house failure review shows enough consequence to justify them. The Phase-5 pattern-language run explicitly rejected blanket containment everywhere.
+The Reference House begins with joint-minimised and accessible distribution. Visible leakage paths or local containment are added only where the whole-house failure review shows enough consequence to justify them.
 
 ## Computational boundary
 
