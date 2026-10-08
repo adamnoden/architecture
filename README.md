@@ -12,29 +12,60 @@ The project moves from general architectural principles into reusable patterns, 
 
 ```mermaid
 flowchart TB
-    E["Research & evidence"] --> D["Doctrine"]
-    E --> G["Architectural grammar"]
-    D --> P["Pattern language"]
-    P --> RH["Reference House"]
+    subgraph S1["1 · Foundations"]
+        direction LR
+        E["Research & evidence"] --> D["Doctrine"]
+    end
+
+    subgraph S2["2 · Design systems"]
+        direction LR
+        P["Pattern language"]
+        G["Architectural grammar"]
+    end
+
+    subgraph S3["3 · Project integration"]
+        RH["Reference House"]
+    end
+
+    subgraph S4["4 · Verification"]
+        direction LR
+        C["Computational track"] --> F["Findings"]
+        V["Physical + professional validation"] --> F
+    end
+
+    subgraph S5["5 · Outputs"]
+        direction LR
+        PUB["Publication"]
+        DEL["Delivery requirements"]
+    end
+
+    D --> P
+    E --> G
+    P --> RH
     G --> RH
 
-    RH --> V["Physical + professional validation"]
-    V -. "findings" .-> E
-
-    D --> C["Computational track"]
+    D -. "formal constraints" .-> C
     RH --> C
-    C -. "formal findings" .-> E
+    RH --> V
 
-    D --> PUB["Publication"]
-    P --> PUB
-    RH --> PUB
-    V --> PUB
+    F -. "feedback" .-> E
+    F --> PUB
+    F --> DEL
 
-    RH --> DEL["Delivery requirements"]
-    V --> DEL
+    classDef hsa fill:#E8F0FF,stroke:#5271A8,color:#1B2A41
+    classDef project fill:#FFF3D6,stroke:#B57A14,color:#3D2B0B
+    classDef validation fill:#E8F5EC,stroke:#4E8B60,color:#1D3625
+    classDef output fill:#F0F1F3,stroke:#71717A,color:#27272A
+
+    class E,D,P hsa
+    class G,RH project
+    class C,V,F validation
+    class PUB,DEL output
 ```
 
-The arrows describe authority and feedback, not a one-way production line. The Reference House is an integration test, not proof; validation may send decisions back upstream; and the computational track remains subordinate to the architecture.
+**Colour key:** 🟦 HSA-wide knowledge · 🟨 project-specific architecture · 🟩 verification · ⬜ outward-facing outputs
+
+The map deliberately shows the primary relationships rather than every document dependency. **Solid arrows** show the main forward flow; **dashed arrows** show constraints or findings crossing the stage structure. The Reference House is an integration test rather than proof, and the computational track remains subordinate to the architecture. Publication and delivery draw on the accumulated upstream work even where that dependency is not repeated as another arrow.
 
 ## Major components
 
