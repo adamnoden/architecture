@@ -1,8 +1,6 @@
 # The Long-Life House
 ## Part II — Architecture of the Platform
 
-**Draft v0.4 — editorial refinement; evidence-hardened working prose**
-
 ---
 
 # 6. The designed interface
@@ -619,48 +617,3 @@ Ventilation airflow should be measured. Isolation should be operated. Drainage a
 Important maintainability claims should also be demonstrated. Remove the panel, operate the valve, withdraw the filter, lift the access strip, trace the cable, test the leak path and walk the roof-maintenance route. A long-life building should begin its life by proving that its intended maintenance tasks can actually be performed.
 
 ---
-
-# Part II — editorial notes
-
-## Claims that should remain carefully qualified
-
-- No general claim that an undercroft is superior to conventional floors.
-- No claim that passive systems are inherently better than mechanical systems.
-- No claim that physical labels replace a digital building record.
-- No universal preference for removable finishes where a conventional durable assembly performs better.
-- No assumption that access is beneficial unless fire, acoustic, moisture, airtightness, pest and security boundaries are restored.
-- No claim that a visible external tell-tale is the universal form of safe leak detection.
-- No claim that perceptual structural legibility has been shown directly to reduce physiological stress in homes; it remains a qualified architectural inference from intuitive-physics research.
-- No claim that prospect-refuge theory, curvature preference, historical style or any specific proportion provides a universal neurological rule for domestic comfort.
-- No claim that repose means low visual complexity, minimalism or uniform calm; coherence and fascination can coexist.
-
-## Evidence anchors for final footnoting
-
-- Historic England — *Installing New Services* (accessible routes, common routes, spare capacity, avoid chasing, reversibility).
-- Arup — *Circular Buildings Toolkit* (access to reversible connections, safe working space, disassembly documentation, adaptability/manuals, whole-life cost).
-- HSE — CDM designer duties (future maintenance, repair, cleaning, refurbishment and demolition).
-- CIBSE — Guide M / M1 (maintenance engineering and designer responsibilities).
-- Norwegian TEK17 §15-5 (water installations arranged to reveal leakage and limit damage).
-- Approved Document G (visible tundish discharge as a narrow failure-signalling precedent).
-- Approved Documents B, C, E, F, L, P and Q (boundary/performance context).
-- CIBSE TM59 2026 (future-weather overheating analysis and passive-design optimisation).
-- RIBA — *Plan for Use Guide* (layered Building Manual and post-handover information).
-- Building Safety Regulator — golden thread (current, usable, accessible, transferable information; cited only as precedent, not domestic legal duty).
-- RICS Whole Life Carbon Assessment (maintenance, repair, replacement and refurbishment within use-stage carbon).
-- Evans & McCoy (1998), *When Buildings Don't Work* — stress heuristic; stimulation, coherence, affordance, control and restoration; used with the authors' own evidential caution.
-- Coburn et al. (2020), *Cortex* — coherence, fascination and hominess as major dimensions of interior response.
-- Hellwig (2015), *Building Research & Information* — conceptual treatment of perceived control in indoor environments.
-- Macedo, Ornstein & Elali (2022), *Journal of Housing and the Built Environment* — systematic review of privacy in housing.
-- Bi & Yildirim (2026), *Annual Review of Vision Science* — intuitive physics as rapid, spontaneous visual processing; basis for the qualified structural-legibility hypothesis.
-- Jamrozik et al. (2024), *Journal of Environmental Psychology* — systematic review of restorative effects of daylight indoors.
-- Dosen & Ostwald (2016), *City, Territory and Architecture* — mixed quantitative evidence for prospect-refuge theory; guardrail against overclaim.
-- Current synthesis: [Repose and Low Vigilance — Evidence Note](../research/repose-and-low-vigilance.md).
-- Claim control: [Repose — Evidence Audit](../research/repose-evidence-audit.md).
-
-### Workmanship robustness / tolerance / assembly
-- BS 5606:2022, *Accuracy and tolerance in design and construction — Guide* — project strategy for accuracy/tolerance, achievable construction accuracy, verification and control.
-- Saeed Talebi, Lauri Koskela, Patricia Tzortzopoulos Fazenda and Michail Kagioglou, “Tolerance Management in Construction: A Conceptual Framework”, *Sustainability* 12(3), 2020 — proactive tolerance management and assembly compatibility.
-- Iris D. Tommelein, “‘Poka Yoke’ or Quality by Mistake Proofing Design and Construction Systems”, IGLC16, 2008 — mistake-proofing applied to AEC products, details and systems.
-- HSE, *Human factors: Design* and *Maintenance error* — design for operability/maintainability and involvement of users and maintenance personnel.
-- CIRIA SP26, *Buildability: an assessment* — buildability as design that facilitates construction subject to the completed building's requirements.
-- David Pye, *The Nature and Art of Workmanship* — workmanship of risk and workmanship of certainty.
