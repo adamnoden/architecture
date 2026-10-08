@@ -93,7 +93,7 @@ Low noise matters because an extractor that occupants avoid is functionally weak
 
 ## Evidence
 
-Approved Document F establishes ventilation performance and commissioning expectations. Phase 6 admitted a separate bathroom pattern because moisture source geometry, transfer air, condensate, noise and maintenance differ materially from grease-laden kitchen extraction.
+Approved Document F establishes ventilation performance and commissioning expectations. Bathroom extraction also has distinct forces—moisture source geometry, transfer air, condensate, noise and maintenance—that differ materially from grease-laden kitchen extraction.
 
 ## Does not prove
 
