@@ -1,7 +1,10 @@
 # Pattern Crosswalk — Implementation Handoff
 
-**Status:** Phase-8 P8.5 implementation handoff  
-**Purpose:** convert the completed architectural/computational crosswalk into a bounded executable test programme without expanding the authorised P0 kernel.
+**Status:** completed Phase-8 P8.5 handoff; retained as implementation provenance  
+**Purpose at the time:** convert the completed architectural/computational crosswalk into a bounded executable test programme without expanding the authorised P0 kernel.  
+**Current outcome:** P0 and `PAT-XW-01` both passed; generic kernel/crosswalk growth is now frozen. See [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md).
+
+> **Historical handoff.** Instructions below such as “run only after P0” and “next computational move” describe the pre-implementation sequence that has since been completed. The semantic constraints remain useful provenance; the executable result is now the current authority.
 
 ---
 
