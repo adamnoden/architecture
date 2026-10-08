@@ -1,7 +1,8 @@
 # G-01 — Georgian-Derived Domestic Grammar Charter
 
 **Status:** canonical scope and authority statement for G-01  
-**Research programme:** [G-01 Research Brief](g01-research-brief.md)
+**Research baseline:** [G-01 Research Brief](g01-research-brief.md)  
+**Current D5/D6 control:** [G-01 D5 / D6 Evidence Gate v0.3](g01-d5-d6-web-pass-v03.md)
 
 ## Identity
 
@@ -89,23 +90,23 @@ Those belong to HSA, technical scope, project morphology, local dialect, impleme
 
 Historical description and present normative grammar are different operations.
 
-G-01 research may discover recurrent Georgian relationships and then choose to preserve, modify or reject them for contemporary domestic use. Accessibility, environmental performance, contemporary occupation, structure and servicing can constrain the resulting design without becoming part of the definition of Georgian architecture itself.
+G-01 research may discover recurrent Georgian relationships and then choose to preserve, modify or reject them for contemporary domestic use. Accessibility, environmental performance, contemporary occupation, structure and servicing can constrain a project using G-01 without becoming part of the definition of Georgian architecture itself.
 
 Where HSA creates an additional project requirement, record the interaction as a compatibility condition between grammar and doctrine rather than silently rewriting G-01 around HSA.
 
-## Relationship to the existing research brief
+## Research authority
 
-The existing research brief was written while the project still used **Long-Life House** terminology and its title/opening wording therefore couples G-01 more closely to that project identity than the current architecture permits.
+The [G-01 Research Brief](g01-research-brief.md) established the corpus, annotation, hypothesis, mutation and falsification method. It predates the House Systems Architecture name and remains useful as the baseline programme record, but this charter controls **identity and authority** where the brief's earlier wording differs.
 
-This charter supersedes that wording on **identity and authority only**. The brief remains the active corpus, annotation, hypothesis, mutation and falsification programme. Its later sections already establish the correct separation between:
+The current state of dimensional and plan/section/elevation research is controlled by [G-01 D5 / D6 Evidence Gate v0.3](g01-d5-d6-web-pass-v03.md), not by older “next action” sections in the baseline brief.
+
+The governing separation remains:
 
 - Georgian core grammar;
 - courtyard project morphology;
 - local Andalusian courtyard dialect;
 - HSA doctrine;
 - Reference House tectonic dialect.
-
-When the research brief next receives a substantive editorial revision, rename it to **G-01 — Georgian-Derived Domestic Grammar Research Brief** and align its opening definition with this charter. Do not create a rewrite merely to erase the historical project name.
 
 ## Governing test
 
