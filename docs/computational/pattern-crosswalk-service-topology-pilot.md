@@ -1,9 +1,11 @@
 # Service-Topology Pattern Crosswalk — Pilot 01
 
-**Status:** Phase-8 P8.1 worked crosswalk  
-**Context:** current Reference House coordination occurrences  
+**Status:** historical Phase-8 P8.1 worked crosswalk; gate subsequently closed  
+**Context at time of test:** Reference House coordination occurrences  
 **Method:** [Architectural Pattern → Computational Crosswalk](pattern-crosswalk-model.md)  
-**Purpose:** test whether canonical patterns can contribute useful computational consequences through the existing semantic / obligation / evidence architecture without becoming a parallel compiler ontology.
+**Current outcome:** Phase 8 later passed, and `PAT-XW-01` subsequently exercised `HSA-P-003` and `HSA-P-005` in code. See [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md).
+
+> **Historical record.** The crosswalk states and “next” actions below record the P8.1 stage before red-team, full-language mapping and executable testing. They are preserved as the worked reasoning that led to the frozen crosswalk model. Current computational authority is the passed executable result and the current [Computational Track overview](README.md).
 
 ---
 
