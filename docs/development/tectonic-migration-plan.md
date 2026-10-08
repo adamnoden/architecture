@@ -1,8 +1,11 @@
 # Tectonic Migration Plan
 
-**Branch:** `tectonic-honesty`  
-**Baseline:** `main` at the start of the migration.  
+**Status:** historical migration plan — completed; retained as provenance  
+**Branch at the time:** `tectonic-honesty`  
+**Baseline:** `main` at the start of the migration  
 **Rule:** `docs/source/house-design-doctrine-v7.md` remains historical source material and is not rewritten in place.
+
+> **Current authority:** the migration described below has been completed and subsequently refined by the canonical pattern language, current [Tectonic Integration Register](tectonic-integration-register.md), [Reference House occurrence register](../reference-house/pattern-occurrence-register.md) and prototype programme. The phase descriptions below are preserved as the plan that organised the work; old candidate names and classifications are historical, not current HSA authority.
 
 ## Objective
 
