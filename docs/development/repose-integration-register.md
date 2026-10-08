@@ -1,6 +1,6 @@
 # Repose / Low-Vigilance Integration Register
 
-**Status:** active integration record  
+**Status:** current integration control  
 **Canonical research note:** [Repose and Low Vigilance — Evidence Note](../research/repose-and-low-vigilance.md)  
 **Evidence audit:** [Repose — Evidence Audit](../research/repose-evidence-audit.md)  
 **Governing principle:** Principle 8 — **Design for repose**
@@ -9,7 +9,7 @@
 
 > **A good home should minimise unnecessary vigilance.**
 
-In this doctrine, repose denotes a domestic environment that is physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.
+In HSA, repose denotes a domestic environment that is physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.
 
 It is not a synonym for minimalism, low visual complexity, symmetry, historical style or sensory deprivation.
 
@@ -31,20 +31,19 @@ Any future text that collapses those levels should be corrected.
 | Surface | Required role | Status |
 |---|---|---|
 | Governing principles | Establish repose as a first-class durable proposition | Integrated — P8 |
-| Part I | Explain why domestic architecture has a different attentional brief from spectacle architecture; establish low vigilance, coherence, agency and qualified structural settlement | Integrated |
+| Part I | Explain the domestic attentional brief; establish low vigilance, coherence, agency and qualified structural settlement | Integrated |
 | Part II — designed interface | Distinguish engineering structural legibility from perceptual structural legibility | Integrated |
 | Part II — environmental resilience | Treat intelligible local control as occupant agency | Integrated |
 | Part II — replaceable interior | Prevent maintainability from producing a technical / provisional atmosphere | Integrated |
-| Part II editorial controls | Record overclaim guardrails and evidence anchors | Integrated |
-| Evidence audit | Grade each public claim and control permitted wording | Complete — [audit](../research/repose-evidence-audit.md) |
-| Principle 8 publication spread | Produce publication-ready argument and primary figure | Complete — [spread](../manuscript/principle-08-repose.md) / [figure](../manuscript/figures/principle-08-repose.svg) |
-| Part III pattern logic | Require occupation / repose impact review for occupant-facing patterns | Integrated; all 12 core patterns backfilled |
-| Candidate reversible assemblies | Add repose promotion gate alongside engineering and workmanship gates | Integrated; all 4 candidates backfilled |
-| Reference house language | Translate repose into project-specific composition without claiming Georgian neurological privilege | Integrated |
+| Evidence controls | Keep overclaim guardrails and evidence anchors outside the reader manuscript | Integrated — [audit](../research/repose-evidence-audit.md) |
+| Principle 8 publication spread | Publication-ready argument and primary figure | Complete — [spread](../manuscript/principle-08-repose.md) / [figure](../manuscript/figures/principle-08-repose.svg) |
+| Canonical pattern language | Require occupation / repose impact review for occupant-facing patterns | Integrated across all 21 active canonical patterns |
+| Held candidates | Apply repose/normal-use quality as an admission gate where occupied surfaces are affected | Integrated across current held candidates as applicable |
+| Reference House language | Translate repose into G-01/project-specific composition without claiming Georgian neurological privilege | Integrated |
 | Part V | Test through occupation and recovery scenarios as well as failure / change scenarios | Integrated |
 | RIBA implementation brief | Give repose project requirements, stage outputs, review and post-occupancy checks | Integrated |
-| README | Expose repose as a project-level human requirement and link research | Integrated |
-| Computational track | No formalisation yet | Deferred deliberately |
+| Project overview | Expose repose as an HSA human requirement without overstating the evidence | Integrated |
+| Computational track | No whole-repose machine verdict | Deferred deliberately; only independently valid technical consequences may be formalised |
 
 ---
 
@@ -98,25 +97,33 @@ Measured items should use the appropriate building-science method. Architectural
 
 ---
 
-## Completed in the current integration pass
+## Integration completed
 
-- editorial pass across the governing principle, manuscript, reference-house language, delivery brief and repose research;
-- claim-by-claim evidence audit with explicit permitted and prohibited wording;
-- occupation / repose impact backfilled across all 12 core patterns and all four reversible-assembly candidates;
-- Principle 8 publication spread written;
-- Figure 8.1 produced as a publication-native SVG with evidence status visible in the graphic.
+The first repository-wide integration established:
 
-## Deferred work
+- Principle 8 in the governing doctrine and manuscript;
+- a claim-by-claim evidence audit with explicit permitted and prohibited wording;
+- occupation / repose impact across the canonical pattern anatomy and current catalogue;
+- repose/normal-use quality as a gate for occupied-surface candidates and prototypes;
+- Reference House translation without style-specific neurological claims;
+- RIBA-stage requirements and post-occupancy review;
+- a publication spread and evidence-status figure.
 
-The remaining items require either a more mature reference-house design, post-occupancy evidence, or new primary research.
+That integration is now part of the ordinary project structure rather than a separate migration campaign.
+
+## Open work
+
+The remaining items require a more mature Reference House, post-occupancy evidence, or new primary research.
 
 ### R1 — structural-legibility experiment
 
-Develop a small controlled research study comparing otherwise matched domestic scenes with different apparent support conditions. Separate architects from lay participants. Measure perceived stability, tension/ease, hominess, liking and willingness to remain before considering biometric instrumentation.
+A controlled research study could compare otherwise matched domestic scenes with different apparent support conditions. Separate architects from lay participants. Measure perceived stability, tension/ease, hominess, liking and willingness to remain before considering biometric instrumentation.
 
-### R2 — reference-house repose schedule
+This is optional research, not a prerequisite for continuing the house design.
 
-Once the reference-house plan is sufficiently resolved, create a room-by-room schedule covering:
+### R2 — Reference House repose schedule
+
+Once the Reference House plan is sufficiently resolved, create a room-by-room schedule covering:
 
 - recovery / quiet priority;
 - privacy requirement;
@@ -133,13 +140,9 @@ Do not create this before the plan and section are mature enough for the schedul
 
 Develop a compact Stage 7 review that distinguishes measured performance from occupant experience. Avoid turning subjective comfort into a pseudo-objective score.
 
-### R4 — pattern evidence migration
+### R4 — computational semantics
 
-As the Part III pattern catalogue is expanded, add an explicit **occupation / repose impact** field to the standard spread and backfill it on patterns that materially affect occupied rooms.
-
-### R5 — computational semantics
-
-Do **not** currently encode “repose” as a compiler rule. Some inputs may later become formal constraints—noise limits, glare, daylight, control reachability, privacy graph relationships—but the overall architectural quality is not presently reducible to a valid deterministic metric.
+Do **not** encode “repose” as a compiler rule. Some independent technical inputs may later become formal constraints—noise limits, glare, daylight, control reachability, privacy graph relationships—but the overall architectural quality is not presently reducible to a valid deterministic metric.
 
 The computational programme should not convert a carefully qualified human principle into false precision.
 
