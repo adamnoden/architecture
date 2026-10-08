@@ -1,97 +1,80 @@
 # Computational Track
 
-**Status:** paper-compilation research, Phase-8 pattern crosswalk, P0 executable kernel and `PAT-XW-01` executable crosswalk are complete at their stated internal scopes.  
-**Current posture:** generic compiler growth frozen; external review and evidence-selected fixtures remain open.  
-**Heavy implementation status:** not authorised.
+The computational track asks a narrow question within House Systems Architecture: **which building relationships can be represented strongly enough that invalid arrangements, unresolved obligations or missing evidence are exposed during authoring rather than discovered later in drawings or construction?**
 
-This directory records the computational expression of **House Systems Architecture**.
+It is subordinate to the architecture. Rooms, walls, openings, structure, boundaries, service routes and maintenance paths may be represented semantically where doing so creates a useful check, but architectural judgement is not converted into arbitrary machine rules merely to make the model more complete.
 
-The architectural doctrine remains primary. The computational question is narrower: **which parts of the architecture, together with structure, construction, regulation and evidence, can be represented strongly enough that invalid relationships are rejected during authoring or compilation rather than discovered only after drawing?**
+The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel and `PAT-XW-01` executable crosswalk are complete at their stated internal scopes. Generic compiler growth is now frozen. Further executable work is justified only where architectural, physical or professional-review work exposes a concrete question worth formalising.
 
-The ambition is not “CAD that knows more rules”. It is a semantic model in which rooms, walls, openings, structure, boundaries, service routes and maintenance paths can carry enough meaning to generate and discharge explicit obligations.
+## What has been established
 
-> **The program should compile a habitat.**
-
-## Current position
-
-The completed sequence is:
+The research sequence progressed from wall-bay scale to a bounded whole-house paper model, then into the minimal executable kernel:
 
 ```text
-S0 → S1 → S2 → H1-PAPER-01 → capability freeze
+S0 → S1 → S2 → H1-PAPER-01
                      ↓
           Phase-8 pattern crosswalk
                      ↓
               P0 executable kernel
                      ↓
                  PAT-XW-01
-                     ↓
-          generic growth frozen
 ```
 
-The current evidence supports these bounded claims:
+Within those scopes, the work established that:
 
-- the semantic / obligation / evidence abstraction survived whole-house paper scale;
-- the canonical pattern language maps onto that architecture without becoming a second compiler ontology;
-- pattern provenance may inform project requirements, while technical obligations still derive from actual composed building relationships;
-- P0 demonstrated stable semantic identity, typed relationships, simple deterministic geometry/source well-formedness, obligation derivation, scoped evidence, selective invalidation, explicit validity states, diagnostics and deterministic replay;
-- `PAT-XW-01` demonstrated that HSA project intent can diverge cleanly from technical/evidence validity without inventing whole-pattern machine PASS/FAIL;
-- no pattern object, general CAD model, regulations engine or solver was needed for those results;
-- building release remains unproven because competent technical and physical evidence is absent;
-- professional external review remains open;
-- a heavy CAD/compiler product build remains unauthorised.
+- semantic identity, typed relationships, obligations and scoped evidence can remain coherent from assembly to bounded whole-house scale;
+- the canonical pattern language can provide project provenance without becoming a second compiler ontology;
+- project requirements and technical validity can diverge cleanly;
+- technical obligations can derive from composed building relationships rather than from pattern identity;
+- evidence can be scoped and invalidated selectively rather than treated as a global PASS/FAIL state;
+- simple source and geometry well-formedness can be checked deterministically;
+- architectural commitments can remain valid while a dependent technical obligation becomes unresolved.
 
-The executable gate record is [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md). It records 17 passing P0 tests and six passing crosswalk tests in the ordinary CI path.
+The executable result is recorded in [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md): 17 P0 tests and six pattern-crosswalk tests pass in the ordinary CI path.
 
-## Authority and stop rules
+These results do **not** establish that a building or assembly is structurally, environmentally or regulatorily adequate. Building release remains outside the demonstrated scope, and competent external review is still required.
 
-The computational track is subordinate to the architecture.
+## Authority boundary
+
+The computational model has a deliberately limited authority.
 
 - **A pattern is not a compiler primitive.**
 - **Pattern provenance is not technical authority.**
-- **Architectural judgement is not converted into arbitrary thresholds merely to make a machine answer possible.**
-- **Paper or executable representability is not proof that a building or assembly is technically adequate.**
-- **A successful research compile is not a building-release certificate.**
-- **No further generic compiler/crosswalk expansion is authorised merely for coverage.**
+- **Representability is not evidence of adequacy.**
+- **A research compile is not a building-release certificate.**
+- **Architectural judgement remains architectural where no legitimate deterministic rule exists.**
 
-Further executable work must be selected because another workstream exposes a concrete architectural, physical or professional-review uncertainty worth formalising.
+The useful object is therefore not a universal rule engine but a model that can make selected relationships explicit, derive obligations from them, attach evidence at the right scope and refuse claims the available evidence cannot support.
 
-## Canonical documents
-
-### Core model
+## Core model
 
 - [Executable Architecture](executable-architecture.md) — proposition, compiler/checker distinction, bounded domain and proof boundary.
 - [Formal Architectural Model](formal-architectural-model.md) — overlapping semantic graphs rather than geometry alone.
 - [Validity and Obligations](validity-and-obligations.md) — validity dimensions, obligations and legitimate compile claims.
 - [Evidence and Provenance Architecture](evidence-and-provenance.md) — evidence classes, scope, lifecycle and selective invalidation.
-- [Compiler Targets](compiler-targets.md) — versioned regulatory/normative environments.
+- [Compiler Targets](compiler-targets.md) — versioned regulatory and normative environments.
 - [Structural Semantics](structural-semantics.md) — physical structure, topology and analytical idealisation.
 - [Boundary Semantics](boundary-semantics.md) — air, thermal, weather, moisture, fire, acoustic and related boundaries.
+- [Interface Obligation Bundles](interface-obligation-bundles.md) — reusable technical obligations created by recurring boundary and interface conditions.
 
-### Programme and gate state
+## Pattern crosswalk
 
-- [Research Programme v0.6](research-programme-v06.md) — final pre-executable programme-control layer; retain as provenance for the authorised P0/PAT-XW sequence.
-- [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md) — **current executable gate authority**; supersedes any earlier “P0 next” sequencing.
-- [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md) — frozen paper-domain capability audit.
-- [External Competent Review Pack — H1-PAPER v0.2](external-review-pack-h1-paper-v02.md) — current professional-review handoff.
-
-Earlier research-programme versions remain historical provenance.
-
-### Pattern → computational crosswalk
+The crosswalk tested whether HSA patterns could inform authoring without being promoted into compiler entities. All 21 active patterns, three strategies and four held candidates were representable through the existing semantic, obligation and evidence architecture at internal mapping scope.
 
 - [Pattern → Computational Crosswalk](pattern-crosswalk-model.md)
-- [Service-Topology Pattern Crosswalk — Pilot 01](pattern-crosswalk-service-topology-pilot.md)
-- [Remaining Active Pattern Crosswalk](pattern-crosswalk-remaining-active.md)
-- [Strategies and Held Candidates Audit](pattern-crosswalk-strategies-candidates.md)
+- [Service-Topology Pilot](pattern-crosswalk-service-topology-pilot.md)
+- [Remaining Active Patterns](pattern-crosswalk-remaining-active.md)
+- [Strategies and Held Candidates](pattern-crosswalk-strategies-candidates.md)
 - [Implementation Handoff](pattern-crosswalk-implementation-handoff.md)
 - [Phase-8 Gate Review](../development/pattern-language-phase8-review.md)
 
-All 21 active patterns, three strategies and four held candidates were representable through the existing semantic / obligation / evidence architecture at internal mapping scope. Computational representability does not imply architectural promotion or validation.
+Computational representability does not promote or validate an architectural proposition.
 
 ## Architectural grammar
 
-[Architectural Grammar and Proportion](architectural-grammar-and-proportion.md) defines the generic grammar framework. G-01 is one independently selectable Georgian-derived domestic grammar, not HSA doctrine.
+[Architectural Grammar and Proportion](architectural-grammar-and-proportion.md) defines a generic grammar framework separate from HSA doctrine. G-01 is one Georgian-derived domestic grammar selected for the Reference House.
 
-Current G-01 research records include:
+Current G-01 research includes:
 
 - [G-01 Grammar Charter](g01-grammar-charter.md)
 - [G-01 Research Brief](g01-research-brief.md)
@@ -103,39 +86,39 @@ Current G-01 research records include:
 - [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md)
 - [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md)
 
-The generic machinery has been exercised. **G-01 itself remains research-incomplete and not externally validated.** No universal room-ratio rule is promoted.
+The framework has been exercised, but G-01 remains research-incomplete and has not been externally validated. No universal room-ratio rule has been established.
 
 ## Supported H1 research domain
 
-The H1 papers use bounded technical families to test the semantic model. Those families describe research competence, not universal HSA preference.
+The H1 papers use bounded technical families to test the semantic model. Those families describe the domain in which the research was exercised; they are not universal HSA preferences.
 
 Key records include:
 
 - [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md)
-- [Structural Assurance Boundary — H1 v0](structural-assurance-boundary-h1-v01.md)
+- [Structural Assurance Boundary — H1](structural-assurance-boundary-h1-v01.md)
 - [H1 Services Target Extension](h1-services-target-extension-v01.md)
 - [H1 Passive Environmental Strategy](h1-passive-environmental-strategy-v01.md)
 - [H1 Ventilation Decision v0.2](h1-ventilation-strategy-decision-v02.md)
-- [VENT-HYBRID-STACK-01](ventilation-family-hybrid-stack-v01.md)
-- [VENT-CMEV-01](ventilation-family-cmev-v01.md)
+- [Hybrid Stack Ventilation Family](ventilation-family-hybrid-stack-v01.md)
+- [cMEV Ventilation Family](ventilation-family-cmev-v01.md)
 - [H1 Heating Strategy Decision](h1-heating-strategy-decision-v01.md)
-- [HEAT-ASHP-RAD-01](heating-family-ashp-radiators-v01.md)
+- [ASHP + Radiator Heating Family](heating-family-ashp-radiators-v01.md)
 
-The environmental hierarchy remains **reduce load → passive capability → bounded assistance → fully mechanical response where justified**. No paper result establishes hybrid ventilation, CMEV, MVHR or any heating topology as universally superior.
+The environmental hierarchy remains **reduce load → passive capability → bounded assistance → fully mechanical response where justified**. The paper work does not establish any ventilation or heating topology as universally superior.
 
 ## Paper-compilation record
 
 ### S0 — wall-bay scale
 
-The S0 sequence established the initial source/obligation/evidence model, conventional-comparator discipline, interface bundles and complexity gate.
+S0 established the initial source, obligation and evidence model together with conventional-comparator discipline, interface bundles and a complexity gate.
 
 ### S1 — room scale
 
-S1 established that evaluation scope must be explicit and contextual roles should remain relational rather than accumulating indiscriminately on physical-entity schemas.
+S1 established the need for explicit evaluation scope and showed that contextual roles are better represented relationally than accumulated indiscriminately on physical entities.
 
 ### S2 — connected-cluster scale
 
-S2 established that architectural and technical validity can diverge and that route roles are authored semantics. The frozen S2 run used CMEV; later environmental research does not rewrite that historical fixture.
+S2 established that architectural and technical validity can diverge and that route roles are authored semantics. Its frozen fixture used cMEV; later environmental research does not retrospectively alter that historical run.
 
 ### H1-PAPER-01 — bounded whole house
 
@@ -148,40 +131,41 @@ BUILDING RELEASE                FAIL — EXPECTED
 EXTERNAL PROFESSIONAL REVIEW    OPEN
 ```
 
-The initial H1 source contained an impossible dining→kitchen adjacency. The paper whole-house pass caught it and the source was corrected without weakening a family or proof rule. That finding directly motivated machine-enforced source well-formedness in P0.
+The first H1 source contained an impossible dining-to-kitchen adjacency. The paper compile rejected it, and the source was corrected without weakening a family or proof rule. That result motivated machine-enforced source well-formedness in P0.
 
 ## External review
 
-The current review pack is [H1-PAPER External Review Pack v0.2](external-review-pack-h1-paper-v02.md).
+The [H1-PAPER External Review Pack v0.2](external-review-pack-h1-paper-v02.md) is prepared for competent attack from structural engineering, building-control/fire practice and building-services/ventilation engineering.
 
-Minimum competent attack remains open from:
+Preparation of a review pack is not external validation.
 
-- structural engineering;
-- building-control / fire / regulatory practice;
-- building-services / ventilation engineering.
+## Evidence-selected future fixtures
 
-Preparing a review pack is not validation.
-
-## Deferred / evidence-selected executable fixtures
-
-Potential fixtures remain available when another workstream earns them:
+Several fixtures remain available if another workstream exposes a live uncertainty:
 
 - `EXT-MAINT-01` — exterior maintenance geography;
 - `RAIN-XW-01` — rainwater route;
 - `KEX-XW-01` — kitchen source capture;
-- `WATER-XW-01` — water failure / visible leakage / wet-service room;
-- `ROOM-XW-01` — room service route + compartmented void;
+- `WATER-XW-01` — water failure, visible leakage and wet-service rooms;
+- `ROOM-XW-01` — room service route and compartmented void;
 - `OPEN-XW-01` — openings, movement and thresholds;
-- `ATTACH-XW-01` — Controlled Attachment Plane / Replaceable Architectural Lining, ideally after physical W2 evidence.
+- `ATTACH-XW-01` — Controlled Attachment Plane / Replaceable Architectural Lining, preferably after physical W2 evidence.
 
-`HSA-P-012 — Physical Service Index` also remains deliberately deferred until a real physical-information use case justifies generic identification/correspondence semantics.
+`HSA-P-012 — Physical Service Index` likewise remains deferred until a real physical-information use case justifies generic identification or correspondence semantics.
 
-These are **not a queue**. Select one only when it answers a live uncertainty.
+These are candidate tests, not a standing implementation queue.
 
-## Current development rule
+## Scope boundary
 
-The default project effort now belongs outside generic compiler growth: Reference House coordination, physical prototypes, engineering, passive-first environmental work and competent external review.
+The demonstrated kernel does not justify building a polished 3D CAD system, general structural solver, complete Building Regulations engine, IFC round-tripping, optimisation layer, generative-AI designer or pattern-specific rule library. Those capabilities would require their own architectural and technical case.
 
-Keep the P0 and `PAT-XW-01` suites as regression tests. Reopen the computational architecture only when implementation or evidence exposes a concrete model defect or high-value unresolved relationship.
+Current project effort is therefore concentrated on Reference House coordination, physical prototypes, engineering, passive-first environmental work and competent external review. The P0 and `PAT-XW-01` suites remain as regression tests and should expand only when new work exposes a concrete model defect or a high-value relationship that benefits from formalisation.
 
-Do **not** begin a polished 3D CAD system, general structural solver, full Building Regulations engine, IFC round-tripping, optimisation, generative-AI design layer or pattern-specific rule packs merely because the kernel exists. Those capabilities remain unearned.
+## Programme and provenance
+
+- [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md) — current executable result.
+- [Research Programme v0.6](research-programme-v06.md) — final pre-executable programme record retained for provenance.
+- [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md) — frozen paper-domain capability audit.
+- [External Competent Review Pack — H1-PAPER v0.2](external-review-pack-h1-paper-v02.md) — professional-review handoff.
+
+Earlier programme versions and paper-compile runs remain available in the navigation as historical research records.
