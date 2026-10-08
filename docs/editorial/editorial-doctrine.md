@@ -1,14 +1,14 @@
 # Editorial Doctrine
 
-**Status:** v0.2 — working editorial standard  
+**Status:** v0.3 — current editorial standard  
 **Scope:** public-facing manuscript prose, governing principles, pattern prose, reference-house writing and related explanatory material  
-**Purpose:** make the project's editorial judgement reproducible without changing its architectural substance
+**Purpose:** make House Systems Architecture's editorial judgement reproducible without changing its architectural substance
 
 ---
 
 ## 1. What this document is for
 
-This is not a mood board for prose and not a list of fashionable stylistic preferences. It is an operating standard for writing and rewriting the Long-Life House.
+This is not a mood board for prose and not a list of fashionable stylistic preferences. It is an operating standard for writing and rewriting House Systems Architecture.
 
 A future editor — human or machine — should be able to read this document, take an existing section of the manuscript, identify what kind of prose it is, improve how it communicates, and preserve the original claim, evidence, uncertainty and architectural intent.
 
