@@ -23,13 +23,61 @@ if (currentProgramme?.items) {
 }
 
 const grammarStudy = computational?.items?.find((item) => item.text === 'Architectural grammar study')
-if (grammarStudy?.items && !grammarStudy.items.some((item) => item.link === '/docs/computational/g01-grammar-charter')) {
+if (grammarStudy?.items) {
+  const grammarPages = [
+    {
+      text: 'G-01 grammar charter',
+      link: '/docs/computational/g01-grammar-charter'
+    },
+    {
+      text: 'G-01 modelling corrections',
+      link: '/docs/computational/architectural-grammar-modelling-corrections-v01'
+    },
+    {
+      text: 'G-01 D5/D6 web pass v0.2',
+      link: '/docs/computational/g01-d5-d6-web-pass-v02'
+    },
+    {
+      text: 'G-01 D5/D6 web pass v0.3',
+      link: '/docs/computational/g01-d5-d6-web-pass-v03'
+    },
+    {
+      text: 'G-01 D6 mutation run — Danson sequence',
+      link: '/docs/computational/g01-d6-mutation-run-01-danson-sequence'
+    }
+  ]
+
   const researchBriefIndex = grammarStudy.items.findIndex((item) => item.link === '/docs/computational/g01-research-brief')
   const insertionIndex = researchBriefIndex >= 0 ? researchBriefIndex : 1
-  grammarStudy.items.splice(insertionIndex, 0, {
-    text: 'G-01 grammar charter',
-    link: '/docs/computational/g01-grammar-charter'
-  })
+  for (const addition of grammarPages.reverse()) {
+    if (!grammarStudy.items.some((item) => item.link === addition.link)) {
+      grammarStudy.items.splice(insertionIndex, 0, addition)
+    }
+  }
+
+  const precedentCases = grammarStudy.items.find((item) => item.text === 'G-01 precedent cases')
+  if (precedentCases?.items) {
+    const casePages = [
+      {
+        text: 'Bedford Square',
+        link: '/docs/computational/g01-cases/bedford-square'
+      },
+      {
+        text: 'Danson House — D5/D6 web evidence',
+        link: '/docs/computational/g01-cases/danson-d5-d6-web-evidence-v02'
+      },
+      {
+        text: 'Marble Hill House — D5/D6 web evidence',
+        link: '/docs/computational/g01-cases/marble-hill-d5-d6-web-evidence-v02'
+      }
+    ]
+
+    for (const addition of casePages) {
+      if (!precedentCases.items.some((item) => item.link === addition.link)) {
+        precedentCases.items.push(addition)
+      }
+    }
+  }
 }
 
 const deliveryAndTesting = sidebar.find((item) => item.text === 'Delivery & testing')
