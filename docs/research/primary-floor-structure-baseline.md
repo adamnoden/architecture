@@ -1,15 +1,15 @@
 # Primary Floor Structure — Working Baseline
 
-**Status:** reference-house design-development baseline; not final structural specification  
-**Purpose:** choose a sufficiently concrete primary floor family so the structural edge, service zone, floor platform and ceiling interfaces can be coordinated in section.
+**Status:** Reference House design-development baseline; not final structural specification  
+**Purpose:** keep the primary floor family concrete enough that structural edges, service zones, accessible floor conditions and ceiling interfaces can be coordinated in section.
 
 ## Decision
 
-Use **engineered timber I-joists as the working baseline** for the next reference-house drawings and prototypes.
+Use **engineered timber I-joists as the current working baseline** for Reference House coordination and prototype development.
 
 This is not a final engineering selection. The appointed structural engineer may replace the family if actual spans, loads, vibration criteria, fire strategy or procurement make another system materially better.
 
-## Why I-joists fit the doctrine
+## Why I-joists fit the current Reference House
 
 ### 1. Dimensional stability
 
@@ -21,7 +21,7 @@ That makes them a good companion to the project's movement strategy: reduce avoi
 
 I-joists are widely used in UK floors, factory-produced and supported by established certification and connection hardware.
 
-This satisfies the preference for **ordinary parts in extraordinary arrangements**.
+This aligns with the HSA preference for **ordinary parts in extraordinary arrangements**.
 
 ### 3. The project does not need the principal advantage of metal-web joists
 
@@ -31,19 +31,19 @@ That is a genuine advantage in ordinary construction.
 
 In this house, however, routine services are deliberately biased toward:
 
-- dedicated service depth;
-- corridor/horizontal spines;
+- dedicated service depth where justified;
+- coherent horizontal routes;
 - local wet-room drops;
 - wall/service zones;
-- the room-side floor platform.
+- selective room-side service or access layers where they earn their depth.
 
-The project should therefore not pay extra or choose a structural system principally to make the **permanent structural zone double as service distribution**.
+The project should therefore not choose a structural system principally to make the **permanent structural zone double as service distribution**.
 
 ### 4. Cleaner structural/service separation
 
-An I-joist floor encourages the project to draw a clear line:
+An I-joist floor encourages a clear distinction:
 
-**primary structure above/below its own engineered penetrations**  
+**primary structure with only engineered penetrations**  
 versus  
 **replaceable services in designated service architecture**
 
@@ -51,7 +51,7 @@ Where a service must cross the primary floor structure, the crossing is designed
 
 ### 5. Connection families
 
-Certified masonry restraint hangers for I-joists are readily available, giving the Seated Floor Structure research a strong ordinary baseline.
+Certified masonry restraint hangers for I-joists are readily available, providing a strong conventional baseline for the project's structural-interface strategy.
 
 ## Why not lock out metal-web joists
 
@@ -91,13 +91,13 @@ This does not make LVL the default repeating joist.
 
 ## Reference section assumption
 
-For design coordination only, the next wall/floor bay should assume:
+For current coordination, the wall/floor bay assumes:
 
 - engineered I-joists at engineer-determined centres/depth;
 - certified restraint-type masonry hanger as **baseline connection**;
 - primary structural deck providing diaphragm action;
-- separate acoustic/service/levelling layer below or above as developed;
-- removable finish-agnostic platform **not** responsible for primary diaphragm action;
+- separate acoustic/service/levelling layers only where developed evidence justifies them;
+- any removable or accessible floor layer **not** responsible for primary diaphragm action;
 - no routine service distribution through I-joist webs;
 - planned penetrations only where unavoidable.
 
@@ -121,7 +121,7 @@ Re-open this decision when:
 
 - a real floor span/grid exists;
 - floor vibration target is set;
-- structural dead load from the floor-platform option is known;
+- structural dead load from any floor-access/platform option is known;
 - fire/acoustic build-up has been selected;
 - service-zone depth is established;
 - structural engineer has priced/designed at least I-joist and metal-web alternatives.
