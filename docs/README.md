@@ -68,7 +68,12 @@ The completed repo-wide audit and continuing promotion test are recorded in [`de
 
 ## Figures and assets
 
-Keep figures close to the material that owns them. SVG is preferred for technical diagrams where practical. A local `figures/` directory is appropriate when a document family accumulates several assets; otherwise a figure may sit beside its owning document.
+Keep figures close to the material that owns them.
+
+- **Mermaid is preferred for system maps, relationships, sequences and other diagrams whose truth is primarily topological.** Keep the Mermaid source in the Markdown fenced block so GitHub and the VitePress site render the same underlying definition.
+- **SVG is preferred for technical and architectural drawings** where geometry, linework, annotation placement or print control matters.
+- Do not export a Mermaid diagram to a hand-maintained SVG merely for presentation. If publication later requires frozen artwork, retain the Mermaid source as the canonical semantic diagram and treat the publication asset as a derived figure.
+- A local `figures/` directory is appropriate when a document family accumulates several owned assets; otherwise a figure may sit beside its owning document.
 
 ## Website boundary
 

@@ -6,11 +6,79 @@ Most architectural information describes a house at or near completion, while th
 
 Change is concentrated where it earns its cost rather than spread indiscriminately through the building. Serviceability therefore sits alongside settled spatial order, passive-first environmental design, ordinary replaceable parts, explicit interfaces, workmanship robustness and architectural repose. Non-standard propositions still have to earn their place against life safety, building physics, whole-life cost, carbon, construction reality and architectural quality.
 
-The work moves from governing principles to strategies and a canonical pattern language, then into one deliberately specific Reference House, physical prototypes, an implementation brief and a bounded computational track. The Reference House is one interpretation, not proof. The compiler formalises only the subset of relationships that benefit from becoming explicit and testable; it is not the project’s governing model.
+The project moves from general architectural principles into reusable patterns, then forces them into one deliberately specific house. Research, physical testing and professional review can change what survives. A bounded computational track formalises only the relationships that genuinely benefit from machine checking. Publication explains the system; delivery material translates mature findings into requirements for an appointed design team.
+
+## Project map
+
+```mermaid
+flowchart TB
+    E["Research & evidence"] --> D["Doctrine"]
+    E --> G["Architectural grammar"]
+    D --> P["Pattern language"]
+    P --> RH["Reference House"]
+    G --> RH
+
+    RH --> V["Physical + professional validation"]
+    V -. "findings" .-> E
+
+    D --> C["Computational track"]
+    RH --> C
+    C -. "formal findings" .-> E
+
+    D --> PUB["Publication"]
+    P --> PUB
+    RH --> PUB
+    V --> PUB
+
+    RH --> DEL["Delivery requirements"]
+    V --> DEL
+```
+
+The arrows describe authority and feedback, not a one-way production line. The Reference House is an integration test, not proof; validation may send decisions back upstream; and the computational track remains subordinate to the architecture.
+
+## Major components
+
+Status uses the project maturity scale: **L1 framed · L2 developed · L3 coordinated · L4 internally validated/frozen · L5 externally validated/release-ready**. These badges are deliberately coarse summaries; **[STATUS.md](STATUS.md) is the canonical project-state record**.
+
+### Doctrine <Badge type="info">L3 · coordinated</Badge>
+
+The general architectural principles that should survive changes in style, construction system and individual house design. Start with the [eleven governing principles](docs/manuscript/governing-principles.md).
+
+### Pattern language <Badge type="tip">L4 · frozen at current internal scope</Badge>
+
+Reusable architectural responses that turn the doctrine into design moves while keeping evidence, maturity, implementation and project occurrence distinct. See the [canonical pattern language](docs/patterns/README.md).
+
+### Research & evidence <Badge type="info">L3 · coordinated</Badge>
+
+Evidence synthesis, precedent, options appraisal and claim hardening used to support, qualify or kill propositions rather than merely decorate them with references. See [`docs/research/`](docs/research/).
+
+### Architectural grammar <Badge type="warning">L3 framework · G-01 still open</Badge>
+
+The separate system that governs what kind of architecture is being made—topology, hierarchy, proportion, composition and element families—without turning one style into HSA doctrine. The Reference House currently selects the Georgian-derived [G-01 grammar](docs/computational/g01-grammar-charter.md).
+
+### Reference House <Badge type="warning">L2–L3 · active</Badge>
+
+The first whole-house integration test, where doctrine, selected patterns, architectural grammar, site/programme and technical systems are forced to coexist in one plausible building. See the [Reference House](docs/reference-house/README.md) and its [Pattern Occurrence Register](docs/reference-house/pattern-occurrence-register.md).
+
+### Physical & professional validation <Badge type="warning">L1–L2 · open</Badge>
+
+Full-scale prototypes, engineering work and competent external review used to falsify propositions that cannot be established by prose or paper modelling alone. See the [prototype programme](docs/development/tectonic-prototype-programme.md) and [prototype artefacts](docs/prototypes/README.md).
+
+### Computational track <Badge type="info">L3 at executable P0 scope · bounded</Badge>
+
+A subordinate formalisation track that asks which relationships can be represented strongly enough to reject invalid arrangements or expose unresolved obligations during authoring. The paper model is frozen at L4; the [P0 kernel and PAT-XW-01 gate passed](docs/computational/p0-pat-xw-01-result.md); generic compiler growth is now frozen.
+
+### Publication <Badge type="info">L3 overall · developing</Badge>
+
+The architectural argument presented as a coherent illustrated monograph rather than a dump of repository material. See the [publication architecture](docs/manuscript/publication-architecture.md).
+
+### Delivery <Badge type="warning">L2 · developing</Badge>
+
+The translation of mature findings into requirements, responsibilities, evidence gates and RIBA-stage decisions for an appointed design team. See the [RIBA implementation brief](docs/delivery/riba-implementation-brief-template.md).
 
 ## Architectural position
 
-The canonical public doctrine is the [eleven governing principles](docs/manuscript/governing-principles.md). The recurring moves are:
+The recurring moves are:
 
 - **Design for the building after handover.** Maintenance, repair, replacement, adaptation and renewal are design events.
 - **Separate lifetimes where separation buys something.** Short-lived services, fittings and replaceable assemblies should not routinely require long-lived fabric to be chased, perforated or demolished with them.
@@ -20,23 +88,6 @@ The canonical public doctrine is the [eleven governing principles](docs/manuscri
 - **Keep the house architectural.** Serviceability cannot justify poor rooms, technical clutter, hollow construction, fragile comfort or needless complexity.
 
 Evidence, context-sensitive findings and architectural hypotheses are kept distinct. A pattern or prototype may fail without invalidating the principle it was intended to serve.
-
-## Project outputs
-
-| Output | Role | Current state |
-|---|---|---|
-| **Illustrated monograph** | Develops the architectural argument for a professional reader | structurally mature; figures, evidence presentation and final integration remain |
-| **Pattern language** | Records reusable responses, forces, trade-offs, evidence, maturity and relationships | canonical 21-pattern language complete at current internal scope |
-| **Reference House** | Forces the doctrine, patterns, technical systems and an architectural grammar to coexist | provisional and actively developing |
-| **Prototype programme** | Subjects uncertain/non-standard assemblies to 1:1 comparison and attack | W2 wall-bay pack/protocol ready; physical results not yet recorded |
-| **Implementation brief** | Translates mature findings into requirements and RIBA-stage decisions | framework exists; populate as decisions mature |
-| **Computational track** | Tests bounded semantic relationships, obligations and evidence | paper model, P0 kernel and first pattern crosswalk passed; generic growth frozen |
-
-The design-research chain is:
-
-**Doctrine → Strategy → Pattern language → Generative sequence → Reference implementation → Delivery requirement → Test**
-
-Evidence, professional review, physical testing and later conflicts can send work upstream.
 
 ## Current phase
 
