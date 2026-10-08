@@ -1,8 +1,8 @@
 # H1 Services Target Extension — G / H / Low-Carbon Heat v0.1
 
-**Status:** target-coverage extension for H1 research  
-**Normative basis:** England, new detached dwelling, current H1 target assumptions  
-**Purpose:** add the whole-house service requirements that only become active once water, drainage and heating are represented.
+**Status:** frozen H1 paper-domain target extension  
+**Normative basis:** England, new detached dwelling, H1 paper-target assumptions  
+**Purpose:** add the whole-house service requirements that become active once water, drainage and heating are represented.
 
 ## 1. Added target areas
 
@@ -57,7 +57,7 @@ Part H adds:
 
 Approved Document H explicitly expects pipes to be reasonably accessible for repair and rodding access where blockages cannot otherwise be cleared.
 
-That aligns strongly with the Long-Life House doctrine.
+That aligns with HSA's maintenance-geography and serviceability principles without turning the guidance itself into HSA authority.
 
 ## 4. Drainage geometry
 
@@ -102,7 +102,7 @@ They are not decorative plumbing details.
 
 ## 6. Water quality / stagnation
 
-The H1 service doctrine adds a project objective:
+H1 adds the project objective:
 
 > **keep hot/cold water routes short, avoid dead legs and avoid unnecessary stored branch volume.**
 
@@ -112,7 +112,7 @@ Do not turn the objective into a universal numerical limit without the relevant 
 
 ## 7. Heat-pump route
 
-HEAT-ASHP-RAD-01 supplies the selected H1 low-carbon heating topology.
+HEAT-ASHP-RAD-01 supplies the selected H1 paper-domain heating topology.
 
 Target/evidence inputs include:
 
@@ -124,6 +124,8 @@ Target/evidence inputs include:
 - hot-water-cylinder interaction where applicable.
 
 Space heating water and potable hot water remain different networks.
+
+The family is a bounded research condition, not an HSA-wide heating requirement.
 
 ## 8. Water-efficiency target
 
@@ -176,7 +178,7 @@ Can affect:
 - isolation;
 - evidence.
 
-## 10. Target conformance tests
+## 10. Paper conformance mutations
 
 ### H1-SVC-T01 — branch route too flat
 
@@ -220,7 +222,13 @@ Expected:
 - fixture/water-efficiency evidence stale;
 - drainage topology does not automatically fail.
 
-## 11. Source anchors
+## 11. Current authority
+
+This document records the service-target scope used by the H1 paper research. It does not establish executable Part G/H coverage, statutory compliance or a Reference House services design.
+
+P0 demonstrates only the minimal semantic/obligation/evidence mechanism. Any future Part G/H executable work must be justified by a live project or professional-review question rather than by this paper inventory alone.
+
+## 12. Source anchors
 
 - Approved Document G: https://www.gov.uk/government/publications/sanitation-hot-water-safety-and-water-efficiency-approved-document-g
 - Approved Document H: https://www.gov.uk/government/publications/drainage-and-waste-disposal-approved-document-h
