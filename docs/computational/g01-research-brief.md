@@ -1,8 +1,9 @@
-# G-01 — Georgian-Derived Long-Life House Grammar Research Brief
+# G-01 — Georgian-Derived Domestic Grammar Research Brief
 
-**Status:** corpus and derivation plan v0.1  
-**Purpose:** define the scope, evidence base, annotation method and falsification process for deriving the first actual architectural grammar.  
-**Important:** G-01 does not yet exist as a rule set. This document prevents it being invented from taste, memory or a handful of favourite precedents.
+**Status:** baseline research programme; current D5/D6 authority is [G-01 D5 / D6 Evidence Gate v0.3](g01-d5-d6-web-pass-v03.md)  
+**Authority:** [G-01 Grammar Charter](g01-grammar-charter.md) controls current identity and scope  
+**Purpose:** define the corpus, evidence hierarchy, annotation method, rule-extraction method and falsification process from which G-01 is being derived.  
+**Important:** this brief records the research architecture. Later gate records control current findings where they supersede the provisional states or execution sequence below.
 
 ## 1. Why G-01 exists
 
@@ -13,13 +14,13 @@ The Reference House already has an architectural temperament:
 - red-brick domestic construction;
 - strong room character and settled spatial order;
 - a courtyard with a slight Andalusian influence;
-- Long-Life House tectonic requirements expressed through real architectural elements.
+- House Systems Architecture requirements expressed through real architectural elements where compatible.
 
-That makes it the best first vehicle for testing architectural grammar.
+That makes it a useful first vehicle for testing architectural grammar.
 
-The first grammar should therefore be provisionally scoped as:
+The first grammar is scoped as:
 
-> **G-01 — a Georgian-derived domestic architectural language for contemporary low-rise English houses, informed by English Palladianism and broader Georgian practice, modified where necessary by contemporary habitation and the Long-Life House doctrine.**
+> **G-01 — a Georgian-derived domestic architectural language for contemporary low-rise English houses, informed by English Palladianism and broader Georgian practice, modified where necessary by contemporary habitation and tested independently against HSA requirements.**
 
 This is a project grammar, not a claim to define all Georgian architecture.
 
@@ -44,7 +45,7 @@ Its initial centre of gravity is **English Georgian domestic classicism with a s
 
 ## 3. Proposed first scope
 
-To keep the language coherent, the first derivation should focus on:
+To keep the language coherent, the first derivation focuses on:
 
 ### Primary building type
 
@@ -97,7 +98,7 @@ Town houses and grand houses may still enter the corpus as **evidence for specif
 
 A random sample of “Georgian houses” would be almost useless.
 
-The evidence should be divided by role.
+The evidence is divided by role.
 
 ### Corpus A — normative/theoretical sources
 
@@ -133,7 +134,7 @@ Strong initial candidates:
 - **Marble Hill House**, Twickenham — identified by Historic England as an unusually instructive exemplar of the English Palladian school; measured plans exist in the Historic England archive;
 - **Danson House**, Bexley — compact Georgian villa by Robert Taylor, with published English Heritage analysis explicitly covering proportion, structure and planning;
 - **Chiswick House** — essential for the Palladian lineage and extensively surveyed, although function/scale make it a contextual rather than direct domestic template;
-- other compact, well-documented villas to be selected after archive review.
+- other compact, well-documented villas selected through archive review.
 
 Purpose:
 
@@ -456,7 +457,7 @@ Building / storey / room class / façade / element.
 - medium;
 - high.
 
-No candidate should become G-01 invariant without counterexample analysis.
+No candidate should become a G-01 invariant without counterexample analysis.
 
 ## 9. Separate descriptive and normative grammars
 
@@ -468,11 +469,11 @@ This distinction is critical.
 
 ### Normative question
 
-> Which of those relationships should the Long-Life House deliberately preserve?
+> Which of those relationships should G-01 deliberately preserve for contemporary domestic architecture?
 
 They are not identical.
 
-Examples of historical conditions we may reject or modify:
+Examples of historical conditions that may be rejected or transformed include:
 
 - service circulation shaped by servants;
 - poor accessibility;
@@ -482,6 +483,8 @@ Examples of historical conditions we may reject or modify:
 - structural practices superseded by better evidence.
 
 The grammar is not a museum.
+
+HSA may impose additional project requirements, but those remain a separate authority from the grammar itself.
 
 ## 10. The first hypotheses worth testing
 
@@ -564,14 +567,14 @@ Controls:
 - test candidate rules on buildings not used to derive them;
 - distinguish generic Georgian rule from architect-specific dialect.
 
-A useful future model may be:
+A useful later model may include named sub-dialects where evidence justifies them:
 
 ~~~text
 G-01  Georgian-derived core grammar
    ├── G-01.BURLINGTON
    ├── G-01.GIBBS
    ├── G-01.TAYLOR
-   └── G-01.CONTEMPORARY-LONG-LIFE
+   └── G-01.CONTEMPORARY
 ~~~
 
 This is illustrative, not a commitment.
@@ -609,15 +612,15 @@ The success criterion is that the house remains one architecture.
 
 This should be resolved compositionally later.
 
-## 15. Long-Life House tectonics as an overlay
+## 15. HSA tectonics as an overlay
 
-Likewise, G-01 should not bake every Long-Life House requirement into “Georgian style”.
+G-01 should not bake HSA requirements into “Georgian style”.
 
 Keep separate:
 
 - historical/compositional grammar;
-- Long-Life House doctrine;
-- reference-house tectonic dialect.
+- House Systems Architecture doctrine and project requirements;
+- Reference House tectonic dialect.
 
 Then test compatibility.
 
@@ -625,70 +628,72 @@ This makes meaningful results possible:
 
 ~~~text
 G-01                  PASS
-Long-Life doctrine    FAIL
+HSA project intent    FAIL
 ~~~
 
 or:
 
 ~~~text
 G-01                  PASS
-Long-Life doctrine    PASS
+HSA project intent    PASS
 Reference dialect     PASS
 ~~~
 
 The axes remain independently explainable.
 
-## 16. Initial deliverables before any G-01 rules are locked
+## 16. Research deliverables and current state
 
 ### D1 — corpus register
 
 At least 20–30 high-quality cases across corpus classes.
 
+**Established as a stratified source register.** See [G-01 Corpus and Source-Quality Register](g01-corpus-register.md).
+
 ### D2 — source-quality register
 
-For each case, what drawings/data are available and how trustworthy they are.
+For each case, record what drawings/data are available and how trustworthy they are.
+
+**Established with explicit source/access quality.**
 
 ### D3 — annotation schema trial
 
-Annotate 3 very different examples end-to-end.
+Annotate three materially different examples end-to-end.
 
-**Status: COMPLETE v0.1.** See [G-01 Trial Case Records](g01-cases/README.md). Completion means the common semantic contract has been applied with explicit UNKNOWN states; it does not mean D5 metrics or D6 coupling analysis are complete.
+**COMPLETE v0.1.** See [G-01 Trial Case Records](g01-cases/README.md). Completion means the common semantic contract has been applied with explicit UNKNOWN states; it does not imply dimensional or coupling-rule validation.
 
 ### D4 — topology comparison
 
 Generate plan graphs and identify candidate spatial genotypes.
 
-**Preliminary analysis established:** [G-01 Topology Comparison](g01-topology-comparison.md). It already rules out a single universal Georgian plan graph and identifies morphology profile, route/sequence and vertical topology as likely first-class concepts. D4 remains incomplete until all three trial plans are directly inspected and phase-checked.
+**Developed sufficiently to reject one universal Georgian plan graph and to establish morphology profile, route/sequence and vertical topology as distinct modelling concerns.** See [G-01 Topology Comparison](g01-topology-comparison.md).
 
 ### D5 — dimensional analysis
 
-Measure room/elevation families without yet declaring rules.
+Measure room/elevation families without declaring rules prematurely.
 
-**Seed analysis established:** [G-01 Dimensional and Proportional Analysis](g01-dimensional-analysis.md). Direct values currently include Marble Hill's 24 ft cubic Great Room and unusually rich Danson principal-floor dimensions. D5 remains incomplete until phase-checked measured sources provide a comparable dataset across all three trial cases.
+**PARTIAL PASS.** The current evidence model and negative conclusions are strong; positive G-01 dimensional bands remain blocked. See [G-01 D5 / D6 Evidence Gate v0.3](g01-d5-d6-web-pass-v03.md).
 
 ### D6 — plan/section/elevation coupling study
 
 Identify which variables genuinely coordinate plan, section and elevation.
 
-**Seed analysis established:** [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md). The current model treats coupling as directional and attribute-specific rather than one generic alignment relation. D6 remains incomplete pending measured opening/room IDs and mutation tests.
+**MODELLING GATE PASS; architectural-rule gate remains open.** Section is now first-class, coupling authority is attribute-specific and scoped, and shared architectural variables may generate technical obligations without sharing proof authority. No Georgian-specific hard rule has been promoted.
 
-### D7 — first candidate-rule register
+### D7 — candidate-rule register
 
-**Seed v0.1 established:** [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md).
-
-The register deliberately distinguishes modelling corrections from architectural hypotheses and dimensional candidates. It is suitable for research fixtures, not for claiming G-01 v0.1 validation.
+**Seed register established.** See [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md). It remains a research register, not a validated grammar.
 
 ### D8 — mutation set
 
-**Seed started:** the candidate register defines the first six near-miss mutations across Danson, Marble Hill and 76 Dean Street. Their outcomes are not yet expert/hold-out validated.
+At least ten deliberate near-misses remain the programme target.
 
-At least 10 deliberate near-misses remain the completion target.
+**First real mutation complete:** [D6 Mutation Run 01 — Danson Principal-Room Shortcut](g01-d6-mutation-run-01-danson-sequence.md), confirming the distinction between connectivity and architectural sequence without promoting a hard G-01 sequence rule.
 
 ### D9 — held-out validation
 
-Test candidate grammar against buildings not used to derive it.
+Test surviving candidate grammar against buildings not used to derive it.
 
-Only then should G-01 v0.1 be drafted.
+**OPEN.** No G-01 v0.1 rule set should be promoted before this gate.
 
 ## 17. Initial candidate corpus — seed list
 
@@ -763,47 +768,23 @@ Possible legitimate outcome:
 
 That would be progress.
 
-## Corpus register status
+## 20. Current research control
 
-D1/D2 are now established in [G-01 Corpus and Source-Quality Register](g01-corpus-register.md).
+The detailed current gate is [G-01 D5 / D6 Evidence Gate v0.3](g01-d5-d6-web-pass-v03.md).
 
-D3 v0.1 is complete. The canonical contract remains [G-01 Precedent Annotation Schema](g01-annotation-schema.md), while the three completed semantic trial records live under [G-01 Trial Case Records](g01-cases/README.md).
+The highest-value current work is **D8 falsification**, not broad corpus accumulation:
 
-The seed corpus has been stratified and graded by evidence quality. A derivation/hold-out split has been declared before metric analysis to reduce overfitting.
+1. prepare and evaluate the `DAN-M02` blind-window exterior-regularisation mutation;
+2. prepare and evaluate `MHH-M01B` sectional flattening;
+3. separate representational failure from architectural judgement in each result;
+4. use a held-out case to test whatever architectural claims survive;
+5. promote only the smallest defensible G-01 v0.1 set.
 
-The first annotation trials are:
+Further measured-source acquisition is justified only where a named mutation or hold-out test needs a missing coordinate or range.
 
-1. Marble Hill House;
-2. Danson House;
-3. 76 Dean Street.
+Do not begin by choosing room ratios. D5 has already made simplistic universal-ratio programming indefensible.
 
-## 20. Immediate next action
-
-D3 is complete and D7 now has a deliberately provisional candidate register, but the evidence chain is not mature enough to promote G-01 rules.
-
-Continue in two lanes:
-
-### Evidence lane
-
-1. obtain direct usable copies of the already-indexed Marble Hill measured sheets and reconcile target phase;
-2. extract the Danson principal-floor/section drawings corresponding to the A2 fabric evidence already annotated;
-3. acquire the located 76 Dean Street GLC/V&A and Historic England survey drawings;
-4. use those sources to close D4–D6 gaps and quantify opening/room/coupling relationships.
-
-### Falsification lane
-
-1. run the D8 mutations defined in [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md);
-2. add at least four further near-miss cases;
-3. test the candidate constraints against held-out buildings before any promotion;
-4. separate morphology-specific constraints from genuinely transferable ones.
-
-S2 may use **G01-PILOT-P0** to test compiler grammar machinery.
-
-It may not cite an S2 pass as evidence that G-01 itself is validated.
-
-Do not begin by choosing room ratios.
-
-The next architectural advance must still come from **phase-checked relationships, mutation and hold-out evidence**, not a more elaborate theory.
+The first durable product of G-01 research is a stronger model of architectural rules: scoped, attributed, evidence-qualified and separable from technical proof. The Georgian rule set itself remains deliberately unpromoted.
 
 ---
 
