@@ -1,8 +1,6 @@
 # Principle 8 — Design for Repose
 
-**Status:** publication-spread draft v1.1  
-**Evidence control:** [Repose — Evidence Audit](../research/repose-evidence-audit.md)  
-**Research synthesis:** [Repose and Low Vigilance](../research/repose-and-low-vigilance.md)
+The evidence behind this principle is developed in [Repose and Low Vigilance](../research/repose-and-low-vigilance.md) and bounded in the [Repose Evidence Audit](../research/repose-evidence-audit.md).
 
 > **Treat the house as a place of repeated occupation and recovery. Its ordinary spaces should minimise unnecessary vigilance by being physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.**
 
