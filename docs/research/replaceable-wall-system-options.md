@@ -1,8 +1,8 @@
 # Replaceable Wall System — Options Appraisal
 
-**Status:** evidence hardening / pre-prototype  
-**Candidate patterns:** Architectural Backplane + Replaceable Wall Lining  
-**Purpose:** determine whether the project can replace routine site-applied plaster/drylining with a beautiful, solid and genuinely reversible interior wall system without making the wall technically worse.
+**Status:** current evidence hardening / pre-prototype  
+**Classification:** [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is canonical; [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains a held candidate whose principal gate is physical solidity and repose.  
+**Purpose:** determine whether a selective removable lining can work with a controlled attachment plane to provide service/fixing access without making an excellent domestic wall technically, architecturally or experientially worse.
 
 ## Executive position
 
@@ -10,7 +10,7 @@ The strongest current direction is **not** a universal removable wall.
 
 It is a hybrid:
 
-> **Permanent masonry performs the slow, continuous work. A sparse adjustable backplane is added only where it earns its keep. Robust manufactured panels form the replaceable room surface on the occupied side.**
+> **Permanent masonry performs the slow, continuous work. A sparse adjustable attachment plane is added only where it earns its keep. Robust manufactured panels may form the replaceable room surface on the occupied side where physical testing justifies them.**
 
 In principal rooms with dense masonry walls, the masonry should continue to carry most of the permanent obligations:
 
@@ -73,7 +73,7 @@ The study is useful because it confirms several project intuitions:
 
 It also exposes the central architectural problem: exposed screws and obvious negative joints easily produce a modular/technical aesthetic.
 
-The reference house therefore needs to go further than the prototype precedent in architectural resolution.
+The Reference House therefore needs to go further than the prototype precedent in architectural resolution.
 
 **Source:**
 
@@ -124,11 +124,11 @@ Current Approved Document B guidance for dwellings defines concealed spaces as c
 
 For this project the practical lesson is:
 
-> **The backplane cavity must have an explicit fire topology.**
+> **The room-side cavity must have an explicit fire topology.**
 
 It cannot become a continuous concealed route that casually bypasses wall/floor boundaries.
 
-The candidate wall system should therefore define:
+Any W2 lining/attachment-plane assembly should therefore define:
 
 - cavity termination at floors/ceilings;
 - closure around windows/doors;
@@ -161,7 +161,7 @@ Likely jobs:
 - fire resistance where applicable;
 - primary background for airtight/parge layer where applicable.
 
-## Backplane / tolerance interface
+## Controlled attachment / tolerance interface
 
 Likely jobs:
 
@@ -272,7 +272,7 @@ dense masonry
 parge / permanent boundary treatment
 ────────────────────────────
 
-sparse adjustable rails / backplane
+sparse adjustable rails / attachment plane
 │       │       │       │
 
 optional shallow service / absorption zone
@@ -300,16 +300,16 @@ ROOM
 - additional wall thickness;
 - more material than direct plaster;
 - hidden cavity requires fire/acoustic/moisture discipline;
-- panel support and tolerance system needs invention;
+- panel support and tolerance system needs development;
 - tactile hollowness/rattle risk;
 - heavy robust panels affect handling;
 - cost.
 
 ### Current judgement
 
-**Preferred research direction for principal service/fixing walls and selected principal rooms.**
+**Preferred W2 research direction where service/fixing demand justifies it.**
 
-Not yet justified for every wall.
+It remains physically unproven and is not justified for every wall.
 
 ---
 
@@ -341,13 +341,13 @@ Deep factory-made cassettes provide surface, services, backing and potentially a
 
 **Reject as default direction.**
 
-The project does not need a building-inside-a-building cassette system to achieve the doctrine.
+The project does not need a building-inside-a-building cassette system to satisfy HSA.
 
 ---
 
 # 7. Current preferred wall architecture
 
-The reference house should investigate a **selective hybrid**, not universal panelling.
+The Reference House should investigate a **selective hybrid**, not universal panelling.
 
 ### Type W1 — Permanent plaster/mineral wall
 
@@ -358,9 +358,9 @@ Use where:
 - masonry and finish have compatible life/movement;
 - the beauty and simplicity of true plaster dominate.
 
-### Type W2 — Backplane + removable mineral panel
+### Type W2 — Controlled attachment plane + removable mineral panel
 
-Use where:
+Prototype where:
 
 - repeated occupation fixing is likely;
 - electrical/data distribution benefits from a shallow zone;
@@ -372,7 +372,7 @@ Use where:
 
 Use where timber panelling is architecturally desirable in its own right.
 
-The panelling is real joinery, not a fake plaster substitute, and can naturally conceal the backplane/services.
+The panelling is real joinery, not a fake plaster substitute, and can naturally conceal the attachment plane/services.
 
 ### Type W4 — High-service wall
 
@@ -382,9 +382,9 @@ This remains distinct from the ordinary principal-room lining system.
 
 ---
 
-# 8. Backplane geometry
+# 8. Controlled attachment-plane geometry
 
-The backplane should remain intentionally boring.
+The hidden attachment system should remain intentionally boring.
 
 Preferred characteristics:
 
@@ -401,11 +401,11 @@ Avoid turning the entire wall into Unistrut-like industrial infrastructure unles
 
 The architectural intelligence belongs primarily in:
 
-- where the backplane runs;
+- where the attachment plane runs;
 - how few anchors it needs;
 - how panel sizes register;
 - how the panel is released;
-- how Georgian datums conceal or express the joint.
+- how G-01 datums conceal or express the joint.
 
 ---
 
@@ -417,13 +417,13 @@ The project should therefore **not assume the manufactured sheet is the installe
 
 A useful design direction is to cut/finish robust boards into narrower full-height or near-full-height fields that align with the room composition.
 
-This creates an interesting convergence:
+This creates a useful convergence:
 
 - a narrower panel is easier to handle;
-- Georgian wall composition already favours repeated vertical fields;
+- G-01 wall composition already provides repeated vertical fields;
 - joints can coincide with true panel mouldings;
 - one damaged/access panel can be removed locally;
-- the underlying backplane can remain standard.
+- the underlying attachment geometry can remain standard.
 
 Panel size should be selected by prototype using:
 
@@ -483,13 +483,13 @@ Can be carried by the panel where tested.
 
 Curtain rails, small shelving, some TVs/fittings.
 
-Panel or backplane depending on tested capacity and eccentricity.
+Panel or attachment plane depending on tested capacity and eccentricity.
 
 ### Class 3 — heavy
 
 Large cabinets, radiators, substantial shelves.
 
-Backplane/engineered fixing zone.
+Attachment plane / engineered fixing zone.
 
 ### Class 4 — exceptional / safety critical
 
@@ -499,7 +499,7 @@ Dedicated structural fixing to designed permanent provision.
 
 The exact numeric limits belong to engineering/testing, not doctrine.
 
-This hierarchy makes the backplane useful without pretending it eliminates all structural fixing.
+This hierarchy makes the attachment plane useful without pretending it eliminates all structural fixing.
 
 ---
 
@@ -536,7 +536,7 @@ The panel system must be reviewed as a **system**, not as an isolated board.
 Questions:
 
 - reaction-to-fire classification of visible face;
-- combustibility of hidden backplane/insulation;
+- combustibility of hidden attachment system/insulation;
 - cavity barriers at edges/openings;
 - floor/ceiling terminations;
 - service penetrations;
@@ -557,7 +557,7 @@ Preferred first iteration:
 
 - masonry or realistic rigid background;
 - permanent parge/air layer where appropriate;
-- simple adjustable metal or timber backplane;
+- simple adjustable metal or timber attachment plane;
 - shallow mineral-wool-filled cavity;
 - dense mineral/gypsum-fibre panel;
 - panel mechanically captured through hidden accessible hardware;
@@ -592,20 +592,14 @@ Judge all three for:
 
 # 15. Current judgement
 
-The backplane and replaceable-wall concepts should both remain **candidate patterns**, but they have moved beyond pure blue-sky speculation.
+The two propositions now have different authority.
 
-The evidence supports:
+[`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is a canonical pattern: its reusable invariant is sufficiently clear without committing HSA to one rail or backplane product.
 
-- independent lining as mature practice;
-- robust mineral sheet linings;
-- off-site/panel manufacture;
-- genuinely disassemblable wall-lining precedent;
-- dry mechanical fixing;
-- the need to treat hidden cavities as fire/acoustic architecture.
+[Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains held. The evidence supports independent linings, robust mineral sheet products, dry mechanical fixing and genuinely disassemblable lining precedent, but those facts do not prove that a removable occupied surface belongs in a high-quality house.
 
-What remains unproven is the project's distinctive combination:
+What remains unproven is the project's distinctive W2 combination:
 
-> **a removable wall that has the visual calm and physical solidity of a first-rate Georgian interior.**
+> **a removable wall surface with the visual calm, tactile solidity and acoustic credibility of excellent conventional construction.**
 
-That is now a prototype problem rather than a conceptual problem.
-
+That is the purpose of the current wall-bay prototype gate. Failure of W2 would not invalidate P022; the attachment plane can remain useful for joinery, fixing and selected service relationships without requiring a removable lining everywhere.
