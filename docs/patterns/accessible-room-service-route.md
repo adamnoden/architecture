@@ -92,7 +92,7 @@ The room should read as architecture first. Skirtings, architraves and joinery m
 
 ## Evidence
 
-The frozen doctrine independently developed serviceable skirting and door/joinery routes around the same recurring problem. Phase-6 review therefore merged them upward into this room-scale pattern. Mature trunking and service-zone practice support the underlying accessibility principle; the domestic architectural integration remains HSA's design proposition.
+Mature trunking and service-zone practice support the underlying accessibility principle. The domestic architectural integration of those routes remains HSA's design proposition.
 
 ## Does not prove
 
