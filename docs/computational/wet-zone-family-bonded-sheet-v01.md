@@ -25,7 +25,7 @@ BUILDING / SERVICE ZONE
 
 Tile, grout and silicone improve serviceability and appearance but do not carry the primary waterproofing claim.
 
-The family exists because wet-room failures usually occur at interfaces:
+The family exists because wet-room failures often occur at interfaces:
 
 - wall/floor junctions;
 - internal/external corners;
@@ -37,26 +37,24 @@ The family exists because wet-room failures usually occur at interfaces:
 - movement joints;
 - badly prepared substrates.
 
-Those interfaces are first-class assembly nodes rather than “seal around it on site”.
+Those interfaces are first-class assembly conditions rather than “seal around it on site”.
 
 ## 2. Why bonded sheet membrane is the H1 baseline
 
-H1 supports several possible tanking technologies in principle, including liquid-applied systems and inherently watertight board systems.
+H1 can represent several tanking technologies in principle, including liquid-applied systems and inherently watertight board systems.
 
-For the first family, bonded sheet membrane is preferred because it has useful builder-reality properties:
+Bonded sheet membrane is used for the first bounded family because it has useful workmanship characteristics:
 
 - factory-controlled membrane thickness rather than site-applied wet-film thickness;
 - visually obvious coverage;
 - explicit seams;
-- preformed corners and pipe collars are available in mature systems;
+- preformed corners and pipe collars available in mature systems;
 - drain connection can be an engineered system detail;
-- the waterproof layer remains conceptually distinct from substrate and finish;
+- waterproof layer remains conceptually distinct from substrate and finish;
 - defects can be photographed/inspected before tiling;
-- product substitution can be reasoned about as a system substitution rather than a bucket-of-liquid substitution.
+- product substitution can be reasoned about as a system substitution rather than a generic material substitution.
 
-This does not mean sheet membranes are inherently failure-proof.
-
-Seams, laps, corners, penetrations and drains become the critical workmanship points.
+This does not make sheet membranes inherently failure-proof. Seams, laps, corners, penetrations and drains become critical workmanship points.
 
 ## 3. H1 assembly topology
 
@@ -100,48 +98,44 @@ A nominally waterproof sheet laid over a flat or reverse-falling substrate is no
 
 H1 prefers substrates that remain dimensionally and mechanically credible under the intended moisture condition.
 
-For the bounded first family this normally means an evidence-backed:
+For the bounded family this normally means an evidence-backed:
 
 - fibre-cement / glass-reinforced cement board;
 - proprietary tile backer / waterproof board where its assessment covers the application;
 - cementitious render/screed;
-- concrete or other mineral substrate covered by the selected system evidence.
+- concrete or another mineral substrate covered by the selected system evidence.
 
-Gypsum-based substrates are not the preferred H1 wet-room baseline even where a particular certified waterproofing system permits them.
+Gypsum-based substrates are not the preferred H1 baseline even where a particular certified waterproofing system permits them.
 
-Reason:
-
-> the membrane should protect the substrate, but failure of a small membrane detail should not immediately expose the most moisture-sensitive substrate we could have chosen.
-
-That is graceful degradation, not a claim that the substrate itself is waterproof.
+The reason is failure tolerance: the membrane should protect the substrate, but a local membrane defect should not automatically expose the most moisture-sensitive substrate available.
 
 Exact substrate suitability belongs to the selected product/system evidence.
 
 ## 5. Extent of waterproofing
 
-For an H1 wet room, the floor and wetting-zone walls form one declared waterproof enclosure.
+For the bounded H1 wet-room family, the floor and wetting-zone walls form one declared waterproof enclosure.
 
-The compiler should represent the **waterproof boundary extent**, not infer it from where tiles happen to be drawn.
+The model should represent the **waterproof boundary extent**, not infer it from where tiles happen to be drawn.
 
-The baseline should cover:
+The baseline covers:
 
 - full wet-room floor;
 - shower/wetting walls to the extent required by the selected technical route;
 - wall/floor junctions;
 - threshold/upstand relationship;
-- all membrane seams;
-- all penetrations through the wet boundary;
-- the drain interface.
+- membrane seams;
+- penetrations through the wet boundary;
+- drain interface.
 
-Where a conventional bath/shower room uses a smaller tanked zone, that may become a later subtype. The first H1 family deliberately chooses the more legible full wet-room condition.
+A conventional bath/shower room with a smaller tanked zone may use another subtype. The first H1 family chooses the more legible full wet-room condition for research simplicity.
 
 ## 6. Drain as a boundary transition
 
 The floor drain is not merely a plumbing object under a tiled floor.
 
-It is the intentional transition where the wet-room waterproof boundary becomes a drainage system.
+It is the intentional transition where the waterproof boundary becomes a drainage system.
 
-The drain node must therefore coordinate:
+The drain node must coordinate:
 
 - floor falls;
 - membrane termination / bonding flange or system collar;
@@ -163,13 +157,9 @@ The family expects evidence-backed:
 - sealing tape / band at sheet junctions where required by the system;
 - internal-corner pieces or equivalent system detail;
 - external-corner pieces or equivalent system detail;
-- movement accommodation compatible with the substrate and finish system.
+- movement accommodation compatible with substrate and finish.
 
-A brittle finish is not permitted to bridge an independently moving interface and become its movement joint.
-
-This follows the wider doctrine:
-
-> no brittle finish should bridge two assemblies that move independently.
+A brittle finish should not bridge two assemblies known to move independently and become the movement joint by accident.
 
 ## 8. Pipe and control penetrations
 
@@ -180,13 +170,13 @@ Preferred service arrangement:
 - pipework approaches from an accessible service cavity;
 - connections/unions/valves remain on the dry/access side where practicable;
 - only the necessary final pipe/control body crosses the wet boundary;
-- the crossing receives a proprietary collar/gasket or other evidence-backed membrane detail.
+- the crossing receives a proprietary collar/gasket or another evidence-backed membrane detail.
 
 A bead of silicone around a pipe emerging through tile is not the primary waterproofing transition.
 
 ### Shower valve
 
-The preferred H1 arrangement is:
+Preferred H1 arrangement:
 
 ~~~text
 WET ROOM
@@ -200,7 +190,7 @@ ACCESSIBLE DRY-SIDE SERVICE CAVITY
 valves / joints / pipework
 ~~~
 
-Where a concealed shower valve cannot be maintained from the dry side, its access/replacement strategy must be explicit before compile pass.
+Where a concealed shower valve cannot be maintained from the dry side, its access/replacement strategy must be explicit.
 
 ## 9. Threshold
 
@@ -210,34 +200,34 @@ The source must declare how water is prevented from migrating into adjacent dry 
 
 Possible evidence-backed solutions include:
 
-- falls entirely toward a sufficiently located drain with waterproof membrane continued to a dry-zone boundary;
+- falls entirely toward a suitably located drain with waterproof membrane continued to a dry-zone boundary;
 - a low/flush linear drainage transition;
-- a membrane upturn or system threshold detail that remains compatible with required step-free access.
+- a membrane upturn or system threshold detail compatible with required step-free access.
 
 H1 does not invent a universal threshold dimension.
 
-The important semantic requirement is:
+The semantic requirement is:
 
 **WET BOUNDARY TERMINATION + ACCESSIBILITY + DRAINAGE GEOMETRY must resolve together.**
 
-## 10. No permanent services inside the waterproof layer
+## 10. Services and the waterproof boundary
 
-The doctrine's golden rule applies particularly strongly here:
+The relevant HSA principle is separation of lifetimes and deliberate interfaces, not an absolute prohibition on services entering permanent construction.
 
-> **No service is permitted inside the permanent fabric of the building.**
+For WZ-BSM-01 that leads to a strong **dry-side bias**:
 
-For WZ-BSM-01:
+- routine-maintenance valves should not be buried behind tanking and tile without an access strategy;
+- service joints should not be placed where foreseeable replacement destroys the waterproof assembly when an accessible dry-side route is practical;
+- service cavities should remain on the dry side of the membrane where practical;
+- the membrane should not become the lid over an unmaintainable service void.
 
-- no routine-maintenance valve is buried behind the tanking and tiled finish without an access strategy;
-- no service joint is deliberately placed where replacement requires destruction of the waterproof assembly if an accessible dry-side route is practical;
-- service cavities remain on the dry side of the membrane wherever possible;
-- the membrane itself may be behind a replaceable finish but should not become the lid over an unmaintainable service void.
+A technical reason may justify a crossing or concealed component. The design must then state the interface, evidence, failure consequence and replacement method rather than treating concealment as resolution.
 
 ## 11. Tile and grout
 
 The finish layer must be compatible with the waterproofing system.
 
-The compiler/product evidence should distinguish:
+The product evidence should distinguish:
 
 - membrane-to-substrate adhesive;
 - seam/corner/collar bonding medium;
@@ -247,7 +237,7 @@ The compiler/product evidence should distinguish:
 
 A substitution in one layer can invalidate the assembly even if every product is independently marketed as suitable for bathrooms.
 
-The family is therefore a **system family**, not a shopping list.
+The family is a **system family**, not a shopping list.
 
 ## 12. Builder-reality / inspection strategy
 
@@ -285,11 +275,9 @@ Where the selected system/technical route permits or requires a water/flood test
 - drain remains maintainable;
 - service access remains functional.
 
-The aim is to make a bodge visually and procedurally harder to hide.
+The aim is to make significant workmanship defects visible before closure.
 
 ## 13. Failure geography
-
-WZ-BSM-01 is designed around the plumber dealing with the worst day.
 
 A leak/failure should preferentially encounter:
 
@@ -298,30 +286,30 @@ A leak/failure should preferentially encounter:
 3. moisture-robust substrate;
 4. inspectable/access-controlled service geography;
 
-before it encounters moisture-sensitive permanent fabric.
+before it encounters moisture-sensitive longer-lived construction.
 
-This family does not yet define a secondary floor pan for every bathroom. It does require the design to identify where escaped water goes and what it damages.
+This family does not prescribe a secondary floor pan for every bathroom. It does require the design to identify where escaped water goes and what it damages.
 
-The utility/appliance high-consequence zone remains a related but separate future family unless it is explicitly designed as a wet room.
+The utility/appliance high-consequence zone remains related but distinct unless it is explicitly designed as a wet room.
 
 ## 14. Compatibility with floor structure
 
 The wet-room assembly must not casually cut the floor structure to create falls or a drain recess.
 
-For the current I-joist floor family:
+For the H1 I-joist floor family:
 
 - floor lowering/recesses are structural occurrences;
 - drain openings are structural penetrations;
-- trimmers/reinforcement remain under SAB-H1-01 external structural adequacy;
-- falls should preferentially be formed by planned build-up / pre-engineered tray or other supported construction rather than site-notching joists.
+- trimmers/reinforcement remain under external structural adequacy;
+- falls should preferentially be formed by planned build-up / pre-engineered tray or another supported construction rather than site-notching joists.
 
-The wet-zone family therefore consumes floor geometry; it does not own structural adequacy.
+The wet-zone family consumes floor geometry; it does not own structural adequacy.
 
 ## 15. Accessibility / future adaptation
 
-A level-access shower is compatible with the project's accessibility ambitions but increases interface discipline.
+A level-access shower is compatible with HSA accessibility/adaptation ambitions but increases interface discipline.
 
-WZ-BSM-01 should be suitable for a future or immediate level-access wet-room layout where:
+WZ-BSM-01 should support a level-access arrangement where:
 
 - floor build-up/recess is planned structurally;
 - threshold remains step-free;
@@ -329,19 +317,19 @@ WZ-BSM-01 should be suitable for a future or immediate level-access wet-room lay
 - service/control positions remain accessible;
 - waterproofing extent is defined before finishes.
 
-This is preferable to designing a conventional bathroom whose eventual conversion requires cutting into structure and inventing tanking afterwards.
+This is preferable to assuming future conversion can be solved later by cutting structure and inventing tanking retrospectively.
 
 ## 16. Evidence boundary
 
-### Native / semantic
+### Semantic / modelled
 
-The compiler may know:
+The computational model may represent:
 
 - which space is a wet room;
 - membrane boundary extent;
 - substrate family;
 - drain occurrence;
-- floor falls intent;
+- floor-falls intent;
 - corners / changes of plane;
 - penetration occurrences;
 - service-access relationship;
@@ -363,7 +351,7 @@ Must establish:
 - finish/tile weight limits where applicable;
 - movement-joint treatment;
 - installation conditions;
-- applicable ETA/UKCA/CE/independent technical assessment where required by the selected acceptance route.
+- applicable technical assessment/declaration where required by the selected acceptance route.
 
 ### Physical/as-built evidence
 
@@ -379,9 +367,7 @@ May include:
 
 ## 17. Supported-domain rules
 
-WZ-BSM-01 v0.1 is deliberately bounded.
-
-Supported research condition:
+WZ-BSM-01 v0.1 is deliberately bounded to:
 
 - ordinary domestic internal wet room;
 - tiled or otherwise system-compatible finish;
@@ -392,11 +378,7 @@ Supported research condition:
 - no swimming pool / steam-room / permanently immersed condition;
 - no arbitrary mixed waterproofing systems.
 
-Outside this envelope:
-
-**EXTERNAL / UNSUPPORTED FAMILY**
-
-rather than silent improvisation.
+Outside this envelope, the family requires another accepted technical route rather than silent improvisation.
 
 ## 18. Mutations
 
@@ -423,23 +405,22 @@ Expected:
 
 ### WZ-M03 — substitute gypsum board
 
-Replace supported moisture-robust board with ordinary gypsum board while keeping membrane.
+Replace the preferred moisture-robust board with ordinary gypsum board while keeping membrane.
 
 Expected:
 
 - substrate/product evidence re-evaluates;
-- H1 preferred graceful-degradation profile fails even if some proprietary systems might technically permit a gypsum substrate;
-- family may require explicit alternative evidence or leave baseline support.
+- H1 preferred failure-tolerance profile is lost even if a proprietary system permits the substrate;
+- family may require explicit alternative evidence or leave the baseline.
 
 ### WZ-M04 — bury shower isolation valve
 
-Move accessible dry-side valve behind membrane/tile with no access panel.
+Move accessible dry-side valve behind membrane/tile with no access route.
 
 Expected:
 
 - waterproof continuity may remain technically intact;
-- maintenance/access doctrine fails;
-- compile fails architectural/service maintainability.
+- maintenance requirement fails.
 
 ### WZ-M05 — substitute membrane only
 
@@ -457,12 +438,12 @@ Add a later fixing through membrane with no approved penetration detail.
 Expected:
 
 - as-built evidence becomes stale;
-- wet-boundary failure scoped to the penetration;
+- wet-boundary failure is scoped to the penetration;
 - tile/fixture itself may remain geometrically valid.
 
 ## 19. Reference evidence family
 
-The first structured product-evidence trial uses **Mapei Mapeguard WP System / WP 200** because current public technical material exposes the complete system relationship rather than only the membrane roll:
+The structured product-evidence trial uses **Mapei Mapeguard WP System / WP 200** because public technical material exposes the system relationship rather than only the membrane roll:
 
 - WP 200 sheet membrane;
 - ST sealing tape;
@@ -475,27 +456,29 @@ The first structured product-evidence trial uses **Mapei Mapeguard WP System / W
 
 This is a **reference evidence package**, not a permanent specification mandate.
 
-The generic H1 family must remain substitutable by another genuinely equivalent, fully evidenced wet-room system.
+Another system can replace it only through genuinely equivalent scoped evidence, not category similarity.
 
 ## 20. H1 status
 
 ~~~text
-wet-room semantic boundary          NATIVE / SUPPORTED
-sheet-membrane topology             SUPPORTED FAMILY
-substrate role                      SUPPORTED FAMILY
-corners / penetrations / drain      NATIVE INTERFACE OCCURRENCES
+wet-room semantic boundary          RESEARCH-SUPPORTED
+sheet-membrane topology             H1 FAMILY
+substrate role                      H1 FAMILY
+corners / penetrations / drain      EXPLICIT INTERFACES
 product suitability                 EXTERNAL PRODUCT/SYSTEM EVIDENCE
 exact falls / drain sizing          EXTERNAL TECHNICAL DESIGN
-structural floor modification       EXTERNAL under SAB-H1-01
+structural floor modification       EXTERNAL STRUCTURAL EVIDENCE
 as-built continuity                 PHYSICAL EVIDENCE
 finish aesthetics                   ARCHITECTURAL / PRODUCT CHOICE
 ~~~
 
-WZ-BSM-01 closes the H1 paper-research gap for an ordinary wet-room waterproofing topology.
+WZ-BSM-01 closes the H1 paper-research gap for an ordinary wet-room waterproofing topology. It does not claim that a wet room is technically or physically valid until a specific system and as-built evidence discharge its obligations.
 
-It does not claim that a wet room is release-valid until a specific system and as-built evidence discharge its obligations.
+## 21. Reference House boundary
 
-## 21. Source anchors
+This family is a credible conventional benchmark for the Reference House, not an automatic project specification. The actual wet-room solution may use another system if it meets the same boundary, workmanship, maintenance and failure requirements with equal or better evidence.
+
+## 22. Source anchors
 
 - NHBC Technical Guidance 9.2/06, *Tiling bath and shower enclosures, wet rooms and bathroom pods*, November 2024: https://www.nhbc.co.uk/binaries/content/assets/nhbc/tech-guidance/9.2.0.6-substrates-for-tiling-bath-and-shower-enclosures-2024.pdf
 - The Tile Association FAQ / NHBC wet-room summary: https://www.tiles.org.uk/technical-support/frequently-asked-questions/
