@@ -1,20 +1,20 @@
 # Reference House
 
-One coordinated worked interpretation of the doctrine. Its purpose is to force architectural and technical propositions to meet one another in a plausible house and expose conflicts that isolated principles or patterns can hide.
+The Reference House is one coordinated interpretation of House Systems Architecture. It brings architectural and technical propositions into the same building so that conflicts hidden by isolated principles or patterns become visible in plan, section, structure, envelope, services and maintenance.
 
-It is a test vehicle, not proof.
+It is an integration test, not proof of the doctrine.
 
 ## Architectural scope
 
-The current Reference House deliberately selects a **Georgian-derived architectural language**, provisionally represented by the G-01 research programme, together with its own courtyard morphology and tectonic dialect. Those are project choices, not House Systems Architecture doctrine.
+The house selects a **Georgian-derived architectural grammar**, provisionally represented by G-01, together with a courtyard morphology and a project-specific tectonic dialect. These are choices made for this house, not HSA doctrine.
 
-The distinction matters in both directions: HSA propositions must survive a different architectural language, while G-01 is allowed to be strongly opinionated about composition, hierarchy and element families without pretending those choices are universal.
+HSA propositions should remain intelligible under a materially different architectural language. G-01, by contrast, is allowed to be strongly opinionated about composition, hierarchy, proportion and element families. Keeping those authorities separate lets the Reference House be architecturally specific without allowing its style to leak upstream into the doctrine.
 
-See the project-wide [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md), the computational [G-01 Grammar Charter](../computational/g01-grammar-charter.md) and the [G-01 Research Brief](../computational/g01-research-brief.md).
+See the project-wide [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md), the [G-01 Grammar Charter](../computational/g01-grammar-charter.md) and the [G-01 Research Brief](../computational/g01-research-brief.md).
 
-### Composition / authority stack
+## Composition and authority
 
-Treat the house as the composition of several independently named inputs:
+The house combines several independently owned layers:
 
 ```text
 HSA doctrine
@@ -28,52 +28,38 @@ HSA doctrine
 = Reference House
 ```
 
-These layers may constrain one another without becoming interchangeable.
+The layers constrain one another without becoming interchangeable.
 
 - **HSA doctrine** owns the general long-life propositions: serviceability, lifespan separation, designed interfaces, failure tolerance, maintenance geography, repose, passive-first environmental strategy and architectural resolution of technology.
-- **HSA patterns / strategies** own reusable responses selected for this project. Reference House use does not increase their evidence or maturity.
-- **Supported technical families** describe the construction/system routes currently being tested or computationally supported. Cavity masonry, a particular floor family or a roof family is not an HSA aesthetic value merely because this house uses it.
+- **HSA patterns / strategies** own reusable responses selected for the project. Their use here does not increase their general evidence or maturity.
+- **Supported technical families** describe construction or system routes being evaluated. A masonry, floor or roof family does not become an HSA preference merely because this house uses it.
 - **G-01** owns Georgian-derived spatial and compositional constraints: lineage, hierarchy, ordering, proportions, opening relationships and element families that survive the grammar research.
 - **Project morphology** owns the courtyard and other house-specific geometric decisions that are not part of G-01 by default.
-- **Local dialect** may modify a bounded part of the house—for example the slight Andalusian influence explored for the inner courtyard—without redefining G-01.
-- **Reference House tectonic dialect** owns project-specific visible resolutions such as traditional joinery and restrained brass/bronze where those choices are architecturally and functionally justified.
-- **Site / programme** owns orientation, planning response, household needs, external relationships and other facts of this project.
+- **Local dialect** may modify a bounded part of the house—for example the slight Andalusian influence explored for the courtyard—without redefining G-01.
+- **Reference House tectonic dialect** owns project-specific visible resolutions such as traditional joinery and restrained brass or bronze where those choices are architecturally and functionally justified.
+- **Site / programme** owns orientation, planning response, household needs, external relationships and other facts of the project.
 
-When one decision appears to belong to two layers, record the dependency rather than promoting it upstream. A cornice may realise an HSA movement-interface principle in this house; that does not make cornice an HSA requirement. A courtyard may need to satisfy G-01 ordering; that does not make courtyard planning a G-01 invariant.
+Where one decision touches two layers, record the dependency rather than promoting the project choice upstream. A cornice may realise an HSA movement-interface principle in this house without becoming an HSA requirement. A courtyard may satisfy G-01 ordering without becoming a G-01 invariant.
 
 Start with the [Tectonic Architectural Language](tectonic-architectural-language.md), then the [Vertical Bay Options](vertical-bay-options.md), [Vertical Bay Coordination](vertical-bay-coordination.md) and [External Access & Maintenance Plan](external-access-maintenance-plan.md).
 
-## Current pattern-language state
+## Pattern occurrences
 
-The canonical project-state record is the [Pattern Occurrence Register](pattern-occurrence-register.md).
-
-It distinguishes:
+The [Pattern Occurrence Register](pattern-occurrence-register.md) is the canonical record of how the pattern language is being used in this house. It distinguishes:
 
 - a pattern selected in principle;
-- an actual project occurrence with identifiable geometry/information;
+- an actual occurrence with identifiable geometry or information;
 - the implementation direction chosen for that occurrence;
-- outstanding technical/evidence obligations;
-- strategies that govern several different physical responses;
-- held candidates that have **not** entered the language.
+- outstanding technical or evidence obligations;
+- strategies that govern several physical responses;
+- held candidates that have not entered the canonical language.
 
-Reference House use never raises a pattern's evidence or maturity by itself.
+A Reference House occurrence is evidence about coordination in this project. It is not evidence that the pattern is generally valid.
 
 ## Whole-house coordination
 
-The Reference House has a deliberately provisional house-scale fixture:
+[Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) provides the current house-scale geometry: a provisional two-storey courtyard arrangement used to coordinate rooms, circulation, services and interfaces. The accompanying [fixture drawing](whole-house-coordination-fixture.svg) is schematic rather than a final design.
 
-- [Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) — two-storey courtyard geometry used to make plan/service relationships explicit without pretending the design is final;
-- [Whole-House Coordination Fixture drawing](whole-house-coordination-fixture.svg) — schematic ground/upper plans;
-- [Pattern Occurrence Register](pattern-occurrence-register.md) — **current canonical mapping** from the worked house to the Phase-7 language;
-- [Service Topology Coordination](service-topology-coordination.md) — **historical Phase-5 coordination brief** that defined the first whole-house pattern test;
-- [Service Topology Run 01](service-topology-run-01.md) — **historical Phase-5 run** showing the demand / utility / plant / vertical / horizontal / crossing / water-failure sequence and the taxonomy corrections it exposed.
+The [Pattern Occurrence Register](pattern-occurrence-register.md) records the current mapping between that house and the canonical language. Earlier [Service Topology Coordination](service-topology-coordination.md) and [Service Topology Run 01](service-topology-run-01.md) records are retained as Phase-5 provenance and use the terminology available when those exercises were carried out.
 
-The Phase-5 records intentionally retain the terminology available when the experiment was run. Where later Phase-6/7 work changed classification, the current occurrence register is authoritative. In particular:
-
-- the former vertical-service candidate is now [`HSA-P-014 — Accessible Vertical Service Zone`](../patterns/accessible-vertical-service-zone.md);
-- `HSA-P-003` is now **Coherent Horizontal Service Route** rather than Horizontal Service Spine;
-- former `HSA-P-006 Water-Damage-Safe Service Route` is retired and its durable umbrella proposition is the [Fail-Safe Water Distribution](../patterns/strategies/fail-safe-water-distribution.md) strategy.
-
-The Reference House therefore no longer blocks corpus migration, but it remains architecturally and technically provisional.
-
-Next house work should challenge the provisional footprint and room/circulation geometry, coordinate structure and building physics, resolve passive-first environmental design against real openings/orientation, develop the selected-intent patterns into actual occurrences where justified, and integrate physical prototype results as they arrive.
+The house remains architecturally and technically provisional. Current design work concentrates on the footprint and room order, stair and courtyard relationships, structure and service crossings, passive-first environmental design, drainage, external maintenance access and the incorporation of physical prototype findings.
