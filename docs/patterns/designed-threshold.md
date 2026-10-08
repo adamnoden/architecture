@@ -89,7 +89,7 @@ The threshold should feel natural underfoot, remain quiet, avoid avoidable trip 
 
 ## Evidence
 
-Thresholds as wear, movement, weathering and accessibility interfaces are mature construction practice. Phase 6 admitted a distinct HSA pattern because these duties recur at the transition between independently resolved assemblies rather than belonging solely to the door or floor.
+Thresholds as wear, movement, weathering and accessibility interfaces are mature construction practice. These duties recur at transitions between independently resolved assemblies rather than belonging solely to the door or floor.
 
 ## Does not prove
 
