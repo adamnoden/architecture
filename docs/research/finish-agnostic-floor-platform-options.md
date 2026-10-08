@@ -1,12 +1,12 @@
 # Finish-Agnostic Floor Platform — Options Appraisal
 
-**Status:** evidence hardening / pre-prototype  
-**Candidate pattern:** Finish-Agnostic Floor Platform  
-**Purpose:** test whether a residential floor can separate the long-lived structural floor from shorter-lived finish systems while remaining quiet, rigid, architecturally calm and locally removable.
+**Status:** current floor-system research / pre-prototype  
+**Classification:** the full-room **Finish-Agnostic Floor Platform** is an implementation challenger beneath [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md). [Selective Floor Access](../patterns/candidates/selective-floor-access.md) remains a held pattern candidate.  
+**Purpose:** test how far a residential floor can separate the long-lived structural floor from shorter-lived finish and service layers while remaining quiet, rigid, architecturally calm and locally maintainable.
 
 ## Executive position
 
-The core concept is technically credible.
+The core construction concept is technically credible.
 
 Raised-access-floor and dry-floor industries already demonstrate that:
 
@@ -17,9 +17,15 @@ Raised-access-floor and dry-floor industries already demonstrate that:
 - acoustic and fire performance can be engineered;
 - dry floor systems can integrate underfloor heating.
 
-The reference house should **not** adopt a commercial raised-access floor wholesale.
+The Reference House should **not** adopt a commercial raised-access floor wholesale.
 
-The current preferred direction is a **low-profile residential platform** that borrows its material logic and precision from system floors while rejecting:
+The current hierarchy is:
+
+1. excellent conventional floor as the control;
+2. selective access bands or edges where actual service geography justifies them;
+3. a low-profile full-room mineral platform only as an experimental challenger if the selective arrangement leaves meaningful serviceability value unresolved.
+
+The full-room challenger borrows material logic and precision from system floors while rejecting:
 
 - tall pedestals;
 - office-scale 600 mm grids as a visible aesthetic;
@@ -27,7 +33,7 @@ The current preferred direction is a **low-profile residential platform** that b
 - exposed suction-cup access logic;
 - lightweight/hollow feel.
 
-The pattern remains experimental because the hardest requirement is not strength. It is **domestic tactile and acoustic quality**.
+The hardest requirement is not strength. It is **domestic tactile and acoustic quality**.
 
 ---
 
@@ -45,7 +51,7 @@ Its calcium-sulphate raised-floor panels are individually removable and are offe
 - non-combustible carrier panels;
 - acoustic variants.
 
-This directly supports the project's distinction between:
+This directly supports the distinction between:
 
 **platform interface** and **finish system**.
 
@@ -80,7 +86,7 @@ Fibre-reinforced calcium-sulphate panels provide:
 
 Lindner explicitly describes calcium-sulphate panels as suitable for residential, office and public uses.
 
-This suggests that the reference-house floor platform should investigate a **mineral carrier** first rather than inventing a timber cassette.
+This makes a **mineral carrier** a credible material family for any full-platform prototype before the project invents a timber cassette.
 
 A dense mineral panel is also more compatible with:
 
@@ -109,7 +115,7 @@ Their standard assumptions can conflict with a house:
 - loose-laid carpet tiles or commercial finishes;
 - different expectations for footfall sound and visual jointing.
 
-The doctrine should therefore extract only the transferable principles:
+The useful transferable principles are:
 
 - precision support;
 - replaceable panel;
@@ -120,7 +126,7 @@ The doctrine should therefore extract only the transferable principles:
 - repeatable lifting;
 - independently testable modules.
 
-The reference house should not look or sound like an office access floor.
+The Reference House should not look or sound like an office access floor.
 
 ---
 
@@ -150,9 +156,9 @@ Ordinary timber floorboards, tile/stone on suitable substrate, or another conven
 
 ### Current judgement
 
-**Benchmark.**
+**Benchmark and default where access demand is weak.**
 
-A removable platform must outperform this materially on maintenance/access without losing its domestic quality.
+Any accessible or removable floor condition must outperform this materially on maintenance/access without losing its domestic quality.
 
 ---
 
@@ -229,7 +235,7 @@ primary structural floor
 
 ### Current judgement
 
-**Preferred research direction.**
+**Experimental full-room challenger, not the first Reference House move.**
 
 ---
 
@@ -256,9 +262,9 @@ Most of the room is a conventional floor. A perimeter, corridor band or service 
 
 ### Current judgement
 
-**Very strong comparator and may ultimately beat full-room platforming.**
+**Preferred first research/prototype direction where floor access is justified.**
 
-This option is particularly aligned with proportional serviceability.
+This option is most closely aligned with proportional serviceability.
 
 ---
 
@@ -303,7 +309,7 @@ Existing stone-faced access-floor products prove the concept but do not remove t
 
 ## Soft/loose coverings
 
-Technically easiest but architecturally less important to the current reference-house brief.
+Technically easiest but architecturally less important to the current Reference House brief.
 
 ---
 
@@ -357,9 +363,7 @@ Panel removable with simple tools but not visually advertised.
 
 Panel can be removed/replaced during refurbishment but is not intended as service access.
 
-This is important.
-
-A full-room platform can remain technically demountable without turning every square metre into a weekly access hatch.
+This matters even if a full-room challenger remains technically demountable: removability need not turn every square metre into a routine access hatch.
 
 ---
 
@@ -405,7 +409,7 @@ However, an integrated heating pipe within a removable access panel creates a co
 - damage risk increases;
 - panel interchangeability decreases.
 
-The reference-house options should therefore distinguish:
+The Reference House options should therefore distinguish:
 
 ## Heating below removable platform
 
@@ -439,15 +443,11 @@ A shallow zone may be sufficient for:
 - data;
 - selected small controls;
 - local heating distribution;
-- crossing points coordinated with deeper corridor/service zones.
+- crossing points coordinated with deeper service-specific zones.
 
 Large drainage and ventilation ducts should remain in dedicated deeper zones.
 
-This produces a more disciplined topology:
-
-**shallow room platform + deeper corridor/wet-room service routes**
-
-rather than turning the entire floor into a technical plenum.
+The preferred topology is therefore **selective shallow access where the route justifies it, with deeper local conditions for bulky or gravity-dependent services**, rather than turning the entire floor into a technical plenum.
 
 ---
 
@@ -465,15 +465,15 @@ The design must therefore address:
 - cleaning/debris accumulation;
 - water leaks.
 
-A local low-profile platform should preferably sit above a cavity whose geometry is **compartmented and legible**, not an unbounded whole-storey void.
+Any accessible floor condition should preferably sit above a cavity whose geometry is **compartmented and legible**, not an unbounded whole-storey void.
 
-The platform must also allow reinstatement without damaging fire/acoustic barriers after access.
+The assembly must also allow reinstatement without damaging fire/acoustic barriers after access.
 
 ---
 
 # 12. Water
 
-Water-bearing services beneath a removable floor are attractive because they become accessible.
+Water-bearing services beneath an accessible floor are attractive because they become reachable.
 
 They can also turn the floor cavity into a hidden collection space.
 
@@ -482,76 +482,64 @@ Therefore:
 - avoid concealed high-risk joints where possible;
 - route water in damage-limiting containment where justified;
 - preserve drainage/detection logic;
-- make panels easy to open after a detected leak;
+- make access easy after a detected leak;
 - use moisture-resistant carrier/edge details in vulnerable areas.
 
-Bathrooms remain a special case and should not automatically use the same platform as dry principal rooms.
+Bathrooms remain a special case and should not automatically use the same floor logic as dry principal rooms.
 
 ---
 
-# 13. Current preferred reference-house architecture
-
-The best current hypothesis is:
+# 13. Current Reference House direction
 
 ### Principal rooms
 
-Low-profile dense mineral platform where serviceability justifies it, with finishes mounted to dedicated carriers.
+Use a high-quality conventional floor unless actual service/change geography justifies a bounded accessible condition.
 
-### Corridors/service edge
+### Corridors / service edges
 
-Higher access priority and potentially greater service depth.
+Treat these as the strongest locations for selective floor access where coherent service routes pass beneath or beside them.
+
+### Full-room platform
+
+Retain the low-profile dense-mineral platform as an **upper-bound challenger**, not a default. It advances only if selective access leaves a material whole-life problem unresolved.
 
 ### Wet rooms
 
-Separate wet-floor strategy; do not force the dry-room platform into waterproofing duties.
+Use a separate wet-floor strategy; do not force the dry-room access concept into waterproofing duties.
 
-### Rooms with almost no service need
+### Low-service rooms
 
-Conventional durable floor remains valid.
+Conventional durable floors remain the baseline.
 
-This selective approach is stronger than “every floor panel must lift”.
+This hierarchy is stronger than “every floor panel must lift”.
 
 ---
 
-# 14. First prototype
+# 14. Prototype sequence
 
-Build a walkable multi-panel bay large enough to produce real acoustic behaviour.
+The first floor comparison should be large enough to produce real tactile and acoustic behaviour, but should begin with the **selective access condition against an excellent conventional control**.
 
-At minimum:
+At minimum, test:
 
 - realistic structural floor beneath;
-- resilient/levelling layer;
-- low-profile support lattice;
-- at least six platform panels;
+- conventional control field;
+- bounded access band or edge condition;
 - perimeter condition;
 - one threshold;
-- underfloor cable/service route;
-- one removable service-access panel;
-- timber finish variant;
-- tile variant;
-- stone/high-mass variant if structurally practical.
-
-Test:
-
-- concentrated load;
-- rocking;
-- repeated walking;
-- heel impact;
-- dragging furniture;
+- a real cable/service route;
 - repeated lifting/reseating;
-- damaged-panel replacement;
-- edge wear;
-- rattle after cycling;
-- acoustic transmission;
-- visible joint tolerance.
+- concentrated load and furniture movement;
+- footfall, heel impact and rattle;
+- visible joint tolerance;
+- acoustic transmission.
 
-Compare with conventional high-quality floors.
+Only if that arrangement demonstrates a material unresolved need should the programme escalate to a multi-panel full-room platform with timber, tile and high-mass finish variants.
 
 ---
 
 # 15. Current judgement
 
-The candidate should remain experimental but is now strongly grounded in precedent.
+The underlying separation between primary structure and faster-changing floor layers is credible and now captured at strategy level.
 
 What is already proven elsewhere:
 
@@ -563,11 +551,6 @@ What is already proven elsewhere:
 - high load and fire performance;
 - individual panel replacement.
 
-What is **not** yet proven for this project:
+What is **not** yet proven for this project is that either selective or full-room access can deliver enough maintenance value while becoming experientially indistinguishable from an excellent domestic floor.
 
-> **that the system can disappear completely into the experience of a high-quality domestic Georgian floor.**
-
-That is the design problem.
-
-If the prototype sounds or feels like access flooring, the project should retreat to local access bands rather than compromise the room.
-
+The first burden sits with selective access. If even that sounds, moves or reads as technical flooring without solving a substantial maintenance problem, conventional construction wins. A full-room platform has a still higher burden of proof.
