@@ -106,7 +106,7 @@ The attachment system should normally be invisible. A wall that rattles, sounds 
 
 ## Evidence
 
-Independent lining, mechanical fixing and robust sheet/rail systems are mature. The distinctive HSA proposition is the sparse, load-classified intermediate attachment plane serving multiple faster-changing uses. Phase 6 merged the former Architectural Backplane and Fixing Infrastructure ideas around this stronger invariant.
+Independent lining, mechanical fixing and robust sheet/rail systems are mature. The distinctive HSA proposition is the sparse, load-classified intermediate attachment plane serving multiple faster-changing uses.
 
 ## Does not prove
 
