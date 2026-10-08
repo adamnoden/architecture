@@ -1,13 +1,13 @@
 # Validity and Obligations — Conceptual v0.2
 
-**Status:** foundational research draft  
-**Purpose:** define what `valid`, `failed`, `unsupported` and `compiled` mean before rules are encoded
+**Status:** conceptual foundation; core status separation, obligation derivation and external-discharge semantics exercised by P0  
+**Purpose:** define what `valid`, `failed`, `unsupported`, `unresolved` and `compiled` mean without collapsing different kinds of authority into one result
 
 ## 1. Validity is multidimensional
 
 A single green/red result would hide distinctions the system needs to preserve.
 
-A design can be geometrically well formed but structurally unresolved; structurally adequate but outside the selected grammar; technically compliant but poorly evidenced; digitally resolved but badly built; legally compliant but inconsistent with the Long-Life House doctrine.
+A design can be geometrically well formed but structurally unresolved; structurally adequate but outside the selected grammar; technically compliant but poorly evidenced; digitally resolved but badly built; legally compliant but inconsistent with an HSA project requirement.
 
 The model therefore reports several kinds of validity rather than one universal score.
 
@@ -48,7 +48,7 @@ This is more useful than treating the compiler as a bag of unrelated checks beca
 
 ## 3. Conceptual obligation record
 
-A future obligation should carry enough information to answer: **what must be true, why, for what, under which target, and how do we know?**
+An obligation should carry enough information to answer: **what must be true, why, for what, under which target, and how do we know?**
 
 Candidate fields include:
 
@@ -101,14 +101,14 @@ Created because the selected design/calculation route incorporates a standard-ba
 ### Product evidence
 Created by installation limits, conditions or declared performance of a selected product/system.
 
-### Long-Life House doctrine
-Created only where the project claims conformance with a formalised doctrine proposition.
+### HSA / project architectural requirement
+Created only where the project has adopted a formalised HSA proposition, pattern-derived commitment or other architectural requirement.
 
 ### Architectural grammar
 Created by the selected architectural language.
 
 ### Project requirement
-Created by the client brief or project-specific target.
+Created by the client brief or another project-specific target.
 
 ### Process / evidence
 Created because a proposition requires inspection, test, commissioning, professional review or another evidence-producing act.
@@ -145,9 +145,11 @@ Does the model satisfy the named target and compliance route under declared assu
 
 Never report this dimension without naming the target.
 
-### V6 — Doctrine conformance
+### V6 — HSA / project-architecture conformance
 
-Does the design satisfy the Long-Life House propositions formalised as mandatory for this project?
+Does the design satisfy the HSA-derived project requirements it has actually adopted?
+
+A project may satisfy technical obligations while failing an HSA architectural commitment, or vice versa. `PAT-XW-01` deliberately exercised that separation.
 
 ### V7 — Architectural-grammar conformance
 
@@ -172,10 +174,10 @@ Use status to communicate epistemic state, not merely colour a UI.
 ### `PASS`
 Resolved by an accepted method within native supported scope.
 
-### `PASS — EXTERNAL EVIDENCE`
-The proposition is discharged by an explicitly referenced external evidence item accepted by project governance: engineer calculation, specialist analysis, site investigation, accredited test, etc.
+### `EXTERNALLY_DISCHARGED`
+The proposition is resolved by explicitly referenced external evidence accepted within project governance: engineer calculation, specialist analysis, site investigation, accredited test or another competent determination.
 
-Keep this visibly distinct from native proof.
+This remains visibly distinct from native proof. A human-facing report may render it as “pass — external evidence”, but the authority boundary must remain explicit.
 
 ### `WARNING`
 The design is valid but departs from a preference, target quality or recommended condition. Never use warning to hide a mandatory unresolved obligation.
@@ -189,18 +191,20 @@ The system does not know how to establish the proposition. This is epistemic, no
 ### `UNRESOLVED`
 The system understands the obligation but information or evidence is missing.
 
-### `NOT APPLICABLE`
-The rule exists but its applicability condition is false. Retain the reason.
+### `NOT_APPLICABLE`
+The rule exists but its applicability condition is false. Retain the reason where the rule set uses this state.
 
 ### `SUPERSEDED`
 The obligation/evidence belongs to an earlier model or target version and remains only as history.
+
+P0 implements the core executable result states `PASS`, `FAIL`, `UNRESOLVED`, `UNSUPPORTED` and `EXTERNALLY_DISCHARGED`. The wider vocabulary above remains conceptual until a real use case earns it.
 
 ## 7. Authoring feedback versus release semantics
 
 Distinguish:
 
 - **immediate invalid relationship** — a state that ideally cannot persist, such as connecting incompatible network types;
-- **compile error** — a representable design state that fails the current compile, such as an opening beyond a supported lintel range;
+- **compile error** — a representable design state that fails the current compile, such as an opening beyond a supported family range;
 - **external proof obligation** — a valid route forward requiring evidence outside native capability;
 - **warning** — non-blocking departure;
 - **optimisation feedback** — comparative suggestion.
@@ -270,13 +274,15 @@ REG-A-017 structure adequate
                      └─ depends on SUP-007 bearing support
 ~~~
 
-Change a dependency and downstream evidence may become stale. This graph supports future change-impact analysis and incremental recompilation.
+Change a dependency and downstream evidence may become stale. This graph supports change-impact analysis and selective recompilation.
 
 ## 12. Evidence invalidation
 
 Evidence must be reviewed or invalidated when a dependency it relies on changes: opening width, product, loading, target version, supporting material, site condition or another scoped input.
 
 An old PDF existing in the repository is not evidence that its conclusion still applies.
+
+P0 demonstrates this mechanism at deliberately small scope: dependent evidence becomes stale or unresolved while unrelated evidence remains current.
 
 ## 13. Compile modes
 
@@ -295,7 +301,7 @@ Requires major technical systems to be resolved while allowing controlled extern
 A provisional contract requires:
 
 - model integrity passes;
-- mandatory due-now obligations are `PASS`, `PASS — EXTERNAL EVIDENCE`, `NOT APPLICABLE`, or explicitly accepted through a defined governance route;
+- mandatory due-now obligations are `PASS`, `EXTERNALLY_DISCHARGED`, `NOT_APPLICABLE`, or explicitly accepted through a defined governance route;
 - no hidden due-now `UNRESOLVED` obligations;
 - future evidence obligations have declared phase, method and owner;
 - no `UNSUPPORTED` condition is presented as proven;
@@ -303,7 +309,7 @@ A provisional contract requires:
 - assumptions are frozen and visible;
 - outputs derive from the same source version.
 
-The precise release contract remains research work.
+The precise release contract remains research work. P0 does not implement a building-release mode.
 
 ## 14. Time-phased obligations
 
@@ -379,7 +385,7 @@ Geometry / spatial              PASS
 Structure                       PASS
 Boundary / building physics     PASS WITH 1 EXTERNAL EVIDENCE ITEM
 Regulatory route                PASS
-Long-Life House doctrine        PASS
+HSA project requirements        PASS
 Architectural grammar G-01      PASS WITH 2 WARNINGS
 Constructability / tolerance    PASS
 Evidence completeness           FAIL
@@ -404,14 +410,18 @@ This is a useful failure: the system distinguishes a resolved design from an evi
 - What evidence can a family/type pass to its occurrences?
 - How should probabilistic engineering conditions be represented?
 - How should tolerances affect binary geometric checks?
-- How should doctrine/brief conflicts surface?
+- How should HSA/brief conflicts surface?
 - What is sufficient evidence for a product substitution?
 - How should ambiguity or competing regulatory interpretations be reported?
 - What does recompilation against a newer target mean for an existing lawful building?
 
-## 20. Next work
+## 20. Current position
 
-The immediate companion is [Evidence and Provenance Architecture](evidence-and-provenance.md), which develops evidence scope, dependencies, lifecycle and invalidation in more detail.
+[Evidence and Provenance Architecture](evidence-and-provenance.md) develops evidence scope, dependencies, lifecycle and invalidation in more detail. The minimal executable kernel has already tested the most important separation in software: project requirements, technical obligations and evidence state can diverge without collapsing into one Boolean.
+
+Further validity states or compile modes should be added only when an architectural, physical or professional-review case requires them. Generic status-lattice growth is frozen with the rest of the P0 architecture.
+
+See [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md).
 
 ## External anchors
 
