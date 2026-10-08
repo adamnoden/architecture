@@ -1,6 +1,6 @@
 # Boundary Semantics — Conceptual v0.2
 
-**Status:** Gate-B foundational research draft  
+**Status:** conceptual foundation exercised through S0→H1 paper research; technical adequacy remains family/evidence dependent  
 **Purpose:** define environmental, fire, acoustic and related boundaries as first-class semantic systems rather than incidental wall properties  
 **Engineering status:** conceptual only; this document does not certify any construction
 
@@ -114,7 +114,7 @@ Semantic continuity still does **not** prove performance. Fire, acoustic, therma
 
 ## 7. Boundary independence and replaceable layers
 
-The Long-Life House makes one useful relationship explicit: routinely removable work should not casually carry critical performance that is expected to survive its removal.
+HSA makes one useful relationship explicit: routinely removable work should not casually carry critical performance that is expected to survive its removal.
 
 ~~~text
 LINING L01
@@ -124,7 +124,7 @@ AIR BOUNDARY AB01
   carried-only-by L01
 ~~~
 
-If the selected doctrine profile requires the air boundary to survive routine lining removal, this state should create an obligation or failure.
+If a project requirement says the air boundary must survive routine lining removal, this state should create an obligation or failure.
 
 A removable panel may still contribute acoustic absorption, protection, finish or secondary sealing. The issue is whether removing it destroys a critical boundary contrary to the declared strategy.
 
@@ -229,7 +229,7 @@ Colouring the field wall in a drawing without modelling its junctions is not a c
 
 Acoustics should distinguish direct separation, flanking paths, openings/penetrations, resilient or rigid connections, source/receiver relationships and the evidence supporting the build-up.
 
-Detached H1 houses avoid some of the regulatory complexity of attached or multi-unit buildings, though internal acoustic quality can still be a project requirement. That simplification is one reason detached low-rise housing is a useful first domain.
+Detached H1 houses avoid some of the regulatory complexity of attached or multi-unit buildings, though internal acoustic quality can still be a project requirement. That simplification is one reason detached low-rise housing is a useful first research domain.
 
 ## 18. Fire semantics
 
@@ -243,7 +243,7 @@ Novel fire-engineering strategies remain external or unsupported in the H1 domai
 
 ## 19. Boundary families package bounded knowledge
 
-A supported boundary family may eventually combine:
+A supported boundary family may combine:
 
 - physical assembly;
 - boundary roles;
@@ -268,7 +268,7 @@ compatible:
   SERVICE PENETRATION SP-01
 ~~~
 
-This is the beginning of a performance-aware standard library.
+This is the beginning of a performance-aware standard library, not evidence that the present executable kernel implements such a library.
 
 ## 20. Transitions deserve standard-library identity
 
@@ -318,7 +318,9 @@ Ventilation competes with airtightness; drainage openings with pest exclusion; a
 
 The compiler should not “maximise” each boundary independently. It should identify interfaces where one objective changes another.
 
-## 24. S0 minimum boundary set
+## 24. S0 minimum boundary set — historical fixture
+
+The first paper slice exercised:
 
 ### BND-S0-01 — Weather path
 The external wall/window junction has an explicit weathering and drainage strategy.
@@ -344,7 +346,7 @@ In S0-B, removing the W2 lining does not silently remove the primary environment
 ### BND-S0-08 — Evidence state
 Every boundary claim is natively resolved, externally evidenced, unresolved, unsupported or planned for later physical verification.
 
-## 25. S0 mutation expectations
+## 25. S0 mutation expectations — historical fixture
 
 ### M1 — Widen window
 
@@ -385,20 +387,11 @@ The compiler's job may simply be to know the obligation exists, construct or req
 - One seal may contribute to air, water, fire or sound, but those obligations remain distinct.
 - The compiler need not reimplement every building-physics engine.
 
-## 29. Immediate research tasks
+## 29. Boundary-family results from the paper programme
 
-1. define the exact S0 wall-family boundary roles;
-2. draw the graph through wall/window/floor edge;
-3. choose the provisional primary air-control location for S0;
-4. define one supported service-penetration family conceptually;
-5. define window head/jamb/sill transition obligations;
-6. separate topology-only checks from calculation/test-dependent checks;
-7. create one evidence trace;
-8. execute S0 M1/M2/M4 and observe invalidation/isolation.
+The original S0 tasks—defining wall/window/floor boundary roles, air-control continuity, penetration semantics and evidence invalidation—were subsequently exercised through S0→H1 paper research.
 
-## 30. First supported boundary-family set
-
-S0/S1 forced three reusable routes out of the general ontology.
+That work produced several bounded research families:
 
 ### BF-WIN-MCW-01
 
@@ -418,7 +411,19 @@ Covers continuity of the cavity/weather strategy, insulation turn, room-side air
 
 Covers DPC/DPM moisture continuity, floor/wall thermal-junction identity, air-boundary transition and ground/substructure evidence dependency.
 
-These families deliberately allow scoped external technical evidence. “Supported boundary family” means the semantic route and required evidence are bounded and known; it does **not** mean every physical-performance calculation is native.
+### PEN-ENV-01
+
+[Controlled Service Penetration Through External Envelope](boundary-family-controlled-penetration-v01.md)
+
+Covers explicit host-boundary crossings and evidence-backed reinstatement without pretending the penetration family itself proves structural, weather, fire or acoustic adequacy.
+
+These families deliberately allow scoped external technical evidence. “Supported research family” means the semantic route and required evidence are bounded and known; it does **not** mean every physical-performance calculation is native or executable.
+
+## 30. Current research boundary
+
+P0 has demonstrated generic source relationships, boundary-role obligation derivation and evidence-scope/invalidation behaviour at deliberately small scale. It has not implemented the full boundary ontology or the H1 family library.
+
+The live questions now belong primarily to Reference House detail coordination, physical prototypes and competent fire/building-physics/building-control review. Add computational boundary machinery only when those workstreams expose a concrete representational or evidence problem worth formalising.
 
 ---
 
