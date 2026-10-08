@@ -1,9 +1,9 @@
 # Ventilation Family VENT-CMEV-01 — Central Continuous Mechanical Extract
 
-**Status:** H1 supported-family candidate v0.1  
-**Purpose:** provide one whole-house Part-F ventilation route whose service geography and maintenance burden are deliberately bounded.  
+**Status:** H1 paper-domain fallback / alternate family v0.1  
+**Purpose:** define one bounded whole-house mechanical-extract topology whose service geography, failure mode and maintenance burden are explicit.  
 **Target posture:** valid under the S0/S1 pre-2027 Part-F target route; also recognised as a system type in Approved Document F 2026.  
-**Engineering status:** airflow design/commissioning and product performance require competent technical evidence.
+**Engineering status:** airflow design, commissioning and product performance require competent technical evidence.
 
 > **Fresh air must have a designed route through the house. “Air finds a way” is not a ventilation strategy.**
 
@@ -33,9 +33,9 @@ OUTSIDE
 
 Purge ventilation remains a separate intermittent route through openable windows/openings.
 
-## 2. Supported H1 arrangement
+## 2. H1 arrangement
 
-The base family requires:
+The bounded family contains:
 
 - one central extract unit;
 - unit located in an accessible internal service/plant zone;
@@ -45,9 +45,11 @@ The base family requires:
 - openable-window purge route where the target requires it;
 - one planned external exhaust termination;
 - rigid or otherwise approved durable ductwork;
-- duct routes inside declared service zones;
-- no routine duct routing through structural members/permanent masonry except designed sleeves/openings;
+- duct routes inside declared service geography;
+- designed structural/envelope crossings rather than opportunistic drilling;
 - commissioning and handover evidence.
+
+This is an H1 research family, not an HSA requirement that houses use central mechanical extract.
 
 ## 3. Plant geography
 
@@ -63,7 +65,7 @@ Avoid as H1 default:
 
 - inaccessible loft corner;
 - sealed ceiling void;
-- location requiring removal of permanent finishes for fan replacement.
+- location requiring destructive removal of longer-lived finishes for fan replacement.
 
 Required access includes:
 
@@ -77,7 +79,7 @@ Required access includes:
 
 Wet-room extract nodes include, as applicable:
 
-- kitchen;
+- kitchen background extract;
 - utility;
 - bathroom;
 - shower room;
@@ -102,7 +104,7 @@ The target owns:
 
 - required equivalent area;
 - number/location conditions;
-- any target-version differences.
+- target-version differences.
 
 The family owns:
 
@@ -125,28 +127,22 @@ Transfer routes can include:
 
 The source records the route.
 
-A floor-finish change that removes the designed undercut can therefore invalidate the ventilation route without invalidating the door's Part-M clear opening.
-
-S1 already demonstrated this separation.
+A floor-finish change that removes a designed undercut can therefore invalidate the ventilation route without invalidating unrelated door geometry.
 
 ## 7. Ductwork
 
-H1 principle:
+Ductwork should use declared service geography such as:
 
-> ducts are services and live in service geography.
-
-Therefore extract ductwork should use:
-
-- vertical service risers;
+- vertical service zones;
 - accessible corridor/service ceiling zones;
 - high-service-room service walls;
 - planned sleeves.
 
 Avoid:
 
-- arbitrary drilling through joists;
+- arbitrary drilling through structure;
 - long concealed flexible duct;
-- ducts trapped behind non-removable finishes.
+- ducts trapped behind finishes that must be destroyed for routine replacement or repair.
 
 Exact pressure-loss sizing and fan selection remain competent technical design.
 
@@ -165,13 +161,13 @@ It must carry:
 - maintenance access;
 - pest/bird protection where required.
 
-One exhaust terminal is preferable to multiple ad-hoc wet-room penetrations in the base family.
+The bounded family uses one deliberate exhaust rather than multiplying ad-hoc wet-room penetrations.
 
 ## 9. Background-inlet comfort risk
 
 CMEV intentionally uses outdoor inlets.
 
-Therefore the compiler must retain context for:
+Therefore the model must retain context for:
 
 - external noise;
 - local air pollution;
@@ -179,13 +175,9 @@ Therefore the compiler must retain context for:
 - room layout relative to inlet;
 - draught risk.
 
-Where the target/site cannot support acceptable inlet placement:
+Where the site cannot support acceptable inlet placement, the family may be inappropriate. Simpler computational representation is not a reason to force it.
 
-**VENT-CMEV-01 = UNSUITABLE FOR SITE / SELECT ANOTHER FAMILY**
-
-Do not force the system merely because it is simpler.
-
-## 10. Failure behavior
+## 10. Failure behaviour
 
 ### Central fan fails
 
@@ -200,48 +192,37 @@ Required response:
 
 - visible fault/maintenance obligation;
 - accessible fan replacement;
-- no demolition.
+- no destructive opening merely to reach the fan.
 
 ### One duct/terminal blocked
 
 - affected extract route fails;
 - other routes may remain intact;
-- inspection/commissioning evidence becomes stale for affected branch.
-
-This is a reasonably legible failure model.
+- inspection/commissioning evidence becomes stale for the affected branch.
 
 ## 11. Controls
 
-Base family permits:
+The family permits:
 
 - continuous low/background operation;
 - high/boost operation;
-- humidity/occupancy demand control only where compatible with accepted evidence;
+- humidity/occupancy demand control where compatible with accepted evidence;
 - manual occupant override where target/product route requires.
 
-Do not make cloud connectivity or proprietary home automation a dependency of ventilation validity.
+Cloud connectivity or proprietary home automation should not become a proof dependency.
 
 ## 12. Kitchen source capture
 
-VENT-CMEV-01 provides the **whole-house Part-F ventilation route**.
+VENT-CMEV-01 is a whole-house background ventilation family. It does not establish the project's preferred cooking-pollutant source capture.
 
-It does not pretend that a general kitchen extract terminal is always sufficient as the project's preferred cooking-pollutant source capture.
+`HSA-P-010 — Source-Capture Kitchen Extract` remains a separate architectural pattern and may require a dedicated cooker extract route coordinated with:
 
-The Long-Life House may add:
-
-**KITCHEN-SOURCE-CAPTURE-01**
-
-as a separate future family.
-
-That family must coordinate:
-
-- cooker hood;
-- exhaust;
 - make-up air;
 - pressure balance;
 - grease;
 - fire;
-- maintenance.
+- maintenance;
+- envelope penetration.
 
 Do not run grease-laden cooker-hood air through the central extract fan unless the selected system is explicitly designed for that duty.
 
@@ -288,19 +269,19 @@ Expected:
 - affected room supply contribution fails/stales;
 - wet-room duct topology remains current.
 
-### VENT-M02 — replace carpet/flooring and remove door undercut
+### VENT-M02 — replace flooring and remove door undercut
 
 Expected:
 
 - transfer-air route fails;
-- door clear-opening/accessibility may remain valid.
+- unrelated door/accessibility geometry may remain valid.
 
 ### VENT-M03 — move fan into inaccessible loft void
 
 Expected:
 
 - maintenance geography fails;
-- Part-F airflow may remain technically achievable.
+- airflow may remain technically achievable.
 
 ### VENT-M04 — add wet room
 
@@ -315,23 +296,19 @@ Expected:
 Expected:
 
 - background-inlet suitability re-evaluates;
-- system may leave supported site envelope;
-- triggers alternate-family consideration such as MVHR.
+- family may become unsuitable for the site;
+- filtered/balanced alternatives become more credible.
 
-### VENT-M06 — target changes to successor F route
+### VENT-M06 — target changes
 
 Expected:
 
 - target-dependent equivalent areas/flows/evidence re-evaluate;
 - physical duct topology may remain usable.
 
-## 15. Complexity behavior
+## 15. Authoring complexity
 
-The author should select:
-
-> central continuous extract ventilation
-
-and identify:
+The author should select the ventilation family and identify:
 
 - rooms;
 - wet-room roles;
@@ -339,45 +316,36 @@ and identify:
 - service hub;
 - exterior exhaust location.
 
-The compiler derives:
+A future implementation may derive:
 
 - inlet requirements;
 - extract nodes;
 - transfer routes;
 - flow/evidence obligations;
-- commissioning;
+- commissioning obligations;
 - envelope penetrations.
 
-The author does not individually create a Part-F checklist for every room.
+The author should not maintain a room-by-room regulatory checklist by hand when the semantic model can derive it.
 
 ## 16. H1 posture
 
 ~~~text
-whole-house ventilation topology     SUPPORTED
-wet-room extract route               SUPPORTED
-habitable background-air route       SUPPORTED
-transfer air                         SUPPORTED
-purge contribution                   SUPPORTED / TARGET
+whole-house ventilation topology     RESEARCH-SUPPORTED FALLBACK
+wet-room extract route               RESEARCH-SUPPORTED
+habitable background-air route       RESEARCH-SUPPORTED
+transfer air                         RESEARCH-SUPPORTED
+purge contribution                   TARGET / SEPARATE OBLIGATION
 duct sizing / fan selection          EXTERNAL COMPETENT DESIGN
 product performance                  EXTERNAL PRODUCT EVIDENCE
-commissioning                        FUTURE PHYSICAL EVIDENCE
+commissioning                        PHYSICAL EVIDENCE
 noise/pollution site suitability     CONTEXT DEPENDENT
-enhanced cooker source capture       FUTURE FAMILY
+cooking source capture               SEPARATE PATTERN / SYSTEM
 ~~~
 
-VENT-CMEV-01 is therefore sufficient as H1's first whole-house ventilation family.
+VENT-CMEV-01 remains a useful bounded fallback and the historical S2 ventilation family. It was superseded as the **preferred H1 research direction** by VENT-HYBRID-STACK-01; it was not invalidated technically.
 
-## 17. Upgrade path
+## 17. Relationship to Reference House
 
-A later MVHR family may reuse:
+Reference House ventilation selection remains open. CMEV may outrank the hybrid route where site conditions, external noise/pollution, winter comfort, maintenance burden or specialist performance evidence make it the stronger whole-building answer.
 
-- room roles;
-- wet extract nodes;
-- transfer routes;
-- service hub;
-- envelope intake/exhaust semantics;
-- commissioning/evidence architecture.
-
-The H1 choice therefore does not dead-end the model.
-
-It deliberately defers the second supply-duct network, heat exchanger, filters and condensate until they are worth their complexity.
+An H1 fallback family is evidence available to the project, not a project decision.
