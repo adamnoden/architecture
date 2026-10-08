@@ -3,22 +3,41 @@ import { assertNavigationCoverage, sidebar } from './navigation'
 
 const computational = sidebar.find((item) => item.text === 'Computational track')
 const currentProgramme = computational?.items?.find((item) => item.text === 'Current programme & review')
-if (currentProgramme?.items) {
-  const additions = [
-    {
-      text: 'P0 implementation plan',
-      link: '/docs/computational/p0-implementation-plan'
-    },
-    {
-      text: 'P0 + PAT-XW-01 executable result',
-      link: '/docs/computational/p0-pat-xw-01-result'
-    }
-  ]
+const programmeHistory = computational?.items?.find((item) => item.text === 'Programme history')
 
-  for (const addition of additions.reverse()) {
-    if (!currentProgramme.items.some((item) => item.link === addition.link)) {
-      currentProgramme.items.splice(1, 0, addition)
+if (currentProgramme?.items) {
+  currentProgramme.text = 'Executable result & external review'
+
+  const v06Index = currentProgramme.items.findIndex(
+    (item) => item.link === '/docs/computational/research-programme-v06'
+  )
+
+  if (v06Index >= 0 && programmeHistory?.items) {
+    const [v06] = currentProgramme.items.splice(v06Index, 1)
+    v06.text = 'Research programme v0.6 — frozen'
+    if (!programmeHistory.items.some((item) => item.link === v06.link)) {
+      programmeHistory.items.push(v06)
     }
+  }
+
+  const result = {
+    text: 'P0 + PAT-XW-01 executable result — PASS',
+    link: '/docs/computational/p0-pat-xw-01-result'
+  }
+
+  if (!currentProgramme.items.some((item) => item.link === result.link)) {
+    currentProgramme.items.unshift(result)
+  }
+}
+
+if (programmeHistory?.items) {
+  const p0Plan = {
+    text: 'P0 implementation plan — completed',
+    link: '/docs/computational/p0-implementation-plan'
+  }
+
+  if (!programmeHistory.items.some((item) => item.link === p0Plan.link)) {
+    programmeHistory.items.push(p0Plan)
   }
 }
 
