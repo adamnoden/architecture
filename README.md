@@ -4,9 +4,9 @@ Architectural drawings and specifications are usually concerned with a house at 
 
 **House Systems Architecture (HSA)** is a design-research programme for that longer life. It treats the house as a set of interacting architectural and technical systems with different functions, lifetimes and rates of change. Its central concern is how those systems meet: whether repair and replacement can remain local, foreseeable failures can be detected and contained, maintenance has enough working space, and change in one layer can avoid needless destruction of another.
 
-HSA does not try to make every part of a house equally reversible. Capacity for change is concentrated where it is likely to repay its cost. Serviceability sits alongside settled spatial order, passive-first environmental design, ordinary replaceable parts, explicit interfaces, workmanship robustness and architectural repose. Unusual propositions still have to survive life safety, building physics, whole-life cost, carbon, construction reality and architectural quality.
+HSA does not try to make every part of a house equally reversible. Capacity for change is concentrated where it is likely to repay its cost. Serviceability sits alongside settled spatial order, passive-first environmental design, ordinary replaceable parts, explicit interfaces, workmanship robustness and architectural repose. Unusual propositions are still judged against life-safety requirements, building physics, whole-life cost and carbon, construction reality and architectural quality.
 
-The work moves from evidence and governing principles into reusable patterns, then tests them in one deliberately specific Reference House. A separate architectural grammar gives that house a coherent architectural language. Physical testing and professional review challenge propositions that cannot be settled on paper, while a bounded computational track checks the subset of building relationships that can usefully be made deterministic. The surviving work is developed into a publication and, where mature enough, delivery requirements for an appointed design team.
+The work moves from evidence and governing principles into reusable patterns, then tests them in one deliberately specific Reference House. A separate architectural grammar gives that house a coherent architectural language. Physical testing and professional review challenge propositions that cannot be settled on paper, while a bounded computational track checks the subset of building relationships that can usefully be represented deterministically. The publication develops the architectural argument; findings mature enough for practice are translated into delivery requirements for an appointed design team.
 
 ## Project map
 
@@ -62,7 +62,7 @@ flowchart TB
     class PUB,DEL output
 ```
 
-**Key:** blue — general HSA knowledge · amber — selected project architecture · green — verification · grey — outputs. Solid arrows show forward dependencies; the dashed arrow returns findings upstream.
+**Key:** blue — research and reusable HSA knowledge · amber — selected project architecture · green — verification · grey — outputs. Solid arrows show forward dependencies; the dashed arrow returns findings upstream.
 
 The Reference House is an integration test, not evidence that its particular grammar or technical choices are universally correct. Publication synthesises the argument and its evidence; delivery records only those requirements mature enough to hand to an appointed team.
 
@@ -92,7 +92,7 @@ The first whole-house integration test: one design in which selected patterns, a
 
 ### Computational track <Badge type="info">L3 executable scope · bounded</Badge>
 
-Formalises a limited set of building relationships so some invalid arrangements, unresolved obligations and evidence gaps can be detected deterministically. Pattern provenance may inform project requirements; technical obligations still derive from the building model itself. See the [P0 + PAT-XW-01 executable result](docs/computational/p0-pat-xw-01-result.md).
+Formalises a limited set of building relationships so some invalid arrangements, unresolved obligations and evidence gaps can be detected deterministically. The compiler operates on the building model; pattern provenance remains a separate authoring layer. See the [P0 + PAT-XW-01 executable result](docs/computational/p0-pat-xw-01-result.md).
 
 ### Physical & professional validation <Badge type="warning">L1–L2 · open</Badge>
 
@@ -117,19 +117,19 @@ The doctrine repeatedly returns to six propositions:
 - **Prefer ordinary parts in robust arrangements.** Novelty belongs where an arrangement or interface earns it, and details should tolerate ordinary competent workmanship.
 - **Keep the house architectural.** Serviceability cannot justify poor rooms, technical clutter, hollow construction, fragile comfort or needless complexity.
 
-A failed pattern, detail or prototype does not by itself invalidate the principle it was intended to serve. Evidence is allowed to change the implementation, narrow the claim or reject it altogether.
+A failed pattern, detail or prototype does not by itself invalidate the principle it was intended to serve. Evidence can change the implementation, narrow the claim or reject it altogether.
 
 ## Current phase
 
-The project is now in **validation and implementation**. The governing doctrine and canonical pattern language are stable at their current internal scopes. The main open questions are no longer about inventing more doctrine or extending the taxonomy; they are about whether the propositions survive whole-house coordination, physical testing and competent external review.
+The project has moved from forming the system into testing it against implementation. Doctrine and the pattern language are now stable enough that the main uncertainties sit downstream: whole-house coordination, physical performance and external professional review.
 
-Current work therefore concentrates on the Reference House; the W2 wall bay, structural floor edge and floor-platform tests; structural, fire/building-control and building-services review; publication figures and evidence; and the gradual translation of mature findings into delivery requirements.
+Current work concentrates on the Reference House; the W2 wall bay, structural floor edge and floor-platform tests; structural, fire/building-control and building-services review; publication figures and evidence; and the gradual translation of mature findings into delivery requirements.
 
 For detailed maturities, stop rules, unresolved risks and next gates, see **[STATUS.md](STATUS.md)**.
 
 ## Authority boundary
 
-HSA takes architectural positions, but it does not prescribe a historical style. The current Reference House selects a **Georgian-derived G-01 grammar**, a courtyard morphology and its own tectonic dialect. These are project choices. Their success or failure may teach HSA something, but they do not make Georgian architecture, symmetry, cavity masonry, courtyard planning, pitched roofs or brass details HSA requirements.
+HSA takes architectural positions, but it does not prescribe a historical style. The current Reference House selects a **Georgian-derived G-01 grammar**, a courtyard morphology and its own tectonic dialect. These are project choices. Evidence from them may justify changes upstream, but the choices themselves do not become doctrine: Georgian architecture, symmetry, cavity masonry, courtyard planning, pitched roofs and brass details remain possible implementations rather than HSA requirements.
 
 The promotion rule is: **generalise the reason; localise the taste.** See the [Architectural Specificity Boundary](docs/development/architectural-specificity-boundary.md).
 
@@ -152,7 +152,7 @@ The promotion rule is: **generalise the reason; localise the taste.** See the [A
 ## Using the repository
 
 - **`STATUS.md` owns current project state.** Older programme documents are retained as provenance; where they disagree about the present, `STATUS.md` and later explicit gate results control.
-- **The governing principles are the live public doctrine.** House Design Doctrine v7 is frozen source material.
+- **The governing principles are the current public doctrine.** House Design Doctrine v7 is frozen source material.
 - **The Reference House is a worked interpretation, not proof of doctrine or pattern validity.**
 - **The pattern language and computational model have different authority.** Pattern provenance can inform project requirements; technical obligations derive from actual composed building relationships.
 - **The repository is the source of truth.** The documentation site is a curated reading interface over the same files.
