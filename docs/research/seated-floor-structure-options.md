@@ -1,7 +1,7 @@
 # Seated Floor Structure — Options Appraisal
 
-**Status:** evidence hardening / pre-engineering  
-**Candidate pattern:** Seated Floor Structure  
+**Status:** current structural-interface option appraisal / pre-engineering  
+**Classification:** **Seated Floor Structure is an implementation challenger, not a canonical HSA pattern.** The reusable architectural knowledge is captured by [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md).  
 **Purpose:** determine whether the project's instinct — support by bearing, restrain only where restraint is required — should produce a genuinely non-standard floor-to-wall connection or simply a more disciplined use of established timber-floor details.
 
 ## Executive position
@@ -14,11 +14,11 @@ The strongest present interpretation is:
 
 > **Decompose the floor-to-wall interface into gravity support, joist stability, diaphragm action, wall restraint, movement allowance, fire/acoustic closure and finish — then use the simplest certified connection family that satisfies each function.**
 
-For the reference house, an engineered restraint-type masonry hanger or another standard engineered hanger remains the baseline to beat.
+For the Reference House, an engineered restraint-type masonry hanger or another standard engineered hanger remains the baseline to beat.
 
-A custom bearing ledge / seat should only advance if it produces a demonstrable advantage in inspection, replacement, tolerance, acoustic isolation or architectural coordination.
+A custom bearing ledge / seat should advance only if it produces a demonstrable advantage in inspection, replacement, tolerance, acoustic isolation or architectural coordination.
 
-The project should therefore keep the name **Seated Floor Structure**, but treat “seated” as a structural principle — clear support with explicit capture/restraint — rather than a commitment to a sliding bearing.
+The project no longer needs **Seated Floor Structure** as a pattern identity. The general proposition belongs at strategy level; direct bearing, restraint hangers and custom seats are competing implementation families beneath it.
 
 ---
 
@@ -56,7 +56,7 @@ TRADA notes that timber I-joists have better dimensional stability than solid wo
 
 This matters because the project should not invent a large movement mechanism for a movement that can already be reduced materially by the choice of structural product.
 
-The reference-house direction remains:
+The Reference House direction remains:
 
 - engineered I-joist or other engineered timber floor;
 - avoid vulnerable timber ends built deep into masonry;
@@ -73,7 +73,7 @@ https://trada.co.uk/publications/wood-information-sheets/timber-joist-and-deck-f
 
 ---
 
-# 3. Standard restraint hangers already embody part of the doctrine
+# 3. Standard restraint hangers already embody part of the strategy
 
 Commercial restraint-type masonry hangers already separate several functions more intelligently than a naive “fixed joist” description suggests.
 
@@ -85,9 +85,7 @@ For example, Simpson Strong-Tie Safety Fast masonry restraint hangers:
 - permit a small installation gap/tolerance at the joist end;
 - are certified connection products rather than bespoke structural hardware.
 
-This is not an endorsement of one manufacturer. It demonstrates that the market already contains **ordinary components in arrangements very close to the doctrine**.
-
-That is strategically important.
+This is not an endorsement of one manufacturer. It demonstrates that the market already contains **ordinary components in arrangements very close to the HSA strategy**.
 
 The project should prefer exploiting a standard certified connection before designing a custom steel shoe whose future calculation, fabrication and approval all become project-specific liabilities.
 
@@ -227,7 +225,7 @@ A timber ledger or wall plate fixed to masonry provides the bearing datum; joist
 
 ### Current judgement
 
-**Low priority for the reference house.**
+**Low priority for the Reference House.**
 
 ---
 
@@ -272,7 +270,7 @@ An individual floor joist may still be trapped by:
 - stairs/openings;
 - floor-platform support geometry.
 
-The reference house should therefore define three different ambitions:
+The Reference House should therefore distinguish three different ambitions:
 
 ### Inspectable
 
@@ -288,11 +286,11 @@ An entire primary joist can actually be withdrawn and replaced.
 
 The third is much more demanding and may not be proportionate.
 
-The candidate pattern should **not claim full joist replaceability unless the whole floor assembly proves it**.
+A seated implementation should **not claim full joist replaceability unless the whole floor assembly proves it**.
 
 ---
 
-# 7. Current reference-house direction
+# 7. Current Reference House direction
 
 Proceed to structural-engineer review with the following hierarchy:
 
@@ -328,30 +326,22 @@ Unless Option C wins materially on those criteria, **do not invent it**.
 
 ---
 
-# 8. Pattern refinement
+# 8. Classification outcome
 
-The candidate pattern should now be understood as:
+The stable HSA knowledge is:
 
-> **Seated Floor Structure — make gravity support explicit, distinguish restraint from support, and provide only the movement freedom that has a demonstrated structural or constructional purpose.**
+> **Make gravity support explicit, distinguish restraint from support, and provide only the movement freedom that has a demonstrated structural or constructional purpose.**
 
-This is stronger than “let the joists float”.
+That proposition is now carried by the strategy [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md).
 
-The architectural doctrine is decomposition and bounded freedom; the actual reference-house hardware may remain reassuringly ordinary.
+The seated connection remains one implementation challenger. The Reference House may ultimately use completely conventional certified hardware if it gives the better structural, fire, acoustic, construction and whole-life result.
 
 ---
 
 # 9. Required next work
 
-1. Structural engineer options study using actual house spans and masonry geometry.
-2. Decide engineered I-joist versus metal-web joist before final connection selection.
-3. Define floor diaphragm independently of removable finish/platform layers.
-4. Draw the wall/floor edge including:
-   - structural support;
-   - wall restraint;
-   - ceiling;
-   - acoustic layers;
-   - wall lining/backplane;
-   - floor platform;
-   - fire closure;
-   - movement lines.
-5. Prototype the edge at 1:1 only after Options A–C have calculable geometry.
+1. Structural-engineer options study using actual house spans and masonry geometry.
+2. Retain engineered I-joists as the working baseline while comparing metal-web joists once spans, vibration, depth and cost are known.
+3. Define floor diaphragm action independently of any removable finish/access layers.
+4. Develop calculable versions of the alternatives already coordinated in [Vertical Bay Coordination](../reference-house/vertical-bay-coordination.md) and [Vertical Bay Options](../reference-house/vertical-bay-options.md).
+5. Build a 1:1 structural edge challenger only after the engineer has reduced the comparison to credible geometries.
