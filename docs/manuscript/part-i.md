@@ -1,8 +1,6 @@
 # The Long-Life House
 ## Part I — The Proposition
 
-**Draft v0.6 — editorial refinement; for editorial development, not publication**
-
 ---
 
 # 1. The house after completion
@@ -225,7 +223,7 @@ Together, permanent fabric, replaceable systems, designed interfaces and mainten
 
 # 5. Eleven principles
 
-The following principles compress the doctrine into a public-facing form. They sit beneath the governing constraints and are stated at a level intended to survive changes in construction method and architectural language.
+The doctrine is expressed through eleven principles intended to survive changes in construction method and architectural language.
 
 ## Governing constraints
 
@@ -340,7 +338,7 @@ This hierarchy makes disagreement useful. An architect can reject a pattern with
 
 ---
 
-# Notes / working references
+# Notes
 
 [1] ISO 15686-1:2011, *Buildings and constructed assets — Service life planning — Part 1: General principles and framework*. https://www.iso.org/standard/45798.html  
 [2] RICS, *Whole life carbon assessment for the built environment*, 2nd ed. https://www.rics.org/profession-standards/rics-standards-and-guidance/sector-standards/construction-standards/whole-life-carbon-assessment  
