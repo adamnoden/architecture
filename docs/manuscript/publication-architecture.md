@@ -1,9 +1,9 @@
-# House Systems Architecture — Publication Architecture v0.11
+# House Systems Architecture — Publication Architecture v0.12
 
 **Working form:** illustrated architectural design-research monograph + evidence-qualified pattern language + separate architect-facing implementation brief.  
-**Status:** v0.11 — canonical Phase-7 pattern corpus established; Part III now organised around the actual language rather than the superseded 30-slot inventory.
+**Status:** v0.12 — canonical pattern language and computational authority reconciled; publication structure remains active.
 
-The pattern-language migration is controlled by [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md). The active language contains 21 patterns, one retired identity, three canonical strategies and four explicitly held candidates. Pattern count is an outcome, not a target.
+The pattern-language migration is complete at current internal scope. The active language contains 21 patterns, one retired identity, three canonical strategies and four explicitly held candidates. Pattern count is an outcome, not a target. Migration and crosswalk provenance are retained in [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md).
 
 ## Front matter
 
@@ -145,7 +145,7 @@ Pattern relationships should remain sparse. Generative sequence order is a separ
 
 ### Migration provenance
 
-The original Core 12 catalogue, service-topology pilot and reversible-assembly catalogue remain available as development history. They should not sit in the primary Part-III reading path once Phase 7 closes.
+The original Core 12 catalogue, service-topology pilot and reversible-assembly catalogue remain available as development history. With the canonical migration closed, they sit outside the primary Part-III reading path.
 
 ## Part IV — The Reference House
 
@@ -158,7 +158,7 @@ The original Core 12 catalogue, service-topology pilot and reversible-assembly c
 
 The Reference House is explicitly **one interpretation**, not proof of the doctrine or pattern language.
 
-During the pattern-language work it acts as an integration test. The first whole-house trial consists of the [Whole-House Coordination Fixture 01](../reference-house/whole-house-coordination-fixture.md) and historical [Service Topology Run 01](../reference-house/service-topology-run-01.md). The current canonical mapping is the [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md).
+During the pattern-language work it acted as an integration test. The first whole-house trial consists of the [Whole-House Coordination Fixture 01](../reference-house/whole-house-coordination-fixture.md) and historical [Service Topology Run 01](../reference-house/service-topology-run-01.md). The current canonical mapping is the [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md).
 
 As the house develops, continue recording:
 
@@ -201,47 +201,50 @@ G. Bibliography and standards
 
 ---
 
-## Computational development track — recorded, not yet promoted to a manuscript part
+## Computational development track — recorded, not promoted to a manuscript part
 
-The project carries a parallel computational proposition: a constrained semantic building model may be compiled against explicit architectural, structural, construction, regulatory and evidence obligations.
+The project carries a parallel computational proposition: selected architectural and technical relationships may be represented semantically and checked through explicit obligations and scoped evidence.
 
-The canonical concept is [Executable Architecture — Computational Expression of House Systems Architecture](../computational/executable-architecture.md); the current state and control documents are indexed in the [Computational Track](../computational/README.md).
+The canonical concept is [Executable Architecture — Computational Expression of House Systems Architecture](../computational/executable-architecture.md); current authority and provenance are indexed in the [Computational Track](../computational/README.md).
 
-The computational direction should remain **parallel to the publication rather than being forced into Part I–V**. It is consequential enough to deserve its own research track, but the publication should not present a paper-validated computational architecture as a finished software product.
+The computational work remains **parallel to the publication rather than being forced into Part I–V**. It is consequential enough to deserve a research track, but the monograph should not present a bounded semantic prototype as a finished building compiler.
 
-The current position is:
+Current position:
 
-- it is **not a governing principle** and does not replace the doctrine;
-- the doctrine remains meaningful independently of software;
-- the pattern language is also not the compiler ontology;
-- the formal architectural model, obligation/evidence architecture and bounded H1 paper tests now exist;
+- executable architecture is **not a governing principle** and does not replace HSA;
+- the architectural doctrine remains meaningful independently of software;
+- the pattern language is an authoring/provenance layer, not the compiler ontology;
 - the internal paper sequence is complete through H1-PAPER-01 and the capability freeze;
-- external competent review remains open;
-- a minimal executable semantic/compiler kernel is authorised as the next falsification step;
-- heavy CAD/compiler/product implementation remains gated;
-- the eventual publication form remains open: later monograph material, companion research volume, software/product specification or some combination should be chosen only after external and executable validation.
+- Phase-8 architectural→computational crosswalk is complete at internal mapping scope;
+- the minimal P0 semantic/compiler kernel has passed 17 executable tests;
+- `PAT-XW-01` has passed six executable crosswalk tests on top of P0;
+- generic compiler/crosswalk growth is therefore **frozen**;
+- external competent structural, fire/building-control and building-services review remains open;
+- further executable fixtures are selected only when architectural, physical or professional-review work exposes a concrete question worth formalising;
+- heavy CAD, general solver, regulations-engine and product implementation remain unauthorised;
+- the eventual publication form remains open: later monograph material, companion research volume, software/product specification or some combination should be chosen only after stronger external and physical evidence exists.
 
-The computational chain remains:
+The computational chain is:
 
 ```text
-Doctrine / selected architectural intent
+Selected architectural / project intent
    ↓
 Formal architectural model
    ↓
-Semantic primitives + invariants + rules
+Semantic relationships + invariants
    ↓
-Compiler target
+Derived obligations
    ↓
-Resolved building model
+Evidence / determination
    ↓
-Production outputs + evidence
+Validity + diagnostics
 ```
 
-Patterns may expose formal consequences that enter this chain, but do not become compiler rules by default.
+Patterns may explain why project requirements exist and group a report over relevant facts. They do not emit technical truth or become compiler primitives merely by being selected.
 
 The architectural manuscript should not become a software pitch. The computational track earns publication space only where it clarifies or strengthens the architecture.
 
-**Integration boundary:** external maintenance geography has now received an explicit post-freeze computational coverage audit. Its semantics are representable, but whole-house external access/logistics have not yet been demonstrated in H1. The authorised executable extension fixture `EXT-MAINT-01` comes only after the minimal kernel succeeds.
+**Integration boundary:** external maintenance geography has received a post-H1 computational coverage audit. Its semantics are representable, but the exterior case has not been demonstrated in software. `EXT-MAINT-01` remains an evidence-selected candidate fixture, not the automatic next step after P0.
 
 # Separate implementation brief
 
@@ -262,7 +265,7 @@ For each requirement:
 
 For external maintenance, the brief should specifically require the access strategy early enough that façade, roof, landscape, courtyard and site geometry can still change; a generic Stage 4 note saying “provide safe access” is too late.
 
-This is the direct solution to the “transpilation” problem: the monograph explains the architectural position; the implementation brief tells the design team what this project actually requires.
+The monograph explains the architectural position; the implementation brief tells the design team what this project actually requires.
 
 ---
 
@@ -270,6 +273,6 @@ This is the direct solution to the “transpilation” problem: the monograph ex
 
 **Do not merge Part III pattern language back into Part II.**
 
-Part II remains the architectural argument. Part III is the reusable language and generative method. The corpus is now sufficiently stable that the publication should use the canonical 21-pattern language rather than the superseded 30-slot inventory. Cross-references connect argument, pattern and worked house without making any one of them evidence for the others.
+Part II remains the architectural argument. Part III is the reusable language and generative method. The corpus is sufficiently stable that the publication should use the canonical 21-pattern language rather than the superseded 30-slot inventory. Cross-references connect argument, pattern and worked house without making any one of them evidence for the others.
 
 Likewise, **do not make the Reference House the evidence for the doctrine or patterns.** It is a worked interpretation, integration test and research vehicle.
