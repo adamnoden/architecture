@@ -1,7 +1,7 @@
 # H1 Passive Environmental Strategy — v0.1
 
-**Status:** programme decision / doctrine-to-compiler bridge  
-**Purpose:** establish the environmental hierarchy that H1 must use before whole-house paper compilation.  
+**Status:** H1 paper-domain environmental hierarchy; passive-first ordering remains current, pre-H1 sequencing is historical  
+**Purpose:** define the environmental hierarchy used to select and evaluate bounded H1 ventilation, moisture, summer-comfort and heating-demand strategies.  
 **Scope:** ventilation, moisture removal, summer comfort and heating-demand reduction.  
 **Date:** 2026-10-04
 
@@ -11,17 +11,17 @@ The first H1 ventilation decision selected continuous mechanical extract ventila
 
 That was a useful compiler simplification, but the priority was wrong.
 
-The architectural doctrine already states that passive architecture should do the first work. The computational track must not reverse that principle merely because an active system is easier to encode.
+HSA already states that passive architecture should do the first work. The computational track must not reverse that principle merely because an active system is easier to encode.
 
 This decision therefore establishes the following order:
 
-**passive physical response → bounded mechanical assistance → fully mechanical response**
+**reduce load → passive physical response → bounded mechanical assistance → fully mechanical response where justified**
 
 The order is not ideological. A later stage may win where it produces the better whole-building result. It must, however, earn the added plant, maintenance and replacement burden.
 
 ## 2. Airtightness is not ventilation
 
-The Long-Life House should continue to control unintended infiltration.
+HSA favours deliberate control of unintended infiltration.
 
 Airtight construction and passive ventilation are compatible because they answer different questions:
 
@@ -142,11 +142,11 @@ CMEV or MVHR may be the correct answer where evidence shows that the passive/ass
 - demanding filtration requirements;
 - inability to prove adequate passive/hybrid performance.
 
-The doctrine does not require a passive label at the expense of performance.
+HSA does not require a passive label at the expense of performance.
 
-## 5. Current H1 ventilation position
+## 5. H1 ventilation position
 
-The preferred research route is now:
+The preferred H1 paper-research route became:
 
 **VENT-HYBRID-STACK-01 — Hybrid Passive-Stack Ventilation**
 
@@ -163,13 +163,11 @@ HIGH LOCAL LOAD
     → temporary boost / source-capture response
 ~~~
 
-This is a **preferred research family**, not yet a trusted H1 supported family.
-
-It must first demonstrate that it can meet the relevant indoor-air-quality and moisture obligations across a credible operating envelope.
+The later [Hybrid Ventilation Evidence Trial](h1-hybrid-ventilation-evidence-trial-v01.md) established this as a **research-supported topology with external specialist performance proof required**. It did not promote the family to trusted technical status.
 
 CMEV remains a supported fallback family.
 
-MVHR remains a supported-domain extension candidate and may ultimately be the stronger Reference-House choice where heat recovery, filtration, acoustic isolation or inlet control justify the additional ducts, filters, fans, condensate and commissioning burden.
+MVHR remains a legitimate higher-complexity alternate and may be the stronger Reference House choice where heat recovery, filtration, acoustic isolation or inlet control justify the additional ducts, filters, fans, condensate and commissioning burden.
 
 ## 6. Passive-first does not mean fan-minimisation by assertion
 
@@ -183,13 +181,13 @@ The correct sequence is:
 2. model/test the range of natural performance;
 3. quantify the residual duty the assist system must carry;
 4. compare the whole result with CMEV/MVHR on energy, comfort, maintenance, noise, pollution and resilience;
-5. select the family whose total consequences best fit the doctrine and target.
+5. select the family whose total consequences best fit the project and target.
 
 If the assist fan must operate almost continuously to make the passive system work, the project should say so and reconsider the family rather than disguise a mechanical system as passive.
 
-## 7. Evidence gate for the hybrid route
+## 7. Evidence boundary for the hybrid route
 
-Before VENT-HYBRID-STACK-01 can be promoted to H1 supported status, competent evidence must address at least:
+VENT-HYBRID-STACK-01 still requires competent project evidence for at least:
 
 - low-wind / small indoor-outdoor temperature-difference conditions;
 - high-wind conditions and over-ventilation risk;
@@ -220,7 +218,7 @@ H1 should first pursue:
 4. air movement such as ceiling fans where appropriate;
 5. mechanical cooling only where the preceding measures cannot provide adequate comfort.
 
-Part O already requires mechanical cooling to be a last resort where insufficient heat can otherwise be removed. Current CIBSE TM59 work likewise reinforces design-stage testing of passive summer resilience.
+Part O requires mechanical cooling to be a last resort where insufficient heat can otherwise be removed. Current CIBSE TM59 work likewise reinforces design-stage testing of passive summer resilience.
 
 The ventilation family must therefore expose purge and overheating relationships without pretending that background ventilation alone solves summer comfort.
 
@@ -239,7 +237,7 @@ Before plant sizing:
 
 should be resolved as far as practical.
 
-The existing HEAT-ASHP-RAD-01 family remains a plant strategy. It does not replace passive demand reduction.
+The HEAT-ASHP-RAD-01 family is a bounded H1 plant strategy. It does not replace passive demand reduction and is not an HSA-wide heating prescription.
 
 ## 10. Compiler implications
 
@@ -261,25 +259,29 @@ This lets two houses discharge the same requirement through different supported 
 
 It also prevents the compiler from treating “CMEV selected” as equivalent to “ventilation solved”.
 
-## 11. Relationship to S2
+## 11. Relationship to S2 and H1-PAPER
 
 S2-RUN-01 remains a valid historical research record.
 
 Its frozen source selected VENT-CMEV-01 and successfully tested the compiler's ventilation topology semantics at connected-cluster scale.
 
-This later architectural correction does **not** rewrite S2 retrospectively.
+This later architectural correction did **not** rewrite S2 retrospectively. It changed the preferred family for the subsequent H1 paper research.
 
-It changes the preferred environmental family for the next whole-house research stage.
+The hybrid evidence trial then closed the internal feasibility gate sufficiently for H1-PAPER to proceed while leaving actual airflow performance as external evidence. H1-PAPER is now complete; this document does not create a new pre-H1 gate.
 
-## 12. Decision
+## 12. Current consequence
 
-For the next H1 work:
+The durable environmental rule is the hierarchy, not the H1 family name:
 
-- preserve an airtight envelope;
-- attempt environmental obligations through passive architecture first;
-- use bounded mechanical assistance to guarantee performance where passive forces are insufficient;
-- retain fully mechanical families as legitimate alternatives, not doctrinal failures;
-- do not start H1-PAPER-01 until the preferred hybrid ventilation route has either passed its evidence gate or been explicitly rejected in favour of another family.
+- reduce environmental load first;
+- exploit passive geometry where it is credible;
+- use bounded assistance where natural forces are insufficient;
+- retain fully mechanical systems as legitimate alternatives where total performance justifies them;
+- keep actual ventilation/heating performance subject to competent project evidence.
+
+VENT-HYBRID-STACK-01 remains a research-supported H1 topology, not a Reference House mandate and not a compiler-native performance proof.
+
+Reference House environmental design should now test this hierarchy against its real orientation, openings, massing, site noise/pollution, summer risk and service geography rather than inheriting the H1 family automatically.
 
 ## 13. Source anchors
 
