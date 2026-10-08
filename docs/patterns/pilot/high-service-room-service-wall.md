@@ -31,7 +31,7 @@ sequences:
 
 # HSA-P-004 — High-Service-Room Service Wall
 
-**Pilot language record.** The full developed pattern prose remains in [`../core-12.md`](../core-12.md) during the migration pilot.
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-004 — High-Service-Room Service Wall`](../high-service-room-service-wall.md).
 
 ## Context
 
@@ -63,6 +63,6 @@ Potentially formalisable consequences include adjacency, access-side relationshi
 
 Whether the extra wall thickness is proportionate and whether the resulting room remains acoustically private, visually settled and spatially good remain architectural judgements.
 
-## Current source
+## Canonical successor
 
-See **Pattern 04 — High-service-room service wall** in the [Core Pattern Catalogue](../core-12.md).
+See [`HSA-P-004 — High-Service-Room Service Wall`](../high-service-room-service-wall.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
