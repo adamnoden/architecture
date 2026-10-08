@@ -1,14 +1,14 @@
 # Service Family SR-ROOM-LOW-01 — Accessible Low-Level Room Service Route
 
-**Status:** supported-family research candidate v0.1  
-**Purpose:** give H1 one ordinary room-level distribution route for electrical/data and simple heating services without treating permanent masonry or primary structure as an opportunistic service void.  
+**Status:** H1 paper-domain service-route family v0.1; physical enclosure/product unselected  
+**Purpose:** give H1 one bounded room-level distribution route for electrical/data and simple heating services without treating permanent masonry or primary structure as an opportunistic service void.  
 **Construction status:** semantic/assembly family only; exact proprietary enclosure/system unselected.
 
-> **The compiler should know where services are allowed to live before it knows every cable size or pipe diameter.**
+> **The model should know where services are intended to live before it knows every cable size or pipe diameter.**
 
 ## 1. Supported intent
 
-The family provides one accessible low-level route from a hall/service spine into an ordinary habitable room.
+The family provides one accessible low-level route from a hall/service route into an ordinary habitable room.
 
 It supports:
 
@@ -19,7 +19,7 @@ It supports:
 - accessible isolation;
 - replaceable terminal devices.
 
-It does not attempt to become a full domestic-services design engine.
+It is not a full domestic-services design engine and is not a general HSA requirement that every room use low-level distribution.
 
 ## 2. Physical principle
 
@@ -28,7 +28,7 @@ Services are distributed in a room-side, accessible, non-structural zone.
 Conceptually:
 
 ~~~text
-HALL / SERVICE SPINE
+HALL / SERVICE ROUTE
       ↓
 CONTROLLED ROOM ENTRY
       ↓
@@ -51,11 +51,13 @@ The family does not require one bespoke product.
 
 ### Permanent fabric
 
-Routine distribution must not rely on:
+Routine distribution should not rely on:
 
-- arbitrary chasing of external structural masonry;
+- arbitrary chasing of structural masonry;
 - uncontrolled drilling/notching of primary structure;
 - concealed ad-hoc routes with no later access.
+
+This follows HSA's separation-of-lifetimes and controlled-interface principles. It is not an absolute prohibition on every service crossing or embedded route.
 
 ### Access
 
@@ -72,7 +74,7 @@ Electrical/data and hydronic services are distinct sub-routes.
 
 They may share a coordinated low-level zone only where the selected physical system provides appropriate separation and evidence.
 
-The semantic family does not assume mixed services can simply occupy one undivided box.
+The semantic family does not assume mixed services can occupy one undivided box.
 
 ### Crossings
 
@@ -81,7 +83,7 @@ Any crossing of:
 - structural wall;
 - fire boundary;
 - acoustic boundary;
-- air/thermal/weather boundary;
+- air/thermal/weather boundary
 
 becomes its own typed penetration/interface.
 
@@ -97,7 +99,7 @@ The family contributes:
 - enclosure/segregation dependency;
 - Part-M control-height contribution where applicable.
 
-Electrical design remains external/competent under Part P, including:
+Electrical design remains competent external work under Part P, including:
 
 - circuit design;
 - conductor sizing;
@@ -105,7 +107,7 @@ Electrical design remains external/competent under Part P, including:
 - testing;
 - certification.
 
-The compiler should not confuse spatial accessibility with electrical safety.
+Spatial accessibility is not electrical safety.
 
 ## 5. Hydronic contribution
 
@@ -145,7 +147,7 @@ It need not calculate valve authority or hydraulic performance.
 The service route must not silently occupy:
 
 - door clear-opening space;
-- Part-M approach zones;
+- applicable approach zones;
 - window replacement/working zones;
 - declared furniture/maintenance clearances;
 - structural bearing zones;
@@ -157,13 +159,7 @@ Conflicts are evaluated in the composed room model.
 
 Where the selected target makes service controls/sockets subject to access requirements, their positions are evaluated against that target.
 
-For S1 Category 1:
-
-- the frozen 600 mm AFFL control/outlet positions are in the tested target range.
-
-The service family itself does not own Part M compliance.
-
-It contributes the positions.
+The service family itself does not own Part M compliance. It contributes positions and relationships.
 
 ## 9. Architectural role
 
@@ -176,11 +172,7 @@ It should be:
 - subordinate to the room's architectural order;
 - resolved as an intentional architectural interface where visible.
 
-This directly reflects the Long-Life House principle:
-
-> accessible does not mean visually exposed or carelessly technical.
-
-The exact skirting/profile language remains architectural design work.
+This is the practical meaning of **accessible ≠ exposed**. The exact skirting/profile language remains architectural design work.
 
 ## 10. Workmanship / tolerance
 
@@ -191,15 +183,9 @@ The family needs:
 - declared route envelope;
 - supported bend/corner/junction conditions;
 - supported cover/fixing tolerances;
-- inspection before any concealment.
+- inspection before any consequential closure.
 
-Out-of-range wall/floor geometry should trigger:
-
-- local remediation;
-- supported adjustment;
-- or explicit redesign.
-
-Do not force the service enclosure to hide major building-setting-out defects.
+Out-of-range wall/floor geometry should trigger local remediation, supported adjustment or redesign. The service enclosure should not become a cosmetic device for hiding major setting-out defects.
 
 ## 11. Evidence model
 
@@ -219,54 +205,29 @@ Occurrence evidence:
 - crossings treated correctly;
 - electrical/mechanical commissioning evidence.
 
-## 12. S1 application
+## 12. S1 provenance
 
-S1 SR-R01:
+S1 exercised one occurrence with a hall source, low-level room route, representative electrical/data points and a simple hydronic emitter without external-masonry chasing.
 
-- source from hall spine;
-- entry through non-loadbearing west partition;
-- low-level room route;
-- four representative electrical/data points;
-- simple hydronic emitter H-01;
-- no external-masonry chasing.
-
-Therefore:
-
-**SERVICE TOPOLOGY: PASS**
-
-**DOCTRINE / PERMANENT FABRIC: PASS**
-
-**ACCESSIBILITY CONTRIBUTION: PASS at frozen positions**
-
-**PHYSICAL ENCLOSURE PRODUCT: UNSELECTED**
-
-**ELECTRICAL / HYDRONIC DESIGN: EXTERNAL**
-
-This is now a supported room-service route rather than a purely abstract service graph.
+The paper result demonstrated that a declared room-service geography can remain separate from electrical/hydronic technical proof. It did not select a physical enclosure product or promote this family into HSA doctrine.
 
 ## 13. Mutations
 
 ### Move socket/control to inaccessible height
 
-Part-M applicability may fail.
+Target accessibility may fail while route topology remains valid.
 
-Route topology remains valid.
+### Move route into an uncontrolled structural-masonry chase
 
-### Move route into external masonry chase
-
-Long-Life House doctrine fails.
-
-Structural/boundary obligations may also wake up.
+HSA project intent may fail; structural/boundary obligations may also arise from the actual condition.
 
 ### Place emitter near doorway
 
 Room access/maintenance geometry may fail even if hydraulic design remains valid.
 
-### Change west partition to loadbearing/fire-rated wall
+### Change partition role
 
-The entry crossing is no longer the same supported simple partition crossing.
-
-Generate a typed structural/fire penetration obligation.
+If the crossed partition becomes loadbearing or fire-resisting, the simple crossing no longer applies. Generate the relevant typed structural/fire penetration obligations.
 
 ### Add wet/high-consequence water service
 
@@ -278,10 +239,10 @@ Return:
 
 ## 14. H1 posture
 
-SR-ROOM-LOW-01 is suitable as an H1-v0 **supported semantic/route family with product and engineering evidence external**.
+SR-ROOM-LOW-01 is a **paper-research semantic/route family with product and engineering evidence external**.
 
-It resolves an important domain question:
+It resolves one bounded modelling question:
 
-> ordinary room services have a declared geography.
+> ordinary room services can have declared geography and explicit crossings.
 
-It does not claim to resolve all domestic services.
+It does not establish the best room-service architecture for every HSA project or the Reference House.
