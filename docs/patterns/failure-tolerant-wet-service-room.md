@@ -85,7 +85,7 @@ The room should remain easy to use and clean. Technical measures should recede i
 
 ## Evidence
 
-Wet-room and service-room practice, together with overseas water-failure guidance reviewed in Phase 6, supports the underlying principle that concentrated water risk should be made visible, containable and maintainable. The room-scale HSA pattern remains evidence-supported rather than universal.
+Wet-room and service-room practice, together with established water-failure guidance, supports the underlying principle that concentrated water risk should be made visible, containable and maintainable. The room-scale HSA pattern remains evidence-supported rather than universal.
 
 ## Does not prove
 
