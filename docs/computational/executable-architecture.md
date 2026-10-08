@@ -1,14 +1,14 @@
 # Executable Architecture — Computational Expression of House Systems Architecture
 
-**Status:** concept paper v0.2 — research trajectory, not an implementation specification  
-**Purpose:** preserve the computational proposition in a form understandable without prior conversation context  
-**Scope:** conceptual architecture only; no programming language, solver, CAD kernel, regulatory rule pack or product implementation is selected here
+**Status:** conceptual foundation; core semantic mechanisms exercised by P0 and `PAT-XW-01`, not a product specification  
+**Purpose:** define the computational proposition, its proof boundary and its relationship to the architectural project  
+**Scope:** conceptual architecture. P0 is a minimal executable falsification kernel; no general CAD system, solver, regulations engine or product architecture is established here.
 
 > **The program should compile a habitat.**
 
 ## 1. The proposition
 
-House Systems Architecture already has several human-readable layers: doctrine, strategies, patterns, reference implementations, delivery requirements and tests. A computational expression would add another layer, but only for the subset that can be formalised honestly.
+House Systems Architecture already has several human-readable layers: doctrine, strategies, patterns, reference implementations, delivery requirements and tests. A computational expression adds another layer, but only for the subset that can be formalised honestly.
 
 The intuitive model is “draw a house, then run checks”. The stronger proposal reverses that order.
 
@@ -26,7 +26,7 @@ The phrase **supported domain** matters more than the slogan. Stronger guarantee
 
 Executable architecture is **not a governing principle** and does not replace the architectural project. The doctrine remains meaningful if no software is ever written.
 
-The existing chain is:
+The architectural chain is:
 
 ```text
 Doctrine
@@ -42,25 +42,25 @@ Delivery requirement
 Test
 ```
 
-The proposed computational chain is:
+The computational chain is:
 
 ```text
-Doctrine
+Architectural / project intent
    ↓
 Formal architectural model
    ↓
-Semantic primitives + invariants + rules
+Semantic relationships + invariants
    ↓
-Compiler target
+Derived obligations
    ↓
-Resolved building model
+Evidence / determination
    ↓
-Production outputs + evidence
+Validity + diagnostics
 ```
 
-The missing intellectual work is not “build CAD”. It is to formalise enough architectural meaning that important propositions can be represented and tested without pretending that geometry is the whole building.
+The core intellectual task is to formalise enough architectural meaning that important propositions can be represented and tested without pretending that geometry is the whole building.
 
-The architect-facing implementation brief remains the current human translation from doctrine into a commission. A future compiler may formalise part of that translation; it does not supersede it today.
+The architect-facing implementation brief remains the human translation from HSA into a commission. Computational work may formalise part of that translation; it does not supersede architectural authorship, competent technical design or statutory process.
 
 ## 3. Compiler rather than checker
 
@@ -131,7 +131,7 @@ Three rule classes should remain distinct.
 
 ### Hard invariants
 
-Conditions required for compilation within the supported domain: load-path continuity, clearances, boundary continuity, supported span ranges, non-negotiable regulatory conditions and doctrine constraints the system explicitly claims to enforce.
+Conditions required for compilation within the supported domain: load-path continuity, clearances, boundary continuity, supported span ranges, non-negotiable regulatory conditions and project constraints the system explicitly claims to enforce.
 
 ### Grammar constraints
 
@@ -167,7 +167,7 @@ ground
 
 An unresolved load path is a compile failure.
 
-The first system need not solve arbitrary structural engineering. A more credible approach is a closed library of supported systems and parameter ranges backed by declared calculation methods, engineering evidence and tests.
+The system need not solve arbitrary structural engineering. A more credible approach is a closed library of supported systems and parameter ranges backed by declared calculation methods, engineering evidence and tests.
 
 Outside that envelope, the correct result is:
 
@@ -188,12 +188,11 @@ A target may bind:
 - regulatory date / transition regime;
 - building category and use;
 - selected compliance routes;
-- referenced standards and national parameters;
-- supported construction families;
-- environmental and exposure assumptions;
-- project-specific requirements.
+- referenced standards and national parameters.
 
-The first jurisdiction should be **England**, not “the UK”. The four UK nations have distinct regulatory systems. A first implementation should probably narrow further to new dwellings, a small range of one- and two-storey types, finite construction families and explicit site assumptions.
+The supported domain, architectural grammar and project configuration remain separate inputs. They can all affect a compile without acquiring the same authority.
+
+The first jurisdictional research target is **England**, not “the UK”. The four UK nations have distinct regulatory systems. Any implemented target should narrow further to a declared building type, technical family and project basis.
 
 Restriction is how the system earns stronger claims.
 
@@ -205,11 +204,11 @@ A target must distinguish:
 2. **statutory guidance / accepted compliance routes** — for example Approved Documents;
 3. **technical standards** — British Standards, adopted European standards, Eurocodes and National Annexes where applicable;
 4. **product evidence** — declarations, certification, manufacturer data and tested systems;
-5. **project requirements** — client or doctrine constraints.
+5. **project requirements** — client or HSA-derived commitments.
 
 Approved Documents are not the legal requirements themselves. A compiler must say which compliance route it implements rather than silently treating guidance as law.
 
-Standards also create licensing and provenance issues. A future executable standards layer cannot simply copy copyrighted text into the repository.
+Standards also create licensing and provenance issues. An executable standards layer cannot simply copy copyrighted text into the repository.
 
 ## 9. Compilation as obligation discharge
 
@@ -228,17 +227,17 @@ opening W12
   └─ replacement/access obligation
 ```
 
-An obligation may be discharged by a deterministic rule, calculation, geometry query, tested library assembly, product evidence or approved external professional evidence.
+An obligation may be discharged by a deterministic rule, calculation, geometry query, tested library assembly, product evidence or accepted external professional evidence.
 
 If it cannot be discharged, it remains visible. The system fails closed rather than translating uncertainty into a green tick.
 
 A mature result should distinguish:
 
-- **passed** — resolved within the supported system;
-- **passed by declared external evidence** — resolved by referenced evidence outside it;
+- **passed** — resolved within supported system authority;
+- **externally discharged** — resolved by scoped evidence outside native authority;
 - **warning / preference deviation** — valid but outside a preferred condition;
-- **failed** — rule violated;
-- **unsupported / unresolved** — the system cannot prove the condition.
+- **failed** — known applicable requirement violated;
+- **unsupported / unresolved** — the system cannot establish the condition.
 
 A release-grade compile contains no hidden unresolved obligations.
 
@@ -291,7 +290,7 @@ The opportunity is not to compile them away, but to give them a more explicit an
 
 ## 12. Mapping the doctrine into computation
 
-Many of the project's governing principles concern relationships that are plausible candidates for formalisation.
+Many HSA principles concern relationships that are plausible candidates for formalisation.
 
 | Architectural doctrine | Possible computational expression |
 |---|---|
@@ -304,26 +303,45 @@ Many of the project's governing principles concern relationships that are plausi
 | Let permanence be architectural | permanent spatial order becomes a first-class constraint |
 | Passive architecture does the first work | passive strategies precede active-system elaboration |
 | Legibility across generations | compiled records preserve semantic intent and provenance |
-| Resolve technology as architecture | technical elements remain subject to the architectural grammar |
+| Resolve technology as architecture | technical elements remain subject to architectural resolution |
 
 Workmanship robustness maps similarly: incoming tolerance becomes data; controlling datums become relationships; adjustment ranges and remediation thresholds become constraints; inspection points become explicit requirements.
 
 This compatibility is a research opportunity, not proof that every doctrine proposition should become machine-enforceable.
 
-## 13. Patterns as a possible standard library
+## 13. Patterns as authoring provenance
 
-A mature pattern could eventually have two representations:
+The Phase-8 crosswalk tested whether the canonical pattern language required a pattern ontology or pattern-specific compiler. It did not.
 
-1. the architectural pattern — problem, forces, trade-offs, evidence and architectural resolution;
-2. a computational counterpart — typed inputs, constraints, compatible assemblies, obligations and outputs.
+A selected pattern may explain **why** a project requirement exists and may group a useful report over source facts and obligations. It does not replace those facts, emit a duplicate technical checklist or acquire technical authority merely by being selected.
 
-The analogy with a software standard library is useful but limited. Architectural patterns admit judgement and variants. The formal counterpart should encode only the subset that survives formalisation.
+The useful chain is:
+
+```text
+selected architectural intent
+        ↓
+project requirement / provenance
+        ↓
+ordinary source-model entities + relationships
+        ↓
+shared derived graphs
+        ↓
+canonical obligations
+        ↓
+evidence / determination
+        ↓
+validity + diagnostics
+```
+
+There is deliberately no universal whole-pattern machine `PASS`. Formal project commitments, induced technical obligations and architectural judgement remain separate. `PAT-XW-01` exercised that separation in software for `HSA-P-003` and `HSA-P-005` without adding a core pattern entity.
+
+See [Architectural Pattern → Computational Crosswalk](pattern-crosswalk-model.md) and [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md).
 
 ## 14. Closed world by design
 
-The first compiler should **not** support arbitrary architecture.
+A trustworthy compiler should **not** support arbitrary architecture by default.
 
-A small trusted language may support only a handful of house topologies, one jurisdiction, finite structural/span families, tested wall/floor/roof assemblies, known opening types, explicit service strategies, limited architectural grammars and predefined interfaces.
+A bounded language may support only a handful of house topologies, one jurisdiction, finite structural/span families, tested wall/floor/roof assemblies, known opening types, explicit service strategies, limited architectural grammars and predefined interfaces.
 
 Outside that language the legitimate options are to choose another supported solution, introduce external evidence, extend the language after research or leave the system.
 
@@ -370,52 +388,38 @@ The following interpretations are rejected.
 - **“Any geometry should be supported.”** The closed domain is what makes strong guarantees plausible.
 - **“Unsupported means probably fine.”** Unsupported produces an explicit proof obligation or failure.
 - **“The 3D model is the product.”** The product is the semantic building plus production information and evidence.
-- **“Implementation should begin immediately.”** Formalisation, prior-art work and a credible proof boundary come first.
+- **“P0 success authorises general compiler growth.”** P0 falsified a small core mechanism. It did not earn CAD, solver, regulatory or product expansion.
 
-## 19. Canonical follow-on documents
+## 19. Current authority and companion documents
 
-Before adding computational work, consult:
+For present computational status, start with:
 
 - [Computational Track index](README.md);
-- [Research Programme](research-programme.md) — workstreams, grand TODOs, dependencies and implementation gates;
+- [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md) — current executable authority;
 - [Formal Architectural Model](formal-architectural-model.md) — entities and relationships;
-- [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md) — design-language model;
-- [Validity and Obligations](validity-and-obligations.md) — compile success/failure and discharge;
+- [Validity and Obligations](validity-and-obligations.md) — status and obligation semantics;
+- [Evidence and Provenance Architecture](evidence-and-provenance.md) — evidence scope and invalidation;
 - [Compiler Targets](compiler-targets.md) — versioned normative environments;
 - [Supported Domain](supported-domain.md) — bounded competence;
+- [Architectural Grammar and Proportion](architectural-grammar-and-proportion.md) — design-language model;
+- [Architectural Pattern → Computational Crosswalk](pattern-crosswalk-model.md) — pattern-authoring boundary;
 - [Prior Art Map](prior-art-map.md) — reconnaissance and unanswered questions.
 
-These documents sit deliberately between concept and implementation.
+Paper-compilation runs and research-programme versions remain research provenance. They do not outrank the executable gate result.
 
-The original pre-implementation rule was:
+## 20. Research sequence and stop rule
 
-> **No formal language or software architecture before an end-to-end paper compilation has demonstrated that the semantic model, obligation system and evidence model cohere on a real piece of the Reference House.**
+The research sequence progressed through prior art, supported-domain definition, semantic/obligation/evidence modelling, S0→S1→S2→H1 paper compilation, Phase-8 crosswalk, P0 and `PAT-XW-01`.
 
-That gate has since been exercised through the paper-compilation programme recorded in the track index. Current implementation authority is controlled by the latest research programme, not by this concept paper.
+P0 reached the first useful software milestone: a small but real semantic model in which invalid source relationships, obligation changes and evidence-scope failures produce deterministic, intelligible results.
 
-## 20. Development sequence
-
-The conceptual sequence remains:
-
-1. prior-art review;
-2. supported-domain definition;
-3. semantic model;
-4. obligation taxonomy;
-5. compiler-target model;
-6. proof/evidence model;
-7. minimal formal grammar;
-8. bounded Reference House conformance case;
-9. smallest interactive implementation capable of falsifying the central proposition.
-
-The first useful software milestone is not “draw a house in 3D”. It is:
-
-> **Represent one small but real piece of domestic architecture semantically enough that an invalid change produces an intelligible failure and a valid change produces traceable downstream evidence.**
+That is enough to stop generic expansion. The next executable fixture must be selected by a real unresolved architectural, physical or professional-review question. Candidate fixtures are recorded in the [Computational Track index](README.md); they are not a standing automation backlog.
 
 ## 21. Repository position
 
 This document remains the canonical statement of the computational concept. It is not a governing principle or numbered manuscript part.
 
-Whether executable architecture eventually belongs in the monograph, a companion research volume, a software/product specification or some combination should be decided only after the formal model, external review and executable falsification work justify it.
+Whether executable architecture eventually belongs in the monograph, a companion research volume, a software/product specification or some combination should be decided only after external review, physical evidence and further earned executable work justify it.
 
 The architectural project remains primary.
 
