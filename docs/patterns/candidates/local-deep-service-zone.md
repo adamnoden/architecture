@@ -19,7 +19,7 @@ The possible architectural value is **localising service depth rather than unive
 
 ## Why it remains held
 
-The move is sensible, but the Phase-6 audit found insufficient evidence that it is yet more than good coordination practice. A pattern must resolve a repeatable relationship with stable forces and meaningful variants; “provide more depth where needed” is too close to a generic tactic.
+The move is sensible, but the evidence remains insufficient to show that it is more than good coordination practice. A pattern must resolve a repeatable relationship with stable forces and meaningful variants; “provide more depth where needed” is too close to a generic tactic.
 
 ## Admission gate
 
@@ -58,7 +58,7 @@ These references do not create graph edges while the proposition remains held.
 
 ## Evidence / provenance
 
-The idea appears repeatedly in the project's service-depth discussions and in Phase-6 targeted evidence around housing service zones, but the audit deliberately retained it as a candidate/design tactic.
+The idea appears repeatedly in the project's service-depth discussions and in Phase-6 targeted evidence around housing service zones, but the audit retained it as a candidate/design tactic.
 
 See [`../../research/pattern-language-phase6-targeted-evidence.md`](../../research/pattern-language-phase6-targeted-evidence.md).
 
