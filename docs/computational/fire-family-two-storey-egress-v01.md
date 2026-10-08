@@ -1,12 +1,12 @@
 # Fire / Escape Family FIRE-H1-2S-EGRESS-01 — Two-Storey Dwelling with Escape-Window Route
 
-**Status:** H1 target/family candidate v0.1  
-**Purpose:** provide one deliberately narrow whole-house means-of-warning/escape route for an ordinary two-storey detached H1 dwelling before connected-room/stair research proceeds.  
-**External review:** mandatory before Gate B is treated as complete.
+**Status:** H1 paper-domain fire/escape family v0.1 — external competent review still required  
+**Purpose:** provide one deliberately narrow means-of-warning/escape route for an ordinary two-storey detached H1 research dwelling without pretending to automate fire engineering.  
+**Authority:** target/family research only; not a building-release claim and not an HSA architectural requirement.
 
-> **The first fire family should constrain the house enough that escape logic is explicit, not attempt to automate fire engineering.**
+> **A bounded fire family should make escape logic explicit without disguising professional fire-safety judgement as a generic compiler rule.**
 
-## 1. Supported building form
+## 1. Bounded building form
 
 The base family assumes:
 
@@ -14,179 +14,119 @@ The base family assumes:
 - ground storey + one upper habitable storey;
 - no basement;
 - no habitable loft storey;
-- upper storey a maximum of **4.5 m above external ground level** for the selected route;
+- upper storey within the selected <=4.5 m escape-window route;
 - one internal private stair;
 - ordinary low-rise fire strategy;
 - no open-plan special fire-engineered stair arrangement;
 - no integral garage in v0.1;
-- no sleeping accommodation requiring a special-risk strategy.
+- no condition requiring a special-risk strategy.
 
-The 2026 Approved Document B amendments in force from 30 September 2026 concern second-stair provisions for residential buildings over 18 m and do not materially alter this bounded H1 route.
+These are competence restrictions for H1 paper research. They are not architectural judgements about houses outside the family.
 
 ## 2. Warning / detection
 
-The target generates a dwelling fire-detection/alarm obligation.
+The target creates the dwelling fire-detection/alarm obligation.
 
-The current Approved Document B route recommends at least:
+The selected Approved Document route references the relevant alarm system category/grade and BS 5839-6. The model should retain:
 
-- Grade D2;
-- Category LD3;
-- in accordance with BS 5839-6.
-
-The compiler records:
-
-- alarm system family;
+- alarm-system family;
 - required locations from the selected target;
 - electrical/evidence dependency;
 - commissioning/installation evidence.
 
-It does not reproduce copyrighted BS rules as an internal undocumented checklist.
+It should not reproduce copyrighted standards as an undocumented internal checklist.
 
 ## 3. Ground-storey escape topology
 
-For each ground-storey habitable room other than the kitchen, the selected route requires one of:
+The selected route requires each applicable ground-storey habitable room to resolve its relationship to a final exit through the accepted route.
 
-- direct opening onto a hall leading to a final exit; or
-- an emergency escape window/external door under the target route.
-
-H1 base preference:
-
-> principal ground-floor rooms connect to the entrance/circulation hall leading to the final exit.
-
-Inner-room conditions are explicitly modelled rather than inferred from plan appearance.
+The H1 base condition favours principal rooms opening to a hall that leads to the final exit. Inner-room conditions remain explicit rather than inferred from a plan drawing.
 
 ## 4. Upper-storey escape topology
 
-For the selected upper storey <=4.5 m route, each upper habitable room other than the kitchen must have either:
+For the selected low-rise route, upper habitable rooms use the escape-window option rather than relying on a protected stair family.
 
-- an emergency escape window/external door; or
-- direct access to a protected stair.
+The H1 base therefore assigns an emergency-escape role to each applicable upper habitable-room window.
 
-H1 v0 selects:
-
-**emergency escape window for each upper habitable room**
-
-as the default family route.
-
-The stair remains an ordinary private stair rather than automatically becoming a protected stair enclosure.
+This is one bounded regulatory route. Another project may choose a protected stair or another accepted fire strategy.
 
 ## 5. Emergency escape-window semantics
 
-Where a window carries the ESCAPE role, the target checks the current Approved Document B route including:
+Where a window carries the `ESCAPE` role, target-derived checks may include:
 
-- minimum unobstructed openable area;
-- minimum openable dimensions;
-- maximum bottom-of-openable-area height above floor;
-- ability to remain open;
+- unobstructed openable area;
+- openable dimensions;
+- sill/bottom-of-opening height;
+- operational configuration;
 - safe external destination.
 
-The physical window remains the same stable entity used by:
+The same physical window may also carry ventilation, security, fall-protection and architectural roles. `ESCAPE` is contextual, not a permanent property of the product family.
 
-- ventilation;
+## 6. Cross-role interaction
+
+An upper escape window may also participate in:
+
+- fall protection / guarding;
 - security;
-- fall protection;
-- architectural order.
+- purge ventilation;
+- overheating strategy.
 
-ESCAPE is a contextual role.
-
-## 6. Critical role interaction
-
-An upper escape window may also carry:
-
-- fall-protection/guarding role;
-- security role;
-- purge-ventilation role;
-- overheating contribution.
-
-A limiter or hardware solution cannot discharge one role while silently invalidating another.
-
-The compiler therefore evaluates configuration compatibility across the shared occurrence.
+Hardware or geometry cannot discharge one role while silently invalidating another. The shared occurrence is evaluated across the relevant scopes.
 
 ## 7. Stair role
 
-ST-PRIVATE-01 contributes:
+ST-PRIVATE-01 contributes the physical/vertical circulation route. FIRE-H1-2S-EGRESS-01 contributes the fire/escape context.
 
-- vertical route;
-- landings;
-- connected storeys;
-- headroom/opening;
-- arrival sequence.
+The stair is **not** labelled fire-compliant in isolation.
 
-FIRE-H1-2S-EGRESS-01 contributes the fire/escape context.
-
-The stair is **not** labelled FIRE_COMPLIANT in isolation.
-
-If a future mutation removes escape-window provision and relies on a protected stair instead, the project leaves this family and enters a different fire family.
+If a project removes escape-window provision and instead relies on a protected stair, it leaves this family and requires another fire route.
 
 ## 8. Hall / final exit
 
-The base topology includes:
+The base topology is conceptually:
 
 ~~~text
 UPPER ROOMS
    ↓ ordinary stair + room escape windows
 GROUND HALL
    ↓
-ENTR-DOOR-MCW-01
+PRINCIPAL ENTRANCE / FINAL EXIT
    ↓
-FINAL EXIT / OUTSIDE
+OUTSIDE
 ~~~
 
-The hall and principal entrance therefore participate in escape topology.
+The hall and entrance therefore participate in escape topology. Moving, obstructing or reclassifying them can affect fire egress independently of other entrance/circulation obligations.
 
-Moving or obstructing the entrance can affect fire egress as well as Part M/architecture.
+## 9. Inner rooms and open-plan restrictions
 
-## 9. Inner rooms
+Inner-room relationships are represented explicitly.
 
-The target represents inner-room relationships explicitly.
+The base family does not accept an unresolved upper habitable-room inner-room condition or an open-plan kitchen/stair arrangement that requires special fire-engineering justification.
 
-H1 base family does not allow an upper habitable room to become an unresolved inner room merely because the plan still “works”.
+Such a design is not declared architecturally invalid. It is **outside this fire family** and needs another accepted strategy.
 
-Where the current target allows an inner room only with an appropriate escape-window route, that requirement is generated from topology.
+## 10. Fire-resisting construction remains separate
 
-## 10. Fire-resisting construction
+The escape family does not absorb all Part-B obligations.
 
-The family does not imply that no fire-resisting construction is required elsewhere.
-
-Target obligations remain for, as applicable:
+Separate target/evidence obligations may still apply to:
 
 - structural fire resistance;
 - cavity barriers;
 - linings;
 - service penetrations;
 - roof/cavity interfaces;
-- boundary/external-fire-spread;
-- special-risk rooms.
+- external fire spread;
+- special-risk rooms;
+- doorsets or protected construction where selected.
 
-Those remain separate scope-correct propositions.
+B4/site/elevation questions are not solved by the escape family merely because B1 topology is represented.
 
-## 11. Kitchen / open-plan restriction
-
-H1 v0 does not support an open-plan arrangement where the only stair/escape route must pass through a kitchen or another configuration requiring special fire-engineering justification.
-
-Return:
-
-**OUTSIDE FIRE-H1-2S-EGRESS-01 / SELECT ANOTHER FIRE STRATEGY**
-
-This is a deliberate domain constraint, not an architectural condemnation.
-
-## 12. B4 remains site/elevation scope
-
-External-fire-spread analysis is not solved by the escape family.
-
-Openings continue to contribute to:
-
-- elevation;
-- relevant-boundary;
-- site fire model.
-
-FIRE-H1-2S-EGRESS-01 therefore addresses primarily B1/means-of-warning-and-escape topology.
-
-## 13. Evidence
+## 11. Evidence
 
 ### Target evidence
 
-- Approved Document B version / transition;
+- Approved Document / target version and transition;
 - selected fire-family applicability.
 
 ### Product/system evidence
@@ -198,9 +138,10 @@ FIRE-H1-2S-EGRESS-01 therefore addresses primarily B1/means-of-warning-and-escap
 
 ### External competent evidence
 
-- any condition outside the standard family;
-- unusual structural fire condition;
-- special fire-engineered arrangement.
+- any condition outside the bounded family;
+- unusual structural-fire condition;
+- special fire-engineered arrangement;
+- professional confirmation that the family interpretation itself is sound.
 
 ### Construction evidence
 
@@ -209,104 +150,67 @@ FIRE-H1-2S-EGRESS-01 therefore addresses primarily B1/means-of-warning-and-escap
 - fire-stopping/cavity barriers;
 - fire-resisting assemblies.
 
-## 14. Mutations
+## 12. Mutations
 
 ### FIRE-M01 — remove escape capability from one upper bedroom window
 
-Expected:
+Expected: selected fire family fails for that room while ordinary stair geometry may remain valid.
 
-- selected fire family fails for that room;
-- ordinary stair geometry remains valid.
+### FIRE-M02 — add a restrictor preventing the required escape opening
 
-### FIRE-M02 — add fixed restrictor preventing required escape opening
+Expected: escape role fails while another window safety/security role may pass.
 
-Expected:
+### FIRE-M03 — convert hall/stair to open-plan kitchen-stair arrangement
 
-- escape role fails;
-- fall-protection role may pass.
-
-### FIRE-M03 — convert entrance hall/stair to open-plan kitchen-stair arrangement
-
-Expected:
-
-- leave supported family;
-- fire-engineered/alternative route required.
+Expected: leave the supported family and require an alternative fire strategy.
 
 ### FIRE-M04 — add habitable loft level
 
-Expected:
-
-- building exceeds H1 fire-family vertical scope;
-- protected-stair/other fire route required.
+Expected: vertical scope changes; family applicability fails.
 
 ### FIRE-M05 — block principal final exit
 
-Expected:
+Expected: escape topology fails; other circulation/accessibility roles may also be affected according to their own authority.
 
-- escape topology fails;
-- Part-M route may also fail depending obstruction.
+### FIRE-M06 — move upper floor beyond the selected escape-window route
 
-### FIRE-M06 — move upper floor level above 4.5 m route threshold
+Expected: family applicability fails and another fire strategy is required.
 
-Expected:
-
-- family applicability invalid;
-- fire target migration required.
-
-## 15. Complexity behavior
-
-The author selects:
-
-> H1 two-storey escape-window fire family
-
-and authors:
-
-- storeys;
-- rooms;
-- circulation;
-- windows/doors;
-- site levels.
-
-The system derives:
-
-- alarm obligation;
-- room escape roles;
-- inner-room checks;
-- final-exit topology;
-- window operational evidence;
-- cross-role conflicts.
-
-The author does not manually mark every bedroom with a separate fire checklist.
-
-## 16. H1 posture
+## 13. H1 paper posture
 
 ~~~text
-warning/alarm applicability      SUPPORTED TARGET ROUTE
-ground-floor escape topology     SUPPORTED
-upper escape-window topology     SUPPORTED
-escape-window geometry           TARGET/NATIVE
-ordinary stair contribution      SUPPORTED
-protected-stair fire family      NOT SELECTED IN V0.1
+warning/alarm applicability      TARGET-ROUTE RESEARCH
+escape topology                  H1 PAPER FAMILY
+escape-window geometry           TARGET / SEMANTIC
+ordinary stair contribution      RELATED FAMILY
+protected-stair route            OUTSIDE V0.1
 open-plan special fire strategy  UNSUPPORTED / EXTERNAL
-B4 external fire spread          SITE/ELEVATION SCOPE
+external fire spread             SITE/ELEVATION SCOPE
 structural fire/cavity details   TARGET + PRODUCT/EXTERNAL EVIDENCE
-construction fire evidence       FUTURE PHYSICAL EVIDENCE
+construction fire evidence       PHYSICAL EVIDENCE
 ~~~
 
-## 17. External-review requirement
+The family allowed H1-PAPER to represent one explicit low-rise escape route. It did not establish a trusted fire engine or a compliant building.
 
-This family is intentionally prepared **before** the external competent review so that a reviewer has something concrete to attack.
+## 14. External-review requirement
 
-Do not promote it to “trusted H1 fire route” until the review addresses:
+Competent building-control/fire review remains a live gate for the assumptions in this family, including:
 
 - applicability;
 - missing B1 interactions;
 - alarm scope;
 - protected-route assumptions;
 - fire-resisting-construction dependencies;
-- product/evidence boundaries.
+- product/evidence boundaries;
+- conditions that appear superficially inside H1 but should force another strategy.
 
-## 18. Source anchors
+A negative review finding is expected to correct the family or narrow it; it is not a reason to hide the uncertainty behind a compiler status.
+
+## 15. Reference House boundary
+
+The Reference House does not inherit FIRE-H1-2S-EGRESS-01 automatically. Its plan, stair, storey levels, openings and fire strategy must be reviewed as an actual project. H1 supplies one research case and a set of questions, not the architectural answer.
+
+## 16. Source anchors
 
 - Approved Document B: https://www.gov.uk/government/publications/fire-safety-approved-document-b
 - Approved Document B FAQ: https://www.gov.uk/guidance/approved-document-b-fire-safety-frequently-asked-questions
