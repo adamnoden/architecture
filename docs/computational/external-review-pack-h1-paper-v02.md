@@ -3,6 +3,7 @@
 **Status:** ready for external adversarial review  
 **Date:** 2026-10-05  
 **Purpose:** give competent practitioners a bounded, falsifiable package to attack after completion of the internal whole-house paper programme.  
+**Current computational context:** the minimal P0 kernel and `PAT-XW-01` have since passed; this pack still governs external attack on the H1 technical assumptions, proof boundaries and family claims.  
 **Important:** preparation of this pack is not validation.
 
 ## 1. What is being reviewed
@@ -17,18 +18,20 @@ The project is investigating whether a bounded house-authoring system can behave
 - selective invalidation after change;
 - clear distinction between pass, fail, unresolved and unsupported.
 
-The paper programme has now progressed through:
+The paper programme progressed through:
 
 - S0 wall bay;
 - S1 complete room;
 - S2 connected two-storey cluster;
 - H1-PAPER complete bounded house.
 
-The internal claim is narrow:
+The paper claim is narrow:
 
-> **the abstraction is coherent enough on paper to justify external attack and a minimal software prototype.**
+> **the abstraction is coherent enough at bounded-house paper scale to justify external professional attack.**
 
-No claim is made that the H1 house is buildable/compliant/release-ready.
+Since this pack was first assembled, P0 and `PAT-XW-01` have also demonstrated a small executable subset of the semantic / obligation / evidence architecture. That result does not validate the H1 structural, fire, building-physics or building-services assumptions reviewed here.
+
+No claim is made that the H1 house is buildable, compliant or release-ready.
 
 ## 2. Core documents
 
@@ -39,8 +42,9 @@ Review in this order.
 3. [Corrected H1-PAPER frozen source](h1-paper-source-package.md) — exact bounded house assumptions.
 4. [H1-PAPER Run 01](h1-paper-compile-run-01.md) — baseline compile and twelve mutations.
 5. [Final internal red team](h1-paper-final-red-team.md) — internal attack and stop decision.
-6. [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md) — current capability/proof boundary.
-7. [Research Programme v0.4](research-programme-v04.md) — current transition into external review/prototyping.
+6. [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md) — frozen paper-domain capability/proof boundary.
+7. [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md) — what the later executable work actually demonstrated.
+8. [Research Programme v0.6](research-programme-v06.md) — final pre-executable programme record, retained for provenance.
 
 Specialist supporting documents are listed below.
 
@@ -102,7 +106,7 @@ Primary documents:
 
 ### Questions
 
-1. Is the distinction among legal requirement, Approved Document route, standard, product evidence and project/doctrine requirement being preserved correctly?
+1. Is the distinction among legal requirement, Approved Document route, standard, product evidence and project/HSA requirement being preserved correctly?
 2. Are target/version/transition semantics credible?
 3. Does FIRE-H1-2S-EGRESS-01 misread, omit or oversimplify any ordinary two-storey dwelling condition?
 4. Are escape-window roles, final-exit topology and alarm obligations represented at sensible scopes?
@@ -185,7 +189,7 @@ Questions:
 5. What changes should force calculation reissue rather than simple re-check?
 6. What parts of an external professional report are realistically machine-addressable dependencies?
 
-## 9. Explicit things we do not want reviewers to assume
+## 9. Explicit things reviewers should not assume
 
 The project does not claim:
 
@@ -196,9 +200,10 @@ The project does not claim:
 - hybrid ventilation is always preferable;
 - the H1 house is compliant;
 - the compiler proves construction quality;
-- the current architectural grammar proves beauty or Georgian correctness.
+- the current architectural grammar proves beauty or Georgian correctness;
+- P0 validates the H1 technical families.
 
-If the documents imply any of those despite these disclaimers, that is a defect worth flagging.
+If the documents imply any of those despite these boundaries, that is a defect worth flagging.
 
 ## 10. Most useful output format
 
@@ -222,16 +227,16 @@ Concrete edits/building conditions that break the current model.
 
 ### E. Implementation warnings
 
-Things that will become materially harder once encoded in software.
+Things that would become materially harder or unsafe if encoded in software.
 
 ### F. What survives
 
-Which parts of the abstraction are genuinely useful and worth prototyping.
+Which parts of the abstraction are genuinely useful.
 
 ## 11. Programme consequence
 
-External review is allowed to reopen or correct paper documents.
+External review may reopen or correct paper documents, capability boundaries or technical-family assumptions.
 
-But after H1-PAPER, review feedback should drive targeted corrections rather than restart speculative ontology expansion.
+P0 and `PAT-XW-01` do not change that requirement. Generic compiler growth remains frozen; a professional finding may instead justify a targeted correction or a narrowly scoped executable fixture if software can answer the question better than direct architectural/engineering work.
 
-The objective is to determine whether the idea survives contact with professional reality before heavy compiler/CAD investment.
+The objective is to determine whether the idea survives contact with professional reality before heavier compiler/CAD investment.
