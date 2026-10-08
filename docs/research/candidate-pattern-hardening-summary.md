@@ -1,7 +1,11 @@
 # Candidate Pattern Hardening — Decision Matrix
 
-**Status:** post-evidence-review checkpoint  
-**Purpose:** state what the first hardening pass actually changed, what is currently preferred, and what must happen before any candidate becomes a reference-house requirement.
+**Status:** historical evidence-hardening checkpoint; retained for design provenance  
+**Purpose:** record what the first hardening pass changed before the later pattern-language classification and prototype programme were settled.
+
+> **Current authority.** This note predates the completed pattern-language migration. Its four propositions no longer share one classification: the structural-interface proposition is now captured by the canonical strategy [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md); the backplane proposition contributed to [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md); [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains a held candidate; and full-room floor platforming remains an implementation challenger beneath [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md), with [Selective Floor Access](../patterns/candidates/selective-floor-access.md) held separately. The W2 wall-bay prototype is the current first physical gate.
+
+The matrix below is preserved as the research snapshot that produced those later decisions. Statements such as “next gate”, “candidate pattern” and “next decision sequence” describe that stage of the work rather than the present programme.
 
 ## Overall result
 
