@@ -152,6 +152,13 @@ if (development?.items) {
   }
 }
 
+const projectAndProvenance = sidebar.find((item) => item.text === 'Project & provenance')
+const editorial = projectAndProvenance?.items?.find((item) => item.text === 'Editorial')
+if (editorial?.items) {
+  const overhaul = editorial.items.find((item) => item.link === '/docs/editorial/editorial-overhaul-plan')
+  if (overhaul) overhaul.text = 'Editorial overhaul plan — completed provenance'
+}
+
 assertNavigationCoverage()
 
 // Mermaid stays authored as fenced Markdown; the wrapper only supplies VitePress rendering.
