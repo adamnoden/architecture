@@ -1,0 +1,34 @@
+.hsa-build-stamp {
+  position: fixed;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(10px, env(safe-area-inset-bottom));
+  z-index: 40;
+  font-family: var(--vp-font-family-mono);
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--vp-c-text-3);
+  opacity: 0.38;
+  text-decoration: none;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.hsa-build-stamp:hover,
+.hsa-build-stamp:focus-visible {
+  color: var(--vp-c-text-2);
+  opacity: 0.9;
+}
+
+@media (max-width: 639px) {
+  .hsa-build-stamp {
+    right: max(8px, env(safe-area-inset-right));
+    bottom: max(8px, env(safe-area-inset-bottom));
+    font-size: 9px;
+  }
+}
+
+@media print {
+  .hsa-build-stamp {
+    display: none;
+  }
+}

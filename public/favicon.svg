@@ -1,16 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="34 22 188 188" fill="none">
   <g
     stroke="#000"
-    stroke-width="4.5"
+    stroke-width="9"
     stroke-linecap="butt"
     stroke-linejoin="miter"
   >
-    <path d="M 128.00,34.00 L 48.00,72.00 L 128.00,110.00 L 208.00,72.00 Z" />
-    
-    <path d="M 72.80,104.22 L 48.00,116.00 L 128.00,154.00 L 208.00,116.00 L 183.20,104.22" />
-  
-    
-    <path d="M 72.80,148.22 L 48.00,160.00 L 128.00,198.00 L 208.00,160.00 L 183.20,148.22" />
-  
+    <path d="M 128,34 L 48,72 L 128,110 L 208,72 Z" />
+    <path d="M 72.8,104.22 L 48,116 L 128,154 L 208,116 L 183.2,104.22" />
+    <path d="M 72.8,148.22 L 48,160 L 128,198 L 208,160 L 183.2,148.22" />
   </g>
 </svg>
