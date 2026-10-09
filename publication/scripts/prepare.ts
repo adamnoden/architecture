@@ -43,6 +43,22 @@ function workPath(path: string): string {
   return resolve(workSourceRoot, path)
 }
 
+function gitOutput(args: string[]): string {
+  return execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8' }).trim()
+}
+
+function editionMetadata(): { revision: string; dateIso: string; dateDisplay: string } {
+  const revision = (process.env.GITHUB_SHA ?? gitOutput(['rev-parse', 'HEAD'])).slice(0, 7)
+  const dateIso = gitOutput(['show', '-s', '--format=%cs', 'HEAD'])
+  const dateDisplay = new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC'
+  }).format(new Date(`${dateIso}T00:00:00Z`))
+  return { revision, dateIso, dateDisplay }
+}
+
 function resolveCanonicalTarget(source: string, hrefPath: string): string | null {
   const sourceDirectory = posix.dirname(source)
   let target = posix.normalize(posix.join(sourceDirectory, hrefPath))
@@ -111,11 +127,42 @@ function assertNoLocalRepositoryLinks(source: string, markdown: string): void {
   }
 }
 
+function writeTitlePage(metadata: ReturnType<typeof editionMetadata>): string {
+  const path = 'publication-title.html'
+  writeFileSync(
+    workPath(path),
+    `<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <title>House Systems Architecture</title>
+</head>
+<body class="publication-title-page">
+  <main class="publication-title">
+    <div class="publication-title__primary">
+      <p class="publication-title__edition">Working Edition</p>
+      <h1>House Systems Architecture</h1>
+    </div>
+    <div class="publication-title__meta">
+      <p>${metadata.dateDisplay}</p>
+      <p>Revision <code>${metadata.revision}</code></p>
+      <p><a href="${liveBaseUrl}">adamnoden.github.io/architecture/</a></p>
+    </div>
+  </main>
+</body>
+</html>
+`
+  )
+  return path
+}
+
 rmSync(workRoot, { recursive: true, force: true })
 mkdirSync(workSourceRoot, { recursive: true })
 cpSync(repoPath('docs'), workPath('docs'), { recursive: true })
 copyFileSync(repoPath('README.md'), workPath('README.md'))
 
+const metadata = editionMetadata()
+const titlePage = fullMode ? writeTitlePage(metadata) : null
 const canonicalSources = new Set(
   entries.flatMap((entry) => [entry.source, ...dependenciesForAdapter(entry.adapter)])
 )
@@ -154,6 +201,9 @@ writeFileSync(
       title: smokeMode ? 'House Systems Architecture — Publication Smoke' : 'House Systems Architecture — Working Edition',
       language: 'en-GB',
       output: smokeMode ? 'house-systems-architecture-smoke.pdf' : 'house-systems-architecture.pdf',
+      titlePage,
+      revision: metadata.revision,
+      editionDate: metadata.dateIso,
       entries
     },
     null,
