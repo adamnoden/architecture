@@ -1,5 +1,5 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import { basename, dirname, join, posix, resolve } from 'node:path'
+import { join, resolve } from 'node:path'
 import type { PublicationAdapter } from './publication.js'
 
 export interface AdapterContext {
@@ -21,7 +21,8 @@ const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
     'docs/manuscript/principle-08-repose.md'
   ],
   'part-ii-composite': ['docs/manuscript/maintenance-geography-external.md'],
-  'pattern-index': []
+  'pattern-index': [],
+  'reference-house-overview': []
 }
 
 export function dependenciesForAdapter(adapter?: PublicationAdapter): readonly string[] {
@@ -185,7 +186,19 @@ function adaptPatternIndex(markdown: string, context: AdapterContext): string {
     throw new Error('Pattern index adapter left Vue-only constructs in prepared Markdown.')
   }
 
-  return adapted
+  if (!adapted.startsWith('# Patterns\n')) {
+    throw new Error('Pattern index opening heading changed; update the Part III print wrapper deliberately.')
+  }
+
+  return `# Part III — Pattern Language\n\n${demoteHeadings(adapted, 1)}`
+}
+
+function adaptReferenceHouseOverview(markdown: string): string {
+  if (!markdown.startsWith('# Reference House\n')) {
+    throw new Error('Reference House opening heading changed; update the Part IV print wrapper deliberately.')
+  }
+
+  return `# Part IV — The Reference House\n\n${demoteHeadings(markdown, 1)}`
 }
 
 export function applyAdapter(
@@ -202,6 +215,8 @@ export function applyAdapter(
       return adaptPartII(markdown, context)
     case 'pattern-index':
       return adaptPatternIndex(markdown, context)
+    case 'reference-house-overview':
+      return adaptReferenceHouseOverview(markdown)
   }
 }
 
