@@ -111,7 +111,7 @@ The zone should normally recede into secondary circulation, service rooms or gen
 
 ## Evidence
 
-CIBSE maintainability guidance supports designing service systems around operation and maintenance over their service life. Approved Documents B, H and F demonstrate the real fire, drainage and ventilation obligations that vertical routes must accommodate. The Phase-5 Reference House run showed the pattern materially improved whole-house service topology without requiring a commercial-scale riser.
+CIBSE maintainability guidance supports designing service systems around operation and maintenance over their service life. Approved Documents B, H and F demonstrate the real fire, drainage and ventilation obligations that vertical routes must accommodate. The Reference House whole-house coordination exercise showed the pattern materially improved service topology without requiring a commercial-scale riser.
 
 ## Does not prove
 
@@ -119,7 +119,7 @@ The evidence does not establish that every two-storey house needs a dedicated ri
 
 ## Reference House application
 
-Historical occurrence `RH-CAND-VSR-01` reserves one east/rear vertical zone between the lower service hub and upper service area, with split wet/dry routing retained as the principal comparator. The occurrence helped test the pattern; it is not evidence of technical adequacy.
+Earlier occurrence `RH-CAND-VSR-01` reserves one east/rear vertical zone between the lower service hub and upper service area, with split wet/dry routing retained as the principal comparator. The occurrence helped test the pattern; it is not evidence of technical adequacy.
 
 ## Formalisation boundary
 
