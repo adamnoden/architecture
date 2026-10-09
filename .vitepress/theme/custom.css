@@ -141,9 +141,76 @@
   }
 }
 
+/*
+ * The root is an editorial front door, not another documentation leaf.
+ * It keeps the shared navigation and Markdown source while shedding the
+ * documentation chrome and opening a wider canvas for the project map.
+ */
+.hsa-landing-page .vp-doc h1 {
+  max-width: 22ch;
+  margin-bottom: 0.7em;
+  font-size: clamp(2.55rem, 4vw, 3.35rem);
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+}
+
+.hsa-landing-page .vp-doc > h1 + p {
+  max-width: 64ch;
+  margin-top: 0;
+  font-size: 1.22em;
+  line-height: 1.62;
+}
+
+.hsa-landing-page .vp-doc > h2 {
+  max-width: 72ch;
+  margin-top: 4.75rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--hsa-c-divider);
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+}
+
+.hsa-landing-page .vp-doc .mermaid {
+  margin: 2.25rem 0 2.75rem;
+  padding: 1.5rem 0;
+  overflow-x: auto;
+  border-top: 1px solid var(--hsa-c-divider);
+  border-bottom: 1px solid var(--hsa-c-divider);
+}
+
+.hsa-landing-page .vp-doc .mermaid svg {
+  display: block;
+  margin-inline: auto;
+}
+
+@media (min-width: 960px) {
+  .hsa-landing-page .VPDoc {
+    padding-top: 4rem;
+    padding-bottom: 7rem;
+  }
+
+  .hsa-landing-page .VPDoc .container,
+  .hsa-landing-page .VPDoc .content,
+  .hsa-landing-page .VPDoc:not(.has-aside) .content-container {
+    max-width: 1120px;
+  }
+}
+
 @media (max-width: 639px) {
   .vp-doc {
     font-size: 16.5px;
     line-height: 1.68;
+  }
+
+  .hsa-landing-page .vp-doc h1 {
+    font-size: 2.35rem;
+  }
+
+  .hsa-landing-page .vp-doc > h1 + p {
+    font-size: 1.12em;
+  }
+
+  .hsa-landing-page .vp-doc > h2 {
+    margin-top: 3.5rem;
   }
 }
