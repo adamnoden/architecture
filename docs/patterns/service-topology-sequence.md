@@ -280,9 +280,3 @@ HSA-P-012  Physical Service Index
 The sequence is not identical to the pattern graph. Graph relationships describe reusable architectural relationships; a generative sequence orders decisions by when they become expensive to reverse. A pattern may therefore be considered earlier or later than its graph relation alone would suggest.
 
 The sequence is also deliberately incomplete. Kitchen and bathroom extraction, rainwater, roof access, openings and other patterns intersect service topology but have their own environmental, envelope or maintenance logic. They should enter when those decisions become live rather than being forced into one universal master sequence.
-
-## Provenance
-
-This sequence grew from the Phase-4 pilot and the subsequent Reference House trial. Those exercises exposed the missing vertical-distribution pattern, showed that one literal horizontal “spine” was too narrow an implementation, and demonstrated that water-failure control belonged at strategy level with narrower physical patterns beneath it.
-
-The historical pilot records remain in [`pilot/`](pilot/), [Service Topology Coordination](../reference-house/service-topology-coordination.md) and [Service Topology Run 01](../reference-house/service-topology-run-01.md). They preserve the terminology and open questions that existed when the experiment was run; this page records the current canonical sequence.
