@@ -9,7 +9,11 @@ export type PublicationEntryKind =
   | 'reference-house'
   | 'smoke-fixture'
 
-export type PublicationAdapter = 'part-i-composite' | 'part-ii-composite' | 'pattern-index'
+export type PublicationAdapter =
+  | 'part-i-composite'
+  | 'part-ii-composite'
+  | 'pattern-index'
+  | 'reference-house-overview'
 
 export interface PublicationEntry {
   id: string
@@ -222,7 +226,8 @@ export const publicationEntries: readonly PublicationEntry[] = [
     id: 'part-iv-overview',
     source: 'docs/reference-house/README.md',
     title: 'Part IV — Reference House',
-    kind: 'reference-house'
+    kind: 'reference-house',
+    adapter: 'reference-house-overview'
   },
   {
     id: 'reference-house-tectonic-language',
