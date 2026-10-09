@@ -12,6 +12,11 @@ export default withMermaid(
     lang: 'en-GB',
     base: '/architecture/',
     cleanUrls: true,
+    head: [
+      ['link', { rel: 'icon', type: 'image/svg+xml', href: '/architecture/favicon.svg' }],
+      ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/architecture/favicon-32.png' }],
+      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/architecture/apple-touch-icon.png' }]
+    ],
 
     rewrites(id) {
       if (id === 'README.md') return 'index.md'
