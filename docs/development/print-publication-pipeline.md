@@ -1,6 +1,6 @@
 # Print publication pipeline — implementation record
 
-**Status:** active implementation — **G0/G1/G2 PASS; G3 active**  
+**Status:** active implementation — **G0/G1/G2/G3 PASS; G4 active**  
 **Branch:** `print-publication-pipeline`  
 **Draft PR:** #26 — *Build first-class print publication pipeline*  
 **Started:** 2026-10-09  
@@ -74,8 +74,8 @@ Rules:
 publication/
   publication.ts          # 44-entry Working Edition manifest + G1 smoke slice
   adapters.ts             # deterministic print composition/adapters
-  vivliostyle.config.js   # renderer configuration
-  theme.css               # currently compatibility-grade; G3 owns final print design
+  vivliostyle.config.js   # renderer configuration + title/contents wiring
+  theme.css               # publication-grade A4 duplex print system
   puppeteer.ci.json       # isolated CI-only Mermaid Chromium workaround
   scripts/
     prepare.ts             # disposable workspace, adapters, link rewriting, Mermaid
@@ -143,54 +143,66 @@ Implemented and verified:
 
 ### G2 interpretation
 
-The 193-page artifact proves composition, ownership and renderer mechanics. It is **not** a designed book yet. The current generated contents, typography, margins, page starts and hierarchy are intentionally provisional and now become G3 work.
+The 193-page artifact proved composition, ownership and renderer mechanics. It was not yet a designed book; G3 deliberately handled physical publication semantics separately.
 
-The exterior-maintenance insert is intentionally nested inside Chapter 8 rather than promoted to an independent numbered chapter. Its absence from the shallow generated contents is therefore not a missing-content defect; G3 will decide whether major inserts need a deeper/curated contents treatment.
+The exterior-maintenance insert is intentionally nested inside Chapter 8 rather than promoted to an independent numbered chapter. Its absence from the shallow generated contents is therefore not a missing-content defect.
 
-## G3 — print semantics and typography — ACTIVE
+## G3 — print semantics and typography — PASS
 
-**Purpose:** turn the mechanically correct Working Edition into a durable reading object.
+**Purpose:** turn the mechanically correct Working Edition into a durable reading object without redesigning canonical prose.
 
-Baseline requirements:
+Implemented and verified:
 
-- A4 portrait, designed for ordinary UK duplex printing;
-- facing-page / binding-aware geometry;
-- serif body with restrained sans headings, continuous with but not imitative of the site;
-- roughly 65–75 characters per line;
-- major Parts begin on recto pages where proportionate;
-- proper title/edition page rather than using the contents page as the de facto cover;
-- generated contents designed as publication furniture rather than raw renderer output;
-- running heads and outer page numbers;
-- no running furniture on title/major opening pages;
-- robust widows/orphans and heading/figure/table break rules;
-- vector figures retained where source permits;
-- black-and-white-safe semantics;
-- sensible tables, code, blockquotes and evidence metadata;
-- landscape/wide-page exceptions only for genuinely unreadable technical material;
-- no information conveyed by colour alone.
+- [x] A4 portrait, ordinary UK duplex-print target;
+- [x] binding-aware facing margins: larger inner than outer margin;
+- [x] restrained serif body / sans heading system continuous with, but not copied from, the website;
+- [x] body measure held around the intended 65–75-character range;
+- [x] dedicated title/edition page with build date, short Git revision and canonical site address;
+- [x] publication contents reduced from raw docs-tree depth to a controlled two-page book hierarchy;
+- [x] Preface and Parts I–V begin recto, with automatic blank versos where required;
+- [x] title, contents, blank pages and major entry openings suppress inappropriate running furniture;
+- [x] facing-page running heads and outer folios are stable;
+- [x] widows/orphans, heading breaks, figures, code blocks and tables have explicit print rules;
+- [x] figures remain vector where the source permits and synthetic VFM captions remain suppressed;
+- [x] tables remain legible on dense Reference House pages without forcing a landscape system prematurely;
+- [x] grayscale contact-sheet review completed; hierarchy and diagrams remain intelligible without colour;
+- [x] representative Poppler/PDFium renderer comparison completed with no material structural disagreement;
+- [x] final artifact preflight: **213 A4 pages**, openable, unencrypted, no XFA/forms/attachments, all fonts embedded/subset;
+- [x] final user-facing URI sanity check remains free of filesystem/runner/`localhost`/raw `.md` destinations;
+- [x] final Actions run `37930228403` passed repository tests, smoke build and full Working Edition build from commit `4ac561a`;
+- [x] final TOC artifact review confirmed removal of Vivliostyle's otherwise redundant non-linked publication-title row.
 
-Acceptance:
+### G3 findings retained as constraints
 
-- [ ] title page + Working Edition date/revision metadata;
-- [ ] publication-quality contents;
-- [ ] stable facing-page margins, page numbering and running heads;
-- [ ] deliberate Part/chapter opening hierarchy;
-- [ ] body measure and leading reviewed on representative prose-heavy pages;
-- [ ] pattern pages retain useful density without looking like website documentation;
-- [ ] figures/tables/code survive pagination without pathological breaks;
-- [ ] representative duplex print review;
-- [ ] grayscale review;
-- [ ] PDF preflight completed, including re-check of Vivliostyle named-destination warnings.
+1. **Use CSS paged-media rules for article parity, not Vivliostyle cover/TOC metadata.**  
+   Initial `pageBreakBefore` / `pageCounterReset` assumptions were invalid for ordinary publication entries and were removed rather than left as dead configuration.
 
-## G4 — whole-book editorial proof
+2. **Contents must be curated as book furniture.**  
+   A raw multi-document outline produced a website-like contents section. The current CSS deliberately exposes chapter depth for the composite manuscript Parts and publication-entry depth elsewhere.
+
+3. **Legacy manuscript container titles are print-only composition concerns.**  
+   `The Long-Life House` remains canonical source history but is suppressed by deterministic Part adapters so it does not compete with the actual publication title.
+
+4. **Vivliostyle's long named destinations remain a known non-blocking parser warning.**  
+   Poppler emits `name token is longer than what the specification says it can be`; links resolve, both tested renderers agree on representative pages, the file is openable and fonts are embedded. Do not hide the warning. Recheck after material Vivliostyle upgrades and again during G5 live-artifact verification.
+
+5. **213 pages is a Working Edition consequence, not a target.**  
+   G4 may shorten or restructure the book when editorial proof identifies duplicated argument, administrative residue or material that belongs online rather than in the linear publication.
+
+## G4 — whole-book editorial proof — ACTIVE
 
 Use the printed object to expose duplicated argument, late definitions, web-only context, weak transitions, catalogue fatigue, missing publication-facing Reference House material, badly sequenced figures and online-only material leaking into the book.
 
-Editorial findings modify canonical source. Do not hide them with print-engine hacks.
+Editorial findings modify canonical source when the problem belongs to canonical prose. Print-only title/hierarchy composition may still be corrected in deterministic adapters. Do not hide manuscript weaknesses with CSS.
 
 Acceptance:
 
 - [ ] end-to-end print/preview read completed;
+- [ ] publication-architecture/front-matter promises checked against what the Working Edition actually contains;
+- [ ] web/repository-only residue identified and removed or explicitly justified;
+- [ ] Part III assessed for development-history leakage and catalogue fatigue;
+- [ ] Part IV assessed against the intended six-chapter Reference House publication structure;
+- [ ] transitions between Parts assessed as a linear argument rather than website navigation;
 - [ ] structural findings resolved or explicitly deferred;
 - [ ] manifest still matches editorial authority afterward.
 
@@ -231,6 +243,6 @@ Acceptance:
 
 ## Current next action
 
-**Begin G3 with a print-system design pass before styling individual pages.**
+**G4: begin with a durable editorial-proof ledger before changing canonical manuscript prose.**
 
-First inspect the existing site typography/visual tokens and representative G2 page classes, then establish the page grid, type scale, opening-page hierarchy, contents strategy, running furniture and figure/table rules in `publication/theme.css`. Validate on a small representative page set before applying judgement to the entire 193-page artifact. Do not touch Pages deployment or perform whole-book editorial rewriting yet.
+Read the 213-page Working Edition linearly in Part-sized passes. Record each finding as one of: `fix now`, `defer because source is intentionally incomplete`, or `keep`. First audit the promised front matter, Part III development/provenance residue and Part IV against the publication architecture. Make canonical edits only after the finding is recorded, then rebuild the PDF after coherent batches rather than after every sentence.
