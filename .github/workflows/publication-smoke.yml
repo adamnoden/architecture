@@ -32,7 +32,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   publication:
@@ -40,46 +40,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-
-      - name: Classify publication pages in navigation once
-        if: github.event_name == 'push'
-        run: |
-          node <<'NODE'
-          const fs = require('node:fs')
-          const path = '.vitepress/navigation.ts'
-          let source = fs.readFileSync(path, 'utf8')
-
-          if (!source.includes("/docs/manuscript/readers-guide")) {
-            const anchor = "    page('Preface', '/docs/manuscript/preface'),"
-            if (!source.includes(anchor)) throw new Error('Manuscript navigation anchor changed.')
-            source = source.replace(
-              anchor,
-              `${anchor}\n    page("Reader's Guide", '/docs/manuscript/readers-guide'),`
-            )
-          }
-
-          if (!source.includes("/docs/development/print-publication-pipeline")) {
-            const anchor = "    page('Manufacturing strategy', '/docs/development/manufacturing-strategy')\n  ], false),"
-            if (!source.includes(anchor)) throw new Error('Development navigation anchor changed.')
-            source = source.replace(
-              anchor,
-              `${anchor}\n  group('Print publication', [\n    page('Pipeline & recovery record', '/docs/development/print-publication-pipeline'),\n    page('Publication scope crosswalk', '/docs/development/print-publication-scope-crosswalk'),\n    page('Editorial proof ledger', '/docs/development/print-publication-editorial-proof')\n  ]),`
-            )
-          }
-
-          fs.writeFileSync(path, source)
-          NODE
-
-          if git diff --quiet -- .vitepress/navigation.ts; then
-            echo 'Publication pages are already classified.'
-            exit 0
-          fi
-
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add .vitepress/navigation.ts
-          git commit -m 'docs: classify print publication pages in navigation'
-          git push origin HEAD:print-publication-pipeline
 
       - name: Setup Node
         uses: actions/setup-node@v7
