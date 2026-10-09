@@ -49,14 +49,11 @@ Prefer the simplest conventional floor where the change/access case is weak.
 - do not generalise commercial raised-floor precedent into domestic rooms without physical comparison;
 - underfloor heating, waterproofing and wet-room layers may justify different relationships from ordinary dry rooms.
 
-## Evidence / provenance
+## Evidence
 
-Extracted during the Phase-6 corpus audit from the **Finish-Agnostic Floor Platform** work. External precedent supports layered/service-zone separation, but the specific low-profile domestic platform remains physically unproven.
+External precedent supports layered construction and deliberate service-zone separation. The project's **Finish-Agnostic Floor Platform** research tests the harder domestic question: whether that separation can produce a low-profile, maintainable floor without sacrificing acoustic, tactile or architectural quality.
 
-See:
-
-- [`../reversible-assembly-candidates.md`](../reversible-assembly-candidates.md);
-- [`../../research/finish-agnostic-floor-platform-options.md`](../../research/finish-agnostic-floor-platform-options.md).
+Relevant project work includes [Reversible Assembly Candidates](../reversible-assembly-candidates.md) and [Finish-Agnostic Floor Platform Options](../../research/finish-agnostic-floor-platform-options.md).
 
 ## Does not prove
 
