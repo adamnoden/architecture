@@ -80,21 +80,31 @@ function rewritePublicationLinks(source: string, markdown: string, included: Set
     if (!target) return whole
 
     const targetAbsolute = repoPath(target)
-    const isMarkdownTarget = target.endsWith('.md') && existsSync(targetAbsolute)
-    if (!isMarkdownTarget) return whole
+    if (!existsSync(targetAbsolute)) return whole
 
-    const rewrittenHref = included.has(target)
-      ? internalHtmlHref(source, target, suffix)
+    const isMarkdownTarget = target.endsWith('.md') && lstatSync(targetAbsolute).isFile()
+    const rewrittenHref = isMarkdownTarget
+      ? included.has(target)
+        ? internalHtmlHref(source, target, suffix)
+        : liveUrlFor(target, suffix)
       : liveUrlFor(target, suffix)
+
     return whole.replace(`${rawHref}${tail})`, `${rewrittenHref}${tail})`)
   })
 }
 
-function assertNoLocalMarkdownLinks(source: string, markdown: string): void {
+function assertNoLocalRepositoryLinks(source: string, markdown: string): void {
   for (const match of markdown.matchAll(markdownLinkPattern)) {
     const href = match[1]
     if (/^(?:[a-z]+:|#|\/)/i.test(href)) continue
+
     const hrefPath = href.split(/[?#]/, 1)[0]
+    if (hrefPath.endsWith('.html')) continue
+
+    const target = resolveCanonicalTarget(source, hrefPath)
+    if (target && existsSync(repoPath(target))) {
+      throw new Error(`Prepared publication still contains a local repository link in ${source}: ${href}`)
+    }
     if (hrefPath.endsWith('.md')) {
       throw new Error(`Prepared publication still contains a local Markdown link in ${source}: ${href}`)
     }
@@ -127,7 +137,7 @@ for (const entry of entries) {
   }
 
   markdown = rewritePublicationLinks(entry.source, markdown, included)
-  assertNoLocalMarkdownLinks(entry.source, markdown)
+  assertNoLocalRepositoryLinks(entry.source, markdown)
   writeFileSync(preparedPath, markdown)
 }
 
