@@ -1,19 +1,230 @@
-/* G1 compatibility theme only. Publication typography belongs to G3. */
+/*
+ * House Systems Architecture — print theme
+ *
+ * A4 duplex-first working publication. Keep this system restrained and
+ * black-and-white safe: the PDF is for sustained reading and ordinary
+ * printing, not a screenshot of the website.
+ */
+
+:root {
+  --hsa-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --hsa-sans: Arial, Helvetica, sans-serif;
+  --hsa-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --hsa-text: #171815;
+  --hsa-muted: #62655f;
+  --hsa-faint: #858780;
+  --hsa-rule: #c5c6c0;
+  --hsa-rule-strong: #8c8f88;
+  --hsa-soft: #f2f2ef;
+}
 
 @page {
   size: A4;
-  margin: 20mm 18mm 22mm 20mm;
+  margin-top: 23mm;
+  margin-bottom: 24mm;
+}
+
+@page :left {
+  margin-left: 22mm;
+  margin-right: 30mm;
+
+  @top-left {
+    content: env(pub-title);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    letter-spacing: 0.035em;
+    color: #62655f;
+  }
+
+  @bottom-left {
+    content: counter(page);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    color: #62655f;
+  }
+}
+
+@page :right {
+  margin-left: 30mm;
+  margin-right: 22mm;
+
+  @top-right {
+    content: env(doc-title);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    letter-spacing: 0.025em;
+    color: #62655f;
+  }
+
+  @bottom-right {
+    content: counter(page);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    color: #62655f;
+  }
+}
+
+@page :first {
+  @top-left { content: none; }
+  @top-right { content: none; }
+}
+
+@page :blank {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page title {
+  margin: 0;
+
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page toc {
+  margin-top: 28mm;
+  margin-bottom: 26mm;
+
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
 }
 
 html {
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  color: #111;
+  color: var(--hsa-text);
+  font-family: var(--hsa-serif);
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
 }
 
 body {
+  max-width: 72ch;
+  margin: 0 auto;
   font-size: 10.5pt;
   line-height: 1.5;
+  hyphens: auto;
+  hanging-punctuation: first last;
 }
+
+/* Title / edition page --------------------------------------------------- */
+
+body.publication-title-page {
+  page: title;
+  max-width: none;
+  margin: 0;
+}
+
+.publication-title {
+  box-sizing: border-box;
+  height: 297mm;
+  padding: 38mm 30mm 28mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.publication-title__edition {
+  margin: 0 0 7mm;
+  font-family: var(--hsa-sans);
+  font-size: 8.5pt;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.publication-title h1 {
+  max-width: 150mm;
+  margin: 0;
+  font-family: var(--hsa-sans);
+  font-size: 34pt;
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+}
+
+.publication-title__meta {
+  padding-top: 5mm;
+  border-top: 0.6pt solid var(--hsa-rule-strong);
+  font-family: var(--hsa-sans);
+  font-size: 8.5pt;
+  line-height: 1.45;
+}
+
+.publication-title__meta p {
+  margin: 0.15em 0;
+}
+
+.publication-title__meta code {
+  font-size: 0.92em;
+}
+
+/* Generated contents ---------------------------------------------------- */
+
+body:has(nav[role="doc-toc"]) {
+  page: toc;
+  max-width: none;
+  margin: 0;
+}
+
+body:has(nav[role="doc-toc"]) > h1 {
+  display: none;
+}
+
+nav[role="doc-toc"] {
+  max-width: 150mm;
+  margin: 0 auto;
+  font-family: var(--hsa-sans);
+  font-size: 9.5pt;
+  line-height: 1.3;
+}
+
+nav[role="doc-toc"] > h2,
+nav[role="doc-toc"] > h1 {
+  margin: 0 0 10mm;
+  font-size: 23pt;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+nav[role="doc-toc"] ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav[role="doc-toc"] li {
+  margin: 0.28em 0;
+  break-inside: avoid;
+}
+
+nav[role="doc-toc"] li ol {
+  margin-top: 0.18em;
+  padding-left: 6mm;
+  font-size: 0.92em;
+  color: var(--hsa-muted);
+}
+
+nav[role="doc-toc"] a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav[role="doc-toc"] a::after {
+  content: leader('.') target-counter(attr(href), page);
+  font-variant-numeric: tabular-nums;
+}
+
+nav[role="doc-toc"] li:has(> a[href$="publication-title.html"]) {
+  display: none;
+}
+
+/* Type hierarchy -------------------------------------------------------- */
 
 h1,
 h2,
@@ -24,19 +235,116 @@ h6,
 table,
 code,
 pre {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--hsa-sans);
 }
 
 h1,
 h2,
+h3,
+h4,
+h5,
+h6 {
+  break-after: avoid-page;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 7mm;
+  font-size: 21pt;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  margin: 8mm 0 3mm;
+  font-size: 14.5pt;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+
 h3 {
-  break-after: avoid;
+  margin: 6mm 0 2.5mm;
+  font-size: 11.5pt;
+  line-height: 1.22;
+}
+
+h4,
+h5,
+h6 {
+  margin: 4.5mm 0 2mm;
+  font-size: 9.5pt;
+  line-height: 1.25;
+}
+
+h1[id^="part-"] {
+  margin-top: 28mm;
+  margin-bottom: 14mm;
+  max-width: 145mm;
+  font-size: 28pt;
+  line-height: 1.05;
+  letter-spacing: -0.032em;
+}
+
+h1[id^="hsa-p-"] {
+  font-size: 18.5pt;
+  line-height: 1.1;
 }
 
 p,
 li {
-  orphans: 2;
-  widows: 2;
+  orphans: 3;
+  widows: 3;
+}
+
+p {
+  margin: 0 0 0.75em;
+}
+
+ul,
+ol {
+  margin: 0.5em 0 0.9em;
+  padding-left: 1.55em;
+}
+
+li + li {
+  margin-top: 0.18em;
+}
+
+strong {
+  font-weight: 700;
+}
+
+hr {
+  width: 28mm;
+  height: 0;
+  margin: 9mm 0;
+  border: 0;
+  border-top: 0.55pt solid var(--hsa-rule-strong);
+}
+
+blockquote {
+  margin: 5mm 0 5mm 4mm;
+  padding-left: 5mm;
+  border-left: 0.75pt solid var(--hsa-rule-strong);
+  font-style: italic;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.4pt;
+  text-underline-offset: 0.12em;
+  overflow-wrap: anywhere;
+}
+
+/* Figures and authored captions ---------------------------------------- */
+
+figure {
+  margin: 6mm 0;
+  break-inside: avoid-page;
 }
 
 img,
@@ -44,39 +352,88 @@ svg {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1em auto;
+  margin: 5mm auto;
 }
 
 /*
  * VFM turns Markdown image alt text into a visible figcaption. HSA sources
- * already carry explicit publication captions in prose; keep alt text for the
- * image itself without printing a second, synthetic caption.
+ * already carry explicit publication captions in prose; retain the image's
+ * alt text but suppress the duplicated synthetic caption.
  */
 figure > figcaption {
   display: none;
 }
 
-pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  font-size: 8pt;
+figure + p > em:only-child,
+img + em {
+  font-family: var(--hsa-sans);
+  font-size: 8.3pt;
+  line-height: 1.35;
+  color: var(--hsa-muted);
 }
+
+/* Tables / code --------------------------------------------------------- */
 
 table {
   width: 100%;
+  margin: 5mm 0 6mm;
   border-collapse: collapse;
-  font-size: 8.5pt;
+  font-size: 8.2pt;
+  line-height: 1.32;
+  hyphens: none;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr {
+  break-inside: avoid;
 }
 
 th,
 td {
-  padding: 2mm;
+  padding: 2mm 1.8mm;
   vertical-align: top;
-  border: 0.25pt solid #777;
+  text-align: left;
+  border-top: 0.35pt solid var(--hsa-rule);
+  border-bottom: 0.35pt solid var(--hsa-rule);
 }
 
-a {
-  color: inherit;
-  text-decoration-thickness: 0.4pt;
-  text-underline-offset: 0.12em;
+th {
+  font-weight: 700;
+  border-top-color: var(--hsa-rule-strong);
+  border-bottom-color: var(--hsa-rule-strong);
+}
+
+code,
+pre {
+  font-family: var(--hsa-mono);
+}
+
+code {
+  font-size: 0.88em;
+}
+
+pre {
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 4mm 0 5mm;
+  padding: 3.5mm 4mm;
+  border-left: 1.2pt solid var(--hsa-rule-strong);
+  background: var(--hsa-soft);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 7.8pt;
+  line-height: 1.35;
+  break-inside: avoid-page;
+}
+
+/* Keep small semantic units together without making long sections rigid. */
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p {
+  orphans: 3;
 }
