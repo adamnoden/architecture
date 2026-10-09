@@ -1,4 +1,6 @@
 node_modules/
 .vitepress/cache/
 .vitepress/dist/
+publication/.work/
+publication/dist/
 .DS_Store

@@ -1,0 +1,73 @@
+/* G1 compatibility theme only. Publication typography belongs to G3. */
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 22mm 20mm;
+}
+
+html {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  color: #111;
+}
+
+body {
+  font-size: 10.5pt;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+code,
+pre {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  break-after: avoid;
+}
+
+p,
+li {
+  orphans: 2;
+  widows: 2;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1em auto;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 8pt;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+}
+
+th,
+td {
+  padding: 2mm;
+  vertical-align: top;
+  border: 0.25pt solid #777;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.4pt;
+  text-underline-offset: 0.12em;
+}
