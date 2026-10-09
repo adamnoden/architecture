@@ -11,6 +11,6 @@ Current held candidates:
 - [Local Deep Service Zone](local-deep-service-zone.md)
 - [Selective Floor Access](selective-floor-access.md)
 
-The older [Accessible Vertical Service Zone candidate](accessible-vertical-service-zone.md) is retained only as **pre-admission migration provenance**. Its admitted canonical successor is [`HSA-P-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md).
+The older [Accessible Vertical Service Zone candidate](accessible-vertical-service-zone.md) is retained as a historical pre-admission record. Its admitted canonical successor is [`HSA-P-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md).
 
 Candidates are not promoted because the publication needs a complete-looking list. Promotion requires a stronger recurring invariant, sufficient evidence and/or the physical/worked proof specified on the candidate page.
