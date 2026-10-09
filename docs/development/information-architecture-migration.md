@@ -39,9 +39,9 @@ The repository remains the source of truth. The website is a curated reading int
 
 ### Stage 1 — documentation contract
 
-- [ ] Update `docs/README.md` to define repository ownership, publication structure, website navigation and project state as separate concerns.
-- [ ] Record the rule that navigation must optimise for reading rather than mirror the filesystem.
-- [ ] Record the rule that history remains discoverable without receiving equal visual rank to current material.
+- [x] Update `docs/README.md` to define repository ownership, publication structure, website navigation and project state as separate concerns.
+- [x] Record the rule that navigation must optimise for reading rather than mirror the filesystem.
+- [x] Record the rule that history remains discoverable without receiving equal visual rank to current material.
 
 ### Stage 2 — repository ownership corrections
 
