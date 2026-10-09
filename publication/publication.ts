@@ -17,6 +17,7 @@ export type PublicationAdapter =
   | 'pattern-index'
   | 'pattern-page'
   | 'reference-house-overview'
+  | 'reference-house-page'
 
 export interface PublicationEntry {
   id: string
@@ -243,37 +244,43 @@ export const publicationEntries: readonly PublicationEntry[] = [
     id: 'reference-house-tectonic-language',
     source: 'docs/reference-house/tectonic-architectural-language.md',
     title: 'Tectonic Architectural Language',
-    kind: 'reference-house'
+    kind: 'reference-house',
+    adapter: 'reference-house-page'
   },
   {
     id: 'reference-house-vertical-options',
     source: 'docs/reference-house/vertical-bay-options.md',
     title: 'Vertical Bay Options',
-    kind: 'reference-house'
+    kind: 'reference-house',
+    adapter: 'reference-house-page'
   },
   {
     id: 'reference-house-vertical-coordination',
     source: 'docs/reference-house/vertical-bay-coordination.md',
     title: 'Vertical Bay Coordination',
-    kind: 'reference-house'
+    kind: 'reference-house',
+    adapter: 'reference-house-page'
   },
   {
     id: 'reference-house-whole-house',
     source: 'docs/reference-house/whole-house-coordination-fixture.md',
     title: 'Whole-House Coordination Fixture 01',
-    kind: 'reference-house'
+    kind: 'reference-house',
+    adapter: 'reference-house-page'
   },
   {
     id: 'reference-house-pattern-register',
     source: 'docs/reference-house/pattern-occurrence-register.md',
     title: 'Pattern Occurrence Register',
-    kind: 'reference-house'
+    kind: 'reference-house',
+    adapter: 'reference-house-page'
   },
   {
     id: 'reference-house-external-maintenance',
     source: 'docs/reference-house/external-access-maintenance-plan.md',
     title: 'External Access & Maintenance Plan',
-    kind: 'reference-house'
+    kind: 'reference-house',
+    adapter: 'reference-house-page'
   },
 
   {
