@@ -10,7 +10,7 @@ The house selects a **Georgian-derived architectural grammar**, provisionally re
 
 HSA propositions should remain intelligible under a materially different architectural language. G-01, by contrast, is allowed to be strongly opinionated about composition, hierarchy, proportion and element families. Keeping those authorities separate lets the Reference House be architecturally specific without allowing its style to leak upstream into the doctrine.
 
-See the project-wide [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md), the [G-01 Grammar Charter](../computational/g01-grammar-charter.md) and the [G-01 Research Brief](../computational/g01-research-brief.md).
+See the project-wide [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md), the [G-01 Grammar Charter](../grammar/g01-grammar-charter.md) and the [G-01 Research Brief](../grammar/g01-research-brief.md).
 
 ## Composition and authority
 
