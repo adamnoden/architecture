@@ -18,10 +18,6 @@ Repose also constrains the technical agenda of House Systems Architecture. Acces
 
 The principle is therefore less a style than a design burden: the house should ask for as little routine monitoring and correction as ordinary comfort allows.
 
-![Principle 8 — Repose review](figures/principle-08-repose.svg)
-
-*Figure 8.1 — Repose review. The six domains are not presented as one scientific scale. Physical environmental performance can often be measured directly; control, privacy and comprehensibility are supported but context-sensitive; apparent structural equilibrium remains a doctrine hypothesis; technical expression remains architectural judgement.*
-
 ## Design consequences
 
 ### Physical conditions first
