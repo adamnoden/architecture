@@ -9,6 +9,7 @@ on:
       - 'docs/manuscript/**'
       - 'docs/patterns/**'
       - 'docs/reference-house/**'
+      - '.vitepress/**'
       - 'README.md'
       - 'package.json'
       - 'package-lock.json'
@@ -20,6 +21,7 @@ on:
       - 'docs/manuscript/**'
       - 'docs/patterns/**'
       - 'docs/reference-house/**'
+      - '.vitepress/**'
       - 'README.md'
       - 'package.json'
       - 'package-lock.json'
@@ -28,7 +30,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   publication:
@@ -43,21 +45,8 @@ jobs:
           node-version: 24
           package-manager-cache: false
 
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
-
-      - name: Commit generated package lock once
-        if: github.event_name == 'push'
-        run: |
-          if git ls-files --error-unmatch package-lock.json >/dev/null 2>&1; then
-            echo 'package-lock.json is already tracked.'
-            exit 0
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add package-lock.json
-          git commit -m 'build: lock npm dependency closure'
-          git push origin HEAD:print-publication-pipeline
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
 
       - name: Run repository tests
         run: npm test
@@ -68,22 +57,24 @@ jobs:
       - name: Verify smoke PDF exists
         run: test -s publication/dist/house-systems-architecture-smoke.pdf
 
-      - name: Upload smoke PDF
-        uses: actions/upload-artifact@v4
-        with:
-          name: publication-smoke-pdf
-          path: publication/dist/house-systems-architecture-smoke.pdf
-          if-no-files-found: error
-
       - name: Build full Working Edition PDF
         run: npm run publication:build
 
       - name: Verify Working Edition PDF exists
         run: test -s publication/dist/house-systems-architecture.pdf
 
-      - name: Upload Working Edition PDF
+      - name: Build documentation
+        run: npm run docs:build
+
+      - name: Assemble Pages artifact
+        run: |
+          cp publication/dist/house-systems-architecture.pdf .vitepress/dist/house-systems-architecture.pdf
+          test -s .vitepress/dist/house-systems-architecture.pdf
+          test -s .vitepress/dist/index.html
+
+      - name: Upload combined site preview
         uses: actions/upload-artifact@v4
         with:
-          name: publication-working-edition
-          path: publication/dist/house-systems-architecture.pdf
+          name: combined-site-preview
+          path: .vitepress/dist
           if-no-files-found: error
