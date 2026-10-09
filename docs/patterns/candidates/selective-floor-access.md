@@ -49,13 +49,11 @@ A full-room **Finish-Agnostic Floor Platform** remains an implementation challen
 - the zone is provided speculatively and never carries services worth accessing;
 - local access adds interfaces without reducing destructive work elsewhere.
 
-## Evidence / provenance
+## Evidence
 
-See:
+Adjacent access-floor precedent and the project's floor-platform studies support selective access as a plausible direction, but not yet as a proven domestic pattern. The unresolved test is whether a bounded access zone can remain physically convincing while providing materially better serviceability than ordinary local panels or inaccessible layered construction.
 
-- [`../reversible-assembly-candidates.md`](../reversible-assembly-candidates.md);
-- [`../../research/finish-agnostic-floor-platform-options.md`](../../research/finish-agnostic-floor-platform-options.md);
-- [`../../research/pattern-language-phase6-targeted-evidence.md`](../../research/pattern-language-phase6-targeted-evidence.md).
+Relevant work includes [Reversible Assembly Candidates](../reversible-assembly-candidates.md), [Finish-Agnostic Floor Platform Options](../../research/finish-agnostic-floor-platform-options.md) and the [Targeted Pattern-Language Evidence Review](../../research/pattern-language-phase6-targeted-evidence.md).
 
 ## Does not prove
 
