@@ -156,6 +156,25 @@ function writeTitlePage(metadata: ReturnType<typeof editionMetadata>): string {
   return path
 }
 
+function writeContentsTemplate(): string {
+  const path = 'publication-contents.html'
+  writeFileSync(
+    workPath(path),
+    `<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <title>Contents</title>
+</head>
+<body class="publication-contents-page">
+  <nav id="toc" role="doc-toc"></nav>
+</body>
+</html>
+`
+  )
+  return path
+}
+
 rmSync(workRoot, { recursive: true, force: true })
 mkdirSync(workSourceRoot, { recursive: true })
 cpSync(repoPath('docs'), workPath('docs'), { recursive: true })
@@ -163,6 +182,7 @@ copyFileSync(repoPath('README.md'), workPath('README.md'))
 
 const metadata = editionMetadata()
 const titlePage = fullMode ? writeTitlePage(metadata) : null
+const contentsPage = fullMode ? writeContentsTemplate() : null
 const canonicalSources = new Set(
   entries.flatMap((entry) => [entry.source, ...dependenciesForAdapter(entry.adapter)])
 )
@@ -202,6 +222,7 @@ writeFileSync(
       language: 'en-GB',
       output: smokeMode ? 'house-systems-architecture-smoke.pdf' : 'house-systems-architecture.pdf',
       titlePage,
+      contentsPage,
       revision: metadata.revision,
       editionDate: metadata.dateIso,
       entries
