@@ -174,7 +174,8 @@ body.publication-contents-page {
 }
 
 /* Vivliostyle supplies the publication title above the inserted nav. */
-body.publication-contents-page > h1 {
+body.publication-contents-page > h1,
+nav[role="doc-toc"] > h1 {
   display: none;
 }
 
@@ -186,8 +187,7 @@ nav[role="doc-toc"] {
   line-height: 1.3;
 }
 
-nav[role="doc-toc"] > h2,
-nav[role="doc-toc"] > h1 {
+nav[role="doc-toc"] > h2 {
   margin: 0 0 10mm;
   font-size: 23pt;
   line-height: 1.08;
