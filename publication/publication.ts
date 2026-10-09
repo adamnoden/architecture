@@ -15,6 +15,8 @@ export type PublicationAdapter =
   | 'pattern-index'
   | 'reference-house-overview'
 
+export type PublicationPageBreak = 'left' | 'right' | 'recto' | 'verso'
+
 export interface PublicationEntry {
   id: string
   source: string
@@ -23,6 +25,8 @@ export interface PublicationEntry {
   adapter?: PublicationAdapter
   patternId?: string
   smokeOnly?: boolean
+  pageBreakBefore?: PublicationPageBreak
+  pageCounterReset?: number
 }
 
 export const canonicalPatternOrder = [
@@ -100,7 +104,7 @@ export const smokePublicationEntries: readonly PublicationEntry[] = [
 ] as const
 
 /**
- * G2 mechanical Working Edition order.
+ * Mechanical Working Edition order.
  * Editorial meaning remains owned by docs/manuscript/publication-architecture.md.
  */
 export const publicationEntries: readonly PublicationEntry[] = [
@@ -108,28 +112,33 @@ export const publicationEntries: readonly PublicationEntry[] = [
     id: 'preface',
     source: 'docs/manuscript/preface.md',
     title: 'Preface — The Obvious, Eventually',
-    kind: 'preface'
+    kind: 'preface',
+    pageBreakBefore: 'recto',
+    pageCounterReset: 1
   },
   {
     id: 'part-i',
     source: 'docs/manuscript/part-i.md',
     title: 'Part I — The Proposition',
     kind: 'part',
-    adapter: 'part-i-composite'
+    adapter: 'part-i-composite',
+    pageBreakBefore: 'recto'
   },
   {
     id: 'part-ii',
     source: 'docs/manuscript/part-ii.md',
     title: 'Part II — Architecture of the Platform',
     kind: 'part',
-    adapter: 'part-ii-composite'
+    adapter: 'part-ii-composite',
+    pageBreakBefore: 'recto'
   },
   {
     id: 'part-iii-index',
     source: 'docs/patterns/README.md',
     title: 'Part III — Pattern Language',
     kind: 'index',
-    adapter: 'pattern-index'
+    adapter: 'pattern-index',
+    pageBreakBefore: 'recto'
   },
   {
     id: 'pattern-language-model',
@@ -227,7 +236,8 @@ export const publicationEntries: readonly PublicationEntry[] = [
     source: 'docs/reference-house/README.md',
     title: 'Part IV — Reference House',
     kind: 'reference-house',
-    adapter: 'reference-house-overview'
+    adapter: 'reference-house-overview',
+    pageBreakBefore: 'recto'
   },
   {
     id: 'reference-house-tectonic-language',
@@ -270,6 +280,7 @@ export const publicationEntries: readonly PublicationEntry[] = [
     id: 'part-v',
     source: 'docs/manuscript/part-v.md',
     title: 'Part V — Making and Testing the Platform',
-    kind: 'part'
+    kind: 'part',
+    pageBreakBefore: 'recto'
   }
 ] as const
