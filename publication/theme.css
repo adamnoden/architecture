@@ -10,18 +10,20 @@
   --hsa-serif: Georgia, Cambria, "Times New Roman", Times, serif;
   --hsa-sans: Arial, Helvetica, sans-serif;
   --hsa-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  --hsa-text: #171815;
-  --hsa-muted: #62655f;
-  --hsa-faint: #858780;
-  --hsa-rule: #c5c6c0;
-  --hsa-rule-strong: #8c8f88;
-  --hsa-soft: #f2f2ef;
+  --hsa-paper: #fff;
+  --hsa-text: #000;
+  --hsa-muted: #555;
+  --hsa-faint: #777;
+  --hsa-rule: #bbb;
+  --hsa-rule-strong: #777;
+  --hsa-soft: #fff;
 }
 
 @page {
   size: A4;
   margin-top: 23mm;
   margin-bottom: 24mm;
+  background: var(--hsa-paper);
 }
 
 @page :left {
@@ -33,14 +35,14 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 7.5pt;
     letter-spacing: 0.035em;
-    color: #62655f;
+    color: #555;
   }
 
   @bottom-left {
     content: counter(page);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 7.5pt;
-    color: #62655f;
+    color: #555;
   }
 }
 
@@ -53,14 +55,14 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 7.5pt;
     letter-spacing: 0.025em;
-    color: #62655f;
+    color: #555;
   }
 
   @bottom-right {
     content: counter(page);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 7.5pt;
-    color: #62655f;
+    color: #555;
   }
 }
 
@@ -98,6 +100,7 @@
 
 html {
   color: var(--hsa-text);
+  background: var(--hsa-paper);
   font-family: var(--hsa-serif);
   font-kerning: normal;
   text-rendering: optimizeLegibility;
@@ -106,6 +109,7 @@ html {
 body {
   max-width: 72ch;
   margin: 0 auto;
+  background: var(--hsa-paper);
   font-size: 10.5pt;
   line-height: 1.5;
   hyphens: auto;
