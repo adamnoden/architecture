@@ -1,4 +1,4 @@
-import { readdirSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import type { DefaultTheme } from 'vitepress'
 
@@ -118,32 +118,32 @@ const patternsSidebar: DefaultTheme.SidebarItem[] = [
 const grammarSidebar: DefaultTheme.SidebarItem[] = [
   group('Architectural grammar', [
     page('Grammar overview', '/docs/grammar/'),
-    page('Grammar framework', '/docs/computational/architectural-grammar-and-proportion'),
-    page('Modelling corrections', '/docs/computational/architectural-grammar-modelling-corrections-v01')
+    page('Grammar framework', '/docs/grammar/architectural-grammar-and-proportion'),
+    page('Modelling corrections', '/docs/grammar/architectural-grammar-modelling-corrections-v01')
   ], false),
   group('G-01 · Georgian-derived domestic grammar', [
-    page('Grammar charter', '/docs/computational/g01-grammar-charter'),
-    page('Research brief', '/docs/computational/g01-research-brief'),
-    page('Corpus & source-quality register', '/docs/computational/g01-corpus-register'),
-    page('Annotation schema', '/docs/computational/g01-annotation-schema'),
-    page('Topology comparison', '/docs/computational/g01-topology-comparison'),
-    page('Dimensional analysis', '/docs/computational/g01-dimensional-analysis'),
-    page('Plan / section / elevation coupling', '/docs/computational/g01-plan-section-elevation-coupling'),
-    page('Candidate constraints', '/docs/computational/g01-candidate-constraints-v01')
+    page('Grammar charter', '/docs/grammar/g01-grammar-charter'),
+    page('Research brief', '/docs/grammar/g01-research-brief'),
+    page('Corpus & source-quality register', '/docs/grammar/g01-corpus-register'),
+    page('Annotation schema', '/docs/grammar/g01-annotation-schema'),
+    page('Topology comparison', '/docs/grammar/g01-topology-comparison'),
+    page('Dimensional analysis', '/docs/grammar/g01-dimensional-analysis'),
+    page('Plan / section / elevation coupling', '/docs/grammar/g01-plan-section-elevation-coupling'),
+    page('Candidate constraints', '/docs/grammar/g01-candidate-constraints-v01')
   ], false),
   group('Precedent cases', [
-    page('Case index', '/docs/computational/g01-cases/'),
-    page('76 Dean Street', '/docs/computational/g01-cases/76-dean-street'),
-    page('Bedford Square', '/docs/computational/g01-cases/bedford-square'),
-    page('Danson House', '/docs/computational/g01-cases/danson-house'),
-    page('Danson House — D5/D6 web evidence', '/docs/computational/g01-cases/danson-d5-d6-web-evidence-v02'),
-    page('Marble Hill House', '/docs/computational/g01-cases/marble-hill-house'),
-    page('Marble Hill House — D5/D6 web evidence', '/docs/computational/g01-cases/marble-hill-d5-d6-web-evidence-v02')
+    page('Case index', '/docs/grammar/g01-cases/'),
+    page('76 Dean Street', '/docs/grammar/g01-cases/76-dean-street'),
+    page('Bedford Square', '/docs/grammar/g01-cases/bedford-square'),
+    page('Danson House', '/docs/grammar/g01-cases/danson-house'),
+    page('Danson House — D5/D6 web evidence', '/docs/grammar/g01-cases/danson-d5-d6-web-evidence-v02'),
+    page('Marble Hill House', '/docs/grammar/g01-cases/marble-hill-house'),
+    page('Marble Hill House — D5/D6 web evidence', '/docs/grammar/g01-cases/marble-hill-d5-d6-web-evidence-v02')
   ]),
   group('Evidence & derivation', [
-    page('D5/D6 web pass v0.2 — superseded', '/docs/computational/g01-d5-d6-web-pass-v02'),
-    page('D5/D6 evidence gate v0.3 — current', '/docs/computational/g01-d5-d6-web-pass-v03'),
-    page('D6 mutation run — Danson sequence', '/docs/computational/g01-d6-mutation-run-01-danson-sequence')
+    page('D5/D6 web pass v0.2 — superseded', '/docs/grammar/g01-d5-d6-web-pass-v02'),
+    page('D5/D6 evidence gate v0.3 — current', '/docs/grammar/g01-d5-d6-web-pass-v03'),
+    page('D6 mutation run — Danson sequence', '/docs/grammar/g01-d6-mutation-run-01-danson-sequence')
   ])
 ]
 
@@ -449,15 +449,22 @@ function sourceRoute(source: string): string {
   return `/${normal.slice(0, -'.md'.length)}`
 }
 
+function excludedFromNavigation(source: string): boolean {
+  return readFileSync(source, 'utf8').includes('<!-- nav-exclude: redirect -->')
+}
+
 /**
  * VitePress publishes every Markdown source by default. Keep the curated site
- * honest: every published page must be deliberately classified in at least one
- * route-specific sidebar, even when it sits only under history/provenance.
+ * honest: every substantive page must be deliberately classified in at least
+ * one route-specific sidebar. Compatibility redirect pages are the sole
+ * explicit exception.
  */
 export function assertNavigationCoverage(): void {
   const root = process.cwd()
   const sources = [join(root, 'README.md'), join(root, 'STATUS.md'), ...collectMarkdown(join(root, 'docs'))]
-  const publishedRoutes = sources.map((source) => sourceRoute(relative(root, source)))
+  const publishedRoutes = sources
+    .filter((source) => !excludedFromNavigation(source))
+    .map((source) => sourceRoute(relative(root, source)))
   const navigationRoutes = new Set(
     Object.values(sidebar).flatMap((items) => flattenLinks(items))
   )

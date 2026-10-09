@@ -6,18 +6,29 @@ The grammar layer may describe topology, hierarchy, ordering, dimensions and pro
 
 The current active grammar research instance is **G-01**, a Georgian-derived domestic grammar selected by the Reference House. G-01 is deliberately specific; its rules do not become HSA doctrine merely because the Reference House uses them.
 
-## Current material
+## Framework
 
-During the information-architecture migration, the canonical grammar documents are being moved here from their historical location under `docs/computational/`. Until that move is complete, use the existing source documents:
+- [Architectural Grammar and Proportion — Framework](architectural-grammar-and-proportion.md)
+- [Architectural Grammar Modelling Corrections](architectural-grammar-modelling-corrections-v01.md)
 
-- [Architectural Grammar and Proportion — Framework](../computational/architectural-grammar-and-proportion.md)
-- [G-01 Grammar Charter](../computational/g01-grammar-charter.md)
-- [G-01 Research Brief](../computational/g01-research-brief.md)
-- [G-01 Corpus and Source-Quality Register](../computational/g01-corpus-register.md)
-- [G-01 Precedent Cases](../computational/g01-cases/README.md)
-- [G-01 Topology Comparison](../computational/g01-topology-comparison.md)
-- [G-01 Dimensional Analysis](../computational/g01-dimensional-analysis.md)
-- [G-01 Plan / Section / Elevation Coupling](../computational/g01-plan-section-elevation-coupling.md)
-- [G-01 Candidate Constraint Register](../computational/g01-candidate-constraints-v01.md)
+## G-01
 
-The move itself is controlled by the [Information Architecture Migration](../development/information-architecture-migration.md). This index is intentionally temporary in one respect: once the files have moved, these links will resolve locally and this migration note will be removed.
+- [G-01 Grammar Charter](g01-grammar-charter.md)
+- [G-01 Research Brief](g01-research-brief.md)
+- [G-01 Corpus and Source-Quality Register](g01-corpus-register.md)
+- [G-01 Precedent Annotation Schema](g01-annotation-schema.md)
+- [G-01 Precedent Cases](g01-cases/README.md)
+- [G-01 Topology Comparison](g01-topology-comparison.md)
+- [G-01 Dimensional and Proportional Analysis](g01-dimensional-analysis.md)
+- [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md)
+- [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md)
+
+## Evidence and derivation
+
+The later evidence gates and mutation runs record how provisional G-01 claims were challenged and narrowed. They are evidence/provenance for the grammar rather than a second grammar definition.
+
+- [G-01 D5/D6 web pass v0.2](g01-d5-d6-web-pass-v02.md) — superseded evidence pass
+- [G-01 D5/D6 evidence gate v0.3](g01-d5-d6-web-pass-v03.md) — current D5/D6 authority
+- [G-01 D6 mutation run — Danson sequence](g01-d6-mutation-run-01-danson-sequence.md)
+
+The Reference House selects G-01 as one architectural input alongside HSA doctrine, patterns, site and programme, technical families and project-specific morphology. The grammar remains independently selectable from HSA.
