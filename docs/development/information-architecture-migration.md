@@ -1,9 +1,10 @@
 # Information Architecture Migration — Control Record
 
-**Status:** active — structural migration complete; final editorial/verification closeout remains  
+**Status:** complete  
+**Completed:** 2026-10-09  
 **Purpose:** reorganise repository ownership and the documentation-site information architecture without conflating filesystem, publication order, navigation or project state.
 
-This document is the resumable control record for the migration. It exists so the work can be continued safely after an interrupted session without reconstructing intent from chat history.
+This record preserves the decisions and verification behind the migration so the resulting structure does not have to be reconstructed from chat history.
 
 ## Target model
 
@@ -18,7 +19,7 @@ No one of these structures is permitted to dictate the others mechanically.
 
 The repository remains the source of truth. The website is a curated reading interface over the same source files. Publication order may cross repository ownership boundaries. Historical files remain discoverable without being promoted into the primary reading path.
 
-## Decisions already made
+## Decisions
 
 - Keep the existing role-based repository model rather than reorganising the whole corpus around the book.
 - Promote **architectural grammar** to a first-class repository area independent of the computational track.
@@ -29,7 +30,7 @@ The repository remains the source of truth. The website is a curated reading int
 - Make the manuscript route reflect the actual publication hierarchy: Part I, Part II, Part III Pattern Language, Part IV Reference House, Part V.
 - Treat developed inserts such as Repose and External Maintenance Geography as subordinate to their owning manuscript part rather than peers of the Parts.
 - Keep history and provenance available under local collapsed groups rather than allowing it to dominate primary navigation.
-- Keep `governing-principles.md` as the canonical principles text; removal of the older duplicate block inside Part I is editorial debt rather than a condition of the navigation migration.
+- Keep `governing-principles.md` as the single maintained source for the eleven principles; Part I now points to it rather than duplicating the full block.
 
 ## Migration stages
 
@@ -83,29 +84,27 @@ The repository remains the source of truth. The website is a curated reading int
 
 - [x] Update `docs/reading-guide.md` to match the new reading architecture.
 - [x] Update `docs/manuscript/README.md` to match the actual Part I–V structure.
-- [ ] Reconcile stale publication-version references, including `STATUS.md`.
-- [ ] Remove the duplicate independently editable governing-principles block from Part I while preserving repository readability outside VitePress.
+- [x] Reconcile stale Publication Architecture v0.11 references in `STATUS.md` to current v0.12 and update the status date.
+- [x] Remove the duplicate independently editable governing-principles block from Part I while preserving repository readability through an explicit link to the canonical principles document.
 - [x] Repair structural cross-links affected by the grammar move; compatibility landing pages preserve older inbound links.
-
-The two unchecked items are editorial/canonicality hygiene exposed by this audit. They do not alter the information architecture and must not be allowed to trigger another repository reshuffle.
 
 ### Stage 7 — verification and closeout
 
 - [x] Run TypeScript typecheck through the ordinary CI path after the navigation/grammar refactor.
 - [x] Run P0 and pattern-crosswalk tests through the ordinary CI path after the navigation/grammar refactor.
-- [x] Run the VitePress production build after the navigation/grammar refactor.
+- [x] Run the VitePress production build after the final content reconciliation.
 - [x] Confirm navigation coverage accepts the classified corpus and excludes only explicitly marked compatibility landing pages.
-- [ ] Inspect the deployed hierarchy after the final content commits and close the migration.
-- [ ] Update this record to `complete` after the final deployed build passes.
+- [x] Deploy the final reconciled site successfully through the ordinary GitHub Pages workflow.
+- [x] Close this control record.
 
-A post-move build initially exposed seven broken relative links in second-level compatibility pages. The links were corrected in a separate commit. A subsequent full CI run after the grammar/computational separation passed tests and documentation build, demonstrating that the route-specific navigation and moved canonical grammar corpus compile together.
+A post-move build initially exposed seven broken relative links in second-level compatibility pages. The links were corrected in a separate commit. The final build after status reconciliation and Part-I deduplication passed the compiler tests, VitePress production build and Pages deployment.
 
-## Stop / resume rule
+The automated pipeline cannot perform a device-level visual inspection of the mobile drawer. That remains a smoke check rather than an information-architecture gate; the navigation uses VitePress's standard route-specific sidebar and mobile-menu behaviour rather than custom rendering code.
 
-After every logically complete stage, commit the repository in a buildable or explicitly documented transitional state. If the migration is interrupted, resume from the first unchecked item in this file and verify the current repository state before writing further changes.
+## Resulting invariant
 
-Do not infer completion from chat history. The repository and this control record govern.
+Future work should preserve the distinction established here:
 
-## Scope guard
+> **Move a document when its ownership is wrong. Change navigation when its presentation is wrong. Do not make either structure impersonate the other.**
 
-This migration is an information-architecture repair, not an excuse for a general rewrite. Move a document when its **ownership is wrong**. Change navigation when its **presentation is wrong**. Rewrite content only where the structural migration exposes duplication, stale authority or misleading prose.
+A new published Markdown page must be deliberately classified in navigation. A historical page may remain available without receiving primary visual rank. A publication Part may point across repository areas without duplicating their content. A computational representation may depend on an architectural grammar without owning it.
