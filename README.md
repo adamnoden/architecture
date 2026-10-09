@@ -1,3 +1,12 @@
+---
+sidebar: false
+aside: false
+outline: false
+prev: false
+next: false
+pageClass: hsa-landing-page
+---
+
 # House Systems Architecture
 
 A house spends almost all of its life after completion. It is not one thing ageing at one rate. Structure may stand for generations while services, equipment, seals and finishes are repaired, altered and replaced around it. When those different lifetimes are physically coupled, a change to a short-lived component can require longer-lived fabric to be opened, cut and remade. Those lifetimes, and the interfaces between them, are architectural material.
