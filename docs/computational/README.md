@@ -40,6 +40,7 @@ The computational model has a deliberately limited authority.
 
 - **A pattern is not a compiler primitive.**
 - **Pattern provenance is not technical authority.**
+- **An architectural grammar is not owned by the compiler.**
 - **Representability is not evidence of adequacy.**
 - **A research compile is not a building-release certificate.**
 - **Architectural judgement remains architectural where no legitimate deterministic rule exists.**
@@ -70,23 +71,11 @@ The crosswalk tested whether HSA patterns could inform authoring without being p
 
 Computational representability does not promote or validate an architectural proposition.
 
-## Architectural grammar
+## Relationship to architectural grammar
 
-[Architectural Grammar and Proportion](architectural-grammar-and-proportion.md) defines a generic grammar framework separate from HSA doctrine. G-01 is one Georgian-derived domestic grammar selected for the Reference House.
+The architectural-grammar framework and G-01 research are owned by the separate [Architectural Grammar](../grammar/) area. A selected grammar may create relationships or requirements that are useful to represent computationally, but representation does not transfer ownership or authority to this track.
 
-Current G-01 research includes:
-
-- [G-01 Grammar Charter](g01-grammar-charter.md)
-- [G-01 Research Brief](g01-research-brief.md)
-- [G-01 Corpus and Source-Quality Register](g01-corpus-register.md)
-- [G-01 Precedent Annotation Schema](g01-annotation-schema.md)
-- [G-01 Trial Cases](g01-cases/README.md)
-- [G-01 Topology Comparison](g01-topology-comparison.md)
-- [G-01 Dimensional and Proportional Analysis](g01-dimensional-analysis.md)
-- [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md)
-- [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md)
-
-The framework has been exercised, but G-01 remains research-incomplete and has not been externally validated. No universal room-ratio rule has been established.
+The computational model must remain capable of distinguishing grammar conformance from HSA doctrine, technical validity, supported-domain status and project requirements. G-01 is therefore an input that may be checked where formalisation is justified, not a hidden default of the compiler.
 
 ## Supported H1 research domain
 
