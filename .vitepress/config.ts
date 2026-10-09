@@ -20,6 +20,18 @@ function resolveBuildCommit(): string {
 
 const buildCommit = resolveBuildCommit()
 
+const siteNav = nav.map((item) => {
+  if (item.text !== 'Project' || !('items' in item) || !item.items) return item
+
+  return {
+    ...item,
+    items: [
+      ...item.items,
+      { text: 'Source repository', link: 'https://github.com/adamnoden/architecture' }
+    ]
+  }
+})
+
 // Mermaid stays authored as fenced Markdown; the wrapper only supplies VitePress rendering.
 export default withMermaid(
   defineConfig({
@@ -57,11 +69,8 @@ export default withMermaid(
       },
       sidebarMenuLabel: 'Contents',
       nav: [
-        ...nav,
+        ...siteNav,
         { text: 'Download PDF', link: '/architecture/house-systems-architecture.pdf' }
-      ],
-      socialLinks: [
-        { icon: 'github', link: 'https://github.com/adamnoden/architecture' }
       ],
       sidebar
     }
