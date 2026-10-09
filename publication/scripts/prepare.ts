@@ -13,7 +13,8 @@ import {
 } from 'node:fs'
 import { dirname, posix, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { smokePublicationEntries } from '../publication.js'
+import { applyAdapter, dependenciesForAdapter } from '../adapters.js'
+import { publicationEntries, smokePublicationEntries, type PublicationEntry } from '../publication.js'
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(scriptDirectory, '../..')
@@ -23,9 +24,12 @@ const workSourceRoot = resolve(workRoot, 'source')
 const liveBaseUrl = 'https://adamnoden.github.io/architecture/'
 const markdownLinkPattern = /(?<!!)\[[^\]]+\]\(([^\s)]+)([^)]*)\)/g
 
-if (!process.argv.includes('--smoke')) {
-  throw new Error('Only the G1 --smoke publication mode is admitted before G2.')
-}
+const smokeMode = process.argv.includes('--smoke')
+const fullMode = process.argv.includes('--full')
+if (smokeMode === fullMode) throw new Error('Choose exactly one publication mode: --smoke or --full.')
+
+const entries: readonly PublicationEntry[] = smokeMode ? smokePublicationEntries : publicationEntries
+const mode = smokeMode ? 'smoke' : 'full'
 
 function sha256(path: string): string {
   return createHash('sha256').update(readFileSync(path)).digest('hex')
@@ -45,10 +49,7 @@ function resolveCanonicalTarget(source: string, hrefPath: string): string | null
   if (target.startsWith('../') || target === '..') return null
 
   const absolute = repoPath(target)
-  if (existsSync(absolute) && lstatSync(absolute).isDirectory()) {
-    target = posix.join(target, 'README.md')
-  }
-
+  if (existsSync(absolute) && lstatSync(absolute).isDirectory()) target = posix.join(target, 'README.md')
   return target
 }
 
@@ -58,7 +59,6 @@ function liveUrlFor(target: string, suffix: string): string {
   let route = target
   if (route.endsWith('/README.md')) route = route.slice(0, -'README.md'.length)
   else if (route.endsWith('.md')) route = route.slice(0, -'.md'.length)
-
   return `${liveBaseUrl}${route}${suffix}`
 }
 
@@ -86,7 +86,6 @@ function rewritePublicationLinks(source: string, markdown: string, included: Set
     const rewrittenHref = included.has(target)
       ? internalHtmlHref(source, target, suffix)
       : liveUrlFor(target, suffix)
-
     return whole.replace(`${rawHref}${tail})`, `${rewrittenHref}${tail})`)
   })
 }
@@ -107,23 +106,21 @@ mkdirSync(workSourceRoot, { recursive: true })
 cpSync(repoPath('docs'), workPath('docs'), { recursive: true })
 copyFileSync(repoPath('README.md'), workPath('README.md'))
 
-const canonicalHashes = new Map(
-  smokePublicationEntries.map((entry) => [entry.source, sha256(repoPath(entry.source))])
+const canonicalSources = new Set(
+  entries.flatMap((entry) => [entry.source, ...dependenciesForAdapter(entry.adapter)])
 )
-const included = new Set(smokePublicationEntries.map((entry) => entry.source))
+const canonicalHashes = new Map([...canonicalSources].map((source) => [source, sha256(repoPath(source))]))
+const included = new Set(entries.map((entry) => entry.source))
 
-for (const entry of smokePublicationEntries) {
+for (const entry of entries) {
   const preparedPath = workPath(entry.source)
   let markdown = readFileSync(preparedPath, 'utf8')
+  markdown = applyAdapter(entry.adapter, markdown, { repoRoot, workSourceRoot })
 
   if (markdown.includes('```mermaid')) {
     const renderedPath = `${preparedPath}.mmdc.md`
     const mermaidArgs = ['-i', preparedPath, '-o', renderedPath, '-t', 'neutral', '-b', 'transparent']
-
-    if (process.env.CI) {
-      mermaidArgs.unshift('-p', resolve(publicationRoot, 'puppeteer.ci.json'))
-    }
-
+    if (process.env.CI) mermaidArgs.unshift('-p', resolve(publicationRoot, 'puppeteer.ci.json'))
     execFileSync('mmdc', mermaidArgs, { stdio: 'inherit' })
     renameSync(renderedPath, preparedPath)
     markdown = readFileSync(preparedPath, 'utf8')
@@ -134,25 +131,24 @@ for (const entry of smokePublicationEntries) {
   writeFileSync(preparedPath, markdown)
 }
 
-for (const entry of smokePublicationEntries) {
-  const before = canonicalHashes.get(entry.source)
-  const after = sha256(repoPath(entry.source))
-  if (before !== after) throw new Error(`Preparation mutated canonical source: ${entry.source}`)
+for (const [source, before] of canonicalHashes) {
+  const after = sha256(repoPath(source))
+  if (before !== after) throw new Error(`Preparation mutated canonical source: ${source}`)
 }
 
 writeFileSync(
   resolve(workRoot, 'build.json'),
   JSON.stringify(
     {
-      mode: 'smoke',
-      title: 'House Systems Architecture — Publication Smoke',
+      mode,
+      title: smokeMode ? 'House Systems Architecture — Publication Smoke' : 'House Systems Architecture — Working Edition',
       language: 'en-GB',
-      output: 'house-systems-architecture-smoke.pdf',
-      entries: smokePublicationEntries
+      output: smokeMode ? 'house-systems-architecture-smoke.pdf' : 'house-systems-architecture.pdf',
+      entries
     },
     null,
     2
   )
 )
 
-console.log(`Prepared ${smokePublicationEntries.length} publication smoke entries in publication/.work.`)
+console.log(`Prepared ${entries.length} ${mode} publication entries in publication/.work.`)

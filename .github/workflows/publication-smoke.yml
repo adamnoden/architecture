@@ -1,4 +1,4 @@
-name: Publication smoke
+name: Publication pipeline
 
 on:
   push:
@@ -7,7 +7,8 @@ on:
     paths:
       - 'publication/**'
       - 'docs/manuscript/**'
-      - 'docs/patterns/controlled-utility-entry.md'
+      - 'docs/patterns/**'
+      - 'docs/reference-house/**'
       - 'README.md'
       - 'package.json'
       - 'tsconfig.json'
@@ -16,7 +17,8 @@ on:
     paths:
       - 'publication/**'
       - 'docs/manuscript/**'
-      - 'docs/patterns/controlled-utility-entry.md'
+      - 'docs/patterns/**'
+      - 'docs/reference-house/**'
       - 'README.md'
       - 'package.json'
       - 'tsconfig.json'
@@ -27,7 +29,7 @@ permissions:
   contents: read
 
 jobs:
-  smoke:
+  publication:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -48,7 +50,7 @@ jobs:
       - name: Build publication smoke PDF
         run: npm run publication:build:smoke
 
-      - name: Verify PDF exists
+      - name: Verify smoke PDF exists
         run: test -s publication/dist/house-systems-architecture-smoke.pdf
 
       - name: Upload smoke PDF
@@ -56,4 +58,17 @@ jobs:
         with:
           name: publication-smoke-pdf
           path: publication/dist/house-systems-architecture-smoke.pdf
+          if-no-files-found: error
+
+      - name: Build full Working Edition PDF
+        run: npm run publication:build
+
+      - name: Verify Working Edition PDF exists
+        run: test -s publication/dist/house-systems-architecture.pdf
+
+      - name: Upload Working Edition PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-working-edition
+          path: publication/dist/house-systems-architecture.pdf
           if-no-files-found: error
