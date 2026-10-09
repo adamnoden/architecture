@@ -355,20 +355,12 @@ const editorialSidebar: DefaultTheme.SidebarItem[] = [
   ], false)
 ]
 
-const sourceSidebar: DefaultTheme.SidebarItem[] = [
-  group('Source archive', [
-    page('Source overview', '/docs/source/'),
-    page('House Design Doctrine v7', '/docs/source/house-design-doctrine-v7')
-  ], false)
-]
-
 const projectSidebar: DefaultTheme.SidebarItem[] = [
   group('Project records', [
     page('Project status', '/STATUS'),
     page('Documentation structure', '/docs/'),
     page('Development', '/docs/development/'),
-    page('Editorial', '/docs/editorial/'),
-    page('Source archive', '/docs/source/')
+    page('Editorial', '/docs/editorial/')
   ], false)
 ]
 
@@ -398,8 +390,7 @@ export const nav: DefaultTheme.NavItem[] = [
       { text: 'Project status', link: '/STATUS' },
       { text: 'Documentation structure', link: '/docs/' },
       { text: 'Development records', link: '/docs/development/' },
-      { text: 'Editorial system', link: '/docs/editorial/' },
-      { text: 'Source archive', link: '/docs/source/' }
+      { text: 'Editorial system', link: '/docs/editorial/' }
     ]
   }
 ]
@@ -415,7 +406,6 @@ export const sidebar = {
   '/docs/computational/': computationalSidebar,
   '/docs/development/': developmentSidebar,
   '/docs/editorial/': editorialSidebar,
-  '/docs/source/': sourceSidebar,
   '/docs/reading-guide': startSidebar,
   '/STATUS': projectSidebar,
   '/docs/': projectSidebar,

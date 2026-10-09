@@ -33,7 +33,6 @@ The repository remains the source of truth. The website renders the repository M
 | [`delivery/`](delivery/) | Translation into requirements, responsibilities and stage decisions for an appointed design team | Exploratory research or publication argument |
 | [`computational/`](computational/) | The bounded executable-architecture research track, including paper models, gate results and compiler provenance | The architectural doctrine, pattern language or architectural grammar themselves |
 | [`editorial/`](editorial/) | Writing modes, editorial controls and rewrite protocol | Architectural claims or project status |
-| [`source/`](source/) | Frozen source material retained for provenance and traceability | Live doctrine |
 
 ## Canonicality
 
@@ -47,7 +46,6 @@ A filename existing in `docs/` does not make it current or canonical.
 - **Development** contains both live programme controls and closed historical controls. A completed phase document may accurately describe an earlier next step without describing the project’s current next step.
 - **Prototype** records are evidence about specific propositions, including negative evidence. No physical prototype result should be inferred merely from the existence of a build pack or protocol.
 - The **computational paper programme, P0 kernel and PAT-XW-01 gate are complete at their stated scopes**. Generic compiler growth is frozen; later fixtures are evidence-selected rather than a standing roadmap.
-- [`source/house-design-doctrine-v7.md`](source/house-design-doctrine-v7.md) is preserved source material, not the live book.
 - [`../STATUS.md`](../STATUS.md) is the canonical answer to “where are we now?”. When older control documents contain superseded sequencing, the later explicit gate/result record and `STATUS.md` control.
 
 ## Placement rule
