@@ -1,18 +1,18 @@
 # House Systems Architecture
 
-Architectural drawings and specifications are usually concerned with a house at or near completion. The building spends almost all of its life afterwards. Pipes leak, equipment is replaced, finishes wear, rooms are altered, and access that looked adequate on a drawing can prove useless once a person, tool or replacement component has to pass through it. Structure, envelope, services and fit-out change at different rates, but they continue to occupy the same building.
+A house spends almost all of its life after completion. It is not one thing ageing at one rate. Structure may stand for generations while services, equipment, seals and finishes are repaired, altered and replaced around it. When those different lifetimes are physically coupled, a change to a short-lived component can require longer-lived fabric to be opened, cut and remade. Those lifetimes, and the interfaces between them, are architectural material.
 
-**House Systems Architecture (HSA)** is a design-research programme for that longer life. It treats the house as a set of interacting architectural and technical systems with different functions, lifetimes and rates of change. Its central concern is how those systems meet: whether repair and replacement can remain local, foreseeable failures can be detected and contained, maintenance has enough working space, and change in one layer can avoid needless destruction of another.
+**House Systems Architecture (HSA)** is a design-research programme for the house considered across that longer life. Its central concern is how architectural and technical systems meet: whether repair and replacement can remain local, foreseeable failures can be detected and contained, maintenance has enough working space, and one layer can change without needless destruction of another.
 
-HSA does not try to make every part of a house equally reversible. Capacity for change is concentrated where it is likely to repay its cost. Serviceability sits alongside settled spatial order, passive-first environmental design, ordinary replaceable parts, explicit interfaces, workmanship robustness and architectural repose. Unusual propositions are still judged against life safety, building physics, whole-life cost and carbon, construction reality and architectural quality.
+HSA does not propose a house in which everything comes apart. Capacity for change is concentrated where it earns its cost; elsewhere durability, simplicity and settled construction should win. Serviceability is one architectural demand among others. Any unusual proposition must still survive life safety, building physics, whole-life cost and carbon, ordinary workmanship and the quality of the rooms it produces.
 
-The aim is not a visibly technical house. Ideally the opposite is true: rooms can feel settled and permanent because the shorter-lived systems around them have somewhere else to change.
+The aim is not a visibly technical house. The opposite should be possible: rooms can feel settled and permanent because the things that must change have been given somewhere else to go.
 
 ## The proposition
 
-HSA starts from a simple observation: a component rarely fails or changes in isolation. What matters is not only how long the component lasts, but what else must be disturbed when it moves, fails or is replaced.
+Replaceability is not a property of the component alone. It is also a property of the relationships around it. A component can be ordinary, inexpensive and nominally replaceable yet still be destructive to change because reaching, disconnecting or withdrawing it requires sound fabric to be removed.
 
-A cable route that requires masonry to be chased again, a valve that is technically visible but cannot be worked on, and a window whose removal destroys otherwise sound finishes are different manifestations of the same problem. The shorter-lived thing has been coupled unnecessarily to the longer-lived building around it.
+A cable route that requires masonry to be chased again, a valve that can be seen but not worked on, and a window whose removal destroys otherwise sound finishes are different manifestations of the same condition. The shorter-lived thing has been coupled unnecessarily to the longer-lived building around it.
 
 The project therefore develops several recurring propositions:
 
