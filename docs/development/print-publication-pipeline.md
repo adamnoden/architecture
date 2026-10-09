@@ -1,14 +1,14 @@
 # Print publication pipeline — implementation record
 
-**Status:** **G0–G5 PASS; G6 active**  
-**Branch:** `print-publication-pipeline`  
-**PR:** #26 — *Build first-class print publication pipeline*  
-**Started:** 2026-10-09  
+**Status:** **COMPLETE — G0–G6 PASS**  
+**Merged:** PR #26 — *Build first-class print publication pipeline*  
+**Implementation merge:** `1504786299722487e9a4a5a2520a53ad89a5c1bf` (`1504786`)  
+**Started / completed:** 2026-10-09  
 **Editorial authority:** [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)  
 **Scope crosswalk:** [`print-publication-scope-crosswalk.md`](print-publication-scope-crosswalk.md)  
 **Editorial proof:** [`print-publication-editorial-proof.md`](print-publication-editorial-proof.md)
 
-This document is the recovery and maintenance record for the House Systems Architecture Working Edition PDF. The repository must remain sufficient to resume or repair the system without relying on chat history.
+This is the durable maintenance record for the House Systems Architecture Working Edition PDF. The implementation is complete; future work should treat the pipeline as ordinary project infrastructure rather than a separate initiative.
 
 ## Final architecture
 
@@ -35,19 +35,19 @@ canonical Markdown / SVG / Mermaid
                              GitHub Pages
 ```
 
-The website and PDF are sibling renderers over the same source. The website is for navigation, audit and project state; the PDF is the linear publication; the repository owns source, development history and executable work.
+The website and PDF are sibling renderers over the same canonical source. The website is for navigation, audit and live project state; the PDF is the linear publication; the repository owns source, development history and executable work.
 
 ## Durable implementation
 
 ```text
 publication/
-  publication.ts          # 45-entry Working Edition manifest
+  publication.ts          # Working Edition compile manifest
   adapters.ts             # deterministic print-only composition/adaptation
   vivliostyle.config.js   # title, contents and renderer configuration
   theme.css               # A4 duplex print system
   puppeteer.ci.json       # isolated CI-only Mermaid Chromium workaround
   scripts/
-    prepare.ts             # disposable workspace, link rewriting, Mermaid
+    prepare.ts             # disposable workspace, links, Mermaid derivation
     validate.ts            # source/manifest invariants
 ```
 
@@ -62,9 +62,9 @@ The full npm dependency closure is committed in `package-lock.json`; CI uses `np
 
 ## Publication rules
 
-1. Canonical prose remains in the existing Markdown tree. No duplicate print manuscript.
+1. Canonical prose remains in the existing Markdown tree. There is no duplicate print manuscript.
 2. `docs/manuscript/publication-architecture.md` owns editorial scope and sequence meaning.
-3. `publication/publication.ts` owns only mechanical compile order and print metadata.
+3. `publication/publication.ts` owns mechanical compile order only.
 4. Print-only composition belongs in `publication/adapters.ts`; it must not silently redefine architectural claims.
 5. Mermaid fenced source remains canonical; print SVGs are derived artifacts.
 6. Research, development history and the computational track do not enter the monograph merely because they exist in the repo.
@@ -73,135 +73,94 @@ The full npm dependency closure is committed in `package-lock.json`; CI uses `np
 9. Missing sources, duplicate entries, unsupported dynamic constructs, failed Mermaid rendering, residual local repository links and failed PDF production are hard build errors.
 10. Page count is an outcome, not a target.
 
+## Production Pages contract
+
+Every push to `main` now uses `.github/workflows/docs-pages.yml` to:
+
+1. check out one commit;
+2. install the locked dependency graph with `npm ci`;
+3. run the repository tests and publication validation;
+4. build the Working Edition PDF;
+5. fail if the PDF is absent;
+6. build VitePress;
+7. copy the PDF to `.vitepress/dist/house-systems-architecture.pdf`;
+8. upload one Pages artifact;
+9. deploy that artifact to GitHub Pages.
+
+The website and downloadable PDF therefore necessarily originate from the same commit.
+
 ## Current Working Edition
 
-The current edition is **213 A4 pages** and includes:
-
-- title / Working Edition metadata;
-- controlled two-page contents;
-- Preface;
-- authored Reader's Guide with abstract, definitions, evidence/maturity legend and governing constraints;
-- Parts I–V;
-- 21 canonical patterns, three strategies and four held candidates;
-- current publication-facing Reference House material;
-- print-specific title/hierarchy composition without duplicating canonical source.
+The implementation-closeout edition is **213 A4 pages** and contains title/edition metadata, controlled contents, Preface, Reader's Guide, Parts I–V, 21 canonical patterns, three strategies, four held candidates and the current publication-facing Reference House material.
 
 Print design is A4 portrait, duplex/facing-page aware, binding-margin aware and black-and-white safe. Major Parts begin recto. Figures remain vector where source permits. Tables, code, widows/orphans and running furniture have explicit print rules.
 
-## Editorial boundary established by print proof
-
-The whole-book proof retained evidence discipline while removing repository/process residue from the linear reading path.
-
-Keep in print:
-
-- stable pattern identities;
-- Evidence and Maturity;
-- `Does not prove` boundaries;
-- meaningful architectural provenance;
-- explicit uncertainty and candidate status.
-
-Keep outside the primary print path where possible:
-
-- raw filenames and repository paths;
-- internal phase/gate terminology;
-- migration bookkeeping;
-- repetitive document-control furniture;
-- excluded computational-track comparators.
-
 The Reference House remains honestly provisional. Do not manufacture the six future publication chapters by renaming current development records. Missing Site/type, water/environmental and future-maintenance chapters are normal future HSA work.
 
-## G0–G4 — PASS
+## Verification record
 
-Detailed decisions and findings remain in the scope crosswalk and editorial-proof ledger.
+### G0–G4
 
-Key verified outcomes:
+The compatibility, full-publication, typography and whole-book editorial gates all passed. Detailed findings remain in the scope crosswalk and editorial-proof ledger.
 
-- direct Markdown → Vivliostyle path proved on representative sources;
-- canonical sources remain unmodified by build preparation;
-- Pattern index Vue content has a deterministic static print adapter;
-- Part I/II canonical inserts compose at their intended positions;
-- Part III/IV retain canonical source ownership;
-- full Working Edition builds successfully;
-- artifact visually reviewed in grayscale and duplex-oriented contact sheets;
-- representative Poppler/PDFium rendering agrees;
+Key verified properties include:
+
+- canonical sources are not mutated by build preparation;
+- Vue-generated Pattern index content has a deterministic print representation;
+- canonical Part I/II inserts compose at their intended positions;
+- Parts III/IV retain canonical source ownership;
+- evidence/maturity and `Does not prove` boundaries survive print while repository/migration bureaucracy stays out of the primary reading path;
 - all fonts are embedded/subset;
-- final user-facing PDF links contain no `localhost`, filesystem, runner-path or raw `.md` destinations;
-- whole-book editorial proof completed and recorded.
+- representative Poppler/PDFium rendering agrees;
+- user-facing PDF links contain no `localhost`, filesystem, runner-path or raw `.md` destinations.
 
-## G5 — deterministic CI and website delivery — PASS on branch
+### G5
 
-The complete production build contract has been proven on `print-publication-pipeline`.
+Deterministic combined site/PDF build passed with read-only CI permissions before production integration. The assembled preview contained both `index.html` and `house-systems-architecture.pdf`, and its rendered navigation target was verified as `/architecture/house-systems-architecture.pdf`.
 
-Verified:
+### G6 — merge and production closeout
 
-- [x] `package-lock.json` generated in Linux CI and committed;
-- [x] `npm ci --no-audit --no-fund` succeeds on Node 24;
-- [x] P0 tests 17/17 and PAT-XW-01 tests 6/6 remain green;
-- [x] publication validation succeeds with 45 Working Edition entries;
-- [x] smoke PDF builds;
-- [x] full Working Edition PDF builds;
-- [x] VitePress build succeeds from the same checkout;
-- [x] PDF is copied to `.vitepress/dist/house-systems-architecture.pdf`;
-- [x] combined site artifact contains both `index.html` and the PDF;
-- [x] high-level **Download PDF** nav item added;
-- [x] rendered nav target verified as `/architecture/house-systems-architecture.pdf`;
-- [x] VitePress navigation-coverage invariant retained and new publication pages classified properly;
-- [x] production `.github/workflows/docs-pages.yml` now uses the same locked build/assembly sequence;
-- [x] temporary branch-only publication workflow removed after successful proof.
+PR #26 was merged to `main` at commit `1504786299722487e9a4a5a2520a53ad89a5c1bf`.
 
-The clean combined branch proof used read-only permissions and successfully completed install, tests, PDF build, site build, assembly and artifact upload. The public live deployment itself is intentionally verified only after merge in G6.
+Production GitHub Pages workflow run `37938502579` passed both build and deploy jobs. GitHub deployment `ed56d6c125590e0ac0e2f15c6649ee80` deployed the site to `https://adamnoden.github.io/architecture/`.
 
-## Production Pages contract
+The exact Pages artifact deployed by GitHub (artifact `11619791208`) was downloaded and inspected:
 
-On every push to `main`, `.github/workflows/docs-pages.yml` now:
+- `index.html` present;
+- `house-systems-architecture.pdf` present;
+- rendered **Download PDF** href: `/architecture/house-systems-architecture.pdf`;
+- site build meta: full merge commit `1504786299722487e9a4a5a2520a53ad89a5c1bf`;
+- PDF title: **House Systems Architecture — Working Edition**;
+- PDF: **213 A4 pages**, unencrypted, no forms or JavaScript;
+- PDF title page revision: `1504786`;
+- deployed PDF SHA-256: `2398f6fb1d8f2793daf046f50178c5c27e1129e63b24246a0462a621bd21f264`.
 
-1. checks out one commit;
-2. installs with `npm ci`;
-3. runs the repository test suite and publication validation;
-4. builds the Working Edition PDF;
-5. fails if the PDF is absent;
-6. builds VitePress;
-7. copies that PDF into `.vitepress/dist/house-systems-architecture.pdf`;
-8. uploads one Pages artifact;
-9. deploys that artifact to GitHub Pages.
-
-Therefore the website and downloadable Working Edition necessarily originate from the same commit.
+Direct DNS access to the public GitHub Pages domain was unavailable from the implementation tool environment, so live-byte verification used the exact `github-pages` artifact referenced by the successful GitHub deployment. That artifact is the deploy job's source payload, not a separate local rebuild.
 
 ## Known renderer warning
 
-Poppler reports that some Vivliostyle named-destination tokens are longer than the PDF specification recommends. This remains documented rather than suppressed.
+Poppler reports that some Vivliostyle named-destination tokens are longer than the PDF specification recommends. The warning was reproduced on the exact deployed Pages PDF.
 
-Current evidence:
+It remains non-blocking because:
 
-- PDF opens correctly;
+- the PDF opens correctly;
 - internal links resolve;
 - fonts are embedded;
 - representative Poppler/PDFium rendering agrees;
 - user-facing URI annotations are clean.
 
-Recheck after material Vivliostyle upgrades and once more on the live merged artifact. It is currently non-blocking.
+Do not hide the warning. Recheck after material Vivliostyle upgrades.
 
-## G6 — merge and live closeout — ACTIVE
+## Maintenance / recovery protocol
 
-Remaining acceptance:
+If the publication build fails in future:
 
-- [ ] review branch diff for accidental authority/content changes;
-- [ ] recheck publication dependency/tool assumptions against current upstream documentation where material;
-- [ ] ensure final PR checks are green;
-- [ ] merge PR #26 to `main`;
-- [ ] observe the production Pages workflow from the merged commit;
-- [ ] verify live website **Download PDF** navigation;
-- [ ] open the live PDF and check title/edition metadata, page count and representative rendering;
-- [ ] recheck the known named-destination warning on the merged artifact;
-- [ ] confirm live website and PDF identify the same merged commit;
-- [ ] close the implementation branch/PR cleanly.
+1. reproduce with the same `npm ci`, `npm test`, `npm run publication:build`, `npm run docs:build` sequence used by Pages;
+2. read `docs/manuscript/publication-architecture.md` before changing publication scope;
+3. treat `publication/publication.ts` as compile order, not editorial authority;
+4. keep generated state disposable;
+5. add a print adapter only when web/repository source legitimately needs a different publication representation;
+6. never weaken source, navigation or link validation merely to make the PDF compile;
+7. re-run PDF preflight and representative visual review after renderer/tool upgrades.
 
-## Recovery protocol
-
-If interrupted during G6:
-
-1. inspect PR #26 and branch `print-publication-pipeline`;
-2. confirm the latest branch head and checks;
-3. do not redo G0–G5 unless the diff changed relevant files;
-4. continue from the first unchecked G6 item above;
-5. after merge, treat the `main` Pages workflow and the live site/PDF as the final source of truth.
+The print pipeline is now ordinary project infrastructure. Future PDF improvements should be driven by publication or architectural needs, not by pipeline novelty.
