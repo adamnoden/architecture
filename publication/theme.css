@@ -173,6 +173,11 @@ body.publication-contents-page {
   margin: 0;
 }
 
+/* Vivliostyle supplies the publication title above the inserted nav. */
+body.publication-contents-page > h1 {
+  display: none;
+}
+
 nav[role="doc-toc"] {
   max-width: 150mm;
   margin: 0 auto;
@@ -325,9 +330,13 @@ h6 {
   line-height: 1.25;
 }
 
-/* Major publication Parts always start on a recto page. */
+/* Front matter and major publication Parts begin on recto pages. */
+h1#preface--the-obvious-eventually,
 h1[id^="part-"] {
   break-before: recto;
+}
+
+h1[id^="part-"] {
   margin-top: 28mm;
   margin-bottom: 14mm;
   max-width: 145mm;
