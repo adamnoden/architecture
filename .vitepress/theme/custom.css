@@ -142,6 +142,42 @@
 }
 
 /*
+ * Search is a site utility rather than part of the identity block. Keep the
+ * primary navigation together, then place search with the right-hand controls.
+ */
+@media (min-width: 768px) {
+  .VPNavBar .content-body > .menu {
+    order: 1;
+  }
+
+  .VPNavBar .content-body > .translations {
+    order: 2;
+  }
+
+  .VPNavBar .content-body > .search {
+    order: 3;
+    flex-grow: 0;
+    padding-left: 24px;
+  }
+
+  .VPNavBar .content-body > .appearance {
+    order: 4;
+  }
+
+  .VPNavBar .content-body > .social-links {
+    order: 5;
+  }
+
+  .VPNavBar .content-body > .extra {
+    order: 6;
+  }
+
+  .VPNavBar .content-body > .hamburger {
+    order: 7;
+  }
+}
+
+/*
  * The root is an editorial front door, not another documentation leaf.
  * It keeps the shared navigation and Markdown source while shedding the
  * documentation chrome and opening a wider canvas for the project map.
