@@ -1,281 +1,299 @@
 # Print publication pipeline — implementation record
 
-**Status:** active implementation  
+**Status:** active implementation — **G1 passed; G2 next**  
 **Branch:** `print-publication-pipeline`  
+**Draft PR:** #26 — *Build first-class print publication pipeline*  
 **Started:** 2026-10-09  
 **Editorial authority:** [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)
 
-This file is the durable control record for turning the House Systems Architecture publication into a first-class printable PDF. It exists so the work can resume safely after chat loss, interrupted sessions, CI failures or partial implementation. Update it before advancing a gate.
+This is the durable control record for turning House Systems Architecture into a first-class printable publication. It is intentionally sufficient to resume work after chat loss, interrupted sessions, CI failures or partial implementation. Update this file before advancing a gate.
 
 ## Objective
 
-Produce a continuously buildable **House Systems Architecture — Working Edition** PDF from the same canonical Markdown and figure sources used by the repository and documentation site.
+Produce a continuously buildable **House Systems Architecture — Working Edition** PDF from the same canonical Markdown, SVG and Mermaid sources used by the repository and documentation site.
 
-The PDF is the linear publication, not a dump of the website or repository. Website navigation remains governed by `.vitepress/navigation.ts`; publication order remains governed editorially by `docs/manuscript/publication-architecture.md`.
-
-The intended division is:
+The PDF is the linear publication, not a dump of the website or repository.
 
 - **website:** navigation, exploration, audit, provenance and live project state;
 - **PDF:** sustained linear reading of the architectural publication;
 - **repository:** source ownership, history, development records and executable work.
 
+Website navigation remains governed by `.vitepress/navigation.ts`. Publication meaning and scope remain governed by `docs/manuscript/publication-architecture.md`.
+
 ## Locked implementation decisions
 
-1. **Canonical content stays in the existing Markdown/SVG/Mermaid sources.** No duplicate manuscript tree is introduced.
-2. **VitePress remains the web renderer.** The PDF does not scrape or print the rendered website.
-3. **Vivliostyle CLI is the print renderer.** It consumes prepared Markdown directly and supplies paged-media layout, multi-document publication, contents, recto/verso control, running furniture and PDF output.
-4. **The build remains Node-based.** Avoid a second publishing language/toolchain unless a demonstrated blocker requires it.
-5. **Mermaid fenced source remains canonical.** The print preparation step generates temporary SVG derivatives; generated SVGs are not hand-maintained or promoted to source authority.
-6. **A small TypeScript publication manifest is the mechanical compilation order.** It does not duplicate the explanatory content of `publication-architecture.md`.
-7. **A4 portrait, duplex-first, black-and-white-safe** is the baseline physical target. Wide pages may later be used only where evidence shows they materially improve a figure/table.
-8. **The current PDF is always a Working Edition.** Named immutable editions may later be produced from tags/releases, but are not part of the first implementation.
-9. **The PDF build and website build must eventually derive from the same commit and deploy together.** The stable public PDF path should be `/architecture/house-systems-architecture.pdf`.
-10. **No stage may silently redefine publication scope.** If the source corpus exposes an editorial ambiguity, record it here and resolve it against the publication architecture before widening the build.
+1. Canonical content stays in the existing Markdown/SVG/Mermaid sources. No duplicate manuscript tree.
+2. VitePress remains the web renderer. Print does not scrape or browser-print the site.
+3. Vivliostyle CLI is the print renderer over prepared Markdown.
+4. The build remains Node-based unless a demonstrated blocker requires otherwise.
+5. Mermaid fenced source remains canonical; print SVGs are disposable derivatives.
+6. A small TypeScript manifest owns only mechanical compile order and print metadata. It must not become a second editorial outline.
+7. Baseline physical target is A4 portrait, duplex/facing-page aware and black-and-white safe.
+8. The rolling PDF is a **Working Edition**. Immutable named editions can later be cut from tags/releases.
+9. Website and PDF must ultimately build from the same commit and deploy together.
+10. Stable public target path is `/architecture/house-systems-architecture.pdf`.
+11. No build stage may silently redefine publication scope. Editorial ambiguity is resolved against the publication architecture before implementation widens.
 
 ## Non-goals
 
 The first implementation does not:
 
 - print every page in `docs/`;
-- promote research, development history, project status, computational work or delivery material into the monograph merely because they exist in the repository;
-- redesign the manuscript while solving build mechanics;
+- promote research, development history, status, computational work or delivery material into the monograph merely because it exists;
+- redesign the manuscript while solving renderer mechanics;
 - produce a coffee-table-book layout;
-- depend on JavaScript execution inside the final publication for semantic content;
-- commit generated PDFs or generated Mermaid SVGs as canonical sources;
-- establish version-numbering/release policy beyond the Working Edition.
+- depend on client-side JavaScript for semantic publication content;
+- commit generated Mermaid SVGs or generated PDFs as canonical source;
+- establish final release/versioning policy.
 
 ## Recovery protocol
 
-When resuming this work after an interruption:
+When resuming after any interruption:
 
 1. Read this file first.
 2. Read `docs/manuscript/publication-architecture.md` before changing publication scope.
-3. Inspect the current head of `print-publication-pipeline` and the latest commits.
-4. Start at the first gate below that is not marked **PASS**.
-5. Re-run that gate's verification before assuming previous transient results still hold.
-6. Do not widen the manuscript set, modify CI or merge to `main` while an earlier gate is unresolved.
-7. Record any new blocker, decision or deliberate deviation in this file before proceeding.
+3. Inspect branch `print-publication-pipeline`, draft PR #26 and the latest commits/checks.
+4. Start at the first gate below that is not **PASS**.
+5. Re-run that gate's verification before trusting transient prior results.
+6. Do not merge to `main` while an earlier gate is unresolved.
+7. Record new blockers, decisions or deliberate deviations here before moving on.
 
-A partially generated workspace or PDF is always disposable. Canonical state must be reconstructible from Git-tracked source plus pinned dependencies.
+Generated workspaces and PDFs are disposable. Canonical state must be reconstructible from Git-tracked source plus declared dependencies.
 
-## File architecture
-
-Target structure:
+## Implemented file architecture
 
 ```text
 publication/
-  publication.ts          # mechanical reading order + per-entry print metadata
-  vivliostyle.config.ts   # print build configuration
-  theme.css               # book typography / paged-media rules
-  frontmatter/            # print-only generated/static front matter where justified
+  publication.ts          # current mechanical manifest; G1 slice today
+  vivliostyle.config.js   # Vivliostyle build configuration
+  theme.css               # print rules; deliberately minimal until G3
+  puppeteer.ci.json       # CI-only Mermaid browser compatibility
   scripts/
-    prepare.ts             # validates/copies sources and derives print assets
-    validate.ts            # manifest/source invariants
+    prepare.ts             # disposable source prep, links, Mermaid derivation
+    validate.ts            # source/manifest invariants
   .work/                   # generated, ignored
-  dist/                    # generated, ignored except when copied into Pages output
+  dist/                    # generated, ignored
 ```
 
-Names may change if Vivliostyle's actual runtime contract makes a simpler structure preferable. The architectural roles above should remain stable.
+The existing G1 manifest is explicitly a compatibility slice, not the full book manifest.
 
 ## Publication-source rule
 
-The manifest should contain only enough information to compile the book, for example:
+The eventual manifest may say only what is mechanically necessary, for example:
 
 ```ts
 {
   source: 'docs/manuscript/part-i.md',
   title: 'Part I — The Proposition',
-  kind: 'part',
-  pageBreakBefore: 'recto'
+  kind: 'part'
 }
 ```
 
-It must not become another prose outline of the book.
+Descriptions of what a chapter means belong in `publication-architecture.md`, not in build configuration.
 
-Likely exclusions from the primary PDF include:
+Known primary-PDF exclusions include root `README.md`, `docs/reading-guide.md`, `docs/manuscript/publication-architecture.md`, `STATUS.md`, development/history records, the computational track as a standalone manuscript part and the separate architect-facing implementation brief unless the publication architecture later says otherwise.
 
-- root `README.md`;
-- `docs/reading-guide.md`;
-- `docs/manuscript/publication-architecture.md`;
-- `STATUS.md`;
-- development/history/provenance records except material deliberately incorporated by the publication architecture;
-- the computational track as a standalone manuscript part;
-- the separate architect-facing implementation brief.
+# Gate record
 
-## Gate plan
-
-### G0 — durable control and branch isolation
+## G0 — durable control and branch isolation — PASS
 
 **Purpose:** make the work recoverable before experimentation.
 
-Acceptance:
+- [x] dedicated `print-publication-pipeline` branch;
+- [x] durable implementation/recovery record;
+- [x] draft PR #26 exposing branch purpose and state in GitHub.
 
-- [x] dedicated branch exists;
-- [x] this implementation record exists;
-- [ ] draft PR exists so branch purpose and current state remain visible from GitHub UI.
+## G1 — renderer compatibility vertical slice — PASS
 
-**Status:** IN PROGRESS
+**Purpose:** prove representative canonical sources survive the direct prepared-Markdown → Vivliostyle path before designing the book.
 
-### G1 — renderer compatibility vertical slice
+### Slice exercised
 
-**Purpose:** prove that representative canonical sources survive a direct Markdown → Vivliostyle path before designing the book.
+- `docs/manuscript/preface.md` — long-form prose;
+- `docs/manuscript/part-i.md` — long chapter hierarchy, notes and links;
+- `docs/manuscript/governing-principles.md` — cross-document internal links;
+- `docs/manuscript/principle-08-repose.md` — owned SVG figure + authored caption;
+- `docs/patterns/controlled-utility-entry.md` — YAML frontmatter + canonical pattern links;
+- root `README.md` — **smoke-only** Mermaid fixture; it is not thereby admitted to the book.
 
-Representative material must cover:
+### Acceptance
 
-- long-form manuscript prose and heading hierarchy;
-- frontmatter-bearing canonical pattern source;
-- internal relative links;
-- footnotes/references where present;
-- ordinary SVG/image assets;
-- Mermaid fenced diagrams converted to derived SVG;
-- multi-document publication order.
+- [x] publication tool versions exact-pinned in `package.json` (`@vivliostyle/cli` 11.3.3; `@mermaid-js/mermaid-cli` 11.17.0);
+- [x] `npm run publication:validate` succeeds in CI;
+- [x] preparation creates only a disposable ignored workspace;
+- [x] Mermaid fences become derived SVG without rewriting canonical source;
+- [x] Vivliostyle builds one non-empty A4 PDF;
+- [x] selected canonical files are hash-checked before/after preparation;
+- [x] YAML frontmatter does not leak into visible publication prose;
+- [x] included Markdown cross-links become internal PDF destinations rather than `*.md` browser URLs;
+- [x] links to repository material excluded from the slice become stable live-site URLs;
+- [x] ordinary owned SVG figures render;
+- [x] derived Mermaid SVG renders;
+- [x] VFM's synthetic image captions are suppressed while source alt text is retained;
+- [x] existing compiler tests still pass (P0 17/17; PAT-XW-01 6/6);
+- [x] final smoke PDF visually inspected after rendering to images.
 
-Initial candidate slice:
+### G1 execution findings
 
-1. `docs/manuscript/preface.md`
-2. `docs/manuscript/part-i.md`
-3. `docs/patterns/controlled-utility-entry.md`
-4. one source containing Mermaid and/or an owned SVG figure (select by inspection rather than fabricating test content)
+**1. The Pattern index needs an explicit print adapter in G2.**  
+`docs/patterns/README.md` contains VitePress/Vue-generated material (`<script setup>`, directives/template interpolation). Direct Markdown publication would silently lose content. Validation now treats raw Vue constructs as an error for selected publication sources. G2 must define the static publication representation deliberately rather than strip template code.
 
-Acceptance:
+**2. Part I currently uses authored numbered Notes rather than Markdown footnotes.**  
+No footnote transformation is required to preserve the current source semantics.
 
-- [ ] dependencies pinned locally;
-- [ ] `npm run publication:validate` succeeds;
-- [ ] `npm run publication:prepare` creates a disposable workspace from canonical sources;
-- [ ] Mermaid fences in the slice become readable SVG references without changing source files;
-- [ ] Vivliostyle builds one A4 PDF from the prepared slice;
-- [ ] internal links do not point at local filesystem/repository garbage;
-- [ ] source frontmatter does not leak as visible prose;
-- [ ] no canonical source file is rewritten by the pipeline;
-- [ ] generated workspace is ignored by Git.
+**3. Cross-document publication links require `.html` preparation.**  
+Leaving canonical `.md` links intact caused Vivliostyle to encode local `localhost/.../*.md` destinations. The preparation step now converts links to included publication entries into relative `.html` targets. Links to excluded canonical documents become `https://adamnoden.github.io/architecture/...` URLs. The prepared slice asserts that no local Markdown links remain.
 
-**Status:** NOT STARTED
+**4. VFM treats image alt text as a visible `figcaption`.**  
+HSA sources already author publication captions separately. Printing VFM's synthetic caption duplicated the existing SVG caption and printed Mermaid's generic `diagram` alt text. The print theme therefore hides generated `figure > figcaption` while preserving alt text on the image itself.
 
-### G2 — full mechanical publication manifest
+**5. GitHub-hosted Ubuntu 24.04 blocks Mermaid's Chromium sandbox.**  
+Mermaid preparation uses a CI-only Puppeteer config containing `--no-sandbox`; normal local execution retains the ordinary sandboxed path. This is isolated to generated-diagram rendering rather than becoming a global browser setting.
+
+**6. Vivliostyle generates very long named PDF destinations.**  
+Poppler emits `name token is longer than what the specification says it can be` warnings when rasterising the smoke PDF. The document renders correctly and tested internal links resolve to the correct PDF pages. Treat this as a known non-blocking warning for now; re-evaluate during G3/G5 preflight rather than hiding it.
+
+**7. Dependency closure is not yet lockfile-frozen.**  
+The two publication tools are direct-version pinned, which is sufficient for the G1 compatibility result, but the repository still has no committed `package-lock.json`. A deterministic dependency closure is required before final CI/merge in G5/G6; after it exists, normal CI should prefer `npm ci`.
+
+### Final G1 verification
+
+The final compatibility artifact is a 30-page smoke PDF. Render review confirmed:
+
+- no duplicate synthetic caption on the Principle 8 SVG;
+- explicit authored Figure 8.1 caption remains;
+- Mermaid diagram visible with no printed `diagram` caption;
+- pattern YAML metadata absent from visible text;
+- internal destinations resolve inside the PDF;
+- excluded-document links resolve to the live documentation site.
+
+G1 is closed. Do not broaden G1 fixtures unless a later regression requires it.
+
+## G2 — full mechanical publication manifest — NEXT
 
 **Purpose:** encode the current publication architecture as a minimal compile order without redesigning it.
 
+Required work:
+
+1. perform an explicit publication-scope crosswalk against `docs/manuscript/publication-architecture.md`;
+2. classify each source as direct publication entry, publication insert/owned material, adapted index, or excluded supporting material;
+3. resolve dynamic publication-facing pages, beginning with `docs/patterns/README.md`, through deterministic static print adapters rather than copied prose;
+4. preserve Part III and Part IV canonical ownership rather than duplicating them under `manuscript/`;
+5. validate that all manifest entries exist, are unique and are compatible or explicitly adapted;
+6. build the entire book with only minimal compatibility styling;
+7. inspect the full output for missing content, broken assets/links and renderer pathologies.
+
 Acceptance:
 
-- [ ] all entries resolve to canonical source files;
-- [ ] no source is duplicated unintentionally;
-- [ ] historical/provenance material is excluded unless explicitly justified;
-- [ ] Parts III and IV use their canonical owners rather than copied manuscript duplicates;
-- [ ] an exclusion/scope review against `publication-architecture.md` is recorded;
-- [ ] full unstyled or minimally styled PDF builds successfully.
+- [ ] scope/exclusion crosswalk recorded;
+- [ ] full mechanical manifest exists;
+- [ ] all entries resolve to canonical source or deterministic adapter;
+- [ ] no unintended duplicates;
+- [ ] historical/provenance material excluded unless explicitly justified;
+- [ ] Parts III/IV retain canonical owners;
+- [ ] dynamic source adaptations are explicit and reproducible;
+- [ ] full minimally styled PDF builds successfully;
+- [ ] full-output structural/visual smoke review completed.
 
-**Status:** NOT STARTED
+## G3 — print semantics and typography
 
-### G3 — print semantics and typography
-
-**Purpose:** turn a mechanically correct PDF into a durable reading object.
+**Purpose:** turn the mechanically correct publication into a durable reading object.
 
 Baseline:
 
 - A4 portrait;
 - duplex/facing pages;
-- serif body / restrained sans heading system continuous with the site without imitating it;
-- approximately 65–75 characters per line;
-- generous inside/outside margins appropriate to binding/stapling;
+- serif body with restrained sans headings, continuous with but not imitative of the site;
+- roughly 65–75 characters per line;
+- binding-aware inside/outside margins;
 - recto starts for major Parts where proportionate;
 - running heads and outer page numbers;
 - no running furniture on title/major opening pages;
 - robust widows/orphans/page-break rules;
 - vector figures where source permits;
 - black-and-white-safe semantics;
-- sensible table and code treatment.
+- sensible tables/code treatment;
+- deliberate landscape/wide-page exception only when a real figure warrants it.
 
 Acceptance:
 
 - [ ] title page + Working Edition metadata;
 - [ ] generated contents;
-- [ ] page numbering and running heads stable;
-- [ ] major headings and figures do not produce pathological breaks;
-- [ ] representative duplex print review completed;
-- [ ] grayscale review completed.
+- [ ] page numbering/running heads stable;
+- [ ] no pathological heading/figure/table breaks;
+- [ ] representative duplex print review;
+- [ ] grayscale review;
+- [ ] PDF preflight, including re-check of long named-destination warnings.
 
-**Status:** NOT STARTED
+## G4 — whole-book editorial proof
 
-### G4 — whole-book editorial proof
+**Purpose:** use print as a test of the manuscript rather than hiding structural problems behind web navigation.
 
-**Purpose:** use print as a test of the manuscript rather than hiding structural problems with navigation.
+Review for duplicated argument, late definitions, web-only context, weak transitions, catalogue fatigue in Part III, missing publication-facing Reference House material, badly sequenced figures, print-hostile references and online-only material leaking into the book.
 
-Review for:
-
-- duplicated argument;
-- definitions arriving too late;
-- chapters that depend on web-only context;
-- weak transitions between Parts;
-- pattern-language catalogue fatigue;
-- missing publication-facing Reference House material;
-- figures introduced too early/late;
-- references that make sense online but fail linearly;
-- material that belongs online but has leaked into the book.
-
-Editorial changes belong in canonical source files and should be tracked separately from print-engine hacks.
+Editorial findings must change canonical source, not be patched in the print renderer.
 
 Acceptance:
 
 - [ ] end-to-end printed/print-preview read completed;
 - [ ] structural findings resolved or explicitly deferred;
-- [ ] publication manifest still matches editorial authority after changes.
+- [ ] publication manifest still matches editorial authority afterward.
 
-**Status:** NOT STARTED
+## G5 — CI and website delivery
 
-### G5 — CI and website delivery
-
-**Purpose:** make PDF generation ordinary and self-maintaining.
+**Purpose:** make publication generation ordinary and self-maintaining.
 
 Acceptance:
 
+- [ ] deterministic package lock committed;
+- [ ] CI uses the same npm commands as local development, preferably `npm ci` once locked;
 - [ ] existing tests still pass;
-- [ ] publication validation/build runs in GitHub Actions;
-- [ ] VitePress build and PDF build use the same checkout/commit;
-- [ ] PDF copied into `.vitepress/dist/house-systems-architecture.pdf` before Pages artifact upload;
+- [ ] full publication validation/build runs in Actions;
+- [ ] VitePress + PDF use the same checkout/commit;
+- [ ] PDF copied to `.vitepress/dist/house-systems-architecture.pdf` before Pages artifact upload;
 - [ ] build fails if publication compilation fails;
-- [ ] stable website download link added in an appropriate high-level location;
+- [ ] temporary branch-only smoke workflow is removed or folded into durable CI;
+- [ ] appropriate high-level website PDF link added;
 - [ ] live deployed PDF inspected;
-- [ ] build/recovery instructions documented.
+- [ ] recovery/build instructions complete.
 
-**Status:** NOT STARTED
-
-### G6 — merge and closeout
+## G6 — merge and closeout
 
 Acceptance:
 
 - [ ] branch diff reviewed for accidental content/authority changes;
-- [ ] dependency/tool choices rechecked against current upstream documentation;
+- [ ] dependency/tool assumptions rechecked against upstream documentation;
 - [ ] PR CI passes;
-- [ ] implementation record updated with final architecture and maintenance rule;
+- [ ] this record updated with final architecture and maintenance rule;
 - [ ] merged to `main`;
 - [ ] live Pages site and PDF verified from merged commit.
 
-**Status:** NOT STARTED
+# Resilience rules
 
-## Resilience rules
-
-- **Pin publication dependencies** in `package.json`/lockfile; do not depend on globally installed CLIs or `latest` during normal builds.
-- **Prefer deterministic local scripts** over shell pipelines embedded only in CI.
-- **CI calls the same npm commands used locally.** It must not contain a separate hidden implementation.
-- **Generated state is disposable.** `publication/.work`, generated Mermaid SVGs and built PDFs must be reproducible.
-- **Fail loudly on ambiguity.** Missing manifest sources, duplicate entries, failed Mermaid rendering or failed PDF production are build errors.
-- **Keep changes incremental.** A gate should end in a coherent commit and update this record before the next gate begins.
-- **Avoid tool lock-in in content.** Publication-specific directives should stay in the manifest/theme wherever possible rather than contaminating canonical Markdown.
-- **Do not parse prose to infer editorial order.** Mechanical order is explicit in the manifest; editorial meaning remains in the publication architecture.
-- **Do not make the website a build dependency for print.** Web and print are sibling renderers over common source.
+- Pin direct tool versions and commit a dependency lock before merge.
+- Prefer deterministic local scripts over CI-only shell implementations.
+- CI calls the same npm commands used locally.
+- Generated state is disposable and reconstructible.
+- Missing sources, duplicate entries, unsupported dynamic constructs, failed Mermaid rendering, residual local Markdown links or failed PDF production are build errors.
+- End each gate with a coherent commit and an updated version of this record.
+- Keep publication-specific directives in the manifest/theme/preparation layer wherever possible rather than contaminating canonical Markdown.
+- Never infer editorial order by parsing prose; the mechanical order is explicit and the editorial meaning stays in `publication-architecture.md`.
+- Print and web remain sibling renderers over common source; the website is not a print build dependency.
+- A renderer workaround is permitted only when isolated, documented and unable to redefine publication content.
 
 ## Verified upstream assumptions — 2026-10-09
 
-Before implementation, official/current upstream documentation was checked for these assumptions:
+At implementation start, current upstream documentation was checked for these assumptions:
 
-- Vivliostyle CLI can build Markdown directly to PDF, supports multi-entry configuration, A4 sizing, themes/CSS, generated contents and per-entry page-break control.
-- `@vivliostyle/cli` can be installed locally and configured via JS/TS-compatible module configuration.
-- Mermaid CLI supports transforming Markdown containing Mermaid fences into Markdown that references generated SVG files.
+- Vivliostyle CLI can build Markdown directly to PDF and supports multi-entry configuration, A4 sizing, CSS themes, generated contents and paged-media controls.
+- `@vivliostyle/cli` can be installed locally and configured from a JavaScript module.
+- Mermaid CLI can transform Markdown Mermaid fences into Markdown referring to generated SVG files.
+- Mermaid/Puppeteer supports an explicit browser config for the Linux sandbox compatibility case used by CI.
 
-Recheck these if dependency versions or APIs materially change.
+Recheck these when dependency versions materially change.
 
 ## Current next action
 
-**Complete G0, then begin G1 only.**
+**Begin G2 only.**
 
-Create the draft PR, inspect representative assets/links/footnotes, pin the minimum publication dependencies, and establish the smallest build that produces a disposable vertical-slice PDF. Do not add full book scope or polished typography until G1 passes.
+First produce the publication-scope crosswalk against `docs/manuscript/publication-architecture.md`, then design the smallest deterministic adapter for dynamic publication-facing indexes—especially the canonical Pattern Language index. Do **not** start polished typography, Pages deployment or whole-book editorial rewriting until the full mechanical publication builds.
