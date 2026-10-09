@@ -1,7 +1,7 @@
 # Project Status
 
 **Canonical project-wide status overview**  
-**Last updated:** 2026-10-08  
+**Last updated:** 2026-10-09  
 **Current phase:** **validation / implementation falsification**
 
 This file answers one question:
@@ -32,7 +32,7 @@ The central architectural position, canonical pattern language and pattern→com
 | **Original doctrine / source corpus** | **L4** | House Design Doctrine v7 preserved as source material, including historical style leakage | maintain provenance; do not rewrite frozen source to resemble current doctrine |
 | **Public architectural position / governing principles** | **L3** | selective permanence, designed interfaces, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy established and style-neutral | evidence/figure hardening and final proof |
 | **Architectural specificity / authority boundary** | **L4 — complete** | Gates 0–7 passed; doctrine, patterns, technical domain, grammar, project morphology/dialect and prototype evidence authority are explicitly separated | reopen only on real authority drift or when a materially different second grammar exposes a defect |
-| **Publication architecture** | **L3–L4 structurally** | v0.11 organises Part III around canonical language, strategies, held candidates and generative method; Reference House remains one interpretation rather than proof | develop finished Part III/IV content and figures |
+| **Publication architecture** | **L3–L4 structurally** | v0.12 organises Part III around canonical language, strategies, held candidates and generative method; Reference House remains one interpretation rather than proof | develop finished Part III/IV content and figures |
 | **Pattern-language migration** | **L4 — complete** | Phases 0–7 complete; canonical corpus, non-pattern homes, Reference House mapping, publication integration and metadata validation all passed | reopen only when new architectural/physical evidence requires classification change |
 | **Pattern→computational crosswalk** | **L4 at internal mapping scope — complete** | Phase 8 crosswalked all 21 active patterns, three strategies and four held candidates; no new fundamental compiler abstraction required | maintain as provenance layer; reopen only if executable/physical evidence exposes a defect |
 | **Preface** | **L3** | full editorial rewrite complete; situated material/architectural preferences remain authorial context rather than doctrine | final proof against completed book |
@@ -79,7 +79,7 @@ Locked outcomes:
 - three canonical strategies;
 - four held candidates remain unnumbered;
 - current Reference House state lives in `docs/reference-house/pattern-occurrence-register.md`;
-- Publication Architecture v0.11 uses the canonical language;
+- Publication Architecture v0.12 uses the canonical language;
 - metadata integrity is enforced by the ordinary docs build.
 
 Do not restart catalogue/taxonomy migration absent real new evidence.
