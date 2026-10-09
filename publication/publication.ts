@@ -12,6 +12,7 @@ export type PublicationEntryKind =
 export type PublicationAdapter =
   | 'part-i-composite'
   | 'part-ii-composite'
+  | 'part-v-wrapper'
   | 'pattern-index'
   | 'reference-house-overview'
 
@@ -281,6 +282,7 @@ export const publicationEntries: readonly PublicationEntry[] = [
     source: 'docs/manuscript/part-v.md',
     title: 'Part V — Making and Testing the Platform',
     kind: 'part',
+    adapter: 'part-v-wrapper',
     pageBreakBefore: 'recto'
   }
 ] as const
