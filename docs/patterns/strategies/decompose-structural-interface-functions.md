@@ -52,14 +52,11 @@ A useful sequence is:
 - do not create movement freedom where the actual assembly does not need it;
 - conventional certified hardware remains the baseline until a challenger proves a material advantage.
 
-## Evidence / provenance
+## Evidence
 
-Extracted during the Phase-6 corpus audit from the earlier **Seated Floor Structure** candidate. The existing engineering research and prototype programme remain the evidence/proving ground for implementation choices.
+Structural engineering practice and the project's seated-floor research both support separating support, restraint, movement and boundary functions before selecting a connection. The current research and prototype programme remains the proving ground for particular implementation families rather than evidence that one connection type should become canonical.
 
-See:
-
-- [`../reversible-assembly-candidates.md`](../reversible-assembly-candidates.md);
-- [`../../research/seated-floor-structure-options.md`](../../research/seated-floor-structure-options.md).
+Relevant project work includes [Reversible Assembly Candidates](../reversible-assembly-candidates.md) and [Seated Floor Structure Options](../../research/seated-floor-structure-options.md).
 
 ## Does not prove
 
