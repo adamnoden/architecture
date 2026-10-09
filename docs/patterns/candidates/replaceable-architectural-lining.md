@@ -56,13 +56,11 @@ These are not themselves the candidate identity.
 - corner/reveal details that require wet making-good after every intervention;
 - proprietary clips or finishes that undermine long-life repairability.
 
-## Evidence / provenance
+## Evidence
 
-Source material remains in:
+The direction is supported by the project's reversible-assembly and replaceable-wall research, but the central question remains physical: whether a removable lining can match the repose, solidity and ordinary decorative freedom of a first-rate conventional wall.
 
-- [`../reversible-assembly-candidates.md`](../reversible-assembly-candidates.md);
-- [`../../research/replaceable-wall-system-options.md`](../../research/replaceable-wall-system-options.md);
-- the W2 wall-bay prototype programme.
+Relevant work includes [Reversible Assembly Candidates](../reversible-assembly-candidates.md), [Replaceable Wall System Options](../../research/replaceable-wall-system-options.md) and the W2 wall-bay prototype programme.
 
 ## Does not prove
 
