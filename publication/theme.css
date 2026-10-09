@@ -47,6 +47,15 @@ svg {
   margin: 1em auto;
 }
 
+/*
+ * VFM turns Markdown image alt text into a visible figcaption. HSA sources
+ * already carry explicit publication captions in prose; keep alt text for the
+ * image itself without printing a second, synthetic caption.
+ */
+figure > figcaption {
+  display: none;
+}
+
 pre {
   white-space: pre-wrap;
   overflow-wrap: anywhere;

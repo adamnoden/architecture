@@ -127,7 +127,6 @@ for (const entry of smokePublicationEntries) {
     execFileSync('mmdc', mermaidArgs, { stdio: 'inherit' })
     renameSync(renderedPath, preparedPath)
     markdown = readFileSync(preparedPath, 'utf8')
-    markdown = markdown.replace(/!\[diagram\]\(([^)]+\.svg(?:\s+[^)]*)?)\)/g, '![]($1)')
   }
 
   markdown = rewritePublicationLinks(entry.source, markdown, included)
