@@ -62,7 +62,9 @@ function normaliseLegacyPartOpening(markdown: string, partHeading: string): stri
   if (!markdown.startsWith(legacyOpening)) {
     throw new Error(`${partHeading} opening changed; update the print wrapper deliberately.`)
   }
-  return markdown.replace(legacyOpening, `# ${partHeading}`)
+  return markdown
+    .replace(legacyOpening, `# ${partHeading}`)
+    .replaceAll('The Long-Life House', 'House Systems Architecture')
 }
 
 function adaptPartI(markdown: string, context: AdapterContext): string {
