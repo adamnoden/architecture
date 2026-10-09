@@ -16,8 +16,6 @@ export type PublicationAdapter =
   | 'pattern-index'
   | 'reference-house-overview'
 
-export type PublicationPageBreak = 'left' | 'right' | 'recto' | 'verso'
-
 export interface PublicationEntry {
   id: string
   source: string
@@ -26,8 +24,6 @@ export interface PublicationEntry {
   adapter?: PublicationAdapter
   patternId?: string
   smokeOnly?: boolean
-  pageBreakBefore?: PublicationPageBreak
-  pageCounterReset?: number
 }
 
 export const canonicalPatternOrder = [
@@ -113,33 +109,28 @@ export const publicationEntries: readonly PublicationEntry[] = [
     id: 'preface',
     source: 'docs/manuscript/preface.md',
     title: 'Preface — The Obvious, Eventually',
-    kind: 'preface',
-    pageBreakBefore: 'recto',
-    pageCounterReset: 1
+    kind: 'preface'
   },
   {
     id: 'part-i',
     source: 'docs/manuscript/part-i.md',
     title: 'Part I — The Proposition',
     kind: 'part',
-    adapter: 'part-i-composite',
-    pageBreakBefore: 'recto'
+    adapter: 'part-i-composite'
   },
   {
     id: 'part-ii',
     source: 'docs/manuscript/part-ii.md',
     title: 'Part II — Architecture of the Platform',
     kind: 'part',
-    adapter: 'part-ii-composite',
-    pageBreakBefore: 'recto'
+    adapter: 'part-ii-composite'
   },
   {
     id: 'part-iii-index',
     source: 'docs/patterns/README.md',
     title: 'Part III — Pattern Language',
     kind: 'index',
-    adapter: 'pattern-index',
-    pageBreakBefore: 'recto'
+    adapter: 'pattern-index'
   },
   {
     id: 'pattern-language-model',
@@ -237,8 +228,7 @@ export const publicationEntries: readonly PublicationEntry[] = [
     source: 'docs/reference-house/README.md',
     title: 'Part IV — Reference House',
     kind: 'reference-house',
-    adapter: 'reference-house-overview',
-    pageBreakBefore: 'recto'
+    adapter: 'reference-house-overview'
   },
   {
     id: 'reference-house-tectonic-language',
@@ -282,7 +272,6 @@ export const publicationEntries: readonly PublicationEntry[] = [
     source: 'docs/manuscript/part-v.md',
     title: 'Part V — Making and Testing the Platform',
     kind: 'part',
-    adapter: 'part-v-wrapper',
-    pageBreakBefore: 'recto'
+    adapter: 'part-v-wrapper'
   }
 ] as const
