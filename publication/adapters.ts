@@ -21,6 +21,7 @@ const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
     'docs/manuscript/principle-08-repose.md'
   ],
   'part-ii-composite': ['docs/manuscript/maintenance-geography-external.md'],
+  'part-v-wrapper': [],
   'pattern-index': [],
   'reference-house-overview': []
 }
@@ -55,7 +56,17 @@ function demoteHeadings(markdown: string, levels: number): string {
     .join('\n')
 }
 
+function normaliseLegacyPartOpening(markdown: string, partHeading: string): string {
+  const legacyOpening = `# The Long-Life House\n## ${partHeading}`
+  if (!markdown.startsWith(legacyOpening)) {
+    throw new Error(`${partHeading} opening changed; update the print wrapper deliberately.`)
+  }
+  return markdown.replace(legacyOpening, `# ${partHeading}`)
+}
+
 function adaptPartI(markdown: string, context: AdapterContext): string {
+  markdown = normaliseLegacyPartOpening(markdown, 'Part I — The Proposition')
+
   const chapter5Marker = '# 5. Eleven principles'
   const transitionMarker = '\n---\n\n# From principles to buildings'
   const chapter5Index = markdown.indexOf(chapter5Marker)
@@ -100,6 +111,8 @@ function adaptPartI(markdown: string, context: AdapterContext): string {
 }
 
 function adaptPartII(markdown: string, context: AdapterContext): string {
+  markdown = normaliseLegacyPartOpening(markdown, 'Part II — Architecture of the Platform')
+
   const chapter9Marker = '\n---\n\n# 9. Environmental resilience without dependence'
   const chapter9Index = markdown.indexOf(chapter9Marker)
   if (chapter9Index < 0) {
@@ -114,6 +127,10 @@ function adaptPartII(markdown: string, context: AdapterContext): string {
   return `${markdown.slice(0, chapter9Index).trimEnd()}\n\n${exterior}\n${markdown.slice(
     chapter9Index
   )}`
+}
+
+function adaptPartV(markdown: string): string {
+  return normaliseLegacyPartOpening(markdown, 'Part V — Making and Testing the Platform')
 }
 
 function frontmatterValue(markdown: string, key: string): string | null {
@@ -213,6 +230,8 @@ export function applyAdapter(
       return adaptPartI(markdown, context)
     case 'part-ii-composite':
       return adaptPartII(markdown, context)
+    case 'part-v-wrapper':
+      return adaptPartV(markdown)
     case 'pattern-index':
       return adaptPatternIndex(markdown, context)
     case 'reference-house-overview':
