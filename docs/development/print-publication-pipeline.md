@@ -1,11 +1,12 @@
 # Print publication pipeline — implementation record
 
-**Status:** active implementation — **G0/G1/G2/G3 PASS; G4 active**  
+**Status:** active implementation — **G0/G1/G2/G3/G4 PASS; G5 next**  
 **Branch:** `print-publication-pipeline`  
 **Draft PR:** #26 — *Build first-class print publication pipeline*  
 **Started:** 2026-10-09  
 **Editorial authority:** [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)  
-**Scope crosswalk:** [`print-publication-scope-crosswalk.md`](print-publication-scope-crosswalk.md)
+**Scope crosswalk:** [`print-publication-scope-crosswalk.md`](print-publication-scope-crosswalk.md)  
+**Editorial proof:** [`print-publication-editorial-proof.md`](print-publication-editorial-proof.md)
 
 This is the durable recovery record for the House Systems Architecture Working Edition PDF. Read it first after any interruption. The repository, not chat state, must always be sufficient to resume safely.
 
@@ -72,7 +73,7 @@ Rules:
 
 ```text
 publication/
-  publication.ts          # 44-entry Working Edition manifest + G1 smoke slice
+  publication.ts          # 45-entry Working Edition manifest + G1 smoke slice
   adapters.ts             # deterministic print composition/adapters
   vivliostyle.config.js   # renderer configuration + title/contents wiring
   theme.css               # publication-grade A4 duplex print system
@@ -83,6 +84,8 @@ publication/
   .work/                   # generated, ignored
   dist/                    # generated, ignored
 ```
+
+The Working Edition includes the authored `docs/manuscript/readers-guide.md` front matter added during G4.
 
 ## G0 — durable control and branch isolation — PASS
 
@@ -123,29 +126,24 @@ The publication-scope decisions are recorded in [`print-publication-scope-crossw
 
 Implemented and verified:
 
-- [x] full mechanical manifest: **44 entries**;
+- [x] full mechanical manifest established and validated;
 - [x] all manifest sources resolve and are unique;
 - [x] Parts III and IV retain their canonical owners rather than copied manuscript duplicates;
 - [x] Pattern index Vue content is converted deterministically from canonical pattern frontmatter;
 - [x] Part I composes the canonical Governing Principles and developed Principle 8 material at the intended position;
 - [x] Part II composes `Maintenance Geography — The Exterior` inside Chapter 8 before Chapter 9;
-- [x] print-only wrappers expose **Part III — Pattern Language** and **Part IV — The Reference House** without editing canonical source;
+- [x] print-only wrappers expose **Part III — Pattern Language** and **Part IV — The Reference House** without duplicating source documents;
 - [x] 21 active patterns appear in the publication architecture's editorial order;
 - [x] three strategies and four held candidates remain explicitly distinct from canonical patterns;
-- [x] research, development history, computational work, reading-guide material and status/admin pages remain outside the primary monograph unless editorial authority says otherwise;
+- [x] research, development history and the computational track remain outside the monograph unless editorial authority says otherwise;
 - [x] all local repository links that are not internal publication destinations are rewritten to stable live-site URLs, including linked SVG/source assets;
 - [x] prepared output asserts against residual local repository links;
 - [x] full Working Edition builds in GitHub Actions together with the G1 smoke build and all existing tests;
 - [x] final G2 artifact: **193 A4 pages**;
-- [x] PDF outline inspected: Parts I–V present in correct order;
-- [x] PDF annotations inspected: **zero `localhost`, `file:`, runner-path or `.md` destinations**;
-- [x] representative rendered-page review completed across front matter, Parts I–V, pattern language and Reference House.
+- [x] PDF outline and representative pages inspected across Parts I–V;
+- [x] user-facing annotations contained zero `localhost`, `file:`, runner-path or raw `.md` destinations.
 
-### G2 interpretation
-
-The 193-page artifact proved composition, ownership and renderer mechanics. It was not yet a designed book; G3 deliberately handled physical publication semantics separately.
-
-The exterior-maintenance insert is intentionally nested inside Chapter 8 rather than promoted to an independent numbered chapter. Its absence from the shallow generated contents is therefore not a missing-content defect.
+The exterior-maintenance insert remains intentionally nested inside Chapter 8 rather than promoted to an independent numbered chapter.
 
 ## G3 — print semantics and typography — PASS
 
@@ -168,56 +166,68 @@ Implemented and verified:
 - [x] grayscale contact-sheet review completed; hierarchy and diagrams remain intelligible without colour;
 - [x] representative Poppler/PDFium renderer comparison completed with no material structural disagreement;
 - [x] final artifact preflight: **213 A4 pages**, openable, unencrypted, no XFA/forms/attachments, all fonts embedded/subset;
-- [x] final user-facing URI sanity check remains free of filesystem/runner/`localhost`/raw `.md` destinations;
-- [x] final Actions run `37930228403` passed repository tests, smoke build and full Working Edition build from commit `4ac561a`;
-- [x] final TOC artifact review confirmed removal of Vivliostyle's otherwise redundant non-linked publication-title row.
+- [x] final user-facing URI sanity check remained free of filesystem/runner/`localhost`/raw `.md` destinations;
+- [x] final TOC artifact review confirmed removal of Vivliostyle's redundant non-linked publication-title row.
 
-### G3 findings retained as constraints
+G3 constraints retained:
 
-1. **Use CSS paged-media rules for article parity, not Vivliostyle cover/TOC metadata.**  
-   Initial `pageBreakBefore` / `pageCounterReset` assumptions were invalid for ordinary publication entries and were removed rather than left as dead configuration.
+1. Use CSS paged-media rules for article parity, not cover/TOC metadata intended for other entry types.
+2. Contents must be curated as book furniture rather than exposed as a raw multi-document outline.
+3. Legacy manuscript container titles are composition concerns and must not compete with the publication title.
+4. Vivliostyle's long named destinations remain a known non-blocking parser warning; recheck during G5 live-artifact verification.
+5. Page count is an outcome, not a target.
 
-2. **Contents must be curated as book furniture.**  
-   A raw multi-document outline produced a website-like contents section. The current CSS deliberately exposes chapter depth for the composite manuscript Parts and publication-entry depth elsewhere.
+## G4 — whole-book editorial proof — PASS
 
-3. **Legacy manuscript container titles are print-only composition concerns.**  
-   `The Long-Life House` remains canonical source history but is suppressed by deterministic Part adapters so it does not compete with the actual publication title.
+**Purpose:** use the print object to reveal problems the website can hide.
 
-4. **Vivliostyle's long named destinations remain a known non-blocking parser warning.**  
-   Poppler emits `name token is longer than what the specification says it can be`; links resolve, both tested renderers agree on representative pages, the file is openable and fonts are embedded. Do not hide the warning. Recheck after material Vivliostyle upgrades and again during G5 live-artifact verification.
+The durable finding-by-finding record is [`print-publication-editorial-proof.md`](print-publication-editorial-proof.md).
 
-5. **213 pages is a Working Edition consequence, not a target.**  
-   G4 may shorten or restructure the book when editorial proof identifies duplicated argument, administrative residue or material that belongs online rather than in the linear publication.
+Implemented and verified:
 
-## G4 — whole-book editorial proof — ACTIVE
+- [x] title/front matter and publication-architecture promises reviewed;
+- [x] authored a compact **Reader's Guide** containing abstract, reading model, definitions, evidence/maturity legend and governing constraints;
+- [x] Preface → Parts I/II → Part V read as one argument and checked for accidental repetition;
+- [x] duplicate Part-I implementation bridge removed during composition while preserving the canonical source documents;
+- [x] legacy `The Long-Life House` self-reference removed from the Working Edition;
+- [x] Part III assessed for catalogue fatigue, migration bureaucracy and evidence discipline;
+- [x] stable IDs, evidence/maturity and `Does not prove` boundaries retained;
+- [x] raw filenames, phase/gate language and migration bookkeeping removed from the primary print path;
+- [x] Pattern index and Service Topology sequence cleaned of development-history tails;
+- [x] Part IV assessed against the intended six-chapter Reference House publication architecture;
+- [x] current strong Reference House material retained honestly rather than renamed into fictitiously mature chapters;
+- [x] missing Site/type, water/environmental and future-maintenance publication chapters explicitly deferred to normal project development;
+- [x] Reference House web-wayfinding and terminal `Related documents` residue removed canonically;
+- [x] repetitive Reference House `Status:`/`Purpose:` document-control furniture suppressed in print;
+- [x] internal computational-H1 comparator translated in print into its actual architectural **Service coherence test**;
+- [x] Part transitions checked after the Reader's Guide established the deliberate mode changes between argument, reference, integration test and delivery;
+- [x] final G4 artifact remains **213 A4 pages** and structurally sane;
+- [x] final text scan returned zero raw `.md`, `Phase-*`, `Related documents`, `Start with`, `The Long-Life House`, duplicate implementation bridge, internal computational-H1 or `README.md` residue;
+- [x] representative Reader's Guide, Part III, Part IV and Part V pages visually inspected after rebuild;
+- [x] final PDF preflight: openable, unencrypted, no XFA/forms; known Vivliostyle named-destination warning unchanged;
+- [x] all **344 user-facing annotations** checked: zero `localhost`, `file:`, runner-path or raw `.md` destinations;
+- [x] repository tests, smoke PDF and full Working Edition build passed for the final publication content state.
 
-Use the printed object to expose duplicated argument, late definitions, web-only context, weak transitions, catalogue fatigue, missing publication-facing Reference House material, badly sequenced figures and online-only material leaking into the book.
+The main deferred editorial work is now explicit rather than hidden: mature the Reference House into the six publication-facing chapters and later author the promised back matter. Those are normal HSA development tasks, not blockers for the print pipeline.
 
-Editorial findings modify canonical source when the problem belongs to canonical prose. Print-only title/hierarchy composition may still be corrected in deterministic adapters. Do not hide manuscript weaknesses with CSS.
+## G5 — CI and website delivery — NEXT
+
+**Purpose:** make PDF generation an ordinary, deterministic part of the existing Pages deployment.
 
 Acceptance:
 
-- [ ] end-to-end print/preview read completed;
-- [ ] publication-architecture/front-matter promises checked against what the Working Edition actually contains;
-- [ ] web/repository-only residue identified and removed or explicitly justified;
-- [ ] Part III assessed for development-history leakage and catalogue fatigue;
-- [ ] Part IV assessed against the intended six-chapter Reference House publication structure;
-- [ ] transitions between Parts assessed as a linear argument rather than website navigation;
-- [ ] structural findings resolved or explicitly deferred;
-- [ ] manifest still matches editorial authority afterward.
-
-## G5 — CI and website delivery
-
 - [ ] deterministic package lock committed;
 - [ ] CI uses the same local commands, preferably `npm ci` once locked;
-- [ ] full publication build integrated with durable Pages workflow;
+- [ ] existing compiler and publication validation tests still pass;
+- [ ] full publication build integrated with the durable Pages workflow;
 - [ ] PDF and VitePress site use the same checkout/commit;
 - [ ] PDF copied to `.vitepress/dist/house-systems-architecture.pdf` before Pages artifact upload;
-- [ ] Pages build fails when publication build fails;
-- [ ] temporary implementation-branch workflow removed/folded into durable CI;
-- [ ] appropriate high-level **Download PDF** link added;
+- [ ] Pages build fails when publication compilation fails;
+- [ ] temporary implementation-branch workflow removed or folded into durable CI;
+- [ ] appropriate high-level **Download PDF** link added to the site;
 - [ ] live deployed PDF inspected;
-- [ ] build/recovery instructions complete.
+- [ ] build/recovery instructions complete;
+- [ ] named-destination warning rechecked on the actual deployed artifact.
 
 ## G6 — merge and closeout
 
@@ -243,6 +253,6 @@ Acceptance:
 
 ## Current next action
 
-**G4: begin with a durable editorial-proof ledger before changing canonical manuscript prose.**
+**Begin G5 only.**
 
-Read the 213-page Working Edition linearly in Part-sized passes. Record each finding as one of: `fix now`, `defer because source is intentionally incomplete`, or `keep`. First audit the promised front matter, Part III development/provenance residue and Part IV against the publication architecture. Make canonical edits only after the finding is recorded, then rebuild the PDF after coherent batches rather than after every sentence.
+First inspect the existing `package.json`, dependency state and Pages workflow. Establish a deterministic lockfile and local/CI command contract before modifying deployment. Then integrate the full PDF build into the existing Pages workflow so VitePress and the Working Edition are produced from one checkout and one commit. Do not merge or alter the live site until the combined workflow has been proven safely on the implementation branch.
