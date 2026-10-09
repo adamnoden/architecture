@@ -123,4 +123,4 @@ The repository filesystem and the public reading experience are separate concern
 - The website renders the repository Markdown/assets directly rather than introducing a second content store.
 - Site-specific metadata should stay minimal and must not become required to understand the repository without the site.
 
-The active migration of the existing site toward this model is tracked in [`development/information-architecture-migration.md`](development/information-architecture-migration.md).
+The information-architecture migration that established this model is recorded in [`development/information-architecture-migration.md`](development/information-architecture-migration.md).
