@@ -142,8 +142,9 @@
 }
 
 /*
- * Search is a site utility rather than part of the identity block. Keep the
- * primary navigation together, then place search with the right-hand controls.
+ * Search and the PDF edition are site utilities rather than part of the
+ * identity block. Keep the primary navigation together, then separate the
+ * utility group on the right.
  */
 @media (min-width: 768px) {
   .VPNavBar .content-body > .menu {
@@ -174,6 +175,22 @@
 
   .VPNavBar .content-body > .hamburger {
     order: 7;
+  }
+
+  .VPNavBarMenu > .VPNavBarMenuLink:last-child {
+    position: relative;
+    margin-left: 16px;
+    padding-left: 28px;
+    color: var(--vp-c-text-2);
+  }
+
+  .VPNavBarMenu > .VPNavBarMenuLink:last-child::before {
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 24px;
+    background-color: var(--vp-c-divider);
+    content: "";
   }
 }
 
