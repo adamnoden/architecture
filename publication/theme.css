@@ -205,6 +205,11 @@ nav[role="doc-toc"] li {
   break-inside: avoid;
 }
 
+/* Vivliostyle inserts one non-linked publication-title item before the real TOC. */
+nav[role="doc-toc"] > ol > li:first-child:not(:has(a)) {
+  display: none;
+}
+
 nav[role="doc-toc"] a {
   color: inherit;
   text-decoration: none;
