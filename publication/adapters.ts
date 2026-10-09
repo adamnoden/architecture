@@ -106,6 +106,15 @@ function adaptPartI(markdown: string, context: AdapterContext): string {
     .slice(principle9Index)
     .trimStart()}`
 
+  const embeddedBridgeMarker = '\n---\n\n### From doctrine to implementation'
+  const embeddedBridgeIndex = principles.indexOf(embeddedBridgeMarker)
+  if (embeddedBridgeIndex < 0) {
+    throw new Error(
+      'Governing-principles implementation bridge changed; update Part I composition deliberately.'
+    )
+  }
+  principles = principles.slice(0, embeddedBridgeIndex).trimEnd()
+
   return `${markdown.slice(0, chapter5Index)}${chapter5Stub}\n\n${principles}${markdown.slice(
     transitionIndex
   )}`
