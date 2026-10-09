@@ -84,7 +84,7 @@ Reusable architectural responses to recurring problems, with their forces, trade
 
 ### Architectural grammar <Badge type="warning">L3 framework · G-01 incomplete</Badge>
 
-Governs topology, hierarchy, proportion, composition and element families independently of HSA doctrine. The Reference House currently selects the Georgian-derived [G-01 grammar](docs/computational/g01-grammar-charter.md).
+Governs topology, hierarchy, proportion, composition and element families independently of HSA doctrine. The Reference House currently selects the Georgian-derived [G-01 grammar](docs/grammar/g01-grammar-charter.md).
 
 ### Reference House <Badge type="warning">L2–L3 · active</Badge>
 
@@ -141,6 +141,7 @@ The promotion rule is: **generalise the reason; localise the taste.** See the [A
 | **Documentation model** | Canonicality, placement and authority rules | [`docs/README.md`](docs/README.md) |
 | **Manuscript** | Public architectural argument and book structure | [Publication architecture](docs/manuscript/publication-architecture.md) · [Governing principles](docs/manuscript/governing-principles.md) · [Preface](docs/manuscript/preface.md) |
 | **Patterns** | Canonical pattern language, strategies, candidates and sequences | [Pattern language](docs/patterns/README.md) · [Language model](docs/patterns/language-model.md) |
+| **Architectural grammar** | Selectable architectural-language framework and G-01 research | [Architectural grammar](docs/grammar/README.md) · [G-01 grammar charter](docs/grammar/g01-grammar-charter.md) |
 | **Reference House** | Worked architectural and technical interpretation | [Reference House](docs/reference-house/README.md) · [Pattern Occurrence Register](docs/reference-house/pattern-occurrence-register.md) |
 | **Research** | Evidence synthesis, precedent and claim hardening | [`docs/research/`](docs/research/) |
 | **Development** | Programme control, completed migrations/audits and prototype strategy | [`docs/development/README.md`](docs/development/README.md) |
