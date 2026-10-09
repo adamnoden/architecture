@@ -21,6 +21,7 @@ const publicationRoot = resolve(repoRoot, 'publication')
 const workRoot = resolve(publicationRoot, '.work')
 const workSourceRoot = resolve(workRoot, 'source')
 const liveBaseUrl = 'https://adamnoden.github.io/architecture/'
+const markdownLinkPattern = /(?<!!)\[[^\]]+\]\(([^\s)]+)([^)]*)\)/g
 
 if (!process.argv.includes('--smoke')) {
   throw new Error('Only the G1 --smoke publication mode is admitted before G2.')
@@ -61,10 +62,15 @@ function liveUrlFor(target: string, suffix: string): string {
   return `${liveBaseUrl}${route}${suffix}`
 }
 
-function rewriteExcludedMarkdownLinks(source: string, markdown: string, included: Set<string>): string {
-  const linkPattern = /(?<!!)\[[^\]]+\]\(([^\s)]+)([^)]*)\)/g
+function internalHtmlHref(source: string, target: string, suffix: string): string {
+  const sourceDirectory = posix.dirname(source)
+  const targetHtml = target.replace(/\.md$/, '.html')
+  const relative = posix.relative(sourceDirectory, targetHtml)
+  return `${relative || posix.basename(targetHtml)}${suffix}`
+}
 
-  return markdown.replace(linkPattern, (whole, rawHref: string, tail: string) => {
+function rewritePublicationLinks(source: string, markdown: string, included: Set<string>): string {
+  return markdown.replace(markdownLinkPattern, (whole, rawHref: string, tail: string) => {
     if (/^(?:[a-z]+:|#|\/)/i.test(rawHref)) return whole
 
     const suffixIndex = rawHref.search(/[?#]/)
@@ -76,10 +82,24 @@ function rewriteExcludedMarkdownLinks(source: string, markdown: string, included
     const targetAbsolute = repoPath(target)
     const isMarkdownTarget = target.endsWith('.md') && existsSync(targetAbsolute)
     if (!isMarkdownTarget) return whole
-    if (included.has(target)) return whole
 
-    return whole.replace(`${rawHref}${tail})`, `${liveUrlFor(target, suffix)}${tail})`)
+    const rewrittenHref = included.has(target)
+      ? internalHtmlHref(source, target, suffix)
+      : liveUrlFor(target, suffix)
+
+    return whole.replace(`${rawHref}${tail})`, `${rewrittenHref}${tail})`)
   })
+}
+
+function assertNoLocalMarkdownLinks(source: string, markdown: string): void {
+  for (const match of markdown.matchAll(markdownLinkPattern)) {
+    const href = match[1]
+    if (/^(?:[a-z]+:|#|\/)/i.test(href)) continue
+    const hrefPath = href.split(/[?#]/, 1)[0]
+    if (hrefPath.endsWith('.md')) {
+      throw new Error(`Prepared publication still contains a local Markdown link in ${source}: ${href}`)
+    }
+  }
 }
 
 rmSync(workRoot, { recursive: true, force: true })
@@ -107,9 +127,11 @@ for (const entry of smokePublicationEntries) {
     execFileSync('mmdc', mermaidArgs, { stdio: 'inherit' })
     renameSync(renderedPath, preparedPath)
     markdown = readFileSync(preparedPath, 'utf8')
+    markdown = markdown.replace(/!\[diagram\]\(([^)]+\.svg(?:\s+[^)]*)?)\)/g, '![]($1)')
   }
 
-  markdown = rewriteExcludedMarkdownLinks(entry.source, markdown, included)
+  markdown = rewritePublicationLinks(entry.source, markdown, included)
+  assertNoLocalMarkdownLinks(entry.source, markdown)
   writeFileSync(preparedPath, markdown)
 }
 
