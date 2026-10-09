@@ -3,19 +3,19 @@
   --vp-sidebar-width: 320px;
 
   /* House Systems Architecture palette */
-  --hsa-c-canvas: #f5f2eb;
-  --hsa-c-raised: #ece8de;
-  --hsa-c-soft: #e5e0d5;
+  --hsa-c-canvas: #f7f6f2;
+  --hsa-c-raised: #efeee9;
+  --hsa-c-soft: #e9e7e1;
   --hsa-c-text: #20221f;
   --hsa-c-text-muted: #5b5e57;
   --hsa-c-text-faint: #686b64;
-  --hsa-c-divider: #d1cabe;
+  --hsa-c-divider: #d6d3cb;
   --hsa-c-green: #315a46;
   --hsa-c-green-strong: #264737;
   --hsa-c-green-deep: #1f3b2f;
   --hsa-c-green-soft: #dde7df;
   --hsa-c-brass: #85632c;
-  --hsa-c-brass-soft: #eee3cf;
+  --hsa-c-brass-soft: #ece6da;
 
   /* VitePress surfaces */
   --vp-c-bg: var(--hsa-c-canvas);
