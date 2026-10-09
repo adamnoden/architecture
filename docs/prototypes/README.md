@@ -10,7 +10,7 @@ A successful specimen supports only the claims it actually tested. A failed spec
 
 One specimen may answer both a general systems question and a project-specific architectural question, but those verdicts remain separate.
 
-The P01-W2 wall bay, for example, is developed for the Georgian-derived Reference House. Its solidity, reversibility, tolerance recovery, installer robustness and performance against excellent conventional construction may contribute to evidence for a general HSA proposition. Whether the same specimen belongs architecturally within G-01 is a Reference House selection question.
+The P01-W2 wall bay, for example, is developed for the Georgian-derived Reference House. Its [build pack](w2-wall-bay-build-pack.md) and [prototype drawing](w2-wall-bay-detail.svg) describe the specimen; the [evidence protocol](w2-wall-bay-test-protocol.md) defines how it is judged. Its solidity, reversibility, tolerance recovery, installer robustness and performance against excellent conventional construction may contribute to evidence for a general HSA proposition. Whether the same specimen belongs architecturally within G-01 is a Reference House selection question.
 
 Project-specific aesthetic success does not increase general pattern evidence or maturity. Conversely, an assembly may perform well as a general proposition and still be rejected from the Reference House because it does not belong in that architecture.
 
