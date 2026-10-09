@@ -18,8 +18,7 @@ const section = (
 const startSidebar: DefaultTheme.SidebarItem[] = [
   group('Start here', [
     page('Project overview', '/'),
-    page('How to read this project', '/docs/reading-guide'),
-    page('Project status', '/STATUS')
+    page('Reading guide', '/docs/reading-guide')
   ], false)
 ]
 
@@ -365,8 +364,8 @@ const sourceSidebar: DefaultTheme.SidebarItem[] = [
 
 const projectSidebar: DefaultTheme.SidebarItem[] = [
   group('Project records', [
-    page('Documentation model', '/docs/'),
     page('Project status', '/STATUS'),
+    page('Documentation structure', '/docs/'),
     page('Development', '/docs/development/'),
     page('Editorial', '/docs/editorial/'),
     page('Source archive', '/docs/source/')
@@ -397,7 +396,7 @@ export const nav: DefaultTheme.NavItem[] = [
     text: 'Project',
     items: [
       { text: 'Project status', link: '/STATUS' },
-      { text: 'Documentation model', link: '/docs/' },
+      { text: 'Documentation structure', link: '/docs/' },
       { text: 'Development records', link: '/docs/development/' },
       { text: 'Editorial system', link: '/docs/editorial/' },
       { text: 'Source archive', link: '/docs/source/' }
@@ -418,7 +417,7 @@ export const sidebar = {
   '/docs/editorial/': editorialSidebar,
   '/docs/source/': sourceSidebar,
   '/docs/reading-guide': startSidebar,
-  '/STATUS': startSidebar,
+  '/STATUS': projectSidebar,
   '/docs/': projectSidebar,
   '/': startSidebar
 }
