@@ -10,7 +10,7 @@ The house selects a **Georgian-derived architectural grammar**, provisionally re
 
 HSA propositions should remain intelligible under a materially different architectural language. G-01, by contrast, is allowed to be strongly opinionated about composition, hierarchy, proportion and element families. Keeping those authorities separate lets the Reference House be architecturally specific without allowing its style to leak upstream into the doctrine.
 
-See the project-wide [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md), the [G-01 Grammar Charter](../grammar/g01-grammar-charter.md) and the [G-01 Research Brief](../grammar/g01-research-brief.md).
+That separation is governed by the [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md), while the [G-01 Grammar Charter](../grammar/g01-grammar-charter.md) and [G-01 Research Brief](../grammar/g01-research-brief.md) define the current grammar programme.
 
 ## Composition and authority
 
@@ -41,7 +41,7 @@ The layers constrain one another without becoming interchangeable.
 
 Where one decision touches two layers, record the dependency rather than promoting the project choice upstream. A cornice may realise an HSA movement-interface principle in this house without becoming an HSA requirement. A courtyard may satisfy G-01 ordering without becoming a G-01 invariant.
 
-Start with the [Tectonic Architectural Language](tectonic-architectural-language.md), then the [Vertical Bay Options](vertical-bay-options.md), [Vertical Bay Coordination](vertical-bay-coordination.md) and [External Access & Maintenance Plan](external-access-maintenance-plan.md).
+The current house studies develop this composition through the [Tectonic Architectural Language](tectonic-architectural-language.md), [Vertical Bay Options](vertical-bay-options.md), [Vertical Bay Coordination](vertical-bay-coordination.md) and [External Access & Maintenance Plan](external-access-maintenance-plan.md).
 
 ## Pattern occurrences
 
@@ -60,6 +60,6 @@ A Reference House occurrence is evidence about coordination in this project. It 
 
 [Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) provides the current house-scale geometry: a provisional two-storey courtyard arrangement used to coordinate rooms, circulation, services and interfaces. The accompanying [fixture drawing](whole-house-coordination-fixture.svg) is schematic rather than a final design.
 
-The [Pattern Occurrence Register](pattern-occurrence-register.md) records the current mapping between that house and the canonical language. Earlier [Service Topology Coordination](service-topology-coordination.md) and [Service Topology Run 01](service-topology-run-01.md) records are retained as Phase-5 provenance and use the terminology available when those exercises were carried out.
+The [Pattern Occurrence Register](pattern-occurrence-register.md) records the current mapping between that house and the canonical language. Earlier [Service Topology Coordination](service-topology-coordination.md) and [Service Topology Run 01](service-topology-run-01.md) records are retained as development provenance and use the terminology available when those exercises were carried out.
 
 The house remains architecturally and technically provisional. Current design work concentrates on the footprint and room order, stair and courtyard relationships, structure and service crossings, passive-first environmental design, drainage, external maintenance access and the incorporation of physical prototype findings.

@@ -56,11 +56,11 @@ This candidate may eventually complement:
 
 These references do not create graph edges while the proposition remains held.
 
-## Evidence / provenance
+## Evidence
 
-The idea appears repeatedly in the project's service-depth discussions and in Phase-6 targeted evidence around housing service zones, but the audit retained it as a candidate/design tactic.
+Housing service-zone precedent and repeated project coordination studies support the idea as a credible tactic. The missing evidence is whether the same architectural relationship recurs strongly enough across different services and rooms to deserve pattern status rather than remaining ordinary design coordination.
 
-See [`../../research/pattern-language-phase6-targeted-evidence.md`](../../research/pattern-language-phase6-targeted-evidence.md).
+The current evidence review is recorded in [Targeted Pattern-Language Evidence Review](../../research/pattern-language-phase6-targeted-evidence.md).
 
 ## Does not prove
 

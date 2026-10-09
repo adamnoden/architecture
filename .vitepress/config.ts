@@ -56,7 +56,10 @@ export default withMermaid(
         label: 'On this page'
       },
       sidebarMenuLabel: 'Contents',
-      nav,
+      nav: [
+        ...nav,
+        { text: 'Download PDF', link: '/architecture/house-systems-architecture.pdf' }
+      ],
       socialLinks: [
         { icon: 'github', link: 'https://github.com/adamnoden/architecture' }
       ],

@@ -26,6 +26,7 @@ const manuscriptSidebar: DefaultTheme.SidebarItem[] = [
   group('Architectural argument', [
     page('Manuscript overview', '/docs/manuscript/'),
     page('Preface', '/docs/manuscript/preface'),
+    page("Reader's Guide", '/docs/manuscript/readers-guide'),
     section('Part I — The Proposition', '/docs/manuscript/part-i', [
       page('Eleven governing principles', '/docs/manuscript/governing-principles'),
       page('Principle 8 — Design for Repose', '/docs/manuscript/principle-08-repose')
@@ -321,6 +322,11 @@ const developmentSidebar: DefaultTheme.SidebarItem[] = [
     page('Prototype programme', '/docs/development/tectonic-prototype-programme'),
     page('Manufacturing strategy', '/docs/development/manufacturing-strategy')
   ], false),
+  group('Print publication', [
+    page('Pipeline & recovery record', '/docs/development/print-publication-pipeline'),
+    page('Publication scope crosswalk', '/docs/development/print-publication-scope-crosswalk'),
+    page('Editorial proof ledger', '/docs/development/print-publication-editorial-proof')
+  ]),
   group('Completed architectural-specificity audit', [
     page('Architectural specificity audit', '/docs/development/architectural-specificity-audit'),
     page('Architectural specificity claim ledger', '/docs/development/architectural-specificity-ledger'),

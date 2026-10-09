@@ -6,13 +6,20 @@
     "docs:dev": "vitepress dev .",
     "docs:build": "vitepress build .",
     "docs:preview": "vitepress preview .",
+    "publication:validate": "tsx publication/scripts/validate.ts",
+    "publication:prepare:smoke": "tsx publication/scripts/prepare.ts --smoke",
+    "publication:build:smoke": "npm run publication:prepare:smoke && vivliostyle build -c publication/vivliostyle.config.js",
+    "publication:prepare": "tsx publication/scripts/prepare.ts --full",
+    "publication:build": "npm run publication:prepare && vivliostyle build -c publication/vivliostyle.config.js",
     "typecheck": "tsc --noEmit",
     "test:p0": "node --import tsx --test compiler/p0/*.test.ts",
     "test:crosswalk": "node --import tsx --test compiler/crosswalk/*.test.ts",
-    "test": "npm run typecheck && npm run test:p0 && npm run test:crosswalk"
+    "test": "npm run typecheck && npm run test:p0 && npm run test:crosswalk && npm run publication:validate"
   },
   "devDependencies": {
+    "@mermaid-js/mermaid-cli": "11.17.0",
     "@types/node": "^24.7.0",
+    "@vivliostyle/cli": "11.3.3",
     "mermaid": "^11.17.2",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
@@ -20,6 +27,6 @@
     "vitepress-plugin-mermaid": "2.0.17"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12"
   }
 }

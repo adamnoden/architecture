@@ -14,4 +14,4 @@ Current canonical strategy set:
 
 The strategy set is intentionally small. A category heading for several patterns is not, by itself, a strategy.
 
-See the [Pattern Language Model](../language-model.md) for the classification and authority rules. Historical migration controls remain available in the development records.
+The [Pattern Language Model](../language-model.md) defines the classification and authority rules.

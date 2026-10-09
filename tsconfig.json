@@ -9,5 +9,5 @@
     "types": ["node"],
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["compiler/**/*.ts"]
+  "include": ["compiler/**/*.ts", "publication/**/*.ts"]
 }

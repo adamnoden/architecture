@@ -14,7 +14,7 @@ This does not imply sparse rooms or visual restraint. A room can be rich in book
 
 Structure is a more tentative part of the argument. Human vision rapidly extracts support, stability and other physical properties from what it sees. The doctrine therefore prefers principal domestic spaces in which major masses appear plausibly borne and at equilibrium. This does not show that cantilevers are harmful, that arches are therapeutic or that the visible load path must reproduce the engineer’s structural diagram. The inference remains weaker than the environmental claims above.
 
-Repose also constrains the technical agenda of the Long-Life House. Access, replacement and legibility are means, not ends. A removable wall that rattles, a corridor crowded with hatches or a floor that feels temporary underfoot has solved one maintenance problem by creating an occupation problem.
+Repose also constrains the technical agenda of House Systems Architecture. Access, replacement and legibility are means, not ends. A removable wall that rattles, a corridor crowded with hatches or a floor that feels temporary underfoot has solved one maintenance problem by creating an occupation problem.
 
 The principle is therefore less a style than a design burden: the house should ask for as little routine monitoring and correction as ordinary comfort allows.
 

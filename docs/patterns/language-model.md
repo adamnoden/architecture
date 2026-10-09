@@ -237,7 +237,7 @@ Use the existing project vocabulary as applicable:
 
 Evidence describes confidence in the proposition. Maturity describes what the project has actually done with it.
 
-Reclassification, renaming or migration of a record does not increase either axis.
+Reclassification or renaming does not increase either axis.
 
 ---
 
@@ -408,7 +408,7 @@ This separation is a hard project constraint. Pattern provenance may inform proj
 
 The current language contains 21 active canonical patterns. `HSA-P-006` is retired permanently and its ID will not be reused.
 
-The canonical active and retired lists are generated from individual pattern frontmatter in [`README.md`](README.md). Historical identity maps and migration decisions remain in the development records as provenance rather than current language authority.
+The canonical active and retired lists are generated from individual pattern frontmatter in the [Pattern Index](README.md). Historical identity maps and development decisions remain in the development records as provenance rather than current language authority.
 
 ---
 

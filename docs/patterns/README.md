@@ -50,13 +50,4 @@ The [Pattern Language — Model and Authoring Contract](language-model.md) defin
 
 The Reference House records actual project selections and occurrences in its [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md). Use in that house does not increase a pattern's general evidence or maturity.
 
-## Migration provenance
-
-The language was derived through earlier catalogue and pilot work. Those records remain available as provenance rather than competing canonical sources:
-
-- [Core Pattern Catalogue](core-12.md) — legacy aggregate prose for the original Core 12;
-- [Service-Topology Pilot](pilot/README.md) — the first linked-language experiment;
-- [Reversible Assembly Candidates](reversible-assembly-candidates.md) — legacy material later separated into strategies, candidates and implementation families;
-- [Accessible Vertical Service Zone — pre-admission candidate](candidates/accessible-vertical-service-zone.md) — provenance for canonical `HSA-P-014`.
-
 The active and retired lists above are generated from canonical pattern frontmatter; individual pattern records remain the source of pattern identity and metadata.

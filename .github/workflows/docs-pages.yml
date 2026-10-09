@@ -27,14 +27,26 @@ jobs:
           node-version: 24
           package-manager-cache: false
 
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
 
-      - name: Test compiler kernel
+      - name: Run repository tests
         run: npm test
+
+      - name: Build Working Edition PDF
+        run: npm run publication:build
+
+      - name: Verify Working Edition PDF exists
+        run: test -s publication/dist/house-systems-architecture.pdf
 
       - name: Build documentation
         run: npm run docs:build
+
+      - name: Assemble Pages artifact
+        run: |
+          cp publication/dist/house-systems-architecture.pdf .vitepress/dist/house-systems-architecture.pdf
+          test -s .vitepress/dist/house-systems-architecture.pdf
+          test -s .vitepress/dist/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

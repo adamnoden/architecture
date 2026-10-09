@@ -97,7 +97,7 @@ A coherent route should reduce disturbance elsewhere without turning circulation
 
 ## Evidence
 
-Historic England supports shared/common service routes where repeated individual routes would scar fabric. Approved Document R provides a narrower precedent for planned vertical and horizontal communications infrastructure. The Reference House Phase-5 run also showed that coherent routing is useful while a universal deep mixed-services duct is not.
+Historic England supports shared/common service routes where repeated individual routes would scar fabric. Approved Document R provides a narrower precedent for planned vertical and horizontal communications infrastructure. The Reference House whole-house coordination exercise also showed that coherent routing is useful while a universal deep mixed-services duct is not.
 
 ## Does not prove
 
@@ -105,7 +105,7 @@ A detached house does not thereby need a commercial corridor ceiling, raised flo
 
 ## Reference House application
 
-The Reference House uses ordinary circulation and service-heavy edges as the primary horizontal topology, with local deeper conditions only where ducts, drainage or access justify them. The Phase-5 run explicitly rejected a universal deep mixed-services route.
+The Reference House uses ordinary circulation and service-heavy edges as the primary horizontal topology, with local deeper conditions only where ducts, drainage or access justify them. The same whole-house coordination exercise explicitly rejected a universal deep mixed-services route.
 
 ## Formalisation boundary
 

@@ -84,7 +84,7 @@ Repeat the review using the intended mature size of major trees and permanent pl
 
 ## 5. Ground plane, wall base and temporary support
 
-Do **not** assume one universal “perimeter dry zone”. Phase-6 review rejected that old catalogue slot because wall-base drying, drainage, inspection and maintenance-support territory are distinct functions that can conflict.
+Do **not** assume one universal “perimeter dry zone”. The earlier catalogue concept was rejected because wall-base drying, drainage, inspection and maintenance-support territory are distinct functions that can conflict.
 
 Instead coordinate them deliberately:
 
@@ -205,14 +205,3 @@ These remain open until the Reference House geometry develops:
 - landscape species/positions around critical zones.
 
 These are implementation questions. The doctrine requirement is fixed: the answers must be deliberate and demonstrated rather than left to future improvisation.
-
-## Related documents
-
-- [Pattern Occurrence Register](pattern-occurrence-register.md)
-- [Governing Principles](../manuscript/governing-principles.md) — Principle 5
-- [Maintenance Geography — The Exterior](../manuscript/maintenance-geography-external.md)
-- [External Maintenance Access — Research Synthesis](../research/external-maintenance-access.md)
-- [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md)
-- [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md)
-- [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md)
-- [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md)

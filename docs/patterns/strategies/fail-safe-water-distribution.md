@@ -82,7 +82,3 @@ The Reference House begins with joint-minimised and accessible distribution. Vis
 ## Computational boundary
 
 The semantic model may represent water routes, joints, isolation points, vulnerable fabric, leakage destinations and evidence obligations. A compiler should not infer that a chosen protective family actually performs unless scoped technical/product evidence exists.
-
----
-
-**Provenance:** derived from Pattern 06 in [`../core-12.md`](../core-12.md), the Phase-6 corpus audit and targeted evidence review. Reclassification reduces conceptual overreach; it does not increase evidence maturity.
