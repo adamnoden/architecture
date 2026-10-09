@@ -24,7 +24,8 @@ const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
   'part-v-wrapper': [],
   'pattern-index': [],
   'pattern-page': [],
-  'reference-house-overview': []
+  'reference-house-overview': [],
+  'reference-house-page': []
 }
 
 export function dependenciesForAdapter(adapter?: PublicationAdapter): readonly string[] {
@@ -231,13 +232,46 @@ function adaptPatternIndex(markdown: string, context: AdapterContext): string {
   return `# Part III — Pattern Language\n\n${body}`
 }
 
+function stripReferenceHouseControlHeader(markdown: string): string {
+  return markdown
+    .replace(/^\*\*(?:Status|Purpose):\*\*[^\n]*\n/gm, '')
+    .replace(/\n{3,}/g, '\n\n')
+}
+
 function adaptReferenceHouseOverview(markdown: string): string {
   const opening = '# Reference House\n'
   if (!markdown.startsWith(opening)) {
     throw new Error('Reference House opening heading changed; update the Part IV print wrapper deliberately.')
   }
 
-  return `# Part IV — The Reference House\n\n${markdown.slice(opening.length).trimStart()}`
+  return stripReferenceHouseControlHeader(
+    `# Part IV — The Reference House\n\n${markdown.slice(opening.length).trimStart()}`
+  )
+}
+
+function adaptReferenceHousePage(markdown: string): string {
+  let adapted = stripReferenceHouseControlHeader(markdown)
+
+  const h1Start = '\n---\n\n## 1. Relationship to the computational H1 fixture\n'
+  const h1End = '\n---\n\n## 2. Site and orientation assumptions'
+  const h1StartIndex = adapted.indexOf(h1Start)
+
+  if (h1StartIndex >= 0) {
+    const h1EndIndex = adapted.indexOf(h1End, h1StartIndex + h1Start.length)
+    if (h1EndIndex < 0) {
+      throw new Error('Whole-House H1 comparator boundary changed; update print adaptation deliberately.')
+    }
+
+    const replacement = `\n---\n\n## 1. Service coherence test\n\nThe courtyard plan increases perimeter and strengthens front-to-courtyard-to-garden ordering. That architectural choice should not be paid for through unnecessarily long service routes, duplicated cores or technical corridors.\n\n> **Can the courtyard house remain service-coherent without paying for its spatial order through long routes, duplicated cores or technical corridors?**`
+
+    adapted = `${adapted.slice(0, h1StartIndex)}${replacement}${adapted.slice(h1EndIndex)}`
+  }
+
+  if (/computational H1 fixture|paper-compilation house/i.test(adapted)) {
+    throw new Error('Reference House print adaptation still contains internal H1 provenance.')
+  }
+
+  return adapted
 }
 
 export function applyAdapter(
@@ -260,6 +294,8 @@ export function applyAdapter(
       return adaptPatternPage(markdown)
     case 'reference-house-overview':
       return adaptReferenceHouseOverview(markdown)
+    case 'reference-house-page':
+      return adaptReferenceHousePage(markdown)
   }
 }
 
