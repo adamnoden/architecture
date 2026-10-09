@@ -8,17 +8,34 @@ const build = JSON.parse(
   readFileSync(resolve(publicationRoot, '.work/build.json'), 'utf8')
 )
 
+const contentEntries = build.entries.map((entry) => ({
+  path: entry.source,
+  title: entry.title,
+  ...(entry.pageBreakBefore ? { pageBreakBefore: entry.pageBreakBefore } : {}),
+  ...(Number.isInteger(entry.pageCounterReset) ? { pageCounterReset: entry.pageCounterReset } : {})
+}))
+
+const entries = build.mode === 'full'
+  ? [
+      {
+        path: build.titlePage,
+        title: 'House Systems Architecture',
+        rel: 'titlepage'
+      },
+      { rel: 'contents' },
+      ...contentEntries
+    ]
+  : contentEntries
+
 export default defineConfig({
   title: build.title,
   language: build.language,
   size: 'A4',
   entryContext: resolve(publicationRoot, '.work/source'),
-  entry: build.entries.map((entry) => ({
-    path: entry.source,
-    title: entry.title
-  })),
+  entry: entries,
   theme: resolve(publicationRoot, 'theme.css'),
   toc: {
+    htmlPath: build.mode === 'full' ? 'contents.html' : 'index.html',
     title: 'Contents',
     sectionDepth: 1
   },
