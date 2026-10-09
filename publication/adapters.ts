@@ -199,23 +199,26 @@ function adaptPatternIndex(markdown: string, context: AdapterContext): string {
     .replace(activePattern, staticPatternList(patterns, 'active'))
     .replace(retiredPattern, staticPatternList(patterns, 'retired'))
 
-  if (/<script\s+setup\b|\bv-(?:if|for|else|show)\s*=|\{\{[^}]+\}\}/i.test(adapted)) {
-    throw new Error('Pattern index adapter left Vue-only constructs in prepared Markdown.')
-  }
-
-  if (!adapted.startsWith('# Patterns\n')) {
+  const opening = '# Patterns\n'
+  if (!adapted.startsWith(opening)) {
     throw new Error('Pattern index opening heading changed; update the Part III print wrapper deliberately.')
   }
 
-  return `# Part III — Pattern Language\n\n${demoteHeadings(adapted, 1)}`
+  const body = adapted.slice(opening.length).trimStart()
+  if (/<script\s+setup\b|\bv-(?:if|for|else|show)\s*=|\{\{[^}]+\}\}/i.test(body)) {
+    throw new Error('Pattern index adapter left Vue-only constructs in prepared Markdown.')
+  }
+
+  return `# Part III — Pattern Language\n\n${body}`
 }
 
 function adaptReferenceHouseOverview(markdown: string): string {
-  if (!markdown.startsWith('# Reference House\n')) {
+  const opening = '# Reference House\n'
+  if (!markdown.startsWith(opening)) {
     throw new Error('Reference House opening heading changed; update the Part IV print wrapper deliberately.')
   }
 
-  return `# Part IV — The Reference House\n\n${demoteHeadings(markdown, 1)}`
+  return `# Part IV — The Reference House\n\n${markdown.slice(opening.length).trimStart()}`
 }
 
 export function applyAdapter(
