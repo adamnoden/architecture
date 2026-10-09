@@ -10,9 +10,7 @@ const build = JSON.parse(
 
 const contentEntries = build.entries.map((entry) => ({
   path: entry.source,
-  title: entry.title,
-  ...(entry.pageBreakBefore ? { pageBreakBefore: entry.pageBreakBefore } : {}),
-  ...(Number.isInteger(entry.pageCounterReset) ? { pageCounterReset: entry.pageCounterReset } : {})
+  title: entry.title
 }))
 
 const entries = build.mode === 'full'
@@ -22,7 +20,12 @@ const entries = build.mode === 'full'
         title: 'House Systems Architecture',
         rel: 'titlepage'
       },
-      { rel: 'contents' },
+      {
+        path: build.contentsPage,
+        output: 'contents.html',
+        title: 'Contents',
+        rel: 'contents'
+      },
       ...contentEntries
     ]
   : contentEntries
