@@ -46,11 +46,11 @@ The comparison must include conventional branch/tee distribution.
 - cost and embodied material;
 - whether a centralized topology actually suits room geography.
 
-## Evidence / provenance
+## Evidence
 
-Phase-6 targeted evidence identified domestic patternbook and CIBSE precedent for manifold distribution but deliberately stopped short of generalising it into the canonical language.
+Domestic patternbooks and CIBSE precedent support manifold distribution as a mature services option. The unresolved question is not whether manifolds work, but whether their topology repeatedly creates architectural value strong enough to justify a canonical HSA pattern.
 
-See [`../../research/pattern-language-phase6-targeted-evidence.md`](../../research/pattern-language-phase6-targeted-evidence.md).
+The current evidence review is recorded in [Targeted Pattern-Language Evidence Review](../../research/pattern-language-phase6-targeted-evidence.md).
 
 ## Does not prove
 
