@@ -1,6 +1,17 @@
 name: Publication smoke
 
 on:
+  push:
+    branches:
+      - print-publication-pipeline
+    paths:
+      - 'publication/**'
+      - 'docs/manuscript/**'
+      - 'docs/patterns/controlled-utility-entry.md'
+      - 'README.md'
+      - 'package.json'
+      - 'tsconfig.json'
+      - '.github/workflows/publication-smoke.yml'
   pull_request:
     paths:
       - 'publication/**'
