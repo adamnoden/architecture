@@ -1,5 +1,6 @@
 export type PublicationEntryKind =
   | 'preface'
+  | 'front-matter'
   | 'part'
   | 'index'
   | 'method'
@@ -112,6 +113,12 @@ export const publicationEntries: readonly PublicationEntry[] = [
     source: 'docs/manuscript/preface.md',
     title: 'Preface — The Obvious, Eventually',
     kind: 'preface'
+  },
+  {
+    id: 'readers-guide',
+    source: 'docs/manuscript/readers-guide.md',
+    title: "Reader's Guide",
+    kind: 'front-matter'
   },
   {
     id: 'part-i',
