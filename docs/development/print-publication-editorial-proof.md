@@ -1,120 +1,83 @@
 # Working Edition editorial proof — G4 ledger
 
-**Status:** active  
+**Status:** active — final artifact verification pending  
 **Parent gate:** [`print-publication-pipeline.md`](print-publication-pipeline.md) — G4  
 **Editorial authority:** [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)  
-**Baseline artifact:** 213-page Working Edition from G3 commit `4ac561a`  
+**Baseline artifact:** 213-page G3 Working Edition  
 **Purpose:** test whether House Systems Architecture works as a linear publication rather than merely as a set of good web documents.
 
-This ledger is the durable record of the whole-book proof. Record a finding here before making a consequential editorial change. The categories are:
+This ledger is the durable record of the whole-book proof. Findings are classified as:
 
-- **FIX NOW** — the current Working Edition is materially worse because of it and the correction is clear enough to make now;
-- **DEFER** — a real publication gap, but solving it would require substantive new architectural/research work outside this pipeline effort;
+- **FIXED** — resolved in canonical source or deterministic print composition;
+- **DEFER** — a real publication gap whose proper solution requires substantive architectural/research work beyond this pipeline effort;
 - **KEEP** — conspicuous under linear reading but justified.
 
-Do not use the print renderer to conceal a canonical writing problem. Conversely, print-only wrappers may remove duplicated document titles or other mechanical composition artefacts without changing canonical meaning.
+Do not use the renderer to conceal canonical writing problems. Conversely, print-only wrappers may remove duplicated document titles, development provenance or control-document furniture when the canonical web/repository record should retain them.
 
 ## Review method
 
-Review in linear passes rather than file-by-file:
+The proof was conducted in linear passes:
 
-1. title + contents + promised front matter;
+1. title + contents + front matter;
 2. Preface → Part I → Part II as the main argument;
 3. Part III as a professional reference after the argument;
-4. Part IV against the six-chapter Reference House structure promised by the publication architecture;
+4. Part IV against the intended six-chapter Reference House publication structure;
 5. Part V as the closing delivery/testing argument;
-6. whole-book pass for repetition, definitions, transitions, figures, web residue and print-hostile references.
+6. whole-book checks for repetition, late definitions, web/admin residue, figures and transitions.
 
-For each pass, distinguish:
-
-- **argument problem** — order, repetition, missing bridge, late definition;
-- **genre problem** — repository/web/admin language appearing inside the book;
-- **maturity problem** — publication architecture promises material that is not yet authored;
-- **presentation problem** — genuine print composition issue rather than prose;
-- **evidence problem** — claim/reference relationship is unclear or print-hostile.
-
-## Baseline observations
-
-The G3 book is intentionally a Working Edition, not a claim of manuscript completion. Current rough balance is:
-
-| Section | Approx. pages | Approx. words | Initial reading |
-| --- | ---: | ---: | --- |
-| Preface | 8 | 2.5k | strong authored opening |
-| Part I | 18 | 6.2k | compact proposition |
-| Part II | 28 | 8.3k | main architectural argument |
-| Part III | 104 | 20k | dominant share of book; reference/catalogue by design |
-| Part IV | 40 | 8.1k | useful project material, but not yet the promised six-chapter publication form |
-| Part V | 11 | 2.4k | concise closing method/delivery argument |
-
-The imbalance is not automatically a defect: Part III is explicitly a browsable reference. It does, however, make development-history residue and repetitive metadata much more costly in print than on the website.
+The G3 book was intentionally treated as a Working Edition rather than a claim of manuscript completion.
 
 # Findings
 
-## F-01 — promised front matter is substantially absent
+## F-01 — promised front matter was absent — FIXED
 
-**Category:** maturity problem  
-**Disposition:** **DEFER**, but make the incompleteness explicit in publication planning rather than silently treating title + contents as complete front matter.
+The publication architecture promised an abstract, reading guidance, definitions, an evidence/maturity legend and governing constraints. Their absence was initially tolerable mechanically but became a genuine reading problem once Part III introduced evidence labels and HSA-specific vocabulary without prior explanation.
 
-The publication architecture currently promises:
+**Resolution:** authored [`../manuscript/readers-guide.md`](../manuscript/readers-guide.md) and inserted it after the Preface. It now provides:
 
-- Abstract;
-- How to read the book;
-- Definitions;
-- Evidence and maturity legend;
-- Governing constraints.
+- abstract;
+- how to read Parts I–V;
+- definitions of the HSA terms used in a specific sense;
+- evidence states and the distinction between evidence and maturity;
+- governing constraints and proportional serviceability.
 
-The Working Edition currently provides title/edition page, contents, then the Preface. The renderer should not fabricate these pages from repository/admin material.
+The book no longer relies on repository knowledge to explain its own reference language.
 
-**Action:** do not block the PDF pipeline. Keep these as authored-manuscript TODOs owned by the publication architecture. During G4, check whether one or more is necessary enough for the current Working Edition to justify authoring now; otherwise record the gap clearly and proceed.
+## F-02 — duplicate Part III / Part IV opening hierarchy — FIXED
 
-## F-02 — Part III begins with duplicated publication/web title hierarchy
+The first full book printed `Part III — Pattern Language` followed immediately by `Patterns`, and `Part IV — The Reference House` followed by `Reference House`.
 
-**Category:** presentation problem  
-**Disposition:** **FIX NOW**.
+**Resolution:** deterministic print adapters now replace the source-page H1 with the Part heading rather than demoting and repeating it. Canonical web source remains unchanged.
 
-The print wrapper creates `Part III — Pattern Language`, immediately followed by the source page's `Patterns` heading. The same issue occurs in Part IV with `Part IV — The Reference House` followed by `Reference House`.
+## F-03 — Part III leaked migration/project-file syntax — FIXED
 
-These are web document titles, not useful second-level book headings.
+The initial Working Edition exposed raw filenames, phase/gate vocabulary, migration footers and repository-shaped provenance in the reader-facing reference section.
 
-**Action:** adjust deterministic print adapters to replace/remove the original opening H1 rather than merely demoting it. Canonical source remains unchanged.
+The proof established a firm boundary:
 
-## F-03 — Part III leaks repository migration/provenance syntax into reader-facing prose
+- **keep:** stable IDs, Evidence, Maturity, `Does not prove`, meaningful identity history and architectural provenance;
+- **remove from the primary print path:** raw repository paths, internal phase/gate terminology and repeated migration bookkeeping.
 
-**Category:** genre + evidence problem  
-**Disposition:** **FIX NOW**, carefully and canonically.
+**Resolution:**
 
-Examples visible in the Working Edition include:
+- canonical strategy and held-candidate evidence prose was rewritten into publication-native language;
+- the Pattern and Strategy/Candidate indexes were cleaned of migration administration;
+- the Service Topology sequence no longer ends with internal development history;
+- two meaningful Reference House evidence statements were retained but rewritten without phase numbering;
+- a print-only `pattern-page` adapter suppresses terminal migration-provenance footers on canonical patterns while retaining them on the web/repository surface;
+- the authoring contract now refers to the human-readable **Pattern Index**, not `README.md`.
 
-- literal filenames such as `README.md`, `core-12.md`, `pilot/...md`;
-- raw relative paths such as `../reversible-assembly-candidates.md` and `../../research/...md`;
-- migration/process language such as `Phase-6 gate review`, `Migration does not increase evidence or maturity`, and repeated internal provenance statements.
+Evidence qualification was deliberately not weakened for elegance.
 
-Some provenance is valuable because evidence maturity and identity matter. Raw repository paths and migration bureaucracy are not publication prose.
+## F-04 — identity order differs from editorial reading order — KEEP
 
-**Action:** audit Part III source pages by class:
+Pattern IDs are stable identity, not rank or publication sequence. The book follows the publication architecture's editorial grouping/order while the index remains an identity/index surface.
 
-1. keep meaningful historical/evidence provenance;
-2. rewrite raw repository paths into human-readable source/reference labels or proper links;
-3. remove repeated migration boilerplate where it adds no reader value;
-4. retain stable-ID/history information where it explains the language rather than the repository migration project.
+The Reader's Guide now states that distinction. Renumbering or sorting the book by ID would make the language conceptually worse merely to make two lists look alike.
 
-Do this in coherent batches, not blanket search/replace.
+## F-05 — Part IV is not yet the intended six-chapter Reference House publication — DEFER
 
-## F-04 — Part III's opening index order and reading order communicate different structures
-
-**Category:** argument/reference-navigation problem  
-**Disposition:** **KEEP for now; REVIEW**.
-
-The canonical Pattern index presents active patterns primarily as an identity/index surface while the actual book sequence follows the publication architecture's editorial grouping/order. That distinction is legitimate, but the Working Edition should make it obvious enough that readers do not infer a mistake.
-
-**Action:** during the Part III read, judge whether a one-sentence distinction between stable identity order and editorial reading order is sufficient. Do not reorder stable IDs merely to make the lists look neat.
-
-## F-05 — Part IV is useful project material but not yet the promised Reference House publication
-
-**Category:** maturity + argument problem  
-**Disposition:** **DEFER substantive missing chapters; FIX NOW obvious web/admin residue**.
-
-The publication architecture promises six chapters:
+The publication architecture ultimately calls for:
 
 13. Site and type;
 14. Architectural order, repose and tectonic language;
@@ -123,58 +86,102 @@ The publication architecture promises six chapters:
 17. Water and environmental systems;
 18. Future maintenance scenarios.
 
-The current Working Edition instead compiles the strongest existing Reference House documents: overview, tectonic language, vertical bay studies/coordination, whole-house coordination fixture, pattern occurrence register and external access plan.
+The current Working Edition instead contains the strongest current Reference House material: overview, tectonic language, vertical-bay studies and coordination, whole-house fixture, pattern occurrence register and external-access plan.
 
-That is honest for a Working Edition, but it must not be mistaken for the finished Part IV.
+**Decision:** do not fake maturity by renaming development records into six apparently finished chapters. The current Part IV remains explicitly provisional. Missing publication-facing house chapters are genuine future manuscript/design work rather than a PDF-pipeline defect.
 
-**Action:**
+## F-06 — Reference House overview contained website wayfinding — FIXED
 
-- do not invent six weak chapters by renaming development material;
-- retain current strong material as provisional Part IV;
-- remove obvious website wayfinding such as `Start with ...` and terminal `Related documents` lists where they interrupt the linear book;
-- record missing publication-facing chapters as manuscript work outside this pipeline.
+`See ...`, `Start with ... then ...` and phase-number language made the overview read like a documentation landing page.
 
-## F-06 — Part IV overview contains web-navigation prose
+**Resolution:** canonical prose now explains authority and the current study set directly. Links remain where they carry useful relationships rather than navigation instructions.
 
-**Category:** genre problem  
-**Disposition:** **FIX NOW**.
+## F-07 — External Access & Maintenance Plan ended as a web page — FIXED
 
-Examples include `See the project-wide ...`, `Start with ... then ...`, and similar instructions that make sense on a documentation landing page but not in the middle of a book.
+A terminal `Related documents` block and phase-number language were repository navigation rather than publication prose.
 
-**Action:** revise canonical Reference House overview so it still explains authority and composition while reading naturally both online and in print. Links may remain where they support a claim; route instructions should not.
+**Resolution:** the redundant related-documents tail was removed canonically and the remaining development reference was expressed architecturally.
 
-## F-07 — External Access & Maintenance Plan ends with a website-style `Related documents` block
+## F-08 — repeated administrative qualifiers were expensive in Part III/IV — FIXED / BOUNDED
 
-**Category:** genre problem  
-**Disposition:** **FIX NOW**.
+The linear book made repeated `migration`, `Phase-*`, `gate`, `Status` and `Purpose` language much more intrusive than on the website.
 
-The block is useful web navigation but functions as an administrative tail in the book.
+**Resolution:**
 
-**Action:** decide whether these relationships belong as a short prose cross-reference inside the document or solely in website navigation. Prefer removing the terminal list from canonical prose if the surrounding text already carries the necessary conceptual links.
+- Part III migration administration is removed as described in F-03;
+- evidence/maturity/`Does not prove` vocabulary remains because it is substantive;
+- Reference House `Status:` / `Purpose:` control-document headers are suppressed in print while retained in repository source;
+- the Whole-House Coordination Fixture's internal computational-H1 comparison is replaced in print by the actual architectural question it was testing: whether the courtyard house can remain service-coherent without paying for its spatial order through long routes, duplicated cores or technical corridors.
 
-## F-08 — Part III/IV scale makes repeated administrative qualifiers expensive
+The print edition therefore stops exposing project-management scaffolding without pretending the underlying Reference House work is more mature than it is.
 
-**Category:** style/genre problem  
-**Disposition:** **REVIEW DURING LINEAR PASS**.
+## F-09 — long Vivliostyle named destinations — KEEP / G5 RECHECK
 
-Phrases such as `canonical`, `migration`, `provenance`, `Phase-6`, `gate`, `does not prove` and maturity labels occur frequently. Several are essential to HSA's evidence discipline. Others describe the project's internal migration history rather than the architecture.
+Poppler warns that some Vivliostyle named destination tokens exceed the specification's recommended token length. Internal links resolve, the file opens cleanly, all fonts are embedded, and representative Poppler/PDFium renders agree.
 
-**Action:** do not reduce evidence qualification for elegance. Remove only the portions whose subject is the repository/process rather than the architectural proposition, evidence boundary or stable language identity.
+This is a documented renderer issue, not an editorial defect. Recheck during G5 live-artifact verification and after material Vivliostyle upgrades.
 
-## F-09 — known PDF named-destination warning is not an editorial defect
+## F-10 — Part I contained two consecutive implementation bridges — FIXED
 
-**Category:** renderer/preflight  
-**Disposition:** **KEEP / G5 recheck**.
+Composing the canonical Governing Principles inside Part I produced `From doctrine to implementation` immediately before Part I's own `From principles to buildings`. Either source made sense alone; together they repeated the same transition.
 
-Poppler warns that some Vivliostyle named destination tokens exceed the PDF specification's recommended token length. Internal links resolve, fonts are embedded, the file opens cleanly, and representative Poppler/PDFium renders agree.
+**Resolution:** the Part I composition adapter omits the embedded principles document's terminal bridge and retains Part I's native transition.
 
-**Action:** keep documented in the pipeline record; do not let G4 editorial work get entangled with it.
+## F-11 — legacy `The Long-Life House` self-reference leaked into HSA — FIXED
 
-# Current work order
+The older manuscript container name still appeared inside Parts I/II and the developed Repose spread.
 
-1. Fix F-02 print-only duplicated Part III/IV opening titles.
-2. Perform Part III canonical residue audit (F-03/F-08) before editing.
-3. Perform Part IV linear prose audit (F-05/F-06/F-07).
-4. Re-read Preface + Parts I/II/V for argument repetition and transitions.
-5. Update this ledger with every resolved/deferred finding.
-6. Rebuild a coherent G4 candidate PDF only after a meaningful batch of editorial changes.
+**Resolution:** Part adapters normalise legacy manuscript self-reference to **House Systems Architecture** in print, while the independent Repose source was updated canonically. The legacy container headings remain source history and are already replaced by Part headings during print composition.
+
+## F-12 — Part IV exposed an excluded computational comparator — FIXED IN PRINT
+
+The Whole-House Coordination Fixture opened with `Relationship to the computational H1 fixture`. The comparison was useful development provenance, but the publication architecture explicitly keeps the computational track outside Parts I–V.
+
+**Resolution:** the print adapter retains the architectural learning while removing the internal-track referent. The section becomes **Service coherence test** and states the actual question the comparator was testing.
+
+## F-13 — Preface / Parts I–II / Part V repetition — KEEP WITH ONE FIX
+
+The linear argument was checked specifically for repeated propositions.
+
+Findings:
+
+- the Preface is rhetorical and exploratory; Part I is systematic. They reinforce rather than duplicate each other;
+- the `Build the permanent house. Assemble the changeable house inside it.` refrain appears at meaningful structural moments rather than as accidental duplication;
+- proportionality language returns in Part V because delivery must retest the doctrine against cost, carbon and complexity;
+- the only clear accidental repetition was F-10, now removed.
+
+No broad prose shortening is justified by the print proof at this stage.
+
+## F-14 — Part transitions — KEEP
+
+The Reader's Guide now establishes the book's intentional mode changes:
+
+- Parts I–II: linear argument;
+- Part III: professional reference;
+- Part IV: integration test / provisional worked house;
+- Part V: return to making, procurement, testing and commissioning.
+
+Because these mode changes are now established before Part I, the hard Part openings are preferable to artificial linking paragraphs inserted merely to smooth pagination.
+
+# Deferred manuscript work exposed by print
+
+The PDF has done useful diagnostic work beyond the pipeline itself. The principal deferred publication work is now clearer:
+
+- mature the Reference House into the six publication-facing chapters named by the publication architecture;
+- develop the missing project-specific Site/type, water/environmental and future-maintenance-scenario material rather than disguising existing coordination documents as those chapters;
+- continue adding figures where the publication architecture calls for them and where they genuinely improve the argument;
+- eventually develop the promised back matter (evidence/precedent notes, doctrine map, research agenda, implementation schedule, language map, glossary, bibliography/standards) as authored publication material rather than dumping repository indexes into the book.
+
+These gaps are compatible with the label **Working Edition**. They should not block the PDF pipeline.
+
+# Final G4 verification gate
+
+Before marking G4 PASS:
+
+- [ ] latest full Working Edition CI build succeeds after Reference House print adaptation;
+- [ ] final PDF scan shows no unintended raw `.md`, `Phase-*`, `Start with`, `Related documents`, `The Long-Life House`, duplicate implementation bridge or internal computational-H1 language;
+- [ ] Reader's Guide, Part III and representative Part IV pages are visually inspected in the rebuilt artifact;
+- [ ] TOC/Part starts remain structurally sane after added front matter and editorial shortening;
+- [ ] no new renderer/path regressions appear.
+
+If these checks pass, G4 is complete. Further Reference House authorship belongs to normal project development, not this implementation branch.
