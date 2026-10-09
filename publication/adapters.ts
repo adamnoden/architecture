@@ -23,6 +23,7 @@ const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
   'part-ii-composite': ['docs/manuscript/maintenance-geography-external.md'],
   'part-v-wrapper': [],
   'pattern-index': [],
+  'pattern-page': [],
   'reference-house-overview': []
 }
 
@@ -133,6 +134,13 @@ function adaptPartV(markdown: string): string {
   return normaliseLegacyPartOpening(markdown, 'Part V — Making and Testing the Platform')
 }
 
+function adaptPatternPage(markdown: string): string {
+  const provenanceMarker = '\n---\n\n**Provenance:**'
+  const provenanceIndex = markdown.lastIndexOf(provenanceMarker)
+  if (provenanceIndex < 0) return markdown
+  return `${markdown.slice(0, provenanceIndex).trimEnd()}\n`
+}
+
 function frontmatterValue(markdown: string, key: string): string | null {
   if (!markdown.startsWith('---\n')) return null
   const end = markdown.indexOf('\n---\n', 4)
@@ -237,6 +245,8 @@ export function applyAdapter(
       return adaptPartV(markdown)
     case 'pattern-index':
       return adaptPatternIndex(markdown, context)
+    case 'pattern-page':
+      return adaptPatternPage(markdown)
     case 'reference-house-overview':
       return adaptReferenceHouseOverview(markdown)
   }

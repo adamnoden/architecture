@@ -14,6 +14,7 @@ export type PublicationAdapter =
   | 'part-ii-composite'
   | 'part-v-wrapper'
   | 'pattern-index'
+  | 'pattern-page'
   | 'reference-house-overview'
 
 export interface PublicationEntry {
@@ -55,6 +56,7 @@ const pattern = (id: string, source: string, title: string): PublicationEntry =>
   source: `docs/patterns/${source}`,
   title: `${id} — ${title}`,
   kind: 'pattern',
+  adapter: 'pattern-page',
   patternId: id
 })
 
