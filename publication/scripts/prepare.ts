@@ -98,11 +98,13 @@ for (const entry of smokePublicationEntries) {
 
   if (markdown.includes('```mermaid')) {
     const renderedPath = `${preparedPath}.mmdc.md`
-    execFileSync(
-      'mmdc',
-      ['-i', preparedPath, '-o', renderedPath, '-t', 'neutral', '-b', 'transparent'],
-      { stdio: 'inherit' }
-    )
+    const mermaidArgs = ['-i', preparedPath, '-o', renderedPath, '-t', 'neutral', '-b', 'transparent']
+
+    if (process.env.CI) {
+      mermaidArgs.unshift('-p', resolve(publicationRoot, 'puppeteer.ci.json'))
+    }
+
+    execFileSync('mmdc', mermaidArgs, { stdio: 'inherit' })
     renameSync(renderedPath, preparedPath)
     markdown = readFileSync(preparedPath, 'utf8')
   }
