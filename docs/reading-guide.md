@@ -19,6 +19,7 @@ This is the primary sequence and the best route for a first reading.
 5. [Part III — Pattern Language](patterns/README.md)
 6. [Part IV — Reference House](reference-house/README.md)
 7. [Part V — Making and Testing the Platform](manuscript/part-v.md)
+8. [Sources and further reading](manuscript/sources-and-further-reading.md)
 
 The [governing principles](manuscript/governing-principles.md) are the canonical statement of the doctrine. Developed pieces such as [Design for Repose](manuscript/principle-08-repose.md) and [Maintenance Geography — The Exterior](manuscript/maintenance-geography-external.md) sit within Parts I and II rather than forming additional Parts.
 
