@@ -9,7 +9,9 @@ pageClass: hsa-landing-page
 
 # House Systems Architecture
 
-A house spends almost all of its life after completion. It is not one thing ageing at one rate. Structure may stand for generations while services, equipment, seals and finishes are repaired, altered and replaced around it. When those different lifetimes are physically coupled, a change to a short-lived component can require longer-lived fabric to be opened, cut and remade. Those lifetimes, and the interfaces between them, are architectural material.
+A house spends almost all of its life after completion. It is not one thing ageing at one rate. Structure may stand for generations while services, equipment, seals and finishes are repaired, altered and replaced around it. When those different lifetimes are physically coupled, a change to a short-lived component can require longer-lived fabric to be opened, cut and remade.
+
+The useful model is a **domestic ecology**: a set of materials, systems and people connected through physical interfaces and exposed to different timescales of use, weathering, maintenance and change. A pipe and the wall around it become one architectural problem if the wall must be destroyed to reach the pipe; a window and its surrounding finishes become one if replacement consumes both. The relationships between parts, and the interfaces that govern them, are architectural material.
 
 **House Systems Architecture (HSA)** is a design-research programme for the house considered across that longer life. Its central concern is how architectural and technical systems meet: whether repair and replacement can remain local, foreseeable failures can be detected and contained, maintenance has enough working space, and one layer can change without needless destruction of another.
 
