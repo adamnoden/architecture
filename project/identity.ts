@@ -6,7 +6,8 @@ export const projectIdentity = {
     'The Long-Life House',
     'Long-Life House',
     'House Design Doctrine'
-  ]
+  ],
+  legacyNameProvenanceSources: ['STATUS.md']
 } as const
 
 export type LegacyProjectName = (typeof projectIdentity.legacyNames)[number]
