@@ -41,18 +41,18 @@ jobs:
 
       - name: Verify publication PDFs exist
         run: |
-          test -s publication/dist/house-systems-architecture.pdf
-          test -s publication/dist/house-systems-architecture-primer.pdf
+          test -s publication/dist/house-kernel.pdf
+          test -s publication/dist/house-kernel-primer.pdf
 
       - name: Build documentation
         run: npm run docs:build
 
       - name: Assemble Pages artifact
         run: |
-          cp publication/dist/house-systems-architecture.pdf .vitepress/dist/house-systems-architecture.pdf
-          cp publication/dist/house-systems-architecture-primer.pdf .vitepress/dist/house-systems-architecture-primer.pdf
-          test -s .vitepress/dist/house-systems-architecture.pdf
-          test -s .vitepress/dist/house-systems-architecture-primer.pdf
+          cp publication/dist/house-kernel.pdf .vitepress/dist/house-kernel.pdf
+          cp publication/dist/house-kernel-primer.pdf .vitepress/dist/house-kernel-primer.pdf
+          test -s .vitepress/dist/house-kernel.pdf
+          test -s .vitepress/dist/house-kernel-primer.pdf
           test -s .vitepress/dist/index.html
 
       - name: Upload Pages artifact
