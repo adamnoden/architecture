@@ -36,7 +36,7 @@ Any future text that collapses those levels should be corrected.
 | Part II — environmental resilience | Treat intelligible local control as occupant agency | Integrated |
 | Part II — replaceable interior | Prevent maintainability from producing a technical / provisional atmosphere | Integrated |
 | Evidence controls | Keep overclaim guardrails and evidence anchors outside the reader manuscript | Integrated — [audit](../research/repose-evidence-audit.md) |
-| Principle 8 publication spread | Publication-ready argument and primary figure | Complete — [spread](../manuscript/principle-08-repose.md) / [figure](../manuscript/figures/principle-08-repose.svg) |
+| Principle 8 publication spread | Publication-ready argument | Complete — [spread](../manuscript/principle-08-repose.md) |
 | Canonical pattern language | Require occupation / repose impact review for occupant-facing patterns | Integrated across all 21 active canonical patterns |
 | Held candidates | Apply repose/normal-use quality as an admission gate where occupied surfaces are affected | Integrated across current held candidates as applicable |
 | Reference House language | Translate repose into G-01/project-specific composition without claiming Georgian neurological privilege | Integrated |
@@ -107,7 +107,7 @@ The first repository-wide integration established:
 - repose/normal-use quality as a gate for occupied-surface candidates and prototypes;
 - Reference House translation without style-specific neurological claims;
 - RIBA-stage requirements and post-occupancy review;
-- a publication spread and evidence-status figure.
+- a publication spread with explicit evidence boundaries.
 
 That integration is now part of the ordinary project structure rather than a separate migration campaign.
 
