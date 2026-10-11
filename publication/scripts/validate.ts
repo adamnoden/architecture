@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { dependenciesForAdapter, readFrontmatterValue } from '../adapters.js'
 import {
   canonicalPatternOrder,
+  primerPublicationEntries,
   publicationEntries,
   smokePublicationEntries,
   type PublicationEntry
@@ -59,7 +60,9 @@ function validateEntries(label: string, entries: readonly PublicationEntry[]): v
       }
 
       const markdown = readFileSync(sourcePath, 'utf8')
-      const mayContainVue = source === entry.source && entry.adapter === 'pattern-index'
+      const mayContainVue = source === entry.source && (
+        entry.adapter === 'pattern-index' || entry.adapter === 'primer-patterns'
+      )
       if (!mayContainVue) {
         for (const construct of unsupportedSourceConstructs) {
           if (construct.test.test(markdown)) {
@@ -85,6 +88,7 @@ function validateEntries(label: string, entries: readonly PublicationEntry[]): v
 }
 
 validateEntries('smoke', smokePublicationEntries)
+validateEntries('primer', primerPublicationEntries)
 validateEntries('publication', publicationEntries)
 
 const mermaidFixture = smokePublicationEntries.find((entry) => entry.smokeOnly)
@@ -108,5 +112,5 @@ for (let index = 0; index < canonicalPatternOrder.length; index += 1) {
 }
 
 console.log(
-  `Publication manifests valid: ${smokePublicationEntries.length} smoke entries; ${publicationEntries.length} Working Edition entries.`
+  `Publication manifests valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
 )
