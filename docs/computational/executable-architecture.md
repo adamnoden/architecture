@@ -365,6 +365,12 @@ AI may help interpret intent, suggest arrangements, explain failures, navigate s
 
 The pass/fail path must remain auditable.
 
+### Formalisation is a reduction
+
+A formal model makes parts of the building legible to software by selecting, naming and simplifying them. That reduction is what makes computation useful; it is also a reason to keep its authority bounded.
+
+Michael Polanyi's account of tacit knowledge and James C. Scott's critique of schematic legibility provide useful guardrails. Not all competent knowledge can be exhaustively stated as rules, and a representation becomes dangerous when its clarity is mistaken for completeness. The compiler should therefore expose its proof boundary and route unresolved matters to competent judgement rather than quietly treating what it cannot represent as irrelevant.
+
 ## 17. Prior art and the actual research question
 
 Computational design, BIM semantics and automated compliance checking are not new. Relevant directions include IFC/openBIM, IDS, rule-based BIM compliance and generative design, platforms such as Hypar, and increasingly structured digital building-control processes.
@@ -432,6 +438,8 @@ Starting points for later research, not an exhaustive literature review:
 - buildingSMART International, **Industry Foundation Classes (IFC)** and openBIM standards: https://www.buildingsmart.org/standards/
 - buildingSMART International, **Information Delivery Specification (IDS)**: https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/
 - Christoph Sydora and Eleni Stroulia, **Rule-based compliance checking and generative design for building interiors using BIM**, *Automation in Construction* 120 (2020), 103368: https://doi.org/10.1016/j.autcon.2020.103368
+- Michael Polanyi, **The Tacit Dimension** (1966).
+- James C. Scott, **Seeing Like a State: How Certain Schemes to Improve the Human Condition Have Failed** (1998).
 - Hypar, **Documentation / computational building planning platform**: https://docs.hypar.io/
 - UK Government, **Approved Documents — Building Regulations guidance for England**: https://www.gov.uk/government/collections/approved-documents
 - UK Government, **Preparing information for a building control approval application**: https://www.gov.uk/guidance/preparing-information-for-a-building-control-approval-application
