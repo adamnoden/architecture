@@ -9,6 +9,8 @@
     "publication:validate": "tsx publication/scripts/validate.ts",
     "publication:prepare:smoke": "tsx publication/scripts/prepare.ts --smoke",
     "publication:build:smoke": "npm run publication:prepare:smoke && vivliostyle build -c publication/vivliostyle.config.js",
+    "publication:prepare:primer": "tsx publication/scripts/prepare.ts --primer",
+    "publication:build:primer": "npm run publication:prepare:primer && vivliostyle build -c publication/vivliostyle.config.js",
     "publication:prepare": "tsx publication/scripts/prepare.ts --full",
     "publication:build": "npm run publication:prepare && vivliostyle build -c publication/vivliostyle.config.js",
     "typecheck": "tsc --noEmit",
