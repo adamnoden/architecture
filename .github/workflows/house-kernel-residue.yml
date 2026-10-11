@@ -1,0 +1,71 @@
+name: Inventory House Kernel naming residue
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/house-kernel-residue.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Inventory legacy names
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          skip_parts = {'.git', 'node_modules', '.work', 'dist'}
+          text_suffixes = {'.md', '.ts', '.js', '.json', '.yml', '.yaml', '.css', '.svg', '.html', '.txt'}
+          categories = {
+              'House Systems Architecture': re.compile(r'House Systems Architecture'),
+              'standalone HSA': re.compile(r'\bHSA\b(?!-P)'),
+              'Long-Life House': re.compile(r'Long-Life House|Long Life House'),
+              'old slug': re.compile(r'house-systems-architecture', re.I),
+              'old HSA internals': re.compile(r'__HSA_|\bhsa-(?!p-)', re.I),
+              'malformed new name': re.compile(r'an House Kernel|House Kernel ID|House Kernel pattern ID'),
+          }
+
+          results = {name: [] for name in categories}
+          for path in Path('.').rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in text_suffixes:
+                  continue
+              if any(part in skip_parts for part in path.parts):
+                  continue
+              try:
+                  lines = path.read_text(encoding='utf-8').splitlines()
+              except UnicodeDecodeError:
+                  continue
+              for number, line in enumerate(lines, 1):
+                  for name, pattern in categories.items():
+                      if pattern.search(line):
+                          results[name].append((str(path), number, line.strip()))
+
+          for name, matches in results.items():
+              print(f'\n=== {name}: {len(matches)} ===')
+              for path, number, line in matches:
+                  print(f'{path}:{number}: {line}')
+
+          if results['malformed new name']:
+              raise SystemExit('Malformed or misleading House Kernel terminology remains.')
+          PY
+
+      - name: Remove one-shot workflow
+        shell: bash
+        run: |
+          rm .github/workflows/house-kernel-residue.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Remove House Kernel residue audit [skip ci]"
+          git push
