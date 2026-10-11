@@ -1,10 +1,10 @@
 # Documentation structure
 
-This directory is the source-of-truth corpus for **House Systems Architecture**. Its filesystem is organised by the **role a document plays in the project**. The publication and documentation site are allowed to present the same source material through different structures where that produces a clearer argument or reading experience.
+This directory is the source-of-truth corpus for **House Kernel**. Its filesystem is organised by the **role a document plays in the project**. The publication and documentation site are allowed to present the same source material through different structures where that produces a clearer argument or reading experience.
 
 ## Four structures, four jobs
 
-House Systems Architecture has four related but distinct structures.
+House Kernel has four related but distinct structures.
 
 | Structure | Question it answers | Governing source |
 |---|---|---|
@@ -25,7 +25,7 @@ The repository remains the source of truth. The website renders the repository M
 |---|---|---|
 | [`manuscript/`](manuscript/) | Publication-facing architectural argument, governing principles and monograph material | Working notes, evidence packs or implementation records |
 | [`patterns/`](patterns/) | Reusable architectural responses, the canonical pattern language, strategies, candidates, relationships and generative sequences | Project-specific proof, implementation-family evidence or compiler rules merely because they derive from a pattern |
-| [`grammar/`](grammar/) | Architectural-grammar framework and selectable grammar instances such as G-01 | HSA doctrine, the computational ontology or Reference House project choices merely because a grammar constrains them |
+| [`grammar/`](grammar/) | Architectural-grammar framework and selectable grammar instances such as G-01 | House Kernel doctrine, the computational ontology or Reference House project choices merely because a grammar constrains them |
 | [`reference-house/`](reference-house/) | One coordinated worked interpretation used to expose conflicts and force doctrine/patterns/grammar into an actual house | Evidence that a principle, pattern or grammar proposition is generally valid |
 | [`research/`](research/) | Evidence synthesis, precedent, options appraisal and claim hardening | Final publication prose merely because it cites sources |
 | [`development/`](development/) | Internal integration and programme control, including completed migration/audit records and live validation programmes | Prototype artefacts themselves or canonical public doctrine |
@@ -40,7 +40,8 @@ A filename existing in `docs/` does not make it current or canonical.
 
 - The **manuscript** contains the current public architectural argument.
 - The **pattern language migration is complete at current internal scope**: 21 active canonical patterns, three strategies and four held candidates. Historical Core-12 and pilot material remains provenance.
-- **Architectural grammar** is a selectable architectural layer independent of HSA doctrine and the computational supported domain. G-01 is the current grammar research instance used by the Reference House.
+- Canonical pattern IDs retain the legacy **`HSA-P-*` namespace** for identifier stability. The prefix records the House Systems Architecture phase of the project; it is not the current project name and should not be expanded as current branding.
+- **Architectural grammar** is a selectable architectural layer independent of House Kernel doctrine and the computational supported domain. G-01 is the current grammar research instance used by the Reference House.
 - The **reference house** is a worked interpretation and test vehicle, never proof of the doctrine, pattern language or grammar.
 - **Research** supports, qualifies or kills claims; it is not silently promoted into doctrine.
 - **Development** contains both live programme controls and closed historical controls. A completed phase document may accurately describe an earlier next step without describing the project’s current next step.
@@ -77,7 +78,7 @@ Architectural specificity should enter at the narrowest layer that actually owns
 - **Architectural grammars** may be strongly opinionated about hierarchy, topology, proportion, composition, element families and historical lineage.
 - **Project and Reference House choices** may be more specific still.
 
-The current Reference House may therefore select a Georgian-derived grammar without making Georgian architecture part of HSA itself. The same rule applies to less obvious assumptions such as symmetry, courtyard planning, cavity masonry, two storeys or a pitched roof.
+The current Reference House may therefore select a Georgian-derived grammar without making Georgian architecture part of House Kernel itself. The same rule applies to less obvious assumptions such as symmetry, courtyard planning, cavity masonry, two storeys or a pitched roof.
 
 A downstream preference may move upstream only after the underlying reason has been generalised and independently justified. Preserve the general principle upstream; keep the stylistic or project-specific implementation downstream.
 
