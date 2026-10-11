@@ -1,0 +1,278 @@
+name: Finalize House Kernel naming migration
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/house-kernel-finalize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Finalize active naming surfaces
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('.')
+          targets: set[Path] = set()
+
+          def add_file(path: str):
+              p = root / path
+              if p.exists() and p.is_file():
+                  targets.add(p)
+
+          def add_glob(pattern: str):
+              targets.update(p for p in root.glob(pattern) if p.is_file())
+
+          # Public/current layers: their language should use the current name even
+          # where the underlying research began under an earlier project identity.
+          for pattern in [
+              'docs/manuscript/**/*.md',
+              'docs/grammar/**/*.md',
+              'docs/research/**/*.md',
+              'docs/delivery/**/*.md',
+              'docs/prototypes/**/*.md',
+          ]:
+              add_glob(pattern)
+
+          for path in [
+              'docs/reading-guide.md',
+              'docs/editorial/editorial-doctrine.md',
+              'docs/development/README.md',
+              'docs/development/architectural-specificity-boundary.md',
+              'docs/development/tectonic-honesty.md',
+              'docs/development/tectonic-prototype-programme.md',
+              'docs/development/tectonic-integration-register.md',
+              'docs/development/repose-integration-register.md',
+              'docs/development/manufacturing-strategy.md',
+              'docs/development/print-publication-pipeline.md',
+              'docs/computational/README.md',
+              'docs/computational/executable-architecture.md',
+              'docs/computational/architectural-grammar-and-proportion.md',
+              'docs/computational/validity-and-obligations.md',
+              'docs/computational/compiler-targets.md',
+              'docs/computational/pattern-crosswalk-model.md',
+              'docs/computational/pattern-crosswalk-implementation-handoff.md',
+              'docs/computational/boundary-semantics.md',
+              'docs/computational/evidence-and-provenance.md',
+              'docs/computational/supported-domain.md',
+              'docs/computational/formal-architectural-model.md',
+              'publication/theme.css',
+              'publication/adapters.ts',
+              'publication/primer/README.md',
+              'publication/primer/proposition.md',
+              'publication/primer/outlook.md',
+              'compiler/crosswalk/pat-xw-01.test.ts',
+          ]:
+              add_file(path)
+
+          def migrate(text: str) -> str:
+              text = text.replace('House Systems Architecture', 'House Kernel')
+              text = text.replace('The Long-Life House', 'House Kernel')
+              text = text.replace('the Long-Life House', 'House Kernel')
+              text = text.replace('Long-Life House', 'House Kernel')
+              text = text.replace('Long Life House', 'House Kernel')
+              text = re.sub(r'\bHSA\b(?!-P)', 'House Kernel', text)
+              text = text.replace('house-systems-architecture', 'house-kernel')
+              text = text.replace('--hsa-', '--hk-')
+              text = text.replace('__HSA_', '__HOUSE_KERNEL_')
+              text = text.replace('an House Kernel', 'a House Kernel')
+              text = text.replace('House Kernel-wide', 'project-wide')
+              return text
+
+          changed = []
+          for path in sorted(targets):
+              original = path.read_text(encoding='utf-8')
+              updated = migrate(original)
+              if updated != original:
+                  path.write_text(updated, encoding='utf-8')
+                  changed.append(str(path))
+
+          # The manuscript now owns the current title. Remove the legacy print
+          # adapter shim instead of leaving a misleading compatibility function.
+          adapter = root / 'publication/adapters.ts'
+          text = adapter.read_text(encoding='utf-8')
+          text = text.replace('normaliseLegacyPartOpening', 'normalisePartOpening')
+          text = text.replace('const legacyOpening = `# House Kernel\\n## ${partHeading}`', 'const opening = `# House Kernel\\n## ${partHeading}`')
+          text = text.replace('markdown.startsWith(legacyOpening)', 'markdown.startsWith(opening)')
+          text = text.replace('.replace(legacyOpening, `# ${partHeading}`)', '.replace(opening, `# ${partHeading}`)')
+          text = text.replace("\n    .replaceAll('House Kernel', 'House Kernel')", '')
+          text = text.replace('legacy opening changed', 'opening changed')
+          adapter.write_text(text, encoding='utf-8')
+
+          # The failed inventory workflow was deliberately diagnostic only.
+          residue_workflow = root / '.github/workflows/house-kernel-residue.yml'
+          if residue_workflow.exists():
+              residue_workflow.unlink()
+
+          print(f'Updated {len(changed)} active naming files')
+          for path in changed:
+              print(path)
+          PY
+
+      - name: Audit active identity
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('.')
+          active: set[Path] = set()
+          def add_file(path: str):
+              p = root / path
+              if p.exists() and p.is_file(): active.add(p)
+          def add_glob(pattern: str):
+              active.update(p for p in root.glob(pattern) if p.is_file())
+
+          for pattern in [
+              'docs/manuscript/**/*.md',
+              'docs/grammar/**/*.md',
+              'docs/research/**/*.md',
+              'docs/delivery/**/*.md',
+              'docs/prototypes/**/*.md',
+          ]:
+              add_glob(pattern)
+
+          for path in [
+              'README.md', 'docs/README.md', 'docs/reading-guide.md', 'STATUS.md',
+              '.vitepress/config.ts', '.vitepress/theme/index.ts',
+              '.vitepress/theme/build-stamp.css', '.vitepress/theme/custom.css',
+              'docs/editorial/editorial-doctrine.md',
+              'docs/development/README.md',
+              'docs/development/architectural-specificity-boundary.md',
+              'docs/development/tectonic-honesty.md',
+              'docs/development/tectonic-prototype-programme.md',
+              'docs/development/tectonic-integration-register.md',
+              'docs/development/repose-integration-register.md',
+              'docs/development/manufacturing-strategy.md',
+              'docs/development/print-publication-pipeline.md',
+              'docs/computational/README.md',
+              'docs/computational/executable-architecture.md',
+              'docs/computational/architectural-grammar-and-proportion.md',
+              'docs/computational/validity-and-obligations.md',
+              'docs/computational/compiler-targets.md',
+              'docs/computational/pattern-crosswalk-model.md',
+              'docs/computational/pattern-crosswalk-implementation-handoff.md',
+              'docs/computational/boundary-semantics.md',
+              'docs/computational/evidence-and-provenance.md',
+              'docs/computational/supported-domain.md',
+              'docs/computational/formal-architectural-model.md',
+              'publication/theme.css', 'publication/adapters.ts',
+              'publication/scripts/prepare.ts', 'publication/primer/README.md',
+              'publication/primer/proposition.md', 'publication/primer/outlook.md',
+              'compiler/crosswalk/pat-xw-01.test.ts', 'package.json', 'package-lock.json',
+          ]:
+              add_file(path)
+
+          # Explicitly permitted historical lines in otherwise current control files.
+          allowed = {
+              ('STATUS.md', 'House Systems Architecture'),
+              ('STATUS.md', 'Long-Life House'),
+              ('STATUS.md', 'HSA-P-'),
+              ('docs/README.md', 'House Systems Architecture'),
+              ('docs/README.md', 'HSA-P-'),
+              ('docs/delivery/riba-implementation-brief-template.md', 'HSA-P-'),
+          }
+
+          stale_patterns = [
+              ('old full name', re.compile(r'House Systems Architecture')),
+              ('old short name', re.compile(r'\bHSA\b(?!-P)')),
+              ('old Long-Life name', re.compile(r'Long-Life House|Long Life House')),
+              ('old slug', re.compile(r'house-systems-architecture', re.I)),
+              ('old internals', re.compile(r'__HSA_|--hsa-|\bhsa-(?!p-)', re.I)),
+              ('malformed current name', re.compile(r'an House Kernel|House Kernel ID|House Kernel pattern ID')),
+          ]
+
+          failures = []
+          for path in sorted(active):
+              rel = str(path)
+              for number, line in enumerate(path.read_text(encoding='utf-8').splitlines(), 1):
+                  for label, pattern in stale_patterns:
+                      if not pattern.search(line):
+                          continue
+                      # Current docs may explicitly explain the historical namespace/name.
+                      if rel in {'STATUS.md', 'docs/README.md'} and (
+                          'House Systems Architecture' in line or 'Long-Life House' in line or 'HSA-P-' in line
+                      ):
+                          continue
+                      if rel == 'docs/delivery/riba-implementation-brief-template.md' and 'HSA-P-' in line:
+                          continue
+                      failures.append(f'{rel}:{number}: [{label}] {line.strip()}')
+
+          if failures:
+              print('\n'.join(failures))
+              raise SystemExit(f'{len(failures)} stale current-name references remain')
+
+          print(f'Active identity audit passed across {len(active)} files.')
+          PY
+
+      - name: Inventory deliberate historical residue
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          skip_parts = {'.git', 'node_modules', '.work', 'dist'}
+          suffixes = {'.md', '.ts', '.js', '.json', '.yml', '.yaml', '.css', '.svg', '.html', '.txt'}
+          pats = {
+              'House Systems Architecture': re.compile(r'House Systems Architecture'),
+              'standalone HSA': re.compile(r'\bHSA\b(?!-P)'),
+              'Long-Life House': re.compile(r'Long-Life House|Long Life House'),
+          }
+          counts = {k: 0 for k in pats}
+          files = {k: set() for k in pats}
+          for path in Path('.').rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in suffixes:
+                  continue
+              if any(part in skip_parts for part in path.parts):
+                  continue
+              text = path.read_text(encoding='utf-8', errors='ignore')
+              for name, pat in pats.items():
+                  n = len(pat.findall(text))
+                  if n:
+                      counts[name] += n
+                      files[name].add(str(path))
+          for name in pats:
+              print(f'{name}: {counts[name]} occurrences in {len(files[name])} files')
+              for f in sorted(files[name]): print(f'  {f}')
+          PY
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Validate repository
+        run: |
+          npm test
+          npm run docs:build
+          npm run publication:prepare:primer
+          npm run publication:prepare
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/house-kernel-finalize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Finalize House Kernel project-name migration [skip ci]"
+          git push
