@@ -151,6 +151,8 @@ Off-site manufacture should lose where logistics, carbon, one-off geometry or cr
 
 David Pye's distinction between *workmanship of risk* and *workmanship of certainty* is useful here. Some work gains value from the judgement and dexterity of the maker. Other operations gain nothing from variability and should be located by geometry, tooling, templates or repeatable interfaces.
 
+Ursula Franklin's distinction between **holistic** and **prescriptive** technologies sharpens the same boundary. Some work benefits from a maker who understands the whole process and exercises situational judgement; other repeated operations benefit from being deliberately prescribed. Standardisation is useful where repeatability creates value, not where it merely removes judgement from work that needs it.
+
 For each important operation ask whether skill is improving the architecture or merely compensating for dimensional conflict, ambiguous information or a badly designed sequence. Fine masonry, plaster, stone and joinery may properly retain workmanship of risk; repeated hidden mounting geometry usually should not.
 
 > **Spend workmanship where workmanship creates value.**
@@ -175,6 +177,8 @@ Tolerance should not default to irreversible filler at the last few millimetres.
 ## Mistake-proof consequential operations
 
 Where a repeated operation is easy to misunderstand and the consequence matters, improve the assembly before adding more instructions.
+
+Shigeo Shingo's *poka-yoke* work makes the same point in manufacturing: quality is stronger when the process prevents or exposes mistakes at source rather than relying on inspection after defects are embedded. The architectural transfer is narrow—use geometry, datums and sequence to remove avoidable ambiguity.
 
 Prefer, in order:
 
