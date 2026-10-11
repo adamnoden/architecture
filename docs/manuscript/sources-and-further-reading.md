@@ -2,7 +2,7 @@
 
 House Kernel is not an academic literature review, but it sits within a substantial body of architectural, technical and cross-domain thought. This page gathers books, papers, standards and essays that are cited in the manuscript or materially illuminate its arguments.
 
-Numbered notes remain the evidence trail for specific claims. This is a reading list: inclusion means that a work is relevant to the project, not that House Kernel adopts the whole of its argument.
+Where a chapter uses numbered notes, those remain the evidence trail for specific claims. This is a reading list: inclusion means that a work is relevant to the project, not that House Kernel adopts the whole of its argument.
 
 ## Architecture, change and long life
 
@@ -34,6 +34,13 @@ Numbered notes remain the evidence trail for specific claims. This is a reading 
 - Shigeo Shingo, *Zero Quality Control: Source Inspection and the Poka-Yoke System* (1986).
 - Ursula M. Franklin, *The Real World of Technology* (1990; expanded ed. 1999).
 - Michael Polanyi, *The Tacit Dimension* (1966).
+
+## Occupation, perception and control
+
+- Alex Coburn et al., “Psychological and neural responses to architectural interiors”, *Cortex* 126, 2020, 217–241. https://doi.org/10.1016/j.cortex.2020.01.009
+- Runa T. Hellwig, “Perceived control in indoor environments: a conceptual approach”, *Building Research & Information* 43(3), 2015. https://doi.org/10.1080/09613218.2015.1004150
+- P. F. de Macedo, S. W. Ornstein & G. A. Elali, “Privacy and housing: research perspectives based on a systematic literature review”, *Journal of Housing and the Built Environment* 37, 2022, 653–683. https://doi.org/10.1007/s10901-022-09939-z
+- W. Bi & I. Yildirim, “Visual Perception of Intuitive Physics and Its Computational Foundations”, *Annual Review of Vision Science* 12, 2026, 491–513. https://doi.org/10.1146/annurev-vision-110423-024138
 
 ## Agency, legibility and technical dependence
 
