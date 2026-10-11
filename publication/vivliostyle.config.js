@@ -13,11 +13,12 @@ const contentEntries = build.entries.map((entry) => ({
   title: entry.title
 }))
 
-const entries = build.mode === 'full'
+const hasFrontMatter = build.mode === 'full' || build.mode === 'primer'
+const entries = hasFrontMatter
   ? [
       {
         path: build.titlePage,
-        title: 'House Systems Architecture',
+        title: build.title,
         rel: 'titlepage'
       },
       {
@@ -38,7 +39,7 @@ export default defineConfig({
   entry: entries,
   theme: resolve(publicationRoot, 'theme.css'),
   toc: {
-    htmlPath: build.mode === 'full' ? 'contents.html' : 'index.html',
+    htmlPath: hasFrontMatter ? 'contents.html' : 'index.html',
     title: 'Contents',
     sectionDepth: 1
   },
