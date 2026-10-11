@@ -18,17 +18,17 @@ This is a reliability refactor, not an architectural or editorial expansion. The
 
 ### 1. Repository integrity validation
 
-**State:** planned
+**State:** implemented — CI verification pending
 
-Add a small validator to the ordinary test suite. Initial invariants:
+Implemented:
 
-- every published Markdown page remains deliberately classified in site navigation;
-- local Markdown links resolve;
-- publication manifests contain existing, unique sources and the canonical pattern set exactly once;
-- current project-facing surfaces do not accidentally reintroduce legacy project names;
-- machine-owned control metadata is internally consistent.
+- `scripts/validate-repository.ts` now runs from ordinary `npm test`;
+- the existing curated-navigation coverage assertion is therefore tested before a docs build;
+- relative local Markdown links across the root corpus and `docs/` must resolve and remain inside the repository;
+- the existing publication validator remains the owner of manifest/source uniqueness and canonical-pattern invariants rather than duplicating those checks;
+- a read-only pull-request validation workflow runs `npm test` and `npm run docs:build`.
 
-The validator should reuse existing publication/navigation definitions where possible rather than create parallel lists.
+The PR workflow was first added to `main` as inert validation infrastructure because GitHub does not execute a newly introduced `pull_request` workflow until that workflow exists on the base branch. It has no deploy step and only `contents: read` permission.
 
 ### 2. Control-document lifecycle
 
