@@ -116,7 +116,7 @@ export const smokePublicationEntries: readonly PublicationEntry[] = [
 export const primerPublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'primer-proposition',
-    source: 'docs/manuscript/primer-proposition.md',
+    source: 'publication/primer/proposition.md',
     title: 'The proposition',
     kind: 'primer'
   },
@@ -143,7 +143,7 @@ export const primerPublicationEntries: readonly PublicationEntry[] = [
   },
   {
     id: 'primer-outlook',
-    source: 'docs/manuscript/primer-outlook.md',
+    source: 'publication/primer/outlook.md',
     title: 'Making and testing the platform',
     kind: 'primer'
   }
