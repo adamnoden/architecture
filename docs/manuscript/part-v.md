@@ -308,6 +308,8 @@ Test credible failures such as a leaking hose, blocked condensate drain, overflo
 
 Test ordinary future changes: a new cable, kitchen or bathroom renewal, a room changing use, a floor finish changing, the heat source being replaced or a window frame reaching end of life.
 
+Also test changes that originate outside the fabric: a supported component becoming unavailable, a utility interface changing or an earlier design assumption ceasing to hold.
+
 For each, ask which layer changes, where the work stops and how much permanent fabric remains untouched.
 
 ## Occupation and repose scenarios
