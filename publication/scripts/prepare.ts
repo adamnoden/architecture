@@ -14,7 +14,12 @@ import {
 import { dirname, posix, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { applyAdapter, dependenciesForAdapter } from '../adapters.js'
-import { publicationEntries, smokePublicationEntries, type PublicationEntry } from '../publication.js'
+import {
+  primerPublicationEntries,
+  publicationEntries,
+  smokePublicationEntries,
+  type PublicationEntry
+} from '../publication.js'
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(scriptDirectory, '../..')
@@ -26,10 +31,16 @@ const markdownLinkPattern = /(?<!!)\[[^\]]+\]\(([^\s)]+)([^)]*)\)/g
 
 const smokeMode = process.argv.includes('--smoke')
 const fullMode = process.argv.includes('--full')
-if (smokeMode === fullMode) throw new Error('Choose exactly one publication mode: --smoke or --full.')
+const primerMode = process.argv.includes('--primer')
+const selectedModes = [smokeMode, fullMode, primerMode].filter(Boolean).length
+if (selectedModes !== 1) throw new Error('Choose exactly one publication mode: --smoke, --full or --primer.')
 
-const entries: readonly PublicationEntry[] = smokeMode ? smokePublicationEntries : publicationEntries
-const mode = smokeMode ? 'smoke' : 'full'
+const entries: readonly PublicationEntry[] = smokeMode
+  ? smokePublicationEntries
+  : primerMode
+    ? primerPublicationEntries
+    : publicationEntries
+const mode = smokeMode ? 'smoke' : primerMode ? 'primer' : 'full'
 
 function sha256(path: string): string {
   return createHash('sha256').update(readFileSync(path)).digest('hex')
@@ -127,7 +138,10 @@ function assertNoLocalRepositoryLinks(source: string, markdown: string): void {
   }
 }
 
-function writeTitlePage(metadata: ReturnType<typeof editionMetadata>): string {
+function writeTitlePage(
+  metadata: ReturnType<typeof editionMetadata>,
+  editionLabel: 'Working Edition' | 'Primer'
+): string {
   const path = 'publication-title.html'
   writeFileSync(
     workPath(path),
@@ -135,12 +149,12 @@ function writeTitlePage(metadata: ReturnType<typeof editionMetadata>): string {
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <title>House Systems Architecture</title>
+  <title>House Systems Architecture — ${editionLabel}</title>
 </head>
 <body class="publication-title-page">
   <main class="publication-title">
     <div class="publication-title__primary">
-      <p class="publication-title__edition">Working Edition</p>
+      <p class="publication-title__edition">${editionLabel}</p>
       <h1>House Systems Architecture</h1>
     </div>
     <div class="publication-title__meta">
@@ -181,8 +195,10 @@ cpSync(repoPath('docs'), workPath('docs'), { recursive: true })
 copyFileSync(repoPath('README.md'), workPath('README.md'))
 
 const metadata = editionMetadata()
-const titlePage = fullMode ? writeTitlePage(metadata) : null
-const contentsPage = fullMode ? writeContentsTemplate() : null
+const titlePage = smokeMode
+  ? null
+  : writeTitlePage(metadata, primerMode ? 'Primer' : 'Working Edition')
+const contentsPage = smokeMode ? null : writeContentsTemplate()
 const canonicalSources = new Set(
   entries.flatMap((entry) => [entry.source, ...dependenciesForAdapter(entry.adapter)])
 )
@@ -213,14 +229,25 @@ for (const [source, before] of canonicalHashes) {
   if (before !== after) throw new Error(`Preparation mutated canonical source: ${source}`)
 }
 
+const buildTitle = smokeMode
+  ? 'House Systems Architecture — Publication Smoke'
+  : primerMode
+    ? 'House Systems Architecture — Primer'
+    : 'House Systems Architecture — Working Edition'
+const output = smokeMode
+  ? 'house-systems-architecture-smoke.pdf'
+  : primerMode
+    ? 'house-systems-architecture-primer.pdf'
+    : 'house-systems-architecture.pdf'
+
 writeFileSync(
   resolve(workRoot, 'build.json'),
   JSON.stringify(
     {
       mode,
-      title: smokeMode ? 'House Systems Architecture — Publication Smoke' : 'House Systems Architecture — Working Edition',
+      title: buildTitle,
       language: 'en-GB',
-      output: smokeMode ? 'house-systems-architecture-smoke.pdf' : 'house-systems-architecture.pdf',
+      output,
       titlePage,
       contentsPage,
       revision: metadata.revision,
