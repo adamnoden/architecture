@@ -74,8 +74,8 @@ export default withMermaid(
         {
           text: 'PDF',
           items: [
-            { text: 'Primer · compact', link: '/architecture/house-kernel-primer.pdf' },
-            { text: 'Working Edition · complete', link: '/architecture/house-kernel.pdf' }
+            { text: 'Primer · compact', link: `/architecture/${projectIdentity.slug}-primer.pdf` },
+            { text: 'Working Edition · complete', link: `/architecture/${projectIdentity.slug}.pdf` }
           ]
         }
       ],
