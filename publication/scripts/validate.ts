@@ -9,6 +9,7 @@ import {
   smokePublicationEntries,
   type PublicationEntry
 } from '../publication.js'
+import { readPublicationScope, renderPublicationScope } from '../scope-report.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const unsupportedSourceConstructs = [
@@ -96,9 +97,23 @@ function validateEntries(label: string, entries: readonly PublicationEntry[]): v
   }
 }
 
+function validateScopeReport(): void {
+  const source = 'docs/development/print-publication-scope-crosswalk.md'
+  const markdown = readFileSync(localPath(source), 'utf8')
+  const actual = readPublicationScope(markdown)
+  const expected = renderPublicationScope(publicationEntries)
+
+  if (actual !== expected) {
+    throw new Error(
+      `${source}: generated Working Edition manifest is stale; run npm run publication:scope:update and review the scope change.`
+    )
+  }
+}
+
 validateEntries('smoke', smokePublicationEntries)
 validateEntries('primer', primerPublicationEntries)
 validateEntries('publication', publicationEntries)
+validateScopeReport()
 
 const mermaidFixture = smokePublicationEntries.find((entry) => entry.smokeOnly)
 if (!mermaidFixture) throw new Error('G1 requires one explicitly smoke-only Mermaid fixture.')
@@ -121,5 +136,5 @@ for (let index = 0; index < canonicalPatternOrder.length; index += 1) {
 }
 
 console.log(
-  `Publication manifests and adapters valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
+  `Publication manifests, adapters and generated scope report valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
 )
