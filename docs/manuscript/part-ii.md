@@ -226,6 +226,8 @@ Where practical, failure should stop at the smallest useful boundary. A washing-
 
 Locality reduces damage and diagnostic uncertainty.
 
+Charles Perrow's work on complex, tightly coupled systems is far removed from domestic construction, but one distinction transfers cleanly: failures become harder to manage when consequences propagate quickly through dependencies that are difficult to understand. The domestic response is modest—reduce unnecessary coupling and keep failure paths legible.
+
 It also supports granular isolation. Shutting off one fixture, circuit or plant item can stop a local defect becoming a whole-house emergency. Granularity still needs restraint: hundreds of unidentifiable valves do not produce maintainability.
 
 ## Failure scenarios as design tools
@@ -252,6 +254,8 @@ A component may be visible and still be unusable for maintenance. A technician c
 Access therefore has scale. At one end is clearance around a fixing; at the other is the route by which people, tools, replacement equipment and waste move through the building.
 
 **Maintenance geography** is the deliberate organisation of that spatial system. The term is used here prospectively: the topology by which maintenance work is given places to occur. It is related to, but distinct from, scholarship describing maintenance as lived spatial practice.
+
+Steven Jackson's “broken world thinking” and Shannon Mattern's writing on maintenance make a related reversal: repair and care are not exceptional afterlives of design, but ordinary work by which technical worlds continue. Here the architectural consequence is literal space for bodies, tools, posture and handling.
 
 ## From component access to spatial order
 
@@ -346,6 +350,8 @@ Kitchen extraction makes the principle obvious: removing cooking products at the
 Ventilation terminals, filters and fans are maintenance items. Their performance should not depend on inaccessible filters or ducts that cannot be cleaned.
 
 Approved Document F requires mechanical ventilation systems to be commissioned and, for new dwellings, measured airflow rates to be recorded. That should be treated as performance evidence rather than paperwork: installed performance matters more than catalogue performance.
+
+Resilience engineering adds a useful boundary to the idea. David Woods uses **graceful extensibility** for the ability of a system to extend its capacity to adapt when surprise pushes beyond anticipated limits. A house cannot pre-design every future condition, but cheap reserves—spare routes, manual fallbacks, replaceable systems and passive capacity—can preserve room to manoeuvre.
 
 ## Passive survivability
 
