@@ -193,6 +193,8 @@ rmSync(workRoot, { recursive: true, force: true })
 mkdirSync(workSourceRoot, { recursive: true })
 cpSync(repoPath('docs'), workPath('docs'), { recursive: true })
 copyFileSync(repoPath('README.md'), workPath('README.md'))
+mkdirSync(workPath('publication'), { recursive: true })
+cpSync(repoPath('publication/primer'), workPath('publication/primer'), { recursive: true })
 
 const metadata = editionMetadata()
 const titlePage = smokeMode
