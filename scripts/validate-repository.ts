@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url'
 import { assertNavigationCoverage } from '../.vitepress/navigation.js'
 import { projectIdentity } from '../project/identity.js'
 import { programmeControls } from '../project/programme-controls.js'
-import { publicationEntries } from '../publication/publication.js'
+import { dependenciesForAdapter } from '../publication/adapters.js'
+import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -149,15 +150,22 @@ function validateProgrammeControlLifecycle(): void {
   }
 }
 
+function publicationSources(): Set<string> {
+  const sources = new Set<string>()
+  for (const entry of [...publicationEntries, ...primerPublicationEntries]) {
+    sources.add(entry.source)
+    for (const dependency of dependenciesForAdapter(entry.adapter)) sources.add(dependency)
+  }
+  return sources
+}
+
 function validateProjectIdentity(): void {
   const failures: string[] = []
   const guardedSources = new Set([
     'README.md',
     'STATUS.md',
     'docs/reading-guide.md',
-    'publication/primer/proposition.md',
-    'publication/primer/outlook.md',
-    ...publicationEntries.map((entry) => entry.source)
+    ...publicationSources()
   ])
   const provenanceSources = new Set<string>(projectIdentity.legacyNameProvenanceSources)
 
