@@ -10,6 +10,7 @@ The publication sequence is:
 4. [Part III — Pattern Language](../patterns/README.md)
 5. [Part IV — Reference House](../reference-house/README.md)
 6. [Part V — Making and Testing the Platform](part-v.md)
+7. [Sources and further reading](sources-and-further-reading.md)
 
 Part III and Part IV are owned by their canonical repository areas rather than duplicated under `manuscript/`. Publication order is not filesystem ownership. The intended book structure and chapter plan are recorded in [Publication Architecture](publication-architecture.md).
 
