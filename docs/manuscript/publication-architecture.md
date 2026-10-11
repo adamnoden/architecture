@@ -197,7 +197,7 @@ C. Research agenda
 D. Reference-house implementation schedule  
 E. Pattern-language map and generative-sequence notes  
 F. Glossary  
-G. Bibliography and standards
+G. [Sources and further reading](sources-and-further-reading.md)
 
 ---
 
