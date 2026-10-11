@@ -20,6 +20,8 @@ The book has two reading modes.
 
 **Part V returns to delivery.** A proposition is not complete because it reads well. It must survive cost, carbon, professional responsibility, construction variation, prototype work, commissioning, maintenance and later change.
 
+**Sources and further reading** closes the current publication with the books, papers, standards and essays most useful for following the architectural and cross-domain ideas further. It is a reading list rather than a second evidence register.
+
 The web edition remains the better place for research provenance, development history and live project state. The PDF is deliberately narrower: it is the linear architectural publication.
 
 ## Terms used in a specific sense
