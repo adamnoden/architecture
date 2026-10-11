@@ -149,13 +149,13 @@ function writeTitlePage(
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <title>House Systems Architecture — ${editionLabel}</title>
+  <title>House Kernel — ${editionLabel}</title>
 </head>
 <body class="publication-title-page">
   <main class="publication-title">
     <div class="publication-title__primary">
       <p class="publication-title__edition">${editionLabel}</p>
-      <h1>House Systems Architecture</h1>
+      <h1>House Kernel</h1>
     </div>
     <div class="publication-title__meta">
       <p>${metadata.dateDisplay}</p>
@@ -232,15 +232,15 @@ for (const [source, before] of canonicalHashes) {
 }
 
 const buildTitle = smokeMode
-  ? 'House Systems Architecture — Publication Smoke'
+  ? 'House Kernel — Publication Smoke'
   : primerMode
-    ? 'House Systems Architecture — Primer'
-    : 'House Systems Architecture — Working Edition'
+    ? 'House Kernel — Primer'
+    : 'House Kernel — Working Edition'
 const output = smokeMode
-  ? 'house-systems-architecture-smoke.pdf'
+  ? 'house-kernel-smoke.pdf'
   : primerMode
-    ? 'house-systems-architecture-primer.pdf'
-    : 'house-systems-architecture.pdf'
+    ? 'house-kernel-primer.pdf'
+    : 'house-kernel.pdf'
 
 writeFileSync(
   resolve(workRoot, 'build.json'),
