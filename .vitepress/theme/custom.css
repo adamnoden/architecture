@@ -2,83 +2,83 @@
   --vp-layout-max-width: 1520px;
   --vp-sidebar-width: 320px;
 
-  /* House Systems Architecture palette */
-  --hsa-c-canvas: #f7f6f2;
-  --hsa-c-raised: #efeee9;
-  --hsa-c-soft: #e9e7e1;
-  --hsa-c-text: #20221f;
-  --hsa-c-text-muted: #5b5e57;
-  --hsa-c-text-faint: #686b64;
-  --hsa-c-divider: #d6d3cb;
-  --hsa-c-green: #315a46;
-  --hsa-c-green-strong: #264737;
-  --hsa-c-green-deep: #1f3b2f;
-  --hsa-c-green-soft: #dde7df;
-  --hsa-c-brass: #85632c;
-  --hsa-c-brass-soft: #ece6da;
+  /* House Kernel palette */
+  --hk-c-canvas: #f7f6f2;
+  --hk-c-raised: #efeee9;
+  --hk-c-soft: #e9e7e1;
+  --hk-c-text: #20221f;
+  --hk-c-text-muted: #5b5e57;
+  --hk-c-text-faint: #686b64;
+  --hk-c-divider: #d6d3cb;
+  --hk-c-green: #315a46;
+  --hk-c-green-strong: #264737;
+  --hk-c-green-deep: #1f3b2f;
+  --hk-c-green-soft: #dde7df;
+  --hk-c-brass: #85632c;
+  --hk-c-brass-soft: #ece6da;
 
   /* VitePress surfaces */
-  --vp-c-bg: var(--hsa-c-canvas);
-  --vp-c-bg-alt: var(--hsa-c-raised);
-  --vp-c-bg-elv: var(--hsa-c-raised);
-  --vp-c-bg-soft: var(--hsa-c-soft);
+  --vp-c-bg: var(--hk-c-canvas);
+  --vp-c-bg-alt: var(--hk-c-raised);
+  --vp-c-bg-elv: var(--hk-c-raised);
+  --vp-c-bg-soft: var(--hk-c-soft);
 
   /* VitePress text and rules */
-  --vp-c-text-1: var(--hsa-c-text);
-  --vp-c-text-2: var(--hsa-c-text-muted);
-  --vp-c-text-3: var(--hsa-c-text-faint);
-  --vp-c-border: var(--hsa-c-divider);
-  --vp-c-divider: var(--hsa-c-divider);
-  --vp-c-gutter: var(--hsa-c-divider);
+  --vp-c-text-1: var(--hk-c-text);
+  --vp-c-text-2: var(--hk-c-text-muted);
+  --vp-c-text-3: var(--hk-c-text-faint);
+  --vp-c-border: var(--hk-c-divider);
+  --vp-c-divider: var(--hk-c-divider);
+  --vp-c-gutter: var(--hk-c-divider);
 
   /* One interaction language: green */
-  --vp-c-brand-1: var(--hsa-c-green);
-  --vp-c-brand-2: var(--hsa-c-green-strong);
-  --vp-c-brand-3: var(--hsa-c-green-deep);
-  --vp-c-brand-soft: var(--hsa-c-green-soft);
+  --vp-c-brand-1: var(--hk-c-green);
+  --vp-c-brand-2: var(--hk-c-green-strong);
+  --vp-c-brand-3: var(--hk-c-green-deep);
+  --vp-c-brand-soft: var(--hk-c-green-soft);
 
   /* Semantic accents */
-  --vp-c-tip-1: var(--hsa-c-green);
-  --vp-c-tip-2: var(--hsa-c-green-strong);
-  --vp-c-tip-3: var(--hsa-c-green-deep);
-  --vp-c-tip-soft: var(--hsa-c-green-soft);
-  --vp-c-warning-1: var(--hsa-c-brass);
+  --vp-c-tip-1: var(--hk-c-green);
+  --vp-c-tip-2: var(--hk-c-green-strong);
+  --vp-c-tip-3: var(--hk-c-green-deep);
+  --vp-c-tip-soft: var(--hk-c-green-soft);
+  --vp-c-warning-1: var(--hk-c-brass);
   --vp-c-warning-2: #725321;
   --vp-c-warning-3: #60451c;
-  --vp-c-warning-soft: var(--hsa-c-brass-soft);
+  --vp-c-warning-soft: var(--hk-c-brass-soft);
 
   /* Code and local search */
-  --vp-code-block-bg: var(--hsa-c-soft);
-  --vp-code-bg: var(--hsa-c-soft);
-  --vp-local-search-bg: var(--hsa-c-raised);
-  --vp-local-search-result-bg: var(--hsa-c-canvas);
-  --vp-local-search-result-border: var(--hsa-c-divider);
-  --vp-local-search-result-selected-bg: var(--hsa-c-green-soft);
-  --vp-local-search-result-selected-border: var(--hsa-c-green);
-  --vp-local-search-highlight-bg: var(--hsa-c-green);
+  --vp-code-block-bg: var(--hk-c-soft);
+  --vp-code-bg: var(--hk-c-soft);
+  --vp-local-search-bg: var(--hk-c-raised);
+  --vp-local-search-result-bg: var(--hk-c-canvas);
+  --vp-local-search-result-border: var(--hk-c-divider);
+  --vp-local-search-result-selected-bg: var(--hk-c-green-soft);
+  --vp-local-search-result-selected-border: var(--hk-c-green);
+  --vp-local-search-highlight-bg: var(--hk-c-green);
   --vp-local-search-highlight-text: #f8f6f0;
 }
 
 .dark {
-  --hsa-c-canvas: #191b19;
-  --hsa-c-raised: #202320;
-  --hsa-c-soft: #282c28;
-  --hsa-c-text: #eeeae1;
-  --hsa-c-text-muted: #b9b6ac;
-  --hsa-c-text-faint: #aaa79e;
-  --hsa-c-divider: #3b403b;
-  --hsa-c-green: #8eb69c;
-  --hsa-c-green-strong: #a8c9b2;
-  --hsa-c-green-deep: #c2dbc8;
-  --hsa-c-green-soft: #29372f;
-  --hsa-c-brass: #c0a05b;
-  --hsa-c-brass-soft: #382f20;
+  --hk-c-canvas: #191b19;
+  --hk-c-raised: #202320;
+  --hk-c-soft: #282c28;
+  --hk-c-text: #eeeae1;
+  --hk-c-text-muted: #b9b6ac;
+  --hk-c-text-faint: #aaa79e;
+  --hk-c-divider: #3b403b;
+  --hk-c-green: #8eb69c;
+  --hk-c-green-strong: #a8c9b2;
+  --hk-c-green-deep: #c2dbc8;
+  --hk-c-green-soft: #29372f;
+  --hk-c-brass: #c0a05b;
+  --hk-c-brass-soft: #382f20;
 
   --vp-local-search-highlight-text: #191b19;
 }
 
 ::selection {
-  background: var(--hsa-c-green-soft);
+  background: var(--hk-c-green-soft);
   color: var(--vp-c-text-1);
 }
 
@@ -199,7 +199,7 @@
  * It keeps the shared navigation and Markdown source while shedding the
  * documentation chrome and opening a wider canvas for the project map.
  */
-.hsa-landing-page .vp-doc h1 {
+.house-kernel-landing-page .vp-doc h1 {
   max-width: 22ch;
   margin-bottom: 0.7em;
   font-size: clamp(2.55rem, 4vw, 3.35rem);
@@ -207,44 +207,44 @@
   letter-spacing: -0.045em;
 }
 
-.hsa-landing-page .vp-doc > h1 + p {
+.house-kernel-landing-page .vp-doc > h1 + p {
   max-width: 64ch;
   margin-top: 0;
   font-size: 1.22em;
   line-height: 1.62;
 }
 
-.hsa-landing-page .vp-doc > h2 {
+.house-kernel-landing-page .vp-doc > h2 {
   max-width: 72ch;
   margin-top: 4.75rem;
   padding-top: 1.15rem;
-  border-top: 1px solid var(--hsa-c-divider);
+  border-top: 1px solid var(--hk-c-divider);
   font-size: 1.55rem;
   letter-spacing: -0.02em;
 }
 
-.hsa-landing-page .vp-doc .mermaid {
+.house-kernel-landing-page .vp-doc .mermaid {
   margin: 2.25rem 0 2.75rem;
   padding: 1.5rem 0;
   overflow-x: auto;
-  border-top: 1px solid var(--hsa-c-divider);
-  border-bottom: 1px solid var(--hsa-c-divider);
+  border-top: 1px solid var(--hk-c-divider);
+  border-bottom: 1px solid var(--hk-c-divider);
 }
 
-.hsa-landing-page .vp-doc .mermaid svg {
+.house-kernel-landing-page .vp-doc .mermaid svg {
   display: block;
   margin-inline: auto;
 }
 
 @media (min-width: 960px) {
-  .hsa-landing-page .VPDoc {
+  .house-kernel-landing-page .VPDoc {
     padding-top: 4rem;
     padding-bottom: 7rem;
   }
 
-  .hsa-landing-page .VPDoc .container,
-  .hsa-landing-page .VPDoc .content,
-  .hsa-landing-page .VPDoc:not(.has-aside) .content-container {
+  .house-kernel-landing-page .VPDoc .container,
+  .house-kernel-landing-page .VPDoc .content,
+  .house-kernel-landing-page .VPDoc:not(.has-aside) .content-container {
     max-width: 1120px;
   }
 }
@@ -255,15 +255,15 @@
     line-height: 1.68;
   }
 
-  .hsa-landing-page .vp-doc h1 {
+  .house-kernel-landing-page .vp-doc h1 {
     font-size: 2.35rem;
   }
 
-  .hsa-landing-page .vp-doc > h1 + p {
+  .house-kernel-landing-page .vp-doc > h1 + p {
     font-size: 1.12em;
   }
 
-  .hsa-landing-page .vp-doc > h2 {
+  .house-kernel-landing-page .vp-doc > h2 {
     margin-top: 3.5rem;
   }
 }
