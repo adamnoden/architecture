@@ -70,7 +70,13 @@ export default withMermaid(
       sidebarMenuLabel: 'Contents',
       nav: [
         ...siteNav,
-        { text: 'PDF', link: '/architecture/house-systems-architecture.pdf' }
+        {
+          text: 'PDF',
+          items: [
+            { text: 'Primer · compact', link: '/architecture/house-systems-architecture-primer.pdf' },
+            { text: 'Working Edition · complete', link: '/architecture/house-systems-architecture.pdf' }
+          ]
+        }
       ],
       sidebar
     }
