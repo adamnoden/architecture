@@ -33,7 +33,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
    Permanent fabric, replaceable systems, designed interfaces, attachment discipline, assembly hierarchy and maintenance geography; introduce workmanship robustness as the requirement that ordinary construction variation be deliberately absorbed rather than exported into site improvisation.
 
 5. **Eleven principles**  
-   Use the locked public principles; each principle receives a short spread and one primary figure. Principle 8, **Design for Repose**, is evidence-bounded explicitly: established environmental and housing evidence is separated from architectural hypotheses such as perceptual structural legibility. The developed spread is [Principle 8 — Design for Repose](principle-08-repose.md), with [Figure 8.1](figures/principle-08-repose.svg).
+   Use the locked public principles; each principle receives a short spread and one primary figure where a figure materially improves the argument. Principle 8, **Design for Repose**, is evidence-bounded explicitly: established environmental and housing evidence is separated from architectural hypotheses such as perceptual structural legibility. The developed spread is [Principle 8 — Design for Repose](principle-08-repose.md).
 
 ## Part II — Architecture of the Platform
 

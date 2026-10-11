@@ -1,6 +1,7 @@
 import { execSync } from 'node:child_process'
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+import { projectIdentity } from '../project/identity.js'
 import { assertNavigationCoverage, nav, sidebar } from './navigation'
 
 assertNavigationCoverage()
@@ -35,7 +36,7 @@ const siteNav = nav.map((item) => {
 // Mermaid stays authored as fenced Markdown; the wrapper only supplies VitePress rendering.
 export default withMermaid(
   defineConfig({
-    title: 'House Kernel',
+    title: projectIdentity.name,
     description: 'Architectural design research for houses designed to remain durable, repairable and adaptable across time.',
     lang: 'en-GB',
     base: '/architecture/',
@@ -59,7 +60,7 @@ export default withMermaid(
     },
 
     themeConfig: {
-      siteTitle: 'House Kernel',
+      siteTitle: projectIdentity.name,
       search: {
         provider: 'local'
       },
@@ -73,8 +74,8 @@ export default withMermaid(
         {
           text: 'PDF',
           items: [
-            { text: 'Primer · compact', link: '/architecture/house-kernel-primer.pdf' },
-            { text: 'Working Edition · complete', link: '/architecture/house-kernel.pdf' }
+            { text: 'Primer · compact', link: `/architecture/${projectIdentity.slug}-primer.pdf` },
+            { text: 'Working Edition · complete', link: `/architecture/${projectIdentity.slug}.pdf` }
           ]
         }
       ],

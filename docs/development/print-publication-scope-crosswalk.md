@@ -1,191 +1,112 @@
 # Print publication scope crosswalk
 
-**Status:** maintained scope record  
+**Status:** maintained editorial scope record + generated manifest view  
 **Updated:** 2026-10-11  
-**Authority:** [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)  
+**Editorial authority:** [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)  
+**Machine compile authority:** [`../../publication/publication.ts`](../../publication/publication.ts)  
 **Pipeline control:** [`print-publication-pipeline.md`](print-publication-pipeline.md)
 
-This crosswalk answers one mechanical question: **which canonical repository sources currently become the Working Edition, and which deliberately do not?**
+This record keeps the two publication authorities distinct. The publication architecture states **what the book means and how it should be organised**. `publication/publication.ts` states **the exact source/order currently compiled into the Working Edition**. The generated table below exposes that machine scope without maintaining a second hand-written manifest.
 
-It is not a new publication outline. Where this record conflicts with the publication architecture, the publication architecture wins.
+Where editorial intent and machine scope disagree, stop and reconcile them deliberately. Do not treat either drift direction as self-correcting.
 
 ## Scope rules
 
 1. Compile current publication-facing canonical material; do not fill manuscript gaps with web navigation or programme-control documents.
 2. Preserve repository ownership. Part III and Part IV enter from `patterns/` and `reference-house/` rather than copied manuscript duplicates.
-3. Supporting evidence remains supporting evidence. Research pages are linked to the live site unless and until publication prose incorporates them.
+3. Supporting evidence remains supporting evidence. Research pages stay outside the primary PDF unless publication prose incorporates them deliberately.
 4. Historical and migration records remain online provenance rather than primary linear reading.
-5. Dynamic website-only representation may receive a deterministic **print adapter** only when the underlying canonical content is already publication-facing. An adapter may render existing data statically; it may not invent or rewrite the argument.
-6. Missing target material remains visibly missing in the Working Edition. Include back matter only when a canonical publication-facing source actually exists; the print pipeline is not authorised to manufacture one merely to complete the table of contents.
+5. Dynamic website-only representation may receive a deterministic **print adapter** only when the underlying canonical content is already publication-facing. An adapter may render or compose existing source; it may not invent the argument.
+6. Missing target material remains visibly missing. Back matter enters the Working Edition only when a canonical publication-facing source exists.
 
-## Front matter
+## Current Working Edition manifest
 
-| Publication target | Current source | Working Edition treatment |
-|---|---|---|
-| Title / subtitle | publication metadata | **Generated mechanically**; no prose source required |
-| Preface — *The Obvious, Eventually* | `docs/manuscript/preface.md` | **Include directly** |
-| Abstract | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide** |
-| How to read the book | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide** |
-| Definitions | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide** |
-| Evidence and maturity legend | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide** |
-| Governing constraints | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide**; do not duplicate the governing principles |
+<!-- generated: publication-manifest:start -->
+> Generated from `publication/publication.ts`. Do not hand-edit this table; run `npm run publication:scope:update` after changing the Working Edition manifest.
 
-The Reader's Guide deliberately consolidates several front-matter functions into one publication-facing source. The generated table of contents remains print mechanics rather than authored front matter.
+| # | Kind | Publication title | Primary source | Adapter |
+|---:|---|---|---|---|
+| 1 | preface | Preface — The Obvious, Eventually | `docs/manuscript/preface.md` | `—` |
+| 2 | front-matter | Reader's Guide | `docs/manuscript/readers-guide.md` | `—` |
+| 3 | part | Part I — The Proposition | `docs/manuscript/part-i.md` | `part-i-composite` |
+| 4 | part | Part II — Architecture of the Platform | `docs/manuscript/part-ii.md` | `part-ii-composite` |
+| 5 | index | Part III — Pattern Language | `docs/patterns/README.md` | `pattern-index` |
+| 6 | method | Pattern Language — Model and Authoring Contract | `docs/patterns/language-model.md` | `—` |
+| 7 | method | Service Topology — Generative Sequence | `docs/patterns/service-topology-sequence.md` | `—` |
+| 8 | pattern | HSA-P-001 — Controlled Utility Entry | `docs/patterns/controlled-utility-entry.md` | `pattern-page` |
+| 9 | pattern | HSA-P-002 — Plant Room as Service Hub | `docs/patterns/plant-room-service-hub.md` | `pattern-page` |
+| 10 | pattern | HSA-P-014 — Accessible Vertical Service Zone | `docs/patterns/accessible-vertical-service-zone.md` | `pattern-page` |
+| 11 | pattern | HSA-P-003 — Coherent Horizontal Service Route | `docs/patterns/coherent-horizontal-service-route.md` | `pattern-page` |
+| 12 | pattern | HSA-P-015 — Accessible Room Service Route | `docs/patterns/accessible-room-service-route.md` | `pattern-page` |
+| 13 | pattern | HSA-P-004 — High-Service-Room Service Wall | `docs/patterns/high-service-room-service-wall.md` | `pattern-page` |
+| 14 | pattern | HSA-P-005 — Designed Structural Penetration | `docs/patterns/designed-structural-penetration.md` | `pattern-page` |
+| 15 | pattern | HSA-P-016 — Compartmented Service Void | `docs/patterns/compartmented-service-void.md` | `pattern-page` |
+| 16 | pattern | HSA-P-017 — Visible Leakage Path | `docs/patterns/visible-leakage-path.md` | `pattern-page` |
+| 17 | pattern | HSA-P-018 — Failure-Tolerant Wet Service Room | `docs/patterns/failure-tolerant-wet-service-room.md` | `pattern-page` |
+| 18 | pattern | HSA-P-009 — Accessible Rainwater Route | `docs/patterns/accessible-rainwater-route.md` | `pattern-page` |
+| 19 | pattern | HSA-P-007 — Permanent Opening / Replaceable Window | `docs/patterns/permanent-opening-replaceable-window.md` | `pattern-page` |
+| 20 | pattern | HSA-P-019 — Permanent Opening / Replaceable Door | `docs/patterns/permanent-opening-replaceable-door.md` | `pattern-page` |
+| 21 | pattern | HSA-P-020 — Designed Threshold | `docs/patterns/designed-threshold.md` | `pattern-page` |
+| 22 | pattern | HSA-P-008 — Movement / Slip Junction | `docs/patterns/movement-slip-junction.md` | `pattern-page` |
+| 23 | pattern | HSA-P-022 — Controlled Attachment Plane | `docs/patterns/controlled-attachment-plane.md` | `pattern-page` |
+| 24 | pattern | HSA-P-010 — Source-Capture Kitchen Extract | `docs/patterns/source-capture-kitchen-extract.md` | `pattern-page` |
+| 25 | pattern | HSA-P-021 — Source-Capture Bathroom Extract | `docs/patterns/source-capture-bathroom-extract.md` | `pattern-page` |
+| 26 | pattern | HSA-P-011 — Roof Maintenance Route | `docs/patterns/roof-maintenance-route.md` | `pattern-page` |
+| 27 | pattern | HSA-P-013 — Ground-Supported Façade Access | `docs/patterns/ground-supported-facade-access.md` | `pattern-page` |
+| 28 | pattern | HSA-P-012 — Physical Service Index | `docs/patterns/physical-service-index.md` | `pattern-page` |
+| 29 | strategy | Strategies | `docs/patterns/strategies/README.md` | `—` |
+| 30 | strategy | Fail-Safe Water Distribution | `docs/patterns/strategies/fail-safe-water-distribution.md` | `—` |
+| 31 | strategy | Decompose Structural Interface Functions | `docs/patterns/strategies/decompose-structural-interface-functions.md` | `—` |
+| 32 | strategy | Separate Structural Floor from Changeable Layers | `docs/patterns/strategies/separate-structural-floor-changeable-layers.md` | `—` |
+| 33 | candidate | Held Pattern Candidates | `docs/patterns/candidates/README.md` | `—` |
+| 34 | candidate | Replaceable Architectural Lining | `docs/patterns/candidates/replaceable-architectural-lining.md` | `—` |
+| 35 | candidate | Individually Isolatable Manifold Distribution | `docs/patterns/candidates/individually-isolatable-manifold-distribution.md` | `—` |
+| 36 | candidate | Local Deep Service Zone | `docs/patterns/candidates/local-deep-service-zone.md` | `—` |
+| 37 | candidate | Selective Floor Access | `docs/patterns/candidates/selective-floor-access.md` | `—` |
+| 38 | reference-house | Part IV — Reference House | `docs/reference-house/README.md` | `reference-house-overview` |
+| 39 | reference-house | Tectonic Architectural Language | `docs/reference-house/tectonic-architectural-language.md` | `reference-house-page` |
+| 40 | reference-house | Vertical Bay Options | `docs/reference-house/vertical-bay-options.md` | `reference-house-page` |
+| 41 | reference-house | Vertical Bay Coordination | `docs/reference-house/vertical-bay-coordination.md` | `reference-house-page` |
+| 42 | reference-house | Whole-House Coordination Fixture 01 | `docs/reference-house/whole-house-coordination-fixture.md` | `reference-house-page` |
+| 43 | reference-house | Pattern Occurrence Register | `docs/reference-house/pattern-occurrence-register.md` | `reference-house-page` |
+| 44 | reference-house | External Access & Maintenance Plan | `docs/reference-house/external-access-maintenance-plan.md` | `reference-house-page` |
+| 45 | part | Part V — Making and Testing the Platform | `docs/manuscript/part-v.md` | `part-v-wrapper` |
+| 46 | back-matter | Sources and further reading | `docs/manuscript/sources-and-further-reading.md` | `—` |
+<!-- generated: publication-manifest:end -->
 
-## Preface and Part I — The Proposition
+The generated block is checked by `publication:validate`. A manifest change therefore fails normal repository tests until this report is regenerated with `npm run publication:scope:update` and the resulting scope change is reviewed.
 
-| Publication role | Canonical source | Treatment |
-|---|---|---|
-| Preface | `docs/manuscript/preface.md` | **Include** |
-| Chapters 1–4: house after completion; different speeds; selective permanence; architectural platform | `docs/manuscript/part-i.md` | **Include** |
-| Chapter 5: eleven principles | `docs/manuscript/governing-principles.md` | **Include** |
-| Developed Principle 8 spread | `docs/manuscript/principle-08-repose.md` + owned SVG | **Include** after governing principles |
+## Editorial interpretation of the manifest
 
-The separate Principle 8 piece is an intended developed insert, not accidental duplication. Its evidence links remain live-site links where the research records themselves are outside the book.
+### Front matter and Parts I–II
 
-## Part II — Architecture of the Platform
+The generated title page and contents are print mechanics and therefore do not appear as source entries. The canonical [`Reader's Guide`](../manuscript/readers-guide.md) consolidates the abstract, reading guidance, definitions, evidence/maturity legend and governing constraints.
 
-| Publication role | Canonical source | Treatment |
-|---|---|---|
-| Chapters 6–12 | `docs/manuscript/part-ii.md` | **Include** |
-| Developed exterior maintenance insert | `docs/manuscript/maintenance-geography-external.md` | **Include** with Part II |
+Part I is a composition: [`part-i.md`](../manuscript/part-i.md) owns the argument while the adapter inserts the canonical [`governing-principles.md`](../manuscript/governing-principles.md) and developed [`principle-08-repose.md`](../manuscript/principle-08-repose.md) at their intended positions. Part II similarly inserts [`maintenance-geography-external.md`](../manuscript/maintenance-geography-external.md). These dependencies are validated by the publication adapter system; they are not additional primary manifest entries.
 
-Research syntheses cited by these chapters remain outside the primary PDF.
+### Part III — Pattern Language
 
-## Part III — Pattern Language
+Part III is a professional reference layer rather than another prose version of Part II. The manifest order is the machine-readable publication order; stable pattern IDs remain identity rather than rank.
 
-Part III is a professional reference layer, not another prose version of Part II. Stable IDs are identity only; the detailed pattern order follows the editorial grouping already established in the publication architecture.
+The Pattern Index receives a deterministic print adapter because its website list is Vue-generated. Pattern frontmatter remains source metadata rather than printed prose. `HSA-P-006` stays visible through the index as a retired identity but its full retired page does not enter the primary linear publication. The pre-admission Accessible Vertical Service Zone candidate and other migration/pilot records remain provenance rather than Working Edition entries.
 
-### Part III opening and method
+Strategies remain visibly outside the 21-pattern count. Held candidates remain visibly outside the canonical language.
 
-| Publication role | Canonical source | Treatment |
-|---|---|---|
-| Pattern-language overview/index | `docs/patterns/README.md` | **Include through deterministic `pattern-index` adapter** because the website list is Vue-generated |
-| Language model and authoring contract | `docs/patterns/language-model.md` | **Include** |
-| First worked generative sequence | `docs/patterns/service-topology-sequence.md` | **Include** |
+### Part IV — Reference House
 
-The Pattern index adapter may only replace the `<script setup>` and Vue-rendered active/retired lists with static Markdown derived from canonical pattern frontmatter. All authored prose remains unchanged.
+The publication architecture ultimately calls for six finished Reference House chapters. The current Reference House is still L2–L3 and consists of the strongest current coordination material rather than those finished chapters. The Working Edition should expose that state rather than fabricate maturity by renaming development records.
 
-### Active canonical patterns — publication order
+The manifest therefore carries the current primary Reference House set. Historical service-topology records, G-01 grammar research/cases, research evidence packs and development/audit records remain outside the primary Part IV.
 
-**A · Service geography and distribution**
+### Part V and back matter
 
-1. `docs/patterns/controlled-utility-entry.md` — HSA-P-001
-2. `docs/patterns/plant-room-service-hub.md` — HSA-P-002
-3. `docs/patterns/accessible-vertical-service-zone.md` — HSA-P-014
-4. `docs/patterns/coherent-horizontal-service-route.md` — HSA-P-003
-5. `docs/patterns/accessible-room-service-route.md` — HSA-P-015
-6. `docs/patterns/high-service-room-service-wall.md` — HSA-P-004
-7. `docs/patterns/designed-structural-penetration.md` — HSA-P-005
-8. `docs/patterns/compartmented-service-void.md` — HSA-P-016
+Part V enters directly from [`part-v.md`](../manuscript/part-v.md). Prototype, professional-review, delivery and computational records remain supporting tracks unless prose is deliberately incorporated into Part V later.
 
-**B · Water, leakage and failure**
-
-9. `docs/patterns/visible-leakage-path.md` — HSA-P-017
-10. `docs/patterns/failure-tolerant-wet-service-room.md` — HSA-P-018
-11. `docs/patterns/accessible-rainwater-route.md` — HSA-P-009
-
-**C · Openings, movement and attachment**
-
-12. `docs/patterns/permanent-opening-replaceable-window.md` — HSA-P-007
-13. `docs/patterns/permanent-opening-replaceable-door.md` — HSA-P-019
-14. `docs/patterns/designed-threshold.md` — HSA-P-020
-15. `docs/patterns/movement-slip-junction.md` — HSA-P-008
-16. `docs/patterns/controlled-attachment-plane.md` — HSA-P-022
-
-**D · Environment and external maintenance geography**
-
-17. `docs/patterns/source-capture-kitchen-extract.md` — HSA-P-010
-18. `docs/patterns/source-capture-bathroom-extract.md` — HSA-P-021
-19. `docs/patterns/roof-maintenance-route.md` — HSA-P-011
-20. `docs/patterns/ground-supported-facade-access.md` — HSA-P-013
-
-**E · Stewardship**
-
-21. `docs/patterns/physical-service-index.md` — HSA-P-012
-
-All 21 are **included directly**. Their frontmatter remains source metadata and must not print as prose.
-
-### Strategies
-
-| Source | Treatment |
-|---|---|
-| `docs/patterns/strategies/README.md` | **Include** as the strategy boundary/index |
-| `docs/patterns/strategies/fail-safe-water-distribution.md` | **Include** |
-| `docs/patterns/strategies/decompose-structural-interface-functions.md` | **Include** |
-| `docs/patterns/strategies/separate-structural-floor-changeable-layers.md` | **Include** |
-
-Strategies remain visibly outside the 21-pattern count.
-
-### Held candidate bench
-
-| Source | Treatment |
-|---|---|
-| `docs/patterns/candidates/README.md` | **Include** as candidate boundary/index |
-| `docs/patterns/candidates/replaceable-architectural-lining.md` | **Include** |
-| `docs/patterns/candidates/individually-isolatable-manifold-distribution.md` | **Include** |
-| `docs/patterns/candidates/local-deep-service-zone.md` | **Include** |
-| `docs/patterns/candidates/selective-floor-access.md` | **Include** |
-
-The pre-admission Accessible Vertical Service Zone candidate remains provenance and is **excluded**.
-
-### Retired and migration material
-
-`HSA-P-006` remains visible in the adapted Pattern index as a retired identity and through links, but its full retired page is **not** in the primary linear Part III. `core-12.md`, the pilot, reversible-assembly legacy material and other migration records remain **excluded provenance**.
-
-## Part IV — Reference House
-
-The publication architecture defines a six-chapter target for Part IV, but current Reference House material is still L2–L3 and is organised as live coordination records rather than six finished manuscript chapters. The Working Edition should expose that state instead of fabricating a finished narrative.
-
-Include the current primary, non-historical Reference House set in this order:
-
-1. `docs/reference-house/README.md` — overview, scope and authority boundary;
-2. `docs/reference-house/tectonic-architectural-language.md` — current architectural/tectonic resolution;
-3. `docs/reference-house/vertical-bay-options.md` — current options work;
-4. `docs/reference-house/vertical-bay-coordination.md` — current coordination;
-5. `docs/reference-house/whole-house-coordination-fixture.md` — current whole-house integration fixture + owned SVG;
-6. `docs/reference-house/pattern-occurrence-register.md` — canonical project occurrence mapping;
-7. `docs/reference-house/external-access-maintenance-plan.md` — current exterior maintenance plan.
-
-This order follows a reader from architectural scope → local tectonic/vertical resolution → whole-house coordination → pattern audit → external maintenance. It is a **Working Edition order**, not a claim that the final six Part-IV chapters are complete.
-
-Exclude from the primary Part IV:
-
-- `service-topology-coordination.md`;
-- `service-topology-run-01.md`;
-- G-01 grammar research/case corpus under `docs/grammar/`;
-- research evidence packs;
-- development/audit records.
-
-The Reference House may link to those resources on the live site.
-
-## Part V — Making and Testing the Platform
-
-| Publication role | Canonical source | Treatment |
-|---|---|---|
-| Chapters 19–25 | `docs/manuscript/part-v.md` | **Include directly** |
-
-Prototype, professional-review, delivery and computational records remain supporting tracks unless prose is deliberately incorporated into Part V later.
-
-## Back matter
-
-The publication architecture names evidence notes, doctrine register, research agenda, Reference House implementation schedule, pattern map/generative notes, glossary and Sources and further reading.
-
-| Publication target | Current source | Working Edition treatment |
-|---|---|---|
-| Evidence and precedent notes | no dedicated canonical publication source | **Missing / defer** |
-| 63-item doctrine register | no publication-facing back-matter source | **Missing / defer** |
-| Research agenda | no publication-facing back-matter source | **Missing / defer** |
-| Reference House implementation schedule | no publication-facing back-matter source | **Missing / defer** |
-| Pattern-language map and generative-sequence notes | material exists in Part III; no separate back-matter source | **Do not duplicate** |
-| Glossary | no dedicated canonical publication source | **Missing / defer** |
-| Sources and further reading | `docs/manuscript/sources-and-further-reading.md` | **Include directly after Part V** |
-
-Missing back matter remains an editorial completion task, not a renderer defect.
+Of the back matter named by the publication architecture, only [`Sources and further reading`](../manuscript/sources-and-further-reading.md) currently has a canonical publication-facing source and therefore enters the Working Edition. Evidence/precedent notes, the doctrine register, research agenda, Reference House implementation schedule and glossary remain genuine future editorial work. The pattern map/generative material already lives in Part III and should not be duplicated merely to fill an appendix slot.
 
 ## Explicit whole-corpus exclusions
 
-These areas remain accessible online but are not recursively compiled into the primary PDF:
+The following remain accessible online but are not recursively compiled into the Working Edition:
 
 - root `README.md` and `STATUS.md`;
 - `docs/reading-guide.md` and `docs/README.md`;
@@ -198,19 +119,21 @@ These areas remain accessible online but are not recursively compiled into the p
 - pattern migration/history/provenance material;
 - Reference House historical service-topology records.
 
-These exclusions preserve the repository's established authority boundaries rather than treating the PDF as an archive export.
+These exclusions preserve the repository's authority boundaries rather than treating the PDF as an archive export.
 
-## Implementation consequences
+## Machine invariants
 
-The full manifest contains the publication-facing source set rather than the entire documentation corpus. It should validate:
+The publication validator should continue to fail when:
 
-- every included source exists;
-- no source appears twice;
-- every raw Vue construct has a named deterministic adapter;
-- all canonical active pattern IDs appear exactly once and in the editorial order above;
-- retired IDs do not accidentally enter the active pattern sequence;
-- excluded Markdown links become live-site URLs;
-- included Markdown links become internal publication destinations;
-- generated/adapted output never mutates canonical source.
+- an included source or adapter dependency is missing;
+- a primary source or manifest ID is duplicated;
+- unsupported website-only constructs reach print without an explicit adapter;
+- canonical active pattern IDs are missing, duplicated or out of editorial order;
+- retired identities enter the active pattern sequence;
+- local images referenced by publication sources are missing;
+- a deterministic adapter produces empty output;
+- the generated scope block above differs from `publication/publication.ts`.
 
-If a build reveals another website-only construct, stop and add an explicit adapter or change the scope decision here. Do not silently strip it.
+The preparation/build layer separately ensures that excluded Markdown links become live-site URLs, included Markdown links become internal publication destinations, and canonical sources are not mutated during preparation.
+
+If a build reveals another website-only construct or a new publication exception, add an explicit adapter or change the scope decision here. Do not silently strip content or duplicate the manifest by hand.

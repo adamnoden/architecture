@@ -13,6 +13,7 @@ import {
 } from 'node:fs'
 import { dirname, posix, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { projectIdentity } from '../../project/identity.js'
 import { applyAdapter, dependenciesForAdapter } from '../adapters.js'
 import {
   primerPublicationEntries,
@@ -149,13 +150,13 @@ function writeTitlePage(
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <title>House Kernel — ${editionLabel}</title>
+  <title>${projectIdentity.name} — ${editionLabel}</title>
 </head>
 <body class="publication-title-page">
   <main class="publication-title">
     <div class="publication-title__primary">
       <p class="publication-title__edition">${editionLabel}</p>
-      <h1>House Kernel</h1>
+      <h1>${projectIdentity.name}</h1>
     </div>
     <div class="publication-title__meta">
       <p>${metadata.dateDisplay}</p>
@@ -232,15 +233,15 @@ for (const [source, before] of canonicalHashes) {
 }
 
 const buildTitle = smokeMode
-  ? 'House Kernel — Publication Smoke'
+  ? `${projectIdentity.name} — Publication Smoke`
   : primerMode
-    ? 'House Kernel — Primer'
-    : 'House Kernel — Working Edition'
+    ? `${projectIdentity.name} — Primer`
+    : `${projectIdentity.name} — Working Edition`
 const output = smokeMode
-  ? 'house-kernel-smoke.pdf'
+  ? `${projectIdentity.slug}-smoke.pdf`
   : primerMode
-    ? 'house-kernel-primer.pdf'
-    : 'house-kernel.pdf'
+    ? `${projectIdentity.slug}-primer.pdf`
+    : `${projectIdentity.slug}.pdf`
 
 writeFileSync(
   resolve(workRoot, 'build.json'),
