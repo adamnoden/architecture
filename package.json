@@ -7,6 +7,7 @@
     "docs:build": "vitepress build .",
     "docs:preview": "vitepress preview .",
     "publication:validate": "tsx publication/scripts/validate.ts",
+    "publication:scope:update": "tsx publication/scripts/update-scope-report.ts",
     "publication:prepare:smoke": "tsx publication/scripts/prepare.ts --smoke",
     "publication:build:smoke": "npm run publication:prepare:smoke && vivliostyle build -c publication/vivliostyle.config.js",
     "publication:prepare:primer": "tsx publication/scripts/prepare.ts --primer",
