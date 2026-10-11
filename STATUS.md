@@ -61,7 +61,7 @@ The maturity scale is **L1 framed · L2 developed · L3 coordinated · L4 intern
 
 These areas are not current work queues. Their detailed records remain available for provenance.
 
-- **Naming history — recorded.** The project began as **House Design Doctrine**, became **Long-Life House**, then **House Systems Architecture**, and is now **House Kernel**. Older names remain valid only when describing the historical state in which a document, commit or identifier was created.
+- **Naming history — recorded.** The project began as **House Design Doctrine**, became **Long-Life House**, then **House Systems Architecture**, and is now **House Kernel**. The active project identity has been migrated across the website, manuscript, publication pipeline, current research/control documents and build tooling; older names remain only where they describe historical state or a stable legacy identifier.
 - **Original doctrine discovery — closed.** House Design Doctrine v7 is preserved as source material rather than a live specification.
 - **Architectural-specificity audit — complete.** Gates 0–7 established the boundary between project doctrine, patterns, technical scope, grammar and Reference House choices. See the [audit](docs/development/architectural-specificity-audit.md) and [adversarial test](docs/development/architectural-specificity-adversarial-test.md).
 - **Pattern-language migration — complete.** Phases 0–7 established the current canonical language. The stable `HSA-P-*` pattern namespace dates from the House Systems Architecture phase and is retained for identifier stability. See the [Phase 7 review](docs/development/pattern-language-phase7-review.md).
