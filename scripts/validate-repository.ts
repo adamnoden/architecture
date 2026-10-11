@@ -159,13 +159,14 @@ function validateProjectIdentity(): void {
     'publication/primer/outlook.md',
     ...publicationEntries.map((entry) => entry.source)
   ])
+  const provenanceSources = new Set<string>(projectIdentity.legacyNameProvenanceSources)
 
   for (const source of guardedSources) {
     const path = join(repoRoot, source)
     const content = readFileSync(path, 'utf8')
     for (const legacyName of projectIdentity.legacyNames) {
-      if (content.includes(legacyName)) {
-        failures.push(`${source} contains legacy project name: ${legacyName}`)
+      if (content.includes(legacyName) && !provenanceSources.has(source)) {
+        failures.push(`${source} contains legacy project name outside explicit provenance: ${legacyName}`)
       }
     }
   }
