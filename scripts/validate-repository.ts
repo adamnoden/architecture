@@ -2,7 +2,9 @@ import { existsSync, lstatSync, readFileSync, readdirSync } from 'node:fs'
 import { dirname, join, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { assertNavigationCoverage } from '../.vitepress/navigation.js'
+import { projectIdentity } from '../project/identity.js'
 import { programmeControls } from '../project/programme-controls.js'
+import { publicationEntries } from '../publication/publication.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -147,10 +149,44 @@ function validateProgrammeControlLifecycle(): void {
   }
 }
 
+function validateProjectIdentity(): void {
+  const failures: string[] = []
+  const guardedSources = new Set([
+    'README.md',
+    'STATUS.md',
+    'docs/reading-guide.md',
+    'publication/primer/proposition.md',
+    'publication/primer/outlook.md',
+    ...publicationEntries.map((entry) => entry.source)
+  ])
+
+  for (const source of guardedSources) {
+    const path = join(repoRoot, source)
+    const content = readFileSync(path, 'utf8')
+    for (const legacyName of projectIdentity.legacyNames) {
+      if (content.includes(legacyName)) {
+        failures.push(`${source} contains legacy project name: ${legacyName}`)
+      }
+    }
+  }
+
+  for (const source of ['.vitepress/config.ts', 'publication/scripts/prepare.ts']) {
+    const content = readFileSync(join(repoRoot, source), 'utf8')
+    if (content.includes(`'${projectIdentity.name}'`) || content.includes(`\"${projectIdentity.name}\"`)) {
+      failures.push(`${source} hard-codes the current project name instead of using project/identity.ts`)
+    }
+  }
+
+  if (failures.length) {
+    throw new Error(`Project identity drift:\n${failures.map((failure) => `  - ${failure}`).join('\n')}`)
+  }
+}
+
 assertNavigationCoverage()
 validateLocalMarkdownLinks()
 validateProgrammeControlLifecycle()
+validateProjectIdentity()
 
 console.log(
-  `Repository integrity valid: navigation coverage, local links and ${programmeControls.length} programme-control lifecycle records.`
+  `Repository integrity valid: navigation, local links, ${programmeControls.length} programme-control records and project identity.`
 )
