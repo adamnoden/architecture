@@ -79,7 +79,7 @@ A project may select a pattern without fixing its implementation. A held candida
 
 ## Canonical patterns and strategies
 
-| House Kernel ID / strategy | Title | Authority | Selected? | Project occurrence / implementation direction | Why selected | Proof required | Deviation allowed? |
+| Pattern ID / strategy | Title | Authority | Selected? | Project occurrence / implementation direction | Why selected | Proof required | Deviation allowed? |
 |---|---|---|---:|---|---|---|---|
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |

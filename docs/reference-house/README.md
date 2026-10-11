@@ -32,14 +32,14 @@ The layers constrain one another without becoming interchangeable.
 
 - **House Kernel doctrine** owns the general long-life propositions: serviceability, lifespan separation, designed interfaces, failure tolerance, maintenance geography, repose, passive-first environmental strategy and architectural resolution of technology.
 - **House Kernel patterns / strategies** own reusable responses selected for the project. Their use here does not increase their general evidence or maturity.
-- **Supported technical families** describe construction or system routes being evaluated. A masonry, floor or roof family does not become an House Kernel preference merely because this house uses it.
+- **Supported technical families** describe construction or system routes being evaluated. A masonry, floor or roof family does not become a House Kernel preference merely because this house uses it.
 - **G-01** owns Georgian-derived spatial and compositional constraints: lineage, hierarchy, ordering, proportions, opening relationships and element families that survive the grammar research.
 - **Project morphology** owns the courtyard and other house-specific geometric decisions that are not part of G-01 by default.
 - **Local dialect** may modify a bounded part of the house—for example the slight Andalusian influence explored for the courtyard—without redefining G-01.
 - **Reference House tectonic dialect** owns project-specific visible resolutions such as traditional joinery and restrained brass or bronze where those choices are architecturally and functionally justified.
 - **Site / programme** owns orientation, planning response, household needs, external relationships and other facts of the project.
 
-Where one decision touches two layers, record the dependency rather than promoting the project choice upstream. A cornice may realise an House Kernel movement-interface principle in this house without becoming an House Kernel requirement. A courtyard may satisfy G-01 ordering without becoming a G-01 invariant.
+Where one decision touches two layers, record the dependency rather than promoting the project choice upstream. A cornice may realise a House Kernel movement-interface principle in this house without becoming a House Kernel requirement. A courtyard may satisfy G-01 ordering without becoming a G-01 invariant.
 
 The current house studies develop this composition through the [Tectonic Architectural Language](tectonic-architectural-language.md), [Vertical Bay Options](vertical-bay-options.md), [Vertical Bay Coordination](vertical-bay-coordination.md) and [External Access & Maintenance Plan](external-access-maintenance-plan.md).
 
