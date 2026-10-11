@@ -4,9 +4,9 @@ import DefaultTheme from 'vitepress/theme'
 import './custom.css'
 import './build-stamp.css'
 
-declare const __HSA_BUILD_COMMIT__: string
+declare const __HOUSE_KERNEL_BUILD_COMMIT__: string
 
-const buildCommit = __HSA_BUILD_COMMIT__
+const buildCommit = __HOUSE_KERNEL_BUILD_COMMIT__
 const shortCommit = buildCommit === 'unknown' ? buildCommit : buildCommit.slice(0, 7)
 const commitUrl = buildCommit === 'unknown'
   ? 'https://github.com/adamnoden/architecture'
@@ -20,7 +20,7 @@ export default {
         h(
           'a',
           {
-            class: 'hsa-build-stamp',
+            class: 'house-kernel-build-stamp',
             href: commitUrl,
             target: '_blank',
             rel: 'noreferrer',
