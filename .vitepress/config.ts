@@ -35,8 +35,8 @@ const siteNav = nav.map((item) => {
 // Mermaid stays authored as fenced Markdown; the wrapper only supplies VitePress rendering.
 export default withMermaid(
   defineConfig({
-    title: 'House Systems Architecture',
-    description: 'Architectural systems research for houses designed to be maintained, repaired, renewed and adapted across time.',
+    title: 'House Kernel',
+    description: 'Architectural design research for houses designed to remain durable, repairable and adaptable across time.',
     lang: 'en-GB',
     base: '/architecture/',
     cleanUrls: true,
@@ -44,12 +44,12 @@ export default withMermaid(
       ['link', { rel: 'icon', type: 'image/svg+xml', href: '/architecture/favicon.svg' }],
       ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/architecture/favicon-32.png' }],
       ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/architecture/apple-touch-icon.png' }],
-      ['meta', { name: 'hsa-build-commit', content: buildCommit }]
+      ['meta', { name: 'house-kernel-build-commit', content: buildCommit }]
     ],
 
     vite: {
       define: {
-        __HSA_BUILD_COMMIT__: JSON.stringify(buildCommit)
+        __HOUSE_KERNEL_BUILD_COMMIT__: JSON.stringify(buildCommit)
       }
     },
 
@@ -59,7 +59,7 @@ export default withMermaid(
     },
 
     themeConfig: {
-      siteTitle: 'House Systems Architecture',
+      siteTitle: 'House Kernel',
       search: {
         provider: 'local'
       },
@@ -73,8 +73,8 @@ export default withMermaid(
         {
           text: 'PDF',
           items: [
-            { text: 'Primer · compact', link: '/architecture/house-systems-architecture-primer.pdf' },
-            { text: 'Working Edition · complete', link: '/architecture/house-systems-architecture.pdf' }
+            { text: 'Primer · compact', link: '/architecture/house-kernel-primer.pdf' },
+            { text: 'Working Edition · complete', link: '/architecture/house-kernel.pdf' }
           ]
         }
       ],
