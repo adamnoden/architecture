@@ -207,11 +207,11 @@ If the selected grammar declared the intermediate sequence as invariant, it migh
 
 The model should not infer the authority merely from the topology.
 
-## 10. Relation to HSA doctrine
+## 10. Relation to House Kernel doctrine
 
-This result belongs primarily to architectural grammar, not HSA doctrine.
+This result belongs primarily to architectural grammar, not House Kernel doctrine.
 
-HSA may care about:
+House Kernel may care about:
 
 - accessible movement;
 - maintenance routes;

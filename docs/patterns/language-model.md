@@ -1,12 +1,12 @@
-# HSA Pattern Language — Model and Authoring Contract
+# House Kernel Pattern Language — Model and Authoring Contract
 
-This document defines what a House Systems Architecture pattern is, how patterns relate, and how canonical pattern records are authored. It controls the pattern layer without replacing the governing principles, research evidence, implementation families, Reference House decisions or computational semantic model.
+This document defines what a House Kernel pattern is, how patterns relate, and how canonical pattern records are authored. It controls the pattern layer without replacing the governing principles, research evidence, implementation families, Reference House decisions or computational semantic model.
 
 ---
 
 ## 1. Role of the pattern layer
 
-House Systems Architecture needs a layer between durable doctrine and project-specific construction.
+House Kernel needs a layer between durable doctrine and project-specific construction.
 
 A principle such as **Preserve the permanent fabric** is intentionally broad. A project still needs reusable architectural moves that resolve recurring situations: utility entry, service concentration, accessible high-service walls, designed crossings, replacement access and so on.
 

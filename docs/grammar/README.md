@@ -1,10 +1,10 @@
 # Architectural Grammar
 
-Architectural grammar is the project layer that makes a **selected architectural language** explicit without promoting that language into House Systems Architecture doctrine.
+Architectural grammar is the project layer that makes a **selected architectural language** explicit without promoting that language into House Kernel doctrine.
 
 The grammar layer may describe topology, hierarchy, ordering, dimensions and proportions, plan/section/elevation relationships, element families and tectonic rules. It remains independent from the computational supported domain: a computational model may represent or check selected grammar relationships, but it does not own the architectural language being represented.
 
-The current active grammar research instance is **G-01**, a Georgian-derived domestic grammar selected by the Reference House. G-01 is deliberately specific; its rules do not become HSA doctrine merely because the Reference House uses them.
+The current active grammar research instance is **G-01**, a Georgian-derived domestic grammar selected by the Reference House. G-01 is deliberately specific; its rules do not become House Kernel doctrine merely because the Reference House uses them.
 
 ## Framework
 
@@ -31,4 +31,4 @@ The later evidence gates and mutation runs record how provisional G-01 claims we
 - [G-01 D5/D6 evidence gate v0.3](g01-d5-d6-web-pass-v03.md) — current D5/D6 authority
 - [G-01 D6 mutation run — Danson sequence](g01-d6-mutation-run-01-danson-sequence.md)
 
-The Reference House selects G-01 as one architectural input alongside HSA doctrine, patterns, site and programme, technical families and project-specific morphology. The grammar remains independently selectable from HSA.
+The Reference House selects G-01 as one architectural input alongside House Kernel doctrine, patterns, site and programme, technical families and project-specific morphology. The grammar remains independently selectable from House Kernel.

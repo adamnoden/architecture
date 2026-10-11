@@ -65,9 +65,9 @@ Keep outside the canonical set until Phase 7 decides whether the architectural l
 
 ### Evidence
 
-Approved Document B identifies concealed cavities as ready routes for smoke/flame spread and requires cavity barriers to divide cavities and close cavity edges in relevant conditions. This is a fire-safety baseline, not evidence that HSA invented service-void compartmentation.
+Approved Document B identifies concealed cavities as ready routes for smoke/flame spread and requires cavity barriers to divide cavities and close cavity edges in relevant conditions. This is a fire-safety baseline, not evidence that House Kernel invented service-void compartmentation.
 
-HSA's source doctrine adds a cross-domain architectural proposition: open service voids should stop at room/zone boundaries while individual services cross through designed interfaces, coordinating fire, acoustic, dust, odour and pest control.
+House Kernel's source doctrine adds a cross-domain architectural proposition: open service voids should stop at room/zone boundaries while individual services cross through designed interfaces, coordinating fire, acoustic, dust, odour and pest control.
 
 Source:
 

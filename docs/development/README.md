@@ -8,8 +8,8 @@ It does **not** contain the prototype artefacts themselves. Build packs, drawing
 
 ## Live controls
 
-- [Architectural Specificity Boundary](architectural-specificity-boundary.md) — continuing scope firewall between general HSA propositions, technical-domain restrictions, architectural grammars and Reference House choices.
-- [Tectonic Prototype Programme](tectonic-prototype-programme.md) — physical/engineering validation programme, including the separation between general HSA evidence and Reference House/G-01 fit.
+- [Architectural Specificity Boundary](architectural-specificity-boundary.md) — continuing scope firewall between general House Kernel propositions, technical-domain restrictions, architectural grammars and Reference House choices.
+- [Tectonic Prototype Programme](tectonic-prototype-programme.md) — physical/engineering validation programme, including the separation between general House Kernel evidence and Reference House/G-01 fit.
 - [Manufacturing Strategy](manufacturing-strategy.md) — implementation/manufacturing thinking where it remains relevant to current prototype and delivery decisions.
 
 Project-wide maturity and priorities are owned by [`../../STATUS.md`](../../STATUS.md).

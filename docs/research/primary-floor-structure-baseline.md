@@ -21,7 +21,7 @@ That makes them a good companion to the project's movement strategy: reduce avoi
 
 I-joists are widely used in UK floors, factory-produced and supported by established certification and connection hardware.
 
-This aligns with the HSA preference for **ordinary parts in extraordinary arrangements**.
+This aligns with the House Kernel preference for **ordinary parts in extraordinary arrangements**.
 
 ### 3. The project does not need the principal advantage of metal-web joists
 

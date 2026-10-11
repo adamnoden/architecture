@@ -1,4 +1,4 @@
-# House Systems Architecture — Publication Architecture v0.12
+# House Kernel — Publication Architecture v0.12
 
 **Working form:** illustrated architectural design-research monograph + evidence-qualified pattern language + separate architect-facing implementation brief.  
 **Status:** v0.12 — canonical pattern language and computational authority reconciled; publication structure remains active.
@@ -62,7 +62,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
 
 Part III is a browsable professional reference: **patterns plus the relationships and generative sequences that help designers combine them**. It is not a second version of Part II and not a catalogue of every technical idea in the project.
 
-The method is defined by the [HSA Pattern Language — Model and Authoring Contract](../patterns/language-model.md). The canonical pattern index is [Patterns](../patterns/README.md). The first worked generative method is the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md).
+The method is defined by the [House Kernel Pattern Language — Model and Authoring Contract](../patterns/language-model.md). The canonical pattern index is [Patterns](../patterns/README.md). The first worked generative method is the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md).
 
 ### Reading structure
 
@@ -205,13 +205,13 @@ G. Bibliography and standards
 
 The project carries a parallel computational proposition: selected architectural and technical relationships may be represented semantically and checked through explicit obligations and scoped evidence.
 
-The canonical concept is [Executable Architecture — Computational Expression of House Systems Architecture](../computational/executable-architecture.md); current authority and provenance are indexed in the [Computational Track](../computational/README.md).
+The canonical concept is [Executable Architecture — Computational Expression of House Kernel](../computational/executable-architecture.md); current authority and provenance are indexed in the [Computational Track](../computational/README.md).
 
 The computational work remains **parallel to the publication rather than being forced into Part I–V**. It is consequential enough to deserve a research track, but the monograph should not present a bounded semantic prototype as a finished building compiler.
 
 Current position:
 
-- executable architecture is **not a governing principle** and does not replace HSA;
+- executable architecture is **not a governing principle** and does not replace House Kernel;
 - the architectural doctrine remains meaningful independently of software;
 - the pattern language is an authoring/provenance layer, not the compiler ontology;
 - the internal paper sequence is complete through H1-PAPER-01 and the capability freeze;

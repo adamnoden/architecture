@@ -104,7 +104,7 @@ The project favours ordinary parts in extraordinary arrangements. That principle
 
 Foundations, primary structure and enduring envelope components may rationally be site-built and materially integrated. Depending on the selected construction family, their value may lie in continuity, mass, weathering, structural clarity, craft or permanence.
 
-No one material family is implied by this layer. Masonry is one strong implementation where selected; another HSA house may establish permanence through a different construction system.
+No one material family is implied by this layer. Masonry is one strong implementation where selected; another House Kernel house may establish permanence through a different construction system.
 
 ### Interface infrastructure
 
@@ -231,7 +231,7 @@ The prototype is also architecture. Ask whether it belongs to the room, feels so
 
 That last test prevents maintainability becoming an excuse for mediocre architecture.
 
-Where the specimen is designed for a selected grammar or project dialect, record that fit separately from the general performance evidence. A successful Reference House detail does not become a general HSA requirement by surviving a prototype.
+Where the specimen is designed for a selected grammar or project dialect, record that fit separately from the general performance evidence. A successful Reference House detail does not become a general House Kernel requirement by surviving a prototype.
 
 ## Failed prototypes
 
@@ -340,7 +340,7 @@ For significant visible interfaces ask:
 
 This is not a policing of taste. It checks that the finished building still tells a coherent story about how it is made.
 
-A selected grammar or project dialect may add narrower material rules. The Reference House, for example, may ask the same question specifically of visible brass/bronze; HSA itself does not require that material vocabulary.
+A selected grammar or project dialect may add narrower material rules. The Reference House, for example, may ask the same question specifically of visible brass/bronze; House Kernel itself does not require that material vocabulary.
 
 ## The final test
 

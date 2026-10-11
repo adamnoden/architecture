@@ -1,6 +1,6 @@
 # Research
 
-The research area holds evidence synthesis, precedent, options appraisal and claim hardening for propositions used elsewhere in House Systems Architecture.
+The research area holds evidence synthesis, precedent, options appraisal and claim hardening for propositions used elsewhere in House Kernel.
 
 Its role is evidential rather than doctrinal. Research may support a proposition, narrow its scope or give reason to abandon it. A finding does not become doctrine merely because the supporting work is detailed or well evidenced.
 

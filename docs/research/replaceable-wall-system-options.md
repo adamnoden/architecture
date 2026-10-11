@@ -341,7 +341,7 @@ Deep factory-made cassettes provide surface, services, backing and potentially a
 
 **Reject as default direction.**
 
-The project does not need a building-inside-a-building cassette system to satisfy HSA.
+The project does not need a building-inside-a-building cassette system to satisfy House Kernel.
 
 ---
 
@@ -594,7 +594,7 @@ Judge all three for:
 
 The two propositions now have different authority.
 
-[`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is a canonical pattern: its reusable invariant is sufficiently clear without committing HSA to one rail or backplane product.
+[`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is a canonical pattern: its reusable invariant is sufficiently clear without committing House Kernel to one rail or backplane product.
 
 [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains held. The evidence supports independent linings, robust mineral sheet products, dry mechanical fixing and genuinely disassemblable lining precedent, but those facts do not prove that a removable occupied surface belongs in a high-quality house.
 

@@ -1,6 +1,6 @@
 # Computational Track
 
-The computational track asks a narrow question within House Systems Architecture: **which building relationships can be represented strongly enough that invalid arrangements, unresolved obligations or missing evidence are exposed during authoring rather than discovered later in drawings or construction?**
+The computational track asks a narrow question within House Kernel: **which building relationships can be represented strongly enough that invalid arrangements, unresolved obligations or missing evidence are exposed during authoring rather than discovered later in drawings or construction?**
 
 It is subordinate to the architecture. Rooms, walls, openings, structure, boundaries, service routes and maintenance paths may be represented semantically where doing so creates a useful check, but architectural judgement is not converted into arbitrary machine rules merely to make the model more complete.
 
@@ -60,7 +60,7 @@ The useful object is therefore not a universal rule engine but a model that can 
 
 ## Pattern crosswalk
 
-The crosswalk tested whether HSA patterns could inform authoring without being promoted into compiler entities. All 21 active patterns, three strategies and four held candidates were representable through the existing semantic, obligation and evidence architecture at internal mapping scope.
+The crosswalk tested whether House Kernel patterns could inform authoring without being promoted into compiler entities. All 21 active patterns, three strategies and four held candidates were representable through the existing semantic, obligation and evidence architecture at internal mapping scope.
 
 - [Pattern → Computational Crosswalk](pattern-crosswalk-model.md)
 - [Service-Topology Pilot](pattern-crosswalk-service-topology-pilot.md)
@@ -75,11 +75,11 @@ Computational representability does not promote or validate an architectural pro
 
 The architectural-grammar framework and G-01 research are owned by the separate [Architectural Grammar](../grammar/) area. A selected grammar may create relationships or requirements that are useful to represent computationally, but representation does not transfer ownership or authority to this track.
 
-The computational model must remain capable of distinguishing grammar conformance from HSA doctrine, technical validity, supported-domain status and project requirements. G-01 is therefore an input that may be checked where formalisation is justified, not a hidden default of the compiler.
+The computational model must remain capable of distinguishing grammar conformance from House Kernel doctrine, technical validity, supported-domain status and project requirements. G-01 is therefore an input that may be checked where formalisation is justified, not a hidden default of the compiler.
 
 ## Supported H1 research domain
 
-The H1 papers use bounded technical families to test the semantic model. Those families describe the domain in which the research was exercised; they are not universal HSA preferences.
+The H1 papers use bounded technical families to test the semantic model. Those families describe the domain in which the research was exercised; they are not universal House Kernel preferences.
 
 Key records include:
 

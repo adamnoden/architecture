@@ -7,7 +7,7 @@ evidence: proposed
 
 # Candidate — Selective Floor Access
 
-**Status:** held; no HSA pattern ID  
+**Status:** held; no House Kernel pattern ID  
 **Evidence:** Proposed / supported by adjacent precedent  
 **Primary unresolved gate:** prove domestic tactile/acoustic quality and a repeatable geometry that is more useful than ordinary local access
 

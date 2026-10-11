@@ -1,6 +1,6 @@
-# House Systems Architecture — Primer publication contract
+# House Kernel — Primer publication contract
 
-The Primer is the compact companion to the House Systems Architecture Working Edition. Its job is to give a technically literate reader the **complete mental model of the project in one sitting**. It is not an abridged copy of the long-form book and it is not a promotional summary.
+The Primer is the compact companion to the House Kernel Working Edition. Its job is to give a technically literate reader the **complete mental model of the project in one sitting**. It is not an abridged copy of the long-form book and it is not a promotional summary.
 
 ## Editorial target
 
@@ -50,8 +50,8 @@ The Primer may state evidence boundaries that are necessary to prevent a false i
 ## Publication rules
 
 - The Primer and Working Edition use the same print system and are built from the same repository commit.
-- The stable public path is `/architecture/house-systems-architecture-primer.pdf`.
-- The title is **House Systems Architecture — Primer**.
+- The stable public path is `/architecture/house-kernel-primer.pdf`.
+- The title is **House Kernel — Primer**.
 - The website should present the Primer as the compact entry point and the Working Edition as the complete publication.
 - All eleven governing principles must remain present.
 - All active canonical patterns must remain represented by identity in the pattern map.

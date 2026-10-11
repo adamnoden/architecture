@@ -223,7 +223,7 @@ Together, permanent fabric, replaceable systems, designed interfaces and mainten
 
 # 5. Eleven principles
 
-The doctrine is stated canonically in [House Systems Architecture — Governing Principles](governing-principles.md). That document is the single maintained source for the eleven principles and their governing constraints; they are not duplicated here.
+The doctrine is stated canonically in [House Kernel — Governing Principles](governing-principles.md). That document is the single maintained source for the eleven principles and their governing constraints; they are not duplicated here.
 
 Within Part I, the principles complete the proposition established by the four chapters above. [Principle 8 — Design for Repose](principle-08-repose.md) also has a developed publication spread because its evidence boundary and architectural implications require fuller treatment.
 

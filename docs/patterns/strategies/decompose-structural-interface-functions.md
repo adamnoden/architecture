@@ -30,7 +30,7 @@ The strategy does **not** prescribe a seated floor, hanger, bearing ledge or sli
 
 The reusable knowledge is analytical: distinguish structural and boundary functions before selecting a connection. The valid physical resolutions differ too much to collapse into one recurring architectural relationship.
 
-The earlier **Seated Floor Structure** work remains valuable because it exposed this stronger abstraction, but the seated connection itself remains an implementation challenger rather than a canonical HSA pattern.
+The earlier **Seated Floor Structure** work remains valuable because it exposed this stronger abstraction, but the seated connection itself remains an implementation challenger rather than a canonical House Kernel pattern.
 
 ## Use
 

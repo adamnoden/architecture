@@ -84,7 +84,7 @@ Good compartmentation should be almost invisible to occupants while reducing spe
 
 ## Evidence
 
-Approved Document B treats concealed cavities as potential routes for smoke and flame spread and requires cavity barriers in relevant conditions. HSA's architectural extension is to make the void/service distinction explicit across several boundary functions rather than treating service geography as exempt from them.
+Approved Document B treats concealed cavities as potential routes for smoke and flame spread and requires cavity barriers in relevant conditions. House Kernel's architectural extension is to make the void/service distinction explicit across several boundary functions rather than treating service geography as exempt from them.
 
 ## Does not prove
 

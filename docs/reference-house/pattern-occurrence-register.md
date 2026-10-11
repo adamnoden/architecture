@@ -3,9 +3,9 @@
 **Status:** canonical Reference House project-state register  
 **Purpose:** distinguish patterns selected in principle from actual project occurrences, implementation directions and outstanding evidence obligations.
 
-The Reference House is a worked interpretation of House Systems Architecture. It is **not evidence for the pattern language**.
+The Reference House is a worked interpretation of House Kernel. It is **not evidence for the pattern language**.
 
-An HSA pattern appears here only when the house has enough geometry or information to identify what the occurrence actually is. A pattern may be relevant or selected in principle without yet having an occurrence.
+An House Kernel pattern appears here only when the house has enough geometry or information to identify what the occurrence actually is. A pattern may be relevant or selected in principle without yet having an occurrence.
 
 ---
 

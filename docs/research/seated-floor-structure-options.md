@@ -1,7 +1,7 @@
 # Seated Floor Structure — Options Appraisal
 
 **Status:** current structural-interface option appraisal / pre-engineering  
-**Classification:** **Seated Floor Structure is an implementation challenger, not a canonical HSA pattern.** The reusable architectural knowledge is captured by [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md).  
+**Classification:** **Seated Floor Structure is an implementation challenger, not a canonical House Kernel pattern.** The reusable architectural knowledge is captured by [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md).  
 **Purpose:** determine whether the project's instinct — support by bearing, restrain only where restraint is required — should produce a genuinely non-standard floor-to-wall connection or simply a more disciplined use of established timber-floor details.
 
 ## Executive position
@@ -85,7 +85,7 @@ For example, Simpson Strong-Tie Safety Fast masonry restraint hangers:
 - permit a small installation gap/tolerance at the joist end;
 - are certified connection products rather than bespoke structural hardware.
 
-This is not an endorsement of one manufacturer. It demonstrates that the market already contains **ordinary components in arrangements very close to the HSA strategy**.
+This is not an endorsement of one manufacturer. It demonstrates that the market already contains **ordinary components in arrangements very close to the House Kernel strategy**.
 
 The project should prefer exploiting a standard certified connection before designing a custom steel shoe whose future calculation, fabrication and approval all become project-specific liabilities.
 
@@ -328,7 +328,7 @@ Unless Option C wins materially on those criteria, **do not invent it**.
 
 # 8. Classification outcome
 
-The stable HSA knowledge is:
+The stable House Kernel knowledge is:
 
 > **Make gravity support explicit, distinguish restraint from support, and provide only the movement freedom that has a demonstrated structural or constructional purpose.**
 

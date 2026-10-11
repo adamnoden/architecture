@@ -1,10 +1,10 @@
 # Reference House — Tectonic Architectural Language
 
-**Status:** Reference House design language; not universal HSA doctrine.
+**Status:** Reference House design language; not universal House Kernel doctrine.
 
 ## Purpose
 
-House Systems Architecture does not prescribe a historical style, material palette or visible joint language. The Reference House currently selects **G-01**, a Georgian-derived architectural grammar. Brass or bronze details, expressed joints and other tectonic devices remain project-level choices within that grammar; they are not requirements in themselves.
+House Kernel does not prescribe a historical style, material palette or visible joint language. The Reference House currently selects **G-01**, a Georgian-derived architectural grammar. Brass or bronze details, expressed joints and other tectonic devices remain project-level choices within that grammar; they are not requirements in themselves.
 
 The task is not to hide a technical platform inside a period-looking shell, but to make the **visible architectural grammar and real constructional grammar coincide**.
 

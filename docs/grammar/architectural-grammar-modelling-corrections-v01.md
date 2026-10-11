@@ -173,7 +173,7 @@ Therefore:
 
 > **shared semantics do not imply shared proof.**
 
-This is particularly important for the HSA compiler architecture.
+This is particularly important for the House Kernel compiler architecture.
 
 ## 8. MC-07 — sectional order must be first-class
 

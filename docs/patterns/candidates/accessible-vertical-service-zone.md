@@ -1,8 +1,8 @@
 # Candidate — Accessible Vertical Service Zone
 
-> **Historical pre-admission record — superseded.** This page preserves the candidate as it stood after the Phase-5 Reference House trial. The proposition subsequently passed admission and is now canonical as [`HSA-P-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md). Statements below such as “no HSA ID assigned”, “pending corpus audit” and “retain candidate status” describe the historical state and are not current project status.
+> **Historical pre-admission record — superseded.** This page preserves the candidate as it stood after the Phase-5 Reference House trial. The proposition subsequently passed admission and is now canonical as [`HSA-P-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md). Statements below such as “no House Kernel ID assigned”, “pending corpus audit” and “retain candidate status” describe the historical state and are not current project status.
 
-**Status at time of record:** pattern candidate produced by the Phase-5 Reference House trial; no HSA ID assigned  
+**Status at time of record:** pattern candidate produced by the Phase-5 Reference House trial; no House Kernel ID assigned  
 **Evidence:** Supported direction / domestic proportionality unresolved  
 **Maturity:** drawn at whole-house coordination scale only  
 **Primary principles:** 2 Preserve permanent fabric; 3 Design the interface; 5 Maintenance geography; 6 Ordinary parts; 8 Repose; 10 Legibility
@@ -195,6 +195,6 @@ Architectural judgement remains necessary for proportionality, domestic characte
 
 ## Candidate decision
 
-**The proposition passes the conceptual admission test, but retain candidate status through the Phase-6 corpus audit before assigning a permanent HSA ID.**
+**The proposition passes the conceptual admission test, but retain candidate status through the Phase-6 corpus audit before assigning a permanent House Kernel ID.**
 
 Reason: the project has proved that the pattern is useful in two internally distinct whole-house studies (the Reference House fixture and H1 comparator), but has not yet challenged naming/scope against the full pattern corpus or external professional review.

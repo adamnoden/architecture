@@ -90,7 +90,7 @@ The system must be quiet and simple enough to use. Controls should be obvious, l
 
 ## Evidence
 
-Approved Document F establishes dwelling ventilation performance and commissioning/measurement expectations for mechanical ventilation. Established kitchen-ventilation practice supports source capture; HSA adds the architectural emphasis on capture geometry, maintainable route and actual use.
+Approved Document F establishes dwelling ventilation performance and commissioning/measurement expectations for mechanical ventilation. Established kitchen-ventilation practice supports source capture; House Kernel adds the architectural emphasis on capture geometry, maintainable route and actual use.
 
 ## Does not prove
 

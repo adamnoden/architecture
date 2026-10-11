@@ -1,7 +1,7 @@
-# House Systems Architecture — Architect-Facing Implementation Brief
+# House Kernel — Architect-Facing Implementation Brief
 ## RIBA Plan of Work Template
 
-**Purpose:** translate House Systems Architecture into project instructions an appointed architect and consultant team can act on without reinterpreting the whole doctrine.
+**Purpose:** translate House Kernel into project instructions an appointed architect and consultant team can act on without reinterpreting the whole doctrine.
 
 The publication explains **why**. This brief records **what this project requires, who decides it, when it must be resolved, and how compliance will be demonstrated**.
 
@@ -71,7 +71,7 @@ Use only requirements genuinely fixed for this project.
 
 ---
 
-# 4. Selected HSA knowledge
+# 4. Selected House Kernel knowledge
 
 Do not copy a frozen catalogue into the project brief. Populate this section from the current [canonical pattern language](../patterns/), [strategies](../patterns/strategies/) and [held candidates](../patterns/candidates/) at the start of the project and update it when project selections change.
 
@@ -79,7 +79,7 @@ A project may select a pattern without fixing its implementation. A held candida
 
 ## Canonical patterns and strategies
 
-| HSA ID / strategy | Title | Authority | Selected? | Project occurrence / implementation direction | Why selected | Proof required | Deviation allowed? |
+| House Kernel ID / strategy | Title | Authority | Selected? | Project occurrence / implementation direction | Why selected | Proof required | Deviation allowed? |
 |---|---|---|---:|---|---|---|---|
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
@@ -94,7 +94,7 @@ Use stable `HSA-P-*` identities for canonical patterns. Strategies remain strate
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 
-Keep this schedule separate from canonical selections. Record the evidence, calculation or prototype gate that would allow the project to adopt the proposition without implying wider HSA validation.
+Keep this schedule separate from canonical selections. Record the evidence, calculation or prototype gate that would allow the project to adopt the proposition without implying wider House Kernel validation.
 
 ---
 
@@ -223,7 +223,7 @@ Record significant wet or bonded work crossing assemblies with different expecte
 **Questions**
 - Is new build the correct strategic response?
 - What service life and stewardship assumptions are realistic?
-- Which unusual HSA measures could materially affect site, budget or gross area?
+- Which unusual House Kernel measures could materially affect site, budget or gross area?
 
 **Required outputs**
 - client objectives and building-life ambition;
@@ -263,7 +263,7 @@ The team must distinguish governing doctrine, selected strategies/patterns, held
 - wet-room stacking/service-wall options;
 - roof-maintenance concept;
 - environmental/passive design concept;
-- selected HSA strategies/patterns and unresolved candidates;
+- selected House Kernel strategies/patterns and unresolved candidates;
 - initial permanence/assembly hierarchy;
 - initial attachment and movement concepts;
 - project architectural-language concept for occupant-facing interfaces;
@@ -388,9 +388,9 @@ A maintainability feature is not accepted solely because it appears on an as-bui
 - record updates after alterations;
 - maintenance problems and unexpected access failures recorded;
 - real maintenance tasks compared with the original brief;
-- lessons fed back into HSA research and pattern evidence where appropriate.
+- lessons fed back into House Kernel research and pattern evidence where appropriate.
 
-Stage 7 closes the loop between project use and future HSA development.
+Stage 7 closes the loop between project use and future House Kernel development.
 
 ---
 

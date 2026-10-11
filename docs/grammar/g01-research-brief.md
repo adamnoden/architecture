@@ -14,13 +14,13 @@ The Reference House already has an architectural temperament:
 - red-brick domestic construction;
 - strong room character and settled spatial order;
 - a courtyard with a slight Andalusian influence;
-- House Systems Architecture requirements expressed through real architectural elements where compatible.
+- House Kernel requirements expressed through real architectural elements where compatible.
 
 That makes it a useful first vehicle for testing architectural grammar.
 
 The first grammar is scoped as:
 
-> **G-01 — a Georgian-derived domestic architectural language for contemporary low-rise English houses, informed by English Palladianism and broader Georgian practice, modified where necessary by contemporary habitation and tested independently against HSA requirements.**
+> **G-01 — a Georgian-derived domestic architectural language for contemporary low-rise English houses, informed by English Palladianism and broader Georgian practice, modified where necessary by contemporary habitation and tested independently against House Kernel requirements.**
 
 This is a project grammar, not a claim to define all Georgian architecture.
 
@@ -484,7 +484,7 @@ Examples of historical conditions that may be rejected or transformed include:
 
 The grammar is not a museum.
 
-HSA may impose additional project requirements, but those remain a separate authority from the grammar itself.
+House Kernel may impose additional project requirements, but those remain a separate authority from the grammar itself.
 
 ## 10. The first hypotheses worth testing
 
@@ -612,14 +612,14 @@ The success criterion is that the house remains one architecture.
 
 This should be resolved compositionally later.
 
-## 15. HSA tectonics as an overlay
+## 15. House Kernel tectonics as an overlay
 
-G-01 should not bake HSA requirements into “Georgian style”.
+G-01 should not bake House Kernel requirements into “Georgian style”.
 
 Keep separate:
 
 - historical/compositional grammar;
-- House Systems Architecture doctrine and project requirements;
+- House Kernel doctrine and project requirements;
 - Reference House tectonic dialect.
 
 Then test compatibility.
@@ -628,14 +628,14 @@ This makes meaningful results possible:
 
 ~~~text
 G-01                  PASS
-HSA project intent    FAIL
+House Kernel project intent    FAIL
 ~~~
 
 or:
 
 ~~~text
 G-01                  PASS
-HSA project intent    PASS
+House Kernel project intent    PASS
 Reference dialect     PASS
 ~~~
 

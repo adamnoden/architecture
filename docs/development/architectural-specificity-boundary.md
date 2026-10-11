@@ -1,15 +1,15 @@
 # Architectural Specificity Boundary
 
 **Status:** active integration rule  
-**Purpose:** prevent project-specific taste, morphology or construction choices from being promoted accidentally into general House Systems Architecture doctrine, patterns or computational capability.
+**Purpose:** prevent project-specific taste, morphology or construction choices from being promoted accidentally into general House Kernel doctrine, patterns or computational capability.
 
 ## The problem
 
 The project began with a concrete house in mind. That was useful: a real architectural preference forced technical ideas to meet an actual domestic language rather than an abstract diagram.
 
-It also created a predictable risk. Features of that imagined house can migrate upstream and begin to look like properties of House Systems Architecture itself.
+It also created a predictable risk. Features of that imagined house can migrate upstream and begin to look like properties of House Kernel itself.
 
-The clearest case is Georgian architecture. The Reference House may legitimately be Georgian-derived. House Systems Architecture is not.
+The clearest case is Georgian architecture. The Reference House may legitimately be Georgian-derived. House Kernel is not.
 
 The same test applies to less obvious inherited assumptions: symmetry, courtyard planning, red brick, classical hierarchy, masonry construction, two storeys, a pitched roof, particular window proportions or any other feature that might belong to one house, one grammar or one supported technical family rather than the general proposition.
 
@@ -73,7 +73,7 @@ Technical-family restrictions must therefore remain labelled as domain restricti
 
 This is the correct place for strong architectural opinion that is not universal doctrine.
 
-A grammar may legitimately constrain hierarchy, topology, axes, bay relationships, dimensional families, opening composition, vertical order, element families and stylistic lineage. Those constraints define membership in that selected language; they do not define House Systems Architecture.
+A grammar may legitimately constrain hierarchy, topology, axes, bay relationships, dimensional families, opening composition, vertical order, element families and stylistic lineage. Those constraints define membership in that selected language; they do not define House Kernel.
 
 The first research grammar, **G-01**, is Georgian-derived because the Reference House is Georgian-derived. G-01 is a selectable architectural language, not the default meaning of the project.
 
@@ -116,7 +116,7 @@ When reviewing a supposedly general document, ask:
 - Is a construction family being mistaken for an architectural value?
 - Is a Reference House morphology being treated as a reusable rule?
 - Has a precedent supplied a general principle, or merely a persuasive example?
-- Would rejecting this feature invalidate House Systems Architecture, or only this grammar/house?
+- Would rejecting this feature invalidate House Kernel, or only this grammar/house?
 
 If the latter, move it downstream.
 
@@ -157,4 +157,4 @@ Some belong legitimately to H1, G-01 or the Reference House. The risk is not the
 
 > **Generalise the reason; localise the taste.**
 
-House Systems Architecture should be opinionated about how a house survives, works, fails, changes and feels to inhabit. A selected architectural grammar may be equally opinionated about what that house looks like and how it is composed. The project is stronger when those two kinds of opinion remain distinguishable.
+House Kernel should be opinionated about how a house survives, works, fails, changes and feels to inhabit. A selected architectural grammar may be equally opinionated about what that house looks like and how it is composed. The project is stronger when those two kinds of opinion remain distinguishable.

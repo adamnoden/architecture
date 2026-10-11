@@ -1,20 +1,20 @@
 # Architectural Grammar and Proportion — Framework v0.3
 
 **Status:** foundational framework; style-neutral  
-**Purpose:** define how selectable architectural languages can become explicit enough to guide or constrain generation without confusing one language with House Systems Architecture itself  
+**Purpose:** define how selectable architectural languages can become explicit enough to guide or constrain generation without confusing one language with House Kernel itself  
 **Implementation:** none
 
 > **The grammar framework should make a selected architectural language explicit. It should not silently select the language for the project.**
 
 ## 1. The actual claim
 
-House Systems Architecture may support strongly opinionated architecture without embedding one style in the doctrine or compiler core.
+House Kernel may support strongly opinionated architecture without embedding one style in the doctrine or compiler core.
 
 The computational proposition is therefore not that beauty can be reduced to universal ratios. It is that a **selected architectural grammar** can describe enough topology, hierarchy, ordering, dimensional families, alignments, plan/section/elevation relationships, element families and preferences to distinguish well-formed members of that language from malformed ones.
 
 The linguistic analogy remains useful up to a point: grammar can distinguish a well-formed sentence from an ill-formed one; it cannot prove the sentence profound. Architectural grammar can define membership and coherence without exhausting architectural quality.
 
-A grammar is consequently an input to the system, not an upstream consequence of House Systems Architecture doctrine.
+A grammar is consequently an input to the system, not an upstream consequence of House Kernel doctrine.
 
 ## 2. Keep the layers separate
 
@@ -106,7 +106,7 @@ Element libraries should follow the language rather than define the framework.
 
 How visible architectural elements meet real construction: joint placement, tolerance absorption, removable trim, wear surfaces, interface depth and other relationships between architectural expression and the actual assembly.
 
-This is where a selected language can meet House Systems Architecture without being mistaken for it.
+This is where a selected language can meet House Kernel without being mistaken for it.
 
 ## 5. Relational before numerical
 
@@ -329,11 +329,11 @@ The aim is not a public beauty vote. It is to discover which relationships carry
 
 ## 18. Multiple grammars are a feature, not an edge case
 
-House Systems Architecture should eventually be able to inhabit several architectural languages.
+House Kernel should eventually be able to inhabit several architectural languages.
 
-That is an important falsification test for the doctrine itself. If a supposedly general HSA proposition only works inside G-01, it is either scoped too broadly or is actually a G-01/project proposition.
+That is an important falsification test for the doctrine itself. If a supposedly general House Kernel proposition only works inside G-01, it is either scoped too broadly or is actually a G-01/project proposition.
 
-Conversely, a grammar may impose requirements that have nothing to do with HSA doctrine. That is legitimate. The system should report their authority honestly.
+Conversely, a grammar may impose requirements that have nothing to do with House Kernel doctrine. That is legitimate. The system should report their authority honestly.
 
 ## 19. G-01 is the first test grammar, not the framework
 
@@ -360,7 +360,7 @@ The Reference House is a worked interpretation. It may select G-01 and then add 
 
 For example, its courtyard should not be smuggled into the Georgian core merely because this house has one. The grammar should be derived independently, then the project should test whether a courtyard can coexist with it or requires an explicit extension/dialect.
 
-The same applies to the Reference House's tectonic language. Traditional joinery, restrained brass/bronze, removable architectural trim and other interface resolutions may form a coherent project dialect without becoming generic Georgian rules or HSA doctrine.
+The same applies to the Reference House's tectonic language. Traditional joinery, restrained brass/bronze, removable architectural trim and other interface resolutions may form a coherent project dialect without becoming generic Georgian rules or House Kernel doctrine.
 
 ## 21. The twelve-year-old test
 

@@ -1,6 +1,6 @@
 # Making and testing the platform
 
-House Systems Architecture is a design position before it is a construction system. Its principles are intended to survive changes in material, technology, architectural language and project circumstance. The work downstream exists to test whether those principles can become useful architecture without turning into disproportionate cost, complexity or fragility.
+House Kernel is a design position before it is a construction system. Its principles are intended to survive changes in material, technology, architectural language and project circumstance. The work downstream exists to test whether those principles can become useful architecture without turning into disproportionate cost, complexity or fragility.
 
 ## From proposition to building
 
@@ -50,7 +50,7 @@ evidence / determination
 validity + diagnostics
 ```
 
-This is not a governing principle, and House Systems Architecture does not depend on software to be meaningful. The computational work is useful only where it makes architectural obligations clearer, catches contradictions or preserves reasoning that would otherwise disappear between documents.
+This is not a governing principle, and House Kernel does not depend on software to be meaningful. The computational work is useful only where it makes architectural obligations clearer, catches contradictions or preserves reasoning that would otherwise disappear between documents.
 
 A future design tool may be able to reject an arrangement because a required maintenance route is absent, a service crossing violates an agreed boundary, or a claimed assembly lacks the evidence needed to support it. It should not replace architectural judgement with a catalogue of arbitrary rules.
 
@@ -60,6 +60,6 @@ The Primer is intended to provide the complete mental model, not the complete ar
 
 The live project also contains material that is deliberately outside both publications: development history, prototypes, computational experiments and working research. Those records are valuable because they show how claims are being tested, but they should not be mistaken for settled doctrine merely because they exist.
 
-The compact and full editions therefore serve different purposes. The Primer explains what House Systems Architecture is and how its parts fit together. The Working Edition shows the reasoning, evidence and architectural consequences in depth.
+The compact and full editions therefore serve different purposes. The Primer explains what House Kernel is and how its parts fit together. The Working Edition shows the reasoning, evidence and architectural consequences in depth.
 
-[Read the Working Edition](https://adamnoden.github.io/architecture/house-systems-architecture.pdf)
+[Read the Working Edition](https://adamnoden.github.io/architecture/house-kernel.pdf)

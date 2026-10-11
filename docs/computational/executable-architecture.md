@@ -1,4 +1,4 @@
-# Executable Architecture — Computational Expression of House Systems Architecture
+# Executable Architecture — Computational Expression of House Kernel
 
 **Status:** conceptual foundation; core semantic mechanisms exercised by P0 and `PAT-XW-01`, not a product specification  
 **Purpose:** define the computational proposition, its proof boundary and its relationship to the architectural project  
@@ -8,7 +8,7 @@
 
 ## 1. The proposition
 
-House Systems Architecture already has several human-readable layers: doctrine, strategies, patterns, reference implementations, delivery requirements and tests. A computational expression adds another layer, but only for the subset that can be formalised honestly.
+House Kernel already has several human-readable layers: doctrine, strategies, patterns, reference implementations, delivery requirements and tests. A computational expression adds another layer, but only for the subset that can be formalised honestly.
 
 The intuitive model is “draw a house, then run checks”. The stronger proposal reverses that order.
 
@@ -60,7 +60,7 @@ Validity + diagnostics
 
 The core intellectual task is to formalise enough architectural meaning that important propositions can be represented and tested without pretending that geometry is the whole building.
 
-The architect-facing implementation brief remains the human translation from HSA into a commission. Computational work may formalise part of that translation; it does not supersede architectural authorship, competent technical design or statutory process.
+The architect-facing implementation brief remains the human translation from House Kernel into a commission. Computational work may formalise part of that translation; it does not supersede architectural authorship, competent technical design or statutory process.
 
 ## 3. Compiler rather than checker
 
@@ -204,7 +204,7 @@ A target must distinguish:
 2. **statutory guidance / accepted compliance routes** — for example Approved Documents;
 3. **technical standards** — British Standards, adopted European standards, Eurocodes and National Annexes where applicable;
 4. **product evidence** — declarations, certification, manufacturer data and tested systems;
-5. **project requirements** — client or HSA-derived commitments.
+5. **project requirements** — client or House Kernel-derived commitments.
 
 Approved Documents are not the legal requirements themselves. A compiler must say which compliance route it implements rather than silently treating guidance as law.
 
@@ -290,7 +290,7 @@ The opportunity is not to compile them away, but to give them a more explicit an
 
 ## 12. Mapping the doctrine into computation
 
-Many HSA principles concern relationships that are plausible candidates for formalisation.
+Many House Kernel principles concern relationships that are plausible candidates for formalisation.
 
 | Architectural doctrine | Possible computational expression |
 |---|---|
