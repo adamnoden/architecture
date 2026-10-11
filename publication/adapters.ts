@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
-import type { PublicationAdapter } from './publication.js'
+import { canonicalPatternOrder, type PublicationAdapter } from './publication.js'
 
 export interface AdapterContext {
   repoRoot: string
@@ -25,7 +25,17 @@ const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
   'pattern-index': [],
   'pattern-page': [],
   'reference-house-overview': [],
-  'reference-house-page': []
+  'reference-house-page': [],
+  'primer-principles': [],
+  'primer-patterns': [
+    'docs/patterns/controlled-utility-entry.md',
+    'docs/patterns/designed-structural-penetration.md',
+    'docs/patterns/failure-tolerant-wet-service-room.md',
+    'docs/patterns/permanent-opening-replaceable-window.md',
+    'docs/patterns/ground-supported-facade-access.md',
+    'docs/patterns/physical-service-index.md'
+  ],
+  'primer-reference-house': []
 }
 
 export function dependenciesForAdapter(adapter?: PublicationAdapter): readonly string[] {
@@ -274,6 +284,146 @@ function adaptReferenceHousePage(markdown: string): string {
   return adapted
 }
 
+function markdownSection(markdown: string, heading: string): string {
+  const marker = `## ${heading}`
+  const start = markdown.indexOf(marker)
+  if (start < 0) throw new Error(`Missing Markdown section: ${heading}`)
+
+  const bodyStart = markdown.indexOf('\n', start + marker.length)
+  if (bodyStart < 0) return ''
+  const tail = markdown.slice(bodyStart + 1)
+  const nextHeading = tail.search(/^## /m)
+  return (nextHeading < 0 ? tail : tail.slice(0, nextHeading)).trim()
+}
+
+function firstParagraphs(markdown: string, count: number): string[] {
+  return markdown
+    .trim()
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter((paragraph) => paragraph && paragraph !== '---' && !paragraph.startsWith('## '))
+    .slice(0, count)
+}
+
+function adaptPrimerPrinciples(markdown: string): string {
+  const constraints = markdownSection(markdown, 'Governing constraints')
+    .replace(/\n?---\s*$/, '')
+    .trim()
+  const principlePattern = /^## (\d+)\. (.+)\n\n\*\*([^\n]+)\*\*\n\n([\s\S]*?)(?=^## \d+\. |^---\n\n## From doctrine to implementation)/gm
+  const principles = [...markdown.matchAll(principlePattern)]
+
+  if (principles.length !== 11) {
+    throw new Error(`Primer expected 11 governing principles, found ${principles.length}.`)
+  }
+
+  const rendered = principles.map((match, index) => {
+    const number = Number(match[1])
+    if (number !== index + 1) {
+      throw new Error(`Primer governing-principle order changed at ${index + 1}; found ${number}.`)
+    }
+
+    const title = match[2].trim()
+    const rule = match[3].trim()
+    const support = firstParagraphs(match[4], 1)[0]
+    if (!support) throw new Error(`Primer governing principle ${number} has no supporting paragraph.`)
+
+    return `## ${number}. ${title}\n\n**${rule}**\n\n${support}`
+  })
+
+  return `# Eleven governing principles\n\nThe principles sit above particular materials, products and construction systems. They operate within non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance.\n\n${constraints}\n\n${rendered.join('\n\n')}\n`
+}
+
+function activePatternsInCanonicalOrder(context: AdapterContext): PatternMetadata[] {
+  const active = new Map(
+    patternMetadata(context)
+      .filter((pattern) => pattern.state === 'active')
+      .map((pattern) => [pattern.id, pattern])
+  )
+
+  return canonicalPatternOrder.map((id) => {
+    const pattern = active.get(id)
+    if (!pattern) throw new Error(`Primer pattern map is missing canonical pattern ${id}.`)
+    return pattern
+  })
+}
+
+function primerPatternList(context: AdapterContext): string {
+  const patterns = activePatternsInCanonicalOrder(context)
+  const byId = new Map(patterns.map((pattern) => [pattern.id, pattern]))
+  const groups = [
+    { title: 'A · Service geography and distribution', ids: canonicalPatternOrder.slice(0, 8) },
+    { title: 'B · Water, leakage and failure', ids: canonicalPatternOrder.slice(8, 11) },
+    { title: 'C · Openings, movement and attachment', ids: canonicalPatternOrder.slice(11, 16) },
+    { title: 'D · Environment and external maintenance', ids: canonicalPatternOrder.slice(16, 20) },
+    { title: 'E · Stewardship', ids: canonicalPatternOrder.slice(20, 21) }
+  ]
+
+  return groups
+    .map(({ title, ids }) => {
+      const rows = ids.map((id) => {
+        const pattern = byId.get(id)
+        if (!pattern) throw new Error(`Primer pattern group is missing ${id}.`)
+        return `- [\`${pattern.id}\` — ${pattern.title}](${pattern.href})`
+      })
+      return `### ${title}\n\n${rows.join('\n')}`
+    })
+    .join('\n\n')
+}
+
+function concisePattern(context: AdapterContext, id: string): string {
+  const metadata = activePatternsInCanonicalOrder(context).find((pattern) => pattern.id === id)
+  if (!metadata) throw new Error(`Primer representative pattern missing: ${id}`)
+
+  const source = readWork(context, `docs/patterns/${metadata.href}`)
+  const problem = firstParagraphs(markdownSection(source, 'Problem'), 1)[0]
+  const pattern = firstParagraphs(markdownSection(source, 'Pattern'), 1)[0]
+  if (!problem || !pattern) throw new Error(`Primer could not compress representative pattern ${id}.`)
+
+  const invariant = pattern.replace(/^\*\*/, '').replace(/\*\*$/, '')
+  return `### ${metadata.id} — ${metadata.title}\n\n**Problem.** ${problem}\n\n**Pattern.** ${invariant}`
+}
+
+function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string {
+  const representative = [
+    'HSA-P-001',
+    'HSA-P-005',
+    'HSA-P-018',
+    'HSA-P-007',
+    'HSA-P-013',
+    'HSA-P-012'
+  ]
+    .map((id) => concisePattern(context, id))
+    .join('\n\n')
+
+  return `# From doctrine to patterns\n\nThe governing principles are intentionally too general to specify a building. House Systems Architecture therefore keeps four levels of authority distinct:\n\n**Doctrine** — a durable proposition.  \n**Strategy** — a general way to satisfy it.  \n**Pattern** — a reusable architectural response with stated trade-offs and evidence.  \n**Reference implementation** — one project-specific choice.\n\nA pattern is not a product detail and does not become universally correct because it has a stable name. It is specific enough to shape design, but general enough to admit materially different implementations. Evidence maturity is recorded separately from pattern identity.\n\nThe current canonical language contains **21 active patterns**. Three broader strategies sit beside it; four plausible propositions remain held candidates rather than being promoted prematurely. The complete active language is listed below so the Primer remains complete in coverage even though only a small set is expanded.\n\n## The complete current language\n\n${primerPatternList(context)}\n\n## Six patterns in brief\n\nThe following examples are not a privileged inner canon. They are chosen because, together, they show the range of consequences that follows from the doctrine: service topology, permanent-fabric protection, water failure, replaceable openings, external maintenance and intergenerational legibility.\n\n${representative}\n`
+}
+
+function adaptPrimerReferenceHouse(markdown: string): string {
+  const opening = '# Reference House\n'
+  if (!markdown.startsWith(opening)) {
+    throw new Error('Reference House opening changed; update the Primer adapter deliberately.')
+  }
+
+  const architecturalScope = firstParagraphs(markdownSection(markdown, 'Architectural scope'), 2)
+  if (architecturalScope.length !== 2) {
+    throw new Error('Primer expected two opening Architectural scope paragraphs.')
+  }
+
+  const composition = markdownSection(markdown, 'Composition and authority')
+  const compositionChain = composition.match(/```text\n[\s\S]*?```/)?.[0]
+  if (!compositionChain) throw new Error('Primer could not find the Reference House composition chain.')
+
+  const coordination = firstParagraphs(markdownSection(markdown, 'Whole-house coordination'), 2)
+  if (coordination.length !== 2) {
+    throw new Error('Primer expected two Whole-house coordination paragraphs.')
+  }
+
+  const openingEnd = markdown.indexOf('\n## Architectural scope')
+  const openingBody = markdown.slice(opening.length, openingEnd).trim()
+
+  return `# The Reference House\n\n${openingBody}\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an HSA principle without being promoted into HSA doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
+}
+
 export function applyAdapter(
   adapter: PublicationAdapter | undefined,
   markdown: string,
@@ -296,6 +446,12 @@ export function applyAdapter(
       return adaptReferenceHouseOverview(markdown)
     case 'reference-house-page':
       return adaptReferenceHousePage(markdown)
+    case 'primer-principles':
+      return adaptPrimerPrinciples(markdown)
+    case 'primer-patterns':
+      return adaptPrimerPatterns(markdown, context)
+    case 'primer-reference-house':
+      return adaptPrimerReferenceHouse(markdown)
   }
 }
 
