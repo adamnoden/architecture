@@ -36,6 +36,10 @@ Bays, porches, low roofs, lightwells, retaining walls, ponds, planting and narro
 
 A façade is not maintainable merely because someone can theoretically reach it.
 
+## Problem
+
+Façade and landscape geometry are usually fixed long before a future maintenance method is chosen. Reasonable projections, level changes, planting and site constraints can therefore combine to remove the approach, bearing and working positions needed for ordinary access, making routine work unnecessarily dependent on specialist equipment, destructive alteration or third-party land.
+
 ## Pattern
 
 **Coordinate façade, ground plane and landscape so foreseeable maintenance retains one or more credible ordinary access methods.**
