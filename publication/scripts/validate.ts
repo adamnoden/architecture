@@ -1,7 +1,7 @@
 import { existsSync, lstatSync, readFileSync } from 'node:fs'
 import { dirname, extname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { dependenciesForAdapter, readFrontmatterValue } from '../adapters.js'
+import { applyAdapter, dependenciesForAdapter, readFrontmatterValue } from '../adapters.js'
 import {
   canonicalPatternOrder,
   primerPublicationEntries,
@@ -75,6 +75,15 @@ function validateEntries(label: string, entries: readonly PublicationEntry[]): v
       validateLocalImages(source, markdown)
     }
 
+    if (entry.adapter) {
+      const markdown = readFileSync(localPath(entry.source), 'utf8')
+      const adapted = applyAdapter(entry.adapter, markdown, {
+        repoRoot,
+        workSourceRoot: repoRoot
+      })
+      if (!adapted.trim()) throw new Error(`${label} adapter produced empty output for ${entry.source}`)
+    }
+
     if (entry.patternId) {
       const markdown = readFileSync(localPath(entry.source), 'utf8')
       const sourceId = readFrontmatterValue(markdown, 'id')
@@ -112,5 +121,5 @@ for (let index = 0; index < canonicalPatternOrder.length; index += 1) {
 }
 
 console.log(
-  `Publication manifests valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
+  `Publication manifests and adapters valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
 )
