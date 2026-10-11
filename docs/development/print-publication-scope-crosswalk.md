@@ -1,7 +1,7 @@
 # Print publication scope crosswalk
 
-**Status:** G2 working record  
-**Date:** 2026-10-09  
+**Status:** maintained scope record  
+**Updated:** 2026-10-11  
 **Authority:** [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)  
 **Pipeline control:** [`print-publication-pipeline.md`](print-publication-pipeline.md)
 
@@ -16,21 +16,21 @@ It is not a new publication outline. Where this record conflicts with the public
 3. Supporting evidence remains supporting evidence. Research pages are linked to the live site unless and until publication prose incorporates them.
 4. Historical and migration records remain online provenance rather than primary linear reading.
 5. Dynamic website-only representation may receive a deterministic **print adapter** only when the underlying canonical content is already publication-facing. An adapter may render existing data statically; it may not invent or rewrite the argument.
-6. Missing target material remains visibly missing in the Working Edition. The print pipeline is not authorised to manufacture an abstract, glossary, bibliography or Reference House chapter merely to complete the table of contents.
+6. Missing target material remains visibly missing in the Working Edition. Include back matter only when a canonical publication-facing source actually exists; the print pipeline is not authorised to manufacture one merely to complete the table of contents.
 
 ## Front matter
 
 | Publication target | Current source | Working Edition treatment |
 |---|---|---|
-| Title / subtitle | publication metadata | **Generated mechanically** in G3; no prose source required |
+| Title / subtitle | publication metadata | **Generated mechanically**; no prose source required |
 | Preface — *The Obvious, Eventually* | `docs/manuscript/preface.md` | **Include directly** |
-| Abstract | no dedicated canonical publication source | **Missing / defer**; do not substitute root README |
-| How to read the book | `docs/reading-guide.md` is primarily website wayfinding | **Missing / defer**; do not print the web reading guide as front matter |
-| Definitions | no dedicated canonical publication source | **Missing / defer** |
-| Evidence and maturity legend | concepts distributed through current corpus | **Missing / defer** until publication-facing source exists |
-| Governing constraints | governing principles exist, but are Part I content | **Do not duplicate in front matter** |
+| Abstract | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide** |
+| How to read the book | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide** |
+| Definitions | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide** |
+| Evidence and maturity legend | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide** |
+| Governing constraints | `docs/manuscript/readers-guide.md` | **Include through Reader's Guide**; do not duplicate the governing principles |
 
-The generated table of contents is print mechanics rather than authored front matter and may appear from G2 onward.
+The Reader's Guide deliberately consolidates several front-matter functions into one publication-facing source. The generated table of contents remains print mechanics rather than authored front matter.
 
 ## Preface and Part I — The Proposition
 
@@ -169,11 +169,19 @@ Prototype, professional-review, delivery and computational records remain suppor
 
 ## Back matter
 
-The publication architecture names evidence notes, doctrine register, research agenda, Reference House implementation schedule, pattern map/generative notes, glossary, bibliography and standards. These are not currently assembled as canonical publication-facing back matter.
+The publication architecture names evidence notes, doctrine register, research agenda, Reference House implementation schedule, pattern map/generative notes, glossary and Sources and further reading.
 
-**G2 treatment: omit rather than substitute.**
+| Publication target | Current source | Working Edition treatment |
+|---|---|---|
+| Evidence and precedent notes | no dedicated canonical publication source | **Missing / defer** |
+| 63-item doctrine register | no publication-facing back-matter source | **Missing / defer** |
+| Research agenda | no publication-facing back-matter source | **Missing / defer** |
+| Reference House implementation schedule | no publication-facing back-matter source | **Missing / defer** |
+| Pattern-language map and generative-sequence notes | material exists in Part III; no separate back-matter source | **Do not duplicate** |
+| Glossary | no dedicated canonical publication source | **Missing / defer** |
+| Sources and further reading | `docs/manuscript/sources-and-further-reading.md` | **Include directly after Part V** |
 
-The generated PDF may therefore end after current Part V in the Working Edition. Missing back matter is an editorial completion task for later gates, not a renderer defect.
+Missing back matter remains an editorial completion task, not a renderer defect.
 
 ## Explicit whole-corpus exclusions
 
@@ -192,9 +200,9 @@ These areas remain accessible online but are not recursively compiled into the p
 
 These exclusions preserve the repository's established authority boundaries rather than treating the PDF as an archive export.
 
-## G2 implementation consequences
+## Implementation consequences
 
-The full manifest should therefore contain roughly fifty entries rather than the entire documentation corpus. It should validate:
+The full manifest contains the publication-facing source set rather than the entire documentation corpus. It should validate:
 
 - every included source exists;
 - no source appears twice;
@@ -205,4 +213,4 @@ The full manifest should therefore contain roughly fifty entries rather than the
 - included Markdown links become internal publication destinations;
 - generated/adapted output never mutates canonical source.
 
-If the first full build reveals another website-only construct, stop and add an explicit adapter or change the scope decision here. Do not silently strip it.
+If a build reveals another website-only construct, stop and add an explicit adapter or change the scope decision here. Do not silently strip it.
