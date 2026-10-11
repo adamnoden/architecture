@@ -4,18 +4,18 @@ aside: false
 outline: false
 prev: false
 next: false
-pageClass: hsa-landing-page
+pageClass: house-kernel-landing-page
 ---
 
-# House Systems Architecture
+# House Kernel
 
 A house spends almost all of its life after completion. It is not one thing ageing at one rate. Structure may stand for generations while services, equipment, seals and finishes are repaired, altered and replaced around it. When those different lifetimes are physically coupled, a change to a short-lived component can require longer-lived fabric to be opened, cut and remade.
 
 The useful model is a **domestic ecology**: a set of materials, systems and people connected through physical interfaces and exposed to different timescales of use, weathering, maintenance and change. A pipe and the wall around it become one architectural problem if the wall must be destroyed to reach the pipe; a window and its surrounding finishes become one if replacement consumes both. The relationships between parts, and the interfaces that govern them, are architectural material.
 
-**House Systems Architecture (HSA)** is a design-research programme for the house considered across that longer life. Its central concern is how architectural and technical systems meet: whether repair and replacement can remain local, foreseeable failures can be detected and contained, maintenance has enough working space, and one layer can change without needless destruction of another.
+**House Kernel** is a design-research programme for the house considered across that longer life. Its central concern is how architectural and technical systems meet: whether repair and replacement can remain local, foreseeable failures can be detected and contained, maintenance has enough working space, and one layer can change without needless destruction of another.
 
-HSA does not propose a house in which everything comes apart. Capacity for change is concentrated where it earns its cost; elsewhere durability, simplicity and settled construction should win. Serviceability is one architectural demand among others. Any unusual proposition must still survive life safety, building physics, whole-life cost and carbon, ordinary workmanship and the quality of the rooms it produces.
+The project does not propose a house in which everything comes apart. Capacity for change is concentrated where it earns its cost; elsewhere durability, simplicity and settled construction should win. Serviceability is one architectural demand among others. Any unusual proposition must still survive life safety, building physics, whole-life cost and carbon, ordinary workmanship and the quality of the rooms it produces.
 
 The aim is not a visibly technical house. The opposite should be possible: rooms can feel settled and permanent because the things that must change have been given somewhere else to go.
 
@@ -78,7 +78,7 @@ flowchart TB
     F --> DEL
 ```
 
-Evidence supports or weakens the architectural claims. **Doctrine** states the durable propositions. The **pattern language** turns those propositions into reusable responses to recurring problems. A separate **architectural grammar** governs questions such as topology, hierarchy, proportion and composition without making one architectural language part of HSA itself.
+Evidence supports or weakens the architectural claims. **Doctrine** states the durable propositions. The **pattern language** turns those propositions into reusable responses to recurring problems. A separate **architectural grammar** governs questions such as topology, hierarchy, proportion and composition without making one architectural language part of the project itself.
 
 The **Reference House** then forces those layers into one building. It is where patterns, grammar, programme, structure, envelope, services, environmental strategy and maintenance geometry have to coexist rather than remain convincing in isolation. Conflicts found there can send work back upstream.
 
@@ -88,7 +88,7 @@ Some questions can be tested physically, some require competent professional rev
 
 Several distinctions are deliberately protected.
 
-**HSA is not a historical style.** The current Reference House selects a Georgian-derived grammar, courtyard morphology and its own tectonic language. Those are project choices. They may provide evidence, but Georgian architecture, symmetry, masonry, pitched roofs or any particular decorative vocabulary are not doctrine.
+**House Kernel is not a historical style.** The current Reference House selects a Georgian-derived grammar, courtyard morphology and its own tectonic language. Those are project choices. They may provide evidence, but Georgian architecture, symmetry, masonry, pitched roofs or any particular decorative vocabulary are not doctrine.
 
 **A pattern is not proof.** Patterns are reusable architectural responses with explicit trade-offs and evidence status. A pattern can fail, narrow in scope or be replaced without invalidating the principle that motivated it.
 
