@@ -1,10 +1,10 @@
 # Working Edition editorial proof — G4 ledger
 
-**Status:** active — final artifact verification pending  
+**Status:** **COMPLETE — G4 PASS; maintained proof record**  
 **Parent gate:** [`print-publication-pipeline.md`](print-publication-pipeline.md) — G4  
 **Editorial authority:** [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)  
 **Baseline artifact:** 213-page G3 Working Edition  
-**Purpose:** test whether House Systems Architecture works as a linear publication rather than merely as a set of good web documents.
+**Purpose:** test whether House Kernel works as a linear publication rather than merely as a set of good web documents.
 
 This ledger is the durable record of the whole-book proof. Findings are classified as:
 
@@ -31,13 +31,13 @@ The G3 book was intentionally treated as a Working Edition rather than a claim o
 
 ## F-01 — promised front matter was absent — FIXED
 
-The publication architecture promised an abstract, reading guidance, definitions, an evidence/maturity legend and governing constraints. Their absence was initially tolerable mechanically but became a genuine reading problem once Part III introduced evidence labels and HSA-specific vocabulary without prior explanation.
+The publication architecture promised an abstract, reading guidance, definitions, an evidence/maturity legend and governing constraints. Their absence was initially tolerable mechanically but became a genuine reading problem once Part III introduced evidence labels and House Kernel-specific vocabulary without prior explanation.
 
 **Resolution:** authored [`../manuscript/readers-guide.md`](../manuscript/readers-guide.md) and inserted it after the Preface. It now provides:
 
 - abstract;
 - how to read Parts I–V;
-- definitions of the HSA terms used in a specific sense;
+- definitions of the project terms used in a specific sense;
 - evidence states and the distinction between evidence and maturity;
 - governing constraints and proportional serviceability.
 
@@ -119,7 +119,7 @@ The print edition therefore stops exposing project-management scaffolding withou
 
 Poppler warns that some Vivliostyle named destination tokens exceed the specification's recommended token length. Internal links resolve, the file opens cleanly, all fonts are embedded, and representative Poppler/PDFium renders agree.
 
-This is a documented renderer issue, not an editorial defect. Recheck during G5 live-artifact verification and after material Vivliostyle upgrades.
+This is a documented renderer issue, not an editorial defect. It was carried into later production verification and remains a known non-blocking renderer warning.
 
 ## F-10 — Part I contained two consecutive implementation bridges — FIXED
 
@@ -127,11 +127,11 @@ Composing the canonical Governing Principles inside Part I produced `From doctri
 
 **Resolution:** the Part I composition adapter omits the embedded principles document's terminal bridge and retains Part I's native transition.
 
-## F-11 — legacy `The Long-Life House` self-reference leaked into HSA — FIXED
+## F-11 — legacy project-name self-reference leaked into the manuscript — FIXED
 
-The older manuscript container name still appeared inside Parts I/II and the developed Repose spread.
+During the earlier naming phase, `The Long-Life House` self-reference still appeared inside Parts I/II and the developed Repose spread.
 
-**Resolution:** Part adapters normalise legacy manuscript self-reference to **House Systems Architecture** in print, while the independent Repose source was updated canonically. The legacy container headings remain source history and are already replaced by Part headings during print composition.
+**Resolution at the time:** print adapters normalised the legacy manuscript self-reference to the then-current **House Systems Architecture** name, while the independent Repose source was updated canonically. The subsequent naming migration moved current manuscript source and print wrappers to **House Kernel**. The historical HSA wording in this finding records the sequence; it is not current branding.
 
 ## F-12 — Part IV exposed an excluded computational comparator — FIXED IN PRINT
 
@@ -170,18 +170,16 @@ The PDF has done useful diagnostic work beyond the pipeline itself. The principa
 - mature the Reference House into the six publication-facing chapters named by the publication architecture;
 - develop the missing project-specific Site/type, water/environmental and future-maintenance-scenario material rather than disguising existing coordination documents as those chapters;
 - continue adding figures where the publication architecture calls for them and where they genuinely improve the argument;
-- eventually develop the promised back matter (evidence/precedent notes, doctrine map, research agenda, implementation schedule, language map, glossary, bibliography/standards) as authored publication material rather than dumping repository indexes into the book.
+- eventually develop the remaining promised back matter—evidence/precedent notes, doctrine map, research agenda, implementation schedule, language map and glossary—as authored publication material rather than dumping repository indexes into the book. **Sources and further reading is now a canonical publication-facing back-matter source and is no longer part of this gap.**
 
 These gaps are compatible with the label **Working Edition**. They should not block the PDF pipeline.
 
-# Final G4 verification gate
+# Final G4 verification gate — PASS
 
-Before marking G4 PASS:
+- [x] latest full Working Edition CI build succeeded after Reference House print adaptation;
+- [x] final PDF scan showed no unintended raw `.md`, `Phase-*`, `Start with`, `Related documents`, `The Long-Life House`, duplicate implementation bridge or internal computational-H1 language;
+- [x] Reader's Guide, Part III and representative Part IV pages were visually inspected in the rebuilt artifact;
+- [x] TOC/Part starts remained structurally sane after added front matter and editorial shortening;
+- [x] no new renderer/path regressions appeared.
 
-- [ ] latest full Working Edition CI build succeeds after Reference House print adaptation;
-- [ ] final PDF scan shows no unintended raw `.md`, `Phase-*`, `Start with`, `Related documents`, `The Long-Life House`, duplicate implementation bridge or internal computational-H1 language;
-- [ ] Reader's Guide, Part III and representative Part IV pages are visually inspected in the rebuilt artifact;
-- [ ] TOC/Part starts remain structurally sane after added front matter and editorial shortening;
-- [ ] no new renderer/path regressions appear.
-
-If these checks pass, G4 is complete. Further Reference House authorship belongs to normal project development, not this implementation branch.
+G4 is complete. Further Reference House authorship belongs to normal project development, not the print implementation gate.
