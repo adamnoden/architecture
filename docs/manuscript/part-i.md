@@ -57,6 +57,8 @@ ISO 20887 now provides guidance for design for disassembly and adaptability. Cir
 
 But a diagram of layers does not by itself produce an architecture. The important condition is **coupling**.
 
+Systems theory offers a useful parallel. Herbert Simon described **nearly decomposable** systems whose parts remain connected while most short-run interactions stay within subsystems rather than propagating through the whole.[27] A house does not need every layer to be independent. It benefits when ordinary change can remain local.
+
 If two components have very different expected lives but the shorter-lived one can be replaced independently, the difference is benign. If its replacement destroys the longer-lived component, their lives have been coupled: the slower layer is consumed at the pace of the faster one.
 
 A cable chased into masonry makes the mechanism obvious. The wall may remain sound for generations, yet changing the route means cutting, filling and refinishing it. The same relationship appears when a concealed cistern sits behind bonded stone or a pump can be serviced in place but cannot be withdrawn without dismantling unrelated construction.
@@ -94,6 +96,8 @@ A detail may perform well at one and poorly at another. Design-for-disassembly l
 # 3. Selective permanence
 
 The existence of change does not imply infinite flexibility.
+
+Ecology offers a useful distinction. C. S. Holling separated resilience—the capacity to persist through disturbance—from stability understood as remaining near one equilibrium.[28] The architectural analogy is limited but useful: a house can preserve its identity without requiring every technical arrangement to remain fixed.
 
 An uncertain future can make an open neutral shell, lightweight partitions and maximum reconfigurability look like the obvious answer. In some building types it is. A house can also achieve functional longevity through durable architectural commitments combined with capacity for change where change is useful.
 
@@ -283,3 +287,5 @@ This hierarchy makes disagreement useful. An architect can reject a pattern with
 [24] Bi, W. & Yildirim, I. (2026), “Visual Perception of Intuitive Physics and Its Computational Foundations”, *Annual Review of Vision Science* 12, 491–513. https://doi.org/10.1146/annurev-vision-110423-024138  
 [25] Meir M. Lehman & Juan F. Ramil (2001), “Rules and Tools for Software Evolution Planning and Management”, *Annals of Software Engineering* 11, 15–44. https://doi.org/10.1023/A:1012535017876  
 [26] Gwern Branwen (2020), “Technology Holy Wars are Coordination Problems”, § “Bitrot”. https://gwern.net/holy-war  
+[27] Herbert A. Simon (1962), “The Architecture of Complexity”, *Proceedings of the American Philosophical Society* 106(6), 467–482. https://www.jstor.org/stable/985254  
+[28] C. S. Holling (1973), “Resilience and Stability of Ecological Systems”, *Annual Review of Ecology and Systematics* 4, 1–23. https://doi.org/10.1146/annurev.es.04.110173.000245  
