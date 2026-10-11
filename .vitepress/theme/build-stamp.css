@@ -1,4 +1,4 @@
-.hsa-build-stamp {
+.house-kernel-build-stamp {
   position: fixed;
   right: max(12px, env(safe-area-inset-right));
   bottom: max(10px, env(safe-area-inset-bottom));
@@ -13,14 +13,14 @@
   transition: color 0.15s ease, opacity 0.15s ease;
 }
 
-.hsa-build-stamp:hover,
-.hsa-build-stamp:focus-visible {
+.house-kernel-build-stamp:hover,
+.house-kernel-build-stamp:focus-visible {
   color: var(--vp-c-text-2);
   opacity: 0.9;
 }
 
 @media (max-width: 639px) {
-  .hsa-build-stamp {
+  .house-kernel-build-stamp {
     right: max(8px, env(safe-area-inset-right));
     bottom: max(8px, env(safe-area-inset-bottom));
     font-size: 9px;
@@ -28,7 +28,7 @@
 }
 
 @media print {
-  .hsa-build-stamp {
+  .house-kernel-build-stamp {
     display: none;
   }
 }
