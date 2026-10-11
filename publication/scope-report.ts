@@ -7,6 +7,23 @@ function cell(value: string): string {
   return value.replace(/\|/g, '\\|').replace(/\s+/g, ' ').trim()
 }
 
+function scopeBounds(markdown: string): { start: number; end: number } {
+  const start = markdown.indexOf(publicationScopeStart)
+  const end = markdown.indexOf(publicationScopeEnd)
+
+  if (start < 0 || end < start) {
+    throw new Error('Publication scope crosswalk is missing generated manifest markers.')
+  }
+  if (markdown.indexOf(publicationScopeStart, start + publicationScopeStart.length) >= 0) {
+    throw new Error('Publication scope crosswalk contains duplicate generated manifest start markers.')
+  }
+  if (markdown.indexOf(publicationScopeEnd, end + publicationScopeEnd.length) >= 0) {
+    throw new Error('Publication scope crosswalk contains duplicate generated manifest end markers.')
+  }
+
+  return { start, end }
+}
+
 export function renderPublicationScope(entries: readonly PublicationEntry[]): string {
   const rows = entries.map((entry, index) => {
     const adapter = entry.adapter ?? '—'
@@ -25,27 +42,11 @@ export function renderPublicationScope(entries: readonly PublicationEntry[]): st
 }
 
 export function replacePublicationScope(markdown: string, generated: string): string {
-  const start = markdown.indexOf(publicationScopeStart)
-  const end = markdown.indexOf(publicationScopeEnd)
-
-  if (start < 0 || end < start) {
-    throw new Error('Publication scope crosswalk is missing generated manifest markers.')
-  }
-  if (markdown.indexOf(publicationScopeStart, start + publicationScopeStart.length) >= 0) {
-    throw new Error('Publication scope crosswalk contains duplicate generated manifest start markers.')
-  }
-  if (markdown.indexOf(publicationScopeEnd, end + publicationScopeEnd.length) >= 0) {
-    throw new Error('Publication scope crosswalk contains duplicate generated manifest end markers.')
-  }
-
+  const { start, end } = scopeBounds(markdown)
   return `${markdown.slice(0, start)}${generated}${markdown.slice(end + publicationScopeEnd.length)}`
 }
 
 export function readPublicationScope(markdown: string): string {
-  const start = markdown.indexOf(publicationScopeStart)
-  const end = markdown.indexOf(publicationScopeEnd)
-  if (start < 0 || end < start) {
-    throw new Error('Publication scope crosswalk is missing generated manifest markers.')
-  }
+  const { start, end } = scopeBounds(markdown)
   return markdown.slice(start, end + publicationScopeEnd.length)
 }
