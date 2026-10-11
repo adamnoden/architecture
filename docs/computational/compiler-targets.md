@@ -107,7 +107,7 @@ A future build may combine:
 BUILDING-CONTROL TARGET
 PLANNING TARGET
 ENVIRONMENTAL / SITE TARGET
-HSA / CLIENT PROJECT REQUIREMENTS
+House Kernel / CLIENT PROJECT REQUIREMENTS
 ~~~
 
 They retain different authorities and processes.
@@ -213,18 +213,18 @@ A lintel, membrane or ventilation unit brings its own performance and limitation
 
 The target may require a performance level. It should not ordinarily hard-code a commercial product.
 
-## 17. HSA project requirements are not regulation
+## 17. House Kernel project requirements are not regulation
 
-HSA-derived project requirements may be stricter than regulation and should remain independently reportable.
+House Kernel-derived project requirements may be stricter than regulation and should remain independently reportable.
 
 ~~~text
 REGULATORY PASS
-HSA PROJECT REQUIREMENT FAIL
+House Kernel PROJECT REQUIREMENT FAIL
 ~~~
 
 That is useful information. Collapsing the two would make it impossible to tell whether a design is unlawful or simply fails an architectural requirement selected by the project.
 
-A pattern reference or HSA provenance never upgrades project authority into regulation, engineering or product evidence.
+A pattern reference or House Kernel provenance never upgrades project authority into regulation, engineering or product evidence.
 
 ## 18. Conceptual build manifest
 

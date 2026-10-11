@@ -263,7 +263,7 @@ Danson also demonstrates two circulation systems in close physical proximity:
 - dramatic primary stair;
 - conventional service stair.
 
-This is useful for the Long-Life House because it suggests the model should distinguish **circulation role** from merely “a stair object”.
+This is useful for House Kernel because it suggests the model should distinguish **circulation role** from merely “a stair object”.
 
 ### Preliminary genotype reading
 
@@ -438,7 +438,7 @@ A future grammar should be able to ask:
 - where do service spaces touch principal rooms?
 - how does service topology change between floors?
 
-This is directly relevant to the Long-Life House, whose technical-service topology is already a first-class doctrine concern.
+This is directly relevant to House Kernel, whose technical-service topology is already a first-class doctrine concern.
 
 ## 12. Fifth important conclusion — symmetry is a relation over a domain
 

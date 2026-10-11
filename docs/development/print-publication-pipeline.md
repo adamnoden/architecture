@@ -9,7 +9,7 @@
 **Scope crosswalk:** [`print-publication-scope-crosswalk.md`](print-publication-scope-crosswalk.md)  
 **Editorial proof:** [`print-publication-editorial-proof.md`](print-publication-editorial-proof.md)
 
-This is the durable maintenance record for the House Systems Architecture print-publication system. It now produces two sibling publications from one repository commit: the complete **Working Edition** and the compact **Primer**. The implementation is ordinary project infrastructure rather than a separate initiative.
+This is the durable maintenance record for the House Kernel print-publication system. It now produces two sibling publications from one repository commit: the complete **Working Edition** and the compact **Primer**. The implementation is ordinary project infrastructure rather than a separate initiative.
 
 ## Final architecture
 
@@ -83,13 +83,13 @@ The full npm dependency closure is committed in `package-lock.json`; CI uses `np
 6. Mermaid fenced source remains canonical; print SVGs are derived artifacts.
 7. Research, development history and the computational track do not enter either publication merely because they exist in the repo.
 8. The complete rolling PDF is explicitly a **Working Edition**. The compact companion is explicitly a **Primer**.
-9. Stable public paths are `/architecture/house-systems-architecture.pdf` and `/architecture/house-systems-architecture-primer.pdf`.
+9. Stable public paths are `/architecture/house-kernel.pdf` and `/architecture/house-kernel-primer.pdf`.
 10. Missing sources, duplicate entries, unsupported dynamic constructs, adapter/schema drift, failed Mermaid rendering, residual local repository links and failed PDF production are hard build errors.
 11. Page count is an outcome, not a hard target. The Primer currently uses 14–18 pages as an editorial compression signal, with roughly 16 pages as the intended centre.
 
 ## Primer editorial contract
 
-The Primer is not a miniature copy of the Working Edition and not a promotional brochure. Its job is to give a technically literate reader the complete mental model of House Systems Architecture in one sitting.
+The Primer is not a miniature copy of the Working Edition and not a promotional brochure. Its job is to give a technically literate reader the complete mental model of House Kernel in one sitting.
 
 Its current five-part sequence is:
 
@@ -133,7 +133,7 @@ The implementation-closeout edition was **213 A4 pages** and contained title/edi
 
 Print design is A4 portrait, duplex/facing-page aware, binding-margin aware and black-and-white safe. Major Parts begin recto. Figures remain vector where source permits. Tables, code, widows/orphans and running furniture have explicit print rules.
 
-The Reference House remains honestly provisional. Do not manufacture the six future publication chapters by renaming current development records. Missing Site/type, water/environmental and future-maintenance chapters are normal future HSA work.
+The Reference House remains honestly provisional. Do not manufacture the six future publication chapters by renaming current development records. Missing Site/type, water/environmental and future-maintenance chapters are normal future House Kernel work.
 
 ## Current Primer
 
@@ -162,7 +162,7 @@ Key verified properties include:
 
 ### G5
 
-Deterministic combined site/PDF build passed with read-only CI permissions before production integration. The assembled preview contained both `index.html` and `house-systems-architecture.pdf`, and its rendered navigation target was verified as `/architecture/house-systems-architecture.pdf`.
+Deterministic combined site/PDF build passed with read-only CI permissions before production integration. The assembled preview contained both `index.html` and `house-kernel.pdf`, and its rendered navigation target was verified as `/architecture/house-kernel.pdf`.
 
 ### G6 — merge and production closeout
 
@@ -173,10 +173,10 @@ Production GitHub Pages workflow run `37938502579` passed both build and deploy 
 The exact Pages artifact deployed by GitHub (artifact `11619791208`) was downloaded and inspected:
 
 - `index.html` present;
-- `house-systems-architecture.pdf` present;
-- rendered **Download PDF** href: `/architecture/house-systems-architecture.pdf`;
+- `house-kernel.pdf` present;
+- rendered **Download PDF** href: `/architecture/house-kernel.pdf`;
 - site build meta: full merge commit `1504786299722487e9a4a5a2520a53ad89a5c1bf`;
-- PDF title: **House Systems Architecture — Working Edition**;
+- PDF title: **House Kernel — Working Edition**;
 - PDF: **213 A4 pages**, unencrypted, no forms or JavaScript;
 - PDF title page revision: `1504786`;
 - deployed PDF SHA-256: `2398f6fb1d8f2793daf046f50178c5c27e1129e63b24246a0462a621bd21f264`.
@@ -192,7 +192,7 @@ Production workflow run `38126989866`, at commit `9c30e24a000bddcdcdf99d05980204
 The preceding successful Pages artifact that introduced the same Primer content was downloaded and inspected directly because the public Pages domain remained unavailable from the tool environment:
 
 - both publication PDFs present;
-- Primer title: **House Systems Architecture — Primer**;
+- Primer title: **House Kernel — Primer**;
 - Primer: **15 A4 pages**, unencrypted, no forms;
 - five PDF outline entries matching the five-part editorial sequence;
 - rendered site navigation contains **Primer · compact** and **Working Edition · complete**;

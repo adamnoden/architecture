@@ -41,7 +41,7 @@ Each transition needs provenance.
 ## 3. Keep source, rule, evidence and decision separate
 
 ### Requirement source
-The authority or origin: legislation, Approved Document, standard, manufacturer requirement, HSA doctrine, architectural grammar or client brief.
+The authority or origin: legislation, Approved Document, standard, manufacturer requirement, House Kernel doctrine, architectural grammar or client brief.
 
 ### Rule implementation
 The compiler's versioned interpretation of that source. A rule implementation can contain a bug even when the source has not changed.
@@ -327,7 +327,7 @@ The dependency graph, not memory, decides what must be revisited.
 
 England's higher-risk-building regime is useful precedent for information architecture: digital records, version control, controlled change, compliance evidence, construction control and as-built records.
 
-The initial HSA research domain is an ordinary low-rise dwelling. Those higher-risk-building duties must not be presented as legal requirements for it.
+The initial House Kernel research domain is an ordinary low-rise dwelling. Those higher-risk-building duties must not be presented as legal requirements for it.
 
 The project may adopt analogous discipline voluntarily because it is useful.
 
@@ -386,7 +386,7 @@ architectural grammar
   G-01.3
 
 doctrine profile
-  HSA-01
+  House Kernel-01
 
 rule packs
   structure: RP-STR-04

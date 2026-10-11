@@ -97,7 +97,7 @@ describe('PAT-XW-01 mutations', () => {
     )
   })
 
-  test('XW-M03 lets technical state survive an HSA route-geography departure', () => {
+  test('XW-M03 lets technical state survive a House Kernel route-geography departure', () => {
     const baseline = compile(createPatXw01Fixture())
     const source = createPatXw01Fixture()
 

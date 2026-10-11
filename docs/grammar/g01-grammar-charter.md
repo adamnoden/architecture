@@ -10,7 +10,7 @@
 
 It is the first selected architectural language being researched through the House Kernel computational framework because the Reference House already has a Georgian-derived architectural temperament.
 
-G-01 is not an House Kernel doctrine profile, construction system or definition of good architecture in general.
+G-01 is not a House Kernel doctrine profile, construction system or definition of good architecture in general.
 
 Its job is narrower:
 

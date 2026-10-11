@@ -339,7 +339,7 @@ English Heritage records substantial later service expansion and changes to the 
 
 Service topology was **capable of changing without replacing the principal architectural identity of the villa**.
 
-This is highly relevant to the Long-Life House, but must not be romanticised: the social organisation depended on historic servant labour and elite domestic practice that G-01 must not encode as universal modern life.
+This is highly relevant to House Kernel, but must not be romanticised: the social organisation depended on historic servant labour and elite domestic practice that G-01 must not encode as universal modern life.
 
 ## 16. Social-history note
 
@@ -354,7 +354,7 @@ The grammar project should extract:
 
 not preserve historic social hierarchy as a normative domestic requirement.
 
-## 17. Long-Life House compatibility note
+## 17. House Kernel compatibility note
 
 Potentially transferable:
 

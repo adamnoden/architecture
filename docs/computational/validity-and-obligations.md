@@ -7,7 +7,7 @@
 
 A single green/red result would hide distinctions the system needs to preserve.
 
-A design can be geometrically well formed but structurally unresolved; structurally adequate but outside the selected grammar; technically compliant but poorly evidenced; digitally resolved but badly built; legally compliant but inconsistent with an HSA project requirement.
+A design can be geometrically well formed but structurally unresolved; structurally adequate but outside the selected grammar; technically compliant but poorly evidenced; digitally resolved but badly built; legally compliant but inconsistent with a House Kernel project requirement.
 
 The model therefore reports several kinds of validity rather than one universal score.
 
@@ -101,8 +101,8 @@ Created because the selected design/calculation route incorporates a standard-ba
 ### Product evidence
 Created by installation limits, conditions or declared performance of a selected product/system.
 
-### HSA / project architectural requirement
-Created only where the project has adopted a formalised HSA proposition, pattern-derived commitment or other architectural requirement.
+### House Kernel / project architectural requirement
+Created only where the project has adopted a formalised House Kernel proposition, pattern-derived commitment or other architectural requirement.
 
 ### Architectural grammar
 Created by the selected architectural language.
@@ -145,11 +145,11 @@ Does the model satisfy the named target and compliance route under declared assu
 
 Never report this dimension without naming the target.
 
-### V6 — HSA / project-architecture conformance
+### V6 — House Kernel / project-architecture conformance
 
-Does the design satisfy the HSA-derived project requirements it has actually adopted?
+Does the design satisfy the House Kernel-derived project requirements it has actually adopted?
 
-A project may satisfy technical obligations while failing an HSA architectural commitment, or vice versa. `PAT-XW-01` deliberately exercised that separation.
+A project may satisfy technical obligations while failing a House Kernel architectural commitment, or vice versa. `PAT-XW-01` deliberately exercised that separation.
 
 ### V7 — Architectural-grammar conformance
 
@@ -385,7 +385,7 @@ Geometry / spatial              PASS
 Structure                       PASS
 Boundary / building physics     PASS WITH 1 EXTERNAL EVIDENCE ITEM
 Regulatory route                PASS
-HSA project requirements        PASS
+House Kernel project requirements        PASS
 Architectural grammar G-01      PASS WITH 2 WARNINGS
 Constructability / tolerance    PASS
 Evidence completeness           FAIL
@@ -410,7 +410,7 @@ This is a useful failure: the system distinguishes a resolved design from an evi
 - What evidence can a family/type pass to its occurrences?
 - How should probabilistic engineering conditions be represented?
 - How should tolerances affect binary geometric checks?
-- How should HSA/brief conflicts surface?
+- How should House Kernel/brief conflicts surface?
 - What is sufficient evidence for a product substitution?
 - How should ambiguity or competing regulatory interpretations be reported?
 - What does recompilation against a newer target mean for an existing lawful building?

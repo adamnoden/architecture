@@ -1,4 +1,4 @@
-# The Long-Life House
+# House Kernel
 ## Part I — The Proposition
 
 ---
@@ -83,7 +83,7 @@ Three whole-life tasks should remain distinct:
 - **component replacement** — removal and renewal of a failed or obsolete item during occupation;
 - **disassembly and recovery** — separation during major refurbishment or at end of life for reuse, recycling or disposal.
 
-A detail may perform well at one and poorly at another. Design-for-disassembly literature is relevant, but it does not substitute for maintenance design. The Long-Life House is primarily concerned with the first two tasks during occupation, while preserving end-of-life recovery where it can be achieved without disproportionate cost or complexity.
+A detail may perform well at one and poorly at another. Design-for-disassembly literature is relevant, but it does not substitute for maintenance design. House Kernel is primarily concerned with the first two tasks during occupation, while preserving end-of-life recovery where it can be achieved without disproportionate cost or complexity.
 
 ---
 
@@ -151,7 +151,7 @@ Some service crossings and integrated systems will be necessary. The governing r
 
 > **Permanent fabric should not be used as the routine distribution or attachment zone for shorter-lived systems. Unavoidable crossings and attachments should be sparse, deliberate, limited and documented.**
 
-Historic England takes a related position when adapting old buildings: minimise permanent scarring, use common or existing routes, preserve access for future maintenance and replacement, and allow spare capacity where appropriate.[11] The Long-Life House applies that respect before the fabric becomes historic.
+Historic England takes a related position when adapting old buildings: minimise permanent scarring, use common or existing routes, preserve access for future maintenance and replacement, and allow spare capacity where appropriate.[11] House Kernel applies that respect before the fabric becomes historic.
 
 ## Replaceable systems
 

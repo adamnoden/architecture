@@ -9,7 +9,7 @@
 
 > **A good home should minimise unnecessary vigilance.**
 
-In HSA, repose denotes a domestic environment that is physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.
+In House Kernel, repose denotes a domestic environment that is physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.
 
 It is not a synonym for minimalism, low visual complexity, symmetry, historical style or sensory deprivation.
 
@@ -42,7 +42,7 @@ Any future text that collapses those levels should be corrected.
 | Reference House language | Translate repose into G-01/project-specific composition without claiming Georgian neurological privilege | Integrated |
 | Part V | Test through occupation and recovery scenarios as well as failure / change scenarios | Integrated |
 | RIBA implementation brief | Give repose project requirements, stage outputs, review and post-occupancy checks | Integrated |
-| Project overview | Expose repose as an HSA human requirement without overstating the evidence | Integrated |
+| Project overview | Expose repose as a House Kernel human requirement without overstating the evidence | Integrated |
 | Computational track | No whole-repose machine verdict | Deferred deliberately; only independently valid technical consequences may be formalised |
 
 ---

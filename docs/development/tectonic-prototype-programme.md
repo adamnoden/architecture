@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Several tectonic propositions are promising but not proven enough for project adoption at full scale. Their authority is not uniform: some general relationships are already canonical HSA patterns or strategies, while particular occupied-surface and structural implementations remain held candidates or challengers. This programme defines the physical and engineering work needed to select, modify or reject those implementations and, where warranted, strengthen the evidence behind the general proposition.
+Several tectonic propositions are promising but not proven enough for project adoption at full scale. Their authority is not uniform: some general relationships are already canonical House Kernel patterns or strategies, while particular occupied-surface and structural implementations remain held candidates or challengers. This programme defines the physical and engineering work needed to select, modify or reject those implementations and, where warranted, strengthen the evidence behind the general proposition.
 
 > **Prototype the interface, not merely the object.**
 
@@ -17,7 +17,7 @@ A prototype is an evidence-generating experiment. Freeze the proposition and acc
 
 A prototype may answer two different architectural questions at once. Keep their verdicts separate.
 
-### General HSA evidence
+### General House Kernel evidence
 
 Does the proposition perform well enough, across its stated scope, to support or challenge a strategy, candidate or pattern claim?
 
@@ -29,7 +29,7 @@ Does this particular implementation belong in the Reference House and its select
 
 For the current house this may include G-01 composition, moulding hierarchy, joint placement, material expression and the project tectonic dialect.
 
-A Reference House fit pass **cannot promote a general HSA proposition**. A general HSA evidence pass likewise does not require the Reference House to select that implementation. Record both decisions independently whenever one specimen is used for both purposes.
+A Reference House fit pass **cannot promote a general House Kernel proposition**. A general House Kernel evidence pass likewise does not require the Reference House to select that implementation. Record both decisions independently whenever one specimen is used for both purposes.
 
 ## Common acceptance framework
 
@@ -221,7 +221,7 @@ Compare viable families such as:
 - steel angle/shoe only as an experimental challenger;
 - other seated/captured arrangements the engineer judges credible.
 
-The reusable HSA proposition is already captured by [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md). This prototype chooses between implementation families; it is not an attempt to promote **Seated Floor Structure** as a pattern.
+The reusable House Kernel proposition is already captured by [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md). This prototype chooses between implementation families; it is not an attempt to promote **Seated Floor Structure** as a pattern.
 
 ## Questions
 
@@ -305,7 +305,7 @@ Compare every challenger with the best conventional alternative. Record initial 
 
 After prototype review assign separate decisions where a specimen carries project-specific architectural expression.
 
-## General HSA evidence decision
+## General House Kernel evidence decision
 
 **Confirm / strengthen** — the result supports the existing pattern/strategy proposition within its stated scope.  
 **Qualify** — useful result, but scope or wording needs narrowing.  
@@ -323,4 +323,4 @@ Pattern promotion should require the evidence appropriate to the claim, not only
 
 A Reference House selection decision never raises general pattern evidence or maturity by itself.
 
-Rejection is a successful research result. HSA should survive the failure of any particular implementation.
+Rejection is a successful research result. House Kernel should survive the failure of any particular implementation.

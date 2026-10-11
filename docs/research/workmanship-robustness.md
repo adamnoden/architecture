@@ -1,7 +1,7 @@
 # Workmanship Robustness — Research Synthesis and Project Position
 
 **Status:** research and doctrine-control note  
-**Purpose:** define how the Long-Life House should accommodate ordinary construction variability, human fallibility and site craft without lowering quality or turning the project into a prefabrication manifesto.
+**Purpose:** define how House Kernel should accommodate ordinary construction variability, human fallibility and site craft without lowering quality or turning the project into a prefabrication manifesto.
 
 ## Question
 
@@ -77,7 +77,7 @@ Contemporary buildability guidance repeatedly returns to:
 - maintenance and replacement;
 - early involvement of people with construction experience.
 
-The Long-Life House should therefore treat buildability as part of performance, not a contractor-side concern that begins after the architecture is complete.
+House Kernel should therefore treat buildability as part of performance, not a contractor-side concern that begins after the architecture is complete.
 
 ## 3. Mistake-proofing
 
@@ -117,7 +117,7 @@ A drawing can be technically complete and operationally obscure.
 
 David Pye's distinction between **workmanship of risk** and **workmanship of certainty** prevents this doctrine drifting into naive industrialisation.
 
-The Long-Life House values craft.
+House Kernel values craft.
 
 A brick elevation, hand-finished plaster, carved stone, fitted joinery or repair to an old material may gain architectural quality precisely because judgement remains with the maker.
 

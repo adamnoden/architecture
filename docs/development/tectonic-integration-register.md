@@ -8,9 +8,9 @@
 
 Every material idea must end in one of four states:
 
-- **Integrated HSA knowledge** — carried through the appropriate doctrine → strategy/pattern → delivery/test chain;
+- **Integrated House Kernel knowledge** — carried through the appropriate doctrine → strategy/pattern → delivery/test chain;
 - **Held / experimental** — useful proposition retained behind an explicit evidence gate;
-- **Reference House only** — intentionally specific to G-01, the courtyard house or its tectonic dialect and not claimed as universal HSA;
+- **Reference House only** — intentionally specific to G-01, the courtyard house or its tectonic dialect and not claimed as universal House Kernel;
 - **Rejected / superseded** — deliberately excluded or replaced, with the reason recoverable from provenance.
 
 Nothing is considered integrated merely because it appears once in prose or in the Reference House.
@@ -25,7 +25,7 @@ Nothing is considered integrated merely because it appears once in prose or in t
 | TH-04 | **Visible technical work remains architecture.** Serviceability does not excuse unresolved appearance, touch or occupation quality. | Pattern methodology / Delivery | architectural-resolution review | Integrated |
 | TH-05 | **Bounded movement:** do not attempt to suppress every movement; identify harmless movements and give them controlled places to occur. | Principle 3 / `HSA-P-008` | movement map; movement/slip interfaces | Integrated |
 | TH-06 | **Separate functions at interfaces:** support, restraint, movement, sealing, protection and finish should be distinguished unless there is a reason to combine them. | Part II / [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md) | interface-family drawings | Integrated |
-| TH-07 | **Structural support/restraint decomposition:** support by bearing where appropriate; restrain only where restraint is required. A seated connection is one challenger, not the HSA identity. | [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md) | structural-engineer comparison + edge prototype if challenger advances | Integrated strategy; implementation unresolved |
+| TH-07 | **Structural support/restraint decomposition:** support by bearing where appropriate; restrain only where restraint is required. A seated connection is one challenger, not the House Kernel identity. | [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md) | structural-engineer comparison + edge prototype if challenger advances | Integrated strategy; implementation unresolved |
 | TH-08 | **Few permanent fixings:** reversible fixings are encouraged, but penetrations of permanent fabric should be sparse, deliberate and documented. | Principle 2 / Replaceable Interior | attachment map | Integrated |
 | TH-09 | **Controlled Attachment Plane:** permanent fabric may receive a limited engineered attachment interface so later fit-out can attach principally on the replaceable side. | [`HSA-P-022`](../patterns/controlled-attachment-plane.md) | load classes; no-fix zones; remanufacturable geometry | Integrated canonical pattern |
 | TH-10 | **Replaceable Architectural Lining:** investigate dry, mechanically mounted internal lining systems independent of permanent masonry where their whole-life value is credible. | [Held candidate](../patterns/candidates/replaceable-architectural-lining.md) | P01-W2 wall-bay gate + fire/acoustic/building-physics review if advanced | Held |
@@ -43,7 +43,7 @@ Nothing is considered integrated merely because it appears once in prose or in t
 
 ## Anti-drift controls
 
-The following interpretations are explicitly **not** the intended HSA position:
+The following interpretations are explicitly **not** the intended House Kernel position:
 
 - **“no screws”** — wrong; screws and bolts are valuable reversible fasteners. The target is few uncontrolled fixings into permanent fabric;
 - **“all movement is good”** — wrong; load paths and required restraint remain deterministic;
@@ -55,7 +55,7 @@ The following interpretations are explicitly **not** the intended HSA position:
 - **“replaceability outranks fire, acoustics, moisture, structure or comfort”** — wrong; boundary and performance obligations remain non-negotiable;
 - **“design for ordinary workmanship means accepting poor workmanship”** — wrong; the target is explicit achievable tolerances, clear datums, bounded adjustment and visible rejection of out-of-range work;
 - **“mistake-proofing means eliminating craft”** — wrong; skilled judgement should be preserved where it creates architectural or technical value rather than spent rescuing unresolved interfaces;
-- **“a Reference House prototype proves HSA”** — wrong; project fit and general evidence are separate verdicts.
+- **“a Reference House prototype proves House Kernel”** — wrong; project fit and general evidence are separate verdicts.
 
 ## Completion audit
 

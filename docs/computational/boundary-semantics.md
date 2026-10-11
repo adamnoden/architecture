@@ -114,7 +114,7 @@ Semantic continuity still does **not** prove performance. Fire, acoustic, therma
 
 ## 7. Boundary independence and replaceable layers
 
-HSA makes one useful relationship explicit: routinely removable work should not casually carry critical performance that is expected to survive its removal.
+House Kernel makes one useful relationship explicit: routinely removable work should not casually carry critical performance that is expected to survive its removal.
 
 ~~~text
 LINING L01

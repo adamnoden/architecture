@@ -4,7 +4,7 @@
 
 ## Proposition
 
-The Long-Life House should be **tectonically honest**.
+House Kernel should be **tectonically honest**.
 
 This does not require every fixing, service or structural member to be exposed. It requires the architecture not to depend on a false account of how the building is made, how materials behave, what carries load, where movement occurs or which parts are temporary.
 

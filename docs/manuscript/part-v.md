@@ -1,4 +1,4 @@
-# The Long-Life House
+# House Kernel
 ## Part V — Making and Testing the Platform
 
 ---

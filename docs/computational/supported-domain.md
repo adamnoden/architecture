@@ -27,7 +27,7 @@ SUPPORTED DOMAIN
     +
 ARCHITECTURAL GRAMMAR
     +
-HSA DOCTRINE / PROJECT REQUIREMENTS
+House Kernel DOCTRINE / PROJECT REQUIREMENTS
     +
 PROJECT / SITE CONFIGURATION
     +
@@ -39,16 +39,16 @@ These answer different questions:
 - **Compiler target:** which external normative environment applies?
 - **Supported domain:** what building types, systems and parameter ranges can the compiler reason about?
 - **Architectural grammar:** what design language is selected?
-- **HSA / project requirements:** which architectural commitments apply to this project?
+- **House Kernel / project requirements:** which architectural commitments apply to this project?
 - **Project/site configuration:** what particular site, brief, climate, ground and client facts apply?
 
 A detached masonry house can sit inside an H1 technical family and fail G-01. A convincing G-01 house can sit outside supported structural competence. Those distinctions must remain visible.
 
 ## 3. Ordinary construction as the research baseline
 
-The computational research deliberately avoided making experimental HSA assemblies prerequisites for testing the semantic model.
+The computational research deliberately avoided making experimental House Kernel assemblies prerequisites for testing the semantic model.
 
-Current HSA authority makes the distinction clearer than the original paper programme did:
+Current House Kernel authority makes the distinction clearer than the original paper programme did:
 
 - the structural proposition is carried by [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md); a seated connection remains an implementation challenger;
 - [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is canonical, but its particular Reference House backplane implementation remains project-specific;
@@ -177,7 +177,7 @@ Complex flat/green roofs, large rooflights and unusual structures remain outside
 
 H1 uses finite opening families: ordinary window in cavity masonry, external door, internal door and selected larger openings within declared support limits.
 
-The HSA relationship [Permanent Opening / Replaceable Window](../patterns/permanent-opening-replaceable-window.md) maps naturally onto the window family, but the technical family remains responsible for head support, jamb/sill/head geometry, weather/thermal/air transition, fixing/replacement interface and evidence.
+The House Kernel relationship [Permanent Opening / Replaceable Window](../patterns/permanent-opening-replaceable-window.md) maps naturally onto the window family, but the technical family remains responsible for head support, jamb/sill/head geometry, weather/thermal/air transition, fixing/replacement interface and evidence.
 
 ### Principal entrance
 
@@ -185,7 +185,7 @@ The HSA relationship [Permanent Opening / Replaceable Window](../patterns/perman
 
 ## 13. H1 service topology
 
-The paper domain exercises service relationships that are now represented in current HSA language by, among others:
+The paper domain exercises service relationships that are now represented in current House Kernel language by, among others:
 
 - [`HSA-P-001 — Controlled Utility Entry`](../patterns/controlled-utility-entry.md);
 - [`HSA-P-002 — Plant Room as Service Hub`](../patterns/plant-room-service-hub.md);
@@ -209,7 +209,7 @@ The paper domain uses named technical families rather than generic “HVAC”.
 
 [HEAT-ASHP-RAD-01 — Air-to-Water Heat Pump + Low-Temperature Radiators](heating-family-ashp-radiators-v01.md) uses replaceable external plant, accessible internal hydraulic hub, replaceable low-temperature radiators, accessible distribution routes and competent external heat-loss/sizing/commissioning evidence.
 
-This is an H1 technical family, not an HSA-wide heating preference.
+This is an H1 technical family, not a project-wide heating preference.
 
 ### Ventilation
 
@@ -253,13 +253,13 @@ The paper domain avoids novel fire engineering: simple single-family strategy, o
 
 H1 does not encode “Georgian”, symmetry, classical openings or Palladian proportions. Those belong to G-01 or another grammar.
 
-Likewise, a project can satisfy a supported technical condition while failing an HSA project requirement:
+Likewise, a project can satisfy a supported technical condition while failing a House Kernel project requirement:
 
 ~~~text
 SUPPORTED TECHNICAL CONDITION    PASS
 REGULATORY OBLIGATION            PASS
 STRUCTURAL OBLIGATION            PASS
-HSA PROJECT REQUIREMENT          FAIL
+House Kernel PROJECT REQUIREMENT          FAIL
 ~~~
 
 The P0/PAT-XW-01 work later demonstrated this authority separation in executable form at much smaller scope.
@@ -310,7 +310,7 @@ Half-support is worse than an explicit boundary.
 | Standard prescriptive fire strategy | Candidate | Target-dependent |
 | Fire-engineered alternative | External/unsupported | Not native H1 |
 | G-01 Georgian grammar | Separate input | Not domain capability |
-| HSA architectural requirements | Separate project authority | Not technical-domain capability |
+| House Kernel architectural requirements | Separate project authority | Not technical-domain capability |
 
 Nothing marked “native candidate” is a demonstrated software capability. The table records the frozen H1 paper model.
 
@@ -331,7 +331,7 @@ A domain extension should state:
 
 Potential future extensions may include physically validated lining/access systems, semi-detached/party-wall conditions, basements, alternative structures or additional roof/service families. None forms a standing implementation queue.
 
-## 22. Promotion rule for experimental HSA systems
+## 22. Promotion rule for experimental House Kernel systems
 
 An experimental assembly enters a trusted technical domain only after the evidence appropriate to the claim exists, including where relevant:
 
@@ -373,7 +373,7 @@ Questions from the H1 paper programme remain useful only when a current workstre
 - which technical families are valuable enough to deserve executable support;
 - how much proof should remain external rather than native;
 - how domain extension should interact with competent professional determination;
-- which physically validated HSA assemblies deserve later technical-family representation;
+- which physically validated House Kernel assemblies deserve later technical-family representation;
 - what minimum domain offers useful guarantees without becoming a broad CAD/regulations product.
 
 ## 27. Current programme position

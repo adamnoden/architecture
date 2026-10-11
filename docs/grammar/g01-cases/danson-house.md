@@ -372,7 +372,7 @@ This context matters because:
 - the house's service infrastructure and social separation depended on historical labour/economic conditions;
 - G-01 must distinguish transferable spatial intelligence from social relations we do not seek to reproduce.
 
-## 17. Long-Life House compatibility note
+## 17. House Kernel compatibility note
 
 Potentially transferable:
 

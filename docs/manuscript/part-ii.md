@@ -1,4 +1,4 @@
-# The Long-Life House
+# House Kernel
 ## Part II — Architecture of the Platform
 
 ---
@@ -152,7 +152,7 @@ The same test can be applied to doors, thresholds, floor access and wet-room pan
 
 The interface is also where the project makes an architectural claim about how the building is made.
 
-The Long-Life House should be **tectonically honest**. Construction may be concealed; it should not be falsified. A cornice can conceal a real movement gap, an architrave real window fixings and timber panelling a real service zone. The architectural element has its own material existence while performing genuine technical work.
+House Kernel should be **tectonically honest**. Construction may be concealed; it should not be falsified. A cornice can conceal a real movement gap, an architrave real window fixings and timber panelling a real service zone. The architectural element has its own material existence while performing genuine technical work.
 
 By contrast, a brittle finish bridging assemblies known to move independently creates apparent continuity by denying the actual constructional relationship. If it must crack before the building can move, the junction is unresolved.
 
@@ -606,7 +606,7 @@ The physical layer should remain small. An engraved diagram that becomes false a
 
 Future work should leave the building at least as understandable as it found it. When a route changes, the record changes. When a component is removed, abandoned services should be removed or marked. When a boundary is penetrated, its performance and record should be reinstated. When an interface family changes, the new detail becomes part of the building passport.
 
-The higher-risk-building “golden thread” regime is not a legal requirement for an ordinary detached house, but its information principle is instructive: information should remain current, accessible, understandable and transferable through the building's life. The Long-Life House applies that principle voluntarily and proportionately.
+The higher-risk-building “golden thread” regime is not a legal requirement for an ordinary detached house, but its information principle is instructive: information should remain current, accessible, understandable and transferable through the building's life. House Kernel applies that principle voluntarily and proportionately.
 
 ## Commissioning as the beginning of stewardship
 

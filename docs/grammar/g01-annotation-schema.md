@@ -447,7 +447,7 @@ For each case, where evidenced:
 
 This field exists so repeated historical patterns are not accidentally treated as timeless laws of domestic life.
 
-## 18. Long-Life House compatibility note
+## 18. House Kernel compatibility note
 
 Do not score the historic building against the doctrine.
 

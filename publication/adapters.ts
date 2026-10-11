@@ -68,18 +68,17 @@ function demoteHeadings(markdown: string, levels: number): string {
     .join('\n')
 }
 
-function normaliseLegacyPartOpening(markdown: string, partHeading: string): string {
-  const legacyOpening = `# The Long-Life House\n## ${partHeading}`
-  if (!markdown.startsWith(legacyOpening)) {
+function normalisePartOpening(markdown: string, partHeading: string): string {
+  const opening = `# House Kernel\n## ${partHeading}`
+  if (!markdown.startsWith(opening)) {
     throw new Error(`${partHeading} opening changed; update the print wrapper deliberately.`)
   }
   return markdown
-    .replace(legacyOpening, `# ${partHeading}`)
-    .replaceAll('The Long-Life House', 'House Kernel')
+    .replace(opening, `# ${partHeading}`)
 }
 
 function adaptPartI(markdown: string, context: AdapterContext): string {
-  markdown = normaliseLegacyPartOpening(markdown, 'Part I — The Proposition')
+  markdown = normalisePartOpening(markdown, 'Part I — The Proposition')
 
   const chapter5Marker = '# 5. Eleven principles'
   const transitionMarker = '\n---\n\n# From principles to buildings'
@@ -134,7 +133,7 @@ function adaptPartI(markdown: string, context: AdapterContext): string {
 }
 
 function adaptPartII(markdown: string, context: AdapterContext): string {
-  markdown = normaliseLegacyPartOpening(markdown, 'Part II — Architecture of the Platform')
+  markdown = normalisePartOpening(markdown, 'Part II — Architecture of the Platform')
 
   const chapter9Marker = '\n---\n\n# 9. Environmental resilience without dependence'
   const chapter9Index = markdown.indexOf(chapter9Marker)
@@ -153,7 +152,7 @@ function adaptPartII(markdown: string, context: AdapterContext): string {
 }
 
 function adaptPartV(markdown: string): string {
-  return normaliseLegacyPartOpening(markdown, 'Part V — Making and Testing the Platform')
+  return normalisePartOpening(markdown, 'Part V — Making and Testing the Platform')
 }
 
 function adaptPatternPage(markdown: string): string {
@@ -421,7 +420,7 @@ function adaptPrimerReferenceHouse(markdown: string): string {
   const openingEnd = markdown.indexOf('\n## Architectural scope')
   const openingBody = markdown.slice(opening.length, openingEnd).trim()
 
-  return `# The Reference House\n\n${openingBody}\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an House Kernel principle without being promoted into House Kernel doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
+  return `# The Reference House\n\n${openingBody}\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy a House Kernel principle without being promoted into House Kernel doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
 }
 
 export function applyAdapter(

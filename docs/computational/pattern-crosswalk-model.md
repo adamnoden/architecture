@@ -1,7 +1,7 @@
 # Architectural Pattern → Computational Crosswalk
 
 **Status:** frozen Phase-8 crosswalk model; executable subset demonstrated by `PAT-XW-01`  
-**Purpose:** define how selected HSA patterns can contribute to computational authoring and reporting without becoming compiler ontology.  
+**Purpose:** define how selected House Kernel patterns can contribute to computational authoring and reporting without becoming compiler ontology.  
 **Executable result:** [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md)
 
 The computational architecture is:
@@ -38,7 +38,7 @@ A selected pattern may explain why a project requirement exists. The actual buil
 
 ### A. Architectural project requirement
 
-Authority: **project architectural requirement**, with provenance to an HSA pattern where relevant.
+Authority: **project architectural requirement**, with provenance to a House Kernel pattern where relevant.
 
 Question:
 
@@ -180,7 +180,7 @@ Pattern-derived formal commitments normally enter as **project requirements with
 
 Do not create a pseudo-legal or technical authority called “pattern”.
 
-A source occurrence can contribute simultaneously to HSA project intent and to technical validity while preserving different authorities:
+A source occurrence can contribute simultaneously to House Kernel project intent and to technical validity while preserving different authorities:
 
 ```text
 P-005 selected
@@ -247,7 +247,7 @@ This is the same correction established in the paper work on interface bundles: 
 
 ## 9. Formal architectural commitment and technical proof may diverge
 
-A selected architectural commitment may be resolved while a dependent technical obligation remains unresolved, or the technical model may remain acceptable while HSA project intent is violated.
+A selected architectural commitment may be resolved while a dependent technical obligation remains unresolved, or the technical model may remain acceptable while House Kernel project intent is violated.
 
 `PAT-XW-01` demonstrated both cases:
 

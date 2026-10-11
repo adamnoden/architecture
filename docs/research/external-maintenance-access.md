@@ -163,7 +163,7 @@ A window illustrates why:
 - full-frame replacement may require removal of trims and a path for the complete frame;
 - masonry repair around the same opening may still require external scaffold.
 
-The Building Regulations provide an instructive limit case. Requirement K5.4 concerns safe access for cleaning windows etc., but its application expressly excludes dwellings. The Long-Life House therefore cannot cite K5.4 as a domestic requirement. Designing domestic windows so that routine cleaning can occur safely from inside is instead a deliberate doctrine preference that exceeds this part of the minimum regulatory baseline.
+The Building Regulations provide an instructive limit case. Requirement K5.4 concerns safe access for cleaning windows etc., but its application expressly excludes dwellings. House Kernel therefore cannot cite K5.4 as a domestic requirement. Designing domestic windows so that routine cleaning can occur safely from inside is instead a deliberate doctrine preference that exceeds this part of the minimum regulatory baseline.
 
 **Source**
 

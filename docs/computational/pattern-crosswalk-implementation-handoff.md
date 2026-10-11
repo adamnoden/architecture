@@ -176,7 +176,7 @@ Expected:
 
 - the branch may remain technically valid;
 - project architectural requirement derived from `P-003` becomes failed/unresolved or emits an explicit departure;
-- regulatory/engineering validity does not fail merely because HSA intent fails.
+- regulatory/engineering validity does not fail merely because House Kernel intent fails.
 
 This mutation is essential because it proves technical validity and architectural-project intent can diverge.
 

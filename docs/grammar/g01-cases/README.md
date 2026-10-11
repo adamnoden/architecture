@@ -86,7 +86,7 @@ It means each D3 trial building has been passed through the same semantic questi
 - structural reading;
 - service/occupation reading;
 - social-history warning;
-- Long-Life House translation note;
+- House Kernel translation note;
 - candidate observations;
 - alterations;
 - uncertainties.

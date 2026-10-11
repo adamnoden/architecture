@@ -334,7 +334,7 @@ Historic England uses 76 Dean Street to illustrate the broader emergence of firs
 
 G-01 should treat this as evidence about **vertical architectural hierarchy**, not a requirement that modern residents entertain on a prescribed floor.
 
-## 17. Long-Life House compatibility note
+## 17. House Kernel compatibility note
 
 Potentially transferable:
 

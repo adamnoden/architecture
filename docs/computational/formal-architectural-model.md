@@ -288,14 +288,14 @@ Its useful precedents include stable identifiers, semantic objects, objectified 
 The intended relationship is:
 
 ~~~text
-HSA semantic model
+House Kernel semantic model
         ↕
 interoperability mapping
         ↕
 IFC / bSDD / IDS where appropriate
 ~~~
 
-The internal model may need concepts that do not map cleanly to present IFC constructs, such as maintenance withdrawal volumes, permanence classes, HSA/project constraints or evidence obligations. That is an interoperability problem, not a reason to discard them.
+The internal model may need concepts that do not map cleanly to present IFC constructs, such as maintenance withdrawal volumes, permanence classes, House Kernel/project constraints or evidence obligations. That is an interoperability problem, not a reason to discard them.
 
 ## 14. Model integrity invariants
 
@@ -408,7 +408,7 @@ See [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md).
 
 Bundles must also reference canonical source facts rather than duplicate them. `OPENING-O01.width` is authored once; structural, thermal, weather, quantity and grammar views derive from it.
 
-Authority remains attached to each obligation: engineering validity, regulation/target, product evidence, HSA/project requirement, grammar or client requirement. A bundle-level status must never hide a failed mandatory child obligation.
+Authority remains attached to each obligation: engineering validity, regulation/target, product evidence, House Kernel/project requirement, grammar or client requirement. A bundle-level status must never hide a failed mandatory child obligation.
 
 A bundle defines **what a relationship commits the building to resolving**. An implementation family defines **how those obligations are discharged**.
 
