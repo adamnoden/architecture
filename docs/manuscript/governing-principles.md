@@ -1,4 +1,4 @@
-# House Systems Architecture — Governing Principles
+# House Kernel — Governing Principles
 
 ## Governing constraints
 
