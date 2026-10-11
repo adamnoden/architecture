@@ -8,6 +8,7 @@ export type PublicationEntryKind =
   | 'strategy'
   | 'candidate'
   | 'reference-house'
+  | 'primer'
   | 'smoke-fixture'
 
 export type PublicationAdapter =
@@ -18,6 +19,9 @@ export type PublicationAdapter =
   | 'pattern-page'
   | 'reference-house-overview'
   | 'reference-house-page'
+  | 'primer-principles'
+  | 'primer-patterns'
+  | 'primer-reference-house'
 
 export interface PublicationEntry {
   id: string
@@ -101,6 +105,47 @@ export const smokePublicationEntries: readonly PublicationEntry[] = [
     title: 'Mermaid compatibility fixture',
     kind: 'smoke-fixture',
     smokeOnly: true
+  }
+] as const
+
+/**
+ * Primer order. The two authored edge sections are intentionally small;
+ * doctrine, pattern definitions and Reference House claims are derived from
+ * their canonical sources through deterministic adapters.
+ */
+export const primerPublicationEntries: readonly PublicationEntry[] = [
+  {
+    id: 'primer-proposition',
+    source: 'docs/manuscript/primer-proposition.md',
+    title: 'The proposition',
+    kind: 'primer'
+  },
+  {
+    id: 'primer-principles',
+    source: 'docs/manuscript/governing-principles.md',
+    title: 'Eleven governing principles',
+    kind: 'primer',
+    adapter: 'primer-principles'
+  },
+  {
+    id: 'primer-patterns',
+    source: 'docs/patterns/README.md',
+    title: 'From doctrine to patterns',
+    kind: 'primer',
+    adapter: 'primer-patterns'
+  },
+  {
+    id: 'primer-reference-house',
+    source: 'docs/reference-house/README.md',
+    title: 'The Reference House',
+    kind: 'primer',
+    adapter: 'primer-reference-house'
+  },
+  {
+    id: 'primer-outlook',
+    source: 'docs/manuscript/primer-outlook.md',
+    title: 'Making and testing the platform',
+    kind: 'primer'
   }
 ] as const
 
