@@ -1,0 +1,117 @@
+name: Complete House Kernel naming migration
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/house-kernel-migration.yml
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Migrate active project identity
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('.')
+          targets: set[Path] = set()
+
+          def add(pattern: str):
+              targets.update(p for p in root.glob(pattern) if p.is_file())
+
+          # Public and active architectural corpus. Historical development/gate
+          # records are deliberately not swept: old names remain valid provenance.
+          for pattern in [
+              'docs/manuscript/**/*.md',
+              'docs/grammar/**/*.md',
+              'docs/delivery/**/*.md',
+              'docs/research/**/*.md',
+              'docs/prototypes/**/*.md',
+              'docs/patterns/*.md',
+              'docs/patterns/strategies/**/*.md',
+              'docs/patterns/candidates/**/*.md',
+              'docs/reference-house/**/*.md',
+              'publication/primer/*.md',
+              'publication/*.ts',
+              'publication/scripts/*.ts',
+              '.vitepress/navigation.ts',
+          ]:
+              add(pattern)
+
+          # Current control documents from areas that also contain historical records.
+          for path in [
+              'docs/editorial/editorial-doctrine.md',
+              'docs/computational/README.md',
+              'docs/computational/executable-architecture.md',
+              'docs/computational/architectural-grammar-and-proportion.md',
+              'docs/development/README.md',
+              'docs/development/architectural-specificity-boundary.md',
+              'package.json',
+              'package-lock.json',
+          ]:
+              p = Path(path)
+              if p.exists(): targets.add(p)
+
+          # These are retained provenance catalogues/runs rather than current identity.
+          excluded = {
+              Path('docs/patterns/core-12.md'),
+              Path('docs/patterns/reversible-assembly-candidates.md'),
+              Path('docs/reference-house/service-topology-run-01.md'),
+          }
+          targets.difference_update(excluded)
+
+          changed = []
+          for path in sorted(targets):
+              text = path.read_text(encoding='utf-8')
+              migrated = text.replace('House Systems Architecture', 'House Kernel')
+              # Replace HSA only when it names the project. Stable HSA-P-* pattern IDs
+              # intentionally survive this rename as API-like historical identifiers.
+              migrated = re.sub(r'\bHSA\b(?!-P)', 'House Kernel', migrated)
+              migrated = migrated.replace('house-systems-architecture-docs', 'house-kernel-docs')
+              migrated = migrated.replace('house-systems-architecture', 'house-kernel')
+              if migrated != text:
+                  path.write_text(migrated, encoding='utf-8')
+                  changed.append(str(path))
+
+          print(f'Migrated {len(changed)} active files')
+          for path in changed:
+              print(path)
+          PY
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Validate repository
+        run: |
+          npm test
+          npm run docs:build
+          npm run publication:prepare:primer
+          npm run publication:prepare
+
+      - name: Remove one-shot workflow and commit migration
+        shell: bash
+        run: |
+          rm .github/workflows/house-kernel-migration.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Complete House Kernel naming migration [skip ci]"
+          git push
