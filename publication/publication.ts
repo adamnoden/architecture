@@ -8,6 +8,7 @@ export type PublicationEntryKind =
   | 'strategy'
   | 'candidate'
   | 'reference-house'
+  | 'back-matter'
   | 'primer'
   | 'smoke-fixture'
 
@@ -334,5 +335,11 @@ export const publicationEntries: readonly PublicationEntry[] = [
     title: 'Part V — Making and Testing the Platform',
     kind: 'part',
     adapter: 'part-v-wrapper'
+  },
+  {
+    id: 'sources-and-further-reading',
+    source: 'docs/manuscript/sources-and-further-reading.md',
+    title: 'Sources and further reading',
+    kind: 'back-matter'
   }
 ] as const
