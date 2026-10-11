@@ -25,6 +25,10 @@ None of this depends on discovering that buildings change. Service-life planning
 
 The architectural consequences are less consistently pursued, particularly in the ordinary house.
 
+A building can become obsolete without becoming defective. Its fabric may remain sound while the requirements around it change: a control platform loses support, a heating technology disappears, household patterns alter or regulation moves on. Service-life planning treats obsolescence as a whole-life concern alongside physical deterioration.[1] The problem is not always that the building has changed; sometimes its context has.
+
+Software engineering offers a useful analogy. Lehman's laws of software evolution describe systems embedded in the real world as requiring continuing adaptation if they are not to become progressively less satisfactory. Gwern Branwen later uses “bitrot” for the everyday case in which software remains unchanged while APIs, dependencies and surrounding systems move around it.[25][26] Buildings should not be updated at software speed. The useful transfer is narrower: a long-lived building should make foreseeable changes in context absorbable without forcing unnecessary change in its durable fabric.
+
 A domestic project can contain good products and competent individual systems while leaving their future interaction unresolved. The electrician finds a route; the plumber finds another; the window is made weathertight; the bathroom is tiled. Each decision can be reasonable in isolation while the completed house accumulates dependencies that appear only when one layer has to change without the others.
 
 The objective is not to eliminate maintenance or failure. It is to make their consequences proportionate.
@@ -277,3 +281,5 @@ This hierarchy makes disagreement useful. An architect can reject a pattern with
 [22] Hellwig, R. T. (2015), “Perceived control in indoor environments: a conceptual approach”, *Building Research & Information* 43(3). https://doi.org/10.1080/09613218.2015.1004150  
 [23] Macedo, P. F. de, Ornstein, S. W. & Elali, G. A. (2022), “Privacy and housing: research perspectives based on a systematic literature review”, *Journal of Housing and the Built Environment* 37, 653–683. https://doi.org/10.1007/s10901-022-09939-z  
 [24] Bi, W. & Yildirim, I. (2026), “Visual Perception of Intuitive Physics and Its Computational Foundations”, *Annual Review of Vision Science* 12, 491–513. https://doi.org/10.1146/annurev-vision-110423-024138  
+[25] Meir M. Lehman & Juan F. Ramil (2001), “Rules and Tools for Software Evolution Planning and Management”, *Annals of Software Engineering* 11, 15–44. https://doi.org/10.1023/A:1012535017876  
+[26] Gwern Branwen (2020), “Technology Holy Wars are Coordination Problems”, § “Bitrot”. https://gwern.net/holy-war  
