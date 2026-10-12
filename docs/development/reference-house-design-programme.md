@@ -7,11 +7,12 @@ The Reference House is the principal integration test for House Kernel. Progress
 
 ## Current execution state
 
-- **Active stage:** `RH-11 — External-review package`
-- **Last closed stage:** `RH-10 — Whole-house coordination audit` — **PASS after corrective coordination; Reference House promoted M2 → M3 at coordinated virtual-design scope**; canonical gate: [RH-10 Whole-House Coordination Audit](../reference-house/whole-house-coordination-audit.md).
+- **Active work:** `Post-RH-11 — competent external review execution`.
+- **Last closed stage:** `RH-11 — External-review package` — **PASS: issue-ready discipline packages with explicit assumptions, review questions and rewind conditions; no maturity promotion**; canonical pack: [RH-11 External Review Brief](../reference-house/external-review-brief.md).
 - **Current whole-house authority:** [RH-10 Whole-House Coordination Audit](../reference-house/whole-house-coordination-audit.md) and [coordination map](../reference-house/whole-house-coordination-rh10.svg).
+- **Current external-review authority:** [RH-11 External Review Brief](../reference-house/external-review-brief.md), [package map](../reference-house/external-review-package-rh11.svg), [regulatory baseline](../reference-house/external-review-regulatory-baseline-rh11.md) and discipline appendices for [structure](../reference-house/external-review-structural-rh11.md), [fire/building control](../reference-house/external-review-fire-building-control-rh11.md), [MEP/acoustics](../reference-house/external-review-mep-acoustic-rh11.md) and [building physics/energy](../reference-house/external-review-building-physics-energy-rh11.md).
 - **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg), locally superseded by RH-06 where `U-ENS-01` became `U-DRESS-01`.
-- **Current architectural/elevation authority:** [RH-04 gate](../reference-house/plan-section-elevation-gate.md) for principal front, courtyard opening order and sectional hierarchy, supplemented by [RH-10 Outer Elevation Coordination](../reference-house/outer-elevation-coordination-rh10.md) for garden/service/west elevations. RH-08/RH-10 explicitly supersede RH-04's earlier pitched-roof preference while retaining the RH-04 cornice/storey/opening datums.
+- **Current architectural/elevation authority:** [RH-04 gate](../reference-house/plan-section-elevation-gate.md) for principal front, courtyard opening order and sectional hierarchy, supplemented by [RH-10 Outer Elevation Coordination](../reference-house/outer-elevation-coordination-rh10.md) for garden/service/west elevations. RH-08/RH-10 explicitly supersede RH-04's earlier pitched-roof preference while retaining RH-04 cornice/storey/opening datums.
 - **Current structural authority:** [RH-05 Structural Coordination](../reference-house/structural-coordination.md) and [structural overlay](../reference-house/structural-concept-overlay.svg).
 - **Current service authority:** [RH-06 Services and Failure Geography](../reference-house/service-topology-rh06.md), locally superseded for whole-dwelling ventilation by the [RH-07 MVHR Addendum](../reference-house/service-topology-rh07-mvhr-addendum.md), and extended for heating/DHW/renewables by [RH-10 Energy, Heating and Renewable Coordination](../reference-house/energy-heat-coordination-rh10.md).
 - **Current environmental authority:** [RH-07 Environmental Coordination](../reference-house/environmental-coordination.md), with RH-10 forward-energy coordination added downstream.
@@ -24,13 +25,14 @@ The Reference House is the principal integration test for House Kernel. Progress
 - **Current environmental concept:** shallow occupied bands; courtyard retained as a shaded light court; disciplined glazing; secure purge/cross ventilation; orientation-specific shading; no cooling reservation; central MVHR with continuous-MEV fallback.
 - **Current heat/energy concept:** `ASHP-01` air-to-water heat-pump baseline on the east/service side beside plant geography; DHW/hydraulics in `G-PLANT-01`; bounded `HYD-G-01` / `HYD-U-01` low-temperature routes; passive low-temperature emitters as baseline rather than whole-house UFH; about **50 m²** PV-capable roof reservation; no battery reservation.
 - **Current roof concept:** four very-low-slope fields fall outward from the courtyard to inspectable external collection; no inner court roof gutter, internal roof outlet or permanent roof hatch. PV must preserve drainage and external maintenance routes.
-- **Current fire/visitability concept:** each first-floor bedroom retains an outer-façade emergency-egress-window duty at current coordination level; principal entrance receives `TH-02` substantially level/visitable threshold intent; final escape opening, M4(1) WC/access, fire closure and real-site approach remain building-control review items.
+- **Current fire/visitability concept:** each first-floor bedroom retains an outer-façade emergency-egress-window duty at current coordination level; principal entrance receives `TH-02` substantially level/visitable threshold intent; final escape opening, M4(1) WC/access, fire closure and real-site approach are now explicit RH-11 review questions.
 - **Current occupied-interface concept:** `W0` direct-finished quiet masonry by default; `W1` sparse controlled attachment/service datums selectively; `W2` remains P01 experimental; continuous conventional principal-room floors remain baseline; skirting may carry bounded dry routes but ordinary socket outlets rise to accessible positions.
-- **Next action:** prepare RH-11 discipline-specific review briefs for structural engineering, fire/building-control, MEP/acoustics and building physics/energy. Each brief must present the coordinated assumption, relevant drawings/evidence, exact reviewer question and **rewind condition**. Reviewers should attack decisions, not be asked to design the missing house.
+- **Next action:** issue the RH-11 packages to competent reviewers. Capture responses using the [review response template](../reference-house/external-review-response-template-rh11.md) or equivalent. For every material finding, record the affected project object, owning RH gate, smallest correction, stale downstream documents and closure evidence. Do not increase Reference House or external-review maturity merely because a package was issued.
+- **Parallel evidence priority:** progress **P03 structural floor edge** and **P04 wall/ceiling movement joint** while external review is sought; P01 W2 remains optional and P02 selective floor access is not a current house dependency.
 - **Current brief:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
 - **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md).
 
-Update this block whenever a stage closes or materially changes.
+Update this block whenever a review finding reopens a gate, a prototype changes the controlled baseline or external evidence materially changes maturity.
 
 ## Restart protocol
 
@@ -38,27 +40,28 @@ A fresh session should read, in order:
 
 1. [`STATUS.md`](../../STATUS.md);
 2. this programme;
-3. the latest closed `RH-*` gate named above;
-4. [Reference House README](../reference-house/README.md);
-5. [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md);
-6. only then the detailed studies needed by the active stage.
+3. [RH-10 Whole-House Coordination Audit](../reference-house/whole-house-coordination-audit.md);
+4. [RH-11 External Review Brief](../reference-house/external-review-brief.md);
+5. [Reference House README](../reference-house/README.md);
+6. [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md);
+7. then the discipline brief or prototype material needed by the active evidence task.
 
 Do not reconstruct project intent from chat where the repository gives a later answer.
 
-If interrupted mid-stage, commit a checkpoint stating: established facts, provisional items, live alternatives, exact next test/drawing and decisions not to reopen silently. A checkpoint is not a gate pass.
+If external review is interrupted, commit each received finding and project disposition. A review request or unprocessed consultant note is not validation.
 
 ## Working rules
 
-1. One bounded architectural question per stage.
-2. A stage ends in a committed artefact; conversation is not project state.
+1. One bounded architectural question per design gate.
+2. A gate ends in a committed artefact; conversation is not project state.
 3. Existing geometry has no incumbency advantage.
 4. Plan, section and elevation must converge.
 5. Keep House Kernel doctrine, patterns, G-01, site/programme and Reference House choices separate.
 6. Record rejected alternatives and rewind reasons.
-7. Promote only what the gate proves.
+7. Promote only what the evidence proves.
 8. Update the Pattern Occurrence Register when real objects move, appear or disappear.
 9. Prefer explicit geometry/diagrams where geometry is the issue.
-10. Commit each gate before starting the next.
+10. An external review finding reopens the **owning gate**, not whichever downstream document is easiest to edit.
 
 ---
 
@@ -215,43 +218,65 @@ If interrupted mid-stage, commit a checkpoint stating: established facts, provis
 
 ---
 
-## RH-11 — External-review package — ACTIVE
+## RH-11 — External-review package — CLOSED PASS
 
 **Question:** is the coordinated house explicit enough for competent outsiders to attack real assumptions rather than react to a concept?
 
-**Work:** prepare bounded review packages for:
+**Work completed:** four bounded discipline packages now state the exact decision under review, current geometry, supplied evidence, provisional assumptions, explicit fallback/rewind logic and the earlier RH authority that owns any material correction.
 
-- structural engineer;
-- fire/building-control practitioner;
-- building-services / ventilation / acoustic engineer;
-- building-physics / energy specialist;
-- later specialist review where prototype results justify it.
+**Deliverables:**
 
-Each package must state:
+- [RH-11 External Review Brief](../reference-house/external-review-brief.md);
+- [RH-11 Regulatory Baseline](../reference-house/external-review-regulatory-baseline-rh11.md);
+- [Structural Review Brief](../reference-house/external-review-structural-rh11.md);
+- [Fire & Building-Control Review Brief](../reference-house/external-review-fire-building-control-rh11.md);
+- [MEP & Acoustic Review Brief](../reference-house/external-review-mep-acoustic-rh11.md);
+- [Building-Physics & Energy Review Brief](../reference-house/external-review-building-physics-energy-rh11.md);
+- [Review Response Template](../reference-house/external-review-response-template-rh11.md);
+- [Review Package Map](../reference-house/external-review-package-rh11.svg).
 
-- the exact decision under review;
-- current assumption / geometry;
-- relevant evidence and drawings supplied;
-- what is already fixed only provisionally;
-- the specific finding that would force a rewind;
-- which earlier RH gate owns that rewind.
+**Gate:** **PASS.** A competent reviewer can identify and challenge real project decisions without reconstructing intent from conversation or being asked to design the missing house.
 
-**Deliverable:** `docs/reference-house/external-review-brief.md` plus discipline appendices where useful.
-
-**Gate:** reviewers can identify and challenge real decisions. The package does not ask them to design the missing house on the project's behalf.
+**Maturity consequence:** **none.** Reference House remains M3. External professional review remains M1 until competent responses are actually received and material findings resolved. Issuing a brief is not validation.
 
 ---
 
-# Parallel physical-validation track
+# Post-RH-11 evidence execution
+
+The RH design-gate sequence is now complete at coordinated virtual-design scope. The next evidence events are external review and physical validation.
+
+## External review
+
+Issue the RH-11 package to competent reviewers for:
+
+1. structural engineering;
+2. fire / building control;
+3. MEP / acoustics;
+4. building physics / energy.
+
+For every material finding, record:
+
+```text
+finding
+→ affected project object / occurrence
+→ owning RH gate
+→ smallest correction
+→ downstream documents made stale
+→ closure evidence
+```
+
+A material finding may reopen RH-03 through RH-10. Resolve the owning gate rather than patching the latest drawing.
+
+## Physical validation
 
 Physical validation has separate authority under the [Tectonic Prototype and Engineering Programme](tectonic-prototype-programme.md):
 
-1. **P01 — W2 wall bay**;
-2. **P02 — selective floor access**;
-3. **P03 — structural floor edge**;
-4. **P04 — wall/ceiling tectonic joint**.
+1. **P01 — W2 wall bay** — optional challenger;
+2. **P02 — selective floor access** — not a current house dependency;
+3. **P03 — structural floor edge** — real RH-05 engineering dependency;
+4. **P04 — wall/ceiling tectonic joint** — selected RH-09 interface evidence.
 
-RH-09/RH-10 clarify their Reference House dependencies: P01 and P04 test selected challengers/interfaces; P02 is not currently required by the house; P03 remains an RH-05 engineering dependency. Prototype rejection may force local implementation change without automatically invalidating House Kernel or G-01.
+Prototype rejection may force a local implementation change without automatically invalidating House Kernel or G-01.
 
 # Definition of progress
 
