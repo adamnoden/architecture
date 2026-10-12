@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1050" viewBox="0 0 1500 1050" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-04 courtyard elevation studies</title>
+  <desc id="desc">Four schematic elevations of the open courtyard. South and north elevations use a centred vertical opening order; east uses a regular two-bay gallery rhythm; west uses two room-owned opening axes.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .wall{fill:#f4f4f4;stroke:#111;stroke-width:2.5}.opening{fill:#fff;stroke:#333;stroke-width:1.8}.axis{stroke:#888;stroke-width:1.1;stroke-dasharray:6 5}.datum{stroke:#999;stroke-width:1;stroke-dasharray:7 5}.line{stroke:#555;stroke-width:1.2}.door{fill:#fafafa;stroke:#222;stroke-width:2}.note{fill:#fafafa;stroke:#bbb;stroke-width:1}
+    </style>
+  </defs>
+
+  <text x="55" y="50" class="head">Reference House — RH-04 Courtyard Elevation Studies</text>
+  <text x="55" y="78" class="sub">Four faces, four architectural owners · same sectional datums, different scoped opening orders</text>
+
+  <!-- SOUTH -->
+  <g transform="translate(70,145)">
+    <text x="0" y="-24" class="label">SOUTH COURT FACE — stair / entrance hall</text>
+    <rect x="0" y="0" width="360" height="500" class="wall"/>
+    <line x1="0" y1="236" x2="360" y2="236" class="datum"/>
+    <line x1="180" y1="-10" x2="180" y2="510" class="axis"/>
+    <!-- ground broad opening -->
+    <rect x="120" y="292" width="120" height="208" class="door"/>
+    <line x1="180" y1="292" x2="180" y2="500" class="line"/>
+    <!-- upper landing window -->
+    <rect x="142" y="54" width="76" height="124" class="opening"/>
+    <line x1="180" y1="54" x2="180" y2="178" class="line"/><line x1="142" y1="116" x2="218" y2="116" class="line"/>
+    <text x="180" y="530" text-anchor="middle" class="dim">3.6 m court width</text>
+    <text x="180" y="555" text-anchor="middle" class="small">single centred order · re-centres arrival from off-centre front door</text>
+  </g>
+
+  <!-- NORTH -->
+  <g transform="translate(520,145)">
+    <text x="0" y="-24" class="label">NORTH COURT FACE — garden dining / upper cross-landing</text>
+    <rect x="0" y="0" width="360" height="500" class="wall"/>
+    <line x1="0" y1="236" x2="360" y2="236" class="datum"/>
+    <line x1="180" y1="-10" x2="180" y2="510" class="axis"/>
+    <rect x="112" y="300" width="136" height="200" class="door"/>
+    <line x1="180" y1="300" x2="180" y2="500" class="line"/>
+    <rect x="142" y="58" width="76" height="120" class="opening"/>
+    <line x1="180" y1="58" x2="180" y2="178" class="line"/><line x1="142" y1="118" x2="218" y2="118" class="line"/>
+    <text x="180" y="530" text-anchor="middle" class="dim">3.6 m court width</text>
+    <text x="180" y="555" text-anchor="middle" class="small">same X=6.0 m court axis continues toward garden</text>
+  </g>
+
+  <!-- EAST -->
+  <g transform="translate(970,145)">
+    <text x="0" y="-24" class="label">EAST COURT FACE — ground + upper gallery</text>
+    <rect x="0" y="0" width="400" height="500" class="wall"/>
+    <line x1="0" y1="236" x2="400" y2="236" class="datum"/>
+    <line x1="130" y1="-8" x2="130" y2="510" class="axis"/><line x1="270" y1="-8" x2="270" y2="510" class="axis"/>
+    <!-- ground tall gallery openings -->
+    <rect x="100" y="306" width="60" height="162" class="opening"/>
+    <rect x="240" y="306" width="60" height="162" class="opening"/>
+    <line x1="130" y1="306" x2="130" y2="468" class="line"/><line x1="270" y1="306" x2="270" y2="468" class="line"/>
+    <!-- upper gallery openings -->
+    <rect x="100" y="60" width="60" height="118" class="opening"/>
+    <rect x="240" y="60" width="60" height="118" class="opening"/>
+    <line x1="130" y1="60" x2="130" y2="178" class="line"/><line x1="270" y1="60" x2="270" y2="178" class="line"/>
+    <text x="200" y="530" text-anchor="middle" class="dim">4.0 m court length</text>
+    <text x="200" y="555" text-anchor="middle" class="small">two-bay rhythm because gallery owns this face on both floors</text>
+  </g>
+
+  <!-- WEST -->
+  <g transform="translate(280,735)">
+    <text x="0" y="-24" class="label">WEST COURT FACE — occupied rooms</text>
+    <rect x="0" y="0" width="400" height="230" class="wall"/>
+    <!-- compressed two-storey diagram, floor line -->
+    <line x1="0" y1="108" x2="400" y2="108" class="datum"/>
+    <line x1="115" y1="-8" x2="115" y2="238" class="axis"/><line x1="285" y1="-8" x2="285" y2="238" class="axis"/>
+    <rect x="83" y="135" width="64" height="78" class="opening"/><rect x="253" y="135" width="64" height="78" class="opening"/>
+    <rect x="87" y="26" width="56" height="62" class="opening"/><rect x="257" y="26" width="56" height="62" class="opening"/>
+    <text x="115" y="255" text-anchor="middle" class="small">front-room axis</text><text x="285" y="255" text-anchor="middle" class="small">rear-room axis</text>
+    <text x="200" y="282" text-anchor="middle" class="small">room-owned pair; alignment retained because both floors share the west split closely</text>
+  </g>
+
+  <!-- key -->
+  <g transform="translate(760,720)">
+    <rect x="0" y="0" width="620" height="250" class="note"/>
+    <text x="18" y="32" class="label">The courtyard is not one copied façade four times</text>
+    <text x="18" y="64" class="small">South + north: one centred opening order owned by arrival / garden sequence.</text>
+    <text x="18" y="88" class="small">East: regular two-bay order owned by the gallery on both floors.</text>
+    <text x="18" y="112" class="small">West: two room-owned axes, aligned where the room split supports it.</text>
+    <text x="18" y="148" class="small">All faces share the RH-04 floor/head hierarchy, so difference does not become chaos.</text>
+    <text x="18" y="180" class="small">Arches, tile, planting and any warmer local dialect remain downstream architectural treatment.</text>
+    <text x="18" y="212" class="small">Openings are schematic; exact frames, thresholds and weathering belong to later gates.</text>
+  </g>
+
+  <text x="55" y="1018" class="small">RH-04 coordination drawing. Court opening geometry is architectural baseline only; drainage, guarding, waterproofing and detailed window/door construction remain unresolved.</text>
+</svg>
