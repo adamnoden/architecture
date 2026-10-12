@@ -1,1 +1,0 @@
-Temporary seed; delete after RH-C0 GitHub issue creation.
