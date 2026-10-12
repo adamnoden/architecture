@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-01 selected gross morphology baseline</title>
+  <desc id="desc">Dimensioned schematic of the selected 11.4 by 10.8 metre two-storey principal mass with a centred 3.6 by 4.0 metre open courtyard. Side wings are 3.9 metres gross and front and rear wings are 3.4 metres gross.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}
+      .sub{font:15px system-ui,sans-serif;fill:#333}
+      .label{font:15px system-ui,sans-serif;fill:#222}
+      .small{font:12px system-ui,sans-serif;fill:#444}
+      .dim{font:14px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .shell{fill:#f2f2f2;stroke:#111;stroke-width:3;fill-rule:evenodd}
+      .court{fill:#fff;stroke:#111;stroke-width:2;stroke-dasharray:8 6}
+      .axis{stroke:#777;stroke-width:1.5;stroke-dasharray:8 6}
+      .dline{stroke:#555;stroke-width:1.5}
+      .ext{stroke:#aaa;stroke-width:1}
+      .arrow{stroke:#333;stroke-width:2;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="52" class="head">Reference House — RH-01 Selected Gross Morphology</text>
+  <text x="60" y="80" class="sub">Controlled baseline for RH-02 room-order work · schematic dimensions only · front/street shown south for drawing consistency</text>
+
+  <!-- scale: 50 px/m -->
+  <g transform="translate(245,155)">
+    <!-- outer 11.4 x 10.8 = 570 x 540 -->
+    <!-- court x=3.9..7.5, y=3.4..7.4 => 180 x 200 -->
+    <path class="shell" d="M0,0 H570 V540 H0 Z M195,170 H375 V370 H195 Z"/>
+    <rect x="195" y="170" width="180" height="200" class="court"/>
+    <line x1="285" y1="540" x2="285" y2="0" class="axis"/>
+
+    <text x="285" y="275" text-anchor="middle" class="label">OPEN COURTYARD</text>
+    <text x="285" y="298" text-anchor="middle" class="dim">3.6 × 4.0 m</text>
+
+    <text x="97.5" y="276" text-anchor="middle" class="dim">3.9 m</text>
+    <text x="472.5" y="276" text-anchor="middle" class="dim">3.9 m</text>
+    <text x="285" y="88" text-anchor="middle" class="dim">3.4 m rear wing</text>
+    <text x="285" y="468" text-anchor="middle" class="dim">3.4 m front wing</text>
+
+    <text x="285" y="-24" text-anchor="middle" class="small">REAR / GARDEN SURROGATE</text>
+    <text x="285" y="574" text-anchor="middle" class="small">FRONT / STREET SURROGATE</text>
+    <line x1="285" y1="612" x2="285" y2="552" class="arrow"/>
+    <text x="305" y="608" class="small">preferred arrival → court → garden relationship</text>
+
+    <!-- horizontal overall dimension -->
+    <line x1="0" y1="-58" x2="570" y2="-58" class="dline"/>
+    <line x1="0" y1="-48" x2="0" y2="-68" class="dline"/>
+    <line x1="570" y1="-48" x2="570" y2="-68" class="dline"/>
+    <line x1="0" y1="-45" x2="0" y2="0" class="ext"/>
+    <line x1="570" y1="-45" x2="570" y2="0" class="ext"/>
+    <text x="285" y="-67" text-anchor="middle" class="dim">11.4 m</text>
+
+    <!-- vertical overall dimension -->
+    <line x1="618" y1="0" x2="618" y2="540" class="dline"/>
+    <line x1="608" y1="0" x2="628" y2="0" class="dline"/>
+    <line x1="608" y1="540" x2="628" y2="540" class="dline"/>
+    <line x1="570" y1="0" x2="605" y2="0" class="ext"/>
+    <line x1="570" y1="540" x2="605" y2="540" class="ext"/>
+    <text x="643" y="275" transform="rotate(90 643 275)" text-anchor="middle" class="dim">10.8 m</text>
+  </g>
+
+  <g transform="translate(60,785)">
+    <text x="0" y="0" class="small">Gross enclosed plate proxy: 108.7 m²/storey · 217.4 m² across two principal storeys · court: 14.4 m² · plan-envelope perimeter proxy: 59.6 m</text>
+    <text x="0" y="24" class="small">Not frozen here: wall thickness, room boundaries, stair, service side, structure, roof, bays/projections, elevations, final GIA or real solar orientation.</text>
+  </g>
+</svg>
