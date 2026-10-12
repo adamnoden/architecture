@@ -159,9 +159,9 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-12',
     currentState:
-      'RH-00 through RH-10 are coordinated at virtual-design scope; the whole-house audit reconciles architecture, structure, services, environment, roof/maintenance, occupied interfaces, heating/renewables and envelope, with remaining uncertainty bounded to engineering, simulation, prototype, real-site and external-review work.',
+      'RH-00 through RH-10 are coordinated at virtual-design scope and RH-11 now provides issue-ready discipline review packages; remaining uncertainty is bounded to engineering, simulation, prototype, real-site and actual competent external-review evidence.',
     nextGate:
-      'RH-11 competent structural, fire/building-control, MEP/acoustic and building-physics review; resolve any material rewinds before claiming further maturity.',
+      'Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, and progress P03/P04 validation; do not claim further maturity from package preparation alone.',
     evidence: {
       framed: ['docs/reference-house/README.md'],
       developed: [
@@ -199,10 +199,15 @@ export const workstreamStatuses = [
     maturity: 'M1',
     reviewedOn: '2026-10-12',
     currentState:
-      'Review targets and computational review material exist; competent broad external review has not yet occurred.',
-    nextGate: 'Structural, fire/building-control and building-services review.',
+      'RH-11 now provides issue-ready structural, fire/building-control, MEP/acoustic and building-physics/energy review briefs with explicit rewind criteria; no competent review response has yet been recorded.',
+    nextGate:
+      'Obtain and process competent discipline reviews; material findings reopen the owning Reference House gate and remain unresolved until closure evidence is recorded.',
     evidence: {
-      framed: ['docs/computational/external-review-pack-h1-paper-v02.md']
+      framed: [
+        'docs/reference-house/external-review-brief.md',
+        'docs/reference-house/external-review-regulatory-baseline-rh11.md',
+        'docs/computational/external-review-pack-h1-paper-v02.md'
+      ]
     }
   },
   {
