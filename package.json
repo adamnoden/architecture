@@ -14,6 +14,7 @@
     "publication:build:primer": "npm run publication:prepare:primer && vivliostyle build -c publication/vivliostyle.config.js",
     "publication:prepare": "tsx publication/scripts/prepare.ts --full",
     "publication:build": "npm run publication:prepare && vivliostyle build -c publication/vivliostyle.config.js",
+    "status:update": "tsx scripts/update-status.ts",
     "typecheck": "tsc --noEmit",
     "test:repo": "tsx scripts/validate-repository.ts",
     "test:p0": "node --import tsx --test compiler/p0/*.test.ts",
