@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">P03 structural floor-edge option families</title>
+  <desc id="desc">Comparison diagram for conventional restraint hanger, direct bearing with separate restraint, and engineered shoe or ledge challenger. The diagram separates gravity support, restraint, diaphragm and finish movement duties.</desc>
+  <style>
+    .bg{fill:#fbfaf7}.ink{stroke:#202020;fill:none;stroke-width:2}.thin{stroke:#666;fill:none;stroke-width:1.2}.masonry{fill:#e7e1d6;stroke:#36322d;stroke-width:1.5}.timber{fill:#efe9da;stroke:#4d4639;stroke-width:1.5}.steel{fill:#d9dde0;stroke:#40474c;stroke-width:1.5}.finish{fill:#f5f3ee;stroke:#777;stroke-width:1}.head{font:600 24px system-ui,sans-serif;fill:#202020}.sub{font:600 17px system-ui,sans-serif;fill:#202020}.txt{font:15px system-ui,sans-serif;fill:#202020}.small{font:13px system-ui,sans-serif;fill:#444}.note{font:12px system-ui,sans-serif;fill:#555}.arrow{stroke:#202020;stroke-width:2;fill:none;marker-end:url(#a)}.dash{stroke:#777;stroke-width:1.4;fill:none;stroke-dasharray:7 5}
+  </style>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#202020"/></marker></defs>
+  <rect class="bg" width="1400" height="820"/>
+  <text x="55" y="48" class="head">P03 — structural floor-edge engineering comparison</text>
+  <text x="55" y="74" class="small">Reference House governing case: ~4.2 m gross side-strip span, engineered-timber floor, masonry inner-leaf support, 350 mm architectural floor/ceiling zone.</text>
+
+  <g transform="translate(55 135)">
+    <text x="0" y="0" class="sub">A — certified restraint hanger · baseline to beat</text>
+    <rect x="0" y="55" width="95" height="370" class="masonry"/>
+    <rect x="95" y="155" width="70" height="95" class="steel"/>
+    <rect x="145" y="160" width="280" height="70" class="timber"/>
+    <rect x="125" y="130" width="320" height="20" class="timber"/>
+    <path d="M225 195 H110" class="arrow"/>
+    <text x="180" y="255" class="small">gravity reaction → hanger → masonry</text>
+    <path d="M190 160 V105 H65" class="dash"/>
+    <text x="115" y="92" class="small">restraint / diaphragm duties explicit</text>
+    <text x="0" y="470" class="txt">Ordinary, certified, recognisable.</text>
+    <text x="0" y="494" class="small">Wins unless a challenger buys a real whole-life advantage.</text>
+  </g>
+
+  <g transform="translate(505 135)">
+    <text x="0" y="0" class="sub">B — direct / seated bearing · comparator</text>
+    <rect x="0" y="55" width="110" height="370" class="masonry"/>
+    <rect x="85" y="215" width="80" height="30" class="steel"/>
+    <rect x="105" y="160" width="320" height="70" class="timber"/>
+    <rect x="105" y="130" width="340" height="20" class="timber"/>
+    <path d="M210 205 H110" class="arrow"/>
+    <text x="145" y="270" class="small">gravity by bearing</text>
+    <path d="M210 160 V100 H70" class="dash"/>
+    <text x="130" y="88" class="small">separate restraint / diaphragm</text>
+    <text x="0" y="470" class="txt">Structurally legible; not automatically more replaceable.</text>
+    <text x="0" y="494" class="small">Must avoid vulnerable timber/masonry interface and hidden duties.</text>
+  </g>
+
+  <g transform="translate(955 135)">
+    <text x="0" y="0" class="sub">C — engineered shoe / ledge · challenger</text>
+    <rect x="0" y="55" width="110" height="370" class="masonry"/>
+    <rect x="90" y="195" width="85" height="50" class="steel"/>
+    <rect x="150" y="160" width="290" height="70" class="timber"/>
+    <rect x="130" y="130" width="330" height="20" class="timber"/>
+    <circle cx="105" cy="215" r="5" fill="#40474c"/><circle cx="105" cy="232" r="5" fill="#40474c"/>
+    <path d="M220 205 H170" class="arrow"/>
+    <text x="182" y="270" class="small">bearing through designed interface</text>
+    <path d="M235 160 V100 H90" class="dash"/>
+    <text x="150" y="88" class="small">restraint remains separate</text>
+    <text x="0" y="470" class="txt">Only advances if inspection/repair/tolerance benefits are material.</text>
+    <text x="0" y="494" class="small">Bespoke anchors, fire, acoustics, corrosion and cost count against it.</text>
+  </g>
+
+  <g transform="translate(55 680)">
+    <text x="0" y="0" class="sub">Decision discipline</text>
+    <text x="0" y="34" class="txt">gravity support ≠ wall restraint ≠ diaphragm action ≠ finish movement</text>
+    <text x="0" y="62" class="small">P03-A engineering must allocate those duties first. P03-B physical work begins only after a competent engineer releases representative geometry.</text>
+  </g>
+</svg>
