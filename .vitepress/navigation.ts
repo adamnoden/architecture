@@ -158,6 +158,42 @@ const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
     page('Vertical bay coordination', '/docs/reference-house/vertical-bay-coordination'),
     page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan')
   ], false),
+  group('RH-C0 / RH-C1 fixture programme', [
+    page('Brief & constraint ledger', '/docs/reference-house/brief-and-constraint-ledger'),
+    page('RH-C0 model baseline', '/docs/reference-house/model-baseline-rhc0'),
+    page('RH-C0 discrepancy register', '/docs/reference-house/rhc0-discrepancy-register'),
+    page('RH-C0 domesticity audit', '/docs/reference-house/rhc0-domesticity-audit'),
+    page('RH-C0 drawing parity audit', '/docs/reference-house/rhc0-drawing-parity-audit'),
+    page('RH-C0 mutation map', '/docs/reference-house/rhc0-mutation-map'),
+    page('RH-C1 deterministic drawing parity', '/docs/reference-house/rhc1-drawing-parity-result')
+  ]),
+  group('Reference House development history', [
+    page('Morphology options', '/docs/reference-house/morphology-options'),
+    page('Ground-floor development', '/docs/reference-house/ground-floor-development'),
+    page('Upper floor & stair development', '/docs/reference-house/upper-floor-and-stair-development'),
+    page('Service topology RH-06', '/docs/reference-house/service-topology-rh06'),
+    page('Service crossing register RH-06', '/docs/reference-house/service-crossing-register-rh06'),
+    page('Service topology RH-07 MVHR addendum', '/docs/reference-house/service-topology-rh07-mvhr-addendum'),
+    page('Structural coordination', '/docs/reference-house/structural-coordination'),
+    page('Environmental coordination', '/docs/reference-house/environmental-coordination'),
+    page('Whole-house coordination audit', '/docs/reference-house/whole-house-coordination-audit'),
+    page('Roof drainage & access RH-08', '/docs/reference-house/roof-drainage-access-rh08'),
+    page('Prototype handoff RH-09', '/docs/reference-house/prototype-handoff-rh09'),
+    page('Tectonic integration RH-09', '/docs/reference-house/tectonic-integration-rh09'),
+    page('Plan / section / elevation gate', '/docs/reference-house/plan-section-elevation-gate'),
+    page('Envelope coordination RH-10', '/docs/reference-house/envelope-coordination-rh10'),
+    page('Energy & heat coordination RH-10', '/docs/reference-house/energy-heat-coordination-rh10'),
+    page('Outer elevation coordination RH-10', '/docs/reference-house/outer-elevation-coordination-rh10'),
+    group('RH-11 external review', [
+      page('External review brief', '/docs/reference-house/external-review-brief'),
+      page('Building physics & energy', '/docs/reference-house/external-review-building-physics-energy-rh11'),
+      page('Fire & Building Control', '/docs/reference-house/external-review-fire-building-control-rh11'),
+      page('MEP & acoustic', '/docs/reference-house/external-review-mep-acoustic-rh11'),
+      page('Regulatory baseline', '/docs/reference-house/external-review-regulatory-baseline-rh11'),
+      page('Response template', '/docs/reference-house/external-review-response-template-rh11'),
+      page('Structural', '/docs/reference-house/external-review-structural-rh11')
+    ])
+  ]),
   group('History & provenance', [
     page('Service topology coordination brief', '/docs/reference-house/service-topology-coordination'),
     page('Service topology run 01', '/docs/reference-house/service-topology-run-01')
@@ -196,7 +232,14 @@ const prototypesSidebar: DefaultTheme.SidebarItem[] = [
     page('Prototype overview', '/docs/prototypes/'),
     page('W2 wall-bay build pack', '/docs/prototypes/w2-wall-bay-build-pack'),
     page('W2 wall-bay evidence protocol', '/docs/prototypes/w2-wall-bay-test-protocol')
-  ], false)
+  ], false),
+  group('Programme history', [
+    page('P03 floor-edge engineering brief', '/docs/prototypes/p03-floor-edge-engineering-brief'),
+    page('P03 floor-edge test protocol', '/docs/prototypes/p03-floor-edge-test-protocol'),
+    page('P03 structural floor-edge handoff', '/docs/prototypes/p03-structural-floor-edge-handoff'),
+    page('P04 wall / ceiling build pack', '/docs/prototypes/p04-wall-ceiling-build-pack'),
+    page('P04 wall / ceiling test protocol', '/docs/prototypes/p04-wall-ceiling-test-protocol')
+  ])
 ]
 
 const deliverySidebar: DefaultTheme.SidebarItem[] = [
@@ -210,6 +253,11 @@ const deliverySidebar: DefaultTheme.SidebarItem[] = [
 const computationalSidebar: DefaultTheme.SidebarItem[] = [
   group('Computational track', [
     page('Computational overview', '/docs/computational/')
+  ], false),
+  group('Reference House compiler programme', [
+    page('RH-C0 model-freeze plan', '/docs/computational/reference-house-model-freeze-rhc0'),
+    page('RH-C1 executable slice', '/docs/computational/reference-house-executable-slice'),
+    page('CF-01 generality assurance gate', '/docs/computational/compiler-generality-assurance-cf01')
   ], false),
   group('Executable result & external review', [
     page('P0 + PAT-XW-01 executable result — PASS', '/docs/computational/p0-pat-xw-01-result'),
@@ -323,6 +371,13 @@ const developmentSidebar: DefaultTheme.SidebarItem[] = [
     page('Prototype programme', '/docs/development/tectonic-prototype-programme'),
     page('Manufacturing strategy', '/docs/development/manufacturing-strategy')
   ], false),
+  group('Reference House execution records', [
+    page('Reference House design programme', '/docs/development/reference-house-design-programme'),
+    page('RH-C0 handoff', '/docs/development/handoff-reference-house-rhc0'),
+    page('RH-C0 stage state', '/docs/development/rhc0-stage-state'),
+    page('RH-C1 stage state', '/docs/development/rhc1-stage-state'),
+    page('Validation execution register', '/docs/development/validation-execution-register')
+  ]),
   group('Print publication', [
     page('Pipeline & recovery record', '/docs/development/print-publication-pipeline'),
     page('Publication scope crosswalk', '/docs/development/print-publication-scope-crosswalk'),

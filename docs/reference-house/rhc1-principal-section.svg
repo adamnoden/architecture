@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="900" viewBox="-1200 -650 16000 9485" role="img" aria-labelledby="title desc" data-fixture="RH-C1-REFERENCE-HOUSE" data-compile-status="PASS">
+<title id="title">RH-C1 — generated principal section</title>
+<desc id="desc">Deterministic north-south coordination section through the courtyard centreline. Occupied volumes and datums are semantic projections; no floor, roof or stair construction is invented.</desc>
+<style>
+  .bg{fill:#fbfaf7}.occupied{fill:#f0eee8}.court{fill:#fff;stroke:#555;stroke-width:35;stroke-dasharray:130 90}.edge{stroke:#222;stroke-width:55;fill:none}.datum{stroke:#999;stroke-width:22;stroke-dasharray:95 70}.roof{stroke:#222;stroke-width:60;fill:none}.landing{stroke:#777;stroke-width:28;stroke-dasharray:90 70}.dim{stroke:#888;stroke-width:20}.head{font:600 430px system-ui,sans-serif;fill:#171717}.sub{font:210px system-ui,sans-serif;fill:#444}.label{font:600 220px system-ui,sans-serif;fill:#222}.small{font:180px system-ui,sans-serif;fill:#444}.mono{font:180px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+</style>
+<rect x="-1200" y="-650" width="16000" height="9485" class="bg"/>
+<text x="0" y="-120" class="head">RH-C1 — generated principal section</text>
+<text x="0" y="260" class="sub">N–S through courtyard centreline X=6000 mm · GENERATED</text>
+<rect x="0" y="4385" width="3400" height="2950" class="occupied" data-projection="SECTION-GROUND-SOUTH"/>
+<rect x="0" y="1335" width="3400" height="2700" class="occupied" data-projection="SECTION-FIRST-SOUTH"/>
+<rect x="7400" y="4385" width="3400" height="2950" class="occupied" data-projection="SECTION-GROUND-NORTH"/>
+<rect x="7400" y="1335" width="3400" height="2700" class="occupied" data-projection="SECTION-FIRST-NORTH"/>
+<rect x="3400" y="1000" width="4000" height="6335" class="court" data-entity="C-01"/>
+<line x1="0" y1="7335" x2="3400" y2="7335" class="edge" data-datum="GF FFL" data-z="0"/>
+<line x1="7400" y1="7335" x2="10800" y2="7335" class="edge" data-datum="GF FFL" data-z="0"/>
+<text x="11450" y="7400" class="mono">GF FFL ±0</text>
+<line x1="0" y1="4385" x2="3400" y2="4385" class="datum" data-datum="ground clear ceiling" data-z="2950"/>
+<line x1="7400" y1="4385" x2="10800" y2="4385" class="datum" data-datum="ground clear ceiling" data-z="2950"/>
+<text x="11450" y="4450" class="mono">ground clear ceiling +2950</text>
+<line x1="0" y1="4035" x2="3400" y2="4035" class="edge" data-datum="first FFL" data-z="3300"/>
+<line x1="7400" y1="4035" x2="10800" y2="4035" class="edge" data-datum="first FFL" data-z="3300"/>
+<text x="11450" y="4100" class="mono">first FFL +3300</text>
+<line x1="0" y1="1335" x2="3400" y2="1335" class="datum" data-datum="upper clear ceiling" data-z="6000"/>
+<line x1="7400" y1="1335" x2="10800" y2="1335" class="datum" data-datum="upper clear ceiling" data-z="6000"/>
+<text x="11450" y="1400" class="mono">upper clear ceiling +6000</text>
+<line x1="0" y1="1085" x2="3400" y2="1085" class="datum" data-datum="outer cornice/eaves control" data-z="6250"/>
+<line x1="7400" y1="1085" x2="10800" y2="1085" class="datum" data-datum="outer cornice/eaves control" data-z="6250"/>
+<text x="11450" y="1150" class="mono">outer cornice/eaves control +6250</text>
+<line x1="0" y1="1085" x2="3400" y2="1000" class="roof" data-projection="ROOF-SOUTH" data-direction="outward"/>
+<line x1="7400" y1="1000" x2="10800" y2="1085" class="roof" data-projection="ROOF-NORTH" data-direction="outward"/>
+<text x="1700" y="790" class="small" text-anchor="middle">fall outward · 1:40</text>
+<text x="9100" y="790" class="small" text-anchor="middle">fall outward · 1:40</text>
+<line x1="280" y1="6235" x2="3120" y2="6235" class="landing" data-derived="STAIR-LANDING-1" data-z="1100"/>
+<text x="1700" y="6145" class="small" text-anchor="middle">derived landing +1100</text>
+<line x1="280" y1="5135" x2="3120" y2="5135" class="landing" data-derived="STAIR-LANDING-2" data-z="2200"/>
+<text x="1700" y="5045" class="small" text-anchor="middle">derived landing +2200</text>
+<line x1="0" y1="7985" x2="10800" y2="7985" class="dim"/>
+<text x="5400" y="8265" class="mono" text-anchor="middle">10800 mm overall depth</text>
+<line x1="3400" y1="7705" x2="7400" y2="7705" class="dim"/>
+<text x="5400" y="7595" class="mono" text-anchor="middle">4000 mm court</text>
+<text x="1700" y="2635" class="label" text-anchor="middle">UPPER SOUTH / STAIR FIELD</text>
+<text x="5400" y="2935" class="label" text-anchor="middle">OPEN COURTYARD</text>
+<text x="9100" y="2635" class="label" text-anchor="middle">UPPER NORTH / DRY + LANDING EDGE</text>
+<text x="1700" y="5835" class="label" text-anchor="middle">GROUND SOUTH / HALL</text>
+<text x="9100" y="5835" class="label" text-anchor="middle">GROUND NORTH / GARDEN DINING</text>
+<text x="0" y="8785" class="small">Stair: 18 rises · rise groups 6 / 6 / 6 · rise 183.333 mm · going 280 mm. Datum guides only; no strings/guards/treads are implied.</text>
+</svg>

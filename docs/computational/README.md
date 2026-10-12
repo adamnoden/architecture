@@ -4,24 +4,40 @@ The computational track asks a narrow question within House Kernel: **which buil
 
 It is subordinate to the architecture. Rooms, walls, openings, structure, boundaries, service routes and maintenance paths may be represented semantically where doing so creates a useful check, but architectural judgement is not converted into arbitrary machine rules merely to make the model more complete.
 
-The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel and `PAT-XW-01` executable crosswalk are complete at their stated internal scopes. Generic compiler growth was deliberately frozen until another workstream exposed a concrete high-value problem. The coordinated Reference House has now done so.
+The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel, `PAT-XW-01`, RH-C0 model freeze and RH-C1 deterministic Reference House slice have now completed at their stated internal scopes.
 
 ## Active computational work
 
-Before RH-C1 implementation begins, the Reference House must pass **RH-C0 — Reference House Model Freeze**.
+**CF-01 — adversarial contrast fixture / compiler generality gate — is next.**
 
-RH-C0 is a pre-compiler hardening gate. It consolidates current authority, independently reconstructs the house from controlling facts, separates authored from derived values, maps dependency mutations, performs a fresh domestic/architectural adversarial review, audits drawing parity and classifies every future compiler fact as frozen, provisional or outside the first slice.
+RH-C1 passed the bounded question it was created to answer: one canonical Reference House semantic source now deterministically reproduces the controlled geometry, simple derived calculations, ground-floor plan, first-floor plan and principal section. Its 27-test suite exercises both baseline fidelity and the RH-C0 mutation expectations.
 
-Canonical programme:
+That proves **fixture fidelity + dependency correctness for one controlled house**. It does not prove bounded generality.
+
+Canonical sequence:
+
+```text
+RH-C0 — model freeze                    PASS
+  ↓
+RH-C1 — deterministic Reference House  PASS
+  ↓
+CF-01 — adversarial contrast fixture   NEXT
+  ↓
+RH-C2 — structural view                BLOCKED
+```
+
+Programme records:
 
 - [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md)
 - [RH-C1 — Reference House Executable Slice](reference-house-executable-slice.md)
+- [CF-01 — Compiler Generality Assurance](compiler-generality-assurance-cf01.md)
+- [RH-C1 drawing parity result](../reference-house/rhc1-drawing-parity-result.md)
 
-RH-C1 remains blocked until RH-C0 explicitly passes. The future executable Reference House should be treated as a **controlled regression fixture**, not as a universally correct house or universal House Kernel template.
+The Reference House remains a **controlled regression fixture**, not a universally correct house or universal House Kernel template. CF-01 exists specifically so RH-C1 did not have to speculate about every possible house.
 
 ## What has been established
 
-The research sequence progressed from wall-bay scale to a bounded whole-house paper model, then into the minimal executable kernel:
+The research sequence progressed from wall-bay scale to a bounded whole-house paper model, then into the minimal executable kernel and first controlled architectural fixture:
 
 ```text
 S0 → S1 → S2 → H1-PAPER-01
@@ -31,6 +47,10 @@ S0 → S1 → S2 → H1-PAPER-01
               P0 executable kernel
                      ↓
                  PAT-XW-01
+                     ↓
+          RH-C0 model freeze
+                     ↓
+       RH-C1 deterministic fixture
 ```
 
 Within those scopes, the work established that:
@@ -41,9 +61,12 @@ Within those scopes, the work established that:
 - technical obligations can derive from composed building relationships rather than from pattern identity;
 - evidence can be scoped and invalidated selectively rather than treated as a global PASS/FAIL state;
 - simple source and geometry well-formedness can be checked deterministically;
-- architectural commitments can remain valid while a dependent technical obligation becomes unresolved.
+- architectural commitments can remain valid while a dependent technical obligation becomes unresolved;
+- one bounded architectural source can drive deterministic geometry, calculations and SVG drawings without duplicating derived facts;
+- mutation tests can distinguish propagation, source-integrity failure, architectural review and deliberate absence;
+- provisional architectural facts can remain provisional in an executable model rather than being hardened for implementation convenience.
 
-The executable result is recorded in [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md): 17 P0 tests and six pattern-crosswalk tests pass in the ordinary CI path.
+The earlier executable result is recorded in [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md): 17 P0 tests and six pattern-crosswalk tests pass in the ordinary CI path. RH-C1 adds 27 passing tests for the controlled Reference House slice.
 
 These results do **not** establish that a building or assembly is structurally, environmentally or regulatorily adequate. Building release remains outside the demonstrated scope, and competent external review is still required.
 
@@ -59,6 +82,8 @@ The computational model has a deliberately limited authority.
 - **Architectural judgement remains architectural where no legitimate deterministic rule exists.**
 
 The useful object is therefore not a universal rule engine but a model that can make selected relationships explicit, derive obligations from them, attach evidence at the right scope and refuse claims the available evidence cannot support.
+
+RH-C1 follows the same boundary. A generated drawing is a deterministic projection, not architectural authority merely because it compiled.
 
 ## Core model
 
@@ -89,6 +114,8 @@ Computational representability does not promote or validate an architectural pro
 The architectural-grammar framework and G-01 research are owned by the separate [Architectural Grammar](../grammar/) area. A selected grammar may create relationships or requirements that are useful to represent computationally, but representation does not transfer ownership or authority to this track.
 
 The computational model must remain capable of distinguishing grammar conformance from House Kernel doctrine, technical validity, supported-domain status and project requirements. G-01 is therefore an input that may be checked where formalisation is justified, not a hidden default of the compiler.
+
+RH-C1 localises the current G-01-derived opening memberships/order as Reference House fixture data. CF-01 is the next test of whether any such fixture-specific assumptions leaked into the executable core.
 
 ## Supported H1 research domain
 
@@ -161,13 +188,16 @@ These are candidate tests, not a standing implementation queue.
 
 The demonstrated kernel does not justify building a polished 3D CAD system, general structural solver, complete Building Regulations engine, IFC round-tripping, optimisation layer, generative-AI designer or pattern-specific rule library. Those capabilities would require their own architectural and technical case.
 
-Current executable work should therefore remain concentrated on **RH-C0 model freeze → RH-C1 deterministic Reference House slice**, while physical prototypes and competent external review proceed independently. The P0 and `PAT-XW-01` suites remain regression tests and should expand only when new work exposes a concrete model defect or a high-value relationship that benefits from formalisation.
+Current executable work is therefore **CF-01 only**: challenge the actual RH-C1 implementation with a deliberately unlike contrast fixture before deeper compiler growth. RH-C2 structure remains blocked until that generality gate passes. Physical prototypes and competent external review proceed independently.
+
+The P0, `PAT-XW-01` and RH-C1 suites remain regression tests and should expand only when new work exposes a concrete model defect or a high-value relationship that benefits from formalisation.
 
 ## Programme and provenance
 
-- [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md) — active pre-compiler hardening gate.
-- [RH-C1 — Reference House Executable Slice](reference-house-executable-slice.md) — blocked until RH-C0 passes.
-- [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md) — current executable result.
+- [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md) — **PASS**, controlled fixture authority established.
+- [RH-C1 — Reference House Executable Slice](reference-house-executable-slice.md) — **PASS**, one-fixture reproduction and mutation correctness established.
+- [CF-01 — Compiler Generality Assurance](compiler-generality-assurance-cf01.md) — **NEXT**, bounded generality gate before RH-C2.
+- [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md) — retained executable baseline.
 - [Research Programme v0.6](research-programme-v06.md) — final pre-executable programme record retained for provenance.
 - [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md) — frozen paper-domain capability audit.
 - [External Competent Review Pack — H1-PAPER v0.2](external-review-pack-h1-paper-v02.md) — professional-review handoff.

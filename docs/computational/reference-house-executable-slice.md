@@ -1,23 +1,50 @@
 # Reference House Executable Slice
 
-**Status:** **READY — RH-C0 passed; RH-C1 may begin**  
+**Status:** **PASS — deterministic Reference House fixture reproduced from one semantic source**  
 **Date:** 2026-10-12  
 **Prerequisite:** [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md) — **PASS**  
 **Canonical fixture source:** [`../reference-house/model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md)  
+**Implementation:** `compiler/reference-house/`  
+**Drawing parity result:** [`../reference-house/rhc1-drawing-parity-result.md`](../reference-house/rhc1-drawing-parity-result.md)  
 **Post-C1 gate:** [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md)  
-**Trigger:** RH-00→RH-11 produced an M3 coordinated Reference House; RH-C0 has now frozen the bounded architectural fixture needed for deterministic implementation.
+**Trigger:** RH-00→RH-11 produced an M3 coordinated Reference House; RH-C0 froze the bounded architectural fixture; RH-C1 has now compiled that fixture deterministically.
 
-## Why this reopens executable work
+## Result
 
-P0 and `PAT-XW-01` deliberately froze generic compiler growth until another workstream exposed a concrete, high-value question. The Reference House has now done so.
+RH-C1 passed at the bounded one-fixture scope.
 
-The problem is no longer abstract compiler capability. It is specific and falsifiable:
+One canonical semantic source now reproduces:
+
+- shell and centred courtyard geometry;
+- room/circulation reservations and major semantic boundaries;
+- principal levels and stair arithmetic;
+- controlled front axes and opening memberships;
+- legitimate opening dimensions/areas where source authority exists;
+- ground-floor plan;
+- first-floor plan;
+- principal section.
+
+The RH-C1 suite passes **27/27 tests**, including the RH-C0 mutation expectations and deterministic SVG projection tests. The generated drawings are:
+
+- `docs/reference-house/rhc1-ground-floor.svg`;
+- `docs/reference-house/rhc1-first-floor.svg`;
+- `docs/reference-house/rhc1-principal-section.svg`.
+
+The RH-C0 hand-authored comparator drawings are retained as historical comparison provenance. They are no longer the current geometric projections and were not reverse-engineered into source geometry.
+
+RH-C1 establishes **fixture fidelity + dependency correctness**. It does not establish compiler generality. CF-01 is therefore the next executable gate before RH-C2.
+
+## Why this reopened executable work
+
+P0 and `PAT-XW-01` deliberately froze generic compiler growth until another workstream exposed a concrete, high-value question. The Reference House did so.
+
+The problem was specific and falsifiable:
 
 > **Can one canonical semantic source reproduce the controlled Reference House geometry, its simple derived calculations and a small set of architectural drawings deterministically?**
 
-The Reference House is the **controlled regression fixture** for this executable slice. It is not assumed to be a universally correct house. RH-C0 established that its current architectural facts are internally coherent enough to freeze at the bounded fixture scope while preserving provisional and out-of-scope uncertainty.
+RH-C1 answers that question **yes, at the bounded Reference House fixture scope**.
 
-The compiler is not asked to generate a better house yet. It must first reproduce the house already coordinated and hardened manually.
+The Reference House remains a **controlled regression fixture**, not a universally correct house. RH-C0 established that its architectural facts were internally coherent enough to freeze while preserving provisional and out-of-scope uncertainty; RH-C1 preserved those distinctions in code.
 
 This is a vertical slice through the existing computational architecture, not a restart of a general CAD/compiler programme.
 
@@ -25,154 +52,144 @@ This is a vertical slice through the existing computational architecture, not a 
 
 ## RH-C1 — minimum executable slice
 
-Encode only the geometry released by RH-C0 as `FROZEN_FOR_RH_C1` or deliberately `PROVISIONAL_BUT_REPRESENTABLE`:
+RH-C1 encodes only geometry released by RH-C0 as `FROZEN_FOR_RH_C1` or deliberately `PROVISIONAL_BUT_REPRESENTABLE`:
 
 - outer shell;
 - courtyard;
 - storey levels / principal vertical datums;
 - rooms and circulation spaces;
 - stair;
-- major walls;
+- major walls / semantic boundaries;
 - major openings;
 - principal architectural axes / bay centres.
 
-Do **not** begin with structure, MEP, arbitrary 3D solids, products, optimisation or a general regulations engine.
+It does **not** pull structure, MEP, arbitrary 3D solids, products, optimisation or a general regulations engine into the slice.
 
 ### Canonical source
 
-The Reference House must have one machine-readable source of geometric facts. Drawings and derived calculations consume that source; they do not duplicate it.
+The Reference House has one machine-readable source of geometric facts. Drawings and derived calculations consume that source; they do not duplicate it.
 
-The only source contract for RH-C1 is [`model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md). Representative values in this document are explanatory only; if this document and the RH-C0 baseline ever differ, the baseline wins.
+The only architectural source contract for RH-C1 is [`model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md). Representative values in this document are explanatory only; if this document and the RH-C0 baseline ever differ, the baseline wins.
 
-Stable semantic identity must survive every projection. A window, wall or room shown in a drawing is the same project entity used by calculations, obligations and later evidence.
+Stable semantic identity survives projection. A window, boundary or room shown in a drawing is the same project entity used by calculations and later evidence.
 
 ---
 
 ## Derived calculation layer
 
-Create small deterministic functions only where the authority is clear. Examples:
+The implementation uses small deterministic derivations only where authority is clear, including:
 
 - shell / courtyard / enclosed plate area;
-- room and wing clear dimensions;
+- room reservation dimensions and areas where deterministically implied;
 - stair rise, pitch and `2R+G`;
-- wall / opening length and area;
-- opening centre and clear dimensions;
-- roof/courtyard catchment geometry where later added;
-- route length / clearance geometry where later added;
-- simple solar geometry where later justified.
+- boundary length;
+- opening centre, width/height range and area where source authority exists;
+- thickness-aware wall-planning stress views without promoting the provisional wall family into final wall geometry;
+- the provisional low-slope roof screening relation needed by the section.
 
-These are not a miscellaneous calculator collection. They are derived views over canonical source entities.
+These are derived views over canonical source entities, not a miscellaneous calculator collection.
 
-Prefer small pure functions with explicit units and tests. Do not encode professional judgement as a numerical helper merely because it is convenient.
+Professional judgement is not encoded as a numerical helper merely because it is convenient.
 
 ---
 
 ## Deterministic drawing output
 
-The first production outputs are deliberately narrow:
+The production outputs are deliberately narrow:
 
 1. ground-floor plan;
 2. first-floor plan;
 3. principal section.
 
-SVG is an appropriate first target because it is text, diffable, web-native and already used by the project.
+SVG remains appropriate because it is text, diffable and web-native.
 
 The renderer is **not** a CAD authoring system. It is a deterministic projection of the semantic model.
 
-Each rendered group should retain semantic identity where practical, for example:
-
-```xml
-<g data-entity="WALL-W17">…</g>
-<g data-entity="OW-01">…</g>
-```
-
-The drawing engine should separate:
+Rendered semantic groups retain stable identity through attributes such as `data-entity`. The drawing engine separates:
 
 - model/world coordinates;
 - projection/view logic;
-- drawing conventions such as line weight, hatching, labels and dimensions.
+- drawing conventions such as line weight, labels and dimensions.
 
-A change to a canonical dimension must propagate to every drawing that consumes it.
+A change to a canonical dimension propagates to every drawing that consumes it.
 
 ### Parity gate
 
-The generated drawings do not become authoritative merely because they compile.
+The generated drawings are not architectural authority merely because they compile.
 
-RH-C1 passes only when the generated plans/section reproduce the RH-C0 controlled fixture closely enough that the equivalent hand-authored geometric drawings can be retired or clearly marked historical.
+Parity passed because the generated plans/section reproduce the RH-C0-controlled fixture semantically, not merely visually. The check covered controlled dimensions, entity identity, hosts, axes, room topology, levels, stair arithmetic, provisional boundaries and deliberate absences.
 
-The test is not visual resemblance alone. Geometry and semantic identity must match the controlled Reference House facts.
-
-The RH-C0 visual comparators are:
+The RH-C0 visual comparators remain:
 
 - `docs/reference-house/rhc0-ground-floor-comparator.svg`;
 - `docs/reference-house/rhc0-first-floor-comparator.svg`;
 - `docs/reference-house/rhc0-principal-section-comparator.svg`.
 
-They are comparison projections, not source geometry.
+They are historical comparison projections, not source geometry.
 
 ---
 
-## Initial executable invariants
+## Executable invariants
 
-At minimum, test that:
+RH-C1 tests that:
 
-- shell and courtyard dimensions match the controlled source;
+- shell and courtyard dimensions derive from the controlled source;
 - rooms lie inside the permitted enclosed field;
-- rooms do not occupy the courtyard unless explicitly typed as court/external space;
+- rooms do not occupy the courtyard;
 - required room geometry does not overlap incompatibly;
-- openings belong to their declared host wall;
-- controlled axes and opening centres are derived from the same source facts used by the drawing;
-- first-floor and ceiling datums are consistent in plan/section projections;
-- stair rise is derived from FFL and riser count rather than separately authored;
-- repeated compilation of a frozen source produces identical semantic and drawing output.
+- openings belong to their declared host boundary and semantic host space;
+- controlled axes and opening centres derive from the same facts used by drawings;
+- first-floor and ceiling datums remain consistent across projections;
+- stair rise derives from FFL and riser count rather than duplicate authorship;
+- authored stair groups cannot silently mutate into a different topology;
+- repeated compilation of unchanged source produces identical semantic and drawing output;
+- committed generated SVGs remain exact renderer outputs.
 
-Mutation tests should use the dependency expectations recorded by RH-C0 and deliberately change source facts to verify that dependent calculations and drawings change together.
+The mutation tests use the RH-C0 dependency map and distinguish propagation, explicit failure, architectural review and unaffected/out-of-scope facts.
 
 ### Fixture-specificity discipline
 
-RH-C1 should not attempt to anticipate every future house. It should, however, avoid silently converting Reference House facts into core semantics.
+RH-C1 does not attempt to anticipate every future house. It keeps three roles distinct:
 
-For new model concepts, keep three roles distinct:
-
-1. **semantic core** — architectural meaning justified independently of this particular fixture;
-2. **fixture data** — the Reference House's courtyard, topology, dimensions, stair grouping, bay field and other project-specific facts;
+1. **semantic core** — architectural meaning justified independently of this fixture;
+2. **fixture data** — the Reference House courtyard, topology, dimensions, stair grouping, bay field and other project-specific facts;
 3. **derived projection** — calculations and drawings produced from the source.
 
-Do not hard-code assumptions such as “every house has a centred courtyard”, “every façade has four bays”, “every stair is 3×6 rises” or “G-01 is the default grammar”. Equally, do not build speculative generic abstractions simply because another house might one day need them. Localise fixture facts now; generalise only when a second worked case gives the abstraction evidence.
+The implementation does not claim that every house has a centred courtyard, four bays, two storeys, an 18-riser 3×6 stair or G-01-derived opening order. Nor does it build speculative generic abstractions merely because another house might one day need them.
 
-The explicit second-case challenge is CF-01, after RH-C1 passes.
+CF-01 is the explicit second-case challenge that will discover which assumptions actually need generalisation.
 
 ---
 
 ## Calculation and evidence boundary
 
-Do not respond to every technical question by writing another pure function.
+Not every technical question belongs in a pure function.
 
-Use three broad discharge modes:
+The project retains three broad discharge modes:
 
 1. **deterministic calculation** — geometry/arithmetic or another method whose authority is explicit;
 2. **supported implementation/rule family** — only after a bounded family and competent method are established;
 3. **external evidence** — engineer, building-physics model, fire/building-control determination, product evidence or physical test.
 
-The existing P0 evidence/staleness mechanism should remain central. If an external overheating result depends on glazing/orientation, for example, changing those source facts should mark that evidence stale rather than pretending the compiler can replace the simulation.
+The existing P0 evidence/staleness architecture remains relevant for later slices. Structural, fire, acoustic, hygrothermal, daylight and dynamic-overheating calculations remain external unless and until a deliberately bounded native implementation earns authority.
 
-Structural, fire, acoustic, hygrothermal, daylight and dynamic-overheating calculations remain external unless and until a deliberately bounded native implementation earns authority.
+Representability is not adequacy. A passing compile is not physical construction proof.
 
 ---
 
 ## Growth sequence after RH-C1
 
-Do not treat a successful single-fixture compile as evidence that the core is general.
+A successful single-fixture compile is not evidence that the core is general.
 
 ### CF-01 — contrast fixture generality gate
 
-Before deeper compiler slices enlarge the architecture, challenge RH-C1 with the deliberately unlike, minimal contrast fixture defined in [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md).
+**NEXT.** Before deeper compiler slices enlarge the architecture, challenge RH-C1 with the deliberately unlike, minimal contrast fixture defined in [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md).
 
-CF-01 tests something the RH-C0 mutation suite cannot: whether the semantic core accidentally assumes the Reference House's courtyard, room ring, four-bay front, stair topology or grammar. It is not a second fully developed Reference House and not an arbitrary-architecture target.
+CF-01 tests something the RH-C0/RH-C1 mutation suite cannot: whether the semantic core accidentally assumes the Reference House's courtyard, room ring, four-bay front, stair topology or grammar. It is not a second fully developed Reference House and not an arbitrary-architecture target.
 
 ### RH-C2 — structural view
 
-After CF-01, add supports, spans, edge beams, protected nodes and load-path semantics needed to reproduce RH-05 coordination. This is not a general structural solver.
+**BLOCKED by CF-01.** After CF-01, add supports, spans, edge beams, protected nodes and load-path semantics needed to reproduce RH-05 coordination. This is not a general structural solver.
 
 ### RH-C3 — service view
 
@@ -186,13 +203,13 @@ Add external/courtyard wall family geometry, openings and air/thermal/weather bo
 
 Only then consider narrow, versioned England-target checks where the rule and proof boundary are clear—for example stair geometry, escape-opening geometry or selected ventilation obligations. Avoid a monolithic `isBuildingRegulationsCompliant()` abstraction.
 
-These labels are sequencing aids, not new maturity levels.
+These labels are sequencing aids, not maturity levels.
 
 ---
 
 ## Explicit non-goals
 
-Do not use this fixture as justification for:
+RH-C1 does not justify:
 
 - arbitrary architecture support;
 - a polished 3D modelling UI;
@@ -211,10 +228,10 @@ A passing RH-C1 establishes **one-fixture reproduction and mutation correctness*
 
 ## Why drawings matter
 
-The current Reference House SVGs have been useful design records, but most are authored artefacts rather than generated projections from one canonical geometric model. That permits prose, calculations and drawings to drift apart.
+The earlier Reference House SVGs were useful design records, but most were authored artefacts rather than generated projections from one canonical geometric model. That permitted prose, calculations and drawings to drift apart.
 
-Deterministic plans/sections are therefore not presentation polish. They are a high-value compiler test:
+Deterministic plans/sections are therefore not presentation polish. They are a compiler test:
 
 > **If the semantic model cannot faithfully draw the house we already designed and froze through RH-C0, it does not yet describe the house strongly enough.**
 
-Once this slice works, the same model can support different projections—architectural, structural, services, maintenance, boundaries and obligations—without each view becoming a second source of truth.
+RH-C1 now passes that test for the three controlled views. The same model can later support structural, services, maintenance, boundary and obligation projections without each view becoming a second source of truth—but those later slices remain gated work.

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="900" viewBox="-1200 -1700 15600 14700" role="img" aria-labelledby="title desc" data-fixture="RH-C1-REFERENCE-HOUSE" data-compile-status="PASS">
+<title id="title">RH-C1 — generated first-floor plan</title>
+<desc id="desc">Deterministic RH-C1 semantic projection. RH-C0 baseline controls. Stroke widths are drawing conventions, not wall construction thicknesses.</desc>
+<style>
+  .bg{fill:#fbfaf7}.shell-fill{fill:#fff}.space-room{fill:#f2f1ed}.space-circulation{fill:#e9e9e5}.court{fill:#fff}
+  .boundary-outer{stroke:#171717;stroke-width:70;fill:none}.boundary-courtyard{stroke:#444;stroke-width:45;fill:none;stroke-dasharray:140 90}.boundary-internal{stroke:#666;stroke-width:32;fill:none}.boundary-provisional{stroke-dasharray:120 80}
+  .opening-cut{stroke:#fbfaf7;stroke-width:145}.opening-approx{stroke:#222;stroke-width:40;stroke-dasharray:95 55}.opening-range-max{stroke:#888;stroke-width:34;stroke-dasharray:80 55}.opening-range-min{stroke:#222;stroke-width:34}.opening-unknown{fill:#fbfaf7;stroke:#222;stroke-width:30}
+  .axis{stroke:#9a9a9a;stroke-width:22;stroke-dasharray:90 75}.dim{stroke:#888;stroke-width:20}.head{font:600 430px system-ui,sans-serif;fill:#171717}.sub{font:210px system-ui,sans-serif;fill:#444}.label{font:600 220px system-ui,sans-serif;fill:#222}.small{font:180px system-ui,sans-serif;fill:#444}.mono{font:180px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+</style>
+<rect x="-1200" y="-1700" width="15600" height="14700" class="bg"/>
+<text x="0" y="-1120" class="head">RH-C1 — generated first-floor plan</text>
+<text x="0" y="-730" class="sub">GENERATED · semantic reservations · wall faces not represented</text>
+<g data-entity="SHELL-01" data-kind="shell"><rect x="0" y="0" width="12000" height="10800" class="shell-fill"/></g>
+<g data-entity="U-BATH-01" data-kind="room" data-provisional="false"><rect x="9100" y="3400" width="2900" height="4000" class="space-room"/><text x="10550" y="5340" class="label" text-anchor="middle">U-BATH-01</text><text x="10550" y="5590" class="small" text-anchor="middle">family bathroom</text></g>
+<g data-entity="U-BED-02" data-kind="room" data-provisional="true"><rect x="0" y="7400" width="4000" height="3400" class="space-room"/><rect x="0" y="5800" width="4200" height="1600" class="space-room"/><text x="2100" y="8240" class="label" text-anchor="middle">U-BED-02</text><text x="2100" y="8490" class="small" text-anchor="middle">west-front bedroom</text></g>
+<g data-entity="U-BED-03" data-kind="room" data-provisional="false"><rect x="7800" y="7400" width="4200" height="3400" class="space-room"/><text x="9900" y="9040" class="label" text-anchor="middle">U-BED-03</text><text x="9900" y="9290" class="small" text-anchor="middle">east-front bedroom</text></g>
+<g data-entity="U-BED-04" data-kind="room" data-provisional="false"><rect x="7800" y="0" width="4200" height="3400" class="space-room"/><text x="9900" y="1640" class="label" text-anchor="middle">U-BED-04</text><text x="9900" y="1890" class="small" text-anchor="middle">east-rear bedroom</text></g>
+<g data-entity="U-BED-P01" data-kind="room" data-provisional="true"><rect x="0" y="0" width="4200" height="5800" class="space-room"/><text x="2100" y="2840" class="label" text-anchor="middle">U-BED-P01</text><text x="2100" y="3090" class="small" text-anchor="middle">principal bedroom</text></g>
+<g data-entity="U-DRESS-01" data-kind="room" data-provisional="true"><rect x="4200" y="0" width="2200" height="2200" class="space-room"/><text x="5300" y="1040" class="label" text-anchor="middle">U-DRESS-01</text><text x="5300" y="1290" class="small" text-anchor="middle">dry dressing / storage</text></g>
+<g data-entity="U-GAL-02" data-kind="circulation" data-provisional="false"><rect x="7800" y="3400" width="1300" height="4000" class="space-circulation"/><text x="8450" y="5340" class="label" text-anchor="middle">U-GAL-02</text><text x="8450" y="5590" class="small" text-anchor="middle">east gallery</text></g>
+<g data-entity="U-LAND-N01" data-kind="circulation" data-provisional="true"><rect x="4200" y="2200" width="3600" height="1200" class="space-circulation"/><text x="6000" y="2740" class="label" text-anchor="middle">U-LAND-N01</text><text x="6000" y="2990" class="small" text-anchor="middle">north cross-landing</text></g>
+<g data-entity="U-LIN-01" data-kind="room" data-provisional="true"><rect x="6400" y="0" width="1400" height="2200" class="space-room"/><text x="7100" y="1040" class="label" text-anchor="middle">U-LIN-01</text><text x="7100" y="1290" class="small" text-anchor="middle">linen</text></g>
+<g data-entity="U-STAIR-01" data-kind="circulation" data-provisional="true"><rect x="4000" y="7400" width="3800" height="3400" class="space-circulation"/><text x="5900" y="9040" class="label" text-anchor="middle">U-STAIR-01</text><text x="5900" y="9290" class="small" text-anchor="middle">south stair / landing</text></g>
+<g data-entity="C-01" data-kind="courtyard"><rect x="4200" y="3400" width="3600" height="4000" class="court"/><text x="6000" y="5360" class="label" text-anchor="middle">C-01</text><text x="6000" y="5610" class="mono" text-anchor="middle">3600 × 4000 mm · open to sky</text></g>
+<line x1="7800" y1="7400" x2="7800" y2="3400" class="boundary-courtyard" data-entity="U-COURT-EAST" data-kind="courtyard" data-world-length="4000" data-provisional="false"/>
+<line x1="7800" y1="3400" x2="7800" y2="0" class="boundary-internal" data-entity="U-COURT-EAST-NORTH-CONT-B" data-kind="internal-planning" data-world-length="3400" data-provisional="false"/>
+<line x1="7800" y1="10800" x2="7800" y2="7400" class="boundary-internal" data-entity="U-COURT-EAST-SOUTH-CONT-B" data-kind="internal-planning" data-world-length="3400" data-provisional="false"/>
+<line x1="4200" y1="3400" x2="7800" y2="3400" class="boundary-courtyard" data-entity="U-COURT-NORTH" data-kind="courtyard" data-world-length="3600" data-provisional="false"/>
+<line x1="4200" y1="7400" x2="7800" y2="7400" class="boundary-courtyard" data-entity="U-COURT-SOUTH" data-kind="courtyard" data-world-length="3600" data-provisional="false"/>
+<line x1="4200" y1="7400" x2="4200" y2="3400" class="boundary-courtyard" data-entity="U-COURT-WEST" data-kind="courtyard" data-world-length="4000" data-provisional="false"/>
+<line x1="4200" y1="3400" x2="4200" y2="0" class="boundary-internal" data-entity="U-COURT-WEST-NORTH-CONT-B" data-kind="internal-planning" data-world-length="3400" data-provisional="false"/>
+<line x1="6400" y1="2200" x2="6400" y2="0" class="boundary-internal boundary-provisional" data-entity="U-DRY-SPLIT-B" data-kind="internal-planning" data-world-length="2200" data-provisional="true"/>
+<line x1="9100" y1="7400" x2="9100" y2="3400" class="boundary-internal" data-entity="U-GALLERY-SERVICE-B" data-kind="internal-planning" data-world-length="4000" data-provisional="false"/>
+<line x1="4000" y1="10800" x2="4000" y2="7400" class="boundary-internal boundary-provisional" data-entity="U-HALL-WEST-B" data-kind="internal-planning" data-world-length="3400" data-provisional="true"/>
+<line x1="4200" y1="2200" x2="7800" y2="2200" class="boundary-internal boundary-provisional" data-entity="U-NORTH-SPLIT-B" data-kind="internal-planning" data-world-length="3600" data-provisional="true"/>
+<line x1="12000" y1="10800" x2="12000" y2="0" class="boundary-outer" data-entity="U-OUTER-EAST" data-kind="outer" data-world-length="10800" data-provisional="false"/>
+<line x1="0" y1="0" x2="12000" y2="0" class="boundary-outer" data-entity="U-OUTER-NORTH" data-kind="outer" data-world-length="12000" data-provisional="false"/>
+<line x1="0" y1="10800" x2="12000" y2="10800" class="boundary-outer" data-entity="U-OUTER-SOUTH" data-kind="outer" data-world-length="12000" data-provisional="false"/>
+<line x1="0" y1="10800" x2="0" y2="0" class="boundary-outer" data-entity="U-OUTER-WEST" data-kind="outer" data-world-length="10800" data-provisional="false"/>
+<line x1="0" y1="5800" x2="4200" y2="5800" class="boundary-internal boundary-provisional" data-entity="U-WEST-SPLIT-B" data-kind="internal-planning" data-world-length="4200" data-provisional="true"/>
+<g data-entity="U-COURT-NORTH-O01" data-host="U-COURT-NORTH" data-spaces="U-LAND-N01" data-world-centre="6000" data-width-authority="unknown" data-provisional="true"><circle cx="6000" cy="3400" r="95" class="opening-unknown"/></g>
+<g data-entity="U-COURT-SOUTH-O01" data-host="U-COURT-SOUTH" data-spaces="U-STAIR-01" data-world-centre="6000" data-width-authority="unknown" data-provisional="true"><circle cx="6000" cy="7400" r="95" class="opening-unknown"/></g>
+<g data-entity="U-FRONT-W01" data-host="U-OUTER-SOUTH" data-spaces="U-BED-02" data-world-centre="1950" data-width-authority="range" data-width-min="900" data-width-max="950" data-provisional="true"><line x1="1475" y1="10800" x2="2425" y2="10800" class="opening-cut"/><line x1="1475" y1="10800" x2="2425" y2="10800" class="opening-range-max"/><line x1="1500" y1="10800" x2="2400" y2="10800" class="opening-range-min"/></g>
+<g data-entity="U-FRONT-W02" data-host="U-OUTER-SOUTH" data-spaces="U-STAIR-01" data-world-centre="4650" data-width-authority="range" data-width-min="900" data-width-max="950" data-provisional="true"><line x1="4175" y1="10800" x2="5125" y2="10800" class="opening-cut"/><line x1="4175" y1="10800" x2="5125" y2="10800" class="opening-range-max"/><line x1="4200" y1="10800" x2="5100" y2="10800" class="opening-range-min"/></g>
+<g data-entity="U-FRONT-W03" data-host="U-OUTER-SOUTH" data-spaces="U-STAIR-01" data-world-centre="7350" data-width-authority="range" data-width-min="900" data-width-max="950" data-provisional="true"><line x1="6875" y1="10800" x2="7825" y2="10800" class="opening-cut"/><line x1="6875" y1="10800" x2="7825" y2="10800" class="opening-range-max"/><line x1="6900" y1="10800" x2="7800" y2="10800" class="opening-range-min"/></g>
+<g data-entity="U-FRONT-W04" data-host="U-OUTER-SOUTH" data-spaces="U-BED-03" data-world-centre="10050" data-width-authority="range" data-width-min="900" data-width-max="950" data-provisional="true"><line x1="9575" y1="10800" x2="10525" y2="10800" class="opening-cut"/><line x1="9575" y1="10800" x2="10525" y2="10800" class="opening-range-max"/><line x1="9600" y1="10800" x2="10500" y2="10800" class="opening-range-min"/></g>
+<line x1="1950" y1="10800" x2="1950" y2="11320" class="axis" data-axis="FRONT-1" data-world-x="1950"/>
+<text x="1950" y="11570" class="small" text-anchor="middle">B1</text>
+<line x1="4650" y1="10800" x2="4650" y2="11320" class="axis" data-axis="FRONT-2" data-world-x="4650"/>
+<text x="4650" y="11570" class="small" text-anchor="middle">B2</text>
+<line x1="7350" y1="10800" x2="7350" y2="11320" class="axis" data-axis="FRONT-3" data-world-x="7350"/>
+<text x="7350" y="11570" class="small" text-anchor="middle">B3</text>
+<line x1="10050" y1="10800" x2="10050" y2="11320" class="axis" data-axis="FRONT-4" data-world-x="10050"/>
+<text x="10050" y="11570" class="small" text-anchor="middle">B4</text>
+<line x1="0" y1="11850" x2="12000" y2="11850" class="dim"/>
+<text x="6000" y="12150" class="mono" text-anchor="middle">12000 mm</text>
+<line x1="12700" y1="0" x2="12700" y2="10800" class="dim"/>
+<text x="13050" y="5400" class="mono" text-anchor="middle" transform="rotate(90 13050 5400)">10800 mm</text>
+<text x="0" y="12350" class="small">Provisional boundaries are dashed. Opening ranges show maximum extent with minimum extent nested inside; unknown width is a point marker.</text>
+</svg>

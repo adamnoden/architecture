@@ -20,7 +20,9 @@
     "test:routes": "tsx scripts/validate-public-routes.ts",
     "test:p0": "node --import tsx --test compiler/p0/*.test.ts",
     "test:crosswalk": "node --import tsx --test compiler/crosswalk/*.test.ts",
-    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run publication:validate"
+    "rh-c1:generate": "tsx compiler/reference-house/generate.ts",
+    "test:rh-c1": "node --import tsx --test compiler/reference-house/*.test.ts",
+    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run publication:validate"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "11.17.0",
