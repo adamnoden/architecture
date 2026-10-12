@@ -1,7 +1,8 @@
 # Reference House Executable Slice
 
-**Status:** next computational fixture / implementation plan  
+**Status:** planned next computational fixture; **BLOCKED until RH-C0 passes**  
 **Date:** 2026-10-12  
+**Prerequisite:** [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md)  
 **Trigger:** RH-00→RH-11 has produced an M3 coordinated Reference House whose geometry, calculations and drawings are currently maintained partly by manual reasoning and hand-authored SVGs.
 
 ## Why this reopens executable work
@@ -10,9 +11,11 @@ P0 and `PAT-XW-01` deliberately froze generic compiler growth until another work
 
 The problem is no longer abstract compiler capability. It is specific and falsifiable:
 
-> **Can one canonical semantic source reproduce the coordinated Reference House geometry, its simple derived calculations and a small set of architectural drawings deterministically?**
+> **Can one canonical semantic source reproduce the controlled Reference House geometry, its simple derived calculations and a small set of architectural drawings deterministically?**
 
-The existing M3 Reference House becomes the **golden fixture**. The compiler is not asked to generate a better house yet. It must first reproduce the house already coordinated manually.
+The Reference House is intended to become the **controlled regression fixture** for this executable slice. It is not assumed to be a universally correct house, and RH-C0 must first prove that its current architectural facts are internally coherent enough to freeze.
+
+The compiler is not asked to generate a better house yet. It must first reproduce the house already coordinated and hardened manually.
 
 This is a vertical slice through the existing computational architecture, not a restart of a general CAD/compiler programme.
 
@@ -20,7 +23,7 @@ This is a vertical slice through the existing computational architecture, not a 
 
 ## RH-C1 — minimum executable slice
 
-Encode only the geometry needed to reproduce the current architectural baseline:
+Encode only the geometry released by RH-C0 as `FROZEN_FOR_RH_C1` or deliberately `PROVISIONAL_BUT_REPRESENTABLE`:
 
 - outer shell;
 - courtyard;
@@ -37,7 +40,7 @@ Do **not** begin with structure, MEP, arbitrary 3D solids, products, optimisatio
 
 The Reference House must have one machine-readable source of geometric facts. Drawings and derived calculations consume that source; they do not duplicate it.
 
-Representative facts include:
+Representative current facts include:
 
 - shell `12.0 × 10.8 m`;
 - courtyard `3.6 × 4.0 m`;
@@ -46,6 +49,8 @@ Representative facts include:
 - 18-riser principal stair with `280 mm` planning going;
 - front axes `1.95 / 4.65 / 7.35 / 10.05 m`;
 - current room/opening geometry from the controlling RH gates.
+
+These values are **orientation only until RH-C0 closes**. RH-C1 must consume the RH-C0 baseline rather than copying numbers from this document or from historical drawings.
 
 Stable semantic identity must survive every projection. A window, wall or room shown in a drawing is the same project entity used by calculations, obligations and later evidence.
 
@@ -101,7 +106,7 @@ A change to a canonical dimension must propagate to every drawing that consumes 
 
 The generated drawings do not become authoritative merely because they compile.
 
-RH-C1 passes only when the generated plans/section reproduce the current M3 Reference House closely enough that the equivalent hand-authored geometric drawings can be retired or clearly marked historical.
+RH-C1 passes only when the generated plans/section reproduce the RH-C0 controlled fixture closely enough that the equivalent hand-authored geometric drawings can be retired or clearly marked historical.
 
 The test is not visual resemblance alone. Geometry and semantic identity must match the controlled Reference House facts.
 
@@ -121,7 +126,7 @@ At minimum, test that:
 - stair rise is derived from FFL and riser count rather than separately authored;
 - repeated compilation of a frozen source produces identical semantic and drawing output.
 
-Mutation tests should deliberately change one source fact and verify that all dependent calculations and drawings change together.
+Mutation tests should use the dependency expectations recorded by RH-C0 and deliberately change source facts to verify that dependent calculations and drawings change together.
 
 ---
 
@@ -188,6 +193,6 @@ The current Reference House SVGs have been useful design records, but most are a
 
 Deterministic plans/sections are therefore not presentation polish. They are a high-value compiler test:
 
-> **If the semantic model cannot faithfully draw the house we already designed, it does not yet describe the house strongly enough.**
+> **If the semantic model cannot faithfully draw the house we already designed and froze through RH-C0, it does not yet describe the house strongly enough.**
 
 Once this slice works, the same model can support different projections—architectural, structural, services, maintenance, boundaries and obligations—without each view becoming a second source of truth.
