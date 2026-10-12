@@ -3,7 +3,7 @@
 **Programme:** [`docs/computational/reference-house-executable-slice.md`](../computational/reference-house-executable-slice.md)  
 **Fixture authority:** [`docs/reference-house/model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md)  
 **Issue:** #33  
-**Status:** **PASS — model, mutation suite, generated drawings, parity and full repository CI passed; PR #37 pending merge**
+**Status:** **PASS — merged in `4d2df89caf76d0ca98bd4bd98ca4fe36fb9db175`; model, mutation suite, generated drawings, parity and full repository CI passed**
 
 RH-C1 is complete at its bounded one-fixture scope. RH-C0 remains the architectural authority. RH-C1 establishes Reference House fixture fidelity and dependency correctness; it does not establish compiler generality.
 
@@ -86,7 +86,7 @@ The executable suite passes:
 - PAT-XW-01: **6/6**;
 - RH-C1: **27/27**.
 
-PR #37 full validation also passed repository integrity, public-route integrity, publication validation and the VitePress documentation build on implementation head `ff773849f8e293ff664b1d858c2e62c0e8b386e4`.
+PR #37 full validation also passed repository integrity, public-route integrity, publication validation and the VitePress documentation build on implementation head `ff773849f8e293ff664b1d858c2e62c0e8b386e4`; the final closeout head `330e7bc0d0eda6a0ec33b51afed09c733c2dd4bd` passed the same validation before merge.
 
 The CI exercise exposed two pre-existing integration drifts outside the compiler itself: incomplete curated-navigation classification and a Primer adapter still coupled to retired Reference House headings. Both were repaired without changing architectural authority or broadening RH-C1.
 
@@ -103,7 +103,7 @@ It does **not** prove bounded generality. That remains the purpose of CF-01.
 
 ## Next gate — CF-01
 
-After PR #37 merges, issue #35 becomes the next executable task: challenge the actual RH-C1 implementation with one deliberately unlike, cheap contrast fixture before RH-C2 begins.
+Issue #35 is now the next executable task: challenge the actual RH-C1 implementation with one deliberately unlike, cheap contrast fixture before RH-C2 begins.
 
 Do not start RH-C2 structure until CF-01 passes.
 
