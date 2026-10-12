@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-10 energy, heat and PV topology</title>
+  <desc id="desc">Three-panel schematic showing ground-floor heat plant and external heat pump, upper-floor low-temperature heating distribution, and roof photovoltaic reserve with outward drainage.</desc>
+  <style>
+    .bg{fill:#fbfaf7}.ink{stroke:#202020;fill:none;stroke-width:2}.thin{stroke:#666;fill:none;stroke-width:1.2}.dash{stroke:#777;fill:none;stroke-width:1.2;stroke-dasharray:7 5}.heat{stroke:#9a4b2f;fill:none;stroke-width:4}.elec{stroke:#806b20;fill:none;stroke-width:3}.air{stroke:#526f7a;fill:none;stroke-width:3}.water{stroke:#526f7a;fill:none;stroke-width:2}.pv{fill:#ddd8c9;stroke:#514d43;stroke-width:1.2}.service{fill:#ece9e0;stroke:#303030;stroke-width:1.5}.court{fill:#f4f1e8;stroke:#777;stroke-width:1.2}.txt{font:16px system-ui,sans-serif;fill:#202020}.small{font:13px system-ui,sans-serif;fill:#333}.head{font:600 22px system-ui,sans-serif;fill:#202020}.sub{font:600 16px system-ui,sans-serif;fill:#202020}.note{font:12px system-ui,sans-serif;fill:#555}
+  </style>
+  <rect class="bg" width="1200" height="820"/>
+  <text x="50" y="45" class="head">RH-10 — energy / heat / renewable topology</text>
+  <text x="50" y="70" class="small">Coordination diagram only — no product sizing, heat-loss calculation or compliance claim</text>
+
+  <!-- Ground floor -->
+  <g transform="translate(55 115)">
+    <text x="0" y="0" class="sub">GROUND</text>
+    <rect x="0" y="25" width="330" height="300" class="ink"/>
+    <rect x="116" y="120" width="100" height="112" class="court"/>
+    <text x="138" y="180" class="small">COURT</text>
+    <rect x="250" y="130" width="80" height="90" class="service"/>
+    <text x="260" y="155" class="small">PLANT</text>
+    <text x="258" y="175" class="note">MVHR</text>
+    <text x="258" y="191" class="note">DHW</text>
+    <text x="258" y="207" class="note">hydraulics</text>
+    <rect x="278" y="93" width="25" height="37" class="service"/>
+    <text x="307" y="111" class="note">SV-01</text>
+    <rect x="345" y="190" width="42" height="65" rx="4" class="service"/>
+    <text x="348" y="277" class="small">ASHP-01</text>
+    <path d="M345 220 H330" class="heat"/>
+    <text x="232" y="248" class="note">PEN-HP-01</text>
+
+    <path d="M255 205 C210 245 165 275 75 275" class="heat"/>
+    <path d="M255 205 C275 260 300 280 315 280" class="heat"/>
+    <text x="65" y="302" class="small">HYD-G-01 — bounded low-temperature distribution</text>
+
+    <rect x="30" y="45" width="55" height="10" class="service"/>
+    <rect x="30" y="285" width="55" height="10" class="service"/>
+    <rect x="230" y="45" width="55" height="10" class="service"/>
+    <rect x="230" y="285" width="55" height="10" class="service"/>
+    <text x="8" y="345" class="note">Emitters shown schematically on outer-wall/window geography; final sizes follow room heat-loss design.</text>
+  </g>
+
+  <!-- Upper floor -->
+  <g transform="translate(455 115)">
+    <text x="0" y="0" class="sub">UPPER</text>
+    <rect x="0" y="25" width="330" height="300" class="ink"/>
+    <rect x="116" y="120" width="100" height="112" class="court"/>
+    <text x="138" y="180" class="small">COURT</text>
+    <rect x="250" y="130" width="80" height="90" class="service"/>
+    <text x="255" y="155" class="small">BATH /</text>
+    <text x="255" y="174" class="small">SERVICE</text>
+    <rect x="278" y="93" width="25" height="37" class="service"/>
+    <text x="307" y="111" class="note">SV-01</text>
+
+    <path d="M290 130 V245 H220" class="heat"/>
+    <path d="M290 210 H315 V285" class="heat"/>
+    <path d="M220 245 H55 V285" class="heat"/>
+    <path d="M220 245 H55 V55" class="heat"/>
+    <path d="M290 130 H315 V55" class="heat"/>
+    <text x="45" y="305" class="small">HYD-U-01</text>
+
+    <rect x="25" y="45" width="60" height="10" class="service"/>
+    <rect x="25" y="285" width="60" height="10" class="service"/>
+    <rect x="245" y="45" width="60" height="10" class="service"/>
+    <rect x="245" y="285" width="60" height="10" class="service"/>
+    <text x="4" y="345" class="note">Upper branches follow landing/gallery service territory before short room runs; structural floor is not a generic plenum.</text>
+  </g>
+
+  <!-- Roof -->
+  <g transform="translate(855 115)">
+    <text x="0" y="0" class="sub">ROOF</text>
+    <rect x="0" y="25" width="280" height="300" class="ink"/>
+    <rect x="92" y="125" width="96" height="110" class="court"/>
+    <text x="112" y="184" class="small">COURT</text>
+    <line x1="0" y1="25" x2="92" y2="125" class="dash"/>
+    <line x1="280" y1="25" x2="188" y2="125" class="dash"/>
+    <line x1="0" y1="325" x2="92" y2="235" class="dash"/>
+    <line x1="280" y1="325" x2="188" y2="235" class="dash"/>
+
+    <rect x="22" y="48" width="75" height="48" class="pv"/>
+    <rect x="103" y="48" width="75" height="48" class="pv"/>
+    <rect x="184" y="48" width="75" height="48" class="pv"/>
+    <rect x="22" y="255" width="75" height="48" class="pv"/>
+    <rect x="103" y="255" width="75" height="48" class="pv"/>
+    <rect x="184" y="255" width="75" height="48" class="pv"/>
+    <text x="45" y="118" class="small">PV reserve</text>
+    <text x="35" y="318" class="small">≈50 m² total target</text>
+
+    <circle cx="250" cy="170" r="7" class="service"/>
+    <text x="196" y="160" class="note">soil vent</text>
+    <circle cx="232" cy="210" r="6" class="service"/>
+    <text x="190" y="230" class="note">PEN-PV-01</text>
+    <path d="M232 210 C235 250 220 290 215 330" class="elec"/>
+    <text x="10" y="345" class="note">PV stays clear of drainage/inspection routes; active inverter/isolation belongs in the plant/service geography.</text>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(55 525)">
+    <text x="0" y="0" class="sub">Whole-house rules carried forward</text>
+    <line x1="0" y1="35" x2="45" y2="35" class="heat"/><text x="60" y="40" class="txt">low-temperature hydronic route</text>
+    <rect x="330" y="24" width="45" height="20" class="pv"/><text x="390" y="40" class="txt">PV-capable roof reserve</text>
+    <rect x="650" y="24" width="45" height="20" class="service"/><text x="710" y="40" class="txt">maintainable service / plant object</text>
+
+    <text x="0" y="88" class="txt">• No house-wide underfloor-heating dependency at baseline.</text>
+    <text x="0" y="118" class="txt">• No new generic service plenum: routes remain bounded and structure-led.</text>
+    <text x="0" y="148" class="txt">• Heat-pump and PV equipment remain replaceable from service-side / external maintenance geography.</text>
+    <text x="0" y="178" class="txt">• No battery reservation; no active cooling reservation.</text>
+    <text x="0" y="208" class="txt">• Actual heat loss, plant capacity, PV output and acoustic compliance remain RH-11 specialist questions.</text>
+  </g>
+</svg>
