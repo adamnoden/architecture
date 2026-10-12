@@ -156,18 +156,23 @@ export const workstreamStatuses = [
   {
     id: 'reference-house',
     name: 'Reference House',
-    maturity: 'M2',
+    maturity: 'M3',
     reviewedOn: '2026-10-12',
     currentState:
-      'RH-00 through RH-09 now make the brief, morphology, room order, G-01 coupling, structure, services, environment, roof/maintenance and occupied interfaces explicit; whole-house adversarial coordination remains unproven.',
+      'RH-00 through RH-10 are coordinated at virtual-design scope; the whole-house audit reconciles architecture, structure, services, environment, roof/maintenance, occupied interfaces, heating/renewables and envelope, with remaining uncertainty bounded to engineering, simulation, prototype, real-site and external-review work.',
     nextGate:
-      'Pass RH-10 whole-house coordination audit; promote only if remaining uncertainty is engineering, prototype or external-review work rather than basic architectural coordination.',
+      'RH-11 competent structural, fire/building-control, MEP/acoustic and building-physics review; resolve any material rewinds before claiming further maturity.',
     evidence: {
       framed: ['docs/reference-house/README.md'],
       developed: [
         'docs/reference-house/pattern-occurrence-register.md',
         'docs/reference-house/whole-house-coordination-fixture.md',
         'docs/reference-house/tectonic-integration-rh09.md'
+      ],
+      coordinated: [
+        'docs/reference-house/whole-house-coordination-audit.md',
+        'docs/reference-house/energy-heat-coordination-rh10.md',
+        'docs/reference-house/envelope-coordination-rh10.md'
       ]
     }
   },
