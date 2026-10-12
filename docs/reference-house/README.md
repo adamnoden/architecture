@@ -4,9 +4,11 @@ The Reference House is one coordinated interpretation of House Kernel. It brings
 
 It is an **integration test**, not proof of House Kernel.
 
-RH-10 has now passed the house through a whole-building adversarial audit. The house is **M3 — Coordinated at virtual-design scope**: its major architectural systems have been reconciled strongly enough that the remaining material uncertainty is primarily engineering, simulation, prototype, real-site and competent external-review work rather than missing basic architecture.
+RH-10 passed the house through a whole-building adversarial audit. The house is **M3 — Coordinated at virtual-design scope**: its major architectural systems have been reconciled strongly enough that the remaining material uncertainty is primarily engineering, simulation, prototype, real-site and competent external-review work rather than missing basic architecture.
 
-Read the [Reference House Design Programme](../development/reference-house-design-programme.md) first when resuming work. The [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md) is the current whole-house gate. The [Brief and Constraint Ledger](brief-and-constraint-ledger.md) remains the canonical project brief; the [Pattern Occurrence Register](pattern-occurrence-register.md) remains the canonical record of actual House Kernel pattern use.
+RH-11 has now converted those remaining uncertainties into an **issue-ready external-review package**. That is a packaging result, not validation: no competent external review has yet been recorded and Reference House maturity remains M3.
+
+Read the [Reference House Design Programme](../development/reference-house-design-programme.md) first when resuming work. The [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md) is the current whole-house gate. The [RH-11 External Review Brief](external-review-brief.md) is the current external-review authority. The [Brief and Constraint Ledger](brief-and-constraint-ledger.md) remains the canonical project brief; the [Pattern Occurrence Register](pattern-occurrence-register.md) remains the canonical record of actual House Kernel pattern use.
 
 ## Authority stack
 
@@ -198,7 +200,7 @@ Use [RH-08 Roof, Drainage and External Maintenance](roof-drainage-access-rh08.md
 
 ### Fire / visitability geometry
 
-RH-10 has now checked that later design has not made basic life-safety geometry implausible.
+RH-10 checked that later design has not made basic life-safety geometry implausible.
 
 - first-floor FFL remains +3300 mm;
 - each of the four bedrooms retains an outer-façade emergency-egress-window duty at current coordination level;
@@ -237,7 +239,25 @@ The whole-house audit did not merely confirm prior work. It initially found five
 
 All five were corrected inside RH-10 before the gate passed. See [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md).
 
-The larger direction also survived the step-back test: later gates have repeatedly **removed** disproportionate infrastructure rather than accumulating it—remote en-suite, inner roof drainage, symbolic roof hatch, house-wide removable lining, access flooring, cooling reservation and now default whole-house UFH have all been rejected or held.
+The larger direction also survived the step-back test: later gates have repeatedly **removed** disproportionate infrastructure rather than accumulating it—remote en-suite, inner roof drainage, symbolic roof hatch, house-wide removable lining, access flooring, cooling reservation and default whole-house UFH have all been rejected or held.
+
+## RH-11 external review package
+
+The [RH-11 External Review Brief](external-review-brief.md) is now issue-ready. It is supported by:
+
+- [date-stamped regulatory baseline](external-review-regulatory-baseline-rh11.md);
+- [structural review brief](external-review-structural-rh11.md);
+- [fire / building-control review brief](external-review-fire-building-control-rh11.md);
+- [MEP / acoustic review brief](external-review-mep-acoustic-rh11.md);
+- [building-physics / energy review brief](external-review-building-physics-energy-rh11.md);
+- [review response template](external-review-response-template-rh11.md);
+- [package map](external-review-package-rh11.svg).
+
+Each brief identifies the controlled assumption, evidence/drawings, exact review questions, fallback hierarchy and the finding that should reopen an earlier RH gate.
+
+The package is deliberately adversarial. Reviewers are asked to attack specific decisions, not answer “does this house work?” or design missing architecture on the project's behalf.
+
+**Issuing the package is not external validation.** Actual competent findings must be received, recorded and resolved before the external-review workstream or Reference House can claim any further maturity.
 
 ## Pattern occurrences
 
@@ -260,7 +280,7 @@ These are project coordination occurrences, not general evidence for the pattern
 
 The promotion applies only to the current **virtual-design scope**. It does not mean the building has been engineered, simulated to completion, physically prototyped or independently reviewed.
 
-The major remaining dependencies are now bounded:
+The major remaining dependencies are now bounded and briefed:
 
 - structural engineering;
 - fire / building-control review;
@@ -271,6 +291,8 @@ The major remaining dependencies are now bounded:
 
 ## Current work
 
-`RH-11 — External-review package` is active.
+The RH-00→RH-11 design/package sequence is complete at coordinated virtual-design scope.
 
-The next task is to turn those bounded dependencies into discipline-specific attack packages. Each reviewer should receive the coordinated decision, relevant drawings/evidence, exact question and the finding that would force a rewind. They should not be asked to invent missing architecture.
+**Active work is evidence execution:** issue the RH-11 package to competent reviewers, process findings through the explicit rewind protocol, and progress P03/P04 physical validation in parallel.
+
+Reference House remains **M3** and external professional review remains **M1** until actual competent review evidence exists.
