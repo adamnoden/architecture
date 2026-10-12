@@ -9,20 +9,22 @@ The programme does not assume that the current whole-house fixture is the right 
 
 ## Current execution state
 
-- **Active stage:** `RH-06 — Coordinate services and failure geography`
-- **Last closed stage:** `RH-05 — Coordinate primary structure` — **PASS at architectural / pre-engineering coordination level**; canonical gate record: [RH-05 Structural Coordination](../reference-house/structural-coordination.md).
-- **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), as modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg).
+- **Active stage:** `RH-07 — Resolve passive-first environmental design`
+- **Last closed stage:** `RH-06 — Coordinate services and failure geography` — **PASS with deletion of the conditional principal en-suite**; canonical gate record: [RH-06 Services and Failure Geography](../reference-house/service-topology-rh06.md).
+- **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), as modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg) **as superseded locally by RH-06**, which replaces `U-ENS-01` with `U-DRESS-01`.
+- **Current service authority:** [RH-06 service topology overlay](../reference-house/service-topology-rh06.svg), [riser section](../reference-house/service-riser-section-rh06.svg) and [crossing register](../reference-house/service-crossing-register-rh06.md).
 - **Current elevation authority:** [RH-04 front elevation](../reference-house/front-elevation-study.svg) and [courtyard elevations](../reference-house/courtyard-elevations-study.svg).
 - **Current section authority:** [RH-04 principal section](../reference-house/principal-section-rh04.svg).
 - **Current structural authority:** [RH-05 structural concept](../reference-house/structural-concept-overlay.svg).
 - **Current shell:** **12.0 × 10.8 m**, centred **3.6 × 4.0 m** courtyard.
 - **Current vertical datums:** first FFL **+3300 mm**; ground clear ceiling **+2950 mm**; upper clear ceiling **+6000 mm**; cornice/eaves control approximately **+6250 mm**.
 - **Current front order:** centred four-bay field at X = **1.95 / 4.65 / 7.35 / 10.05 m**; principal entrance occupies bay 3.
-- **Current structural concept:** loadbearing outer/courtyard masonry inner leaves; short engineered-timber floor spans of approximately **3.4–4.2 m gross**; four repeated ~3.4 m edge beams; framed stair opening; east-middle service-opening reservation; 350 mm floor zone retained provisionally.
-- **Next action:** route utility entry, plant replacement, water, foul/soil, kitchen and bathroom extract, electrical/data and the vertical service zone through the RH-05 structural concept; create the first new crossing register only where actual routes intersect actual structure.
+- **Current structural concept:** loadbearing outer/courtyard masonry inner leaves; short engineered-timber floor spans of approximately **3.4–4.2 m gross**; four repeated ~3.4 m edge beams; framed stair opening; 350 mm floor zone retained provisionally.
+- **Current service concept:** east/service-side surrogate utility entry; `G-PLANT-01` service hub; **900 × 700 mm clear** `SV-01`; one 100 mm-class soil/vent stack; direct kitchen and bathroom source-capture routes; dry ground/upper circulation-edge routes; explicit crossings `RH-P005-07..12`; no remote principal en-suite.
+- **Next action:** test the architecture against surrogate solar orientations and current Part F/Part O performance logic: daylight, useful sunlight, courtyard contribution/penalty, purge/cross/stack ventilation, overheating/shading and whole-dwelling ventilation families. If a central ducted system is selected, rewind RH-06 and prove its duct topology rather than assuming capacity in `SV-01` or the joist zone.
 - **Current brief baseline:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
 - **Held morphology rewind:** `B — Offset thick/thin ring`, now a deep fallback only if later coordination exposes a material failure that cannot be solved proportionately inside the selected central-court morphology.
-- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-05 adds structural prohibitions/reservations but deliberately no new `HSA-P-005` occurrence until RH-06 defines the penetrating service geometry.
+- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-06 now contains current utility-entry, route, crossing, source-capture, indexing and vertical-zone occurrences.
 
 Update this block whenever a stage closes or the active stage materially changes.
 
