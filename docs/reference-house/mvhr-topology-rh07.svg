@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-07 MVHR topology</title>
+  <desc id="desc">Schematic MVHR topology showing central unit in the service hub, supply and extract trunks in the vertical service zone, bounded radial branches aligned with floor framing, and separate cooker-hood extract.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .outer{fill:#fff;stroke:#111;stroke-width:4}.room{fill:#f5f5f5;stroke:#555;stroke-width:1.4}.court{fill:#fff;stroke:#111;stroke-width:2;stroke-dasharray:8 6}.svc{fill:#e9edf0;stroke:#333;stroke-width:1.8}.supply{fill:none;stroke:#333;stroke-width:5;marker-end:url(#arr)}.extract{fill:none;stroke:#777;stroke-width:5;stroke-dasharray:8 5;marker-end:url(#arr2)}.hood{fill:none;stroke:#111;stroke-width:7;marker-end:url(#arr3)}.note{fill:#fafafa;stroke:#bbb;stroke-width:1}.reserve{fill:#f0f2f3;stroke:#333;stroke-width:2;stroke-dasharray:5 4}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#333"/></marker>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#777"/></marker>
+    <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#111"/></marker>
+  </defs>
+
+  <text x="55" y="52" class="head">Reference House — RH-07 MVHR Topology</text>
+  <text x="55" y="80" class="sub">Selected whole-dwelling ventilation baseline · bounded routes only · cooker source capture remains separate</text>
+
+  <!-- Ground floor -->
+  <g transform="translate(75,145)">
+    <text x="0" y="-22" class="label">GROUND FLOOR</text>
+    <rect x="0" y="0" width="550" height="495" class="outer"/>
+    <rect x="0" y="0" width="192" height="495" class="room"/>
+    <rect x="358" y="0" width="192" height="495" class="room"/>
+    <rect x="192" y="0" width="166" height="156" class="room"/>
+    <rect x="192" y="339" width="166" height="156" class="room"/>
+    <rect x="192" y="156" width="166" height="183" class="court"/>
+
+    <!-- plant / riser -->
+    <rect x="418" y="170" width="120" height="120" class="svc"/>
+    <text x="478" y="214" text-anchor="middle" class="label">MVHR-01</text>
+    <text x="478" y="234" text-anchor="middle" class="small">G-PLANT-01</text>
+    <text x="478" y="254" text-anchor="middle" class="small">front-service unit</text>
+
+    <rect x="382" y="205" width="30" height="60" class="reserve"/>
+    <text x="397" y="238" text-anchor="middle" transform="rotate(-90 397 238)" class="small">SV-01</text>
+
+    <!-- supply branches -->
+    <path d="M418 220 C360 220 330 390 275 410" class="supply"/>
+    <path d="M418 220 C330 220 250 400 100 420" class="supply"/>
+    <path d="M418 220 C350 220 280 90 275 75" class="supply"/>
+    <path d="M418 220 C330 220 240 95 95 95" class="supply"/>
+    <text x="70" y="448" class="small">drawing/family supply</text>
+    <text x="215" y="438" class="small">hall/dining supply where justified</text>
+
+    <!-- extract wet zones -->
+    <path d="M505 120 C505 155 495 185 485 205" class="extract"/>
+    <path d="M540 285 C525 270 505 250 490 240" class="extract"/>
+    <text x="435" y="104" class="small">kitchen background extract</text>
+    <text x="430" y="312" class="small">utility / WC extract</text>
+
+    <!-- separate hood -->
+    <path d="M505 80 L575 80" class="hood"/>
+    <text x="457" y="64" class="small">KX-01 cooker hood</text>
+    <text x="579" y="85" class="small">outside</text>
+
+    <!-- outdoor air / exhaust -->
+    <path d="M538 200 L585 175" class="supply"/>
+    <path d="M538 245 L585 270" class="extract"/>
+    <text x="590" y="175" class="small">MV-OA-01 intake</text>
+    <text x="590" y="274" class="small">MV-EA-01 exhaust</text>
+  </g>
+
+  <!-- Upper floor -->
+  <g transform="translate(75,705)">
+    <text x="0" y="-22" class="label">UPPER FLOOR / ROOF DISTRIBUTION INTENT</text>
+    <rect x="0" y="0" width="550" height="180" class="outer"/>
+    <rect x="0" y="0" width="190" height="180" class="room"/><rect x="360" y="0" width="190" height="180" class="room"/>
+    <rect x="190" y="55" width="170" height="75" class="court"/>
+    <rect x="398" y="55" width="32" height="70" class="reserve"/>
+    <text x="414" y="91" text-anchor="middle" transform="rotate(-90 414 91)" class="small">SV-01</text>
+    <path d="M398 82 C340 80 300 35 250 35" class="supply"/>
+    <path d="M398 82 C330 85 230 135 100 135" class="supply"/>
+    <path d="M430 82 C465 70 490 45 510 35" class="supply"/>
+    <path d="M430 105 C465 115 490 135 510 145" class="supply"/>
+    <path d="M430 92 C455 92 470 92 490 92" class="extract"/>
+    <text x="455" y="106" class="small">U-BATH-01 extract</text>
+  </g>
+
+  <g transform="translate(790,145)">
+    <rect x="0" y="0" width="620" height="740" class="note"/>
+    <text x="22" y="38" class="head">Route rules</text>
+
+    <text x="22" y="90" class="label">Central unit</text>
+    <text x="22" y="116" class="small">In G-PLANT-01 with normal filter/front service access and</text>
+    <text x="22" y="138" class="small">the existing external equipment replacement path.</text>
+
+    <text x="22" y="188" class="label">Vertical trunks</text>
+    <text x="22" y="214" class="small">Supply + extract trunks share SV-01 geography but remain</text>
+    <text x="22" y="236" class="small">separate from soil/water/electrical as technical design requires.</text>
+
+    <text x="22" y="286" class="label">Ground branches</text>
+    <text x="22" y="312" class="small">Bounded routes only. Where floor distribution is needed,</text>
+    <text x="22" y="334" class="small">branches follow joist direction. No beam drilling and no generic plenum.</text>
+
+    <text x="22" y="384" class="label">Upper branches</text>
+    <text x="22" y="410" class="small">Prefer upper ceiling/roof + landing/gallery geography,</text>
+    <text x="22" y="432" class="small">with short drops/branches to bedrooms and bathroom.</text>
+
+    <text x="22" y="482" class="label">Wet extract</text>
+    <text x="22" y="508" class="small">Bathroom / utility / WC / kitchen background extract can join MVHR.</text>
+    <text x="22" y="530" class="small">Cooker grease extract KX-01 stays independent and direct outside.</text>
+
+    <text x="22" y="580" class="label">Summer operation</text>
+    <text x="22" y="606" class="small">MVHR is background IAQ. Summer bypass may reduce heat recovery,</text>
+    <text x="22" y="628" class="small">but secure openable windows remain the principal purge strategy.</text>
+
+    <text x="22" y="678" class="label">Fallback</text>
+    <text x="22" y="704" class="small">If duct burden / commissioning / access proves disproportionate,</text>
+    <text x="22" y="726" class="small">revert to continuous MEV rather than deepen the whole building.</text>
+  </g>
+
+  <text x="55" y="945" class="small">Schematic topology only. Duct diameters, fan duty, acoustics, intake/exhaust separation, insulation and commissioning require competent MEP design.</text>
+</svg>
