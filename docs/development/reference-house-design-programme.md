@@ -7,22 +7,26 @@ The Reference House is the principal integration test for House Kernel. Progress
 
 ## Current execution state
 
-- **Active stage:** `RH-10 — Whole-house coordination audit`
-- **Last closed stage:** `RH-09 — Tectonic and occupied-surface integration` — **PASS at architectural / pre-prototype coordination level**; canonical gate: [RH-09 Tectonic and Occupied-Surface Integration](../reference-house/tectonic-integration-rh09.md).
+- **Active stage:** `RH-11 — External-review package`
+- **Last closed stage:** `RH-10 — Whole-house coordination audit` — **PASS after corrective coordination; Reference House promoted M2 → M3 at coordinated virtual-design scope**; canonical gate: [RH-10 Whole-House Coordination Audit](../reference-house/whole-house-coordination-audit.md).
+- **Current whole-house authority:** [RH-10 Whole-House Coordination Audit](../reference-house/whole-house-coordination-audit.md) and [coordination map](../reference-house/whole-house-coordination-rh10.svg).
 - **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg), locally superseded by RH-06 where `U-ENS-01` became `U-DRESS-01`.
-- **Current architectural/elevation authority:** [RH-04 gate](../reference-house/plan-section-elevation-gate.md), [front elevation](../reference-house/front-elevation-study.svg), [courtyard elevations](../reference-house/courtyard-elevations-study.svg), [principal section](../reference-house/principal-section-rh04.svg).
+- **Current architectural/elevation authority:** [RH-04 gate](../reference-house/plan-section-elevation-gate.md) for principal front, courtyard opening order and sectional hierarchy, supplemented by [RH-10 Outer Elevation Coordination](../reference-house/outer-elevation-coordination-rh10.md) for garden/service/west elevations. RH-08/RH-10 explicitly supersede RH-04's earlier pitched-roof preference while retaining the RH-04 cornice/storey/opening datums.
 - **Current structural authority:** [RH-05 Structural Coordination](../reference-house/structural-coordination.md) and [structural overlay](../reference-house/structural-concept-overlay.svg).
-- **Current service authority:** [RH-06 Services and Failure Geography](../reference-house/service-topology-rh06.md), locally superseded for whole-dwelling ventilation by the [RH-07 MVHR Addendum](../reference-house/service-topology-rh07-mvhr-addendum.md).
-- **Current environmental authority:** [RH-07 Environmental Coordination](../reference-house/environmental-coordination.md).
-- **Current roof/access authority:** [RH-08 gate](../reference-house/roof-drainage-access-rh08.md), [roof/drainage plan](../reference-house/roof-drainage-plan-rh08.svg), [maintenance plan](../reference-house/external-access-maintenance-plan.md).
+- **Current service authority:** [RH-06 Services and Failure Geography](../reference-house/service-topology-rh06.md), locally superseded for whole-dwelling ventilation by the [RH-07 MVHR Addendum](../reference-house/service-topology-rh07-mvhr-addendum.md), and extended for heating/DHW/renewables by [RH-10 Energy, Heating and Renewable Coordination](../reference-house/energy-heat-coordination-rh10.md).
+- **Current environmental authority:** [RH-07 Environmental Coordination](../reference-house/environmental-coordination.md), with RH-10 forward-energy coordination added downstream.
+- **Current envelope authority:** [RH-10 Envelope Coordination](../reference-house/envelope-coordination-rh10.md): normal masonry-envelope planning family **400–425 mm**, whole-house geometry stress limit **450 mm**; materially thicker construction requires explicit geometry rewind.
+- **Current roof/access authority:** [RH-08 gate](../reference-house/roof-drainage-access-rh08.md), [roof/drainage plan](../reference-house/roof-drainage-plan-rh08.svg), [maintenance plan](../reference-house/external-access-maintenance-plan.md), plus RH-10's approximately **50 m² PV-capable roof reserve**.
 - **Current tectonic authority:** [RH-09 gate](../reference-house/tectonic-integration-rh09.md), revised [Tectonic Architectural Language](../reference-house/tectonic-architectural-language.md), [interface family diagram](../reference-house/tectonic-interface-family-rh09.svg), [prototype handoff matrix](../reference-house/prototype-handoff-rh09.md).
-- **Current crossing authority:** [Service Crossing Register](../reference-house/service-crossing-register-rh06.md), current through RH-08.
+- **Current crossing authority:** [Service Crossing Register](../reference-house/service-crossing-register-rh06.md), current through RH-10.
 - **Current shell:** **12.0 × 10.8 m**, centred **3.6 × 4.0 m** courtyard.
 - **Current vertical datums:** first FFL **+3300 mm**; ground clear ceiling **+2950 mm**; upper clear ceiling **+6000 mm**; cornice/eaves control approximately **+6250 mm**.
 - **Current environmental concept:** shallow occupied bands; courtyard retained as a shaded light court; disciplined glazing; secure purge/cross ventilation; orientation-specific shading; no cooling reservation; central MVHR with continuous-MEV fallback.
-- **Current roof concept:** four very-low-slope fields fall outward from the courtyard to inspectable external collection; no inner court roof gutter, internal roof outlet or permanent roof hatch.
-- **Current occupied-interface concept:** `W0` direct-finished quiet masonry by default; `W1` sparse controlled attachment/service datums where real tasks justify them; `W2` replaceable lining remains P01 experimental; continuous conventional principal-room floors remain baseline; skirting may carry bounded dry routes but ordinary socket outlets rise to accessible positions; representative window/door/threshold/movement-junction families are now explicit.
-- **Next action:** run an adversarial whole-house audit across ordinary life, G-01, structure, services/MVHR, environment, drainage/moisture, fire/acoustic geometry, maintenance/replacement, occupied interfaces, pattern occurrences and area/cost/complexity. Maintain a clash/rewind register. Do not promote Reference House maturity until material cross-system contradictions are resolved or bounded as external engineering/prototype dependencies.
+- **Current heat/energy concept:** `ASHP-01` air-to-water heat-pump baseline on the east/service side beside plant geography; DHW/hydraulics in `G-PLANT-01`; bounded `HYD-G-01` / `HYD-U-01` low-temperature routes; passive low-temperature emitters as baseline rather than whole-house UFH; about **50 m²** PV-capable roof reservation; no battery reservation.
+- **Current roof concept:** four very-low-slope fields fall outward from the courtyard to inspectable external collection; no inner court roof gutter, internal roof outlet or permanent roof hatch. PV must preserve drainage and external maintenance routes.
+- **Current fire/visitability concept:** each first-floor bedroom retains an outer-façade emergency-egress-window duty at current coordination level; principal entrance receives `TH-02` substantially level/visitable threshold intent; final escape opening, M4(1) WC/access, fire closure and real-site approach remain building-control review items.
+- **Current occupied-interface concept:** `W0` direct-finished quiet masonry by default; `W1` sparse controlled attachment/service datums selectively; `W2` remains P01 experimental; continuous conventional principal-room floors remain baseline; skirting may carry bounded dry routes but ordinary socket outlets rise to accessible positions.
+- **Next action:** prepare RH-11 discipline-specific review briefs for structural engineering, fire/building-control, MEP/acoustics and building physics/energy. Each brief must present the coordinated assumption, relevant drawings/evidence, exact reviewer question and **rewind condition**. Reviewers should attack decisions, not be asked to design the missing house.
 - **Current brief:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
 - **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md).
 
@@ -118,6 +122,8 @@ If interrupted mid-stage, commit a checkpoint stating: established facts, provis
 
 **Gate:** plan/section/elevation coexist without disguising technical necessities or violating selected grammar.
 
+**Later supersession:** RH-08/RH-10 replace RH-04's preliminary pitched-roof preference with the outward-draining low-slope roof. RH-04 remains current for storey hierarchy, front/courtyard opening order and cornice datum.
+
 ---
 
 ## RH-05 — Coordinate primary structure — CLOSED PASS
@@ -180,46 +186,59 @@ If interrupted mid-stage, commit a checkpoint stating: established facts, provis
 
 ---
 
-## RH-10 — Whole-house coordination audit — ACTIVE
+## RH-10 — Whole-house coordination audit — CLOSED PASS
 
 **Question:** does the virtual house work as one building?
 
-**Work:** adversarial audit across:
+**Work:** adversarial audit across programme, G-01, structure, services/MVHR, heating/DHW, environmental performance, roof/drainage, envelope, fire/visitability geometry, maintenance/replacement, occupied interfaces, pattern occurrences, authority drift and area/cost/complexity.
 
-- programme / ordinary domestic use;
-- G-01 composition and authority drift;
-- structure and protected zones;
-- services, MVHR and service-core proportionality;
-- environmental assumptions / overheating / purge;
-- roof, drainage, moisture and court drying;
-- fire/acoustic assumptions that affect geometry;
-- occupied interfaces / fixing / replacement;
-- external and internal maintenance routes;
-- pattern-occurrence accuracy;
-- area, cost and complexity proportionality;
-- prototype and external-review dependencies.
+**Material findings repaired inside the gate:**
 
-Maintain a clash/rewind register. Resolve material failures; do not average them away.
+- missing heat/DHW topology;
+- forward renewable-electricity / PV provision;
+- RH-04/RH-08 roof-authority conflict;
+- unresolved garden/service elevations;
+- obsolete 350 mm wall-depth assumption.
 
 **Deliverables:**
 
-- `docs/reference-house/whole-house-coordination-audit.md`;
-- coordinated plan/section/elevation set at current virtual-design resolution;
-- updated Pattern Occurrence Register.
+- [`whole-house-coordination-audit.md`](../reference-house/whole-house-coordination-audit.md);
+- [`whole-house-coordination-rh10.svg`](../reference-house/whole-house-coordination-rh10.svg);
+- [`energy-heat-coordination-rh10.md`](../reference-house/energy-heat-coordination-rh10.md);
+- [`envelope-coordination-rh10.md`](../reference-house/envelope-coordination-rh10.md);
+- [`outer-elevation-coordination-rh10.md`](../reference-house/outer-elevation-coordination-rh10.md);
+- updated Pattern Occurrence Register and crossing register.
 
-**Gate:** the Reference House may move from M2 toward M3 only when adjacent systems are reconciled and remaining uncertainty is explicitly engineering/prototype/external rather than basic architectural coordination.
+**Gate:** PASS. Adjacent architectural systems are reconciled at stated virtual-design scope; remaining material uncertainty is engineering, simulation, prototype, real-site or competent external-review work rather than missing basic architecture.
+
+**Maturity consequence:** Reference House **M2 → M3 — Coordinated**. No M4 claim.
 
 ---
 
-## RH-11 — External-review package
+## RH-11 — External-review package — ACTIVE
 
-**Question:** is the house explicit enough for competent outsiders to attack real assumptions rather than react to a concept?
+**Question:** is the coordinated house explicit enough for competent outsiders to attack real assumptions rather than react to a concept?
 
-**Work:** bounded packages for structural engineer, fire/building-control practitioner, building-services/ventilation engineer and later specialists as justified. Each package states question, current assumption, supplied evidence/drawings and rewind trigger.
+**Work:** prepare bounded review packages for:
 
-**Deliverable:** `docs/reference-house/external-review-brief.md` plus discipline appendices.
+- structural engineer;
+- fire/building-control practitioner;
+- building-services / ventilation / acoustic engineer;
+- building-physics / energy specialist;
+- later specialist review where prototype results justify it.
 
-**Gate:** reviewers can challenge real decisions without being asked to design the missing house on the project's behalf.
+Each package must state:
+
+- the exact decision under review;
+- current assumption / geometry;
+- relevant evidence and drawings supplied;
+- what is already fixed only provisionally;
+- the specific finding that would force a rewind;
+- which earlier RH gate owns that rewind.
+
+**Deliverable:** `docs/reference-house/external-review-brief.md` plus discipline appendices where useful.
+
+**Gate:** reviewers can identify and challenge real decisions. The package does not ask them to design the missing house on the project's behalf.
 
 ---
 
@@ -232,7 +251,7 @@ Physical validation has separate authority under the [Tectonic Prototype and Eng
 3. **P03 — structural floor edge**;
 4. **P04 — wall/ceiling tectonic joint**.
 
-RH-09 now clarifies their Reference House dependencies: P01 and P04 test selected challengers/interfaces; P02 is not currently required by the house; P03 remains an RH-05 engineering dependency. Prototype rejection may force local implementation change without automatically invalidating House Kernel or G-01.
+RH-09/RH-10 clarify their Reference House dependencies: P01 and P04 test selected challengers/interfaces; P02 is not currently required by the house; P03 remains an RH-05 engineering dependency. Prototype rejection may force local implementation change without automatically invalidating House Kernel or G-01.
 
 # Definition of progress
 
