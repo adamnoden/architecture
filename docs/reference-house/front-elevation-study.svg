@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="940" viewBox="0 0 1500 940" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-04 front elevation study</title>
+  <desc id="desc">Schematic Georgian-derived four-bay front elevation for the Reference House. The facade field is centred on the twelve metre front, while the entrance occupies the third bay from the west to match the stair-hall plan.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .wall{fill:#f2f2f2;stroke:#111;stroke-width:3}.opening{fill:#fff;stroke:#222;stroke-width:2}.door{fill:#f8f8f8;stroke:#111;stroke-width:2.5}.stone{fill:#e5e5e5;stroke:#555;stroke-width:1.4}.line{stroke:#555;stroke-width:1.4}.axis{stroke:#888;stroke-width:1.2;stroke-dasharray:6 5}.datum{stroke:#777;stroke-width:1.2;stroke-dasharray:8 6}.roof{fill:#fafafa;stroke:#555;stroke-width:2}.dimline{stroke:#555;stroke-width:1.2}.note{fill:#fafafa;stroke:#aaa;stroke-width:1}
+    </style>
+  </defs>
+
+  <text x="55" y="50" class="head">Reference House — RH-04 Front Elevation Study</text>
+  <text x="55" y="78" class="sub">Centred four-bay field · entrance in bay 3 · ground-floor primacy · schematic architectural coordination only</text>
+
+  <!-- scale approx 80 px/m horizontally, 80 px/m vertically -->
+  <g transform="translate(110,170)">
+    <!-- 12.0m x 6.25m wall -->
+    <rect x="0" y="0" width="960" height="500" class="wall"/>
+
+    <!-- notional roof, not RH08 geometry -->
+    <path d="M0,0 L150,-92 L810,-92 L960,0" class="roof"/>
+    <text x="480" y="-112" text-anchor="middle" class="small">notional pitched roof envelope only · exact roof belongs to RH-08</text>
+
+    <!-- floor datum + ceilings -->
+    <line x1="0" y1="236" x2="960" y2="236" class="datum"/>
+    <text x="974" y="240" class="dim">+3.300 first FFL</text>
+    <line x1="0" y1="28" x2="960" y2="28" class="datum"/>
+    <text x="974" y="32" class="dim">+6.000 upper ceiling</text>
+    <line x1="0" y1="500" x2="960" y2="500" class="line"/>
+    <text x="974" y="504" class="dim">±0 ground FFL</text>
+    <line x1="0" y1="0" x2="960" y2="0" class="line"/>
+    <text x="974" y="4" class="dim">+6.250 cornice/eaves control</text>
+
+    <!-- bay axes x = 1.95,4.65,7.35,10.05 at 80px/m -->
+    <g>
+      <line x1="156" y1="-35" x2="156" y2="520" class="axis"/>
+      <line x1="372" y1="-35" x2="372" y2="520" class="axis"/>
+      <line x1="588" y1="-35" x2="588" y2="520" class="axis"/>
+      <line x1="804" y1="-35" x2="804" y2="520" class="axis"/>
+      <text x="156" y="540" text-anchor="middle" class="dim">1.95</text>
+      <text x="372" y="540" text-anchor="middle" class="dim">4.65</text>
+      <text x="588" y="540" text-anchor="middle" class="dim">7.35</text>
+      <text x="804" y="540" text-anchor="middle" class="dim">10.05 m</text>
+    </g>
+
+    <!-- upper windows: sill 4.10m -> y172; head 5.65m -> y48; h124, w76 -->
+    <g>
+      <rect x="118" y="48" width="76" height="124" class="opening"/>
+      <rect x="334" y="48" width="76" height="124" class="opening"/>
+      <rect x="550" y="48" width="76" height="124" class="opening"/>
+      <rect x="766" y="48" width="76" height="124" class="opening"/>
+      <!-- simple sash divisions -->
+      <line x1="118" y1="110" x2="194" y2="110" class="line"/><line x1="156" y1="48" x2="156" y2="172" class="line"/>
+      <line x1="334" y1="110" x2="410" y2="110" class="line"/><line x1="372" y1="48" x2="372" y2="172" class="line"/>
+      <line x1="550" y1="110" x2="626" y2="110" class="line"/><line x1="588" y1="48" x2="588" y2="172" class="line"/>
+      <line x1="766" y1="110" x2="842" y2="110" class="line"/><line x1="804" y1="48" x2="804" y2="172" class="line"/>
+    </g>
+
+    <!-- ground principal windows bays 1 and 4: sill 0.675=446px from top? y=500-54-152=294; head 2.55 =>296 from top -->
+    <rect x="114" y="296" width="84" height="150" class="opening"/>
+    <line x1="114" y1="371" x2="198" y2="371" class="line"/><line x1="156" y1="296" x2="156" y2="446" class="line"/>
+
+    <!-- stair window bay 2: head 2.55, sill 1.05 -->
+    <rect x="336" y="296" width="72" height="120" class="opening"/>
+    <line x1="336" y1="356" x2="408" y2="356" class="line"/><line x1="372" y1="296" x2="372" y2="416" class="line"/>
+
+    <!-- entrance bay 3: approx 0.95 x 2.55 -->
+    <rect x="550" y="296" width="76" height="204" class="door"/>
+    <rect x="540" y="286" width="96" height="214" fill="none" class="stone"/>
+    <line x1="588" y1="296" x2="588" y2="500" class="line"/>
+    <circle cx="605" cy="402" r="3" fill="#333"/>
+
+    <rect x="762" y="296" width="84" height="150" class="opening"/>
+    <line x1="762" y1="371" x2="846" y2="371" class="line"/><line x1="804" y1="296" x2="804" y2="446" class="line"/>
+
+    <!-- cornice -->
+    <rect x="-12" y="-8" width="984" height="16" class="stone"/>
+
+    <!-- labels -->
+    <text x="156" y="478" text-anchor="middle" class="small">drawing room</text>
+    <text x="372" y="442" text-anchor="middle" class="small">stair window</text>
+    <text x="588" y="522" text-anchor="middle" class="small">principal entrance · bay 3</text>
+    <text x="804" y="478" text-anchor="middle" class="small">study</text>
+
+    <!-- width dimension -->
+    <line x1="0" y1="580" x2="960" y2="580" class="dimline"/>
+    <line x1="0" y1="570" x2="0" y2="590" class="dimline"/><line x1="960" y1="570" x2="960" y2="590" class="dimline"/>
+    <text x="480" y="603" text-anchor="middle" class="dim">12.0 m overall · 2.70 m bay spacing</text>
+  </g>
+
+  <g transform="translate(1130,175)">
+    <rect x="0" y="0" width="300" height="580" class="note"/>
+    <text x="18" y="34" class="label">Coupling logic</text>
+    <text x="18" y="66" class="small">The four-bay field is centred.</text>
+    <text x="18" y="88" class="small">The door is not.</text>
+    <text x="18" y="110" class="small">It occupies bay 3 because the</text>
+    <text x="18" y="132" class="small">stair owns the hall's west side.</text>
+
+    <text x="18" y="182" class="label">Bay 2</text>
+    <text x="18" y="214" class="small">Centreline follows façade order.</text>
+    <text x="18" y="236" class="small">Sill follows stair geometry.</text>
+    <text x="18" y="258" class="small">Head joins ground datum.</text>
+
+    <text x="18" y="308" class="label">Vertical hierarchy</text>
+    <text x="18" y="340" class="small">Ground openings are taller.</text>
+    <text x="18" y="362" class="small">Upper openings are quieter.</text>
+    <text x="18" y="384" class="small">Hierarchy comes from section +</text>
+    <text x="18" y="406" class="small">opening family, not ornament alone.</text>
+
+    <text x="18" y="456" class="label">Not fixed here</text>
+    <text x="18" y="488" class="small">Exact sash construction</text>
+    <text x="18" y="510" class="small">Stone / brick detailing</text>
+    <text x="18" y="532" class="small">Fanlight / surround family</text>
+    <text x="18" y="554" class="small">Roof drainage / pitch</text>
+  </g>
+
+  <text x="55" y="902" class="small">RH-04 coordination drawing. Opening dimensions are project-level planning values, not promoted G-01 dimensional rules or construction information.</text>
+</svg>
