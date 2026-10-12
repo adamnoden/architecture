@@ -1,24 +1,12 @@
 # Reference House
 
-The Reference House is one coordinated interpretation of House Kernel. It brings architectural and technical propositions into the same building so that conflicts hidden by isolated principles or patterns become visible in plan, section, structure, envelope, services and maintenance.
+The Reference House is one coordinated interpretation of House Kernel. It brings doctrine, patterns, technical families, a selected architectural grammar and one domestic programme into the same building so conflicts become visible in plan, section, structure, services, environment, maintenance and occupied interfaces.
 
-It is an integration test, not proof of the doctrine.
+It is an **integration test**, not proof of House Kernel.
 
-The active staged execution plan is the [Reference House Design Programme](../development/reference-house-design-programme.md). It is the restart-safe control for current design work and should be read before resuming a partially completed Reference House stage.
+Read the [Reference House Design Programme](../development/reference-house-design-programme.md) first when resuming work. The [Brief and Constraint Ledger](brief-and-constraint-ledger.md) is the canonical project brief; the [Pattern Occurrence Register](pattern-occurrence-register.md) is the canonical record of actual House Kernel pattern use.
 
-The canonical project brief is the [Brief and Constraint Ledger](brief-and-constraint-ledger.md). RH-00 closed that ledger on 2026-10-12.
-
-RH-01 selected the compact central-court morphology. RH-02 tested it at furniture scale and selected the ground-floor order. RH-03 fixed the principal stair and four-bedroom upper order. RH-04 coupled plan, section and elevation. RH-05 established the structural concept. RH-06 traced the service topology and deleted the remote principal en-suite. RH-07 retained the courtyard as a shaded light court and selected central MVHR with a bounded service-topology rewind. RH-08 has now resolved the roof, rainwater and external-maintenance geography without requiring an architectural rewind.
-
-## Architectural scope
-
-The house selects a **Georgian-derived architectural grammar**, provisionally represented by G-01, together with a courtyard morphology and a project-specific tectonic dialect. These are choices made for this house, not House Kernel doctrine.
-
-House Kernel propositions should remain intelligible under a materially different architectural language. G-01 is allowed to be strongly opinionated about composition, hierarchy, proportion and element families where the research supports those claims. Keeping those authorities separate lets the Reference House be architecturally specific without allowing its style to leak upstream into doctrine.
-
-That separation is governed by the [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md), while the [G-01 Grammar Charter](../grammar/g01-grammar-charter.md) and [G-01 D5 / D6 Evidence Gate v0.3](../grammar/g01-d5-d6-web-pass-v03.md) define the current grammar authority.
-
-## Composition and authority
+## Authority stack
 
 ```text
 House Kernel doctrine
@@ -32,250 +20,172 @@ House Kernel doctrine
 = Reference House
 ```
 
-The layers constrain one another without becoming interchangeable.
+These layers constrain one another without becoming interchangeable.
 
-- **House Kernel doctrine** owns the general long-life propositions: serviceability, lifespan separation, designed interfaces, failure tolerance, maintenance geography, repose, passive-first environmental strategy and architectural resolution of technology.
-- **House Kernel patterns / strategies** own reusable responses selected for the project. Their use here does not increase their general evidence or maturity.
-- **Supported technical families** describe construction or system routes being evaluated. A masonry, floor, heating, ventilation or roof family does not become a House Kernel preference merely because this house uses it.
-- **G-01** owns Georgian-derived spatial and compositional constraints that survive the research. It does not currently provide a universal room ratio, mandatory whole-house symmetry rule or prescribed roof type.
-- **Project morphology** owns the courtyard and other house-specific geometric decisions that are not part of G-01 by default.
-- **Local dialect** may modify a bounded part of the house without redefining G-01.
-- **Reference House tectonic dialect** owns project-specific visible resolutions such as traditional joinery and restrained brass or bronze where architecturally and functionally justified.
-- **Site / programme** owns orientation, planning response, household needs and other project facts.
+- **House Kernel** owns long-life propositions such as lifespan separation, interface design, failure tolerance, maintenance geography, repose and passive-first hierarchy.
+- **Patterns / strategies** own reusable responses selected for the project; project use does not increase their general evidence.
+- **Technical families** remain project/system choices, not doctrine.
+- **G-01** owns the Georgian-derived compositional constraints that survive its research. Georgian specificity enters here, not upstream.
+- **Project morphology** owns the courtyard and other Reference House geometry.
+- **Reference House tectonic dialect** owns project-specific visible resolutions such as traditional joinery and restrained functional brass/bronze.
+- **Site / programme** owns orientation, planning response, household use and real external constraints.
 
-Where one decision touches two layers, record the dependency rather than promoting the project choice upstream.
+The controlling principle remains: **generalise the reason; localise the taste.**
 
-## Current architectural baseline
+## Current coordinated baseline
 
-The controlled shell remains:
+### Shell and programme
 
 - two principal storeys;
-- outer reservation: **12.0 × 10.8 m**;
-- open courtyard: **3.6 × 4.0 m**;
-- gross side wings: **4.2 m**;
-- gross front/rear wings: **3.4 m**;
-- gross enclosed plate proxy: **115.2 m²/storey**, **230.4 m²** across two principal storeys before wall thickness, stairs and local voids/projections.
+- outer reservation **12.0 × 10.8 m**;
+- open court **3.6 × 4.0 m**;
+- gross side wings **4.2 m**;
+- gross front/rear wings **3.4 m**;
+- gross enclosed plate proxy **115.2 m²/storey / 230.4 m²** across two principal storeys before wall thickness, stairs and local voids/projections;
+- four bedrooms;
+- no principal en-suite: RH-06 replaced the remote en-suite with `U-DRESS-01` rather than buying a second stack/cross-joist drainage route.
 
 ### Ground floor
 
-The selected order remains **G1 — one-sided service gallery + linked rear rooms**. Use the [RH-02 Ground-Floor Development](ground-floor-development.md) and [drawing](ground-floor-development.svg) together with the [RH-03 stair overlay](stair-ground-floor-overlay.svg).
+The selected order remains **G1 — one-sided service gallery + linked rear rooms**:
 
-Current roles are:
-
-- west/front — principal drawing room;
-- west/rear — informal family room;
-- south/centre — entrance / principal stair hall addressing the courtyard;
-- east inner flank — narrow all-weather gallery;
+- west/front — drawing room;
+- west/rear — family room;
+- south/centre — entrance and principal stair hall;
+- east inner flank — all-weather gallery;
 - south-east — compact study;
-- east-middle — service suite;
+- east-middle — service suite / plant geography;
 - north/centre — garden dining hall;
-- north-east — kitchen with direct garden relationship.
+- north-east — kitchen.
 
-The service/gallery flank is drawn east for coordination continuity. The scheme remains mirrorable until a real site gives one side different solar, utility, neighbour or access value.
+The service flank is drawn east for coordination continuity, not as a universal compass requirement.
 
-### Stair and upper floor
+### Stair / upper floor
 
-The principal stair remains a **three-flight full-landing stair**:
+The principal stair remains a three-flight full-landing stair:
 
-- 18 risers total;
-- three flights of six risers;
+- 18 risers;
+- three flights of six;
 - 280 mm planning going;
-- approximately 1000 mm clear-flight target;
+- approximately 1000 mm clear width;
 - no winders.
 
-RH-04 controls the first-floor datum at **+3300 mm**, giving a planning rise of **183.3 mm**, `2R + G ≈ 647 mm` and a pitch of approximately **33.2°**.
+With the RH-04 first-floor datum at +3300 mm, planning rise is approximately 183.3 mm.
 
-The upper floor remains four bedrooms:
-
-- west/rear — principal bedroom;
-- west/front — secondary double bedroom;
-- east/front — compact double / secondary bedroom;
-- east/rear — compact double / secondary bedroom.
-
-Upper circulation remains:
+Upper circulation is:
 
 **south stair hall → east courtyard gallery → north cross-landing**.
 
-The main family bathroom stacks directly over the service hub. RH-06 deleted the formerly conditional principal en-suite because its remote position demanded disproportionate drainage infrastructure. The former `U-ENS-01` reservation is now `U-DRESS-01` principal dressing / linen / storage.
+The family bathroom stacks above the service hub; the former en-suite reservation is now dressing/linen/storage.
 
-### Vertical and elevation order
+### G-01 / section / elevation
 
-Use [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md), the [front elevation](front-elevation-study.svg), [courtyard elevations](courtyard-elevations-study.svg) and [principal section](principal-section-rh04.svg).
+Use [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md).
 
-Controlled vertical datums are:
+Controlled datums:
 
-- ground FFL: **±0**;
-- ground clear ceiling: **+2950 mm**;
-- first-floor FFL: **+3300 mm**;
-- upper clear ceiling: **+6000 mm**;
-- cornice/eaves-control datum: approximately **+6250 mm**.
+- ground FFL ±0;
+- ground clear ceiling +2950 mm;
+- first-floor FFL +3300 mm;
+- upper clear ceiling +6000 mm;
+- cornice/eaves control approximately +6250 mm.
 
-The front uses a **centred four-bay field** at X = **1.95 / 4.65 / 7.35 / 10.05 m**, with 2.70 m bay spacing. The principal entrance occupies **bay 3**. The courtyard has its own scoped order; the front-door axis and courtyard axis are intentionally different.
+The principal front uses a centred four-bay field at X = **1.95 / 4.65 / 7.35 / 10.05 m**, with the entrance deliberately in bay 3. The courtyard has its own scoped order. The front-door axis and courtyard axis are intentionally different.
 
-## Current structural baseline
+### Structure
 
-Use [RH-05 Structural Coordination](structural-coordination.md) and the [structural concept overlay](structural-concept-overlay.svg).
+Use [RH-05 Structural Coordination](structural-coordination.md).
 
-The pre-engineering concept uses the permanent masonry geometry rather than adding an independent whole-house frame:
+Current pre-engineering concept:
 
-- loadbearing inner leaf of the external masonry envelope;
-- loadbearing inner leaf of the courtyard envelope;
-- west/east floor strips spanning approximately **4.2 m gross**;
-- north/south central strips spanning approximately **3.4 m gross**;
-- four repeated approximately **3.4 m edge beams** continuing the courtyard side-wall support lines through front and rear wings;
+- loadbearing external and courtyard masonry inner leaves;
+- west/east floor strips span approximately 4.2 m gross;
+- north/south central strips span approximately 3.4 m gross;
+- four short repeated edge beams continue courtyard support lines through front/rear wings;
 - local stair trimmers;
-- permanent structural deck acting as the diaphragm independently of any removable floor layer.
+- structural deck remains the diaphragm;
+- 350 mm first-floor zone survives provisionally.
 
-The **350 mm** first-floor reservation survives provisionally. No member or masonry capacity has been proved.
+Courtyard reaction nodes, edge beams, stair trimmers and opening bearing zones remain protected from casual service drilling.
 
-Protected no-drill / no-chase zones include courtyard corner reaction nodes, the four edge beams, stair trimmers and opening bearing zones.
+### Services / failure geography
 
-## Current service baseline
+Use [RH-06 Services and Failure Geography](service-topology-rh06.md) and the later [RH-07 MVHR Addendum](service-topology-rh07-mvhr-addendum.md).
 
-Use [RH-06 Services and Failure Geography](service-topology-rh06.md), the [service topology overlay](service-topology-rh06.svg), [riser section](service-riser-section-rh06.svg), the current [crossing register](service-crossing-register-rh06.md), and the later [RH-07 MVHR Service Addendum](service-topology-rh07-mvhr-addendum.md).
+- `G-PLANT-01` contains plant, isolation/distribution, physical service index and equipment replacement geography;
+- external plant replacement opening target: nominal 1000 mm clear;
+- `SV-01`: approx. **900 × 700 mm clear** vertical service reservation;
+- one primary 100 mm-class soil/vent stack;
+- short service-side foul exit and inspection geometry;
+- dry electrical/data/small-bore routes remain distinct from wet/gravity/large-duct routes;
+- cooker source capture is a separate direct-to-outside route;
+- central MVHR is selected conditionally, with continuous MEV fallback if duct/acoustic/maintenance burden proves disproportionate.
 
-The service topology remains service-specific rather than one universal technical spine.
+### Environmental hierarchy
 
-### Service suite and vertical zone
+Use [RH-07 Environmental Coordination](environmental-coordination.md).
 
-`G-SVC-02` contains the service suite:
+Current hierarchy:
 
-- `G-PLANT-01` — plant, primary isolation/distribution, physical service index and equipment replacement geography;
-- utility / WC band;
-- internal access from `G-GAL-01`;
-- nominal **1000 mm clear external replacement-opening target**.
-
-`SV-01` remains a bounded **900 × 700 mm clear** vertical reservation. RH-07 adds the principal MVHR supply/extract trunks to its coordination burden alongside the 100 mm-class soil/vent stack, water and segregated dry services. The approximately **1050 × 850 mm** framed floor-opening envelope remains only an engineering starting point.
-
-If competent MEP/fire coordination cannot keep that bundle proportionate, continuous MEV is the first ventilation fallback; the project does not enlarge the service core automatically.
-
-### Foul / wet services
-
-One primary soil/vent stack serves the family bathroom, ground WC, utility and short kitchen branch. Its accessible base exits to a service-side external inspection chamber. No foul drain crosses beneath the courtyard.
-
-Pressurised-water failure responses remain route-specific: accessible isolation/joints, joint-minimised vertical runs, accessible appliance valves, dry-side bathroom service access and visible/inspectable riser base.
-
-### Whole-dwelling ventilation
-
-RH-07 selects **central MVHR** as the Reference House baseline because this purpose-built house can coordinate it around the existing service hub, vertical zone and radial structural spans.
-
-Current rules:
-
-- `MVHR-01` sits in `G-PLANT-01` with normal filter/service access and the existing equipment replacement route;
-- main supply/extract trunks rise through `SV-01`;
-- ground branches, where needed inside the first-floor zone, are bounded routes aligned with joist direction, not a generic plenum;
-- upper branches prefer roof/ceiling and landing/gallery geography;
-- bathroom / utility / WC / kitchen background extract may join the central system;
-- `KX-01` cooker source capture remains a separate direct-to-outside grease/pollutant route;
-- `RH-P005-13 / PEN-MV-01` records the outdoor-air/exhaust boundary crossing family;
-- openable windows remain required for purge and overheating control;
-- continuous MEV is the explicit fallback if MVHR's duct, acoustic, maintenance or commissioning burden proves disproportionate.
-
-## Current environmental baseline
-
-Use [RH-07 Environmental Coordination](environmental-coordination.md), the [environmental diagram](environmental-coordination.svg) and [courtyard solar screening section](courtyard-solar-section-rh07.svg).
-
-The environmental hierarchy is:
-
-1. shallow 3.4–4.2 m occupied bands and genuine multi-aspect opportunity;
-2. disciplined opening areas rather than a generic glazed rear wall;
-3. orientation-specific external shading / solar-control glazing where justified;
+1. shallow multi-aspect occupied bands;
+2. disciplined glazing rather than a generic glazed rear wall;
+3. orientation-specific shading / solar control;
 4. secure purge and cross ventilation through openable windows;
-5. MVHR for controlled whole-dwelling IAQ / winter heat recovery;
+5. MVHR for controlled IAQ / winter heat recovery;
 6. no reserved mechanical cooling.
 
-### Courtyard
+The courtyard is a **shaded light court**, not a sunny primary garden. Principal rooms retain outer-façade daylight responsibility; the rear garden remains the main sunny amenity.
 
-At roughly 6.25 m to the cornice/eaves control and only 3.6–4.0 m wide, the courtyard is a **shaded light court**, not a sunny primary garden.
+### Roof / drainage / external maintenance
 
-That is acceptable because principal habitable rooms retain meaningful outer-façade daylight responsibility; the court gives diffuse light and orientation to hall/gallery/circulation; it supplies purge/cross-ventilation opportunities; and the rear garden remains the principal sunny external amenity.
+Use [RH-08 Roof, Drainage and External Maintenance](roof-drainage-access-rh08.md).
 
-Shade-tolerant planting is more credible than a large sun-demanding tree.
-
-### Orientation
-
-No site exists, so RH-07 stress-tested all four broad street orientations. No orientation forces a morphology rewind, but east/west low-angle solar gain becomes the critical shading case. The Reference House therefore does **not** acquire a large undifferentiated rear glazed wall merely because contemporary houses often do.
-
-Dynamic overheating and daylight modelling remain required once actual site, neighbouring obstruction, glazing, secure opening geometry and material properties exist.
-
-## Current roof, drainage and external-maintenance baseline
-
-Use [RH-08 Roof, Drainage and External Maintenance](roof-drainage-access-rh08.md), the [roof/drainage plan](roof-drainage-plan-rh08.svg), revised [External Access & Maintenance Plan](external-access-maintenance-plan.md) and [maintenance-access diagram](external-maintenance-access-rh08.svg).
-
-### Roof form
-
-The controlled roof is now **four very-low-slope outward-draining fields** divided by diagonal watersheds between outer and courtyard corners.
-
-Approximate plan catchments are:
-
-- south — **26.5 m²**;
-- north — **26.5 m²**;
-- west — **31.1 m²**;
-- east — **31.1 m²**.
-
-All four fields fall **away from the courtyard** to external collection edges. The roof therefore has:
-
+- four very-low-slope roof fields fall **outward from the courtyard**;
 - no inner courtyard roof gutter;
 - no internal roof outlet;
-- no valley directing water to the building centre;
-- no rainwater pipe inside occupied rooms.
+- inspectable external collection edges and side/rear downpipes;
+- court drains only its own open-to-sky area through a primary route plus independent visible emergency overflow;
+- no permanent roof hatch;
+- planned external scaffold/tower is the primary roof-access strategy;
+- east/service side remains principal utility/plant/terminal/access geography;
+- garden-to-court route remains maintenance logistics path;
+- soil vent is the only currently expected roof service penetration.
 
-The exact waterproofing/material system and final fall remain technical design. A roughly 1:40-class fall is used only as a coordination check; across the 3.4–4.2 m ring depths that implies only about 85–105 mm of rise, so the shaded court is not turned into a materially taller canyon.
+### Tectonic / occupied interfaces
 
-The roof remains visually recessive behind the RH-04 cornice/parapet control. This is a Reference House solution, not a G-01 roof rule.
+Use [RH-09 Tectonic and Occupied-Surface Integration](tectonic-integration-rh09.md), the revised [Tectonic Architectural Language](tectonic-architectural-language.md), [interface family drawing](tectonic-interface-family-rh09.svg) and [prototype handoff matrix](prototype-handoff-rh09.md).
 
-### Rainwater
+RH-09 establishes:
 
-`RW-OUT-01` uses open/inspectable outer collection edges and four return downpipes kept off the principal front field. Under symmetrical catchment splitting each downpipe represents roughly **28.8 m²** of roof-plan catchment before hydraulic correction. Final sizing and site discharge remain technical/site design.
+- **W0** — direct mineral/plaster finish on quiet permanent walls: baseline;
+- **W1** — sparse controlled attachment / architectural datums where repeated fixing or service access earns them;
+- **W2** — removable dense-mineral lining: P01 experimental challenger only;
+- substantial removable timber skirting may carry bounded dry service routes, but ordinary socket outlets rise to appropriate accessible positions through declared door/architrave or local service zones;
+- representative permanent-opening / replaceable-window, permanent-opening / replaceable-door, external threshold and wall/ceiling movement-junction families are now explicit;
+- principal-room floors remain conventional continuous floors; selective floor access is not currently selected;
+- brass/bronze remains sparse and functional rather than a visible disassembly grid.
 
-`RW-COURT-01` handles principally the court's own **14.4 m²** open area. An accessible east-side court collector feeds one short straight primary drain beneath service/circulation geography to an external inspection point. A separate higher emergency-overflow inlet uses an independent route to a visible service-side discharge. Room thresholds are not the overflow path.
-
-### Roof terminals
-
-The roof remains deliberately sparse:
-
-- MVHR intake/exhaust are preferred on the east/service high-level wall rather than the roof, subject to competent separation/nuisance design;
-- cooker source capture remains on the east/service wall;
-- the soil/vent stack is the one current roof service penetration;
-- no chimney, rooflight or rooftop plant is currently selected.
-
-Adding any of those later reopens RH-08 locally.
-
-### Maintenance access
-
-There is **no permanent roof hatch** in the RH-08 baseline.
-
-Likely roof tasks are infrequent and are better served by planned external scaffold/tower access, which provides safe arrival, edge protection and material handling together. A hatch would add a permanent weather/air/thermal/security penetration without providing those things.
-
-The maintenance geography now protects:
-
-- east/service-side plant, utility, terminal and roof-access strip;
-- representative west-side façade/roof-edge positions;
-- rear scaffold/tower working line;
-- north garden → garden-dining → courtyard logistics route;
-- at least one viable small-tower working position inside the court.
-
-The controlling logistics opening has a **1200 mm clear-opening coordination target** where the eventual door family permits it. A permanent central fountain/planter no longer has design authority if it would consume the court's only credible maintenance working position.
+The house is intentionally architecturally complete if W2 and selective floor access both fail their physical tests.
 
 ## Pattern occurrences
 
-The [Pattern Occurrence Register](pattern-occurrence-register.md) is the canonical record of pattern use.
+The [Pattern Occurrence Register](pattern-occurrence-register.md) is authoritative.
 
-RH-08 now adds current occurrences for:
+Current occurrences now span utility/service topology, designed penetrations, rainwater/roof/façade access, source capture, vertical distribution and RH-09 occupied-interface families including:
 
-- `RH-P009-01` — outer accessible rainwater route;
-- `RH-P009-02` — courtyard primary drain + independent emergency overflow;
-- `RH-P011-01` — task-specific roof maintenance route with no permanent hatch;
-- `RH-P013-01` — declared ground-supported outer/courtyard façade-access geography;
-- `RH-P005-14` — courtyard primary-drain / overflow crossing family;
-- `RH-P005-15` — soil/vent roof crossing.
+- `RH-P007-01` replaceable-window opening family;
+- `RH-P008-01` wall/ceiling movement junction;
+- `RH-P015-01` dry-room edge service route;
+- `RH-P019-01` replaceable doorset in permanent openings;
+- `RH-P020-01` external threshold family;
+- `RH-P022-01` sparse controlled attachment datum family.
 
-A Reference House occurrence remains evidence about coordination in this project, not evidence that the pattern is generally valid.
+Held candidates do not receive occurrence IDs merely because the house is interested in them.
 
 ## Current work
 
-`RH-09 — Tectonic and occupied-surface integration` is now active.
+`RH-10 — Whole-house coordination audit` is active.
 
-The next task is to make the maintainable house feel like architecture rather than infrastructure. RH-09 must coordinate the wall attachment/lining strategy, skirting and service interfaces, window frame/subframe replacement, doors and thresholds, wall/ceiling movement joints, selective floor access where justified, visible access panels/service indexing, and ordinary versus exceptional fixing loads.
+The next task is adversarial rather than generative: test the complete virtual house for clashes and proportionality across programme, G-01, structure, services/MVHR, environment, drainage/moisture, fire/acoustic geometry, maintenance/replacement, occupied interfaces, pattern occurrences, cost/area/complexity and authority drift.
 
-Non-conventional occupied-surface moves must either be supported provisionally, sent to P01/P02/P04 for physical testing, or rejected. RH-09 should not use mouldings, brass or access panels as decorative camouflage for unresolved assemblies.
+Reference House maturity remains **M2** until that audit shows adjacent systems are genuinely reconciled and remaining uncertainty is specialist/prototype/external rather than basic architectural coordination.
