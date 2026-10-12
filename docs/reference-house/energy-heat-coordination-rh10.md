@@ -50,7 +50,7 @@ Why it wins at Reference House resolution:
 - leaves heat-generation equipment replaceable without disturbing principal rooms;
 - gives a real distribution topology to coordinate now without pretending a specific product is known.
 
-The external unit is placed provisionally at the **rear end of the east/service side**, where the garden/service geography gives better air movement and replacement access than the constrained front elevation.
+The external unit is placed provisionally in the **middle-to-rear east/service-side working zone beside `G-PLANT-01`**, biased toward the plant-room/service field rather than beneath a bedroom opening. Exact position remains subject to real-site boundary, airflow, acoustic, terminal and access constraints.
 
 ### H2 — ground-source heat pump
 
@@ -166,8 +166,7 @@ Create `ASHP-01` as the working external heat-source object.
 
 Preferred position:
 
-- rear portion of the east/service side;
-- outside `G-PLANT-01` / kitchen-service geography;
+- **middle-to-rear portion of the east/service side beside `G-PLANT-01`**, within the service/bathroom field rather than below a bedroom opening;
 - accessible from the same side/rear maintenance route used for plant replacement;
 - clear of the principal front elevation and courtyard;
 - separated from MVHR intake, cooker exhaust, bedroom openings and rainwater goods as competent acoustic/MEP design requires.
