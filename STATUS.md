@@ -12,15 +12,21 @@ The architectural position and canonical pattern language are established strong
 
 ### Reference House
 
-The Reference House has passed **RH-00 through RH-10** and is now **M3 — Coordinated at virtual-design scope**. RH-10 deliberately stepped back before certifying the accumulated design and found five material issues: missing heating/DHW topology, no forward PV provision, an RH-04/RH-08 roof-authority conflict, unresolved rear/service elevations and continued dependence on the old 350 mm wall allowance. Those were repaired inside the gate: air-to-water heat pump + DHW/hydronic topology is explicit, roughly 50 m² of PV-capable roof is reserved, the low-slope outward-draining roof formally supersedes the earlier pitched-roof preference, all outer elevations now have scoped order, and the shell survives a 450 mm masonry-envelope stress test. The active stage is **RH-11 — External-review package**. The next value comes from competent attack by structural, fire/building-control, MEP/acoustic and building-physics/energy reviewers, each against explicit rewind conditions rather than general concept commentary.
+The Reference House has passed **RH-00 through RH-11**. It remains **M3 — Coordinated at virtual-design scope**. RH-10 reconciled the whole virtual building; RH-11 has now turned the remaining structural, fire/building-control, MEP/acoustic and building-physics/energy uncertainties into issue-ready review briefs with explicit assumptions, current regulatory baseline, fallback logic and rewind conditions.
+
+The design-gate sequence is therefore complete at its current virtual scope. **Active work is evidence execution, not another design stage:** issue the RH-11 pack to competent reviewers, record findings against the owning RH gate, and progress the P03 structural floor-edge and P04 wall/ceiling physical-validation work in parallel. Package preparation is not validation and does not raise maturity.
 
 ### Physical and engineering validation
 
-This remains a major evidence gap between a coordinated architectural system and a credible building system. The immediate tests are the W2 wall bay, structural floor-edge alternatives and the Reference House wall/ceiling interface. RH-09/RH-10 make the dependency explicit: W2 and selective floor access are not required for architectural completeness; P03 remains a structural dependency and P04 must test the selected wall/ceiling movement problem rather than a decorative special detail.
+This remains a major evidence gap between a coordinated architectural system and a credible building system. P03 structural floor-edge work is a real RH-05 engineering dependency and P04 tests the selected RH-09 wall/ceiling movement interface. P01 W2 remains an optional challenger rather than an architectural dependency; P02 selective floor access is not currently selected by the Reference House.
+
+Prototype outcomes should be allowed to reject or simplify implementations. A successful mock-up does not promote a general House Kernel proposition automatically, and a failed challenger does not invalidate the house where a conventional baseline already exists.
 
 ### Professional review
 
-This is now the active Reference House gate rather than a generic future intention. The coordinated house needs competent external attack from structural engineering, building-control/fire practice, MEP/acoustic engineering and building-physics/energy work. Negative findings are useful outcomes: they should force a bounded rewind, narrowing or rejection rather than be absorbed as exceptions.
+The [RH-11 External Review Brief](docs/reference-house/external-review-brief.md) is now issue-ready, with separate structural, fire/building-control, MEP/acoustic and building-physics/energy appendices plus a date-stamped regulatory baseline and response template.
+
+**No competent review response has yet been recorded.** External professional review therefore remains M1. The next value comes from actual independent findings, especially negative ones that force a bounded rewind, qualification or rejection. A review request, meeting or unprocessed consultant note is not validation.
 
 ### Publication and delivery
 
@@ -57,9 +63,9 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 | **Pattern language** | **M4** | 2026-10-12 | 21 active patterns, three strategies and four held candidates are canonical at current internal scope. | Reopen only when new architectural, physical or external evidence requires change. |
 | **Architectural grammar framework** | **M3** | 2026-10-12 | Grammar is a first-class layer separate from House Kernel doctrine and is coordinated at framework level. | Continue to test neutrality across concrete grammar instances. |
 | **G-01 grammar instance** | **M2** | 2026-10-12 | The Georgian-derived instance has corpus, dimensional and coupling work, but derivation remains incomplete. | Complete evidence-led derivation and test it against the Reference House without promoting project taste into doctrine. |
-| **Reference House** | **M3** | 2026-10-12 | RH-00 through RH-10 are coordinated at virtual-design scope; the whole-house audit reconciles architecture, structure, services, environment, roof/maintenance, occupied interfaces, heating/renewables and envelope, with remaining uncertainty bounded to engineering, simulation, prototype, real-site and external-review work. | RH-11 competent structural, fire/building-control, MEP/acoustic and building-physics review; resolve any material rewinds before claiming further maturity. |
+| **Reference House** | **M3** | 2026-10-12 | RH-00 through RH-10 are coordinated at virtual-design scope and RH-11 now provides issue-ready discipline review packages; remaining uncertainty is bounded to engineering, simulation, prototype, real-site and actual competent external-review evidence. | Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, and progress P03/P04 validation; do not claim further maturity from package preparation alone. |
 | **Physical prototypes** | **M2** | 2026-10-12 | The programme, acceptance criteria and W2 build/test material exist; no physical validation has yet been recorded. | Build and test the wall bay; engineer and test the floor edge; then the floor platform and tectonic joint. |
-| **External professional review** | **M1** | 2026-10-12 | Review targets and computational review material exist; competent broad external review has not yet occurred. | Structural, fire/building-control and building-services review. |
+| **External professional review** | **M1** | 2026-10-12 | RH-11 now provides issue-ready structural, fire/building-control, MEP/acoustic and building-physics/energy review briefs with explicit rewind criteria; no competent review response has yet been recorded. | Obtain and process competent discipline reviews; material findings reopen the owning Reference House gate and remain unresolved until closure evidence is recorded. |
 | **Computational track** | **M3** | 2026-10-12 | P0 passed 17/17 tests and PAT-XW-01 passed 6/6; generic compiler growth is intentionally stopped. | Add a fixture only when another workstream exposes a concrete high-value question. |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | Major evidence packages exist and taxonomy ambiguities are largely closed. | Targeted claim hardening where physical or publication maturity requires it. |
 | **Publication** | **M3** | 2026-10-12 | Publication Architecture v0.12 is established; Parts III/IV and figure language remain less mature than the main argument. | Finish Part III/IV development, figures and evidence presentation. |
@@ -70,13 +76,13 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 **Physical quality.** Replaceable walls, floors and interfaces may work technically yet feel hollow, temporary or over-detailed. Tactile, acoustic and architectural quality must survive the serviceability agenda.
 
-**Complexity and proportionality.** Serviceability infrastructure can consume more space, money, carbon and maintenance than the future work it avoids. RH-10 is encouraging here: later gates have repeatedly deleted or rejected disproportionate infrastructure rather than accumulating it. That discipline must continue under specialist review.
+**Complexity and proportionality.** Serviceability infrastructure can consume more space, money, carbon and maintenance than the future work it avoids. RH-10 is encouraging here: later gates repeatedly deleted or rejected disproportionate infrastructure rather than accumulating it. That discipline must continue under specialist review.
 
 **Workmanship.** A detail that works only under designer supervision fails the project. Tests should include imperfect backgrounds, realistic tolerances and ordinary competent installation.
 
 **Environmental performance.** Passive-first is a hierarchy, not a predetermined system answer. Actual orientation, glazing, gains, heat loss, ASHP acoustics, PV performance and dynamic overheating remain unproved until a real site and specialist models exist.
 
-**External validation gap.** M3 is internal coordination, not external proof. Structural, fire/building-control, MEP/acoustic and building-physics assumptions are now explicit enough to attack, but remain vulnerable until that review occurs.
+**External validation gap.** M3 is internal coordination, not external proof. Structural, fire/building-control, MEP/acoustic and building-physics assumptions are now explicit and issue-ready, but remain vulnerable until competent reviewers attack them and findings are resolved.
 
 **Authority drift.** The Reference House is the project's dominant concrete example. Repetition can make its Georgian grammar, courtyard form, masonry family, low-slope roof, ASHP/PV or tectonic vocabulary appear inevitable even when they are project choices. Generalise the reason; keep the taste and technology local.
 
