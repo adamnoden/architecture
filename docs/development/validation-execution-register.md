@@ -8,6 +8,12 @@ The Reference House is M3 at coordinated virtual-design scope. The design-gate s
 
 A document being ready is not evidence that the underlying proposition passed.
 
+**Live execution issues:**
+
+- [#30 — P03 structural floor-edge engineering option reduction](https://github.com/adamnoden/architecture/issues/30)
+- [#31 — P04 wall/ceiling movement-junction build and test](https://github.com/adamnoden/architecture/issues/31)
+- [#32 — RH-11 competent external-review execution](https://github.com/adamnoden/architecture/issues/32)
+
 ## State vocabulary
 
 - **READY** — brief/protocol is sufficient to issue/build;
@@ -30,6 +36,8 @@ A document being ready is not evidence that the underlying proposition passed.
 | `ER-MEP-01` | MEP / acoustic review | **READY / UNISSUED** | `external-review-mep-acoustic-rh11.md` | plant-room packing, MVHR/ASHP/acoustic response | RH-06/RH-07/RH-10 |
 | `ER-BPE-01` | building physics / energy review | **READY / UNISSUED** | `external-review-building-physics-energy-rh11.md` | envelope/junction/overheating/daylight/energy response | RH-02/RH-04/RH-07/RH-08/RH-10 |
 
+Execution owner: [#32](https://github.com/adamnoden/architecture/issues/32).
+
 No row above may move to **EVIDENCED** because an email was sent or a meeting occurred. Record the actual finding and closure evidence.
 
 ---
@@ -38,12 +46,14 @@ No row above may move to **EVIDENCED** because an email was sent or a meeting oc
 
 ### `P03-A` — engineered option reduction
 
-**State:** **READY / BLOCKED — EXTERNAL**
+**State:** **READY / BLOCKED — EXTERNAL**  
+**Execution issue:** [#30](https://github.com/adamnoden/architecture/issues/30)
 
 Inputs now frozen:
 
 - [P03 Engineering Brief](../prototypes/p03-floor-edge-engineering-brief.md);
 - [P03 Test Protocol](../prototypes/p03-floor-edge-test-protocol.md);
+- [P03 option diagram](../prototypes/p03-floor-edge-options.svg);
 - RH-05 structural geometry;
 - conventional restraint-hanger baseline;
 - direct/seated-bearing comparator;
@@ -65,11 +75,13 @@ Do not build until P03-A releases the geometry. A physical connection assembled 
 
 ### `P04-BUILD`
 
-**State:** **READY / BLOCKED — BUILD**
+**State:** **READY / BLOCKED — BUILD**  
+**Execution issue:** [#31](https://github.com/adamnoden/architecture/issues/31)
 
 Inputs:
 
 - [P04 Build Pack](../prototypes/p04-wall-ceiling-build-pack.md);
+- [P04 rig diagram](../prototypes/p04-wall-ceiling-rig.svg);
 - RH-09 `WCJ-01` architectural location;
 - three families: conventional control / concealed slip / functional metal challenger.
 
