@@ -3,6 +3,11 @@ import { dirname, join, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { assertNavigationCoverage } from '../.vitepress/navigation.js'
 import { projectIdentity } from '../project/identity.js'
+import {
+  maturityEvidencePaths,
+  renderMaturityStatusBlock,
+  workstreamStatuses
+} from '../project/maturity.js'
 import { programmeControls } from '../project/programme-controls.js'
 import { dependenciesForAdapter } from '../publication/adapters.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
@@ -150,6 +155,51 @@ function validateProgrammeControlLifecycle(): void {
   }
 }
 
+function validateMaturityStatus(): void {
+  const failures: string[] = []
+  const statusPath = join(repoRoot, 'STATUS.md')
+  const status = readFileSync(statusPath, 'utf8')
+  const startMarker = '<!-- maturity-status:start -->'
+  const endMarker = '<!-- maturity-status:end -->'
+  const start = status.indexOf(startMarker)
+  const end = status.indexOf(endMarker)
+
+  if (start < 0 || end < 0 || end < start) {
+    failures.push('STATUS.md is missing a valid generated maturity-status block')
+  } else {
+    const expected = `${startMarker}\n${renderMaturityStatusBlock()}\n${endMarker}`
+    const actual = status.slice(start, end + endMarker.length)
+    if (actual !== expected) {
+      failures.push('STATUS.md maturity block differs from project/maturity.ts; run npm run status:update')
+    }
+  }
+
+  if (/\bL[1-5]\b/.test(status)) {
+    failures.push('STATUS.md still contains legacy L1-L5 maturity notation; use M1-M5')
+  }
+
+  const ids = new Set<string>()
+  for (const workstream of workstreamStatuses) {
+    if (ids.has(workstream.id)) failures.push(`duplicate maturity workstream id: ${workstream.id}`)
+    ids.add(workstream.id)
+
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(workstream.reviewedOn)) {
+      failures.push(`${workstream.id} has invalid reviewedOn date: ${workstream.reviewedOn}`)
+    }
+  }
+
+  for (const evidencePath of maturityEvidencePaths()) {
+    const path = join(repoRoot, evidencePath)
+    if (!existsSync(path) || !lstatSync(path).isFile()) {
+      failures.push(`maturity evidence path does not exist: ${evidencePath}`)
+    }
+  }
+
+  if (failures.length) {
+    throw new Error(`Maturity-status drift:\n${failures.map((failure) => `  - ${failure}`).join('\n')}`)
+  }
+}
+
 function publicationSources(): Set<string> {
   const sources = new Set<string>()
   for (const entry of [...publicationEntries, ...primerPublicationEntries]) {
@@ -181,7 +231,7 @@ function validateProjectIdentity(): void {
 
   for (const source of ['.vitepress/config.ts', 'publication/scripts/prepare.ts']) {
     const content = readFileSync(join(repoRoot, source), 'utf8')
-    if (content.includes(`'${projectIdentity.name}'`) || content.includes(`\"${projectIdentity.name}\"`)) {
+    if (content.includes(`'${projectIdentity.name}'`) || content.includes(`"${projectIdentity.name}"`)) {
       failures.push(`${source} hard-codes the current project name instead of using project/identity.ts`)
     }
   }
@@ -194,8 +244,9 @@ function validateProjectIdentity(): void {
 assertNavigationCoverage()
 validateLocalMarkdownLinks()
 validateProgrammeControlLifecycle()
+validateMaturityStatus()
 validateProjectIdentity()
 
 console.log(
-  `Repository integrity valid: navigation, local links, ${programmeControls.length} programme-control records and project identity.`
+  `Repository integrity valid: navigation, local links, ${programmeControls.length} programme-control records, ${workstreamStatuses.length} maturity records and project identity.`
 )

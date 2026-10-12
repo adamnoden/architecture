@@ -1,7 +1,7 @@
 # Project Status
 
 **Canonical project-wide status overview**  
-**Last updated:** 2026-10-11  
+**Last updated:** 2026-10-12  
 **Current phase:** **validation / implementation falsification**
 
 This page answers one question: **where is House Kernel now?** Detailed programme histories and gate records remain in their owning areas; this page records the current state, next meaningful work and principal risks.
@@ -26,22 +26,45 @@ The current work needs competent external attack from structural engineering, bu
 
 The publication architecture is structurally established. Remaining work is primarily Part III/IV development, figures, evidence hardening and whole-book proof. Delivery material should continue to lag the research deliberately: only decisions mature enough to become requirements for an appointed team should enter it.
 
-## Workstream status
+## Maturity and workstream status
 
-The maturity scale is **L1 framed · L2 developed · L3 coordinated · L4 internally validated/frozen · L5 externally validated/release-ready**.
+<!-- maturity-status:start -->
+House Kernel uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.
 
-| Workstream | Maturity | Current state | Next meaningful gate |
-|---|---:|---|---|
-| **Public architectural position** | **L3** | Governing principles, selective permanence, interface design, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy are coordinated and style-neutral | evidence/figure hardening and final whole-book proof |
-| **Pattern language** | **L4** | 21 active patterns, three strategies and four held candidates are canonical at current internal scope | reopen only when new architectural, physical or external evidence requires change |
-| **Architectural grammar** | **L3 framework; G-01 incomplete** | Grammar is a first-class layer separate from House Kernel doctrine; the Georgian-derived G-01 instance remains under evidence-led development | continue derivation only where evidence warrants; a materially different second grammar remains the strongest later neutrality test |
-| **Reference House** | **L2–L3** | Current occurrence register and authority stack exist; whole-house geometry and technical coordination remain provisional | coordinated architectural, structural and environmental design |
-| **Physical prototypes** | **L1–L2** | Programme, acceptance criteria and W2 build/test material exist; no physical validation has yet been recorded | build and test the wall bay; engineer/test the floor edge; then floor platform and tectonic joint |
-| **External professional review** | **L1** | Review targets and computational review material exist; competent external review has not yet occurred | structural + fire/building-control + building-services review |
-| **Computational track** | **L3 executable scope; broader paper work frozen** | P0 passed 17/17 tests and PAT-XW-01 passed 6/6; generic compiler growth is intentionally stopped | add a fixture only when another workstream exposes a concrete high-value question |
-| **Evidence / precedent research** | **L3** | Major evidence packages exist and taxonomy ambiguities are largely closed | targeted claim hardening where physical or publication maturity requires it |
-| **Publication** | **L3 structurally** | Publication Architecture v0.12 is established; Parts III/IV and figure language remain less mature than the main argument | finish Part III/IV development, figures and evidence presentation |
-| **Delivery** | **L2** | Implementation-brief structure exists, but downstream requirements remain intentionally incomplete | populate only as architectural and validation decisions mature |
+### Scale
+
+| Level | Meaning | Gate |
+|---|---|---|
+| **M1** | **Framed** | The problem, scope and intended direction are explicit enough to guide further work. |
+| **M2** | **Developed** | Substantive design or research material exists and the main choices and trade-offs are visible, but important coordination remains. |
+| **M3** | **Coordinated** | The workstream has been reconciled with adjacent parts of the project and is internally coherent at its stated scope. |
+| **M4** | **Internally validated / controlled** | The proposition has been deliberately challenged against internal tests or evidence and is stable enough to act as the controlled baseline. |
+| **M5** | **Externally validated / release-ready** | Competent independent review or real-world validation has tested the proposition, material findings are resolved, and it is release-ready at its stated scope. |
+
+The levels are cumulative. An **M3** assessment asserts that the framing and development gates are also satisfied; **M4** adds internal validation; **M5** requires external validation. A level applies only to the stated scope of that workstream.
+
+### Governance
+
+The canonical ratings live in `project/maturity.ts`, not in this Markdown table. TypeScript makes the evidence chain cumulative: a workstream cannot be declared M3 without framing, development and coordination evidence, and M5 cannot be declared without external-validation evidence. Repository validation checks that every registered evidence path exists and that this rendered block exactly matches the typed registry.
+
+That enforcement prevents invalid codes, missing evidence references and duplicated status text from drifting apart. It cannot decide whether the evidence is architecturally convincing, nor can it detect a real-world change that nobody records. Promotion, demotion and reassessment therefore remain explicit architectural/editorial judgements. The per-workstream review date makes the age of those judgements visible rather than pretending they are automatically current.
+
+### Current ratings
+
+| Workstream | Maturity | Reviewed | Current state | Next meaningful gate |
+|---|---:|---|---|---|
+| **Public architectural position** | **M3** | 2026-10-12 | Governing principles, selective permanence, interface design, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy are coordinated and style-neutral. | Evidence and figure hardening, followed by final whole-book proof. |
+| **Pattern language** | **M4** | 2026-10-12 | 21 active patterns, three strategies and four held candidates are canonical at current internal scope. | Reopen only when new architectural, physical or external evidence requires change. |
+| **Architectural grammar framework** | **M3** | 2026-10-12 | Grammar is a first-class layer separate from House Kernel doctrine and is coordinated at framework level. | Continue to test neutrality across concrete grammar instances. |
+| **G-01 grammar instance** | **M2** | 2026-10-12 | The Georgian-derived instance has corpus, dimensional and coupling work, but derivation remains incomplete. | Complete evidence-led derivation and test it against the Reference House without promoting project taste into doctrine. |
+| **Reference House** | **M2** | 2026-10-12 | The occurrence register and authority stack exist; whole-house geometry and technical coordination remain provisional. | Coordinated architectural, structural and environmental design. |
+| **Physical prototypes** | **M2** | 2026-10-12 | The programme, acceptance criteria and W2 build/test material exist; no physical validation has yet been recorded. | Build and test the wall bay; engineer and test the floor edge; then the floor platform and tectonic joint. |
+| **External professional review** | **M1** | 2026-10-12 | Review targets and computational review material exist; competent broad external review has not yet occurred. | Structural, fire/building-control and building-services review. |
+| **Computational track** | **M3** | 2026-10-12 | P0 passed 17/17 tests and PAT-XW-01 passed 6/6; generic compiler growth is intentionally stopped. | Add a fixture only when another workstream exposes a concrete high-value question. |
+| **Evidence / precedent research** | **M3** | 2026-10-12 | Major evidence packages exist and taxonomy ambiguities are largely closed. | Targeted claim hardening where physical or publication maturity requires it. |
+| **Publication** | **M3** | 2026-10-12 | Publication Architecture v0.12 is established; Parts III/IV and figure language remain less mature than the main argument. | Finish Part III/IV development, figures and evidence presentation. |
+| **Delivery** | **M2** | 2026-10-12 | The implementation-brief structure exists, but downstream requirements remain intentionally incomplete. | Populate only as architectural and validation decisions mature. |
+<!-- maturity-status:end -->
 
 ## Principal risks
 
@@ -74,4 +97,4 @@ These areas are not current work queues. Their detailed records remain available
 
 Update this page when a major workstream changes maturity, prototype or professional evidence changes a conclusion, the Reference House reaches a new integration state, or the project's recommended next work materially changes.
 
-Track-specific TODOs and historical sequencing belong in their owning control documents. This page should remain readable in a few minutes.
+The maturity block is generated from `project/maturity.ts`; use `npm run status:update` after changing a rating or its evidence. Track-specific TODOs and historical sequencing belong in their owning control documents. This page should remain readable in a few minutes.
