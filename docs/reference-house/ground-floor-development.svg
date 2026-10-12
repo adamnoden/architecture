@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="960" viewBox="0 0 1500 960" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-02 selected ground-floor development</title>
+  <desc id="desc">Dimensioned schematic ground-floor plan of a 12.0 by 10.8 metre courtyard house. A 3.6 by 4.0 metre open courtyard sits centrally. Drawing and family rooms occupy the west side; entrance hall is south centre; a compact study, service block and narrow internal gallery occupy the east side; garden dining and kitchen occupy the north side.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .outer{fill:#fff;stroke:#111;stroke-width:4}.room{fill:#f4f4f4;stroke:#555;stroke-width:1.6}.principal{fill:#f7f7f7;stroke:#333;stroke-width:1.8}.service{fill:#e9edf0;stroke:#333;stroke-width:1.8}.gallery{fill:#f0f2f3;stroke:#555;stroke-width:1.4}.court{fill:#fff;stroke:#111;stroke-width:2.2;stroke-dasharray:8 6}
+      .axis{stroke:#777;stroke-width:1.5;stroke-dasharray:8 6}.route{fill:none;stroke:#444;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;opacity:.72}.visual{fill:none;stroke:#888;stroke-width:2;stroke-dasharray:7 6}.door{stroke:#333;stroke-width:2;fill:none}.furn{fill:none;stroke:#777;stroke-width:1.3}.dline{stroke:#555;stroke-width:1.4}.ext{stroke:#aaa;stroke-width:1}
+    </style>
+  </defs>
+
+  <text x="60" y="52" class="head">Reference House — RH-02 Ground-Floor Baseline</text>
+  <text x="60" y="80" class="sub">G1 selected · controlled width correction to 12.0 m · front/street surrogate south · service/gallery flank shown east but mirrorable</text>
+
+  <!-- scale 55 px/m; outer 660 x 594 -->
+  <g transform="translate(90,145)">
+    <rect x="0" y="0" width="660" height="594" class="outer"/>
+
+    <!-- y coordinates from north at top: rear band 0-187; court 187-407; front 407-594 -->
+    <!-- west rooms -->
+    <rect x="0" y="319" width="231" height="275" class="principal"/>
+    <text x="115" y="432" text-anchor="middle" class="label">G-DRAW-02</text>
+    <text x="115" y="452" text-anchor="middle" class="small">drawing / sitting</text>
+
+    <rect x="0" y="0" width="231" height="319" class="principal"/>
+    <text x="115" y="133" text-anchor="middle" class="label">G-FAM-02</text>
+    <text x="115" y="153" text-anchor="middle" class="small">family room</text>
+
+    <!-- central hall / court / dining -->
+    <rect x="231" y="407" width="198" height="187" class="room"/>
+    <text x="330" y="487" text-anchor="middle" class="label">G-HALL-02</text>
+    <text x="330" y="507" text-anchor="middle" class="small">entrance hall</text>
+
+    <rect x="231" y="187" width="198" height="220" class="court"/>
+    <text x="330" y="292" text-anchor="middle" class="label">C-01</text>
+    <text x="330" y="312" text-anchor="middle" class="small">open courtyard</text>
+    <text x="330" y="330" text-anchor="middle" class="dim">3.6 × 4.0 m</text>
+
+    <rect x="231" y="0" width="198" height="187" class="room"/>
+    <text x="330" y="78" text-anchor="middle" class="label">G-GARDEN-02</text>
+    <text x="330" y="98" text-anchor="middle" class="small">garden dining hall</text>
+
+    <!-- east inner gallery -->
+    <rect x="429" y="187" width="72" height="407" class="gallery"/>
+    <text x="465" y="388" text-anchor="middle" transform="rotate(-90 465 388)" class="label">G-GAL-01 · inner gallery</text>
+
+    <!-- east outer study/service -->
+    <rect x="501" y="407" width="159" height="187" class="room"/>
+    <text x="580" y="487" text-anchor="middle" class="label">G-STUDY-02</text>
+    <text x="580" y="507" text-anchor="middle" class="small">compact study</text>
+
+    <rect x="501" y="187" width="159" height="220" class="service"/>
+    <text x="580" y="275" text-anchor="middle" class="label">G-SVC-02</text>
+    <text x="580" y="295" text-anchor="middle" class="small">utility / WC / plant</text>
+    <text x="580" y="313" text-anchor="middle" class="small">subdivision later</text>
+
+    <!-- kitchen rear: full east wing -->
+    <rect x="429" y="0" width="231" height="187" class="principal"/>
+    <text x="545" y="78" text-anchor="middle" class="label">G-KIT-02</text>
+    <text x="545" y="98" text-anchor="middle" class="small">kitchen</text>
+
+    <!-- visual axis -->
+    <line x1="330" y1="594" x2="330" y2="0" class="visual"/>
+    <text x="343" y="575" class="small">arrival / court / garden visual sequence</text>
+
+    <!-- all-weather route -->
+    <polyline points="390,520 465,520 465,170 520,140" class="route"/>
+    <text x="515" y="365" class="small">all-weather route</text>
+
+    <!-- selected door/opening hints -->
+    <line x1="231" y1="470" x2="231" y2="520" class="door"/>
+    <line x1="429" y1="475" x2="429" y2="530" class="door"/>
+    <line x1="501" y1="270" x2="501" y2="330" class="door"/>
+    <line x1="429" y1="105" x2="429" y2="155" class="door"/>
+    <line x1="231" y1="85" x2="231" y2="145" class="door"/>
+    <line x1="120" y1="319" x2="170" y2="319" class="door"/>
+
+    <!-- simplified furniture: drawing -->
+    <rect x="35" y="405" width="115" height="43" rx="8" class="furn"/>
+    <rect x="52" y="485" width="70" height="42" rx="6" class="furn"/>
+    <rect x="155" y="462" width="42" height="42" rx="8" class="furn"/>
+    <text x="90" y="544" text-anchor="middle" class="small">sofa group</text>
+
+    <!-- furniture family -->
+    <rect x="38" y="70" width="125" height="43" rx="8" class="furn"/>
+    <rect x="60" y="160" width="85" height="45" rx="6" class="furn"/>
+    <text x="110" y="232" text-anchor="middle" class="small">family seating</text>
+
+    <!-- dining table -->
+    <rect x="265" y="55" width="130" height="55" rx="4" class="furn"/>
+    <text x="330" y="135" text-anchor="middle" class="small">6-seat table</text>
+
+    <!-- kitchen runs -->
+    <rect x="455" y="18" width="185" height="34" class="furn"/>
+    <rect x="606" y="52" width="34" height="105" class="furn"/>
+    <rect x="480" y="103" width="100" height="40" rx="3" class="furn"/>
+    <text x="544" y="166" text-anchor="middle" class="small">cabinetry study</text>
+
+    <!-- study desk -->
+    <rect x="530" y="445" width="100" height="34" class="furn"/>
+    <rect x="550" y="500" width="40" height="40" rx="8" class="furn"/>
+
+    <!-- labels outside -->
+    <text x="330" y="-20" text-anchor="middle" class="small">REAR / GARDEN SURROGATE</text>
+    <text x="330" y="625" text-anchor="middle" class="small">FRONT / STREET SURROGATE</text>
+
+    <!-- dimensions overall -->
+    <line x1="0" y1="-60" x2="660" y2="-60" class="dline"/><line x1="0" y1="-50" x2="0" y2="-70" class="dline"/><line x1="660" y1="-50" x2="660" y2="-70" class="dline"/>
+    <text x="330" y="-70" text-anchor="middle" class="dim">12.0 m</text>
+    <line x1="705" y1="0" x2="705" y2="594" class="dline"/><line x1="695" y1="0" x2="715" y2="0" class="dline"/><line x1="695" y1="594" x2="715" y2="594" class="dline"/>
+    <text x="728" y="297" transform="rotate(90 728 297)" text-anchor="middle" class="dim">10.8 m</text>
+
+    <!-- key horizontal bands -->
+    <text x="115" y="-7" text-anchor="middle" class="dim">4.2 m west wing</text>
+    <text x="330" y="-7" text-anchor="middle" class="dim">3.6 m centre</text>
+    <text x="545" y="-7" text-anchor="middle" class="dim">4.2 m east wing</text>
+  </g>
+
+  <!-- right-side notes -->
+  <g transform="translate(880,155)">
+    <text x="0" y="0" class="head">Why this plan</text>
+    <text x="0" y="42" class="label">Principal sequence</text>
+    <text x="0" y="66" class="small">Front door → hall → courtyard → garden dining → garden</text>
+    <text x="0" y="104" class="label">Ordinary route</text>
+    <text x="0" y="128" class="small">Hall → inner gallery → kitchen / rear rooms</text>
+    <text x="0" y="166" class="label">Technical geography</text>
+    <text x="0" y="190" class="small">Study / service block / kitchen share one working flank.</text>
+    <text x="0" y="210" class="small">The flank is mirrorable when a real site exists.</text>
+    <text x="0" y="248" class="label">Domestic hierarchy</text>
+    <text x="0" y="272" class="small">Drawing and family rooms remain distinct; the rear is linked,</text>
+    <text x="0" y="292" class="small">not dissolved into one great room.</text>
+
+    <text x="0" y="350" class="head">RH-02 correction</text>
+    <text x="0" y="392" class="small">RH-01 side wing: 3.9 m gross</text>
+    <text x="0" y="414" class="small">RH-02 side wing: 4.2 m gross</text>
+    <text x="0" y="436" class="small">Overall width: 11.4 → 12.0 m</text>
+    <text x="0" y="458" class="small">Courtyard: unchanged at 3.6 × 4.0 m</text>
+    <text x="0" y="480" class="small">Depth: unchanged at 10.8 m</text>
+
+    <text x="0" y="538" class="head">Area proxy</text>
+    <text x="0" y="580" class="small">115.2 m² / storey</text>
+    <text x="0" y="602" class="small">230.4 m² / two storeys</text>
+    <text x="0" y="624" class="small">≈ 11.9% below F0 two-storey plate proxy</text>
+
+    <text x="0" y="682" class="head">Not fixed here</text>
+    <text x="0" y="724" class="small">Stair · structure · wall build-up · exact openings · kitchen</text>
+    <text x="0" y="744" class="small">cabinetry · service equipment · upper-floor stacking · roof</text>
+    <text x="0" y="764" class="small">form · real orientation · final GIA</text>
+  </g>
+
+  <text x="60" y="925" class="small">Schematic coordination drawing only. Furniture and wall allowances are fit tests, not construction information.</text>
+</svg>
