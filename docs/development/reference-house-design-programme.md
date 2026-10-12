@@ -9,23 +9,26 @@ The programme does not assume that the current whole-house fixture is the right 
 
 ## Current execution state
 
-- **Active stage:** `RH-08 — Roof, drainage and external maintenance`
-- **Last closed stage:** `RH-07 — Resolve passive-first environmental design` — **PASS with bounded RH-06 MVHR rewind**; canonical gate record: [RH-07 Environmental Coordination](../reference-house/environmental-coordination.md).
+- **Active stage:** `RH-09 — Tectonic and occupied-surface integration`
+- **Last closed stage:** `RH-08 — Roof, drainage and external maintenance` — **PASS at architectural / pre-technical coordination level**; canonical gate record: [RH-08 Roof, Drainage and External Maintenance](../reference-house/roof-drainage-access-rh08.md).
 - **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), as modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg) **as superseded locally by RH-06**, which replaces `U-ENS-01` with `U-DRESS-01`.
 - **Current environmental authority:** [RH-07 Environmental Coordination](../reference-house/environmental-coordination.md), [environmental diagram](../reference-house/environmental-coordination.svg) and [courtyard solar section](../reference-house/courtyard-solar-section-rh07.svg).
 - **Current service authority:** [RH-06 Services and Failure Geography](../reference-house/service-topology-rh06.md), locally superseded for whole-dwelling ventilation by the [RH-07 MVHR Service Addendum](../reference-house/service-topology-rh07-mvhr-addendum.md) and [MVHR topology](../reference-house/mvhr-topology-rh07.svg).
-- **Current crossing authority:** [Service Crossing Register](../reference-house/service-crossing-register-rh06.md), now current through RH-07.
+- **Current crossing authority:** [Service Crossing Register](../reference-house/service-crossing-register-rh06.md), current through RH-08.
+- **Current roof/access authority:** [RH-08 gate](../reference-house/roof-drainage-access-rh08.md), [roof/drainage plan](../reference-house/roof-drainage-plan-rh08.svg), revised [External Access & Maintenance Plan](../reference-house/external-access-maintenance-plan.md) and [maintenance-access diagram](../reference-house/external-maintenance-access-rh08.svg).
 - **Current elevation authority:** [RH-04 front elevation](../reference-house/front-elevation-study.svg) and [courtyard elevations](../reference-house/courtyard-elevations-study.svg).
 - **Current section authority:** [RH-04 principal section](../reference-house/principal-section-rh04.svg).
 - **Current structural authority:** [RH-05 structural concept](../reference-house/structural-concept-overlay.svg).
 - **Current shell:** **12.0 × 10.8 m**, centred **3.6 × 4.0 m** courtyard.
 - **Current vertical datums:** first FFL **+3300 mm**; ground clear ceiling **+2950 mm**; upper clear ceiling **+6000 mm**; cornice/eaves control approximately **+6250 mm**.
 - **Current environmental concept:** shallow multi-aspect occupied bands; courtyard retained as a **shaded light court rather than sunny primary amenity**; disciplined glazing; secure purge/cross ventilation; orientation-specific shading; no cooling reservation; central MVHR selected with continuous MEV fallback.
-- **Current ventilation concept:** `MVHR-01` in `G-PLANT-01`; main supply/extract trunks through `SV-01`; bounded branches aligned with structure; cooker source capture remains independent; `RH-P005-13 / PEN-MV-01` added for intake/exhaust boundary crossing family.
-- **Next action:** resolve the actual roof form and drainage hierarchy against the RH-04 cornice, shaded courtyard, RH-05 structure and RH-07 terminal requirements. The roof must provide safe courtyard drainage/overflow, maintainable rainwater routes, credible roof access, ordinary façade/window access, plant replacement, and final geography for MVHR intake/exhaust plus soil vent without corrupting the principal front elevation.
+- **Current roof/drainage concept:** four low-slope roof fields fall **outward from the courtyard** to inspectable external collection edges; no inner court roof gutter or internal roof outlet; four corner-return downpipes; courtyard drains only its own ≈14.4 m² open area through an accessible primary collector plus independent visible emergency overflow.
+- **Current external-maintenance concept:** no permanent roof hatch; roof access by planned external scaffold/tower; east/service side retained as principal plant/utility/terminal access strip; garden-dining route is the courtyard logistics path; court remains a viable tower working area.
+- **Current terminal concept:** MVHR intake/exhaust preferred on east/service high-level wall; cooker source capture remains east/service wall; soil/vent stack is the one current roof service penetration.
+- **Next action:** coordinate the occupied interfaces that make the house feel permanent rather than technical: wall attachment/lining strategy, skirting and service interfaces, window frame/subframe replacement, doors/thresholds, wall/ceiling movement joint, selective floor access where justified, visible access panels/service indexing, and ordinary/exceptional fixing loads. Push uncertain assemblies into P01/P02/P04 rather than declaring them solved in drawings.
 - **Current brief baseline:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
 - **Held morphology rewind:** `B — Offset thick/thin ring`, now a deep fallback only if later coordination exposes a material failure that cannot be solved proportionately inside the selected central-court morphology.
-- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-07 adds the MVHR boundary-crossing occurrence and modifies bathroom source capture to central MVHR extract while preserving direct-wall extract as fallback.
+- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-08 adds current rainwater-route, roof-maintenance, façade-access and drainage/roof-crossing occurrences.
 
 Update this block whenever a stage closes or the active stage materially changes.
 
