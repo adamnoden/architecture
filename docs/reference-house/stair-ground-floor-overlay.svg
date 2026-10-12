@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-03 ground-floor stair overlay</title>
+  <desc id="desc">Focused schematic of the south front band showing the entrance stair hall widened 200 millimetres into the drawing room, a compact three-flight stair reservation and a clear passage connecting the front entrance to the east inner gallery.</desc>
+  <defs>
+    <style>
+      .head{font:700 27px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .room{fill:#f5f5f5;stroke:#444;stroke-width:2}.stair{fill:#e8e8e8;stroke:#111;stroke-width:2}.gallery{fill:#eef1f2;stroke:#555;stroke-width:1.5}.court{fill:#fff;stroke:#111;stroke-width:2;stroke-dasharray:8 6}.route{fill:none;stroke:#444;stroke-width:8;stroke-linecap:round;opacity:.75}.old{stroke:#999;stroke-width:2;stroke-dasharray:6 5}.new{stroke:#111;stroke-width:3}.arrow{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arr)}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#333"/></marker>
+  </defs>
+
+  <text x="55" y="52" class="head">Reference House — RH-03 Ground-Floor Stair Overlay</text>
+  <text x="55" y="80" class="sub">Focused correction to RH-02 · shell and courtyard unchanged · front/street at bottom</text>
+
+  <!-- plan focus, 50px/m -->
+  <g transform="translate(80,155)">
+    <!-- front band and start of court -->
+    <rect x="0" y="0" width="600" height="270" class="room"/>
+    <rect x="210" y="0" width="180" height="70" class="court"/>
+    <text x="300" y="40" text-anchor="middle" class="small">courtyard begins north of front wing</text>
+
+    <!-- west drawing room -->
+    <rect x="0" y="70" width="200" height="170" class="room"/>
+    <text x="100" y="150" text-anchor="middle" class="label">G-DRAW-02</text>
+    <text x="100" y="170" text-anchor="middle" class="small">front edge narrowed 200 mm</text>
+
+    <!-- stair hall -->
+    <rect x="200" y="70" width="190" height="170" fill="#fafafa" stroke="#222" stroke-width="2"/>
+    <text x="295" y="225" text-anchor="middle" class="label">G-HALL-02 / U-STAIR-01 below</text>
+
+    <!-- old RH02 boundary -->
+    <line x1="210" y1="70" x2="210" y2="240" class="old"/>
+    <text x="214" y="92" class="small">RH-02 line X=4.2</text>
+    <!-- new boundary -->
+    <line x1="200" y1="70" x2="200" y2="240" class="new"/>
+    <text x="154" y="252" class="dim">RH-03 X≈4.0</text>
+
+    <!-- stair box approx 2.45m square drawn compressed to available focus -->
+    <rect x="208" y="86" width="123" height="123" class="stair"/>
+    <text x="269" y="132" text-anchor="middle" class="label">3-flight stair</text>
+    <text x="269" y="152" text-anchor="middle" class="small">≈2.4–2.5 m</text>
+    <text x="269" y="170" text-anchor="middle" class="small">coordination reservation</text>
+
+    <!-- clear arrival passage -->
+    <rect x="331" y="70" width="59" height="170" class="gallery"/>
+    <text x="361" y="152" text-anchor="middle" transform="rotate(-90 361 152)" class="small">arrival passage ≈1.05–1.15 m clear target</text>
+
+    <!-- east gallery -->
+    <rect x="390" y="70" width="65" height="170" class="gallery"/>
+    <text x="423" y="152" text-anchor="middle" transform="rotate(-90 423 152)" class="small">G-GAL-01 continues north</text>
+
+    <!-- study -->
+    <rect x="455" y="70" width="145" height="170" class="room"/>
+    <text x="528" y="150" text-anchor="middle" class="label">G-STUDY-02</text>
+    <text x="528" y="170" text-anchor="middle" class="small">unchanged</text>
+
+    <!-- entrance and route -->
+    <line x1="360" y1="270" x2="360" y2="208" class="arrow"/>
+    <polyline points="360,238 360,155 423,155 423,78" class="route"/>
+    <text x="374" y="265" class="small">front entrance shifts into eastern arrival field</text>
+    <text x="440" y="214" class="small">all-weather route preserved</text>
+
+    <text x="300" y="298" text-anchor="middle" class="small">SOUTH / FRONT</text>
+  </g>
+
+  <g transform="translate(770,160)">
+    <text x="0" y="0" class="head">What changes</text>
+    <text x="0" y="42" class="small">Drawing-room front field: −≈200 mm width</text>
+    <text x="0" y="64" class="small">Entrance/stair hall: +≈200 mm width</text>
+    <text x="0" y="86" class="small">Study: unchanged</text>
+    <text x="0" y="108" class="small">Service block: unchanged</text>
+    <text x="0" y="130" class="small">Courtyard: unchanged</text>
+    <text x="0" y="152" class="small">12.0 × 10.8 m shell: unchanged</text>
+
+    <text x="0" y="215" class="head">Why</text>
+    <text x="0" y="257" class="small">A full-landing three-flight stair can retain</text>
+    <text x="0" y="279" class="small">deep 280 mm goings without displacing the</text>
+    <text x="0" y="301" class="small">service hub or blocking the east gallery.</text>
+
+    <text x="0" y="364" class="head">Not final</text>
+    <text x="0" y="406" class="small">Exact strings, walls, door swing, well, guarding</text>
+    <text x="0" y="428" class="small">and clear passage require RH-04/RH-05 detail.</text>
+  </g>
+
+  <text x="55" y="680" class="small">Schematic coordination overlay. Read with RH-02 ground-floor baseline and RH-03 stair/upper-floor gate record.</text>
+</svg>
