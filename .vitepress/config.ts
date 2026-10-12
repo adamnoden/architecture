@@ -1,7 +1,14 @@
 import { execSync } from 'node:child_process'
+import { relative, sep } from 'node:path'
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import { projectIdentity } from '../project/identity.js'
+import {
+  mapNavigationLinks,
+  mapSidebarRoutes,
+  rewriteMarkdownPageLink,
+  rewriteSourceId
+} from '../project/site-routes.js'
 import { assertNavigationCoverage, nav, sidebar } from './navigation'
 
 assertNavigationCoverage()
@@ -20,8 +27,10 @@ function resolveBuildCommit(): string {
 }
 
 const buildCommit = resolveBuildCommit()
+const publicNav = mapNavigationLinks(nav)
+const publicSidebar = mapSidebarRoutes(sidebar)
 
-const siteNav = nav.map((item) => {
+const siteNav = publicNav.map((item) => {
   if (item.text !== 'Project' || !('items' in item) || !item.items) return item
 
   return {
@@ -54,9 +63,26 @@ export default withMermaid(
       }
     },
 
-    rewrites(id) {
-      if (id === 'README.md') return 'index.md'
-      return id.replace(/\/README\.md$/, '/index.md')
+    rewrites: rewriteSourceId,
+
+    markdown: {
+      config(md) {
+        md.core.ruler.after('inline', 'house-kernel-public-routes', (state) => {
+          const realPath = state.env.realPath ?? state.env.path
+          if (!realPath) return
+
+          const sourceFile = relative(process.cwd(), realPath).split(sep).join('/')
+          for (const token of state.tokens) {
+            if (!token.children) continue
+            for (const child of token.children) {
+              if (child.type !== 'link_open') continue
+              const href = child.attrGet('href')
+              if (!href) continue
+              child.attrSet('href', rewriteMarkdownPageLink(href, sourceFile))
+            }
+          }
+        })
+      }
     },
 
     themeConfig: {
@@ -79,7 +105,7 @@ export default withMermaid(
           ]
         }
       ],
-      sidebar
+      sidebar: publicSidebar
     }
   })
 )
