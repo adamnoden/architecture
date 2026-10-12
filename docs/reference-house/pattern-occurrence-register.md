@@ -5,14 +5,14 @@
 
 The Reference House is a worked interpretation of House Kernel. It is **not evidence for the pattern language**.
 
-A House Kernel pattern appears here as a current occurrence only when the active house has enough geometry or information to identify what the occurrence actually is. A pattern may be relevant or selected in principle without yet having an occurrence.
+A pattern appears here as a current occurrence only when the active house has enough geometry or information to identify the project object. Project use does not increase general pattern evidence or maturity.
 
 ## Current transition state
 
-`RH-01` selected the compact courtyard morphology. `RH-02` established the 12.0 × 10.8 m ground-floor order and service flank. `RH-03` added the stair and four-bedroom upper order. `RH-04` coupled plan, section and elevation. `RH-05` established the short-span courtyard-ring structure. `RH-06` traced the principal service routes and deleted the conditional principal en-suite. `RH-07` retained the courtyard as a shaded light court and selected central MVHR with a bounded duct-topology rewind. `RH-08 — Roof, drainage and external maintenance` now selects an outward-draining low-slope roof, removes primary roof drainage from the courtyard, fixes a task-derived no-hatch roof-access strategy and establishes current rainwater / roof / façade maintenance geography.
+`RH-01` selected the compact courtyard morphology. `RH-02` established the 12.0 × 10.8 m ground-floor order and service flank. `RH-03` added the stair and four-bedroom upper order. `RH-04` coupled plan, section and elevation. `RH-05` established the short-span courtyard-ring structure. `RH-06` traced the principal service routes and deleted the remote principal en-suite. `RH-07` retained the courtyard as a shaded light court and selected central MVHR with a bounded duct-topology rewind. `RH-08` selected outward-draining roof / drainage / maintenance geography. `RH-09 — Tectonic and occupied-surface integration` now fixes the occupied-interface hierarchy: quiet direct-finished walls by default; sparse controlled attachment/service datums where justified; explicit window, door, threshold and movement-junction families; and no Reference House dependence on house-wide removable lining or access flooring.
 
-The old F0 identifiers remain suspended provenance. Later gates issue new identities where the new project object is geometrically distinct.
-
+Current tectonic authority: [RH-09 Tectonic and Occupied-Surface Integration](tectonic-integration-rh09.md).  
+Current prototype handoff: [RH-09 Prototype Handoff Matrix](prototype-handoff-rh09.md).  
 Current environmental authority: [RH-07 Environmental Coordination](environmental-coordination.md).  
 Current service authority: [RH-06 Services and Failure Geography](service-topology-rh06.md), locally superseded for whole-dwelling ventilation by the [RH-07 MVHR Service Addendum](service-topology-rh07-mvhr-addendum.md).  
 Current roof/access authority: [RH-08 Roof, Drainage and External Maintenance](roof-drainage-access-rh08.md).  
@@ -26,153 +26,129 @@ These are current project occurrences. Their presence does not imply technical v
 
 | Occurrence | Canonical pattern | Current project object | Current implementation direction | Outstanding evidence / obligation |
 |---|---|---|---|---|
-| `RH-P001-02` | [`HSA-P-001 — Controlled Utility Entry`](../patterns/controlled-utility-entry.md) | `UE-01`, surrogate east/service-side entry into `G-PLANT-01` | water, electricity and communications grouped geographically but kept supplier-compliant and separately penetrated; principal isolation begins at service hub | real utility records/site approach; boundary details; supplier clearances; real-site handedness |
-| `RH-P002-02` | [`HSA-P-002 — Plant Room as Service Hub`](../patterns/plant-room-service-hub.md) | `G-PLANT-01`, north part of `G-SVC-02` | dedicated plant/distribution room with internal service-gallery access, nominal 1000 mm external replacement opening target and direct relation to `SV-01`; RH-07 adds central MVHR unit `MVHR-01` as a maintained plant class | actual plant capacities; MVHR service/withdrawal volume; acoustics; heat rejection; drainage/failure design |
-| `RH-P003-02` | [`HSA-P-003 — Coherent Horizontal Service Route`](../patterns/coherent-horizontal-service-route.md) | `DRY-G-01`, ground service/gallery → hall/perimeter | coherent dry/small-bore route through circulation and selected low-level/perimeter zones; not a mixed-services duct | exact containment/backplane geometry; fire/acoustic crossings; electrical/data/hydronic technical design |
-| `RH-P003-03` | [`HSA-P-003 — Coherent Horizontal Service Route`](../patterns/coherent-horizontal-service-route.md) | `DRY-U-01`, upper gallery + south/north landings | dry vertical route leaves `SV-01`, then follows three-sided upper circulation before local bedroom branches | exact branch zones and separation; no conversion of structural floor into generic plenum |
-| `RH-P004-03` | [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md) | service edge of `G-KIT-02` | sink/dishwasher/isolation and other maintainable wet components biased toward short branch to `SV-01` / service geography | final kitchen layout; access/withdrawal; acoustic/fire/water boundaries |
-| `RH-P004-04` | [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md) | west/inner edge of `U-BATH-01` adjoining `U-GAL-02` | dry-side access to selected concealed bathroom components; waterproofing independent of access panel | final fixture layout; waterproofing; privacy/acoustics; withdrawal geometry; fire closure |
-| `RH-P005-07..12` | [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md) | utility/riser/foul/cooker-extract/fallback-bath-extract/conditional-plant crossing family | explicit crossings; no routine drilling of `EB-*` beams or courtyard reaction nodes | structural sizing/detail; boundary/fire/acoustic/weather obligations; see crossing register |
-| `RH-P005-13` | [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md) | `PEN-MV-01`, MVHR outdoor-air/exhaust boundary crossing family | RH-08 prefers two short high-level east/service-wall routes from `MVHR-01`; roof route is fallback only | terminal separation; contamination/nuisance; condensation/insulation; weather/air/acoustic detail |
-| `RH-P005-14` | [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md) | `PEN-CD-01`, courtyard primary drain + independent emergency overflow crossing family beneath east service/gallery strip | two straight separately functioning conduits; accessible court inlet(s), external primary inspection and visible independent overflow outlet | foundation/slab design; settlement; rodding; threshold/overflow levels; drainage sizing |
-| `RH-P005-15` | [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md) | `PEN-SV-RF-01`, soil/vent roof penetration on east/service roof field | one sparse roof service crossing close to external service access; keep away from principal front and MVHR intake | waterproofing/flashing; structural/thermal/air detail; terminal clearances; final stack design |
-| `RH-P009-01` | [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) | `RW-OUT-01`, outer roof rainwater system | four low-slope roof fields fall away from the court to open/inspectable outer collection edges; four side/rear return downpipes feed accessible ground gullies; failure/overflow sheds visibly outward | hydraulic sizing; gutter/coping detail; design rainfall; final site discharge route; ground splash/drainage |
-| `RH-P009-02` | [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) | `RW-COURT-01`, courtyard surface-water system | accessible east-side court collector/silt trap → short straight primary drain to service side + independent higher emergency overflow to visible external discharge | hydraulic sizing; court paving falls; threshold levels; under-slab sleeve/foundation detail; final receiving drainage |
-| `RH-P010-01` | [`HSA-P-010 — Source-Capture Kitchen Extract`](../patterns/source-capture-kitchen-extract.md) | `KX-01`, kitchen → east/service-side wall | short dedicated cooker-hood duct directly to outside; kept separate from MVHR grease path | final hood/duct pressure-loss design; cleaning access; nuisance/terminal position; site handedness |
-| `RH-P011-01` | [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md) | `RM-01`, task-specific external roof-access system | **no permanent hatch**; planned outer scaffold/tower gives roof arrival + edge protection/material handling; courtyard tower covers rare inner-edge/coping work | temporary-work selection; ground bearing/support; roof-entry method; later anchor/tie assessment if tasks change |
-| `RH-P012-02` | [`HSA-P-012 — Physical Service Index`](../patterns/physical-service-index.md) | internal approach to `G-PLANT-01` | durable small index sharing stable IDs with drawings / isolation / commissioning record; includes MVHR/filter/terminal identities | final service IDs and installed topology; physical format/detail |
-| `RH-P013-01` | [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md) | `FA-01`, external side/rear support geography + courtyard tower logistics route | Category A east/service strip, west representative positions, rear working line, north garden-to-court logistics path and viable court tower position kept free of permanent obstruction | real-site boundaries/ground bearing; scaffold/tower envelopes; landscape replay; neighbour/highway dependencies |
-| `RH-P014-02` | [`HSA-P-014 — Accessible Vertical Service Zone`](../patterns/accessible-vertical-service-zone.md) | `SV-01`, stacked `G-PLANT-01 → U-BATH-01` zone | approx. **900 × 700 mm clear** accessible reservation; soil/vent, water, optional small-bore hydronic, segregated dry route and RH-07 supply/extract MVHR trunks | fire/acoustic compartmentation; supports; final sizes; congestion/separation test; roof termination |
-| `RH-P021-01` | [`HSA-P-021 — Source-Capture Bathroom Extract`](../patterns/source-capture-bathroom-extract.md) | high-level extract at `U-BATH-01` moisture source | MVHR extract remains baseline; terminal close to shower/bath source; RH-06 direct wall `BX-01` retained only as fallback | capture effectiveness; duct pressure/acoustics; condensate; commissioning |
+| `RH-P001-02` | [`HSA-P-001 — Controlled Utility Entry`](../patterns/controlled-utility-entry.md) | `UE-01`, surrogate east/service-side entry into `G-PLANT-01` | water, electricity and communications grouped geographically but separately penetrated; principal isolation begins at service hub | real utility records/site approach; supplier clearances; boundary details; handedness |
+| `RH-P002-02` | [`HSA-P-002 — Plant Room as Service Hub`](../patterns/plant-room-service-hub.md) | `G-PLANT-01` | dedicated plant/distribution room with internal working access, nominal 1000 mm external replacement opening and direct relation to `SV-01`; includes `MVHR-01` | actual plant capacities; service/withdrawal volumes; acoustics; heat rejection; drainage/failure design |
+| `RH-P003-02` | [`HSA-P-003 — Coherent Horizontal Service Route`](../patterns/coherent-horizontal-service-route.md) | `DRY-G-01` | dry/small-bore route through ground service/gallery and selected perimeter geography; not a mixed-services duct | exact containment; fire/acoustic crossings; technical electrical/data/hydronic design |
+| `RH-P003-03` | [`HSA-P-003 — Coherent Horizontal Service Route`](../patterns/coherent-horizontal-service-route.md) | `DRY-U-01` | upper gallery / landing distribution before local room branches | exact branch zones and separation; no generic structural-floor plenum |
+| `RH-P004-03` | [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md) | service edge of `G-KIT-02` | wet/maintainable kitchen components biased toward short service-side branch | final kitchen layout; access/withdrawal; acoustic/fire/water boundaries |
+| `RH-P004-04` | [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md) | west/inner edge of `U-BATH-01` adjoining `U-GAL-02` | dry-side access to selected concealed bathroom components; waterproofing independent of access | fixture layout; waterproofing; privacy/acoustics; withdrawal geometry; fire closure |
+| `RH-P005-07..12` | [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md) | utility/riser/foul/cooker-extract/fallback-bath-extract/conditional-plant crossing family | explicit crossings; no routine drilling of `EB-*` beams or courtyard reaction nodes | structural sizing/detail and boundary obligations; see crossing register |
+| `RH-P005-13` | `HSA-P-005` | `PEN-MV-01`, MVHR intake/exhaust crossing family | two short high-level east/service-wall routes preferred; roof route fallback | terminal separation; contamination/nuisance; condensation; weather/air/acoustic detail |
+| `RH-P005-14` | `HSA-P-005` | `PEN-CD-01`, courtyard primary drain + independent emergency overflow crossing family | two separately functioning conduits beneath east service/gallery geography | foundation/slab detail; settlement; rodding; threshold/overflow levels; hydraulic sizing |
+| `RH-P005-15` | `HSA-P-005` | `PEN-SV-RF-01`, soil/vent roof penetration | one sparse roof service crossing on east/service roof field | waterproofing/flashing; structural/thermal/air detail; clearances |
+| `RH-P007-01` | [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md) | `OW-01`, representative G-01 window-opening family | permanent masonry opening → mounting/tolerance zone → mechanically fixed replaceable frame → removable internal reveal/architrave; full-frame replacement may use RH-08 scaffold/tower | jamb/head/sill mock-up; air/water/thermal continuity; fixing/withdrawal; selected frame family |
+| `RH-P008-01` | [`HSA-P-008 — Movement / Slip Junction`](../patterns/movement-slip-junction.md) | `WCJ-01`, representative principal-room wall/ceiling junction | wall and ceiling terminate independently; cornice/cover fixed to one controlling assembly; no brittle bridge across intended movement | P04 comparison; quantified movement; fire/acoustic/air continuity; decoration sequence |
+| `RH-P009-01` | [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) | `RW-OUT-01`, outer roof rainwater system | four roof fields fall outward to inspectable external collection edges and side/rear return downpipes | hydraulic sizing; gutter/coping detail; design rainfall; final site discharge |
+| `RH-P009-02` | `HSA-P-009` | `RW-COURT-01`, courtyard surface-water system | accessible court collector → short primary service-side drain + independent visible emergency overflow | hydraulic sizing; falls; threshold levels; sleeve/foundation detail; receiving drainage |
+| `RH-P010-01` | [`HSA-P-010 — Source-Capture Kitchen Extract`](../patterns/source-capture-kitchen-extract.md) | `KX-01`, kitchen → service-side wall | short dedicated cooker-hood duct; independent of MVHR | hood/duct sizing; cleaning; nuisance/terminal location |
+| `RH-P011-01` | [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md) | `RM-01` | no permanent hatch; planned external scaffold/tower provides roof arrival, working platform and edge protection; courtyard tower for rare inner-edge work | temporary-work selection; ground bearing; roof-entry method; later tie/anchor assessment |
+| `RH-P012-02` | [`HSA-P-012 — Physical Service Index`](../patterns/physical-service-index.md) | internal approach to `G-PLANT-01` | small durable index sharing stable IDs with drawings/isolation/commissioning; restrained engraved metal is a legitimate project expression | final installed IDs and physical format |
+| `RH-P013-01` | [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md) | `FA-01`, external support geography + courtyard logistics/tower route | Category-A east/service strip, representative west/rear positions, garden-to-court route and viable court tower position kept free of permanent obstruction | real-site boundaries/ground bearing; scaffold/tower envelopes; landscape replay; neighbour/highway dependence |
+| `RH-P014-02` | [`HSA-P-014 — Accessible Vertical Service Zone`](../patterns/accessible-vertical-service-zone.md) | `SV-01` | approx. 900 × 700 mm clear reservation carrying soil/vent, water, segregated dry services and RH-07 MVHR trunks | fire/acoustic compartmentation; supports; final sizes; congestion/separation; roof termination |
+| `RH-P015-01` | [`HSA-P-015 — Accessible Room Service Route`](../patterns/accessible-room-service-route.md) | `AR-01`, dry-room edge family | removable substantial timber skirting may carry bounded dry distribution; selected door/architrave/local datum provides declared vertical rise to sockets/switches at appropriate accessible height | electrical safe-zone/protection/separation design; detail depth; furniture/access conflicts; P01 interface compatibility |
+| `RH-P019-01` | [`HSA-P-019 — Permanent Opening / Replaceable Door`](../patterns/permanent-opening-replaceable-door.md) | `OD-01`, doorsets in genuinely permanent openings | permanent opening → fixing/adjustment zone → replaceable doorset → removable architrave; lightweight partitions remain simpler | fire/acoustic/security variants; fixing detail; replacement sequence; tolerance range |
+| `RH-P020-01` | [`HSA-P-020 — Designed Threshold`](../patterns/designed-threshold.md) | `TH-01`, principal courtyard/garden external opening family | quiet substantially flush wear/weather/movement interface only where construction actually changes; no decorative strip across genuinely continuous internal floors | level-access/weathering/drainage detail; doorset integration; material selection; replacement sequence |
+| `RH-P021-01` | [`HSA-P-021 — Source-Capture Bathroom Extract`](../patterns/source-capture-bathroom-extract.md) | high-level `U-BATH-01` moisture-source extract | central MVHR extract baseline; direct wall fan retained only as fallback | capture effectiveness; duct pressure/acoustics; condensate; commissioning |
+| `RH-P022-01` | [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) | `W1`, sparse architectural-datum fixing family | skirting grounds, architrave/jamb grounds, genuine picture-rail/hanging datum and local heavy-load plates; sparse documented anchors into permanent fabric; **not** a whole-room rack | load classes/anchor design; safe/no-fix map; fire/acoustic consequences; P01 relationship |
 
 These are **coordination occurrences**, not validated construction details.
 
 ---
 
-## 2. RH-06 programme deletion
+## 2. Programme changes that remain authoritative
 
-The former conditional `U-ENS-01` is removed from the active house and replaced by `U-DRESS-01` principal dressing / linen / storage.
+### RH-06 — remote en-suite deleted
 
-Reason: serving an en-suite from the primary stack would require an east–west gravity branch through the north-centre framing, a lowered technical bulkhead, or a second permanent soil stack. RH-06 finds that burden disproportionate.
+Former `U-ENS-01` is now `U-DRESS-01` principal dressing / linen / storage. Reintroduction requires a new service-route proof; it is not a partition tweak.
 
-No bathroom service-wall, extract or drainage occurrence is created for the deleted en-suite. Reintroduction requires a new service-route proof and is a design change, not a partition tweak.
+### RH-07 — central MVHR selected conditionally
 
----
+Central MVHR is the Reference House whole-dwelling ventilation baseline. It is not House Kernel doctrine, does not create a generic floor plenum and does not remove the need for openable purge windows. Continuous MEV remains the fallback if duct/acoustic/commissioning/maintenance burden proves disproportionate.
 
-## 3. RH-07 environmental / ventilation selection
+### RH-08 — outward-draining roof selected
 
-RH-07 selects **central MVHR** as the Reference House whole-dwelling ventilation baseline because the project can coordinate it from first principles around `G-PLANT-01`, `SV-01`, short radial structural spans and explicit branch corridors.
+Four low-slope fields drain away from the courtyard to external collection. There is no inner court roof gutter, internal roof outlet or permanent roof hatch. The courtyard drains only its own open-to-sky area through a primary route plus independent overflow.
 
-This does **not** make MVHR House Kernel doctrine, convert the floor into a service plenum, remove the need for openable purge windows or select active cooling. Continuous MEV remains the fallback if competent design shows the duct/acoustic/commissioning/maintenance burden is disproportionate.
+### RH-09 — occupied-interface hierarchy selected
 
-The courtyard remains a shaded light court / purge reservoir / orientation device, not a primary sunny amenity space.
+The house now distinguishes:
 
----
+- **W0:** quiet direct-finished permanent walls — baseline where little service/change demand exists;
+- **W1:** sparse controlled attachment / architectural datums — selected where repeated fixing or service access earns them;
+- **W2:** full replaceable lining — experimental P01 challenger only.
 
-## 4. RH-08 roof / drainage / access selection
-
-RH-08 selects **four outward-draining low-slope roof fields** divided by diagonal watersheds between outer and courtyard corners.
-
-This selection does **not** mean low-slope roofs are House Kernel doctrine. It is the project answer to this courtyard geometry.
-
-Consequences:
-
-- no primary roof catchment enters the courtyard;
-- no inner courtyard gutter or internal roof outlet is selected;
-- outer rainwater collection remains inspectable and replaceable;
-- the courtyard drains its own approximately **14.4 m²** sky area through a separate route and independent emergency overflow;
-- MVHR/cooker terminals remain on the service-side wall where technical separation permits;
-- the soil vent is the only currently expected roof service penetration;
-- no permanent roof hatch is selected because current tasks are better served by planned external scaffold/tower access;
-- a permanent central courtyard fountain/planter is rejected unless it preserves equivalent tower working geometry.
+Principal-room floors remain continuous conventional floors. Selective floor access has no current Reference House occurrence.
 
 ---
 
-## 5. Suspended pre-RH-01 coordination occurrences
+## 3. Suspended pre-RH-01 occurrences
 
-The previous F0 objects remain as provenance only.
+The previous F0 objects remain provenance only.
 
-| Suspended occurrence | Pattern | F0 object | Current disposition |
-|---|---|---|---|
-| `RH-P001-01` | `HSA-P-001` | east utility entry into old `G-SVC-01` | superseded by `RH-P001-02` |
-| `RH-P002-01` | `HSA-P-002` | old north-east service hub | superseded by `RH-P002-02` / `G-PLANT-01` |
-| `RH-P014-01` | `HSA-P-014` | old east/rear stacked service zone | superseded by `RH-P014-02` / `SV-01` |
-| `RH-P004-01` | `HSA-P-004` | old kitchen service edge | superseded by `RH-P004-03` |
-| `RH-P004-02` | `HSA-P-004` | old bath/en-suite service edge | family-bath part superseded by `RH-P004-04`; en-suite part rejected |
-| `RH-P003-01` | `HSA-P-003` | old east/rear + landing route | superseded by `RH-P003-02` and `RH-P003-03` |
-| `RH-P005-01..06` | `HSA-P-005` | old F0 crossing family | obsolete geometry; replaced by current crossing family |
-| `RH-P012-01` | `HSA-P-012` | old service index | superseded by `RH-P012-02` |
+| Suspended occurrence | Pattern | Current disposition |
+|---|---|---|
+| `RH-P001-01` | `HSA-P-001` old utility entry | superseded by `RH-P001-02` |
+| `RH-P002-01` | `HSA-P-002` old service hub | superseded by `RH-P002-02` |
+| `RH-P014-01` | `HSA-P-014` old service zone | superseded by `RH-P014-02` |
+| `RH-P004-01` | `HSA-P-004` old kitchen service edge | superseded by `RH-P004-03` |
+| `RH-P004-02` | `HSA-P-004` old bath/en-suite service edge | family-bath part superseded by `RH-P004-04`; en-suite part rejected |
+| `RH-P003-01` | `HSA-P-003` old route topology | superseded by `RH-P003-02` and `RH-P003-03` |
+| `RH-P005-01..06` | `HSA-P-005` old crossing family | obsolete geometry; replaced by current crossing family |
+| `RH-P012-01` | `HSA-P-012` old service index | superseded by `RH-P012-02` |
 
-Suspension does not reject the canonical patterns. It prevents obsolete geometry retaining false authority.
+Suspension prevents obsolete geometry retaining false authority; it does not reject the canonical patterns.
 
 ---
 
-## 6. Selected strategies
+## 4. Selected strategies
 
 ### Fail-Safe Water Distribution
 
-The house continues to select [Fail-Safe Water Distribution](../patterns/strategies/fail-safe-water-distribution.md). RH-06 applies it to actual route classes:
+Selected route-class responses remain:
 
-- `WF-01` plant/isolation geography — accessible joints and isolation; significant leakage visible/manageable; sensing optional, not sole defence;
-- `WF-02` riser — joint-minimised vertical runs; accessible branch ends; pipe-in-pipe/withdrawable family remains a comparator;
-- `WF-03` kitchen/utility — short branches, accessible appliance joints/valves, local visible failure response;
-- `WF-04` bathroom — dry-side maintainable components, short concealed finals, waterproofing independent of access;
+- `WF-01` plant/isolation — accessible joints/isolation; significant leakage visible/manageable;
+- `WF-02` riser — joint-minimised vertical runs and accessible branches;
+- `WF-03` kitchen/utility — short branches, accessible appliance joints/valves;
+- `WF-04` bathroom — dry-side maintainable components and short concealed finals;
 - `WF-05` soil/waste — accessible stack base/rodding and short gravity branches.
 
-No manifold pattern is selected merely because the service hub exists.
+No manifold pattern is selected merely because the hub exists.
 
 ### Structural / floor strategies
 
-[Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md) and [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md) remain active project strategies:
+[Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md) and [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md) remain selected project strategies:
 
 - structural deck/joists/edge beams remain primary structure;
 - services move around protected structure except at registered crossings;
-- MVHR branch corridors may run parallel to joists where explicitly designed, but the floor is not a generic service void;
-- later removable access layers remain non-structural.
+- MVHR branches may run parallel to joists in explicit corridors, not a generic plenum;
+- removable layers, if ever selected, remain non-structural.
 
 ---
 
-## 7. Selected intent without a confirmed occurrence
+## 5. Held candidates and explicit project disposition
 
-| Pattern | Current Reference House intent | Missing before occurrence |
-|---|---|---|
-| [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md) | representative windows should permit credible full-frame replacement using internal release and/or external scaffold route | RH-09 frame/subframe geometry and release/handling detail |
+Held candidates remain outside the canonical language and receive no `RH-P*` identity.
 
-Rainwater, roof-maintenance and ground-supported façade-access intents are omitted because RH-08 now creates current occurrences.
+- [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) — **P01 evidence gate; not required by the Reference House.** W0/W1 remain the house baseline unless P01 earns selected use.
+- [Individually Isolatable Manifold Distribution](../patterns/candidates/individually-isolatable-manifold-distribution.md) — held; accessible isolation geography does not itself select a manifold.
+- [Local Deep Service Zone](../patterns/candidates/local-deep-service-zone.md) — use only if actual routes demonstrate recurring need.
+- [Selective Floor Access](../patterns/candidates/selective-floor-access.md) — **not selected by the Reference House at RH-09**; reopen locally only if a real maintainable task appears beneath a bounded circulation/perimeter strip.
 
 ---
 
-## 8. Patterns not yet selected merely because they exist
+## 6. Canonical patterns not selected merely because they exist
 
-Likely later relevance is not occurrence. This currently includes:
+Current unselected examples include:
 
-- `HSA-P-008` Movement / Slip Junction;
-- `HSA-P-015` Accessible Room Service Route beyond the current `DRY-*` topology;
 - `HSA-P-016` Compartmented Service Void;
-- `HSA-P-017` Visible Leakage Path;
-- `HSA-P-018` Failure-Tolerant Wet Service Room;
-- `HSA-P-019` Permanent Opening / Replaceable Door;
-- `HSA-P-020` Designed Threshold;
-- `HSA-P-022` Controlled Attachment Plane.
+- `HSA-P-017` Visible Leakage Path as a distinct occurrence beyond current route/failure design;
+- `HSA-P-018` Failure-Tolerant Wet Service Room as a distinct occurrence.
 
-Some are likely to become project occurrences at RH-09. Do not pre-assign them.
+Likely relevance is not occurrence.
 
 ---
 
-## 9. Held candidates
-
-Held candidates remain outside the canonical language even when the Reference House is interested in them.
-
-- [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) — P01 wall-bay evidence gate.
-- [Individually Isolatable Manifold Distribution](../patterns/candidates/individually-isolatable-manifold-distribution.md) — remains held; RH-06 selects accessible isolation geography, not a manifold topology.
-- [Local Deep Service Zone](../patterns/candidates/local-deep-service-zone.md) — use only if actual routes prove a recurring need.
-- [Selective Floor Access](../patterns/candidates/selective-floor-access.md) — P02 physical floor research; MVHR does not promote it merely because bounded floor branches exist.
-
-No `RH-P*` identity is assigned to a held candidate.
-
----
-
-## 10. Rejected / rewound moves still controlling design
+## 7. Rejected / rewound moves still controlling design
 
 The reasons remain live even where original geometry has changed:
 
@@ -189,28 +165,32 @@ The reasons remain live even where original geometry has changed:
 11. long-span floor across major house dimensions;
 12. every room partition made loadbearing;
 13. primary beams/courtyard reaction nodes treated as future service chases;
-14. remote principal en-suite bought with a second stack / cross-joist gravity route;
-15. speculative MVHR ducts stuffed into `SV-01` or joist zones before environmental selection;
-16. whole-floor service plenum created merely because MVHR is selected;
+14. remote principal en-suite bought with second stack / cross-joist gravity route;
+15. speculative MVHR ducts before environmental selection;
+16. whole-floor service plenum merely because MVHR is selected;
 17. large undifferentiated rear glazing as a generic contemporary move;
 18. mechanical cooling reserved before passive measures are tested;
-19. **inward-draining courtyard roof / inner gutter as baseline** — rejected at RH-08;
-20. **internal roof outlets / concealed box-gutter dependency** — rejected while outward accessible drainage is available;
-21. **roof hatch as symbolic maintainability** — rejected because it does not solve the current task/access/edge-protection problem;
-22. **permanent central courtyard object consuming tower geometry** — rejected unless an equivalent maintenance position is demonstrated.
+19. inward-draining courtyard roof / inner gutter as baseline;
+20. internal roof outlets / concealed box-gutter dependency where outward drainage is available;
+21. roof hatch as symbolic maintainability;
+22. permanent central courtyard object consuming tower geometry without equivalent access;
+23. **house-wide removable lining before P01 proves room quality and proportionality**;
+24. **ordinary sockets mounted in skirting as the Reference House baseline** — accessible-height accessories use declared rises from the low-level route instead;
+25. **full-room removable/access floor without a real maintainable task beneath it**;
+26. **visible brass/bronze at every interface merely to advertise disassembly**;
+27. **decorative threshold strips where adjacent floor construction is genuinely continuous**.
 
 ---
 
-## 11. Update rule
+## 8. Update rule
 
 Update this register when:
 
-- RH-09 creates occupied-surface/window/door/threshold/interface occurrences;
-- MEP design alters MVHR, crossing or riser feasibility;
-- structural/foundation/hydraulic design changes current roof/drainage crossings materially;
-- a route, crossing, occurrence or strategy materially changes;
-- a real site invalidates surrogate orientation, service-side or external-access coordinates;
-- specialist review changes technical feasibility.
+- RH-10 finds a whole-house clash that moves, invalidates or creates an occurrence;
+- P01/P02/P03/P04 changes Reference House implementation selection;
+- window/threshold/fixing/electrical/fire/acoustic specialist work changes the feasibility of RH-09 occurrences;
+- MEP/structural/hydraulic design materially changes current service or roof objects;
+- a real site invalidates surrogate orientation, service-side or external-access coordinates.
 
 When an old identifier is reused, ensure the underlying project object is recognisably the same. Otherwise issue a new identity and leave the old object as provenance.
 
