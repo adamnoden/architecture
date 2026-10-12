@@ -9,18 +9,20 @@ The programme does not assume that the current whole-house fixture is the right 
 
 ## Current execution state
 
-- **Active stage:** `RH-05 — Coordinate primary structure`
-- **Last closed stage:** `RH-04 — Couple plan, section and G-01 elevation` — **PASS**; canonical gate record: [RH-04 Plan / Section / Elevation Gate](../reference-house/plan-section-elevation-gate.md).
+- **Active stage:** `RH-06 — Coordinate services and failure geography`
+- **Last closed stage:** `RH-05 — Coordinate primary structure` — **PASS at architectural / pre-engineering coordination level**; canonical gate record: [RH-05 Structural Coordination](../reference-house/structural-coordination.md).
 - **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), as modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg).
 - **Current elevation authority:** [RH-04 front elevation](../reference-house/front-elevation-study.svg) and [courtyard elevations](../reference-house/courtyard-elevations-study.svg).
 - **Current section authority:** [RH-04 principal section](../reference-house/principal-section-rh04.svg).
+- **Current structural authority:** [RH-05 structural concept](../reference-house/structural-concept-overlay.svg).
 - **Current shell:** **12.0 × 10.8 m**, centred **3.6 × 4.0 m** courtyard.
 - **Current vertical datums:** first FFL **+3300 mm**; ground clear ceiling **+2950 mm**; upper clear ceiling **+6000 mm**; cornice/eaves control approximately **+6250 mm**.
 - **Current front order:** centred four-bay field at X = **1.95 / 4.65 / 7.35 / 10.05 m**; principal entrance occupies bay 3.
-- **Next action:** establish a simple structural load-path concept against the RH-04 opening/floor datums, compare floor spanning and courtyard-wall strategies, and identify any architectural coordinate that structure cannot support without disproportionate transfer or depth.
+- **Current structural concept:** loadbearing outer/courtyard masonry inner leaves; short engineered-timber floor spans of approximately **3.4–4.2 m gross**; four repeated ~3.4 m edge beams; framed stair opening; east-middle service-opening reservation; 350 mm floor zone retained provisionally.
+- **Next action:** route utility entry, plant replacement, water, foul/soil, kitchen and bathroom extract, electrical/data and the vertical service zone through the RH-05 structural concept; create the first new crossing register only where actual routes intersect actual structure.
 - **Current brief baseline:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
 - **Held morphology rewind:** `B — Offset thick/thin ring`, now a deep fallback only if later coordination exposes a material failure that cannot be solved proportionately inside the selected central-court morphology.
-- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-04 creates architectural coordinates and structural obligations but no new pattern occurrence by itself.
+- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-05 adds structural prohibitions/reservations but deliberately no new `HSA-P-005` occurrence until RH-06 defines the penetrating service geometry.
 
 Update this block whenever a stage closes or the active stage materially changes.
 
