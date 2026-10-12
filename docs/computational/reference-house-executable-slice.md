@@ -4,6 +4,7 @@
 **Date:** 2026-10-12  
 **Prerequisite:** [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md) — **PASS**  
 **Canonical fixture source:** [`../reference-house/model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md)  
+**Post-C1 gate:** [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md)  
 **Trigger:** RH-00→RH-11 produced an M3 coordinated Reference House; RH-C0 has now frozen the bounded architectural fixture needed for deterministic implementation.
 
 ## Why this reopens executable work
@@ -127,6 +128,20 @@ At minimum, test that:
 
 Mutation tests should use the dependency expectations recorded by RH-C0 and deliberately change source facts to verify that dependent calculations and drawings change together.
 
+### Fixture-specificity discipline
+
+RH-C1 should not attempt to anticipate every future house. It should, however, avoid silently converting Reference House facts into core semantics.
+
+For new model concepts, keep three roles distinct:
+
+1. **semantic core** — architectural meaning justified independently of this particular fixture;
+2. **fixture data** — the Reference House's courtyard, topology, dimensions, stair grouping, bay field and other project-specific facts;
+3. **derived projection** — calculations and drawings produced from the source.
+
+Do not hard-code assumptions such as “every house has a centred courtyard”, “every façade has four bays”, “every stair is 3×6 rises” or “G-01 is the default grammar”. Equally, do not build speculative generic abstractions simply because another house might one day need them. Localise fixture facts now; generalise only when a second worked case gives the abstraction evidence.
+
+The explicit second-case challenge is CF-01, after RH-C1 passes.
+
 ---
 
 ## Calculation and evidence boundary
@@ -147,11 +162,17 @@ Structural, fire, acoustic, hygrothermal, daylight and dynamic-overheating calcu
 
 ## Growth sequence after RH-C1
 
-Grow only when the Reference House creates a real need.
+Do not treat a successful single-fixture compile as evidence that the core is general.
+
+### CF-01 — contrast fixture generality gate
+
+Before deeper compiler slices enlarge the architecture, challenge RH-C1 with the deliberately unlike, minimal contrast fixture defined in [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md).
+
+CF-01 tests something the RH-C0 mutation suite cannot: whether the semantic core accidentally assumes the Reference House's courtyard, room ring, four-bay front, stair topology or grammar. It is not a second fully developed Reference House and not an arbitrary-architecture target.
 
 ### RH-C2 — structural view
 
-Add supports, spans, edge beams, protected nodes and load-path semantics needed to reproduce RH-05 coordination. This is not a general structural solver.
+After CF-01, add supports, spans, edge beams, protected nodes and load-path semantics needed to reproduce RH-05 coordination. This is not a general structural solver.
 
 ### RH-C3 — service view
 
@@ -183,6 +204,8 @@ Do not use this fixture as justification for:
 - rebuilding external specialist software inside House Kernel without a strong case.
 
 The source model may eventually produce 3D/IFC and richer analytical views, but RH-C1 succeeds with deterministic semantic geometry, calculations and drawings.
+
+A passing RH-C1 establishes **one-fixture reproduction and mutation correctness**, not generality. CF-01 is the next evidence gate for that claim.
 
 ---
 
