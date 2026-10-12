@@ -403,24 +403,30 @@ function adaptPrimerReferenceHouse(markdown: string): string {
     throw new Error('Reference House opening changed; update the Primer adapter deliberately.')
   }
 
-  const architecturalScope = firstParagraphs(markdownSection(markdown, 'Architectural scope'), 2)
+  const authorityMarker = '\n## Authority stack'
+  const authorityStart = markdown.indexOf(authorityMarker)
+  if (authorityStart < 0) {
+    throw new Error('Reference House Authority stack changed; update the Primer adapter deliberately.')
+  }
+
+  const architecturalScope = firstParagraphs(
+    markdown.slice(opening.length, authorityStart).trim(),
+    2
+  )
   if (architecturalScope.length !== 2) {
-    throw new Error('Primer expected two opening Architectural scope paragraphs.')
+    throw new Error('Primer expected two opening Reference House scope paragraphs.')
   }
 
-  const composition = markdownSection(markdown, 'Composition and authority')
-  const compositionChain = composition.match(/```text\n[\s\S]*?```/)?.[0]
-  if (!compositionChain) throw new Error('Primer could not find the Reference House composition chain.')
+  const authority = markdownSection(markdown, 'Authority stack')
+  const compositionChain = authority.match(/```text\n[\s\S]*?```/)?.[0]
+  if (!compositionChain) throw new Error('Primer could not find the Reference House authority chain.')
 
-  const coordination = firstParagraphs(markdownSection(markdown, 'Whole-house coordination'), 2)
+  const coordination = firstParagraphs(markdownSection(markdown, 'Maturity'), 2)
   if (coordination.length !== 2) {
-    throw new Error('Primer expected two Whole-house coordination paragraphs.')
+    throw new Error('Primer expected two Reference House Maturity paragraphs.')
   }
 
-  const openingEnd = markdown.indexOf('\n## Architectural scope')
-  const openingBody = markdown.slice(opening.length, openingEnd).trim()
-
-  return `# The Reference House\n\n${openingBody}\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy a House Kernel principle without being promoted into House Kernel doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
+  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy a House Kernel principle without being promoted into House Kernel doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
 }
 
 export function applyAdapter(
