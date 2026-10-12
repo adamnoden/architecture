@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="960" viewBox="0 0 1500 960" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-03 selected upper-floor and stair development</title>
+  <desc id="desc">Schematic upper-floor plan of the Reference House showing a three-flight principal stair in the south centre, four bedrooms, an east courtyard gallery, a family bathroom stacked over the service hub, a north cross-landing and a conditional principal en-suite.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .outer{fill:#fff;stroke:#111;stroke-width:4}.room{fill:#f4f4f4;stroke:#555;stroke-width:1.6}.principal{fill:#f7f7f7;stroke:#333;stroke-width:1.8}.service{fill:#e9edf0;stroke:#333;stroke-width:1.8}.gallery{fill:#f0f2f3;stroke:#555;stroke-width:1.4}.court{fill:#fff;stroke:#111;stroke-width:2.2;stroke-dasharray:8 6}.stair{fill:#ececec;stroke:#222;stroke-width:1.8}.route{fill:none;stroke:#444;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;opacity:.72}.furn{fill:none;stroke:#777;stroke-width:1.3}.step{stroke:#777;stroke-width:1}.arrow{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arr)}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#333"/></marker>
+  </defs>
+
+  <text x="60" y="52" class="head">Reference House — RH-03 Upper-Floor Baseline</text>
+  <text x="60" y="80" class="sub">Four bedrooms · principal three-flight stair · south/east/north courtyard circulation · front/street surrogate south</text>
+
+  <!-- scale 55 px/m; outer 660 x 594 -->
+  <g transform="translate(90,145)">
+    <rect x="0" y="0" width="660" height="594" class="outer"/>
+
+    <!-- west bedrooms -->
+    <rect x="0" y="319" width="220" height="275" class="room"/>
+    <text x="110" y="430" text-anchor="middle" class="label">U-BED-02</text>
+    <text x="110" y="450" text-anchor="middle" class="small">west-front double</text>
+    <rect x="34" y="380" width="120" height="90" class="furn"/>
+    <rect x="40" y="490" width="120" height="26" class="furn"/>
+
+    <rect x="0" y="0" width="231" height="319" class="principal"/>
+    <text x="116" y="120" text-anchor="middle" class="label">U-BED-P01</text>
+    <text x="116" y="140" text-anchor="middle" class="small">principal bedroom</text>
+    <rect x="44" y="54" width="132" height="104" class="furn"/>
+    <rect x="30" y="194" width="160" height="28" class="furn"/>
+
+    <!-- courtyard -->
+    <rect x="231" y="187" width="198" height="220" class="court"/>
+    <text x="330" y="290" text-anchor="middle" class="label">C-01</text>
+    <text x="330" y="310" text-anchor="middle" class="small">open to sky</text>
+    <text x="330" y="328" text-anchor="middle" class="dim">3.6 × 4.0 m</text>
+
+    <!-- south stair hall -->
+    <rect x="220" y="407" width="209" height="187" class="gallery"/>
+    <text x="325" y="562" text-anchor="middle" class="label">U-STAIR-01 · south landing</text>
+
+    <!-- stair reservation approx 2.45m square -->
+    <g transform="translate(228,423)">
+      <rect x="0" y="0" width="135" height="135" class="stair"/>
+      <!-- three-flight schematic -->
+      <line x1="12" y1="118" x2="12" y2="34" class="arrow"/>
+      <line x1="22" y1="118" x2="22" y2="34" class="step"/><line x1="32" y1="118" x2="32" y2="34" class="step"/><line x1="42" y1="118" x2="42" y2="34" class="step"/>
+      <line x1="22" y1="22" x2="104" y2="22" class="arrow"/>
+      <line x1="35" y1="32" x2="104" y2="32" class="step"/><line x1="45" y1="42" x2="104" y2="42" class="step"/>
+      <line x1="118" y1="30" x2="118" y2="116" class="arrow"/>
+      <line x1="108" y1="40" x2="108" y2="116" class="step"/><line x1="98" y1="52" x2="98" y2="116" class="step"/>
+      <text x="67" y="78" text-anchor="middle" class="small">3 flights</text>
+      <text x="67" y="94" text-anchor="middle" class="small">6 rises each</text>
+    </g>
+
+    <!-- east front bedroom -->
+    <rect x="429" y="407" width="231" height="187" class="room"/>
+    <text x="545" y="474" text-anchor="middle" class="label">U-BED-03</text>
+    <text x="545" y="494" text-anchor="middle" class="small">east-front double</text>
+    <rect x="475" y="515" width="108" height="62" class="furn"/>
+    <rect x="600" y="430" width="28" height="110" class="furn"/>
+
+    <!-- east middle gallery + bath -->
+    <rect x="429" y="187" width="72" height="220" class="gallery"/>
+    <text x="465" y="305" text-anchor="middle" transform="rotate(-90 465 305)" class="label">U-GAL-02 · courtyard gallery</text>
+
+    <rect x="501" y="187" width="159" height="220" class="service"/>
+    <text x="580" y="270" text-anchor="middle" class="label">U-BATH-01</text>
+    <text x="580" y="290" text-anchor="middle" class="small">family bath + linen</text>
+    <rect x="526" y="320" width="88" height="35" rx="3" class="furn"/>
+    <rect x="615" y="205" width="25" height="65" class="furn"/>
+    <rect x="520" y="205" width="38" height="38" class="furn"/>
+    <rect x="505" y="350" width="30" height="42" class="service"/>
+    <text x="520" y="378" text-anchor="middle" class="small">V</text>
+
+    <!-- east rear bedroom -->
+    <rect x="429" y="0" width="231" height="187" class="room"/>
+    <text x="545" y="68" text-anchor="middle" class="label">U-BED-04</text>
+    <text x="545" y="88" text-anchor="middle" class="small">east-rear double</text>
+    <rect x="470" y="108" width="112" height="62" class="furn"/>
+    <rect x="602" y="26" width="28" height="105" class="furn"/>
+
+    <!-- north cross landing + ensuite/linen -->
+    <rect x="231" y="121" width="198" height="66" class="gallery"/>
+    <text x="330" y="150" text-anchor="middle" class="label">U-LAND-N01</text>
+    <text x="330" y="168" text-anchor="middle" class="small">north cross-landing</text>
+
+    <rect x="231" y="0" width="121" height="121" class="service"/>
+    <text x="292" y="46" text-anchor="middle" class="label">U-ENS-01</text>
+    <text x="292" y="64" text-anchor="middle" class="small">conditional en-suite</text>
+    <text x="292" y="82" text-anchor="middle" class="small">RH-06 route gate</text>
+
+    <rect x="352" y="0" width="77" height="121" class="room"/>
+    <text x="390" y="48" text-anchor="middle" class="label">U-LIN-01</text>
+    <text x="390" y="66" text-anchor="middle" class="small">linen / storage</text>
+
+    <!-- U circulation route -->
+    <polyline points="390,520 465,520 465,155 390,155 250,155" class="route"/>
+    <text x="492" y="388" class="small">three-sided upper route</text>
+
+    <text x="330" y="-20" text-anchor="middle" class="small">REAR / GARDEN SURROGATE</text>
+    <text x="330" y="625" text-anchor="middle" class="small">FRONT / STREET SURROGATE</text>
+    <text x="110" y="-7" text-anchor="middle" class="dim">west principal rooms</text>
+    <text x="545" y="-7" text-anchor="middle" class="dim">east bedroom / service flank</text>
+  </g>
+
+  <g transform="translate(850,145)">
+    <text x="0" y="0" class="head">Stair coordination</text>
+    <text x="0" y="42" class="small">18 rises total · 3 flights × 6 rises</text>
+    <text x="0" y="64" class="small">planning rise: 180 mm at 3240 mm floor-to-floor</text>
+    <text x="0" y="86" class="small">going: 280 mm · 5 goings / flight</text>
+    <text x="0" y="108" class="small">target clear width: ≈ 1000 mm</text>
+    <text x="0" y="130" class="small">full landings · no winders</text>
+    <text x="0" y="152" class="small">2R + G = 640 mm · pitch ≈ 33°</text>
+
+    <text x="0" y="212" class="head">Upper order</text>
+    <text x="0" y="254" class="small">4 bedrooms: one principal + three secondary.</text>
+    <text x="0" y="276" class="small">No fifth bedroom is forced into the circulation ring.</text>
+    <text x="0" y="298" class="small">Main family bathroom stacks over G-SVC-02.</text>
+    <text x="0" y="320" class="small">Principal en-suite survives only if RH-06 proves its route.</text>
+
+    <text x="0" y="380" class="head">Courtyard circulation</text>
+    <text x="0" y="422" class="small">South stair hall → east gallery → north cross-landing.</text>
+    <text x="0" y="444" class="small">No west gallery: principal west rooms keep useful width.</text>
+    <text x="0" y="466" class="small">Court remains orientation/daylight, not a corridor tax.</text>
+
+    <text x="0" y="526" class="head">Ground-floor correction</text>
+    <text x="0" y="568" class="small">Front drawing/hall partition shifts ≈ 200 mm west.</text>
+    <text x="0" y="590" class="small">Outer shell and courtyard do not move.</text>
+    <text x="0" y="612" class="small">Purpose: retain ≈ 1.05–1.15 m arrival passage beside stair.</text>
+
+    <text x="0" y="672" class="head">Later gates</text>
+    <text x="0" y="714" class="small">RH-04: final storey height + opening / elevation order</text>
+    <text x="0" y="736" class="small">RH-05: stair / courtyard trimming and load paths</text>
+    <text x="0" y="758" class="small">RH-06: riser, bath/en-suite drainage and extract</text>
+    <text x="0" y="780" class="small">RH-07: daylight / ventilation / overheating</text>
+  </g>
+
+  <text x="60" y="925" class="small">Schematic coordination drawing only. Furniture, stair and service symbols are fit tests, not construction information.</text>
+</svg>
