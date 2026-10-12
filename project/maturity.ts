@@ -182,9 +182,9 @@ export const workstreamStatuses = [
     maturity: 'M2',
     reviewedOn: '2026-10-12',
     currentState:
-      'The programme, acceptance criteria and W2 build/test material exist; no physical validation has yet been recorded.',
+      'The validation programme is defined but no physical result has yet been recorded; after RH-09/RH-10, P03 floor-edge and P04 wall/ceiling-joint evidence are the Reference House priorities, while P01 W2 remains an optional challenger and P02 is not a current house dependency.',
     nextGate:
-      'Build and test the wall bay; engineer and test the floor edge; then the floor platform and tectonic joint.',
+      'Engineer and test P03 structural floor edge, then build/test P04 wall/ceiling joint; continue P01 W2 only as optional research where resources justify it.',
     evidence: {
       framed: ['docs/development/tectonic-prototype-programme.md'],
       developed: [
