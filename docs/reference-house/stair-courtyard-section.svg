@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="900" viewBox="0 0 1450 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-03 stair and courtyard section</title>
+  <desc id="desc">Schematic longitudinal section through the south stair hall, open courtyard and north landing showing the provisional 3240 millimetre floor-to-floor coordination datum, three-flight stair intent, two metre headroom target and open-to-sky courtyard.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .cut{fill:#ededed;stroke:#111;stroke-width:3}.floor{stroke:#111;stroke-width:6}.thin{stroke:#555;stroke-width:1.5}.dash{stroke:#777;stroke-width:1.5;stroke-dasharray:7 6}.stair{fill:none;stroke:#222;stroke-width:3}.guard{stroke:#333;stroke-width:2}.sky{fill:#fafafa;stroke:#999;stroke-width:1.5;stroke-dasharray:7 6}.dline{stroke:#555;stroke-width:1.3}.arrow{stroke:#333;stroke-width:2;fill:none;marker-end:url(#arr)}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#333"/></marker>
+  </defs>
+
+  <text x="60" y="52" class="head">Reference House — RH-03 Stair / Courtyard Section</text>
+  <text x="60" y="80" class="sub">Coordination section only · provisional 3240 mm floor-to-floor · final sectional datums belong to RH-04</text>
+
+  <!-- section drawing -->
+  <g transform="translate(100,155)">
+    <!-- ground and first floor -->
+    <line x1="0" y1="570" x2="920" y2="570" class="floor"/>
+    <line x1="0" y1="310" x2="920" y2="310" class="floor"/>
+
+    <!-- south/front mass -->
+    <rect x="0" y="115" width="255" height="455" class="cut"/>
+    <!-- courtyard void -->
+    <rect x="255" y="115" width="320" height="455" class="sky"/>
+    <!-- north/rear mass -->
+    <rect x="575" y="115" width="245" height="455" class="cut"/>
+
+    <!-- reopen internal rooms white -->
+    <rect x="20" y="135" width="215" height="155" fill="#fff"/>
+    <rect x="20" y="330" width="215" height="220" fill="#fff"/>
+    <rect x="595" y="135" width="205" height="155" fill="#fff"/>
+    <rect x="595" y="330" width="205" height="220" fill="#fff"/>
+
+    <!-- stair schematic: three flights represented in section -->
+    <polyline points="40,550 72,532 104,514 136,496 168,478 200,460" class="stair"/>
+    <line x1="200" y1="460" x2="225" y2="460" class="stair"/>
+    <polyline points="225,460 195,442 165,424 135,406 105,388 75,370" class="stair"/>
+    <line x1="75" y1="370" x2="48" y2="370" class="stair"/>
+    <polyline points="48,370 80,358 112,346 144,334 176,322 208,310" class="stair"/>
+
+    <!-- guards / landing -->
+    <line x1="208" y1="310" x2="240" y2="310" class="thin"/>
+    <line x1="240" y1="310" x2="240" y2="245" class="guard"/>
+    <line x1="580" y1="310" x2="580" y2="245" class="guard"/>
+
+    <!-- labels -->
+    <text x="125" y="525" text-anchor="middle" class="label">GROUND STAIR HALL</text>
+    <text x="125" y="548" text-anchor="middle" class="small">3 flights · no winders</text>
+    <text x="125" y="205" text-anchor="middle" class="label">SOUTH LANDING</text>
+    <text x="415" y="210" text-anchor="middle" class="label">OPEN COURTYARD</text>
+    <text x="415" y="232" text-anchor="middle" class="small">open to sky through both principal storeys</text>
+    <text x="698" y="205" text-anchor="middle" class="label">NORTH LANDING / ROOM EDGE</text>
+    <text x="698" y="525" text-anchor="middle" class="label">GARDEN DINING BELOW</text>
+
+    <!-- courtyard sight / light arrows -->
+    <line x1="410" y1="110" x2="410" y2="245" class="arrow"/>
+    <line x1="465" y1="110" x2="465" y2="245" class="arrow"/>
+    <text x="438" y="95" text-anchor="middle" class="small">sky / daylight</text>
+
+    <!-- headroom envelope -->
+    <line x1="45" y1="410" x2="210" y2="410" class="dash"/>
+    <text x="215" y="405" class="small">2.0 m minimum headroom target checked at detailed stair development</text>
+
+    <!-- floor-to-floor dimension -->
+    <line x1="865" y1="310" x2="865" y2="570" class="dline"/>
+    <line x1="854" y1="310" x2="876" y2="310" class="dline"/>
+    <line x1="854" y1="570" x2="876" y2="570" class="dline"/>
+    <text x="890" y="440" transform="rotate(90 890 440)" text-anchor="middle" class="dim">3240 mm provisional F-F</text>
+
+    <!-- court width note -->
+    <line x1="255" y1="610" x2="575" y2="610" class="dline"/>
+    <line x1="255" y1="600" x2="255" y2="620" class="dline"/>
+    <line x1="575" y1="600" x2="575" y2="620" class="dline"/>
+    <text x="415" y="635" text-anchor="middle" class="dim">4.0 m court dimension in this section direction</text>
+  </g>
+
+  <g transform="translate(1060,160)">
+    <text x="0" y="0" class="head">Planning stair</text>
+    <text x="0" y="42" class="small">18 rises</text>
+    <text x="0" y="64" class="small">180 mm rise @ 3240 F-F</text>
+    <text x="0" y="86" class="small">280 mm going</text>
+    <text x="0" y="108" class="small">2R + G = 640 mm</text>
+    <text x="0" y="130" class="small">≈ 33° pitch</text>
+    <text x="0" y="152" class="small">≈ 1000 mm clear target</text>
+    <text x="0" y="174" class="small">full intermediate landings</text>
+
+    <text x="0" y="235" class="head">Sectional intent</text>
+    <text x="0" y="277" class="small">Stair is principal architecture.</text>
+    <text x="0" y="299" class="small">Court remains open to sky.</text>
+    <text x="0" y="321" class="small">Upper circulation receives court light.</text>
+    <text x="0" y="343" class="small">No double-height spectacle is assumed.</text>
+
+    <text x="0" y="404" class="head">RH-04 must resolve</text>
+    <text x="0" y="446" class="small">final floor / ceiling datums</text>
+    <text x="0" y="468" class="small">stair windows and front entrance</text>
+    <text x="0" y="490" class="small">courtyard opening hierarchy</text>
+    <text x="0" y="512" class="small">cornice / roof zone</text>
+    <text x="0" y="534" class="small">plan–section–elevation coupling</text>
+  </g>
+
+  <text x="60" y="860" class="small">The stair line is diagrammatic: exact tread count placement, landings, strings, guards and structural trimming require later technical coordination.</text>
+</svg>
