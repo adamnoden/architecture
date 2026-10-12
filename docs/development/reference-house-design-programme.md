@@ -9,15 +9,18 @@ The programme does not assume that the current whole-house fixture is the right 
 
 ## Current execution state
 
-- **Active stage:** `RH-04 — Couple plan, section and G-01 elevation`
-- **Last closed stage:** `RH-03 — Resolve stair, upper floor and courtyard circulation` — **PASS**; canonical gate record: [RH-03 Stair, Upper Floor and Courtyard Circulation](../reference-house/upper-floor-and-stair-development.md).
+- **Active stage:** `RH-05 — Coordinate primary structure`
+- **Last closed stage:** `RH-04 — Couple plan, section and G-01 elevation` — **PASS**; canonical gate record: [RH-04 Plan / Section / Elevation Gate](../reference-house/plan-section-elevation-gate.md).
 - **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), as modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg).
-- **Current section authority:** [RH-03 stair/courtyard section](../reference-house/stair-courtyard-section.svg); its 3240 mm floor-to-floor datum is provisional and exists only to coordinate the stair.
+- **Current elevation authority:** [RH-04 front elevation](../reference-house/front-elevation-study.svg) and [courtyard elevations](../reference-house/courtyard-elevations-study.svg).
+- **Current section authority:** [RH-04 principal section](../reference-house/principal-section-rh04.svg).
 - **Current shell:** **12.0 × 10.8 m**, centred **3.6 × 4.0 m** courtyard.
-- **Next action:** compare a small set of storey/ceiling datums and derive front, courtyard and sectional opening orders from the actual plan. The off-centre entrance, three-flight stair, bathroom windows, bedroom hierarchy and courtyard gallery must be negotiated as one plan/section/elevation system.
+- **Current vertical datums:** first FFL **+3300 mm**; ground clear ceiling **+2950 mm**; upper clear ceiling **+6000 mm**; cornice/eaves control approximately **+6250 mm**.
+- **Current front order:** centred four-bay field at X = **1.95 / 4.65 / 7.35 / 10.05 m**; principal entrance occupies bay 3.
+- **Next action:** establish a simple structural load-path concept against the RH-04 opening/floor datums, compare floor spanning and courtyard-wall strategies, and identify any architectural coordinate that structure cannot support without disproportionate transfer or depth.
 - **Current brief baseline:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
 - **Held morphology rewind:** `B — Offset thick/thin ring`, now a deep fallback only if later coordination exposes a material failure that cannot be solved proportionately inside the selected central-court morphology.
-- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-03 adds a family-bathroom service-wall occurrence and a new stacked vertical-service-zone occurrence.
+- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-04 creates architectural coordinates and structural obligations but no new pattern occurrence by itself.
 
 Update this block whenever a stage closes or the active stage materially changes.
 
