@@ -8,7 +8,7 @@ The active staged execution plan is the [Reference House Design Programme](../de
 
 The canonical project brief is the [Brief and Constraint Ledger](brief-and-constraint-ledger.md). RH-00 closed that ledger on 2026-10-12.
 
-RH-01 selected the compact central-court morphology. RH-02 then tested that morphology at furniture scale, widened the side wings by 300 mm each, and selected the ground-floor room order. The later RH-02 geometry controls current work.
+RH-01 selected the compact central-court morphology. RH-02 tested it at furniture scale, widened the side wings by 300 mm each and selected the ground-floor order. RH-03 has now fixed the principal stair topology, four-bedroom upper-floor order and three-sided upper courtyard circulation.
 
 ## Architectural scope
 
@@ -51,7 +51,7 @@ The current house studies develop this composition through the [Tectonic Archite
 
 ## Current architectural baseline
 
-The current controlled ground-floor shell is:
+The current controlled shell remains:
 
 - two principal storeys as the working configuration;
 - outer reservation: **12.0 × 10.8 m**;
@@ -60,39 +60,77 @@ The current controlled ground-floor shell is:
 - gross front/rear wings: **3.4 m**;
 - gross enclosed plate proxy: **115.2 m²/storey**, **230.4 m²** across two principal storeys before wall thickness, stairs and local voids/projections.
 
-The width is a deliberate RH-02 correction to RH-01's 11.4 m shell. Furniture-scale testing showed that 3.9 m gross side wings were too dependent on optimistic wall thicknesses for principal rooms.
+The width is a deliberate RH-02 correction to RH-01's 11.4 m shell. RH-03 does not reopen the outer shell.
 
-The selected ground-floor order is **G1 — one-sided service gallery + linked rear rooms**. Use the [RH-02 Ground-Floor Development](ground-floor-development.md) and [drawing](ground-floor-development.svg) as the current plan authority.
+### Ground floor
+
+The selected ground-floor order remains **G1 — one-sided service gallery + linked rear rooms**. Use the [RH-02 Ground-Floor Development](ground-floor-development.md) and [drawing](ground-floor-development.svg) together with the later [RH-03 stair overlay](stair-ground-floor-overlay.svg).
 
 Current ground-floor roles are:
 
 - west/front — principal drawing room;
 - west/rear — informal family room;
-- south/centre — entrance hall addressing the courtyard;
+- south/centre — entrance / principal stair hall addressing the courtyard;
 - one inner flank — narrow all-weather gallery;
 - outer side of that flank — compact study and service-hub reservation;
 - north/centre — garden dining hall;
 - north/service-side corner — kitchen with direct garden relationship.
 
+RH-03 moves the front drawing/hall partition approximately **200 mm west** for the front-wing depth only. This creates enough stair-hall width to retain a clear arrival passage beside the stair. The shell, courtyard, study and service block do not move.
+
+The principal stair is now a **three-flight full-landing stair** rather than a conventional two-flight return:
+
+- 18 risers total;
+- three flights of six risers;
+- 280 mm planning going;
+- approximately 1000 mm clear-flight target;
+- no winders;
+- 3240 mm floor-to-floor used only as the RH-03 coordination datum, giving 180 mm rise.
+
+Use the [RH-03 stair/courtyard section](stair-courtyard-section.svg) for current sectional intent. RH-04 owns final storey heights.
+
+### Upper floor
+
+Use [RH-03 Stair, Upper Floor and Courtyard Circulation](upper-floor-and-stair-development.md) and the [upper-floor drawing](upper-floor-and-stair-development.svg) as the current upper-floor authority.
+
+The upper floor selects **four bedrooms** rather than treating the five-bedroom ceiling as a target:
+
+- west/rear — principal bedroom;
+- west/front — secondary double bedroom;
+- east/front — compact double / secondary bedroom;
+- east/rear — compact double / secondary bedroom.
+
+Circulation forms a deliberate **three-sided U around the courtyard**:
+
+**south stair hall → east courtyard gallery → north cross-landing**.
+
+There is no west gallery, so the west bedrooms retain their useful width.
+
+The main family bathroom occupies the east-middle outer strip and stacks directly over `G-SVC-02`. A compact principal en-suite remains a **conditional project hypothesis**: RH-06 must prove its service/drainage route or remove it.
+
+The main bathroom and upper gallery now create a direct dry-side service-access relationship, and the stacked `G-SVC-02 → U-BATH-01` geography creates the current accessible vertical-service-zone reservation.
+
 The service/gallery flank is drawn east for continuity only. The scheme remains mirrorable until a real site gives one side different solar, utility, neighbour or access value.
 
-The earlier [Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) and its [drawing](whole-house-coordination-fixture.svg) are historical F0 coordination provenance. The [RH-01 morphology record](morphology-options.md) is also an earlier gate: its central-court decision remains live, but RH-02 supersedes its 11.4 m width.
+The earlier [Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) and its [drawing](whole-house-coordination-fixture.svg) are historical F0 coordination provenance. The [RH-01 morphology record](morphology-options.md) and RH-02 remain earlier gates where later RH-03 decisions explicitly supersede local geometry.
 
 ## Pattern occurrences
 
 The [Pattern Occurrence Register](pattern-occurrence-register.md) is the canonical record of how the pattern language is being used in this house.
 
-RH-02 has now created two new ground-floor coordination occurrences:
+Current confirmed coordination occurrences now include:
 
-- a dedicated service-hub occurrence at `G-SVC-02`;
-- a kitchen high-service-wall occurrence where `G-KIT-02` meets the service/gallery geography.
+- `RH-P002-02` — dedicated service hub at `G-SVC-02`;
+- `RH-P004-03` — kitchen high-service wall;
+- `RH-P004-04` — family-bathroom high-service wall with dry-side access from `U-GAL-02`;
+- `RH-P014-02` — bounded accessible vertical service zone in the stacked `G-SVC-02 → U-BATH-01` geography.
 
-Earlier F0 occurrences remain suspended provenance unless and until later geometry re-instantiates them. The new gallery is **not** automatically a horizontal service-spine occurrence; services must earn that topology in RH-06.
+Earlier F0 occurrences remain suspended provenance unless later geometry genuinely re-instantiates them. The ground and upper galleries are **not** automatically horizontal service-spine occurrences; RH-06 must derive actual route topology.
 
 A Reference House occurrence is evidence about coordination in this project. It is not evidence that the pattern is generally valid.
 
 ## Current work
 
-`RH-03 — Resolve stair, upper floor and courtyard circulation` is the active design stage.
+`RH-04 — Couple plan, section and G-01 elevation` is now the active design stage.
 
-The next task is to test stair positions/forms against the entrance hall, courtyard and inner gallery, then build the upper-floor room order around the selected ground-floor geography. The upper floor must resolve bedrooms, bathrooms, privacy, daylight, landing/courtyard relationships and service stacking without forcing wet rooms into dark technical interiors or scattering them merely for symmetry.
+The next task is to compare a small set of storey/ceiling datums and derive front, courtyard and sectional opening orders from the actual RH-02/RH-03 plan. The off-centre entrance, three-flight stair, bedroom hierarchy, bathroom windows and courtyard gallery must be negotiated together. RH-04 should not centre the front door reflexively or distribute windows after the fact merely to make an elevation look Georgian.
