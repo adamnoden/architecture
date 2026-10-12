@@ -174,9 +174,9 @@ Preferred position:
 
 The current surrogate side clearance is approximately 1.75 m before projections. RH-10 therefore treats the external unit as a **real space consumer**: it may project into that strip only if a useful human/equipment route remains beside it. A real site must re-test neighbour noise and boundary constraints.
 
-Create one new designed crossing family:
+RH-06 already created the conditional external heat-source crossing object. RH-10 now activates that same identity rather than inventing a duplicate:
 
-- `RH-P005-16 / PEN-HP-01` — bounded heat-pump flow/return, electrical/control and condensate/service crossing between `ASHP-01` and `G-PLANT-01`.
+- `RH-P005-12 / PEN-HS-01` — bounded heat-pump flow/return, electrical/control and condensate/service crossing between `ASHP-01` and `G-PLANT-01`.
 
 Keep it low, local and serviceable rather than routing external heat-source services through the roof or principal rooms.
 
@@ -211,9 +211,9 @@ The reserve is distributed rather than committed to one compass face. A real sit
 
 A battery is **not selected**. It would add fire, ventilation, replacement and cost obligations and must earn itself later.
 
-Create one new crossing family:
+Create one genuinely new crossing family:
 
-- `RH-P005-17 / PEN-PV-01` — dedicated PV electrical boundary crossing from the east/service roof field into the service/riser geography, with weathering, fire, airtightness and safe-isolation obligations.
+- `RH-P005-16 / PEN-PV-01` — dedicated PV electrical boundary crossing from the east/service roof field into the service/riser geography, with weathering, fire, airtightness and safe-isolation obligations.
 
 ---
 
