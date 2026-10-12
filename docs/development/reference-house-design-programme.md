@@ -9,10 +9,11 @@ The programme does not assume that the current whole-house fixture is the right 
 
 ## Current execution state
 
-- **Active stage:** `RH-00 — Reconstitute the brief`
-- **Last closed stage:** none
-- **Next action:** extract the actual brief, invariants, preferences, inherited hypotheses and unresolved decisions into a single authority ledger.
-- **Current baseline:** [Whole-House Coordination Fixture 01](../reference-house/whole-house-coordination-fixture.md), treated as a challenger rather than a design to preserve.
+- **Active stage:** `RH-01 — Test the gross morphology`
+- **Last closed stage:** `RH-00 — Reconstitute the brief` — **PASS**; canonical gate record: [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
+- **Next action:** construct the RH-01 comparison matrix and three materially different courtyard-house gross morphologies, using the current fixture only as a benchmark/source hypothesis.
+- **Current brief baseline:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
+- **Current geometry comparator:** [Whole-House Coordination Fixture 01](../reference-house/whole-house-coordination-fixture.md), with no incumbency advantage.
 - **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md).
 
 Update this block whenever a stage closes or the active stage materially changes.
