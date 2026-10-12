@@ -1,7 +1,9 @@
 # Reference House — External Access & Maintenance Plan
 
-**Status:** project brief / design-control document  
-**Purpose:** translate Principle 5 and the external-maintenance research into project-specific tasks without prematurely fixing dimensions or access equipment.
+**Status:** project design-control document; RH-08 spatial-coordination decisions incorporated  
+**Purpose:** translate Principle 5 and the external-maintenance research into project-specific tasks while preserving the distinction between architectural access conditions and later contractor methods.
+
+**Current RH-08 authority:** [RH-08 Roof, Drainage and External Maintenance](roof-drainage-access-rh08.md), [roof/drainage plan](roof-drainage-plan-rh08.svg) and [maintenance-access diagram](external-maintenance-access-rh08.svg).
 
 ## 1. Objective
 
@@ -13,19 +15,21 @@ The central test is:
 
 > **Can a competent future trade perform the foreseeable task using ordinary appropriate equipment without first improvising around the architecture?**
 
-The canonical patterns most directly implicated are [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md), [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md), [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) and [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md). This brief does not itself create project occurrences; those enter the [Pattern Occurrence Register](pattern-occurrence-register.md) only when geometry is specific enough.
+The canonical patterns most directly implicated are [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md), [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md), [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) and [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md).
+
+RH-08 now creates project occurrences for the first three. Window replacement remains incomplete until RH-09 resolves frame/subframe geometry.
 
 ## 2. Required project deliverable
 
-By developed design, prepare one coordinated **External Access & Maintenance Plan** covering:
+By developed design, maintain one coordinated **External Access & Maintenance Plan** covering:
 
 - external and courtyard elevations;
-- roof slopes, ridges, valleys, chimneys, rooflights and rainwater goods;
+- roof slopes, ridges/watersheds, penetrations and rainwater goods;
 - site/service entrance and side/rear access;
 - perimeter support conditions;
 - gates, passages and changes in level;
 - significant permanent planting and mature tree envelopes;
-- lightwells, basements, undercrofts, drains and chambers affecting access;
+- drains and chambers affecting access;
 - neighbouring boundaries and foreseeable highway dependency.
 
 Read the plan with the elevations and roof drawings, not as a facilities appendix produced after the geometry is fixed.
@@ -64,27 +68,29 @@ Coordinate any external lifting with the façade-access strategy.
 
 ### D. Gutter and eaves renewal
 
-Test inspection, clearing, local repair and full replacement separately. Confirm that bays, canopies and planting do not consume the selected access position.
+Test inspection, clearing, local repair and full replacement separately. Confirm that planting and projections do not consume the selected access position.
 
-### E. Chimney / high-roof repair
+RH-08 now fixes the primary roof collection at the **outer perimeter**, with no courtyard roof gutter.
 
-Test access to flashings, pots/caps and adjacent coverings. Let the task determine whether a roof hatch is worthwhile.
+### E. High-roof / penetration repair
+
+The current roof has no selected chimney, rooflight or rooftop plant. The soil-vent penetration remains the only current roof service terminal. Any later chimney, rooflight or rooftop plant reopens the access review.
 
 ### F. Blocked roof outlet / rainwater failure
 
-Assume an urgent inspection after abnormal discharge or blockage. The response route should not have to be invented under pressure.
+Assume an urgent inspection after abnormal discharge or blockage. RH-08 requires visible outward overflow behaviour at outer gutters and an independent courtyard emergency overflow.
 
 ### G. Courtyard upper façade
 
-Assume repointing, gutter/eaves work and full-frame window replacement. Check passage width and headroom, turning/handling points, support conditions, protection of paving/fountain/planting and whether equipment can be erected without dismantling permanent architecture.
+Assume repointing, coping work and full-frame window replacement. The court itself remains the working area for a dismantled mobile tower brought through the north garden-dining logistics route.
 
 ### H. Mature-landscape replay
 
-Repeat the review using the intended mature size of major trees and permanent planting. Identify what can be cut back or removed and which positions must remain substantially open.
+Repeat the review using the intended mature size of major trees and permanent planting. Identify what can be cut back or removed and which Category A positions must remain substantially open.
 
 ## 5. Ground plane, wall base and temporary support
 
-Do **not** assume one universal “perimeter dry zone”. The earlier catalogue concept was rejected because wall-base drying, drainage, inspection and maintenance-support territory are distinct functions that can conflict.
+Do **not** assume one universal “perimeter dry zone”. Wall-base drying, drainage, inspection and maintenance-support territory are distinct functions that can conflict.
 
 Instead coordinate them deliberately:
 
@@ -94,7 +100,9 @@ Instead coordinate them deliberately:
 - allow one piece of ground geometry to serve several functions only where those functions are technically compatible;
 - keep critical maintenance support territory free of uniquely difficult permanent obstructions.
 
-Record where temporary support would bear over basements, lightwells or undercrofts; where drains or chambers interrupt it; where landscape must remain removable; and where temporary loads require structural coordination.
+Record where temporary support would bear over drains/chambers; where landscape must remain removable; and where temporary loads require structural coordination.
+
+RH-08 now identifies the east/service side, west representative access positions, rear working line and courtyard tower position as **Category A** maintenance geography.
 
 ## 6. Bays, porticos and projections
 
@@ -104,40 +112,86 @@ Record what work the projection complicates, whether conventional temporary work
 
 This is not a veto on projections. It is a whole-life consequence check.
 
-## 7. Roof strategy
+No large front portico is currently required by the controlled Reference House baseline.
 
-Do not begin by assuming a hatch. Map the roof tasks and work backwards.
+## 7. Roof strategy — RH-08 controlled resolution
 
-Identify:
+RH-08 has now worked backwards from actual roof tasks.
 
-- components requiring periodic access;
-- tasks that can be designed out or moved to safer positions;
-- likely access method for each remaining task;
-- safe arrival and onward travel;
-- edges, openings and fragile surfaces;
-- interaction with rooflights;
-- temporary edge-protection or scaffold interfaces where relevant;
-- component/material handling and removal.
+### Selected roof-access position
 
-A rear or secondary hatch remains preferred **if** it improves the complete route. If it merely deposits someone onto a roof that still requires separate external access, question its value.
+- no permanent roof hatch in the current baseline;
+- no speculative permanent anchor/fall-arrest system;
+- primary roof access by planned ground-supported scaffold/tower from outer elevations;
+- courtyard tower for rare court-side coping/façade work;
+- roof entry, where required, remains a task-specific temporary-works decision with edge protection.
 
-## 8. Courtyard logistics route
+This decision is justified because the selected roof has:
+
+- no inner courtyard gutter;
+- no internal roof outlet;
+- no rooftop plant;
+- no rooflight;
+- no chimney;
+- only one expected service penetration, the soil/vent terminal.
+
+A hatch would add weather/air/thermal/security debt without providing the edge protection and working platform that the likely roof tasks require.
+
+### Selected roof drainage relation
+
+Four low-slope roof fields fall outward from the courtyard toward external collection edges. This deliberately removes primary roof drainage from the building centre.
+
+Reconsider the access strategy if later design adds frequent rooftop maintenance or equipment.
+
+## 8. Courtyard logistics route — RH-08 controlled resolution
 
 Treat the garden-to-courtyard connection as both architectural circulation and latent maintenance logistics.
 
-Test it with representative scaffold/tower components, full opening replacements, roof/rainwater components, masonry materials, temporary protection and waste removal.
+The preferred logistics path is:
 
-The route should remain domestic and attractive. Its maintenance role should normally disappear in ordinary use.
+**rear garden → garden-dining room → courtyard**.
 
-## 9. Landscape controls
+At technical design, preserve a **1200 mm clear-opening coordination target** at the controlling door/opening where the selected architectural door family can provide it. A larger fully opening pair is preferable where compatible with RH-04 composition.
+
+Test the path with:
+
+- dismantled mobile-tower components;
+- full opening replacements;
+- coping/rainwater components;
+- masonry materials;
+- temporary protection;
+- waste removal.
+
+The **3.6 × 4.0 m courtyard** remains the working area. Do not install a permanent fountain, fixed raised planter or other central object that consumes the only credible tower position unless an alternative working geometry is demonstrated.
+
+The route should remain domestic and attractive. Its maintenance role should disappear in ordinary use.
+
+## 9. Landscape controls — RH-08 project geometry
 
 Classify the immediate perimeter as:
 
-**A. Critical access positions** — preserve substantial future capability.  
-**B. Removable landscape positions** — planting or furniture may occupy them if removal is straightforward.  
-**C. Unconstrained landscape** — maintenance does not materially depend on them.
+### A. Critical access positions
 
-Avoid uniquely difficult-to-remove features in Category A unless another credible route exists. Consider mature crown and root geometry where trees affect sole access positions, gutters, roof edges or façade inspection.
+Preserve substantial future capability at:
+
+- east/service-side plant, utility, façade and roof-access strip;
+- west-side representative façade / roof-edge support positions;
+- rear representative scaffold/tower working line;
+- north garden-to-courtyard logistics route;
+- at least one viable courtyard tower position;
+- external courtyard-drain / overflow inspection points.
+
+On the current surrogate 15.5 m-wide plot the 12.0 m house leaves approximately **1.75 m gross side clearance per side**. Treat the east/service-side residual width as particularly valuable; do not consume it with fixed stores or uniquely difficult landscape before a real site provides another route.
+
+### B. Removable landscape positions
+
+Planting or furniture may occupy them if removal is straightforward and does not require demolition or excavation of permanent work.
+
+### C. Unconstrained landscape
+
+Maintenance does not materially depend on these areas.
+
+Consider mature crown and root geometry where trees affect sole access positions, gutters, roof edges or façade inspection.
 
 ## 10. Neighbour and highway dependency
 
@@ -145,63 +199,72 @@ Map work likely to require neighbour access, oversailing beyond the legal bounda
 
 Zero dependency is not the objective. Avoidable dependency should not be discovered after completion.
 
+The principal front may legitimately need temporary highway-facing scaffold for front-façade work. Do not make it the only route to service plant or routine roof components.
+
 ## 11. Handover / stewardship information
 
 The building record should preserve:
 
 - the as-built external-access plan;
 - critical support and access positions;
-- below-ground constraints;
-- designed scaffold ties, anchors or guard sockets;
+- below-ground drainage constraints;
+- any later designed scaffold ties, anchors or guard sockets;
 - landscape zones whose obstruction would impair access;
 - roof access strategy and restrictions;
-- representative replacement routes for major opening families.
+- courtyard logistics route;
+- representative replacement routes for major opening families;
+- rainwater overflow/failure routes.
 
 This information should survive landscape redesign and ownership change.
 
 ## 12. Stage gates
 
-### Stage 2 — Concept design
+### Stage 2 — Concept design — **complete for current geometry**
 
-- establish the likely access hierarchy;
-- flag courtyard logistics and boundary constraints;
-- test the gross effect of projections and roof form;
-- reserve plausible maintenance territory before landscape hardens.
+- access hierarchy established;
+- courtyard logistics and boundary constraints flagged;
+- gross roof/access effect tested;
+- maintenance territory reserved before landscape hardens.
 
-### Stage 3 — Spatial coordination
+### Stage 3 — Spatial coordination — **RH-08 pass, subject to technical validation**
 
-- draw task-specific access envelopes for representative scenarios;
-- coordinate support positions with structure, drainage, basements/lightwells and landscape;
-- determine whether a roof hatch is genuinely useful;
-- resolve courtyard logistics geometry;
-- identify neighbour/highway dependencies.
+- task-specific access geography drawn;
+- roof hatch decision made from actual tasks;
+- courtyard logistics route fixed at coordination level;
+- Category A support/access territories identified;
+- roof/drainage relation fixed;
+- neighbour/highway dependency retained explicitly.
 
-### Stage 4 — Technical design
+### Stage 4 — Technical design — **open**
 
-- resolve permanent anchors, tie points, guard sockets or special interfaces where required;
-- record temporary-load assumptions affecting permanent structure;
+- resolve temporary-load assumptions and ground bearing;
+- resolve any permanent anchors/tie points/guard sockets only if the task/risk assessment earns them;
 - confirm window replacement sequences;
-- coordinate roof/rainwater details with the access method;
+- coordinate final roof/rainwater details with access method;
+- confirm 1200 mm logistics opening against selected door family;
 - issue information needed for the health-and-safety file and building record.
 
-### Completion
+### Completion — **future**
 
-- verify that gates, levels, drains, planting, external plant and hard landscape have not consumed the strategy;
+- verify gates, levels, drains, planting, external plant and hard landscape have not consumed the strategy;
 - photograph critical support and route conditions;
-- update the building record to the as-built condition.
+- update the building record to as-built condition.
 
-## 13. Current unresolved decisions
+## 13. Remaining unresolved decisions after RH-08
 
-These remain open until the Reference House geometry develops:
+The following remain legitimately open:
 
-- courtyard logistics width/headroom;
-- access method by elevation;
-- support-zone dimensions and load assumptions;
-- final bay/portico geometry;
-- roof-hatch inclusion and location;
-- permanent roof anchors or edge-protection provisions, if any;
-- extent of internal full-frame window replacement;
-- wall-base/drainage relationship at critical maintenance positions;
-- landscape species/positions around critical zones.
+- exact scaffold/tower support-zone dimensions and temporary loads;
+- final bay/portico geometry if introduced later;
+- permanent roof anchors / guard sockets, currently **not selected**;
+- exact internal versus external full-frame window replacement sequence — RH-09;
+- wall-base/drainage detail at critical access positions;
+- landscape species/positions and mature-tree replay;
+- final roof waterproofing/gutter/coping detail;
+- final rainwater discharge destination from the real site's ground/sewer evidence;
+- exact MVHR intake/exhaust and soil-vent terminal clearances;
+- any future PV/solar equipment and consequent access review.
 
-These are implementation questions. The doctrine requirement is fixed: the answers must be deliberate and demonstrated rather than left to future improvisation.
+The roof-hatch question is no longer unresolved: **the current Reference House does not include one.** Reopen only if later tasks justify it.
+
+The doctrine requirement remains fixed: maintenance access must be deliberate and demonstrated rather than left to future improvisation.
