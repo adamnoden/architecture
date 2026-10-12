@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-07 environmental coordination</title>
+  <desc id="desc">Plan-based environmental diagram showing the central shaded courtyard, multi-aspect rooms, purge and cross-ventilation paths, solar-risk orientation tests and passive-first hierarchy.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .outer{fill:#fff;stroke:#111;stroke-width:4}.room{fill:#f5f5f5;stroke:#555;stroke-width:1.5}.court{fill:#f7f7f7;stroke:#111;stroke-width:2.2;stroke-dasharray:8 6}.air{fill:none;stroke:#333;stroke-width:4;marker-end:url(#arr)}.solar{fill:none;stroke:#777;stroke-width:3;marker-end:url(#arr2)}.axis{stroke:#aaa;stroke-width:1;stroke-dasharray:5 5}.note{fill:#fafafa;stroke:#bbb;stroke-width:1}.shade{fill:#e9e9e9;stroke:#777;stroke-width:1.2}.window{stroke:#111;stroke-width:7}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#333"/></marker>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#777"/></marker>
+  </defs>
+
+  <text x="55" y="52" class="head">Reference House — RH-07 Environmental Coordination</text>
+  <text x="55" y="80" class="sub">Passive-first diagram · courtyard retained as shaded light court · MVHR selected for whole-dwelling ventilation, not summer cooling</text>
+
+  <g transform="translate(85,150)">
+    <!-- 55 px/m -->
+    <rect x="0" y="0" width="660" height="594" class="outer"/>
+    <rect x="0" y="0" width="231" height="594" class="room"/>
+    <rect x="429" y="0" width="231" height="594" class="room"/>
+    <rect x="231" y="0" width="198" height="187" class="room"/>
+    <rect x="231" y="407" width="198" height="187" class="room"/>
+    <rect x="231" y="187" width="198" height="220" class="court"/>
+
+    <text x="115" y="145" text-anchor="middle" class="label">rear west rooms</text>
+    <text x="115" y="465" text-anchor="middle" class="label">front west rooms</text>
+    <text x="545" y="145" text-anchor="middle" class="label">rear east rooms</text>
+    <text x="545" y="465" text-anchor="middle" class="label">front east rooms</text>
+    <text x="330" y="90" text-anchor="middle" class="label">garden / dining band</text>
+    <text x="330" y="500" text-anchor="middle" class="label">entrance / stair band</text>
+    <text x="330" y="285" text-anchor="middle" class="label">C-01</text>
+    <text x="330" y="306" text-anchor="middle" class="small">shaded light court</text>
+    <text x="330" y="325" text-anchor="middle" class="dim">3.6 × 4.0 m</text>
+
+    <!-- opening hints -->
+    <line x1="60" y1="0" x2="155" y2="0" class="window"/><line x1="505" y1="0" x2="605" y2="0" class="window"/>
+    <line x1="60" y1="594" x2="155" y2="594" class="window"/><line x1="505" y1="594" x2="605" y2="594" class="window"/>
+    <line x1="0" y1="95" x2="0" y2="180" class="window"/><line x1="0" y1="420" x2="0" y2="505" class="window"/>
+    <line x1="660" y1="95" x2="660" y2="180" class="window"/><line x1="660" y1="420" x2="660" y2="505" class="window"/>
+    <line x1="231" y1="240" x2="231" y2="315" class="window"/><line x1="429" y1="240" x2="429" y2="315" class="window"/>
+    <line x1="285" y1="187" x2="375" y2="187" class="window"/><line x1="285" y1="407" x2="375" y2="407" class="window"/>
+
+    <!-- purge arrows -->
+    <path d="M10 135 C80 135 160 170 225 270" class="air"/>
+    <path d="M650 135 C580 135 505 180 435 270" class="air"/>
+    <path d="M105 585 C130 520 180 470 225 330" class="air"/>
+    <path d="M555 585 C530 520 480 470 435 330" class="air"/>
+    <path d="M330 585 C330 520 330 455 330 415" class="air"/>
+    <path d="M330 180 C330 135 330 70 330 10" class="air"/>
+
+    <text x="65" y="205" class="small">outer ↔ court purge</text>
+    <text x="465" y="205" class="small">outer ↔ court purge</text>
+    <text x="350" y="520" class="small">stair / court purge</text>
+
+    <!-- solar arrows current surrogate -->
+    <path d="M280 680 L280 610" class="solar"/>
+    <path d="M390 680 L390 610" class="solar"/>
+    <text x="330" y="704" text-anchor="middle" class="small">current drawing surrogate: street south</text>
+
+    <text x="330" y="-20" text-anchor="middle" class="small">REAR / GARDEN SURROGATE</text>
+    <text x="330" y="625" text-anchor="middle" class="small">FRONT / STREET SURROGATE</text>
+  </g>
+
+  <g transform="translate(820,145)">
+    <rect x="0" y="0" width="610" height="700" class="note"/>
+    <text x="22" y="38" class="head">Environmental hierarchy</text>
+
+    <text x="22" y="88" class="label">1 · Form</text>
+    <text x="22" y="114" class="small">3.4–4.2 m occupied bands · multiple aspects · restrained glazing.</text>
+
+    <text x="22" y="154" class="label">2 · Solar control</text>
+    <text x="22" y="180" class="small">Orientation-specific shading / glazing; no default rear glass wall.</text>
+
+    <text x="22" y="220" class="label">3 · Summer heat removal</text>
+    <text x="22" y="246" class="small">Secure openable windows · cross purge · court/stair stack assistance.</text>
+
+    <text x="22" y="286" class="label">4 · Whole-dwelling IAQ</text>
+    <text x="22" y="312" class="small">Central MVHR selected; MEV retained as simpler fallback.</text>
+
+    <text x="22" y="352" class="label">5 · Active cooling</text>
+    <text x="22" y="378" class="small">Not reserved. Must be earned by later dynamic modelling.</text>
+
+    <text x="22" y="430" class="head">Orientation stress test</text>
+    <text x="22" y="474" class="small">Street south — credible; front summer gain to control.</text>
+    <text x="22" y="498" class="small">Street west — strongest front low-angle overheating case.</text>
+    <text x="22" y="522" class="small">Street east — west-facing rear domestic rooms become critical.</text>
+    <text x="22" y="546" class="small">Street north — useful south rear aspect; still shade summer sun.</text>
+
+    <text x="22" y="598" class="head">Courtyard truth</text>
+    <text x="22" y="640" class="small">Diffuse light / orientation / purge value: high.</text>
+    <text x="22" y="664" class="small">Direct sun at ground: low.</text>
+    <text x="22" y="688" class="small">Primary sunny amenity remains the rear garden.</text>
+  </g>
+
+  <text x="55" y="930" class="small">RH-07 coordination diagram only. Solar/daylight/airflow performance requires site-specific modelling; arrows show design intent, not calculated flow rates.</text>
+</svg>
