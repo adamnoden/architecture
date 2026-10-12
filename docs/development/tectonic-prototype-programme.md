@@ -1,11 +1,14 @@
 # Tectonic Prototype and Engineering Programme
 
 **Status:** validation programme for unresolved tectonic assemblies.  
-**Current first gate:** P01-W2 wall bay, governed by the [P01-W2 Evidence Protocol](../prototypes/w2-wall-bay-test-protocol.md).
+**Reference House validation priority after RH-11:** **P03 structural floor edge → P04 wall/ceiling tectonic joint**.  
+**Optional research challenger:** P01-W2 wall bay remains governed by the [P01-W2 Evidence Protocol](../prototypes/w2-wall-bay-test-protocol.md); P02 selective floor access is not a current Reference House dependency.
 
 ## Purpose
 
 Several tectonic propositions are promising but not proven enough for project adoption at full scale. Their authority is not uniform: some general relationships are already canonical House Kernel patterns or strategies, while particular occupied-surface and structural implementations remain held candidates or challengers. This programme defines the physical and engineering work needed to select, modify or reject those implementations and, where warranted, strengthen the evidence behind the general proposition.
+
+RH-09/RH-10 changed the Reference House dependency order without invalidating the research value of P01/P02: the coordinated house now uses conventional W0/W1 walls and conventional principal floors as its baseline, so W2 and selective floor access may fail without unravelling the architecture. P03 remains a real structural implementation dependency and P04 tests a selected occupied-interface condition. That is why P03/P04 now lead Reference House validation while P01 continues as optional research.
 
 > **Prototype the interface, not merely the object.**
 
