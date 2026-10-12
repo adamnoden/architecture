@@ -12,7 +12,7 @@ The architectural position and canonical pattern language are established strong
 
 ### Reference House
 
-The Reference House is the main architectural integration test. Its pattern-occurrence register and authority stack are established, but the building remains provisional. Current work should challenge the footprint and room order; resolve stair, courtyard and circulation relationships; coordinate structure and service crossings; develop the passive-first environmental strategy against real orientation and openings; and keep G-01 grammar, courtyard morphology and project tectonic choices distinguishable.
+The Reference House is the main architectural integration test. RH-01 through RH-08 have now established and challenged the compact courtyard morphology, domestic room order, stair/upper circulation, G-01 plan/section/elevation coupling, short-span structural concept, service/failure geography, passive/environmental hierarchy, and roof/drainage/external-maintenance strategy. **RH-09 — Tectonic and occupied-surface integration is active.** The immediate task is to turn those coordinated systems into convincing rooms and interfaces: wall attachment/lining, skirting/service edges, window replacement, doors/thresholds, movement joints and selective access, with unresolved physical claims handed to P01/P02/P04 rather than settled rhetorically. Reference House maturity remains M2 until RH-10 reconciles the whole virtual building.
 
 ### Physical and engineering validation
 
