@@ -8,7 +8,7 @@ The active staged execution plan is the [Reference House Design Programme](../de
 
 The canonical project brief is the [Brief and Constraint Ledger](brief-and-constraint-ledger.md). RH-00 closed that ledger on 2026-10-12.
 
-RH-01 selected the compact central-court morphology. RH-02 tested it at furniture scale, widened the side wings by 300 mm each and selected the ground-floor order. RH-03 fixed the principal stair topology, four-bedroom upper-floor order and three-sided upper courtyard circulation. RH-04 has now coupled those plans to a controlled section and opening order.
+RH-01 selected the compact central-court morphology. RH-02 tested it at furniture scale, widened the side wings by 300 mm each and selected the ground-floor order. RH-03 fixed the principal stair topology, four-bedroom upper-floor order and three-sided upper courtyard circulation. RH-04 coupled those plans to a controlled section and opening order. RH-05 has now established a pre-engineering structural concept without requiring an architectural rewind.
 
 ## Architectural scope
 
@@ -84,7 +84,7 @@ The principal stair remains a **three-flight full-landing stair**:
 - approximately 1000 mm clear-flight target;
 - no winders.
 
-RH-04 now controls the floor datum at **+3300 mm**, giving a planning rise of **183.3 mm**, `2R + G ≈ 647 mm` and a pitch of approximately **33.2°**.
+RH-04 controls the first-floor datum at **+3300 mm**, giving a planning rise of **183.3 mm**, `2R + G ≈ 647 mm` and a pitch of approximately **33.2°**.
 
 The upper floor remains four bedrooms:
 
@@ -103,7 +103,7 @@ The main family bathroom stacks over `G-SVC-02`. A compact principal en-suite re
 
 Use [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md) as the current architectural gate record, together with the [front elevation](front-elevation-study.svg), [courtyard elevations](courtyard-elevations-study.svg) and [principal section](principal-section-rh04.svg).
 
-Controlled vertical datums are now:
+Controlled vertical datums are:
 
 - ground FFL: **±0**;
 - ground clear ceiling: **+2950 mm**;
@@ -119,9 +119,36 @@ The courtyard has a separate scoped order:
 - east face uses a two-bay gallery rhythm;
 - west face uses two room-owned opening axes.
 
-The house therefore has several explicit but related orders rather than one universal grid. The front-door axis and courtyard axis are intentionally different.
+The front-door axis and courtyard axis are intentionally different. RH-04 fixes the outer cornice/eaves control but **not** final roof geometry.
 
-RH-04 fixes the outer cornice/eaves control but **not** the final roof geometry. Roof pitches, valleys, courtyard rainwater, overflows and access remain RH-08 work.
+## Current structural baseline
+
+Use [RH-05 Structural Coordination](structural-coordination.md) and the [structural concept overlay](structural-concept-overlay.svg) as the current structural authority.
+
+The selected pre-engineering concept uses the house's permanent masonry geometry rather than adding an independent whole-house frame:
+
+- loadbearing inner leaf of the external masonry envelope;
+- loadbearing inner leaf of the courtyard envelope;
+- west/east floor strips spanning approximately **4.2 m gross** between those support lines;
+- north/south central strips spanning approximately **3.4 m gross**;
+- four repeated approximately **3.4 m edge beams** continuing the courtyard side-wall support lines through the front and rear wings;
+- local stair trimmers;
+- a reserved framed service-opening zone over the east-middle service/bathroom geography;
+- permanent structural deck acting as the diaphragm independently of any removable floor layer.
+
+The four edge beams are floor framing, not whole-house transfer girders. Engineered timber / LVL is the first engineering comparator; protected steel remains a fallback if depth, vibration, connection or bearing requires it.
+
+RH-05 finds no current reason to move the courtyard, entrance, stair, four-bay façade or RH-04 sectional hierarchy. The **350 mm** floor reservation survives provisionally. No member or masonry capacity has been proved; structural-engineer review remains mandatory.
+
+Protected no-drill / no-chase zones now include:
+
+- courtyard corner reaction nodes;
+- the four edge beams;
+- stair trimmers;
+- lintel and bearing zones;
+- later diaphragm collector/edge zones once engineered.
+
+The rear elevation is not yet controlled. It must retain enough masonry pier/reaction geography that garden openings do not silently force a large transfer frame.
 
 ## Pattern occurrences
 
@@ -134,12 +161,12 @@ Current confirmed coordination occurrences include:
 - `RH-P004-04` — family-bathroom high-service wall with dry-side access from `U-GAL-02`;
 - `RH-P014-02` — bounded accessible vertical service zone in the stacked `G-SVC-02 → U-BATH-01` geography.
 
-RH-04 creates architectural coordinates and structural obligations but does not itself add a new pattern occurrence. In particular, drawn openings are not yet `HSA-P-007` occurrences because frame/subframe and replacement geometry remain unresolved.
+RH-05 creates a framed structural reservation for that vertical service geography but deliberately does **not** create a new `HSA-P-005 — Designed Structural Penetration` occurrence. RH-06 must first define the actual service bundle and opening geometry.
 
 Earlier F0 occurrences remain suspended provenance unless later geometry genuinely re-instantiates them. The ground and upper galleries are **not** automatically horizontal service-spine occurrences; RH-06 must derive actual route topology.
 
 ## Current work
 
-`RH-05 — Coordinate primary structure` is the active design stage.
+`RH-06 — Coordinate services and failure geography` is the active design stage.
 
-The next task is to establish a simple load-path concept against the RH-04 coordinates: floor spanning directions, likely loadbearing lines, courtyard/stair trimming, front and courtyard opening piers, and unavoidable crossings. If those coordinates demand hidden transfers or disproportionate depth, RH-05 must rewind the architecture rather than bury the problem in structure.
+The next task is to route every major service against the actual architecture and RH-05 protected structural zones: utility entry, plant replacement, water, foul/soil, kitchen and bathroom extract, electrical/data and the vertical service zone. RH-06 must create the first new crossing register only where a real route genuinely intersects real structure, and must remove the conditional principal en-suite if its gravity/service route cannot be made proportionate.
