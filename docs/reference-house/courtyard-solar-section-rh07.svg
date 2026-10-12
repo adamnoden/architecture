@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-07 courtyard solar section</title>
+  <desc id="desc">Sectional screening diagram through the courtyard showing approximate summer, equinox and winter solar-noon rays at London latitude and the resulting wall shadow lengths.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .wall{fill:#ededed;stroke:#111;stroke-width:3}.court{fill:#fafafa;stroke:#777;stroke-width:1.5}.ground{stroke:#111;stroke-width:4}.ray{stroke:#555;stroke-width:2.5;marker-end:url(#arr)}.shadow{stroke:#222;stroke-width:7;opacity:.45}.datum{stroke:#999;stroke-width:1.2;stroke-dasharray:6 5}.note{fill:#fafafa;stroke:#bbb;stroke-width:1}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#555"/></marker>
+  </defs>
+
+  <text x="55" y="52" class="head">Reference House — RH-07 Courtyard Solar Screening</text>
+  <text x="55" y="80" class="sub">London latitude ≈51.5°N · 6.25 m wall height · screening geometry only, not a compliance model</text>
+
+  <g transform="translate(90,150)">
+    <!-- scale 65px/m vertical and horizontal-ish -->
+    <rect x="0" y="0" width="150" height="406" class="wall"/>
+    <rect x="410" y="0" width="150" height="406" class="wall"/>
+    <rect x="150" y="0" width="260" height="406" class="court"/>
+    <line x1="0" y1="406" x2="560" y2="406" class="ground"/>
+
+    <text x="75" y="205" text-anchor="middle" class="label">south wall</text>
+    <text x="485" y="205" text-anchor="middle" class="label">north wall</text>
+    <text x="280" y="220" text-anchor="middle" class="label">courtyard</text>
+    <text x="280" y="242" text-anchor="middle" class="dim">4.0 m section</text>
+
+    <!-- summer ray: from south wall top to shadow tip 3.33m -->
+    <line x1="150" y1="0" x2="366" y2="406" class="ray"/>
+    <line x1="150" y1="406" x2="366" y2="406" class="shadow"/>
+    <text x="270" y="335" class="small">summer noon ≈61.9°</text>
+    <text x="255" y="385" class="small">shadow ≈3.33 m</text>
+
+    <!-- equinox/winter rays continue beyond court, clipped -->
+    <line x1="150" y1="0" x2="560" y2="326" class="ray"/>
+    <text x="365" y="275" class="small">equinox noon ≈38.5° · shadow ≈7.86 m</text>
+
+    <line x1="150" y1="0" x2="560" y2="111" class="ray"/>
+    <text x="365" y="86" class="small">winter noon ≈15.1° · shadow ≈23.2 m</text>
+
+    <line x1="150" y1="-25" x2="150" y2="430" class="datum"/>
+    <line x1="410" y1="-25" x2="410" y2="430" class="datum"/>
+    <text x="280" y="445" text-anchor="middle" class="dim">4.0 m court width</text>
+    <text x="-18" y="203" transform="rotate(-90 -18 203)" text-anchor="middle" class="dim">6.25 m to cornice/eaves control</text>
+  </g>
+
+  <g transform="translate(760,150)">
+    <rect x="0" y="0" width="570" height="520" class="note"/>
+    <text x="22" y="38" class="head">What this means</text>
+
+    <text x="22" y="88" class="label">Summer solstice noon</text>
+    <text x="22" y="114" class="small">Approx. 3.33 m shadow across a 4.0 m court.</text>
+    <text x="22" y="136" class="small">Only ≈0.67 m of ground escapes the opposite-wall shadow.</text>
+
+    <text x="22" y="186" class="label">Equinox</text>
+    <text x="22" y="212" class="small">Shadow length exceeds the entire court.</text>
+    <text x="22" y="234" class="small">Do not promise March sunlight on the court floor.</text>
+
+    <text x="22" y="284" class="label">Winter</text>
+    <text x="22" y="310" class="small">The court floor is deeply shaded by geometry.</text>
+
+    <text x="22" y="360" class="label">Design consequence</text>
+    <text x="22" y="386" class="small">Treat C-01 as a shaded light court, not the sunny amenity garden.</text>
+    <text x="22" y="408" class="small">Principal habitable rooms retain meaningful outer-façade daylight.</text>
+    <text x="22" y="430" class="small">Planting should tolerate shade; avoid a large crown that further closes sky.</text>
+
+    <text x="22" y="480" class="small">At the court centre, the simple clear-sky aperture is only</text>
+    <text x="22" y="502" class="small">≈35.5° across 4.0 m and ≈32.1° across 3.6 m.</text>
+  </g>
+
+  <text x="55" y="850" class="small">Solar-noon geometry uses 90° − latitude + solar declination. It ignores roof profile, azimuth away from noon, local obstructions and reflections; later daylight/thermal modelling remains required.</text>
+</svg>
