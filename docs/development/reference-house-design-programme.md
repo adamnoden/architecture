@@ -3,487 +3,244 @@
 **Status:** active programme control  
 **Purpose:** drive the Reference House from provisional coordination fixture to a coordinated virtual building through small, restart-safe design gates.
 
-The Reference House is the principal integration test for House Kernel. This programme exists because the work is expected to be interrupted repeatedly. Progress must therefore live in the repository rather than in conversational memory.
-
-The programme does not assume that the current whole-house fixture is the right house. Existing geometry, room order, service bias, courtyard dimensions and stair assumptions are hypotheses unless a later gate explicitly retains them.
+The Reference House is the principal integration test for House Kernel. Progress lives in the repository because work may be interrupted repeatedly. Existing geometry has authority only where a later gate explicitly retains it.
 
 ## Current execution state
 
-- **Active stage:** `RH-09 — Tectonic and occupied-surface integration`
-- **Last closed stage:** `RH-08 — Roof, drainage and external maintenance` — **PASS at architectural / pre-technical coordination level**; canonical gate record: [RH-08 Roof, Drainage and External Maintenance](../reference-house/roof-drainage-access-rh08.md).
-- **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), as modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg) **as superseded locally by RH-06**, which replaces `U-ENS-01` with `U-DRESS-01`.
-- **Current environmental authority:** [RH-07 Environmental Coordination](../reference-house/environmental-coordination.md), [environmental diagram](../reference-house/environmental-coordination.svg) and [courtyard solar section](../reference-house/courtyard-solar-section-rh07.svg).
-- **Current service authority:** [RH-06 Services and Failure Geography](../reference-house/service-topology-rh06.md), locally superseded for whole-dwelling ventilation by the [RH-07 MVHR Service Addendum](../reference-house/service-topology-rh07-mvhr-addendum.md) and [MVHR topology](../reference-house/mvhr-topology-rh07.svg).
+- **Active stage:** `RH-10 — Whole-house coordination audit`
+- **Last closed stage:** `RH-09 — Tectonic and occupied-surface integration` — **PASS at architectural / pre-prototype coordination level**; canonical gate: [RH-09 Tectonic and Occupied-Surface Integration](../reference-house/tectonic-integration-rh09.md).
+- **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg), locally superseded by RH-06 where `U-ENS-01` became `U-DRESS-01`.
+- **Current architectural/elevation authority:** [RH-04 gate](../reference-house/plan-section-elevation-gate.md), [front elevation](../reference-house/front-elevation-study.svg), [courtyard elevations](../reference-house/courtyard-elevations-study.svg), [principal section](../reference-house/principal-section-rh04.svg).
+- **Current structural authority:** [RH-05 Structural Coordination](../reference-house/structural-coordination.md) and [structural overlay](../reference-house/structural-concept-overlay.svg).
+- **Current service authority:** [RH-06 Services and Failure Geography](../reference-house/service-topology-rh06.md), locally superseded for whole-dwelling ventilation by the [RH-07 MVHR Addendum](../reference-house/service-topology-rh07-mvhr-addendum.md).
+- **Current environmental authority:** [RH-07 Environmental Coordination](../reference-house/environmental-coordination.md).
+- **Current roof/access authority:** [RH-08 gate](../reference-house/roof-drainage-access-rh08.md), [roof/drainage plan](../reference-house/roof-drainage-plan-rh08.svg), [maintenance plan](../reference-house/external-access-maintenance-plan.md).
+- **Current tectonic authority:** [RH-09 gate](../reference-house/tectonic-integration-rh09.md), revised [Tectonic Architectural Language](../reference-house/tectonic-architectural-language.md), [interface family diagram](../reference-house/tectonic-interface-family-rh09.svg), [prototype handoff matrix](../reference-house/prototype-handoff-rh09.md).
 - **Current crossing authority:** [Service Crossing Register](../reference-house/service-crossing-register-rh06.md), current through RH-08.
-- **Current roof/access authority:** [RH-08 gate](../reference-house/roof-drainage-access-rh08.md), [roof/drainage plan](../reference-house/roof-drainage-plan-rh08.svg), revised [External Access & Maintenance Plan](../reference-house/external-access-maintenance-plan.md) and [maintenance-access diagram](../reference-house/external-maintenance-access-rh08.svg).
-- **Current elevation authority:** [RH-04 front elevation](../reference-house/front-elevation-study.svg) and [courtyard elevations](../reference-house/courtyard-elevations-study.svg).
-- **Current section authority:** [RH-04 principal section](../reference-house/principal-section-rh04.svg).
-- **Current structural authority:** [RH-05 structural concept](../reference-house/structural-concept-overlay.svg).
 - **Current shell:** **12.0 × 10.8 m**, centred **3.6 × 4.0 m** courtyard.
 - **Current vertical datums:** first FFL **+3300 mm**; ground clear ceiling **+2950 mm**; upper clear ceiling **+6000 mm**; cornice/eaves control approximately **+6250 mm**.
-- **Current environmental concept:** shallow multi-aspect occupied bands; courtyard retained as a **shaded light court rather than sunny primary amenity**; disciplined glazing; secure purge/cross ventilation; orientation-specific shading; no cooling reservation; central MVHR selected with continuous MEV fallback.
-- **Current roof/drainage concept:** four low-slope roof fields fall **outward from the courtyard** to inspectable external collection edges; no inner court roof gutter or internal roof outlet; four corner-return downpipes; courtyard drains only its own ≈14.4 m² open area through an accessible primary collector plus independent visible emergency overflow.
-- **Current external-maintenance concept:** no permanent roof hatch; roof access by planned external scaffold/tower; east/service side retained as principal plant/utility/terminal access strip; garden-dining route is the courtyard logistics path; court remains a viable tower working area.
-- **Current terminal concept:** MVHR intake/exhaust preferred on east/service high-level wall; cooker source capture remains east/service wall; soil/vent stack is the one current roof service penetration.
-- **Next action:** coordinate the occupied interfaces that make the house feel permanent rather than technical: wall attachment/lining strategy, skirting and service interfaces, window frame/subframe replacement, doors/thresholds, wall/ceiling movement joint, selective floor access where justified, visible access panels/service indexing, and ordinary/exceptional fixing loads. Push uncertain assemblies into P01/P02/P04 rather than declaring them solved in drawings.
-- **Current brief baseline:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
-- **Held morphology rewind:** `B — Offset thick/thin ring`, now a deep fallback only if later coordination exposes a material failure that cannot be solved proportionately inside the selected central-court morphology.
-- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-08 adds current rainwater-route, roof-maintenance, façade-access and drainage/roof-crossing occurrences.
+- **Current environmental concept:** shallow occupied bands; courtyard retained as a shaded light court; disciplined glazing; secure purge/cross ventilation; orientation-specific shading; no cooling reservation; central MVHR with continuous-MEV fallback.
+- **Current roof concept:** four very-low-slope fields fall outward from the courtyard to inspectable external collection; no inner court roof gutter, internal roof outlet or permanent roof hatch.
+- **Current occupied-interface concept:** `W0` direct-finished quiet masonry by default; `W1` sparse controlled attachment/service datums where real tasks justify them; `W2` replaceable lining remains P01 experimental; continuous conventional principal-room floors remain baseline; skirting may carry bounded dry routes but ordinary socket outlets rise to accessible positions; representative window/door/threshold/movement-junction families are now explicit.
+- **Next action:** run an adversarial whole-house audit across ordinary life, G-01, structure, services/MVHR, environment, drainage/moisture, fire/acoustic geometry, maintenance/replacement, occupied interfaces, pattern occurrences and area/cost/complexity. Maintain a clash/rewind register. Do not promote Reference House maturity until material cross-system contradictions are resolved or bounded as external engineering/prototype dependencies.
+- **Current brief:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
+- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md).
 
-Update this block whenever a stage closes or the active stage materially changes.
+Update this block whenever a stage closes or materially changes.
 
 ## Restart protocol
 
-A fresh session should read, in this order:
+A fresh session should read, in order:
 
-1. [`STATUS.md`](../../STATUS.md) — project-wide maturity and priority;
-2. this programme — active stage, gate logic and current execution state;
-3. the latest closed `RH-*` gate record named here;
-4. [Reference House README](../reference-house/README.md) — authority stack and architectural scope;
-5. [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md) — actual pattern use in the house;
-6. only then the detailed studies relevant to the active stage.
+1. [`STATUS.md`](../../STATUS.md);
+2. this programme;
+3. the latest closed `RH-*` gate named above;
+4. [Reference House README](../reference-house/README.md);
+5. [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md);
+6. only then the detailed studies needed by the active stage.
 
-Do not reconstruct project intent from chat when the repository gives a later answer.
+Do not reconstruct project intent from chat where the repository gives a later answer.
 
-If work is interrupted mid-stage, commit an **interrupted checkpoint** to the stage record containing:
-
-- what has been established;
-- what remains provisional;
-- alternatives still alive;
-- the exact next comparison or drawing required;
-- any decision that must not be silently reopened.
-
-That checkpoint is not a gate pass. It is a restart aid.
+If interrupted mid-stage, commit a checkpoint stating: established facts, provisional items, live alternatives, exact next test/drawing and decisions not to reopen silently. A checkpoint is not a gate pass.
 
 ## Working rules
 
-1. **One bounded architectural question per stage.** Avoid omnibus redesigns.
-2. **A stage ends in a committed artefact.** Conversation is not project state.
-3. **Existing geometry has no incumbency advantage.** Retain it only when comparison earns retention.
-4. **Plan, section and elevation must converge.** Do not solve the house in plan and decorate it later.
-5. **Keep authorities separate.** House Kernel doctrine, patterns, G-01, courtyard morphology, site/programme and Reference House tectonic choices must not be collapsed into one requirement set.
-6. **Record rejected alternatives.** A later session should know why an apparently obvious option was abandoned.
-7. **Promote only what the gate proves.** Virtual coordination cannot substitute for engineering, prototype or external evidence.
-8. **Update the Pattern Occurrence Register when geometry creates, moves or destroys a real occurrence.**
-9. **Prefer diagrams and explicit dimensions over prose when geometry is the issue.**
-10. **Commit at each gate before starting the next stage.**
+1. One bounded architectural question per stage.
+2. A stage ends in a committed artefact; conversation is not project state.
+3. Existing geometry has no incumbency advantage.
+4. Plan, section and elevation must converge.
+5. Keep House Kernel doctrine, patterns, G-01, site/programme and Reference House choices separate.
+6. Record rejected alternatives and rewind reasons.
+7. Promote only what the gate proves.
+8. Update the Pattern Occurrence Register when real objects move, appear or disappear.
+9. Prefer explicit geometry/diagrams where geometry is the issue.
+10. Commit each gate before starting the next.
 
 ---
 
 # Stage sequence
 
-## RH-00 — Reconstitute the brief
+## RH-00 — Reconstitute the brief — CLOSED PASS
 
-**Question:** What is the house actually required to be, before inherited sketch geometry is allowed to bias the answer?
+**Question:** what must this house be before inherited sketches bias the answer?
 
-### Work
+**Work:** separate hard requirements, preferences, doctrine, G-01, project choices, inherited assumptions and unknown site facts.
 
-- extract programme requirements, household assumptions and known user preferences;
-- separate hard requirements from preferences;
-- separate House Kernel requirements from G-01 requirements and Reference House-specific choices;
-- inventory current fixture assumptions;
-- mark each inherited assumption as `retain for test`, `open`, or `reject unless re-earned`;
-- identify missing site assumptions that materially affect virtual design.
+**Deliverable:** `docs/reference-house/brief-and-constraint-ledger.md`
 
-### Deliverable
-
-`docs/reference-house/brief-and-constraint-ledger.md`
-
-### Gate RH-00
-
-Pass only when a new session can answer, without reading old chat:
-
-- what must be true;
-- what is preferred;
-- what is merely inherited;
-- what remains unknown;
-- which decisions belong to House Kernel, G-01 or this one house.
-
-**Checkpoint:** commit the ledger and update this programme's current execution state.
+**Gate:** a new session can distinguish required, preferred, inherited, unknown and authority owner.
 
 ---
 
-## RH-01 — Test the gross morphology
+## RH-01 — Test gross morphology — CLOSED PASS
 
-**Question:** What overall house/courtyard geometry best satisfies the brief before room planning becomes detailed?
+**Question:** what overall house/courtyard geometry best satisfies the brief before detailed room planning?
 
-### Work
+**Work:** compare serious alternatives on footprint/area, court size/position, front–court–garden sequence, wing depth/daylight, structure, services, maintenance perimeter, G-01 ordering and circulation efficiency.
 
-Develop a small serious comparison set, normally three materially different schemes. Test:
+**Deliverables:** `morphology-options.md` + diagrams.
 
-- outer footprint and total area;
-- courtyard size, proportion and position;
-- front–courtyard–garden sequence;
-- wing depths and daylight consequences;
-- likely structural simplicity;
-- service-route consequences;
-- external maintenance perimeter;
-- G-01 ordering potential;
-- area efficiency and avoidable circulation.
-
-The current 12.6 × 11.4 m / 3.6 m courtyard fixture must appear only as one comparator or source hypothesis, not as the default winner.
-
-### Deliverables
-
-- `docs/reference-house/morphology-options.md`
-- diagram(s) showing comparable gross geometry and metrics.
-
-### Gate RH-01
-
-Select one morphology as the working baseline, or explicitly carry two forward if the evidence is genuinely tied. Record why the losing options lost.
-
-**Checkpoint:** commit options, decision and revised gross dimensions.
+**Gate:** select a working morphology and record why losers lost.
 
 ---
 
-## RH-02 — Resolve ground-floor order
+## RH-02 — Resolve ground-floor order — CLOSED PASS
 
-**Question:** Can the chosen morphology produce a convincing ground floor without technical logic overwhelming domestic architecture?
+**Question:** can the selected morphology produce a convincing domestic ground floor without technical logic dominating it?
 
-### Work
+**Work:** entrance, drawing/family/dining/kitchen relationships, garden/court thresholds, study, WC/service geography, circulation, furniture-scale use and G-01 room hierarchy. Test a credible alternative.
 
-Resolve at coordination level:
+**Deliverables:** `ground-floor-development.md` + plan SVG.
 
-- entrance and arrival sequence;
-- drawing/living/family/dining relationships;
-- kitchen and utility relationship;
-- garden connection;
-- courtyard thresholds;
-- guest/study function;
-- WC and service-hub geography;
-- ordinary circulation and furniture-scale usability;
-- principal room proportions under G-01.
-
-Test at least one credible alternative room order before selecting the baseline.
-
-### Deliverables
-
-- `docs/reference-house/ground-floor-development.md`
-- dimensioned schematic ground-floor plan SVG.
-
-### Gate RH-02
-
-Ground-floor room order and principal circulation become the controlled baseline. Gross morphology may still move only if the stage exposes a material upstream failure.
-
-**Checkpoint:** commit baseline plan, rejected comparator and decision record.
+**Gate:** room order and principal circulation become controlled baseline; morphology rewinds only for demonstrated failure.
 
 ---
 
-## RH-03 — Resolve stair, upper floor and courtyard circulation
+## RH-03 — Resolve stair, upper floor and courtyard circulation — CLOSED PASS
 
-**Question:** Can vertical circulation, bedrooms, bathrooms and the courtyard edge form one coherent domestic composition?
+**Question:** can vertical circulation, bedrooms, bathroom and court edge form one coherent composition?
 
-### Work
+**Work:** stair geometry/headroom, landing/gallery extent, bedroom hierarchy, bathroom geography, privacy/acoustics, daylight and structural consequences.
 
-Resolve:
+**Deliverables:** `upper-floor-and-stair-development.md`, upper plan and stair/court section.
 
-- stair position, form, width, rise/going assumptions and headroom geometry;
-- preservation or modification of the central axis;
-- landing/gallery extent around the courtyard;
-- principal bedroom hierarchy;
-- secondary bedroom arrangement;
-- bathroom/en-suite/service-access geography;
-- privacy and acoustic relationships;
-- daylight to circulation and wet rooms;
-- voids and structural consequences.
-
-### Deliverables
-
-- `docs/reference-house/upper-floor-and-stair-development.md`
-- upper-floor plan SVG;
-- at least one longitudinal or courtyard section through the stair.
-
-### Gate RH-03
-
-A complete two-storey circulation and room-order baseline exists with no unresolved contradiction between stair, courtyard, bedrooms and wet-service clustering.
-
-**Checkpoint:** commit plans/section and update occurrence geometry where necessary.
+**Gate:** complete two-storey room/circulation baseline with no unresolved stair/court/wet-service contradiction.
 
 ---
 
-## RH-04 — Couple plan, section and G-01 elevation
+## RH-04 — Couple plan, section and G-01 elevation — CLOSED PASS
 
-**Question:** Does the spatial arrangement actually generate convincing Georgian-derived architecture when tested in section and elevation?
+**Question:** does the spatial arrangement generate convincing Georgian-derived architecture when section/elevation are coordinated rather than applied afterward?
 
-### Work
+**Work:** storey/floor depths, openings, bay rhythm, entrance, court elevations, cornice/roof zone and G-01 coupling.
 
-Coordinate:
+**Deliverables:** `plan-section-elevation-gate.md` + principal sections/elevations.
 
-- storey heights;
-- floor depth zones;
-- window head/sill relationships;
-- opening hierarchy and bay rhythm;
-- wall-to-opening proportions;
-- entrance composition;
-- courtyard elevation order;
-- roof/cornice zone;
-- G-01 plan–section–elevation coupling constraints.
-
-This is an architectural test, not façade styling.
-
-### Deliverables
-
-- `docs/reference-house/plan-section-elevation-gate.md`
-- principal section(s);
-- front and courtyard elevation studies.
-
-### Gate RH-04
-
-Pass only if plan, section and elevation can coexist without disguising technical necessities or violating the selected grammar. Rewind RH-02/RH-03 where necessary.
-
-**Checkpoint:** commit the coupled architectural baseline.
+**Gate:** plan/section/elevation coexist without disguising technical necessities or violating selected grammar.
 
 ---
 
-## RH-05 — Coordinate primary structure
+## RH-05 — Coordinate primary structure — CLOSED PASS
 
-**Question:** Can the architectural baseline be carried by a simple, legible structural concept without sacrificing the serviceability strategy?
+**Question:** can the architecture be carried by a simple legible structure without sacrificing serviceability?
 
-### Work
+**Work:** load paths, bearing lines, floor spans, court/stair trimming, transfers, protected structural zones, engineer questions and P03 floor-edge geometry.
 
-At non-engineered coordination level:
+**Deliverables:** `structural-coordination.md` + structural overlay.
 
-- establish primary load paths;
-- define likely loadbearing wall lines;
-- set floor spanning directions;
-- identify courtyard/stair trimming conditions;
-- minimise transfers;
-- register unavoidable structural/service crossings;
-- identify questions requiring structural engineer review;
-- connect Reference House geometry to P03 structural floor-edge work.
-
-### Deliverables
-
-- `docs/reference-house/structural-coordination.md`
-- structural concept overlays/sections.
-
-### Gate RH-05
-
-No room or service strategy depends on implausible structure, hidden transfer gymnastics or arbitrary future drilling. Engineering assumptions are clearly labelled as assumptions.
-
-**Checkpoint:** commit structural baseline and engineer question list.
+**Gate:** no room/service strategy depends on implausible transfers, hidden gymnastics or arbitrary drilling.
 
 ---
 
-## RH-06 — Coordinate services and failure geography
+## RH-06 — Coordinate services and failure geography — CLOSED PASS
 
-**Question:** Do actual service routes fit the house cleanly once dimensions, gravity, access and failure modes are taken seriously?
+**Question:** do real routes fit once gravity, dimensions, access and failure modes are taken seriously?
 
-### Work
+**Work:** utility entry, plant/replacement, vertical zone, foul/water, extract, electrical/data, route classes, crossings, leak/isolation and dry-side wet-room access.
 
-Resolve at coordination level:
+**Deliverables:** `service-topology-rh06.md`, overlays, crossing register and updated occurrences.
 
-- utility entry;
-- plant replacement and working space;
-- vertical service zone clear geometry;
-- foul/soil routes and falls;
-- water distribution classes;
-- kitchen extract;
-- bathroom extract;
-- electrical/data distribution concept;
-- horizontal route classes;
-- designed structural penetrations;
-- leak detection/visibility and isolation geography;
-- dry-side access to maintainable wet-room components.
-
-Re-test the east/rear service bias rather than assuming it survives.
-
-### Deliverables
-
-- revised `service-topology-coordination.md` or a superseding coordination record;
-- service overlays and crossing register;
-- updated Pattern Occurrence Register.
-
-### Gate RH-06
-
-Every major service can be traced from source to terminal and from installation to maintenance/replacement without relying on vague void space.
-
-**Checkpoint:** commit routes, crossings, rewinds and occurrence updates.
+**Gate:** every major service can be traced source→terminal and installation→maintenance/replacement without vague voids.
 
 ---
 
-## RH-07 — Resolve passive-first environmental design
+## RH-07 — Resolve passive-first environmental design — CLOSED PASS
 
-**Question:** Can the architecture provide acceptable light, ventilation and summer/winter environmental behaviour before mechanical systems are used to rescue poor form?
+**Question:** can form/openings provide credible light, ventilation and summer/winter behaviour before active equipment is asked to rescue architecture?
 
-### Work
+**Work:** orientation stress cases, daylight/sun, court effect, purge/cross/stack ventilation, gains/shading, mass, source capture and bounded mechanical-assist comparison.
 
-Test:
+**Deliverables:** `environmental-coordination.md` + diagrams + MVHR addendum.
 
-- orientation assumptions;
-- daylight and useful sunlight;
-- courtyard contribution and penalties;
-- purge ventilation paths;
-- cross/stack ventilation opportunities;
-- solar gains and shading;
-- thermal-mass strategy where relevant;
-- kitchen/bathroom source capture;
-- bounded mechanical-assist scenarios;
-- roof/terminal consequences.
-
-### Deliverables
-
-- `docs/reference-house/environmental-coordination.md`
-- environmental diagrams and explicit unresolved modelling questions.
-
-### Gate RH-07
-
-The passive hierarchy is spatially credible and any active assistance has maintainable geography. If orientation or openings undermine the house, rewind rather than bolt on equipment.
-
-**Checkpoint:** commit environmental baseline and modelling/review questions.
+**Gate:** passive hierarchy is spatially credible; active assistance has maintainable geography; poor form is rewound rather than disguised.
 
 ---
 
-## RH-08 — Roof, drainage and external maintenance
+## RH-08 — Roof, drainage and external maintenance — CLOSED PASS
 
-**Question:** Can water leave the building safely and can the exterior actually be maintained without heroic access?
+**Question:** can water leave safely and can the exterior be maintained without heroic access?
 
-### Work
+**Work:** roof form, court/outer drainage and overflow, rainwater routes, roof access, façade/window access, support zones, plant replacement, landscape conflicts and service terminals.
 
-Resolve:
+**Deliverables:** `roof-drainage-access-rh08.md`, revised maintenance plan and access/drainage diagrams.
 
-- roof form and drainage geometry;
-- courtyard drainage and overflow strategy;
-- rainwater routes;
-- roof hatch/access strategy;
-- façade/window maintenance access;
-- ladder/scaffold/support zones;
-- window replacement routes;
-- plant replacement route;
-- external landscape conflicts with access;
-- service terminals and inspection points.
-
-### Deliverables
-
-- revised [External Access & Maintenance Plan](../reference-house/external-access-maintenance-plan.md);
-- roof/drainage plan and access diagrams;
-- new pattern occurrences where geometry is now real.
-
-### Gate RH-08
-
-Routine external tasks have credible access and drainage failure has explicit consequences/overflow routes. No important component is maintainable only by improvisation.
-
-**Checkpoint:** commit roof/drainage/access baseline.
+**Gate:** routine external tasks have credible access; drainage failure has explicit visible consequences/overflow; no key component depends on improvised access.
 
 ---
 
-## RH-09 — Tectonic and occupied-surface integration
+## RH-09 — Tectonic and occupied-surface integration — CLOSED PASS
 
-**Question:** How do the building's maintainable interfaces become convincing rooms rather than visible technical infrastructure?
+**Question:** can maintainable interfaces become convincing rooms rather than visible technical infrastructure?
 
-### Work
+**Work:** wall finish/attachment hierarchy, skirting/service routes, fixing loads, window/door interfaces, thresholds, wall/ceiling movement, floor-access proportionality, access panels, service index and restrained metal vocabulary.
 
-Coordinate Reference House-specific implementations for:
+**Deliverables:** `tectonic-integration-rh09.md`, revised tectonic language, interface-family SVG and prototype handoff matrix.
 
-- wall build-up / controlled attachment plane;
-- skirting/service interfaces;
-- floor access where justified;
-- doors and thresholds;
-- window replacement interfaces;
-- wall/ceiling movement joint;
-- cornice and restrained metal vocabulary;
-- visible access panels and service indexing;
-- ordinary fixing and exceptional loads.
-
-Feed unresolved questions into P01, P02 and P04 rather than resolving them rhetorically.
-
-### Deliverables
-
-- revised tectonic architectural language where needed;
-- representative room/junction drawings;
-- explicit prototype handoff matrix.
-
-### Gate RH-09
-
-Every non-conventional tectonic move is either supported provisionally, routed to a prototype/engineering gate, or rejected. There are no decorative patches hiding unresolved assembly logic.
-
-**Checkpoint:** commit tectonic baseline and prototype handoffs.
+**Gate:** every non-conventional occupied-interface move is selected conventionally, a bounded current pattern occurrence, routed to physical/specialist validation, or rejected. The house remains complete if W2 and selective floor access fail.
 
 ---
 
-## RH-10 — Whole-house coordination audit
+## RH-10 — Whole-house coordination audit — ACTIVE
 
-**Question:** Does the virtual house work as one building?
+**Question:** does the virtual house work as one building?
 
-### Work
+**Work:** adversarial audit across:
 
-Perform an adversarial pass across:
-
-- programme and everyday use;
-- G-01 composition;
-- structure;
-- services;
-- environment;
-- moisture/drainage;
+- programme / ordinary domestic use;
+- G-01 composition and authority drift;
+- structure and protected zones;
+- services, MVHR and service-core proportionality;
+- environmental assumptions / overheating / purge;
+- roof, drainage, moisture and court drying;
 - fire/acoustic assumptions that affect geometry;
-- maintenance and replacement;
-- pattern occurrences;
-- cost/area/complexity proportionality;
-- authority drift between House Kernel, grammar and project choices.
+- occupied interfaces / fixing / replacement;
+- external and internal maintenance routes;
+- pattern-occurrence accuracy;
+- area, cost and complexity proportionality;
+- prototype and external-review dependencies.
 
-Maintain a clash/rewind register. Resolve material failures rather than averaging them away.
+Maintain a clash/rewind register. Resolve material failures; do not average them away.
 
-### Deliverables
+**Deliverables:**
 
-- `docs/reference-house/whole-house-coordination-audit.md`
-- coordinated plan/section/elevation set at the project's virtual-design resolution;
+- `docs/reference-house/whole-house-coordination-audit.md`;
+- coordinated plan/section/elevation set at current virtual-design resolution;
 - updated Pattern Occurrence Register.
 
-### Gate RH-10
-
-The Reference House may move from M2 toward M3 only when adjacent systems have been reconciled and the remaining uncertainty is explicitly engineering/prototype/external rather than basic architectural coordination.
-
-**Checkpoint:** commit the audit and update project maturity only if the M3 gate is actually earned.
+**Gate:** the Reference House may move from M2 toward M3 only when adjacent systems are reconciled and remaining uncertainty is explicitly engineering/prototype/external rather than basic architectural coordination.
 
 ---
 
 ## RH-11 — External-review package
 
-**Question:** Is the house explicit enough for competent outsiders to attack the important assumptions rather than merely react to a concept?
+**Question:** is the house explicit enough for competent outsiders to attack real assumptions rather than react to a concept?
 
-### Work
+**Work:** bounded packages for structural engineer, fire/building-control practitioner, building-services/ventilation engineer and later specialists as justified. Each package states question, current assumption, supplied evidence/drawings and rewind trigger.
 
-Prepare bounded review packages for:
+**Deliverable:** `docs/reference-house/external-review-brief.md` plus discipline appendices.
 
-- structural engineer;
-- fire/building-control practitioner;
-- building-services/ventilation engineer;
-- later specialist review where prototype results justify it.
-
-Each package should state the question, current assumption, drawings/evidence supplied, and what outcome would force redesign.
-
-### Deliverables
-
-`docs/reference-house/external-review-brief.md` plus discipline-specific appendices where useful.
-
-### Gate RH-11
-
-Reviewers can identify and challenge real decisions. The package does not ask them to design the missing house on the project's behalf.
-
-**Checkpoint:** commit the review package; subsequent external findings become new evidence and may reopen earlier gates.
+**Gate:** reviewers can challenge real decisions without being asked to design the missing house on the project's behalf.
 
 ---
 
 # Parallel physical-validation track
 
-Physical validation proceeds alongside the virtual stages but has its own authority and gates under the [Tectonic Prototype and Engineering Programme](tectonic-prototype-programme.md).
-
-Current sequence:
+Physical validation has separate authority under the [Tectonic Prototype and Engineering Programme](tectonic-prototype-programme.md):
 
 1. **P01 — W2 wall bay**;
 2. **P02 — selective floor access**;
 3. **P03 — structural floor edge**;
 4. **P04 — wall/ceiling tectonic joint**.
 
-The virtual house should provide increasingly realistic geometry to these prototypes. Prototype results may force a rewind of RH-04 through RH-10. Neither track waits for the other merely for administrative neatness.
+RH-09 now clarifies their Reference House dependencies: P01 and P04 test selected challengers/interfaces; P02 is not currently required by the house; P03 remains an RH-05 engineering dependency. Prototype rejection may force local implementation change without automatically invalidating House Kernel or G-01.
 
 # Definition of progress
 
-Progress is not the number of drawings produced. Progress is the number of important uncertainties converted into one of four states:
+Progress is the number of important uncertainties converted into:
 
 - **resolved for the Reference House**;
 - **bounded assumption awaiting specialist validation**;
-- **routed to a physical test**;
+- **routed to physical test**;
 - **rejected with a recorded reason**.
 
 A clean rewind is progress. A beautifully documented ambiguity is not.
