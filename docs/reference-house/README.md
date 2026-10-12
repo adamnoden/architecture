@@ -6,6 +6,8 @@ It is an integration test, not proof of the doctrine.
 
 The active staged execution plan is the [Reference House Design Programme](../development/reference-house-design-programme.md). It is the restart-safe control for current design work and should be read before resuming a partially completed Reference House stage.
 
+The canonical project brief is the [Brief and Constraint Ledger](brief-and-constraint-ledger.md). RH-00 closed that ledger on 2026-10-12; current design work begins from it rather than treating the provisional whole-house fixture as the brief.
+
 ## Architectural scope
 
 The house selects a **Georgian-derived architectural grammar**, provisionally represented by G-01, together with a courtyard morphology and a project-specific tectonic dialect. These are choices made for this house, not House Kernel doctrine.
@@ -64,4 +66,4 @@ A Reference House occurrence is evidence about coordination in this project. It 
 
 The [Pattern Occurrence Register](pattern-occurrence-register.md) records the current mapping between that house and the canonical language. Earlier [Service Topology Coordination](service-topology-coordination.md) and [Service Topology Run 01](service-topology-run-01.md) records are retained as development provenance and use the terminology available when those exercises were carried out.
 
-The house remains architecturally and technically provisional. Current design work concentrates on the footprint and room order, stair and courtyard relationships, structure and service crossings, passive-first environmental design, drainage, external maintenance access and the incorporation of physical prototype findings.
+The house remains architecturally and technically provisional. RH-01 now concentrates on gross morphology: footprint, courtyard size/position, wing depth, area, sequence, structural/service plausibility and maintenance perimeter. Room order, stair, detailed services and later systems remain downstream gates.
