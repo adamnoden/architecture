@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-04 principal longitudinal section</title>
+  <desc id="desc">Longitudinal section through the stair hall, open courtyard and garden dining side. Shows the selected 3300 millimetre first-floor datum, 2950 millimetre ground ceiling, 6000 millimetre upper ceiling and 6250 millimetre cornice/eaves control.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .cut{fill:#ededed;stroke:#111;stroke-width:3}.void{fill:#fff}.sky{fill:#fafafa;stroke:#aaa;stroke-width:1.5;stroke-dasharray:7 6}.floor{stroke:#111;stroke-width:5}.ceiling{stroke:#666;stroke-width:1.8;stroke-dasharray:5 4}.stair{fill:none;stroke:#222;stroke-width:3}.guard{stroke:#333;stroke-width:2}.datum{stroke:#888;stroke-width:1.2;stroke-dasharray:7 6}.roof{fill:#fafafa;stroke:#555;stroke-width:2}.dimline{stroke:#555;stroke-width:1.2}.opening{fill:#fff;stroke:#333;stroke-width:1.8}.note{fill:#fafafa;stroke:#bbb;stroke-width:1}
+    </style>
+  </defs>
+
+  <text x="55" y="52" class="head">Reference House — RH-04 Principal Section</text>
+  <text x="55" y="80" class="sub">Selected H1 sectional hierarchy · final structural depths remain RH-05 work · roof geometry shown only as silhouette test</text>
+
+  <!-- vertical scale 75px/m; horizontal schematic -->
+  <g transform="translate(90,170)">
+    <!-- ground y=560; first FFL y=312.5; upper ceiling y=110; cornice y=91 -->
+    <line x1="0" y1="560" x2="930" y2="560" class="floor"/>
+    <line x1="0" y1="313" x2="930" y2="313" class="floor"/>
+    <line x1="0" y1="339" x2="930" y2="339" class="ceiling"/>
+    <line x1="0" y1="110" x2="930" y2="110" class="ceiling"/>
+    <line x1="0" y1="91" x2="930" y2="91" class="datum"/>
+
+    <!-- south mass 3.4m, court4m, north mass3.4m schematic -->
+    <rect x="0" y="91" width="255" height="469" class="cut"/>
+    <rect x="255" y="91" width="300" height="469" class="sky"/>
+    <rect x="555" y="91" width="255" height="469" class="cut"/>
+
+    <!-- rooms white -->
+    <rect x="22" y="126" width="210" height="172" class="void"/>
+    <rect x="22" y="357" width="210" height="183" class="void"/>
+    <rect x="578" y="126" width="210" height="172" class="void"/>
+    <rect x="578" y="357" width="210" height="183" class="void"/>
+
+    <!-- openings to court south/north -->
+    <rect x="220" y="385" width="35" height="155" class="opening"/>
+    <rect x="220" y="172" width="35" height="116" class="opening"/>
+    <rect x="555" y="385" width="35" height="155" class="opening"/>
+    <rect x="555" y="172" width="35" height="116" class="opening"/>
+
+    <!-- stair schematic 18 rises / 3 flights -->
+    <polyline points="42,540 72,524 102,508 132,492 162,476 192,460" class="stair"/>
+    <line x1="192" y1="460" x2="220" y2="460" class="stair"/>
+    <polyline points="220,460 192,441 164,422 136,403 108,384 80,365" class="stair"/>
+    <line x1="80" y1="365" x2="50" y2="365" class="stair"/>
+    <polyline points="50,365 82,355 114,345 146,335 178,324 210,313" class="stair"/>
+    <line x1="210" y1="313" x2="238" y2="313" class="stair"/>
+    <line x1="238" y1="313" x2="238" y2="252" class="guard"/>
+
+    <!-- notional roofs front/rear wings -->
+    <path d="M-10,91 L90,5 L190,91" class="roof"/>
+    <path d="M620,91 L720,5 L820,91" class="roof"/>
+    <text x="455" y="28" text-anchor="middle" class="small">court remains open to sky · exact roof ridges / hips / drainage unresolved</text>
+
+    <!-- labels -->
+    <text x="128" y="432" text-anchor="middle" class="label">GROUND STAIR HALL</text>
+    <text x="128" y="455" text-anchor="middle" class="small">18 rises @ 183.3 mm planning rise</text>
+    <text x="128" y="210" text-anchor="middle" class="label">SOUTH LANDING</text>
+    <text x="405" y="222" text-anchor="middle" class="label">OPEN COURTYARD</text>
+    <text x="683" y="210" text-anchor="middle" class="label">NORTH UPPER LANDING</text>
+    <text x="683" y="447" text-anchor="middle" class="label">GARDEN DINING</text>
+
+    <!-- datum labels right -->
+    <line x1="830" y1="560" x2="930" y2="560" class="datum"/><text x="944" y="564" class="dim">±0 ground FFL</text>
+    <line x1="830" y1="339" x2="930" y2="339" class="datum"/><text x="944" y="343" class="dim">+2.950 ground ceiling</text>
+    <line x1="830" y1="313" x2="930" y2="313" class="datum"/><text x="944" y="317" class="dim">+3.300 first FFL</text>
+    <line x1="830" y1="110" x2="930" y2="110" class="datum"/><text x="944" y="114" class="dim">+6.000 upper ceiling</text>
+    <line x1="830" y1="91" x2="930" y2="91" class="datum"/><text x="944" y="95" class="dim">+6.250 cornice/eaves control</text>
+
+    <!-- vertical dimensions -->
+    <line x1="850" y1="313" x2="850" y2="560" class="dimline"/><text x="868" y="438" transform="rotate(90 868 438)" text-anchor="middle" class="dim">3300 mm F-F</text>
+    <line x1="885" y1="110" x2="885" y2="313" class="dimline"/><text x="903" y="212" transform="rotate(90 903 212)" text-anchor="middle" class="dim">2700 mm upper clear</text>
+  </g>
+
+  <g transform="translate(1115,170)">
+    <rect x="0" y="0" width="320" height="610" class="note"/>
+    <text x="18" y="34" class="label">Selected sectional hierarchy</text>
+    <text x="18" y="66" class="small">Ground clear ceiling: 2.95 m</text>
+    <text x="18" y="88" class="small">First FFL: +3.30 m</text>
+    <text x="18" y="110" class="small">Upper clear ceiling: 2.70 m</text>
+    <text x="18" y="132" class="small">Cornice/eaves control: +6.25 m</text>
+
+    <text x="18" y="184" class="label">Stair remains comfortable</text>
+    <text x="18" y="216" class="small">18 rises → 183.3 mm each</text>
+    <text x="18" y="238" class="small">Going remains 280 mm</text>
+    <text x="18" y="260" class="small">2R + G ≈ 647 mm</text>
+    <text x="18" y="282" class="small">Pitch ≈ 33.2°</text>
+
+    <text x="18" y="334" class="label">Why not taller?</text>
+    <text x="18" y="366" class="small">A 3.42 m first datum was tested.</text>
+    <text x="18" y="388" class="small">It increased monumentality without</text>
+    <text x="18" y="410" class="small">solving a domestic or technical need.</text>
+
+    <text x="18" y="462" class="label">Structural obligation</text>
+    <text x="18" y="494" class="small">The 350 mm planning floor zone is</text>
+    <text x="18" y="516" class="small">not a member depth. RH-05 must prove</text>
+    <text x="18" y="538" class="small">a floor family inside or justify a</text>
+    <text x="18" y="560" class="small">visible sectional rewind.</text>
+  </g>
+
+  <text x="55" y="935" class="small">RH-04 coordination section. Roof silhouette is deliberately non-authoritative; RH-08 owns drainage, pitches, valleys, inner eaves and roof access.</text>
+</svg>
