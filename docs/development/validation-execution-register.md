@@ -1,0 +1,146 @@
+# Validation Execution Register
+
+**Status:** active evidence-control register  
+**Date:** 2026-10-12  
+**Purpose:** distinguish prepared work from issued work, physical work and actual evidence after RH-11.
+
+The Reference House is M3 at coordinated virtual-design scope. The design-gate sequence is closed. Progress now means converting bounded uncertainties into competent external findings, calculations, simulations or physical results.
+
+A document being ready is not evidence that the underlying proposition passed.
+
+## State vocabulary
+
+- **READY** — brief/protocol is sufficient to issue/build;
+- **UNISSUED** — ready package has not yet been given to the relevant competent reviewer;
+- **BLOCKED — EXTERNAL** — next result requires competence/tooling not present inside the project;
+- **BLOCKED — BUILD** — protocol exists but physical specimen has not been built;
+- **IN REVIEW / IN TEST** — evidence generation has actually started;
+- **FINDING OPEN** — material negative/qualifying result received and not closed;
+- **EVIDENCED** — result exists, scope is explicit and required findings are closed;
+- **HELD** — no present Reference House dependency justifies active work.
+
+---
+
+## A. External professional review
+
+| ID | Work | Current state | Prepared package | Next evidence event | Rewind owner if material failure |
+|---|---|---|---|---|---|
+| `ER-STR-01` | structural engineering review | **READY / UNISSUED** | `external-review-structural-rh11.md` | competent structural response + P03-A option reduction | RH-05, possibly RH-04 |
+| `ER-FIRE-01` | fire / building-control review | **READY / UNISSUED** | `external-review-fire-building-control-rh11.md` | competent review of escape, Part M, service/interface closure | RH-03/RH-04/RH-09 as finding dictates |
+| `ER-MEP-01` | MEP / acoustic review | **READY / UNISSUED** | `external-review-mep-acoustic-rh11.md` | plant-room packing, MVHR/ASHP/acoustic response | RH-06/RH-07/RH-10 |
+| `ER-BPE-01` | building physics / energy review | **READY / UNISSUED** | `external-review-building-physics-energy-rh11.md` | envelope/junction/overheating/daylight/energy response | RH-02/RH-04/RH-07/RH-08/RH-10 |
+
+No row above may move to **EVIDENCED** because an email was sent or a meeting occurred. Record the actual finding and closure evidence.
+
+---
+
+## B. P03 — structural floor edge
+
+### `P03-A` — engineered option reduction
+
+**State:** **READY / BLOCKED — EXTERNAL**
+
+Inputs now frozen:
+
+- [P03 Engineering Brief](../prototypes/p03-floor-edge-engineering-brief.md);
+- [P03 Test Protocol](../prototypes/p03-floor-edge-test-protocol.md);
+- RH-05 structural geometry;
+- conventional restraint-hanger baseline;
+- direct/seated-bearing comparator;
+- bespoke shoe/ledge only as earned challenger.
+
+Next evidence event:
+
+> competent structural engineer reduces the set to calculable geometries and states what, if anything, a full-scale specimen can prove.
+
+### `P03-B` — full-scale junction evidence
+
+**State:** **BLOCKED — EXTERNAL**
+
+Do not build until P03-A releases the geometry. A physical connection assembled before engineering is an architectural mock-up, not structural evidence.
+
+---
+
+## C. P04 — wall / ceiling movement junction
+
+### `P04-BUILD`
+
+**State:** **READY / BLOCKED — BUILD**
+
+Inputs:
+
+- [P04 Build Pack](../prototypes/p04-wall-ceiling-build-pack.md);
+- RH-09 `WCJ-01` architectural location;
+- three families: conventional control / concealed slip / functional metal challenger.
+
+Build target:
+
+- full-height **2950 mm** room-corner specimen;
+- ≥1200 mm wall width;
+- ≥1000 mm ceiling projection;
+- independently adjustable ceiling edge with at least ±5 mm rig capability.
+
+### `P04-TEST`
+
+**State:** **READY / BLOCKED — BUILD**
+
+Protocol:
+
+- [P04 Test Protocol](../prototypes/p04-wall-ceiling-test-protocol.md).
+
+Evidence sequence includes:
+
+- baseline room-quality comparison;
+- project-derived movement envelope where available;
+- exploratory ±1/2/3 mm screen if it is not;
+- 20 movement cycles;
+- decoration-lock test;
+- 10 local removal/reinstatement cycles;
+- imperfect-background trial;
+- sound/tactile screen;
+- over-range failure and repair;
+- later specialist check that primary fire/acoustic/air duties remain independent of decorative trim.
+
+A visually attractive specimen with no movement/reinstatement evidence remains **BLOCKED**, not passed.
+
+---
+
+## D. Other prototype work
+
+### P01 — W2 wall bay
+
+**State:** **HELD / OPTIONAL RESEARCH**
+
+The build pack and protocol remain valid. The Reference House does not depend on W2; W0/W1 are complete architectural baselines.
+
+Resume P01 when resources justify the generic evidence question or if a later project condition creates a real high-change lining task.
+
+### P02 — selective floor access
+
+**State:** **HELD**
+
+No current Reference House service task earns it. Reopen only if later service coordination places a genuinely maintainable component beneath a bounded circulation/floor zone.
+
+---
+
+## E. Evidence-processing rule
+
+For every external or physical result, create a result record containing:
+
+```text
+question
+→ evidence source / competence
+→ result
+→ scope / limitations
+→ finding classification
+→ affected RH object / pattern occurrence
+→ owning gate
+→ correction or confirmation
+→ downstream documents made stale
+→ closure evidence
+→ maturity consequence, if any
+```
+
+Negative evidence is progress when it causes a clean rejection or rewind.
+
+Do not promote the Reference House above M3 until the evidence required by the project's maturity definition actually exists. Do not promote a House Kernel pattern merely because one Reference House specimen passes.
