@@ -8,7 +8,7 @@ The active staged execution plan is the [Reference House Design Programme](../de
 
 The canonical project brief is the [Brief and Constraint Ledger](brief-and-constraint-ledger.md). RH-00 closed that ledger on 2026-10-12.
 
-RH-01 selected the compact central-court morphology. RH-02 tested it at furniture scale, widened the side wings by 300 mm each and selected the ground-floor order. RH-03 fixed the principal stair topology and four-bedroom upper order. RH-04 coupled those plans to a controlled section and opening order. RH-05 established a pre-engineering structural concept. RH-06 has now traced the principal service topology and removed the remote principal en-suite rather than buying it with disproportionate permanent infrastructure.
+RH-01 selected the compact central-court morphology. RH-02 tested it at furniture scale and selected the ground-floor order. RH-03 fixed the principal stair and four-bedroom upper order. RH-04 coupled plan, section and elevation. RH-05 established the structural concept. RH-06 traced the service topology and deleted the remote principal en-suite. RH-07 has now tested the form environmentally, retained the courtyard as a shaded light court and selected central MVHR as the whole-dwelling ventilation baseline with a bounded service-topology rewind.
 
 ## Architectural scope
 
@@ -39,9 +39,9 @@ The layers constrain one another without becoming interchangeable.
 - **Supported technical families** describe construction or system routes being evaluated. A masonry, floor, heating or ventilation family does not become a House Kernel preference merely because this house uses it.
 - **G-01** owns Georgian-derived spatial and compositional constraints that survive the research. It does not currently provide a universal room ratio or mandatory whole-house symmetry rule.
 - **Project morphology** owns the courtyard and other house-specific geometric decisions that are not part of G-01 by default.
-- **Local dialect** may modify a bounded part of the house—for example the slight Andalusian influence explored for the courtyard—without redefining G-01.
+- **Local dialect** may modify a bounded part of the house without redefining G-01.
 - **Reference House tectonic dialect** owns project-specific visible resolutions such as traditional joinery and restrained brass or bronze where architecturally and functionally justified.
-- **Site / programme** owns orientation, planning response, household needs, external relationships and other project facts.
+- **Site / programme** owns orientation, planning response, household needs and other project facts.
 
 Where one decision touches two layers, record the dependency rather than promoting the project choice upstream.
 
@@ -96,7 +96,7 @@ Upper circulation remains:
 
 **south stair hall → east courtyard gallery → north cross-landing**.
 
-The main family bathroom stacks directly over the service hub. RH-06 has **deleted the formerly conditional principal en-suite**: its remote position would require a cross-joist gravity route, lowered technical bulkhead or second permanent soil stack. The former `U-ENS-01` reservation is now `U-DRESS-01` principal dressing / linen / storage. Reintroducing an en-suite requires a new service-route proof.
+The main family bathroom stacks directly over the service hub. RH-06 deleted the formerly conditional principal en-suite because its remote position demanded disproportionate drainage infrastructure. The former `U-ENS-01` reservation is now `U-DRESS-01` principal dressing / linen / storage.
 
 ### Vertical and elevation order
 
@@ -110,15 +110,9 @@ Controlled vertical datums are:
 - upper clear ceiling: **+6000 mm**;
 - cornice/eaves-control datum: approximately **+6250 mm**.
 
-The front uses a **centred four-bay field** at X = **1.95 / 4.65 / 7.35 / 10.05 m**, with 2.70 m bay spacing. The principal entrance occupies **bay 3**, matching the actual stair/arrival geometry rather than being forced onto the global centreline.
+The front uses a **centred four-bay field** at X = **1.95 / 4.65 / 7.35 / 10.05 m**, with 2.70 m bay spacing. The principal entrance occupies **bay 3**. The courtyard has its own scoped order; the front-door axis and courtyard axis are intentionally different.
 
-The courtyard has a separate scoped order:
-
-- south and north faces re-centre on X = **6.0 m**;
-- east face uses a two-bay gallery rhythm;
-- west face uses two room-owned opening axes.
-
-The front-door axis and courtyard axis are intentionally different. RH-04 fixes the outer cornice/eaves control but **not** final roof geometry.
+RH-04 fixes the cornice/eaves control but not final roof geometry.
 
 ## Current structural baseline
 
@@ -134,69 +128,95 @@ The pre-engineering concept uses the permanent masonry geometry rather than addi
 - local stair trimmers;
 - permanent structural deck acting as the diaphragm independently of any removable floor layer.
 
-Engineered timber / LVL is the first engineering comparator; protected steel remains a fallback if depth, vibration, connection or bearing requires it. The **350 mm** first-floor reservation survives provisionally. No member or masonry capacity has been proved.
+The **350 mm** first-floor reservation survives provisionally. No member or masonry capacity has been proved.
 
-Protected no-drill / no-chase zones include courtyard corner reaction nodes, the four edge beams, stair trimmers, opening lintel/bearing zones and later diaphragm collector zones once engineered.
+Protected no-drill / no-chase zones include courtyard corner reaction nodes, the four edge beams, stair trimmers and opening bearing zones.
 
 ## Current service baseline
 
-Use [RH-06 Services and Failure Geography](service-topology-rh06.md), the [service topology overlay](service-topology-rh06.svg), [riser section](service-riser-section-rh06.svg) and [crossing register](service-crossing-register-rh06.md).
+Use [RH-06 Services and Failure Geography](service-topology-rh06.md), the [service topology overlay](service-topology-rh06.svg), [riser section](service-riser-section-rh06.svg), the current [crossing register](service-crossing-register-rh06.md), and the later [RH-07 MVHR Service Addendum](service-topology-rh07-mvhr-addendum.md).
 
-The current topology is intentionally service-specific rather than one universal technical spine.
+The service topology remains service-specific rather than one universal technical spine.
 
-### Service suite and utility entry
+### Service suite and vertical zone
 
-The east-middle `G-SVC-02` reservation is now resolved as a small suite:
+`G-SVC-02` contains the service suite:
 
-- north `G-PLANT-01` — plant, primary isolation/distribution, service index and replacement geography;
-- south utility / WC band;
-- direct internal access from `G-GAL-01`;
-- nominal **1000 mm clear external replacement-opening target** on the service side, subject to actual plant.
+- `G-PLANT-01` — plant, primary isolation/distribution, physical service index and equipment replacement geography;
+- utility / WC band;
+- internal access from `G-GAL-01`;
+- nominal **1000 mm clear external replacement-opening target**.
 
-`UE-01` uses the east/service side as the virtual utility approach. Water, electricity and communications are grouped geographically but not assumed to share one penetration. A real site may mirror or invalidate those coordinates without invalidating the general approach.
+`SV-01` remains a bounded **900 × 700 mm clear** vertical reservation. RH-07 now adds the principal MVHR supply/extract trunks to its coordination burden alongside the 100 mm-class soil/vent stack, water and segregated dry services. The approximately **1050 × 850 mm** framed floor-opening envelope remains only an engineering starting point.
 
-### Vertical service zone
-
-`SV-01` is now a bounded **900 × 700 mm clear** accessible vertical reservation in the stacked service-suite / family-bathroom geography. Its coordination content is limited to:
-
-- one 100 mm-class soil/vent stack;
-- hot/cold water risers;
-- optional small-bore hydronic risers if later selected;
-- segregated electrical/data vertical distribution.
-
-RH-05's framed floor-opening reservation becomes an approximately **1050 × 850 mm engineering starting envelope** around `SV-01`, not an approved structural opening.
-
-The riser is **not** speculative capacity for future MVHR ducts or arbitrary services.
+If competent MEP/fire coordination cannot keep that bundle proportionate, continuous MEV is the first ventilation fallback; the project does not enlarge the service core automatically.
 
 ### Foul / wet services
 
-One primary soil/vent stack serves the family bathroom, ground WC, utility and short kitchen branch. Its accessible base drops within the service suite and exits to a service-side external inspection chamber. No foul drain is routed beneath the courtyard.
+One primary soil/vent stack serves the family bathroom, ground WC, utility and short kitchen branch. Its accessible base exits to a service-side external inspection chamber. No foul drain crosses beneath the courtyard.
 
-Pressurised-water failure responses are route-specific: accessible isolation/joints in the hub, joint-minimised vertical runs, accessible appliance valves, dry-side bathroom service access and a visible/inspectable riser base. Sensors remain an optional layer rather than the sole defence.
+Pressurised-water failure responses remain route-specific: accessible isolation/joints, joint-minimised vertical runs, accessible appliance valves, dry-side bathroom service access and visible/inspectable riser base.
 
-### Extract and dry distribution
+### Whole-dwelling ventilation
 
-- `KX-01` — short dedicated kitchen source-capture duct to the service-side exterior;
-- `BX-01` — short high-level family-bathroom extract to the service-side exterior;
-- utility/WC extract remains similarly local once the final service-suite subdivision fixes exact positions;
-- `DRY-G-01` and `DRY-U-01` use circulation/perimeter geography for electrical/data and justified small-bore distribution rather than treating the engineered floor depth as a generic service plenum.
+RH-07 selects **central MVHR** as the Reference House baseline because this purpose-built house can coordinate it around the existing service hub, vertical zone and radial structural spans.
 
-RH-06 deliberately does **not** select the whole-dwelling ventilation system. RH-07 owns that decision. If RH-07 selects MVHR or another major ducted system, RH-06 must reopen and prove the real duct routes.
+Current rules:
+
+- `MVHR-01` sits in `G-PLANT-01` with normal filter/service access and the existing equipment replacement route;
+- main supply/extract trunks rise through `SV-01`;
+- ground branches, where needed inside the first-floor zone, are **bounded routes aligned with joist direction**, not a generic plenum;
+- upper branches prefer roof/ceiling and landing/gallery geography;
+- bathroom / utility / WC / kitchen background extract may join the central system;
+- `KX-01` cooker source capture remains a separate direct-to-outside grease/pollutant route;
+- `RH-P005-13 / PEN-MV-01` now records the outdoor-air/exhaust boundary crossing family;
+- openable windows remain required for purge and overheating control;
+- continuous MEV is the explicit fallback if MVHR's duct, acoustic, maintenance or commissioning burden proves disproportionate.
+
+## Current environmental baseline
+
+Use [RH-07 Environmental Coordination](environmental-coordination.md), the [environmental diagram](environmental-coordination.svg) and [courtyard solar screening section](courtyard-solar-section-rh07.svg).
+
+The environmental hierarchy is now explicit:
+
+1. shallow 3.4–4.2 m occupied bands and genuine multi-aspect opportunity;
+2. disciplined opening areas rather than a generic glazed rear wall;
+3. orientation-specific external shading / solar-control glazing where justified;
+4. secure purge and cross ventilation through openable windows;
+5. MVHR for controlled whole-dwelling IAQ / winter heat recovery;
+6. no reserved mechanical cooling.
+
+### Courtyard
+
+The courtyard survives RH-07, but its environmental role is now precise.
+
+At roughly 6.25 m to the cornice/eaves control and only 3.6–4.0 m wide, it is a **shaded light court**, not a sunny primary garden. Simple London solar-noon screening shows that the ground is effectively fully shadowed at equinox and winter noon and mostly shadowed even at summer-solstice noon.
+
+That is acceptable because:
+
+- principal habitable rooms retain meaningful outer-façade daylight responsibility;
+- the court gives diffuse light and orientation to hall/gallery/circulation;
+- it supplies useful purge / cross-ventilation opportunities;
+- the rear garden remains the principal sunny external amenity.
+
+Shade-tolerant planting is therefore more credible than a large sun-demanding tree. RH-08 must treat drainage/drying seriously because the court's sheltered microclimate is real.
+
+### Orientation
+
+No site exists, so RH-07 stress-tested all four broad street orientations. No orientation forces a morphology rewind, but east/west low-angle solar gain becomes the critical shading case. The Reference House therefore does **not** acquire a large undifferentiated rear glazed wall merely because contemporary houses often do.
+
+Dynamic overheating and daylight modelling remain required once actual site, neighbouring obstruction, glazing, secure opening geometry and material properties exist.
 
 ## Pattern occurrences
 
 The [Pattern Occurrence Register](pattern-occurrence-register.md) is the canonical record of pattern use.
 
-Current RH-06 occurrences now include controlled utility entry, plant/service hub, two coherent dry horizontal routes, kitchen and bathroom service walls, six designed crossing objects, kitchen and bathroom source-capture routes, physical service index and the accessible vertical service zone.
-
-The most consequential non-occurrence is deliberate: there is no remote en-suite service topology because the room was deleted rather than forcing new permanent infrastructure.
+RH-07 adds `RH-P005-13 / PEN-MV-01` for the MVHR outdoor-air/exhaust boundary crossing family and modifies `RH-P021-01` so the family-bathroom source-capture terminal now uses the central MVHR extract network as baseline; the RH-06 direct wall fan remains fallback.
 
 A Reference House occurrence remains evidence about coordination in this project, not evidence that the pattern is generally valid.
 
 ## Current work
 
-`RH-07 — Resolve passive-first environmental design` is now active.
+`RH-08 — Roof, drainage and external maintenance` is now active.
 
-The next task is to test daylight, useful sunlight, purge/cross/stack ventilation, courtyard environmental effects, overheating/shading and whole-dwelling ventilation families against the coordinated architecture and service routes. RH-07 must not use mechanical systems to conceal a bad form. Conversely, it must not reject appropriate mechanical assistance merely to preserve a passive-design ideology.
-
-If RH-07 selects a central ducted ventilation system, it must explicitly rewind RH-06 and prove plant, vertical and horizontal duct topology with real dimensions.
+The next task is to turn the current notional roof silhouette into real geometry. RH-08 must coordinate roof pitches/ridges/valleys, outer and courtyard drainage, explicit overflow behaviour, roof access, façade/window access, plant replacement and the final terminal geography for MVHR intake/exhaust and the soil vent. The shaded courtyard makes water removal/drying particularly important, and the principal front elevation should not become the dumping ground for technical terminals.
