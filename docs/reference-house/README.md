@@ -8,7 +8,7 @@ The active staged execution plan is the [Reference House Design Programme](../de
 
 The canonical project brief is the [Brief and Constraint Ledger](brief-and-constraint-ledger.md). RH-00 closed that ledger on 2026-10-12.
 
-RH-01 has now selected the gross-morphology baseline. Read the [RH-01 Gross Morphology Options](morphology-options.md) for the comparison and gate decision, and use the [selected baseline drawing](gross-morphology-baseline.svg) for downstream schematic work.
+RH-01 selected the compact central-court morphology. RH-02 then tested that morphology at furniture scale, widened the side wings by 300 mm each, and selected the ground-floor room order. The later RH-02 geometry controls current work.
 
 ## Architectural scope
 
@@ -47,33 +47,52 @@ The layers constrain one another without becoming interchangeable.
 
 Where one decision touches two layers, record the dependency rather than promoting the project choice upstream. A cornice may realise a House Kernel movement-interface principle in this house without becoming a House Kernel requirement. A courtyard may satisfy G-01 ordering without becoming a G-01 invariant.
 
-The current house studies develop this composition through the [Tectonic Architectural Language](tectonic-architectural-language.md), [Vertical Bay Options](vertical-bay-options.md), [Vertical Bay Coordination](vertical-bay-coordination.md) and [External Access & Maintenance Plan](external-access-maintenance-plan.md).
+The current house studies develop this composition through the [Tectonic Architectural Language](tectonic-architectural-language.md), [External Access & Maintenance Plan](external-access-maintenance-plan.md), the staged Reference House gate records and later physical prototypes.
 
-## Current gross morphology
+## Current architectural baseline
 
-RH-01 selected **A — Compact central court** as the controlled working baseline:
+The current controlled ground-floor shell is:
 
-- two principal storeys as the current working configuration;
-- principal outer reservation: **11.4 × 10.8 m**;
-- open courtyard reservation: **3.6 × 4.0 m**, centred at gross-morphology stage;
-- gross side-wing depths: **3.9 m**;
-- gross front/rear wing depths: **3.4 m**;
-- gross enclosed plate proxy: **108.7 m²/storey**, **217.4 m²** across two principal storeys before wall thickness, stairs and local voids/projections.
+- two principal storeys as the working configuration;
+- outer reservation: **12.0 × 10.8 m**;
+- open courtyard: **3.6 × 4.0 m**;
+- gross side wings: **4.2 m**;
+- gross front/rear wings: **3.4 m**;
+- gross enclosed plate proxy: **115.2 m²/storey**, **230.4 m²** across two principal storeys before wall thickness, stairs and local voids/projections.
 
-These dimensions control RH-02 room-order work. They do not yet freeze wall thicknesses, rooms, stair, service side, structure, roof, elevations, final GIA or real orientation.
+The width is a deliberate RH-02 correction to RH-01's 11.4 m shell. Furniture-scale testing showed that 3.9 m gross side wings were too dependent on optimistic wall thicknesses for principal rooms.
 
-The earlier [Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) and its [drawing](whole-house-coordination-fixture.svg) are now **historical F0 coordination provenance**, not the current geometry. They remain useful for understanding earlier service-topology reasoning and as a generous-depth comparator.
+The selected ground-floor order is **G1 — one-sided service gallery + linked rear rooms**. Use the [RH-02 Ground-Floor Development](ground-floor-development.md) and [drawing](ground-floor-development.svg) as the current plan authority.
+
+Current ground-floor roles are:
+
+- west/front — principal drawing room;
+- west/rear — informal family room;
+- south/centre — entrance hall addressing the courtyard;
+- one inner flank — narrow all-weather gallery;
+- outer side of that flank — compact study and service-hub reservation;
+- north/centre — garden dining hall;
+- north/service-side corner — kitchen with direct garden relationship.
+
+The service/gallery flank is drawn east for continuity only. The scheme remains mirrorable until a real site gives one side different solar, utility, neighbour or access value.
+
+The earlier [Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) and its [drawing](whole-house-coordination-fixture.svg) are historical F0 coordination provenance. The [RH-01 morphology record](morphology-options.md) is also an earlier gate: its central-court decision remains live, but RH-02 supersedes its 11.4 m width.
 
 ## Pattern occurrences
 
 The [Pattern Occurrence Register](pattern-occurrence-register.md) is the canonical record of how the pattern language is being used in this house.
 
-RH-01 deliberately invalidated the project geometry that located the earlier F0 `RH-P*` occurrences. Those identifiers are therefore suspended as provenance until RH-02 through RH-06 re-establish actual room/service geometry. Pattern and strategy intent may survive while occurrence coordinates move or disappear.
+RH-02 has now created two new ground-floor coordination occurrences:
+
+- a dedicated service-hub occurrence at `G-SVC-02`;
+- a kitchen high-service-wall occurrence where `G-KIT-02` meets the service/gallery geography.
+
+Earlier F0 occurrences remain suspended provenance unless and until later geometry re-instantiates them. The new gallery is **not** automatically a horizontal service-spine occurrence; services must earn that topology in RH-06.
 
 A Reference House occurrence is evidence about coordination in this project. It is not evidence that the pattern is generally valid.
 
 ## Current work
 
-`RH-02 — Resolve ground-floor order` is now the active design stage.
+`RH-03 — Resolve stair, upper floor and courtyard circulation` is the active design stage.
 
-The next work is to develop at least two credible ground-floor arrangements inside the 11.4 × 10.8 m / 3.6 × 4.0 m baseline and compare them at furniture/use scale. The decision must address arrival, principal/shared rooms, kitchen/family relationship, courtyard and garden thresholds, guest/study use, WC/service-hub geography and ordinary circulation before one ground-floor order becomes controlled.
+The next task is to test stair positions/forms against the entrance hall, courtyard and inner gallery, then build the upper-floor room order around the selected ground-floor geography. The upper floor must resolve bedrooms, bathrooms, privacy, daylight, landing/courtyard relationships and service stacking without forcing wet rooms into dark technical interiors or scattering them merely for symmetry.
