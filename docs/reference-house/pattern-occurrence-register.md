@@ -9,11 +9,11 @@ A House Kernel pattern appears here as a current occurrence only when the active
 
 ## Current transition state
 
-`RH-01 — Test the gross morphology` removed the F0 room/service geometry. `RH-02 — Resolve ground-floor order` has now established a new 12.0 × 10.8 m ground-floor baseline around the same 3.6 × 4.0 m courtyard, including a dedicated service block, inner gallery and kitchen edge.
+`RH-01 — Test the gross morphology` removed the F0 room/service geometry. `RH-02 — Resolve ground-floor order` established the new 12.0 × 10.8 m ground-floor baseline. `RH-03 — Resolve stair, upper floor and courtyard circulation` now adds the four-bedroom upper order, principal stair and a main family bathroom directly stacked over the ground service hub.
 
-The old F0 identifiers remain suspended provenance. RH-02 issues new occurrence identities where the new project object is geometrically distinct.
+The old F0 identifiers remain suspended provenance. Later gates issue new occurrence identities where the new project object is geometrically distinct.
 
-See [RH-02 Ground-Floor Development](ground-floor-development.md), [RH-01 Gross Morphology Options](morphology-options.md) and the [Brief and Constraint Ledger](brief-and-constraint-ledger.md).
+See [RH-03 Stair, Upper Floor and Courtyard Circulation](upper-floor-and-stair-development.md), [RH-02 Ground-Floor Development](ground-floor-development.md), [RH-01 Gross Morphology Options](morphology-options.md) and the [Brief and Constraint Ledger](brief-and-constraint-ledger.md).
 
 ---
 
@@ -25,8 +25,12 @@ These are current project occurrences. Their presence does not imply technical v
 |---|---|---|---|---|
 | `RH-P002-02` | [`HSA-P-002 — Plant Room as Service Hub`](../patterns/plant-room-service-hub.md) | `G-SVC-02`, east-middle outer service block, X 9.1–12.0 m / Y 3.4–7.4 m | dedicated service-hub reservation with direct side replacement potential, adjacent inner gallery and kitchen/service geography | exact utility/plant/WC subdivision; equipment classes; working/withdrawal volumes; drainage; acoustics; heat rejection; actual external replacement route |
 | `RH-P004-03` | [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md) | south/service edge of `G-KIT-02` adjoining `G-SVC-02` / `G-GAL-01` geography | bias high-maintenance/wet kitchen components toward the service flank and dry-side/service access rather than distribute them around the room | detailed cabinetry/appliance layout; exact wall edge; access/withdrawal geometry; acoustic/fire/water boundaries; RH-06 service topology |
+| `RH-P004-04` | [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md) | west/inner edge of `U-BATH-01` adjoining `U-GAL-02`, directly over `G-SVC-02` | place selected concealed bathroom components on a dry-side-accessible service edge; waterproofing remains independent from the access boundary | final fixture layout; waterproofing independence; privacy/acoustics; withdrawal geometry; fire boundary; RH-06 route topology |
+| `RH-P014-02` | [`HSA-P-014 — Accessible Vertical Service Zone`](../patterns/accessible-vertical-service-zone.md) | bounded vertical reservation within the stacked `G-SVC-02` → `U-BATH-01` geography, adjacent `G-GAL-01` / `U-GAL-02` | carry one explicit maintainable vertical zone through the main service/wet stack rather than use incidental wall chases | clear riser dimensions; wet/dry separation; soil/vent/duct/electrical content; structure; fire/acoustic closure; roof-terminal geography; RH-05/RH-06 coordination |
 
 These are **coordination occurrences**, not validated construction details.
+
+The conditional principal en-suite `U-ENS-01` does **not** yet create a service-wall or route occurrence. Its survival depends on RH-06 proving a proportionate drainage/service route.
 
 ---
 
@@ -38,10 +42,10 @@ The table records the last worked F0 implementations so their reasoning is not l
 |---|---|---|---|---|
 | `RH-P001-01` | [`HSA-P-001 — Controlled Utility Entry`](../patterns/controlled-utility-entry.md) | east wall / `G-SVC-01` | adjacent coordinated utility transitions from east service side; supplier separation retained | remains suspended; derive credible entry from later site/service topology |
 | `RH-P002-01` | [`HSA-P-002 — Plant Room as Service Hub`](../patterns/plant-room-service-hub.md) | north-east `G-SVC-01` | dedicated maintainable plant/service zone with direct external replacement route | superseded by new object `RH-P002-02`; retain as provenance |
-| `RH-P014-01` | [`HSA-P-014 — Accessible Vertical Service Zone`](../patterns/accessible-vertical-service-zone.md) | east/rear stack: `G-SVC-01` → `U-SVC-01` → roof-terminal geography | one deliberate segregated vertical zone; split wet/dry option retained as comparator | remains suspended until RH-03 establishes upper stacked demand |
+| `RH-P014-01` | [`HSA-P-014 — Accessible Vertical Service Zone`](../patterns/accessible-vertical-service-zone.md) | east/rear stack: `G-SVC-01` → `U-SVC-01` → roof-terminal geography | one deliberate segregated vertical zone; split wet/dry option retained as comparator | superseded by new stacked object `RH-P014-02`; retain as provenance |
 | `RH-P004-01` | [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md) | north/service edge of `G-KIT-01` | bias wet/maintainable kitchen components toward adjacent service geography | superseded by new kitchen object `RH-P004-03`; retain as provenance |
-| `RH-P004-02` | [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md) | `BATH-01` / `ENS-01` adjoining `U-SVC-01` / landing-side service geography | dry-side access to selected concealed bathroom components | remains suspended until RH-03 establishes actual wet-room arrangement |
-| `RH-P003-01` | [`HSA-P-003 — Coherent Horizontal Service Route`](../patterns/coherent-horizontal-service-route.md) | east/rear ground route + upper landing/service route + bounded low-level branches | service-specific coherent routes rather than one mixed-services duct | remains suspended; the new gallery is architectural geometry, not yet a service route occurrence |
+| `RH-P004-02` | [`HSA-P-004 — High-Service-Room Service Wall`](../patterns/high-service-room-service-wall.md) | `BATH-01` / `ENS-01` adjoining `U-SVC-01` / landing-side service geography | dry-side access to selected concealed bathroom components | superseded for the main family bathroom by `RH-P004-04`; old en-suite geometry remains provenance only |
+| `RH-P003-01` | [`HSA-P-003 — Coherent Horizontal Service Route`](../patterns/coherent-horizontal-service-route.md) | east/rear ground route + upper landing/service route + bounded low-level branches | service-specific coherent routes rather than one mixed-services duct | remains suspended; the new galleries are architectural geometry, not yet service-route occurrences |
 | `RH-P005-01..06` | [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md) | F0 crossing family `CP-01..06` | small explicit register of controlled crossings rather than ad-hoc drilling | obsolete crossing geometry; rebuild after RH-05/RH-06 |
 | `RH-P012-01` | [`HSA-P-012 — Physical Service Index`](../patterns/physical-service-index.md) | internal approach to `RH-P002-01` | small durable physical index sharing stable identifiers with richer digital records | remains suspended; locate after service topology stabilises |
 
@@ -80,7 +84,7 @@ The following canonical patterns are already part of the Reference House design 
 | Pattern | Current Reference House intent | What is missing before an occurrence can be recorded |
 |---|---|---|
 | [`HSA-P-001 — Controlled Utility Entry`](../patterns/controlled-utility-entry.md) | deliberate supplier/boundary transitions tied coherently to the service hub | real/surrogate utility approach and boundary transition geometry; service flank remains mirrorable |
-| [`HSA-P-003 — Coherent Horizontal Service Route`](../patterns/coherent-horizontal-service-route.md) | service-specific coherent routes rather than a universal mixed-services void | actual demand nodes, route envelopes, gravity/duct constraints and structure; `G-GAL-01` is not automatically a service spine |
+| [`HSA-P-003 — Coherent Horizontal Service Route`](../patterns/coherent-horizontal-service-route.md) | service-specific coherent routes rather than a universal mixed-services void | actual demand nodes, route envelopes, gravity/duct constraints and structure; `G-GAL-01` / `U-GAL-02` are not automatically service spines |
 | [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md) | explicit controlled crossings rather than arbitrary future drilling | RH-05 structure + RH-06 route topology |
 | [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md) | full-frame replacement from a credible route is required for representative window families | developed opening/frame/subframe geometry and actual withdrawal/handling route |
 | [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) | rainwater goods and courtyard drainage must remain inspectable/maintainable | developed roof/drainage layout, access points and discharge geometry |
@@ -88,10 +92,9 @@ The following canonical patterns are already part of the Reference House design 
 | [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md) | roof tasks must be mapped and a route selected; a rear/secondary hatch remains conditional | developed roof form, task map, safe arrival/travel geometry and access method |
 | [`HSA-P-012 — Physical Service Index`](../patterns/physical-service-index.md) | stable physical identities shared with the building record | new service topology and installed identity scheme |
 | [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md) | ordinary façade-maintenance access must be retained around external/courtyard elevations | developed elevation/landscape/support geometry and task-specific access envelopes |
-| [`HSA-P-014 — Accessible Vertical Service Zone`](../patterns/accessible-vertical-service-zone.md) | deliberate maintainable vertical service geography should rise from the `G-SVC-02` region if upper-floor demand supports it | RH-03 wet-room/service-access arrangement; clear dimensions; structure/fire/acoustic treatment |
-| [`HSA-P-021 — Source-Capture Bathroom Extract`](../patterns/source-capture-bathroom-extract.md) | bathrooms require credible short, maintainable extract geography | RH-03 room locations, ventilation strategy, terminal/fan route and transfer-air geometry |
+| [`HSA-P-021 — Source-Capture Bathroom Extract`](../patterns/source-capture-bathroom-extract.md) | `U-BATH-01` and any retained en-suite require credible short maintainable extract geography | fan/duct/terminal choice; transfer-air geometry; roof/elevation terminal coordination |
 
-`HSA-P-002` and the ground-floor kitchen instance of `HSA-P-004` are omitted from this table because they now have current RH-02 occurrences above. A future bathroom instance of `HSA-P-004` remains uninstantiated.
+`HSA-P-002`, the selected ground and upper instances of `HSA-P-004`, and `HSA-P-014` are omitted from this table because they now have current occurrences above.
 
 This is not a list of every pattern that might eventually apply.
 
@@ -134,14 +137,20 @@ No `RH-P*` occurrence identifier is assigned to a held candidate.
 Earlier whole-house coordination rejected four tempting local solutions. Their **reasons** remain live even though the F0 locations do not:
 
 1. **universal mixed-services horizontal duct** — service-specific routes remain preferred to one oversized mixed-services void;
-2. **scattered upper wet rooms without route justification** — RH-03 should test clustering before accepting long gravity/ventilation branches or duplicate vertical routes; the old east/rear location is not retained;
-3. **plant hidden in ordinary kitchen cabinetry** — `G-SVC-02` now gives this rule a new geometric home, subject to RH-06 proving it;
+2. **scattered upper wet rooms without route justification** — the main family bathroom is now deliberately stacked over `G-SVC-02`; `U-ENS-01` remains conditional rather than forcing a second remote service topology;
+3. **plant hidden in ordinary kitchen cabinetry** — `G-SVC-02` gives this rule a new geometric home, subject to RH-06 proving it;
 4. **blanket leak containment everywhere** — retain route-class-specific failure responses under Fail-Safe Water Distribution.
 
 RH-02 adds two further rejected moves:
 
 5. **courtyard crossing as the only ordinary front-to-rear route** — architectural sequence may use the court, but daily circulation should not depend on weather exposure;
 6. **one undifferentiated rear great room as the default solution to contemporary family life** — linked rooms are preferred while they remain functionally convincing and structurally proportionate.
+
+RH-03 adds three further controls:
+
+7. **steepening or winding the principal stair merely to preserve a simpler plan** — the selected three-flight stair protects tread quality instead;
+8. **displacing the service hub to make a conventional stair fit** — stair geometry remains subordinate to the whole-house integration result;
+9. **full upper gallery around all four courtyard sides** — the selected south/east/north route preserves the west rooms' useful width.
 
 These decisions remain part of the design record unless later evidence justifies reopening them.
 
@@ -151,7 +160,7 @@ These decisions remain part of the design record unless later evidence justifies
 
 Update this register when:
 
-- RH-03 creates enough upper-floor geometry to re-instantiate wet-room / vertical-service occurrences;
+- RH-04 changes enough plan/section/elevation geometry to create or invalidate an occurrence;
 - an occurrence moves, splits, merges, is suspended or rejected;
 - an implementation family is selected or abandoned;
 - a strategy changes;
