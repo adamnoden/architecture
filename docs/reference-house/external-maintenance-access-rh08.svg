@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="960" viewBox="0 0 1500 960" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-08 external maintenance access diagram</title>
+  <desc id="desc">Schematic site and house plan showing east service-side maintenance strip, west facade access, rear scaffold working line, front access, courtyard tower position, garden-to-courtyard logistics route, plant replacement path and external roof-access strategy.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .site{fill:#fafafa;stroke:#999;stroke-width:2}.house{fill:#f1f1f1;stroke:#111;stroke-width:4}.court{fill:#fff;stroke:#111;stroke-width:2.5}.zoneA{fill:#eceff1;stroke:#555;stroke-width:1.5}.zoneB{fill:#f8f8f8;stroke:#aaa;stroke-width:1.2;stroke-dasharray:6 5}.route{fill:none;stroke:#333;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arr)}.secondary{fill:none;stroke:#777;stroke-width:5;stroke-dasharray:8 6;marker-end:url(#arr2)}.tower{fill:#fff;stroke:#111;stroke-width:2.5;stroke-dasharray:5 4}.opening{stroke:#111;stroke-width:8}.note{fill:#fafafa;stroke:#bbb;stroke-width:1}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#333"/></marker>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#777"/></marker>
+  </defs>
+
+  <text x="55" y="52" class="head">Reference House — RH-08 External Maintenance Access</text>
+  <text x="55" y="80" class="sub">Task-derived scaffold/tower and replacement geography · surrogate site only · no permanent roof hatch</text>
+
+  <g transform="translate(80,145)">
+    <!-- illustrative surrogate site: 15.5m wide; depth intentionally not authoritative -->
+    <rect x="0" y="0" width="775" height="690" class="site"/>
+
+    <!-- maintenance zones around house -->
+    <rect x="45" y="95" width="88" height="540" class="zoneA"/>
+    <rect x="733" y="95" width="88" height="540" class="zoneA"/>
+    <rect x="133" y="35" width="600" height="60" class="zoneA"/>
+    <rect x="133" y="635" width="600" height="45" class="zoneB"/>
+
+    <!-- house 12 x 10.8 at 50px/m = 600 x 540 -->
+    <rect x="133" y="95" width="600" height="540" class="house"/>
+    <rect x="343" y="265" width="180" height="200" class="court"/>
+    <text x="433" y="350" text-anchor="middle" class="label">COURT</text>
+    <text x="433" y="370" text-anchor="middle" class="small">tower working area</text>
+
+    <!-- service side plant replacement opening and route -->
+    <line x1="733" y1="325" x2="733" y2="375" class="opening"/>
+    <polyline points="770,610 770,350 735,350" class="route"/>
+    <text x="748" y="470" transform="rotate(-90 748 470)" text-anchor="middle" class="small">A1 east/service strip · plant + utilities + terminals</text>
+    <text x="575" y="345" class="small">nominal 1000 mm plant replacement opening</text>
+
+    <!-- west access -->
+    <text x="88" y="365" transform="rotate(-90 88 365)" text-anchor="middle" class="small">A2 west façade / roof-edge scaffold-tower line</text>
+
+    <!-- rear working line -->
+    <text x="433" y="72" text-anchor="middle" class="small">A3 rear/garden representative scaffold-tower working line</text>
+
+    <!-- front access -->
+    <text x="433" y="665" text-anchor="middle" class="small">front access / possible highway dependency where required</text>
+
+    <!-- north garden dining route, court to garden -->
+    <line x1="415" y1="95" x2="450" y2="95" class="opening"/>
+    <line x1="415" y1="265" x2="450" y2="265" class="opening"/>
+    <polyline points="433,20 433,120 433,245 433,300" class="route"/>
+    <text x="458" y="180" class="small">garden → dining → court logistics route</text>
+    <text x="458" y="202" class="small">1200 mm clear-opening coordination target</text>
+
+    <!-- tower in court -->
+    <rect x="380" y="315" width="105" height="85" class="tower"/>
+    <text x="433" y="410" text-anchor="middle" class="small">small mobile tower, type TBC</text>
+
+    <!-- indicative external scaffold arrows to roof -->
+    <path d="M90 240 C55 210 55 160 100 125" class="secondary"/>
+    <path d="M775 245 C815 210 815 160 770 125" class="secondary"/>
+    <path d="M280 60 C280 25 310 10 340 8" class="secondary"/>
+    <text x="180" y="120" class="small">temporary access supplies roof arrival + edge protection</text>
+
+    <!-- labels -->
+    <text x="433" y="-15" text-anchor="middle" class="label">REAR / GARDEN</text>
+    <text x="433" y="715" text-anchor="middle" class="label">FRONT / STREET</text>
+    <text x="98" y="620" text-anchor="middle" class="dim">≈1.75 m gross side clearance on 15.5 m surrogate plot</text>
+  </g>
+
+  <g transform="translate(900,145)">
+    <rect x="0" y="0" width="520" height="655" class="note"/>
+    <text x="22" y="38" class="head">Access hierarchy</text>
+
+    <text x="22" y="88" class="label">Roof</text>
+    <text x="22" y="116" class="small">No permanent hatch in current baseline.</text>
+    <text x="22" y="138" class="small">Scaffold/tower is proportionate because roof has no routine plant,</text>
+    <text x="22" y="160" class="small">no inner gutter and only one expected roof service terminal.</text>
+
+    <text x="22" y="210" class="label">East / service side — Category A</text>
+    <text x="22" y="238" class="small">Preserve for plant replacement, utilities, MVHR/cooker terminals,</text>
+    <text x="22" y="260" class="small">rainwater/overflow inspection and façade/roof temporary access.</text>
+
+    <text x="22" y="310" class="label">Courtyard — Category A logistics</text>
+    <text x="22" y="338" class="small">Dismantled tower and replacement components enter from garden</text>
+    <text x="22" y="360" class="small">through garden-dining route. Avoid permanent central obstruction.</text>
+
+    <text x="22" y="410" class="label">Windows / façade</text>
+    <text x="22" y="438" class="small">Routine room-side service where final window family permits.</text>
+    <text x="22" y="460" class="small">Full-frame work retains external scaffold/tower option.</text>
+
+    <text x="22" y="510" class="label">Landscape rule</text>
+    <text x="22" y="538" class="small">Category A positions remain substantially available.</text>
+    <text x="22" y="560" class="small">Category B planting/furniture may occupy non-critical positions</text>
+    <text x="22" y="582" class="small">only where straightforward removal restores access.</text>
+
+    <text x="22" y="622" class="small">Temporary works, ground bearing capacity, neighbour/highway rights</text>
+    <text x="22" y="642" class="small">and final access equipment remain competent technical design.</text>
+  </g>
+
+  <text x="55" y="920" class="small">Illustrative maintenance-geography diagram. Site depth, boundary rights, hardscape and temporary-work equipment are not fixed by RH-08.</text>
+</svg>
