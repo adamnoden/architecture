@@ -1,250 +1,182 @@
 # Reference House — RH-C0 Model Baseline
 
-**Status:** RH-C0.3 authored-vs-derived closure — **PASS**; later RH-C0 stages may refine this file  
+**Status:** **RH-C0 PASS — controlled pre-compiler fixture frozen**  
 **Date:** 2026-10-12  
+**Reference House maturity:** **M3 — Coordinated at virtual-design scope (unchanged)**  
 **Programme:** [`../computational/reference-house-model-freeze-rhc0.md`](../computational/reference-house-model-freeze-rhc0.md)  
 **Downstream:** [`../computational/reference-house-executable-slice.md`](../computational/reference-house-executable-slice.md)
 
-This is the canonical pre-compiler fact schedule for the Reference House. It records which current RH authority owns each compiler-bound architectural fact after RH-00→RH-11 supersessions. It is not construction information and does not convert provisional engineering assumptions into evidence.
+This document is the canonical pre-compiler baseline for the current Reference House. RH-C1 must consume this baseline rather than copying values from historical drawings, prose summaries or chat.
 
-Coordinates use the current Reference House convention: origin at the south-west outer corner; +X east; +Y north; millimetres unless stated otherwise.
+The freeze proves a narrower claim than construction readiness:
 
-## Status vocabulary
+> **we now know which virtual house the first executable fixture means, which facts own it, which facts are consequences, and which uncertainties must remain visibly provisional or outside the slice.**
+
+RH-C0 does **not** validate structural adequacy, fire safety, acoustics, building physics, MEP capacity, products, workmanship, site response or regulatory compliance. TypeScript must not confer authority those things have not earned.
+
+Coordinates use the fixture convention: origin at the south-west outer corner; +X east; +Y north; front/street surrogate south. This convention belongs to this fixture, not House Kernel doctrine.
+
+---
+
+# 1. Freeze vocabulary
+
+## Authority status
 
 - **CONTROLLED** — current architectural/project fact at the stated scope.
-- **PROVISIONAL** — current working fact needed for coordination but still dependent on engineering, simulation, product selection, site or competent review.
-- **OPEN** — unresolved enough that RH-C1 must not treat it as source truth.
+- **PROVISIONAL** — current working fact needed for coordination but dependent on later design, engineering, simulation, product, site or review evidence.
+- **OPEN** — deliberately unresolved; RH-C1 must not invent a value.
 
-## Canonical authority / fact schedule
+## Authorship
 
-| ID | Semantic subject | Current value / relationship | Unit | Owner | Exact source | Status | Supersession / dependencies |
-|---|---|---|---|---|---|---|---|
-| `RHCF-SHELL-X` | outer shell width | 12,000 | mm | RH-02 | `ground-floor-development.md` §1, §3 | CONTROLLED | Supersedes RH-01 11,400 mm width. |
-| `RHCF-SHELL-Y` | outer shell depth | 10,800 | mm | RH-01 retained by RH-02 | `ground-floor-development.md` §1, §3 | CONTROLLED | Unchanged by RH-02 correction. |
-| `RHCF-COURT-X0` | courtyard west edge | X = 4,200 | mm | RH-02 | `ground-floor-development.md` §3 | CONTROLLED | **DERIVED** in the source contract from shell/court dimensions + centred placement. |
-| `RHCF-COURT-X1` | courtyard east edge | X = 7,800 | mm | RH-02 | `ground-floor-development.md` §3 | CONTROLLED | **DERIVED** in source contract. |
-| `RHCF-COURT-Y0` | courtyard south edge | Y = 3,400 | mm | RH-02 | `ground-floor-development.md` §3 | CONTROLLED | **DERIVED** in source contract. |
-| `RHCF-COURT-Y1` | courtyard north edge | Y = 7,400 | mm | RH-02 | `ground-floor-development.md` §3 | CONTROLLED | **DERIVED** in source contract. |
-| `RHCF-COURT-SIZE` | courtyard gross size | 3,600 × 4,000; centred in shell | mm | RH-02 | `ground-floor-development.md` §1, §3 | CONTROLLED | Environmental role refined by RH-07; geometry unchanged. |
-| `RHCF-WING-WE` | west/east gross wing depth | 4,200 each | mm | derived from RH-02 morphology | `ground-floor-development.md` §1 | CONTROLLED | DERIVED from shell/court. |
-| `RHCF-WING-SN` | south/north gross wing depth | 3,400 each | mm | derived from RH-02 morphology | `ground-floor-development.md` §1 | CONTROLLED | DERIVED from shell/court. |
-| `RHCF-PLATE` | enclosed gross plate proxy | 115.2/storey; 230.4 two storeys | m² | derived from RH-02 shell/court | `ground-floor-development.md` §1 | CONTROLLED | DERIVED gross proxy only; not GIA/NIA. |
-| `RHCF-GF-TOPO` | ground-floor topology | west front drawing; west rear family; south centre hall/stair; east inner gallery; south-east study; east-middle service suite; north-centre garden dining; north-east kitchen | relationship | RH-02, locally RH-03 | `ground-floor-development.md` §3; `upper-floor-and-stair-development.md` §3 | CONTROLLED | RH-03 moves only front drawing/hall boundary. |
-| `RHCF-GDRAW-SPLIT` | west drawing/family split | Y ≈ 5,000; adjustable by a few hundred mm | mm | RH-02 | `ground-floor-development.md` §3 | PROVISIONAL | Nominal fixture coordinate is a PROVISIONAL ASSUMPTION, not false exactness. |
-| `RHCF-HALL-WEST` | front drawing/hall boundary | X ≈ 4,000 for front-wing depth only | mm | RH-03 | `upper-floor-and-stair-development.md` §3; `stair-ground-floor-overlay.svg` | CONTROLLED at planning level | Nominal fixture coordinate is PROVISIONAL because source says approximately 200 mm shift. |
-| `RHCF-GAL-X0` | east gallery west edge | X = 7,800 | mm | RH-02 | `ground-floor-development.md` §3 | CONTROLLED | DERIVED from court east edge. |
-| `RHCF-GAL-X1` | east gallery / outer service-strip boundary | X = 9,100 | mm | RH-02 | `ground-floor-development.md` §3 | CONTROLLED at reservation level | AUTHORED planning reservation line. |
-| `RHCF-GSVC` | gross service-suite reservation | X 9,100–12,000; Y 3,400–7,400 | mm | RH-02/RH-06 | `ground-floor-development.md` §3; `service-topology-rh06.md` §3 | CONTROLLED | Polygon DERIVED from shell/court/gallery partition lines. |
-| `RHCF-GPLANT` | plant-room reservation | approx. 2,900 × 2,200 at north end of G-SVC-02 | mm | RH-06 | `service-topology-rh06.md` §3 | PROVISIONAL | OUTSIDE RH-C1 initial geometric source. |
-| `RHCF-SERVICE-SOUTH` | utility/WC/service band | approx. 2,900 × 1,800 at south end of G-SVC-02 | mm | RH-06 | `service-topology-rh06.md` §3 | PROVISIONAL | OUTSIDE RH-C1 initial geometric source. |
-| `RHCF-SV01` | vertical service reservation | clear approx. 900 × 700; X 9,150–10,050; Y 6,550–7,250 | mm | RH-06 | `service-topology-rh06.md` §5 | PROVISIONAL | OUTSIDE RH-C1 initial geometric source; capacity unproved. |
-| `RHCF-UF-TOPO` | upper-floor topology | four bedrooms; south stair/landing; east courtyard gallery; north cross-landing; family bathroom east-middle; former en-suite replaced by dressing/linen/storage | relationship | RH-03, locally superseded RH-06 | `upper-floor-and-stair-development.md` §5–7; `service-topology-rh06.md` §7 | CONTROLLED | `U-ENS-01` deleted; `U-DRESS-01` replaces it. |
-| `RHCF-U-CIRC` | upper circulation | south stair hall → east courtyard gallery → north cross-landing; no west gallery | relationship | RH-03 | `upper-floor-and-stair-development.md` §4 | CONTROLLED | AUTHORED topology. |
-| `RHCF-U-BATH` | family bathroom reservation | X 9,100–12,000; Y 3,400–7,400 | mm | RH-03 | `upper-floor-and-stair-development.md` §5 | CONTROLLED at gross reservation level | Polygon DERIVED from shell/court/gallery partition lines. |
-| `RHCF-FFL-G` | ground FFL | ±0 | mm | RH-04 | `plan-section-elevation-gate.md` §2 H1 | CONTROLLED | AUTHORED datum. |
-| `RHCF-CEIL-G` | ground clear ceiling datum | +2,950 | mm | RH-04 | `plan-section-elevation-gate.md` §2 H1 | CONTROLLED | AUTHORED datum. |
-| `RHCF-FFL-1` | first-floor FFL | +3,300 | mm | RH-04 | `plan-section-elevation-gate.md` §2 H1 | CONTROLLED | AUTHORED; supersedes RH-03 3,240 mm test datum. |
-| `RHCF-FLOOR-ZONE` | ground ceiling→first FFL reservation | 350 | mm | RH-04, tested RH-05 | `plan-section-elevation-gate.md` §2 H1; `structural-coordination.md` §5 | PROVISIONAL | DERIVED datum difference `3300−2950`; technical adequacy remains provisional. |
-| `RHCF-CEIL-U` | upper clear ceiling datum | +6,000 | mm | RH-04 | `plan-section-elevation-gate.md` §2 H1 | CONTROLLED | AUTHORED datum. |
-| `RHCF-CORNICE` | outer cornice/eaves control | approx. +6,250 | mm | RH-04 retained through RH-08/RH-10 | `plan-section-elevation-gate.md` §2; `roof-drainage-access-rh08.md` §3 | CONTROLLED at architectural datum level | PROVISIONAL ASSUMPTION for executable representation because source is approximate. |
-| `RHCF-STAIR-N` | principal stair riser count | 18 total; 3 flights × 6 | count | RH-03 retained RH-04 | `upper-floor-and-stair-development.md` §1 | CONTROLLED | AUTHORED stair topology. |
-| `RHCF-STAIR-G` | principal stair planning going | 280; five goings per flight | mm | RH-03 | `upper-floor-and-stair-development.md` §1 | CONTROLLED | AUTHORED going; run DERIVED. |
-| `RHCF-STAIR-W` | stair clear-width target | approx. 1,000 | mm | RH-03 | `upper-floor-and-stair-development.md` §1 | PROVISIONAL | PROVISIONAL ASSUMPTION; technical fit unproved. |
-| `RHCF-STAIR-BOX` | stair planning reservation | approx. 2,400–2,500 square in western entrance hall | mm | RH-03 | `upper-floor-and-stair-development.md` §3; `stair-ground-floor-overlay.svg` | PROVISIONAL | PROVISIONAL ASSUMPTION; not a duplicate source for run/width. |
-| `RHCF-STAIR-RISE` | planning rise at current FFL | 3,300 / 18 = 183.3 | mm | derived from RH-03 topology + RH-04 FFL | `plan-section-elevation-gate.md` §2 H1 | CONTROLLED derived relationship | DERIVED only. |
-| `RHCF-FRONT-AXES` | principal front bay axes | X = 1,950 / 4,650 / 7,350 / 10,050; 2,700 spacing | mm | RH-04 | `plan-section-elevation-gate.md` §3 F3 | CONTROLLED | Axes become DERIVED from authored centred 4-bay field + 2,700 spacing. |
-| `RHCF-FRONT-ENTRANCE` | principal entrance centreline | X = 7,350 | mm | RH-04 | `plan-section-elevation-gate.md` §3, §10 | CONTROLLED | DERIVED from authored entrance bay index 3. |
-| `RHCF-FRONT-GW` | principal ground front window family | bays 1/4 width ≈1,050; sill ≈+650–700; head ≈+2,550 | mm | RH-04 | `plan-section-elevation-gate.md` §4 | PROVISIONAL | PROVISIONAL ASSUMPTION / range; centres DERIVED from bay axes. |
-| `RHCF-FRONT-STW` | ground stair window | bay 2 width ≈900; sill ≈+1,050; head ≈+2,550 | mm | RH-04 | `plan-section-elevation-gate.md` §4 | PROVISIONAL | Size/sill PROVISIONAL; centre DERIVED from bay 2. |
-| `RHCF-FRONT-UW` | upper front window family | width ≈900–950; sill ≈800 above first FFL; head ≈2,350 above first FFL; height ≈1,550 | mm | RH-04 | `plan-section-elevation-gate.md` §4 | PROVISIONAL | Size family PROVISIONAL; centres DERIVED from axes. |
-| `RHCF-COURT-NSAXIS` | south/north courtyard principal opening axis | X = 6,000 | mm | RH-04 | `plan-section-elevation-gate.md` §5 | CONTROLLED | DERIVED from centred court; opening-centred-on-axis relationship AUTHORED. |
-| `RHCF-COURT-E` | east courtyard opening order | two-bay aligned ground/upper rhythm | relationship | RH-04 | `plan-section-elevation-gate.md` §5 | CONTROLLED order / OPEN exact centres | AUTHORED qualitative order; numeric centres OUTSIDE RH-C1 until authored. |
-| `RHCF-COURT-W` | west courtyard opening order | two room-owned axes; upper/lower aligned where coherent | relationship | RH-04 | `plan-section-elevation-gate.md` §5 | CONTROLLED order / OPEN exact centres | AUTHORED qualitative order; numeric centres OUTSIDE RH-C1 until authored. |
-| `RHCF-GARDEN-AXES` | north/garden principal axes | X ≈2,100 / 6,000 / 9,900 | mm | RH-10 | `outer-elevation-coordination-rh10.md` §1 | CONTROLLED at composition level | PROVISIONAL centred 3-axis field at ≈3,900 spacing; numeric axes DERIVED for representation. |
-| `RHCF-EAST-FIELDS` | east/service elevation order | south study/bedroom; middle utility/plant/bath; north kitchen/bedroom | relationship | RH-10 | `outer-elevation-coordination-rh10.md` §2 | CONTROLLED | AUTHORED qualitative field order; exact opening coordinates not first-slice facts. |
-| `RHCF-WEST-FIELDS` | west elevation order | front drawing/bedroom field + rear family/principal-bedroom field | relationship | RH-10 | `outer-elevation-coordination-rh10.md` §3 | CONTROLLED | AUTHORED qualitative field order; exact opening coordinates not first-slice facts. |
-| `RHCF-WALL-NORMAL` | external/courtyard wall planning family | 400–425 normal planning; plausible geometric family broadly 410–435 | mm | RH-10 | `envelope-coordination-rh10.md` §2–3 | PROVISIONAL | PROVISIONAL ASSUMPTION as a range; no single hidden thickness source. |
-| `RHCF-WALL-STRESS` | whole-house wall-depth stress test | 450 | mm | RH-10 | `envelope-coordination-rh10.md` §3 | PROVISIONAL | PROVISIONAL ASSUMPTION/test parameter; never a second wall-thickness authority. |
-| `RHCF-STRUCT-SUPPORT` | primary support lines | outer and courtyard loadbearing inner leaves | relationship | RH-05 | `structural-coordination.md` §2–3 | PROVISIONAL | OUTSIDE RH-C1; structural concept only. |
-| `RHCF-STRUCT-SPANS` | gross floor span logic | west/east ≈4,200 E–W; south/north centre ≈3,400 N–S | mm | RH-05 | `structural-coordination.md` §3 | PROVISIONAL | OUTSIDE RH-C1; geometry is derivable from shell/court if later needed. |
-| `RHCF-EDGE-BEAMS` | courtyard support-line continuations | lines X≈4,200 and X≈7,800 through south/north wings; four 3,400-class edge-beam conditions | relationship | RH-05 | `structural-coordination.md` §4 | PROVISIONAL | OUTSIDE RH-C1. |
-| `RHCF-ROOF-FAMILY` | roof gross family | four outward-draining very-low-slope fields; diagonal watersheds outer corner→court corner | relationship | RH-08, supersession confirmed RH-10 | `roof-drainage-access-rh08.md` §2; `outer-elevation-coordination-rh10.md` §5 | CONTROLLED family / PROVISIONAL technical geometry | AUTHORED gross topology; field polygons DERIVED from shell/court. |
-| `RHCF-ROOF-FALL` | coordination roof fall | ~1:40 class outward from court to perimeter | ratio | RH-08 | `roof-drainage-access-rh08.md` §3 | PROVISIONAL | PROVISIONAL ASSUMPTION; not a specification. |
-| `RHCF-ROOF-CATCH` | roof plan catchment proxies | south/north ≈26.5 m² each; west/east ≈31.1 m² each | m² | derived RH-08 | `roof-drainage-access-rh08.md` §2 | PROVISIONAL derived | DERIVED from field polygons. |
-| `RHCF-COURT-DRAIN` | court drainage geography | east-side accessible collector; short straight service-side route + independent higher visible overflow | relationship | RH-08 | `roof-drainage-access-rh08.md` §5 | PROVISIONAL | OUTSIDE RH-C1 initial geometric slice. |
-| `RHCF-PLANT-ACCESS` | plant replacement opening | nominal 1,000 clear target on service side | mm | RH-06 | `service-topology-rh06.md` §3 | PROVISIONAL | OUTSIDE RH-C1; actual equipment proof outstanding. |
-| `RHCF-GARDEN-LOGISTICS` | controlling garden/court logistics opening | 1,200 clear coordination target | mm | RH-08 | `roof-drainage-access-rh08.md` §9 | PROVISIONAL | PROVISIONAL opening obligation; exact doorset outside RH-C1. |
+- **AUTHORED** — intentional Reference House source input.
+- **DERIVED** — deterministic consequence of source inputs; never independently editable.
+- **PROVISIONAL ASSUMPTION** — useful current source input whose uncertainty must survive encoding.
+- **EVIDENCE-BACKED** — imported specialist result with explicit evidence dependency. **None belong in the first RH-C1 architectural source.**
+- **OUTSIDE RH-C1** — not part of the first executable slice.
 
-## Supersession ledger
+## Freeze disposition
 
-1. **RH-01 shell width 11.4 m → RH-02 12.0 m.** Courtyard and 10.8 m depth remain.
-2. **RH-02 front drawing/hall boundary X=4.2 m → RH-03 X≈4.0 m** for the front-wing depth only.
-3. **RH-03 3,240 mm floor-to-floor test datum → RH-04 first FFL +3,300 mm.** The 18-riser topology remains.
-4. **RH-03 `U-ENS-01` → RH-06 `U-DRESS-01`.** The remote en-suite is deleted from the active house.
-5. **RH-06 local-extract / ventilation-open position → RH-07 central MVHR baseline**, with continuous MEV fallback; major service geography remains.
-6. **RH-04 visible pitched-roof preference → RH-08 outward-draining low-slope roof**, explicitly reconciled by RH-10. RH-04 retains cornice/storey/opening authority.
-7. **RH-02 350 mm wall planning allowance → RH-10 400–425 mm normal family / 450 mm stress test.** No shell enlargement follows automatically.
+- **FROZEN_FOR_RH_C1** — stable enough to be canonical regression-fixture truth at the stated architectural scope.
+- **PROVISIONAL_BUT_REPRESENTABLE** — may be encoded or drawn because the current fixture depends on it, but its provisional authority must remain explicit.
+- **OUTSIDE_RH_C1** — must not become first-slice source truth.
 
-## Independent dimensional reconstruction — RH-C0.2
+A **DERIVED** fact can be `FROZEN_FOR_RH_C1`: that means its relationship is frozen, not that the result becomes independently editable.
 
-This reconstruction was made from the textual/numeric authorities above before comparing any existing SVG geometry. It is a planning-level semantic reconstruction, not a construction drawing.
+---
 
-### Gross morphology
+# 2. Canonical fact / authority / freeze schedule
 
-- shell plan = `12,000 × 10,800 = 129.60 m²`;
-- court plan = `3,600 × 4,000 = 14.40 m²`;
-- enclosed gross plate = `115.20 m²`;
-- west/east gross ring = `(12,000 − 3,600) / 2 = 4,200 mm`;
-- south/north gross ring = `(10,800 − 4,000) / 2 = 3,400 mm`;
-- court edges = `X 4,200–7,800`, `Y 3,400–7,400`.
+| ID | Subject | Current value / relationship | Owner | Authorship | Freeze disposition | Notes / dependency |
+|---|---|---|---|---|---|---|
+| `RHCF-COORD` | fixture coordinates | origin SW; +X east; +Y north; south = front surrogate | RH-C0 | AUTHORED | FROZEN_FOR_RH_C1 | fixture convention only |
+| `RHCF-SHELL-X` | outer shell width | `12,000 mm` | RH-02 | AUTHORED | FROZEN_FOR_RH_C1 | supersedes RH-01 11,400 |
+| `RHCF-SHELL-Y` | outer shell depth | `10,800 mm` | RH-01 retained RH-02 | AUTHORED | FROZEN_FOR_RH_C1 | — |
+| `RHCF-COURT-SIZE` | court gross geometry | `3,600 × 4,000 mm`, centred in shell | RH-02 | AUTHORED | FROZEN_FOR_RH_C1 | size + centred relationship are source |
+| `RHCF-COURT-X0/X1` | court west/east edges | `4,200 / 7,800` | RH-02 | DERIVED | FROZEN_FOR_RH_C1 | derive from shell + centred court |
+| `RHCF-COURT-Y0/Y1` | court south/north edges | `3,400 / 7,400` | RH-02 | DERIVED | FROZEN_FOR_RH_C1 | derive from shell + centred court |
+| `RHCF-WING-WE` | west/east gross ring | `4,200` each | RH-02 | DERIVED | FROZEN_FOR_RH_C1 | shell/court consequence |
+| `RHCF-WING-SN` | south/north gross ring | `3,400` each | RH-02 | DERIVED | FROZEN_FOR_RH_C1 | shell/court consequence |
+| `RHCF-PLATE` | enclosed gross plate | `115.2 m²/storey`; `230.4 m²` two storeys | RH-02 | DERIVED | FROZEN_FOR_RH_C1 | gross proxy, not GIA/NIA |
+| `RHCF-GF-TOPO` | ground topology | drawing / family / hall-stair / gallery / study / service suite / garden dining / kitchen | RH-02 + RH-03 | AUTHORED | FROZEN_FOR_RH_C1 | semantic adjacency/order |
+| `RHCF-GDRAW-SPLIT` | west drawing/family split | nominal `Y≈5,000` | RH-02 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | source explicitly says approximate/adjustable |
+| `RHCF-HALL-WEST` | front drawing/hall boundary | nominal `X≈4,000` south of court only | RH-03 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | court west edge remains 4,200 |
+| `RHCF-GAL-X0` | gallery west edge | `X=7,800` | RH-02 | DERIVED | FROZEN_FOR_RH_C1 | court east edge |
+| `RHCF-GAL-X1` | gallery/service partition | `X=9,100` | RH-02 | AUTHORED | FROZEN_FOR_RH_C1 | planning reservation line |
+| `RHCF-GSVC` | gross service-suite room | `X 9,100–12,000 / Y 3,400–7,400` | RH-02/RH-06 | DERIVED | FROZEN_FOR_RH_C1 | architectural room reservation only; internal plant split outside |
+| `RHCF-GPLANT` | plant reservation | approx. `2,900 × 2,200` north of G-SVC | RH-06 | PROVISIONAL ASSUMPTION | OUTSIDE_RH_C1 | RH-C3/service domain; packing unproved |
+| `RHCF-SERVICE-SOUTH` | utility/WC band | approx. `2,900 × 1,800` | RH-06 | PROVISIONAL ASSUMPTION | OUTSIDE_RH_C1 | exact split unproved; M4/WC unresolved |
+| `RHCF-SV01` | vertical service zone | clear approx. `900 × 700`; current nominal location `X 9,150–10,050 / Y 6,550–7,250` | RH-06/RH-07 | PROVISIONAL ASSUMPTION | OUTSIDE_RH_C1 | capacity/fire/acoustic/MEP proof absent |
+| `RHCF-UF-TOPO` | upper topology | four bedrooms; south stair/landing; east gallery; north cross-landing; east-middle family bath; north-centre dry dressing/linen | RH-03 + RH-06 | AUTHORED | FROZEN_FOR_RH_C1 | `U-ENS-01` does not exist in current house |
+| `RHCF-U-CIRC` | upper circulation | south stair → east gallery → north cross-landing; no west gallery | RH-03 | AUTHORED | FROZEN_FOR_RH_C1 | semantic topology |
+| `RHCF-U-NORTH-SPLIT` | north landing / dry-space boundary | nominal `Y≈8,600` | RH-03/RH-06 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | approximate planning boundary |
+| `RHCF-U-DRY-SPLIT` | dressing / linen split | nominal `X≈6,400` | RH-06 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | dry subdivision may move |
+| `RHCF-U-BATH` | family-bath gross reservation | `X 9,100–12,000 / Y 3,400–7,400` | RH-03 | DERIVED | FROZEN_FOR_RH_C1 | gross room polygon only |
+| `RHCF-FFL-G` | ground FFL | `0` | RH-04 | AUTHORED | FROZEN_FOR_RH_C1 | datum |
+| `RHCF-CEIL-G` | ground clear ceiling | `+2,950` | RH-04 | AUTHORED | FROZEN_FOR_RH_C1 | datum |
+| `RHCF-FFL-1` | first-floor FFL | `+3,300` | RH-04 | AUTHORED | FROZEN_FOR_RH_C1 | supersedes RH-03 3,240 test datum |
+| `RHCF-FLOOR-ZONE` | ceiling-to-first-FFL datum gap | `350` | RH-04/RH-05 | DERIVED | FROZEN_FOR_RH_C1 | arithmetic datum gap only; assembly is outside RH-C1 |
+| `RHCF-CEIL-U` | upper clear ceiling | `+6,000` | RH-04 | AUTHORED | FROZEN_FOR_RH_C1 | datum |
+| `RHCF-UPPER-CLEAR` | upper clear height | `2,700` | RH-04 | DERIVED | FROZEN_FOR_RH_C1 | `6000−3300` |
+| `RHCF-CORNICE` | outer cornice/eaves control | `≈+6,250` | RH-04 retained RH-08/RH-10 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | architectural datum, not roof build-up |
+| `RHCF-STAIR-N` | riser topology | `18`; `3 flights × 6` | RH-03 | AUTHORED | FROZEN_FOR_RH_C1 | source invariant |
+| `RHCF-STAIR-G` | going topology | `280 mm`; `5 goings/flight` | RH-03 | AUTHORED | FROZEN_FOR_RH_C1 | source invariant |
+| `RHCF-STAIR-RISE` | rise | `183.33 mm` | RH-03 + RH-04 | DERIVED | FROZEN_FOR_RH_C1 | `3300/18` |
+| `RHCF-STAIR-RUN` | flight run | `1,400 mm` | RH-03 | DERIVED | FROZEN_FOR_RH_C1 | `5×280` |
+| `RHCF-STAIR-LVLS` | intermediate landing datums | `+1,100 / +2,200` | RH-03 + RH-04 | DERIVED | FROZEN_FOR_RH_C1 | six-rise increments |
+| `RHCF-STAIR-COMFORT` | stair arithmetic | `2R+G=646.67`; pitch `≈33.2°` | RH-03 + RH-04 | DERIVED | FROZEN_FOR_RH_C1 | deterministic arithmetic, not compliance certificate |
+| `RHCF-STAIR-W` | clear flight width target | `≈1,000` | RH-03 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | exact strings/guards reduce real clear width |
+| `RHCF-STAIR-BOX` | planning reservation | `≈2,400–2,500` square | RH-03 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | semantic reservation only |
+| `RHCF-STAIR-PASSAGE` | east arrival passage target | `≈1,050–1,150 clear` | RH-03 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | detailed fit not proved |
+| `RHCF-FRONT-FIELD` | principal front bay rule | `4 bays`; `2,700` spacing; field centred on shell centre X | RH-04 | AUTHORED | FROZEN_FOR_RH_C1 | source rule, not four independent coordinates |
+| `RHCF-FRONT-AXES` | front axes | `1,950 / 4,650 / 7,350 / 10,050` | RH-04 | DERIVED | FROZEN_FOR_RH_C1 | derive from front-field rule |
+| `RHCF-ENTRANCE-BAY` | entrance membership | bay `3` | RH-04 | AUTHORED | FROZEN_FOR_RH_C1 | — |
+| `RHCF-FRONT-ENTRANCE` | entrance centre | `X=7,350` | RH-04 | DERIVED | FROZEN_FOR_RH_C1 | from bay 3 |
+| `RHCF-FRONT-GW` | principal ground window size family | width `≈1,050`; sill `≈650–700`; head `≈2,550` | RH-04 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | centres derive from bay membership |
+| `RHCF-FRONT-STW` | ground stair window family | width `≈900`; sill `≈1,050`; head `≈2,550` | RH-04 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | centre derives from bay 2 |
+| `RHCF-FRONT-DOOR` | principal entrance opening family | width `≈950–1,050`; head `≈2,550` | RH-04 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | product/clear leaf outside RH-C1 |
+| `RHCF-FRONT-UW` | upper front window family | width `≈900–950`; sill `+800` above FFL; head `+2,350` above FFL | RH-04 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | centres derive from front axes |
+| `RHCF-COURT-NS` | court north/south opening relationship | principal openings centred on court/shell X axis | RH-04 | AUTHORED relationship | FROZEN_FOR_RH_C1 | derived centre `X=6,000`; widths provisional |
+| `RHCF-COURT-E` | east court opening order | two-bay rhythm, vertically aligned | RH-04 | AUTHORED qualitative relationship | FROZEN_FOR_RH_C1 | **exact numeric centres OUTSIDE RH-C1** |
+| `RHCF-COURT-W` | west court opening order | two room-owned axes, vertically aligned where coherent | RH-04 | AUTHORED qualitative relationship | FROZEN_FOR_RH_C1 | **exact numeric centres OUTSIDE RH-C1** |
+| `RHCF-GARDEN-FIELD` | north/garden field | centred 3-axis order; axes approx. `2,100 / 6,000 / 9,900` | RH-10 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | centre upper host corrected to dry dressing/storage at RH-C0.6 |
+| `RHCF-GARDEN-LOGISTICS` | central garden opening | `≥1,200 clear` coordination target | RH-08/RH-10 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | product/threshold outside C1 |
+| `RHCF-EAST-FIELDS` | east elevation field order | study/bedroom; service/bath; kitchen/bedroom | RH-10 | AUTHORED qualitative relationship | OUTSIDE_RH_C1 | no elevation output in first slice |
+| `RHCF-WEST-FIELDS` | west elevation field order | front and rear room-owned fields | RH-10 | AUTHORED qualitative relationship | OUTSIDE_RH_C1 | no elevation output in first slice |
+| `RHCF-WALL-NORMAL` | external/court planning family | `400–425 mm` normal planning range | RH-10 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | range metadata; **no hidden single thickness** |
+| `RHCF-WALL-STRESS` | wall geometry stress parameter | `450 mm` | RH-10 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | test boundary, not selected construction |
+| `RHCF-STRUCT-SUPPORT` | support-line concept | outer + courtyard inner leaves | RH-05 | OUTSIDE RH-C1 | OUTSIDE_RH_C1 | RH-C2 domain; engineering absent |
+| `RHCF-STRUCT-SPANS` | gross span concept | side `≈4,200`; centre `≈3,400` | RH-05 | OUTSIDE RH-C1 | OUTSIDE_RH_C1 | RH-C2 domain |
+| `RHCF-EDGE-BEAMS` | court support continuations | X≈4,200/7,800 through front/rear fields | RH-05 | OUTSIDE RH-C1 | OUTSIDE_RH_C1 | do not snap to room partitions |
+| `RHCF-ROOF-FAMILY` | gross roof topology | four very-low-slope fields; diagonal outer-corner→court-corner watersheds; falls outward | RH-08/RH-10 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | enough to reproduce current section family only |
+| `RHCF-ROOF-FALL` | screening fall | `≈1:40 class` outward | RH-08 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | not specification/minimum finished fall |
+| `RHCF-ROOF-CATCH` | plan catchment proxy | S/N `≈26.5 m²`; W/E `≈31.1 m²` | RH-08 | DERIVED | OUTSIDE_RH_C1 | drainage/roof calculations are later work |
+| `RHCF-COURT-DRAIN` | courtyard drainage geography | east-side accessible route + visible overflow | RH-08 | OUTSIDE RH-C1 | OUTSIDE_RH_C1 | hydraulic design absent |
+| `RHCF-PLANT-ACCESS` | plant replacement opening | nominal `1,000 clear` | RH-06 | PROVISIONAL ASSUMPTION | OUTSIDE_RH_C1 | service/equipment domain |
 
-The gross morphology closes exactly without drawing input.
+---
 
-### Ground-floor semantic reservations
+# 3. Current room / circulation reservation contract
 
-| Object | Reconstructed reservation | Gross reservation area |
-|---|---|---:|
-| `G-DRAW-02` | X 0–4,000 / Y 0–3,400 **plus** X 0–4,200 / Y 3,400–≈5,000 | ≈20.32 m² |
-| `G-FAM-02` | X 0–4,200 / Y ≈5,000–10,800 | ≈24.36 m² |
-| `G-HALL-02` | X 4,000–7,800 / Y 0–3,400 | 12.92 m² |
-| `G-STUDY-02` | X 9,100–12,000 / Y 0–3,400 | 9.86 m² |
-| `G-GAL-01` | X 7,800–9,100 / Y 0–7,400 | 9.62 m² |
-| `G-SVC-02` | X 9,100–12,000 / Y 3,400–7,400 | 11.60 m² |
-| `G-GARDEN-02` | X 4,200–7,800 / Y 7,400–10,800 | 12.24 m² |
-| `G-KIT-02` | X 7,800–12,000 / Y 7,400–10,800 | 14.28 m² |
+These polygons are planning-level semantic reservations. A coordinate marked `≈` stays provisional. RH-C1 must not convert them into finished wall-face dimensions.
 
-At nominal `Y≈5,000` the reservations total **115.20 m²**. These are semantic reservation polygons, not clear wall-face dimensions.
+## Ground floor
 
-### Upper-floor semantic reservations
+| Entity | Reservation | Freeze status |
+|---|---|---|
+| `G-DRAW-02` | `X 0–≈4,000 / Y 0–3,400` plus `X 0–4,200 / Y 3,400–≈5,000` | PROVISIONAL_BUT_REPRESENTABLE boundaries; room identity/topology frozen |
+| `G-FAM-02` | `X 0–4,200 / Y ≈5,000–10,800` | PROVISIONAL_BUT_REPRESENTABLE split |
+| `G-HALL-02` | `X ≈4,000–7,800 / Y 0–3,400` | PROVISIONAL_BUT_REPRESENTABLE west boundary |
+| `G-STUDY-02` | `X 9,100–12,000 / Y 0–3,400` | FROZEN_FOR_RH_C1 |
+| `G-GAL-01` | `X 7,800–9,100 / Y 0–7,400` | FROZEN_FOR_RH_C1 |
+| `G-SVC-02` | `X 9,100–12,000 / Y 3,400–7,400` | FROZEN_FOR_RH_C1 gross room only |
+| `G-GARDEN-02` | `X 4,200–7,800 / Y 7,400–10,800` | FROZEN_FOR_RH_C1 |
+| `G-KIT-02` | `X 7,800–12,000 / Y 7,400–10,800` | FROZEN_FOR_RH_C1 |
 
-| Object | Reconstructed reservation | Gross reservation area |
-|---|---|---:|
-| `U-BED-02` | X 0–4,000 / Y 0–3,400 **plus** X 0–4,200 / Y 3,400–≈5,000 | ≈20.32 m² |
-| `U-BED-P01` | X 0–4,200 / Y ≈5,000–10,800 | ≈24.36 m² |
-| `U-STAIR-01` | X 4,000–7,800 / Y 0–3,400 | 12.92 m² |
-| `U-BED-03` | X 7,800–12,000 / Y 0–3,400 | 14.28 m² |
-| `U-GAL-02` | X 7,800–9,100 / Y 3,400–7,400 | 5.20 m² |
-| `U-BATH-01` | X 9,100–12,000 / Y 3,400–7,400 | 11.60 m² |
-| `U-BED-04` | X 7,800–12,000 / Y 7,400–10,800 | 14.28 m² |
-| `U-LAND-N01` | X 4,200–7,800 / Y 7,400–≈8,600 | ≈4.32 m² |
-| `U-DRESS-01` | former en-suite dry reservation, approx. X 4,200–6,400 / Y 8,600–10,800 | ≈4.84 m² |
-| `U-LIN-01` | approx. X 6,400–7,800 / Y 8,600–10,800 | ≈3.08 m² |
+At the nominal west split these reservations close to the `115.2 m²` enclosed gross field exactly.
 
-At the nominal approximate dry-space split the upper reservations also total **115.20 m²**.
+## First floor
 
-### Conservative wall-envelope reconstruction
+| Entity | Reservation | Freeze status |
+|---|---|---|
+| `U-BED-02` | `X 0–≈4,000 / Y 0–3,400` plus `X 0–4,200 / Y 3,400–≈5,000` | PROVISIONAL_BUT_REPRESENTABLE boundaries |
+| `U-BED-P01` | `X 0–4,200 / Y ≈5,000–10,800` | PROVISIONAL_BUT_REPRESENTABLE split |
+| `U-STAIR-01` | `X ≈4,000–7,800 / Y 0–3,400` | PROVISIONAL_BUT_REPRESENTABLE west boundary |
+| `U-BED-03` | `X 7,800–12,000 / Y 0–3,400` | FROZEN_FOR_RH_C1 |
+| `U-GAL-02` | `X 7,800–9,100 / Y 3,400–7,400` | FROZEN_FOR_RH_C1 |
+| `U-BATH-01` | `X 9,100–12,000 / Y 3,400–7,400` | FROZEN_FOR_RH_C1 gross room only |
+| `U-BED-04` | `X 7,800–12,000 / Y 7,400–10,800` | FROZEN_FOR_RH_C1 |
+| `U-LAND-N01` | `X 4,200–7,800 / Y 7,400–≈8,600` | PROVISIONAL_BUT_REPRESENTABLE north boundary |
+| `U-DRESS-01` | approx. `X 4,200–6,400 / Y 8,600–10,800` | PROVISIONAL_BUT_REPRESENTABLE subdivision |
+| `U-LIN-01` | approx. `X 6,400–7,800 / Y 8,600–10,800` | PROVISIONAL_BUT_REPRESENTABLE subdivision |
 
-| Planning thickness per face | side-ring clear field | front/rear-ring clear field | Meaning |
-|---:|---:|---:|---|
-| 400 mm | 3,400 mm | 2,600 mm | lower end of normal planning family |
-| 425 mm | 3,350 mm | 2,550 mm | upper end of normal planning family |
-| 450 mm | 3,300 mm | 2,500 mm | whole-house geometry stress test |
-| 500 mm | 3,200 mm | 2,400 mm | outside current family; rewind-test condition only |
+The upper field also closes to `115.2 m²` at the nominal dry-space splits. `U-ENS-01` is historical only.
 
-These are ring-depth checks, not universal room-clear dimensions.
+---
 
-### Stair reconstruction
+# 4. Authored → derived dependency contract
 
-- first-floor rise = `3,300 mm`;
-- risers = `18` → rise `183.33 mm`;
-- 3 flights × 6 rises;
-- five `280 mm` goings per flight → run `1,400 mm`;
-- intermediate levels `+1,100` and `+2,200 mm`;
-- `2R + G = 646.67 mm`;
-- pitch ≈ `33.2°`.
-
-Exact string/well/landing construction remains provisional.
-
-### Plan-to-section closure
-
-- ground FFL `0`;
-- ground clear ceiling `+2,950`;
-- first FFL `+3,300`;
-- derived datum gap `350`;
-- upper clear ceiling `+6,000`;
-- derived upper clear height `2,700`;
-- cornice/eaves control `≈+6,250`.
-
-### Axes, openings and roof
-
-The RH-04 front rule is independently reconstructable as a centred four-bay field with 2,700 mm spacing; its axes are `1,950 / 4,650 / 7,350 / 10,050`. Entrance centre is bay 3 (`7,350`). Courtyard north/south principal openings centre on shell/court X=`6,000`. Exact east/west court opening centres remain OPEN.
-
-The RH-08 roof plan derives from four outer-corner→court-corner diagonal watersheds and gives the recorded approx. `26.5 / 26.5 / 31.1 / 31.1 m²` field split. Roof build-up and exact vertical surface remain provisional.
-
-Only after this reconstruction was complete were SVGs compared. Material differences are recorded in [`rhc0-discrepancy-register.md`](rhc0-discrepancy-register.md). No reconstructed value was changed to match an SVG.
-
-## Authored vs derived closure — RH-C0.3
-
-The compiler fixture must encode **design intent once**. The current documents often state both a relationship and its consequences for human readability; RH-C1 must not make both independently editable.
-
-### Classification vocabulary
-
-- **AUTHORED** — intentional Reference House input.
-- **DERIVED** — deterministic consequence of authored/provisional source inputs.
-- **EVIDENCE-BACKED** — externally/imported result tied to declared source facts. There are **no EVIDENCE-BACKED values in the first RH-C1 architectural geometry source**; later specialist evidence remains external and staleable.
-- **PROVISIONAL ASSUMPTION** — useful current source value/relationship whose authority remains explicitly provisional.
-- **OUTSIDE RH-C1** — deliberately not part of the first executable slice.
-
-### RH-C1 source authorship schedule
-
-| Source subject | Classification | Canonical source expression | Derived consequences / notes |
-|---|---|---|---|
-| shell width/depth | AUTHORED | `width=12000`, `depth=10800` | shell area and shell centre derived |
-| court width/depth | AUTHORED | `width=3600`, `depth=4000` | court area derived |
-| court placement | AUTHORED | `centredInShell=true` | court X/Y edges and all four gross wing depths derived; **do not author court edges separately** |
-| coordinate handedness for fixture | AUTHORED | origin SW; +X east; +Y north; front surrogate south | project-fixture convention, not House Kernel doctrine |
-| ground room/circulation topology | AUTHORED | named adjacency/order from RH-02/RH-03 | room reservation polygons consume partition lines below |
-| upper room/circulation topology | AUTHORED | four bedrooms + U-shaped south/east/north circulation + bathroom + dry dressing/storage | no wet `U-ENS-01` source object exists |
-| east gallery/service partition | AUTHORED | `X=9100` | gallery/service room polygons derived; gallery west edge derives from court east edge |
-| west room split | PROVISIONAL ASSUMPTION | nominal `Y=5000` because RH-02 says `≈5.0 m`, adjustable | west room polygons/areas derived; source must preserve provisional status |
-| front hall/drawing local shift | PROVISIONAL ASSUMPTION | nominal `X=4000` south of court because RH-03 says `≈200 mm` shift | local notched room polygons derived |
-| north landing/dry-space split | PROVISIONAL ASSUMPTION | nominal `Y=8600`, dry split `X=6400` | landing/dressing/linen polygons derived; exact joinery/partition may move |
-| ground FFL | AUTHORED | `0` | level reference |
-| first FFL | AUTHORED | `3300` | stair rise and floor-to-floor derived |
-| ground clear ceiling | AUTHORED | `2950` | floor/service zone `350` derived |
-| upper clear ceiling | AUTHORED | `6000` | upper clear height `2700` derived |
-| cornice/eaves control | PROVISIONAL ASSUMPTION | nominal `6250`, retaining `≈` authority | roof/interface representation only; not technical build-up |
-| riser count | AUTHORED | `18`; grouped `3 × 6` | rise, intermediate landing levels derived |
-| stair going | AUTHORED | `280`; `5` goings/flight | run, pitch, `2R+G` derived |
-| stair clear width | PROVISIONAL ASSUMPTION | target `≈1000` | not proof of technical clear width |
-| stair planning reservation | PROVISIONAL ASSUMPTION | `≈2400–2500` square | not an independent source for rise/run |
-| front façade field | AUTHORED | `count=4`, `spacing=2700`, `centre=shell centre X` | axes `1950/4650/7350/10050` derived; **do not author four coordinates separately** |
-| principal entrance bay | AUTHORED | `bayIndex=3` | entrance centre `X=7350` derived |
-| front opening centres | DERIVED | from declared bay membership | widths/sills/heads remain provisional families |
-| front major opening size families | PROVISIONAL ASSUMPTION | RH-04 ranges/nominals by opening role | product/free-opening geometry outside RH-C1 |
-| courtyard north/south opening relationship | AUTHORED | centred on courtyard X axis | centre `X=6000` derived |
-| east/west courtyard opening order | AUTHORED qualitative relationship | east = two-bay vertically aligned; west = two room-owned axes | exact numeric centres **OUTSIDE RH-C1** until an owning gate authors them; never infer from pixels |
-| garden elevation field | PROVISIONAL ASSUMPTION | three axes, centred, spacing `≈3900` | approx. `2100/6000/9900` derived for representation; exact widths not source truth |
-| wall planning family | PROVISIONAL ASSUMPTION | normal range `400–425`; stress parameter `450` | clear-field stress calculations derived; **no hidden single wall thickness** |
-| gross roof topology | AUTHORED | four outward-falling fields; corner-to-court-corner watersheds | field plan polygons derived from shell/court |
-| roof coordination fall | PROVISIONAL ASSUMPTION | `≈1:40 class` | local rises/catchment relations derived; not a technical specification |
-| structural support/member data | OUTSIDE RH-C1 | — | RH-C2 owns future structural view; no member size/support capacity becomes C1 source |
-| plant / utility subdivision / `SV-01` | OUTSIDE RH-C1 | — | recorded in baseline for architectural constraints; RH-C3 owns future service view |
-| final window/door product geometry | OUTSIDE RH-C1 | — | frame, clear opening, reveal, threshold and replacement detail remain technical/product work |
-| final envelope build-up / thermal data | OUTSIDE RH-C1 | — | no U-value, ψ-value, inner-leaf size or insulation becomes C1 truth |
-
-### Dependency paths that RH-C1 must preserve
+RH-C1 should encode the left side once and calculate the right side. Editing a right-side consequence directly is a model error.
 
 ```text
 shell.width + shell.depth
   ├─> shell.area
   ├─> shell.centre
-  └─> court placement reference
+  └─> centred-court reference
 
 court.width + court.depth + centredInShell + shell
   ├─> court edges
-  ├─> court.area
-  ├─> west/east/front/rear gross wing depths
-  └─> roof field vertices
+  ├─> court area
+  ├─> west/east/front/rear gross ring depths
+  └─> roof plan-field vertices
 
-shell/court edges + authored/provisional partition lines + room topology
+shell/court + partition inputs + room topology
   ├─> room reservation polygons
   └─> room reservation areas
 
 firstFloorFFL + stair.riserCount
   ├─> stair.rise
-  ├─> flight landing levels
-  ├─> stair pitch (with going)
+  ├─> six-rise landing levels
+  ├─> pitch (with going)
   └─> 2R+G (with going)
 
 stair.going + goingsPerFlight
@@ -252,58 +184,202 @@ stair.going + goingsPerFlight
 
 frontField.count + frontField.spacing + shell.centreX
   ├─> front bay axes
-  ├─> window centres by bay membership
+  ├─> front opening centres by bay membership
   └─> entrance centre via entranceBayIndex
 
 groundCeiling + firstFloorFFL
-  └─> inter-storey architectural reservation
+  └─> inter-storey datum gap
 
 firstFloorFFL + upperCeiling
   └─> upper clear height
 
 shell/court vertices + roof topology
-  ├─> four roof-field polygons
-  └─> plan catchment areas
+  └─> roof field polygons
 ```
 
-### Duplicated authorship eliminated
+The following are therefore **not independent source values** even though they appear in prose/drawings for readability: court edges, ring depths, plate area, room polygons where fully implied, 350 mm datum gap, 2,700 mm upper clear height, stair rise/run/landing levels/pitch/`2R+G`, the four front-axis coordinates, entrance centre and roof field polygons.
 
-The following values remain visible in documentation but are **not independent editable source facts**:
+---
 
-- courtyard edge coordinates;
-- wing depths;
-- enclosed plate area;
-- room polygon coordinates wherever they are consequences of shell/court/partition inputs;
-- 350 mm floor-zone depth;
-- 2,700 mm upper clear height;
-- stair rise, run, landing levels, pitch and `2R+G`;
-- four front bay-axis coordinates;
-- principal entrance centreline;
-- front opening centres where bay membership controls them;
-- roof field polygons and catchment areas.
+# 5. RH-C1 source contract
 
-A future compiler may report all of these, but editing them directly would be a model error.
+RH-C1 may encode only this bounded semantic source.
 
-## Authority boundary for RH-C1
+## Required source entities / relationships
 
-RH-C1 may encode only facts explicitly released by RH-C0.7 as `FROZEN_FOR_RH_C1` or deliberately `PROVISIONAL_BUT_REPRESENTABLE`. The authorship schedule above defines **how** a released fact enters the model, not whether it has earned final freeze status yet.
+### Shell / court
 
-## Open items carried forward
+- `shell { width: 12000, depth: 10800 }`
+- `court { width: 3600, depth: 4000, placement: centredInShell }`
 
-- Exact east/west courtyard opening centres remain un-authored and therefore outside the first source unless RH-C0.6 demonstrates a need for an RH-04 correction.
-- `Y≈5.0 m`, `X≈4.0 m`, `Y≈8.6 m` and `X≈6.4 m` are nominal fixture coordinates with explicit provisional authority, not silently upgraded dimensions.
-- Gross opening widths remain coordination families rather than final products.
-- The 400–425 mm wall family is a range; 450 mm is a stress parameter, not a competing source thickness.
-- Existing SVGs still require RH-C0.6 comparator replacement/classification.
+### Levels
 
-## RH-C0.1 gate result
+- ground FFL `0`
+- ground clear ceiling `2950`
+- first FFL `3300`
+- upper clear ceiling `6000`
+- cornice/eaves control may be represented as `≈6250` with explicit provisional status
 
-**PASS.** Every fact expected to matter to the RH-C1 source contract has one identifiable current owning gate or is explicitly marked provisional/open.
+### Rooms / circulation
 
-## RH-C0.2 gate result
+- semantic identities and adjacency/topology listed above;
+- exact partition inputs where controlled;
+- nominal approximate partition inputs only with `PROVISIONAL_BUT_REPRESENTABLE` metadata;
+- no internal door leaf/swing geometry unless a later owning architectural gate authors it.
 
-**PASS.** The current authorities independently reconstruct one coherent planning-level house. Drawing discrepancies are registered rather than absorbed into the reconstruction.
+### Stair
 
-## RH-C0.3 gate result
+Encode:
 
-**PASS.** Every first-slice fact now has one authorship role and a dependency path. No physical relationship is knowingly editable from two independent sources. Values stated redundantly in the architectural documents are explicitly consequences in the executable contract, and provisional values remain labelled provisional rather than becoming exact through coding.
+- 18 risers;
+- 3 groups of 6;
+- 5 goings per flight;
+- 280 mm planning going;
+- provisional `≈1000` clear target and `≈2400–2500` planning reservation if needed by the drawing.
+
+Derive rise/run/landing datums/pitch/`2R+G`.
+
+**Do not invent** strings, balustrades, handrails, tread placement around the well, exact landings, headroom construction or a certified stair. The RH-C1 principal section may show the controlled stair reservation/topology and derived landing datums, as the RH-C0 comparator does.
+
+### Walls
+
+RH-C1 needs semantic room boundaries / host walls sufficient to draw the planning fixture and host major openings. It does **not** have a frozen construction thickness.
+
+If the wall planning family is represented, encode the explicit range `400–425` and stress parameter `450` as provisional model metadata/test inputs. Do not select a hidden nominal thickness merely to draw two wall faces.
+
+### Principal axes / openings
+
+Encode:
+
+- front field rule `{ count: 4, spacing: 2700, centredOnShell: true }`;
+- entrance membership `bayIndex=3`;
+- front opening role/bay membership;
+- provisional front opening size/sill/head families;
+- court north/south centred-opening relationship;
+- qualitative east/west court opening orders without fabricated numeric centres;
+- garden field only if useful as a provisional relationship; it is not required for the three RH-C1 production views.
+
+### Roof in the principal section
+
+RH-C1 may represent the current gross roof family solely so the section does not regress to the superseded pitched roof:
+
+- outward fall away from court;
+- four-field topology in plan;
+- `≈1:40` coordination fall;
+- `≈+6250` outer edge control.
+
+This is **PROVISIONAL_BUT_REPRESENTABLE**. RH-C1 must not infer roof build-up, parapet, waterproofing, structural depth, drainage sizing or compliance from it.
+
+---
+
+# 6. Explicitly OUTSIDE RH-C1
+
+The first slice must not create source truth for:
+
+- exact east/west courtyard opening centres;
+- exact side-elevation opening coordinates;
+- internal door positions, leaf widths or swings;
+- final wall-face / construction thickness;
+- masonry leaf sizes, insulation, cavity, air barrier or final thermal build-up;
+- U-values, ψ-values or thermal-bridge details;
+- final window/door product geometry, frames, sashes, free-opening areas, reveals or thresholds;
+- final stair strings, well construction, guards, handrails, headroom details or compliance sign-off;
+- structural member sizes, joists, beams, bearings, connections, foundations or capacity;
+- plant-room packing, utility/WC final subdivision, `SV-01` capacity or MEP routes;
+- MVHR duct sizing, fan duty, terminal separation, acoustics or fire stopping;
+- heat loss, heat-emitter sizing, ASHP sizing, DHW sizing or electrical design;
+- detailed roof build-up, parapet/coping, drainage outlets, gutters/downpipes or hydraulic sizing;
+- court drain sizing;
+- final fire/escape strategy or Building Regulations compliance;
+- daylight, overheating, hygrothermal or acoustic proof;
+- real orientation, site boundaries, drainage, utilities, planning or ground conditions;
+- physical-test results or external professional determinations not yet obtained.
+
+These are not omissions to fill with plausible defaults. They are controlled boundaries for later RH-C2→RH-C5 or external evidence.
+
+---
+
+# 7. Supersession / correction ledger
+
+1. **RH-01 shell width `11.4 m` → RH-02 `12.0 m`.** Depth and 3.6×4.0 court retained.
+2. **RH-02 front drawing/hall boundary `X=4.2 m` → RH-03 nominal `X≈4.0 m`** south of the court only.
+3. **RH-03 stair test datum `3,240` → RH-04 first FFL `+3,300`.** Eighteen-riser / three-flight topology retained.
+4. **RH-03 `U-ENS-01` → RH-06 dry `U-DRESS-01` / linen-storage field.** No principal en-suite exists in the current house.
+5. **RH-06 local-extract/open ventilation position → RH-07 central MVHR baseline with continuous-MEV fallback.** Service geography remains provisional.
+6. **RH-04 pitched-roof preference → RH-08/RH-10 outward-draining low-slope roof.** RH-04 still owns storey/cornice/opening hierarchy.
+7. **RH-02 350 mm wall allowance → RH-10 400–425 mm planning family + 450 mm stress boundary.** No shell growth follows automatically.
+8. **RH-10 north-centre upper garden opening host “cross-landing” → RH-C0.6 dry dressing/storage field.** The plan did not move; `outer-elevation-coordination-rh10.md` was repaired and the stale SVG demoted.
+
+---
+
+# 8. Controlled unresolved items
+
+These are visible uncertainties, not hidden freeze failures.
+
+| Item | Current treatment | Why RH-C0 may still PASS |
+|---|---|---|
+| west room split `Y≈5.0 m` | PROVISIONAL_BUT_REPRESENTABLE | source is deliberately approximate and fixture can preserve that status |
+| front hall line `X≈4.0 m` | PROVISIONAL_BUT_REPRESENTABLE | relationship/correction is clear even though final wall face is not |
+| upper dry-space splits `Y≈8.6 / X≈6.4` | PROVISIONAL_BUT_REPRESENTABLE | dry topology is controlled; joinery/partition detail may move |
+| exact E/W courtyard opening centres | OUTSIDE RH-C1 | RH-04 never authored them; no first-slice invariant requires fabricated coordinates |
+| internal doors/swings | OUTSIDE RH-C1 | topology closes without pretending a joinery plan exists |
+| wall construction thickness | PROVISIONAL range only | RH-C1 can preserve the range/stress test without selecting construction |
+| stair detailed construction | OUTSIDE RH-C1 detail | source has enough topology/arithmetic for C1; technical stair remains later work |
+| utility/WC fit | OUTSIDE RH-C1 | domestic audit marks it unproved; RH-C3 / later architectural detail owns it |
+| plant/riser packing | OUTSIDE RH-C1 | specialist proof absent; no area expansion is assumed |
+| roof technical geometry | provisional gross family only | enough to prevent section regression; technical roof remains later evidence |
+
+No unresolved item above can be silently filled by an RH-C1 default.
+
+---
+
+# 9. Visual comparator contract
+
+The following are the RH-C1 parity comparators:
+
+1. [`rhc0-ground-floor-comparator.svg`](rhc0-ground-floor-comparator.svg)
+2. [`rhc0-first-floor-comparator.svg`](rhc0-first-floor-comparator.svg)
+3. [`rhc0-principal-section-comparator.svg`](rhc0-principal-section-comparator.svg)
+
+Additional cross-view checks:
+
+- [`rhc0-front-elevation-comparator.svg`](rhc0-front-elevation-comparator.svg)
+- [`rhc0-garden-elevation-comparator.svg`](rhc0-garden-elevation-comparator.svg)
+
+All five are **secondary projections**. They are `CURRENT DIAGRAM / NON-GEOMETRIC`, never source authority. RH-C1 must reproduce their controlled semantics/dimensions from this baseline, not copy their SVG coordinates.
+
+Full drawing classification and stale-material disposition live in [`rhc0-drawing-parity-audit.md`](rhc0-drawing-parity-audit.md).
+
+---
+
+# 10. RH-C0 closeout evidence
+
+- authority consolidation + independent reconstruction + source contract: **this document**
+- discrepancy/supersession record: [`rhc0-discrepancy-register.md`](rhc0-discrepancy-register.md)
+- mutation/dependency red-team: [`rhc0-mutation-map.md`](rhc0-mutation-map.md)
+- domestic/adversarial review: [`rhc0-domesticity-audit.md`](rhc0-domesticity-audit.md)
+- drawing parity/classification: [`rhc0-drawing-parity-audit.md`](rhc0-drawing-parity-audit.md)
+- material RH-C0 rewind/correction: [`outer-elevation-coordination-rh10.md`](outer-elevation-coordination-rh10.md) — north-centre upper garden host corrected at RH-C0.6
+
+## Ten-condition PASS gate
+
+| # | Canonical RH-C0 condition | Result | Evidence |
+|---:|---|---|---|
+| 1 | every RH-C1 fact has one current authority | **PASS** | fact schedule + source contract above |
+| 2 | current authorities reconstruct one coherent house | **PASS** | independent reconstruction in RH-C0.2; both storeys close to 115.2 m² gross semantic field |
+| 3 | no compiler-bound fact is unknowingly authored twice | **PASS** | authored→derived dependency contract |
+| 4 | high-leverage mutation consequences are recorded | **PASS** | `rhc0-mutation-map.md`, including explicit propagation/failure/review outcomes |
+| 5 | fresh domestic/architectural adversarial review survived | **PASS** | `rhc0-domesticity-audit.md`; no protected defect requires morphology rewind |
+| 6 | current comparator drawings agree or stale drawings are demoted | **PASS** | `rhc0-drawing-parity-audit.md` + named RH-C0 comparator set |
+| 7 | every relevant fact is frozen/provisional/outside | **PASS** | schedule above |
+| 8 | unresolved technical proof remains visible | **PASS** | explicit OUTSIDE/PROVISIONAL sections; no specialist adequacy promoted |
+| 9 | material contradictions found by RH-C0 are repaired through owning gate | **PASS** | RH-C0.6 garden-host defect repaired in RH-10 authority; other drawing drift demoted rather than blended |
+| 10 | maturity remains tied to real evidence | **PASS** | Reference House remains **M3**; no RH-C0 promotion |
+
+# RH-C0 result
+
+**PASS.** The Reference House is frozen strongly enough to act as the controlled regression fixture for RH-C1 at the bounded architectural scope above.
+
+This does **not** make the house a universal House Kernel template or gold-standard design. It is one controlled reference fixture against which the executable architecture can prove that semantic source, derivation and drawings remain consistent.
+
+RH-C1 may now begin. Its first job is reproduction, not invention: one semantic source for the released shell, court, levels, rooms/circulation, stair, walls/openings and principal axes; small pure derived calculations; then deterministic ground-plan, first-floor-plan and principal-section SVGs.

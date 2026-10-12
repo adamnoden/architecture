@@ -1,9 +1,10 @@
 # Reference House Executable Slice
 
-**Status:** planned next computational fixture; **BLOCKED until RH-C0 passes**  
+**Status:** **READY — RH-C0 passed; RH-C1 may begin**  
 **Date:** 2026-10-12  
-**Prerequisite:** [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md)  
-**Trigger:** RH-00→RH-11 has produced an M3 coordinated Reference House whose geometry, calculations and drawings are currently maintained partly by manual reasoning and hand-authored SVGs.
+**Prerequisite:** [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md) — **PASS**  
+**Canonical fixture source:** [`../reference-house/model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md)  
+**Trigger:** RH-00→RH-11 produced an M3 coordinated Reference House; RH-C0 has now frozen the bounded architectural fixture needed for deterministic implementation.
 
 ## Why this reopens executable work
 
@@ -13,7 +14,7 @@ The problem is no longer abstract compiler capability. It is specific and falsif
 
 > **Can one canonical semantic source reproduce the controlled Reference House geometry, its simple derived calculations and a small set of architectural drawings deterministically?**
 
-The Reference House is intended to become the **controlled regression fixture** for this executable slice. It is not assumed to be a universally correct house, and RH-C0 must first prove that its current architectural facts are internally coherent enough to freeze.
+The Reference House is the **controlled regression fixture** for this executable slice. It is not assumed to be a universally correct house. RH-C0 established that its current architectural facts are internally coherent enough to freeze at the bounded fixture scope while preserving provisional and out-of-scope uncertainty.
 
 The compiler is not asked to generate a better house yet. It must first reproduce the house already coordinated and hardened manually.
 
@@ -40,17 +41,7 @@ Do **not** begin with structure, MEP, arbitrary 3D solids, products, optimisatio
 
 The Reference House must have one machine-readable source of geometric facts. Drawings and derived calculations consume that source; they do not duplicate it.
 
-Representative current facts include:
-
-- shell `12.0 × 10.8 m`;
-- courtyard `3.6 × 4.0 m`;
-- first-floor FFL `+3300 mm`;
-- ground clear ceiling `+2950 mm`;
-- 18-riser principal stair with `280 mm` planning going;
-- front axes `1.95 / 4.65 / 7.35 / 10.05 m`;
-- current room/opening geometry from the controlling RH gates.
-
-These values are **orientation only until RH-C0 closes**. RH-C1 must consume the RH-C0 baseline rather than copying numbers from this document or from historical drawings.
+The only source contract for RH-C1 is [`model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md). Representative values in this document are explanatory only; if this document and the RH-C0 baseline ever differ, the baseline wins.
 
 Stable semantic identity must survive every projection. A window, wall or room shown in a drawing is the same project entity used by calculations, obligations and later evidence.
 
@@ -109,6 +100,14 @@ The generated drawings do not become authoritative merely because they compile.
 RH-C1 passes only when the generated plans/section reproduce the RH-C0 controlled fixture closely enough that the equivalent hand-authored geometric drawings can be retired or clearly marked historical.
 
 The test is not visual resemblance alone. Geometry and semantic identity must match the controlled Reference House facts.
+
+The RH-C0 visual comparators are:
+
+- `docs/reference-house/rhc0-ground-floor-comparator.svg`;
+- `docs/reference-house/rhc0-first-floor-comparator.svg`;
+- `docs/reference-house/rhc0-principal-section-comparator.svg`.
+
+They are comparison projections, not source geometry.
 
 ---
 

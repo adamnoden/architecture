@@ -159,9 +159,9 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-12',
     currentState:
-      'RH-00 through RH-10 are coordinated at virtual-design scope and RH-11 now provides issue-ready discipline review packages; remaining uncertainty is bounded to engineering, simulation, prototype, real-site and actual competent external-review evidence.',
+      'RH-00 through RH-10 are coordinated at virtual-design scope, RH-11 provides issue-ready discipline review packages, and RH-C0 has frozen a controlled pre-compiler model without converting unresolved technical assumptions into certainty.',
     nextGate:
-      'Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, and progress P03/P04 validation; do not claim further maturity from package preparation alone.',
+      'Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, and progress P03/P04 validation; RH-C0 does not raise Reference House maturity.',
     evidence: {
       framed: ['docs/reference-house/README.md'],
       developed: [
@@ -172,7 +172,8 @@ export const workstreamStatuses = [
       coordinated: [
         'docs/reference-house/whole-house-coordination-audit.md',
         'docs/reference-house/energy-heat-coordination-rh10.md',
-        'docs/reference-house/envelope-coordination-rh10.md'
+        'docs/reference-house/envelope-coordination-rh10.md',
+        'docs/reference-house/model-baseline-rhc0.md'
       ]
     }
   },
@@ -216,13 +217,16 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-12',
     currentState:
-      'P0 passed 17/17 tests and PAT-XW-01 passed 6/6; generic compiler growth is intentionally stopped.',
+      'P0 passed 17/17 tests, PAT-XW-01 passed 6/6, and RH-C0 passed all ten model-freeze conditions; the Reference House now has a bounded canonical source contract for the first deterministic fixture.',
     nextGate:
-      'Add a fixture only when another workstream exposes a concrete high-value question.',
+      'Execute RH-C1: encode only the RH-C0-released semantic source and reproduce the ground plan, first-floor plan and principal section deterministically.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
-      coordinated: ['docs/computational/p0-pat-xw-01-result.md']
+      coordinated: [
+        'docs/computational/p0-pat-xw-01-result.md',
+        'docs/reference-house/model-baseline-rhc0.md'
+      ]
     }
   },
   {
