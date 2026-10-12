@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="900" viewBox="0 0 1300 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-06 service riser section</title>
+  <desc id="desc">Schematic section through the east service stack showing the ground plant/service suite, upper family bathroom, a 900 by 700 millimetre accessible vertical service zone, a framed floor opening, soil vent stack, wet and dry service sub-zones, and direct bathroom extract to the east wall.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .mass{fill:#ededed;stroke:#111;stroke-width:3}.void{fill:#fff;stroke:#555;stroke-width:1.4}.riser{fill:#f3f3f3;stroke:#111;stroke-width:2}.wet{fill:#ddd;stroke:#333;stroke-width:1.5}.dry{fill:#f8f8f8;stroke:#666;stroke-width:1.5;stroke-dasharray:5 4}.stack{stroke:#111;stroke-width:12}.pipe{stroke:#555;stroke-width:4}.cable{stroke:#777;stroke-width:4;stroke-dasharray:7 4}.extract{stroke:#555;stroke-width:6;marker-end:url(#arr)}.floor{stroke:#111;stroke-width:7}.ceiling{stroke:#777;stroke-width:1.5;stroke-dasharray:5 4}.opening{fill:#fff;stroke:#111;stroke-width:2;stroke-dasharray:6 4}.note{fill:#fafafa;stroke:#bbb;stroke-width:1}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#555"/></marker>
+  </defs>
+
+  <text x="55" y="52" class="head">Reference House — RH-06 Accessible Vertical Service Zone</text>
+  <text x="55" y="80" class="sub">Coordination section · 900 × 700 mm clear target · structural opening envelope approx. 1050 × 850 mm for engineering test</text>
+
+  <g transform="translate(95,150)">
+    <!-- building mass and floors -->
+    <rect x="0" y="0" width="620" height="610" class="mass"/>
+    <line x1="0" y1="315" x2="620" y2="315" class="floor"/>
+    <line x1="0" y1="345" x2="620" y2="345" class="ceiling"/>
+    <rect x="25" y="35" width="360" height="245" class="void"/>
+    <rect x="25" y="380" width="360" height="195" class="void"/>
+
+    <text x="205" y="70" text-anchor="middle" class="label">U-BATH-01 / U-GAL-02</text>
+    <text x="205" y="410" text-anchor="middle" class="label">G-PLANT-01 / G-GAL-01</text>
+
+    <!-- riser -->
+    <rect x="400" y="45" width="165" height="520" class="riser"/>
+    <rect x="410" y="55" width="88" height="500" class="wet"/>
+    <rect x="505" y="55" width="50" height="500" class="dry"/>
+    <text x="454" y="105" text-anchor="middle" class="label">WET / GRAVITY</text>
+    <text x="530" y="105" text-anchor="middle" class="small">DRY</text>
+
+    <!-- stack and water -->
+    <line x1="445" y1="120" x2="445" y2="555" class="stack"/>
+    <text x="460" y="190" class="small">FS-01 100 mm-class soil/vent</text>
+    <line x1="475" y1="145" x2="475" y2="535" class="pipe"/>
+    <line x1="486" y1="145" x2="486" y2="535" class="pipe"/>
+    <text x="465" y="235" class="small">hot / cold + optional hydronic</text>
+    <line x1="530" y1="145" x2="530" y2="535" class="cable"/>
+    <text x="540" y="255" class="small">power / data</text>
+
+    <!-- framed opening at floor -->
+    <rect x="395" y="295" width="175" height="45" class="opening"/>
+    <text x="482" y="290" text-anchor="middle" class="small">SV-RES framed opening / fire-acoustic closure</text>
+
+    <!-- bathroom short branch and dry-side access -->
+    <line x1="385" y1="170" x2="445" y2="170" class="pipe"/>
+    <text x="215" y="165" class="small">bathroom service wall → short branches</text>
+    <line x1="385" y1="210" x2="400" y2="210" stroke="#333" stroke-width="2"/>
+    <text x="205" y="215" text-anchor="middle" class="small">dry-side access panel from U-GAL-02</text>
+
+    <!-- bathroom extract direct east/outside -->
+    <line x1="565" y1="145" x2="650" y2="145" class="extract"/>
+    <text x="655" y="150" class="small">BX-01 → outside</text>
+
+    <!-- stack base and drain -->
+    <line x1="445" y1="555" x2="445" y2="620" class="stack"/>
+    <line x1="445" y1="620" x2="610" y2="620" class="stack"/>
+    <text x="465" y="600" class="small">accessible base / rodding</text>
+    <text x="615" y="625" class="small">FD-01 → east external IC</text>
+
+    <text x="482" y="585" text-anchor="middle" class="small">visible/inspectable riser base</text>
+  </g>
+
+  <g transform="translate(790,160)">
+    <rect x="0" y="0" width="430" height="600" class="note"/>
+    <text x="20" y="38" class="head">Riser discipline</text>
+    <text x="20" y="82" class="label">What belongs here</text>
+    <text x="20" y="112" class="small">• soil / vent stack</text>
+    <text x="20" y="134" class="small">• domestic water risers</text>
+    <text x="20" y="156" class="small">• small-bore hydronic if selected later</text>
+    <text x="20" y="178" class="small">• segregated power / data vertical route</text>
+
+    <text x="20" y="230" class="label">What does not</text>
+    <text x="20" y="260" class="small">• kitchen grease extract</text>
+    <text x="20" y="282" class="small">• bathroom extract when direct wall route exists</text>
+    <text x="20" y="304" class="small">• speculative MVHR ducts</text>
+    <text x="20" y="326" class="small">• arbitrary future services because space exists</text>
+
+    <text x="20" y="378" class="label">Failure geography</text>
+    <text x="20" y="408" class="small">Pressurised joints are biased to accessible ends.</text>
+    <text x="20" y="430" class="small">Riser base remains inspectable / leak-visible.</text>
+    <text x="20" y="452" class="small">Waterproofing remains independent of access panels.</text>
+
+    <text x="20" y="504" class="label">Engineering obligations</text>
+    <text x="20" y="534" class="small">Opening framing · fire/acoustic closure · pipe supports</text>
+    <text x="20" y="556" class="small">soil hydraulics · thermal movement · cable separation</text>
+    <text x="20" y="578" class="small">all remain specialist design.</text>
+  </g>
+
+  <text x="55" y="850" class="small">RH-06 coordination drawing only. Dimensions describe the spatial reservation, not a certified service/structural design.</text>
+</svg>
