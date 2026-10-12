@@ -217,15 +217,18 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-12',
     currentState:
-      'P0 passed 17/17 tests, PAT-XW-01 passed 6/6, and RH-C0 passed all ten model-freeze conditions; the Reference House now has a bounded canonical source contract for the first deterministic fixture.',
+      'P0 passed 17/17 tests, PAT-XW-01 passed 6/6, RH-C0 froze the canonical fixture, and RH-C1 now passes 27/27 tests while generating deterministic ground plan, first-floor plan and principal section from one bounded semantic source. This establishes Reference House fixture fidelity and dependency correctness, not compiler generality.',
     nextGate:
-      'Execute RH-C1: encode only the RH-C0-released semantic source and reproduce the ground plan, first-floor plan and principal section deterministically.',
+      'Execute CF-01 against the actual RH-C1 implementation before RH-C2: use a minimal contrast fixture to attack accidental Reference-House topology and grammar assumptions.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
       coordinated: [
         'docs/computational/p0-pat-xw-01-result.md',
-        'docs/reference-house/model-baseline-rhc0.md'
+        'docs/reference-house/model-baseline-rhc0.md',
+        'docs/reference-house/rhc1-drawing-parity-result.md',
+        'compiler/reference-house/reference-house.test.ts',
+        'compiler/reference-house/drawings.test.ts'
       ]
     }
   },
