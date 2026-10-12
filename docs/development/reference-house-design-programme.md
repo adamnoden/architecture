@@ -9,14 +9,15 @@ The programme does not assume that the current whole-house fixture is the right 
 
 ## Current execution state
 
-- **Active stage:** `RH-03 — Resolve stair, upper floor and courtyard circulation`
-- **Last closed stage:** `RH-02 — Resolve ground-floor order` — **PASS with controlled RH-01 width rewind**; canonical gate record: [RH-02 Ground-Floor Development](../reference-house/ground-floor-development.md).
-- **Current ground-floor authority:** [RH-02 drawing](../reference-house/ground-floor-development.svg).
-- **Current shell:** **12.0 × 10.8 m**, centred **3.6 × 4.0 m** courtyard; the 12.0 m width supersedes RH-01's 11.4 m value.
-- **Next action:** test stair positions/forms against `G-HALL-02`, `G-GAL-01` and the courtyard, then develop an upper-floor room order that preserves the ground-floor service geography without forcing bathrooms into dark or scattered positions.
+- **Active stage:** `RH-04 — Couple plan, section and G-01 elevation`
+- **Last closed stage:** `RH-03 — Resolve stair, upper floor and courtyard circulation` — **PASS**; canonical gate record: [RH-03 Stair, Upper Floor and Courtyard Circulation](../reference-house/upper-floor-and-stair-development.md).
+- **Current plan authority:** [RH-02 ground floor](../reference-house/ground-floor-development.svg), as modified by the [RH-03 stair overlay](../reference-house/stair-ground-floor-overlay.svg), plus the [RH-03 upper floor](../reference-house/upper-floor-and-stair-development.svg).
+- **Current section authority:** [RH-03 stair/courtyard section](../reference-house/stair-courtyard-section.svg); its 3240 mm floor-to-floor datum is provisional and exists only to coordinate the stair.
+- **Current shell:** **12.0 × 10.8 m**, centred **3.6 × 4.0 m** courtyard.
+- **Next action:** compare a small set of storey/ceiling datums and derive front, courtyard and sectional opening orders from the actual plan. The off-centre entrance, three-flight stair, bathroom windows, bedroom hierarchy and courtyard gallery must be negotiated as one plan/section/elevation system.
 - **Current brief baseline:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
-- **Held morphology rewind:** `B — Offset thick/thin ring`, now a deeper fallback only if RH-03/RH-06 exposes a failure that the controlled RH-02 width correction cannot solve proportionately.
-- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-02 has re-instantiated the service hub and ground-floor kitchen service-wall occurrences with new identities.
+- **Held morphology rewind:** `B — Offset thick/thin ring`, now a deep fallback only if later coordination exposes a material failure that cannot be solved proportionately inside the selected central-court morphology.
+- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-03 adds a family-bathroom service-wall occurrence and a new stacked vertical-service-zone occurrence.
 
 Update this block whenever a stage closes or the active stage materially changes.
 
