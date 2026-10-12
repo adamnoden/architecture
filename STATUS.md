@@ -12,13 +12,15 @@ The architectural position and canonical pattern language are established strong
 
 ### Reference House
 
-The Reference House has passed **RH-00 through RH-11**. It remains **M3 — Coordinated at virtual-design scope**. RH-10 reconciled the whole virtual building; RH-11 turned the remaining structural, fire/building-control, MEP/acoustic and building-physics/energy uncertainties into issue-ready review briefs. **RH-C0 has now also passed all ten model-freeze conditions**, giving RH-C1 one controlled pre-compiler source contract without promoting unresolved technical assumptions into certainty.
+The Reference House has passed **RH-00 through RH-11**. It remains **M3 — Coordinated at virtual-design scope**. RH-10 reconciled the whole virtual building; RH-11 turned the remaining structural, fire/building-control, MEP/acoustic and building-physics/energy uncertainties into issue-ready review briefs. RH-C0 froze a controlled pre-compiler source contract, and **RH-C1 now reproduces that bounded fixture deterministically from one semantic source**, including the ground-floor plan, first-floor plan and principal section.
 
-The design-gate sequence is complete at its current virtual scope. **Active evidence work remains:** issue the RH-11 pack to competent reviewers, record findings against the owning RH gate, and progress the P03 structural floor-edge and P04 wall/ceiling physical-validation work. RH-C0 is an internal model-control result, not construction validation, and does not raise Reference House maturity.
+The design-gate sequence is complete at its current virtual scope. **Active evidence work remains:** issue the RH-11 pack to competent reviewers, record findings against the owning RH gate, and progress the P03 structural floor-edge and P04 wall/ceiling physical-validation work. RH-C0/RH-C1 are internal model-control results, not construction validation, and do not raise Reference House maturity.
 
 ### Computational implementation
 
-RH-C0 is closed **PASS**. The Reference House can now serve as the bounded regression fixture for **RH-C1**. The next computational task is deliberately narrow: encode only the RH-C0-released semantic source and reproduce the ground-floor plan, first-floor plan and principal section deterministically. Structure, services, detailed envelope physics, products and general regulations logic remain later demand-led slices.
+RH-C1 is closed **PASS** at the one-fixture scope. P0 remains 17/17, PAT-XW-01 6/6 and RH-C1 27/27; the generated Reference House plans/section are deterministic projections of the RH-C0 source rather than parallel geometric authority.
+
+The next computational gate is **CF-01 — adversarial contrast fixture**. Its purpose is to attack accidental Reference-House assumptions in the code before deeper compiler growth. **RH-C2 structure remains blocked until CF-01 passes.** Services, detailed envelope physics, products and general regulations logic remain later demand-led slices.
 
 ### Physical and engineering validation
 
@@ -70,7 +72,7 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 | **Reference House** | **M3** | 2026-10-12 | RH-00 through RH-10 are coordinated at virtual-design scope, RH-11 provides issue-ready discipline review packages, and RH-C0 has frozen a controlled pre-compiler model without converting unresolved technical assumptions into certainty. | Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, and progress P03/P04 validation; RH-C0 does not raise Reference House maturity. |
 | **Physical prototypes** | **M2** | 2026-10-12 | The validation programme is defined but no physical result has yet been recorded; after RH-09/RH-10, P03 floor-edge and P04 wall/ceiling-joint evidence are the Reference House priorities, while P01 W2 remains an optional challenger and P02 is not a current house dependency. | Engineer and test P03 structural floor edge, then build/test P04 wall/ceiling joint; continue P01 W2 only as optional research where resources justify it. |
 | **External professional review** | **M1** | 2026-10-12 | RH-11 now provides issue-ready structural, fire/building-control, MEP/acoustic and building-physics/energy review briefs with explicit rewind criteria; no competent review response has yet been recorded. | Obtain and process competent discipline reviews; material findings reopen the owning Reference House gate and remain unresolved until closure evidence is recorded. |
-| **Computational track** | **M3** | 2026-10-12 | P0 passed 17/17 tests, PAT-XW-01 passed 6/6, and RH-C0 passed all ten model-freeze conditions; the Reference House now has a bounded canonical source contract for the first deterministic fixture. | Execute RH-C1: encode only the RH-C0-released semantic source and reproduce the ground plan, first-floor plan and principal section deterministically. |
+| **Computational track** | **M3** | 2026-10-12 | P0 passed 17/17 tests, PAT-XW-01 passed 6/6, RH-C0 froze the canonical fixture, and RH-C1 now passes 27/27 tests while generating deterministic ground plan, first-floor plan and principal section from one bounded semantic source. This establishes Reference House fixture fidelity and dependency correctness, not compiler generality. | Execute CF-01 against the actual RH-C1 implementation before RH-C2: use a minimal contrast fixture to attack accidental Reference-House topology and grammar assumptions. |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | Major evidence packages exist and taxonomy ambiguities are largely closed. | Targeted claim hardening where physical or publication maturity requires it. |
 | **Publication** | **M3** | 2026-10-12 | Publication Architecture v0.12 is established; Parts III/IV and figure language remain less mature than the main argument. | Finish Part III/IV development, figures and evidence presentation. |
 | **Delivery** | **M2** | 2026-10-12 | The implementation-brief structure exists, but downstream requirements remain intentionally incomplete. | Populate only as architectural and validation decisions mature. |
@@ -90,6 +92,8 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 **Authority drift.** The Reference House is the project's dominant concrete example. Repetition can make its Georgian grammar, courtyard form, masonry family, low-slope roof, ASHP/PV or tectonic vocabulary appear inevitable even when they are project choices. Generalise the reason; keep the taste and technology local.
 
+**Compiler generality.** RH-C1 reproduces one controlled house and behaves correctly under the RH-C0 mutation suite. That is not evidence that the ontology is free of Reference-House topology assumptions. CF-01 is the explicit guard against that false confidence.
+
 ## Closed or frozen tracks
 
 These areas are not current work queues. Their detailed records remain available for provenance.
@@ -100,6 +104,7 @@ These areas are not current work queues. Their detailed records remain available
 - **Pattern-language migration — complete.** Phases 0–7 established the current canonical language. The stable `HSA-P-*` pattern namespace dates from the House Systems Architecture phase and is retained for identifier stability. See the [Phase 7 review](docs/development/pattern-language-phase7-review.md).
 - **Pattern → computational crosswalk — complete at internal mapping scope.** Phase 8 showed that pattern provenance can remain separate from technical obligation derivation. See the [Phase 8 review](docs/development/pattern-language-phase8-review.md).
 - **P0 + PAT-XW-01 — passed.** The executable kernel and first crosswalk fixture are retained as regression tests. See the [gate result](docs/computational/p0-pat-xw-01-result.md).
+- **RH-C0 + RH-C1 — passed.** The Reference House has a frozen source contract and deterministic one-fixture executable projection. See the [RH-C1 executable result](docs/computational/reference-house-executable-slice.md) and [drawing parity result](docs/reference-house/rhc1-drawing-parity-result.md).
 - **Computational paper programme — frozen.** S0 → S1 → S2 → H1 answered the current paper-research question; further expansion requires evidence from another workstream.
 - **Information-architecture migration — complete.** Repository ownership, publication structure, website navigation and project state now have distinct roles. See the [closeout record](docs/development/information-architecture-migration.md).
 
