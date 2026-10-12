@@ -3,13 +3,13 @@
 **Programme:** [`docs/computational/reference-house-executable-slice.md`](../computational/reference-house-executable-slice.md)  
 **Fixture authority:** [`docs/reference-house/model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md)  
 **Issue:** #33  
-**Status:** **IN PROGRESS — C1.1 model + C1.2 drawings + C1.3 parity pass locally; repository CI/merge still required**
+**Status:** **PASS — model, mutation suite, generated drawings, parity and full repository CI passed; PR #37 pending merge**
 
-This file is the restart-safe execution pointer for RH-C1. RH-C0 remains the architectural authority. RH-C1 is still a bounded one-fixture reproduction exercise; it does not establish compiler generality.
+RH-C1 is complete at its bounded one-fixture scope. RH-C0 remains the architectural authority. RH-C1 establishes Reference House fixture fidelity and dependency correctness; it does not establish compiler generality.
 
 ## C1.1 — semantic source and deterministic derivation
 
-**State:** PASS in the executable slice.
+**State:** PASS.
 
 Implemented under `compiler/reference-house/`:
 
@@ -32,9 +32,9 @@ P0 remains unchanged. RH-C1 is a sibling executable slice that reuses the existi
 
 ## Mutation coverage
 
-The RH-C0 mutation map is now executable at the RH-C1 boundary:
+The RH-C0 mutation map is executable at the RH-C1 boundary:
 
-| Mutation | C1.1 behaviour |
+| Mutation | RH-C1 behaviour |
 |---|---|
 | M1 shell width −300 | centred court / areas / axes / openings propagate; fixed partition and levels stay fixed |
 | M2a court width +400 | centred court / plate / room reservations propagate |
@@ -50,7 +50,7 @@ The RH-C0 mutation map is now executable at the RH-C1 boundary:
 
 The tests distinguish automatic propagation, explicit source-integrity failure, recorded architectural review, and intentionally unaffected/absent facts. They are not snapshot-only tests.
 
-## Architectural boundaries protected by C1.1
+## Architectural boundaries protected
 
 - provisional planning splits remain explicitly provisional;
 - the 400–425 mm wall family and 450 mm stress value remain metadata/calculation inputs, not final wall faces;
@@ -62,9 +62,9 @@ The tests distinguish automatic propagation, explicit source-integrity failure, 
 
 ## C1.2 — deterministic drawing projections
 
-**State:** PASS locally.
+**State:** PASS.
 
-The compiled semantic result now generates:
+The compiled semantic result generates:
 
 1. `docs/reference-house/rhc1-ground-floor.svg`;
 2. `docs/reference-house/rhc1-first-floor.svg`;
@@ -74,21 +74,42 @@ World/model geometry, projection and SVG drawing conventions are separate. Plan 
 
 ## C1.3 — drawing parity / supersession
 
-**State:** PASS locally.
+**State:** PASS.
 
-See [`docs/reference-house/rhc1-drawing-parity-result.md`](../reference-house/rhc1-drawing-parity-result.md). The generated plans/section reproduce the controlled C1 architecture without tracing comparator SVG paths. The three RH-C0 plan/section comparators are demoted to historical C0 comparison provenance; the generated C1 files become the current projections, while `model-baseline-rhc0.md` remains source authority.
+See [`docs/reference-house/rhc1-drawing-parity-result.md`](../reference-house/rhc1-drawing-parity-result.md). The generated plans/section reproduce the controlled C1 architecture without tracing comparator SVG paths. The three RH-C0 plan/section comparators are historical C0 comparison provenance; the generated C1 files are the current projections, while `model-baseline-rhc0.md` remains source authority.
 
-## Remaining closeout
+## Verification record
 
-- run the full repository test/build path in GitHub CI;
-- repair any integration-only failure without broadening scope;
-- record the passing commit;
-- close #33 only after CI and repository state agree;
-- leave #35 / CF-01 as the next blocked-then-ready generality gate.
+The executable suite passes:
+
+- P0: **17/17**;
+- PAT-XW-01: **6/6**;
+- RH-C1: **27/27**.
+
+PR #37 full validation also passed repository integrity, public-route integrity, publication validation and the VitePress documentation build on implementation head `ff773849f8e293ff664b1d858c2e62c0e8b386e4`.
+
+The CI exercise exposed two pre-existing integration drifts outside the compiler itself: incomplete curated-navigation classification and a Primer adapter still coupled to retired Reference House headings. Both were repaired without changing architectural authority or broadening RH-C1.
+
+## Gate consequence
+
+RH-C1 proves:
+
+```text
+Reference House reproduction = fixture fidelity
+RH-C0/RH-C1 mutation suite    = dependency correctness
+```
+
+It does **not** prove bounded generality. That remains the purpose of CF-01.
+
+## Next gate — CF-01
+
+After PR #37 merges, issue #35 becomes the next executable task: challenge the actual RH-C1 implementation with one deliberately unlike, cheap contrast fixture before RH-C2 begins.
+
+Do not start RH-C2 structure until CF-01 passes.
 
 ## Assumptions deliberately deferred to CF-01
 
-Do not generalise these during RH-C1 merely because the current fixture uses them:
+Attack these as implementation assumptions rather than generalising them pre-emptively:
 
 - centred internal void/courtyard;
 - two-storey organisation;
@@ -97,4 +118,4 @@ Do not generalise these during RH-C1 merely because the current fixture uses the
 - composite west-room reservation shape;
 - G-01-derived opening memberships/order.
 
-CF-01 remains the post-RH-C1 gate for discovering which of these implementation conveniences need genuine generalisation.
+CF-01 should discover which of these actually require generalisation from the code that now exists.
