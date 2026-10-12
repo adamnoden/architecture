@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-06 service topology</title>
+  <desc id="desc">Ground and upper floor service topology showing the service-side utility entry, plant suite, accessible vertical service zone, foul stack, direct kitchen and bathroom extracts, dry distribution routes, and deletion of the remote principal en-suite.</desc>
+  <defs>
+    <style>
+      .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+      .outer{fill:#fff;stroke:#111;stroke-width:4}.room{fill:#f5f5f5;stroke:#666;stroke-width:1.3}.service{fill:#eceff1;stroke:#333;stroke-width:1.7}.court{fill:#fff;stroke:#111;stroke-width:2;stroke-dasharray:7 5}.riser{fill:#ddd;stroke:#111;stroke-width:2.5}.wet{fill:none;stroke:#333;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}.dry{fill:none;stroke:#777;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:9 5}.drain{fill:none;stroke:#111;stroke-width:9;stroke-linecap:round}.extract{fill:none;stroke:#555;stroke-width:5;marker-end:url(#arr)}.utility{fill:none;stroke:#444;stroke-width:4;marker-end:url(#arr)}.deleted{fill:#fff;stroke:#888;stroke-width:1.5;stroke-dasharray:5 4}.note{fill:#fafafa;stroke:#bbb;stroke-width:1}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#555"/></marker>
+  </defs>
+
+  <text x="55" y="50" class="head">Reference House — RH-06 Service Topology</text>
+  <text x="55" y="78" class="sub">Pre-MEP coordination · service flank shown east as surrogate · real-site handedness remains reversible</text>
+
+  <!-- scale 45 px/m; outer 540 x 486 -->
+  <g transform="translate(70,150)">
+    <text x="0" y="-25" class="head">Ground floor</text>
+    <rect x="0" y="0" width="540" height="486" class="outer"/>
+    <rect x="189" y="153" width="162" height="180" class="court"/>
+    <text x="270" y="248" text-anchor="middle" class="label">C-01</text>
+
+    <!-- principal rooms simplified -->
+    <rect x="0" y="0" width="189" height="260" class="room"/><text x="94" y="115" text-anchor="middle" class="small">family</text>
+    <rect x="0" y="260" width="180" height="226" class="room"/><text x="90" y="385" text-anchor="middle" class="small">drawing</text>
+    <rect x="189" y="0" width="162" height="153" class="room"/><text x="270" y="80" text-anchor="middle" class="small">garden dining</text>
+    <rect x="180" y="333" width="171" height="153" class="room"/><text x="265" y="415" text-anchor="middle" class="small">stair / hall</text>
+
+    <!-- east kitchen / gallery / service suite -->
+    <rect x="351" y="0" width="189" height="153" class="service"/><text x="445" y="68" text-anchor="middle" class="label">G-KIT-02</text><text x="445" y="88" text-anchor="middle" class="small">kitchen</text>
+    <rect x="351" y="153" width="59" height="333" class="room"/><text x="380" y="325" text-anchor="middle" transform="rotate(-90 380 325)" class="small">G-GAL-01 dry route</text>
+    <rect x="410" y="153" width="130" height="180" class="service"/><text x="475" y="220" text-anchor="middle" class="label">G-PLANT-01</text><text x="475" y="240" text-anchor="middle" class="small">plant / distribution</text>
+    <rect x="410" y="333" width="65" height="153" class="service"/><text x="442" y="405" text-anchor="middle" class="small">utility</text>
+    <rect x="475" y="333" width="65" height="153" class="service"/><text x="507" y="405" text-anchor="middle" class="small">WC</text>
+
+    <!-- riser at north-west of plant suite -->
+    <rect x="413" y="285" width="41" height="32" class="riser"/>
+    <text x="433" y="306" text-anchor="middle" class="small">SV-01</text>
+
+    <!-- utility entry -->
+    <line x1="605" y1="255" x2="540" y2="255" class="utility"/>
+    <text x="610" y="248" class="label">UE-01</text><text x="610" y="267" class="small">water · power · data</text>
+
+    <!-- foul stack and below-ground exit -->
+    <line x1="433" y1="300" x2="433" y2="430" class="drain"/>
+    <line x1="433" y1="430" x2="570" y2="430" class="drain"/>
+    <text x="451" y="351" class="small">FS-01</text><text x="574" y="434" class="small">FD-01 → external IC</text>
+
+    <!-- kitchen wet branch to riser -->
+    <polyline points="450,125 450,150 433,285" class="wet"/>
+    <text x="459" y="175" class="small">short kitchen wet/waste branch</text>
+
+    <!-- dry route -->
+    <polyline points="468,255 380,255 380,440 320,440 170,440" class="dry"/>
+    <polyline points="380,440 100,440" class="dry"/>
+    <text x="240" y="465" class="small">DRY-G-01 · circulation / perimeter branches</text>
+
+    <!-- kitchen extract direct east -->
+    <line x1="465" y1="80" x2="570" y2="80" class="extract"/>
+    <text x="575" y="84" class="small">KX-01 direct source capture</text>
+
+    <!-- service replacement opening -->
+    <line x1="540" y1="205" x2="600" y2="205" class="extract"/>
+    <text x="605" y="209" class="small">plant replacement route</text>
+
+    <text x="270" y="520" text-anchor="middle" class="small">SOUTH / STREET surrogate at bottom · NORTH / garden at top</text>
+  </g>
+
+  <g transform="translate(790,150)">
+    <text x="0" y="-25" class="head">Upper floor</text>
+    <rect x="0" y="0" width="540" height="486" class="outer"/>
+    <rect x="189" y="153" width="162" height="180" class="court"/>
+    <text x="270" y="248" text-anchor="middle" class="label">C-01</text>
+
+    <!-- west bedrooms -->
+    <rect x="0" y="0" width="189" height="260" class="room"/><text x="94" y="125" text-anchor="middle" class="label">principal bedroom</text>
+    <rect x="0" y="260" width="180" height="226" class="room"/><text x="90" y="380" text-anchor="middle" class="small">bedroom 2</text>
+
+    <!-- east bedrooms/bath -->
+    <rect x="351" y="0" width="189" height="153" class="room"/><text x="445" y="82" text-anchor="middle" class="small">bedroom 4</text>
+    <rect x="410" y="153" width="130" height="180" class="service"/><text x="475" y="225" text-anchor="middle" class="label">U-BATH-01</text><text x="475" y="245" text-anchor="middle" class="small">family bathroom</text>
+    <rect x="351" y="333" width="189" height="153" class="room"/><text x="445" y="415" text-anchor="middle" class="small">bedroom 3</text>
+
+    <!-- upper circulation -->
+    <rect x="351" y="153" width="59" height="180" class="room"/>
+    <rect x="189" y="99" width="162" height="54" class="room"/>
+    <rect x="180" y="333" width="171" height="153" class="room"/>
+
+    <!-- riser -->
+    <rect x="413" y="285" width="41" height="32" class="riser"/>
+    <text x="433" y="306" text-anchor="middle" class="small">SV-01</text>
+
+    <!-- bath branches and extract -->
+    <polyline points="433,300 470,260" class="wet"/>
+    <line x1="500" y1="220" x2="570" y2="220" class="extract"/>
+    <text x="575" y="224" class="small">BX-01 direct extract</text>
+
+    <!-- dry route U shape -->
+    <polyline points="433,300 380,300 380,410 300,410 240,410" class="dry"/>
+    <polyline points="380,300 380,125 270,125 155,125" class="dry"/>
+    <text x="370" y="95" class="small">DRY-U-01</text>
+
+    <!-- deleted ensuite / dressing replacement -->
+    <rect x="189" y="0" width="95" height="99" class="deleted"/>
+    <text x="236" y="38" text-anchor="middle" class="label">U-DRESS-01</text>
+    <text x="236" y="58" text-anchor="middle" class="small">former en-suite</text>
+    <text x="236" y="76" text-anchor="middle" class="small">wet route rejected</text>
+    <rect x="284" y="0" width="67" height="99" class="room"/><text x="317" y="52" text-anchor="middle" class="small">linen</text>
+
+    <text x="270" y="520" text-anchor="middle" class="small">No second soil stack · no east–west gravity branch through north-centre framing</text>
+  </g>
+
+  <g transform="translate(70,730)">
+    <rect x="0" y="0" width="1460" height="180" class="note"/>
+    <text x="20" y="35" class="label">Route hierarchy</text>
+    <text x="20" y="65" class="small">Wet / gravity: one clustered east service stack. Dry: circulation-edge routes. Extract: direct to outside where room adjacency allows. Structure: no routine crossings of edge beams or courtyard reaction nodes.</text>
+    <text x="20" y="100" class="label">Whole-dwelling ventilation</text>
+    <text x="20" y="130" class="small">Not selected at RH-06. RH-07 must prove any central ducted system with real duct sizes/routes rather than assuming spare space in SV-01 or the joist zone.</text>
+    <text x="20" y="160" class="small">Diagram is coordination geometry only; pipe/duct/cable sizes and plant capacities require technical design.</text>
+  </g>
+</svg>
