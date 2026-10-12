@@ -4,7 +4,20 @@ The computational track asks a narrow question within House Kernel: **which buil
 
 It is subordinate to the architecture. Rooms, walls, openings, structure, boundaries, service routes and maintenance paths may be represented semantically where doing so creates a useful check, but architectural judgement is not converted into arbitrary machine rules merely to make the model more complete.
 
-The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel and `PAT-XW-01` executable crosswalk are complete at their stated internal scopes. Generic compiler growth is now frozen. Further executable work is justified only where architectural, physical or professional-review work exposes a concrete question worth formalising.
+The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel and `PAT-XW-01` executable crosswalk are complete at their stated internal scopes. Generic compiler growth was deliberately frozen until another workstream exposed a concrete high-value problem. The coordinated Reference House has now done so.
+
+## Active computational work
+
+Before RH-C1 implementation begins, the Reference House must pass **RH-C0 — Reference House Model Freeze**.
+
+RH-C0 is a pre-compiler hardening gate. It consolidates current authority, independently reconstructs the house from controlling facts, separates authored from derived values, maps dependency mutations, performs a fresh domestic/architectural adversarial review, audits drawing parity and classifies every future compiler fact as frozen, provisional or outside the first slice.
+
+Canonical programme:
+
+- [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md)
+- [RH-C1 — Reference House Executable Slice](reference-house-executable-slice.md)
+
+RH-C1 remains blocked until RH-C0 explicitly passes. The future executable Reference House should be treated as a **controlled regression fixture**, not as a universally correct house or universal House Kernel template.
 
 ## What has been established
 
@@ -148,10 +161,12 @@ These are candidate tests, not a standing implementation queue.
 
 The demonstrated kernel does not justify building a polished 3D CAD system, general structural solver, complete Building Regulations engine, IFC round-tripping, optimisation layer, generative-AI designer or pattern-specific rule library. Those capabilities would require their own architectural and technical case.
 
-Current project effort is therefore concentrated on Reference House coordination, physical prototypes, engineering, passive-first environmental work and competent external review. The P0 and `PAT-XW-01` suites remain as regression tests and should expand only when new work exposes a concrete model defect or a high-value relationship that benefits from formalisation.
+Current executable work should therefore remain concentrated on **RH-C0 model freeze → RH-C1 deterministic Reference House slice**, while physical prototypes and competent external review proceed independently. The P0 and `PAT-XW-01` suites remain regression tests and should expand only when new work exposes a concrete model defect or a high-value relationship that benefits from formalisation.
 
 ## Programme and provenance
 
+- [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md) — active pre-compiler hardening gate.
+- [RH-C1 — Reference House Executable Slice](reference-house-executable-slice.md) — blocked until RH-C0 passes.
 - [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md) — current executable result.
 - [Research Programme v0.6](research-programme-v06.md) — final pre-executable programme record retained for provenance.
 - [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md) — frozen paper-domain capability audit.
