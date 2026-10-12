@@ -4,6 +4,8 @@ The Reference House is one coordinated interpretation of House Kernel. It brings
 
 It is an integration test, not proof of the doctrine.
 
+The active staged execution plan is the [Reference House Design Programme](../development/reference-house-design-programme.md). It is the restart-safe control for current design work and should be read before resuming a partially completed Reference House stage.
+
 ## Architectural scope
 
 The house selects a **Georgian-derived architectural grammar**, provisionally represented by G-01, together with a courtyard morphology and a project-specific tectonic dialect. These are choices made for this house, not House Kernel doctrine.
