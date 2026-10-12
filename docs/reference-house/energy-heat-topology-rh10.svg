@@ -8,7 +8,6 @@
   <text x="50" y="45" class="head">RH-10 — energy / heat / renewable topology</text>
   <text x="50" y="70" class="small">Coordination diagram only — no product sizing, heat-loss calculation or compliance claim</text>
 
-  <!-- Ground floor -->
   <g transform="translate(55 115)">
     <text x="0" y="0" class="sub">GROUND</text>
     <rect x="0" y="25" width="330" height="300" class="ink"/>
@@ -24,7 +23,7 @@
     <rect x="345" y="190" width="42" height="65" rx="4" class="service"/>
     <text x="348" y="277" class="small">ASHP-01</text>
     <path d="M345 220 H330" class="heat"/>
-    <text x="232" y="248" class="note">PEN-HP-01</text>
+    <text x="230" y="248" class="note">PEN-HS-01</text>
 
     <path d="M255 205 C210 245 165 275 75 275" class="heat"/>
     <path d="M255 205 C275 260 300 280 315 280" class="heat"/>
@@ -37,7 +36,6 @@
     <text x="8" y="345" class="note">Emitters shown schematically on outer-wall/window geography; final sizes follow room heat-loss design.</text>
   </g>
 
-  <!-- Upper floor -->
   <g transform="translate(455 115)">
     <text x="0" y="0" class="sub">UPPER</text>
     <rect x="0" y="25" width="330" height="300" class="ink"/>
@@ -63,7 +61,6 @@
     <text x="4" y="345" class="note">Upper branches follow landing/gallery service territory before short room runs; structural floor is not a generic plenum.</text>
   </g>
 
-  <!-- Roof -->
   <g transform="translate(855 115)">
     <text x="0" y="0" class="sub">ROOF</text>
     <rect x="0" y="25" width="280" height="300" class="ink"/>
@@ -91,7 +88,6 @@
     <text x="10" y="345" class="note">PV stays clear of drainage/inspection routes; active inverter/isolation belongs in the plant/service geography.</text>
   </g>
 
-  <!-- legend -->
   <g transform="translate(55 525)">
     <text x="0" y="0" class="sub">Whole-house rules carried forward</text>
     <line x1="0" y1="35" x2="45" y2="35" class="heat"/><text x="60" y="40" class="txt">low-temperature hydronic route</text>
