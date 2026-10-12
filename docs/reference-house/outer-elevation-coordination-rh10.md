@@ -1,6 +1,6 @@
 # Reference House — RH-10 Outer Elevation Coordination
 
-**Status:** RH-10 corrective architectural coordination  
+**Status:** RH-10 corrective architectural coordination; **RH-C0.6 cross-view correction applied 2026-10-12**  
 **Date:** 2026-10-12  
 **Parent architecture:** [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md)  
 **Service / access authorities:** [RH-06 Services](service-topology-rh06.md), [RH-08 Roof / Access](roof-drainage-access-rh08.md), [RH-10 Energy / Heat](energy-heat-coordination-rh10.md)  
@@ -35,10 +35,12 @@ The rear does **not** become one wall of undifferentiated glass. The three field
 ### Upper floor
 
 - west: principal-bedroom window;
-- centre: north cross-landing window;
+- centre: **dry dressing/storage-field window** associated with `U-DRESS-01` / adjacent dry storage;
 - east: rear secondary-bedroom window.
 
-The upper openings align broadly with the three ground fields where room use permits. The centre landing opening may be narrower/lighter than bedroom openings.
+The upper openings align broadly with the three ground fields where room use permits. The centre dry-space opening may be narrower/lighter than bedroom openings.
+
+**RH-C0.6 correction:** the north cross-landing stops south of the dry dressing/linen field and does not reach the external north wall. Its north-side daylight is from the courtyard face. The earlier description of the centre outer opening as a “north cross-landing window” was therefore a cross-view semantic error, not a reason to move the plan. The three-axis garden composition remains; only the host-space identity is corrected.
 
 ### Fire consequence
 
@@ -144,7 +146,7 @@ The new RH-10 PV reserve sits behind that same controlled outer order and does n
 
 # RH-10 elevation result
 
-**PASS at architectural coordination level.**
+**PASS at architectural coordination level, with the RH-C0.6 centre-upper garden-host correction recorded above.**
 
 The whole external envelope now has an explicit order:
 

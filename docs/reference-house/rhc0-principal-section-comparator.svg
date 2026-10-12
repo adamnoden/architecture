@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="790" viewBox="0 0 1180 790" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-C0 current principal section visual comparator</title>
+  <desc id="desc">Static north-south coordination section through the courtyard centreline. Current RH-C0 datums and outward low-slope roof family are shown; stair construction and roof build-up remain provisional.</desc>
+  <style>
+    .bg{fill:#fbfaf7}.mass{fill:#f0eee8;stroke:#222;stroke-width:2}.void{fill:#fff;stroke:#777;stroke-width:1.2}.court{fill:#fff;stroke:#444;stroke-width:1.5;stroke-dasharray:6 5}.floor{stroke:#222;stroke-width:3}.datum{stroke:#999;stroke-width:1;stroke-dasharray:5 5}.roof{stroke:#333;stroke-width:3;fill:none}.prov{stroke:#777;stroke-width:1.4;fill:none;stroke-dasharray:6 4}.txt{font:14px system-ui,sans-serif;fill:#222}.small{font:12px system-ui,sans-serif;fill:#444}.head{font:600 24px system-ui,sans-serif;fill:#171717}.label{font:600 12px system-ui,sans-serif;fill:#222}.dim{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+  </style>
+  <rect class="bg" width="1180" height="790"/>
+  <text x="55" y="45" class="head">RH-C0 — current principal section comparator</text>
+  <text x="55" y="70" class="small">N–S section through X=6.0 m · STATIC VISUAL COMPARATOR · baseline controls · roof fall ~1:40 is provisional coordination geometry</text>
+
+  <!-- horizontal 50 px/m; vertical 70 px/m; ground datum y=620 -->
+  <g transform="translate(80 0)">
+    <!-- gross masses: south 0–3.4m, court 3.4–7.4m, north 7.4–10.8m -->
+    <rect x="0" y="182.5" width="170" height="437.5" class="mass"/>
+    <rect x="370" y="182.5" width="170" height="437.5" class="mass"/>
+    <rect x="170" y="176.6" width="200" height="443.4" class="court"/>
+
+    <!-- reopen occupied volumes, leaving diagrammatic floor/roof mass -->
+    <rect x="10" y="200" width="150" height="189" class="void"/>
+    <rect x="10" y="413.5" width="150" height="206.5" class="void"/>
+    <rect x="380" y="200" width="150" height="189" class="void"/>
+    <rect x="380" y="413.5" width="150" height="206.5" class="void"/>
+
+    <!-- FFLs and ceilings -->
+    <line x1="0" y1="620" x2="170" y2="620" class="floor"/><line x1="370" y1="620" x2="540" y2="620" class="floor"/>
+    <line x1="0" y1="389" x2="170" y2="389" class="floor"/><line x1="370" y1="389" x2="540" y2="389" class="floor"/>
+    <line x1="0" y1="413.5" x2="170" y2="413.5" class="datum"/><line x1="370" y1="413.5" x2="540" y2="413.5" class="datum"/>
+    <line x1="0" y1="200" x2="170" y2="200" class="datum"/><line x1="370" y1="200" x2="540" y2="200" class="datum"/>
+
+    <!-- current outward low-slope family: inner court edge high, outer perimeter low -->
+    <polyline points="0,182.5 170,176.6" class="roof"/>
+    <polyline points="370,176.6 540,182.5" class="roof"/>
+    <text x="85" y="163" text-anchor="middle" class="small">fall outward ≈1:40</text>
+    <text x="455" y="163" text-anchor="middle" class="small">fall outward ≈1:40</text>
+
+    <!-- stair reservation only; no invented strings -->
+    <rect x="18" y="389" width="134" height="231" class="prov"/>
+    <line x1="24" y1="543" x2="146" y2="543" class="prov"/>
+    <line x1="24" y1="466" x2="146" y2="466" class="prov"/>
+    <text x="85" y="528" text-anchor="middle" class="small">+1.100 landing datum</text>
+    <text x="85" y="451" text-anchor="middle" class="small">+2.200 landing datum</text>
+    <text x="85" y="580" text-anchor="middle" class="label">STAIR RESERVATION</text>
+    <text x="85" y="598" text-anchor="middle" class="small">18 rises · 3 × 6 · strings/guards not frozen</text>
+
+    <!-- labels -->
+    <text x="85" y="305" text-anchor="middle" class="label">UPPER SOUTH / STAIR HALL</text>
+    <text x="85" y="510" text-anchor="middle" class="label">GROUND SOUTH / HALL</text>
+    <text x="270" y="318" text-anchor="middle" class="label">OPEN COURTYARD</text>
+    <text x="270" y="338" text-anchor="middle" class="small">4.0 m in this section direction</text>
+    <text x="455" y="305" text-anchor="middle" class="label">UPPER NORTH / DRY + LANDING EDGE</text>
+    <text x="455" y="510" text-anchor="middle" class="label">GROUND NORTH / GARDEN DINING</text>
+
+    <!-- overall dimensions -->
+    <line x1="0" y1="660" x2="540" y2="660" class="datum"/>
+    <text x="270" y="682" text-anchor="middle" class="dim">10,800 mm overall depth</text>
+    <line x1="170" y1="642" x2="370" y2="642" class="datum"/>
+    <text x="270" y="637" text-anchor="middle" class="dim">4,000 mm court</text>
+
+    <!-- level labels -->
+    <line x1="555" y1="620" x2="615" y2="620" class="datum"/><text x="625" y="624" class="dim">±0 GF FFL</text>
+    <line x1="555" y1="413.5" x2="615" y2="413.5" class="datum"/><text x="625" y="417.5" class="dim">+2950 ground clear ceiling</text>
+    <line x1="555" y1="389" x2="615" y2="389" class="datum"/><text x="625" y="393" class="dim">+3300 first FFL</text>
+    <line x1="555" y1="200" x2="615" y2="200" class="datum"/><text x="625" y="204" class="dim">+6000 upper clear ceiling</text>
+    <line x1="555" y1="182.5" x2="615" y2="182.5" class="datum"/><text x="625" y="186.5" class="dim">≈+6250 outer cornice/eaves control</text>
+    <text x="625" y="165" class="small">court-side roof surface ≈+6335 from 1:40 screening fall</text>
+  </g>
+
+  <g transform="translate(790 160)">
+    <text class="head" x="0" y="0">Parity notes</text>
+    <text class="small" x="0" y="42">• 350 mm floor-zone depth is the derived datum gap, not a proven build-up.</text>
+    <text class="small" x="0" y="66">• upper clear height derives to 2700 mm.</text>
+    <text class="small" x="0" y="90">• RH-08 low-slope roof replaces the RH-04 pitched silhouette.</text>
+    <text class="small" x="0" y="114">• court remains open to sky through both storeys.</text>
+    <text class="small" x="0" y="138">• stair landing levels derive from 18 equal rises at 3300 FFL.</text>
+
+    <text class="txt" x="0" y="190">Not frozen by this drawing</text>
+    <text class="small" x="0" y="218">roof build-up / parapet / coping / waterproofing</text>
+    <text class="small" x="0" y="240">floor structure / fire / acoustic build-up</text>
+    <text class="small" x="0" y="262">stair strings / guarding / tread placement / headroom detail</text>
+    <text class="small" x="0" y="284">wall-face thickness or window product sections</text>
+  </g>
+</svg>

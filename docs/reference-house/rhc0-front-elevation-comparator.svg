@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-C0 current front elevation visual comparator</title>
+  <desc id="desc">Static front-elevation comparator showing the controlled four-bay field, RH-04 opening families and current low-slope roof-edge authority without the superseded pitched-roof silhouette.</desc>
+  <style>
+    .bg{fill:#fbfaf7}.wall{fill:#f0eee8;stroke:#222;stroke-width:2}.line{stroke:#222;stroke-width:2}.axis{stroke:#999;stroke-width:1;stroke-dasharray:5 5}.opening{fill:#fff;stroke:#555;stroke-width:1.6;stroke-dasharray:5 3}.door{fill:#ece7dd;stroke:#444;stroke-width:1.8;stroke-dasharray:5 3}.datum{stroke:#aaa;stroke-width:1;stroke-dasharray:5 5}.txt{font:14px system-ui,sans-serif;fill:#222}.small{font:12px system-ui,sans-serif;fill:#444}.head{font:600 24px system-ui,sans-serif;fill:#171717}.label{font:600 12px system-ui,sans-serif;fill:#222}.dim{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+  </style>
+  <rect class="bg" width="1120" height="760"/>
+  <text x="55" y="45" class="head">RH-C0 — current front elevation comparator</text>
+  <text x="55" y="70" class="small">STATIC VISUAL COMPARATOR · RH-04 opening order retained · RH-08/RH-10 low-slope roof authority applied</text>
+
+  <!-- 50 px/m horizontal; 70 px/m vertical; ground y=620 -->
+  <g transform="translate(70 0)">
+    <rect x="0" y="182.5" width="600" height="437.5" class="wall"/>
+    <line x1="0" y1="389" x2="600" y2="389" class="datum"/>
+    <line x1="0" y1="182.5" x2="600" y2="182.5" class="line"/>
+    <text x="300" y="160" text-anchor="middle" class="small">controlled cornice/eaves edge ≈+6250 · low-slope roof remains behind/within edge; no pitched façade silhouette</text>
+
+    <!-- axes -->
+    <line x1="97.5" y1="150" x2="97.5" y2="640" class="axis"/>
+    <line x1="232.5" y1="150" x2="232.5" y2="640" class="axis"/>
+    <line x1="367.5" y1="150" x2="367.5" y2="640" class="axis"/>
+    <line x1="502.5" y1="150" x2="502.5" y2="640" class="axis"/>
+
+    <!-- ground: bays 1 / 2 / entrance / 4 -->
+    <rect x="71.25" y="441.5" width="52.5" height="133" class="opening"/>
+    <rect x="210" y="441.5" width="45" height="105" class="opening"/>
+    <rect x="342.5" y="441.5" width="50" height="178.5" class="door"/>
+    <rect x="476.25" y="441.5" width="52.5" height="133" class="opening"/>
+
+    <!-- upper family: nominal midpoint width 925 mm; sill/head are RH-04 coordination values -->
+    <rect x="74.4" y="224.5" width="46.25" height="108.5" class="opening"/>
+    <rect x="209.4" y="224.5" width="46.25" height="108.5" class="opening"/>
+    <rect x="344.4" y="224.5" width="46.25" height="108.5" class="opening"/>
+    <rect x="479.4" y="224.5" width="46.25" height="108.5" class="opening"/>
+
+    <text x="97.5" y="662" text-anchor="middle" class="dim">1.95</text>
+    <text x="232.5" y="662" text-anchor="middle" class="dim">4.65</text>
+    <text x="367.5" y="662" text-anchor="middle" class="dim">7.35</text>
+    <text x="502.5" y="662" text-anchor="middle" class="dim">10.05 m</text>
+
+    <text x="97.5" y="602" text-anchor="middle" class="small">drawing</text>
+    <text x="232.5" y="568" text-anchor="middle" class="small">stair</text>
+    <text x="367.5" y="606" text-anchor="middle" class="small">entrance</text>
+    <text x="502.5" y="602" text-anchor="middle" class="small">study</text>
+
+    <text x="97.5" y="355" text-anchor="middle" class="small">bed 02</text>
+    <text x="232.5" y="355" text-anchor="middle" class="small">stair landing</text>
+    <text x="367.5" y="355" text-anchor="middle" class="small">south landing</text>
+    <text x="502.5" y="355" text-anchor="middle" class="small">bed 03</text>
+
+    <line x1="615" y1="620" x2="665" y2="620" class="datum"/><text x="675" y="624" class="dim">±0 GF FFL</text>
+    <line x1="615" y1="389" x2="665" y2="389" class="datum"/><text x="675" y="393" class="dim">+3300 first FFL</text>
+    <line x1="615" y1="182.5" x2="665" y2="182.5" class="datum"/><text x="675" y="186.5" class="dim">≈+6250 cornice/eaves</text>
+  </g>
+
+  <g transform="translate(785 205)">
+    <text class="head" x="0" y="0">Opening authority</text>
+    <text class="small" x="0" y="42">Ground bays 1/4: width ≈1050; sill ≈650–700; head ≈2550.</text>
+    <text class="small" x="0" y="66">Ground bay 2: width ≈900; sill ≈1050; head ≈2550.</text>
+    <text class="small" x="0" y="90">Entrance bay 3: opening ≈950–1050; head ≈2550.</text>
+    <text class="small" x="0" y="114">Upper family: width ≈900–950; sill +800 from FFL; head +2350.</text>
+
+    <text class="txt" x="0" y="166">Important</text>
+    <text class="small" x="0" y="192">These are RH-04 coordination families, not products.</text>
+    <text class="small" x="0" y="214">Final free opening, frame, reveal and security/escape geometry remain outside RH-C1.</text>
+  </g>
+</svg>

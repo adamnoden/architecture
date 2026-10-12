@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="790" viewBox="0 0 1180 790" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-C0 current ground-floor visual comparator</title>
+  <desc id="desc">Static planning-level projection of the RH-C0 baseline. The baseline document controls; this SVG is a visual comparator only and is not source geometry.</desc>
+  <style>
+    .bg{fill:#fbfaf7}.outer{fill:#fff;stroke:#171717;stroke-width:3}.room{fill:#f4f3ef;stroke:#555;stroke-width:1.4}.cir{fill:#efefeb;stroke:#555;stroke-width:1.4}.svc{fill:#e5e3dd;stroke:#444;stroke-width:1.4}.court{fill:#fff;stroke:#222;stroke-width:2;stroke-dasharray:7 5}.prov{fill:none;stroke:#777;stroke-width:1.3;stroke-dasharray:6 4}.axis{stroke:#999;stroke-width:1;stroke-dasharray:5 5}.opening{stroke:#111;stroke-width:6}.openprov{stroke:#666;stroke-width:5;stroke-dasharray:5 3}.txt{font:14px system-ui,sans-serif;fill:#222}.small{font:12px system-ui,sans-serif;fill:#444}.head{font:600 24px system-ui,sans-serif;fill:#171717}.label{font:600 12px system-ui,sans-serif;fill:#222}.dim{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+  </style>
+  <rect class="bg" width="1180" height="790"/>
+  <text x="55" y="45" class="head">RH-C0 — current ground-floor comparator</text>
+  <text x="55" y="70" class="small">STATIC VISUAL COMPARATOR · model-baseline-rhc0.md controls · gross semantic reservations, not clear wall faces · front/street surrogate south</text>
+
+  <!-- 50 px/m; model origin is SW, display has north at top -->
+  <g transform="translate(70 125)">
+    <rect x="0" y="0" width="600" height="540" class="outer"/>
+
+    <!-- current semantic reservations -->
+    <rect x="0" y="0" width="210" height="290" class="room"/>
+    <text x="105" y="130" text-anchor="middle" class="label">G-FAM-02</text>
+    <text x="105" y="149" text-anchor="middle" class="small">family</text>
+
+    <polygon points="0,290 210,290 210,370 200,370 200,540 0,540" class="room"/>
+    <text x="98" y="438" text-anchor="middle" class="label">G-DRAW-02</text>
+    <text x="98" y="457" text-anchor="middle" class="small">drawing · RH-03 front notch applied</text>
+
+    <rect x="200" y="370" width="190" height="170" class="cir"/>
+    <text x="295" y="515" text-anchor="middle" class="label">G-HALL-02</text>
+
+    <rect x="455" y="370" width="145" height="170" class="room"/>
+    <text x="527.5" y="455" text-anchor="middle" class="label">G-STUDY-02</text>
+
+    <rect x="390" y="170" width="65" height="370" class="cir"/>
+    <text x="422.5" y="355" text-anchor="middle" transform="rotate(-90 422.5 355)" class="label">G-GAL-01</text>
+
+    <rect x="455" y="170" width="145" height="200" class="svc"/>
+    <text x="527.5" y="247" text-anchor="middle" class="label">G-SVC-02</text>
+    <text x="527.5" y="266" text-anchor="middle" class="small">2.9 × 4.0 m gross</text>
+
+    <!-- RH-06 provisional subdivisions; text-controlled, not frozen -->
+    <line x1="455" y1="280" x2="600" y2="280" class="prov"/>
+    <text x="527.5" y="224" text-anchor="middle" class="small">G-PLANT-01 ≈2.9 × 2.2</text>
+    <text x="527.5" y="327" text-anchor="middle" class="small">utility / WC band ≈2.9 × 1.8</text>
+    <rect x="457.5" y="177.5" width="45" height="35" class="prov"/>
+    <text x="480" y="201" text-anchor="middle" class="small">SV-01</text>
+
+    <rect x="210" y="0" width="180" height="170" class="room"/>
+    <text x="300" y="78" text-anchor="middle" class="label">G-GARDEN-02</text>
+    <text x="300" y="97" text-anchor="middle" class="small">garden dining</text>
+
+    <rect x="390" y="0" width="210" height="170" class="room"/>
+    <text x="495" y="78" text-anchor="middle" class="label">G-KIT-02</text>
+    <text x="495" y="97" text-anchor="middle" class="small">kitchen</text>
+
+    <rect x="210" y="170" width="180" height="200" class="court"/>
+    <text x="300" y="260" text-anchor="middle" class="label">C-01</text>
+    <text x="300" y="279" text-anchor="middle" class="dim">3.6 × 4.0 m · open to sky</text>
+
+    <!-- provisional stair reservation reconstructed from RH-03 overlay -->
+    <rect x="208" y="386" width="123" height="123" class="prov"/>
+    <text x="269.5" y="435" text-anchor="middle" class="small">stair reservation</text>
+    <text x="269.5" y="453" text-anchor="middle" class="small">≈2.4–2.5 m</text>
+
+    <!-- front four-bay field -->
+    <line x1="97.5" y1="540" x2="97.5" y2="568" class="axis"/><line x1="232.5" y1="540" x2="232.5" y2="568" class="axis"/><line x1="367.5" y1="540" x2="367.5" y2="568" class="axis"/><line x1="502.5" y1="540" x2="502.5" y2="568" class="axis"/>
+    <line x1="71.25" y1="540" x2="123.75" y2="540" class="openprov"/>
+    <line x1="210" y1="540" x2="255" y2="540" class="openprov"/>
+    <line x1="342.5" y1="540" x2="392.5" y2="540" class="openprov"/>
+    <line x1="476.25" y1="540" x2="528.75" y2="540" class="openprov"/>
+    <text x="300" y="590" text-anchor="middle" class="small">front axes X=1.95 / 4.65 / 7.35 / 10.05 m · bay 3 entrance · opening widths provisional</text>
+
+    <!-- garden axes: approximate RH-10 field -->
+    <line x1="105" y1="-28" x2="105" y2="0" class="axis"/><line x1="300" y1="-28" x2="300" y2="0" class="axis"/><line x1="495" y1="-28" x2="495" y2="0" class="axis"/>
+    <line x1="270" y1="0" x2="330" y2="0" class="openprov"/>
+    <text x="300" y="-42" text-anchor="middle" class="small">garden axes ≈2.1 / 6.0 / 9.9 m · centre opening ≥1.2 m clear target</text>
+
+    <!-- court north/south centred order; east/west numerical centres deliberately absent -->
+    <line x1="282" y1="170" x2="318" y2="170" class="openprov"/>
+    <line x1="282" y1="370" x2="318" y2="370" class="openprov"/>
+    <text x="300" y="394" text-anchor="middle" class="small">N/S court openings centred X=6.0 m; widths not frozen</text>
+    <text x="300" y="419" text-anchor="middle" class="small">E/W court opening centres intentionally un-authored</text>
+
+    <text x="300" y="622" text-anchor="middle" class="dim">12,000 mm</text>
+    <text x="623" y="270" transform="rotate(90 623 270)" text-anchor="middle" class="dim">10,800 mm</text>
+  </g>
+
+  <g transform="translate(735 125)">
+    <text class="head" x="0" y="0">Authority notes</text>
+    <text class="txt" x="0" y="42">Controlled here</text>
+    <text class="small" x="0" y="68">• 12.0 × 10.8 m shell; centred 3.6 × 4.0 m court</text>
+    <text class="small" x="0" y="90">• RH-03 front hall/drawing correction</text>
+    <text class="small" x="0" y="112">• room/circulation topology and X=9.1 m service partition</text>
+    <text class="small" x="0" y="134">• front bay axes + entrance bay membership</text>
+
+    <text class="txt" x="0" y="184">Provisional / not source truth</text>
+    <text class="small" x="0" y="210">• Y≈5.0 m west-room split</text>
+    <text class="small" x="0" y="232">• stair box, plant split, utility/WC split, SV-01</text>
+    <text class="small" x="0" y="254">• opening widths shown only to identify families</text>
+    <text class="small" x="0" y="276">• no wall-face, internal-door or furniture geometry</text>
+
+    <text class="txt" x="0" y="326">Comparator rule</text>
+    <text class="small" x="0" y="352">RH-C1 may compare a generated plan against this view,</text>
+    <text class="small" x="0" y="374">but any mismatch is resolved against model-baseline-rhc0.md,</text>
+    <text class="small" x="0" y="396">not by copying coordinates from this SVG.</text>
+  </g>
+</svg>
