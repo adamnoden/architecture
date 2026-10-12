@@ -13,6 +13,7 @@ export interface ProgrammeControl {
  */
 export const programmeControls = [
   { path: 'docs/development/architectural-specificity-boundary.md', lifecycle: 'active' },
+  { path: 'docs/development/reference-house-design-programme.md', lifecycle: 'active' },
   { path: 'docs/development/tectonic-prototype-programme.md', lifecycle: 'active' },
   { path: 'docs/development/manufacturing-strategy.md', lifecycle: 'active' },
 
