@@ -159,13 +159,15 @@ export const workstreamStatuses = [
     maturity: 'M2',
     reviewedOn: '2026-10-12',
     currentState:
-      'The occurrence register and authority stack exist; whole-house geometry and technical coordination remain provisional.',
-    nextGate: 'Coordinated architectural, structural and environmental design.',
+      'RH-00 through RH-09 now make the brief, morphology, room order, G-01 coupling, structure, services, environment, roof/maintenance and occupied interfaces explicit; whole-house adversarial coordination remains unproven.',
+    nextGate:
+      'Pass RH-10 whole-house coordination audit; promote only if remaining uncertainty is engineering, prototype or external-review work rather than basic architectural coordination.',
     evidence: {
       framed: ['docs/reference-house/README.md'],
       developed: [
         'docs/reference-house/pattern-occurrence-register.md',
-        'docs/reference-house/whole-house-coordination-fixture.md'
+        'docs/reference-house/whole-house-coordination-fixture.md',
+        'docs/reference-house/tectonic-integration-rh09.md'
       ]
     }
   },
