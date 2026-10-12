@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House RH-09 occupied-interface family</title>
+  <desc id="desc">Four schematic tectonic studies: quiet plaster wall versus sparse controlled attachment datum and removable skirting route; replaceable window in a permanent masonry opening; replaceable doorset and designed external threshold; wall-ceiling movement junction concealed by a cornice fixed to one controlling assembly.</desc>
+  <defs>
+    <style>
+      .head{font:700 30px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#444}.h2{font:700 20px system-ui,sans-serif;fill:#111}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.mono{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}.box{fill:#fafafa;stroke:#bbb;stroke-width:1.5}.masonry{fill:#e8e8e8;stroke:#111;stroke-width:2}.finish{fill:#fff;stroke:#666;stroke-width:1.4}.timber{fill:#f5f5f5;stroke:#111;stroke-width:2}.metal{fill:#ddd;stroke:#111;stroke-width:1.5}.gap{fill:#fff;stroke:#555;stroke-width:1.2;stroke-dasharray:5 4}.route{fill:none;stroke:#555;stroke-width:4;stroke-dasharray:8 6}.arrow{fill:none;stroke:#555;stroke-width:2;marker-end:url(#arr)}.note{fill:#fff;stroke:#ccc;stroke-width:1}.reject{font:600 13px system-ui,sans-serif;fill:#555}.datum{stroke:#999;stroke-width:1;stroke-dasharray:4 4}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#555"/></marker>
+  </defs>
+
+  <text x="60" y="55" class="head">Reference House — RH-09 Occupied Interface Family</text>
+  <text x="60" y="84" class="sub">Architectural coordination only · experimental assemblies remain subject to P01/P04 and specialist proof</text>
+
+  <!-- PANEL 1 -->
+  <g transform="translate(60,125)">
+    <rect x="0" y="0" width="715" height="400" class="box"/>
+    <text x="24" y="38" class="h2">1 · Quiet wall + sparse attachment/service datums</text>
+    <text x="24" y="64" class="small">Default: direct mineral/plaster finish. Add infrastructure only where a real task earns it.</text>
+
+    <!-- wall section -->
+    <rect x="45" y="100" width="110" height="235" class="masonry"/>
+    <rect x="155" y="100" width="18" height="235" class="finish"/>
+    <text x="100" y="220" text-anchor="middle" class="label">W0</text>
+    <text x="100" y="242" text-anchor="middle" class="small">permanent</text>
+    <text x="100" y="260" text-anchor="middle" class="small">masonry</text>
+    <text x="181" y="220" class="small">direct finish</text>
+
+    <!-- picture rail -->
+    <rect x="173" y="145" width="85" height="18" class="timber"/>
+    <line x1="155" y1="154" x2="173" y2="154" class="metal"/>
+    <text x="274" y="158" class="small">picture rail / F1 fixing datum</text>
+
+    <!-- skirting -->
+    <rect x="173" y="288" width="115" height="47" class="timber"/>
+    <path d="M188 315 H270" class="route"/>
+    <text x="304" y="308" class="small">removable skirting</text>
+    <text x="304" y="327" class="small">bounded dry route</text>
+
+    <!-- vertical door route and socket -->
+    <rect x="485" y="100" width="32" height="235" class="timber"/>
+    <path d="M500 315 V225" class="route"/>
+    <rect x="526" y="205" width="46" height="46" class="metal"/>
+    <text x="590" y="218" class="small">accessory at accessible height</text>
+    <text x="590" y="237" class="small">via declared jamb/architrave rise</text>
+
+    <text x="24" y="373" class="reject">Not selected: socket outlets in the skirting · universal full-height technical backplane</text>
+  </g>
+
+  <!-- PANEL 2 -->
+  <g transform="translate(825,125)">
+    <rect x="0" y="0" width="715" height="400" class="box"/>
+    <text x="24" y="38" class="h2">2 · OW-01 permanent opening / replaceable window</text>
+    <text x="24" y="64" class="small">The opening is building fabric; the frame is a replaceable assembly inside a declared interface.</text>
+
+    <rect x="55" y="105" width="120" height="225" class="masonry"/>
+    <rect x="175" y="135" width="55" height="165" class="gap"/>
+    <rect x="230" y="125" width="78" height="185" class="metal"/>
+    <rect x="308" y="145" width="16" height="145" class="finish"/>
+    <rect x="175" y="105" width="148" height="20" class="timber"/>
+    <rect x="175" y="310" width="148" height="20" class="timber"/>
+
+    <text x="115" y="220" text-anchor="middle" class="label">masonry</text>
+    <text x="202" y="220" text-anchor="middle" class="small">mounting /</text>
+    <text x="202" y="238" text-anchor="middle" class="small">tolerance zone</text>
+    <text x="269" y="220" text-anchor="middle" class="label">frame</text>
+    <text x="340" y="220" class="small">glass</text>
+
+    <path d="M190 175 H245" class="arrow"/>
+    <text x="360" y="152" class="small">mechanical fixing remains reachable after trim removal</text>
+    <text x="360" y="180" class="small">no brittle plaster bridge to moving frame</text>
+    <text x="360" y="208" class="small">decorative trim does not carry primary air/water duty</text>
+    <text x="360" y="236" class="small">full-frame replacement may use RH-08 scaffold/tower access</text>
+    <text x="360" y="264" class="small">one jamb/head/sill mock-up before repetition</text>
+
+    <text x="24" y="373" class="mono">permanent opening → mounting zone → replaceable frame → removable trim</text>
+  </g>
+
+  <!-- PANEL 3 -->
+  <g transform="translate(60,565)">
+    <rect x="0" y="0" width="715" height="440" class="box"/>
+    <text x="24" y="38" class="h2">3 · OD-01 doorset + TH-01 real threshold</text>
+    <text x="24" y="64" class="small">No threshold where construction is genuinely continuous. Use one only at a real interface.</text>
+
+    <rect x="55" y="110" width="115" height="235" class="masonry"/>
+    <rect x="170" y="125" width="38" height="220" class="gap"/>
+    <rect x="208" y="115" width="48" height="230" class="timber"/>
+    <rect x="256" y="135" width="90" height="210" class="timber"/>
+    <rect x="170" y="100" width="98" height="18" class="timber"/>
+    <text x="112" y="235" text-anchor="middle" class="label">opening</text>
+    <text x="189" y="235" text-anchor="middle" class="small">adjust</text>
+    <text x="232" y="235" text-anchor="middle" class="small">frame</text>
+    <text x="300" y="235" text-anchor="middle" class="label">door</text>
+
+    <!-- threshold -->
+    <line x1="30" y1="345" x2="650" y2="345" class="datum"/>
+    <rect x="270" y="337" width="140" height="16" class="metal"/>
+    <path d="M410 345 L470 360 L520 360" class="arrow"/>
+    <text x="430" y="320" class="small">durable interface only where floor/weather duty changes</text>
+    <text x="430" y="378" class="small">external paving falls/drains away; detailed level-access geometry later</text>
+
+    <text x="24" y="414" class="reject">Internal continuous floor: no decorative strip. External court/garden opening: deliberate weather/wear/movement threshold.</text>
+  </g>
+
+  <!-- PANEL 4 -->
+  <g transform="translate(825,565)">
+    <rect x="0" y="0" width="715" height="440" class="box"/>
+    <text x="24" y="38" class="h2">4 · WCJ-01 wall / ceiling movement junction</text>
+    <text x="24" y="64" class="small">Cornice may cover a real movement interface; P04 decides the mechanism.</text>
+
+    <rect x="70" y="115" width="95" height="220" class="masonry"/>
+    <rect x="165" y="115" width="18" height="220" class="finish"/>
+    <rect x="183" y="105" width="330" height="20" class="finish"/>
+    <rect x="183" y="125" width="28" height="28" class="gap"/>
+    <path d="M170 150 Q220 145 260 115" fill="none" stroke="#111" stroke-width="16" stroke-linecap="round"/>
+    <line x1="187" y1="144" x2="187" y2="165" class="metal"/>
+    <text x="285" y="154" class="small">cornice/cover fixed to one controlling side only</text>
+    <text x="285" y="182" class="small">ceiling and wall terminate independently</text>
+    <text x="285" y="210" class="small">no filler/paint bridge across intended slip</text>
+    <text x="285" y="238" class="small">fire/acoustic/air boundary resolved behind decorative cover</text>
+
+    <rect x="62" y="278" width="135" height="58" class="timber"/>
+    <text x="130" y="302" text-anchor="middle" class="small">skirting remains</text>
+    <text x="130" y="320" text-anchor="middle" class="small">independent below</text>
+
+    <text x="24" y="378" class="label">P04 comparison</text>
+    <text x="24" y="402" class="small">quiet conventional joint → concealed-slip cornice → visible brass/bronze only if it performs real work</text>
+  </g>
+
+  <text x="60" y="1045" class="small">RH-09 coordination drawing. Dimensions and materials are schematic; technical performance and experimental assemblies require prototype / specialist validation.</text>
+</svg>
