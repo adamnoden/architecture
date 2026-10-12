@@ -6,7 +6,9 @@ It is an integration test, not proof of the doctrine.
 
 The active staged execution plan is the [Reference House Design Programme](../development/reference-house-design-programme.md). It is the restart-safe control for current design work and should be read before resuming a partially completed Reference House stage.
 
-The canonical project brief is the [Brief and Constraint Ledger](brief-and-constraint-ledger.md). RH-00 closed that ledger on 2026-10-12; current design work begins from it rather than treating the provisional whole-house fixture as the brief.
+The canonical project brief is the [Brief and Constraint Ledger](brief-and-constraint-ledger.md). RH-00 closed that ledger on 2026-10-12.
+
+RH-01 has now selected the gross-morphology baseline. Read the [RH-01 Gross Morphology Options](morphology-options.md) for the comparison and gate decision, and use the [selected baseline drawing](gross-morphology-baseline.svg) for downstream schematic work.
 
 ## Architectural scope
 
@@ -47,23 +49,31 @@ Where one decision touches two layers, record the dependency rather than promoti
 
 The current house studies develop this composition through the [Tectonic Architectural Language](tectonic-architectural-language.md), [Vertical Bay Options](vertical-bay-options.md), [Vertical Bay Coordination](vertical-bay-coordination.md) and [External Access & Maintenance Plan](external-access-maintenance-plan.md).
 
+## Current gross morphology
+
+RH-01 selected **A — Compact central court** as the controlled working baseline:
+
+- two principal storeys as the current working configuration;
+- principal outer reservation: **11.4 × 10.8 m**;
+- open courtyard reservation: **3.6 × 4.0 m**, centred at gross-morphology stage;
+- gross side-wing depths: **3.9 m**;
+- gross front/rear wing depths: **3.4 m**;
+- gross enclosed plate proxy: **108.7 m²/storey**, **217.4 m²** across two principal storeys before wall thickness, stairs and local voids/projections.
+
+These dimensions control RH-02 room-order work. They do not yet freeze wall thicknesses, rooms, stair, service side, structure, roof, elevations, final GIA or real orientation.
+
+The earlier [Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) and its [drawing](whole-house-coordination-fixture.svg) are now **historical F0 coordination provenance**, not the current geometry. They remain useful for understanding earlier service-topology reasoning and as a generous-depth comparator.
+
 ## Pattern occurrences
 
-The [Pattern Occurrence Register](pattern-occurrence-register.md) is the canonical record of how the pattern language is being used in this house. It distinguishes:
+The [Pattern Occurrence Register](pattern-occurrence-register.md) is the canonical record of how the pattern language is being used in this house.
 
-- a pattern selected in principle;
-- an actual occurrence with identifiable geometry or information;
-- the implementation direction chosen for that occurrence;
-- outstanding technical or evidence obligations;
-- strategies that govern several physical responses;
-- held candidates that have not entered the canonical language.
+RH-01 deliberately invalidated the project geometry that located the earlier F0 `RH-P*` occurrences. Those identifiers are therefore suspended as provenance until RH-02 through RH-06 re-establish actual room/service geometry. Pattern and strategy intent may survive while occurrence coordinates move or disappear.
 
 A Reference House occurrence is evidence about coordination in this project. It is not evidence that the pattern is generally valid.
 
-## Whole-house coordination
+## Current work
 
-[Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) provides the current house-scale geometry: a provisional two-storey courtyard arrangement used to coordinate rooms, circulation, services and interfaces. The accompanying [fixture drawing](whole-house-coordination-fixture.svg) is schematic rather than a final design.
+`RH-02 — Resolve ground-floor order` is now the active design stage.
 
-The [Pattern Occurrence Register](pattern-occurrence-register.md) records the current mapping between that house and the canonical language. Earlier [Service Topology Coordination](service-topology-coordination.md) and [Service Topology Run 01](service-topology-run-01.md) records are retained as development provenance and use the terminology available when those exercises were carried out.
-
-The house remains architecturally and technically provisional. RH-01 now concentrates on gross morphology: footprint, courtyard size/position, wing depth, area, sequence, structural/service plausibility and maintenance perimeter. Room order, stair, detailed services and later systems remain downstream gates.
+The next work is to develop at least two credible ground-floor arrangements inside the 11.4 × 10.8 m / 3.6 × 4.0 m baseline and compare them at furniture/use scale. The decision must address arrival, principal/shared rooms, kitchen/family relationship, courtyard and garden thresholds, guest/study use, WC/service-hub geography and ordinary circulation before one ground-floor order becomes controlled.
