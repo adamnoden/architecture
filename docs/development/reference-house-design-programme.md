@@ -9,13 +9,14 @@ The programme does not assume that the current whole-house fixture is the right 
 
 ## Current execution state
 
-- **Active stage:** `RH-02 — Resolve ground-floor order`
-- **Last closed stage:** `RH-01 — Test the gross morphology` — **PASS**; canonical gate record: [RH-01 Gross Morphology Options](../reference-house/morphology-options.md).
-- **Selected gross baseline:** `A — Compact central court`; use the [dimensioned baseline drawing](../reference-house/gross-morphology-baseline.svg).
-- **Next action:** develop at least two credible ground-floor room-order schemes inside the 11.4 × 10.8 m / 3.6 × 4.0 m baseline, showing furniture-scale use, arrival sequence, kitchen/family relationship, garden connection and service-hub geography before selecting one.
+- **Active stage:** `RH-03 — Resolve stair, upper floor and courtyard circulation`
+- **Last closed stage:** `RH-02 — Resolve ground-floor order` — **PASS with controlled RH-01 width rewind**; canonical gate record: [RH-02 Ground-Floor Development](../reference-house/ground-floor-development.md).
+- **Current ground-floor authority:** [RH-02 drawing](../reference-house/ground-floor-development.svg).
+- **Current shell:** **12.0 × 10.8 m**, centred **3.6 × 4.0 m** courtyard; the 12.0 m width supersedes RH-01's 11.4 m value.
+- **Next action:** test stair positions/forms against `G-HALL-02`, `G-GAL-01` and the courtyard, then develop an upper-floor room order that preserves the ground-floor service geography without forcing bathrooms into dark or scattered positions.
 - **Current brief baseline:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
-- **Held rewind option:** `B — Offset thick/thin ring`, to be revived only if the selected central-ring baseline cannot produce convincing room order/service geography without material area or technical-corridor penalty.
-- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); F0 geometric occurrences are currently suspended pending re-instantiation.
+- **Held morphology rewind:** `B — Offset thick/thin ring`, now a deeper fallback only if RH-03/RH-06 exposes a failure that the controlled RH-02 width correction cannot solve proportionately.
+- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); RH-02 has re-instantiated the service hub and ground-floor kitchen service-wall occurrences with new identities.
 
 Update this block whenever a stage closes or the active stage materially changes.
 
