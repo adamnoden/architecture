@@ -9,12 +9,13 @@ The programme does not assume that the current whole-house fixture is the right 
 
 ## Current execution state
 
-- **Active stage:** `RH-01 — Test the gross morphology`
-- **Last closed stage:** `RH-00 — Reconstitute the brief` — **PASS**; canonical gate record: [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
-- **Next action:** construct the RH-01 comparison matrix and three materially different courtyard-house gross morphologies, using the current fixture only as a benchmark/source hypothesis.
+- **Active stage:** `RH-02 — Resolve ground-floor order`
+- **Last closed stage:** `RH-01 — Test the gross morphology` — **PASS**; canonical gate record: [RH-01 Gross Morphology Options](../reference-house/morphology-options.md).
+- **Selected gross baseline:** `A — Compact central court`; use the [dimensioned baseline drawing](../reference-house/gross-morphology-baseline.svg).
+- **Next action:** develop at least two credible ground-floor room-order schemes inside the 11.4 × 10.8 m / 3.6 × 4.0 m baseline, showing furniture-scale use, arrival sequence, kitchen/family relationship, garden connection and service-hub geography before selecting one.
 - **Current brief baseline:** [Brief and Constraint Ledger](../reference-house/brief-and-constraint-ledger.md).
-- **Current geometry comparator:** [Whole-House Coordination Fixture 01](../reference-house/whole-house-coordination-fixture.md), with no incumbency advantage.
-- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md).
+- **Held rewind option:** `B — Offset thick/thin ring`, to be revived only if the selected central-ring baseline cannot produce convincing room order/service geography without material area or technical-corridor penalty.
+- **Canonical project-use record:** [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md); F0 geometric occurrences are currently suspended pending re-instantiation.
 
 Update this block whenever a stage closes or the active stage materially changes.
 
