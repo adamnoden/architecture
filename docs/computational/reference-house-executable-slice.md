@@ -6,8 +6,8 @@
 **Canonical fixture source:** [`../reference-house/model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md)  
 **Implementation:** `compiler/reference-house/`  
 **Drawing parity result:** [`../reference-house/rhc1-drawing-parity-result.md`](../reference-house/rhc1-drawing-parity-result.md)  
-**Post-C1 gate:** [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md)  
-**Trigger:** RH-00→RH-11 produced an M3 coordinated Reference House; RH-C0 froze the bounded architectural fixture; RH-C1 has now compiled that fixture deterministically.
+**Post-C1 gate:** [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md) — **PASS**  
+**Trigger:** RH-00→RH-11 produced an M3 coordinated Reference House; RH-C0 froze the bounded architectural fixture; RH-C1 compiled that fixture deterministically.
 
 ## Result
 
@@ -32,7 +32,7 @@ The RH-C1 suite passes **27/27 tests**, including the RH-C0 mutation expectation
 
 The RH-C0 hand-authored comparator drawings are retained as historical comparison provenance. They are no longer the current geometric projections and were not reverse-engineered into source geometry.
 
-RH-C1 establishes **fixture fidelity + dependency correctness**. It does not establish compiler generality. CF-01 is therefore the next executable gate before RH-C2.
+RH-C1 establishes **fixture fidelity + dependency correctness**. It does not, by itself, establish compiler generality. The subsequent CF-01 gate has now passed a deliberately unlike second fixture through the extracted plan-semantic mechanisms, adding **two-fixture bounded evidence** without changing what RH-C1 itself proves.
 
 ## Why this reopened executable work
 
@@ -149,15 +149,15 @@ The mutation tests use the RH-C0 dependency map and distinguish propagation, exp
 
 ### Fixture-specificity discipline
 
-RH-C1 does not attempt to anticipate every future house. It keeps three roles distinct:
+RH-C1 did not attempt to anticipate every future house. It kept three roles distinct:
 
 1. **semantic core** — architectural meaning justified independently of this fixture;
 2. **fixture data** — the Reference House courtyard, topology, dimensions, stair grouping, bay field and other project-specific facts;
 3. **derived projection** — calculations and drawings produced from the source.
 
-The implementation does not claim that every house has a centred courtyard, four bays, two storeys, an 18-riser 3×6 stair or G-01-derived opening order. Nor does it build speculative generic abstractions merely because another house might one day need them.
+CF-01 subsequently tested that boundary against the actual implementation. It extracted the reusable plan-semantic mechanisms into `compiler/plan-slice/` and kept Reference-House courtyard centring, bay membership, stair, wall-planning and roof logic local. The contrast fixture compiles without a courtyard, stair, regular bay field or two-storey assumption.
 
-CF-01 is the explicit second-case challenge that will discover which assumptions actually need generalisation.
+That result is bounded evidence, not a claim that the compiler supports arbitrary houses.
 
 ---
 
@@ -179,17 +179,19 @@ Representability is not adequacy. A passing compile is not physical construction
 
 ## Growth sequence after RH-C1
 
-A successful single-fixture compile is not evidence that the core is general.
+A successful single-fixture compile was not evidence that the core was general. CF-01 was inserted before deeper compiler growth to test that risk.
 
 ### CF-01 — contrast fixture generality gate
 
-**NEXT.** Before deeper compiler slices enlarge the architecture, challenge RH-C1 with the deliberately unlike, minimal contrast fixture defined in [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md).
+**PASS.** CF-01 challenged RH-C1 with a minimal, deliberately unlike fixture: single-storey, asymmetric, no courtyard, no stair, no bay field and irregular opening coordinates.
 
-CF-01 tests something the RH-C0/RH-C1 mutation suite cannot: whether the semantic core accidentally assumes the Reference House's courtyard, room ring, four-bay front, stair topology or grammar. It is not a second fully developed Reference House and not an arbitrary-architecture target.
+The shared plan-semantic layer now handles dynamic levels, optional plan voids, spaces, boundaries, opening hosting/coordinates, adjacency and plate closure for both fixtures without fixture-ID branching. Its current supported domain remains orthogonal 2D plan geometry; the result is explicitly **two-fixture bounded evidence**.
+
+See [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md) for the pass record and supported-domain restrictions.
 
 ### RH-C2 — structural view
 
-**BLOCKED by CF-01.** After CF-01, add supports, spans, edge beams, protected nodes and load-path semantics needed to reproduce RH-05 coordination. This is not a general structural solver.
+**NEXT — unblocked by CF-01, not started by it.** Add supports, spans, edge beams, protected nodes and load-path semantics needed to reproduce RH-05 coordination. This is not a general structural solver.
 
 ### RH-C3 — service view
 
@@ -209,7 +211,7 @@ These labels are sequencing aids, not maturity levels.
 
 ## Explicit non-goals
 
-RH-C1 does not justify:
+RH-C1 and CF-01 do not justify:
 
 - arbitrary architecture support;
 - a polished 3D modelling UI;
@@ -220,9 +222,9 @@ RH-C1 does not justify:
 - encoding architectural quality as a boolean;
 - rebuilding external specialist software inside House Kernel without a strong case.
 
-The source model may eventually produce 3D/IFC and richer analytical views, but RH-C1 succeeds with deterministic semantic geometry, calculations and drawings.
+The source model may eventually produce 3D/IFC and richer analytical views, but the demonstrated executable scope remains deliberately bounded.
 
-A passing RH-C1 establishes **one-fixture reproduction and mutation correctness**, not generality. CF-01 is the next evidence gate for that claim.
+RH-C1 establishes **one-fixture reproduction and mutation correctness**. CF-01 adds **two-fixture bounded evidence for the shared plan-semantic mechanisms**. Neither is a universal architectural validity claim.
 
 ---
 
@@ -234,4 +236,4 @@ Deterministic plans/sections are therefore not presentation polish. They are a c
 
 > **If the semantic model cannot faithfully draw the house we already designed and froze through RH-C0, it does not yet describe the house strongly enough.**
 
-RH-C1 now passes that test for the three controlled views. The same model can later support structural, services, maintenance, boundary and obligation projections without each view becoming a second source of truth—but those later slices remain gated work.
+RH-C1 passes that test for the three controlled Reference House views. CF-01 additionally proves that the shared plan mechanisms can project a second unlike plan deterministically. Structural, services, maintenance, boundary and obligation projections remain later gated work.
