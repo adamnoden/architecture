@@ -303,6 +303,24 @@ export const createReferenceHouseStructuralSource = (
       provisional: true
     }
   ],
+  bearingBoundaryMappings: [
+    { id: 'BBM-G-OUTER-SOUTH', planBoundaryId: 'G-OUTER-SOUTH', structuralLineId: 'LB-OUTER-S' },
+    { id: 'BBM-U-OUTER-SOUTH', planBoundaryId: 'U-OUTER-SOUTH', structuralLineId: 'LB-OUTER-S' },
+    { id: 'BBM-G-OUTER-NORTH', planBoundaryId: 'G-OUTER-NORTH', structuralLineId: 'LB-OUTER-N' },
+    { id: 'BBM-U-OUTER-NORTH', planBoundaryId: 'U-OUTER-NORTH', structuralLineId: 'LB-OUTER-N' },
+    { id: 'BBM-G-OUTER-WEST', planBoundaryId: 'G-OUTER-WEST', structuralLineId: 'LB-OUTER-W' },
+    { id: 'BBM-U-OUTER-WEST', planBoundaryId: 'U-OUTER-WEST', structuralLineId: 'LB-OUTER-W' },
+    { id: 'BBM-G-OUTER-EAST', planBoundaryId: 'G-OUTER-EAST', structuralLineId: 'LB-OUTER-E' },
+    { id: 'BBM-U-OUTER-EAST', planBoundaryId: 'U-OUTER-EAST', structuralLineId: 'LB-OUTER-E' },
+    { id: 'BBM-G-COURT-SOUTH', planBoundaryId: 'G-COURT-SOUTH', structuralLineId: 'LB-COURT-S' },
+    { id: 'BBM-U-COURT-SOUTH', planBoundaryId: 'U-COURT-SOUTH', structuralLineId: 'LB-COURT-S' },
+    { id: 'BBM-G-COURT-NORTH', planBoundaryId: 'G-COURT-NORTH', structuralLineId: 'LB-COURT-N' },
+    { id: 'BBM-U-COURT-NORTH', planBoundaryId: 'U-COURT-NORTH', structuralLineId: 'LB-COURT-N' },
+    { id: 'BBM-G-COURT-WEST', planBoundaryId: 'G-COURT-WEST', structuralLineId: 'LB-COURT-W' },
+    { id: 'BBM-U-COURT-WEST', planBoundaryId: 'U-COURT-WEST', structuralLineId: 'LB-COURT-W' },
+    { id: 'BBM-G-COURT-EAST', planBoundaryId: 'G-COURT-EAST', structuralLineId: 'LB-COURT-E' },
+    { id: 'BBM-U-COURT-EAST', planBoundaryId: 'U-COURT-EAST', structuralLineId: 'LB-COURT-E' }
+  ],
   interruptions: [
     {
       id: 'ST-01',
