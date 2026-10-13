@@ -4,15 +4,17 @@ The computational track asks a narrow question within House Kernel: **which buil
 
 It is subordinate to the architecture. Rooms, walls, openings, structure, boundaries, service routes and maintenance paths may be represented semantically where doing so creates a useful check, but architectural judgement is not converted into arbitrary machine rules merely to make the model more complete.
 
-The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel, `PAT-XW-01`, RH-C0 model freeze and RH-C1 deterministic Reference House slice have now completed at their stated internal scopes.
+The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel, `PAT-XW-01`, RH-C0 model freeze, RH-C1 deterministic Reference House slice and CF-01 contrast-fixture gate have now completed at their stated internal scopes.
 
 ## Active computational work
 
-**CF-01 — adversarial contrast fixture / compiler generality gate — is next.**
+**RH-C2 — bounded structural view — is next.**
 
-RH-C1 passed the bounded question it was created to answer: one canonical Reference House semantic source now deterministically reproduces the controlled geometry, simple derived calculations, ground-floor plan, first-floor plan and principal section. Its 27-test suite exercises both baseline fidelity and the RH-C0 mutation expectations.
+RH-C1 proved fixture fidelity and dependency correctness for one controlled Reference House. CF-01 then passed a deliberately unlike second fixture through the extracted plan-semantic kernel: a single-storey asymmetric plan with no courtyard, stair, bay field or entrance-bay membership and with irregular opening coordinates.
 
-That proves **fixture fidelity + dependency correctness for one controlled house**. It does not prove bounded generality.
+The CF-01 suite passes **7/7 tests** while the RH-C1 suite remains **27/27**. The shared plan compiler now treats levels, plan voids, opening coordinates and plan closure without requiring the Reference House topology. Reference-House-specific courtyard centring, bay composition, stair, wall-planning and roof logic remain local to the fixture adapter/compiler.
+
+This establishes **two-fixture bounded evidence**, not arbitrary architectural validity.
 
 Canonical sequence:
 
@@ -21,9 +23,9 @@ RH-C0 — model freeze                    PASS
   ↓
 RH-C1 — deterministic Reference House  PASS
   ↓
-CF-01 — adversarial contrast fixture   NEXT
+CF-01 — adversarial contrast fixture   PASS
   ↓
-RH-C2 — structural view                BLOCKED
+RH-C2 — bounded structural view        NEXT
 ```
 
 Programme records:
@@ -33,11 +35,11 @@ Programme records:
 - [CF-01 — Compiler Generality Assurance](compiler-generality-assurance-cf01.md)
 - [RH-C1 drawing parity result](../reference-house/rhc1-drawing-parity-result.md)
 
-The Reference House remains a **controlled regression fixture**, not a universally correct house or universal House Kernel template. CF-01 exists specifically so RH-C1 did not have to speculate about every possible house.
+The Reference House remains a **controlled regression fixture**, not a universally correct house or universal House Kernel template. The CF-01 contrast house is likewise an adversarial test fixture, not a second design proposal.
 
 ## What has been established
 
-The research sequence progressed from wall-bay scale to a bounded whole-house paper model, then into the minimal executable kernel and first controlled architectural fixture:
+The research sequence progressed from wall-bay scale to a bounded whole-house paper model, then into the minimal executable kernel and controlled architectural fixtures:
 
 ```text
 S0 → S1 → S2 → H1-PAPER-01
@@ -51,6 +53,8 @@ S0 → S1 → S2 → H1-PAPER-01
           RH-C0 model freeze
                      ↓
        RH-C1 deterministic fixture
+                     ↓
+       CF-01 contrast-fixture gate
 ```
 
 Within those scopes, the work established that:
@@ -64,9 +68,10 @@ Within those scopes, the work established that:
 - architectural commitments can remain valid while a dependent technical obligation becomes unresolved;
 - one bounded architectural source can drive deterministic geometry, calculations and SVG drawings without duplicating derived facts;
 - mutation tests can distinguish propagation, source-integrity failure, architectural review and deliberate absence;
-- provisional architectural facts can remain provisional in an executable model rather than being hardened for implementation convenience.
+- provisional architectural facts can remain provisional in an executable model rather than being hardened for implementation convenience;
+- shared plan semantics can operate across two materially unlike fixtures without fixture-ID branching or requiring a courtyard, two storeys, a regular bay field, entrance-bay membership or a stair.
 
-The earlier executable result is recorded in [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md): 17 P0 tests and six pattern-crosswalk tests pass in the ordinary CI path. RH-C1 adds 27 passing tests for the controlled Reference House slice.
+The earlier executable result is recorded in [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md): 17 P0 tests and six pattern-crosswalk tests pass in the ordinary CI path. RH-C1 adds 27 passing tests for the controlled Reference House slice; CF-01 adds seven passing bounded-generality tests.
 
 These results do **not** establish that a building or assembly is structurally, environmentally or regulatorily adequate. Building release remains outside the demonstrated scope, and competent external review is still required.
 
@@ -83,7 +88,7 @@ The computational model has a deliberately limited authority.
 
 The useful object is therefore not a universal rule engine but a model that can make selected relationships explicit, derive obligations from them, attach evidence at the right scope and refuse claims the available evidence cannot support.
 
-RH-C1 follows the same boundary. A generated drawing is a deterministic projection, not architectural authority merely because it compiled.
+RH-C1 follows the same boundary. A generated drawing is a deterministic projection, not architectural authority merely because it compiled. CF-01 strengthens only the reuse claim around the bounded plan-semantic mechanisms.
 
 ## Core model
 
@@ -95,6 +100,8 @@ RH-C1 follows the same boundary. A generated drawing is a deterministic projecti
 - [Structural Semantics](structural-semantics.md) — physical structure, topology and analytical idealisation.
 - [Boundary Semantics](boundary-semantics.md) — air, thermal, weather, moisture, fire, acoustic and related boundaries.
 - [Interface Obligation Bundles](interface-obligation-bundles.md) — reusable technical obligations created by recurring boundary and interface conditions.
+
+The executable plan slice now lives under `compiler/plan-slice/`. Its current supported domain remains intentionally narrow: rectangular outer shells, orthogonal named planning lines, spaces/voids as unions of axis-aligned rectangles, line boundaries and line-hosted numeric openings. CF-01 makes those restrictions visible rather than pretending to support arbitrary geometry.
 
 ## Pattern crosswalk
 
@@ -115,7 +122,7 @@ The architectural-grammar framework and G-01 research are owned by the separate 
 
 The computational model must remain capable of distinguishing grammar conformance from House Kernel doctrine, technical validity, supported-domain status and project requirements. G-01 is therefore an input that may be checked where formalisation is justified, not a hidden default of the compiler.
 
-RH-C1 localises the current G-01-derived opening memberships/order as Reference House fixture data. CF-01 is the next test of whether any such fixture-specific assumptions leaked into the executable core.
+RH-C1 localises the current G-01-derived opening memberships/order as Reference House fixture data. CF-01 then passed a neutral contrast fixture through the same shared plan mechanisms without requiring those memberships, which is bounded evidence that G-01 composition has not become a shared plan requirement.
 
 ## Supported H1 research domain
 
@@ -188,15 +195,16 @@ These are candidate tests, not a standing implementation queue.
 
 The demonstrated kernel does not justify building a polished 3D CAD system, general structural solver, complete Building Regulations engine, IFC round-tripping, optimisation layer, generative-AI designer or pattern-specific rule library. Those capabilities would require their own architectural and technical case.
 
-Current executable work is therefore **CF-01 only**: challenge the actual RH-C1 implementation with a deliberately unlike contrast fixture before deeper compiler growth. RH-C2 structure remains blocked until that generality gate passes. Physical prototypes and competent external review proceed independently.
+Current executable work may now proceed to **RH-C2 only**: add the smallest structural view needed to reproduce the already-coordinated RH-05 relationships while preserving the authority boundary established by P0 through CF-01. Physical prototypes and competent external review proceed independently.
 
-The P0, `PAT-XW-01` and RH-C1 suites remain regression tests and should expand only when new work exposes a concrete model defect or a high-value relationship that benefits from formalisation.
+The P0, `PAT-XW-01`, RH-C1 and CF-01 suites remain regression tests and should expand only when new work exposes a concrete model defect or a high-value relationship that benefits from formalisation.
 
 ## Programme and provenance
 
 - [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md) — **PASS**, controlled fixture authority established.
 - [RH-C1 — Reference House Executable Slice](reference-house-executable-slice.md) — **PASS**, one-fixture reproduction and mutation correctness established.
-- [CF-01 — Compiler Generality Assurance](compiler-generality-assurance-cf01.md) — **NEXT**, bounded generality gate before RH-C2.
+- [CF-01 — Compiler Generality Assurance](compiler-generality-assurance-cf01.md) — **PASS**, two-fixture bounded evidence for the shared plan-semantic slice.
+- **RH-C2 — bounded structural view — NEXT**, now unblocked but not begun by CF-01.
 - [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md) — retained executable baseline.
 - [Research Programme v0.6](research-programme-v06.md) — final pre-executable programme record retained for provenance.
 - [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md) — frozen paper-domain capability audit.
