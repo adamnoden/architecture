@@ -1,3 +1,5 @@
+import type { Millimetres } from '../units.js'
+
 export type ServiceTopologyStatus = 'PASS' | 'REVIEW' | 'FAIL'
 
 export type ServiceClass =
@@ -48,6 +50,11 @@ export interface ServiceNodeSource {
   label: string
   hostSpaceIds: string[]
   requiredAccessKinds: ServiceAccessKind[]
+  coordinationEnvelope?: {
+    width: Millimetres
+    depth: Millimetres
+    structuralInterruptionId: string
+  }
   provisional: boolean
 }
 
@@ -84,6 +91,7 @@ export interface ServiceCrossingSource {
   selected: boolean
   routeIds: string[]
   host: ServiceCrossingHost
+  bearingLineId?: string
   obligations: string[]
   provisional: boolean
 }
@@ -117,12 +125,22 @@ export interface DerivedServiceNetwork {
   connected: boolean
 }
 
+export interface DerivedServiceBearingCrossingObligation {
+  id: string
+  crossingId: string
+  planBoundaryId: string
+  structuralLineId: string
+  proof: 'EXTERNAL-STRUCTURAL-OPENING-AND-BEARING'
+  provisional: boolean
+}
+
 export interface ServiceTopologyDerived {
   nodes: ServiceNodeSource[]
   routes: ServiceRouteSource[]
   networks: DerivedServiceNetwork[]
   crossings: ServiceCrossingSource[]
   access: ServiceAccessSource[]
+  bearingCrossings: DerivedServiceBearingCrossingObligation[]
   selectedCrossingIds: string[]
   serviceClasses: ServiceClass[]
 }
