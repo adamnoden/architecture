@@ -52,6 +52,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add STATUS.md project/maturity.ts docs/manuscript/publication-architecture.md docs/development/README.md
+          git add STATUS.md project/maturity.ts publication/adapters.ts docs/manuscript/publication-architecture.md docs/development/README.md
           git commit -m "OH-05 — verify publication and status migration"
           git push origin HEAD:ovids-house-migration
