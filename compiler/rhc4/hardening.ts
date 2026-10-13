@@ -3,8 +3,9 @@ import type {
   BoundaryTopologyCompileResult,
   BoundaryTopologyDiagnostic
 } from '../boundary-slice/model.js'
+import type { PlanSliceCompileResult } from '../plan-slice/model.js'
 import type { ReferenceHouseSource } from '../reference-house/model.js'
-import type { RhC3CompileResult } from '../rhc3/compile.js'
+import type { ServiceTopologyCompileResult } from '../service-slice/model.js'
 import { mm2, square } from '../units.js'
 import type { SquareMillimetres } from '../units.js'
 
@@ -27,6 +28,11 @@ const statusOf = (diagnostics: BoundaryTopologyDiagnostic[]): 'PASS' | 'REVIEW' 
 const sameRoles = (roles: BoundaryRole[]): boolean =>
   roles.length === requiredRoles.length && requiredRoles.every((role) => roles.includes(role))
 
+export interface ReferenceHouseBoundaryUpstream {
+  plan: PlanSliceCompileResult
+  services: ServiceTopologyCompileResult
+}
+
 export interface RhC4Coordination {
   roofCatchments: Array<{
     id: 'SOUTH' | 'NORTH' | 'WEST' | 'EAST'
@@ -40,7 +46,7 @@ export interface RhC4Coordination {
 
 export const deriveReferenceHouseBoundaryCoordination = (
   house: ReferenceHouseSource,
-  c3: RhC3CompileResult
+  upstream: ReferenceHouseBoundaryUpstream
 ): RhC4Coordination => {
   const shellWidth = house.shell.width.value
   const shellDepth = house.shell.depth.value
@@ -58,7 +64,7 @@ export const deriveReferenceHouseBoundaryCoordination = (
     { id: 'EAST', planArea: westEast }
   ]
   const roofCatchmentTotal = mm2(roofCatchments.reduce((sum, item) => sum + item.planArea, 0))
-  const enclosedPlateArea = c3.c2.plan.derived.plateAreas.find((item) => item.levelId === 'GROUND')?.area
+  const enclosedPlateArea = upstream.plan.derived.plateAreas.find((item) => item.levelId === 'GROUND')?.area
     ?? mm2(0)
 
   return {
@@ -72,7 +78,7 @@ export const deriveReferenceHouseBoundaryCoordination = (
 
 export const hardenReferenceHouseBoundaryTopology = (
   house: ReferenceHouseSource,
-  c3: RhC3CompileResult,
+  upstream: ReferenceHouseBoundaryUpstream,
   result: BoundaryTopologyCompileResult
 ): BoundaryTopologyCompileResult => {
   const extra: BoundaryTopologyDiagnostic[] = []
@@ -128,7 +134,7 @@ export const hardenReferenceHouseBoundaryTopology = (
   }
 
   const representedServiceIds = new Set(result.derived.serviceObligations.map((item) => item.serviceCrossingId))
-  const selectedCrossings = c3.services.derived.crossings.filter((item) => item.selected)
+  const selectedCrossings = upstream.services.derived.crossings.filter((item) => item.selected)
   for (const crossing of selectedCrossings) {
     const required = crossing.host.kind === 'plan-boundary' ||
       crossing.id === 'PEN-SV-RF-01' ||
@@ -214,7 +220,18 @@ export const hardenReferenceHouseBoundaryTopology = (
     ))
   }
 
-  const coordination = deriveReferenceHouseBoundaryCoordination(house, c3)
+  for (const route of result.derived.drainageRoutes) {
+    if (!route.visibleFailure) {
+      extra.push(diagnostic(
+        'RH_DRAINAGE_FAILURE_NOT_VISIBLE',
+        'FAIL',
+        [route.id],
+        `${route.id} must retain a visible failure path.`
+      ))
+    }
+  }
+
+  const coordination = deriveReferenceHouseBoundaryCoordination(house, upstream)
   if (Math.abs(coordination.roofCatchmentTotal - coordination.enclosedPlateArea) > EPSILON) {
     extra.push(diagnostic(
       'RH_ROOF_CATCHMENT_CLOSURE_MISMATCH',
