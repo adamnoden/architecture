@@ -3,6 +3,7 @@ import type { PlanSliceDerived } from '../plan-slice/model.js'
 import { mm, mm2 } from '../units.js'
 import type { Millimetres } from '../units.js'
 import type {
+  DerivedBearingOpeningObligation,
   DerivedReactionNode,
   DerivedSpanField,
   DerivedStructuralLine,
@@ -164,6 +165,30 @@ const deriveReactionNodes = (
     })
     .sort((a, b) => a.id.localeCompare(b.id))
 
+const deriveBearingOpenings = (
+  source: StructuralTopologySource,
+  plan: PlanSliceDerived
+): DerivedBearingOpeningObligation[] => {
+  const structuralLineByBoundary = new Map(
+    source.bearingBoundaryMappings.map((mapping) => [mapping.planBoundaryId, mapping.structuralLineId])
+  )
+
+  return plan.openings
+    .filter((opening) => structuralLineByBoundary.has(opening.hostBoundaryId))
+    .map((opening) => ({
+      id: `BO-${opening.id}`,
+      openingId: opening.id,
+      levelId: opening.levelId,
+      planBoundaryId: opening.hostBoundaryId,
+      structuralLineId: structuralLineByBoundary.get(opening.hostBoundaryId)!,
+      ...(opening.centre === undefined ? {} : { centre: opening.centre }),
+      width: { ...opening.width },
+      proof: 'EXTERNAL-HEAD-SUPPORT-AND-BEARING' as const,
+      provisional: opening.provisional
+    }))
+    .sort((a, b) => a.id.localeCompare(b.id))
+}
+
 export const deriveStructuralTopology = (
   source: StructuralTopologySource,
   plan: PlanSliceDerived
@@ -172,12 +197,14 @@ export const deriveStructuralTopology = (
   const supportPaths = deriveSupportPaths(source, plan)
   const spanFields = deriveSpanFields(source, plan)
   const reactionNodes = deriveReactionNodes(source, plan)
+  const bearingOpenings = deriveBearingOpenings(source, plan)
   return {
     planeLevelId: source.planeLevelId,
     lineElements,
     supportPaths,
     spanFields,
     reactionNodes,
+    bearingOpenings,
     interruptions: source.interruptions.map((item) => ({
       ...item,
       geometry: { ...item.geometry }
