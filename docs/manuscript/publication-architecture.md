@@ -1,7 +1,7 @@
-# House Kernel — Publication Architecture v0.12
+# Ovid’s House — Publication Architecture v0.13
 
 **Working form:** illustrated architectural design-research monograph + evidence-qualified pattern language + separate architect-facing implementation brief.  
-**Status:** v0.12 — canonical pattern language and computational authority reconciled; publication structure remains active.
+**Status:** v0.13 — Ovid’s House identity and temporal frame reconciled with the canonical pattern language and computational authority; publication structure remains active.
 
 The pattern-language migration is complete at current internal scope. The active language contains 21 patterns, one retired identity, three canonical strategies and four explicitly held candidates. Pattern count is an outcome, not a target. Migration and crosswalk provenance are retained in [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md).
 
@@ -27,7 +27,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
    Service-life planning, Habraken, Duffy/Brand, Gordon; introduce coupling between lifespan layers.
 
 3. **Selective permanence**  
-   Long life without generic flexibility; introduce proportional serviceability. Establish **repose** as a domestic requirement: the house should minimise unnecessary vigilance through coherence, controllability, privacy/retreat, physical comfort and perceptual settlement without collapsing into sensory poverty.
+   Long life without generic flexibility; introduce proportional serviceability and the bounded **permanence without stasis** / Ovidian frame. Establish **repose** as a domestic requirement: the house should minimise unnecessary vigilance through coherence, controllability, privacy/retreat, physical comfort and perceptual settlement without collapsing into sensory poverty.
 
 4. **The architectural platform**  
    Permanent fabric, replaceable systems, designed interfaces, attachment discipline, assembly hierarchy and maintenance geography; introduce workmanship robustness as the requirement that ordinary construction variation be deliberately absorbed rather than exported into site improvisation.
@@ -62,7 +62,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
 
 Part III is a browsable professional reference: **patterns plus the relationships and generative sequences that help designers combine them**. It is not a second version of Part II and not a catalogue of every technical idea in the project.
 
-The method is defined by the [House Kernel Pattern Language — Model and Authoring Contract](../patterns/language-model.md). The canonical pattern index is [Patterns](../patterns/README.md). The first worked generative method is the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md).
+The method is defined by the [Ovid’s House Pattern Language — Model and Authoring Contract](../patterns/language-model.md). The canonical pattern index is [Patterns](../patterns/README.md). The first worked generative method is the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md).
 
 ### Reading structure
 
@@ -205,13 +205,13 @@ G. [Sources and further reading](sources-and-further-reading.md)
 
 The project carries a parallel computational proposition: selected architectural and technical relationships may be represented semantically and checked through explicit obligations and scoped evidence.
 
-The canonical concept is [Executable Architecture — Computational Expression of House Kernel](../computational/executable-architecture.md); current authority and provenance are indexed in the [Computational Track](../computational/README.md).
+**House Kernel** is the formal architectural/computational system within Ovid’s House; its executable proposition is described in [Executable Architecture](../computational/executable-architecture.md), with current authority and provenance indexed in the [Computational Track](../computational/README.md). **Metamorph Compiler** is the human-facing name of the software that compiles and checks those bounded representations.
 
 The computational work remains **parallel to the publication rather than being forced into Part I–V**. It is consequential enough to deserve a research track, but the monograph should not present a bounded semantic prototype as a finished building compiler.
 
 Current position:
 
-- executable architecture is **not a governing principle** and does not replace House Kernel;
+- executable architecture is **not a governing principle** and does not replace Ovid’s House or its architectural doctrine;
 - the architectural doctrine remains meaningful independently of software;
 - the pattern language is an authoring/provenance layer, not the compiler ontology;
 - the internal paper sequence is complete through H1-PAPER-01 and the capability freeze;

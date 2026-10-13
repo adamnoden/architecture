@@ -4,7 +4,7 @@
 **Last updated:** 2026-10-13  
 **Current phase:** **validation / implementation falsification**
 
-This page answers one question: **where is House Kernel now?** Detailed programme histories and gate records remain in their owning areas; this page records the current state, next meaningful work and principal risks.
+This page answers one question: **where is Ovid’s House now?** Detailed programme histories and gate records remain in their owning areas; this page records the current state, next meaningful work and principal risks.
 
 The architectural position and canonical pattern language are established strongly enough that the project's largest uncertainties now sit downstream. The highest-value work is to force the system through one actual house, build and test the propositions that cannot be settled on paper, obtain competent external criticism, and complete the publication without allowing project-specific choices to drift upstream into doctrine.
 
@@ -34,7 +34,7 @@ The method records its external source, edition, paragraph/table, source-check d
 
 This remains a major evidence gap between a coordinated architectural system and a credible building system. P03 structural floor-edge work is a real RH-05 engineering dependency and P04 tests the selected RH-09 wall/ceiling movement interface. P01 W2 remains an optional challenger rather than an architectural dependency; P02 selective floor access is not currently selected by the Reference House.
 
-Prototype outcomes should be allowed to reject or simplify implementations. A successful mock-up does not promote a general House Kernel proposition automatically, and a failed challenger does not invalidate the house where a conventional baseline already exists.
+Prototype outcomes should be allowed to reject or simplify implementations. A successful mock-up does not promote a general Ovid’s House proposition automatically, and a failed challenger does not invalidate the house where a conventional baseline already exists.
 
 ### Professional review
 
@@ -49,7 +49,7 @@ The publication architecture is structurally established. Remaining work is prim
 ## Maturity and workstream status
 
 <!-- maturity-status:start -->
-House Kernel uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.
+Ovid’s House uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.
 
 ### Scale
 
@@ -75,14 +75,14 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 |---|---:|---|---|---|
 | **Public architectural position** | **M3** | 2026-10-12 | Governing principles, selective permanence, interface design, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy are coordinated and style-neutral. | Evidence and figure hardening, followed by final whole-book proof. |
 | **Pattern language** | **M4** | 2026-10-12 | 21 active patterns, three strategies and four held candidates are canonical at current internal scope. | Reopen only when new architectural, physical or external evidence requires change. |
-| **Architectural grammar framework** | **M3** | 2026-10-12 | Grammar is a first-class layer separate from House Kernel doctrine and is coordinated at framework level. | Continue to test neutrality across concrete grammar instances. |
+| **Architectural grammar framework** | **M3** | 2026-10-12 | Grammar is a first-class layer separate from Ovid’s House doctrine and is coordinated at framework level. | Continue to test neutrality across concrete grammar instances. |
 | **G-01 grammar instance** | **M2** | 2026-10-12 | The Georgian-derived instance has corpus, dimensional and coupling work, but derivation remains incomplete. | Complete evidence-led derivation and test it against the Reference House without promoting project taste into doctrine. |
 | **Reference House** | **M3** | 2026-10-12 | RH-00 through RH-10 are coordinated at virtual-design scope, RH-11 provides issue-ready discipline review packages, and RH-C0 has frozen a controlled pre-compiler model without converting unresolved technical assumptions into certainty. | Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, and progress P03/P04 validation; RH-C0 does not raise Reference House maturity. |
 | **Physical prototypes** | **M2** | 2026-10-12 | The validation programme is defined but no physical result has yet been recorded; after RH-09/RH-10, P03 floor-edge and P04 wall/ceiling-joint evidence are the Reference House priorities, while P01 W2 remains an optional challenger and P02 is not a current house dependency. | Engineer and test P03 structural floor edge, then build/test P04 wall/ceiling joint; continue P01 W2 only as optional research where resources justify it. |
 | **External professional review** | **M1** | 2026-10-12 | RH-11 now provides issue-ready structural, fire/building-control, MEP/acoustic and building-physics/energy review briefs with explicit rewind criteria; no competent review response has yet been recorded. | Obtain and process competent discipline reviews; material findings reopen the owning Reference House gate and remain unresolved until closure evidence is recorded. |
 | **Computational track** | **M4** | 2026-10-13 | The bounded Reference House executable sequence remains closed PASS through RH-C5, and the CH-00 through CH-08 Compiler Hardening programme is complete. The compiler now has a frozen semantic/artefact baseline, deterministic fail-closed behaviour, machine-enforced runtime boundaries, single-pass Reference House orchestration, selective representation hardening, stable source/method/result/compile identity and lineage, deterministic law/property/metamorphic evidence, one reproducible repository-health and artefact-verification contract, and a final deletion/proof audit that preserves the pre-hardening conclusions while removing only unearned compatibility machinery. This is an internally validated/controlled computational baseline at its stated proof boundaries; it does not expand Reference House technical authority or establish physical, regulatory or whole-building adequacy. | Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope. |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | Major evidence packages exist and taxonomy ambiguities are largely closed. | Targeted claim hardening where physical or publication maturity requires it. |
-| **Publication** | **M3** | 2026-10-12 | Publication Architecture v0.12 is established; Parts III/IV and figure language remain less mature than the main argument. | Finish Part III/IV development, figures and evidence presentation. |
+| **Publication** | **M3** | 2026-10-12 | Publication Architecture v0.13 is established; Parts III/IV and figure language remain less mature than the main argument. | Finish Part III/IV development, figures and evidence presentation. |
 | **Delivery** | **M2** | 2026-10-12 | The implementation-brief structure exists, but downstream requirements remain intentionally incomplete. | Populate only as architectural and validation decisions mature. |
 <!-- maturity-status:end -->
 
@@ -106,7 +106,7 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 These areas are not current work queues. Their detailed records remain available for provenance.
 
-- **Naming history — recorded.** The project began as **House Design Doctrine**, became **Long-Life House**, then **House Systems Architecture**, and is now **House Kernel**. The active project identity has been migrated across the website, manuscript, publication pipeline, current research/control documents and build tooling; older names remain only where they describe historical state or a stable legacy identifier.
+- **Naming history — recorded.** The project began as **House Design Doctrine**, became **Long-Life House**, then **House Systems Architecture**, then **House Kernel**, and is now **Ovid’s House**. **House Kernel** is retained as the formal architectural/computational system within Ovid’s House rather than treated as a retired name; **Metamorph Compiler** is the human-facing name of its executable machinery. Earlier names remain only where they describe historical state or a stable legacy identifier.
 - **Original doctrine discovery — closed.** House Design Doctrine v7 is preserved as source material rather than a live specification.
 - **Architectural-specificity audit — complete.** Gates 0–7 established the boundary between project doctrine, patterns, technical scope, grammar and Reference House choices. See the [audit](docs/development/architectural-specificity-audit.md) and [adversarial test](docs/development/architectural-specificity-adversarial-test.md).
 - **Pattern-language migration — complete.** Phases 0–7 established the current canonical language. The stable `HSA-P-*` pattern namespace dates from the House Systems Architecture phase and is retained for identifier stability. See the [Phase 7 review](docs/development/pattern-language-phase7-review.md).

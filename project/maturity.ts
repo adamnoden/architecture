@@ -131,7 +131,7 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-12',
     currentState:
-      'Grammar is a first-class layer separate from House Kernel doctrine and is coordinated at framework level.',
+      'Grammar is a first-class layer separate from Ovid’s House doctrine and is coordinated at framework level.',
     nextGate: 'Continue to test neutrality across concrete grammar instances.',
     evidence: {
       framed: ['docs/grammar/architectural-grammar-and-proportion.md'],
@@ -297,7 +297,7 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-12',
     currentState:
-      'Publication Architecture v0.12 is established; Parts III/IV and figure language remain less mature than the main argument.',
+      'Publication Architecture v0.13 is established; Parts III/IV and figure language remain less mature than the main argument.',
     nextGate: 'Finish Part III/IV development, figures and evidence presentation.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
@@ -346,7 +346,7 @@ export function renderMaturityStatusBlock(): string {
   )
 
   return [
-    'House Kernel uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.',
+    'Ovid’s House uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.',
     '',
     '### Scale',
     '',
