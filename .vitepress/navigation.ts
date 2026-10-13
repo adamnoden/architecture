@@ -257,7 +257,8 @@ const computationalSidebar: DefaultTheme.SidebarItem[] = [
   group('Reference House compiler programme', [
     page('RH-C0 model-freeze plan', '/docs/computational/reference-house-model-freeze-rhc0'),
     page('RH-C1 executable slice', '/docs/computational/reference-house-executable-slice'),
-    page('CF-01 generality assurance gate', '/docs/computational/compiler-generality-assurance-cf01')
+    page('CF-01 generality assurance gate', '/docs/computational/compiler-generality-assurance-cf01'),
+    page('Compiler hardening programme', '/docs/computational/compiler-hardening-programme')
   ], false),
   group('Executable result & external review', [
     page('P0 + PAT-XW-01 executable result — PASS', '/docs/computational/p0-pat-xw-01-result'),
