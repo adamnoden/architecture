@@ -215,11 +215,11 @@ export const workstreamStatuses = [
     id: 'computational-track',
     name: 'Computational track',
     maturity: 'M3',
-    reviewedOn: '2026-10-12',
+    reviewedOn: '2026-10-13',
     currentState:
-      'P0 passed 17/17 tests, PAT-XW-01 passed 6/6, RH-C0 froze the canonical fixture, and RH-C1 now passes 27/27 tests while generating deterministic ground plan, first-floor plan and principal section from one bounded semantic source. This establishes Reference House fixture fidelity and dependency correctness, not compiler generality.',
+      'P0 passes 17/17 tests, PAT-XW-01 6/6, RH-C1 27/27 and CF-01 7/7. CF-01 extracted a shared plan-semantic kernel and passed an unlike single-storey, asymmetric, no-courtyard, no-stair, non-bay-derived fixture without fixture-ID branching while preserving the Reference House regression suite. This is two-fixture bounded evidence, not arbitrary architectural validity.',
     nextGate:
-      'Execute CF-01 against the actual RH-C1 implementation before RH-C2: use a minimal contrast fixture to attack accidental Reference-House topology and grammar assumptions.',
+      'Begin RH-C2 as the bounded structural view now that CF-01 has removed the sequencing block; preserve the existing proof boundary and do not imply structural adequacy merely from representability.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -227,8 +227,10 @@ export const workstreamStatuses = [
         'docs/computational/p0-pat-xw-01-result.md',
         'docs/reference-house/model-baseline-rhc0.md',
         'docs/reference-house/rhc1-drawing-parity-result.md',
+        'docs/computational/compiler-generality-assurance-cf01.md',
         'compiler/reference-house/reference-house.test.ts',
-        'compiler/reference-house/drawings.test.ts'
+        'compiler/reference-house/drawings.test.ts',
+        'compiler/cf01/cf01.test.ts'
       ]
     }
   },
