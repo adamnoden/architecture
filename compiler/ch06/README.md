@@ -1,7 +1,7 @@
 # CH-06 — strengthen the kinds of tests
 
 **Gate:** CH-06  
-**Status:** implementation candidate — validate before PASS  
+**Status:** PASS on exact PR head; merged-main validation required for programme closeout  
 **Starting main:** `57e9cc84b5c031794cbdd758db9141bc1befc63f`  
 **Issue:** #65  
 **Computational maturity:** M3  
@@ -56,6 +56,13 @@ These are the CH-06 targets.
 
 A separate exact boundary test pins behaviour around `BOX_GEOMETRY_EPSILON` without changing its established value.
 
+`compiler/ch06/geometry-positive.test.ts` adds 256 constructed positive cases so the suite cannot be satisfied by trivial always-false/zero implementations. It proves that:
+
+- self-overlap equals box area;
+- a strict generated child is contained by its parent but not vice versa;
+- an exact shared edge is adjacent and intersecting but has zero overlap area;
+- those positive relationships survive common translation.
+
 ### Calculation-kernel laws
 
 A synthetic method isolates the generic calculation kernel from Reference House authority. The gate exhaustively checks all 125 combinations of five evidence states across three criteria:
@@ -95,7 +102,7 @@ If CH-06 later discovers shrinking/replay needs that the local generator cannot 
 
 ### Automated mutation-testing framework — not adopted
 
-No mutation-testing package is introduced. Installing and configuring a mutation runner would add a toolchain and execution surface larger than the current critical kernels, while CH-07 explicitly owns broad toolchain ergonomics. CH-06 instead targets mutation-sensitive laws directly: symmetry operators, comparison boundaries, aggregate precedence, and graph-bridge connectivity are all assertions that common meaningful implementation mutations would violate.
+No mutation-testing package is introduced. Installing and configuring a mutation runner would add a toolchain and execution surface larger than the current critical kernels, while CH-07 explicitly owns broad toolchain ergonomics. CH-06 instead targets mutation-sensitive laws directly: symmetry operators, comparison boundaries, positive/negative geometry constructions, aggregate precedence, and graph-bridge connectivity are all assertions that common meaningful implementation mutations would violate.
 
 Mutation score is not a project KPI. This is a cost/benefit decision, not a claim that automated mutation testing has no value.
 
@@ -123,11 +130,12 @@ CH-06 introduces no intended production semantic change. It must preserve:
 
 If a stronger law test falsifies one of those assumptions, the correct response is to investigate the semantic assumption rather than weaken the test automatically.
 
-## Exit evidence required before PASS
+## Validation
 
-- exact-head repository validation including `test:ch06` passes;
-- all CH-00 through CH-05 gates remain green;
-- publication validation remains green;
-- merged-main repository/PDF/docs/Pages workflow remains green;
-- no production semantic change is required merely to satisfy the new tests;
-- CH-07 — toolchain and developer ergonomics — remains next.
+The strengthened exact PR head passed repository validation in GitHub Actions run `38468759439`, including `test:ch06`, all earlier CH gates, the existing Reference House/generic regression suites and publication validation. No production compiler file changed to obtain the pass.
+
+Merged-main repository/PDF/docs/Pages validation remains the final programme-closeout check after merge.
+
+## Exit
+
+CH-06 has materially stronger law/property/metamorphic evidence over selected critical kernels; generated evidence is deterministic and replayable; historical example/adversarial tests remain intact; no new testing framework or coverage KPI was introduced; and no production semantics or proof boundary changed. **CH-07 — toolchain and developer ergonomics — remains next.**
