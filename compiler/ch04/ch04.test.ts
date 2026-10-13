@@ -10,6 +10,7 @@ import { planBoundaryId } from '../plan-slice/model.js'
 import type { PlanBoundaryId } from '../plan-slice/model.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { compileReferenceHouseSystem } from '../reference-house/system-compile.js'
+import type { ReferenceHouseSystemCompileResult } from '../reference-house/system-compile.js'
 import { serviceCrossingId } from '../service-slice/model.js'
 import type { ServiceCrossingId } from '../service-slice/model.js'
 import { structuralInterruptionId, structuralLineId } from '../structure-slice/model.js'
@@ -35,6 +36,16 @@ void boundaryAsLine
 void interruptionAsLine
 void crossingAsBoundary
 void lineAsCrossing
+
+const assertReadonlyCanonicalSurface = (result: ReferenceHouseSystemCompileResult): void => {
+  // @ts-expect-error Canonical compile status is readonly after construction.
+  result.status = 'FAIL'
+  // @ts-expect-error Canonical domain results cannot be replaced after construction.
+  result.plan = result.plan
+  // @ts-expect-error Proof-family references are readonly after construction.
+  result.proof.structure = result.proof.structure
+}
+void assertReadonlyCanonicalSurface
 
 const acceptsMillimetres = (value: Millimetres): Millimetres => value
 
