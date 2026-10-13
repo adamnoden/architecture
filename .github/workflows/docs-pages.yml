@@ -24,14 +24,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v7
         with:
-          node-version: 24
-          package-manager-cache: false
+          node-version-file: .nvmrc
+          cache: npm
 
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Run repository tests
-        run: npm test
+      - name: Check repository health
+        run: npm run check
 
       - name: Build Working Edition PDF
         run: npm run publication:build
@@ -43,9 +43,6 @@ jobs:
         run: |
           test -s publication/dist/house-kernel.pdf
           test -s publication/dist/house-kernel-primer.pdf
-
-      - name: Build documentation
-        run: npm run docs:build
 
       - name: Assemble Pages artifact
         run: |
