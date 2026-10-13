@@ -1,5 +1,5 @@
-import { containsBox, isValidBox, overlapArea } from '../p0/geometry.js'
-import type { Box2D } from '../p0/model.js'
+import { containsBox, isValidBox, overlapArea } from '../core/geometry.js'
+import type { Box2D } from '../core/geometry.js'
 import type { DerivedBoundary, PlanSliceCompileResult } from '../plan-slice/model.js'
 import { mm2 } from '../units.js'
 import { deriveStructuralTopology } from './derive.js'

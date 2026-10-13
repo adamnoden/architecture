@@ -1,4 +1,4 @@
-import type { Box2D } from '../p0/model.js'
+import type { Box2D } from '../core/geometry.js'
 import { mm, mm2, square } from '../units.js'
 import type { Millimetres } from '../units.js'
 import type {
