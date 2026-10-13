@@ -1,4 +1,5 @@
 import { MODEL_COORDINATE_EPSILON_MM } from '../core/numeric.js'
+import { planBoundaryId } from '../plan-slice/model.js'
 import type { DerivedBoundary, PlanSliceCompileResult } from '../plan-slice/model.js'
 import { serviceCrossingId } from '../service-slice/model.js'
 import type { ServiceTopologyCompileResult, ServiceTopologyDiagnostic, ServiceTopologySource } from '../service-slice/model.js'
@@ -139,7 +140,7 @@ export const hardenReferenceHouseServiceTopology = (
     derived.bearingCrossings.push({
       id: `SVC-BEARING-${crossing.id}`,
       crossingId: serviceCrossingId(crossing.id),
-      planBoundaryId: boundary.id,
+      planBoundaryId: planBoundaryId(boundary.id),
       structuralLineId: structuralLineId(line.id),
       proof: 'EXTERNAL-STRUCTURAL-OPENING-AND-BEARING',
       provisional: crossing.provisional || line.provisional || boundary.provisional
