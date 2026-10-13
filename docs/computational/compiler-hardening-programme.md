@@ -1,7 +1,7 @@
 # Compiler Hardening programme
 
 **Programme:** CH — Compiler Hardening  
-**Status:** CH-06 PASS — CH-07 next  
+**Status:** CH-07 PASS — CH-08 next  
 **Baseline:** `0538be4a9124b107565717bb2f172e73ebfe86ba`  
 **Computational maturity:** M3  
 **Reference House capability sequence:** RH-C0 → RH-C5 complete; no RH-C6 authorised
@@ -416,6 +416,8 @@ Tool choices are not pre-authorised. Evaluate cost first. Prefer the fewest tool
 
 **Exit:** a clean checkout has one obvious path to “healthy repository,” and generated-state drift is easy to detect.
 
+**Result:** PASS. CH-07 establishes `npm run check` as the canonical local/PR/main repository-health contract; exposes `npm run artifacts:check` as a non-mutating reuse of the CH-00/CH-05 artefact and identity contracts; exposes `npm run artifacts:generate` as the explicit mutating RH-C1…RH-C4 path; and standardises all four canonical generators on overall gate `PASS` only. `.nvmrc` makes Node 24 the shared local/CI runtime authority, setup-node npm caching is enabled, superseded PR runs are cancelled, and `compiler/README.md` records the developer workflow and proof boundaries. No formatter, linter, task runner, package-manager wrapper or new dependency was justified or added. An unrelated navigation defect on the entry baseline was repaired separately in PR #73 before CH-07 was revalidated. Final exact-head PR validation passed in run `38476475729`; merged-main repository health, Working Edition PDF, Primer PDF, docs and Pages deployment passed in run `38476663832`. CH-00 through CH-06, CF-01 and RH-C2 through RH-C5 remain green, all six canonical SVG identities are unchanged, computational maturity remains M3 and no RH-C6 is created.
+
 ### CH-08 — distillation and deletion
 
 **Question:** Does every remaining abstraction earn its existence?
@@ -509,4 +511,4 @@ frozen before the hardening refactor unless a semantic change is explicit.
 
 ## Handoff
 
-CH-00 through CH-06 are complete. The next authorised gate is **CH-07 — toolchain and developer ergonomics**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract, CH-02 runtime dependency boundary, CH-03 single-pass Reference House compiler, CH-04 representation contracts, CH-05 semantic identity/permutation/lineage contracts and CH-06 deterministic law/property/metamorphic contracts. Do not use CH-07 to add Reference House technical capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
+CH-00 through CH-07 are complete. The next and final authorised gate is **CH-08 — distillation and deletion**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract, CH-02 runtime dependency boundary, CH-03 single-pass Reference House compiler, CH-04 representation contracts, CH-05 semantic identity/permutation/lineage contracts, CH-06 deterministic law/property/metamorphic contracts and CH-07 repository-health/artefact/generation/runtime contracts. Delete only machinery with no remaining runtime or evidence role, preserve historical executable evidence where it still earns its existence, perform the final proof-boundary/baseline audit, and explicitly reassess computational maturity. M4 is not pre-authorised. Do not add Reference House technical capability and do not create RH-C6.
