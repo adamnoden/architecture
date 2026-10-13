@@ -1,12 +1,12 @@
 # The proposition
 
-A house is completed once and then altered for decades. Services are renewed, fittings replaced, rooms repurposed, windows fail, pipes leak and new technologies arrive. The structure and major fabric may remain sound throughout, yet ordinary maintenance can repeatedly damage them because shorter-lived work was never given its own place to change.
+A house should seek **permanence without stasis**. It is completed once and then altered for decades. Services are renewed, fittings replaced, rooms repurposed, windows fail, pipes leak and new technologies arrive. The structure and major fabric may remain sound throughout, yet ordinary maintenance can repeatedly damage them because shorter-lived work was never given its own place to change.
 
-House Kernel starts from that later life rather than stopping at practical completion.
+Ovid’s House starts from that later life rather than stopping at practical completion.
 
 > **The permanent architecture should remain stable because change has been given deliberate places to occur.**
 
-This is not an argument for making the whole house demountable. It is an argument for deciding, deliberately, what should endure; what should be expected to change; and how the two should meet.
+This is **permanence through transformation**. It is not an argument for making the whole house demountable. It is an argument for deciding, deliberately, what should endure; what should be expected to change; and how the two should meet.
 
 ## The problem is coupling
 
@@ -22,7 +22,7 @@ The aim is therefore not maximum durability of every component. It is **independ
 
 Change is not automatically good. A stair, a well-proportioned room, a structural order, a principal axis or a composed facade may deserve to remain stable for generations. A house should not become a neutral technical chassis merely because future change is uncertain.
 
-House Kernel calls this **selective permanence**: make defining architectural relationships deliberately enduring, while concentrating adaptability in the systems and layers for which change is probable or consequential.
+Ovid’s House calls this **selective permanence**: make defining architectural relationships deliberately enduring, while concentrating adaptability in the systems and layers for which change is probable or consequential.
 
 The same test limits over-design. Spare capacity, additional voids, access zones and reversible assemblies all have immediate spatial, material, cost and carbon burdens. They are strongest where the future event is frequent, damaging, difficult to retrofit or cheap to accommodate in advance. This is **proportional serviceability**.
 
@@ -57,7 +57,7 @@ Not every condition needs all four layers. The point is to decide where replacem
 
 ## What the proposition does not require
 
-House Kernel does **not** require services to be exposed, every floor to lift, every wall to move or every component to be individually replaceable. Accessible does not mean visible. Concealment is legitimate when the concealing architecture remains coherent and the underlying relationship is understood.
+Ovid’s House does **not** require services to be exposed, every floor to lift, every wall to move or every component to be individually replaceable. Accessible does not mean visible. Concealment is legitimate when the concealing architecture remains coherent and the underlying relationship is understood.
 
 Nor is passive design treated as an ideology. Form, envelope, orientation, shading, mass, openings, drainage and gravity should do the first useful work; mechanical and electronic systems remain appropriate when health, performance or resilience require them.
 

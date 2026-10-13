@@ -135,6 +135,16 @@ The objective is not a novel house. It is a house in which novelty is concentrat
 
 This book is an attempt to give change its own architecture: not a house that changes continually, but a house able to remain itself because the things that must change have been given somewhere else to go.
 
+* * *
+
+The name **Ovid’s House** came late to this enquiry. Ovid’s *Metamorphoses* is a poem of altered forms, but the connection is not that Roman poetry contains a concealed theory of building. It does not. The useful affinity is narrower: transformation repeatedly makes identity a question. What has changed, what remains, and when has one thing become another?[5]
+
+Architecture usually meets that question without magic. A boiler is replaced. Wiring is renewed. A window reaches the end of its useful life. A room accepts another use. Roof coverings, controls and finishes disappear while structure and spatial order continue. Over a sufficiently long life, a house can become materially different from the thing first handed over while remaining, in ordinary architectural and cultural terms, the same house.
+
+Nor is transformation automatically good. In Ovid it is often violent, punitive or irreversible. In buildings too, change can destroy as easily as renew. The task is not to celebrate change. It is to decide what should endure, what should be allowed to change, and how necessary change can occur without needlessly consuming the rest.
+
+Permanence, then, need not mean stasis. A house may remain itself not by refusing transformation, but by making some transformations ordinary enough that what matters can persist through them. That is the sense in which this is **Ovid’s House**.
+
 ---
 
 ## Notes
@@ -146,3 +156,5 @@ This book is an attempt to give change its own architecture: not a house that ch
 [3] Smithsonian Magazine, “The Now-Ubiquitous Shipping Container Was an Idea Before Its Time”; International Organization for Standardization, ISO/TC 104, *Freight containers*. ISO records the committee's creation in 1961 and the publication of its first freight-container standard in 1968.
 
 [4] Victoria and Albert Museum, “The foundation of the V&A's Collections: the Great Exhibition of 1851”; Historic England's Crystal Palace records; Chatsworth, “Joseph and Sarah Paxton: an Introduction”. The V&A traces Paxton's exhibition design to his earlier glasshouse work and records the extensive use of standardised prefabricated parts; Historic England records the dismantling and reuse of components at Sydenham.
+
+[5] Llewelyn Morgan, *Ovid: A Very Short Introduction*, ch. 4, “Metamorphoses” (Oxford University Press, 2020); Alessandro Barchiesi, “Reading Metamorphosis in Ovid’s Metamorphoses”, in Alison Sharrock, Daniel Möller and Mats Malm (eds.), *Metamorphic Readings* (Oxford University Press, 2020); Marie Louise von Glinski, *Simile and Identity in Ovid’s Metamorphoses* (Cambridge University Press, 2012). The research boundary for this use is recorded in `docs/research/preface-precedents.md`.

@@ -7,13 +7,17 @@ next: false
 pageClass: house-kernel-landing-page
 ---
 
-# House Kernel
+# Ovid’s House
 
-A house spends almost all of its life after completion. It is not one thing ageing at one rate. Structure may stand for generations while services, equipment, seals and finishes are repaired, altered and replaced around it. When those different lifetimes are physically coupled, a change to a short-lived component can require longer-lived fabric to be opened, cut and remade.
+A house should seek **permanence without stasis**.
+
+Buildings endure in a world that does not. Materials weather, services fail, technologies pass and successive lives ask different things of the same fabric. Longevity therefore cannot depend on preventing change.
+
+**Ovid’s House explores permanence through transformation: an architecture designed to change without ceasing to be itself.** Its concern is practical rather than theatrical. A pipe should be replaceable without demolishing the wall around it; a window should be renewable without consuming sound finishes; predictable movement should be given a joint rather than allowed to become a crack.
 
 The useful model is a **domestic ecology**: a set of materials, systems and people connected through physical interfaces and exposed to different timescales of use, weathering, maintenance and change. A pipe and the wall around it become one architectural problem if the wall must be destroyed to reach the pipe; a window and its surrounding finishes become one if replacement consumes both. The relationships between parts, and the interfaces that govern them, are architectural material.
 
-**House Kernel** is a design-research programme for the house considered across that longer life. Its central concern is how architectural and technical systems meet: whether repair and replacement can remain local, foreseeable failures can be detected and contained, maintenance has enough working space, and one layer can change without needless destruction of another.
+Ovid’s House is a design-research programme for the house considered across that longer life. Its central concern is how architectural and technical systems meet: whether repair and replacement can remain local, foreseeable failures can be detected and contained, maintenance has enough working space, and one layer can change without needless destruction of another.
 
 The project does not propose a house in which everything comes apart. Capacity for change is concentrated where it earns its cost; elsewhere durability, simplicity and settled construction should win. Serviceability is one architectural demand among others. Any unusual proposition must still survive life safety, building physics, whole-life cost and carbon, ordinary workmanship and the quality of the rooms it produces.
 
@@ -88,7 +92,7 @@ Some questions can be tested physically, some require competent professional rev
 
 Several distinctions are deliberately protected.
 
-**House Kernel is not a historical style.** The current Reference House selects a Georgian-derived grammar, courtyard morphology and its own tectonic language. Those are project choices. They may provide evidence, but Georgian architecture, symmetry, masonry, pitched roofs or any particular decorative vocabulary are not doctrine.
+**Ovid’s House is not a historical or classical style.** The name describes a temporal problem, not an architectural language. The current Reference House selects a Georgian-derived grammar, courtyard morphology and its own tectonic language. Those are project choices. They may provide evidence, but Georgian architecture, symmetry, masonry, pitched roofs or any particular decorative vocabulary are not doctrine.
 
 **A pattern is not proof.** Patterns are reusable architectural responses with explicit trade-offs and evidence status. A pattern can fail, narrow in scope or be replaced without invalidating the principle that motivated it.
 
