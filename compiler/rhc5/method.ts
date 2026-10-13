@@ -1,4 +1,5 @@
 import type { CalculationCheckInput, CalculationMethod } from '../calculation-slice/model.js'
+import type { ReferenceHouseCompileResult } from '../reference-house/model.js'
 import type { RhC4CompileResult } from '../rhc4/compile.js'
 
 export const privateStairGeometryMethod = {
@@ -76,10 +77,10 @@ export const privateStairGeometryMethod = {
   ]
 } as const satisfies CalculationMethod
 
-export const createReferenceHousePrivateStairInput = (
-  c4: RhC4CompileResult
+export const createReferenceHousePrivateStairInputFromHouse = (
+  house: ReferenceHouseCompileResult
 ): CalculationCheckInput => {
-  const stair = c4.c3.c2.house.derived.stair
+  const stair = house.derived.stair
   return {
     id: 'RH-C5-REFERENCE-HOUSE-PRIVATE-STAIR',
     context: {
@@ -111,3 +112,7 @@ export const createReferenceHousePrivateStairInput = (
     }
   }
 }
+
+export const createReferenceHousePrivateStairInput = (
+  c4: RhC4CompileResult
+): CalculationCheckInput => createReferenceHousePrivateStairInputFromHouse(c4.c3.c2.house)
