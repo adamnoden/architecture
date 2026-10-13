@@ -217,9 +217,9 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-13',
     currentState:
-      'P0 passes 17/17 tests, PAT-XW-01 6/6, RH-C1 27/27, CF-01 7/7, RH-C2 17/17 and RH-C3 21/21. RH-C3 compiles the coordinated RH-06/RH-07/RH-10 service topology over the same plan/structure chain: 13 semantic networks, protected service geography, access obligations, selected/fallback crossings, the SV-01 reservation-to-structure relation and bearing-wall crossing obligations. MEP performance remains explicitly external.',
+      'P0 passes 17/17 tests, PAT-XW-01 6/6, RH-C1 27/27, CF-01 7/7, RH-C2 17/17, RH-C3 21/21 and RH-C4 29/29. RH-C4 compiles four independent weather/air/thermal/moisture systems across 16 critical outer/courtyard/roof/ground carriers, 18 opening obligations, seven selected service-crossing reinstatement obligations, directional RH-08 drainage and the canonical PEN-CD-01 courtyard-drain occurrence. Roof catchments derive from the same shell/courtyard geometry and close to the architectural plate. Building-physics performance remains explicitly external.',
     nextGate:
-      'Begin RH-C4 as the bounded envelope / boundary view: reproduce only the already-coordinated external/courtyard boundary and junction relationships without treating represented continuity as building-physics adequacy.',
+      'Begin RH-C5 as selected target calculations only: admit narrow, versioned checks whose inputs, method authority, supported domain and proof boundary are explicit; do not introduce a monolithic building-compliance result.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -236,7 +236,10 @@ export const workstreamStatuses = [
         'compiler/rhc2/drawing.test.ts',
         'compiler/rhc3/rhc3.test.ts',
         'compiler/rhc3/hardening.test.ts',
-        'compiler/rhc3/drawing.test.ts'
+        'compiler/rhc3/drawing.test.ts',
+        'compiler/rhc4/rhc4.test.ts',
+        'compiler/rhc4/occurrence.test.ts',
+        'compiler/rhc4/drawing.test.ts'
       ]
     }
   },
