@@ -1,4 +1,8 @@
+import { planBoundaryId } from '../plan-slice/model.js'
+import { structuralInterruptionId, structuralLineId } from '../structure-slice/model.js'
+import { serviceCrossingId } from './model.js'
 import type {
+  DerivedServiceCrossing,
   DerivedServiceNetwork,
   ServiceTopologyDerived,
   ServiceTopologySource
@@ -36,6 +40,25 @@ const connected = (
   return requiredNodeIds.every((id) => visited.has(id))
 }
 
+const deriveCrossing = (item: ServiceTopologySource['crossings'][number]): DerivedServiceCrossing => {
+  const { host, bearingLineId, ...rest } = item
+  return {
+    ...rest,
+    routeIds: [...item.routeIds].sort(),
+    obligations: [...item.obligations].sort(),
+    host:
+      host.kind === 'plan-boundary'
+        ? { kind: 'plan-boundary', boundaryId: planBoundaryId(host.boundaryId) }
+        : host.kind === 'structural-interruption'
+          ? {
+              kind: 'structural-interruption',
+              interruptionId: structuralInterruptionId(host.interruptionId)
+            }
+          : { ...host },
+    ...(bearingLineId ? { bearingLineId: structuralLineId(bearingLineId) } : {})
+  }
+}
+
 export const deriveServiceTopology = (
   source: ServiceTopologySource
 ): ServiceTopologyDerived => {
@@ -62,29 +85,26 @@ export const deriveServiceTopology = (
     connected: connected(network.requiredNodeIds, network.routeIds, source)
   })).sort((a, b) => a.id.localeCompare(b.id))
 
-  const crossings = source.crossings.map((item) => ({
-    ...item,
-    routeIds: [...item.routeIds].sort(),
-    obligations: [...item.obligations].sort(),
-    host: { ...item.host }
-  })).sort((a, b) => a.id.localeCompare(b.id))
+  const crossings = source.crossings
+    .map(deriveCrossing)
+    .sort((a, b) => a.id.localeCompare(b.id))
 
   const access = source.access.map((item) => ({
     ...item,
     viaSpaceIds: [...item.viaSpaceIds].sort()
   })).sort((a, b) => a.id.localeCompare(b.id))
 
-  const bearingCrossings = crossings
-    .filter((item) => item.selected && item.host.kind === 'plan-boundary' && item.bearingLineId)
-    .map((item) => ({
+  const bearingCrossings = crossings.flatMap((item) => {
+    if (!item.selected || item.host.kind !== 'plan-boundary' || !item.bearingLineId) return []
+    return [{
       id: `SVC-BEARING-${item.id}`,
-      crossingId: item.id,
-      planBoundaryId: item.host.kind === 'plan-boundary' ? item.host.boundaryId : '',
-      structuralLineId: item.bearingLineId!,
+      crossingId: serviceCrossingId(item.id),
+      planBoundaryId: item.host.boundaryId,
+      structuralLineId: item.bearingLineId,
       proof: 'EXTERNAL-STRUCTURAL-OPENING-AND-BEARING' as const,
       provisional: item.provisional
-    }))
-    .sort((a, b) => a.id.localeCompare(b.id))
+    }]
+  }).sort((a, b) => a.id.localeCompare(b.id))
 
   return {
     nodes,

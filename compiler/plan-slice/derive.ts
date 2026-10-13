@@ -1,6 +1,7 @@
 import type { Box2D } from '../core/geometry.js'
 import { mm, mm2, square } from '../units.js'
 import type { Millimetres } from '../units.js'
+import { planBoundaryId } from './model.js'
 import type {
   AreaResult,
   DerivedBoundary,
@@ -197,7 +198,7 @@ export const derivePlanSlice = (source: PlanSliceSource): PlanSliceDerived => {
       return {
         id: opening.id,
         levelId: opening.levelId,
-        hostBoundaryId: opening.hostBoundaryId,
+        hostBoundaryId: planBoundaryId(host.id),
         spaceIds: [...opening.spaceIds],
         role: opening.role,
         placementKind,

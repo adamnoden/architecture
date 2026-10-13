@@ -4,6 +4,7 @@ import { runCalculationCheck } from '../calculation-slice/compile.js'
 import type { CalculationCheckResult } from '../calculation-slice/model.js'
 import { compilePlanSlice } from '../plan-slice/compile.js'
 import type { PlanSliceCompileResult } from '../plan-slice/model.js'
+import { createReferenceHouseStructuralSource } from '../rhc2/fixture.js'
 import { rhC2ProofBoundary } from '../rhc2/proof-boundary.js'
 import { applyReferenceHouseServiceCoordinationAuthority } from '../rhc3/authority.js'
 import { createReferenceHouseServiceSource } from '../rhc3/fixture.js'
@@ -35,35 +36,34 @@ import type {
   RhDiagnostic
 } from './model.js'
 import { adaptReferenceHousePlanSource } from './plan-adapter.js'
-import { createReferenceHouseStructuralSource } from '../rhc2/fixture.js'
 
 export interface ReferenceHouseSystemCompileResult {
-  status: RhCompileStatus
-  house: ReferenceHouseCompileResult
-  plan: PlanSliceCompileResult
-  structure: StructuralTopologyCompileResult
-  services: ServiceTopologyCompileResult
-  boundary: BoundaryTopologyCompileResult
-  calculations: {
-    privateStairGeometry: CalculationCheckResult
+  readonly status: RhCompileStatus
+  readonly house: ReferenceHouseCompileResult
+  readonly plan: PlanSliceCompileResult
+  readonly structure: StructuralTopologyCompileResult
+  readonly services: ServiceTopologyCompileResult
+  readonly boundary: BoundaryTopologyCompileResult
+  readonly calculations: {
+    readonly privateStairGeometry: CalculationCheckResult
   }
-  coordination: {
-    boundary: RhC4Coordination
+  readonly coordination: {
+    readonly boundary: RhC4Coordination
   }
-  floorZoneDepth: Millimetres
-  diagnostics: {
-    house: RhDiagnostic[]
-    plan: PlanSliceCompileResult['diagnostics']
-    structure: StructuralTopologyCompileResult['diagnostics']
-    services: ServiceTopologyCompileResult['diagnostics']
-    boundary: BoundaryTopologyCompileResult['diagnostics']
-    privateStairGeometry: CalculationCheckResult['diagnostics']
+  readonly floorZoneDepth: Millimetres
+  readonly diagnostics: {
+    readonly house: RhDiagnostic[]
+    readonly plan: PlanSliceCompileResult['diagnostics']
+    readonly structure: StructuralTopologyCompileResult['diagnostics']
+    readonly services: ServiceTopologyCompileResult['diagnostics']
+    readonly boundary: BoundaryTopologyCompileResult['diagnostics']
+    readonly privateStairGeometry: CalculationCheckResult['diagnostics']
   }
-  proof: {
-    structure: typeof rhC2ProofBoundary
-    services: typeof rhC3ProofBoundary
-    boundary: typeof rhC4ProofBoundary
-    calculations: typeof rhC5ProofBoundary
+  readonly proof: {
+    readonly structure: typeof rhC2ProofBoundary
+    readonly services: typeof rhC3ProofBoundary
+    readonly boundary: typeof rhC4ProofBoundary
+    readonly calculations: typeof rhC5ProofBoundary
   }
 }
 

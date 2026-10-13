@@ -1,6 +1,12 @@
+import type { PlanBoundaryId } from '../plan-slice/model.js'
+import type { StructuralInterruptionId, StructuralLineId } from '../structure-slice/model.js'
 import type { Millimetres } from '../units.js'
 
 export type ServiceTopologyStatus = 'PASS' | 'REVIEW' | 'FAIL'
+
+declare const serviceCrossingIdBrand: unique symbol
+export type ServiceCrossingId = string & { readonly [serviceCrossingIdBrand]: 'ServiceCrossingId' }
+export const serviceCrossingId = (value: string): ServiceCrossingId => value as ServiceCrossingId
 
 export type ServiceClass =
   | 'utility-water'
@@ -125,11 +131,21 @@ export interface DerivedServiceNetwork {
   connected: boolean
 }
 
+export type DerivedServiceCrossingHost =
+  | { kind: 'plan-boundary'; boundaryId: PlanBoundaryId }
+  | { kind: 'structural-interruption'; interruptionId: StructuralInterruptionId }
+  | { kind: 'external-handoff'; description: string }
+
+export type DerivedServiceCrossing = Omit<ServiceCrossingSource, 'host' | 'bearingLineId'> & {
+  host: DerivedServiceCrossingHost
+  bearingLineId?: StructuralLineId
+}
+
 export interface DerivedServiceBearingCrossingObligation {
   id: string
-  crossingId: string
-  planBoundaryId: string
-  structuralLineId: string
+  crossingId: ServiceCrossingId
+  planBoundaryId: PlanBoundaryId
+  structuralLineId: StructuralLineId
   proof: 'EXTERNAL-STRUCTURAL-OPENING-AND-BEARING'
   provisional: boolean
 }
@@ -138,7 +154,7 @@ export interface ServiceTopologyDerived {
   nodes: ServiceNodeSource[]
   routes: ServiceRouteSource[]
   networks: DerivedServiceNetwork[]
-  crossings: ServiceCrossingSource[]
+  crossings: DerivedServiceCrossing[]
   access: ServiceAccessSource[]
   bearingCrossings: DerivedServiceBearingCrossingObligation[]
   selectedCrossingIds: string[]

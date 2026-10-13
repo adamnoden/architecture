@@ -1,7 +1,13 @@
 import { areAdjacent, containsBox, isValidBox, overlapArea } from '../core/geometry.js'
 import type { Box2D } from '../core/geometry.js'
-import { mm2 } from '../units.js'
+import {
+  MODEL_AREA_EPSILON_MM2,
+  MODEL_COORDINATE_EPSILON_MM
+} from '../core/numeric.js'
+import { mm, mm2 } from '../units.js'
+import type { Millimetres } from '../units.js'
 import { derivePlanSlice } from './derive.js'
+import { planBoundaryId } from './model.js'
 import type {
   DerivedBoundary,
   DerivedOpening,
@@ -12,8 +18,6 @@ import type {
   PlanSliceSource,
   PlanSliceStatus
 } from './model.js'
-
-const EPSILON = 1e-6
 
 const diagnostic = (
   code: string,
@@ -28,7 +32,7 @@ const duplicates = (ids: string[]): string[] =>
 const regionAdjacent = (a: DerivedSpace, b: DerivedSpace): boolean =>
   a.boxes.some((aBox) => b.boxes.some((bBox) => areAdjacent(aBox, bBox)))
 
-const openingMaxWidth = (opening: DerivedOpening): number | undefined => {
+const openingMaxWidth = (opening: DerivedOpening): Millimetres | undefined => {
   if (opening.width.kind === 'approximate') return opening.width.value
   if (opening.width.kind === 'range') return opening.width.max
   return undefined
@@ -36,29 +40,48 @@ const openingMaxWidth = (opening: DerivedOpening): number | undefined => {
 
 const openingFitsHost = (opening: DerivedOpening, host: DerivedBoundary): boolean => {
   if (opening.centre === undefined) return opening.placementKind === 'qualitative-only'
-  const halfWidth = (openingMaxWidth(opening) ?? 0) / 2
-  const min =
-    host.orientation === 'horizontal' ? Math.min(host.x1, host.x2) : Math.min(host.y1, host.y2)
-  const max =
-    host.orientation === 'horizontal' ? Math.max(host.x1, host.x2) : Math.max(host.y1, host.y2)
-  return opening.centre - halfWidth >= min - EPSILON && opening.centre + halfWidth <= max + EPSILON
+  const halfWidth = mm((openingMaxWidth(opening) ?? mm(0)) / 2)
+  const min = mm(
+    host.orientation === 'horizontal'
+      ? Math.min(host.x1, host.x2)
+      : Math.min(host.y1, host.y2)
+  )
+  const max = mm(
+    host.orientation === 'horizontal'
+      ? Math.max(host.x1, host.x2)
+      : Math.max(host.y1, host.y2)
+  )
+  return (
+    opening.centre - halfWidth >= min - MODEL_COORDINATE_EPSILON_MM &&
+    opening.centre + halfWidth <= max + MODEL_COORDINATE_EPSILON_MM
+  )
 }
 
 const spaceTouchesHostAtCentre = (
   space: DerivedSpace,
   host: DerivedBoundary,
-  centre: number
+  centre: Millimetres
 ): boolean =>
   space.boxes.some((box) => {
     if (host.orientation === 'horizontal') {
       const onEdge =
-        Math.abs(box.y - host.y1) <= EPSILON || Math.abs(box.y + box.height - host.y1) <= EPSILON
-      return onEdge && centre >= box.x - EPSILON && centre <= box.x + box.width + EPSILON
+        Math.abs(box.y - host.y1) <= MODEL_COORDINATE_EPSILON_MM ||
+        Math.abs(box.y + box.height - host.y1) <= MODEL_COORDINATE_EPSILON_MM
+      return (
+        onEdge &&
+        centre >= box.x - MODEL_COORDINATE_EPSILON_MM &&
+        centre <= box.x + box.width + MODEL_COORDINATE_EPSILON_MM
+      )
     }
 
     const onEdge =
-      Math.abs(box.x - host.x1) <= EPSILON || Math.abs(box.x + box.width - host.x1) <= EPSILON
-    return onEdge && centre >= box.y - EPSILON && centre <= box.y + box.height + EPSILON
+      Math.abs(box.x - host.x1) <= MODEL_COORDINATE_EPSILON_MM ||
+      Math.abs(box.x + box.width - host.x1) <= MODEL_COORDINATE_EPSILON_MM
+    return (
+      onEdge &&
+      centre >= box.y - MODEL_COORDINATE_EPSILON_MM &&
+      centre <= box.y + box.height + MODEL_COORDINATE_EPSILON_MM
+    )
   })
 
 const sourceDiagnostics = (source: PlanSliceSource): PlanSliceDiagnostic[] => {
@@ -241,7 +264,7 @@ const derivedDiagnostics = (
         (sum, aBox) => sum + b.boxes.reduce((inner, bBox) => inner + overlapArea(aBox, bBox), 0),
         0
       )
-      if (overlap <= EPSILON) continue
+      if (overlap <= MODEL_AREA_EPSILON_MM2) continue
       diagnostics.push(
         diagnostic(
           'VOID_OVERLAP',
@@ -272,7 +295,7 @@ const derivedDiagnostics = (
         )
       }
       for (const voidRegion of derived.voids.filter((item) => item.levelId === space.levelId)) {
-        if (!voidRegion.boxes.some((voidBox) => overlapArea(box, voidBox) > EPSILON)) continue
+        if (!voidRegion.boxes.some((voidBox) => overlapArea(box, voidBox) > MODEL_AREA_EPSILON_MM2)) continue
         diagnostics.push(
           diagnostic(
             'SPACE_OCCUPIES_VOID',
@@ -295,7 +318,7 @@ const derivedDiagnostics = (
           (sum, aBox) => sum + b.boxes.reduce((inner, bBox) => inner + overlapArea(aBox, bBox), 0),
           0
         )
-        if (overlap <= EPSILON) continue
+        if (overlap <= MODEL_AREA_EPSILON_MM2) continue
         diagnostics.push(
           diagnostic(
             'SPACE_OVERLAP',
@@ -309,7 +332,7 @@ const derivedDiagnostics = (
 
     const totalArea = mm2(spaces.reduce((sum, space) => sum + space.area, 0))
     const plate = derived.plateAreas.find((item) => item.levelId === level.id)
-    if (plate && Math.abs(totalArea - plate.area) <= EPSILON) continue
+    if (plate && Math.abs(totalArea - plate.area) <= MODEL_AREA_EPSILON_MM2) continue
     diagnostics.push(
       diagnostic(
         'PLATE_CLOSURE_MISMATCH',
@@ -412,7 +435,7 @@ const derivedDiagnostics = (
   }
 
   for (const relation of source.qualitativeOpeningRelationships) {
-    const host = boundaryById.get(relation.hostBoundaryId)
+    const host = boundaryById.get(planBoundaryId(relation.hostBoundaryId))
     if (!host) {
       diagnostics.push(
         diagnostic(

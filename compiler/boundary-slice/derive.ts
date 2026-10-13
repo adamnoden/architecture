@@ -1,3 +1,5 @@
+import { planBoundaryId } from '../plan-slice/model.js'
+import { serviceCrossingId } from '../service-slice/model.js'
 import type {
   BoundaryRole,
   BoundaryTopologyDerived,
@@ -82,7 +84,7 @@ export const deriveBoundaryTopology = (
         id: `BND-OPEN-${openingRefId}`,
         openingRefId,
         openingRefKind: numeric ? 'numeric' as const : 'qualitative' as const,
-        hostPlanBoundaryId: transition.hostPlanBoundaryId!,
+        hostPlanBoundaryId: planBoundaryId(transition.hostPlanBoundaryId!),
         roles: rolesFor(transition.carrierIds, source),
         obligations: [...transition.obligations],
         provisional: transition.provisional
@@ -94,8 +96,10 @@ export const deriveBoundaryTopology = (
     .filter((transition): transition is typeof transition & { serviceCrossingId: string } => Boolean(transition.serviceCrossingId))
     .map((transition) => ({
       id: `BND-SVC-${transition.serviceCrossingId}`,
-      serviceCrossingId: transition.serviceCrossingId,
-      ...(transition.hostPlanBoundaryId ? { hostPlanBoundaryId: transition.hostPlanBoundaryId } : {}),
+      serviceCrossingId: serviceCrossingId(transition.serviceCrossingId),
+      ...(transition.hostPlanBoundaryId
+        ? { hostPlanBoundaryId: planBoundaryId(transition.hostPlanBoundaryId) }
+        : {}),
       roles: rolesFor(transition.carrierIds, source),
       obligations: [...transition.obligations],
       provisional: transition.provisional

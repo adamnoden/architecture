@@ -1,3 +1,5 @@
+import { BOX_GEOMETRY_EPSILON } from './numeric.js'
+
 export interface Box2D {
   kind: 'box2d'
   x: number
@@ -5,8 +7,6 @@ export interface Box2D {
   width: number
   height: number
 }
-
-const EPSILON = 1e-9
 
 export const isValidBox = (box: Box2D): boolean =>
   Number.isFinite(box.x) &&
@@ -17,10 +17,10 @@ export const isValidBox = (box: Box2D): boolean =>
   box.height > 0
 
 export const containsBox = (container: Box2D, child: Box2D): boolean =>
-  child.x >= container.x - EPSILON &&
-  child.y >= container.y - EPSILON &&
-  child.x + child.width <= container.x + container.width + EPSILON &&
-  child.y + child.height <= container.y + container.height + EPSILON
+  child.x >= container.x - BOX_GEOMETRY_EPSILON &&
+  child.y >= container.y - BOX_GEOMETRY_EPSILON &&
+  child.x + child.width <= container.x + container.width + BOX_GEOMETRY_EPSILON &&
+  child.y + child.height <= container.y + container.height + BOX_GEOMETRY_EPSILON
 
 export const overlapArea = (a: Box2D, b: Box2D): number => {
   const xOverlap = Math.max(
@@ -35,7 +35,7 @@ export const overlapArea = (a: Box2D, b: Box2D): number => {
 }
 
 const intervalsOverlap = (a0: number, a1: number, b0: number, b1: number): boolean =>
-  Math.min(a1, b1) - Math.max(a0, b0) > EPSILON
+  Math.min(a1, b1) - Math.max(a0, b0) > BOX_GEOMETRY_EPSILON
 
 export const areAdjacent = (a: Box2D, b: Box2D): boolean => {
   const aRight = a.x + a.width
@@ -44,11 +44,13 @@ export const areAdjacent = (a: Box2D, b: Box2D): boolean => {
   const bTop = b.y + b.height
 
   const verticalEdgeTouch =
-    (Math.abs(aRight - b.x) <= EPSILON || Math.abs(bRight - a.x) <= EPSILON) &&
+    (Math.abs(aRight - b.x) <= BOX_GEOMETRY_EPSILON ||
+      Math.abs(bRight - a.x) <= BOX_GEOMETRY_EPSILON) &&
     intervalsOverlap(a.y, aTop, b.y, bTop)
 
   const horizontalEdgeTouch =
-    (Math.abs(aTop - b.y) <= EPSILON || Math.abs(bTop - a.y) <= EPSILON) &&
+    (Math.abs(aTop - b.y) <= BOX_GEOMETRY_EPSILON ||
+      Math.abs(bTop - a.y) <= BOX_GEOMETRY_EPSILON) &&
     intervalsOverlap(a.x, aRight, b.x, bRight)
 
   return verticalEdgeTouch || horizontalEdgeTouch
@@ -56,10 +58,10 @@ export const areAdjacent = (a: Box2D, b: Box2D): boolean => {
 
 export const boxesIntersect = (a: Box2D, b: Box2D): boolean => {
   const separated =
-    a.x + a.width < b.x - EPSILON ||
-    b.x + b.width < a.x - EPSILON ||
-    a.y + a.height < b.y - EPSILON ||
-    b.y + b.height < a.y - EPSILON
+    a.x + a.width < b.x - BOX_GEOMETRY_EPSILON ||
+    b.x + b.width < a.x - BOX_GEOMETRY_EPSILON ||
+    a.y + a.height < b.y - BOX_GEOMETRY_EPSILON ||
+    b.y + b.height < a.y - BOX_GEOMETRY_EPSILON
 
   return !separated
 }

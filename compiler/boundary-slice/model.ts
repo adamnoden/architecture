@@ -1,3 +1,6 @@
+import type { PlanBoundaryId } from '../plan-slice/model.js'
+import type { ServiceCrossingId } from '../service-slice/model.js'
+
 export type BoundaryTopologyStatus = 'PASS' | 'REVIEW' | 'FAIL'
 
 export type BoundaryRole = 'weather' | 'air' | 'thermal' | 'moisture'
@@ -72,7 +75,7 @@ export interface DerivedBoundaryOpeningObligation {
   id: string
   openingRefId: string
   openingRefKind: 'numeric' | 'qualitative'
-  hostPlanBoundaryId: string
+  hostPlanBoundaryId: PlanBoundaryId
   roles: BoundaryRole[]
   obligations: string[]
   provisional: boolean
@@ -80,8 +83,8 @@ export interface DerivedBoundaryOpeningObligation {
 
 export interface DerivedBoundaryServiceObligation {
   id: string
-  serviceCrossingId: string
-  hostPlanBoundaryId?: string
+  serviceCrossingId: ServiceCrossingId
+  hostPlanBoundaryId?: PlanBoundaryId
   roles: BoundaryRole[]
   obligations: string[]
   provisional: boolean

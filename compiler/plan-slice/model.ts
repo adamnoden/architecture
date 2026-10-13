@@ -7,6 +7,10 @@ export type PlanBoundaryKind = 'outer' | 'courtyard' | 'void' | 'internal-planni
 export type AxisOrientation = 'vertical' | 'horizontal'
 export type PlanLineId = string
 
+declare const planBoundaryIdBrand: unique symbol
+export type PlanBoundaryId = string & { readonly [planBoundaryIdBrand]: 'PlanBoundaryId' }
+export const planBoundaryId = (value: string): PlanBoundaryId => value as PlanBoundaryId
+
 export interface ApproximateDimension {
   kind: 'approximate'
   value: Millimetres
@@ -174,7 +178,7 @@ export interface AreaResult {
 export interface DerivedOpening {
   id: string
   levelId: string
-  hostBoundaryId: string
+  hostBoundaryId: PlanBoundaryId
   spaceIds: string[]
   role: OpeningSource['role']
   placementKind: string
