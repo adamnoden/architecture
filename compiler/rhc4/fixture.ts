@@ -149,7 +149,7 @@ const openingTransitions = (
 const serviceTransitions = (
   plan: PlanSliceCompileResult,
   services: ServiceTopologyCompileResult
-): BoundaryTransitionSource[] => services.derived.crossings.flatMap((crossing) => {
+): BoundaryTransitionSource[] => services.derived.crossings.flatMap<BoundaryTransitionSource>((crossing): BoundaryTransitionSource[] => {
   if (!crossing.selected) return []
 
   if (crossing.host.kind === 'plan-boundary') {
@@ -157,7 +157,7 @@ const serviceTransitions = (
     if (!family) return []
     return [{
       id: `INT-SVC-${crossing.id}`,
-      kind: 'service-penetration' as const,
+      kind: 'service-penetration',
       carrierIds: roles.map((role) => carrierId(role, family)),
       hostPlanBoundaryId: crossing.host.boundaryId,
       serviceCrossingId: crossing.id,
@@ -175,7 +175,7 @@ const serviceTransitions = (
   if (crossing.id === 'PEN-SV-RF-01' || crossing.id === 'PEN-PV-01') {
     return [{
       id: `INT-ROOF-SVC-${crossing.id}`,
-      kind: 'roof-penetration' as const,
+      kind: 'roof-penetration',
       carrierIds: roles.map((role) => carrierId(role, 'ROOF')),
       serviceCrossingId: crossing.id,
       obligations: [
@@ -191,7 +191,7 @@ const serviceTransitions = (
   if (crossing.id === 'PEN-FD-01') {
     return [{
       id: `INT-GROUND-SVC-${crossing.id}`,
-      kind: 'service-penetration' as const,
+      kind: 'service-penetration',
       carrierIds: roles.map((role) => carrierId(role, 'GROUND')),
       serviceCrossingId: crossing.id,
       obligations: [
