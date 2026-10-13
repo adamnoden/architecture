@@ -217,9 +217,9 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-13',
     currentState:
-      'The bounded Reference House executable sequence remains closed PASS through RH-C5. CH-00 froze a machine-checkable semantic and artefact baseline; CH-01 established deterministic fail-closed prerequisites; CH-02 machine-enforces the generic runtime boundary; CH-03 compiles the canonical Reference House once into coherent direct domain state; and CH-04 now selectively hardens validated cross-domain IDs, unit retention, numeric tolerance classes and immutability/readonly boundaries without changing frozen semantics. These hardening gates improve software confidence only and do not expand the Reference House proof boundary or technical authority.',
+      'The bounded Reference House executable sequence remains closed PASS through RH-C5. CH-00 froze a machine-checkable semantic and artefact baseline; CH-01 established deterministic fail-closed prerequisites; CH-02 machine-enforces the generic runtime boundary; CH-03 compiles the canonical Reference House once into coherent direct domain state; CH-04 selectively hardens validated cross-domain IDs, unit retention, numeric tolerance classes and immutability/readonly boundaries; and CH-05 now adds stable semantic source/method/result/compile identity under schema HK-RH-COMPILE-1, focused permutation-invariance evidence, inspectable manifests, lightweight lineage and linkage to frozen artefact identity without changing frozen semantics. These hardening gates improve software confidence only and do not expand the Reference House proof boundary or technical authority.',
     nextGate:
-      'CH-05: establish determinism, source/method identity and lightweight provenance over the existing canonical compiler while preserving all frozen semantics. There is no standing RH-C6; new computational capability still requires a concrete proof family justified by external review, physical validation, a real project or newly authoritative inputs.',
+      'CH-06: strengthen the kinds of tests with law/property/metamorphic evidence over selected critical kernels while preserving the complete CH-00 through CH-05 contracts. There is no standing RH-C6; new computational capability still requires a concrete proof family justified by external review, physical validation, a real project or newly authoritative inputs.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -237,6 +237,10 @@ export const workstreamStatuses = [
         'compiler/ch03/ch03.test.ts',
         'compiler/ch04/README.md',
         'compiler/ch04/ch04.test.ts',
+        'compiler/ch05/README.md',
+        'compiler/ch05/ch05.test.ts',
+        'compiler/core/identity.ts',
+        'compiler/reference-house/identity.ts',
         'compiler/reference-house/system-compile.ts',
         'compiler/reference-house/reference-house.test.ts',
         'compiler/reference-house/drawings.test.ts',
