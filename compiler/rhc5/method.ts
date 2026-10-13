@@ -1,10 +1,10 @@
-import type { TargetCheckInput, TargetMethod } from '../target-slice/model.js'
+import type { CalculationCheckInput, CalculationMethod } from '../calculation-slice/model.js'
 import type { RhC4CompileResult } from '../rhc4/compile.js'
 
 export const privateStairGeometryMethod = {
   id: 'ADK-2013-PRIVATE-STAIR-GEOMETRY',
   version: '1.0.0',
-  title: 'Approved Document K private-stair geometry target',
+  title: 'Approved Document K private-stair geometry calculation method',
   authority: {
     kind: 'statutory-guidance',
     jurisdiction: 'England',
@@ -13,7 +13,7 @@ export const privateStairGeometryMethod = {
     paragraph: '1.3',
     table: 'Table 1.1',
     sourceUrl: 'https://www.gov.uk/government/publications/protection-from-falling-collision-and-impact-approved-document-k',
-    verifiedCurrentOn: '2026-10-13'
+    sourceCheckedOn: '2026-10-13'
   },
   applicability: {
     jurisdiction: 'England',
@@ -62,10 +62,11 @@ export const privateStairGeometryMethod = {
     }
   ],
   claim:
-    'The represented private-stair rise, going, pitch and 2R+G values align with the selected Approved Document K numeric guidance family.',
+    'The represented private-stair rise, going, pitch and 2R+G values correspond to the selected Approved Document K numeric guidance values for this research fixture.',
   nonClaims: [
     'Building Regulations compliance',
     'Requirement K1 compliance as a whole',
+    'release-grade compiler-target applicability or transitional basis',
     'headroom adequacy',
     'landing geometry adequacy',
     'handrail or guarding adequacy',
@@ -73,11 +74,11 @@ export const privateStairGeometryMethod = {
     'accessibility compliance',
     'fire or means-of-escape compliance'
   ]
-} as const satisfies TargetMethod
+} as const satisfies CalculationMethod
 
 export const createReferenceHousePrivateStairInput = (
   c4: RhC4CompileResult
-): TargetCheckInput => {
+): CalculationCheckInput => {
   const stair = c4.c3.c2.house.derived.stair
   return {
     id: 'RH-C5-REFERENCE-HOUSE-PRIVATE-STAIR',
