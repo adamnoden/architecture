@@ -27,6 +27,10 @@ The repository already had most of the necessary machinery, but the developer co
 
 The correct CH-07 move is therefore to expose and align existing controls rather than build a new toolchain.
 
+### Baseline reconciliation
+
+The first CH-07 PR validation reached the new health command but exposed an unrelated defect already present on its starting `main`: the newly added publication credibility/release programme was substantive published Markdown but absent from curated navigation. That prerequisite was repaired separately in PR #73 and merged as `294ed4f6ec3c28a2be248feaaa4486d7b2924d06`. It is not part of the CH-07 diff or claim.
+
 ## Implemented contract
 
 ### One health command
