@@ -152,6 +152,40 @@ export const hardenReferenceHouseBoundaryTopology = (
     ))
   }
 
+  const courtyardCrossing = result.derived.occurrenceObligations.find(
+    (item) => item.projectOccurrenceId === 'PEN-CD-01'
+  )
+  if (!courtyardCrossing) {
+    extra.push(diagnostic(
+      'RH_COURTYARD_DRAINAGE_CROSSING_MISSING',
+      'FAIL',
+      ['PEN-CD-01'],
+      'RH-C4 must retain PEN-CD-01 as the registered courtyard primary-drain and emergency-overflow crossing occurrence.'
+    ))
+  } else {
+    const routes = [...courtyardCrossing.drainageRouteIds].sort()
+    if (!sameRoles(courtyardCrossing.roles)) {
+      extra.push(diagnostic(
+        'RH_COURTYARD_DRAINAGE_CROSSING_ROLE_GAP',
+        'FAIL',
+        [courtyardCrossing.id, 'PEN-CD-01', ...courtyardCrossing.roles],
+        'PEN-CD-01 does not carry the full RH-C4 boundary reinstatement set.'
+      ))
+    }
+    if (
+      routes.length !== 2 ||
+      routes[0] !== 'RW-COURT-EMERGENCY' ||
+      routes[1] !== 'RW-COURT-PRIMARY'
+    ) {
+      extra.push(diagnostic(
+        'RH_COURTYARD_DRAINAGE_CROSSING_ROUTE_MISMATCH',
+        'FAIL',
+        ['PEN-CD-01', ...routes],
+        'PEN-CD-01 must explicitly own both the courtyard primary route and the independent emergency overflow route.'
+      ))
+    }
+  }
+
   const roofRoutes = result.derived.drainageRoutes.filter((item) => item.kind === 'roof-field')
   if (roofRoutes.length !== 4) {
     extra.push(diagnostic(
