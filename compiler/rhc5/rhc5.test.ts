@@ -5,7 +5,7 @@ import { cloneReferenceHouseSource, createReferenceHouseSource } from '../refere
 import { mm } from '../units.js'
 import { compileReferenceHouseBoundaryView } from '../rhc4/compile.js'
 import { runCalculationCheck } from '../calculation-slice/compile.js'
-import type { CalculationCheckInput } from '../calculation-slice/model.js'
+import type { CalculationCheckInput, CalculationMethod } from '../calculation-slice/model.js'
 import { compileReferenceHouseTargetCalculations } from './compile.js'
 import {
   createReferenceHousePrivateStairInput,
@@ -138,6 +138,44 @@ describe('RH-C5 selected target calculations', () => {
     assert.equal(result.status, 'UNSUPPORTED')
     assert.equal(criterion(result, 'ADK-K1-PRIVATE-PITCH').status, 'UNSUPPORTED')
     assert.ok(result.diagnostics.some((item) => item.code === 'CALCULATION_METHOD_INPUT_UNSUPPORTED'))
+  })
+
+  test('lets incomplete method evidence dominate a simultaneous failing criterion', () => {
+    const input = withValue(canonicalInput(), 'rise', 149)
+    const { pitch: _pitch, ...values } = input.values
+    const result = runCalculationCheck(privateStairGeometryMethod, { ...input, values })
+
+    assert.equal(criterion(result, 'ADK-K1-PRIVATE-RISE').status, 'FAIL')
+    assert.equal(criterion(result, 'ADK-K1-PRIVATE-PITCH').status, 'UNSUPPORTED')
+    assert.equal(result.status, 'UNSUPPORTED')
+  })
+
+  test('rejects non-finite numeric inputs as unsupported evidence rather than arithmetic failure', () => {
+    const result = runCalculationCheck(
+      privateStairGeometryMethod,
+      withValue(canonicalInput(), 'pitch', Number.NaN)
+    )
+
+    assert.equal(criterion(result, 'ADK-K1-PRIVATE-PITCH').status, 'UNSUPPORTED')
+    assert.equal(result.status, 'UNSUPPORTED')
+  })
+
+  test('rejects malformed encoded methods instead of evaluating them', () => {
+    const malformed: CalculationMethod = {
+      ...privateStairGeometryMethod,
+      criteria: [
+        {
+          ...privateStairGeometryMethod.criteria[0],
+          min: 221,
+          max: 220
+        }
+      ]
+    }
+    const result = runCalculationCheck(malformed, canonicalInput())
+
+    assert.equal(result.status, 'UNSUPPORTED')
+    assert.deepEqual(result.criteria, [])
+    assert.ok(result.diagnostics.some((item) => item.code === 'CALCULATION_METHOD_INVALID'))
   })
 
   test('turns a source going mutation into a C5 failure while upstream topology remains coherent', () => {
