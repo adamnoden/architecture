@@ -27,7 +27,8 @@
     "test:rh-c2": "node --import tsx --test compiler/rhc2/*.test.ts",
     "rh-c3:generate": "tsx compiler/rhc3/generate.ts",
     "test:rh-c3": "node --import tsx --test compiler/rhc3/*.test.ts",
-    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:rh-c2 && npm run test:rh-c3 && npm run publication:validate"
+    "test:rh-c4": "node --import tsx --test compiler/rhc4/*.test.ts",
+    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:rh-c2 && npm run test:rh-c3 && npm run test:rh-c4 && npm run publication:validate"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "11.17.0",
