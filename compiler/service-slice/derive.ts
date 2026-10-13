@@ -40,22 +40,24 @@ const connected = (
   return requiredNodeIds.every((id) => visited.has(id))
 }
 
-const deriveCrossing = (item: ServiceTopologySource['crossings'][number]): DerivedServiceCrossing => ({
-  ...item,
-  id: serviceCrossingId(item.id),
-  routeIds: [...item.routeIds].sort(),
-  obligations: [...item.obligations].sort(),
-  host:
-    item.host.kind === 'plan-boundary'
-      ? { kind: 'plan-boundary', boundaryId: planBoundaryId(item.host.boundaryId) }
-      : item.host.kind === 'structural-interruption'
-        ? {
-            kind: 'structural-interruption',
-            interruptionId: structuralInterruptionId(item.host.interruptionId)
-          }
-        : { ...item.host },
-  ...(item.bearingLineId ? { bearingLineId: structuralLineId(item.bearingLineId) } : {})
-})
+const deriveCrossing = (item: ServiceTopologySource['crossings'][number]): DerivedServiceCrossing => {
+  const { host, bearingLineId, ...rest } = item
+  return {
+    ...rest,
+    routeIds: [...item.routeIds].sort(),
+    obligations: [...item.obligations].sort(),
+    host:
+      host.kind === 'plan-boundary'
+        ? { kind: 'plan-boundary', boundaryId: planBoundaryId(host.boundaryId) }
+        : host.kind === 'structural-interruption'
+          ? {
+              kind: 'structural-interruption',
+              interruptionId: structuralInterruptionId(host.interruptionId)
+            }
+          : { ...host },
+    ...(bearingLineId ? { bearingLineId: structuralLineId(bearingLineId) } : {})
+  }
+}
 
 export const deriveServiceTopology = (
   source: ServiceTopologySource
@@ -96,7 +98,7 @@ export const deriveServiceTopology = (
     if (!item.selected || item.host.kind !== 'plan-boundary' || !item.bearingLineId) return []
     return [{
       id: `SVC-BEARING-${item.id}`,
-      crossingId: item.id,
+      crossingId: serviceCrossingId(item.id),
       planBoundaryId: item.host.boundaryId,
       structuralLineId: item.bearingLineId,
       proof: 'EXTERNAL-STRUCTURAL-OPENING-AND-BEARING' as const,
