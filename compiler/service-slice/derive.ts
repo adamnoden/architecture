@@ -42,7 +42,10 @@ export const deriveServiceTopology = (
   const nodes = source.nodes.map((item) => ({
     ...item,
     hostSpaceIds: [...item.hostSpaceIds].sort(),
-    requiredAccessKinds: [...item.requiredAccessKinds].sort()
+    requiredAccessKinds: [...item.requiredAccessKinds].sort(),
+    ...(item.coordinationEnvelope
+      ? { coordinationEnvelope: { ...item.coordinationEnvelope } }
+      : {})
   })).sort((a, b) => a.id.localeCompare(b.id))
 
   const routes = source.routes.map((item) => ({
@@ -71,12 +74,25 @@ export const deriveServiceTopology = (
     viaSpaceIds: [...item.viaSpaceIds].sort()
   })).sort((a, b) => a.id.localeCompare(b.id))
 
+  const bearingCrossings = crossings
+    .filter((item) => item.selected && item.host.kind === 'plan-boundary' && item.bearingLineId)
+    .map((item) => ({
+      id: `SVC-BEARING-${item.id}`,
+      crossingId: item.id,
+      planBoundaryId: item.host.kind === 'plan-boundary' ? item.host.boundaryId : '',
+      structuralLineId: item.bearingLineId!,
+      proof: 'EXTERNAL-STRUCTURAL-OPENING-AND-BEARING' as const,
+      provisional: item.provisional
+    }))
+    .sort((a, b) => a.id.localeCompare(b.id))
+
   return {
     nodes,
     routes,
     networks,
     crossings,
     access,
+    bearingCrossings,
     selectedCrossingIds: crossings.filter((item) => item.selected).map((item) => item.id),
     serviceClasses: [...new Set(routes.map((item) => item.serviceClass))].sort()
   }
