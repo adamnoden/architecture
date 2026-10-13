@@ -141,8 +141,23 @@ const sourceDiagnostics = (
   const interruptionIds = new Set(source.interruptions.map((item) => item.id))
   const framingById = new Map(source.localFramingSystems.map((item) => [item.id, item]))
   const planBoundaryIds = new Set(plan.derived.boundaries.map((item) => item.id))
+  const planLineIds = new Set(plan.derived.planLines.map((item) => item.id))
+
+  const requirePlanLine = (subjectId: string, lineId: string): void => {
+    if (planLineIds.has(lineId)) return
+    diagnostics.push(
+      diagnostic(
+        'STRUCTURAL_PLAN_LINE_MISSING',
+        'FAIL',
+        [subjectId, lineId],
+        `${subjectId} references missing architectural plan line ${lineId}.`
+      )
+    )
+  }
 
   for (const element of source.lineElements) {
+    for (const lineId of [element.at, element.from, element.to]) requirePlanLine(element.id, lineId)
+
     if (element.kind === 'bearing-wall') {
       if (!element.foundationDestinationId) {
         diagnostics.push(
@@ -178,6 +193,7 @@ const sourceDiagnostics = (
   }
 
   for (const path of source.supportPaths) {
+    for (const lineId of [path.at, path.from, path.to]) requirePlanLine(path.id, lineId)
     if (path.segmentIds.length === 0) {
       diagnostics.push(
         diagnostic('EMPTY_SUPPORT_PATH', 'FAIL', [path.id], `${path.id} contains no structural segments.`)
@@ -198,6 +214,11 @@ const sourceDiagnostics = (
         diagnostic('SPAN_FIELD_LEVEL_MISMATCH', 'FAIL', [field.id, source.planeLevelId], `${field.id} is not on the structural plane level.`)
       )
     }
+    for (const rectangle of field.rectangles) {
+      for (const lineId of [rectangle.x0, rectangle.x1, rectangle.y0, rectangle.y1]) {
+        requirePlanLine(field.id, lineId)
+      }
+    }
     for (const pathId of field.supportPathIds) {
       if (!pathIds.has(pathId)) {
         diagnostics.push(
@@ -208,6 +229,8 @@ const sourceDiagnostics = (
   }
 
   for (const node of source.reactionNodes) {
+    requirePlanLine(node.id, node.x)
+    requirePlanLine(node.id, node.y)
     for (const elementId of node.elementIds) {
       if (!lineIds.has(elementId)) {
         diagnostics.push(
@@ -588,11 +611,41 @@ const aggregate = (diagnostics: StructuralTopologyDiagnostic[]): StructuralTopol
   return 'PASS'
 }
 
+const failedDerived = (
+  source: StructuralTopologySource
+): StructuralTopologyCompileResult['derived'] => ({
+  planeLevelId: source.planeLevelId,
+  lineElements: [],
+  supportPaths: [],
+  spanFields: [],
+  reactionNodes: [],
+  bearingOpenings: [],
+  interruptions: [],
+  localFramingSystems: [],
+  diaphragm: {
+    ...source.diaphragm,
+    fieldIds: [],
+    interruptionIds: []
+  },
+  grossFieldArea: mm2(0)
+})
+
 export const compileStructuralTopology = (
   source: StructuralTopologySource,
   plan: PlanSliceCompileResult
 ): StructuralTopologyCompileResult => {
   const before = sourceDiagnostics(source, plan)
+  if (before.some((item) => item.status === 'FAIL')) {
+    const diagnostics = sortedDiagnostics(before)
+    return {
+      fixtureId: source.fixtureId,
+      planFixtureId: source.planFixtureId,
+      status: 'FAIL',
+      derived: failedDerived(source),
+      diagnostics
+    }
+  }
+
   const derived = deriveStructuralTopology(source, plan.derived)
   const diagnostics = sortedDiagnostics([...before, ...derivedDiagnostics(source, plan, derived)])
   return {
