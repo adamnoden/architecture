@@ -1,6 +1,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname } from 'node:path'
 
+import { assertCanonicalArtefactGenerationAllowed } from './artifact-generation.js'
 import { compileReferenceHouse } from './compile.js'
 import { renderReferenceHouseDrawings } from './drawings.js'
 import { createReferenceHouseSource } from './fixture.js'
@@ -13,11 +14,7 @@ export const RH_C1_DRAWING_PATHS = {
 
 export const generateReferenceHouseDrawings = (): void => {
   const result = compileReferenceHouse(createReferenceHouseSource())
-  if (result.status !== 'PASS') {
-    throw new Error(
-      `RH-C1 drawing generation requires a PASS compile; got ${result.status}: ${result.diagnostics.map((item) => item.code).join(', ')}`
-    )
-  }
+  assertCanonicalArtefactGenerationAllowed('RH-C1', result.status)
 
   const drawings = renderReferenceHouseDrawings(result)
   for (const [key, path] of Object.entries(RH_C1_DRAWING_PATHS) as Array<
