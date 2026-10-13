@@ -10,4 +10,7 @@ test('RH-C3 service projection is deterministic for the canonical source', () =>
   const first = renderServiceTopologySvg(result.services, 'RH-C3 service topology')
   const second = renderServiceTopologySvg(result.services, 'RH-C3 service topology')
   assert.equal(first, second)
+  console.log('RH_C3_SVG_BEGIN')
+  console.log(first)
+  console.log('RH_C3_SVG_END')
 })
