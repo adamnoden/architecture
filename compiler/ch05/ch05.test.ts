@@ -4,6 +4,7 @@ import { describe, test } from 'node:test'
 
 import type { CalculationMethod } from '../calculation-slice/model.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
+import type { ReferenceHouseSource } from '../reference-house/model.js'
 import {
   calculationMethodSemanticFingerprint,
   linkReferenceHouseArtefacts,
@@ -12,16 +13,30 @@ import {
 import { compileReferenceHouseSystem } from '../reference-house/system-compile.js'
 import { privateStairGeometryMethod } from '../rhc5/method.js'
 
-const permuteDeclarativeCollections = () => {
+const reversedVariant = (
+  mutate: (source: ReferenceHouseSource) => void
+): ReferenceHouseSource => {
   const source = structuredClone(createReferenceHouseSource())
-  source.spaces.reverse()
-  source.boundaries.reverse()
-  source.requiredAdjacencies.reverse()
-  source.openingFamilies.reverse()
-  source.openings.reverse()
-  source.qualitativeOpeningRelationships.reverse()
+  mutate(source)
   return source
 }
+
+const declarativePermutations = (): ReferenceHouseSource[] => [
+  reversedVariant((source) => source.spaces.reverse()),
+  reversedVariant((source) => source.boundaries.reverse()),
+  reversedVariant((source) => source.requiredAdjacencies.reverse()),
+  reversedVariant((source) => source.openingFamilies.reverse()),
+  reversedVariant((source) => source.openings.reverse()),
+  reversedVariant((source) => source.qualitativeOpeningRelationships.reverse()),
+  reversedVariant((source) => {
+    source.spaces.reverse()
+    source.boundaries.reverse()
+    source.requiredAdjacencies.reverse()
+    source.openingFamilies.reverse()
+    source.openings.reverse()
+    source.qualitativeOpeningRelationships.reverse()
+  })
+]
 
 const baselineManifest = JSON.parse(
   readFileSync('compiler/ch00/reference-house-baseline.json', 'utf8')
@@ -33,16 +48,13 @@ const baselineManifest = JSON.parse(
 describe('CH-05 determinism, identity and provenance', () => {
   test('semantically unordered Reference House collections are permutation-invariant', () => {
     const canonicalSource = createReferenceHouseSource()
-    const permutedSource = permuteDeclarativeCollections()
+    const canonicalFingerprint = referenceHouseSourceFingerprint(canonicalSource)
+    const canonicalResult = compileReferenceHouseSystem(canonicalSource)
 
-    assert.equal(
-      referenceHouseSourceFingerprint(permutedSource),
-      referenceHouseSourceFingerprint(canonicalSource)
-    )
-    assert.deepEqual(
-      compileReferenceHouseSystem(permutedSource),
-      compileReferenceHouseSystem(canonicalSource)
-    )
+    for (const permutedSource of declarativePermutations()) {
+      assert.equal(referenceHouseSourceFingerprint(permutedSource), canonicalFingerprint)
+      assert.deepEqual(compileReferenceHouseSystem(permutedSource), canonicalResult)
+    }
   })
 
   test('authored sequence remains identity-bearing rather than being globally sorted', () => {
