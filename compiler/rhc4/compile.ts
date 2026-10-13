@@ -33,14 +33,15 @@ export const compileReferenceHouseBoundaryView = (
   boundarySource?: BoundaryTopologySource
 ): RhC4CompileResult => {
   const c3 = compileReferenceHouseServiceView(source)
-  const authored = boundarySource ?? createReferenceHouseBoundarySource(source, c3.c2.plan, c3.services)
-  const baseBoundaries = compileBoundaryTopology(authored, c3.c2.plan, c3.services)
-  const boundaries = hardenReferenceHouseBoundaryTopology(source, c3, baseBoundaries)
+  const upstream = { plan: c3.c2.plan, services: c3.services }
+  const authored = boundarySource ?? createReferenceHouseBoundarySource(source, upstream.plan, upstream.services)
+  const baseBoundaries = compileBoundaryTopology(authored, upstream.plan, upstream.services)
+  const boundaries = hardenReferenceHouseBoundaryTopology(source, upstream, baseBoundaries)
   return {
     status: aggregate(c3, boundaries),
     c3,
     boundaries,
-    coordination: deriveReferenceHouseBoundaryCoordination(source, c3),
+    coordination: deriveReferenceHouseBoundaryCoordination(source, upstream),
     proofBoundary: rhC4ProofBoundary
   }
 }
