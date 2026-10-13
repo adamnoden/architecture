@@ -44,6 +44,20 @@ const criterionResult = (
     }
   }
 
+  if (!Number.isFinite(value.value)) {
+    return {
+      criterionId: criterion.id,
+      label: criterion.label,
+      status: 'UNSUPPORTED',
+      observed: value.value,
+      unit: criterion.unit,
+      target: targetText(criterion),
+      sourceIds: value.sourceIds,
+      authorityRef: criterion.authorityRef,
+      message: `Input ${criterion.inputKey} is not a finite numeric value.`
+    }
+  }
+
   const passes = criterion.kind === 'maximum'
     ? value.value <= criterion.max
     : value.value >= criterion.min && value.value <= criterion.max
@@ -63,9 +77,30 @@ const criterionResult = (
   }
 }
 
+const methodDiagnostics = (method: CalculationMethod): string[] => {
+  const issues: string[] = []
+  if (method.criteria.length === 0) issues.push('Method has no criteria.')
+
+  const ids = new Set<string>()
+  for (const criterion of method.criteria) {
+    if (ids.has(criterion.id)) issues.push(`Duplicate criterion id ${criterion.id}.`)
+    ids.add(criterion.id)
+
+    if (criterion.kind === 'inclusive-range') {
+      if (!Number.isFinite(criterion.min) || !Number.isFinite(criterion.max) || criterion.min > criterion.max) {
+        issues.push(`Criterion ${criterion.id} has an invalid inclusive range.`)
+      }
+    } else if (!Number.isFinite(criterion.max)) {
+      issues.push(`Criterion ${criterion.id} has an invalid maximum.`)
+    }
+  }
+
+  return issues
+}
+
 const aggregate = (criteria: readonly CalculationCriterionResult[]): CalculationCheckStatus => {
-  if (criteria.some((item) => item.status === 'FAIL')) return 'FAIL'
   if (criteria.some((item) => item.status === 'UNSUPPORTED')) return 'UNSUPPORTED'
+  if (criteria.some((item) => item.status === 'FAIL')) return 'FAIL'
   return 'PASS'
 }
 
@@ -73,6 +108,24 @@ export const runCalculationCheck = (
   method: CalculationMethod,
   input: CalculationCheckInput
 ): CalculationCheckResult => {
+  const invalidMethod = methodDiagnostics(method)
+  if (invalidMethod.length) {
+    return {
+      methodId: method.id,
+      methodVersion: method.version,
+      inputId: input.id,
+      status: 'UNSUPPORTED',
+      authority: method.authority,
+      claim: method.claim,
+      nonClaims: method.nonClaims,
+      criteria: [],
+      diagnostics: invalidMethod.map((message) => ({
+        code: 'CALCULATION_METHOD_INVALID',
+        message
+      }))
+    }
+  }
+
   const mismatches = Object.entries(method.applicability)
     .filter(([key, expected]) => input.context[key] !== expected)
 
