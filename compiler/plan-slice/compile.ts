@@ -1,5 +1,5 @@
-import { areAdjacent, containsBox, isValidBox, overlapArea } from '../p0/geometry.js'
-import type { Box2D } from '../p0/model.js'
+import { areAdjacent, containsBox, isValidBox, overlapArea } from '../core/geometry.js'
+import type { Box2D } from '../core/geometry.js'
 import { mm2 } from '../units.js'
 import { derivePlanSlice } from './derive.js'
 import type {
