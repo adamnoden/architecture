@@ -1,17 +1,17 @@
 # CH-08 — distillation and deletion
 
 **Gate:** CH-08  
-**Status:** implementation candidate — validate before PASS  
+**Status:** PASS  
 **Starting main:** `4a5983f3e143af9d2b535b031d3265c8cbd84107`  
 **Issue:** #74  
-**Computational maturity at entry:** M3  
+**Computational maturity:** M4 — internally validated / controlled at bounded computational scope  
 **Reference House capability:** RH-C0 through RH-C5 remain closed; no RH-C6
 
 ## Question
 
-After CH-00…CH-07 have established preservation, fail-closed behaviour, runtime boundaries, single-pass orchestration, stronger representation, identity/provenance, law-based tests and a boring developer contract, what machinery can now be removed or simplified without erasing evidence or changing architectural meaning?
+After CH-00…CH-07 established preservation, fail-closed behaviour, runtime boundaries, single-pass orchestration, stronger representation, identity/provenance, law-based tests and a boring developer contract, what machinery could be removed or simplified without erasing evidence or changing architectural meaning?
 
-The target is not minimum line count. It is the minimum **clear** machinery justified by the current model and its evidence.
+The target was not minimum line count. It was the minimum **clear** machinery justified by the current model and its evidence.
 
 ## Runtime and evidence classification
 
@@ -75,7 +75,7 @@ CH-08 removes that duplicate declaration. P0 now exports `Box2D` as a type alias
 
 `compiler/rhc3/index.ts` and `compiler/rhc4/index.ts` exposed convenience barrels but were not themselves an executable gate, proof boundary, generator, canonical runtime dependency or documented developer command.
 
-They are deleted. Typecheck and the complete gate stack are the reachability proof: if either façade remains a live repository dependency, CH-08 must fail rather than restore it by assumption.
+They are deleted. Typecheck and the complete gate stack prove that neither façade has a live repository caller.
 
 ## Deliberate non-deletions
 
@@ -99,6 +99,29 @@ P0, CF-01, RH-C1 and RH-C2…RH-C5 remain because they prove independent histori
 
 No broad `*-slice` rename or directory rearrangement is performed. The current names are mechanically enforced, understood by the tests and not themselves a correctness burden. Renaming them would be cosmetic churn.
 
+### Other duplicated-looking conventions
+
+The final audit also revisited diagnostic/status helpers, ordering/canonicalisation, cloning and generation policy. No additional extraction earned its cost:
+
+- domain diagnostic/status logic differs in semantics and failure boundaries, so a generic helper would introduce flags or erase meaning;
+- CH-05 canonicalisation is intentionally narrow to collections proven semantically unordered;
+- clone helpers remain useful test/source-mutation tools rather than production authorities;
+- CH-07 already centralised the genuinely shared PASS-only canonical generation policy.
+
+## Durable callable surface
+
+`compiler/README.md` now distinguishes the durable production surface from historical executable evidence.
+
+For the canonical Reference House:
+
+- `createReferenceHouseSource()` is the source authority;
+- `compileReferenceHouseSystem(source)` is the canonical production compiler;
+- returned identity/lineage state is the inspectable CH-05 provenance surface.
+
+The permanent generic compilers remain directly usable at their own bounded contracts: `compilePlanSlice`, `compileStructuralTopology`, `compileServiceTopology`, `compileBoundaryTopology` and `runCalculationCheck`.
+
+Historical P0/CF-01/RH-C1…RH-C5 entry points remain regression/provenance surfaces, not competing canonical production APIs.
+
 ## CH-08 mechanical contracts
 
 `compiler/ch08/ch08.test.ts` protects the final distillation decisions:
@@ -108,12 +131,56 @@ No broad `*-slice` rename or directory rearrangement is performed. The current n
 - the unused RH-C3/RH-C4 barrel façades remain absent;
 - historical executable P0/CF-01/RH-C1/RH-C2…RH-C5 evidence remains present.
 
-## Preservation boundary
+## Proof-boundary audit
 
-CH-08 must preserve exactly:
+The first complete validation of the implemented distillation ran on exact branch head `14b6b9f9da055982dcd4507583acce140a1dcde9` in workflow `38479425004`, job `115578076876`, and passed:
+
+- TypeScript typecheck;
+- repository and public-route integrity;
+- P0 17/17;
+- PAT-XW-01 6/6;
+- RH-C1 27/27;
+- CF-01 7/7;
+- RH-C2 17/17;
+- RH-C3 21/21;
+- RH-C4 29/29;
+- RH-C5 16/16;
+- CH-00 through CH-08;
+- publication validation;
+- VitePress documentation build.
+
+CH-00 specifically reconfirmed the frozen semantic/proof baseline and all six exact canonical SVG identities. No source fact, diagnostic set, proof boundary, runtime numeric value, selected calculation outcome or canonical drawing changed.
+
+The final exact-head PR run and merged-main publication/Pages run are recorded in the issue #74 closeout so the execution record does not require a post-merge documentation-only commit.
+
+## Maturity reassessment
+
+CH-08 explicitly reassessed the computational workstream against the project definition of M4:
+
+> The proposition has been deliberately challenged against internal tests or evidence and is stable enough to act as the controlled baseline.
+
+**Judgement: M4 is earned for the bounded computational workstream.**
+
+The basis is the cumulative CH programme:
+
+- CH-00 froze semantic, proof and artefact identity;
+- CH-01 attacked malformed prerequisites and established fail-closed behaviour;
+- CH-02 machine-enforced the permanent runtime boundary;
+- CH-03 proved single-pass equivalence with the historical chain;
+- CH-04 strengthened dangerous representations and source immutability;
+- CH-05 established deterministic source/method/result/compile identity and lineage;
+- CH-06 attacked generic laws over deterministic generated state spaces;
+- CH-07 made local/CI health and artefact verification reproducible and explicit;
+- CH-08 removed only machinery that failed the runtime/evidence test, then reproduced the pre-hardening baseline unchanged.
+
+This is a software-control judgement, not a building-performance judgement. M4 does **not** establish Reference House physical adequacy, structural adequacy, Building Regulations compliance, building-physics adequacy, construction validation or external professional validation. The Reference House remains M3 at virtual-design scope. M5 remains unavailable without appropriate external validation.
+
+## Preservation result
+
+CH-08 preserves:
 
 - `createReferenceHouseSource()` source authority;
-- `compileReferenceHouseSystem(source)` as the canonical production path;
+- `compileReferenceHouseSystem(source)` as canonical production path;
 - CH-00 frozen semantic/proof/artefact baseline and all six exact SVG identities;
 - CH-01 fail-closed behaviour;
 - CH-02 dependency laws;
@@ -129,25 +196,8 @@ CH-08 must preserve exactly:
 - no new technical proof family;
 - no RH-C6.
 
-## Maturity reassessment
+## Closeout
 
-Entry maturity is **M3 — Coordinated**. CH-08 does not pre-authorise promotion.
+CH-08 is the final Compiler Hardening gate. The programme is closed rather than extended by inertia.
 
-After exact-head and merged-main validation, reassess only the bounded computational workstream against M4:
-
-> The proposition has been deliberately challenged against internal tests or evidence and is stable enough to act as the controlled baseline.
-
-A promotion, if earned, applies only to the compiler at its stated proof boundaries. It would not promote the Reference House, establish physical adequacy, establish Building Regulations compliance, substitute for professional review or imply M5.
-
-## Exit evidence required before PASS
-
-- typecheck proves the deleted barrel façades have no live repository callers;
-- `npm run test:ch08` passes;
-- `npm run artifacts:check` remains green through the retained CH-00/CH-05 contracts;
-- `npm run check` passes on the exact PR head;
-- CH-00 through CH-07, CF-01 and RH-C2 through RH-C5 remain green;
-- all six canonical SVG identities remain unchanged;
-- merged-main builds the Working Edition and Primer PDFs and deploys Pages;
-- the final computational maturity judgement is recorded explicitly;
-- the Compiler Hardening programme closes rather than inventing CH-09;
-- no RH-C6 is created.
+There is **no CH-09** and **no standing RH-C6**. The bounded compiler is now held as an M4 internally validated/controlled baseline. Future compiler work should be demand-led by external review, physical validation, a real project, newly authoritative inputs or another concrete proof family—not by an open-ended software-hardening queue.
