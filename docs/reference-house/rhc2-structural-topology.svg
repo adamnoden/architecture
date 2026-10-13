@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-500 -500 13000 13700" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House — RH-C2 structural topology</title>
+  <desc id="desc">Deterministic RH-C2 structural-topology projection. It represents support and gravity-path relationships only; no member capacity or structural adequacy is claimed.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/></marker>
+  </defs>
+  <g data-layer="span-fields">
+    <g data-entity="F-E" data-kind="span-field">
+      <rect x="7800" y="0" width="4200" height="10800" fill="#fafafa" stroke="#c8c8c8" stroke-width="20"/>
+      <line data-span-arrow="F-E" x1="9000" y1="5400" x2="10800" y2="5400" stroke="#666" stroke-width="28" marker-end="url(#arrow)"/>
+      <text x="9900" y="5660" text-anchor="middle" font-family="system-ui,sans-serif" font-size="220" fill="#333">F-E · 4200 mm gross</text>
+    </g>
+    <g data-entity="F-N" data-kind="span-field">
+      <rect x="4200" y="7400" width="3600" height="3400" fill="#fafafa" stroke="#c8c8c8" stroke-width="20"/>
+      <line data-span-arrow="F-N" x1="6000" y1="9950" x2="6000" y2="8250" stroke="#666" stroke-width="28" marker-end="url(#arrow)"/>
+      <text x="6000" y="9360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="220" fill="#333">F-N · 3400 mm gross</text>
+    </g>
+    <g data-entity="F-S" data-kind="span-field">
+      <rect x="4200" y="0" width="3600" height="3400" fill="#fafafa" stroke="#c8c8c8" stroke-width="20"/>
+      <line data-span-arrow="F-S" x1="6000" y1="2550" x2="6000" y2="850" stroke="#666" stroke-width="28" marker-end="url(#arrow)"/>
+      <text x="6000" y="1960" text-anchor="middle" font-family="system-ui,sans-serif" font-size="220" fill="#333">F-S · 3400 mm gross</text>
+    </g>
+    <g data-entity="F-W" data-kind="span-field">
+      <rect x="0" y="0" width="4200" height="10800" fill="#fafafa" stroke="#c8c8c8" stroke-width="20"/>
+      <line data-span-arrow="F-W" x1="1200" y1="5400" x2="3000" y2="5400" stroke="#666" stroke-width="28" marker-end="url(#arrow)"/>
+      <text x="2100" y="5660" text-anchor="middle" font-family="system-ui,sans-serif" font-size="220" fill="#333">F-W · 4200 mm gross</text>
+    </g>
+  </g>
+  <g data-layer="structural-lines">
+    <line data-entity="EB-E-N" data-kind="edge-beam" x1="7800" y1="7400" x2="7800" y2="10800" stroke="#111" stroke-width="110" stroke-dasharray="160 90"/>
+    <line data-entity="EB-E-S" data-kind="edge-beam" x1="7800" y1="0" x2="7800" y2="3400" stroke="#111" stroke-width="110" stroke-dasharray="160 90"/>
+    <line data-entity="EB-W-N" data-kind="edge-beam" x1="4200" y1="7400" x2="4200" y2="10800" stroke="#111" stroke-width="110" stroke-dasharray="160 90"/>
+    <line data-entity="EB-W-S" data-kind="edge-beam" x1="4200" y1="0" x2="4200" y2="3400" stroke="#111" stroke-width="110" stroke-dasharray="160 90"/>
+    <line data-entity="LB-COURT-E" data-kind="bearing-wall" x1="7800" y1="3400" x2="7800" y2="7400" stroke="#333" stroke-width="60" stroke-dasharray="160 90"/>
+    <line data-entity="LB-COURT-N" data-kind="bearing-wall" x1="4200" y1="7400" x2="7800" y2="7400" stroke="#333" stroke-width="60" stroke-dasharray="160 90"/>
+    <line data-entity="LB-COURT-S" data-kind="bearing-wall" x1="4200" y1="3400" x2="7800" y2="3400" stroke="#333" stroke-width="60" stroke-dasharray="160 90"/>
+    <line data-entity="LB-COURT-W" data-kind="bearing-wall" x1="4200" y1="3400" x2="4200" y2="7400" stroke="#333" stroke-width="60" stroke-dasharray="160 90"/>
+    <line data-entity="LB-OUTER-E" data-kind="bearing-wall" x1="12000" y1="0" x2="12000" y2="10800" stroke="#333" stroke-width="60" stroke-dasharray="160 90"/>
+    <line data-entity="LB-OUTER-N" data-kind="bearing-wall" x1="0" y1="10800" x2="12000" y2="10800" stroke="#333" stroke-width="60" stroke-dasharray="160 90"/>
+    <line data-entity="LB-OUTER-S" data-kind="bearing-wall" x1="0" y1="0" x2="12000" y2="0" stroke="#333" stroke-width="60" stroke-dasharray="160 90"/>
+    <line data-entity="LB-OUTER-W" data-kind="bearing-wall" x1="0" y1="0" x2="0" y2="10800" stroke="#333" stroke-width="60" stroke-dasharray="160 90"/>
+  </g>
+  <g data-layer="reaction-nodes">
+    <circle data-entity="RN-CE-N" data-kind="reaction-node" cx="7800" cy="7400" r="110" fill="#111"/>
+    <circle data-entity="RN-CE-S" data-kind="reaction-node" cx="7800" cy="3400" r="110" fill="#111"/>
+    <circle data-entity="RN-CW-N" data-kind="reaction-node" cx="4200" cy="7400" r="110" fill="#111"/>
+    <circle data-entity="RN-CW-S" data-kind="reaction-node" cx="4200" cy="3400" r="110" fill="#111"/>
+  </g>
+  <g data-layer="qualitative-interruptions">
+    <text data-entity="PEN-SV-01" x="0" y="11600" font-family="system-ui,sans-serif" font-size="220" fill="#333">PEN-SV-01 — approx. envelope 1050 × 850 mm; exact position deliberately absent; TR-PEN-SV-01</text>
+    <text data-entity="ST-01" x="0" y="11960" font-family="system-ui,sans-serif" font-size="220" fill="#333">ST-01 — exact trimming geometry deliberately absent; TR-ST-01</text>
+    <text x="0" y="12540" font-family="system-ui,sans-serif" font-size="210" fill="#555">Structural deck is the declared diaphragm. Changeable floor finishes are non-structural.</text>
+    <text x="0" y="12860" font-family="system-ui,sans-serif" font-size="210" fill="#555">Topology PASS does not establish strength, deflection, vibration, fire, robustness, bearing, connection or foundation adequacy.</text>
+  </g>
+</svg>

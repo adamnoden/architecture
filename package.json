@@ -23,7 +23,9 @@
     "rh-c1:generate": "tsx compiler/reference-house/generate.ts",
     "test:rh-c1": "node --import tsx --test compiler/reference-house/*.test.ts",
     "test:cf01": "node --import tsx --test compiler/cf01/*.test.ts",
-    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run publication:validate"
+    "rh-c2:generate": "tsx compiler/rhc2/generate.ts",
+    "test:rh-c2": "node --import tsx --test compiler/rhc2/*.test.ts",
+    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:rh-c2 && npm run publication:validate"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "11.17.0",
