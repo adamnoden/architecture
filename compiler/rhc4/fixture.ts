@@ -207,6 +207,24 @@ const serviceTransitions = (
   return []
 })
 
+const courtyardDrainageCrossing = (): BoundaryTransitionSource => ({
+  id: 'INT-RW-PEN-CD-01',
+  kind: 'rainwater-collection',
+  carrierIds: roles.map((role) => carrierId(role, 'GROUND')),
+  projectOccurrenceId: 'PEN-CD-01',
+  drainageRouteIds: ['RW-COURT-PRIMARY', 'RW-COURT-EMERGENCY'],
+  obligations: [
+    'FOUNDATION-AND-SLAB-LOAD-PATH-COORDINATION',
+    'SETTLEMENT-TOLERANCE',
+    'MOISTURE-GAS-PEST-SEAL',
+    'RODDING-AND-ACCESS',
+    'THRESHOLD-AND-OVERFLOW-LEVEL-COORDINATION',
+    'PRIMARY-AND-EMERGENCY-ROUTES-REMAIN-INDEPENDENT',
+    'NO-HIDDEN-MAINTAINABLE-JOINT-BENEATH-PRINCIPAL-ROOM'
+  ],
+  provisional: true
+})
+
 const drainageRoutes = (): DrainageRouteSource[] => [
   { id: 'RW-ROOF-SOUTH', kind: 'roof-field', from: 'south roof field', to: 'outer south collection edge / corner returns', direction: 'outward', visibleFailure: true, concealedPrimaryOutlet: false, provisional: true },
   { id: 'RW-ROOF-NORTH', kind: 'roof-field', from: 'north roof field', to: 'outer north collection edge / corner returns', direction: 'outward', visibleFailure: true, concealedPrimaryOutlet: false, provisional: true },
@@ -225,7 +243,8 @@ export const createReferenceHouseBoundarySource = (
   const transitions = [
     ...backboneTransitions(),
     ...openingTransitions(house, plan),
-    ...serviceTransitions(plan, services)
+    ...serviceTransitions(plan, services),
+    courtyardDrainageCrossing()
   ]
 
   return {
