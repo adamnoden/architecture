@@ -14,7 +14,7 @@ import type {
   ReferenceHouseDerived,
   ReferenceHouseSource
 } from './model.js'
-import { deg, mm } from './units.js'
+import { deg, mm, square } from './units.js'
 import type { Millimetres } from './units.js'
 
 const referenceHousePlanProjection = (plan: PlanSliceDerived): {
@@ -83,8 +83,10 @@ export const deriveReferenceHouse = (
     roof.outerEdgeControl + (roof.drainageDirection === 'outward' ? roofFall : -roofFall)
   )
   const enclosedPlateArea =
-    compiledPlan.plateAreas.find((item) => item.levelId === 'GROUND')?.area ??
-    compiledPlan.shell.area
+    compiledPlan.plateAreas.find((item) => item.levelId === 'GROUND')?.area ?? compiledPlan.shell.area
+  const courtArea =
+    compiledPlan.voids.find((item) => item.levelId === 'GROUND')?.area ??
+    square(court.width, court.depth)
 
   return {
     shell: {
@@ -103,7 +105,7 @@ export const deriveReferenceHouse = (
       x1: court.x1,
       y0: court.y0,
       y1: court.y1,
-      area: mm(court.width * court.depth) as ReferenceHouseDerived['court']['area']
+      area: courtArea
     },
     ring: { west: ringWest, east: ringEast, south: ringSouth, north: ringNorth },
     enclosedPlateArea,
