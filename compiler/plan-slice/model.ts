@@ -149,7 +149,7 @@ export interface DerivedSpace extends DerivedRegion {
 }
 
 export interface DerivedBoundary {
-  id: PlanBoundaryId
+  id: string
   levelId: string
   kind: PlanBoundaryKind
   orientation: AxisOrientation
