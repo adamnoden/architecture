@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import { describe, test } from 'node:test'
 
 import type { CalculationMethod } from '../calculation-slice/model.js'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import type { ReferenceHouseSource } from '../reference-house/model.js'
 import {
@@ -99,6 +100,14 @@ describe('CH-05 determinism, identity and provenance', () => {
     assert.equal(first.identity.schemaVersion, 'HK-RH-COMPILE-1')
     assert.equal(first.identity.methods.privateStairGeometry.id, 'ADK-2013-PRIVATE-STAIR-GEOMETRY')
     assert.equal(first.identity.methods.privateStairGeometry.version, '1.0.0')
+    assert.equal(
+      first.identity.result.semanticFingerprint,
+      sha256SemanticFingerprint(first.identity.result.manifest)
+    )
+    assert.equal(
+      first.identity.compile.fingerprint,
+      sha256SemanticFingerprint(first.identity.compile.manifest)
+    )
 
     for (const fingerprint of [
       first.identity.source.semanticFingerprint,
