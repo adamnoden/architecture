@@ -1,7 +1,7 @@
 # Preface Precedents — Selection and Research Notes
 
-**Status:** research control for `Preface — The Obvious, Eventually`  
-**Purpose:** distinguish examples that carry the argument from examples that merely illustrate delayed obviousness.
+**Status:** research control for `Preface — The Obvious, Eventually` and the Ovid’s House title frame  
+**Purpose:** distinguish examples and intellectual lenses that carry the argument from material that merely illustrates it.
 
 ## Selection rule
 
@@ -268,6 +268,183 @@ Part I establishes professional lineage and evidence.
 
 ---
 
+# Ovid’s House title frame — permanence, transformation and identity
+
+**Status:** research synthesis for the Ovid’s House migration.  
+**Use:** title explanation, Part I framing and computational terminology where exact.  
+**Authority:** interpretive support only; this section does not create doctrine by itself.
+
+## The project’s existing question
+
+The architectural work already distinguishes long-lived fabric from shorter-lived systems, treats maintenance and renewal as design events, provides movement somewhere harmless to occur, and allows defining spatial relationships to remain deliberately stable. Its existing manuscript language repeatedly arrives at the same deeper question:
+
+> How can a house change without ceasing to be recognisably itself?
+
+That question is broader than component replaceability. It concerns continuity through time.
+
+The Ovid’s House name is appropriate only if it clarifies that existing architectural position. The migration should therefore begin from the architecture and test the literary analogy against it, not reverse the direction of authority.
+
+## Ovid — the useful connection
+
+Ovid’s *Metamorphoses* is organised around changed form, but scholarship treats metamorphosis as more than a series of isolated magical events. Llewelyn Morgan describes change as operating through every layer of the poem; Alessandro Barchiesi’s account of Ovidian metamorphosis explicitly includes questions of origins and destinations, causes, reversibility, **continuity and communication**. Marie Louise von Glinski’s study of simile and identity centres the poem’s unstable relation between altered appearance and identity.
+
+That makes Ovid useful to this project in three bounded ways.
+
+1. **Form is not guaranteed to remain fixed.** A thing may persist into another state rather than simply remain untouched or disappear.
+2. **Transformation raises an identity problem.** The interesting question is not merely what changed, but what—if anything—continues across the change.
+3. **Transformation is morally neutral.** Ovid’s transformations are frequently imposed, violent, punitive or irreversible. The poem does not license the architectural claim that change is automatically desirable.
+
+The third point is especially important. Ovid’s House should not become a manifesto for endlessly transformable architecture. Its position is narrower: **change is inevitable enough to deserve architecture, and architecture must decide which changes to accommodate and what should persist through them.**
+
+## Heraclitus — the sharper persistence analogy
+
+The project’s proposition is in one respect more precisely Heraclitean than Ovidian.
+
+The strongest surviving river fragment describes the *same rivers* receiving *other and other waters*. The Stanford Encyclopedia of Philosophy notes a significant scholarly reading: the river remains the same kind of enduring thing precisely because its constituent water changes. On that reading, constancy and flux are not opposites; turnover can be a condition of continuity.
+
+That is unusually close to the project’s architecture. A house may retain structure, spatial order, address, cultural identity or other defining relationships while services, equipment, finishes and eventually substantial material portions are renewed around them.
+
+This does not mean the project should be renamed after Heraclitus. Ovid gives the richer imaginative field and the more memorable domestic title. The distinction should remain intellectually visible:
+
+> **Ovid supplies the literary territory of metamorphosis; Heraclitus supplies the cleaner model of constancy through change.**
+
+## Persistence conditions — a useful question, not a solved theory
+
+Philosophy of identity over time asks what makes an object at one time the same object at another despite change. The Ship of Theseus sharpens the problem by imagining progressive replacement of a ship’s parts; it does not provide architecture with a ready-made answer.
+
+The transferable question is useful:
+
+> **What are the persistence conditions of a house?**
+
+The project should not pretend to settle numerical identity in a metaphysical sense. Architectural persistence is a more practical matter involving several overlapping continuities: legal/site identity, spatial order, structure, fabric, use, cultural recognition, documentation and stewardship.
+
+The phrase is nevertheless productive because it improves the older binary question “what is permanent?” A supposedly permanent thing may eventually be repaired or replaced. The better question is which relationships or properties must persist for a particular architectural claim still to hold.
+
+## Architectural lineage — the mechanism already exists without Ovid
+
+The architectural argument does not need Ovid in order to stand.
+
+Open Building distinguishes long-lived support from changeable infill. Contemporary Open Building guidance explicitly describes separating elements with different life cycles so faster-changing systems can adapt without forcing change in slower ones. Frank Duffy’s layered account of buildings and Stewart Brand’s later shearing/pace-layer model similarly describe buildings as components changing at different rates.
+
+These are direct architectural/system precedents for the project’s treatment of lifespan layers and coupling. Ovid is not their source and should never be presented as though he anticipated them.
+
+The value of the Ovidian frame is different: it connects those practical arrangements to the larger temporal question of **how continuity survives alteration**.
+
+## Ise — an extreme case of continuity without material permanence
+
+Ise Jingu’s Shikinen Sengu provides an unusually clear counterexample to the assumption that architectural continuity requires the same physical material to remain indefinitely. The Jingu Administration Office describes a new divine palace of the same dimensions being constructed on the adjacent alternate site every twenty years, with furnishings and sacred objects also remade; the first recorded Sengu took place in 690.
+
+The lesson must be tightly bounded. Ise is a specific religious, institutional and craft tradition, not a model for domestic replacement cycles. Its timber demand, ritual purpose, cultural continuity and organisational structure are unlike an ordinary house.
+
+What it demonstrates is only this:
+
+> **material persistence and architectural or institutional continuity are not identical concepts.**
+
+That is enough.
+
+## Repair — ordinary transformation rather than spectacle
+
+Stephen Graham and Nigel Thrift argue that maintenance and repair are routinely pushed out of view despite being central to the persistence of technical systems and modern life. Their emphasis on breakdown and repair is useful because it keeps this project’s transformation thesis grounded in ordinary work.
+
+For Ovid’s House, the characteristic metamorphosis is rarely a moving wall or dramatic shape change. It is more often:
+
+- a failed pump replaced without opening masonry;
+- a window renewed without destroying sound finishes;
+- a service route altered without consuming structure;
+- a wet-room failure isolated, repaired and reinstated;
+- a room accepting another use without losing its architectural quality.
+
+The theme becomes credible when transformation is mundane.
+
+## Nakagin — the strongest warning against drawn replaceability
+
+Kisho Kurokawa’s Nakagin Capsule Tower makes the opposite point. Its capsules were conceived as replaceable units attached to longer-lived cores, yet no planned capsule replacement cycle occurred before the tower was dismantled in 2022. Research on the building identifies physical access constraints alongside ownership, coordination, maintenance and economic problems.
+
+That failure is directly relevant.
+
+A component is not meaningfully replaceable because a drawing labels it replaceable. Replacement requires an executable path:
+
+**access → release → handling → withdrawal → replacement supply → authority → cost → reinstatement**.
+
+If any indispensable step is absent, theoretical metamorphosis remains theatre.
+
+This is one reason Ovid’s House should resist transformable-architecture spectacle. The project’s existing maintenance-geography and interface work is more important than visual declarations of flexibility.
+
+## Terms admitted by this research
+
+### Permanence through transformation
+
+A compact thesis, not a technical rule:
+
+> A long-lived building may preserve what matters by allowing necessary change to occur without needless destruction of slower, more valuable or identity-bearing relationships.
+
+It should normally be explained with physical examples rather than repeated as a slogan.
+
+### Ovidian architecture
+
+A literary/critical term available for occasional use:
+
+> Architecture that treats transformation as part of a building’s temporal reality and asks how continuity or identity can survive altered form.
+
+It does **not** mean an architecture derived from Ovid, a historical style, a preference for visible movement or a requirement that buildings continually transform.
+
+### Persistence conditions
+
+A diagnostic question:
+
+> Which properties or relationships must remain for a stated architectural identity, function or obligation still to hold through change?
+
+Use where this question genuinely sharpens an architectural decision.
+
+### Invariant
+
+A formal/computational term for a property that must remain true across permitted states or transformations.
+
+The compiler already uses invariant-style reasoning. The word should remain technical where possible; not every valued architectural continuity needs to become a machine-checkable invariant.
+
+## Red-team conclusion
+
+The title survives the conceptual test, with limits.
+
+**Why it works:**
+- the project was already organised around change through time;
+- the final pre-migration preface already describes a house remaining itself because changing things have somewhere else to go;
+- Ovid supplies an unusually memorable cultural frame for form, transformation and identity;
+- the possessive title creates a productive question without prescribing a style.
+
+**Why it could fail:**
+- Ovid can become borrowed prestige;
+- metamorphosis can be mistaken for maximum flexibility;
+- literary language can displace architectural mechanism;
+- the brand can slide into classical art direction;
+- repeated use of “transformation” can turn a real idea into a slogan.
+
+**Control:** Ovid should appear sparsely and at high-leverage points. The house, its failures, interfaces, working clearances and lifetimes must continue to do most of the explanatory work.
+
+## Intended editorial deployment
+
+- **Landing page:** state permanence without stasis / permanence through transformation, then return immediately to physical architectural consequences.
+- **Preface:** explain the title only after the existing argument has independently reached “give change its own architecture”.
+- **Part I:** use one bounded Ovidian passage in the selective-permanence argument; retain Habraken, Duffy, Brand and service-life planning as the direct architectural lineage.
+- **Governing principles:** do not add Ovidian rhetoric.
+- **Computational material:** use persistence/invariant language only where it is exact; keep ordinary compiler terminology ordinary.
+
+### Sources for the title frame
+
+- Llewelyn Morgan, *Ovid: A Very Short Introduction*, ch. 4, “Metamorphoses”, Oxford University Press (2020): https://academic.oup.com/book/28436/chapter-abstract/228938265
+- Alessandro Barchiesi, “Reading Metamorphosis in Ovid’s Metamorphoses”, in *Metamorphic Readings*, Oxford University Press (2020): https://academic.oup.com/book/37419/chapter-abstract/331495110
+- Marie Louise von Glinski, *Simile and Identity in Ovid’s Metamorphoses*, Cambridge University Press (2012): https://www.cambridge.org/core/books/simile-and-identity-in-ovids-metamorphoses/203345B5E5C557090C0480AC7E46BBF9
+- Stanford Encyclopedia of Philosophy, “Heraclitus”, especially the river fragments and interpretation of B12: https://plato.stanford.edu/entries/heraclitus/
+- Stanford Encyclopedia of Philosophy, “Identity Over Time”: https://plato.stanford.edu/entries/identity-time/
+- Stanford Encyclopedia of Philosophy, “Relative Identity”, §2.5 Ship of Theseus: https://plato.stanford.edu/entries/identity-relative/
+- OpenBuilding.co, “Manifesto”, including Habraken support/infill and shearing layers: https://www.openbuilding.co/manifesto
+- Stewart Brand, “Pace Layering: How Complex Systems Learn and Keep Learning”, *Journal of Design and Science* (MIT Press): https://jods.mitpress.mit.edu/pub/issue3-brand/release/2
+- Ise Jingu, “Rituals and Ceremonies — Shikinen Sengu”: https://www.isejingu.or.jp/en/ritual/
+- Stephen Graham and Nigel Thrift, “Out of Order: Understanding Repair and Maintenance”, *Theory, Culture & Society* 24(3), 2007, DOI 10.1177/0263276407075954: https://journals.sagepub.com/doi/10.1177/0263276407075954
+- Aki Ishida, “Encapsulated Masculine Dreams: The Cultural and Material Impermanence of the Nakagin Capsule Tower”, *studies in History and Theory of Architecture* 10 (2022): https://sita.uauim.ro/article/10-15-ishida-encapsulated-masculine-dreams
+
+---
+
 # Tonal lesson from Stewart Brand and Christopher Alexander
 
 Both demonstrate that outsiders or cross-disciplinary writers can address architecture seriously when they:
@@ -299,4 +476,4 @@ The examples progressively approach the house.
 
 After Paxton, the historical analogies should stop.
 
-The final third of the preface belongs entirely to the project's own position.
+The final third of the preface belongs entirely to the project's own position, with the Ovidian title explanation arriving only after that position has been earned.
