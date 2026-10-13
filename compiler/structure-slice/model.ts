@@ -1,6 +1,7 @@
 import type { Box2D } from '../core/geometry.js'
 import type {
   AxisOrientation,
+  PlanBoundaryId,
   PlanLineId,
   RectByLines,
   WidthResult
@@ -12,6 +13,17 @@ export type StructuralLineKind = 'bearing-wall' | 'edge-beam'
 export type SpanAxis = 'x' | 'y'
 export type StructuralInterruptionKind = 'stair-opening' | 'service-opening'
 export type LocalFramingKind = 'local-trimmer-system' | 'engineered-opening-trimmer'
+
+declare const structuralLineIdBrand: unique symbol
+export type StructuralLineId = string & { readonly [structuralLineIdBrand]: 'StructuralLineId' }
+export const structuralLineId = (value: string): StructuralLineId => value as StructuralLineId
+
+declare const structuralInterruptionIdBrand: unique symbol
+export type StructuralInterruptionId = string & {
+  readonly [structuralInterruptionIdBrand]: 'StructuralInterruptionId'
+}
+export const structuralInterruptionId = (value: string): StructuralInterruptionId =>
+  value as StructuralInterruptionId
 
 export interface FoundationDestinationSource {
   id: string
@@ -119,7 +131,7 @@ export interface StructuralTopologySource {
 }
 
 export interface DerivedStructuralLine {
-  id: string
+  id: StructuralLineId
   kind: StructuralLineKind
   orientation: AxisOrientation
   x1: Millimetres
@@ -171,12 +183,16 @@ export interface DerivedBearingOpeningObligation {
   id: string
   openingId: string
   levelId: string
-  planBoundaryId: string
-  structuralLineId: string
+  planBoundaryId: PlanBoundaryId
+  structuralLineId: StructuralLineId
   centre?: Millimetres
   width: WidthResult
   proof: 'EXTERNAL-HEAD-SUPPORT-AND-BEARING'
   provisional: boolean
+}
+
+export type DerivedStructuralInterruption = Omit<StructuralInterruptionSource, 'id'> & {
+  id: StructuralInterruptionId
 }
 
 export interface StructuralTopologyDerived {
@@ -186,7 +202,7 @@ export interface StructuralTopologyDerived {
   spanFields: DerivedSpanField[]
   reactionNodes: DerivedReactionNode[]
   bearingOpenings: DerivedBearingOpeningObligation[]
-  interruptions: StructuralInterruptionSource[]
+  interruptions: DerivedStructuralInterruption[]
   localFramingSystems: LocalFramingSystemSource[]
   diaphragm: DiaphragmSource
   grossFieldArea: SquareMillimetres
