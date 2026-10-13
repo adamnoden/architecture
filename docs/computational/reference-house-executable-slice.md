@@ -1,34 +1,46 @@
 # Reference House Executable Slice
 
-**Status:** **PASS through RH-C2 — deterministic architecture + bounded structural topology**  
+**Status:** **PASS through RH-C3 — deterministic architecture + bounded structural and service topology**  
 **Date:** 2026-10-13  
 **Prerequisite:** [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md) — **PASS**  
 **Canonical fixture source:** [`../reference-house/model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md)  
-**Architectural structural authority:** [`../reference-house/structural-coordination.md`](../reference-house/structural-coordination.md)  
-**Implementation:** `compiler/reference-house/`, `compiler/plan-slice/`, `compiler/structure-slice/`, `compiler/rhc2/`  
+**Structural authority:** [`../reference-house/structural-coordination.md`](../reference-house/structural-coordination.md)  
+**Service authority:** [`../reference-house/service-topology-rh06.md`](../reference-house/service-topology-rh06.md), [`../reference-house/service-topology-rh07-mvhr-addendum.md`](../reference-house/service-topology-rh07-mvhr-addendum.md), [`../reference-house/service-crossing-register-rh06.md`](../reference-house/service-crossing-register-rh06.md), [`../reference-house/energy-heat-coordination-rh10.md`](../reference-house/energy-heat-coordination-rh10.md)  
+**Implementation:** `compiler/reference-house/`, `compiler/plan-slice/`, `compiler/structure-slice/`, `compiler/service-slice/`, `compiler/rhc2/`, `compiler/rhc3/`  
 **Drawing parity result:** [`../reference-house/rhc1-drawing-parity-result.md`](../reference-house/rhc1-drawing-parity-result.md)  
 **Generality gate:** [`compiler-generality-assurance-cf01.md`](compiler-generality-assurance-cf01.md) — **PASS**
 
 ## Current result
 
-The executable Reference House programme has now passed three successive questions.
+The executable Reference House programme has now passed four successive questions.
 
 ```text
 RH-C1  Can one frozen Reference House be reproduced deterministically?     PASS
 CF-01  Is the shared plan layer more than a Reference-House-shaped script? PASS
 RH-C2  Can RH-05 structural topology be represented and falsified?         PASS
+RH-C3  Can RH-06/RH-07/RH-10 service topology be represented and falsified? PASS
 ```
 
-RH-C1 still passes **27/27 tests**. CF-01 passes **7/7**. RH-C2 adds **17/17** structural-topology tests while preserving the earlier suites.
+Current executable suites:
+
+```text
+P0                         17 / 17 PASS
+PAT-XW-01                   6 /  6 PASS
+RH-C1                      27 / 27 PASS
+CF-01                       7 /  7 PASS
+RH-C2                      17 / 17 PASS
+RH-C3                      21 / 21 PASS
+```
 
 The current deterministic projections are:
 
 - `docs/reference-house/rhc1-ground-floor.svg`;
 - `docs/reference-house/rhc1-first-floor.svg`;
 - `docs/reference-house/rhc1-principal-section.svg`;
-- `docs/reference-house/rhc2-structural-topology.svg`.
+- `docs/reference-house/rhc2-structural-topology.svg`;
+- `docs/reference-house/rhc3-service-topology.svg`.
 
-The first three are architectural projections. The RH-C2 drawing is a structural-topology projection, not an engineer's structural drawing and not evidence of structural adequacy.
+The RH-C3 SVG is deliberately **non-spatial**. It projects network identity, semantic route continuity and registered crossings; it does not manufacture exact pipe, cable or duct coordinates that the source authority does not control.
 
 ---
 
@@ -92,9 +104,7 @@ CF-01 is **two-fixture bounded evidence**, not arbitrary architecture support. T
 
 ## RH-C2 — bounded structural topology
 
-RH-C2 now reproduces the structural concept already coordinated in RH-05 without pretending to perform structural engineering analysis.
-
-The proof boundary is explicit:
+RH-C2 reproduces the structural concept coordinated in RH-05 without pretending to perform structural engineering analysis.
 
 ```text
 STRUCTURAL TOPOLOGY       MACHINE-CHECKED
@@ -118,75 +128,180 @@ Their gross areas close to the same **115.2 m²** first-floor plate used by the 
 
 RH-C2 represents:
 
-- outer bearing lines;
-- courtyard bearing lines;
+- outer and courtyard bearing lines;
 - four short edge beams: `EB-W-S`, `EB-E-S`, `EB-W-N`, `EB-E-N`;
 - continuous support paths assembled from bearing/beam segments;
 - four protected courtyard reaction nodes;
 - the structural deck as the declared diaphragm layer;
 - a qualitative `FDN-SITE-DESIGNED` foundation destination.
 
-The compiler can therefore reject missing support segments, misaligned beams, false span supports, broken reaction-node geometry, unclosed structural fields and represented gravity paths that no longer reach a declared foundation destination.
+The compiler can reject missing support segments, misaligned beams, false span supports, broken reaction-node geometry, unclosed structural fields and represented gravity paths that no longer reach a declared foundation destination.
 
-`FDN-SITE-DESIGNED` is not a selected foundation system. It means only that the represented load path has an explicit handoff to later site-specific foundation engineering.
+`FDN-SITE-DESIGNED` is not a selected foundation system. It is an explicit handoff to later site-specific foundation engineering.
 
 ### Openings and interruptions
 
-RH-C2 does not allow a continuous bearing-line abstraction to make architectural openings disappear.
-
-Architectural bearing boundaries are mapped to their structural bearing lines. Every **numeric** opening already present on those boundaries derives an explicit structural obligation. The canonical Reference House currently derives **12** such obligations, each marked:
+RH-C2 does not allow a continuous bearing-line abstraction to make architectural openings disappear. Every numeric opening already present on a mapped bearing boundary derives an explicit:
 
 ```text
 EXTERNAL-HEAD-SUPPORT-AND-BEARING
 ```
 
-This records the consequence without inventing lintel sizes, residual-pier capacities or end-bearing adequacy.
+The canonical Reference House currently derives **12** such obligations. This records the consequence without inventing lintel sizes, residual-pier capacities or end-bearing adequacy.
 
-Openings whose architectural geometry remains qualitative remain qualitative. The compiler does not manufacture east/west courtyard centres or north/garden opening geometry to make the structural view complete.
+Two first-floor structural interruptions are carried without false precision:
 
-Two first-floor structural interruptions are also carried without false precision:
-
-- `ST-01` — stair opening; a local trimmer system is required, but exact trimming geometry remains absent;
-- `PEN-SV-01` — service opening; approximately **1,050 × 850 mm** structural envelope, with exact position/final engineered trimming still external.
+- `ST-01` — stair opening; local trimming required, exact geometry absent;
+- `PEN-SV-01` — service opening; approximately **1,050 × 850 mm** structural envelope, with exact position/final engineered trimming external.
 
 Changeable floor finishes remain explicitly non-structural; the structural deck owns the diaphragm role.
 
 ### RH-C2 invariants
 
-RH-C2 checks that:
+RH-C2 checks support continuity, span/support geometry, field closure, reaction-node coincidence, foundation handoff, bearing-boundary mappings, interruption ownership, diaphragm accounting and propagation of upstream `REVIEW`/`FAIL` state. Its mutation suite deliberately breaks each of those relationships. The structural renderer refuses failed topology, and its committed SVG is an exact deterministic renderer output.
 
-- the structural fixture is compiled against the intended architectural fixture;
-- structural IDs are unique;
-- bearing lines declare a foundation destination;
-- support paths reference real, collinear and continuous structural segments;
-- edge beams terminate on declared endpoint supports;
-- span fields stay inside the shell and outside architectural voids;
-- support paths oppose the declared span direction and bound the field they support;
-- supports cover the full cross-width of their field;
-- gross structural fields do not overlap and close to architectural plate area;
-- represented gravity paths terminate at a declared foundation destination;
-- reaction nodes lie on every structural element they reference;
-- architectural bearing boundaries geometrically match their mapped structural bearing lines;
-- known structural interruptions have declared local framing systems;
-- the structural-deck diaphragm accounts for all gross fields and known interruptions;
-- an upstream Reference House `REVIEW` or `FAIL` cannot be erased by a structurally coherent projection.
+---
 
-The structural renderer refuses a failed topology, and the committed structural SVG is checked as an exact deterministic projection.
+## RH-C3 — bounded service topology
 
-### Mutation evidence
+RH-C3 compiles only the service relationships already coordinated through RH-06, RH-07 and RH-10.
 
-The RH-C2 suite verifies that:
+Its proof boundary is equally explicit:
 
-- courtyard-width changes propagate into span lengths and edge-beam positions;
-- an RH-C1 stair-fit `REVIEW` survives as the overall result even when structural topology still passes;
-- deleting an edge-beam segment exposes a support-path gap;
-- moving a beam off its support line exposes path/reaction inconsistency;
-- deleting a bearing line's foundation destination breaks represented gravity continuity;
-- mapping an architectural bearing boundary to the wrong structural line fails;
-- assigning a field to supports that do not bound it fails;
-- deleting a required local trimmer fails;
-- silently dropping a field from the diaphragm fails;
-- unchanged input remains deterministic.
+```text
+SERVICE TOPOLOGY          MACHINE-CHECKED
+MEP PERFORMANCE / DETAIL  EXTERNAL — NOT PROVED
+```
+
+### Represented service systems
+
+The current Reference House fixture contains **13 semantic networks** covering:
+
+- water, electricity and communications utility entry;
+- domestic-water distribution;
+- foul / soil / vent topology;
+- dry electrical/data distribution;
+- low-temperature hydronic distribution;
+- MVHR supply;
+- MVHR extract;
+- MVHR outdoor-air / exhaust-air boundary routes;
+- separate cooker source capture;
+- ASHP connection;
+- PV electrical route.
+
+These are Reference House fixture decisions. They are not promoted into House Kernel doctrine or requirements of the generic service-topology kernel.
+
+### Service geography and access
+
+C3 makes the controlled service geography explicit rather than inferring exact runs:
+
+- `G-PLANT-01` remains the plant / isolation / distribution hub;
+- `SV-01` remains the shared vertical service zone;
+- ground and upper dry/hydronic/MVHR distribution hubs retain their coordinated host-space geography;
+- principal rooms are protected from **primary** service infrastructure while local terminal branches remain permitted;
+- plant working/replacement/isolation access, MVHR working/replacement/filter access, riser inspection and foul-stack-base inspection are explicit obligations.
+
+The service graph therefore cannot silently become connected by routing primary infrastructure through a protected principal room or by deleting required maintenance geography.
+
+### Vertical service reservation
+
+The RH-06/RH-07 controlled `SV-01` clear reservation is approximately **900 × 700 mm**. RH-C3 ties that reservation to the RH-C2 structural interruption `PEN-SV-01`, whose current coordination envelope is approximately **1,050 × 850 mm**.
+
+The compiler checks only the gross envelope relation:
+
+```text
+900 × 700 service reservation
+    fits within
+1050 × 850 structural opening envelope
+```
+
+That is **not** proof that the selected ducts, pipes, cables, insulation, fire stopping, supports and access clearances actually pack successfully. Detailed packing remains an external MEP/fire/acoustic coordination task.
+
+Six selected vertical service classes currently use the shared structural crossing:
+
+- domestic water;
+- foul stack;
+- electrical/data;
+- hydronic;
+- MVHR supply;
+- MVHR extract.
+
+Removing the structural crossing from one of those trunks fails the compile.
+
+### Controlled crossings
+
+RH-C3 carries the selected RH crossing register needed by its scope:
+
+- `PEN-UE-01` — grouped utility-entry **crossing family**;
+- `PEN-SV-01` — shared vertical structural service opening;
+- `PEN-FD-01` — foul drainage exit;
+- `PEN-KX-01` — cooker extract;
+- `PEN-HS-01` — ASHP service link;
+- `PEN-MV-01` — MVHR outdoor/exhaust-air **crossing family**;
+- `PEN-SV-RF-01` — soil/vent roof termination;
+- `PEN-PV-01` — PV electrical boundary route.
+
+`PEN-BX-01`, the former direct bathroom extract route, is retained explicitly as an **unselected fallback** after the RH-07 MVHR decision. An active route cannot silently start using it.
+
+`PEN-UE-01` and `PEN-MV-01` are semantic crossing families. Their use by several routes does not assert one literal multi-service hole or one physical duct opening.
+
+`PEN-CD-01` is deliberately outside C3: courtyard rainwater coordination belongs to the RH-08 / envelope-boundary work rather than the RH-06/RH-07/RH-10 service slice.
+
+### Bearing-wall consequences
+
+A service crossing through an architectural outer boundary cannot disappear behind the structural model. The compiler geometrically checks selected plan-boundary crossings against represented bearing lines. Four selected east-wall crossing families currently derive:
+
+```text
+EXTERNAL-STRUCTURAL-OPENING-AND-BEARING
+```
+
+for `PEN-UE-01`, `PEN-KX-01`, `PEN-HS-01` and `PEN-MV-01`, each resolving to `LB-OUTER-E`.
+
+This does not invent hole sizes, lintels, residual-pier capacities or bearing checks. It records that those structural consequences must be discharged externally.
+
+### RH-C3 invariants and mutation evidence
+
+RH-C3 checks that:
+
+- service, plan and structural fixtures correspond;
+- semantic service IDs are unique;
+- required network nodes remain connected through declared routes;
+- routes and networks agree about ownership/service class;
+- route endpoints and host spaces exist;
+- primary infrastructure stays out of protected principal-room geography;
+- required maintenance/replacement/isolation/filter/inspection access remains declared;
+- a boundary-link route cannot cross fabric anonymously;
+- route/crossing ownership is reciprocal;
+- active topology cannot use an unselected fallback crossing;
+- vertical trunks declaring structural interaction resolve a real structural interruption;
+- selected plan-boundary crossings resolve real architectural boundaries;
+- crossing families carry explicit downstream obligations;
+- the `SV-01` clear reservation does not exceed the represented structural opening envelope;
+- selected service crossings through represented bearing walls derive external structural-opening/bearing obligations;
+- upstream architectural/structural `REVIEW` or `FAIL` state cannot be erased by a coherent service graph;
+- unchanged input and the committed topology SVG remain deterministic.
+
+The mutation suite breaks network continuity, structural-crossing ownership, protected-room geography, fallback state, access obligations, crossing reciprocity, boundary identity, riser fit and bearing-line identity. All fail closed at the intended boundary.
+
+### What RH-C3 does not prove
+
+C3 deliberately does **not** calculate or certify:
+
+- actual service packing inside `SV-01`;
+- pipe, duct or cable sizes;
+- airflow, pressure loss or fan duty;
+- hydraulic pressure loss or pump duty;
+- heat loss, emitter sizing or ASHP capacity;
+- cable sizing, fault protection or electrical design;
+- drainage falls, invert levels or self-cleansing performance;
+- fire-stopping or compartmentation adequacy;
+- acoustic breakout/crosstalk performance;
+- condensation risk at penetrations or ducts;
+- product suitability/compliance;
+- commissioning or balancing;
+- exact branch coordinates where source authority remains qualitative.
+
+Those questions remain external until a later, explicitly bounded proof family earns authority.
 
 ---
 
@@ -196,26 +311,9 @@ The programme retains three broad discharge modes:
 
 1. **deterministic calculation** — geometry/arithmetic or another method whose authority is explicit;
 2. **supported implementation/rule family** — only after a bounded family and competent method are established;
-3. **external evidence** — engineer, building-physics model, fire/building-control determination, product evidence or physical test.
+3. **external evidence** — engineer, MEP specialist, building-physics model, fire/building-control determination, product evidence or physical test.
 
-RH-C2 is deliberately a topology implementation under that boundary. It does **not** contain or prove:
-
-- engineered joist or beam sections;
-- timber strength classes;
-- loads or load combinations;
-- connection design/capacity;
-- deflection or vibration adequacy;
-- lintel or residual-pier adequacy;
-- global lateral stability or robustness;
-- fire resistance;
-- exact stair trimmer geometry;
-- exact service-opening position;
-- roof structural adequacy;
-- foundation adequacy;
-- ULS / SLS compliance;
-- Building Regulations structural compliance.
-
-Representability is not adequacy. If a native structural proof family is ever added, it will need its own explicit analytical model, proof envelope, validation and authority.
+Representability is not adequacy. Passing C2 says the represented structural graph is coherent; passing C3 says the represented service graph is coherent. Neither says the physical system is adequate.
 
 ---
 
@@ -230,16 +328,14 @@ CF-01 — adversarial contrast fixture   PASS
   ↓
 RH-C2 — bounded structural view        PASS
   ↓
-RH-C3 — bounded service view           NEXT
+RH-C3 — bounded service view           PASS
+  ↓
+RH-C4 — envelope / boundary view       NEXT
 ```
-
-### RH-C3 — service view
-
-**NEXT.** Add only the plant, riser, route, penetration and controlled-crossing topology needed to reproduce the already-coordinated RH-06/RH-07/RH-10 service relationships. Route coherence may be machine-checked; MEP sizing, hydraulic/aerodynamic performance, acoustic performance, fire-stopping adequacy and product compliance remain outside the proof boundary unless separately earned.
 
 ### RH-C4 — envelope / boundary view
 
-Add external/courtyard wall family geometry, openings and air/thermal/weather boundary relationships needed for coordinated junction obligations.
+**NEXT.** Add only the external/courtyard wall family geometry, openings and air/thermal/weather/moisture boundary relationships needed to reproduce the already-coordinated envelope and junction obligations. Do not infer building-physics performance merely because boundary continuity can be represented.
 
 ### RH-C5 — selected target calculations
 
@@ -257,9 +353,9 @@ The executable programme does not presently justify:
 - a polished 3D modelling UI;
 - general BIM replacement;
 - generative design;
-- a universal structural solver;
+- a universal structural or MEP solver;
 - a complete Building Regulations engine;
 - encoding architectural quality as a boolean;
 - rebuilding external specialist software inside House Kernel without a strong case.
 
-The current result is stronger but still bounded: **deterministic architectural fixture + two-fixture plan evidence + internally coherent structural topology**. Competent structural review and site-specific engineering remain external requirements.
+The current result is stronger but still bounded: **deterministic architectural fixture + two-fixture plan evidence + internally coherent structural topology + internally coherent service topology**. Competent structural/MEP review, detailed design, product selection and site-specific engineering remain external requirements.
