@@ -9,28 +9,30 @@ CH-01 hardens expected invalid-input behaviour. It does not change architectural
 
 ## Boundary established
 
-The generic plan and structural compilers now separate source-integrity failure from derivation strongly enough that known malformed references cannot escape as incidental exceptions.
+The generic plan and structural compilers now separate failures that make derivation unsafe from invalid states that are still safely derivable.
 
-For both domains:
+The rule is deliberately narrower than “any FAIL stops derivation”. The first CH-01 implementation tried that stronger rule for structure; CI falsified it because it suppressed the established downstream `GRAVITY_PATH_UNRESOLVED` diagnostic when a bearing line lost its foundation destination. That source is invalid, but its geometry is still safe to derive. CH-01 therefore preserves downstream diagnostics wherever derivation remains well-defined.
+
+For fatal prerequisite failures:
 
 1. source/upstream integrity diagnostics run first;
-2. any `FAIL` at that prerequisite stage prevents normal derivation;
+2. a failure that makes required references absent, upstream state unusable or identity ambiguous prevents normal derivation;
 3. the compiler returns a deterministic `FAIL` result with sorted diagnostics and deliberately empty derived collections;
-4. only a source that clears the prerequisite gate enters ordinary derivation and derived/integration validation.
+4. invalid-but-derivable sources continue through ordinary derivation and derived/integration validation so established diagnostic semantics are preserved.
 
 The empty derived collections in a prerequisite-failed result are a fail-closed sentinel, not substitute architectural facts. Consumers must treat the result status as authoritative and must not interpret those empty collections as a valid compiled model.
 
 ### Plan
 
-The existing plan source validator already identifies the references that can make `derivePlanSlice` throw: unknown plan lines, levels, opening families and opening hosts. CH-01 now stops after those source diagnostics rather than calling derivation anyway.
+The existing plan source validator identifies the missing references and duplicate identities that can make `derivePlanSlice` unsafe or ambiguous: unknown plan lines, levels, opening families and opening hosts, plus duplicate source identities. CH-01 now stops after those fatal source diagnostics rather than calling derivation anyway.
 
 Non-finite geometric values remain controlled compiler failures through derived validation. They do not escape as exceptions.
 
 ### Structure
 
-The structural source validator previously did not validate the architectural plan-line references used by structural lines, support paths, span rectangles and reaction nodes even though the derivation helpers require them. CH-01 adds explicit `STRUCTURAL_PLAN_LINE_MISSING` diagnostics for those references and prevents structural derivation whenever source/upstream integrity has failed.
+The structural source validator previously did not validate the architectural plan-line references used by structural lines, support paths, span rectangles and reaction nodes even though the derivation helpers require them. CH-01 adds explicit `STRUCTURAL_PLAN_LINE_MISSING` diagnostics for those references.
 
-A failed upstream plan therefore produces a deterministic failed structural result instead of allowing structural derivation to walk an invalid/partial plan.
+Structural derivation is blocked only by failures that invalidate its prerequisites: duplicate structural identity, plan-fixture mismatch, failed upstream plan, missing structural plane level, or missing architectural plan lines. Other structural FAIL states remain derivable and still receive downstream diagnostics. A failed upstream plan therefore produces a deterministic failed structural result instead of allowing structural derivation to walk an invalid/partial plan.
 
 ## Service and boundary audit
 
@@ -40,7 +42,7 @@ CH-01 therefore does not move or rewrite those domains merely to make their file
 
 ## Exceptions that remain legitimate
 
-Normal compiler entry points are the fail-closed contract. Low-level derivation helpers still contain programmer-error exceptions for violated internal preconditions. Calling a derivation helper directly with a source that has not passed its compiler's source-integrity gate is outside the normal compilation contract.
+Normal compiler entry points are the fail-closed contract. Low-level derivation helpers still contain programmer-error exceptions for violated internal preconditions. Calling a derivation helper directly with a source that has not passed its compiler's prerequisite gate is outside the normal compilation contract.
 
 CH-01 does not convert every impossible internal state into user-data diagnostics; doing so would hide programmer defects and exceed this gate.
 
@@ -53,7 +55,7 @@ CH-01 does not convert every impossible internal state into user-data diagnostic
 - a structural source with a missing architectural plan-line reference returns `FAIL` rather than throwing;
 - a failed plan compile propagates through structure without structural derivation.
 
-The CH-00 semantic manifest remains the regression authority for valid canonical Reference House behaviour and generated artefact identity.
+Existing RH-C2 mutation coverage additionally ensures that invalid-but-derivable structural sources retain their established downstream diagnostics. The CH-00 semantic manifest remains the regression authority for valid canonical Reference House behaviour and generated artefact identity.
 
 ## Non-changes
 
