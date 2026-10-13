@@ -135,7 +135,7 @@ export const workstreamStatuses = [
     nextGate: 'Continue to test neutrality across concrete grammar instances.',
     evidence: {
       framed: ['docs/grammar/architectural-grammar-and-proportion.md'],
-      developed: ['docs/grammar/g01-grammar-modelling-corrections-v01.md'],
+      developed: ['docs/grammar/architectural-grammar-modelling-corrections-v01.md'],
       coordinated: ['docs/development/architectural-specificity-adversarial-test.md']
     }
   },
