@@ -1,7 +1,7 @@
 # Compiler Hardening programme
 
 **Programme:** CH — Compiler Hardening  
-**Status:** READY TO START — CH-00 next  
+**Status:** CH-00 PASS — CH-01 next  
 **Baseline:** `0538be4a9124b107565717bb2f172e73ebfe86ba`  
 **Computational maturity:** M3  
 **Reference House capability sequence:** RH-C0 → RH-C5 complete; no RH-C6 authorised
@@ -209,6 +209,8 @@ Work:
 8. Record any disagreement between this programme and the actual code before refactoring.
 
 **Exit:** There is a durable, machine-checkable baseline that can detect accidental semantic drift during CH-01…CH-08.
+
+**Result:** PASS. The CH-00 execution record and audited architecture map are in `compiler/ch00/README.md`; the machine-readable baseline is `compiler/ch00/reference-house-baseline.json`, enforced by `compiler/ch00/reference-house-baseline.test.ts`.
 
 ### CH-01 — total / fail-closed compilation
 
@@ -497,4 +499,4 @@ frozen before the hardening refactor unless a semantic change is explicit.
 
 Tracking issue: **#47 — CH-00 — compiler hardening programme handoff**.
 
-A new agent should start by reading this document, issue #47, `docs/computational/README.md`, the existing compiler slice models/compilers, `STATUS.md`, and the RH-C5 closeout state. Then execute **CH-00 only** before proposing the CH-01 implementation.
+CH-00 is complete. The next authorised gate is **CH-01 — total / fail-closed compilation**. Start from the frozen CH-00 manifest and execution record; do not treat hardening as new physical or regulatory authority, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
