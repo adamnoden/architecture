@@ -1,5 +1,9 @@
 import { containsBox, isValidBox, overlapArea } from '../core/geometry.js'
 import type { Box2D } from '../core/geometry.js'
+import {
+  MODEL_AREA_EPSILON_MM2,
+  MODEL_COORDINATE_EPSILON_MM
+} from '../core/numeric.js'
 import type { DerivedBoundary, PlanSliceCompileResult } from '../plan-slice/model.js'
 import { mm2 } from '../units.js'
 import { deriveStructuralTopology } from './derive.js'
@@ -11,8 +15,6 @@ import type {
   StructuralTopologySource,
   StructuralTopologyStatus
 } from './model.js'
-
-const EPSILON = 1e-6
 
 const diagnostic = (
   code: string,
@@ -50,15 +52,26 @@ const boundaryCoordinate = (boundary: DerivedBoundary): number =>
 
 const rangeCovers = (line: DerivedSupportPath, min: number, max: number): boolean => {
   const [lineMin, lineMax] = intervalOf(line)
-  return lineMin <= min + EPSILON && lineMax >= max - EPSILON
+  return (
+    lineMin <= min + MODEL_COORDINATE_EPSILON_MM &&
+    lineMax >= max - MODEL_COORDINATE_EPSILON_MM
+  )
 }
 
 const pointOnLine = (x: number, y: number, line: DerivedStructuralLine): boolean => {
   const [min, max] = intervalOf(line)
   if (line.orientation === 'horizontal') {
-    return Math.abs(y - line.y1) <= EPSILON && x >= min - EPSILON && x <= max + EPSILON
+    return (
+      Math.abs(y - line.y1) <= MODEL_COORDINATE_EPSILON_MM &&
+      x >= min - MODEL_COORDINATE_EPSILON_MM &&
+      x <= max + MODEL_COORDINATE_EPSILON_MM
+    )
   }
-  return Math.abs(x - line.x1) <= EPSILON && y >= min - EPSILON && y <= max + EPSILON
+  return (
+    Math.abs(x - line.x1) <= MODEL_COORDINATE_EPSILON_MM &&
+    y >= min - MODEL_COORDINATE_EPSILON_MM &&
+    y <= max + MODEL_COORDINATE_EPSILON_MM
+  )
 }
 
 const pathTouchesBeamEndpoint = (
@@ -69,13 +82,19 @@ const pathTouchesBeamEndpoint = (
   const x = endpoint === 'start' ? beam.x1 : beam.x2
   const y = endpoint === 'start' ? beam.y1 : beam.y2
   if (beam.orientation === 'vertical') {
-    if (path.orientation !== 'horizontal' || Math.abs(path.y1 - y) > EPSILON) return false
+    if (
+      path.orientation !== 'horizontal' ||
+      Math.abs(path.y1 - y) > MODEL_COORDINATE_EPSILON_MM
+    ) return false
     const [min, max] = intervalOf(path)
-    return x >= min - EPSILON && x <= max + EPSILON
+    return x >= min - MODEL_COORDINATE_EPSILON_MM && x <= max + MODEL_COORDINATE_EPSILON_MM
   }
-  if (path.orientation !== 'vertical' || Math.abs(path.x1 - x) > EPSILON) return false
+  if (
+    path.orientation !== 'vertical' ||
+    Math.abs(path.x1 - x) > MODEL_COORDINATE_EPSILON_MM
+  ) return false
   const [min, max] = intervalOf(path)
-  return y >= min - EPSILON && y <= max + EPSILON
+  return y >= min - MODEL_COORDINATE_EPSILON_MM && y <= max + MODEL_COORDINATE_EPSILON_MM
 }
 
 const sourceDiagnostics = (
@@ -366,8 +385,10 @@ const derivedDiagnostics = (
     const [lineMin, lineMax] = intervalOf(structuralLine)
     const collinear =
       boundary.orientation === structuralLine.orientation &&
-      Math.abs(boundaryCoordinate(boundary) - coordinateOf(structuralLine)) <= EPSILON
-    const covered = lineMin <= boundaryMin + EPSILON && lineMax >= boundaryMax - EPSILON
+      Math.abs(boundaryCoordinate(boundary) - coordinateOf(structuralLine)) <= MODEL_COORDINATE_EPSILON_MM
+    const covered =
+      lineMin <= boundaryMin + MODEL_COORDINATE_EPSILON_MM &&
+      lineMax >= boundaryMax - MODEL_COORDINATE_EPSILON_MM
     if (!collinear || !covered) {
       diagnostics.push(
         diagnostic(
@@ -395,14 +416,20 @@ const derivedDiagnostics = (
 
     const intervals: Array<[number, number, string]> = []
     for (const segment of segments) {
-      if (segment.orientation !== path.orientation || Math.abs(coordinateOf(segment) - pathCoordinate) > EPSILON) {
+      if (
+        segment.orientation !== path.orientation ||
+        Math.abs(coordinateOf(segment) - pathCoordinate) > MODEL_COORDINATE_EPSILON_MM
+      ) {
         diagnostics.push(
           diagnostic('SUPPORT_PATH_MISALIGNMENT', 'FAIL', [path.id, segment.id], `${segment.id} is not collinear with ${path.id}.`)
         )
         continue
       }
       const [min, max] = intervalOf(segment)
-      if (min < pathMin - EPSILON || max > pathMax + EPSILON) {
+      if (
+        min < pathMin - MODEL_COORDINATE_EPSILON_MM ||
+        max > pathMax + MODEL_COORDINATE_EPSILON_MM
+      ) {
         diagnostics.push(
           diagnostic('SUPPORT_SEGMENT_OUTSIDE_PATH', 'FAIL', [path.id, segment.id], `${segment.id} extends outside ${path.id}.`)
         )
@@ -413,7 +440,7 @@ const derivedDiagnostics = (
     intervals.sort((a, b) => a[0] - b[0])
     let cursor = pathMin
     for (const [min, max] of intervals) {
-      if (min > cursor + EPSILON) {
+      if (min > cursor + MODEL_COORDINATE_EPSILON_MM) {
         diagnostics.push(
           diagnostic('SUPPORT_PATH_GAP', 'FAIL', [path.id], `${path.id} has an unsupported gap before coordinate ${min}.`)
         )
@@ -421,7 +448,7 @@ const derivedDiagnostics = (
       }
       cursor = Math.max(cursor, max)
     }
-    if (cursor < pathMax - EPSILON) {
+    if (cursor < pathMax - MODEL_COORDINATE_EPSILON_MM) {
       diagnostics.push(
         diagnostic('SUPPORT_PATH_GAP', 'FAIL', [path.id], `${path.id} does not reach its declared end.`)
       )
@@ -462,7 +489,7 @@ const derivedDiagnostics = (
         )
       }
       for (const voidRegion of planVoids) {
-        if (voidRegion.boxes.some((voidBox) => overlapArea(box, voidBox) > EPSILON)) {
+        if (voidRegion.boxes.some((voidBox) => overlapArea(box, voidBox) > MODEL_AREA_EPSILON_MM2)) {
           diagnostics.push(
             diagnostic('SPAN_FIELD_OCCUPIES_VOID', 'FAIL', [field.id, voidRegion.id], `${field.id} occupies architectural void ${voidRegion.id}.`)
           )
@@ -487,7 +514,10 @@ const derivedDiagnostics = (
       : [field.bounds.y, field.bounds.y + field.bounds.height]
     const actualEdges = supports.map(coordinateOf).sort((a, b) => a - b)
     const sortedExpected = [...expectedEdges].sort((a, b) => a - b)
-    if (Math.abs(actualEdges[0] - sortedExpected[0]) > EPSILON || Math.abs(actualEdges[1] - sortedExpected[1]) > EPSILON) {
+    if (
+      Math.abs(actualEdges[0] - sortedExpected[0]) > MODEL_COORDINATE_EPSILON_MM ||
+      Math.abs(actualEdges[1] - sortedExpected[1]) > MODEL_COORDINATE_EPSILON_MM
+    ) {
       diagnostics.push(
         diagnostic('SPAN_SUPPORT_MISMATCH', 'FAIL', [field.id, ...supports.map((item) => item.id)], `${field.id} does not terminate on its declared opposing support paths.`)
       )
@@ -514,7 +544,7 @@ const derivedDiagnostics = (
         (sum, aBox) => sum + b.boxes.reduce((inner, bBox) => inner + overlapArea(aBox, bBox), 0),
         0
       )
-      if (overlap > EPSILON) {
+      if (overlap > MODEL_AREA_EPSILON_MM2) {
         diagnostics.push(
           diagnostic('SPAN_FIELD_OVERLAP', 'FAIL', [a.id, b.id], `${a.id} and ${b.id} overlap by ${overlap} mm².`)
         )
@@ -527,7 +557,7 @@ const derivedDiagnostics = (
     diagnostics.push(
       diagnostic('STRUCTURAL_PLATE_AREA_MISSING', 'FAIL', [source.planeLevelId], `No architectural plate area exists for ${source.planeLevelId}.`)
     )
-  } else if (Math.abs(derived.grossFieldArea - plateArea) > EPSILON) {
+  } else if (Math.abs(derived.grossFieldArea - plateArea) > MODEL_AREA_EPSILON_MM2) {
     diagnostics.push(
       diagnostic(
         'STRUCTURAL_FIELD_CLOSURE_MISMATCH',
