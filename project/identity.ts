@@ -4,6 +4,10 @@ export const projectIdentity = {
   formalSystemName: 'House Kernel',
   compilerName: 'Metamorph Compiler',
   formerMasterNames: ['House Kernel'],
+  formerMasterNameAllowedSources: [
+    'STATUS.md',
+    'docs/manuscript/publication-architecture.md'
+  ],
   legacyNames: [
     'House Systems Architecture',
     'The Long-Life House',
