@@ -131,7 +131,7 @@ export interface StructuralTopologySource {
 }
 
 export interface DerivedStructuralLine {
-  id: StructuralLineId
+  id: string
   kind: StructuralLineKind
   orientation: AxisOrientation
   x1: Millimetres
@@ -191,10 +191,6 @@ export interface DerivedBearingOpeningObligation {
   provisional: boolean
 }
 
-export type DerivedStructuralInterruption = Omit<StructuralInterruptionSource, 'id'> & {
-  id: StructuralInterruptionId
-}
-
 export interface StructuralTopologyDerived {
   planeLevelId: string
   lineElements: DerivedStructuralLine[]
@@ -202,7 +198,7 @@ export interface StructuralTopologyDerived {
   spanFields: DerivedSpanField[]
   reactionNodes: DerivedReactionNode[]
   bearingOpenings: DerivedBearingOpeningObligation[]
-  interruptions: DerivedStructuralInterruption[]
+  interruptions: StructuralInterruptionSource[]
   localFramingSystems: LocalFramingSystemSource[]
   diaphragm: DiaphragmSource
   grossFieldArea: SquareMillimetres
