@@ -34,7 +34,8 @@
     "test:ch01": "node --import tsx --test compiler/ch01/*.test.ts",
     "test:ch02": "node --import tsx --test compiler/ch02/*.test.ts",
     "test:ch03": "node --import tsx --test compiler/ch03/*.test.ts",
-    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:rh-c2 && npm run test:rh-c3 && npm run test:rh-c4 && npm run test:rh-c5 && npm run test:ch00 && npm run test:ch01 && npm run test:ch02 && npm run test:ch03 && npm run publication:validate"
+    "test:ch04": "node --import tsx --test compiler/ch04/*.test.ts",
+    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:rh-c2 && npm run test:rh-c3 && npm run test:rh-c4 && npm run test:rh-c5 && npm run test:ch00 && npm run test:ch01 && npm run test:ch02 && npm run test:ch03 && npm run test:ch04 && npm run publication:validate"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "11.17.0",
