@@ -1,0 +1,57 @@
+name: Ovid’s House closeout verification
+
+on:
+  push:
+    branches: [ovids-house-migration]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ovids-house-closeout
+  cancel-in-progress: false
+
+jobs:
+  closeout:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout migration branch
+        uses: actions/checkout@v5
+        with:
+          ref: ovids-house-migration
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Apply selective closeout edits
+        run: node scripts/close-ovids-house-status.mjs
+
+      - name: Regenerate machine-owned status block
+        run: npm run status:update
+
+      - name: Check patch
+        run: git diff --check
+
+      - name: Run complete repository and site health check
+        run: npm run check
+
+      - name: Build compact Primer PDF
+        run: npm run publication:build:primer
+
+      - name: Build complete Working Edition PDF
+        run: npm run publication:build
+
+      - name: Commit verified closeout edits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add STATUS.md project/maturity.ts docs/manuscript/publication-architecture.md docs/development/README.md
+          git commit -m "OH-05 — verify publication and status migration"
+          git push origin HEAD:ovids-house-migration
