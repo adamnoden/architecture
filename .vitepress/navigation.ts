@@ -39,7 +39,8 @@ const manuscriptSidebar: DefaultTheme.SidebarItem[] = [
     page('Part V — Making and Testing the Platform', '/docs/manuscript/part-v'),
     group('Structure & reference', [
       page('Sources and further reading', '/docs/manuscript/sources-and-further-reading'),
-      page('Publication architecture', '/docs/manuscript/publication-architecture')
+      page('Publication architecture', '/docs/manuscript/publication-architecture'),
+      page('Publication credibility & release', '/docs/manuscript/publication-credibility-release-programme')
     ])
   ], false)
 ]
