@@ -72,6 +72,39 @@ describe('RH-C2 bounded structural view', () => {
     )
   })
 
+  test('turns numeric openings in bearing boundaries into explicit external structural obligations', () => {
+    const result = compileReferenceHouseStructuralView(createReferenceHouseSource()).structure
+    const openings = result.derived.bearingOpenings
+
+    assert.equal(openings.length, 12)
+    assert.deepEqual(
+      openings.map((opening) => opening.openingId),
+      [
+        'G-COURT-NORTH-O01',
+        'G-COURT-SOUTH-O01',
+        'G-FRONT-D01',
+        'G-FRONT-W01',
+        'G-FRONT-W02',
+        'G-FRONT-W04',
+        'U-COURT-NORTH-O01',
+        'U-COURT-SOUTH-O01',
+        'U-FRONT-W01',
+        'U-FRONT-W02',
+        'U-FRONT-W03',
+        'U-FRONT-W04'
+      ]
+    )
+    assert.ok(openings.every((opening) => opening.proof === 'EXTERNAL-HEAD-SUPPORT-AND-BEARING'))
+    assert.equal(
+      openings.find((opening) => opening.openingId === 'G-COURT-NORTH-O01')?.width.kind,
+      'unknown'
+    )
+    assert.equal(
+      openings.find((opening) => opening.openingId === 'G-FRONT-D01')?.structuralLineId,
+      'LB-OUTER-S'
+    )
+  })
+
   test('keeps exact stair and service trimming geometry absent when RH-05 does not control it', () => {
     const source = createReferenceHouseStructuralSource(createReferenceHouseSource())
     const stair = source.interruptions.find((item) => item.id === 'ST-01')
@@ -152,6 +185,18 @@ describe('RH-C2 bounded structural view', () => {
     assert.equal(result.status, 'FAIL')
     assert.ok(diagnosticCodes(result.structure).includes('BEARING_LINE_NO_FOUNDATION'))
     assert.ok(diagnosticCodes(result.structure).includes('GRAVITY_PATH_UNRESOLVED'))
+  })
+
+  test('fails when an architectural bearing boundary is mapped to the wrong structural line', () => {
+    const house = createReferenceHouseSource()
+    const source = cloneReferenceHouseStructuralSource(createReferenceHouseStructuralSource(house))
+    const mapping = source.bearingBoundaryMappings.find((item) => item.id === 'BBM-G-OUTER-SOUTH')
+    assert.ok(mapping)
+    mapping.structuralLineId = 'LB-OUTER-N'
+
+    const result = compileReferenceHouseStructuralView(house, source)
+    assert.equal(result.status, 'FAIL')
+    assert.ok(diagnosticCodes(result.structure).includes('BEARING_MAPPING_GEOMETRY_MISMATCH'))
   })
 
   test('fails when a span field is assigned to support paths that do not bound it', () => {
