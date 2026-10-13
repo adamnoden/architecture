@@ -16,8 +16,8 @@ export const programmeControls = [
   { path: 'docs/development/reference-house-design-programme.md', lifecycle: 'active' },
   { path: 'docs/development/tectonic-prototype-programme.md', lifecycle: 'active' },
   { path: 'docs/development/manufacturing-strategy.md', lifecycle: 'active' },
-  { path: 'docs/development/ovids-house-migration.md', lifecycle: 'active' },
 
+  { path: 'docs/development/ovids-house-migration.md', lifecycle: 'complete' },
   { path: 'docs/development/architectural-specificity-audit.md', lifecycle: 'complete' },
   { path: 'docs/development/architectural-specificity-ledger.md', lifecycle: 'complete' },
   { path: 'docs/development/architectural-specificity-adversarial-test.md', lifecycle: 'complete' },

@@ -1,7 +1,7 @@
 # Ovid’s House — identity and conceptual migration
 
 **Programme:** OH — Ovid’s House migration  
-**Status:** active  
+**Status:** complete — PASS  
 **Baseline:** `a57db1b03cc055ef744e883f0333d53fb282f6f5` (`CH-08 — distillation and deletion`)  
 **Branch:** `ovids-house-migration`
 
@@ -145,6 +145,20 @@ The theme should be strongest where it helps a reader understand the project and
 - Keep domain cutover separate from repository correctness.
 
 **Exit:** no dangling migration TODOs remain in the repository.
+
+## Closeout result
+
+**OH-00 → OH-06: PASS.** The migration was executed from the completed CH-08 baseline without creating a new compiler-capability stage or changing computational maturity.
+
+The resulting hierarchy is now explicit in current project material: **Ovid’s House** is the master project and publication identity; **permanence through transformation** is the compact temporal thesis; **House Kernel** is retained as the formal architectural/computational system; **Metamorph Compiler** is the human-facing name of its executable machinery; and the **Reference House** remains one worked integration fixture.
+
+The Ovidian frame was integrated proportionately. It is strongest on the landing page, in the preface coda, in the selective-permanence discussion in Part I and in the compact Primer, with a fuller research boundary recorded in `docs/research/preface-precedents.md`. The governing principles, pattern language and Reference House were not converted into literary or classical branding. Ovid remains an interpretive lens rather than architectural authority.
+
+Stable technical identity was preserved deliberately. Canonical `HSA-P-*` pattern IDs, `HK-RH-COMPILE-1`, RH-C0…RH-C5, CF-01, CH-00…CH-08, historical regression fixtures and ordinary compiler/domain names remain unchanged where they carry semantic or provenance value. No CH-09 or RH-C6 was introduced.
+
+Verification completed at two levels. A transactional closeout run passed the complete repository/site health check and built both the compact Primer PDF and full Working Edition PDF before committing publication/status changes. After the temporary migration and verification machinery was removed, normal pull-request validation passed again on the durable-only branch state. The CH regression suites remained green throughout, preserving the frozen semantic, determinism, provenance and artefact contracts.
+
+The remaining domain work is operational rather than architectural or repository work. Registration and DNS cutover for `ovidshouse.com`, with `ovidhouse.com` as a desirable defensive redirect, remain outside this completed programme.
 
 ## Domain and repository boundary
 
