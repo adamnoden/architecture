@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 
+import { renderBoundaryTopologySvg } from '../boundary-slice/drawing.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { compileReferenceHouseServiceView } from '../rhc3/compile.js'
 import { compileReferenceHouseBoundaryView } from './compile.js'
@@ -25,6 +26,11 @@ test('RH-C4 retains PEN-CD-01 as the registered owner of both courtyard drainage
   assert.deepEqual(occurrence.drainageRouteIds, ['RW-COURT-EMERGENCY', 'RW-COURT-PRIMARY'])
   assert.deepEqual(occurrence.roles, ['air', 'moisture', 'thermal', 'weather'])
   assert.ok(occurrence.obligations.includes('PRIMARY-AND-EMERGENCY-ROUTES-REMAIN-INDEPENDENT'))
+
+  const drawing = renderBoundaryTopologySvg(result.boundaries, 'RH-C4 envelope / boundary topology')
+  assert.match(drawing, /data-entity="INT-RW-PEN-CD-01"/)
+  assert.match(drawing, />PEN-CD-01</)
+  assert.match(drawing, /RW-COURT-EMERGENCY \+ RW-COURT-PRIMARY/)
 })
 
 test('RH-C4 fails if PEN-CD-01 disappears while the courtyard drainage routes remain', () => {
