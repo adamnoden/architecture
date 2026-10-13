@@ -1,6 +1,7 @@
 import type { Box2D } from '../core/geometry.js'
 import { mm, mm2, square } from '../units.js'
 import type { Millimetres } from '../units.js'
+import { planBoundaryId } from './model.js'
 import type {
   AreaResult,
   DerivedBoundary,
@@ -139,7 +140,7 @@ export const derivePlanSlice = (source: PlanSliceSource): PlanSliceDerived => {
 
       if (boundary.orientation === 'horizontal') {
         return {
-          id: boundary.id,
+          id: planBoundaryId(boundary.id),
           levelId: boundary.levelId,
           kind: boundary.kind,
           orientation: boundary.orientation,
@@ -153,7 +154,7 @@ export const derivePlanSlice = (source: PlanSliceSource): PlanSliceDerived => {
       }
 
       return {
-        id: boundary.id,
+        id: planBoundaryId(boundary.id),
         levelId: boundary.levelId,
         kind: boundary.kind,
         orientation: boundary.orientation,
@@ -175,7 +176,7 @@ export const derivePlanSlice = (source: PlanSliceSource): PlanSliceDerived => {
     .map((opening) => {
       const family = familyById.get(opening.familyId)
       if (!family) throw new Error(`Unknown opening family ${opening.familyId}.`)
-      const host = boundaryById.get(opening.hostBoundaryId)
+      const host = boundaryById.get(planBoundaryId(opening.hostBoundaryId))
       if (!host) throw new Error(`Unknown opening host ${opening.hostBoundaryId}.`)
       const level = levelById.get(opening.levelId)
       if (!level) throw new Error(`Unknown level ${opening.levelId}.`)
@@ -197,7 +198,7 @@ export const derivePlanSlice = (source: PlanSliceSource): PlanSliceDerived => {
       return {
         id: opening.id,
         levelId: opening.levelId,
-        hostBoundaryId: opening.hostBoundaryId,
+        hostBoundaryId: host.id,
         spaceIds: [...opening.spaceIds],
         role: opening.role,
         placementKind,
