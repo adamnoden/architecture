@@ -2,13 +2,20 @@ export type BoundaryTopologyStatus = 'PASS' | 'REVIEW' | 'FAIL'
 
 export type BoundaryRole = 'weather' | 'air' | 'thermal' | 'moisture'
 export type BoundaryCarrierKind = 'plan-boundary' | 'roof-field' | 'ground-interface'
-export type BoundaryTransitionKind = 'wall-roof' | 'wall-ground' | 'opening' | 'service-penetration' | 'threshold' | 'rainwater-collection' | 'roof-penetration'
+export type BoundaryTransitionKind =
+  | 'wall-roof'
+  | 'wall-ground'
+  | 'opening'
+  | 'service-penetration'
+  | 'threshold'
+  | 'rainwater-collection'
+  | 'roof-penetration'
 
 export interface BoundaryCarrierSource {
   id: string
   kind: BoundaryCarrierKind
   role: BoundaryRole
-  planBoundaryId?: string
+  planBoundaryIds: string[]
   label: string
   critical: boolean
   removable: boolean
