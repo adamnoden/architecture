@@ -136,8 +136,7 @@ export type DerivedServiceCrossingHost =
   | { kind: 'structural-interruption'; interruptionId: StructuralInterruptionId }
   | { kind: 'external-handoff'; description: string }
 
-export type DerivedServiceCrossing = Omit<ServiceCrossingSource, 'id' | 'host' | 'bearingLineId'> & {
-  id: ServiceCrossingId
+export type DerivedServiceCrossing = Omit<ServiceCrossingSource, 'host' | 'bearingLineId'> & {
   host: DerivedServiceCrossingHost
   bearingLineId?: StructuralLineId
 }
@@ -158,7 +157,7 @@ export interface ServiceTopologyDerived {
   crossings: DerivedServiceCrossing[]
   access: ServiceAccessSource[]
   bearingCrossings: DerivedServiceBearingCrossingObligation[]
-  selectedCrossingIds: ServiceCrossingId[]
+  selectedCrossingIds: string[]
   serviceClasses: ServiceClass[]
 }
 
