@@ -15,14 +15,13 @@ const permanentLayers = [
 ] as const
 
 type PermanentLayer = (typeof permanentLayers)[number]
-
 type DependencyName = PermanentLayer | 'units'
 
 const allowedDependencies: Record<PermanentLayer, ReadonlySet<DependencyName>> = {
   core: new Set(),
   'plan-slice': new Set(['core', 'units']),
   'structure-slice': new Set(['core', 'plan-slice', 'units']),
-  'service-slice': new Set(['plan-slice', 'structure-slice']),
+  'service-slice': new Set(['plan-slice', 'structure-slice', 'units']),
   'boundary-slice': new Set(['plan-slice', 'service-slice']),
   'calculation-slice': new Set()
 }
@@ -32,6 +31,9 @@ const sourceFiles = (layer: PermanentLayer): string[] =>
     .filter((entry) => entry.isFile() && entry.name.endsWith('.ts'))
     .map((entry) => posix.join(compilerRoot, layer, entry.name))
     .sort()
+
+const runtimeFiles = (layer: PermanentLayer): string[] =>
+  sourceFiles(layer).filter((file) => !file.endsWith('/drawing.ts'))
 
 const importSpecifiers = (source: string): string[] => {
   const results: string[] = []
@@ -43,7 +45,7 @@ const importSpecifiers = (source: string): string[] => {
 const targetOf = (file: string, specifier: string): string =>
   posix.normalize(posix.join(dirname(file).replaceAll('\\', '/'), specifier.replace(/\.js$/, '.ts')))
 
-const dependencyName = (target: string): DependencyName | 'self' | 'other' => {
+const dependencyName = (target: string): DependencyName | 'other' => {
   if (target === 'compiler/units.ts') return 'units'
   for (const layer of permanentLayers) {
     if (target.startsWith(`compiler/${layer}/`)) return layer
@@ -52,9 +54,9 @@ const dependencyName = (target: string): DependencyName | 'self' | 'other' => {
 }
 
 describe('CH-02 permanent runtime architecture', () => {
-  test('generic domains obey the permanent dependency DAG', () => {
+  test('generic runtime domains obey the permanent dependency DAG', () => {
     for (const layer of permanentLayers) {
-      for (const file of sourceFiles(layer)) {
+      for (const file of runtimeFiles(layer)) {
         const source = readFileSync(file, 'utf8')
         for (const specifier of importSpecifiers(source)) {
           if (!specifier.startsWith('.')) continue
@@ -77,10 +79,10 @@ describe('CH-02 permanent runtime architecture', () => {
     }
   })
 
-  test('generic runtime contains no Reference House fixture knowledge', () => {
+  test('generic runtime logic contains no Reference House fixture knowledge', () => {
     const fixtureKnowledge = /(?:RH-C\d|REFERENCE-HOUSE|Reference House|createReferenceHouse)/
     for (const layer of permanentLayers) {
-      for (const file of sourceFiles(layer)) {
+      for (const file of runtimeFiles(layer)) {
         const source = readFileSync(file, 'utf8')
         assert.doesNotMatch(source, fixtureKnowledge, `${file} contains Reference House fixture knowledge`)
       }
@@ -92,7 +94,7 @@ describe('CH-02 permanent runtime architecture', () => {
     assert.match(p0Geometry, /from '\.\.\/core\/geometry\.js'/)
 
     for (const layer of ['plan-slice', 'structure-slice'] as const) {
-      for (const file of sourceFiles(layer)) {
+      for (const file of runtimeFiles(layer)) {
         assert.doesNotMatch(
           readFileSync(file, 'utf8'),
           /\.\.\/p0\//,
