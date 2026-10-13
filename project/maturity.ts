@@ -135,7 +135,7 @@ export const workstreamStatuses = [
     nextGate: 'Continue to test neutrality across concrete grammar instances.',
     evidence: {
       framed: ['docs/grammar/architectural-grammar-and-proportion.md'],
-      developed: ['docs/grammar/architectural-grammar-modelling-corrections-v01.md'],
+      developed: ['docs/grammar/g01-candidate-constraints-v01.md'],
       coordinated: ['docs/development/architectural-specificity-adversarial-test.md']
     }
   },
@@ -217,9 +217,9 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-13',
     currentState:
-      'The bounded Reference House executable sequence remains closed PASS through RH-C5. CH-00 froze a machine-checkable semantic and artefact baseline; CH-01 established deterministic fail-closed prerequisites; CH-02 machine-enforces the generic runtime boundary; CH-03 compiles the canonical Reference House once into coherent direct domain state; CH-04 selectively hardens validated cross-domain IDs, unit retention, numeric tolerance classes and immutability/readonly boundaries; and CH-05 now adds stable semantic source/method/result/compile identity under schema HK-RH-COMPILE-1, focused permutation-invariance evidence, inspectable manifests, lightweight lineage and linkage to frozen artefact identity without changing frozen semantics. These hardening gates improve software confidence only and do not expand the Reference House proof boundary or technical authority.',
+      'The bounded Reference House executable sequence remains closed PASS through RH-C5. CH-00 froze a machine-checkable semantic and artefact baseline; CH-01 established deterministic fail-closed prerequisites; CH-02 machine-enforces the generic runtime boundary; CH-03 compiles the canonical Reference House once into coherent direct domain state; CH-04 selectively hardens validated cross-domain IDs, unit retention, numeric tolerance classes and immutability/readonly boundaries; CH-05 adds stable semantic source/method/result/compile identity under schema HK-RH-COMPILE-1, focused permutation-invariance evidence, inspectable manifests, lightweight lineage and linkage to frozen artefact identity; and CH-06 now strengthens geometry, calculation and service-connectivity law/property/metamorphic evidence using deterministic generated cases without changing production compiler semantics. These hardening gates improve software confidence only and do not expand the Reference House proof boundary or technical authority.',
     nextGate:
-      'CH-06: strengthen the kinds of tests with law/property/metamorphic evidence over selected critical kernels while preserving the complete CH-00 through CH-05 contracts. There is no standing RH-C6; new computational capability still requires a concrete proof family justified by external review, physical validation, a real project or newly authoritative inputs.',
+      'CH-07: make the compiler/toolchain boring and obvious to maintain with one clear repository-health path, explicit check-only artefact verification, generation policy and local/CI conventions while preserving the complete CH-00 through CH-06 contracts. There is no standing RH-C6; new computational capability still requires a concrete proof family justified by external review, physical validation, a real project or newly authoritative inputs.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -239,6 +239,9 @@ export const workstreamStatuses = [
         'compiler/ch04/ch04.test.ts',
         'compiler/ch05/README.md',
         'compiler/ch05/ch05.test.ts',
+        'compiler/ch06/README.md',
+        'compiler/ch06/ch06.test.ts',
+        'compiler/ch06/geometry-positive.test.ts',
         'compiler/core/identity.ts',
         'compiler/reference-house/identity.ts',
         'compiler/reference-house/system-compile.ts',
