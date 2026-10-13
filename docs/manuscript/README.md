@@ -14,6 +14,8 @@ The publication sequence is:
 
 Part III and Part IV are owned by their canonical repository areas rather than duplicated under `manuscript/`. Publication order is not filesystem ownership. The intended book structure and chapter plan are recorded in [Publication Architecture](publication-architecture.md).
 
+The path from a mature manuscript to private critical edition, external adversarial review and eventual public release is governed separately by the [Publication Credibility and Release Programme](publication-credibility-release-programme.md). Its governing rule is **epistemic credibility before commercial credibility**: the work should survive deliberate internal attack and serious external criticism before publisher or market validation is sought.
+
 ## Architectural specificity
 
 Concrete architectural and construction examples are used where they make the argument clearer. Masonry, plaster, cornices, architraves, thresholds, timber, metalwork and the Reference House may therefore appear in general chapters without becoming House Kernel requirements.
