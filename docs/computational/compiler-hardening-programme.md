@@ -1,7 +1,7 @@
 # Compiler Hardening programme
 
 **Programme:** CH — Compiler Hardening  
-**Status:** CH-03 PASS — CH-04 next  
+**Status:** CH-04 PASS — CH-05 next  
 **Baseline:** `0538be4a9124b107565717bb2f172e73ebfe86ba`  
 **Computational maturity:** M3  
 **Reference House capability sequence:** RH-C0 → RH-C5 complete; no RH-C6 authorised
@@ -26,7 +26,7 @@ The hardened compiler should be:
 - **immutable** — compilation behaves as a pure transformation of source into result;
 - **deterministic** — semantically irrelevant source ordering does not change semantic output;
 - **traceable** — important derived claims can be walked back to source facts, methods and authority;
-- **architecturally bounded** — generic domains contain no Reference-House-specific knowledge;
+- **architecturally bounded** — generic domains contain no Reference House fixture IDs or special cases;
 - **boring to operate** — one obvious health check and one obvious artefact-verification path.
 
 ## Baseline to preserve
@@ -346,6 +346,8 @@ Do not add suppressions merely to satisfy strictness. Turn on only what has been
 
 **Exit:** meaningful ID/unit/mutation mistakes move from runtime convention toward compile-time prevention.
 
+**Result:** PASS. CH-04 brands validated cross-domain plan-boundary, structural-line/interruption and service-crossing references while deliberately keeping authored source IDs as strings so malformed-source/fail-closed tests remain ergonomic. `compiler/core/numeric.ts` records separate box-geometry, model-coordinate and model-area tolerance classes while preserving the established `1e-9` / `1e-6` values and comparison outcomes. Important Reference House coordination lengths retain branded units; canonical compilation is proven not to mutate source input; and `ReferenceHouseSystemCompileResult` is shallow readonly. `noImplicitReturns` and `noFallthroughCasesInSwitch` are enabled without compensating churn; `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes` were evaluated and deliberately deferred as broad migrations. The execution record is `compiler/ch04/README.md`, with compile-time/runtime contracts in `compiler/ch04/ch04.test.ts`. CH-00 through CH-03 remain green and no frozen semantic, proof or artefact identity changed.
+
 ### CH-05 — determinism, identity and provenance
 
 **Question:** Can a compiled result prove what source/methods produced it and reproduce itself exactly?
@@ -503,4 +505,4 @@ frozen before the hardening refactor unless a semantic change is explicit.
 
 ## Handoff
 
-CH-00, CH-01, CH-02 and CH-03 are complete. The next authorised gate is **CH-04 — strengthen representation**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract, CH-02 runtime dependency boundary and CH-03 single-pass Reference House compiler; do not use CH-04 to add Reference House technical capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
+CH-00 through CH-04 are complete. The next authorised gate is **CH-05 — determinism, identity and provenance**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract, CH-02 runtime dependency boundary, CH-03 single-pass Reference House compiler and CH-04 representation contracts; do not use CH-05 to add Reference House technical capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
