@@ -6,15 +6,13 @@ import type { ServiceTopologyCompileResult, ServiceTopologySource } from '../ser
 import { applyReferenceHouseServiceCoordinationAuthority } from './authority.js'
 import { createReferenceHouseServiceSource } from './fixture.js'
 import { hardenReferenceHouseServiceTopology } from './hardening.js'
+import { rhC3ProofBoundary } from './proof-boundary.js'
 
 export interface RhC3CompileResult {
   status: RhCompileStatus
   c2: RhC2CompileResult
   services: ServiceTopologyCompileResult
-  proofBoundary: {
-    topology: 'MACHINE-CHECKED'
-    performance: 'EXTERNAL-NOT-PROVED'
-  }
+  proofBoundary: typeof rhC3ProofBoundary
 }
 
 const aggregate = (
@@ -43,9 +41,6 @@ export const compileReferenceHouseServiceView = (
     status: aggregate(c2, services),
     c2,
     services,
-    proofBoundary: {
-      topology: 'MACHINE-CHECKED',
-      performance: 'EXTERNAL-NOT-PROVED'
-    }
+    proofBoundary: rhC3ProofBoundary
   }
 }
