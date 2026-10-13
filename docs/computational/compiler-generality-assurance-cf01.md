@@ -1,142 +1,161 @@
 # Compiler Generality Assurance — CF-01 Contrast Fixture Gate
 
-**Status:** planned post-RH-C1 gate; **BLOCKED until RH-C1 passes**  
-**Date:** 2026-10-12  
+**Status:** **PASS — two-fixture bounded generality established for the plan-semantic slice**  
+**Date:** 2026-10-13  
 **Upstream:** [`reference-house-executable-slice.md`](reference-house-executable-slice.md)  
-**Reference fixture:** [`../reference-house/model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md)
+**Reference fixture:** [`../reference-house/model-baseline-rhc0.md`](../reference-house/model-baseline-rhc0.md)  
+**Implementation:** `compiler/plan-slice/`, `compiler/reference-house/plan-adapter.ts`, `compiler/cf01/`
 
-## Purpose
+## Result
 
-RH-C1 deliberately answers a narrow question: can one canonical semantic source reproduce the frozen Reference House deterministically? A successful answer proves useful things about source authority, dependency propagation and deterministic projection. It does **not** prove that the resulting abstractions describe more than that one house.
+CF-01 passed.
 
-CF-01 is the explicit generality challenge that follows RH-C1. Its job is to detect accidental Reference-House-shaped assumptions before structure, services and boundary semantics deepen the implementation.
+RH-C1 proved that one frozen Reference House could be encoded once, mutated coherently and projected deterministically. CF-01 then challenged the implementation with a deliberately unlike but small domestic fixture rather than assuming those abstractions were general.
 
-The contrast fixture is **not a second fully developed Reference House**. It is a cheap, architecturally plausible adversarial fixture designed after RH-C1, when there is concrete code to attack.
+The contrast fixture is:
 
----
+- single-storey;
+- asymmetric in plan;
+- without a courtyard or other internal void;
+- without a stair;
+- without a regular bay field or entrance-bay membership;
+- driven by irregular opening coordinates on semantic host boundaries;
+- neutral with respect to G-01 grammar.
 
-## Lossless comparison with work already in the repository
+It uses the same extracted plan-semantic compiler as the Reference House. The shared compiler knows about levels, named planning lines, spaces, optional voids, boundaries, openings, required adjacency, plan closure and deterministic plan projection. It does **not** know that the Reference House has a centred courtyard, two storeys, a four-bay front, a particular stair, G-01-derived opening composition, the RH wall-planning stress model or the RH roof relation.
 
-| Idea | Repository state before CF-01 | Disposition |
-|---|---|---|
-| semantic entities rather than drawing primitives | already explicit in `formal-architectural-model.md` and `executable-architecture.md` | **ALREADY PLANNED** |
-| source facts separated from derived facts and outputs | explicit in formal model; hardened by RH-C0 authored→derived contract | **ALREADY PLANNED** |
-| distinguish House Kernel doctrine, grammar, technical authority and project fixture choices | explicit in computational authority boundary and architectural-specificity work | **ALREADY PLANNED** |
-| identify dependency consequences before implementation | RH-C0.4 produced `rhc0-mutation-map.md` | **DONE / INPUT TO RH-C1** |
-| implement mutation tests so source changes propagate through calculations and drawings | explicit RH-C1 requirement | **ALREADY PLANNED** |
-| define semantic/drawing parity rather than trusting visual resemblance | RH-C0.6 comparator audit + RH-C1 parity gate | **ALREADY PLANNED** |
-| keep compiler bounded rather than claiming arbitrary architecture | explicit “closed world by design” position | **ALREADY PLANNED** |
-| pre-C1 audit of every entity for architectural meaning versus fixture convenience | partly achieved by RH-C0 and the formal model, but not as a separate remaining stage | **MOSTLY DONE; KEEP AS C1 IMPLEMENTATION DISCIPLINE** |
-| explicitly test whether C1 core abstractions encode the courtyard house by accident | no concrete post-C1 fixture/gate existed | **NEW — CF-01** |
-| use a deliberately unlike second house without fully designing another Reference House | no standing work item existed | **NEW — CF-01** |
-| distinguish mutation testing from cross-fixture generality testing | implicit but not recorded as a programme distinction | **NEW EXPLICIT DISTINCTION** |
-| require the contrast test before broad compiler growth | previous sequence moved directly RH-C1 → RH-C2 | **NEW SEQUENCING GATE** |
+The executable result is:
 
-The main conclusion is therefore **not** “do another large pre-C1 research phase”. RH-C0 already absorbed most of the useful pre-C1 hardening. The missing protection is a second, structurally different fixture *after* C1 exists.
+```text
+P0                         17 / 17 PASS
+PAT-XW-01                   6 /  6 PASS
+RH-C1                      27 / 27 PASS
+CF-01                       7 /  7 PASS
+repository / publication          PASS
+documentation build               PASS
+```
 
----
-
-## Three different things the tests prove
-
-### 1. Reference House reproduction
-
-RH-C1 asks whether the frozen Reference House can be represented once and regenerated deterministically.
-
-This tests **fixture fidelity**.
-
-### 2. Reference House mutations
-
-The RH-C0 mutation map changes high-leverage source facts and predicts propagation, conflict, review and stale-evidence consequences.
-
-This tests **dependency correctness**.
-
-A hundred mutations of one house can still leave a model whose ontology silently assumes that all houses look like that house.
-
-### 3. Contrast fixture
-
-CF-01 supplies a different but deliberately small house arrangement through the same semantic core.
-
-This tests **bounded generality**.
-
-Passing CF-01 still does not prove universal architecture. It only gives materially stronger evidence that the core is not a one-house drawing program.
+This is **two-fixture bounded evidence**, not proof of arbitrary architectural validity.
 
 ---
 
-## RH-C1 implementation discipline
+## What the contrast fixture exposed
 
-Do not pre-generalise RH-C1 for an imagined second house. That would recreate the speculative compiler growth that P0 deliberately stopped.
+The RH-C1 code had several real Reference-House-shaped assumptions. They were acceptable while C1 was intentionally a one-fixture slice, but they could not remain hidden in the shared plan machinery.
 
-Instead, whenever RH-C1 introduces a core entity, field or invariant, keep the distinction visible between:
+### 1. Fixed two-storey iteration
 
-1. **semantic core** — architectural concept justified independently of this fixture, such as space identity, containment, host opening, level or derived relationship;
-2. **fixture data** — the Reference House's particular courtyard, room topology, stair grouping, four-bay field, dimensions and opening membership;
-3. **derived projection** — geometry, calculations and drawings computed from source facts.
+RH-C1 integrity checking iterated explicitly over `GROUND` and `FIRST`.
 
-Warning signs during C1 include APIs or invariants that silently imply:
+**CF-01 correction:** the shared plan compiler now consumes an authored level collection and performs overlap and plate-closure checks over whatever levels are present. The Reference House adapter supplies its two levels; the contrast fixture supplies one.
 
-- every building has a courtyard;
-- the courtyard is centred;
-- every house has exactly two storeys;
-- every principal elevation has four regular bays;
-- every stair has three flights of six rises;
-- every room arrangement follows the Reference House ring topology;
-- G-01 or Georgian-derived composition is the default architectural language.
+### 2. Mandatory centred courtyard
 
-The correct C1 response is usually to **localise the Reference House fact**, not to build a speculative universal abstraction.
+RH-C1 plan derivation assumed a centred courtyard existed and used it directly for exclusion and enclosed-plate calculations.
+
+**CF-01 correction:** the shared plan source has optional plan voids. Plate area is shell area minus the authored void regions on that level. The Reference House adapter represents its courtyard as a void; the contrast fixture has none. Courtyard centring remains Reference House logic.
+
+### 3. Bay-derived numeric openings
+
+RH-C1 derived front openings from one regular centred bay field and required an entrance-bay membership.
+
+**CF-01 correction:** the shared opening mechanism accepts semantic host boundaries with neutral coordinates, boundary-centred placement or qualitative-only placement. The Reference House adapter resolves its bay memberships to coordinates while retaining their project semantic kind. The contrast fixture authors irregular host coordinates directly.
+
+### 4. Mandatory stair and Reference House section machinery
+
+The RH-C1 source necessarily contains stair, wall-planning and roof facts because those are part of the frozen fixture and principal section.
+
+**CF-01 correction:** none of those concepts is required by the shared plan compiler. They remain in `compiler/reference-house/` and continue to be tested there. A one-storey fixture can therefore compile without fake stair or section data.
+
+### 5. Reference-House-owned units
+
+Millimetre, square-millimetre and degree types were housed under `compiler/reference-house/` even though they are not Reference-House concepts.
+
+**CF-01 correction:** those unit primitives now live at `compiler/units.ts`. The previous Reference House import path is retained as a compatibility re-export.
+
+These are deliberately modest generalisations. CF-01 did not invent a universal building schema merely to make the second fixture fit.
 
 ---
 
-## Designing the contrast fixture
+## Shared plan-semantic kernel
 
-Do **not** freeze its detailed design now. Choose it after RH-C1 passes, using the actual implementation to identify the assumptions most worth attacking.
+The extracted `compiler/plan-slice/` layer owns only mechanisms justified by both worked cases or by an independently useful semantic need:
 
-The fixture should be just architecturally coherent enough to avoid meaningless geometry. It should differ from the Reference House across several high-leverage C1 dimensions while staying inside a deliberately bounded domestic problem.
+- arbitrary string level identity plus level datum;
+- named orthogonal planning lines;
+- spaces as unions of rectangles resolved from those lines;
+- optional excluded plan regions / voids;
+- line boundaries with semantic host identity;
+- opening families and authority-aware dimensions;
+- opening placement by host coordinate, host centre or qualitative relation;
+- semantic opening-to-space ownership;
+- required adjacency;
+- shell containment, non-overlap, void exclusion and per-level plate closure;
+- deterministic diagnostic ordering;
+- deterministic semantic SVG plan projection.
 
-Candidate contrasts include:
+The Reference House continues to own its own adapter and project-specific derivations. There is no branch on fixture identity in the shared compiler.
 
-- no courtyard or internal void;
-- materially asymmetric room topology;
-- a façade rhythm that is not the Reference House four-bay field;
-- a different stair topology, or a fixture in which stair optionality is itself the challenge;
-- different room counts and adjacencies;
-- non-G-01 / neutral architectural grammar;
-- opening placement driven by room/host relationships rather than inherited Reference House axes.
+---
 
-These are candidate attack dimensions, not a brief to maximise difference. CF-01 should use the **smallest fixture that exposes accidental assumptions**.
+## Deliberate supported-domain restrictions
 
-Do not pull structure, MEP, detailed envelope physics or regulations into CF-01 merely to make the second house feel complete. The fixture should challenge the RH-C1 semantic scope first.
+CF-01 does not erase every limitation in RH-C1. It makes the remaining limits explicit.
+
+The current shared plan slice is intentionally restricted to:
+
+- a rectangular outer shell in a 2D orthogonal coordinate system;
+- spaces and voids represented as unions of axis-aligned rectangles;
+- boundaries represented as horizontal or vertical line segments;
+- numeric openings hosted by those line boundaries;
+- simple per-level area closure rather than arbitrary polygon topology;
+- architectural plan relationships only.
+
+It does **not** yet support arbitrary polygons, curved or angled walls, split-level volumetric modelling, non-line opening hosts, structure, services, detailed envelope physics, products, regulatory compliance or general BIM/IFC semantics.
+
+Those are not defects CF-01 needs to conceal. They are the current supported domain. The compiler must continue to refuse or leave unsupported work outside it rather than guessing.
 
 ---
 
 ## Pass conditions
 
-CF-01 passes only if all of the following hold:
+| # | Condition | Result |
+|---|---|---|
+| 1 | Reference House and contrast fixture use the same core semantic mechanisms | **PASS** — both run through `compilePlanSlice()` |
+| 2 | no fixture-ID branching rescues either house | **PASS** — shared plan code contains no fixture identity branch |
+| 3 | Reference-House-specific courtyard, four-bay, stair and grammar facts remain local | **PASS** — these stay in the RH source/adapter or are absent from the contrast source |
+| 4 | shared integrity invariants remain meaningful on both fixtures | **PASS** — containment, overlap, closure, adjacency and opening-host checks execute on both |
+| 5 | deterministic calculations and relevant drawings regenerate from each source | **PASS** — RH production drawings remain deterministic; the contrast semantic plan projection is deeply deterministic |
+| 6 | RH-C1 mutation suite still passes | **PASS — 27/27** |
+| 7 | at least one accidental assumption is removed, localised or declared restricted | **PASS** — fixed levels, mandatory court and bay/entrance assumptions were removed from the shared layer |
+| 8 | new abstractions are justified rather than speculative | **PASS** — extraction is limited to mechanisms exercised by both fixtures; RH-only concepts remain local |
+| 9 | compiler fails closed where the fixture violates the supported domain/invariants | **PASS** — opening-host escape and missing plate closure produce `FAIL` rather than repair |
+| 10 | result is described as bounded evidence, not universal validity | **PASS** — this document and programme status retain that boundary explicitly |
 
-1. the Reference House and contrast fixture use the same core semantic mechanisms rather than separate fixture-specific compilers;
-2. core code contains no branching on fixture identity to rescue either house;
-3. Reference-House-specific courtyard, four-bay, stair and grammar facts remain fixture/project data rather than hidden universal requirements;
-4. shared integrity invariants remain meaningful on both fixtures;
-5. deterministic calculations and relevant drawings regenerate from each fixture source without private duplicate geometry;
-6. the RH-C1 mutation suite still passes for the Reference House;
-7. at least one accidental assumption discovered by the contrast fixture is either removed, localised to fixture data, or deliberately declared as a supported-domain restriction;
-8. any new abstraction is justified by both worked cases or by an independently established semantic need, not by aesthetic tidiness;
-9. the compiler continues to fail closed where the contrast fixture is outside its supported domain;
-10. the result is described as **two-fixture bounded evidence**, not general architectural validity.
+---
 
-If the second fixture requires contorted exceptions, CF-01 fails. Refactor the semantic boundary before deeper compiler slices amplify the mistake.
+## What CF-01 does not prove
+
+Two fixtures do not make a universal house compiler.
+
+CF-01 gives materially stronger evidence for a narrower claim: the reusable plan-semantic mechanisms are no longer contingent on the Reference House having exactly two storeys, a centred courtyard, a regular four-bay front, entrance-bay membership or a stair.
+
+The Reference House remains the project's principal controlled regression fixture. The contrast house is an adversarial test fixture, not a second design proposal and not a second architectural authority.
+
+Representability still does not establish structural, environmental, fire, regulatory or construction adequacy.
 
 ---
 
 ## Programme position
 
 ```text
-RH-C0  model freeze                 PASS
+RH-C0  model freeze                              PASS
    ↓
-RH-C1  deterministic Reference House
+RH-C1  deterministic Reference House             PASS
    ↓
-CF-01  adversarial contrast fixture / generality gate
+CF-01  adversarial contrast / generality gate    PASS
    ↓
-RH-C2  structural view
+RH-C2  bounded structural view                   NEXT
    ↓
 RH-C3  service view
    ↓
@@ -145,8 +164,8 @@ RH-C4  envelope / boundary view
 RH-C5  selected target calculations
 ```
 
-CF-01 is a **gate on architectural generalisation**, not a new maturity level and not a claim that the compiler should support arbitrary houses.
+CF-01 removes the sequencing block on RH-C2. It does not begin RH-C2 and does not raise the computational track to a new maturity level by itself.
 
-The principle is simple:
+The governing distinction remains:
 
-> **First prove that the program describes the house. Then try to prove that it does not only describe that house.**
+> **Reference House reproduction proves fixture fidelity. Mutations test dependency correctness. The contrast fixture supplies bounded evidence that the shared plan mechanisms do not only describe that house.**
