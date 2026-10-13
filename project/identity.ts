@@ -1,6 +1,9 @@
 export const projectIdentity = {
-  name: 'House Kernel',
-  slug: 'house-kernel',
+  name: 'Ovid’s House',
+  slug: 'ovids-house',
+  formalSystemName: 'House Kernel',
+  compilerName: 'Metamorph Compiler',
+  formerMasterNames: ['House Kernel'],
   legacyNames: [
     'House Systems Architecture',
     'The Long-Life House',
@@ -10,4 +13,5 @@ export const projectIdentity = {
   legacyNameProvenanceSources: ['STATUS.md']
 } as const
 
+export type FormerMasterProjectName = (typeof projectIdentity.formerMasterNames)[number]
 export type LegacyProjectName = (typeof projectIdentity.legacyNames)[number]
