@@ -15,6 +15,7 @@ import type {
 import { mm } from '../units.js'
 import type { Millimetres } from '../units.js'
 import { createReferenceHouseStructuralSource } from './fixture.js'
+import { rhC2ProofBoundary } from './proof-boundary.js'
 
 export interface RhC2CompileResult {
   status: RhCompileStatus
@@ -22,10 +23,7 @@ export interface RhC2CompileResult {
   plan: PlanSliceCompileResult
   structure: StructuralTopologyCompileResult
   floorZoneDepth: Millimetres
-  proofBoundary: {
-    topology: 'MACHINE-CHECKED'
-    adequacy: 'EXTERNAL-NOT-PROVED'
-  }
+  proofBoundary: typeof rhC2ProofBoundary
 }
 
 const aggregate = (
@@ -50,9 +48,6 @@ export const compileReferenceHouseStructuralView = (
     plan,
     structure,
     floorZoneDepth: mm(source.levels.firstFfl.value - source.levels.groundCeiling.value),
-    proofBoundary: {
-      topology: 'MACHINE-CHECKED',
-      adequacy: 'EXTERNAL-NOT-PROVED'
-    }
+    proofBoundary: rhC2ProofBoundary
   }
 }

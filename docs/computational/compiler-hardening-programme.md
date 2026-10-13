@@ -1,7 +1,7 @@
 # Compiler Hardening programme
 
 **Programme:** CH — Compiler Hardening  
-**Status:** CH-02 PASS — CH-03 next  
+**Status:** CH-03 PASS — CH-04 next  
 **Baseline:** `0538be4a9124b107565717bb2f172e73ebfe86ba`  
 **Computational maturity:** M3  
 **Reference House capability sequence:** RH-C0 → RH-C5 complete; no RH-C6 authorised
@@ -323,6 +323,8 @@ Work:
 
 **Exit:** one canonical compilation path, one upstream result per domain, no semantic regression.
 
+**Result:** PASS. `compiler/reference-house/system-compile.ts` is now the canonical production orchestration path. It compiles plan, structure, services, boundary and the selected calculation once each, derives the Reference House from that same plan result, and returns direct coherent domain state without `c4.c3.c2...` archaeology. Historical RH-C2…RH-C5 wrappers remain regression/provenance surfaces. The CH-00 frozen semantic/artefact test now runs through the single-pass compiler, and `compiler/ch03/ch03.test.ts` proves deep equivalence with the historical chain for the canonical source and a REVIEW mutation while mechanically rejecting nested stage-wrapper use in production orchestration. The execution record is `compiler/ch03/README.md`. No CH-00 baseline value, proof boundary or drawing identity changed.
+
 ### CH-04 — strengthen representation
 
 **Question:** Can important category mistakes become impossible or obvious before runtime?
@@ -501,4 +503,4 @@ frozen before the hardening refactor unless a semantic change is explicit.
 
 ## Handoff
 
-CH-00, CH-01 and CH-02 are complete. The next authorised gate is **CH-03 — single-pass Reference House compiler**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract and CH-02 runtime dependency boundary; do not use CH-03 to add Reference House technical capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
+CH-00, CH-01, CH-02 and CH-03 are complete. The next authorised gate is **CH-04 — strengthen representation**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract, CH-02 runtime dependency boundary and CH-03 single-pass Reference House compiler; do not use CH-04 to add Reference House technical capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.

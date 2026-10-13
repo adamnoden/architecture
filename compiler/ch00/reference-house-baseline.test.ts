@@ -6,9 +6,9 @@ import { describe, test } from 'node:test'
 import { renderBoundaryTopologySvg } from '../boundary-slice/drawing.js'
 import { renderReferenceHouseDrawings } from '../reference-house/drawings.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
+import { compileReferenceHouseSystem } from '../reference-house/system-compile.js'
 import { renderServiceTopologySvg } from '../service-slice/drawing.js'
 import { renderStructuralTopologySvg } from '../structure-slice/drawing.js'
-import { compileReferenceHouseTargetCalculations } from '../rhc5/compile.js'
 
 type Manifest = {
   manifestVersion: string
@@ -92,10 +92,7 @@ const criterionObserved = (
 
 describe('CH-00 canonical Reference House semantic baseline', () => {
   const source = createReferenceHouseSource()
-  const result = compileReferenceHouseTargetCalculations(source)
-  const c4 = result.c4
-  const c3 = c4.c3
-  const c2 = c3.c2
+  const result = compileReferenceHouseSystem(source)
   const calculation = result.calculations.privateStairGeometry
 
   test('retains the frozen identity, statuses, proof boundaries and diagnostics', () => {
@@ -111,11 +108,11 @@ describe('CH-00 canonical Reference House semantic baseline', () => {
 
     assert.deepEqual(
       {
-        referenceHouse: c2.house.status,
-        plan: c2.plan.status,
-        structure: c2.structure.status,
-        services: c3.services.status,
-        boundary: c4.boundaries.status,
+        referenceHouse: result.house.status,
+        plan: result.plan.status,
+        structure: result.structure.status,
+        services: result.services.status,
+        boundary: result.boundary.status,
         privateStairGeometry: calculation.status,
         overall: result.status
       },
@@ -124,21 +121,21 @@ describe('CH-00 canonical Reference House semantic baseline', () => {
 
     assert.deepEqual(
       {
-        rhC2: c2.proofBoundary,
-        rhC3: c3.proofBoundary,
-        rhC4: c4.proofBoundary,
-        rhC5: result.proofBoundary
+        rhC2: result.proof.structure,
+        rhC3: result.proof.services,
+        rhC4: result.proof.boundary,
+        rhC5: result.proof.calculations
       },
       manifest.proofBoundaries
     )
 
     assert.deepEqual(
       {
-        referenceHouse: diagnosticCodes(c2.house.diagnostics),
-        plan: diagnosticCodes(c2.plan.diagnostics),
-        structure: diagnosticCodes(c2.structure.diagnostics),
-        services: diagnosticCodes(c3.services.diagnostics),
-        boundary: diagnosticCodes(c4.boundaries.diagnostics),
+        referenceHouse: diagnosticCodes(result.house.diagnostics),
+        plan: diagnosticCodes(result.plan.diagnostics),
+        structure: diagnosticCodes(result.structure.diagnostics),
+        services: diagnosticCodes(result.services.diagnostics),
+        boundary: diagnosticCodes(result.boundary.diagnostics),
         privateStairGeometry: diagnosticCodes(calculation.diagnostics)
       },
       manifest.diagnosticCodes
@@ -147,7 +144,7 @@ describe('CH-00 canonical Reference House semantic baseline', () => {
 
   test('retains selected high-value derived facts and counts', () => {
     const plateAreas = Object.fromEntries(
-      c2.plan.derived.plateAreas.map((item) => [item.levelId, item.area])
+      result.plan.derived.plateAreas.map((item) => [item.levelId, item.area])
     )
 
     assert.deepEqual(
@@ -158,34 +155,34 @@ describe('CH-00 canonical Reference House semantic baseline', () => {
       { width: source.court.value.width, depth: source.court.value.depth },
       manifest.derived.courtyardMm
     )
-    assert.equal(c2.floorZoneDepth, manifest.derived.floorZoneDepthMm)
+    assert.equal(result.floorZoneDepth, manifest.derived.floorZoneDepthMm)
     assert.deepEqual(plateAreas, manifest.derived.planPlateAreaMm2)
     assert.deepEqual(
       {
-        spanFieldCount: c2.structure.derived.spanFields.length,
-        bearingOpeningCount: c2.structure.derived.bearingOpenings.length,
-        grossFieldAreaMm2: c2.structure.derived.grossFieldArea
+        spanFieldCount: result.structure.derived.spanFields.length,
+        bearingOpeningCount: result.structure.derived.bearingOpenings.length,
+        grossFieldAreaMm2: result.structure.derived.grossFieldArea
       },
       manifest.derived.structure
     )
     assert.deepEqual(
       {
-        networkCount: c3.services.derived.networks.length,
-        selectedCrossingIds: c3.services.derived.selectedCrossingIds
+        networkCount: result.services.derived.networks.length,
+        selectedCrossingIds: result.services.derived.selectedCrossingIds
       },
       manifest.derived.services
     )
     assert.deepEqual(
       {
-        systemCount: c4.boundaries.derived.systems.length,
-        carrierCount: c4.boundaries.derived.carriers.length,
-        openingObligationCount: c4.boundaries.derived.openingObligations.length,
-        serviceObligationCount: c4.boundaries.derived.serviceObligations.length,
-        drainageRouteCount: c4.boundaries.derived.drainageRoutes.length,
-        roofCatchmentTotalMm2: c4.coordination.roofCatchmentTotal,
-        enclosedPlateAreaMm2: c4.coordination.enclosedPlateArea,
-        courtyardOpenSkyAreaMm2: c4.coordination.courtyardOpenSkyArea,
-        wallPlanningStressThicknessMm: c4.coordination.wallPlanningStressThicknessMm
+        systemCount: result.boundary.derived.systems.length,
+        carrierCount: result.boundary.derived.carriers.length,
+        openingObligationCount: result.boundary.derived.openingObligations.length,
+        serviceObligationCount: result.boundary.derived.serviceObligations.length,
+        drainageRouteCount: result.boundary.derived.drainageRoutes.length,
+        roofCatchmentTotalMm2: result.coordination.boundary.roofCatchmentTotal,
+        enclosedPlateAreaMm2: result.coordination.boundary.enclosedPlateArea,
+        courtyardOpenSkyAreaMm2: result.coordination.boundary.courtyardOpenSkyArea,
+        wallPlanningStressThicknessMm: result.coordination.boundary.wallPlanningStressThicknessMm
       },
       manifest.derived.boundary
     )
@@ -207,19 +204,19 @@ describe('CH-00 canonical Reference House semantic baseline', () => {
   })
 
   test('retains committed generated artefact identity and exact downstream projections', () => {
-    const c1 = renderReferenceHouseDrawings(c2.house)
+    const c1 = renderReferenceHouseDrawings(result.house)
     const rendered: Record<string, string> = {
       rhc1GroundFloor: c1.groundFloor,
       rhc1FirstFloor: c1.firstFloor,
       rhc1PrincipalSection: c1.principalSection,
       rhc2StructuralTopology: renderStructuralTopologySvg(
-        c2.structure,
-        c2.plan,
+        result.structure,
+        result.plan,
         'Reference House — RH-C2 structural topology'
       ),
-      rhc3ServiceTopology: renderServiceTopologySvg(c3.services, 'RH-C3 service topology'),
+      rhc3ServiceTopology: renderServiceTopologySvg(result.services, 'RH-C3 service topology'),
       rhc4BoundaryTopology: renderBoundaryTopologySvg(
-        c4.boundaries,
+        result.boundary,
         'Reference House — RH-C4 envelope / boundary topology'
       )
     }
