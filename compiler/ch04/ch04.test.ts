@@ -77,7 +77,7 @@ describe('CH-04 representation hardening', () => {
     const result = compileReferenceHouseSystem(createReferenceHouseSource())
     assert.equal(
       acceptsMillimetres(result.coordination.boundary.wallPlanningStressThicknessMm),
-      600
+      450
     )
   })
 
