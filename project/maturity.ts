@@ -135,7 +135,7 @@ export const workstreamStatuses = [
     nextGate: 'Continue to test neutrality across concrete grammar instances.',
     evidence: {
       framed: ['docs/grammar/architectural-grammar-and-proportion.md'],
-      developed: ['docs/grammar/g01-candidate-constraints-v01.md'],
+      developed: ['docs/grammar/architectural-grammar-modelling-corrections-v01.md'],
       coordinated: ['docs/development/architectural-specificity-adversarial-test.md']
     }
   },
@@ -202,7 +202,7 @@ export const workstreamStatuses = [
     currentState:
       'RH-11 now provides issue-ready structural, fire/building-control, MEP/acoustic and building-physics/energy review briefs with explicit rewind criteria; no competent review response has yet been recorded.',
     nextGate:
-      'Obtain and process competent discipline reviews; material findings reopen the owning Reference House gate and remain unresolved until closure evidence is recorded.',
+      'Obtain and process competent discipline reviews; material findings reopen the owning RH gates and remain unresolved until closure evidence is recorded.',
     evidence: {
       framed: [
         'docs/reference-house/external-review-brief.md',
