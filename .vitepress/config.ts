@@ -46,7 +46,7 @@ const siteNav = publicNav.map((item) => {
 export default withMermaid(
   defineConfig({
     title: projectIdentity.name,
-    description: 'Architectural design research for houses designed to remain durable, repairable and adaptable across time.',
+    description: 'Architectural design research into permanence through transformation: houses designed to remain durable, repairable and adaptable across time.',
     lang: 'en-GB',
     base: '/architecture/',
     cleanUrls: true,

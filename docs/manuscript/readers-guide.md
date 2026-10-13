@@ -2,7 +2,7 @@
 
 ## Abstract
 
-House Kernel is a design-research framework for houses intended to remain useful through repeated maintenance, repair, replacement and change. Its starting point is a mismatch of timescales: structure, enclosure, services, fittings and finishes do not fail or change together, yet ordinary construction often binds them as though they do.
+Ovid’s House is a design-research framework for houses intended to remain useful through repeated maintenance, repair, replacement and change. Its starting point is a mismatch of timescales: structure, enclosure, services, fittings and finishes do not fail or change together, yet ordinary construction often binds them as though they do.
 
 The project asks how architecture can give change deliberate places to occur without turning the house into a technical diagram or a generic shell. It treats permanent fabric, replaceable systems, designed interfaces, failure behaviour and maintenance access as architectural questions. It also treats repose, environmental performance, workmanship, whole-life value and ordinary construction practice as constraints on any technical answer.
 
@@ -16,7 +16,7 @@ The book has two reading modes.
 
 **Part III is a reference.** The pattern language translates the doctrine into reusable architectural responses. It is not intended to be read as a second prose version of Part II. Pattern IDs are stable identities, not a ranking or required design sequence. Strategies sit above patterns where several materially different physical responses can satisfy the same broader proposition. Held candidates remain outside the canonical language until their admission questions are resolved.
 
-**Part IV is an integration test.** The Reference House is one coordinated interpretation of House Kernel using a Georgian-derived grammar, a courtyard morphology and project-specific technical choices. Those choices are allowed to be opinionated. They do not travel upstream into the doctrine merely because the house uses them. This Working Edition records the strongest current Reference House material while the publication-facing house chapters continue to develop.
+**Part IV is an integration test.** The Reference House is one coordinated interpretation of Ovid’s House using a Georgian-derived grammar, a courtyard morphology and project-specific technical choices. Those choices are allowed to be opinionated. They do not travel upstream into the doctrine merely because the house uses them. This Working Edition records the strongest current Reference House material while the publication-facing house chapters continue to develop.
 
 **Part V returns to delivery.** A proposition is not complete because it reads well. It must survive cost, carbon, professional responsibility, construction variation, prototype work, commissioning, maintenance and later change.
 
@@ -46,7 +46,7 @@ The web edition remains the better place for research provenance, development hi
 
 ## Evidence and maturity
 
-House Kernel separates confidence in a proposition from the amount of project work completed on it.
+Ovid’s House separates confidence in a proposition from the amount of project work completed on it.
 
 **Evidence** describes the strength of support for the proposition within its stated scope:
 
@@ -61,7 +61,7 @@ Pattern pages use **Does not prove** to state the boundary of inference where ev
 
 ## Governing constraints
 
-House Kernel operates inside ordinary non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance. Maintainability does not excuse a weaker fire boundary; reversibility does not excuse poor acoustics; passive-first design does not forbid mechanical systems where measured performance requires them.
+Ovid’s House operates inside ordinary non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance. Maintainability does not excuse a weaker fire boundary; reversibility does not excuse poor acoustics; passive-first design does not forbid mechanical systems where measured performance requires them.
 
 Serviceability is also proportionate. Every void, spare route, removable layer and access provision has an initial cost in material, labour, space and complexity. Permanent provision is strongest where the future event is reasonably likely, consequential or destructive to retrofit, and where supporting it at first construction is comparatively cheap.
 

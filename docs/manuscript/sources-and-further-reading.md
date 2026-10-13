@@ -1,8 +1,8 @@
 # Sources and further reading
 
-House Kernel is not an academic literature review, but it sits within a substantial body of architectural, technical and cross-domain thought. This page gathers books, papers, standards and essays that are cited in the manuscript or materially illuminate its arguments.
+Ovid’s House is not an academic literature review, but it sits within a substantial body of architectural, technical and cross-domain thought. This page gathers books, papers, standards and essays that are cited in the manuscript or materially illuminate its arguments.
 
-Where a chapter uses numbered notes, those remain the evidence trail for specific claims. This is a reading list: inclusion means that a work is relevant to the project, not that House Kernel adopts the whole of its argument.
+Where a chapter uses numbered notes, those remain the evidence trail for specific claims. This is a reading list: inclusion means that a work is relevant to the project, not that Ovid’s House adopts the whole of its argument.
 
 ## Architecture, change and long life
 

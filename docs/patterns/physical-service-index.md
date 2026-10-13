@@ -99,7 +99,7 @@ RIBA Plan for Use supports layered building information, including quick-start/e
 
 ## Does not prove
 
-These precedents do not prove that every house needs a formal service board or that one particular labelling system is durable. The House Kernel proposition is the small resilient on-asset layer, not a specific product or information standard.
+These precedents do not prove that every house needs a formal service board or that one particular labelling system is durable. The Ovid’s House proposition is the small resilient on-asset layer, not a specific product or information standard.
 
 ## Reference House application
 

@@ -106,7 +106,7 @@ The attachment system should normally be invisible. A wall that rattles, sounds 
 
 ## Evidence
 
-Independent lining, mechanical fixing and robust sheet/rail systems are mature. The distinctive House Kernel proposition is the sparse, load-classified intermediate attachment plane serving multiple faster-changing uses.
+Independent lining, mechanical fixing and robust sheet/rail systems are mature. The distinctive Ovid’s House proposition is the sparse, load-classified intermediate attachment plane serving multiple faster-changing uses.
 
 ## Does not prove
 

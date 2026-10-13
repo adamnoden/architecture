@@ -19,13 +19,13 @@ The invariant under review is **network topology + granular isolation**, not a p
 
 ## Why it remains held
 
-Manifold distribution is technically mature and has credible domestic precedent. What remains unresolved is whether it creates sufficiently architectural, cross-project design knowledge to warrant a canonical House Kernel pattern rather than being a strong services implementation family.
+Manifold distribution is technically mature and has credible domestic precedent. What remains unresolved is whether it creates sufficiently architectural, cross-project design knowledge to warrant a canonical Ovid’s House pattern rather than being a strong services implementation family.
 
 Different systems also behave differently. Heating, potable water and other networks should not be collapsed into one doctrine-level preference merely because manifolds exist for each.
 
 ## Admission gate
 
-Promote only after worked domestic cases show that manifold topology repeatedly and materially improves House Kernel-level concerns such as:
+Promote only after worked domestic cases show that manifold topology repeatedly and materially improves Ovid’s House-level concerns such as:
 
 1. maintenance geography and legibility;
 2. granular isolation during failure/repair;
@@ -48,7 +48,7 @@ The comparison must include conventional branch/tee distribution.
 
 ## Evidence
 
-Domestic patternbooks and CIBSE precedent support manifold distribution as a mature services option. The unresolved question is not whether manifolds work, but whether their topology repeatedly creates architectural value strong enough to justify a canonical House Kernel pattern.
+Domestic patternbooks and CIBSE precedent support manifold distribution as a mature services option. The unresolved question is not whether manifolds work, but whether their topology repeatedly creates architectural value strong enough to justify a canonical Ovid’s House pattern.
 
 The current evidence review is recorded in [Targeted Pattern-Language Evidence Review](../../research/pattern-language-phase6-targeted-evidence.md).
 

@@ -1,10 +1,10 @@
 # Reference House — Tectonic Architectural Language
 
-**Status:** Reference House design language; updated through RH-09. Not universal House Kernel doctrine.
+**Status:** Reference House design language; updated through RH-09. Not universal Ovid’s House doctrine.
 
 ## Purpose
 
-House Kernel does not prescribe a historical style, material palette or visible joint language. The Reference House selects **G-01**, a Georgian-derived architectural grammar. Traditional joinery, mineral plaster, expressed thresholds and restrained brass/bronze remain project-level choices within that grammar.
+Ovid’s House does not prescribe a historical style, material palette or visible joint language. The Reference House selects **G-01**, a Georgian-derived architectural grammar. Traditional joinery, mineral plaster, expressed thresholds and restrained brass/bronze remain project-level choices within that grammar.
 
 The task is not to hide a technical platform inside a period-looking shell. The visible architectural grammar and the real constructional grammar should coincide.
 
@@ -157,7 +157,7 @@ Internal reveal/architrave trim should be removable where useful. Brittle plaste
 
 Full-frame replacement must be drawn as a real sequence. RH-08 external access means it is not necessary to force every complete frame through the room; internal removal of sash/glazing/hardware remains desirable where the selected product permits it.
 
-A slim thermally broken aluminium family is a current project comparator, not House Kernel doctrine and not yet a proprietary selection.
+A slim thermally broken aluminium family is a current project comparator, not Ovid’s House doctrine and not yet a proprietary selection.
 
 ### Doors
 

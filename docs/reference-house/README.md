@@ -1,20 +1,20 @@
 # Reference House
 
-The Reference House is one coordinated interpretation of House Kernel. It brings doctrine, patterns, technical families, a selected architectural grammar and one domestic programme into the same building so conflicts become visible in plan, section, structure, services, environment, maintenance and occupied interfaces.
+The Reference House is one coordinated interpretation of Ovid’s House. It brings doctrine, patterns, technical families, a selected architectural grammar and one domestic programme into the same building so conflicts become visible in plan, section, structure, services, environment, maintenance and occupied interfaces.
 
-It is an **integration test**, not proof of House Kernel.
+It is an **integration test**, not proof of Ovid’s House.
 
 RH-10 passed the house through a whole-building adversarial audit. The house is **M3 — Coordinated at virtual-design scope**: its major architectural systems have been reconciled strongly enough that the remaining material uncertainty is primarily engineering, simulation, prototype, real-site and competent external-review work rather than missing basic architecture.
 
 RH-11 has now converted those remaining uncertainties into an **issue-ready external-review package**. That is a packaging result, not validation: no competent external review has yet been recorded and Reference House maturity remains M3.
 
-Read the [Reference House Design Programme](../development/reference-house-design-programme.md) first when resuming work. The [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md) is the current whole-house gate. The [RH-11 External Review Brief](external-review-brief.md) is the current external-review authority. The [Brief and Constraint Ledger](brief-and-constraint-ledger.md) remains the canonical project brief; the [Pattern Occurrence Register](pattern-occurrence-register.md) remains the canonical record of actual House Kernel pattern use.
+Read the [Reference House Design Programme](../development/reference-house-design-programme.md) first when resuming work. The [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md) is the current whole-house gate. The [RH-11 External Review Brief](external-review-brief.md) is the current external-review authority. The [Brief and Constraint Ledger](brief-and-constraint-ledger.md) remains the canonical project brief; the [Pattern Occurrence Register](pattern-occurrence-register.md) remains the canonical record of actual Ovid’s House pattern use.
 
 ## Authority stack
 
 ```text
-House Kernel doctrine
-+ selected House Kernel patterns / strategies
+Ovid’s House doctrine
++ selected Ovid’s House patterns / strategies
 + supported technical families where used
 + G-01 Georgian-derived grammar
 + site + contemporary family programme
@@ -26,7 +26,7 @@ House Kernel doctrine
 
 These layers constrain one another without becoming interchangeable.
 
-- **House Kernel** owns long-life propositions such as lifespan separation, interface design, failure tolerance, maintenance geography, repose and passive-first hierarchy.
+- **Ovid’s House** owns long-life propositions such as lifespan separation, interface design, failure tolerance, maintenance geography, repose and passive-first hierarchy.
 - **Patterns / strategies** own reusable responses selected for the project; project use does not increase their general evidence.
 - **Technical families** remain project/system choices, not doctrine.
 - **G-01** owns the Georgian-derived compositional constraints that survive its research. Georgian specificity enters here, not upstream.
@@ -128,7 +128,7 @@ RH-04's early preference for a visible pitched roof is **superseded** by the lat
 
 Current roof authority is the outward-draining low-slope family because it materially simplifies the water/failure geography of this courtyard house. RH-04 remains authoritative for storey hierarchy, cornice datum and principal/courtyard opening order.
 
-This supersession is project-specific; it is not a G-01 or House Kernel rule.
+This supersession is project-specific; it is not a G-01 or Ovid’s House rule.
 
 ### Structure
 

@@ -1,4 +1,4 @@
-# House Kernel
+# Ovid’s House
 ## Part I — The Proposition
 
 ---
@@ -89,7 +89,7 @@ Three whole-life tasks should remain distinct:
 - **component replacement** — removal and renewal of a failed or obsolete item during occupation;
 - **disassembly and recovery** — separation during major refurbishment or at end of life for reuse, recycling or disposal.
 
-A detail may perform well at one and poorly at another. Design-for-disassembly literature is relevant, but it does not substitute for maintenance design. House Kernel is primarily concerned with the first two tasks during occupation, while preserving end-of-life recovery where it can be achieved without disproportionate cost or complexity.
+A detail may perform well at one and poorly at another. Design-for-disassembly literature is relevant, but it does not substitute for maintenance design. Ovid’s House is primarily concerned with the first two tasks during occupation, while preserving end-of-life recovery where it can be achieved without disproportionate cost or complexity.
 
 ---
 
@@ -112,6 +112,20 @@ The principal spatial order may deliberately endure: structure, stairs, major ro
 Open Building provides useful precedent. Molenvliet separated a durable support from resident-specific infill while retaining coherent architectural and urban character. NEXT21 later demonstrated more extensive residential reconfiguration through separated structural, service and infill systems.[9][10] A detached house need not imitate either project; the relevant lesson is that adaptability does not require architectural order to disappear.
 
 Nor must a room physically transform to remain adaptable. Well-proportioned rooms with useful dimensions, good daylight, sensible doors and adequate services can accept different patterns of occupation over time. A study may become a bedroom; a drawing room may become a family room. **Capacity and compatibility** can matter more than literal movement.
+
+## Permanence without stasis
+
+The name **Ovid’s House** belongs to this temporal problem, not to the architectural lineage just described. Ovid’s *Metamorphoses* is useful because change operates through the poem at many levels and because metamorphosis repeatedly raises questions of continuity and identity across altered form.[29][30] It is an interpretive lens, not an architectural source.
+
+Used here, **Ovidian architecture** means only an architecture that admits transformation as part of a building’s life and asks which continuities should survive it. The characteristic transformations are usually ordinary: maintenance, repair, replacement, adaptation and renewal rather than visible mechanical change.
+
+Heraclitus supplies a sharper philosophical analogy. The strongest surviving river fragment describes the same rivers receiving different waters; one influential scholarly reading is that the river remains what it is through the turnover of what it contains.[31] A house is not a river, but the distinction is useful. Material sameness is not the only imaginable form of continuity.
+
+That does not make change intrinsically good. Ovidian transformations are often violent or imposed, and architectural change can be destructive too. Selective permanence therefore remains the governing discipline: decide what deserves to endure, which changes are probable or necessary, and where those changes can occur without consuming slower or more valuable parts of the building.
+
+This also suggests a better question than asking which components are literally permanent: **what are the persistence conditions of the house?** In architectural rather than metaphysical terms, which spatial, structural, material, legal or cultural relationships matter enough that their continuity should govern later change? The answer may vary by project and need not be machine-readable.
+
+The proposition is therefore not flexibility for its own sake. It is **permanence through transformation**: change made sufficiently deliberate and local that architecture can remain settled elsewhere.
 
 ## Repose as a domestic requirement
 
@@ -159,7 +173,7 @@ Some service crossings and integrated systems will be necessary. The governing r
 
 > **Permanent fabric should not be used as the routine distribution or attachment zone for shorter-lived systems. Unavoidable crossings and attachments should be sparse, deliberate, limited and documented.**
 
-Historic England takes a related position when adapting old buildings: minimise permanent scarring, use common or existing routes, preserve access for future maintenance and replacement, and allow spare capacity where appropriate.[11] House Kernel applies that respect before the fabric becomes historic.
+Historic England takes a related position when adapting old buildings: minimise permanent scarring, use common or existing routes, preserve access for future maintenance and replacement, and allow spare capacity where appropriate.[11] Ovid’s House applies that respect before the fabric becomes historic.
 
 ## Replaceable systems
 
@@ -231,7 +245,7 @@ Together, permanent fabric, replaceable systems, designed interfaces and mainten
 
 # 5. Eleven principles
 
-The doctrine is stated canonically in [House Kernel — Governing Principles](governing-principles.md). That document is the single maintained source for the eleven principles and their governing constraints; they are not duplicated here.
+The doctrine is stated canonically in [Ovid’s House — Governing Principles](governing-principles.md). That document is the single maintained source for the eleven principles and their governing constraints; they are not duplicated here.
 
 Within Part I, the principles complete the proposition established by the four chapters above. [Principle 8 — Design for Repose](principle-08-repose.md) also has a developed publication spread because its evidence boundary and architectural implications require fuller treatment.
 
@@ -289,3 +303,6 @@ This hierarchy makes disagreement useful. An architect can reject a pattern with
 [26] Gwern Branwen (2020), “Technology Holy Wars are Coordination Problems”, § “Bitrot”. https://gwern.net/holy-war  
 [27] Herbert A. Simon (1962), “The Architecture of Complexity”, *Proceedings of the American Philosophical Society* 106(6), 467–482. https://www.jstor.org/stable/985254  
 [28] C. S. Holling (1973), “Resilience and Stability of Ecological Systems”, *Annual Review of Ecology and Systematics* 4, 1–23. https://doi.org/10.1146/annurev.es.04.110173.000245  
+[29] Llewelyn Morgan, *Ovid: A Very Short Introduction*, ch. 4, “Metamorphoses” (Oxford University Press, 2020). https://academic.oup.com/book/28436/chapter-abstract/228938265  
+[30] Alessandro Barchiesi, “Reading Metamorphosis in Ovid’s Metamorphoses”, in Alison Sharrock, Daniel Möller & Mats Malm (eds.), *Metamorphic Readings* (Oxford University Press, 2020); Marie Louise von Glinski, *Simile and Identity in Ovid’s Metamorphoses* (Cambridge University Press, 2012). https://academic.oup.com/book/37419/chapter-abstract/331495110  
+[31] Stanford Encyclopedia of Philosophy, “Heraclitus”, discussion of river fragment B12 and continuity through changing waters; see also “Identity Over Time”. https://plato.stanford.edu/entries/heraclitus/  

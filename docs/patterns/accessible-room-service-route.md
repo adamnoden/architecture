@@ -92,7 +92,7 @@ The room should read as architecture first. Skirtings, architraves and joinery m
 
 ## Evidence
 
-Mature trunking and service-zone practice support the underlying accessibility principle. The domestic architectural integration of those routes remains House Kernel's design proposition.
+Mature trunking and service-zone practice support the underlying accessibility principle. The domestic architectural integration of those routes remains Ovid’s House’s design proposition.
 
 ## Does not prove
 

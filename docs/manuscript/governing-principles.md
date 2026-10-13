@@ -1,4 +1,4 @@
-# House Kernel — Governing Principles
+# Ovid’s House — Governing Principles
 
 ## Governing constraints
 

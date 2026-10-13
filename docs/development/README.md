@@ -8,14 +8,18 @@ It does **not** contain the prototype artefacts themselves. Build packs, drawing
 
 ## Live controls
 
-- [Architectural Specificity Boundary](architectural-specificity-boundary.md) — continuing scope firewall between general House Kernel propositions, technical-domain restrictions, architectural grammars and Reference House choices.
+- [Architectural Specificity Boundary](architectural-specificity-boundary.md) — continuing scope firewall between general Ovid’s House propositions, technical-domain restrictions, architectural grammars and Reference House choices.
 - [Reference House Design Programme](reference-house-design-programme.md) — restart-safe staged programme for driving the provisional Reference House through whole-building virtual coordination and into external review.
-- [Tectonic Prototype Programme](tectonic-prototype-programme.md) — physical/engineering validation programme, including the separation between general House Kernel evidence and Reference House/G-01 fit.
+- [Tectonic Prototype Programme](tectonic-prototype-programme.md) — physical/engineering validation programme, including the separation between general Ovid’s House evidence and Reference House/G-01 fit.
 - [Manufacturing Strategy](manufacturing-strategy.md) — implementation/manufacturing thinking where it remains relevant to current prototype and delivery decisions.
 
 Project-wide maturity and priorities are owned by [`../../STATUS.md`](../../STATUS.md).
 
 ## Completed controls retained for provenance
+
+### Ovid’s House identity migration
+
+The [Ovid’s House Migration](ovids-house-migration.md) is complete. It established Ovid’s House as the master project identity, retained House Kernel as the formal architectural/computational system, introduced Metamorph Compiler as the human-facing compiler name and integrated the permanence-through-transformation frame without widening architectural or computational claims.
 
 ### Architectural-specificity audit
 

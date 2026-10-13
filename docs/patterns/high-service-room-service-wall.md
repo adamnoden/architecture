@@ -99,7 +99,7 @@ Do not export plumbing noise, extract noise, maintenance activity or privacy los
 
 ## Evidence
 
-Accessible plumbing/service walls are mature practice, and Open Building/service-layer precedents support separating faster-changing services from slower support. The House Kernel contribution is the explicit architectural and maintenance-geography test rather than a particular proprietary system.
+Accessible plumbing/service walls are mature practice, and Open Building/service-layer precedents support separating faster-changing services from slower support. The Ovid’s House contribution is the explicit architectural and maintenance-geography test rather than a particular proprietary system.
 
 ## Does not prove
 

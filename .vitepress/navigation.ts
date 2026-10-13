@@ -368,6 +368,7 @@ const computationalSidebar: DefaultTheme.SidebarItem[] = [
 const developmentSidebar: DefaultTheme.SidebarItem[] = [
   group('Development', [
     page('Development overview', '/docs/development/'),
+    page('Ovid’s House migration', '/docs/development/ovids-house-migration'),
     page('Information architecture migration', '/docs/development/information-architecture-migration'),
     page('Architectural specificity boundary', '/docs/development/architectural-specificity-boundary'),
     page('Prototype programme', '/docs/development/tectonic-prototype-programme'),

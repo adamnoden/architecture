@@ -6,7 +6,7 @@ next:
 
 # Reading guide
 
-House Kernel can be read as an architectural argument, explored as a set of design systems, or audited through the evidence and testing behind it. These routes cross repository folders deliberately; the website navigation follows the reader rather than the filesystem.
+Ovid’s House can be read as an architectural argument, explored as a set of design systems, or audited through the evidence and testing behind it. These routes cross repository folders deliberately; the website navigation follows the reader rather than the filesystem.
 
 ## Read the architectural argument
 
@@ -31,7 +31,7 @@ Use this route when the central proposition is already understood and the questi
 
 **[Pattern Language](patterns/README.md) → [Architectural Grammar](grammar/README.md) → [Reference House](reference-house/README.md)**
 
-Patterns describe reusable responses to recurring architectural problems. Architectural grammar governs a selected architectural language independently of House Kernel doctrine. The Reference House combines those layers with a particular programme, site, structure, envelope, services and environmental strategy so that conflicts become visible in one building.
+Patterns describe reusable responses to recurring architectural problems. Architectural grammar governs a selected architectural language independently of Ovid’s House doctrine. The Reference House combines those layers with a particular programme, site, structure, envelope, services and environmental strategy so that conflicts become visible in one building.
 
 ## Audit the work
 

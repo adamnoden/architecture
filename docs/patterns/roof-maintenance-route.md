@@ -90,7 +90,7 @@ Hatches, ladders and anchors should not dominate principal rooms, reduce privacy
 
 ## Evidence
 
-HSE HSG33 treats roof work across construction, repair, maintenance and cleaning and places duties on clients, designers and specifiers to plan safe work. The House Kernel pattern translates that into whole-life roof/access geometry.
+HSE HSG33 treats roof work across construction, repair, maintenance and cleaning and places duties on clients, designers and specifiers to plan safe work. The Ovid’s House pattern translates that into whole-life roof/access geometry.
 
 ## Does not prove
 

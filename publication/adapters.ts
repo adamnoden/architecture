@@ -69,7 +69,7 @@ function demoteHeadings(markdown: string, levels: number): string {
 }
 
 function normalisePartOpening(markdown: string, partHeading: string): string {
-  const opening = `# House Kernel\n## ${partHeading}`
+  const opening = `# Ovid’s House\n## ${partHeading}`
   if (!markdown.startsWith(opening)) {
     throw new Error(`${partHeading} opening changed; update the print wrapper deliberately.`)
   }
@@ -92,8 +92,8 @@ function adaptPartI(markdown: string, context: AdapterContext): string {
   let chapter5Stub = markdown.slice(chapter5Index, transitionIndex).trimEnd()
   chapter5Stub = chapter5Stub
     .replace(
-      '[House Kernel — Governing Principles](governing-principles.md)',
-      '**House Kernel — Governing Principles**'
+      '[Ovid’s House — Governing Principles](governing-principles.md)',
+      '**Ovid’s House — Governing Principles**'
     )
     .replace(
       '[Principle 8 — Design for Repose](principle-08-repose.md)',
@@ -394,7 +394,7 @@ function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string
     .map((id) => concisePattern(context, id))
     .join('\n\n')
 
-  return `# From doctrine to patterns\n\nThe governing principles are intentionally too general to specify a building. House Kernel therefore keeps four levels of authority distinct:\n\n**Doctrine** — a durable proposition.  \n**Strategy** — a general way to satisfy it.  \n**Pattern** — a reusable architectural response with stated trade-offs and evidence.  \n**Reference implementation** — one project-specific choice.\n\nA pattern is not a product detail and does not become universally correct because it has a stable name. It is specific enough to shape design, but general enough to admit materially different implementations. Evidence maturity is recorded separately from pattern identity.\n\nThe current canonical language contains **21 active patterns**. Three broader strategies sit beside it; four plausible propositions remain held candidates rather than being promoted prematurely. The complete active language is listed below so the Primer remains complete in coverage even though only a small set is expanded.\n\n## The complete current language\n\n${primerPatternList(context)}\n\n## Six patterns in brief\n\nThe following examples are not a privileged inner canon. They are chosen because, together, they show the range of consequences that follows from the doctrine: service topology, permanent-fabric protection, water failure, replaceable openings, external maintenance and intergenerational legibility.\n\n${representative}\n`
+  return `# From doctrine to patterns\n\nThe governing principles are intentionally too general to specify a building. Ovid’s House therefore keeps four levels of authority distinct:\n\n**Doctrine** — a durable proposition.  \n**Strategy** — a general way to satisfy it.  \n**Pattern** — a reusable architectural response with stated trade-offs and evidence.  \n**Reference implementation** — one project-specific choice.\n\nA pattern is not a product detail and does not become universally correct because it has a stable name. It is specific enough to shape design, but general enough to admit materially different implementations. Evidence maturity is recorded separately from pattern identity.\n\nThe current canonical language contains **21 active patterns**. Three broader strategies sit beside it; four plausible propositions remain held candidates rather than being promoted prematurely. The complete active language is listed below so the Primer remains complete in coverage even though only a small set is expanded.\n\n## The complete current language\n\n${primerPatternList(context)}\n\n## Six patterns in brief\n\nThe following examples are not a privileged inner canon. They are chosen because, together, they show the range of consequences that follows from the doctrine: service topology, permanent-fabric protection, water failure, replaceable openings, external maintenance and intergenerational legibility.\n\n${representative}\n`
 }
 
 function adaptPrimerReferenceHouse(markdown: string): string {
@@ -426,7 +426,7 @@ function adaptPrimerReferenceHouse(markdown: string): string {
     throw new Error('Primer expected two Reference House Maturity paragraphs.')
   }
 
-  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy a House Kernel principle without being promoted into House Kernel doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
+  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an Ovid’s House principle without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
 }
 
 export function applyAdapter(
