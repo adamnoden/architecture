@@ -1,7 +1,7 @@
 # Compiler Hardening programme
 
 **Programme:** CH — Compiler Hardening  
-**Status:** CH-01 PASS — CH-02 next  
+**Status:** CH-02 PASS — CH-03 next  
 **Baseline:** `0538be4a9124b107565717bb2f172e73ebfe86ba`  
 **Computational maturity:** M3  
 **Reference House capability sequence:** RH-C0 → RH-C5 complete; no RH-C6 authorised
@@ -287,6 +287,8 @@ Work:
 
 **Exit:** runtime structure expresses stable concepts and dependency direction is mechanically enforceable.
 
+**Result:** PASS. CH-02 extracted the shared `Box2D` primitive and box algorithms from historical P0 into `compiler/core/geometry.ts`, leaving `compiler/p0/geometry.ts` as a compatibility adapter for the P0 regression gate. Permanent plan/structure runtime modules no longer import P0. `compiler/ch02/architecture.test.ts` now enforces the actual generic runtime dependency DAG and rejects Reference House fixture knowledge in generic runtime logic. The audit also corrected the programme hypothesis: `calculation-slice` is a generic independent kernel, not a literal downstream dependency of boundary; RH-C5 places it downstream through Reference House orchestration. Rendering remains a separately classified downstream projection. The execution record is `compiler/ch02/README.md`. CH-00 semantic/artefact identity and CH-01 fail-closed behaviour remain green.
+
 ### CH-03 — single-pass Reference House compiler
 
 **Question:** Can one canonical source be compiled once into one coherent result?
@@ -499,4 +501,4 @@ frozen before the hardening refactor unless a semantic change is explicit.
 
 ## Handoff
 
-CH-00 and CH-01 are complete. The next authorised gate is **CH-02 — distil the permanent runtime architecture**. Start from the frozen CH-00 manifest plus the CH-01 fail-closed contract; do not use CH-02 to add Reference House capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
+CH-00, CH-01 and CH-02 are complete. The next authorised gate is **CH-03 — single-pass Reference House compiler**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract and CH-02 runtime dependency boundary; do not use CH-03 to add Reference House technical capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
