@@ -42,6 +42,32 @@ replaceExact(
 )
 
 replaceExact(
+  'publication/adapters.ts',
+  'const opening = `# House Kernel\\n## ${partHeading}`',
+  'const opening = `# Ovid’s House\\n## ${partHeading}`'
+)
+replaceExact(
+  'publication/adapters.ts',
+  "'[House Kernel — Governing Principles](governing-principles.md)'",
+  "'[Ovid’s House — Governing Principles](governing-principles.md)'"
+)
+replaceExact(
+  'publication/adapters.ts',
+  "'**House Kernel — Governing Principles**'",
+  "'**Ovid’s House — Governing Principles**'"
+)
+replaceExact(
+  'publication/adapters.ts',
+  'The governing principles are intentionally too general to specify a building. House Kernel therefore keeps four levels of authority distinct:',
+  'The governing principles are intentionally too general to specify a building. Ovid’s House therefore keeps four levels of authority distinct:'
+)
+replaceExact(
+  'publication/adapters.ts',
+  'A project-specific choice can satisfy a House Kernel principle without being promoted into House Kernel doctrine, and use of a pattern in the Reference House does not increase that pattern\'s general evidence.',
+  'A project-specific choice can satisfy an Ovid’s House principle without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern\'s general evidence.'
+)
+
+replaceExact(
   'project/maturity.ts',
   "'Grammar is a first-class layer separate from House Kernel doctrine and is coordinated at framework level.'",
   "'Grammar is a first-class layer separate from Ovid’s House doctrine and is coordinated at framework level.'"
