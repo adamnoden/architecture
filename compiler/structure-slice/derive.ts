@@ -3,7 +3,7 @@ import { planBoundaryId } from '../plan-slice/model.js'
 import type { PlanSliceDerived } from '../plan-slice/model.js'
 import { mm, mm2 } from '../units.js'
 import type { Millimetres } from '../units.js'
-import { structuralInterruptionId, structuralLineId } from './model.js'
+import { structuralLineId } from './model.js'
 import type {
   DerivedBearingOpeningObligation,
   DerivedReactionNode,
@@ -83,7 +83,7 @@ const deriveStructuralLines = (
     .map((element) => {
       const geometry = deriveLineGeometry(plan, element)
       return {
-        id: structuralLineId(element.id),
+        id: element.id,
         kind: element.kind,
         orientation: element.orientation,
         x1: geometry.x1,
@@ -216,7 +216,6 @@ export const deriveStructuralTopology = (
     bearingOpenings,
     interruptions: source.interruptions.map((item) => ({
       ...item,
-      id: structuralInterruptionId(item.id),
       geometry: { ...item.geometry }
     })).sort((a, b) => a.id.localeCompare(b.id)),
     localFramingSystems: source.localFramingSystems.map((item) => ({ ...item })).sort((a, b) => a.id.localeCompare(b.id)),
