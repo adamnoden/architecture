@@ -1,6 +1,6 @@
 # Held Pattern Candidates
 
-These propositions are useful and serious, but **not canonical House Kernel patterns**.
+These propositions are useful and serious, but **not canonical Ovid’s House patterns**.
 
 They have no `HSA-P-*` identity and are excluded from the canonical pattern index until their stated admission gate is crossed. A candidate may have good precedent and still remain held because the unresolved question is architectural transfer, domestic proportionality or physical quality.
 

@@ -66,7 +66,7 @@ It may also use implementation families that are not architectural patterns, suc
 
 Norwegian TEK17 provides a mature precedent for water installations arranged so leakage becomes detectable and does not damage building elements. UK visible-discharge requirements such as tundish arrangements provide narrower examples of the same failure-legibility principle.
 
-The evidence supports the strategic outcome more strongly than any one House Kernel implementation.
+The evidence supports the strategic outcome more strongly than any one Ovid’s House implementation.
 
 ## Does not prove
 

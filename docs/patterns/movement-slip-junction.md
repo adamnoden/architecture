@@ -88,7 +88,7 @@ The joint should not click, rattle or become a persistent visual disturbance. Wh
 
 ## Evidence
 
-Movement joints and differential-movement detailing are established practice across masonry, facades and structures. The House Kernel contribution is to carry the same intentionality into domestic internal interfaces and replaceable layers.
+Movement joints and differential-movement detailing are established practice across masonry, facades and structures. The Ovid’s House contribution is to carry the same intentionality into domestic internal interfaces and replaceable layers.
 
 ## Does not prove
 

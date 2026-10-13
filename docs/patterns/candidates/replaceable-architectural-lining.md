@@ -19,7 +19,7 @@ The proposition is intentionally broader than “wall panels”. Material and fi
 
 ## Why it remains held
 
-The conceptual admission test is strong, but this is an occupied-surface proposition. If the resulting wall feels hollow, rattles, advertises module joints or produces an office-fit-out character, it fails a central House Kernel requirement even if it is technically serviceable.
+The conceptual admission test is strong, but this is an occupied-surface proposition. If the resulting wall feels hollow, rattles, advertises module joints or produces an office-fit-out character, it fails a central Ovid’s House requirement even if it is technically serviceable.
 
 High-quality direct plaster therefore remains the benchmark, not a legacy system to be displaced automatically.
 

@@ -3,7 +3,7 @@
 **Status:** canonical Reference House project-state register through RH-10  
 **Purpose:** distinguish patterns selected in principle from actual project occurrences, implementation directions and outstanding evidence obligations.
 
-The Reference House is a worked interpretation of House Kernel. It is **not evidence for the pattern language**.
+The Reference House is a worked interpretation of Ovid’s House. It is **not evidence for the pattern language**.
 
 A pattern appears here as a current occurrence only when the active house has enough geometry or information to identify the project object. Project use does not increase general pattern evidence or maturity.
 
@@ -70,7 +70,7 @@ Former `U-ENS-01` is `U-DRESS-01` principal dressing / linen / storage. Reintrod
 
 ### RH-07 — central MVHR selected conditionally
 
-Central MVHR remains the whole-dwelling ventilation baseline. It is not House Kernel doctrine, does not create a generic floor plenum and does not replace purge windows. Continuous MEV remains fallback if competent design finds the burden disproportionate.
+Central MVHR remains the whole-dwelling ventilation baseline. It is not Ovid’s House doctrine, does not create a generic floor plenum and does not replace purge windows. Continuous MEV remains fallback if competent design finds the burden disproportionate.
 
 ### RH-08 / RH-10 — outward-draining low roof selected
 
@@ -93,7 +93,7 @@ RH-10 additionally reserves about **50 m² PV-capable roof field** as a forward-
 - low-temperature radiators/passive emitters are baseline; whole-house UFH is not selected;
 - external/courtyard walls now use a **400–425 mm working planning family with 450 mm stress test**, superseding RH-02's historical 350 mm allowance.
 
-These are Reference House choices, not new House Kernel doctrine.
+These are Reference House choices, not new Ovid’s House doctrine.
 
 ---
 

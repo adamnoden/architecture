@@ -90,7 +90,7 @@ The window must still support daylight, outlook, privacy, ventilation, glare con
 
 ## Evidence
 
-Conservation guidance supports reversibility and minimising damage to enduring fabric. Design-for-disassembly guidance supports reversible connections between layers with different service lives. The specific House Kernel interface remains subject to building-physics and prototype testing.
+Conservation guidance supports reversibility and minimising damage to enduring fabric. Design-for-disassembly guidance supports reversible connections between layers with different service lives. The specific Ovid’s House interface remains subject to building-physics and prototype testing.
 
 ## Does not prove
 
