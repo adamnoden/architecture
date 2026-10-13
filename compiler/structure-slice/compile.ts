@@ -1,6 +1,6 @@
 import { containsBox, isValidBox, overlapArea } from '../p0/geometry.js'
 import type { Box2D } from '../p0/model.js'
-import type { PlanSliceCompileResult } from '../plan-slice/model.js'
+import type { DerivedBoundary, PlanSliceCompileResult } from '../plan-slice/model.js'
 import { mm2 } from '../units.js'
 import { deriveStructuralTopology } from './derive.js'
 import type {
@@ -39,6 +39,14 @@ const intervalOf = (
 const coordinateOf = (
   line: Pick<DerivedStructuralLine | DerivedSupportPath, 'orientation' | 'x1' | 'y1'>
 ): number => line.orientation === 'horizontal' ? line.y1 : line.x1
+
+const boundaryInterval = (boundary: DerivedBoundary): [number, number] =>
+  boundary.orientation === 'horizontal'
+    ? [Math.min(boundary.x1, boundary.x2), Math.max(boundary.x1, boundary.x2)]
+    : [Math.min(boundary.y1, boundary.y2), Math.max(boundary.y1, boundary.y2)]
+
+const boundaryCoordinate = (boundary: DerivedBoundary): number =>
+  boundary.orientation === 'horizontal' ? boundary.y1 : boundary.x1
 
 const rangeCovers = (line: DerivedSupportPath, min: number, max: number): boolean => {
   const [lineMin, lineMax] = intervalOf(line)
@@ -81,6 +89,7 @@ const sourceDiagnostics = (
     ...source.supportPaths.map((item) => item.id),
     ...source.spanFields.map((item) => item.id),
     ...source.reactionNodes.map((item) => item.id),
+    ...source.bearingBoundaryMappings.map((item) => item.id),
     ...source.interruptions.map((item) => item.id),
     ...source.localFramingSystems.map((item) => item.id),
     source.diaphragm.id
@@ -126,10 +135,12 @@ const sourceDiagnostics = (
 
   const foundationIds = new Set(source.foundationDestinations.map((item) => item.id))
   const pathIds = new Set(source.supportPaths.map((item) => item.id))
-  const lineIds = new Set(source.lineElements.map((item) => item.id))
+  const lineById = new Map(source.lineElements.map((item) => [item.id, item]))
+  const lineIds = new Set(lineById.keys())
   const fieldIds = new Set(source.spanFields.map((item) => item.id))
   const interruptionIds = new Set(source.interruptions.map((item) => item.id))
   const framingById = new Map(source.localFramingSystems.map((item) => [item.id, item]))
+  const planBoundaryIds = new Set(plan.derived.boundaries.map((item) => item.id))
 
   for (const element of source.lineElements) {
     if (element.kind === 'bearing-wall') {
@@ -203,6 +214,39 @@ const sourceDiagnostics = (
           diagnostic('REACTION_NODE_MISSING_ELEMENT', 'FAIL', [node.id, elementId], `${node.id} references missing structural element ${elementId}.`)
         )
       }
+    }
+  }
+
+  for (const mapping of source.bearingBoundaryMappings) {
+    if (!planBoundaryIds.has(mapping.planBoundaryId)) {
+      diagnostics.push(
+        diagnostic(
+          'BEARING_MAPPING_MISSING_PLAN_BOUNDARY',
+          'FAIL',
+          [mapping.id, mapping.planBoundaryId],
+          `${mapping.id} references missing plan boundary ${mapping.planBoundaryId}.`
+        )
+      )
+    }
+    const structuralLine = lineById.get(mapping.structuralLineId)
+    if (!structuralLine) {
+      diagnostics.push(
+        diagnostic(
+          'BEARING_MAPPING_MISSING_STRUCTURAL_LINE',
+          'FAIL',
+          [mapping.id, mapping.structuralLineId],
+          `${mapping.id} references missing structural line ${mapping.structuralLineId}.`
+        )
+      )
+    } else if (structuralLine.kind !== 'bearing-wall') {
+      diagnostics.push(
+        diagnostic(
+          'BEARING_MAPPING_NON_BEARING_LINE',
+          'FAIL',
+          [mapping.id, structuralLine.id],
+          `${mapping.id} maps an architectural bearing boundary to non-bearing structural element ${structuralLine.id}.`
+        )
+      )
     }
   }
 
@@ -280,12 +324,35 @@ const derivedDiagnostics = (
   }
   const lineById = new Map(derived.lineElements.map((item) => [item.id, item]))
   const pathById = new Map(derived.supportPaths.map((item) => [item.id, item]))
-  const fieldById = new Map(derived.spanFields.map((item) => [item.id, item]))
+  const planBoundaryById = new Map(plan.derived.boundaries.map((item) => [item.id, item]))
 
   for (const element of derived.lineElements) {
     if (!Number.isFinite(element.length) || element.length <= 0) {
       diagnostics.push(
         diagnostic('INVALID_STRUCTURAL_LINE', 'FAIL', [element.id], `${element.id} derives a non-positive or non-finite line.`)
+      )
+    }
+  }
+
+  for (const mapping of source.bearingBoundaryMappings) {
+    const boundary = planBoundaryById.get(mapping.planBoundaryId)
+    const structuralLine = lineById.get(mapping.structuralLineId)
+    if (!boundary || !structuralLine || structuralLine.kind !== 'bearing-wall') continue
+
+    const [boundaryMin, boundaryMax] = boundaryInterval(boundary)
+    const [lineMin, lineMax] = intervalOf(structuralLine)
+    const collinear =
+      boundary.orientation === structuralLine.orientation &&
+      Math.abs(boundaryCoordinate(boundary) - coordinateOf(structuralLine)) <= EPSILON
+    const covered = lineMin <= boundaryMin + EPSILON && lineMax >= boundaryMax - EPSILON
+    if (!collinear || !covered) {
+      diagnostics.push(
+        diagnostic(
+          'BEARING_MAPPING_GEOMETRY_MISMATCH',
+          'FAIL',
+          [mapping.id, boundary.id, structuralLine.id],
+          `${boundary.id} is not geometrically covered by mapped bearing line ${structuralLine.id}.`
+        )
       )
     }
   }
