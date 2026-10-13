@@ -1,8 +1,10 @@
+import { MODEL_COORDINATE_EPSILON_MM } from '../core/numeric.js'
 import type { DerivedBoundary, PlanSliceCompileResult } from '../plan-slice/model.js'
+import { serviceCrossingId } from '../service-slice/model.js'
 import type { ServiceTopologyCompileResult, ServiceTopologyDiagnostic, ServiceTopologySource } from '../service-slice/model.js'
+import { structuralLineId } from '../structure-slice/model.js'
 import type { DerivedStructuralLine, StructuralTopologyCompileResult } from '../structure-slice/model.js'
-
-const EPSILON = 1e-6
+import type { Millimetres } from '../units.js'
 
 const interval = (
   item: Pick<DerivedBoundary | DerivedStructuralLine, 'orientation' | 'x1' | 'y1' | 'x2' | 'y2'>
@@ -12,14 +14,17 @@ const interval = (
 
 const coordinate = (
   item: Pick<DerivedBoundary | DerivedStructuralLine, 'orientation' | 'x1' | 'y1'>
-): number => item.orientation === 'horizontal' ? item.y1 : item.x1
+): Millimetres => item.orientation === 'horizontal' ? item.y1 : item.x1
 
 const sameLine = (boundary: DerivedBoundary, line: DerivedStructuralLine): boolean => {
   if (boundary.orientation !== line.orientation) return false
-  if (Math.abs(coordinate(boundary) - coordinate(line)) > EPSILON) return false
+  if (Math.abs(coordinate(boundary) - coordinate(line)) > MODEL_COORDINATE_EPSILON_MM) return false
   const [b0, b1] = interval(boundary)
   const [l0, l1] = interval(line)
-  return Math.abs(b0 - l0) <= EPSILON && Math.abs(b1 - l1) <= EPSILON
+  return (
+    Math.abs(b0 - l0) <= MODEL_COORDINATE_EPSILON_MM &&
+    Math.abs(b1 - l1) <= MODEL_COORDINATE_EPSILON_MM
+  )
 }
 
 const diagnostic = (
@@ -79,8 +84,8 @@ export const hardenReferenceHouseServiceTopology = (
       continue
     }
     if (
-      envelope.width > interruption.geometry.width + EPSILON ||
-      envelope.depth > interruption.geometry.depth + EPSILON
+      envelope.width > interruption.geometry.width + MODEL_COORDINATE_EPSILON_MM ||
+      envelope.depth > interruption.geometry.depth + MODEL_COORDINATE_EPSILON_MM
     ) {
       extra.push(diagnostic(
         'SERVICE_RESERVATION_EXCEEDS_STRUCTURAL_OPENING',
@@ -133,9 +138,9 @@ export const hardenReferenceHouseServiceTopology = (
     }
     derived.bearingCrossings.push({
       id: `SVC-BEARING-${crossing.id}`,
-      crossingId: crossing.id,
+      crossingId: serviceCrossingId(crossing.id),
       planBoundaryId: boundary.id,
-      structuralLineId: line.id,
+      structuralLineId: structuralLineId(line.id),
       proof: 'EXTERNAL-STRUCTURAL-OPENING-AND-BEARING',
       provisional: crossing.provisional || line.provisional || boundary.provisional
     })
