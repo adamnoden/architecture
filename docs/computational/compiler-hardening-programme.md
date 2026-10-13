@@ -1,7 +1,7 @@
 # Compiler Hardening programme
 
 **Programme:** CH — Compiler Hardening  
-**Status:** CH-04 PASS — CH-05 next  
+**Status:** CH-05 PASS — CH-06 next  
 **Baseline:** `0538be4a9124b107565717bb2f172e73ebfe86ba`  
 **Computational maturity:** M3  
 **Reference House capability sequence:** RH-C0 → RH-C5 complete; no RH-C6 authorised
@@ -367,6 +367,8 @@ Avoid cryptographic complexity for its own sake. The goal is identity and reprod
 
 **Exit:** semantically identical sources compile identically regardless of irrelevant ordering, and important outputs have inspectable lineage.
 
+**Result:** PASS. CH-05 adds deterministic SHA-256 semantic identities for the canonical Reference House source, selected stair method, compact semantic result and combined compile state under schema `HK-RH-COMPILE-1`. Only source collections classified as declarative sets are canonicalised; authored sequences remain identity-bearing. `compiler/ch05/ch05.test.ts` proves independent and combined permutation invariance for those declarative collections, repeated identity stability, authored-sequence sensitivity and method-order invariance. The canonical result exposes inspectable identity manifests and lightweight lineage for selected outputs back to existing source-fact IDs, calculation source IDs/method IDs and named coordination rules. The six CH-00 SVG hashes remain unchanged and can be linked to the same compile/source identity. The execution record is `compiler/ch05/README.md`; CH-00 through CH-04, CF-01 and RH-C2 through RH-C5 remain green, computational maturity remains M3 and no RH-C6 is created.
+
 ### CH-06 — strengthen the kinds of tests
 
 **Question:** Do tests establish properties of the machinery rather than only many examples?
@@ -505,4 +507,4 @@ frozen before the hardening refactor unless a semantic change is explicit.
 
 ## Handoff
 
-CH-00 through CH-04 are complete. The next authorised gate is **CH-05 — determinism, identity and provenance**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract, CH-02 runtime dependency boundary, CH-03 single-pass Reference House compiler and CH-04 representation contracts; do not use CH-05 to add Reference House technical capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
+CH-00 through CH-05 are complete. The next authorised gate is **CH-06 — strengthen the kinds of tests**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract, CH-02 runtime dependency boundary, CH-03 single-pass Reference House compiler, CH-04 representation contracts and CH-05 semantic identity/permutation/lineage contracts. Do not use CH-06 to add Reference House technical capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
