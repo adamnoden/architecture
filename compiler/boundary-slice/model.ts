@@ -37,6 +37,8 @@ export interface BoundaryTransitionSource {
   openingId?: string
   qualitativeOpeningRelationshipId?: string
   serviceCrossingId?: string
+  projectOccurrenceId?: string
+  drainageRouteIds?: string[]
   obligations: string[]
   provisional: boolean
 }
@@ -85,6 +87,15 @@ export interface DerivedBoundaryServiceObligation {
   provisional: boolean
 }
 
+export interface DerivedBoundaryOccurrenceObligation {
+  id: string
+  projectOccurrenceId: string
+  drainageRouteIds: string[]
+  roles: BoundaryRole[]
+  obligations: string[]
+  provisional: boolean
+}
+
 export interface BoundaryTopologyDerived {
   carriers: BoundaryCarrierSource[]
   systems: DerivedBoundarySystem[]
@@ -92,6 +103,7 @@ export interface BoundaryTopologyDerived {
   drainageRoutes: DrainageRouteSource[]
   openingObligations: DerivedBoundaryOpeningObligation[]
   serviceObligations: DerivedBoundaryServiceObligation[]
+  occurrenceObligations: DerivedBoundaryOccurrenceObligation[]
 }
 
 export interface BoundaryTopologyDiagnostic {
