@@ -134,6 +134,23 @@ export const referenceHouseSemanticResultManifest = (
   }
 }
 
+export type ReferenceHouseSemanticResultManifest = ReturnType<
+  typeof referenceHouseSemanticResultManifest
+>
+
+export interface ReferenceHouseCompileManifest {
+  readonly schemaVersion: typeof REFERENCE_HOUSE_COMPILE_SCHEMA_VERSION
+  readonly sourceFingerprint: string
+  readonly methods: {
+    readonly privateStairGeometry: {
+      readonly id: string
+      readonly version: string
+      readonly semanticFingerprint: string
+    }
+  }
+  readonly resultFingerprint: string
+}
+
 export interface ReferenceHouseCompileIdentity {
   readonly schemaVersion: typeof REFERENCE_HOUSE_COMPILE_SCHEMA_VERSION
   readonly source: {
@@ -151,10 +168,12 @@ export interface ReferenceHouseCompileIdentity {
   readonly result: {
     readonly algorithm: 'sha256'
     readonly semanticFingerprint: string
+    readonly manifest: ReferenceHouseSemanticResultManifest
   }
   readonly compile: {
     readonly algorithm: 'sha256'
     readonly fingerprint: string
+    readonly manifest: ReferenceHouseCompileManifest
   }
 }
 
@@ -165,8 +184,9 @@ export const createReferenceHouseCompileIdentity = (
 ): ReferenceHouseCompileIdentity => {
   const sourceFingerprint = referenceHouseSourceFingerprint(source)
   const methodFingerprint = calculationMethodSemanticFingerprint(privateStairMethod)
-  const resultFingerprint = sha256SemanticFingerprint(referenceHouseSemanticResultManifest(result))
-  const compileFingerprint = sha256SemanticFingerprint({
+  const resultManifest = referenceHouseSemanticResultManifest(result)
+  const resultFingerprint = sha256SemanticFingerprint(resultManifest)
+  const compileManifest: ReferenceHouseCompileManifest = {
     schemaVersion: REFERENCE_HOUSE_COMPILE_SCHEMA_VERSION,
     sourceFingerprint,
     methods: {
@@ -177,7 +197,8 @@ export const createReferenceHouseCompileIdentity = (
       }
     },
     resultFingerprint
-  })
+  }
+  const compileFingerprint = sha256SemanticFingerprint(compileManifest)
 
   return {
     schemaVersion: REFERENCE_HOUSE_COMPILE_SCHEMA_VERSION,
@@ -195,11 +216,13 @@ export const createReferenceHouseCompileIdentity = (
     },
     result: {
       algorithm: 'sha256',
-      semanticFingerprint: resultFingerprint
+      semanticFingerprint: resultFingerprint,
+      manifest: resultManifest
     },
     compile: {
       algorithm: 'sha256',
-      fingerprint: compileFingerprint
+      fingerprint: compileFingerprint,
+      manifest: compileManifest
     }
   }
 }
