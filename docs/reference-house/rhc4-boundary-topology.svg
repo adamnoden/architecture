@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1412" role="img" aria-labelledby="title desc">
+<title id="title">Reference House — RH-C4 envelope / boundary topology</title>
+<desc id="desc">Deterministic non-spatial envelope/boundary projection showing independent performance carriers, typed interruptions and directional rainwater routes. It does not prove building-physics performance.</desc>
+<rect width="1280" height="1412" fill="white"/>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif">
+<text x="40" y="34" font-size="22" font-weight="700">Reference House — RH-C4 envelope / boundary topology</text>
+<text x="40" y="56" font-size="12">STATUS PASS · BOUNDARY TOPOLOGY ONLY</text>
+<text x="40" y="76" font-size="11">18 opening obligations · 7 service-crossing obligations · 1 registered boundary occurrence · performance remains external</text>
+<text x="40" y="98" font-size="11" font-weight="700">BOUNDARY CARRIERS</text>
+<text data-entity="AIR-COURT" x="40" y="116" font-size="11">AIR-COURT · air · plan-boundary · 8 plan boundaries · courtyard-wall room-side air-control boundary</text>
+<text data-entity="AIR-GROUND" x="40" y="134" font-size="11">AIR-GROUND · air · ground-interface · semantic surface · air ground-interface handoff — technical build-up remains external</text>
+<text data-entity="AIR-OUTER" x="40" y="152" font-size="11">AIR-OUTER · air · plan-boundary · 8 plan boundaries · outer-wall room-side air-control boundary</text>
+<text data-entity="AIR-ROOF" x="40" y="170" font-size="11">AIR-ROOF · air · roof-field · semantic surface · air roof boundary — technical build-up remains external</text>
+<text data-entity="MOI-COURT" x="40" y="188" font-size="11">MOI-COURT · moisture · plan-boundary · 8 plan boundaries · courtyard-wall wetting / drainage / drying strategy</text>
+<text data-entity="MOI-GROUND" x="40" y="206" font-size="11">MOI-GROUND · moisture · ground-interface · semantic surface · moisture ground-interface handoff — technical build-up remains external</text>
+<text data-entity="MOI-OUTER" x="40" y="224" font-size="11">MOI-OUTER · moisture · plan-boundary · 8 plan boundaries · outer-wall wetting / drainage / drying strategy</text>
+<text data-entity="MOI-ROOF" x="40" y="242" font-size="11">MOI-ROOF · moisture · roof-field · semantic surface · moisture roof boundary — technical build-up remains external</text>
+<text data-entity="THM-COURT" x="40" y="260" font-size="11">THM-COURT · thermal · plan-boundary · 8 plan boundaries · courtyard-wall insulated boundary</text>
+<text data-entity="THM-GROUND" x="40" y="278" font-size="11">THM-GROUND · thermal · ground-interface · semantic surface · thermal ground-interface handoff — technical build-up remains external</text>
+<text data-entity="THM-OUTER" x="40" y="296" font-size="11">THM-OUTER · thermal · plan-boundary · 8 plan boundaries · outer-wall insulated boundary</text>
+<text data-entity="THM-ROOF" x="40" y="314" font-size="11">THM-ROOF · thermal · roof-field · semantic surface · thermal roof boundary — technical build-up remains external</text>
+<text data-entity="WEA-COURT" x="40" y="332" font-size="11">WEA-COURT · weather · plan-boundary · 8 plan boundaries · courtyard masonry weathering / drained-cavity boundary</text>
+<text data-entity="WEA-GROUND" x="40" y="350" font-size="11">WEA-GROUND · weather · ground-interface · semantic surface · weather ground-interface handoff — technical build-up remains external</text>
+<text data-entity="WEA-OUTER" x="40" y="368" font-size="11">WEA-OUTER · weather · plan-boundary · 8 plan boundaries · outer masonry weathering / drained-cavity boundary</text>
+<text data-entity="WEA-ROOF" x="40" y="386" font-size="11">WEA-ROOF · weather · roof-field · semantic surface · weather roof boundary — technical build-up remains external</text>
+<text x="40" y="430" font-size="11" font-weight="700">TYPED BOUNDARY TRANSITIONS</text>
+<text data-entity="INT-AIR-COURT-GROUND" x="40" y="452" font-size="10">INT-AIR-COURT-GROUND · wall-ground · — · 2 carriers · —</text>
+<text data-entity="INT-AIR-COURT-ROOF" x="40" y="470" font-size="10">INT-AIR-COURT-ROOF · wall-roof · — · 2 carriers · —</text>
+<text data-entity="INT-AIR-OUTER-GROUND" x="40" y="488" font-size="10">INT-AIR-OUTER-GROUND · wall-ground · — · 2 carriers · —</text>
+<text data-entity="INT-AIR-OUTER-ROOF" x="40" y="506" font-size="10">INT-AIR-OUTER-ROOF · wall-roof · — · 2 carriers · —</text>
+<text data-entity="INT-GROUND-SVC-PEN-FD-01" x="40" y="524" font-size="10">INT-GROUND-SVC-PEN-FD-01 · service-penetration · PEN-FD-01 · 4 carriers · —</text>
+<text data-entity="INT-MOI-COURT-GROUND" x="40" y="542" font-size="10">INT-MOI-COURT-GROUND · wall-ground · — · 2 carriers · —</text>
+<text data-entity="INT-MOI-COURT-ROOF" x="40" y="560" font-size="10">INT-MOI-COURT-ROOF · wall-roof · — · 2 carriers · —</text>
+<text data-entity="INT-MOI-OUTER-GROUND" x="40" y="578" font-size="10">INT-MOI-OUTER-GROUND · wall-ground · — · 2 carriers · —</text>
+<text data-entity="INT-MOI-OUTER-ROOF" x="40" y="596" font-size="10">INT-MOI-OUTER-ROOF · wall-roof · — · 2 carriers · —</text>
+<text data-entity="INT-OPEN-G-COURT-NORTH-O01" x="40" y="614" font-size="10">INT-OPEN-G-COURT-NORTH-O01 · threshold · G-COURT-NORTH-O01 · 4 carriers · G-COURT-NORTH</text>
+<text data-entity="INT-OPEN-G-COURT-SOUTH-O01" x="40" y="632" font-size="10">INT-OPEN-G-COURT-SOUTH-O01 · threshold · G-COURT-SOUTH-O01 · 4 carriers · G-COURT-SOUTH</text>
+<text data-entity="INT-OPEN-G-FRONT-D01" x="40" y="650" font-size="10">INT-OPEN-G-FRONT-D01 · opening · G-FRONT-D01 · 4 carriers · G-OUTER-SOUTH</text>
+<text data-entity="INT-OPEN-G-FRONT-W01" x="40" y="668" font-size="10">INT-OPEN-G-FRONT-W01 · opening · G-FRONT-W01 · 4 carriers · G-OUTER-SOUTH</text>
+<text data-entity="INT-OPEN-G-FRONT-W02" x="40" y="686" font-size="10">INT-OPEN-G-FRONT-W02 · opening · G-FRONT-W02 · 4 carriers · G-OUTER-SOUTH</text>
+<text data-entity="INT-OPEN-G-FRONT-W04" x="40" y="704" font-size="10">INT-OPEN-G-FRONT-W04 · opening · G-FRONT-W04 · 4 carriers · G-OUTER-SOUTH</text>
+<text data-entity="INT-OPEN-U-COURT-NORTH-O01" x="40" y="722" font-size="10">INT-OPEN-U-COURT-NORTH-O01 · opening · U-COURT-NORTH-O01 · 4 carriers · U-COURT-NORTH</text>
+<text data-entity="INT-OPEN-U-COURT-SOUTH-O01" x="40" y="740" font-size="10">INT-OPEN-U-COURT-SOUTH-O01 · opening · U-COURT-SOUTH-O01 · 4 carriers · U-COURT-SOUTH</text>
+<text data-entity="INT-OPEN-U-FRONT-W01" x="40" y="758" font-size="10">INT-OPEN-U-FRONT-W01 · opening · U-FRONT-W01 · 4 carriers · U-OUTER-SOUTH</text>
+<text data-entity="INT-OPEN-U-FRONT-W02" x="40" y="776" font-size="10">INT-OPEN-U-FRONT-W02 · opening · U-FRONT-W02 · 4 carriers · U-OUTER-SOUTH</text>
+<text data-entity="INT-OPEN-U-FRONT-W03" x="40" y="794" font-size="10">INT-OPEN-U-FRONT-W03 · opening · U-FRONT-W03 · 4 carriers · U-OUTER-SOUTH</text>
+<text data-entity="INT-OPEN-U-FRONT-W04" x="40" y="812" font-size="10">INT-OPEN-U-FRONT-W04 · opening · U-FRONT-W04 · 4 carriers · U-OUTER-SOUTH</text>
+<text data-entity="INT-QOPEN-RHCF-COURT-E-G" x="40" y="830" font-size="10">INT-QOPEN-RHCF-COURT-E-G · opening · RHCF-COURT-E-G · 4 carriers · G-COURT-EAST</text>
+<text data-entity="INT-QOPEN-RHCF-COURT-E-U" x="40" y="848" font-size="10">INT-QOPEN-RHCF-COURT-E-U · opening · RHCF-COURT-E-U · 4 carriers · U-COURT-EAST</text>
+<text data-entity="INT-QOPEN-RHCF-COURT-W-G" x="40" y="866" font-size="10">INT-QOPEN-RHCF-COURT-W-G · opening · RHCF-COURT-W-G · 4 carriers · G-COURT-WEST</text>
+<text data-entity="INT-QOPEN-RHCF-COURT-W-U" x="40" y="884" font-size="10">INT-QOPEN-RHCF-COURT-W-U · opening · RHCF-COURT-W-U · 4 carriers · U-COURT-WEST</text>
+<text data-entity="INT-QOPEN-RHCF-GARDEN-CENTRE-G" x="40" y="902" font-size="10">INT-QOPEN-RHCF-GARDEN-CENTRE-G · opening · RHCF-GARDEN-CENTRE-G · 4 carriers · G-OUTER-NORTH</text>
+<text data-entity="INT-QOPEN-RHCF-GARDEN-CENTRE-U" x="40" y="920" font-size="10">INT-QOPEN-RHCF-GARDEN-CENTRE-U · opening · RHCF-GARDEN-CENTRE-U · 4 carriers · U-OUTER-NORTH</text>
+<text data-entity="INT-ROOF-SVC-PEN-PV-01" x="40" y="938" font-size="10">INT-ROOF-SVC-PEN-PV-01 · roof-penetration · PEN-PV-01 · 4 carriers · —</text>
+<text data-entity="INT-ROOF-SVC-PEN-SV-RF-01" x="40" y="956" font-size="10">INT-ROOF-SVC-PEN-SV-RF-01 · roof-penetration · PEN-SV-RF-01 · 4 carriers · —</text>
+<text data-entity="INT-RW-PEN-CD-01" x="40" y="974" font-size="10">INT-RW-PEN-CD-01 · rainwater-collection · PEN-CD-01 · 4 carriers · RW-COURT-EMERGENCY + RW-COURT-PRIMARY</text>
+<text data-entity="INT-SVC-PEN-HS-01" x="40" y="992" font-size="10">INT-SVC-PEN-HS-01 · service-penetration · PEN-HS-01 · 4 carriers · G-OUTER-EAST</text>
+<text data-entity="INT-SVC-PEN-KX-01" x="40" y="1010" font-size="10">INT-SVC-PEN-KX-01 · service-penetration · PEN-KX-01 · 4 carriers · G-OUTER-EAST</text>
+<text data-entity="INT-SVC-PEN-MV-01" x="40" y="1028" font-size="10">INT-SVC-PEN-MV-01 · service-penetration · PEN-MV-01 · 4 carriers · G-OUTER-EAST</text>
+<text data-entity="INT-SVC-PEN-UE-01" x="40" y="1046" font-size="10">INT-SVC-PEN-UE-01 · service-penetration · PEN-UE-01 · 4 carriers · G-OUTER-EAST</text>
+<text data-entity="INT-THM-COURT-GROUND" x="40" y="1064" font-size="10">INT-THM-COURT-GROUND · wall-ground · — · 2 carriers · —</text>
+<text data-entity="INT-THM-COURT-ROOF" x="40" y="1082" font-size="10">INT-THM-COURT-ROOF · wall-roof · — · 2 carriers · —</text>
+<text data-entity="INT-THM-OUTER-GROUND" x="40" y="1100" font-size="10">INT-THM-OUTER-GROUND · wall-ground · — · 2 carriers · —</text>
+<text data-entity="INT-THM-OUTER-ROOF" x="40" y="1118" font-size="10">INT-THM-OUTER-ROOF · wall-roof · — · 2 carriers · —</text>
+<text data-entity="INT-WEA-COURT-GROUND" x="40" y="1136" font-size="10">INT-WEA-COURT-GROUND · wall-ground · — · 2 carriers · —</text>
+<text data-entity="INT-WEA-COURT-ROOF" x="40" y="1154" font-size="10">INT-WEA-COURT-ROOF · wall-roof · — · 2 carriers · —</text>
+<text data-entity="INT-WEA-OUTER-GROUND" x="40" y="1172" font-size="10">INT-WEA-OUTER-GROUND · wall-ground · — · 2 carriers · —</text>
+<text data-entity="INT-WEA-OUTER-ROOF" x="40" y="1190" font-size="10">INT-WEA-OUTER-ROOF · wall-roof · — · 2 carriers · —</text>
+<text x="40" y="1234" font-size="11" font-weight="700">DIRECTIONAL DRAINAGE ROUTES</text>
+<text data-entity="RW-COURT-EMERGENCY" x="40" y="1256" font-size="10">RW-COURT-EMERGENCY · courtyard-emergency · service-side · higher-level independent courtyard overflow inlet → visible above-ground east/service outlet</text>
+<text data-entity="RW-COURT-PRIMARY" x="40" y="1274" font-size="10">RW-COURT-PRIMARY · courtyard-primary · service-side · courtyard surface / east-side removable-grate collector → external east/service inspection point</text>
+<text data-entity="RW-ROOF-EAST" x="40" y="1292" font-size="10">RW-ROOF-EAST · roof-field · outward · east roof field → outer east collection edge / corner returns</text>
+<text data-entity="RW-ROOF-NORTH" x="40" y="1310" font-size="10">RW-ROOF-NORTH · roof-field · outward · north roof field → outer north collection edge / corner returns</text>
+<text data-entity="RW-ROOF-SOUTH" x="40" y="1328" font-size="10">RW-ROOF-SOUTH · roof-field · outward · south roof field → outer south collection edge / corner returns</text>
+<text data-entity="RW-ROOF-WEST" x="40" y="1346" font-size="10">RW-ROOF-WEST · roof-field · outward · west roof field → outer west collection edge / corner returns</text>
+<text x="40" y="1394" font-size="10">Topology only: U-values, ψ-values, condensation, airtightness, rain resistance, drainage capacity, fire/acoustic performance and product compliance are not proved here.</text>
+</g>
+</svg>
