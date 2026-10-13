@@ -16,11 +16,9 @@ The current generic domains already have a defensible shape. The material histor
 CH-02 removes that coupling and records the actual permanent graph:
 
 ```text
-                 units
-                ↙     ↘
-core/geometry → plan → structure → services → boundary
-                   ↘       ↗
-                    (typed upstream results)
+core/geometry ─→ plan ─→ structure ─→ services ─→ boundary
+                  ↑          ↑           ↑
+                units      units       units
 
 calculation
   (generic method/check kernel; independent of the topology domains)
@@ -32,7 +30,7 @@ More precisely:
 - `units.ts` remains a domain-neutral primitive at compiler root for now;
 - `plan-slice` may depend on `core` and units;
 - `structure-slice` may depend on `core`, plan and units;
-- `service-slice` may depend on plan and structure;
+- `service-slice` may depend on plan, structure and units;
 - `boundary-slice` may depend on plan and services;
 - `calculation-slice` is generic and independent of those topology domains;
 - Reference House orchestration may compose all of them outside the generic layers.
@@ -49,18 +47,20 @@ No numeric policy was changed: the extracted geometry retains the existing `1e-9
 
 ## Mechanical boundary
 
-`compiler/ch02/architecture.test.ts` scans the permanent runtime source tree and enforces the allowed dependency DAG. A generic domain fails the gate if it imports a historical gate, CH programme module, Reference House module, later generic domain or other unclassified compiler module.
+`compiler/ch02/architecture.test.ts` scans the **runtime logic** of the permanent domains and enforces the allowed dependency DAG. A generic runtime module fails the gate if it imports a historical gate, CH programme module, Reference House module, later generic domain or other unclassified compiler module.
 
-The same gate scans permanent generic source for Reference House fixture tokens. This is deliberately simple: it protects the architectural boundary actually at risk without adding a dependency-analysis package or framework.
+Rendering is intentionally excluded from that runtime import/fixture-token scan. Domain `drawing.ts` files are classified separately as downstream projections and may carry stage-specific presentation text without becoming source or compiler authority. The gate still checks the plan/structure runtime directly for any dependency back into P0.
+
+The same runtime gate scans generic compiler logic for Reference House fixture tokens. This is deliberately simple: it protects the architectural boundary actually at risk without adding a dependency-analysis package or framework.
 
 ## Module classification after CH-02
 
 | Class | Modules / responsibilities | Decision |
 | --- | --- | --- |
-| Permanent generic runtime | `core/geometry.ts`, `units.ts`, `plan-slice`, `structure-slice`, `service-slice`, `boundary-slice`, `calculation-slice` | Dependency direction is now explicit and machine checked. Existing `-slice` names are retained because they describe bounded domains rather than research chronology. |
+| Permanent generic runtime | `core/geometry.ts`, `units.ts`, runtime logic in `plan-slice`, `structure-slice`, `service-slice`, `boundary-slice`, `calculation-slice` | Dependency direction is now explicit and machine checked. Existing `-slice` names are retained because they describe bounded domains rather than research chronology. |
 | Reference House source/adapters/coordination | `reference-house/*`; RH-C2 structural adapter/fixture; RH-C3 authority/fixture/hardening; RH-C4 fixture/hardening; RH-C5 calculation input/method adapter | Remain outside generic domains. C3/C4 hardening is classified as Reference House coordination knowledge, not generic service/boundary logic. |
 | Historical gates/regression fixtures | P0 compiler/source/evidence/obligation gate, PAT-XW-01, CF-01, RH-C1…RH-C5 tests/proof identities, CH gates | Retained for provenance and regression. P0 geometry path is now only a compatibility adapter over permanent core geometry. |
-| Rendering/publication | domain drawing modules, Reference House drawings/generators, committed SVGs, publication tooling | Remain downstream projections; no source authority moves here. |
+| Rendering/publication | domain `drawing.ts` modules, Reference House drawings/generators, committed SVGs, publication tooling | Remain downstream projections; no source authority moves here. |
 
 ## Deliberate non-moves
 
