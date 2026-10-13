@@ -134,7 +134,9 @@ export const hardenReferenceHouseBoundaryTopology = (
     }
   }
 
-  const representedServiceIds = new Set(result.derived.serviceObligations.map((item) => item.serviceCrossingId))
+  const representedServiceIds = new Set<string>(
+    result.derived.serviceObligations.map((item) => item.serviceCrossingId)
+  )
   const selectedCrossings = upstream.services.derived.crossings.filter((item) => item.selected)
   for (const crossing of selectedCrossings) {
     const required = crossing.host.kind === 'plan-boundary' ||
