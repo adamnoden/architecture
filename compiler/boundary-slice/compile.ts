@@ -86,6 +86,7 @@ export const compileBoundaryTopology = (
   const serviceCrossingById = new Map(services.derived.crossings.map((item) => [item.id, item]))
   const carrierById = new Map(source.carriers.map((item) => [item.id, item]))
   const transitionById = new Map(source.transitions.map((item) => [item.id, item]))
+  const drainageRouteById = new Map(source.drainageRoutes.map((item) => [item.id, item]))
 
   for (const carrier of source.carriers) {
     if (carrier.critical && carrier.removable) {
@@ -144,12 +145,20 @@ export const compileBoundaryTopology = (
       }
     }
     for (const transitionId of system.transitionIds) {
-      if (!transitionById.has(transitionId)) {
+      const transition = transitionById.get(transitionId)
+      if (!transition) {
         diagnostics.push(diagnostic(
           'BOUNDARY_SYSTEM_TRANSITION_MISSING',
           'FAIL',
           [system.id, transitionId],
           `${system.id} references missing transition ${transitionId}.`
+        ))
+      } else if (!transition.carrierIds.some((id) => system.carrierIds.includes(id))) {
+        diagnostics.push(diagnostic(
+          'BOUNDARY_SYSTEM_TRANSITION_OWNERSHIP_MISMATCH',
+          'FAIL',
+          [system.id, transition.id],
+          `${system.id} lists ${transition.id}, but the transition touches none of the system's carriers.`
         ))
       }
     }
@@ -174,12 +183,23 @@ export const compileBoundaryTopology = (
       ))
     }
     for (const carrierId of transition.carrierIds) {
-      if (!carrierById.has(carrierId)) {
+      const carrier = carrierById.get(carrierId)
+      if (!carrier) {
         diagnostics.push(diagnostic(
           'BOUNDARY_TRANSITION_CARRIER_MISSING',
           'FAIL',
           [transition.id, carrierId],
           `${transition.id} references missing carrier ${carrierId}.`
+        ))
+        continue
+      }
+      const owningSystems = source.systems.filter((system) => system.carrierIds.includes(carrierId))
+      if (!owningSystems.some((system) => system.transitionIds.includes(transition.id))) {
+        diagnostics.push(diagnostic(
+          'BOUNDARY_TRANSITION_NOT_OWNED_BY_SYSTEM',
+          'FAIL',
+          [transition.id, carrier.id, ...owningSystems.map((item) => item.id)],
+          `${transition.id} touches ${carrier.id}, but no system owning that carrier lists the transition.`
         ))
       }
     }
@@ -229,6 +249,27 @@ export const compileBoundaryTopology = (
           [transition.id, crossing.id, transition.hostPlanBoundaryId],
           `${transition.id} does not match ${crossing.id}'s architectural host.`
         ))
+      }
+    }
+
+    if (transition.projectOccurrenceId) {
+      if (!transition.drainageRouteIds?.length) {
+        diagnostics.push(diagnostic(
+          'BOUNDARY_OCCURRENCE_ROUTES_MISSING',
+          'FAIL',
+          [transition.id, transition.projectOccurrenceId],
+          `${transition.projectOccurrenceId} has no linked drainage routes.`
+        ))
+      }
+      for (const routeId of transition.drainageRouteIds ?? []) {
+        if (!drainageRouteById.has(routeId)) {
+          diagnostics.push(diagnostic(
+            'BOUNDARY_OCCURRENCE_ROUTE_MISSING',
+            'FAIL',
+            [transition.id, transition.projectOccurrenceId, routeId],
+            `${transition.projectOccurrenceId} references missing drainage route ${routeId}.`
+          ))
+        }
       }
     }
 
