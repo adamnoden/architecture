@@ -1,7 +1,7 @@
 # CH-07 — toolchain and developer ergonomics
 
 **Gate:** CH-07  
-**Status:** implementation candidate — validate before PASS  
+**Status:** PASS  
 **Starting main:** `41b2e4f6dbed42c117db964ec54423997fd77c39`  
 **Issue:** #69  
 **Computational maturity:** M3  
@@ -99,9 +99,13 @@ This is a deliberate non-move, not a claim that formatting/linting tools are gen
 - artefact verification remains explicitly non-generating;
 - local canonical Node major remains 24.
 
+## Validation
+
+PR #72 exact-head validation reached the complete CH-07 command surface and passed in run `38476274466` after the unrelated navigation prerequisite was repaired. The full suite preserved CH-00 through CH-06, CF-01, RH-C2 through RH-C5, publication validation and all six frozen SVG identities. No compiler semantic, proof-boundary, canonical source or drawing-renderer change was required.
+
 ## Preservation boundary
 
-CH-07 must preserve:
+CH-07 preserves:
 
 - `createReferenceHouseSource()` source authority;
 - `compileReferenceHouseSystem(source)` as canonical production path;
@@ -118,12 +122,8 @@ CH-07 must preserve:
 - computational maturity M3;
 - no RH-C6.
 
-## Exit evidence required before PASS
+## Result
 
-- exact-head `npm run check`/PR validation passes;
-- `npm run artifacts:check` passes as part of the retained CH-00/CH-05 suite;
-- complete CH-00 through CH-06 contracts remain green;
-- canonical six SVG identities remain unchanged;
-- main workflow still builds Working Edition and Primer PDFs and deploys Pages;
-- no compiler semantic or proof-boundary change is required;
-- CH-08 — distillation and deletion — remains next.
+**PASS.** A clean checkout now has one obvious repository-health command, one explicit non-mutating artefact-verification path, one explicit canonical generation path, one local/CI Node authority and a concise compiler developer workflow. Canonical generation is consistently PASS-only. CI reuses the same health contract rather than duplicating it. No new tooling dependency, compiler capability, architectural claim or maturity promotion was introduced.
+
+**Next:** CH-08 — distillation and deletion.
