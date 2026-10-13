@@ -217,9 +217,9 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-13',
     currentState:
-      'P0 passes 17/17 tests, PAT-XW-01 6/6, RH-C1 27/27, CF-01 7/7, RH-C2 17/17, RH-C3 21/21, RH-C4 29/29 and RH-C5 16/16. The bounded Reference House executable sequence now spans deterministic architecture, two-fixture plan evidence, structural/service/envelope topology and one versioned private-stair numeric method correspondence check. RH-C5 explicitly does not establish a release-grade compiler target or Building Regulations compliance; structural, MEP, building-physics and regulatory adequacy remain external.',
+      'The bounded Reference House executable sequence remains closed PASS through RH-C5. CH-00 froze a machine-checkable semantic and artefact baseline; CH-01 makes fatal plan/structural prerequisite failures deterministic and fail-closed while preserving established downstream diagnostics for invalid-but-derivable structural states. These hardening gates improve software confidence only and do not expand the Reference House proof boundary or technical authority.',
     nextGate:
-      'No standing RH-C6: retain the current suites as regression gates and add computational capability only when external review, physical validation, a real project or newly authoritative inputs expose a concrete proof family worth formalising.',
+      'CH-02: distil permanent runtime concepts from research-stage module history while keeping the CH-00 baseline green. There is no standing RH-C6; new computational capability still requires a concrete proof family justified by external review, physical validation, a real project or newly authoritative inputs.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -229,6 +229,9 @@ export const workstreamStatuses = [
         'docs/reference-house/rhc1-drawing-parity-result.md',
         'docs/computational/compiler-generality-assurance-cf01.md',
         'docs/computational/reference-house-executable-slice.md',
+        'docs/computational/compiler-hardening-programme.md',
+        'compiler/ch00/README.md',
+        'compiler/ch01/README.md',
         'compiler/reference-house/reference-house.test.ts',
         'compiler/reference-house/drawings.test.ts',
         'compiler/cf01/cf01.test.ts',

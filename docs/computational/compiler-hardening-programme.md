@@ -1,7 +1,7 @@
 # Compiler Hardening programme
 
 **Programme:** CH — Compiler Hardening  
-**Status:** CH-00 PASS — CH-01 next  
+**Status:** CH-01 PASS — CH-02 next  
 **Baseline:** `0538be4a9124b107565717bb2f172e73ebfe86ba`  
 **Computational maturity:** M3  
 **Reference House capability sequence:** RH-C0 → RH-C5 complete; no RH-C6 authorised
@@ -226,6 +226,8 @@ Work:
 - preserve upstream REVIEW/FAIL semantics.
 
 **Exit:** expected malformed input cannot accidentally crash normal compilation.
+
+**Result:** PASS. Plan compilation now stops before derivation when fatal source references or identities are invalid. Structural compilation validates every architectural plan-line prerequisite and stops only for failures that make derivation unsafe or ambiguous; invalid-but-derivable structural sources still run downstream checks so established diagnostics are preserved. Service and boundary derivation were audited and did not contain the same throwing required-reference path. The execution record is `compiler/ch01/README.md`, with adversarial coverage in `compiler/ch01/ch01.test.ts`; the CH-00 semantic manifest remains green.
 
 ### CH-02 — distil the permanent runtime architecture
 
@@ -497,6 +499,4 @@ frozen before the hardening refactor unless a semantic change is explicit.
 
 ## Handoff
 
-Tracking issue: **#47 — CH-00 — compiler hardening programme handoff**.
-
-CH-00 is complete. The next authorised gate is **CH-01 — total / fail-closed compilation**. Start from the frozen CH-00 manifest and execution record; do not treat hardening as new physical or regulatory authority, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.
+CH-00 and CH-01 are complete. The next authorised gate is **CH-02 — distil the permanent runtime architecture**. Start from the frozen CH-00 manifest plus the CH-01 fail-closed contract; do not use CH-02 to add Reference House capability, do not create RH-C6, and keep computational maturity at M3 unless a later justified gate explicitly reassesses it.

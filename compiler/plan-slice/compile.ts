@@ -476,8 +476,34 @@ const aggregate = (diagnostics: PlanSliceDiagnostic[]): PlanSliceStatus => {
   return 'PASS'
 }
 
+const failedDerived = (source: PlanSliceSource): PlanSliceDerived => ({
+  shell: {
+    id: source.shell.id,
+    width: source.shell.width,
+    depth: source.shell.depth,
+    area: mm2(0)
+  },
+  levels: [],
+  planLines: [],
+  voids: [],
+  spaces: [],
+  boundaries: [],
+  openings: [],
+  plateAreas: []
+})
+
 export const compilePlanSlice = (source: PlanSliceSource): PlanSliceCompileResult => {
   const before = sourceDiagnostics(source)
+  if (before.some((item) => item.status === 'FAIL')) {
+    const diagnostics = sortedDiagnostics(before)
+    return {
+      fixtureId: source.fixtureId,
+      status: 'FAIL',
+      derived: failedDerived(source),
+      diagnostics
+    }
+  }
+
   const derived = derivePlanSlice(source)
   const diagnostics = sortedDiagnostics([...before, ...derivedDiagnostics(source, derived)])
   return {
