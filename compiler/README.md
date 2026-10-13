@@ -23,7 +23,27 @@ npm run check
 
 This is the normal answer to “is the repository healthy?” It runs the complete test/typecheck/publication-validation suite through `npm test`, then builds the documentation site. Pull-request CI uses this same command rather than maintaining a second definition of repository health.
 
-`npm test` remains useful when only the test suite is required. Historical and specialist gates remain individually addressable through commands such as `npm run test:rh-c4`, `npm run test:ch06` and `npm run test:ch07`.
+`npm test` remains useful when only the test suite is required. Historical and specialist gates remain individually addressable through commands such as `npm run test:rh-c4`, `npm run test:ch06`, `npm run test:ch07` and `npm run test:ch08`.
+
+## Durable callable surface
+
+For the canonical Reference House, the durable production surface is deliberately small:
+
+- `createReferenceHouseSource()` in `compiler/reference-house/fixture.ts` creates the canonical authored source fixture;
+- `compileReferenceHouseSystem(source)` in `compiler/reference-house/system-compile.ts` is the canonical single-pass Reference House compiler;
+- the returned `identity` and `lineage` fields expose the CH-05 source/method/result/compile identities and selected derivation trace without creating a second authority.
+
+The permanent generic domain compilers remain directly usable at their own explicit contracts:
+
+- `compilePlanSlice`;
+- `compileStructuralTopology`;
+- `compileServiceTopology`;
+- `compileBoundaryTopology`;
+- `runCalculationCheck`.
+
+Their adjacent model modules define the corresponding source/result contracts. Generic domains remain independent of Reference House fixture knowledge under the CH-02 dependency gate.
+
+P0, CF-01, `compileReferenceHouse(source)` and the RH-C2…RH-C5 wrappers remain executable historical regression/provenance surfaces. They are intentionally tested, but they are not competing canonical production entry points. Retaining them preserves independent evidence about how the current compiler earned its claims.
 
 ## Canonical Reference House artefacts
 
@@ -66,6 +86,8 @@ CH-07 does not add a formatter, linter, task runner or package-manager wrapper. 
 
 The npm cache is enabled in CI because it is a low-risk optimisation over the locked install. `node_modules` is not cached.
 
+CH-08 deliberately avoids a broad rename or directory migration. Historical gate names remain where they still carry executable evidence or live Reference House coordination knowledge; unused façades are deleted only when the complete repository health suite proves they have no caller.
+
 ## Authority and proof boundaries
 
 The main computational authorities are:
@@ -75,4 +97,4 @@ The main computational authorities are:
 - `compiler/ch00/reference-house-baseline.json` — frozen semantic/proof/artefact baseline;
 - `docs/computational/compiler-hardening-programme.md` — hardening programme and preservation boundary.
 
-When a toolchain change appears to require changing architectural output, proof boundaries, canonical artefact bytes or compiler semantics, stop treating it as developer ergonomics and investigate the semantic change explicitly.
+When a toolchain or refactor change appears to require changing architectural output, proof boundaries, canonical artefact bytes or compiler semantics, stop treating it as maintenance and investigate the semantic change explicitly.

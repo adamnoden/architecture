@@ -1,9 +1,9 @@
 # Compiler Hardening programme
 
 **Programme:** CH — Compiler Hardening  
-**Status:** CH-07 PASS — CH-08 next  
+**Status:** COMPLETE — CH-00 through CH-08 PASS  
 **Baseline:** `0538be4a9124b107565717bb2f172e73ebfe86ba`  
-**Computational maturity:** M3  
+**Computational maturity:** M4 — internally validated / controlled at bounded computational scope  
 **Reference House capability sequence:** RH-C0 → RH-C5 complete; no RH-C6 authorised
 
 ## Purpose
@@ -437,6 +437,10 @@ Do **not** pre-authorise M4. At closeout ask whether the computational workstrea
 
 **Exit:** minimum machinery required to express the existing model without ambiguity.
 
+**Result:** PASS. CH-08 re-audited the compiler as permanent generic runtime, canonical Reference House orchestration/coordination, downstream rendering/generation and historical executable evidence. It removed only machinery that failed that classification: unused RH-C3/RH-C4 barrel façades, plus the duplicate P0 `Box2D` interface by making `compiler/core/geometry.ts` the single underlying type authority while preserving P0's historical exported type name as an alias. Historical P0/CF-01/RH-C1…RH-C5 wrappers and tests were retained where they still provide independent executable provenance; RH-C3/RH-C4 coordination modules remain because canonical `system-compile.ts` uses them directly; the canonical Reference House fixture remains whole because splitting it would increase source-authority ambiguity. `compiler/ch08/ch08.test.ts` makes these distillation decisions executable. Initial exact-head validation on `14b6b9f9da055982dcd4507583acce140a1dcde9` passed in run `38479425004` / job `115578076876`, including typecheck, P0/PAT-XW-01, RH-C1, CF-01, RH-C2…RH-C5, CH-00…CH-08, publication validation and docs build. CH-00 confirms that the frozen semantic/proof baseline and all six canonical SVG identities remain unchanged. Final merged-main release evidence is recorded in the issue #74 closeout.
+
+The maturity reassessment at CH-08 promotes only the **bounded computational workstream** from M3 to **M4 — Internally validated / controlled**. The justification is the programme as a whole: a frozen semantic/artefact baseline, adversarial fail-closed evidence, machine-enforced runtime boundaries, single-pass equivalence, representation/immutability contracts, deterministic source/method/result/compile identity and lineage, deterministic law/property/metamorphic testing, a reproducible local/CI operating contract and a final deletion audit that still reproduces the pre-hardening architectural conclusions. This does not promote the Reference House, establish structural or building-physics adequacy, establish Building Regulations compliance, substitute for physical/professional validation or imply M5.
+
 ## Programme-wide invariants
 
 Every CH gate must preserve these unless an explicit semantic-change record says otherwise:
@@ -449,7 +453,7 @@ Every CH gate must preserve these unless an explicit semantic-change record says
 6. Generated drawings remain downstream projections of canonical model state.
 7. No fixture-ID branching enters generic domain compilers.
 8. Tests and publications remain green before merge.
-9. Computational maturity stays M3 until explicitly reassessed at a justified gate.
+9. Computational maturity stays M3 until explicitly reassessed at a justified gate; CH-08 performed that reassessment and established bounded M4.
 10. No RH-C6 is created merely because CH work uncovers a possible new feature.
 
 ## Deliberate non-goals
@@ -474,7 +478,7 @@ Do not use CH to introduce:
 
 ## Final programme quality bar
 
-By CH-08 we should be able to defend all of the following:
+At CH-08 closeout the programme can defend all of the following:
 
 ```text
 Expected bad source data cannot accidentally crash normal compilation.
@@ -511,4 +515,4 @@ frozen before the hardening refactor unless a semantic change is explicit.
 
 ## Handoff
 
-CH-00 through CH-07 are complete. The next and final authorised gate is **CH-08 — distillation and deletion**. Start from the frozen CH-00 manifest, CH-01 fail-closed contract, CH-02 runtime dependency boundary, CH-03 single-pass Reference House compiler, CH-04 representation contracts, CH-05 semantic identity/permutation/lineage contracts, CH-06 deterministic law/property/metamorphic contracts and CH-07 repository-health/artefact/generation/runtime contracts. Delete only machinery with no remaining runtime or evidence role, preserve historical executable evidence where it still earns its existence, perform the final proof-boundary/baseline audit, and explicitly reassess computational maturity. M4 is not pre-authorised. Do not add Reference House technical capability and do not create RH-C6.
+**Compiler Hardening is closed.** CH-00 through CH-08 are complete; there is no implied CH-09 and no standing RH-C6. The bounded computational workstream is held at M4 as an internally validated/controlled software baseline at its stated proof boundaries. Historical executable gates remain where they carry evidence; future compiler changes should be demand-led by external review, physical validation, a real project, newly authoritative inputs or another concrete proof family rather than by an open-ended hardening queue. M5 requires appropriate external validation and cannot be inferred from this programme.

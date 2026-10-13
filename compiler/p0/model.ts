@@ -1,3 +1,5 @@
+import type { Box2D as CoreBox2D } from '../core/geometry.js'
+
 export type CompileStatus =
   | 'PASS'
   | 'FAIL'
@@ -25,13 +27,7 @@ export type RelationshipType =
 
 export type BoundaryRole = 'air' | 'weather' | 'thermal' | 'fire' | 'acoustic' | 'moisture'
 
-export interface Box2D {
-  kind: 'box2d'
-  x: number
-  y: number
-  width: number
-  height: number
-}
+export type Box2D = CoreBox2D
 
 export interface UnsupportedGeometry {
   kind: 'unsupported'
