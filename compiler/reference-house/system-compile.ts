@@ -29,6 +29,14 @@ import type { StructuralTopologyCompileResult } from '../structure-slice/model.j
 import { mm } from '../units.js'
 import type { Millimetres } from '../units.js'
 import { compileReferenceHouseFromPlan } from './compile.js'
+import {
+  createReferenceHouseCompileIdentity,
+  createReferenceHouseLineage
+} from './identity.js'
+import type {
+  ReferenceHouseCompileIdentity,
+  ReferenceHouseLineage
+} from './identity.js'
 import type {
   ReferenceHouseCompileResult,
   ReferenceHouseSource,
@@ -37,7 +45,7 @@ import type {
 } from './model.js'
 import { adaptReferenceHousePlanSource } from './plan-adapter.js'
 
-export interface ReferenceHouseSystemCompileResult {
+export interface ReferenceHouseSystemCoreResult {
   readonly status: RhCompileStatus
   readonly house: ReferenceHouseCompileResult
   readonly plan: PlanSliceCompileResult
@@ -65,6 +73,11 @@ export interface ReferenceHouseSystemCompileResult {
     readonly boundary: typeof rhC4ProofBoundary
     readonly calculations: typeof rhC5ProofBoundary
   }
+}
+
+export interface ReferenceHouseSystemCompileResult extends ReferenceHouseSystemCoreResult {
+  readonly identity: ReferenceHouseCompileIdentity
+  readonly lineage: ReferenceHouseLineage
 }
 
 const aggregate = (
@@ -118,7 +131,7 @@ export const compileReferenceHouseSystem = (
     createReferenceHousePrivateStairInputFromHouse(house)
   )
 
-  return {
+  const core: ReferenceHouseSystemCoreResult = {
     status: aggregate(house, structure, services, boundary, privateStairGeometry),
     house,
     plan,
@@ -142,5 +155,11 @@ export const compileReferenceHouseSystem = (
       boundary: rhC4ProofBoundary,
       calculations: rhC5ProofBoundary
     }
+  }
+
+  return {
+    ...core,
+    identity: createReferenceHouseCompileIdentity(source, core, privateStairGeometryMethod),
+    lineage: createReferenceHouseLineage(core)
   }
 }
