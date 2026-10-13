@@ -1,5 +1,10 @@
 import type { Box2D } from '../p0/model.js'
-import type { AxisOrientation, PlanLineId, RectByLines } from '../plan-slice/model.js'
+import type {
+  AxisOrientation,
+  PlanLineId,
+  RectByLines,
+  WidthResult
+} from '../plan-slice/model.js'
 import type { Millimetres, SquareMillimetres } from '../units.js'
 
 export type StructuralTopologyStatus = 'PASS' | 'REVIEW' | 'FAIL'
@@ -56,6 +61,12 @@ export interface ReactionNodeSource {
   provisional: boolean
 }
 
+export interface BearingBoundaryMappingSource {
+  id: string
+  planBoundaryId: string
+  structuralLineId: string
+}
+
 export type StructuralInterruptionGeometry =
   | { kind: 'qualitative' }
   | {
@@ -101,6 +112,7 @@ export interface StructuralTopologySource {
   supportPaths: SupportPathSource[]
   spanFields: SpanFieldSource[]
   reactionNodes: ReactionNodeSource[]
+  bearingBoundaryMappings: BearingBoundaryMappingSource[]
   interruptions: StructuralInterruptionSource[]
   localFramingSystems: LocalFramingSystemSource[]
   diaphragm: DiaphragmSource
@@ -155,12 +167,25 @@ export interface DerivedReactionNode {
   provisional: boolean
 }
 
+export interface DerivedBearingOpeningObligation {
+  id: string
+  openingId: string
+  levelId: string
+  planBoundaryId: string
+  structuralLineId: string
+  centre?: Millimetres
+  width: WidthResult
+  proof: 'EXTERNAL-HEAD-SUPPORT-AND-BEARING'
+  provisional: boolean
+}
+
 export interface StructuralTopologyDerived {
   planeLevelId: string
   lineElements: DerivedStructuralLine[]
   supportPaths: DerivedSupportPath[]
   spanFields: DerivedSpanField[]
   reactionNodes: DerivedReactionNode[]
+  bearingOpenings: DerivedBearingOpeningObligation[]
   interruptions: StructuralInterruptionSource[]
   localFramingSystems: LocalFramingSystemSource[]
   diaphragm: DiaphragmSource
