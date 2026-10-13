@@ -3,14 +3,15 @@ import type {
   BoundaryTopologyCompileResult,
   BoundaryTopologyDiagnostic
 } from '../boundary-slice/model.js'
+import { MODEL_AREA_EPSILON_MM2 } from '../core/numeric.js'
 import type { PlanSliceCompileResult } from '../plan-slice/model.js'
 import type { ReferenceHouseSource } from '../reference-house/model.js'
+import { serviceCrossingId } from '../service-slice/model.js'
 import type { ServiceTopologyCompileResult } from '../service-slice/model.js'
 import { mm2, square } from '../units.js'
-import type { SquareMillimetres } from '../units.js'
+import type { Millimetres, SquareMillimetres } from '../units.js'
 
 const requiredRoles: BoundaryRole[] = ['air', 'moisture', 'thermal', 'weather']
-const EPSILON = 1e-6
 
 const diagnostic = (
   code: string,
@@ -41,7 +42,7 @@ export interface RhC4Coordination {
   roofCatchmentTotal: SquareMillimetres
   enclosedPlateArea: SquareMillimetres
   courtyardOpenSkyArea: SquareMillimetres
-  wallPlanningStressThicknessMm: number
+  wallPlanningStressThicknessMm: Millimetres
 }
 
 export const deriveReferenceHouseBoundaryCoordination = (
@@ -149,7 +150,7 @@ export const hardenReferenceHouseBoundaryTopology = (
       ))
     }
   }
-  if (representedServiceIds.has('PEN-BX-01')) {
+  if (representedServiceIds.has(serviceCrossingId('PEN-BX-01'))) {
     extra.push(diagnostic(
       'RH_FALLBACK_BATHROOM_EXTRACT_PROMOTED',
       'FAIL',
@@ -221,7 +222,10 @@ export const hardenReferenceHouseBoundaryTopology = (
   }
 
   const coordination = deriveReferenceHouseBoundaryCoordination(house, upstream)
-  if (Math.abs(coordination.roofCatchmentTotal - coordination.enclosedPlateArea) > EPSILON) {
+  if (
+    Math.abs(coordination.roofCatchmentTotal - coordination.enclosedPlateArea) >
+    MODEL_AREA_EPSILON_MM2
+  ) {
     extra.push(diagnostic(
       'RH_ROOF_CATCHMENT_CLOSURE_MISMATCH',
       'FAIL',
