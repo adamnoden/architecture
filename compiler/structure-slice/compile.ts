@@ -611,6 +611,17 @@ const aggregate = (diagnostics: StructuralTopologyDiagnostic[]): StructuralTopol
   return 'PASS'
 }
 
+const fatalDerivationCodes = new Set([
+  'DUPLICATE_STRUCTURAL_ID',
+  'PLAN_FIXTURE_MISMATCH',
+  'PLAN_FAILED',
+  'STRUCTURAL_LEVEL_MISSING',
+  'STRUCTURAL_PLAN_LINE_MISSING'
+])
+
+const blocksStructuralDerivation = (diagnostic: StructuralTopologyDiagnostic): boolean =>
+  diagnostic.status === 'FAIL' && fatalDerivationCodes.has(diagnostic.code)
+
 const failedDerived = (
   source: StructuralTopologySource
 ): StructuralTopologyCompileResult['derived'] => ({
@@ -635,7 +646,7 @@ export const compileStructuralTopology = (
   plan: PlanSliceCompileResult
 ): StructuralTopologyCompileResult => {
   const before = sourceDiagnostics(source, plan)
-  if (before.some((item) => item.status === 'FAIL')) {
+  if (before.some(blocksStructuralDerivation)) {
     const diagnostics = sortedDiagnostics(before)
     return {
       fixtureId: source.fixtureId,
