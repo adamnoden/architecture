@@ -1,4 +1,5 @@
 import { compilePlanSlice } from '../plan-slice/compile.js'
+import type { PlanSliceCompileResult } from '../plan-slice/model.js'
 import { deriveReferenceHouse } from './derive.js'
 import { adaptReferenceHousePlanSource } from './plan-adapter.js'
 import type {
@@ -165,9 +166,11 @@ const aggregate = (diagnostics: RhDiagnostic[]): RhCompileStatus => {
   return 'PASS'
 }
 
-export const compileReferenceHouse = (source: ReferenceHouseSource): ReferenceHouseCompileResult => {
+export const compileReferenceHouseFromPlan = (
+  source: ReferenceHouseSource,
+  planResult: PlanSliceCompileResult
+): ReferenceHouseCompileResult => {
   const referenceDiagnostics = sourceDiagnostics(source)
-  const planResult = compilePlanSlice(adaptReferenceHousePlanSource(source))
   const derived = deriveReferenceHouse(source, planResult.derived)
   const sharedDiagnostics: RhDiagnostic[] = planResult.diagnostics.map((item) => ({ ...item }))
   const diagnostics = sortedDiagnostics([
@@ -182,4 +185,9 @@ export const compileReferenceHouse = (source: ReferenceHouseSource): ReferenceHo
     derived,
     diagnostics
   }
+}
+
+export const compileReferenceHouse = (source: ReferenceHouseSource): ReferenceHouseCompileResult => {
+  const planResult = compilePlanSlice(adaptReferenceHousePlanSource(source))
+  return compileReferenceHouseFromPlan(source, planResult)
 }
