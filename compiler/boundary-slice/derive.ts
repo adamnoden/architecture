@@ -2,6 +2,7 @@ import type {
   BoundaryRole,
   BoundaryTopologyDerived,
   BoundaryTopologySource,
+  DerivedBoundaryOccurrenceObligation,
   DerivedBoundaryOpeningObligation,
   DerivedBoundaryServiceObligation,
   DerivedBoundarySystem
@@ -57,6 +58,7 @@ export const deriveBoundaryTopology = (
   const transitions = source.transitions.map((transition) => ({
     ...transition,
     carrierIds: [...transition.carrierIds].sort(),
+    ...(transition.drainageRouteIds ? { drainageRouteIds: [...transition.drainageRouteIds].sort() } : {}),
     obligations: [...transition.obligations].sort()
   })).sort((a, b) => a.id.localeCompare(b.id))
 
@@ -99,12 +101,24 @@ export const deriveBoundaryTopology = (
       provisional: transition.provisional
     }))
 
+  const occurrenceObligations: DerivedBoundaryOccurrenceObligation[] = transitions
+    .filter((transition): transition is typeof transition & { projectOccurrenceId: string } => Boolean(transition.projectOccurrenceId))
+    .map((transition) => ({
+      id: `BND-OCC-${transition.projectOccurrenceId}`,
+      projectOccurrenceId: transition.projectOccurrenceId,
+      drainageRouteIds: [...(transition.drainageRouteIds ?? [])].sort(),
+      roles: rolesFor(transition.carrierIds, source),
+      obligations: [...transition.obligations],
+      provisional: transition.provisional
+    }))
+
   return {
     carriers,
     systems,
     transitions,
     drainageRoutes: source.drainageRoutes.map((route) => ({ ...route })).sort((a, b) => a.id.localeCompare(b.id)),
     openingObligations,
-    serviceObligations
+    serviceObligations,
+    occurrenceObligations
   }
 }
