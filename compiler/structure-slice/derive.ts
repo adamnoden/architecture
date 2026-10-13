@@ -1,7 +1,9 @@
 import type { Box2D } from '../core/geometry.js'
+import { planBoundaryId } from '../plan-slice/model.js'
 import type { PlanSliceDerived } from '../plan-slice/model.js'
 import { mm, mm2 } from '../units.js'
 import type { Millimetres } from '../units.js'
+import { structuralInterruptionId, structuralLineId } from './model.js'
 import type {
   DerivedBearingOpeningObligation,
   DerivedReactionNode,
@@ -81,7 +83,7 @@ const deriveStructuralLines = (
     .map((element) => {
       const geometry = deriveLineGeometry(plan, element)
       return {
-        id: element.id,
+        id: structuralLineId(element.id),
         kind: element.kind,
         orientation: element.orientation,
         x1: geometry.x1,
@@ -170,22 +172,29 @@ const deriveBearingOpenings = (
   plan: PlanSliceDerived
 ): DerivedBearingOpeningObligation[] => {
   const structuralLineByBoundary = new Map(
-    source.bearingBoundaryMappings.map((mapping) => [mapping.planBoundaryId, mapping.structuralLineId])
+    source.bearingBoundaryMappings.map((mapping) => [
+      planBoundaryId(mapping.planBoundaryId),
+      structuralLineId(mapping.structuralLineId)
+    ])
   )
 
   return plan.openings
     .filter((opening) => structuralLineByBoundary.has(opening.hostBoundaryId))
-    .map((opening) => ({
-      id: `BO-${opening.id}`,
-      openingId: opening.id,
-      levelId: opening.levelId,
-      planBoundaryId: opening.hostBoundaryId,
-      structuralLineId: structuralLineByBoundary.get(opening.hostBoundaryId)!,
-      ...(opening.centre === undefined ? {} : { centre: opening.centre }),
-      width: { ...opening.width },
-      proof: 'EXTERNAL-HEAD-SUPPORT-AND-BEARING' as const,
-      provisional: opening.provisional
-    }))
+    .map((opening) => {
+      const lineId = structuralLineByBoundary.get(opening.hostBoundaryId)
+      if (!lineId) throw new Error(`Validated bearing mapping is missing for ${opening.hostBoundaryId}.`)
+      return {
+        id: `BO-${opening.id}`,
+        openingId: opening.id,
+        levelId: opening.levelId,
+        planBoundaryId: opening.hostBoundaryId,
+        structuralLineId: lineId,
+        ...(opening.centre === undefined ? {} : { centre: opening.centre }),
+        width: { ...opening.width },
+        proof: 'EXTERNAL-HEAD-SUPPORT-AND-BEARING' as const,
+        provisional: opening.provisional
+      }
+    })
     .sort((a, b) => a.id.localeCompare(b.id))
 }
 
@@ -207,6 +216,7 @@ export const deriveStructuralTopology = (
     bearingOpenings,
     interruptions: source.interruptions.map((item) => ({
       ...item,
+      id: structuralInterruptionId(item.id),
       geometry: { ...item.geometry }
     })).sort((a, b) => a.id.localeCompare(b.id)),
     localFramingSystems: source.localFramingSystems.map((item) => ({ ...item })).sort((a, b) => a.id.localeCompare(b.id)),
