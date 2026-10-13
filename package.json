@@ -16,6 +16,9 @@
     "publication:build": "npm run publication:prepare && vivliostyle build -c publication/vivliostyle.config.js",
     "status:update": "tsx scripts/update-status.ts",
     "typecheck": "tsc --noEmit",
+    "check": "npm test && npm run docs:build",
+    "artifacts:check": "npm run test:ch00 && npm run test:ch05",
+    "artifacts:generate": "npm run rh-c1:generate && npm run rh-c2:generate && npm run rh-c3:generate && npm run rh-c4:generate",
     "test:repo": "tsx scripts/validate-repository.ts",
     "test:routes": "tsx scripts/validate-public-routes.ts",
     "test:p0": "node --import tsx --test compiler/p0/*.test.ts",
@@ -37,7 +40,8 @@
     "test:ch04": "node --import tsx --test compiler/ch04/*.test.ts",
     "test:ch05": "node --import tsx --test compiler/ch05/*.test.ts",
     "test:ch06": "node --import tsx --test compiler/ch06/*.test.ts",
-    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:rh-c2 && npm run test:rh-c3 && npm run test:rh-c4 && npm run test:rh-c5 && npm run test:ch00 && npm run test:ch01 && npm run test:ch02 && npm run test:ch03 && npm run test:ch04 && npm run test:ch05 && npm run test:ch06 && npm run publication:validate"
+    "test:ch07": "node --import tsx --test compiler/ch07/*.test.ts",
+    "test": "npm run typecheck && npm run test:repo && npm run test:routes && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:rh-c2 && npm run test:rh-c3 && npm run test:rh-c4 && npm run test:rh-c5 && npm run test:ch00 && npm run test:ch01 && npm run test:ch02 && npm run test:ch03 && npm run test:ch04 && npm run test:ch05 && npm run test:ch06 && npm run test:ch07 && npm run publication:validate"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "11.17.0",
