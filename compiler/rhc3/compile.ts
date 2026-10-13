@@ -5,6 +5,7 @@ import { compileServiceTopology } from '../service-slice/compile.js'
 import type { ServiceTopologyCompileResult, ServiceTopologySource } from '../service-slice/model.js'
 import { applyReferenceHouseServiceCoordinationAuthority } from './authority.js'
 import { createReferenceHouseServiceSource } from './fixture.js'
+import { hardenReferenceHouseServiceTopology } from './hardening.js'
 
 export interface RhC3CompileResult {
   status: RhCompileStatus
@@ -31,7 +32,13 @@ export const compileReferenceHouseServiceView = (
 ): RhC3CompileResult => {
   const c2 = compileReferenceHouseStructuralView(source)
   const authoritativeServiceSource = applyReferenceHouseServiceCoordinationAuthority(serviceSource)
-  const services = compileServiceTopology(authoritativeServiceSource, c2.plan, c2.structure)
+  const baseServices = compileServiceTopology(authoritativeServiceSource, c2.plan, c2.structure)
+  const services = hardenReferenceHouseServiceTopology(
+    authoritativeServiceSource,
+    baseServices,
+    c2.plan,
+    c2.structure
+  )
   return {
     status: aggregate(c2, services),
     c2,
