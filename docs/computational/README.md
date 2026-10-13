@@ -4,17 +4,17 @@ The computational track asks a narrow question within House Kernel: **which buil
 
 It is subordinate to the architecture. Rooms, walls, openings, structure, boundaries, service routes and maintenance paths may be represented semantically where doing so creates a useful check, but architectural judgement is not converted into arbitrary machine rules merely to make the model more complete.
 
-The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel, `PAT-XW-01`, RH-C0 model freeze, RH-C1 deterministic Reference House slice, CF-01 contrast-fixture gate and RH-C2 bounded structural view have now completed at their stated internal scopes.
+The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel, `PAT-XW-01`, RH-C0 model freeze, RH-C1 deterministic Reference House slice, CF-01 contrast-fixture gate, RH-C2 bounded structural view and RH-C3 bounded service view have now completed at their stated internal scopes.
 
 ## Active computational work
 
-**RH-C3 — bounded service view — is next.**
+**RH-C4 — envelope / boundary view — is next.**
 
-RH-C2 now represents and falsifies the RH-05 first-floor structural topology over the same architectural plan source: four gross span fields, bearing/support paths, four short edge beams, courtyard reaction nodes, known structural interruptions, structural-deck diaphragm ownership and represented gravity continuity to a qualitative site-designed foundation destination.
+RH-C3 now represents and falsifies the already-coordinated RH-06/RH-07/RH-10 service topology over the same architectural and structural source chain. It checks semantic network continuity, primary-service geography, maintenance/replacement access, selected versus fallback crossings, the `SV-01` service reservation against the RH-C2 structural opening envelope, and bearing-wall consequences of selected service penetrations.
 
-It also carries numeric architectural openings in bearing boundaries forward as explicit external head-support/bearing obligations rather than pretending a continuous bearing line is unperforated masonry.
+The RH-C3 projection is intentionally non-spatial: it records semantic route continuity and crossing ownership without inventing exact pipe, cable or duct coordinates.
 
-The proof boundary remains deliberately narrow. RH-C2 proves **represented topology coherence**, not member capacity, connection design, stability, foundation adequacy or structural compliance.
+The proof boundary remains narrow. RH-C3 proves **represented service-topology coherence**, not MEP sizing, hydraulic/aerodynamic performance, acoustic/fire performance, commissioning or product compliance.
 
 Current executable suites:
 
@@ -24,6 +24,7 @@ PAT-XW-01                   6 /  6 PASS
 RH-C1                      27 / 27 PASS
 CF-01                       7 /  7 PASS
 RH-C2                      17 / 17 PASS
+RH-C3                      21 / 21 PASS
 ```
 
 Canonical sequence:
@@ -37,13 +38,15 @@ CF-01 — adversarial contrast fixture   PASS
   ↓
 RH-C2 — bounded structural view        PASS
   ↓
-RH-C3 — bounded service view           NEXT
+RH-C3 — bounded service view           PASS
+  ↓
+RH-C4 — envelope / boundary view       NEXT
 ```
 
 Programme records:
 
 - [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md)
-- [Reference House executable programme — RH-C1 through RH-C2](reference-house-executable-slice.md)
+- [Reference House executable programme — RH-C1 through RH-C3](reference-house-executable-slice.md)
 - [CF-01 — Compiler Generality Assurance](compiler-generality-assurance-cf01.md)
 - [RH-C1 drawing parity result](../reference-house/rhc1-drawing-parity-result.md)
 
@@ -69,6 +72,8 @@ S0 → S1 → S2 → H1-PAPER-01
        CF-01 contrast-fixture gate
                      ↓
        RH-C2 structural topology
+                     ↓
+       RH-C3 service topology
 ```
 
 Within those scopes, the work established that:
@@ -85,9 +90,12 @@ Within those scopes, the work established that:
 - provisional architectural facts can remain provisional in an executable model rather than being hardened for implementation convenience;
 - shared plan semantics can operate across two materially unlike fixtures without fixture-ID branching or requiring a courtyard, two storeys, a regular bay field, entrance-bay membership or a stair;
 - a bounded structural topology can be derived from the same plan source and checked for support continuity, span/support coherence, reaction-node geometry, structural-field closure, known interruptions and represented gravity continuity;
-- architectural openings hosted by bearing boundaries can remain visible as explicit external structural obligations without inventing a native capacity proof.
+- architectural openings hosted by bearing boundaries can remain visible as explicit external structural obligations without inventing a native capacity proof;
+- bounded service networks can be checked for semantic continuity, route/crossing ownership, service geography and declared access without inventing MEP sizing or exact branch geometry;
+- the RH-06/RH-07 900 × 700 mm service reservation can be checked against the RH-C2 1050 × 850 mm structural opening envelope while leaving actual service packing external;
+- selected service crossings through represented bearing walls can derive explicit structural-opening/bearing obligations rather than disappearing behind either the service or structural abstraction.
 
-These results do **not** establish that a building or assembly is structurally, environmentally or regulatorily adequate. Building release remains outside the demonstrated scope, and competent external review is still required.
+These results do **not** establish that a building or assembly is structurally, environmentally, regulatorily or MEP-adequate. Building release remains outside the demonstrated scope, and competent external review is still required.
 
 ## Authority boundary
 
@@ -102,7 +110,7 @@ The computational model has a deliberately limited authority.
 
 The useful object is therefore not a universal rule engine but a model that can make selected relationships explicit, derive obligations from them, attach evidence at the right scope and refuse claims the available evidence cannot support.
 
-RH-C1 follows that boundary for architectural geometry. CF-01 strengthens only the reuse claim around the bounded plan-semantic mechanisms. RH-C2 extends machine checking to **structural topology only**. Its `PASS` means the represented support graph is internally coherent at the declared scope; structural adequacy remains external.
+RH-C1 follows that boundary for architectural geometry. CF-01 strengthens only the reuse claim around the bounded plan-semantic mechanisms. RH-C2 extends machine checking to **structural topology only**. RH-C3 extends it to **service topology only**. A `PASS` means the represented relationship graph is internally coherent at its declared scope; technical adequacy remains external.
 
 ## Core model
 
@@ -117,7 +125,9 @@ RH-C1 follows that boundary for architectural geometry. CF-01 strengthens only t
 
 The executable plan slice lives under `compiler/plan-slice/`. Its current supported geometry remains intentionally narrow: rectangular outer shells, orthogonal named planning lines, spaces/voids as unions of axis-aligned rectangles, line boundaries and line-hosted numeric openings.
 
-The structural-topology kernel lives under `compiler/structure-slice/`; the Reference House fixture/adapter lives under `compiler/rhc2/`. It currently models line supports, span fields, reaction nodes, known floor interruptions, diaphragm ownership, bearing-boundary mappings and qualitative foundation destinations. It is not an analytical frame/FE model.
+The structural-topology kernel lives under `compiler/structure-slice/`; the Reference House fixture/adapter lives under `compiler/rhc2/`. It models line supports, span fields, reaction nodes, known floor interruptions, diaphragm ownership, bearing-boundary mappings and qualitative foundation destinations. It is not an analytical frame/FE model.
+
+The service-topology kernel lives under `compiler/service-slice/`; Reference House service authority and interface hardening live under `compiler/rhc3/`. It models semantic nodes, routes, networks, access obligations and registered crossings. It is not an MEP routing, sizing or simulation engine.
 
 ## Pattern crosswalk
 
@@ -138,7 +148,7 @@ The architectural-grammar framework and G-01 research are owned by the separate 
 
 The computational model must remain capable of distinguishing grammar conformance from House Kernel doctrine, technical validity, supported-domain status and project requirements. G-01 is therefore an input that may be checked where formalisation is justified, not a hidden default of the compiler.
 
-RH-C1 localises the current G-01-derived opening memberships/order as Reference House fixture data. CF-01 passed a neutral contrast fixture through the same shared plan mechanisms without requiring those memberships. RH-C2 consumes architectural boundaries/openings semantically and does not promote G-01 composition into structural doctrine.
+RH-C1 localises current G-01-derived opening memberships/order as Reference House fixture data. CF-01 passed a neutral contrast fixture through the same shared plan mechanisms without requiring those memberships. RH-C2 consumes architectural boundaries/openings semantically without promoting G-01 composition into structural doctrine. RH-C3 likewise keeps the selected ASHP, MVHR, PV, courtyard form and service-side geography local to the Reference House fixture.
 
 ## Supported H1 research domain
 
@@ -189,7 +199,7 @@ The first H1 source contained an impossible dining-to-kitchen adjacency. The pap
 
 The [H1-PAPER External Review Pack v0.2](external-review-pack-h1-paper-v02.md) is prepared for competent attack from structural engineering, building-control/fire practice and building-services/ventilation engineering.
 
-The Reference House has a more specific [RH-11 structural review brief](../reference-house/external-review-structural-rh11.md). RH-C2 does not discharge it. Its member sizing, stability, openings, roof and foundation questions remain open for competent review.
+The Reference House has more specific RH-11 review briefs, including [structural](../reference-house/external-review-structural-rh11.md) and MEP/acoustic review. RH-C2 and RH-C3 do not discharge them. Member sizing/stability, service packing/sizing, acoustic/fire performance, commissioning and product questions remain open for competent review.
 
 Preparation of a review pack is not external validation.
 
@@ -211,18 +221,18 @@ These are candidate tests, not a standing implementation queue.
 
 ## Scope boundary
 
-The demonstrated kernel does not justify building a polished 3D CAD system, general structural solver, complete Building Regulations engine, IFC round-tripping, optimisation layer, generative-AI designer or pattern-specific rule library. Those capabilities would require their own architectural and technical case.
+The demonstrated kernel does not justify building a polished 3D CAD system, general structural/MEP solver, complete Building Regulations engine, IFC round-tripping, optimisation layer, generative-AI designer or pattern-specific rule library. Those capabilities would require their own architectural and technical case.
 
-Current executable work may now proceed to **RH-C3 only**: add the smallest service view needed to reproduce the already-coordinated RH-06/RH-07/RH-10 relationships while preserving the authority boundary established by P0 through RH-C2. Physical prototypes and competent external review proceed independently.
+Current executable work may now proceed to **RH-C4 only**: add the smallest envelope/boundary view needed to reproduce already-coordinated external/courtyard boundary and junction relationships while preserving the authority boundary established by P0 through RH-C3. Physical prototypes and competent external review proceed independently.
 
-The P0, `PAT-XW-01`, RH-C1, CF-01 and RH-C2 suites remain regression tests and should expand only when new work exposes a concrete model defect or a high-value relationship that benefits from formalisation.
+The P0, `PAT-XW-01`, RH-C1, CF-01, RH-C2 and RH-C3 suites remain regression tests and should expand only when new work exposes a concrete model defect or a high-value relationship that benefits from formalisation.
 
 ## Programme and provenance
 
 - [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md) — **PASS**, controlled fixture authority established.
-- [Reference House executable programme](reference-house-executable-slice.md) — **RH-C1 PASS / RH-C2 PASS**, deterministic architecture and bounded structural topology established.
+- [Reference House executable programme](reference-house-executable-slice.md) — **RH-C1 / RH-C2 / RH-C3 PASS**, deterministic architecture plus bounded structural and service topology established.
 - [CF-01 — Compiler Generality Assurance](compiler-generality-assurance-cf01.md) — **PASS**, two-fixture bounded evidence for the shared plan-semantic slice.
-- **RH-C3 — bounded service view — NEXT.**
+- **RH-C4 — envelope / boundary view — NEXT.**
 - [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md) — retained executable baseline.
 - [Research Programme v0.6](research-programme-v06.md) — final pre-executable programme record retained for provenance.
 - [H1 Capability Matrix v0.5](h1-capability-matrix-v05.md) — frozen paper-domain capability audit.
