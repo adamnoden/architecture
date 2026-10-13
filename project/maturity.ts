@@ -217,9 +217,9 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-13',
     currentState:
-      'The bounded Reference House executable sequence remains closed PASS through RH-C5. CH-00 froze a machine-checkable semantic and artefact baseline; CH-01 makes fatal plan/structural prerequisite failures deterministic and fail-closed while preserving established downstream diagnostics for invalid-but-derivable structural states. These hardening gates improve software confidence only and do not expand the Reference House proof boundary or technical authority.',
+      'The bounded Reference House executable sequence remains closed PASS through RH-C5. CH-00 froze a machine-checkable semantic and artefact baseline; CH-01 established deterministic fail-closed prerequisites; CH-02 extracted shared geometry from historical P0 into permanent core ownership and machine-enforces the generic runtime dependency boundary. These hardening gates improve software confidence only and do not expand the Reference House proof boundary or technical authority.',
     nextGate:
-      'CH-02: distil permanent runtime concepts from research-stage module history while keeping the CH-00 baseline green. There is no standing RH-C6; new computational capability still requires a concrete proof family justified by external review, physical validation, a real project or newly authoritative inputs.',
+      'CH-03: compile the Reference House in one coherent pass, removing nested stage orchestration and duplicate upstream compilation without changing frozen semantics. There is no standing RH-C6; new computational capability still requires a concrete proof family justified by external review, physical validation, a real project or newly authoritative inputs.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -232,6 +232,7 @@ export const workstreamStatuses = [
         'docs/computational/compiler-hardening-programme.md',
         'compiler/ch00/README.md',
         'compiler/ch01/README.md',
+        'compiler/ch02/README.md',
         'compiler/reference-house/reference-house.test.ts',
         'compiler/reference-house/drawings.test.ts',
         'compiler/cf01/cf01.test.ts',
