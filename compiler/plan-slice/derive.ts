@@ -140,7 +140,7 @@ export const derivePlanSlice = (source: PlanSliceSource): PlanSliceDerived => {
 
       if (boundary.orientation === 'horizontal') {
         return {
-          id: planBoundaryId(boundary.id),
+          id: boundary.id,
           levelId: boundary.levelId,
           kind: boundary.kind,
           orientation: boundary.orientation,
@@ -154,7 +154,7 @@ export const derivePlanSlice = (source: PlanSliceSource): PlanSliceDerived => {
       }
 
       return {
-        id: planBoundaryId(boundary.id),
+        id: boundary.id,
         levelId: boundary.levelId,
         kind: boundary.kind,
         orientation: boundary.orientation,
@@ -176,7 +176,7 @@ export const derivePlanSlice = (source: PlanSliceSource): PlanSliceDerived => {
     .map((opening) => {
       const family = familyById.get(opening.familyId)
       if (!family) throw new Error(`Unknown opening family ${opening.familyId}.`)
-      const host = boundaryById.get(planBoundaryId(opening.hostBoundaryId))
+      const host = boundaryById.get(opening.hostBoundaryId)
       if (!host) throw new Error(`Unknown opening host ${opening.hostBoundaryId}.`)
       const level = levelById.get(opening.levelId)
       if (!level) throw new Error(`Unknown level ${opening.levelId}.`)
@@ -198,7 +198,7 @@ export const derivePlanSlice = (source: PlanSliceSource): PlanSliceDerived => {
       return {
         id: opening.id,
         levelId: opening.levelId,
-        hostBoundaryId: host.id,
+        hostBoundaryId: planBoundaryId(host.id),
         spaceIds: [...opening.spaceIds],
         role: opening.role,
         placementKind,
