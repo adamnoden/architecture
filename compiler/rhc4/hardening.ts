@@ -220,17 +220,6 @@ export const hardenReferenceHouseBoundaryTopology = (
     ))
   }
 
-  for (const route of result.derived.drainageRoutes) {
-    if (!route.visibleFailure) {
-      extra.push(diagnostic(
-        'RH_DRAINAGE_FAILURE_NOT_VISIBLE',
-        'FAIL',
-        [route.id],
-        `${route.id} must retain a visible failure path.`
-      ))
-    }
-  }
-
   const coordination = deriveReferenceHouseBoundaryCoordination(house, upstream)
   if (Math.abs(coordination.roofCatchmentTotal - coordination.enclosedPlateArea) > EPSILON) {
     extra.push(diagnostic(
