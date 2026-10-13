@@ -35,6 +35,7 @@ export interface BoundaryTransitionSource {
   carrierIds: string[]
   hostPlanBoundaryId?: string
   openingId?: string
+  qualitativeOpeningRelationshipId?: string
   serviceCrossingId?: string
   obligations: string[]
   provisional: boolean
@@ -67,7 +68,8 @@ export interface DerivedBoundarySystem extends BoundarySystemSource {
 
 export interface DerivedBoundaryOpeningObligation {
   id: string
-  openingId: string
+  openingRefId: string
+  openingRefKind: 'numeric' | 'qualitative'
   hostPlanBoundaryId: string
   roles: BoundaryRole[]
   obligations: string[]
