@@ -217,9 +217,9 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-13',
     currentState:
-      'P0 passes 17/17 tests, PAT-XW-01 6/6, RH-C1 27/27 and CF-01 7/7. CF-01 extracted a shared plan-semantic kernel and passed an unlike single-storey, asymmetric, no-courtyard, no-stair, non-bay-derived fixture without fixture-ID branching while preserving the Reference House regression suite. This is two-fixture bounded evidence, not arbitrary architectural validity.',
+      'P0 passes 17/17 tests, PAT-XW-01 6/6, RH-C1 27/27, CF-01 7/7 and RH-C2 17/17. RH-C2 now compiles the RH-05 structural topology over the shared architectural plan source: span fields, continuous support paths, edge beams, reaction nodes, known floor interruptions, diaphragm ownership, bearing-opening obligations and represented gravity continuity. Structural adequacy remains explicitly external.',
     nextGate:
-      'Begin RH-C2 as the bounded structural view now that CF-01 has removed the sequencing block; preserve the existing proof boundary and do not imply structural adequacy merely from representability.',
+      'Begin RH-C3 as the bounded service view: reproduce only the already-coordinated RH-06/RH-07/RH-10 service topology while preserving the distinction between route coherence and MEP/fire/acoustic adequacy.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -228,9 +228,12 @@ export const workstreamStatuses = [
         'docs/reference-house/model-baseline-rhc0.md',
         'docs/reference-house/rhc1-drawing-parity-result.md',
         'docs/computational/compiler-generality-assurance-cf01.md',
+        'docs/computational/reference-house-executable-slice.md',
         'compiler/reference-house/reference-house.test.ts',
         'compiler/reference-house/drawings.test.ts',
-        'compiler/cf01/cf01.test.ts'
+        'compiler/cf01/cf01.test.ts',
+        'compiler/rhc2/rhc2.test.ts',
+        'compiler/rhc2/drawing.test.ts'
       ]
     }
   },
