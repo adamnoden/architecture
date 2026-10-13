@@ -69,17 +69,23 @@ export const deriveBoundaryTopology = (
 
   const openingObligations: DerivedBoundaryOpeningObligation[] = transitions
     .filter((transition) => transition.kind === 'opening' || transition.kind === 'threshold')
-    .filter((transition): transition is typeof transition & { openingId: string; hostPlanBoundaryId: string } =>
-      Boolean(transition.openingId && transition.hostPlanBoundaryId)
-    )
-    .map((transition) => ({
-      id: `BND-OPEN-${transition.openingId}`,
-      openingId: transition.openingId,
-      hostPlanBoundaryId: transition.hostPlanBoundaryId,
-      roles: rolesFor(transition.carrierIds, source),
-      obligations: [...transition.obligations],
-      provisional: transition.provisional
-    }))
+    .filter((transition) => Boolean(
+      transition.hostPlanBoundaryId &&
+      (transition.openingId || transition.qualitativeOpeningRelationshipId)
+    ))
+    .map((transition) => {
+      const numeric = Boolean(transition.openingId)
+      const openingRefId = transition.openingId ?? transition.qualitativeOpeningRelationshipId!
+      return {
+        id: `BND-OPEN-${openingRefId}`,
+        openingRefId,
+        openingRefKind: numeric ? 'numeric' as const : 'qualitative' as const,
+        hostPlanBoundaryId: transition.hostPlanBoundaryId!,
+        roles: rolesFor(transition.carrierIds, source),
+        obligations: [...transition.obligations],
+        provisional: transition.provisional
+      }
+    })
 
   const serviceObligations: DerivedBoundaryServiceObligation[] = transitions
     .filter((transition) => transition.kind === 'service-penetration' || transition.kind === 'roof-penetration')
