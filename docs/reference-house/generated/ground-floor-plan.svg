@@ -36,44 +36,55 @@
 <text x="0" y="-1180" class="oh-title">Reference House — ground-floor plan</text>
 <text x="0" y="-790" class="oh-subtitle">GENERATED SEMANTIC INSPECTION · NORTH UP · wall faces not represented</text>
 <g data-entity="G-DRAW-02" data-kind="room" data-provisional="true">
+    <title>Drawing</title>
     <rect x="0" y="7400" width="4000" height="3400" class="oh-room"/><rect x="0" y="5800" width="4200" height="1600" class="oh-room"/>
     <text x="2100" y="8250" class="oh-label" text-anchor="middle">Drawing</text>
-    <text x="2100" y="8485" class="oh-id" text-anchor="middle">G-DRAW-02</text>
+      <text x="2100" y="8485" class="oh-id" text-anchor="middle">G-DRAW-02</text>
   </g>
 <g data-entity="G-FAM-02" data-kind="room" data-provisional="true">
+    <title>Family</title>
     <rect x="0" y="0" width="4200" height="5800" class="oh-room"/>
     <text x="2100" y="2850" class="oh-label" text-anchor="middle">Family</text>
-    <text x="2100" y="3085" class="oh-id" text-anchor="middle">G-FAM-02</text>
+      <text x="2100" y="3085" class="oh-id" text-anchor="middle">G-FAM-02</text>
   </g>
 <g data-entity="G-GAL-01" data-kind="circulation" data-provisional="false">
+    <title>Gallery</title>
     <rect x="7800" y="3400" width="1300" height="7400" class="oh-circulation"/>
-    <text x="8450" y="7050" class="oh-label" text-anchor="middle">Gallery</text>
-    <text x="8450" y="7285" class="oh-id" text-anchor="middle">G-GAL-01</text>
+    <g transform="rotate(-90 8450 7100)">
+      <text x="8450" y="7055" class="oh-label" text-anchor="middle">Gallery</text>
+      <text x="8450" y="7290" class="oh-id" text-anchor="middle">G-GAL-01</text>
+    </g>
   </g>
 <g data-entity="G-GARDEN-02" data-kind="room" data-provisional="false">
+    <title>Garden dining</title>
     <rect x="4200" y="0" width="3600" height="3400" class="oh-room"/>
     <text x="6000" y="1650" class="oh-label" text-anchor="middle">Garden dining</text>
-    <text x="6000" y="1885" class="oh-id" text-anchor="middle">G-GARDEN-02</text>
+      <text x="6000" y="1885" class="oh-id" text-anchor="middle">G-GARDEN-02</text>
   </g>
 <g data-entity="G-HALL-02" data-kind="circulation" data-provisional="true">
+    <title>Hall / stair</title>
     <rect x="4000" y="7400" width="3800" height="3400" class="oh-circulation"/>
     <text x="5900" y="9050" class="oh-label" text-anchor="middle">Hall / stair</text>
-    <text x="5900" y="9285" class="oh-id" text-anchor="middle">G-HALL-02</text>
+      <text x="5900" y="9285" class="oh-id" text-anchor="middle">G-HALL-02</text>
   </g>
 <g data-entity="G-KIT-02" data-kind="room" data-provisional="false">
+    <title>Kitchen</title>
     <rect x="7800" y="0" width="4200" height="3400" class="oh-room"/>
     <text x="9900" y="1650" class="oh-label" text-anchor="middle">Kitchen</text>
-    <text x="9900" y="1885" class="oh-id" text-anchor="middle">G-KIT-02</text>
+      <text x="9900" y="1885" class="oh-id" text-anchor="middle">G-KIT-02</text>
   </g>
 <g data-entity="G-STUDY-02" data-kind="room" data-provisional="false">
+    <title>Study</title>
     <rect x="9100" y="7400" width="2900" height="3400" class="oh-room"/>
     <text x="10550" y="9050" class="oh-label" text-anchor="middle">Study</text>
-    <text x="10550" y="9285" class="oh-id" text-anchor="middle">G-STUDY-02</text>
+      <text x="10550" y="9285" class="oh-id" text-anchor="middle">G-STUDY-02</text>
   </g>
 <g data-entity="G-SVC-02" data-kind="room" data-provisional="false">
+    <title>Gross service suite</title>
     <rect x="9100" y="3400" width="2900" height="4000" class="oh-room"/>
-    <text x="10550" y="5350" class="oh-label" text-anchor="middle">Gross service suite</text>
-    <text x="10550" y="5585" class="oh-id" text-anchor="middle">G-SVC-02</text>
+    <text x="10550" y="5255" class="oh-label" text-anchor="middle">Gross service</text>
+      <text x="10550" y="5480" class="oh-label" text-anchor="middle">suite</text>
+      <text x="10550" y="5715" class="oh-id" text-anchor="middle">G-SVC-02</text>
   </g>
 <g data-entity="C-01" data-kind="courtyard">
     <rect x="4200" y="3400" width="3600" height="4000" class="oh-court"/>
@@ -113,49 +124,57 @@
 <g data-layer="qualitative-opening-obligations">
 <g data-entity="RHCF-COURT-E-G" data-authority="qualitative" data-geometry="unresolved" data-convention="qualitative-host">
     <line x1="7800" y1="7400" x2="7800" y2="3400" class="oh-qualitative"/>
-    <text x="7800" y="5285" class="oh-note" text-anchor="middle"></text>
+    
   </g>
 <g data-entity="RHCF-COURT-W-G" data-authority="qualitative" data-geometry="unresolved" data-convention="qualitative-host">
     <line x1="4200" y1="7400" x2="4200" y2="3400" class="oh-qualitative"/>
-    <text x="4200" y="5285" class="oh-note" text-anchor="middle"></text>
+    
   </g>
 <g data-entity="RHCF-GARDEN-CENTRE-G" data-authority="qualitative" data-geometry="unresolved" data-convention="qualitative-host">
     <line x1="0" y1="0" x2="12000" y2="0" class="oh-qualitative"/>
-    <text x="6000" y="-115" class="oh-note" text-anchor="middle"></text>
+    
   </g>
 </g>
 <g data-layer="required-connections">
 <g data-entity="ADJ-G-DRAW-FAM" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="0" y1="5800" x2="4200" y2="5800" class="oh-qualitative"/>
-    <text x="2100" y="5965" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="2100" y="5862" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-G-DRAW-HALL" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="4000" y1="10800" x2="4000" y2="7400" class="oh-qualitative"/>
-    <text x="4000" y="9265" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="4000" y="9162" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-G-DRAW-HALL" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="4000" y1="7400" x2="4200" y2="7400" class="oh-qualitative"/>
-    <text x="4100" y="7565" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="4100" y="7462" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-G-HALL-GAL" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="7800" y1="10800" x2="7800" y2="7400" class="oh-qualitative"/>
-    <text x="7800" y="9265" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="7800" y="9162" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-G-STUDY-GAL" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="9100" y1="10800" x2="9100" y2="7400" class="oh-qualitative"/>
-    <text x="9100" y="9265" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="9100" y="9162" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-G-SVC-GAL" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="9100" y1="7400" x2="9100" y2="3400" class="oh-qualitative"/>
-    <text x="9100" y="5565" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="9100" y="5462" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-G-FAM-GARDEN" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="4200" y1="3400" x2="4200" y2="0" class="oh-qualitative"/>
-    <text x="4200" y="1865" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="4200" y="1762" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-G-GARDEN-KIT" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="7800" y1="3400" x2="7800" y2="0" class="oh-qualitative"/>
-    <text x="7800" y="1865" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="7800" y="1762" class="oh-note" text-anchor="middle">↔</text>
   </g>
 </g>
 <line x1="1950" y1="10800" x2="1950" y2="11230" class="rh-axis" data-axis="B1"/>
@@ -184,24 +203,27 @@
     <line x1="12900" y1="3280" x2="13550" y2="3280" class="oh-controlled"/><text x="13720" y="3340" class="oh-note">controlled / represented</text>
 <line x1="12900" y1="3540" x2="13550" y2="3540" class="oh-provisional"/><text x="13720" y="3600" class="oh-note">provisional</text>
 <line x1="12900" y1="3800" x2="13550" y2="3800" class="oh-approximate"/><text x="13720" y="3860" class="oh-note">approximate</text>
-<line x1="12900" y1="4060" x2="13550" y2="4060" class="oh-range-max"/><text x="13720" y="4120" class="oh-note">range — outer extent</text>
-<line x1="12900" y1="4320" x2="13550" y2="4320" class="oh-qualitative"/><text x="13720" y="4380" class="oh-note">relationship known · geometry unresolved</text>
+<line x1="12900" y1="4060" x2="13550" y2="4060" class="oh-range-max"/><text x="13720" y="4120" class="oh-note">range — max extent</text>
+<line x1="12900" y1="4320" x2="13550" y2="4320" class="oh-qualitative"/><text x="13720" y="4380" class="oh-note">unresolved relationship</text>
   </g>
 <g data-layer="dimensions">
     <line x1="0" y1="11450" x2="12000" y2="11450" class="rh-dim"/>
     <text x="6000" y="11730" class="oh-mono" text-anchor="middle">12000 mm overall width</text>
     <line x1="12300" y1="0" x2="12300" y2="10800" class="rh-dim"/>
     <text x="12560" y="5400" class="oh-mono" text-anchor="middle" transform="rotate(90 12560 5400)">10800 mm overall depth</text>
-    <text x="6000" y="5430" class="oh-mono" text-anchor="middle">3600 × 4000 mm</text>
+    <text x="6000" y="6020" class="oh-mono" text-anchor="middle">3600 × 4000 mm</text>
   </g>
 <text x="12900" y="4950" class="oh-label">Unresolved relationships</text>
 <text x="12900" y="5250" class="oh-note">3 qualitative opening obligations</text>
 <text x="12900" y="5505" class="oh-note">7 required space connections</text>
-<text x="12900" y="5760" class="oh-note">Dotted host/edge = relation known; position not authored.</text>
-<text x="12900" y="6210" class="oh-label">Planning values — not wall/stair construction</text>
-<text x="12900" y="6510" class="oh-note">Wall family 400–425 mm; stress 450 mm</text>
-<text x="12900" y="6765" class="oh-note">Stair 18 rises · 6/6/6 · going 280 mm</text>
-<text x="12900" y="7020" class="oh-note">clear-width target ≈1000 mm · reservation 2400–2500 mm</text>
+<text x="12900" y="5760" class="oh-note">Dotted host/edge = relationship known.</text>
+<text x="12900" y="6000" class="oh-note">Exact position is not authored.</text>
+<text x="12900" y="6380" class="oh-label">Planning values — not construction</text>
+<text x="12900" y="6660" class="oh-note">Wall planning 400–425 mm</text>
+<text x="12900" y="6890" class="oh-note">Stress case 450 mm</text>
+<text x="12900" y="7230" class="oh-note">Stair 18 rises · 6/6/6</text>
+<text x="12900" y="7460" class="oh-note">Going 280 mm · width target ≈1000 mm</text>
+<text x="12900" y="7690" class="oh-note">Reservation 2400–2500 mm</text>
 <text x="0" y="12250" class="oh-note">Boundary strokes are semantic lines, not wall faces. Exact internal door positions and stair construction remain deliberately unresolved.</text>
 <text x="0" y="12550" class="oh-id">Source compile 8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba</text>
 </svg>

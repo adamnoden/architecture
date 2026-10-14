@@ -36,54 +36,67 @@
 <text x="0" y="-1180" class="oh-title">Reference House — first-floor plan</text>
 <text x="0" y="-790" class="oh-subtitle">GENERATED SEMANTIC INSPECTION · NORTH UP · wall faces not represented</text>
 <g data-entity="U-BATH-01" data-kind="room" data-provisional="false">
+    <title>Family bathroom</title>
     <rect x="9100" y="3400" width="2900" height="4000" class="oh-room"/>
     <text x="10550" y="5350" class="oh-label" text-anchor="middle">Family bathroom</text>
-    <text x="10550" y="5585" class="oh-id" text-anchor="middle">U-BATH-01</text>
+      <text x="10550" y="5585" class="oh-id" text-anchor="middle">U-BATH-01</text>
   </g>
 <g data-entity="U-BED-02" data-kind="room" data-provisional="true">
+    <title>West-front bedroom</title>
     <rect x="0" y="7400" width="4000" height="3400" class="oh-room"/><rect x="0" y="5800" width="4200" height="1600" class="oh-room"/>
     <text x="2100" y="8250" class="oh-label" text-anchor="middle">West-front bedroom</text>
-    <text x="2100" y="8485" class="oh-id" text-anchor="middle">U-BED-02</text>
+      <text x="2100" y="8485" class="oh-id" text-anchor="middle">U-BED-02</text>
   </g>
 <g data-entity="U-BED-03" data-kind="room" data-provisional="false">
+    <title>East-front bedroom</title>
     <rect x="7800" y="7400" width="4200" height="3400" class="oh-room"/>
     <text x="9900" y="9050" class="oh-label" text-anchor="middle">East-front bedroom</text>
-    <text x="9900" y="9285" class="oh-id" text-anchor="middle">U-BED-03</text>
+      <text x="9900" y="9285" class="oh-id" text-anchor="middle">U-BED-03</text>
   </g>
 <g data-entity="U-BED-04" data-kind="room" data-provisional="false">
+    <title>East-rear bedroom</title>
     <rect x="7800" y="0" width="4200" height="3400" class="oh-room"/>
     <text x="9900" y="1650" class="oh-label" text-anchor="middle">East-rear bedroom</text>
-    <text x="9900" y="1885" class="oh-id" text-anchor="middle">U-BED-04</text>
+      <text x="9900" y="1885" class="oh-id" text-anchor="middle">U-BED-04</text>
   </g>
 <g data-entity="U-BED-P01" data-kind="room" data-provisional="true">
+    <title>Principal bedroom</title>
     <rect x="0" y="0" width="4200" height="5800" class="oh-room"/>
     <text x="2100" y="2850" class="oh-label" text-anchor="middle">Principal bedroom</text>
-    <text x="2100" y="3085" class="oh-id" text-anchor="middle">U-BED-P01</text>
+      <text x="2100" y="3085" class="oh-id" text-anchor="middle">U-BED-P01</text>
   </g>
 <g data-entity="U-DRESS-01" data-kind="room" data-provisional="true">
+    <title>Dry dressing / storage</title>
     <rect x="4200" y="0" width="2200" height="2200" class="oh-room"/>
-    <text x="5300" y="1050" class="oh-label" text-anchor="middle">Dry dressing / storage</text>
-    <text x="5300" y="1285" class="oh-id" text-anchor="middle">U-DRESS-01</text>
+    <text x="5300" y="955" class="oh-label" text-anchor="middle">Dry dressing</text>
+      <text x="5300" y="1180" class="oh-label" text-anchor="middle">/ storage</text>
+      <text x="5300" y="1415" class="oh-id" text-anchor="middle">U-DRESS-01</text>
   </g>
 <g data-entity="U-GAL-02" data-kind="circulation" data-provisional="false">
+    <title>East gallery</title>
     <rect x="7800" y="3400" width="1300" height="4000" class="oh-circulation"/>
-    <text x="8450" y="5350" class="oh-label" text-anchor="middle">East gallery</text>
-    <text x="8450" y="5585" class="oh-id" text-anchor="middle">U-GAL-02</text>
+    <g transform="rotate(-90 8450 5400)">
+      <text x="8450" y="5355" class="oh-label" text-anchor="middle">East gallery</text>
+      <text x="8450" y="5590" class="oh-id" text-anchor="middle">U-GAL-02</text>
+    </g>
   </g>
 <g data-entity="U-LAND-N01" data-kind="circulation" data-provisional="true">
+    <title>North cross-landing</title>
     <rect x="4200" y="2200" width="3600" height="1200" class="oh-circulation"/>
     <text x="6000" y="2750" class="oh-label" text-anchor="middle">North cross-landing</text>
-    <text x="6000" y="2985" class="oh-id" text-anchor="middle">U-LAND-N01</text>
+      <text x="6000" y="2985" class="oh-id" text-anchor="middle">U-LAND-N01</text>
   </g>
 <g data-entity="U-LIN-01" data-kind="room" data-provisional="true">
+    <title>Linen</title>
     <rect x="6400" y="0" width="1400" height="2200" class="oh-room"/>
     <text x="7100" y="1050" class="oh-label" text-anchor="middle">Linen</text>
-    <text x="7100" y="1285" class="oh-id" text-anchor="middle">U-LIN-01</text>
+      <text x="7100" y="1285" class="oh-id" text-anchor="middle">U-LIN-01</text>
   </g>
 <g data-entity="U-STAIR-01" data-kind="circulation" data-provisional="true">
+    <title>South stair / landing</title>
     <rect x="4000" y="7400" width="3800" height="3400" class="oh-circulation"/>
     <text x="5900" y="9050" class="oh-label" text-anchor="middle">South stair / landing</text>
-    <text x="5900" y="9285" class="oh-id" text-anchor="middle">U-STAIR-01</text>
+      <text x="5900" y="9285" class="oh-id" text-anchor="middle">U-STAIR-01</text>
   </g>
 <g data-entity="C-01" data-kind="courtyard">
     <rect x="4200" y="3400" width="3600" height="4000" class="oh-court"/>
@@ -125,41 +138,47 @@
 <g data-layer="qualitative-opening-obligations">
 <g data-entity="RHCF-COURT-E-U" data-authority="qualitative" data-geometry="unresolved" data-convention="qualitative-host">
     <line x1="7800" y1="7400" x2="7800" y2="3400" class="oh-qualitative"/>
-    <text x="7800" y="5285" class="oh-note" text-anchor="middle"></text>
+    
   </g>
 <g data-entity="RHCF-COURT-W-U" data-authority="qualitative" data-geometry="unresolved" data-convention="qualitative-host">
     <line x1="4200" y1="7400" x2="4200" y2="3400" class="oh-qualitative"/>
-    <text x="4200" y="5285" class="oh-note" text-anchor="middle"></text>
+    
   </g>
 <g data-entity="RHCF-GARDEN-CENTRE-U" data-authority="qualitative" data-geometry="unresolved" data-convention="qualitative-host">
     <line x1="0" y1="0" x2="12000" y2="0" class="oh-qualitative"/>
-    <text x="6000" y="-115" class="oh-note" text-anchor="middle"></text>
+    
   </g>
 </g>
 <g data-layer="required-connections">
 <g data-entity="ADJ-U-BED02-P01" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="0" y1="5800" x2="4200" y2="5800" class="oh-qualitative"/>
-    <text x="2100" y="5965" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="2100" y="5862" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-U-BED02-STAIR" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="4000" y1="10800" x2="4000" y2="7400" class="oh-qualitative"/>
-    <text x="4000" y="9265" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="4000" y="9162" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-U-BED02-STAIR" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="4000" y1="7400" x2="4200" y2="7400" class="oh-qualitative"/>
-    <text x="4100" y="7565" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="4100" y="7462" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-U-STAIR-BED03" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="7800" y1="10800" x2="7800" y2="7400" class="oh-qualitative"/>
-    <text x="7800" y="9265" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="7800" y="9162" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-U-GAL-BATH" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="9100" y1="7400" x2="9100" y2="3400" class="oh-qualitative"/>
-    <text x="9100" y="5565" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="9100" y="5462" class="oh-note" text-anchor="middle">↔</text>
   </g>
 <g data-entity="ADJ-U-BED04-LAND" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     <line x1="7800" y1="3400" x2="7800" y2="2200" class="oh-qualitative"/>
-    <text x="7800" y="2965" class="oh-note" text-anchor="middle">connection required · position unresolved</text>
+    <text x="7800" y="2862" class="oh-note" text-anchor="middle">↔</text>
   </g>
 </g>
 <line x1="1950" y1="10800" x2="1950" y2="11230" class="rh-axis" data-axis="B1"/>
@@ -188,24 +207,27 @@
     <line x1="12900" y1="3280" x2="13550" y2="3280" class="oh-controlled"/><text x="13720" y="3340" class="oh-note">controlled / represented</text>
 <line x1="12900" y1="3540" x2="13550" y2="3540" class="oh-provisional"/><text x="13720" y="3600" class="oh-note">provisional</text>
 <line x1="12900" y1="3800" x2="13550" y2="3800" class="oh-approximate"/><text x="13720" y="3860" class="oh-note">approximate</text>
-<line x1="12900" y1="4060" x2="13550" y2="4060" class="oh-range-max"/><text x="13720" y="4120" class="oh-note">range — outer extent</text>
-<line x1="12900" y1="4320" x2="13550" y2="4320" class="oh-qualitative"/><text x="13720" y="4380" class="oh-note">relationship known · geometry unresolved</text>
+<line x1="12900" y1="4060" x2="13550" y2="4060" class="oh-range-max"/><text x="13720" y="4120" class="oh-note">range — max extent</text>
+<line x1="12900" y1="4320" x2="13550" y2="4320" class="oh-qualitative"/><text x="13720" y="4380" class="oh-note">unresolved relationship</text>
   </g>
 <g data-layer="dimensions">
     <line x1="0" y1="11450" x2="12000" y2="11450" class="rh-dim"/>
     <text x="6000" y="11730" class="oh-mono" text-anchor="middle">12000 mm overall width</text>
     <line x1="12300" y1="0" x2="12300" y2="10800" class="rh-dim"/>
     <text x="12560" y="5400" class="oh-mono" text-anchor="middle" transform="rotate(90 12560 5400)">10800 mm overall depth</text>
-    <text x="6000" y="5430" class="oh-mono" text-anchor="middle">3600 × 4000 mm</text>
+    <text x="6000" y="6020" class="oh-mono" text-anchor="middle">3600 × 4000 mm</text>
   </g>
 <text x="12900" y="4950" class="oh-label">Unresolved relationships</text>
 <text x="12900" y="5250" class="oh-note">3 qualitative opening obligations</text>
 <text x="12900" y="5505" class="oh-note">5 required space connections</text>
-<text x="12900" y="5760" class="oh-note">Dotted host/edge = relation known; position not authored.</text>
-<text x="12900" y="6210" class="oh-label">Planning values — not wall/stair construction</text>
-<text x="12900" y="6510" class="oh-note">Wall family 400–425 mm; stress 450 mm</text>
-<text x="12900" y="6765" class="oh-note">Stair 18 rises · 6/6/6 · going 280 mm</text>
-<text x="12900" y="7020" class="oh-note">clear-width target ≈1000 mm · reservation 2400–2500 mm</text>
+<text x="12900" y="5760" class="oh-note">Dotted host/edge = relationship known.</text>
+<text x="12900" y="6000" class="oh-note">Exact position is not authored.</text>
+<text x="12900" y="6380" class="oh-label">Planning values — not construction</text>
+<text x="12900" y="6660" class="oh-note">Wall planning 400–425 mm</text>
+<text x="12900" y="6890" class="oh-note">Stress case 450 mm</text>
+<text x="12900" y="7230" class="oh-note">Stair 18 rises · 6/6/6</text>
+<text x="12900" y="7460" class="oh-note">Going 280 mm · width target ≈1000 mm</text>
+<text x="12900" y="7690" class="oh-note">Reservation 2400–2500 mm</text>
 <text x="0" y="12250" class="oh-note">Boundary strokes are semantic lines, not wall faces. Exact internal door positions and stair construction remain deliberately unresolved.</text>
 <text x="0" y="12550" class="oh-id">Source compile 8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba</text>
 </svg>
