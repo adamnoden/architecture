@@ -49,7 +49,8 @@ const manuscriptSidebar: DefaultTheme.SidebarItem[] = [
       page('Publication architecture', '/docs/manuscript/publication-architecture'),
       page('Publication credibility & release', '/docs/manuscript/publication-credibility-release-programme'),
       page('PR-00 candidate-book freeze programme', '/docs/manuscript/pr00-candidate-book-freeze-programme'),
-      page('PR-00 candidate-book ledger', '/docs/manuscript/pr00-candidate-book-ledger')
+      page('PR-00 candidate-book ledger', '/docs/manuscript/pr00-candidate-book-ledger'),
+      page('PR-00C authority / claim / evidence reconciliation', '/docs/manuscript/pr00c-authority-claim-evidence-reconciliation')
     ])
   ], false)
 ]
@@ -278,7 +279,8 @@ const computationalSidebar: DefaultTheme.SidebarItem[] = [
     page('RH-C0 model-freeze plan', '/docs/computational/reference-house-model-freeze-rhc0'),
     page('RH-C1 executable slice', '/docs/computational/reference-house-executable-slice'),
     page('CF-01 generality assurance gate', '/docs/computational/compiler-generality-assurance-cf01'),
-    page('Compiler hardening programme', '/docs/computational/compiler-hardening-programme')
+    page('Compiler hardening programme', '/docs/computational/compiler-hardening-programme'),
+    page('Compiler output architecture programme', '/docs/computational/compiler-output-architecture-programme')
   ], false),
   group('Executable result & external review', [
     page('P0 + PAT-XW-01 executable result — PASS', '/docs/computational/p0-pat-xw-01-result'),
