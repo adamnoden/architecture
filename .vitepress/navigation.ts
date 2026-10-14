@@ -35,12 +35,15 @@ const manuscriptSidebar: DefaultTheme.SidebarItem[] = [
       page('Maintenance Geography — The Exterior', '/docs/manuscript/maintenance-geography-external')
     ]),
     page('Part III — Pattern Language', '/docs/patterns/'),
-    page('Part IV — Reference House', '/docs/reference-house/'),
+    page('Part IV — Reference House', '/docs/manuscript/part-iv'),
     page('Part V — Making and Testing the Platform', '/docs/manuscript/part-v'),
     group('Structure & reference', [
       page('Sources and further reading', '/docs/manuscript/sources-and-further-reading'),
       page('Publication architecture', '/docs/manuscript/publication-architecture'),
-      page('Publication credibility & release', '/docs/manuscript/publication-credibility-release-programme')
+      page('Publication credibility & release', '/docs/manuscript/publication-credibility-release-programme'),
+      page('PR-00 candidate-book freeze programme', '/docs/manuscript/pr00-candidate-book-freeze-programme'),
+      page('PR-00 candidate-book ledger', '/docs/manuscript/pr00-candidate-book-ledger'),
+      page('PR-00B Part IV synthesis checkpoint', '/docs/manuscript/pr00b-part-iv-synthesis-result')
     ])
   ], false)
 ]
@@ -124,6 +127,7 @@ const grammarSidebar: DefaultTheme.SidebarItem[] = [
     page('Modelling corrections', '/docs/grammar/architectural-grammar-modelling-corrections-v01')
   ], false),
   group('G-01 · Georgian-derived domestic grammar', [
+    page('G-01 v0.1 — frozen grammar', '/docs/grammar/g01-v0.1'),
     page('Grammar charter', '/docs/grammar/g01-grammar-charter'),
     page('Research brief', '/docs/grammar/g01-research-brief'),
     page('Corpus & source-quality register', '/docs/grammar/g01-corpus-register'),
@@ -145,13 +149,22 @@ const grammarSidebar: DefaultTheme.SidebarItem[] = [
   group('Evidence & derivation', [
     page('D5/D6 web pass v0.2 — superseded', '/docs/grammar/g01-d5-d6-web-pass-v02'),
     page('D5/D6 evidence gate v0.3 — current', '/docs/grammar/g01-d5-d6-web-pass-v03'),
-    page('D6 mutation run — Danson sequence', '/docs/grammar/g01-d6-mutation-run-01-danson-sequence')
+    page('D6 mutation run — Danson sequence', '/docs/grammar/g01-d6-mutation-run-01-danson-sequence'),
+    page('G-01 completion programme', '/docs/grammar/g01-completion-programme'),
+    page('D8 controlled falsification', '/docs/grammar/g01-d8-falsification-result'),
+    page('D9 held-out validation', '/docs/grammar/g01-d9-held-out-validation'),
+    page('D10 normative reduction', '/docs/grammar/g01-d10-normative-reduction'),
+    page('D10-S specificity programme', '/docs/grammar/g01-d10s-positive-specificity-programme'),
+    page('D10-S candidate register', '/docs/grammar/g01-d10s-positive-specificity-register-v01'),
+    page('D10-S validation result', '/docs/grammar/g01-d10s-validation-result'),
+    page('D13 adversarial closeout', '/docs/grammar/g01-d13-adversarial-closeout')
   ])
 ]
 
 const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
   group('Reference House', [
     page('Reference House overview', '/docs/reference-house/'),
+    page('G-01 v0.1 conformance trial', '/docs/reference-house/g01-v0.1-conformance-d12'),
     page('Pattern occurrence register', '/docs/reference-house/pattern-occurrence-register'),
     page('Tectonic architectural language', '/docs/reference-house/tectonic-architectural-language'),
     page('Whole-house coordination fixture', '/docs/reference-house/whole-house-coordination-fixture'),
