@@ -14,9 +14,9 @@ The current active grammar research instance is **G-01**, a Georgian-derived dom
 ## G-01
 
 - [G-01 Grammar Charter](g01-grammar-charter.md)
-- [G-01 v0.1 — Frozen Grammar](g01-v0.1.md) — D11 release; immutable before the Reference House conformance trial
+- [G-01 v0.1 — Frozen Grammar](g01-v0.1.md) — D11 release; immutable for the Reference House conformance trial
 - [G-01 Research Brief](g01-research-brief.md)
-- [G-01 Completion Programme — D8 to D13](g01-completion-programme.md) — active control through Reference House trial and adversarial closeout
+- [G-01 Completion Programme — D8 to D13](g01-completion-programme.md) — active control through adversarial closeout
 - [G-01 Corpus and Source-Quality Register](g01-corpus-register.md)
 - [G-01 Precedent Annotation Schema](g01-annotation-schema.md)
 - [G-01 Precedent Cases](g01-cases/README.md)
@@ -38,5 +38,6 @@ The later evidence gates and mutation runs record how provisional G-01 claims we
 - [G-01 D10-S positive-specificity programme](g01-d10s-positive-specificity-programme.md) — bounded repair loop with validation split frozen before extraction
 - [G-01 D10-S positive-specificity register v0.1](g01-d10s-positive-specificity-register-v01.md) — candidate set frozen before validation
 - [G-01 D10-S validation result](g01-d10s-validation-result.md) — positive specificity recovered; roof-subordination claim falsified and corrected
+- [Reference House D12 G-01 v0.1 Conformance Trial](../reference-house/g01-v0.1-conformance-d12.md) — the already-coordinated Reference House passes frozen v0.1 with no house rewind or grammar change
 
 The Reference House selects G-01 as one architectural input alongside Ovid’s House doctrine, patterns, site and programme, technical families and project-specific morphology. The grammar remains independently selectable from the project.
