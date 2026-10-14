@@ -1,7 +1,7 @@
 # COA-06 — integration, inspection surface and closeout
 
 **Gate:** COA-06  
-**Status:** IMPLEMENTED — final CI / merge pending  
+**Status:** PASS  
 **Starting main:** `4692473229f7e32e50c6caeb2cdf62caa01e0c86`  
 **Issue:** #95  
 **Authority effect:** none
@@ -99,15 +99,10 @@ Computational maturity remains M4 at the same bounded proof scope. Reference Hou
 
 COA does not author final book figures. It supplies trustworthy, coordinated source material for **PR-00D — figure and visual-argument completion**. Publication may simplify, crop or recomposite these outputs, but must preserve their uncertainty and authority boundaries.
 
-## Closeout gate
+## Closeout result
 
-COA-06 passes when:
+PR #103 passed the canonical repository health check before merge, including the COA-00→COA-06 regression stack, exact successor-output verification, publication validation and VitePress build.
 
-- the six successor outputs regenerate exactly;
-- the output manifest regenerates exactly;
-- all successor outputs bind to one canonical compile identity;
-- the historical CH artefact baseline remains green;
-- repository, compiler, publication and docs validation remain green;
-- the curated inspection surface builds successfully.
+The six successor outputs regenerate exactly, all bind to one canonical compile identity, and the historical CH artefact baseline remains green.
 
 There is no standing COA-07. Future output work should be demand-led by a concrete inspection or publication need rather than by symmetry or feature accumulation.
