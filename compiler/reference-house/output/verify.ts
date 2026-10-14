@@ -2,19 +2,19 @@ import { readFileSync } from 'node:fs'
 
 import { REFERENCE_HOUSE_OUTPUTS } from './contract.js'
 import {
-  buildReferenceHouseSuccessorOutputs,
+  buildReferenceHouseOutputBundle,
   renderReferenceHouseOutputManifest
 } from './build.js'
 
-const outputs = buildReferenceHouseSuccessorOutputs()
+const bundle = buildReferenceHouseOutputBundle()
 const mismatches: string[] = []
 
-for (const { descriptor, content } of outputs) {
+for (const { descriptor, content } of bundle.outputs) {
   const committed = readFileSync(descriptor.path, 'utf8')
   if (committed !== content) mismatches.push(descriptor.path)
 }
 
-const manifest = renderReferenceHouseOutputManifest(outputs)
+const manifest = renderReferenceHouseOutputManifest(bundle.manifest)
 if (readFileSync(REFERENCE_HOUSE_OUTPUTS.outputManifest.path, 'utf8') !== manifest) {
   mismatches.push(REFERENCE_HOUSE_OUTPUTS.outputManifest.path)
 }
