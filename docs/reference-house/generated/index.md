@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # Generated compiler inspection
 
 This is the current **semantic inspection surface** for the compiled Reference House. It is generated downstream from the canonical single-pass Metamorph Compiler result and is intended for human checking: what the model knows, what remains unresolved, and whether the coordinated views agree.
