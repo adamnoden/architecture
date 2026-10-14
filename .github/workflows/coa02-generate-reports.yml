@@ -1,0 +1,45 @@
+name: COA-02 generate reports
+
+on:
+  push:
+    branches:
+      - coa-02-report-extraction
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: coa-02-report-extraction
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Generate report successors and register navigation
+        run: |
+          npm run outputs:reports:generate
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('.vitepress/navigation.ts')
+          s = p.read_text()
+          anchor = "    page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan')"
+          replacement = anchor + ",\n    group('Generated compiler inspection', [\n      page('Service topology register', '/docs/reference-house/generated/service-register'),\n      page('Envelope / boundary topology register', '/docs/reference-house/generated/boundary-register')\n    ])"
+          if replacement not in s:
+              if anchor not in s:
+                  raise SystemExit('reference-house navigation anchor not found')
+              s = s.replace(anchor, replacement, 1)
+          p.write_text(s)
+          PY
+          rm .github/workflows/coa02-generate-reports.yml
+      - name: Commit generated reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/reference-house/generated/service-register.md docs/reference-house/generated/boundary-register.md .vitepress/navigation.ts .github/workflows/coa02-generate-reports.yml
+          git commit -m "COA-02 generate semantic inspection reports"
+          git push origin HEAD:coa-02-report-extraction
