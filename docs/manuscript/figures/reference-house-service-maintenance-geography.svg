@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House service and maintenance geography</title>
+  <desc id="desc">Analytical publication diagram showing the concentrated eastern service flank, stacked plant and bathroom geography, bounded vertical service zone, short wet branches and protected principal rooms. Exact MEP routing is deliberately not drawn.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111"/></marker>
+    <style>
+      .label{font:600 28px Arial,Helvetica,sans-serif;fill:#111}
+      .small{font:22px Arial,Helvetica,sans-serif;fill:#333}
+      .tiny{font:18px Arial,Helvetica,sans-serif;fill:#555}
+      .rule{stroke:#111;stroke-width:3;fill:none}
+      .soft{stroke:#777;stroke-width:2;fill:none}
+      .dash{stroke:#555;stroke-width:2.5;fill:none;stroke-dasharray:12 10}
+      .wet{fill:#e8e8e4;stroke:#111;stroke-width:2.5}
+      .room{fill:#f4f4f2;stroke:#111;stroke-width:2.5}
+      .court{fill:#fff;stroke:#111;stroke-width:2.5}
+    </style>
+  </defs>
+
+  <text x="70" y="70" class="label">Reference House — service and maintenance geography</text>
+  <text x="70" y="108" class="small">Concentrate high-consequence infrastructure; keep principal rooms out of the primary service path.</text>
+
+  <g transform="translate(90 180)">
+    <text x="0" y="0" class="label">Ground floor</text>
+    <rect x="0" y="45" width="520" height="470" class="room"/>
+    <rect x="182" y="195" width="156" height="175" class="court"/>
+    <rect x="394" y="45" width="126" height="470" class="wet"/>
+    <rect x="350" y="45" width="44" height="150" class="wet" opacity="0.65"/>
+    <text x="457" y="100" class="small" text-anchor="middle">kitchen</text>
+    <text x="457" y="270" class="small" text-anchor="middle">service suite</text>
+    <text x="457" y="305" class="tiny" text-anchor="middle">plant · utility · WC</text>
+    <text x="372" y="125" class="tiny" text-anchor="middle" transform="rotate(-90 372 125)">short wet branch</text>
+    <text x="260" y="292" class="small" text-anchor="middle">court</text>
+    <text x="70" y="150" class="small">principal rooms</text>
+    <text x="70" y="430" class="small">principal rooms</text>
+
+    <rect x="420" y="325" width="50" height="95" fill="#fff" stroke="#111" stroke-width="3"/>
+    <text x="445" y="375" class="tiny" text-anchor="middle" transform="rotate(-90 445 375)">riser</text>
+
+    <path d="M520 280 L615 280" class="rule" marker-end="url(#arrow)"/>
+    <text x="540" y="258" class="tiny">external replacement route</text>
+
+    <text x="0" y="560" class="tiny">Primary wet / plant geography is clustered rather than distributed through the plan.</text>
+  </g>
+
+  <g transform="translate(760 180)">
+    <text x="0" y="0" class="label">Upper floor</text>
+    <rect x="0" y="45" width="520" height="470" class="room"/>
+    <rect x="182" y="195" width="156" height="175" class="court"/>
+    <rect x="394" y="195" width="126" height="175" class="wet"/>
+    <rect x="420" y="325" width="50" height="95" fill="#fff" stroke="#111" stroke-width="3"/>
+    <text x="457" y="270" class="small" text-anchor="middle">family bath</text>
+    <text x="445" y="375" class="tiny" text-anchor="middle" transform="rotate(-90 445 375)">riser</text>
+    <text x="260" y="292" class="small" text-anchor="middle">court</text>
+    <text x="65" y="150" class="small">bedrooms</text>
+    <text x="65" y="430" class="small">bedrooms</text>
+
+    <path d="M445 420 L445 492" class="dash" marker-end="url(#arrow)"/>
+    <text x="470" y="470" class="tiny">dry-side access</text>
+
+    <text x="0" y="560" class="tiny">The bathroom stacks over the service hub; the riser is bounded, not a generic future shaft.</text>
+  </g>
+
+  <g transform="translate(90 790)">
+    <line x1="0" y1="0" x2="1190" y2="0" class="soft"/>
+    <text x="0" y="42" class="small">Known geography ≠ exact routing.</text>
+    <text x="300" y="42" class="tiny">Pipe, duct and cable paths remain technical design where the source does not own them.</text>
+  </g>
+</svg>
