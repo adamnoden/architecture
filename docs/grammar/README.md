@@ -15,6 +15,7 @@ The current active grammar research instance is **G-01**, a Georgian-derived dom
 
 - [G-01 Grammar Charter](g01-grammar-charter.md)
 - [G-01 Research Brief](g01-research-brief.md)
+- [G-01 Completion Programme — D8 to D13](g01-completion-programme.md) — active control from falsification through Reference House trial and adversarial closeout
 - [G-01 Corpus and Source-Quality Register](g01-corpus-register.md)
 - [G-01 Precedent Annotation Schema](g01-annotation-schema.md)
 - [G-01 Precedent Cases](g01-cases/README.md)
