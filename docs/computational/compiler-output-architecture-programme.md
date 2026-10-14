@@ -1,7 +1,7 @@
 # Compiler Output Architecture programme
 
 **Programme:** COA — Compiler Output Architecture  
-**Status:** COMPLETE — COA-00 through COA-06 PASS subject to final merge  
+**Status:** COMPLETE — COA-00 through COA-06 PASS  
 **Planning baseline:** `2bacd97889caa7da1fe83ad4cbd7a7cdfb7be22c`  
 **Computational maturity:** M4 — unchanged, internally validated / controlled at bounded computational scope  
 **Reference House maturity:** M3 — unchanged, coordinated at virtual-design scope  
@@ -118,7 +118,7 @@ No service or boundary SVG successor was created merely for symmetry. Their gene
 
 Execution record: `compiler/coa05/README.md`.
 
-### COA-06 — integration, inspection surface and closeout — PASS subject to final merge
+### COA-06 — integration, inspection surface and closeout — PASS
 
 Unified the successor family behind one deterministic build and verification path:
 
@@ -127,9 +127,9 @@ Unified the successor family behind one deterministic build and verification pat
 - `compiler/reference-house/output/verify.ts`
 - `docs/reference-house/generated/output-manifest.json`
 
-The manifest binds each successor output to the canonical `HK-RH-COMPILE-1` fingerprint, renderer version and SHA-256 content identity. `npm run outputs:check` rejects stale committed outputs without mutating them.
+The operational build creates one canonical `ReferenceHouseOutputContext`; that exact compile identity feeds all six human outputs and the manifest. The manifest binds each successor output to the canonical `HK-RH-COMPILE-1` fingerprint, renderer version and SHA-256 content identity. `npm run outputs:check` rejects stale committed outputs without mutating them.
 
-`docs/reference-house/generated/index.md` is the curated human inspection surface and is deliberately present in Reference House navigation.
+`docs/reference-house/generated/README.md` is the curated human inspection surface and is deliberately present in Reference House navigation.
 
 Execution record: `compiler/coa06/README.md`.
 
@@ -169,7 +169,7 @@ Where the compiler owns a relationship but not its location, the output shows un
 
 ```text
 docs/reference-house/generated/
-  index.md
+  README.md
   ground-floor-plan.svg
   first-floor-plan.svg
   principal-section.svg
@@ -191,12 +191,12 @@ The normal repository health contract remains the CH-07-owned `npm run check`; C
 
 ## Publication handoff
 
-PR-00C may proceed independently of COA and was completed before COA closeout. PR-00D should use the COA successor family as trustworthy visual source material rather than composing final figures from the historical RH-C SVGs.
+PR-00C was completed before COA closeout. PR-00D should use the COA successor family as trustworthy visual source material rather than composing final figures from the historical RH-C SVGs.
 
 Publication is free to simplify, crop or recomposite the successor outputs, but must preserve their uncertainty and authority boundaries.
 
 ## Closeout
 
-COA is complete when the final COA-06 branch passes repository health, exact-output verification, publication validation and docs build and is merged.
+COA-06 passed repository health, exact-output verification, publication validation and docs build on PR #103 before merge.
 
 The programme does not promote computational or Reference House maturity. There is **no standing COA-07**. Future output work should be demand-led by a concrete inspection or publication need rather than by symmetry or feature accumulation.
