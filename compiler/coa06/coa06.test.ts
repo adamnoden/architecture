@@ -4,12 +4,13 @@ import { describe, test } from 'node:test'
 
 import { REFERENCE_HOUSE_OUTPUTS } from '../reference-house/output/contract.js'
 import {
-  buildReferenceHouseSuccessorOutputs,
+  buildReferenceHouseOutputBundle,
   renderReferenceHouseOutputManifest
 } from '../reference-house/output/build.js'
 
 describe('COA-06 successor output integration', () => {
-  const outputs = buildReferenceHouseSuccessorOutputs()
+  const bundle = buildReferenceHouseOutputBundle()
+  const { outputs } = bundle
 
   test('all six human inspection outputs are deterministic committed projections', () => {
     assert.equal(outputs.length, 6)
@@ -18,7 +19,7 @@ describe('COA-06 successor output integration', () => {
     }
   })
 
-  test('all successor outputs share one canonical compile identity', () => {
+  test('all successor outputs share the one canonical output-context compile identity', () => {
     const fingerprints = new Set(outputs.map(({ content }) => {
       const svg = content.match(/data-source-compile="([a-f0-9]+)"/)
       const report = content.match(/\*\*Source compile:\*\* `([a-f0-9]+)`/)
@@ -26,11 +27,13 @@ describe('COA-06 successor output integration', () => {
     }))
     assert.equal(fingerprints.size, 1)
     assert.ok(!fingerprints.has(undefined))
+    assert.equal([...fingerprints][0], bundle.context.result.identity.compile.fingerprint)
+    assert.equal(bundle.manifest.sourceCompile.fingerprint, bundle.context.result.identity.compile.fingerprint)
   })
 
   test('manifest rendering is deterministic, complete and exactly committed', () => {
-    const manifest = renderReferenceHouseOutputManifest(outputs)
-    assert.equal(renderReferenceHouseOutputManifest(outputs), manifest)
+    const manifest = renderReferenceHouseOutputManifest(bundle.manifest)
+    assert.equal(renderReferenceHouseOutputManifest(bundle.manifest), manifest)
     assert.equal(readFileSync(REFERENCE_HOUSE_OUTPUTS.outputManifest.path, 'utf8'), manifest)
     for (const { descriptor } of outputs) {
       assert.match(manifest, new RegExp(descriptor.id))
