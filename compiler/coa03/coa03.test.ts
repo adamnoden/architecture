@@ -45,7 +45,8 @@ describe('COA-03 shared drawing and uncertainty language', () => {
       assert.doesNotMatch(svg, /data-width=/)
     }
     assert.match(opening, /position unresolved/)
-    assert.match(connection, /connection required · position unresolved/)
+    assert.match(connection, /Required connection; exact position unresolved/)
+    assert.match(connection, />↔<\/text>/)
   })
 
   test('renders a span axis as explicitly undirected', () => {
@@ -66,8 +67,8 @@ describe('COA-03 shared drawing and uncertainty language', () => {
     assert.match(legend, /controlled \/ represented/)
     assert.match(legend, /provisional/)
     assert.match(legend, /approximate/)
-    assert.match(legend, /range — outer extent/)
-    assert.match(legend, /geometry unresolved/)
+    assert.match(legend, /range — max extent/)
+    assert.match(legend, /unresolved relationship/)
     assert.ok(ANNOTATION_ZONE.rightWidth >= 3000)
     assert.ok(ANNOTATION_ZONE.bottomHeight >= 1500)
   })
