@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House spatial and sectional order</title>
+  <desc id="desc">Publication diagram explaining the Reference House hierarchy as a relationship between arrival, courtyard, principal shared rooms, upper private rooms and a modestly ranked ground storey. It is an analytical derivation from the coordinated plans and section, not a complete generative rule for G-01.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111"/></marker>
+    <style>
+      .label{font:600 28px Arial,Helvetica,sans-serif;fill:#111}
+      .small{font:22px Arial,Helvetica,sans-serif;fill:#333}
+      .tiny{font:18px Arial,Helvetica,sans-serif;fill:#555}
+      .rule{stroke:#111;stroke-width:3;fill:none}
+      .soft{stroke:#777;stroke-width:2;fill:none}
+      .dash{stroke:#666;stroke-width:2.5;fill:none;stroke-dasharray:12 10}
+      .fill{fill:#f3f3f1;stroke:#111;stroke-width:3}
+      .circulation{fill:#e7e7e3;stroke:#111;stroke-width:2.5}
+      .court{fill:#fff;stroke:#111;stroke-width:3}
+    </style>
+  </defs>
+
+  <text x="70" y="70" class="label">Reference House — spatial and sectional order</text>
+  <text x="70" y="108" class="small">Hierarchy is relational: no one proxy—size, centreline or floor level—owns architectural rank.</text>
+
+  <g transform="translate(90 170)">
+    <text x="0" y="0" class="label">Ground floor</text>
+    <rect x="0" y="45" width="520" height="470" class="fill"/>
+    <rect x="182" y="195" width="156" height="175" class="court"/>
+    <rect x="172" y="370" width="176" height="145" class="circulation"/>
+    <rect x="400" y="45" width="120" height="470" class="circulation" opacity="0.6"/>
+    <text x="260" y="292" class="small" text-anchor="middle">court</text>
+    <text x="260" y="455" class="small" text-anchor="middle">arrival / stair</text>
+    <text x="65" y="145" class="small">family</text>
+    <text x="52" y="445" class="small">drawing</text>
+    <text x="410" y="110" class="tiny">kitchen</text>
+    <text x="422" y="265" class="tiny">service</text>
+    <text x="410" y="430" class="tiny">study</text>
+
+    <path d="M260 550 L260 500 L260 370 L260 195 L260 75" class="rule" marker-end="url(#arrow)"/>
+    <text x="285" y="548" class="tiny">front</text>
+    <text x="285" y="92" class="tiny">garden</text>
+
+    <text x="0" y="575" class="tiny">shared rooms + arrival carry the principal domestic sequence</text>
+  </g>
+
+  <g transform="translate(710 170)">
+    <text x="0" y="0" class="label">Upper floor</text>
+    <rect x="0" y="45" width="520" height="470" class="fill"/>
+    <rect x="182" y="195" width="156" height="175" class="court"/>
+    <rect x="172" y="370" width="176" height="145" class="circulation"/>
+    <rect x="400" y="195" width="120" height="175" class="circulation" opacity="0.6"/>
+    <text x="260" y="292" class="small" text-anchor="middle">court</text>
+    <text x="260" y="455" class="small" text-anchor="middle">stair / landing</text>
+    <text x="55" y="135" class="small">principal bed</text>
+    <text x="52" y="435" class="small">bedroom</text>
+    <text x="395" y="125" class="small">bedroom</text>
+    <text x="405" y="285" class="tiny">bath / gallery</text>
+    <text x="0" y="575" class="tiny">private rooms retain order without a mandatory piano nobile</text>
+  </g>
+
+  <g transform="translate(90 790)">
+    <line x1="0" y1="0" x2="1140" y2="0" class="soft"/>
+    <text x="0" y="38" class="tiny">sectional hierarchy</text>
+    <line x1="185" y1="-10" x2="185" y2="-98" class="rule"/>
+    <line x1="185" y1="-98" x2="600" y2="-98" class="rule"/>
+    <line x1="600" y1="-98" x2="600" y2="-10" class="rule"/>
+    <text x="392" y="-116" class="small" text-anchor="middle">ground clear height ≈ 2.95 m</text>
+
+    <line x1="680" y1="-10" x2="680" y2="-82" class="rule"/>
+    <line x1="680" y1="-82" x2="1095" y2="-82" class="rule"/>
+    <line x1="1095" y1="-82" x2="1095" y2="-10" class="rule"/>
+    <text x="888" y="-100" class="small" text-anchor="middle">upper storey slightly quieter</text>
+    <text x="185" y="70" class="tiny">Ground-floor primacy is restrained, not monumental.</text>
+  </g>
+</svg>

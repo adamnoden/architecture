@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House type and orientation</title>
+  <desc id="desc">Analytical publication diagram of the Reference House as a compact two-storey courtyard type. It shows the approximate outer reservation, open court, front-to-court-to-garden sequence, service flank and principal section registration without pretending that a commissioned site or exact wall-face construction geometry exists.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111"/></marker>
+    <style>
+      .label{font:600 28px Arial,Helvetica,sans-serif;fill:#111}
+      .small{font:22px Arial,Helvetica,sans-serif;fill:#333}
+      .tiny{font:18px Arial,Helvetica,sans-serif;fill:#555}
+      .rule{stroke:#111;stroke-width:3;fill:none}
+      .soft{stroke:#777;stroke-width:2;fill:none}
+      .dash{stroke:#666;stroke-width:2.5;fill:none;stroke-dasharray:12 10}
+      .light{fill:#f3f3f1;stroke:#111;stroke-width:3}
+      .court{fill:#fff;stroke:#111;stroke-width:3}
+      .service{fill:#e8e8e4;stroke:#111;stroke-width:2.5}
+    </style>
+  </defs>
+
+  <text x="70" y="70" class="label">Reference House — type and orientation</text>
+  <text x="70" y="108" class="small">One worked courtyard house; orientation is analytical, not a claim about a commissioned site.</text>
+
+  <g transform="translate(120 180)">
+    <rect x="0" y="0" width="720" height="648" class="light"/>
+    <rect x="252" y="204" width="216" height="240" class="court"/>
+    <rect x="546" y="0" width="174" height="648" class="service" opacity="0.55"/>
+
+    <text x="360" y="334" class="label" text-anchor="middle">Open court</text>
+    <text x="360" y="368" class="tiny" text-anchor="middle">≈ 3.6 × 4.0 m</text>
+    <text x="633" y="322" class="small" text-anchor="middle" transform="rotate(-90 633 322)">high-service flank</text>
+
+    <text x="360" y="688" class="small" text-anchor="middle">FRONT / ARRIVAL</text>
+    <text x="360" y="-24" class="small" text-anchor="middle">GARDEN</text>
+
+    <path d="M360 624 L360 500 L360 444 L360 204 L360 36" class="rule" marker-end="url(#arrow)"/>
+    <text x="390" y="570" class="tiny">entrance</text>
+    <text x="390" y="475" class="tiny">stair hall</text>
+    <text x="390" y="424" class="tiny">court</text>
+    <text x="390" y="88" class="tiny">garden sequence</text>
+
+    <line x1="80" y1="520" x2="640" y2="520" class="dash"/>
+    <text x="660" y="527" class="small">A–A</text>
+
+    <line x1="-42" y1="130" x2="-42" y2="20" class="rule" marker-end="url(#arrow)"/>
+    <text x="-42" y="160" class="small" text-anchor="middle">N</text>
+
+    <line x1="0" y1="744" x2="720" y2="744" class="soft"/>
+    <line x1="0" y1="730" x2="0" y2="758" class="soft"/>
+    <line x1="720" y1="730" x2="720" y2="758" class="soft"/>
+    <text x="360" y="786" class="tiny" text-anchor="middle">outer reservation ≈ 12.0 m</text>
+
+    <line x1="790" y1="0" x2="790" y2="648" class="soft"/>
+    <line x1="776" y1="0" x2="804" y2="0" class="soft"/>
+    <line x1="776" y1="648" x2="804" y2="648" class="soft"/>
+    <text x="824" y="330" class="tiny" transform="rotate(90 824 330)" text-anchor="middle">outer reservation ≈ 10.8 m</text>
+  </g>
+
+  <g transform="translate(990 230)">
+    <text x="0" y="0" class="label">Persistent type</text>
+    <text x="0" y="48" class="small">• detached contemporary family house</text>
+    <text x="0" y="88" class="small">• two principal storeys</text>
+    <text x="0" y="128" class="small">• genuine open-to-sky court</text>
+    <text x="0" y="168" class="small">• shallow occupied bands</text>
+    <text x="0" y="208" class="small">• concentrated service flank</text>
+    <text x="0" y="248" class="small">• front → court → garden sequence</text>
+
+    <line x1="0" y1="298" x2="320" y2="298" class="soft"/>
+    <text x="0" y="350" class="label">Not fixed here</text>
+    <text x="0" y="398" class="small">actual solar orientation</text>
+    <text x="0" y="438" class="small">utility entry from a real site</text>
+    <text x="0" y="478" class="small">neighbour / boundary conditions</text>
+    <text x="0" y="518" class="small">final wall-face construction geometry</text>
+  </g>
+</svg>

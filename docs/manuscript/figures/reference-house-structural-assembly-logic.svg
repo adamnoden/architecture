@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House structural and assembly logic</title>
+  <desc id="desc">Analytical publication diagram showing the Reference House courtyard-generated short-span structural concept and the separation between permanent masonry, floor structure and faster-changing layers. It communicates topology and assembly hierarchy only; it does not establish member sizes, capacity, connections or foundations.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111"/></marker>
+    <style>
+      .label{font:600 28px Arial,Helvetica,sans-serif;fill:#111}
+      .small{font:22px Arial,Helvetica,sans-serif;fill:#333}
+      .tiny{font:18px Arial,Helvetica,sans-serif;fill:#555}
+      .rule{stroke:#111;stroke-width:3;fill:none}
+      .heavy{stroke:#111;stroke-width:9;fill:none}
+      .beam{stroke:#333;stroke-width:6;fill:none}
+      .axis{stroke:#666;stroke-width:2.5;fill:none;stroke-dasharray:12 10}
+      .soft{stroke:#888;stroke-width:2;fill:none}
+      .fill{fill:#f3f3f1;stroke:#111;stroke-width:3}
+      .void{fill:#fff;stroke:#111;stroke-width:3}
+    </style>
+  </defs>
+
+  <text x="70" y="70" class="label">Reference House — structural and assembly logic</text>
+  <text x="70" y="108" class="small">The courtyard shortens the problem before engineering begins; the diagram states topology, not adequacy.</text>
+
+  <g transform="translate(80 180)">
+    <text x="0" y="0" class="label">Courtyard-generated span field</text>
+    <rect x="0" y="45" width="650" height="585" class="fill"/>
+    <rect x="228" y="229" width="195" height="216" class="void"/>
+
+    <rect x="0" y="45" width="650" height="585" class="heavy"/>
+    <rect x="228" y="229" width="195" height="216" class="heavy"/>
+
+    <line x1="228" y1="45" x2="228" y2="229" class="beam"/>
+    <line x1="423" y1="45" x2="423" y2="229" class="beam"/>
+    <line x1="228" y1="445" x2="228" y2="630" class="beam"/>
+    <line x1="423" y1="445" x2="423" y2="630" class="beam"/>
+
+    <line x1="18" y1="337" x2="210" y2="337" class="axis" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line x1="440" y1="337" x2="632" y2="337" class="axis" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text x="114" y="315" class="tiny" text-anchor="middle">≈ 4.2 m field</text>
+    <text x="536" y="315" class="tiny" text-anchor="middle">≈ 4.2 m field</text>
+
+    <line x1="326" y1="62" x2="326" y2="212" class="axis" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line x1="326" y1="462" x2="326" y2="612" class="axis" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text x="350" y="145" class="tiny">≈ 3.4 m field</text>
+    <text x="350" y="545" class="tiny">≈ 3.4 m field</text>
+
+    <text x="325" y="346" class="small" text-anchor="middle">open court</text>
+    <text x="0" y="680" class="tiny">heavy lines: intended permanent bearing boundaries</text>
+    <text x="0" y="710" class="tiny">short centre lines: edge-beam continuation through front / rear wings</text>
+  </g>
+
+  <g transform="translate(820 180)">
+    <text x="0" y="0" class="label">Assembly hierarchy</text>
+
+    <rect x="0" y="55" width="470" height="105" fill="#f3f3f1" stroke="#111" stroke-width="3"/>
+    <text x="30" y="100" class="label">Permanent masonry</text>
+    <text x="30" y="135" class="tiny">outer + courtyard structural boundaries</text>
+
+    <line x1="235" y1="160" x2="235" y2="208" class="rule" marker-end="url(#arrow)"/>
+
+    <rect x="0" y="215" width="470" height="105" fill="#fff" stroke="#111" stroke-width="3"/>
+    <text x="30" y="260" class="label">Floor structure</text>
+    <text x="30" y="295" class="tiny">engineered timber comparator · diaphragm remains permanent</text>
+
+    <line x1="235" y1="320" x2="235" y2="368" class="rule" marker-end="url(#arrow)"/>
+
+    <rect x="0" y="375" width="470" height="105" fill="#fff" stroke="#777" stroke-width="2.5"/>
+    <text x="30" y="420" class="label">Designed crossings</text>
+    <text x="30" y="455" class="tiny">stair / service openings coordinated rather than improvised</text>
+
+    <line x1="235" y1="480" x2="235" y2="528" class="rule" marker-end="url(#arrow)"/>
+
+    <rect x="0" y="535" width="470" height="105" fill="#fff" stroke="#aaa" stroke-width="2"/>
+    <text x="30" y="580" class="label">Changeable layers</text>
+    <text x="30" y="615" class="tiny">finishes / selected access / replaceable assemblies</text>
+
+    <text x="0" y="690" class="small">Not established here:</text>
+    <text x="0" y="726" class="tiny">member sizing · bearing capacity · connections · foundations</text>
+  </g>
+</svg>
