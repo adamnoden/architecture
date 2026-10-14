@@ -30,7 +30,7 @@
 
   <line x1="300" y1="205" x2="350" y2="205" class="rule" marker-end="url(#arrow)"/>
 
-  <line x1="665" y1="105" x2="665" y2="665" class="dash"/>
+  <line x1="665" y1="105" x2="665" y2="470" class="dash"/>
   <text x="665" y="82" text-anchor="middle" class="head">IF IT FAILS</text>
   <circle cx="665" cy="205" r="20" fill="#111"/>
   <line x1="600" y1="205" x2="640" y2="205" class="rule" marker-end="url(#arrow)"/>
