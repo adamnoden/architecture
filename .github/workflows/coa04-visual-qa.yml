@@ -1,0 +1,35 @@
+name: COA-04 visual QA
+
+on:
+  push:
+    branches:
+      - coa-04-plan-section-successors
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: coa-04-plan-section-successors
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq librsvg2-bin
+      - run: |
+          mkdir -p /tmp/coa04-qa
+          rsvg-convert -w 1800 docs/reference-house/generated/ground-floor-plan.svg -o /tmp/coa04-qa/ground-floor-plan.png
+          rsvg-convert -w 1800 docs/reference-house/generated/first-floor-plan.svg -o /tmp/coa04-qa/first-floor-plan.png
+          rsvg-convert -w 1800 docs/reference-house/generated/principal-section.svg -o /tmp/coa04-qa/principal-section.png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coa04-visual-qa
+          path: /tmp/coa04-qa/*.png
+          if-no-files-found: error
+      - run: |
+          rm .github/workflows/coa04-visual-qa.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/coa04-visual-qa.yml
+          git commit -m "COA-04 remove temporary visual QA workflow"
+          git push origin HEAD:coa-04-plan-section-successors
