@@ -177,7 +177,11 @@ const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
     page('Whole-house coordination fixture', '/docs/reference-house/whole-house-coordination-fixture'),
     page('Vertical bay options', '/docs/reference-house/vertical-bay-options'),
     page('Vertical bay coordination', '/docs/reference-house/vertical-bay-coordination'),
-    page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan')
+    page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan'),
+    group('Generated compiler inspection', [
+      page('Service topology register', '/docs/reference-house/generated/service-register'),
+      page('Envelope / boundary topology register', '/docs/reference-house/generated/boundary-register')
+    ])
   ], false),
   group('RH-C0 / RH-C1 fixture programme', [
     page('Brief & constraint ledger', '/docs/reference-house/brief-and-constraint-ledger'),
