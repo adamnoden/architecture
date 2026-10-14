@@ -2,21 +2,10 @@
   <title id="title">Pattern language fields and one generative sequence</title>
   <desc id="desc">The twenty-one active patterns are shown in five editorial fields on the left. On the right, one service-topology generative sequence orders a subset of patterns from demand mapping to stewardship, with explicit rewind logic. Strategies and held candidates remain separate from the active pattern count.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/>
-    </marker>
-    <marker id="openArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#777" stroke-width="1.5"/>
-    </marker>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/></marker>
+    <marker id="openArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#777" stroke-width="1.5"/></marker>
     <style>
-      .head{font:700 27px Arial,Helvetica,sans-serif;fill:#111}
-      .sub{font:600 22px Arial,Helvetica,sans-serif;fill:#111}
-      .label{font:600 19px Arial,Helvetica,sans-serif;fill:#111}
-      .small{font:18px Arial,Helvetica,sans-serif;fill:#444}
-      .tiny{font:16px Arial,Helvetica,sans-serif;fill:#555}
-      .rule{stroke:#111;stroke-width:2.5;fill:none}
-      .soft{stroke:#888;stroke-width:2;fill:none}
-      .dash{stroke:#777;stroke-width:2;fill:none;stroke-dasharray:9 7}
+      .head{font:700 27px Arial,Helvetica,sans-serif;fill:#111}.sub{font:600 22px Arial,Helvetica,sans-serif;fill:#111}.label{font:600 19px Arial,Helvetica,sans-serif;fill:#111}.id{font:600 16px Arial,Helvetica,sans-serif;fill:#111}.small{font:18px Arial,Helvetica,sans-serif;fill:#444}.ids{font:16px Arial,Helvetica,sans-serif;fill:#444}.tiny{font:16px Arial,Helvetica,sans-serif;fill:#555}.rule{stroke:#111;stroke-width:2.5;fill:none}.soft{stroke:#888;stroke-width:2;fill:none}.dash{stroke:#777;stroke-width:2;fill:none;stroke-dasharray:9 7}
     </style>
   </defs>
 
@@ -25,96 +14,49 @@
   <line x1="75" y1="86" x2="695" y2="86" class="soft"/>
   <line x1="825" y1="86" x2="1520" y2="86" class="soft"/>
 
-  <!-- five editorial fields -->
-  <g>
-    <rect x="75" y="125" width="620" height="145" rx="4" fill="#f3f3f3" stroke="#111" stroke-width="2.5"/>
-    <text x="105" y="165" class="sub">A · Service geography &amp; distribution</text>
-    <text x="650" y="165" text-anchor="end" class="small">8 patterns</text>
-    <text x="105" y="207" class="small">P-001 · P-002 · P-014 · P-003</text>
-    <text x="105" y="238" class="small">P-015 · P-004 · P-005 · P-016</text>
-  </g>
+  <rect x="75" y="125" width="620" height="145" rx="4" fill="#f3f3f3" stroke="#111" stroke-width="2.5"/>
+  <text x="105" y="165" class="sub">A · Service geography &amp; distribution</text><text x="650" y="165" text-anchor="end" class="small">8 patterns</text>
+  <text x="105" y="207" class="ids">HSA-P-001 · HSA-P-002 · HSA-P-014 · HSA-P-003</text><text x="105" y="238" class="ids">HSA-P-015 · HSA-P-004 · HSA-P-005 · HSA-P-016</text>
 
-  <g>
-    <rect x="75" y="295" width="620" height="125" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="105" y="337" class="sub">B · Water, leakage &amp; failure</text>
-    <text x="650" y="337" text-anchor="end" class="small">3 patterns</text>
-    <text x="105" y="382" class="small">P-017 · P-018 · P-009</text>
-  </g>
+  <rect x="75" y="295" width="620" height="125" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
+  <text x="105" y="337" class="sub">B · Water, leakage &amp; failure</text><text x="650" y="337" text-anchor="end" class="small">3 patterns</text>
+  <text x="105" y="382" class="ids">HSA-P-017 · HSA-P-018 · HSA-P-009</text>
 
-  <g>
-    <rect x="75" y="445" width="620" height="125" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="105" y="487" class="sub">C · Openings, movement &amp; attachment</text>
-    <text x="650" y="487" text-anchor="end" class="small">5 patterns</text>
-    <text x="105" y="532" class="small">P-007 · P-019 · P-020 · P-008 · P-022</text>
-  </g>
+  <rect x="75" y="445" width="620" height="125" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
+  <text x="105" y="487" class="sub">C · Openings, movement &amp; attachment</text><text x="650" y="487" text-anchor="end" class="small">5 patterns</text>
+  <text x="105" y="532" class="ids">HSA-P-007 · HSA-P-019 · HSA-P-020 · HSA-P-008 · HSA-P-022</text>
 
-  <g>
-    <rect x="75" y="595" width="620" height="125" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="105" y="637" class="sub">D · Environment &amp; external maintenance</text>
-    <text x="650" y="637" text-anchor="end" class="small">4 patterns</text>
-    <text x="105" y="682" class="small">P-010 · P-021 · P-011 · P-013</text>
-  </g>
+  <rect x="75" y="595" width="620" height="125" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
+  <text x="105" y="637" class="sub">D · Environment &amp; external maintenance</text><text x="650" y="637" text-anchor="end" class="small">4 patterns</text>
+  <text x="105" y="682" class="ids">HSA-P-010 · HSA-P-021 · HSA-P-011 · HSA-P-013</text>
 
-  <g>
-    <rect x="75" y="745" width="620" height="115" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="105" y="787" class="sub">E · Stewardship</text>
-    <text x="650" y="787" text-anchor="end" class="small">1 pattern</text>
-    <text x="105" y="827" class="small">P-012</text>
-  </g>
+  <rect x="75" y="745" width="620" height="115" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
+  <text x="105" y="787" class="sub">E · Stewardship</text><text x="650" y="787" text-anchor="end" class="small">1 pattern</text>
+  <text x="105" y="827" class="ids">HSA-P-012</text>
+  <text x="75" y="900" class="tiny">Editorial fields aid reading; they are not a taxonomy.</text><text x="75" y="926" class="tiny">A pattern may operate across more than one field.</text>
 
-  <text x="75" y="900" class="tiny">Editorial fields aid reading; they are not a taxonomy.</text>
-  <text x="75" y="926" class="tiny">A pattern may operate across more than one field.</text>
+  <rect x="875" y="120" width="470" height="58" rx="29" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="1110" y="157" text-anchor="middle" class="label">Map service demand</text>
+  <rect x="875" y="205" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="241" class="id">HSA-P-001</text><text x="1035" y="241" class="small">Controlled utility entry</text>
+  <rect x="875" y="290" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="326" class="id">HSA-P-002</text><text x="1035" y="326" class="small">Place service hub</text>
+  <rect x="875" y="375" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="411" class="id">HSA-P-014</text><text x="1035" y="411" class="small">Resolve vertical distribution</text>
+  <rect x="875" y="460" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="496" class="id">HSA-P-004</text><text x="1035" y="496" class="small">Re-test high-service rooms</text>
+  <rect x="875" y="545" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="581" class="id">HSA-P-003</text><text x="1035" y="581" class="small">Establish horizontal routes</text>
 
-  <!-- service topology sequence -->
-  <g>
-    <rect x="875" y="120" width="470" height="58" rx="29" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="1110" y="157" text-anchor="middle" class="label">Map service demand</text>
+  <rect x="875" y="630" width="470" height="68" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
+  <text x="900" y="655" class="id">HSA-P-016</text><text x="900" y="679" class="id">HSA-P-005</text><text x="1045" y="657" class="small">Resolve void boundaries</text><text x="1045" y="682" class="small">and structural crossings</text>
 
-    <rect x="875" y="205" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="905" y="241" class="label">P-001</text><text x="1010" y="241" class="small">Controlled utility entry</text>
+  <rect x="875" y="725" width="470" height="68" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
+  <text x="900" y="750" class="id">HSA-P-017</text><text x="900" y="774" class="id">HSA-P-018</text><text x="1045" y="752" class="small">Design for credible</text><text x="1045" y="777" class="small">water failure</text>
 
-    <rect x="875" y="290" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="905" y="326" class="label">P-002</text><text x="1010" y="326" class="small">Place service hub</text>
+  <rect x="875" y="820" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="856" class="id">HSA-P-015</text><text x="1035" y="856" class="small">Room-scale routes where justified</text>
+  <rect x="875" y="905" width="470" height="58" rx="4" fill="#f3f3f3" stroke="#111" stroke-width="2.5"/><text x="900" y="941" class="id">HSA-P-012</text><text x="1035" y="941" class="small">Make topology legible</text>
+  <path d="M 1110 178 V 205 M 1110 263 V 290 M 1110 348 V 375 M 1110 433 V 460 M 1110 518 V 545 M 1110 603 V 630 M 1110 698 V 725 M 1110 793 V 820 M 1110 878 V 905" class="rule" marker-end="url(#arrow)"/>
 
-    <rect x="875" y="375" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="905" y="411" class="label">P-014</text><text x="1010" y="411" class="small">Resolve vertical distribution</text>
-
-    <rect x="875" y="460" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="905" y="496" class="label">P-004</text><text x="1010" y="496" class="small">Re-test high-service rooms</text>
-
-    <rect x="875" y="545" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="905" y="581" class="label">P-003</text><text x="1010" y="581" class="small">Establish horizontal routes</text>
-
-    <rect x="875" y="630" width="470" height="68" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="905" y="670" class="label">P-016 + P-005</text><text x="1080" y="657" class="small">Resolve void boundaries</text><text x="1080" y="682" class="small">and structural crossings</text>
-
-    <rect x="875" y="725" width="470" height="68" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="905" y="765" class="label">P-017 + P-018</text><text x="1080" y="752" class="small">Design for credible</text><text x="1080" y="777" class="small">water failure</text>
-
-    <rect x="875" y="820" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-    <text x="905" y="856" class="label">P-015</text><text x="1010" y="856" class="small">Room-scale routes where justified</text>
-
-    <rect x="875" y="905" width="470" height="58" rx="4" fill="#f3f3f3" stroke="#111" stroke-width="2.5"/>
-    <text x="905" y="941" class="label">P-012</text><text x="1010" y="941" class="small">Make topology legible</text>
-
-    <path d="M 1110 178 V 205 M 1110 263 V 290 M 1110 348 V 375 M 1110 433 V 460 M 1110 518 V 545 M 1110 603 V 630 M 1110 698 V 725 M 1110 793 V 820 M 1110 878 V 905" class="rule" marker-end="url(#arrow)"/>
-  </g>
-
-  <!-- rewind logic -->
   <path d="M 1370 575 C 1500 575 1500 320 1370 320" class="dash" marker-end="url(#openArrow)"/>
-  <text x="1392" y="452" class="tiny">REWIND</text>
-  <text x="1392" y="478" class="tiny">when later complexity</text>
-  <text x="1392" y="502" class="tiny">exposes a bad earlier move</text>
+  <text x="1392" y="452" class="tiny">REWIND</text><text x="1392" y="478" class="tiny">when later complexity</text><text x="1392" y="502" class="tiny">exposes a bad earlier move</text>
 
-  <text x="825" y="1005" class="tiny">This is one sequence, not a universal design procedure.</text>
-  <text x="825" y="1031" class="tiny">Other pattern families enter through their own architectural and environmental logic.</text>
+  <text x="825" y="1005" class="tiny">This is one sequence, not a universal design procedure.</text><text x="825" y="1031" class="tiny">Other pattern families enter through their own architectural and environmental logic.</text>
 
-  <!-- distinctions -->
-  <rect x="75" y="970" width="330" height="82" rx="4" fill="#fff" stroke="#777" stroke-width="2"/>
-  <text x="100" y="1005" class="label">Strategies · 3</text>
-  <text x="100" y="1034" class="tiny">coordinate several patterns</text>
-
-  <rect x="430" y="970" width="265" height="82" rx="4" fill="#fff" stroke="#777" stroke-width="2" stroke-dasharray="8 6"/>
-  <text x="455" y="1005" class="label">Held candidates · 4</text>
-  <text x="455" y="1034" class="tiny">unresolved · not canonical</text>
+  <rect x="75" y="970" width="330" height="82" rx="4" fill="#fff" stroke="#777" stroke-width="2"/><text x="100" y="1005" class="label">Strategies · 3</text><text x="100" y="1034" class="tiny">coordinate several patterns</text>
+  <rect x="430" y="970" width="265" height="82" rx="4" fill="#fff" stroke="#777" stroke-width="2" stroke-dasharray="8 6"/><text x="455" y="1005" class="label">Held candidates · 4</text><text x="455" y="1034" class="tiny">unresolved · not canonical</text>
 </svg>
