@@ -21,6 +21,7 @@ const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
     'docs/manuscript/principle-08-repose.md'
   ],
   'part-ii-composite': ['docs/manuscript/maintenance-geography-external.md'],
+  'part-iv-wrapper': [],
   'part-v-wrapper': [],
   'pattern-index': [],
   'pattern-page': [],
@@ -149,6 +150,10 @@ function adaptPartII(markdown: string, context: AdapterContext): string {
   return `${markdown.slice(0, chapter9Index).trimEnd()}\n\n${exterior}\n${markdown.slice(
     chapter9Index
   )}`
+}
+
+function adaptPartIV(markdown: string): string {
+  return normalisePartOpening(markdown, 'Part IV — Reference House')
 }
 
 function adaptPartV(markdown: string): string {
@@ -441,6 +446,8 @@ export function applyAdapter(
       return adaptPartI(markdown, context)
     case 'part-ii-composite':
       return adaptPartII(markdown, context)
+    case 'part-iv-wrapper':
+      return adaptPartIV(markdown)
     case 'part-v-wrapper':
       return adaptPartV(markdown)
     case 'pattern-index':
