@@ -6,13 +6,15 @@ Within that track, **House Kernel** is the formal architectural/computational sy
 
 This hierarchy is deliberately narrower than the architecture. Rooms, walls, openings, structure, boundaries, service routes and maintenance paths may be represented semantically where doing so creates a useful check, but architectural judgement is not converted into arbitrary machine rules merely to make the model more complete.
 
-The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel, `PAT-XW-01`, RH-C0 model freeze, RH-C1 deterministic fixture, CF-01 contrast-fixture gate, RH-C2 structural view, RH-C3 service view, RH-C4 envelope/boundary view and RH-C5 selected calculation gate have completed at their stated internal scopes. The subsequent CH-00 → CH-08 Compiler Hardening programme is also complete: it strengthened the implementation while preserving those earned semantics and proof boundaries.
+The paper-compilation programme, Phase-8 pattern crosswalk, P0 executable kernel, `PAT-XW-01`, RH-C0 model freeze, RH-C1 deterministic fixture, CF-01 contrast-fixture gate, RH-C2 structural view, RH-C3 service view, RH-C4 envelope/boundary view and RH-C5 selected calculation gate have completed at their stated internal scopes. The subsequent CH-00 → CH-08 Compiler Hardening programme is also complete: it strengthened the implementation while preserving those earned semantics and proof boundaries. COA-00 → COA-06 then separated machine proof, semantic inspection and publication-source concerns without changing the compiled architectural claims.
 
 ## Current state
 
-**Computational maturity is M4 — Internally validated / controlled at the bounded demonstrated scope. The Reference House executable capability sequence remains closed through RH-C5; Compiler Hardening is closed through CH-08. There is no standing RH-C6 and no CH-09.**
+**Computational maturity is M4 — Internally validated / controlled at the bounded demonstrated scope. The Reference House executable capability sequence remains closed through RH-C5; Compiler Hardening is closed through CH-08; Compiler Output Architecture is closed through COA-06. There is no standing RH-C6, CH-09 or COA-07.**
 
 CH-00 through CH-08 established a machine-checkable semantic/artefact baseline, deterministic fail-closed prerequisites, explicit generic runtime boundaries, single-pass Reference House compilation, selective type/unit/immutability hardening, stable semantic identity and provenance, stronger law/property/metamorphic tests, consolidated developer tooling and a final distillation/deletion pass. These results improve confidence in the software machinery; they do not widen architectural, physical or regulatory authority.
+
+COA-00 through COA-06 operate strictly downstream of that semantic baseline. They preserve the six CH-frozen RH-C1–RH-C4 SVGs as historical executable evidence while providing a successor inspection family whose format follows information character: spatial/metric views use SVG, non-spatial topology registers use generated Markdown, and one JSON manifest binds every successor output to the canonical compile fingerprint and deterministic content identity.
 
 RH-C5 remains the latest admitted **capability** gate. It adds one deliberately narrow numeric proof family over the same architecture → structure → services → boundary chain: the represented private-stair rise, going, pitch and 2R+G are compared with a versioned Approved Document K 2013 calculation-method snapshot for an England dwelling/private-stair context.
 
@@ -67,16 +69,52 @@ Software-hardening sequence:
 CH-00 → CH-01 → CH-02 → CH-03 → CH-04 → CH-05 → CH-06 → CH-07 → CH-08   PASS
 ```
 
+Output-architecture sequence:
+
+```text
+COA-00 → COA-01 → COA-02 → COA-03 → COA-04 → COA-05 → COA-06           PASS
+```
+
 Programme records:
 
 - [RH-C0 — Reference House Model Freeze](reference-house-model-freeze-rhc0.md)
 - [Reference House executable programme — RH-C1 through RH-C5](reference-house-executable-slice.md)
 - [CF-01 — Compiler Generality Assurance](compiler-generality-assurance-cf01.md)
 - [Compiler Hardening programme — CH-00 through CH-08](compiler-hardening-programme.md)
+- [Compiler Output Architecture programme — COA-00 through COA-06](compiler-output-architecture-programme.md)
+- [Generated Reference House inspection surface](../reference-house/generated/)
 - [RH-C1 drawing parity result](../reference-house/rhc1-drawing-parity-result.md)
 - [Metamorph Compiler implementation boundary](../../compiler/README.md)
 
 The Reference House remains a **controlled regression fixture**, not a universal Ovid’s House template. The CF-01 contrast house remains an adversarial test fixture, not a second design proposal.
+
+## Output architecture
+
+COA makes a permanent distinction between three output classes:
+
+1. **machine / proof artefacts** — exact identity, regression and provenance;
+2. **semantic inspection outputs** — human-readable views of what the compiled model knows and does not know;
+3. **publication architectural figures** — downstream editorial objects owned by PR-00D rather than the compiler.
+
+The current successor inspection family is:
+
+```text
+docs/reference-house/generated/
+  README.md
+  ground-floor-plan.svg
+  first-floor-plan.svg
+  principal-section.svg
+  first-floor-structure.svg
+  service-register.md
+  boundary-register.md
+  output-manifest.json
+```
+
+The plans, section and structure view share a north-up spatial convention, explicit orientation, stable semantic identity and a common uncertainty language. Qualitative opening relationships and required adjacencies remain visible without inventing exact geometry. The structural view uses an undirected span-axis convention and keeps unresolved stair/service interruptions at their owned precision. Service and boundary topologies remain report-first because their primary inspection meaning is relational rather than spatial.
+
+The six historical RH-C1–RH-C4 SVGs are deliberately **not** replaced in place: CH froze their exact identities as executable evidence. COA's successor family is a new downstream representation layer.
+
+`npm run outputs:generate` regenerates the successor family and manifest; `npm run outputs:check` verifies the committed family without mutation. Neither command changes semantic authority.
 
 ## What has been established
 
@@ -99,7 +137,8 @@ At deliberately bounded internal scope, the executable work now demonstrates tha
 - a versioned numeric calculation method can consume canonical derived values, expose its authority/applicability and return `PASS`, `FAIL` or `UNSUPPORTED` without widening its claim;
 - missing, wrong-unit, non-finite or out-of-domain inputs can fail closed as `UNSUPPORTED`, and incomplete evidence can prevent a definitive technical conclusion;
 - an external-guidance correspondence check can remain distinct from a release-grade compiler target and from Building Regulations compliance;
-- the same earned semantics now run through a smaller, deterministic, traceable and internally controlled implementation after CH-08.
+- the same earned semantics now run through a smaller, deterministic, traceable and internally controlled implementation after CH-08;
+- those semantics can be projected into deterministic human inspection views without manufacturing absent geometry or confusing report content with drawings.
 
 These results do **not** establish that the building is structurally, environmentally, regulatorily or MEP-adequate. Building release remains outside the demonstrated scope.
 
@@ -113,9 +152,10 @@ The computational model has a deliberately limited authority.
 - **Representability is not evidence of adequacy.**
 - **An Approved Document calculation correspondence is not Building Regulations compliance.**
 - **A research compile is not a building-release certificate.**
+- **A generated inspection drawing is not architectural source authority.**
 - **Architectural judgement remains architectural where no legitimate deterministic rule exists.**
 
-A `PASS` in C2, C3 or C4 means the represented topology is internally coherent at the declared scope. A C5 `PASS` means only that the named values correspond to the named method's selected criteria. None of those claims silently widens into physical or regulatory adequacy.
+A `PASS` in C2, C3 or C4 means the represented topology is internally coherent at the declared scope. A C5 `PASS` means only that the named values correspond to the named method's selected criteria. A COA output simply projects already-earned semantics for inspection. None of those claims silently widens into physical or regulatory adequacy.
 
 ## Core executable layers
 
@@ -124,8 +164,9 @@ A `PASS` in C2, C3 or C4 means the represented topology is internally coherent a
 - `compiler/service-slice/` + `compiler/rhc3/` — semantic service nodes/routes/networks, access obligations and registered crossings.
 - `compiler/boundary-slice/` + `compiler/rhc4/` — independent weather/air/thermal/moisture carriers, typed opening/penetration transitions, registered boundary occurrences and directional drainage routes.
 - `compiler/calculation-slice/` + `compiler/rhc5/` — bounded versioned numeric methods with explicit applicability, authority, inputs, unsupported states and claim boundaries.
+- `compiler/output/` + `compiler/reference-house/output/` — downstream output policy, conventions, deterministic semantic inspection renderers and output identity.
 
-These are semantic/control layers, not general CAD/BIM, FE, MEP-routing, building-physics or regulatory-compliance engines.
+These are semantic/control and inspection layers, not general CAD/BIM, FE, MEP-routing, building-physics or regulatory-compliance engines.
 
 Core conceptual records:
 
@@ -152,14 +193,16 @@ The compiler retains three broad discharge modes:
 2. a bounded supported rule/calculation family only after its proof domain is established;
 3. external evidence from competent engineering, MEP, building physics, fire/building-control, product evidence or physical testing.
 
-The RH-11 external-review briefs and physical prototype programme remain independent evidence tracks. C2–C5 do not discharge them.
+The RH-11 external-review briefs and physical prototype programme remain independent evidence tracks. C2–C5 and COA outputs do not discharge them.
 
-## What happens after hardening
+## What happens after hardening and output architecture
 
-There is no automatic next numbered compiler stage. Further computational **capability** remains evidence-selected.
+There is no automatic next numbered compiler or output stage. Further computational **capability** remains evidence-selected; further output work remains question-selected.
 
 A new calculation family or semantic check should be introduced only when another workstream creates a concrete need: for example, a competent reviewer identifies a repeatable proof obligation, a physical prototype supplies authoritative parameters, a real project supplies site-specific inputs, or a technical family becomes controlled enough for deterministic checking.
 
+Likewise, a new drawing or topology view should exist only when spatial representation answers a concrete inspection or publication question better than the existing reports. Domain symmetry is not a reason to create graphics.
+
 U-values, thermal bridges, condensation analysis, rainwater capacity, structural capacity and MEP sizing are not a standing implementation queue. Each would require its own authoritative inputs, method contract, supported domain, regression cases and proof boundary before implementation.
 
-The existing P0, `PAT-XW-01`, RH-C1, CF-01 and RH-C2–C5 suites remain regression gates beneath the hardened implementation. Physical validation and competent professional review now provide more value than speculative compiler breadth.
+The existing P0, `PAT-XW-01`, RH-C1, CF-01, RH-C2–C5, CH-00–CH-08 and COA-00–COA-06 suites remain regression gates beneath the controlled implementation. Physical validation and competent professional review now provide more value than speculative compiler breadth.
