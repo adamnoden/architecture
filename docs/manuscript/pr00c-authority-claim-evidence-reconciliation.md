@@ -1,6 +1,6 @@
 # PR-00C — Authority, Claim and Evidence Reconciliation
 
-**Status:** active gate record  
+**Status:** complete gate record  
 **Date:** 2026-10-14  
 **Programme:** [`PR-00 — Candidate-Book Freeze Execution Programme`](pr00-candidate-book-freeze-programme.md)  
 **Umbrella issue:** #71 — `PUB-01 — publication credibility and release programme`  
@@ -67,7 +67,7 @@ A claim fails PR-00C if its wording promotes a narrower owner upward. Typical fa
 
 **Correction:** a compact current-state paragraph now preserves those boundaries without turning the Reader’s Guide into a live status dashboard.
 
-**Verdict:** reconciled on the PR-00C branch.
+**Verdict:** reconciled.
 
 ### Part I — The Proposition
 
@@ -99,7 +99,7 @@ The sampled high-risk sections already maintain the critical boundaries:
 
 **No upstream reopen triggered.**
 
-**Residual wording issue:** claims about what drawings “prove” should use `establish`, `check`, `demonstrate` or another scope-bounded verb unless a formal proof relation is actually intended.
+The drawing-evidence wording has been normalised to `establish`, `check`, `demonstrate` or similarly bounded verbs unless a formal proof relation is actually intended.
 
 ### Part III — Pattern Language
 
@@ -140,9 +140,13 @@ The PR-00B synthesis is materially well bounded:
 
 **Authority reading:** `OH delivery method + OPEN project validation`.
 
-The section generally treats prototype, commissioning and procurement as future/project procedures rather than accomplished evidence.
+The section treats prototype, commissioning and procurement as future/project procedures rather than accomplished evidence.
 
-**Residual wording issue:** `A drawing can prove geometry` is too broad in a publication whose central evidence discipline distinguishes representation from physical proof. The intended claim is that a drawing can establish/check represented geometry but cannot establish tactile, acoustic, removal, ageing or real-world performance. This wording is queued for correction inside PR-00C rather than deferred to PR-01.
+The over-broad sentence `A drawing can prove geometry` has been replaced by the bounded formulation:
+
+> **A drawing can establish the geometry it represents.**
+
+The surrounding paragraph continues to state explicitly that representation cannot establish touch, sound, removal effort, ageing or real-room experience.
 
 ### Appendix A — Evidence and Precedent Notes
 
@@ -157,7 +161,7 @@ The appendix correctly distinguishes:
 - Reference House occurrence from general validation;
 - bounded computational results from physical/building-regulations adequacy.
 
-**Residual wording issue:** `A deterministic drawing can prove reproduction of a frozen source` should use narrower verification language. The computational work can verify deterministic identity/reproduction inside its declared representation; the word `prove` is unnecessarily easy to read as a broader building claim.
+The computational paragraph now uses verification language rather than implying a broader architectural proof claim: deterministic drawing reproduction, graph relations and bounded calculations are described as verifiable only inside their represented/encoded domains.
 
 ### Appendices B–F / glossary / sources
 
@@ -242,22 +246,26 @@ It must not be described as:
 
 ## 7. Upstream reopen test
 
-PR-00C has not found a contradiction requiring House Kernel, the pattern language, G-01, Reference House or Metamorph Compiler to reopen.
+PR-00C found no contradiction requiring House Kernel, the pattern language, G-01, Reference House or Metamorph Compiler to reopen.
 
-The issues found are publication-level:
+The issues found were publication-level:
 
 1. stale Working Edition status language;
 2. insufficiently explicit maturity differentiation in the Reader’s Guide;
-3. two uses of `prove` where narrower representation/verification language is more accurate.
+3. over-broad `prove` language where representation/verification wording was more accurate.
 
-These are editorial authority corrections, not architectural findings.
+All three classes are corrected. They are editorial authority corrections, not architectural findings.
 
 ---
 
-## 8. Gate state
+## 8. Gate result
 
-PR-00C is **not complete until the two residual `prove` wordings are corrected and the resulting candidate surfaces are re-read for consistency.**
+**PR-00C — PASS.**
 
-Once those edits are committed, the gate may close if no new authority contradiction appears.
+The candidate manuscript now states authority, maturity and evidence at the strength currently earned. The gate produced no upstream architectural reopen and no maturity promotion.
 
-The next gate after PR-00C is **PR-00D — Figure and visual-argument completion**. Figure work must inherit this claim-strength discipline: a more precise-looking drawing does not earn a stronger claim than its source authority.
+The next publication gate is **PR-00D — Figure and visual-argument completion**, but it is deliberately **not authorised to start yet**. PR-00D depends on the parallel computational-output/visual-substrate work being sufficiently trustworthy that publication figures will not be composed over known-defective or unstable source outputs.
+
+Until that dependency is ready, the publication track stops here.
+
+When PR-00D eventually begins, figure work must inherit the PR-00C claim-strength discipline: a more precise-looking drawing does not earn a stronger claim than its source authority.

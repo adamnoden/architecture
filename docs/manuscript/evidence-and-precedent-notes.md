@@ -94,7 +94,7 @@ The house is therefore cited in this book as an **occurrence**, **example**, **d
 
 Metamorph Compiler can establish only the propositions represented within its declared supported domain.
 
-A deterministic drawing can prove reproduction of a frozen source. A topology check can prove a declared graph relation. A bounded calculation can prove correspondence with the method and inputs encoded for that check.
+A deterministic drawing can verify reproduction of a frozen source within the represented domain. A topology check can verify a declared graph relation. A bounded calculation can verify correspondence with the encoded method and inputs for that check.
 
 None of those results proves that the physical building is structurally adequate, environmentally comfortable, compliant as a whole or well built.
 
