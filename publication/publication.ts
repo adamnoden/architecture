@@ -15,6 +15,7 @@ export type PublicationEntryKind =
 export type PublicationAdapter =
   | 'part-i-composite'
   | 'part-ii-composite'
+  | 'part-iv-wrapper'
   | 'part-v-wrapper'
   | 'pattern-index'
   | 'pattern-page'
@@ -283,7 +284,8 @@ export const publicationEntries: readonly PublicationEntry[] = [
     id: 'part-iv',
     source: 'docs/manuscript/part-iv.md',
     title: 'Part IV — Reference House',
-    kind: 'part'
+    kind: 'part',
+    adapter: 'part-iv-wrapper'
   },
 
   {
