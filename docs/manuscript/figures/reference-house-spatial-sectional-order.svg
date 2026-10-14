@@ -3,65 +3,26 @@
   <desc id="desc">A conceptual plan sequence shows an off-centre principal entrance recentering on the courtyard and continuing toward the garden. A simplified section shows a taller ground storey and quieter upper storey around the open court. The diagram explains relational hierarchy without making the courtyard or entrance position a G-01 rule.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/></marker>
-    <style>
-      .head{font:700 28px Arial,Helvetica,sans-serif;fill:#111}.sub{font:600 22px Arial,Helvetica,sans-serif;fill:#111}.small{font:19px Arial,Helvetica,sans-serif;fill:#444}.tiny{font:16px Arial,Helvetica,sans-serif;fill:#555}.rule{stroke:#111;stroke-width:3;fill:none}.soft{stroke:#777;stroke-width:2;fill:none}.dash{stroke:#555;stroke-width:2.5;fill:none;stroke-dasharray:10 8}.field{fill:#f2f1ed;stroke:#111;stroke-width:3}.court{fill:#fff;stroke:#111;stroke-width:3}
-    </style>
+    <style>.head{font:700 28px Arial,Helvetica,sans-serif;fill:#111}.sub{font:600 22px Arial,Helvetica,sans-serif;fill:#111}.small{font:19px Arial,Helvetica,sans-serif;fill:#444}.tiny{font:16px Arial,Helvetica,sans-serif;fill:#555}.rule{stroke:#111;stroke-width:3;fill:none}.soft{stroke:#777;stroke-width:2;fill:none}.dash{stroke:#555;stroke-width:2.5;fill:none;stroke-dasharray:10 8}.field{fill:#f2f1ed;stroke:#111;stroke-width:3}.court{fill:#fff;stroke:#111;stroke-width:3}</style>
   </defs>
-
-  <text x="75" y="65" class="head">REFERENCE HOUSE — RELATIONAL ORDER</text>
-  <line x1="75" y1="88" x2="1525" y2="88" class="soft"/>
+  <text x="75" y="65" class="head">REFERENCE HOUSE — RELATIONAL ORDER</text><line x1="75" y1="88" x2="1525" y2="88" class="soft"/>
 
   <text x="110" y="145" class="sub">ARRIVAL RECENTRES</text>
   <g transform="translate(110 185)">
-    <rect x="0" y="0" width="590" height="530" fill="#f7f7f5" stroke="#111" stroke-width="4"/>
-    <rect x="205" y="165" width="180" height="200" class="court"/>
-    <text x="295" y="260" text-anchor="middle" class="small">open court</text>
-    <text x="295" y="287" text-anchor="middle" class="tiny">internal centre</text>
-
-    <!-- front bay order -->
-    <line x1="0" y1="530" x2="590" y2="530" class="rule"/>
-    <line x1="74" y1="520" x2="74" y2="545" class="rule"/><line x1="221" y1="520" x2="221" y2="545" class="rule"/><line x1="369" y1="520" x2="369" y2="545" class="rule"/><line x1="516" y1="520" x2="516" y2="545" class="rule"/>
-    <text x="295" y="580" text-anchor="middle" class="tiny">ordered four-bay principal field</text>
-
-    <!-- off-centre entry at third bay -->
-    <line x1="369" y1="530" x2="369" y2="486" stroke="#fff" stroke-width="12"/>
-    <path d="M 369 570 L 369 472 C 369 430 338 402 318 370 C 300 341 298 315 298 292" class="rule" marker-end="url(#arrow)"/>
-    <text x="400" y="468" class="tiny">principal entrance</text>
-    <text x="400" y="490" class="tiny">off geometric centre</text>
-
-    <!-- garden continuation -->
-    <path d="M 295 165 V 70" class="dash" marker-end="url(#arrow)"/>
-    <text x="320" y="86" class="tiny">garden legible beyond</text>
-
-    <text x="20" y="30" class="tiny">west rooms</text><text x="470" y="30" class="tiny">service flank</text>
+    <rect x="0" y="0" width="590" height="530" fill="#f7f7f5" stroke="#111" stroke-width="4"/><rect x="205" y="165" width="180" height="200" class="court"/><text x="295" y="260" text-anchor="middle" class="small">open court</text><text x="295" y="287" text-anchor="middle" class="tiny">internal centre</text>
+    <line x1="0" y1="530" x2="590" y2="530" class="rule"/><line x1="74" y1="520" x2="74" y2="545" class="rule"/><line x1="221" y1="520" x2="221" y2="545" class="rule"/><line x1="369" y1="520" x2="369" y2="545" class="rule"/><line x1="516" y1="520" x2="516" y2="545" class="rule"/><text x="295" y="580" text-anchor="middle" class="tiny">ordered four-bay principal field</text>
+    <line x1="369" y1="530" x2="369" y2="486" stroke="#fff" stroke-width="12"/><path d="M 369 570 L 369 472 C 369 430 338 402 318 370 C 300 341 298 315 298 292" class="rule" marker-end="url(#arrow)"/><text x="400" y="468" class="tiny">principal entrance</text><text x="400" y="490" class="tiny">off geometric centre</text>
+    <path d="M 295 165 V 70" class="dash" marker-end="url(#arrow)"/><text x="320" y="86" class="tiny">garden legible beyond</text><text x="20" y="30" class="tiny">west rooms</text><text x="470" y="30" class="tiny">service flank</text>
   </g>
 
   <text x="865" y="145" class="sub">SECTION ESTABLISHES RANK</text>
   <g transform="translate(840 190)">
-    <!-- south wing -->
-    <rect x="0" y="270" width="270" height="220" class="field"/>
-    <rect x="0" y="70" width="270" height="180" class="field"/>
-    <!-- north wing -->
-    <rect x="520" y="270" width="270" height="220" class="field"/>
-    <rect x="520" y="70" width="270" height="180" class="field"/>
-    <path d="M 0 70 L 270 60 M 520 60 L 790 70" class="rule"/>
-    <line x1="270" y1="490" x2="270" y2="35" class="dash"/><line x1="520" y1="490" x2="520" y2="35" class="dash"/>
-    <text x="395" y="250" text-anchor="middle" class="sub">open court</text>
-
-    <text x="135" y="382" text-anchor="middle" class="small">principal shared rooms</text>
-    <text x="655" y="382" text-anchor="middle" class="small">garden / service rooms</text>
-    <text x="135" y="165" text-anchor="middle" class="small">private upper storey</text>
-    <text x="655" y="165" text-anchor="middle" class="small">private upper storey</text>
-
-    <line x1="835" y1="490" x2="835" y2="270" class="soft"/>
-    <line x1="825" y1="490" x2="845" y2="490" class="soft"/><line x1="825" y1="270" x2="845" y2="270" class="soft"/>
-    <text x="865" y="388" class="small">≈2.95 m clear</text>
-
-    <line x1="835" y1="250" x2="835" y2="70" class="soft"/>
-    <line x1="825" y1="250" x2="845" y2="250" class="soft"/><line x1="825" y1="70" x2="845" y2="70" class="soft"/>
-    <text x="865" y="168" class="small">≈2.70 m clear</text>
-
-    <text x="0" y="535" class="tiny">ground FFL ±0</text><text x="0" y="255" class="tiny">first FFL ≈ +3.30 m</text><text x="0" y="55" class="tiny">upper ceiling ≈ +6.00 m · cornice/eaves control ≈ +6.25 m</text>
+    <rect x="0" y="270" width="270" height="220" class="field"/><rect x="0" y="70" width="270" height="180" class="field"/><rect x="520" y="270" width="270" height="220" class="field"/><rect x="520" y="70" width="270" height="180" class="field"/>
+    <path d="M 0 70 L 270 60 M 520 60 L 790 70" class="rule"/><line x1="270" y1="490" x2="270" y2="35" class="dash"/><line x1="520" y1="490" x2="520" y2="35" class="dash"/><text x="395" y="250" text-anchor="middle" class="sub">open court</text>
+    <text x="135" y="382" text-anchor="middle" class="small">principal shared rooms</text><text x="655" y="382" text-anchor="middle" class="small">garden / service rooms</text><text x="135" y="165" text-anchor="middle" class="small">private upper storey</text><text x="655" y="165" text-anchor="middle" class="small">private upper storey</text>
+    <line x1="835" y1="490" x2="835" y2="270" class="soft"/><line x1="825" y1="490" x2="845" y2="490" class="soft"/><line x1="825" y1="270" x2="845" y2="270" class="soft"/><text x="865" y="388" class="small">≈2.95 m clear</text>
+    <line x1="835" y1="250" x2="835" y2="70" class="soft"/><line x1="825" y1="250" x2="845" y2="250" class="soft"/><line x1="825" y1="70" x2="845" y2="70" class="soft"/><text x="865" y="168" class="small">≈2.70 m clear</text>
+    <text x="0" y="535" class="tiny">datums: GF FFL ±0 · first FFL ≈ +3.30 m · upper ceiling ≈ +6.00 m · cornice/eaves ≈ +6.25 m</text>
   </g>
 
   <text x="75" y="825" class="small">The façade is ordered; the entrance is off-centre. The plan recentres internally on the court, while the section gives restrained primacy to the shared ground floor.</text>
