@@ -8,11 +8,11 @@ The publication sequence is:
 2. [Part I — The Proposition](part-i.md), including the canonical [Governing Principles](governing-principles.md) and the developed [Principle 8 — Design for Repose](principle-08-repose.md)
 3. [Part II — Architecture of the Platform](part-ii.md), including [Maintenance Geography — The Exterior](maintenance-geography-external.md)
 4. [Part III — Pattern Language](../patterns/README.md)
-5. [Part IV — Reference House](../reference-house/README.md)
+5. [Part IV — Reference House](part-iv.md)
 6. [Part V — Making and Testing the Platform](part-v.md)
 7. [Sources and further reading](sources-and-further-reading.md)
 
-Part III and Part IV are owned by their canonical repository areas rather than duplicated as architectural authorities under `manuscript/`. Publication order is not filesystem ownership. Reader-facing synthesis may live here while the canonical pattern and Reference House records remain authoritative. The intended book structure and chapter plan are recorded in [Publication Architecture](publication-architecture.md).
+Part III remains owned canonically by the pattern-language area. The Reference House architectural state remains owned canonically by `docs/reference-house/`. Part IV is a reader-facing synthesis of that state, not a second architectural authority. Publication order is therefore distinct from filesystem and authority ownership. The intended book structure and chapter plan are recorded in [Publication Architecture](publication-architecture.md).
 
 The path from a mature manuscript to private critical edition, external adversarial review and eventual public release is governed separately by the [Publication Credibility and Release Programme](publication-credibility-release-programme.md). Its governing rule is **epistemic credibility before commercial credibility**: the work should survive deliberate internal attack and serious external criticism before publisher or market validation is sought.
 
