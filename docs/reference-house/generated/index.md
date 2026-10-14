@@ -41,14 +41,14 @@ The structural view uses the same north-up projection as the plans. Span symbols
 
 Service and boundary topology are principally registers rather than drawings. COA therefore emits them as normal searchable, selectable and reflowable documents instead of fixed SVG canvases.
 
-- [Service topology register](./service-register)
-- [Envelope / boundary topology register](./boundary-register)
+- [Service topology register](./service-register.md)
+- [Envelope / boundary topology register](./boundary-register.md)
 
 A graphical service or boundary companion should exist only where spatial form answers a question that the registers cannot answer efficiently. There is no requirement for every compiler domain to produce a picture.
 
 ## Machine identity
 
-[Output manifest](./output-manifest.json) records the canonical compile fingerprint, renderer version and SHA-256 identity of each successor output. `npm run outputs:check` regenerates the family in memory and refuses stale committed outputs.
+The generated output manifest records the canonical compile fingerprint, renderer version and SHA-256 identity of each successor output. `npm run outputs:check` regenerates the family in memory and refuses stale committed outputs.
 
 ## Reading the uncertainty language
 
