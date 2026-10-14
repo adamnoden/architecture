@@ -12,7 +12,7 @@ Can the successor outputs operate as one deterministic, inspectable system witho
 
 ## Integrated successor family
 
-The Reference House successor inspection family is built from one canonical single-pass compile and contains six human-facing outputs:
+The Reference House successor inspection family is built from one canonical single-pass output context and contains six human-facing outputs:
 
 1. ground-floor semantic inspection plan;
 2. first-floor semantic inspection plan;
@@ -23,7 +23,7 @@ The Reference House successor inspection family is built from one canonical sing
 
 The first four are SVG because their meaning materially depends on metric position, orientation or topology. The service and boundary outputs are Markdown because their primary meaning is relational/register information rather than page geometry.
 
-`compiler/reference-house/output/build.ts` is the common build surface. `generate.ts` writes the complete successor family and its machine-readable manifest. `verify.ts` regenerates the family in memory and rejects stale committed outputs.
+`compiler/reference-house/output/build.ts` is the common build surface. `generate.ts` writes the complete successor family and its machine-readable manifest. `verify.ts` regenerates the family in memory and rejects stale committed outputs. The operational build creates one `ReferenceHouseOutputContext`, and that exact compile identity feeds all six human outputs plus the manifest.
 
 ## Output identity
 
@@ -39,7 +39,7 @@ This identity is downstream provenance. It does not make a drawing architectural
 
 ## Human inspection surface
 
-`docs/reference-house/generated/index.md` is the curated inspection hub. It presents the coordinated plans, section and structural view together and links the service/boundary registers. It also states the uncertainty language and proof boundary explicitly.
+`docs/reference-house/generated/README.md` is the curated inspection hub. It presents the coordinated plans, section and structural view together and links the service/boundary registers. It also states the uncertainty language and proof boundary explicitly and is surfaced normally in Reference House navigation.
 
 The output hierarchy is therefore:
 
