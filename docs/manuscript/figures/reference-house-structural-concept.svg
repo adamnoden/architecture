@@ -1,57 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
   <title id="title">Reference House courtyard structural concept</title>
-  <desc id="desc">A north-up structural concept plan shows the courtyard creating four short gross span fields between provisional outer and courtyard bearing lines. Four short edge beams continue courtyard supports through the front and rear centre strips. Span axes are undirected. This is topology and coordination only, not structural adequacy.</desc>
+  <desc id="desc">A north-up structural concept plan shows the courtyard creating four short gross span fields between provisional outer and courtyard bearing lines. Four short edge beams continue courtyard supports through the front and rear centre strips. Span axes are undirected. Local stair and service opening obligations exist but are deliberately not positioned here because their exact geometry is unresolved. This is topology and coordination only, not structural adequacy.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/></marker>
-    <style>
-      .head{font:700 28px Arial,Helvetica,sans-serif;fill:#111}.sub{font:600 21px Arial,Helvetica,sans-serif;fill:#111}.small{font:18px Arial,Helvetica,sans-serif;fill:#444}.tiny{font:16px Arial,Helvetica,sans-serif;fill:#555}.field{fill:#f3f2ee;stroke:#ccc;stroke-width:2}.bearing{stroke:#333;stroke-width:5;stroke-dasharray:12 8;fill:none}.beam{stroke:#111;stroke-width:9;fill:none}.span{stroke:#666;stroke-width:3;fill:none}.soft{stroke:#888;stroke-width:2;fill:none}.obligation{fill:#fff;stroke:#777;stroke-width:2.5;stroke-dasharray:7 7}
-    </style>
+    <style>.head{font:700 28px Arial,Helvetica,sans-serif;fill:#111}.sub{font:600 21px Arial,Helvetica,sans-serif;fill:#111}.small{font:18px Arial,Helvetica,sans-serif;fill:#444}.tiny{font:16px Arial,Helvetica,sans-serif;fill:#555}.field{fill:#f3f2ee;stroke:#ccc;stroke-width:2}.bearing{stroke:#333;stroke-width:5;stroke-dasharray:12 8;fill:none}.beam{stroke:#111;stroke-width:9;fill:none}.span{stroke:#666;stroke-width:3;fill:none}.soft{stroke:#888;stroke-width:2;fill:none}.obligation{fill:#fff;stroke:#777;stroke-width:2.5;stroke-dasharray:7 7}</style>
   </defs>
-
-  <text x="70" y="65" class="head">REFERENCE HOUSE — COURTYARD AS STRUCTURAL ORGANISER</text>
-  <text x="70" y="99" class="small">First-floor support / span concept · derived from the COA structural successor view</text>
+  <text x="70" y="65" class="head">REFERENCE HOUSE — COURTYARD AS STRUCTURAL ORGANISER</text><text x="70" y="99" class="small">First-floor support / span concept · derived from the COA structural successor view</text>
 
   <g transform="translate(120 150)">
-    <!-- span fields -->
-    <rect x="0" y="0" width="280" height="630" class="field"/>
-    <rect x="520" y="0" width="280" height="630" class="field"/>
-    <rect x="280" y="0" width="240" height="198" class="field"/>
-    <rect x="280" y="432" width="240" height="198" class="field"/>
-
-    <!-- outer + court bearing lines, provisional topology -->
-    <rect x="0" y="0" width="800" height="630" class="bearing"/>
-    <rect x="280" y="198" width="240" height="234" class="bearing"/>
-
-    <!-- four edge beams continue court support through front/rear strips -->
-    <line x1="280" y1="0" x2="280" y2="198" class="beam"/><line x1="520" y1="0" x2="520" y2="198" class="beam"/>
-    <line x1="280" y1="432" x2="280" y2="630" class="beam"/><line x1="520" y1="432" x2="520" y2="630" class="beam"/>
-
-    <!-- span axes -->
-    <line x1="70" y1="315" x2="210" y2="315" class="span" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-    <line x1="590" y1="315" x2="730" y2="315" class="span" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-    <line x1="400" y1="45" x2="400" y2="153" class="span" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-    <line x1="400" y1="477" x2="400" y2="585" class="span" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-
-    <text x="140" y="350" text-anchor="middle" class="sub">≈4.2 m gross</text><text x="660" y="350" text-anchor="middle" class="sub">≈4.2 m gross</text>
-    <text x="400" y="117" text-anchor="middle" class="small">≈3.4 m gross</text><text x="400" y="549" text-anchor="middle" class="small">≈3.4 m gross</text>
-    <text x="400" y="305" text-anchor="middle" class="sub">open court</text>
-    <text x="400" y="335" text-anchor="middle" class="tiny">no floor field</text>
-
-    <!-- qualitative interruption obligations -->
-    <ellipse cx="415" cy="535" rx="55" ry="40" class="obligation"/>
-    <text x="415" y="610" text-anchor="middle" class="tiny">stair opening · exact geometry unresolved</text>
-    <ellipse cx="675" cy="245" rx="58" ry="42" class="obligation"/>
-    <text x="675" y="180" text-anchor="middle" class="tiny">service opening · approximate envelope only</text>
+    <rect x="0" y="0" width="280" height="630" class="field"/><rect x="520" y="0" width="280" height="630" class="field"/><rect x="280" y="0" width="240" height="198" class="field"/><rect x="280" y="432" width="240" height="198" class="field"/>
+    <rect x="0" y="0" width="800" height="630" class="bearing"/><rect x="280" y="198" width="240" height="234" class="bearing"/>
+    <line x1="280" y1="0" x2="280" y2="198" class="beam"/><line x1="520" y1="0" x2="520" y2="198" class="beam"/><line x1="280" y1="432" x2="280" y2="630" class="beam"/><line x1="520" y1="432" x2="520" y2="630" class="beam"/>
+    <line x1="70" y1="315" x2="210" y2="315" class="span" marker-start="url(#arrow)" marker-end="url(#arrow)"/><line x1="590" y1="315" x2="730" y2="315" class="span" marker-start="url(#arrow)" marker-end="url(#arrow)"/><line x1="400" y1="45" x2="400" y2="153" class="span" marker-start="url(#arrow)" marker-end="url(#arrow)"/><line x1="400" y1="477" x2="400" y2="585" class="span" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text x="140" y="350" text-anchor="middle" class="sub">≈4.2 m gross</text><text x="660" y="350" text-anchor="middle" class="sub">≈4.2 m gross</text><text x="400" y="117" text-anchor="middle" class="small">≈3.4 m gross</text><text x="400" y="549" text-anchor="middle" class="small">≈3.4 m gross</text><text x="400" y="305" text-anchor="middle" class="sub">open court</text><text x="400" y="335" text-anchor="middle" class="tiny">no floor field</text>
   </g>
 
   <g transform="translate(990 175)">
-    <text x="0" y="0" class="sub">READING THE CONCEPT</text>
-    <line x1="0" y1="25" x2="330" y2="25" class="soft"/>
+    <text x="0" y="0" class="sub">READING THE CONCEPT</text><line x1="0" y1="25" x2="330" y2="25" class="soft"/>
     <line x1="0" y1="75" x2="90" y2="75" class="bearing"/><text x="115" y="82" class="small">bearing line</text><text x="115" y="106" class="tiny">provisional topology</text>
     <line x1="0" y1="145" x2="90" y2="145" class="beam"/><text x="115" y="152" class="small">short edge beam</text>
     <line x1="5" y1="220" x2="85" y2="220" class="span" marker-start="url(#arrow)" marker-end="url(#arrow)"/><text x="115" y="227" class="small">undirected span axis</text>
-    <rect x="15" y="280" width="70" height="45" class="obligation"/><text x="115" y="306" class="small">local opening obligation</text>
-
+    <rect x="15" y="280" width="70" height="45" class="obligation"/><text x="115" y="297" class="small">stair / service opening</text><text x="115" y="320" class="tiny">obligation exists; position omitted</text>
     <text x="0" y="390" class="small">The courtyard prevents the floors</text><text x="0" y="418" class="small">from spanning the full house width.</text>
     <text x="0" y="465" class="small">Architecture establishes a plausible</text><text x="0" y="493" class="small">short-span load-path topology before</text><text x="0" y="521" class="small">engineering sizes members and joints.</text>
   </g>
