@@ -6,7 +6,8 @@ export const projectIdentity = {
   formerMasterNames: ['House Kernel'],
   formerMasterNameAllowedSources: [
     'STATUS.md',
-    'docs/manuscript/publication-architecture.md'
+    'docs/manuscript/publication-architecture.md',
+    'docs/manuscript/glossary.md'
   ],
   legacyNames: [
     'House Systems Architecture',
