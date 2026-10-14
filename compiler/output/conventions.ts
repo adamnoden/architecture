@@ -64,11 +64,14 @@ export const renderQualitativeHost = (
   const my = (y1 + y2) / 2
   return `<g data-entity="${escapeXml(id)}" data-authority="qualitative" data-geometry="unresolved" data-convention="qualitative-host">
     ${svgLine(x1, y1, x2, y2, 'class="oh-qualitative"')}
-    ${svgText(mx, my - 115, label, 'class="oh-note" text-anchor="middle"')}
+    ${label ? svgText(mx, my - 115, label, 'class="oh-note" text-anchor="middle"') : ''}
   </g>`
 }
 
-/** Entire shared candidate edge is marked: no point on the edge is asserted as the doorway. */
+/**
+ * Entire shared candidate edge is marked. The small ↔ symbol means connection obligation;
+ * the exact opening position remains unasserted and is carried in an accessible title.
+ */
 export const renderRequiredConnection = (
   id: string,
   x1: number,
@@ -79,8 +82,9 @@ export const renderRequiredConnection = (
   const mx = (x1 + x2) / 2
   const my = (y1 + y2) / 2
   return `<g data-entity="${escapeXml(id)}" data-authority="qualitative" data-geometry="unresolved" data-convention="required-connection">
+    <title>Required connection; exact position unresolved</title>
     ${svgLine(x1, y1, x2, y2, 'class="oh-qualitative"')}
-    ${svgText(mx, my + 165, 'connection required · position unresolved', 'class="oh-note" text-anchor="middle"')}
+    ${svgText(mx, my + 62, '↔', 'class="oh-note" text-anchor="middle"')}
   </g>`
 }
 
@@ -121,8 +125,8 @@ export const renderCompactLegend = (x: number, y: number): string => {
     ['controlled / represented', 'oh-controlled'],
     ['provisional', 'oh-provisional'],
     ['approximate', 'oh-approximate'],
-    ['range — outer extent', 'oh-range-max'],
-    ['relationship known · geometry unresolved', 'oh-qualitative']
+    ['range — max extent', 'oh-range-max'],
+    ['unresolved relationship', 'oh-qualitative']
   ]
   return `<g data-convention="inspection-legend">
     ${svgText(x, y, 'Drawing key', 'class="oh-label"')}
@@ -134,6 +138,6 @@ export const renderCompactLegend = (x: number, y: number): string => {
 }
 
 export const ANNOTATION_ZONE = {
-  rightWidth: 3900,
+  rightWidth: 4700,
   bottomHeight: 2100
 } as const

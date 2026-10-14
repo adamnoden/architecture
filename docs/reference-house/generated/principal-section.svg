@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="-1050 -1750 16550 11185" role="img" aria-labelledby="title desc" data-output-id="OH-RH-SECTION-AA-1" data-renderer-version="1.0.0" data-source-compile="8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba" data-compile-status="PASS" data-section="A–A">
+<title id="title">Reference House — principal section A–A</title>
+<desc id="desc">Deterministic south-to-north semantic inspection section through the courtyard centreline. Occupied volumes, datums, roof screening geometry and stair landing guides are represented without inventing construction build-ups.</desc>
+<style>
+  .oh-bg{fill:#fbfaf7}
+  .oh-controlled{stroke:#171717;stroke-width:54;fill:none}
+  .oh-provisional{stroke:#555;stroke-width:40;stroke-dasharray:120 80;fill:none}
+  .oh-approximate{stroke:#333;stroke-width:38;stroke-dasharray:50 45;fill:none}
+  .oh-range-max{stroke:#777;stroke-width:32;stroke-dasharray:90 60;fill:none}
+  .oh-range-min{stroke:#222;stroke-width:32;fill:none}
+  .oh-qualitative{stroke:#555;stroke-width:26;stroke-dasharray:20 55;fill:none}
+  .oh-context{stroke:#aaa;stroke-width:20;fill:none}
+  .oh-room{fill:#f2f1ed}.oh-circulation{fill:#e9e9e5}.oh-court{fill:#fff}
+  .oh-title{font:600 410px system-ui,sans-serif;fill:#171717}
+  .oh-subtitle{font:205px system-ui,sans-serif;fill:#444}
+  .oh-label{font:600 220px system-ui,sans-serif;fill:#222}
+  .oh-id{font:160px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#666}
+  .oh-note{font:165px system-ui,sans-serif;fill:#444}
+  .oh-mono{font:165px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
+  .oh-review{fill:#fff;stroke:#171717;stroke-width:28;stroke-dasharray:70 45}
+  .oh-review-text{font:700 190px system-ui,sans-serif;letter-spacing:18px;fill:#171717}
+
+  .rh-outer{stroke-width:68}.rh-court-boundary{stroke-width:46}.rh-internal{stroke-width:32}
+  .rh-opening-cut{stroke:#fbfaf7;stroke-width:150}
+  .rh-opening-unknown{fill:#fbfaf7;stroke:#222;stroke-width:28}
+  .rh-dim{stroke:#8a8a8a;stroke-width:20;fill:none}
+  .rh-axis{stroke:#999;stroke-width:18;stroke-dasharray:70 60}
+  .rh-section-edge{stroke:#222;stroke-width:52;fill:none}
+  .rh-section-datum{stroke:#999;stroke-width:20;stroke-dasharray:85 65;fill:none}
+  .rh-roof{stroke:#222;stroke-width:54;fill:none}
+  .rh-landing{stroke:#777;stroke-width:26;stroke-dasharray:85 65;fill:none}
+  .rh-court-edge{stroke:#555;stroke-width:32;stroke-dasharray:105 75;fill:none}
+  .rh-zone{fill:#f0eee8}
+</style>
+<rect x="-1050" y="-1750" width="16550" height="11185" class="oh-bg"/>
+<text x="0" y="-1200" class="oh-title">Reference House — principal section A–A</text>
+<text x="0" y="-810" class="oh-subtitle">A–A · SOUTH → NORTH · X=6000 mm · GENERATED SEMANTIC INSPECTION</text>
+<rect x="0" y="4385" width="3400" height="2950" class="rh-zone"/>
+<rect x="0" y="1335" width="3400" height="2700" class="rh-zone"/>
+<rect x="7400" y="4385" width="3400" height="2950" class="rh-zone"/>
+<rect x="7400" y="1335" width="3400" height="2700" class="rh-zone"/>
+<line x1="3400" y1="7335" x2="3400" y2="1000" class="rh-court-edge"/>
+<line x1="7400" y1="7335" x2="7400" y2="1000" class="rh-court-edge"/>
+<line x1="0" y1="7335" x2="3400" y2="7335" class="rh-section-edge" data-datum="GF FFL" data-z="0"/>
+<line x1="7400" y1="7335" x2="10800" y2="7335" class="rh-section-edge" data-datum="GF FFL" data-z="0"/>
+<text x="11450" y="7390" class="oh-mono">GF FFL ±0 mm</text>
+<line x1="0" y1="4385" x2="3400" y2="4385" class="rh-section-datum" data-datum="ground clear ceiling" data-z="2950"/>
+<line x1="7400" y1="4385" x2="10800" y2="4385" class="rh-section-datum" data-datum="ground clear ceiling" data-z="2950"/>
+<text x="11450" y="4440" class="oh-mono">ground clear ceiling +2950 mm</text>
+<line x1="0" y1="4035" x2="3400" y2="4035" class="rh-section-edge" data-datum="first FFL" data-z="3300"/>
+<line x1="7400" y1="4035" x2="10800" y2="4035" class="rh-section-edge" data-datum="first FFL" data-z="3300"/>
+<text x="11450" y="4090" class="oh-mono">first FFL +3300 mm</text>
+<line x1="0" y1="1335" x2="3400" y2="1335" class="rh-section-datum" data-datum="upper clear ceiling" data-z="6000"/>
+<line x1="7400" y1="1335" x2="10800" y2="1335" class="rh-section-datum" data-datum="upper clear ceiling" data-z="6000"/>
+<text x="11450" y="1390" class="oh-mono">upper clear ceiling +6000 mm</text>
+<line x1="0" y1="1085" x2="3400" y2="1085" class="rh-section-datum" data-datum="cornice/eaves control" data-z="6250"/>
+<line x1="7400" y1="1085" x2="10800" y2="1085" class="rh-section-datum" data-datum="cornice/eaves control" data-z="6250"/>
+<text x="11450" y="1140" class="oh-mono">cornice/eaves control +6250 mm</text>
+<line x1="0" y1="1085" x2="3400" y2="1000" class="rh-roof" data-roof-field="south"/>
+<line x1="7400" y1="1000" x2="10800" y2="1085" class="rh-roof" data-roof-field="north"/>
+<text x="1700" y="790" class="oh-note" text-anchor="middle">fall outward · 1:40</text>
+<text x="9100" y="790" class="oh-note" text-anchor="middle">fall outward · 1:40</text>
+<line x1="280" y1="6235" x2="3120" y2="6235" class="rh-landing" data-derived="STAIR-LANDING-1" data-z="1100"/>
+<text x="1700" y="6150" class="oh-note" text-anchor="middle">derived landing +1100</text>
+<line x1="280" y1="5135" x2="3120" y2="5135" class="rh-landing" data-derived="STAIR-LANDING-2" data-z="2200"/>
+<text x="1700" y="5050" class="oh-note" text-anchor="middle">derived landing +2200</text>
+<text x="1700" y="2635" class="oh-label" text-anchor="middle">Upper stair field</text>
+<text x="5400" y="2935" class="oh-label" text-anchor="middle">Open courtyard</text>
+<text x="9100" y="2635" class="oh-label" text-anchor="middle">Dry / landing field</text>
+<text x="1700" y="5835" class="oh-label" text-anchor="middle">Hall / stair field</text>
+<text x="9100" y="5835" class="oh-label" text-anchor="middle">Garden dining</text>
+<text x="0" y="7565" class="oh-label" text-anchor="middle">S</text>
+<text x="10800" y="7565" class="oh-label" text-anchor="middle">N</text>
+<line x1="0" y1="7985" x2="10800" y2="7985" class="rh-dim"/>
+<text x="5400" y="8265" class="oh-mono" text-anchor="middle">10800 mm overall depth</text>
+<line x1="3400" y1="7725" x2="7400" y2="7725" class="rh-dim"/>
+<text x="5400" y="7625" class="oh-mono" text-anchor="middle">4000 mm court</text>
+<text x="11450" y="5635" class="oh-label">Section key</text>
+<text x="11450" y="5935" class="oh-note">solid heavy · FFL / represented edge</text>
+<text x="11450" y="6185" class="oh-note">dashed · datum / derived landing guide</text>
+<text x="11450" y="6435" class="oh-note">courtyard open to sky</text>
+<text x="11450" y="6835" class="oh-note">Stair 18 rises · 6/6/6 · rise 183.333 mm · going 280 mm</text>
+<text x="0" y="8785" class="oh-note">Stair landings are datum guides only. No strings, treads, guards, headroom, floor build-up or exact well geometry is implied.</text>
+<text x="0" y="9085" class="oh-id">Source compile 8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba</text>
+</svg>
