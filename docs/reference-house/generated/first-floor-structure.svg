@@ -42,23 +42,11 @@
     <text x="15250" y="900" class="oh-label" text-anchor="middle">N</text>
   </g>
 <g data-layer="span-fields">
-<g data-entity="F-W" data-kind="span-field" data-span-axis="x" data-provisional="true">
-<rect x="0" y="0" width="4200" height="10800" class="st-field"/>
-<line data-entity="F-W" data-convention="span-axis" x1="1200" y1="5400" x2="3000" y2="5400" stroke="#666" stroke-width="28" marker-start="url(#oh-span-arrow)" marker-end="url(#oh-span-arrow)"/>
-<text x="2100" y="5670" class="oh-label" text-anchor="middle">west floor strip · 4200 mm gross</text>
-<text x="2100" y="5900" class="oh-id" text-anchor="middle">F-W</text>
-</g>
 <g data-entity="F-E" data-kind="span-field" data-span-axis="x" data-provisional="true">
 <rect x="7800" y="0" width="4200" height="10800" class="st-field"/>
 <line data-entity="F-E" data-convention="span-axis" x1="9000" y1="5400" x2="10800" y2="5400" stroke="#666" stroke-width="28" marker-start="url(#oh-span-arrow)" marker-end="url(#oh-span-arrow)"/>
 <text x="9900" y="5670" class="oh-label" text-anchor="middle">east floor strip · 4200 mm gross</text>
 <text x="9900" y="5900" class="oh-id" text-anchor="middle">F-E</text>
-</g>
-<g data-entity="F-S" data-kind="span-field" data-span-axis="y" data-provisional="true">
-<rect x="4200" y="7400" width="3600" height="3400" class="st-field"/>
-<line data-entity="F-S" data-convention="span-axis" x1="6000" y1="9950" x2="6000" y2="8250" stroke="#666" stroke-width="28" marker-start="url(#oh-span-arrow)" marker-end="url(#oh-span-arrow)"/>
-<text x="6000" y="9370" class="oh-label" text-anchor="middle">south centre floor strip · 3400 mm gross</text>
-<text x="6000" y="9600" class="oh-id" text-anchor="middle">F-S</text>
 </g>
 <g data-entity="F-N" data-kind="span-field" data-span-axis="y" data-provisional="true">
 <rect x="4200" y="0" width="3600" height="3400" class="st-field"/>
@@ -66,26 +54,38 @@
 <text x="6000" y="1970" class="oh-label" text-anchor="middle">north centre floor strip · 3400 mm gross</text>
 <text x="6000" y="2200" class="oh-id" text-anchor="middle">F-N</text>
 </g>
+<g data-entity="F-S" data-kind="span-field" data-span-axis="y" data-provisional="true">
+<rect x="4200" y="7400" width="3600" height="3400" class="st-field"/>
+<line data-entity="F-S" data-convention="span-axis" x1="6000" y1="9950" x2="6000" y2="8250" stroke="#666" stroke-width="28" marker-start="url(#oh-span-arrow)" marker-end="url(#oh-span-arrow)"/>
+<text x="6000" y="9370" class="oh-label" text-anchor="middle">south centre floor strip · 3400 mm gross</text>
+<text x="6000" y="9600" class="oh-id" text-anchor="middle">F-S</text>
+</g>
+<g data-entity="F-W" data-kind="span-field" data-span-axis="x" data-provisional="true">
+<rect x="0" y="0" width="4200" height="10800" class="st-field"/>
+<line data-entity="F-W" data-convention="span-axis" x1="1200" y1="5400" x2="3000" y2="5400" stroke="#666" stroke-width="28" marker-start="url(#oh-span-arrow)" marker-end="url(#oh-span-arrow)"/>
+<text x="2100" y="5670" class="oh-label" text-anchor="middle">west floor strip · 4200 mm gross</text>
+<text x="2100" y="5900" class="oh-id" text-anchor="middle">F-W</text>
+</g>
 </g>
 <g data-layer="structural-lines">
-<line x1="0" y1="10800" x2="0" y2="0" class="st-bearing" data-entity="LB-OUTER-W" data-kind="bearing-wall" data-provisional="true"/>
-<line x1="12000" y1="10800" x2="12000" y2="0" class="st-bearing" data-entity="LB-OUTER-E" data-kind="bearing-wall" data-provisional="true"/>
-<line x1="0" y1="10800" x2="12000" y2="10800" class="st-bearing" data-entity="LB-OUTER-S" data-kind="bearing-wall" data-provisional="true"/>
-<line x1="0" y1="0" x2="12000" y2="0" class="st-bearing" data-entity="LB-OUTER-N" data-kind="bearing-wall" data-provisional="true"/>
-<line x1="4200" y1="7400" x2="4200" y2="3400" class="st-bearing" data-entity="LB-COURT-W" data-kind="bearing-wall" data-provisional="true"/>
-<line x1="7800" y1="7400" x2="7800" y2="3400" class="st-bearing" data-entity="LB-COURT-E" data-kind="bearing-wall" data-provisional="true"/>
-<line x1="4200" y1="7400" x2="7800" y2="7400" class="st-bearing" data-entity="LB-COURT-S" data-kind="bearing-wall" data-provisional="true"/>
-<line x1="4200" y1="3400" x2="7800" y2="3400" class="st-bearing" data-entity="LB-COURT-N" data-kind="bearing-wall" data-provisional="true"/>
-<line x1="4200" y1="10800" x2="4200" y2="7400" class="st-beam" data-entity="EB-W-S" data-kind="edge-beam" data-provisional="true"/>
+<line x1="7800" y1="3400" x2="7800" y2="0" class="st-beam" data-entity="EB-E-N" data-kind="edge-beam" data-provisional="true"/>
 <line x1="7800" y1="10800" x2="7800" y2="7400" class="st-beam" data-entity="EB-E-S" data-kind="edge-beam" data-provisional="true"/>
 <line x1="4200" y1="3400" x2="4200" y2="0" class="st-beam" data-entity="EB-W-N" data-kind="edge-beam" data-provisional="true"/>
-<line x1="7800" y1="3400" x2="7800" y2="0" class="st-beam" data-entity="EB-E-N" data-kind="edge-beam" data-provisional="true"/>
+<line x1="4200" y1="10800" x2="4200" y2="7400" class="st-beam" data-entity="EB-W-S" data-kind="edge-beam" data-provisional="true"/>
+<line x1="7800" y1="7400" x2="7800" y2="3400" class="st-bearing" data-entity="LB-COURT-E" data-kind="bearing-wall" data-provisional="true"/>
+<line x1="4200" y1="3400" x2="7800" y2="3400" class="st-bearing" data-entity="LB-COURT-N" data-kind="bearing-wall" data-provisional="true"/>
+<line x1="4200" y1="7400" x2="7800" y2="7400" class="st-bearing" data-entity="LB-COURT-S" data-kind="bearing-wall" data-provisional="true"/>
+<line x1="4200" y1="7400" x2="4200" y2="3400" class="st-bearing" data-entity="LB-COURT-W" data-kind="bearing-wall" data-provisional="true"/>
+<line x1="12000" y1="10800" x2="12000" y2="0" class="st-bearing" data-entity="LB-OUTER-E" data-kind="bearing-wall" data-provisional="true"/>
+<line x1="0" y1="0" x2="12000" y2="0" class="st-bearing" data-entity="LB-OUTER-N" data-kind="bearing-wall" data-provisional="true"/>
+<line x1="0" y1="10800" x2="12000" y2="10800" class="st-bearing" data-entity="LB-OUTER-S" data-kind="bearing-wall" data-provisional="true"/>
+<line x1="0" y1="10800" x2="0" y2="0" class="st-bearing" data-entity="LB-OUTER-W" data-kind="bearing-wall" data-provisional="true"/>
 </g>
 <g data-layer="reaction-nodes">
-<circle data-entity="RN-CW-S" data-kind="reaction-node" cx="4200" cy="7400" r="105" class="st-reaction"/>
+<circle data-entity="RN-CE-N" data-kind="reaction-node" cx="7800" cy="3400" r="105" class="st-reaction"/>
 <circle data-entity="RN-CE-S" data-kind="reaction-node" cx="7800" cy="7400" r="105" class="st-reaction"/>
 <circle data-entity="RN-CW-N" data-kind="reaction-node" cx="4200" cy="3400" r="105" class="st-reaction"/>
-<circle data-entity="RN-CE-N" data-kind="reaction-node" cx="7800" cy="3400" r="105" class="st-reaction"/>
+<circle data-entity="RN-CW-S" data-kind="reaction-node" cx="4200" cy="7400" r="105" class="st-reaction"/>
 </g>
 <g data-layer="legend">
     <text x="12900" y="1650" class="oh-label">Structural key</text>
@@ -97,15 +97,15 @@
 <g data-layer="interruptions">
     <text x="12900" y="3500" class="oh-label">Interruption obligations</text>
   
-<g data-entity="ST-01" data-kind="stair-opening" data-geometry="qualitative">
-      <rect x="12900" y="3640" width="3800" height="520" class="st-interruption"/>
-      <text x="13080" y="3840" class="oh-mono">ST-01 · stair-opening</text>
-      <text x="13080" y="4065" class="oh-note">F-S · qualitative · exact geometry unresolved</text>
-    </g>
 <g data-entity="PEN-SV-01" data-kind="service-opening" data-geometry="approximate-envelope">
+      <rect x="12900" y="3640" width="3800" height="520" class="st-interruption"/>
+      <text x="13080" y="3840" class="oh-mono">PEN-SV-01 · service-opening</text>
+      <text x="13080" y="4065" class="oh-note">F-E · approx. envelope 1050 × 850 mm · exact position unresolved</text>
+    </g>
+<g data-entity="ST-01" data-kind="stair-opening" data-geometry="qualitative">
       <rect x="12900" y="4360" width="3800" height="520" class="st-interruption"/>
-      <text x="13080" y="4560" class="oh-mono">PEN-SV-01 · service-opening</text>
-      <text x="13080" y="4785" class="oh-note">F-E · approx. envelope 1050 × 850 mm · exact position unresolved</text>
+      <text x="13080" y="4560" class="oh-mono">ST-01 · stair-opening</text>
+      <text x="13080" y="4785" class="oh-note">F-S · qualitative · exact geometry unresolved</text>
     </g>
 </g>
 <text x="12900" y="5700" class="oh-label">Diaphragm</text>
