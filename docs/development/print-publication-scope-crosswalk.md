@@ -12,8 +12,8 @@ Where editorial intent and machine scope disagree, stop and reconcile them delib
 
 ## Scope rules
 
-1. Compile current publication-facing canonical material; do not fill manuscript gaps with web navigation or programme-control documents.
-2. Preserve repository ownership while allowing publication-native synthesis. Part III remains sourced from the canonical pattern language; Part IV may be authored under `docs/manuscript/` when it synthesises rather than duplicates the canonical Reference House records.
+1. Compile current publication-facing material; do not fill manuscript gaps with web navigation or programme-control documents.
+2. Preserve canonical ownership while allowing publication-native synthesis. Part III's pattern records remain canonical under `docs/patterns/`; the reader-facing bridge belongs to publication. Part IV may be authored under `docs/manuscript/` when it synthesises rather than duplicates canonical Reference House records.
 3. Supporting evidence remains supporting evidence. Research pages stay outside the primary PDF unless publication prose incorporates them deliberately.
 4. Historical and migration records remain online provenance rather than primary linear reading.
 5. Dynamic website-only representation may receive a deterministic **print adapter** only when the underlying canonical content is already publication-facing. An adapter may render or compose existing source; it may not invent the argument.
@@ -30,42 +30,38 @@ Where editorial intent and machine scope disagree, stop and reconcile them delib
 | 2 | front-matter | Reader's Guide | `docs/manuscript/readers-guide.md` | `—` |
 | 3 | part | Part I — The Proposition | `docs/manuscript/part-i.md` | `part-i-composite` |
 | 4 | part | Part II — Architecture of the Platform | `docs/manuscript/part-ii.md` | `part-ii-composite` |
-| 5 | index | Part III — Pattern Language | `docs/patterns/README.md` | `pattern-index` |
-| 6 | method | Pattern Language — Model and Authoring Contract | `docs/patterns/language-model.md` | `—` |
-| 7 | method | Service Topology — Generative Sequence | `docs/patterns/service-topology-sequence.md` | `—` |
-| 8 | pattern | HSA-P-001 — Controlled Utility Entry | `docs/patterns/controlled-utility-entry.md` | `pattern-page` |
-| 9 | pattern | HSA-P-002 — Plant Room as Service Hub | `docs/patterns/plant-room-service-hub.md` | `pattern-page` |
-| 10 | pattern | HSA-P-014 — Accessible Vertical Service Zone | `docs/patterns/accessible-vertical-service-zone.md` | `pattern-page` |
-| 11 | pattern | HSA-P-003 — Coherent Horizontal Service Route | `docs/patterns/coherent-horizontal-service-route.md` | `pattern-page` |
-| 12 | pattern | HSA-P-015 — Accessible Room Service Route | `docs/patterns/accessible-room-service-route.md` | `pattern-page` |
-| 13 | pattern | HSA-P-004 — High-Service-Room Service Wall | `docs/patterns/high-service-room-service-wall.md` | `pattern-page` |
-| 14 | pattern | HSA-P-005 — Designed Structural Penetration | `docs/patterns/designed-structural-penetration.md` | `pattern-page` |
-| 15 | pattern | HSA-P-016 — Compartmented Service Void | `docs/patterns/compartmented-service-void.md` | `pattern-page` |
-| 16 | pattern | HSA-P-017 — Visible Leakage Path | `docs/patterns/visible-leakage-path.md` | `pattern-page` |
-| 17 | pattern | HSA-P-018 — Failure-Tolerant Wet Service Room | `docs/patterns/failure-tolerant-wet-service-room.md` | `pattern-page` |
-| 18 | pattern | HSA-P-009 — Accessible Rainwater Route | `docs/patterns/accessible-rainwater-route.md` | `pattern-page` |
-| 19 | pattern | HSA-P-007 — Permanent Opening / Replaceable Window | `docs/patterns/permanent-opening-replaceable-window.md` | `pattern-page` |
-| 20 | pattern | HSA-P-019 — Permanent Opening / Replaceable Door | `docs/patterns/permanent-opening-replaceable-door.md` | `pattern-page` |
-| 21 | pattern | HSA-P-020 — Designed Threshold | `docs/patterns/designed-threshold.md` | `pattern-page` |
-| 22 | pattern | HSA-P-008 — Movement / Slip Junction | `docs/patterns/movement-slip-junction.md` | `pattern-page` |
-| 23 | pattern | HSA-P-022 — Controlled Attachment Plane | `docs/patterns/controlled-attachment-plane.md` | `pattern-page` |
-| 24 | pattern | HSA-P-010 — Source-Capture Kitchen Extract | `docs/patterns/source-capture-kitchen-extract.md` | `pattern-page` |
-| 25 | pattern | HSA-P-021 — Source-Capture Bathroom Extract | `docs/patterns/source-capture-bathroom-extract.md` | `pattern-page` |
-| 26 | pattern | HSA-P-011 — Roof Maintenance Route | `docs/patterns/roof-maintenance-route.md` | `pattern-page` |
-| 27 | pattern | HSA-P-013 — Ground-Supported Façade Access | `docs/patterns/ground-supported-facade-access.md` | `pattern-page` |
-| 28 | pattern | HSA-P-012 — Physical Service Index | `docs/patterns/physical-service-index.md` | `pattern-page` |
-| 29 | strategy | Strategies | `docs/patterns/strategies/README.md` | `—` |
-| 30 | strategy | Fail-Safe Water Distribution | `docs/patterns/strategies/fail-safe-water-distribution.md` | `—` |
-| 31 | strategy | Decompose Structural Interface Functions | `docs/patterns/strategies/decompose-structural-interface-functions.md` | `—` |
-| 32 | strategy | Separate Structural Floor from Changeable Layers | `docs/patterns/strategies/separate-structural-floor-changeable-layers.md` | `—` |
-| 33 | candidate | Held Pattern Candidates | `docs/patterns/candidates/README.md` | `—` |
-| 34 | candidate | Replaceable Architectural Lining | `docs/patterns/candidates/replaceable-architectural-lining.md` | `—` |
-| 35 | candidate | Individually Isolatable Manifold Distribution | `docs/patterns/candidates/individually-isolatable-manifold-distribution.md` | `—` |
-| 36 | candidate | Local Deep Service Zone | `docs/patterns/candidates/local-deep-service-zone.md` | `—` |
-| 37 | candidate | Selective Floor Access | `docs/patterns/candidates/selective-floor-access.md` | `—` |
-| 38 | part | Part IV — Reference House | `docs/manuscript/part-iv.md` | `—` |
-| 39 | part | Part V — Making and Testing the Platform | `docs/manuscript/part-v.md` | `part-v-wrapper` |
-| 40 | back-matter | Sources and further reading | `docs/manuscript/sources-and-further-reading.md` | `—` |
+| 5 | part | Part III — Pattern Language | `publication/part-iii.md` | `—` |
+| 6 | pattern | HSA-P-001 — Controlled Utility Entry | `docs/patterns/controlled-utility-entry.md` | `pattern-page` |
+| 7 | pattern | HSA-P-002 — Plant Room as Service Hub | `docs/patterns/plant-room-service-hub.md` | `pattern-page` |
+| 8 | pattern | HSA-P-014 — Accessible Vertical Service Zone | `docs/patterns/accessible-vertical-service-zone.md` | `pattern-page` |
+| 9 | pattern | HSA-P-003 — Coherent Horizontal Service Route | `docs/patterns/coherent-horizontal-service-route.md` | `pattern-page` |
+| 10 | pattern | HSA-P-015 — Accessible Room Service Route | `docs/patterns/accessible-room-service-route.md` | `pattern-page` |
+| 11 | pattern | HSA-P-004 — High-Service-Room Service Wall | `docs/patterns/high-service-room-service-wall.md` | `pattern-page` |
+| 12 | pattern | HSA-P-005 — Designed Structural Penetration | `docs/patterns/designed-structural-penetration.md` | `pattern-page` |
+| 13 | pattern | HSA-P-016 — Compartmented Service Void | `docs/patterns/compartmented-service-void.md` | `pattern-page` |
+| 14 | pattern | HSA-P-017 — Visible Leakage Path | `docs/patterns/visible-leakage-path.md` | `pattern-page` |
+| 15 | pattern | HSA-P-018 — Failure-Tolerant Wet Service Room | `docs/patterns/failure-tolerant-wet-service-room.md` | `pattern-page` |
+| 16 | pattern | HSA-P-009 — Accessible Rainwater Route | `docs/patterns/accessible-rainwater-route.md` | `pattern-page` |
+| 17 | pattern | HSA-P-007 — Permanent Opening / Replaceable Window | `docs/patterns/permanent-opening-replaceable-window.md` | `pattern-page` |
+| 18 | pattern | HSA-P-019 — Permanent Opening / Replaceable Door | `docs/patterns/permanent-opening-replaceable-door.md` | `pattern-page` |
+| 19 | pattern | HSA-P-020 — Designed Threshold | `docs/patterns/designed-threshold.md` | `pattern-page` |
+| 20 | pattern | HSA-P-008 — Movement / Slip Junction | `docs/patterns/movement-slip-junction.md` | `pattern-page` |
+| 21 | pattern | HSA-P-022 — Controlled Attachment Plane | `docs/patterns/controlled-attachment-plane.md` | `pattern-page` |
+| 22 | pattern | HSA-P-010 — Source-Capture Kitchen Extract | `docs/patterns/source-capture-kitchen-extract.md` | `pattern-page` |
+| 23 | pattern | HSA-P-021 — Source-Capture Bathroom Extract | `docs/patterns/source-capture-bathroom-extract.md` | `pattern-page` |
+| 24 | pattern | HSA-P-011 — Roof Maintenance Route | `docs/patterns/roof-maintenance-route.md` | `pattern-page` |
+| 25 | pattern | HSA-P-013 — Ground-Supported Façade Access | `docs/patterns/ground-supported-facade-access.md` | `pattern-page` |
+| 26 | pattern | HSA-P-012 — Physical Service Index | `docs/patterns/physical-service-index.md` | `pattern-page` |
+| 27 | strategy | Fail-Safe Water Distribution | `docs/patterns/strategies/fail-safe-water-distribution.md` | `—` |
+| 28 | strategy | Decompose Structural Interface Functions | `docs/patterns/strategies/decompose-structural-interface-functions.md` | `—` |
+| 29 | strategy | Separate Structural Floor from Changeable Layers | `docs/patterns/strategies/separate-structural-floor-changeable-layers.md` | `—` |
+| 30 | candidate | Replaceable Architectural Lining | `docs/patterns/candidates/replaceable-architectural-lining.md` | `—` |
+| 31 | candidate | Individually Isolatable Manifold Distribution | `docs/patterns/candidates/individually-isolatable-manifold-distribution.md` | `—` |
+| 32 | candidate | Local Deep Service Zone | `docs/patterns/candidates/local-deep-service-zone.md` | `—` |
+| 33 | candidate | Selective Floor Access | `docs/patterns/candidates/selective-floor-access.md` | `—` |
+| 34 | part | Part IV — Reference House | `docs/manuscript/part-iv.md` | `—` |
+| 35 | part | Part V — Making and Testing the Platform | `docs/manuscript/part-v.md` | `part-v-wrapper` |
+| 36 | back-matter | Sources and further reading | `docs/manuscript/sources-and-further-reading.md` | `—` |
 <!-- generated: publication-manifest:end -->
 
 The generated block is checked by `publication:validate`. A manifest change therefore fails normal repository tests until this report is regenerated with `npm run publication:scope:update` and the resulting scope change is reviewed.
@@ -80,11 +76,13 @@ Part I is a composition: [`part-i.md`](../manuscript/part-i.md) owns the argumen
 
 ### Part III — Pattern Language
 
-Part III is a professional reference layer rather than another prose version of Part II. The manifest order is the machine-readable publication order; stable pattern IDs remain identity rather than rank.
+PR-00B3 replaces the previous website index, authoring contract and execution-style generative-sequence pages in the primary reading path with a single publication-facing bridge: `publication/part-iii.md`.
 
-The Pattern Index receives a deterministic print adapter because its website list is Vue-generated. Pattern frontmatter remains source metadata rather than printed prose. `HSA-P-006` stays visible through the index as a retired identity but its full retired page does not enter the primary linear publication. The pre-admission Accessible Vertical Service Zone candidate and other migration/pilot records remain provenance rather than Working Edition entries.
+That bridge explains only what a reader needs in order to use the language: the distinction between principles, strategies, patterns, implementation families and occurrences; the five editorial pattern fields; evidence boundaries; relational use; one architectural service-topology sequence; the three strategies; and the four held candidates.
 
-Strategies remain visibly outside the 21-pattern count. Held candidates remain visibly outside the canonical language.
+The canonical pattern records remain unchanged and authoritative. Their stable `HSA-P-*` IDs remain identity rather than publication rank. Repository mechanics such as frontmatter contracts, admission administration and pattern-index generation remain available online but no longer read as book chapters.
+
+The three strategy pages and four held-candidate pages remain in the Working Edition after the 21 canonical patterns. Their repository index wrappers are omitted because the publication-facing Part III already explains their status and boundary.
 
 ### Part IV — Reference House
 
@@ -105,7 +103,7 @@ The manuscript source does not become architectural authority by being publicati
 
 Part V enters directly from [`part-v.md`](../manuscript/part-v.md). Prototype, professional-review, delivery and computational records remain supporting tracks unless prose is deliberately incorporated into Part V later.
 
-Of the back matter named by the publication architecture, only [`Sources and further reading`](../manuscript/sources-and-further-reading.md) currently has a canonical publication-facing source and therefore enters the Working Edition. Evidence/precedent notes, the doctrine register, research agenda, Reference House implementation schedule and glossary remain genuine PR-00B editorial work. The pattern map/generative material already lives in Part III and should not be duplicated merely to fill an appendix slot.
+Of the back matter named by the publication architecture, only [`Sources and further reading`](../manuscript/sources-and-further-reading.md) currently has a canonical publication-facing source and therefore enters the Working Edition. Evidence/precedent notes, the doctrine register, research agenda, Reference House implementation schedule and glossary remain genuine PR-00B editorial work. The pattern map/generative material now lives explicitly in the publication Part III and should not be duplicated merely to fill an appendix slot.
 
 ## Explicit whole-corpus exclusions
 
@@ -119,7 +117,7 @@ The following remain accessible online but are not recursively compiled into the
 - `docs/delivery/` including the separate implementation brief;
 - `docs/computational/` as a standalone publication part;
 - `docs/grammar/` research/case material;
-- pattern migration/history/provenance material;
+- pattern authoring/index/migration/history/provenance material not explicitly listed in the manifest;
 - Reference House control, review and development records except where publication prose deliberately synthesises them.
 
 These exclusions preserve the repository's authority boundaries rather than treating the PDF as an archive export.

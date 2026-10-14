@@ -182,23 +182,10 @@ export const publicationEntries: readonly PublicationEntry[] = [
     adapter: 'part-ii-composite'
   },
   {
-    id: 'part-iii-index',
-    source: 'docs/patterns/README.md',
+    id: 'part-iii',
+    source: 'publication/part-iii.md',
     title: 'Part III — Pattern Language',
-    kind: 'index',
-    adapter: 'pattern-index'
-  },
-  {
-    id: 'pattern-language-model',
-    source: 'docs/patterns/language-model.md',
-    title: 'Pattern Language — Model and Authoring Contract',
-    kind: 'method'
-  },
-  {
-    id: 'service-topology-sequence',
-    source: 'docs/patterns/service-topology-sequence.md',
-    title: 'Service Topology — Generative Sequence',
-    kind: 'method'
+    kind: 'part'
   },
 
   pattern('HSA-P-001', 'controlled-utility-entry.md', 'Controlled Utility Entry'),
@@ -224,12 +211,6 @@ export const publicationEntries: readonly PublicationEntry[] = [
   pattern('HSA-P-012', 'physical-service-index.md', 'Physical Service Index'),
 
   {
-    id: 'strategies-index',
-    source: 'docs/patterns/strategies/README.md',
-    title: 'Strategies',
-    kind: 'strategy'
-  },
-  {
     id: 'strategy-fail-safe-water',
     source: 'docs/patterns/strategies/fail-safe-water-distribution.md',
     title: 'Fail-Safe Water Distribution',
@@ -248,12 +229,6 @@ export const publicationEntries: readonly PublicationEntry[] = [
     kind: 'strategy'
   },
 
-  {
-    id: 'candidates-index',
-    source: 'docs/patterns/candidates/README.md',
-    title: 'Held Pattern Candidates',
-    kind: 'candidate'
-  },
   {
     id: 'candidate-lining',
     source: 'docs/patterns/candidates/replaceable-architectural-lining.md',
