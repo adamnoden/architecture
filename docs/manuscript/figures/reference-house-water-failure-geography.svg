@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House water and failure geography</title>
+  <desc id="desc">Analytical publication diagram showing four roof fields draining outward from the courtyard, independent courtyard primary and emergency routes toward the service side, and visible external failure. It does not establish hydraulic capacity or product details.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111"/></marker>
+    <style>
+      .label{font:600 28px Arial,Helvetica,sans-serif;fill:#111}
+      .small{font:22px Arial,Helvetica,sans-serif;fill:#333}
+      .tiny{font:18px Arial,Helvetica,sans-serif;fill:#555}
+      .rule{stroke:#111;stroke-width:3;fill:none}
+      .soft{stroke:#777;stroke-width:2;fill:none}
+      .dash{stroke:#555;stroke-width:2.5;fill:none;stroke-dasharray:12 10}
+      .roof{fill:#f3f3f1;stroke:#111;stroke-width:3}
+      .court{fill:#fff;stroke:#111;stroke-width:3}
+    </style>
+  </defs>
+
+  <text x="70" y="70" class="label">Reference House — water and failure geography</text>
+  <text x="70" y="108" class="small">Send roof water outward; keep the courtyard responsible principally for itself; make abnormal failure legible.</text>
+
+  <g transform="translate(100 180)">
+    <rect x="0" y="0" width="720" height="600" class="roof"/>
+    <rect x="252" y="186" width="216" height="222" class="court"/>
+    <text x="360" y="285" class="small" text-anchor="middle">open court</text>
+    <text x="360" y="318" class="tiny" text-anchor="middle">≈ 14.4 m² open-to-sky</text>
+
+    <line x1="252" y1="186" x2="0" y2="0" class="soft"/>
+    <line x1="468" y1="186" x2="720" y2="0" class="soft"/>
+    <line x1="252" y1="408" x2="0" y2="600" class="soft"/>
+    <line x1="468" y1="408" x2="720" y2="600" class="soft"/>
+
+    <path d="M360 170 L360 30" class="rule" marker-end="url(#arrow)"/>
+    <path d="M235 295 L40 295" class="rule" marker-end="url(#arrow)"/>
+    <path d="M485 295 L680 295" class="rule" marker-end="url(#arrow)"/>
+    <path d="M360 425 L360 570" class="rule" marker-end="url(#arrow)"/>
+    <text x="360" y="60" class="tiny" text-anchor="middle">roof field drains outward</text>
+    <text x="115" y="275" class="tiny">outward</text>
+    <text x="600" y="275" class="tiny">outward</text>
+    <text x="380" y="555" class="tiny">outward</text>
+
+    <circle cx="458" cy="390" r="14" fill="#111"/>
+    <text x="485" y="392" class="tiny">court primary drain</text>
+    <path d="M458 390 C 520 430, 585 455, 700 455" class="rule" marker-end="url(#arrow)"/>
+    <text x="535" y="438" class="tiny">short inspectable route → service side</text>
+
+    <path d="M468 360 C 545 350, 600 342, 700 342" class="dash" marker-end="url(#arrow)"/>
+    <text x="530" y="327" class="tiny">independent higher-level emergency overflow</text>
+
+    <text x="0" y="650" class="tiny">No principal inner roof gutter or internal roof outlet is required by the selected geometry.</text>
+  </g>
+
+  <g transform="translate(900 220)">
+    <text x="0" y="0" class="label">Failure hierarchy</text>
+    <text x="0" y="60" class="small">1. ordinary flow</text>
+    <text x="28" y="96" class="tiny">external collection edges remain inspectable</text>
+    <text x="0" y="154" class="small">2. blockage / abnormal water</text>
+    <text x="28" y="190" class="tiny">independent overflow gives water another route</text>
+    <text x="0" y="248" class="small">3. visible consequence</text>
+    <text x="28" y="284" class="tiny">failure appears outside before hidden internal damage</text>
+
+    <line x1="0" y1="330" x2="350" y2="330" class="soft"/>
+    <text x="0" y="382" class="label">Not proved</text>
+    <text x="0" y="430" class="small">rainfall design rate</text>
+    <text x="0" y="468" class="small">outlet / pipe capacity</text>
+    <text x="0" y="506" class="small">site drainage destination</text>
+    <text x="0" y="544" class="small">waterproofing / product adequacy</text>
+  </g>
+</svg>

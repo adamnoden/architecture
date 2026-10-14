@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Reference House external maintenance geography</title>
+  <desc id="desc">Analytical publication diagram showing preserved working geography around the Reference House: service-side plant and utility access, west and rear facade working lines, courtyard tower logistics and the principle that landscape must not consume the only credible maintenance positions.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#111"/></marker>
+    <style>
+      .label{font:600 28px Arial,Helvetica,sans-serif;fill:#111}
+      .small{font:22px Arial,Helvetica,sans-serif;fill:#333}
+      .tiny{font:18px Arial,Helvetica,sans-serif;fill:#555}
+      .rule{stroke:#111;stroke-width:3;fill:none}
+      .soft{stroke:#777;stroke-width:2;fill:none}
+      .dash{stroke:#555;stroke-width:2.5;fill:none;stroke-dasharray:12 10}
+      .house{fill:#f3f3f1;stroke:#111;stroke-width:3}
+      .court{fill:#fff;stroke:#111;stroke-width:3}
+      .work{fill:#e8e8e4;stroke:#777;stroke-width:2}
+    </style>
+  </defs>
+
+  <text x="70" y="70" class="label">Reference House — external maintenance geography</text>
+  <text x="70" y="108" class="small">Maintenance space belongs to the site plan: approach, support, work position, handling and reinstatement.</text>
+
+  <g transform="translate(120 190)">
+    <rect x="70" y="70" width="720" height="600" class="house"/>
+    <rect x="322" y="256" width="216" height="222" class="court"/>
+
+    <rect x="790" y="70" width="105" height="600" class="work"/>
+    <rect x="0" y="70" width="70" height="600" class="work"/>
+    <rect x="70" y="0" width="720" height="70" class="work"/>
+    <rect x="322" y="256" width="216" height="222" fill="none" stroke="#777" stroke-width="14" stroke-dasharray="16 12"/>
+
+    <text x="842" y="335" class="small" text-anchor="middle" transform="rotate(-90 842 335)">service-side working strip</text>
+    <text x="35" y="335" class="small" text-anchor="middle" transform="rotate(-90 35 335)">west façade access</text>
+    <text x="430" y="45" class="small" text-anchor="middle">rear / garden working line</text>
+    <text x="430" y="370" class="small" text-anchor="middle">court</text>
+    <text x="430" y="405" class="tiny" text-anchor="middle">temporary tower zone</text>
+
+    <path d="M430 735 L430 690 L430 610 L430 478" class="rule" marker-end="url(#arrow)"/>
+    <text x="455" y="720" class="tiny">garden → court logistics route</text>
+
+    <path d="M895 335 L1010 335" class="rule" marker-end="url(#arrow)"/>
+    <text x="915" y="312" class="tiny">plant replacement / utility approach</text>
+
+    <text x="70" y="710" class="small">FRONT</text>
+    <text x="690" y="710" class="tiny">principal frontage is not the default technical work zone</text>
+  </g>
+
+  <g transform="translate(1030 220)">
+    <text x="0" y="0" class="label">Landscape test</text>
+    <text x="0" y="58" class="small">Do not permanently occupy:</text>
+    <text x="0" y="102" class="tiny">• scaffold / tower support positions</text>
+    <text x="0" y="136" class="tiny">• plant withdrawal path</text>
+    <text x="0" y="170" class="tiny">• courtyard logistics route</text>
+    <text x="0" y="204" class="tiny">• inspection access to rainwater goods</text>
+
+    <line x1="0" y1="252" x2="300" y2="252" class="soft"/>
+    <text x="0" y="304" class="label">Task-specific</text>
+    <text x="0" y="350" class="small">Cleaning ≠ replacement.</text>
+    <text x="0" y="388" class="small">Roof repair ≠ plant change.</text>
+    <text x="0" y="426" class="small">Each task owns its route.</text>
+  </g>
+</svg>
