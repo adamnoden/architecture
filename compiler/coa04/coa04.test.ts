@@ -30,12 +30,14 @@ describe('COA-04 Reference House plan and section successors', () => {
   test('puts human architectural labels ahead of semantic IDs while preserving identity', () => {
     for (const space of context.result.house.derived.spaces) {
       const plan = space.levelId === 'GROUND' ? set.groundFloor : set.firstFloor
+      const human = space.label[0].toUpperCase() + space.label.slice(1)
       assert.match(plan, new RegExp(`data-entity="${space.id}"`))
-      const labelIndex = plan.indexOf(space.label[0].toUpperCase() + space.label.slice(1))
-      const idIndex = plan.indexOf(space.id)
-      assert.ok(labelIndex >= 0, `missing human label for ${space.id}`)
-      assert.ok(idIndex >= 0, `missing semantic ID ${space.id}`)
+      assert.match(plan, new RegExp(`<title>${human.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</title>`))
+      assert.ok(plan.indexOf(human) >= 0, `missing human label for ${space.id}`)
+      assert.ok(plan.indexOf(space.id) >= 0, `missing semantic ID ${space.id}`)
     }
+    assert.match(set.firstFloor, /rotate\(-90[^)]*\)[^>]*>[\s\S]*East gallery/)
+    assert.match(set.firstFloor, /<title>Dry dressing \/ storage<\/title>/)
   })
 
   test('retains every numeric opening at its owned precision', () => {
@@ -62,20 +64,23 @@ describe('COA-04 Reference House plan and section successors', () => {
     for (const adjacency of context.source.requiredAdjacencies) {
       const plan = adjacency.levelId === 'GROUND' ? set.groundFloor : set.firstFloor
       assert.match(plan, new RegExp(`data-entity="${adjacency.id}"`))
-      assert.match(plan, /connection required · position unresolved/)
+      assert.match(plan, /Required connection; exact position unresolved/)
+      assert.match(plan, />↔<\/text>/)
     }
   })
 
   test('keeps planning information explicit without manufacturing wall or stair construction', () => {
-    assert.match(set.groundFloor, /Wall family 400–425 mm; stress 450 mm/)
-    assert.match(set.groundFloor, /Stair 18 rises · 6\/6\/6 · going 280 mm/)
-    assert.match(set.groundFloor, /reservation 2400–2500 mm/)
+    assert.match(set.groundFloor, /Wall planning 400–425 mm/)
+    assert.match(set.groundFloor, /Stress case 450 mm/)
+    assert.match(set.groundFloor, /Stair 18 rises · 6\/6\/6/)
+    assert.match(set.groundFloor, /Going 280 mm · width target ≈1000 mm/)
+    assert.match(set.groundFloor, /Reservation 2400–2500 mm/)
     assert.match(set.groundFloor, /wall faces not represented/i)
     assert.match(set.principalSection, /No strings, treads, guards, headroom, floor build-up or exact well geometry is implied/)
   })
 
   test('renders the full section datum text inside a deliberately enlarged annotation layout', () => {
-    assert.match(set.principalSection, /outer cornice\/eaves control \+6250 mm/)
+    assert.match(set.principalSection, /cornice\/eaves control \+6250 mm/)
     const viewBox = set.principalSection.match(/viewBox="([^"]+)"/)
     assert.ok(viewBox)
     const [x, , width] = viewBox[1].split(' ').map(Number)
