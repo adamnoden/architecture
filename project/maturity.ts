@@ -142,15 +142,28 @@ export const workstreamStatuses = [
   {
     id: 'g01-grammar-instance',
     name: 'G-01 grammar instance',
-    maturity: 'M2',
-    reviewedOn: '2026-10-12',
+    maturity: 'M4',
+    reviewedOn: '2026-10-14',
     currentState:
-      'The Georgian-derived instance has corpus, dimensional and coupling work, but derivation remains incomplete.',
+      'G-01 v0.1 is frozen as a bounded Georgian-derived domestic grammar. D8 falsification, predeclared D9 hold-outs, D10 normative reduction, fresh D10-S positive-specificity validation, freeze-before-project D12 conformance and D13 negative controls leave a small controlled rule set with explicit limitations: no universal ratios, centred-entry rule, fixed roof type or historical service topology. Positive specificity is strongest at architectural body/elevation/threshold scale; morphology-specific interior grammar remains open research debt rather than an invented rule set.',
     nextGate:
-      'Complete evidence-led derivation and test it against the Reference House without promoting project taste into doctrine.',
+      'Hold v0.1 as the controlled baseline. Reopen only when competent external criticism, a real-project contradiction, a materially different second grammar, publication adversarial review or material new evidence creates a concrete question. M5 requires independent architectural validation at the stated scope.',
     evidence: {
       framed: ['docs/grammar/g01-grammar-charter.md'],
-      developed: ['docs/grammar/g01-candidate-constraints-v01.md']
+      developed: [
+        'docs/grammar/g01-research-brief.md',
+        'docs/grammar/g01-v0.1.md'
+      ],
+      coordinated: [
+        'docs/grammar/g01-d10-normative-reduction.md',
+        'docs/reference-house/g01-v0.1-conformance-d12.md'
+      ],
+      internallyValidated: [
+        'docs/grammar/g01-d8-falsification-result.md',
+        'docs/grammar/g01-d9-held-out-validation.md',
+        'docs/grammar/g01-d10s-validation-result.md',
+        'docs/grammar/g01-d13-adversarial-closeout.md'
+      ]
     }
   },
   {
