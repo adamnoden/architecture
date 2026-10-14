@@ -1,72 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 820" role="img" aria-labelledby="title desc">
   <title id="title">The designed interface as a functional element</title>
   <desc id="desc">Two assemblies meet through a deliberate interface. The interface separates support, restraint, movement, boundary continuity, tolerance, fixing and future removal as duties to assign rather than assuming one buried joint performs all of them.</desc>
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/>
-    </marker>
-    <style>
-      .big{font:600 30px Arial,Helvetica,sans-serif;fill:#111}
-      .label{font:600 23px Arial,Helvetica,sans-serif;fill:#111}
-      .small{font:20px Arial,Helvetica,sans-serif;fill:#444}
-      .tiny{font:18px Arial,Helvetica,sans-serif;fill:#555}
-      .rule{stroke:#111;stroke-width:3;fill:none}
-      .soft{stroke:#777;stroke-width:2;fill:none}
-    </style>
-  </defs>
+  <style>
+    .big{font:600 30px Arial,Helvetica,sans-serif;fill:#111}
+    .label{font:600 23px Arial,Helvetica,sans-serif;fill:#111}
+    .small{font:20px Arial,Helvetica,sans-serif;fill:#444}
+    .tiny{font:18px Arial,Helvetica,sans-serif;fill:#555}
+    .rule{stroke:#111;stroke-width:3;fill:none}
+    .soft{stroke:#777;stroke-width:2;fill:none}
+  </style>
 
-  <rect x="90" y="170" width="350" height="410" rx="4" fill="#f2f2f2" stroke="#111" stroke-width="3"/>
-  <text x="265" y="355" text-anchor="middle" class="big">Assembly A</text>
-  <text x="265" y="395" text-anchor="middle" class="small">longer-lived, supporting,</text>
-  <text x="265" y="425" text-anchor="middle" class="small">or simply different</text>
+  <rect x="70" y="190" width="300" height="390" rx="4" fill="#f2f2f2" stroke="#111" stroke-width="3"/>
+  <text x="220" y="365" text-anchor="middle" class="big">Assembly A</text>
+  <text x="220" y="407" text-anchor="middle" class="small">longer-lived, supporting,</text>
+  <text x="220" y="438" text-anchor="middle" class="small">or simply different</text>
 
-  <rect x="960" y="170" width="350" height="410" rx="4" fill="#fff" stroke="#111" stroke-width="3"/>
-  <text x="1135" y="355" text-anchor="middle" class="big">Assembly B</text>
-  <text x="1135" y="395" text-anchor="middle" class="small">moving, replaceable,</text>
-  <text x="1135" y="425" text-anchor="middle" class="small">or simply different</text>
+  <rect x="1130" y="190" width="300" height="390" rx="4" fill="#fff" stroke="#111" stroke-width="3"/>
+  <text x="1280" y="365" text-anchor="middle" class="big">Assembly B</text>
+  <text x="1280" y="407" text-anchor="middle" class="small">moving, replaceable,</text>
+  <text x="1280" y="438" text-anchor="middle" class="small">or simply different</text>
 
-  <rect x="520" y="95" width="360" height="560" rx="5" fill="#fff" stroke="#111" stroke-width="4"/>
-  <text x="700" y="145" text-anchor="middle" class="big">DESIGNED INTERFACE</text>
-  <line x1="560" y1="168" x2="840" y2="168" class="soft"/>
+  <rect x="440" y="95" width="620" height="570" rx="5" fill="#fff" stroke="#111" stroke-width="4"/>
+  <text x="750" y="145" text-anchor="middle" class="big">DESIGNED INTERFACE</text>
+  <line x1="485" y1="170" x2="1015" y2="170" class="soft"/>
 
-  <g>
-    <text x="590" y="218" class="label">Support</text>
-    <text x="590" y="246" class="tiny">Where does gravity load go?</text>
-    <line x1="810" y1="207" x2="810" y2="250" class="rule" marker-end="url(#arrow)"/>
-  </g>
+  <text x="495" y="225" class="label">Support</text>
+  <text x="735" y="225" class="small">where gravity load goes</text>
+  <line x1="495" y1="246" x2="1010" y2="246" class="soft"/>
 
-  <g>
-    <text x="590" y="301" class="label">Restraint</text>
-    <text x="590" y="329" class="tiny">What must be held, and in which direction?</text>
-    <line x1="790" y1="314" x2="835" y2="314" class="rule" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-  </g>
+  <text x="495" y="300" class="label">Restraint</text>
+  <text x="735" y="300" class="small">what must be held, and in which direction</text>
+  <line x1="495" y1="321" x2="1010" y2="321" class="soft"/>
 
-  <g>
-    <text x="590" y="384" class="label">Movement</text>
-    <text x="590" y="412" class="tiny">What harmless movement needs somewhere to occur?</text>
-    <line x1="790" y1="397" x2="835" y2="397" class="soft" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-  </g>
+  <text x="495" y="375" class="label">Movement</text>
+  <text x="735" y="375" class="small">where harmless movement is allowed</text>
+  <line x1="495" y1="396" x2="1010" y2="396" class="soft"/>
 
-  <g>
-    <text x="590" y="467" class="label">Boundary continuity</text>
-    <text x="590" y="495" class="tiny">Which fire, air, water, thermal or acoustic duties apply?</text>
-    <line x1="785" y1="480" x2="840" y2="480" stroke="#111" stroke-width="7"/>
-  </g>
+  <text x="495" y="450" class="label">Boundaries</text>
+  <text x="735" y="450" class="small">which safety / environmental duties continue</text>
+  <line x1="495" y1="471" x2="1010" y2="471" class="soft"/>
 
-  <g>
-    <text x="590" y="550" class="label">Tolerance</text>
-    <text x="590" y="578" class="tiny">Where is credible construction variation absorbed?</text>
-    <path d="M 790 540 l 12 24 l 12 -24 l 12 24" class="soft"/>
-  </g>
+  <text x="495" y="525" class="label">Tolerance</text>
+  <text x="735" y="525" class="small">where ordinary construction variation is absorbed</text>
+  <line x1="495" y1="546" x2="1010" y2="546" class="soft"/>
 
-  <g>
-    <text x="590" y="626" class="label">Fixing + future removal</text>
-    <text x="590" y="651" class="tiny">Can the shorter-lived part be reached and released?</text>
-  </g>
+  <text x="495" y="600" class="label">Fixing + removal</text>
+  <text x="735" y="600" class="small">how the shorter-lived part is reached and released</text>
 
-  <line x1="440" y1="375" x2="520" y2="375" class="rule"/>
-  <line x1="880" y1="375" x2="960" y2="375" class="rule"/>
+  <line x1="370" y1="385" x2="440" y2="385" class="rule"/>
+  <line x1="1060" y1="385" x2="1130" y2="385" class="rule"/>
 
-  <text x="700" y="722" text-anchor="middle" class="small">One component may perform several duties.</text>
-  <text x="700" y="754" text-anchor="middle" class="small">The point is to assign them deliberately before concealment.</text>
+  <text x="750" y="724" text-anchor="middle" class="small">One component may perform several duties.</text>
+  <text x="750" y="756" text-anchor="middle" class="small">The point is to assign them deliberately before concealment.</text>
 </svg>
