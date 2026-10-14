@@ -33,6 +33,9 @@ The later evidence gates and mutation runs record how provisional G-01 claims we
 - [G-01 D6 mutation run — Danson sequence](g01-d6-mutation-run-01-danson-sequence.md)
 - [G-01 D8 controlled falsification result](g01-d8-falsification-result.md) — controlled mutation/counterexample gate; all D7 candidates challenged without promoting a release grammar
 - [G-01 D9 held-out validation](g01-d9-held-out-validation.md) — pre-declared historical, ordinary-scale, twentieth-century and contemporary hold-outs; surviving core narrowed before normative selection
-- [G-01 D10 normative reduction](g01-d10-normative-reduction.md) — contemporary preserve/transform/reject decisions; D11 release blocked because the surviving set is still too style-neutral to define Georgian-derived membership
+- [G-01 D10 normative reduction](g01-d10-normative-reduction.md) — contemporary preserve/transform/reject decisions; exposed insufficient positive Georgian-derived specificity and blocked premature release
+- [G-01 D10-S positive-specificity programme](g01-d10s-positive-specificity-programme.md) — bounded repair loop with a validation split frozen before extraction
+- [G-01 D10-S positive-specificity register v0.1](g01-d10s-positive-specificity-register-v01.md) — candidate set frozen before fresh validation
+- [G-01 D10-S validation result](g01-d10s-validation-result.md) — positive specificity recovered; original roof-subordination claim rejected and replaced with validated integrated roof/termination relation; D11 release block lifted
 
 The Reference House selects G-01 as one architectural input alongside Ovid’s House doctrine, patterns, site and programme, technical families and project-specific morphology. The grammar remains independently selectable from the project.
