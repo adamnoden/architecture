@@ -6,7 +6,8 @@ export const projectIdentity = {
   formerMasterNames: ['House Kernel'],
   formerMasterNameAllowedSources: [
     'STATUS.md',
-    'docs/manuscript/publication-architecture.md'
+    'docs/manuscript/publication-architecture.md',
+    'docs/manuscript/glossary.md'
   ],
   legacyNames: [
     'House Systems Architecture',
@@ -14,7 +15,10 @@ export const projectIdentity = {
     'Long-Life House',
     'House Design Doctrine'
   ],
-  legacyNameProvenanceSources: ['STATUS.md']
+  legacyNameProvenanceSources: [
+    'STATUS.md',
+    'docs/manuscript/doctrine-register-crosswalk.md'
+  ]
 } as const
 
 export type FormerMasterProjectName = (typeof projectIdentity.formerMasterNames)[number]

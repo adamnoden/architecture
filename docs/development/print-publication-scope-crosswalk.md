@@ -13,11 +13,11 @@ Where editorial intent and machine scope disagree, stop and reconcile them delib
 ## Scope rules
 
 1. Compile current publication-facing material; do not fill manuscript gaps with web navigation or programme-control documents.
-2. Preserve canonical ownership while allowing publication-native synthesis. Part III's pattern records remain canonical under `docs/patterns/`; the reader-facing bridge belongs to publication. Part IV may be authored under `docs/manuscript/` when it synthesises rather than duplicates canonical Reference House records.
+2. Preserve canonical ownership while allowing publication-native synthesis. Part III's pattern records remain canonical under `docs/patterns/`; the reader-facing bridge belongs to publication. Part IV and back matter may be authored under `docs/manuscript/` where they synthesise rather than duplicate canonical project records.
 3. Supporting evidence remains supporting evidence. Research pages stay outside the primary PDF unless publication prose incorporates them deliberately.
 4. Historical and migration records remain online provenance rather than primary linear reading.
 5. Dynamic website-only representation may receive a deterministic **print adapter** only when the underlying canonical content is already publication-facing. An adapter may render or compose existing source; it may not invent the argument.
-6. Missing target material remains visibly missing. Back matter enters the Working Edition only when a canonical publication-facing source exists.
+6. Missing target material remains visibly missing. Back matter enters the Working Edition only when a publication-facing source exists and serves a distinct reader function.
 
 ## Current Working Edition manifest
 
@@ -61,7 +61,12 @@ Where editorial intent and machine scope disagree, stop and reconcile them delib
 | 33 | candidate | Selective Floor Access | `docs/patterns/candidates/selective-floor-access.md` | `—` |
 | 34 | part | Part IV — Reference House | `docs/manuscript/part-iv.md` | `—` |
 | 35 | part | Part V — Making and Testing the Platform | `docs/manuscript/part-v.md` | `part-v-wrapper` |
-| 36 | back-matter | Sources and further reading | `docs/manuscript/sources-and-further-reading.md` | `—` |
+| 36 | back-matter | Appendix A — Evidence and Precedent Notes | `docs/manuscript/evidence-and-precedent-notes.md` | `—` |
+| 37 | back-matter | Appendix B — Legacy Doctrine Register Crosswalk | `docs/manuscript/doctrine-register-crosswalk.md` | `—` |
+| 38 | back-matter | Appendix C — Research Agenda | `docs/manuscript/research-agenda.md` | `—` |
+| 39 | back-matter | Appendix D — Reference House Implementation Schedule | `docs/manuscript/reference-house-implementation-schedule.md` | `—` |
+| 40 | back-matter | Appendix E — Glossary | `docs/manuscript/glossary.md` | `—` |
+| 41 | back-matter | Appendix F — Sources and Further Reading | `docs/manuscript/sources-and-further-reading.md` | `—` |
 <!-- generated: publication-manifest:end -->
 
 The generated block is checked by `publication:validate`. A manifest change therefore fails normal repository tests until this report is regenerated with `npm run publication:scope:update` and the resulting scope change is reviewed.
@@ -86,16 +91,9 @@ The three strategy pages and four held-candidate pages remain in the Working Edi
 
 ### Part IV — Reference House
 
-PR-00B replaces the previous bundle of Reference House control/development records with a publication-native synthesis: [`part-iv.md`](../manuscript/part-iv.md).
+PR-00B1/B2 replace the previous bundle of Reference House control/development records with a publication-native synthesis: [`part-iv.md`](../manuscript/part-iv.md).
 
-The six chapters now correspond to the publication architecture:
-
-13. Site and type;
-14. Architectural order, repose and tectonic language;
-15. Material, structural and assembly system;
-16. Maintenance geography;
-17. Water and environmental systems;
-18. Future maintenance scenarios.
+The six chapters correspond to the publication architecture: Site and type; Architectural order, repose and tectonic language; Material, structural and assembly system; Maintenance geography; Water and environmental systems; and Future maintenance scenarios.
 
 The manuscript source does not become architectural authority by being publication-facing. Canonical Reference House and G-01 records remain the source of project truth; Part IV owns the coherent reader-facing explanation. Gate/status administration and repository wayfinding stay outside the primary book.
 
@@ -103,7 +101,16 @@ The manuscript source does not become architectural authority by being publicati
 
 Part V enters directly from [`part-v.md`](../manuscript/part-v.md). Prototype, professional-review, delivery and computational records remain supporting tracks unless prose is deliberately incorporated into Part V later.
 
-Of the back matter named by the publication architecture, only [`Sources and further reading`](../manuscript/sources-and-further-reading.md) currently has a canonical publication-facing source and therefore enters the Working Edition. Evidence/precedent notes, the doctrine register, research agenda, Reference House implementation schedule and glossary remain genuine PR-00B editorial work. The pattern map/generative material now lives explicitly in the publication Part III and should not be duplicated merely to fill an appendix slot.
+PR-00B4 completes the retained back-matter set as six distinct reader functions:
+
+- **Evidence and Precedent Notes** explains how external knowledge, precedent, internal design research and physical/professional evidence are used and bounded.
+- **Legacy Doctrine Register Crosswalk** recovers the real 63-item House Design Doctrine v7 register from git history and maps it into the current eleven principles / downstream authority layers without re-promoting obsolete statements.
+- **Research Agenda** records questions capable of falsifying or materially improving the work rather than generic future-work placeholders.
+- **Reference House Implementation Schedule** marks the boundary between current virtual coordination and real-site, professional, physical and delivery gates.
+- **Glossary** consolidates project-specific terms.
+- **Sources and Further Reading** remains the selective external reading list.
+
+The separately proposed pattern-map/generative-sequence appendix is deliberately omitted: the publication-native Part III now performs that function, so a second appendix would duplicate rather than deepen the book.
 
 ## Explicit whole-corpus exclusions
 
@@ -118,7 +125,8 @@ The following remain accessible online but are not recursively compiled into the
 - `docs/computational/` as a standalone publication part;
 - `docs/grammar/` research/case material;
 - pattern authoring/index/migration/history/provenance material not explicitly listed in the manifest;
-- Reference House control, review and development records except where publication prose deliberately synthesises them.
+- Reference House control, review and development records except where publication prose deliberately synthesises them;
+- the deleted House Design Doctrine v7 source itself; only its 63-item register is preserved through a current publication crosswalk.
 
 These exclusions preserve the repository's authority boundaries rather than treating the PDF as an archive export.
 

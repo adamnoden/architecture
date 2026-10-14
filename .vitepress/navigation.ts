@@ -37,8 +37,15 @@ const manuscriptSidebar: DefaultTheme.SidebarItem[] = [
     page('Part III — Pattern Language', '/docs/patterns/'),
     page('Part IV — Reference House', '/docs/manuscript/part-iv'),
     page('Part V — Making and Testing the Platform', '/docs/manuscript/part-v'),
+    group('Back matter', [
+      page('Evidence and precedent notes', '/docs/manuscript/evidence-and-precedent-notes'),
+      page('Legacy doctrine register crosswalk', '/docs/manuscript/doctrine-register-crosswalk'),
+      page('Research agenda', '/docs/manuscript/research-agenda'),
+      page('Reference House implementation schedule', '/docs/manuscript/reference-house-implementation-schedule'),
+      page('Glossary', '/docs/manuscript/glossary'),
+      page('Sources and further reading', '/docs/manuscript/sources-and-further-reading')
+    ]),
     group('Structure & reference', [
-      page('Sources and further reading', '/docs/manuscript/sources-and-further-reading'),
       page('Publication architecture', '/docs/manuscript/publication-architecture'),
       page('Publication credibility & release', '/docs/manuscript/publication-credibility-release-programme'),
       page('PR-00 candidate-book freeze programme', '/docs/manuscript/pr00-candidate-book-freeze-programme'),

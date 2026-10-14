@@ -269,9 +269,39 @@ export const publicationEntries: readonly PublicationEntry[] = [
     adapter: 'part-v-wrapper'
   },
   {
+    id: 'evidence-and-precedent-notes',
+    source: 'docs/manuscript/evidence-and-precedent-notes.md',
+    title: 'Appendix A — Evidence and Precedent Notes',
+    kind: 'back-matter'
+  },
+  {
+    id: 'doctrine-register-crosswalk',
+    source: 'docs/manuscript/doctrine-register-crosswalk.md',
+    title: 'Appendix B — Legacy Doctrine Register Crosswalk',
+    kind: 'back-matter'
+  },
+  {
+    id: 'research-agenda',
+    source: 'docs/manuscript/research-agenda.md',
+    title: 'Appendix C — Research Agenda',
+    kind: 'back-matter'
+  },
+  {
+    id: 'reference-house-implementation-schedule',
+    source: 'docs/manuscript/reference-house-implementation-schedule.md',
+    title: 'Appendix D — Reference House Implementation Schedule',
+    kind: 'back-matter'
+  },
+  {
+    id: 'glossary',
+    source: 'docs/manuscript/glossary.md',
+    title: 'Appendix E — Glossary',
+    kind: 'back-matter'
+  },
+  {
     id: 'sources-and-further-reading',
     source: 'docs/manuscript/sources-and-further-reading.md',
-    title: 'Sources and further reading',
+    title: 'Appendix F — Sources and Further Reading',
     kind: 'back-matter'
   }
 ] as const

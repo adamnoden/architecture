@@ -1,7 +1,7 @@
-# Ovid’s House — Publication Architecture v0.13
+# Ovid’s House — Publication Architecture v0.14
 
 **Working form:** illustrated architectural design-research monograph + evidence-qualified pattern language + separate architect-facing implementation brief.  
-**Status:** v0.13 — Ovid’s House identity and temporal frame reconciled with the canonical pattern language and computational authority; publication structure remains active.
+**Status:** v0.14 — publication-native Part III/IV and retained back matter reconciled under PR-00; candidate-book completion remains active.
 
 The pattern-language migration is complete at current internal scope. The active language contains 21 patterns, one retired identity, three canonical strategies and four explicitly held candidates. Pattern count is an outcome, not a target. Migration and crosswalk provenance are retained in [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md).
 
@@ -62,7 +62,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
 
 Part III is a browsable professional reference: **patterns plus the relationships and generative sequences that help designers combine them**. It is not a second version of Part II and not a catalogue of every technical idea in the project.
 
-The method is defined by the [Ovid’s House Pattern Language — Model and Authoring Contract](../patterns/language-model.md). The canonical pattern index is [Patterns](../patterns/README.md). The first worked generative method is the [Service Topology Generative Sequence](../patterns/service-topology-sequence.md).
+The Working Edition opens Part III with a publication-native reader bridge (`publication/part-iii.md`). It explains the language, evidence boundaries, the five editorial fields, pattern relationships, one generative service-topology sequence, the three strategies and the held-candidate bench. The canonical pattern records under `docs/patterns/` remain authoritative; repository authoring contracts, index-generation mechanics and migration records stay outside the primary book path.
 
 ### Reading structure
 
@@ -79,7 +79,7 @@ The groups below are editorial reading aids only. IDs remain stable identity and
 7. [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md)
 8. [`HSA-P-016 — Compartmented Service Void`](../patterns/compartmented-service-void.md)
 
-This section should be read alongside the service-topology sequence. The sequence supplies decision order and rewind conditions; the pattern graph supplies reusable compositional relationships. Do not collapse the two.
+The service-topology sequence supplies decision order and rewind logic while the pattern graph supplies reusable compositional relationships. The publication bridge describes the sequence without turning the repository execution protocol into a book chapter.
 
 ### B. Water, leakage and failure
 
@@ -120,18 +120,18 @@ Strategies sit between doctrine and patterns but are not pattern nodes:
 - [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md)
 - [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md)
 
-They should appear in Part II/III where they clarify design reasoning, without being counted as patterns.
+They appear after the 21 canonical patterns in the Working Edition and remain outside the pattern count.
 
 ### Held candidate bench
 
-The publication should make unresolved propositions visible without laundering them into the language:
+The publication makes unresolved propositions visible without laundering them into the language:
 
 - [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md)
 - [Individually Isolatable Manifold Distribution](../patterns/candidates/individually-isolatable-manifold-distribution.md)
 - [Local Deep Service Zone](../patterns/candidates/local-deep-service-zone.md)
 - [Selective Floor Access](../patterns/candidates/selective-floor-access.md)
 
-Each candidate has an explicit admission gate. The candidate bench is a research frontier, not an appendix of patterns waiting automatically for numbers.
+Each candidate has an explicit admission question. The candidate bench is a research frontier, not an appendix of patterns waiting automatically for numbers.
 
 ### Pattern-page target
 
@@ -149,35 +149,20 @@ The original Core 12 catalogue, service-topology pilot and reversible-assembly c
 
 ## Part IV — The Reference House
 
-13. Site and type  
-14. Architectural order, repose and tectonic language  
-15. Material, structural and assembly system  
-16. Maintenance geography — internal service topology plus a coordinated [External Access & Maintenance Plan](../reference-house/external-access-maintenance-plan.md) covering façade, roof, courtyard, ground/support conditions, landscape and logistics from the site entrance  
-17. Water and environmental systems  
-18. Future maintenance scenarios — include upper masonry repair, gutter/eaves renewal, chimney/roof repair, window cleaning versus full-frame replacement, courtyard access and mature-landscape replay
+Part IV now exists as a publication-native six-chapter synthesis in [Part IV — Reference House](part-iv.md). Canonical Reference House and G-01 records remain project authority; the manuscript owns the reader-facing account.
+
+13. **Site and type**  
+14. **Architectural order, repose and tectonic language**  
+15. **Material, structural and assembly system**  
+16. **Maintenance geography**  
+17. **Water and environmental systems**  
+18. **Future maintenance scenarios**
 
 The Reference House is explicitly **one interpretation**, not proof of the doctrine or pattern language.
 
-During the pattern-language work it acted as an integration test. The first whole-house trial consists of the [Whole-House Coordination Fixture 01](../reference-house/whole-house-coordination-fixture.md) and historical [Service Topology Run 01](../reference-house/service-topology-run-01.md). The current canonical mapping is the [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md).
+Its function in the publication is to force the project’s layers to coexist in one building: doctrine, selected patterns, G-01, a courtyard morphology, one domestic programme and bounded technical choices. Project-specific decisions remain local even when they are repeated throughout the worked house.
 
-As the house develops, continue recording:
-
-- selected pattern IDs;
-- actual project occurrences rather than mere intentions;
-- selected implementation families;
-- outstanding evidence obligations;
-- conflicts between patterns;
-- rejected patterns/locations;
-- rewind events where later constraints force earlier architectural change;
-- missing reusable patterns exposed by the worked house.
-
-Each major non-standard decision shows:
-- option set;
-- chosen option;
-- reason;
-- cost/carbon implication;
-- uncertainty;
-- test required.
+The canonical mapping of selected patterns and project occurrences remains the [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md). Control, review and development records remain online provenance rather than chapters in disguise.
 
 ## Part V — Making and Testing the Platform
 
@@ -191,13 +176,14 @@ Each major non-standard decision shows:
 
 ## Back matter
 
-A. Evidence and precedent notes  
-B. 63-item doctrine register mapped to eleven principles  
-C. Research agenda  
-D. Reference-house implementation schedule  
-E. Pattern-language map and generative-sequence notes  
-F. Glossary  
-G. [Sources and further reading](sources-and-further-reading.md)
+A. [Evidence and precedent notes](evidence-and-precedent-notes.md)  
+B. [Legacy doctrine register crosswalk](doctrine-register-crosswalk.md) — preserves the historical 63-item House Design Doctrine v7 register while mapping each statement into the current eleven-principle / downstream authority structure  
+C. [Research agenda](research-agenda.md)  
+D. [Reference House implementation schedule](reference-house-implementation-schedule.md)  
+E. [Glossary](glossary.md)  
+F. [Sources and further reading](sources-and-further-reading.md)
+
+The previously proposed separate **pattern-language map and generative-sequence appendix is removed**. Its distinct reader function is now performed by the publication-native Part III opening; retaining a second appendix would duplicate rather than deepen the book.
 
 ---
 
