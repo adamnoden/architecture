@@ -290,11 +290,23 @@ Commission in two modes:
 
 ## Maintainability commissioning
 
-Selected tasks should be demonstrated physically using the intended tools and access route: isolate a fixture, remove a ventilation filter or fan, open a service route, lift and reseat a floor panel, access a wet-room valve, trace a circuit or demonstrate major plant withdrawal geometry.
+Selected tasks should be demonstrated physically using the intended tools and access route: isolate a fixture, remove a ventilation filter or fan, open a service route, access a wet-room valve, trace a circuit or demonstrate major plant withdrawal geometry.
+
+Where a project has deliberately reserved external maintenance geography, commission that too. Confirm that completed levels, landscape, drainage, external plant, gates, fences and permanent obstructions have not consumed the access strategy drawn earlier. Representative checks may include:
+
+- whether a planned scaffold or tower support position still exists;
+- whether equipment can actually reach its replacement opening;
+- whether courtyard or rear access accepts the intended maintenance components;
+- whether gutters, outlets and emergency overflows can be seen and reached by the method assumed in design;
+- whether a façade, roof or external service task now depends on unplanned specialist access because the ground condition changed late.
+
+A maintenance route that exists only on the architect's pre-landscape drawing has not been commissioned.
 
 ## Reinstatement matters
 
 Intervention does not end when the component is reached. Afterward verify that panels seat correctly, seals and fire stopping are restored, acoustic isolation is intact, waterproofing remains sound and labels or records still match reality.
+
+The same applies outside. Temporary access should not require damage to permanent planting, paving, drainage or envelope elements merely to perform a task that was supposed to be ordinary.
 
 An access strategy that cannot be reliably closed is not maintainable.
 
@@ -304,9 +316,15 @@ An access strategy that cannot be reliably closed is not maintainable.
 
 The final design should be reviewed through events rather than abstract claims.
 
+Part IV shows how this can be done for one worked house. The method here is broader: scenarios are used to test whether the architecture still holds when future work, failure or occupation places stress on the assumptions made during design.
+
+A scenario is allowed to do more than expose a missing detail. If a downstream technical problem is large because an earlier architectural decision was poor, the correct response is a **rewind**, not a more elaborate workaround.
+
 ## Failure scenarios
 
 Test credible failures such as a leaking hose, blocked condensate drain, overflowing roof outlet, failed pump or loss of control power. Ask where the consequence travels, how it is detected and isolated, what must be opened and how recovery occurs.
+
+Also test failure of the access assumption itself: a blocked courtyard drain whose emergency overflow cannot be inspected, a roof outlet reachable only by an improvised ladder position, or plant that can be isolated but not physically withdrawn.
 
 ## Change scenarios
 
@@ -315,6 +333,25 @@ Test ordinary future changes: a new cable, kitchen or bathroom renewal, a room c
 Also test changes that originate outside the fabric: a supported component becoming unavailable, a utility interface changing or an earlier design assumption ceasing to hold.
 
 For each, ask which layer changes, where the work stops and how much permanent fabric remains untouched.
+
+## External maintenance scenarios
+
+Do not review external access with one generic question such as “can the façade be maintained?”. Use task-specific scenarios.
+
+Examples include:
+
+- clean an upper window;
+- replace the same complete window frame;
+- repoint a high masonry area;
+- renew a gutter or coping;
+- repair a roof penetration;
+- replace external plant;
+- carry tower components into a courtyard;
+- repeat the same work after the landscape has matured.
+
+For each task identify the approach route, support condition, working position, material-handling route, clearances, ownership constraints and reinstatement. Cleaning and replacement may require entirely different geometries.
+
+If the required temporary works are repeatedly disproportionate, ask whether the building form, landscape or component location should change. Difficulty is sometimes evidence of a bad maintenance detail; sometimes it is evidence of a bad architectural decision.
 
 ## Occupation and repose scenarios
 
@@ -332,6 +369,18 @@ For each scenario ask:
 - are technical systems serving the room or demanding continual attention from it?
 
 Thermal conditions, acoustic performance, daylight, glare and ventilation should be tested with appropriate methods. The remaining questions are architectural judgements and should be recorded as such, not disguised as neuroscience.
+
+## Rewind before workaround
+
+At the end of each scenario, distinguish three outcomes:
+
+1. **detail problem** — the architecture is sound and a local interface needs resolution;
+2. **system problem** — a service, structure or boundary strategy should change within the existing architecture;
+3. **architectural problem** — the plan, section, morphology, opening or spatial hierarchy is creating the downstream difficulty.
+
+The third case must be allowed to reopen the earlier design. A deep service zone, bespoke transfer, permanent access system or elaborate protective layer should not be added automatically just because the current architecture can technically be rescued.
+
+This is one of the project’s main defences against complexity accumulating silently.
 
 ## Deception review
 
