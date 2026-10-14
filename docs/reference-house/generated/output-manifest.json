@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "OH-RH-OUTPUT-1",
+  "sourceCompile": {
+    "schemaVersion": "HK-RH-COMPILE-1",
+    "fingerprint": "8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba"
+  },
+  "status": "PASS",
+  "artefacts": [
+    {
+      "artefactId": "OH-RH-PLAN-GROUND-1",
+      "path": "docs/reference-house/generated/ground-floor-plan.svg",
+      "format": "svg",
+      "rendererVersion": "1.0.0",
+      "sourceCompileFingerprint": "8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba",
+      "content": {
+        "algorithm": "sha256",
+        "fingerprint": "a8343736e866efcc6f30d4b3107cdfef9ab0b8582e9e9b29e32e8bc6e921db34"
+      }
+    },
+    {
+      "artefactId": "OH-RH-PLAN-FIRST-1",
+      "path": "docs/reference-house/generated/first-floor-plan.svg",
+      "format": "svg",
+      "rendererVersion": "1.0.0",
+      "sourceCompileFingerprint": "8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba",
+      "content": {
+        "algorithm": "sha256",
+        "fingerprint": "674783b8810238c9f4618da5a9bc528c1360c27624da6bbf5d09af702b328cb8"
+      }
+    },
+    {
+      "artefactId": "OH-RH-SECTION-AA-1",
+      "path": "docs/reference-house/generated/principal-section.svg",
+      "format": "svg",
+      "rendererVersion": "1.0.0",
+      "sourceCompileFingerprint": "8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba",
+      "content": {
+        "algorithm": "sha256",
+        "fingerprint": "ea4326cf3e3809a9492f3704729942d7f328d36c98e32b411269c57aa78fe05a"
+      }
+    },
+    {
+      "artefactId": "OH-RH-STRUCTURE-FIRST-1",
+      "path": "docs/reference-house/generated/first-floor-structure.svg",
+      "format": "svg",
+      "rendererVersion": "1.0.0",
+      "sourceCompileFingerprint": "8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba",
+      "content": {
+        "algorithm": "sha256",
+        "fingerprint": "ba0bf9ec900b203f77897e2287c994a1bbc604051d12bd26c7aea5608e320b0b"
+      }
+    },
+    {
+      "artefactId": "OH-RH-SERVICE-REGISTER-1",
+      "path": "docs/reference-house/generated/service-register.md",
+      "format": "markdown",
+      "rendererVersion": "1.0.0",
+      "sourceCompileFingerprint": "8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba",
+      "content": {
+        "algorithm": "sha256",
+        "fingerprint": "7d54924939fe9763f2fd76fef6eda049c78b11fd9c00122dfea3524ac4432a03"
+      }
+    },
+    {
+      "artefactId": "OH-RH-BOUNDARY-REGISTER-1",
+      "path": "docs/reference-house/generated/boundary-register.md",
+      "format": "markdown",
+      "rendererVersion": "1.0.0",
+      "sourceCompileFingerprint": "8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba",
+      "content": {
+        "algorithm": "sha256",
+        "fingerprint": "88b81c4dedce8d35163ca7dbb7111d2ac2a0adea8d37adda8b37b5605258b32c"
+      }
+    }
+  ]
+}
