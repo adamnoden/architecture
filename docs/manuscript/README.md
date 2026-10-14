@@ -16,6 +16,8 @@ Part III and Part IV are owned by their canonical repository areas rather than d
 
 The path from a mature manuscript to private critical edition, external adversarial review and eventual public release is governed separately by the [Publication Credibility and Release Programme](publication-credibility-release-programme.md). Its governing rule is **epistemic credibility before commercial credibility**: the work should survive deliberate internal attack and serious external criticism before publisher or market validation is sought.
 
+The active completion gate is **PR-00 — candidate-book freeze**. Its finite execution sequence, authority boundaries, stop rules and freeze criteria are recorded in the [PR-00 Candidate-Book Freeze Execution Programme](pr00-candidate-book-freeze-programme.md). PR-00 completes and stabilises the object; PR-01 then attacks that frozen object adversarially.
+
 ## Architectural specificity
 
 Concrete architectural and construction examples are used where they make the argument clearer. Masonry, plaster, cornices, architraves, thresholds, timber, metalwork and the Reference House may therefore appear in general chapters without becoming Ovid’s House requirements.
