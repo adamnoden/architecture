@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">G-01 D8-M09 — 76 Dean Street piano-nobile hierarchy mutation</title>
+  <desc id="desc">Analytical not-to-scale elevation comparing documented differentiated first-floor opening hierarchy with a counterfactual uniform opening hierarchy.</desc>
+  <style>
+    text { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111; }
+    .title { font-size: 28px; font-weight: 700; }
+    .label { font-size: 20px; font-weight: 600; }
+    .small { font-size: 16px; }
+    .note { font-size: 15px; }
+    .wall { fill: none; stroke: #111; stroke-width: 3; }
+    .opening { fill: none; stroke: #111; stroke-width: 2; }
+    .datum { stroke: #777; stroke-width: 1.5; stroke-dasharray: 8 7; }
+  </style>
+
+  <text x="40" y="48" class="title">D8-M09 — 76 Dean Street vertical hierarchy mutation</text>
+  <text x="40" y="78" class="note">Analytical elevation only. It encodes documented rank differences, not inferred historic dimensions or exact opening coordinates.</text>
+
+  <text x="90" y="130" class="label">A — differentiated first-floor hierarchy</text>
+  <rect x="90" y="165" width="420" height="350" class="wall"/>
+  <line x1="90" y1="255" x2="510" y2="255" class="datum"/>
+  <line x1="90" y1="355" x2="510" y2="355" class="datum"/>
+  <line x1="90" y1="445" x2="510" y2="445" class="datum"/>
+  <!-- upper storey -->
+  <rect x="135" y="190" width="45" height="45" class="opening"/>
+  <rect x="230" y="190" width="45" height="45" class="opening"/>
+  <rect x="325" y="190" width="45" height="45" class="opening"/>
+  <rect x="420" y="190" width="45" height="45" class="opening"/>
+  <!-- first floor: larger / differentiated -->
+  <rect x="125" y="275" width="60" height="65" class="opening"/>
+  <rect x="215" y="265" width="75" height="75" class="opening"/>
+  <rect x="320" y="275" width="60" height="65" class="opening"/>
+  <rect x="415" y="275" width="60" height="65" class="opening"/>
+  <!-- ground floor -->
+  <rect x="135" y="380" width="45" height="50" class="opening"/>
+  <rect x="230" y="380" width="45" height="50" class="opening"/>
+  <rect x="325" y="380" width="45" height="50" class="opening"/>
+  <rect x="415" y="370" width="50" height="75" class="opening"/>
+  <text x="105" y="545" class="small">First-floor rank is visible in opening treatment</text>
+  <text x="105" y="570" class="small">One opening is additionally exceptional within that storey</text>
+
+  <text x="650" y="130" class="label">B — counterfactual hierarchy flattening</text>
+  <rect x="650" y="165" width="420" height="350" class="wall"/>
+  <line x1="650" y1="255" x2="1070" y2="255" class="datum"/>
+  <line x1="650" y1="355" x2="1070" y2="355" class="datum"/>
+  <line x1="650" y1="445" x2="1070" y2="445" class="datum"/>
+  <!-- uniform openings -->
+  <g class="opening">
+    <rect x="695" y="190" width="45" height="45"/>
+    <rect x="790" y="190" width="45" height="45"/>
+    <rect x="885" y="190" width="45" height="45"/>
+    <rect x="980" y="190" width="45" height="45"/>
+    <rect x="695" y="290" width="45" height="45"/>
+    <rect x="790" y="290" width="45" height="45"/>
+    <rect x="885" y="290" width="45" height="45"/>
+    <rect x="980" y="290" width="45" height="45"/>
+    <rect x="695" y="390" width="45" height="45"/>
+    <rect x="790" y="390" width="45" height="45"/>
+    <rect x="885" y="390" width="45" height="45"/>
+    <rect x="980" y="390" width="45" height="45"/>
+  </g>
+  <text x="665" y="545" class="small">Bay count survives</text>
+  <text x="665" y="570" class="small">Storey/opening rank signal is deliberately erased</text>
+</svg>
