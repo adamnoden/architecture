@@ -179,6 +179,7 @@ const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
     page('Vertical bay coordination', '/docs/reference-house/vertical-bay-coordination'),
     page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan'),
     group('Generated compiler inspection', [
+      page('Generated inspection overview', '/docs/reference-house/generated/'),
       page('Service topology register', '/docs/reference-house/generated/service-register'),
       page('Envelope / boundary topology register', '/docs/reference-house/generated/boundary-register')
     ])
