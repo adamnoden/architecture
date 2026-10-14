@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto'
 import type { GeneratedOutputIdentity, OutputManifest } from '../../output/model.js'
 import { REFERENCE_HOUSE_OUTPUT_SCHEMA_VERSION, REFERENCE_HOUSE_OUTPUTS } from './contract.js'
 import { createReferenceHouseOutputContext } from './context.js'
+import type { ReferenceHouseOutputContext } from './context.js'
 import { renderBoundaryRegisterMarkdown, renderServiceRegisterMarkdown } from './reports.js'
 import { renderReferenceHouseSpatialInspectionSet } from './spatial.js'
 import { renderReferenceHouseStructuralInspection } from './structure.js'
@@ -12,13 +13,20 @@ export interface BuiltReferenceHouseOutput {
   readonly content: string
 }
 
+export interface ReferenceHouseOutputBundle {
+  readonly context: ReferenceHouseOutputContext
+  readonly outputs: readonly BuiltReferenceHouseOutput[]
+  readonly manifest: OutputManifest
+}
+
 const sha256 = (content: string): string =>
   createHash('sha256').update(content, 'utf8').digest('hex')
 
-export const buildReferenceHouseSuccessorOutputs = (): readonly BuiltReferenceHouseOutput[] => {
-  const context = createReferenceHouseOutputContext()
+export const buildReferenceHouseSuccessorOutputs = (
+  context: ReferenceHouseOutputContext = createReferenceHouseOutputContext()
+): readonly BuiltReferenceHouseOutput[] => {
   const spatial = renderReferenceHouseSpatialInspectionSet(context)
-  const outputs: BuiltReferenceHouseOutput[] = [
+  return [
     { descriptor: REFERENCE_HOUSE_OUTPUTS.groundFloorPlan, content: spatial.groundFloor },
     { descriptor: REFERENCE_HOUSE_OUTPUTS.firstFloorPlan, content: spatial.firstFloor },
     { descriptor: REFERENCE_HOUSE_OUTPUTS.principalSection, content: spatial.principalSection },
@@ -26,13 +34,12 @@ export const buildReferenceHouseSuccessorOutputs = (): readonly BuiltReferenceHo
     { descriptor: REFERENCE_HOUSE_OUTPUTS.serviceRegister, content: renderServiceRegisterMarkdown(context) },
     { descriptor: REFERENCE_HOUSE_OUTPUTS.boundaryRegister, content: renderBoundaryRegisterMarkdown(context) }
   ]
-  return outputs
 }
 
 export const buildReferenceHouseOutputManifest = (
-  outputs: readonly BuiltReferenceHouseOutput[] = buildReferenceHouseSuccessorOutputs()
+  context: ReferenceHouseOutputContext,
+  outputs: readonly BuiltReferenceHouseOutput[]
 ): OutputManifest => {
-  const context = createReferenceHouseOutputContext()
   if (context.result.status === 'FAIL') {
     throw new Error('Cannot build canonical successor output manifest from a failed Reference House compile.')
   }
@@ -58,6 +65,16 @@ export const buildReferenceHouseOutputManifest = (
   }
 }
 
+export const buildReferenceHouseOutputBundle = (): ReferenceHouseOutputBundle => {
+  const context = createReferenceHouseOutputContext()
+  const outputs = buildReferenceHouseSuccessorOutputs(context)
+  return {
+    context,
+    outputs,
+    manifest: buildReferenceHouseOutputManifest(context, outputs)
+  }
+}
+
 export const renderReferenceHouseOutputManifest = (
-  outputs: readonly BuiltReferenceHouseOutput[] = buildReferenceHouseSuccessorOutputs()
-): string => `${JSON.stringify(buildReferenceHouseOutputManifest(outputs), null, 2)}\n`
+  manifest: OutputManifest = buildReferenceHouseOutputBundle().manifest
+): string => `${JSON.stringify(manifest, null, 2)}\n`
