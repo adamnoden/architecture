@@ -280,53 +280,10 @@ export const publicationEntries: readonly PublicationEntry[] = [
   },
 
   {
-    id: 'part-iv-overview',
-    source: 'docs/reference-house/README.md',
+    id: 'part-iv',
+    source: 'docs/manuscript/part-iv.md',
     title: 'Part IV — Reference House',
-    kind: 'reference-house',
-    adapter: 'reference-house-overview'
-  },
-  {
-    id: 'reference-house-tectonic-language',
-    source: 'docs/reference-house/tectonic-architectural-language.md',
-    title: 'Tectonic Architectural Language',
-    kind: 'reference-house',
-    adapter: 'reference-house-page'
-  },
-  {
-    id: 'reference-house-vertical-options',
-    source: 'docs/reference-house/vertical-bay-options.md',
-    title: 'Vertical Bay Options',
-    kind: 'reference-house',
-    adapter: 'reference-house-page'
-  },
-  {
-    id: 'reference-house-vertical-coordination',
-    source: 'docs/reference-house/vertical-bay-coordination.md',
-    title: 'Vertical Bay Coordination',
-    kind: 'reference-house',
-    adapter: 'reference-house-page'
-  },
-  {
-    id: 'reference-house-whole-house',
-    source: 'docs/reference-house/whole-house-coordination-fixture.md',
-    title: 'Whole-House Coordination Fixture 01',
-    kind: 'reference-house',
-    adapter: 'reference-house-page'
-  },
-  {
-    id: 'reference-house-pattern-register',
-    source: 'docs/reference-house/pattern-occurrence-register.md',
-    title: 'Pattern Occurrence Register',
-    kind: 'reference-house',
-    adapter: 'reference-house-page'
-  },
-  {
-    id: 'reference-house-external-maintenance',
-    source: 'docs/reference-house/external-access-maintenance-plan.md',
-    title: 'External Access & Maintenance Plan',
-    kind: 'reference-house',
-    adapter: 'reference-house-page'
+    kind: 'part'
   },
 
   {
