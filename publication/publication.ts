@@ -183,7 +183,7 @@ export const publicationEntries: readonly PublicationEntry[] = [
   },
   {
     id: 'part-iii',
-    source: 'docs/manuscript/part-iii.md',
+    source: 'publication/part-iii.md',
     title: 'Part III — Pattern Language',
     kind: 'part'
   },
