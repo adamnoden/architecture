@@ -8,6 +8,8 @@ RH-10 passed the house through a whole-building adversarial audit. The house is 
 
 RH-11 has now converted those remaining uncertainties into an **issue-ready external-review package**. That is a packaging result, not validation: no competent external review has yet been recorded and Reference House maturity remains M3.
 
+The later [D12 G-01 v0.1 Conformance Trial](g01-v0.1-conformance-d12.md) tests this already-coordinated house against the independently frozen grammar and records **PASS** with no house rewind or grammar change. That is an architectural-language conformance result only and does not raise Reference House maturity.
+
 Read the [Reference House Design Programme](../development/reference-house-design-programme.md) first when resuming work. The [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md) is the current whole-house gate. The [RH-11 External Review Brief](external-review-brief.md) is the current external-review authority. The [Brief and Constraint Ledger](brief-and-constraint-ledger.md) remains the canonical project brief; the [Pattern Occurrence Register](pattern-occurrence-register.md) remains the canonical record of actual Ovid’s House pattern use.
 
 ## Authority stack
@@ -102,7 +104,7 @@ The family bathroom stacks above the service hub; the former en-suite reservatio
 
 ### G-01 / section / elevation
 
-Use [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md) together with [RH-10 Outer Elevation Coordination](outer-elevation-coordination-rh10.md).
+Use [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md) together with [RH-10 Outer Elevation Coordination](outer-elevation-coordination-rh10.md) and the later [D12 G-01 v0.1 Conformance Trial](g01-v0.1-conformance-d12.md).
 
 Controlled datums remain:
 
@@ -122,13 +124,15 @@ RH-10 completes the outer house:
 
 The house therefore has multiple explicit, related orders rather than one universal symmetry grid.
 
+D12 subsequently records the whole coordinated house as conforming to frozen **G-01 v0.1**. The courtyard remains project morphology; the local Andalusian influence remains a project dialect; neither was promoted into the grammar.
+
 ### Roof authority correction
 
 RH-04's early preference for a visible pitched roof is **superseded** by the later RH-08/RH-10 roof decision.
 
 Current roof authority is the outward-draining low-slope family because it materially simplifies the water/failure geography of this courtyard house. RH-04 remains authoritative for storey hierarchy, cornice datum and principal/courtyard opening order.
 
-This supersession is project-specific; it is not a G-01 or Ovid’s House rule.
+This supersession is project-specific; it is not a G-01 or Ovid’s House rule. D12 confirms that the low-slope family nevertheless conforms to G-01 v0.1 because the cornice/parapet and roof are resolved as one deliberate upper termination rather than a residual technical cap.
 
 ### Structure
 
@@ -291,7 +295,7 @@ The major remaining dependencies are now bounded and briefed:
 
 ## Current work
 
-The RH-00→RH-11 design/package sequence is complete at coordinated virtual-design scope.
+The RH-00→RH-11 design/package sequence is complete at coordinated virtual-design scope. The later D12 grammar trial now also records G-01 v0.1 conformance without changing Reference House maturity.
 
 **Active work is evidence execution:** issue the RH-11 package to competent reviewers, process findings through the explicit rewind protocol, and progress P03/P04 physical validation in parallel.
 
