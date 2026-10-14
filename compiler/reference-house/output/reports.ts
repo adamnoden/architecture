@@ -28,7 +28,7 @@ const serviceRows = (result: ServiceTopologyCompileResult): string[] => {
     .sort((a, b) => a.networkId.localeCompare(b.networkId) || a.id.localeCompare(b.id))
     .map((route) => {
       const network = networkById.get(route.networkId)
-      return `| ${cell(network?.label ?? route.networkId)} | ${cell(route.serviceClass)} | ${cell(route.fromNodeId)} → ${cell(route.toNodeId)} | ${cell(route.role)} | ${cell(list(route.crossingIds))} | ${cell(route.provisional ? 'provisional' : 'controlled')} |`
+      return `| ${cell(network?.label ?? route.networkId)} | ${cell(route.id)} | ${cell(route.serviceClass)} | ${cell(route.fromNodeId)} → ${cell(route.toNodeId)} | ${cell(route.role)} | ${cell(list(route.crossingIds))} | ${cell(route.provisional ? 'provisional' : 'controlled')} |`
     })
 }
 
@@ -45,8 +45,8 @@ export const renderServiceRegisterMarkdown = (
     '',
     '## Routes',
     '',
-    '| Network | Service class | Semantic route | Role | Registered crossing | Authority |',
-    '|---|---|---|---|---|---|',
+    '| Network | Route ID | Service class | Semantic route | Role | Registered crossing | Authority |',
+    '|---|---|---|---|---|---|---|',
     ...serviceRows(result),
     '',
     '## Selected crossings',
