@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">G-01 D8-M02 — Danson blind-window centreline mutation</title>
+  <desc id="desc">Analytical not-to-scale diagram comparing the documented plan-led blind-window centreline with a counterfactual exterior-perfect centreline.</desc>
+  <style>
+    text { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111; }
+    .title { font-size: 28px; font-weight: 700; }
+    .label { font-size: 20px; font-weight: 600; }
+    .small { font-size: 16px; }
+    .note { font-size: 15px; }
+    .line { stroke: #111; stroke-width: 3; fill: none; }
+    .thin { stroke: #111; stroke-width: 2; fill: none; }
+    .dash { stroke: #111; stroke-width: 2; stroke-dasharray: 10 8; }
+    .muted { stroke: #666; fill: none; }
+    .box { fill: none; stroke: #111; stroke-width: 3; }
+  </style>
+
+  <text x="40" y="48" class="title">D8-M02 — Blind-window centreline mutation</text>
+  <text x="40" y="78" class="note">Analytical diagram only. Relative relationships are evidenced; offset magnitude is intentionally not inferred.</text>
+
+  <text x="80" y="130" class="label">A — documented relationship</text>
+  <rect x="80" y="165" width="440" height="300" class="box"/>
+  <text x="95" y="195" class="small">INTERIOR / PLAN</text>
+  <rect x="150" y="230" width="300" height="150" class="thin"/>
+  <line x1="300" y1="205" x2="300" y2="440" class="dash"/>
+  <text x="315" y="260" class="small">interior centreline</text>
+  <line x1="95" y1="420" x2="505" y2="420" class="line"/>
+  <text x="95" y="452" class="small">EXTERIOR FACE</text>
+  <rect x="260" y="395" width="80" height="50" class="thin"/>
+  <text x="215" y="488" class="small">blind/simulated opening</text>
+  <line x1="360" y1="365" x2="360" y2="460" class="dash muted"/>
+  <text x="365" y="385" class="note">exterior-field centre</text>
+  <text x="105" y="530" class="small">Existence: elevation-led</text>
+  <text x="105" y="555" class="small">Centreline: plan-led</text>
+  <text x="105" y="580" class="small">Result: controlled exterior compromise</text>
+
+  <text x="650" y="130" class="label">B — counterfactual regularisation</text>
+  <rect x="650" y="165" width="440" height="300" class="box"/>
+  <text x="665" y="195" class="small">INTERIOR / PLAN</text>
+  <rect x="720" y="230" width="300" height="150" class="thin"/>
+  <line x1="870" y1="205" x2="870" y2="440" class="dash"/>
+  <text x="885" y="260" class="small">interior centreline</text>
+  <line x1="665" y1="420" x2="1075" y2="420" class="line"/>
+  <text x="665" y="452" class="small">EXTERIOR FACE</text>
+  <line x1="930" y1="205" x2="930" y2="460" class="dash muted"/>
+  <rect x="890" y="395" width="80" height="50" class="thin"/>
+  <text x="800" y="488" class="small">opening moved to exterior field centre</text>
+  <path d="M885 315 C905 300 920 300 930 315" class="thin"/>
+  <path d="M930 315 l-10 -6 m10 6 l-5 11" class="thin"/>
+  <text x="690" y="530" class="small">Existence remains elevation-led</text>
+  <text x="690" y="555" class="small">Centreline becomes exterior-led</text>
+  <text x="690" y="580" class="small">Interior centring relation is sacrificed</text>
+</svg>

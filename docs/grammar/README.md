@@ -31,5 +31,6 @@ The later evidence gates and mutation runs record how provisional G-01 claims we
 - [G-01 D5/D6 web pass v0.2](g01-d5-d6-web-pass-v02.md) — superseded evidence pass
 - [G-01 D5/D6 evidence gate v0.3](g01-d5-d6-web-pass-v03.md) — current D5/D6 authority
 - [G-01 D6 mutation run — Danson sequence](g01-d6-mutation-run-01-danson-sequence.md)
+- [G-01 D8 controlled falsification result](g01-d8-falsification-result.md) — current falsification gate; all D7 candidates challenged without promoting a release grammar
 
 The Reference House selects G-01 as one architectural input alongside Ovid’s House doctrine, patterns, site and programme, technical families and project-specific morphology. The grammar remains independently selectable from the project.
