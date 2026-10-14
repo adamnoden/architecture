@@ -1,0 +1,44 @@
+name: COA-04 refine spatial views
+
+on:
+  push:
+    branches:
+      - coa-04-plan-section-successors
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: coa-04-plan-section-successors
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: python compiler/coa04/refine_spatial.py
+      - run: npm run typecheck
+      - run: npm run outputs:spatial:generate
+      - run: npm run test:coa03
+      - run: npm run test:coa04
+      - run: sudo apt-get update -qq
+      - run: sudo apt-get install -y -qq librsvg2-bin
+      - run: mkdir -p /tmp/coa04-qa-2
+      - run: rsvg-convert -w 1800 docs/reference-house/generated/ground-floor-plan.svg -o /tmp/coa04-qa-2/ground-floor-plan.png
+      - run: rsvg-convert -w 1800 docs/reference-house/generated/first-floor-plan.svg -o /tmp/coa04-qa-2/first-floor-plan.png
+      - run: rsvg-convert -w 1800 docs/reference-house/generated/principal-section.svg -o /tmp/coa04-qa-2/principal-section.png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coa04-visual-qa-2
+          path: /tmp/coa04-qa-2
+          if-no-files-found: error
+      - run: rm compiler/coa04/refine_spatial.py .github/workflows/coa04-refine.yml
+      - run: git config user.name github-actions[bot]
+      - run: git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - run: git add -A
+      - run: git commit -m 'COA-04 refine plan and section presentation after visual QA'
+      - run: git push origin HEAD:coa-04-plan-section-successors
