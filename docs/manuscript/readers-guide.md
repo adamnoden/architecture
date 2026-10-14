@@ -16,7 +16,7 @@ The book has two reading modes.
 
 **Part III is a reference.** The pattern language translates the doctrine into reusable architectural responses. It is not intended to be read as a second prose version of Part II. Pattern IDs are stable identities, not a ranking or required design sequence. Strategies sit above patterns where several materially different physical responses can satisfy the same broader proposition. Held candidates remain outside the canonical language until their admission questions are resolved.
 
-**Part IV is an integration test.** The Reference House is one coordinated interpretation of Ovid’s House using a Georgian-derived grammar, a courtyard morphology and project-specific technical choices. Those choices are allowed to be opinionated. They do not travel upstream into the doctrine merely because the house uses them. This Working Edition records the strongest current Reference House material while the publication-facing house chapters continue to develop.
+**Part IV is an integration test.** The Reference House is one coordinated interpretation of Ovid’s House using the frozen G-01 Georgian-derived grammar, a courtyard morphology and project-specific technical choices. Those choices are allowed to be opinionated. They do not travel upstream into the doctrine merely because the house uses them. The six chapters in Part IV synthesise the current Reference House at coordinated virtual-design scope; they do not convert its unresolved engineering, physical or professional-review obligations into proof.
 
 **Part V returns to delivery.** A proposition is not complete because it reads well. It must survive cost, carbon, professional responsibility, construction variation, prototype work, commissioning, maintenance and later change.
 
@@ -56,6 +56,8 @@ Ovid’s House separates confidence in a proposition from the amount of project 
 - **Experimental** — deliberately under test and not presented as a general project requirement.
 
 **Maturity** describes what this project has actually done with the proposition. A proposition may be drawn, calculated, costed, mocked-up, maintenance-tested, built or observed in use. These states are not interchangeable with evidence. A well-established principle may be immature in the Reference House; a carefully built prototype may still test a weakly supported general proposition.
+
+At the candidate-book reconciliation point, the canonical pattern language and G-01 grammar are internally validated/controlled at their stated scopes; the architectural grammar framework and Reference House remain internally coordinated; physical prototypes remain developed but not completed; competent external professional review of the Reference House has not yet occurred. The computational workstream is internally validated only within its bounded declared proof domain. These maturity differences are deliberate and should not be flattened by the publication.
 
 Pattern pages use **Does not prove** to state the boundary of inference where evidence could otherwise be read too broadly. Renaming, reclassifying or assigning a stable identity does not increase evidence or maturity.
 
