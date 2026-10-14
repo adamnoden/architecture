@@ -2,6 +2,7 @@ import { existsSync, lstatSync, readFileSync } from 'node:fs'
 import { dirname, extname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { applyAdapter, dependenciesForAdapter, readFrontmatterValue } from '../adapters.js'
+import { applyPublicationFigures, publicationFigurePlacements } from '../figures.js'
 import {
   canonicalPatternOrder,
   primerPublicationEntries,
@@ -76,14 +77,16 @@ function validateEntries(label: string, entries: readonly PublicationEntry[]): v
       validateLocalImages(source, markdown)
     }
 
-    if (entry.adapter) {
-      const markdown = readFileSync(localPath(entry.source), 'utf8')
-      const adapted = applyAdapter(entry.adapter, markdown, {
-        repoRoot,
-        workSourceRoot: repoRoot
-      })
-      if (!adapted.trim()) throw new Error(`${label} adapter produced empty output for ${entry.source}`)
-    }
+    const sourceMarkdown = readFileSync(localPath(entry.source), 'utf8')
+    const adapted = applyAdapter(entry.adapter, sourceMarkdown, {
+      repoRoot,
+      workSourceRoot: repoRoot
+    })
+    const composed = label === 'publication'
+      ? applyPublicationFigures(entry.id, adapted)
+      : adapted
+    if (!composed.trim()) throw new Error(`${label} composition produced empty output for ${entry.source}`)
+    validateLocalImages(entry.source, composed)
 
     if (entry.patternId) {
       const markdown = readFileSync(localPath(entry.source), 'utf8')
@@ -110,9 +113,34 @@ function validateScopeReport(): void {
   }
 }
 
+function validateFigureRegister(): void {
+  const entryIds = new Set(publicationEntries.map((entry) => entry.id))
+  const figureIds = new Set<string>()
+  const images = new Set<string>()
+
+  for (const placement of publicationFigurePlacements()) {
+    if (!entryIds.has(placement.entryId)) {
+      throw new Error(`${placement.id} targets unknown publication entry ${placement.entryId}.`)
+    }
+    if (figureIds.has(placement.id)) throw new Error(`Duplicate publication figure id: ${placement.id}`)
+    if (images.has(placement.image)) throw new Error(`Publication figure reused unexpectedly: ${placement.image}`)
+    figureIds.add(placement.id)
+    images.add(placement.image)
+  }
+
+  const expected = Array.from({ length: 11 }, (_, index) => `D-F${String(index + 1).padStart(2, '0')}`)
+  for (const id of expected) {
+    if (!figureIds.has(id)) throw new Error(`Missing retained PR-00D publication figure placement: ${id}`)
+  }
+  if (figureIds.has('D-F12') || figureIds.has('D-F13')) {
+    throw new Error('D-F12/D-F13 are intentionally omitted; add them only after an explicit PR-00D decision.')
+  }
+}
+
 validateEntries('smoke', smokePublicationEntries)
 validateEntries('primer', primerPublicationEntries)
 validateEntries('publication', publicationEntries)
+validateFigureRegister()
 validateScopeReport()
 
 const mermaidFixture = smokePublicationEntries.find((entry) => entry.smokeOnly)
@@ -136,5 +164,5 @@ for (let index = 0; index < canonicalPatternOrder.length; index += 1) {
 }
 
 console.log(
-  `Publication manifests, adapters and generated scope report valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
+  `Publication manifests, adapters, PR-00D figure composition and generated scope report valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
 )
