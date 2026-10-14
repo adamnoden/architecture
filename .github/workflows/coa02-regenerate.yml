@@ -1,0 +1,31 @@
+name: COA-02 regenerate reports
+
+on:
+  push:
+    branches:
+      - coa-02-report-extraction
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: coa-02-report-extraction
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: |
+          npm run outputs:reports:generate
+          rm .github/workflows/coa02-regenerate.yml
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/reference-house/generated/service-register.md docs/reference-house/generated/boundary-register.md .github/workflows/coa02-regenerate.yml
+          git commit -m "COA-02 regenerate semantic inspection reports"
+          git push origin HEAD:coa-02-report-extraction
