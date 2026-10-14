@@ -37,7 +37,7 @@ The plan is not tied to a compass direction. Drawings place the entrance to the 
 
 The courtyard is the strongest project-specific choice in the house.
 
-It was not derived from House Kernel principles, and it is not a requirement of the Georgian-derived grammar. It remains because it earns several things simultaneously: an internal point of orientation, a second aspect for many spaces, daylight to circulation, a sheltered outdoor room, and a spatial interval between arrival and garden.
+It was not derived from Ovid’s House principles, and it is not a requirement of the Georgian-derived grammar. It remains because it earns several things simultaneously: an internal point of orientation, a second aspect for many spaces, daylight to circulation, a sheltered outdoor room, and a spatial interval between arrival and garden.
 
 It also carries costs. Four internal elevations increase envelope area. The court complicates roof geometry, drainage and external maintenance. At roughly two storeys high and less than four metres wide, it is a relatively deep void. Direct sun at its floor is limited even in summer and scarce outside it. The court is therefore treated honestly as a **shaded light court and spatial condenser**, not marketed as a sunny central garden.
 
