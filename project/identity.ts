@@ -14,7 +14,10 @@ export const projectIdentity = {
     'Long-Life House',
     'House Design Doctrine'
   ],
-  legacyNameProvenanceSources: ['STATUS.md']
+  legacyNameProvenanceSources: [
+    'STATUS.md',
+    'docs/manuscript/doctrine-register-crosswalk.md'
+  ]
 } as const
 
 export type FormerMasterProjectName = (typeof projectIdentity.formerMasterNames)[number]
