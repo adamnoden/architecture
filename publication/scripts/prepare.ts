@@ -15,6 +15,7 @@ import { dirname, posix, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { projectIdentity } from '../../project/identity.js'
 import { applyAdapter, dependenciesForAdapter } from '../adapters.js'
+import { applyPublicationFigures } from '../figures.js'
 import {
   primerPublicationEntries,
   publicationEntries,
@@ -196,6 +197,7 @@ cpSync(repoPath('docs'), workPath('docs'), { recursive: true })
 copyFileSync(repoPath('README.md'), workPath('README.md'))
 mkdirSync(workPath('publication'), { recursive: true })
 cpSync(repoPath('publication/primer'), workPath('publication/primer'), { recursive: true })
+copyFileSync(repoPath('publication/part-iii.md'), workPath('publication/part-iii.md'))
 
 const metadata = editionMetadata()
 const titlePage = smokeMode
@@ -212,6 +214,7 @@ for (const entry of entries) {
   const preparedPath = workPath(entry.source)
   let markdown = readFileSync(preparedPath, 'utf8')
   markdown = applyAdapter(entry.adapter, markdown, { repoRoot, workSourceRoot })
+  if (fullMode) markdown = applyPublicationFigures(entry.id, markdown)
 
   if (markdown.includes('```mermaid')) {
     const renderedPath = `${preparedPath}.mmdc.md`
