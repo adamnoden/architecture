@@ -138,6 +138,6 @@ export const renderCompactLegend = (x: number, y: number): string => {
 }
 
 export const ANNOTATION_ZONE = {
-  rightWidth: 3900,
+  rightWidth: 4700,
   bottomHeight: 2100
 } as const
