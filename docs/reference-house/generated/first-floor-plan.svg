@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1120" viewBox="-1500 -1800 17400 14700" role="img" aria-labelledby="title desc" data-output-id="OH-RH-PLAN-FIRST-1" data-renderer-version="1.0.0" data-source-compile="8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba" data-compile-status="PASS">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1120" viewBox="-1500 -1800 18200 14700" role="img" aria-labelledby="title desc" data-output-id="OH-RH-PLAN-FIRST-1" data-renderer-version="1.0.0" data-source-compile="8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba" data-compile-status="PASS">
 <title id="title">Reference House — first-floor plan</title>
 <desc id="desc">North-up deterministic semantic inspection plan. Human labels lead; semantic IDs remain secondary. Wall faces and unresolved construction geometry are not invented.</desc>
 <style>
@@ -32,7 +32,7 @@
   .rh-court-edge{stroke:#555;stroke-width:32;stroke-dasharray:105 75;fill:none}
   .rh-zone{fill:#f0eee8}
 </style>
-<rect x="-1500" y="-1800" width="17400" height="14700" class="oh-bg"/>
+<rect x="-1500" y="-1800" width="18200" height="14700" class="oh-bg"/>
 <text x="0" y="-1180" class="oh-title">Reference House — first-floor plan</text>
 <text x="0" y="-790" class="oh-subtitle">GENERATED SEMANTIC INSPECTION · NORTH UP · wall faces not represented</text>
 <g data-entity="U-BATH-01" data-kind="room" data-provisional="false">
