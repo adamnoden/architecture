@@ -1,0 +1,89 @@
+{
+  "manifestVersion": "COA00-1",
+  "programmeGate": "COA-00",
+  "planningBaseline": "2bacd97889caa7da1fe83ad4cbd7a7cdfb7be22c",
+  "programmePlanCommit": "7eae354cfb095705d91a5d5d6e3cf7bf1a529e9d",
+  "executionBaseline": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911",
+  "legacyHashAuthority": "compiler/ch00/reference-house-baseline.json",
+  "canonicalCompileSurface": "createReferenceHouseSource() -> compileReferenceHouseSystem(source)",
+  "authority": {
+    "computationalMaturity": "M4",
+    "referenceHouseMaturity": "M3",
+    "technicalProofBoundaryChanged": false
+  },
+  "legacyArtefacts": [
+    {
+      "id": "rhc1GroundFloor",
+      "path": "docs/reference-house/rhc1-ground-floor.svg",
+      "generator": "compiler/reference-house/generate.ts",
+      "historicalCompileSurface": "compileReferenceHouse",
+      "format": "svg",
+      "classes": ["SPATIAL_INSPECTION", "HISTORICAL_EVIDENCE", "PUBLICATION_SOURCE_CANDIDATE"],
+      "successorDisposition": "new spatial inspection SVG"
+    },
+    {
+      "id": "rhc1FirstFloor",
+      "path": "docs/reference-house/rhc1-first-floor.svg",
+      "generator": "compiler/reference-house/generate.ts",
+      "historicalCompileSurface": "compileReferenceHouse",
+      "format": "svg",
+      "classes": ["SPATIAL_INSPECTION", "HISTORICAL_EVIDENCE", "PUBLICATION_SOURCE_CANDIDATE"],
+      "successorDisposition": "new spatial inspection SVG"
+    },
+    {
+      "id": "rhc1PrincipalSection",
+      "path": "docs/reference-house/rhc1-principal-section.svg",
+      "generator": "compiler/reference-house/generate.ts",
+      "historicalCompileSurface": "compileReferenceHouse",
+      "format": "svg",
+      "classes": ["SPATIAL_INSPECTION", "HISTORICAL_EVIDENCE", "PUBLICATION_SOURCE_CANDIDATE"],
+      "successorDisposition": "new spatial inspection SVG"
+    },
+    {
+      "id": "rhc2StructuralTopology",
+      "path": "docs/reference-house/rhc2-structural-topology.svg",
+      "generator": "compiler/rhc2/generate.ts",
+      "historicalCompileSurface": "compileReferenceHouseStructuralView",
+      "format": "svg",
+      "classes": ["SPATIAL_INSPECTION", "HISTORICAL_EVIDENCE", "PUBLICATION_SOURCE_CANDIDATE"],
+      "successorDisposition": "new north-up structural inspection SVG"
+    },
+    {
+      "id": "rhc3ServiceTopology",
+      "path": "docs/reference-house/rhc3-service-topology.svg",
+      "generator": "compiler/rhc3/generate.ts",
+      "historicalCompileSurface": "compileReferenceHouseServiceView",
+      "format": "svg",
+      "classes": ["SEMANTIC_REPORT", "HISTORICAL_EVIDENCE"],
+      "successorDisposition": "generated Markdown/HTML register; graph only if independently justified"
+    },
+    {
+      "id": "rhc4BoundaryTopology",
+      "path": "docs/reference-house/rhc4-boundary-topology.svg",
+      "generator": "compiler/rhc4/generate.ts",
+      "historicalCompileSurface": "compileReferenceHouseBoundaryView",
+      "format": "svg",
+      "classes": ["SEMANTIC_REPORT", "HISTORICAL_EVIDENCE"],
+      "successorDisposition": "generated Markdown/HTML register; selective spatial companion only where geometry matters"
+    }
+  ],
+  "verifiedFindings": {
+    "structuralNorthSouthProjectionMismatch": true,
+    "principalSectionRightAnnotationClipping": true,
+    "singleHeadedSpanAxisNotation": true,
+    "explicitNorthArrowMissing": true,
+    "planSectionCrossReferenceMissing": true,
+    "qualitativeOpeningRelationshipsVisuallyAbsent": true,
+    "requiredAdjacencyVisuallyAbsent": true,
+    "serviceOutputIsReportShapedSvg": true,
+    "boundaryOutputIsReportShapedSvg": true,
+    "semanticIdsLeadHumanLabels": true
+  },
+  "preservation": {
+    "legacyArtefactsMustRemainByteIdentical": true,
+    "successorsUseNewPaths": true,
+    "successorsConsumeCanonicalSinglePassResult": true,
+    "semanticRuntimeMayDependOnOutputLayer": false,
+    "outputMayInventMissingGeometry": false
+  }
+}
