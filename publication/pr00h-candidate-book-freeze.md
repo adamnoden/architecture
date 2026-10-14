@@ -65,7 +65,7 @@ The freeze does **not** convert any of those into external proof.
 
 ## 4. Explicit maturity boundaries at freeze
 
-The book is internally controlled as a publication object, while the work it describes remains at different maturities.
+The book is controlled as a candidate publication object, while the work it describes remains at different maturities.
 
 - **Public architectural position:** M3 — coordinated; not independently validated as a whole architectural proposition.
 - **Pattern language:** M4 — internally validated / controlled at current scope.
@@ -75,9 +75,9 @@ The book is internally controlled as a publication object, while the work it des
 - **Physical prototypes:** M2; P03 and P04 remain unresolved evidence obligations.
 - **External professional review:** M1; no competent discipline-review response has yet been resolved.
 - **Computational track:** M4 at bounded proof scope; not proof of physical, regulatory or whole-building adequacy.
-- **Publication:** promoted by PR-00H to M4 at **candidate-book / internal-review scope only**.
+- **Publication:** remains **M3 — Coordinated** through PR-00H.
 
-Publication M4 means the book has survived structured internal completion, authority reconciliation, visual-argument review, whole-book editorial hardening, integrity checks and an inspected print proof, and is stable enough to act as the controlled baseline for PR-01. It does **not** mean the architectural thesis is externally validated or the book is release-ready. Publication M5 remains downstream of appropriate independent criticism / release evidence.
+The publication is intentionally **not promoted to M4 merely because it has been frozen**. PR-00 establishes completeness, reconciliation, visual control, editorial integrity and a stable print-proofed object. The next gate, PR-01, is the first deliberately hostile whole-object intellectual challenge. If the candidate survives that adversarial review with material findings resolved, an M4 reassessment is then earned rather than assumed by process completion.
 
 ## 5. Retained research debt
 
