@@ -206,7 +206,7 @@ The trial examines the design information and assembly logic, not the installer.
 
 # 22. Prototype and disassemble before repetition
 
-A drawing can prove geometry. It cannot prove touch, sound, removal effort, rattle, patina, cleaning or the experience of a joint in a real room.
+A drawing can establish the geometry it represents. It cannot establish touch, sound, removal effort, rattle, patina, cleaning or the experience of a joint in a real room.
 
 Repeated non-standard architecture should therefore pass through a **first article**.
 
