@@ -1,3 +1,5 @@
+import { applyPublicationIntegrityEdits } from './integrity-edits.js'
+
 interface FigurePlacement {
   readonly entryId: string
   readonly id: string
@@ -122,6 +124,7 @@ function figureBlock(placement: FigurePlacement): string {
 }
 
 export function applyPublicationFigures(entryId: string, markdown: string): string {
+  markdown = applyPublicationIntegrityEdits(entryId, markdown)
   const entryPlacements = placements.filter((placement) => placement.entryId === entryId)
 
   for (const placement of entryPlacements) {
