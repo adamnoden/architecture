@@ -12,11 +12,11 @@ The publication sequence is:
 6. [Part V — Making and Testing the Platform](part-v.md)
 7. [Sources and further reading](sources-and-further-reading.md)
 
-Part III and Part IV are owned by their canonical repository areas rather than duplicated under `manuscript/`. Publication order is not filesystem ownership. The intended book structure and chapter plan are recorded in [Publication Architecture](publication-architecture.md).
+Part III and Part IV are owned by their canonical repository areas rather than duplicated as architectural authorities under `manuscript/`. Publication order is not filesystem ownership. Reader-facing synthesis may live here while the canonical pattern and Reference House records remain authoritative. The intended book structure and chapter plan are recorded in [Publication Architecture](publication-architecture.md).
 
 The path from a mature manuscript to private critical edition, external adversarial review and eventual public release is governed separately by the [Publication Credibility and Release Programme](publication-credibility-release-programme.md). Its governing rule is **epistemic credibility before commercial credibility**: the work should survive deliberate internal attack and serious external criticism before publisher or market validation is sought.
 
-The active completion gate is **PR-00 — candidate-book freeze**. Its finite execution sequence, authority boundaries, stop rules and freeze criteria are recorded in the [PR-00 Candidate-Book Freeze Execution Programme](pr00-candidate-book-freeze-programme.md). PR-00 completes and stabilises the object; PR-01 then attacks that frozen object adversarially.
+The active completion gate is **PR-00 — candidate-book freeze**. Its finite execution sequence, authority boundaries, stop rules and freeze criteria are recorded in the [PR-00 Candidate-Book Freeze Execution Programme](pr00-candidate-book-freeze-programme.md). The current finite work inventory is the [PR-00 Candidate-Book Ledger](pr00-candidate-book-ledger.md). PR-00 completes and stabilises the object; PR-01 then attacks that frozen object adversarially.
 
 ## Architectural specificity
 
