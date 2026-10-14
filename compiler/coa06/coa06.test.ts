@@ -28,17 +28,14 @@ describe('COA-06 successor output integration', () => {
     assert.ok(!fingerprints.has(undefined))
   })
 
-  test('manifest rendering is deterministic and covers each successor output', () => {
+  test('manifest rendering is deterministic, complete and exactly committed', () => {
     const manifest = renderReferenceHouseOutputManifest(outputs)
     assert.equal(renderReferenceHouseOutputManifest(outputs), manifest)
+    assert.equal(readFileSync(REFERENCE_HOUSE_OUTPUTS.outputManifest.path, 'utf8'), manifest)
     for (const { descriptor } of outputs) {
       assert.match(manifest, new RegExp(descriptor.id))
       assert.match(manifest, new RegExp(descriptor.path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
     }
-    // Temporary bootstrap visibility for the first COA-06 CI run; remove once committed manifest is frozen.
-    console.log('COA06_MANIFEST_BEGIN')
-    console.log(manifest)
-    console.log('COA06_MANIFEST_END')
   })
 
   test('legacy CH-frozen artefact paths remain separate from the successor family', () => {
