@@ -20,9 +20,7 @@ The book has two reading modes.
 
 **Part V returns to delivery.** A proposition is not complete because it reads well. It must survive cost, carbon, professional responsibility, construction variation, prototype work, commissioning, maintenance and later change.
 
-**Sources and further reading** closes the current publication with the books, papers, standards and essays most useful for following the architectural and cross-domain ideas further. It is a reading list rather than a second evidence register.
-
-The web edition remains the better place for research provenance, development history and live project state. The PDF is deliberately narrower: it is the linear architectural publication.
+**Sources and further reading** closes the publication with the books, papers, standards and essays most useful for following the architectural and cross-domain ideas further. It is a reading list rather than a second evidence register.
 
 ## Terms used in a specific sense
 
@@ -57,7 +55,7 @@ Ovid’s House separates confidence in a proposition from the amount of project 
 
 **Maturity** describes what this project has actually done with the proposition. A proposition may be drawn, calculated, costed, mocked-up, maintenance-tested, built or observed in use. These states are not interchangeable with evidence. A well-established principle may be immature in the Reference House; a carefully built prototype may still test a weakly supported general proposition.
 
-At the candidate-book reconciliation point, the canonical pattern language and G-01 grammar are internally validated/controlled at their stated scopes; the architectural grammar framework and Reference House remain internally coordinated; physical prototypes remain developed but not completed; competent external professional review of the Reference House has not yet occurred. The computational workstream is internally validated only within its bounded declared proof domain. These maturity differences are deliberate and should not be flattened by the publication.
+The canonical pattern language and G-01 grammar are internally validated/controlled at their stated scopes; the architectural grammar framework and Reference House remain internally coordinated; physical prototypes remain developed but not completed; competent external professional review of the Reference House has not yet occurred. The computational workstream is internally validated only within its bounded declared proof domain. These differences are deliberate and should not be flattened into one generic sense of validation.
 
 Pattern pages use **Does not prove** to state the boundary of inference where evidence could otherwise be read too broadly. Renaming, reclassifying or assigning a stable identity does not increase evidence or maturity.
 
