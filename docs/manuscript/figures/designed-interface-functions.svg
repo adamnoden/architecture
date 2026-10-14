@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 820" role="img" aria-labelledby="title desc">
+  <title id="title">The designed interface as a functional element</title>
+  <desc id="desc">Two assemblies meet through a deliberate interface. The interface separates support, restraint, movement, boundary continuity, tolerance, fixing and future removal as duties to assign rather than assuming one buried joint performs all of them.</desc>
+  <style>
+    .big{font:600 30px Arial,Helvetica,sans-serif;fill:#111}
+    .label{font:600 23px Arial,Helvetica,sans-serif;fill:#111}
+    .small{font:19px Arial,Helvetica,sans-serif;fill:#444}
+    .rule{stroke:#111;stroke-width:3;fill:none}
+    .soft{stroke:#777;stroke-width:2;fill:none}
+  </style>
+
+  <rect x="70" y="190" width="300" height="390" rx="4" fill="#f2f2f2" stroke="#111" stroke-width="3"/>
+  <text x="220" y="365" text-anchor="middle" class="big">Assembly A</text>
+  <text x="220" y="407" text-anchor="middle" class="small">longer-lived, supporting,</text>
+  <text x="220" y="438" text-anchor="middle" class="small">or simply different</text>
+
+  <rect x="1130" y="190" width="300" height="390" rx="4" fill="#fff" stroke="#111" stroke-width="3"/>
+  <text x="1280" y="365" text-anchor="middle" class="big">Assembly B</text>
+  <text x="1280" y="407" text-anchor="middle" class="small">moving, replaceable,</text>
+  <text x="1280" y="438" text-anchor="middle" class="small">or simply different</text>
+
+  <rect x="440" y="80" width="620" height="605" rx="5" fill="#fff" stroke="#111" stroke-width="4"/>
+  <text x="750" y="132" text-anchor="middle" class="big">DESIGNED INTERFACE</text>
+  <line x1="485" y1="158" x2="1015" y2="158" class="soft"/>
+
+  <text x="495" y="207" class="label">Support</text>
+  <text x="735" y="207" class="small">where gravity load goes</text>
+  <line x1="495" y1="229" x2="1010" y2="229" class="soft"/>
+
+  <text x="495" y="276" class="label">Restraint</text>
+  <text x="735" y="269" class="small">what must be held</text>
+  <text x="735" y="294" class="small">and in which direction</text>
+  <line x1="495" y1="316" x2="1010" y2="316" class="soft"/>
+
+  <text x="495" y="363" class="label">Movement</text>
+  <text x="735" y="363" class="small">where harmless movement is allowed</text>
+  <line x1="495" y1="385" x2="1010" y2="385" class="soft"/>
+
+  <text x="495" y="432" class="label">Boundaries</text>
+  <text x="735" y="425" class="small">which safety / environmental</text>
+  <text x="735" y="450" class="small">duties continue</text>
+  <line x1="495" y1="472" x2="1010" y2="472" class="soft"/>
+
+  <text x="495" y="519" class="label">Tolerance</text>
+  <text x="735" y="512" class="small">where construction variation</text>
+  <text x="735" y="537" class="small">is absorbed</text>
+  <line x1="495" y1="559" x2="1010" y2="559" class="soft"/>
+
+  <text x="495" y="606" class="label">Fixing + removal</text>
+  <text x="735" y="599" class="small">how the shorter-lived part</text>
+  <text x="735" y="624" class="small">is reached and released</text>
+
+  <line x1="370" y1="385" x2="440" y2="385" class="rule"/>
+  <line x1="1060" y1="385" x2="1130" y2="385" class="rule"/>
+
+  <text x="750" y="735" text-anchor="middle" class="small">One component may perform several duties.</text>
+  <text x="750" y="766" text-anchor="middle" class="small">The point is to assign them deliberately before concealment.</text>
+</svg>

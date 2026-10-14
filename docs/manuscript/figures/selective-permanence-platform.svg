@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Selective permanence and the architectural platform</title>
+  <desc id="desc">Four qualitative temporal layers from permanent fabric to fit-out and wear. Ordinary change in faster layers stops at designed interfaces rather than consuming slower fabric; unavoidable crossings into permanent fabric remain sparse and deliberate.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/>
+    </marker>
+    <style>
+      .label{font:600 28px Arial,Helvetica,sans-serif;fill:#111}
+      .small{font:22px Arial,Helvetica,sans-serif;fill:#333}
+      .tiny{font:18px Arial,Helvetica,sans-serif;fill:#555}
+      .rule{stroke:#111;stroke-width:3;fill:none}
+      .soft{stroke:#777;stroke-width:2;fill:none}
+      .dash{stroke:#555;stroke-width:2.5;fill:none;stroke-dasharray:12 10}
+    </style>
+  </defs>
+
+  <text x="90" y="70" class="small">SLOWER / MORE ENDURING</text>
+  <text x="90" y="760" class="small">FASTER / MORE RENEWABLE</text>
+  <line x1="64" y1="96" x2="64" y2="728" class="soft" marker-end="url(#arrow)"/>
+
+  <rect x="150" y="105" width="650" height="130" rx="4" fill="#f4f4f4" stroke="#111" stroke-width="3"/>
+  <text x="190" y="158" class="label">Permanent fabric</text>
+  <text x="190" y="198" class="small">structure · major masonry · primary floor / roof</text>
+
+  <rect x="150" y="270" width="650" height="120" rx="4" fill="#fff" stroke="#111" stroke-width="3"/>
+  <text x="190" y="320" class="label">Interface infrastructure</text>
+  <text x="190" y="360" class="small">bearings · backplanes · sleeves · controlled fixing zones</text>
+
+  <rect x="150" y="425" width="650" height="120" rx="4" fill="#fff" stroke="#777" stroke-width="2.5"/>
+  <text x="190" y="475" class="label">Replaceable systems</text>
+  <text x="190" y="515" class="small">plant · distribution · controls · selected assemblies</text>
+
+  <rect x="150" y="580" width="650" height="120" rx="4" fill="#fff" stroke="#aaa" stroke-width="2"/>
+  <text x="190" y="630" class="label">Fit-out and wear</text>
+  <text x="190" y="670" class="small">finishes · fittings · appliances · seals</text>
+
+  <text x="875" y="120" class="label">Where change should stop</text>
+  <text x="875" y="160" class="small">Most ordinary renewal turns back</text>
+  <text x="875" y="192" class="small">before it consumes slower fabric.</text>
+  <line x1="875" y1="225" x2="1280" y2="225" class="soft"/>
+
+  <path d="M 1240 625 C 1115 625, 1050 585, 1050 515 C 1050 435, 970 380, 815 335" class="rule" marker-end="url(#arrow)"/>
+  <text x="1090" y="595" class="small">ordinary change</text>
+  <text x="835" y="322" class="tiny">designed interface</text>
+
+  <path d="M 1240 455 C 1130 440, 1060 385, 1060 325 C 1060 255, 965 220, 815 175" class="dash" marker-end="url(#arrow)"/>
+  <text x="1090" y="410" class="small">unavoidable crossing</text>
+  <text x="1090" y="440" class="tiny">sparse · deliberate · documented</text>
+
+  <text x="875" y="690" class="small">Permanence is selective.</text>
+  <text x="875" y="724" class="tiny">Keep valuable architectural commitments slow;</text>
+  <text x="875" y="752" class="tiny">give probable change somewhere else to happen.</text>
+</svg>
