@@ -29,3 +29,14 @@ jobs:
 
       - name: Check repository health
         run: npm run check
+
+      - name: Build PR-00G candidate PDF
+        run: npm run publication:build
+
+      - name: Upload PR-00G candidate PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr00g-candidate-${{ github.sha }}
+          path: publication/dist/*.pdf
+          if-no-files-found: error
+          retention-days: 7
