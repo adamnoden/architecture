@@ -13,7 +13,7 @@ describe('COA-02 non-spatial report extraction', () => {
 
   test('renders service topology as an ordinary deterministic report', () => {
     assert.match(service, /^# Reference House — service topology register/m)
-    assert.match(service, /\| Network \| Service class \| Semantic route \|/)
+    assert.match(service, /\| Network \| Route ID \| Service class \| Semantic route \|/)
     assert.match(service, /## Selected crossings/)
     assert.match(service, /## Maintenance and access obligations/)
     assert.match(service, /Sizing, pressure loss, airflow, acoustics/)
