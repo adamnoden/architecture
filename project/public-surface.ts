@@ -41,6 +41,7 @@ export const publicSourceExcludeGlobs = [
   'docs/reference-house/plan-section-elevation-gate.md',
   'docs/reference-house/service-topology-coordination.md',
   'docs/reference-house/service-topology-run-01.md',
+  'docs/reference-house/vertical-bay-options.md',
   'docs/reference-house/external-review-*-rh11.md',
   'docs/research/pattern-language-phase6-targeted-evidence.md',
   'docs/prototypes/p03-structural-floor-edge-handoff.md',
@@ -73,7 +74,8 @@ const publicLabelOverrides: Readonly<Record<string, string>> = {
   'Reference House compiler programme': 'Compiler validation',
   'H1 environmental & services decisions': 'Environmental & services decisions',
   'External evidence trial — Mapeguard WP — completed': 'Scoped manufacturer evidence — Mapeguard WP',
-  'External review brief': 'Independent review questions'
+  'External review brief': 'Independent review questions',
+  'Vertical bay coordination': 'Vertical interface coordination'
 }
 
 function globToRegExp(glob: string): RegExp {
