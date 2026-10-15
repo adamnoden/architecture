@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # G-01 — Validation and limits
 
 G-01 v0.1 is the surviving result of comparative precedent study, deliberate counterexample testing and held-out validation. This page records the evidence that matters to a reader without reproducing the chronology of the research programme.
