@@ -1,276 +1,385 @@
-import { existsSync, readFileSync } from 'node:fs'
-import { dirname, resolve } from 'node:path'
-import matter from 'gray-matter'
-import type { PublicationEntry } from './publication'
-
-export type PublicationAdapter =
-  | 'part-i-composite'
-  | 'part-ii-composite'
-  | 'part-v-wrapper'
-  | 'pattern-index'
-  | 'pattern-page'
-  | 'reference-house-overview'
-  | 'evidence-notes'
-  | 'primer-principles'
-  | 'primer-patterns'
-  | 'primer-reference-house'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
+import { join, resolve } from 'node:path'
+import { canonicalPatternOrder, type PublicationAdapter } from './publication.js'
 
 export interface AdapterContext {
-  readonly repoRoot: string
-  readonly source: string
-  readonly entry: PublicationEntry
-}
-
-function sourcePath(context: AdapterContext, source: string): string {
-  return resolve(context.repoRoot, source)
-}
-
-function readSource(context: AdapterContext, source: string): string {
-  const path = sourcePath(context, source)
-  if (!existsSync(path)) throw new Error(`Missing adapter source: ${source}`)
-  return matter(readFileSync(path, 'utf8')).content.trim()
-}
-
-function stripLeadingHeading(markdown: string, heading: string): string {
-  const prefix = `# ${heading}`
-  if (!markdown.startsWith(prefix)) {
-    throw new Error(`Expected leading heading "${prefix}"`)
-  }
-  return markdown.slice(prefix.length).trimStart()
-}
-
-function stripHeadingLine(markdown: string, heading: string): string {
-  const prefix = `${heading}\n`
-  if (!markdown.startsWith(prefix)) {
-    throw new Error(`Expected heading line "${heading}"`)
-  }
-  return markdown.slice(prefix.length)
-}
-
-function readAndStripHeading(
-  context: AdapterContext,
-  source: string,
-  heading: string
-): string {
-  return stripLeadingHeading(readSource(context, source), heading)
-}
-
-function headingLevel(markdown: string): number {
-  const match = markdown.match(/^(#{1,6})\s+/m)
-  return match ? match[1].length : 0
-}
-
-function shiftHeadings(markdown: string, by: number): string {
-  if (by === 0) return markdown
-  return markdown.replace(/^(#{1,6})(\s+)/gm, (_, hashes: string, spacing: string) => {
-    const count = Math.max(1, Math.min(6, hashes.length + by))
-    return `${'#'.repeat(count)}${spacing}`
-  })
-}
-
-function replaceHeading(markdown: string, from: string, to: string): string {
-  const marker = `# ${from}`
-  if (!markdown.startsWith(marker)) throw new Error(`Expected leading heading "${marker}"`)
-  return `# ${to}${markdown.slice(marker.length)}`
-}
-
-function stripSection(markdown: string, heading: string): string {
-  const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  const match = markdown.match(new RegExp(`\\n## ${escaped}\\n`))
-  if (!match || match.index === undefined) throw new Error(`Missing section: ${heading}`)
-  const start = match.index
-  const after = start + match[0].length
-  const next = markdown.slice(after).search(/\n## /)
-  return next < 0
-    ? markdown.slice(0, start).trimEnd()
-    : `${markdown.slice(0, start)}\n${markdown.slice(after + next + 1)}`.trimEnd()
-}
-
-function section(markdown: string, heading: string): string {
-  const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  const match = markdown.match(new RegExp(`(?:^|\\n)## ${escaped}\\n`))
-  if (!match || match.index === undefined) throw new Error(`Missing section: ${heading}`)
-  const start = match.index + (match[0].startsWith('\n') ? 1 : 0)
-  const after = start + `## ${heading}\n`.length
-  const next = markdown.slice(after).search(/\n## /)
-  return next < 0 ? markdown.slice(start).trim() : markdown.slice(start, after + next).trim()
-}
-
-function adaptPartI(markdown: string, context: AdapterContext): string {
-  const governing = readAndStripHeading(context, 'docs/manuscript/governing-principles.md', 'Governing Principles')
-  const repose = readAndStripHeading(context, 'docs/manuscript/principle-08-repose.md', 'Principle 8 — Design for Repose')
-  return `${markdown.trim()}\n\n## The governing principles\n\n${shiftHeadings(governing, 1)}\n\n## Principle 8 — Design for Repose\n\n${shiftHeadings(repose, 1)}\n`
-}
-
-function adaptPartII(markdown: string, context: AdapterContext): string {
-  const external = readAndStripHeading(
-    context,
-    'docs/manuscript/maintenance-geography-external.md',
-    'Maintenance Geography — The Exterior'
-  )
-  return `${markdown.trim()}\n\n## Maintenance Geography — The Exterior\n\n${shiftHeadings(external, 1)}\n`
-}
-
-function adaptPartV(markdown: string): string {
-  return markdown
+  repoRoot: string
+  workSourceRoot: string
 }
 
 interface PatternMetadata {
-  readonly id: string
-  readonly title: string
-  readonly domain: string
-  readonly evidence: string
-  readonly state: string
-  readonly canonical: boolean
+  id: string
+  title: string
+  state: 'active' | 'retired'
+  evidence: string
+  href: string
 }
 
-function patternMetadata(markdown: string): PatternMetadata {
-  const parsed = matter(markdown)
-  const id = parsed.data.id
-  const title = parsed.data.title
-  const domain = parsed.data.domain
-  const evidence = parsed.data.evidence
-  const state = parsed.data.state
-  const canonical = parsed.data.canonical
-  if (
-    typeof id !== 'string' ||
-    typeof title !== 'string' ||
-    typeof domain !== 'string' ||
-    typeof evidence !== 'string' ||
-    typeof state !== 'string' ||
-    typeof canonical !== 'boolean'
-  ) {
-    throw new Error('Pattern metadata incomplete')
-  }
-  return { id, title, domain, evidence, state, canonical }
+const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
+  'part-i-composite': [
+    'docs/manuscript/governing-principles.md',
+    'docs/manuscript/principle-08-repose.md'
+  ],
+  'part-ii-composite': ['docs/manuscript/maintenance-geography-external.md'],
+  'part-v-wrapper': [],
+  'pattern-index': [],
+  'pattern-page': [],
+  'reference-house-overview': [],
+  'reference-house-page': [],
+  'primer-principles': [],
+  'primer-patterns': [
+    'docs/patterns/controlled-utility-entry.md',
+    'docs/patterns/designed-structural-penetration.md',
+    'docs/patterns/failure-tolerant-wet-service-room.md',
+    'docs/patterns/permanent-opening-replaceable-window.md',
+    'docs/patterns/ground-supported-facade-access.md',
+    'docs/patterns/physical-service-index.md'
+  ],
+  'primer-reference-house': []
 }
 
-function patternFiles(context: AdapterContext): string[] {
-  const index = sourcePath(context, 'docs/patterns/pattern-index.ts')
-  const text = readFileSync(index, 'utf8')
-  const matches = [...text.matchAll(/source:\s*'([^']+)'/g)].map((match) => `docs/patterns/${match[1]}`)
-  if (!matches.length) throw new Error('No pattern source files discovered')
-  return matches
+export function dependenciesForAdapter(adapter?: PublicationAdapter): readonly string[] {
+  return adapter ? adapterDependencies[adapter] : []
 }
 
-function canonicalPatterns(context: AdapterContext): Array<{ source: string; metadata: PatternMetadata }> {
-  return patternFiles(context)
-    .map((source) => ({ source, metadata: patternMetadata(readFileSync(sourcePath(context, source), 'utf8')) }))
-    .filter(({ metadata }) => metadata.canonical && metadata.state === 'active')
+function workPath(context: AdapterContext, path: string): string {
+  return resolve(context.workSourceRoot, path)
 }
 
-function adaptPatternIndex(markdown: string, context: AdapterContext): string {
-  const entries = canonicalPatterns(context)
-    .map(({ metadata }) => `- **${metadata.id} — ${metadata.title}** · ${metadata.domain} · ${metadata.evidence}`)
+function readWork(context: AdapterContext, path: string): string {
+  return readFileSync(workPath(context, path), 'utf8')
+}
+
+function demoteHeadings(markdown: string, levels: number): string {
+  let inFence = false
+  return markdown
+    .split('\n')
+    .map((line) => {
+      if (/^```/.test(line.trimStart())) {
+        inFence = !inFence
+        return line
+      }
+      if (inFence) return line
+
+      const match = line.match(/^(#{1,6})(\s+.*)$/)
+      if (!match) return line
+      return `${'#'.repeat(Math.min(6, match[1].length + levels))}${match[2]}`
+    })
     .join('\n')
+}
 
-  const withoutScript = markdown.replace(/<script setup>[\s\S]*?<\/script>\s*/m, '')
-  const withoutDynamic = withoutScript
-    .replace(/<div v-if="activePatterns\.length">[\s\S]*?<\/div>/m, entries)
-    .replace(/<div v-if="retiredPatterns\.length">[\s\S]*?<\/div>/m, '')
-    .replace(/## Retired identities\s*/m, '')
+function normalisePartOpening(markdown: string, partHeading: string): string {
+  const opening = `# Ovid’s House\n## ${partHeading}`
+  if (!markdown.startsWith(opening)) {
+    throw new Error(`${partHeading} opening changed; update the print wrapper deliberately.`)
+  }
+  return markdown
+    .replace(opening, `# ${partHeading}`)
+}
 
-  return withoutDynamic.trim()
+function adaptPartI(markdown: string, context: AdapterContext): string {
+  markdown = normalisePartOpening(markdown, 'Part I — The Proposition')
+
+  const chapter5Marker = '# 5. Governing constitution'
+  const transitionMarker = '\n---\n\n# From constitution to buildings'
+  const chapter5Index = markdown.indexOf(chapter5Marker)
+  const transitionIndex = markdown.indexOf(transitionMarker)
+
+  if (chapter5Index < 0 || transitionIndex < chapter5Index) {
+    throw new Error('Part I composition markers changed; update the print adapter deliberately.')
+  }
+
+  let chapter5Stub = markdown.slice(chapter5Index, transitionIndex).trimEnd()
+  chapter5Stub = chapter5Stub
+    .replace(
+      '[Ovid’s House — Governing Constitution](governing-principles.md)',
+      '**Ovid’s House — Governing Constitution**'
+    )
+    .replace(
+      '[Principle 8 — Design for Repose](principle-08-repose.md)',
+      '**Principle 8 — Design for Repose**'
+    )
+
+  let principles = demoteHeadings(
+    readWork(context, 'docs/manuscript/governing-principles.md').trim(),
+    1
+  )
+  const principle9Marker = '\n### 9. Let passive architecture do the first work — standing environmental discipline'
+  const principle9Index = principles.indexOf(principle9Marker)
+  if (principle9Index < 0) {
+    throw new Error('Governing-constitution Principle 9 marker changed; update Part I composition deliberately.')
+  }
+
+  const repose = demoteHeadings(
+    readWork(context, 'docs/manuscript/principle-08-repose.md').trim(),
+    3
+  )
+  principles = `${principles.slice(0, principle9Index).trimEnd()}\n\n${repose}\n\n${principles
+    .slice(principle9Index)
+    .trimStart()}`
+
+  const embeddedBridgeMarker = '\n---\n\n### From constitution to implementation'
+  const embeddedBridgeIndex = principles.indexOf(embeddedBridgeMarker)
+  if (embeddedBridgeIndex < 0) {
+    throw new Error(
+      'Governing-constitution implementation bridge changed; update Part I composition deliberately.'
+    )
+  }
+  principles = principles.slice(0, embeddedBridgeIndex).trimEnd()
+
+  return `${markdown.slice(0, chapter5Index)}${chapter5Stub}\n\n${principles}${markdown.slice(
+    transitionIndex
+  )}`
+}
+
+function adaptPartII(markdown: string, context: AdapterContext): string {
+  markdown = normalisePartOpening(markdown, 'Part II — Architecture of the Platform')
+
+  const chapter9Marker = '\n---\n\n# 9. Environmental resilience without dependence'
+  const chapter9Index = markdown.indexOf(chapter9Marker)
+  if (chapter9Index < 0) {
+    throw new Error('Part II Chapter 9 marker changed; update the print adapter deliberately.')
+  }
+
+  const exterior = demoteHeadings(
+    readWork(context, 'docs/manuscript/maintenance-geography-external.md').trim(),
+    1
+  )
+
+  return `${markdown.slice(0, chapter9Index).trimEnd()}\n\n${exterior}\n${markdown.slice(
+    chapter9Index
+  )}`
+}
+
+function adaptPartV(markdown: string): string {
+  return normalisePartOpening(markdown, 'Part V — Making and Testing the Platform')
 }
 
 function adaptPatternPage(markdown: string): string {
-  const parsed = matter(markdown)
-  const metadata = patternMetadata(markdown)
-  let body = parsed.content.trim()
-  body = replaceHeading(body, metadata.title, `${metadata.title} — ${metadata.id}`)
-
-  const evidenceLine = `**Evidence:** ${metadata.evidence}`
-  if (body.includes(evidenceLine)) return body
-
-  const lines = body.split('\n')
-  lines.splice(1, 0, '', evidenceLine)
-  return lines.join('\n')
+  const provenanceMarker = '\n---\n\n**Provenance:**'
+  const provenanceIndex = markdown.lastIndexOf(provenanceMarker)
+  if (provenanceIndex < 0) return markdown
+  return `${markdown.slice(0, provenanceIndex).trimEnd()}\n`
 }
 
-function adaptReferenceHouseOverview(markdown: string): string {
-  let body = markdown.trim()
-  body = body.replace(/^# Reference House\n/, '# Reference House\n')
-  return body
+function frontmatterValue(markdown: string, key: string): string | null {
+  if (!markdown.startsWith('---\n')) return null
+  const end = markdown.indexOf('\n---\n', 4)
+  if (end < 0) return null
+  const frontmatter = markdown.slice(4, end)
+  const match = frontmatter.match(new RegExp(`^${key}:\\s*(.+?)\\s*$`, 'm'))
+  return match ? match[1].replace(/^['"]|['"]$/g, '') : null
 }
 
-function adaptEvidenceNotes(markdown: string): string {
-  return markdown
+function patternMetadata(context: AdapterContext): PatternMetadata[] {
+  const patternRoot = workPath(context, 'docs/patterns')
+  const rootFiles = readdirSync(patternRoot)
+    .filter((name) => name.endsWith('.md'))
+    .map((name) => ({ absolute: join(patternRoot, name), href: name }))
+  const retiredRoot = join(patternRoot, 'retired')
+  const retiredFiles = existsSync(retiredRoot)
+    ? readdirSync(retiredRoot)
+        .filter((name) => name.endsWith('.md'))
+        .map((name) => ({ absolute: join(retiredRoot, name), href: `retired/${name}` }))
+    : []
+
+  return [...rootFiles, ...retiredFiles]
+    .flatMap(({ absolute, href }): PatternMetadata[] => {
+      const source = readFileSync(absolute, 'utf8')
+      if (frontmatterValue(source, 'kind') !== 'pattern') return []
+
+      const id = frontmatterValue(source, 'id')
+      const title = frontmatterValue(source, 'title')
+      const state = frontmatterValue(source, 'state')
+      const evidence = frontmatterValue(source, 'evidence') ?? 'unspecified'
+      if (!id || !title || (state !== 'active' && state !== 'retired')) {
+        throw new Error(`Invalid canonical pattern metadata in ${absolute}`)
+      }
+
+      return [{ id, title, state, evidence, href }]
+    })
+    .sort((a, b) => a.id.localeCompare(b.id))
 }
 
-function headingContent(markdown: string, heading: string): string {
-  const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  const match = markdown.match(new RegExp(`(?:^|\\n)## ${escaped}\\n`))
-  if (!match || match.index === undefined) throw new Error(`Missing heading: ${heading}`)
-  const start = match.index + match[0].length
-  const next = markdown.slice(start).search(/\n## /)
-  return next < 0 ? markdown.slice(start).trim() : markdown.slice(start, start + next).trim()
-}
+function staticPatternList(patterns: PatternMetadata[], state: 'active' | 'retired'): string {
+  const rows = patterns.filter((pattern) => pattern.state === state)
+  if (!rows.length) throw new Error(`Pattern index has no ${state} patterns.`)
 
-function compactPrinciple(markdown: string, principle: number): string {
-  const body = headingContent(markdown, `Principle ${principle}`)
-  const paragraphs = body.split(/\n\n+/)
-  return paragraphs.slice(0, 2).join('\n\n')
-}
-
-function adaptPrimerPrinciples(_markdown: string, context: AdapterContext): string {
-  const source = readSource(context, 'docs/manuscript/governing-principles.md')
-  const introEnd = source.indexOf('\n## Principle 1')
-  if (introEnd < 0) throw new Error('Could not find Principle 1 in governing principles')
-  const intro = stripLeadingHeading(source.slice(0, introEnd).trim(), 'Governing Principles')
-  const principles = Array.from({ length: 11 }, (_, index) => {
-    const number = index + 1
-    const sectionText = section(source, `Principle ${number}`)
-    const firstLine = sectionText.split('\n', 1)[0]
-    const title = firstLine.replace(/^## Principle \d+ —\s*/, '')
-    const compact = compactPrinciple(source, number)
-    return `### ${number}. ${title}\n\n${compact}`
-  }).join('\n\n')
-  return `# The constitution\n\n${intro}\n\n${principles}\n`
-}
-
-function patternSection(markdown: string, heading: string): string {
-  const marker = `\n## ${heading}\n`
-  const start = markdown.indexOf(marker)
-  if (start < 0) throw new Error(`Missing pattern section: ${heading}`)
-  const contentStart = start + marker.length
-  const next = markdown.slice(contentStart).search(/\n## /)
-  return next < 0
-    ? markdown.slice(contentStart).trim()
-    : markdown.slice(contentStart, contentStart + next).trim()
-}
-
-function concisePattern(context: AdapterContext, id: string): string {
-  const match = canonicalPatterns(context).find(({ metadata }) => metadata.id === id)
-  if (!match) throw new Error(`Primer representative pattern missing: ${id}`)
-  const raw = readFileSync(sourcePath(context, match.source), 'utf8')
-  const body = matter(raw).content
-  const metadata = match.metadata
-  const problem = patternSection(body, 'Problem').split(/\n\n+/)[0]
-  const pattern = patternSection(body, 'Pattern').split(/\n\n+/)[0]
-
-  const invariant = pattern.replace(/^\*\*/, '').replace(/\*\*$/, '')
-  return `### ${metadata.title} — ${metadata.id}\n\n**Problem.** ${problem}\n\n**Pattern.** ${invariant}`
-}
-
-function primerPatternList(context: AdapterContext): string {
-  return canonicalPatterns(context)
-    .map(({ metadata }) => `- **${metadata.id} — ${metadata.title}**`)
+  return rows
+    .map((pattern) => {
+      const label = `[${pattern.title} — \`${pattern.id}\`](${pattern.href})`
+      return state === 'active' ? `- ${label} · ${pattern.evidence}` : `- ${label}`
+    })
     .join('\n')
 }
 
-function firstParagraphs(markdown: string, count: number): string[] {
-  return markdown.split(/\n\n+/).slice(0, count)
+function adaptPatternIndex(markdown: string, context: AdapterContext): string {
+  const patterns = patternMetadata(context)
+  const scriptPattern = /<script setup>[\s\S]*?<\/script>\s*/
+  const activePattern = /<div v-if="activePatterns\.length">[\s\S]*?<\/div>/
+  const retiredPattern = /<div v-if="retiredPatterns\.length">[\s\S]*?<\/div>/
+
+  if (!scriptPattern.test(markdown) || !activePattern.test(markdown) || !retiredPattern.test(markdown)) {
+    throw new Error('Pattern index Vue structure changed; update the static print adapter deliberately.')
+  }
+
+  const adapted = markdown
+    .replace(scriptPattern, '')
+    .replace(activePattern, staticPatternList(patterns, 'active'))
+    .replace(retiredPattern, staticPatternList(patterns, 'retired'))
+
+  const opening = '# Patterns and generative sequences\n'
+  if (!adapted.startsWith(opening)) {
+    throw new Error('Pattern index opening heading changed; update the Part III print wrapper deliberately.')
+  }
+
+  const body = adapted.slice(opening.length).trimStart()
+  if (/<script\s+setup\b|\bv-(?:if|for|else|show)\s*=|\{\{[^}]+\}\}/i.test(body)) {
+    throw new Error('Pattern index adapter left Vue-only constructs in prepared Markdown.')
+  }
+
+  return `# Part III — Patterns and Generative Sequences\n\n${body}`
+}
+
+function stripReferenceHouseControlHeader(markdown: string): string {
+  return markdown
+    .replace(/^\*\*(?:Status|Purpose):\*\*[^\n]*\n/gm, '')
+    .replace(/\n{3,}/g, '\n\n')
+}
+
+function adaptReferenceHouseOverview(markdown: string): string {
+  const opening = '# Reference House\n'
+  if (!markdown.startsWith(opening)) {
+    throw new Error('Reference House opening heading changed; update the Part IV print wrapper deliberately.')
+  }
+
+  return stripReferenceHouseControlHeader(
+    `# Part IV — The Reference House\n\n${markdown.slice(opening.length).trimStart()}`
+  )
+}
+
+function adaptReferenceHousePage(markdown: string): string {
+  let adapted = stripReferenceHouseControlHeader(markdown)
+
+  const h1Start = '\n---\n\n## 1. Relationship to the computational H1 fixture\n'
+  const h1End = '\n---\n\n## 2. Site and orientation assumptions'
+  const h1StartIndex = adapted.indexOf(h1Start)
+
+  if (h1StartIndex >= 0) {
+    const h1EndIndex = adapted.indexOf(h1End, h1StartIndex + h1Start.length)
+    if (h1EndIndex < 0) {
+      throw new Error('Whole-House H1 comparator boundary changed; update print adaptation deliberately.')
+    }
+
+    const replacement = `\n---\n\n## 1. Service coherence test\n\nThe courtyard plan increases perimeter and strengthens front-to-courtyard-to-garden ordering. That architectural choice should not be paid for through unnecessarily long service routes, duplicated cores or technical corridors.\n\n> **Can the courtyard house remain service-coherent without paying for its spatial order through long routes, duplicated cores or technical corridors?**`
+
+    adapted = `${adapted.slice(0, h1StartIndex)}${replacement}${adapted.slice(h1EndIndex)}`
+  }
+
+  if (/computational H1 fixture|paper-compilation house/i.test(adapted)) {
+    throw new Error('Reference House print adaptation still contains internal H1 provenance.')
+  }
+
+  return adapted
 }
 
 function markdownSection(markdown: string, heading: string): string {
-  const marker = `\n## ${heading}\n`
+  const marker = `## ${heading}`
   const start = markdown.indexOf(marker)
   if (start < 0) throw new Error(`Missing Markdown section: ${heading}`)
-  const bodyStart = start + marker.length
-  const next = markdown.slice(bodyStart).search(/\n## /)
-  return next < 0
-    ? markdown.slice(bodyStart).trim()
-    : markdown.slice(bodyStart, bodyStart + next).trim()
+
+  const bodyStart = markdown.indexOf('\n', start + marker.length)
+  if (bodyStart < 0) return ''
+  const tail = markdown.slice(bodyStart + 1)
+  const nextHeading = tail.search(/^## /m)
+  return (nextHeading < 0 ? tail : tail.slice(0, nextHeading)).trim()
+}
+
+function firstParagraphs(markdown: string, count: number): string[] {
+  return markdown
+    .trim()
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter((paragraph) => paragraph && paragraph !== '---' && !paragraph.startsWith('## '))
+    .slice(0, count)
+}
+
+function adaptPrimerPrinciples(markdown: string): string {
+  const constraints = markdownSection(markdown, 'Governing constraints')
+    .replace(/\n?---\s*$/, '')
+    .trim()
+  const principlePattern = /^## (\d+)\. (.+)\n\n\*\*([^\n]+)\*\*\n\n([\s\S]*?)(?=^## \d+\. |^---\n\n## From constitution to implementation)/gm
+  const principles = [...markdown.matchAll(principlePattern)]
+
+  if (principles.length !== 11) {
+    throw new Error(`Primer expected 11 numbered governing provisions, found ${principles.length}.`)
+  }
+
+  const rendered = principles.map((match, index) => {
+    const number = Number(match[1])
+    if (number !== index + 1) {
+      throw new Error(`Primer governing-provision order changed at ${index + 1}; found ${number}.`)
+    }
+
+    const title = match[2].trim()
+    const rule = match[3].trim()
+    const support = firstParagraphs(match[4], 1)[0]
+    if (!support) throw new Error(`Primer governing provision ${number} has no supporting paragraph.`)
+
+    return `## ${number}. ${title}\n\n**${rule}**\n\n${support}`
+  })
+
+  return `# Governing constitution\n\nThe constitution retains eleven stable numbered provisions because the wider project refers to them. They are not eleven co-equal novelty claims: core doctrine is distinguished from standing architectural disciplines. All operate within non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance.\n\n${constraints}\n\n${rendered.join('\n\n')}\n`
+}
+
+function activePatternsInCanonicalOrder(context: AdapterContext): PatternMetadata[] {
+  const active = new Map(
+    patternMetadata(context)
+      .filter((pattern) => pattern.state === 'active')
+      .map((pattern) => [pattern.id, pattern])
+  )
+
+  return canonicalPatternOrder.map((id) => {
+    const pattern = active.get(id)
+    if (!pattern) throw new Error(`Primer pattern map is missing canonical pattern ${id}.`)
+    return pattern
+  })
+}
+
+function primerPatternList(context: AdapterContext): string {
+  const patterns = activePatternsInCanonicalOrder(context)
+  const byId = new Map(patterns.map((pattern) => [pattern.id, pattern]))
+  const groups = [
+    { title: 'A · Service geography and distribution', ids: canonicalPatternOrder.slice(0, 8) },
+    { title: 'B · Water, leakage and failure', ids: canonicalPatternOrder.slice(8, 11) },
+    { title: 'C · Openings, movement and attachment', ids: canonicalPatternOrder.slice(11, 16) },
+    { title: 'D · Environment and external maintenance', ids: canonicalPatternOrder.slice(16, 20) },
+    { title: 'E · Stewardship', ids: canonicalPatternOrder.slice(20, 21) }
+  ]
+
+  return groups
+    .map(({ title, ids }) => {
+      const rows = ids.map((id) => {
+        const pattern = byId.get(id)
+        if (!pattern) throw new Error(`Primer pattern group is missing ${id}.`)
+        return `- [${pattern.title} — \`${pattern.id}\`](${pattern.href})`
+      })
+      return `### ${title}\n\n${rows.join('\n')}`
+    })
+    .join('\n\n')
+}
+
+function concisePattern(context: AdapterContext, id: string): string {
+  const metadata = activePatternsInCanonicalOrder(context).find((pattern) => pattern.id === id)
+  if (!metadata) throw new Error(`Primer representative pattern missing: ${id}`)
+
+  const source = readWork(context, `docs/patterns/${metadata.href}`)
+  const problem = firstParagraphs(markdownSection(source, 'Problem'), 1)[0]
+  const pattern = firstParagraphs(markdownSection(source, 'Pattern'), 1)[0]
+  if (!problem || !pattern) throw new Error(`Primer could not compress representative pattern ${id}.`)
+
+  const invariant = pattern.replace(/^\*\*/, '').replace(/\*\*$/, '')
+  return `### ${metadata.title} — ${metadata.id}\n\n**Problem.** ${problem}\n\n**Pattern.** ${invariant}`
 }
 
 function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string {
@@ -300,21 +409,24 @@ function adaptPrimerReferenceHouse(markdown: string): string {
     throw new Error('Reference House Authority stack changed; update the Primer adapter deliberately.')
   }
 
-  const openingParagraphs = firstParagraphs(
+  const architecturalScope = firstParagraphs(
     markdown.slice(opening.length, authorityStart).trim(),
-    3
+    2
   )
-  if (openingParagraphs.length !== 3) {
-    throw new Error('Primer expected three opening Reference House paragraphs.')
+  if (architecturalScope.length !== 2) {
+    throw new Error('Primer expected two opening Reference House scope paragraphs.')
   }
-  const architecturalScope = openingParagraphs.slice(0, 2)
-  const coordination = openingParagraphs[2]
 
   const authority = markdownSection(markdown, 'Authority stack')
   const compositionChain = authority.match(/```text\n[\s\S]*?```/)?.[0]
   if (!compositionChain) throw new Error('Primer could not find the Reference House authority chain.')
 
-  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an Ovid’s House provision without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
+  const coordination = firstParagraphs(markdownSection(markdown, 'Maturity'), 2)
+  if (coordination.length !== 2) {
+    throw new Error('Primer expected two Reference House Maturity paragraphs.')
+  }
+
+  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an Ovid’s House provision without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
 }
 
 export function applyAdapter(
@@ -337,13 +449,17 @@ export function applyAdapter(
       return adaptPatternPage(markdown)
     case 'reference-house-overview':
       return adaptReferenceHouseOverview(markdown)
-    case 'evidence-notes':
-      return adaptEvidenceNotes(markdown)
+    case 'reference-house-page':
+      return adaptReferenceHousePage(markdown)
     case 'primer-principles':
-      return adaptPrimerPrinciples(markdown, context)
+      return adaptPrimerPrinciples(markdown)
     case 'primer-patterns':
       return adaptPrimerPatterns(markdown, context)
     case 'primer-reference-house':
       return adaptPrimerReferenceHouse(markdown)
   }
+}
+
+export function readFrontmatterValue(markdown: string, key: string): string | null {
+  return frontmatterValue(markdown, key)
 }
