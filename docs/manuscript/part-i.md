@@ -143,9 +143,9 @@ It does not imply sensory poverty. Research on architectural interiors distingui
 
 Control also matters. Building research treats perceived control over environmental conditions as relevant to occupant satisfaction; privacy research treats the ability to regulate exposure as a substantive dimension of housing. No single plan type or control strategy follows from this. Occupants should, however, have intelligible means to alter ordinary conditions such as privacy, shade, light, heat and ventilation where the programme requires them.[22][23]
 
-Structural appearance is a more tentative part of the argument. Vision research indicates that people rapidly infer support, stability, mass and gravity from what they see. The doctrine therefore proposes that principal domestic spaces should normally present a **plausible visual account of equilibrium**: substantial things should appear supported. This is an architectural inference from intuitive-physics research, not evidence that cantilevers are physiologically harmful or that any historical structural form is universally preferred.[24]
+Structural appearance is a more tentative part of the argument. Vision research indicates that people rapidly infer support, stability, mass and gravity from what they see.[24] That supports a limited architectural review question where structure is conspicuous: is the apparent relationship of support, mass and equilibrium deliberate and intelligible? It does **not** establish that one visual account of equilibrium improves long-duration domestic comfort, that cantilevers are harmful, or that historically familiar support is intrinsically preferable.
 
-Compression and release, unusual geometry, surprise and apparent structural tension may enrich particular moments. The objection is to making continuous perceptual demand the ordinary condition of the dwelling.
+Compression and release, unusual geometry, surprise and apparent structural tension may enrich particular moments. They are architectural choices rather than health claims. The stronger evidential burden within Repose remains physical comfort, privacy, effective local control and spatial comprehensibility.
 
 Repose also limits the technical agenda. If every floor is removable, every wall demountable, every facade bay reconfigurable and every load designed for an imagined future, the present building pays continually for hypothetical change. The maintenance system itself becomes something to maintain, and the added carbon, cost and complexity may exceed the work it eventually avoids.
 
@@ -243,32 +243,34 @@ Together, permanent fabric, replaceable systems, designed interfaces and mainten
 
 ---
 
-# 5. Eleven principles
+# 5. Governing constitution
 
-The doctrine is stated canonically in [Ovid’s House — Governing Principles](governing-principles.md). That document is the single maintained source for the eleven principles and their governing constraints; they are not duplicated here.
+The governing provisions are stated canonically in [Ovid’s House — Governing Constitution](governing-principles.md). Stable numbering is retained across eleven provisions because patterns, research and project records refer to it, but the provisions are not eleven co-equal claims of novelty.
 
-Within Part I, the principles complete the proposition established by the four chapters above. [Principle 8 — Design for Repose](principle-08-repose.md) also has a developed publication spread because its evidence boundary and architectural implications require fuller treatment.
+The constitution distinguishes **core doctrine** from **standing architectural disciplines**. The core doctrine defines the long-life proposition. The standing disciplines—ordinary parts and understandable assembly, repose, passive-first environmental design and architectural resolution of technology—constrain what that proposition is allowed to become.
+
+[Principle 8 — Design for Repose](principle-08-repose.md) has a developed publication spread because its evidence boundary and architectural implications require fuller treatment.
 
 ---
 
-# From principles to buildings
+# From constitution to buildings
 
-These principles are intentionally incomplete as construction instructions.
+The constitutional provisions are intentionally incomplete as construction instructions.
 
 They do not prescribe a service undercroft, removable floor, masonry wall thickness, ventilation system or Georgian cornice. Those are **patterns** and **reference implementations** that may or may not suit a particular project.
 
-A doctrine should survive the failure of an implementation idea. If a walkable undercroft proves uneconomic, maintenance geography remains valid. If a finish-agnostic floor platform cannot achieve the required acoustic and tactile quality, the need for accessible service distribution remains. If a project is modern rather than Georgian, the principle that technology should be architecturally resolved still holds.
+The constitution should survive the failure of an implementation idea. If a walkable undercroft proves uneconomic, maintenance geography remains valid. If a finish-agnostic floor platform cannot achieve the required acoustic and tactile quality, the need for proportionate service distribution remains. If a project is modern rather than Georgian, the standing discipline that technology should be architecturally resolved still holds.
 
 The project therefore works through six linked levels:
 
-**Doctrine** establishes the durable proposition.  
+**Core doctrine and standing disciplines** establish the governing constitution.  
 **Strategies** describe general ways of satisfying it.  
 **Patterns** define reusable architectural responses with explicit trade-offs and evidence status.  
 **Reference implementations** show how one particular house might choose among them.  
 **Delivery requirements** assign responsibility, stage, evidence and acceptance criteria.  
 **Tests** determine whether claimed performance survives calculation, prototype, commissioning and real intervention.
 
-This hierarchy makes disagreement useful. An architect can reject a pattern without rejecting the principle it tried to serve, and an attractive implementation should still be rejected if testing shows that it does not work.
+This hierarchy makes disagreement useful. An architect can reject a pattern without rejecting the constitutional provision it tried to serve, and an attractive implementation should still be rejected if testing shows that it does not work.
 
 ---
 

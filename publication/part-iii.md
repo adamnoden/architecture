@@ -1,6 +1,6 @@
-# Part III — Pattern Language
+# Part III — Patterns and Generative Sequences
 
-The principles in Parts I and II are deliberately broad. They describe what Ovid’s House values: selective permanence, designed interfaces, failure tolerance, maintenance geography, repose, passive-first environmental design and stewardship.
+The constitutional provisions in Parts I and II are deliberately broad. They describe what Ovid’s House values: selective permanence, designed interfaces, failure tolerance, maintenance geography, repose, passive-first environmental design and stewardship.
 
 A house cannot be drawn from principles alone.
 
@@ -8,9 +8,9 @@ Between doctrine and construction sits a more operational layer: recurring archi
 
 A pattern is specific enough to change a plan, section, boundary or interface, but general enough to admit materially different constructions. **Plant Room as Service Hub** does not prescribe a boiler, heat pump, manifold or wall system. It says something architectural: maintenance-intensive plant, primary isolation and distribution should have real working geography rather than being scattered through residual cupboards. **Permanent Opening / Replaceable Window** does not prescribe timber or aluminium. It separates the long-lived architectural opening from the shorter-lived frame and the interface between them.
 
-The language is therefore neither a catalogue of products nor a checklist of good intentions. It is a set of relationships that can be composed.
+The current pattern system is neither a catalogue of products nor a checklist of good intentions. It contains recurring relationships that can be composed. It is also **not presented as one uniformly mature Alexander-style pattern language**. The service-topology family has a demonstrated generative sequence; other fields contain valid reusable patterns whose connections and ordering are less mature.
 
-The current language contains twenty-one active patterns. Alongside them sit three broader strategies and four held candidates. The distinctions matter. A strategy is useful but too broad to describe one recurring physical relationship. A held candidate is plausible but has not earned canonical status. Neither is promoted simply because a complete-looking book would prefer a longer list.
+The current set contains twenty-one active patterns. Alongside them sit three broader strategies and four held candidates. The distinctions matter. A strategy is useful but too broad to describe one recurring physical relationship. A held candidate is plausible but has not earned canonical status. Neither is promoted simply because a complete-looking book would prefer a longer list.
 
 ## How to read a pattern
 
@@ -24,9 +24,9 @@ The response is the centre of the pattern, but the consequences matter just as m
 
 The evidence boundary is equally important. A pattern can be architecturally useful while a particular implementation remains unengineered or untested. Canonical status does not mean that every technical question has been solved, and a successful occurrence in the Reference House does not automatically strengthen the pattern’s general evidence.
 
-Stable `HSA-P-*` identifiers are retained because the language has a history and other project records refer to them. The number is identity only. It does not imply importance, sequence or maturity.
+Pattern names are the primary reader-facing identity. Stable `HSA-P-*` identifiers are retained because the system has a history and other project records refer to them. The number is provenance and machine-readable identity only. It does not imply importance, sequence or maturity.
 
-## The language as five fields
+## Five fields
 
 For reading, the twenty-one patterns are grouped into five fields. The groups are editorial rather than taxonomic: several patterns operate across more than one domain.
 
@@ -58,23 +58,23 @@ This group includes source-capture extract, roof access and ground-supported fa�
 
 The final field is small because information should not become another technical system layered over the house.
 
-The Physical Service Index asks for enough durable, local information that a future competent person can find primary systems and isolations even when the original software, contractor or owner is gone.
+The Physical Service Index asks for enough durable, local information that a future competent person can find primary systems and isolations even when the original software, contractor or owner is gone. R8’s degraded-stewardship test also imposes a limit: the physical building should remain recoverable if that index or its richer digital records later degrade.
 
-## Patterns are relational
+## Patterns are relational, but not equally connected
 
-No pattern operates alone.
+A pattern can depend on another condition being established first, complete an earlier move at a finer scale, compete with an alternative, or enter a real tension.
 
-Some normally depend on another condition being established first. Some complete an earlier move at a finer scale. Some are genuine alternatives. Others can coexist only with an explicit tension.
+These relationships matter where they have been demonstrated. They should not be invented to make the graph look complete.
 
-This matters because a pattern language should generate architecture rather than produce a shopping list.
+The strongest current network is service topology. A service hub without a coherent route system may merely concentrate equipment while leaving distribution chaotic. A coherent route that crosses every structural member casually has solved one problem by exporting another. An accessible void that ignores fire and acoustic boundaries converts maintainability into a liability.
 
-For example, a service hub without a coherent route system may merely concentrate equipment while leaving distribution chaotic. A coherent route that crosses every structural member casually has solved one problem by exporting another. An accessible void that ignores fire and acoustic boundaries converts maintainability into a liability. The patterns become useful through these negotiations.
+Other fields are less completely connected. That does not invalidate their individual patterns; it means the current work has not yet demonstrated one canonical order linking every opening, maintenance, water and stewardship pattern into a master language.
 
-The language therefore supports judgement rather than replacing it. A project may omit a pattern because its context does not arise, or because a simpler conventional solution is more proportionate. The objective is not maximum pattern count.
+A project may therefore omit a pattern because its context does not arise, or because a simpler conventional solution is more proportionate. The objective is not maximum pattern count or graph density.
 
-## One generative sequence
+## One mature generative sequence
 
-Service topology provides the clearest example of the language behaving generatively.
+Service topology provides the clearest current example of the pattern system behaving generatively.
 
 The sequence begins before detailed routes are drawn. First identify the service-intensive rooms, likely plant, utility approaches, discharge points, replacement events and maintenance tasks. Then make the consequential decisions in an order that keeps later options open:
 
@@ -131,14 +131,16 @@ They are not weak ideas. They are unresolved ideas.
 
 The remaining questions concern transfer, proportionality or physical quality. A removable lining, for example, is not admitted merely because it is technically demountable; it must justify its depth, joints, acoustic behaviour, solidity, fixing and reinstatement against an excellent conventional wall. Selective floor access must earn itself against the maintenance task beneath it rather than becoming infrastructure in search of a future use.
 
-Holding a candidate is therefore part of the language’s discipline. The book does not require every promising idea to mature at the same speed.
+Holding a candidate is therefore part of the system’s discipline. The book does not require every promising idea to mature at the same speed.
 
-## From language to house
+## From patterns to house
 
 Part III remains general.
 
 The Reference House in Part IV selects some of these patterns, rejects others and turns several into concrete occurrences. That worked house does not prove the patterns. It reveals what happens when they have to coexist with one programme, one architectural grammar, one courtyard morphology and one bounded technical concept.
 
+The adversarial transfer test also matters here. The Reference House is unusually hospitable to several ideas: it is detached, generous, courtyard-based and has a dedicated service flank. A compact terrace stress test removed those advantages and showed that literal devices such as the service flank, large plant room and side replacement opening should shrink or disappear rather than being exported as doctrine.
+
 The distinction is deliberate:
 
-> **the language proposes recurring relationships; the house accepts the consequences of choosing among them.**
+> **the patterns propose recurring relationships; the house accepts the consequences of choosing among them; transfer is tested by what survives when the house changes.**

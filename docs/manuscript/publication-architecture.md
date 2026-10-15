@@ -1,9 +1,9 @@
-# Ovid’s House — Publication Architecture v0.14
+# Ovid’s House — Publication Architecture v0.15
 
-**Working form:** illustrated architectural design-research monograph + evidence-qualified pattern language + separate architect-facing implementation brief.  
-**Status:** v0.14 — publication-native Part III/IV and retained back matter reconciled under PR-00; candidate-book completion remains active.
+**Working form:** illustrated architectural design-research monograph + evidence-qualified pattern set with generative sequences + separate architect-facing implementation brief.  
+**Status:** v0.15 — PR-01 adversarial corrections reconciled at manuscript-architecture level; R9 re-proof / revised-candidate freeze remains pending.
 
-The pattern-language migration is complete at current internal scope. The active language contains 21 patterns, one retired identity, three canonical strategies and four explicitly held candidates. Pattern count is an outcome, not a target. Migration and crosswalk provenance are retained in [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md).
+The pattern migration is complete at current internal scope. The active set contains 21 patterns, one retired identity, three canonical strategies and four explicitly held candidates. Pattern count is an outcome, not a target. The current system is **not** presented as one uniformly mature Alexander-style language: service topology has the strongest demonstrated generative sequence, while other fields remain less completely connected. Migration and crosswalk provenance are retained in [`../development/pattern-language-overhaul.md`](../development/pattern-language-overhaul.md).
 
 ## Front matter
 
@@ -32,13 +32,13 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
 4. **The architectural platform**  
    Permanent fabric, replaceable systems, designed interfaces, attachment discipline, assembly hierarchy and maintenance geography; introduce workmanship robustness as the requirement that ordinary construction variation be deliberately absorbed rather than exported into site improvisation.
 
-5. **Eleven principles**  
-   Use the locked public principles; each principle receives a short spread and one primary figure where a figure materially improves the argument. Principle 8, **Design for Repose**, is evidence-bounded explicitly: established environmental and housing evidence is separated from architectural hypotheses such as perceptual structural legibility. The developed spread is [Principle 8 — Design for Repose](principle-08-repose.md).
+5. **Governing constitution**  
+   Retain the stable numbered provisions used across the repository, but distinguish **core doctrine** from **standing architectural disciplines**. The latter constrain the long-life proposition without being represented as Ovid’s House inventions. Principle 8, **Design for Repose**, is evidence-bounded explicitly: established environmental and housing evidence is separated from architectural hypotheses such as visual structural reading. The developed spread is [Principle 8 — Design for Repose](principle-08-repose.md).
 
 ## Part II — Architecture of the Platform
 
 6. **The designed interface**  
-   Tectonic honesty; deterministic load paths and bounded movement; separation of support, restraint, movement, sealing and finish; tolerance translation; workmanship robustness; mistake-proofing where consequential; fixing, access and replacement. Distinguish engineering legibility from **perceptual structural legibility**: concealment is legitimate, but principal domestic spaces should not gratuitously depend on apparent instability.
+   Tectonic honesty; deterministic load paths and bounded movement; separation of support, restraint, movement, sealing and finish; tolerance translation; workmanship robustness; mistake-proofing where consequential; fixing, access and replacement. Engineering legibility remains distinct from visual structural reading: concealment is legitimate, and conspicuous support/mass relationships may be reviewed architecturally without being promoted into a comfort metric.
 
 7. **Failure architecture**  
    First defence / second consequence; water, overflow, drainage, drying, detection, isolation and recovery.
@@ -47,7 +47,7 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
    Spatial topology of approach, working space, disconnection and withdrawal; proportionality. Extend the same logic beyond the weather envelope: the façade, roof, ground plane, landscape, courtyard and route from the site entrance together determine whether external work can be carried out by ordinary safe means. Introduce the **external maintenance envelope** as the task-specific space/support condition required for access, work, handling and replacement. The developed insert is [Maintenance Geography — The Exterior](maintenance-geography-external.md), supported by [External Maintenance Access — Research Synthesis](../research/external-maintenance-access.md).
 
 9. **Environmental resilience without dependence**  
-   Future climate, passive-first design, source capture, measured ventilation and graceful degradation; treat intelligible local environmental control and manual fallback as forms of occupant agency, not merely controls engineering.
+   Passive-first design, source capture, measured ventilation, graceful degradation and future-climate robustness. A real project should test expensive-to-change geometry against a reasonable range of site-appropriate future conditions, recording scenario, uncertainty and architectural rewind triggers rather than treating one speculative weather file as doctrine.
 
 10. **Boundaries**  
     Boundary debt created by access and disassembly: fire, smoke, acoustic, air, vapour, water, thermal, pests and security; preserve critical performance independently of routinely removable finish layers where practical.
@@ -56,17 +56,17 @@ The preface carries the authorial voice and origin of the enquiry. A separate au
     Attachment hierarchy, controlled attachment planes, wall linings, floor layers, ceilings, kitchens, bathrooms, windows, doors, wet-trade discipline and selective adaptability. Distinguish canonical patterns from still-unproven implementation challengers such as replaceable lining and full-room removable floor platforms.
 
 12. **Legibility and stewardship**  
-    Building record, physical index, change control and maintainability commissioning.
+    Physical recoverability first; building record, physical index, change control and maintainability commissioning second. Digital stewardship should improve future work without becoming the only thing that makes the building intelligible.
 
-## Part III — Pattern Language
+## Part III — Patterns and Generative Sequences
 
-Part III is a browsable professional reference: **patterns plus the relationships and generative sequences that help designers combine them**. It is not a second version of Part II and not a catalogue of every technical idea in the project.
+Part III is a browsable professional reference: **a bounded pattern set plus relationships and generative sequences where the project has actually demonstrated them**. It is not a second version of Part II and not a catalogue of every technical idea in the project.
 
-The Working Edition opens Part III with a publication-native reader bridge (`publication/part-iii.md`). It explains the language, evidence boundaries, the five editorial fields, pattern relationships, one generative service-topology sequence, the three strategies and the held-candidate bench. The canonical pattern records under `docs/patterns/` remain authoritative; repository authoring contracts, index-generation mechanics and migration records stay outside the primary book path.
+The Working Edition opens Part III with a publication-native reader bridge (`publication/part-iii.md`). It explains the five editorial fields, evidence boundaries, sparse pattern relationships, the mature service-topology sequence, the three strategies and the held-candidate bench. It states plainly that the other fields are not yet one equally mature generative network. The canonical pattern records under `docs/patterns/` remain authoritative; repository authoring contracts, index-generation mechanics and migration records stay outside the primary book path.
 
 ### Reading structure
 
-The groups below are editorial reading aids only. IDs remain stable identity and do not encode category, scale or publication order. A pattern may span several domains even if it appears once in the book.
+The groups below are editorial reading aids only. Pattern names are the primary reader-facing identity. Stable IDs preserve provenance and machine-readable references; they do not encode category, scale, maturity or publication order. A pattern may span several domains even if it appears once in the book.
 
 ### A. Service geography and distribution
 
@@ -79,7 +79,7 @@ The groups below are editorial reading aids only. IDs remain stable identity and
 7. [`HSA-P-005 — Designed Structural Penetration`](../patterns/designed-structural-penetration.md)
 8. [`HSA-P-016 — Compartmented Service Void`](../patterns/compartmented-service-void.md)
 
-The service-topology sequence supplies decision order and rewind logic while the pattern graph supplies reusable compositional relationships. The publication bridge describes the sequence without turning the repository execution protocol into a book chapter.
+The service-topology sequence supplies decision order and rewind logic while the pattern graph supplies reusable compositional relationships. `HSA-P-005` is retained narrowly as the physical relationship **route → controlled crossing interface → host / protected boundary**; ordinary engineered coordination can satisfy it completely.
 
 ### B. Water, leakage and failure
 
@@ -112,7 +112,7 @@ The umbrella [Fail-Safe Water Distribution](../patterns/strategies/fail-safe-wat
 
 `HSA-P-006 — Water-Damage-Safe Service Route` remains visible as a [retired identity](../patterns/retired/hsa-p-006-water-damage-safe-service-route.md). Its ID is never reused. The useful umbrella proposition survives as Fail-Safe Water Distribution rather than being forced to remain one physical pattern.
 
-### Strategies beside the language
+### Strategies beside the pattern set
 
 Strategies sit between doctrine and patterns but are not pattern nodes:
 
@@ -124,7 +124,7 @@ They appear after the 21 canonical patterns in the Working Edition and remain ou
 
 ### Held candidate bench
 
-The publication makes unresolved propositions visible without laundering them into the language:
+The publication makes unresolved propositions visible without laundering them into the canonical set:
 
 - [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md)
 - [Individually Isolatable Manifold Distribution](../patterns/candidates/individually-isolatable-manifold-distribution.md)
@@ -137,9 +137,7 @@ Each candidate has an explicit admission question. The candidate bench is a rese
 
 A mature pattern should contain, where applicable:
 
-context / problem / invariant pattern / forces / language relationships / diagram / variants or implementation families / proportionality / boundary debt / permanent-fabric impact / construction variability and workmanship / occupation and repose impact / architectural resolution / assembly and replacement sequence / failure modes / evidence / does-not-prove boundary / evidence + maturity / reference-house application / formalisation boundary.
-
-Stable pattern IDs are identity only. They do not encode category, scale, evidence state or publication order.
+context / problem / invariant pattern / forces / relationships / diagram / variants or implementation families / proportionality / boundary debt / permanent-fabric impact / construction variability and workmanship / occupation and repose impact / architectural resolution / assembly and replacement sequence / failure modes / evidence / does-not-prove boundary / evidence + maturity / reference-house application / formalisation boundary.
 
 Pattern relationships should remain sparse. Generative sequence order is a separate structure and should include explicit **rewind conditions** where downstream complexity is evidence that an earlier architectural decision should change.
 
@@ -149,7 +147,7 @@ The original Core 12 catalogue, service-topology pilot and reversible-assembly c
 
 ## Part IV — The Reference House
 
-Part IV now exists as a publication-native six-chapter synthesis in [Part IV — Reference House](part-iv.md). Canonical Reference House and G-01 records remain project authority; the manuscript owns the reader-facing account.
+Part IV exists as a publication-native six-chapter synthesis in [Part IV — Reference House](part-iv.md). Canonical Reference House and G-01 records remain project authority; the manuscript owns the reader-facing account.
 
 13. **Site and type**  
 14. **Architectural order, repose and tectonic language**  
@@ -158,32 +156,32 @@ Part IV now exists as a publication-native six-chapter synthesis in [Part IV —
 17. **Water and environmental systems**  
 18. **Future maintenance scenarios**
 
-The Reference House is explicitly **one interpretation**, not proof of the doctrine or pattern language.
+The Reference House is explicitly **one interpretation**, not proof of the doctrine or patterns. It is also a deliberately favourable integration fixture: detached perimeter, courtyard and concentrated service flank make some serviceability questions easier than they would be in compact attached housing.
 
-Its function in the publication is to force the project’s layers to coexist in one building: doctrine, selected patterns, G-01, a courtyard morphology, one domestic programme and bounded technical choices. Project-specific decisions remain local even when they are repeated throughout the worked house.
+Its function in the publication is to force the project’s layers to coexist in one building: doctrine, selected patterns, G-01, a courtyard morphology, one domestic programme and bounded technical choices. Project-specific decisions remain local even when they are repeated throughout the worked house. Transfer is tested by what survives when those devices disappear, not by replicating the Reference House elsewhere.
 
 The canonical mapping of selected patterns and project occurrences remains the [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md). Control, review and development records remain online provenance rather than chapters in disguise.
 
 ## Part V — Making and Testing the Platform
 
-19. Whole-life value and proportionality  
-20. Design governance and interface ownership  
-21. Standardisation, manufacture and reliable assembly  
+19. Whole-life value and proportionality — excellent conventional baseline; B0→B3 burden; co-renewal; fail-closed decisions; payer/beneficiary horizon; symmetrical permanence test  
+20. Design governance and interface ownership — distinguish architectural robustness, minimum consequential-interface controls and enhanced stewardship  
+21. Standardisation, manufacture and reliable assembly — activate special installer/manufacturing controls only where non-standard repeated work earns them  
 22. Prototype and disassemble before repetition  
-23. Procurement without dilution  
-24. Commission maintainability — include verification that final landscape, levels, drainage, external plant and access gates have not consumed the intended external maintenance geography  
-25. Design review through failure, change and occupation scenarios — include task-specific external access scenarios rather than a generic assertion of façade accessibility; where useful, review whether technical difficulty is exposing a reason to rewind an earlier architectural decision
+23. Procurement without dilution — explicit architectural-equivalence and specialist technical-adequacy authority  
+24. Commission maintainability — verify selected consequential tasks, including that final landscape, levels, drainage, external plant and access gates have not consumed intended maintenance geography  
+25. Design review through failure, change, occupation, life-course and climate scenarios — include task-specific external access scenarios; permit accepted future destruction where pre-provision would be disproportionate; rewind architecture where technical difficulty exposes an upstream decision problem
 
 ## Back matter
 
 A. [Evidence and precedent notes](evidence-and-precedent-notes.md)  
-B. [Legacy doctrine register crosswalk](doctrine-register-crosswalk.md) — preserves the historical 63-item House Design Doctrine v7 register while mapping each statement into the current eleven-principle / downstream authority structure  
+B. [Legacy doctrine register crosswalk](doctrine-register-crosswalk.md) — preserves the historical 63-item House Design Doctrine v7 register while mapping each statement into the current governing constitution / downstream authority structure  
 C. [Research agenda](research-agenda.md)  
 D. [Reference House implementation schedule](reference-house-implementation-schedule.md)  
 E. [Glossary](glossary.md)  
 F. [Sources and further reading](sources-and-further-reading.md)
 
-The previously proposed separate **pattern-language map and generative-sequence appendix is removed**. Its distinct reader function is now performed by the publication-native Part III opening; retaining a second appendix would duplicate rather than deepen the book.
+The previously proposed separate pattern-map / generative-sequence appendix is removed. Its distinct reader function is now performed by the publication-native Part III opening; retaining a second appendix would duplicate rather than deepen the book.
 
 ---
 
@@ -197,13 +195,13 @@ The computational work remains **parallel to the publication rather than being f
 
 Current position:
 
-- executable architecture is **not a governing principle** and does not replace Ovid’s House or its architectural doctrine;
+- executable architecture is **not a governing provision** and does not replace Ovid’s House or its architectural doctrine;
 - the architectural doctrine remains meaningful independently of software;
-- the pattern language is an authoring/provenance layer, not the compiler ontology;
+- the pattern set is an authoring/provenance layer, not the compiler ontology;
 - the internal paper sequence is complete through H1-PAPER-01 and the capability freeze;
 - Phase-8 architectural→computational crosswalk is complete at internal mapping scope;
-- the minimal P0 semantic/compiler kernel has passed 17 executable tests;
-- `PAT-XW-01` has passed six executable crosswalk tests on top of P0;
+- the minimal P0 semantic/compiler kernel has passed its bounded executable tests;
+- `PAT-XW-01` has passed its bounded executable crosswalk tests on top of P0;
 - generic compiler/crosswalk growth is therefore **frozen**;
 - external competent structural, fire/building-control and building-services review remains open;
 - further executable fixtures are selected only when architectural, physical or professional-review work exposes a concrete question worth formalising;
@@ -237,14 +235,14 @@ The architectural manuscript should not become a software pitch. The computation
 A concise project document for the appointed architect, mapped to the RIBA Plan of Work.
 
 For each requirement:
-- governing principle;
+- governing provision;
 - project requirement / target;
-- selected mature pattern or allowed alternatives where relevant;
+- selected pattern or allowed alternatives where relevant;
 - selected implementation family where the project has one;
 - performance evidence required;
 - owner;
 - decision deadline / RIBA stage;
-- prototype requirement;
+- prototype requirement where earned;
 - whole-life cost/carbon check where non-standard;
 - commissioning test;
 - deviation record.
@@ -257,8 +255,8 @@ The monograph explains the architectural position; the implementation brief tell
 
 # Structural decision
 
-**Do not merge Part III pattern language back into Part II.**
+**Do not merge Part III back into Part II.**
 
-Part II remains the architectural argument. Part III is the reusable language and generative method. The corpus is sufficiently stable that the publication should use the canonical 21-pattern language rather than the superseded 30-slot inventory. Cross-references connect argument, pattern and worked house without making any one of them evidence for the others.
+Part II remains the architectural argument. Part III is the bounded reusable pattern set plus demonstrated generative sequences. Cross-references connect argument, pattern and worked house without making any one of them evidence for the others.
 
 Likewise, **do not make the Reference House the evidence for the doctrine or patterns.** It is a worked interpretation, integration test and research vehicle.

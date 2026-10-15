@@ -80,8 +80,8 @@ function normalisePartOpening(markdown: string, partHeading: string): string {
 function adaptPartI(markdown: string, context: AdapterContext): string {
   markdown = normalisePartOpening(markdown, 'Part I — The Proposition')
 
-  const chapter5Marker = '# 5. Eleven principles'
-  const transitionMarker = '\n---\n\n# From principles to buildings'
+  const chapter5Marker = '# 5. Governing constitution'
+  const transitionMarker = '\n---\n\n# From constitution to buildings'
   const chapter5Index = markdown.indexOf(chapter5Marker)
   const transitionIndex = markdown.indexOf(transitionMarker)
 
@@ -92,8 +92,8 @@ function adaptPartI(markdown: string, context: AdapterContext): string {
   let chapter5Stub = markdown.slice(chapter5Index, transitionIndex).trimEnd()
   chapter5Stub = chapter5Stub
     .replace(
-      '[Ovid’s House — Governing Principles](governing-principles.md)',
-      '**Ovid’s House — Governing Principles**'
+      '[Ovid’s House — Governing Constitution](governing-principles.md)',
+      '**Ovid’s House — Governing Constitution**'
     )
     .replace(
       '[Principle 8 — Design for Repose](principle-08-repose.md)',
@@ -104,10 +104,10 @@ function adaptPartI(markdown: string, context: AdapterContext): string {
     readWork(context, 'docs/manuscript/governing-principles.md').trim(),
     1
   )
-  const principle9Marker = '\n### 9. Let passive architecture do the first work'
+  const principle9Marker = '\n### 9. Let passive architecture do the first work — standing environmental discipline'
   const principle9Index = principles.indexOf(principle9Marker)
   if (principle9Index < 0) {
-    throw new Error('Governing-principles Principle 9 marker changed; update Part I composition deliberately.')
+    throw new Error('Governing-constitution Principle 9 marker changed; update Part I composition deliberately.')
   }
 
   const repose = demoteHeadings(
@@ -118,11 +118,11 @@ function adaptPartI(markdown: string, context: AdapterContext): string {
     .slice(principle9Index)
     .trimStart()}`
 
-  const embeddedBridgeMarker = '\n---\n\n### From doctrine to implementation'
+  const embeddedBridgeMarker = '\n---\n\n### From constitution to implementation'
   const embeddedBridgeIndex = principles.indexOf(embeddedBridgeMarker)
   if (embeddedBridgeIndex < 0) {
     throw new Error(
-      'Governing-principles implementation bridge changed; update Part I composition deliberately.'
+      'Governing-constitution implementation bridge changed; update Part I composition deliberately.'
     )
   }
   principles = principles.slice(0, embeddedBridgeIndex).trimEnd()
@@ -207,7 +207,7 @@ function staticPatternList(patterns: PatternMetadata[], state: 'active' | 'retir
 
   return rows
     .map((pattern) => {
-      const label = `[\`${pattern.id}\` — ${pattern.title}](${pattern.href})`
+      const label = `[${pattern.title} — \`${pattern.id}\`](${pattern.href})`
       return state === 'active' ? `- ${label} · ${pattern.evidence}` : `- ${label}`
     })
     .join('\n')
@@ -228,7 +228,7 @@ function adaptPatternIndex(markdown: string, context: AdapterContext): string {
     .replace(activePattern, staticPatternList(patterns, 'active'))
     .replace(retiredPattern, staticPatternList(patterns, 'retired'))
 
-  const opening = '# Patterns\n'
+  const opening = '# Patterns and generative sequences\n'
   if (!adapted.startsWith(opening)) {
     throw new Error('Pattern index opening heading changed; update the Part III print wrapper deliberately.')
   }
@@ -238,7 +238,7 @@ function adaptPatternIndex(markdown: string, context: AdapterContext): string {
     throw new Error('Pattern index adapter left Vue-only constructs in prepared Markdown.')
   }
 
-  return `# Part III — Pattern Language\n\n${body}`
+  return `# Part III — Patterns and Generative Sequences\n\n${body}`
 }
 
 function stripReferenceHouseControlHeader(markdown: string): string {
@@ -308,28 +308,28 @@ function adaptPrimerPrinciples(markdown: string): string {
   const constraints = markdownSection(markdown, 'Governing constraints')
     .replace(/\n?---\s*$/, '')
     .trim()
-  const principlePattern = /^## (\d+)\. (.+)\n\n\*\*([^\n]+)\*\*\n\n([\s\S]*?)(?=^## \d+\. |^---\n\n## From doctrine to implementation)/gm
+  const principlePattern = /^## (\d+)\. (.+)\n\n\*\*([^\n]+)\*\*\n\n([\s\S]*?)(?=^## \d+\. |^---\n\n## From constitution to implementation)/gm
   const principles = [...markdown.matchAll(principlePattern)]
 
   if (principles.length !== 11) {
-    throw new Error(`Primer expected 11 governing principles, found ${principles.length}.`)
+    throw new Error(`Primer expected 11 numbered governing provisions, found ${principles.length}.`)
   }
 
   const rendered = principles.map((match, index) => {
     const number = Number(match[1])
     if (number !== index + 1) {
-      throw new Error(`Primer governing-principle order changed at ${index + 1}; found ${number}.`)
+      throw new Error(`Primer governing-provision order changed at ${index + 1}; found ${number}.`)
     }
 
     const title = match[2].trim()
     const rule = match[3].trim()
     const support = firstParagraphs(match[4], 1)[0]
-    if (!support) throw new Error(`Primer governing principle ${number} has no supporting paragraph.`)
+    if (!support) throw new Error(`Primer governing provision ${number} has no supporting paragraph.`)
 
     return `## ${number}. ${title}\n\n**${rule}**\n\n${support}`
   })
 
-  return `# Eleven governing principles\n\nThe principles sit above particular materials, products and construction systems. They operate within non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance.\n\n${constraints}\n\n${rendered.join('\n\n')}\n`
+  return `# Governing constitution\n\nThe constitution retains eleven stable numbered provisions because the wider project refers to them. They are not eleven co-equal novelty claims: core doctrine is distinguished from standing architectural disciplines. All operate within non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance.\n\n${constraints}\n\n${rendered.join('\n\n')}\n`
 }
 
 function activePatternsInCanonicalOrder(context: AdapterContext): PatternMetadata[] {
@@ -362,7 +362,7 @@ function primerPatternList(context: AdapterContext): string {
       const rows = ids.map((id) => {
         const pattern = byId.get(id)
         if (!pattern) throw new Error(`Primer pattern group is missing ${id}.`)
-        return `- [\`${pattern.id}\` — ${pattern.title}](${pattern.href})`
+        return `- [${pattern.title} — \`${pattern.id}\`](${pattern.href})`
       })
       return `### ${title}\n\n${rows.join('\n')}`
     })
@@ -379,7 +379,7 @@ function concisePattern(context: AdapterContext, id: string): string {
   if (!problem || !pattern) throw new Error(`Primer could not compress representative pattern ${id}.`)
 
   const invariant = pattern.replace(/^\*\*/, '').replace(/\*\*$/, '')
-  return `### ${metadata.id} — ${metadata.title}\n\n**Problem.** ${problem}\n\n**Pattern.** ${invariant}`
+  return `### ${metadata.title} — ${metadata.id}\n\n**Problem.** ${problem}\n\n**Pattern.** ${invariant}`
 }
 
 function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string {
@@ -394,7 +394,7 @@ function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string
     .map((id) => concisePattern(context, id))
     .join('\n\n')
 
-  return `# From doctrine to patterns\n\nThe governing principles are intentionally too general to specify a building. Ovid’s House therefore keeps four levels of authority distinct:\n\n**Doctrine** — a durable proposition.  \n**Strategy** — a general way to satisfy it.  \n**Pattern** — a reusable architectural response with stated trade-offs and evidence.  \n**Reference implementation** — one project-specific choice.\n\nA pattern is not a product detail and does not become universally correct because it has a stable name. It is specific enough to shape design, but general enough to admit materially different implementations. Evidence maturity is recorded separately from pattern identity.\n\nThe current canonical language contains **21 active patterns**. Three broader strategies sit beside it; four plausible propositions remain held candidates rather than being promoted prematurely. The complete active language is listed below so the Primer remains complete in coverage even though only a small set is expanded.\n\n## The complete current language\n\n${primerPatternList(context)}\n\n## Six patterns in brief\n\nThe following examples are not a privileged inner canon. They are chosen because, together, they show the range of consequences that follows from the doctrine: service topology, permanent-fabric protection, water failure, replaceable openings, external maintenance and intergenerational legibility.\n\n${representative}\n`
+  return `# From constitution to patterns\n\nThe governing constitution is intentionally too general to specify a building. Ovid’s House therefore keeps four levels of authority distinct:\n\n**Constitution** — core doctrine plus standing disciplines.  \n**Strategy** — a general way to satisfy it.  \n**Pattern** — a reusable architectural response with stated trade-offs and evidence.  \n**Reference implementation** — one project-specific choice.\n\nA pattern is not a product detail and does not become universally correct because it has a stable name. It is specific enough to shape design, but general enough to admit materially different implementations. Evidence maturity is recorded separately from pattern identity.\n\nThe current system contains **21 active patterns**. Service topology has the strongest demonstrated generative sequence; the other fields are not presented as one uniformly mature pattern language. Three broader strategies sit beside the set; four plausible propositions remain held candidates rather than being promoted prematurely. The complete active set is listed below so the Primer remains complete in coverage even though only a small set is expanded.\n\n## The complete current pattern set\n\n${primerPatternList(context)}\n\n## Six patterns in brief\n\nThe following examples are not a privileged inner canon. They are chosen because, together, they show the range of consequences that follows from the constitution: service topology, permanent-fabric protection, water failure, replaceable openings, external maintenance and intergenerational legibility.\n\n${representative}\n`
 }
 
 function adaptPrimerReferenceHouse(markdown: string): string {
@@ -426,7 +426,7 @@ function adaptPrimerReferenceHouse(markdown: string): string {
     throw new Error('Primer expected two Reference House Maturity paragraphs.')
   }
 
-  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an Ovid’s House principle without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
+  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an Ovid’s House provision without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current whole-house coordination fixture](whole-house-coordination-fixture.svg)\n\n*The current whole-house fixture is schematic and provisional. Its purpose is to expose coordination conflicts, not to present a final house design.*\n`
 }
 
 export function applyAdapter(

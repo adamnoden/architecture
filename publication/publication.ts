@@ -61,7 +61,7 @@ export const canonicalPatternOrder = [
 const pattern = (id: string, source: string, title: string): PublicationEntry => ({
   id: `pattern-${id.toLowerCase()}`,
   source: `docs/patterns/${source}`,
-  title: `${id} — ${title}`,
+  title: `${title} — ${id}`,
   kind: 'pattern',
   adapter: 'pattern-page',
   patternId: id
@@ -84,7 +84,7 @@ export const smokePublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'smoke-principles',
     source: 'docs/manuscript/governing-principles.md',
-    title: 'Eleven Governing Principles',
+    title: 'Governing Constitution',
     kind: 'part'
   },
   {
@@ -96,7 +96,7 @@ export const smokePublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'smoke-pattern',
     source: 'docs/patterns/controlled-utility-entry.md',
-    title: 'HSA-P-001 — Controlled Utility Entry',
+    title: 'Controlled Utility Entry — HSA-P-001',
     kind: 'pattern',
     patternId: 'HSA-P-001'
   },
@@ -124,7 +124,7 @@ export const primerPublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'primer-principles',
     source: 'docs/manuscript/governing-principles.md',
-    title: 'Eleven governing principles',
+    title: 'Governing constitution',
     kind: 'primer',
     adapter: 'primer-principles'
   },
@@ -184,7 +184,7 @@ export const publicationEntries: readonly PublicationEntry[] = [
   {
     id: 'part-iii',
     source: 'publication/part-iii.md',
-    title: 'Part III — Pattern Language',
+    title: 'Part III — Patterns and Generative Sequences',
     kind: 'part'
   },
 

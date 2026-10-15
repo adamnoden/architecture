@@ -1,6 +1,6 @@
 # Principle 8 — Design for Repose
 
-The evidence behind this principle is developed in [Repose and Low Vigilance](../research/repose-and-low-vigilance.md) and bounded in the [Repose Evidence Audit](../research/repose-evidence-audit.md).
+The evidence behind this standing occupation criterion is developed in [Repose and Low Vigilance](../research/repose-and-low-vigilance.md) and bounded in the [Repose Evidence Audit](../research/repose-evidence-audit.md).
 
 > **Treat the house as a place of repeated occupation and recovery. Its ordinary spaces should minimise unnecessary vigilance by being physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.**
 
@@ -12,11 +12,11 @@ Other burdens come from the occupant’s ability to regulate ordinary conditions
 
 This does not imply sparse rooms or visual restraint. A room can be rich in books, materials, pattern and the marks of ordinary life without becoming exhausting. The more useful distinction is between richness and confusion. Architectural order should be strong enough to receive occupation rather than depend on its absence.
 
-Structure is a more tentative part of the argument. Human vision rapidly extracts support, stability and other physical properties from what it sees. The doctrine therefore prefers principal domestic spaces in which major masses appear plausibly borne and at equilibrium. This does not show that cantilevers are harmful, that arches are therapeutic or that the visible load path must reproduce the engineer’s structural diagram. The inference remains weaker than the environmental claims above.
+Structural expression is a more tentative part of the argument. Human vision rapidly extracts support, stability and other physical properties from what it sees. That is enough to justify asking whether conspicuous structural expression reads as intentional and intelligible. It is **not** enough to claim that one visual account of equilibrium produces superior long-duration domestic comfort, that cantilevers are harmful, or that arches are therapeutic. Apparent equilibrium therefore remains an architectural hypothesis and review prompt, not an evidence-backed comfort requirement.
 
 Repose also constrains the technical agenda of Ovid’s House. Access, replacement and legibility are means, not ends. A removable wall that rattles, a corridor crowded with hatches or a floor that feels temporary underfoot has solved one maintenance problem by creating an occupation problem.
 
-The principle is therefore less a style than a design burden: the house should ask for as little routine monitoring and correction as ordinary comfort allows.
+The criterion is therefore less a style than a design burden: the house should ask for as little routine monitoring and correction as ordinary comfort allows.
 
 ## Design consequences
 
@@ -36,9 +36,11 @@ Shared life and privacy are both legitimate domestic needs. The house should off
 
 Where an occupant reasonably needs to alter a condition, the means should be intelligible and effective. Automation may assist, but ordinary comfort should not depend on understanding a hidden technical system or having network access.
 
-### Apparent equilibrium
+### Structural reading — bounded hypothesis
 
-Where structure is visible or strongly implied, support and mass should form a plausible visual relationship. Apparent precariousness is not prohibited, but it should be an intentional effect rather than the accidental background condition of a principal room.
+Where structure is visible or strongly implied, ask whether support, mass and apparent equilibrium form a plausible visual relationship and whether any sense of tension or precariousness is deliberate. Record the answer as architectural judgement.
+
+Do **not** use this prompt as a pseudo-neuroscientific metric, a prohibition on cantilevers, or evidence that a historically familiar structural image is intrinsically more comfortable.
 
 ### Technical subordination
 
@@ -52,7 +54,7 @@ For each principal room, ask:
 2. Can the occupant understand the room’s relation to the rest of the house?
 3. Can privacy and exposure be regulated appropriately?
 4. Can important immediate conditions be altered without unnecessary complexity?
-5. Does the structural expression appear settled, or is tension being used deliberately?
+5. Where structural expression is conspicuous, is its visual reading intentional rather than accidental?
 6. Do technical systems remain subordinate to ordinary occupation?
 7. Will the room remain coherent after furniture and everyday possessions arrive?
 
