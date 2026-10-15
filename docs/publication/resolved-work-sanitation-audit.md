@@ -51,6 +51,8 @@ The PDF manifests have now been checked directly against the resolved-work rule.
 
 The Primer closing section had two stale residues and has been corrected: it no longer describes the existing compiler as a merely future possibility, and it no longer claims that prototypes/computational work as a class sit outside both publications. It now states the bounded capability and proof limits already earned by the computational track, distinguishes retained internal working records from the resolved argument, and links to the current `ovids-house.pdf` output rather than the obsolete `house-kernel.pdf` path.
 
+The Preface also no longer ends its Ovid research note by telling the reader which internal research-boundary file produced it. The note now ends with the substantive sources themselves. The publication-only shim that previously hid that sentence from the PDF has consequently been removed rather than becoming permanent build machinery.
+
 ### Pattern language
 
 The public pattern overview shows the active pattern set, strategies and held candidates without exposing retired identities or migration provenance as part of the reading surface. Stable pattern IDs remain because they provide useful cross-reference across current evidence and computational representations.
@@ -67,7 +69,7 @@ The public grammar surface is organised around:
 
 That synthesis preserves the useful conclusions from the internal validation programme: hierarchy survives more strongly than fixed ratios or one sectional mechanism; entrance rank matters more than centring; urban irregularity defeats global-symmetry assumptions; historical service circulation is not a contemporary invariant; blind/simulated openings separate composition from physical aperture; and a prominent roof can remain Georgian-derived where body and roof are compositionally integrated.
 
-The raw validation/programme records are therefore internal-only.
+The raw validation/programme records are therefore internal-only. The controlled specification now points its evidence header to the Grammar Charter, comparative precedent research and the reader-facing **G-01 Validation and Limits** synthesis rather than linking readers back into the internal D-stage falsification/validation chain.
 
 The **Reference House G-01 conformance record** has also been rewritten as a resolved architectural result. It states the six-rule pass directly and explains the house evidence without development-stage chronology, freeze mechanics or gate IDs. The courtyard, low-slope roof, technical families and construction choices remain explicitly project-owned rather than being promoted into the grammar.
 
@@ -133,13 +135,12 @@ Examples include:
 - `Vertical interface coordination` rather than an option-development label;
 - `Scoped manufacturer evidence — Mapeguard WP` rather than an evidence-trial stage label.
 
-Internal sources referenced from current pages remain accessible as repository-source links rather than being rebuilt as public pages.
+Internal sources referenced from current pages remain accessible as repository-source links rather than being rebuilt as public pages where provenance still adds value; resolved pages should nevertheless prefer resolved reader-facing evidence when an equivalent synthesis exists.
 
 ## Remaining SAN-02 / SAN-03 fronts
 
 1. Continue the prose pass across public research, remaining Reference House technical coordination and technical-family pages.
-2. Review remaining references from resolved pages to internal source records and remove those that add provenance but no reader understanding; the G-01 specification evidence header and the Preface research-boundary note are known examples.
-3. Complete SAN-05 as an actual first-reader traversal rather than a keyword-only scan, followed by SAN-06 lossless verification.
+2. Complete SAN-05 as an actual first-reader traversal rather than a keyword-only scan, followed by SAN-06 lossless verification.
 
 ## Semantic guardrail
 
