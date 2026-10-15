@@ -19,7 +19,7 @@
   <text x="70" y="70" class="label">Reference House — external maintenance geography</text>
   <text x="70" y="108" class="small">Maintenance space belongs to the site plan: approach, support, work position, handling and reinstatement.</text>
 
-  <g transform="translate(120 190)">
+  <g transform="translate(120 145)">
     <rect x="70" y="70" width="720" height="600" class="house"/>
     <rect x="322" y="256" width="216" height="222" class="court"/>
 
@@ -36,9 +36,6 @@
 
     <path d="M430 735 L430 690 L430 610 L430 478" class="rule" marker-end="url(#arrow)"/>
     <text x="455" y="720" class="tiny">garden → court logistics route</text>
-
-    <path d="M895 335 L1010 335" class="rule" marker-end="url(#arrow)"/>
-    <text x="915" y="312" class="tiny">plant replacement / utility approach</text>
 
     <text x="70" y="710" class="small">FRONT</text>
     <text x="690" y="710" class="tiny">principal frontage is not the default technical work zone</text>
