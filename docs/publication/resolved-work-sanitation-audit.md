@@ -73,6 +73,35 @@ The raw validation/programme records are internal-only. The controlled specifica
 
 The **Reference House G-01 conformance record** is a resolved architectural result. It states the six-rule pass directly and explains the house evidence without development-stage chronology, freeze mechanics or gate IDs. The courtyard, low-slope roof, technical families and construction choices remain explicitly project-owned rather than being promoted into the grammar.
 
+### Research and evidence
+
+The public research area has now been traversed as evidence rather than treated as a repository of working notes.
+
+The former **Preface Precedents — Selection and Research Notes** page was an editorial-control document: it contained selected and rejected anecdotes, rhetorical roles, cautions, deployment instructions and a final preface sequence alongside genuinely valuable research on Ovid, Heraclitus, persistence, Ise, Nakagin and architectural precedent. Its durable content now survives in a reader-facing **Transformation, Persistence and Precedent** synthesis. The selection process, excluded-anecdote commentary and instructions about where material should appear have been removed from the public surface.
+
+The two repose records now have complementary resolved roles:
+
+- **Repose and Low Vigilance** develops the architectural synthesis: environmental demands, local control, privacy/retreat, coherence and richness, daylight, apparent structural equilibrium, evidence limits, room-to-room intensity and a practical repose review;
+- **Repose — Evidence and Limits** states the epistemic boundary claim by claim and keeps weak prospect-refuge, curvature and direct neuroarchitecture prescriptions outside doctrine.
+
+Both now speak in current architectural/evidential terms rather than explaining how doctrine wording should be controlled. The unique open question around apparent structural equilibrium is retained explicitly as an unresolved research hypothesis.
+
+**Workmanship Robustness** has likewise been rewritten from a doctrine-control note into a resolved evidence synthesis. It retains the durable material: tolerance as a design problem, buildability, mistake-proofing, human factors, workmanship of risk/certainty, the six-part tolerance strategy, designed adjustment, architectural depth as tolerance capacity, representative-installer testing and the anti-drift rules. Old “House Kernel should…” migration framing has been removed.
+
+The floor/wall research has been reduced to the current comparative questions rather than its development history:
+
+- **Floor-to-Masonry Structural Interface** now states the baseline/comparator/challenger hierarchy directly: certified restraint-type hanger, direct/seated bearing, and bespoke shoe/ledge only if engineering earns it. It preserves the distinction between inspectability, local repair and whole-joist replacement without retaining the history of “Seated Floor Structure” as a project identity.
+- **Accessible Floor Systems** now compares excellent conventional floor, selective access bands and a full-room dense-mineral platform as an upper-bound challenger. It preserves finish-carrier, acoustic, cavity, heating and water consequences without presenting house-wide access flooring as a standing project direction.
+- **Replaceable Wall Lining** now distinguishes direct quiet finish, controlled attachment datum, selective removable mineral lining, real timber panelling and high-service walls. It preserves the physical proof question—whether a removable surface can equal excellent conventional construction for repose and solidity—without narrating an evidence-hardening programme.
+- **External Maintenance Access** now presents the direct evidence for external maintenance geography: work-at-height hierarchy, roof work beyond arrival, façade-access consequences of early geometry, ground support, task-specific access, required empty working space and the external maintenance envelope. It no longer reads as a doctrine-integration memo and corrects the old master-identity reference.
+
+Two research records have been internalised rather than rewritten:
+
+- **Candidate Pattern Hardening Summary** is a historical evidence-hardening checkpoint containing old classification snapshots, gate language and next-step instructions. Its durable conclusions already survive in the active strategies, patterns, held candidates, prototypes and resolved research pages.
+- **Primary Floor Structure — Working Baseline** is a design-development baseline. Its useful I-joist and interface reasoning survives in the current Reference House technical synthesis and **Floor-to-Masonry Structural Interface** page; the old working-baseline record remains available internally.
+
+The public Research overview now points only to the resolved evidence surfaces and uses semantic labels such as **Transformation and persistence**, **Repose — evidence and limits**, **Floor-to-masonry structural interface**, **Accessible floor systems** and **Replaceable wall lining**.
+
 ### Reference House
 
 The Reference House overview presents the current building proposition rather than a chronology of gates: authority stack; morphology/programme; G-01 order and section; envelope and structure; stair/circulation; service/failure geography; environmental hierarchy; roof/water/maintenance; occupied interfaces; life-safety/adaptation boundary; and remaining external proof obligations.
@@ -125,6 +154,8 @@ Examples include:
 - `Pattern selection` rather than “Pattern occurrence register”;
 - `Independent review questions` rather than an RH-stage review package;
 - `Vertical interface coordination` rather than an option-development label;
+- `Transformation and persistence` rather than “Preface precedents”;
+- `Repose — evidence and limits` rather than “Repose evidence audit”;
 - `Scoped manufacturer evidence — Mapeguard WP` rather than an evidence-trial stage label.
 
 ## SAN-05 — first-reader coherence traversal
@@ -137,18 +168,18 @@ The first-reader pass is being performed as an actual reading sequence rather th
 
 The core argument is coherent. The opening proposition, doctrine, pattern boundary, grammar boundary, Reference House role, proportionality argument and evidence limits survive the sequence without requiring development history to explain them.
 
-The pass has removed or rewritten production narration in the Reading Guide, Research overview, Prototype overview, Delivery overview and Sources page, then followed the Reference House one level deeper into its technical, tectonic, pattern-selection and generated-inspection surfaces.
+The pass has removed or rewritten production narration in the Reading Guide, Research overview, Prototype overview, Delivery overview and Sources page; followed the Reference House into its technical, tectonic, pattern-selection and generated-inspection surfaces; and now followed the Research route through repose, workmanship, precedent, floor/wall systems and external maintenance.
 
 ### Current reading result
 
-The primary Reference House path can now be read without entering RH-05/RH-07/RH-08/RH-09/RH-10 chronology. The overview links to current technical meaning, current interfaces, current pattern selection, current prototype questions, current generated inspection and current independent-review questions. The stale earlier whole-house fixture no longer appears on the site or in the Primer.
+The primary Reference House path can be read without entering RH-05/RH-07/RH-08/RH-09/RH-10 chronology. The Research route now presents evidence and options directly without telling the reader which argument was selected for a preface, which old candidate was in which hardening gate, or which working baseline was expected to be superseded next.
 
-SAN-05 is still **not complete**. The next pass should move outward from the cleaned Reference House into the remaining public evidence and computational technical-family routes rather than continue polishing already-resolved RH pages.
+SAN-05 is still **not complete**. The next pass should move into the remaining public computational core/family pages and reader-facing back matter.
 
 ## Remaining work
 
-1. Continue first-reader click-through across the public research/evidence route and remaining computational technical-family pages.
-2. Audit the remaining reader-facing back matter for process-shaped appendices whose content may be valid but whose existence or framing is still inherited from project development.
+1. Continue first-reader click-through across the public computational core, building/system families and remaining evidence-trial surface; distinguish stable technical identity from compiler-programme history.
+2. Audit reader-facing back matter for process-shaped appendices whose content may be valid but whose existence or framing is still inherited from project development.
 3. Perform SAN-06 lossless verification: every internalised or rewritten record must have its unique architectural claims, evidence and constraints accounted for in a current owner.
 4. Regenerate and validate both public outputs and the site.
 5. Close issue #133 only after the public site and both PDFs pass that final check.
