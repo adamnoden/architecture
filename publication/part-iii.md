@@ -24,7 +24,7 @@ The response is the centre of the pattern, but the consequences matter just as m
 
 The evidence boundary is equally important. A pattern can be architecturally useful while a particular implementation remains unengineered or untested. Canonical status does not mean that every technical question has been solved, and a successful occurrence in the Reference House does not automatically strengthen the pattern’s general evidence.
 
-Pattern names are the primary reader-facing identity. Stable `HSA-P-*` identifiers are retained because the system has a history and other project records refer to them. The number is provenance and machine-readable identity only. It does not imply importance, sequence or maturity.
+Pattern names are the primary reader-facing identity. Stable `HSA-P-*` identifiers provide compact cross-reference across patterns, evidence and computational representations. The number does not imply importance, sequence or maturity.
 
 ## Five fields
 
@@ -58,7 +58,7 @@ This group includes source-capture extract, roof access and ground-supported fa�
 
 The final field is small because information should not become another technical system layered over the house.
 
-The Physical Service Index asks for enough durable, local information that a future competent person can find primary systems and isolations even when the original software, contractor or owner is gone. R8’s degraded-stewardship test also imposes a limit: the physical building should remain recoverable if that index or its richer digital records later degrade.
+The Physical Service Index asks for enough durable, local information that a future competent person can find primary systems and isolations even when the original software, contractor or owner is gone. A degraded-stewardship test imposes the corresponding limit: the physical building should remain recoverable if that index or its richer digital records later degrade.
 
 ## Patterns are relational, but not equally connected
 
@@ -139,7 +139,7 @@ Part III remains general.
 
 The Reference House in Part IV selects some of these patterns, rejects others and turns several into concrete occurrences. That worked house does not prove the patterns. It reveals what happens when they have to coexist with one programme, one architectural grammar, one courtyard morphology and one bounded technical concept.
 
-The adversarial transfer test also matters here. The Reference House is unusually hospitable to several ideas: it is detached, generous, courtyard-based and has a dedicated service flank. A compact terrace stress test removed those advantages and showed that literal devices such as the service flank, large plant room and side replacement opening should shrink or disappear rather than being exported as doctrine.
+A compact-terrace transfer test removed several advantages of the Reference House’s detached, generous, courtyard-based form. Literal devices such as the dedicated service flank, large plant room and side replacement opening then had to shrink or disappear rather than being exported as doctrine.
 
 The distinction is deliberate:
 
