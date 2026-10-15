@@ -29,3 +29,14 @@ jobs:
 
       - name: Check repository health
         run: npm run check
+
+      - name: Build Working Edition proof
+        run: npm run publication:build
+
+      - name: Upload Working Edition proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-figure-hardening-proof
+          path: publication/dist/ovids-house.pdf
+          if-no-files-found: error
+          retention-days: 7
