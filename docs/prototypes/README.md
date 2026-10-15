@@ -1,30 +1,122 @@
 # Physical prototypes
 
-Physical prototypes test uncertain or non-standard propositions before the architecture is asked to rely on them.
+Physical prototypes are used where architectural or technical uncertainty cannot be settled honestly by prose alone.
 
-A prototype may include a build pack, technical drawing, fabrication information, test procedure, measured results, failures and post-test observations. The purpose is not to prove that something can be assembled once under ideal conditions. It is to expose whether the proposition survives realistic workmanship, tolerance, use, removal, reinstatement and comparison with excellent conventional construction.
+The purpose is not to prove that an assembly can be made once under ideal conditions. A useful prototype exposes whether a proposition survives realistic tolerance, ordinary competent workmanship, use, removal, reinstatement and direct comparison with excellent conventional construction.
 
-A successful specimen supports only the claims it actually tested. A failed specimen is useful evidence when it exposes weakness in the proposition, assembly or test assumption.
+No current prototype has earned a house-wide technical conclusion merely by being designed. The questions below remain **pre-test** unless a measured result is stated explicitly.
 
 ## Evidence authority
 
-One specimen may answer both a general systems question and a project-specific architectural question, but those verdicts remain separate.
+A specimen can support only the claims it actually tests.
 
-The replaceable wall-lining challenger illustrates the distinction. Its [build pack](w2-wall-bay-build-pack.md) and [evidence protocol](w2-wall-bay-test-protocol.md) ask whether a removable dense-mineral lining can achieve convincing solidity, reversibility, tolerance recovery, ordinary fixing, installer robustness and clean reinstatement when compared with an excellent conventional wall.
+Physical success, general architectural usefulness and selection for the Reference House are separate verdicts. An assembly may perform well and still be rejected because its depth, joints, cost, maintenance burden or architectural character are worse than the conventional control. A failed specimen is useful when it removes unnecessary machinery.
 
-If it performs well, that may support a broader claim about replaceable linings. It still does not establish that the lining belongs throughout the Reference House. Conversely, the assembly could be technically successful and still be rejected because its depth, joints, feel or visual expression are architecturally inferior to direct finish.
+The controlling rule is:
 
-The same principle applies to every prototype:
+> **The benchmark is excellent ordinary construction, not a deliberately weak control.**
 
-> **physical performance, general architectural usefulness and project-specific selection are separate verdicts.**
+## Structural floor edge
 
-## Current priority questions
+The floor-to-masonry edge is the most important unresolved engineering interface in the current Reference House.
 
-The Reference House currently has two higher-priority non-standard interfaces that require physical or engineering evidence:
+The architectural question is not whether a novel connector can be invented. It is whether gravity support, joist stability, wall restraint, diaphragm transfer, movement, tolerance, fire/acoustic closure, durability and realistic repair can be allocated clearly without creating disproportionate structure or serviceability theatre.
 
-- the **structural floor edge**, where support, restraint, tolerances and the architectural platform meet;
-- the **wall/ceiling movement junction**, where bounded movement must be accommodated without making a brittle finish carry incompatible duties.
+The current comparison is:
 
-Replaceable full-height lining remains an optional challenger rather than a dependency of the house. Selective floor access is likewise not part of the current baseline.
+- **conventional certified hanger/restraint family** — incumbent control;
+- **direct or seated bearing with separate restraint** — comparator;
+- **engineered shoe/ledge or other bespoke family** — challenger only if engineering shows a material whole-life advantage.
 
-A prototype should be allowed to simplify or kill an implementation. The architecture is stronger when failure removes unnecessary machinery rather than being absorbed as a reason to add more.
+Engineering comes before fabrication. A physical structural specimen should not be built until a competent structural engineer has defined the load path, selected credible joist/wall families and stated what the specimen can legitimately prove.
+
+A representative junction specimen would then test things calculation alone does not answer well:
+
+- installation sequence and comprehension by an installer who did not design the detail;
+- realistic dimensional tolerance and adjustment;
+- inspectability before and after closure;
+- local repair/replacement claims;
+- interaction with finish, fire and acoustic edge closures;
+- whether the supposedly serviceable detail is actually less robust than the conventional control.
+
+A workshop load test is **not structural validation** unless the engineer defines the load case, rig, instrumentation and acceptance criteria. The project should also avoid claiming full joist replaceability where deck, ceilings, partitions and services make whole-member withdrawal unrealistic.
+
+If the credible structural solution needs materially deeper floors, columns in principal rooms, long transfers or a whole-house independent frame, the architecture should reopen rather than hide the consequence inside the junction.
+
+## Wall / ceiling movement junction
+
+The second priority interface is where wall and ceiling finishes meet while their supporting assemblies may move differently.
+
+The proposition is simple:
+
+> **No brittle finish should bridge two assemblies that are expected to move independently.**
+
+The current physical comparison uses three families:
+
+1. **excellent conventional control**;
+2. **concealed-slip cornice or cover** fixed to one controlling assembly while the other can move behind it;
+3. **restrained metal slip/protection element** only where the metal performs a real function such as edge protection, sliding, location or removable cover.
+
+The test must keep three verdicts separate:
+
+- movement performance;
+- removability/reinstatement;
+- architectural quality.
+
+A technically clever slip joint fails if it draws attention to itself, rattles, becomes difficult to decorate or makes an ordinary room feel like a technical mock-up.
+
+The pre-test method deliberately attacks common false positives. It includes controlled movement, repeated cycling, ordinary redecoration so paint/filler cannot silently lock the slip plane, repeated local removal/reinstatement, and at least one imperfect-background condition. If the real project movement envelope is not yet known, any imposed movement sequence is exploratory only and must not be mistaken for a prediction of building movement or service life.
+
+The conventional detail may win. That would be a successful result.
+
+## Replaceable wall lining challenger
+
+A removable dense-mineral wall lining remains an optional experiment rather than a dependency of the Reference House.
+
+The question is whether a room-facing lining can approach the solidity and calm of a first-rate plastered masonry wall while adding genuinely useful reversible access.
+
+A full-scale comparison should test:
+
+- visual calm and domestic character;
+- tactile solidity, impact behaviour and absence of rattle;
+- tolerance recovery against a realistically imperfect background;
+- comprehension by a competent installer who did not design the system;
+- ordinary domestic fixing loads and explicitly designed heavier fixing conditions;
+- removal of one panel without wet making-good;
+- clean repeated reinstatement without degrading joints or datum;
+- handling of the actual finished panel mass and geometry;
+- independence from fragile proprietary hardware;
+- whether the permanent wall and primary environmental boundary remain intact behind the removable layer.
+
+The control is high-quality conventional plaster/mineral finish on a rigid wall, not a lightweight office partition.
+
+An early workshop specimen can establish comparative physical quality, handling, tolerance and repeatability. It cannot establish fire resistance, formal acoustic classification, airtightness certification, hygrothermal safety, structural anchor capacity or electrical compliance. Those require the relevant specialist evidence if the concept survives far enough to deserve it.
+
+If the lining cannot match ordinary wall quality, the correct result is to keep direct finish and use local controlled attachment/service datums only where a real task earns them.
+
+## What is deliberately not being prototyped as a house-wide system
+
+The current Reference House does not depend on:
+
+- full-room access floors;
+- fully removable wall linings;
+- a visible universal metal joint grammar;
+- bespoke structural connectors merely for demountability;
+- accessible cavities everywhere.
+
+Selective access remains legitimate where a named maintenance or service task justifies it. The burden of proof sits with the added system, not with conventional construction.
+
+## Reading the prototype programme
+
+The detailed build packs, frozen specimen definitions, test scripts and engineering handoff records remain internal working material. They are retained so future fabrication can be reproduced and audited, but they are not part of the reader-facing architectural argument before results exist.
+
+When a prototype is actually built, the useful public result should report:
+
+- the frozen question and control;
+- what was physically built;
+- measured observations and failures;
+- deviations from the planned test;
+- what the result can and cannot prove;
+- whether the architectural proposition survives, narrows or dies.
+
+Until then, the important public content is the proof question and its evidence boundary—not the project-management code attached to the specimen.

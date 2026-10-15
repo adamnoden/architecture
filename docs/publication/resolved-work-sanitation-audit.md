@@ -32,7 +32,8 @@ The following classes are internal-only:
 - grammar research-programme and stage records whose useful findings have been migrated;
 - Reference House model-freeze, discrepancy, parity and explicit development-history records;
 - compiler hardening, paper-compilation, model-freeze, output-architecture and pattern-crosswalk programmes;
-- completed implementation plans, test-gate reports, capability matrices and external-review packs whose value is project control rather than architectural reading.
+- completed implementation plans, test-gate reports, capability matrices and external-review packs whose value is project control rather than architectural reading;
+- pre-test prototype build packs, specimen scripts and engineering handoff records before measured public results exist.
 
 The legacy doctrine crosswalk has also been removed from the Working Edition.
 
@@ -88,7 +89,17 @@ The public **Vertical Interface Coordination** page has also been reconciled wit
 
 ### Physical prototypes
 
-The prototype overview explains what physical testing can and cannot prove. The replaceable wall lining is described as an optional challenger rather than by programme code, while the structural floor edge and wall/ceiling movement junction are identified semantically as the current priority proof questions.
+The public prototype surface now presents the **evidence questions and proof boundaries**, not unexecuted test management.
+
+It preserves three live questions:
+
+- **structural floor edge** — conventional hanger/restraint is the incumbent, direct/seated bearing is a comparator, and any bespoke shoe/ledge must first earn engineering justification; a physical specimen follows competent engineering rather than replacing it;
+- **wall/ceiling movement junction** — compare excellent conventional work with concealed-slip and only genuinely functional metal challengers; movement behaviour, removability and architectural quality remain separate verdicts;
+- **replaceable wall lining** — compare a full-scale removable dense-mineral lining with first-rate conventional finish for solidity, tolerance recovery, installer robustness, fixing, handling, removal and reinstatement; the house remains complete if it fails.
+
+The detailed P03/P04/W2 build packs and pre-test protocols are retained internally. No public result is manufactured before a specimen exists. The reader-facing page states explicitly what early workshop tests cannot prove, including structural adequacy, formal fire/acoustic performance, airtightness certification and hygrothermal safety.
+
+Reference House coordination now links to these resolved prototype questions rather than sending readers into internal build scripts.
 
 ### Computational track
 
@@ -122,11 +133,10 @@ Internal sources referenced from current pages remain accessible as repository-s
 
 ## Remaining SAN-02 / SAN-03 fronts
 
-1. Continue the prose pass across public research, remaining Reference House technical coordination, prototype and technical-family pages.
-2. Review prototype navigation and page titles so test artefacts remain useful without P03/P04/W2 programme language where those codes add no reader value.
-3. Review remaining references from resolved pages to internal source records and remove those that add provenance but no reader understanding.
-4. Audit the Working Edition and Primer manifests/adapters against the same resolved-work rule.
-5. Complete SAN-05 as an actual first-reader traversal rather than a keyword-only scan, followed by SAN-06 lossless verification.
+1. Continue the prose pass across public research, remaining Reference House technical coordination and technical-family pages.
+2. Review remaining references from resolved pages to internal source records and remove those that add provenance but no reader understanding.
+3. Audit the Working Edition and Primer manifests/adapters against the same resolved-work rule.
+4. Complete SAN-05 as an actual first-reader traversal rather than a keyword-only scan, followed by SAN-06 lossless verification.
 
 ## Semantic guardrail
 
