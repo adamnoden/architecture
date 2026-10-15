@@ -27,6 +27,7 @@ function resolveBuildCommit(): string {
 }
 
 const buildCommit = resolveBuildCommit()
+const buildTimestamp = new Date().toISOString()
 const publicNav = mapNavigationLinks(nav)
 const publicSidebar = mapSidebarRoutes(sidebar)
 
@@ -54,12 +55,14 @@ export default withMermaid(
       ['link', { rel: 'icon', type: 'image/svg+xml', href: '/architecture/favicon.svg' }],
       ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/architecture/favicon-32.png' }],
       ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/architecture/apple-touch-icon.png' }],
-      ['meta', { name: 'house-kernel-build-commit', content: buildCommit }]
+      ['meta', { name: 'house-kernel-build-commit', content: buildCommit }],
+      ['meta', { name: 'house-kernel-build-timestamp', content: buildTimestamp }]
     ],
 
     vite: {
       define: {
-        __HOUSE_KERNEL_BUILD_COMMIT__: JSON.stringify(buildCommit)
+        __HOUSE_KERNEL_BUILD_COMMIT__: JSON.stringify(buildCommit),
+        __HOUSE_KERNEL_BUILD_TIMESTAMP__: JSON.stringify(buildTimestamp)
       }
     },
 
