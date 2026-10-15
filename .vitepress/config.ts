@@ -3,6 +3,7 @@ import { relative, sep } from 'node:path'
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import { projectIdentity } from '../project/identity.js'
+import { filterPublicNavigation, publicSourceExcludeGlobs } from '../project/public-surface.js'
 import {
   mapNavigationLinks,
   mapSidebarRoutes,
@@ -28,8 +29,8 @@ function resolveBuildCommit(): string {
 
 const buildCommit = resolveBuildCommit()
 const buildTimestamp = new Date().toISOString()
-const publicNav = mapNavigationLinks(nav)
-const publicSidebar = mapSidebarRoutes(sidebar)
+const publicNav = mapNavigationLinks(filterPublicNavigation(nav))
+const publicSidebar = mapSidebarRoutes(filterPublicNavigation(sidebar))
 
 const siteNav = publicNav.map((item) => {
   if (item.text !== 'Project' || !('items' in item) || !item.items) return item
@@ -51,6 +52,7 @@ export default withMermaid(
     lang: 'en-GB',
     base: '/architecture/',
     cleanUrls: true,
+    srcExclude: [...publicSourceExcludeGlobs],
     head: [
       ['link', { rel: 'icon', type: 'image/svg+xml', href: '/architecture/favicon.svg' }],
       ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/architecture/favicon-32.png' }],
