@@ -2,6 +2,7 @@ export const publicSourceExcludeGlobs = [
   'STATUS.md',
   'docs/development/**',
   'docs/editorial/**',
+  'docs/publication/**',
   'docs/manuscript/doctrine-register-crosswalk.md',
   'docs/manuscript/publication-architecture.md',
   'docs/manuscript/publication-credibility-release-programme.md',
