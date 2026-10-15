@@ -1,4 +1,4 @@
-# Appendix C — Research Agenda
+# Appendix B — Research Agenda
 
 Ovid’s House is intentionally unfinished at several edges.
 
@@ -111,7 +111,7 @@ A real project would expose questions that virtual coordination cannot settle:
 
 The valuable research question is not whether the current geometry survives unchanged. It is which relationships prove robust enough to survive site reality and which were artefacts of the surrogate condition.
 
-The PR-01 compact-terrace counter-morphology has already shown that some Reference House devices should disappear rather than transfer literally: the dedicated service flank, generous plant room and side replacement opening are project expressions, not doctrine.
+A compact-terrace counter-morphology has already shown that some Reference House devices should disappear rather than transfer literally: the dedicated service flank, generous plant room and side replacement opening are project expressions, not doctrine.
 
 ## 8. Can the courtyard earn its environmental and maintenance costs?
 
