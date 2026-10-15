@@ -1,443 +1,238 @@
-# Reference House — RH-05 Structural Coordination
+# Reference House — Technical Coordination
 
-**Status:** RH-05 design gate record / pre-engineering structural concept  
-**Date:** 2026-10-12  
-**Question:** can the RH-04 architectural baseline be carried by a simple, legible structural concept without hidden transfers, arbitrary future drilling or sacrificing the serviceability strategy?  
-**Plan authority:** [RH-02 Ground-Floor Development](ground-floor-development.md), [RH-03 stair overlay](stair-ground-floor-overlay.svg), [RH-03 upper floor](upper-floor-and-stair-development.svg)  
-**Section/elevation authority:** [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md)  
-**Drawing:** [structural-concept-overlay.svg](structural-concept-overlay.svg)
+The Reference House is coordinated as one architectural proposition rather than as a collection of independent technical studies. This page records the **current technical arrangement**: the structure, envelope, services, environmental strategy, roof and water logic, energy family, external maintenance geography and principal interfaces that presently belong to the house.
 
-RH-05 is **not structural design**. No member, connection, masonry thickness, foundation or lintel is sized here. The gate asks a prior architectural question:
+It is not a construction package and it does not convert unresolved specialist work into proof. Its purpose is to state the resolved architectural position cleanly enough that a reader can understand how the house is intended to work and where competent external design must still take over.
 
-> **Does the house admit a structurally ordinary load path, or is the architecture quietly depending on engineering heroics?**
+The governing test is simple:
 
-The answer is yes, with a short-span masonry-and-engineered-timber concept and four bounded edge-beam conditions. The architecture does not need a whole-house steel frame, long transfer beams or room-shaping columns.
+> **Can the long-life architectural order, technical systems and maintenance geography coexist without hidden transfers, destructive service routes, inaccessible failure points or technical machinery taking over the house?**
 
----
+At the present level of design, the answer is yes—with explicit limits.
 
-## 1. Structural principles for this house
+## Building geometry
 
-The concept follows six constraints.
+The current proposition is a two-storey detached courtyard house with:
 
-1. **Permanent architectural walls do the permanent structural work where useful.** The outer envelope and courtyard are already long-lived masonry boundaries; using their inner leaves structurally is more coherent than placing an independent frame beside them without cause.
-2. **Keep normal floor spans short.** The courtyard geometry naturally creates 3.4–4.2 m gross support distances.
-3. **Do not make ordinary room partitions structural merely to rescue the floor.** Room order may change; primary structure should not depend on every internal partition.
-4. **Transfers are exceptions, not a planning system.** Where an edge beam is needed, it is short, repeated and explicit.
-5. **The primary diaphragm remains in the structural floor.** Any future removable floor/access layer is not allowed to become structurally necessary.
-6. **Services cross structure only at designed locations.** RH-05 creates reservations and prohibitions; RH-06 will turn actual routes into a crossing register.
+- an outer reservation of **12.0 × 10.8 m**;
+- an open court of **3.6 × 4.0 m**;
+- gross side wings of **4.2 m**;
+- gross front and rear wings of **3.4 m**;
+- an enclosed plate proxy of approximately **115.2 m² per storey / 230.4 m²** across the two principal storeys before wall thickness, stair voids and local projections.
 
----
+The principal sectional datums are:
 
-## 2. Selected structural family — S1 short-span courtyard ring
+- ground finished floor: ±0;
+- ground clear ceiling: +2950 mm;
+- first-floor finished floor: +3300 mm;
+- upper clear ceiling: +6000 mm;
+- cornice / eaves control: approximately +6250 mm.
 
-### Vertical loadbearing boundaries
+These dimensions are architectural coordination values, not as-built tolerances.
 
-The working family is:
+## Structural concept
 
-- loadbearing **inner leaf of the external masonry envelope**;
-- loadbearing **inner leaf of the courtyard envelope**;
-- engineered timber first-floor framing between those permanent lines;
-- four short primary edge beams where the courtyard-wall support line has to continue across the front/rear wings;
-- local stair and service-opening trimmers within the floor system;
-- upper partitions treated as non-loadbearing unless engineering later gives a specific reason otherwise.
+The house is arranged so that its principal permanent masonry boundaries can do useful structural work rather than requiring an independent whole-house frame.
 
-The facing brick, cavity and insulation remain environmental/weathering layers rather than assumed primary vertical structure.
+The working structural family is:
 
-The current vertical-bay studies use a dense masonry inner leaf as the slow structural/mass layer. RH-05 retains that family as the baseline but does **not** freeze the current 215 mm study thickness; the structural engineer and building-physics work own final thickness, strength class and support details.
+- loadbearing inner leaves to the external masonry envelope;
+- loadbearing inner leaves to the courtyard envelope;
+- engineered-timber first-floor framing between those permanent lines;
+- four short repeated edge-beam conditions where the courtyard support lines continue through the front and rear wings;
+- local framing around the stair and service openings;
+- a structural floor deck retaining diaphragm responsibility.
 
-### Why this family fits the house
+The courtyard geometry keeps ordinary gross floor spans short: approximately **4.2 m** across the side wings and **3.4 m** across the front and rear central strips. The concept therefore does not depend on long transfer beams, a whole-house steel frame or room-shaping columns.
 
-The controlled plan already contains two concentric long-lived boundaries:
+The structural principle is:
 
-1. the outer rectangle;
-2. the open courtyard rectangle.
+> **Deterministic load paths; bounded freedom of movement.**
 
-The floor therefore does not need to span the 12.0 m or 10.8 m house dimension. It can span the **ring thickness**.
+Gravity support, stability, restraint and diaphragm duties must be explicit. Harmless movement should not be suppressed merely to make an interface appear continuous.
 
-That is the central structural insight of RH-05.
+No member size, bearing, connection, lintel, foundation or robustness strategy is proved by the architectural model. Those remain structural-engineering work. If competent engineering demonstrates that the current arrangement requires materially deeper floors, intrusive columns, long transfers or another architectural consequence, the architecture must change rather than conceal the cost.
 
----
+The **structural floor edge** remains the most important unresolved engineered interface. Excellent conventional hanger/restraint construction is the incumbent; direct or seated bearing is a legitimate comparator; any bespoke shoe or ledge must earn itself through engineering and whole-life advantage before it becomes architecture. The physical proof question is recorded in [Physical Prototypes](../prototypes/README.md).
 
-## 3. First-floor framing geometry
+## Envelope
 
-Coordinate system follows the Reference House plan:
+The selected external-wall family is deliberately conventional and legible:
 
-- outer shell: X 0–12.0 m / Y 0–10.8 m;
-- courtyard: X 4.2–7.8 m / Y 3.4–7.4 m.
+**real masonry outer weathering leaf → insulated and drained cavity → substantial loadbearing masonry inner leaf → direct quiet internal finish by default**.
 
-### West strip — `F-W`
+For coordination, the normal external and courtyard wall family occupies approximately **400–425 mm**, with **450 mm** retained as the whole-house geometry stress test. A plausible family contains roughly:
 
-**Zone:** X 0–4.2 m, full house depth except the local room geometry.  
-**Primary joist direction:** east–west.  
-**Gross support distance:** approximately **4.2 m**.
+- 102.5 mm masonry outer leaf;
+- 150–175 mm insulated / drained cavity class;
+- approximately 140 mm structural masonry inner leaf as a first engineering comparator;
+- approximately 15 mm direct finish / tolerance before any local internal build-out.
 
-Support:
+These are geometric coordination values, not a thermal or structural specification.
 
-- west external loadbearing inner leaf;
-- west courtyard wall in the middle zone;
-- extension beam `EB-W-S` south of the courtyard;
-- extension beam `EB-W-N` north of the courtyard.
+The slow envelope must remain complete when faster-changing trim, joinery or optional lining is removed. Weather, air, thermal and moisture duties therefore belong to the permanent envelope and its designed interfaces rather than to decorative architraves, skirtings or removable room linings.
 
-This one span direction serves both west bedrooms above and the drawing/family rooms below without needing the ground-floor room split to be loadbearing.
+Windows are treated as replaceable assemblies within permanent masonry openings. The intended sequence is:
 
-### East strip — `F-E`
+**permanent opening → mounting / tolerance zone → mechanically fixed replaceable frame → removable internal trim**.
 
-**Zone:** X 7.8–12.0 m.  
-**Primary joist direction:** east–west.  
-**Gross support distance:** approximately **4.2 m**.
+The final jamb, head, sill and threshold details still require product-specific proof of thermal continuity, water management, airtightness, fixing, withdrawal, movement and architectural proportion.
 
-Support:
+## Floor and occupied-surface hierarchy
 
-- east courtyard wall / its front and rear beam extensions;
-- east external loadbearing inner leaf.
+Principal rooms use continuous conventional floors. The house does not currently justify a raised access floor or a fully panelised floor merely because future services may change.
 
-This preserves the study, service hub, upper bathroom and bedroom geometry without columns inside those rooms.
+Likewise, quiet permanent walls use direct mineral or plaster finish by default. Controlled fixing or service datums are introduced only where a repeated task earns them. A fully replaceable architectural lining remains an optional challenger rather than a house-wide dependency.
 
-### South centre — `F-S`
+The visible architectural language is developed separately in [Tectonic Architectural Language](tectonic-architectural-language.md). The important technical consequence is that traditional room elements may perform real interface work without becoming a universal technical grid.
 
-**Zone:** X 4.2–7.8 m / Y 0–3.4 m.  
-**Primary joist direction:** north–south.  
-**Gross support distance:** approximately **3.4 m**.
+## Services and failure geography
 
-Support:
+The highest service intensity is concentrated on the eastern flank of the house rather than being distributed through principal rooms.
 
-- south external masonry;
-- south courtyard wall.
+The current arrangement includes:
 
-The principal stair removes much of this floor plate. Remaining floor/landing areas frame around `ST-01` rather than forcing the stair to pass through ordinary joists after construction.
+- a dedicated plant / service room of approximately **2.9 × 2.2 m gross**, subject to later product-level packing;
+- an approximately **900 × 700 mm clear** vertical service reservation;
+- one primary soil / vent stack;
+- short wet-service relationships between kitchen, utility / WC and the upper family bathroom;
+- dry-service routes with greater freedom where they remain accessible and do not take over quiet walls;
+- direct cooker source capture independent from whole-house ventilation;
+- a physical service index and isolation strategy in service geography rather than dispersed institutional signage through the house.
 
-### North centre — `F-N`
+A previously considered remote en-suite was removed rather than buying a second permanent stack or a destructive cross-structure drainage route. That is representative of the house’s proportionality rule: convenience does not automatically justify permanent infrastructure.
 
-**Zone:** X 4.2–7.8 m / Y 7.4–10.8 m.  
-**Primary joist direction:** north–south.  
-**Gross support distance:** approximately **3.4 m**.
+Maintainable systems require approach, working space and a credible replacement route, not merely a visible access panel. High-consequence water-bearing systems also require an intelligible failure geography: leakage should be detectable, consequential components isolatable, and wetting capable of draining, drying or being opened for recovery where proportionate.
 
-Support:
+The exact pipe, duct, cable and controls design remains specialist MEP work. The architectural commitment is the geography within which that work must remain coherent.
 
-- north courtyard wall;
-- north external masonry.
+## Ventilation and environmental hierarchy
 
-This carries the north landing / conditional en-suite / linen zone above the garden-dining room without requiring a post in that room.
+The house begins with passive form rather than equipment.
 
----
+Its environmental hierarchy is:
 
-## 4. The four edge beams
+1. shallow occupied bands;
+2. useful multiple-aspect conditions where the plan provides them;
+3. disciplined glazing rather than a generic highly glazed rear wall;
+4. orientation-specific solar control and shading;
+5. openable windows for purge and cross ventilation;
+6. controlled whole-house ventilation for indoor-air quality and heat recovery where appropriate;
+7. low-temperature heat supplied by the selected project heat-source family;
+8. no reserved mechanical-cooling system.
 
-The only repeated non-wall primary condition is the continuation of the courtyard side-wall support lines through the front and rear wings.
+The courtyard is treated as a **shaded light court, orientation device, sheltered purge reservoir and intimate outdoor room**. It is not represented as the primary sunny garden. Principal habitable rooms retain meaningful outer-façade daylight responsibility, while the rear garden remains the principal sunny external amenity.
 
-| ID | Line | Approx. span | Function |
-|---|---|---:|---|
-| `EB-W-S` | X ≈ 4.2 m, south façade → south courtyard wall | 3.4 m | supports west-strip joist ends; also forms a natural western stair-edge/trimmer line |
-| `EB-E-S` | X ≈ 7.8 m, south façade → south courtyard wall | 3.4 m | supports east-strip joist ends and the hall/gallery edge |
-| `EB-W-N` | X ≈ 4.2 m, north courtyard wall → north façade | 3.4 m | supports west-strip joists above the family/dining connection |
-| `EB-E-N` | X ≈ 7.8 m, north courtyard wall → north façade | 3.4 m | supports east-strip joists above the dining/kitchen connection |
+The courtyard is relatively deep. Its value is therefore diffuse light, orientation and spatial concentration rather than guaranteed direct sun at ground level. Later daylight and overheating models must test the actual site, orientation, glazing, neighbouring obstructions, glass properties and opening behaviour.
 
-These are **floor-edge beams**, not whole-house transfer girders. They are short, repetitive and geometrically generated by the courtyard.
+The current house should not acquire a large undifferentiated glazed rear wall by default. Opening size remains room- and orientation-specific.
 
-### Material family
+## Heating, hot water and renewable electricity
 
-Working order for engineering comparison:
+The selected working heat-source family is an **air-to-water heat pump** serving a low-temperature wet system and domestic hot-water cylinder within the plant geography.
 
-1. engineered timber / LVL within the floor zone;
-2. a certified proprietary timber floor-edge solution where appropriate;
-3. protected steel only if timber depth, vibration, connection or bearing cannot be resolved proportionately.
+The baseline room emitters are accessible low-temperature radiators or another passive-emitter family rather than house-wide underfloor heating. The reason is architectural as well as technical: emitters, valves and local connections remain visible and renewable, while active services are not embedded unnecessarily across principal-room floors.
 
-RH-05 does not select a section.
+Ground-floor and upper-floor hydronic distribution are organised as coherent routes launched from the plant and service geography, with joints and valves biased toward accessible positions and primary structural members protected from arbitrary later drilling.
 
-The current market plausibility check is deliberately modest: UK engineered-timber families are available in 240, 300, 360 mm and deeper depths, and manufacturer UK design tools size members to Eurocode 5 / UK National Annex assumptions. That demonstrates that the **300 mm class is a real design family**, not that any unsized member here is adequate.
+The plant room must ultimately accommodate, with real working clearances:
 
-Source anchors:
+- whole-house ventilation equipment;
+- domestic hot-water / hydraulic equipment;
+- electrical, controls and service indexing in a segregated dry field;
+- the vertical service reservation and its working approach.
 
-- Metsä Wood, Finnjoist product data: https://www.metsagroup.com/en-gb/metsawood/products-and-services/
-- Metsä Wood, Finnwood UK design software / Eurocode 5 basis: https://www.metsagroup.com/en-gb/metsawood/products-and-services/UK-tools/finnwood/
+The exact equipment family, output, acoustic treatment, flow temperatures, emitter sizes and hot-water capacity remain specialist design.
 
-All final member sizing, vibration, deflection, bearing, connection, fire and robustness checks require a structural engineer.
+The roof preserves approximately **50 m² of PV-capable field** as a forward design reserve. Array layout may vary with a real site and orientation, but it must preserve drainage, inspection, roof access and the soil-vent penetration. A battery is not part of the baseline merely because PV is reserved.
 
----
+## Roof and water
 
-## 5. Does the RH-04 350 mm floor zone survive?
+The roof uses four very-low-slope fields falling **outward from the courtyard** toward external collection edges.
 
-**Provisionally: yes.**
+That geometry deliberately avoids:
 
-RH-04 reserves **350 mm** from ground clear ceiling (+2.950) to first FFL (+3.300).
+- a principal inner courtyard gutter;
+- internal roof outlets;
+- roof valleys collecting water toward the middle of the house;
+- rainwater pipes through principal occupied rooms.
 
-A credible concept within that reservation is:
+The four roof fields divide the approximately 115.2 m² enclosed plate into two front/rear fields of roughly **26.5 m²** each and two side fields of roughly **31.1 m²** each at plan level.
 
-- engineered joist family around the **300 mm depth class** as the first engineering test;
-- structural deck above;
-- ceiling / resilient / fire-acoustic layers below and around the joist as required;
-- no default horizontal service distribution consuming the joist zone.
+Primary rainwater collection remains at inspectable external edges, with main downpipes biased toward side and rear return geography rather than the principal front elevation. Overflow behaviour must be visible and outward-draining rather than first announcing blockage as concealed damp.
 
-This is a coordination envelope, not a build-up specification.
+The courtyard manages principally its own approximately **14.4 m²** open-to-sky area. Its primary surface-water route is short, inspectable at both ends and biased toward the service side. An independent higher-level overflow must discharge visibly before water reaches occupied-room thresholds.
 
-The 350 mm architectural datum therefore **does not need to be rewound at RH-05**.
+The roof is deliberately sparse. The present arrangement avoids rooftop mechanical plant and unnecessary penetrations. The soil / vent stack is the principal current service penetration; wall termination is preferred for other suitable services where competent design permits it.
 
-### Rewind trigger
+## External maintenance geography
 
-Return to RH-04 if engineering shows that the selected spans, vibration criteria, acoustic/fire build-up or edge beams need a persistent floor zone materially deeper than approximately **350 mm** and the difference cannot be absorbed without reducing the controlled 2.95 m ground clear height.
+Maintainability is treated as a spatial property of the site and building, not as the presence of a roof hatch.
 
-Do not quietly lower ceilings.
+The current roof-access strategy is **planned external scaffold / tower access** rather than permanent occupant roof access. This is proportionate because the roof has no routine plant, no inner gutter and relatively infrequent maintenance tasks. A permanent roof hatch would add another weather, air, thermal and security interface while still failing to provide edge protection or a working platform.
 
----
+The design therefore preserves ordinary temporary-access positions around useful outer elevations and a logistics route from the rear garden through the garden-dining connection into the courtyard for dismantled tower components and replacement materials.
 
-## 6. Stair structure — `ST-01`
+Critical external maintenance territory includes:
 
-The three-flight stair is treated as a designed opening, not as joists cut later.
+- the east / service-side plant and utility strip;
+- representative west-side façade and roof-edge support positions;
+- the rear working line;
+- the garden-to-courtyard logistics route;
+- at least one useful courtyard tower position;
+- courtyard drainage and overflow inspection points.
 
-Structural concept:
+Permanent landscape, stores and screens should not silently consume the only credible access geometry. Actual ground bearing, temporary works, neighbour rights, highway dependence and mature planting remain real-site questions.
 
-- `EB-W-S` forms or closely coordinates the western primary edge of the stair zone;
-- the south courtyard wall provides the northern permanent support boundary;
-- local engineered trimmers frame the remaining stair opening and landings;
-- the stair itself is structurally independent enough that future stair repair does not require the main floor diaphragm to depend on decorative strings or balustrade joinery.
+## External order
 
-RH-05 does not choose timber/steel stair strings or landing construction.
+The house does not resolve only its principal front and leave the other elevations to technical accident.
 
-### Architectural check
+The current exterior order is:
 
-The stair does **not** require:
+- **front / south surrogate:** a controlled four-bay principal composition;
+- **garden / north surrogate:** a three-axis garden composition with meaningful masonry piers rather than a glazed wall;
+- **east / service side:** three broad room-owned fields in which technical expression is deliberately concentrated and subordinated;
+- **west:** a comparatively quiet two-room-field elevation;
+- **courtyard:** its own separately scoped internal order.
 
-- a column in the entrance hall;
-- a transfer through the drawing room;
-- a deeper whole-house floor;
-- movement of the courtyard;
-- movement of the principal entrance.
+Technical objects are not hidden by fake architecture, but neither are they allowed to become compositional noise. Occupied openings remain visually primary; plant replacement access is treated as secondary architecture; rainwater goods sit at return geography where practical; ventilation and utility penetrations remain subordinate to the room order.
 
-The RH-03 stair survives structural coordination.
+The exact composition is project-specific and does not become part of Ovid’s House doctrine merely because it works here.
 
----
+## Principal unresolved interfaces
 
-## 7. Courtyard walls and openings
+Most of the house should remain conventional where conventional construction is better. The main non-standard questions are deliberately few.
 
-The courtyard envelope is both architecture and structure in the selected concept.
+### Structural floor edge
 
-### Vertical continuity
+Engineering must determine whether excellent conventional support, direct / seated bearing or another interface best reconciles gravity support, joist stability, wall restraint, diaphragm transfer, movement, tolerance, fire and acoustic closure.
 
-The four courtyard wall lines should remain vertically continuous from foundation to roof/eaves support except at deliberate openings.
+### Wall / ceiling movement junction
 
-This is valuable because the courtyard is already the building's most geometrically expensive move. Making its permanent walls carry real structural work avoids paying for an independent frame beside them.
+The design should not ask brittle finish to bridge assemblies that are expected to move independently. A quiet conventional control, concealed-slip architectural cover and any genuinely functional metal challenger should be compared physically rather than selected on diagrammatic elegance.
 
-### Openings
+### Replaceable wall lining
 
-RH-04 establishes:
+A removable dense-mineral lining remains optional. It survives only if it can approach the solidity, calm, fixing behaviour and workmanship robustness of excellent conventional finish while providing genuinely useful reversible access.
 
-- broad centred openings on the south and north courtyard faces;
-- two-bay opening families on east and west courtyard faces.
+These questions and their proof limits are set out in [Physical Prototypes](../prototypes/README.md).
 
-These conditions are structurally ordinary **provided enough masonry pier remains between openings and at corners**.
+## What remains external to this coordination
 
-RH-05 therefore adds a guardrail:
+The house remains explicitly unproved in several important domains. It still requires:
 
-> **Do not enlarge courtyard openings into continuous glazed walls without returning to the structural gate.**
+- structural capacity and connection design;
+- fire strategy and Building Control review;
+- detailed MEP, acoustic and controls design;
+- heat-loss, energy, daylight and overheating modelling;
+- airtightness, thermal-bridge and moisture-risk resolution;
+- drainage sizing and a real-site discharge strategy;
+- product-specific window, door and threshold design;
+- physical testing of the selected non-standard interfaces;
+- real-site planning, access, utilities, levels, boundaries and ground conditions;
+- cost and whole-life-carbon comparison where serviceability infrastructure imposes a material burden.
 
-Exact lintels, masonry pier widths, padstones/bearings and load distribution remain engineering work.
+The [Independent Review Questions](external-review-brief.md) collect those unresolved discipline questions without treating the existence of a review brief as validation.
 
-### Corner nodes
-
-The four courtyard corners are structurally important because they receive:
-
-- masonry wall loads;
-- floor reactions;
-- edge-beam reactions;
-- later roof reactions;
-- diaphragm/robustness forces.
-
-Treat them as protected **structural nodes**, not convenient future service-chase locations.
-
----
-
-## 8. Outer masonry and RH-04 front elevation
-
-The selected four-bay front is structurally favourable.
-
-Approximate ground opening widths remain around 0.9–1.05 m on **2.70 m bay centres**, leaving substantial masonry fields between openings. Upper openings align vertically on the same axes.
-
-RH-05 therefore finds no reason to alter:
-
-- the four-bay field;
-- bay spacing;
-- the off-centre entrance;
-- the stair-window position.
-
-The stair window's higher sill also leaves more masonry below the opening, not less.
-
-The façade order survives the structural gate without a concealed frame.
-
----
-
-## 9. Rear wall obligation
-
-The rear elevation is less developed than the front.
-
-RH-02 asks the family room, dining room and kitchen to connect strongly to the garden. RH-05 therefore records a constraint before later elevation work becomes over-glazed:
-
-- retain meaningful masonry piers on the north external wall;
-- align or coordinate major rear openings with the `EB-W-N` and `EB-E-N` reaction zones;
-- do not turn the entire rear wall into one continuous opening unless a later architectural decision explicitly accepts the required beam/frame consequence.
-
-This is not a ban on large garden openings. It is a refusal to assume structure disappears at the rear because the elevation has not yet been drawn.
-
----
-
-## 10. Lateral stability and diaphragm concept
-
-At concept level, stability comes from:
-
-- substantial external masonry walls;
-- the inner courtyard masonry ring;
-- the permanent structural deck acting as the first-floor diaphragm;
-- designed wall/floor restraint;
-- roof diaphragm / restraint to be coordinated later.
-
-The courtyard opening means the diaphragm is a **ring diaphragm**, not a full rectangle. The engineer must check:
-
-- collector/chord requirements around the courtyard opening;
-- wall restraint;
-- torsion/asymmetry from openings;
-- robustness ties;
-- stair opening interaction;
-- whether the selected masonry wall lengths are adequate in both principal directions.
-
-RH-05 makes no lateral-capacity claim.
-
-The important project rule remains:
-
-> **the removable floor architecture above the structural deck does not participate in primary diaphragm stability.**
-
----
-
-## 11. Service-zone coordination before RH-06
-
-RH-05 deliberately gives structure some protected territory.
-
-### Protected no-drill / no-chase zones
-
-Treat the following as unavailable for casual future drilling:
-
-- four courtyard corner structural nodes;
-- `EB-W-S`, `EB-E-S`, `EB-W-N`, `EB-E-N`;
-- stair trimmers;
-- masonry lintels and bearing zones;
-- floor diaphragm edge/collector zones once engineered.
-
-### Vertical-service reservation
-
-The current `RH-P014-02` vertical-service-zone geography is in the east-middle service/bathroom strip.
-
-RH-05 reserves a **framed-opening zone** in that floor area rather than routing services through arbitrary I-joist webs after construction. Exact dimensions and service segregation are RH-06 work.
-
-This reservation is **not yet a `HSA-P-005` Designed Structural Penetration occurrence** because the penetrating services and required clear opening are not yet defined.
-
-### Routine horizontal services
-
-Do not use the I-joist field as the default whole-house service highway merely because engineered joists can sometimes accommodate holes.
-
-The current bias remains:
-
-- coherent circulation/service routes;
-- skirting / wall-side distribution where proportionate;
-- dedicated vertical geography;
-- only designed, manufacturer/engineer-approved floor crossings where unavoidable.
-
----
-
-## 12. Foundation concept boundary
-
-No real site or ground investigation exists, so RH-05 does **not** select strip foundations, trench fill, raft, piles or ground beams.
-
-The structural load-path assumption is simply:
-
-- outer loadbearing masonry reaches site-designed foundations;
-- courtyard loadbearing masonry reaches site-designed foundations;
-- concentrated edge-beam reactions are carried into those wall/foundation systems at explicit nodes;
-- no floating ground-floor transfer is assumed.
-
-A future real site can change the foundation system without changing the architectural structural order, provided those support lines remain credible.
-
----
-
-## 13. Structural alternatives rejected / held
-
-### S0 — whole-house steel or timber frame
-
-An independent regular frame could carry the house and free every masonry wall from structure.
-
-**Reject as baseline.**
-
-It duplicates permanent systems and weakens the useful coincidence between long-lived masonry architecture and long-lived structure. Keep only as a fallback if engineering later invalidates the masonry concept.
-
-### S2 — long-span floor across major house dimensions
-
-Examples would include beams/joists spanning most of the 10.8 m or 12.0 m house dimension to avoid using the courtyard walls.
-
-**Reject.**
-
-The courtyard already creates short support distances. Ignoring them would add depth and cost for no architectural benefit.
-
-### S3 — make every internal room partition loadbearing
-
-**Reject.**
-
-This would make the floor easy to support at the cost of freezing room subdivision and increasing future alteration consequence. Only permanent architectural boundaries should be recruited structurally where useful.
-
-### S4 — steel ring around the courtyard
-
-A steel frame around the courtyard could carry all floors/openings and permit almost arbitrary courtyard glazing.
-
-**Hold as a failure fallback, not a design ambition.**
-
-Use only if masonry pier/opening requirements prove incompatible with the selected architecture after actual engineering.
-
----
-
-## 14. Engineer review questions
-
-The external structural review should attack these questions explicitly.
-
-1. Can the outer/courtyard masonry inner leaves credibly provide the proposed vertical/lateral roles with the intended cavity-wall family?
-2. Can a first-floor system with gross spans of approximately **4.2 m** and **3.4 m** fit the RH-04 350 mm zone while meeting strength, vibration, deflection, fire and acoustic requirements?
-3. What edge-beam family best resolves the four approximately 3.4 m extension conditions: LVL/proprietary timber or protected steel?
-4. Are the four courtyard corner reaction nodes and masonry bearing lengths proportionate?
-5. Can the broad north/south courtyard openings retain sufficient pier/bearing width without compromising RH-04 architecture?
-6. Does the large courtyard opening create diaphragm/collector or robustness requirements that materially change the floor edge?
-7. Is the RH-03 stair opening/trimmer concept structurally ordinary inside the selected south-centre zone?
-8. What exact wall restraint and diaphragm connections are required without making removable linings structural?
-9. What service-opening geometry can be reserved in the east-middle zone without forcing later joist cutting?
-10. Does any assumption above require a visible RH-04 sectional rewind?
-
-A negative answer is a design result, not a review failure.
-
----
-
-# RH-05 gate record
-
-**Result:** **PASS at architectural / pre-engineering coordination level.**
-
-The current house admits a simple structural concept based on:
-
-- loadbearing outer masonry inner leaves;
-- loadbearing courtyard masonry inner leaves;
-- short engineered-timber floor spans of approximately 3.4–4.2 m gross;
-- four repeated short edge beams continuing courtyard support lines through front/rear wings;
-- local stair and future service trimmers;
-- permanent structural deck / diaphragm independent of removable occupied layers.
-
-No RH-04 architectural coordinate currently requires:
-
-- a whole-house frame;
-- a room column;
-- a long transfer girder;
-- an enlarged floor zone;
-- movement of the entrance;
-- movement of the courtyard;
-- deletion of the principal stair.
-
-The 350 mm RH-04 floor reservation therefore remains controlled.
-
-**No structural adequacy is claimed.** RH-11 structural-engineer review remains mandatory before any technical validation or construction use.
-
-**No maturity promotion is claimed.**
-
-**Next stage:** `RH-06 — Coordinate services and failure geography`.
-
-**Exact next action:** route utility entry, plant replacement, water, foul/soil, kitchen/bath extract, electrical/data and the current vertical-service reservation through the RH-05 structural zones; create the first new crossing register only where route and structure genuinely intersect.
+The current technical proposition is therefore coherent but bounded: **ordinary construction is retained wherever it performs well; unusual provisions are concentrated at interfaces or maintenance conditions where they can earn their additional material, spatial and governance cost.**

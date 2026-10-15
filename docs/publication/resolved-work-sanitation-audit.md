@@ -79,7 +79,19 @@ The Reference House overview presents the current building proposition rather th
 
 The former discipline-by-discipline external-review package has been reduced to one reader-facing **Independent Review Questions** page. It preserves the substantive unresolved questions—structure, fire/access, MEP/acoustics, building physics/energy, cross-discipline interfaces and real-site dependencies—without publishing review workflow, response templates, maturity gates or issue instructions. The detailed working briefs and date-stamped regulatory baseline remain internal project records.
 
-The public **Vertical Interface Coordination** page has been reconciled with the current house. Earlier option studies had drifted behind later decisions by still treating removable wall lining and accessible floors as preferred development directions. The resolved page states direct quiet wall finish and continuous conventional floors as the baseline; selective attachment/service datums and replaceable lining remain optional challengers; floor-edge and wall/ceiling movement are the two priority unresolved interfaces. The superseded A/B/C option study is retained internally, while its durable proportionality rule is preserved publicly: depart from excellent conventional construction only when a named future task justifies the permanent material, depth, joints and boundary debt.
+The public **Vertical Interface Coordination** page has been reconciled with the current house. It states direct quiet wall finish and continuous conventional floors as the baseline; selective attachment/service datums and replaceable lining remain optional challengers; floor-edge and wall/ceiling movement are the two priority unresolved interfaces. Its proportionality rule is stated directly rather than through the history of earlier option studies.
+
+A deeper first-reader click-through exposed several still-public Reference House pages that contained valuable current technical content wrapped as RH-stage gate records. Structural coordination, environmental coordination, roof/drainage/access, envelope coordination, energy/heat coordination, outer-elevation coordination, the old brief/constraint restart ledger and the project maintenance plan all carried stage IDs, dates, PASS declarations, parent-gate links or rewind chronology.
+
+Their durable content has been semantically migrated into one reader-facing **Reference House — Technical Coordination** synthesis. It owns the current structure, envelope, service/failure geography, environmental hierarchy, energy family, roof/water arrangement, external order, maintenance geography, principal unresolved interfaces and proof limits in resolved present tense. The old stage records remain recoverable internally but are excluded from the public build.
+
+The same click-through found a more serious stale-output problem. **Whole-House Coordination Fixture 01** still exposed an earlier 12.6 × 11.4 m / 3.6 × 3.6 m house and H1-comparator narrative even though the current Reference House is 12.0 × 10.8 m with a 3.6 × 4.0 m court. The page and its stale SVG are now internal-only. The Primer no longer embeds that fixture; it uses the deterministic current generated ground-floor inspection plan instead.
+
+The public **Tectonic Architectural Language** page has also been rewritten as a current project language rather than an RH-09 record. Its useful content survives: direct quiet wall baseline, selective architectural datums, optional replaceable lining, repose, skirting/architrave/cornice/threshold roles, tolerance hierarchy, fixing language, windows/doors, functional brass/bronze, floors, technical-room access and material ageing.
+
+The **Pattern Occurrence Register** was another hidden development-history surface. It narrated RH-01 through RH-10, listed suspended pre-RH occurrences, old object identities, supersessions and update instructions. It is now a reader-facing **Pattern Selection** page organised by current patterns, concrete Reference House consequences and outstanding proof. Stable canonical pattern identities remain; obsolete project-occurrence archaeology does not.
+
+The generated compiler inspection overview now describes the current semantic inspection surface directly. It no longer explains predecessor RH-C/COA output families or historic frozen artefacts. Machine identity and proof boundaries remain because they are properties of the current generated output, not development provenance.
 
 ### Physical prototypes
 
@@ -109,6 +121,8 @@ Examples include:
 
 - `G-01 v0.1 — specification` rather than “frozen grammar”;
 - `Technical coordination` rather than “Reference House development history”;
+- `Current technical coordination` rather than a stage-specific structural-gate identity;
+- `Pattern selection` rather than “Pattern occurrence register”;
 - `Independent review questions` rather than an RH-stage review package;
 - `Vertical interface coordination` rather than an option-development label;
 - `Scoped manufacturer evidence — Mapeguard WP` rather than an evidence-trial stage label.
@@ -123,35 +137,28 @@ The first-reader pass is being performed as an actual reading sequence rather th
 
 The core argument is coherent. The opening proposition, doctrine, pattern boundary, grammar boundary, Reference House role, proportionality argument and evidence limits survive the sequence without requiring development history to explain them.
 
-The pass nevertheless found several reader-facing residues and presentation defects:
+The pass has removed or rewritten production narration in the Reading Guide, Research overview, Prototype overview, Delivery overview and Sources page, then followed the Reference House one level deeper into its technical, tectonic, pattern-selection and generated-inspection surfaces.
 
-- the Reading Guide ended by explaining where internal development records live; that production note has been removed;
-- the Reference House overview repeated its maturity statement almost verbatim and used stale link labels inherited from development-stage pages; it has been tightened into one current synthesis with semantic link names;
-- the Sources page ended with an editorial instruction to future maintainers; that sentence has been removed;
-- the Research overview still narrated document ownership and pattern-language migration history; it has been rewritten around the actual evidence domains;
-- the Prototype overview still explained where hidden working papers live and how future public results should be published; it now states only what a credible physical result must establish;
-- the Delivery overview was too skeletal to explain its relationship to research; it now states the translation boundary and gives a concrete external-maintenance example.
+### Current reading result
 
-### Important finding from click-through reading
+The primary Reference House path can now be read without entering RH-05/RH-07/RH-08/RH-09/RH-10 chronology. The overview links to current technical meaning, current interfaces, current pattern selection, current prototype questions, current generated inspection and current independent-review questions. The stale earlier whole-house fixture no longer appears on the site or in the Primer.
 
-The primary sequence is clean at overview level, but several public **Reference House technical coordination pages** still open as old gate records with stage IDs, dates, “PASS” declarations, rewind language and superseded parent-authority links. Examples include structural coordination, environmental coordination, roof/drainage/access, envelope coordination, energy/heat coordination and outer-elevation coordination.
-
-Those pages contain real architectural and technical information and should not simply be deleted. They are therefore the next SAN-04/SAN-05 semantic-migration front: preserve their current decisions, calculations, constraints and proof boundaries while removing the gate chronology and stale authority scaffolding.
-
-SAN-05 is **not complete** until that click-through layer is resolved and reread.
+SAN-05 is still **not complete**. The next pass should move outward from the cleaned Reference House into the remaining public evidence and computational technical-family routes rather than continue polishing already-resolved RH pages.
 
 ## Remaining work
 
-1. Distil the remaining public Reference House technical coordination pages into current subject documents rather than stage records.
-2. Continue first-reader click-through across those resolved technical pages and the evidence route.
+1. Continue first-reader click-through across the public research/evidence route and remaining computational technical-family pages.
+2. Audit the remaining reader-facing back matter for process-shaped appendices whose content may be valid but whose existence or framing is still inherited from project development.
 3. Perform SAN-06 lossless verification: every internalised or rewritten record must have its unique architectural claims, evidence and constraints accounted for in a current owner.
-4. Close issue #133 only after the public site and both PDFs pass that final check.
+4. Regenerate and validate both public outputs and the site.
+5. Close issue #133 only after the public site and both PDFs pass that final check.
 
 ## Semantic guardrail
 
 An identifier is judged by function, not by appearance.
 
 - `G-01 v0.1` may remain because it names a stable formal architectural specification.
+- stable canonical pattern identities may remain because they support current cross-reference across evidence and computational representations.
 - external standards, regulatory categories and technical classifications remain where relevant.
 - development-stage labels should not survive merely because the project once used them internally.
 

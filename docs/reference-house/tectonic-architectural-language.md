@@ -1,54 +1,44 @@
 # Reference House — Tectonic Architectural Language
 
-**Status:** Reference House design language; updated through RH-09. Not universal Ovid’s House doctrine.
+Ovid’s House does not prescribe a historical style, material palette or visible joint language. The Reference House selects **G-01**, a Georgian-derived architectural grammar, and develops its own tectonic language within it.
 
-## Purpose
-
-Ovid’s House does not prescribe a historical style, material palette or visible joint language. The Reference House selects **G-01**, a Georgian-derived architectural grammar. Traditional joinery, mineral plaster, expressed thresholds and restrained brass/bronze remain project-level choices within that grammar.
-
-The task is not to hide a technical platform inside a period-looking shell. The visible architectural grammar and the real constructional grammar should coincide.
-
-Within this house, skirtings, architraves, picture rails, cornices and thresholds may perform genuine technical work where that work already belongs to the architecture. They are not excuses to turn every room edge into infrastructure.
-
-## Governing rule
+The aim is not to hide a technical platform inside a period-looking shell. The visible architectural order and the real constructional order should support one another.
 
 > **No technical feature is excused from architecture merely because it is necessary.**
 
 Visible interfaces should be resolved through proportion, material, hierarchy and craft. The house should not read as an engineering demonstrator.
 
-## RH-09 selection hierarchy
+## Occupied-surface hierarchy
 
-RH-09 establishes three occupied-wall conditions.
+Three wall conditions are sufficient for the current house.
 
-### W0 — quiet permanent wall — baseline
+### Quiet permanent wall
 
 Where little service or change burden exists, prefer the simplest convincing wall:
 
-**permanent masonry / rigid background → required permanent boundary treatment → directly applied mineral/plaster finish → decoration**
+**permanent masonry / rigid background → required permanent boundary treatment → directly applied mineral or plaster finish → decoration**
 
-No cavity, backplane or removable lining is added merely for hypothetical future flexibility.
+No cavity, backplane or removable lining is added merely for hypothetical future flexibility. Direct finish is the baseline because it gives solidity, acoustic and tactile quality, material economy and architectural calm.
 
-Direct plaster is not a fallback embarrassed by the doctrine. It remains the Reference House baseline where it gives the best combination of solidity, acoustic/tactile quality, repairability, material economy and architectural calm.
+### Controlled architectural datum
 
-### W1 — controlled architectural datum — selected where earned
+Where repeated fixing, local services or replaceable joinery justify it, use **sparse known grounds** rather than a whole-room technical rack.
 
-Where repeated fixing, local services or replaceable joinery justify it, add **sparse known grounds** rather than a whole-room technical rack:
+Useful examples include:
 
 - skirting grounds;
-- architrave / jamb grounds;
-- genuine picture-rail or hanging datum;
-- local heavy-load plate / ground;
-- bounded adjustment geometry where manufactured joinery meets imperfect permanent construction.
+- architrave or jamb grounds;
+- a genuine picture-rail or hanging datum;
+- a local heavy-load fixing plate;
+- bounded adjustment geometry where precise joinery meets imperfect permanent construction.
 
-This is the project implementation of `HSA-P-022 — Controlled Attachment Plane`.
+The architectural element should perform its ordinary role first. Technical usefulness is an additional duty, not its sole reason to exist.
 
-### W2 — replaceable architectural lining — experimental
+### Replaceable architectural lining
 
-The P01-W2 dense-mineral removable lining remains a challenger. It is not selected house-wide before full-scale testing.
+A full-height replaceable lining remains an optional challenger, not a house-wide baseline.
 
-If W2 cannot equal an excellent conventional plaster wall for solidity, sound, appearance, fixing behaviour, reinstatement and installer robustness, the Reference House rejects W2 and remains architecturally complete with W0/W1.
-
-A successful prototype may justify selected high-change/service bays. It does not make panelisation the default.
+It should survive only if it can approach an excellent conventional wall for solidity, sound, appearance, fixing behaviour, reinstatement and installer robustness while adding genuinely useful reversible access. The house remains architecturally complete without it.
 
 ## Repose as a compositional requirement
 
@@ -67,61 +57,57 @@ The house should favour:
 - material and ornamental richness held within a larger order;
 - technical interfaces subordinate to the room.
 
-The courtyard, stair and thresholds may provide compression and release. Principal rooms should not depend on constant visual or technical tension for character.
-
-A useful room-wide question remains:
+A useful room-wide question is:
 
 > **What, in this room, is asking the occupant to remain on alert?**
 
-## Interface grammar
+The courtyard, stair and thresholds may provide compression and release. Principal rooms should not depend on continuous visual or technical tension for character.
 
-### Skirting
+## Skirting
 
 Skirting is a strong floor/wall datum. Where justified it may:
 
-- protect wall/lining edges;
+- protect wall and lining edges;
 - cover a declared floor/wall tolerance zone;
 - conceal a bounded dry service route;
 - expose that route by local removal;
-- cover the lower release of a selected W2 panel.
+- cover the lower release of a selected removable lining.
 
-It remains substantial timber joinery, mechanically fixed to known grounds, not commercial trunking in disguise.
+It remains substantial architectural joinery, mechanically fixed to known grounds, not commercial trunking in disguise.
 
-RH-09 explicitly separates **route** from **accessory height**. Ordinary sockets are not placed in the skirting as the Reference House baseline. The low-level route rises through a declared door/architrave or local service zone to an appropriately accessible accessory position.
+Ordinary sockets are not placed in the skirting as the house-wide baseline. A low-level route may rise through a declared door, architrave or local service zone to a more accessible accessory position.
 
-### Dado / chair rail
+## Dado and picture rail
 
-A dado may mark a real division between lining fields, protect edges or form a controlled tolerance/movement break. Do not introduce one merely because a technical seam wants somewhere to hide. The room proportions must justify it.
+A dado may mark a real division between lining fields, protect edges or coincide with a controlled tolerance or movement break. It should not appear merely because a technical seam needs somewhere to hide.
 
-### Picture rail
+Where a picture rail exists, it should work as a picture rail. It may also coincide with a known fixing ground, provided its load capacity and fixing method are explicit.
 
-Where present, the picture rail should work as a picture rail. It may also coincide with a known fixing ground or panel release datum. Its load capacity and fixing method must be recorded.
+## Cornice
 
-### Cornice
-
-The cornice may become a genuine wall/ceiling interface: covering a bounded movement gap, protecting lining edges or forming a locally removable perimeter piece.
+The cornice may perform genuine wall/ceiling interface work by covering a bounded movement allowance, protecting edges or forming a locally removable perimeter piece.
 
 It must not become a catch-all service duct.
 
-RH-09 selects the **location and function** of the wall/ceiling movement junction but not a special mechanism. P04 must compare a quiet conventional joint, a mechanically fixed cornice with concealed slip geometry and visible metal only where that metal does real work.
+The wall/ceiling movement junction is one of the house’s priority physical questions. The visible answer should be quieter than the mechanism behind it.
 
-### Architrave
+## Architrave
 
-Architraves may conceal a designed fixing/tolerance zone around replaceable door and window assemblies and, at selected door surrounds, a declared vertical room-service rise.
+Architraves may conceal a designed fixing and tolerance zone around replaceable doors and windows and, at selected door surrounds, a declared vertical dry-service rise.
 
-The target sequence is:
+The intended sequence is:
 
-**permanent opening → replaceable frame/doorset → removable architectural trim**
+**permanent opening → replaceable frame or doorset → removable architectural trim**
 
-Removing architrave should expose the serviceable interface where practical without destructive plaster work.
+Where practical, removing the architrave should expose the serviceable interface without destructive plaster work.
 
-### Threshold
+## Threshold
 
-A threshold appears only where a real interface exists: different floor build-ups, wear duty, movement, weathering or accessibility/drainage requirements.
+A threshold appears where a real interface exists: different floor build-ups, wear duty, movement, weathering or accessibility and drainage requirements.
 
-Where an internal floor genuinely continues through an opening, do **not** add a decorative threshold strip merely to announce a joint.
+Where an internal floor genuinely continues through an opening, a decorative threshold strip should not be added merely to announce a joint.
 
-At courtyard/garden doors, the threshold is a serious envelope and wear interface. Stone, timber, aluminium, brass or bronze must be selected for the real duty, not novelty.
+At courtyard and garden doors the threshold is a serious envelope, wear and accessibility interface. Material follows duty.
 
 ## Architectural depth as tolerance capacity
 
@@ -129,7 +115,7 @@ Traditional architectural depth can absorb ordinary construction variation where
 
 An architrave may overlap the frame/wall tolerance zone; substantial skirting may cover a controlled floor perimeter; a cornice may span a real movement junction; a threshold may protect a change of datum.
 
-The hierarchy remains:
+The hierarchy is:
 
 **coarse permanent construction → designed adjustment → true architectural datum → precise assembly → architectural overlap / cover**
 
@@ -139,108 +125,80 @@ The moulding or cover is the final resolution, not the primary correction mechan
 
 The house should support ordinary occupation without treating permanent fabric as an unlimited drilling field.
 
-RH-09 distinguishes:
+Three broad fixing conditions are useful:
 
-- **F1 ordinary hanging** — picture rail, known ground or documented safe wall field;
-- **F2 substantial fit-out** — declared attachment ground/plate and recorded capacity;
-- **F3 exceptional / safety-critical load** — engineered relationship to permanent structure.
+- **ordinary hanging** — picture rail, known ground or documented safe wall field;
+- **substantial fit-out** — declared attachment ground or plate with known capacity;
+- **exceptional or safety-critical load** — engineered relationship to permanent structure.
 
-The physical building record should preserve safe fixing and no-fix/service zones. Ordinary use should remain intuitive; exceptional work should not depend on guesswork.
+The physical building record should preserve safe-fixing and no-fix/service zones. Ordinary use should remain intuitive; exceptional work should not depend on guesswork.
 
 ## Windows and doors
 
-### Windows
+The permanent masonry opening belongs to the long-lived building. The frame is a replaceable assembly within a deliberate mounting and tolerance zone.
 
-The permanent masonry opening belongs to the long-lived building. The frame is a replaceable assembly within a deliberate mounting/tolerance zone.
+Internal reveal or architrave trim should be removable where useful. Brittle plaster should not bridge directly from permanent wall to a moving frame. Decorative trim must not be the primary air, water or thermal boundary.
 
-Internal reveal/architrave trim should be removable where useful. Brittle plaster should not bridge directly from permanent wall to a moving frame. Decorative trim must not be the primary air/water/thermal boundary.
+Full-frame replacement must be designed as a real sequence. Internal removal of sash, glazing and hardware remains desirable where the selected product permits it, but the wider access strategy does not require every complete frame to pass through the room.
 
-Full-frame replacement must be drawn as a real sequence. RH-08 external access means it is not necessary to force every complete frame through the room; internal removal of sash/glazing/hardware remains desirable where the selected product permits it.
+A slim thermally broken aluminium family is a project comparator, not Ovid’s House doctrine and not yet a proprietary selection.
 
-A slim thermally broken aluminium family is a current project comparator, not Ovid’s House doctrine and not yet a proprietary selection.
-
-### Doors
-
-Doorsets in genuinely permanent openings use the same life-separation logic: permanent opening, declared fixing/adjustment zone, replaceable frame/doorset, removable architrave.
-
-Lightweight partitions remain simpler. Do not add demountable complexity merely to imitate a permanent-opening condition.
+Permanent door openings use the same life-separation logic: permanent opening, declared fixing and adjustment zone, replaceable frame or doorset, removable architrave. Lightweight partitions remain simpler and need not imitate that condition.
 
 ## Brass and bronze
 
-Brass and bronze remain a **functional visual language**, not a theme.
+Brass and bronze form a **functional visual language**, not a theme.
 
-A useful Reference House intuition is:
+A useful project intuition is:
 
 > **Visible brass or bronze should usually indicate that something moves, opens, wears, protects, indexes or comes apart.**
 
-RH-09 narrows the likely uses to:
+Appropriate uses may include:
 
 - touch hardware;
-- durable service index / labels;
-- sacrificial threshold or wearing edge where justified;
-- genuine removable trim or movement protector if a prototype proves it;
-- selected grilles/covers where metal is technically appropriate.
+- durable service indexing and labels;
+- sacrificial threshold or wearing edges where justified;
+- genuine removable trim or movement protection where it performs real work;
+- selected grilles and covers where metal is technically appropriate.
 
-Avoid continuous grids, metal seams that merely advertise panelisation, brass around every access point and bespoke mechanisms where ordinary concealed hardware is more repairable.
+Avoid continuous metal grids, seams that merely advertise panelisation, brass around every access point and bespoke mechanisms where ordinary concealed hardware is more repairable.
 
-**Brass marks where the building comes apart** remains a useful intuition, not a command to make every joint brass.
+**Brass marks where the building comes apart** remains a useful intuition, not a requirement that every joint be brass.
 
 ## Panelisation without a panelised aesthetic
 
-Where W2 or another real removable field is eventually selected, module geometry should arise from room composition and replacement logic together.
+Where a removable field is selected, module geometry should arise from room composition and replacement logic together.
 
-G-01 already provides bays, opening axes, moulding datums, fireplaces and thresholds that may coincide with real module boundaries. Do not begin with a manufacturer's grid and force the architecture to obey it. Equally, avoid bespoke one-off panels where a small repeatable family can do the job.
+G-01 already provides bays, opening axes, moulding datums, fireplaces and thresholds that may coincide with real module boundaries. Do not begin with a manufacturer’s grid and force the architecture to obey it. Equally, avoid bespoke one-off panels where a small repeatable family can do the job.
 
 No false joint should imply constructional division that does not exist.
 
 ## Floors
 
-RH-09 does **not** select a removable or raised floor in principal rooms.
+Principal rooms use continuous conventional floors.
 
-Current services do not place active maintainable components beneath those floors. Long-life ventilation ducts may occupy bounded structural corridors with terminal/manifold access, while changeable dry services prefer wall/joinery routes.
+Current services do not justify a house-wide removable or raised floor. Long-life ventilation ducts may occupy bounded structural corridors with terminal or manifold access, while changeable dry services prefer wall, joinery or other declared routes.
 
-Continuous conventional floors therefore remain the Reference House baseline. P02 selective-floor-access research may reopen the issue only if a later real task earns a bounded local access strip.
+Selective floor access remains legitimate only where a real task earns a local intervention.
 
-## Access panels and technical rooms
+## Technical rooms and access
 
-Inside `G-PLANT-01` and explicit service spaces, access should be obvious and sized for the work. There is no merit in disguising plant access as fake domestic panelling.
+Inside the plant room and explicit service spaces, access should be obvious and sized for the work. There is no merit in disguising plant access as fake domestic panelling.
 
-For `U-BATH-01`, maintainable components are biased to the dry gallery side. Prefer a real joinery/panel field on the dry side to a small tiled access hatch; opening it should not disturb waterproofing.
+Maintainable bathroom components should be biased toward the dry side of the assembly. A real joinery or panel field on the dry side is preferable to a small tiled access hatch that disturbs waterproofing.
 
-The physical service index near `G-PLANT-01` is one location where restrained engraved brass/bronze has a direct stewardship function.
+A restrained engraved brass or bronze service index is one place where the material has a direct stewardship function.
 
 ## Material truth and ageing
 
 The Reference House disfavors architectural simulation. Legitimate cladding, veneer, paint, render and layered finishes remain possible, but appearance should not casually imply a different structural, weathering or craft reality.
 
-Prefer materials partly for how they age and repair:
+Materials should also be judged by how they age and repair. Timber may wear and be locally repaired; brass and bronze may patinate; stone can take wear at thresholds; masonry can weather and be repointed; mineral finishes can be repaired without pretending to be another material.
 
-- timber that can wear and be locally repaired;
-- brass/bronze that can patinate;
-- stone that can wear honestly at thresholds;
-- painted joinery that can be locally repainted;
-- mineral surfaces that tolerate patch repair.
+The objective is not pristine permanence. It is a building whose ageing remains materially intelligible.
 
-Poor ageing includes hidden delamination, imitation layers peeling, inaccessible corrosion and brittle skins whose failure exposes a false material story.
+## Relationship to technical coordination
 
-## Prototype review
+This tectonic language does not replace technical design. The current structural, envelope, service, environmental and maintenance arrangement is recorded in [Current Technical Coordination](structural-coordination.md), while [Vertical Interface Coordination](vertical-bay-coordination.md) concentrates on the representative wall/floor/ceiling junction.
 
-Important visible interfaces should be judged full-scale under ordinary domestic viewing and use.
-
-Review:
-
-- proportion and shadow;
-- joint width and alignment;
-- touch and apparent solidity;
-- sound under use;
-- removal and reinstatement;
-- technical visibility;
-- functional use of metal;
-- likely ageing;
-- room-wide hierarchy and repose.
-
-The benchmark is not whether an access panel looks acceptable.
-
-> **Would this detail still be desirable if nobody knew it was maintainable?**
-
-If not, the architectural resolution is unfinished.
+Where a visible architectural move conflicts with fire, moisture, structure, acoustics, access or maintainability, the conflict must be resolved rather than hidden behind finish.

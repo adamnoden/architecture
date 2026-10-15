@@ -67,7 +67,7 @@ Controlled sectional datums are:
 - upper clear ceiling +6000 mm;
 - cornice/eaves control approximately +6250 mm.
 
-The garden, service, west and courtyard elevations have related but separately scoped orders rather than inheriting one universal symmetry grid. [Outer elevation coordination](outer-elevation-coordination-rh10.md) and [Vertical Interface Coordination](vertical-bay-coordination.md) develop those relationships and their junction consequences.
+The garden, service, west and courtyard elevations have related but separately scoped orders rather than inheriting one universal symmetry grid. [Current Technical Coordination](structural-coordination.md) records the resulting whole-house order; [Vertical Interface Coordination](vertical-bay-coordination.md) develops the principal junction consequences.
 
 ## Envelope and structure
 
@@ -75,7 +75,7 @@ The working external wall family is conventional and legible:
 
 **real masonry outer leaf → insulated/drained cavity → substantial loadbearing masonry inner leaf → direct quiet internal finish by default**.
 
-Current planning control assumes approximately **400–425 mm** overall wall depth, with **450 mm** used as a whole-house geometry stress test. Exact structure, insulation, U-value, moisture/air strategy, ties and junction performance remain specialist design work. See [Envelope Coordination](envelope-coordination-rh10.md).
+Current planning control assumes approximately **400–425 mm** overall wall depth, with **450 mm** used as a whole-house geometry stress test. Exact structure, insulation, U-value, moisture/air strategy, ties and junction performance remain specialist design work.
 
 The pre-engineering structural concept uses loadbearing external and courtyard masonry inner leaves with comparatively short engineered-timber floor spans:
 
@@ -85,7 +85,7 @@ The pre-engineering structural concept uses loadbearing external and courtyard m
 - deliberate framing around stair and service openings;
 - structural deck retained as the diaphragm.
 
-No member, bearing, lintel, connection or foundation has yet been engineered for construction. The value of the arrangement is that the architecture appears capable of being carried by an ordinary, intelligible load path without a whole-house steel frame or long transfers. See [Structural Coordination](structural-coordination.md).
+No member, bearing, lintel, connection or foundation has yet been engineered for construction. The value of the arrangement is that the architecture appears capable of being carried by an ordinary, intelligible load path without a whole-house steel frame or long transfers. The resolved structure, envelope and their proof limits are gathered in [Current Technical Coordination](structural-coordination.md).
 
 The floor-to-masonry edge remains a priority engineering and physical-test question rather than a resolved special detail.
 
@@ -134,7 +134,7 @@ The environmental hierarchy begins with form rather than equipment:
 
 The courtyard is treated as a **shaded light court**, not the primary sunny garden. Principal rooms retain outer-façade daylight responsibility and the rear garden remains the main sunny amenity.
 
-Dynamic overheating, daylight, heat loss, airtightness, ventilation duty, acoustics and future-climate robustness remain unproved until a real site and competent models exist. See [Environmental Coordination](environmental-coordination.md) and [Energy, Heating and Renewable Coordination](energy-heat-coordination-rh10.md).
+Dynamic overheating, daylight, heat loss, airtightness, ventilation duty, acoustics and future-climate robustness remain unproved until a real site and competent models exist. The current environmental, heating and renewable-energy position is recorded in [Current Technical Coordination](structural-coordination.md).
 
 ## Roof, water and external maintenance
 
@@ -146,7 +146,7 @@ The courtyard therefore drains principally its own approximately **14.4 m²** op
 
 External scaffold or tower access is the current primary roof-maintenance strategy; no permanent roof hatch is included merely as a symbol of maintainability. Approximately **50 m² of PV-capable roof field** is reserved while preserving drainage and maintenance routes.
 
-See [Roof, Drainage and External Maintenance](roof-drainage-access-rh08.md) and [External Access and Maintenance](external-access-maintenance-plan.md).
+The roof, drainage and external-maintenance arrangement is gathered in [Current Technical Coordination](structural-coordination.md).
 
 ## Occupied interfaces
 
