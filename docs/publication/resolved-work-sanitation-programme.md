@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # Resolved-work sanitation programme
 
 > **The publication contains the resolved work, not the history of its resolution.**
