@@ -1,289 +1,166 @@
-# Reference House — Vertical Bay Coordination 01
+# Reference House — Vertical Interface Coordination
 
-**Status:** coordinated concept section / pre-engineering  
-**Location:** representative external wall at upper floor  
-**Purpose:** coordinate the principal tectonic systems in one section before any is developed further in isolation.
+This page coordinates the current wall, floor, ceiling and service assumptions at a representative external-wall / upper-floor junction. It is a **pre-engineering coordination object**, not a construction detail.
 
-This is not a construction detail. It is a **coordination object**: one bay in which permanent masonry, floor support, restraint, wall lining, floor platform, services, ceiling, movement, acoustics, fire, airtightness and architectural expression must coexist.
+Its purpose is to keep distinct systems distinct: structure, weathering, thermal control, airtightness, services, occupied finishes, movement, fire and acoustics must meet at the same physical junction without one layer quietly inheriting duties it cannot credibly perform.
 
-Companion drawing: [vertical-bay-coordination.svg](vertical-bay-coordination.svg)
+## Current baseline
 
----
+### External wall
 
-# 1. Current assumptions
+The current planning family is approximately **400–425 mm overall**, with **450 mm** used as a whole-house geometry stress limit.
 
-## External wall
+The intended order is:
 
-Outside to inside:
+**real masonry outer leaf → drained/insulated cavity → substantial loadbearing masonry inner leaf → direct quiet internal finish by default**.
 
-- approximately 102.5 mm facing brick;
-- approximately 50 mm drained cavity;
-- approximately 150 mm mineral-wool insulation;
-- approximately 215 mm dense masonry inner leaf;
-- internal tectonic lining system where selected.
+Exact leaf thicknesses, insulation, ties, air-control strategy, moisture behaviour and junction design remain specialist work. The important architectural distinction is that the long-lived wall remains the wall; changeable room-side elements do not become the primary weather, thermal or structural boundary by accident.
 
-Thermal, structural and moisture design may change the dimensions. The functional separation matters more than the present thicknesses.
+### Primary floor
 
-## Primary floor
+The working structural family remains engineered timber spanning between outer and courtyard masonry support lines.
 
-Working baseline:
+- the structural deck remains the primary diaphragm;
+- stair and service openings require deliberate local framing;
+- routine services do not receive permission to drill primary members or protected reaction zones;
+- final joist family, depth, centres, support and restraint are engineering decisions;
+- the current architectural reservation between ground ceiling and first-floor level is **350 mm**.
 
-- engineered timber I-joists;
-- certified restraint-type masonry hanger as the baseline wall connection;
-- structural deck providing primary diaphragm action;
-- no routine service distribution through the joist zone;
-- removable floor platform not responsible for primary diaphragm stability.
+A conventional engineered support detail is the incumbent to beat. Bearing, restraint, diaphragm transfer, movement, fire, acoustics and repairability should be separated conceptually, but that separation does not justify a bespoke connector unless it produces a real advantage.
 
-## Replaceable wall system
+### Occupied wall finish
 
-Working W2 hypothesis:
+The default is **direct mineral/plaster finish on quiet permanent walls**.
 
-- dense masonry remains the real wall;
-- permanent parge / air-control treatment on the room face where required;
-- sparse adjustable backplane anchored deliberately to masonry;
-- shallow service / acoustic zone where useful;
-- robust manufactured removable panel;
-- skirting, picture rail and cornice used as genuine interfaces.
+Selective controlled attachment or service datums may be introduced only where a repeated fixing, access or service task earns them. A full-height replaceable lining remains an experimental challenger rather than a house-wide baseline.
 
-## Floor platform
+This is a material correction to earlier development studies: the Reference House does **not** depend on a removable wall-panel system in order to be complete.
 
-Working hypothesis:
+### Floor finish and access
 
-- structural deck remains permanent;
-- shallow service / acoustic / levelling zone above where justified;
-- local access-band or perimeter access is preferred for the first comparison;
-- a low-profile dense removable mineral platform remains an experimental full-room comparator;
-- finish-specific carrier and finish remain distinct from the primary structure.
+Principal rooms use conventional continuous floors by default. There is no house-wide raised floor or removable platform.
 
----
+Selective floor access remains a held response for a real local service task; it is not infrastructure to be installed speculatively. Any accessible floor condition must justify its added depth, acoustic risk, joints and material before it displaces an excellent conventional floor.
 
-# 2. Keep seven systems distinct
+## Keep the main systems distinct
 
-The bay exists to stop one assembly quietly swallowing another.
+### Weathering
 
-## A. Weathering wall
+Facing masonry, cavity drainage, flashings, sills, copings and roof/wall interfaces manage external water. Interior trims and removable room finishes must not become the primary weather boundary.
 
-Facing brick and drained cavity manage external weather.
+### Thermal control
 
-## B. Thermal layer
+The insulation and thermal-bridge strategy belong to the envelope. Floor edges, reveals, thresholds and parapets require explicit continuity rather than relying on architectural trim to conceal missing performance.
 
-Mineral wool provides the principal external-wall insulation.
+### Airtightness and moisture control
 
-## C. Permanent structural / mass wall
+The primary air-control strategy must remain on a slow, continuous and inspectable layer. Routine replacement of skirting, joinery, services or optional lining should not dismantle it.
 
-Dense inner masonry provides primary structural role where applicable, acoustic and thermal mass, physical robustness and the long-lived substrate for designed structural/backplane fixings.
+The exact parge, plaster or membrane strategy remains a building-physics decision.
 
-## D. Primary environmental boundary
+### Structure
 
-The airtight / vapour-control strategy must be explicit. The drawing currently shows a permanent parge or equivalent treatment at the masonry face as a **possible** primary air-control layer, not a fixed specification.
+The masonry bearing system, engineered floor, diaphragm and local framing own gravity and stability duties. Changeable finishes do not contribute to primary structural adequacy merely because they are mechanically fixed.
 
-> **Routine removal of wall panels should not dismantle the primary air boundary.**
+### Services
 
-## E. Replaceable wall architecture
+Primary distribution is biased toward deliberate service geography rather than the structural floor zone.
 
-The backplane and panel sit on the room side of the permanent wall. They provide tolerance, access, fixing infrastructure, selected service distribution, finish and movement resolution without inheriting every duty of the external wall.
+- large wet, drainage and ventilation routes use dedicated service zones;
+- dry room distribution may use skirting, local wall-side or other accessible routes where proportionate;
+- primary members, edge beams and reaction nodes remain protected from casual later drilling;
+- access is provided for tasks, not by making every cavity accessible.
 
-## F. Primary floor structure
+### Occupied finishes
 
-The I-joist and structural deck carry the floor. The edge must separately resolve vertical support, joist stability, wall restraint, diaphragm transfer, fire, acoustics, corrosion, movement and ceiling termination.
+Skirting, architrave, cornice and other traditional overlaps may conceal tolerances, protect edges and provide access where they perform real work. They remain architectural components rather than substitutes for missing structural, fire, acoustic or environmental boundaries.
 
-## G. Replaceable floor architecture
+### Fire and acoustics
 
-Any access/platform layer and finish sit above the structural deck. The removable layer is not the structure.
+Any cavity, lining, service crossing or movement junction creates its own fire and acoustic questions. Removability must not make compartment closure, cavity barriers, flanking control or reinstatement ambiguous.
 
----
+## Floor-to-masonry edge
 
-# 3. Critical junction — floor into masonry
+The floor edge remains one of the house’s two most important unresolved physical interfaces.
 
-The baseline is a **restraint-type masonry hanger**, not a bespoke sliding shoe.
+A credible solution must allocate, explicitly:
 
-The research conclusion is that the important move is to separate bearing, restraint, movement and finish rather than invent a connector for its own sake.
+- gravity support;
+- joist stability;
+- wall restraint;
+- diaphragm transfer;
+- construction tolerance;
+- expected relative movement;
+- fire and acoustic closure;
+- corrosion/moisture durability;
+- inspection and realistic local repair.
 
-The structural engineer must determine hanger family, joist depth and centres, lateral and wall restraint, diaphragm connection, robustness, and the fire/acoustic build-up.
+The current engineering brief treats a conventional certified hanger/restraint family as the baseline, direct/seated bearing with separate restraint as a comparator, and any bespoke shoe/ledge as a challenger that must justify its additional complexity.
 
-The bay keeps enough conceptual room for a future direct-bearing or seated comparator.
+The design should not imply that complete joist withdrawal is easy if deck, ceilings, partitions and services make it unrealistic. The useful goal is a clear and repairable interface, not theatrical demountability.
 
----
+See the [structural floor-edge engineering brief](../prototypes/p03-floor-edge-engineering-brief.md).
 
-# 4. Backplane geometry
+## Wall / ceiling movement junction
 
-The backplane should **not** be fixed continuously into masonry.
+The other priority interface is where wall and ceiling finishes meet.
 
-The concept assumes sparse engineered anchors, an adjustable vertical rail or ground, panel fixings terminating in that interface and a shallow room-side zone for selected services and acoustic absorption.
+The rule is simple:
 
-Rail orientation remains open:
+> **No brittle finish should bridge two assemblies that are expected to move independently.**
 
-### Vertical primary rails
+The current physical comparison is between:
 
-Simple tolerance adjustment and natural full-height support; local services can cross horizontally.
+1. an excellent conventional junction;
+2. a concealed-slip cornice/cover fixed to one controlling assembly;
+3. a restrained metal protection/slip element only if the metal performs a genuine technical function.
 
-### Horizontal rails
+The simplest quiet detail that survives the expected movement while retaining fire, acoustic and finish integrity should win. A visible disassembly line is not an objective.
 
-Potentially compatible with dado / picture-rail logic and panel courses.
+See the [wall / ceiling movement-junction build pack](../prototypes/p04-wall-ceiling-build-pack.md).
 
-### Two-direction frame
+## Window and door interfaces
 
-Maximum flexibility at the cost of more material and complexity.
+Permanent masonry openings and shorter-lived windows/doors are treated as separate assemblies joined by a designed interface.
 
-Current bias:
+That interface must reconcile fixing, tolerance, air/water continuity, thermal bridging, security, movement and replacement. Removable internal trim may cover the joint, but primary envelope performance must not depend on trim remaining untouched forever.
 
-> **Simple vertical primary rails with local horizontal grounds only where they perform real work.**
+## Skirting and cornice
 
----
+These components may earn infrastructure roles where the architecture can carry them naturally.
 
-# 5. Wall-panel edge strategy
+A substantial removable skirting can protect wall/floor edges and carry bounded dry services. A cornice can conceal a genuine movement allowance. Neither should be made removable merely to advertise reversibility, and neither should become the sole owner of a critical slow-building function.
 
-The section should read as a wall field, not an office access system.
+## Proportionality rule
 
-Possible joint strategies include true panel moulding, fine shadow/reveal, removable trim, restrained functional brass/bronze, or a nearly flush mineral-panel joint.
+Earlier development compared a conventional bay, a selectively reversible bay and a highly reversible bay. The durable conclusion is not that the middle option won as a system.
 
-Do not assume filler across a removable joint. A panel should come out without wet making-good.
+It is this:
 
----
+> **Move away from excellent conventional construction only when the added layer solves a named future task strongly enough to justify its permanent cost, depth, joints and maintenance burden.**
 
-# 6. Skirting
+For every escalation ask:
 
-The skirting may hide the lower panel release, protect the panel edge, carry low-level service access, conceal the floor-platform perimeter and let wall and floor terminate independently.
+1. what event becomes less destructive;
+2. how plausible and consequential that event is;
+3. what permanent material, depth or complexity is added now;
+4. whether a local intervention solves most of the problem;
+5. what new fire, acoustic, moisture or tolerance boundary appears;
+6. whether the room becomes less solid, quiet or architecturally settled.
 
-It should itself be mechanically removable. The fastening method remains open.
+The burden of proof sits with the more complex assembly.
 
----
+## What remains unresolved
 
-# 7. Cornice / ceiling interface
+This coordination does not prove:
 
-Treat the cornice as a **functional slip junction**.
+- floor member or connection adequacy;
+- wall restraint or global stability;
+- the final external-wall build-up;
+- thermal-bridge or moisture performance;
+- fire/acoustic closure at the floor edge;
+- the movement envelope at the wall/ceiling junction;
+- any experimental lining or access-floor performance;
+- product-specific window/door interfaces.
 
-The concept assumes independent ceiling movement, a wall panel terminating below it, a deliberate movement gap, trim controlled from one side of the joint and no paint/plaster bridge across the slip condition.
-
-A restrained brass/bronze element remains a Reference House option, not doctrine.
-
----
-
-# 8. Floor platform
-
-Keep structural deck, service/acoustic/levelling layer, access layer and finish distinct where those layers are justified.
-
-The first physical comparison should test a **selective access condition** against an excellent conventional floor. A full-room dense mineral platform informed by calcium-sulphate raised-floor precedent remains a more demanding comparator and should follow only if the selective arrangement earns further development.
-
-Requirements for any accessible floor condition:
-
-- no rattle or rocking;
-- no characteristic raised-floor footfall sound;
-- local lifting possible where access is claimed;
-- perimeter and threshold conditions architecturally controlled;
-- primary diaphragm remains below.
-
----
-
-# 9. Services
-
-Preferred topology:
-
-- horizontal services biased toward coherent circulation/service routes;
-- room distribution in skirting or wall-side zones where justified;
-- planned vertical routes;
-- larger ducts and drainage in deeper dedicated zones.
-
-Avoid using the I-joist zone as the default future service corridor, random masonry chasing, or filling every lining cavity merely because space exists.
-
-The shallow zones should carry **only services that justify being there**.
-
----
-
-# 10. Acoustic strategy
-
-Current assumptions:
-
-- masonry supplies primary wall mass;
-- shallow wall cavity may contain mineral-wool absorption;
-- panels are resiliently seated and captured to avoid rattle;
-- any floor access/platform layer has a resilient support interface where required;
-- floor edge avoids rigid shortcuts where decoupling is required;
-- ceiling edge terminates independently of wall lining.
-
-Prototype performance matters more than the apparent elegance of the build-up.
-
----
-
-# 11. Fire strategy
-
-The replaceable lining sits **inside** the slow wall boundary, but the hidden wall cavity and any floor void are still cavities.
-
-Technical design must establish cavity closure at floors, ceilings and openings; relation to compartment walls or protected routes; reaction-to-fire of visible panels; service penetration control; and whether removal exposes fire-critical material.
-
-Routine panel access must not leave fire performance ambiguous.
-
----
-
-# 12. Water and moisture
-
-The external wall needs a complete wetting, drainage and drying strategy independent of the decorative lining.
-
-Avoid vulnerable organic material against damp masonry, water-bearing joints that can leak unseen and blocked inspection or drying routes.
-
-If the primary air/vapour layer sits on the masonry face, anchors and service crossings must be designed around it rather than casually puncturing it.
-
----
-
-# 13. Tectonic reading
-
-The completed room should read as heavy masonry architecture with a substantial floor, ordinary Georgian wall composition, real timber/mineral/metal surfaces and restrained interface lines. It should not advertise commercial access-floor or hatch language.
-
-The technical hierarchy should recede during ordinary occupation and become legible when opened.
-
-> **Normal operation may be concealed; the constructional relationship is not falsified.**
-
----
-
-# 14. Current unresolved decisions
-
-Keep these explicitly unresolved rather than inventing precision.
-
-## Structure
-
-- I-joist depth / centres;
-- exact hanger / restraint arrangement;
-- wall restraint strategy;
-- diaphragm fixing;
-- joist-end fire protection.
-
-## Wall
-
-- inner-leaf thickness after engineering / thermal study;
-- airtight / vapour-control layer;
-- backplane material and section;
-- anchor spacing / load classes;
-- panel substrate and module;
-- cavity thickness and acoustic absorption;
-- release hardware.
-
-## Floor
-
-- structural deck;
-- resilient build-up;
-- selective access geometry;
-- full-platform comparator thickness / material;
-- support geometry;
-- underfloor-heating position;
-- service depth;
-- perimeter lifting strategy;
-- visible finish geometry.
-
-## Ceiling
-
-- ceiling support / decoupling;
-- service relationship;
-- cornice assembly and slip geometry;
-- fire / acoustic closure.
-
----
-
-# 15. Comparison path
-
-The three current alternatives are developed in [Vertical Bay Options — A / B / C Comparison](vertical-bay-options.md):
-
-- **Bay A — Conservative:** excellent conventional construction as the control;
-- **Bay B — Selective tectonic:** W2 wall system plus local/perimeter floor access and functional interfaces;
-- **Bay C — Full reversible assembly:** the upper-bound full platform and interface system.
-
-Bay B is the preferred first prototype against Bay A. Bay C remains on paper until the selective arrangement demonstrates that the additional interface architecture can match excellent conventional construction for solidity, acoustics and room quality.
+Those are engineering, building-physics and physical-test questions. The current architecture is deliberately able to simplify toward excellent conventional construction if the challengers fail.
