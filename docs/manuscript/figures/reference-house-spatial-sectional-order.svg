@@ -34,10 +34,10 @@
     <text x="410" y="430" class="tiny">study</text>
 
     <path d="M260 550 L260 500 L260 370 L260 195 L260 75" class="rule" marker-end="url(#arrow)"/>
-    <text x="285" y="548" class="tiny">front</text>
+    <text x="285" y="535" class="tiny">front</text>
     <text x="285" y="92" class="tiny">garden</text>
 
-    <text x="0" y="545" class="tiny">shared rooms + arrival carry the principal domestic sequence</text>
+    <text x="0" y="565" class="tiny">shared rooms + arrival carry the principal domestic sequence</text>
   </g>
 
   <g transform="translate(710 170)">
@@ -52,7 +52,7 @@
     <text x="52" y="435" class="small">bedroom</text>
     <text x="395" y="125" class="small">bedroom</text>
     <text x="405" y="285" class="tiny">bath / gallery</text>
-    <text x="0" y="545" class="tiny">private rooms retain order without a mandatory piano nobile</text>
+    <text x="0" y="565" class="tiny">private rooms retain order without a mandatory piano nobile</text>
   </g>
 
   <g transform="translate(90 835)">
