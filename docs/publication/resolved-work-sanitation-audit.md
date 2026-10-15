@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # Resolved-work sanitation audit
 
 **Programme:** PUB-SAN / issue #133  
