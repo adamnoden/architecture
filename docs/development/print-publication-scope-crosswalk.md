@@ -50,10 +50,10 @@ This file records the exact machine scope of the Working Edition. It is intentio
 | 34 | part | Part IV — Reference House | `docs/manuscript/part-iv.md` | `—` |
 | 35 | part | Part V — Making and Testing the Platform | `docs/manuscript/part-v.md` | `part-v-wrapper` |
 | 36 | back-matter | Appendix A — Evidence and Precedent Notes | `docs/manuscript/evidence-and-precedent-notes.md` | `—` |
-| 37 | back-matter | Appendix C — Research Agenda | `docs/manuscript/research-agenda.md` | `—` |
-| 38 | back-matter | Appendix D — Reference House Implementation Schedule | `docs/manuscript/reference-house-implementation-schedule.md` | `—` |
-| 39 | back-matter | Appendix E — Glossary | `docs/manuscript/glossary.md` | `—` |
-| 40 | back-matter | Appendix F — Sources and Further Reading | `docs/manuscript/sources-and-further-reading.md` | `—` |
+| 37 | back-matter | Appendix B — Research Agenda | `docs/manuscript/research-agenda.md` | `—` |
+| 38 | back-matter | Appendix C — Reference House Implementation Schedule | `docs/manuscript/reference-house-implementation-schedule.md` | `—` |
+| 39 | back-matter | Appendix D — Glossary | `docs/manuscript/glossary.md` | `—` |
+| 40 | back-matter | Appendix E — Sources and Further Reading | `docs/manuscript/sources-and-further-reading.md` | `—` |
 <!-- generated: publication-manifest:end -->
 
 ## Scope rule
