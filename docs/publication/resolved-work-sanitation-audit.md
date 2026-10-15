@@ -3,7 +3,7 @@
 
 **Programme:** PUB-SAN / issue #133  
 **Baseline:** `main` at `7f13c2eb825ff5f83958fbb5abeee37b6125aebe`  
-**Status:** SAN-00 and SAN-01 complete; SAN-02/SAN-03 in progress
+**Status:** SAN-00 and SAN-01 complete; first SAN-02/SAN-03 tranche complete
 
 ## SAN-00 — reader-facing build graph
 
@@ -40,22 +40,22 @@ The Primer is separately manifested from the same publication module and derives
 | Site | paper-compilation, research-programme and S0/S1/S2/H1 run/source/target history | **INTERNALISE** | Compiler-development chronology; retain internally. |
 | Site | P0 implementation plan | **INTERNALISE** | Completed implementation programme rather than current computational content. |
 
-## SAN-02 / SAN-03 — semantic review fronts
+## SAN-02 / SAN-03 — semantic review
 
-The remaining work cannot be solved by filename or keyword alone. Several current reader-facing sources contain legitimate architectural knowledge wrapped in development-stage language.
-
-### Completed semantic rewrites
+### Completed in the first tranche
 
 - **Part III — Patterns and Generative Sequences:** retained the pattern argument, strategy/candidate distinctions and transfer evidence while removing project-history justification for identifiers, internal `R8` framing and “adversarial test” programme language.
 - **Research Agenda:** retained all substantive open questions while replacing the `PR-01` compact-terrace reference with the architectural result itself.
 - **G-01 v0.1:** preserved `G-01 v0.1` as a useful formal specification identity while removing D11 release status, D-stage chronology, release-gate prose and compiler-freeze commentary. Falsification and held-out evidence remain expressed as evidence rather than project history.
+- **Reference House implementation schedule:** retained the real-project gates while replacing internal programme IDs and prototype shorthand with semantic descriptions.
+- **Part IV — Reference House:** removed `PR-01`, `P03/P04`, `W0/W1/W2`, `G-SVC-02` and `R8-A` process shorthand where the reader only needs the architectural proposition, comparison or proof question.
 
 ### Remaining priority fronts
 
-1. **Reference House publication prose.** Remove `PR-01` and internal proof-family codes where the reader only needs the resolved proposition or evidence.
-2. **Research Agenda / implementation schedule.** The agenda is cleaned; the implementation schedule still needs semantic names in place of internal identifiers such as `P03`, `P04`, `R8-A`, `G-PLANT-01`, `G-FAM-02`, `G-SVC-02` and W0/W1/W2 where those codes add no reader value.
-3. **Grammar evidence pages.** Determine whether raw validation/evidence pages deserve reader-facing synthesis or should be internalised after unique evidence has been migrated.
-4. **Navigation and first-reader coherence.** Remove residual labels such as “frozen”, stage-coded validation names and programme-oriented grouping from the public navigation once the owning content decisions are complete.
+1. **Grammar evidence pages.** Determine whether raw validation/evidence pages deserve reader-facing synthesis or should be internalised after unique evidence has been migrated.
+2. **Navigation and first-reader coherence.** Remove residual labels such as “frozen”, stage-coded validation names and programme-oriented grouping from the public navigation once the owning content decisions are complete.
+3. **Reader-facing source links.** Internal source records are no longer published as site pages. Where current resolved pages still cite an internal record, VitePress links to the repository source rather than manufacturing a public route. Those references remain candidates for later semantic removal where they add no reader value.
+4. **Whole-corpus prose pass.** Continue reading canonical manuscript, pattern, grammar, Reference House, research, prototype and computational pages for process language that keyword filtering cannot safely classify.
 
 ## Semantic guardrail
 
@@ -67,8 +67,10 @@ An internal identifier is not removed merely because it is alphanumeric. The dis
 
 Before any source is merged or internalised, unique architectural claims, distinctions, constraints, evidence and useful formulations must be mapped to a resolved destination.
 
-## Guardrail introduced
+## Guardrails introduced
 
 `project/public-surface.ts` is the explicit public/private boundary. VitePress excludes internalised sources from the public build and filters their navigation entries, while the repository continues to retain them. Route validation now asserts coverage over the intentional public corpus rather than equating “Markdown exists” with “the public should see it”.
+
+Links from resolved public pages to intentionally internal source records are rendered as repository-source links rather than dead public routes. This preserves evidence access without re-publishing development records as part of the website.
 
 This corrects the underlying information-architecture error rather than merely deleting one appendix.
