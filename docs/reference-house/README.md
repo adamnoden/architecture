@@ -31,6 +31,12 @@ These layers constrain one another without becoming interchangeable.
 
 The controlling principle is: **generalise the reason; localise the taste.**
 
+## Maturity
+
+The Reference House is coordinated at virtual-design scope. Its major architectural systems have been reconciled strongly enough to act as one building proposition and to expose meaningful conflicts between plan, section, structure, services, envelope, maintenance and occupation.
+
+It is not a construction package or an externally validated building. Structural capacity, detailed building physics, regulatory approval, plant sizing, product selection, physical interface performance and real-site conditions remain unresolved until competent external work tests them.
+
 ## The house
 
 The current proposition is a two-storey detached four-bedroom courtyard house.
