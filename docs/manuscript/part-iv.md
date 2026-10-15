@@ -10,7 +10,7 @@ The result is a four-bedroom detached courtyard house, developed at virtual-desi
 
 That distinction is essential. The house is useful because it is concrete. It remains credible only if concreteness is not mistaken for proof.
 
-It is also a deliberately favourable integration fixture. A detached perimeter, open courtyard and concentrated service flank make several maintenance and service-topology problems easier than they would be in compact attached housing. PR-01 therefore tests transfer separately: the value of this house is that the propositions coexist here, not that its plant room, service flank or maintenance strips should be exported as a template.
+It is also a deliberately favourable integration fixture. A detached perimeter, open courtyard and concentrated service flank make several maintenance and service-topology problems easier than they would be in compact attached housing. A compact-terrace transfer test therefore matters separately: the value of this house is that the propositions coexist here, not that its plant room, service flank or maintenance strips should be exported as a template.
 
 ---
 
@@ -203,11 +203,11 @@ The interior rejects the idea that every wall should become demountable simply b
 
 Three conditions are distinguished.
 
-**W0 — quiet permanent wall.** Direct mineral or plaster finish on the permanent background remains the default where there is little service or change burden.
+**Quiet permanent wall.** Direct mineral or plaster finish on the permanent background remains the default where there is little service or change burden.
 
-**W1 — controlled architectural datum.** Where fixing, local services or replaceable joinery justify it, sparse known grounds are introduced at skirtings, architraves, picture rails or specific heavy-load positions.
+**Controlled architectural datum.** Where fixing, local services or replaceable joinery justify it, sparse known grounds are introduced at skirtings, architraves, picture rails or specific heavy-load positions.
 
-**W2 — replaceable architectural lining.** This remains an experimental challenger rather than the house-wide baseline. If physical testing cannot equal an excellent conventional wall for solidity, acoustics, appearance, fixing behaviour and reinstatement, the house remains complete without it.
+**Replaceable architectural lining.** This remains an experimental challenger rather than the house-wide baseline. If physical testing cannot equal an excellent conventional wall for solidity, acoustics, appearance, fixing behaviour and reinstatement, the house remains complete without it.
 
 That asymmetry is deliberate. A long-life house does not become more credible by maximising the quantity of removable construction.
 
@@ -239,7 +239,7 @@ Important open obligations include:
 - wall/ceiling movement-junction behaviour;
 - ordinary workmanship tolerances.
 
-Two physical questions remain particularly important to the house. P03 concerns the structural floor edge. P04 concerns the wall/ceiling movement junction. Both can still simplify or reject current implementation ideas.
+Two physical questions remain particularly important to the house: the structural floor edge and the wall/ceiling movement junction. Both can still simplify or reject current implementation ideas.
 
 The architectural system is intentionally able to survive those failures. They are also the current non-standard proof families: the ordinary wall, floor, plant, opening and service conditions should not quietly acquire bespoke mechanisms merely because the project values maintainability.
 
@@ -269,7 +269,7 @@ This concentration protects principal rooms from becoming service corridors whil
 
 The same finite service suite now carries a second foreseeable future obligation.
 
-The west/rear family room is retained as a credible future entrance-storey sleeping room. Detailed design must preserve a substantially step-free route from the principal entrance to that room and to entrance-storey sanitary provision. Within the existing `G-SVC-02` envelope, the WC/basin arrangement must prove that a **potential level-access shower** can be accommodated without moving the primary wet-service geography or enlarging the house.
+The west/rear family room is retained as a credible future entrance-storey sleeping room. Detailed design must preserve a substantially step-free route from the principal entrance to that room and to entrance-storey sanitary provision. Within the existing service-suite envelope, the WC/basin arrangement must prove that a **potential level-access shower** can be accommodated without moving the primary wet-service geography or enlarging the house.
 
 This is an M4(2)-informed planning comparator, not an M4(2) compliance claim. A speculative domestic lift shaft is not reserved. The current generous stair width preserves a lower-burden future stair-lift option, while a real wheelchair-user brief or planning requirement is allowed to reopen the plan.
 
@@ -432,7 +432,7 @@ A major plant component reaches the end of its service life.
 
 The intervention begins on the service side rather than in a principal room. The current external plant-room opening target provides a candidate direct handling route. Isolation and distribution are available within the plant geography. The intent is that replacement should not require enlarging a kitchen doorway, removing a façade window or dismantling permanent masonry merely to move equipment.
 
-The exact future appliance is unknown, and R8-A does not treat the present plant-room size as pre-approved. Equipment selection, area, working clearance and the value of the external opening must still earn the final geometry.
+The exact future appliance is unknown, and the proportionality test does not treat the present plant-room size as pre-approved. Equipment selection, area, working clearance and the value of the external opening must still earn the final geometry.
 
 If a future system exceeds the justified envelope, the house should first question whether the equipment is proportionate before enlarging permanent service infrastructure.
 
