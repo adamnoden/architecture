@@ -2,77 +2,136 @@
 # Resolved-work sanitation audit
 
 **Programme:** PUB-SAN / issue #133  
-**Baseline:** `main` at `7f13c2eb825ff5f83958fbb5abeee37b6125aebe`  
-**Status:** SAN-00 and SAN-01 complete; first SAN-02/SAN-03 tranche complete and CI-valid
+**Baseline:** first sanitation tranche merged to `main` at `609f3e7a4a8662e235d6f829609459b26f037333`  
+**Status:** SAN-00 and SAN-01 complete; SAN-02/SAN-03 semantic audit in progress
+
+## Governing rule
+
+> **The publication contains the resolved work, not the history of its resolution.**
+
+Losslessness means losslessness of architectural ideas, evidence and constraints—not preservation of draft chronology, migration machinery or programme state on reader-facing surfaces.
 
 ## SAN-00 — reader-facing build graph
 
-### Website
+The website and PDFs now have an explicit public/internal boundary. Repository ownership no longer implies publication.
 
-VitePress publishes Markdown from the repository and maps repository routes into the clean public route tree. Prior to this programme, every substantive Markdown page was deliberately placed in navigation and therefore internal development/history material was intentionally exposed rather than merely accidentally reachable.
+- VitePress excludes internal development/history records from the public build.
+- Public navigation is filtered through the same boundary.
+- The Working Edition is assembled from an explicit manifest rather than from the whole repository.
+- Internal records remain recoverable in the repository and Git history.
 
-The sanitation boundary is now explicit: repository ownership and public readability are separate. Internal records remain in place for project continuity but are excluded from the public build and filtered from public navigation.
+## SAN-01 — high-confidence residue removed from public surfaces
 
-### Full PDF
+The following classes are now internal-only:
 
-The Working Edition is assembled from `publication/publication.ts` by `publication/scripts/prepare.ts`. Canonical Markdown remains the source; adapters and figures transform it into the print worktree. Back matter previously included development provenance, including the legacy doctrine crosswalk.
+- the legacy House Design Doctrine crosswalk;
+- development, editorial and publication-control records;
+- project status and repository-structure pages;
+- old publication-freeze/release programmes;
+- retired/pilot/legacy pattern records;
+- obvious grammar research-programme and stage records;
+- Reference House model-freeze, discrepancy, parity and explicit development-history records;
+- compiler hardening, paper-compilation, model-freeze, output-architecture and pattern-crosswalk programmes;
+- completed implementation plans and handoff records whose value is project control rather than architectural reading.
 
-### Primer PDF
+The legacy doctrine crosswalk has also been removed from the Working Edition. Back matter now runs continuously from Evidence and Precedent Notes through Research Agenda, Reference House Implementation Schedule, Glossary and Sources/Further Reading.
 
-The Primer is separately manifested from the same publication module and derives current principles, patterns and Reference House material through deterministic adapters. It does not depend on the legacy doctrine crosswalk.
+## SAN-02 / SAN-03 — semantic migration completed so far
 
-## SAN-01 — high-confidence residue register
+### Publication and manuscript
 
-| Surface | Item / class | Classification | Reason / action |
-|---|---|---|---|
-| Full PDF + site | `doctrine-register-crosswalk.md` / “Appendix B — Legacy Doctrine Register Crosswalk” | **INTERNALISE** | Pure migration/provenance apparatus. Its only purpose is to explain how House Design Doctrine v7 became the current system. Current principles/patterns already own the surviving ideas. Removed from PDF and public site; retained internally. |
-| Site | `docs/development/**`, `docs/editorial/**`, `docs/publication/**` | **INTERNALISE** | Programme control, migration, editorial machinery and sanitation records describe how the work is produced rather than the resolved architectural work. |
-| Site | `STATUS.md` and `docs/README.md` | **INTERNALISE** | Project/repository management surfaces. Useful to contributors; unnecessary to an external reader. |
-| Site | publication architecture / release / PR-00 control records | **INTERNALISE** | Build/release governance and candidate-book history. |
-| Site | pattern pilot, retired identities, legacy aggregates and pre-admission candidate material | **INTERNALISE** | Historical identity/provenance rather than the current pattern language. |
-| Site | obvious grammar process records | **INTERNALISE** | Modelling-correction, research-brief, completion-programme, superseded evidence-pass and D10-S programme records describe derivation process rather than the resolved grammar. |
-| Site | RH-C0/RH-C1 baseline/discrepancy/parity records and explicit Reference House development-history pages | **INTERNALISE** | Records the sequence and machinery of resolution rather than the resolved house. |
-| Site | external-review response template | **INTERNALISE** | Working instrument for future review, not reader-facing architectural content. |
-| Site | historical targeted Pattern Language evidence pass | **INTERNALISE** | Phase-labelled historical research residue. |
-| Site | P03 structural floor-edge handoff | **INTERNALISE** | Internal handoff record; the live engineering question and test protocol may remain reader-useful. |
-| Site | compiler hardening/model-freeze/output-architecture programmes | **INTERNALISE** | Software-quality programme records rather than the resolved computational proposition. |
-| Site | computational pattern crosswalks | **INTERNALISE** | Translation/migration apparatus. |
-| Site | paper-compilation, research-programme and S0/S1/S2/H1 run/source/target history | **INTERNALISE** | Compiler-development chronology; retain internally. |
-| Site | P0 implementation plan | **INTERNALISE** | Completed implementation programme rather than current computational content. |
+- **Part III — Patterns and Generative Sequences** retains the pattern argument, strategies, candidates and transfer evidence while removing internal stage/review language.
+- **Research Agenda** retains substantive open questions without publication-stage references.
+- **Reference House Implementation Schedule** retains real-project gates while replacing internal proof/prototype codes with semantic names.
+- **Part IV — Reference House** retains the architectural proposition and technical boundaries while removing stage IDs and prototype shorthand.
+- **Manuscript overview, Reading Guide and landing page** now point readers toward the resolved work rather than publication programmes, live project status or repository-management records.
 
-## SAN-02 / SAN-03 — semantic review
+### Pattern language
 
-### Completed in the first tranche
+The public pattern overview now shows the active pattern set, strategies and held candidates without exposing retired identities or migration provenance as part of the reading surface. Stable pattern IDs remain because they provide useful cross-reference across current evidence and computational representations.
 
-- **Part III — Patterns and Generative Sequences:** retained the pattern argument, strategy/candidate distinctions and transfer evidence while removing project-history justification for identifiers, internal `R8` framing and “adversarial test” programme language.
-- **Research Agenda:** retained all substantive open questions while replacing the `PR-01` compact-terrace reference with the architectural result itself.
-- **G-01 v0.1:** preserved `G-01 v0.1` as a useful formal specification identity while removing D11 release status, D-stage chronology, release-gate prose and compiler-freeze commentary. Falsification and held-out evidence remain expressed as evidence rather than project history.
-- **Reference House implementation schedule:** retained the real-project gates while replacing internal programme IDs and prototype shorthand with semantic descriptions.
-- **Part IV — Reference House:** removed `PR-01`, `P03/P04`, `W0/W1/W2`, `G-SVC-02` and `R8-A` process shorthand where the reader only needs the architectural proposition, comparison or proof question.
+### G-01 architectural grammar
 
-### Remaining priority fronts
+`G-01 v0.1` remains a formal specification identity; its version is not treated as draft provenance.
 
-1. **Grammar evidence pages.** Determine whether raw validation/evidence pages deserve reader-facing synthesis or should be internalised after unique evidence has been migrated.
-2. **Navigation and first-reader coherence.** Remove residual labels such as “frozen”, stage-coded validation names and programme-oriented grouping from the public navigation once the owning content decisions are complete.
-3. **Reader-facing source links.** Internal source records are no longer published as site pages. Where current resolved pages still cite an internal record, VitePress links to the repository source rather than manufacturing a public route. Those references remain candidates for later semantic removal where they add no reader value.
-4. **Whole-corpus prose pass.** Continue reading canonical manuscript, pattern, grammar, Reference House, research, prototype and computational pages for process language that keyword filtering cannot safely classify.
+The public grammar surface has been reorganised around:
+
+- the resolved G-01 specification;
+- subject-organised evidence such as corpus, topology, dimensions and plan/section/elevation coupling;
+- a new reader-facing **G-01 Validation and Limits** synthesis.
+
+That synthesis migrates the useful conclusions from stage-coded validation records, including:
+
+- hierarchy survives more strongly than fixed room ratios or one sectional mechanism;
+- off-centre entrances can remain fully ordered and therefore rank matters more than centring;
+- urban irregularity defeats whole-building symmetry/equal-bay assumptions;
+- historical service circulation does not become a contemporary invariant;
+- blind/simulated openings show that composition and physical aperture are not identical;
+- Ridgehanger falsifies the proposition that a Georgian-derived roof must be visually subordinate, replacing it with integrated upper termination / roof order;
+- held-out cases support a smaller relational core rather than a larger style recipe.
+
+The raw D-stage validation/programme records are consequently internalised rather than separately published.
+
+### Reference House
+
+The Reference House overview has been rewritten as a current building proposition rather than a chronology of gates. It now presents:
+
+- authority stack;
+- morphology and programme;
+- G-01 order and section;
+- envelope and structural concept;
+- stair/circulation;
+- service and failure geography;
+- environmental hierarchy;
+- roof/water/maintenance strategy;
+- occupied interfaces;
+- life-safety/adaptation boundary;
+- remaining external proof obligations.
+
+Stage history and “what changed at gate X” material have been removed from the overview.
+
+### Physical prototypes
+
+The prototype overview now explains what physical testing can and cannot prove. The replaceable wall lining is described as an optional challenger rather than by programme code, while the structural floor edge and wall/ceiling movement junction are identified semantically as the current priority proof questions.
+
+### Computational track
+
+The computational overview has been rewritten around resolved capability rather than the sequence of compiler programmes. It now explains:
+
+- House Kernel and Metamorph Compiler;
+- the bounded plan/structure/service/boundary/calculation layers;
+- demonstrated semantic capabilities;
+- the private-stair numeric correspondence example;
+- the distinction between machine proof, semantic inspection and publication graphics;
+- explicit authority limits;
+- the rule for when computation should stop.
+
+Test-stage chronology, hardening-stage sequences and release-programme narration have been removed from the reader-facing overview.
+
+## Public navigation
+
+Reader-visible navigation labels are normalised at the public boundary so that surviving technical material is grouped by meaning rather than by old programme names. Examples include:
+
+- `G-01 v0.1 — specification` rather than “frozen grammar”;
+- `Technical coordination` rather than “Reference House development history”;
+- `Engineering & test artefacts` rather than “Programme history”.
+
+Internal sources referenced from current pages remain accessible as repository-source links rather than being rebuilt as public pages.
+
+## Remaining SAN-02 / SAN-03 fronts
+
+1. Continue the full prose pass across public pattern, research, Reference House coordination, prototype and computational detail pages.
+2. Review remaining stage-coded filenames/pages that are still public because they may contain unique current evidence; synthesise or rewrite before internalising them.
+3. Remove process-oriented references to internal source records where they no longer add reader value, even though the links are technically safe.
+4. Review public navigation after the source decisions settle, including any remaining stage-coded labels such as P03/P04 or H1 that do not carry useful reader meaning.
+5. Only then proceed to SAN-04/SAN-05 whole-corpus cleanup and first-reader coherence proof.
 
 ## Semantic guardrail
 
-An internal identifier is not removed merely because it is alphanumeric. The distinction is functional:
+An identifier is judged by function, not by appearance.
 
-- a stable formal specification identity such as `G-01 v0.1` may be useful to a reader;
-- an external standard or regulatory category must remain where relevant;
-- a development-stage label such as `PR-01`, `D10-S`, `RH-C0` or `R8-A` should not survive in publication prose merely because the project used it internally.
+- `G-01 v0.1` may remain because it names a stable formal architectural specification.
+- external standards, regulatory categories and technical classifications remain where relevant.
+- development-stage labels such as `PR-01`, `D10-S`, `RH-C0` or `R8-A` should not survive merely because the project once used them internally.
 
 Before any source is merged or internalised, unique architectural claims, distinctions, constraints, evidence and useful formulations must be mapped to a resolved destination.
-
-## Guardrails introduced
-
-`project/public-surface.ts` is the explicit public/private boundary. VitePress excludes internalised sources from the public build and filters their navigation entries, while the repository continues to retain them. Route validation now asserts coverage over the intentional public corpus rather than equating “Markdown exists” with “the public should see it”.
-
-Links from resolved public pages to intentionally internal source records are rendered as repository-source links rather than dead public routes. This preserves evidence access without re-publishing development records as part of the website.
-
-The tranche passes the repository validation suite and VitePress production build.
-
-This corrects the underlying information-architecture error rather than merely deleting one appendix.

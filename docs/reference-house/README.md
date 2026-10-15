@@ -1,112 +1,65 @@
 # Reference House
 
-The Reference House is one coordinated interpretation of Ovid’s House. It brings doctrine, patterns, technical families, a selected architectural grammar and one domestic programme into the same building so conflicts become visible in plan, section, structure, services, environment, maintenance and occupied interfaces.
+The Reference House is one coordinated interpretation of Ovid’s House. It brings doctrine, patterns, a selected architectural grammar, one domestic programme, structure, envelope, services, environmental strategy and maintenance geography into the same building so that their conflicts cannot remain abstract.
 
-It is an **integration test**, not proof of Ovid’s House.
+It is an **integration test, not proof of Ovid’s House**.
 
-RH-10 passed the house through a whole-building adversarial audit. The house is **M3 — Coordinated at virtual-design scope**: its major architectural systems have been reconciled strongly enough that the remaining material uncertainty is primarily engineering, simulation, prototype, real-site and competent external-review work rather than missing basic architecture.
-
-RH-11 has now converted those remaining uncertainties into an **issue-ready external-review package**. That is a packaging result, not validation: no competent external review has yet been recorded and Reference House maturity remains M3.
-
-The later [D12 G-01 v0.1 Conformance Trial](g01-v0.1-conformance-d12.md) tests this already-coordinated house against the independently frozen grammar and records **PASS** with no house rewind or grammar change. That is an architectural-language conformance result only and does not raise Reference House maturity.
-
-Read the [Reference House Design Programme](../development/reference-house-design-programme.md) first when resuming work. The [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md) is the current whole-house gate. The [RH-11 External Review Brief](external-review-brief.md) is the current external-review authority. The [Brief and Constraint Ledger](brief-and-constraint-ledger.md) remains the canonical project brief; the [Pattern Occurrence Register](pattern-occurrence-register.md) remains the canonical record of actual Ovid’s House pattern use.
+The house is coordinated at virtual-design scope. Its major architectural systems have been reconciled strongly enough to act as one building proposition, but structural capacity, detailed building physics, regulatory approval, plant sizing, product selection, physical interface performance and real-site conditions remain unresolved until competent external work tests them.
 
 ## Authority stack
 
 ```text
 Ovid’s House doctrine
-+ selected Ovid’s House patterns / strategies
-+ supported technical families where used
++ selected patterns and strategies
 + G-01 Georgian-derived grammar
-+ site + contemporary family programme
++ contemporary family programme
 + courtyard project morphology
-+ local courtyard dialect where selected
-+ Reference House tectonic dialect
++ selected technical families
++ Reference House tectonic language
 = Reference House
 ```
 
 These layers constrain one another without becoming interchangeable.
 
-- **Ovid’s House** owns long-life propositions such as lifespan separation, interface design, failure tolerance, maintenance geography, repose and passive-first hierarchy.
-- **Patterns / strategies** own reusable responses selected for the project; project use does not increase their general evidence.
-- **Technical families** remain project/system choices, not doctrine.
-- **G-01** owns the Georgian-derived compositional constraints that survive its research. Georgian specificity enters here, not upstream.
-- **Project morphology** owns the courtyard and other Reference House geometry.
-- **Reference House tectonic dialect** owns project-specific visible resolutions such as traditional joinery and restrained functional brass/bronze.
-- **Site / programme** owns orientation, planning response, household use and real external constraints.
+- **Ovid’s House** owns the long-life propositions.
+- **Patterns and strategies** own reusable architectural responses selected where their context arises.
+- **G-01** owns the Georgian-derived compositional language.
+- **Project morphology** owns the courtyard and the building’s particular spatial geometry.
+- **Technical families** remain project/system choices rather than doctrine.
+- **The tectonic language** owns the visible resolution of this house: masonry, joinery, controlled overlaps and restrained functional metalwork.
+- **A real site and brief** would own orientation, planning response, utility conditions, boundaries and any client-specific change.
 
-The controlling principle remains: **generalise the reason; localise the taste.**
+The controlling principle is: **generalise the reason; localise the taste.**
 
-## Current coordinated baseline
+## Maturity
 
-### Shell and programme
+The Reference House is coordinated at virtual-design scope. Its major architectural systems have been reconciled strongly enough to act as one building proposition and to expose meaningful conflicts between plan, section, structure, services, envelope, maintenance and occupation.
 
-- two principal storeys;
-- outer reservation **12.0 × 10.8 m**;
-- open court **3.6 × 4.0 m**;
-- gross side wings **4.2 m**;
-- gross front/rear wings **3.4 m**;
-- gross enclosed plate proxy **115.2 m²/storey / 230.4 m²** across two principal storeys before wall thickness, stairs and local voids/projections;
-- four bedrooms;
-- no principal en-suite: RH-06 replaced the remote en-suite with `U-DRESS-01` rather than buying a second stack/cross-joist drainage route.
+It is not a construction package or an externally validated building. Structural capacity, detailed building physics, regulatory approval, plant sizing, product selection, physical interface performance and real-site conditions remain unresolved until competent external work tests them.
 
-RH-10 deliberately stops calling this a small house. It is a **relatively compact four-bedroom detached courtyard house** in relation to the selected programme, not compact in an absolute sense.
+## The house
 
-### Envelope
+The current proposition is a two-storey detached four-bedroom courtyard house.
 
-Use [RH-10 Envelope Coordination](envelope-coordination-rh10.md).
+- outer reservation: **12.0 × 10.8 m**;
+- open court: **3.6 × 4.0 m**;
+- gross side wings: **4.2 m**;
+- gross front/rear wings: **3.4 m**;
+- enclosed plate proxy: approximately **115.2 m² per storey / 230.4 m²** across two principal storeys before wall thickness, stairs and local voids/projections.
 
-The obsolete RH-02 **350 mm** external/courtyard-wall allowance is historical provenance only. Current planning control is:
+The court is a project morphology, not doctrine and not a Georgian requirement. It keeps occupied bands shallow, gives the plan an internal point of orientation and creates a sheltered external room, while accepting the penalty of additional envelope and maintenance geometry.
 
-- normal masonry-envelope family: approximately **400–425 mm**;
-- whole-house geometry stress test: **450 mm**;
-- materially thicker construction requires an explicit RH-02/RH-03 geometry rewind rather than silent loss of room/stair width.
+The ground floor places drawing and family rooms to the west, entrance and principal stair at the south centre, study and high-service rooms to the east, and dining/kitchen toward the garden. The upper floor contains four bedrooms, the principal landing/gallery sequence and a family bathroom concentrated above the service geography.
 
-The selected architectural family remains conventional and legible:
+A previously considered remote en-suite was removed rather than buying a second permanent stack or a destructive cross-structure drainage route. That deletion is representative of the project’s proportionality rule: convenience does not automatically justify infrastructure.
 
-**real masonry outer leaf → insulated/drained cavity → substantial loadbearing masonry inner leaf → direct quiet internal finish by default**.
+## Architectural grammar and section
 
-Exact structure, insulation, U-value, moisture/air strategy and junction performance remain specialist work.
+The house selects [G-01 v0.1](../grammar/g01-v0.1.md), a bounded Georgian-derived domestic grammar. The house conforms to that language without asking the grammar to explain its courtyard, services or construction system.
 
-### Ground floor
+The principal front uses a centred four-bay field with the entrance in the third bay rather than at the geometric centre. This preserves a coherent exterior order without forcing the interior stair and arrival sequence to serve bilateral symmetry.
 
-The selected order remains **G1 — one-sided service gallery + linked rear rooms**:
-
-- west/front — drawing room;
-- west/rear — family room;
-- south/centre — entrance and principal stair hall;
-- east inner flank — all-weather gallery;
-- south-east — compact study;
-- east-middle — service suite / plant geography;
-- north/centre — garden dining hall;
-- north-east — kitchen.
-
-The service flank is drawn east for coordination continuity, not as a universal compass requirement.
-
-### Stair / upper floor
-
-The principal stair remains a three-flight full-landing stair:
-
-- 18 risers;
-- three flights of six;
-- 280 mm planning going;
-- approximately 1000 mm clear width;
-- no winders.
-
-With the first-floor datum at +3300 mm, planning rise is approximately 183.3 mm.
-
-Upper circulation remains:
-
-**south stair hall → east courtyard gallery → north cross-landing**.
-
-The family bathroom stacks above the service hub; the former en-suite reservation is dressing/linen/storage.
-
-### G-01 / section / elevation
-
-Use [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md) together with [RH-10 Outer Elevation Coordination](outer-elevation-coordination-rh10.md) and the later [D12 G-01 v0.1 Conformance Trial](g01-v0.1-conformance-d12.md).
-
-Controlled datums remain:
+Controlled sectional datums are:
 
 - ground FFL ±0;
 - ground clear ceiling +2950 mm;
@@ -114,189 +67,127 @@ Controlled datums remain:
 - upper clear ceiling +6000 mm;
 - cornice/eaves control approximately +6250 mm.
 
-The principal front retains the centred four-bay field at X = **1.95 / 4.65 / 7.35 / 10.05 m**, with entrance in bay 3. The courtyard retains its separately scoped order.
+The garden, service, west and courtyard elevations have related but separately scoped orders rather than inheriting one universal symmetry grid. The [outer-elevation coordination](outer-elevation-coordination-rh10.md) and [vertical-bay coordination](vertical-bay-coordination.md) record those relationships in more detail.
 
-RH-10 completes the outer house:
+## Envelope and structure
 
-- **north / garden:** three-axis composition at approximately X = **2.1 / 6.0 / 9.9 m**;
-- **east / service:** three broad room/service fields with unavoidable technical expression concentrated around the middle plant/service field;
-- **west:** quiet room-owned order without technical equipment migrated there merely to clean up the service side.
+The working external wall family is conventional and legible:
 
-The house therefore has multiple explicit, related orders rather than one universal symmetry grid.
+**real masonry outer leaf → insulated/drained cavity → substantial loadbearing masonry inner leaf → direct quiet internal finish by default**.
 
-D12 subsequently records the whole coordinated house as conforming to frozen **G-01 v0.1**. The courtyard remains project morphology; the local Andalusian influence remains a project dialect; neither was promoted into the grammar.
+Current planning control assumes approximately **400–425 mm** overall wall depth, with **450 mm** used as a whole-house geometry stress test. Exact structure, insulation, U-value, moisture/air strategy, ties and junction performance remain specialist design work. See [envelope coordination](envelope-coordination-rh10.md).
 
-### Roof authority correction
+The pre-engineering structural concept uses loadbearing external and courtyard masonry inner leaves with comparatively short engineered-timber floor spans:
 
-RH-04's early preference for a visible pitched roof is **superseded** by the later RH-08/RH-10 roof decision.
+- west/east strips approximately **4.2 m gross**;
+- north/south central strips approximately **3.4 m gross**;
+- short repeated edge beams continuing courtyard support lines through front/rear wings;
+- deliberate framing around stair and service openings;
+- structural deck retained as the diaphragm.
 
-Current roof authority is the outward-draining low-slope family because it materially simplifies the water/failure geography of this courtyard house. RH-04 remains authoritative for storey hierarchy, cornice datum and principal/courtyard opening order.
+No member, bearing, lintel, connection or foundation has yet been engineered for construction. The value of the current arrangement is that the architecture appears capable of being carried by an ordinary, intelligible load path without a whole-house steel frame or long transfers. See [structural coordination](structural-coordination.md).
 
-This supersession is project-specific; it is not a G-01 or Ovid’s House rule. D12 confirms that the low-slope family nevertheless conforms to G-01 v0.1 because the cornice/parapet and roof are resolved as one deliberate upper termination rather than a residual technical cap.
+## Stair and circulation
 
-### Structure
+The principal stair is a three-flight full-landing stair:
 
-Use [RH-05 Structural Coordination](structural-coordination.md).
+- 18 risers;
+- three flights of six;
+- **280 mm** planning going;
+- approximately **1000 mm** clear width;
+- no winders.
 
-Current pre-engineering concept:
+At a first-floor datum of +3300 mm the planning rise is approximately **183.3 mm**.
 
-- loadbearing external and courtyard masonry inner leaves;
-- west/east floor strips span approximately 4.2 m gross;
-- north/south central strips span approximately 3.4 m gross;
-- four short repeated edge beams continue courtyard support lines through front/rear wings;
-- local stair trimmers;
-- structural deck remains the diaphragm;
-- 350 mm first-floor structural/service/ceiling reservation survives provisionally.
+Upper circulation runs from the south stair hall along the east courtyard gallery to the north cross-landing. The stair is intended to remain a strong permanent architectural element; entrance-storey rooms preserve a lower-burden adaptation path if stair use later becomes difficult.
 
-Courtyard reaction nodes, edge beams, stair trimmers and opening bearing zones remain protected from casual service drilling.
+## Service and failure geography
 
-### Services / failure geography
+The eastern flank concentrates the highest service intensity rather than allowing wet and maintenance-intensive systems to spread through principal rooms.
 
-Use [RH-06 Services and Failure Geography](service-topology-rh06.md), [RH-07 MVHR Addendum](service-topology-rh07-mvhr-addendum.md), [RH-10 Energy, Heating and Renewable Coordination](energy-heat-coordination-rh10.md) and the current [Crossing Register](service-crossing-register-rh06.md).
+The current arrangement includes:
 
-- `G-PLANT-01` is a genuine equipment room, approximately 2.9 × 2.2 m gross, with nominal 1000 mm external replacement opening;
-- `SV-01`: approximately **900 × 700 mm clear** vertical service reservation;
-- one primary 100 mm-class soil/vent stack;
-- short service-side foul exit and inspection geography;
-- central MVHR selected conditionally, with continuous MEV fallback;
-- cooker source capture remains a separate direct-to-outside route;
-- `ASHP-01` air-to-water heat pump is the current working heat-source family, located in the east/service working zone beside plant geography subject to real-site acoustic/access review;
-- DHW cylinder/hydraulic equipment remains in `G-PLANT-01`;
-- `HYD-G-01` and `HYD-U-01` provide bounded low-temperature heating routes;
-- low-temperature passive emitters/radiators are baseline; house-wide underfloor heating is not selected;
-- no battery or active-cooling plant is reserved.
+- a dedicated plant/service room of approximately **2.9 × 2.2 m gross**, subject to later proportionality review;
+- an approximately **900 × 700 mm clear** vertical service reservation;
+- one primary soil/vent stack;
+- short wet-service routes between kitchen, utility/WC and upper family bathroom;
+- dry service routes allowed greater flexibility where they can remain accessible without taking over quiet walls;
+- a direct cooker source-capture route independent of whole-house ventilation;
+- an air-to-water heat-pump working family with low-temperature radiators/passive emitters as the baseline;
+- no default battery, active-cooling plant or house-wide underfloor-heating reservation.
 
-If plant-room packing proves too tight, simplify equipment before enlarging the permanent service suite.
+The exact MEP topology still requires competent sizing, acoustic coordination, fire treatment, isolation design and real utility information. The principle is spatial rather than product-specific: high-consequence services should have short, intelligible and workable geography.
 
-### Environmental hierarchy
+## Environmental hierarchy
 
-Use [RH-07 Environmental Coordination](environmental-coordination.md).
+The environmental strategy begins with form rather than equipment:
 
-Current hierarchy:
-
-1. shallow multi-aspect occupied bands;
-2. disciplined glazing rather than a generic glazed rear wall;
-3. orientation-specific shading / solar control;
-4. secure purge and cross ventilation through openable windows;
-5. MVHR for controlled IAQ / winter heat recovery;
-6. air-to-water heat-pump baseline for low-carbon heat;
+1. shallow, multi-aspect occupied bands;
+2. disciplined glazing rather than a generic glazed garden wall;
+3. orientation-specific shading and solar control;
+4. openable windows for secure purge and cross ventilation;
+5. controlled whole-house ventilation for indoor air quality and winter heat recovery where it remains proportionate;
+6. low-temperature heat supplied by the selected project heat-source family;
 7. no reserved mechanical cooling.
 
-The courtyard remains a **shaded light court**, not a sunny primary garden. Principal rooms retain outer-façade daylight responsibility; the rear garden remains the main sunny amenity.
+The courtyard is treated as a **shaded light court**, not the primary sunny garden. Principal rooms retain outer-façade daylight responsibility and the rear garden remains the main sunny amenity.
 
-### Roof / drainage / renewable electricity / maintenance
+Dynamic overheating, daylight, heat loss, airtightness, ventilation duty, acoustics and future-climate robustness remain unproved until a real site and competent models exist. See [environmental coordination](environmental-coordination.md) and [energy and heat coordination](energy-heat-coordination-rh10.md).
 
-Use [RH-08 Roof, Drainage and External Maintenance](roof-drainage-access-rh08.md) together with the RH-10 energy addendum.
+## Roof, water and external maintenance
 
-- four very-low-slope roof fields fall **outward from the courtyard**;
-- no inner courtyard roof gutter;
-- no internal roof outlet;
-- inspectable external collection edges and side/rear downpipes;
-- court drains only its own open-to-sky area through a primary route plus independent visible emergency overflow;
-- no permanent roof hatch;
-- planned external scaffold/tower remains the primary roof-access strategy;
-- approximately **50 m² of PV-capable roof field** is reserved as a forward-design control;
-- PV layout must preserve roof drainage, soil-vent access and safe maintenance routes;
-- active inverter/isolation equipment belongs in accessible service geography;
-- no battery reservation;
-- east/service side remains principal utility/plant/terminal/access geography;
-- garden-to-court route remains maintenance logistics path.
+The roof geometry is driven partly by failure geography.
 
-### Fire / visitability geometry
+Four very-low-slope roof fields fall **outward from the courtyard**. This avoids a principal inner courtyard gutter and internal roof outlets. Primary rainwater collection remains at inspectable external edges, with side/rear downpipes and visible overflow behaviour.
 
-RH-10 checked that later design has not made basic life-safety geometry implausible.
+The courtyard therefore drains principally its own approximately 14.4 m² open-to-sky area through a short route toward service-side inspection geography plus an independent higher overflow.
 
-- first-floor FFL remains +3300 mm;
-- each of the four bedrooms retains an outer-façade emergency-egress-window duty at current coordination level;
-- final sash geometry must prove the applicable clear opening rather than relying on nominal rough-opening dimensions;
-- at least one side route must remain viable from rear garden toward street so rear escape does not terminate in a trapped yard;
-- `TH-02` records the principal entrance as a substantially level/visitable designed threshold;
-- `G-WC-01` must prove final M4(1) entrance-storey WC geometry before utility convenience is protected.
+External scaffold or tower access is the current primary roof-maintenance strategy; no permanent roof hatch is included merely as a symbol of maintainability. Approximately **50 m² of PV-capable roof field** is reserved while preserving drainage and maintenance routes.
 
-These remain building-control / real-site obligations, not certified compliance claims.
+See [roof, drainage and access](roof-drainage-access-rh08.md) and [external access and maintenance](external-access-maintenance-plan.md).
 
-### Tectonic / occupied interfaces
+## Occupied interfaces
 
-Use [RH-09 Tectonic and Occupied-Surface Integration](tectonic-integration-rh09.md), the revised [Tectonic Architectural Language](tectonic-architectural-language.md), [interface family drawing](tectonic-interface-family-rh09.svg) and [prototype handoff matrix](prototype-handoff-rh09.md).
+Most of the house remains conventional where conventional construction is better.
 
-RH-09 establishes:
+- quiet permanent walls use direct mineral/plaster finish by default;
+- controlled fixing or service datums are introduced only where a repeated task earns them;
+- a replaceable full-height lining remains an optional challenger rather than the baseline;
+- principal-room floors remain continuous rather than raised or panelised;
+- permanent masonry openings are separated from shorter-lived windows and doors through designed fixing/tolerance interfaces;
+- architectural overlaps such as skirting, architrave and cornice may conceal or protect real interfaces without becoming the building’s primary technical boundary;
+- brass/bronze is used only where touch, wear, protection, indexing or disassembly gives it a reason to exist.
 
-- **W0** — direct mineral/plaster finish on quiet permanent walls: baseline;
-- **W1** — sparse controlled attachment / architectural datums where repeated fixing or service access earns them;
-- **W2** — removable dense-mineral lining: P01 experimental challenger only;
-- substantial removable timber skirting may carry bounded **dry** service routes, but ordinary socket outlets rise to appropriate accessible positions;
-- representative permanent-opening / replaceable-window, permanent-opening / replaceable-door, threshold and wall/ceiling movement-junction families are explicit;
-- principal-room floors remain conventional continuous floors; selective floor access is not selected;
-- brass/bronze remains sparse and functional rather than a visible disassembly grid.
+Two non-standard physical questions remain particularly important: the **structural floor edge** and the **wall/ceiling movement junction**. Either may still simplify materially after engineering or full-scale testing.
 
-The house remains architecturally complete if W2 and selective floor access both fail their physical tests.
+## Life safety and adaptation
 
-## What RH-10 changed
+Current geometry has been checked only for architectural plausibility, not certified compliance.
 
-The whole-house audit did not merely confirm prior work. It initially found five material problems:
+The four upper bedrooms retain outer-façade emergency-egress-window duties at the current design level. Final product opening geometry, escape strategy, detection, compartmentation and service penetrations require competent fire/building-control review.
 
-1. no selected heating / DHW topology;
-2. no forward provision for the published 2027 renewable-electricity regime;
-3. contradictory RH-04 and RH-08 roof authorities;
-4. unresolved rear/service elevations despite accumulated equipment;
-5. continued dependence on an untested 350 mm wall allowance.
+At entrance level, the design preserves substantially level access intent and a credible future sleeping-room option. The service-suite sanitary room must be capable of accommodating WC/basin and a potential level-access shower without enlarging the shell. The stair width preserves a lower-burden future stair-lift option. These are adaptation provisions, not a claim of whole-dwelling wheelchair compliance.
 
-All five were corrected inside RH-10 before the gate passed. See [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md).
+## What remains to be proved
 
-The larger direction also survived the step-back test: later gates have repeatedly **removed** disproportionate infrastructure rather than accumulating it—remote en-suite, inner roof drainage, symbolic roof hatch, house-wide removable lining, access flooring, cooling reservation and default whole-house UFH have all been rejected or held.
+The Reference House should be read as a coordinated architectural proposition with explicit limits.
 
-## RH-11 external review package
+It still requires:
 
-The [RH-11 External Review Brief](external-review-brief.md) is now issue-ready. It is supported by:
+- structural engineering, including the floor-edge interface;
+- fire and Building Control review;
+- MEP, acoustic and controls design;
+- building-physics, energy, daylight and overheating modelling;
+- drainage sizing and real-site discharge strategy;
+- product-specific window, door and threshold design;
+- physical testing of selected non-standard interfaces;
+- real-site planning, access, utility and ground-condition evidence;
+- cost and whole-life-carbon comparison where serviceability infrastructure imposes a material burden.
 
-- [date-stamped regulatory baseline](external-review-regulatory-baseline-rh11.md);
-- [structural review brief](external-review-structural-rh11.md);
-- [fire / building-control review brief](external-review-fire-building-control-rh11.md);
-- [MEP / acoustic review brief](external-review-mep-acoustic-rh11.md);
-- [building-physics / energy review brief](external-review-building-physics-energy-rh11.md);
-- [review response template](external-review-response-template-rh11.md);
-- [package map](external-review-package-rh11.svg).
-
-Each brief identifies the controlled assumption, evidence/drawings, exact review questions, fallback hierarchy and the finding that should reopen an earlier RH gate.
-
-The package is deliberately adversarial. Reviewers are asked to attack specific decisions, not answer “does this house work?” or design missing architecture on the project's behalf.
-
-**Issuing the package is not external validation.** Actual competent findings must be received, recorded and resolved before the external-review workstream or Reference House can claim any further maturity.
+The [external review brief](external-review-brief.md) packages the main discipline questions. Issuing a brief is not validation: findings must be received, resolved and allowed to change the architecture where necessary.
 
 ## Pattern occurrences
 
-The [Pattern Occurrence Register](pattern-occurrence-register.md) is authoritative.
+The [Pattern Occurrence Register](pattern-occurrence-register.md) records which Ovid’s House patterns are actually selected in this house.
 
-RH-10 adds or develops:
-
-- `RH-P003-04` — ground hydronic route `HYD-G-01`;
-- `RH-P003-05` — upper hydronic route `HYD-U-01`;
-- `RH-P005-12` — existing heat-source crossing now activated for `ASHP-01`;
-- `RH-P005-16` — `PEN-PV-01` photovoltaic electrical crossing;
-- `RH-P007-01` — bedroom instances now also carry emergency-egress duties;
-- `RH-P020-02` — principal entrance / visitable threshold `TH-02`.
-
-These are project coordination occurrences, not general evidence for the patterns or technologies involved.
-
-## Maturity
-
-**Reference House: M3 — Coordinated.**
-
-The promotion applies only to the current **virtual-design scope**. It does not mean the building has been engineered, simulated to completion, physically prototyped or independently reviewed.
-
-The major remaining dependencies are now bounded and briefed:
-
-- structural engineering;
-- fire / building-control review;
-- MEP / acoustic design and plant-room packing;
-- building-physics / energy / overheating / daylight simulation;
-- P03 structural floor-edge and P04 wall/ceiling physical validation;
-- real site, orientation, boundaries, drainage, utilities and planning.
-
-## Current work
-
-The RH-00→RH-11 design/package sequence is complete at coordinated virtual-design scope. The later D12 grammar trial now also records G-01 v0.1 conformance without changing Reference House maturity.
-
-**Active work is evidence execution:** issue the RH-11 package to competent reviewers, process findings through the explicit rewind protocol, and progress P03/P04 physical validation in parallel.
-
-Reference House remains **M3** and external professional review remains **M1** until actual competent review evidence exists.
+Occurrence is not proof. A pattern does not become more generally valid because the Reference House uses it; the house simply demonstrates one concrete consequence of selection.

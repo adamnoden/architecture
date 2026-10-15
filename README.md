@@ -100,12 +100,10 @@ Several distinctions are deliberately protected.
 
 **The computational model is subordinate to the architecture.** It formalises relationships only where deterministic checking adds something useful. Representability is not architectural merit, regulatory approval or evidence of physical adequacy.
 
-The general promotion rule is simple: preserve the general reason upstream; keep stylistic, technical and project-specific choices at the narrowest layer that actually owns them. The detailed authority model is recorded in the [documentation structure](docs/README.md).
+The general promotion rule is simple: preserve the general reason upstream; keep stylistic, technical and project-specific choices at the narrowest layer that actually owns them.
 
 ## Start reading
 
-For the intended publication sequence and alternative routes through the work, use the **[Reading guide](docs/reading-guide.md)**.
+The **[Reading guide](docs/reading-guide.md)** gives the primary publication sequence and alternative routes through the work.
 
-The main architectural argument begins with the **[Preface](docs/manuscript/preface.md)** and continues through Parts I–V. The **[Pattern Language](docs/patterns/README.md)**, **[Architectural Grammar](docs/grammar/README.md)** and **[Reference House](docs/reference-house/README.md)** can also be explored directly as design systems.
-
-For the live state of the research programme, open **[Project Status](STATUS.md)**. For repository ownership, canonicality and document-placement rules, use **[Documentation Structure](docs/README.md)**.
+The architectural argument begins with the **[Preface](docs/manuscript/preface.md)** and continues through Parts I–V. The **[Pattern Language](docs/patterns/README.md)**, **[Architectural Grammar](docs/grammar/README.md)** and **[Reference House](docs/reference-house/README.md)** can also be explored directly.
