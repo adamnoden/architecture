@@ -4,11 +4,9 @@ This is the current **semantic inspection surface** for the compiled Reference H
 
 It is **not architectural source authority** and it is not a construction drawing set. A generated `PASS` means only that the represented relationships are coherent at the compiler's bounded proof scope; it does not establish engineering, building-physics, regulatory or product adequacy.
 
-The six pre-COA RH-C1–RH-C4 SVGs remain frozen historical proof artefacts. The outputs below are their successor inspection family.
-
 ## Architectural plan and section
 
-The plan/section set is north-up, cross-registered by section `A–A`, and uses one uncertainty language. Human room names lead; semantic IDs remain available for forensic checking. Known relationships whose exact geometry is absent are shown as unresolved obligations rather than plausible invented openings.
+The plan and section set is north-up, cross-registered by section `A–A`, and uses one uncertainty language. Human room names lead; semantic IDs remain available for forensic checking. Known relationships whose exact geometry is absent are shown as unresolved obligations rather than plausible invented openings.
 
 ### Ground floor
 
@@ -38,7 +36,7 @@ The structural view uses the same north-up projection as the plans. Span symbols
 
 ## Semantic reports
 
-Service and boundary topology are principally registers rather than drawings. COA therefore emits them as normal searchable, selectable and reflowable documents instead of fixed SVG canvases.
+Service and boundary topology are principally registers rather than drawings, so they are emitted as searchable, selectable and reflowable documents rather than fixed SVG canvases.
 
 - [Service topology register](./service-register.md)
 - [Envelope / boundary topology register](./boundary-register.md)
@@ -47,7 +45,7 @@ A graphical service or boundary companion should exist only where spatial form a
 
 ## Machine identity
 
-The [generated output manifest](./output-manifest.json) records the canonical compile fingerprint, renderer version and SHA-256 identity of each successor output. `npm run outputs:check` regenerates the family in memory and refuses stale committed outputs.
+The [generated output manifest](./output-manifest.json) records the canonical compile fingerprint, renderer version and SHA-256 identity of each output. `npm run outputs:check` regenerates the family in memory and refuses stale committed outputs.
 
 ## Reading the uncertainty language
 
