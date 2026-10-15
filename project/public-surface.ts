@@ -1,5 +1,6 @@
 export const publicSourceExcludeGlobs = [
   'STATUS.md',
+  'docs/README.md',
   'docs/development/**',
   'docs/editorial/**',
   'docs/publication/**',
@@ -12,6 +13,11 @@ export const publicSourceExcludeGlobs = [
   'docs/patterns/retired/**',
   'docs/patterns/pilot/**',
   'docs/patterns/candidates/accessible-vertical-service-zone.md',
+  'docs/grammar/architectural-grammar-modelling-corrections-v01.md',
+  'docs/grammar/g01-research-brief.md',
+  'docs/grammar/g01-completion-programme.md',
+  'docs/grammar/g01-d5-d6-web-pass-v02.md',
+  'docs/grammar/g01-d10s-positive-specificity-programme.md',
   'docs/reference-house/model-baseline-rhc0.md',
   'docs/reference-house/rhc0-*.md',
   'docs/reference-house/rhc1-*.md',
@@ -27,7 +33,9 @@ export const publicSourceExcludeGlobs = [
   'docs/reference-house/plan-section-elevation-gate.md',
   'docs/reference-house/service-topology-coordination.md',
   'docs/reference-house/service-topology-run-01.md',
+  'docs/reference-house/external-review-response-template-rh11.md',
   'docs/research/pattern-language-phase6-targeted-evidence.md',
+  'docs/prototypes/p03-structural-floor-edge-handoff.md',
   'docs/computational/reference-house-model-freeze-rhc0.md',
   'docs/computational/reference-house-executable-slice.md',
   'docs/computational/compiler-hardening-programme.md',
@@ -37,7 +45,9 @@ export const publicSourceExcludeGlobs = [
   'docs/computational/s0-*.md',
   'docs/computational/s1-*.md',
   'docs/computational/s2-*.md',
-  'docs/computational/h1-paper-*.md'
+  'docs/computational/h1-paper-*.md',
+  'docs/computational/research-programme*.md',
+  'docs/computational/p0-implementation-plan.md'
 ] as const
 
 function globToRegExp(glob: string): RegExp {
