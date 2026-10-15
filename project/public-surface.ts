@@ -46,6 +46,7 @@ export const publicSourceExcludeGlobs = [
   'docs/prototypes/p03-structural-floor-edge-handoff.md',
   'docs/computational/reference-house-model-freeze-rhc0.md',
   'docs/computational/reference-house-executable-slice.md',
+  'docs/computational/compiler-generality-assurance-cf01.md',
   'docs/computational/compiler-hardening-programme.md',
   'docs/computational/compiler-output-architecture-programme.md',
   'docs/computational/pattern-crosswalk-*.md',
@@ -54,8 +55,12 @@ export const publicSourceExcludeGlobs = [
   'docs/computational/s1-*.md',
   'docs/computational/s2-*.md',
   'docs/computational/h1-paper-*.md',
+  'docs/computational/h1-capability-matrix-v*.md',
   'docs/computational/research-programme*.md',
-  'docs/computational/p0-implementation-plan.md'
+  'docs/computational/p0-implementation-plan.md',
+  'docs/computational/p0-pat-xw-01-result.md',
+  'docs/computational/doctrine-delta-external-maintenance-v01.md',
+  'docs/computational/external-review-pack-*.md'
 ] as const
 
 const publicLabelOverrides: Readonly<Record<string, string>> = {
@@ -65,7 +70,8 @@ const publicLabelOverrides: Readonly<Record<string, string>> = {
   'Reference House development history': 'Technical coordination',
   'Programme history': 'Engineering & test artefacts',
   'Reference House compiler programme': 'Compiler validation',
-  'H1 environmental & services decisions': 'Environmental & services decisions'
+  'H1 environmental & services decisions': 'Environmental & services decisions',
+  'External evidence trial — Mapeguard WP — completed': 'Scoped manufacturer evidence — Mapeguard WP'
 }
 
 function globToRegExp(glob: string): RegExp {
