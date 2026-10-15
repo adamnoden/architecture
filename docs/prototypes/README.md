@@ -65,7 +65,7 @@ The test must keep three verdicts separate:
 
 A technically clever slip joint fails if it draws attention to itself, rattles, becomes difficult to decorate or makes an ordinary room feel like a technical mock-up.
 
-The pre-test method deliberately attacks common false positives. It includes controlled movement, repeated cycling, ordinary redecoration so paint/filler cannot silently lock the slip plane, repeated local removal/reinstatement, and at least one imperfect-background condition. If the real project movement envelope is not yet known, any imposed movement sequence is exploratory only and must not be mistaken for a prediction of building movement or service life.
+A credible test should attack common false positives. It should include controlled movement, repeated cycling, ordinary redecoration so paint/filler cannot silently lock the slip plane, repeated local removal/reinstatement, and at least one imperfect-background condition. If the real project movement envelope is not yet known, any imposed movement sequence is exploratory only and must not be mistaken for a prediction of building movement or service life.
 
 The conventional detail may win. That would be a successful result.
 
@@ -106,17 +106,15 @@ The current Reference House does not depend on:
 
 Selective access remains legitimate where a named maintenance or service task justifies it. The burden of proof sits with the added system, not with conventional construction.
 
-## Reading the prototype programme
+## What a useful result must establish
 
-The detailed build packs, frozen specimen definitions, test scripts and engineering handoff records remain internal working material. They are retained so future fabrication can be reproduced and audited, but they are not part of the reader-facing architectural argument before results exist.
+When a specimen is eventually built, the result should make six things explicit:
 
-When a prototype is actually built, the useful public result should report:
+1. the question and conventional control fixed before the test;
+2. what was physically built;
+3. measured observations, failures and unexpected behaviour;
+4. any departure from the intended test condition;
+5. what the evidence can and cannot support;
+6. whether the architectural proposition survives, narrows or should be abandoned.
 
-- the frozen question and control;
-- what was physically built;
-- measured observations and failures;
-- deviations from the planned test;
-- what the result can and cannot prove;
-- whether the architectural proposition survives, narrows or dies.
-
-Until then, the important public content is the proof question and its evidence boundary—not the project-management code attached to the specimen.
+A prototype is therefore evidence only after the physical event. Before that, the honest output is a bounded proof question.
