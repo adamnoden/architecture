@@ -58,6 +58,16 @@ export const publicSourceExcludeGlobs = [
   'docs/computational/p0-implementation-plan.md'
 ] as const
 
+const publicLabelOverrides: Readonly<Record<string, string>> = {
+  'G-01 v0.1 — frozen grammar': 'G-01 v0.1 — specification',
+  'G-01 v0.1 conformance — D12': 'G-01 v0.1 conformance',
+  'RH-C0 / RH-C1 fixture programme': 'Project definition',
+  'Reference House development history': 'Technical coordination',
+  'Programme history': 'Engineering & test artefacts',
+  'Reference House compiler programme': 'Compiler validation',
+  'H1 environmental & services decisions': 'Environmental & services decisions'
+}
+
 function globToRegExp(glob: string): RegExp {
   const escaped = glob.replace(/[.+^${}()|[\]\\]/g, '\\$&')
   const pattern = escaped
@@ -101,7 +111,11 @@ export function filterPublicNavigation<T>(value: T): T {
   }
 
   const mapped = Object.fromEntries(
-    Object.entries(record).map(([key, entry]) => [key, key === 'items' ? filterPublicNavigation(entry) : entry])
+    Object.entries(record).map(([key, entry]) => {
+      if (key === 'items') return [key, filterPublicNavigation(entry)]
+      if (key === 'text' && typeof entry === 'string') return [key, publicLabelOverrides[entry] ?? entry]
+      return [key, entry]
+    })
   ) as Record<string, unknown>
 
   if (Array.isArray(mapped.items) && mapped.items.length === 0 && typeof mapped.link !== 'string') {
