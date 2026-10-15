@@ -41,10 +41,10 @@
     <circle cx="458" cy="390" r="14" fill="#111"/>
     <text x="485" y="392" class="tiny">court primary drain</text>
     <path d="M458 390 C 520 430, 585 455, 700 455" class="rule" marker-end="url(#arrow)"/>
-    <text x="535" y="438" class="tiny">short inspectable route → service side</text>
+    <text x="535" y="438" class="tiny">inspectable route → service side</text>
 
     <path d="M468 360 C 545 350, 600 342, 700 342" class="dash" marker-end="url(#arrow)"/>
-    <text x="530" y="327" class="tiny">independent higher-level emergency overflow</text>
+    <text x="520" y="327" class="tiny">independent emergency overflow</text>
 
     <text x="0" y="650" class="tiny">No principal inner roof gutter or internal roof outlet is required by the selected geometry.</text>
   </g>
