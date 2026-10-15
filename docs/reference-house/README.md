@@ -31,6 +31,12 @@ These layers constrain one another without becoming interchangeable.
 
 The controlling principle is: **generalise the reason; localise the taste.**
 
+## Maturity
+
+No competent external review has yet been recorded, and the unresolved structural, building-physics, services, fire, product and real-site questions remain capable of changing the architecture.
+
+The house should therefore be read as a coordinated design proposition with explicit proof boundaries. Drawings, calculations and computational inspection outputs make relationships more testable; they do not convert untested assumptions into technical adequacy.
+
 ## The house
 
 The current proposition is a two-storey detached four-bedroom courtyard house.
