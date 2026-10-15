@@ -34,7 +34,7 @@ The default is **direct mineral/plaster finish on quiet permanent walls**.
 
 Selective controlled attachment or service datums may be introduced only where a repeated fixing, access or service task earns them. A full-height replaceable lining remains an experimental challenger rather than a house-wide baseline.
 
-This is a material correction to earlier development studies: the Reference House does **not** depend on a removable wall-panel system in order to be complete.
+The Reference House therefore does **not** depend on a removable wall-panel system in order to be complete.
 
 ### Floor finish and access
 
@@ -95,7 +95,7 @@ A credible solution must allocate, explicitly:
 - corrosion/moisture durability;
 - inspection and realistic local repair.
 
-The current engineering brief treats a conventional certified hanger/restraint family as the baseline, direct/seated bearing with separate restraint as a comparator, and any bespoke shoe/ledge as a challenger that must justify its additional complexity.
+The current engineering comparison treats a conventional certified hanger/restraint family as the baseline, direct or seated bearing with separate restraint as a comparator, and any bespoke shoe or ledge as a challenger that must justify its additional complexity.
 
 The design should not imply that complete joist withdrawal is easy if deck, ceilings, partitions and services make it unrealistic. The useful goal is a clear and repairable interface, not theatrical demountability.
 
@@ -112,8 +112,8 @@ The rule is simple:
 The current physical comparison is between:
 
 1. an excellent conventional junction;
-2. a concealed-slip cornice/cover fixed to one controlling assembly;
-3. a restrained metal protection/slip element only if the metal performs a genuine technical function.
+2. a concealed-slip cornice or cover fixed to one controlling assembly;
+3. a restrained metal protection or slip element only if the metal performs a genuine technical function.
 
 The simplest quiet detail that survives the expected movement while retaining fire, acoustic and finish integrity should win. A visible disassembly line is not an objective.
 
@@ -121,7 +121,7 @@ See [Physical prototypes — Wall / ceiling movement junction](../prototypes/#wa
 
 ## Window and door interfaces
 
-Permanent masonry openings and shorter-lived windows/doors are treated as separate assemblies joined by a designed interface.
+Permanent masonry openings and shorter-lived windows and doors are treated as separate assemblies joined by a designed interface.
 
 That interface must reconcile fixing, tolerance, air/water continuity, thermal bridging, security, movement and replacement. Removable internal trim may cover the joint, but primary envelope performance must not depend on trim remaining untouched forever.
 
@@ -133,9 +133,7 @@ A substantial removable skirting can protect wall/floor edges and carry bounded 
 
 ## Proportionality rule
 
-Earlier development compared a conventional bay, a selectively reversible bay and a highly reversible bay. The durable conclusion is not that the middle option won as a system.
-
-It is this:
+The durable rule is:
 
 > **Move away from excellent conventional construction only when the added layer solves a named future task strongly enough to justify its permanent cost, depth, joints and maintenance burden.**
 
@@ -161,6 +159,6 @@ This coordination does not prove:
 - fire/acoustic closure at the floor edge;
 - the movement envelope at the wall/ceiling junction;
 - any experimental lining or access-floor performance;
-- product-specific window/door interfaces.
+- product-specific window or door interfaces.
 
 Those are engineering, building-physics and physical-test questions. The current architecture is deliberately able to simplify toward excellent conventional construction if the challengers fail.
