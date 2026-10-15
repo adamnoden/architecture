@@ -14,7 +14,7 @@ The correction does not attempt to manufacture a universal whole-life equation. 
 
 Canonical method:
 
-`docs/development/proportional-serviceability-method-v01.md`
+`publication/proportional-serviceability-method-v01.md`
 
 Candidate-book integration:
 
