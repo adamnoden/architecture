@@ -38,6 +38,7 @@ export const publicSourceExcludeGlobs = [
   'docs/reference-house/service-topology-rh07-mvhr-addendum.md',
   'docs/reference-house/environmental-coordination.md',
   'docs/reference-house/whole-house-coordination-audit.md',
+  'docs/reference-house/whole-house-coordination-fixture.md',
   'docs/reference-house/roof-drainage-access-rh08.md',
   'docs/reference-house/prototype-handoff-rh09.md',
   'docs/reference-house/tectonic-integration-rh09.md',
