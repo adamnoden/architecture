@@ -68,8 +68,20 @@ export const publicSourceExcludeGlobs = [
   'docs/computational/s0-*.md',
   'docs/computational/s1-*.md',
   'docs/computational/s2-*.md',
-  'docs/computational/h1-paper-*.md',
-  'docs/computational/h1-capability-matrix-v*.md',
+  'docs/computational/assembly-composition-s0-wall-bay.md',
+  'docs/computational/boundary-family-*.md',
+  'docs/computational/entrance-family-*.md',
+  'docs/computational/fire-family-*.md',
+  'docs/computational/heating-family-*.md',
+  'docs/computational/interface-bundle-*.md',
+  'docs/computational/roof-family-*.md',
+  'docs/computational/service-family-*.md',
+  'docs/computational/stair-family-*.md',
+  'docs/computational/structural-assurance-boundary-*.md',
+  'docs/computational/ventilation-family-*.md',
+  'docs/computational/wet-service-family-*.md',
+  'docs/computational/wet-zone-family-*.md',
+  'docs/computational/h1-*.md',
   'docs/computational/research-programme*.md',
   'docs/computational/p0-implementation-plan.md',
   'docs/computational/p0-pat-xw-01-result.md',
@@ -95,7 +107,8 @@ const publicLabelOverrides: Readonly<Record<string, string>> = {
   'Seated floor structure options': 'Floor-to-masonry structural interface',
   'Finish-agnostic floor platform options': 'Accessible floor systems',
   'Replaceable wall system options': 'Replaceable wall lining',
-  'Preface precedents': 'Transformation and persistence'
+  'Preface precedents': 'Transformation and persistence',
+  'Prior-art map': 'Prior art and research context'
 }
 
 function globToRegExp(glob: string): RegExp {
