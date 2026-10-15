@@ -1,213 +1,114 @@
-# Reference House — RH-11 External Review Brief
+# Reference House — Independent Review Questions
 
-**Status:** review package / ready for competent external issue  
-**Date:** 2026-10-12  
-**Gate:** `RH-11 — External-review package`  
-**Whole-house authority:** [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md)  
-**Current maturity:** **M3 — Coordinated at virtual-design scope**  
-**Regulatory baseline:** [RH-11 Regulatory Baseline](external-review-regulatory-baseline-rh11.md)  
-**Response format:** [RH-11 Review Response Template](external-review-response-template-rh11.md)
+The Reference House is coordinated at virtual-design scope, but several material propositions still depend on competent specialist work. This page records those unresolved questions without treating preparation of a review package as evidence.
 
-This package exists to put the coordinated Reference House in front of competent specialists **before** further design confidence is allowed to accumulate.
+The purpose is adversarial: identify where the current architecture fails, what evidence would settle the question, and which architectural decision must change if the assumption cannot be supported.
 
-It is not a request for consultants to complete an unfinished architectural design. It is a request to attack explicit decisions.
+## Structural engineering
 
-> **Find the assumption that fails, state why it fails, identify what evidence would prove it, and say which earlier gate must reopen if it cannot be proved.**
+The working structural proposition is deliberately ordinary: loadbearing masonry inner leaves at the outer and courtyard walls, short engineered-timber floor spans, local framing around stair/service openings and a low-slope roof intended to follow the same short-span logic.
 
-Preparation of this package is not external validation. The Reference House remains M3 until actual review findings are received and resolved.
+The main questions are:
 
----
+- can the approximately **4.2 m** side-strip and **3.4 m** centre-strip floor spans fit within the current **350 mm** floor/service/ceiling zone once strength, vibration, fire and acoustics are included;
+- can the courtyard walls and four corner reaction zones remain ordinary loadbearing masonry without hidden transfer structure or an independent frame;
+- are the principal façade and courtyard openings compatible with credible masonry pier, lintel and bearing geometry;
+- can the approximately **1050 × 850 mm** structural opening around the service zone be carried without compromising the short-span floor concept;
+- can the outward-draining low-slope roof and approximately **50 m²** PV-capable reservation remain structurally modest;
+- what foundation, settlement or restraint assumptions cannot be assessed until a real site exists.
 
-## 1. What is being reviewed
+A credible answer that requires persistent deeper floors, columns in principal rooms, long transfers, substantial movement of openings or a whole-house independent frame should reopen the architecture rather than be hidden inside a detail.
 
-The Reference House is one project-specific integration test for House Kernel. Its current controlled baseline is:
+## Fire, escape and access
 
-- two-storey detached four-bedroom family house;
-- outer shell **12.0 × 10.8 m**;
-- open **3.6 × 4.0 m** courtyard;
-- G-01 Georgian-derived architectural grammar;
-- loadbearing outer/courtyard masonry inner leaves with short-span engineered-timber floor concept;
-- concentrated east/service-side plant and service geography;
-- central MVHR baseline with continuous-MEV fallback;
-- air-to-water heat-pump / stored-DHW / low-temperature hydronic baseline;
-- outward-draining low-slope roof with no inner court gutter or internal roof outlet;
-- approximately **50 m² PV-capable roof reserve** as a forward Future Homes stress case;
-- direct-finished masonry walls by default, with selective controlled attachment/service datums;
-- no dependency on house-wide removable linings or access floors.
+The current geometry is only an architectural plausibility check. No compliance claim is made.
 
-The current shell, rooms, circulation, elevations, structure, services, envelope, drainage and maintenance geography have passed internal cross-system coordination. They have **not** been structurally engineered, dynamically simulated, product-packed, technically detailed or externally validated.
+The main questions are:
 
----
+- whether the first-floor bedroom escape-window strategy remains credible once actual sash free openings, security, guarding and hardware are selected;
+- whether the stair/hall relationship requires materially more enclosure than the current plan anticipates;
+- whether rear escape remains meaningful on a real site with an actual route to a final exit rather than merely to an enclosed garden or courtyard;
+- what fire-stopping, compartmentation and access duties arise at the principal service zone, floor edge and other penetrations;
+- whether movement joints, attachment zones or removable elements introduce concealed-spread or reinstatement risks;
+- whether the substantially level entrance, entrance-storey sanitary provision and circulation clearances remain credible after real door, lining and threshold build-ups are known.
 
-## 2. Review disciplines
+If the escape strategy requires a protected stair, different opening geometry or materially different circulation, those are architectural findings rather than downstream compliance details.
 
-Issue the common pack with the relevant discipline appendix.
+## Building services and acoustics
 
-| Discipline | Review brief | Primary ownership |
-|---|---|---|
-| Structural engineering | [Structural Review Brief](external-review-structural-rh11.md) | load path, masonry, floor/roof framing, openings, penetrations, PV loads, P03 dependency |
-| Fire / building control | [Fire & Building-Control Review Brief](external-review-fire-building-control-rh11.md) | escape, warning, compartment/interface closure, visitability, thresholds, regulatory route |
-| MEP / acoustics | [MEP & Acoustic Review Brief](external-review-mep-acoustic-rh11.md) | plant-room packing, MVHR, ASHP/DHW, hydronics, terminals, commissioning, service noise |
-| Building physics / energy | [Building-Physics & Energy Review Brief](external-review-building-physics-energy-rh11.md) | envelope, airtightness, moisture, thermal bridges, daylight, overheating, Future Homes/PV |
+The eastern service geography is intentionally compact. The current reservations are approximately **2.9 × 2.2 m gross** for plant and **900 × 700 mm clear** for the principal vertical service zone.
 
-A reviewer should not be forced to opine outside their competence. Cross-disciplinary concerns should be flagged and handed to the relevant reviewer rather than guessed through.
+The main questions are:
 
----
+- whether central MVHR remains proportionate after real duct sizing, pressure loss, access and acoustic requirements are known, with continuous MEV retained as a simpler fallback;
+- whether MVHR, stored hot water, only the hydraulics actually required, electrical/control equipment and service-zone access can coexist in the plant room without destructive packing;
+- whether two principal ventilation trunks, soil/vent, water, heating and segregated dry services can coexist in the vertical zone after insulation, supports, fire/acoustic treatment and useful access are allowed for;
+- whether air-to-water heat pump plus low-temperature passive emitters remains proportionate after real heat-loss and emitter sizing;
+- whether cooker source capture, ventilation terminals, heat-pump air paths, rainwater goods, utilities and replacement access can coexist on the service side without turning it into residual equipment space;
+- whether plant, ducts, pipes and terminals can meet appropriate internal and neighbour-noise conditions without compromising the intended repose of the house.
 
-## 3. Common document set
+The design should simplify the system family before enlarging permanent service infrastructure merely to protect a preferred technology.
 
-Read these before the discipline appendix.
+## Building physics and energy
 
-1. [Reference House README](README.md) — current authority stack and coordinated baseline.
-2. [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md) — why M3 was awarded and what remains unproved.
-3. [RH-10 Whole-House Coordination Map](whole-house-coordination-rh10.svg) — one-page system map.
-4. [Brief and Constraint Ledger](brief-and-constraint-ledger.md) — fixed, selected, preferred and open project requirements.
-5. [Pattern Occurrence Register](pattern-occurrence-register.md) — actual project use of House Kernel patterns.
-6. [Service Crossing Register](service-crossing-register-rh06.md) — controlled penetrations through permanent fabric.
-7. [External Access & Maintenance Plan](external-access-maintenance-plan.md) — replacement and maintenance geography.
-8. [RH-11 Regulatory Baseline](external-review-regulatory-baseline-rh11.md) — current England guidance snapshot and transition warning.
+The working wall family is approximately **400–425 mm** overall, with **450 mm** used as a geometry stress limit. The courtyard is **3.6 × 4.0 m** and approximately two storeys high. The roof is low-slope and parapet/cornice controlled.
 
-The discipline appendix then identifies the smaller set of drawings and studies that matter to that review.
+The main questions are:
 
----
+- whether the wall family can achieve the intended new-build thermal, moisture and airtightness performance without routinely exceeding the geometry already stress-tested;
+- whether floor edge, window reveal, parapet/cornice, thresholds and service penetrations can preserve thermal and air continuity without disproportionate build-up;
+- whether the permanent-opening / replaceable-window proposition can allow frame replacement without destroying the primary air and weather boundaries;
+- what daylight penalty the courtyard and deep reveals impose, and whether any principal room becomes too dependent on court light;
+- whether the courtyard creates problematic cold, damp or drying conditions at lower walls and paving;
+- whether the opening/shading strategy can control overheating without reserved mechanical cooling under real orientation and future-relevant climate conditions;
+- whether the outward-draining low-slope roof can remain robust at parapets, falls, outlets and PV interfaces without exceeding the architectural height/depth assumptions.
 
-## 4. How to review it
+The environmental cost of the courtyard and Georgian-derived opening order must be quantified rather than defended as style.
 
-Do **not** review this as a design presentation and do not optimise around the project's stated philosophy.
+## Cross-discipline interfaces
 
-For each material assumption, classify it as one of:
+Several conditions should be reviewed as shared interfaces rather than handed off between disciplines.
 
-- **CONFIRM** — technically credible at the stated scope; no material correction;
-- **QUALIFY** — direction is credible but the scope, dimension, dependency or wording must narrow;
-- **MATERIAL FINDING** — current assumption is not safe to carry forward without a design or technical change;
-- **REWIND** — the finding invalidates an architectural coordinate or system decision owned by an earlier RH gate;
-- **OUTSIDE REVIEW SCOPE** — requires another discipline or real-site information.
+### Plant and vertical service zone
 
-Where a reviewer disagrees with a project choice but it remains technically credible, record that as advice rather than manufacturing a failure.
+Plant packing, water-failure geography, electrical segregation, ventilation, fire closure, acoustics, structural openings and replacement routes all compete for the same space. No discipline should assume another has already proved the volume.
 
-### Evidence standard
+### Low-slope roof and PV
 
-A useful finding identifies:
+Structure, waterproofing, thermal continuity, drainage, wind, fire/electrical separation, mounting and maintenance access share one shallow assembly. The same physical zone cannot be allocated twice by assumption.
 
-1. the current project assumption;
-2. why it may be wrong or incomplete;
-3. the governing technical principle / requirement / evidence;
-4. the consequence if unchanged;
-5. the smallest credible correction;
-6. the earlier RH gate, drawing or occurrence that becomes stale.
+### Window / masonry interface
 
----
-
-## 5. Rewind protocol
-
-A negative review is a successful outcome if it narrows the design honestly.
-
-For every `MATERIAL FINDING` or `REWIND`, record:
-
-```text
-finding
-→ affected project object / pattern occurrence
-→ affected RH authority
-→ smallest correction
-→ downstream documents made stale
-→ evidence required to close finding
-```
-
-Typical examples:
-
-- floor/roof depth materially exceeds controlled section → reopen RH-04/RH-05;
-- service riser cannot carry a safe maintainable bundle → reopen RH-06/RH-07 before enlarging it;
-- MVHR cannot meet acoustic/space obligations proportionately → invoke continuous-MEV fallback;
-- wall family needs >450 mm generally → reopen RH-02/RH-03 geometry;
-- escape strategy needs a protected stair that changes plan/openings → reopen RH-03/RH-04;
-- overheating cannot be solved without materially different openings/shading → reopen RH-04/RH-07;
-- courtyard causes unacceptable daylight/energy consequences on a real site → reopen the selected project brief/morphology explicitly rather than weaken doctrine.
-
-Do not resolve a material finding by quietly changing a dimension in a downstream detail.
-
----
-
-## 6. Cross-discipline interfaces that deserve deliberate attack
-
-Several objects sit exactly where failures tend to hide between professional scopes.
-
-### `G-PLANT-01`
-
-Structural openings, fire closure, water failure, MVHR, DHW/hydraulics, dry electrical distribution, acoustics and replacement all meet in a **2.9 × 2.2 m gross** room.
-
-No discipline should assume another has proved the available volume.
-
-### `SV-01`
-
-The **900 × 700 mm clear** vertical zone carries soil/vent, water, dry distribution and two principal MVHR trunks. Its roughly **1050 × 850 mm** framed floor opening is only an engineering starting envelope.
-
-Fire stopping, acoustic separation, support, access and congestion must be considered together.
-
-### Low-slope roof + PV
-
-Roof structure, thermal continuity, waterproofing, drainage, fire/electrical separation, PV mounting and maintenance access share one shallow roof field. No discipline may use the same physical zone twice by assumption.
-
-### Window family `OW-01`
-
-One interface must reconcile masonry structure, thermal bridge control, air/water continuity, security, escape-window free opening, replacement and G-01 reveal proportions.
+One opening must reconcile masonry structure, fixing tolerance, thermal continuity, air/water control, security, escape duty, replacement and the selected architectural reveal proportions.
 
 ### Courtyard
 
-The court is simultaneously architecture, environmental modifier, drainage catchment, maintenance working area and structural ring. Any recommendation that changes its width/height/openings must state which of those other roles it affects.
+The court is simultaneously architecture, daylight/overheating modifier, drainage catchment, maintenance space and part of the structural ring. A change to its width, height or openings therefore cannot be treated as a single-discipline adjustment.
 
----
+## Real-site questions
 
-## 7. Things reviewers should not assume
+Several propositions cannot be closed against a surrogate site:
 
-The project does **not** claim that:
+- foundations and ground movement;
+- orientation, solar exposure and external noise;
+- neighbour and boundary constraints on heat pumps, terminals and maintenance access;
+- actual drainage discharge and rainfall design;
+- approach gradients and visitability;
+- planning constraints and rights;
+- utility entry positions;
+- future landscape obstruction of maintenance routes.
 
-- House Kernel is a building standard;
-- a pattern occurrence proves technical adequacy;
-- Approved Documents are legislation or the only compliance route;
-- G-01, the courtyard, masonry, MVHR, ASHP, PV or the low-slope roof are universal House Kernel preferences;
-- the current surrogate east service side is a real site fact;
-- the Reference House is ready for construction;
-- the 400–425 mm wall family is a specified wall;
-- the 350 mm floor zone contains a proved engineered floor;
-- the 50 m² PV reserve is a compliance calculation;
-- M3 means externally validated.
+A real project should be allowed to change the Reference House when those facts arrive.
 
-If any project document nevertheless implies one of those claims, flag the wording as a defect.
+## Evidence boundary
 
----
+A useful independent finding should identify:
 
-## 8. Requested reviewer output
+1. the current assumption;
+2. why it is credible, weak or wrong;
+3. the governing evidence or technical principle;
+4. the consequence if unchanged;
+5. the smallest credible correction;
+6. which architectural relationships become stale.
 
-Use the [response template](external-review-response-template-rh11.md) or provide equivalent information.
-
-The most useful response contains:
-
-- a one-paragraph overall verdict;
-- critical/material findings first;
-- explicit assumptions the reviewer considers credible;
-- missing information required before technical design;
-- at least two concrete red-team cases;
-- exact rewind triggers where applicable;
-- items outside the reviewer's competence/scope;
-- the applicable regulations/standards/guidance versions used.
-
-A long generic design commentary is less useful than five falsifiable findings.
-
----
-
-## 9. Gate consequence
-
-RH-11 package preparation passes when a competent reviewer can attack the coordinated house without first inventing the missing question, reconstructing project authority from chat or being asked to design the architecture from scratch.
-
-Actual reviewer responses are a **separate evidence event**.
-
-They may:
-
-- confirm the M3 baseline;
-- force local technical qualification;
-- reopen RH-03 through RH-10;
-- alter pattern occurrences without altering House Kernel doctrine;
-- generate new prototype work;
-- or expose a problem serious enough to demote the Reference House until resolved.
-
-No maturity increase follows merely from issuing this pack.
+The Reference House should not gain maturity merely because these questions have been written down. It gains confidence only when competent answers are received, resolved and allowed to alter the design.
