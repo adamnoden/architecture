@@ -1,605 +1,407 @@
-# Replaceable Wall System — Options Appraisal
+# Replaceable Wall Lining
 
-**Status:** current evidence hardening / pre-prototype  
-**Classification:** [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is canonical; [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains a held candidate whose principal gate is physical solidity and repose.  
-**Purpose:** determine whether a selective removable lining can work with a controlled attachment plane to provide service/fixing access without making an excellent domestic wall technically, architecturally or experientially worse.
+A removable room surface is useful only if it adds genuine access, fixing or renewal value **without making an excellent domestic wall worse**.
 
-## Executive position
+The strongest current direction is therefore not a universal removable wall. It is a selective hybrid:
 
-The strongest current direction is **not** a universal removable wall.
+> **Permanent masonry performs the slow continuous work. A sparse controlled attachment plane is added only where it earns its keep. A removable architectural face is introduced only where physical testing shows that its serviceability value outweighs its depth, joints and tactile cost.**
 
-It is a hybrid:
+[`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is the stable reusable pattern. [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains a held candidate because its decisive question is physical and architectural rather than merely technical.
 
-> **Permanent masonry performs the slow, continuous work. A sparse adjustable attachment plane is added only where it earns its keep. Robust manufactured panels may form the replaceable room surface on the occupied side where physical testing justifies them.**
+## Boundary independence
 
-In principal rooms with dense masonry walls, the masonry should continue to carry most of the permanent obligations:
+A principal masonry wall may need to provide:
 
-- structure;
+- structure and stability;
 - acoustic mass;
 - thermal mass;
-- primary robustness;
-- and, where designed accordingly, the principal air/moisture-control layer.
+- fire resistance where applicable;
+- robustness;
+- the primary air or moisture-control layer where designed accordingly.
 
-The removable lining should therefore avoid becoming the only thing maintaining those boundaries.
+A faster-changing room lining should not quietly become the only thing maintaining those slow-building obligations merely because it is convenient to put everything in one assembly.
 
-This is the practical expression of **boundary independence**.
+This is the useful form of **boundary independence**: removing a replaceable decorative or access layer should not dismantle the primary environmental or life-safety function behind it.
 
----
+## Existing independent linings prove separation, not reversibility
 
-# 1. Existing practice validates the separation of wall and lining
+Conventional drylining already demonstrates that a room-facing surface can be structurally independent from the masonry behind it. Mature systems use separate frames or grounds, service voids and mechanically fixed boards with tested fire and acoustic build-ups.
 
-UK drylining already treats the room lining as a separate non-loadbearing system.
+Their limitation for this question is that the finished face is usually made effectively irreversible by buried fixings, joint compounds, skim and concealed perimeter seals.
 
-British Gypsum's independent lining systems use a light steel framework offset from the background wall, with plasterboard screwed to the frame. Published systems show:
+The project is therefore not trying to invent an independent lining. The unresolved question is whether a lining can remain **repeatedly removable** while retaining the solidity, calm, decorative freedom and boundary discipline expected of a high-quality domestic wall.
 
-- independent non-loadbearing linings;
-- roughly 30 mm minimum offsets in some configurations;
-- screw-fixed board faces;
-- acoustic/fire performance developed as a complete tested system.
+## Direct disassembly precedent
 
-This proves that a room surface **does not need to be materially fused to masonry**.
+Research into design-for-disassembly includes wall-lining systems in which panels are individually removable to give repeated access to services and cavities. Such precedents establish that a whole wall face can operate as an access system rather than relying only on isolated hatches.
 
-However, conventional drylining still normally becomes effectively non-reversible because:
+They also expose the architectural risk. Exposed screws, repetitive negative joints and visible module logic can make the room read as a technical fit-out system.
 
-- screws are buried by jointing/skim;
-- joints are filled;
-- perimeter seals are concealed;
-- large board faces are treated as sacrificial finish rather than repeatedly removable components.
+For Ovid’s House, technical removability does not compensate for a wall that looks temporary or sounds hollow.
 
-The project's challenge is therefore not inventing the concept of an independent lining.
+## Dense mineral panels are plausible carriers
 
-It is **making the final face repeatedly removable without losing domestic solidity or tested boundary performance**.
+Robust gypsum-fibre and high-strength mineral boards show that a removable face need not be lightweight office plasterboard. Existing products demonstrate useful properties such as:
 
-**Sources:**
+- high density;
+- impact resistance;
+- acoustic mass;
+- manufactured sheet form;
+- dry mechanical fixing;
+- meaningful ordinary fixing capacity.
 
-British Gypsum, GypLyner Independent wall-lining systems.  
-https://www.british-gypsum.com/specification/white-book-specification-selector/wall-linings
+No current proprietary board is selected. The evidence simply makes a **dense mineral carrier** a credible family for full-scale comparison.
 
-Example specification:  
-https://www.british-gypsum.com/Specification/White-Book-Specification-Selector/wall-linings/gyplyner-independent/b216027-c-en
+## A concealed cavity is still architecture
 
----
+A shallow cavity behind a removable lining is not harmless empty space. It can become a route for fire, smoke, sound, pests, air and moisture.
 
-# 2. Demountable lining has direct research precedent
+Any such assembly therefore needs explicit treatment of:
 
-A published design-for-disassembly case study developed individually removable plywood wall-lining panels specifically to provide repeated access to wall cavities and services.
-
-The study is useful because it confirms several project intuitions:
-
-- whole wall surfaces can become access systems rather than relying on isolated access hatches;
-- panel boundaries can be composed to conceal larger modular/service logic;
-- standard sheet dimensions can aid future replacement;
-- repeated removal is possible when the edge and fixing detail is designed for it.
-
-It also exposes the central architectural problem: exposed screws and obvious negative joints easily produce a modular/technical aesthetic.
-
-The Reference House therefore needs to go further than the prototype precedent in architectural resolution.
-
-**Source:**
-
-A. E. Salama et al., *Interconnections: An Analysis of Disassemblable Building Connection Systems towards a Circular Economy*, Buildings 2021.  
-https://www.mdpi.com/2075-5309/11/11/535
-
----
-
-# 3. Robust mineral boards are plausible panel substrates
-
-The wall panel need not be lightweight paper-faced plasterboard.
-
-Dense gypsum-fibre boards already exist for robust/high-traffic linings and off-site manufactured panels.
-
-For example, British Gypsum Rigidur H is described as a dense rigid gypsum-fibre board intended for robust lining and strengthening large-format off-site panels, with acoustic, fixing and impact-resistance uses as part of tested systems.
-
-Gyproc Habito demonstrates another useful property: high-strength gypsum boards can accept meaningful direct fixing loads without every object needing to reach the permanent masonry.
-
-This does **not** prove that either proprietary product should become the project's removable panel.
-
-It demonstrates that a mineral wall face can be:
-
-- dense;
-- impact resistant;
-- acoustically useful;
-- manufactured in sheet form;
-- mechanically fixed;
-- capable of supporting ordinary occupation loads.
-
-**Sources:**
-
-British Gypsum, Rigidur H 12.5 mm.  
-https://www.british-gypsum.com/products/board-products/rigidur-h-12-5mm
-
-British Gypsum, Rigidur H 15 mm.  
-https://www.british-gypsum.com/products/board-products/rigidur-h-15mm
-
-British Gypsum, Gyproc Habito 12.5 mm.  
-https://www.british-gypsum.com/products/board-products/gyproc-habito-12-5mm
-
----
-
-# 4. Fire makes the hidden cavity real architecture
-
-The cavity behind a removable lining cannot be treated as harmless empty space.
-
-Current Approved Document B guidance for dwellings defines concealed spaces as cavities and requires cavity barriers in defined locations, including at cavity edges and around openings, with additional requirements at compartment boundaries.
-
-For this project the practical lesson is:
-
-> **The room-side cavity must have an explicit fire topology.**
-
-It cannot become a continuous concealed route that casually bypasses wall/floor boundaries.
-
-Any W2 lining/attachment-plane assembly should therefore define:
-
-- cavity termination at floors/ceilings;
-- closure around windows/doors;
-- compartment-wall crossings;
+- cavity termination at floors and ceilings;
+- closure around windows and doors;
 - service penetrations;
-- materials inside the cavity;
-- how routine panel removal affects none of the above.
+- compartment boundaries;
+- acoustic flanking;
+- materials within the cavity;
+- what happens when one panel is removed.
 
-**Sources:**
+Routine access must not dismantle a boundary whose reinstatement depends on specialist work or hidden judgement.
 
-UK Government, *Approved Document B — Fire Safety, Volume 1: Dwellings*, current page updated September 2026.  
-https://www.gov.uk/government/publications/fire-safety-approved-document-b
+## Split the wall into jobs
 
-Relevant cavity guidance: paragraphs 5.16–5.23 in the current collated volume.
+A useful wall system distinguishes four layers conceptually even when a final detail combines some of them.
 
----
+### Permanent wall
 
-# 5. The wall should be split into jobs
+Likely duties:
 
-For a principal external or internal masonry wall, the project should distinguish:
-
-## Permanent wall
-
-Likely jobs:
-
-- loadbearing / stability where applicable;
-- acoustic mass;
-- thermal mass;
+- structural load and stability where applicable;
+- acoustic and thermal mass;
 - primary robustness;
 - fire resistance where applicable;
-- primary background for airtight/parge layer where applicable.
+- durable air/moisture background where selected.
 
-## Controlled attachment / tolerance interface
+### Controlled attachment and tolerance interface
 
-Likely jobs:
+Likely duties:
 
 - translate imperfect masonry into a precise room datum;
-- provide a small number of engineered masonry anchors;
-- carry panel support hardware;
-- carry designated ordinary fixing loads;
-- establish no-drill/service zones;
-- provide local adjustment.
+- use a bounded number of engineered anchors;
+- support panel or joinery hardware;
+- carry declared ordinary fixing loads;
+- define service and no-drill zones;
+- provide controlled adjustment.
 
-## Replaceable panel
+### Replaceable face
 
-Likely jobs:
+Possible duties:
 
 - finished room surface;
-- impact/wear layer;
-- local ordinary fixings where tested;
-- architectural panel proportions;
+- impact and wear layer;
+- ordinary tested fixings;
+- architectural panel proportion;
 - access to selected services;
-- replaceability after damage or style change.
+- replacement after damage or renewal.
 
-## Architectural trim / interface piece
+### Architectural trim or interface piece
 
-Likely jobs:
+Possible duties:
 
-- conceal release/fixing hardware;
-- protect panel edges;
+- conceal release hardware;
+- protect edges;
 - accommodate movement;
-- form skirting/dado/picture rail/cornice/architrave;
-- provide deliberate removal sequence.
-
-This separation is the wall-system equivalent of the structural mantra:
+- form skirting, dado, picture rail, cornice or architrave;
+- make the removal sequence intelligible.
 
 > **Do not make one finish layer perform every job merely because it can hide the joint.**
 
----
-
-# 6. Options appraisal
-
-## Option A — Traditional wet plaster directly on masonry
+## Option A — direct plaster or mineral finish on masonry
 
 ### Strengths
 
-- extremely solid;
-- simple material hierarchy;
+- materially direct and extremely solid;
+- small build-up depth;
 - excellent visual continuity;
-- little cavity depth;
-- long historical precedent;
-- local patch repair possible;
-- no hidden subframe.
+- strong historical precedent;
+- local repair possible;
+- no concealed support frame.
 
 ### Weaknesses
 
 - wet, messy site process;
-- craftsmanship variability;
-- difficult to remove intact;
-- services/fixings tend to drive future chasing and patching unless separately solved;
-- bridges differential movement unless interfaces are detailed carefully;
-- surface replacement is a wet trade.
+- quality can be workmanship-sensitive;
+- intact removal is unrealistic;
+- later services and fixings can cause chasing and patching if their own geography is unresolved;
+- brittle continuity needs care where adjacent assemblies move differently.
 
-### Current judgement
+### Position
 
-**Still the benchmark.**
+**Benchmark and default on quiet permanent walls.**
 
-The project should not pretend plaster is technically primitive. Any panel system must beat high-quality plaster on enough dimensions to justify its complexity.
+The project should not treat plaster as primitive merely because it is not demountable. Any removable system must beat it on enough whole-life dimensions to justify additional layers and joints.
 
----
-
-## Option B — Conventional independent drylining
+## Option B — conventional independent drylining
 
 ### Strengths
 
-- mature tested systems;
-- separates lining from imperfect masonry;
+- mature system families;
+- separates finish from imperfect masonry;
 - dry board installation;
-- service cavity possible;
-- strong acoustic/fire system data;
-- ordinary UK trades.
+- service space can be created;
+- established fire and acoustic evidence;
+- familiar UK trades.
 
 ### Weaknesses
 
-- taped/skimmed finish destroys practical removability;
-- many concealed screws;
-- hollow/less massive tactile quality;
-- proprietary system performance can depend on exact components;
-- damage repair often returns to fillers/skim.
+- taped, filled or skimmed finish removes practical reversibility;
+- many fixings are buried;
+- room surface can feel lighter or hollower than direct masonry/plaster;
+- tested performance may depend on exact proprietary component combinations;
+- repair commonly returns to fillers and wet making-good.
 
-### Current judgement
+### Position
 
-**Excellent technical precedent, poor final expression of the project's replacement goal.**
+**Strong technical precedent, weak answer to repeated removability.**
 
-Use it to learn how independent linings handle deflection, fire and acoustics.
+Its value is to show how independent linings handle deflection, fire, acoustics and tolerance.
 
----
+## Option C — permanent performance layer plus removable architectural face
 
-## Option C — Permanent performance layer + removable architectural face
-
-### Description
-
-A continuous slow layer provides the critical boundary. A separate removable architectural face sits inside it.
-
-Possible build-up:
+### Arrangement
 
 ```text
 dense masonry
 ████████████████████████████
 
-parge / permanent boundary treatment
+permanent boundary treatment
 ────────────────────────────
 
-sparse adjustable rails / attachment plane
+sparse adjustable attachment plane
 │       │       │       │
 
 optional shallow service / absorption zone
 ░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-robust removable panel
+robust removable architectural panel
 ┌──────────────────────────┐
-│ factory-finished surface │
+│ finished room surface    │
 └──────────────────────────┘
 
 ROOM
 ```
 
-### Strengths
+### Potential advantages
 
-- strongest boundary independence;
-- masonry retains solidity/mass;
-- panel can be factory finished;
-- services and fixing infrastructure can sit on room side of permanent wall;
-- repeated access can avoid destroying primary wall performance;
-- architecture can absorb joints honestly.
+- strong separation between slow boundaries and faster finish;
+- masonry retains mass and solidity;
+- factory finishing becomes possible;
+- services and ordinary fixing infrastructure can remain on the room side of the permanent wall;
+- access need not damage the primary wall;
+- real joints can be absorbed into architectural composition.
 
-### Weaknesses
+### Burdens
 
-- additional wall thickness;
-- more material than direct plaster;
-- hidden cavity requires fire/acoustic/moisture discipline;
-- panel support and tolerance system needs development;
-- tactile hollowness/rattle risk;
-- heavy robust panels affect handling;
-- cost.
+- additional wall depth and material;
+- hidden cavity needs fire, acoustic and moisture discipline;
+- support/tolerance system requires development;
+- hollow sound or rattle remains a major risk;
+- robust panels can become heavy to handle;
+- higher cost and more interfaces than direct finish.
 
-### Current judgement
+### Position
 
-**Preferred W2 research direction where service/fixing demand justifies it.**
+**Preferred removable-lining challenger where service or fixing demand is high enough to justify it.**
 
-It remains physically unproven and is not justified for every wall.
+It is not a general wall type for every room.
 
----
+## Option D — fully demountable cassette wall
 
-## Option D — Fully demountable cassette wall
+### Arrangement
 
-### Description
+Large factory-made cassettes integrate surface, backing, services and potentially fire/acoustic functions into one replaceable module.
 
-Deep factory-made cassettes provide surface, services, backing and potentially acoustic/fire functions as one replaceable unit.
+### Potential advantages
 
-### Strengths
-
-- maximum premanufacture;
-- potentially rapid installation;
+- high degree of premanufacture;
+- rapid dry installation;
 - services can be integrated;
-- modules can be swapped.
+- large modules can in principle be exchanged.
 
-### Weaknesses
+### Burdens
 
-- very high bespoke complexity;
-- risks proprietary lock-in;
-- hollow/modular aesthetic;
-- each cassette becomes technically loaded with boundary functions;
-- heavy logistics;
-- difficult corners/openings;
-- substantial wall depth;
-- future supplier dependence.
+- high bespoke complexity;
+- proprietary lock-in risk;
+- strong modular or hollow aesthetic pressure;
+- each cassette accumulates too many boundary duties;
+- difficult corners and openings;
+- heavy logistics and substantial wall depth;
+- future replacement depends on supplier or remanufacturing capability.
 
-### Current judgement
+### Position
 
-**Reject as default direction.**
+**Reject as the default direction.**
 
-The project does not need a building-inside-a-building cassette system to satisfy House Kernel.
+A house does not need a second technical building inside the first merely to obtain selective access.
 
----
+## Current wall hierarchy
 
-# 7. Current preferred wall architecture
+### Quiet permanent wall
 
-The Reference House should investigate a **selective hybrid**, not universal panelling.
+Use direct plaster or another convincing mineral finish where little service access or repeated fixing is needed.
 
-### Type W1 — Permanent plaster/mineral wall
+### Controlled attachment datum
 
-Use where:
+Use sparse known grounds where repeated fixing, local service routing or replaceable joinery earns them. This is the most mature reusable proposition.
 
-- little service access is needed;
-- repeated fixing is unlikely;
-- masonry and finish have compatible life/movement;
-- the beauty and simplicity of true plaster dominate.
+### Replaceable mineral lining
 
-### Type W2 — Controlled attachment plane + removable mineral panel
+Test selectively where repeated service access, fixing or local renewal may justify a removable room face.
 
-Prototype where:
+### True timber panelling
 
-- repeated occupation fixing is likely;
-- electrical/data distribution benefits from a shallow zone;
-- panel access prevents future chasing;
-- room composition can absorb panel boundaries;
-- factory finish materially improves quality.
+Use timber panelling where it is architecturally desirable in its own right. Real joinery can naturally conceal service or attachment geometry without pretending to be monolithic plaster.
 
-### Type W3 — True timber architectural panelling
+### High-service wall
 
-Use where timber panelling is architecturally desirable in its own right.
+Bathrooms, kitchens, utility rooms and similar locations may justify deeper accessible service construction. That condition remains distinct from the ordinary principal-room wall.
 
-The panelling is real joinery, not a fake plaster substitute, and can naturally conceal the attachment plane/services.
+## The attachment plane should be boring
 
-### Type W4 — High-service wall
+The hidden infrastructure should be simple enough to survive supplier change and remain understandable to future trades.
 
-Use in bathrooms/kitchens/utility locations where deeper service access is justified.
-
-This remains distinct from the ordinary principal-room lining system.
-
----
-
-# 8. Controlled attachment-plane geometry
-
-The hidden attachment system should remain intentionally boring.
-
-Preferred characteristics:
+Useful characteristics include:
 
 - standard timber, galvanised steel or simple aluminium sections;
 - sparse engineered anchors to permanent masonry;
-- adjustable stand-offs/shims;
-- repeatable horizontal/vertical fixing datums;
-- no unique lock mechanism;
-- standard screws/bolts;
+- bounded stand-offs, shims or other adjustment;
+- repeatable fixing datums;
+- ordinary screws and bolts;
+- no unique release mechanism;
 - documented load classes;
-- replaceable visible panel hardware independent of the masonry anchors.
+- visible-panel hardware replaceable independently from the masonry anchors.
 
-Avoid turning the entire wall into Unistrut-like industrial infrastructure unless testing proves it is actually the best hidden solution.
+The architectural intelligence lies primarily in **where** the datum occurs, **how few** anchors it needs, **how** panels register with the room and **how** the face is released—not in inventing a proprietary hidden exoskeleton.
 
-The architectural intelligence belongs primarily in:
+## Panel size is both architectural and practical
 
-- where the attachment plane runs;
-- how few anchors it needs;
-- how panel sizes register;
-- how the panel is released;
-- how G-01 datums conceal or express the joint.
+Manufactured sheet dimensions are efficient for production but are not necessarily good installed modules. Dense full-size boards may become too heavy for repeated handling and too visually crude as room-scale panels.
 
----
+A narrower full-height or near-full-height field may align better with:
 
-# 9. Panel size is an architectural and maintenance variable
+- safe one- or two-person handling;
+- room and opening proportions;
+- moulding and joinery datums;
+- local damage replacement;
+- remanufacture from standard sheet stock.
 
-Standard 1200 × 2400/3000 mm sheet formats are efficient for manufacture but can produce panels too heavy or visually crude for repeated removal when dense mineral boards are used.
+Panel size should therefore be selected by physical comparison rather than inherited directly from the factory sheet.
 
-The project should therefore **not assume the manufactured sheet is the installed architectural module**.
+## The plaster-like finish problem
 
-A useful design direction is to cut/finish robust boards into narrower full-height or near-full-height fields that align with the room composition.
+A removable panel may read as mineral or plaster-like without pretending to be monolithic wet plaster.
 
-This creates a useful convergence:
+Plausible approaches include:
 
-- a narrower panel is easier to handle;
-- G-01 wall composition already provides repeated vertical fields;
-- joints can coincide with true panel mouldings;
-- one damaged/access panel can be removed locally;
-- the underlying attachment geometry can remain standard.
+- factory-applied mineral finish to dense board;
+- high-quality mineral paint directly on a robust gypsum-fibre surface;
+- a mechanically fixed finished panel whose joint remains deliberately real.
 
-Panel size should be selected by prototype using:
-
-- one-person/two-person safe handling;
-- weight;
-- joint count;
-- visual proportion;
-- stiffness;
-- damage risk;
-- remanufacture from standard sheet sizes.
-
----
-
-# 10. The plaster-like finish problem
-
-The project should investigate a wall that **reads as mineral/plaster without pretending to be monolithic wet plaster**.
-
-Possible routes:
-
-### Factory-applied mineral finish to dense board
-
-A robust board is skimmed/coated under controlled conditions and installed as a finished panel.
-
-The joint remains real.
-
-### Mineral paint on dense gypsum-fibre board
-
-Avoid a thick skim entirely; use the board surface as the substrate for a high-quality mineral finish.
-
-### Removable finishing skin over structural panel
-
-Potentially too layered/bespoke. Low priority unless prototypes show a clear advantage.
-
-The key rule:
+The controlling rule is:
 
 > **Do not fill the very joint that makes the panel removable.**
 
-If the room absolutely requires visually seamless monolithic plaster, use real plaster and solve services/fixings elsewhere.
+If a room genuinely requires seamless monolithic plaster, use real plaster and solve services and fixings elsewhere.
 
-Tectonic honesty allows that answer.
+## Fixing loads
 
----
+A replaceable face and its hidden datum need not carry every load in the same way.
 
-# 11. Fixing loads
+A useful hierarchy is:
 
-High-strength board products demonstrate that the replaceable face itself can carry many ordinary domestic loads.
+- **light surface load** — picture, hook, small mirror; may be carried by the tested panel;
+- **normal domestic load** — curtain rail, small shelving, some displays; panel or controlled datum depending on tested capacity;
+- **heavy fit-out** — large cabinets, radiators, substantial shelving; engineered attachment datum;
+- **exceptional or safety-critical load** — grab rails, very heavy stone, lift-related or other consequential loads; designed relationship to permanent structure.
 
-This suggests a useful load hierarchy:
+Exact capacities belong to engineering and physical testing, not to the architectural pattern.
 
-### Class 1 — surface/light
+## Acoustic and tactile quality
 
-Pictures, small mirrors, hooks.
-
-Can be carried by the panel where tested.
-
-### Class 2 — normal domestic
-
-Curtain rails, small shelving, some TVs/fittings.
-
-Panel or attachment plane depending on tested capacity and eccentricity.
-
-### Class 3 — heavy
-
-Large cabinets, radiators, substantial shelves.
-
-Attachment plane / engineered fixing zone.
-
-### Class 4 — exceptional / safety critical
-
-Grab rails, very heavy stone, suspended equipment, future lift-related loads.
-
-Dedicated structural fixing to designed permanent provision.
-
-The exact numeric limits belong to engineering/testing, not doctrine.
-
-This hierarchy makes the attachment plane useful without pretending it eliminates all structural fixing.
-
----
-
-# 12. Acoustic strategy
-
-For principal masonry walls, keep the **massive masonry** as the main acoustic barrier.
-
-The removable lining should avoid creating:
+The permanent masonry should continue to provide the principal mass where it already exists. The removable lining must avoid creating:
 
 - rattling;
-- panel resonances;
+- resonant panels;
 - continuous flanking voids;
-- rigid bridges around decoupled floor/ceiling systems.
+- rigid bridges around decoupled floor or ceiling systems;
+- a light temporary sensation under touch.
 
-Prototype variables:
+Variables worth testing include panel mass, support spacing, resilient pads, cavity absorption, gasket strategy, perimeter compression and mechanical capture.
 
-- direct resilient pads versus rail support;
-- mineral-wool absorption in the shallow cavity;
-- panel mass;
-- joint gasket;
-- perimeter compression;
-- number/location of mechanical captures.
-
-The tactile/acoustic target should be explicit:
+The qualitative target is explicit:
 
 > **Tapping or leaning on the wall should not reveal it as a flimsy access panel.**
 
----
+## Fire
 
-# 13. Fire strategy
+Any removable lining must be assessed as a complete assembly rather than by quoting the classification of the visible board alone.
 
-The panel system must be reviewed as a **system**, not as an isolated board.
+Questions include:
 
-Questions:
-
-- reaction-to-fire classification of visible face;
-- combustibility of hidden attachment system/insulation;
-- cavity barriers at edges/openings;
-- floor/ceiling terminations;
+- reaction to fire of the room face;
+- combustibility of hidden rails and insulation;
+- cavity barriers at edges and openings;
+- termination at floor and ceiling;
 - service penetrations;
-- whether removing one panel exposes a fire-critical cavity;
-- whether the panel itself contributes to a required fire-resisting wall.
+- whether removing one panel exposes a critical cavity;
+- whether the removable face itself contributes to required fire resistance.
 
-Where the wall is required to provide compartmentation or protected-route performance, default to proven tested construction unless a specialist system is developed and validated.
+Where a wall must provide consequential compartmentation or protected-route performance, proven conventional construction remains the default unless a specialist system is genuinely designed and validated.
 
-The replaceable system should first be deployed where the wall behind already provides the critical fire function.
+## Physical proof question
 
----
+The correct first comparison is one realistic principal-room wall bay against excellent controls, not an abstract panel on a workbench.
 
-# 14. Current prototype recommendation
+A useful specimen includes:
 
-Prototype **one W2 principal-room wall bay**.
+- a masonry or realistic rigid background;
+- permanent air/boundary treatment where appropriate;
+- a simple adjustable attachment datum;
+- a shallow absorbed cavity if used;
+- a dense mineral panel;
+- hidden but reachable mechanical capture;
+- skirting, cornice and reveal conditions;
+- one socket or local service condition;
+- an ordinary wall load;
+- a real panel joint and one architecturally covered joint condition.
 
-Preferred first iteration:
+Compare it with high-quality direct plaster and ordinary independent drylining for:
 
-- masonry or realistic rigid background;
-- permanent parge/air layer where appropriate;
-- simple adjustable metal or timber attachment plane;
-- shallow mineral-wool-filled cavity;
-- dense mineral/gypsum-fibre panel;
-- panel mechanically captured through hidden accessible hardware;
-- removable skirting;
-- functional picture rail;
-- cornice/perimeter movement interface;
-- one socket;
-- one ordinary wall load;
-- one deliberately exposed/expressed panel joint;
-- one variant where the joint sits beneath a moulding.
-
-Compare it directly against:
-
-- high-quality traditional plaster;
-- ordinary independent plasterboard lining.
-
-Judge all three for:
-
-- appearance;
-- touch;
-- sound;
-- impact;
-- fixing;
-- installation mess;
-- removal;
-- reinstatement;
+- appearance and domestic calm;
+- touch and sound;
+- impact behaviour;
+- ordinary fixing;
+- tolerance recovery;
+- installation burden;
+- removal and reinstatement;
 - service access;
 - floor area lost;
-- cost.
+- cost and future remanufacturability.
 
----
+The current prototype boundary is described in [Physical Prototypes — Replaceable wall lining challenger](../prototypes/#replaceable-wall-lining-challenger).
 
-# 15. Current judgement
+## Current conclusion
 
-The two propositions now have different authority.
+The evidence already supports independent linings, robust mineral sheet products, dry mechanical fixing and controlled attachment infrastructure.
 
-[`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is a canonical pattern: its reusable invariant is sufficiently clear without committing House Kernel to one rail or backplane product.
+What remains unproved is the distinctive architectural claim:
 
-[Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains held. The evidence supports independent linings, robust mineral sheet products, dry mechanical fixing and genuinely disassemblable lining precedent, but those facts do not prove that a removable occupied surface belongs in a high-quality house.
+> **Can a removable occupied wall surface achieve the visual calm, tactile solidity and acoustic credibility of excellent conventional construction while adding useful reversible access?**
 
-What remains unproven is the project's distinctive W2 combination:
+If the answer is no, the house remains complete with direct quiet walls and selective controlled attachment datums. Failure of the removable lining would narrow the system rather than weaken the underlying doctrine.
 
-> **a removable wall surface with the visual calm, tactile solidity and acoustic credibility of excellent conventional construction.**
+## Sources
 
-That is the purpose of the current wall-bay prototype gate. Failure of W2 would not invalidate P022; the attachment plane can remain useful for joinery, fixing and selected service relationships without requiring a removable lining everywhere.
+- British Gypsum, representative independent lining systems and robust gypsum-fibre / high-strength board products.
+- Salama et al. (2021), *Interconnections: An Analysis of Disassemblable Building Connection Systems towards a Circular Economy*, *Buildings* 11(11), 535.
+- UK Government, *Approved Document B — Fire Safety, Volume 1: Dwellings*, for cavity and fire-boundary considerations.

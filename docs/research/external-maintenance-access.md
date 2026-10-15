@@ -1,201 +1,144 @@
-# External Maintenance Access — Research Synthesis
+# External Maintenance Access
 
-**Status:** current evidence synthesis supporting Principle 5 and the Reference House external-maintenance strategy  
-**Purpose:** establish the professional and regulatory basis for extending Maintenance Geography from internal service access to the exterior of the house.
+Maintenance geography does not stop at the inside face of the envelope. A long-lived house also has to admit credible ways to inspect, clean, repair and replace façades, roof coverings, rainwater goods, openings and external plant throughout its life.
 
-## Research question
+The useful concept is **external maintenance geography**: the spatial relationship between the thing being maintained, the place from which the work is performed, the access equipment, the ground or structure supporting that equipment, and the route by which people, materials and replacement components reach it.
 
-What should a long-life domestic building require of its exterior geometry, roof, ground plane, landscape and circulation so that foreseeable inspection, cleaning, repair and replacement can be performed safely and economically throughout the building's life?
+The central test is:
 
-The initial intuition was simple: upper storeys should not be unnecessarily difficult to reach; roofs should have deliberate access; architectural projections and landscape should not casually make scaffolding or other ordinary access methods difficult.
+> **A building component is not accessible merely because it can be reached. The building must provide a credible route by which the foreseeable work on it can be performed.**
 
-The research supports that intuition, but also changes it in two important ways:
+## Maintenance risk begins at design stage
 
-1. the doctrine should not optimise the building around ladders;
-2. a roof hatch is not itself a maintenance strategy.
+The Construction (Design and Management) Regulations 2015 establish the general professional principle that design decisions affect people who will construct, maintain, refurbish and eventually dismantle buildings. Designers are expected to eliminate foreseeable risks where reasonably practicable and reduce or control those that remain.
 
-The stronger concept is **external maintenance geography**: a continuous spatial relationship between the thing being maintained, the place from which work is performed, the access equipment, the ground or structure supporting that equipment, and the route by which people, materials and replacement components reach it.
+That does not prescribe one domestic façade-access system or require a roof hatch. It establishes the stronger point: later maintenance is not outside architectural responsibility merely because the work occurs years after completion.
 
----
+For a house, relevant design decisions can include:
 
-## 1. Legal baseline: maintenance risk is a design-stage concern
+- whether a gutter can be reached by an ordinary safe method;
+- whether a bay, canopy or deep recess makes routine façade repair unnecessarily specialised;
+- whether the only scaffold position is occupied permanently by a wall, pond or mature tree;
+- whether a replacement window can physically leave the opening and site;
+- whether roof plant creates recurring work at height that could have remained at ground level.
 
-The Construction (Design and Management) Regulations 2015 apply to domestic projects even though the domestic client's own duties normally transfer to other dutyholders. HSE's designer guidance is explicit that design decisions affect those who maintain, refurbish and eventually demolish buildings, and requires designers to eliminate foreseeable health and safety risks where possible and reduce or control those that remain.
+## Do not design around ladders
 
-This establishes the basic professional proposition: later maintenance is not outside the scope of design merely because the work occurs years after completion.
+Work-at-height guidance follows a clear hierarchy: avoid work at height where reasonably practicable; where it cannot be avoided, prevent falls using safe places of work or suitable equipment; prefer collective protection over measures that rely primarily on individual behaviour.
 
-The doctrine should not overstate what CDM proves. CDM does not prescribe a particular domestic façade-access arrangement, maintenance strip or roof hatch. It establishes the duty to consider foreseeable maintenance risk and the hierarchy of eliminating, reducing and controlling that risk.
+Ladders remain appropriate for some low-risk and short-duration tasks, but they are not the architectural target for every upper-level intervention.
 
-**Primary sources**
+A more credible domestic hierarchy is:
 
-- HSE, *Designers: roles and responsibilities — CDM 2015*: https://www.hse.gov.uk/construction/cdm/2015/designers.htm
-- HSE, *Are you a designer?*: https://www.hse.gov.uk/construction/areyou/designer.htm
-- HSE, *Summary of duties under CDM 2015*: https://www.hse.gov.uk/construction/cdm/2015/summary.htm
+**work from inside or ground → use a safe permanent position where one already exists → ordinary collective access equipment → ladder for suitable light/short work → specialist access where proportionately justified**
 
----
+The architectural objective is not “every façade is ladderable”. It is **ordinary safe access without unnecessary architectural improvisation**.
 
-## 2. Work at height: do not make ladders the design target
+## Roof access is more than arrival
 
-HSE's work-at-height hierarchy is important to the doctrine because it establishes the correct order of thought:
+Roof-maintenance guidance makes an important distinction between getting onto a roof and being able to work safely once there.
 
-1. avoid work at height where reasonably practicable;
-2. where it cannot be avoided, prevent falls using an existing safe place of work or appropriate equipment;
-3. only then minimise the distance and consequences of a fall;
-4. prefer collective protection over measures that depend on the individual user.
+Potential means of arrival include scaffold, stair towers, mobile towers, mobile access equipment, ladders and roof hatches. A hatch is therefore one possible access component rather than the definition of maintainability.
 
-HSE treats ladders as appropriate only where the task is sufficiently low risk and short in duration, or where existing features justify them. Its ladder guidance recommends considering alternative equipment where a task would require remaining on a ladder for more than roughly 30 minutes at a time.
-
-The doctrine should therefore not say that every upper-storey façade must be easy to reach by ladder. The better proposition is that the building should admit **ordinary safe access methods without architectural improvisation**, while simple ladder access remains available where it is genuinely appropriate.
-
-A domestic hierarchy can therefore be stated as:
-
-**work from inside or ground → safe permanent position → ordinary collective access equipment → ladder for suitable light/short work → specialist access only where proportionately justified.**
-
-**Primary sources**
-
-- HSE, *Introduction to working at height safely*: https://www.hse.gov.uk/work-at-height/introduction.htm
-- HSE, *Step-by-step guide*: https://www.hse.gov.uk/work-at-height/step-by-step-guide.htm
-- HSE, *Safe use of ladders and stepladders*: https://www.hse.gov.uk/work-at-height/ladders/when-how-to-use-ladders-safely.htm
-
----
-
-## 3. Roofs: access method and work route are separate questions
-
-HSG33 is a strong source because it explicitly covers new buildings, maintenance and cleaning and is addressed not only to roofers but also to clients, designers and specifiers.
-
-HSE lists several typical means of reaching a roof: general access scaffolds, stair towers, fixed or mobile scaffold towers, mobile access equipment, ladders and roof access hatches.
-
-The important doctrinal conclusion is that **a hatch is one access method, not the definition of roof access**.
-
-A credible roof-maintenance strategy must continue beyond the point of arrival. It should consider:
+A credible roof strategy considers the complete task:
 
 - approach to the roof;
-- safe arrival/landing;
+- safe arrival and landing;
 - movement from arrival to the work location;
 - roof edges and openings;
-- fragile or potentially fragile surfaces, including rooflights;
+- fragile or potentially fragile surfaces;
 - working position;
-- handling of tools and materials;
-- replacement or removal of larger components where relevant;
-- emergency/rescue implications where the selected method creates them.
+- tool and material handling;
+- removal and replacement of larger components;
+- rescue implications where the access method creates them.
 
-HSE's fragile-surface guidance reinforces this. Work on or near fragile surfaces requires precautions regardless of duration; rooflights are specifically identified as a recurring hazard.
+This leads to a useful design order:
 
-The doctrine should therefore prefer reducing roof-mounted maintenance demand first, then providing a coherent route for what remains. A rear roof hatch may be an excellent Reference House solution, but it should be selected only if it materially improves the complete work sequence.
+> **Reduce roof-mounted maintenance demand first; then provide a coherent route for the work that remains.**
 
-**Primary sources**
+A permanent hatch can be excellent where recurring tasks justify it. It can also add a weather, thermal, air, security and fire interface while doing nothing about edge protection or working platform. Its value has to come from the actual maintenance sequence.
 
-- HSE, *Health and safety in roof work (HSG33)*: https://www.hse.gov.uk/pubns/priced/hsg33.pdf
-- HSE, *Roof work*: https://www.hse.gov.uk/construction/safetytopics/roofwork.htm
-- HSE, *Fragile surfaces*: https://www.hse.gov.uk/construction/safetytopics/fragile.htm
+## Façade geometry fixes access early
 
----
+Façade-access guidance makes clear that maintenance difficulty is often determined at scheme-design stage because geometry and access method are coupled.
 
-## 4. Façades: access is largely fixed by early geometry
+The implication is not a ban on bays, porticos, canopies, balconies, deep eaves or other projections. It is that those architectural moves carry **access consequences** that should be understood while geometry can still change.
 
-CWCT's façade-design guidance makes an unusually useful architectural point: the ease and requirements of safe access are dictated at scheme-design stage because complex building geometries must be matched with suitable access arrangements. CWCT's earlier safe-access research likewise aimed to bring façade access and construction methods into early building design so façades would be safer to construct, maintain, repair and deconstruct.
+Useful questions include:
 
-This supports a doctrine-level rule:
+- can conventional scaffold rise past or bridge the projection?
+- where can standards, towers or outriggers bear?
+- does a low roof or canopy make upper-wall work materially more specialised?
+- does a recess create a face that ordinary equipment cannot reach?
+- would routine repair depend on neighbouring land or highway occupation?
+- is specialist access being introduced for a task that a modest geometric change could have kept ordinary?
 
-> **Architectural geometry should be reviewed together with the ordinary access methods by which that geometry will later be maintained.**
+Architecture may still choose the more difficult form. The important thing is that the access cost is visible rather than discovered decades later.
 
-The consequence is not a ban on bay windows, porticos, canopies, balconies, deep eaves or other projections. It is that projections incur **access consequences** which should be visible at design stage rather than discovered by a scaffolder decades later.
+## The ground plane is part of the system
 
-The relevant questions include:
+Scaffolds and mobile access equipment need ground capable of carrying their loads. Drains, basements, voids, lightwells, slopes, soft ground and other site conditions can make a theoretically reachable wall practically difficult to maintain.
 
-- can a conventional scaffold rise past or bridge the projection?
-- where can scaffold standards, towers or outriggers bear?
-- does a low roof, bay or canopy make access substantially more specialised?
-- does an architectural recess create an inaccessible face?
-- would ordinary façade repair require trespass or dependence on neighbouring land?
-- is a specialist access system being introduced for a task that could have remained ordinary through a modest geometric change?
+The strip beside a house is therefore not merely leftover landscape. In maintenance state it may become temporary infrastructure.
 
-**Professional sources**
+This does **not** justify a universal hard maintenance strip around every building. Different tasks and elevations need different methods, and hard landscape can conflict with drainage, biodiversity and ordinary domestic use.
 
-- CWCT, *Design*: https://www.cwct.co.uk/pages/design
-- CWCT, *Design of facades for safety*: https://www.cwct.co.uk/products/facades-for-safety
-- CWCT, research project *Design for safe access*: https://www.cwct.co.uk/pages/projects
+The better method is task-specific: identify the foreseeable access method and preserve the supporting and working conditions it needs.
 
----
+Potential conflicts include:
 
-## 5. The ground plane is part of the access system
-
-HSE scaffolding guidance requires scaffolds to be founded on firm, level ground capable of carrying the intended loads and specifically warns about basements, drains, voids and soft ground.
-
-That changes the architectural reading of the land immediately around a building. The ground beside the wall is not merely landscape. In maintenance state it may become temporary infrastructure.
-
-Singapore's Building and Construction Authority has developed this idea further through Design for Maintainability and its Façade Access Design Guide. The useful transferable principle is not any particular Singaporean dimension or scoring system, but the explicit treatment of façade access, maintenance routes, working/landing areas and obstruction by surrounding site elements as upstream design matters.
-
-For a house, the immediate ground plane, paths, hard landscape and selected planted areas should therefore be coordinated with future access rather than designed independently. Where wall-base drainage or splashback control also needs a margin beside the building, the same geometry may serve both purposes only when the moisture and temporary-support requirements are technically compatible.
-
-The doctrine should **not** prescribe a universal clear strip around every house. Scaffold, tower and MEWP requirements vary. A blanket dimension would produce wasted site area on some elevations and insufficient provision on others.
-
-Instead, the design should identify the access methods that foreseeable tasks are expected to use and preserve the support/working conditions those methods require.
-
-Typical obstructions to review include:
-
-- basement/lightwell voids;
+- basement and lightwell voids;
 - drains and inspection chambers;
 - ponds and water features;
 - permanent raised planters;
 - retaining walls and abrupt level changes;
 - fragile paving;
-- dense or irreplaceable planting immediately against the work face;
+- dense or irreplaceable planting at the work face;
 - trees whose mature canopy or roots consume the only credible access position;
-- gates and passages too small for the equipment or scaffold components required beyond them.
+- gates and passages too small for equipment or dismantled tower components.
 
-**Sources**
+The same area can sometimes serve drainage, wall-base inspection and temporary access, but only where those functions are technically compatible.
 
-- HSE, *Scaffolds*: https://www.hse.gov.uk/construction/safetytopics/scaffoldinginfo.htm
-- BCA, *Design for Maintainability*: https://www1.bca.gov.sg/growth-and-transformation/facilities-management/design-for-maintainability
+## Cleaning, inspection, repair and replacement are different tasks
 
----
+“Accessible” is too coarse a binary property.
 
-## 6. Cleaning, inspection, repair and replacement are different access tasks
-
-The maintenance problem should not be represented by a single binary property called `accessible`.
-
-A window illustrates why:
+A window illustrates the difference:
 
 - routine glass cleaning may be possible from inside;
-- ironmongery maintenance may be entirely internal;
+- ironmongery service may be internal;
 - glazing-unit replacement may need a larger handling envelope;
-- full-frame replacement may require removal of trims and a path for the complete frame;
-- masonry repair around the same opening may still require external scaffold.
+- full-frame replacement may require removal of trims, external support and a route for the complete frame;
+- masonry repair around the same opening may still require scaffold.
 
-The Building Regulations provide an instructive limit case. Requirement K5.4 concerns safe access for cleaning windows etc., but its application expressly excludes dwellings. House Kernel therefore cannot cite K5.4 as a domestic requirement. Designing domestic windows so that routine cleaning can occur safely from inside is instead a deliberate doctrine preference that exceeds this part of the minimum regulatory baseline.
+The same distinction applies to gutters, roof coverings, plant and façade components. The geometry required for inspection can be radically smaller than the geometry required for full replacement.
 
-**Source**
+Domestic window-cleaning design is also a useful regulatory caution. Building Regulations requirement K5.4 does not apply to dwellings, so Ovid’s House should not present internal cleanability as a domestic statutory requirement. It remains a deliberate architectural preference where it materially reduces routine work at height.
 
-- Building Regulations 2010, Schedule 1 Part K, current text: https://www.legislation.gov.uk/uksi/2010/2214/schedules
+## Maintenance clearance is real geometry
 
----
+Maintenance-access research using BIM makes a transferable point: ordinary clash detection can miss access problems because the space required by the future task is not itself a constructed component.
 
-## 7. Maintenance clearance can be treated as geometry
+Yet a task may require:
 
-Research by Liu and Issa on design for maintenance accessibility using BIM is directly relevant to the computational direction but is recorded here without changing any computational documents.
+- an approach path;
+- a worker or equipment support position;
+- setup and swept volume;
+- opening clearance;
+- disconnection clearance;
+- a safe working envelope;
+- a withdrawal route;
+- a route for the replacement component and waste.
 
-The paper's useful finding is conceptual: ordinary component clash detection does not necessarily detect maintainability problems because the space required by the maintenance task is not itself normally represented as a physical building component. Their case study explores explicit maintenance-accessibility checking using BIM tools.
-
-The architectural implication is independent of software:
+If another element occupies that space, the conflict is real even though two pieces of finished construction do not clash.
 
 > **Required empty space is sometimes a designed asset.**
 
-A credible maintenance task may require an approach path, working volume, equipment footprint, opening/swept volume, disconnection clearance and withdrawal path. If another element occupies that space, the conflict is real even though no two constructed components clash.
+## External maintenance envelope
 
-This aligns closely with the doctrine's existing Maintenance Geography concept and can inform future evidence-selected computational fixtures without making this research note a compiler specification.
+For a specific task, Ovid’s House uses **external maintenance envelope** to mean the spatial provision needed to perform the work. It is not the weather or thermal envelope of the building.
 
-**Research source**
-
-- Rui Liu and Raja R. A. Issa, “Design for maintenance accessibility using BIM tools,” *Facilities* 32 (3/4), 2014, DOI 10.1108/F-09-2011-0078.
-
----
-
-## 8. External maintenance envelope
-
-The project uses **external maintenance envelope** to mean the spatial provision necessary for a specified exterior maintenance task. It is not the weather/thermal envelope of the building.
-
-For a given task, the envelope may include:
+A task may involve:
 
 ```text
 site / service entrance
@@ -213,66 +156,79 @@ target component
 withdrawal / waste / replacement route
 ```
 
-The envelope is task-specific. Repointing a wall, cleaning a window, replacing a sash, clearing a gutter and replacing a chimney pot do not necessarily share the same access geometry.
+The envelope is task-specific. Repointing masonry, cleaning a window, replacing a frame, clearing a gutter and renewing a roof penetration do not necessarily share the same access geometry.
 
-A useful test is therefore:
-
-> **A building component is not accessible merely because it can be reached. The building must provide a credible route by which the foreseeable work on it can be performed.**
-
-And for external work:
+This produces a second useful rule:
 
 > **External maintenance begins at the site entrance, not at the wall.**
 
----
+## Landscape is part of future access
 
-## 9. Reference House consequences
+A landscape plan should be tested not only at handover but at maturity.
 
-The research is carried into the [Reference House External Access & Maintenance Plan](../reference-house/external-access-maintenance-plan.md), which tests:
+For each maintenance-critical position, ask:
 
-- principal and courtyard façade scaffold/tower access;
-- effects of bays, porticos and low roofs;
-- roof access and onward working routes;
-- gutters, outlets, chimneys, rooflights and flashings;
-- cleaning and full replacement of upper-storey windows as separate tasks;
-- routes for scaffold components and replacement units into the courtyard;
-- firm support zones around the perimeter;
-- interaction with drains, lightwells, planted areas and mature trees;
-- dependence on neighbouring land or highway occupation;
-- movement of materials and waste from work face to site entrance.
+- what grows into this space after ten or twenty years?
+- can the planting be cut back or removed without destroying the landscape concept?
+- does the root zone conflict with scaffold or outrigger support?
+- does a permanent store, wall or screen consume the only material route?
+- is an apparent access path still usable with mature boundary planting?
 
-The current courtyard morphology and G-01-derived projections remain project choices. Maintenance analysis is a coordination discipline, not a reason to flatten the architecture.
+This need not subordinate the garden to maintenance. It prevents landscape and building maintenance from being designed as if the other did not exist.
 
----
+## Courtyards and enclosed external rooms
 
-## 10. Integration state
+Courtyards intensify the issue because external faces can become remote from ordinary site access.
 
-This research does **not** justify a new governing principle. It deepens Principle 5 — **Give maintenance a geography**.
+A useful courtyard strategy needs to consider how scaffold or tower components, replacement windows, masonry materials and waste move into and out of the enclosed space. A courtyard that is visually accessible but cannot receive the equipment needed to maintain its upper walls has an incomplete maintenance geography.
 
-Its current homes are:
+The same logic applies to roof terraces, enclosed light courts and rear gardens accessible only through the house.
 
-- governing principle: exterior access and support geography within Principle 5;
-- Part II §8 and the external-maintenance manuscript insert: developed architectural argument;
-- canonical patterns: [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md), [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md), [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) and related opening patterns;
-- Reference House: project-specific external access and maintenance plan;
-- delivery brief: access requirements early enough that façade, roof, landscape and site geometry can still change;
-- computational track: possible evidence-selected maintainability fixtures only where a concrete workstream earns them; this note does not authorise generic compiler growth.
+## Reference House consequences
+
+The Reference House applies this evidence without treating maintainability as a reason to flatten the architecture.
+
+Its current arrangement preserves:
+
+- ordinary scaffold/tower support positions on useful outer elevations;
+- a service-side working strip shared with external plant while retaining passage and withdrawal space;
+- a garden-to-courtyard logistics route for dismantled tower components and replacement materials;
+- at least one useful courtyard tower position;
+- visible and inspectable rainwater failure routes;
+- external roof access as the baseline rather than a symbolic permanent hatch;
+- landscape controls that keep critical access territory from being consumed accidentally.
+
+Those project-specific choices are summarised in [Current Technical Coordination](../reference-house/structural-coordination.md).
 
 ## Evidence boundary
 
-The following are strongly supported:
+The evidence strongly supports the following propositions:
 
-- designers should consider foreseeable maintenance risk;
-- work at height should be eliminated or reduced before reliance on lower-order controls;
-- roof maintenance requires deliberate safe access planning;
-- scaffold and similar access equipment require suitable supporting ground;
+- foreseeable maintenance risk is a design-stage concern;
+- work at height should be eliminated or reduced before relying on lower-order controls;
+- roof maintenance requires a complete access and work sequence rather than mere arrival;
+- scaffold and similar equipment need suitable supporting ground;
 - façade geometry and access strategy should be coordinated early;
-- maintenance accessibility benefits from explicit representation of working/access clearance.
+- maintenance tasks benefit from explicit representation of approach, working and withdrawal clearance.
 
-The following remain project-specific design decisions rather than universal rules:
+The evidence does **not** create universal answers for:
 
-- whether the house needs a roof hatch;
-- exact scaffold/tower/MEWP support dimensions;
-- whether every elevation requires the same access method;
-- whether a specific bay, portico, tree or landscape element is acceptable;
-- whether internal window cleaning is always preferable;
-- the precise geometry of the Reference House external maintenance envelope.
+- whether every house needs a roof hatch;
+- exact scaffold, tower or MEWP support dimensions;
+- whether every elevation should use the same access method;
+- whether a particular bay, portico, tree or landscape element is acceptable;
+- whether every domestic window should be cleaned from inside;
+- the precise external maintenance geometry of a site that does not yet exist.
+
+The architectural rule is therefore task-based rather than typological: identify the credible future work, give it enough real space to occur, and make the additional provision proportionate to the frequency and consequence of the task.
+
+## Sources
+
+- HSE, *Designers: roles and responsibilities — CDM 2015* and related CDM designer guidance.
+- HSE, work-at-height hierarchy and ladder guidance.
+- HSE, *Health and safety in roof work (HSG33)* and fragile-surface guidance.
+- Centre for Window and Cladding Technology, façade-design and safe-access guidance.
+- HSE scaffolding guidance.
+- Building and Construction Authority (Singapore), *Design for Maintainability* and façade-access guidance, used for transferable design principles rather than UK dimensional rules.
+- Building Regulations 2010, Schedule 1 Part K, for the limited domestic applicability of window-cleaning requirement K5.4.
+- Rui Liu and Raja R. A. Issa (2014), “Design for maintenance accessibility using BIM tools”, *Facilities* 32(3/4).
