@@ -59,21 +59,23 @@
 
     <rect x="0" y="215" width="470" height="105" fill="#fff" stroke="#111" stroke-width="3"/>
     <text x="30" y="260" class="label">Floor structure</text>
-    <text x="30" y="295" class="tiny">engineered timber comparator · diaphragm remains permanent</text>
+    <text x="30" y="295" class="tiny">engineered timber comparator · permanent diaphragm</text>
 
     <line x1="235" y1="320" x2="235" y2="368" class="rule" marker-end="url(#arrow)"/>
 
     <rect x="0" y="375" width="470" height="105" fill="#fff" stroke="#777" stroke-width="2.5"/>
     <text x="30" y="420" class="label">Designed crossings</text>
-    <text x="30" y="455" class="tiny">stair / service openings coordinated rather than improvised</text>
+    <text x="30" y="450" class="tiny">stair / service openings coordinated</text>
+    <text x="30" y="472" class="tiny">rather than improvised</text>
 
     <line x1="235" y1="480" x2="235" y2="528" class="rule" marker-end="url(#arrow)"/>
 
     <rect x="0" y="535" width="470" height="105" fill="#fff" stroke="#aaa" stroke-width="2"/>
     <text x="30" y="580" class="label">Changeable layers</text>
-    <text x="30" y="615" class="tiny">finishes / selected access / replaceable assemblies</text>
+    <text x="30" y="610" class="tiny">finishes / selected access /</text>
+    <text x="30" y="632" class="tiny">replaceable assemblies</text>
 
-    <text x="0" y="690" class="small">Not established here:</text>
-    <text x="0" y="726" class="tiny">member sizing · bearing capacity · connections · foundations</text>
+    <text x="0" y="680" class="small">Not established here:</text>
+    <text x="0" y="710" class="tiny">member sizing · bearing capacity · connections · foundations</text>
   </g>
 </svg>
