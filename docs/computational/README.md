@@ -87,6 +87,12 @@ The service layer represents semantic nodes, routes, networks, access obligation
 
 It does not route pipes and ducts automatically or size systems.
 
+### Exterior maintenance boundary
+
+The same semantic vocabulary can represent a maintenance task, an approach path, a working position and a withdrawal route, but the demonstrated software cases are primarily internal and service-related. **Exterior maintainability has not been established merely because those concepts exist in the model.**
+
+A real exterior task may also depend on scaffold, tower or MEWP setup geometry; supporting ground; equipment clearance and stabilisation; component withdrawal; neighbouring-land or highway permissions; and future landscape obstruction. Those conditions remain outside the demonstrated executable scope until a concrete project supplies enough geometry and evidence to check them without invention.
+
 ### Boundaries
 
 The boundary layer represents weather, air, thermal and moisture carriers independently rather than collapsing “the wall” into one pass/fail object. Openings and penetrations transition those duties explicitly, allowing a crossing to create reinstatement obligations instead of vanishing between disciplines.
