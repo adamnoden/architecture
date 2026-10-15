@@ -1,32 +1,35 @@
-# Boundary Semantics — Conceptual v0.2
-
-**Status:** conceptual foundation exercised through S0→H1 paper research; technical adequacy remains family/evidence dependent  
-**Purpose:** define environmental, fire, acoustic and related boundaries as first-class semantic systems rather than incidental wall properties  
-**Engineering status:** conceptual only; this document does not certify any construction
+# Boundary Semantics
 
 > **A wall is a physical assembly. A boundary is a performance relationship that may pass through many assemblies.**
 
-## 1. One wall can carry several different boundaries
-
 The phrase “this wall is the envelope” hides too much.
 
-A single external wall may participate in weather, thermal, air, moisture, fire, acoustic, security and pest-control systems. Those systems can occupy different physical layers, terminate differently, respond differently to penetrations and require different evidence.
+One physical external wall may participate in weather, thermal, air, moisture, fire, acoustic, security and pest-control systems. Those systems can occupy different layers, terminate in different places, react differently to openings and penetrations, and depend on different evidence.
 
-The semantic model should therefore not reduce them to one generic envelope property.
+The computational model therefore treats boundaries as first-class semantic systems rather than as generic properties attached to one wall object.
 
-## 2. Physical assembly and performance boundary are different things
+## Physical assembly and performance boundary are different
 
-A cavity wall may physically contain brick, cavity, insulation, masonry inner leaf, an air-control layer, lining, window, closer, seals and lintel.
+A cavity wall may physically contain facing masonry, cavity, insulation, structural inner leaf, air-control layer, lining, window, closer, seals and lintel.
 
-Across the same construction, the building may need a rain/drainage path, thermal envelope, air boundary, moisture strategy, acoustic separation and fire/cavity strategy.
+Across the same construction, the building may need:
 
-One physical component may contribute to several boundaries. One boundary may pass through several components. That many-to-many relationship is the reason boundary needs first-class identity.
+- a rain-shedding and drainage path;
+- a thermal envelope;
+- an air boundary;
+- a moisture/drying strategy;
+- an acoustic separation;
+- fire/cavity control;
+- a security perimeter;
+- pest exclusion.
 
-## 3. Boundary graph
+One component can contribute to several boundaries. One boundary can pass through several components. This many-to-many relationship is the reason boundary identity matters.
 
-A boundary should be representable as a connected semantic graph or surface network independent of one CAD-layer convention.
+## Boundary graph
 
-Possible nodes or segments include:
+A boundary can be understood as a connected semantic graph or surface network independent of any one CAD-layer convention.
+
+Useful entities include:
 
 - boundary segment;
 - transition;
@@ -42,105 +45,115 @@ Useful relationships include:
 
 `continues-to` / `transitions-to` / `overlaps` / `seals-to` / `drains-to` / `terminates-at` / `penetrated-by` / `reinstated-by` / `protected-by`
 
-Exact geometry may be surface-, line- or region-based.
+The exact geometry may be a line, surface or region depending on the boundary and method.
 
-## 4. Initial boundary roles
-
-### B-WEA — Weather / rain
-
-Where is rain shed? Where may water enter? Where is it intercepted, drained and allowed to dry?
-
-### B-THM — Thermal
-
-What defines the insulated enclosure? Where are the openings, junctions and thermal bridges?
-
-### B-AIR — Air
-
-What provides primary air control? How do joints, openings and penetrations maintain continuity?
-
-### B-MOI — Moisture / vapour
-
-What wetting paths exist, where is vapour resistance intended, and how can the construction dry? This must remain assembly-specific rather than collapsing into a universal “vapour barrier” rule.
-
-### B-FIR — Fire / smoke
-
-What fire-separating or cavity-control function applies, where does it continue, what penetrates it and how is performance reinstated?
-
-### B-ACO — Acoustic
-
-Which spaces require separation, what are the direct and flanking paths, and how do openings, penetrations, mass and decoupling affect them?
-
-### B-SEC — Security
-
-What constitutes the secure perimeter and which openings or interfaces control access?
-
-### B-PST — Pest exclusion
-
-Where can pests enter or travel, and how are vents, cavities and drains protected without defeating other functions?
+## Boundary roles
 
 Only applicable roles should be instantiated.
 
-## 5. A boundary is not merely a layer label
+### Weather / rain
 
-A field wall may use parge as part of its air-control strategy, but `air-barrier-layer = parge` is not a sufficient model because performance depends on transitions and discontinuities.
+Where is rain shed? Where can water enter? Where is it intercepted, drained and allowed to dry?
+
+### Thermal
+
+What defines the insulated enclosure? Where are the openings, junctions and bridges?
+
+### Air
+
+What provides primary air control? How do openings, junctions and penetrations maintain continuity?
+
+### Moisture / vapour
+
+What wetting paths exist, where is vapour resistance intended and how can the assembly dry?
+
+This remains assembly-specific; it should never collapse into a universal “vapour barrier” rule.
+
+### Fire / smoke
+
+What separating or cavity-control function applies, where does it continue, what penetrates it and how is performance reinstated?
+
+### Acoustic
+
+Which spaces require separation, what are the direct and flanking paths, and how do openings, penetrations, mass and decoupling affect them?
+
+### Security
+
+What constitutes the secure perimeter and which openings or interfaces control access?
+
+### Pest exclusion
+
+Where can pests enter or travel, and how are vents, cavities and drains protected without defeating another boundary function?
+
+## A boundary is more than a material label
+
+A field wall may use parge as one carrier of the air strategy, but:
+
+```text
+air-barrier-layer = parge
+```
+
+is not a complete air-boundary model.
 
 A more useful representation is:
 
-~~~text
+```text
 AIR BOUNDARY AB-01
   carried-by parge P-01 on field wall
   transitions-to window seal S-04
   transitions-to floor-edge seal S-08
   penetrated-by service P-17
   reinstated-by collar/system C-17
-~~~
+```
 
-The boundary describes the relationship across the enclosure, not only the material carrying it in one place.
+The boundary describes continuity and transition across the enclosure, not merely the material used in one field condition.
 
-## 6. Continuity obligations
+## Continuity obligations
 
-For every applicable boundary, the system should know whether:
+For each applicable boundary, the system should be able to determine whether:
 
-- segments belong to a coherent boundary system;
+- segments belong to a coherent system;
 - transitions are declared;
 - openings have explicit treatment;
 - penetrations have explicit reinstatement;
 - terminations are intentional;
 - no required boundary simply ends in semantic space.
 
-This is analogous to a structural load-path graph.
+This is analogous to structural load-path continuity.
 
-Semantic continuity still does **not** prove performance. Fire, acoustic, thermal and moisture adequacy require the relevant calculation, tested assembly or other evidence.
+Semantic continuity still does **not** prove physical performance. Thermal, moisture, fire and acoustic adequacy require their appropriate calculation, tested assembly or other evidence.
 
-## 7. Boundary independence and replaceable layers
+## Boundary independence and replaceable layers
 
-House Kernel makes one useful relationship explicit: routinely removable work should not casually carry critical performance that is expected to survive its removal.
+A routinely removable layer should not casually become the sole carrier of a critical slow-building function expected to survive its removal.
 
-~~~text
+For example:
+
+```text
 LINING L01
   lifecycle = replaceable
 
 AIR BOUNDARY AB01
   carried-only-by L01
-~~~
+```
 
-If a project requirement says the air boundary must survive routine lining removal, this state should create an obligation or failure.
+If the project requires the air boundary to remain intact during routine lining removal, that state should be rejected or create an unresolved obligation.
 
-A removable panel may still contribute acoustic absorption, protection, finish or secondary sealing. The issue is whether removing it destroys a critical boundary contrary to the declared strategy.
+A removable panel may still contribute secondary sealing, acoustic absorption, protection or finish. The issue is whether removal destroys a critical boundary contrary to the declared strategy.
 
-## 8. Intentional discontinuity needs semantic states
+## Intentional discontinuity needs semantic meaning
 
-A boundary should distinguish conditions such as:
+A boundary should distinguish states such as:
 
 `CONTINUOUS` / `TRANSITION` / `OPENING` / `PLANNED-PENETRATION` / `SEALED-PENETRATION` / `DRAIN` / `VENT` / `TERMINATION` / `TEMPORARILY-OPEN-DURING-MAINTENANCE` / `UNRESOLVED`
 
-A drain through a rain-control system is not a defect. The model must understand why the discontinuity exists.
+A drain through a rain-control system is not a defect. The model should know why the discontinuity exists.
 
-## 9. Penetrations are typed events
+## Penetrations are typed events
 
-A service penetration is not just a hole.
+A service penetration is not merely a hole.
 
-~~~text
+```text
 PENETRATION P01
   passes-through:
     AIR BOUNDARY AB01
@@ -148,147 +161,198 @@ PENETRATION P01
     ACOUSTIC BOUNDARY AC01
 
 requires:
-  air-seal method
+  air treatment
   thermal treatment
   acoustic treatment
   structural clearance
-  pest/water treatment where applicable
-~~~
+  water / pest treatment where applicable
+```
 
-A hole through non-critical finish may create little work. The same geometry through several critical boundaries may create a substantial interface obligation.
+The same physical hole can create very different obligations depending on which boundaries and structural conditions it crosses.
 
-## 10. Openings are compound boundary transformations
+The current compiler already uses this principle: selected service penetrations generate boundary-reinstatement duties rather than disappearing between service and envelope abstractions.
 
-A window does more than puncture a wall. It transforms opaque weather control into a window weather system, insulation into frame/glazing, the field air layer into a frame/seal transition, solid acoustic mass into an opening component and secure wall into an operable interface. Structurally, it also changes the masonry around head, jambs and sill.
+## Openings are compound transformations
 
-The window should therefore create a bundle of boundary obligations.
+A window does more than puncture a wall.
 
-This aligns with the architectural pattern **permanent opening / replaceable window**: the long-lived opening owns the transition geometry; the shorter-lived window occupies it.
+It transforms:
 
-## 11. Junctions carry several boundaries at once
+- opaque rain control into a window/frame weathering system;
+- wall insulation into frame and glazing;
+- field air control into frame/perimeter seals;
+- solid acoustic mass into an opening component;
+- secure wall into an operable element;
+- uninterrupted masonry into jamb, head and sill structural conditions.
 
-The floor/wall edge may simultaneously involve structure, air, heat, sound, fire, moisture, finish and movement.
+The opening therefore creates a **bundle of obligations** across several domains.
 
-The model should let one interface participate in all applicable systems:
+This aligns with the architectural pattern **Permanent Opening / Replaceable Window**: the long-lived opening owns enduring geometry and the shorter-lived window occupies that interface.
 
-~~~text
+## Junctions carry several boundaries at once
+
+A floor/wall edge can simultaneously involve:
+
+- structure;
+- air;
+- heat;
+- sound;
+- fire;
+- moisture;
+- finish;
+- movement.
+
+One interface may therefore participate in several shared graphs:
+
+```text
 INTERFACE I-FW-01
-  participates-in STRUCTURAL relationship ...
-  transitions AIR boundary ...
-  transitions THERMAL boundary ...
-  affects ACOUSTIC boundary ...
-  requires FIRE closure if applicable ...
-~~~
+  participates-in STRUCTURAL relationship
+  transitions AIR boundary
+  transitions THERMAL boundary
+  affects ACOUSTIC boundary
+  requires FIRE closure where applicable
+```
 
 This is more useful than pretending each discipline owns an isolated detail.
 
-## 12. Topology and geometry do different work
+## Topology and geometry do different work
 
-Some boundary questions are topological: does the air boundary close, does fire separation continue, has a penetration been reinstated?
+Some boundary questions are topological:
 
-Others are geometric or quantitative: insulation thickness, linear thermal bridge, cavity dimension, seal width, drainage fall or acoustic build-up.
+- does the air boundary close;
+- is a penetration accounted for;
+- does a fire separation continue;
+- does a drainage route reach a destination?
 
-The semantic system should generate the geometric queries or specialist calculations needed to discharge the latter.
+Others are geometric or quantitative:
 
-## 13. Weather and drainage are directional
+- insulation thickness;
+- linear thermal bridge;
+- cavity dimension;
+- seal width;
+- drainage fall;
+- acoustic build-up.
 
-Water requires more than continuity. A rain/drainage model may need exposed and protected sides, fall direction, destination, overlap, drip, weep and cavity collection path.
+The semantic model should expose the correct geometric query, specialist method or external evidence required for the latter rather than claiming that topology proves performance.
+
+## Weather and drainage are directional
+
+Water requires more than continuity.
 
 A useful semantic sequence is:
 
-~~~text
-water enters here
-→ is intercepted
-→ drains here
-→ exits here
-~~~
+```text
+water arrives
+→ is shed / intercepted
+→ drains through a declared path
+→ leaves at a safe destination
+```
 
-That is closer to a flow graph than a coloured boundary line.
+Relevant facts can include exposure, protected side, fall direction, overlap, drip, weep and cavity collection path.
 
-## 14. Moisture is an assembly strategy
+The current Reference House roof model already derives catchments and ensures roof drainage remains directed outward rather than silently reversing toward the courtyard.
 
-Avoid universal slogans such as “always install a vapour barrier” or “every cavity is ventilated”.
+## Moisture is an assembly strategy
 
-A supported wall or roof family should instead declare its verified wetting, vapour and drying strategy. The compiler checks whether the instantiated assembly remains within that envelope. Alterations outside it create a building-physics obligation.
+Avoid slogans such as “always install a vapour barrier” or “every cavity must be ventilated”.
 
-## 15. Thermal semantics
+A supported wall or roof family should instead declare its wetting, drainage, vapour and drying strategy. Alterations outside that validated envelope create a building-physics obligation.
 
-A supported thermal boundary may need conditioned/unconditioned sides, insulation continuity, properties, areas, junctions, openings, bridges, penetrations and a target calculation route.
+## Thermal semantics
 
-Regulatory requirements change by target and date. The ontology should remain independent of any particular Approved Document edition.
+A thermal boundary may need:
 
-## 16. Air-boundary semantics
+- conditioned/unconditioned side;
+- insulation continuity;
+- material properties;
+- areas;
+- openings;
+- junctions;
+- bridges;
+- penetrations;
+- target calculation route.
 
-Air leakage concentrates at transitions: floor and roof edges, openings, penetrations and service entries.
+Regulatory performance levels change by target and date. The ontology should remain independent from one Approved Document edition.
 
-Evidence may therefore include design continuity review, a supported detail family, pre-closure inspection and final airtightness testing where applicable.
+## Air semantics
 
-Colouring the field wall in a drawing without modelling its junctions is not a complete air-boundary model.
+Air leakage commonly concentrates at transitions: floor and roof edges, openings, penetrations and service entries.
 
-## 17. Acoustic semantics
+Relevant evidence can include continuity review, supported detail families, pre-closure inspection and final airtightness testing where appropriate.
 
-Acoustics should distinguish direct separation, flanking paths, openings/penetrations, resilient or rigid connections, source/receiver relationships and the evidence supporting the build-up.
+A coloured field-wall layer without its transitions is not a complete air-boundary model.
 
-Detached H1 houses avoid some of the regulatory complexity of attached or multi-unit buildings, though internal acoustic quality can still be a project requirement. That simplification is one reason detached low-rise housing is a useful first research domain.
+## Acoustic semantics
 
-## 18. Fire semantics
+Acoustic reasoning should be able to distinguish:
+
+- direct separation;
+- flanking paths;
+- openings and penetrations;
+- resilient or rigid connections;
+- source/receiver relationships;
+- evidence supporting the assembly.
+
+The compiler need not become an acoustic engine merely to know that a junction or penetration has created an acoustic obligation.
+
+## Fire semantics
 
 Fire is especially unsafe to compress into `fire-rated = true`.
 
-A supported fire claim needs its exact function, classification/duration where applicable, assembly/evidence, penetration and opening conditions, and scope.
+A supported fire claim needs its actual function, assembly/evidence, conditions, openings and penetrations, and field of application.
 
-Potential semantic concepts include protected routes, separating elements, cavity control, lining/reaction-to-fire requirements, penetration/fire-stop conditions, opening protection and structural fire requirements.
+Relevant concepts may include:
 
-Novel fire-engineering strategies remain external or unsupported in the H1 domain.
+- protected routes;
+- separating elements;
+- cavity control;
+- reaction-to-fire requirements;
+- penetration/fire-stop conditions;
+- opening protection;
+- structural fire performance.
 
-## 19. Boundary families package bounded knowledge
+Novel or project-specific fire engineering remains external unless a bounded method has genuinely been admitted.
 
-A supported boundary family may combine:
+## Boundary families and transition families
+
+A supported technical family can package bounded knowledge about:
 
 - physical assembly;
 - boundary roles;
-- calculation method;
+- applicable method;
 - test/classification evidence;
 - parameter envelope;
 - compatible transitions and penetrations;
 - inspection requirements;
 - exclusions.
 
-~~~text
-WALL FAMILY WF-01
-carries:
-  WEATHER WEA-01
-  THERMAL THM-01
-  AIR AIR-01
-  MOISTURE MOI-01
+Transitions may be more valuable than generic field details because failures and conflicting duties concentrate at junctions.
 
-compatible:
-  WINDOW INTERFACE WI-01
-  FLOOR EDGE FE-01
-  SERVICE PENETRATION SP-01
-~~~
+Typical transition families could include:
 
-This is the beginning of a performance-aware standard library, not evidence that the present executable kernel implements such a library.
+- wall-to-window;
+- wall-to-floor edge;
+- wall-to-roof;
+- wall-to-foundation;
+- service entry;
+- rainwater outlet;
+- ventilation terminal.
 
-## 20. Transitions deserve standard-library identity
+The present compiler does **not** contain a release-grade technical-family library. Family identity is useful only where backed by real evidence and a controlled scope.
 
-Field walls are often easier than junctions. Reusable transition families may therefore become more valuable than generic detail drawings.
+## Maintenance changes boundary state
 
-Likely families include wall-to-window head/jamb/sill, wall-to-floor edge, wall-to-roof, wall-to-foundation, service entry, rainwater outlet and ventilation terminal.
+Replacement can intentionally open a boundary without destroying the architectural strategy.
 
-Each can carry several boundary roles and a declared evidence envelope.
+For a window replacement, for example:
 
-## 21. Maintenance changes boundary state
-
-For each removal or replacement action, record which boundaries open, which are exposed, which remain intact, which need reinstatement and what evidence confirms restoration.
-
-~~~text
+```text
 REMOVE WINDOW WIN01
 
 permanent opening:
   remains
 
-weather seal:
+weather transition:
   intentionally opened
   must be reinstated
 
@@ -296,143 +360,46 @@ air transition:
   intentionally opened
   must be reinstated
 
-thermal wall:
+thermal field:
   local interface exposed
-  bulk field remains
+  bulk wall remains
+```
 
-masonry:
-  no destructive change intended
-~~~
+This lets replacement become a declared state transition rather than an unmodelled demolition event.
 
-Replacement then becomes an explicit state transition rather than an unmodelled demolition event.
+## Boundaries accumulate evidence through time
 
-## 22. Boundaries accumulate evidence through time
+Design may rely on detail families, calculations and test data. Construction may add substrate inspection, product identity and concealed-work records. Commissioning may add airtightness or other tests. Later maintenance can add resealing, repair or failure history.
 
-Design may rely on details, calculations and tested systems. Construction may add substrate inspection, product identity and concealed-work records. Commissioning may add airtightness or other tests. Later maintenance can add resealing, repair or failure history.
+These evidence phases attach to the same semantic boundary system while remaining different kinds of evidence.
 
-These are different evidence phases attached to the same boundary graph.
+## Boundary objectives can conflict
 
-## 23. Boundary objectives can conflict
+Ventilation competes with airtightness. Drainage openings compete with pest exclusion. Acoustic decoupling can compete with structural restraint. Removable access can compete with fire/acoustic closure. Vapour resistance can compete with drying.
 
-Ventilation competes with airtightness; drainage openings with pest exclusion; acoustic decoupling with structural restraint; removable access with fire/acoustic closure; vapour resistance with drying.
+The computational objective is not to maximise every boundary independently. It is to expose interfaces where one requirement changes another.
 
-The compiler should not “maximise” each boundary independently. It should identify interfaces where one objective changes another.
+## Anti-drift rules
 
-## 24. S0 minimum boundary set — historical fixture
-
-The first paper slice exercised:
-
-### BND-S0-01 — Weather path
-The external wall/window junction has an explicit weathering and drainage strategy.
-
-### BND-S0-02 — Thermal continuity
-The wall/window/floor region declares a thermal-boundary path and leaves unresolved bridge obligations visible.
-
-### BND-S0-03 — Air continuity
-The primary air boundary is explicit through wall, window, floor and service conditions.
-
-### BND-S0-04 — Moisture strategy
-The wall family declares a wetting, drainage and drying strategy.
-
-### BND-S0-05 — Service penetration
-`P01` identifies each boundary crossed and how it is treated.
-
-### BND-S0-06 — Replaceable window
-Removing `WIN01` preserves the permanent opening and creates explicit boundary-reinstatement obligations.
-
-### BND-S0-07 — Removable lining comparison
-In S0-B, removing the W2 lining does not silently remove the primary environmental boundaries.
-
-### BND-S0-08 — Evidence state
-Every boundary claim is natively resolved, externally evidenced, unresolved, unsupported or planned for later physical verification.
-
-## 25. S0 mutation expectations — historical fixture
-
-### M1 — Widen window
-
-Window/wall transition geometry changes; thermal and water-detail evidence may become stale; air-seal geometry changes. Unrelated service-penetration evidence should remain valid.
-
-### M2 — Arbitrary service chase / penetration
-
-Identify every crossed boundary and generate the relevant reinstatement obligations. If no supported penetration family applies, fail or report unsupported rather than silently drawing the hole.
-
-### M3 — Obstruct window withdrawal
-
-Maintenance validity fails while existing boundary-design evidence generally remains current. This tests dependency separation.
-
-### M4 — W2 background out of tolerance
-
-If boundary independence is real, the environmental field boundary behind the lining remains semantically intact while the lining/interface/workmanship state fails separately.
-
-## 26. Compiler targets decide which obligations apply
-
-The ontology should remain durable while targets select applicable performance requirements and evidence routes.
-
-Approved Documents C, L, B, E, F and O, for example, may inform moisture, thermal/energy, fire, sound, ventilation and overheating rules for an England target. Their editions and transition dates belong to target provenance, not to the boundary ontology itself.
-
-## 27. Specialist physics engines can remain specialist
-
-The semantic model may generate inputs for U-value, thermal-bridge, hygrothermal, acoustic or fire-classification methods without reimplementing them.
-
-The compiler's job may simply be to know the obligation exists, construct or request the correct input, invoke or accept a validated method, retain the result/evidence and invalidate it when dependencies change.
-
-## 28. Anti-drift rules
-
-- An external wall is not one generic boundary; several performance systems may cross it differently.
-- A coloured line does not prove continuity through transitions, openings and penetrations.
-- A removable lining may carry a critical boundary only if the selected strategy explicitly accepts its removal and reinstatement.
+- An external wall is not one generic boundary.
+- A coloured line does not prove continuity through openings and junctions.
+- A removable lining may carry a critical boundary only if the selected strategy accepts its removal/reinstatement consequences.
 - A penetration is a typed boundary event, not just geometry.
-- Fire claims require function, scope and evidence; `fire-safe` is not a generic wall property.
-- More vapour resistance is not automatically safer; moisture strategy is assembly-specific.
-- One seal may contribute to air, water, fire or sound, but those obligations remain distinct.
+- Fire claims require function, scope and evidence.
+- More vapour resistance is not automatically safer.
+- One seal can contribute to several boundaries without making those obligations identical.
 - The compiler need not reimplement every building-physics engine.
 
-## 29. Boundary-family results from the paper programme
+## Current executable boundary
 
-The original S0 tasks—defining wall/window/floor boundary roles, air-control continuity, penetration semantics and evidence invalidation—were subsequently exercised through S0→H1 paper research.
+The present compiler represents weather, air, thermal and moisture boundary systems independently across the Reference House; turns openings and selected service crossings into explicit transition/reinstatement obligations; derives roof catchments and drainage relationships from canonical geometry; and prevents critical slow-envelope functions from migrating accidentally onto routinely removable layers.
 
-That work produced several bounded research families:
+It does **not** prove U-values, thermal bridges, condensation safety, fire resistance, acoustic performance, airtightness or whole-envelope physical adequacy.
 
-### BF-WIN-MCW-01
+Those remain external methods/evidence until a bounded technical method is deliberately admitted.
 
-[Window in Partial-Fill Masonry Cavity Wall](boundary-family-window-masonry-v01.md)
+## Reference points
 
-Covers window weather, moisture, thermal, air transition and replacement contribution.
-
-### BF-CORNER-MCW-01
-
-[Orthogonal Masonry Cavity-Wall External Corner](boundary-family-external-masonry-corner-v01.md)
-
-Covers continuity of the cavity/weather strategy, insulation turn, room-side air-control turn, structural-corner identity and workmanship/evidence.
-
-### BF-GF-MCW-01
-
-[Ground Floor to Masonry Cavity Wall Perimeter](boundary-family-ground-floor-masonry-v01.md)
-
-Covers DPC/DPM moisture continuity, floor/wall thermal-junction identity, air-boundary transition and ground/substructure evidence dependency.
-
-### PEN-ENV-01
-
-[Controlled Service Penetration Through External Envelope](boundary-family-controlled-penetration-v01.md)
-
-Covers explicit host-boundary crossings and evidence-backed reinstatement without pretending the penetration family itself proves structural, weather, fire or acoustic adequacy.
-
-These families deliberately allow scoped external technical evidence. “Supported research family” means the semantic route and required evidence are bounded and known; it does **not** mean every physical-performance calculation is native or executable.
-
-## 30. Current research boundary
-
-P0 has demonstrated generic source relationships, boundary-role obligation derivation and evidence-scope/invalidation behaviour at deliberately small scale. It has not implemented the full boundary ontology or the H1 family library.
-
-The live questions now belong primarily to Reference House detail coordination, physical prototypes and competent fire/building-physics/building-control review. Add computational boundary machinery only when those workstreams expose a concrete representational or evidence problem worth formalising.
-
----
-
-## External anchors
-
-- UK Government, **Approved Document C — Site preparation and resistance to contaminants and moisture**: https://www.gov.uk/government/publications/site-preparation-and-resistance-to-contaminates-and-moisture-approved-document-c
-- UK Government, **Approved Document L 2026 — Energy and greenhouse gas emissions**: https://www.gov.uk/government/publications/approved-document-l-2026
-- UK Government, **Approved Document B — Fire safety**: https://www.gov.uk/government/publications/fire-safety-approved-document-b
-- UK Government, **Approved Document E — Resistance to sound**: https://www.gov.uk/government/publications/resistance-to-sound-approved-document-e
-- UK Government, **Approved Document F 2026 — Ventilation**: https://www.gov.uk/government/publications/approved-document-f-2026
-- UK Government, **Approved Document O — Overheating**: https://www.gov.uk/government/publications/overheating-approved-document-o
-- existing project coordination: `docs/reference-house/vertical-bay-coordination.md`
+- UK Government, Approved Documents B, C, E, F, L and O where relevant to England target research.
+- [Vertical Interface Coordination](../reference-house/vertical-bay-coordination.md) for the current Reference House junction strategy.
+- [Replaceable Wall Lining](../research/replaceable-wall-system-options.md) for the boundary-independence problem at removable room finishes.
