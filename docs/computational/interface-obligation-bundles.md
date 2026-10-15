@@ -1,59 +1,229 @@
 # Interface Obligation Bundles
 
-**Status:** frozen paper-research abstraction; validated provisionally across two S0 interfaces and one composed wall-bay study  
-**Purpose:** package recurring multi-domain consequences behind meaningful architectural relationships while preserving fine-grained proof, authority and evidence internally.  
-**Executable status:** no generic bundle subsystem has been implemented; P0 demonstrates the lower-level obligation/evidence mechanism without requiring one.
+An ordinary architectural interface can create consequences across several technical systems at once.
 
-## Why this layer exists
+A window in a masonry wall may involve geometry, structure, weather, moisture, thermal continuity, air continuity, fire, acoustics, tolerance, replacement and evidence. A floor-to-wall edge may involve gravity support, wall restraint, diaphragm action, movement, acoustics, fire closure and finish geometry.
 
-S0 Paper Compilation Run 01 exposed a scaling risk:
+The useful abstraction is an **interface obligation bundle**:
 
-> one ordinary architectural junction can generate dozens of legitimate proof obligations.
+> **A meaningful architectural relationship contributes facts and constraints to several shared domain graphs, from which canonical obligations are derived.**
 
-The solution is not to delete those obligations.
+The important word is **contributes**. A bundle should not become a second source of truth or a manually maintained checklist that duplicates the building model.
 
-It is to make them **generated internals of compositional architectural interfaces**, while deriving cross-interface obligations from the composed building graphs rather than concatenating independent checklists.
+## Why bundles exist
 
-The ordinary author should manipulate:
+Without a higher-level authoring abstraction, a simple operation can create an expert-only forest of consequences.
 
-- window in wall;
-- floor meeting wall;
-- roof meeting wall;
-- service crossing boundary;
+```text
+PLACE WINDOW IN EXTERNAL WALL
+        ↓
+geometry / structure / weather / air / thermal / acoustic / fire / maintenance / evidence consequences
+```
 
-rather than maintain a compliance checklist by hand.
+Those consequences are legitimate. Requiring an author to create each one manually is not.
 
-## Paper-research bundles
+The author should manipulate the meaningful architectural relationship. The system should derive the applicable obligations from the composed building state.
 
-- [Window in Masonry Cavity Wall](interface-bundle-window-masonry.md) — opening, structure, weather, thermal, air, fire, replacement, tolerance and evidence.
-- [Floor to Masonry Wall](interface-bundle-floor-masonry.md) — support, restraint, diaphragm, movement, boundaries, tolerance and evidence.
+## The wrong model — concatenate checklists
 
-## Finding
+A naive implementation might let each local interface emit its own final obligations:
 
-The same bundle machinery survived two materially different interfaces.
+```text
+WALL bundle      → air continuity check
+WINDOW bundle    → air continuity check
+FLOOR bundle     → air continuity check
+PENETRATION      → air continuity check
+```
 
-A subsequent composition test corrected the abstraction: bundles contribute graph fragments, local constraints and evidence dependencies; canonical cross-interface obligations are derived from the composed graphs.
+That creates duplicates and raises an impossible later question: which obligation is the real one?
 
-See [Assembly Composition Test 01](assembly-composition-s0-wall-bay.md).
+The correct model is:
 
-This supports **Interface Obligation Bundle** as a useful paper-model construct. It does not establish a required implementation primitive or justify a catalogue of bundles for its own sake.
+```text
+AUTHORING RELATIONSHIPS
+        ↓
+LOCAL CONTRIBUTIONS
+        ↓
+SHARED DOMAIN GRAPHS
+        ↓
+CANONICAL OBLIGATION DERIVATION
+        ↓
+EVIDENCE / STATUS
+```
 
-## Composition result
+The wall, window, floor edge and penetration all contribute to one air-boundary graph. Continuity is evaluated on the composed graph rather than by de-duplicating independent checklist entries afterwards.
 
-The first composition test used:
+## Bundle contents
 
-~~~text
-EXTERNAL WALL BAY ASSEMBLY
-  ├── window/wall bundle
-  ├── floor/wall bundle
-  ├── service-penetration bundle
-  └── wall boundary family
-~~~
+A useful bundle can contribute:
 
-The key result is that shared obligations should not be “merged” after independent generation. Interface families should contribute to common AIR / THERMAL / STRUCTURAL / other domain graphs first, and canonical obligations should derive from the composed state.
+- semantic graph fragments;
+- local invariants or constraints;
+- applicability facts;
+- required relationships;
+- evidence dependencies;
+- known boundary transitions;
+- maintenance or replacement consequences.
 
-Later S0/S1/S2/H1 paper work and the P0 kernel reinforced the more general lesson: **obligations belong to composed building relationships, not to duplicated checklists attached to labels.** P0 did not need an explicit bundle entity to demonstrate that mechanism.
+It should not own authoritative copies of source geometry, product identity or final evidence state.
 
-## Programme consequence
+For example, an opening width belongs to the canonical opening occurrence. Structural, weather, thermal, quantity and grammar reasoning should reference that fact rather than each storing its own copy.
 
-Do not proliferate bundle records by default. Add or formalise one only when a live architectural or technical workstream shows that the abstraction reduces complexity without becoming a second source of truth.
+## Example — window in masonry
+
+A window occurrence inside a permanent masonry opening may contribute:
+
+### Spatial / geometric
+
+- opening hosted by the correct wall;
+- frame fits the declared opening/tolerance relationship;
+- withdrawal geometry remains possible where replacement is claimed.
+
+### Structural
+
+- head support obligation;
+- residual jamb/pier/support conditions;
+- reactions or support geometry where represented.
+
+### Boundary
+
+- weather transition;
+- air transition;
+- thermal transition;
+- moisture/drainage path;
+- acoustic or fire duties where applicable.
+
+### Lifecycle
+
+- permanent opening remains when frame is removed;
+- replaceable seals and interfaces are reinstated;
+- sound permanent fabric is not consumed unnecessarily.
+
+### Evidence
+
+- product/system evidence applies only within its declared scope;
+- changed geometry can stale the relevant evidence without staling unrelated evidence elsewhere.
+
+The bundle is not itself the window detail. It defines what the composed relationship commits the building to resolving.
+
+## Example — floor to masonry wall
+
+A floor edge may contribute:
+
+- gravity-support relationship;
+- bearing or hanger condition;
+- wall restraint;
+- diaphragm transfer;
+- movement and tolerance;
+- air/thermal boundary transition at the envelope;
+- fire/acoustic closure where applicable;
+- inspection and repair obligations.
+
+The detail may use conventional hangers, direct bearing or another engineered family. The bundle does not preselect that implementation. It keeps the obligations visible so a chosen family has something explicit to discharge.
+
+## Obligation ownership and contribution scope
+
+The same entity can contribute facts to propositions evaluated at several scopes.
+
+A window may contribute to:
+
+- occurrence-level glazing safety;
+- interface-level envelope continuity;
+- room-level purge ventilation;
+- elevation-level fire reasoning;
+- whole-building overheating analysis.
+
+Those are not duplicate window obligations. The **subject of the proposition** owns the obligation; the window contributes facts.
+
+Useful evaluation scopes may include:
+
+`OCCURRENCE` / `INTERFACE` / `ROUTE` / `ROOM` / `ELEVATION` / `SYSTEM` / `BUILDING` / `SITE-TARGET`
+
+These are conceptual scopes rather than a mandatory software enum.
+
+## Contextual roles
+
+A physical entity should not become a god-object with permanent fields for every possible analysis.
+
+Prefer:
+
+```text
+STABLE ENTITY
+    +
+TYPED RELATIONSHIPS / CONTEXT MEMBERSHIPS
+    +
+SCOPE-SPECIFIC DERIVED OBLIGATIONS
+```
+
+A door can simultaneously be part of ordinary circulation, a selected escape route, an acoustic separation and an architectural hierarchy without those roles becoming intrinsic universal properties of “Door”.
+
+## Interface bundle versus implementation family
+
+These are different abstractions.
+
+### Interface obligation bundle
+
+Defines **what the relationship commits the building to resolving**.
+
+### Implementation family
+
+Defines **how a bounded physical solution can discharge those obligations**, with geometry, product/system conditions and evidence.
+
+Keeping them separate prevents a detail family from becoming the only imaginable architectural solution and prevents the abstract bundle from pretending it proves physical performance.
+
+## Evidence and invalidation
+
+Each derived obligation can be supported by evidence appropriate to its authority and scope.
+
+Change should invalidate evidence selectively.
+
+For example, widening a window may stale:
+
+- structural head-support evidence;
+- thermal-junction evidence;
+- window family/product evidence;
+- weather-transition detail evidence.
+
+It should not automatically stale an unrelated service penetration elsewhere on the building merely because both belong to the envelope.
+
+The shared dependency graph provides that selectivity.
+
+## Relation to patterns
+
+A selected pattern may explain why an interface or project requirement exists. It does not become the machine authority for the technical obligations generated by that interface.
+
+The chain remains:
+
+```text
+architectural intent / pattern provenance
+        ↓
+project requirement
+        ↓
+source entities + relationships
+        ↓
+shared domain graphs
+        ↓
+canonical obligations
+        ↓
+evidence / determination
+```
+
+Pattern provenance and technical validity remain deliberately separable.
+
+## Anti-drift rules
+
+- Bundles are not independent checklists.
+- Bundles do not duplicate canonical source geometry.
+- Several local relationships may contribute to one domain obligation.
+- The subject of a proposition owns the obligation; contributors supply facts.
+- A bundle does not prove an implementation family.
+- Pattern selection does not upgrade technical authority.
+- Bundle-level summaries must never hide failed mandatory underlying obligations.
+
+## Current executable boundary
+
+The present compiler already exercises the crucial underlying behaviour without requiring a universal runtime “bundle” object: ordinary source relationships feed shared structural, service and boundary semantics; selected crossings generate obligations; evidence remains scoped; and changes propagate through canonical source identity.
+
+The bundle abstraction remains useful for authoring and explanation. It should become additional software machinery only where doing so simplifies a real interface case without introducing duplicate truth.
+
+See [Formal Architectural Model](formal-architectural-model.md), [Validity and Obligations](validity-and-obligations.md) and [Boundary Semantics](boundary-semantics.md).

@@ -1,168 +1,112 @@
-# External Evidence Trial 01 — Mapei Mapeguard WP System
+# Scoped Manufacturer Evidence — Mapei Mapeguard WP
 
-**Status:** completed structured product/system-evidence trial  
-**Date:** 2026-10-04  
-**Applies to:** [WZ-BSM-01 — Bonded Sheet-Membrane Wet Room](wet-zone-family-bonded-sheet-v01.md)  
-**Purpose:** test whether the compiler's evidence/provenance model can scope real public manufacturer evidence without converting a product brochure into a whole-building proof.
+A product page or technical manual can be useful evidence without becoming proof of the whole assembly, room or building around it.
 
-## 1. Trial question
+The Mapei **Mapeguard WP System**, centred on Mapeguard WP 200, provides a concrete example of how House Kernel can scope real manufacturer evidence: identify exactly what the source supports, preserve the system relationships on which that support depends, and keep all other architectural and technical obligations separate.
 
-Can a real proprietary wet-room system be represented as external evidence strongly enough that the compiler can answer:
+This is an evidence-modelling example, not a product endorsement or permanent Reference House specification.
 
-- what exact propositions the evidence supports;
-- which model conditions it applies to;
-- which accessories and substrate assumptions are part of the system;
-- which claims remain outside the manufacturer's evidence;
-- what changes make the evidence stale;
-- whether a product substitution is genuinely equivalent rather than merely similar?
+## Source package
 
-The selected reference package is Mapei's UK **Mapeguard WP System**, centred on Mapeguard WP 200.
+The example uses public Mapei UK material current to the recorded source set.
 
-This is an evidence-model test, not a product endorsement or permanent project specification.
+### Mapeguard WP 200 product information
 
-## 2. Source set
+Within its stated conditions, the product information supports claims concerning:
 
-The trial uses current public Mapei UK material available in October 2026.
+- product identity;
+- intended internal wet-area waterproofing and anti-fracture use;
+- example applications including bathrooms and showers;
+- substrate compatibility categories;
+- material properties and installation recommendations.
 
-### EVD-WZ-001 — Mapeguard WP 200 UK product page / technical data
+### Mapeguard WP Adhesive product information
 
-Supports, within its stated conditions:
+Supports the identity and intended role of the adhesive in bonding and sealing overlaps and compatible system accessories.
 
-- identity of Mapeguard WP 200;
-- intended internal waterproofing/anti-fracture use;
-- domestic/hotel bathrooms and private/commercial showers as example applications;
-- compatibility categories for moisture-sensitive and mineral substrates;
-- basic material/properties and installation recommendations.
+### Mapeguard WP System technical manual
 
-Source:
-
-https://www.mapei.com/gb/en/products-and-solutions/products/detail/mapeguard-wp-200
-
-### EVD-WZ-002 — Mapeguard WP Adhesive UK product page
-
-Supports:
-
-- identity and intended role of Mapeguard WP Adhesive;
-- sealing/bonding overlaps of Mapeguard WP 200;
-- bonding/sealing Mapeguard ST, IC, EC and PC accessories;
-- wall/floor application role.
-
-Source:
-
-https://www.mapei.com/gb/en/products-and-solutions/products/detail/mapeguard-wp-adhesive
-
-### EVD-WZ-003 — Mapeguard WP System technical manual / brochure
-
-Supports the **system relationship** between components, including:
+Supports the relationship among system components such as:
 
 - Mapeguard WP 200 membrane;
 - WP Adhesive;
-- ST sealing strip;
-- IC / EC corner pieces;
-- PC pipe collars;
+- sealing strip;
+- internal/external corner pieces;
+- pipe collars;
 - compatible substrate adhesives;
-- drain / shower interface examples;
+- selected drain/shower interface examples;
 - tiled finish build-up.
 
-Source:
+### Mapei UK outline specification
 
-https://cdnmedia.mapei.com/docs/librariesprovider2/lines-technical-documentation/brochure-mapeguard-wp-system-12-2024-en.pdf
+This is particularly valuable evidence because it describes dependencies and installation sequence rather than simply advertising a product.
 
-### EVD-WZ-004 — Mapei UK outline specification LR/OS013/2025
+It establishes conditions concerning substrate preparation, bonding, overlaps, junction strips, corner pieces, pipe collars, drain treatment and compatible finish adhesives within the cited system.
 
-This is particularly useful to the compiler because it states an installation sequence and dependencies rather than merely describing a product.
+### Formal assessment / declaration material
 
-It requires, among other things:
+Where a real project relies on an ETA, DoP or another formal assessment, the exact document and revision actually relied upon must become part of the project evidence set.
 
-- dry, stable, sound, flat substrate;
-- substrate-specific preparation/primer where applicable;
-- WP 200 bonded with a suitable Mapei adhesive;
-- sheet overlap of at least the stated system width;
-- overlaps sealed with WP Adhesive;
-- floor/wall and sheet junctions sealed with ST;
-- IC/EC at corners;
-- PC accessories around pipes;
-- a defined drain-junction sealing method;
-- compatible tiling adhesive.
+An assessment identifier by itself is not proof that an installed bathroom satisfies the complete system.
 
-Source:
+## What the evidence can establish
 
-https://cdnmedia.mapei.com/docs/librariesprovider12/default-document-library/mapeguard-wp-system---outline-specification.pdf
+Within matching conditions, the manufacturer package can support propositions such as:
 
-### EVD-WZ-005 — product/system assessment / declaration source
-
-Where a project relies on an ETA/DoP or other formal technical assessment for acceptance, the exact applicable document, revision and declared intended use must be included in the project evidence package.
-
-A historic/current Mapeguard WP system declaration identifies ETA 15/0257 for the flexible wet-room sheet system. The compiler must retain the exact document actually relied upon at project time rather than merely storing the number.
-
-This trial does **not** treat the ETA identifier alone as proof of the complete installed bathroom.
-
-## 3. What the evidence proves
-
-Within matching model conditions, the package can credibly support propositions such as:
-
-~~~text
+```text
 PRODUCT = Mapeguard WP 200
-INTENDED USE includes internal wet-area waterproofing under supported finishes
-SYSTEM ACCESSORIES include ST / IC / EC / PC / WP Adhesive
-PIPE PENETRATION has an evidence-backed accessory route
-CORNER / JUNCTION has an evidence-backed system route
-SHEET OVERLAP has an evidence-backed bonding/sealing route
-SUBSTRATE must satisfy declared preparation / compatibility conditions
-FINISH ADHESIVE must satisfy the declared system route
-~~~
+INTENDED USE includes supported internal wet-area waterproofing
+SYSTEM includes defined compatible seam / corner / penetration accessories
+PIPE PENETRATION has an evidence-backed system treatment
+CORNER / JUNCTION has an evidence-backed system treatment
+SHEET OVERLAP has an evidence-backed bonding / sealing route
+SUBSTRATE must satisfy declared compatibility / preparation conditions
+FINISH ADHESIVE must follow an admitted system route
+```
 
-That is already useful.
+This is useful because it turns a vague instruction such as “waterproof the bathroom” into a network of traceable product/system conditions.
 
-It turns a vague source condition:
+## What it does not establish
 
-> waterproof the bathroom
+The same package does **not** establish:
 
-into a traceable network of product/system obligations.
+- adequate floor falls;
+- hydraulic drain sizing;
+- exact drain geometry for a particular bathroom;
+- structural adequacy of a recess or opening;
+- installer workmanship;
+- absence of later punctures;
+- accessibility compliance;
+- serviceability of concealed valves;
+- physical watertightness of the installed room;
+- interchangeability with another manufacturer’s membrane/accessories;
+- whole-building Building Regulations compliance.
 
-## 4. What it does not prove
+Those remain separate obligations and evidence questions.
 
-The same evidence package does **not** prove:
+The central rule is:
 
-- that the floor has adequate falls;
-- that the drain is correctly sized hydraulically;
-- that the selected drain geometry actually matches the detailed membrane transition;
-- that the floor structure can accommodate the recess/opening;
-- that the installer followed the specification;
-- that there are no accidental punctures after membrane inspection;
-- that the room passes accessibility requirements;
-- that the shower valve remains maintainable;
-- that the physical installation is watertight;
-- that another manufacturer's membrane/accessories are interchangeable;
-- that the whole building complies with Building Regulations.
+> **External evidence becomes more trustworthy when its authority is narrowed to what it actually supports.**
 
-Those are separate obligations/evidence items.
+## Evidence object
 
-This is the central success condition of the trial: **real evidence becomes more useful when its authority is narrowed rather than inflated.**
+A machine-independent representation might record:
 
-## 5. Evidence object
-
-A useful machine-independent representation is approximately:
-
-~~~text
+```text
 EvidenceItem
-  id: EVD-WZ-003
   class: manufacturer-system-technical-evidence
   issuer: Mapei UK Ltd
-  title: Mapeguard WP System technical manual
-  source_uri: <public source>
-  retrieved_at: 2026-10-04
   product_family: Mapeguard WP System
+  source_identity: exact document / page / revision
   supported_claims:
-    - membrane intended for supported internal wet-area use
+    - intended wet-area use
     - system component relationships
-    - seam/corner/pipe treatment route
+    - seam / corner / pipe treatment route
     - selected drain-interface route
   applicability:
-    - substrate ∈ supported/prepared substrate set
-    - membrane = compatible WP-system membrane
-    - accessories = compatible WP-system accessories
-    - installation follows cited system detail
+    - supported prepared substrate
+    - compatible membrane and accessories
+    - cited installation route
   excludes:
     - structural adequacy
     - drainage hydraulic design
@@ -170,170 +114,98 @@ EvidenceItem
     - physical watertightness verification
   depends_on:
     - product identity
-    - substrate identity/condition
+    - substrate condition
     - accessory identities
-    - relevant interface geometries
+    - relevant interface geometry
     - document revision
-~~~
+```
 
-The syntax is illustrative only.
+The syntax is illustrative. The important thing is that scope and dependencies are explicit.
 
-## 6. System evidence versus component evidence
+## Component, system and installed-instance evidence
 
-This trial exposes an important evidence distinction.
+Three evidence levels should not collapse into one another.
 
 ### Component claim
 
-Example:
+“Mapeguard WP 200 is intended for supported internal wet-area waterproofing.”
 
-> Mapeguard WP 200 is intended for internal wet-area waterproofing.
-
-This can be supported by the product technical data.
+This can be supported by product technical data.
 
 ### System claim
 
-Example:
+“This corner using compatible membrane, strip, adhesive and corner piece follows an evidenced Mapeguard system route.”
 
-> this wall/floor corner using WP 200 + ST + WP Adhesive + IC is a supported Mapeguard system detail.
-
-This depends on multiple components and their relationship.
+This depends on several products and their relationship.
 
 ### Installed-instance claim
 
-Example:
+“This particular bathroom corner was installed in conformity with that system.”
 
-> the north-east corner of bathroom B-02 was installed in conformity with that detail.
+That additionally requires physical/as-built evidence.
 
-This additionally requires physical/as-built evidence.
+A technical-data sheet can support the first two levels within scope. It cannot create the third by itself.
 
-The compiler must not collapse these three scopes.
+## Applicability example
 
-## 7. Applicability test — baseline H1 wet room
+Consider a wet-room occurrence using:
 
-Assume a future H1 wet-room occurrence with:
-
-- stable cement-based tile backer / mineral substrate;
+- stable compatible mineral/tile-backer substrate;
 - Mapeguard WP 200 over the defined wet boundary;
-- Mapeguard WP Adhesive at system seams/details;
-- ST at wall/floor junctions;
-- IC/EC at applicable corners;
-- PC at pipe penetrations;
-- evidence-backed drain interface;
-- compatible Mapei C2/R2-class substrate/tile adhesive route as applicable;
+- WP Adhesive at system seams/details;
+- compatible strip/corner/pipe accessories;
+- an evidence-backed drain interface;
+- compatible substrate and tiling adhesives;
 - tiled finish.
 
-Result:
+A legitimate conclusion is:
 
-**PRODUCT/SYSTEM APPLICABILITY: PLAUSIBLE / SCOPED PASS SUBJECT TO EXACT TECHNICAL DOCUMENT AND DETAIL SELECTION**
+**manufacturer system evidence is potentially applicable subject to the exact cited technical documents, detail geometry and installation conditions.**
 
-Still unresolved:
+Still unresolved are floor falls, structural openings, the exact drain, physical installation and any project-specific access or compliance obligations.
 
-- floor falls;
-- structural recess/opening;
-- exact drain product/interface;
-- actual installation evidence.
+That separation is the useful result.
 
-This is the correct result.
+## Selective invalidation examples
 
-## 8. Mutation tests
+### Substitute the membrane brand
 
-### EVD-M01 — substitute the membrane brand only
+Changing only the field membrane invalidates Mapeguard-system claims that depend on Mapeguard WP 200. The room geometry may remain unchanged and a generic bonded-membrane design family may remain plausible, but alternate system evidence is required.
 
-Change:
+### Substitute the pipe collar
 
-Mapeguard WP 200 → another bonded sheet membrane.
+Changing only the pipe collar can stale the penetration-specific system evidence while leaving unrelated field-membrane or corner evidence current.
 
-Keep:
+### Change substrate
 
-- WP Adhesive;
-- ST;
-- IC/EC;
-- PC;
-- drain detail.
+A substrate change requires re-evaluation against the manufacturer’s applicability and preparation conditions. The manufacturer may permit a substrate that the project nevertheless rejects on robustness or lifecycle grounds.
 
-Expected:
+> **Manufacturer applicability and project acceptability are different validity dimensions.**
 
-- EVD-WZ-001 applicability fails;
-- Mapei system-evidence claims depending on WP 200 fail/stale;
-- geometry unchanged;
-- generic WZ-BSM-01 family may remain viable;
-- alternate product-system evidence required.
+### Add a penetration after inspection
 
-**PASS — selective evidence invalidation is intelligible.**
+A new pipe may have an available supported collar detail, yet previously accepted physical membrane evidence becomes incomplete for the changed occurrence. New system treatment and physical inspection are required; unrelated parts of the room need not become stale.
 
-### EVD-M02 — substitute only the pipe collar
+### Move the drain
 
-Replace Mapeguard PC with an unrelated generic collar.
+Drain-transition and floor-fall evidence may become stale while field-membrane product evidence remains applicable. Structural-opening evidence can change independently again.
 
-Expected:
+### New manufacturer revision
 
-- pipe-penetration system evidence stale;
-- other membrane field/corner evidence may remain current;
-- whole wet-boundary release fails until equivalent compatibility is evidenced.
+The previous document does not disappear from the historical record. A new compile or project state must decide whether the earlier revision remains applicable. A URL alone is insufficient: document identity and revision matter.
 
-**PASS.**
+## Substitution is an evidence question
 
-### EVD-M03 — change substrate
+The system must not reason:
 
-Stable cement board → ordinary gypsum plasterboard.
-
-Expected:
-
-- substrate applicability/preparation re-evaluates;
-- Mapei's product evidence may still permit some gypsum substrates under defined conditions;
-- H1 generic family preference for moisture-robust substrate is a separate doctrine/family rule and may reject the baseline even where manufacturer evidence is technically permissive.
-
-This is a valuable demonstration:
-
-> **manufacturer applicability and project/doctrine acceptability are different validity dimensions.**
-
-**PASS.**
-
-### EVD-M04 — add a new pipe after membrane inspection
-
-Expected:
-
-- product family can theoretically support a collar detail;
-- existing as-built membrane evidence becomes stale;
-- new penetration occurrence + collar evidence + new inspection required;
-- unrelated corners remain current.
-
-**PASS.**
-
-### EVD-M05 — move the drain
-
-Expected:
-
-- membrane field product evidence remains potentially current;
-- drain-transition detail applicability and floor-fall evidence stale;
-- structural opening may stale independently.
-
-**PASS.**
-
-### EVD-M06 — newer manufacturer document issued
-
-Expected:
-
-- previous evidence does not disappear from a historical released build;
-- new compilation/project target must decide whether the previous revision remains acceptable/applicable;
-- source URI alone is insufficient: evidence needs document identity/revision/retrieval/version metadata.
-
-**PASS.**
-
-## 9. Substitution rule
-
-The compiler must not implement:
-
-~~~text
+```text
 category = waterproof membrane
 → any waterproof membrane may substitute
-~~~
+```
 
-Instead, substitution asks whether the proposed replacement carries enough evidence to discharge the same scoped obligations.
+Instead it asks whether the proposed replacement carries enough evidence to discharge the same scoped obligations.
 
-Conceptually:
-
-~~~text
+```text
 OLD SYSTEM
   membrane A
   adhesive A
@@ -348,89 +220,75 @@ NEW SYSTEM
 
 RESULT
   NOT EQUIVALENT YET
-  missing evidence for seam/corner/penetration/drain relationships
-~~~
+  missing evidence for seam / corner / penetration / drain relationships
+```
 
-This is directly aligned with the Long-Life House preference for ordinary replaceable parts **without pretending interfaces are generic when they are not**.
+This preserves commodity replaceability where it is real without pretending interfaces are generic when they are not.
 
-## 10. Evidence dependency graph
+## Evidence dependency graph
 
-A simplified dependency graph is:
+The wet-boundary example can be represented approximately as:
 
-~~~text
+```text
 SUBSTRATE TYPE / CONDITION
       ↓
-SUBSTRATE ADHESIVE / PREP
+SUBSTRATE ADHESIVE / PREPARATION
       ↓
-WP 200 FIELD MEMBRANE
-      ├───────────┬───────────┬────────────┐
-      ↓           ↓           ↓            ↓
-   SEAMS        CORNERS     PIPE COLLARS   DRAIN INTERFACE
-      │           │           │            │
-      └───────────┴───────────┴────────────┘
-                      ↓
-              WET BOUNDARY CONTINUITY
-                      ↓
-            PHYSICAL INSTALLATION EVIDENCE
-~~~
+FIELD MEMBRANE
+      ├──────────┬───────────┬────────────┐
+      ↓          ↓           ↓            ↓
+   SEAMS       CORNERS    PIPE COLLARS   DRAIN INTERFACE
+      │          │           │            │
+      └──────────┴───────────┴────────────┘
+                     ↓
+             WET-BOUNDARY CONTINUITY
+                     ↓
+           PHYSICAL INSTALLATION EVIDENCE
+```
 
 The field membrane is necessary but insufficient.
 
-## 11. Evidence lifecycle
+## Evidence lifecycle
 
-The product/system package should move through at least:
+A useful sequence is:
 
-~~~text
-CANDIDATE
-  ↓ exact product/system selected
-APPLICABLE TO DESIGN
+```text
+CANDIDATE PRODUCT / SYSTEM
+  ↓ exact system selected and applicable
+DESIGN EVIDENCE
   ↓ installed + inspected
-INSTANCE EVIDENCE AVAILABLE
-  ↓ accepted into release manifest
-RELEASE EVIDENCE
+INSTANCE EVIDENCE
+  ↓ accepted for a released state
+CURRENT RELEASE EVIDENCE
   ↓ later relevant alteration
 STALE / SUPERSEDED
-~~~
+```
 
-A manufacturer page remains reference evidence. It never turns itself into as-built evidence.
+A manufacturer page remains reference/design evidence. It never turns itself into as-built evidence.
 
-## 12. Trial verdict
+## What this example demonstrates
 
-This trial **passes C-032I's structured real external-evidence test at product/system scope**.
+The Mapeguard case shows that a practical evidence architecture can:
 
-It demonstrates that the current evidence architecture can:
-
-- identify real sources;
-- distinguish component/system/installed-instance scope;
+- identify real source material;
+- distinguish component, system and installed-instance scope;
 - record applicability;
-- keep architectural/project rules distinct from manufacturer permission;
-- invalidate selectively after substitutions and geometry changes;
+- keep project/architectural requirements distinct from manufacturer permission;
+- invalidate selectively after substitutions and geometric changes;
 - preserve historical evidence revisions;
-- refuse to inflate a manufacturer system specification into a whole-building proof.
+- refuse to inflate a manufacturer system specification into whole-building proof.
 
-It also exposes one implementation requirement for later:
+It also reinforces one important modelling principle:
 
-> evidence dependencies must be relationships, not just document attachments on objects.
+> **Evidence dependencies are relationships, not merely document attachments on objects.**
 
 A PDF stored against “Bathroom 01” is not enough.
 
-## 13. H1 consequence
+## Source anchors
 
-Together with WZ-BSM-01, this trial closes two pre-H1-PAPER internal research tasks:
+- Mapei UK, Mapeguard WP 200 product information.
+- Mapei UK, Mapeguard WP Adhesive product information.
+- Mapei UK, Mapeguard WP System technical manual.
+- Mapei UK, Mapeguard WP System outline specification.
 
-- first ordinary wet-zone waterproofing family;
-- first structured real external product/system-evidence exercise.
-
-The remaining obvious ordinary-family blocker before H1-PAPER source freeze is:
-
-**C-019B — controlled external-envelope service penetration.**
-
-External competent review and real project calculations remain release-level obligations, not prerequisites for a paper fixture intended to expose them.
-
-## 14. Source anchors
-
-- Mapeguard WP 200 UK: https://www.mapei.com/gb/en/products-and-solutions/products/detail/mapeguard-wp-200
-- Mapeguard WP Adhesive UK: https://www.mapei.com/gb/en/products-and-solutions/products/detail/mapeguard-wp-adhesive
-- Mapeguard WP System UK: https://www.mapei.com/gb/en/products-and-solutions/products/detail/mapeguard-wp-system
-- Mapeguard WP System technical manual: https://cdnmedia.mapei.com/docs/librariesprovider2/lines-technical-documentation/brochure-mapeguard-wp-system-12-2024-en.pdf
-- Mapei UK outline specification LR/OS013/2025: https://cdnmedia.mapei.com/docs/librariesprovider12/default-document-library/mapeguard-wp-system---outline-specification.pdf
+Exact source identity and revision should be retained in any real project evidence set rather than relying on these general references alone.
