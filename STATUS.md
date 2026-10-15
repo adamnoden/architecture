@@ -1,12 +1,12 @@
 # Project Status
 
 **Canonical project-wide status overview**  
-**Last updated:** 2026-10-14  
-**Current phase:** **validation / implementation falsification**
+**Last updated:** 2026-10-15  
+**Current phase:** **private-publication preparation / downstream validation**
 
 This page answers one question: **where is Ovid’s House now?** Detailed programme histories and gate records remain in their owning areas; this page records the current state, next meaningful work and principal risks.
 
-The architectural position and canonical pattern language are established strongly enough that the project's largest uncertainties now sit downstream. The highest-value work is to force the system through one actual house, build and test the propositions that cannot be settled on paper, obtain competent external criticism, and complete the publication without allowing project-specific choices to drift upstream into doctrine.
+The public architectural position and publication have now survived a bounded internal adversarial cycle and are controlled at M4. The largest remaining uncertainties sit downstream: physical prototypes, competent professional review, real-site evidence and independent criticism. Publication work should move into the private physical-object stage rather than reopening the manuscript by preference.
 
 ## Active now
 
@@ -56,7 +56,9 @@ The [RH-11 External Review Brief](docs/reference-house/external-review-brief.md)
 
 ### Publication and delivery
 
-The publication architecture is structurally established. Remaining work is primarily Part III/IV development, figures, evidence hardening and whole-book proof. Delivery material should continue to lag the research deliberately: only decisions mature enough to become requirements for an appointed team should enter it.
+**PR-00 and PR-01 are complete.** Publication Architecture v0.14 has been completed, print-controlled, attacked through hostile-architect and steelman passes, materially corrected, re-proved as a **226-page** candidate and re-frozen at corrected content commit `a628f6855789a3c591cd052b54f1bfb45de23b39`. Publication is now **M4 — Internally validated / controlled at corrected-candidate scope**. The next authorised publication stage is **PR-02 — private 12-copy object edition**; it owns physical-object design and production, not another discretionary manuscript-development cycle.
+
+Delivery material should continue to lag the research deliberately: only decisions mature enough to become requirements for an appointed team should enter it.
 
 ## Maturity and workstream status
 
@@ -85,7 +87,7 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 | Workstream | Maturity | Reviewed | Current state | Next meaningful gate |
 |---|---:|---|---|---|
-| **Public architectural position** | **M3** | 2026-10-12 | Governing principles, selective permanence, interface design, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy are coordinated and style-neutral. | Evidence and figure hardening, followed by final whole-book proof. |
+| **Public architectural position** | **M4** | 2026-10-15 | The core architectural position has survived the bounded PR-01 adversarial review after material narrowing: proportional serviceability can reject overprovision, transfer claims are bounded, foreseeable human life-course and future-climate change are explicit, the Repose structural-perception claim is qualified, and architecture is separated from delivery and stewardship assumptions. | Hold the corrected position as the internally controlled baseline through PR-02; PR-03/PR-04 external critical reading and downstream physical/professional evidence remain capable of reopening it. M5 requires competent independent validation at the stated scope. |
 | **Pattern language** | **M4** | 2026-10-12 | 21 active patterns, three strategies and four held candidates are canonical at current internal scope. | Reopen only when new architectural, physical or external evidence requires change. |
 | **Architectural grammar framework** | **M3** | 2026-10-12 | Grammar is a first-class layer separate from Ovid’s House doctrine and is coordinated at framework level. | Continue to test neutrality across concrete grammar instances. |
 | **G-01 grammar instance** | **M4** | 2026-10-14 | G-01 v0.1 is frozen as a bounded Georgian-derived domestic grammar. D8 falsification, predeclared D9 hold-outs, D10 normative reduction, fresh D10-S positive-specificity validation, freeze-before-project D12 conformance and D13 negative controls leave a small controlled rule set with explicit limitations: no universal ratios, centred-entry rule, fixed roof type or historical service topology. Positive specificity is strongest at architectural body/elevation/threshold scale; morphology-specific interior grammar remains open research debt rather than an invented rule set. | Hold v0.1 as the controlled baseline. Reopen only when competent external criticism, a real-project contradiction, a materially different second grammar, publication adversarial review or material new evidence creates a concrete question. M5 requires independent architectural validation at the stated scope. |
@@ -94,7 +96,7 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 | **External professional review** | **M1** | 2026-10-12 | RH-11 now provides issue-ready structural, fire/building-control, MEP/acoustic and building-physics/energy review briefs with explicit rewind criteria; no competent review response has yet been recorded. | Obtain and process competent discipline reviews; material findings reopen the owning Reference House gate and remain unresolved until closure evidence is recorded. |
 | **Computational track** | **M4** | 2026-10-13 | The bounded Reference House executable sequence remains closed PASS through RH-C5, and the CH-00 through CH-08 Compiler Hardening programme is complete. The compiler now has a frozen semantic/artefact baseline, deterministic fail-closed behaviour, machine-enforced runtime boundaries, single-pass Reference House orchestration, selective representation hardening, stable source/method/result/compile identity and lineage, deterministic law/property/metamorphic evidence, one reproducible repository-health and artefact-verification contract, and a final deletion/proof audit that preserves the pre-hardening conclusions while removing only unearned compatibility machinery. This is an internally validated/controlled computational baseline at its stated proof boundaries; it does not expand Reference House technical authority or establish physical, regulatory or whole-building adequacy. | Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope. |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | Major evidence packages exist and taxonomy ambiguities are largely closed. | Targeted claim hardening where physical or publication maturity requires it. |
-| **Publication** | **M3** | 2026-10-12 | Publication Architecture v0.13 is established; Parts III/IV and figure language remain less mature than the main argument. | Finish Part III/IV development, figures and evidence presentation. |
+| **Publication** | **M4** | 2026-10-15 | Publication Architecture v0.14 has been completed through PR-00 and then attacked and materially corrected through PR-01. The revised 226-page candidate is re-proved and frozen at the R8-F content identity, with all R7 S1/S2 correction fronts resolved at candidate-book scope and no S0 finding. | PR-02 produces the private 12-copy physical object without reopening the manuscript by preference; PR-03/PR-04 then supply the independent critical cycle required before any M5 or public-release claim. |
 | **Delivery** | **M2** | 2026-10-12 | The implementation-brief structure exists, but downstream requirements remain intentionally incomplete. | Populate only as architectural and validation decisions mature. |
 <!-- maturity-status:end -->
 
@@ -102,15 +104,15 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 **Physical quality.** Replaceable walls, floors and interfaces may work technically yet feel hollow, temporary or over-detailed. Tactile, acoustic and architectural quality must survive the serviceability agenda.
 
-**Complexity and proportionality.** Serviceability infrastructure can consume more space, money, carbon and maintenance than the future work it avoids. RH-10 is encouraging here: later gates repeatedly deleted or rejected disproportionate infrastructure rather than accumulating it. That discipline must continue under specialist review.
+**Complexity and proportionality.** Serviceability infrastructure can consume more space, money, carbon and maintenance than the future work it avoids. PR-01 materially hardened this risk: future provision is no longer rewarded for sounding maintainable, and higher-burden B2/B3 interventions fail closed to HOLD/BASELINE unless they earn themselves against an excellent conventional comparator.
 
 **Workmanship.** A detail that works only under designer supervision fails the project. Tests should include imperfect backgrounds, realistic tolerances and ordinary competent installation.
 
-**Environmental performance.** Passive-first is a hierarchy, not a predetermined system answer. Actual orientation, glazing, gains, heat loss, ASHP acoustics, PV performance and dynamic overheating remain unproved until a real site and specialist models exist.
+**Environmental performance.** Passive-first is a hierarchy, not a predetermined system answer. Actual orientation, glazing, gains, heat loss, ASHP acoustics, PV performance and dynamic overheating remain unproved until a real site and specialist models exist. PR-01 adds a real-project obligation to test expensive-to-change geometry against relevant future climate/hazard conditions rather than present climate alone.
 
-**External validation gap.** M3 is internal coordination, not external proof. Structural, fire/building-control, MEP/acoustic and building-physics assumptions are now explicit and issue-ready, but remain vulnerable until competent reviewers attack them and findings are resolved.
+**External validation gap.** Internal M4 control is not external proof. Structural, fire/building-control, MEP/acoustic and building-physics assumptions are issue-ready but remain vulnerable until competent reviewers attack them and findings are resolved; the corrected public argument likewise remains open to the PR-03/PR-04 independent critical cycle.
 
-**Authority drift.** The Reference House is the project's dominant concrete example. Repetition can make its Georgian grammar, courtyard form, masonry family, low-slope roof, ASHP/PV or tectonic vocabulary appear inevitable even when they are project choices. Generalise the reason; keep the taste and technology local.
+**Authority drift.** The Reference House is the project's dominant concrete example. Repetition can make its Georgian grammar, courtyard form, masonry family, low-slope roof, ASHP/PV or tectonic vocabulary appear inevitable even when they are project choices. Generalise the reason; keep the taste and technology local. PR-01's compact-terrace counter-morphology explicitly confirms that several Reference House conveniences are not transferable requirements.
 
 **Grammar scope.** G-01 v0.1 is a controlled bounded grammar, not a historical period classifier or complete generative system. Its positive specificity is stronger at architectural body/elevation/threshold scale than in morphology-specific interior planning. Do not hide that limitation by inventing weak internal rules or by treating conformance as architectural quality.
 
@@ -128,7 +130,9 @@ These areas are not current work queues. Their detailed records remain available
 - **G-01 completion programme D8 → D13 — complete.** G-01 v0.1 is frozen at M4 internal scope after falsification, two hold-out phases, normative reduction, independent positive-specificity validation, freeze-before-project Reference House conformance and adversarial negative controls. There is no standing v0.2; reopen only on an explicit evidence trigger. See [G-01 v0.1](docs/grammar/g01-v0.1.md) and [D13 closeout](docs/grammar/g01-d13-adversarial-closeout.md).
 - **P0 + PAT-XW-01 — passed.** The executable kernel and first crosswalk fixture are retained as regression tests. See the [gate result](docs/computational/p0-pat-xw-01-result.md).
 - **RH-C0 + RH-C1 + CF-01 + RH-C2 + RH-C3 + RH-C4 + RH-C5 — passed.** The Reference House has a frozen source contract, deterministic architectural projection, bounded two-fixture plan evidence, machine-checked structural/service/envelope topologies and one versioned selected numeric method correspondence check. Structural, MEP, building-physics and regulatory adequacy remain outside those claims. See the [Reference House executable programme](docs/computational/reference-house-executable-slice.md), [drawing parity result](docs/reference-house/rhc1-drawing-parity-result.md) and [CF-01 result](docs/computational/compiler-generality-assurance-cf01.md).
+- **Compiler Output Architecture COA-00 → COA-06 — complete.** Controlled compiler-generated plan, section, structural, service and boundary inspection artefacts now provide the trusted semantic source family for publication/inspection use; COA does not raise Reference House maturity and there is no standing COA-07.
 - **Compiler Hardening CH-00 → CH-08 — complete.** The bounded computational workstream has an M4 internally validated/controlled baseline. The hardening programme is closed rather than extended by inertia; future compiler work is demand-led, with no standing CH-09 or RH-C6.
+- **Publication PR-00 + PR-01 — complete.** One candidate was frozen, attacked through R0→R7, corrected through R8-A→F, re-proved and re-frozen through R9. The corrected content identity is `a628f6855789a3c591cd052b54f1bfb45de23b39`; PR-02 is the next publication programme, not continued internal attack.
 - **Computational paper programme — frozen.** S0 → S1 → S2 → H1 answered the current paper-research question; further expansion requires evidence from another workstream.
 - **Information-architecture migration — complete.** Repository ownership, publication structure, website navigation and project state now have distinct roles. See the [closeout record](docs/development/information-architecture-migration.md).
 
