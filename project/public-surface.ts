@@ -52,6 +52,8 @@ export const publicSourceExcludeGlobs = [
   'docs/reference-house/service-topology-run-01.md',
   'docs/reference-house/vertical-bay-options.md',
   'docs/reference-house/external-review-*-rh11.md',
+  'docs/research/candidate-pattern-hardening-summary.md',
+  'docs/research/primary-floor-structure-baseline.md',
   'docs/research/pattern-language-phase6-targeted-evidence.md',
   'docs/prototypes/p03-*.md',
   'docs/prototypes/p04-*.md',
@@ -88,7 +90,12 @@ const publicLabelOverrides: Readonly<Record<string, string>> = {
   'H1 environmental & services decisions': 'Environmental & services decisions',
   'External evidence trial — Mapeguard WP — completed': 'Scoped manufacturer evidence — Mapeguard WP',
   'External review brief': 'Independent review questions',
-  'Vertical bay coordination': 'Vertical interface coordination'
+  'Vertical bay coordination': 'Vertical interface coordination',
+  'Repose evidence audit': 'Repose — evidence and limits',
+  'Seated floor structure options': 'Floor-to-masonry structural interface',
+  'Finish-agnostic floor platform options': 'Accessible floor systems',
+  'Replaceable wall system options': 'Replaceable wall lining',
+  'Preface precedents': 'Transformation and persistence'
 }
 
 function globToRegExp(glob: string): RegExp {
