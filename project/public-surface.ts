@@ -68,6 +68,7 @@ const publicLabelOverrides: Readonly<Record<string, string>> = {
   'G-01 v0.1 conformance — D12': 'G-01 v0.1 conformance',
   'RH-C0 / RH-C1 fixture programme': 'Project definition',
   'Reference House development history': 'Technical coordination',
+  'RH-11 external review': 'Independent review',
   'Programme history': 'Engineering & test artefacts',
   'Reference House compiler programme': 'Compiler validation',
   'H1 environmental & services decisions': 'Environmental & services decisions',
