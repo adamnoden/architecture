@@ -1,27 +1,25 @@
 # Manuscript
 
-The manuscript develops the public architectural argument for **Ovid’s House**. It begins with the problem of designing a house for its life after completion, establishes the governing principles, develops the architectural consequences, then passes into the canonical pattern language, one worked Reference House and the methods by which propositions are tested and carried into practice.
+The manuscript develops the architectural argument for **Ovid’s House**. It begins with the problem of designing a house for its life after completion, establishes the governing principles, develops their architectural consequences, then passes into the pattern language, one worked Reference House and the methods by which propositions are tested and carried into practice.
 
-The publication sequence is:
+The reading sequence is:
 
 1. [Preface](preface.md)
-2. [Part I — The Proposition](part-i.md), including the canonical [Governing Principles](governing-principles.md) and the developed [Principle 8 — Design for Repose](principle-08-repose.md)
+2. [Part I — The Proposition](part-i.md), including the [Governing Principles](governing-principles.md) and [Principle 8 — Design for Repose](principle-08-repose.md)
 3. [Part II — Architecture of the Platform](part-ii.md), including [Maintenance Geography — The Exterior](maintenance-geography-external.md)
 4. [Part III — Pattern Language](../patterns/README.md)
 5. [Part IV — Reference House](../reference-house/README.md)
 6. [Part V — Making and Testing the Platform](part-v.md)
-7. [Sources and further reading](sources-and-further-reading.md)
-
-Part III and Part IV are owned by their canonical repository areas rather than duplicated as architectural authorities under `manuscript/`. Publication order is not filesystem ownership. Reader-facing synthesis may live here while the canonical pattern and Reference House records remain authoritative. The intended book structure and chapter plan are recorded in [Publication Architecture](publication-architecture.md).
-
-The path from a mature manuscript to private critical edition, external adversarial review and eventual public release is governed separately by the [Publication Credibility and Release Programme](publication-credibility-release-programme.md). Its governing rule is **epistemic credibility before commercial credibility**: the work should survive deliberate internal attack and serious external criticism before publisher or market validation is sought.
-
-The active completion gate is **PR-00 — candidate-book freeze**. Its finite execution sequence, authority boundaries, stop rules and freeze criteria are recorded in the [PR-00 Candidate-Book Freeze Execution Programme](pr00-candidate-book-freeze-programme.md). The current finite work inventory is the [PR-00 Candidate-Book Ledger](pr00-candidate-book-ledger.md). PR-00 completes and stabilises the object; PR-01 then attacks that frozen object adversarially.
+7. [Evidence and precedent notes](evidence-and-precedent-notes.md)
+8. [Research agenda](research-agenda.md)
+9. [Reference House implementation schedule](reference-house-implementation-schedule.md)
+10. [Glossary](glossary.md)
+11. [Sources and further reading](sources-and-further-reading.md)
 
 ## Architectural specificity
 
 Concrete architectural and construction examples are used where they make the argument clearer. Masonry, plaster, cornices, architraves, thresholds, timber, metalwork and the Reference House may therefore appear in general chapters without becoming Ovid’s House requirements.
 
-Authority belongs to the claim, not to the example. A general proposition should survive a materially different architectural language and construction family. Where a particular form, material or system is itself required, the text should identify the narrower owner: pattern context, supported technical domain, selected grammar, Reference House, implementation family or precedent.
+Authority belongs to the claim, not to the example. A general proposition should survive a materially different architectural language and construction family. Where a particular form, material or system is itself required, the text identifies the narrower owner: a pattern context, technical domain, selected grammar, the Reference House or a particular implementation family.
 
-The Preface may state architectural preferences, and the Reference House may be strongly specific. Neither promotes those preferences into doctrine. The governing placement rule is the [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md).
+The Preface may state architectural preferences, and the Reference House may be strongly specific. Neither promotes those preferences into doctrine.
