@@ -30,11 +30,13 @@ The point is not to prototype ordinary construction for its own sake. It is to e
 
 The same discipline applies after construction. Maintainability is not demonstrated by an access note on a drawing. The completed building must still provide the route, working space, isolation, removal path and information that the design claimed it would.
 
-## A parallel computational track
+A prototype is allowed to kill an idea. If a non-standard assembly cannot beat excellent conventional construction on the claims that justified its complexity, the correct result may be to simplify the building.
 
-The project also asks whether selected architectural relationships can be represented explicitly enough to be checked rather than merely described. That work is deliberately subordinate to the architecture.
+## A bounded computational track
 
-Its current conceptual chain is:
+Selected architectural relationships are also represented explicitly where deterministic checking adds something useful. That work is subordinate to the architecture rather than a second source of architectural authority.
+
+Its conceptual chain is:
 
 ```text
 selected architectural / project intent
@@ -50,16 +52,18 @@ evidence / determination
 validity + diagnostics
 ```
 
-This is not a governing principle, and Ovid’s House does not depend on software to be meaningful. The computational work is useful only where it makes architectural obligations clearer, catches contradictions or preserves reasoning that would otherwise disappear between documents.
+The current compiler can check a bounded set of plan relationships, qualitative structural and service topology, envelope obligations and selected versioned calculations. It can expose missing relationships, invalid crossings, unsupported evidence and internal contradictions without inventing the information needed to make them pass.
 
-A future design tool may be able to reject an arrangement because a required maintenance route is absent, a service crossing violates an agreed boundary, or a claimed assembly lacks the evidence needed to support it. It should not replace architectural judgement with a catalogue of arbitrary rules.
+Those checks do not prove structural capacity, building-physics performance, MEP adequacy or regulatory compliance. A machine-checked weak assumption remains a weak assumption.
 
-## What this Primer leaves out
+Ovid’s House does not depend on software to be meaningful. Computation earns a place only where it makes a real architectural obligation clearer, preserves traceable reasoning or catches an error that prose and drawings might otherwise conceal.
 
-The Primer is intended to provide the complete mental model, not the complete argument. The **Working Edition** remains the authoritative long-form publication. It carries the evidence and qualifications behind the proposition, the full pattern records, strategies and held candidates, detailed Reference House studies, making and procurement work, and the wider research record.
+## From Primer to Working Edition
 
-The live project also contains material that is deliberately outside both publications: development history, prototypes, computational experiments and working research. Those records are valuable because they show how claims are being tested, but they should not be mistaken for settled doctrine merely because they exist.
+The Primer carries the complete mental model in compact form. The **Working Edition** develops the argument in depth: evidence and qualifications, the full pattern set, strategies and held candidates, the worked Reference House, proportionality and governance, physical proof, computation and the implementation questions that remain open.
 
-The compact and full editions therefore serve different purposes. The Primer explains what Ovid’s House is and how its parts fit together. The Working Edition shows the reasoning, evidence and architectural consequences in depth.
+Detailed development history, superseded options, pre-test build scripts and compiler gate records are retained separately for audit and recovery. They are not part of the resolved architectural argument merely because they were useful while producing it.
 
-[Read the Working Edition](https://adamnoden.github.io/architecture/house-kernel.pdf)
+The two editions therefore serve different purposes. The Primer explains what Ovid’s House is and how its parts fit together. The Working Edition shows the reasoning, evidence and architectural consequences in full.
+
+[Read the Working Edition](https://adamnoden.github.io/architecture/ovids-house.pdf)

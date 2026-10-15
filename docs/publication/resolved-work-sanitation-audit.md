@@ -47,6 +47,10 @@ The legacy doctrine crosswalk has also been removed from the Working Edition.
 - **Part IV — Reference House** retains the architectural proposition and technical boundaries while removing stage IDs and prototype shorthand.
 - **Manuscript overview, Reading Guide and landing page** point readers toward the resolved work rather than publication programmes, live project status or repository-management records.
 
+The PDF manifests have now been checked directly against the resolved-work rule. The Working Edition contains the authored architectural argument, current pattern/strategy/candidate set, Reference House synthesis, making/testing argument and substantive back matter; it does not include the internal programme-control corpus. The Primer is likewise derived from the proposition, canonical principles, current patterns, Reference House and one authored closing section rather than from development history.
+
+The Primer closing section had two stale residues and has been corrected: it no longer describes the existing compiler as a merely future possibility, and it no longer claims that prototypes/computational work as a class sit outside both publications. It now states the bounded capability and proof limits already earned by the computational track, distinguishes retained internal working records from the resolved argument, and links to the current `ovids-house.pdf` output rather than the obsolete `house-kernel.pdf` path.
+
 ### Pattern language
 
 The public pattern overview shows the active pattern set, strategies and held candidates without exposing retired identities or migration provenance as part of the reading surface. Stable pattern IDs remain because they provide useful cross-reference across current evidence and computational representations.
@@ -134,9 +138,8 @@ Internal sources referenced from current pages remain accessible as repository-s
 ## Remaining SAN-02 / SAN-03 fronts
 
 1. Continue the prose pass across public research, remaining Reference House technical coordination and technical-family pages.
-2. Review remaining references from resolved pages to internal source records and remove those that add provenance but no reader understanding.
-3. Audit the Working Edition and Primer manifests/adapters against the same resolved-work rule.
-4. Complete SAN-05 as an actual first-reader traversal rather than a keyword-only scan, followed by SAN-06 lossless verification.
+2. Review remaining references from resolved pages to internal source records and remove those that add provenance but no reader understanding; the G-01 specification evidence header and the Preface research-boundary note are known examples.
+3. Complete SAN-05 as an actual first-reader traversal rather than a keyword-only scan, followed by SAN-06 lossless verification.
 
 ## Semantic guardrail
 
