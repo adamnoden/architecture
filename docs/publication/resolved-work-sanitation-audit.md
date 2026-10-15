@@ -3,7 +3,7 @@
 
 **Programme:** PUB-SAN / issue #133  
 **Baseline:** `main` at `7f13c2eb825ff5f83958fbb5abeee37b6125aebe`  
-**Status:** SAN-00 and SAN-01 complete; first SAN-02/SAN-03 tranche complete
+**Status:** SAN-00 and SAN-01 complete; first SAN-02/SAN-03 tranche complete and CI-valid
 
 ## SAN-00 — reader-facing build graph
 
@@ -72,5 +72,7 @@ Before any source is merged or internalised, unique architectural claims, distin
 `project/public-surface.ts` is the explicit public/private boundary. VitePress excludes internalised sources from the public build and filters their navigation entries, while the repository continues to retain them. Route validation now asserts coverage over the intentional public corpus rather than equating “Markdown exists” with “the public should see it”.
 
 Links from resolved public pages to intentionally internal source records are rendered as repository-source links rather than dead public routes. This preserves evidence access without re-publishing development records as part of the website.
+
+The tranche passes the repository validation suite and VitePress production build.
 
 This corrects the underlying information-architecture error rather than merely deleting one appendix.
