@@ -1,14 +1,6 @@
-# Executable Architecture — Initial Prior Art Map
+# Prior Art and Research Context
 
-**Status:** reconnaissance v0.1  
-**Snapshot:** October 2026  
-**Purpose:** prevent reinvention, identify useful standards/precedents and keep novelty claims proportionate. This is not yet a systematic literature review.
-
-## 1. Position
-
-The computational proposition sits at the intersection of several mature and emerging fields.
-
-No single constituent idea should currently be claimed as novel.
+The computational proposition within Ovid’s House sits at the intersection of several mature fields. None of its constituent ideas should be claimed as novel merely because they are combined here.
 
 Existing work already covers:
 
@@ -16,487 +8,235 @@ Existing work already covers:
 - interoperable BIM;
 - machine-readable information requirements;
 - automated compliance checking;
-- ontology-based reasoning;
-- generative planning;
+- building ontologies and linked data;
+- generative and parametric planning;
 - architectural shape grammars;
-- parametric design;
 - digital building records;
 - formal verification concepts in other engineering domains.
 
-The research question is whether these can be synthesised into a particularly strong form:
+The narrower research question is:
 
-> **a deliberately bounded, architecturally opinionated domestic design system in which spatial grammar, structure, long-life tectonics, selected regulatory obligations, constructability, quantities and evidence descend from one semantic source strongly enough that compilation yields a genuinely resolved house.**
+> **Can a deliberately bounded, architecturally opinionated domestic design system represent enough shared architectural meaning that consequential changes propagate coherently, invalid states fail clearly and evidence remains scoped—without pretending to automate the whole building?**
 
-That synthesis still needs to earn any novelty claim.
+Any claim of distinctiveness belongs to that synthesis and its demonstrated behaviour, not to the existence of BIM, ontologies, grammars or rule checking themselves.
 
-## 2. IFC — semantic exchange, not merely geometry
+## IFC and openBIM
 
-Industry Foundation Classes are an open international standard for exchanging built-asset information.
+Industry Foundation Classes provide an established international model for semantic built-asset information exchange.
 
-Relevant concepts include:
+Relevant precedents include:
 
-- semantic object definitions;
-- globally identified entities;
-- object types and occurrences;
-- first-class relationships;
+- stable identified entities;
+- type/occurrence distinctions;
+- objectified relationships;
 - properties;
 - spatial containment;
-- systems/connectivity;
+- systems and connectivity;
 - process/control/resource concepts;
-- model views.
+- multiple model views.
 
-Particularly relevant to this project is IFC's use of **objectified relationships**: relationships can themselves carry semantics rather than being reduced to incidental object attributes.
+The important lesson is that relationships such as support, containment and connection can themselves carry semantics rather than being incidental object attributes.
 
-### Lesson
+IFC should therefore be treated as a crucial interoperability precedent and potential exchange target, not automatically as the complete internal ontology. Ovid’s House may need additional concepts for maintenance withdrawal geometry, permanence relationships, architectural grammar, evidence dependencies or proof boundaries.
 
-Our instinct that relationships—support, containment, service, interface, boundary—must be first-class is not unusual in semantic modelling.
+## buildingSMART Data Dictionary
 
-### Limit
+bSDD demonstrates the value of shared identifiers and definitions across classification systems and IFC concepts.
 
-IFC is designed for broad industry interoperability.
+The lesson is conservative: do not invent project-specific names for established industry concepts without reason. Where Ovid’s House needs specialised vocabulary, map it to wider industry semantics where that mapping is honest.
 
-It should be treated as a crucial mapping/output target, not automatically assumed to be the complete internal ontology for:
+A dictionary does not by itself provide architectural grammar, proof semantics or a compiler.
 
-- long-life doctrine;
-- maintenance withdrawal geometry;
-- permanence classes;
-- compiler obligations;
-- architectural grammar;
-- evidence dependency.
+## Information Delivery Specification
 
-## 3. buildingSMART Data Dictionary — semantic vocabulary
+buildingSMART’s IDS provides a strong precedent for pairing human-readable information requirements with machine-interpretable constraints and deterministic checking.
 
-bSDD provides shared definitions for built-environment classes and properties and supports links between dictionaries and IFC concepts.
+Its scope is intentionally different from the House Kernel proposition. IDS primarily expresses information requirements for IFC data and does not constitute a general geometric, structural or generative architectural language.
 
-### Lesson
+The transferable idea is the discipline of explicit, machine-checkable requirements with clear scope and interoperability.
 
-The project should not casually invent new names for industry concepts that already have durable identifiers and definitions.
+## Automated compliance checking
 
-### Opportunity
+Automated code- and rule-compliance research has a long history. Recent work increasingly emphasises:
 
-A future Long-Life House dictionary could potentially map its specialised concepts to existing classifications where appropriate.
-
-### Limit
-
-A dictionary defines vocabulary.
-
-It does not by itself provide the compiler semantics, proof rules or architectural grammar proposed here.
-
-## 4. IDS — machine-readable information requirements
-
-buildingSMART's Information Delivery Specification defines IFC information requirements in a computer-interpretable form and supports automated checking.
-
-IDS can constrain things such as:
-
-- entities;
-- classifications;
-- materials;
-- properties;
-- values;
-- relations.
-
-As of IDS 1.0, buildingSMART explicitly states that IDS is limited to alphanumeric information and does **not cover general geometrical aspects**.
-
-### Lesson
-
-There is already a mature precedent for:
-
-> human-readable requirement + machine-interpretable requirement + deterministic checker.
-
-### Limit
-
-The Long-Life House concept requires much more:
-
-- generative/constructive constraints;
-- geometry;
-- structural consequences;
-- network topology;
-- architectural grammar;
-- obligation generation.
-
-IDS should be considered one interoperability layer, not the language.
-
-## 5. Automated code compliance checking
-
-Automated compliance checking has a long research history.
-
-Recent work is especially relevant because it increasingly emphasises:
-
-- semantic representations;
-- ontologies;
-- machine-readable rule sets;
+- semantic models;
+- machine-readable rule representations;
+- ontology-based reasoning;
 - traceability;
 - versioning;
-- exceptions;
+- exceptions and ambiguity;
 - human oversight;
-- structured compliance reports.
+- explainable reports.
 
-A 2026 framework by Purushotham, Kailashnath and Mutis explicitly focuses on transparency, trust, validation and human-in-the-loop handling of exceptions/interpretation.
+This aligns with the project’s insistence that a compliance result cannot be an opaque green tick.
 
-Zentgraf, Hagedorn and König's 2026 work combines structured standards data, ontologies and SHACL validation rules and emphasises maintainability across regulatory revisions.
+The stronger architectural question is upstream: rather than only checking an arbitrary finished model, can authoring occur inside a semantic system where important consequences are generated as obligations as the design changes?
 
-### Lesson
+That distinction is plausible and useful. It should be demonstrated through behaviour rather than treated as a novelty claim by assertion.
 
-Our insistence that compliance cannot be an opaque green tick is well aligned with the research frontier.
+## Building ontologies and linked data
 
-### Remaining gap for us
+AEC ontology research spans construction process, cost, operation and maintenance, safety, sustainability, compliance, monitoring and digital twins.
 
-Most automated-compliance work begins with an existing model and asks whether it complies.
+A recurring difficulty is fragmentation: different domains need overlapping views of the same building.
 
-Our stronger proposition is to move validity **upstream into authoring**:
-
-> do not merely inspect arbitrary geometry; constrain what can be authored and propagate consequences as obligations.
-
-That difference needs to be researched carefully rather than asserted rhetorically.
-
-## 6. Building ontologies and linked data
-
-AEC ontology research is extensive.
-
-Reviews identify applications across:
-
-- process;
-- cost;
-- operation/maintenance;
-- safety;
-- sustainability;
-- compliance;
-- monitoring;
-- digital twins.
-
-Research repeatedly encounters fragmentation because different domains require overlapping representations.
-
-### Lesson
-
-Do not attempt one monolithic hierarchy.
-
-The Long-Life House should expect multiple graph views over stable entities:
+This supports the House Kernel preference for **several coordinated graphs over stable entities** rather than one monolithic hierarchy:
 
 - spatial;
 - structural;
 - boundary;
 - service;
-- lifecycle;
+- lifecycle/maintenance;
 - evidence.
 
-## 7. Building-services ontologies
+No single graph is the building.
 
-Work such as the TUBES System Ontology addresses hierarchical, topological and functional representations for building technical systems.
+## Building-services ontologies
 
-### Lesson
+Existing service ontologies distinguish equipment identity, functional networks and physical topology. That is directly relevant to House Kernel.
 
-Services have at least three distinct semantics:
+The additional Ovid’s House concern is maintenance geography: how a human reaches, isolates, services and replaces the system.
 
-- what equipment is;
-- how the network connects/functions;
-- where the physical route exists.
+The useful contribution is therefore not to reinvent service ontology, but to connect service semantics to spatial access, crossings, boundaries and lifecycle obligations within the same project model.
 
-Our maintenance doctrine adds another:
+## Shape grammars
 
-- how a human reaches, isolates and replaces it.
+Shape grammar research established that architectural languages can be represented through generative rules rather than numerical optimisation alone.
 
-This should be compared explicitly with existing service ontologies later.
+Historical examples include grammars for Palladian villas, Frank Lloyd Wright prairie houses, gardens and decorative systems.
 
-## 8. Shape grammars
+This is important because it removes any need to defend “architectural grammar” as a category. The real questions are which relationships deserve formalisation, what authority the rules have and how their limits are made visible.
 
-Shape grammar research is highly relevant to the architectural-grammar problem.
+A grammar can generate membership in a selected architectural language. It does not prove universal architectural quality.
 
-George Stiny and related researchers demonstrated that design can be formalised as rule-based operations on shapes rather than merely numerical optimisation.
+## Palladian computational grammars
 
-Historical applications include grammars for:
-
-- Palladian villas;
-- Frank Lloyd Wright prairie houses;
-- gardens;
-- decorative systems.
-
-### Lesson
-
-“Opinionated architectural grammar” is not a category error.
-
-Architecture can be represented by generative relational rules without reducing everything to scalar ratios.
-
-### Warning
-
-Shape grammar demonstrates formal expressibility.
-
-It does not prove that a grammar produces universally good architecture.
-
-Our system should make the selected grammar explicit and contestable.
-
-## 8A. Palladian computational grammars — a particularly close precedent
-
-Stiny and Mitchell's 1978 **Palladian Grammar** is a direct historical precedent for treating an architectural style as a parametric generative language. Their work generated Palladian villa ground plans and was followed by enumeration and evaluation of possible plans.
-
-Hersey and Freedman's later **Possible Palladian Villas** is even more useful for the present project because it separates several ideas that are often conflated:
+Stiny and Mitchell’s Palladian Grammar is a particularly close precedent for representing a historical architectural language as a generative system. Later work by Hersey and Freedman is useful because it separates:
 
 - generation from explicit rules;
-- frequency/statistical tendencies in a precedent corpus;
+- tendencies in a precedent corpus;
 - dimensional/proportional bounds;
 - plan/facade negotiation;
-- aesthetic evaluation of generated results.
+- evaluation of generated results.
 
-Their computational experiments also challenge a simplistic proportion-first account of Palladian identity. They found that exact canonical room ratios were less determinative than relationships such as symmetry, rectangular subdivision, hierarchy, alignment and opening axes.
+One important implication is that architectural identity need not reduce to exact canonical room ratios. Relationships such as hierarchy, subdivision, symmetry, alignment and opening axes may carry more explanatory weight.
 
-### Lesson
+G-01 follows that general lesson: relational rules and scoped order come before universal numerical ratios.
 
-The first Long-Life House grammar should be **relational first and numerical second**.
+The House Kernel problem begins where stylistic grammar alone stops: structure, boundaries, services, maintenance, evidence and selected technical methods must coexist with the architectural language without being owned by it.
 
-Proportion should probably be represented by admissible ranges and preferred families rather than universal equality constraints.
+## Space Syntax and topological representation
 
-### Important difference
+Space Syntax and justified-plan-graph methods demonstrate that significant architectural properties can be represented independently of precise metric geometry.
 
-The proposed Long-Life House system must go beyond stylistic generation by coupling the architectural grammar to:
+Rooms and connections can be analysed through depth, centrality, permeability, route choice, privacy and hierarchy.
 
-- structure;
-- boundaries;
-- services;
-- maintenance;
-- construction;
-- regulation;
-- evidence.
+The useful lesson is that **spatial topology can precede dimensional resolution**. A room is not merely a rectangle with dimensions; it is a meaningful space participating in a network of relationships.
 
-This is precisely where the prior art stops being a solution and becomes a foundation.
+## Pattern languages
 
-## 8B. Space Syntax and topological grammar
+Christopher Alexander’s pattern language remains an important precedent for transferring design knowledge through composable architectural responses.
 
-Space Syntax and Justified Plan Graph methods demonstrate that important architectural properties can be represented independently of metric geometry.
+Its criticism is equally valuable. Pattern systems can overstate universality, use weakly defined terms, outrun their evidence or imply that possession of patterns guarantees successful synthesis.
 
-Rooms may be represented as nodes and connections as edges, allowing analysis of:
+Ovid’s House therefore separates:
 
-- depth;
-- centrality;
-- permeability;
-- alternative routes;
-- privacy;
-- access hierarchy.
+- doctrine;
+- strategies;
+- patterns;
+- project occurrences;
+- evidence maturity;
+- technical proof.
 
-Research combining Justified Plan Graphs with grammars demonstrates that spatial topology itself can participate in identifying an architectural language.
+A stable pattern name is not a certificate of universal truth.
 
-### Lesson
+## Automated floor-plan generation
 
-The Long-Life House grammar should preserve a **spatial-topology layer** before dimensional resolution.
+Academic and commercial systems already generate or optimise plans using constraints, adjacency, reference designs, geometry search and machine learning.
 
-A room is not first a rectangle of a particular size. It is first a semantically meaningful space participating in a network of relationships.
+The project should not rediscover generic room packing.
 
-## 8C. Pattern languages — useful warning
+The distinction of interest is that House Kernel treats the plan as one projection of a wider semantic building state involving structure, services, boundaries, maintenance and evidence. Plan generation is not the whole computational problem.
 
-Christopher Alexander's pattern language remains relevant as a precedent for transferring architectural knowledge through composable rules.
+## Parametric and generative building platforms
 
-The critical literature is equally valuable.
+Platforms including Rhino/Grasshopper, Revit/Dynamo, Archicad parametric systems, Autodesk Forma, TestFit, Finch, Hypar, Speckle and related ecosystems demonstrate broad capability in parametric geometry, data exchange, optimisation and rule-driven generation.
 
-Repeated criticisms include:
+Their existence is a strong warning against broad novelty language.
 
-- overly universal or singular claims about the “right” way to build;
-- weakly defined terms;
-- insufficient empirical validation;
-- rules that can become too controlling;
-- the fact that possessing patterns does not itself guarantee beautiful synthesis.
+The relevant comparison is narrower:
 
-### Lesson
+- what owns semantic identity;
+- how relationships propagate;
+- whether unsupported states are explicit;
+- how technical authority and architectural preference are separated;
+- how evidence scope is represented;
+- whether one source can drive several deterministic inspection outputs without duplicated authored geometry.
 
-The Long-Life House should not turn architectural preferences into universal truths.
+The answer may vary by platform and version. The project need not establish commercial differentiation to justify the internal research question.
 
-Every grammar rule needs:
+## Digital building records and the golden thread
 
-- explicit scope;
-- stated authority;
-- evidence;
-- counterexamples;
-- versioning;
-- a distinction between invariant, preference and judgement.
+Digital-building-record and golden-thread work demonstrates the value of persistent identity, controlled change, information provenance and evidence through the building lifecycle.
 
-## 9. Automated floorplan generation
+For an ordinary low-rise house, higher-risk-building legal duties should not be imported falsely. The transferable principle is informational: a future reader should be able to establish what was designed, what evidence supported it, what changed and which information still applies.
 
-Research and commercial tools generate floorplans using combinations of:
+## Formal verification as a conceptual precedent
 
-- constraints;
-- optimisation;
-- reference designs;
-- programmatic adjacency;
-- geometry generation;
-- machine learning.
+Software and other engineering disciplines demonstrate useful ideas such as type safety, invariants, dependency graphs, deterministic builds and proof obligations.
 
-A 2022 review by Weber, Mueller and Reinhart divides methods into bottom-up, top-down and referential approaches and notes the value of hybrid approaches.
+The architectural transfer must remain bounded. A compiler can prove only propositions that have been represented faithfully and for which it has legitimate methods. Formalising an architectural preference does not make the preference objective; formalising an inadequate proxy does not make the underlying phenomenon solved.
 
-### Lesson
+The useful contribution of verification thinking is **discipline about what follows from what**.
 
-We should not spend years rediscovering room packing.
+## Where the field is already crowded
 
-### Difference to investigate
+Claims should remain modest around:
 
-A layout generator often optimises a plan.
+- BIM as a semantic model;
+- object relationships;
+- parametric or generative design;
+- automated code checking;
+- building ontologies;
+- architectural grammars;
+- digital twins and building records;
+- rule-driven floor-plan generation;
+- machine-readable information requirements.
 
-Our ambition is broader:
+These are established territories.
 
-- architecture;
-- structure;
-- services;
-- boundaries;
-- construction;
-- regulation;
-- maintenance;
-- evidence.
+## Where the synthesis remains interesting
 
-The plan is one projection.
+The project becomes more distinctive where several demands are kept together without collapsing their authority:
 
-## 10. Generative/computational building platforms
+1. a deliberately bounded domestic supported domain;
+2. an explicit architectural grammar that remains separate from technical truth;
+3. shared semantic identity across plan, structure, services and boundaries;
+4. generated obligations at consequential interfaces;
+5. scoped evidence and selective invalidation;
+6. architecture concerned explicitly with maintenance, replacement and lifespan coupling;
+7. deterministic human inspection outputs derived from the same source as machine checks;
+8. explicit refusal to infer unsupported technical adequacy.
 
-Commercial/research platforms to review in depth include:
+None is individually unprecedented. The research value lies in whether the combination produces a materially better and more trustworthy design process.
 
-- Hypar;
-- Finch;
-- TestFit;
-- Autodesk Forma;
-- Revit/Dynamo;
-- Rhino/Grasshopper;
-- Archicad parametric/object systems;
-- Speckle and related data infrastructures.
+## Current demonstrated claim
 
-This reconnaissance has **not yet** completed product-by-product capability analysis.
+The current Metamorph Compiler does **not** demonstrate a general-purpose building compiler.
 
-Future review should ask of each:
+It does demonstrate, at bounded scope, that one semantic source can drive coordinated plan, qualitative structural, service and boundary reasoning; that unlike domestic fixtures can share part of the same semantics; that evidence can remain scoped; that selected method checks can fail closed; and that deterministic inspection outputs can be generated without parallel authored geometry.
 
-- what is the source-of-truth model?
-- can invalid states be made unrepresentable?
-- what semantics exist beyond geometry?
-- how are engineering consequences handled?
-- how are regulations represented?
-- how are outputs/provenance versioned?
-- can users extend the language?
-- is the system generative, checking, or genuinely compiling?
+That is sufficient to justify continued research. It is not a basis for broad novelty claims.
 
-## 11. Formal methods outside AEC
+## Reference points
 
-Architecture-description languages and formal methods in cyber-physical systems provide useful conceptual precedents.
-
-Relevant ideas:
-
-- explicit system architecture;
-- multiple analysis models generated from one architecture;
-- model checking;
-- verification conditions;
-- traceability;
-- proof obligations;
-- typed interfaces;
-- compositional reasoning.
-
-### Lesson
-
-The compiler/type-safety analogy has serious engineering precedents.
-
-### Warning
-
-Buildings are not software.
-
-Continuous physics, material variability, site conditions, workmanship and professional judgement prevent simplistic transfer of formal-method claims.
-
-Use the analogy to structure thought, not to exaggerate certainty.
-
-## 12. England — digital evidence and the golden thread
-
-England's higher-risk-building regime requires digital building information and version control as part of the golden thread.
-
-Government guidance emphasises:
-
-- information showing compliance;
-- digital records;
-- version control;
-- accurate and current information;
-- change control.
-
-In July 2026, the government's response on a Single Construction Regulator also described a forthcoming **Digital Building Control Roadmap** and prioritised interoperable data and consistent information standards.
-
-### Lesson
-
-A versioned, evidence-carrying building record is directionally compatible with regulatory digitalisation.
-
-### Warning
-
-Higher-risk-building golden-thread requirements do not automatically apply to the ordinary houses in our intended first domain.
-
-Use them as precedent for information architecture, not as a false legal requirement for every dwelling.
-
-## 13. SMART standards
-
-BSI's 2025 annual reporting describes continuing work on standards that are **Machine Applicable, Readable and Transferrable (SMART)** and greater use of next-generation standards authoring.
-
-PAS 1958:2026 provides a landscape guide to built-environment data/information standards and explicitly addresses preparation for AI adoption.
-
-### Lesson
-
-Do not design a long-term standards ingestion strategy on the assumption that standards will forever exist only as PDFs.
-
-### Research need
-
-Determine:
-
-- what SMART content BSI actually exposes;
-- licensing;
-- identifiers;
-- APIs;
-- machine applicability;
-- update/version semantics;
-- suitability for executable engineering rules.
-
-## 14. What appears distinctive so far
-
-The following combination appears less common than its individual parts:
-
-1. **Opinionated domestic architectural grammar** rather than neutral BIM.
-2. **Correct-by-construction authoring** rather than solely downstream checking.
-3. **Load paths, boundaries, services, maintenance and lifecycle** represented in the same semantic source.
-4. **Long-life / replaceability doctrine** as formal obligations.
-5. **Explicit compiler targets** for jurisdiction/version/route.
-6. **Obligation discharge and evidence provenance** as core compilation semantics.
-7. **Buildable production outputs**—not merely plan generation or compliance reporting.
-8. **Non-expert authoring UX** with expert complexity held inside the system.
-9. **Versioned recompilation of the building through later change.**
-
-This is a hypothesis about the synthesis.
-
-It is **not yet a novelty claim**.
-
-## 15. Prior-art questions still unanswered
-
-- Are there research systems that integrate structural resolution directly into generative domestic layout?
-- Has any building design system adopted explicit proof-obligation semantics?
-- Is there existing “proof-carrying BIM” literature we should adopt rather than rename?
-- Which jurisdictions have the most advanced machine-readable building codes?
-- What has happened in Singapore CORENET X, Norway, Finland and other digital-permitting programmes?
-- Which commercial systems generate construction documentation/BOM from constrained building products?
-- How close do modern house configurators / off-site manufacturers already come to “compiling” a bounded house?
-- What can we learn from automotive/aerospace configuration systems?
-- Are there formal ontologies for maintenance access and component withdrawal?
-- Which open structural-analysis libraries or schemas express load paths semantically?
-- How are building-product declarations being made machine-readable?
-- What existing standards address product data templates, information need and digital twins?
-- What are the failure modes of previous automated code-checking initiatives?
-- How much manual formalisation remains necessary even with 2026 AI/ontology approaches?
-
-These belong in W1 of the research programme.
-
-## 16. Current research posture
-
-The project should proceed on three assumptions:
-
-1. **we are standing on substantial prior art;**
-2. **the synthesis may still be unusual and valuable;**
-3. **only an end-to-end paper compilation can show whether the synthesis coheres.**
-
-## Sources / starting points
-
-- buildingSMART, IFC 4.3 official: https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/
-- buildingSMART, IFC Kernel: https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/ifckernel/content.html
-- buildingSMART Data Dictionary: https://www.buildingsmart.org/users/services/buildingsmart-data-dictionary/
-- buildingSMART, IDS: https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/
-- Farghaly, Soman & Zhou, “The evolution of ontology in AEC”, Journal of Industrial Information Integration 36 (2023), 100519: https://doi.org/10.1016/j.jii.2023.100519
-- Xue, Wu & Lu, “Semantic enrichment of building and city information models: A ten-year review”, Advanced Engineering Informatics 47 (2021), 101245: https://doi.org/10.1016/j.aei.2020.101245
-- Purushotham, Kailashnath & Mutis, “Framework for automated building code compliance checking to improve transparency, trust, validation, and design interpretation”, Automation in Construction 181 (2026), 106598: https://doi.org/10.1016/j.autcon.2025.106598
-- Zentgraf, Hagedorn & König, “A BIM-based framework for automated building code extraction and compliance checking”, Advanced Engineering Informatics 74 (2026), 104735: https://doi.org/10.1016/j.aei.2026.104735
-- Lee, Ji & Ostwald, “Automated compliance checking across the building lifecycle”, Automation in Construction 185 (2026), 106859: https://doi.org/10.1016/j.autcon.2026.106859
-- Weber, Mueller & Reinhart, “Automated floorplan generation in architectural design: A review of methods and applications”, Automation in Construction 140 (2022), 104385: https://doi.org/10.1016/j.autcon.2022.104385
-- George Stiny, Shape: Talking about Seeing and Doing, MIT Press: https://mitpress.mit.edu/9780262693677/shape/
-- UK Government, golden thread: https://www.gov.uk/guidance/keeping-information-about-a-higher-risk-building-the-golden-thread
-- UK Government, Single Construction Regulator government response: https://www.gov.uk/government/consultations/single-construction-regulator-prospectus/outcome/single-construction-regulator-prospectus-government-response
-- BSI, PAS 1958:2026: https://knowledge.bsigroup.com/products/built-environment-data-and-information-standards-landscape-guide
+- buildingSMART International, Industry Foundation Classes (IFC).
+- buildingSMART International, bSDD and Information Delivery Specification (IDS).
+- Stiny & Mitchell, “The Palladian Grammar” (1978).
+- Hersey & Freedman, *Possible Palladian Villas*.
+- Space Syntax and justified-plan-graph literature.
+- Alexander, Ishikawa & Silverstein, *A Pattern Language* (1977).
+- Sydora & Stroulia (2020), rule-based BIM compliance and generative design.
+- Purushotham, Kailashnath & Mutis (2026), transparent automated code-compliance checking.
+- Zentgraf, Hagedorn & König, BIM-based automated rule extraction/compliance research.
+- Weber, Mueller & Reinhart, review of automated floor-plan generation methods.
