@@ -35,7 +35,7 @@
     <text x="430" y="405" class="tiny" text-anchor="middle">temporary tower zone</text>
 
     <path d="M430 735 L430 690 L430 610 L430 478" class="rule" marker-end="url(#arrow)"/>
-    <text x="455" y="720" class="tiny">garden → court logistics route</text>
+    <text x="410" y="700" class="tiny" text-anchor="end">garden → court logistics route</text>
 
     <text x="70" y="710" class="small">FRONT</text>
     <text x="690" y="710" class="tiny">principal frontage is not the default technical work zone</text>
