@@ -96,15 +96,25 @@ export const workstreamStatuses = [
   {
     id: 'public-architectural-position',
     name: 'Public architectural position',
-    maturity: 'M3',
-    reviewedOn: '2026-10-12',
+    maturity: 'M4',
+    reviewedOn: '2026-10-15',
     currentState:
-      'Governing principles, selective permanence, interface design, failure architecture, maintenance geography, workmanship robustness, repose and passive-first hierarchy are coordinated and style-neutral.',
-    nextGate: 'Evidence and figure hardening, followed by final whole-book proof.',
+      'The core architectural position has survived the bounded PR-01 adversarial review after material narrowing: proportional serviceability can reject overprovision, transfer claims are bounded, foreseeable human life-course and future-climate change are explicit, the Repose structural-perception claim is qualified, and architecture is separated from delivery and stewardship assumptions.',
+    nextGate:
+      'Hold the corrected position as the internally controlled baseline through PR-02; PR-03/PR-04 external critical reading and downstream physical/professional evidence remain capable of reopening it. M5 requires competent independent validation at the stated scope.',
     evidence: {
       framed: ['docs/manuscript/governing-principles.md'],
       developed: ['docs/manuscript/part-i.md', 'docs/manuscript/part-ii.md'],
-      coordinated: ['docs/development/architectural-specificity-adversarial-test.md']
+      coordinated: ['docs/development/architectural-specificity-adversarial-test.md'],
+      internallyValidated: [
+        'publication/pr01-r1-core-proposition-attack.md',
+        'publication/pr01-r4-hostile-architect-pass.md',
+        'publication/pr01-r5-steelman-opposition.md',
+        'publication/pr01-r6-cross-book-contradiction-omission.md',
+        'publication/pr01-r8a-comparative-proportionality-closeout.md',
+        'publication/pr01-r8f-local-findings-constitution-climate.md',
+        'publication/pr01-r9-reproof-refreeze.md'
+      ]
     }
   },
   {
@@ -307,15 +317,23 @@ export const workstreamStatuses = [
   {
     id: 'publication',
     name: 'Publication',
-    maturity: 'M3',
-    reviewedOn: '2026-10-12',
+    maturity: 'M4',
+    reviewedOn: '2026-10-15',
     currentState:
-      'Publication Architecture v0.13 is established; Parts III/IV and figure language remain less mature than the main argument.',
-    nextGate: 'Finish Part III/IV development, figures and evidence presentation.',
+      'Publication Architecture v0.14 has been completed through PR-00 and then attacked and materially corrected through PR-01. The revised 226-page candidate is re-proved and frozen at the R8-F content identity, with all R7 S1/S2 correction fronts resolved at candidate-book scope and no S0 finding.',
+    nextGate:
+      'PR-02 produces the private 12-copy physical object without reopening the manuscript by preference; PR-03/PR-04 then supply the independent critical cycle required before any M5 or public-release claim.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
-      coordinated: ['docs/development/print-publication-editorial-proof.md']
+      coordinated: [
+        'publication/pr00h-candidate-book-freeze.md',
+        'publication/pr01-r8f-local-findings-constitution-climate.md'
+      ],
+      internallyValidated: [
+        'publication/pr01-r7-findings-freeze.md',
+        'publication/pr01-r9-reproof-refreeze.md'
+      ]
     }
   },
   {

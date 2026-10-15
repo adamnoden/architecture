@@ -1,15 +1,16 @@
 # PR-01 — Internal Adversarial Review Programme
 
-**Status:** ACTIVE PROGRAMME — attack phase not yet complete  
-**Date:** 2026-10-14  
+**Status:** COMPLETE — R0→R9 PASS; corrected candidate re-frozen  
+**Date:** 2026-10-15  
 **Parent:** Publication Credibility and Release Programme  
 **Umbrella issue:** #71 — PUB-01 publication credibility and release programme  
-**Frozen candidate content:** `f6b286e883f24b322f41f85d8d3ad796b103a53d`  
-**Freeze control:** `publication/pr00h-candidate-book-freeze.md`
+**Original frozen candidate content:** `f6b286e883f24b322f41f85d8d3ad796b103a53d`  
+**Corrected candidate content:** `a628f6855789a3c591cd052b54f1bfb45de23b39`  
+**Re-freeze control:** `publication/pr01-r9-reproof-refreeze.md`
 
 PR-01 exists to make the frozen candidate difficult to dismiss before scarce external attention is requested.
 
-The frozen candidate is **read-only during attack**. Findings are recorded first. Corrections happen only after the attack set has been completed, classified and prioritised.
+The original frozen candidate was **read-only during attack**. Findings were recorded first. Corrections happened only after the attack set had been completed, classified and prioritised.
 
 > **Do not defend the book while discovering what is wrong with it.**
 
@@ -84,9 +85,9 @@ R8  CORRECTION PROGRAMME
 R9  RE-PROOF / RE-FREEZE
 ```
 
-R0→R7 are **diagnostic**. Do not edit the frozen candidate during them.
+R0→R7 were **diagnostic**. The frozen candidate was not edited during them.
 
-R8 is corrective and must route every accepted finding through its owning layer. R9 exists only if substantive changes were made, which should be expected rather than treated as failure.
+R8 was corrective and routed accepted findings through their owning layers. R9 rebuilt, inspected and re-froze the materially corrected candidate.
 
 ## 4. R0 — Freeze recovery and review map
 
@@ -285,3 +286,21 @@ Do not use PR-01 to broaden the project by curiosity. New work must be finding-l
 PR-01 passes when the obvious serious internal attacks have been exhausted against a stable object and the resulting candidate has been corrected and re-frozen.
 
 Only then proceed to **PR-02 — private object edition**.
+
+## 16. Closeout
+
+**PR-01 — PASS.**
+
+R0→R6 completed the bounded diagnostic attack. R7 froze 22 raw findings into **five S1 material root defects and three S2 local defects, with no S0 finding**. R8-A→R8-F resolved every root/local correction front at candidate-book scope. R9 rebuilt and inspected the corrected candidate, recorded its exact artifact identity, accepted only one minor non-blocking carry-page blemish and re-froze the content at:
+
+`a628f6855789a3c591cd052b54f1bfb45de23b39`
+
+R9 control merge:
+
+`63a9764413b113ee5a3bb66eaa0ef1c97fe98057`
+
+The revised proof is **226 A4 pages**. The final clean repository gate passed after temporary proof-upload machinery was removed.
+
+PR-01 does not promote physical prototypes, professional review, the Reference House, G-01 or the compiler by association. The corrected public architectural position and Publication are separately reassessed in `project/maturity.ts` at their bounded internal scopes.
+
+The next authorised publication stage is **PR-02 — private object edition**. PR-02 owns the physical object; it does not reopen the manuscript by preference.
