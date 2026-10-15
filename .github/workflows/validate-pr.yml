@@ -29,14 +29,3 @@ jobs:
 
       - name: Check repository health
         run: npm run check
-
-      - name: Build revised candidate publication
-        run: npm run publication:build
-
-      - name: Upload revised candidate publication
-        uses: actions/upload-artifact@v4
-        with:
-          name: pr01-r9-candidate
-          path: publication/dist/*.pdf
-          if-no-files-found: error
-          retention-days: 1
