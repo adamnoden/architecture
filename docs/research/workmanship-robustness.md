@@ -1,129 +1,88 @@
-# Workmanship Robustness — Research Synthesis and Project Position
+# Workmanship Robustness
 
-**Status:** research and doctrine-control note  
-**Purpose:** define how House Kernel should accommodate ordinary construction variability, human fallibility and site craft without lowering quality or turning the project into a prefabrication manifesto.
+A design can be immaculate on paper and still fail if its success depends on exceptional workmanship, perfect incoming geometry, continuous designer supervision or undocumented judgement on site.
 
-## Question
+The stronger question is not simply “how do we make builders follow the detail?” It is:
 
-The project can produce immaculate details on paper and still fail if their success depends on exceptional workmanship, perfect incoming geometry, continuous designer supervision or undocumented judgement on site.
+> **How should the design itself behave when it meets the ordinary variability of real construction?**
 
-The problem is therefore not simply:
+Ovid’s House uses **workmanship robustness** for the ability of a design to achieve its intended technical and architectural performance under ordinary competent construction, with foreseeable variation in materials, setting-out, sequence and human execution deliberately accommodated rather than left to improvisation.
 
-> how do we make builders follow the design?
+This is not acceptance of poor workmanship. It distinguishes:
 
-A stronger question is:
-
-> **how should the design itself behave when it meets the ordinary variability of real construction?**
-
-The answer developed here is **workmanship robustness**.
-
-## Definition
-
-**Workmanship robustness** is the ability of a design to achieve its intended technical and architectural performance under ordinary competent construction, with foreseeable variation in materials, setting-out, sequence and human execution deliberately accommodated rather than left to improvisation.
-
-A robust detail should aim to make:
-
-- the intended assembly understandable;
-- the controlling datum clear;
-- normal variation absorbable within a defined range;
-- consequential errors difficult to conceal;
-- inspection possible before closure;
-- correction local and reversible where practical;
-- out-of-range work identifiable as a stop/remediation condition.
-
-This is not acceptance of poor workmanship.
-
-The project should distinguish:
-
-**acceptable variation** — anticipated and designed for;  
-**correctable variation** — recoverable through a declared adjustment method;  
-**defect / out-of-range work** — not to be disguised by the next trade.
+- **acceptable variation** — anticipated and designed for;
+- **correctable variation** — recoverable through a declared adjustment method;
+- **defect / out-of-range work** — not to be disguised by the next trade.
 
 The governing maxim is:
 
 > **Give variation somewhere to go.**
 
-## 1. Accuracy and tolerance are design problems
+## Accuracy and tolerance are design problems
 
-BS 5606:2022, *Accuracy and tolerance in design and construction — Guide*, treats accuracy and tolerance as matters requiring a project strategy across design and construction. Its public summary emphasises determining dimensional needs, assessing likely achievable construction accuracy, specifying appropriately, verifying capability and monitoring work.
+BS 5606 treats accuracy and tolerance as matters requiring a strategy across design and construction. The important question is not merely whether each component lies inside its own permitted deviation, but whether the **assembly still works when credible deviations meet**.
 
-That is more useful than treating a tolerance as a number written after a dimension.
+Construction-tolerance research reaches the same conclusion. Recurring dimensional problems are stronger when identified, allocated, communicated and measured before assembly rather than corrected ad hoc at the end.
 
-The relevant design question is whether several independently acceptable components can still assemble successfully.
-
-Talebi, Koskela, Tzortzopoulos and Kagioglou's tolerance-management research identifies tolerance problems as recurring construction defects often dealt with ad hoc during assembly. Their proposed approach moves the work earlier: identify tolerance requirements and risks, plan how they will be achieved or mitigated, communicate the information, measure compliance, and retain learning.
-
-For this project, the important lesson is:
+For Ovid’s House the useful rule is:
 
 > **Do not merely specify precision. Design the route from achievable construction to required precision.**
 
-## 2. Buildability is an architectural responsibility
+This is particularly important where relatively coarse permanent work meets precise replaceable work: masonry to window frame, structural floor to manufactured joinery, wet-room substrate to fitted equipment, or site-built wall to a controlled attachment datum.
 
-CIRIA's classic definition of buildability is the extent to which the design facilitates ease of construction, subject to the overall requirements of the completed building.
+## Buildability is architectural performance
 
-That qualification matters.
+Buildability is the extent to which design facilitates construction subject to the requirements of the completed building. Ease of construction does not outrank architecture, durability, fire, acoustics, moisture, structure or beauty. But unnecessary construction difficulty is itself a design-created risk.
 
-Ease of construction does not outrank architecture, durability, fire, acoustics, moisture, structure or beauty. But a design that creates unnecessary construction difficulty has created its own risk.
+Useful buildability questions include:
 
-Contemporary buildability guidance repeatedly returns to:
+- what sequence is actually possible;
+- which dimensions control later work;
+- where tolerance is absorbed;
+- how interfaces connect;
+- whether installation access exists;
+- whether maintenance and replacement remain possible;
+- whether a repeated operation is more complex than its architectural value justifies.
 
-- sequence;
-- dimensional criteria;
-- tolerances;
-- standardisation;
-- reduced complexity;
-- interface connections;
-- installation access;
-- maintenance and replacement;
-- early involvement of people with construction experience.
+Constructor and fabricator knowledge is therefore useful before important non-standard interfaces are frozen. Buildability does not begin after architectural authorship ends.
 
-House Kernel should therefore treat buildability as part of performance, not a contractor-side concern that begins after the architecture is complete.
+## Mistake-proofing
 
-## 3. Mistake-proofing
+Iris Tommelein’s application of *poka-yoke* to construction provides a useful bridge from manufacturing. The principle is not that workers are incompetent. It is that predictable mistakes need not be designed into a process and then caught after concealment.
 
-Iris Tommelein's work on *poka-yoke* in construction makes an especially useful bridge from manufacturing into architecture. The principle is not that workers are incompetent. It is that quality can be built into products, systems and details so that predictable mistakes are less likely to become defects.
-
-For the house, the proportional hierarchy is:
+A proportional hierarchy is:
 
 1. **eliminate** an unnecessary operation;
-2. **simplify** the operation or reduce part/fastener variety;
+2. **simplify** the operation or reduce part and fastener variety;
 3. **constrain** incorrect orientation or position where worthwhile;
 4. **locate** work from one clear datum, stop, gauge or template;
 5. **reveal** the result before it is concealed;
 6. **contain** the consequence so correction is local;
 7. **stop** when the condition exceeds the designed recovery range.
 
-Not every junction warrants poka-yoke geometry. Consequence matters.
+Not every junction warrants mistake-proofing geometry. Consequence matters. “Install carefully” becomes a weak primary control when it is the only answer to a repeated ambiguity that geometry could have removed.
 
-The phrase “install carefully” is sometimes legitimate. It becomes suspect when it is the only control on a repeated ambiguity whose geometry could have been made self-evident.
+## Human factors
 
-## 4. Human factors: do not use vigilance as the design
+Human-factors guidance makes the wider point that equipment, tasks and access should be designed around the people who must use them. Reduced complexity and better accessibility can reduce error.
 
-HSE human-factors guidance states the broader principle clearly: equipment and tasks should be designed around their users; reducing complexity and improving accessibility can reduce human error; operators and maintenance personnel should be involved in design.
+For repeated non-standard architectural systems this means:
 
-The project should import the principle without importing an industrial aesthetic.
-
-For repeated non-standard architectural systems:
-
-- involve fabricators/installers before the detail is frozen;
-- prototype the actual sequence, not merely the final object;
+- involve relevant fabricators and installers before the detail is fixed;
+- prototype the actual sequence rather than only the final object;
 - observe what information people need;
-- identify operations that require awkward access or unusual force;
-- treat repeated questions and workarounds as design evidence.
+- identify awkward access, unusual force and ambiguous orientation;
+- treat repeated questions and workarounds as evidence about the design.
 
 A drawing can be technically complete and operationally obscure.
 
-## 5. Workmanship of risk and workmanship of certainty
+## Workmanship of risk and workmanship of certainty
 
-David Pye's distinction between **workmanship of risk** and **workmanship of certainty** prevents this doctrine drifting into naive industrialisation.
+David Pye’s distinction between **workmanship of risk** and **workmanship of certainty** prevents robustness from becoming a manifesto for industrial uniformity.
 
-House Kernel values craft.
+Ovid’s House values craft. Brickwork, hand-finished plaster, carved stone, fitted joinery and repair to existing material may gain architectural quality precisely because judgement remains with the maker.
 
-A brick elevation, hand-finished plaster, carved stone, fitted joinery or repair to an old material may gain architectural quality precisely because judgement remains with the maker.
-
-The project should not eliminate that.
-
-Instead it should **allocate workmanship deliberately**.
+Skill should be allocated deliberately.
 
 Use workmanship of risk where:
 
@@ -140,34 +99,36 @@ Move toward workmanship of certainty where:
 - future remanufacture depends on stable geometry;
 - site judgement adds no architectural value.
 
-A useful rule is:
-
 > **Spend workmanship where workmanship creates value.**
 
-A mason adjusting a visible bond is using skill to make architecture.
+A mason adjusting a visible bond is using skill to make architecture. A builder inventing packers because a fixing interface has no tolerance strategy is spending skill to rescue design debt.
 
-A builder inventing packers because a backplane detail has no tolerance strategy is spending skill to rescue design debt.
+## The tolerance strategy
 
-## 6. The tolerance strategy
+Every important repeated interface should answer six questions.
 
-Every important repeated interface should be capable of answering six questions.
+### Nominal geometry
 
-### 1. Nominal geometry
 What relationship is intended?
 
-### 2. Incoming condition
-What dimensional or geometric variability can credibly arrive from the preceding material/process?
+### Incoming condition
 
-### 3. Controlling datum
+What dimensional or geometric variability can credibly arrive from the preceding material or process?
+
+### Controlling datum
+
 Which plane, axis, level, line or point governs the final assembly?
 
-### 4. Adjustment
-Where is acceptable variation absorbed, with what mechanism, and over what range?
+### Adjustment
 
-### 5. Remediation threshold
+Where is acceptable variation absorbed, with what mechanism and over what range?
+
+### Remediation threshold
+
 At what point is adjustment no longer legitimate and the incoming work must be corrected?
 
-### 6. Verification
+### Verification
+
 How is the result measured or inspected before later construction makes correction expensive?
 
 The recurring physical hierarchy is:
@@ -191,121 +152,80 @@ PRECISE / REPLACEABLE ASSEMBLY
 ARCHITECTURAL COVER / FINISH
 ```
 
-This is not a prescription for six literal layers.
+This is not a prescription for six literal layers. It is a way to prevent precision from being demanded from the wrong thing.
 
-It is a way to prevent precision from being demanded from the wrong thing.
+## Designed adjustment versus improvisation
 
-## 7. Designed adjustment versus bodging
+A packer is not inherently a bodge. A designed shim with a known material, position, maximum thickness and load path can be an excellent tolerance device. The same is true of a slotted bracket, threaded stand-off, scribed sacrificial piece, rebate or overlap.
 
-A packer is not inherently a bodge.
+The difference is simple:
 
-A designed shim with a specified material, location, maximum thickness and load path can be an excellent tolerance device.
+> **Designed adjustment has a range, method and stopping point.**
 
-A slotted bracket can be deliberate.
+Improvisation begins when an assembly leaves its intended geometry and the site invents a correction whose material, load path, durability, fire/acoustic consequence or future removal was never considered.
 
-A threaded stand-off can be deliberate.
+## Architectural tolerance
 
-A scribed sacrificial timber piece can be deliberate.
+Traditional architectural elements offer useful depth and overlap at exactly the places where different assemblies meet.
 
-An overlap can be deliberate.
+Architraves, skirtings, cornices, panel mouldings, thresholds, rebates and scribes can absorb residual acceptable variation where they already have an architectural role.
 
-The bodge begins when the assembly exceeds its intended geometry and the site invents a correction whose material, load path, durability, fire/acoustic consequence or future removal was never considered.
+They should not become decorative excuses for bad work. The stronger hierarchy is:
 
-The difference is:
-
-**designed adjustment has a range, method and stopping point.**
-
-## 8. Architectural tolerance
-
-The reference house has an unusually rich opportunity because traditional architectural grammar already uses depth, overlap and hierarchy at junctions.
-
-Potentially useful elements include:
-
-- architraves;
-- skirtings;
-- cornices;
-- panel mouldings;
-- thresholds;
-- rebates;
-- scribes;
-- cover mouldings.
-
-These should not become decorative excuses for bad work.
-
-Their stronger role is to let the final architecture acknowledge that adjoining materials do not need to terminate on one mathematically perfect plane.
-
-Architectural depth can provide tolerance capacity after the primary technical adjustment has established the intended datum.
+**coarse permanent construction → designed adjustment → true architectural datum → precise assembly → architectural overlap or cover**
 
 The visible element then performs genuine architectural and constructional work at once.
 
-## 9. Representative-installer testing
+## Representative-installer testing
 
-The prototype programme should include a test borrowed conceptually from usability testing.
+A repeated non-standard assembly whose installation logic is not ordinary trade practice should be tested by a competent installer who did not design it.
 
-For a repeated non-standard assembly:
+A useful first article:
 
-1. build or set the background deliberately imperfect but within its declared incoming tolerance;
-2. provide the intended drawings, components and ordinary tools;
-3. ask a competent installer who did not design the system to assemble it;
-4. do not coach the hidden logic;
-5. record every question, workaround, added material, sequence change and ambiguity;
-6. inspect the finished datum and boundaries;
-7. deliberately test an out-of-range condition and confirm that it produces a stop/remediation response rather than concealment.
+1. uses a background that is imperfect but inside its declared incoming tolerance;
+2. supplies the intended drawings, parts and ordinary tools;
+3. avoids coaching the hidden logic;
+4. records questions, workarounds, added material, sequence changes and ambiguity;
+5. inspects the completed datum and boundaries;
+6. tests an out-of-range condition and confirms that it produces a stop or remediation response rather than concealment.
 
-The person is not being tested.
-
-The design is.
+The person is not being tested. The design is.
 
 > **A detail that works only when its designer assembles it is not yet a resolved detail.**
 
-## 10. Project integration
+## Architectural consequences
 
-Workmanship robustness is **not a standalone governing principle**.
+Workmanship robustness is not a separate doctrine principle. It changes how existing propositions are executed.
 
-It cuts across the existing doctrine.
-
-### Principle 3 — Design the interface
-Carries tolerance translation, datums, adjustment and remediation limits.
-
-### Principle 6 — Prefer ordinary parts in extraordinary arrangements
-Carries ordinary tools, understandable sequences, standard mechanisms and the deliberate allocation of craft.
-
-### Part II — The designed interface
-Provides the theory: tolerance strategy, mistake-proofing, human factors and workmanship allocation.
-
-### Part V — Making and testing
-Turns the theory into manufacturing decisions, first articles and representative-installer trials.
-
-### Pattern catalogue
-Each relevant pattern records construction variability/workmanship alongside boundary debt and architectural resolution.
-
-### Reference house
-Traditional architectural depth becomes one means of resolving real tolerance zones without making the room look technical.
-
-### Delivery brief
-Critical interfaces receive tolerance/workmanship schedules, hold points and representative-installer tests.
+- **Designed interfaces** need tolerance translation, datums, adjustment and remediation limits.
+- **Ordinary parts in robust arrangements** favour understandable mechanisms, ordinary tools and deliberate allocation of craft.
+- **Manufacture** is useful where repeatability creates value, not where it merely removes judgement from work that needs it.
+- **Patterns** should record credible construction variability alongside technical boundaries and architectural resolution.
+- **The Reference House** can use traditional architectural depth to resolve real tolerance zones without making rooms look technical.
+- **Delivery** should give consequential non-standard interfaces the proportionate hold points, samples and installer trials their risk warrants.
 
 ## Anti-drift rules
 
-The following interpretations are rejected:
+Workmanship robustness does **not** mean:
 
-- **“design for the worst builder”** — wrong; design for ordinary competent construction and make substandard work visible;
-- **“loosen every tolerance”** — wrong; tighten the few tolerances that actually control performance and stop demanding precision elsewhere;
-- **“packers are bodges”** — wrong; unspecified improvisation is the problem, not bounded adjustment;
-- **“manufacture everything off site”** — wrong; controlled manufacture is one tool among site craft, standard interfaces and adjustment;
-- **“mistake-proofing means no skill”** — wrong; skill should be spent where judgement creates value;
-- **“trim hides defects”** — wrong; architectural cover may absorb residual acceptable variation but should not conceal work beyond the technical adjustment range;
-- **“the contractor owns buildability”** — incomplete; constructor knowledge is essential, but the design team owns the avoidable difficulty it creates.
+- designing for the worst builder;
+- loosening every tolerance;
+- treating all packers as defects;
+- manufacturing everything off site;
+- removing skill from construction;
+- using trim to hide defective work;
+- shifting buildability entirely onto the contractor.
+
+The target is ordinary competent construction in which acceptable variation has somewhere legitimate to go and out-of-range work remains visible.
 
 ## Sources
 
-- BSI, **BS 5606:2022 — Accuracy and tolerance in design and construction. Guide**: https://knowledge.bsigroup.com/products/accuracy-and-tolerance-in-design-and-construction-guide
-- Talebi, S., Koskela, L., Tzortzopoulos Fazenda, P. & Kagioglou, M., **Tolerance Management in Construction: A Conceptual Framework**, *Sustainability* 12(3), 2020: https://doi.org/10.3390/su12031039
-- Talebi, S., **Improvement of Dimensional Tolerance Management in Construction**, doctoral thesis, University of Huddersfield, 2019: https://pure.hud.ac.uk/en/studentTheses/improvement-of-dimensional-tolerance-management-in-construction/
-- Tommelein, I. D., **‘Poka Yoke’ or Quality by Mistake Proofing Design and Construction Systems**, IGLC16, 2008: https://www.iglc.net/Papers/Details/614
-- HSE, **Human factors: Design**: https://www.hse.gov.uk/humanfactors/topics/design.htm
-- HSE, **Maintenance error**: https://www.hse.gov.uk/humanfactors/topics/error.htm
-- CIRIA SP26, **Buildability: an assessment**: https://www.ciria.org/CIRIA/CIRIA/Item_Detail.aspx?Category=DOWNLOAD&iProductCode=SP26D
-- RIBA, **DfMA Overlay to the RIBA Plan of Work 2020, 2nd edition**: https://www.architecture.com/-/media/GatherContent/Business-Benchmarking/Additional-Documents/DfMA-Overlay-to-the-RIBA-Plan-of-Work-2020-2nd-edpdf.pdf
-- Cabinet Office, **The Construction Playbook**: https://www.gov.uk/government/publications/the-construction-playbook
-- David Pye, **The Nature and Art of Workmanship**, Herbert Press.
+- BSI, **BS 5606:2022 — Accuracy and tolerance in design and construction. Guide**.
+- Talebi, S., Koskela, L., Tzortzopoulos Fazenda, P. & Kagioglou, M., **Tolerance Management in Construction: A Conceptual Framework**, *Sustainability* 12(3), 2020.
+- Talebi, S., **Improvement of Dimensional Tolerance Management in Construction**, doctoral thesis, University of Huddersfield, 2019.
+- Tommelein, I. D., **‘Poka Yoke’ or Quality by Mistake Proofing Design and Construction Systems**, IGLC16, 2008.
+- HSE, **Human factors: Design** and **Maintenance error**.
+- CIRIA SP26, **Buildability: an assessment**.
+- RIBA, **DfMA Overlay to the RIBA Plan of Work 2020**, 2nd edition.
+- Cabinet Office, **The Construction Playbook**.
+- David Pye, **The Nature and Art of Workmanship**.
