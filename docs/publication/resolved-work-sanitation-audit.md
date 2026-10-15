@@ -64,11 +64,11 @@ That synthesis preserves the useful conclusions from the internal validation pro
 
 The raw validation/programme records are therefore internal-only.
 
-The **Reference House G-01 conformance record** has now also been rewritten as a resolved architectural result. It states the six-rule pass directly and explains the house evidence without development-stage chronology, freeze mechanics or gate IDs. The courtyard, low-slope roof, technical families and construction choices remain explicitly project-owned rather than being promoted into the grammar.
+The **Reference House G-01 conformance record** has also been rewritten as a resolved architectural result. It states the six-rule pass directly and explains the house evidence without development-stage chronology, freeze mechanics or gate IDs. The courtyard, low-slope roof, technical families and construction choices remain explicitly project-owned rather than being promoted into the grammar.
 
 ### Reference House
 
-The Reference House overview is now a current building proposition rather than a chronology of gates. It presents:
+The Reference House overview is a current building proposition rather than a chronology of gates. It presents:
 
 - authority stack;
 - morphology and programme;
@@ -81,6 +81,8 @@ The Reference House overview is now a current building proposition rather than a
 - occupied interfaces;
 - life-safety/adaptation boundary;
 - remaining external proof obligations.
+
+The former discipline-by-discipline external-review package has now been reduced to one reader-facing **Independent Review Questions** page. It preserves the substantive unresolved questions—structure, fire/access, MEP/acoustics, building physics/energy, cross-discipline interfaces and real-site dependencies—without publishing review workflow, response templates, maturity gates or issue instructions. The detailed working briefs and date-stamped regulatory baseline remain internal project records.
 
 ### Physical prototypes
 
@@ -98,7 +100,7 @@ The computational overview is organised around resolved capability rather than p
 - explicit authority limits;
 - the rule for when computation should stop.
 
-A second cleanup pass has now internalised the remaining high-confidence computational gate history: the contrast-fixture gate report, first executable-gate report, paper capability matrices, doctrine-sync delta and external-review packs. Their unique reader-useful result is preserved in the resolved overview: shared plan semantics have been tested across unlike fixtures, and exterior maintenance remains outside the demonstrated executable scope where real tasks depend on access equipment, support/setup geometry, permissions and future landscape conditions.
+A second cleanup pass internalised the remaining high-confidence computational gate history: the contrast-fixture gate report, first executable-gate report, paper capability matrices, doctrine-sync delta and external-review packs. Their unique reader-useful result is preserved in the resolved overview: shared plan semantics have been tested across unlike fixtures, and exterior maintenance remains outside the demonstrated executable scope where real tasks depend on access equipment, support/setup geometry, permissions and future landscape conditions.
 
 The concrete Mapeguard manufacturer-evidence trial remains public because it demonstrates a substantive evidence-scoping method rather than merely recording programme progress. Its navigation label is semantic rather than stage-coded.
 
@@ -110,6 +112,7 @@ Examples include:
 
 - `G-01 v0.1 — specification` rather than “frozen grammar”;
 - `Technical coordination` rather than “Reference House development history”;
+- `Independent review questions` rather than an RH-stage review package;
 - `Scoped manufacturer evidence — Mapeguard WP` rather than an evidence-trial stage label.
 
 Internal sources referenced from current pages remain accessible as repository-source links rather than being rebuilt as public pages.
@@ -117,7 +120,7 @@ Internal sources referenced from current pages remain accessible as repository-s
 ## Remaining SAN-02 / SAN-03 fronts
 
 1. Continue the prose pass across public research, Reference House coordination, prototype and technical-family pages.
-2. Review remaining stage-coded Reference House coordination and external-review records: retain only where they add current architectural evidence, then rewrite or synthesise before internalising.
+2. Review remaining stage-coded Reference House coordination records: retain only where they add current architectural evidence, then rewrite or synthesise before internalising.
 3. Review prototype navigation and page titles so test artefacts remain useful without P03/P04/W2 programme language where those codes add no reader value.
 4. Review remaining references from resolved pages to internal source records and remove those that add provenance but no reader understanding.
 5. Audit the Working Edition and Primer manifests/adapters against the same resolved-work rule.
