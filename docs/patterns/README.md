@@ -4,7 +4,6 @@
 import { data as patterns } from './patterns.data'
 
 const activePatterns = patterns.filter((pattern) => pattern.state === 'active')
-const retiredPatterns = patterns.filter((pattern) => pattern.state === 'retired')
 </script>
 
 The pattern set records reusable architectural responses developed from the governing principles. Patterns sit between doctrine and project-specific construction: specific enough to shape design, general enough to admit materially different implementations.
@@ -15,7 +14,7 @@ That asymmetry is deliberate evidence about maturity, not a graph-completion tas
 
 Pattern identity is independent from evidence maturity. A pattern can have a stable place in the set while still requiring calculation, prototype work or professional review.
 
-## Active canonical patterns
+## Active patterns
 
 <div v-if="activePatterns.length">
   <ul>
@@ -26,29 +25,16 @@ Pattern identity is independent from evidence maturity. A pattern can have a sta
   </ul>
 </div>
 
-Stable IDs are provenance and machine-readable identity. The architectural name is the primary reader-facing identity.
-
-## Retired identities
-
-<div v-if="retiredPatterns.length">
-  <ul>
-    <li v-for="pattern in retiredPatterns" :key="pattern.id">
-      <a :href="pattern.url">{{ pattern.title }}</a>
-      <span> · <code>{{ pattern.id }}</code></span>
-    </li>
-  </ul>
-</div>
-
-Retired IDs remain visible for provenance and are never reused.
+The architectural name is the primary reader-facing identity. Stable IDs provide compact cross-reference across patterns, evidence and computational representations.
 
 ## Other layers
 
 Not every useful recurring proposition belongs in the pattern graph.
 
 - [Strategies](strategies/) hold broad approaches whose valid physical responses differ too much to form one pattern.
-- [Held candidates](candidates/) contain plausible future patterns whose evidence, scope, domestic proportionality or physical quality has not crossed the admission gate.
+- [Held candidates](candidates/) contain plausible future patterns whose evidence, scope, domestic proportionality or physical quality has not earned canonical pattern status.
 - rules and obligations hold propositions that are important but too procedural or deterministic to constitute an architectural pattern.
-- implementation families and prototypes remain in their research or prototype records rather than acquiring pattern status through naming alone.
+- implementation families and prototypes remain separate from patterns unless a genuinely reusable architectural relationship has been established.
 
 These distinctions keep the set selective and preserve the difference between a reusable architectural relationship and a particular way of building it.
 
@@ -58,4 +44,4 @@ The [Pattern Model and Authoring Contract](language-model.md) defines pattern id
 
 The Reference House records actual project selections and occurrences in its [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md). Use in that house does not increase a pattern's general evidence or maturity.
 
-The active and retired lists above are generated from canonical pattern frontmatter; individual pattern records remain the source of pattern identity and metadata.
+The active list above is generated from pattern metadata; individual pattern records remain the source of pattern identity and evidence status.
