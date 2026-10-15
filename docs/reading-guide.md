@@ -34,5 +34,3 @@ Patterns describe reusable responses to recurring architectural problems. Archit
 **[Research](research/README.md) → [Physical Prototypes](prototypes/README.md) → [Computational Track](computational/README.md) → [Delivery](delivery/README.md)**
 
 Research supports, qualifies or rejects claims. Prototypes test propositions physically. The computational track represents a bounded set of relationships where deterministic checking is useful. Delivery translates sufficiently mature findings into requirements for an appointed design team.
-
-The website keeps the resolved work in the foreground. Internal development records remain in the source repository where they are needed for audit and maintenance rather than forming part of the reading sequence.
