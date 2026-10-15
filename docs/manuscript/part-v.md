@@ -15,36 +15,107 @@ The basic test remains:
 
 **frequency × consequence × retrofit difficulty**
 
-A provision is strongest where the future event is reasonably likely, expensive or destructive if ignored, and cheap to support at first construction. A spare conduit may make sense for future cabling; working clearance makes sense around replaceable plant; passive containment may be justified around a high-consequence concealed water joint. A fully demountable wall in a low-service room may not earn its complexity.
+But that expression is only a prompt. It does not decide how much building should be bought for a possible future event. The burden of proof must rise with the permanence and scale of the provision being proposed.
 
-The same discipline applies to permanence. Making an element permanent creates future coupling, so the architectural, structural or material value of permanence should justify the change it forces around itself.
+A spare draw cord in a conduit that already exists is not the same proposition as a deeper whole-storey floor. A removable architrave is not the same proposition as house-wide demountable lining. A plant withdrawal route is not evidence for an interstitial service floor.
 
-## Compare against the best conventional answer
+## Compare against excellent conventional construction
 
-Novelty earns nothing by itself. Every non-standard pattern should be compared with the best plausible conventional alternative, not a deliberately weak baseline.
+Novelty earns nothing by itself. Every non-standard provision should be compared with the best plausible conventional alternative, not a deliberately weak baseline.
 
-A replaceable wall lining should compete with a good durable plaster or drylining system. A finish-agnostic floor platform should compete with a high-quality conventional floor. A seated floor connection should compete with an ordinary engineered joist hanger.
+The conventional option is allowed to be well designed: accessible plant, documented services, sensible local access panels, mechanically fixed windows, coordinated floor and ceiling zones, durable finishes and competent replacement planning.
 
-The candidate is justified only if its serviceability, quality, resilience or architectural value outweighs the added burden.
+Ovid’s House has to show what it adds **beyond that**.
+
+The comparison must also be functionally fair. A serviceable option does not win by accepting worse fire, acoustic, moisture, thermal or architectural performance than the conventional one.
+
+## Four burdens of provision
+
+For early architectural decisions, classify the present burden before arguing about future benefit.
+
+| Burden | Character | Typical examples | Presumption |
+|---|---|---|---|
+| **B0 — coincident / negligible** | Uses geometry or information already required; trivial material and area penalty. | labels, documented isolation, spare draw cord, sleeve at an already-required crossing | favour where useful |
+| **B1 — local** | Small extra component, depth or interface; no meaningful whole-room/building area penalty. | removable trim, local access panel, small sacrificial backplane | adopt for expected/high-consequence work when boundaries remain simple |
+| **B2 — spatial / assembly** | Consumes meaningful plan/section or creates a repeated interface/boundary family. | riser, enlarged plant room, service wall, distributed accessible room route | requires explicit conventional comparison and aggregate benefit |
+| **B3 — systemic / structural** | Alters whole-building structure, floor system, major area or many interfaces mainly for future optionality. | house-wide access floor, interstitial service storey, spare structure for an unknown extra storey | presume against unless project evidence is unusually strong |
+
+The categories are not value judgements. A riser can be an excellent B2 decision when several systems and maintenance tasks genuinely aggregate into it. A B0 provision can still be wrong if it creates a new safety or moisture defect.
+
+## Count only real avoided destruction
+
+The future intervention must be compared layer by layer.
+
+Ask what sound, slower-lived construction the conventional intervention would actually destroy. Do not count work that would normally be renewed at the same time anyway.
+
+This is the **co-renewal rule**.
+
+A full bathroom refurbishment may rationally replace sanitaryware, waterproofing, boards and finish together. Making every bathroom finish demountable in order to preserve material already due for renewal buys little. By contrast, a window frame may reach end of life while the masonry opening around it remains entirely sound; preserving that slower layer has a clearer value.
+
+The same distinction applies to services. Routine access to a fan, filter, valve or pump may be strongly justified while designing the complete static duct or pipe network for effortless withdrawal may not be.
+
+## The decision threshold
+
+Low-burden provisions can be supported by correspondingly modest evidence. High-burden provisions cannot.
+
+- **B0** may be adopted for a plausible future use where it creates no material penalty.
+- **B1** should normally serve an expected, recurrent or high-consequence task and should not create disproportionate boundary debt.
+- **B2** should aggregate several real uses, avoid materially destructive intervention, or provide strong present-day value as well as future serviceability. Area, material, carbon and cost consequences should be tested at the precision available.
+- **B3** should normally be rejected or held unless project-specific whole-life evidence survives plausible low-use scenarios.
+
+Where the necessary evidence is missing, the decision is **hold the provision**, not “the doctrine prefers maintainability, therefore build it”. The conventional baseline remains the design until the higher-burden option earns departure.
+
+## The test must be able to say no
+
+A proportionality method that never rejects an Ovid’s House idea is not a method.
+
+Representative outcomes are deliberately uneven:
+
+- a draw route integrated into skirting or joinery already required by the room can be a proportionate way to accommodate future cabling;
+- a dry-side service wall can be justified where several wet-room components genuinely cluster across one boundary, but not where a second circulation zone is created merely to reach one valve;
+- accessible mechanical window fixings and removable trim can preserve a durable opening without requiring one universal window system;
+- complete reversible bathroom lining is not a default: at major renewal, conventional co-renewal of short-lived fit-out may be the better answer;
+- access to ventilation plant, filters and condensate routes is strongly justified; a crawlable route around every long-lived duct is not;
+- a house-wide raised access floor does not follow from the likelihood of future cabling;
+- structural reserve for an unknown future extra storey does not follow from the fact that households change.
+
+The point is not that these outcomes are universal. It is that **scale of provision must track quality of evidence**.
+
+## Permanence has the same burden of proof
+
+The same discipline applies in the opposite direction.
+
+Making an element permanent creates future coupling. For a major wall, stair, facade order, room relationship or structural grid ask:
+
+- what architectural, structural, social or material value earns permanence?
+- what future change does that permanence constrain?
+- is the constraint acceptable under credible future scenarios?
+- could equivalent architectural value be achieved with less lock-in?
+
+Architectural intention is necessary to authorship. It is not by itself evidence that permanence is proportionate.
 
 ## The option record
 
 For major non-standard decisions record:
 
-- problem being solved;
-- conventional baseline;
+- problem / future event being addressed;
+- evidence for expecting that event;
+- excellent conventional baseline;
 - candidate options;
-- capital cost;
-- embodied impact;
+- present burden class;
+- capital cost where material;
+- embodied impact where material;
 - floor or section depth;
-- maintenance scenario;
-- replacement scenario;
+- slower layers disturbed by the conventional intervention;
+- co-renewal that would happen anyway;
+- maintenance and replacement sequence;
 - boundary penalties;
-- evidence maturity;
-- uncertainty;
-- prototype or test required.
+- workmanship / governance burden;
+- future-specificity risk;
+- evidence maturity and uncertainty;
+- prototype, cost plan or calculation required.
 
-A decision may remain open. Documented uncertainty is preferable to false certainty.
+A decision may remain open. Documented uncertainty is preferable to false certainty; an open high-burden provision should not quietly become architecture merely because it has been drawn.
 
 ---
 
