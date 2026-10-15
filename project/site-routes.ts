@@ -1,7 +1,9 @@
 import { existsSync } from 'node:fs'
 import { dirname, posix, resolve } from 'node:path'
+import { isPublicSource } from './public-surface.js'
 
 const externalOrAnchor = /^(?:[a-z][a-z0-9+.-]*:|#|\/\/)/i
+const repositoryBlobRoot = 'https://github.com/adamnoden/architecture/blob/main/'
 
 function splitSuffix(value: string): [string, string] {
   const index = value.search(/[?#]/)
@@ -69,9 +71,16 @@ function candidateSourceTargets(pathname: string, sourceFile: string): string[] 
   return [`${target}.md`, `${target}/README.md`]
 }
 
+function repositorySourceUrl(source: string, suffix: string): string {
+  return `${repositoryBlobRoot}${source}${suffix}`
+}
+
 /**
  * Markdown stays authored against repository paths so links work on GitHub.
- * VitePress rendering translates links to the public route tree instead.
+ * VitePress rendering translates public sources to the public route tree.
+ * Links to records intentionally excluded from the reader-facing site remain
+ * available as source references in the repository rather than becoming dead
+ * public routes.
  */
 export function rewriteMarkdownPageLink(
   href: string,
@@ -88,6 +97,7 @@ export function rewriteMarkdownPageLink(
   )
 
   if (!target) return publicRoute(href)
+  if (!isPublicSource(target)) return repositorySourceUrl(target, suffix)
   return `${routeForSource(target)}${suffix}`
 }
 
