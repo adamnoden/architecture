@@ -40,13 +40,14 @@ The benchmark is not whether a detail can be disassembled. It is whether anyone 
 
 Every permanent route, access zone, removable layer and spare capacity has an initial cost in space, carbon, labour, coordination and possible failure modes.
 
-The project needs stronger comparative evidence for where early provision is justified by:
+The project now has a fail-closed architectural screening method, but real projects still need stronger comparative evidence for where early provision is justified by:
 
 - frequency of the future task;
 - consequence of failure or obsolescence;
 - destructiveness of retrofit;
 - cost of provision at first construction;
-- whole-life material and carbon effect.
+- whole-life material and carbon effect;
+- who pays the present premium and who is likely to receive the future benefit.
 
 This question may narrow the project further. That is an acceptable outcome.
 
@@ -58,12 +59,12 @@ Future prototypes and project work should deliberately include:
 
 - imperfect but realistic masonry backgrounds;
 - normal construction tolerances;
-- representative competent installers rather than only specialist fabricators;
-- repeated removal and reinstatement;
-- inspection before closure;
+- representative competent installers for repeated non-standard work rather than only specialist fabricators;
+- repeated removal and reinstatement where reversibility is claimed;
+- inspection before closure where consequence warrants it;
 - failure states caused by plausible site error.
 
-The project should distinguish details that are merely difficult from details whose difficulty is structurally useful.
+The project should distinguish details that are merely difficult from details whose difficulty is structurally useful. Conventional work should not acquire exceptional process merely because it appears in Ovid’s House.
 
 ## 5. Does a second architectural grammar expose hidden bias in the framework?
 
@@ -110,6 +111,8 @@ A real project would expose questions that virtual coordination cannot settle:
 
 The valuable research question is not whether the current geometry survives unchanged. It is which relationships prove robust enough to survive site reality and which were artefacts of the surrogate condition.
 
+The PR-01 compact-terrace counter-morphology has already shown that some Reference House devices should disappear rather than transfer literally: the dedicated service flank, generous plant room and side replacement opening are project expressions, not doctrine.
+
 ## 8. Can the courtyard earn its environmental and maintenance costs?
 
 The Reference House court is a project morphology, not doctrine.
@@ -146,7 +149,7 @@ These questions require buildings and time.
 
 Any future built project should therefore treat post-occupancy observation and maintenance history as research evidence, not merely facilities-management data.
 
-## 10. Which environmental claims survive measured performance?
+## 10. Which environmental claims survive measured performance and future conditions?
 
 Passive-first is a design hierarchy, not a performance result.
 
@@ -163,7 +166,15 @@ Future project work should test actual:
 - moisture behaviour;
 - resilience during utility or equipment outages.
 
-Measured failure should be allowed to change the architecture or the doctrine where necessary.
+A long-life project should also test expensive-to-change geometry against a **reasonable range of future climate and hazard conditions appropriate to the real site**. The purpose is not to choose one speculative future-weather file and treat it as truth. Record instead:
+
+- the scenario/source and time horizon;
+- material uncertainty;
+- which permanent decisions are sensitive to the scenario;
+- what low-burden adaptation remains available;
+- the threshold at which plan, opening, shading, envelope, roof/drainage, landscape or plant strategy should be reconsidered.
+
+Measured or scenario failure should be allowed to change the architecture or the doctrine where necessary. The current site-free Reference House cannot close this question honestly.
 
 ## 11. Where should computation stop?
 
