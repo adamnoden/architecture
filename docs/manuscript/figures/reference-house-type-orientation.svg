@@ -19,7 +19,7 @@
   <text x="70" y="70" class="label">Reference House — type and orientation</text>
   <text x="70" y="108" class="small">One worked courtyard house; orientation is analytical, not a claim about a commissioned site.</text>
 
-  <g transform="translate(120 180)">
+  <g transform="translate(120 170)">
     <rect x="0" y="0" width="720" height="648" class="light"/>
     <rect x="252" y="204" width="216" height="240" class="court"/>
     <rect x="546" y="0" width="174" height="648" class="service" opacity="0.55"/>
@@ -28,7 +28,7 @@
     <text x="360" y="368" class="tiny" text-anchor="middle">≈ 3.6 × 4.0 m</text>
     <text x="633" y="322" class="small" text-anchor="middle" transform="rotate(-90 633 322)">high-service flank</text>
 
-    <text x="360" y="688" class="small" text-anchor="middle">FRONT / ARRIVAL</text>
+    <text x="360" y="668" class="small" text-anchor="middle">FRONT / ARRIVAL</text>
     <text x="360" y="-24" class="small" text-anchor="middle">GARDEN</text>
 
     <path d="M360 624 L360 500 L360 444 L360 204 L360 36" class="rule" marker-end="url(#arrow)"/>
@@ -43,10 +43,10 @@
     <line x1="-42" y1="130" x2="-42" y2="20" class="rule" marker-end="url(#arrow)"/>
     <text x="-42" y="160" class="small" text-anchor="middle">N</text>
 
-    <line x1="0" y1="744" x2="720" y2="744" class="soft"/>
-    <line x1="0" y1="730" x2="0" y2="758" class="soft"/>
-    <line x1="720" y1="730" x2="720" y2="758" class="soft"/>
-    <text x="360" y="786" class="tiny" text-anchor="middle">outer reservation ≈ 12.0 m</text>
+    <line x1="0" y1="690" x2="720" y2="690" class="soft"/>
+    <line x1="0" y1="676" x2="0" y2="704" class="soft"/>
+    <line x1="720" y1="676" x2="720" y2="704" class="soft"/>
+    <text x="360" y="718" class="tiny" text-anchor="middle">outer reservation ≈ 12.0 m</text>
 
     <line x1="790" y1="0" x2="790" y2="648" class="soft"/>
     <line x1="776" y1="0" x2="804" y2="0" class="soft"/>

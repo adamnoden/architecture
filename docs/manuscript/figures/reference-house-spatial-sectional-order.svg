@@ -34,10 +34,10 @@
     <text x="410" y="430" class="tiny">study</text>
 
     <path d="M260 550 L260 500 L260 370 L260 195 L260 75" class="rule" marker-end="url(#arrow)"/>
-    <text x="285" y="548" class="tiny">front</text>
+    <text x="285" y="535" class="tiny">front</text>
     <text x="285" y="92" class="tiny">garden</text>
 
-    <text x="0" y="575" class="tiny">shared rooms + arrival carry the principal domestic sequence</text>
+    <text x="0" y="565" class="tiny">shared rooms + arrival carry the principal domestic sequence</text>
   </g>
 
   <g transform="translate(710 170)">
@@ -52,21 +52,20 @@
     <text x="52" y="435" class="small">bedroom</text>
     <text x="395" y="125" class="small">bedroom</text>
     <text x="405" y="285" class="tiny">bath / gallery</text>
-    <text x="0" y="575" class="tiny">private rooms retain order without a mandatory piano nobile</text>
+    <text x="0" y="565" class="tiny">private rooms retain order without a mandatory piano nobile</text>
   </g>
 
-  <g transform="translate(90 790)">
+  <g transform="translate(90 835)">
     <line x1="0" y1="0" x2="1140" y2="0" class="soft"/>
     <text x="0" y="38" class="tiny">sectional hierarchy</text>
-    <line x1="185" y1="-10" x2="185" y2="-98" class="rule"/>
-    <line x1="185" y1="-98" x2="600" y2="-98" class="rule"/>
-    <line x1="600" y1="-98" x2="600" y2="-10" class="rule"/>
-    <text x="392" y="-116" class="small" text-anchor="middle">ground clear height ≈ 2.95 m</text>
+    <line x1="185" y1="-10" x2="185" y2="-55" class="rule"/>
+    <line x1="185" y1="-55" x2="600" y2="-55" class="rule"/>
+    <line x1="600" y1="-55" x2="600" y2="-10" class="rule"/>
+    <text x="392" y="-70" class="small" text-anchor="middle">ground clear height ≈ 2.95 m</text>
 
-    <line x1="680" y1="-10" x2="680" y2="-82" class="rule"/>
-    <line x1="680" y1="-82" x2="1095" y2="-82" class="rule"/>
-    <line x1="1095" y1="-82" x2="1095" y2="-10" class="rule"/>
-    <text x="888" y="-100" class="small" text-anchor="middle">upper storey slightly quieter</text>
-    <text x="185" y="70" class="tiny">Ground-floor primacy is restrained, not monumental.</text>
+    <line x1="680" y1="-10" x2="680" y2="-45" class="rule"/>
+    <line x1="680" y1="-45" x2="1095" y2="-45" class="rule"/>
+    <line x1="1095" y1="-45" x2="1095" y2="-10" class="rule"/>
+    <text x="888" y="-60" class="small" text-anchor="middle">upper storey slightly quieter</text>
   </g>
 </svg>

@@ -6,7 +6,7 @@
     "docs:dev": "vitepress dev .",
     "docs:build": "vitepress build .",
     "docs:preview": "vitepress preview .",
-    "publication:validate": "tsx publication/scripts/validate.ts",
+    "publication:validate": "tsx publication/scripts/validate.ts && tsx publication/scripts/validate-figures.ts",
     "publication:integrity": "tsx publication/scripts/integrity.ts",
     "publication:scope:update": "tsx publication/scripts/update-scope-report.ts",
     "publication:prepare:smoke": "tsx publication/scripts/prepare.ts --smoke",
