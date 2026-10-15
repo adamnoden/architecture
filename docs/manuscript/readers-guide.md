@@ -14,11 +14,11 @@ The book has two reading modes.
 
 **Parts I and II are an argument.** Part I establishes the proposition: buildings change at different rates, permanence should be selective, and a long-lived house needs an architectural platform for change. Part II develops the consequences through interfaces, failure, maintenance geography, environmental resilience, boundaries, replaceable interiors and stewardship.
 
-**Part III is a reference.** The pattern language translates the doctrine into reusable architectural responses. It is not intended to be read as a second prose version of Part II. Pattern IDs are stable identities, not a ranking or required design sequence. Strategies sit above patterns where several materially different physical responses can satisfy the same broader proposition. Held candidates remain outside the canonical language until their admission questions are resolved.
+**Part III is a reference.** It contains a bounded set of reusable architectural patterns plus generative sequences where the relationships are sufficiently mature to support them. The strongest current sequence is service topology; the other pattern families are not presented as one uniformly mature Alexander-style language. Pattern names are the primary reader-facing identity. Stable IDs preserve provenance and cross-reference; they are not a ranking or required design sequence. Strategies sit above patterns where several materially different physical responses can satisfy the same broader proposition. Held candidates remain outside the canonical set until their admission questions are resolved.
 
-**Part IV is an integration test.** The Reference House is one coordinated interpretation of Ovid’s House using the frozen G-01 Georgian-derived grammar, a courtyard morphology and project-specific technical choices. Those choices are allowed to be opinionated. They do not travel upstream into the doctrine merely because the house uses them. The six chapters in Part IV synthesise the current Reference House at coordinated virtual-design scope; they do not convert its unresolved engineering, physical or professional-review obligations into proof.
+**Part IV is an integration test.** The Reference House is one coordinated interpretation of Ovid’s House using the frozen G-01 Georgian-derived grammar, a courtyard morphology and project-specific technical choices. Those choices are allowed to be opinionated. They do not travel upstream into the doctrine merely because the house uses them. The six chapters in Part IV synthesise the current Reference House at coordinated virtual-design scope; they do not convert its unresolved engineering, physical or professional-review obligations into proof. Its generous detached/courtyard morphology is deliberately favourable to several maintenance and serviceability ideas, so transfer must be tested separately rather than inferred from the amount of detail in the house.
 
-**Part V returns to delivery.** A proposition is not complete because it reads well. It must survive cost, carbon, professional responsibility, construction variation, prototype work, commissioning, maintenance and later change.
+**Part V returns to delivery.** A proposition is not complete because it reads well. It must survive cost, carbon, professional responsibility, construction variation, prototype work, commissioning, maintenance and later change. Additional process is not treated as free: non-standard controls should activate only where consequence or novelty earns them, and the architecture should remain intelligible when long-term stewardship is imperfect.
 
 **Sources and further reading** closes the publication with the books, papers, standards and essays most useful for following the architectural and cross-domain ideas further. It is a reading list rather than a second evidence register.
 
@@ -38,6 +38,8 @@ The book has two reading modes.
 
 **Pattern** — a recurring architectural response to a recurring context and set of forces, specific enough to shape design but general enough to admit materially different implementations.
 
+**Generative sequence** — an ordered design sequence that invokes patterns where their relationships are mature enough to guide consequential decisions and state rewind conditions. A pattern can be valid without belonging to a mature sequence.
+
 **Implementation family** — a particular construction or system family capable of realising a pattern. Selection between families remains subject to engineering, evidence, project constraints and architectural judgement.
 
 **Occurrence** — one application of a pattern in one project. A Reference House occurrence is evidence about coordination in that house, not evidence that the pattern is generally valid.
@@ -55,7 +57,7 @@ Ovid’s House separates confidence in a proposition from the amount of project 
 
 **Maturity** describes what this project has actually done with the proposition. A proposition may be drawn, calculated, costed, mocked-up, maintenance-tested, built or observed in use. These states are not interchangeable with evidence. A well-established principle may be immature in the Reference House; a carefully built prototype may still test a weakly supported general proposition.
 
-The canonical pattern language and G-01 grammar are internally validated/controlled at their stated scopes; the architectural grammar framework and Reference House remain internally coordinated; physical prototypes remain developed but not completed; competent external professional review of the Reference House has not yet occurred. The computational workstream is internally validated only within its bounded declared proof domain. These differences are deliberate and should not be flattened into one generic sense of validation.
+The canonical pattern set and G-01 grammar are internally validated/controlled at their stated scopes; only the service-topology family currently has a mature generative sequence. The architectural grammar framework and Reference House remain internally coordinated; physical prototypes remain developed but not completed; competent external professional review of the Reference House has not yet occurred. The computational workstream is internally validated only within its bounded declared proof domain. These differences are deliberate and should not be flattened into one generic sense of validation.
 
 Pattern pages use **Does not prove** to state the boundary of inference where evidence could otherwise be read too broadly. Renaming, reclassifying or assigning a stable identity does not increase evidence or maturity.
 
@@ -64,5 +66,7 @@ Pattern pages use **Does not prove** to state the boundary of inference where ev
 Ovid’s House operates inside ordinary non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance. Maintainability does not excuse a weaker fire boundary; reversibility does not excuse poor acoustics; passive-first design does not forbid mechanical systems where measured performance requires them.
 
 Serviceability is also proportionate. Every void, spare route, removable layer and access provision has an initial cost in material, labour, space and complexity. Permanent provision is strongest where the future event is reasonably likely, consequential or destructive to retrofit, and where supporting it at first construction is comparatively cheap.
+
+Foreseeable change includes changes in occupants as well as systems. A modest early provision may be justified where it preserves ordinary use through reduced mobility or care; that does not justify turning every possible future incapacity into permanent infrastructure.
 
 Whole-life cost, carbon, building physics, construction risk, workmanship and occupation remain part of the same judgement. The project is not trying to maximise access or demountability. It is trying to make foreseeable change less destructive while preserving the qualities that make a house worth keeping.
