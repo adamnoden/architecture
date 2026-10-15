@@ -1,8 +1,8 @@
-# Appendix A — Evidence and Precedent Notes
+# Evidence and Precedent Notes
 
 Ovid’s House uses precedent in several different ways. The distinctions matter because a precedent can demonstrate that something has existed without proving that it should become a general rule, and a technical source can establish one performance fact without validating the architectural system around it.
 
-This appendix explains how the book treats those forms of support. It is not a second bibliography; the specific works and standards are gathered in **Sources and further reading**.
+These notes explain how the work treats those forms of support. They are not a second bibliography; the specific works and standards are gathered in **Sources and further reading**.
 
 ## 1. Four uses of evidence
 
@@ -18,11 +18,11 @@ Built and published precedents are used to demonstrate architectural possibility
 
 A precedent may show that a particular spatial order, service arrangement, interface, maintenance provision or compositional technique has been used successfully enough to deserve attention. It does not prove transfer to another scale, climate, construction culture or programme.
 
-The G-01 grammar research is deliberately stricter: derivation cases, mutations and held-out cases were separated so that a Georgian-derived rule was not accepted merely because it appeared in one admired building.
+The G-01 grammar evidence is deliberately comparative: derivation cases, counterexamples and held-out cases are separated so that a Georgian-derived rule is not accepted merely because it appears in one admired building.
 
 ### Internal design research
 
-Some propositions have been deliberately challenged inside this project through comparative options, controlled mutations, coordinated design, deterministic modelling or adversarial review.
+Some propositions have been deliberately challenged through comparative options, controlled mutations, coordinated design, deterministic modelling or adversarial review.
 
 This can strengthen internal confidence and expose contradiction. It cannot substitute for competent independent review, physical testing or occupation where those forms of evidence are required.
 
@@ -32,7 +32,7 @@ The highest-consequence claims ultimately require evidence outside the manuscrip
 
 Structural capacity needs engineering. Building-physics performance needs calculation and simulation. Non-standard interfaces may need full-scale construction and disassembly. Regulatory questions need competent review. Claims about long-term use ultimately benefit from observation through time.
 
-Where those gates remain open, the book should say so.
+Where those gates remain open, the work should say so.
 
 ## 2. What precedent is allowed to do
 
@@ -54,7 +54,7 @@ A Georgian villa does not prove that a contemporary house should reproduce eight
 
 Several important conclusions in Ovid’s House come from rejection rather than adoption.
 
-The Reference House rejected a remote en-suite because its drainage burden was disproportionate. It rejected inward courtyard roof drainage because the failure geography was worse. It rejected whole-house removable wall lining and access flooring as defaults because the current maintenance tasks did not earn their complexity. G-01 rejected universal ratios, centred-entry rules, fixed principal-room sequences and one required roof form.
+The Reference House rejects a remote en-suite because its drainage burden is disproportionate. It rejects inward courtyard roof drainage because the failure geography is worse. It rejects whole-house removable wall lining and access flooring as defaults because the current maintenance tasks do not earn their complexity. G-01 rejects universal ratios, centred-entry rules, fixed principal-room sequences and one required roof form.
 
 Those rejections are evidence about proportionality within the stated project scope. They are not universal bans.
 
@@ -66,7 +66,7 @@ A proposition can be well supported in general and still immature in this projec
 
 Conversely, a carefully developed prototype can test an idea that remains weakly supported as a general architectural proposition.
 
-The book therefore separates:
+The work therefore separates:
 
 **Evidence** — how strongly the proposition is supported within its stated scope;
 
@@ -88,13 +88,13 @@ It is valuable because doctrine, patterns, G-01, structure, services, environmen
 
 It cannot, by itself, prove the doctrine that generated it.
 
-The house is therefore cited in this book as an **occurrence**, **example**, **design decision** or **coordination result**—not as evidence that all houses should behave the same way.
+The house is therefore cited as an **occurrence**, **example**, **design decision** or **coordination result**—not as evidence that all houses should behave the same way.
 
 ## 6. Computational evidence has a narrow meaning
 
 Metamorph Compiler can establish only the propositions represented within its declared supported domain.
 
-A deterministic drawing can verify reproduction of a frozen source within the represented domain. A topology check can verify a declared graph relation. A bounded calculation can verify correspondence with the encoded method and inputs for that check.
+A deterministic drawing can verify reproduction of a controlled source within the represented domain. A topology check can verify a declared graph relation. A bounded calculation can verify correspondence with the encoded method and inputs for that check.
 
 None of those results proves that the physical building is structurally adequate, environmentally comfortable, compliant as a whole or well built.
 
@@ -102,7 +102,7 @@ The computational work is strongest when it makes uncertainty harder to hide, no
 
 ## 7. Open evidence gates
 
-At candidate-book stage, the most important remaining external or physical evidence gaps include:
+At the present evidence boundary, the most important remaining external or physical gaps include:
 
 - competent structural, fire/building-control, MEP/acoustic and building-physics review of the Reference House;
 - structural floor-edge engineering and physical validation;
@@ -112,14 +112,14 @@ At candidate-book stage, the most important remaining external or physical evide
 - cost and whole-life-carbon comparison of non-standard measures at project scale;
 - long-duration evidence from construction, maintenance and occupation.
 
-The existence of these gaps does not make the architectural enquiry premature. It defines the boundary of what the book may honestly claim.
+The existence of these gaps does not invalidate the architectural enquiry. It defines the boundary of what the work may honestly claim.
 
-## 8. How to read the notes that follow the book
+## 8. Reading the back matter
 
-The back matter should be read as an audit trail of scope rather than an attempt to make the monograph look academic.
+The remaining back matter records the limits and next obligations of the work rather than its drafting history.
 
-The legacy doctrine crosswalk shows how an earlier sixty-three-point rule set was reduced and redistributed. The research agenda states what remains genuinely unanswered. The Reference House implementation schedule shows where virtual coordination ends and professional/project work would begin. Sources and further reading provide the external intellectual and technical routes into the subject.
+The **Research Agenda** states what remains genuinely unanswered. The **Reference House Implementation Schedule** shows where virtual coordination ends and professional/project work begins. **Sources and further reading** provide the external intellectual and technical routes into the subject.
 
-Together they make one claim about method:
+Together they support one methodological claim:
 
 > **A proposition becomes more credible when the limits of its evidence are made as legible as the proposition itself.**
