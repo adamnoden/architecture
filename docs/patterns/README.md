@@ -1,4 +1,4 @@
-# Patterns
+# Patterns and generative sequences
 
 <script setup>
 import { data as patterns } from './patterns.data'
@@ -7,27 +7,34 @@ const activePatterns = patterns.filter((pattern) => pattern.state === 'active')
 const retiredPatterns = patterns.filter((pattern) => pattern.state === 'retired')
 </script>
 
-The pattern language records reusable architectural responses developed from the governing principles. Patterns sit between doctrine and project-specific construction: specific enough to shape design, general enough to admit materially different implementations.
+The pattern set records reusable architectural responses developed from the governing principles. Patterns sit between doctrine and project-specific construction: specific enough to shape design, general enough to admit materially different implementations.
 
-The canonical language currently contains **21 active patterns**, three strategies and four held candidates. Pattern identity is independent from evidence maturity. A pattern can have a stable place in the language while still requiring calculation, prototype work or professional review.
+The current system contains **21 active patterns**, three strategies and four held candidates. It is not presented as a uniformly mature Alexander-style pattern language. Its strongest demonstrated generative structure is the service-topology sequence; other pattern families have useful relationships but remain less completely connected and sequenced.
+
+That asymmetry is deliberate evidence about maturity, not a graph-completion task. New edges or sequences should appear only when repeated design work demonstrates that they carry real generative knowledge.
+
+Pattern identity is independent from evidence maturity. A pattern can have a stable place in the set while still requiring calculation, prototype work or professional review.
 
 ## Active canonical patterns
 
 <div v-if="activePatterns.length">
   <ul>
     <li v-for="pattern in activePatterns" :key="pattern.id">
-      <a :href="pattern.url"><code>{{ pattern.id }}</code> — {{ pattern.title }}</a>
-      <span> · {{ pattern.evidence }}</span>
+      <a :href="pattern.url">{{ pattern.title }}</a>
+      <span> · <code>{{ pattern.id }}</code> · {{ pattern.evidence }}</span>
     </li>
   </ul>
 </div>
+
+Stable IDs are provenance and machine-readable identity. The architectural name is the primary reader-facing identity.
 
 ## Retired identities
 
 <div v-if="retiredPatterns.length">
   <ul>
     <li v-for="pattern in retiredPatterns" :key="pattern.id">
-      <a :href="pattern.url"><code>{{ pattern.id }}</code> — {{ pattern.title }}</a>
+      <a :href="pattern.url">{{ pattern.title }}</a>
+      <span> · <code>{{ pattern.id }}</code></span>
     </li>
   </ul>
 </div>
@@ -40,13 +47,14 @@ Not every useful recurring proposition belongs in the pattern graph.
 
 - [Strategies](strategies/) hold broad approaches whose valid physical responses differ too much to form one pattern.
 - [Held candidates](candidates/) contain plausible future patterns whose evidence, scope, domestic proportionality or physical quality has not crossed the admission gate.
+- rules and obligations hold propositions that are important but too procedural or deterministic to constitute an architectural pattern.
 - implementation families and prototypes remain in their research or prototype records rather than acquiring pattern status through naming alone.
 
-These distinctions keep the language selective and preserve the difference between a reusable architectural relationship and a particular way of building it.
+These distinctions keep the set selective and preserve the difference between a reusable architectural relationship and a particular way of building it.
 
-## How the language works
+## How the system works
 
-The [Pattern Language — Model and Authoring Contract](language-model.md) defines pattern identity, evidence, relationships and admission. The [Service Topology — Generative Sequence](service-topology-sequence.md) shows how patterns can be invoked in a consequential design order without turning the graph into a universal procedure.
+The [Pattern Model and Authoring Contract](language-model.md) defines pattern identity, evidence, relationships and admission. The [Service Topology — Generative Sequence](service-topology-sequence.md) shows the most mature current example of patterns being invoked in a consequential design order without turning the graph into a universal procedure.
 
 The Reference House records actual project selections and occurrences in its [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md). Use in that house does not increase a pattern's general evidence or maturity.
 

@@ -33,17 +33,21 @@ sequences:
 
 ## Context
 
-Coherent service routes still need to cross structural and environmental boundaries. If those crossings are discovered after structure is substantially fixed, drilling, notching, chasing, oversized holes and improvised reinstatement follow.
+A service route must sometimes cross structure or another protected construction. The crossing can be small, ordinary and conventionally built while still being consequential because it interrupts a slower-lived host and may carry several boundary duties at once.
 
 ## Problem
 
-The crossing is often treated as a service detail even though it simultaneously affects structure, fire, acoustics, air, moisture, weathering and later maintenance. No one owns the interface as a whole.
+When the crossing is treated as residual trade work, the service geometry and the host geometry are resolved independently. Late drilling, notching, oversized holes and improvised reinstatement then become the means by which the two systems meet.
 
 ## Pattern
 
-**Treat required crossings as designed interfaces established during structural/service coordination. Define their location, size, structural effect and applicable boundary reinstatement before construction.**
+**Where a required service route crosses structural or protected permanent fabric, localise the crossing through a deliberately placed interface whose host, geometry and applicable boundary duties are defined as part of the architectural/structural/service coordination.**
 
-The recurring relationship is the controlled crossing of one system through another, not a particular sleeve, collar or proprietary product.
+The invariant is the physical relationship:
+
+**route → controlled crossing interface → host / protected boundary**
+
+It is not the administrative instruction “coordinate penetrations”, and it does not require a bespoke sleeve, frame or proprietary product. An ordinary engineered opening can satisfy the pattern completely.
 
 ## Forces
 
@@ -51,7 +55,8 @@ The recurring relationship is the controlled crossing of one system through anot
 - oversized sleeves may weaken structure or boundaries;
 - different penetrations carry different fire, acoustic, moisture and movement obligations;
 - spare openings can become uncontrolled routes;
-- late structural changes are expensive, but premature hole schedules can fossilise bad service topology.
+- late structural changes are expensive, but premature hole schedules can fossilise bad service topology;
+- concentrating crossings can simplify inspection while over-concentration can create one highly burdened interface.
 
 ## Relationships
 
@@ -60,6 +65,19 @@ This pattern commonly **completes** [HSA-P-003 — Coherent Horizontal Service R
 It also commonly **completes** [HSA-P-004 — High-Service-Room Service Wall](high-service-room-service-wall.md) where local service zones cross floors, walls or room boundaries.
 
 Neither link means the parent pattern necessarily creates a penetration. The relationship matters only where a crossing actually occurs.
+
+## Variants
+
+The crossing interface can be materially ordinary. Depending on host and duties it may be:
+
+- a preformed or drilled engineered opening;
+- a cast or built-in sleeve;
+- a framed service opening;
+- a coordinated group of small penetrations;
+- a replaceable collar / closure assembly;
+- a boundary transition with no special visible component beyond the ordinary construction required to reinstate it.
+
+The pattern does not prefer complexity. If standard engineered coordination satisfies the relationship, that is the preferred implementation.
 
 ## Design requirements
 
@@ -74,6 +92,8 @@ Neither link means the parent pattern necessarily creates a penetration. The rel
 ## Proportionality
 
 Design likely crossings once; do not scatter permanent spare holes for speculative services. Future capacity belongs only where later retrofit difficulty and credible demand justify it.
+
+A compact building may satisfy this pattern through ordinary local engineered crossings and need no special penetration family at all.
 
 ## Boundary debt
 
@@ -98,15 +118,20 @@ Protect the acoustic and environmental performance of the construction crossed. 
 - hidden fire stopping is later disturbed;
 - external penetration falls inward or traps water;
 - spare opening becomes a pest route;
-- a formally coordinated hole is located correctly but cannot be serviced or reinstated.
+- a formally coordinated hole is located correctly but cannot be serviced or reinstated;
+- the project invents a special penetration component where an ordinary engineered opening would have been better.
 
 ## Evidence
 
 Approved Document P explicitly recognises the interactions between electrical penetrations, structure, fire, moisture and sound. Movement, fire-stopping and structural-opening coordination are also ordinary professional practice across building systems.
 
+This evidence supports the need to resolve the crossing relationship; it does not make the relationship novel to Ovid’s House.
+
 ## Does not prove
 
 A documented opening is not evidence of adequacy. Structural, fire, acoustic, moisture and product/system performance remain subject to scoped design and evidence.
+
+The existence of this pattern also does not imply that a building needs a special penetration system. Standard professional coordination may be the complete implementation.
 
 ## Reference House application
 
@@ -118,4 +143,4 @@ Opening identity, host identity, permissible location, geometry, boundary roles,
 
 ---
 
-**Provenance:** migrated from Pattern 05 in [`core-12.md`](core-12.md) and [`pilot/designed-structural-penetration.md`](pilot/designed-structural-penetration.md). Migration does not increase evidence or maturity.
+**Provenance:** migrated from Pattern 05 in [`core-12.md`](core-12.md) and [`pilot/designed-structural-penetration.md`](pilot/designed-structural-penetration.md). R8-D reran the admission test and retained the pattern only as the physical crossing-interface relationship above; the generic coordination instruction is not itself a pattern. Reclassification review does not increase evidence or maturity.
