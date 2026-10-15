@@ -99,7 +99,7 @@ The current engineering brief treats a conventional certified hanger/restraint f
 
 The design should not imply that complete joist withdrawal is easy if deck, ceilings, partitions and services make it unrealistic. The useful goal is a clear and repairable interface, not theatrical demountability.
 
-See the [structural floor-edge engineering brief](../prototypes/p03-floor-edge-engineering-brief.md).
+See [Physical prototypes — Structural floor edge](../prototypes/#structural-floor-edge).
 
 ## Wall / ceiling movement junction
 
@@ -117,7 +117,7 @@ The current physical comparison is between:
 
 The simplest quiet detail that survives the expected movement while retaining fire, acoustic and finish integrity should win. A visible disassembly line is not an objective.
 
-See the [wall / ceiling movement-junction build pack](../prototypes/p04-wall-ceiling-build-pack.md).
+See [Physical prototypes — Wall / ceiling movement junction](../prototypes/#wall--ceiling-movement-junction).
 
 ## Window and door interfaces
 
