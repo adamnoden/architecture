@@ -1,205 +1,96 @@
-# Finish-Agnostic Floor Platform — Options Appraisal
+# Accessible Floor Systems
 
-**Status:** current floor-system research / pre-prototype  
-**Classification:** the full-room **Finish-Agnostic Floor Platform** is an implementation challenger beneath [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md). [Selective Floor Access](../patterns/candidates/selective-floor-access.md) remains a held pattern candidate.  
-**Purpose:** test how far a residential floor can separate the long-lived structural floor from shorter-lived finish and service layers while remaining quiet, rigid, architecturally calm and locally maintainable.
+Separating a long-lived structural floor from shorter-lived finish and service layers is technically credible. The harder question is whether that separation adds enough value in a house to justify extra depth, joints, acoustic risk and construction complexity.
 
-## Executive position
+The current hierarchy is deliberately conservative:
 
-The core construction concept is technically credible.
+1. **excellent conventional floor** where access demand is weak;
+2. **selective removable bands or edges** where real service geography justifies them;
+3. **low-profile full-room mineral platform** only as an experimental challenger if selective access leaves a material problem unresolved.
 
-Raised-access-floor and dry-floor industries already demonstrate that:
+The strategy [Separate Structural Floor from Changeable Layers Where Proportionate](../patterns/strategies/separate-structural-floor-changeable-layers.md) therefore does not imply a house-wide access floor. [Selective Floor Access](../patterns/candidates/selective-floor-access.md) remains a held candidate whose value depends on a real task.
 
-- removable modular panels can carry high point loads;
-- dense calcium-sulphate / gypsum-fibre panels can feel materially substantial;
-- individual panels can be lifted and exchanged;
-- stone, ceramic and parquet finishes can be factory-applied to modular panels;
-- acoustic and fire performance can be engineered;
-- dry floor systems can integrate underfloor heating.
+## What existing systems prove
 
-The Reference House should **not** adopt a commercial raised-access floor wholesale.
+Commercial raised-access and dry-floor systems demonstrate several capabilities relevant to the question:
 
-The current hierarchy is:
+- removable modular panels can carry substantial point loads;
+- dense calcium-sulphate or gypsum-fibre panels can provide high mass and dimensional stability;
+- individual panels can be lifted and replaced;
+- stone, ceramic and parquet finishes can be supplied on removable carriers;
+- fire and acoustic performance can be engineered as system properties;
+- dry floor systems can integrate heating.
 
-1. excellent conventional floor as the control;
-2. selective access bands or edges where actual service geography justifies them;
-3. a low-profile full-room mineral platform only as an experimental challenger if the selective arrangement leaves meaningful serviceability value unresolved.
+These precedents prove **capability**, not domestic suitability.
 
-The full-room challenger borrows material logic and precision from system floors while rejecting:
+Office and technical-floor assumptions can conflict directly with a house: tall pedestals, regular visible grids, continuous service voids, frequent lifting, lightweight or hollow footfall and proprietary system dependence are not neutral domestic characteristics.
 
-- tall pedestals;
-- office-scale 600 mm grids as a visible aesthetic;
-- a continuous unrestricted service void;
-- exposed suction-cup access logic;
-- lightweight/hollow feel.
+The useful transferable ideas are precision support, controlled edges, dense carriers, repeatable interfaces, bounded access and independently testable modules.
 
-The hardest requirement is not strength. It is **domestic tactile and acoustic quality**.
+## Option A — excellent conventional floor
 
----
+### Arrangement
 
-# 1. Direct precedent: stone and timber on removable access panels
-
-Lindner's NORTEC system provides a useful proof of principle.
-
-Its calcium-sulphate raised-floor panels are individually removable and are offered with:
-
-- natural/artificial stone and ceramic coverings;
-- parquet / real-wood finishes;
-- edge protection designed for repeated opening;
-- a 600 × 600 mm pedestal grid;
-- high load capacity;
-- non-combustible carrier panels;
-- acoustic variants.
-
-This directly supports the distinction between:
-
-**platform interface** and **finish system**.
-
-Different visible finishes can sit on a common access-floor support logic.
-
-**Sources:**
-
-Lindner, NORTEC STONEline.  
-https://www.lindner-group.com/en/products/floors/raised-floors/calcium-sulphate-panels/nortec-stoneline
-
-Lindner, NORTEC WOODline.  
-https://www.lindner-group.com/en/products/floors/raised-floors/calcium-sulphate-panels/nortec-woodline
-
-Lindner, Raised Floors.  
-https://www.lindner-group.com/en/products/floors/raised-floors
-
----
-
-# 2. Dense mineral panels are a better precedent than office chipboard
-
-The most interesting precedent is not conventional particle-board access flooring.
-
-Fibre-reinforced calcium-sulphate panels provide:
-
-- high mass;
-- dimensional stability;
-- non-combustibility;
-- good load performance;
-- compatibility with multiple finishes;
-- dry manufacture;
-- refurbishment/reuse potential.
-
-Lindner explicitly describes calcium-sulphate panels as suitable for residential, office and public uses.
-
-This makes a **mineral carrier** a credible material family for any full-platform prototype before the project invents a timber cassette.
-
-A dense mineral panel is also more compatible with:
-
-- stone;
-- ceramic;
-- acoustic mass;
-- fire performance;
-- the desired sense of solidity.
-
-**Source:**  
-https://www.lindner-group.com/en/products/floors/raised-floors/calcium-sulphate-panels
-
----
-
-# 3. The access-floor precedent proves capability, not suitability
-
-Commercial raised floors are normally designed around offices, technical rooms and data infrastructure.
-
-Their standard assumptions can conflict with a house:
-
-- 600 × 600 mm visible/modular logic;
-- high pedestal voids;
-- continuous accessible cavities;
-- floor outlets and technical penetrations;
-- frequent access;
-- loose-laid carpet tiles or commercial finishes;
-- different expectations for footfall sound and visual jointing.
-
-The useful transferable principles are:
-
-- precision support;
-- replaceable panel;
-- controlled edge;
-- high-density carrier;
-- finish-specific top layer;
-- common datum;
-- repeatable lifting;
-- independently testable modules.
-
-The Reference House should not look or sound like an office access floor.
-
----
-
-# 4. Options appraisal
-
-## Option A — Conventional finish directly on structural/subfloor build-up
-
-### Description
-
-Ordinary timber floorboards, tile/stone on suitable substrate, or another conventional floor build-up.
+A conventional domestic build-up: timber floorboards, stone or tile on an appropriate substrate, or another ordinary durable finish supported by the structural floor system.
 
 ### Strengths
 
 - mature domestic practice;
-- minimum complexity;
-- little visible joint burden;
-- strong tactile familiarity;
-- easy to source trades/materials;
-- can achieve excellent acoustic performance.
+- minimum technical machinery;
+- few visible joints;
+- familiar tactile and acoustic behaviour;
+- broad trade and material availability;
+- strong potential for quiet, solid rooms.
 
 ### Weaknesses
 
-- access to services often destructive;
-- changing finish type may require substrate reconstruction;
-- wet screeds/adhesives can fuse layers;
+- service access may be destructive;
+- some finish changes require substrate work;
+- bonded layers can couple finishes to slower construction;
 - local replacement may be difficult.
 
-### Current judgement
+### Position
 
-**Benchmark and default where access demand is weak.**
+**Default and benchmark.**
 
-Any accessible or removable floor condition must outperform this materially on maintenance/access without losing its domestic quality.
+An accessible floor condition has to solve a real maintenance or renewal problem without becoming a worse floor.
 
----
+## Option B — commercial raised access floor
 
-## Option B — Commercial raised access floor
+### Arrangement
 
-### Description
-
-Dense or chipboard panels on adjustable pedestals, typically in a regular grid.
+Modular panels supported on adjustable pedestals, typically in a regular grid with a continuous service void beneath.
 
 ### Strengths
 
 - proven removability;
-- mature standards;
+- mature engineering standards;
 - high load capacity;
-- precise datum;
-- huge service access;
-- finish variants already exist;
-- industrially manufactured.
+- precise finished datum;
+- generous service access;
+- existing finish variants;
+- industrial repeatability.
 
 ### Weaknesses
 
-- too technical/office-like as a direct residential solution;
-- continuous service void introduces acoustic/fire/pest complexity;
-- pedestal height often excessive;
-- regular grid can dominate floor appearance;
-- potential hollow sound;
-- system can depend heavily on proprietary components.
+- office or technical character if adopted directly;
+- tall service voids can consume domestic section;
+- continuous cavities create fire, acoustic, pest and leakage obligations;
+- regular grid can dominate the visible floor;
+- hollow sound and panel movement are unacceptable risks in principal rooms;
+- proprietary ecosystem dependence can weaken long-life repairability.
 
-### Current judgement
+### Position
 
-**Excellent precedent; reject as direct whole-house specification.**
+**Useful precedent; reject as the direct whole-house solution.**
 
----
+## Option C — low-profile dense-mineral platform
 
-## Option C — Low-profile mineral platform on continuous/support rails
+### Arrangement
 
-### Description
+Dense removable mineral panels sit on a shallow precision support lattice rather than tall pedestals.
 
-Dense mineral panels sit on a shallow, precisely levelled support lattice rather than tall independent pedestals.
-
-Potential hierarchy:
+A possible hierarchy is:
 
 ```text
 finish / finish carrier
@@ -210,347 +101,211 @@ resilient seat / locating frame
 ────────────────────────
 low-profile support rail / lattice
 ════════════════════════
-service/acoustic zone
+local service / acoustic zone
 ────────────────────────
 primary structural floor
 ```
 
+### Potential advantages
+
+- greater mass and reduced hollow-floor character;
+- more continuous support than isolated pedestals;
+- factory-controlled panels and edges;
+- individual replacement remains possible;
+- support geometry can define bounded routes;
+- potentially shallower than conventional raised-access construction.
+
+### Burdens
+
+- still a custom residential assembly;
+- support lattice can transmit impact sound;
+- panel edges and joints remain difficult;
+- rail intersections complicate service routing;
+- levelling and adjustment need robust limits;
+- future panels must remain remanufacturable without one supplier;
+- whole-room demountability may create far more joints than the actual maintenance problem warrants.
+
+### Position
+
+**Experimental upper-bound challenger, not the first move.**
+
+## Option D — selective removable access band
+
+### Arrangement
+
+Most of the room remains conventional. A perimeter, corridor band or service strip uses removable modules only where a coherent route or maintenance task exists.
+
 ### Strengths
 
-- reduced hollow-floor character;
-- more continuous support may improve stiffness/acoustics;
-- precise factory-made panel;
-- platform can still be individually removable;
-- support lattice can define service routes;
-- lower overall floor depth.
-
-### Weaknesses
-
-- custom system;
-- support lattice may transmit impact sound;
-- panel edges/joints remain difficult;
-- rail intersections complicate services;
-- local levelling/adjustment must be robust;
-- replacement carrier must remain remanufacturable.
-
-### Current judgement
-
-**Experimental full-room challenger, not the first Reference House move.**
-
----
-
-## Option D — Local removable access bands within otherwise conventional floor
-
-### Description
-
-Most of the room is a conventional floor. A perimeter, corridor band or service strip uses removable modules.
-
-### Strengths
-
-- dramatically less complexity;
-- principal walking field remains conventional;
-- access concentrated where services actually run;
-- easier acoustics;
+- much lower material and detail burden;
+- principal walking field remains ordinary;
+- access is concentrated where services actually run;
 - fewer visible joints;
-- highly proportional.
+- simpler fire and acoustic control;
+- easier to justify through proportional serviceability.
 
 ### Weaknesses
 
-- less flexible future routing;
-- changes outside the access band may still be destructive;
-- architectural composition must make the band intentional.
+- less freedom for future routes outside the band;
+- interventions elsewhere may remain destructive;
+- the band needs architectural integration rather than appearing as a technical strip.
 
-### Current judgement
+### Position
 
-**Preferred first research/prototype direction where floor access is justified.**
+**Preferred challenger wherever floor access is genuinely useful.**
 
-This option is most closely aligned with proportional serviceability.
+## Finish and carrier are different questions
 
----
+A common support interface does not mean every finish should use the same technical build-up.
 
-# 5. Finish-specific carriers
+### Timber
 
-A finish-agnostic platform should **not** pretend every finish has the same technical needs.
+Engineered or solid timber can form a prefinished wearing layer or finish carrier and may tolerate modest movement better than brittle finishes.
 
-## Timber
+### Ceramic and tile
 
-Potentially forgiving of modest movement and local flex.
+Low deflection, crack control, reliable bond and edge protection are critical. The tile may reasonably remain permanently bonded to a **removable carrier**; individual tiles need not themselves be demountable.
 
-Could be:
+### Stone
 
-- engineered timber bonded/fixed to mineral carrier;
-- prefinished timber panel;
-- removable timber wearing layer on a standard carrier.
+Stone demands stiffness, higher load allowance, chip protection and credible handling geometry. Existing stone-faced access panels demonstrate feasibility but do not prove domestic acoustic or tactile quality.
 
-## Tile / ceramic
+The important distinction is that the **carrier** may be the replaceable component while the finish remains permanently attached to that carrier.
 
-Requires:
+## Do not standardise the visible room by accident
 
-- very low deflection;
-- crack control;
-- reliable bond to its carrier;
-- careful edge protection;
-- joint alignment.
+Commercial access floors often converge on a 600 mm module for manufacturing and infrastructure reasons. That dimension should not become the architectural order of a house merely because it suits a product family.
 
-The tile should probably remain permanently bonded to its removable carrier.
+Possible strategies include:
 
-The **carrier** is removable; the tile need not be individually demountable.
+- a hidden technical support grid beneath a different visible finish rhythm;
+- an architectural perimeter border that provides a first lifting point and absorbs irregular geometry;
+- room-specific visible finish fields using a common hidden interface;
+- deliberately visible modules only where the room can carry them architecturally.
 
-## Stone
+> **Standardise the interface where useful; do not let the manufacturer’s grid become the architecture by accident.**
 
-Requires:
+## Access can be graduated
 
-- higher load allowance;
-- stiffness;
-- edge/chip protection;
-- handling strategy.
+Removable does not need to mean routine access everywhere.
 
-Existing stone-faced access-floor products prove the concept but do not remove the need for residential prototype testing.
+A useful hierarchy is:
 
-## Soft/loose coverings
+- **routine access** — expected during normal maintenance; fast release and low handling burden;
+- **occasional access** — removable with ordinary tools but not visually advertised;
+- **renewal access** — removable mainly during refurbishment or finish replacement.
 
-Technically easiest but architecturally less important to the current Reference House brief.
+This distinction allows a system to remain technically demountable without turning every square metre of floor into an access hatch.
 
----
+## Acoustic and tactile quality
 
-# 6. Do not standardise the visible grid
+Acoustics are likely to decide the issue more than structural capacity.
 
-Commercial precedent converges around a 600 mm module because that suits manufacturing and access-floor infrastructure.
-
-The house should standardise **support geometry and interface dimensions**, not necessarily force every visible finish to reveal 600 mm squares.
-
-Possible strategies:
-
-### Hidden carrier grid
-
-A larger visible timber/stone pattern overlays multiple support modules.
-
-### Architectural border
-
-A removable perimeter border provides the first lifting point and absorbs irregular room geometry.
-
-### Room-specific finish field
-
-The underlying support remains standard while visible stone/timber modules follow the room's axes and proportions.
-
-### Deliberate panel field
-
-In secondary rooms, the actual modular joint may be visible if it is proportioned and materially convincing.
-
-The rule remains:
-
-> **The manufacturer's grid must not become the architecture by accident.**
-
----
-
-# 7. Access hierarchy
-
-Not every panel needs to be equally easy to open.
-
-The project can define:
-
-### Class A — routine access
-
-Panel/strip expected to open during normal maintenance.
-
-Fast release; low handling burden.
-
-### Class B — occasional access
-
-Panel removable with simple tools but not visually advertised.
-
-### Class C — finish replacement only
-
-Panel can be removed/replaced during refurbishment but is not intended as service access.
-
-This matters even if a full-room challenger remains technically demountable: removability need not turn every square metre into a routine access hatch.
-
----
-
-# 8. Acoustic problem
-
-This is probably the decisive technical risk.
-
-A removable floor introduces:
+A removable floor can introduce:
 
 - panel-edge movement;
 - support discontinuities;
-- possible cavity resonance;
+- cavity resonance;
 - impact transmission through supports;
-- risk of rattling;
-- flanking at walls;
-- variable mass between finish types.
-
-Commercial systems demonstrate that system floors can be acoustically engineered, but domestic expectations may be less tolerant of characteristic raised-floor sound.
-
-The prototype programme should therefore prioritise:
-
-- footfall sound;
-- tapping/heel impact;
 - low-frequency boom;
-- panel rattle;
-- edge squeak;
-- impact transmission to rooms below.
+- rattling and squeak;
+- flanking at walls;
+- different behaviour between finish families.
 
-The target is qualitative as well as regulatory:
+Commercial systems show that system floors can be acoustically engineered. Domestic expectations are different: a floor in a principal room should not announce itself as an access system under ordinary walking.
 
 > **A person should not infer removability from walking across the floor.**
 
----
+A credible comparison therefore needs footfall, heel impact, low-frequency response, rattle, edge noise and transmission to rooms below, alongside visual and tactile judgement.
 
-# 9. Underfloor heating
+## Heating
 
-Dry calcium-sulphate floor systems can integrate underfloor heating and support multiple floor coverings.
+Dry mineral floor systems can integrate underfloor heating, but coupling water-bearing services directly to routinely removable panels weakens both accessibility and robustness.
 
-However, an integrated heating pipe within a removable access panel creates a conflict:
+Three arrangements should remain distinct:
 
-- the panel becomes connected to flexible pipework;
-- frequent removal becomes difficult;
-- damage risk increases;
-- panel interchangeability decreases.
+- heating below a removable platform;
+- heating in a fixed dry layer beneath a removable finish system;
+- heating integrated into removable panels.
 
-The Reference House options should therefore distinguish:
+The third is low priority because flexible hydraulic connections, damage risk and reduced interchangeability undermine the purpose of easy access.
 
-## Heating below removable platform
+For the Reference House, accessible low-temperature emitters remain the baseline. Floor access should not be justified by first embedding another active service in the floor.
 
-Pipework belongs to a separate accessible layer; platform panels remain dry and mechanically independent.
+## Service-zone depth
 
-Potential downside: slower heat transfer / extra thermal resistance.
+A default tall underfloor plenum is unnecessary for most domestic changeable services.
 
-## Heating integrated in fixed service layer
+A shallow local zone may be enough for electrical, data and selected controls. Bulky ventilation, drainage and other geometry-dependent systems belong in deeper dedicated routes where their size or fall requires it.
 
-A continuous dry heating layer sits below the removable finish platform.
+The preferred topology is therefore **selective shallow access where the route justifies it, with deeper local conditions for bulky or gravity-dependent services**, not a whole-storey technical void.
 
-Likely stronger.
+## Fire, cavity and water consequences
 
-## Heating integrated in removable panel
+Any continuous underfloor void becomes a real cavity with duties of its own:
 
-Low priority. It couples a high-maintenance access function with water-bearing services.
-
-Current direction:
-
-> **Do not put hydronic connections into routinely removable floor panels unless a prototype proves a compelling advantage.**
-
----
-
-# 10. Service void depth
-
-The project should avoid a default tall raised-floor void.
-
-A shallow zone may be sufficient for:
-
-- electrical;
-- data;
-- selected small controls;
-- local heating distribution;
-- crossing points coordinated with deeper service-specific zones.
-
-Large drainage and ventilation ducts should remain in dedicated deeper zones.
-
-The preferred topology is therefore **selective shallow access where the route justifies it, with deeper local conditions for bulky or gravity-dependent services**, rather than turning the entire floor into a technical plenum.
-
----
-
-# 11. Fire and cavity control
-
-Any continuous underfloor void becomes a real cavity.
-
-The design must therefore address:
-
-- cavity subdivision;
-- fire/smoke paths;
-- penetrations at compartment lines;
+- subdivision and fire/smoke control;
+- treatment at compartment lines and penetrations;
+- acoustic flanking;
 - pest movement;
-- air movement;
-- cleaning/debris accumulation;
-- water leaks.
+- cleaning and debris;
+- unintended air movement;
+- leakage and drying.
 
-Any accessible floor condition should preferably sit above a cavity whose geometry is **compartmented and legible**, not an unbounded whole-storey void.
+Water-bearing services become more reachable beneath an accessible floor, but the same cavity can conceal a leak. Joint minimisation, isolation, damage-limiting containment and visible failure behaviour remain necessary.
 
-The assembly must also allow reinstatement without damaging fire/acoustic barriers after access.
+Wet rooms therefore deserve their own floor and waterproofing strategy rather than inheriting a dry-room access concept merely for system consistency.
 
----
-
-# 12. Water
-
-Water-bearing services beneath an accessible floor are attractive because they become reachable.
-
-They can also turn the floor cavity into a hidden collection space.
-
-Therefore:
-
-- avoid concealed high-risk joints where possible;
-- route water in damage-limiting containment where justified;
-- preserve drainage/detection logic;
-- make access easy after a detected leak;
-- use moisture-resistant carrier/edge details in vulnerable areas.
-
-Bathrooms remain a special case and should not automatically use the same floor logic as dry principal rooms.
-
----
-
-# 13. Current Reference House direction
+## Reference House position
 
 ### Principal rooms
 
-Use a high-quality conventional floor unless actual service/change geography justifies a bounded accessible condition.
+Use a high-quality conventional floor unless a named service or renewal task demonstrates a material benefit from local access.
 
-### Corridors / service edges
+### Corridors and service edges
 
-Treat these as the strongest locations for selective floor access where coherent service routes pass beneath or beside them.
+These are the strongest locations for selective removable conditions where coherent dry routes actually pass through them.
 
 ### Full-room platform
 
-Retain the low-profile dense-mineral platform as an **upper-bound challenger**, not a default. It advances only if selective access leaves a material whole-life problem unresolved.
+Retain the dense low-profile mineral platform only as an upper-bound experiment. It advances if selective access leaves a substantial whole-life problem unresolved, not because greater theoretical flexibility is attractive.
 
 ### Wet rooms
 
-Use a separate wet-floor strategy; do not force the dry-room access concept into waterproofing duties.
+Use a dedicated wet-floor strategy with independent waterproofing and drainage logic.
 
 ### Low-service rooms
 
 Conventional durable floors remain the baseline.
 
-This hierarchy is stronger than “every floor panel must lift”.
+## What a physical comparison must establish
 
----
+A meaningful specimen should compare accessible construction with an excellent conventional control at enough scale to expose real physical behaviour.
 
-# 14. Prototype sequence
+The comparison should include:
 
-The first floor comparison should be large enough to produce real tactile and acoustic behaviour, but should begin with the **selective access condition against an excellent conventional control**.
-
-At minimum, test:
-
-- realistic structural floor beneath;
-- conventional control field;
-- bounded access band or edge condition;
-- perimeter condition;
-- one threshold;
-- a real cable/service route;
-- repeated lifting/reseating;
-- concentrated load and furniture movement;
+- realistic supporting structure;
+- perimeter and threshold conditions;
+- an actual service route;
+- repeated lifting and reseating;
+- concentrated loads and furniture movement;
 - footfall, heel impact and rattle;
 - visible joint tolerance;
-- acoustic transmission.
+- transmission to the space below;
+- reinstatement after access.
 
-Only if that arrangement demonstrates a material unresolved need should the programme escalate to a multi-panel full-room platform with timber, tile and high-mass finish variants.
+The case for a full-room system becomes weaker, not stronger, if a small selective access condition already solves the useful maintenance problem.
 
----
+## Current conclusion
 
-# 15. Current judgement
+The construction industry already proves that removable dense floor panels, stone or timber finish carriers, dry mineral systems and engineered access-floor performance are possible.
 
-The underlying separation between primary structure and faster-changing floor layers is credible and now captured at strategy level.
+What remains unproved is the architectural proposition that accessibility adds enough domestic value to justify its permanent burden while becoming experientially indistinguishable from an excellent ordinary floor.
 
-What is already proven elsewhere:
+The burden of proof therefore sits with the added system. Conventional construction wins by default when the accessible alternative does not solve a substantial task quietly.
 
-- modular removable floors;
-- dense mineral access panels;
-- stone/ceramic on removable carriers;
-- parquet on removable carriers;
-- underfloor-heating-compatible dry mineral floors;
-- high load and fire performance;
-- individual panel replacement.
+## Sources
 
-What is **not** yet proven for this project is that either selective or full-room access can deliver enough maintenance value while becoming experientially indistinguishable from an excellent domestic floor.
-
-The first burden sits with selective access. If even that sounds, moves or reads as technical flooring without solving a substantial maintenance problem, conventional construction wins. A full-room platform has a still higher burden of proof.
+- Lindner Group, calcium-sulphate raised-floor systems including NORTEC STONEline and WOODline.
+- Manufacturer and industry literature for dry mineral floor and access-floor systems, used here as capability precedent rather than proprietary specification.
+- [Physical Prototypes](../prototypes/) for the project’s current evidence boundaries and control philosophy.
