@@ -37,7 +37,8 @@
     <text x="445" y="375" class="tiny" text-anchor="middle" transform="rotate(-90 445 375)">riser</text>
 
     <path d="M520 280 L615 280" class="rule" marker-end="url(#arrow)"/>
-    <text x="540" y="258" class="tiny">external replacement route</text>
+    <text x="590" y="248" class="tiny" text-anchor="middle">external</text>
+    <text x="590" y="270" class="tiny" text-anchor="middle">replacement route</text>
 
     <text x="0" y="560" class="tiny">Primary wet / plant geography is clustered rather than distributed through the plan.</text>
   </g>
