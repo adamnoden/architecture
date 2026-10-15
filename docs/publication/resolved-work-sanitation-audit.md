@@ -82,7 +82,9 @@ The Reference House overview is a current building proposition rather than a chr
 - life-safety/adaptation boundary;
 - remaining external proof obligations.
 
-The former discipline-by-discipline external-review package has now been reduced to one reader-facing **Independent Review Questions** page. It preserves the substantive unresolved questions—structure, fire/access, MEP/acoustics, building physics/energy, cross-discipline interfaces and real-site dependencies—without publishing review workflow, response templates, maturity gates or issue instructions. The detailed working briefs and date-stamped regulatory baseline remain internal project records.
+The former discipline-by-discipline external-review package has been reduced to one reader-facing **Independent Review Questions** page. It preserves the substantive unresolved questions—structure, fire/access, MEP/acoustics, building physics/energy, cross-discipline interfaces and real-site dependencies—without publishing review workflow, response templates, maturity gates or issue instructions. The detailed working briefs and date-stamped regulatory baseline remain internal project records.
+
+The public **Vertical Interface Coordination** page has also been reconciled with the current house. Earlier option studies had drifted behind later decisions by still treating removable wall lining and accessible floors as preferred development directions. The resolved page now states direct quiet wall finish and continuous conventional floors as the baseline; selective attachment/service datums and replaceable lining remain optional challengers; floor-edge and wall/ceiling movement are the two priority unresolved interfaces. The superseded A/B/C option study is retained internally, while its durable proportionality rule is preserved publicly: depart from excellent conventional construction only when a named future task justifies the permanent material, depth, joints and boundary debt.
 
 ### Physical prototypes
 
@@ -113,18 +115,18 @@ Examples include:
 - `G-01 v0.1 — specification` rather than “frozen grammar”;
 - `Technical coordination` rather than “Reference House development history”;
 - `Independent review questions` rather than an RH-stage review package;
+- `Vertical interface coordination` rather than an option-development label;
 - `Scoped manufacturer evidence — Mapeguard WP` rather than an evidence-trial stage label.
 
 Internal sources referenced from current pages remain accessible as repository-source links rather than being rebuilt as public pages.
 
 ## Remaining SAN-02 / SAN-03 fronts
 
-1. Continue the prose pass across public research, Reference House coordination, prototype and technical-family pages.
-2. Review remaining stage-coded Reference House coordination records: retain only where they add current architectural evidence, then rewrite or synthesise before internalising.
-3. Review prototype navigation and page titles so test artefacts remain useful without P03/P04/W2 programme language where those codes add no reader value.
-4. Review remaining references from resolved pages to internal source records and remove those that add provenance but no reader understanding.
-5. Audit the Working Edition and Primer manifests/adapters against the same resolved-work rule.
-6. Complete SAN-05 as an actual first-reader traversal rather than a keyword-only scan, followed by SAN-06 lossless verification.
+1. Continue the prose pass across public research, remaining Reference House technical coordination, prototype and technical-family pages.
+2. Review prototype navigation and page titles so test artefacts remain useful without P03/P04/W2 programme language where those codes add no reader value.
+3. Review remaining references from resolved pages to internal source records and remove those that add provenance but no reader understanding.
+4. Audit the Working Edition and Primer manifests/adapters against the same resolved-work rule.
+5. Complete SAN-05 as an actual first-reader traversal rather than a keyword-only scan, followed by SAN-06 lossless verification.
 
 ## Semantic guardrail
 
