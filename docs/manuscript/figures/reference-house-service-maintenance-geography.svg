@@ -58,7 +58,8 @@
     <path d="M445 420 L445 492" class="dash" marker-end="url(#arrow)"/>
     <text x="470" y="470" class="tiny">dry-side access</text>
 
-    <text x="0" y="560" class="tiny">The bathroom stacks over the service hub; the riser is bounded, not a generic future shaft.</text>
+    <text x="0" y="550" class="tiny">Bathroom stacks over the service hub; the riser remains bounded.</text>
+    <text x="0" y="575" class="tiny">It is not a generic future shaft.</text>
   </g>
 
   <g transform="translate(90 790)">
