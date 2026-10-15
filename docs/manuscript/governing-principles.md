@@ -16,6 +16,8 @@ Longevity does not override whole-life cost, carbon, building physics or constru
 
 The relevant unit of design is not only the initial component but the maintenance, repair, replacement and adaptation that follow it. Cheap passive provision for foreseeable change is valuable; expensive provision for speculative futures must justify itself.
 
+Foreseeable change includes change in occupants as well as systems. Where a modest early decision can preserve ordinary use through reduced mobility, ageing or care, test that option by the same proportionality rule; do not turn every possible future incapacity into permanent infrastructure.
+
 ## 2. Preserve the permanent fabric
 
 **Do not use long-lived fabric as the routine distribution or attachment zone for shorter-lived systems. Where services, fittings or replaceable assemblies must cross or attach to permanent construction, make those interfaces sparse, deliberate, concentrated where practical and documented.**
