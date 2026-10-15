@@ -54,5 +54,3 @@ Where a chapter uses numbered notes, those remain the evidence trail for specifi
 - ISO 15686-5:2017, *Buildings and constructed assets — Service life planning — Part 5: Life-cycle costing*. https://www.iso.org/standard/61148.html
 - ISO 20887:2020, *Sustainability in buildings and civil engineering works — Design for disassembly and adaptability — Principles, requirements and guidance*. https://www.iso.org/standard/69370.html
 - RICS, *Whole life carbon assessment for the built environment*, 2nd ed.
-
-This list should remain selective. A source belongs here when it is actually cited, materially shapes an argument, or provides a particularly useful route into the intellectual territory around the project. It should not become a dump of everything encountered during research.
