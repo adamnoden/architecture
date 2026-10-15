@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import { nav, sidebar } from '../.vitepress/navigation.js'
+import { filterPublicNavigation, isPublicSource } from '../project/public-surface.js'
 import {
   mapNavigationLinks,
   mapSidebarRoutes,
@@ -48,9 +49,10 @@ function isInternalPageRoute(route: string): boolean {
 function validatePublicRoutes(): void {
   const failures: string[] = []
   const files = [join(repoRoot, 'README.md'), join(repoRoot, 'STATUS.md'), ...collectMarkdown(join(repoRoot, 'docs'))]
+  const publicFiles = files.filter((file) => isPublicSource(sourcePath(file)))
   const routeOwners = new Map<string, string>()
 
-  for (const file of files) {
+  for (const file of publicFiles) {
     const source = sourcePath(file)
     const rewritten = rewriteSourceId(source)
     const route = routeForSource(source)
@@ -66,8 +68,6 @@ function validatePublicRoutes(): void {
 
   const expectedRoutes: Record<string, string> = {
     'README.md': '/',
-    'STATUS.md': '/project/status',
-    'docs/README.md': '/project/documentation',
     'docs/reading-guide.md': '/reading-guide',
     'docs/prototypes/README.md': '/prototypes/',
     'docs/prototypes/w2-wall-bay-build-pack.md': '/prototypes/w2-wall-bay-build-pack'
@@ -78,8 +78,8 @@ function validatePublicRoutes(): void {
     if (actual !== expected) failures.push(`public route contract changed: ${source} -> ${actual}; expected ${expected}`)
   }
 
-  const publicNav = mapNavigationLinks(nav)
-  const publicSidebar = mapSidebarRoutes(sidebar)
+  const publicNav = mapNavigationLinks(filterPublicNavigation(nav))
+  const publicSidebar = mapSidebarRoutes(filterPublicNavigation(sidebar))
   const navigationLinks = new Set(flattenLinks(publicSidebar).filter(isInternalPageRoute))
   const mappedLinks = [...flattenLinks(publicNav), ...flattenLinks(publicSidebar)].filter(isInternalPageRoute)
 
@@ -89,7 +89,7 @@ function validatePublicRoutes(): void {
     }
   }
 
-  const publishedRoutes = files
+  const publishedRoutes = publicFiles
     .filter((file) => !excludedFromNavigation(file))
     .map((file) => routeForSource(sourcePath(file)))
 
@@ -103,4 +103,4 @@ function validatePublicRoutes(): void {
 }
 
 validatePublicRoutes()
-console.log('Public route integrity valid: clean URL tree, collision checks and mapped navigation coverage.')
+console.log('Public route integrity valid: resolved public surface, clean URL tree and mapped navigation coverage.')

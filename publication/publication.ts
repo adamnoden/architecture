@@ -275,33 +275,27 @@ export const publicationEntries: readonly PublicationEntry[] = [
     kind: 'back-matter'
   },
   {
-    id: 'doctrine-register-crosswalk',
-    source: 'docs/manuscript/doctrine-register-crosswalk.md',
-    title: 'Appendix B — Legacy Doctrine Register Crosswalk',
-    kind: 'back-matter'
-  },
-  {
     id: 'research-agenda',
     source: 'docs/manuscript/research-agenda.md',
-    title: 'Appendix C — Research Agenda',
+    title: 'Appendix B — Research Agenda',
     kind: 'back-matter'
   },
   {
     id: 'reference-house-implementation-schedule',
     source: 'docs/manuscript/reference-house-implementation-schedule.md',
-    title: 'Appendix D — Reference House Implementation Schedule',
+    title: 'Appendix C — Reference House Implementation Schedule',
     kind: 'back-matter'
   },
   {
     id: 'glossary',
     source: 'docs/manuscript/glossary.md',
-    title: 'Appendix E — Glossary',
+    title: 'Appendix D — Glossary',
     kind: 'back-matter'
   },
   {
     id: 'sources-and-further-reading',
     source: 'docs/manuscript/sources-and-further-reading.md',
-    title: 'Appendix F — Sources and Further Reading',
+    title: 'Appendix E — Sources and Further Reading',
     kind: 'back-matter'
   }
 ] as const

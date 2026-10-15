@@ -140,6 +140,11 @@ function assertNoLocalRepositoryLinks(source: string, markdown: string): void {
   }
 }
 
+function normalizePreparedHeading(entry: PublicationEntry, markdown: string): string {
+  if (entry.kind !== 'back-matter') return markdown
+  return markdown.replace(/^# .+$/m, `# ${entry.title}`)
+}
+
 function writeTitlePage(
   metadata: ReturnType<typeof editionMetadata>,
   editionLabel: 'Working Edition' | 'Primer'
@@ -215,6 +220,7 @@ for (const entry of entries) {
   let markdown = readFileSync(preparedPath, 'utf8')
   markdown = applyAdapter(entry.adapter, markdown, { repoRoot, workSourceRoot })
   if (fullMode) markdown = applyPublicationFigures(entry.id, markdown)
+  markdown = normalizePreparedHeading(entry, markdown)
 
   if (markdown.includes('```mermaid')) {
     const renderedPath = `${preparedPath}.mmdc.md`
