@@ -42,13 +42,20 @@ The Primer is separately manifested from the same publication module and derives
 
 ## SAN-02 / SAN-03 — semantic review fronts
 
-The remaining work cannot be solved by filename or keyword alone. Several current reader-facing sources contain legitimate architectural knowledge wrapped in development-stage language. The priority fronts are:
+The remaining work cannot be solved by filename or keyword alone. Several current reader-facing sources contain legitimate architectural knowledge wrapped in development-stage language.
 
-1. **Publication prose.** Remove PR/R-stage references, migration explanations and internal proof-family codes where the reader only needs the resolved proposition or evidence.
-2. **G-01.** Preserve `G-01 v0.1` as a formal grammar identity, but remove D-stage release/process framing from the primary specification. Retain falsification and held-out evidence in reader-appropriate form rather than as a chronology of programme stages.
-3. **Reference House.** Replace P03/P04, W0/W1/W2 and similar internal shorthand with semantic names where the codes do not improve comprehension. Preserve external regulatory classifications and genuinely stable architectural identifiers.
-4. **Research Agenda / implementation schedule.** Keep their substantive open questions and real-project gates while removing references such as `PR-01`, `R8-A` and internal gate IDs.
-5. **Evidence pages.** Determine whether raw grammar validation/evidence pages deserve reader-facing synthesis or should be internalised after unique evidence has been migrated.
+### Completed semantic rewrites
+
+- **Part III — Patterns and Generative Sequences:** retained the pattern argument, strategy/candidate distinctions and transfer evidence while removing project-history justification for identifiers, internal `R8` framing and “adversarial test” programme language.
+- **Research Agenda:** retained all substantive open questions while replacing the `PR-01` compact-terrace reference with the architectural result itself.
+- **G-01 v0.1:** preserved `G-01 v0.1` as a useful formal specification identity while removing D11 release status, D-stage chronology, release-gate prose and compiler-freeze commentary. Falsification and held-out evidence remain expressed as evidence rather than project history.
+
+### Remaining priority fronts
+
+1. **Reference House publication prose.** Remove `PR-01` and internal proof-family codes where the reader only needs the resolved proposition or evidence.
+2. **Research Agenda / implementation schedule.** The agenda is cleaned; the implementation schedule still needs semantic names in place of internal identifiers such as `P03`, `P04`, `R8-A`, `G-PLANT-01`, `G-FAM-02`, `G-SVC-02` and W0/W1/W2 where those codes add no reader value.
+3. **Grammar evidence pages.** Determine whether raw validation/evidence pages deserve reader-facing synthesis or should be internalised after unique evidence has been migrated.
+4. **Navigation and first-reader coherence.** Remove residual labels such as “frozen”, stage-coded validation names and programme-oriented grouping from the public navigation once the owning content decisions are complete.
 
 ## Semantic guardrail
 
