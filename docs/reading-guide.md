@@ -6,7 +6,7 @@ next:
 
 # Reading guide
 
-Ovid’s House can be read as an architectural argument, explored as a set of design systems, or audited through the evidence and testing behind it. These routes cross repository folders deliberately; the website navigation follows the reader rather than the filesystem.
+Ovid’s House can be read as an architectural argument, explored as a set of design systems, or audited through the evidence and testing behind it.
 
 ## Read the architectural argument
 
@@ -21,26 +21,18 @@ This is the primary sequence and the best route for a first reading.
 7. [Part V — Making and Testing the Platform](manuscript/part-v.md)
 8. [Sources and further reading](manuscript/sources-and-further-reading.md)
 
-The [governing principles](manuscript/governing-principles.md) are the canonical statement of the doctrine. Developed pieces such as [Design for Repose](manuscript/principle-08-repose.md) and [Maintenance Geography — The Exterior](manuscript/maintenance-geography-external.md) sit within Parts I and II rather than forming additional Parts.
-
-The detailed book structure is recorded in [Publication Architecture](manuscript/publication-architecture.md).
+The [governing principles](manuscript/governing-principles.md) state the constitutional position. [Design for Repose](manuscript/principle-08-repose.md) and [Maintenance Geography — The Exterior](manuscript/maintenance-geography-external.md) develop two of its architectural consequences in greater depth.
 
 ## Explore the design system
 
-Use this route when the central proposition is already understood and the question is how it becomes architecture.
-
 **[Pattern Language](patterns/README.md) → [Architectural Grammar](grammar/README.md) → [Reference House](reference-house/README.md)**
 
-Patterns describe reusable responses to recurring architectural problems. Architectural grammar governs a selected architectural language independently of Ovid’s House doctrine. The Reference House combines those layers with a particular programme, site, structure, envelope, services and environmental strategy so that conflicts become visible in one building.
+Patterns describe reusable responses to recurring architectural problems. Architectural grammar makes a selected architectural language explicit without promoting it into Ovid’s House doctrine. The Reference House combines those layers with one programme, morphology, structure, envelope, services and environmental strategy so that conflicts become visible in an actual building proposition.
 
-## Audit the work
-
-Use this route to inspect the evidence, uncertainty and testing behind the architectural claims.
+## Audit the evidence
 
 **[Research](research/README.md) → [Physical Prototypes](prototypes/README.md) → [Computational Track](computational/README.md) → [Delivery](delivery/README.md)**
 
-Research supports, qualifies or rejects claims. Prototypes test propositions physically. The computational track checks the bounded set of relationships that benefit from deterministic representation. Delivery translates sufficiently mature findings into requirements for an appointed design team.
+Research supports, qualifies or rejects claims. Prototypes test propositions physically. The computational track represents a bounded set of relationships where deterministic checking is useful. Delivery translates sufficiently mature findings into requirements for an appointed design team.
 
-Within each area, the left-hand **Contents** menu shows its local reading structure. Current material is shown first; superseded plans and migration records remain available under history or provenance where they are still useful.
-
-For the live state of the programme, use [Project Status](../STATUS.md). For repository ownership, canonicality and document-placement rules, use [Documentation Structure](README.md).
+The website keeps the resolved work in the foreground. Internal development records remain in the source repository where they are needed for audit and maintenance rather than forming part of the reading sequence.
