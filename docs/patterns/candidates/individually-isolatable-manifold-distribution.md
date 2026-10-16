@@ -50,8 +50,6 @@ The comparison must include conventional branch/tee distribution.
 
 Domestic patternbooks and CIBSE precedent support manifold distribution as a mature services option. The unresolved question is not whether manifolds work, but whether their topology repeatedly creates architectural value strong enough to justify a canonical Ovid’s House pattern.
 
-The current evidence review is recorded in [Targeted Pattern-Language Evidence Review](../../research/pattern-language-phase6-targeted-evidence.md).
-
 ## Does not prove
 
 This candidate does not establish that manifolds are universally superior, that every branch should be home-run, or that all domestic service networks should share one distribution philosophy.

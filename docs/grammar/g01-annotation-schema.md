@@ -1,675 +1,208 @@
-# G-01 Precedent Annotation Schema — D3 v0.1
+# G-01 Precedent Annotation Method
 
-**Status:** D3 semantic annotation v0.1 complete; contract validated across three deliberately different trial cases  
-**Purpose:** define how precedent evidence is converted into comparable architectural observations without prematurely converting observations into grammar rules.  
-**Related:** [G-01 Corpus Register](g01-corpus-register.md), [G-01 Research Brief](g01-research-brief.md)
+The precedent evidence behind G-01 is read through a common annotation method so that one building is not interpreted by whatever feature happens to look interesting while another is measured differently.
 
 > **Annotate the building first. Infer the grammar later.**
 
-## 1. Why a fixed annotation contract matters
+The method is deliberately implementation-independent. It is an evidence discipline, not a proposed database schema.
 
-A precedent corpus becomes dangerous when each building is “read” differently according to whatever feature seems interesting at the time.
+## Evidence states
 
-The annotation schema should force every case through the same questions.
+Every observation is identified as one of:
 
-This gives us:
+### Fact
 
-- comparable evidence;
-- explicit missing data;
-- a clean separation between source fact and interpretation;
-- enough structure to test topological and dimensional hypotheses;
-- a record of alterations and uncertainty;
-- resistance to cherry-picking.
+Directly supported by a cited source or drawing.
 
-The schema is intentionally implementation-independent.
+### Derived fact
 
-It is a research form, not a proposed database schema.
+Computed or logically derived from supported facts: aspect ratio, access depth, graph steps from an entrance, alignment or similar relationships.
 
-## 2. Evidence discipline
+### Interpretation
 
-Every annotation item must be one of:
+Architectural reading requiring judgement, such as principal-room status, a secondary axis or a weakened hierarchy. The facts motivating the interpretation remain visible.
 
-### FACT
+### Hypothesis
 
-Directly supported by a cited source/drawing.
+A possible cross-case relationship suggested by the evidence. A hypothesis is not a grammar rule until comparison and counterexample testing justify it.
 
-### DERIVED
+### Unknown
 
-Computed or logically derived from facts.
+A question for which the available evidence is inadequate. Unknown is a legitimate completed state; it is not filled with a guess to make the record look complete.
 
-Examples:
+## Source identity and historical phase
 
-- aspect ratio;
-- access depth;
-- number of graph steps from entrance;
-- alignment relationship.
+Each case records its sources, their dates, type, scale where relevant, whether they are original/measured/reconstructed/interpretive, what state of the building they represent, known alterations, confidence and reproduction constraints where relevant.
 
-### INTERPRETATION
+A central rule follows:
 
-Architectural reading requiring judgement.
+> **Geometric authority and historical-phase authority are separate attributes.**
 
-Examples:
+A precise measured plan can be excellent evidence of geometry and still be wrong for an eighteenth-century claim if it includes later alteration.
 
-- “principal room”;
-- “secondary axis”;
-- “hierarchy weakened”.
+## Case identity and morphology
 
-Interpretations must cite the facts that motivate them.
+Each case records enough context to understand what kind of building is being compared:
 
-### HYPOTHESIS
-
-Possible cross-case rule suggested by the case.
-
-Hypotheses are **not** grammar rules until tested against the wider corpus and counterexamples.
-
-### UNKNOWN
-
-Required field for which evidence is not yet adequate.
-
-Do not fill an unknown with a guess merely to complete the table.
-
-## 3. Source record
-
-Every case begins with a source register.
-
-For each source:
-
-- source ID;
-- title / archive reference;
-- institution / author;
-- date;
-- source type;
-- original / measured / reconstructed / interpretive;
-- scale, if applicable;
-- what state/phase of the building it represents;
-- known alterations already embodied in the source;
-- rights / reproduction constraint where relevant;
-- confidence;
-- source URI / archive location.
-
-### Phase warning
-
-A measured plan can be geometrically excellent but historically wrong for the grammar question if it records later alterations.
-
-Therefore:
-
-> **geometric authority and phase authority are separate attributes.**
-
-## 4. Case identity
-
-Record:
-
-- G-01 case ID;
-- building;
-- location;
-- date range;
-- architect / designer / attribution;
-- original patron;
+- building, location and date range;
+- architect/designer/attribution where known;
 - primary historical use;
-- corpus class;
-- analysis role: TRIAL / DERIVE / HOLD-OUT / CONTEXT;
-- source-quality grade;
-- major alterations;
-- target phase for annotation.
+- morphology and attachment condition;
+- storey, basement/attic and roof condition;
+- principal frontage and approach;
+- garden/service-wing/pavilion relationships;
+- major projections, recesses and known alterations.
 
-## 5. Building-level morphology
+Description precedes value judgement.
 
-Record:
+## Semantic spaces
 
-- freestanding / terrace / attached / courtyard / pavilion system;
-- overall footprint family;
-- storey count;
-- basement / raised basement;
-- attic / garret;
-- roof family;
-- main frontage(s);
-- principal approach;
-- garden relationship;
-- service-wing / pavilion condition;
-- major projections/recesses.
+Identifiable spaces receive stable case-specific identities. Historical room names are retained alongside a small normalised role vocabulary so unlike buildings can be compared without erasing their differences.
 
-Do not yet attach value to these.
+Useful roles include entrance, principal/secondary reception, dining, principal/secondary sleeping, dressing, study/library, kitchen, service, primary/secondary circulation, primary/service stair, storage and other.
 
-## 6. Semantic space register
+For each space, the record may include floor, public/private/service role, candidate hierarchy, frontage, exterior access, evidence and confidence.
 
-Every identifiable space receives a stable research ID.
+## Spatial topology
 
-Example:
+Connections are represented separately from room geometry.
 
-~~~text
-MHH-GF-HALL
-MHH-GF-BREAKFAST
-MHH-1F-GREAT
-~~~
-
-Record:
-
-- historical room name;
-- normalised role;
-- floor;
-- public / private / service / circulation / mixed;
-- candidate hierarchy rank;
-- exterior frontage;
-- direct exterior access;
-- evidence source;
-- confidence.
-
-### Normalised role vocabulary — initial
-
-This vocabulary is deliberately small.
-
-- ENTRANCE
-- PRINCIPAL-RECEPTION
-- SECONDARY-RECEPTION
-- DINING
-- SLEEPING-PRINCIPAL
-- SLEEPING-SECONDARY
-- DRESSING
-- STUDY/LIBRARY
-- SERVICE
-- KITCHEN
-- CIRCULATION-PRIMARY
-- CIRCULATION-SECONDARY
-- STAIR-PRIMARY
-- STAIR-SERVICE
-- STORAGE
-- OTHER
-
-Historical names remain alongside normalised roles.
-
-Do not erase semantic differences merely to fit the vocabulary; extend only when needed.
-
-## 7. Spatial topology graph
-
-For each space, record direct connections.
-
-Edge types:
-
-- DOOR;
-- OPEN-ARCH / large opening;
-- STAIR;
-- SERVICE-CONNECTION;
-- EXTERIOR;
-- uncertain historic connection.
-
-Derived properties may include:
-
-- access depth from principal entrance;
-- alternative route count;
-- through-room circulation;
-- cul-de-sac status;
-- enfilade chain;
-- centrality;
-- separation between principal and service circulation.
-
-Important:
+Useful edge types include doors, large openings, stairs, service connections, exterior connections and uncertain historic connections. Derived properties may include access depth, alternative-route count, through-room circulation, cul-de-sac status, enfilade, centrality and separation of principal/service circulation.
 
 > **A doorway is geometry; an access relation is topology.**
 
-Record both separately.
+The method also distinguishes direct connectivity from route role and required sequence. Two plans with the same rooms and doors can differ architecturally if the intended principal route changes.
 
-## 8. Spatial hierarchy
+## Spatial hierarchy
 
-Record candidate ranks independently from room size.
+Hierarchy is not inferred from floor area alone.
 
-Initial scale:
+Rank may be read through combinations of room use/name, size, ceiling height, decorative richness, position, opening hierarchy, access route and source commentary. Conflicting signals remain conflicts rather than being averaged into a false certainty.
 
-- H0 — dominant/principal space;
-- H1 — major principal space;
-- H2 — secondary inhabited space;
-- H3 — subordinate/private/service-support space;
-- H4 — purely ancillary.
+## Ordering structure
 
-This is a research device, not a historical label.
+The method records axes, centres, bays and symmetry at the scale at which they actually operate.
 
-For each rank assignment record evidence:
+Symmetry is never reduced to `isSymmetric = true/false`. A façade, principal block, room, opening group or landscape relation may be symmetric even where the whole building is not. Scope, axis, exact/approximate status and phase matter.
 
-- room name/use;
-- size;
-- ceiling height;
-- decorative richness;
-- position;
-- opening hierarchy;
-- access route;
-- source commentary.
+Bay structure likewise records repeated and exceptional bays, centre emphasis, edge conditions and projection/recess.
 
-If signals conflict, record conflict.
+## Dimensions and proportion
 
-## 9. Ordering structure
+Metric fields are populated only from evidence adequate for measurement.
 
-Annotate:
+Raw dimensions are retained before ratios: width, length, height, area, wall thickness and opening dimensions where supported, with uncertainty.
 
-### Axes
+Derived ratios are not rounded towards famous proportional families. A useful record keeps the measured value, candidate family and difference separate.
 
-- primary building axis;
-- secondary axis;
-- room-level axis;
-- landscape axis.
+The purpose is to test whether dimensional families exist, not to manufacture them.
 
-For each axis:
+## Vertical relationships
 
-- entities aligned;
-- whether geometric or perceptual;
-- whether exact or approximate;
-- scope.
+Sectional evidence may include:
 
-### Centres
-
-- building centre;
-- façade centre;
-- room centre;
-- courtyard centre.
-
-### Symmetry domains
-
-Do **not** annotate simply:
-
-isSymmetric = true/false
-
-Record the domain:
-
-- façade only;
-- principal block;
-- room;
-- stair;
-- landscape;
-- opening group;
-- approximate / exact.
-
-This prevents the project from turning “Georgian symmetry” into a false universal rule.
-
-### Bay structure
-
-Record:
-
-- bay count;
-- bay centres;
-- repeated / exceptional bay;
-- centre emphasis;
-- edge condition;
-- projection/recess.
-
-## 10. Metric geometry
-
-Only populate from sources adequate for measurement.
-
-For each space:
-
-- clear width;
-- clear length;
-- clear height;
-- area;
-- wall thickness where relevant;
-- door/opening dimensions;
-- uncertainty.
-
-Store raw values before ratios.
-
-Derived:
-
-- length:width;
-- width:height;
-- length:height;
-- area rank;
-- proximity to candidate historical ratio family.
-
-### Ratio policy
-
-Do not round a measured room toward a famous ratio.
-
-Record:
-
-~~~text
-measured ratio: 1.47
-nearest candidate family: 1.50
-difference: -0.03
-~~~
-
-Whether that difference is architecturally meaningful is a later question.
-
-## 11. Vertical grammar
-
-Record:
-
-- floor-to-floor height;
-- clear ceiling height;
+- floor-to-floor and clear ceiling heights;
 - hierarchy between storeys;
-- double-height spaces;
+- double-height conditions;
 - stair continuity;
-- vertical stacking of walls;
-- vertical opening alignment;
-- attic/garret relationship;
-- basement/piano-nobile condition.
+- wall and opening stacking;
+- attic/garret and basement/piano-nobile relationships.
 
-## 12. Elevation register
+Section is treated as architectural evidence in its own right rather than as a technical afterthought to plan.
 
-For each principal elevation:
+## Elevation and openings
 
-- orientation;
-- frontage rank;
-- storeys expressed;
-- bay count;
-- opening IDs;
-- entrance position;
-- centre condition;
-- projection/recess;
-- material/order transitions;
-- roof/parapet relation;
-- principal horizontal datums.
+For each relevant elevation the method may record frontage rank, storeys expressed, bay count, opening identities, entrance position, centre condition, projection/recess, material/order transitions, roof/parapet relationship and horizontal datums.
 
-For each opening where evidence permits:
+Where source quality permits, individual openings may carry centreline, dimensions, sill/head levels, associated room, hierarchy and surround information.
 
-- centreline;
-- width;
-- height;
-- sill level;
-- head level;
-- storey;
-- associated room;
-- hierarchy rank;
-- surround type.
+## Plan / section / elevation coupling
 
-## 13. Plan / elevation coupling
+Coupling is tested attribute by attribute rather than asserted generically.
 
-This is one of the most important sections.
+Questions include:
 
-For every façade opening ask:
+- which room an opening serves;
+- whether it follows room centre, bay centre or vertical alignment;
+- whether opening size correlates with room rank;
+- whether entrance position corresponds to an internal route;
+- whether external projection corresponds to internal hierarchy;
+- whether façade symmetry continues into plan or stops at the external surface;
+- whether room rank corresponds to sectional privilege;
+- whether stairs or double-height conditions alter otherwise regular stacking.
 
-- which room does it serve?
-- does it align with room centre?
-- does it align with bay centre?
-- does it align vertically with openings above/below?
-- is its size correlated with room rank?
-- is the entrance aligned with the main internal route?
-- do external projections correspond to internal hierarchy?
-- does façade symmetry continue into plan or stop at the external surface?
+The direction of coupling can differ. Useful states include **mutual**, **plan leads**, **elevation leads**, **conflict/compromise** and **unknown**. Existence, centreline, width, height and vertical alignment may have different causes even for one opening.
 
-Record exact facts before interpretation.
-
-## 14. Section / plan coupling
-
-Ask:
-
-- does room hierarchy correspond to ceiling height?
-- does a stair disrupt otherwise regular stacking?
-- do double-height rooms alter upper-floor topology?
-- does the roof respond to room/order hierarchy?
-- where do floor structures likely span?
-- do chimney/fireplace positions imply stacking?
-
-## 15. Structural reading
-
-This is not a retrospective structural calculation.
-
-Record only what can be supported.
-
-Potential fields:
-
-- load-bearing wall family;
-- likely floor-span direction;
-- repeated support lines;
-- major transfer condition;
-- chimney/fireplace structural mass;
-- major openings;
-- later structural alteration;
-- evidence confidence.
-
-The aim is to identify whether architectural order and structural order coincide.
-
-## 16. Service / occupation reading
-
-Record historical servicing arrangements only where relevant to spatial interpretation.
-
-Fields:
-
-- kitchen location;
-- service stair;
-- service wing;
-- servant/service circulation;
-- separation from principal route;
-- sanitation additions/alterations;
-- later service changes.
-
-Then record:
-
-**historical dependency** — does a spatial arrangement exist because of a social/service condition G-01 should not automatically preserve?
-
-## 17. Social-history note
-
-For each case, where evidenced:
-
-- patron/household context;
-- labour/servant structure;
-- entertaining conventions;
-- gendered/private/public practices;
-- wealth source where architecturally/historically relevant;
-- later occupation changes that drove alterations.
-
-This field exists so repeated historical patterns are not accidentally treated as timeless laws of domestic life.
-
-## 18. House Kernel compatibility note
-
-Do not score the historic building against the doctrine.
-
-Instead record observations relevant to future translation:
-
-- spatial order worth preserving;
-- architectural elements that already perform interface/tolerance work;
-- patterns that conflict with modern maintainability;
-- opportunities for service geography;
-- likely permanent architecture versus changeable fit-out.
-
-This is interpretation, clearly labelled.
-
-## 19. Candidate observation register
-
-At the end of each case, record observations in a neutral form.
-
-Example:
-
-~~~text
-OBS-MHH-004
-FACT:
-  The first-floor Great Room occupies the central principal position
-  and rises through the floor above.
-
-INTERPRETATION:
-  Spatial rank is expressed through both centrality and vertical volume.
-
-HYPOTHESIS:
-  In G-01, dominant principal space may be marked by more than floor area;
-  position and sectional privilege may be stronger rank signals.
-
-TEST AGAINST:
-  Danson / Ditchley / ordinary corpus / counterexamples.
-~~~
-
-This is the bridge from annotation to grammar research.
-
-## 20. Alteration register
-
-Every case needs a minimal chronology.
-
-Fields:
-
-- phase ID;
-- date;
-- alteration;
-- affected entities;
-- confidence;
-- whether target-phase grammar analysis should include/exclude it.
-
-A room arrangement visible today must not silently become evidence for the eighteenth-century state.
-
-## 21. Uncertainty register
-
-Unknowns are first-class data.
-
-For each uncertainty:
-
-- ID;
-- question;
-- affected annotation;
-- source required;
-- whether it blocks topology, metric analysis or neither.
-
-## 22. D3 trial case records
-
-The D3 trials now live as separate case records so the schema remains a reusable contract rather than becoming a precedent scrapbook.
-
-- [Marble Hill House](g01-cases/marble-hill-house.md)
-- [Danson House](g01-cases/danson-house.md)
-- [76 Dean Street](g01-cases/76-dean-street.md)
-- [D3 trial-set index](g01-cases/README.md)
-
-All three records use the sections defined above.
-
-## 23. Schema refinements forced by D3
-
-The trial set has changed the annotation contract in substantive ways.
-
-### Refinement 1 — symmetry must be scoped
-
-Never reduce symmetry to a building-level boolean.
-
-Record:
-
-- subject/domain;
-- axis;
-- storey/elevation scope;
-- exact/approximate state;
-- phase.
-
-A principal façade can be strongly symmetric while a service system, room graph or whole historical accretion is not.
-
-### Refinement 2 — phase belongs on material observations
-
-A geometrically authoritative drawing may represent the wrong historical state for the research question.
-
-Phase therefore belongs on:
-
-- spaces;
-- edges;
-- openings;
-- room uses;
-- alterations;
-- measurements;
-- observations.
-
-**Geometry confidence and phase confidence are separate.**
-
-### Refinement 3 — plan/elevation coupling needs direction
-
-“Plan and elevation are coupled” is too weak.
-
-Initial directional states are:
-
-- **MUTUAL**
-- **PLAN_LEADS**
-- **ELEVATION_LEADS**
-- **CONFLICT / COMPROMISE**
-- **UNKNOWN**
-
-Danson shows that the direction may differ even within one nominal opening condition.
-
-### Refinement 4 — coupling direction may be attribute-specific
-
-An opening can exist for façade reasons while its precise centreline responds to an interior condition.
-
-Therefore future D6 records should be able to distinguish, where evidence justifies it:
-
-- existence_coupling;
-- centreline_coupling;
-- width_coupling;
-- height_coupling;
-- vertical_alignment_coupling.
-
-Do not force one scalar relationship onto the whole opening.
-
-### Refinement 5 — intentional absence is architectural data
-
-Distinguish:
-
-- true opening;
-- blind/simulated opening;
-- prohibited opening;
-- retained solid field;
-- reserved void/clear zone;
-- unknown condition.
+## Intentional absence
 
 Architecture is partly made from what is deliberately not occupied or opened.
 
-### Refinement 6 — topology is more than adjacency
+The evidence therefore distinguishes true openings, blind/simulated openings, prohibited openings, retained solid fields, protected clear zones and unknown conditions.
 
-D3 requires distinct concepts for:
+This prevents compositional aperture from being confused with physical aperture.
 
-- direct connectivity;
-- principal/secondary/service route class;
-- required traversal/sequence;
-- visual or axial relationship;
-- vertical connection.
+## Structural reading
 
-Danson's original principal-floor circuit is the clearest current example: adding a direct Hall→Saloon doorway changes architectural sequence even though the rooms themselves do not move.
+The case record is not a retrospective structural calculation. It records only supportable observations such as load-bearing wall family, likely floor-span direction, repeated support lines, major transfers, chimney/fireplace mass, large openings and later structural alteration.
 
-### Refinement 7 — UNKNOWN is a valid completed annotation state
+The question is whether architectural and structural order appear related, not whether historic fabric can be certified from drawings.
 
-A case should not be held permanently “incomplete” because a field lacks sufficient evidence.
+## Service and occupation reading
 
-D3 completion means:
+Historical kitchen location, service stairs/wings, servant circulation, sanitation changes and other service arrangements are recorded where they explain spatial form.
 
-- the question was asked;
-- evidence was assessed;
-- unsupported claims were not invented;
-- the missing evidence is recorded in the uncertainty register.
+They are then marked as historical dependencies where appropriate so social organisation does not enter a contemporary grammar merely through repetition.
 
-This is particularly important at 76 Dean Street.
+Social-history evidence can likewise identify patron/household context, labour structure, entertaining conventions, privacy practices and occupation changes where these materially explain the architecture.
 
-## 24. D3 completion contract
+## Translation to Ovid’s House
 
-A case qualifies as D3 semantic v0.1 complete when it contains:
+Historic buildings are not scored against Ovid’s House doctrine.
 
-1. source register;
-2. phase frame;
-3. case identity and morphology;
-4. stable semantic space IDs where evidence permits;
-5. topology/route reading;
-6. hierarchy reading;
-7. ordering/symmetry reading;
-8. metric fields populated or explicitly UNKNOWN;
-9. vertical/elevation/coupling readings;
-10. structural and service readings at evidence-supported resolution;
-11. alteration and uncertainty registers;
-12. neutral candidate observations, clearly separated from grammar rules.
+Instead, interpretation may note spatial order worth preserving, architectural depth that already performs tolerance/interface work, arrangements that conflict with contemporary maintainability, opportunities for service geography and likely distinctions between enduring architecture and faster-changing fit-out.
 
-D3 does **not** require completed D5 metrics or D6 coordinate analysis.
+Those observations remain interpretations, not historical evidence for the doctrine.
 
-## 25. D3 result
+## Candidate observations
 
-**D3 v0.1 is complete.**
+Each case can end with neutral observations that keep the evidential chain explicit:
 
-The schema has survived three deliberately different cases:
+```text
+FACT
+  supported condition in the building
 
-- a canonical compact Palladian villa;
-- a compact later Georgian villa organised around a principal circulation core and room circuit;
-- a constrained urban double-pile townhouse.
+INTERPRETATION
+  architectural reading of that condition
 
-The trial has already falsified several tempting simplifications:
+HYPOTHESIS
+  possible cross-case relationship
 
-- “Georgian” is not one plan graph;
-- symmetry is not a whole-building boolean;
+TEST AGAINST
+  named other cases / counterexamples
+```
+
+This is the bridge from precedent to grammar without turning one admired building into authority.
+
+## Alteration and uncertainty
+
+Every case retains enough chronology to distinguish target-phase fabric from later change. Uncertainties identify the question, affected observation, evidence needed and whether the unknown blocks topology, measurement or neither.
+
+The method is considered complete when the relevant questions have been asked and unsupported claims have not been invented—not when every cell contains a number.
+
+## Current cases
+
+The current [precedent case set](g01-cases/README.md) spans Marble Hill House, Danson House, 76 Dean Street and Bedford Square.
+
+That set has already forced several durable methodological conclusions:
+
+- Georgian architecture is not one plan graph;
+- symmetry must be scoped;
 - hierarchy is not room area alone;
 - proportion is not one preferred ratio;
-- circulation is not merely leftover connective space;
-- plan and elevation do not always share one centre;
-- absence can be compositional;
-- historical phase cannot be stripped from geometry.
+- circulation is an architectural relationship, not residual space;
+- plan and elevation can negotiate rather than share one centre;
+- intentional absence can carry composition;
+- historical phase belongs to geometric evidence;
+- urban order can operate above the single-house scale.
 
-No G-01 rule is promoted by D3.
-
-The next work is:
-
-- finish D4 topology comparison against the case records;
-- begin D5 dimensional/proportional extraction from phase-checked sources;
-- begin D6 plan/section/elevation coupling analysis;
-- only later create the candidate-rule register.
-
+The normative consequences belong in [G-01 v0.1](g01-v0.1.md); the evidence limits and rejected simplifications are synthesised in [G-01 Validation and Limits](g01-validation.md).

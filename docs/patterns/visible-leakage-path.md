@@ -106,7 +106,3 @@ The Reference House uses this pattern selectively at concealed high-consequence 
 ## Formalisation boundary
 
 Leak source, containment extent, drainage destination, continuity and visible endpoint can be represented formally. Hydraulic reliability, material durability and actual failure performance still require technical evidence.
-
----
-
-**Provenance:** admitted by the Phase-6 targeted evidence review as a narrower pattern extracted from retired `HSA-P-006`. Stable identity does not increase evidence or maturity.

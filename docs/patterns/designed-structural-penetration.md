@@ -140,7 +140,3 @@ The Reference House uses a limited catalogue of coordinated crossings at known s
 ## Formalisation boundary
 
 Opening identity, host identity, permissible location, geometry, boundary roles, no-drill zones and evidence obligations have strong formal potential. The compiler must not infer structural or boundary adequacy merely because a penetration object exists.
-
----
-
-**Provenance:** migrated from Pattern 05 in [`core-12.md`](core-12.md) and [`pilot/designed-structural-penetration.md`](pilot/designed-structural-penetration.md). R8-D reran the admission test and retained the pattern only as the physical crossing-interface relationship above; the generic coordination instruction is not itself a pattern. Reclassification review does not increase evidence or maturity.

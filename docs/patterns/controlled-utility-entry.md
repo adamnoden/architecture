@@ -109,7 +109,3 @@ The Reference House uses a side/rear intake condition close to the principal ser
 ## Formalisation boundary
 
 Potentially formalisable consequences include identified entry occurrences, declared boundary transitions, isolation access and permitted penetrations. Whether utilities share one zone or use several nearby entries remains project-specific architectural and engineering judgement.
-
----
-
-**Provenance:** migrated from Pattern 01 in [`core-12.md`](core-12.md) and the Phase-3 pilot record in [`pilot/controlled-utility-entry.md`](pilot/controlled-utility-entry.md). Migration does not increase evidence or maturity.

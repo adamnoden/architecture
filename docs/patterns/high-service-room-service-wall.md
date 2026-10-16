@@ -112,7 +112,3 @@ The Reference House clusters wet rooms so a small number of service walls can do
 ## Formalisation boundary
 
 Adjacency, access-side relationships, working/withdrawal volumes, component locations and boundary obligations can be represented formally. Whether the additional thickness is proportionate and the resulting rooms remain private, quiet and spatially good remains architectural judgement.
-
----
-
-**Provenance:** migrated from Pattern 04 in [`core-12.md`](core-12.md) and [`pilot/high-service-room-service-wall.md`](pilot/high-service-room-service-wall.md). Migration does not increase evidence or maturity.

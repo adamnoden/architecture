@@ -98,7 +98,3 @@ The Reference House treats the utility/laundry as the strongest candidate for th
 ## Formalisation boundary
 
 Water-bearing occurrences, isolation access, containment extent, drainage destination and thresholds can be represented formally. Waterproofing adequacy, fall performance and proportionality remain technical/architectural evidence questions.
-
----
-
-**Provenance:** admitted by the Phase-6 corpus audit from the former `wet-service room` publication slot under the broader Fail-Safe Water Distribution strategy. Stable identity does not increase evidence or maturity.

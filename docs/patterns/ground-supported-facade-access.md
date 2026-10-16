@@ -192,7 +192,3 @@ The Reference House coordinates principal façades and courtyard against ordinar
 ## Formalisation boundary
 
 Maintenance targets, approach paths, support/working zones, equipment envelopes and replacement routes can be represented formally. Ground adequacy, safe temporary-works design, proportionality and landscape quality remain project-specific evidence and judgement.
-
----
-
-**Provenance:** promoted to `HSA-P-013` by the Phase-6 gate review from the previously developed specialised pattern. Promotion assigns stable identity only; it does not increase evidence or maturity.

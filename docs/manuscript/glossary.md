@@ -1,4 +1,4 @@
-# Appendix E — Glossary
+# Glossary
 
 The terms below are used in specific senses throughout Ovid’s House. They are not proposed as universal architectural definitions.
 

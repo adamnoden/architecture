@@ -103,7 +103,3 @@ The Reference House compares ordinary external gutters/downpipes with deeper-eav
 ## Formalisation boundary
 
 Outlet locations, route continuity, overflow paths, maintenance access and discharge destinations can be represented formally. Hydraulic adequacy, exposure and architectural composition remain project-specific evidence/judgement.
-
----
-
-**Provenance:** migrated from Pattern 09 in [`core-12.md`](core-12.md). Migration does not increase evidence or maturity.

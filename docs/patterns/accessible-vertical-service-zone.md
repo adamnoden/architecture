@@ -119,12 +119,8 @@ The evidence does not establish that every two-storey house needs a dedicated ri
 
 ## Reference House application
 
-Earlier occurrence `RH-CAND-VSR-01` reserves one east/rear vertical zone between the lower service hub and upper service area, with split wet/dry routing retained as the principal comparator. The occurrence helped test the pattern; it is not evidence of technical adequacy.
+The Reference House reserves one east/rear vertical zone between the lower service hub and upper service area, with split wet/dry routing retained as the principal comparator. This application demonstrates coordination, not technical adequacy.
 
 ## Formalisation boundary
 
 Zone continuity, clear envelope, relationship to demand nodes, crossing count, declared maintenance nodes and boundary transitions can be represented formally. Proportionality, domestic character, repose and whether the reserved area earns its cost remain architectural judgement.
-
----
-
-**Provenance:** promoted from [`candidates/accessible-vertical-service-zone.md`](candidates/accessible-vertical-service-zone.md) after the Phase-6 gate review. Stable identity does not increase evidence or technical maturity.

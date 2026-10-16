@@ -60,8 +60,6 @@ These references do not create graph edges while the proposition remains held.
 
 Housing service-zone precedent and repeated project coordination studies support the idea as a credible tactic. The missing evidence is whether the same architectural relationship recurs strongly enough across different services and rooms to deserve pattern status rather than remaining ordinary design coordination.
 
-The current evidence review is recorded in [Targeted Pattern-Language Evidence Review](../../research/pattern-language-phase6-targeted-evidence.md).
-
 ## Does not prove
 
 This candidate does not justify local soffits/deep zones whenever coordination becomes difficult. Downstream depth pressure may instead be evidence that the route, room arrangement or system choice should change.

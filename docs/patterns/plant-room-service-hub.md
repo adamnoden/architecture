@@ -113,7 +113,3 @@ The Reference House places a compact service hub beside the principal vertical s
 ## Formalisation boundary
 
 Equipment occurrences, required working volumes, replacement paths, access relationships, drainage obligations and system connectivity are candidates for formal representation. Whether the hub is proportionate, quiet enough and architecturally well placed remains architectural and engineering judgement.
-
----
-
-**Provenance:** migrated from Pattern 02 in [`core-12.md`](core-12.md) and [`pilot/plant-room-service-hub.md`](pilot/plant-room-service-hub.md). Migration does not increase evidence or maturity.

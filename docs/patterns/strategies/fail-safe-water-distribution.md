@@ -1,33 +1,13 @@
 # Fail-Safe Water Distribution
 
 **Kind:** strategy  
-**Status:** canonical strategy  
-**Origin:** durable content previously bundled into retired `HSA-P-006 — Water-Damage-Safe Service Route`
+**Status:** canonical strategy
 
 ## Proposition
 
 **Arrange water distribution so credible leakage is unlikely to remain hidden long enough to damage vulnerable long-lived fabric. Prefer eliminating concealed joints first, then use access, visible leakage paths, containment, isolation or other proportionate measures according to route and consequence.**
 
-This is a strategy rather than one pattern because the valid physical responses are materially different.
-
-## Why `HSA-P-006` was retired
-
-The old pattern grouped together:
-
-- fully accessible distribution;
-- continuous or joint-minimised runs;
-- pipe-in-pipe systems;
-- drained containment;
-- local trays or channels;
-- visible leakage paths;
-- leak sensing and automatic isolation;
-- wet-room containment.
-
-Those are not variants of one stable spatial relationship. Some expose pipes, some create a secondary drainage route, some rely on room geometry, and some are active control systems.
-
-The common durable idea is therefore strategic:
-
-> concealed water should not be able to fail silently into vulnerable fabric where proportionate alternatives exist.
+This is a strategy rather than one pattern because the valid physical responses are materially different. The common architectural aim is that concealed water should not be able to fail silently into vulnerable fabric where proportionate alternatives exist.
 
 ## Design hierarchy
 
@@ -75,7 +55,7 @@ The evidence supports the strategic outcome more strongly than any one Ovid’s 
 - one overseas regulatory solution should be copied wholesale into UK domestic construction;
 - adding containment compensates for poor primary plumbing design.
 
-## Reference House direction
+## Reference House application
 
 The Reference House begins with joint-minimised and accessible distribution. Visible leakage paths or local containment are added only where the whole-house failure review shows enough consequence to justify them.
 

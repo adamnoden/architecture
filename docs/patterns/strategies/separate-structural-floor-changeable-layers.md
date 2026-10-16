@@ -28,7 +28,7 @@ The valid physical responses vary materially:
 
 Those are not one recurring spatial relationship. The stronger reusable knowledge is the lifecycle separation between durable structure and changeable layers, subject to proportionality.
 
-The earlier **Finish-Agnostic Floor Platform** remains an implementation challenger, not the strategy itself.
+A full-room finish-agnostic platform remains an implementation challenger, not the strategy itself.
 
 ## Use
 
@@ -51,9 +51,9 @@ Prefer the simplest conventional floor where the change/access case is weak.
 
 ## Evidence
 
-External precedent supports layered construction and deliberate service-zone separation. The project's **Finish-Agnostic Floor Platform** research tests the harder domestic question: whether that separation can produce a low-profile, maintainable floor without sacrificing acoustic, tactile or architectural quality.
+External precedent supports layered construction and deliberate service-zone separation. The harder domestic question is whether selective access can produce a low-profile, maintainable floor without sacrificing acoustic, tactile or architectural quality.
 
-Relevant project work includes [Reversible Assembly Candidates](../reversible-assembly-candidates.md) and [Finish-Agnostic Floor Platform Options](../../research/finish-agnostic-floor-platform-options.md).
+The current architectural comparison is [Accessible Floor Systems](../../research/finish-agnostic-floor-platform-options.md).
 
 ## Does not prove
 

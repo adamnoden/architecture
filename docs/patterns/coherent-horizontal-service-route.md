@@ -110,7 +110,3 @@ The Reference House uses ordinary circulation and service-heavy edges as the pri
 ## Formalisation boundary
 
 Route continuity, capacity envelopes, branch relationships, forbidden boundary crossings and access intervals can be represented formally. Whether the route produces a good domestic section and proportionate spatial cost remains architectural judgement.
-
----
-
-**Provenance:** migrated from Pattern 03 **Horizontal Service Spine** in [`core-12.md`](core-12.md), [`pilot/horizontal-service-spine.md`](pilot/horizontal-service-spine.md), and the Phase-6 identity audit. `HSA-P-003` retains identity through the scope/name correction.

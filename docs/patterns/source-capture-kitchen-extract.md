@@ -103,7 +103,3 @@ The Reference House may integrate the hood architecturally—potentially into a 
 ## Formalisation boundary
 
 Source/hood relationship, duct continuity, route geometry, terminal and access occurrences can be represented formally. Capture effectiveness, acoustics and whole-house pressure interactions still require engineering evidence and commissioning.
-
----
-
-**Provenance:** migrated from Pattern 10 in [`core-12.md`](core-12.md). Migration does not increase evidence or maturity.

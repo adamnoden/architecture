@@ -1,171 +1,123 @@
-# Architectural Grammar and Proportion — Framework v0.3
+# Architectural Grammar and Proportion
 
-**Status:** foundational framework; style-neutral  
-**Purpose:** define how selectable architectural languages can become explicit enough to guide or constrain generation without confusing one language with House Kernel itself  
-**Implementation:** none
+Architectural grammar is the layer that makes a **selected architectural language** explicit without promoting that language into Ovid’s House doctrine or the compiler’s technical core.
 
-> **The grammar framework should make a selected architectural language explicit. It should not silently select the language for the project.**
+> **The framework can represent an architectural language. It must not silently choose one.**
 
-## 1. The actual claim
+The claim is deliberately bounded. A grammar can describe enough topology, hierarchy, order, dimensional families, alignments, plan/section/elevation relationships, element families and preferences to distinguish a coherent member of a selected language from a malformed one. It cannot prove beauty or exhaust architectural judgement.
 
-House Kernel may support strongly opinionated architecture without embedding one style in the doctrine or compiler core.
+## 1. Keep the authority layers separate
 
-The computational proposition is therefore not that beauty can be reduced to universal ratios. It is that a **selected architectural grammar** can describe enough topology, hierarchy, ordering, dimensional families, alignments, plan/section/elevation relationships, element families and preferences to distinguish well-formed members of that language from malformed ones.
-
-The linguistic analogy remains useful up to a point: grammar can distinguish a well-formed sentence from an ill-formed one; it cannot prove the sentence profound. Architectural grammar can define membership and coherence without exhausting architectural quality.
-
-A grammar is consequently an input to the system, not an upstream consequence of House Kernel doctrine.
-
-## 2. Keep the layers separate
-
-The project already has several kinds of constraint. They answer different questions and must not collapse into one rule set.
+Several kinds of constraint act on one project, but they answer different questions:
 
 ```text
-HOUSE SYSTEMS ARCHITECTURE DOCTRINE
-    what durable architectural/technical propositions are being pursued?
+OVID'S HOUSE DOCTRINE
+  what durable architectural/technical propositions are being pursued?
 
-PATTERN LANGUAGE / STRATEGIES
-    what reusable responses may satisfy those propositions?
+PATTERNS / STRATEGIES
+  what reusable responses may satisfy them?
 
 SUPPORTED DOMAIN
-    what building systems and parameter ranges can the computational model reason about?
+  what can the computational system reason about with declared authority?
 
 ARCHITECTURAL GRAMMAR
-    what selected design language is this project using?
+  what selected design language is this project using?
 
-PROJECT + SITE CONFIGURATION
-    what does this particular brief, plot and climate require?
+PROJECT + SITE
+  what does this particular brief, place and climate require?
 ```
 
-A design can satisfy the doctrine and fail the selected grammar. It can satisfy the grammar and sit outside the supported technical domain. A project-specific courtyard can be valid even when the base grammar neither requires nor generically models courtyards.
+A design may satisfy Ovid’s House doctrine and fail its selected grammar. It may satisfy the grammar while sitting outside the technical supported domain. A courtyard may be a valid project choice even when neither doctrine nor grammar requires one.
 
-These are useful distinctions, not inconveniences.
+These separations prevent taste, regulation, engineering and project choice from borrowing one another’s authority.
 
-## 3. Framework versus grammar instance
+## 2. Framework and grammar instance
 
-This document defines the **grammar framework**: the types of architectural relationships a grammar may state and how those statements should behave computationally.
+The **framework** provides the kinds of relationships a grammar may state.
 
-A **grammar instance** is a versioned architectural language using that framework.
+A **grammar instance** is a particular architectural language using that capacity. G-01 is the first developed instance: a bounded Georgian-derived domestic grammar.
 
-Illustratively:
+The framework must not assume G-01’s content. If the framework itself requires symmetry, classical hierarchy, sash windows, masonry, a courtyard or a pitched roof, it has confused capacity with style.
 
-```text
-GRAMMAR FRAMEWORK
-    ├── G-01  Georgian-derived domestic grammar
-    ├── A-01  possible Arts-and-Crafts-derived grammar
-    └── M-01  possible modern grammar
-```
+## 3. What a grammar may describe
 
-Only G-01 is an active research programme. The other names are illustrative.
+A useful grammar can coordinate several layers.
 
-The framework must not assume the features of any one instance. If the framework itself requires symmetry, classical hierarchy, sash windows, a courtyard, masonry or a pitched roof, the abstraction has failed.
+### Programme semantics
 
-## 4. What a grammar may contain
+Roles such as principal room, bedroom, circulation, stair, service room, exterior threshold, court or terrace. The framework provides semantic capacity; the grammar chooses its vocabulary.
 
-A useful grammar can operate through coordinated layers.
+### Spatial topology
 
-### G0 — programme semantics
+Adjacency, privacy depth, circulation through or around occupied rooms, alternative routes, exterior relationships and forbidden connections. Topology remains meaningful before exact metric geometry exists.
 
-What kinds of spaces or elements exist and what roles do they play: principal room, bedroom, circulation, stair, service room, exterior threshold, court, terrace or other roles defined by that grammar/project.
+### Ordering structure
 
-The framework provides semantic capacity; the grammar chooses the vocabulary.
+Axes, centres, fields, grids, bays, fronts, ranges, alignments, symmetry domains or intentionally asymmetric ordering devices. No one device is universal.
 
-### G1 — spatial topology
+### Dimensions and proportion
 
-How spaces may connect: privacy depth, circulation through or around occupied rooms, alternative routes, adjacencies, exterior relationships and forbidden connections.
+Valid ranges, preferred proportional families, role-based dimensional classes, room-height relationships and opening families. Exact ratios belong only where evidence gives them real authority.
 
-Topology should remain representable independently of metric geometry.
+### Vertical grammar
 
-### G2 — ordering structure
+Stacking, floor-height relationships, opening alignment, stair continuity, sectional hierarchy and roof/base relationships.
 
-Axes, centres, fields, grids, bays, fronts, ranges, alignments, symmetry domains or deliberately asymmetric ordering devices.
+### Elevation grammar
 
-No one ordering device is universal. A grammar declares which it uses.
+Opening rhythm, solid/void relationships, storey hierarchy, entrance emphasis, roof termination, bay logic and selected compositional relationships.
 
-### G3 — dimensional and proportional grammar
+### Element grammar
 
-Permissible dimensional ranges, preferred proportion families, room-height relationships, opening ranges and dimensional hierarchy.
+Doors, windows, thresholds, stairs, joinery, screens, mouldings, balconies, fireplaces and other families selected by the language.
 
-Prefer admissible regions and ranked preferences where architecture permits them; use exact dimensions or ratios only where their authority is real.
+### Tectonic grammar
 
-### G4 — vertical grammar
+How visible architecture meets real construction: joint placement, tolerance absorption, wear surfaces, interface depth, removable trim and the relation between expression and assembly.
 
-Stacking, floor-height relationships, opening alignment, stair continuity, roof/base relationships and other section rules.
+That is where a selected language can meet Ovid’s House without being mistaken for it.
 
-### G5 — elevation grammar
+## 4. Relational before numerical
 
-Opening rhythm, solid/void relationships, alignment, edge conditions, storey hierarchy, entrance emphasis, roof termination and other façade relationships selected by the language.
+Architecture may remain recognisable across substantial dimensional variation because relationships often carry more identity than exact numbers.
 
-### G6 — architectural element grammar
+A grammar may care that one room ranks above another, an opening belongs to a bay, circulation reaches a room without violating privacy, an entrance carries higher rank than a secondary door, or a roof belongs compositionally to the body beneath it.
 
-Doors, windows, thresholds, stairs, joinery, shading devices, screens, mouldings, balconies, fireplaces or other element families.
+Proportion remains important. It is simply not assumed to be the universal root of architectural order.
 
-Element libraries should follow the language rather than define the framework.
+## 5. Topology before geometry
 
-### G7 — tectonic grammar
+Two houses can differ in dimensions while sharing important spatial logic.
 
-How visible architectural elements meet real construction: joint placement, tolerance absorption, removable trim, wear surfaces, interface depth and other relationships between architectural expression and the actual assembly.
+A topology can express adjacency, depth, centrality, alternative paths, public/private relationships and exterior connections before exact room sizes are resolved.
 
-This is where a selected language can meet House Kernel without being mistaken for it.
+This creates a useful distinction:
 
-## 5. Relational before numerical
+- **relational structure** — stable relationships selected by the grammar;
+- **geometric realisation** — one project-specific arrangement satisfying them.
 
-The framework should begin with relationships, order and hierarchy before exact ratios.
+Geometry must ultimately embody the relationship, but it need not be the first representation.
 
-A coherent language may care that:
+## 6. Hierarchy without universal hierarchy
 
-- one room ranks above another;
-- an opening belongs to a bay or field;
-- circulation reaches a space without violating privacy logic;
-- a façade opening corresponds to an interior condition;
-- a stair occupies a defined relationship to arrival;
-- a secondary mass remains subordinate to a primary one.
+The framework can represent rank without deciding what deserves it.
 
-Those conditions may survive substantial dimensional variation.
+A grammar may distinguish primary and secondary rooms, openings, fronts, entrances or storeys. Another language may use hierarchy differently or reject some of those distinctions entirely.
 
-Proportion remains important. It is simply not the universal root node of architectural grammar.
+The generic capacity to represent rank is therefore separate from any G-01 rule about how rank becomes visible.
 
-## 6. Topology before geometry
+## 7. Proportion as an admissible region
 
-Two houses can differ dimensionally while sharing the same important spatial logic.
+A good room is not assumed to be identifiable by one sacred ratio.
 
-A topology can already express adjacency, centrality, depth, alternative paths, public/private relationships and connections to exterior space before the solver knows the exact room sizes.
+A grammar may combine:
 
-This supports a useful distinction:
-
-- **relational structure** — the stable architectural relationships selected by the grammar;
-- **geometric realisation** — one site- and project-specific arrangement satisfying them.
-
-Geometry must eventually make the relationships real, but it need not be the first representation.
-
-## 7. Hierarchy without prescribing a historical hierarchy
-
-Many architectural languages distinguish primary from secondary conditions. The framework should support rank without deciding in advance what receives it.
-
-Conceptually:
-
-```text
-space.rank(A) > space.rank(B)
-opening.rank(X) >= opening.rank(Y)
-front.rank(main) > front.rank(service)
-```
-
-Whether a particular grammar uses such relationships, and what architectural consequence rank has, belongs to that grammar.
-
-This is the key distinction between a generic capability to represent hierarchy and a Georgian-derived rule about how hierarchy should appear.
-
-## 8. Proportion as an admissible region
-
-Avoid assuming that a good room can be identified by one sacred ratio.
-
-A grammar may instead combine:
-
-- a valid dimensional range;
+- valid dimensional ranges;
 - one or more preferred proportional families;
-- a dimensional class based on role;
-- contextual adjustments for structure, circulation, furniture, environmental performance and common floor heights.
+- role-based dimensional classes;
+- contextual adjustment for structure, circulation, furniture and environmental performance.
 
-That allows three useful states:
+That supports distinctions such as:
 
 ```text
 VALID + PREFERRED
@@ -173,25 +125,23 @@ VALID + NON-PREFERRED
 OUTSIDE GRAMMAR
 ```
 
-The framework should be able to express all three. The actual ranges belong to the selected grammar and its evidence.
+The actual ranges and preferences belong to the selected grammar and its evidence.
 
-## 9. Plan, section and elevation co-evolve
+## 8. Plan, section and elevation co-evolve
 
-A grammar should not generate a plan and decorate the elevations afterward, nor design a façade and force a plan behind it.
+A grammar should not generate a plan and decorate it afterward, nor design a façade and force a plan behind it.
 
-They share variables: wall positions, room roles, bay centres, floor levels, openings, stair position, roof geometry, structural support and environmental conditions.
+Wall positions, room roles, bays, floor levels, openings, stairs, roof geometry, structure and environmental conditions are shared variables.
 
 > **Plan, section and elevation are projections of one architectural order.**
 
-A future solver may resolve them iteratively or simultaneously. The conceptual requirement comes first.
+The direction of influence need not be uniform. A façade may lead one opening condition while plan leads another; a sectional privilege may carry hierarchy without dictating the whole elevation.
 
-## 10. Structure, environment and services negotiate with grammar
+## 9. Architecture negotiates with technical reality
 
-Architecture is not the sole generator.
+Grammar does not prove structure, building physics or services, but it should generate geometry capable of negotiating with them.
 
-A selected grammar should tend toward geometry that can negotiate credibly with structure, building physics, environmental strategy and services. The technical systems should likewise avoid flattening the house into a servicing diagram.
-
-The relationship is reciprocal:
+Likewise technical systems should not flatten architecture into a servicing diagram.
 
 ```text
 ARCHITECTURAL GRAMMAR
@@ -203,97 +153,72 @@ STRUCTURE + ENVELOPE + SERVICES
 VALIDITY / EVIDENCE OBLIGATIONS
 ```
 
-The grammar can prefer structurally sympathetic geometry without claiming structural proof. It can prefer passive opportunity without pretending orientation or daylight performance follows from style.
+A grammar may prefer structurally sympathetic geometry or passive opportunity while leaving technical adequacy to the authority that actually proves it.
 
-## 11. Global rules, local rules and protected emptiness
+## 10. Local rules, global rules and protected emptiness
 
-Local rules may govern a junction, opening or alignment.
+Local rules may govern a junction, opening or alignment. Global rules may govern massing, hierarchy, circulation, primary order or relationship to exterior space.
 
-Global rules may govern massing, hierarchy, circulation, primary order or relationship to exterior space.
+A purely local system can produce tidy nonsense; a purely global optimiser can miss the quality of rooms and interfaces.
 
-A purely local system can produce tidy nonsense. A purely global optimiser can miss the quality of individual rooms and interfaces. A useful grammar needs both scales.
+The model must also represent intentional absence: an unoccupied axis, court, vista, wall field, maintenance volume or structural clear zone may be architecturally significant. Protected emptiness is therefore a first-class condition rather than simply “nothing modelled here”.
 
-It also needs the ability to protect absence. Architectural order can depend on an unoccupied axis, court, vista, wall field, circulation zone, maintenance volume or structural clear zone.
+## 11. Grammar and evaluation are different
 
-The model must therefore support constraints over **protected emptiness**, not merely placed objects.
+A grammar asks:
 
-## 12. Grammar and evaluation are different systems
+> **Is this design a valid member of language G?**
 
-A grammar determines whether a design belongs to the selected language.
+Evaluation asks:
 
-Evaluation compares valid designs against objectives.
-
-### Grammar asks
-
-> Is this a valid member of language G?
-
-### Evaluation asks
-
-> Among valid members, how does this design perform against the selected objectives?
+> **Among valid members, how does this design perform against chosen objectives?**
 
 Objectives may include daylight, privacy, circulation efficiency, compactness, cost, carbon, service-route length, structural economy, garden connection or closeness to preferred proportions.
 
-Do not turn every objective into grammar. If every preference becomes a hard rule, the language becomes sterile; if none do, the grammar becomes decorative metadata.
+If every preference becomes a hard grammar rule, the language becomes sterile. If none do, grammar becomes decorative metadata.
 
-## 13. Three levels of architectural authority
+## 12. Three levels of architectural authority
 
-### A. Language invariant
+### Language invariant
 
-Violation means the design is not a valid member of the selected grammar.
+Violation means the design no longer conforms to the selected grammar.
 
-### B. Language preference
+### Language preference
 
-Violation is allowed but produces feedback or affects ranking.
+Departure remains valid but produces feedback or affects ranking.
 
-### C. Human judgement
+### Human judgement
 
-The system informs but does not pretend to settle conditions such as whether an exception improves the whole, an asymmetry is beautifully composed or a particular sequence has the intended emotional effect.
+Some conditions should remain judgement: whether an exception improves the whole, an asymmetry is beautifully composed or a sequence has the intended character.
 
-Compiler or authoring feedback should state which level is speaking.
+Authoring and compiler feedback should state which authority level is speaking.
 
-## 14. Intentional exception
+## 13. Explicit deviation
 
 Opinionated does not mean tyrannical.
 
-A future system may support:
+A project can remain in conforming mode, record an explicit deviation from a named grammar rule, or select another grammar where its ordering principles are fundamentally different.
 
-### Conforming mode
+An explicit deviation should identify the rule, location, reason and affected relationships. It should not quietly rewrite the grammar around one project.
 
-Hard grammar rules cannot be violated.
+## 14. Derive grammars rather than invent them from taste
 
-### Explicit deviation
+A defensible grammar instance should:
 
-```text
-GRAMMAR G-xx
-FAIL — EXPLICIT DEVIATION GDEV-004
-```
-
-The deviation records rule, location, reason, author and downstream effects.
-
-### Different grammar
-
-A design requiring fundamentally different ordering should select another language rather than accumulate hundreds of exceptions.
-
-## 15. Derive grammars; do not invent them from taste
-
-A grammar instance should have a derivation record.
-
-A defensible process is:
-
-1. define the intended lineage and building scope;
-2. assemble a controlled corpus appropriate to that claim;
-3. acquire reliable plans, sections, elevations and other evidence;
+1. define its intended lineage and building scope;
+2. assemble a controlled evidence corpus;
+3. use source material adequate for the claim being made;
 4. annotate semantics, topology, ordering, dimensions and coupling;
 5. extract candidate relationships;
-6. distinguish invariant, tendency, preference, optional motif and human judgement;
+6. distinguish invariants, tendencies, preferences, optional motifs and human judgement;
 7. search deliberately for counterexamples;
-8. separate historical/descriptive frequency from present normative choice;
-9. test controlled mutations and unseen designs;
-10. review with relevant architectural and technical expertise.
+8. separate historical frequency from present normative choice;
+9. test controlled mutations and cases not used to formulate the candidate;
+10. retain uncertainty where evidence is inadequate.
 
-A grammar can be contemporary and still require evidence. Its evidence may include built work, design practice, prototypes and expert review rather than historical corpora.
+A contemporary grammar can use contemporary built work, prototypes and expert review rather than a historical corpus, but it still needs an explicit evidential basis.
 
-## 16. Descriptive and normative grammars must remain separate
+## 15. Descriptive and normative grammars are different
 
 The descriptive question is:
 
@@ -301,149 +226,101 @@ The descriptive question is:
 
 The normative question is:
 
-> Which of those relationships should this new grammar preserve, modify or reject?
+> Which of those relationships should a contemporary grammar preserve, modify or reject?
 
-Frequency is not authority.
+Frequency is not authority. Historical service arrangements, inaccessible circulation or obsolete social organisation do not become contemporary rules merely because they recur in precedents.
 
-Historical service arrangements, inaccessible circulation, obsolete social assumptions, poor environmental performance or superseded construction should not enter a new grammar merely because they were common in its precedents.
-
-Likewise, a contemporary fashion should not become a hard rule merely because it is currently frequent.
-
-## 17. Counterexamples and mutation testing
+## 16. Counterexamples and mutation
 
 Positive examples reveal recurring relationships. Counterexamples reveal whether those relationships are actually necessary.
 
-Controlled mutation is particularly useful:
+Useful controlled changes include moving an opening, changing a room’s rank or dimensions, breaking an alignment, altering circulation depth, removing a connection, changing mass hierarchy or disturbing a vertical relationship.
 
-- move an opening;
-- change a room rank or dimension;
-- break an alignment;
-- alter circulation depth;
-- remove a connection;
-- change mass hierarchy;
-- disturb a vertical relationship.
+The point is not to hold a beauty vote. It is to discover which relationships carry architectural load and which attractive formulations collapse under variation.
 
-Record which relationship changed, whether the result remains inside the intended language, whether technical performance changed and whether the candidate rule should be hard, soft or discarded.
+## 17. Multiple grammars are a feature
 
-The aim is not a public beauty vote. It is to discover which relationships carry architectural load.
+House Kernel should be capable of hosting materially different architectural languages.
 
-## 18. Multiple grammars are a feature, not an edge case
+That is a falsification test for the framework: if a supposedly general capability only works inside G-01, it is probably G-01-specific or scoped too broadly.
 
-House Kernel should eventually be able to inhabit several architectural languages.
+Conversely, a grammar may impose architectural requirements unrelated to Ovid’s House doctrine. That is legitimate when its authority remains explicit.
 
-That is an important falsification test for the doctrine itself. If a supposedly general House Kernel proposition only works inside G-01, it is either scoped too broadly or is actually a G-01/project proposition.
+## 18. G-01 as the first instance
 
-Conversely, a grammar may impose requirements that have nothing to do with House Kernel doctrine. That is legitimate. The system should report their authority honestly.
+G-01 exists because the Reference House has a Georgian-derived temperament and therefore provides a concrete vehicle for grammar work.
 
-## 19. G-01 is the first test grammar, not the framework
+The current public evidence is organised by subject rather than research chronology:
 
-The active first grammar is **G-01 — Georgian-derived domestic architecture**.
+- [G-01 v0.1 specification](g01-v0.1.md);
+- [scope, evidence and derivation method](g01-research-brief.md);
+- [corpus and source-quality register](g01-corpus-register.md);
+- [precedent annotation method](g01-annotation-schema.md);
+- [precedent cases](g01-cases/README.md);
+- [topology comparison](g01-topology-comparison.md);
+- [dimensional and proportional analysis](g01-dimensional-analysis.md);
+- [plan / section / elevation coupling](g01-plan-section-elevation-coupling.md);
+- [candidate-constraint evidence](g01-candidate-constraints-v01.md);
+- [validation and limits](g01-validation.md).
 
-It exists because the Reference House already has a Georgian-derived architectural temperament and therefore provides a demanding concrete vehicle for grammar research.
+Palladian and English Georgian precedent, classical ordering, symmetry tendencies, bay composition and opening hierarchy may be central to G-01. They are not assumptions of this framework.
 
-G-01-specific material belongs in the dedicated research records:
+## 19. The Reference House selects rather than defines G-01
 
-- [G-01 Research Brief](g01-research-brief.md)
-- [G-01 Corpus and Source-Quality Register](g01-corpus-register.md)
-- [G-01 Precedent Annotation Schema](g01-annotation-schema.md)
-- [G-01 Trial Case Records](g01-cases/README.md)
-- [G-01 Topology Comparison](g01-topology-comparison.md)
-- [G-01 Dimensional and Proportional Analysis](g01-dimensional-analysis.md)
-- [G-01 Plan / Section / Elevation Coupling](g01-plan-section-elevation-coupling.md)
-- [G-01 Candidate Constraint Register](g01-candidate-constraints-v01.md)
+The Reference House may select G-01 and then add project-specific morphology or dialect.
 
-Palladio, English Georgian precedent, classical ordering, symmetry tendencies, bay composition, sash/opening hierarchy and similar material may be central to G-01. They are not assumptions of the grammar framework.
+Its courtyard therefore does not become Georgian grammar simply because this house has one. The same applies to its service geography, traditional joinery, restrained brass/bronze, removable trim or other tectonic decisions.
 
-## 20. The Reference House selects rather than defines G-01
+Repetition inside one worked house is not evidence of framework-level authority.
 
-The Reference House is a worked interpretation. It may select G-01 and then add project-specific morphology or dialect.
+## 20. Authoring should expose intent, not rule mechanics
 
-For example, its courtyard should not be smuggled into the Georgian core merely because this house has one. The grammar should be derived independently, then the project should test whether a courtyard can coexist with it or requires an explicit extension/dialect.
+A simple authoring interface should let a user manipulate architectural intent: make this the principal room, enlarge it, add a bedroom, move the stair, add an opening, widen the court.
 
-The same applies to the Reference House's tectonic language. Traditional joinery, restrained brass/bronze, removable architectural trim and other interface resolutions may form a coherent project dialect without becoming generic Georgian rules or House Kernel doctrine.
+The system can then expose threatened hierarchy, broken alignments, invalid topology, increased spans, environmental conflicts and service consequences according to whichever grammar, technical or project rule actually owns them.
 
-## 21. The twelve-year-old test
+Human intent sits at the interface; encoded knowledge sits underneath.
 
-A simple authoring interface should manipulate architectural intent rather than hidden rule mechanics.
+## 21. Grammar output
 
-A user might say:
-
-- make this the principal room;
-- enlarge it;
-- add a bedroom;
-- move the stair;
-- add an opening;
-- widen the court.
-
-The system should manage consequences such as threatened hierarchy, broken alignments, invalid topology, increased spans, environmental conflicts and service-route consequences according to whichever grammar/domain/project rules actually own them.
-
-Human intent sits at the interface; encoded architectural knowledge sits underneath.
-
-## 22. Compiler and authoring output
-
-A grammar result should distinguish at least:
+A useful result distinguishes at least:
 
 ```text
-GRAMMAR
-PASS
+GRAMMAR — PASS
+GRAMMAR — PASS WITH PREFERENCE DEPARTURE
+GRAMMAR — FAIL
+GRAMMAR — HUMAN REVIEW
 ```
 
-```text
-GRAMMAR
-PASS WITH PREFERENCE DEPARTURE
-```
+A result should identify grammar/version, rule, authority class, affected entities, reason and valid alternatives where known.
 
-```text
-GRAMMAR
-FAIL
-```
+“Not a member of G-01” should never be reported as generic architectural failure.
 
-```text
-GRAMMAR
-HUMAN REVIEW
-```
+## 22. Versioning
 
-Report grammar ID/version, rule, authority class, affected entities, reason and valid alternatives where known.
+Released grammars are versioned because changing a rule changes the language against which projects are judged.
 
-Do not report a generic architectural failure when the real statement is only “not a member of G-01”.
+A project retains the grammar version it was designed against unless it explicitly migrates. The framework itself should likewise version if its semantics materially change.
 
-## 23. Versioning
+Versioning is present authority, not a reason to expose the chronology that produced the version.
 
-Released grammars should be immutable.
+## 23. Specificity boundary
 
-```text
-G-01.3  Georgian-derived domestic grammar
-```
+Before adding a rule, ask:
 
-A change to rules or authority creates a new version. Projects retain the grammar version they were designed against unless they explicitly migrate.
+- Is this capacity needed to represent architectural grammars generally?
+- Is it a rule of G-01?
+- Is it a technical supported-domain restriction?
+- Is it a project-specific Reference House decision?
 
-The framework itself should also version when its semantics change.
-
-## 24. Anti-contamination rule
-
-Before adding a rule to this framework, ask:
-
-- Is this capability required to represent architectural grammars generally?
-- Or is it a rule of G-01?
-- Or a technical restriction of H1?
-- Or a project-specific Reference House decision?
-
-Only the first belongs here.
-
-The repository-wide rule is defined in [Architectural Specificity Boundary](../development/architectural-specificity-boundary.md).
+Only the first belongs in the framework.
 
 > **Generalise the reason; localise the taste.**
 
-## 25. Current next steps
+The current separation is carried by the framework, [G-01 charter](g01-grammar-charter.md), technical supported-domain documents and Reference House authority stack rather than by a hidden project-development taxonomy.
 
-The framework is conceptually sufficient for the present computational programme. Do not expand it merely to catalogue more architectural opinions.
+## 24. Current boundary
 
-Next useful work is downstream:
+The framework is intentionally smaller than architecture. It provides a way to state and test architectural-language relationships without pretending to mechanise every act of composition.
 
-1. continue deriving and attacking G-01 from its controlled corpus;
-2. keep G-01 rules distinct from H1 technical-domain restrictions;
-3. test the Reference House as a G-01 project with explicit project-specific extensions where necessary;
-4. promote only relationships that survive evidence and counterexample review;
-5. later test the framework with a materially different second grammar to expose assumptions that remained accidentally Georgian.
-
-The strongest test of style-neutrality will not be another paragraph. It will be a second architectural language using the same framework without special pleading.
+Its strongest unresolved test is not another layer of abstract machinery but a second, materially different architectural language. Until then, style-neutrality remains a bounded claim rather than a proven universal one.

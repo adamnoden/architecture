@@ -1,4 +1,4 @@
-# Appendix B — Research Agenda
+# Research Agenda
 
 Ovid’s House is intentionally unfinished at several edges.
 

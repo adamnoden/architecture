@@ -105,7 +105,3 @@ The Reference House may use substantial skirting and selected door/joinery zones
 ## Formalisation boundary
 
 Declared route zones, permitted service classes, access points and no-fix relationships can be represented formally. Whether the route remains visually convincing and proportionate is architectural judgement.
-
----
-
-**Provenance:** admitted by the Phase-6 corpus audit from the merged `service skirting` and `vertical joinery route` propositions. Stable identity does not increase evidence or maturity.

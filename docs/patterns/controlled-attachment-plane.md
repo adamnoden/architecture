@@ -119,7 +119,3 @@ The Reference House develops the attachment plane with the Georgian lining gramm
 ## Formalisation boundary
 
 Anchor occurrences, load classes, safe/no-fix zones, supported fit-out and replacement dependencies can be represented formally. Perceived solidity, visual integration and system proportion remain architectural/prototype judgements.
-
----
-
-**Provenance:** admitted by the Phase-6 corpus audit by merging **Architectural Backplane** with the old **Fixing Infrastructure** publication slot. Specific rail/frame systems remain implementation families. Stable identity does not increase evidence or maturity.

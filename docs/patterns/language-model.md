@@ -1,10 +1,8 @@
 # Ovid’s House Pattern System — Model and Authoring Contract
 
-This document defines what an Ovid’s House pattern is, how patterns relate, how generative sequences are represented, and how canonical pattern records are authored. It controls the pattern layer without replacing the governing constitution, research evidence, implementation families, Reference House decisions or computational semantic model.
+This document defines what an Ovid’s House pattern is, how patterns relate, how generative sequences are represented and how canonical pattern records are authored. It controls the pattern layer without replacing the governing constitution, research evidence, implementation families, Reference House decisions or computational semantic model.
 
-The model is capable of supporting a pattern language. The **current corpus is not claimed to be one uniformly mature language**. Service topology presently provides the strongest demonstrated generative sequence; other fields contain valid patterns with less-complete relationship and sequence structure. That asymmetry is evidence about maturity, not a reason to invent links.
-
----
+The system is capable of supporting a pattern language. The **current corpus is not claimed to be one uniformly mature language**. Service topology presently provides the strongest demonstrated generative sequence; other fields contain valid patterns with less-complete relationship and sequence structure. That asymmetry is evidence about maturity, not a reason to invent links.
 
 ## 1. Role of the pattern layer
 
@@ -22,8 +20,6 @@ A mature pattern language adds two things that a catalogue does not:
 The present system demonstrates those qualities most clearly in service topology. An individual pattern can remain valid even when its wider field has not yet earned a mature generative sequence.
 
 The pattern system should support design judgement, not substitute for it.
-
----
 
 ## 2. Conceptual stack
 
@@ -79,8 +75,6 @@ One application in one project: a particular service wall, window opening, maint
 
 A proposition precise enough to be checked or evidenced. The computational track may derive these from selected architectural relationships, but the pattern itself is not a software rule.
 
----
-
 ## 3. Pattern identity
 
 Canonical patterns receive stable IDs:
@@ -91,15 +85,9 @@ HSA-P-002
 ...
 ```
 
-The number is identity only. It does **not** encode category, scale, evidence state or publication order. Pattern names are the primary reader-facing identity; IDs exist for provenance, durable cross-reference and machine-readable mapping.
+The number is identity only. It does **not** encode category, scale, evidence state or publication order. Pattern names are the primary reader-facing identity; IDs provide durable cross-reference across patterns, evidence, project selections and computational representations.
 
-A renamed pattern retains its ID if the recurring problem and invariant response remain substantially the same. `HSA-P-003`, for example, retained its identity when **Horizontal Service Spine** became **Coherent Horizontal Service Route** because route coherence, not one literal spine, was the stable architectural relationship.
-
-A proposition that splits into two materially distinct patterns receives new IDs. Numbering should not be preserved at the cost of conceptual clarity.
-
-IDs are never reused after retirement. `HSA-P-006` therefore remains retired permanently even though some of its durable content survives at strategy level and in narrower patterns.
-
----
+A pattern should keep its identity only while its recurring problem and invariant response remain substantially the same. If one proposition actually contains materially different recurring relationships, conceptual clarity outranks preserving one identifier.
 
 ## 4. Admission test
 
@@ -131,7 +119,7 @@ A useful diagram can show the relationship, topology, sequence or boundary condi
 
 ### Consequences
 
-The pattern can state what it improves, what it costs, and what new obligations or boundary debt it creates.
+The pattern can state what it improves, what it costs and what new obligations or boundary debt it creates.
 
 ### Composition
 
@@ -141,9 +129,7 @@ It participates meaningfully in the wider pattern system. This does not require 
 
 Its evidence state can be stated without laundering preference into fact.
 
-A proposition can remain valuable while failing the admission test. Reclassify it rather than forcing it into the canonical pattern set.
-
----
+A proposition can remain valuable while failing the admission test. Keep it as a strategy, held candidate, implementation family, rule or research question rather than forcing it into the canonical pattern set.
 
 ## 5. Relationship vocabulary
 
@@ -171,15 +157,11 @@ Do not add synonyms such as `supports`, `enables`, `related-to`, `parent-of`, `u
 
 Sequence ordering belongs primarily in sequence documents, not in an ever-growing edge vocabulary.
 
----
-
 ## 6. Scale and domain
 
 Scale and domain are independent metadata.
 
 ### Suggested scales
-
-Use the smallest useful set that fits the actual pattern:
 
 - `site`
 - `building`
@@ -194,27 +176,9 @@ Multiple scales are allowed where the invariant genuinely spans them.
 
 ### Suggested domains
 
-Examples:
+Examples include architecture, services, structure, envelope, water, maintenance, lifecycle, environment, fire, acoustics, workmanship, stewardship and repose.
 
-- architecture
-- services
-- structure
-- envelope
-- water
-- maintenance
-- lifecycle
-- environment
-- fire
-- acoustics
-- workmanship
-- stewardship
-- repose
-
-Domains are filters, not ownership boundaries. A good pattern commonly spans several.
-
-Do not create a domain taxonomy more detailed than the work needs.
-
----
+Domains are filters, not ownership boundaries. A good pattern commonly spans several. Do not create a taxonomy more detailed than the work needs.
 
 ## 7. Evidence and maturity
 
@@ -229,7 +193,7 @@ Preserve two independent axes.
 
 ### Maturity
 
-Use the existing project vocabulary as applicable:
+Useful project maturity states include:
 
 - Drawn
 - Calculated
@@ -241,11 +205,7 @@ Use the existing project vocabulary as applicable:
 
 Evidence describes confidence in the proposition. Maturity describes what the project has actually done with it.
 
-Reclassification or renaming does not increase either axis.
-
 Language-level maturity is separate again: a field may contain valid patterns without yet possessing demonstrated generative ordering across them.
-
----
 
 ## 8. Pattern frontmatter contract
 
@@ -295,15 +255,13 @@ sequences:
 - the four relationship arrays
 - `sequences`
 
-The historical metadata key `principles` remains stable for compatibility; it refers to the numbered provisions of the governing constitution.
+`principles` refers to the numbered provisions of the governing constitution.
 
 ### Deliberately excluded
 
 Do not encode prose, evidence citations, implementation options, failure modes, compiler rules or Reference House occurrences in frontmatter.
 
 Those belong in readable content or separate domain-specific records. Frontmatter should help navigate and validate the pattern system, not become a second ontology.
-
----
 
 ## 9. Canonical pattern anatomy
 
@@ -313,7 +271,7 @@ Each mature pattern page should contain, where applicable:
 2. **Problem** — recurring failure or design difficulty.
 3. **Pattern** — the invariant response in a short, forceful statement.
 4. **Forces** — competing pressures the response must balance.
-5. **Relationships** — why the linked patterns matter; frontmatter alone is not enough.
+5. **Relationships** — why linked patterns matter; frontmatter alone is not enough.
 6. **Variants / implementation families** — materially different ways the pattern may be realised.
 7. **Proportionality** — what future task justifies permanent provision.
 8. **Boundary debt** — structure / fire / smoke / acoustic / air / vapour / water / thermal / pest / security as relevant.
@@ -330,27 +288,21 @@ Each mature pattern page should contain, where applicable:
 
 Not every small pattern needs equal prose under all headings. Omit genuinely irrelevant sections rather than filling templates mechanically.
 
----
+## 10. Pattern versus strategy
 
-## 10. Pattern versus strategy test
+A proposition is probably a strategy when its apparent “variants” solve the problem through fundamentally different relationships.
 
-A recurring warning sign is a proposition whose “variants” solve the problem through fundamentally different relationships.
+[Fail-Safe Water Distribution](strategies/fail-safe-water-distribution.md), for example, can be realised through joint minimisation, accessible routing, visible leakage paths, local containment, isolation or room-scale failure tolerance. Those are not one stable spatial relationship. The common outcome is therefore strategic, with narrower patterns beneath it where recurring physical relationships exist.
 
-The retired `HSA-P-006 — Water-Damage-Safe Service Route` grouped pipe-in-pipe, fully accessible distribution, drained containment, passive fall and electronic isolation. Those responses do not form one stable spatial relationship. The durable proposition therefore belongs to the [Fail-Safe Water Distribution](strategies/fail-safe-water-distribution.md) strategy, with narrower patterns beneath it where a recurring physical relationship exists.
+Do not force useful prose into pattern form merely to enlarge the canonical set.
 
-Do not preserve a pattern identity merely because its prose remains useful.
+## 11. Pattern versus implementation family
 
----
+A proposition is probably an implementation family when its identity depends on one assembly concept rather than the general relationship being solved.
 
-## 11. Pattern versus implementation-family test
+A direct/seated floor connection, for example, may expose a wider lesson: separate gravity support, restraint, movement and boundary obligations before selecting the connection. That knowledge is captured by [Decompose Structural Interface Functions](strategies/decompose-structural-interface-functions.md), while the physical connection remains one implementation family to compare with conventional engineered alternatives.
 
-A proposition is probably an implementation family when its identity depends on a particular assembly concept rather than the more general relationship being solved.
-
-**Seated Floor Structure**, for example, exposes a stronger general idea: separate gravity support, restraint, movement and boundary obligations before choosing the connection. That general knowledge is captured by the [Decompose Structural Interface Functions](strategies/decompose-structural-interface-functions.md) strategy, while a seated connection remains an implementation challenger to be compared with ordinary engineered alternatives.
-
-The pattern system should preserve the general architectural knowledge without promoting every promising construction family into a canonical pattern.
-
----
+The pattern system should preserve reusable architectural knowledge without promoting every promising construction family into a pattern.
 
 ## 12. Generative sequences
 
@@ -373,23 +325,17 @@ Keep graph relationships and sequence ordering separate: they answer different q
 
 Do not create a new sequence merely to make a pattern family appear more mature. Sequence authority should come from repeated design work that demonstrates consequential ordering.
 
----
-
 ## 13. Reference House relationship
 
-The Reference House is a **pattern-system integration test**. Its [Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md) records selected pattern IDs, actual project occurrences, implementation directions and outstanding obligations.
+The Reference House is a **pattern-system integration test**. Its [Pattern Selection](../reference-house/pattern-occurrence-register.md) records which current patterns materially shape the house, the project consequences and the outstanding proof attached to them.
 
-The house can also expose rejected patterns, conflicts, rewind events and missing reusable knowledge. None of those outcomes validates or invalidates the general pattern set by project use alone.
-
-A Reference House occurrence is evidence about coordination in one project. General pattern evidence remains separately controlled.
-
----
+Use in the house does not validate the general pattern. A Reference House occurrence is evidence about coordination in one project; general pattern evidence remains separately controlled.
 
 ## 14. Computational boundary
 
 The computational track models the building through stable semantic identity, typed relationships, geometry, overlapping domain graphs, obligations and scoped evidence.
 
-Pattern pages may identify **formalisable consequences** such as:
+Pattern pages may identify formalisable consequences such as:
 
 - an access route must connect two occurrences;
 - a replacement path must contain a withdrawal volume;
@@ -410,32 +356,27 @@ compiler rule
 evidence of adequacy
 ```
 
-This separation is a hard project constraint. Pattern provenance may inform project requirements, but technical obligations derive from the composed building relationships represented in the model.
+This separation is a hard project constraint. A selected architectural pattern may explain why a project requirement exists, but technical obligations derive from the composed building relationships represented in the model.
 
----
+## 15. Current system
 
-## 15. Canonical identities and current system status
+The current system contains **21 active canonical patterns**, **3 canonical strategies** and **4 held candidates**.
 
-The current system contains 21 active canonical patterns. `HSA-P-006` is retired permanently and its ID will not be reused.
+The active pattern list is generated from individual frontmatter in [Patterns and generative sequences](README.md). Held candidates remain outside the canonical identity set until their stated admission questions are resolved.
 
-The canonical active and retired lists are generated from individual pattern frontmatter in [Patterns and generative sequences](README.md). Historical identity maps and development decisions remain in the development records as provenance rather than current authority.
-
-Current language-level maturity is intentionally uneven:
+Language-level maturity is intentionally uneven:
 
 - service topology has one mature documented generative sequence;
-- other fields contain useful relationships but do not yet claim equivalent generative completeness;
+- other fields contain useful relationships but do not claim equivalent generative completeness;
 - no relationship edge or sequence is added solely to improve apparent graph density.
-
----
 
 ## 16. Change discipline
 
 - relationship changes require a reason in prose, not just frontmatter edits;
 - new patterns require the admission test;
 - new relationship types require evidence from repeated worked cases;
-- reclassification of an existing pattern must preserve provenance;
-- reclassification or renaming does not increase evidence or maturity;
-- retired IDs are never reused;
+- a renamed pattern retains its identity only when its invariant remains materially the same;
+- a split or materially changed invariant receives a new identity;
 - sequences remain separate from graph relationships;
 - the Reference House remains an integration test, not evidence for general pattern validity;
-- current corpus status must be stated at the maturity actually demonstrated, even if the project’s long-term ambition remains a richer pattern language.
+- current corpus status must be stated at the maturity actually demonstrated, even if the long-term ambition is a richer pattern language.

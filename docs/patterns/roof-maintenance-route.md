@@ -103,7 +103,3 @@ Rear/secondary roof access is used only where it materially improves real mainte
 ## Formalisation boundary
 
 Maintenance tasks, target components, access paths, working volumes and replacement envelopes can be represented formally. Safe system selection and detailed fall-protection design remain competent professional work.
-
----
-
-**Provenance:** migrated from Pattern 11 in [`core-12.md`](core-12.md). Migration does not increase evidence or maturity.
