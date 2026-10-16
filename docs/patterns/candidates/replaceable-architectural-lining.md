@@ -58,9 +58,9 @@ These are not themselves the candidate identity.
 
 ## Evidence
 
-The direction is supported by the project's reversible-assembly and replaceable-wall research, but the central question remains physical: whether a removable lining can match the repose, solidity and ordinary decorative freedom of a first-rate conventional wall.
+The direction is supported by the project’s replaceable-wall research, but the central question remains physical: whether a removable lining can match the repose, solidity and ordinary decorative freedom of a first-rate conventional wall.
 
-Relevant work includes [Reversible Assembly Candidates](../reversible-assembly-candidates.md), [Replaceable Wall System Options](../../research/replaceable-wall-system-options.md) and the W2 wall-bay prototype programme.
+Relevant current work includes [Replaceable Wall Lining](../../research/replaceable-wall-system-options.md) and the [physical prototype questions](../../prototypes/README.md).
 
 ## Does not prove
 
