@@ -97,7 +97,3 @@ Where service walls, risers or accessible routes cross floor/room boundaries, th
 ## Formalisation boundary
 
 Void extent, boundary intersections and controlled crossing occurrences can be represented formally. Required fire/acoustic construction and proof of performance remain scoped technical evidence.
-
----
-
-**Provenance:** admitted by the Phase-6 corpus audit and targeted evidence review. Stable identity does not increase evidence or maturity.
