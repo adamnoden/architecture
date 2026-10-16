@@ -3,13 +3,13 @@
 
 **Programme:** PUB-SAN / issue #133  
 **Governing rule:** **The publication contains the resolved work, not the history of its resolution.**  
-**State:** SAN-05 complete at source-review scope; SAN-06 validation pending CI on the closeout branch.
+**State:** SAN-00 through SAN-06 complete on the closeout branch; full validation passed on content head `79fd0218fd38d7854292b089618545c9ba16af7e` in PR #150.
 
 This record is the lossless closeout map for the sanitation programme. It does not preserve every document that was removed from public view. It records where the durable intellectual value now lives and which historical material is intentionally left only in the repository.
 
 ## Final SAN-05 result
 
-The first-reader traversal now covers the principal site path, both publication manifests, reader-facing back matter, the pattern/G-01/Reference House/research/computational branches reached from that path, and the public/internal routing boundary.
+The first-reader traversal covers the principal site path, both publication manifests, reader-facing back matter, the pattern/G-01/Reference House/research/computational branches reached from that path, and the public/internal routing boundary.
 
 The remaining back matter has a current reader function:
 
@@ -21,14 +21,14 @@ The remaining back matter has a current reader function:
 
 Appendix numbering is owned by `publication/publication.ts` for print. Website source headings are publication-neutral where practical so a source does not carry stale appendix identity into another medium.
 
-The current editorial authority, `docs/manuscript/publication-architecture.md`, has been rewritten to match the resolved corpus. It no longer prescribes the legacy doctrine crosswalk or the old six-appendix order.
+The current editorial authority, `docs/manuscript/publication-architecture.md`, matches the resolved corpus. It no longer prescribes the legacy doctrine crosswalk or the old six-appendix order.
 
 ## SAN-06 lossless map
 
 | Internalised / replaced material | Durable value retained in | Closeout judgement |
 |---|---|---|
 | House Design Doctrine v7 / legacy doctrine register crosswalk | `governing-principles.md`; current strategies, patterns and held candidates; current research and Reference House technical syntheses | Historical formulations are not publication content. Unique ideas survive under current owners; the crosswalk remains internal archaeology only. |
-| Pattern Core-12, pilot catalogues, reversible-assembly aggregate and migration records | current 21 canonical pattern records; 3 strategy records; 4 held candidates; `docs/patterns/README.md`; service-topology sequence | Migration history internalised. Stable `HSA-P-*` identities retained because they serve current cross-reference, not because of provenance. |
+| Pattern Core-12, pilot catalogues, reversible-assembly aggregate and migration records | current 21 canonical pattern records; 3 strategy records; 4 held candidates; `docs/patterns/README.md`; service-topology sequence | Migration history internalised. Stable `HSA-P-*` identities remain because they serve current cross-reference, not because of provenance. |
 | G-01 research-stage, falsification and reduction records | `g01-v0.1.md`; subject-organised grammar evidence; `G-01 Validation and Limits`; Reference House G-01 conformance | Stage chronology internalised after findings were synthesised. `G-01 v0.1` remains as a current formal specification identity. |
 | Reference House RH-C / RH-06→RH-11 stage records, restart ledgers and coordination gates | `docs/reference-house/README.md`; `part-iv.md`; current Technical Coordination; Tectonic Architectural Language; Vertical Interface Coordination; Pattern Selection; Independent Review Questions; generated current inspection outputs | Development sequence removed from public reading. Current building decisions, uncertainty and external proof obligations remain. |
 | Whole-House Coordination Fixture 01 and stale 12.6 × 11.4 m / 3.6 × 3.6 m output | current 12.0 × 10.8 m / 3.6 × 4.0 m Reference House and deterministic generated inspection plan | Stale geometry intentionally rejected, not migrated as a current alternative. Historical file remains internal. |
@@ -55,19 +55,26 @@ A version or code is removed only when its function is development chronology ra
 
 ## Regression guard
 
-`scripts/validate-resolved-public-surface.ts` now checks every public Markdown source for high-confidence development residue and rejects reader-facing links into internal-only Markdown records.
+`scripts/validate-resolved-public-surface.ts` checks every public Markdown source for high-confidence development residue and rejects reader-facing links into internal-only Markdown records. It also rejects migration-style `**Provenance:**` footers on public pages.
 
 The guard deliberately targets unequivocal process identities rather than banning ordinary words such as “history”, “version”, “programme” or “superseded”, which can be legitimate architectural, evidence or lifecycle concepts.
 
-## Final validation contract
+## Validation result
 
-SAN-06 closes only after the closeout branch passes the repository validation workflow, including:
+PR #150 content head `79fd0218fd38d7854292b089618545c9ba16af7e` passed the full **Validate pull request** workflow (`run 423`, workflow run `38874440924`). The validated workflow includes:
 
-- type checking and repository health;
+- TypeScript type checking and repository health;
 - public-route integrity;
-- resolved-public-surface sanitation guard;
-- compiler/reference-house regression suites and generated-output integrity;
-- publication validation and integrity;
+- the resolved-public-surface sanitation guard;
+- compiler and Reference House regression suites;
+- generated-output integrity;
+- publication validation and publication-integrity checks;
 - VitePress public-site build.
 
-After a green closeout run, this record should be updated with the validated commit/PR, merged to `main`, and issue #133 closed as completed.
+The final metadata-only closeout commit must pass the same workflow before merge. No architectural or publication claim is broadened by that final record update.
+
+## Closeout judgement
+
+PUB-SAN has met its acceptance condition at source and validation scope: the public corpus presents the resolved work, development archaeology remains internal, removed material has a recorded semantic destination or explicit rejection, and future regressions have an automated guard.
+
+After the metadata-only closeout commit validates, PR #150 may merge and issue #133 may close as completed.
