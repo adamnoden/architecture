@@ -122,7 +122,7 @@ Do not present project preferences as statutory requirements.
 
 ## Related documents
 
-- [Reference House — External Access & Maintenance Plan](../reference-house/external-access-maintenance-plan.md)
+- [Reference House — Technical Coordination](../reference-house/structural-coordination.md)
 - [Maintenance Geography — The Exterior](../manuscript/maintenance-geography-external.md)
 - [Ground-Supported Façade Access Pattern](../patterns/ground-supported-facade-access.md)
 - [External Maintenance Access — Research Synthesis](../research/external-maintenance-access.md)
