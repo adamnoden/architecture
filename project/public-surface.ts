@@ -14,7 +14,6 @@ export const publicSourceExcludeGlobs = [
   'docs/patterns/pilot/**',
   'docs/patterns/candidates/accessible-vertical-service-zone.md',
   'docs/grammar/architectural-grammar-modelling-corrections-v01.md',
-  'docs/grammar/g01-research-brief.md',
   'docs/grammar/g01-completion-programme.md',
   'docs/grammar/g01-d5-d6-web-pass-v02.md',
   'docs/grammar/g01-d5-d6-web-pass-v03.md',
@@ -92,6 +91,7 @@ export const publicSourceExcludeGlobs = [
 const publicLabelOverrides: Readonly<Record<string, string>> = {
   'G-01 v0.1 — frozen grammar': 'G-01 v0.1 — specification',
   'G-01 v0.1 conformance — D12': 'G-01 v0.1 conformance',
+  'Research brief': 'Scope & derivation method',
   'RH-C0 / RH-C1 fixture programme': 'Project definition',
   'Reference House development history': 'Technical coordination',
   'Structural coordination': 'Current technical coordination',
