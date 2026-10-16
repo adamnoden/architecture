@@ -102,7 +102,3 @@ The Reference House uses thresholds only at real changes of construction or wear
 ## Formalisation boundary
 
 Adjacent assembly identities, level relationships, replacement dependencies and applicable boundary roles can be represented formally. Tactile quality, visual weight and detailed weathering performance remain design/evidence questions.
-
----
-
-**Provenance:** admitted by the Phase-6 corpus audit from the old `threshold` publication slot. Stable identity does not increase evidence or maturity.
