@@ -1,5 +1,5 @@
 import { existsSync, lstatSync, readFileSync, readdirSync } from 'node:fs'
-import { dirname, join, posix, relative, sep } from 'node:path'
+import { join, posix, relative, sep } from 'node:path'
 import { isPublicSource } from '../project/public-surface.js'
 
 const repoRoot = process.cwd()
@@ -24,7 +24,8 @@ const residuePatterns: readonly { label: string; pattern: RegExp }[] = [
   { label: 'candidate-book process state', pattern: /candidate-book stage/i },
   { label: 'PR-00 publication-stage identity', pattern: /\bPR-00[A-Z0-9-]*\b/ },
   { label: 'Reference House development gate identity', pattern: /\bRH-(?:0\d|1[01])\b/ },
-  { label: 'H1 paper-compilation identity', pattern: /\bH1-PAPER(?:-\d+)?\b/i }
+  { label: 'H1 paper-compilation identity', pattern: /\bH1-PAPER(?:-\d+)?\b/i },
+  { label: 'migration provenance footer', pattern: /^\*\*Provenance:\*\*/m }
 ]
 
 const markdownLinkPattern = /(?<!!)\[[^\]]+\]\(([^\s)]+)(?:\s+[^)]*)?\)/g
