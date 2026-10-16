@@ -51,9 +51,9 @@ A full-room **Finish-Agnostic Floor Platform** remains an implementation challen
 
 ## Evidence
 
-Adjacent access-floor precedent and the project's floor-platform studies support selective access as a plausible direction, but not yet as a proven domestic pattern. The unresolved test is whether a bounded access zone can remain physically convincing while providing materially better serviceability than ordinary local panels or inaccessible layered construction.
+Adjacent access-floor precedent and the project’s floor-platform studies support selective access as a plausible direction, but not yet as a proven domestic pattern. The unresolved test is whether a bounded access zone can remain physically convincing while providing materially better serviceability than ordinary local panels or inaccessible layered construction.
 
-Relevant work includes [Reversible Assembly Candidates](../reversible-assembly-candidates.md), [Finish-Agnostic Floor Platform Options](../../research/finish-agnostic-floor-platform-options.md) and the [Targeted Pattern-Language Evidence Review](../../research/pattern-language-phase6-targeted-evidence.md).
+The current architectural comparison is [Accessible Floor Systems](../../research/finish-agnostic-floor-platform-options.md).
 
 ## Does not prove
 
