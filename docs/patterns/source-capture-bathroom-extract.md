@@ -106,7 +106,3 @@ The Reference House keeps bathroom extract routes short and aligned with the ser
 ## Formalisation boundary
 
 Source/terminal relationship, duct route, transfer-air occurrence and maintenance access can be represented formally. Actual moisture-removal performance, acoustics and commissioning remain technical evidence.
-
----
-
-**Provenance:** admitted by the Phase-6 corpus audit from the old `bathroom extraction` publication slot. Stable identity does not increase evidence or maturity.
