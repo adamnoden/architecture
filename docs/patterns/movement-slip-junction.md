@@ -101,7 +101,3 @@ The Reference House uses conventional quiet joints by default. Brass/bronze is c
 ## Formalisation boundary
 
 Expected movement range, controlling assembly, permitted movement and boundary duties can be recorded formally. Whether the visible joint is proportionate and compositionally quiet remains architectural judgement.
-
----
-
-**Provenance:** migrated from Pattern 08 in [`core-12.md`](core-12.md). Migration does not increase evidence or maturity.
