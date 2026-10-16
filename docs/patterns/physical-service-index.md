@@ -108,7 +108,3 @@ The Reference House places one restrained physical service index in the service 
 ## Formalisation boundary
 
 Stable semantic identities and correspondence between records and physical labels fit naturally with the computational model. The pattern deliberately preserves a small critical layer outside software dependencies, so digital existence alone cannot discharge it.
-
----
-
-**Provenance:** migrated from Pattern 12 in [`core-12.md`](core-12.md) and [`pilot/physical-service-index.md`](pilot/physical-service-index.md). Migration does not increase evidence or maturity.
