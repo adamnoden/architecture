@@ -30,7 +30,7 @@ The strategy does **not** prescribe a seated floor, hanger, bearing ledge or sli
 
 The reusable knowledge is analytical: distinguish structural and boundary functions before selecting a connection. The valid physical resolutions differ too much to collapse into one recurring architectural relationship.
 
-The earlier **Seated Floor Structure** work remains valuable because it exposed this stronger abstraction, but the seated connection itself remains an implementation challenger rather than a canonical Ovid’s House pattern.
+Direct/seated bearing remains an implementation challenger rather than a canonical Ovid’s House pattern; conventional engineered hanger/restraint remains the baseline until another family earns a material advantage.
 
 ## Use
 
@@ -54,9 +54,9 @@ A useful sequence is:
 
 ## Evidence
 
-Structural engineering practice and the project's seated-floor research both support separating support, restraint, movement and boundary functions before selecting a connection. The current research and prototype programme remains the proving ground for particular implementation families rather than evidence that one connection type should become canonical.
+Structural engineering practice supports separating support, restraint, movement and boundary functions before selecting a connection. Particular implementation families still require project-specific engineering and, where claims depend on physical behaviour, appropriate testing.
 
-Relevant project work includes [Reversible Assembly Candidates](../reversible-assembly-candidates.md) and [Seated Floor Structure Options](../../research/seated-floor-structure-options.md).
+The current architectural comparison is [Floor-to-Masonry Structural Interface](../../research/seated-floor-structure-options.md).
 
 ## Does not prove
 
