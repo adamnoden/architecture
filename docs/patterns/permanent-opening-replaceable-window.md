@@ -103,7 +103,3 @@ The Reference House will prototype one jamb/head/sill condition at full scale be
 ## Formalisation boundary
 
 Opening identity, frame occurrence, mounting zone, replacement sequence and boundary transitions can be represented formally. Architectural quality, weathering robustness and actual product applicability remain evidence/judgement questions.
-
----
-
-**Provenance:** migrated from Pattern 07 in [`core-12.md`](core-12.md). Migration does not increase evidence or maturity.
