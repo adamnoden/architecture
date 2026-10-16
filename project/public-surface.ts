@@ -7,7 +7,7 @@ export const publicSourceExcludeGlobs = [
   'docs/manuscript/doctrine-register-crosswalk.md',
   'docs/manuscript/publication-architecture.md',
   'docs/manuscript/publication-credibility-release-programme.md',
-  'docs/manuscript/pr00-*.md',
+  'docs/manuscript/pr00*.md',
   'docs/patterns/core-12.md',
   'docs/patterns/reversible-assembly-candidates.md',
   'docs/patterns/retired/**',
