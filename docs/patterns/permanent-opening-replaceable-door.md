@@ -103,7 +103,3 @@ The Reference House uses the sequence **permanent opening → replaceable frame/
 ## Formalisation boundary
 
 Opening/doorset identity, replacement dependencies, clearances and applicable boundary roles can be represented formally. Hardware durability, fire/security performance and architectural solidity remain evidence and judgement questions.
-
----
-
-**Provenance:** admitted by the Phase-6 corpus audit from the old `door` publication slot as a separate pattern from `HSA-P-007` because its forces differ materially. Stable identity does not increase evidence or maturity.
