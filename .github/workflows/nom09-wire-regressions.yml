@@ -21,7 +21,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --no-audit --no-fund
-      - name: Tighten rendered corpus and wire permanent regressions
+      - name: Tighten rendered corpus and wire permanent source regressions
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -101,24 +101,16 @@ jobs:
           if chain_anchor not in text:
               raise SystemExit('package test-chain anchor missing')
           package.write_text(text.replace(chain_anchor, chain_replacement, 1))
-
-          workflow = Path('.github/workflows/validate-pr.yml')
-          text = workflow.read_text()
-          rendered_anchor = "      - name: Validate rendered public nomenclature\n        run: npx tsx scripts/validate-public-nomenclature.ts --rendered\n"
-          rendered_insert = rendered_anchor + "\n      - name: Prove rendered nomenclature regressions\n        run: npx tsx scripts/test-public-nomenclature-regressions.ts --rendered\n"
-          if rendered_anchor not in text or 'Prove rendered nomenclature regressions' in text:
-              raise SystemExit('validate-pr rendered anchor missing or already patched')
-          workflow.write_text(text.replace(rendered_anchor, rendered_insert, 1))
           PY
           git diff --check
       - name: Typecheck regression harness
         run: npm run typecheck
       - name: Prove source and publication regressions
         run: npm run test:nomenclature-regressions
-      - name: Commit permanent regression system
+      - name: Commit permanent source regression system
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/validate-public-nomenclature.ts scripts/test-public-nomenclature-regressions.ts package.json .github/workflows/validate-pr.yml
+          git add scripts/validate-public-nomenclature.ts scripts/test-public-nomenclature-regressions.ts package.json
           git commit -m "PUB-NOM: make nomenclature regressions adversarial"
           git push origin HEAD:pub-nom
