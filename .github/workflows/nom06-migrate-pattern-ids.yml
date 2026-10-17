@@ -1,0 +1,55 @@
+name: NOM-06 one-shot pattern migration
+
+on:
+  push:
+    branches: [pub-nom]
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout migration branch
+        uses: actions/checkout@v5
+        with:
+          ref: pub-nom
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Apply canonical pattern migration
+        run: node scripts/nom06-migrate-pattern-ids.mjs
+
+      - name: Refresh generated publication scope
+        run: npm run publication:scope:update
+
+      - name: Check migrated TypeScript and publication composition
+        run: |
+          npm run typecheck
+          npm run publication:validate
+
+      - name: Report remaining source nomenclature debt
+        continue-on-error: true
+        run: npx tsx scripts/validate-public-nomenclature.ts --source
+
+      - name: Commit atomic migration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Migration produced no changes." >&2
+            exit 1
+          fi
+          git commit -m "NOM-06 migrate canonical pattern namespace to PAT"
+          git push origin HEAD:pub-nom
