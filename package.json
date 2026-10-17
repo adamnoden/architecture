@@ -18,6 +18,10 @@
     "publication:metadata:write": "tsx publication/scripts/metadata.ts --write",
     "publication:metadata:check": "tsx publication/scripts/metadata.ts --check",
     "publication:metadata:update": "npm run publication:build && npm run publication:build:primer && npm run publication:metadata:write",
+    "dataplate:write": "tsx scripts/dataplate.ts --write",
+    "dataplate:check": "tsx scripts/dataplate.ts --check",
+    "dataplate:stamp": "tsx scripts/dataplate.ts --stamp",
+    "dataplate:update": "npm run publication:metadata:update && npm run dataplate:write",
     "status:update": "tsx scripts/update-status.ts",
     "typecheck": "tsc --noEmit",
     "check": "npm test && npm run docs:build",
@@ -31,6 +35,7 @@
     "test:brand": "tsx scripts/validate-project-brand.ts",
     "test:routes": "tsx scripts/validate-public-routes.ts",
     "test:sanitation": "tsx scripts/validate-resolved-public-surface.ts",
+    "test:dataplate": "npm run dataplate:check",
     "test:p0": "node --import tsx --test compiler/p0/*.test.ts",
     "test:crosswalk": "node --import tsx --test compiler/crosswalk/*.test.ts",
     "rh-c1:generate": "tsx compiler/reference-house/generate.ts",
@@ -59,7 +64,7 @@
     "test:coa04": "node --import tsx --test compiler/coa04/*.test.ts",
     "test:coa05": "node --import tsx --test compiler/coa05/*.test.ts",
     "test:coa06": "node --import tsx --test compiler/coa06/*.test.ts",
-    "test": "npm run typecheck && npm run test:repo && npm run test:brand && npm run test:routes && npm run test:sanitation && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:rh-c2 && npm run test:rh-c3 && npm run test:rh-c4 && npm run test:rh-c5 && npm run test:ch00 && npm run test:ch01 && npm run test:ch02 && npm run test:ch03 && npm run test:ch04 && npm run test:ch05 && npm run test:ch06 && npm run test:ch07 && npm run test:ch08 && npm run test:coa00 && npm run test:coa01 && npm run test:coa02 && npm run test:coa03 && npm run test:coa04 && npm run test:coa05 && npm run test:coa06 && npm run outputs:check && npm run publication:validate && npm run publication:integrity"
+    "test": "npm run typecheck && npm run test:repo && npm run test:brand && npm run test:routes && npm run test:sanitation && npm run test:dataplate && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:rh-c2 && npm run test:rh-c3 && npm run test:rh-c4 && npm run test:rh-c5 && npm run test:ch00 && npm run test:ch01 && npm run test:ch02 && npm run test:ch03 && npm run test:ch04 && npm run test:ch05 && npm run test:ch06 && npm run test:ch07 && npm run test:ch08 && npm run test:coa00 && npm run test:coa01 && npm run test:coa02 && npm run test:coa03 && npm run test:coa04 && npm run test:coa05 && npm run test:coa06 && npm run outputs:check && npm run publication:validate && npm run publication:integrity"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "11.17.0",
