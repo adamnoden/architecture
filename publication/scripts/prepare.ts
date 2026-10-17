@@ -140,6 +140,13 @@ function assertNoLocalRepositoryLinks(source: string, markdown: string): void {
   }
 }
 
+function stripPreparedFrontmatter(source: string, markdown: string): string {
+  if (!markdown.startsWith('---\n')) return markdown
+  const end = markdown.indexOf('\n---\n', 4)
+  if (end < 0) throw new Error(`Unclosed frontmatter in publication source: ${source}`)
+  return markdown.slice(end + 5).trimStart()
+}
+
 function normalizePreparedHeading(entry: PublicationEntry, markdown: string): string {
   if (entry.kind !== 'back-matter') return markdown
   return markdown.replace(/^# .+$/m, `# ${entry.title}`)
@@ -219,6 +226,7 @@ for (const entry of entries) {
   const preparedPath = workPath(entry.source)
   let markdown = readFileSync(preparedPath, 'utf8')
   markdown = applyAdapter(entry.adapter, markdown, { repoRoot, workSourceRoot })
+  markdown = stripPreparedFrontmatter(entry.source, markdown)
   if (fullMode) markdown = applyPublicationFigures(entry.id, markdown)
   markdown = normalizePreparedHeading(entry, markdown)
 
