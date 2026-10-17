@@ -2,6 +2,7 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, lstatSync, readFileSync, readdirSync } from 'node:fs'
 import { extname, join, relative, resolve, sep } from 'node:path'
 import { dependenciesForAdapter } from '../publication/adapters.js'
+import { extractPdfText } from '../publication/pdf-inspector.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
 import { nomenclatureFamilies, nomenclaturePattern } from '../project/nomenclature.js'
 import { isPublicSource } from '../project/public-surface.js'
@@ -175,20 +176,19 @@ for (const absolute of collectFiles(repoRoot)) {
   scanText(path, readFileSync(absolute, 'utf8'), surfacesForRepositoryPath(path))
 }
 
-function scanPdf(path: string, surface: Surface): void {
+async function scanPdf(path: string, surface: Surface): Promise<void> {
   const absolute = resolve(repoRoot, path)
   if (!existsSync(absolute) || !lstatSync(absolute).isFile()) return
 
   try {
-    const text = execFileSync('pdftotext', [absolute, '-'], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
-    scanText(path, text, [surface])
+    scanText(path, await extractPdfText(absolute), [surface])
   } catch (error) {
     console.warn(`Could not scan ${path}: ${String(error)}`)
   }
 }
 
-scanPdf('publication/dist/ovids-house.pdf', 'BOOK_FULL_RENDERED')
-scanPdf('publication/dist/ovids-house-primer.pdf', 'BOOK_PRIMER_RENDERED')
+await scanPdf('publication/dist/ovids-house.pdf', 'BOOK_FULL_RENDERED')
+await scanPdf('publication/dist/ovids-house-primer.pdf', 'BOOK_PRIMER_RENDERED')
 
 const siteDist = resolve(repoRoot, '.vitepress/dist')
 if (existsSync(siteDist)) {
