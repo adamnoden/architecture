@@ -21,6 +21,10 @@ export interface PdfInspectionOptions {
   readonly text?: boolean
 }
 
+interface DestroyablePdfDocument {
+  destroy?: () => Promise<void> | void
+}
+
 function round(value: number, places: number): number {
   const factor = 10 ** places
   return Math.round(value * factor) / factor
@@ -68,7 +72,8 @@ export async function inspectPdf(
       ...(text === undefined ? {} : { text })
     }
   } finally {
-    await document.destroy()
+    const destroy = (document as DestroyablePdfDocument).destroy
+    if (destroy) await destroy.call(document)
   }
 }
 
