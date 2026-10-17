@@ -1,4 +1,3 @@
-import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { dirname, posix, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -12,6 +11,7 @@ import { isPublicSource } from '../project/public-surface.js'
 import { routeForSource } from '../project/site-routes.js'
 import { dependenciesForAdapter } from '../publication/adapters.js'
 import { publicationFigurePlacements } from '../publication/figures.js'
+import { extractPdfText } from '../publication/pdf-inspector.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
 import { projectIdentity } from '../project/identity.js'
 
@@ -217,14 +217,7 @@ function renderedPublicationPdfs(): string[] {
   return files
 }
 
-function renderedPdfText(file: string): string {
-  return execFileSync('pdftotext', [file, '-'], {
-    encoding: 'utf8',
-    maxBuffer: 64 * 1024 * 1024
-  })
-}
-
-function validateRendered(): Failure[] {
+async function validateRendered(): Promise<Failure[]> {
   const failures: Failure[] = []
   const site = renderedSiteFiles()
 
@@ -233,13 +226,18 @@ function validateRendered(): Failure[] {
   }
 
   for (const file of renderedPublicationPdfs()) {
-    scanText(sourcePath(file), renderedPdfText(file), surfaceForPublication(sourcePath(file)), failures)
+    scanText(
+      sourcePath(file),
+      await extractPdfText(file),
+      surfaceForPublication(sourcePath(file)),
+      failures
+    )
   }
 
   return failures
 }
 
-const failures = sourceMode ? validateSource() : validateRendered()
+const failures = sourceMode ? validateSource() : await validateRendered()
 if (failures.length) {
   for (const failure of failures) {
     console.error(
