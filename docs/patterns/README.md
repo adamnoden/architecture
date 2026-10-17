@@ -20,12 +20,12 @@ Pattern identity is independent from evidence maturity. A pattern can have a sta
   <ul>
     <li v-for="pattern in activePatterns" :key="pattern.id">
       <a :href="pattern.url">{{ pattern.title }}</a>
-      <span> · <code>{{ pattern.id }}</code> · {{ pattern.evidence }}</span>
+      <span> · {{ pattern.evidence }}</span>
     </li>
   </ul>
 </div>
 
-The architectural name is the primary reader-facing identity. Stable IDs provide compact cross-reference across patterns, evidence and computational representations.
+The architectural name is the reader-facing identity. Stable machine IDs remain available to the computational and reference systems, but are not part of the ordinary pattern list.
 
 ## Other layers
 

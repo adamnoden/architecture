@@ -1,4 +1,5 @@
 import { createContentLoader } from 'vitepress'
+import { readerPatternRank } from '../../project/patterns.js'
 
 const PATTERN_ID = /^HSA-P-\d{3}$/
 const relationshipFields = ['requires', 'completes', 'alternative_to', 'tension_with'] as const
@@ -25,6 +26,21 @@ export interface PatternIndexRecord {
 
 function stringArray(value: unknown): string[] {
   return Array.isArray(value) ? value.map(String) : []
+}
+
+function readerOrder(a: PatternIndexRecord, b: PatternIndexRecord): number {
+  if (a.state !== b.state) return a.state === 'active' ? -1 : 1
+
+  if (a.state === 'active') {
+    const aRank = readerPatternRank(a.id)
+    const bRank = readerPatternRank(b.id)
+    if (aRank === null || bRank === null) {
+      throw new Error(`Active pattern reader order is incomplete: ${a.id} / ${b.id}`)
+    }
+    return aRank - bRank
+  }
+
+  return a.title.localeCompare(b.title)
 }
 
 export default createContentLoader(['*.md', 'retired/*.md'], {
@@ -95,6 +111,6 @@ export default createContentLoader(['*.md', 'retired/*.md'], {
       throw new Error(`Pattern-language metadata validation failed:\n${errors.map((error) => `  - ${error}`).join('\n')}`)
     }
 
-    return records.sort((a, b) => a.id.localeCompare(b.id))
+    return records.sort(readerOrder)
   }
 })
