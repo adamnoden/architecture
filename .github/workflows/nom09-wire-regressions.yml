@@ -33,30 +33,32 @@ jobs:
           if old_import not in text or "from '../project/identity.js'" in text:
               raise SystemExit('Validator import anchor missing or already patched')
           text = text.replace(old_import, new_import, 1)
-          old_fn = """function renderedPublicationPdfs(): string[] {
-  const dist = resolve(repoRoot, 'publication/dist')
-  const files = walk(dist).filter((file) => file.endsWith('.pdf'))
-  if (!files.length) {
-    throw new Error(`Rendered publication nomenclature validation found no PDFs under ${dist}.`)
-  }
-  return files
-}
-"""
-          new_fn = """function renderedPublicationPdfs(): string[] {
-  const dist = resolve(repoRoot, 'publication/dist')
-  const files = [
-    resolve(dist, `${projectIdentity.slug}.pdf`),
-    resolve(dist, `${projectIdentity.slug}-primer.pdf`)
-  ]
-  const missing = files.filter((file) => !existsSync(file))
-  if (missing.length) {
-    throw new Error(
-      `Missing required rendered publication PDF(s): ${missing.map((file) => sourcePath(file)).join(', ')}`
-    )
-  }
-  return files
-}
-"""
+          old_fn = (
+              "function renderedPublicationPdfs(): string[] {\n"
+              "  const dist = resolve(repoRoot, 'publication/dist')\n"
+              "  const files = walk(dist).filter((file) => file.endsWith('.pdf'))\n"
+              "  if (!files.length) {\n"
+              "    throw new Error(`Rendered publication nomenclature validation found no PDFs under ${dist}.`)\n"
+              "  }\n"
+              "  return files\n"
+              "}\n"
+          )
+          new_fn = (
+              "function renderedPublicationPdfs(): string[] {\n"
+              "  const dist = resolve(repoRoot, 'publication/dist')\n"
+              "  const files = [\n"
+              "    resolve(dist, `${projectIdentity.slug}.pdf`),\n"
+              "    resolve(dist, `${projectIdentity.slug}-primer.pdf`)\n"
+              "  ]\n"
+              "  const missing = files.filter((file) => !existsSync(file))\n"
+              "  if (missing.length) {\n"
+              "    throw new Error(\n"
+              "      `Missing required rendered publication PDF(s): ${missing.map((file) => sourcePath(file)).join(', ')}`\n"
+              "    )\n"
+              "  }\n"
+              "  return files\n"
+              "}\n"
+          )
           if old_fn not in text:
               raise SystemExit('Rendered PDF function anchor missing')
           validator.write_text(text.replace(old_fn, new_fn, 1))
@@ -76,13 +78,8 @@ jobs:
 
           workflow = Path('.github/workflows/validate-pr.yml')
           text = workflow.read_text()
-          rendered_anchor = '''      - name: Validate rendered public nomenclature
-        run: npx tsx scripts/validate-public-nomenclature.ts --rendered
-'''
-          rendered_insert = rendered_anchor + '''
-      - name: Prove rendered nomenclature regressions
-        run: npx tsx scripts/test-public-nomenclature-regressions.ts --rendered
-'''
+          rendered_anchor = "      - name: Validate rendered public nomenclature\n        run: npx tsx scripts/validate-public-nomenclature.ts --rendered\n"
+          rendered_insert = rendered_anchor + "\n      - name: Prove rendered nomenclature regressions\n        run: npx tsx scripts/test-public-nomenclature-regressions.ts --rendered\n"
           if rendered_anchor not in text or 'Prove rendered nomenclature regressions' in text:
               raise SystemExit('validate-pr rendered anchor missing or already patched')
           workflow.write_text(text.replace(rendered_anchor, rendered_insert, 1))
