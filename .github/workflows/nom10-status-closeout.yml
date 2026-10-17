@@ -1,0 +1,56 @@
+name: NOM-10 status reconciliation
+
+on:
+  push:
+    branches: [pub-nom]
+    paths:
+      - .github/workflows/nom10-status-closeout.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: pub-nom
+      - name: Reconcile programme and project status
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              text = p.read_text()
+              if old not in text:
+                  raise SystemExit(f'Expected status anchor not found in {path}')
+              p.write_text(text.replace(old, new, 1))
+
+          replace_once(
+              'docs/publication/public-nomenclature-programme.md',
+              '**Status:** planned programme  ',
+              '**Status:** complete through NOM-10 at PUB-NOM scope; DRW-10/12 revalidation required before the combined PR-02 visual-reference freeze  '
+          )
+
+          replace_once(
+              'docs/publication/nomenclature-validation.md',
+              '**Status:** NOM-05 machinery defined; enforcement activation is part of NOM-06 migration.  ',
+              '**Status:** NOM-05 contract established; source/rendered enforcement is active and adversarially proven through NOM-09.  '
+          )
+
+          old = """**PR-00, PR-01 and PUB-SAN are complete.** PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 then removed development-history residue from the reader-facing site and publication corpus and merged to `main` as `02e152019c8f08ae71009ae7ab5b61e1ab575244`, without broadening the substantive M4 proposition. The resolved Working Edition on current `main` is now the controlled publication source. The next authorised publication stage is **PR-02 — private 12-copy object edition**; it owns physical-object design and production, not another discretionary manuscript-development cycle.
+"""
+          new = """**PR-00, PR-01 and PUB-SAN are complete; PUB-NOM is complete at its reader-facing nomenclature scope on draft PR #157.** PUB-SAN removed development-history residue without broadening the substantive M4 proposition. PUB-NOM then separated reader identity, machine identity, order, version, maturity and workflow provenance; migrated brand-coupled canonical namespaces; and made source plus rendered nomenclature enforcement adversarially testable. The remaining pre-production dependency is **DRW — Architectural Drawing Programme**: its next authorised packet is DRW-00A, and the combined nomenclature / visual-reference system must be revalidated at DRW-10 and DRW-12 before PR-02 freezes the physical object. PR-02 still owns physical-object design and production, not another discretionary manuscript-development cycle.
+"""
+          replace_once('STATUS.md', old, new)
+          PY
+          git diff --check
+      - name: Commit status reconciliation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add STATUS.md docs/publication/public-nomenclature-programme.md docs/publication/nomenclature-validation.md
+          git commit -m "PUB-NOM: reconcile closeout status records"
+          git push origin HEAD:pub-nom
