@@ -30,6 +30,9 @@ jobs:
       - name: Check repository health
         run: npm run check
 
+      - name: Validate public nomenclature source
+        run: npx tsx scripts/validate-public-nomenclature.ts --source
+
       - name: Ensure PDF metadata tooling
         run: |
           if ! command -v pdfinfo >/dev/null 2>&1; then
@@ -45,10 +48,13 @@ jobs:
       - name: Check publication PDF metadata
         run: npm run publication:metadata:check
 
+      - name: Validate rendered public nomenclature
+        run: npx tsx scripts/validate-public-nomenclature.ts --rendered
+
       - name: Inventory reader-facing nomenclature
         run: |
           for family in \
-            pattern.hsa \
+            pattern.pat \
             reference-house.compiler-gate \
             compiler.p0 \
             compiler.pattern-crosswalk \
