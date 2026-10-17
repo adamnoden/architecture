@@ -218,11 +218,12 @@ export const nomenclatureFamilies = [
     examples: ['G-01 v0.1'],
     pattern: '\\bG-01 v\\d+\\.\\d+\\b',
     classification: 'PUBLIC_TECHNICAL',
-    allowedSurfaces: TECHNICAL_SURFACES,
+    allowedSurfaces: ALL_READER_SURFACES,
     roles: ['IDENTITY_ONLY', 'VERSIONED'],
     stability: 'VERSIONED',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'CURRENT'
+    migration: 'CURRENT',
+    exception: 'Currently used as an explicit reader-facing specification version; NOM-08 owns whether that visible version treatment should remain.'
   },
   {
     id: 'grammar.gate',
@@ -242,7 +243,7 @@ export const nomenclatureFamilies = [
     meaning: 'Project evidence/maturity scale M1–M5',
     owner: 'project-maturity',
     examples: ['M1', 'M5'],
-    pattern: '\\bM[1-5]\\b',
+    pattern: '(?<!Guide )(?<!Guide M/)\\bM[1-5]\\b(?!\\s*\\()',
     classification: 'PUBLIC_TECHNICAL',
     allowedSurfaces: TECHNICAL_SURFACES,
     roles: ['MATURITY'],
@@ -283,11 +284,12 @@ export const nomenclatureFamilies = [
     examples: ['RHCF-*'],
     pattern: '\\bRHCF-[A-Z0-9-]+\\b',
     classification: 'INTERNAL_STABLE',
-    allowedSurfaces: INTERNAL_MACHINE_SURFACES,
+    allowedSurfaces: MACHINE_SURFACES,
     roles: ['IDENTITY_ONLY'],
     stability: 'DURABLE',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'CURRENT'
+    migration: 'CURRENT',
+    exception: 'May appear on explicitly generated technical inspection surfaces where exact source-fact identity is the subject.'
   },
   {
     id: 'compiler.p0',
