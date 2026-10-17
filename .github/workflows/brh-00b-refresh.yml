@@ -1,0 +1,83 @@
+name: BRH-00B refreshed inventory
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout complete Git history
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Run complete read-only branch inventory
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/branch-hygiene-audit.mjs --output=project/branch-hygiene-ledger.json
+
+      - name: Render human-readable ledger
+        run: |
+          python - <<'PY'
+          import json, hashlib, pathlib
+          source = pathlib.Path('project/branch-hygiene-ledger.json')
+          raw = source.read_bytes()
+          r = json.loads(raw)
+          raw_sha = hashlib.sha256(raw).hexdigest()
+          rows = []
+          for b in r['auditedBranches']:
+              prs = ', '.join(f"#{p['number']}:{p['state']}{':merged' if p.get('mergedAt') else ''}" for p in b['pullRequests']) or '—'
+              flags = []
+              if any(p['state'] == 'open' for p in b['pullRequests']): flags.append('open-pr')
+              if b['headIsAncestorOfMain']: flags.append('head-ancestor-of-main')
+              cherry = b['patchEquivalence']['gitCherry']
+              if cherry and b['patchEquivalence']['allCherryPatchesEquivalent']: flags.append('all-cherry-patches-equivalent')
+              if b['patchEquivalence']['uniquePatchCount'] > 0: flags.append('unique-patch-signal')
+              if not b['branchOnlyCommits']: flags.append('no-branch-only-commits')
+              if not flags: flags.append('mechanical-review')
+              rows.append({'name': b['name'], 'head': b['headSha'], 'date': b['committedAt'], 'mergeBase': b['mergeBase'], 'behind': b['behindMain'], 'ahead': b['aheadOfMain'], 'ancestor': 'yes' if b['headIsAncestorOfMain'] else 'no', 'branchOnly': len(b['branchOnlyCommits']), 'nonMerge': len(b['nonMergeBranchOnlyCommits']), 'unique': b['patchEquivalence']['uniquePatchCount'], 'equiv': b['patchEquivalence']['equivalentPatchCount'], 'changed': len(b['changedFileSummary']['files']), 'prs': prs, 'flags': ', '.join(flags)})
+          open_pr_rows = [x for x in rows if 'open-pr' in x['flags']]
+          ancestral = sum(x['ancestor'] == 'yes' for x in rows)
+          unique = sum(x['unique'] > 0 for x in rows)
+          all_equiv = sum(bool(b['patchEquivalence']['gitCherry']) and b['patchEquivalence']['allCherryPatchesEquivalent'] for b in r['auditedBranches'])
+          no_branch_only = sum(x['branchOnly'] == 0 for x in rows)
+          lines = ['# BRH-00B branch hygiene ledger', '', 'Raw, read-only inventory snapshot produced by the BRH-00A audit mechanism. This ledger records mechanical Git/PR evidence only. It does **not** assign A/B/C/D/X classes, make semantic supersession decisions, salvage work, or authorise deletion.', '', '## Snapshot identity', '', f"- baseline `main`: `{r['mainSha']}`", f"- generated at: `{r['generatedAt']}`", f"- remote: `{r['remote']}`", f"- non-main branches enumerated and audited: **{r['auditedBranchCount']}**", f"- enumeration SHA-256: `{r['enumeration']['sha256']}`", f"- raw JSON SHA-256: `{raw_sha}`", f"- audit schema version: `{r['schemaVersion']}`", '', 'The machine-readable companion is `project/branch-hygiene-ledger.json`; it preserves the complete per-branch commit lists, stable patch IDs, changed-file paths, `git cherry` evidence and PR records emitted by the audit tool.', '', '## Mechanical summary', '', f"- head already ancestral to baseline `main`: **{ancestral}** branches", f"- no branch-only commits at the baseline: **{no_branch_only}** branches", f"- at least one unique-patch signal: **{unique}** branches", f"- non-empty `git cherry` set with all patches equivalent: **{all_equiv}** branches", f"- branches with an open PR in the snapshot: **{len(open_pr_rows)}**"]
+          lines.extend(f"  - `{x['name']}` — {x['prs']}" for x in open_pr_rows)
+          lines += ['', 'These counts are candidate signals only. BRH-01 performs mechanical classification; BRH-02 owns semantic review.', '', '## Branch inventory', '', '| Branch | Head SHA | Head date | Merge base | Behind | Ahead | Head ancestor | Branch-only commits | Non-merge branch-only | Unique patches | Equivalent patches | Changed files | PRs | Mechanical flags |', '|---|---|---|---|---:|---:|:---:|---:|---:|---:|---:|---:|---|---|']
+          for x in rows:
+              vals = [x['name'], x['head'], x['date'], x['mergeBase'], str(x['behind']), str(x['ahead']), x['ancestor'], str(x['branchOnly']), str(x['nonMerge']), str(x['unique']), str(x['equiv']), str(x['changed']), x['prs'], x['flags']]
+              vals = [v.replace('|', '\\|') for v in vals]
+              lines.append('| ' + ' | '.join(f'`{v}`' if i in [0,1,2,3] else v for i, v in enumerate(vals)) + ' |')
+          lines += ['', '## Authority boundary', '', 'BRH-00B stops at inventory. A mechanical flag such as `unique-patch-signal`, `all-cherry-patches-equivalent`, `head-ancestor-of-main`, or `open-pr` is evidence for later packets, not a final branch disposition. No remote ref was deleted or rewritten by this packet.', '']
+          pathlib.Path('project/branch-hygiene-ledger.md').write_text('\n'.join(lines), encoding='utf8')
+          print(json.dumps({'mainSha': r['mainSha'], 'branchCount': r['auditedBranchCount'], 'enumerationSha256': r['enumeration']['sha256'], 'rawJsonSha256': raw_sha, 'ancestralCount': ancestral, 'uniquePatchBranchCount': unique, 'allPatchEquivalentCount': all_equiv, 'openPrBranches': [x['name'] for x in open_pr_rows]}, indent=2))
+          PY
+
+      - name: Upload raw inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: brh-00b-refreshed-inventory
+          path: project/branch-hygiene-ledger.json
+          retention-days: 30
+
+      - name: Commit refreshed durable ledger and remove temporary workflow
+        run: |
+          rm .github/workflows/brh-00b-refresh.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add project/branch-hygiene-ledger.json project/branch-hygiene-ledger.md .github/workflows/brh-00b-refresh.yml
+          git commit -m "BRH-00B: refresh inventory after main moved"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
