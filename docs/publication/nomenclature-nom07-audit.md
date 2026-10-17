@@ -2,7 +2,7 @@
 # PUB-NOM — NOM-07 whole-corpus first-reader audit
 
 **Gate:** NOM-07 — whole-corpus first-reader nomenclature audit  
-**Status:** IN PROGRESS  
+**Status:** COMPLETE  
 **Draft PR:** #157  
 **Tracking issue:** #156  
 **Starting head:** `936a529174c8856f9adeb38937b67b251a067837`
@@ -27,7 +27,7 @@ The gate is divided into independently resumable sub-gates so that each pass can
   Figure/table captions and in-text references, SVG-visible text/metadata where reader-relevant, evidence/precedent apparatus, appendices and glossary.
 - [x] **NOM-07E — Primer and cross-surface consistency**  
   Read the Primer independently, then compare names/titles/references against the site and Working Edition.
-- [ ] **NOM-07F — adversarial cold-reader reconciliation**  
+- [x] **NOM-07F — adversarial cold-reader reconciliation**  
   Final whole-corpus sweep for unexplained acronyms, false ordinals, workflow residue, inconsistent naming and over-cleaning. Resolve findings or explicitly defer number/order/version-only questions to NOM-08.
 
 ## Questions applied at every sub-gate
@@ -89,7 +89,7 @@ Findings:
 - **FIX-NOW — machine sequence identity.** Removed the visible `service-topology` Sequence ID from the generative-sequence page. The real S1–S10 design-step numbering remains because it is genuine sequence order.
 - **RETAIN — authoring-contract machine identity.** `docs/patterns/language-model.md` explicitly documents the pattern authoring/data contract. Stable machine identity and frontmatter are functional technical content on that page rather than publication residue.
 - **RETAIN — Physical Service Index identifiers.** References to stable IDs on that pattern mean durable labels on real services, drawings and records; they are the architectural subject of the pattern, not repository identity leakage.
-- **REVIEW AT NOM-07F — professional acronyms such as MEWP.** These are external industry terms rather than project-owned codes. They were not expanded mechanically during this gate; final cold-reader reconciliation will decide whether first-use expansion improves accessibility.
+- **RETAIN — professional acronyms such as MEWP.** These are established external discipline terms rather than project-owned identity. They remain where context makes their technical meaning clear; NOM-07 does not become a general acronym-elimination pass.
 
 Implementation commit: `d982f6a05e369254a42918b65ac29a46947213e2`; one-shot workflow removed at `a6be8fa83533e07b6df57e751f0c1b5336bea51d`.
 
@@ -176,9 +176,28 @@ Findings:
 - **RETAIN — numbered governing provisions.** The eleven constitution numbers are actual reader references within the architectural argument, not repository workflow codes.
 - **RETAIN — Reference House maturity in prose.** The Primer copies plain-language proof boundaries rather than project `M*` maturity labels.
 - **RETAIN — cross-edition identity.** Ovid’s House, House Kernel, Metamorph Compiler, G-01, pattern titles and Reference House meanings are consistent with the site/Working Edition at the surfaces where they appear.
+- **FIX-NOW — technical inspection figure in compact Primer.** The Primer initially embedded the generated Reference House semantic inspection plan, which legitimately contains machine entity IDs but made the compact reader edition noisier than necessary. Replaced it with the publication-level Reference House type/orientation diagram and an architectural caption; the technical inspection drawing remains available on its proper technical surface.
 
-No NOM-07E content fix was required.
+### NOM-07F — adversarial cold-reader reconciliation — COMPLETE
+
+Final surfaces and required families checked:
+
+- resolved public site sources plus the actual built HTML corpus;
+- Working Edition and Primer composition, including direct PDF text-layer inspection;
+- publication figures and retained technical SVG/report surfaces;
+- governed pattern, grammar, maturity, Reference House, compiler/workflow, prototype, figure and legacy families;
+- public prototype overview and the explicit exclusion of coded engineering/build/test packs;
+- canonical nomenclature registry against the reader meanings established by the audit.
+
+Findings:
+
+- **FIX-NOW — rendered validation had a silent coverage hole.** The rendered validator looked for site HTML under `docs/.vitepress/dist` even though `vitepress build .` writes `.vitepress/dist`; it also expected pre-extracted publication `.txt` files that CI never created. The validator could therefore report success without reading the generated site or PDFs. It now scans the real built HTML, classifies each rendered route through the same public-route/surface authority as source validation, extracts text directly from both generated PDFs with `pdftotext`, and fails closed if either rendered corpus is absent.
+- **FIX-NOW — registry/exposure semantics were inconsistent with the audited result.** `G-01 v0.1` was deliberately and intelligibly used on ordinary reader surfaces while its registry rule still allowed technical surfaces only; Reference House source-fact IDs legitimately appeared on generated technical inspection pages while their rule allowed internal/machine surfaces only. The registry was reconciled to those established semantics without broadening workflow identities.
+- **FIX-NOW — maturity regex conflated unrelated external codes.** The project `M1`–`M5` detector was also matching CIBSE *Guide M1* and UK `M4(2)`/`M4(3)` accessibility categories. The family matcher now distinguishes those external references rather than forcing valid publication text to conform to the project's unrelated maturity scale.
+- **INTERNAL-ONLY — prototype execution IDs.** `P01`–`P04`/`W2`-style prototype packs remain internal/excluded; the public prototype overview is descriptive and contains no workflow shorthand.
+- **RETAIN — external professional abbreviations.** MEWP, MEP, MVHR, PV, ISO, RICS, CIBSE, RIBA and comparable external references are not project-owned identity noise and remain where professionally intelligible in context.
+- **NOM-08 — explicit handoff.** The next gate owns whether `G-01 v0.1` is the right reader-visible version treatment; the semantics and visual treatment of the project `M1`–`M5` maturity scale; the distinction between real sequence/ordinal numbers such as S1–S10 and stable identities; and any future figure/table/reference numbering after retirement of `D-F*`. Pattern publication order remains separately authored and is already guarded against collapse into `PAT-*` numeric order.
 
 ## Exit condition
 
-NOM-07 closes only when every listed surface has been read cold, all FIX-NOW findings are resolved and validated, remaining compact references have an intelligible reader function, and any deliberately deferred number/order/version questions are explicitly handed to NOM-08 rather than left ambiguous.
+Met. Every listed surface has been read cold; all NOM-07 FIX-NOW findings have been resolved in the branch; retained compact references perform an intelligible reader or technical function; workflow/provenance identities remain bounded away from ordinary reader surfaces; and the remaining number/version questions are explicitly handed to NOM-08 rather than left ambiguous.
