@@ -163,14 +163,7 @@ function scanSource(path: string, text: string, failures: Failure[]): void {
   return text
 })
 
-// CI inventories the current pattern family after the migration.
-replaceFile('.github/workflows/validate-pr.yml', (text) =>
-  mustReplace(text, 'pattern.hsa', 'pattern.pat', 'current pattern inventory family')
-)
-
-// Remove this one-shot migration mechanism from the resulting tree. Git history
-// retains the operation; the repository does not retain a self-modifying workflow.
+// Remove the one-shot migration script from the resulting tree. Git history retains the operation.
 unlinkSync('scripts/nom06-migrate-pattern-ids.mjs')
-unlinkSync('.github/workflows/nom06-migrate-pattern-ids.yml')
 
 console.log('NOM-06 canonical pattern namespace migration applied.')
