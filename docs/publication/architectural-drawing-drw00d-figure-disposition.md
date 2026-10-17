@@ -3,8 +3,9 @@
 
 **Programme:** DRW — Architectural Drawing Programme  
 **Packet:** DRW-00D  
-**Status:** DONE pending branch validation  
-**Issue:** #154
+**Status:** DONE  
+**Issue:** #154  
+**Validation:** PR run `39058529452` / #546 — PASS
 
 ## 1. Decision rule
 
@@ -87,7 +88,11 @@ DRW-00D does not create a replacement public figure-number system.
 
 PUB-NOM retired the legacy `D-F*` identity. If DRW later demonstrates a reader need for numbered figure cross-reference, the new family must first enter `project/nomenclature.ts` with an explicit public-surface contract. Until then, titles/captions and placement own reader identity.
 
-## 7. DRW-00 gate closeout
+## 7. Validation
+
+PR validation run `39058529452` / #546 passed after the disposition record was committed, including repository health, source nomenclature, Working Edition and Primer rebuilds, metadata checks, clean rendered nomenclature, adversarial rendered regressions and inventory.
+
+## 8. DRW-00 gate closeout
 
 DRW-00 has now established:
 
@@ -98,7 +103,7 @@ DRW-00 has now established:
 
 No architectural source, renderer or public figure has been changed during DRW-00. The current publication remains the intact before-state while the rules for replacing it are now explicit.
 
-## 8. Handoff
+## 9. Handoff
 
 **Next packet: DRW-01A — curate the bounded architectural-drawing precedent sample and extract only transferable conventions.**
 
