@@ -1,0 +1,53 @@
+name: BRH-00B full inventory
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout complete Git history
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Run complete read-only branch inventory
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/branch-hygiene-audit.mjs --output=/tmp/brh-00b-inventory.json
+          node - <<'NODE'
+          const fs = require('node:fs')
+          const r = JSON.parse(fs.readFileSync('/tmp/brh-00b-inventory.json', 'utf8'))
+          const openPrBranches = r.auditedBranches.filter(b => b.pullRequests.some(pr => pr.state === 'open'))
+          const ancestral = r.auditedBranches.filter(b => b.headIsAncestorOfMain)
+          const uniquePatchBranches = r.auditedBranches.filter(b => b.patchEquivalence.uniquePatchCount > 0)
+          console.log(JSON.stringify({
+            mainSha: r.mainSha,
+            branchCount: r.enumeration.branchCount,
+            auditedBranchCount: r.auditedBranchCount,
+            enumerationSha256: r.enumeration.sha256,
+            openPrBranches: openPrBranches.map(b => ({ name: b.name, prs: b.pullRequests.filter(pr => pr.state === 'open').map(pr => pr.number) })),
+            ancestralCount: ancestral.length,
+            uniquePatchBranchCount: uniquePatchBranches.length
+          }, null, 2))
+          NODE
+
+      - name: Upload raw inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: brh-00b-inventory
+          path: /tmp/brh-00b-inventory.json
+          retention-days: 30
