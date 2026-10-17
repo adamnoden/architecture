@@ -74,7 +74,8 @@ function stripFrontmatter(markdown: string): string {
 function isPublicMachinePath(path: string): boolean {
   return (
     path.startsWith('docs/reference-house/generated/') ||
-    path.includes('/docs/reference-house/generated/')
+    path.includes('/docs/reference-house/generated/') ||
+    path.includes('/reference-house/generated/')
   )
 }
 
