@@ -46,4 +46,4 @@ jobs:
         run: npm run publication:metadata:check
 
       - name: Inventory reader-facing nomenclature
-        run: npm run nomenclature:inventory
+        run: npm run nomenclature:inventory -- --files=pattern.hsa
