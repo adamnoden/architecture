@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
-import { extname, join, relative, resolve, sep } from 'node:path'
+import { join, relative, resolve, sep } from 'node:path'
 import { dependenciesForAdapter } from '../publication/adapters.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
 import {
@@ -10,6 +10,7 @@ import {
   type NomenclatureSurface
 } from '../project/nomenclature.js'
 import { isPublicSource } from '../project/public-surface.js'
+import { routeForSource } from '../project/site-routes.js'
 
 const repoRoot = process.cwd()
 const sourceMode = process.argv.includes('--source')
@@ -30,10 +31,10 @@ const readerSurfaces = new Set<NomenclatureSurface>([
  * High-confidence enforcement boundary.
  *
  * If a family has no reader-facing surface in the canonical NOM registry, it
- * must not appear in public source, rendered site HTML or publication text.
- * PUBLIC_TECHNICAL/PUBLIC_REFERENCE families are deliberately not judged here;
- * their finer placement rules are checked by semantic/editorial audits rather
- * than pretending regex alone can distinguish context.
+ * must not appear in public source, reader-visible rendered site content or
+ * publication text. PUBLIC_TECHNICAL/PUBLIC_REFERENCE families are deliberately
+ * not judged here; their finer placement rules are checked by semantic/editorial
+ * audits rather than pretending regex alone can distinguish context.
  */
 const readerProhibitedFamilies = nomenclatureFamilies.filter(
   (family) => !family.allowedSurfaces.some((surface) => readerSurfaces.has(surface))
@@ -52,17 +53,6 @@ function collectMarkdown(dir: string): string[] {
     const path = join(dir, entry.name)
     if (entry.isDirectory()) files.push(...collectMarkdown(path))
     else if (entry.isFile() && entry.name.endsWith('.md')) files.push(path)
-  }
-  return files
-}
-
-function collectHtml(dir: string): string[] {
-  const files: string[] = []
-  if (!existsSync(dir)) return files
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    const path = join(dir, entry.name)
-    if (entry.isDirectory()) files.push(...collectHtml(path))
-    else if (entry.isFile() && extname(entry.name) === '.html') files.push(path)
   }
   return files
 }
@@ -128,6 +118,15 @@ function scan(path: string, text: string, failures: Failure[]): void {
   }
 }
 
+function publicSiteSources(): Set<string> {
+  const sources = new Set<string>(['README.md'])
+  for (const absolute of collectMarkdown(resolve(repoRoot, 'docs'))) {
+    const source = repoPath(absolute)
+    if (isPublicSource(source)) sources.add(source)
+  }
+  return sources
+}
+
 function publicationSources(): Set<string> {
   const sources = new Set<string>()
   for (const entry of [...publicationEntries, ...primerPublicationEntries]) {
@@ -139,13 +138,7 @@ function publicationSources(): Set<string> {
 
 function validateSource(): Failure[] {
   const failures: Failure[] = []
-  const sources = new Set<string>()
-
-  sources.add('README.md')
-  for (const absolute of collectMarkdown(resolve(repoRoot, 'docs'))) {
-    const source = repoPath(absolute)
-    if (isPublicSource(source)) sources.add(source)
-  }
+  const sources = publicSiteSources()
   for (const source of publicationSources()) sources.add(source)
 
   for (const source of [...sources].sort()) {
@@ -166,6 +159,50 @@ function pdfText(path: string): string {
   })
 }
 
+function renderedHtmlPath(siteRoot: string, source: string): string {
+  const route = routeForSource(source)
+  if (route === '/') return resolve(siteRoot, 'index.html')
+  const relativeRoute = route.replace(/^\//, '')
+  if (relativeRoute.endsWith('/')) return resolve(siteRoot, relativeRoute, 'index.html')
+  return resolve(siteRoot, `${relativeRoute}.html`)
+}
+
+/**
+ * Raw VitePress HTML contains non-reader implementation data: hydration state,
+ * bundled search/config payloads and build metadata. Those strings are not
+ * publication typography and scanning them creates false cross-page leakage.
+ *
+ * The rendered gate therefore scans the actual body after removing non-visible
+ * executable/style/template payloads. Navigation, headings, prose, tables and
+ * other SSR-visible text remain in scope.
+ */
+function readerVisibleHtml(html: string): string {
+  const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? html
+  return body
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<template\b[^>]*>[\s\S]*?<\/template>/gi, ' ')
+    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;|&#160;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;|&#34;/gi, '"')
+    .replace(/&apos;|&#39;|&#x27;/gi, "'")
+    .replace(/\s+/g, ' ')
+}
+
+function assertNoInternalRenderedTrees(siteRoot: string): void {
+  const leakedRoots = ['compiler', 'publication', 'project', 'scripts'].filter((name) =>
+    existsSync(resolve(siteRoot, name))
+  )
+  if (leakedRoots.length) {
+    throw new Error(
+      `Rendered public site contains repository-only top-level trees: ${leakedRoots.join(', ')}. ` +
+        'Fix the VitePress source boundary rather than excluding them from nomenclature validation.'
+    )
+  }
+}
+
 function validateRendered(): Failure[] {
   const failures: Failure[] = []
   const siteRoot = resolve(repoRoot, '.vitepress/dist')
@@ -173,8 +210,19 @@ function validateRendered(): Failure[] {
     throw new Error('Missing rendered site required by NOM validation: .vitepress/dist')
   }
 
-  for (const absolute of collectHtml(siteRoot)) {
-    scan(`rendered-site:${repoPath(absolute)}`, readFileSync(absolute, 'utf8'), failures)
+  assertNoInternalRenderedTrees(siteRoot)
+
+  for (const source of [...publicSiteSources()].sort()) {
+    const absolute = renderedHtmlPath(siteRoot, source)
+    if (!existsSync(absolute)) {
+      throw new Error(`Missing rendered public route required by NOM validation: ${source} -> ${repoPath(absolute)}`)
+    }
+    scan(`rendered-site:${repoPath(absolute)}`, readerVisibleHtml(readFileSync(absolute, 'utf8')), failures)
+  }
+
+  const notFound = resolve(siteRoot, '404.html')
+  if (existsSync(notFound)) {
+    scan(`rendered-site:${repoPath(notFound)}`, readerVisibleHtml(readFileSync(notFound, 'utf8')), failures)
   }
 
   scan('publication/dist/ovids-house.pdf', pdfText('publication/dist/ovids-house.pdf'), failures)
