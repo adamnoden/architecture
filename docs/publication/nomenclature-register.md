@@ -46,7 +46,7 @@ Those machine identities are recorded here because they are part of the nomencla
 | `BOOK_PRIMER_RENDERED` | text extracted from the generated Primer PDF |
 | `INTERNAL_OR_PROVENANCE` | scanned repository material outside the public-source classes |
 
-The PR workflow builds the site and both PDFs before running the inventory. Workflow run `39033257338` passed repository health, publication builds, metadata verification and the nomenclature inventory.
+The PR workflow builds the site and both PDFs before running the inventory. Workflow run `39033688527` passed repository health, publication builds, metadata verification and the nomenclature inventory at PR head `f8e069e359709b6fe0724a21ae8120f9c89bfc8d`.
 
 ## 4. Known namespace-family baseline
 
@@ -102,6 +102,8 @@ The inventory confirms that the same namespace can reach several qualitatively d
 
 The scanner deliberately performs a generic second pass so the programme cannot overfit to namespaces known in advance. The highest-frequency tokens not yet assigned to a NOM-00 family are recorded below. Their presence in this list is **not evidence that they are wrong or public**; it means NOM-01 must either assign them to an owned namespace family or explicitly dismiss them as domain/reference data outside PUB-NOM's governance scope.
 
+The queue below is the corrected NOM-00 snapshot. An earlier hand-copied version incorrectly retained `RH-01`, `RH-02`, `RH-03` and `RH-06` even though the scanner already assigns those tokens to `reference-house.design-gate`. They are therefore excluded here. This correction changes no namespace-family counts or exposure findings.
+
 | Token | Occurrences | Files |
 | --- | ---: | ---: |
 | `PAT-CANON` | 170 | 31 |
@@ -154,9 +156,6 @@ The scanner deliberately performs a generic second pass so the programme cannot 
 | `F1-B` | 10 | 3 |
 | `SEL-SOF` | 10 | 5 |
 | `W1-LC2` | 10 | 2 |
-| `RH-01` | 9 | 8 |
-| `RH-02` | 9 | 7 |
-| `RH-03` | 9 | 5 |
 | `TEMP-04` | 9 | 3 |
 | `TEMP-07` | 9 | 3 |
 | `MAP-EVID` | 8 | 5 |
@@ -172,7 +171,6 @@ The scanner deliberately performs a generic second pass so the programme cannot 
 | `KPI-002` | 6 | 3 |
 | `RES-001` | 6 | 2 |
 | `RES-002` | 6 | 2 |
-| `RH-06` | 6 | 4 |
 | `TEMP-01` | 6 | 3 |
 | `TEMP-02` | 6 | 3 |
 | `TEMP-03` | 6 | 3 |
@@ -183,8 +181,6 @@ The scanner deliberately performs a generic second pass so the programme cannot 
 | `W1-LD` | 6 | 2 |
 | `CAD-CAM` | 5 | 2 |
 | `PVC-U` | 5 | 5 |
-
-`RH-01`, `RH-02`, `RH-03` and `RH-06` in this secondary queue are a useful warning that the first-pass Reference House gate regex deliberately recognises only the current canonical two-digit gate family where it was initially specified; NOM-01 should distinguish historical gate syntax from current gate syntax rather than silently widening a regex and conflating them.
 
 ## 7. NOM-00 findings
 
