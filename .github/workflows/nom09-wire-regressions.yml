@@ -63,6 +63,32 @@ jobs:
               raise SystemExit('Rendered PDF function anchor missing')
           validator.write_text(text.replace(old_fn, new_fn, 1))
 
+          harness = Path('scripts/test-public-nomenclature-regressions.ts')
+          text = harness.read_text()
+          old_callback = "    () => publicationValidatorFailure('reader pattern order collapsed to machine-ID order', 'collapsed to machine-ID order')\n"
+          new_callback = (
+              "    () => {\n"
+              "      const scopePath = absolute('docs/development/print-publication-scope-crosswalk.md')\n"
+              "      const originalScope = readFileSync(scopePath, 'utf8')\n"
+              "      try {\n"
+              "        expectSuccess(\n"
+              "          'regenerate scope under deliberately broken pattern order',\n"
+              "          'npm',\n"
+              "          ['run', 'publication:scope:update', '--silent']\n"
+              "        )\n"
+              "        publicationValidatorFailure(\n"
+              "          'reader pattern order collapsed to machine-ID order',\n"
+              "          'collapsed to machine-ID order'\n"
+              "        )\n"
+              "      } finally {\n"
+              "        writeFileSync(scopePath, originalScope)\n"
+              "      }\n"
+              "    }\n"
+          )
+          if old_callback not in text:
+              raise SystemExit('Machine-order regression callback anchor missing')
+          harness.write_text(text.replace(old_callback, new_callback, 1))
+
           package = Path('package.json')
           text = package.read_text()
           script_anchor = '    "test:sanitation": "tsx scripts/validate-resolved-public-surface.ts",\n'
@@ -93,6 +119,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/validate-public-nomenclature.ts package.json .github/workflows/validate-pr.yml
+          git add scripts/validate-public-nomenclature.ts scripts/test-public-nomenclature-regressions.ts package.json .github/workflows/validate-pr.yml
           git commit -m "PUB-NOM: make nomenclature regressions adversarial"
           git push origin HEAD:pub-nom
