@@ -1,3 +1,125 @@
 {
-  "schemaVersion": 1
+  "schemaVersion": 1,
+  "identity": {
+    "project": "Ovid’s House",
+    "slug": "ovids-house",
+    "architecturalSystem": "House Kernel",
+    "compiler": "Metamorph Compiler",
+    "repository": "adamnoden/architecture"
+  },
+  "authority": {
+    "schemaVersion": 1,
+    "referenceHouseScope": "virtual-design",
+    "compilerScope": "bounded-internal-proof",
+    "physicalValidation": "not-established",
+    "competentExternalReview": "not-established",
+    "regulatoryCompliance": "not-established",
+    "constructionAdequacy": "not-established"
+  },
+  "maturity": {
+    "public-architectural-position": {
+      "level": "M4",
+      "reviewedOn": "2026-10-15"
+    },
+    "pattern-language": {
+      "level": "M4",
+      "reviewedOn": "2026-10-12"
+    },
+    "architectural-grammar-framework": {
+      "level": "M3",
+      "reviewedOn": "2026-10-12"
+    },
+    "g01-grammar-instance": {
+      "level": "M4",
+      "reviewedOn": "2026-10-14"
+    },
+    "reference-house": {
+      "level": "M3",
+      "reviewedOn": "2026-10-12"
+    },
+    "physical-prototypes": {
+      "level": "M2",
+      "reviewedOn": "2026-10-12"
+    },
+    "external-professional-review": {
+      "level": "M1",
+      "reviewedOn": "2026-10-12"
+    },
+    "computational-track": {
+      "level": "M4",
+      "reviewedOn": "2026-10-13"
+    },
+    "evidence-research": {
+      "level": "M3",
+      "reviewedOn": "2026-10-12"
+    },
+    "publication": {
+      "level": "M4",
+      "reviewedOn": "2026-10-17"
+    },
+    "delivery": {
+      "level": "M2",
+      "reviewedOn": "2026-10-12"
+    }
+  },
+  "corpus": {
+    "activePatterns": 21,
+    "strategies": 3,
+    "heldCandidates": 4,
+    "publicRoutes": 103,
+    "workingEditionEntries": 40,
+    "primerEntries": 5
+  },
+  "publication": {
+    "schemaVersion": 1,
+    "workingEdition": {
+      "file": "publication/dist/ovids-house.pdf",
+      "pages": 217,
+      "duplexLeaves": 109,
+      "pageSize": {
+        "format": "A4",
+        "widthMm": 210,
+        "heightMm": 297,
+        "orientation": "portrait"
+      },
+      "entries": 40,
+      "figures": 11
+    },
+    "primer": {
+      "file": "publication/dist/ovids-house-primer.pdf",
+      "pages": 15,
+      "duplexLeaves": 8,
+      "pageSize": {
+        "format": "A4",
+        "widthMm": 210,
+        "heightMm": 297,
+        "orientation": "portrait"
+      },
+      "entries": 5
+    }
+  },
+  "referenceHouseOutputs": {
+    "schemaVersion": "OH-RH-OUTPUT-1",
+    "status": "PASS",
+    "sourceCompile": {
+      "schemaVersion": "HK-RH-COMPILE-1",
+      "fingerprint": "8993f24a8feded8a03d55bc7463654034d3ddd0bc54e283b81f2fbb466ad8aba"
+    },
+    "generatedArtefacts": 6,
+    "rendererVersions": [
+      "1.0.0"
+    ],
+    "artefactSetFingerprint": {
+      "algorithm": "sha256",
+      "fingerprint": "3a37a56878eaa746f28f39a574dd5dfc1fdc1b1e36b10115d1a58f4d9671ffff"
+    }
+  },
+  "toolchain": {
+    "nodeMajor": "24",
+    "typescript": "5.9.3",
+    "vitepress": "1.6.4",
+    "vivliostyle": "11.3.3",
+    "mermaid": "11.17.2",
+    "npmLockfileVersion": 3
+  }
 }
