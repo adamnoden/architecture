@@ -16,16 +16,16 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: pub-nom
-      - name: Replace technical inspection plan in Primer adapter
+      - name: Remove machine-system narration from Primer caption
         run: |
           python - <<'PY'
           from pathlib import Path
           path = Path('publication/adapters.ts')
           text = path.read_text()
-          old = "![Current generated Reference House ground-floor inspection plan](generated/ground-floor-plan.svg)\\n\\n*The plan is a generated semantic inspection view of the current controlled model. It exposes known geometry and uncertainty without claiming construction or technical adequacy.*"
-          new = "![Reference House type and orientation](../manuscript/figures/reference-house-type-orientation.svg)\\n\\n*The Reference House is a compact two-storey ring around an open court, with a concentrated service flank and a legible front-to-court-to-garden sequence.*"
+          old = "*The Reference House is a compact two-storey ring around an open court, with a concentrated service flank and a legible front-to-court-to-garden sequence. The diagram communicates the architectural type without importing the machine identifiers used on technical inspection drawings.*"
+          new = "*The Reference House is a compact two-storey ring around an open court, with a concentrated service flank and a legible front-to-court-to-garden sequence.*"
           if old not in text:
-            raise SystemExit('Expected Primer Reference House figure block not found')
+            raise SystemExit('Expected Primer caption residue not found')
           path.write_text(text.replace(old, new, 1))
           PY
           git diff --check
@@ -34,5 +34,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add publication/adapters.ts
-          git commit -m "PUB-NOM: use reader-level Reference House figure in Primer"
+          git commit -m "PUB-NOM: keep Primer Reference House caption architectural"
           git push origin HEAD:pub-nom
