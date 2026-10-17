@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   refresh:
-    if: github.event.head_commit.message != 'chore: lock PDF.js inspector dependency'
+    if: "${{ github.event.head_commit.message != 'chore: lock PDF.js inspector dependency' }}"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
