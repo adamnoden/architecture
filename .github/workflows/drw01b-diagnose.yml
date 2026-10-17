@@ -21,9 +21,9 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --no-audit --no-fund
-      - name: Build rendered surfaces
+      - name: Replay PR pre-render sequence
         run: |
-          npm run docs:build
+          npm run check
           if ! command -v pdftotext >/dev/null 2>&1; then
             sudo apt-get update
             sudo apt-get install -y poppler-utils
@@ -35,15 +35,22 @@ jobs:
           set +e
           npx tsx scripts/validate-public-nomenclature.ts --rendered > /tmp/nom.log 2>&1
           code=$?
+          set -e
           echo "validator_exit=$code"
           grep -E '^\[(SITE|BOOK)_' /tmp/nom.log | tee /tmp/nom-failures.log || true
           echo "failure_lines=$(wc -l < /tmp/nom-failures.log)"
           echo '--- family counts ---'
-          sed -E 's/^\[[^]]+\] [^:]+: ([^ ]+) .*/\1/' /tmp/nom-failures.log | sort | uniq -c | sort -nr
+          sed -E 's/^\[[^]]+\] [^:]+: ([^ ]+) .*/\1/' /tmp/nom-failures.log | sort | uniq -c | sort -nr || true
           echo '--- source counts ---'
-          sed -E 's/^\[[^]]+\] ([^:]+):.*/\1/' /tmp/nom-failures.log | sort | uniq -c | sort -nr | head -40
-          test "$code" -ne 0
+          sed -E 's/^\[[^]]+\] ([^:]+):.*/\1/' /tmp/nom-failures.log | sort | uniq -c | sort -nr | head -40 || true
+          echo '--- git diff after PR sequence ---'
+          git status --short
+          git diff -- . ':!publication/dist' ':!.vitepress/dist' || true
+          if [ "$code" -eq 0 ]; then
+            echo 'Rendered validator unexpectedly passed after exact PR sequence.'
+          fi
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: drw01b-nomenclature-diagnostic
           path: /tmp/nom*.log
