@@ -1,11 +1,10 @@
 # G-01 Case DAN — Danson House
 
 **Case ID:** G01-DAN  
-**Analysis role:** TRIAL  
 **Corpus class:** compact later-Georgian / neo-Palladian villa  
-**D3 status:** semantic annotation v0.1 complete; dimensional evidence unusually strong  
+**Evidence state:** semantic annotation complete; dimensional evidence unusually strong<br>
 **Evidence grade:** A2 fabric research + near-contemporary plan evidence  
-**Purpose:** test the annotation contract against a compact sophisticated villa in which circulation sequence, service circulation, room proportion, façade negotiation and structural framing are unusually well documented.
+**Purpose:** document a compact sophisticated villa in which circulation sequence, service circulation, room proportion, façade negotiation and structural framing are unusually well documented.
 
 > This record annotates evidence. It does not promote G-01 rules.
 
@@ -133,7 +132,7 @@ A later doorway altered this graph.
 - service vertical route: adjacent narrow service stair;
 - service-wing routes: distinct lower/side network.
 
-### D3 finding
+### Topological finding
 
 Danson proves that:
 
@@ -198,7 +197,7 @@ Record at scoped levels:
 - internal plan: approximately balanced but not reducible to simple mirror symmetry;
 - service system: asymmetrical in function despite paired/adjacent formal organisation.
 
-## 9. Metric geometry — dimensional analysis seed
+## 9. Metric geometry
 
 The Historic England fabric research provides unusually strong direct dimensions.
 

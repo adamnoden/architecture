@@ -1,11 +1,10 @@
 # G-01 Case MHH — Marble Hill House
 
 **Case ID:** G01-MHH  
-**Analysis role:** TRIAL  
 **Corpus class:** compact English Palladian villa  
-**D3 status:** semantic annotation v0.1 complete; dimensional analysis metric extraction intentionally partial  
+**Evidence state:** semantic annotation complete; dimensional metric extraction intentionally partial<br>
 **Evidence grade:** A1 source universe available, with phase reconciliation required  
-**Purpose:** test the annotation contract against a compact canonical villa whose architectural hierarchy, vertical order and later service growth are unusually legible.
+**Purpose:** document a compact canonical villa whose architectural hierarchy, vertical order and later service growth are unusually legible.
 
 > This record annotates evidence. It does not promote G-01 rules.
 
@@ -47,7 +46,7 @@ The 1965–66 restoration sought to return the house towards Henrietta Howard's 
 
 ## 3. Phase frame
 
-D3 does **not** force Marble Hill into one timeless plan.
+The analysis does **not** force Marble Hill into one timeless plan.
 
 ### MHH-P1 — initial principal-villa phase, c.1724–29
 
@@ -83,7 +82,7 @@ Use for:
 - restoration provenance;
 - understanding what was intentionally reinstated.
 
-### D3 consequence
+### Methodological consequence
 
 **There is no single historically honest Marble Hill graph unless phase is attached to the graph.**
 
@@ -179,7 +178,7 @@ Its role is not explainable by access graph alone because its double-height volu
 - secondary/service route: distinct stair/service conditions exist alongside the principal route;
 - service-wing route: phase-dependent and materially expanded in P2.
 
-### D3 finding
+### Topological finding
 
 Marble Hill cannot be represented adequately by a single adjacency matrix. Route class and phase matter.
 
@@ -236,7 +235,7 @@ Candidate centre relationships:
 
 Exact centreline coincidence belongs to plan/elevation coupling analysis measured plan/elevation work.
 
-## 9. Metric geometry — dimensional analysis seed only
+## 9. Metric geometry
 
 ### MHH-1-GREAT
 

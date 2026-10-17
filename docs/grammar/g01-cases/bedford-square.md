@@ -1,9 +1,7 @@
 # G-01 Case BSQ — Bedford Square urban family
 
 **Case ID:** G01-BSQ  
-**Analysis role:** SUPPLEMENTARY — measurement/coupling analysis urban measurement and coupling case  
 **Corpus class:** later-Georgian London terrace / square composition  
-**Status:** web-source pass v0.1  
 **Evidence position:** mixed A1/B — public measured plans and direct historical dimensions are inspectable online; sectional/elevation evidence is partly source-qualified but not yet fully extracted  
 **Purpose:** supplement 76 Dean Street with an urban case whose public evidence can carry measurement, while testing architectural order that operates above the individual-house scale.
 
@@ -19,9 +17,9 @@ The public-domain *Survey of London* volume for St Giles-in-the-Fields exposes m
 
 This is enough to make Bedford Square useful for measurement/coupling analysis without lowering the evidence standard.
 
-## 2. Web-only evidence rule
+## 2. Public-source evidence rule
 
-The research environment for this pass is the public web.
+Quantitative evidence in this case is admitted only where the underlying public source can be inspected directly.
 
 An archival catalogue entry saying that a drawing exists is **not** enough for quantitative extraction if the drawing itself cannot be inspected. That distinction matters because Historic England catalogue records exist for several promising Georgian houses but currently expose no usable image.
 
@@ -119,19 +117,19 @@ The public *Survey of London* identifies the following as measured ground/first-
 - No. 48 — in-text plan;
 - No. 50 — Council collection.
 
-For the present pass, these drawings are a **measurement pool**, not nine independent clean samples. Alteration state and image resolution must be checked house by house before room metrics enter the dataset.
+These drawings form a **measurement pool**, not nine independent clean samples. Alteration state and image resolution must be checked house by house before room metrics enter the dataset.
 
 ### No. 6 scale condition
 
 An open web reproduction exposes the ground-floor measured plan with a feet scale. It is sufficient to verify that metric extraction is possible, but the widely available reproduction is downsampled and the house was already subdivided at survey date.
 
-No new room ratio is admitted from that image in this pass.
+No new room ratio is admitted from that image.
 
 That restraint is intentional.
 
 ## 8. dimensional analysis finding — urban proportion has more than one scale
 
-The previous dimensional analysis seed concentrated on room width:length:height relationships in Marble Hill and Danson.
+The earlier dimensional analysis concentrated on room width:length:height relationships in Marble Hill and Danson.
 
 Bedford Square adds another necessary scale:
 

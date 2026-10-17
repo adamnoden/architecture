@@ -1,11 +1,10 @@
 # G-01 Case DS76 — 76 Dean Street
 
 **Case ID:** G01-DS76  
-**Analysis role:** TRIAL — urban contrast  
 **Corpus class:** early Georgian urban terraced townhouse  
-**D3 status:** semantic annotation v0.1 complete with deliberately larger UNKNOWN set; dimensional metrics deferred  
+**Evidence state:** semantic annotation complete with a deliberately larger unknown set; dimensional metrics deferred<br>
 **Evidence grade:** B descriptive + located historic survey-plan evidence; direct plan interpretation limited to what the record image safely supports  
-**Purpose:** stress-test the annotation contract against urban constraint and prevent villa-derived rules from being mistaken for universal Georgian rules.
+**Purpose:** use urban constraint to prevent villa-derived rules from being mistaken for universal Georgian rules.
 
 > The value of this case is partly what it refuses to let us assume.
 
@@ -54,11 +53,11 @@ Use for geometry only with explicit phase caution.
 
 Not a grammar target.
 
-### D3 consequence
+### Methodological consequence
 
 Unlike Danson, we do not currently possess enough directly phase-reconciled source material to assign every room function to P1.
 
-D3 therefore uses **geometry-neutral research IDs** where room names would be guesses.
+The record therefore uses **geometry-neutral research IDs** where room names would be guesses.
 
 ## 4. Building-level morphology
 
@@ -165,7 +164,7 @@ Historic England's listing records:
 
 Historic England's townhouse interpretation places this within the broader early-Georgian shift toward first-floor entertaining/piano-nobile emphasis.
 
-### D3 interpretation
+### Architectural interpretation
 
 Architectural hierarchy can be expressed through:
 
@@ -242,7 +241,7 @@ Dimensional analysis should use the best available drawing, not reverse-engineer
 - service stair remains distinct;
 - townhouse tradition shifts principal entertaining emphasis through vertical hierarchy.
 
-### D3 finding
+### Vertical-order finding
 
 The morphology requires a grammar that can say:
 
