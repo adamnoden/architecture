@@ -1,5 +1,5 @@
 ---
-id: HSA-P-015
+id: PAT-015
 title: Accessible Room Service Route
 kind: pattern
 state: active
@@ -28,7 +28,7 @@ sequences:
   - service-topology
 ---
 
-# HSA-P-015 — Accessible Room Service Route
+# Accessible Room Service Route
 
 ## Context
 

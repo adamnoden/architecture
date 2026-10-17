@@ -1,5 +1,5 @@
 ---
-id: HSA-P-002
+id: PAT-002
 title: Plant Room as Service Hub
 kind: pattern
 state: pilot
@@ -22,16 +22,16 @@ principles:
   - 10
 requires: []
 completes:
-  - HSA-P-001
+  - PAT-001
 alternative_to: []
 tension_with: []
 sequences:
   - service-topology
 ---
 
-# HSA-P-002 — Plant Room as Service Hub
+# PAT-002 — Plant Room as Service Hub
 
-> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-002 — Plant Room as Service Hub`](../plant-room-service-hub.md).
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`PAT-002 — Plant Room as Service Hub`](../plant-room-service-hub.md).
 
 ## Context
 
@@ -47,7 +47,7 @@ The invariant is spatial and operational rather than product-specific. The hub m
 
 ## Language relationships
 
-### Completes `HSA-P-001 — Controlled Utility Entry`
+### Completes `PAT-001 — Controlled Utility Entry`
 
 The utility entry establishes a deliberate transition from external networks into the building. The service hub commonly develops that transition into understandable internal distribution, isolation and plant organisation.
 
@@ -65,4 +65,4 @@ Whether the hub is architecturally proportionate, quiet enough and appropriately
 
 ## Canonical successor
 
-See [`HSA-P-002 — Plant Room as Service Hub`](../plant-room-service-hub.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
+See [`PAT-002 — Plant Room as Service Hub`](../plant-room-service-hub.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).

@@ -8,29 +8,29 @@ The pilot records intentionally contain only the material needed to test the lan
 
 | ID | Pattern | Evidence at pilot stage |
 |---|---|---|
-| [`HSA-P-001`](controlled-utility-entry.md) | Controlled Utility Entry | Established |
-| [`HSA-P-002`](plant-room-service-hub.md) | Plant Room as Service Hub | Established |
-| [`HSA-P-003`](horizontal-service-spine.md) | Horizontal Service Spine | Supported |
-| [`HSA-P-004`](high-service-room-service-wall.md) | High-Service-Room Service Wall | Supported |
-| [`HSA-P-005`](designed-structural-penetration.md) | Designed Structural Penetration | Established |
-| [`HSA-P-012`](physical-service-index.md) | Physical Service Index | Proposed |
+| [`PAT-001`](controlled-utility-entry.md) | Controlled Utility Entry | Established |
+| [`PAT-002`](plant-room-service-hub.md) | Plant Room as Service Hub | Established |
+| [`PAT-003`](horizontal-service-spine.md) | Horizontal Service Spine | Supported |
+| [`PAT-004`](high-service-room-service-wall.md) | High-Service-Room Service Wall | Supported |
+| [`PAT-005`](designed-structural-penetration.md) | Designed Structural Penetration | Established |
+| [`PAT-012`](physical-service-index.md) | Physical Service Index | Proposed |
 
 ## Pilot graph
 
 `A → B` below meant **B completes A**; it did not mean B was a mandatory prerequisite or chronological successor.
 
 ```text
-HSA-P-001  Controlled Utility Entry
+PAT-001  Controlled Utility Entry
      │
      ▼
-HSA-P-002  Plant Room as Service Hub
+PAT-002  Plant Room as Service Hub
      │                 │
-     ▼                 └──────────────► HSA-P-012 Physical Service Index
-HSA-P-003  Horizontal Service Spine
+     ▼                 └──────────────► PAT-012 Physical Service Index
+PAT-003  Horizontal Service Spine
      │
-     ├──────────────► HSA-P-004 High-Service-Room Service Wall
+     ├──────────────► PAT-004 High-Service-Room Service Wall
      │
-     └──────────────► HSA-P-005 Designed Structural Penetration
+     └──────────────► PAT-005 Designed Structural Penetration
                               ▲
                               │
                      also completes P-004
@@ -43,11 +43,11 @@ The pilot graph was intentionally incomplete. Sequence order was recorded separa
 
 ### Vertical distribution
 
-The pilot identified vertical service distribution as missing reusable knowledge. Later work resolved that gap as canonical [`HSA-P-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md).
+The pilot identified vertical service distribution as missing reusable knowledge. Later work resolved that gap as canonical [`PAT-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md).
 
 ### Water-damage-safe service route
 
-The pilot questioned whether the former Core Pattern 06 described one physical pattern or a broader strategy. Later audit and worked-project testing retired `HSA-P-006`, retained its durable proposition as [Fail-Safe Water Distribution](../strategies/fail-safe-water-distribution.md), and admitted narrower patterns where recurring physical relationships existed.
+The pilot questioned whether the former Core Pattern 06 described one physical pattern or a broader strategy. Later audit and worked-project testing retired `PAT-006`, retained its durable proposition as [Fail-Safe Water Distribution](../strategies/fail-safe-water-distribution.md), and admitted narrower patterns where recurring physical relationships existed.
 
 These changes are outcomes of the pilot rather than corrections to the historical record.
 

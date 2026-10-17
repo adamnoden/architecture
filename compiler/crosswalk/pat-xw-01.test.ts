@@ -20,10 +20,10 @@ const obligation = (source: SourceModel, key: string) => {
 }
 
 const reportForP003 = (source: SourceModel) =>
-  buildPatternCrosswalkReport(source, compile(source), 'HSA-P-003', ['SR-01', 'SR-02', 'SR-03'])
+  buildPatternCrosswalkReport(source, compile(source), 'PAT-003', ['SR-01', 'SR-02', 'SR-03'])
 
 const reportForP005 = (source: SourceModel) =>
-  buildPatternCrosswalkReport(source, compile(source), 'HSA-P-005', ['PEN-01'])
+  buildPatternCrosswalkReport(source, compile(source), 'PAT-005', ['PEN-01'])
 
 describe('PAT-XW-01 baseline', () => {
   test('keeps pattern provenance above the compiler ontology', () => {
@@ -124,7 +124,7 @@ describe('PAT-XW-01 mutations', () => {
       from: 'SR-03',
       to: 'ACCESS-01',
       message: 'Any added branch must remain inside the selected accessible service geography or declare a departure.',
-      provenance: 'HSA-P-003'
+      provenance: 'PAT-003'
     })
 
     const result = compile(source)
@@ -163,13 +163,13 @@ describe('PAT-XW-01 mutations', () => {
     const left = buildPatternCrosswalkReport(
       cloneSource(source),
       compile(cloneSource(source)),
-      'HSA-P-005',
+      'PAT-005',
       ['PEN-01']
     )
     const right = buildPatternCrosswalkReport(
       cloneSource(source),
       compile(cloneSource(source)),
-      'HSA-P-005',
+      'PAT-005',
       ['PEN-01']
     )
 

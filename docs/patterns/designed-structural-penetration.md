@@ -1,5 +1,5 @@
 ---
-id: HSA-P-005
+id: PAT-005
 title: Designed Structural Penetration
 kind: pattern
 state: active
@@ -21,15 +21,15 @@ principles:
   - 11
 requires: []
 completes:
-  - HSA-P-003
-  - HSA-P-004
+  - PAT-003
+  - PAT-004
 alternative_to: []
 tension_with: []
 sequences:
   - service-topology
 ---
 
-# HSA-P-005 — Designed Structural Penetration
+# Designed Structural Penetration
 
 ## Context
 
@@ -60,9 +60,9 @@ It is not the administrative instruction “coordinate penetrations”, and it d
 
 ## Relationships
 
-This pattern commonly **completes** [HSA-P-003 — Coherent Horizontal Service Route](coherent-horizontal-service-route.md) where a route crosses structure or a protected boundary.
+This pattern commonly **completes** [PAT-003 — Coherent Horizontal Service Route](coherent-horizontal-service-route.md) where a route crosses structure or a protected boundary.
 
-It also commonly **completes** [HSA-P-004 — High-Service-Room Service Wall](high-service-room-service-wall.md) where local service zones cross floors, walls or room boundaries.
+It also commonly **completes** [PAT-004 — High-Service-Room Service Wall](high-service-room-service-wall.md) where local service zones cross floors, walls or room boundaries.
 
 Neither link means the parent pattern necessarily creates a penetration. The relationship matters only where a crossing actually occurs.
 

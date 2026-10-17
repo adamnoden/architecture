@@ -75,6 +75,34 @@ function matchesFor(family: NomenclatureFamily, text: string): string[] {
   return [...text.matchAll(nomenclaturePattern(family))].map((match) => match[0])
 }
 
+function stripFrontmatter(markdown: string): string {
+  if (!markdown.startsWith('---\n')) return markdown
+  const end = markdown.indexOf('\n---\n', 4)
+  return end < 0 ? markdown : markdown.slice(end + 5)
+}
+
+function sourceTextForFamily(path: string, family: NomenclatureFamily, text: string): string {
+  if (
+    family.id === 'pattern.pat' &&
+    /^docs\/patterns\/(?:retired\/)?[^/]+\.md$/.test(path)
+  ) {
+    return stripFrontmatter(text)
+  }
+  return text
+}
+
+function scanSource(path: string, text: string, failures: Failure[]): void {
+  for (const family of readerProhibitedFamilies) {
+    const matches = matchesFor(family, sourceTextForFamily(path, family, text))
+    if (!matches.length) continue
+    failures.push({
+      path,
+      family: family.id,
+      matches: [...new Set(matches)].slice(0, 6)
+    })
+  }
+}
+
 function scan(path: string, text: string, failures: Failure[]): void {
   for (const family of readerProhibitedFamilies) {
     const matches = matchesFor(family, text)
@@ -110,7 +138,7 @@ function validateSource(): Failure[] {
   for (const source of [...sources].sort()) {
     const absolute = resolve(repoRoot, source)
     if (!existsSync(absolute)) continue
-    scan(source, readFileSync(absolute, 'utf8'), failures)
+    scanSource(source, readFileSync(absolute, 'utf8'), failures)
   }
 
   return failures

@@ -1,7 +1,7 @@
 # Pattern Crosswalk — Remaining Active Language
 
 **Status:** Phase-8 P8.3 corpus crosswalk  
-**Scope:** `HSA-P-007..011`, `P-013`, `P-015..022`  
+**Scope:** `PAT-007..011`, `P-013`, `P-015..022`  
 **Method:** [Architectural Pattern → Computational Crosswalk](pattern-crosswalk-model.md)  
 **Precondition:** [P8.2 Pilot Red-Team Review](../development/pattern-language-phase8-pilot-review.md) — PASS WITH CORRECTIONS
 
@@ -13,7 +13,7 @@ The records are intentionally concise. They identify formal consequences and pro
 
 # 1. Openings and interfaces
 
-## `HSA-P-007` — Permanent Opening / Replaceable Window
+## `PAT-007` — Permanent Opening / Replaceable Window
 
 **Coverage:** **NATIVE**  
 **Implementation timing:** post-P0 interface/replacement fixture; substantial paper precedent already exists in the window/masonry obligation bundle.
@@ -79,7 +79,7 @@ Change the replacement sequence so the frame can leave only after cutting the pe
 
 ---
 
-## `HSA-P-008` — Movement / Slip Junction
+## `PAT-008` — Movement / Slip Junction
 
 **Coverage:** **NATIVE + FIXTURE NEEDED**  
 **Implementation timing:** post-P0 interface fixture.
@@ -135,7 +135,7 @@ Add a finish/fixing relationship that attaches the nominal slip cover to both in
 
 ---
 
-## `HSA-P-019` — Permanent Opening / Replaceable Door
+## `PAT-019` — Permanent Opening / Replaceable Door
 
 **Coverage:** **NATIVE**  
 **Implementation timing:** post-P0 door/interface fixture; existing entrance-family work supplies useful technical precedent.
@@ -187,7 +187,7 @@ Change floor build-up/threshold so the frame can no longer be removed without de
 
 ---
 
-## `HSA-P-020` — Designed Threshold
+## `PAT-020` — Designed Threshold
 
 **Coverage:** **NATIVE + FIXTURE NEEDED**  
 **Implementation timing:** post-P0 interface fixture, preferably coupled to door/floor replacement tests.
@@ -242,7 +242,7 @@ Raise one adjacent finished floor beyond the threshold's adjustment envelope.
 
 # 2. Water and environmental systems
 
-## `HSA-P-009` — Accessible Rainwater Route
+## `PAT-009` — Accessible Rainwater Route
 
 **Coverage:** **NATIVE + FIXTURE NEEDED**  
 **Implementation timing:** post-P0 extension. Existing programme item `C-043` already identifies rainwater as an implementation-extension family.
@@ -295,7 +295,7 @@ Block the primary outlet in a scenario and trace the represented overflow/failur
 
 ---
 
-## `HSA-P-010` — Source-Capture Kitchen Extract
+## `PAT-010` — Source-Capture Kitchen Extract
 
 **Coverage:** **NATIVE + FIXTURE NEEDED**  
 **Implementation timing:** post-P0 extension; aligns with existing programme item `C-044`.
@@ -350,7 +350,7 @@ Move the cooking appliance away from the hood/capture geometry while keeping fan
 
 ---
 
-## `HSA-P-017` — Visible Leakage Path
+## `PAT-017` — Visible Leakage Path
 
 **Coverage:** **NATIVE + FIXTURE NEEDED**  
 **Implementation timing:** post-P0 water-failure fixture.
@@ -403,7 +403,7 @@ Reverse a short drain segment's fall or block the endpoint with fixed joinery.
 
 ---
 
-## `HSA-P-018` — Failure-Tolerant Wet Service Room
+## `PAT-018` — Failure-Tolerant Wet Service Room
 
 **Coverage:** **NATIVE + FIXTURE NEEDED**  
 **Implementation timing:** post-P0 room/wet-zone fixture; existing wet-zone family supplies useful boundary machinery.
@@ -460,7 +460,7 @@ Change finished-floor geometry so the credible leakage scenario ponds away from 
 
 ---
 
-## `HSA-P-021` — Source-Capture Bathroom Extract
+## `PAT-021` — Source-Capture Bathroom Extract
 
 **Coverage:** **NATIVE + FIXTURE NEEDED**  
 **Implementation timing:** post-P0 ventilation/room fixture.
@@ -515,7 +515,7 @@ Seal the transfer-air path or reroute the duct through a cold zone without conde
 
 # 3. Maintenance and external access
 
-## `HSA-P-011` — Roof Maintenance Route
+## `PAT-011` — Roof Maintenance Route
 
 **Coverage:** **SMALL REFINEMENT — ALREADY AUTHORISED**  
 **Implementation timing:** after P0, with the maintenance extension programme; may share `EXT-MAINT-01` machinery.
@@ -569,7 +569,7 @@ Add a rooflight/plant item that blocks the only represented safe approach/workin
 
 ---
 
-## `HSA-P-013` — Ground-Supported Façade Access
+## `PAT-013` — Ground-Supported Façade Access
 
 **Coverage:** **SMALL REFINEMENT — ALREADY AUTHORISED**  
 **Implementation timing:** `EXT-MAINT-01` after the minimal kernel.
@@ -635,7 +635,7 @@ Use the already-authorised `EXT-MAINT-01` mutations: block support with lightwel
 
 # 4. Room and assembly infrastructure
 
-## `HSA-P-015` — Accessible Room Service Route
+## `PAT-015` — Accessible Room Service Route
 
 **Coverage:** **NATIVE**  
 **Implementation timing:** post-P0; existing `SR-ROOM-LOW-01` family is direct precedent.
@@ -686,7 +686,7 @@ Add a new outlet by chasing the permanent wall while the declared accessible rou
 
 ---
 
-## `HSA-P-016` — Compartmented Service Void
+## `PAT-016` — Compartmented Service Void
 
 **Coverage:** **NATIVE**  
 **Implementation timing:** post-P0 boundary/service composition fixture.
@@ -736,7 +736,7 @@ Add a cable route that crosses the closure without a penetration occurrence/rein
 
 ---
 
-## `HSA-P-022` — Controlled Attachment Plane
+## `PAT-022` — Controlled Attachment Plane
 
 **Coverage:** **NATIVE + FIXTURE NEEDED**  
 **Implementation timing:** post-P0 wall-bay / physical prototype companion fixture.

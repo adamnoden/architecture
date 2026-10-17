@@ -6,4 +6,4 @@ Retirement means the prior identity no longer passes the current pattern-languag
 
 Current retired identities:
 
-- [`HSA-P-006 — Water-Damage-Safe Service Route`](hsa-p-006-water-damage-safe-service-route.md) — retired in Phase 6; durable content moved to the [Fail-Safe Water Distribution strategy](../strategies/fail-safe-water-distribution.md).
+- [`PAT-006 — Water-Damage-Safe Service Route`](hsa-p-006-water-damage-safe-service-route.md) — retired in Phase 6; durable content moved to the [Fail-Safe Water Distribution strategy](../strategies/fail-safe-water-distribution.md).

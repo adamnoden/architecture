@@ -6,7 +6,7 @@ The strongest current direction is therefore not a universal removable wall. It 
 
 > **Permanent masonry performs the slow continuous work. A sparse controlled attachment plane is added only where it earns its keep. A removable architectural face is introduced only where physical testing shows that its serviceability value outweighs its depth, joints and tactile cost.**
 
-[`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is the stable reusable pattern. [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains a held candidate because its decisive question is physical and architectural rather than merely technical.
+[`PAT-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is the stable reusable pattern. [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains a held candidate because its decisive question is physical and architectural rather than merely technical.
 
 ## Boundary independence
 

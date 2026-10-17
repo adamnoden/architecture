@@ -69,7 +69,7 @@ Hardening priorities:
 - preserve the opening sentence `A house cannot be drawn from principles alone.` as the mode-change hinge;
 - the five fields, relational-pattern explanation and generative-sequence material should read as one introduction, not three independent method notes;
 - now that D-F05 carries the fields/sequence distinction visually, check whether prose immediately around the figure repeats its labels line-for-line;
-- retain stable HSA-P-* IDs, but avoid any implication that the book expects the reader to care about repository migration history.
+- retain stable PAT-* IDs, but avoid any implication that the book expects the reader to care about repository migration history.
 
 The 21 canonical pattern pages remain architectural reference material, not prose chapters to be homogenised into Part I voice.
 

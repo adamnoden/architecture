@@ -1,5 +1,5 @@
 ---
-id: HSA-P-013
+id: PAT-013
 title: Ground-Supported Façade Access
 kind: pattern
 state: active
@@ -26,7 +26,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-013 — Ground-Supported Façade Access
+# Ground-Supported Façade Access
 
 ## Context
 

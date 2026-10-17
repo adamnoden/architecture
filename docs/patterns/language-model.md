@@ -77,15 +77,9 @@ A proposition precise enough to be checked or evidenced. The computational track
 
 ## 3. Pattern identity
 
-Canonical patterns receive stable IDs:
+Canonical patterns receive stable, brand-neutral machine IDs for exact joins across pattern relationships, project selections, evidence and computational representations. Those IDs are not part of ordinary reader presentation.
 
-```text
-HSA-P-001
-HSA-P-002
-...
-```
-
-The number is identity only. It does **not** encode category, scale, evidence state or publication order. Pattern names are the primary reader-facing identity; IDs provide durable cross-reference across patterns, evidence, project selections and computational representations.
+The numeric suffix is identity only. It does **not** encode category, scale, evidence state or publication order. Pattern names are the reader-facing identity.
 
 A pattern should keep its identity only while its recurring problem and invariant response remain substantially the same. If one proposition actually contains materially different recurring relationships, conceptual clarity outranks preserving one identifier.
 
@@ -213,7 +207,7 @@ Use ordinary Markdown frontmatter as the machine-readable source.
 
 ```yaml
 ---
-id: HSA-P-003
+id: PAT-003
 title: Coherent Horizontal Service Route
 kind: pattern
 state: active
@@ -233,7 +227,7 @@ principles:
   - 8
 requires: []
 completes:
-  - HSA-P-002
+  - PAT-002
 alternative_to: []
 tension_with: []
 sequences:

@@ -24,7 +24,7 @@ The response is the centre of the pattern, but the consequences matter just as m
 
 The evidence boundary is equally important. A pattern can be architecturally useful while a particular implementation remains unengineered or untested. Canonical status does not mean that every technical question has been solved, and a successful occurrence in the Reference House does not automatically strengthen the pattern’s general evidence.
 
-Pattern names are the primary reader-facing identity. Stable `HSA-P-*` identifiers provide compact cross-reference across patterns, evidence and computational representations. The number does not imply importance, sequence or maturity.
+Pattern names are the reader-facing identity. Stable machine identifiers support exact internal cross-reference across patterns, evidence and computational representations, but are not part of ordinary reader presentation. Their numbers do not imply importance, sequence or maturity.
 
 ## Five fields
 

@@ -1,5 +1,5 @@
 ---
-id: HSA-P-020
+id: PAT-020
 title: Designed Threshold
 kind: pattern
 state: active
@@ -26,7 +26,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-020 — Designed Threshold
+# Designed Threshold
 
 ## Context
 

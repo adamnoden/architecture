@@ -1,7 +1,7 @@
 import { createContentLoader } from 'vitepress'
 import { readerPatternRank } from '../../project/patterns.js'
 
-const PATTERN_ID = /^HSA-P-\d{3}$/
+const PATTERN_ID = /^PAT-\d{3}$/
 const relationshipFields = ['requires', 'completes', 'alternative_to', 'tension_with'] as const
 
 type RelationshipField = (typeof relationshipFields)[number]
@@ -55,7 +55,7 @@ export default createContentLoader(['*.md', 'retired/*.md'], {
       const rawState = String(frontmatter.state ?? '')
       const isRetiredLocation = url.includes('/retired/')
 
-      if (!PATTERN_ID.test(id)) errors.push(`${url}: invalid pattern id "${id}"; expected HSA-P-xxx`)
+      if (!PATTERN_ID.test(id)) errors.push(`${url}: invalid pattern id "${id}"; expected PAT-xxx`)
       if (ids.has(id)) errors.push(`${url}: duplicate stable pattern id ${id}`)
       ids.add(id)
 

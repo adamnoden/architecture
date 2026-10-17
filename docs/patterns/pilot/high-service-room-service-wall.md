@@ -1,5 +1,5 @@
 ---
-id: HSA-P-004
+id: PAT-004
 title: High-Service-Room Service Wall
 kind: pattern
 state: pilot
@@ -22,16 +22,16 @@ principles:
   - 8
 requires: []
 completes:
-  - HSA-P-003
+  - PAT-003
 alternative_to: []
 tension_with: []
 sequences:
   - service-topology
 ---
 
-# HSA-P-004 — High-Service-Room Service Wall
+# PAT-004 — High-Service-Room Service Wall
 
-> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-004 — High-Service-Room Service Wall`](../high-service-room-service-wall.md).
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`PAT-004 — High-Service-Room Service Wall`](../high-service-room-service-wall.md).
 
 ## Context
 
@@ -47,7 +47,7 @@ The invariant is the relationship between a high-service room, a maintainable ad
 
 ## Language relationships
 
-### Completes `HSA-P-003 — Horizontal Service Spine`
+### Completes `PAT-003 — Horizontal Service Spine`
 
 The horizontal spine provides coherent primary distribution. The service wall localises that topology at the room scale and creates an orderly place for short branches, isolation and maintainable components.
 
@@ -65,4 +65,4 @@ Whether the extra wall thickness is proportionate and whether the resulting room
 
 ## Canonical successor
 
-See [`HSA-P-004 — High-Service-Room Service Wall`](../high-service-room-service-wall.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
+See [`PAT-004 — High-Service-Room Service Wall`](../high-service-room-service-wall.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).

@@ -15,7 +15,7 @@ The central test is:
 
 > **Can a competent future trade perform the foreseeable task using ordinary appropriate equipment without first improvising around the architecture?**
 
-The canonical patterns most directly implicated are [`HSA-P-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md), [`HSA-P-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md), [`HSA-P-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) and [`HSA-P-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md).
+The canonical patterns most directly implicated are [`PAT-013 — Ground-Supported Façade Access`](../patterns/ground-supported-facade-access.md), [`PAT-011 — Roof Maintenance Route`](../patterns/roof-maintenance-route.md), [`PAT-009 — Accessible Rainwater Route`](../patterns/accessible-rainwater-route.md) and [`PAT-007 — Permanent Opening / Replaceable Window`](../patterns/permanent-opening-replaceable-window.md).
 
 RH-08 created project occurrences for the first three. RH-09/RH-10 now also establish the representative replaceable-window family and later energy equipment whose maintenance must use the same geography.
 

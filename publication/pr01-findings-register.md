@@ -230,14 +230,14 @@ Attack questions:
 
 Surfaces:
 
-- HSA-P-001 Controlled Utility Entry;
-- HSA-P-002 Plant Room as Service Hub;
-- HSA-P-014 Accessible Vertical Service Zone;
-- HSA-P-003 Coherent Horizontal Service Route;
-- HSA-P-015 Accessible Room Service Route;
-- HSA-P-004 High-Service-Room Service Wall;
-- HSA-P-005 Designed Structural Penetration;
-- HSA-P-016 Compartmented Service Void.
+- PAT-001 Controlled Utility Entry;
+- PAT-002 Plant Room as Service Hub;
+- PAT-014 Accessible Vertical Service Zone;
+- PAT-003 Coherent Horizontal Service Route;
+- PAT-015 Accessible Room Service Route;
+- PAT-004 High-Service-Room Service Wall;
+- PAT-005 Designed Structural Penetration;
+- PAT-016 Compartmented Service Void.
 
 Attack questions:
 
@@ -249,9 +249,9 @@ Attack questions:
 
 Surfaces:
 
-- HSA-P-017 Visible Leakage Path;
-- HSA-P-018 Failure-Tolerant Wet Service Room;
-- HSA-P-009 Accessible Rainwater Route.
+- PAT-017 Visible Leakage Path;
+- PAT-018 Failure-Tolerant Wet Service Room;
+- PAT-009 Accessible Rainwater Route.
 
 Attack questions:
 
@@ -263,11 +263,11 @@ Attack questions:
 
 Surfaces:
 
-- HSA-P-007 Permanent Opening / Replaceable Window;
-- HSA-P-019 Permanent Opening / Replaceable Door;
-- HSA-P-020 Designed Threshold;
-- HSA-P-008 Movement / Slip Junction;
-- HSA-P-022 Controlled Attachment Plane.
+- PAT-007 Permanent Opening / Replaceable Window;
+- PAT-019 Permanent Opening / Replaceable Door;
+- PAT-020 Designed Threshold;
+- PAT-008 Movement / Slip Junction;
+- PAT-022 Controlled Attachment Plane.
 
 Attack questions:
 
@@ -279,10 +279,10 @@ Attack questions:
 
 Surfaces:
 
-- HSA-P-010 Source-Capture Kitchen Extract;
-- HSA-P-021 Source-Capture Bathroom Extract;
-- HSA-P-011 Roof Maintenance Route;
-- HSA-P-013 Ground-Supported Façade Access.
+- PAT-010 Source-Capture Kitchen Extract;
+- PAT-021 Source-Capture Bathroom Extract;
+- PAT-011 Roof Maintenance Route;
+- PAT-013 Ground-Supported Façade Access.
 
 Attack questions:
 
@@ -291,7 +291,7 @@ Attack questions:
 
 ## P3-E — Stewardship
 
-Surface: HSA-P-012 Physical Service Index.
+Surface: PAT-012 Physical Service Index.
 
 Attack questions:
 

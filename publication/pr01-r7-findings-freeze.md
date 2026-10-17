@@ -173,9 +173,9 @@ The active corpus contains many strong recurring architectural responses, but th
 
 The service-topology family has genuine sequence and dependency. Outside it, many patterns are primarily standalone. The corpus is also strongly weighted toward serviceability, maintenance and technical interfaces relative to the wider architectural thesis.
 
-One active entry, `HSA-P-005 — Designed Structural Penetration`, may not clear the project’s own pattern-versus-rule threshold: its core proposition is close to a coordination obligation rather than a generative spatial pattern.
+One active entry, `PAT-005 — Designed Structural Penetration`, may not clear the project’s own pattern-versus-rule threshold: its core proposition is close to a coordination obligation rather than a generative spatial pattern.
 
-Stable `HSA-P-*` identities are useful internal provenance but currently carry more reader-facing weight than architectural meaning warrants.
+Stable `PAT-*` identities are useful internal provenance but currently carry more reader-facing weight than architectural meaning warrants.
 
 ## R8 closure condition
 

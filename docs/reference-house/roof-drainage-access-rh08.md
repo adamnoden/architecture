@@ -70,7 +70,7 @@ A parapeted near-flat roof could preserve the clean cornice and discharge throug
 
 **Advantage:** visually quiet.
 
-**Failure:** moves critical rainwater components into concealed or internal geography. It solves the elevation by creating precisely the inspection and failure problem `HSA-P-009` warns against.
+**Failure:** moves critical rainwater components into concealed or internal geography. It solves the elevation by creating precisely the inspection and failure problem `PAT-009` warns against.
 
 **Decision:** reject.
 
@@ -353,7 +353,7 @@ Permanent fountain, fixed raised planter or other central object must not be int
 
 ## 10. Window and façade maintenance
 
-RH-08 establishes the access geography but does not prematurely create `HSA-P-007 — Permanent Opening / Replaceable Window` occurrences; frame/subframe release geometry remains RH-09 work.
+RH-08 establishes the access geography but does not prematurely create `PAT-007 — Permanent Opening / Replaceable Window` occurrences; frame/subframe release geometry remains RH-09 work.
 
 ### Routine cleaning/service
 
@@ -422,7 +422,7 @@ Object: `FA-01` — declared external side/rear support geography plus court-tow
 
 These are Reference House coordination occurrences. They do not increase the evidence or maturity of the general patterns.
 
-RH-08 also creates two new crossing objects for the existing `HSA-P-005` family:
+RH-08 also creates two new crossing objects for the existing `PAT-005` family:
 
 - `RH-P005-14 / PEN-CD-01` — courtyard primary drain + independent overflow crossing family through the east ground/service-side fabric;
 - `RH-P005-15 / PEN-SV-RF-01` — soil/vent roof penetration on the east/service roof field.

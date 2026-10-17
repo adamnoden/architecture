@@ -1,5 +1,5 @@
 ---
-id: HSA-P-006
+id: PAT-006
 title: Water-Damage-Safe Service Route
 kind: pattern
 state: retired
@@ -23,7 +23,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-006 — Water-Damage-Safe Service Route
+# Water-Damage-Safe Service Route
 
 **State: retired. This ID is permanently reserved and must never be reused.**
 
@@ -49,7 +49,7 @@ More specific recurring relationships are represented separately where they pass
 
 ## Historical value
 
-The original `HSA-P-006` was useful because it forced the project to treat concealed water failure as an architectural problem rather than only a plumbing-quality problem. Retirement corrects the category without discarding that insight.
+The original `PAT-006` was useful because it forced the project to treat concealed water failure as an architectural problem rather than only a plumbing-quality problem. Retirement corrects the category without discarding that insight.
 
 ## Evidence boundary
 

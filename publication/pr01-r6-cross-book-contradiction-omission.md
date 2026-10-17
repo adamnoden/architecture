@@ -28,7 +28,7 @@ No source is changed in R6.
 |---|---|
 | Build for time ↔ long-duration evidence gap | coherent in wording, but central causal magnitude remains F019 |
 | Permanent fabric ↔ service patterns | coherent: frozen doctrine permits sparse deliberate crossings; obsolete absolute ban is not current authority |
-| Designed interface ↔ pattern taxonomy | technically coherent, but HSA-P-005 classification remains challenged by F010 |
+| Designed interface ↔ pattern taxonomy | technically coherent, but PAT-005 classification remains challenged by F010 |
 | Failure tolerance ↔ added boundaries/access | explicit boundary debt exists; cumulative reliability remains F004 |
 | Maintenance geography ↔ Reference House | coherent in one favourable fixture; transfer remains F003/F012/F014 |
 | Ordinary parts / workmanship ↔ manufactured interfaces | real tension sustained as F017/F015, not a direct textual contradiction |

@@ -1,5 +1,5 @@
 ---
-id: HSA-P-010
+id: PAT-010
 title: Source-Capture Kitchen Extract
 kind: pattern
 state: active
@@ -24,7 +24,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-010 — Source-Capture Kitchen Extract
+# Source-Capture Kitchen Extract
 
 ## Context
 

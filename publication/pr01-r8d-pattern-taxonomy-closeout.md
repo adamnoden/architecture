@@ -14,7 +14,7 @@ R8-D therefore tests the classification rather than defending the established la
 
 # 1. P005 admission rerun
 
-`HSA-P-005 — Designed Structural Penetration` received the strongest individual taxonomy challenge.
+`PAT-005 — Designed Structural Penetration` received the strongest individual taxonomy challenge.
 
 The old wording was vulnerable because its imperative—coordinate penetrations before construction—could be read as ordinary professional procedure rather than a pattern.
 
@@ -114,7 +114,7 @@ R8-F owns the final book-wide nomenclature reconciliation so old part titles, Re
 
 # 4. Stable IDs
 
-R7 also found that stable `HSA-P-*` identities carried too much reader-facing weight.
+R7 also found that stable `PAT-*` identities carried too much reader-facing weight.
 
 The IDs remain valuable for:
 

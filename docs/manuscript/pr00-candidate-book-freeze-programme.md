@@ -473,7 +473,7 @@ Eliminate small structural defects that undermine trust once the object is read 
 - **House Kernel** is used only for the formal architectural/computational system where intended;
 - **Metamorph Compiler** is used only for the executable machinery;
 - legacy project names appear only as explicit history/provenance;
-- stable `HSA-P-*` identifiers remain intact and are explained as identity rather than current project branding;
+- stable `PAT-*` identifiers remain intact and are explained as identity rather than current project branding;
 - pattern/strategy/candidate distinctions are consistent;
 - G-01 terminology reflects frozen v0.1;
 - chapter numbering matches the publication architecture;

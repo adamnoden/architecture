@@ -53,7 +53,7 @@ Do not generate duplicate technical checklists once per pattern.
 
 ## F4 — no whole-pattern machine Boolean
 
-Do not create a universal `HSA-P-xxx = PASS` result.
+Do not create a universal `PAT-xxx = PASS` result.
 
 A crosswalk report may contain:
 

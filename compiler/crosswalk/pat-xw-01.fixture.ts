@@ -40,7 +40,7 @@ export const createPatXw01Fixture = (): SourceModel => {
       from: 'SR-01',
       to: 'SR-02',
       message: 'The selected primary route and local branch must remain directly continuous.',
-      provenance: 'HSA-P-003'
+      provenance: 'PAT-003'
     },
     {
       id: 'REQ-XW-P003-ACCESS-PRIMARY',
@@ -50,7 +50,7 @@ export const createPatXw01Fixture = (): SourceModel => {
       from: 'SR-01',
       to: 'ACCESS-01',
       message: 'The selected primary route must remain inside declared accessible service geography.',
-      provenance: 'HSA-P-003'
+      provenance: 'PAT-003'
     },
     {
       id: 'REQ-XW-P003-ACCESS-BRANCH',
@@ -60,7 +60,7 @@ export const createPatXw01Fixture = (): SourceModel => {
       from: 'SR-02',
       to: 'ACCESS-01',
       message: 'The selected local branch must remain inside declared accessible service geography.',
-      provenance: 'HSA-P-003'
+      provenance: 'PAT-003'
     },
     {
       id: 'REQ-XW-P005-CROSSING',
@@ -70,7 +70,7 @@ export const createPatXw01Fixture = (): SourceModel => {
       from: 'SR-01',
       to: 'WALL-EXT-01',
       message: 'The selected service crossing must be represented explicitly.',
-      provenance: 'HSA-P-005'
+      provenance: 'PAT-005'
     },
     {
       id: 'REQ-XW-P005-HOST',
@@ -80,7 +80,7 @@ export const createPatXw01Fixture = (): SourceModel => {
       from: 'WALL-EXT-01',
       to: 'PEN-01',
       message: 'The crossing must have an identified penetration owned by its host wall.',
-      provenance: 'HSA-P-005'
+      provenance: 'PAT-005'
     },
     {
       id: 'REQ-XW-P005-CARRIES',
@@ -90,7 +90,7 @@ export const createPatXw01Fixture = (): SourceModel => {
       from: 'PEN-01',
       to: 'SR-01',
       message: 'The identified penetration must carry the routed service it resolves.',
-      provenance: 'HSA-P-005'
+      provenance: 'PAT-005'
     }
   )
 

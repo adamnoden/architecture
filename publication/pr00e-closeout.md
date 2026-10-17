@@ -82,7 +82,7 @@ The remaining integrity tasks are appropriately PR-00F work rather than editoria
 
 - Preface note [5] literal repository path;
 - title / House Kernel / Metamorph Compiler nomenclature consistency;
-- stable HSA-P-* identity and strategy/candidate distinctions;
+- stable PAT-* identity and strategy/candidate distinctions;
 - chapter / figure / back-matter cross-references;
 - glossary and sources consistency;
 - research-debt alignment with the research agenda.

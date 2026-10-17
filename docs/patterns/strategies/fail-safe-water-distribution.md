@@ -35,10 +35,10 @@ Do not stack every layer by default. Redundancy itself has cost, maintenance and
 
 The strategy may invoke several patterns, including:
 
-- `HSA-P-004 — High-Service-Room Service Wall` where water-bearing components benefit from dry-side access;
-- `HSA-P-017 — Visible Leakage Path` where concealed leakage needs a passive path to a legible destination;
-- `HSA-P-018 — Failure-Tolerant Wet Service Room` where concentrated room-scale water risk justifies local failure tolerance;
-- `HSA-P-005 — Designed Structural Penetration` where water routes cross permanent structure or boundaries.
+- `PAT-004 — High-Service-Room Service Wall` where water-bearing components benefit from dry-side access;
+- `PAT-017 — Visible Leakage Path` where concealed leakage needs a passive path to a legible destination;
+- `PAT-018 — Failure-Tolerant Wet Service Room` where concentrated room-scale water risk justifies local failure tolerance;
+- `PAT-005 — Designed Structural Penetration` where water routes cross permanent structure or boundaries.
 
 It may also use implementation families that are not architectural patterns, such as pipe-in-pipe distribution or automatic shut-off systems.
 

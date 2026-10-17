@@ -3,7 +3,7 @@
 **Status:** historical Phase-8 P8.1 worked crosswalk; gate subsequently closed  
 **Context at time of test:** Reference House coordination occurrences  
 **Method:** [Architectural Pattern → Computational Crosswalk](pattern-crosswalk-model.md)  
-**Current outcome:** Phase 8 later passed, and `PAT-XW-01` subsequently exercised `HSA-P-003` and `HSA-P-005` in code. See [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md).
+**Current outcome:** Phase 8 later passed, and `PAT-XW-01` subsequently exercised `PAT-003` and `PAT-005` in code. See [P0 + PAT-XW-01 — Executable Gate Result](p0-pat-xw-01-result.md).
 
 > **Historical record.** The crosswalk states and “next” actions below record the P8.1 stage before red-team, full-language mapping and executable testing. They are preserved as the worked reasoning that led to the frozen crosswalk model. Current computational authority is the passed executable result and the current [Computational Track overview](README.md).
 
@@ -11,7 +11,7 @@
 
 # 1. Result in one sentence
 
-**The seven-pattern pilot maps cleanly onto the existing computational architecture: six require no new semantic primitive, while `HSA-P-012` exposes one small candidate refinement for durable physical identifier/index correspondence.**
+**The seven-pattern pilot maps cleanly onto the existing computational architecture: six require no new semantic primitive, while `PAT-012` exposes one small candidate refinement for durable physical identifier/index correspondence.**
 
 The pilot therefore supports continuing Phase 8, subject to red-team review.
 
@@ -25,17 +25,17 @@ The Reference House currently has identifiable coordination occurrences for:
 
 | Pattern | Reference House occurrence | Crosswalk state |
 |---|---|---|
-| `HSA-P-001` Controlled Utility Entry | `RH-P001-01` | **NATIVE + FIXTURE NEEDED** |
-| `HSA-P-002` Plant Room as Service Hub | `RH-P002-01` | **NATIVE + FIXTURE NEEDED** |
-| `HSA-P-003` Coherent Horizontal Service Route | `RH-P003-01` | **NATIVE + FIXTURE NEEDED** |
-| `HSA-P-004` High-Service-Room Service Wall | `RH-P004-01/02` | **NATIVE + FIXTURE NEEDED** |
-| `HSA-P-005` Designed Structural Penetration | `RH-P005-01..06` | **NATIVE** |
-| `HSA-P-012` Physical Service Index | `RH-P012-01` | **SMALL REFINEMENT** |
-| `HSA-P-014` Accessible Vertical Service Zone | `RH-P014-01` | **NATIVE + FIXTURE NEEDED** |
+| `PAT-001` Controlled Utility Entry | `RH-P001-01` | **NATIVE + FIXTURE NEEDED** |
+| `PAT-002` Plant Room as Service Hub | `RH-P002-01` | **NATIVE + FIXTURE NEEDED** |
+| `PAT-003` Coherent Horizontal Service Route | `RH-P003-01` | **NATIVE + FIXTURE NEEDED** |
+| `PAT-004` High-Service-Room Service Wall | `RH-P004-01/02` | **NATIVE + FIXTURE NEEDED** |
+| `PAT-005` Designed Structural Penetration | `RH-P005-01..06` | **NATIVE** |
+| `PAT-012` Physical Service Index | `RH-P012-01` | **SMALL REFINEMENT** |
+| `PAT-014` Accessible Vertical Service Zone | `RH-P014-01` | **NATIVE + FIXTURE NEEDED** |
 
 `NATIVE + FIXTURE NEEDED` means the existing model vocabulary is sufficient, but the claimed pattern-conformance path has not yet been exercised in executable form.
 
-`HSA-P-005` is marked `NATIVE` because controlled penetration, boundary transition and obligation-bundle machinery have already survived paper-scale composition tests. A future executable fixture is still required for implementation confidence.
+`PAT-005` is marked `NATIVE` because controlled penetration, boundary transition and obligation-bundle machinery have already survived paper-scale composition tests. A future executable fixture is still required for implementation confidence.
 
 ---
 
@@ -50,7 +50,7 @@ This is a project architectural requirement with pattern provenance.
 Example:
 
 ```text
-RH-P002-01 claims HSA-P-002
+RH-P002-01 claims PAT-002
     ↓
 Does the model actually contain:
   maintainable plant/service concentration?
@@ -73,7 +73,7 @@ The same model facts support both layers. The obligations are not duplicated.
 
 ---
 
-# 4. `HSA-P-001` — Controlled Utility Entry
+# 4. `PAT-001` — Controlled Utility Entry
 
 **Occurrence:** `RH-P001-01`  
 **Coverage:** **NATIVE + FIXTURE NEEDED**
@@ -108,7 +108,7 @@ Conditional on claiming `P-001`:
 4. the external→internal route is traceable;
 5. reserved entry capacity, if claimed, is represented explicitly rather than assumed.
 
-Authority: **project architectural requirement** with `HSA-P-001` provenance.
+Authority: **project architectural requirement** with `PAT-001` provenance.
 
 ## O — induced technical obligations
 
@@ -164,7 +164,7 @@ Expected result:
 
 ---
 
-# 5. `HSA-P-002` — Plant Room as Service Hub
+# 5. `PAT-002` — Plant Room as Service Hub
 
 **Occurrence:** `RH-P002-01`  
 **Coverage:** **NATIVE + FIXTURE NEEDED**
@@ -243,7 +243,7 @@ Expected result: replacement obligation invalidates while the spatial room entit
 
 ---
 
-# 6. `HSA-P-003` — Coherent Horizontal Service Route
+# 6. `PAT-003` — Coherent Horizontal Service Route
 
 **Occurrence:** `RH-P003-01`  
 **Coverage:** **NATIVE + FIXTURE NEEDED**
@@ -330,7 +330,7 @@ Expected result:
 
 ---
 
-# 7. `HSA-P-004` — High-Service-Room Service Wall
+# 7. `PAT-004` — High-Service-Room Service Wall
 
 **Occurrences:** `RH-P004-01`, `RH-P004-02`  
 **Coverage:** **NATIVE + FIXTURE NEEDED**
@@ -401,7 +401,7 @@ Expected result: access-to-view may remain true; replacement/maintenance obligat
 
 ---
 
-# 8. `HSA-P-005` — Designed Structural Penetration
+# 8. `PAT-005` — Designed Structural Penetration
 
 **Occurrences:** `RH-P005-01..06`  
 **Coverage:** **NATIVE**
@@ -481,7 +481,7 @@ Expected result:
 
 ---
 
-# 9. `HSA-P-012` — Physical Service Index
+# 9. `PAT-012` — Physical Service Index
 
 **Occurrence:** `RH-P012-01`  
 **Coverage:** **SMALL REFINEMENT**
@@ -573,7 +573,7 @@ Expected result: digital model integrity remains valid; `P-012` conformance / ph
 
 ---
 
-# 10. `HSA-P-014` — Accessible Vertical Service Zone
+# 10. `PAT-014` — Accessible Vertical Service Zone
 
 **Occurrence:** `RH-P014-01`  
 **Coverage:** **NATIVE + FIXTURE NEEDED**
@@ -686,7 +686,7 @@ The crosswalk reveals a useful rule for implementation:
 A future report may show:
 
 ```text
-RH-P014-01 / HSA-P-014
+RH-P014-01 / PAT-014
 
 architectural occurrence identity          PASS
 vertical continuity                        PASS

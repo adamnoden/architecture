@@ -28,7 +28,7 @@ The pattern language is an architectural authoring and provenance layer above th
 
 > **A pattern selection is provenance and intended architectural commitment, not proof and not a substitute for source-model facts.**
 
-Selecting `HSA-P-005 — Designed Structural Penetration` does not make a hole structurally adequate. Selecting `HSA-P-002 — Plant Room as Service Hub` does not prove working clearance or acoustic performance.
+Selecting `PAT-005 — Designed Structural Penetration` does not make a hole structurally adequate. Selecting `PAT-002 — Plant Room as Service Hub` does not prove working clearance or acoustic performance.
 
 A selected pattern may explain why a project requirement exists. The actual building relationships then create their normal technical obligations.
 
@@ -78,7 +78,7 @@ The demonstrated P0/PAT-XW approach uses ordinary project requirements with prov
 
 ```text
 PROJECT REQUIREMENT PR-XW-003
-provenance: HSA-P-003
+provenance: PAT-003
 scope: service route set SR-01
 formal commitments:
   - route segments identified

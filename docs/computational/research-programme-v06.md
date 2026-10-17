@@ -75,8 +75,8 @@ No `Pattern`, `PatternIntent`, pattern rule pack or pattern graph was added to t
 
 `PAT-XW-01` exercised:
 
-- `HSA-P-003 — Coherent Horizontal Service Route`;
-- `HSA-P-005 — Designed Structural Penetration`.
+- `PAT-003 — Coherent Horizontal Service Route`;
+- `PAT-005 — Designed Structural Penetration`.
 
 The production CI gate passed:
 
@@ -99,7 +99,7 @@ This is the authority-separation result Phase 8 required.
 
 ## 5. P-012 remains deliberately deferred
 
-The optional `HSA-P-012 — Physical Service Index` extension was not required to pass PAT-XW-01.
+The optional `PAT-012 — Physical Service Index` extension was not required to pass PAT-XW-01.
 
 A future physical-information use case may justify generic `identifies` / `refers-to` semantics and correspondence/staleness behaviour. Do not add those abstractions merely to complete pattern coverage.
 
@@ -111,7 +111,7 @@ A future physical-information use case may justify generic `identifies` / `refer
 
 Phase 8 authorised three possible post-P0 refinements. Current outcome:
 
-1. **project-requirement provenance reference to `HSA-P-xxx`** — demonstrated by PAT-XW-01;
+1. **project-requirement provenance reference to `PAT-xxx`** — demonstrated by PAT-XW-01;
 2. **crosswalk report grouping without a new validity dimension** — demonstrated by PAT-XW-01;
 3. **generic physical-information identity/reference semantics** — not yet justified; deferred.
 

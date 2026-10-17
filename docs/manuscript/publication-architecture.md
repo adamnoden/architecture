@@ -36,7 +36,7 @@ Part III is the current reusable architectural language:
 
 Pattern identity is separate from evidence maturity. The service-topology field has the strongest demonstrated generative sequence; the remaining fields are not presented as one uniformly mature Alexander-style network.
 
-Stable `HSA-P-*` identifiers remain because they support current cross-reference across architectural evidence and computational representations. Retired identities, pilot catalogues, migration crosswalks and pattern-hardening history remain internal.
+Stable `PAT-*` identifiers remain because they support current cross-reference across architectural evidence and computational representations. Retired identities, pilot catalogues, migration crosswalks and pattern-hardening history remain internal.
 
 ### Part IV — Reference House
 

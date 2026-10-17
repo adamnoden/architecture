@@ -77,19 +77,19 @@ A thinner honest technical/lifecycle language is preferable to filling the book 
 
 - **Dimension:** `INCONSISTENT`
 - **Severity:** **S2 — significant**
-- **Surface:** `P3-A`, strongest case `HSA-P-005 — Designed Structural Penetration`
-- **Claim under attack:** Every active `HSA-P-*` entry resolves a recurring architectural relationship rather than merely encoding a desirable rule/coordination obligation.
-- **Strongest fair criticism:** `HSA-P-005 — Designed Structural Penetration` is unquestionably useful, but its invariant is essentially: required crossings should be coordinated in advance, structurally owned, and have applicable boundaries reinstated. That is close to competent interdisciplinary design obligation rather than a generative architectural pattern. Its implementation variation lies mainly in the technical form of the penetration, not in materially different architectural realisations of a recurring spatial relationship. The project’s own admission contract warns that a proposition which effectively says “always do X” is more likely a rule or doctrine proposition.
+- **Surface:** `P3-A`, strongest case `PAT-005 — Designed Structural Penetration`
+- **Claim under attack:** Every active `PAT-*` entry resolves a recurring architectural relationship rather than merely encoding a desirable rule/coordination obligation.
+- **Strongest fair criticism:** `PAT-005 — Designed Structural Penetration` is unquestionably useful, but its invariant is essentially: required crossings should be coordinated in advance, structurally owned, and have applicable boundaries reinstated. That is close to competent interdisciplinary design obligation rather than a generative architectural pattern. Its implementation variation lies mainly in the technical form of the penetration, not in materially different architectural realisations of a recurring spatial relationship. The project’s own admission contract warns that a proposition which effectively says “always do X” is more likely a rule or doctrine proposition.
 - **Why it matters:** Keeping correct professional obligations inside the pattern count weakens the distinction between pattern, rule, strategy and competent practice—the exact distinction Part III asks the reader to trust.
-- **Evidence / counterexample:** `language-model.md` requires relationship, variation, composition and a recurring physical response, and distinguishes rules/obligations as checkable propositions. `HSA-P-005` itself says movement/fire-stopping/structural-opening coordination is ordinary professional practice and that formal consequences such as permissible opening geometry/boundary roles are strong candidates for rules.
+- **Evidence / counterexample:** `language-model.md` requires relationship, variation, composition and a recurring physical response, and distinguishes rules/obligations as checkable propositions. `PAT-005` itself says movement/fire-stopping/structural-opening coordination is ordinary professional practice and that formal consequences such as permissible opening geometry/boundary roles are strong candidates for rules.
 - **Owner:** pattern language
 - **Class:** `MATERIAL ARCHITECTURAL FINDING`
-- **Provisional consequence:** R8 should rerun the admission test on `HSA-P-005` without presuming its active status. If the recurring architectural relationship cannot be stated more strongly than “coordinate the penetration properly”, retire/reclassify the pattern while preserving its content as obligations under service-route/interface patterns. No new ID should be invented merely to preserve count.
+- **Provisional consequence:** R8 should rerun the admission test on `PAT-005` without presuming its active status. If the recurring architectural relationship cannot be stated more strongly than “coordinate the penetration properly”, retire/reclassify the pattern while preserving its content as obligations under service-route/interface patterns. No new ID should be invented merely to preserve count.
 - **Disposition:** `OPEN`
 
 ### Secondary challengers, not yet findings
 
-`HSA-P-010 — Source-Capture Kitchen Extract`, `HSA-P-021 — Source-Capture Bathroom Extract` and `HSA-P-012 — Physical Service Index` were also challenged as possible specification/operational advice. They survive R2 provisionally:
+`PAT-010 — Source-Capture Kitchen Extract`, `PAT-021 — Source-Capture Bathroom Extract` and `PAT-012 — Physical Service Index` were also challenged as possible specification/operational advice. They survive R2 provisionally:
 
 - kitchen and bathroom extract have materially different pollutant/moisture, geometry, transfer-air, grease/condensate and occupation forces, and each creates architectural route/terminal relationships;
 - the Physical Service Index defines a physical asset/steward relationship and is explicitly `proposed`, with limited scope.
@@ -103,8 +103,8 @@ R4/R5 may still reopen them.
 - **Dimension:** `UNMEMORABLE`
 - **Severity:** **S3 — minor**
 - **Surface:** `P3-00` and all Part III pattern entries
-- **Claim under attack:** Displaying stable `HSA-P-*` IDs prominently alongside every pattern improves the reader-facing language without material cost.
-- **Strongest fair criticism:** The stable IDs are useful repository/provenance identities but are legacy systems notation from an earlier project name. In a book whose strongest concepts work through ordinary architectural language, repeated `HSA-P-014`, `HSA-P-022` etc. can make Part III read like a standards manual or software schema. The publication already tells the reader that the numbers encode neither sequence, importance nor maturity, which is evidence that their primary value is internal stability rather than architectural meaning.
+- **Claim under attack:** Displaying stable `PAT-*` IDs prominently alongside every pattern improves the reader-facing language without material cost.
+- **Strongest fair criticism:** The stable IDs are useful repository/provenance identities but are legacy systems notation from an earlier project name. In a book whose strongest concepts work through ordinary architectural language, repeated `PAT-014`, `PAT-022` etc. can make Part III read like a standards manual or software schema. The publication already tells the reader that the numbers encode neither sequence, importance nor maturity, which is evidence that their primary value is internal stability rather than architectural meaning.
 - **Why it matters:** The pattern names are the memorable transmission units. Administrative identity should not compete with them visually or rhetorically in the private critical object.
 - **Evidence / counterexample:** Stable IDs remain necessary for provenance and internal cross-reference, but Part III already separates identity from meaning. Alexander-style pattern names function as the primary compositional vocabulary rather than opaque numbers.
 - **Owner:** publication / pattern language
@@ -154,27 +154,27 @@ R2 does **not** change status. This table records diagnostic pressure only.
 
 | Pattern | R2 diagnostic disposition |
 |---|---|
-| HSA-P-001 Controlled Utility Entry | survives as building-scale relationship |
-| HSA-P-002 Plant Room as Service Hub | survives; strong spatial forces / variants |
-| HSA-P-014 Accessible Vertical Service Zone | survives; explicit non-applicability in small/simple cases |
-| HSA-P-003 Coherent Horizontal Service Route | survives; not one literal spine |
-| HSA-P-015 Accessible Room Service Route | survives provisionally; architecture/detail boundary remains worth later testing |
-| HSA-P-004 High-Service-Room Service Wall | survives; recurring room-scale spatial relationship |
-| HSA-P-005 Designed Structural Penetration | **challenged by PR01-F010** |
-| HSA-P-016 Compartmented Service Void | survives; continuous-service / discontinuous-void relationship is distinct |
-| HSA-P-017 Visible Leakage Path | survives as selective passive failure relationship |
-| HSA-P-018 Failure-Tolerant Wet Service Room | survives; room-scale response with multiple implementations |
-| HSA-P-009 Accessible Rainwater Route | survives; envelope + failure + maintenance relationship |
-| HSA-P-007 Permanent Opening / Replaceable Window | survives; bounded by interface/building-physics proof |
-| HSA-P-019 Permanent Opening / Replaceable Door | survives separately from window |
-| HSA-P-020 Designed Threshold | survives provisionally; conventionality alone does not disqualify a pattern |
-| HSA-P-008 Movement / Slip Junction | survives; recurring movement relationship with variants |
-| HSA-P-022 Controlled Attachment Plane | survives; strong intermediate-layer relationship and explicit proportionality |
-| HSA-P-010 Source-Capture Kitchen Extract | survives provisionally; not novel, but spatially/operationally patterned |
-| HSA-P-021 Source-Capture Bathroom Extract | survives provisionally; distinct forces from kitchen extract |
-| HSA-P-011 Roof Maintenance Route | survives; route/task/access relationship and temporary-vs-permanent variants |
-| HSA-P-013 Ground-Supported Façade Access | survives strongly as site/building maintenance geography |
-| HSA-P-012 Physical Service Index | survives provisionally at proposed evidence; stewardship-scale physical relation |
+| PAT-001 Controlled Utility Entry | survives as building-scale relationship |
+| PAT-002 Plant Room as Service Hub | survives; strong spatial forces / variants |
+| PAT-014 Accessible Vertical Service Zone | survives; explicit non-applicability in small/simple cases |
+| PAT-003 Coherent Horizontal Service Route | survives; not one literal spine |
+| PAT-015 Accessible Room Service Route | survives provisionally; architecture/detail boundary remains worth later testing |
+| PAT-004 High-Service-Room Service Wall | survives; recurring room-scale spatial relationship |
+| PAT-005 Designed Structural Penetration | **challenged by PR01-F010** |
+| PAT-016 Compartmented Service Void | survives; continuous-service / discontinuous-void relationship is distinct |
+| PAT-017 Visible Leakage Path | survives as selective passive failure relationship |
+| PAT-018 Failure-Tolerant Wet Service Room | survives; room-scale response with multiple implementations |
+| PAT-009 Accessible Rainwater Route | survives; envelope + failure + maintenance relationship |
+| PAT-007 Permanent Opening / Replaceable Window | survives; bounded by interface/building-physics proof |
+| PAT-019 Permanent Opening / Replaceable Door | survives separately from window |
+| PAT-020 Designed Threshold | survives provisionally; conventionality alone does not disqualify a pattern |
+| PAT-008 Movement / Slip Junction | survives; recurring movement relationship with variants |
+| PAT-022 Controlled Attachment Plane | survives; strong intermediate-layer relationship and explicit proportionality |
+| PAT-010 Source-Capture Kitchen Extract | survives provisionally; not novel, but spatially/operationally patterned |
+| PAT-021 Source-Capture Bathroom Extract | survives provisionally; distinct forces from kitchen extract |
+| PAT-011 Roof Maintenance Route | survives; route/task/access relationship and temporary-vs-permanent variants |
+| PAT-013 Ground-Supported Façade Access | survives strongly as site/building maintenance geography |
+| PAT-012 Physical Service Index | survives provisionally at proposed evidence; stewardship-scale physical relation |
 
 No active pattern is demoted in R2 because R0–R7 are diagnostic.
 
@@ -188,7 +188,7 @@ R2 adds **four open findings**:
 |---|---:|---|
 | PR01-F008 | S1 | “pattern language” generativity is demonstrated mainly in service topology |
 | PR01-F009 | S2 | pattern corpus is technically/lifecycle weighted relative to the wider architectural thesis |
-| PR01-F010 | S2 | HSA-P-005 may be a rule/obligation rather than a canonical pattern |
+| PR01-F010 | S2 | PAT-005 may be a rule/obligation rather than a canonical pattern |
 | PR01-F011 | S3 | legacy HSA IDs carry too much reader-facing weight |
 
 There is no S0 finding. The pattern corpus is substantially stronger than a checklist of favourite details: many entries contain real context, forces, variants, boundary debt, proportionality and explicit failure modes. The held-candidate and strategy distinctions also survive attack.

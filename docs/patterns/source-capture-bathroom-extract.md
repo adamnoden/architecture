@@ -1,5 +1,5 @@
 ---
-id: HSA-P-021
+id: PAT-021
 title: Source-Capture Bathroom Extract
 kind: pattern
 state: active
@@ -25,7 +25,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-021 — Source-Capture Bathroom Extract
+# Source-Capture Bathroom Extract
 
 ## Context
 

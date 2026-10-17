@@ -2,7 +2,7 @@
 
 Strategies are broad architectural approaches that can be realised through materially different patterns or implementation families.
 
-They sit between governing doctrine and the pattern language, but they are **not pattern nodes** and do not receive `HSA-P-xxx` identities.
+They sit between governing doctrine and the pattern language, but they are **not pattern nodes** and do not receive `PAT-xxx` identities.
 
 A strategy belongs here when its durable proposition is useful but its valid physical responses are too different to represent one recurring architectural relationship.
 

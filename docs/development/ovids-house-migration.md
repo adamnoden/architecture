@@ -43,7 +43,7 @@ This migration must not churn stable technical or historical identifiers merely 
 
 Retain:
 
-- canonical `HSA-P-*` pattern IDs;
+- canonical `PAT-*` pattern IDs;
 - `HK-RH-COMPILE-1` and other established semantic/provenance identifiers;
 - RH-C0…RH-C5, CF-01 and CH-00…CH-08 gate names;
 - historical directory names and regression fixtures where they carry evidence or provenance;
@@ -154,7 +154,7 @@ The resulting hierarchy is now explicit in current project material: **Ovid’s 
 
 The Ovidian frame was integrated proportionately. It is strongest on the landing page, in the preface coda, in the selective-permanence discussion in Part I and in the compact Primer, with a fuller research boundary recorded in `docs/research/preface-precedents.md`. The governing principles, pattern language and Reference House were not converted into literary or classical branding. Ovid remains an interpretive lens rather than architectural authority.
 
-Stable technical identity was preserved deliberately. Canonical `HSA-P-*` pattern IDs, `HK-RH-COMPILE-1`, RH-C0…RH-C5, CF-01, CH-00…CH-08, historical regression fixtures and ordinary compiler/domain names remain unchanged where they carry semantic or provenance value. No CH-09 or RH-C6 was introduced.
+Stable technical identity was preserved deliberately. Canonical `PAT-*` pattern IDs, `HK-RH-COMPILE-1`, RH-C0…RH-C5, CF-01, CH-00…CH-08, historical regression fixtures and ordinary compiler/domain names remain unchanged where they carry semantic or provenance value. No CH-09 or RH-C6 was introduced.
 
 Verification completed at two levels. A transactional closeout run passed the complete repository/site health check and built both the compact Primer PDF and full Working Edition PDF before committing publication/status changes. After the temporary migration and verification machinery was removed, normal pull-request validation passed again on the durable-only branch state. The CH regression suites remained green throughout, preserving the frozen semantic, determinism, provenance and artefact contracts.
 

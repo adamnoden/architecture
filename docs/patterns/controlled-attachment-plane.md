@@ -1,5 +1,5 @@
 ---
-id: HSA-P-022
+id: PAT-022
 title: Controlled Attachment Plane
 kind: pattern
 state: active
@@ -27,7 +27,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-022 — Controlled Attachment Plane
+# Controlled Attachment Plane
 
 ## Context
 

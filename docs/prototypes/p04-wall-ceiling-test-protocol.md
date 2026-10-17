@@ -276,7 +276,7 @@ The challenger adds complexity without enough value. Retain the better conventio
 A P04 pass may:
 
 - select the Reference House implementation of `WCJ-01`;
-- strengthen project evidence for `HSA-P-008 — Movement / Slip Junction` where the observed behaviour is relevant;
+- strengthen project evidence for `PAT-008 — Movement / Slip Junction` where the observed behaviour is relevant;
 - refine the tectonic language around cornice / restrained metal.
 
 It does **not** prove that every wall/ceiling junction should use a cornice or metal line, nor does a visually successful mock-up establish fire/acoustic compliance.

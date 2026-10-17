@@ -144,7 +144,7 @@ At minimum test:
 - whether the language contains enough generative relationship to deserve “pattern language” rather than “pattern catalogue”;
 - whether the three strategies sit at a coherent level relative to doctrine and patterns;
 - whether held candidates are genuinely unresolved or merely postponed because evidence is inconvenient;
-- whether stable `HSA-P-*` identities introduce an unnecessary systems-engineering tone into architectural material;
+- whether stable `PAT-*` identities introduce an unnecessary systems-engineering tone into architectural material;
 - whether evidence / `does not prove` fields clarify the pattern or bury its architectural force;
 - whether the service-topology generative sequence overweights services relative to other architecture;
 - whether Alexander is being used as an influence without adequately confronting the differences between his pattern ontology and this one.

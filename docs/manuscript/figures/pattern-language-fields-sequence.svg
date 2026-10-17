@@ -16,40 +16,40 @@
 
   <rect x="75" y="125" width="620" height="145" rx="4" fill="#f3f3f3" stroke="#111" stroke-width="2.5"/>
   <text x="105" y="165" class="sub">A · Service geography &amp; distribution</text><text x="650" y="165" text-anchor="end" class="small">8 patterns</text>
-  <text x="105" y="207" class="ids">HSA-P-001 · HSA-P-002 · HSA-P-014 · HSA-P-003</text><text x="105" y="238" class="ids">HSA-P-015 · HSA-P-004 · HSA-P-005 · HSA-P-016</text>
+  <text x="105" y="207" class="ids">PAT-001 · PAT-002 · PAT-014 · PAT-003</text><text x="105" y="238" class="ids">PAT-015 · PAT-004 · PAT-005 · PAT-016</text>
 
   <rect x="75" y="295" width="620" height="125" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
   <text x="105" y="337" class="sub">B · Water, leakage &amp; failure</text><text x="650" y="337" text-anchor="end" class="small">3 patterns</text>
-  <text x="105" y="382" class="ids">HSA-P-017 · HSA-P-018 · HSA-P-009</text>
+  <text x="105" y="382" class="ids">PAT-017 · PAT-018 · PAT-009</text>
 
   <rect x="75" y="445" width="620" height="125" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
   <text x="105" y="487" class="sub">C · Openings, movement &amp; attachment</text><text x="650" y="487" text-anchor="end" class="small">5 patterns</text>
-  <text x="105" y="532" class="ids">HSA-P-007 · HSA-P-019 · HSA-P-020 · HSA-P-008 · HSA-P-022</text>
+  <text x="105" y="532" class="ids">PAT-007 · PAT-019 · PAT-020 · PAT-008 · PAT-022</text>
 
   <rect x="75" y="595" width="620" height="125" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
   <text x="105" y="637" class="sub">D · Environment &amp; external maintenance</text><text x="650" y="637" text-anchor="end" class="small">4 patterns</text>
-  <text x="105" y="682" class="ids">HSA-P-010 · HSA-P-021 · HSA-P-011 · HSA-P-013</text>
+  <text x="105" y="682" class="ids">PAT-010 · PAT-021 · PAT-011 · PAT-013</text>
 
   <rect x="75" y="745" width="620" height="115" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
   <text x="105" y="787" class="sub">E · Stewardship</text><text x="650" y="787" text-anchor="end" class="small">1 pattern</text>
-  <text x="105" y="827" class="ids">HSA-P-012</text>
+  <text x="105" y="827" class="ids">PAT-012</text>
   <text x="75" y="900" class="tiny">Editorial fields aid reading; they are not a taxonomy.</text><text x="75" y="926" class="tiny">A pattern may operate across more than one field.</text>
 
   <rect x="875" y="120" width="470" height="58" rx="29" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="1110" y="157" text-anchor="middle" class="label">Map service demand</text>
-  <rect x="875" y="205" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="241" class="id">HSA-P-001</text><text x="1035" y="241" class="small">Controlled utility entry</text>
-  <rect x="875" y="290" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="326" class="id">HSA-P-002</text><text x="1035" y="326" class="small">Place service hub</text>
-  <rect x="875" y="375" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="411" class="id">HSA-P-014</text><text x="1035" y="411" class="small">Resolve vertical distribution</text>
-  <rect x="875" y="460" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="496" class="id">HSA-P-004</text><text x="1035" y="496" class="small">Re-test high-service rooms</text>
-  <rect x="875" y="545" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="581" class="id">HSA-P-003</text><text x="1035" y="581" class="small">Establish horizontal routes</text>
+  <rect x="875" y="205" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="241" class="id">PAT-001</text><text x="1035" y="241" class="small">Controlled utility entry</text>
+  <rect x="875" y="290" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="326" class="id">PAT-002</text><text x="1035" y="326" class="small">Place service hub</text>
+  <rect x="875" y="375" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="411" class="id">PAT-014</text><text x="1035" y="411" class="small">Resolve vertical distribution</text>
+  <rect x="875" y="460" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="496" class="id">PAT-004</text><text x="1035" y="496" class="small">Re-test high-service rooms</text>
+  <rect x="875" y="545" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="581" class="id">PAT-003</text><text x="1035" y="581" class="small">Establish horizontal routes</text>
 
   <rect x="875" y="630" width="470" height="68" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-  <text x="900" y="655" class="id">HSA-P-016</text><text x="900" y="679" class="id">HSA-P-005</text><text x="1045" y="657" class="small">Resolve void boundaries</text><text x="1045" y="682" class="small">and structural crossings</text>
+  <text x="900" y="655" class="id">PAT-016</text><text x="900" y="679" class="id">PAT-005</text><text x="1045" y="657" class="small">Resolve void boundaries</text><text x="1045" y="682" class="small">and structural crossings</text>
 
   <rect x="875" y="725" width="470" height="68" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/>
-  <text x="900" y="750" class="id">HSA-P-017</text><text x="900" y="774" class="id">HSA-P-018</text><text x="1045" y="752" class="small">Design for credible</text><text x="1045" y="777" class="small">water failure</text>
+  <text x="900" y="750" class="id">PAT-017</text><text x="900" y="774" class="id">PAT-018</text><text x="1045" y="752" class="small">Design for credible</text><text x="1045" y="777" class="small">water failure</text>
 
-  <rect x="875" y="820" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="856" class="id">HSA-P-015</text><text x="1035" y="856" class="small">Room-scale routes where justified</text>
-  <rect x="875" y="905" width="470" height="58" rx="4" fill="#f3f3f3" stroke="#111" stroke-width="2.5"/><text x="900" y="941" class="id">HSA-P-012</text><text x="1035" y="941" class="small">Make topology legible</text>
+  <rect x="875" y="820" width="470" height="58" rx="4" fill="#fff" stroke="#111" stroke-width="2.5"/><text x="900" y="856" class="id">PAT-015</text><text x="1035" y="856" class="small">Room-scale routes where justified</text>
+  <rect x="875" y="905" width="470" height="58" rx="4" fill="#f3f3f3" stroke="#111" stroke-width="2.5"/><text x="900" y="941" class="id">PAT-012</text><text x="1035" y="941" class="small">Make topology legible</text>
   <path d="M 1110 178 V 205 M 1110 263 V 290 M 1110 348 V 375 M 1110 433 V 460 M 1110 518 V 545 M 1110 603 V 630 M 1110 698 V 725 M 1110 793 V 820 M 1110 878 V 905" class="rule" marker-end="url(#arrow)"/>
 
   <path d="M 1370 575 C 1500 575 1500 320 1370 320" class="dash" marker-end="url(#openArrow)"/>

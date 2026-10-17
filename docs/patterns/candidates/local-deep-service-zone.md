@@ -50,9 +50,9 @@ The worked cases must show:
 
 This candidate may eventually complement:
 
-- [`HSA-P-003 — Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md);
-- [`HSA-P-005 — Designed Structural Penetration`](../designed-structural-penetration.md);
-- [`HSA-P-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md).
+- [`PAT-003 — Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md);
+- [`PAT-005 — Designed Structural Penetration`](../designed-structural-penetration.md);
+- [`PAT-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md).
 
 These references do not create graph edges while the proposition remains held.
 

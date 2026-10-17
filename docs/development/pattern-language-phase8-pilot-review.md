@@ -29,7 +29,7 @@ Phase 8 therefore produces a **crosswalk report**, not a new compiler truth laye
 The working model allowed a lightweight `PatternIntent` concept as an illustration. Implemented carelessly, this could become a god-object:
 
 ```text
-pattern = HSA-P-003
+pattern = PAT-003
 conforms = true
 ```
 
@@ -43,7 +43,7 @@ The first implementation should reuse existing `Requirement`, project configurat
 
 ```text
 PROJECT REQUIREMENT PR-17
-source/provenance: HSA-P-003
+source/provenance: PAT-003
 scope: route set SR-01
 requires: explicit route/branch topology + declared maintenance nodes
 ```
@@ -65,7 +65,7 @@ If a later UI benefits from a first-class pattern-selection record, that can rem
 Do not report:
 
 ```text
-HSA-P-003 = PASS
+PAT-003 = PASS
 ```
 
 without qualification.
@@ -73,7 +73,7 @@ without qualification.
 Prefer:
 
 ```text
-HSA-P-003 crosswalk report
+PAT-003 crosswalk report
   formal commitments       RESOLVED
   induced technical state  MIXED / see obligations
   architectural judgement  OPEN / ACCEPTED BY DESIGN AUTHORITY
@@ -192,9 +192,9 @@ Do not add a pattern subsystem.
 
 After P0 passes, exercise the Phase-8 mechanism using a compact subset of the pilot:
 
-- `HSA-P-005` Designed Structural Penetration — strongest native case;
-- `HSA-P-003` Coherent Horizontal Service Route — topology + diagnostics case;
-- optionally `HSA-P-012` Physical Service Index — change/invalidation/information-resilience case.
+- `PAT-005` Designed Structural Penetration — strongest native case;
+- `PAT-003` Coherent Horizontal Service Route — topology + diagnostics case;
+- optionally `PAT-012` Physical Service Index — change/invalidation/information-resilience case.
 
 This tests architectural provenance and crosswalk reporting without requiring whole-house geometry.
 

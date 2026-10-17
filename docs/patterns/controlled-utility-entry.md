@@ -1,5 +1,5 @@
 ---
-id: HSA-P-001
+id: PAT-001
 title: Controlled Utility Entry
 kind: pattern
 state: active
@@ -25,7 +25,7 @@ sequences:
   - service-topology
 ---
 
-# HSA-P-001 — Controlled Utility Entry
+# Controlled Utility Entry
 
 ## Context
 

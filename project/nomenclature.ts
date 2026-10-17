@@ -173,18 +173,32 @@ export const nomenclatureFamilies = [
     migration: 'LEGACY'
   },
   {
-    id: 'pattern.hsa',
-    meaning: 'Current canonical pattern machine identity derived from the superseded House Systems Architecture name',
-    owner: 'patterns',
+    id: 'legacy.pattern-hsa',
+    meaning: 'Superseded House Systems Architecture-derived pattern machine identity',
+    owner: 'provenance',
     examples: ['HSA-P-001'],
     pattern: '\\bHSA-P-\\d{3}\\b',
+    classification: 'LEGACY_PROHIBITED',
+    allowedSurfaces: PROVENANCE_SURFACES,
+    roles: ['PROVENANCE'],
+    stability: 'PROVENANCE_ONLY',
+    brandCoupling: 'NOT_APPLICABLE',
+    migration: 'LEGACY',
+    exception: 'Retained only in bounded PUB-NOM migration/provenance records and Git history.'
+  },
+  {
+    id: 'pattern.pat',
+    meaning: 'Canonical brand-neutral pattern machine identity',
+    owner: 'patterns',
+    examples: ['PAT-001'],
+    pattern: '\\bPAT-\\d{3}\\b',
     classification: 'INTERNAL_STABLE',
     allowedSurfaces: INTERNAL_MACHINE_SURFACES,
     roles: ['IDENTITY_ONLY'],
-    stability: 'MIGRATABLE',
-    brandCoupling: 'PROHIBITED',
-    migration: 'NOM03_REVIEW',
-    exception: 'Current public-machine joins may retain the identifier until NOM-03 freezes the replacement/retention decision; it is not approved for ordinary reader display.'
+    stability: 'DURABLE',
+    brandCoupling: 'NOT_APPLICABLE',
+    migration: 'CURRENT',
+    exception: 'Exact machine join only; the pattern title is the ordinary reader identity.'
   },
   {
     id: 'grammar.g01',

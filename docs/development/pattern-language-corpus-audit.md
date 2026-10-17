@@ -67,18 +67,18 @@ This is already a reduction in conceptual clutter rather than a catalogue expans
 
 | Current | Decision | Recommended kind/name | Evidence | Reason / migration action |
 |---|---|---|---|---|
-| **01 Controlled Utility Entry** | **RETAIN** | Pattern — `Controlled Utility Entry` | Established | Clear recurring external-to-internal relationship; multiple supplier/interface implementations; strong composition with hub and penetrations. Preserve `HSA-P-001`. |
-| **02 Plant Room as Service Hub** | **RETAIN** | Pattern — `Plant Room as Service Hub` | Established | Strong spatial pattern with area/acoustic/replacement forces. Preserve `HSA-P-002`. |
-| **03 Horizontal Service Spine** | **RENAME** | Pattern — **`Coherent Horizontal Service Route`** | Supported | Phase-5 run showed the invariant is coherent route topology, not one shared mixed-services duct. Preserve `HSA-P-003` if body is rewritten around service-specific routes and short branches. |
-| **04 High-Service-Room Service Wall** | **RETAIN** | Pattern — `High-Service-Room Service Wall` | Supported | Clear recurring room/interface relationship; multiple dry-side/service-wall constructions. Preserve `HSA-P-004`. |
-| **05 Designed Structural Penetration** | **RETAIN** | Pattern — `Designed Structural Penetration` | Established | Strong interface pattern that follows topology rather than creating it. Preserve `HSA-P-005`. |
-| **06 Water-Damage-Safe Service Route** | **DEMOTE** | Strategy — **`Fail-Safe Water Distribution`** / working title | Established principle; implementations vary | Phase-5 house uses fundamentally different physical responses for plant, riser, kitchen, bathroom and drainage. Common invariant is performance, not one spatial relationship. Retire `HSA-P-006` as pattern; do not reuse ID. Child candidates assessed separately below. |
-| **07 Permanent Opening / Replaceable Window** | **RETAIN** | Pattern — `Permanent Opening / Replaceable Window` | Supported | Strong lifespan/interface invariant; many frame/subframe/weathering implementations. Preserve `HSA-P-007`. |
-| **08 Movement / Slip Junction** | **RETAIN** | Pattern — `Movement / Slip Junction` | Established principle | Recurring interface relationship with multiple gap/overlap/trim/seal implementations. Preserve `HSA-P-008`. |
-| **09 Accessible Rainwater Route** | **RETAIN** | Pattern — `Accessible Rainwater Route` | Established principle | Coherent route/failure relationship; external/internal variants remain within same invariant. Preserve `HSA-P-009`. |
-| **10 Source-Capture Kitchen Extract** | **RETAIN** | Pattern — `Source-Capture Kitchen Extract` | Established | Distinct geometry/maintenance/air-replacement forces justify separate pattern rather than generic ventilation advice. Preserve `HSA-P-010`. |
-| **11 Roof Maintenance Route** | **RETAIN** | Pattern — `Roof Maintenance Route` | Established principle | Clear task-to-access geometry; implementation can be hatch, scaffold/interface, safe position etc. Preserve `HSA-P-011`. |
-| **12 Physical Service Index** | **RETAIN** | Pattern — `Physical Service Index` | Proposed | Stewardship-scale pattern; recurrence and physical/digital resilience justify identity. Preserve `HSA-P-012`, but evidence remains Proposed. |
+| **01 Controlled Utility Entry** | **RETAIN** | Pattern — `Controlled Utility Entry` | Established | Clear recurring external-to-internal relationship; multiple supplier/interface implementations; strong composition with hub and penetrations. Preserve `PAT-001`. |
+| **02 Plant Room as Service Hub** | **RETAIN** | Pattern — `Plant Room as Service Hub` | Established | Strong spatial pattern with area/acoustic/replacement forces. Preserve `PAT-002`. |
+| **03 Horizontal Service Spine** | **RENAME** | Pattern — **`Coherent Horizontal Service Route`** | Supported | Phase-5 run showed the invariant is coherent route topology, not one shared mixed-services duct. Preserve `PAT-003` if body is rewritten around service-specific routes and short branches. |
+| **04 High-Service-Room Service Wall** | **RETAIN** | Pattern — `High-Service-Room Service Wall` | Supported | Clear recurring room/interface relationship; multiple dry-side/service-wall constructions. Preserve `PAT-004`. |
+| **05 Designed Structural Penetration** | **RETAIN** | Pattern — `Designed Structural Penetration` | Established | Strong interface pattern that follows topology rather than creating it. Preserve `PAT-005`. |
+| **06 Water-Damage-Safe Service Route** | **DEMOTE** | Strategy — **`Fail-Safe Water Distribution`** / working title | Established principle; implementations vary | Phase-5 house uses fundamentally different physical responses for plant, riser, kitchen, bathroom and drainage. Common invariant is performance, not one spatial relationship. Retire `PAT-006` as pattern; do not reuse ID. Child candidates assessed separately below. |
+| **07 Permanent Opening / Replaceable Window** | **RETAIN** | Pattern — `Permanent Opening / Replaceable Window` | Supported | Strong lifespan/interface invariant; many frame/subframe/weathering implementations. Preserve `PAT-007`. |
+| **08 Movement / Slip Junction** | **RETAIN** | Pattern — `Movement / Slip Junction` | Established principle | Recurring interface relationship with multiple gap/overlap/trim/seal implementations. Preserve `PAT-008`. |
+| **09 Accessible Rainwater Route** | **RETAIN** | Pattern — `Accessible Rainwater Route` | Established principle | Coherent route/failure relationship; external/internal variants remain within same invariant. Preserve `PAT-009`. |
+| **10 Source-Capture Kitchen Extract** | **RETAIN** | Pattern — `Source-Capture Kitchen Extract` | Established | Distinct geometry/maintenance/air-replacement forces justify separate pattern rather than generic ventilation advice. Preserve `PAT-010`. |
+| **11 Roof Maintenance Route** | **RETAIN** | Pattern — `Roof Maintenance Route` | Established principle | Clear task-to-access geometry; implementation can be hatch, scaffold/interface, safe position etc. Preserve `PAT-011`. |
+| **12 Physical Service Index** | **RETAIN** | Pattern — `Physical Service Index` | Proposed | Stewardship-scale pattern; recurrence and physical/digital resilience justify identity. Preserve `PAT-012`, but evidence remains Proposed. |
 
 ## Core-12 consequence
 
@@ -198,11 +198,11 @@ The name deliberately avoids implying that every house needs a commercial-style 
 
 | Inventory item | Classification | Action | Notes |
 |---|---|---|---|
-| utility entry | Pattern | **Mapped to `HSA-P-001`** | No duplicate. |
-| plant hub | Pattern | **Mapped to `HSA-P-002`** | No duplicate. |
+| utility entry | Pattern | **Mapped to `PAT-001`** | No duplicate. |
+| plant hub | Pattern | **Mapped to `PAT-002`** | No duplicate. |
 | riser / vertical service zone | Pattern candidate | **Mapped to Accessible Vertical Service Zone** | Do not use generic `riser` as the canonical invariant. |
-| horizontal spine / route | Pattern | **Mapped to `HSA-P-003` rename** | Coherent service-specific route topology. |
-| high-service wall | Pattern | **Mapped to `HSA-P-004`** | No duplicate. |
+| horizontal spine / route | Pattern | **Mapped to `PAT-003` rename** | Coherent service-specific route topology. |
+| high-service wall | Pattern | **Mapped to `PAT-004`** | No duplicate. |
 | local deep zone | Pattern candidate / project tactic | **HOLD** | Recurring response where local duct/drainage depth would otherwise deepen a whole storey. Needs own forces/evidence before admission. May become `Local Deep Service Zone`. |
 | undercroft option | Implementation/topology family | **DEMOTE / HOLD outside language** | A crawlspace/undercroft is one way to realise maintenance geography and drainage/service access, but currently too construction/site-specific to be a pattern. |
 
@@ -219,7 +219,7 @@ The language should describe **where services are concentrated and how routes re
 | service skirting | Implementation variant | **MERGE upward** | Strong source material, but best understood as one implementation of broader room-scale accessible routing. |
 | vertical joinery route | Implementation variant | **MERGE upward** | Door surrounds/panelling solve the same room-scale problem in the vertical direction. |
 | **new combined abstraction** | Pattern candidate | **`Accessible Room Service Route`** | Local room distribution uses removable architectural joinery/fit-out rather than chasing permanent fabric. Skirting, door surrounds and local panels become variants. Strong candidate. |
-| controlled penetration | Pattern | **Mapped to `HSA-P-005`** | No duplicate. |
+| controlled penetration | Pattern | **Mapped to `PAT-005`** | No duplicate. |
 | compartmented void | Pattern candidate | **HOLD / likely admit as `Compartmented Service Void`** | Clear recurring boundary relationship: services cross, open void stops. Strong fire/acoustic/pest composition; needs evidence page. |
 | floor access | Strategy / pattern candidate | **HOLD / redefine** | Too vague. If retained, likely `Selective Floor Access` tied to actual service/change geography, not generic removable flooring. Must be reconciled with floor-platform prototype. |
 
@@ -266,10 +266,10 @@ This is materially clearer than one overloaded `Water-Damage-Safe Service Route`
 
 | Inventory item | Classification | Action | Notes |
 |---|---|---|---|
-| window | Pattern | **Mapped to `HSA-P-007`** | Preserve. |
+| window | Pattern | **Mapped to `PAT-007`** | Preserve. |
 | door | Pattern candidate | **HOLD / likely admit as `Permanent Opening / Replaceable Door`** | Shares lifespan logic with window but has materially different adjustment, wear, privacy/security and repeated-use forces. Separate pattern justified. |
 | threshold | Pattern candidate | **HOLD / likely admit as `Designed Threshold`** | Recurring junction between floor assemblies / exterior weathering / wear / movement. Internal/external variants should remain within one interface pattern if possible. |
-| slip/movement joint | Pattern | **Mapped to `HSA-P-008`** | Preserve. |
+| slip/movement joint | Pattern | **Mapped to `PAT-008`** | Preserve. |
 | experimental functional cornice | Implementation family / Reference House expression | **DEMOTE** | A cornice may realise a movement/access/route interface, but “functional cornice” is not itself the reusable invariant. Keep in Reference House/prototype work. |
 
 ### Openings finding
@@ -283,10 +283,10 @@ Do not create a generic abstract “replaceable opening” pattern merely to red
 | Inventory item | Classification | Action | Notes |
 |---|---|---|---|
 | perimeter dry zone | Pattern candidate | **HOLD as `Perimeter Dry / Inspection Zone`** | Potentially strong multi-function site/envelope relationship: wall-base drying/drainage/inspection + latent access territory. Needs evidence and definition to avoid becoming a universal gravel strip. |
-| rainwater route | Pattern | **Mapped to `HSA-P-009`** | Preserve. |
-| kitchen source capture | Pattern | **Mapped to `HSA-P-010`** | Preserve. |
+| rainwater route | Pattern | **Mapped to `PAT-009`** | Preserve. |
+| kitchen source capture | Pattern | **Mapped to `PAT-010`** | Preserve. |
 | bathroom extraction | Pattern candidate | **HOLD as `Source-Capture Bathroom Extract`** | Recurring moisture-plume + transfer-air + maintainable fan/duct relationship. Different enough from grease-laden kitchen extract to merit separate treatment if evidence remains strong. |
-| roof-maintenance route | Pattern | **Mapped to `HSA-P-011`** | Preserve. |
+| roof-maintenance route | Pattern | **Mapped to `PAT-011`** | Preserve. |
 | ground-supported façade access | Pattern | **RETAIN specialised developed pattern** | Assign stable ID in Phase 7. |
 
 ---
@@ -296,7 +296,7 @@ Do not create a generic abstract “replaceable opening” pattern merely to red
 | Inventory item | Classification | Action | Notes |
 |---|---|---|---|
 | fixing infrastructure | Pattern candidate | **MERGE with Architectural Backplane → `Controlled Attachment Plane`** | One stronger invariant avoids two overlapping records. |
-| physical service index | Pattern | **Mapped to `HSA-P-012`** | Preserve. |
+| physical service index | Pattern | **Mapped to `PAT-012`** | Preserve. |
 
 ---
 
@@ -306,20 +306,20 @@ This is **not** the Phase-7 final pattern list. It is the smallest useful pictur
 
 ## A. Existing patterns likely to survive
 
-1. `HSA-P-001` Controlled Utility Entry
-2. `HSA-P-002` Plant Room as Service Hub
-3. `HSA-P-003` Coherent Horizontal Service Route — renamed identity
-4. `HSA-P-004` High-Service-Room Service Wall
-5. `HSA-P-005` Designed Structural Penetration
-6. `HSA-P-007` Permanent Opening / Replaceable Window
-7. `HSA-P-008` Movement / Slip Junction
-8. `HSA-P-009` Accessible Rainwater Route
-9. `HSA-P-010` Source-Capture Kitchen Extract
-10. `HSA-P-011` Roof Maintenance Route
-11. `HSA-P-012` Physical Service Index
+1. `PAT-001` Controlled Utility Entry
+2. `PAT-002` Plant Room as Service Hub
+3. `PAT-003` Coherent Horizontal Service Route — renamed identity
+4. `PAT-004` High-Service-Room Service Wall
+5. `PAT-005` Designed Structural Penetration
+6. `PAT-007` Permanent Opening / Replaceable Window
+7. `PAT-008` Movement / Slip Junction
+8. `PAT-009` Accessible Rainwater Route
+9. `PAT-010` Source-Capture Kitchen Extract
+10. `PAT-011` Roof Maintenance Route
+11. `PAT-012` Physical Service Index
 12. Ground-Supported Façade Access — new ID later
 
-`HSA-P-006` would be retired as a pattern ID.
+`PAT-006` would be retired as a pattern ID.
 
 ## B. Strong pattern candidates
 

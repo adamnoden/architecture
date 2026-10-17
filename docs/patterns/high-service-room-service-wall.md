@@ -1,5 +1,5 @@
 ---
-id: HSA-P-004
+id: PAT-004
 title: High-Service-Room Service Wall
 kind: pattern
 state: active
@@ -22,14 +22,14 @@ principles:
   - 8
 requires: []
 completes:
-  - HSA-P-003
+  - PAT-003
 alternative_to: []
 tension_with: []
 sequences:
   - service-topology
 ---
 
-# HSA-P-004 — High-Service-Room Service Wall
+# High-Service-Room Service Wall
 
 ## Context
 
@@ -55,7 +55,7 @@ The service zone may be a wall thickness, cupboard, corridor-side panel or adjac
 
 ## Relationships
 
-This pattern commonly **completes** [HSA-P-003 — Coherent Horizontal Service Route](coherent-horizontal-service-route.md) by localising the building-scale topology at the room scale and creating orderly places for short branches, isolation and maintainable components.
+This pattern commonly **completes** [PAT-003 — Coherent Horizontal Service Route](coherent-horizontal-service-route.md) by localising the building-scale topology at the room scale and creating orderly places for short branches, isolation and maintainable components.
 
 A service wall can still be useful without a formal whole-house route; the edge records composition, not mandatory sequence.
 

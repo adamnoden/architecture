@@ -28,7 +28,7 @@ The current editorial authority, `docs/manuscript/publication-architecture.md`, 
 | Internalised / replaced material | Durable value retained in | Closeout judgement |
 |---|---|---|
 | House Design Doctrine v7 / legacy doctrine register crosswalk | `governing-principles.md`; current strategies, patterns and held candidates; current research and Reference House technical syntheses | Historical formulations are not publication content. Unique ideas survive under current owners; the crosswalk remains internal archaeology only. |
-| Pattern Core-12, pilot catalogues, reversible-assembly aggregate and migration records | current 21 canonical pattern records; 3 strategy records; 4 held candidates; `docs/patterns/README.md`; service-topology sequence | Migration history internalised. Stable `HSA-P-*` identities remain because they serve current cross-reference, not because of provenance. |
+| Pattern Core-12, pilot catalogues, reversible-assembly aggregate and migration records | current 21 canonical pattern records; 3 strategy records; 4 held candidates; `docs/patterns/README.md`; service-topology sequence | Migration history internalised. Stable `PAT-*` identities remain because they serve current cross-reference, not because of provenance. |
 | G-01 research-stage, falsification and reduction records | `g01-v0.1.md`; subject-organised grammar evidence; `G-01 Validation and Limits`; Reference House G-01 conformance | Stage chronology internalised after findings were synthesised. `G-01 v0.1` remains as a current formal specification identity. |
 | Reference House RH-C / RH-06→RH-11 stage records, restart ledgers and coordination gates | `docs/reference-house/README.md`; `part-iv.md`; current Technical Coordination; Tectonic Architectural Language; Vertical Interface Coordination; Pattern Selection; Independent Review Questions; generated current inspection outputs | Development sequence removed from public reading. Current building decisions, uncertainty and external proof obligations remain. |
 | Whole-House Coordination Fixture 01 and stale 12.6 × 11.4 m / 3.6 × 3.6 m output | current 12.0 × 10.8 m / 3.6 × 4.0 m Reference House and deterministic generated inspection plan | Stale geometry intentionally rejected, not migrated as a current alternative. Historical file remains internal. |
@@ -46,7 +46,7 @@ The current editorial authority, `docs/manuscript/publication-architecture.md`, 
 The sanitation rule is semantic, not cosmetic. The following identifiers remain because they carry current meaning:
 
 - `G-01 v0.1` — current bounded Georgian-derived grammar specification;
-- `HSA-P-*` — stable canonical pattern identities;
+- `PAT-*` — stable canonical pattern identities;
 - House Kernel and Metamorph Compiler — current architectural/computational system names;
 - current model/compiler/evidence identifiers where required for deterministic outputs;
 - external standards, regulations, classifications and evidence identifiers.

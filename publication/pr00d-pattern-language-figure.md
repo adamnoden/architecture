@@ -30,4 +30,4 @@ The figure does not establish:
 - that strategies or held candidates are pattern nodes;
 - technical adequacy of any service system selected through the sequence.
 
-Stable `HSA-P-*` identities are shown in full. Pattern numbers remain identity only; they do not encode importance, sequence or maturity.
+Stable `PAT-*` identities are shown in full. Pattern numbers remain identity only; they do not encode importance, sequence or maturity.

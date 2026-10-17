@@ -1,5 +1,5 @@
 ---
-id: HSA-P-002
+id: PAT-002
 title: Plant Room as Service Hub
 kind: pattern
 state: active
@@ -22,14 +22,14 @@ principles:
   - 10
 requires: []
 completes:
-  - HSA-P-001
+  - PAT-001
 alternative_to: []
 tension_with: []
 sequences:
   - service-topology
 ---
 
-# HSA-P-002 — Plant Room as Service Hub
+# Plant Room as Service Hub
 
 ## Context
 
@@ -55,7 +55,7 @@ The hub may be a room, enlarged cupboard, utility zone or other proportionate ar
 
 ## Relationships
 
-This pattern commonly **completes** [HSA-P-001 — Controlled Utility Entry](controlled-utility-entry.md): the entry controls the transition into the building; the hub turns that transition into legible internal distribution, isolation and replaceable plant.
+This pattern commonly **completes** [PAT-001 — Controlled Utility Entry](controlled-utility-entry.md): the entry controls the transition into the building; the hub turns that transition into legible internal distribution, isolation and replaceable plant.
 
 The relationship is not a hard dependency. A useful hub can exist where utility entries are separated or inherited.
 

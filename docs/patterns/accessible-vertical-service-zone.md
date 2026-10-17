@@ -1,5 +1,5 @@
 ---
-id: HSA-P-014
+id: PAT-014
 title: Accessible Vertical Service Zone
 kind: pattern
 state: active
@@ -31,7 +31,7 @@ sequences:
   - service-topology
 ---
 
-# HSA-P-014 — Accessible Vertical Service Zone
+# Accessible Vertical Service Zone
 
 ## Context
 

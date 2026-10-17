@@ -85,7 +85,7 @@ A project may select a pattern without fixing its implementation. A held candida
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
 
-Use stable `HSA-P-*` identities for canonical patterns. Strategies remain strategies and receive no pattern ID.
+Use stable `PAT-*` identities for canonical patterns. Strategies remain strategies and receive no pattern ID.
 
 ## Held candidates and implementation challengers
 
@@ -325,14 +325,14 @@ Service architecture must now fit the actual building rather than an abstract di
 - building-passport data requirements.
 
 **Prototype candidates, only where selected by the project**
-- representative [`HSA-P-015 — Accessible Room Service Route`](../patterns/accessible-room-service-route.md) implementation;
+- representative [`PAT-015 — Accessible Room Service Route`](../patterns/accessible-room-service-route.md) implementation;
 - window/opening interface;
 - high-service-room service wall;
 - selective floor-access condition;
 - functional cornice or other movement interface where retained;
 - representative water-failure-management detail;
 - structural floor-edge challenger under [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md);
-- [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) with [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) where the held lining candidate is being tested;
+- [`PAT-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) with [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) where the held lining candidate is being tested;
 - full-room floor platform only if a simpler selective-access strategy leaves a material problem unresolved.
 
 **Gate**

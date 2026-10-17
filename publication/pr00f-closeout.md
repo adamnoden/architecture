@@ -16,7 +16,7 @@ Existing project-brand validation and manual publication review agree on the hie
 - **House Kernel** names the formal architectural/computational system within it;
 - **Metamorph Compiler** names the bounded executable machinery;
 - former master names survive only where historical provenance requires them;
-- the legacy `HSA-P-*` prefix remains stable pattern identity rather than present-day project branding.
+- the legacy `PAT-*` prefix remains stable pattern identity rather than present-day project branding.
 
 Pattern / strategy / held-candidate distinctions remain intact. G-01 is consistently treated as frozen v0.1 at its bounded Georgian-derived scope rather than as a complete historical classifier or Ovid’s House doctrine.
 
