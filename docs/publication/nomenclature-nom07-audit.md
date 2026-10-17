@@ -17,7 +17,7 @@ NOM-07 does not reopen completed NOM-02/NOM-03/NOM-06 decisions without new evid
 
 The gate is divided into independently resumable sub-gates so that each pass can be completed, recorded and validated before the next begins.
 
-- [ ] **NOM-07A — front door, navigation and publication openings**  
+- [x] **NOM-07A — front door, navigation and publication openings**  
   Contents, landing/navigation/search-facing titles, Reader's Guide, part/chapter openings and section labels.
 - [ ] **NOM-07B — patterns, strategies and held candidates**  
   Pattern index and every reader-facing pattern page, then strategies and held candidates. Verify that useful cross-reference capability survived removal of machine IDs.
@@ -52,7 +52,25 @@ Each finding is recorded as one of:
 
 ## Audit log
 
-_No sub-gate completed yet._
+### NOM-07A — front door, navigation and publication openings — COMPLETE
+
+Surfaces read:
+
+- project landing page and reading guide;
+- manuscript overview and Reader's Guide;
+- Preface and Part I–V openings;
+- publication entry titles used by the Working Edition;
+- VitePress top-level navigation/sidebar definitions together with the public-surface filter and public-label overrides.
+
+Findings:
+
+- **FIX-NOW — obsolete hidden-ID explanation in Reader's Guide.** The guide still told readers that stable pattern IDs preserve provenance and cross-reference even though NOM-06 deliberately removed those machine IDs from ordinary presentation. Replaced with the actual reader semantic: pattern names are the identity and book order is editorial rather than ranking or required sequence.
+- **FIX-NOW — code-first grammar introduction.** The first Reader's Guide mention of `G-01 v0.1` led with the code. Recast as a controlled Georgian-derived grammar with the compact reference in parentheses, so the reader encounters meaning before identifier.
+- **RETAIN — `G-01` compact reference.** At the publication opening level the reference earns a role because it distinguishes the selected controlled grammar from the general architectural-grammar framework and is introduced with its human meaning. Whether `v0.1` is the best public version treatment remains a NOM-08 question.
+- **INTERNAL-ONLY — workflow/history navigation definitions.** The source navigation file contains development/provenance labels and coded programme names, but `project/public-surface.ts` removes those sources from the public build/navigation and applies human-facing label overrides to retained technical material. No reader-facing defect was found at this layer.
+- **RETAIN — ordinary external standards acronyms.** Familiar external references such as ISO/RICS/CIBSE/RIBA are used as standards/professional-body references rather than project-owned identity machinery. NOM-07 does not expand into stylistic acronym elimination where context is already clear.
+
+Implementation commit: `5d265aca62163b61e96b898dbe881c10f16c2fbe`.
 
 ## Exit condition
 
