@@ -318,11 +318,11 @@ export const workstreamStatuses = [
     id: 'publication',
     name: 'Publication',
     maturity: 'M4',
-    reviewedOn: '2026-10-15',
+    reviewedOn: '2026-10-17',
     currentState:
-      'Publication Architecture v0.14 has been completed through PR-00 and then attacked and materially corrected through PR-01. The revised 226-page candidate is re-proved and frozen at the R8-F content identity, with all R7 S1/S2 correction fronts resolved at candidate-book scope and no S0 finding.',
+      'PR-00 and PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 then removed development-history residue from the reader-facing site and publication corpus without changing the substantive M4 proposition. The resolved Working Edition on current main is now the controlled publication source for PR-02.',
     nextGate:
-      'PR-02 produces the private 12-copy physical object without reopening the manuscript by preference; PR-03/PR-04 then supply the independent critical cycle required before any M5 or public-release claim.',
+      'PR-02 produces the private 12-copy physical object from the resolved Working Edition without reopening the manuscript by preference; PR-03/PR-04 then supply the independent critical cycle required before any M5 or public-release claim.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
@@ -332,7 +332,8 @@ export const workstreamStatuses = [
       ],
       internallyValidated: [
         'publication/pr01-r7-findings-freeze.md',
-        'publication/pr01-r9-reproof-refreeze.md'
+        'publication/pr01-r9-reproof-refreeze.md',
+        'docs/publication/resolved-work-sanitation-closeout.md'
       ]
     }
   },
