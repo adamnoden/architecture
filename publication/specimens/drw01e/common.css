@@ -25,7 +25,7 @@ section.page:first-child { break-before: auto; }
 .plate-title { margin: 0; font-size: 11pt; line-height: 1.15; font-weight: 700; }
 .plate-scale { font-size: 8.3pt; white-space: nowrap; }
 .plate-drawing { display: block; width: 128mm; margin: 0 auto; }
-.plate-caption { width: 128mm; margin: 4mm auto 0; }
+.plate-caption { width: 128mm; margin: 6mm auto 0; }
 .plate-caption strong { font-weight: 700; }
 .pair-note { width: 128mm; margin: 1mm auto 0; font-family: var(--sans); font-size: 7pt; color: var(--context); }
 .spread-window { width: 128mm; height: 105mm; overflow: hidden; margin: 0 auto; position: relative; }
