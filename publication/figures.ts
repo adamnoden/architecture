@@ -2,7 +2,6 @@ import { applyPublicationIntegrityEdits } from './integrity-edits.js'
 
 interface FigurePlacement {
   readonly entryId: string
-  readonly id: string
   readonly anchor: string
   readonly image: string
   readonly alt: string
@@ -12,7 +11,6 @@ interface FigurePlacement {
 const placements: readonly FigurePlacement[] = [
   {
     entryId: 'part-i',
-    id: 'D-F01',
     anchor:
       'The term does not imply exposed services, plug-in rooms or visible modularity. The platform has four principal parts—permanent fabric, replaceable systems, designed interfaces and maintenance geography—joined by an assembly hierarchy and governed throughout by workmanship robustness.',
     image: 'figures/selective-permanence-platform.svg',
@@ -22,7 +20,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-ii',
-    id: 'D-F02',
     anchor:
       'One component may legitimately perform several jobs, but the combination should be intentional.',
     image: 'figures/designed-interface-functions.svg',
@@ -32,7 +29,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-ii',
-    id: 'D-F03',
     anchor:
       'Different systems require different answers; there is no universal tray, tell-tale or sensor.',
     image: 'figures/failure-architecture-sequence.svg',
@@ -42,7 +38,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-ii',
-    id: 'D-F04',
     anchor: '**Withdrawal** — how the component leaves and its replacement arrives.',
     image: 'figures/maintenance-geography-route.svg',
     alt: 'Maintenance route from approach to withdrawal',
@@ -51,7 +46,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-iii',
-    id: 'D-F05',
     anchor:
       'The Physical Service Index asks for enough durable, local information that a future competent person can find primary systems and isolations even when the original software, contractor or owner is gone.',
     image: '../docs/manuscript/figures/pattern-language-fields-sequence.svg',
@@ -61,7 +55,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-iv',
-    id: 'D-F06',
     anchor: '- technical and maintenance geography made spatially explicit.',
     image: 'figures/reference-house-type-orientation.svg',
     alt: 'Reference House type and orientation',
@@ -70,7 +63,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-iv',
-    id: 'D-F07',
     anchor:
       'This is characteristic of the broader method: historical language is used to establish hierarchy, not to import spectacle.',
     image: 'figures/reference-house-spatial-sectional-order.svg',
@@ -80,7 +72,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-iv',
-    id: 'D-F08',
     anchor:
       'If engineering later demonstrates otherwise, the architecture must respond. The present drawings are not permitted to convert plausibility into adequacy.',
     image: 'figures/reference-house-structural-assembly-logic.svg',
@@ -90,7 +81,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-iv',
-    id: 'D-F09',
     anchor: 'Principal rooms remain free of primary wet, soil, large-duct and plant routes.',
     image: 'figures/reference-house-service-maintenance-geography.svg',
     alt: 'Reference House service and maintenance geography',
@@ -99,7 +89,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-iv',
-    id: 'D-F11',
     anchor:
       'The architectural implication is subtle but significant: landscape cannot be treated as independent decoration. Permanent raised planters, fountains, stores or other fixed objects must not casually consume the only credible maintenance position.',
     image: 'figures/reference-house-external-maintenance-geography.svg',
@@ -109,7 +98,6 @@ const placements: readonly FigurePlacement[] = [
   },
   {
     entryId: 'part-iv',
-    id: 'D-F10',
     anchor:
       'A separate higher-level emergency overflow provides an independent failure route before abnormal standing water reaches internal thresholds.',
     image: 'figures/reference-house-water-failure-geography.svg',
@@ -118,6 +106,10 @@ const placements: readonly FigurePlacement[] = [
       'Water and failure geography. Four low-slope roof fields drain away from the courtyard toward inspectable external edges. The court manages principally its own open-to-sky area through a short primary route toward the service side, with an independent higher-level overflow for abnormal water. Geometry reduces consequence; it does not establish hydraulic capacity.'
   }
 ]
+
+function figureLabel(placement: FigurePlacement): string {
+  return placement.alt
+}
 
 function figureBlock(placement: FigurePlacement): string {
   return `![${placement.alt}](${placement.image})\n\n*${placement.caption}*`
@@ -129,15 +121,15 @@ export function applyPublicationFigures(entryId: string, markdown: string): stri
 
   for (const placement of entryPlacements) {
     if (markdown.includes(`](${placement.image})`)) {
-      throw new Error(`${placement.id} is already present in ${entryId}; remove duplicate figure composition.`)
+      throw new Error(`${figureLabel(placement)} is already present in ${entryId}; remove duplicate figure composition.`)
     }
 
     const first = markdown.indexOf(placement.anchor)
     if (first < 0) {
-      throw new Error(`${placement.id} anchor changed in ${entryId}; re-place the figure deliberately.`)
+      throw new Error(`${figureLabel(placement)} anchor changed in ${entryId}; re-place the figure deliberately.`)
     }
     if (markdown.indexOf(placement.anchor, first + placement.anchor.length) >= 0) {
-      throw new Error(`${placement.id} anchor is ambiguous in ${entryId}; choose a unique placement.`)
+      throw new Error(`${figureLabel(placement)} anchor is ambiguous in ${entryId}; choose a unique placement.`)
     }
 
     const end = first + placement.anchor.length

@@ -1,9 +1,7 @@
 # G-01 Case BSQ — Bedford Square urban family
 
 **Case ID:** G01-BSQ  
-**Analysis role:** SUPPLEMENTARY — D5/D6 urban measurement and coupling case  
 **Corpus class:** later-Georgian London terrace / square composition  
-**Status:** web-source pass v0.1  
 **Evidence position:** mixed A1/B — public measured plans and direct historical dimensions are inspectable online; sectional/elevation evidence is partly source-qualified but not yet fully extracted  
 **Purpose:** supplement 76 Dean Street with an urban case whose public evidence can carry measurement, while testing architectural order that operates above the individual-house scale.
 
@@ -17,11 +15,11 @@ Bedford Square is not a replacement for Dean Street. It is a separate source-led
 
 The public-domain *Survey of London* volume for St Giles-in-the-Fields exposes measured ground/first-floor plans for several Bedford Square houses, including Nos. 1, 6, 11, 25 and 48. The same source records direct site dimensions and alteration histories. A separate Georgian Cities source identifies a measured house plan/section at 1:400 and frontage at 1:200 by Niels Rohweder.
 
-This is enough to make Bedford Square useful for D5/D6 without lowering the evidence standard.
+This is enough to make Bedford Square useful for measurement/coupling analysis without lowering the evidence standard.
 
-## 2. Web-only evidence rule
+## 2. Public-source evidence rule
 
-The research environment for this pass is the public web.
+Quantitative evidence in this case is admitted only where the underlying public source can be inspected directly.
 
 An archival catalogue entry saying that a drawing exists is **not** enough for quantitative extraction if the drawing itself cannot be inspected. That distinction matters because Historic England catalogue records exist for several promising Georgian houses but currently expose no usable image.
 
@@ -41,7 +39,7 @@ For this case:
 | BSQ-S03 | Plate 69, No. 6 Bedford Square | measured ground/first-floor plan | No. 6/6A topology and scale; later subdivision visible | **A1 plan evidence, phase-qualified** |
 | BSQ-S04 | Plates / in-text measured plans for Nos. 10, 11, 25, 35, 38, 48 and others | measured plans | repeated urban plan families and counterexamples | **acquisition pool** |
 | BSQ-S05 | Historic England, Bedford Square listed-building records | statutory descriptive record | date, completeness, elevations, storeys, block significance | **authoritative context** |
-| BSQ-S06 | Georgian Cities, Sorbonne Université, “Bedford estates in London” | research/teaching synthesis; measured-drawing provenance | uniform row logic; two-house centrepiece condition; Rohweder plan/section 1:400 and frontage 1:200 | **D6 + source qualification** |
+| BSQ-S06 | Georgian Cities, Sorbonne Université, “Bedford estates in London” | research/teaching synthesis; measured-drawing provenance | uniform row logic; two-house centrepiece condition; Rohweder plan/section 1:400 and frontage 1:200 | **plan/elevation coupling analysis + source qualification** |
 | BSQ-S07 | Niels Rohweder measured drawing reproduced in Steen Eiler Rasmussen, *London: The Unique City* | measured plan/section/frontage | whole-house section/frontage relationship | **located; extract only when image is inspectable at adequate resolution** |
 
 ### Public source anchors
@@ -79,33 +77,33 @@ Consequence:
 
 The survey explicitly records considerable ground-floor alteration.
 
-Consequence: retain as an alteration/counterexample case, not a clean D5 derivation plan.
+Consequence: retain as an alteration/counterexample case, not a clean dimensional analysis derivation plan.
 
 ### No. 1
 
 The survey records a distinctive Leverton-type composition and a full-width entrance hall divided into three bays, with the stair in the left bay. No material plan alteration is identified in the passage currently used for this analysis.
 
-Consequence: strong D6 topology/coupling case; metric extraction remains tied to the measured plan.
+Consequence: strong plan/elevation coupling analysis topology/coupling case; metric extraction remains tied to the measured plan.
 
-## 6. D5 — admitted dimensions
+## 6. dimensional analysis — admitted dimensions
 
 The table below contains only values supportable from public text or a declared derivation.
 
 | ID | Subject | Raw evidence | Derived relation | Evidence class | Use |
 |---|---|---:|---:|---|---|
-| BSQ-D5-01 | Bedford Square, between house fronts | 520 ft × 320 ft | aspect ≈ 1.625 | DIRECT | urban-order context only |
-| BSQ-D5-02 | central garden | 375 ft × 255 ft | aspect ≈ 1.471 | DIRECT | urban-order context only |
-| BSQ-D5-03 | combined plot corresponding to present Nos. 24–27, south edge | 99.25 ft across four houses | mean frontage = 24.8125 ft | DIRECT + DERIVED | terrace-module evidence |
-| BSQ-D5-04 | same combined plot, north edge | 98.5 ft across four houses | mean frontage = 24.625 ft | DIRECT + DERIVED | terrace-module evidence |
-| BSQ-D5-05 | same combined plot, east/west depth | 73 ft / 67.5 ft | tapered parcel | DIRECT | plot-depth / non-rectangularity evidence |
+| BSQ-dimensional analysis-01 | Bedford Square, between house fronts | 520 ft × 320 ft | aspect ≈ 1.625 | DIRECT | urban-order context only |
+| BSQ-dimensional analysis-02 | central garden | 375 ft × 255 ft | aspect ≈ 1.471 | DIRECT | urban-order context only |
+| BSQ-dimensional analysis-03 | combined plot corresponding to present Nos. 24–27, south edge | 99.25 ft across four houses | mean frontage = 24.8125 ft | DIRECT + DERIVED | terrace-module evidence |
+| BSQ-dimensional analysis-04 | same combined plot, north edge | 98.5 ft across four houses | mean frontage = 24.625 ft | DIRECT + DERIVED | terrace-module evidence |
+| BSQ-dimensional analysis-05 | same combined plot, east/west depth | 73 ft / 67.5 ft | tapered parcel | DIRECT | plot-depth / non-rectangularity evidence |
 
 ### What the four-house mean does and does not mean
 
 The mean frontage is **not** an assertion that every one of Nos. 24–27 measured exactly 24.7 ft. The source gives the combined parcel and identifies it with four present houses. The derived mean is therefore evidence of the order of the urban module, not an individual-house dimension.
 
-This distinction is precisely the kind of provenance D5 needs.
+This distinction is precisely the kind of provenance dimensional analysis needs.
 
-## 7. D5 — measured-plan pool
+## 7. dimensional analysis — measured-plan pool
 
 The public *Survey of London* identifies the following as measured ground/first-floor plans:
 
@@ -119,19 +117,19 @@ The public *Survey of London* identifies the following as measured ground/first-
 - No. 48 — in-text plan;
 - No. 50 — Council collection.
 
-For the present pass, these drawings are a **measurement pool**, not nine independent clean samples. Alteration state and image resolution must be checked house by house before room metrics enter the dataset.
+These drawings form a **measurement pool**, not nine independent clean samples. Alteration state and image resolution must be checked house by house before room metrics enter the dataset.
 
 ### No. 6 scale condition
 
 An open web reproduction exposes the ground-floor measured plan with a feet scale. It is sufficient to verify that metric extraction is possible, but the widely available reproduction is downsampled and the house was already subdivided at survey date.
 
-No new room ratio is admitted from that image in this pass.
+No new room ratio is admitted from that image.
 
 That restraint is intentional.
 
-## 8. D5 finding — urban proportion has more than one scale
+## 8. dimensional analysis finding — urban proportion has more than one scale
 
-The previous D5 seed concentrated on room width:length:height relationships in Marble Hill and Danson.
+The earlier dimensional analysis concentrated on room width:length:height relationships in Marble Hill and Danson.
 
 Bedford Square adds another necessary scale:
 
@@ -149,7 +147,7 @@ A grammar of urban Georgian domestic architecture can therefore contain dimensio
 
 The parcel evidence also warns against importing freestanding-villa dimensions into the townhouse profile. The narrow urban module is a morphological condition, not a degraded villa.
 
-## 9. D6 — row-level order crosses dwelling boundaries
+## 9. plan/elevation coupling analysis — row-level order crosses dwelling boundaries
 
 This is the strongest result of the case.
 
@@ -161,9 +159,9 @@ This means:
 
 > **the architectural centre of the elevation need not belong to the architectural centre of one dwelling.**
 
-The current D6 vocabulary already records coupling direction per attribute. Bedford Square shows that it also needs **scope**.
+The current plan/elevation coupling analysis vocabulary already records coupling direction per attribute. Bedford Square shows that it also needs **scope**.
 
-## 10. D6 modelling correction — coupling has an owner/scope
+## 10. plan/elevation coupling analysis modelling correction — coupling has an owner/scope
 
 A coupling record should identify not only:
 
@@ -228,9 +226,9 @@ Bedford Square and 76 Dean Street attack that assumption from different directio
 
 This strengthens the existing G-01 position that symmetry and alignment are scoped relations.
 
-## 12. D6 mutation seed — individualise the centrepiece
+## 12. plan/elevation coupling analysis mutation seed — individualise the centrepiece
 
-### D6-M06 — make each central dwelling compositionally autonomous
+### plan/elevation coupling analysis-M06 — make each central dwelling compositionally autonomous
 
 Take a two-house centrepiece condition and redraw it so each dwelling receives its own independent classical centre/pediment logic.
 
@@ -251,13 +249,13 @@ The two cases now have different jobs:
 | Case | Primary job |
 |---|---|
 | 76 Dean Street | early-Georgian urban counterexample; off-centre entrance; vertical hierarchy; route differentiation; strong UNKNOWN discipline |
-| Bedford Square | later-Georgian measured urban family; dimensional module; aggregate/row composition; scope-aware D6 coupling |
+| Bedford Square | later-Georgian measured urban family; dimensional module; aggregate/row composition; scope-aware plan/elevation coupling analysis coupling |
 
 This is stronger than forcing one case to satisfy every evidence need.
 
 ## 14. Current verdict
 
-**ADMIT as supplementary D5/D6 case.**
+**ADMIT as supplementary measurement/coupling analysis case.**
 
 Promote one modelling correction, not an architectural rule:
 

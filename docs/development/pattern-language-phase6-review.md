@@ -27,18 +27,18 @@ Phase 7 is therefore authorised, but as a controlled migration from the matrix b
 
 | Existing ID | Phase-7 canonical identity | Action |
 |---|---|---|
-| `HSA-P-001` | Controlled Utility Entry | retain |
-| `HSA-P-002` | Plant Room as Service Hub | retain |
-| `HSA-P-003` | **Coherent Horizontal Service Route** | rename current Horizontal Service Spine; preserve identity |
-| `HSA-P-004` | High-Service-Room Service Wall | retain |
-| `HSA-P-005` | Designed Structural Penetration | retain |
-| `HSA-P-006` | — | **retire as pattern**; its content becomes the `Fail-Safe Water Distribution` strategy; ID is never reused |
-| `HSA-P-007` | Permanent Opening / Replaceable Window | retain |
-| `HSA-P-008` | Movement / Slip Junction | retain |
-| `HSA-P-009` | Accessible Rainwater Route | retain |
-| `HSA-P-010` | Source-Capture Kitchen Extract | retain |
-| `HSA-P-011` | Roof Maintenance Route | retain |
-| `HSA-P-012` | Physical Service Index | retain |
+| `PAT-001` | Controlled Utility Entry | retain |
+| `PAT-002` | Plant Room as Service Hub | retain |
+| `PAT-003` | **Coherent Horizontal Service Route** | rename current Horizontal Service Spine; preserve identity |
+| `PAT-004` | High-Service-Room Service Wall | retain |
+| `PAT-005` | Designed Structural Penetration | retain |
+| `PAT-006` | — | **retire as pattern**; its content becomes the `Fail-Safe Water Distribution` strategy; ID is never reused |
+| `PAT-007` | Permanent Opening / Replaceable Window | retain |
+| `PAT-008` | Movement / Slip Junction | retain |
+| `PAT-009` | Accessible Rainwater Route | retain |
+| `PAT-010` | Source-Capture Kitchen Extract | retain |
+| `PAT-011` | Roof Maintenance Route | retain |
+| `PAT-012` | Physical Service Index | retain |
 
 The existing Core 12 therefore becomes eleven active pattern identities plus one retired identity.
 
@@ -98,7 +98,7 @@ The following propositions pass the pattern admission test strongly enough to re
 **Evidence:** Supported direction  
 **Why admitted:** merges `Architectural Backplane` and `Fixing Infrastructure` around a clearer invariant: repeated faster-changing fit-out attaches primarily to a durable, load-classified interface rather than repeatedly consuming permanent fabric. Specific rail/backplane constructions remain implementation families.
 
-Phase 7 will assign stable IDs sequentially after `HSA-P-012`; `HSA-P-006` remains permanently retired.
+Phase 7 will assign stable IDs sequentially after `PAT-012`; `PAT-006` remains permanently retired.
 
 ---
 
@@ -130,7 +130,7 @@ No stable HSA pattern number is created merely to remember these ideas.
 
 ## Fail-Safe Water Distribution
 
-This absorbs the durable content of retired `HSA-P-006 Water-Damage-Safe Service Route`.
+This absorbs the durable content of retired `PAT-006 Water-Damage-Safe Service Route`.
 
 It is a strategy because its valid physical responses differ materially by route and risk:
 
@@ -209,7 +209,7 @@ After Phase 7, the active canonical language should contain **21 pattern identit
 
 - 11 surviving existing identities;
 - 10 new admitted identities;
-- one permanently retired historical ID (`HSA-P-006`).
+- one permanently retired historical ID (`PAT-006`).
 
 The number 21 has no design significance and is not a target. It is simply the consequence of the audit.
 
@@ -231,7 +231,7 @@ Do not perform the migration as one destructive rewrite.
 
 Create one generated/browsable language index from pattern frontmatter. Record active, candidate and retired states without creating a second source-of-truth registry.
 
-Assign IDs to the ten new admitted patterns. Keep `HSA-P-006` retired.
+Assign IDs to the ten new admitted patterns. Keep `PAT-006` retired.
 
 ## P7.2 — migrate surviving existing patterns individually
 
@@ -245,9 +245,9 @@ For each:
 - avoid expanding prose merely to fill a template;
 - redirect/replace old aggregate navigation only after all migrated pages exist.
 
-`HSA-P-003` receives its scope/name correction during this step.
+`PAT-003` receives its scope/name correction during this step.
 
-`HSA-P-006` becomes a retired-pattern pointer to the water strategy, not a rewritten pattern pretending identity survived.
+`PAT-006` becomes a retired-pattern pointer to the water strategy, not a rewritten pattern pretending identity survived.
 
 ## P7.3 — migrate/admit the ten new patterns
 
@@ -296,7 +296,7 @@ Phase 7 passes only if:
 
 1. every active pattern has exactly one canonical page;
 2. every stable ID is unique and never silently changes meaning;
-3. `HSA-P-006` remains visibly retired rather than disappearing from provenance;
+3. `PAT-006` remains visibly retired rather than disappearing from provenance;
 4. strategies and implementation families have clear homes outside the pattern graph;
 5. held candidates remain visibly non-canonical;
 6. no research/evidence record is rewritten into false certainty;

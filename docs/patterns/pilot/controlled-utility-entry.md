@@ -1,5 +1,5 @@
 ---
-id: HSA-P-001
+id: PAT-001
 title: Controlled Utility Entry
 kind: pattern
 state: pilot
@@ -25,9 +25,9 @@ sequences:
   - service-topology
 ---
 
-# HSA-P-001 — Controlled Utility Entry
+# PAT-001 — Controlled Utility Entry
 
-> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-001 — Controlled Utility Entry`](../controlled-utility-entry.md).
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`PAT-001 — Controlled Utility Entry`](../controlled-utility-entry.md).
 
 ## Context
 
@@ -61,4 +61,4 @@ The architectural judgement about whether several utilities should share one zon
 
 ## Canonical successor
 
-See [`HSA-P-001 — Controlled Utility Entry`](../controlled-utility-entry.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
+See [`PAT-001 — Controlled Utility Entry`](../controlled-utility-entry.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).

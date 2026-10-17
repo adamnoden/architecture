@@ -1,5 +1,5 @@
 ---
-id: HSA-P-003
+id: PAT-003
 title: Coherent Horizontal Service Route
 kind: pattern
 state: active
@@ -21,14 +21,14 @@ principles:
   - 8
 requires: []
 completes:
-  - HSA-P-002
+  - PAT-002
 alternative_to: []
 tension_with: []
 sequences:
   - service-topology
 ---
 
-# HSA-P-003 — Coherent Horizontal Service Route
+# Coherent Horizontal Service Route
 
 ## Context
 
@@ -52,7 +52,7 @@ Room-by-room routing creates repeated crossings of structure and boundaries, sca
 
 ## Relationships
 
-This pattern commonly **completes** [HSA-P-002 — Plant Room as Service Hub](plant-room-service-hub.md) by extending concentrated services through the building without immediately dissolving into ad-hoc branches.
+This pattern commonly **completes** [Plant Room as Service Hub](plant-room-service-hub.md) by extending concentrated services through the building without immediately dissolving into ad-hoc branches.
 
 It is not a hard dependency. Distributed plant, existing buildings or unusual forms may produce coherent horizontal routes without a single service hub.
 

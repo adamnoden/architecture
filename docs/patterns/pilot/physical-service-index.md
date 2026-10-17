@@ -1,5 +1,5 @@
 ---
-id: HSA-P-012
+id: PAT-012
 title: Physical Service Index
 kind: pattern
 state: pilot
@@ -19,16 +19,16 @@ principles:
   - 10
 requires: []
 completes:
-  - HSA-P-002
+  - PAT-002
 alternative_to: []
 tension_with: []
 sequences:
   - service-topology
 ---
 
-# HSA-P-012 — Physical Service Index
+# PAT-012 — Physical Service Index
 
-> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-012 — Physical Service Index`](../physical-service-index.md).
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`PAT-012 — Physical Service Index`](../physical-service-index.md).
 
 ## Context
 
@@ -44,7 +44,7 @@ The recurring problem is the relationship between the physical building, future 
 
 ## Language relationships
 
-### Completes `HSA-P-002 — Plant Room as Service Hub`
+### Completes `PAT-002 — Plant Room as Service Hub`
 
 Where a service hub exists, it provides a natural place for the physical index and stable identifiers to meet the equipment they describe. The index adds informational legibility to the hub's physical legibility.
 
@@ -62,4 +62,4 @@ The project should not assume that a digital model is durable merely because it 
 
 ## Canonical successor
 
-See [`HSA-P-012 — Physical Service Index`](../physical-service-index.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
+See [`PAT-012 — Physical Service Index`](../physical-service-index.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).

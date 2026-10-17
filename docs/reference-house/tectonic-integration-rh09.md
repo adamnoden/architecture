@@ -62,7 +62,7 @@ The selected family uses **sparse dedicated grounds rather than a continuous tec
 
 Permanent masonry receives sparse documented anchors. Faster-changing fit-out attaches to the known grounds.
 
-This is the Reference House occurrence of `HSA-P-022 — Controlled Attachment Plane`.
+This is the Reference House occurrence of `PAT-022 — Controlled Attachment Plane`.
 
 ### `W2` — replaceable architectural lining — **experimental challenger only**
 
@@ -126,7 +126,7 @@ Selected door surrounds may perform genuine local technical work where that work
 
 Not every architrave becomes a cable chase. The route is used only where it shortens or clarifies real distribution.
 
-Together, removable skirting plus selected door-surround rises create the first Reference House occurrence of `HSA-P-015 — Accessible Room Service Route`.
+Together, removable skirting plus selected door-surround rises create the first Reference House occurrence of `PAT-015 — Accessible Room Service Route`.
 
 ---
 
@@ -168,7 +168,7 @@ The building record must preserve the safe fixing map and concealed service zone
 
 ## 4. Window interface family — `OW-01`
 
-RH-09 now creates one representative project occurrence of `HSA-P-007 — Permanent Opening / Replaceable Window` for the controlled G-01 window families.
+RH-09 now creates one representative project occurrence of `PAT-007 — Permanent Opening / Replaceable Window` for the controlled G-01 window families.
 
 The invariant is:
 

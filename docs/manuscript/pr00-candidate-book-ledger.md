@@ -163,27 +163,27 @@ All canonical active patterns are represented in the current manifest. Stable ID
 
 | Pattern | State | Required action |
 |---|---|---|
-| HSA-P-001 — Controlled Utility Entry | `NEEDS RECONCILIATION` | Publication voice / evidence card / links audit; preserve invariant. |
-| HSA-P-002 — Plant Room as Service Hub | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-014 — Accessible Vertical Service Zone | `NEEDS RECONCILIATION` | Same; ensure promoted canonical pattern is not confused with superseded candidate record. |
-| HSA-P-003 — Coherent Horizontal Service Route | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-015 — Accessible Room Service Route | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-004 — High-Service-Room Service Wall | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-005 — Designed Structural Penetration | `NEEDS RECONCILIATION` | Same; retain structural proof boundary. |
-| HSA-P-016 — Compartmented Service Void | `NEEDS RECONCILIATION` | Same; retain fire/acoustic boundaries as obligations, not proof. |
-| HSA-P-017 — Visible Leakage Path | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-018 — Failure-Tolerant Wet Service Room | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-009 — Accessible Rainwater Route | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-007 — Permanent Opening / Replaceable Window | `NEEDS RECONCILIATION` | Same; avoid implying a proprietary/window-material solution. |
-| HSA-P-019 — Permanent Opening / Replaceable Door | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-020 — Designed Threshold | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-008 — Movement / Slip Junction | `NEEDS RECONCILIATION` | Same; P04 remains open physical evidence. |
-| HSA-P-022 — Controlled Attachment Plane | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-010 — Source-Capture Kitchen Extract | `NEEDS RECONCILIATION` | Same; retain system-neutral architectural principle. |
-| HSA-P-021 — Source-Capture Bathroom Extract | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-011 — Roof Maintenance Route | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-013 — Ground-Supported Façade Access | `NEEDS RECONCILIATION` | Same. |
-| HSA-P-012 — Physical Service Index | `NEEDS RECONCILIATION` | Same. |
+| PAT-001 — Controlled Utility Entry | `NEEDS RECONCILIATION` | Publication voice / evidence card / links audit; preserve invariant. |
+| PAT-002 — Plant Room as Service Hub | `NEEDS RECONCILIATION` | Same. |
+| PAT-014 — Accessible Vertical Service Zone | `NEEDS RECONCILIATION` | Same; ensure promoted canonical pattern is not confused with superseded candidate record. |
+| PAT-003 — Coherent Horizontal Service Route | `NEEDS RECONCILIATION` | Same. |
+| PAT-015 — Accessible Room Service Route | `NEEDS RECONCILIATION` | Same. |
+| PAT-004 — High-Service-Room Service Wall | `NEEDS RECONCILIATION` | Same. |
+| PAT-005 — Designed Structural Penetration | `NEEDS RECONCILIATION` | Same; retain structural proof boundary. |
+| PAT-016 — Compartmented Service Void | `NEEDS RECONCILIATION` | Same; retain fire/acoustic boundaries as obligations, not proof. |
+| PAT-017 — Visible Leakage Path | `NEEDS RECONCILIATION` | Same. |
+| PAT-018 — Failure-Tolerant Wet Service Room | `NEEDS RECONCILIATION` | Same. |
+| PAT-009 — Accessible Rainwater Route | `NEEDS RECONCILIATION` | Same. |
+| PAT-007 — Permanent Opening / Replaceable Window | `NEEDS RECONCILIATION` | Same; avoid implying a proprietary/window-material solution. |
+| PAT-019 — Permanent Opening / Replaceable Door | `NEEDS RECONCILIATION` | Same. |
+| PAT-020 — Designed Threshold | `NEEDS RECONCILIATION` | Same. |
+| PAT-008 — Movement / Slip Junction | `NEEDS RECONCILIATION` | Same; P04 remains open physical evidence. |
+| PAT-022 — Controlled Attachment Plane | `NEEDS RECONCILIATION` | Same. |
+| PAT-010 — Source-Capture Kitchen Extract | `NEEDS RECONCILIATION` | Same; retain system-neutral architectural principle. |
+| PAT-021 — Source-Capture Bathroom Extract | `NEEDS RECONCILIATION` | Same. |
+| PAT-011 — Roof Maintenance Route | `NEEDS RECONCILIATION` | Same. |
+| PAT-013 — Ground-Supported Façade Access | `NEEDS RECONCILIATION` | Same. |
+| PAT-012 — Physical Service Index | `NEEDS RECONCILIATION` | Same. |
 
 ## 6.3 Strategies — 3 / 3 present
 

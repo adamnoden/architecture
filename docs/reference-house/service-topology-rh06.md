@@ -291,7 +291,7 @@ Selected topology:
 - cleaning access and replaceable fan/hood components from the kitchen side;
 - external terminal location to be checked against nuisance, openings and real-site handedness.
 
-This route is consistent with current Part F's explicit recognition of a cooker hood extracting directly outside and protects the `HSA-P-010` source-capture intent.
+This route is consistent with current Part F's explicit recognition of a cooker hood extracting directly outside and protects the `PAT-010` source-capture intent.
 
 If a real site makes the service-side terminal unacceptable, test the north/rear wall before accepting a long roof route.
 

@@ -72,7 +72,7 @@ The fixture passes the demand-map gate. High-service demand is strongly clustera
 
 ---
 
-# 3. S2 — `HSA-P-001` Controlled Utility Entry
+# 3. S2 — `PAT-001` Controlled Utility Entry
 
 ## Selected occurrence — `RH-P001-01`
 
@@ -96,7 +96,7 @@ If actual utility records force approach from another side, this occurrence is i
 
 ---
 
-# 4. S3 — `HSA-P-002` Plant Room as Service Hub
+# 4. S3 — `PAT-002` Plant Room as Service Hub
 
 ## Selected occurrence — `RH-P002-01`
 
@@ -206,7 +206,7 @@ No HSA pattern ID is assigned yet.
 
 ---
 
-# 6. S5 — `HSA-P-004` High-Service-Room Service Wall
+# 6. S5 — `PAT-004` High-Service-Room Service Wall
 
 ## Ground occurrence — `RH-P004-01`
 
@@ -240,7 +240,7 @@ Waterproofing remains independent of routine access-panel opening.
 
 ---
 
-# 7. S6 — `HSA-P-003` Horizontal Service Spine
+# 7. S6 — `PAT-003` Horizontal Service Spine
 
 The run shows that **one universal horizontal spine is the wrong interpretation**.
 
@@ -285,13 +285,13 @@ This is a local branch network, not permission to turn every skirting into conge
 
 ## S6 finding
 
-**PASS, with a taxonomy note.** `HSA-P-003` works if understood as a coherent horizontal distribution **topology**, not a single mixed-services duct. During Phase 6, test whether “Horizontal Service Spine” should be renamed or clarified as **Coherent Horizontal Service Route**.
+**PASS, with a taxonomy note.** `PAT-003` works if understood as a coherent horizontal distribution **topology**, not a single mixed-services duct. During Phase 6, test whether “Horizontal Service Spine” should be renamed or clarified as **Coherent Horizontal Service Route**.
 
 No rename occurs during this gated pilot.
 
 ---
 
-# 8. S7 — `HSA-P-005` Designed Structural Penetrations
+# 8. S7 — `PAT-005` Designed Structural Penetrations
 
 The selected topology produces a short representative crossing register rather than dozens of ad-hoc holes.
 
@@ -371,7 +371,7 @@ Do not yet invent child-pattern IDs. The actual recurring children should emerge
 
 ---
 
-# 10. S9 — `HSA-P-012` Physical Service Index
+# 10. S9 — `PAT-012` Physical Service Index
 
 ## Selected occurrence — `RH-P012-01`
 
@@ -400,14 +400,14 @@ The index should not become a duplicate O&M manual.
 
 | Occurrence | Pattern / candidate | Location | Implementation direction | Evidence state |
 |---|---|---|---|---|
-| `RH-P001-01` | `HSA-P-001` Controlled Utility Entry | east wall / `G-SVC-01` | adjacent coordinated utility transitions | pattern supported; project geometry provisional |
-| `RH-P002-01` | `HSA-P-002` Plant Room as Service Hub | north-east `G-SVC-01` | dedicated maintainable plant room/zone with external replacement path | pattern established; plant sizing external |
+| `RH-P001-01` | `PAT-001` Controlled Utility Entry | east wall / `G-SVC-01` | adjacent coordinated utility transitions | pattern supported; project geometry provisional |
+| `RH-P002-01` | `PAT-002` Plant Room as Service Hub | north-east `G-SVC-01` | dedicated maintainable plant room/zone with external replacement path | pattern established; plant sizing external |
 | `RH-CAND-VSR-01` | candidate Accessible Vertical Service Zone | east-rear stacked service geography | one accessible segregated vertical zone; split-riser comparator retained | candidate only; no HSA ID |
-| `RH-P004-01` | `HSA-P-004` High-Service-Room Service Wall | north edge of `G-KIT-01` | dry/adjacent-side accessible service wall | supported; detailed kitchen unresolved |
-| `RH-P004-02` | `HSA-P-004` High-Service-Room Service Wall | `BATH-01` / `ENS-01` against service-support geography | dry-side bathroom service access | supported; wet-zone detailing external |
-| `RH-P003-01` | `HSA-P-003` Horizontal Service Spine | east/rear + landing distribution topology | coherent service routes split by service class | supported; route dimensions provisional |
-| `RH-P005-01..06` | `HSA-P-005` Designed Structural Penetration | `CP-01..06` | controlled crossing families | structural/boundary proof external |
-| `RH-P012-01` | `HSA-P-012` Physical Service Index | plant/service hub approach | durable local index + richer digital record | proposed pattern; project occurrence plausible |
+| `RH-P004-01` | `PAT-004` High-Service-Room Service Wall | north edge of `G-KIT-01` | dry/adjacent-side accessible service wall | supported; detailed kitchen unresolved |
+| `RH-P004-02` | `PAT-004` High-Service-Room Service Wall | `BATH-01` / `ENS-01` against service-support geography | dry-side bathroom service access | supported; wet-zone detailing external |
+| `RH-P003-01` | `PAT-003` Horizontal Service Spine | east/rear + landing distribution topology | coherent service routes split by service class | supported; route dimensions provisional |
+| `RH-P005-01..06` | `PAT-005` Designed Structural Penetration | `CP-01..06` | controlled crossing families | structural/boundary proof external |
+| `RH-P012-01` | `PAT-012` Physical Service Index | plant/service hub approach | durable local index + richer digital record | proposed pattern; project occurrence plausible |
 
 These are **coordination occurrences**, not validated construction.
 

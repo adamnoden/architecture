@@ -21,6 +21,10 @@ function figurePath(entryId: string, image: string): string {
   return resolve(repoRoot, dirname(entry.source), image)
 }
 
+function figureLabel(alt: string, image: string): string {
+  return `${alt} (${image})`
+}
+
 const browser = await puppeteer.launch({
   headless: true,
   args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -31,9 +35,10 @@ const failures: Overflow[] = []
 try {
   for (const placement of publicationFigurePlacements()) {
     const path = figurePath(placement.entryId, placement.image)
+    const label = figureLabel(placement.alt, placement.image)
     const svg = readFileSync(path, 'utf8')
     const viewBoxMatch = svg.match(/viewBox=["']\s*([\d.-]+)\s+([\d.-]+)\s+([\d.-]+)\s+([\d.-]+)\s*["']/i)
-    if (!viewBoxMatch) throw new Error(`${placement.id}: SVG has no parseable viewBox: ${path}`)
+    if (!viewBoxMatch) throw new Error(`${label}: SVG has no parseable viewBox: ${path}`)
 
     const [, , , widthText, heightText] = viewBoxMatch
     const width = Number(widthText)
@@ -76,7 +81,7 @@ try {
     }, tolerance)
 
     for (const overflow of overflows) {
-      failures.push({ figure: placement.id, ...overflow })
+      failures.push({ figure: label, ...overflow })
     }
     await page.close()
   }

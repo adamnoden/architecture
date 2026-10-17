@@ -10,7 +10,7 @@
 
 This register exists to stop significant service crossings becoming anonymous holes in permanent fabric.
 
-The IDs below are project occurrences of `HSA-P-005 — Designed Structural Penetration`. They are coordination objects, not approved details. Every final opening remains subject to structural, fire, acoustic, weather, airtightness, thermal, moisture, pest and service-specific design as applicable.
+The IDs below are project occurrences of `PAT-005 — Designed Structural Penetration`. They are coordination objects, not approved details. Every final opening remains subject to structural, fire, acoustic, weather, airtightness, thermal, moisture, pest and service-specific design as applicable.
 
 | Occurrence | Route / service | Host / approximate location | Coordination envelope / intent | Protected obligations | Can it disappear? |
 |---|---|---|---|---|---|
@@ -25,7 +25,7 @@ The IDs below are project occurrences of `HSA-P-005 — Designed Structural Pene
 | `RH-P005-15` / `PEN-SV-RF-01` | 100 mm-class soil/vent stack roof termination | east/service roof field near outer service edge | single sparse roof penetration; location kept clear of principal front, PV maintenance corridors and MVHR intake clearances | waterproofing/flashing; structure; airtight/thermal continuity; terminal clearances; inspection from planned external roof access | could move to compliant wall/roof alternative if drainage design proves it; current baseline expects roof termination |
 | `RH-P005-16` / `PEN-PV-01` | photovoltaic electrical route | east/service roof field into service/riser geography | dedicated bounded cable boundary crossing from roof PV field toward accessible inverter/isolation in `G-PLANT-01`; no avoidable active electronics buried beneath modules | roof weathering; fire; airtight/thermal continuity; electrical segregation/protection; safe isolation; documented cable route; array replacement | disappears only if a compliant real project meets renewable-generation duty by another topology |
 
-## Local penetrations not given separate `HSA-P-005` occurrence IDs
+## Local penetrations not given separate `PAT-005` occurrence IDs
 
 The following are either non-structural, unresolved or too small/local to justify another project identity:
 

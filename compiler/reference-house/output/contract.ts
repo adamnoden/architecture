@@ -1,6 +1,6 @@
 import type { OutputDescriptor } from '../../output/model.js'
 
-export const REFERENCE_HOUSE_OUTPUT_SCHEMA_VERSION = 'OH-RH-OUTPUT-1' as const
+export const REFERENCE_HOUSE_OUTPUT_SCHEMA_VERSION = 'RH-OUTPUT-1' as const
 export const REFERENCE_HOUSE_OUTPUT_RENDERER_VERSION = '1.0.0' as const
 
 const authorityNote =
@@ -8,7 +8,7 @@ const authorityNote =
 
 export const REFERENCE_HOUSE_OUTPUTS = {
   groundFloorPlan: {
-    id: 'OH-RH-PLAN-GROUND-1',
+    id: 'RH-PLAN-GROUND-1',
     classes: ['SPATIAL_INSPECTION', 'PUBLICATION_SOURCE_CANDIDATE'],
     format: 'svg',
     path: 'docs/reference-house/generated/ground-floor-plan.svg',
@@ -16,7 +16,7 @@ export const REFERENCE_HOUSE_OUTPUTS = {
     authorityNote
   },
   firstFloorPlan: {
-    id: 'OH-RH-PLAN-FIRST-1',
+    id: 'RH-PLAN-FIRST-1',
     classes: ['SPATIAL_INSPECTION', 'PUBLICATION_SOURCE_CANDIDATE'],
     format: 'svg',
     path: 'docs/reference-house/generated/first-floor-plan.svg',
@@ -24,7 +24,7 @@ export const REFERENCE_HOUSE_OUTPUTS = {
     authorityNote
   },
   principalSection: {
-    id: 'OH-RH-SECTION-AA-1',
+    id: 'RH-SECTION-AA-1',
     classes: ['SPATIAL_INSPECTION', 'PUBLICATION_SOURCE_CANDIDATE'],
     format: 'svg',
     path: 'docs/reference-house/generated/principal-section.svg',
@@ -32,7 +32,7 @@ export const REFERENCE_HOUSE_OUTPUTS = {
     authorityNote
   },
   firstFloorStructure: {
-    id: 'OH-RH-STRUCTURE-FIRST-1',
+    id: 'RH-STRUCTURE-FIRST-1',
     classes: ['SPATIAL_INSPECTION', 'PUBLICATION_SOURCE_CANDIDATE'],
     format: 'svg',
     path: 'docs/reference-house/generated/first-floor-structure.svg',
@@ -40,7 +40,7 @@ export const REFERENCE_HOUSE_OUTPUTS = {
     authorityNote
   },
   serviceRegister: {
-    id: 'OH-RH-SERVICE-REGISTER-1',
+    id: 'RH-SERVICE-REGISTER-1',
     classes: ['SEMANTIC_REPORT'],
     format: 'markdown',
     path: 'docs/reference-house/generated/service-register.md',
@@ -48,7 +48,7 @@ export const REFERENCE_HOUSE_OUTPUTS = {
     authorityNote
   },
   boundaryRegister: {
-    id: 'OH-RH-BOUNDARY-REGISTER-1',
+    id: 'RH-BOUNDARY-REGISTER-1',
     classes: ['SEMANTIC_REPORT'],
     format: 'markdown',
     path: 'docs/reference-house/generated/boundary-register.md',
@@ -56,7 +56,7 @@ export const REFERENCE_HOUSE_OUTPUTS = {
     authorityNote
   },
   outputManifest: {
-    id: 'OH-RH-OUTPUT-MANIFEST-1',
+    id: 'RH-OUTPUT-MANIFEST-1',
     classes: ['MACHINE_PROOF'],
     format: 'json',
     path: 'docs/reference-house/generated/output-manifest.json',

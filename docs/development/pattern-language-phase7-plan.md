@@ -21,14 +21,14 @@ Phase 7 converted the audited corpus into one canonical architectural language w
 
 ## P7.2 — surviving Core identities
 
-- `HSA-P-001..005` and `HSA-P-007..012` migrated to individual canonical pages;
-- `HSA-P-003` retained its identity but became **Coherent Horizontal Service Route**;
-- `HSA-P-006` was permanently retired;
+- `PAT-001..005` and `PAT-007..012` migrated to individual canonical pages;
+- `PAT-003` retained its identity but became **Coherent Horizontal Service Route**;
+- `PAT-006` was permanently retired;
 - its durable umbrella proposition became the **Fail-Safe Water Distribution** strategy.
 
 ## P7.3 — newly admitted identities
 
-Canonical pages created for `HSA-P-013..022` without evidence or maturity inflation.
+Canonical pages created for `PAT-013..022` without evidence or maturity inflation.
 
 ## P7.4 — non-pattern homes
 
@@ -76,11 +76,11 @@ The first production build with validation active passed on 2026-10-07.
 
 Active patterns:
 
-`HSA-P-001..005`, `HSA-P-007..022` — **21 active identities**.
+`PAT-001..005`, `PAT-007..022` — **21 active identities**.
 
 Retired permanently:
 
-`HSA-P-006 — Water-Damage-Safe Service Route`.
+`PAT-006 — Water-Damage-Safe Service Route`.
 
 IDs encode identity only. They do not encode domain, scale, publication order or evidence level.
 

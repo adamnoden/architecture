@@ -1,5 +1,5 @@
 ---
-id: HSA-P-016
+id: PAT-016
 title: Compartmented Service Void
 kind: pattern
 state: active
@@ -26,7 +26,7 @@ sequences:
   - service-topology
 ---
 
-# HSA-P-016 — Compartmented Service Void
+# Compartmented Service Void
 
 ## Context
 

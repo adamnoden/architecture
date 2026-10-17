@@ -1,11 +1,10 @@
 # G-01 Case DAN — Danson House
 
 **Case ID:** G01-DAN  
-**Analysis role:** TRIAL  
 **Corpus class:** compact later-Georgian / neo-Palladian villa  
-**D3 status:** semantic annotation v0.1 complete; D5 dimensional seed unusually strong  
+**Evidence state:** semantic annotation complete; dimensional evidence unusually strong<br>
 **Evidence grade:** A2 fabric research + near-contemporary plan evidence  
-**Purpose:** test the annotation contract against a compact sophisticated villa in which circulation sequence, service circulation, room proportion, façade negotiation and structural framing are unusually well documented.
+**Purpose:** document a compact sophisticated villa in which circulation sequence, service circulation, room proportion, façade negotiation and structural framing are unusually well documented.
 
 > This record annotates evidence. It does not promote G-01 rules.
 
@@ -133,7 +132,7 @@ A later doorway altered this graph.
 - service vertical route: adjacent narrow service stair;
 - service-wing routes: distinct lower/side network.
 
-### D3 finding
+### Topological finding
 
 Danson proves that:
 
@@ -198,7 +197,7 @@ Record at scoped levels:
 - internal plan: approximately balanced but not reducible to simple mirror symmetry;
 - service system: asymmetrical in function despite paired/adjacent formal organisation.
 
-## 9. Metric geometry — D5 seed
+## 9. Metric geometry
 
 The Historic England fabric research provides unusually strong direct dimensions.
 
@@ -242,7 +241,7 @@ The research report states:
 - interior finish is elliptical;
 - long:short ellipse diameter ≈ **4:3**.
 
-### D3/D5 significance
+### D3/dimensional analysis significance
 
 This one case already defeats a simplistic “one preferred room ratio” model:
 
@@ -277,11 +276,11 @@ High-confidence facts:
 - principal-floor windows have stronger architectural treatment;
 - the plan/elevation relationship includes blind/simulated windows at some side conditions.
 
-Exact opening IDs will be attached in D6 once a scaled drawing is directly indexed.
+Exact opening IDs will be attached in plan/elevation coupling analysis once a scaled drawing is directly indexed.
 
 ## 12. Plan / elevation coupling
 
-Danson is the strongest current D6 case.
+Danson is the strongest current plan/elevation coupling analysis case.
 
 ### Attribute-level coupling
 
@@ -447,8 +446,8 @@ Potential tension:
 
 | ID | Question | Blocks |
 |---|---|---|
-| DAN-U01 | direct stable opening IDs/coordinates from highest-confidence scaled principal-floor drawing | D6 |
-| DAN-U02 | exact historical target for every blind opening | D6 |
+| DAN-U01 | direct stable opening IDs/coordinates from highest-confidence scaled principal-floor drawing | plan/elevation coupling analysis |
+| DAN-U02 | exact historical target for every blind opening | plan/elevation coupling analysis |
 | DAN-U03 | complete bedroom-floor original topology | wider D4 vertical analysis |
 | DAN-U04 | exact structural proof beyond recorded fabric | structural semantics |
 | DAN-U05 | exact service-wing connection topology by moment in P2 | detailed service grammar |
@@ -467,7 +466,7 @@ Danson is already strong enough to support:
 - plan/elevation coupling semantics;
 - structural observations.
 
-D5/D6 still require direct drawing IDs and systematic measurements before any grammar rule is promoted.
+measurement/coupling analysis still require direct drawing IDs and systematic measurements before any grammar rule is promoted.
 
 ## Source anchors
 

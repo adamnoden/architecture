@@ -1,5 +1,5 @@
 ---
-id: HSA-P-008
+id: PAT-008
 title: Movement / Slip Junction
 kind: pattern
 state: active
@@ -23,7 +23,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-008 — Movement / Slip Junction
+# Movement / Slip Junction
 
 ## Context
 

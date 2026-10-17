@@ -79,7 +79,7 @@ A future site is expected to alter the coordinates. It should not be allowed to 
 
 The house uses a Georgian-derived architectural language without attempting to reconstruct a Georgian household.
 
-G-01 v0.1 is deliberately small. It does not prescribe a universal room ratio, a centred entrance, an odd bay count, one roof shape or a fixed historical circulation sequence. Its stronger commitments concern architectural order: a bounded classical field; related and ranked openings; a principal entrance that is architecturally legible; an upper termination composed as part of the whole; relational spatial and sectional hierarchy; and restrained classical articulation concentrated where it carries architectural weight.
+G-01 is deliberately small. It does not prescribe a universal room ratio, a centred entrance, an odd bay count, one roof shape or a fixed historical circulation sequence. Its stronger commitments concern architectural order: a bounded classical field; related and ranked openings; a principal entrance that is architecturally legible; an upper termination composed as part of the whole; relational spatial and sectional hierarchy; and restrained classical articulation concentrated where it carries architectural weight.
 
 The Reference House conforms to those rules without asking them to explain its courtyard, service strategy or tectonic details.
 

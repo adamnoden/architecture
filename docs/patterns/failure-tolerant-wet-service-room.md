@@ -1,5 +1,5 @@
 ---
-id: HSA-P-018
+id: PAT-018
 title: Failure-Tolerant Wet Service Room
 kind: pattern
 state: active
@@ -25,7 +25,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-018 — Failure-Tolerant Wet Service Room
+# Failure-Tolerant Wet Service Room
 
 ## Context
 

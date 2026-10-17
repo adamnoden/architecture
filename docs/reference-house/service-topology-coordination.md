@@ -3,7 +3,7 @@
 **Status:** historical Phase-5 coordination brief; superseded as current project state  
 **Historical method:** the service-topology pilot that preceded the current [canonical sequence](../patterns/service-topology-sequence.md)
 
-> **Historical record.** This brief predates the completed Reference House service-topology run, the admission of `HSA-P-014 — Accessible Vertical Service Zone`, the rename of `HSA-P-003` to **Coherent Horizontal Service Route**, and the reclassification of water-failure material into the **Fail-Safe Water Distribution** strategy. It is retained as design provenance. For current project state, use the [Pattern Occurrence Register](pattern-occurrence-register.md) and current canonical pattern pages.
+> **Historical record.** This brief predates the completed Reference House service-topology run, the admission of `PAT-014 — Accessible Vertical Service Zone`, the rename of `PAT-003` to **Coherent Horizontal Service Route**, and the reclassification of water-failure material into the **Fail-Safe Water Distribution** strategy. It is retained as design provenance. For current project state, use the [Pattern Occurrence Register](pattern-occurrence-register.md) and current canonical pattern pages.
 
 The document below records the coordination brief as it stood before those decisions were resolved.
 
@@ -50,7 +50,7 @@ If the house plan cannot identify its high-service zones, it is too early to dra
 
 ---
 
-## 3. `HSA-P-001` — Controlled Utility Entry
+## 3. `PAT-001` — Controlled Utility Entry
 
 Select a credible project occurrence only after checking supplier/site constraints.
 
@@ -70,7 +70,7 @@ If the credible entry geometry damages a principal room, major axis, weather str
 
 ---
 
-## 4. `HSA-P-002` — Plant Room as Service Hub
+## 4. `PAT-002` — Plant Room as Service Hub
 
 Place the actual hub and draw its working/replacement geometry.
 
@@ -112,7 +112,7 @@ Do not assign a pattern ID until the admission test is passed.
 
 ---
 
-## 6. `HSA-P-004` — High-Service-Room Service Wall
+## 6. `PAT-004` — High-Service-Room Service Wall
 
 On each high-service room, mark candidate service-wall edges and dry-side access opportunities.
 
@@ -132,7 +132,7 @@ If nearly every high-service room needs a unique deep technical wall, revisit ro
 
 ---
 
-## 7. `HSA-P-003` — Horizontal Service Spine
+## 7. `PAT-003` — Horizontal Service Spine
 
 Draw the primary horizontal distribution topology only after the demand nodes, hub and vertical options are visible.
 
@@ -155,7 +155,7 @@ Excessive depth, branch length or bespoke crossing count is evidence against the
 
 ---
 
-## 8. `HSA-P-005` — Designed Structural Penetration
+## 8. `PAT-005` — Designed Structural Penetration
 
 Once route topology is credible, derive a crossing register.
 
@@ -192,7 +192,7 @@ This comparison should determine whether current Core Pattern 06 remains one pat
 
 ---
 
-## 10. `HSA-P-012` — Physical Service Index
+## 10. `PAT-012` — Physical Service Index
 
 Once topology stabilises, establish stable service identities shared between:
 
@@ -215,12 +215,12 @@ When geometry exists, begin a Reference House occurrence table.
 
 | Occurrence | Pattern | Location | Implementation family | Evidence state | Notes |
 |---|---|---|---|---|---|
-| _not yet assigned_ | `HSA-P-001` | — | — | — | utility entry unresolved |
-| _not yet assigned_ | `HSA-P-002` | — | — | — | hub unresolved |
-| _not yet assigned_ | `HSA-P-003` | — | — | — | horizontal route unresolved |
-| _not yet assigned_ | `HSA-P-004` | — | — | — | service-wall locations unresolved |
-| _not yet assigned_ | `HSA-P-005` | — | — | — | crossings derive later |
-| _not yet assigned_ | `HSA-P-012` | — | — | — | stewardship identity derives later |
+| _not yet assigned_ | `PAT-001` | — | — | — | utility entry unresolved |
+| _not yet assigned_ | `PAT-002` | — | — | — | hub unresolved |
+| _not yet assigned_ | `PAT-003` | — | — | — | horizontal route unresolved |
+| _not yet assigned_ | `PAT-004` | — | — | — | service-wall locations unresolved |
+| _not yet assigned_ | `PAT-005` | — | — | — | crossings derive later |
+| _not yet assigned_ | `PAT-012` | — | — | — | stewardship identity derives later |
 
 Do **not** populate this table merely because the Reference House intends to use a pattern. An occurrence requires identifiable project geometry or information.
 

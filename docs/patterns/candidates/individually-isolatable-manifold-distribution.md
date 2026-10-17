@@ -7,7 +7,7 @@ evidence: supported
 
 # Candidate — Individually Isolatable Manifold Distribution
 
-**Status:** held; no stable pattern ID  
+**Status:** held<br>
 **Evidence:** Supported  
 **Primary unresolved gate:** demonstrate that the invariant belongs in the architectural language rather than only the services implementation layer
 

@@ -1,6 +1,6 @@
 # Candidate — Accessible Vertical Service Zone
 
-> **Historical pre-admission record — superseded.** This page preserves the candidate as it stood after the Phase-5 Reference House trial. The proposition subsequently passed admission and is now canonical as [`HSA-P-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md). Statements below such as “no HSA ID assigned”, “pending corpus audit” and “retain candidate status” describe the historical state and are not current project status.
+> **Historical pre-admission record — superseded.** This page preserves the candidate as it stood after the Phase-5 Reference House trial. The proposition subsequently passed admission and is now canonical as [`PAT-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md). Statements below such as “no HSA ID assigned”, “pending corpus audit” and “retain candidate status” describe the historical state and are not current project status.
 
 **Status at time of record:** pattern candidate produced by the Phase-5 Reference House trial; no HSA ID assigned  
 **Evidence:** Supported direction / domestic proportionality unresolved  

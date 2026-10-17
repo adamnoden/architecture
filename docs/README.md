@@ -40,7 +40,7 @@ A filename existing in `docs/` does not make it current or canonical.
 
 - The **manuscript** contains the current public architectural argument.
 - The **pattern language migration is complete at current internal scope**: 21 active canonical patterns, three strategies and four held candidates. Historical Core-12 and pilot material remains provenance.
-- Canonical pattern IDs retain the legacy **`HSA-P-*` namespace** for identifier stability. The prefix records the House Systems Architecture phase of the project; it is not the current project name and should not be expanded as current branding.
+- Canonical patterns use brand-neutral `PAT-*` machine identities for exact joins across source, evidence and computation. Pattern names remain the reader-facing identity, and the machine suffix does not encode publication order.
 - **Architectural grammar** is a selectable architectural layer independent of Ovid’s House doctrine and the computational supported domain. G-01 is the current grammar research instance used by the Reference House.
 - The **reference house** is a worked interpretation and test vehicle, never proof of the doctrine, pattern language or grammar.
 - **Research** supports, qualifies or kills claims; it is not silently promoted into doctrine.

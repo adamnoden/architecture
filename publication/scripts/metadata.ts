@@ -1,7 +1,7 @@
-import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { inspectPdf } from '../pdf-inspector.js'
 import { publicationFigurePlacements } from '../figures.js'
 import { primerPublicationEntries, publicationEntries } from '../publication.js'
 
@@ -37,69 +37,33 @@ interface PublicationMetadata {
   readonly primer: PdfMetadata
 }
 
-function pdfInfo(path: string): string {
-  try {
-    return execFileSync('pdfinfo', [path], {
-      encoding: 'utf8',
-      stdio: ['ignore', 'pipe', 'ignore']
-    })
-  } catch (error) {
-    const missing = error instanceof Error && 'code' in error && error.code === 'ENOENT'
-    if (missing) {
-      throw new Error(
-        'pdfinfo is required to inspect publication PDFs. Install Poppler (for example `brew install poppler` on macOS or `apt install poppler-utils` on Debian/Ubuntu).'
-      )
-    }
-    throw error
-  }
-}
-
-function requiredMatch(text: string, pattern: RegExp, label: string): RegExpMatchArray {
-  const match = text.match(pattern)
-  if (!match) throw new Error(`Could not read ${label} from pdfinfo output.`)
-  return match
-}
-
-function round(value: number, places: number): number {
-  const factor = 10 ** places
-  return Math.round(value * factor) / factor
-}
-
-function normalizeFormat(label: string | undefined, widthMm: number, heightMm: number): string | null {
-  if (label?.trim()) return label.trim()
+function normalizeFormat(widthMm: number, heightMm: number): string | null {
   const short = Math.min(widthMm, heightMm)
   const long = Math.max(widthMm, heightMm)
   if (Math.abs(short - 210) <= 0.5 && Math.abs(long - 297) <= 0.5) return 'A4'
   return null
 }
 
-function inspectPdf(
+async function publicationPdfMetadata(
   repoRelativePath: string,
   entries: number,
   figures?: number
-): PdfMetadata {
+): Promise<PdfMetadata> {
   const absolutePath = resolve(repoRoot, repoRelativePath)
   if (!existsSync(absolutePath) || statSync(absolutePath).size === 0) {
     throw new Error(`Publication PDF is missing or empty: ${repoRelativePath}`)
   }
 
-  const info = pdfInfo(absolutePath)
-  const pages = Number(requiredMatch(info, /^Pages:\s+(\d+)$/m, 'page count')[1])
-  const sizeMatch = requiredMatch(
-    info,
-    /^Page size:\s+([\d.]+) x ([\d.]+) pts(?: \(([^)]+)\))?$/m,
-    'page size'
-  )
-  const widthMm = round(Number(sizeMatch[1]) * 25.4 / 72, 2)
-  const heightMm = round(Number(sizeMatch[2]) * 25.4 / 72, 2)
+  const inspection = await inspectPdf(absolutePath)
+  const { widthMm, heightMm } = inspection.pageSize
   const orientation = widthMm === heightMm ? 'square' : widthMm < heightMm ? 'portrait' : 'landscape'
 
   return {
     file: repoRelativePath,
-    pages,
-    duplexLeaves: Math.ceil(pages / 2),
+    pages: inspection.pages,
+    duplexLeaves: Math.ceil(inspection.pages / 2),
     pageSize: {
-      format: normalizeFormat(sizeMatch[3], widthMm, heightMm),
+      format: normalizeFormat(widthMm, heightMm),
       widthMm,
       heightMm,
       orientation
@@ -109,18 +73,23 @@ function inspectPdf(
   }
 }
 
-function generateMetadata(): PublicationMetadata {
-  return {
-    schemaVersion: 1,
-    workingEdition: inspectPdf(
+async function generateMetadata(): Promise<PublicationMetadata> {
+  const [workingEdition, primer] = await Promise.all([
+    publicationPdfMetadata(
       'publication/dist/ovids-house.pdf',
       publicationEntries.length,
       publicationFigurePlacements().length
     ),
-    primer: inspectPdf(
+    publicationPdfMetadata(
       'publication/dist/ovids-house-primer.pdf',
       primerPublicationEntries.length
     )
+  ])
+
+  return {
+    schemaVersion: 1,
+    workingEdition,
+    primer
   }
 }
 
@@ -147,7 +116,7 @@ function writeCiSummary(metadata: PublicationMetadata): void {
   writeFileSync(path, summary(metadata), { flag: 'a' })
 }
 
-const generated = generateMetadata()
+const generated = await generateMetadata()
 writeCiSummary(generated)
 
 if (writeMode) {

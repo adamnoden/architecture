@@ -45,7 +45,7 @@ describe('COA-01 output contract', () => {
   })
 
   test('freezes one unique successor family with appropriate formats', () => {
-    assert.equal(REFERENCE_HOUSE_OUTPUT_SCHEMA_VERSION, 'OH-RH-OUTPUT-1')
+    assert.equal(REFERENCE_HOUSE_OUTPUT_SCHEMA_VERSION, 'RH-OUTPUT-1')
     const outputs = Object.values(REFERENCE_HOUSE_OUTPUTS)
     assert.equal(new Set(outputs.map((item) => item.id)).size, outputs.length)
     assert.equal(new Set(outputs.map((item) => item.path)).size, outputs.length)

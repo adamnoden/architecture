@@ -35,7 +35,7 @@ Patterns do not emit duplicate technical checklists.
 The compiler should not claim a universal:
 
 ```text
-HSA-P-xxx = PASS
+PAT-xxx = PASS
 ```
 
 A crosswalk may contain:
@@ -80,9 +80,9 @@ After P0 succeeds, run:
 
 Primary scope:
 
-- `HSA-P-003 — Coherent Horizontal Service Route`;
-- `HSA-P-005 — Designed Structural Penetration`;
-- optional `HSA-P-012 — Physical Service Index` extension.
+- `PAT-003 — Coherent Horizontal Service Route`;
+- `PAT-005 — Designed Structural Penetration`;
+- optional `PAT-012 — Physical Service Index` extension.
 
 The fixture must show:
 

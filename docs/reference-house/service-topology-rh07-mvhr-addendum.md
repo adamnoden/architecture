@@ -172,7 +172,7 @@ No duct should occupy the open courtyard or require visible technical boxes on p
 
 RH-06's direct wall bathroom extract `BX-01` is superseded as the **baseline implementation** by an MVHR high-level extract terminal close to the moisture source.
 
-The architectural intent of `HSA-P-021 — Source-Capture Bathroom Extract` remains live: extract should be close enough to the shower/bath moisture source that steam is captured before migration through the house.
+The architectural intent of `PAT-021 — Source-Capture Bathroom Extract` remains live: extract should be close enough to the shower/bath moisture source that steam is captured before migration through the house.
 
 The short direct-wall route remains a fallback if the central system is rejected.
 

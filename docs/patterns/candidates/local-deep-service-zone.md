@@ -7,7 +7,7 @@ evidence: proposed
 
 # Candidate — Local Deep Service Zone
 
-**Status:** held; no stable pattern ID  
+**Status:** held<br>
 **Evidence:** Proposed / credible coordination tactic  
 **Primary unresolved gate:** demonstrate a recurring invariant beyond “make more space locally”
 
@@ -50,9 +50,9 @@ The worked cases must show:
 
 This candidate may eventually complement:
 
-- [`HSA-P-003 — Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md);
-- [`HSA-P-005 — Designed Structural Penetration`](../designed-structural-penetration.md);
-- [`HSA-P-014 — Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md).
+- [`Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md);
+- [`Designed Structural Penetration`](../designed-structural-penetration.md);
+- [`Accessible Vertical Service Zone`](../accessible-vertical-service-zone.md).
 
 These references do not create graph edges while the proposition remains held.
 

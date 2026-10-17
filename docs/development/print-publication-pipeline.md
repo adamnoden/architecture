@@ -101,12 +101,12 @@ Its current five-part sequence is:
 
 The six currently expanded patterns are deliberately broad rather than a privileged inner canon:
 
-- `HSA-P-001` — Controlled Utility Entry;
-- `HSA-P-005` — Designed Structural Penetration;
-- `HSA-P-018` — Failure-Tolerant Wet Service Room;
-- `HSA-P-007` — Permanent Opening / Replaceable Window;
-- `HSA-P-013` — Ground-Supported Façade Access;
-- `HSA-P-012` — Physical Service Index.
+- `PAT-001` — Controlled Utility Entry;
+- `PAT-005` — Designed Structural Penetration;
+- `PAT-018` — Failure-Tolerant Wet Service Room;
+- `PAT-007` — Permanent Opening / Replaceable Window;
+- `PAT-013` — Ground-Supported Façade Access;
+- `PAT-012` — Physical Service Index.
 
 The full compact-edition contract is maintained in `publication/primer/README.md`.
 

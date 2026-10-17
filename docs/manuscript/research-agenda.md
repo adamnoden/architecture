@@ -78,7 +78,7 @@ There is no standing programme to do this before a concrete need exists.
 
 ## 6. What positive Georgian-specific internal grammar is still missing?
 
-G-01 v0.1 is strongest at architectural body, elevation and threshold scale.
+G-01 is strongest at architectural body, elevation and threshold scale.
 
 Its positive account of internal plan grammar is deliberately thinner. Historical service hierarchy and fixed ceremonial sequences were rejected rather than laundered into contemporary rules.
 

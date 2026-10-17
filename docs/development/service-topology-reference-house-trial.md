@@ -4,7 +4,7 @@
 **Sequence tested at the time:** the service-topology pilot that preceded the current [canonical sequence](../patterns/service-topology-sequence.md)  
 **Current project state:** [Reference House Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md)
 
-> **Historical record.** This trial captured the first honest failure to run the service-topology sequence against an underdeveloped Reference House. Its findings were subsequently acted on: whole-house coordination geometry was created; vertical distribution became canonical `HSA-P-014 — Accessible Vertical Service Zone`; `HSA-P-003` became **Coherent Horizontal Service Route**; water-failure material was reclassified under the **Fail-Safe Water Distribution** strategy; the Reference House now has explicit project occurrences; and Phases 6–8 have passed. The body below is preserved as the Phase-5 reasoning that produced those outcomes. Statements such as “current state”, “required decision” and “next gate” refer to that historical trial.
+> **Historical record.** This trial captured the first honest failure to run the service-topology sequence against an underdeveloped Reference House. Its findings were subsequently acted on: whole-house coordination geometry was created; vertical distribution became canonical `PAT-014 — Accessible Vertical Service Zone`; `PAT-003` became **Coherent Horizontal Service Route**; water-failure material was reclassified under the **Fail-Safe Water Distribution** strategy; the Reference House now has explicit project occurrences; and Phases 6–8 have passed. The body below is preserved as the Phase-5 reasoning that produced those outcomes. Statements such as “current state”, “required decision” and “next gate” refer to that historical trial.
 
 ## Purpose
 
@@ -45,7 +45,7 @@ The project understands service-heavy spaces conceptually, but the current Refer
 
 ---
 
-## S2 — Controlled utility entry (`HSA-P-001`)
+## S2 — Controlled utility entry (`PAT-001`)
 
 **Current state:** pattern direction exists; project occurrence does not.
 
@@ -57,7 +57,7 @@ The Core Pattern Catalogue suggests a side/rear intake zone beside the plant/ser
 
 ---
 
-## S3 — Plant Room as Service Hub (`HSA-P-002`)
+## S3 — Plant Room as Service Hub (`PAT-002`)
 
 **Current state:** pattern direction exists; project occurrence does not.
 
@@ -95,7 +95,7 @@ Do not assign an ID yet.
 
 ---
 
-## S5 — High-Service-Room Service Wall (`HSA-P-004`)
+## S5 — High-Service-Room Service Wall (`PAT-004`)
 
 **Current state:** not yet testable at house scale.
 
@@ -109,7 +109,7 @@ That is a materially stronger instruction than “use service walls where possib
 
 ---
 
-## S6 — Horizontal Service Spine (`HSA-P-003`)
+## S6 — Horizontal Service Spine (`PAT-003`)
 
 **Current state:** principle present; occurrence unresolved.
 
@@ -123,7 +123,7 @@ But no complete plan currently demonstrates route continuity, required depth, du
 
 ---
 
-## S7 — Designed Structural Penetration (`HSA-P-005`)
+## S7 — Designed Structural Penetration (`PAT-005`)
 
 **Current state:** conceptually well aligned; no whole-house schedule.
 
@@ -151,7 +151,7 @@ Current recommendation: treat `Water-Damage-Safe Service Route` as **strategy pe
 
 ---
 
-## S9 — Physical Service Index (`HSA-P-012`)
+## S9 — Physical Service Index (`PAT-012`)
 
 **Current state:** compatible but not yet instantiated.
 
@@ -179,7 +179,7 @@ That is precisely the kind of gap a pattern language should expose.
 
 The trial confirms the distinction.
 
-`HSA-P-004` conceptually **completes** `HSA-P-003` at a finer scale, but the sequence asks the designer to examine service-wall opportunities before finalising the horizontal spine because room adjacency is expensive to change later.
+`PAT-004` conceptually **completes** `PAT-003` at a finer scale, but the sequence asks the designer to examine service-wall opportunities before finalising the horizontal spine because room adjacency is expensive to change later.
 
 A single dependency graph would express this badly.
 

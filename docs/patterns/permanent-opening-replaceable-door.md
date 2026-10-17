@@ -1,5 +1,5 @@
 ---
-id: HSA-P-019
+id: PAT-019
 title: Permanent Opening / Replaceable Door
 kind: pattern
 state: active
@@ -28,7 +28,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-019 — Permanent Opening / Replaceable Door
+# Permanent Opening / Replaceable Door
 
 ## Context
 

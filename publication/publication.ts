@@ -1,3 +1,5 @@
+import { patternPublicationOrder } from '../project/patterns.js'
+
 export type PublicationEntryKind =
   | 'preface'
   | 'front-matter'
@@ -34,34 +36,13 @@ export interface PublicationEntry {
   smokeOnly?: boolean
 }
 
-export const canonicalPatternOrder = [
-  'HSA-P-001',
-  'HSA-P-002',
-  'HSA-P-014',
-  'HSA-P-003',
-  'HSA-P-015',
-  'HSA-P-004',
-  'HSA-P-005',
-  'HSA-P-016',
-  'HSA-P-017',
-  'HSA-P-018',
-  'HSA-P-009',
-  'HSA-P-007',
-  'HSA-P-019',
-  'HSA-P-020',
-  'HSA-P-008',
-  'HSA-P-022',
-  'HSA-P-010',
-  'HSA-P-021',
-  'HSA-P-011',
-  'HSA-P-013',
-  'HSA-P-012'
-] as const
+/** @deprecated Use patternPublicationOrder from project/patterns.ts. */
+export const canonicalPatternOrder = patternPublicationOrder
 
 const pattern = (id: string, source: string, title: string): PublicationEntry => ({
   id: `pattern-${id.toLowerCase()}`,
   source: `docs/patterns/${source}`,
-  title: `${title} — ${id}`,
+  title,
   kind: 'pattern',
   adapter: 'pattern-page',
   patternId: id
@@ -96,9 +77,9 @@ export const smokePublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'smoke-pattern',
     source: 'docs/patterns/controlled-utility-entry.md',
-    title: 'Controlled Utility Entry — HSA-P-001',
+    title: 'Controlled Utility Entry',
     kind: 'pattern',
-    patternId: 'HSA-P-001'
+    patternId: 'PAT-001'
   },
   {
     id: 'smoke-mermaid',
@@ -188,27 +169,27 @@ export const publicationEntries: readonly PublicationEntry[] = [
     kind: 'part'
   },
 
-  pattern('HSA-P-001', 'controlled-utility-entry.md', 'Controlled Utility Entry'),
-  pattern('HSA-P-002', 'plant-room-service-hub.md', 'Plant Room as Service Hub'),
-  pattern('HSA-P-014', 'accessible-vertical-service-zone.md', 'Accessible Vertical Service Zone'),
-  pattern('HSA-P-003', 'coherent-horizontal-service-route.md', 'Coherent Horizontal Service Route'),
-  pattern('HSA-P-015', 'accessible-room-service-route.md', 'Accessible Room Service Route'),
-  pattern('HSA-P-004', 'high-service-room-service-wall.md', 'High-Service-Room Service Wall'),
-  pattern('HSA-P-005', 'designed-structural-penetration.md', 'Designed Structural Penetration'),
-  pattern('HSA-P-016', 'compartmented-service-void.md', 'Compartmented Service Void'),
-  pattern('HSA-P-017', 'visible-leakage-path.md', 'Visible Leakage Path'),
-  pattern('HSA-P-018', 'failure-tolerant-wet-service-room.md', 'Failure-Tolerant Wet Service Room'),
-  pattern('HSA-P-009', 'accessible-rainwater-route.md', 'Accessible Rainwater Route'),
-  pattern('HSA-P-007', 'permanent-opening-replaceable-window.md', 'Permanent Opening / Replaceable Window'),
-  pattern('HSA-P-019', 'permanent-opening-replaceable-door.md', 'Permanent Opening / Replaceable Door'),
-  pattern('HSA-P-020', 'designed-threshold.md', 'Designed Threshold'),
-  pattern('HSA-P-008', 'movement-slip-junction.md', 'Movement / Slip Junction'),
-  pattern('HSA-P-022', 'controlled-attachment-plane.md', 'Controlled Attachment Plane'),
-  pattern('HSA-P-010', 'source-capture-kitchen-extract.md', 'Source-Capture Kitchen Extract'),
-  pattern('HSA-P-021', 'source-capture-bathroom-extract.md', 'Source-Capture Bathroom Extract'),
-  pattern('HSA-P-011', 'roof-maintenance-route.md', 'Roof Maintenance Route'),
-  pattern('HSA-P-013', 'ground-supported-facade-access.md', 'Ground-Supported Façade Access'),
-  pattern('HSA-P-012', 'physical-service-index.md', 'Physical Service Index'),
+  pattern('PAT-001', 'controlled-utility-entry.md', 'Controlled Utility Entry'),
+  pattern('PAT-002', 'plant-room-service-hub.md', 'Plant Room as Service Hub'),
+  pattern('PAT-014', 'accessible-vertical-service-zone.md', 'Accessible Vertical Service Zone'),
+  pattern('PAT-003', 'coherent-horizontal-service-route.md', 'Coherent Horizontal Service Route'),
+  pattern('PAT-015', 'accessible-room-service-route.md', 'Accessible Room Service Route'),
+  pattern('PAT-004', 'high-service-room-service-wall.md', 'High-Service-Room Service Wall'),
+  pattern('PAT-005', 'designed-structural-penetration.md', 'Designed Structural Penetration'),
+  pattern('PAT-016', 'compartmented-service-void.md', 'Compartmented Service Void'),
+  pattern('PAT-017', 'visible-leakage-path.md', 'Visible Leakage Path'),
+  pattern('PAT-018', 'failure-tolerant-wet-service-room.md', 'Failure-Tolerant Wet Service Room'),
+  pattern('PAT-009', 'accessible-rainwater-route.md', 'Accessible Rainwater Route'),
+  pattern('PAT-007', 'permanent-opening-replaceable-window.md', 'Permanent Opening / Replaceable Window'),
+  pattern('PAT-019', 'permanent-opening-replaceable-door.md', 'Permanent Opening / Replaceable Door'),
+  pattern('PAT-020', 'designed-threshold.md', 'Designed Threshold'),
+  pattern('PAT-008', 'movement-slip-junction.md', 'Movement / Slip Junction'),
+  pattern('PAT-022', 'controlled-attachment-plane.md', 'Controlled Attachment Plane'),
+  pattern('PAT-010', 'source-capture-kitchen-extract.md', 'Source-Capture Kitchen Extract'),
+  pattern('PAT-021', 'source-capture-bathroom-extract.md', 'Source-Capture Bathroom Extract'),
+  pattern('PAT-011', 'roof-maintenance-route.md', 'Roof Maintenance Route'),
+  pattern('PAT-013', 'ground-supported-facade-access.md', 'Ground-Supported Façade Access'),
+  pattern('PAT-012', 'physical-service-index.md', 'Physical Service Index'),
 
   {
     id: 'strategy-fail-safe-water',

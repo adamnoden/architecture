@@ -39,7 +39,7 @@ Across the current set, the evidence rejects several attractive simplifications:
 - historical phase cannot be stripped from geometry;
 - urban order may operate at terrace/block scale rather than stop at the party wall.
 
-Those findings are synthesised in [G-01 Validation and Limits](../g01-validation.md) and reflected selectively in the current [G-01 v0.1 specification](../g01-v0.1.md).
+Those findings are synthesised in [G-01 Validation and Limits](../g01-validation.md) and reflected selectively in the current [G-01 specification](../g01-v0.1.md).
 
 ## Evidence boundary
 

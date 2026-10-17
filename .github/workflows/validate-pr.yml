@@ -30,12 +30,8 @@ jobs:
       - name: Check repository health
         run: npm run check
 
-      - name: Ensure PDF metadata tooling
-        run: |
-          if ! command -v pdfinfo >/dev/null 2>&1; then
-            sudo apt-get update
-            sudo apt-get install -y poppler-utils
-          fi
+      - name: Validate public nomenclature source
+        run: npx tsx scripts/validate-public-nomenclature.ts --source
 
       - name: Build publication PDFs
         run: |
@@ -44,3 +40,20 @@ jobs:
 
       - name: Check publication PDF metadata
         run: npm run publication:metadata:check
+
+      - name: Validate rendered public nomenclature
+        run: npx tsx scripts/validate-public-nomenclature.ts --rendered
+
+      - name: Prove rendered nomenclature regressions
+        run: npx tsx scripts/test-public-nomenclature-regressions.ts --rendered
+
+      - name: Inventory reader-facing nomenclature
+        run: |
+          npm run nomenclature:inventory -- \
+            --files=pattern.pat \
+            --files=reference-house.compiler-gate \
+            --files=compiler.p0 \
+            --files=compiler.pattern-crosswalk \
+            --files=compiler.cf \
+            --files=compiler.ch \
+            --files=compiler.h1

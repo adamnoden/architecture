@@ -1,5 +1,5 @@
 ---
-id: HSA-P-009
+id: PAT-009
 title: Accessible Rainwater Route
 kind: pattern
 state: active
@@ -25,7 +25,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-009 — Accessible Rainwater Route
+# Accessible Rainwater Route
 
 ## Context
 

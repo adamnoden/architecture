@@ -1,6 +1,7 @@
 import { createContentLoader } from 'vitepress'
+import { readerPatternRank } from '../../project/patterns.js'
 
-const PATTERN_ID = /^HSA-P-\d{3}$/
+const PATTERN_ID = /^PAT-\d{3}$/
 const relationshipFields = ['requires', 'completes', 'alternative_to', 'tension_with'] as const
 
 type RelationshipField = (typeof relationshipFields)[number]
@@ -27,6 +28,21 @@ function stringArray(value: unknown): string[] {
   return Array.isArray(value) ? value.map(String) : []
 }
 
+function readerOrder(a: PatternIndexRecord, b: PatternIndexRecord): number {
+  if (a.state !== b.state) return a.state === 'active' ? -1 : 1
+
+  if (a.state === 'active') {
+    const aRank = readerPatternRank(a.id)
+    const bRank = readerPatternRank(b.id)
+    if (aRank === null || bRank === null) {
+      throw new Error(`Active pattern reader order is incomplete: ${a.id} / ${b.id}`)
+    }
+    return aRank - bRank
+  }
+
+  return a.title.localeCompare(b.title)
+}
+
 export default createContentLoader(['*.md', 'retired/*.md'], {
   transform(pages): PatternIndexRecord[] {
     const patternPages = pages.filter(({ frontmatter }) => frontmatter.kind === 'pattern' && frontmatter.id)
@@ -39,7 +55,7 @@ export default createContentLoader(['*.md', 'retired/*.md'], {
       const rawState = String(frontmatter.state ?? '')
       const isRetiredLocation = url.includes('/retired/')
 
-      if (!PATTERN_ID.test(id)) errors.push(`${url}: invalid pattern id "${id}"; expected HSA-P-xxx`)
+      if (!PATTERN_ID.test(id)) errors.push(`${url}: invalid pattern id "${id}"; expected PAT-xxx`)
       if (ids.has(id)) errors.push(`${url}: duplicate stable pattern id ${id}`)
       ids.add(id)
 
@@ -95,6 +111,6 @@ export default createContentLoader(['*.md', 'retired/*.md'], {
       throw new Error(`Pattern-language metadata validation failed:\n${errors.map((error) => `  - ${error}`).join('\n')}`)
     }
 
-    return records.sort((a, b) => a.id.localeCompare(b.id))
+    return records.sort(readerOrder)
   }
 })

@@ -55,7 +55,7 @@ A previously considered remote en-suite was removed rather than buying a second 
 
 ## Architectural order and section
 
-The house selects [G-01 v0.1](../grammar/g01-v0.1.md), a bounded Georgian-derived domestic grammar. It conforms to that language without asking the grammar to explain its courtyard, services or construction system. The [G-01 conformance record](g01-v0.1-conformance-d12.md) sets out the six-rule result directly.
+The house selects [G-01](../grammar/g01-v0.1.md), a bounded Georgian-derived domestic grammar. It conforms to that language without asking the grammar to explain its courtyard, services or construction system. The [G-01 conformance record](g01-v0.1-conformance-d12.md) sets out the six-rule result directly.
 
 The principal front uses a centred four-bay field with the entrance in the third bay rather than at the geometric centre. This preserves a coherent exterior order without forcing the interior stair and arrival sequence to serve bilateral symmetry.
 

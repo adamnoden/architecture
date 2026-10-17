@@ -1,11 +1,10 @@
 # G-01 Case DS76 — 76 Dean Street
 
 **Case ID:** G01-DS76  
-**Analysis role:** TRIAL — urban contrast  
 **Corpus class:** early Georgian urban terraced townhouse  
-**D3 status:** semantic annotation v0.1 complete with deliberately larger UNKNOWN set; D5 metrics deferred  
+**Evidence state:** semantic annotation complete with a deliberately larger unknown set; dimensional metrics deferred<br>
 **Evidence grade:** B descriptive + located historic survey-plan evidence; direct plan interpretation limited to what the record image safely supports  
-**Purpose:** stress-test the annotation contract against urban constraint and prevent villa-derived rules from being mistaken for universal Georgian rules.
+**Purpose:** use urban constraint to prevent villa-derived rules from being mistaken for universal Georgian rules.
 
 > The value of this case is partly what it refuses to let us assume.
 
@@ -54,11 +53,11 @@ Use for geometry only with explicit phase caution.
 
 Not a grammar target.
 
-### D3 consequence
+### Methodological consequence
 
 Unlike Danson, we do not currently possess enough directly phase-reconciled source material to assign every room function to P1.
 
-D3 therefore uses **geometry-neutral research IDs** where room names would be guesses.
+The record therefore uses **geometry-neutral research IDs** where room names would be guesses.
 
 ## 4. Building-level morphology
 
@@ -165,7 +164,7 @@ Historic England's listing records:
 
 Historic England's townhouse interpretation places this within the broader early-Georgian shift toward first-floor entertaining/piano-nobile emphasis.
 
-### D3 interpretation
+### Architectural interpretation
 
 Architectural hierarchy can be expressed through:
 
@@ -207,7 +206,7 @@ The geometric façade centre and entrance are not the same object.
 
 This alone is enough to invalidate a naive “main entrance must occupy whole-building centre” rule.
 
-## 9. Metric geometry — D5 state
+## 9. Metric geometry — measurement state
 
 ### Known discrete geometry
 
@@ -221,7 +220,7 @@ The V&A record print includes a scale bar.
 
 However:
 
-> **No D5 room dimensions are extracted from the current web reproduction.**
+> **No room dimensions are extracted from the current web reproduction.**
 
 Reasons:
 
@@ -229,7 +228,7 @@ Reasons:
 - phase uncertainty;
 - availability of potentially better Historic England/Survey of London survey material.
 
-D5 should use the best available drawing, not reverse-engineer precision from a convenient JPEG.
+Dimensional analysis should use the best available drawing, not reverse-engineer precision from a convenient JPEG.
 
 ## 10. Vertical grammar
 
@@ -242,7 +241,7 @@ D5 should use the best available drawing, not reverse-engineer precision from a 
 - service stair remains distinct;
 - townhouse tradition shifts principal entertaining emphasis through vertical hierarchy.
 
-### D3 finding
+### Vertical-order finding
 
 The morphology requires a grammar that can say:
 
@@ -260,7 +259,7 @@ High-confidence principal-front facts:
 - one first-floor opening wider/taller than its neighbours;
 - window hierarchy changes by storey.
 
-Exact window-centre coordinates and room associations remain D6 work.
+Exact window-centre coordinates and room associations remain plan/elevation coupling analysis.
 
 ## 12. Plan / elevation coupling
 
@@ -394,8 +393,8 @@ Potential conflict:
 |---|---|---|
 | DS76-U01 | exact P1 ground-/first-floor doorway graph | complete D4 |
 | DS76-U02 | historical room names/functions in P1 | hierarchy detail |
-| DS76-U03 | direct high-resolution GLC/HE survey-plan extraction | D5 |
-| DS76-U04 | exact opening-to-room centreline mapping | D6 |
+| DS76-U03 | direct high-resolution GLC/HE survey-plan extraction | dimensional analysis |
+| DS76-U04 | exact opening-to-room centreline mapping | plan/elevation coupling analysis |
 | DS76-U05 | original versus later service-stair configuration | detailed topology |
 | DS76-U06 | structural support/span system | structural research |
 
@@ -413,7 +412,7 @@ D3 has demonstrated that the schema can:
 - identify vertical and circulation hierarchy;
 - falsify villa-derived universal rules.
 
-The remaining drawing acquisition belongs primarily to D4 completion and D5/D6 measurement/coupling analysis.
+The remaining drawing acquisition belongs primarily to D4 completion and measurement/coupling analysis measurement/coupling analysis.
 
 ## Source anchors
 

@@ -39,7 +39,7 @@ Use existing project-requirement/provenance machinery conceptually:
 
 ```text
 PROJECT REQUIREMENT PR-XW-003
-provenance: HSA-P-003
+provenance: PAT-003
 scope: service route set SR-01
 formal commitments:
   - route segments identified
@@ -92,9 +92,9 @@ optional PHYSICAL INDEX / LABEL artefact IDX01
 
 Pattern provenance:
 
-- `HSA-P-003 — Coherent Horizontal Service Route` for `SR01/SR02`;
-- `HSA-P-005 — Designed Structural Penetration` for `PEN01`;
-- optional second-stage `HSA-P-012 — Physical Service Index` for `IDX01`.
+- `PAT-003 — Coherent Horizontal Service Route` for `SR01/SR02`;
+- `PAT-005 — Designed Structural Penetration` for `PEN01`;
+- optional second-stage `PAT-012 — Physical Service Index` for `IDX01`.
 
 Do **not** include `P-002`, `P-004`, `P-014` in the first fixture merely to look comprehensive. They need more spatial geometry and add little to the first falsification.
 
@@ -210,7 +210,7 @@ The crosswalk must not emit one `PATTERN = PASS` Boolean.
 Conceptually:
 
 ```text
-Pattern crosswalk: HSA-P-005
+Pattern crosswalk: PAT-005
 Project scope: PEN01
 
 FORMAL ARCHITECTURAL COMMITMENTS
@@ -243,7 +243,7 @@ Examples:
 FAIL
 route SR03 leaves selected accessible service geography
 authority: project requirement
-provenance: HSA-P-003
+provenance: PAT-003
 
 UNRESOLVED
 penetration PEN01 interrupts air boundary AB01 without accepted reinstatement evidence
@@ -266,7 +266,7 @@ None beyond the already-authorised P0 machinery.
 
 ## Post-P0 additions allowed if the fixture needs them
 
-1. project-requirement provenance reference capable of pointing to `HSA-P-xxx`;
+1. project-requirement provenance reference capable of pointing to `PAT-xxx`;
 2. report grouping that gathers relevant project commitments + induced obligations under a pattern occurrence/scope;
 3. generic `identifies` / `refers-to` relation for physical information artefacts **only if `P-012` cannot be represented cleanly without it**.
 

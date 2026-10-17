@@ -3,7 +3,7 @@
 **Status:** pre-build test protocol  
 **Prototype:** `P01-W2`  
 **Companion build pack:** [W2 Replaceable Wall — Prototype Build Pack](w2-wall-bay-build-pack.md)  
-**Decision target:** `HSA-P-022 — Controlled Attachment Plane` + held candidate **Replaceable Architectural Lining**
+**Decision target:** `PAT-022 — Controlled Attachment Plane` + held candidate **Replaceable Architectural Lining**
 
 This document controls how P01-W2 is judged. The build pack says **what to make**; this protocol says **what evidence must be captured before anyone is allowed to call the result promising**.
 

@@ -1,11 +1,10 @@
 # G-01 Case MHH — Marble Hill House
 
 **Case ID:** G01-MHH  
-**Analysis role:** TRIAL  
 **Corpus class:** compact English Palladian villa  
-**D3 status:** semantic annotation v0.1 complete; D5 metric extraction intentionally partial  
+**Evidence state:** semantic annotation complete; dimensional metric extraction intentionally partial<br>
 **Evidence grade:** A1 source universe available, with phase reconciliation required  
-**Purpose:** test the annotation contract against a compact canonical villa whose architectural hierarchy, vertical order and later service growth are unusually legible.
+**Purpose:** document a compact canonical villa whose architectural hierarchy, vertical order and later service growth are unusually legible.
 
 > This record annotates evidence. It does not promote G-01 rules.
 
@@ -47,7 +46,7 @@ The 1965–66 restoration sought to return the house towards Henrietta Howard's 
 
 ## 3. Phase frame
 
-D3 does **not** force Marble Hill into one timeless plan.
+The analysis does **not** force Marble Hill into one timeless plan.
 
 ### MHH-P1 — initial principal-villa phase, c.1724–29
 
@@ -83,7 +82,7 @@ Use for:
 - restoration provenance;
 - understanding what was intentionally reinstated.
 
-### D3 consequence
+### Methodological consequence
 
 **There is no single historically honest Marble Hill graph unless phase is attached to the graph.**
 
@@ -179,7 +178,7 @@ Its role is not explainable by access graph alone because its double-height volu
 - secondary/service route: distinct stair/service conditions exist alongside the principal route;
 - service-wing route: phase-dependent and materially expanded in P2.
 
-### D3 finding
+### Topological finding
 
 Marble Hill cannot be represented adequately by a single adjacency matrix. Route class and phase matter.
 
@@ -234,9 +233,9 @@ Candidate centre relationships:
 - Great Room central position;
 - Hall central/near-central ordering role.
 
-Exact centreline coincidence belongs to D6 measured plan/elevation work.
+Exact centreline coincidence belongs to plan/elevation coupling analysis measured plan/elevation work.
 
-## 9. Metric geometry — D5 seed only
+## 9. Metric geometry
 
 ### MHH-1-GREAT
 
@@ -256,7 +255,7 @@ This is a rare direct authoritative metric.
 
 ### Other rooms
 
-**UNKNOWN FOR D5**
+**UNKNOWN FOR dimensional analysis**
 
 Do not scale values from the public plan for rule extraction while higher-authority measured drawings remain to be reconciled.
 
@@ -290,7 +289,7 @@ High-confidence facts:
 - north front more architecturally enriched;
 - central entrance condition on the principal composition.
 
-Opening-by-opening room mapping remains D6 work.
+Opening-by-opening room mapping remains plan/elevation coupling analysis.
 
 ## 12. Plan / elevation coupling
 
@@ -415,9 +414,9 @@ Not automatically transferable:
 | ID | Question | Blocks |
 |---|---|---|
 | MHH-U01 | exact target-phase door graph for principal block | full D4 topology |
-| MHH-U02 | exact room dimensions beyond Great Room | D5 |
-| MHH-U03 | exact room-centre / façade-opening-centre relationships | D6 |
-| MHH-U04 | original versus mature-Howard ground-floor room boundaries | D5/D6 phase analysis |
+| MHH-U02 | exact room dimensions beyond Great Room | dimensional analysis |
+| MHH-U03 | exact room-centre / façade-opening-centre relationships | plan/elevation coupling analysis |
+| MHH-U04 | original versus mature-Howard ground-floor room boundaries | measurement/coupling analysis phase analysis |
 | MHH-U05 | structural span/support graph | structural grammar research |
 
 ## 21. D3 verdict

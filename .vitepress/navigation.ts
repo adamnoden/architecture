@@ -63,35 +63,35 @@ const patternsSidebar: DefaultTheme.SidebarItem[] = [
   ], false),
   group('Canonical patterns', [
     group('A · Service geography & distribution', [
-      page('HSA-P-001 — Controlled Utility Entry', '/docs/patterns/controlled-utility-entry'),
-      page('HSA-P-002 — Plant Room as Service Hub', '/docs/patterns/plant-room-service-hub'),
-      page('HSA-P-014 — Accessible Vertical Service Zone', '/docs/patterns/accessible-vertical-service-zone'),
-      page('HSA-P-003 — Coherent Horizontal Service Route', '/docs/patterns/coherent-horizontal-service-route'),
-      page('HSA-P-015 — Accessible Room Service Route', '/docs/patterns/accessible-room-service-route'),
-      page('HSA-P-004 — High-Service-Room Service Wall', '/docs/patterns/high-service-room-service-wall'),
-      page('HSA-P-005 — Designed Structural Penetration', '/docs/patterns/designed-structural-penetration'),
-      page('HSA-P-016 — Compartmented Service Void', '/docs/patterns/compartmented-service-void')
+      page('Controlled Utility Entry', '/docs/patterns/controlled-utility-entry'),
+      page('Plant Room as Service Hub', '/docs/patterns/plant-room-service-hub'),
+      page('Accessible Vertical Service Zone', '/docs/patterns/accessible-vertical-service-zone'),
+      page('Coherent Horizontal Service Route', '/docs/patterns/coherent-horizontal-service-route'),
+      page('Accessible Room Service Route', '/docs/patterns/accessible-room-service-route'),
+      page('High-Service-Room Service Wall', '/docs/patterns/high-service-room-service-wall'),
+      page('Designed Structural Penetration', '/docs/patterns/designed-structural-penetration'),
+      page('Compartmented Service Void', '/docs/patterns/compartmented-service-void')
     ], false),
     group('B · Water, leakage & failure', [
-      page('HSA-P-017 — Visible Leakage Path', '/docs/patterns/visible-leakage-path'),
-      page('HSA-P-018 — Failure-Tolerant Wet Service Room', '/docs/patterns/failure-tolerant-wet-service-room'),
-      page('HSA-P-009 — Accessible Rainwater Route', '/docs/patterns/accessible-rainwater-route')
+      page('Visible Leakage Path', '/docs/patterns/visible-leakage-path'),
+      page('Failure-Tolerant Wet Service Room', '/docs/patterns/failure-tolerant-wet-service-room'),
+      page('Accessible Rainwater Route', '/docs/patterns/accessible-rainwater-route')
     ]),
     group('C · Openings, movement & attachment', [
-      page('HSA-P-007 — Permanent Opening / Replaceable Window', '/docs/patterns/permanent-opening-replaceable-window'),
-      page('HSA-P-019 — Permanent Opening / Replaceable Door', '/docs/patterns/permanent-opening-replaceable-door'),
-      page('HSA-P-020 — Designed Threshold', '/docs/patterns/designed-threshold'),
-      page('HSA-P-008 — Movement / Slip Junction', '/docs/patterns/movement-slip-junction'),
-      page('HSA-P-022 — Controlled Attachment Plane', '/docs/patterns/controlled-attachment-plane')
+      page('Permanent Opening / Replaceable Window', '/docs/patterns/permanent-opening-replaceable-window'),
+      page('Permanent Opening / Replaceable Door', '/docs/patterns/permanent-opening-replaceable-door'),
+      page('Designed Threshold', '/docs/patterns/designed-threshold'),
+      page('Movement / Slip Junction', '/docs/patterns/movement-slip-junction'),
+      page('Controlled Attachment Plane', '/docs/patterns/controlled-attachment-plane')
     ]),
     group('D · Environment & external maintenance', [
-      page('HSA-P-010 — Source-Capture Kitchen Extract', '/docs/patterns/source-capture-kitchen-extract'),
-      page('HSA-P-021 — Source-Capture Bathroom Extract', '/docs/patterns/source-capture-bathroom-extract'),
-      page('HSA-P-011 — Roof Maintenance Route', '/docs/patterns/roof-maintenance-route'),
-      page('HSA-P-013 — Ground-Supported Façade Access', '/docs/patterns/ground-supported-facade-access')
+      page('Source-Capture Kitchen Extract', '/docs/patterns/source-capture-kitchen-extract'),
+      page('Source-Capture Bathroom Extract', '/docs/patterns/source-capture-bathroom-extract'),
+      page('Roof Maintenance Route', '/docs/patterns/roof-maintenance-route'),
+      page('Ground-Supported Façade Access', '/docs/patterns/ground-supported-facade-access')
     ]),
     group('E · Stewardship', [
-      page('HSA-P-012 — Physical Service Index', '/docs/patterns/physical-service-index')
+      page('Physical Service Index', '/docs/patterns/physical-service-index')
     ])
   ], false),
   group('Strategies', [
@@ -109,7 +109,7 @@ const patternsSidebar: DefaultTheme.SidebarItem[] = [
   ]),
   group('Retired identities', [
     page('Retired pattern overview', '/docs/patterns/retired/'),
-    page('HSA-P-006 — Water-Damage-Safe Service Route', '/docs/patterns/retired/hsa-p-006-water-damage-safe-service-route')
+    page('Water-Damage-Safe Service Route', '/docs/patterns/retired/hsa-p-006-water-damage-safe-service-route')
   ]),
   group('History & provenance', [
     page('Core 12 — legacy aggregate', '/docs/patterns/core-12'),
@@ -117,12 +117,12 @@ const patternsSidebar: DefaultTheme.SidebarItem[] = [
     page('Accessible Vertical Service Zone — pre-admission candidate', '/docs/patterns/candidates/accessible-vertical-service-zone'),
     group('Service-topology pilot', [
       page('Pilot index', '/docs/patterns/pilot/'),
-      page('HSA-P-001 — Controlled Utility Entry', '/docs/patterns/pilot/controlled-utility-entry'),
-      page('HSA-P-002 — Plant Room as Service Hub', '/docs/patterns/pilot/plant-room-service-hub'),
-      page('HSA-P-003 — Horizontal Service Spine', '/docs/patterns/pilot/horizontal-service-spine'),
-      page('HSA-P-004 — High-Service-Room Service Wall', '/docs/patterns/pilot/high-service-room-service-wall'),
-      page('HSA-P-005 — Designed Structural Penetration', '/docs/patterns/pilot/designed-structural-penetration'),
-      page('HSA-P-012 — Physical Service Index', '/docs/patterns/pilot/physical-service-index')
+      page('Controlled Utility Entry', '/docs/patterns/pilot/controlled-utility-entry'),
+      page('Plant Room as Service Hub', '/docs/patterns/pilot/plant-room-service-hub'),
+      page('Horizontal Service Spine', '/docs/patterns/pilot/horizontal-service-spine'),
+      page('High-Service-Room Service Wall', '/docs/patterns/pilot/high-service-room-service-wall'),
+      page('Designed Structural Penetration', '/docs/patterns/pilot/designed-structural-penetration'),
+      page('Physical Service Index', '/docs/patterns/pilot/physical-service-index')
     ])
   ])
 ]

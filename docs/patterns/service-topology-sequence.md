@@ -1,7 +1,5 @@
 # Service Topology — Generative Sequence
 
-**Sequence ID:** `service-topology`
-
 This sequence orders architectural decisions that strongly affect structure, room planning, boundaries, maintenance and later technical complexity. It is not a services-design specification and does not prescribe one mechanical or electrical system.
 
 Its practical question is:
@@ -46,7 +44,7 @@ If major service-intensive spaces do not have even approximate positions, return
 
 ## S2 — Establish controlled utility entry
 
-**Invoke:** [`HSA-P-001 — Controlled Utility Entry`](controlled-utility-entry.md)
+**Invoke:** [`Controlled Utility Entry`](controlled-utility-entry.md)
 
 **Move:** determine credible entry geography for incoming utilities and the architectural/boundary condition where they become internal infrastructure.
 
@@ -68,7 +66,7 @@ If the only credible utility entry cuts through a principal room, conflicts with
 
 ## S3 — Place the service hub
 
-**Invoke:** [`HSA-P-002 — Plant Room as Service Hub`](plant-room-service-hub.md)
+**Invoke:** [`Plant Room as Service Hub`](plant-room-service-hub.md)
 
 **Move:** establish a proportionate internal hub for plant, primary isolation, distribution and maintenance-intensive equipment.
 
@@ -93,7 +91,7 @@ If the hub has no replacement route or requires service distribution to cross mo
 
 ## S4 — Resolve vertical distribution
 
-**Invoke where justified:** [`HSA-P-014 — Accessible Vertical Service Zone`](accessible-vertical-service-zone.md)
+**Invoke where justified:** [`Accessible Vertical Service Zone`](accessible-vertical-service-zone.md)
 
 **Move:** in multi-storey houses, establish how services pass between storeys while preserving structure, boundaries, access and room quality. The answer may be a deliberate service zone, several smaller stacks or another proportionate arrangement.
 
@@ -117,7 +115,7 @@ If vertical distribution requires repeated structural improvisation or long bran
 
 ## S5 — Re-test service-intensive rooms and local service walls
 
-**Invoke where useful:** [`HSA-P-004 — High-Service-Room Service Wall`](high-service-room-service-wall.md)
+**Invoke where useful:** [`High-Service-Room Service Wall`](high-service-room-service-wall.md)
 
 **Move:** examine bathrooms, kitchens and utility spaces against the developing hub and vertical topology. Reorganise fixtures or adjacencies where a shared maintainable zone materially reduces destructive access or branch complexity.
 
@@ -141,7 +139,7 @@ If every service-intensive room needs bespoke infrastructure because the plan sc
 
 ## S6 — Establish coherent horizontal distribution
 
-**Invoke:** [`HSA-P-003 — Coherent Horizontal Service Route`](coherent-horizontal-service-route.md)
+**Invoke:** [`Coherent Horizontal Service Route`](coherent-horizontal-service-route.md)
 
 **Move:** connect the hub, vertical distribution and local service zones through one or more coherent horizontal routes, with short local branches where practical.
 
@@ -168,8 +166,8 @@ If the route needs excessive depth, long gravity runs or repeated crossings beca
 
 **Invoke as applicable:**
 
-- [`HSA-P-016 — Compartmented Service Void`](compartmented-service-void.md)
-- [`HSA-P-005 — Designed Structural Penetration`](designed-structural-penetration.md)
+- [`Compartmented Service Void`](compartmented-service-void.md)
+- [`Designed Structural Penetration`](designed-structural-penetration.md)
 
 **Move:** stop open service voids at significant boundaries and identify every necessary crossing of structure or protected construction as an owned interface with defined geometry and evidence obligations.
 
@@ -198,8 +196,8 @@ If a route produces numerous bespoke structural crossings or a continuous uncont
 
 **Invoke narrower patterns where their contexts apply:**
 
-- [`HSA-P-017 — Visible Leakage Path`](visible-leakage-path.md)
-- [`HSA-P-018 — Failure-Tolerant Wet Service Room`](failure-tolerant-wet-service-room.md)
+- [`Visible Leakage Path`](visible-leakage-path.md)
+- [`Failure-Tolerant Wet Service Room`](failure-tolerant-wet-service-room.md)
 
 **Move:** for pressurised-water and drainage conditions, decide how credible leakage is prevented, detected, contained, isolated, drained or made repairable without silently consuming vulnerable construction.
 
@@ -216,7 +214,7 @@ If safe failure requires elaborate containment everywhere because the selected r
 
 ## S9 — Resolve room-scale distribution
 
-**Invoke where useful:** [`HSA-P-015 — Accessible Room Service Route`](accessible-room-service-route.md)
+**Invoke where useful:** [`Accessible Room Service Route`](accessible-room-service-route.md)
 
 **Move:** carry appropriate low-level or room-scale services from the primary topology into rooms through architectural layers or joinery where repeated change justifies it.
 
@@ -233,7 +231,7 @@ If local accessibility distorts the room or creates more technical apparatus tha
 
 ## S10 — Establish stewardship identity
 
-**Invoke:** [`HSA-P-012 — Physical Service Index`](physical-service-index.md)
+**Invoke:** [`Physical Service Index`](physical-service-index.md)
 
 **Move:** assign stable identifiers to principal systems, isolators, routes and maintainable components; define the restrained physical information that should survive alongside richer digital records.
 
@@ -256,25 +254,25 @@ If the installed topology is too irregular to describe simply, do not solve that
 ```text
 SERVICE DEMAND MAP
         ↓
-HSA-P-001  Controlled Utility Entry
+Controlled Utility Entry  Controlled Utility Entry
         ↓
-HSA-P-002  Plant Room as Service Hub
+Plant Room as Service Hub  Plant Room as Service Hub
         ↓
-HSA-P-014  Accessible Vertical Service Zone — where justified
+Accessible Vertical Service Zone  Accessible Vertical Service Zone — where justified
         ↓
-HSA-P-004  High-Service-Room Service Wall — where useful
+High-Service-Room Service Wall  High-Service-Room Service Wall — where useful
         ↓
-HSA-P-003  Coherent Horizontal Service Route
+Coherent Horizontal Service Route  Coherent Horizontal Service Route
         ↓
-HSA-P-016  Compartmented Service Void
-      + HSA-P-005  Designed Structural Penetration
+Compartmented Service Void  Compartmented Service Void
+      + Designed Structural Penetration  Designed Structural Penetration
         ↓
 FAIL-SAFE WATER DISTRIBUTION
-      ↳ HSA-P-017 / HSA-P-018 where applicable
+      ↳ Visible Leakage Path / Failure-Tolerant Wet Service Room where applicable
         ↓
-HSA-P-015  Accessible Room Service Route — where useful
+Accessible Room Service Route  Accessible Room Service Route — where useful
         ↓
-HSA-P-012  Physical Service Index
+Physical Service Index  Physical Service Index
 ```
 
 The sequence is not identical to the pattern graph. Graph relationships describe reusable architectural relationships; a generative sequence orders decisions by when they become expensive to reverse. A pattern may therefore be considered earlier or later than its graph relation alone would suggest.

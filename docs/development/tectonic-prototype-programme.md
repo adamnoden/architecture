@@ -124,7 +124,7 @@ The specimen is deliberately Reference-House-specific in visible architecture. T
 
 ## Authority under test
 
-- [`HSA-P-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is already canonical; the prototype may confirm, qualify or challenge its project implementation but does not need to re-earn pattern identity from zero.
+- [`PAT-022 — Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is already canonical; the prototype may confirm, qualify or challenge its project implementation but does not need to re-earn pattern identity from zero.
 - [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains held; P01 is its principal physical admission/project-selection gate.
 
 ## General evidence questions

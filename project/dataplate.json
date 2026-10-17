@@ -99,7 +99,7 @@
     }
   },
   "referenceHouseOutputs": {
-    "schemaVersion": "OH-RH-OUTPUT-1",
+    "schemaVersion": "RH-OUTPUT-1",
     "status": "PASS",
     "sourceCompile": {
       "schemaVersion": "HK-RH-COMPILE-1",
@@ -111,7 +111,7 @@
     ],
     "artefactSetFingerprint": {
       "algorithm": "sha256",
-      "fingerprint": "3a37a56878eaa746f28f39a574dd5dfc1fdc1b1e36b10115d1a58f4d9671ffff"
+      "fingerprint": "a754871f30b07eec3d37f1f53a46f1b58f65bbc9febf123f826fa1cde9277ed7"
     }
   },
   "toolchain": {

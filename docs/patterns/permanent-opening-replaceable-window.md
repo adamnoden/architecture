@@ -1,5 +1,5 @@
 ---
-id: HSA-P-007
+id: PAT-007
 title: Permanent Opening / Replaceable Window
 kind: pattern
 state: active
@@ -26,7 +26,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-007 — Permanent Opening / Replaceable Window
+# Permanent Opening / Replaceable Window
 
 ## Context
 

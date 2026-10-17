@@ -18,6 +18,7 @@ const unsupportedSourceConstructs = [
   { label: 'Vue v-if/v-for directive', test: /\bv-(?:if|for|else|show)\s*=/i },
   { label: 'Vue template interpolation', test: /\{\{[^}]+\}\}/ }
 ]
+const patternMachineId = /\b(?:HSA-P|PAT)-\d{3}\b/
 
 function localPath(source: string): string {
   const absolute = resolve(repoRoot, source)
@@ -89,6 +90,12 @@ function validateEntries(label: string, entries: readonly PublicationEntry[]): v
     validateLocalImages(entry.source, composed)
 
     if (entry.patternId) {
+      if (patternMachineId.test(entry.title)) {
+        throw new Error(
+          `${entry.source}: reader-facing pattern title must not be constructed from machine identity (${entry.title}).`
+        )
+      }
+
       const markdown = readFileSync(localPath(entry.source), 'utf8')
       const sourceId = readFrontmatterValue(markdown, 'id')
       const state = readFrontmatterValue(markdown, 'state')
@@ -115,25 +122,37 @@ function validateScopeReport(): void {
 
 function validateFigureRegister(): void {
   const entryIds = new Set(publicationEntries.map((entry) => entry.id))
-  const figureIds = new Set<string>()
   const images = new Set<string>()
+  const expectedImages = new Set([
+    'figures/selective-permanence-platform.svg',
+    'figures/designed-interface-functions.svg',
+    'figures/failure-architecture-sequence.svg',
+    'figures/maintenance-geography-route.svg',
+    '../docs/manuscript/figures/pattern-language-fields-sequence.svg',
+    'figures/reference-house-type-orientation.svg',
+    'figures/reference-house-spatial-sectional-order.svg',
+    'figures/reference-house-structural-assembly-logic.svg',
+    'figures/reference-house-service-maintenance-geography.svg',
+    'figures/reference-house-external-maintenance-geography.svg',
+    'figures/reference-house-water-failure-geography.svg'
+  ])
 
   for (const placement of publicationFigurePlacements()) {
     if (!entryIds.has(placement.entryId)) {
-      throw new Error(`${placement.id} targets unknown publication entry ${placement.entryId}.`)
+      throw new Error(`${placement.image} targets unknown publication entry ${placement.entryId}.`)
     }
-    if (figureIds.has(placement.id)) throw new Error(`Duplicate publication figure id: ${placement.id}`)
-    if (images.has(placement.image)) throw new Error(`Publication figure reused unexpectedly: ${placement.image}`)
-    figureIds.add(placement.id)
+    if (images.has(placement.image)) {
+      throw new Error(`Publication figure reused unexpectedly: ${placement.image}`)
+    }
     images.add(placement.image)
   }
 
-  const expected = Array.from({ length: 11 }, (_, index) => `D-F${String(index + 1).padStart(2, '0')}`)
-  for (const id of expected) {
-    if (!figureIds.has(id)) throw new Error(`Missing retained PR-00D publication figure placement: ${id}`)
+  for (const image of expectedImages) {
+    if (!images.has(image)) throw new Error(`Missing retained publication figure placement: ${image}`)
   }
-  if (figureIds.has('D-F12') || figureIds.has('D-F13')) {
-    throw new Error('D-F12/D-F13 are intentionally omitted; add them only after an explicit PR-00D decision.')
+  if (images.size !== expectedImages.size) {
+    const unexpected = [...images].filter((image) => !expectedImages.has(image))
+    throw new Error(`Unexpected publication figure placement(s): ${unexpected.join(', ')}`)
   }
 }
 
@@ -163,6 +182,13 @@ for (let index = 0; index < canonicalPatternOrder.length; index += 1) {
   }
 }
 
+const numericPatternOrder = [...canonicalPatternOrder].sort((left, right) => left.localeCompare(right))
+if (canonicalPatternOrder.every((id, index) => id === numericPatternOrder[index])) {
+  throw new Error(
+    'Pattern publication order has collapsed to machine-ID order; reading sequence must remain an explicit independent editorial decision.'
+  )
+}
+
 console.log(
-  `Publication manifests, adapters, PR-00D figure composition and generated scope report valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
+  `Publication manifests, adapters, figure composition and generated scope report valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
 )

@@ -215,7 +215,7 @@ Cloud connectivity or proprietary home automation should not become a proof depe
 
 VENT-CMEV-01 is a whole-house background ventilation family. It does not establish the project's preferred cooking-pollutant source capture.
 
-`HSA-P-010 — Source-Capture Kitchen Extract` remains a separate architectural pattern and may require a dedicated cooker extract route coordinated with:
+`PAT-010 — Source-Capture Kitchen Extract` remains a separate architectural pattern and may require a dedicated cooker extract route coordinated with:
 
 - make-up air;
 - pressure balance;

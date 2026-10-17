@@ -1,5 +1,5 @@
 ---
-id: HSA-P-017
+id: PAT-017
 title: Visible Leakage Path
 kind: pattern
 state: active
@@ -25,7 +25,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-017 — Visible Leakage Path
+# Visible Leakage Path
 
 ## Context
 

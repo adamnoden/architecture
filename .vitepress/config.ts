@@ -1,4 +1,3 @@
-import { execSync } from 'node:child_process'
 import { relative, sep } from 'node:path'
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
@@ -14,21 +13,6 @@ import { assertNavigationCoverage, nav, sidebar } from './navigation'
 
 assertNavigationCoverage()
 
-function resolveBuildCommit(): string {
-  if (process.env.GITHUB_SHA) return process.env.GITHUB_SHA
-
-  try {
-    return execSync('git rev-parse HEAD', {
-      encoding: 'utf8',
-      stdio: ['ignore', 'pipe', 'ignore']
-    }).trim()
-  } catch {
-    return 'unknown'
-  }
-}
-
-const buildCommit = resolveBuildCommit()
-const buildTimestamp = new Date().toISOString()
 const publicNav = mapNavigationLinks(filterPublicNavigation(nav))
 const publicSidebar = mapSidebarRoutes(filterPublicNavigation(sidebar))
 
@@ -56,23 +40,14 @@ export default withMermaid(
     head: [
       ['link', { rel: 'icon', type: 'image/svg+xml', href: '/architecture/favicon.svg' }],
       ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/architecture/favicon-32.png' }],
-      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/architecture/apple-touch-icon.png' }],
-      ['meta', { name: 'house-kernel-build-commit', content: buildCommit }],
-      ['meta', { name: 'house-kernel-build-timestamp', content: buildTimestamp }]
+      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/architecture/apple-touch-icon.png' }]
     ],
-
-    vite: {
-      define: {
-        __HOUSE_KERNEL_BUILD_COMMIT__: JSON.stringify(buildCommit),
-        __HOUSE_KERNEL_BUILD_TIMESTAMP__: JSON.stringify(buildTimestamp)
-      }
-    },
 
     rewrites: rewriteSourceId,
 
     markdown: {
       config(md) {
-        md.core.ruler.after('inline', 'house-kernel-public-routes', (state) => {
+        md.core.ruler.after('inline', 'public-routes', (state) => {
           const realPath = state.env.realPath ?? state.env.path
           if (!realPath) return
 

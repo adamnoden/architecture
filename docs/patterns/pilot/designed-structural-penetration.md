@@ -1,5 +1,5 @@
 ---
-id: HSA-P-005
+id: PAT-005
 title: Designed Structural Penetration
 kind: pattern
 state: pilot
@@ -21,17 +21,17 @@ principles:
   - 11
 requires: []
 completes:
-  - HSA-P-003
-  - HSA-P-004
+  - PAT-003
+  - PAT-004
 alternative_to: []
 tension_with: []
 sequences:
   - service-topology
 ---
 
-# HSA-P-005 — Designed Structural Penetration
+# PAT-005 — Designed Structural Penetration
 
-> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`HSA-P-005 — Designed Structural Penetration`](../designed-structural-penetration.md).
+> **Historical Phase-3 pilot record.** This page preserves the compact language experiment that preceded canonical migration. For current authority, use [`PAT-005 — Designed Structural Penetration`](../designed-structural-penetration.md).
 
 ## Context
 
@@ -47,11 +47,11 @@ The recurring architectural relationship is the controlled crossing of one syste
 
 ## Language relationships
 
-### Completes `HSA-P-003 — Horizontal Service Spine`
+### Completes `PAT-003 — Horizontal Service Spine`
 
 A route is not resolved merely because a line can be drawn through the plan. Where the spine meets structure or a protected boundary, this pattern converts the abstract route into a controlled crossing.
 
-### Completes `HSA-P-004 — High-Service-Room Service Wall`
+### Completes `PAT-004 — High-Service-Room Service Wall`
 
 Local service zones commonly create crossings at floors, walls and room boundaries. The penetration pattern prevents those local branches from becoming unowned holes.
 
@@ -69,4 +69,4 @@ Structural adequacy, fire performance, acoustic performance and product/system a
 
 ## Canonical successor
 
-See [`HSA-P-005 — Designed Structural Penetration`](../designed-structural-penetration.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
+See [`PAT-005 — Designed Structural Penetration`](../designed-structural-penetration.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).

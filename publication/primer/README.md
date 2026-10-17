@@ -32,12 +32,12 @@ Canonical doctrine, pattern definitions and Reference House claims are transform
 
 Six patterns are expanded in the compact edition:
 
-- `HSA-P-001` — Controlled Utility Entry;
-- `HSA-P-005` — Designed Structural Penetration;
-- `HSA-P-018` — Failure-Tolerant Wet Service Room;
-- `HSA-P-007` — Permanent Opening / Replaceable Window;
-- `HSA-P-013` — Ground-Supported Façade Access;
-- `HSA-P-012` — Physical Service Index.
+- `PAT-001` — Controlled Utility Entry;
+- `PAT-005` — Designed Structural Penetration;
+- `PAT-018` — Failure-Tolerant Wet Service Room;
+- `PAT-007` — Permanent Opening / Replaceable Window;
+- `PAT-013` — Ground-Supported Façade Access;
+- `PAT-012` — Physical Service Index.
 
 They are chosen for breadth: service topology, permanent-fabric protection, failure tolerance, replaceable architectural assemblies, external maintenance geography and stewardship. They are not a privileged inner canon. The Primer must continue to list the full active language even when only this smaller set is expanded.
 

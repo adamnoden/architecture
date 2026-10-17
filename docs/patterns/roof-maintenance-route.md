@@ -1,5 +1,5 @@
 ---
-id: HSA-P-011
+id: PAT-011
 title: Roof Maintenance Route
 kind: pattern
 state: active
@@ -25,7 +25,7 @@ tension_with: []
 sequences: []
 ---
 
-# HSA-P-011 — Roof Maintenance Route
+# Roof Maintenance Route
 
 ## Context
 

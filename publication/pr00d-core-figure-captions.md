@@ -21,7 +21,7 @@
 **File:** `docs/manuscript/figures/designed-interface-functions.svg`  
 **Class:** ESSENTIAL ARGUMENT  
 **Primary placement:** Part II, Chapter 6, immediately after the functional decomposition of an interface.  
-**Source:** Chapter 6; HSA-P-008; HSA-P-022.
+**Source:** Chapter 6; PAT-008; PAT-022.
 
 **Publication caption**
 
@@ -34,7 +34,7 @@
 **File:** `docs/manuscript/figures/failure-architecture-sequence.svg`  
 **Class:** ESSENTIAL ARGUMENT  
 **Primary placement:** Part II, Chapter 7, after the hierarchy of failure control.  
-**Source:** Chapter 7; HSA-P-017; HSA-P-018; Fail-Safe Water Distribution strategy.
+**Source:** Chapter 7; PAT-017; PAT-018; Fail-Safe Water Distribution strategy.
 
 **Publication caption**
 

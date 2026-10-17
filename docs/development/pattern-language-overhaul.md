@@ -68,11 +68,11 @@ Detailed contract: [`../patterns/language-model.md`](../patterns/language-model.
 
 ### Active patterns — 21
 
-`HSA-P-001..005`, `HSA-P-007..022`.
+`PAT-001..005`, `PAT-007..022`.
 
 ### Retired identity
 
-`HSA-P-006 — Water-Damage-Safe Service Route` — permanently retired; ID never reused.
+`PAT-006 — Water-Damage-Safe Service Route` — permanently retired; ID never reused.
 
 ### Canonical strategies
 

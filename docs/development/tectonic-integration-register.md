@@ -23,11 +23,11 @@ Nothing is considered integrated merely because it appears once in prose or in t
 | TH-02 | **Tectonic honesty:** construction may conceal complexity but should not falsify material, movement, construction or function. | Principle 11 / Part II | pattern architectural-resolution field; Reference House language | Integrated |
 | TH-03 | **Concealment is not deception.** A real architectural element may conceal a real technical condition; a cosmetic surface should not counterfeit a different material or structural relationship. | Tectonic-honesty position | Reference House review test | Integrated |
 | TH-04 | **Visible technical work remains architecture.** Serviceability does not excuse unresolved appearance, touch or occupation quality. | Pattern methodology / Delivery | architectural-resolution review | Integrated |
-| TH-05 | **Bounded movement:** do not attempt to suppress every movement; identify harmless movements and give them controlled places to occur. | Principle 3 / `HSA-P-008` | movement map; movement/slip interfaces | Integrated |
+| TH-05 | **Bounded movement:** do not attempt to suppress every movement; identify harmless movements and give them controlled places to occur. | Principle 3 / `PAT-008` | movement map; movement/slip interfaces | Integrated |
 | TH-06 | **Separate functions at interfaces:** support, restraint, movement, sealing, protection and finish should be distinguished unless there is a reason to combine them. | Part II / [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md) | interface-family drawings | Integrated |
 | TH-07 | **Structural support/restraint decomposition:** support by bearing where appropriate; restrain only where restraint is required. A seated connection is one challenger, not the House Kernel identity. | [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md) | structural-engineer comparison + edge prototype if challenger advances | Integrated strategy; implementation unresolved |
 | TH-08 | **Few permanent fixings:** reversible fixings are encouraged, but penetrations of permanent fabric should be sparse, deliberate and documented. | Principle 2 / Replaceable Interior | attachment map | Integrated |
-| TH-09 | **Controlled Attachment Plane:** permanent fabric may receive a limited engineered attachment interface so later fit-out can attach principally on the replaceable side. | [`HSA-P-022`](../patterns/controlled-attachment-plane.md) | load classes; no-fix zones; remanufacturable geometry | Integrated canonical pattern |
+| TH-09 | **Controlled Attachment Plane:** permanent fabric may receive a limited engineered attachment interface so later fit-out can attach principally on the replaceable side. | [`PAT-022`](../patterns/controlled-attachment-plane.md) | load classes; no-fix zones; remanufacturable geometry | Integrated canonical pattern |
 | TH-10 | **Replaceable Architectural Lining:** investigate dry, mechanically mounted internal lining systems independent of permanent masonry where their whole-life value is credible. | [Held candidate](../patterns/candidates/replaceable-architectural-lining.md) | P01-W2 wall-bay gate + fire/acoustic/building-physics review if advanced | Held |
 | TH-11 | **Wet-trade discipline:** site-applied wet/bonded finishes require justification when they bridge replaceable layers, movement interfaces or future access. | Replaceable Interior / Delivery | wet-trade justification schedule | Integrated |
 | TH-12 | **Manufacture according to lifespan:** the shorter-lived and more replaceable the layer, the stronger the presumption for controlled manufacture and dry site assembly where whole-life value supports it. | Principle 6 / Part V / Manufacturing Strategy | manufacturing schedule | Integrated |
@@ -74,7 +74,7 @@ Not every proposition needs a pattern identity. Strategy or implementation-famil
 
 - **Doctrine / public argument:** `docs/manuscript/governing-principles.md`, `part-i.md`, `part-ii.md`;
 - **making / procurement / testing:** `docs/manuscript/part-v.md`;
-- **canonical reusable responses:** `docs/patterns/README.md` and individual `HSA-P-*` pages;
+- **canonical reusable responses:** `docs/patterns/README.md` and individual `PAT-*` pages;
 - **canonical strategies:** `docs/patterns/strategies/`;
 - **held propositions:** `docs/patterns/candidates/`;
 - **Reference House project state:** `docs/reference-house/pattern-occurrence-register.md`;

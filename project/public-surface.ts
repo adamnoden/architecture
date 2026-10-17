@@ -1,5 +1,9 @@
 export const publicSourceExcludeGlobs = [
   'STATUS.md',
+  'compiler/**',
+  'project/**',
+  'publication/**',
+  'scripts/**',
   'docs/README.md',
   'docs/development/**',
   'docs/editorial/**',
@@ -89,8 +93,8 @@ export const publicSourceExcludeGlobs = [
 ] as const
 
 const publicLabelOverrides: Readonly<Record<string, string>> = {
-  'G-01 v0.1 — frozen grammar': 'G-01 v0.1 — specification',
-  'G-01 v0.1 conformance — D12': 'G-01 v0.1 conformance',
+  'G-01 v0.1 — frozen grammar': 'G-01 — specification',
+  'G-01 v0.1 conformance — D12': 'G-01 conformance',
   'Research brief': 'Scope & derivation method',
   'Corpus register': 'Corpus & source quality',
   'Annotation schema': 'Precedent annotation method',
@@ -126,8 +130,15 @@ function globToRegExp(glob: string): RegExp {
 
 const publicSourceExcludeMatchers = publicSourceExcludeGlobs.map(globToRegExp)
 
+export function isSiteSourceCandidate(source: string): boolean {
+  return source === 'README.md' || source === 'STATUS.md' || source.startsWith('docs/')
+}
+
 export function isPublicSource(source: string): boolean {
-  return !publicSourceExcludeMatchers.some((matcher) => matcher.test(source))
+  return (
+    isSiteSourceCandidate(source) &&
+    !publicSourceExcludeMatchers.some((matcher) => matcher.test(source))
+  )
 }
 
 function sourceForNavigationLink(link: string): string | null {
@@ -159,9 +170,8 @@ export function filterPublicNavigation<T>(value: T): T {
 
   const mapped = Object.fromEntries(
     Object.entries(record).map(([key, entry]) => {
-      if (key === 'items') return [key, filterPublicNavigation(entry)]
       if (key === 'text' && typeof entry === 'string') return [key, publicLabelOverrides[entry] ?? entry]
-      return [key, entry]
+      return [key, filterPublicNavigation(entry)]
     })
   ) as Record<string, unknown>
 

@@ -201,13 +201,28 @@ function patternMetadata(context: AdapterContext): PatternMetadata[] {
     .sort((a, b) => a.id.localeCompare(b.id))
 }
 
-function staticPatternList(patterns: PatternMetadata[], state: 'active' | 'retired'): string {
+function patternsInReaderOrder(
+  patterns: PatternMetadata[],
+  state: 'active' | 'retired'
+): PatternMetadata[] {
   const rows = patterns.filter((pattern) => pattern.state === state)
+  if (state === 'retired') return rows.sort((a, b) => a.title.localeCompare(b.title))
+
+  const byId = new Map(rows.map((pattern) => [pattern.id, pattern]))
+  return canonicalPatternOrder.map((id) => {
+    const pattern = byId.get(id)
+    if (!pattern) throw new Error(`Pattern reader order is missing canonical pattern ${id}.`)
+    return pattern
+  })
+}
+
+function staticPatternList(patterns: PatternMetadata[], state: 'active' | 'retired'): string {
+  const rows = patternsInReaderOrder(patterns, state)
   if (!rows.length) throw new Error(`Pattern index has no ${state} patterns.`)
 
   return rows
     .map((pattern) => {
-      const label = `[${pattern.title} — \`${pattern.id}\`](${pattern.href})`
+      const label = `[${pattern.title}](${pattern.href})`
       return state === 'active' ? `- ${label} · ${pattern.evidence}` : `- ${label}`
     })
     .join('\n')
@@ -362,7 +377,7 @@ function primerPatternList(context: AdapterContext): string {
       const rows = ids.map((id) => {
         const pattern = byId.get(id)
         if (!pattern) throw new Error(`Primer pattern group is missing ${id}.`)
-        return `- [${pattern.title} — \`${pattern.id}\`](${pattern.href})`
+        return `- [${pattern.title}](${pattern.href})`
       })
       return `### ${title}\n\n${rows.join('\n')}`
     })
@@ -379,17 +394,17 @@ function concisePattern(context: AdapterContext, id: string): string {
   if (!problem || !pattern) throw new Error(`Primer could not compress representative pattern ${id}.`)
 
   const invariant = pattern.replace(/^\*\*/, '').replace(/\*\*$/, '')
-  return `### ${metadata.title} — ${metadata.id}\n\n**Problem.** ${problem}\n\n**Pattern.** ${invariant}`
+  return `### ${metadata.title}\n\n**Problem.** ${problem}\n\n**Pattern.** ${invariant}`
 }
 
 function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string {
   const representative = [
-    'HSA-P-001',
-    'HSA-P-005',
-    'HSA-P-018',
-    'HSA-P-007',
-    'HSA-P-013',
-    'HSA-P-012'
+    'PAT-001',
+    'PAT-005',
+    'PAT-018',
+    'PAT-007',
+    'PAT-013',
+    'PAT-012'
   ]
     .map((id) => concisePattern(context, id))
     .join('\n\n')
@@ -426,7 +441,7 @@ function adaptPrimerReferenceHouse(markdown: string): string {
     throw new Error('Primer expected two Reference House Maturity paragraphs.')
   }
 
-  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an Ovid’s House provision without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Current generated Reference House ground-floor inspection plan](generated/ground-floor-plan.svg)\n\n*The plan is a generated semantic inspection view of the current controlled model. It exposes known geometry and uncertainty without claiming construction or technical adequacy.*\n`
+  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an Ovid’s House provision without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Reference House type and orientation](../manuscript/figures/reference-house-type-orientation.svg)\n\n*The Reference House is a compact two-storey ring around an open court, with a concentrated service flank and a legible front-to-court-to-garden sequence.*\n`
 }
 
 export function applyAdapter(

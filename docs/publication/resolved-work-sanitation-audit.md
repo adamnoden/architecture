@@ -55,7 +55,7 @@ Internalisation or deletion was not allowed merely because a document looked his
 
 The stale Whole-House Coordination Fixture is the clearest example of the third case: its old 12.6 × 11.4 m / 3.6 × 3.6 m geometry remains repository history while the current 12.0 × 10.8 m / 3.6 × 4.0 m Reference House and generated inspection plan own the reader-facing state.
 
-Current identities such as `G-01 v0.1`, `HSA-P-*`, House Kernel and Metamorph Compiler remain because they describe present authority or stable cross-reference, not development chronology.
+Current identities such as `G-01 v0.1`, `PAT-*`, House Kernel and Metamorph Compiler remain because they describe present authority or stable cross-reference, not development chronology.
 
 ## Regression prevention
 

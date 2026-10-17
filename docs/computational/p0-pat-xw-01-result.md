@@ -62,14 +62,14 @@ The first post-P0 executable pattern-crosswalk fixture was merged to `main` and 
 
 The fixture exercised:
 
-- `HSA-P-003 — Coherent Horizontal Service Route`;
-- `HSA-P-005 — Designed Structural Penetration`.
+- `PAT-003 — Coherent Horizontal Service Route`;
+- `PAT-005 — Designed Structural Penetration`.
 
 Pattern provenance is carried by project requirements. The building facts remain ordinary semantic entities and relationships. Technical obligations continue to derive from the composed building model rather than from pattern-specific rule packs.
 
 A crosswalk report groups three things without collapsing them:
 
-1. **formal architectural commitments** — project authority, with `HSA-P-*` provenance;
+1. **formal architectural commitments** — project authority, with `PAT-*` provenance;
 2. **induced technical obligations** — physical/regulatory/product authority as appropriate;
 3. **architectural judgement** — explicitly `HUMAN_DETERMINATION` where the machine has no legitimate proof.
 
@@ -125,7 +125,7 @@ These remain explicit stop rules.
 
 ## 5. Deferred item — P-012
 
-`HSA-P-012 — Physical Service Index` was deliberately not added to PAT-XW-01.
+`PAT-012 — Physical Service Index` was deliberately not added to PAT-XW-01.
 
 Representing physical labels/index records may eventually justify a generic `identifies` / `refers-to` relationship and a physical-record correspondence state. The first crosswalk did not need that abstraction, so it has not been added speculatively.
 

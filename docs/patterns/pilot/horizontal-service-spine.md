@@ -1,5 +1,5 @@
 ---
-id: HSA-P-003
+id: PAT-003
 title: Horizontal Service Spine
 kind: pattern
 state: pilot
@@ -21,16 +21,16 @@ principles:
   - 8
 requires: []
 completes:
-  - HSA-P-002
+  - PAT-002
 alternative_to: []
 tension_with: []
 sequences:
   - service-topology
 ---
 
-# HSA-P-003 — Horizontal Service Spine
+# PAT-003 — Horizontal Service Spine
 
-> **Historical Phase-3 pilot record.** This page preserves the earlier “spine” formulation. The canonical pattern is now [`HSA-P-003 — Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md), which retains the identity while broadening the invariant beyond one literal spine.
+> **Historical Phase-3 pilot record.** This page preserves the earlier “spine” formulation. The canonical pattern is now [`PAT-003 — Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md), which retains the identity while broadening the invariant beyond one literal spine.
 
 ## Context
 
@@ -46,7 +46,7 @@ The pattern does not prescribe raised floors, corridor ceilings or one construct
 
 ## Language relationships
 
-### Completes `HSA-P-002 — Plant Room as Service Hub`
+### Completes `PAT-002 — Plant Room as Service Hub`
 
 The service hub concentrates equipment and distribution. The horizontal spine extends that organisation through the building rather than allowing it to dissolve immediately into ad-hoc routes.
 
@@ -64,4 +64,4 @@ Whether the route produces a domestic rather than institutional interior remains
 
 ## Canonical successor
 
-See [`HSA-P-003 — Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).
+See [`PAT-003 — Coherent Horizontal Service Route`](../coherent-horizontal-service-route.md). The earlier developed aggregate prose remains in the historical [Core Pattern Catalogue](../core-12.md).

@@ -16,7 +16,7 @@ PR-00F is a trust pass. It does not improve the architectural argument; it remov
 - **House Kernel** appears only for the formal architectural/computational system or explicit provenance.
 - **Metamorph Compiler** appears only for the bounded executable machinery.
 - Former master names appear only as explicit historical provenance.
-- `HSA-P-*` IDs remain stable pattern identities; the prefix is legacy identity, not current project branding.
+- `PAT-*` IDs remain stable pattern identities; the prefix is legacy identity, not current project branding.
 - pattern / strategy / held-candidate distinctions remain intact.
 - G-01 references use the frozen v0.1 scope and do not expand it into a historical period classifier.
 

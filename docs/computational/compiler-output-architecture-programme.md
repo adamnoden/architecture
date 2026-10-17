@@ -73,7 +73,7 @@ Execution record: `compiler/coa00/README.md`.
 
 ### COA-01 — output contract and dependency architecture — PASS
 
-Established output schema `OH-RH-OUTPUT-1`, one canonical single-pass Reference House output context, fail-closed generation policy and the rule that output medium follows information character.
+Established the Reference House output contract, now identified by the brand-neutral schema `RH-OUTPUT-1`, one canonical single-pass Reference House output context, fail-closed generation policy and the rule that output medium follows information character.
 
 Execution record: `compiler/coa01/README.md`.
 
