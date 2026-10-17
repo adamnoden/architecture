@@ -3,10 +3,11 @@
 
 **Programme:** DRW — Architectural Drawing Programme  
 **Packet:** DRW-00A  
-**Status:** DONE pending branch CI confirmation  
+**Status:** DONE  
 **Issue:** #154  
 **Branch:** `pub-nom`  
-**Authority-reconciliation merge:** `ef45bc09d91f5171475182ce29caa6b0f0f4914b`
+**Authority-reconciliation merge:** `ef45bc09d91f5171475182ce29caa6b0f0f4914b`  
+**Validation:** PR run `39057273037` / #539 — PASS
 
 ## 1. Packet outcome
 
@@ -153,7 +154,21 @@ For subsequent packets, use the following precedence unless a later packet delib
 
 If two layers conflict, the conflict is surfaced and resolved at the smallest owning upstream layer. A publication drawing is never manually massaged to conceal it.
 
-## 7. What DRW-00A deliberately does not decide
+## 7. Validation
+
+PR validation run `39057273037` / #539 passed after the reconciliation and authority record were committed, including:
+
+- repository health;
+- public nomenclature source validation;
+- Working Edition and Primer rebuilds;
+- PDF metadata checks;
+- rendered public-nomenclature validation;
+- rendered adversarial nomenclature regressions;
+- final nomenclature inventory.
+
+The reconciled authority state is therefore a green starting point for DRW-00B.
+
+## 8. What DRW-00A deliberately does not decide
 
 This packet does **not**:
 
@@ -168,10 +183,10 @@ This packet does **not**:
 
 Those decisions belong to DRW-00B onward under the execution plan.
 
-## 8. Handoff
+## 9. Handoff
 
 **Next packet: DRW-00B — freeze the current book figure inventory and before-state SVG/PDF evidence.**
 
 DRW-00B should inventory the actual current public figure assets and capture the book/site before-state without yet classifying them as retain/replace/demote/remove. That judgement is DRW-00D.
 
-The repository should remain green after this authority-only packet.
+The repository remains green after this authority-only packet.
