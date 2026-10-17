@@ -29,3 +29,18 @@ jobs:
 
       - name: Check repository health
         run: npm run check
+
+      - name: Ensure PDF metadata tooling
+        run: |
+          if ! command -v pdfinfo >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y poppler-utils
+          fi
+
+      - name: Build publication PDFs
+        run: |
+          npm run publication:build
+          npm run publication:build:primer
+
+      - name: Check publication PDF metadata
+        run: npm run publication:metadata:check

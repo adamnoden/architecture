@@ -33,6 +33,13 @@ jobs:
       - name: Check repository health
         run: npm run check
 
+      - name: Ensure PDF metadata tooling
+        run: |
+          if ! command -v pdfinfo >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y poppler-utils
+          fi
+
       - name: Build Working Edition PDF
         run: npm run publication:build
 
@@ -43,6 +50,9 @@ jobs:
         run: |
           test -s publication/dist/ovids-house.pdf
           test -s publication/dist/ovids-house-primer.pdf
+
+      - name: Check publication PDF metadata
+        run: npm run publication:metadata:check
 
       - name: Assemble Pages artifact
         run: |

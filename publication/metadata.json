@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workingEdition": {
+    "file": "publication/dist/ovids-house.pdf",
+    "pages": 217,
+    "duplexLeaves": 109,
+    "pageSize": {
+      "format": "A4",
+      "widthMm": 210,
+      "heightMm": 297,
+      "orientation": "portrait"
+    },
+    "entries": 40,
+    "figures": 11
+  },
+  "primer": {
+    "file": "publication/dist/ovids-house-primer.pdf",
+    "pages": 15,
+    "duplexLeaves": 8,
+    "pageSize": {
+      "format": "A4",
+      "widthMm": 210,
+      "heightMm": 297,
+      "orientation": "portrait"
+    },
+    "entries": 5
+  }
+}
