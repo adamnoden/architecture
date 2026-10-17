@@ -18,6 +18,7 @@ const unsupportedSourceConstructs = [
   { label: 'Vue v-if/v-for directive', test: /\bv-(?:if|for|else|show)\s*=/i },
   { label: 'Vue template interpolation', test: /\{\{[^}]+\}\}/ }
 ]
+const patternMachineId = /\b(?:HSA-P|PAT)-\d{3}\b/
 
 function localPath(source: string): string {
   const absolute = resolve(repoRoot, source)
@@ -89,6 +90,12 @@ function validateEntries(label: string, entries: readonly PublicationEntry[]): v
     validateLocalImages(entry.source, composed)
 
     if (entry.patternId) {
+      if (patternMachineId.test(entry.title)) {
+        throw new Error(
+          `${entry.source}: reader-facing pattern title must not be constructed from machine identity (${entry.title}).`
+        )
+      }
+
       const markdown = readFileSync(localPath(entry.source), 'utf8')
       const sourceId = readFrontmatterValue(markdown, 'id')
       const state = readFrontmatterValue(markdown, 'state')
@@ -161,6 +168,13 @@ for (let index = 0; index < canonicalPatternOrder.length; index += 1) {
       `Canonical pattern order mismatch at ${index + 1}: expected ${canonicalPatternOrder[index]}, got ${fullPatternIds[index]}`
     )
   }
+}
+
+const numericPatternOrder = [...canonicalPatternOrder].sort((left, right) => left.localeCompare(right))
+if (canonicalPatternOrder.every((id, index) => id === numericPatternOrder[index])) {
+  throw new Error(
+    'Pattern publication order has collapsed to machine-ID order; reading sequence must remain an explicit independent editorial decision.'
+  )
 }
 
 console.log(
