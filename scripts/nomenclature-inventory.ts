@@ -7,8 +7,11 @@ import { nomenclatureFamilies, nomenclaturePattern } from '../project/nomenclatu
 import { isPublicSource } from '../project/public-surface.js'
 
 const repoRoot = process.cwd()
-const filesArgument = process.argv.find((argument) => argument.startsWith('--files='))
-const filesFamilyId = filesArgument?.slice('--files='.length)
+const filesFamilyIds = process.argv
+  .filter((argument) => argument.startsWith('--files='))
+  .flatMap((argument) => argument.slice('--files='.length).split(','))
+  .filter(Boolean)
+const requestedFileFamilies = [...new Set(filesFamilyIds)]
 
 const TEXT_EXTENSIONS = new Set(['.md', '.ts', '.js', '.json', '.svg', '.yml', '.yaml', '.css', '.html', '.txt'])
 const EXCLUDED_DIRECTORIES = new Set(['.git', 'node_modules', 'dist', '.work'])
@@ -18,8 +21,11 @@ const families = nomenclatureFamilies.map((family) => ({
   pattern: nomenclaturePattern(family)
 }))
 
-if (filesFamilyId && !families.some((family) => family.id === filesFamilyId)) {
-  throw new Error(`Unknown nomenclature family requested by --files: ${filesFamilyId}`)
+const unknownFileFamilies = requestedFileFamilies.filter(
+  (familyId) => !families.some((family) => family.id === familyId)
+)
+if (unknownFileFamilies.length) {
+  throw new Error(`Unknown nomenclature family requested by --files: ${unknownFileFamilies.join(', ')}`)
 }
 
 type Surface =
@@ -224,7 +230,7 @@ for (const family of families) {
   console.log(`- ${family.id}: ${paths.join(', ')}`)
 }
 
-if (filesFamilyId) {
+for (const filesFamilyId of requestedFileFamilies) {
   console.log(`\nRepository files containing ${filesFamilyId}:`)
   for (const path of [...counts.get(filesFamilyId)!.repoFiles].sort()) console.log(`- ${path}`)
 }
