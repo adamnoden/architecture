@@ -23,6 +23,7 @@
     "dataplate:stamp": "tsx scripts/dataplate.ts --stamp",
     "dataplate:update": "npm run publication:metadata:update && npm run dataplate:write",
     "status:update": "tsx scripts/update-status.ts",
+    "nomenclature:inventory": "tsx scripts/nomenclature-inventory.ts",
     "typecheck": "tsc --noEmit",
     "check": "npm test && npm run docs:build",
     "artifacts:check": "npm run test:ch00 && npm run test:ch05",
