@@ -4,11 +4,11 @@ import DefaultTheme from 'vitepress/theme'
 import './custom.css'
 import './build-stamp.css'
 
-declare const __HOUSE_KERNEL_BUILD_COMMIT__: string
-declare const __HOUSE_KERNEL_BUILD_TIMESTAMP__: string
+declare const __SITE_BUILD_COMMIT__: string
+declare const __SITE_BUILD_TIMESTAMP__: string
 
-const buildCommit = __HOUSE_KERNEL_BUILD_COMMIT__
-const buildTimestamp = __HOUSE_KERNEL_BUILD_TIMESTAMP__
+const buildCommit = __SITE_BUILD_COMMIT__
+const buildTimestamp = __SITE_BUILD_TIMESTAMP__
 const shortCommit = buildCommit === 'unknown' ? buildCommit : buildCommit.slice(0, 7)
 const shortTimestamp = buildTimestamp === 'unknown'
   ? buildTimestamp
@@ -25,7 +25,7 @@ export default {
         h(
           'a',
           {
-            class: 'house-kernel-build-stamp',
+            class: 'site-build-stamp',
             href: commitUrl,
             target: '_blank',
             rel: 'noreferrer',
