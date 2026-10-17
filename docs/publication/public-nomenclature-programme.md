@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # PUB-NOM — Reader-facing Nomenclature and Identifier Architecture
 
 **Status:** planned programme  
