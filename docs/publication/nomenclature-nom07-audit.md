@@ -22,7 +22,7 @@ The gate is divided into independently resumable sub-gates so that each pass can
 - [x] **NOM-07B — patterns, strategies and held candidates**  
   Pattern index and every reader-facing pattern page, then strategies and held candidates. Verify that useful cross-reference capability survived removal of machine IDs.
 - [ ] **NOM-07C — grammar, Reference House and technical/public computational surfaces**  
-  Grammar material, Reference House exposition, generated/public technical pages, data plate and reader-visible compact technical references.
+  Grammar material, Reference House exposition, generated/public technical pages, data plate and reader-visible compact technical references. Grammar sub-pass complete; Reference House sub-pass in progress.
 - [ ] **NOM-07D — figures, captions, evidence and back matter**  
   Figure/table captions and in-text references, SVG-visible text/metadata where reader-relevant, evidence/precedent apparatus, appendices and glossary.
 - [ ] **NOM-07E — Primer and cross-surface consistency**  
@@ -92,6 +92,24 @@ Findings:
 - **REVIEW AT NOM-07F — professional acronyms such as MEWP.** These are external industry terms rather than project-owned codes. They were not expanded mechanically during this gate; final cold-reader reconciliation will decide whether first-use expansion improves accessibility.
 
 Implementation commit: `d982f6a05e369254a42918b65ac29a46947213e2`; one-shot workflow removed at `a6be8fa83533e07b6df57e751f0c1b5336bea51d`.
+
+### NOM-07C1 — architectural grammar — COMPLETE
+
+Surfaces read:
+
+- grammar overview, framework, current G-01 specification, charter, scope/derivation method and validation/limits;
+- corpus/source-quality register, annotation method, topology comparison, dimensional analysis, plan/section/elevation coupling and constraint-evidence register;
+- precedent-case index, four core precedent cases and both source-qualified measurement/coupling evidence packs.
+
+Findings:
+
+- **RETAIN — `G-01` and `G01-R01`–`G01-R06`.** The grammar identity and normative rule references are functional technical references inside a controlled specification. Human architectural meaning accompanies them; removing them would make cross-reference worse.
+- **RETAIN — corpus/source/case/entity IDs.** Codes such as `G01-MHH`, source IDs and case-specific room/relationship IDs occur in inspectable evidence records where exact provenance and cross-case comparison are the subject. They earn their technical role.
+- **FIX-NOW — research-stage machinery in public case records.** The four core case pages still exposed labels such as `Analysis role: TRIAL`, `D3 status`, `D3 finding`, `D3 interpretation`, “dimensional analysis seed”, `SUPPLEMENTARY`, `web-source pass v0.1` and “this pass” narration. These were old research-run identities rather than resolved evidence semantics. They were replaced with durable evidence/method language while preserving useful case/source identifiers.
+- **INTERNAL-ONLY — grammar execution-stage records.** D5/D6/D8/D9/D10/D10-S/D13 programme and run documents remain excluded from the resolved public surface. Their source identities do not need migration merely because they remain valid provenance.
+- **NOM-08 — `v0.1` semantics.** The current grammar version label is intentionally retained here; whether its visible version semantics imply the right maturity/order meaning belongs to the dedicated number/version audit.
+
+Implementation commit: `2da5c1164423ed639138dac38d490a7f29b99815`; one-shot workflow removed at `1acf5757c5d0028c38300693780484895e671c6c`.
 
 ## Exit condition
 
