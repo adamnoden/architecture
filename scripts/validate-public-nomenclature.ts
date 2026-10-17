@@ -13,6 +13,7 @@ import { routeForSource } from '../project/site-routes.js'
 import { dependenciesForAdapter } from '../publication/adapters.js'
 import { publicationFigurePlacements } from '../publication/figures.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
+import { projectIdentity } from '../project/identity.js'
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(scriptDirectory, '..')
@@ -203,9 +204,15 @@ function renderedSiteSurface(root: string, file: string): NomenclatureSurface {
 
 function renderedPublicationPdfs(): string[] {
   const dist = resolve(repoRoot, 'publication/dist')
-  const files = walk(dist).filter((file) => file.endsWith('.pdf'))
-  if (!files.length) {
-    throw new Error(`Rendered publication nomenclature validation found no PDFs under ${dist}.`)
+  const files = [
+    resolve(dist, `${projectIdentity.slug}.pdf`),
+    resolve(dist, `${projectIdentity.slug}-primer.pdf`)
+  ]
+  const missing = files.filter((file) => !existsSync(file))
+  if (missing.length) {
+    throw new Error(
+      `Missing required rendered publication PDF(s): ${missing.map((file) => sourcePath(file)).join(', ')}`
+    )
   }
   return files
 }

@@ -207,7 +207,23 @@ function runSourceRegressions(): void {
         }
       }
     ],
-    () => publicationValidatorFailure('reader pattern order collapsed to machine-ID order', 'collapsed to machine-ID order')
+    () => {
+      const scopePath = absolute('docs/development/print-publication-scope-crosswalk.md')
+      const originalScope = readFileSync(scopePath, 'utf8')
+      try {
+        expectSuccess(
+          'regenerate scope under deliberately broken pattern order',
+          'npm',
+          ['run', 'publication:scope:update', '--silent']
+        )
+        publicationValidatorFailure(
+          'reader pattern order collapsed to machine-ID order',
+          'collapsed to machine-ID order'
+        )
+      } finally {
+        writeFileSync(scopePath, originalScope)
+      }
+    }
   )
 
   withTextMutations(
