@@ -39,7 +39,10 @@ interface PublicationMetadata {
 
 function pdfInfo(path: string): string {
   try {
-    return execFileSync('pdfinfo', [path], { encoding: 'utf8' })
+    return execFileSync('pdfinfo', [path], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore']
+    })
   } catch (error) {
     const missing = error instanceof Error && 'code' in error && error.code === 'ENOENT'
     if (missing) {
