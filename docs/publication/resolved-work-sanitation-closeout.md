@@ -3,7 +3,7 @@
 
 **Programme:** PUB-SAN / issue #133  
 **Governing rule:** **The publication contains the resolved work, not the history of its resolution.**  
-**State:** SAN-00 through SAN-06 complete on the closeout branch; full validation passed on content head `79fd0218fd38d7854292b089618545c9ba16af7e` in PR #150.
+**State:** SAN-00 through SAN-06 complete; PR #150 merged to `main` as `02e152019c8f08ae71009ae7ab5b61e1ab575244` and issue #133 is closed.
 
 This record is the lossless closeout map for the sanitation programme. It does not preserve every document that was removed from public view. It records where the durable intellectual value now lives and which historical material is intentionally left only in the repository.
 
@@ -61,7 +61,9 @@ The guard deliberately targets unequivocal process identities rather than bannin
 
 ## Validation result
 
-PR #150 content head `79fd0218fd38d7854292b089618545c9ba16af7e` passed the full **Validate pull request** workflow (`run 423`, workflow run `38874440924`). The validated workflow includes:
+PR #150 content head `79fd0218fd38d7854292b089618545c9ba16af7e` passed the full **Validate pull request** workflow (`run 423`, workflow run `38874440924`). The final metadata-only head `f7bc2ea2cc741d8d54e294de96f8de1412b54fb6` then passed the full validation workflow (`run 424`) before PR #150 merged to `main` as `02e152019c8f08ae71009ae7ab5b61e1ab575244`.
+
+The validated workflow includes:
 
 - TypeScript type checking and repository health;
 - public-route integrity;
@@ -71,10 +73,10 @@ PR #150 content head `79fd0218fd38d7854292b089618545c9ba16af7e` passed the full 
 - publication validation and publication-integrity checks;
 - VitePress public-site build.
 
-The final metadata-only closeout commit must pass the same workflow before merge. No architectural or publication claim is broadened by that final record update.
+No architectural or publication claim was broadened by the final metadata update or merge.
 
 ## Closeout judgement
 
-PUB-SAN has met its acceptance condition at source and validation scope: the public corpus presents the resolved work, development archaeology remains internal, removed material has a recorded semantic destination or explicit rejection, and future regressions have an automated guard.
+PUB-SAN met its acceptance condition at source and validation scope: the public corpus presents the resolved work, development archaeology remains internal, removed material has a recorded semantic destination or explicit rejection, and future regressions have an automated guard.
 
-After the metadata-only closeout commit validates, PR #150 may merge and issue #133 may close as completed.
+PR #150 is merged, issue #133 is closed as completed, and this programme is no longer an active work queue.
