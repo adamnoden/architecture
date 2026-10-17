@@ -44,6 +44,7 @@ interface Failure {
   path: string
   family: string
   matches: readonly string[]
+  contexts: readonly string[]
 }
 
 function collectMarkdown(dir: string): string[] {
@@ -61,8 +62,19 @@ function repoPath(path: string): string {
   return relative(repoRoot, path).split(sep).join('/')
 }
 
-function matchesFor(family: NomenclatureFamily, text: string): string[] {
-  return [...text.matchAll(nomenclaturePattern(family))].map((match) => match[0])
+function familyOccurrences(
+  family: NomenclatureFamily,
+  text: string
+): { matches: string[]; contexts: string[] } {
+  const occurrences = [...text.matchAll(nomenclaturePattern(family))]
+  const matches = [...new Set(occurrences.map((match) => match[0]))].slice(0, 6)
+  const contexts = occurrences.slice(0, 3).map((match) => {
+    const index = match.index ?? 0
+    const start = Math.max(0, index - 80)
+    const end = Math.min(text.length, index + match[0].length + 80)
+    return text.slice(start, end).replace(/\s+/g, ' ').trim()
+  })
+  return { matches, contexts }
 }
 
 function stripFrontmatter(markdown: string): string {
@@ -96,26 +108,18 @@ function sourceTextForFamily(path: string, family: NomenclatureFamily, text: str
 function scanSource(path: string, text: string, failures: Failure[]): void {
   for (const family of readerProhibitedFamilies) {
     if (familyAllowedOnPublicMachine(path, family)) continue
-    const matches = matchesFor(family, sourceTextForFamily(path, family, text))
-    if (!matches.length) continue
-    failures.push({
-      path,
-      family: family.id,
-      matches: [...new Set(matches)].slice(0, 6)
-    })
+    const occurrence = familyOccurrences(family, sourceTextForFamily(path, family, text))
+    if (!occurrence.matches.length) continue
+    failures.push({ path, family: family.id, ...occurrence })
   }
 }
 
 function scan(path: string, text: string, failures: Failure[]): void {
   for (const family of readerProhibitedFamilies) {
     if (familyAllowedOnPublicMachine(path, family)) continue
-    const matches = matchesFor(family, text)
-    if (!matches.length) continue
-    failures.push({
-      path,
-      family: family.id,
-      matches: [...new Set(matches)].slice(0, 6)
-    })
+    const occurrence = familyOccurrences(family, text)
+    if (!occurrence.matches.length) continue
+    failures.push({ path, family: family.id, ...occurrence })
   }
 }
 
@@ -241,10 +245,14 @@ const failures = sourceMode ? validateSource() : validateRendered()
 if (failures.length) {
   throw new Error(
     `Public nomenclature validation failed (${sourceMode ? 'source' : 'rendered'}):\n${failures
-      .map(
-        (failure) =>
-          `  - ${failure.path}: ${failure.family} (${failure.matches.map((value) => JSON.stringify(value)).join(', ')})`
-      )
+      .map((failure) => {
+        const contexts = failure.contexts.length
+          ? `\n${failure.contexts.map((context) => `      context: ${JSON.stringify(context)}`).join('\n')}`
+          : ''
+        return `  - ${failure.path}: ${failure.family} (${failure.matches
+          .map((value) => JSON.stringify(value))
+          .join(', ')})${contexts}`
+      })
       .join('\n')}`
   )
 }
