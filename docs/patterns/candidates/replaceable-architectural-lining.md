@@ -7,7 +7,7 @@ evidence: supported
 
 # Candidate — Replaceable Architectural Lining
 
-**Status:** held; no stable pattern ID  
+**Status:** held<br>
 **Evidence:** Supported direction  
 **Primary unresolved gate:** physical repose / solidity
 

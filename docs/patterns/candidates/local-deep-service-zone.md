@@ -7,7 +7,7 @@ evidence: proposed
 
 # Candidate — Local Deep Service Zone
 
-**Status:** held; no stable pattern ID  
+**Status:** held<br>
 **Evidence:** Proposed / credible coordination tactic  
 **Primary unresolved gate:** demonstrate a recurring invariant beyond “make more space locally”
 

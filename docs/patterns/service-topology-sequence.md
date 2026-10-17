@@ -1,7 +1,5 @@
 # Service Topology — Generative Sequence
 
-**Sequence ID:** `service-topology`
-
 This sequence orders architectural decisions that strongly affect structure, room planning, boundaries, maintenance and later technical complexity. It is not a services-design specification and does not prescribe one mechanical or electrical system.
 
 Its practical question is:

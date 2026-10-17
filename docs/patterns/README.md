@@ -25,7 +25,7 @@ Pattern identity is independent from evidence maturity. A pattern can have a sta
   </ul>
 </div>
 
-The architectural name is the reader-facing identity. Stable machine IDs remain available to the computational and reference systems, but are not part of the ordinary pattern list.
+Patterns are referred to by architectural name throughout the publication.
 
 ## Other layers
 
@@ -44,4 +44,4 @@ The [Pattern Model and Authoring Contract](language-model.md) defines pattern id
 
 The Reference House records the patterns that materially shape it in [Pattern Selection](../reference-house/pattern-occurrence-register.md). Use in that house does not increase a pattern's general evidence or maturity.
 
-The active list above is generated from pattern metadata; individual pattern records remain the source of pattern identity and evidence status.
+The active list above reflects the current canonical set and evidence status.
