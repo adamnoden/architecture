@@ -4,7 +4,7 @@ Architectural grammar is the project layer that makes a **selected architectural
 
 The grammar layer may describe topology, hierarchy, ordering, dimensions and proportions, plan/section/elevation relationships, element families and tectonic rules. It remains independent from the computational supported domain: a computational model may represent or check selected grammar relationships, but it does not own the architectural language being represented.
 
-The first developed grammar, **G-01 v0.1**, is a bounded Georgian-derived domestic grammar. Its rules do not become Ovid’s House doctrine merely because the Reference House uses them.
+The first developed grammar, **G-01**, is a bounded Georgian-derived domestic grammar. Its rules do not become Ovid’s House doctrine merely because the Reference House uses them.
 
 ## Framework
 
@@ -12,9 +12,9 @@ The first developed grammar, **G-01 v0.1**, is a bounded Georgian-derived domest
 
 The framework remains less strongly demonstrated than G-01 itself because one grammar cannot establish neutrality. A materially different second grammar would be the strongest test of whether concepts such as scoped order, hierarchy and plan/section/elevation coupling genuinely generalise.
 
-## G-01 v0.1
+## G-01
 
-The current specification is [G-01 v0.1 — Georgian-Derived Domestic Grammar](g01-v0.1.md).
+The current specification is [G-01 — Georgian-Derived Domestic Grammar](g01-v0.1.md).
 
 Its six surviving relationships concern:
 

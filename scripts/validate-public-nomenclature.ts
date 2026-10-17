@@ -51,6 +51,7 @@ function walk(root: string): string[] {
 function surfaceForSource(path: string): NomenclatureSurface {
   if (path.startsWith('docs/computational/')) return 'SITE_TECHNICAL'
   if (path.startsWith('docs/reference-house/generated/')) return 'SITE_TECHNICAL'
+  if (path === 'docs/reference-house/g01-v0.1-conformance-d12.md') return 'SITE_TECHNICAL'
   if (path === 'docs/patterns/language-model.md') return 'SITE_TECHNICAL'
   if (path.startsWith('docs/grammar/') && !path.endsWith('/README.md')) return 'SITE_TECHNICAL'
   return 'SITE_PRIMARY'

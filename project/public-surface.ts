@@ -93,8 +93,8 @@ export const publicSourceExcludeGlobs = [
 ] as const
 
 const publicLabelOverrides: Readonly<Record<string, string>> = {
-  'G-01 v0.1 — frozen grammar': 'G-01 v0.1 — specification',
-  'G-01 v0.1 conformance — D12': 'G-01 v0.1 conformance',
+  'G-01 v0.1 — frozen grammar': 'G-01 — specification',
+  'G-01 v0.1 conformance — D12': 'G-01 conformance',
   'Research brief': 'Scope & derivation method',
   'Corpus register': 'Corpus & source quality',
   'Annotation schema': 'Precedent annotation method',

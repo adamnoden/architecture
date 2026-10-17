@@ -218,12 +218,12 @@ export const nomenclatureFamilies = [
     examples: ['G-01 v0.1'],
     pattern: '\\bG-01 v\\d+\\.\\d+\\b',
     classification: 'PUBLIC_TECHNICAL',
-    allowedSurfaces: ALL_READER_SURFACES,
+    allowedSurfaces: TECHNICAL_SURFACES,
     roles: ['IDENTITY_ONLY', 'VERSIONED'],
     stability: 'VERSIONED',
     brandCoupling: 'NOT_APPLICABLE',
     migration: 'CURRENT',
-    exception: 'Currently used as an explicit reader-facing specification version; NOM-08 owns whether that visible version treatment should remain.'
+    exception: 'Exact grammar-specification revision identity; ordinary primary prose uses G-01 or the human grammar name.'
   },
   {
     id: 'grammar.gate',
