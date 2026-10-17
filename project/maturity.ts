@@ -320,20 +320,22 @@ export const workstreamStatuses = [
     maturity: 'M4',
     reviewedOn: '2026-10-17',
     currentState:
-      'PR-00 and PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 then removed development-history residue from the reader-facing site and publication corpus without changing the substantive M4 proposition. The resolved Working Edition on current main is now the controlled publication source for PR-02.',
+      'PR-00 and PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 removed development-history residue, and PUB-NOM NOM-00 through NOM-10 completed the reader-facing nomenclature architecture and adversarial source/rendered enforcement. The completed DRW baseline through DRW-01B is now integrated on main; no architectural drawing implementation has begun. The resolved Working Edition remains the controlled publication source while DRW proceeds from DRW-01C.',
     nextGate:
-      'PR-02 produces the private 12-copy physical object from the resolved Working Edition without reopening the manuscript by preference; PR-03/PR-04 then supply the independent critical cycle required before any M5 or public-release claim.',
+      'Resume DRW at DRW-01C, complete the controlled architectural-drawing programme and re-run the PUB-NOM integration gates at DRW-10 and DRW-12. PR-02 then produces the private 12-copy physical object without reopening the manuscript by preference; PR-03/PR-04 supply the independent critical cycle required before any M5 or public-release claim.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
       coordinated: [
         'publication/pr00h-candidate-book-freeze.md',
-        'publication/pr01-r8f-local-findings-constitution-climate.md'
+        'publication/pr01-r8f-local-findings-constitution-climate.md',
+        'docs/publication/architectural-drawing-drw01b-graphic-tokens.md'
       ],
       internallyValidated: [
         'publication/pr01-r7-findings-freeze.md',
         'publication/pr01-r9-reproof-refreeze.md',
-        'docs/publication/resolved-work-sanitation-closeout.md'
+        'docs/publication/resolved-work-sanitation-closeout.md',
+        'docs/publication/nomenclature-closeout.md'
       ]
     }
   },
