@@ -75,6 +75,7 @@
     "mermaid": "^11.17.2",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
+    "unpdf": "1.8.1",
     "vitepress": "1.6.4",
     "vitepress-plugin-mermaid": "2.0.17"
   },
