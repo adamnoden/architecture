@@ -1,0 +1,81 @@
+name: NOM-07C1 grammar case cleanup
+
+on:
+  push:
+    branches: [pub-nom]
+    paths:
+      - .github/workflows/nom07c1-grammar-case-cleanup.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: pub-nom
+      - name: Remove research-stage narration from public case records
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          changes = {
+            'docs/grammar/g01-cases/marble-hill-house.md': [
+              ('**Analysis role:** TRIAL  \n', ''),
+              ('**D3 status:** semantic annotation v0.1 complete; dimensional analysis metric extraction intentionally partial  \n', '**Evidence state:** semantic annotation complete; dimensional metric extraction intentionally partial  \n'),
+              ('**Purpose:** test the annotation contract against a compact canonical villa whose architectural hierarchy, vertical order and later service growth are unusually legible.', '**Purpose:** document a compact canonical villa whose architectural hierarchy, vertical order and later service growth are unusually legible.'),
+              ('D3 does **not** force Marble Hill into one timeless plan.', 'The analysis does **not** force Marble Hill into one timeless plan.'),
+              ('### D3 consequence', '### Methodological consequence'),
+            ],
+            'docs/grammar/g01-cases/danson-house.md': [
+              ('**Analysis role:** TRIAL  \n', ''),
+              ('**D3 status:** semantic annotation v0.1 complete; dimensional evidence unusually strong  \n', '**Evidence state:** semantic annotation complete; dimensional evidence unusually strong  \n'),
+              ('**Purpose:** test the annotation contract against a compact sophisticated villa in which circulation sequence, service circulation, room proportion, façade negotiation and structural framing are unusually well documented.', '**Purpose:** document a compact sophisticated villa in which circulation sequence, service circulation, room proportion, façade negotiation and structural framing are unusually well documented.'),
+              ('### D3 finding', '### Topological finding'),
+            ],
+            'docs/grammar/g01-cases/76-dean-street.md': [
+              ('**Analysis role:** TRIAL — urban contrast  \n', ''),
+              ('**D3 status:** semantic annotation v0.1 complete with deliberately larger UNKNOWN set; dimensional metrics deferred  \n', '**Evidence state:** semantic annotation complete with a deliberately larger unknown set; dimensional metrics deferred  \n'),
+              ('**Purpose:** stress-test the annotation contract against urban constraint and prevent villa-derived rules from being mistaken for universal Georgian rules.', '**Purpose:** use urban constraint to prevent villa-derived rules from being mistaken for universal Georgian rules.'),
+              ('### D3 consequence', '### Methodological consequence'),
+              ('D3 therefore uses **geometry-neutral research IDs** where room names would be guesses.', 'The record therefore uses **geometry-neutral research IDs** where room names would be guesses.'),
+            ],
+            'docs/grammar/g01-cases/bedford-square.md': [
+              ('**Analysis role:** SUPPLEMENTARY — measurement/coupling analysis urban measurement and coupling case  \n', ''),
+              ('**Status:** web-source pass v0.1  \n', ''),
+              ('## 2. Web-only evidence rule', '## 2. Public-source evidence rule'),
+              ('The research environment for this pass is the public web.', 'Quantitative evidence in this case is admitted only where the underlying public source can be inspected directly.'),
+              ('For the present pass, these drawings are a **measurement pool**, not nine independent clean samples.', 'These drawings form a **measurement pool**, not nine independent clean samples.'),
+              ('No new room ratio is admitted from that image in this pass.', 'No new room ratio is admitted from that image.'),
+              ('The previous dimensional analysis seed concentrated on room width:length:height relationships in Marble Hill and Danson.', 'The earlier dimensional analysis concentrated on room width:length:height relationships in Marble Hill and Danson.'),
+            ],
+          }
+
+          for filename, replacements in changes.items():
+            path = Path(filename)
+            text = path.read_text()
+            for old, new in replacements:
+              if old not in text:
+                raise SystemExit(f'Expected text missing in {filename}: {old!r}')
+              text = text.replace(old, new, 1)
+            path.write_text(text)
+          PY
+
+          if grep -nE '\*\*Analysis role:|\*\*D3 status:|### D3 |\bD3 therefore\b|web-source pass|research environment for this pass|For the present pass|in this pass|dimensional analysis seed' \
+            docs/grammar/g01-cases/marble-hill-house.md \
+            docs/grammar/g01-cases/danson-house.md \
+            docs/grammar/g01-cases/76-dean-street.md \
+            docs/grammar/g01-cases/bedford-square.md; then
+            echo 'Research-stage narration remains in bounded public case records.' >&2
+            exit 1
+          fi
+          git diff --check
+      - name: Commit cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/grammar/g01-cases
+          git commit -m "PUB-NOM: resolve grammar case research-stage narration"
+          git push origin HEAD:pub-nom
