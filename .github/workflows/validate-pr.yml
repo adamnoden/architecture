@@ -45,6 +45,9 @@ jobs:
           npm run publication:build
           npm run publication:build:primer
 
+      - name: Prove PDF inspector parity with Poppler
+        run: npx tsx scripts/compare-pdf-inspector.ts
+
       - name: Check publication PDF metadata
         run: npm run publication:metadata:check
 
