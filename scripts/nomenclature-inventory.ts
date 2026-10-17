@@ -197,6 +197,12 @@ const families: readonly NamespaceFamily[] = [
     owner: 'compiler-output-machine',
     description: 'Generated Reference House output/schema/artefact namespace',
     pattern: /\bOH-RH-[A-Z0-9-]+\b/g
+  },
+  {
+    id: 'machine.house-kernel-build-meta',
+    owner: 'site-build-machine',
+    description: 'House Kernel-derived site build metadata keys',
+    pattern: /(?:house-kernel-build-(?:commit|timestamp)|__HOUSE_KERNEL_BUILD_(?:COMMIT|TIMESTAMP)__)/g
   }
 ] as const
 
@@ -204,6 +210,7 @@ type Surface =
   | 'REPO_TOTAL'
   | 'SITE_PUBLIC_SOURCE'
   | 'PUBLICATION_SOURCE'
+  | 'PUBLIC_MEDIA_SOURCE'
   | 'PUBLIC_MACHINE_SOURCE'
   | 'BOOK_FULL_RENDERED'
   | 'BOOK_PRIMER_RENDERED'
@@ -213,6 +220,8 @@ type Surface =
 interface FamilyCounts {
   total: number
   files: Set<string>
+  repoFiles: Set<string>
+  examples: Set<string>
   bySurface: Map<Surface, number>
   representativePublicPaths: Set<string>
 }
@@ -236,6 +245,8 @@ const counts = new Map<string, FamilyCounts>(
     {
       total: 0,
       files: new Set<string>(),
+      repoFiles: new Set<string>(),
+      examples: new Set<string>(),
       bySurface: new Map<Surface, number>(),
       representativePublicPaths: new Set<string>()
     }
@@ -248,9 +259,9 @@ function addSurface(record: FamilyCounts, surface: Surface, amount: number): voi
   record.bySurface.set(surface, (record.bySurface.get(surface) ?? 0) + amount)
 }
 
-function matchingCount(pattern: RegExp, text: string): number {
+function matches(pattern: RegExp, text: string): RegExpMatchArray[] {
   const regex = new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`)
-  return [...text.matchAll(regex)].length
+  return [...text.matchAll(regex)]
 }
 
 function publicSource(path: string): boolean {
@@ -258,10 +269,18 @@ function publicSource(path: string): boolean {
   return path.startsWith('docs/') && path.endsWith('.md') && isPublicSource(path)
 }
 
+function publicMediaSource(path: string): boolean {
+  return (
+    (path.startsWith('docs/manuscript/figures/') || path.startsWith('docs/reference-house/generated/')) &&
+    path.endsWith('.svg')
+  )
+}
+
 function surfacesForRepositoryPath(path: string): Surface[] {
   const surfaces: Surface[] = ['REPO_TOTAL']
   if (publicSource(path)) surfaces.push('SITE_PUBLIC_SOURCE')
   if (publicationSources.has(path)) surfaces.push('PUBLICATION_SOURCE')
+  if (publicMediaSource(path)) surfaces.push('PUBLIC_MEDIA_SOURCE')
   if (publicMachineSources.has(path)) surfaces.push('PUBLIC_MACHINE_SOURCE')
   if (surfaces.length === 1) surfaces.push('INTERNAL_OR_PROVENANCE')
   return surfaces
@@ -270,29 +289,39 @@ function surfacesForRepositoryPath(path: string): Surface[] {
 function isPublicSurface(surface: Surface): boolean {
   return surface === 'SITE_PUBLIC_SOURCE' ||
     surface === 'PUBLICATION_SOURCE' ||
+    surface === 'PUBLIC_MEDIA_SOURCE' ||
     surface === 'PUBLIC_MACHINE_SOURCE' ||
     surface === 'BOOK_FULL_RENDERED' ||
     surface === 'BOOK_PRIMER_RENDERED' ||
     surface === 'SITE_RENDERED'
 }
 
+function tokenIsKnown(token: string): boolean {
+  return families.some((family) => matches(family.pattern, token).some((match) => match[0] === token))
+}
+
 function scanText(path: string, text: string, surfaces: Surface[]): void {
   for (const family of families) {
-    const amount = matchingCount(family.pattern, text)
-    if (!amount) continue
+    const familyMatches = matches(family.pattern, text)
+    if (!familyMatches.length) continue
     const record = counts.get(family.id)!
-    record.total += amount
+    record.total += familyMatches.length
     record.files.add(path)
-    for (const surface of surfaces) addSurface(record, surface, amount)
+    if (surfaces.includes('REPO_TOTAL')) record.repoFiles.add(path)
+    for (const match of familyMatches) {
+      if (record.examples.size < 8) record.examples.add(match[0])
+    }
+    for (const surface of surfaces) addSurface(record, surface, familyMatches.length)
     if (surfaces.some(isPublicSurface) && record.representativePublicPaths.size < 8) {
       record.representativePublicPaths.add(path)
     }
   }
 
-  const generic = /\b[A-Z]{2,8}(?:-[A-Z0-9]{1,12})+\b/g
-  for (const match of text.matchAll(generic)) {
+  const genericHyphen = /\b[A-Z]{2,8}(?:-[A-Z0-9]{1,12})+\b/g
+  const genericUnderscore = /__[A-Z][A-Z0-9_]+__/g
+  for (const match of [...text.matchAll(genericHyphen), ...text.matchAll(genericUnderscore)]) {
     const token = match[0]
-    if (families.some((family) => new RegExp(`^(?:${family.pattern.source})$`).test(token))) continue
+    if (tokenIsKnown(token)) continue
     const current = candidateTokens.get(token) ?? { count: 0, files: new Set<string>() }
     current.count += 1
     current.files.add(path)
@@ -358,12 +387,12 @@ function revision(): string {
 console.log('\n=== NOM-00 NOMENCLATURE INVENTORY ===')
 console.log(`revision: ${revision()}`)
 console.log(`conceptual namespace families: ${families.length}`)
-console.log('| family | repo tokens | source files | site src | publication src | public machine | site rendered | full PDF | primer |')
-console.log('| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |')
+console.log('| family | examples | repo tokens | repo files | site src | publication src | public media | public machine | site rendered | full PDF | primer |')
+console.log('| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |')
 for (const family of families) {
   const record = counts.get(family.id)!
   console.log(
-    `| ${family.id} | ${record.total} | ${record.files.size} | ${value(family.id, 'SITE_PUBLIC_SOURCE')} | ${value(family.id, 'PUBLICATION_SOURCE')} | ${value(family.id, 'PUBLIC_MACHINE_SOURCE')} | ${value(family.id, 'SITE_RENDERED')} | ${value(family.id, 'BOOK_FULL_RENDERED')} | ${value(family.id, 'BOOK_PRIMER_RENDERED')} |`
+    `| ${family.id} | ${[...record.examples].join(', ')} | ${value(family.id, 'REPO_TOTAL')} | ${record.repoFiles.size} | ${value(family.id, 'SITE_PUBLIC_SOURCE')} | ${value(family.id, 'PUBLICATION_SOURCE')} | ${value(family.id, 'PUBLIC_MEDIA_SOURCE')} | ${value(family.id, 'PUBLIC_MACHINE_SOURCE')} | ${value(family.id, 'SITE_RENDERED')} | ${value(family.id, 'BOOK_FULL_RENDERED')} | ${value(family.id, 'BOOK_PRIMER_RENDERED')} |`
   )
 }
 
@@ -374,10 +403,10 @@ for (const family of families) {
   console.log(`- ${family.id}: ${paths.join(', ')}`)
 }
 
-console.log('\nUnclassified uppercase-hyphen candidate tokens (top 60 by occurrence):')
+console.log('\nUnclassified compact-token candidates (top 80 by occurrence):')
 for (const [token, record] of [...candidateTokens.entries()]
   .sort((a, b) => b[1].count - a[1].count || a[0].localeCompare(b[0]))
-  .slice(0, 60)) {
+  .slice(0, 80)) {
   console.log(`- ${token}: ${record.count} occurrence(s) in ${record.files.size} file(s)`)
 }
 console.log('=== END NOM-00 NOMENCLATURE INVENTORY ===\n')
