@@ -44,3 +44,6 @@ jobs:
 
       - name: Check publication PDF metadata
         run: npm run publication:metadata:check
+
+      - name: Inventory reader-facing nomenclature
+        run: npm run nomenclature:inventory
