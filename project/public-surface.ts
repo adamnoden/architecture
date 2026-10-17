@@ -170,9 +170,8 @@ export function filterPublicNavigation<T>(value: T): T {
 
   const mapped = Object.fromEntries(
     Object.entries(record).map(([key, entry]) => {
-      if (key === 'items') return [key, filterPublicNavigation(entry)]
       if (key === 'text' && typeof entry === 'string') return [key, publicLabelOverrides[entry] ?? entry]
-      return [key, entry]
+      return [key, filterPublicNavigation(entry)]
     })
   ) as Record<string, unknown>
 
