@@ -46,4 +46,15 @@ jobs:
         run: npm run publication:metadata:check
 
       - name: Inventory reader-facing nomenclature
-        run: npm run nomenclature:inventory -- --files=pattern.hsa
+        run: |
+          for family in \
+            pattern.hsa \
+            reference-house.compiler-gate \
+            compiler.p0 \
+            compiler.pattern-crosswalk \
+            compiler.cf \
+            compiler.ch \
+            compiler.h1
+          do
+            npm run nomenclature:inventory -- --files="$family"
+          done
