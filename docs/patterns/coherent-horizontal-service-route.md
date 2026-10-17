@@ -52,7 +52,7 @@ Room-by-room routing creates repeated crossings of structure and boundaries, sca
 
 ## Relationships
 
-This pattern commonly **completes** [PAT-002 — Plant Room as Service Hub](plant-room-service-hub.md) by extending concentrated services through the building without immediately dissolving into ad-hoc branches.
+This pattern commonly **completes** [Plant Room as Service Hub](plant-room-service-hub.md) by extending concentrated services through the building without immediately dissolving into ad-hoc branches.
 
 It is not a hard dependency. Distributed plant, existing buildings or unusual forms may produce coherent horizontal routes without a single service hub.
 

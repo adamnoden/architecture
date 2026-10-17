@@ -207,7 +207,7 @@ Use ordinary Markdown frontmatter as the machine-readable source.
 
 ```yaml
 ---
-id: PAT-003
+id: Coherent Horizontal Service Route
 title: Coherent Horizontal Service Route
 kind: pattern
 state: active
@@ -227,7 +227,7 @@ principles:
   - 8
 requires: []
 completes:
-  - PAT-002
+  - Plant Room as Service Hub
 alternative_to: []
 tension_with: []
 sequences:

@@ -42,7 +42,7 @@ Potential implementations include:
 - timber or other architectural panel systems;
 - factory-finished mineral/plaster surfaces;
 - wet-room-specific removable panels;
-- attachment through [`PAT-022 — Controlled Attachment Plane`](../controlled-attachment-plane.md) where proportionate.
+- attachment through [`Controlled Attachment Plane`](../controlled-attachment-plane.md) where proportionate.
 
 These are not themselves the candidate identity.
 

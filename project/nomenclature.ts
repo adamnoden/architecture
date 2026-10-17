@@ -361,7 +361,7 @@ export const nomenclatureFamilies = [
     meaning: 'H1 paper-compilation / technical-fixture identities',
     owner: 'compiler-workflow',
     examples: ['H1-*'],
-    pattern: '\\bH1(?:-[A-Z0-9]+)*\\b',
+    pattern: '\\bH1-[A-Z0-9]+(?:-[A-Z0-9]+)*\\b',
     classification: 'WORKFLOW',
     allowedSurfaces: WORKFLOW_SURFACES,
     roles: ['WORKFLOW', 'IDENTITY_ONLY'],

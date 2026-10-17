@@ -81,6 +81,17 @@ function stripFrontmatter(markdown: string): string {
   return end < 0 ? markdown : markdown.slice(end + 5)
 }
 
+function isPublicMachinePath(path: string): boolean {
+  return (
+    path.startsWith('docs/reference-house/generated/') ||
+    path.includes('/docs/reference-house/generated/')
+  )
+}
+
+function familyAllowedOnPublicMachine(path: string, family: NomenclatureFamily): boolean {
+  return isPublicMachinePath(path) && family.allowedSurfaces.includes('PUBLIC_MACHINE')
+}
+
 function sourceTextForFamily(path: string, family: NomenclatureFamily, text: string): string {
   if (
     family.id === 'pattern.pat' &&
@@ -93,6 +104,7 @@ function sourceTextForFamily(path: string, family: NomenclatureFamily, text: str
 
 function scanSource(path: string, text: string, failures: Failure[]): void {
   for (const family of readerProhibitedFamilies) {
+    if (familyAllowedOnPublicMachine(path, family)) continue
     const matches = matchesFor(family, sourceTextForFamily(path, family, text))
     if (!matches.length) continue
     failures.push({
@@ -105,6 +117,7 @@ function scanSource(path: string, text: string, failures: Failure[]): void {
 
 function scan(path: string, text: string, failures: Failure[]): void {
   for (const family of readerProhibitedFamilies) {
+    if (familyAllowedOnPublicMachine(path, family)) continue
     const matches = matchesFor(family, text)
     if (!matches.length) continue
     failures.push({

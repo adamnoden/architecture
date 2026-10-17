@@ -60,9 +60,9 @@ It is not the administrative instruction “coordinate penetrations”, and it d
 
 ## Relationships
 
-This pattern commonly **completes** [PAT-003 — Coherent Horizontal Service Route](coherent-horizontal-service-route.md) where a route crosses structure or a protected boundary.
+This pattern commonly **completes** [Coherent Horizontal Service Route](coherent-horizontal-service-route.md) where a route crosses structure or a protected boundary.
 
-It also commonly **completes** [PAT-004 — High-Service-Room Service Wall](high-service-room-service-wall.md) where local service zones cross floors, walls or room boundaries.
+It also commonly **completes** [High-Service-Room Service Wall](high-service-room-service-wall.md) where local service zones cross floors, walls or room boundaries.
 
 Neither link means the parent pattern necessarily creates a penetration. The relationship matters only where a crossing actually occurs.
 

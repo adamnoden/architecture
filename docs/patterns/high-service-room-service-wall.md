@@ -55,7 +55,7 @@ The service zone may be a wall thickness, cupboard, corridor-side panel or adjac
 
 ## Relationships
 
-This pattern commonly **completes** [PAT-003 — Coherent Horizontal Service Route](coherent-horizontal-service-route.md) by localising the building-scale topology at the room scale and creating orderly places for short branches, isolation and maintainable components.
+This pattern commonly **completes** [Coherent Horizontal Service Route](coherent-horizontal-service-route.md) by localising the building-scale topology at the room scale and creating orderly places for short branches, isolation and maintainable components.
 
 A service wall can still be useful without a formal whole-house route; the edge records composition, not mandatory sequence.
 

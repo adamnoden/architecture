@@ -52,7 +52,7 @@ Typical content may include principal isolation, route/riser identifiers, distri
 
 ## Relationships
 
-This pattern commonly **completes** [PAT-002 — Plant Room as Service Hub](plant-room-service-hub.md). A hub provides a natural place where identifiers, isolation and equipment can be understood together.
+This pattern commonly **completes** [Plant Room as Service Hub](plant-room-service-hub.md). A hub provides a natural place where identifiers, isolation and equipment can be understood together.
 
 The index does not require a dedicated plant room. Its invariant is the durable relationship between the physical asset, future stewards and system identity.
 
