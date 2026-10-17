@@ -1,0 +1,37 @@
+:root {
+  --sans: Arial, Helvetica, sans-serif;
+  --serif: Georgia, Cambria, "Times New Roman", serif;
+  --ink: #000;
+  --context: #666;
+  --paper: #fff;
+}
+html, body { margin: 0; padding: 0; color: var(--ink); background: var(--paper); }
+body { font-family: var(--serif); font-size: 10.5pt; line-height: 1.45; }
+* { box-sizing: border-box; }
+section.page { break-before: page; break-after: page; }
+section.page:first-child { break-before: auto; }
+.flow-page { page: flow; }
+.plate-page { page: plate; }
+.blank-page { page: blank; min-height: 1mm; }
+.blank-sentinel { width: 1mm; height: 1mm; }
+.flow-page h1 { margin: 0 0 5mm; font-family: var(--sans); font-size: 21pt; line-height: 1.08; }
+.flow-page p { margin: 0 0 0.8em; }
+.flow-page figure { margin: 7mm auto 6mm; width: 96mm; break-inside: avoid; }
+.flow-page figure img { display: block; width: 86mm; height: auto; margin: 0 auto 3mm; }
+.flow-page figcaption, .plate-caption { font-family: var(--sans); font-size: 8.3pt; line-height: 1.35; }
+.flow-page .proof-note { margin-top: 7mm; font-family: var(--sans); font-size: 8.3pt; color: var(--context); }
+.plate-page { font-family: var(--sans); }
+.plate-header { width: 128mm; margin: 0 auto 4mm; display: grid; grid-template-columns: 1fr auto; gap: 5mm; align-items: baseline; }
+.plate-title { margin: 0; font-size: 11pt; line-height: 1.15; font-weight: 700; }
+.plate-scale { font-size: 8.3pt; white-space: nowrap; }
+.plate-drawing { display: block; width: 128mm; margin: 0 auto; }
+.plate-caption { width: 128mm; margin: 6mm auto 0; }
+.plate-caption strong { font-weight: 700; }
+.pair-note { width: 128mm; margin: 1mm auto 0; font-family: var(--sans); font-size: 7pt; color: var(--context); }
+.spread-window { width: 128mm; height: 105mm; overflow: hidden; margin: 0 auto; position: relative; }
+.spread-master { display: block; width: 256mm; height: 105mm; max-width: none; }
+.spread-right .spread-master { transform: translateX(-128mm); }
+.spread-right .plate-header, .spread-right .plate-caption { visibility: hidden; }
+.spread-diagnostic { width: 128mm; margin: 3mm auto 0; font-family: var(--sans); font-size: 7pt; color: var(--context); }
+.plate-frame-guide { position: relative; }
+.plate-frame-guide::before { content: ""; position: absolute; inset: -5mm; border: .18mm dashed #aaa; pointer-events: none; }

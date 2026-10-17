@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>DRW-01E doctrine specimen</title></head><body>
+<section class="page flow-page">
+  <h1>Drawing doctrine specimen</h1>
+  <p>This bounded proof tests the publication drawing doctrine before any Reference House renderer is implemented. The geometry in these specimen plates is deliberately synthetic: it exists to test line hierarchy, notation, page classes and physical legibility, not to make architectural claims about the house.</p>
+  <p>The flow condition remains prose-led. Small abstract figures can sit inside reading text; controlled architectural drawings escalate to dedicated plates rather than being shrunk until they fit.</p>
+  <figure><img src="flow-diagram.svg" alt="Abstract doctrine figure proof"><figcaption><strong>Flow figure.</strong> An abstract explanatory diagram stays subordinate to prose and carries no architectural scale claim.</figcaption></figure>
+  <p>Dedicated plates on the following pages keep drawing annotation in physical paper units: 0.50 / 0.35 / 0.25 / 0.18 mm line roles, 7.5 pt principal labels and 6.5 pt notes/dimensions.</p>
+  <p class="proof-note">Proof target: A4 at current publication margins and ISO B5 (176 × 250 mm) as the conservative smaller-than-A4 robustness surface. B5 is not selected as the final PR-02 trim.</p>
+</section>
+<section class="page plate-page">
+  <div class="plate-header"><h2 class="plate-title">Synthetic ground plan</h2><div class="plate-scale">Scale 1:100</div></div>
+  <div class="plate-frame-guide" style="width:128mm;margin:0 auto"><img class="plate-drawing" src="pair-ground.svg" alt="Synthetic ground plan proof"></div>
+  <p class="plate-caption"><strong>Facing pair — left.</strong> Whole-building plan grammar at fixed physical annotation sizes. Test geometry only; not Reference House.</p>
+  <p class="pair-note">PLATE_PAIR proof: complete if read alone; compared at identical scale with facing first-floor plan.</p>
+</section>
+<section class="page plate-page">
+  <div class="plate-header"><h2 class="plate-title">Synthetic first-floor plan</h2><div class="plate-scale">Scale 1:100</div></div>
+  <div class="plate-frame-guide" style="width:128mm;margin:0 auto"><img class="plate-drawing" src="pair-first.svg" alt="Synthetic first-floor plan proof"></div>
+  <p class="plate-caption"><strong>Facing pair — right.</strong> Same physical frame and scale; labels and dimension text remain unchanged between proof formats.</p>
+  <p class="pair-note">The pair occupies verso-left / recto-right in the seven-page specimen.</p>
+</section>
+<section class="page plate-page">
+  <div class="plate-header"><h2 class="plate-title">Synthetic section / notation test</h2><div class="plate-scale">Scale 1:100</div></div>
+  <div class="plate-frame-guide" style="width:128mm;margin:0 auto"><img class="plate-drawing" src="single-section.svg" alt="Synthetic section and notation proof"></div>
+  <p class="plate-caption"><strong>Single plate.</strong> Exercises cut matter, profile/primary/secondary line hierarchy, hatch, overhead geometry, levels, dimensions, a short leader and explicitly provisional geometry.</p>
+</section>
+<section class="page blank-page" aria-label="Intentional blank page"><div class="blank-sentinel" aria-hidden="true"></div></section>
+<section class="page plate-page spread-left">
+  <div class="plate-header"><h2 class="plate-title">Synthetic long section — spread proof</h2><div class="plate-scale">Scale 1:100</div></div>
+  <div class="spread-window plate-frame-guide"><img class="spread-master" src="spread-master.svg" alt="Left crop of synthetic long section"></div>
+  <p class="plate-caption"><strong>True spread.</strong> One 256 mm logical composition, emitted as deterministic 128 mm crops. The grey proof overlay marks the 24 mm total critical-exclusion band; only continuous/repetitive geometry crosses it.</p>
+  <p class="spread-diagnostic">Critical labels, values, keys and caption content remain outside the 12 mm-per-side fold zone.</p>
+</section>
+<section class="page plate-page spread-right">
+  <div class="plate-header"><h2 class="plate-title">Synthetic long section — spread proof</h2><div class="plate-scale">Scale 1:100</div></div>
+  <div class="spread-window plate-frame-guide"><img class="spread-master" src="spread-master.svg" alt="Right crop of synthetic long section"></div>
+  <p class="plate-caption">Hidden duplicate furniture placeholder.</p>
+</section>
+</body></html>
