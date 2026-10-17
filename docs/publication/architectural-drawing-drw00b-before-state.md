@@ -3,9 +3,11 @@
 
 **Programme:** DRW — Architectural Drawing Programme  
 **Packet:** DRW-00B  
-**Status:** CAPTURED — close after CI/artifact verification  
+**Status:** DONE  
 **Issue:** #154  
-**Capture head:** `481a7c0c888654dadd363044b0f7470134f03b61`
+**Capture head:** `481a7c0c888654dadd363044b0f7470134f03b61`  
+**Capture workflow:** run `39057699058` — PASS  
+**Evidence artifact:** `drw00b-before-state`, artifact `12109992041`, SHA-256 digest `d3d7b7dbea005e0ee3a76ec15b2749591ff862a1dbe17baa93866e0e911c9f9d`
 
 ## 1. Purpose
 
@@ -42,7 +44,18 @@ The PDFs are generated products, not committed source. Their hashes bind this re
 
 ## 4. Visual evidence capture
 
-The capture workflow rasterises every unique Working Edition page containing a current figure at 120 dpi and uploads those PNGs together with both generated PDFs and the extracted text/placement data as the `drw00b-before-state` workflow artifact.
+Capture run `39057699058` rasterised every unique Working Edition page containing a current figure at 120 dpi and uploaded those PNGs together with both generated PDFs and the extracted text/placement data as artifact `12109992041`.
+
+The artifact contains exactly:
+
+- 11 Working Edition figure-page PNGs — pages 24, 40, 46, 49, 69, 158, 160, 163, 167, 168 and 170;
+- `ovids-house.pdf`;
+- `ovids-house-primer.pdf`;
+- extracted Working Edition and Primer text;
+- the exported active placement JSON;
+- this manifest as captured at generation time.
+
+The 11 raster pages were inspected as a contact sheet after download; all expected page captures are present and readable as before-state evidence.
 
 The workflow artifact is inspection evidence, not the durable source of truth. Durable evidence is the Git history for the SVG blobs, the placement registry, this manifest, and the deterministic publication build.
 
