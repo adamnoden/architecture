@@ -32,13 +32,13 @@ jobs:
           replace_once(
               'docs/publication/public-nomenclature-programme.md',
               '**Status:** planned programme  ',
-              '**Status:** complete through NOM-10 at PUB-NOM scope; DRW-10/12 revalidation required before the combined PR-02 visual-reference freeze  '
+              '**Status:** complete through NOM-10 at PUB-NOM scope; DRW-10/12 revalidation required before the combined PR-02 visual-reference freeze'
           )
 
           replace_once(
               'docs/publication/nomenclature-validation.md',
               '**Status:** NOM-05 machinery defined; enforcement activation is part of NOM-06 migration.  ',
-              '**Status:** NOM-05 contract established; source/rendered enforcement is active and adversarially proven through NOM-09.  '
+              '**Status:** NOM-05 contract established; source/rendered enforcement is active and adversarially proven through NOM-09.'
           )
 
           status = Path('STATUS.md')
