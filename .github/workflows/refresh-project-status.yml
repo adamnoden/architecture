@@ -1,0 +1,91 @@
+name: Refresh project status
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/refresh-project-status.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-status:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Update canonical publication status
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p = Path('project/maturity.ts')
+          text = p.read_text()
+          old_state = "PR-00 and PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 then removed development-history residue from the reader-facing site and publication corpus without changing the substantive M4 proposition. The resolved Working Edition on current main is now the controlled publication source for PR-02."
+          new_state = "PR-00 and PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 removed development-history residue, and PUB-NOM NOM-00 through NOM-10 completed the reader-facing nomenclature architecture and adversarial source/rendered enforcement. The completed DRW baseline through DRW-01B is now integrated on main; no architectural drawing implementation has begun. The resolved Working Edition remains the controlled publication source while DRW proceeds from DRW-01C."
+          old_gate = "PR-02 produces the private 12-copy physical object from the resolved Working Edition without reopening the manuscript by preference; PR-03/PR-04 then supply the independent critical cycle required before any M5 or public-release claim."
+          new_gate = "Resume DRW at DRW-01C, complete the controlled architectural-drawing programme and re-run the PUB-NOM integration gates at DRW-10 and DRW-12. PR-02 then produces the private 12-copy physical object without reopening the manuscript by preference; PR-03/PR-04 supply the independent critical cycle required before any M5 or public-release claim."
+          if old_state not in text or old_gate not in text:
+              raise SystemExit('Expected publication maturity text not found')
+          text = text.replace(old_state, new_state).replace(old_gate, new_gate)
+          text = text.replace(
+              "        'publication/pr01-r8f-local-findings-constitution-climate.md'\n      ],",
+              "        'publication/pr01-r8f-local-findings-constitution-climate.md',\n        'docs/publication/architectural-drawing-drw01b-graphic-tokens.md'\n      ],"
+          )
+          text = text.replace(
+              "        'docs/publication/resolved-work-sanitation-closeout.md'\n      ]",
+              "        'docs/publication/resolved-work-sanitation-closeout.md',\n        'docs/publication/nomenclature-closeout.md'\n      ]"
+          )
+          p.write_text(text)
+          PY
+
+      - run: npm run status:update
+
+      - name: Refresh project-wide narrative status
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p = Path('STATUS.md')
+          text = p.read_text()
+
+          old_intro = "The public architectural position and publication have survived a bounded internal adversarial cycle and the reader-facing corpus has now passed resolved-work sanitation. Both remain controlled at M4. The largest remaining uncertainties sit downstream: physical prototypes, competent professional review, real-site evidence and independent criticism. Publication work should move into the private physical-object stage rather than reopening the manuscript by preference."
+          new_intro = "The public architectural position and publication have survived a bounded internal adversarial cycle, resolved-work sanitation and the completed reader-facing nomenclature programme. Both remain controlled at M4. The largest remaining uncertainties sit downstream: architectural drawing quality, physical prototypes, competent professional review, real-site evidence and independent criticism. Publication work is now in controlled pre-production: DRW resumes at DRW-01C and must close its integration gates before PR-02 produces the private physical object."
+
+          old_pub = "**PR-00, PR-01 and PUB-SAN are complete; PUB-NOM is complete at its reader-facing nomenclature scope on draft PR #157.** PUB-SAN removed development-history residue without broadening the substantive M4 proposition. PUB-NOM then separated reader identity, machine identity, order, version, maturity and workflow provenance; migrated brand-coupled canonical namespaces; and made source plus rendered nomenclature enforcement adversarially testable. The remaining pre-production dependency is **DRW — Architectural Drawing Programme**: its next authorised packet is DRW-00A, and the combined nomenclature / visual-reference system must be revalidated at DRW-10 and DRW-12 before PR-02 freezes the physical object. PR-02 still owns physical-object design and production, not another discretionary manuscript-development cycle."
+          new_pub = "**PR-00, PR-01, PUB-SAN and PUB-NOM are complete and integrated on `main`.** PUB-NOM separated reader identity, machine identity, order, version, maturity and workflow provenance; migrated brand-coupled canonical namespaces; and made source plus rendered nomenclature enforcement adversarially testable. PR #157 has merged. **DRW — Architectural Drawing Programme** is paused at a clean restart-safe boundary: DRW-00, DRW-01A and DRW-01B are complete; DRW-01C has not started and is the next authorised packet. No architectural source hardening, renderer implementation or replacement publication drawing has begun. The combined nomenclature / visual-reference system must still be revalidated at DRW-10 and DRW-12 before PR-02 freezes the physical object. PR-02 continues to own physical-object design and production, not another discretionary manuscript-development cycle."
+
+          if old_intro not in text or old_pub not in text:
+              raise SystemExit('Expected STATUS narrative text not found')
+          text = text.replace(old_intro, new_intro).replace(old_pub, new_pub)
+
+          anchor = "- **Resolved-work sanitation PUB-SAN — complete.** SAN-00→SAN-06 removed development-history residue from public site/publication surfaces, preserved unique substantive content under current owners, added a regression guard, passed full validation and merged through PR #150 as `02e152019c8f08ae71009ae7ab5b61e1ab575244`.\n"
+          addition = anchor + "- **Reader-facing nomenclature PUB-NOM — complete.** NOM-00→NOM-10 established the reader/machine identity boundary, migrated legacy public identifiers, added fail-closed source/rendered enforcement and adversarial regression proof, and merged through PR #157 as `d004b00db861b9e0b5f6f7f6550763180ad283d1`. DRW owns any future publication figure-reference system and must re-enter PUB-NOM validation at DRW-10 and DRW-12.\n"
+          if anchor not in text:
+              raise SystemExit('Closed-track insertion anchor not found')
+          text = text.replace(anchor, addition)
+          p.write_text(text)
+          PY
+
+      - name: Validate status contract
+        run: npm run typecheck && npm run test:repo
+
+      - name: Commit status refresh and remove helper
+        run: |
+          rm .github/workflows/refresh-project-status.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add STATUS.md project/maturity.ts .github/workflows/refresh-project-status.yml
+          git commit -m "docs: refresh project status after PUB-NOM integration"
+          git push
