@@ -54,12 +54,16 @@ jobs:
       - name: Check publication PDF metadata
         run: npm run publication:metadata:check
 
+      - name: Stamp project data plate
+        run: npm run dataplate:stamp -- .vitepress/dist/dataplate.json
+
       - name: Assemble Pages artifact
         run: |
           cp publication/dist/ovids-house.pdf .vitepress/dist/ovids-house.pdf
           cp publication/dist/ovids-house-primer.pdf .vitepress/dist/ovids-house-primer.pdf
           test -s .vitepress/dist/ovids-house.pdf
           test -s .vitepress/dist/ovids-house-primer.pdf
+          test -s .vitepress/dist/dataplate.json
           test -s .vitepress/dist/index.html
 
       - name: Upload Pages artifact
