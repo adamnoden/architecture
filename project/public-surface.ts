@@ -1,5 +1,9 @@
 export const publicSourceExcludeGlobs = [
   'STATUS.md',
+  'compiler/**',
+  'project/**',
+  'publication/**',
+  'scripts/**',
   'docs/README.md',
   'docs/development/**',
   'docs/editorial/**',
@@ -126,8 +130,15 @@ function globToRegExp(glob: string): RegExp {
 
 const publicSourceExcludeMatchers = publicSourceExcludeGlobs.map(globToRegExp)
 
+export function isSiteSourceCandidate(source: string): boolean {
+  return source === 'README.md' || source === 'STATUS.md' || source.startsWith('docs/')
+}
+
 export function isPublicSource(source: string): boolean {
-  return !publicSourceExcludeMatchers.some((matcher) => matcher.test(source))
+  return (
+    isSiteSourceCandidate(source) &&
+    !publicSourceExcludeMatchers.some((matcher) => matcher.test(source))
+  )
 }
 
 function sourceForNavigationLink(link: string): string | null {
