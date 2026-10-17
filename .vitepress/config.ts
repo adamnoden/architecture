@@ -56,15 +56,13 @@ export default withMermaid(
     head: [
       ['link', { rel: 'icon', type: 'image/svg+xml', href: '/architecture/favicon.svg' }],
       ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/architecture/favicon-32.png' }],
-      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/architecture/apple-touch-icon.png' }],
-      ['meta', { name: 'house-kernel-build-commit', content: buildCommit }],
-      ['meta', { name: 'house-kernel-build-timestamp', content: buildTimestamp }]
+      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/architecture/apple-touch-icon.png' }]
     ],
 
     vite: {
       define: {
-        __HOUSE_KERNEL_BUILD_COMMIT__: JSON.stringify(buildCommit),
-        __HOUSE_KERNEL_BUILD_TIMESTAMP__: JSON.stringify(buildTimestamp)
+        __SITE_BUILD_COMMIT__: JSON.stringify(buildCommit),
+        __SITE_BUILD_TIMESTAMP__: JSON.stringify(buildTimestamp)
       }
     },
 
@@ -72,7 +70,7 @@ export default withMermaid(
 
     markdown: {
       config(md) {
-        md.core.ruler.after('inline', 'house-kernel-public-routes', (state) => {
+        md.core.ruler.after('inline', 'public-routes', (state) => {
           const realPath = state.env.realPath ?? state.env.path
           if (!realPath) return
 
