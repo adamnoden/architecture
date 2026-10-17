@@ -7,6 +7,8 @@ import { nomenclatureFamilies, nomenclaturePattern } from '../project/nomenclatu
 import { isPublicSource } from '../project/public-surface.js'
 
 const repoRoot = process.cwd()
+const filesArgument = process.argv.find((argument) => argument.startsWith('--files='))
+const filesFamilyId = filesArgument?.slice('--files='.length)
 
 const TEXT_EXTENSIONS = new Set(['.md', '.ts', '.js', '.json', '.svg', '.yml', '.yaml', '.css', '.html', '.txt'])
 const EXCLUDED_DIRECTORIES = new Set(['.git', 'node_modules', 'dist', '.work'])
@@ -15,6 +17,10 @@ const families = nomenclatureFamilies.map((family) => ({
   ...family,
   pattern: nomenclaturePattern(family)
 }))
+
+if (filesFamilyId && !families.some((family) => family.id === filesFamilyId)) {
+  throw new Error(`Unknown nomenclature family requested by --files: ${filesFamilyId}`)
+}
 
 type Surface =
   | 'REPO_TOTAL'
@@ -216,6 +222,11 @@ for (const family of families) {
   const paths = [...counts.get(family.id)!.representativePublicPaths]
   if (!paths.length) continue
   console.log(`- ${family.id}: ${paths.join(', ')}`)
+}
+
+if (filesFamilyId) {
+  console.log(`\nRepository files containing ${filesFamilyId}:`)
+  for (const path of [...counts.get(filesFamilyId)!.repoFiles].sort()) console.log(`- ${path}`)
 }
 
 console.log('\nUnclassified compact-token candidates (top 80 by occurrence):')
