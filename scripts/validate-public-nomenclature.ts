@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { dirname, posix, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -199,13 +200,20 @@ function renderedSiteSurface(root: string, file: string): NomenclatureSurface {
   return surfaceByRoute.get(routeForRenderedSiteFile(root, file)) ?? 'SITE_PRIMARY'
 }
 
-function renderedPublicationFiles(): string[] {
+function renderedPublicationPdfs(): string[] {
   const dist = resolve(repoRoot, 'publication/dist')
-  const files = walk(dist).filter((file) => file.endsWith('.txt'))
+  const files = walk(dist).filter((file) => file.endsWith('.pdf'))
   if (!files.length) {
-    throw new Error(`Rendered publication nomenclature validation found no extracted text under ${dist}.`)
+    throw new Error(`Rendered publication nomenclature validation found no PDFs under ${dist}.`)
   }
   return files
+}
+
+function renderedPdfText(file: string): string {
+  return execFileSync('pdftotext', [file, '-'], {
+    encoding: 'utf8',
+    maxBuffer: 64 * 1024 * 1024
+  })
 }
 
 function validateRendered(): Failure[] {
@@ -216,8 +224,8 @@ function validateRendered(): Failure[] {
     scanText(sourcePath(file), readFileSync(file, 'utf8'), renderedSiteSurface(site.root, file), failures)
   }
 
-  for (const file of renderedPublicationFiles()) {
-    scanText(sourcePath(file), readFileSync(file, 'utf8'), surfaceForPublication(sourcePath(file)), failures)
+  for (const file of renderedPublicationPdfs()) {
+    scanText(sourcePath(file), renderedPdfText(file), surfaceForPublication(sourcePath(file)), failures)
   }
 
   return failures
