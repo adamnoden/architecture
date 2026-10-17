@@ -1,0 +1,16 @@
+{
+  "packet": "BRH-00B",
+  "programmeIssue": 161,
+  "executionIssue": 166,
+  "pullRequest": 168,
+  "baselineMainSha": "c3ebe98a99cfe89956dc5b93bba3bc1dc2c305f7",
+  "generatedAt": "2026-10-17T22:52:24.700Z",
+  "enumeratedBranchCount": 152,
+  "enumerationSha256": "dd4188a6a5f489baca113db9c3f15db5356e4bd6a62917aed460ba89e9587b17",
+  "rawJsonSha256": "a106ceb8a335718b2a91bf2e180cf006e6bd674e984b411e5dd6b3ac0898af18",
+  "inventoryWorkflowRun": 39076795726,
+  "inventoryWorkflowHeadSha": "427a790583759668119a17c9ee6ab0ed09aa43b5",
+  "artifactId": 12117775322,
+  "artifactDigest": "sha256:2b6cecee5ba472325cd66d2da8cc6994274b99d2b4ba505e82f383e6202df0fc",
+  "note": "Mechanical inventory evidence only. BRH-00C must re-enumerate refs and verify current heads against this snapshot before BRH-00 closes."
+}
