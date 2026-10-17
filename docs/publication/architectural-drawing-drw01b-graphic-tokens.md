@@ -3,8 +3,9 @@
 
 **Programme:** DRW — Architectural Drawing Programme  
 **Packet:** DRW-01B  
-**Status:** DONE pending branch validation  
-**Issue:** #154
+**Status:** DONE  
+**Issue:** #154  
+**Validation:** PR runs `39059722647` / #551 and `39059929251` / #552 — PASS
 
 ## 1. Purpose
 
@@ -214,13 +215,25 @@ Later renderer code must not:
 
 DRW-03C should eventually lint these constraints where practical.
 
-## 11. Proof debt deliberately retained
+## 11. Validation note
+
+The first PR run after this record (`39059248735` / #549) reported 124 rendered nomenclature occurrences despite source nomenclature, repository health and both PDF builds passing. The failure could not be reproduced:
+
+- a branch-head rendered build passed with zero nomenclature failures;
+- an exact replay of the PR pre-render sequence (`npm run check` → both PDFs → rendered validator) passed with a clean worktree;
+- the synthetic PR merge tree contained no file differences from the branch head;
+- subsequent full PR run `39059722647` / #551 passed all gates;
+- after diagnostic machinery was removed, production-shaped PR run `39059929251` / #552 passed all gates again.
+
+No validator was weakened and no source rule was changed to obtain green CI. The isolated first failure is therefore retained as a non-reproducible CI/render-extraction anomaly rather than converted into a fictional code defect.
+
+## 12. Proof debt deliberately retained
 
 These token values are now frozen for implementation, but **DRW-01 is not closed** until DRW-01E physically/simulated-print proves them at A4 and conservative B5-territory output.
 
 DRW-01E is allowed to revise a token if the specimen demonstrates a real reproduction or legibility defect. Such a revision must update this record explicitly; subjective preference alone is not a reason to churn the family.
 
-## 12. Handoff
+## 13. Handoff
 
 **Next packet: DRW-01C — freeze scale bands, conventional symbols, dimension rules, uncertainty notation and label behaviour.**
 
