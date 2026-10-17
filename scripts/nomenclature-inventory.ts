@@ -3,6 +3,7 @@ import { existsSync, lstatSync, readFileSync, readdirSync } from 'node:fs'
 import { extname, join, relative, resolve, sep } from 'node:path'
 import { dependenciesForAdapter } from '../publication/adapters.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
+import { nomenclatureFamilies, nomenclaturePattern } from '../project/nomenclature.js'
 import { isPublicSource } from '../project/public-surface.js'
 
 const repoRoot = process.cwd()
@@ -10,201 +11,10 @@ const repoRoot = process.cwd()
 const TEXT_EXTENSIONS = new Set(['.md', '.ts', '.js', '.json', '.svg', '.yml', '.yaml', '.css', '.html', '.txt'])
 const EXCLUDED_DIRECTORIES = new Set(['.git', 'node_modules', 'dist', '.work'])
 
-interface NamespaceFamily {
-  id: string
-  owner: string
-  description: string
-  pattern: RegExp
-}
-
-const families: readonly NamespaceFamily[] = [
-  {
-    id: 'project.ovids-house',
-    owner: 'project',
-    description: 'Current master project name',
-    pattern: /Ovid[’']s House/g
-  },
-  {
-    id: 'project.house-kernel',
-    owner: 'architectural-system',
-    description: 'Formal architectural-system name / former master name',
-    pattern: /\bHouse Kernel\b/g
-  },
-  {
-    id: 'project.metamorph-compiler',
-    owner: 'compiler',
-    description: 'Compiler product/subsystem name',
-    pattern: /\bMetamorph Compiler\b/g
-  },
-  {
-    id: 'legacy.house-systems-architecture',
-    owner: 'provenance',
-    description: 'Legacy master-project name',
-    pattern: /\bHouse Systems Architecture\b/g
-  },
-  {
-    id: 'legacy.house-design-doctrine',
-    owner: 'provenance',
-    description: 'Legacy doctrine/project name',
-    pattern: /\bHouse Design Doctrine(?: v\d+)?\b/g
-  },
-  {
-    id: 'legacy.long-life-house',
-    owner: 'provenance',
-    description: 'Legacy project name',
-    pattern: /\b(?:The )?Long-Life House\b/g
-  },
-  {
-    id: 'pattern.hsa',
-    owner: 'patterns',
-    description: 'Canonical pattern identifier namespace derived from House Systems Architecture',
-    pattern: /\bHSA-P-\d{3}\b/g
-  },
-  {
-    id: 'grammar.g01',
-    owner: 'grammar',
-    description: 'Georgian-derived grammar instance identity',
-    pattern: /\bG-01\b/g
-  },
-  {
-    id: 'grammar.g01-version',
-    owner: 'grammar',
-    description: 'Versioned grammar identity',
-    pattern: /\bG-01 v\d+\.\d+\b/g
-  },
-  {
-    id: 'grammar.gate',
-    owner: 'grammar-workflow',
-    description: 'Grammar derivation / validation gate labels',
-    pattern: /\bD(?:5|6|8|9|10(?:-S)?|11|12|13)\b/g
-  },
-  {
-    id: 'maturity.level',
-    owner: 'project-maturity',
-    description: 'Project-specific maturity levels',
-    pattern: /\bM[1-5]\b/g
-  },
-  {
-    id: 'reference-house.design-gate',
-    owner: 'reference-house-workflow',
-    description: 'Reference House design/development gates',
-    pattern: /\bRH-(?:0\d|1[01])\b/g
-  },
-  {
-    id: 'reference-house.compiler-gate',
-    owner: 'reference-house-compiler-workflow',
-    description: 'Reference House executable/compiler gates',
-    pattern: /\bRH-C\d+\b/g
-  },
-  {
-    id: 'reference-house.fact',
-    owner: 'reference-house-machine',
-    description: 'Reference House source-fact identifiers',
-    pattern: /\bRHCF-[A-Z0-9-]+\b/g
-  },
-  {
-    id: 'compiler.p0',
-    owner: 'compiler-workflow',
-    description: 'P0 compiler gate',
-    pattern: /\bP0\b/g
-  },
-  {
-    id: 'compiler.pattern-crosswalk',
-    owner: 'compiler-workflow',
-    description: 'Pattern crosswalk gate',
-    pattern: /\bPAT-XW-\d+\b/g
-  },
-  {
-    id: 'compiler.cf',
-    owner: 'compiler-workflow',
-    description: 'Compiler generality / contrast-fixture gates',
-    pattern: /\bCF-\d+\b/g
-  },
-  {
-    id: 'compiler.ch',
-    owner: 'compiler-workflow',
-    description: 'Compiler Hardening gates',
-    pattern: /\bCH-\d+\b/g
-  },
-  {
-    id: 'compiler.coa',
-    owner: 'compiler-output-workflow',
-    description: 'Compiler Output Architecture gates',
-    pattern: /\bCOA-\d+\b/g
-  },
-  {
-    id: 'compiler.h1',
-    owner: 'compiler-workflow',
-    description: 'H1 paper-compilation / technical fixture identities',
-    pattern: /\bH1(?:-[A-Z0-9]+)*\b/g
-  },
-  {
-    id: 'publication.pr',
-    owner: 'publication-workflow',
-    description: 'Publication credibility/release gates',
-    pattern: /\bPR-\d{2}[A-Z]?(?:-[A-Z0-9]+)*\b/g
-  },
-  {
-    id: 'publication.pub-san',
-    owner: 'publication-workflow',
-    description: 'Resolved-work sanitation programme identity',
-    pattern: /\bPUB-SAN\b/g
-  },
-  {
-    id: 'publication.drw',
-    owner: 'publication-workflow',
-    description: 'Architectural drawing programme gates',
-    pattern: /\bDRW-\d+\b/g
-  },
-  {
-    id: 'publication.pub-nom',
-    owner: 'publication-workflow',
-    description: 'Nomenclature programme identity',
-    pattern: /\bPUB-NOM\b/g
-  },
-  {
-    id: 'publication.nom-gate',
-    owner: 'publication-workflow',
-    description: 'Nomenclature programme gates',
-    pattern: /\bNOM-\d+\b/g
-  },
-  {
-    id: 'prototype.id',
-    owner: 'prototype-workflow',
-    description: 'Physical prototype identities',
-    pattern: /\bP0[1-4]\b/g
-  },
-  {
-    id: 'prototype.w2',
-    owner: 'prototype-workflow',
-    description: 'W2 wall-bay challenger identity',
-    pattern: /\bW2\b/g
-  },
-  {
-    id: 'figure.legacy-df',
-    owner: 'publication-figures',
-    description: 'Legacy publication figure identities',
-    pattern: /\bD-F\d{2}\b/g
-  },
-  {
-    id: 'machine.rh-compile-schema',
-    owner: 'compiler-machine',
-    description: 'Reference House compile schema namespace',
-    pattern: /\bHK-RH-COMPILE-\d+\b/g
-  },
-  {
-    id: 'machine.rh-output',
-    owner: 'compiler-output-machine',
-    description: 'Generated Reference House output/schema/artefact namespace',
-    pattern: /\bOH-RH-[A-Z0-9-]+\b/g
-  },
-  {
-    id: 'machine.house-kernel-build-meta',
-    owner: 'site-build-machine',
-    description: 'House Kernel-derived site build metadata keys',
-    pattern: /(?:house-kernel-build-(?:commit|timestamp)|__HOUSE_KERNEL_BUILD_(?:COMMIT|TIMESTAMP)__)/g
-  }
-] as const
+const families = nomenclatureFamilies.map((family) => ({
+  ...family,
+  pattern: nomenclaturePattern(family)
+}))
 
 type Surface =
   | 'REPO_TOTAL'
@@ -304,14 +114,18 @@ function scanText(path: string, text: string, surfaces: Surface[]): void {
   for (const family of families) {
     const familyMatches = matches(family.pattern, text)
     if (!familyMatches.length) continue
+
     const record = counts.get(family.id)!
     record.total += familyMatches.length
     record.files.add(path)
     if (surfaces.includes('REPO_TOTAL')) record.repoFiles.add(path)
+
     for (const match of familyMatches) {
       if (record.examples.size < 8) record.examples.add(match[0])
     }
+
     for (const surface of surfaces) addSurface(record, surface, familyMatches.length)
+
     if (surfaces.some(isPublicSurface) && record.representativePublicPaths.size < 8) {
       record.representativePublicPaths.add(path)
     }
@@ -352,6 +166,7 @@ for (const absolute of collectFiles(repoRoot)) {
 function scanPdf(path: string, surface: Surface): void {
   const absolute = resolve(repoRoot, path)
   if (!existsSync(absolute) || !lstatSync(absolute).isFile()) return
+
   try {
     const text = execFileSync('pdftotext', [absolute, '-'], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 })
     scanText(path, text, [surface])
