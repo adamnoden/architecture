@@ -1,0 +1,39 @@
+name: BRH-00A audit proof
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  prove-audit-method:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout complete Git history
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Run representative read-only branch audit
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/branch-hygiene-audit.mjs \
+            --branches=drw-02a,prototype-p03-engineer-review-brief,project-integrity-refactor \
+            --output=/tmp/brh-00a-proof.json
+          node -e "const fs=require('node:fs'); const r=JSON.parse(fs.readFileSync('/tmp/brh-00a-proof.json')); console.log(JSON.stringify({mainSha:r.mainSha, branchCount:r.enumeration.branchCount, enumerationSha256:r.enumeration.sha256, audited:r.auditedBranches.map(b=>({name:b.name, headSha:b.headSha, aheadOfMain:b.aheadOfMain, behindMain:b.behindMain, ancestor:b.headIsAncestorOfMain, uniquePatches:b.patchEquivalence.uniquePatchCount, equivalentPatches:b.patchEquivalence.equivalentPatchCount, pullRequests:b.pullRequests.map(pr=>pr.number)}))}, null, 2))"
+
+      - name: Upload proof artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: brh-00a-proof
+          path: /tmp/brh-00a-proof.json
+          retention-days: 30
