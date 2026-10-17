@@ -25,7 +25,7 @@ NOM-08 does not invent numbering where none is needed. It also does not erase us
 
 ## Bounded audit sequence
 
-- [ ] **NOM-08A — grammar identity and version semantics**  
+- [x] **NOM-08A — grammar identity and version semantics**  
   Resolve `G-01` versus `G-01 v0.1`, keep the specification version where exact revision identity matters, and remove version typography from ordinary primary prose/navigation where the grammar identity alone performs the reader task.
 - [ ] **NOM-08B — project maturity semantics**  
   Prove `M1`–`M5` are used only as the project maturity scale, keep them off primary prose, pair human-facing technical occurrences with named maturity states, and distinguish external lookalikes such as CIBSE Guide M1 and UK M4(2)/M4(3).
@@ -44,6 +44,26 @@ NOM-02 already decided:
 - workflow/gate numbers are internal/provenance;
 - pattern IDs are stable machine identity, not publication order;
 - `D-F*` is retired and DRW owns any later reader-facing figure-number architecture.
+
+## Audit log
+
+### NOM-08A — grammar identity and version semantics — COMPLETE
+
+Decision:
+
+- **`G-01` is stable reader identity.** It names one concrete Georgian-derived domestic grammar and supports useful cross-reference between grammar, evidence and the Reference House.
+- **`v0.1` is genuine specification version identity, not maturity or publication order.** The specification itself defines a versioning rule: changes to invariant statements, rule authority, scope, membership consequence or positive dimensional families require a new version; non-semantic editorial corrections do not.
+- **The version therefore survives only where exact revision identity is the reader task.** The grammar specification and its conformance/validation surface remain technical and may show `G-01 v0.1`; ordinary primary prose, navigation and Reference House exposition use `G-01` or the human grammar name.
+
+Changes:
+
+- restored `grammar.g01-version` to `PUBLIC_TECHNICAL` exposure rather than the temporary NOM-07 all-reader exception;
+- classified the Reference House grammar-conformance record as a technical surface;
+- removed `v0.1` from ordinary grammar overview, case index, Reader's Guide, Part IV, implementation schedule, research agenda and Reference House overview prose;
+- changed public navigation labels to `G-01 — specification` and `G-01 conformance` while leaving exact version identity on the technical destinations;
+- source nomenclature validation passed under the narrowed exposure rule.
+
+Implementation commit: `27fd46f5902490255d9eebfde6cb1cd73854bf37`; one-shot workflow removed at `9e577ec391437f23e780d779ada3a296e469d037`.
 
 ## Exit condition
 
