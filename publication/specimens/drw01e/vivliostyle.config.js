@@ -11,7 +11,7 @@ export default defineConfig({
   size: format === 'b5' ? 'B5' : 'A4',
   entryContext: root,
   entry: [{ path: 'specimen.html', title: 'DRW-01E doctrine specimen' }],
-  theme: resolve(root, `${format}.css`),
+  theme: [resolve(root, 'common.css'), resolve(root, `${format}.css`)],
   workspaceDir: resolve(root, '.work', format),
   output: {
     path: resolve(root, 'dist', `drw01e-${format}.pdf`),

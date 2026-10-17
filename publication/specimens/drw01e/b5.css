@@ -1,4 +1,3 @@
-@import url('./common.css');
 /* Conservative robustness proof only; not a final PR-02 trim/margin decision. */
 @page { size: B5; margin-top: 18mm; margin-bottom: 18mm; }
 @page flow:left { margin-left: 16mm; margin-right: 22mm; @top-left { content: "DRW-01E doctrine specimen"; font: 7.5pt Arial; color: #666; } @bottom-left { content: counter(page); font: 7.5pt Arial; } }
