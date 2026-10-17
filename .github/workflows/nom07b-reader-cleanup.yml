@@ -45,16 +45,16 @@ jobs:
                   ),
               ],
               'docs/patterns/candidates/replaceable-architectural-lining.md': [
-                  ('**Status:** held; no stable pattern ID  ', '**Status:** held  '),
+                  ('**Status:** held; no stable pattern ID  ', '**Status:** held<br>'),
               ],
               'docs/patterns/candidates/individually-isolatable-manifold-distribution.md': [
-                  ('**Status:** held; no stable pattern ID  ', '**Status:** held  '),
+                  ('**Status:** held; no stable pattern ID  ', '**Status:** held<br>'),
               ],
               'docs/patterns/candidates/local-deep-service-zone.md': [
-                  ('**Status:** held; no stable pattern ID  ', '**Status:** held  '),
+                  ('**Status:** held; no stable pattern ID  ', '**Status:** held<br>'),
               ],
               'docs/patterns/candidates/selective-floor-access.md': [
-                  ('**Status:** held; no stable pattern ID  ', '**Status:** held  '),
+                  ('**Status:** held; no stable pattern ID  ', '**Status:** held<br>'),
               ],
               'docs/patterns/service-topology-sequence.md': [
                   ('**Sequence ID:** `service-topology`\n\n', ''),
