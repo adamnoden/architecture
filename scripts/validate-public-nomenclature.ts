@@ -1,7 +1,8 @@
 import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
-import { join, relative, resolve, sep } from 'node:path'
+import { join, posix, relative, resolve, sep } from 'node:path'
 import { dependenciesForAdapter } from '../publication/adapters.js'
+import { publicationFigurePlacements } from '../publication/figures.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
 import {
   nomenclatureFamilies,
@@ -141,14 +142,42 @@ function publicationSources(): Set<string> {
   return sources
 }
 
+/**
+ * Publication figures are reader-facing content in their own right. Scanning
+ * only the Markdown that embeds them misses text authored inside SVGs — the
+ * exact class of leak that exposed machine pattern IDs in the book. Resolve
+ * assets from the canonical placement registry so this remains bounded to
+ * figures that actually enter the publication rather than every repository SVG.
+ */
+function publicationFigureSources(): Set<string> {
+  const sourceByEntry = new Map(publicationEntries.map((entry) => [entry.id, entry.source]))
+  const sources = new Set<string>()
+
+  for (const placement of publicationFigurePlacements()) {
+    const entrySource = sourceByEntry.get(placement.entryId)
+    if (!entrySource) {
+      throw new Error(`Publication figure ${placement.id} references unknown entry ${placement.entryId}.`)
+    }
+    if (/^(?:[a-z]+:|\/\/)/i.test(placement.image)) continue
+
+    const target = posix.normalize(posix.join(posix.dirname(entrySource), placement.image))
+    if (target.endsWith('.svg')) sources.add(target)
+  }
+
+  return sources
+}
+
 function validateSource(): Failure[] {
   const failures: Failure[] = []
   const sources = publicSiteSources()
   for (const source of publicationSources()) sources.add(source)
+  for (const source of publicationFigureSources()) sources.add(source)
 
   for (const source of [...sources].sort()) {
     const absolute = resolve(repoRoot, source)
-    if (!existsSync(absolute)) continue
+    if (!existsSync(absolute)) {
+      throw new Error(`Missing reader-facing source required by NOM validation: ${source}`)
+    }
     scanSource(source, readFileSync(absolute, 'utf8'), failures)
   }
 
