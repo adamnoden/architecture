@@ -24,7 +24,7 @@ jobs:
           changes = {
             'docs/grammar/g01-cases/marble-hill-house.md': [
               ('**Analysis role:** TRIAL  \n', ''),
-              ('**D3 status:** semantic annotation v0.1 complete; dimensional analysis metric extraction intentionally partial  \n', '**Evidence state:** semantic annotation complete; dimensional metric extraction intentionally partial  \n'),
+              ('**D3 status:** semantic annotation v0.1 complete; dimensional analysis metric extraction intentionally partial  \n', '**Evidence state:** semantic annotation complete; dimensional metric extraction intentionally partial<br>\n'),
               ('**Purpose:** test the annotation contract against a compact canonical villa whose architectural hierarchy, vertical order and later service growth are unusually legible.', '**Purpose:** document a compact canonical villa whose architectural hierarchy, vertical order and later service growth are unusually legible.'),
               ('D3 does **not** force Marble Hill into one timeless plan.', 'The analysis does **not** force Marble Hill into one timeless plan.'),
               ('### D3 consequence', '### Methodological consequence'),
@@ -33,14 +33,14 @@ jobs:
             ],
             'docs/grammar/g01-cases/danson-house.md': [
               ('**Analysis role:** TRIAL  \n', ''),
-              ('**D3 status:** semantic annotation v0.1 complete; dimensional evidence unusually strong  \n', '**Evidence state:** semantic annotation complete; dimensional evidence unusually strong  \n'),
+              ('**D3 status:** semantic annotation v0.1 complete; dimensional evidence unusually strong  \n', '**Evidence state:** semantic annotation complete; dimensional evidence unusually strong<br>\n'),
               ('**Purpose:** test the annotation contract against a compact sophisticated villa in which circulation sequence, service circulation, room proportion, façade negotiation and structural framing are unusually well documented.', '**Purpose:** document a compact sophisticated villa in which circulation sequence, service circulation, room proportion, façade negotiation and structural framing are unusually well documented.'),
               ('### D3 finding', '### Topological finding'),
               ('## 9. Metric geometry — dimensional analysis seed', '## 9. Metric geometry'),
             ],
             'docs/grammar/g01-cases/76-dean-street.md': [
               ('**Analysis role:** TRIAL — urban contrast  \n', ''),
-              ('**D3 status:** semantic annotation v0.1 complete with deliberately larger UNKNOWN set; dimensional metrics deferred  \n', '**Evidence state:** semantic annotation complete with a deliberately larger unknown set; dimensional metrics deferred  \n'),
+              ('**D3 status:** semantic annotation v0.1 complete with deliberately larger UNKNOWN set; dimensional metrics deferred  \n', '**Evidence state:** semantic annotation complete with a deliberately larger unknown set; dimensional metrics deferred<br>\n'),
               ('**Purpose:** stress-test the annotation contract against urban constraint and prevent villa-derived rules from being mistaken for universal Georgian rules.', '**Purpose:** use urban constraint to prevent villa-derived rules from being mistaken for universal Georgian rules.'),
               ('### D3 consequence', '### Methodological consequence'),
               ('D3 therefore uses **geometry-neutral research IDs** where room names would be guesses.', 'The record therefore uses **geometry-neutral research IDs** where room names would be guesses.'),
