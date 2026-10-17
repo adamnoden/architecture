@@ -9,144 +9,140 @@
 
 Ovid’s House now has a problem of representation rather than a shortage of architectural thought.
 
-The Working Edition describes a coordinated Reference House with a real programme, a courtyard morphology, a structural concept, a concentrated service flank, a sectional order, an opening grammar, roof and water logic, maintenance geography and a bounded tectonic language. Yet the publication represents most of that through schematic rectangles and prose-heavy explanatory graphics.
+The Working Edition describes a coordinated Reference House with a real programme, courtyard morphology, structural concept, concentrated service flank, sectional order, opening grammar, roof/water logic, maintenance geography and bounded tectonic language. Yet the publication represents much of that through schematic rectangles and prose-heavy explanatory graphics.
 
-The drawings therefore underperform the work in three ways.
+The drawings therefore underperform the work in four ways:
 
-First, they do not let the reader inspect enough architecture. The house is repeatedly described but rarely shown through the ordinary instruments of architectural judgement: plans, sections, elevations, roof plans, details and three-dimensional analytical views.
+1. **Insufficient architecture.** The reader is repeatedly told about the house but rarely allowed to inspect it through plans, sections, elevations, roof plans, details or a synthetic three-dimensional view.
+2. **Representation drift.** Reader-facing Reference House SVGs are separately authored from deterministic compiler-derived geometry, so publication graphics can simplify or contradict the controlled model without current bounds checks noticing.
+3. **Wrong visual register.** The repeated heading + subtitle + box diagram + prose-sidebar formula reads like presentation-deck information design rather than an architectural monograph.
+4. **Weak verification.** Current figure validation catches gross SVG overflow, not semantic parity, cross-view disagreement, text collisions, print scale, architectural drawing grammar or page/spread failure.
 
-Second, the current reader-facing Reference House figures are separately authored from the deterministic Reference House model and generated inspection drawings. That leaves open a representation-drift path: a publication SVG can simplify, omit or contradict current model geometry without the current figure-bounds validator knowing that anything is wrong.
-
-Third, the repeated graphic formula — large heading, explanatory subtitle, large box diagram, right-hand prose panel — reads more like presentation-deck information design than an architectural monograph. The problem is not monochrome restraint; that is largely appropriate. The problem is that explanatory graphics have displaced architectural drawings.
-
-The required correction is therefore not a style pass. It is a new architectural drawing system and a book-wide drawing programme.
+The correction is therefore not a style pass. It is a bounded architectural-representation programme: strengthen only the source geometry the book genuinely needs, evolve the existing deterministic output layer into a native architectural SVG renderer, and compose the resulting drawings deliberately on the printed page.
 
 ## 2. Governing position
 
-The programme adopts six rules.
-
 ### 2.1 Show the building before explaining the building
 
-The Reference House chapter should establish the architectural object through plans, sections, elevations and roof/site drawings before asking analytical diagrams to explain structure, services, water, maintenance or hierarchy.
-
-The intended reading sequence is:
+The Reference House chapter should establish the architectural object through ordinary architectural drawings before analytical overlays explain structure, services, water, maintenance or hierarchy.
 
 **here is the house → here is what it is doing → here is why**.
 
 ### 2.2 One geometry, several readings
 
-Publication drawings, machine inspection views and analytical overlays may use different annotation and graphic profiles, but they should share one canonical geometry wherever the project owns that geometry.
+Publication drawings, inspection views and analytical overlays may use different annotation and graphic profiles, but they should share one canonical geometry wherever the project owns that geometry.
 
-A service overlay may simplify the plan. It must not own another plan.
+A service overlay may simplify a plan. It must not own another plan.
 
 ### 2.3 No invented precision
 
-A more polished drawing is not permission to manufacture walls, openings, details or building systems that the source does not own.
+A polished drawing is not permission to manufacture architecture.
 
-Where a requested view exposes missing geometry, the programme has only three legitimate responses:
+When a requested view exposes missing geometry, the programme may only:
 
 1. strengthen the canonical architectural source deliberately;
-2. show the condition as provisional / ranged / unresolved using normal architectural notation;
-3. refuse the drawing at that level of specificity.
+2. show the condition as provisional/ranged/unresolved using normal architectural notation;
+3. refuse the requested level of specificity.
 
-The renderer must not convert graphic plausibility into architectural authority.
+The renderer must never turn graphic plausibility into architectural authority.
 
-### 2.4 Architectural convention before visual novelty
+### 2.4 Architectural convention before graphic novelty
 
-A practising architect should not have to learn an Ovid’s House dialect in order to read an ordinary plan, section, elevation or detail.
+A practising architect should not need to learn an Ovid’s House dialect to read an ordinary plan, section, elevation or detail.
 
-The project can have a recognisable editorial hand, but that identity should come from discipline, proportion, line hierarchy, typography and selection — not custom symbols where industry convention already works.
+The project can acquire a recognisable editorial hand through discipline, proportion, line hierarchy, typography and selection. It should not invent symbols where established architectural convention already works.
 
 ### 2.5 Publication and inspection are different surfaces, not different truths
 
-The current generated Reference House views are useful because they expose semantic IDs, precision classes, diagnostics and compile identity. Those features are appropriate for inspection and wrong for the printed monograph.
+The existing generated Reference House views correctly expose semantic IDs, precision classes, diagnostics and compile identity. Those are useful for inspection and wrong for the printed monograph.
 
-The drawing system therefore needs at least two profiles:
+The renderer therefore needs at least two profiles:
 
-- **inspection** — explicit semantic IDs, authority/uncertainty notation, machine identity and diagnostics;
+- **inspection** — semantic IDs, authority/uncertainty notation, machine identity and diagnostics;
 - **publication** — human architectural naming, conventional notation, restrained uncertainty cues and no compiler-interface clutter.
 
-Both profiles must be projections of the same controlled state.
+Both are projections of the same controlled state.
 
-### 2.6 Do not build CAD
+### 2.6 Math first, SVG second, no CAD
 
-The project does not need a browser CAD application, a Revit substitute or a generic computational-geometry research programme.
+The project does not need a CAD application, a browser modelling environment, Revit, Blender or a generic solid-modelling kernel to make excellent architectural drawings.
 
-It needs a narrow deterministic renderer capable of producing the drawing families the book and website genuinely require. Capability should be added demand-first from the frozen drawing register.
+The core should remain explicit deterministic mathematics:
 
-## 3. Precedent study: what visual register belongs here
+- points, vectors, segments, polylines and polygons in world coordinates;
+- levels, hosted openings and bounded architectural objects;
+- deterministic plan/section/elevation/parallel projections;
+- clipping, intersections and visibility only where actual drawings demand them;
+- SVG as the vector output medium.
 
-The target is not one historical graphic style copied wholesale. Four traditions are useful for different parts of the work.
+A small geometry dependency may be introduced when it clearly improves robustness. A CAD/BIM dependency should only appear if a future concrete drawing requirement proves the bounded native approach insufficient.
 
-### 3.1 Restrained professional monograph drawing — primary grammar
+### 2.7 The page is part of the drawing
 
-**Reference:** Caruso St John project drawing sets, particularly their houses and civic work.  
+A beautiful SVG that lands badly in the book is not a successful drawing.
+
+Print scale, page class, aspect ratio, orientation, gutter, caption relationship and minimum readable text/line weight must be decided with the drawing register before mass implementation. Page composition is therefore an early design input, not a DRW-10 afterthought.
+
+### 2.8 Do not overfit Reference House 01
+
+The renderer should be reusable by later Reference Houses without pretending to be a general CAD system.
+
+Generic drawing primitives should understand architectural ideas such as walls, openings, cuts, levels, slabs, roof faces and annotations. They should not encode assumptions such as “courtyard ring”, “four bays” or “service flank” into the drawing engine itself.
+
+Small synthetic fixtures should prove that RH01 assumptions have not leaked into the renderer.
+
+## 3. Visual precedent and target register
+
+The target is not one office style copied wholesale. Four traditions are useful for different parts of the book.
+
+### 3.1 Restrained British professional monograph drawing — primary grammar
+
+**Reference:** Caruso St John project drawing sets.  
 Examples:  
 - https://carusostjohn.com/projects/house-lincolnshire/  
 - https://carusostjohn.com/projects/private-house-north-london/  
 - https://carusostjohn.com/projects/st-pancras/
 
-What is useful:
+Useful qualities:
 
-- drawings look like architecture first and editorial material second;
-- plan, section and elevation remain quiet and conventional;
-- linework carries hierarchy without graphic theatre;
-- the drawing set is sufficient to understand spatial order before prose explains it;
-- details appear only where they add architectural information.
+- architecture dominates the page rather than graphic design;
+- plans, sections and elevations remain quiet and conventional;
+- linework carries hierarchy without theatre;
+- a reader can understand spatial order before reading explanatory prose;
+- details appear where they add architectural information.
 
-What should not be copied mechanically:
+**Use:** base register for the Reference House orthographic set.
 
-- office-specific plotting conventions;
-- construction-level certainty that Ovid’s House does not yet possess;
-- ornamental or material notation unsupported by the Reference House source.
-
-**Conclusion:** this should be the base register for the Reference House orthographic set.
-
-### 3.2 DETAIL-style technical redrawing — detail grammar
+### 3.2 DETAIL-style technical editorial drawing — detail grammar
 
 **Reference:** DETAIL magazine / DETAIL Inspiration.  
 Examples:  
 - https://www.detail.de/en/magazine  
 - https://www.detail.de/en/search?type=drawings
 
-DETAIL’s characteristic strength is consistent editorial redrawing: details from different projects are normalised into a common technical language so that construction can be compared and read quickly.
-
-What is useful:
+Useful qualities:
 
 - disciplined line-weight hierarchy;
-- material hatching used as information rather than decoration;
-- details are visually dense but semantically economical;
-- scale and construction logic are obvious;
-- one editorial drawing language can carry many different assemblies.
+- material hatch used as information rather than decoration;
+- visual density without explanatory clutter;
+- obvious scale and construction logic;
+- a consistent editorial language across different assemblies.
 
-What should not be copied:
+**Use:** selected 1:20 / 1:10 / 1:5 interface drawings after source authority is adequate.
 
-- the implication that our unresolved physical interfaces are already construction details;
-- excessive build-up information where the project only owns a strategy or comparator.
-
-**Conclusion:** use this register for selected 1:20 / 1:10 / 1:5 interface drawings after source authority is sufficient.
-
-### 3.3 Atelier Bow-Wow Graphic Anatomy — synthesis / sectional perspective
+### 3.3 Atelier Bow-Wow — synthesis / architectural anatomy
 
 **Reference:** *Graphic Anatomy Atelier Bow-Wow*.  
 Example: https://www-s.jp.toto.com/publishing/detail/A0278_e.htm
 
-The book presents projects through detailed sectional-perspective drawings that combine section, depth, occupation, fixtures, surroundings and constructional information.
+Useful qualities:
 
-What is useful:
+- one sectional-perspective drawing can make a building intelligible as a whole;
+- section and three-dimensional reading coexist without becoming rendering;
+- architecture, use and technical organisation can inhabit one view;
+- the drawing rewards close reading in print.
 
-- one drawing can make a whole building intelligible spatially;
-- section and three-dimensional reading are combined without becoming a photoreal rendering;
-- architecture, use and technical organisation can coexist;
-- it rewards close inspection in print.
-
-What should not be copied:
-
-- illustrative density for its own sake;
-- incidental people/furniture/objects that the model cannot place truthfully;
-- turning every figure into an anatomy drawing.
-
-**Conclusion:** test one major sectional axonometric / cutaway as a synthesis plate for the Reference House. It should be a hero drawing, not the house style for every page.
+**Use:** one major sectional axonometric/cutaway, not a default style for every figure.
 
 ### 3.4 British analytical drawing / projected section — analytical overlays
 
@@ -155,121 +151,129 @@ Examples:
 - https://drawingmatter.org/stalder-projected-sections/  
 - https://www.cca.qc.ca/en/archives/380477/cedric-price-fonds/396839/projects/399301/fun-palace-project
 
-What is useful:
+Useful qualities:
 
-- analytical information remains spatial and architectural rather than collapsing into flowcharts;
-- section, axonometric and diagram can be hybridised when the question demands it;
-- routes, components and transformations are shown against a building substrate.
+- analytical information remains attached to architectural geometry;
+- section, axonometric and diagram can hybridise when the question requires it;
+- routes, components and change are shown in relation to the building rather than in disconnected flowcharts.
 
-What should not be copied:
+**Use:** conceptual ancestry for structure, service, maintenance and failure overlays.
 
-- historical graphic mannerism;
-- diagrammatic density unrelated to the present argument;
-- annotation systems that require archival familiarity.
+## 4. Styles explicitly rejected as the primary language
 
-**Conclusion:** this is the right conceptual ancestry for service, maintenance, failure and structural overlays. The key move is to draw *on the architecture* rather than beside a rectangle representing it.
+- **Presentation-deck / thought-leadership graphics.** Useful occasionally, wrong as the principal evidence of the monograph.
+- **Post-digital collage.** Atmosphere and texture would blur the distinction between owned, provisional and illustrative information.
+- **Raw BIM / construction-document plotting.** Too much delivery notation, too little editorial hierarchy, and likely to imply more resolution than the project owns.
+- **Hyper-minimal rectangle diagrams.** Still useful for genuinely abstract doctrine, but not as proxies for a worked building.
+- **Photorealism.** Not needed to prove the argument and risks replacing architectural inspection with image-making.
 
-## 4. Styles explicitly rejected as primary language
+## 5. Ovid’s House drawing doctrine to freeze in DRW-01
 
-### Presentation-deck / thought-leadership diagram
+### 5.1 Semantic line hierarchy
 
-The current repeated title + subtitle + central box + prose sidebar format is useful for a talk but weak as the principal visual evidence of a serious architectural monograph. It may survive in rare abstract figures; it should stop being the default.
+Use a small controlled family:
 
-### Post-digital collage
+- **cut** — heaviest;
+- **profile** — strong external/principal silhouette;
+- **primary beyond** — ordinary visible architectural edges;
+- **secondary beyond** — secondary components/context;
+- **overhead / hidden / provisional** — conventional dashed families with distinct meanings;
+- **datum / grid / dimension / leader** — light annotation family.
 
-Collage, textured fills, cut-out vegetation and atmospheric post-production can be effective architectural representation. They are wrong as the baseline here because they blur the project’s exact distinction between what is owned, what is provisional and what is merely illustrative.
+Line weights must be defined in physical paper units, not arbitrary screen pixels.
 
-### Generic BIM / construction-document plot
+### 5.2 World space and paper space must be separate
 
-A raw Revit-like plan is also not the target. It tends to contain too much project-delivery notation, too little editorial hierarchy and — at our current maturity — would imply more technical resolution than exists.
+Architecture exists in world millimetres. Drawing graphics exist in paper millimetres/points.
 
-### Hyper-minimal conceptual rectangle diagrams
+The renderer therefore needs an explicit mapping:
 
-These may remain valuable at doctrine level. They cannot carry the burden of demonstrating a worked house.
+**world geometry → view projection → paper-space frame → SVG**.
 
-## 5. Proposed Ovid’s House drawing doctrine
+This prevents line weights, text size and symbols from accidentally becoming model-scale geometry and makes intended print scale testable.
 
-DRW-01 must test and freeze the precise tokens, but the target doctrine is already clear enough to guide research.
+### 5.3 Poche and material
 
-### 5.1 Graphic hierarchy
+Plan and section should clearly distinguish cut matter. Material hatch appears only where it communicates something needed at that scale. At small scales, restrained solid/grey poche is preferable to busy hatch.
 
-The drawing should use a small semantic line-weight family rather than locally chosen stroke widths:
+### 5.4 Text and labels
 
-- **cut** — heaviest; matter intersected by the cut plane;
-- **profile** — strong external / principal silhouette;
-- **primary beyond** — normal visible architectural edges;
-- **secondary beyond** — furniture, secondary components, context;
-- **overhead / hidden / provisional** — dashed by established meaning;
-- **datum / grid / dimension / leader** — lighter annotation family.
+Titles and explanatory prose belong to page composition, not inside the drawing canvas.
 
-Line weight should be defined in physical output units and tuned to final print scale, not as arbitrary screen pixels.
+Human names lead in publication output. Internal semantic IDs remain available through SVG metadata and inspection profile.
 
-### 5.2 Poche and material
+Label generation must be deterministic. Where automated placement would become clever or unstable, explicit authored anchors are preferable to opaque layout optimisation.
 
-Plan and section should distinguish cut matter clearly. Material hatching appears only where it communicates something the reader needs to know. At small scales, solid or restrained grey poche is preferable to busy hatch patterns.
+### 5.5 Dimensions
 
-### 5.3 Text
+Dimensions are selective rather than exhaustive. A monograph needs enough to establish scale, courtyard/wing relationships, key clearances and contested geometry. It does not need contractor-level chains.
 
-Titles belong principally to page composition, not inside the SVG. The drawing canvas should contain only architectural annotations needed to read the drawing.
+### 5.6 Scale-aware representation
 
-Human names lead. Internal semantic IDs disappear from publication profile unless a cross-reference genuinely requires them.
+Architectural representation changes with scale.
 
-### 5.4 Dimensions
+A door/window/stair/detail at 1:100 must not simply be a shrunken 1:10 symbol. DRW-01 should freeze a small set of representation bands — for example site/type, building, enlarged assembly and detail — with appropriate simplification at each band.
 
-Dimensions are selective rather than exhaustive. A monograph plan needs enough dimensions to establish architectural scale, critical courtyard/wing relationships, maintenance clearances and disputed geometry. It does not need a contractor’s full dimension chain.
+### 5.7 Uncertainty
 
-### 5.5 Scale
+Uncertainty remains visible but does not become the visual theme:
 
-Every drawing that depends on geometric judgement should have an explicit intended print scale or a scale bar where page resizing is possible. The source geometry remains in millimetres; layout determines print scale.
+- controlled geometry — normal architectural notation;
+- provisional represented geometry — restrained conventional dash/note;
+- range — paired/nested extent only when it matters;
+- unresolved exact geometry — note, omission or refusal, never invented detail.
 
-### 5.6 Uncertainty
+### 5.8 Colour
 
-Uncertainty remains visible but does not become a graphical theme. The preferred order is:
+Baseline remains monochrome / restrained grey. One controlled accent may be tested for analytical overlays if it materially improves reading in print and on screen. Colour should never rescue weak hierarchy.
 
-- resolved controlled geometry — normal architectural line;
-- provisional represented geometry — subtle conventional dash / note;
-- range — nested or paired extent only when the range matters;
-- unresolved exact geometry — note or omission, never invented detail.
+### 5.9 Vector cleanup
 
-### 5.7 Colour
+Generated linework must not look mechanically dirty. The engine may therefore require bounded post-processing for:
 
-The baseline remains monochrome / restrained grey. One controlled accent may be tested for analytical overlays if it materially improves reading in both print and web, but colour is not required to rescue weak hierarchy.
+- coincident/duplicate edge suppression;
+- clipping at openings and cut planes;
+- sensible line joins/caps;
+- hidden/occluded edge suppression where the chosen view requires it;
+- hatch clipping;
+- annotation masking where conventionally appropriate.
 
-## 6. What is actually missing from the book
+This is drawing hygiene, not CAD scope expansion.
 
-The exact register is a DRW-02 deliverable, but the current gap is large enough to state a strong initial hypothesis.
+## 6. Book-wide drawing register: current hypothesis
+
+DRW-02 must decide the final set. The following is an initial hypothesis, not a quota.
 
 ### 6.1 Reference House — essential architectural set
 
-| Proposed drawing | Why the book needs it | Current status |
-|---|---|---|
-| **Synthetic site / type plan** | Establishs front, garden, detached condition, service side, maintenance reservation and the limits of the surrogate site | D-F06 partially does this, but too diagrammatically |
-| **Ground-floor plan** | Lets the reader inspect programme, circulation, courtyard, stair, service flank and front-to-garden sequence | Compiler-generated inspection plan exists; no proper publication plan |
-| **First-floor plan** | Establishes all four bedrooms, gallery/landing, family bathroom and dry storage arrangement | Compiler-generated inspection plan exists; no proper publication plan |
-| **Roof / drainage plan** | Makes outward roof falls, external collection, court drain and emergency overflow inspectable | Existing water figure is schematic; older RH source drawing exists |
-| **Principal longitudinal section A–A** | Proves the front → stair → court → garden relationship and real sectional hierarchy | Compiler-generated semantic section exists; current D-F07 substitutes a diagram |
-| **Transverse / service section B–B** | Shows service flank, riser, bathroom stack, floor/service relationship and courtyard depth | Missing from publication; may require source hardening |
-| **Principal front elevation** | Essential to a project whose G-01 argument depends on four-bay order, off-centre entrance and opening rank | Existing Reference House source study exists; absent from book |
-| **Garden elevation** | Tests how the garden sequence and roof termination resolve architecturally | Existing development material exists; absent from book |
-| **Service-side elevation** | Shows how technical expression is controlled rather than hidden | Existing development material exists; absent from book |
-| **Courtyard elevation / section family** | The court is a central spatial device and currently appears only as a rectangle | Existing development material exists; absent from book |
-
-### 6.2 Reference House — synthesis and analytical set
-
-| Proposed drawing | Function |
+| Drawing | Purpose |
 |---|---|
-| **Sectional axonometric / architectural anatomy** | One high-value drawing that makes the courtyard ring, stair, storeys, roof and service flank legible together |
-| **Structural plan / axonometric overlay** | Replace or substantially upgrade D-F08 while retaining bounded pre-engineering scope |
-| **Service geography overlay** | Replace D-F09 with service routes/zones drawn over a real plan/section substrate |
-| **Water/failure overlay** | Recast D-F10 over the actual roof plan rather than a free-standing rectangle |
-| **External-maintenance/site overlay** | Recast D-F11 on a dimensioned site/type plan with task-specific routes |
-| **Spatial/sectional hierarchy overlay** | Keep only if it adds something that the actual plans and sections do not already make obvious |
+| **Synthetic type / setting plan** | Establish front, garden, detached condition, service side and maintenance reservation without pretending to own a real site |
+| **Ground-floor plan** | Programme, circulation, court, stair, service flank and front-to-garden sequence |
+| **First-floor plan** | Four bedrooms, landing/gallery, bathroom, storage and court relationship |
+| **Roof / drainage plan** | Roof fields, falls, collection edges, court drain and overflow |
+| **Principal longitudinal section** | Front → stair → court → garden sequence and sectional hierarchy |
+| **Transverse / service section** | Service flank, riser, bathroom stack, floors and court relationship |
+| **Principal front elevation** | Four-bay order, opening hierarchy and ranked off-centre entrance |
+| **Garden elevation** | Garden relationship and rear architectural order |
+| **Courtyard elevation / section material** | Make the court architectural rather than a white rectangle |
 
-### 6.3 Reference House — detail set
+A **service-side elevation** is conditional: keep it only if it proves something not already visible in the service section/overlay.
 
-The monograph does not need a contractor’s detail book, but several central Ovid’s House claims remain oddly disembodied without a detail drawing.
+### 6.2 Reference House — synthesis / analytical set
 
-Candidate detail families:
+| Drawing | Function |
+|---|---|
+| **Sectional axonometric / cutaway** | Whole-house comprehension: court, stair, storeys, roof and service flank |
+| **Structural overlay** | Span/support topology on real architectural geometry |
+| **Service geography overlay** | Service zones/routes on plan/section substrate |
+| **Water/failure overlay** | Falls, ordinary drainage and abnormal routes on the actual roof/building geometry |
+| **External-maintenance overlay** | Dimensioned task routes/zones on honest setting geometry |
+| **Spatial-hierarchy overlay** | Retain only if plans/sections do not already make the argument sufficiently |
+
+### 6.3 Detail set
+
+Candidate subjects:
 
 - permanent masonry opening → tolerance/fixing zone → replaceable frame → removable trim;
 - service riser / high-service-room wall with dry-side access;
@@ -277,253 +281,308 @@ Candidate detail families:
 - wall/ceiling movement junction;
 - threshold / replaceable doorset;
 - wet-room failure / visible leakage path;
-- selected external rainwater collection / accessible maintenance condition.
+- selected accessible rainwater collection condition.
 
-DRW-08 must refuse to publish any detail that outruns current physical or technical evidence.
+DRW-08 must refuse any detail that outruns current physical or technical evidence.
 
-### 6.4 Parts I–III — missing architectural substance
+### 6.4 Parts I–III
 
-The first five figures are currently mostly conceptual. Some abstraction is appropriate, but the book would benefit from a small number of real architectural drawings before Part IV:
+The early book can remain more abstract, but it should not remain architecture-free until Part IV. Likely useful additions are:
 
-- a representative **life-separated opening detail** to make selective permanence concrete;
-- a **service-zone section / riser anatomy** showing how permanent fabric and replaceable services coexist;
-- a **failure-tolerant wet-room section** showing defence, visible consequence, access and reinstatement spatially;
-- one **pattern-family plate** containing a few representative patterns as actual architectural conditions rather than another taxonomy map.
+- one representative life-separated opening detail;
+- one service-zone/riser section;
+- one failure-tolerant wet-room section;
+- one small pattern-family plate showing representative architectural conditions.
 
-The purpose is not to illustrate all 21 patterns. It is to stop the argument remaining purely verbal until the Reference House chapter.
+Do not illustrate every pattern or paragraph.
 
-## 7. The native drawing engine
+### 6.5 Quantity position
 
-A native drawing system is appropriate. Starting a separate system from zero is not.
+Do not target raw figure count.
 
-The repository already has the beginnings of the correct architecture:
+A plausible result is **8–12 strong publication plates carrying roughly 15–20 drawing views**, with related views grouped intelligently. DRW-02 should reduce this further where one plate proves several claims.
 
-- `compiler/output/svg.ts` — deterministic SVG primitives;
-- `compiler/output/projection.ts` — plan/section projection helpers;
+## 7. Native architectural renderer
+
+The correct move is to evolve the existing deterministic compiler output layer rather than start a parallel illustration system.
+
+The repository already has:
+
+- `compiler/output/svg.ts` — SVG primitives;
+- `compiler/output/projection.ts` — projection helpers;
 - `compiler/output/conventions.ts` — shared representation conventions;
-- `compiler/reference-house/output/*` — deterministic Reference House drawing/report emitters;
-- generated outputs carrying renderer version, compile identity and stale-output verification;
-- `PUBLICATION_SOURCE_CANDIDATE` output classes for the existing plan/section/structure views.
+- `compiler/reference-house/output/*` — deterministic Reference House plans/section/structure/report outputs;
+- generated source/renderer identity and stale-output verification;
+- existing Reference House outputs already marked as publication-source candidates.
 
-DRW should generalise this substrate into a real architectural renderer.
+### 7.1 Start smaller than the eventual module diagram
 
-### 7.1 Suggested module boundary
+Do not pre-create a mini CAD framework because the programme can imagine one.
 
-A possible end-state is:
+The first implementation should probably be only the minimal concepts demanded by the first frozen orthographic plates:
 
-```text
-compiler/
-  drawing/
-    model.ts               # drawing scene / semantic graphic primitives
-    style.ts               # publication-scale line, text, hatch tokens
-    projection/
-      plan.ts
-      section.ts
-      elevation.ts
-      axonometric.ts
-    geometry/
-      clipping.ts
-      intersections.ts
-      visibility.ts
-    symbols/
-      door.ts
-      window.ts
-      stair.ts
-      north-arrow.ts
-      section-marker.ts
-      level-marker.ts
-      scale-bar.ts
-    annotation/
-      dimensions.ts
-      leaders.ts
-      labels.ts
-      collision.ts
-    render/
-      svg.ts
-    validate/
-      geometry.ts
-      collision.ts
-      style.ts
-      lineage.ts
-```
+- drawing scene / semantic primitives;
+- projection;
+- paper-space style tokens;
+- SVG serializer;
+- a small symbol/annotation set;
+- validation.
 
-The exact folder names are not important. The separation is.
-
-Reference House code should provide architecture to the renderer; it should not contain a second private SVG toolkit.
+Split into more modules only when real complexity appears.
 
 ### 7.2 Semantic drawing scene
 
-The renderer should not concatenate SVG strings directly from every domain renderer forever. Introduce a small intermediate drawing scene whose primitives know their semantic role.
-
-Examples:
+Domain code should stop concatenating arbitrary SVG style decisions directly. It should describe drawing semantics, for example:
 
 ```ts
 Line({ role: 'cut', ... })
 Polygon({ role: 'poche', material: 'masonry', ... })
 OpeningSymbol({ kind: 'door', ... })
 Dimension({ worldA, worldB, ... })
-Text({ role: 'room-label', ... })
+Text({ role: 'room-label', anchor: ... })
 SectionMarker({ id: 'A–A', ... })
 ```
 
-The SVG serializer then maps semantic roles to the current style profile. This makes it possible to change publication line weights without touching architecture and to test that renderers do not invent arbitrary local styles.
+The serializer maps these roles to the chosen inspection/publication profile.
 
-### 7.3 Geometry and source lineage
+### 7.3 Declarative view specification
 
-Every publication primitive that represents architecture should be traceable to one or more source/derived entities where practical.
+Every generated view should have an explicit data specification rather than hidden renderer constants:
 
-That allows tests such as:
+- source/model identity;
+- projection type;
+- cut plane / direction;
+- intended scale band and exact print scale where applicable;
+- crop/frame;
+- visible layers;
+- annotation set;
+- explicit authored label anchors or exceptions where needed;
+- target page class.
 
-- the front door shown in plan and elevation derives from the same opening entity;
-- the courtyard shown in plan, section, roof and axonometric uses the same extents;
-- a wall shown as cut in section came from an owned wall face / envelope, not a renderer constant;
-- an analytical overlay cannot silently shift the service flank.
+Changing the house changes geometry. Changing the view spec changes the drawing. Manual SVG editing changes neither and is therefore forbidden for controlled outputs.
 
-### 7.4 Model changes required before professional-looking drawings are honest
+### 7.4 Geometry/source lineage
 
-The current Reference House model is deliberately semantic and often represents boundary lines rather than finished wall faces. That was correct for its proof scope. It is insufficient for a convincing architectural plan.
+Publication primitives representing architecture should be traceable to source/derived entities where practical.
 
-DRW-03 will probably need explicit, authority-bearing representation of:
+That enables tests such as:
 
-- wall families and wall-face offsets / thickness ranges;
-- internal partition thickness where required for drawing;
-- opening frames/reveals where controlled;
-- internal doors / major openings and swings where controlled;
+- one front door entity agrees in plan and elevation;
+- courtyard extents agree in plan, section, roof and axonometric;
+- a cut wall comes from owned wall geometry, not a renderer constant;
+- an analytical overlay cannot silently shift a service zone.
+
+### 7.5 Model hardening required before drawings are honest
+
+Likely additions include, only where DRW-02 demands them:
+
+- wall families and wall-face offsets/thickness ranges;
+- internal partition thickness;
+- opening frames/reveals;
+- internal doors / major openings and swings;
 - stair runs, landings and well geometry beyond datum-only representation;
-- roof planes, parapet/cornice edges and collection edges;
-- floor and roof thickness envelopes sufficient for section;
+- roof planes, edge/cornice/parapet geometry and collection edges;
+- floor/roof thickness envelopes sufficient for section;
 - facade opening vertical geometry sufficient for elevations;
-- external ground / maintenance extents at the surrogate-site level;
+- surrogate external ground/maintenance extents;
 - service-zone envelopes and riser access geometry;
-- any detail-specific layers actually owned by the source.
+- detail-specific layers actually owned by the source.
 
-Adding these facts is architectural-source hardening, not renderer work. The distinction must remain explicit.
+These are source changes, not renderer inventions, and they do not automatically raise Reference House maturity.
 
-### 7.5 Axonometric / cutaway capability
+### 7.6 Axonometric / cutaway capability
 
-A full solid-modelling kernel is unnecessary at first. The house is sufficiently orthogonal that a bounded 2.5D / simple 3D representation can support publication axonometrics.
+Only build this after orthographic drawings are sound.
 
-The engine needs:
+The Reference House can likely be handled with bounded 2.5D/simple 3D mathematics:
 
-- points/vectors in world XYZ;
-- extruded wall/slab/roof faces from owned geometry;
-- deterministic parallel projection (isometric/axonometric);
-- face culling / ordering;
-- cut-plane clipping for sectional axonometric;
-- semantic line roles after projection;
-- optional controlled exploded offsets that do not alter source geometry.
+- XYZ points/vectors;
+- extruded planar wall/slab/roof faces;
+- deterministic parallel projection;
+- face ordering/culling;
+- cut-plane clipping;
+- semantic projected line roles;
+- optional controlled exploded offsets.
 
-If a future view requires arbitrary Boolean solids, curved geometry or robust hidden-line removal beyond this scope, that should become a concrete capability request rather than a pre-emptive platform project.
+Do not introduce arbitrary Boolean solids or a full hidden-line engine unless a real future view proves they are needed.
 
-### 7.6 Why D3 is not the answer
+### 7.7 Future Reference Houses
 
-D3 is excellent for data-driven graphics, but the hard problem here is not binding values to SVG elements. It is architectural semantics: cut planes, wall faces, openings, hatches, dimensions, projection, visibility, scale and cross-view consistency.
+The contract should be:
 
-Raw deterministic TypeScript/SVG remains the better substrate, with small geometry dependencies introduced only where they clearly improve robustness.
+**same model + same view spec + same renderer/style version = identical SVG**.
 
-## 8. Verification system
+A new Reference House using the same drawing grammar should inherit the same visual language automatically. If the visual language itself changes later, that is a renderer/style version change, not silent drift.
 
-The new programme should treat drawing correctness as testable software behaviour.
+Synthetic renderer fixtures should include at least a few geometries unlike RH01 so future reuse is tested rather than merely asserted.
 
-### 8.1 Semantic parity
+## 8. Page and spread doctrine
 
-Every generated architectural view should be testable against the canonical model for key entities, extents, openings, levels and relationships.
+The current print theme is A4 portrait and duplex-first. DRW should not rotate the entire book or introduce mixed physical trim sizes merely because architecture often wants width.
 
-### 8.2 Cross-view parity
+### 8.1 Preferred hierarchy
 
-The same entities must align across plan, section, elevation and axonometric. For example, an opening centre and width represented in plan should agree with the elevation that shows it.
+1. **Portrait single-page plate** where a useful scale fits comfortably.
+2. **Paired facing plates** for comparable views — especially ground and first floor at exactly the same scale.
+3. **True two-page spread** for long sections, elevation sequences and the hero sectional axonometric.
+4. **90° rotated plate** only when materially better than a spread and worth making the reader turn the book.
+5. **Foldout** only as an optional PR-02 manufacturing enhancement if a specific drawing genuinely earns it.
 
-### 8.3 Refusal of unsupported geometry
+### 8.2 Plate pages should differ from prose pages
 
-The engine should fail or mark unresolved when a publication drawing requests geometry that is not sufficiently owned. Silent completion is a bug.
+The existing prose margins are appropriate for text but need not govern major drawing plates.
 
-### 8.4 Graphic collision and clipping
+DRW-01 should freeze named plate classes with their own safe margins/running furniture, while respecting binding and trim. Likely classes:
 
-The current bounds validator should be extended using rendered SVG text/graphic bounding boxes to detect:
+- `figure-inline`
+- `plate-full`
+- `plate-pair`
+- `plate-spread`
+- `plate-rotated`
+- `plate-detail-grid`
+
+Running heads can disappear on full plates where they weaken the composition.
+
+### 8.3 Spread implementation
+
+Do not rely on a fragile HTML element visually spanning two PDF pages.
+
+Treat a spread as **one logical paper-space composition** and deterministically emit left/right page crops from that composition. The source geometry remains one scene; only the page crop differs.
+
+This also lets the web show the same composition as one continuous SVG while the physical/PDF edition receives controlled page halves.
+
+### 8.4 Gutter rule
+
+Critical geometry, dimensions and labels must not sit in the binding loss zone.
+
+Where a drawing crosses the fold, the composition should deliberately place low-information or recoverable space there. In a suitable section/axonometric, the courtyard void may even become a useful natural fold zone.
+
+### 8.5 Caption/page relationship
+
+The renderer should not own book titles, captions, figure numbers or running furniture.
+
+It emits architectural drawing content into a declared paper-space frame. The publication layer owns the plate composition around it.
+
+## 9. Verification
+
+Drawing correctness is software behaviour as well as architectural judgement.
+
+### 9.1 Semantic parity
+
+Key entities, extents, openings, levels and relationships must agree with the canonical model.
+
+### 9.2 Cross-view parity
+
+One entity must agree across plan, section, elevation and axonometric.
+
+### 9.3 Refusal of unsupported geometry
+
+Requesting more specificity than the source owns must fail or remain explicitly unresolved. Silent completion is a bug.
+
+### 9.4 Determinism and identity
+
+Controlled outputs carry source, view-spec, renderer and style identity. Regeneration must be byte-stable where practical and stale committed drawings must fail verification.
+
+### 9.5 Graphic collision and clipping
+
+Detect practical failures including:
 
 - text/text overlap;
-- text/geometry overlap outside declared exceptions;
+- forbidden text/geometry overlap;
 - clipped labels;
-- labels outside intended viewports;
-- overcrowded dimensions;
-- minimum print-size violations.
+- labels outside frame;
+- dimension overcrowding;
+- minimum printed text size violations;
+- spread gutter/safe-zone violations.
 
-### 8.5 Style lint
+Generation must remain deterministic. Browser-based bounding-box checks may be used for validation, but should not introduce nondeterministic layout into controlled geometry.
 
-Publication renderers should use approved semantic style tokens only. Arbitrary hard-coded stroke widths, fonts or ad-hoc colour values in domain drawing code should fail review or automated lint.
+### 9.6 Style lint
 
-### 8.6 Determinism and identity
+Domain renderers use semantic style tokens only. Arbitrary hard-coded stroke widths, fonts and colours in drawing code should fail review/lint.
 
-Generated publication source must remain deterministic and carry renderer/source identity internally. `outputs:check`-style stale-output refusal should extend to the controlled publication drawing family.
+### 9.7 Print proof
 
-### 8.7 Print proof
+Browser appearance is insufficient. Physical-size proofs must check:
 
-SVG correctness on a browser is not enough. DRW-11 must produce physical-size proof pages and check at least:
-
-- A4/A5 effective reading size used by the book;
 - line-weight survival;
-- fine hatch survival;
-- caption/drawing relationship;
+- hatch survival;
+- label legibility;
+- figure/caption relationship;
 - grayscale reproduction;
-- small-label legibility;
-- page/spread breaks;
-- no rasterisation of vector linework during PDF generation.
+- page/spread rhythm;
+- binding/gutter behaviour;
+- no accidental rasterisation of vector linework.
 
-## 9. Programme sequence
+### 9.8 Generality proof
+
+Before DRW closes, render a small set of synthetic non-RH01 fixtures to prove the renderer does not encode courtyard/four-bay/service-flank assumptions.
+
+## 10. Programme sequence
 
 | Stage | Purpose | Hard output |
 |---|---|---|
-| **DRW-00** | Recover authority and freeze the before-state | Baseline + scope + PR-02 block |
-| **DRW-01** | Precedent study and visual doctrine | Controlled drawing-style specification |
-| **DRW-02** | Book-wide claim-to-drawing audit | Frozen drawing register / gap matrix |
-| **DRW-03** | Strengthen architectural source geometry only where demanded | Model/source changes + authority tests |
-| **DRW-04** | Build reusable architectural renderer | Shared drawing scene, symbols, styles, projection and validation primitives |
-| **DRW-05** | Produce core orthographic Reference House set | Plans, sections, elevations, roof/site drawings |
-| **DRW-06** | Produce one or two synthesis views | Sectional axonometric / cutaway where earned |
+| **DRW-00** | Recover authority; freeze before-state and physical-format assumptions | Baseline + PR-02 block |
+| **DRW-01** | Precedent, drawing doctrine and page grammar | Controlled style/scale/page specification |
+| **DRW-02** | Book-wide claim-to-drawing audit | Frozen drawing register including scale + page class |
+| **DRW-03** | Strengthen only demanded architectural source geometry | Model/source changes + authority tests |
+| **DRW-04** | Build smallest reusable mathematical SVG renderer | Scene, projections, paper-space styles, symbols/annotations, validation |
+| **DRW-05** | Produce core orthographic Reference House set | Plans, sections, elevations, roof/type drawings |
+| **DRW-06** | Produce synthesis view if earned | Sectional axonometric / cutaway |
 | **DRW-07** | Rebuild analytical overlays on canonical geometry | Structure/services/water/maintenance drawings |
 | **DRW-08** | Add bounded detail family | Only details with honest authority |
 | **DRW-09** | Audit Parts I–III figures | Retain/redraw/add architectural figures deliberately |
-| **DRW-10** | Integrate with publication | Controlled figure registry, captions, scales and page composition |
-| **DRW-11** | Adversarial + automated verification | Semantic, graphic and print proof |
+| **DRW-10** | Implement publication plates | Controlled figure registry, captions, scales, page/spread classes |
+| **DRW-11** | Automated + architectural + physical verification | Semantic, graphic, generality and print proof |
 | **DRW-12** | Freeze and hand back to publication | Closeout + PR-02 release |
 
-## 10. What DRW must not do
+## 11. What DRW must not do
 
 The programme must not:
 
-- promote Reference House maturity merely because its drawings look more resolved;
-- convert prototype candidates into apparently construction-ready details;
-- reopen architectural decisions simply to make prettier drawings unless drawing them exposes a real contradiction;
-- create a parallel hand-authored geometric model for publication;
-- attempt to illustrate every paragraph or every pattern;
+- promote Reference House maturity because the drawings look more resolved;
+- turn prototype candidates into apparently construction-ready details;
+- reopen architectural decisions merely to beautify drawings unless drawing exposes a real contradiction;
+- create a parallel hand-authored publication geometry;
+- attempt to illustrate every paragraph or pattern;
 - chase photorealism;
 - optimise for social-media diagram aesthetics;
-- build general CAD functionality without a frozen publication need;
-- preserve the current `D-F*` set merely because it already exists.
+- build general CAD functionality without a frozen drawing need;
+- make algorithmic label placement more complex than the value it provides;
+- preserve the existing `D-F*` set simply because it already exists;
+- let the book layout become a passive consequence of whatever aspect ratio the renderer happens to emit.
 
-A drawing is allowed to falsify the source. If a proper section exposes that the house cannot be drawn coherently, the architecture must rewind rather than the drawing being massaged.
+A proper drawing is allowed to falsify the source. If a coherent section/elevation cannot be produced from the owned geometry, the architecture must rewind or remain explicitly unresolved rather than the drawing being massaged.
 
-## 11. Acceptance standard
+## 12. Acceptance standard
 
-DRW closes only when all of the following are true.
+DRW closes only when all of the following are true:
 
 1. The Reference House can be understood as an architectural object from the drawings alone at ordinary monograph-reading depth.
 2. Plans, sections and elevations use professional architectural conventions and cross-register.
-3. The book no longer relies on rectangles as proxies for architecture where owned building geometry exists.
-4. Existing analytical claims about structure, services, water and maintenance are redrawn on canonical building geometry where spatial substrate matters.
-5. Publication output cannot silently drift from the controlled Reference House geometry.
+3. The book no longer relies on rectangles as proxies for architecture where owned geometry exists.
+4. Analytical structure/services/water/maintenance claims are drawn on canonical building geometry where spatial substrate matters.
+5. Publication output cannot silently drift from controlled Reference House geometry.
 6. No drawing claims more technical resolution than the source owns.
 7. The drawing set has a coherent editorial hand without becoming a bespoke visual language.
-8. One synthesis drawing gives the reader a strong three-dimensional understanding of the house without pretending to be a rendering.
-9. Central interface claims are shown through a small number of honest architectural details where evidence permits.
-10. Text collision, clipping, style drift, stale output and cross-view contradictions are machine-detectable to the practical extent available.
-11. The final PDF survives physical-size print proof.
-12. PR-02 receives a frozen controlled drawing family rather than a loose collection of manually maintained SVGs.
+8. One synthesis drawing gives strong three-dimensional understanding without pretending to be a rendering.
+9. Central interface claims are shown through a small number of honest details where evidence permits.
+10. Text collision, clipping, style drift, stale output, scale errors, gutter failures and cross-view contradictions are machine-detectable to the practical extent available.
+11. The renderer is demonstrably reusable beyond RH01 without having become CAD.
+12. The final PDF/book survives physical-size page and spread proof.
+13. PR-02 receives a frozen controlled drawing **and plate** system rather than a loose collection of manually maintained SVGs.
 
-## 12. First action
+## 13. First action
 
-Do not start by redrawing D-F06 through D-F11.
+Do not start by redrawing D-F06 through D-F11. Do not start by building the axonometric engine.
 
-Start at **DRW-00**, recover current authority, freeze the before-state, then perform **DRW-01 and DRW-02 before extending the renderer**. The project should decide what a good architectural drawing set is and what the book actually needs before writing the engine that produces it.
+Start at **DRW-00**, recover current authority, freeze the before-state and confirm the physical-format assumptions. Then complete **DRW-01 and DRW-02 before expanding the renderer**.
 
-That order is essential. Otherwise the drawing tool becomes another technology project searching for a publication problem.
+The project must first decide:
+
+1. what architectural drawings the book genuinely needs;
+2. what those drawings should look like;
+3. how they should inhabit the printed page;
+4. what source geometry is missing.
+
+Only then should the native renderer gain the exact mathematical capability needed to produce them.
