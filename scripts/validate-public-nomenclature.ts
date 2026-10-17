@@ -8,6 +8,7 @@ import {
   type NomenclatureSurface
 } from '../project/nomenclature.js'
 import { isPublicSource } from '../project/public-surface.js'
+import { routeForSource } from '../project/site-routes.js'
 import { dependenciesForAdapter } from '../publication/adapters.js'
 import { publicationFigurePlacements } from '../publication/figures.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
@@ -174,13 +175,28 @@ function validateSource(): Failure[] {
   return failures
 }
 
-function renderedSiteFiles(): string[] {
+function renderedSiteFiles(): { root: string; files: string[] } {
   const root = resolve(repoRoot, '.vitepress/dist')
   const files = walk(root).filter((file) => file.endsWith('.html'))
   if (!files.length) {
     throw new Error(`Rendered public-site nomenclature validation found no HTML under ${root}.`)
   }
-  return files
+  return { root, files }
+}
+
+function routeForRenderedSiteFile(root: string, file: string): string {
+  const rendered = relative(root, file).split(sep).join('/')
+  if (rendered === 'index.html') return '/'
+  if (rendered.endsWith('/index.html')) return `/${rendered.slice(0, -'index.html'.length)}`
+  return `/${rendered.replace(/\.html$/, '')}`
+}
+
+function renderedSiteSurface(root: string, file: string): NomenclatureSurface {
+  const surfaceByRoute = new Map<string, NomenclatureSurface>()
+  for (const source of publicSiteSources()) {
+    surfaceByRoute.set(routeForSource(source), surfaceForSource(source))
+  }
+  return surfaceByRoute.get(routeForRenderedSiteFile(root, file)) ?? 'SITE_PRIMARY'
 }
 
 function renderedPublicationFiles(): string[] {
@@ -194,9 +210,10 @@ function renderedPublicationFiles(): string[] {
 
 function validateRendered(): Failure[] {
   const failures: Failure[] = []
+  const site = renderedSiteFiles()
 
-  for (const file of renderedSiteFiles()) {
-    scanText(sourcePath(file), readFileSync(file, 'utf8'), 'SITE_PRIMARY', failures)
+  for (const file of site.files) {
+    scanText(sourcePath(file), readFileSync(file, 'utf8'), renderedSiteSurface(site.root, file), failures)
   }
 
   for (const file of renderedPublicationFiles()) {
