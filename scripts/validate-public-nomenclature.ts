@@ -175,13 +175,21 @@ function validateSource(): Failure[] {
 }
 
 function renderedSiteFiles(): string[] {
-  const root = resolve(repoRoot, 'docs/.vitepress/dist')
-  return walk(root).filter((file) => file.endsWith('.html'))
+  const root = resolve(repoRoot, '.vitepress/dist')
+  const files = walk(root).filter((file) => file.endsWith('.html'))
+  if (!files.length) {
+    throw new Error(`Rendered public-site nomenclature validation found no HTML under ${root}.`)
+  }
+  return files
 }
 
 function renderedPublicationFiles(): string[] {
   const dist = resolve(repoRoot, 'publication/dist')
-  return walk(dist).filter((file) => file.endsWith('.txt'))
+  const files = walk(dist).filter((file) => file.endsWith('.txt'))
+  if (!files.length) {
+    throw new Error(`Rendered publication nomenclature validation found no extracted text under ${dist}.`)
+  }
+  return files
 }
 
 function validateRendered(): Failure[] {
