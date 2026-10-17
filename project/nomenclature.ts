@@ -44,8 +44,6 @@ export type BrandCoupling = 'ALLOWED' | 'PROHIBITED' | 'NOT_APPLICABLE'
 
 export type MigrationStatus =
   | 'CURRENT'
-  | 'NOM02_REVIEW'
-  | 'NOM03_REVIEW'
   | 'LEGACY'
   | 'REPLACE_REQUIRED'
 
@@ -211,7 +209,7 @@ export const nomenclatureFamilies = [
     roles: ['IDENTITY_ONLY'],
     stability: 'DURABLE',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'grammar.g01-version',
@@ -224,7 +222,7 @@ export const nomenclatureFamilies = [
     roles: ['IDENTITY_ONLY', 'VERSIONED'],
     stability: 'VERSIONED',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'grammar.gate',
@@ -250,7 +248,7 @@ export const nomenclatureFamilies = [
     roles: ['MATURITY'],
     stability: 'DURABLE',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'reference-house.design-gate',
@@ -276,7 +274,7 @@ export const nomenclatureFamilies = [
     roles: ['WORKFLOW', 'ORDINAL'],
     stability: 'WORKFLOW_LIFETIME',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'reference-house.fact',
@@ -302,7 +300,7 @@ export const nomenclatureFamilies = [
     roles: ['WORKFLOW'],
     stability: 'WORKFLOW_LIFETIME',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'compiler.pattern-crosswalk',
@@ -315,7 +313,7 @@ export const nomenclatureFamilies = [
     roles: ['WORKFLOW', 'ORDINAL'],
     stability: 'WORKFLOW_LIFETIME',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'compiler.cf',
@@ -328,7 +326,7 @@ export const nomenclatureFamilies = [
     roles: ['WORKFLOW', 'ORDINAL'],
     stability: 'WORKFLOW_LIFETIME',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'compiler.ch',
@@ -341,7 +339,7 @@ export const nomenclatureFamilies = [
     roles: ['WORKFLOW', 'ORDINAL'],
     stability: 'WORKFLOW_LIFETIME',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'compiler.coa',
@@ -367,7 +365,7 @@ export const nomenclatureFamilies = [
     roles: ['WORKFLOW', 'IDENTITY_ONLY'],
     stability: 'WORKFLOW_LIFETIME',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'publication.pr',
@@ -445,7 +443,7 @@ export const nomenclatureFamilies = [
     roles: ['IDENTITY_ONLY'],
     stability: 'DURABLE',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'prototype.w2',
@@ -458,7 +456,7 @@ export const nomenclatureFamilies = [
     roles: ['IDENTITY_ONLY'],
     stability: 'DURABLE',
     brandCoupling: 'NOT_APPLICABLE',
-    migration: 'NOM02_REVIEW'
+    migration: 'CURRENT'
   },
   {
     id: 'figure.legacy-df',
@@ -485,35 +483,50 @@ export const nomenclatureFamilies = [
     roles: ['IDENTITY_ONLY', 'VERSIONED'],
     stability: 'VERSIONED',
     brandCoupling: 'ALLOWED',
-    migration: 'NOM02_REVIEW',
+    migration: 'CURRENT',
     exception: 'HK denotes the durable House Kernel architectural system rather than the current master-project title.'
+  },
+  {
+    id: 'legacy.machine-rh-output-oh',
+    meaning: 'Superseded Ovid’s House-coupled Reference House output/schema/artefact identity',
+    owner: 'provenance',
+    examples: ['OH-RH-OUTPUT-1'],
+    pattern: '\\bOH-RH-[A-Z0-9-]+\\b',
+    classification: 'LEGACY_PROHIBITED',
+    allowedSurfaces: PROVENANCE_SURFACES,
+    roles: ['PROVENANCE'],
+    stability: 'PROVENANCE_ONLY',
+    brandCoupling: 'NOT_APPLICABLE',
+    migration: 'LEGACY',
+    exception: 'Replaced atomically in NOM-06 by neutral RH-* output identities; retained only in bounded migration/provenance records and Git history.'
   },
   {
     id: 'machine.rh-output',
     meaning: 'Generated Reference House output/schema/artefact identity',
     owner: 'compiler-output-machine',
-    examples: ['OH-RH-OUTPUT-1'],
-    pattern: '\\bOH-RH-[A-Z0-9-]+\\b',
+    examples: ['RH-OUTPUT-1', 'RH-PLAN-GROUND-1'],
+    pattern: '\\bRH-(?:OUTPUT|PLAN|SECTION|STRUCTURE|SERVICE|BOUNDARY)-[A-Z0-9-]+\\b',
     classification: 'PUBLIC_TECHNICAL',
     allowedSurfaces: MACHINE_SURFACES,
     roles: ['IDENTITY_ONLY', 'VERSIONED'],
-    stability: 'MIGRATABLE',
-    brandCoupling: 'PROHIBITED',
-    migration: 'NOM02_REVIEW',
-    exception: 'The current OH prefix is project-title coupled; NOM-02 must decide whether the public machine contract needs a neutral replacement.'
+    stability: 'VERSIONED',
+    brandCoupling: 'NOT_APPLICABLE',
+    migration: 'CURRENT',
+    exception: 'RH denotes the stable Reference House domain, not the Ovid’s House master-project brand; expose only on technical or machine surfaces.'
   },
   {
-    id: 'machine.house-kernel-build-meta',
-    meaning: 'Legacy House Kernel-derived site build metadata keys',
-    owner: 'site-build-machine',
+    id: 'legacy.house-kernel-build-meta',
+    meaning: 'Superseded House Kernel-derived site build metadata keys',
+    owner: 'provenance',
     examples: ['__HOUSE_KERNEL_BUILD_COMMIT__'],
     pattern: '(?:house-kernel-build-(?:commit|timestamp)|__HOUSE_KERNEL_BUILD_(?:COMMIT|TIMESTAMP)__)',
-    classification: 'INTERNAL_STABLE',
-    allowedSurfaces: ['INTERNAL'],
-    roles: ['IDENTITY_ONLY'],
-    stability: 'MIGRATABLE',
-    brandCoupling: 'PROHIBITED',
-    migration: 'NOM02_REVIEW'
+    classification: 'LEGACY_PROHIBITED',
+    allowedSurfaces: PROVENANCE_SURFACES,
+    roles: ['PROVENANCE'],
+    stability: 'PROVENANCE_ONLY',
+    brandCoupling: 'NOT_APPLICABLE',
+    migration: 'LEGACY',
+    exception: 'NOM-06 replaced these brand-coupled implementation keys with neutral build metadata; the neutral generic keys do not require a project-owned nomenclature family.'
   }
 ] as const satisfies readonly NomenclatureFamily[]
 
