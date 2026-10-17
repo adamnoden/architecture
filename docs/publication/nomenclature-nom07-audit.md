@@ -19,7 +19,7 @@ The gate is divided into independently resumable sub-gates so that each pass can
 
 - [x] **NOM-07A — front door, navigation and publication openings**  
   Contents, landing/navigation/search-facing titles, Reader's Guide, part/chapter openings and section labels.
-- [ ] **NOM-07B — patterns, strategies and held candidates**  
+- [x] **NOM-07B — patterns, strategies and held candidates**  
   Pattern index and every reader-facing pattern page, then strategies and held candidates. Verify that useful cross-reference capability survived removal of machine IDs.
 - [ ] **NOM-07C — grammar, Reference House and technical/public computational surfaces**  
   Grammar material, Reference House exposition, generated/public technical pages, data plate and reader-visible compact technical references.
@@ -71,6 +71,27 @@ Findings:
 - **RETAIN — ordinary external standards acronyms.** Familiar external references such as ISO/RICS/CIBSE/RIBA are used as standards/professional-body references rather than project-owned identity machinery. NOM-07 does not expand into stylistic acronym elimination where context is already clear.
 
 Implementation commit: `5d265aca62163b61e96b898dbe881c10f16c2fbe`.
+
+### NOM-07B — patterns, strategies and held candidates — COMPLETE
+
+Surfaces read:
+
+- pattern overview, authoring contract and service-topology sequence;
+- all 21 active pattern pages;
+- all three strategy pages and strategy index;
+- all four held-candidate pages and candidate index.
+
+Findings:
+
+- **RETAIN — title-led pattern relationships.** All active pattern pages use human titles in rendered headings, relationship links and Reference House application prose. `PAT-*` identities remain confined to machine-readable frontmatter. Removing those IDs from ordinary presentation has not broken reader cross-reference.
+- **FIX-NOW — machine-system narration on ordinary indexes.** Removed explanations that ordinary readers needed to know that patterns retain hidden machine IDs, strategies do not receive `PAT-xxx` IDs, or candidates have no `PAT-*` identity. These facts remain available where technically relevant but did no reader-facing work on the overview pages.
+- **FIX-NOW — candidate status described absent machine identity.** Reduced four candidate status lines from “held; no stable pattern ID” to the reader-relevant state “held”.
+- **FIX-NOW — machine sequence identity.** Removed the visible `service-topology` Sequence ID from the generative-sequence page. The real S1–S10 design-step numbering remains because it is genuine sequence order.
+- **RETAIN — authoring-contract machine identity.** `docs/patterns/language-model.md` explicitly documents the pattern authoring/data contract. Stable machine identity and frontmatter are functional technical content on that page rather than publication residue.
+- **RETAIN — Physical Service Index identifiers.** References to stable IDs on that pattern mean durable labels on real services, drawings and records; they are the architectural subject of the pattern, not repository identity leakage.
+- **REVIEW AT NOM-07F — professional acronyms such as MEWP.** These are external industry terms rather than project-owned codes. They were not expanded mechanically during this gate; final cold-reader reconciliation will decide whether first-use expansion improves accessibility.
+
+Implementation commit: `d982f6a05e369254a42918b65ac29a46947213e2`; one-shot workflow removed at `a6be8fa83533e07b6df57e751f0c1b5336bea51d`.
 
 ## Exit condition
 
