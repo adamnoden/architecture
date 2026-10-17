@@ -21,11 +21,11 @@ The gate is divided into independently resumable sub-gates so that each pass can
   Contents, landing/navigation/search-facing titles, Reader's Guide, part/chapter openings and section labels.
 - [x] **NOM-07B — patterns, strategies and held candidates**  
   Pattern index and every reader-facing pattern page, then strategies and held candidates. Verify that useful cross-reference capability survived removal of machine IDs.
-- [ ] **NOM-07C — grammar, Reference House and technical/public computational surfaces**  
-  Grammar material, Reference House exposition, generated/public technical pages, data plate and reader-visible compact technical references. Grammar sub-pass complete; Reference House sub-pass in progress.
-- [ ] **NOM-07D — figures, captions, evidence and back matter**  
+- [x] **NOM-07C — grammar, Reference House and technical/public computational surfaces**  
+  Grammar material, Reference House exposition, generated/public technical pages, data plate and reader-visible compact technical references.
+- [x] **NOM-07D — figures, captions, evidence and back matter**  
   Figure/table captions and in-text references, SVG-visible text/metadata where reader-relevant, evidence/precedent apparatus, appendices and glossary.
-- [ ] **NOM-07E — Primer and cross-surface consistency**  
+- [x] **NOM-07E — Primer and cross-surface consistency**  
   Read the Primer independently, then compare names/titles/references against the site and Working Edition.
 - [ ] **NOM-07F — adversarial cold-reader reconciliation**  
   Final whole-corpus sweep for unexplained acronyms, false ordinals, workflow residue, inconsistent naming and over-cleaning. Resolve findings or explicitly defer number/order/version-only questions to NOM-08.
@@ -110,6 +110,74 @@ Findings:
 - **NOM-08 — `v0.1` semantics.** The current grammar version label is intentionally retained here; whether its visible version semantics imply the right maturity/order meaning belongs to the dedicated number/version audit.
 
 Implementation commit: `2da5c1164423ed639138dac38d490a7f29b99815`; one-shot workflow removed at `1acf5757c5d0028c38300693780484895e671c6c`.
+
+### NOM-07C2 — Reference House — COMPLETE
+
+Surfaces read:
+
+- Reference House overview, G-01 conformance record, pattern occurrence register, tectonic language, vertical coordination, technical coordination and independent-review brief;
+- generated output overview, service register, boundary register, output manifest and representative generated SVG inspection output.
+
+Findings:
+
+- **RETAIN — title-led Reference House exposition.** Ordinary public prose names architectural concepts and pattern occurrences rather than exposing workflow-stage identities.
+- **RETAIN — generated technical identity.** `RH-*`, `HK-RH-COMPILE-*`, semantic entity/route/carrier IDs and fingerprints occur on an explicitly technical inspection surface where exact cross-checking is the point. Human labels lead and the surface states its limits.
+- **INTERNAL-ONLY — `.oh-*` generated SVG class names.** These are invisible implementation selectors rather than rendered nomenclature. Renaming them would be churn without a reader benefit.
+- **INTERNAL-ONLY — Reference House execution stages.** Historical compiler/fixture stages remain outside the resolved public surface.
+
+No NOM-07C2 content fix was required.
+
+### NOM-07C3 — computational/data surfaces — COMPLETE
+
+Surfaces read:
+
+- computational overview, executable architecture, formal model, validity/obligations, evidence/provenance, compiler targets, structural/boundary semantics, interface-obligation bundles, supported-domain statement, prior-art context and the retained scoped manufacturer-evidence example;
+- canonical machine data plate and its public-surface treatment;
+- VitePress theme/configuration controlling site-wide metadata presentation.
+
+Findings:
+
+- **RETAIN — technical semantic examples.** Illustrative IDs such as `STR-017`, `AB-01`, interface identities and validity/status enums are part of the technical model being explained and improve exactness.
+- **INTERNAL-ONLY — canonical data plate.** `project/dataplate.json` remains machine/status data rather than an ordinary reader route. Its `M1`–`M4` values are therefore not reader leakage; the semantics of maturity numbering if surfaced belong to NOM-08.
+- **FIX-NOW — site-wide Git build stamp.** Every site page still rendered `build <git-sha> · <timestamp>`. NOM-02 had already concluded that build provenance has no reader task and belongs on internal/machine surfaces. Removed the footer component, its styling and the now-unused Vite build-stamp globals rather than merely neutralising the wording again.
+- **RETAIN — resolved manufacturer-evidence example.** The retained page has a human public title and scoped-evidence prose; its historical source filename does not leak into reader presentation.
+
+Implementation commits: `09124eb1dc738de72b5e2316076c902986b3a9e2`, `d37ca1b4d5bd7d369cdfd12dfbf6f1d8d3bcb994`, `9a7158b791eb4aa01bff8ba10a5942389f0914a5`.
+
+### NOM-07D — figures, captions, evidence and back matter — COMPLETE
+
+Surfaces read:
+
+- all 11 Working Edition figure placements, captions and publication SVGs;
+- Evidence and Precedent Notes, Research Agenda, Reference House Implementation Schedule, Glossary and Sources/Further Reading;
+- Part V physical-proof, procurement, commissioning and scenario-review material relevant to prototype/test nomenclature.
+
+Findings:
+
+- **RETAIN — figure text is human-led.** Visible titles, labels, captions and SVG accessibility text use architectural names and meanings rather than project machine IDs.
+- **FIX-NOW — obsolete internal `D-F*` figure identities.** The figure placer still assigned retired `D-F01`–`D-F11` identities solely for internal validation/error messages. Removed the legacy identity family entirely and changed validation to preserve the exact figure set by asset identity/alt text. No replacement public numbering was invented because DRW owns the future figure-reference system.
+- **RETAIN — external technical acronyms in back matter.** Terms such as MEP, MVHR, PV, RIBA and standards references are ordinary discipline/product/standard language, not project-owned workflow identity. `M4(2)`/`M4(3)` in the implementation schedule are UK accessibility categories, not the project maturity scale, and are contextually explicit.
+- **RETAIN — resolved proof language.** Part V describes first articles, prototypes and commissioning as methods rather than exposing internal `P01`–`P04`/`W2` workflow shorthand.
+
+Figure retirement implementation began at `74906dc9a4b00090c3f93a4b3148b13ed99e877e`; follow-up validator changes replace dependence on the retired IDs with descriptive asset identity.
+
+### NOM-07E — Primer and cross-surface consistency — COMPLETE
+
+Surfaces read:
+
+- authored Primer proposition and outlook;
+- deterministic Primer adapters for constitution, complete pattern set, representative patterns and Reference House;
+- Reference House source sections copied into the Primer;
+- pattern metadata path used internally by the adapter.
+
+Findings:
+
+- **RETAIN — title-only pattern presentation.** The Primer uses `PAT-*` internally to select and order patterns, but emits human pattern titles only. This preserves one canonical source without exposing machine identity.
+- **RETAIN — numbered governing provisions.** The eleven constitution numbers are actual reader references within the architectural argument, not repository workflow codes.
+- **RETAIN — Reference House maturity in prose.** The Primer copies plain-language proof boundaries rather than project `M*` maturity labels.
+- **RETAIN — cross-edition identity.** Ovid’s House, House Kernel, Metamorph Compiler, G-01, pattern titles and Reference House meanings are consistent with the site/Working Edition at the surfaces where they appear.
+
+No NOM-07E content fix was required.
 
 ## Exit condition
 
