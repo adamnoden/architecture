@@ -1,0 +1,47 @@
+name: Regenerate NOM-06 outputs
+
+on:
+  push:
+    branches: [pub-nom]
+    paths:
+      - .github/workflows/regenerate-nom06.yml
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v5
+        with:
+          ref: pub-nom
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Regenerate Reference House successor outputs
+        run: npm run outputs:generate
+
+      - name: Refresh canonical data plate
+        run: npm run dataplate:write
+
+      - name: Commit generated artefacts
+        run: |
+          git diff --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/reference-house/generated project/dataplate.json
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit"
+            exit 0
+          fi
+          git commit -m "PUB-NOM: regenerate neutral Reference House outputs"
+          git push origin HEAD:pub-nom
