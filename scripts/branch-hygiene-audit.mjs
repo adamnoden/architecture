@@ -147,13 +147,14 @@ function pullRequestMap(pulls) {
 }
 
 function remoteBranchRefs(remote, main) {
-  const prefix = `${remote}/`
-  return git(['for-each-ref', '--format=%(refname:short)\t%(objectname)', `refs/remotes/${remote}`])
+  const fullPrefix = `refs/remotes/${remote}/`
+  return git(['for-each-ref', '--format=%(refname)\t%(objectname)', `refs/remotes/${remote}`])
     .split('\n')
     .filter(Boolean)
     .map((line) => {
-      const [ref, sha] = line.split('\t')
-      return { ref, name: ref.startsWith(prefix) ? ref.slice(prefix.length) : ref, headSha: sha }
+      const [fullRef, sha] = line.split('\t')
+      const name = fullRef.startsWith(fullPrefix) ? fullRef.slice(fullPrefix.length) : fullRef
+      return { ref: `${remote}/${name}`, name, headSha: sha }
     })
     .filter(({ name }) => name !== 'HEAD' && name !== main)
     .sort((a, b) => a.name.localeCompare(b.name))
