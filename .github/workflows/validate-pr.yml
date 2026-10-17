@@ -56,14 +56,11 @@ jobs:
 
       - name: Inventory reader-facing nomenclature
         run: |
-          for family in \
-            pattern.pat \
-            reference-house.compiler-gate \
-            compiler.p0 \
-            compiler.pattern-crosswalk \
-            compiler.cf \
-            compiler.ch \
-            compiler.h1
-          do
-            npm run nomenclature:inventory -- --files="$family"
-          done
+          npm run nomenclature:inventory -- \
+            --files=pattern.pat \
+            --files=reference-house.compiler-gate \
+            --files=compiler.p0 \
+            --files=compiler.pattern-crosswalk \
+            --files=compiler.cf \
+            --files=compiler.ch \
+            --files=compiler.h1
