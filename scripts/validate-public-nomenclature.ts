@@ -220,12 +220,13 @@ function renderedPublicationPdfs(): string[] {
 async function validateRendered(): Promise<Failure[]> {
   const failures: Failure[] = []
   const site = renderedSiteFiles()
+  const pdfs = renderedPublicationPdfs()
 
   for (const file of site.files) {
     scanText(sourcePath(file), readFileSync(file, 'utf8'), renderedSiteSurface(site.root, file), failures)
   }
 
-  for (const file of renderedPublicationPdfs()) {
+  for (const file of pdfs) {
     scanText(
       sourcePath(file),
       await extractPdfText(file),
