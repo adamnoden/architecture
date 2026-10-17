@@ -1,3 +1,5 @@
+import { patternPublicationOrder } from '../project/patterns.js'
+
 export type PublicationEntryKind =
   | 'preface'
   | 'front-matter'
@@ -34,34 +36,13 @@ export interface PublicationEntry {
   smokeOnly?: boolean
 }
 
-export const canonicalPatternOrder = [
-  'HSA-P-001',
-  'HSA-P-002',
-  'HSA-P-014',
-  'HSA-P-003',
-  'HSA-P-015',
-  'HSA-P-004',
-  'HSA-P-005',
-  'HSA-P-016',
-  'HSA-P-017',
-  'HSA-P-018',
-  'HSA-P-009',
-  'HSA-P-007',
-  'HSA-P-019',
-  'HSA-P-020',
-  'HSA-P-008',
-  'HSA-P-022',
-  'HSA-P-010',
-  'HSA-P-021',
-  'HSA-P-011',
-  'HSA-P-013',
-  'HSA-P-012'
-] as const
+/** @deprecated Use patternPublicationOrder from project/patterns.ts. */
+export const canonicalPatternOrder = patternPublicationOrder
 
 const pattern = (id: string, source: string, title: string): PublicationEntry => ({
   id: `pattern-${id.toLowerCase()}`,
   source: `docs/patterns/${source}`,
-  title: `${title} — ${id}`,
+  title,
   kind: 'pattern',
   adapter: 'pattern-page',
   patternId: id
@@ -96,7 +77,7 @@ export const smokePublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'smoke-pattern',
     source: 'docs/patterns/controlled-utility-entry.md',
-    title: 'Controlled Utility Entry — HSA-P-001',
+    title: 'Controlled Utility Entry',
     kind: 'pattern',
     patternId: 'HSA-P-001'
   },
