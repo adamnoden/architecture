@@ -1,7 +1,7 @@
 <!-- nav-exclude: redirect -->
 # PUB-NOM — NOM-05 Namespace Governance and Validation
 
-**Status:** NOM-05 machinery defined; enforcement activation is part of NOM-06 migration.  
+**Status:** NOM-05 contract established; source/rendered enforcement is active and adversarially proven through NOM-09.
 **Canonical registry:** `project/nomenclature.ts`  
 **Validator:** `scripts/validate-public-nomenclature.ts`  
 **Inventory:** `scripts/nomenclature-inventory.ts`  

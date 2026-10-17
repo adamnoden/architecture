@@ -1,7 +1,7 @@
 <!-- nav-exclude: redirect -->
 # PUB-NOM — Reader-facing Nomenclature and Identifier Architecture
 
-**Status:** planned programme  
+**Status:** complete through NOM-10 at PUB-NOM scope; DRW-10/12 revalidation required before the combined PR-02 visual-reference freeze
 **Baseline before programme record:** `9d0af7871531fb6f4d7599c680dd55890d46f4a2`  
 **Owner:** publication / project systems  
 **Relationship:** follow-on hardening after PUB-SAN; sibling to DRW; must close before the PR-02 physical-object freeze

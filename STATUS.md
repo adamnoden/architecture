@@ -56,7 +56,7 @@ The [RH-11 External Review Brief](docs/reference-house/external-review-brief.md)
 
 ### Publication and delivery
 
-**PR-00, PR-01 and PUB-SAN are complete.** PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 then removed development-history residue from the reader-facing site and publication corpus and merged to `main` as `02e152019c8f08ae71009ae7ab5b61e1ab575244`, without broadening the substantive M4 proposition. The resolved Working Edition on current `main` is now the controlled publication source. The next authorised publication stage is **PR-02 — private 12-copy object edition**; it owns physical-object design and production, not another discretionary manuscript-development cycle.
+**PR-00, PR-01 and PUB-SAN are complete; PUB-NOM is complete at its reader-facing nomenclature scope on draft PR #157.** PUB-SAN removed development-history residue without broadening the substantive M4 proposition. PUB-NOM then separated reader identity, machine identity, order, version, maturity and workflow provenance; migrated brand-coupled canonical namespaces; and made source plus rendered nomenclature enforcement adversarially testable. The remaining pre-production dependency is **DRW — Architectural Drawing Programme**: its next authorised packet is DRW-00A, and the combined nomenclature / visual-reference system must be revalidated at DRW-10 and DRW-12 before PR-02 freezes the physical object. PR-02 still owns physical-object design and production, not another discretionary manuscript-development cycle.
 
 Delivery material should continue to lag the research deliberately: only decisions mature enough to become requirements for an appointed team should enter it.
 
