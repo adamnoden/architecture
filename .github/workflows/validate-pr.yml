@@ -51,6 +51,9 @@ jobs:
       - name: Validate rendered public nomenclature
         run: npx tsx scripts/validate-public-nomenclature.ts --rendered
 
+      - name: Prove rendered nomenclature regressions
+        run: npx tsx scripts/test-public-nomenclature-regressions.ts --rendered
+
       - name: Inventory reader-facing nomenclature
         run: |
           for family in \
