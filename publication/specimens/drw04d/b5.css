@@ -1,0 +1,8 @@
+/* Conservative robustness proof only; not a final PR-02 trim/margin decision.
+   The paired plate preserves the 22 mm binding-side allowance and recovers
+   2 mm at the outer edge so each true-scale 136 mm drawing sits inside its
+   140 mm plate frame without fit-scaling. */
+@page { size: B5; margin-top: 18mm; margin-bottom: 18mm; }
+@page plate:left { margin-left: 14mm; margin-right: 22mm; @top-left { content: none; } @top-right { content: none; } @bottom-left { content: counter(page); font: 7.5pt Arial; } }
+@page plate:right { margin-left: 22mm; margin-right: 14mm; @top-left { content: none; } @top-right { content: none; } @bottom-right { content: counter(page); font: 7.5pt Arial; } }
+@page blank { margin: 0; @top-left { content: none; } @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
