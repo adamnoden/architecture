@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02G",
+  "programmeIssue": 161,
+  "baselineMainSha": "c08ae42f9ea348f09e60f8b5905775e113e24801",
+  "scopeGroup": "publication-editorial-final",
+  "concurrentProtectedWork": {
+    "openPr": 190,
+    "branch": "drw-03e-controlled-ground-plan-svg",
+    "note": "Live concurrent drawing work; protected and outside this semantic packet."
+  },
+  "branches": [
+    {
+      "name": "pr00b-part-iv-synthesis",
+      "headSha": "4907af4556e2c546721fcfba6b7f29853014f935",
+      "mechanicalEvidence": {
+        "aheadBy": 8,
+        "behindBy": 656,
+        "branchOnlyCommits": 8,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "This branch introduced an early Part IV Reference House synthesis. The current Part IV remains the same resolved architectural argument but has been materially revised as the house, proof boundaries and publication were hardened. SAN-06 explicitly names current part-iv.md and current Reference House technical surfaces as the durable owners of stage-era Reference House value.",
+      "currentAuthority": [
+        "docs/manuscript/part-iv.md",
+        "docs/reference-house/README.md",
+        "docs/publication/resolved-work-sanitation-closeout.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pr00d-d3-reference-house-architecture",
+      "headSha": "1789943590256278cd6152cb414c137634b8a7b7",
+      "mechanicalEvidence": {
+        "aheadBy": 8,
+        "behindBy": 559,
+        "branchOnlyCommits": 8,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "This was an early architectural-figure stage. Its type/orientation and spatial/sectional arguments were carried into the later visual-integration sequence, while the early structural-concept drawing was replaced by the more resolved structural-assembly argument. Current publication figure placement owns the live visual argument.",
+      "currentAuthority": [
+        "publication/figures.ts",
+        "docs/manuscript/figures/reference-house-type-orientation.svg",
+        "docs/manuscript/figures/reference-house-spatial-sectional-order.svg"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pr00d-d3-reference-house-figures",
+      "headSha": "53097a2a42faa8488b7d528388ef45903c93e138",
+      "mechanicalEvidence": {
+        "aheadBy": 4,
+        "behindBy": 559,
+        "branchOnlyCommits": 4,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "This is the later D3 figure stage whose Reference House figure set was subsequently integrated by D5 and remains represented in current publication/figures.ts and current manuscript figure assets. It is a historical production head, not an unresolved visual alternative.",
+      "currentAuthority": [
+        "publication/figures.ts",
+        "docs/manuscript/figures/reference-house-type-orientation.svg",
+        "docs/manuscript/figures/reference-house-spatial-sectional-order.svg",
+        "docs/manuscript/figures/reference-house-structural-assembly-logic.svg"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pr00d-d4-reference-house-systems",
+      "headSha": "064bdce830ea76c4ffa49737ee72d7092470619b",
+      "mechanicalEvidence": {
+        "aheadBy": 4,
+        "behindBy": 558,
+        "branchOnlyCommits": 4,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The D4 systems-figure stage is consumed by current publication figure placement. The service/maintenance, water/failure and external-maintenance visual arguments remain at the same canonical manuscript figure paths and have received later editorial refinement.",
+      "currentAuthority": [
+        "publication/figures.ts",
+        "docs/manuscript/figures/reference-house-service-maintenance-geography.svg",
+        "docs/manuscript/figures/reference-house-water-failure-geography.svg",
+        "docs/manuscript/figures/reference-house-external-maintenance-geography.svg"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pr00d-d5-visual-integration",
+      "headSha": "d377665ae095b604979956d61dd36803ae7b3f6f",
+      "mechanicalEvidence": {
+        "aheadBy": 5,
+        "behindBy": 557,
+        "branchOnlyCommits": 5,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "D5 introduced the publication figure-placement registry and validation/closeout layer. Current publication/figures.ts is a direct evolution of that machinery and now composes later integrity edits as well. The branch is therefore the historical integration stage of a still-live publication subsystem.",
+      "currentAuthority": [
+        "publication/figures.ts",
+        "publication/scripts/prepare.ts",
+        "publication/scripts/validate.ts"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pr00e-editorial-hardening",
+      "headSha": "3e16b1cecde03dbdaa21becc6f8a02eaa4306d40",
+      "mechanicalEvidence": {
+        "aheadBy": 2,
+        "behindBy": 556,
+        "branchOnlyCommits": 2,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "PR-00E is an editorial-hardening audit stage. The reader-facing result has since been incorporated into the current manuscript and then passed through the later resolved-work sanitation programme. SAN-06 explicitly classifies publication/editorial audits as production history whose durable value is the current manuscript and publication authority.",
+      "currentAuthority": [
+        "docs/manuscript/readers-guide.md",
+        "docs/manuscript/publication-architecture.md",
+        "docs/publication/resolved-work-sanitation-closeout.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pr00f-integrity",
+      "headSha": "ebd9d34497e83c3158915e98cd120e1fb296675f",
+      "mechanicalEvidence": {
+        "aheadBy": 6,
+        "behindBy": 554,
+        "branchOnlyCommits": 6,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "PR-00F introduced a publication integrity-edit mechanism and audit. The mechanism remains on main, but its edit list is now empty because later sanitation resolved the source surfaces directly. SAN-06 records publication audits as internal production history. Restoring the branch would reintroduce already-consumed one-off edits and obsolete doctrine-era wording.",
+      "currentAuthority": [
+        "publication/integrity-edits.ts",
+        "publication/figures.ts",
+        "docs/publication/resolved-work-sanitation-closeout.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pub-san-computational-surface",
+      "headSha": "fd527ace394db25b6ddb1c6c6de65728ce48cf0c",
+      "mechanicalEvidence": {
+        "aheadBy": 13,
+        "behindBy": 375,
+        "branchOnlyCommits": 13,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "This sanitation branch rewrote the computational reader surface to present resolved semantic capability rather than paper-stage chronology. The completed SAN-06 map explicitly assigns durable computational value to the current executable architecture, formal model, validity/evidence, compiler-target and domain documents, and marks the old S/H1/programme identities as internal history.",
+      "currentAuthority": [
+        "docs/publication/resolved-work-sanitation-closeout.md",
+        "docs/computational/executable-architecture.md",
+        "docs/computational/formal-architectural-model.md",
+        "docs/computational/validity-and-obligations.md",
+        "docs/computational/evidence-and-provenance.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pub-san-research-evidence",
+      "headSha": "3090a7ed89f5e0a84d54eecedebf8ad82b5ca42f",
+      "mechanicalEvidence": {
+        "aheadBy": 13,
+        "behindBy": 376,
+        "branchOnlyCommits": 13,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "This sanitation branch converted research working baselines into resolved evidence/comparison pages. SAN-06 explicitly maps workmanship, floor, wall-lining, repose, maintenance and precedent working records to their current reader-facing owners and states that working-baseline chronology was removed after conclusions were retained.",
+      "currentAuthority": [
+        "docs/publication/resolved-work-sanitation-closeout.md",
+        "docs/research/workmanship-robustness.md",
+        "docs/research/repose-and-low-vigilance.md",
+        "docs/research/external-maintenance-access.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pub-san-rh-technical",
+      "headSha": "023094149a998126ae8bf1389be8fc0ecd9fdd79",
+      "mechanicalEvidence": {
+        "aheadBy": 18,
+        "behindBy": 377,
+        "branchOnlyCommits": 18,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "This sanitation branch converted Reference House technical/stage material into resolved current surfaces. SAN-06 explicitly maps RH-C/RH-06→RH-11 history to the current Reference House README, Part IV, technical coordination, tectonic language, vertical interface coordination, pattern selection, review questions and generated inspection outputs. No separate branch-only authority remains.",
+      "currentAuthority": [
+        "docs/publication/resolved-work-sanitation-closeout.md",
+        "docs/reference-house/README.md",
+        "docs/manuscript/part-iv.md",
+        "docs/reference-house/structural-coordination.md",
+        "docs/reference-house/tectonic-architectural-language.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    }
+  ],
+  "summary": {
+    "reviewed": 10,
+    "C": 10,
+    "D": 0,
+    "X": 0,
+    "salvageRequired": 0
+  },
+  "semanticQueue": {
+    "originalCandidates": 40,
+    "resolvedC": 40,
+    "resolvedD": 0,
+    "remainingCD": 0
+  },
+  "nextPacket": {
+    "packet": "BRH-02H",
+    "group": "X-and-post-freeze-reconciliation",
+    "reason": "All 40 original C/D candidates are now semantically resolved. Before BRH-02 can close, reconcile the original X set plus post-BRH-01C programme/DRW/site refs against live main and open PRs."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
