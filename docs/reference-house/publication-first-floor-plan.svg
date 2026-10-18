@@ -68,7 +68,8 @@
 <text x="113.5" y="66" class="text-label" text-anchor="middle" data-entity="label-U-BATH-01" data-provisional="false" data-space="U-BATH-01">Family bathroom</text>
 <text x="111.5" y="24" class="text-label" text-anchor="middle" data-entity="label-U-BED-04" data-provisional="true" data-space="U-BED-04">Bedroom 4</text>
 <text x="84" y="40" class="text-label" text-anchor="middle" data-entity="label-U-LAND-N01" data-provisional="true" data-space="U-LAND-N01">North landing</text>
-<text x="60.5" y="22.5" class="text-label" text-anchor="middle" data-entity="label-U-DRESS-01" data-provisional="true" data-space="U-DRESS-01">Dressing / storage</text>
+<text x="60.5" y="21" class="text-label" text-anchor="middle" data-entity="label-U-DRESS-01-1" data-provisional="true" data-space="U-DRESS-01">Dressing /</text>
+<text x="60.5" y="24" class="text-label" text-anchor="middle" data-entity="label-U-DRESS-01-2" data-provisional="true" data-space="U-DRESS-01">storage</text>
 <text x="79" y="22.5" class="text-label" text-anchor="middle" data-entity="label-U-LIN-01" data-provisional="true" data-space="U-LIN-01">Linen</text>
 <text x="68" y="64.6" class="text-label" text-anchor="middle" data-entity="label-courtyard">Courtyard</text>
 <text x="68" y="68.5" class="text-note" text-anchor="middle" data-entity="dim-courtyard">3600 × 4000</text>

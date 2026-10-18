@@ -36,7 +36,8 @@ describe('DRW-04C controlled first-floor publication SVG', () => {
       'East gallery',
       'Family bathroom',
       'North landing',
-      'Dressing / storage',
+      'Dressing /',
+      'storage',
       'Linen',
       'Courtyard',
       'DN'
