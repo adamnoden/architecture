@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="166mm" height="92mm" viewBox="0 0 166 92" role="img" aria-labelledby="title desc" data-view-id="REFERENCE-HOUSE-PRINCIPAL-LONGITUDINAL-SECTION" data-source-id="RH-C1-REFERENCE-HOUSE" data-scale-denominator="100">
+<title id="title">Reference House principal longitudinal section</title>
+<desc id="desc">North-south architectural section at 1:100 through the courtyard centreline, looking west. Cut bodies and stair placement are bounded planning representation, not construction information.</desc>
+<style>.line-cut{stroke:#000000;stroke-width:0.5;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-profile{stroke:#000000;stroke-width:0.35;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-primary{stroke:#000000;stroke-width:0.25;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-secondary{stroke:#000000;stroke-width:0.18;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.text-label{font-family:Arial, Helvetica, sans-serif;font-size:2.646;font-weight:400;fill:#000000}.text-note{font-family:Arial, Helvetica, sans-serif;font-size:2.293;font-weight:400;fill:#000000}.text-marker{font-family:Arial, Helvetica, sans-serif;font-size:2.293;font-weight:700;fill:#000000}.dash-overhead{stroke-dasharray:3 1.5}.dash-datum{stroke-dasharray:6 1.5 1 1.5}.dash-provisional{stroke-dasharray:1 1}.fill-paper{fill:#ffffff;stroke:none}.fill-ink{fill:#000000;stroke:none}.fill-context{fill:#666666;stroke:none}.fill-faint{fill:#a6a6a6;stroke:none}</style>
+<rect x="14" y="40" width="34" height="3.5" class="fill-ink" data-entity="floor-zone-south" data-provisional="true" data-representation="inter-storey-planning-zone"/>
+<rect x="88" y="40" width="34" height="3.5" class="fill-ink" data-entity="floor-zone-north" data-provisional="true" data-representation="inter-storey-planning-zone"/>
+<rect x="14" y="10.5" width="4" height="62.5" class="fill-ink" data-entity="cut-wall-outer-south" data-provisional="true" data-representation="cut-wall-body"/>
+<rect x="44" y="9.65" width="4" height="63.35" class="fill-ink" data-entity="cut-wall-court-south" data-provisional="true" data-representation="cut-wall-body"/>
+<rect x="88" y="9.65" width="4" height="63.35" class="fill-ink" data-entity="cut-wall-court-north" data-provisional="true" data-representation="cut-wall-body"/>
+<rect x="118" y="10.5" width="4" height="62.5" class="fill-ink" data-entity="cut-wall-outer-north" data-provisional="true" data-representation="cut-wall-body"/>
+<rect x="44" y="47.5" width="4" height="25.5" class="fill-paper" data-entity="opening-court-south-ground" data-host="court-south" data-level="GROUND" data-provisional="true" data-role="major-opening"/>
+<rect x="88" y="47.5" width="4" height="25.5" class="fill-paper" data-entity="opening-court-north-ground" data-host="court-north" data-level="GROUND" data-provisional="true" data-role="major-opening"/>
+<rect x="44" y="16.5" width="4" height="15.5" class="fill-paper" data-entity="opening-court-south-first" data-host="court-south" data-level="FIRST" data-provisional="true" data-role="window"/>
+<rect x="88" y="16.5" width="4" height="15.5" class="fill-paper" data-entity="opening-court-north-first" data-host="court-north" data-level="FIRST" data-provisional="true" data-role="window"/>
+<rect x="118" y="47.5" width="4" height="25.5" class="fill-paper" data-entity="opening-outer-north-ground" data-host="outer-north" data-level="GROUND" data-provisional="true" data-role="garden-logistics-opening"/>
+<rect x="118" y="16.5" width="4" height="15.5" class="fill-paper" data-entity="opening-outer-north-first" data-host="outer-north" data-level="FIRST" data-provisional="true" data-role="window"/>
+<line x1="14" y1="10.5" x2="48" y2="9.65" class="line-profile" data-entity="roof-profile-south" data-direction="outward"/>
+<line x1="88" y1="9.65" x2="122" y2="10.5" class="line-profile" data-entity="roof-profile-north" data-direction="outward"/>
+<line x1="14" y1="73" x2="122" y2="73" class="line-profile" data-entity="ground-termination" data-treatment="terminate-at-ground-ffl-no-foundation-or-site-profile"/>
+<line x1="22" y1="73" x2="36" y2="62" class="line-secondary dash-provisional" data-entity="stair-flight-1-beyond" data-provisional="true" data-relation="beyond"/>
+<line x1="36" y1="62" x2="36" y2="51" class="line-secondary dash-provisional" data-entity="stair-flight-2-perpendicular-beyond" data-provisional="true" data-relation="perpendicular-beyond"/>
+<line x1="36" y1="51" x2="22" y2="40" class="line-cut" data-entity="stair-flight-3-cut" data-provisional="true" data-relation="cut"/>
+<text x="31" y="58.5" class="text-label" text-anchor="middle" data-entity="label-ground-south">Entrance hall / stair</text>
+<text x="105" y="58.5" class="text-label" text-anchor="middle" data-entity="label-ground-north">Garden dining</text>
+<text x="31" y="27.5" class="text-label" text-anchor="middle" data-entity="label-upper-south">South landing / stair</text>
+<text x="94" y="26" class="text-label" text-anchor="middle" data-entity="label-upper-north-1">North</text>
+<text x="94" y="29" class="text-label" text-anchor="middle" data-entity="label-upper-north-2">landing</text>
+<text x="111" y="26" class="text-label" text-anchor="middle" data-entity="label-upper-dressing-1">Dressing /</text>
+<text x="111" y="29" class="text-label" text-anchor="middle" data-entity="label-upper-dressing-2">storage</text>
+<text x="68" y="43" class="text-label" text-anchor="middle" data-entity="label-courtyard">Open courtyard</text>
+<text x="14" y="79" class="text-note" text-anchor="start" data-entity="label-south">South</text>
+<text x="122" y="79" class="text-note" text-anchor="end" data-entity="label-north">North</text>
+<line x1="125" y1="73" x2="132" y2="73" class="line-secondary dash-datum" data-entity="level-ground-ffl" data-elevation="0"/>
+<text x="133.5" y="73.8" class="text-note" text-anchor="start" data-entity="level-text-ground-ffl">Ground FFL ±0</text>
+<line x1="125" y1="43.5" x2="132" y2="43.5" class="line-secondary dash-datum" data-entity="level-ground-ceiling" data-elevation="2950"/>
+<text x="133.5" y="44.3" class="text-note" text-anchor="start" data-entity="level-text-ground-ceiling">Ground ceiling +2950</text>
+<line x1="125" y1="40" x2="132" y2="40" class="line-secondary dash-datum" data-entity="level-first-ffl" data-elevation="3300"/>
+<text x="133.5" y="40.8" class="text-note" text-anchor="start" data-entity="level-text-first-ffl">First FFL +3300</text>
+<line x1="125" y1="13" x2="132" y2="13" class="line-secondary dash-datum" data-entity="level-upper-ceiling" data-elevation="6000"/>
+<text x="133.5" y="13.8" class="text-note" text-anchor="start" data-entity="level-text-upper-ceiling">Upper ceiling +6000</text>
+<line x1="125" y1="10.5" x2="132" y2="10.5" class="line-secondary dash-datum" data-entity="level-roof-edge" data-elevation="6250"/>
+<text x="133.5" y="11.3" class="text-note" text-anchor="start" data-entity="level-text-roof-edge">Roof edge +6250</text>
+<line x1="128" y1="84" x2="158" y2="84" class="line-primary" data-entity="scale-bar"/>
+<line x1="128" y1="82" x2="128" y2="86" class="line-secondary" data-entity="scale-tick-0"/>
+<line x1="138" y1="82" x2="138" y2="86" class="line-secondary" data-entity="scale-tick-1"/>
+<line x1="148" y1="82" x2="148" y2="86" class="line-secondary" data-entity="scale-tick-2"/>
+<line x1="158" y1="82" x2="158" y2="86" class="line-secondary" data-entity="scale-tick-3"/>
+<text x="128" y="89" class="text-note" text-anchor="start" data-entity="scale-zero">0</text>
+<text x="158" y="89" class="text-note" text-anchor="end" data-entity="scale-three">3 m</text>
+<text x="14" y="89" class="text-note" text-anchor="start" data-entity="approx-note">Approx. planning cut bodies, openings and stair; no construction build-ups.</text>
+</svg>
