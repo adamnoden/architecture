@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 2,
+  "packet": "BRH-04B",
+  "programmeIssue": 161,
+  "status": "complete",
+  "baselineMainSha": "be56783daa3b294721e5da4c0e1788b9563fbeb2",
+  "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+  "sourceBaselineCompare": {
+    "status": "ahead",
+    "aheadBy": 170,
+    "behindBy": 0
+  },
+  "candidateCount": 25,
+  "candidateClass": "A",
+  "candidateSetSha256": "84ddf9e8a8f2038ac208c78e0bfeb0790213616beb577ee066fe19cc78b88015",
+  "preDeleteLease": {
+    "mainSha": "be56783daa3b294721e5da4c0e1788b9563fbeb2",
+    "allCandidateHeadsMatched": true,
+    "candidateOpenPrCount": 0,
+    "namespaceCountIncludingMainAfterPacketBranchCreation": 140,
+    "openPrs": [213,217]
+  },
+  "mutation": {
+    "performed": true,
+    "actor": "repository owner via GitHub UI",
+    "deletedCount": 25,
+    "connectorDeleteBranchActionAvailable": false
+  },
+  "postDeleteProof": {
+    "allCandidateRefsAbsent": true,
+    "namespaceCountIncludingMain": 116,
+    "reconciliation": "140 - 25 + 1 concurrent HFI ref = 116",
+    "concurrentCreatedRefs": ["hfi-02a-anthropometry-reach-force"],
+    "concurrentRetiredRefs": [],
+    "openPrs": [213,217,218],
+    "mainSha": "be56783daa3b294721e5da4c0e1788b9563fbeb2",
+    "unintendedDeletionEvidence": false
+  },
+  "result": {
+    "ADeleted": 25,
+    "BDeleted": 0,
+    "CDeleted": 0,
+    "DDeleted": 0,
+    "XDeleted": 0
+  },
+  "nextPacket": "BRH-04C — fresh A-first bounded deletion batch after recovering then-current main, open PRs and complete namespace."
+}
