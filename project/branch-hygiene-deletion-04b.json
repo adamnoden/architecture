@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04B",
   "programmeIssue": 161,
-  "status": "planned-preflight-manual-deletion-gate",
+  "status": "complete",
   "packetBranch": "brh-04b-controlled-deletion-2",
   "execution": {
     "baselineMainSha": "be56783daa3b294721e5da4c0e1788b9563fbeb2",
@@ -16,69 +16,86 @@
       "behindBy": 0
     },
     "branchCountAtPacketStartIncludingMain": 139,
-    "nonMainBranchCountAtPacketStart": 138,
+    "branchCountImmediatelyBeforeDeletionIncludingMain": 140,
     "openPrCountAtPacketStart": 1,
-    "openPrHeadsAtPacketStart": [
-      {
-        "pr": 213,
-        "branch": "drw-04d-plan-pair-proof",
-        "headSha": "9301935644f925473fd136941c5cee64bbf099fb"
-      }
+    "openPrCountImmediatelyBeforeDeletion": 2,
+    "openPrHeadsImmediatelyBeforeDeletion": [
+      {"pr":213,"branch":"drw-04d-plan-pair-proof","headSha":"9301935644f925473fd136941c5cee64bbf099fb"},
+      {"pr":217,"branch":"brh-04b-controlled-deletion-2","headSha":"0d77f4d7e8fa251555edc7bb49aa688a1de86eba"}
     ],
     "hardDeletionCap": 25,
-    "connectorDeleteBranchActionAvailable": false
+    "connectorDeleteBranchActionAvailable": false,
+    "deletionActor": "repository owner via GitHub UI"
   },
   "candidateSetSha256": "84ddf9e8a8f2038ac208c78e0bfeb0790213616beb577ee066fe19cc78b88015",
   "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
-  "candidateEvidence": "Every candidate is final class A from BRH-01A, had ancestor=yes and branch-only=0 there, still exists at the exact frozen head, is not an open-PR head, and the BRH-01A baseline is ancestral to current main.",
+  "candidateEvidence": "Every candidate is final class A from BRH-01A, had ancestor=yes and branch-only=0 there, still existed at the exact frozen head immediately before deletion, was not an open-PR head, and the BRH-01A baseline remained ancestral to execution main.",
   "candidates": [
-    {"name":"compiler-p0-kernel","expectedHeadSha":"deb524ba727b90992a75450d8c35acbe27746bed","class":"A","associatedPr":null},
-    {"name":"compiler-p0-pat-xw-checkpoint","expectedHeadSha":"d7d42e8ae03ddec156c0e22773365de28f61179a","class":"A","associatedPr":null},
-    {"name":"compiler-pat-xw-01","expectedHeadSha":"4643bd1edeb7edc0ff67cc5955349024f7563c9f","class":"A","associatedPr":null},
-    {"name":"drw-01c","expectedHeadSha":"a1da0f3aaa287b4a93bdb79b183463d95ce0d7c7","class":"A","associatedPr":null},
-    {"name":"drw-01d","expectedHeadSha":"ba82786f3caef9f543d4a8810e25ef51489118f7","class":"A","associatedPr":null},
-    {"name":"drw-01e","expectedHeadSha":"5e6cbbd8c1d391127dc231aaeb584b008617ade1","class":"A","associatedPr":null},
-    {"name":"drw-02a","expectedHeadSha":"b77aac7bb33ddec4ac6185ef6b42cf4841343f13","class":"A","associatedPr":null},
-    {"name":"drw-02b","expectedHeadSha":"28bd93b54152161411436da4ece6309774a3dc57","class":"A","associatedPr":null},
-    {"name":"drw-02c","expectedHeadSha":"509be1384cce76d8ee19b584344d4490f9b2d08e","class":"A","associatedPr":null},
-    {"name":"drw-02d","expectedHeadSha":"b1067ec01574ab6ec1f639d8556e07581506bb07","class":"A","associatedPr":null},
-    {"name":"editorial-overhaul","expectedHeadSha":"b238c4dbb98bc24e44808ca385326cff36a14116","class":"A","associatedPr":null},
-    {"name":"fix-publication-credibility-navigation","expectedHeadSha":"22ac81cabdfe37b367f1a3297f292a8750ae978c","class":"A","associatedPr":null},
-    {"name":"fix-sanitation-record-surface","expectedHeadSha":"ba0270e133ea8ddf876d0000180654c6a5726181","class":"A","associatedPr":null},
-    {"name":"ovids-house-migration","expectedHeadSha":"e6a8a9a75ad0a97bd28232c8f7539e6987bb541d","class":"A","associatedPr":null},
-    {"name":"pattern-language-phase7-close","expectedHeadSha":"bac80230ffbca080fb4c262eb41fb08ebd3574a4","class":"A","associatedPr":null},
-    {"name":"pattern-language-phase7-integration","expectedHeadSha":"e2971075966bb5df9e9cbbfa875de34155d82503","class":"A","associatedPr":null},
-    {"name":"pattern-language-phase7-new-identities","expectedHeadSha":"c50f30b3a96a73326f8bed8489c3ad63ce7d6e3d","class":"A","associatedPr":null},
-    {"name":"pattern-language-phase7-nonpattern-homes","expectedHeadSha":"0f421c2d5f6c9c71f0b5f9940a6beef6be5f8a64","class":"A","associatedPr":null},
-    {"name":"pattern-language-phase7-validation","expectedHeadSha":"ea9211d407f3da8b30085050157680c535e57d00","class":"A","associatedPr":null},
-    {"name":"pr00-candidate-book-freeze-programme","expectedHeadSha":"315304bf41313f47c1ccf361d058397b4302c872","class":"A","associatedPr":null},
-    {"name":"pr00a-candidate-book-ledger","expectedHeadSha":"882e640cf646da2d0b42a604ae927ef08625b0db","class":"A","associatedPr":null},
-    {"name":"pr00b-back-matter","expectedHeadSha":"ecd55f8f31db0fd623dbc948c02f5651678aae66","class":"A","associatedPr":null},
-    {"name":"pr00b-part-iii-framing","expectedHeadSha":"ea1d2ab1a6c0aa93060c49bab34472047c058ffc","class":"A","associatedPr":null},
-    {"name":"pr00b-part-iv-authorship","expectedHeadSha":"b1dcb3e1f8ff405bffe8e69da21b724da22c9174","class":"A","associatedPr":null},
-    {"name":"pr00b-part-v-recheck","expectedHeadSha":"4c637309c1c1aa75ece6c152d754718d57e4a7de","class":"A","associatedPr":null}
+    {"name":"compiler-p0-kernel","expectedHeadSha":"deb524ba727b90992a75450d8c35acbe27746bed","class":"A"},
+    {"name":"compiler-p0-pat-xw-checkpoint","expectedHeadSha":"d7d42e8ae03ddec156c0e22773365de28f61179a","class":"A"},
+    {"name":"compiler-pat-xw-01","expectedHeadSha":"4643bd1edeb7edc0ff67cc5955349024f7563c9f","class":"A"},
+    {"name":"drw-01c","expectedHeadSha":"a1da0f3aaa287b4a93bdb79b183463d95ce0d7c7","class":"A"},
+    {"name":"drw-01d","expectedHeadSha":"ba82786f3caef9f543d4a8810e25ef51489118f7","class":"A"},
+    {"name":"drw-01e","expectedHeadSha":"5e6cbbd8c1d391127dc231aaeb584b008617ade1","class":"A"},
+    {"name":"drw-02a","expectedHeadSha":"b77aac7bb33ddec4ac6185ef6b42cf4841343f13","class":"A"},
+    {"name":"drw-02b","expectedHeadSha":"28bd93b54152161411436da4ece6309774a3dc57","class":"A"},
+    {"name":"drw-02c","expectedHeadSha":"509be1384cce76d8ee19b584344d4490f9b2d08e","class":"A"},
+    {"name":"drw-02d","expectedHeadSha":"b1067ec01574ab6ec1f639d8556e07581506bb07","class":"A"},
+    {"name":"editorial-overhaul","expectedHeadSha":"b238c4dbb98bc24e44808ca385326cff36a14116","class":"A"},
+    {"name":"fix-publication-credibility-navigation","expectedHeadSha":"22ac81cabdfe37b367f1a3297f292a8750ae978c","class":"A"},
+    {"name":"fix-sanitation-record-surface","expectedHeadSha":"ba0270e133ea8ddf876d0000180654c6a5726181","class":"A"},
+    {"name":"ovids-house-migration","expectedHeadSha":"e6a8a9a75ad0a97bd28232c8f7539e6987bb541d","class":"A"},
+    {"name":"pattern-language-phase7-close","expectedHeadSha":"bac80230ffbca080fb4c262eb41fb08ebd3574a4","class":"A"},
+    {"name":"pattern-language-phase7-integration","expectedHeadSha":"e2971075966bb5df9e9cbbfa875de34155d82503","class":"A"},
+    {"name":"pattern-language-phase7-new-identities","expectedHeadSha":"c50f30b3a96a73326f8bed8489c3ad63ce7d6e3d","class":"A"},
+    {"name":"pattern-language-phase7-nonpattern-homes","expectedHeadSha":"0f421c2d5f6c9c71f0b5f9940a6beef6be5f8a64","class":"A"},
+    {"name":"pattern-language-phase7-validation","expectedHeadSha":"ea9211d407f3da8b30085050157680c535e57d00","class":"A"},
+    {"name":"pr00-candidate-book-freeze-programme","expectedHeadSha":"315304bf41313f47c1ccf361d058397b4302c872","class":"A"},
+    {"name":"pr00a-candidate-book-ledger","expectedHeadSha":"882e640cf646da2d0b42a604ae927ef08625b0db","class":"A"},
+    {"name":"pr00b-back-matter","expectedHeadSha":"ecd55f8f31db0fd623dbc948c02f5651678aae66","class":"A"},
+    {"name":"pr00b-part-iii-framing","expectedHeadSha":"ea1d2ab1a6c0aa93060c49bab34472047c058ffc","class":"A"},
+    {"name":"pr00b-part-iv-authorship","expectedHeadSha":"b1dcb3e1f8ff405bffe8e69da21b724da22c9174","class":"A"},
+    {"name":"pr00b-part-v-recheck","expectedHeadSha":"4c637309c1c1aa75ece6c152d754718d57e4a7de","class":"A"}
   ],
-  "explicitlyProtectedObservedRefs": [
-    {"name":"drw-04d-plan-pair-proof","reason":"open PR #213 and current DRW packet"},
-    {"name":"drw-04b1-south-landing-label-fit","reason":"recent DRW ref outside historical A batch"},
-    {"name":"brh-01a-obvious-integrated","reason":"post-classification BRH authority ref; not part of original A list"},
-    {"name":"brh-01b-patch-equivalent","reason":"B packet authority ref; deletion order remains A first"},
-    {"name":"brh-02g-publication-editorial-review","reason":"recent no-op reconciliation ref; requires separate re-proof"},
-    {"name":"brh-03-salvage-necessity-proof","reason":"superseded stale BRH-03 draft; requires separate re-proof"},
-    {"name":"pattern-language-phase7-migration","reason":"class C from semantic review; A phase not yet exhausted"},
-    {"name":"pr00b-part-iv-synthesis","reason":"class C from semantic review; A phase not yet exhausted"}
-  ],
-  "deletionPreconditions": {
-    "executionMainMustStillEqualBaselineImmediatelyBeforeDeletion": true,
-    "allCandidatesMustStillExistAtExpectedHeadImmediatelyBeforeDeletion": true,
-    "noCandidateMayHaveOpenPrImmediatelyBeforeDeletion": true,
-    "candidateCountMustNotExceed25": true,
-    "postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover": true
+  "verification": {
+    "all25CandidateRefsAbsent": true,
+    "candidateCountDeleted": 25,
+    "postDeleteBranchCountIncludingMain": 116,
+    "namespaceCountReconciliation": "140 refs immediately before deletion - 25 BRH-04B deletions + 1 independently created HFI ref = 116 refs after deletion",
+    "concurrentRefsCreatedOutsidePacket": ["hfi-02a-anthropometry-reach-force"],
+    "concurrentRefsRetiredOutsidePacket": [],
+    "postDeleteOpenPrs": [213,217,218],
+    "survivingSentinels": [
+      "brh-01a-obvious-integrated",
+      "brh-01b-patch-equivalent",
+      "brh-02g-publication-editorial-review",
+      "brh-03-salvage-necessity-proof",
+      "brh-04b-controlled-deletion-2",
+      "drw-02e",
+      "drw-03a",
+      "drw-04b1-south-landing-label-fit",
+      "drw-04d-plan-pair-proof",
+      "hfi-02a-anthropometry-reach-force",
+      "pattern-language-phase7-migration",
+      "pr00b-part-iv-synthesis"
+    ],
+    "mainObservedPostDelete": "be56783daa3b294721e5da4c0e1788b9563fbeb2",
+    "conclusion": "The intended 25 class-A refs are absent. The namespace count reconciles exactly after the independently created HFI ref, active/open-PR branches survive, and nearby non-target A/B/C/BRH/DRW sentinels remain. No evidence of an unintended BRH deletion was observed."
   },
-  "mutation": {
-    "branchDeletionPerformed": false,
-    "deletedCount": 0,
-    "repositorySettingsChanged": false
+  "result": {
+    "disposition": "complete",
+    "branchesDeleted": 25,
+    "ADeleted": 25,
+    "BDeleted": 0,
+    "CDeleted": 0,
+    "DDeleted": 0,
+    "XDeleted": 0
   },
-  "resumeRule": "Because the connected GitHub capability has no first-class branch/ref deletion action, deletion must be performed by the repository owner. Immediately before manual deletion, re-check main, open PRs and all 25 exact heads. If main or any candidate head moved, do not delete and recompute. After deletion, re-enumerate the complete namespace, prove exactly the authorised refs disappeared modulo independently observed concurrent ref turnover, then update this record and merge it under a fresh main/open-PR lease."
+  "safety": {
+    "mainDeleted": false,
+    "openPrBranchDeletedByBRH": false,
+    "repositorySettingsChanged": false,
+    "historicalBranchContentMergedOrCherryPicked": false
+  },
+  "nextPacket": "BRH-04C — recover then-current namespace and continue the A-first deletion phase with a fresh bounded batch; do not reuse BRH-04B leases."
 }
