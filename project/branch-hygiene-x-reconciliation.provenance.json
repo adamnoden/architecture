@@ -1,18 +1,22 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-02H",
   "programmeIssue": 161,
   "repository": "adamnoden/architecture",
-  "baselineMainSha": "1849e0fe912378278c44f19ab09b8f8a3fe20546",
+  "baselineMainSha": "589f0ac2c37046d55c055373f2d32816f774eaba",
   "freezeMainSha": "8aae956ed45a4bab5eac5ba5841a9784a75a500f",
+  "restart": {
+    "supersededBaselineMainSha": "1849e0fe912378278c44f19ab09b8f8a3fe20546",
+    "reason": "DRW-03E PR #190 merged and moved main during the final gate. The exhaustive namespace proof was rerun. A fresh post-freeze DRW-03F ref was conservatively retained X even though its initial head equals main."
+  },
   "proof": {
-    "workflowRunId": 39129176842,
-    "jobId": 117680615684,
-    "artifactId": 12137870055,
+    "workflowRunId": 39129501266,
+    "jobId": 117681580457,
+    "artifactId": 12137258436,
     "artifactName": "brh-02h-reconciliation-proof",
-    "artifactDigest": "sha256:bb67875d47206754940013a18196a8d0d67a3f970e777e6cca4670c9598b459e",
-    "reconciliationJsonSha256": "3981c3e543506dc9f98c3ec1beb2e5c513c0c4d3d7ca43d2a7f305f443f787c3",
-    "currentRefsSha256": "9c36e093395cfc78441fac9cb63670d192e6923328154598648ffd104cd005dc",
+    "artifactDigest": "sha256:8509eb4b4ece80faa6699549b6d8d3d3aede3f47d1324c17fcc46e5a72e232bd",
+    "reconciliationJsonSha256": "02d6b064deaffbca0c3fd4fb89bc90a061fecc6970eb91abbd52c2af8139c7ee",
+    "currentRefsSha256": "0c294c13d1e6e74502c1af7be2c6c2b166f62fafcf6ccc49d6163d2e0694fa82",
     "currentRefCount": 161,
     "postFreezeRefCount": 2,
     "missingOriginalRefCount": 1
@@ -20,22 +24,31 @@
   "classification": {
     "originalXReconciledA": 4,
     "originalXReconciledAbsentA": 1,
-    "retainedActiveX": 2,
+    "retainedActiveOrRecentX": 2,
+    "remainingOriginalCD": 0,
     "remainingD": 0,
     "salvageRequired": 0
   },
-  "activeProtectedAtProof": [
+  "protectedAtProof": [
     {
-      "branch": "drw-03e-controlled-ground-plan-svg",
-      "pr": 190,
-      "headSha": "1949d4ac53e148ccd481d31d14609525aec65ec4"
+      "branch": "drw-03f-ground-plan-plate-proof",
+      "pr": null,
+      "headSha": "589f0ac2c37046d55c055373f2d32816f774eaba",
+      "reason": "post-freeze-unmerged-live-ref"
     },
     {
       "branch": "brh-02h-x-reconciliation",
       "pr": 192,
-      "headSha": "75ff3debcb1270904644f622483ce1b8ad3c5dc5"
+      "headSha": "fcf9a95773215b990505f075a6bbd7e05bb14d6c",
+      "reason": "open-pr"
     }
   ],
+  "mergedDuringRestart": {
+    "branch": "drw-03e-controlled-ground-plan-svg",
+    "pr": 190,
+    "headSha": "1949d4ac53e148ccd481d31d14609525aec65ec4",
+    "mergeCommitSha": "589f0ac2c37046d55c055373f2d32816f774eaba"
+  },
   "temporaryWorkflow": {
     "path": ".github/workflows/brh-02h-reconcile.yml",
     "mustBeRemovedBeforeMerge": true
