@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "packet": "BRH-02A",
   "programmeIssue": 161,
   "baselineMainSha": "00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f",
@@ -41,6 +41,21 @@
       "docs/publication/architectural-drawing-drw03b-ground-plan-source.md"
     ],
     "authorityImpact": "none on reviewed source heads or the P03/workmanship authority set; semantic dispositions recomputed and retained"
+  },
+  "validationBlockerRepair": {
+    "trigger": "After the moved-main restart, rendered public nomenclature validation matched maturity token M1 inside a generated Vite modulepreload asset URL rather than reader-visible content.",
+    "evidence": "DRW-03B itself passed the same rendered gate; project/** is excluded from VitePress; the failing occurrence was the generated asset filename abnfDiagram-VCTEODGH.ByOrd-M1.js across rendered pages.",
+    "repair": "Rendered HTML validation now strips comments, script/style/template/noscript payloads and markup attributes before nomenclature scanning, preserving title/body reader text and PDF scanning.",
+    "regressionLocks": [
+      "generated asset URL containing M1 must pass",
+      "reader-visible M1 in rendered HTML must fail",
+      "reader-visible HSA-P-001 in rendered HTML must fail"
+    ],
+    "gateWeakened": false,
+    "files": [
+      "scripts/validate-public-nomenclature.ts",
+      "scripts/test-public-nomenclature-regressions.ts"
+    ]
   },
   "finalDispositions": {
     "prototype-p03-engineer-review-brief": "C",
