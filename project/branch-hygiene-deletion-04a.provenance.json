@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 3,
+  "packet": "BRH-04A",
+  "programmeIssue": 161,
+  "status": "complete",
+  "packetBranch": "brh-04a-controlled-deletion-1",
+  "planningBaselineMainSha": "19170e6cac52a54e751ade0ccd0899cc6ee13ec4",
+  "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+  "candidateCount": 25,
+  "candidateClass": "A",
+  "candidateSetSha256": "cd9f328d8d0c7cbccc599c5e5f87a359de78fd9493f64af2d6713dfffacf50d9",
+  "planningProof": {
+    "allCandidateLiveHeadsMatchedFrozenHeads": true,
+    "allCandidatesMechanicallyIntegrated": true,
+    "allCandidatesHadZeroBranchOnlyCommitsAtClassification": true,
+    "openPrCountAtPlanning": 0,
+    "branchCountAtPlanningIncludingMain": 164,
+    "hardDeletionCap": 25
+  },
+  "execution": {
+    "mutationMethod": "manual repository-owner deletion through GitHub UI",
+    "connectorDeleteBranchActionAvailable": false,
+    "indirectDeletionBypassUsed": false,
+    "intendedDeletedCount": 25,
+    "verifiedAbsentCount": 25
+  },
+  "postDeleteProof": {
+    "branchCountIncludingMain": 141,
+    "allCandidateRefsAbsent": true,
+    "countEquation": "164 - 25 - 1 + 3 = 141",
+    "concurrentRetiredRefs": ["drw-04b-first-floor-renderer"],
+    "concurrentCreatedRefs": ["drw-04b1-south-landing-label-fit","drw-04d-plan-pair-proof","hfi-01d-proportionality-method"],
+    "survivingNonTargetSentinels": [
+      "ch-05-determinism-identity-provenance",
+      "ch-05-housekeeping-sync",
+      "ch-08-distillation-deletion",
+      "coa-04-plan-section-successors",
+      "coa-05-topology-successors-final",
+      "coa-06-output-integration",
+      "brh-02g-publication-editorial-review",
+      "brh-03-salvage-necessity-proof",
+      "brh-04a-controlled-deletion-1",
+      "drw-04d-plan-pair-proof"
+    ],
+    "mainObservedDuringCloseout": "13b86f65a5824f8b0c22edfa6c9a56cf7f97110f",
+    "unexpectedBrhDeletionObserved": false
+  },
+  "safety": {
+    "BDeleted": false,
+    "CDeleted": false,
+    "DDeleted": false,
+    "XDeleted": false,
+    "mainDeleted": false,
+    "repositorySettingsChanged": false,
+    "historicalContentMergedOrCherryPicked": false
+  },
+  "draftPr": 210,
+  "nextPacket": "BRH-04B"
+}

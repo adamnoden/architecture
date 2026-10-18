@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "packet": "BRH-04A",
+  "programmeIssue": 161,
+  "status": "complete",
+  "execution": {
+    "planningBaselineMainSha": "19170e6cac52a54e751ade0ccd0899cc6ee13ec4",
+    "sourceClassification": "BRH-01A",
+    "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+    "sourceRule": "A only: exact live head matched the frozen BRH-01A class-A record, mechanically proven ancestor of the source baseline with zero branch-only commits; the source baseline remained ancestral to later main.",
+    "branchCountAtPlanningIncludingMain": 164,
+    "nonMainBranchCountAtPlanning": 163,
+    "openPrCountAtPlanning": 0,
+    "hardDeletionCap": 25,
+    "deletionActor": "repository owner via GitHub UI",
+    "reasonManualDeletionWasRequired": "The connected GitHub capability exposed branch creation/update but no first-class branch/ref deletion action."
+  },
+  "candidateSetSha256": "cd9f328d8d0c7cbccc599c5e5f87a359de78fd9493f64af2d6713dfffacf50d9",
+  "candidates": [
+    {"name":"architectural-specificity-audit-execution","expectedHeadSha":"dd5e50ffbe48b2cea1b7045e43b140839e7f7a29","class":"A"},
+    {"name":"architectural-specificity-boundary","expectedHeadSha":"186f8d6b38d9add87d601149e370e6b2870cd9a7","class":"A"},
+    {"name":"brh-00a-audit-method","expectedHeadSha":"1485ce3e009ac6a4801625b61a546c9ee68ed63a","class":"A"},
+    {"name":"brh-00b-full-inventory","expectedHeadSha":"bcca81ed13d63397afd3e085224b5d557e372935","class":"A"},
+    {"name":"brh-00c-completeness-verification","expectedHeadSha":"454daa685156ac3e73777239e588c66b91838534","class":"A"},
+    {"name":"candidate-pattern-hardening","expectedHeadSha":"67dee3992d8353185233ee3e13fabfb88089d3df","class":"A"},
+    {"name":"ch-00-baseline-freeze","expectedHeadSha":"88af7b7c721b539eb7f219c93f42c1c3939db39a","class":"A"},
+    {"name":"ch-01-fail-closed","expectedHeadSha":"2888761157163453f094abbfa023a7951a3844bf","class":"A"},
+    {"name":"ch-02-runtime-architecture","expectedHeadSha":"6e2f1b413fd42cca3b344099d8c77765b3142ccc","class":"A"},
+    {"name":"ch-03-single-pass-reference-house","expectedHeadSha":"ae462eab87319f37f0d594021dcf6a0e276c991e","class":"A"},
+    {"name":"ch-04-strengthen-representation","expectedHeadSha":"8d9c5a93dde026ebe78c50ff459b3603d8f8b4f5","class":"A"},
+    {"name":"ch-06-housekeeping-sync","expectedHeadSha":"658c947f8a0608dcfc8c8db8d19271087ebebc76","class":"A"},
+    {"name":"ch-06-strengthen-test-kinds","expectedHeadSha":"5909864f4a48e016ae737a6a4d6b668448fadc79","class":"A"},
+    {"name":"ch-07-housekeeping-sync","expectedHeadSha":"d278ed1d42c2cb633a815b9a699d060bcfcb6d9c","class":"A"},
+    {"name":"ch-07-toolchain-ergonomics","expectedHeadSha":"30068c9303e2ebcab58e24c005ec06f1f38ad863","class":"A"},
+    {"name":"ci-pull-request-gate","expectedHeadSha":"693b8e08923fc108ab232c4d067642017a7ddc66","class":"A"},
+    {"name":"coa-00-output-audit","expectedHeadSha":"836cf9624d90bd8f0dfa71e26b25bc718d1c6911","class":"A"},
+    {"name":"coa-00-output-audit-2","expectedHeadSha":"836cf9624d90bd8f0dfa71e26b25bc718d1c6911","class":"A"},
+    {"name":"coa-00-output-audit-final","expectedHeadSha":"ac2e608b505cae5297d3afbaf7772ee581d2d93e","class":"A"},
+    {"name":"coa-01-output-contract","expectedHeadSha":"1868936d8ab36222bfb36ace873d94c5ab0d2651","class":"A"},
+    {"name":"coa-02-report-extraction","expectedHeadSha":"814f020d858f2e26aa0547abc4f596aaf3f57455","class":"A"},
+    {"name":"coa-03-drawing-language","expectedHeadSha":"d7e1a1c42e9aaa94d9482579e5952e1f23585fa1","class":"A"},
+    {"name":"coa-05-topology-successors","expectedHeadSha":"5f76fc014c4754939afecb3e0cdd733d6bbc5e71","class":"A"},
+    {"name":"coa-05-topology-successors-2","expectedHeadSha":"5f76fc014c4754939afecb3e0cdd733d6bbc5e71","class":"A"},
+    {"name":"coa00-tmp","expectedHeadSha":"836cf9624d90bd8f0dfa71e26b25bc718d1c6911","class":"A"}
+  ],
+  "verification": {
+    "all25CandidateRefsAbsent": true,
+    "candidateCountDeleted": 25,
+    "postDeleteBranchCountIncludingMain": 141,
+    "namespaceCountReconciliation": "164 planning refs - 25 BRH-04A deletions - 1 independently retired concurrent DRW ref + 3 independently created concurrent programme refs = 141 current refs",
+    "concurrentRefRetiredOutsidePacket": ["drw-04b-first-floor-renderer"],
+    "concurrentRefsCreatedOutsidePacket": ["drw-04b1-south-landing-label-fit","drw-04d-plan-pair-proof","hfi-01d-proportionality-method"],
+    "survivingSentinels": [
+      "ch-05-determinism-identity-provenance",
+      "ch-05-housekeeping-sync",
+      "ch-08-distillation-deletion",
+      "coa-04-plan-section-successors",
+      "coa-05-topology-successors-final",
+      "coa-06-output-integration",
+      "brh-02g-publication-editorial-review",
+      "brh-03-salvage-necessity-proof",
+      "brh-04a-controlled-deletion-1",
+      "drw-04d-plan-pair-proof"
+    ],
+    "currentMainObservedDuringCloseout": "13b86f65a5824f8b0c22edfa6c9a56cf7f97110f",
+    "conclusion": "The intended 25 class-A refs are absent. Namespace count reconciles exactly after accounting for independently observed concurrent DRW/HFI ref turnover, and nearby non-target sentinels survive. No evidence of an unintended BRH deletion was observed."
+  },
+  "result": {
+    "disposition": "complete",
+    "branchesDeleted": 25,
+    "BDeleted": 0,
+    "CDeleted": 0,
+    "DDeleted": 0,
+    "XDeleted": 0
+  },
+  "safety": {
+    "mainDeleted": false,
+    "openPrBranchDeletedByBRH": false,
+    "repositorySettingsChanged": false,
+    "historicalBranchContentMergedOrCherryPicked": false
+  },
+  "nextPacket": "BRH-04B — recover then-current namespace and prove the next bounded deletion batch from scratch; do not reuse BRH-04A leases."
+}
