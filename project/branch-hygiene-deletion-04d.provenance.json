@@ -1,33 +1,37 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "packet": "BRH-04D",
   "programmeIssue": 161,
   "status": "preflight-frozen-awaiting-authorised-manual-deletion",
   "initialPlanningMainSha": "2e9b4768c049cd3b5b8db15c34b73ba5bcab7321",
-  "intermediateMainShas": ["04add58465b59ebae56ad208b22e144df00efef9","b53f5c500babe107f98d50ba2c81f1afcd4f6796"],
-  "baselineMainSha": "168634941b5ba163dbdc2471e0936486ec256229",
-  "restartReason": "Three prior leases were invalidated by concurrent main movement before deletion; all candidate heads/open PRs were refreshed after DRW-04D merged.",
+  "intermediateMainShas": [
+    "04add58465b59ebae56ad208b22e144df00efef9",
+    "b53f5c500babe107f98d50ba2c81f1afcd4f6796",
+    "168634941b5ba163dbdc2471e0936486ec256229"
+  ],
+  "baselineMainSha": "58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e",
+  "restartReason": "Four prior leases were invalidated by concurrent main movement before deletion; all candidate heads/open PRs were refreshed after HFI-02C and DRW-05A merged.",
   "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
-  "sourceBaselineCompare": {"status":"ahead","aheadBy":196,"behindBy":0},
+  "sourceBaselineCompare": {"status":"ahead","aheadBy":200,"behindBy":0},
   "candidateCount": 25,
   "candidateClass": "A",
   "candidateSetSha256": "549792fc53e179de3a3a24198c947fedaa56231495239847d88bb5b28c1aa2f5",
-  "liveHeadRecheck": "all 25 matched BRH-01A frozen heads after the 16863494 main movement",
-  "openPrLeaseAtFinalDestructiveLease": [
-    {"pr":223,"head":"brh-04d-controlled-deletion-4"},
-    {"pr":224,"head":"hfi-02c-vertical-life-course","headSha":"660e2061f1d85ffa543262ed1b7ced4d8606bb9a"}
+  "liveHeadRecheck": "all 25 matched BRH-01A frozen heads after main reached 58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e",
+  "openPrLeaseSnapshot": [
+    {"pr":223,"head":"brh-04d-controlled-deletion-4"}
   ],
   "namespaceCountIncludingMainAtPacketStart": 89,
-  "namespaceCountIncludingMainAtFinalDestructiveLease": 90,
+  "namespaceCountIncludingMainAtFinalDestructiveLease": 89,
   "protectedConcurrentRefs": [
-    {"name":"hfi-02c-vertical-life-course","headSha":"660e2061f1d85ffa543262ed1b7ced4d8606bb9a"},
-    {"name":"drw-05a-principal-section-authority","headSha":"168634941b5ba163dbdc2471e0936486ec256229"}
+    {"name":"drw-05b-principal-section-source","headShaObserved":"58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e","note":"fresh DRW ref; protection follows the ref if it advances"}
   ],
   "retiredConcurrentRefs": [
-    {"name":"drw-04b2-dressing-label-fit","reason":"PR #222 merged before final destructive lease"},
-    {"name":"drw-04d-plan-pair-proof","reason":"PR #213 merged before final destructive lease"}
+    {"name":"drw-04b2-dressing-label-fit","reason":"PR #222 merged"},
+    {"name":"drw-04d-plan-pair-proof","reason":"PR #213 merged"},
+    {"name":"hfi-02c-vertical-life-course","reason":"HFI-02C merged"},
+    {"name":"drw-05a-principal-section-authority","reason":"PR #225 merged"}
   ],
   "deletionActionAvailableToConnector": false,
   "mutationPerformed": false,
-  "nextAction": "Take a final no-movement check. If baseline main, open-PR protection and all candidate heads still hold, repository owner manually deletes exactly the 25 frozen A refs. Agent then performs full post-delete namespace proof and BRH-04D closeout."
+  "nextAction": "Take a final no-movement check. If baseline main, candidate heads and candidate open-PR exclusions still hold, repository owner manually deletes exactly the 25 frozen A refs. Agent then performs full post-delete namespace proof and BRH-04D closeout."
 }
