@@ -103,7 +103,8 @@ export const createReferenceHouseSource = (): ReferenceHouseSource => ({
     frontHallWestX: provisional('RHCF-HALL-WEST', mm(4000)),
     galleryServiceX: controlled('RHCF-GAL-X1', mm(9100)),
     upperNorthSplitY: provisional('RHCF-U-NORTH-SPLIT', mm(8600)),
-    upperDrySplitX: provisional('RHCF-U-DRY-SPLIT', mm(6400))
+    upperDrySplitX: provisional('RHCF-U-DRY-SPLIT', mm(6400)),
+    upperSouthLandingTurnDepth: provisional('RHCF-U-SOUTH-TURN-D', mm(1300))
   },
   levels: {
     groundFfl: controlled('RHCF-FFL-G', mm(0)),
@@ -240,7 +241,10 @@ export const createReferenceHouseSource = (): ReferenceHouseSource => ({
       levelId: 'FIRST',
       kind: 'circulation',
       label: 'south stair / landing',
-      rectangles: [{ x0: 'HALL_WEST', x1: 'COURT_EAST', y0: 'SHELL_SOUTH', y1: 'COURT_SOUTH' }],
+      rectangles: [
+        { x0: 'HALL_WEST', x1: 'COURT_EAST', y0: 'SHELL_SOUTH', y1: 'COURT_SOUTH' },
+        { x0: 'COURT_EAST', x1: 'GALLERY_SERVICE', y0: 'UPPER_SOUTH_TURN', y1: 'COURT_SOUTH' }
+      ],
       disposition: disposition('provisional')
     },
     {
@@ -248,7 +252,10 @@ export const createReferenceHouseSource = (): ReferenceHouseSource => ({
       levelId: 'FIRST',
       kind: 'room',
       label: 'east-front bedroom',
-      rectangles: [{ x0: 'COURT_EAST', x1: 'SHELL_EAST', y0: 'SHELL_SOUTH', y1: 'COURT_SOUTH' }],
+      rectangles: [
+        { x0: 'COURT_EAST', x1: 'SHELL_EAST', y0: 'SHELL_SOUTH', y1: 'UPPER_SOUTH_TURN' },
+        { x0: 'GALLERY_SERVICE', x1: 'SHELL_EAST', y0: 'UPPER_SOUTH_TURN', y1: 'COURT_SOUTH' }
+      ],
       disposition: disposition('frozen')
     },
     {
@@ -272,15 +279,21 @@ export const createReferenceHouseSource = (): ReferenceHouseSource => ({
       levelId: 'FIRST',
       kind: 'room',
       label: 'east-rear bedroom',
-      rectangles: [{ x0: 'COURT_EAST', x1: 'SHELL_EAST', y0: 'COURT_NORTH', y1: 'SHELL_NORTH' }],
-      disposition: disposition('frozen')
+      rectangles: [
+        { x0: 'COURT_EAST', x1: 'SHELL_EAST', y0: 'UPPER_NORTH_SPLIT', y1: 'SHELL_NORTH' },
+        { x0: 'GALLERY_SERVICE', x1: 'SHELL_EAST', y0: 'COURT_NORTH', y1: 'UPPER_NORTH_SPLIT' }
+      ],
+      disposition: disposition('provisional')
     },
     {
       id: 'U-LAND-N01',
       levelId: 'FIRST',
       kind: 'circulation',
       label: 'north cross-landing',
-      rectangles: [{ x0: 'COURT_WEST', x1: 'COURT_EAST', y0: 'COURT_NORTH', y1: 'UPPER_NORTH_SPLIT' }],
+      rectangles: [
+        { x0: 'COURT_WEST', x1: 'COURT_EAST', y0: 'COURT_NORTH', y1: 'UPPER_NORTH_SPLIT' },
+        { x0: 'COURT_EAST', x1: 'GALLERY_SERVICE', y0: 'COURT_NORTH', y1: 'UPPER_NORTH_SPLIT' }
+      ],
       disposition: disposition('provisional')
     },
     {
@@ -322,10 +335,12 @@ export const createReferenceHouseSource = (): ReferenceHouseSource => ({
     { id: 'G-COURT-EAST-NORTH-CONT-B', levelId: 'GROUND', kind: 'internal-planning', orientation: 'vertical', at: 'COURT_EAST', from: 'COURT_NORTH', to: 'SHELL_NORTH', disposition: disposition('frozen') },
     { id: 'U-HALL-WEST-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'vertical', at: 'HALL_WEST', from: 'SHELL_SOUTH', to: 'COURT_SOUTH', disposition: disposition('provisional') },
     { id: 'U-WEST-SPLIT-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'horizontal', at: 'WEST_ROOM_SPLIT', from: 'SHELL_WEST', to: 'COURT_WEST', disposition: disposition('provisional') },
-    { id: 'U-GALLERY-SERVICE-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'vertical', at: 'GALLERY_SERVICE', from: 'COURT_SOUTH', to: 'COURT_NORTH', disposition: disposition('frozen') },
-    { id: 'U-COURT-EAST-SOUTH-CONT-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'vertical', at: 'COURT_EAST', from: 'SHELL_SOUTH', to: 'COURT_SOUTH', disposition: disposition('frozen') },
+    { id: 'U-GALLERY-SERVICE-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'vertical', at: 'GALLERY_SERVICE', from: 'UPPER_SOUTH_TURN', to: 'UPPER_NORTH_SPLIT', disposition: disposition('provisional') },
+    { id: 'U-COURT-EAST-SOUTH-CONT-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'vertical', at: 'COURT_EAST', from: 'SHELL_SOUTH', to: 'UPPER_SOUTH_TURN', disposition: disposition('provisional') },
+    { id: 'U-SOUTH-TURN-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'horizontal', at: 'UPPER_SOUTH_TURN', from: 'COURT_EAST', to: 'GALLERY_SERVICE', disposition: disposition('provisional') },
     { id: 'U-COURT-WEST-NORTH-CONT-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'vertical', at: 'COURT_WEST', from: 'COURT_NORTH', to: 'SHELL_NORTH', disposition: disposition('frozen') },
-    { id: 'U-COURT-EAST-NORTH-CONT-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'vertical', at: 'COURT_EAST', from: 'COURT_NORTH', to: 'SHELL_NORTH', disposition: disposition('frozen') },
+    { id: 'U-COURT-EAST-NORTH-CONT-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'vertical', at: 'COURT_EAST', from: 'UPPER_NORTH_SPLIT', to: 'SHELL_NORTH', disposition: disposition('provisional') },
+    { id: 'U-NORTH-TURN-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'horizontal', at: 'UPPER_NORTH_SPLIT', from: 'COURT_EAST', to: 'GALLERY_SERVICE', disposition: disposition('provisional') },
     { id: 'U-NORTH-SPLIT-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'horizontal', at: 'UPPER_NORTH_SPLIT', from: 'COURT_WEST', to: 'COURT_EAST', disposition: disposition('provisional') },
     { id: 'U-DRY-SPLIT-B', levelId: 'FIRST', kind: 'internal-planning', orientation: 'vertical', at: 'UPPER_DRY_SPLIT', from: 'UPPER_NORTH_SPLIT', to: 'SHELL_NORTH', disposition: disposition('provisional') }
   ],
@@ -340,7 +355,9 @@ export const createReferenceHouseSource = (): ReferenceHouseSource => ({
     { id: 'ADJ-U-BED02-P01', levelId: 'FIRST', a: 'U-BED-02', b: 'U-BED-P01' },
     { id: 'ADJ-U-BED02-STAIR', levelId: 'FIRST', a: 'U-BED-02', b: 'U-STAIR-01' },
     { id: 'ADJ-U-STAIR-BED03', levelId: 'FIRST', a: 'U-STAIR-01', b: 'U-BED-03' },
+    { id: 'ADJ-U-STAIR-GAL', levelId: 'FIRST', a: 'U-STAIR-01', b: 'U-GAL-02' },
     { id: 'ADJ-U-GAL-BATH', levelId: 'FIRST', a: 'U-GAL-02', b: 'U-BATH-01' },
+    { id: 'ADJ-U-GAL-LAND', levelId: 'FIRST', a: 'U-GAL-02', b: 'U-LAND-N01' },
     { id: 'ADJ-U-BED04-LAND', levelId: 'FIRST', a: 'U-BED-04', b: 'U-LAND-N01' }
   ],
   openingFamilies: openingFamilies(),

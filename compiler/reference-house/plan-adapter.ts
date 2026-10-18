@@ -79,6 +79,11 @@ export const referenceHousePlanLines = (source: ReferenceHouseSource): PlanLineS
       id: 'UPPER_DRY_SPLIT',
       coordinate: source.partitions.upperDrySplitX.value,
       provisional: provisional(source.partitions.upperDrySplitX.disposition)
+    },
+    {
+      id: 'UPPER_SOUTH_TURN',
+      coordinate: mm(court.y0 - source.partitions.upperSouthLandingTurnDepth.value),
+      provisional: provisional(source.partitions.upperSouthLandingTurnDepth.disposition)
     }
   ]
 }

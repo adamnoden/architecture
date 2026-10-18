@@ -25,7 +25,7 @@ These static projections were made from the RH-C0 baseline after independent rec
 
 ## 1. Plan ↔ plan
 
-**PASS.** Ground and upper comparator plans share exactly:
+**PASS at the RH-C0.6 audit baseline.** The later DRW-04A.1 source correction adds explicit eastward turning fields to the south and north upper landings so the authored U-route has positive-width continuity. The old RH-C0 first-floor comparator remains provenance and must not be used as current geometry. Ground and upper baseline comparators otherwise share exactly:
 
 - shell `12,000 × 10,800`;
 - centred court `3,600 × 4,000` with edges `X 4,200–7,800`, `Y 3,400–7,400`;
@@ -248,7 +248,7 @@ Text-controlled service geometry closes against the architectural plan:
 | Drawing | Classification | Current use / reason |
 |---|---|---|
 | `rhc0-ground-floor-comparator.svg` | **CURRENT DIAGRAM / NON-GEOMETRIC** | RH-C1 visual comparator; dimensionally faithful projection, never source |
-| `rhc0-first-floor-comparator.svg` | **CURRENT DIAGRAM / NON-GEOMETRIC** | RH-C1 visual comparator; dimensionally faithful projection, never source |
+| `rhc0-first-floor-comparator.svg` | **HISTORICAL / PROVENANCE ONLY** | RH-C0.6 comparator superseded geometrically by DRW-04A.1 upper-circulation correction; never source |
 | `rhc0-principal-section-comparator.svg` | **CURRENT DIAGRAM / NON-GEOMETRIC** | RH-C1 visual comparator; current datums/roof family |
 | `rhc0-front-elevation-comparator.svg` | **CURRENT DIAGRAM / NON-GEOMETRIC** | current cross-view front comparator |
 | `rhc0-garden-elevation-comparator.svg` | **CURRENT DIAGRAM / NON-GEOMETRIC** | current cross-view garden comparator after host correction |

@@ -67,6 +67,28 @@ describe('RH-C1 baseline source and derivation', () => {
     assert.equal(space(result, 'G-STUDY-02').provisional, false)
   })
 
+  test('preserves positive-width south/east/north upper circulation continuity', () => {
+    const source = createReferenceHouseSource()
+    const result = compileReferenceHouse(source)
+
+    assert.equal(source.partitions.upperSouthLandingTurnDepth.value, 1300)
+    assert.equal(source.partitions.upperSouthLandingTurnDepth.authority, 'PROVISIONAL')
+    assert.deepEqual(space(result, 'U-STAIR-01').boxes, [
+      { kind: 'box2d', x: 4000, y: 0, width: 3800, height: 3400 },
+      { kind: 'box2d', x: 7800, y: 2100, width: 1300, height: 1300 }
+    ])
+    assert.deepEqual(space(result, 'U-GAL-02').boxes, [
+      { kind: 'box2d', x: 7800, y: 3400, width: 1300, height: 4000 }
+    ])
+    assert.deepEqual(space(result, 'U-LAND-N01').boxes, [
+      { kind: 'box2d', x: 4200, y: 7400, width: 3600, height: 1200 },
+      { kind: 'box2d', x: 7800, y: 7400, width: 1300, height: 1200 }
+    ])
+    assert.ok(source.requiredAdjacencies.some((item) => item.id === 'ADJ-U-STAIR-GAL'))
+    assert.ok(source.requiredAdjacencies.some((item) => item.id === 'ADJ-U-GAL-LAND'))
+    assert.equal(result.status, 'PASS')
+  })
+
   test('derives levels and stair arithmetic instead of authoring their consequences', () => {
     const result = compileReferenceHouse(createReferenceHouseSource())
 
