@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02D",
+  "programmeIssue": 161,
+  "baselineMainSha": "3f8103c638249e2dbbf257edefd56e111953321f",
+  "scopeGroup": "g01-completion",
+  "branches": [
+    {
+      "name": "g01-completion-programme",
+      "headSha": "0efb277130c59b7042726c3121f0529c011c2eb1",
+      "mechanicalEvidence": {
+        "aheadBy": 2,
+        "behindBy": 653,
+        "branchOnlyCommits": 2,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The branch introduced the bounded D8→D13 completion programme. The programme document survives byte-identically on current main; the grammar README has since evolved through the completed programme. The branch is therefore an earlier programme-control stage, not stranded authority.",
+      "preservedBlobs": {
+        "docs/grammar/g01-completion-programme.md": "f24182bad52bae43b014f5e5dc9e3c8a8b6a085b"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "g01-d8-falsification",
+      "headSha": "89aab07fca5debbf77c35f0b6d713683a645163f",
+      "mechanicalEvidence": {
+        "aheadBy": 5,
+        "behindBy": 652,
+        "branchOnlyCommits": 5,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The D8 controlled-falsification result is preserved byte-identically on current main, together with its evidence figures. Later G01 stages build on the recorded PASS; the branch itself is a historical stage head.",
+      "preservedBlobs": {
+        "docs/grammar/g01-d8-falsification-result.md": "f38d7ceff8017be72e400c0751dddfc67b260e2d"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "g01-d9-holdout",
+      "headSha": "c1cc56d17cd616a648e78d0a1851c39c05faa7ba",
+      "mechanicalEvidence": {
+        "aheadBy": 2,
+        "behindBy": 651,
+        "branchOnlyCommits": 2,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The D9 held-out validation result is byte-identical on current main. Its PASS was consumed by later normative reduction and closeout work; no branch-only semantic residue remains.",
+      "preservedBlobs": {
+        "docs/grammar/g01-d9-held-out-validation.md": "f496164a8e8cbe6fccaefc21ad162665b66db8c8"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "g01-d10-normative",
+      "headSha": "8b59b09bcf3a47b190c9d6f0e0a849b5f5f997ad",
+      "mechanicalEvidence": {
+        "aheadBy": 2,
+        "behindBy": 650,
+        "branchOnlyCommits": 2,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The D10 descriptive-to-normative reduction is preserved byte-identically on current main. Its temporary D11 block led to the bounded D10-S specificity loop now also preserved on main; the stage branch contains no unresolved value.",
+      "preservedBlobs": {
+        "docs/grammar/g01-d10-normative-reduction.md": "0d99600f58174d0b53953f6a5f0b76e7c362b6b3"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "g01-d10s-specificity",
+      "headSha": "7cca300e719497230e8b9778037cd3379ef1bae4",
+      "mechanicalEvidence": {
+        "aheadBy": 4,
+        "behindBy": 649,
+        "branchOnlyCommits": 4,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The D10-S specificity recovery programme, frozen candidate register and validation result all survive byte-identically on current main. Their successful result was subsequently incorporated into G01 v0.1; this branch is preserved stage history, not missing content.",
+      "preservedBlobs": {
+        "docs/grammar/g01-d10s-positive-specificity-programme.md": "06d77dd637a7f2c9aea3f9b06ebfb4de32fa5136",
+        "docs/grammar/g01-d10s-positive-specificity-register-v01.md": "8d51a4e98a6bb5f89114648b40176b5baba1478c",
+        "docs/grammar/g01-d10s-validation-result.md": "267075cb74ea215979f2f7249b61b45e23ba717c"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "g01-d11-v01-freeze",
+      "headSha": "8adc19b0daa40a3615f9114453250c4ab2593fe9",
+      "mechanicalEvidence": {
+        "aheadBy": 2,
+        "behindBy": 648,
+        "branchOnlyCommits": 2,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The branch froze G01 v0.1 as the D11 release. Current main retains that same canonical file and specification, but has deliberately evolved its reader/current-authority presentation from workflow-state wording ('FROZEN D11 RELEASE') to controlled-specification wording. D12/D13 subsequently validate and close the same baseline. Restoring the stage version would reintroduce workflow history, not recover design authority.",
+      "evolvedAuthority": {
+        "docs/grammar/g01-v0.1.md": {
+          "branchBlob": "894290f555a8aab699d65a61b1469f91b2e0b435",
+          "currentMainBlob": "e56d40fab3e77452516adeac1e75c83141757ab3"
+        }
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "g01-d12-reference-house",
+      "headSha": "172957fb8fa568ba682908e3cf78a29cbc80460d",
+      "mechanicalEvidence": {
+        "aheadBy": 3,
+        "behindBy": 647,
+        "branchOnlyCommits": 3,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The D12 Reference House conformance result remains current authority in the same canonical file, with the PASS retained and the presentation later distilled from workflow-stage language into reader/current-authority language. The Reference House README has evolved around it; no semantic residue requires salvage.",
+      "evolvedAuthority": {
+        "docs/reference-house/g01-v0.1-conformance-d12.md": {
+          "branchBlob": "4d0d21f561c61d69ffe74ef894b8ca9cb490a326",
+          "currentMainBlob": "2a63c8fae3c12b03858e739c85d3053130b9199a"
+        }
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "g01-d13-closeout",
+      "headSha": "6969c24301619ddeb92f3f18ef72fad69b5ccfc9",
+      "mechanicalEvidence": {
+        "aheadBy": 4,
+        "behindBy": 646,
+        "branchOnlyCommits": 4,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The D13 adversarial closeout itself survives byte-identically on current main and records the retained M4 G01 v0.1 baseline. The branch's STATUS/README/maturity edits are historical closeout state subsequently superseded by later programme state.",
+      "preservedBlobs": {
+        "docs/grammar/g01-d13-adversarial-closeout.md": "ad69c7ee0ff57d8a47833d1f39923009920703df"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    }
+  ],
+  "summary": {
+    "reviewed": 8,
+    "C": 8,
+    "D": 0,
+    "X": 0,
+    "salvageRequired": 0
+  },
+  "nextPacket": {
+    "packet": "BRH-02E",
+    "group": "reference-house-executable",
+    "branches": [
+      "reference-house-phase5",
+      "rh-c1",
+      "rh-c2-structural-view",
+      "rh-c3-service-view",
+      "rh-c4-boundary-view",
+      "rh-c5-target-calculations"
+    ],
+    "reason": "Next coherent unresolved lineage in the BRH-01C register; six branches, within the BRH-02 hard cap."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
