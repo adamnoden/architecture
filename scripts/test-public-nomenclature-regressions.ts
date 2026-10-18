@@ -284,6 +284,31 @@ function runRenderedRegressions(): void {
   )
 
   withTextMutations(
+    [
+      {
+        path: '.vitepress/dist/index.html',
+        mutate: (original) => {
+          if (!original.includes('</head>')) throw new Error('Rendered index has no closing head tag.')
+          return original.replace(
+            '</head>',
+            '<link rel="modulepreload" href="/architecture/assets/chunk-M1.js">\n</head>'
+          )
+        }
+      }
+    ],
+    () => expectSuccess(
+      'generated asset URL maturity token is ignored',
+      'npx',
+      ['tsx', 'scripts/validate-public-nomenclature.ts', '--rendered']
+    )
+  )
+
+  withTextMutations(
+    [{ path: '.vitepress/dist/index.html', mutate: appendProbe('M1') }],
+    () => renderedValidatorFailure('visible maturity token in built site HTML', 'maturity.level')
+  )
+
+  withTextMutations(
     [{ path: '.vitepress/dist/index.html', mutate: appendProbe('HSA-P-001') }],
     () => renderedValidatorFailure('legacy machine identity in built site HTML', 'legacy.pattern-hsa')
   )
