@@ -12,6 +12,8 @@ export interface ProgrammeControl {
  * records whose current/closed state is part of project navigation and authority.
  */
 export const programmeControls = [
+  { path: 'docs/development/human-factors-low-friction-inhabitation-programme.md', lifecycle: 'active' },
+  { path: 'docs/development/human-factors-low-friction-inhabitation-execution-plan.md', lifecycle: 'active' },
   { path: 'docs/development/architectural-specificity-boundary.md', lifecycle: 'active' },
   { path: 'docs/development/reference-house-design-programme.md', lifecycle: 'active' },
   { path: 'docs/development/tectonic-prototype-programme.md', lifecycle: 'active' },
