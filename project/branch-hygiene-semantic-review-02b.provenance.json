@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02B",
+  "programmeIssue": 161,
+  "baselineMainSha": "dfba4237107eda8c7a6d79e53607ba25e40a4f49",
+  "sourceBranchHeads": {
+    "project-integrity-refactor": "5f3ddadab402daaf9f01a3ea99531fc65734302d",
+    "public-url-phase-1": "45fcb14128ae055a8b0724cbfbbc31bbc8758ceb"
+  },
+  "reviewJsonSha256": "0877fa63979c572f51ab518f37bd19fc975c9243d64d9855cb00431bcc79358b",
+  "evidence": {
+    "projectIntegrityCompare": {
+      "status": "diverged",
+      "aheadBy": 23,
+      "behindBy": 929
+    },
+    "publicUrlCompare": {
+      "status": "diverged",
+      "aheadBy": 4,
+      "behindBy": 924
+    },
+    "strongEquivalenceSignals": [
+      "publication/scope-report.ts has the same blob SHA 0055425f9b82fe79dbde3fb3c2b6ab839e4f156c on project-integrity-refactor and current main",
+      "current project identity is an evolved successor of the branch registry rather than a parallel implementation",
+      "current site-routes and public-route validator retain the phase-1 route contracts while adding explicit public-surface handling"
+    ]
+  },
+  "finalDispositions": {
+    "project-integrity-refactor": "C",
+    "public-url-phase-1": "C"
+  },
+  "validationAndMergeEvidence": "recorded in the BRH-02B PR and issue #161 closeout after final-head validation and lease checks",
+  "semanticReviewComplete": true,
+  "salvagePerformed": false,
+  "branchDeletionPerformed": false,
+  "deletionAuthorised": false,
+  "nextPacket": "BRH-02C"
+}
