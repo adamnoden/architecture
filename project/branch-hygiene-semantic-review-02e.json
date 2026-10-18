@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02E",
+  "programmeIssue": 161,
+  "baselineMainSha": "75780890b2cfffa8489181ba23aaac96c5fe8d1a",
+  "scopeGroup": "reference-house-executable",
+  "branches": [
+    {
+      "name": "reference-house-phase5",
+      "headSha": "456edac937e0de604f3983a6344902b8862fa761",
+      "mechanicalEvidence": {
+        "aheadBy": 12,
+        "behindBy": 1332,
+        "branchOnlyCommits": 12,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The Phase-5 whole-house coordination work survives as evolved current authority: the same whole-house fixture and service-topology run remain at canonical paths, while Phase-5 workflow wording has been generalized. Its Accessible Vertical Service Zone candidate is explicitly retained as a historical pre-admission record and points to canonical PAT-014, proving the candidate was admitted rather than stranded.",
+      "currentAuthority": [
+        "docs/reference-house/whole-house-coordination-fixture.md",
+        "docs/reference-house/whole-house-coordination-fixture.svg",
+        "docs/reference-house/service-topology-run-01.md",
+        "docs/patterns/candidates/accessible-vertical-service-zone.md",
+        "docs/patterns/accessible-vertical-service-zone.md"
+      ],
+      "evolvedAuthority": {
+        "docs/reference-house/service-topology-run-01.md": {
+          "branchBlob": "9625600aa5a89838581569bc3a6cd4ee903fecc1",
+          "currentMainBlob": "56280892a544df071e668dcd4e6fbfe426ba0170"
+        },
+        "docs/reference-house/whole-house-coordination-fixture.md": {
+          "branchBlob": "a30bf49b0c275a6d9a6066788f05a616c383524a",
+          "currentMainBlob": "8bd0d5a0560e8a04023fe38939a8cf3a177e4cbf"
+        }
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "rh-c1",
+      "headSha": "330e7bc0d0eda6a0ec33b51afed09c733c2dd4bd",
+      "mechanicalEvidence": {
+        "aheadBy": 8,
+        "behindBy": 817,
+        "branchOnlyCommits": 8,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "RH-C1 established the executable Reference House core and drawing parity. Current main retains exact fixture, model, drawing implementation and drawing tests, while compile/derive/generate have been hardened and extended. The branch is an earlier executable stage, not a lost implementation.",
+      "preservedBlobs": {
+        "compiler/reference-house/drawings.test.ts": "14f1283fef1879d2e03ee1947316d5917ccd6f9f",
+        "compiler/reference-house/drawings.ts": "b49870fbf7fb9e35629935e0d15d20cef3838bde",
+        "compiler/reference-house/fixture.ts": "793923585266efcbab4d462aac172cdcc2e2738b",
+        "compiler/reference-house/model.ts": "3e7295129c09702ae5e909f56ae20515f301851b"
+      },
+      "evolvedAuthority": {
+        "compiler/reference-house/compile.ts": {
+          "branchBlob": "bf199656b720f4b4185ffbe013d83af3845769ff",
+          "currentMainBlob": "8bc30d6f8f13fa733b29ab666dc82cb39c6a5d8a"
+        },
+        "compiler/reference-house/derive.ts": {
+          "branchBlob": "b88522c8a9b89ea060ca8663de20c9cb6f383c43",
+          "currentMainBlob": "4cbafd4706470caf602d69d231834a584182faf0"
+        },
+        "compiler/reference-house/generate.ts": {
+          "branchBlob": "79e38d98c750508aaba259fd4de100dd058e444b",
+          "currentMainBlob": "528d914dcb32c309ee38433426de94bf97d018c3"
+        }
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "rh-c2-structural-view",
+      "headSha": "9be3155dd8ff34dd21ae5ea80c7ec8f94e8e6d20",
+      "mechanicalEvidence": {
+        "aheadBy": 23,
+        "behindBy": 814,
+        "branchOnlyCommits": 23,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "RH-C2's structural fixture and acceptance contract survive directly on main, and the structure-slice remains live. Exact drawing-test, fixture and full RH-C2 test blobs are retained; structure-slice drawing is exact while compile/derive/model have evolved. A proof-boundary module was subsequently added, showing hardening rather than loss.",
+      "preservedBlobs": {
+        "compiler/rhc2/drawing.test.ts": "5055689f8c90ce5a628c1ef0375e99efe730891b",
+        "compiler/rhc2/fixture.ts": "d0d7e3d451a6e2a324c30690cd1a654773776d80",
+        "compiler/rhc2/rhc2.test.ts": "071270e0efa55f33aa2b8b6d9565631044428eb2",
+        "compiler/structure-slice/drawing.ts": "8db98be4ddb48c4d326dce086e61044f1b8676a6"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "rh-c3-service-view",
+      "headSha": "3226aa325190aa94803c18535d49b5951afe5458",
+      "mechanicalEvidence": {
+        "aheadBy": 29,
+        "behindBy": 813,
+        "branchOnlyCommits": 29,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "RH-C3's service-view wrapper and service-slice survive on current main. README, authority, compile, drawing test, fixture, hardening test, proof boundary and full RH-C3 acceptance test are retained byte-identically. Generate/hardening evolved and the old index barrel was deliberately removed during later compiler distillation.",
+      "preservedBlobs": {
+        "compiler/rhc3/README.md": "8eac3d2f6541082db7000f427b91175332a3f666",
+        "compiler/rhc3/authority.ts": "5bfb66491ea3162056d8874eed0cea591e4cb6be",
+        "compiler/rhc3/compile.ts": "26c66c124fb7c68b2a401c34910ac3fcdc58bf18",
+        "compiler/rhc3/drawing.test.ts": "5ce9d5a8bddca1c968f69cc7e73ff9b90d39c45a",
+        "compiler/rhc3/fixture.ts": "5df017ef4ce21a61ce42c6e8f38571de51a6980e",
+        "compiler/rhc3/hardening.test.ts": "ee7e35205ddd10a75914e1a3f0f2f5b0cea7041f",
+        "compiler/rhc3/proof-boundary.ts": "a79418478e532576e35d790b577661b33f8950b6",
+        "compiler/rhc3/rhc3.test.ts": "a184ba9de14a0eaf3e1ac30bf4d446117a8c7642"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "rh-c4-boundary-view",
+      "headSha": "b3740c8196ad2a7ba969e27b89f304841fc94f8f",
+      "mechanicalEvidence": {
+        "aheadBy": 36,
+        "behindBy": 812,
+        "branchOnlyCommits": 36,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "RH-C4's boundary wrapper and boundary-slice survive on current main. README, drawing test, fixture, occurrence test, proof boundary and full RH-C4 test remain byte-identical; compile/generate/hardening evolved and the obsolete index barrel was removed. This is continued hardening of the same capability.",
+      "preservedBlobs": {
+        "compiler/rhc4/README.md": "606da7c2f977a4330bf8360730018eb488b54d0d",
+        "compiler/rhc4/drawing.test.ts": "967e1adeca740c959a4b0ead67722faa1151a705",
+        "compiler/rhc4/fixture.ts": "173ec63bce8c2f6980eb9f915c25b931689795c2",
+        "compiler/rhc4/occurrence.test.ts": "97ddfd64a40967bccf93dbcdcbc0d79a7a6c474d",
+        "compiler/rhc4/proof-boundary.ts": "5243d8e0c4a8bde22ba4b62fa5ab3c121953c5b3",
+        "compiler/rhc4/rhc4.test.ts": "1e7d62cdf787d565b7fb6abfbb2c8f7a165642fd"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "rh-c5-target-calculations",
+      "headSha": "bc219a9060316f023e90a06709999254bda6766a",
+      "mechanicalEvidence": {
+        "aheadBy": 21,
+        "behindBy": 811,
+        "branchOnlyCommits": 21,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "RH-C5's target-calculation wrapper and calculation-slice survive on current main. The README and full RH-C5 acceptance test remain byte-identical; compile and calculation method evolved, and an explicit proof-boundary module was added during hardening. The calculation capability was strengthened rather than lost.",
+      "preservedBlobs": {
+        "compiler/rhc5/README.md": "5d3532d3e07e54936ca7ad6f9b8a7fd0865c0862",
+        "compiler/rhc5/rhc5.test.ts": "e7494f28ba9c62aae511e3d1d75d105fccc80b93"
+      },
+      "evolvedAuthority": {
+        "compiler/rhc5/compile.ts": {
+          "branchBlob": "89ed945288e6c4acfc355ddd6b52092efcd4d357",
+          "currentMainBlob": "b1e83617e19271aa4b54c4a0e5922a5481be4ddc"
+        },
+        "compiler/rhc5/method.ts": {
+          "branchBlob": "231e70aa3e8ea76584b488b213a365f6d3cf5a6d",
+          "currentMainBlob": "7500f292e9b24b0dc89227c1a815514174b8f968"
+        }
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    }
+  ],
+  "summary": {
+    "reviewed": 6,
+    "C": 6,
+    "D": 0,
+    "X": 0,
+    "salvageRequired": 0
+  },
+  "nextPacket": {
+    "packet": "BRH-02F",
+    "group": "pattern-language",
+    "branches": [
+      "pattern-language-overhaul",
+      "pattern-language-phase6-audit",
+      "pattern-language-phase7",
+      "pattern-language-phase7-migration",
+      "pattern-language-phase8-crosswalk"
+    ],
+    "reason": "Next coherent unresolved lineage in the BRH-01C register; five branches, within the BRH-02 hard cap."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
