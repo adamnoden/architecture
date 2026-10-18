@@ -1,0 +1,73 @@
+name: BRH-01C live DRW refresh
+
+on:
+  push:
+    branches:
+      - brh-01c-unresolved-register
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout complete Git history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Refresh remote refs
+        run: git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune
+      - name: Rebuild unresolved register against live DRW state
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ACTIVE_BRANCH: brh-01c-unresolved-register
+        run: |
+          node <<'NODE'
+          const fs=require('fs'), cp=require('child_process'), crypto=require('crypto');
+          const sh=(cmd,opts={})=>cp.execSync(cmd,{encoding:'utf8',stdio:['ignore','pipe','pipe'],...opts}).trim();
+          const trySh=cmd=>{try{return sh(cmd)}catch{return ''}};
+          const prior=JSON.parse(fs.readFileSync('project/branch-hygiene-classification.json','utf8'));
+          const baselineMainSha=sh('git rev-parse origin/main');
+          const generatedAt=new Date().toISOString();
+          const branches=sh("git for-each-ref --format='%(refname:short)\t%(objectname)' refs/remotes/origin").split('\n').filter(Boolean).map(line=>{const[ref,headSha]=line.split('\t');return{ref,name:ref.replace(/^origin\//,''),headSha}}).filter(x=>x.name!=='HEAD'&&x.name!=='main').sort((a,b)=>a.name.localeCompare(b.name));
+          const enumerationText=branches.map(x=>`${x.name}\t${x.headSha}`).join('\n')+'\n';
+          const enumerationSha256=crypto.createHash('sha256').update(enumerationText).digest('hex');
+          const priorA=new Map((prior.aCandidates||[]).map(x=>[x.name,x]));
+          const priorB=new Map((prior.bCandidates||[]).map(x=>[x.name,x]));
+          const priorEnum=new Map(((prior.enumeration||{}).branches||[]).map(x=>[x.name,x]));
+          const openPrs=JSON.parse(sh(`gh api 'repos/${process.env.GITHUB_REPOSITORY}/pulls?state=open&per_page=100'`));
+          const openByBranch=new Map(openPrs.map(pr=>[pr.head.ref,{number:pr.number,draft:pr.draft,headSha:pr.head.sha,url:pr.html_url}]));
+          const currentByName=new Map(branches.map(x=>[x.name,x]));
+          const missingPriorFinal=[];
+          for(const[name,row]of[...priorA,...priorB])if(!currentByName.has(name))missingPriorFinal.push({name,priorHeadSha:row.headSha,priorClass:priorA.has(name)?'A':'B'});
+          if(missingPriorFinal.length){console.error(JSON.stringify(missingPriorFinal,null,2));process.exit(2)}
+          const validA=[],validB=[],invalidatedPriorFinal=[],unresolved=[];
+          function groupFor(name){if(/^brh-/.test(name))return'branch-hygiene';if(/^drw-/.test(name))return'architectural-drawing';if(/^(ch-|ch00-|compiler-|cf-|coa-)/.test(name))return'compiler-computational';if(/^g01-/.test(name))return'g01-completion';if(/^(rh-|reference-house)/.test(name))return'reference-house';if(/^(prototype-|workmanship-robustness)/.test(name))return'prototype-research';if(/^(pattern-language|pr00|pub-|publication-|editorial-|fix-publication|record-post-freeze)/.test(name))return'publication-editorial';if(/^(public-url|project-integrity)/.test(name))return'infrastructure-tooling';return'other'}
+          for(const branch of branches){const{name,headSha}=branch,a=priorA.get(name),b=priorB.get(name);if(a&&a.headSha===headSha){validA.push({name,headSha});continue}if(b&&b.headSha===headSha){validB.push({name,headSha});continue}if(a||b)invalidatedPriorFinal.push({name,priorHeadSha:(a||b).headSha,currentHeadSha:headSha,priorClass:a?'A':'B'});const priorRow=priorEnum.get(name),isNewSincePrior=!priorRow,headChangedSincePrior=!!priorRow&&priorRow.headSha!==headSha,openPr=openByBranch.get(name)||null,ref=`origin/${name}`;const headIsAncestorOfMain=cp.spawnSync('git',['merge-base','--is-ancestor',ref,'origin/main']).status===0;const branchOnlyCommitCount=Number(trySh(`git rev-list --count origin/main..${JSON.stringify(ref)}`)||0);const nonMergeBranchOnlyCommitCount=Number(trySh(`git rev-list --count --no-merges origin/main..${JSON.stringify(ref)}`)||0);const cherryLines=trySh(`git cherry origin/main ${JSON.stringify(ref)}`).split('\n').filter(Boolean),uniquePatchCount=cherryLines.filter(x=>x.startsWith('+ ')).length,equivalentPatchCount=cherryLines.filter(x=>x.startsWith('- ')).length;const reasons=[];if(name===process.env.ACTIVE_BRANCH)reasons.push('active-BRH-01C-packet');if(openPr)reasons.push('open-pr');if(isNewSincePrior)reasons.push('post-BRH-01B-ref');if(headChangedSincePrior)reasons.push('head-changed-since-BRH-01B');if(a||b)reasons.push('prior-final-head-invalidated');if(headIsAncestorOfMain&&branchOnlyCommitCount===0)reasons.push('mechanically-integrated-outside-final-A-packet');if(uniquePatchCount>0)reasons.push('unique-patch-signal');if(equivalentPatchCount>0)reasons.push('equivalent-patch-signal');if(!headIsAncestorOfMain&&branchOnlyCommitCount>0&&uniquePatchCount===0&&equivalentPatchCount===0)reasons.push('nonmerge-or-patch-evidence-inconclusive');const provisionalReviewClass=(name===process.env.ACTIVE_BRANCH||openPr||isNewSincePrior||headChangedSincePrior||a||b||(headIsAncestorOfMain&&branchOnlyCommitCount===0))?'X':'C/D';unresolved.push({name,headSha,group:groupFor(name),provisionalReviewClass,reasons,openPr,mechanical:{headIsAncestorOfMain,branchOnlyCommitCount,nonMergeBranchOnlyCommitCount,uniquePatchCount,equivalentPatchCount}})}
+          if(validA.length+validB.length+unresolved.length!==branches.length)throw new Error('Coverage arithmetic failed');
+          const groups={};for(const row of unresolved)(groups[row.group]||=[]).push(row);for(const rows of Object.values(groups))rows.sort((a,b)=>a.name.localeCompare(b.name));
+          const register={schemaVersion:4,packet:'BRH-01C',programmeIssue:161,generatedAt,repository:process.env.GITHUB_REPOSITORY,baselineMainSha,restartReason:'drw-03a advanced and PR #177 opened after the prior refresh; full register recomputed with live DRW head/PR association.',priorPacket:{packet:'BRH-01B',sourceFile:'project/branch-hygiene-classification.json'},enumeration:{branchCount:branches.length,sha256:enumerationSha256,branches},openPrs:openPrs.map(pr=>({number:pr.number,headRefName:pr.head.ref,headSha:pr.head.sha,draft:pr.draft,url:pr.html_url})),coverage:{finalA:validA.length,finalB:validB.length,unresolved:unresolved.length,total:branches.length,missingPriorFinal:missingPriorFinal.length,invalidatedPriorFinal:invalidatedPriorFinal.length},finalA:validA,finalB:validB,invalidatedPriorFinal,unresolved,groups:Object.fromEntries(Object.entries(groups).map(([k,v])=>[k,v.map(x=>x.name)])),rules:{finalAorBRequiresExactPriorHead:true,provisionalX:'active/open/new/moved/prior-final-invalidated/or mechanically integrated outside its final-classification packet',provisionalCD:'historical unresolved content with no live/recent signal; BRH-02 must decide C versus D versus correction',semanticDecisionMade:false,authorisesDeletion:false}};
+          const jsonText=JSON.stringify(register,null,2)+'\n',jsonSha256=crypto.createHash('sha256').update(jsonText).digest('hex');fs.writeFileSync('project/branch-hygiene-unresolved-register.json',jsonText);
+          const lines=['# BRH-01C — unresolved candidate register','','Mechanical coverage freeze only. This packet does not decide semantic supersession/value, perform salvage, or authorise deletion.','','## Baseline','',`- current main: \`${baselineMainSha}\``,`- current non-main branches: **${branches.length}**`,`- exact prior A heads carried: **${validA.length}**`,`- exact prior B heads carried: **${validB.length}**`,`- unresolved register: **${unresolved.length}**`,`- provisional X: **${unresolved.filter(x=>x.provisionalReviewClass==='X').length}**`,`- provisional C/D: **${unresolved.filter(x=>x.provisionalReviewClass==='C/D').length}**`,`- open PRs at proof time: **${openPrs.length}**`,`- enumeration SHA-256: \`${enumerationSha256}\``,`- register JSON SHA-256: \`${jsonSha256}\``,`- restart: \`drw-03a\` advanced and PR #177 opened after the prior refresh; the full register was recomputed with its live head/PR association.`,'','## Unresolved review groups',''];
+          for(const group of Object.keys(groups).sort()){const rows=groups[group];lines.push(`### ${group} (${rows.length})`,'','| Branch | Provisional | Ancestor | Branch-only | Unique | Equivalent | Reasons |','| --- | --- | ---: | ---: | ---: | ---: | --- |');for(const x of rows)lines.push(`| \`${x.name}\` | ${x.provisionalReviewClass} | ${x.mechanical.headIsAncestorOfMain?'yes':'no'} | ${x.mechanical.branchOnlyCommitCount} | ${x.mechanical.uniquePatchCount} | ${x.mechanical.equivalentPatchCount} | ${x.reasons.join(', ')} |`);lines.push('')}
+          lines.push('## BRH-02 boundary','','- Every current non-main branch is now either exact-head final A, exact-head final B, or present once in this unresolved register.','- `C/D` means only “requires semantic review”; it is not a C or D classification.','- `X` means retain/protect until later reconciliation; it is not deletion-eligible.','- BRH-02 must review at most 10 branches per packet and must not salvage or delete.','- No branch deletion, rewrite, salvage, semantic C/D decision, or repository-setting mutation is authorised here.','');fs.writeFileSync('project/branch-hygiene-unresolved-register.md',lines.join('\n'));
+          fs.writeFileSync('/tmp/brh01c-live-summary.json',JSON.stringify({baselineMainSha,branchCount:branches.length,finalA:validA.length,finalB:validB.length,unresolved:unresolved.length,provisionalX:unresolved.filter(x=>x.provisionalReviewClass==='X').length,provisionalCD:unresolved.filter(x=>x.provisionalReviewClass==='C/D').length,openPrCount:openPrs.length,enumerationSha256,jsonSha256,groups:Object.fromEntries(Object.entries(groups).map(([k,v])=>[k,v.length]))},null,2));
+          NODE
+      - name: Upload live BRH-01C proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: brh-01c-live-drw-proof
+          path: |
+            project/branch-hygiene-unresolved-register.json
+            project/branch-hygiene-unresolved-register.md
+            /tmp/brh01c-live-summary.json
+      - name: Commit live register and remove temporary workflow
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/brh-01c-live-refresh.yml
+          git add project/branch-hygiene-unresolved-register.json project/branch-hygiene-unresolved-register.md
+          git commit -m 'BRH-01C: refresh live DRW-03A register'
+          git push origin HEAD:brh-01c-unresolved-register
