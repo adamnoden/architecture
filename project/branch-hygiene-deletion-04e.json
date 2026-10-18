@@ -1,21 +1,20 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "packet": "BRH-04E",
   "programmeIssue": 161,
   "status": "preflight-frozen-awaiting-authorised-manual-deletion",
   "packetBranch": "brh-04e-controlled-deletion-5",
   "execution": {
     "initialDiscoveryMainSha": "439eb71841dae16ad10cb675d5b94f0430a146ca",
-    "intermediateMainSha": "9379034a41b618191698e9842659c90ff69514b7",
-    "baselineMainSha": "d7a6e556e59c27512d73fdd2c0028924c5aad5e7",
-    "restartReason": "HFI-03A and then DRW-05B moved main before destructive authorisation. Each stale lease was discarded; no deletion occurred. DRW-05B merged with 9379034a as first parent and its active branch retired before this recomputation.",
+    "intermediateMainShas": ["9379034a41b618191698e9842659c90ff69514b7","d7a6e556e59c27512d73fdd2c0028924c5aad5e7"],
+    "baselineMainSha": "be0b328661e5fde92681c79082a8efec6775cd8a",
+    "restartReason": "HFI-03A and DRW-05B moved main before destructive authorisation. A later two-commit direct-main noop/add-and-remove sequence moved d7a6e556 to be0b3286; compare proves ahead 2 / behind 0 with zero net changed files. Every stale lease was discarded and no deletion occurred.",
     "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
-    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":225,"behindBy":0},
-    "branchCountAtRecomputedCheckpointIncludingMainAndPacketBranch": 63,
+    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":227,"behindBy":0},
+    "branchCountAtRecomputedCheckpointIncludingMainAndPacketBranch": 64,
     "openPrCountAtRecomputedCheckpoint": 1,
-    "openPrHeadsAtRecomputedCheckpoint": [
-      {"pr":229,"branch":"brh-04e-controlled-deletion-5"}
-    ],
+    "openPrHeadsAtRecomputedCheckpoint": [{"pr":229,"branch":"brh-04e-controlled-deletion-5"}],
+    "concurrentProtectedRefs": [{"name":"drw-05c-principal-section-renderer","reason":"fresh active DRW ref created after prior checkpoint; X/protected"}],
     "hardDeletionCap": 25,
     "candidateCount": 16,
     "candidateClassCounts": {"A":15,"C":1,"B":0,"D":0,"X":0},
@@ -24,8 +23,8 @@
   "candidateSetSha256": "2807c62f90e4bfb15cb422e0ae9403ce0669da2a363ad45ee370ee53ec8e9539",
   "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
   "candidateEvidence": {
-    "A": "The original A-tail candidates retain their frozen heads and are exact ancestors of current main; BRH-02H separately reconciled brh-01a-obvious-integrated, brh-01b-patch-equivalent, drw-02e and drw-03a to A. brh-02g-publication-editorial-review was retained for BRH-04 re-proof and is now itself an exact ancestor of current main at its unchanged head.",
-    "C": "brh-03-salvage-necessity-proof is a superseded stale evidence draft. Its two branch-only commits add only project/branch-hygiene-salvage-closeout.json and .md. The later merged BRH-03A proof reaches the same D=0 / vacuous-complete result, explicitly records this branch and PR #201 as superseded, restarts from later main, and is the authoritative record. No unique architectural, computational or unresolved salvage work remains on the stale branch."
+    "A": "The original A-tail candidates retain their frozen heads and are exact ancestors of the prior main baseline; current main is a strict zero-net-diff descendant. BRH-02H separately reconciled brh-01a-obvious-integrated, brh-01b-patch-equivalent, drw-02e and drw-03a to A. brh-02g-publication-editorial-review was retained for BRH-04 re-proof and is itself an exact ancestor of main.",
+    "C": "brh-03-salvage-necessity-proof is a superseded stale evidence draft. Its two branch-only commits add only project/branch-hygiene-salvage-closeout.json and .md. The later merged BRH-03A proof reaches the same D=0 / vacuous-complete result, explicitly records this branch and PR #201 as superseded, restarts from later main, and is authoritative. No unique architectural, computational or unresolved salvage work remains on the stale branch."
   },
   "candidates": [
     {"name":"brh-01a-obvious-integrated","expectedHeadSha":"bbaf9b72df7758b4ff4d97d89ee6a798789b2c41","class":"A"},
@@ -47,17 +46,12 @@
   ],
   "specialReproof": {
     "brh-02g-publication-editorial-review": {"result":"A","reason":"unchanged head is an exact ancestor of execution main; no branch-only history remains"},
-    "brh-03-salvage-necessity-proof": {
-      "result":"C",
-      "branchOnlyCommitCount":2,
-      "branchOnlyPaths":["project/branch-hygiene-salvage-closeout.json","project/branch-hygiene-salvage-closeout.md"],
-      "authoritativeSuccessorPaths":["project/branch-hygiene-salvage-proof.json","project/branch-hygiene-salvage-proof.md","project/branch-hygiene-salvage-proof.provenance.json"],
-      "reason":"the later merged proof explicitly names the stale draft as superseded and preserves/refines its substantive D=0 conclusion"
-    }
+    "brh-03-salvage-necessity-proof": {"result":"C","branchOnlyCommitCount":2,"branchOnlyPaths":["project/branch-hygiene-salvage-closeout.json","project/branch-hygiene-salvage-closeout.md"],"authoritativeSuccessorPaths":["project/branch-hygiene-salvage-proof.json","project/branch-hygiene-salvage-proof.md","project/branch-hygiene-salvage-proof.provenance.json"],"reason":"the later merged proof explicitly names the stale draft as superseded and preserves/refines its substantive D=0 conclusion"}
   },
   "explicitlyProtected": [
     {"name":"main","reason":"never a deletion candidate"},
     {"name":"brh-04e-controlled-deletion-5","reason":"current packet / open PR #229"},
+    {"name":"drw-05c-principal-section-renderer","reason":"fresh active DRW ref; X/protected"},
     {"name":"any newly created DRW/HFI ref","reason":"post-checkpoint active work remains X until separately proven"},
     {"name":"ch00-compiler-hardening-plan","reason":"class B; excluded"},
     {"name":"external-maintenance-geography","reason":"class B; excluded"},
@@ -66,13 +60,7 @@
     {"name":"pub-san-back-matter","reason":"class B; excluded"},
     {"name":"all surviving semantic-review C refs","reason":"deferred to subsequent bounded C deletion packets; this packet admits only the separately re-proven stale BRH-03 draft"}
   ],
-  "deletionPreconditions": {
-    "executionMainMustStillEqualBaselineImmediatelyBeforeAuthorisation": true,
-    "allCandidatesMustStillExistAtExpectedHeadImmediatelyBeforeAuthorisation": true,
-    "noCandidateMayHaveOpenPrImmediatelyBeforeAuthorisation": true,
-    "candidateCountMustNotExceed25": true,
-    "postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover": true
-  },
+  "deletionPreconditions": {"executionMainMustStillEqualBaselineImmediatelyBeforeAuthorisation":true,"allCandidatesMustStillExistAtExpectedHeadImmediatelyBeforeAuthorisation":true,"noCandidateMayHaveOpenPrImmediatelyBeforeAuthorisation":true,"candidateCountMustNotExceed25":true,"postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover":true},
   "mutation": {"branchDeletionPerformed":false,"deletedCount":0,"repositorySettingsChanged":false},
-  "resumeRule": "Take one final no-movement check after these refreshed records. If main remains d7a6e556e59c27512d73fdd2c0028924c5aad5e7, the only open PR head is this packet (plus any independently protected new active ref), and all 16 candidates remain at exact heads with no open PR, authorise the owner to delete exactly these 16 refs. After deletion, fully reconcile namespace turnover before closeout."
+  "resumeRule": "After these records, perform one final exact ref snapshot plus main/open-PR recheck. If main remains be0b328661e5fde92681c79082a8efec6775cd8a, all 16 candidates remain exact, and no candidate is an open-PR head, authorise owner deletion of exactly these 16 refs. Protect drw-05c and any other new active ref."
 }
