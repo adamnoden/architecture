@@ -1,0 +1,204 @@
+# BRH-00C inventory completeness verification
+
+Independent verification of the committed BRH-00B snapshot. This record performs no branch deletion and no semantic salvage. Mechanical signal buckets below are inputs to BRH-01, not final branch classes.
+
+## Result
+
+- verification: **PASS**
+- BRH-00B snapshot baseline: `c3ebe98a99cfe89956dc5b93bba3bc1dc2c305f7`
+- verification baseline main: `5e729e98028b3bca481bf8a6a4846fbb80312a11`
+- snapshot branches: **152**
+- current non-main branches: **154**
+- unchanged snapshot heads: **151**
+- missing snapshot branches: **0**
+- new since snapshot: **2**
+- changed snapshot heads: **1**
+- current open PRs: **1**
+- current enumeration SHA-256: `f43762bd5bfc9f8319b6ea3e5ad6a3ea1dc52e66916d45153da2fdcec6192e0e`
+
+## Post-snapshot X inputs
+
+- `brh-00b-full-inventory`
+- `brh-00c-completeness-verification`
+- `drw-02c`
+
+These refs were created or changed after the 00B snapshot and are therefore retained as provisional X inputs until a later packet re-audits them. The packet branch itself is expected to appear here while BRH-00C is active.
+
+## Raw BRH-01 candidate set
+
+### Ancestral / no-branch-only signal (106)
+
+- `architectural-specificity-audit-execution`
+- `architectural-specificity-boundary`
+- `brh-00a-audit-method`
+- `candidate-pattern-hardening`
+- `ch-00-baseline-freeze`
+- `ch-01-fail-closed`
+- `ch-02-runtime-architecture`
+- `ch-03-single-pass-reference-house`
+- `ch-04-strengthen-representation`
+- `ch-06-housekeeping-sync`
+- `ch-06-strengthen-test-kinds`
+- `ch-07-housekeeping-sync`
+- `ch-07-toolchain-ergonomics`
+- `ci-pull-request-gate`
+- `coa-00-output-audit`
+- `coa-00-output-audit-2`
+- `coa-00-output-audit-final`
+- `coa-01-output-contract`
+- `coa-02-report-extraction`
+- `coa-03-drawing-language`
+- `coa-05-topology-successors`
+- `coa-05-topology-successors-2`
+- `coa00-tmp`
+- `compiler-p0-kernel`
+- `compiler-p0-pat-xw-checkpoint`
+- `compiler-pat-xw-01`
+- `drw-01c`
+- `drw-01d`
+- `drw-01e`
+- `drw-02a`
+- `drw-02b`
+- `editorial-overhaul`
+- `fix-publication-credibility-navigation`
+- `fix-sanitation-record-surface`
+- `ovids-house-migration`
+- `pattern-language-phase7-close`
+- `pattern-language-phase7-integration`
+- `pattern-language-phase7-new-identities`
+- `pattern-language-phase7-nonpattern-homes`
+- `pattern-language-phase7-validation`
+- `pr00-candidate-book-freeze-programme`
+- `pr00a-candidate-book-ledger`
+- `pr00b-back-matter`
+- `pr00b-part-iii-framing`
+- `pr00b-part-iv-authorship`
+- `pr00b-part-v-recheck`
+- `pr00c-authority-reconciliation`
+- `pr00c-closeout`
+- `pr00d-d1-core-figures`
+- `pr00d-d2-pattern-language-figure`
+- `pr00d-figure-inventory`
+- `pr00g-candidate-proof`
+- `pr00h-candidate-freeze`
+- `pr01-adversarial-programme`
+- `pr01-r0-review-map`
+- `pr01-r1-core-proposition`
+- `pr01-r2-pattern-method`
+- `pr01-r3-reference-house`
+- `pr01-r4-hostile-architect`
+- `pr01-r5-steelman-opposition`
+- `pr01-r6-cross-book`
+- `pr01-r7-findings-freeze`
+- `pr01-r8a-proportionality`
+- `pr01-r8b-life-course`
+- `pr01-r8c-transfer`
+- `pr01-r8d-pattern-taxonomy`
+- `pr01-r8e-delivery-stewardship`
+- `pr01-r8f-reconciliation`
+- `pr01-r9-reproof-refreeze`
+- `pr01-status-reconciliation`
+- `preface-the-obvious-eventually`
+- `print-publication-pipeline`
+- `project-dataplate`
+- `prototype-w2-evidence-protocol`
+- `pub-figure-hardening`
+- `pub-nom`
+- `pub-nom-actual`
+- `pub-nom-audit-temp`
+- `pub-nom-enough`
+- `pub-nom-finalwork`
+- `pub-nom-last`
+- `pub-nom-no`
+- `pub-nom-real`
+- `pub-nom-scan`
+- `pub-nom-stage`
+- `pub-nom-work`
+- `pub-nom-x`
+- `pub-nom-z`
+- `pub-nom-zz`
+- `pub-san-closeout`
+- `pub-san-first-reader`
+- `pub-san-prototype-surface`
+- `pub-san-public-cleanup`
+- `pub-san-publication-surfaces`
+- `pub-san-reference-coordination`
+- `pub-san-reference-review`
+- `pub-san-resolved-work-cleanup`
+- `pub-san-semantic-coherence`
+- `pub-san-source-link-cleanup`
+- `publication-pdf-metadata`
+- `record-post-freeze-figure-defect`
+- `site-build-timestamp`
+- `status-hygiene-2026-10-17`
+- `tectonic-honesty`
+- `vertical-bay-coordination`
+- `wall-bay-prototype-v1`
+
+### Patch-equivalent signal (5)
+
+- `ch00-compiler-hardening-plan`
+- `external-maintenance-geography`
+- `maturity-model-enforcement`
+- `pr00e-e2-e4-editorial-hardening`
+- `pub-san-back-matter`
+
+### Unique-patch signal (41)
+
+- `brh-00b-full-inventory`
+- `cf-01-contrast-fixture`
+- `ch-05-determinism-identity-provenance`
+- `ch-05-housekeeping-sync`
+- `ch-08-distillation-deletion`
+- `coa-04-plan-section-successors`
+- `coa-05-topology-successors-final`
+- `coa-06-output-integration`
+- `g01-completion-programme`
+- `g01-d10-normative`
+- `g01-d10s-specificity`
+- `g01-d11-v01-freeze`
+- `g01-d12-reference-house`
+- `g01-d13-closeout`
+- `g01-d8-falsification`
+- `g01-d9-holdout`
+- `pattern-language-overhaul`
+- `pattern-language-phase6-audit`
+- `pattern-language-phase7`
+- `pattern-language-phase7-migration`
+- `pattern-language-phase8-crosswalk`
+- `pr00b-part-iv-synthesis`
+- `pr00d-d3-reference-house-architecture`
+- `pr00d-d3-reference-house-figures`
+- `pr00d-d4-reference-house-systems`
+- `pr00d-d5-visual-integration`
+- `pr00e-editorial-hardening`
+- `pr00f-integrity`
+- `project-integrity-refactor`
+- `prototype-p03-engineer-review-brief`
+- `pub-san-computational-surface`
+- `pub-san-research-evidence`
+- `pub-san-rh-technical`
+- `public-url-phase-1`
+- `reference-house-phase5`
+- `rh-c1`
+- `rh-c2-structural-view`
+- `rh-c3-service-view`
+- `rh-c4-boundary-view`
+- `rh-c5-target-calculations`
+- `workmanship-robustness`
+
+### Mechanically unbucketed (0)
+
+- none
+
+## Open PR associations
+
+- #170 — `brh-00c-completeness-verification` @ `aa4f2d222400297d62a9561486b25fc7ae14510a`; branch present=true; head matches=true
+
+## No-deletion proof
+
+All **152/152** branches recorded by BRH-00B are still present. No BRH-00 snapshot ref has disappeared.
+
+## Gate errors
+
+- none
