@@ -1,26 +1,37 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04D",
   "programmeIssue": 161,
-  "status": "planned-preflight-manual-deletion-gate",
+  "status": "preflight-frozen-awaiting-authorised-manual-deletion",
   "packetBranch": "brh-04d-controlled-deletion-4",
+  "restart": {
+    "initialPlanningMainSha": "2e9b4768c049cd3b5b8db15c34b73ba5bcab7321",
+    "reason": "main moved during checkpoint creation after an accidental HFI-02C stub and corrective revert; the stale destructive lease was discarded and every candidate head/open-PR condition was re-read before authorisation."
+  },
   "execution": {
-    "baselineMainSha": "2e9b4768c049cd3b5b8db15c34b73ba5bcab7321",
+    "baselineMainSha": "04add58465b59ebae56ad208b22e144df00efef9",
     "sourceClassification": "BRH-01A",
     "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
     "sourceRule": "A only: unchanged live head, mechanically proven ancestor of source baseline with zero branch-only commits and no open PR; source baseline remains an ancestor of execution main.",
-    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":190,"behindBy":0},
+    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":192,"behindBy":0},
     "branchCountAtPacketStartIncludingMain": 89,
+    "branchCountAtFinalDestructiveLeaseIncludingMain": 91,
     "openPrCountAtPacketStart": 1,
     "openPrHeadsAtPacketStart": [
       {"pr":213,"branch":"drw-04d-plan-pair-proof","headSha":"8074dbe26da62e2858031ba49eb074850184cc17"}
+    ],
+    "openPrCountAtFinalDestructiveLease": 3,
+    "openPrHeadsAtFinalDestructiveLease": [
+      {"pr":213,"branch":"drw-04d-plan-pair-proof","headSha":"8074dbe26da62e2858031ba49eb074850184cc17"},
+      {"pr":222,"branch":"drw-04b2-dressing-label-fit","headSha":"25798e8232acd2759430f14a6cee512b238f23c2"},
+      {"pr":223,"branch":"brh-04d-controlled-deletion-4","headSha":"f49bd24485e493909c9faacecd7169ba86c1df18"}
     ],
     "hardDeletionCap": 25,
     "connectorDeleteBranchActionAvailable": false
   },
   "candidateSetSha256": "549792fc53e179de3a3a24198c947fedaa56231495239847d88bb5b28c1aa2f5",
   "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
-  "candidateEvidence": "Every candidate is final class A from BRH-01A, had ancestor=yes and branch-only=0 there, still exists at the exact frozen head, is not an open-PR head, and the BRH-01A baseline is ancestral to current main.",
+  "candidateEvidence": "Every candidate is final class A from BRH-01A, had ancestor=yes and branch-only=0 there, was freshly re-read after the lease restart at the exact frozen head, is not an open-PR head, and the BRH-01A baseline is ancestral to execution main.",
   "candidates": [
     {"name":"print-publication-pipeline","expectedHeadSha":"ecbaf05fbcf20bd863b6c38e58188ffbc6cdaf56","class":"A"},
     {"name":"project-dataplate","expectedHeadSha":"7e207c178a807deed09356c7c780ded6b99dd275","class":"A"},
@@ -50,7 +61,8 @@
   ],
   "explicitlyProtectedObservedRefs": [
     {"name":"drw-04d-plan-pair-proof","reason":"open PR #213 and current DRW packet"},
-    {"name":"drw-04b2-dressing-label-fit","reason":"recent DRW corrective ref outside historical A tranche"},
+    {"name":"drw-04b2-dressing-label-fit","reason":"open corrective PR #222"},
+    {"name":"hfi-02c-vertical-life-course","reason":"fresh HFI work @ 223ccafae614e22c265f76e1d98de6fa02dabf9c"},
     {"name":"brh-01a-obvious-integrated","reason":"BRH authority ref; separate deletion eligibility"},
     {"name":"brh-01b-patch-equivalent","reason":"BRH authority/B record; separate deletion eligibility"},
     {"name":"brh-02g-publication-editorial-review","reason":"accidental/no-op ref requiring separate re-proof"},
@@ -68,5 +80,5 @@
     "postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover": true
   },
   "mutation": {"branchDeletionPerformed":false,"deletedCount":0,"repositorySettingsChanged":false},
-  "resumeRule": "Immediately before manual deletion, re-check main, open PRs and all 25 exact heads. If main or any candidate head moved, stop and recompute. After deletion, re-enumerate the complete namespace, prove exactly the authorised refs disappeared modulo independently observed concurrent ref turnover, then update this record and merge it under a fresh main/open-PR lease."
+  "resumeRule": "Delete only against the refreshed baseline. After manual deletion, re-enumerate the complete namespace, prove exactly the authorised refs disappeared modulo independently observed concurrent ref turnover, then update this record and merge it under a fresh main/open-PR lease."
 }
