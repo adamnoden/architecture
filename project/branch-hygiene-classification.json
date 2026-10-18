@@ -1,9 +1,10 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-01A",
-  "generatedAt": "2026-10-18T06:36:11.318Z",
+  "generatedAt": "2026-10-18T06:37:52.896Z",
   "repository": "adamnoden/architecture",
-  "baselineMainSha": "1ee3a0affc83b16f35c2f390a9d7ad1c8ea2e12e",
+  "baselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+  "restartReason": "PR #171 / DRW-02D moved main after the first successful classification run; stale result discarded and full audit recomputed.",
   "enumeration": {
     "refNamespace": "refs/remotes/origin",
     "excluded": [
@@ -11,7 +12,7 @@
       "origin/main"
     ],
     "branchCount": 156,
-    "sha256": "5d7afcaf48b1fbf2b1f31b0dbf0d9b637f08f7037e5d68482158dcaf28f2bc59",
+    "sha256": "8104f89d6aca7396af0878ad4977227edfd2339d13839db2fd5410886aaf2768",
     "branches": [
       {
         "ref": "origin/architectural-specificity-audit-execution",
@@ -41,7 +42,7 @@
       {
         "ref": "origin/brh-01a-obvious-integrated",
         "name": "brh-01a-obvious-integrated",
-        "headSha": "9256fa46db8f49d58ecee9c13ed5bdf9b04237b5"
+        "headSha": "0ad1e2067344918289374064d3bd3741d11e0935"
       },
       {
         "ref": "origin/candidate-pattern-hardening",
@@ -797,9 +798,9 @@
   },
   "counts": {
     "currentNonMainBranches": 156,
-    "openPrs": 2,
-    "aCandidates": 109,
-    "deferred": 47,
+    "openPrs": 1,
+    "aCandidates": 110,
+    "deferred": 46,
     "newSinceBRH00C": 2
   },
   "rule": {
@@ -808,8 +809,8 @@
       "headIsAncestorOfMain === true",
       "branchOnlyCommits.length === 0",
       "no open PR",
-      "not a ref first observed after BRH-00C",
-      "not the active BRH-01A packet branch"
+      "not the active BRH-01A packet branch",
+      "for refs first observed after BRH-00C: exact current head must match a merged PR head"
     ],
     "excludesSemanticSupersession": true,
     "authorisesDeletion": false
@@ -821,17 +822,10 @@
   "openPrs": [
     {
       "headRefName": "brh-01a-obvious-integrated",
-      "headRefOid": "9256fa46db8f49d58ecee9c13ed5bdf9b04237b5",
+      "headRefOid": "0ad1e2067344918289374064d3bd3741d11e0935",
       "isDraft": true,
       "number": 172,
       "url": "https://github.com/adamnoden/architecture/pull/172"
-    },
-    {
-      "headRefName": "drw-02d",
-      "headRefOid": "b1067ec01574ab6ec1f639d8556e07581506bb07",
-      "isDraft": true,
-      "number": 171,
-      "url": "https://github.com/adamnoden/architecture/pull/171"
     }
   ],
   "aCandidates": [
@@ -839,8 +833,10 @@
       "name": "architectural-specificity-audit-execution",
       "headSha": "dd5e50ffbe48b2cea1b7045e43b140839e7f7a29",
       "mergeBase": "dd5e50ffbe48b2cea1b7045e43b140839e7f7a29",
-      "behindMain": 1132,
+      "behindMain": 1135,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -857,14 +853,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "architectural-specificity-boundary",
       "headSha": "186f8d6b38d9add87d601149e370e6b2870cd9a7",
       "mergeBase": "186f8d6b38d9add87d601149e370e6b2870cd9a7",
-      "behindMain": 1158,
+      "behindMain": 1161,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -881,14 +879,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "brh-00a-audit-method",
       "headSha": "1485ce3e009ac6a4801625b61a546c9ee68ed63a",
       "mergeBase": "1485ce3e009ac6a4801625b61a546c9ee68ed63a",
-      "behindMain": 19,
+      "behindMain": 22,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -905,14 +905,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "brh-00b-full-inventory",
       "headSha": "bcca81ed13d63397afd3e085224b5d557e372935",
       "mergeBase": "bcca81ed13d63397afd3e085224b5d557e372935",
-      "behindMain": 11,
+      "behindMain": 14,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -929,14 +931,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "brh-00c-completeness-verification",
       "headSha": "454daa685156ac3e73777239e588c66b91838534",
       "mergeBase": "454daa685156ac3e73777239e588c66b91838534",
-      "behindMain": 1,
+      "behindMain": 4,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -953,14 +957,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "candidate-pattern-hardening",
       "headSha": "67dee3992d8353185233ee3e13fabfb88089d3df",
       "mergeBase": "67dee3992d8353185233ee3e13fabfb88089d3df",
-      "behindMain": 1428,
+      "behindMain": 1431,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -977,14 +983,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ch-00-baseline-freeze",
       "headSha": "88af7b7c721b539eb7f219c93f42c1c3939db39a",
       "mergeBase": "88af7b7c721b539eb7f219c93f42c1c3939db39a",
-      "behindMain": 709,
+      "behindMain": 712,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1001,14 +1009,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ch-01-fail-closed",
       "headSha": "2888761157163453f094abbfa023a7951a3844bf",
       "mergeBase": "2888761157163453f094abbfa023a7951a3844bf",
-      "behindMain": 698,
+      "behindMain": 701,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1025,14 +1035,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ch-02-runtime-architecture",
       "headSha": "6e2f1b413fd42cca3b344099d8c77765b3142ccc",
       "mergeBase": "6e2f1b413fd42cca3b344099d8c77765b3142ccc",
-      "behindMain": 677,
+      "behindMain": 680,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1049,14 +1061,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ch-03-single-pass-reference-house",
       "headSha": "ae462eab87319f37f0d594021dcf6a0e276c991e",
       "mergeBase": "ae462eab87319f37f0d594021dcf6a0e276c991e",
-      "behindMain": 659,
+      "behindMain": 662,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1073,14 +1087,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ch-04-strengthen-representation",
       "headSha": "8d9c5a93dde026ebe78c50ff459b3603d8f8b4f5",
       "mergeBase": "8d9c5a93dde026ebe78c50ff459b3603d8f8b4f5",
-      "behindMain": 625,
+      "behindMain": 628,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1097,14 +1113,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ch-06-housekeeping-sync",
       "headSha": "658c947f8a0608dcfc8c8db8d19271087ebebc76",
       "mergeBase": "658c947f8a0608dcfc8c8db8d19271087ebebc76",
-      "behindMain": 611,
+      "behindMain": 614,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1121,14 +1139,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ch-06-strengthen-test-kinds",
       "headSha": "5909864f4a48e016ae737a6a4d6b668448fadc79",
       "mergeBase": "5909864f4a48e016ae737a6a4d6b668448fadc79",
-      "behindMain": 617,
+      "behindMain": 620,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1145,14 +1165,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ch-07-housekeeping-sync",
       "headSha": "d278ed1d42c2cb633a815b9a699d060bcfcb6d9c",
       "mergeBase": "d278ed1d42c2cb633a815b9a699d060bcfcb6d9c",
-      "behindMain": 586,
+      "behindMain": 589,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1169,14 +1191,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ch-07-toolchain-ergonomics",
       "headSha": "30068c9303e2ebcab58e24c005ec06f1f38ad863",
       "mergeBase": "30068c9303e2ebcab58e24c005ec06f1f38ad863",
-      "behindMain": 592,
+      "behindMain": 595,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1193,14 +1217,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ci-pull-request-gate",
       "headSha": "693b8e08923fc108ab232c4d067642017a7ddc66",
       "mergeBase": "693b8e08923fc108ab232c4d067642017a7ddc66",
-      "behindMain": 1187,
+      "behindMain": 1190,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1208,14 +1234,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "coa-00-output-audit",
       "headSha": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911",
       "mergeBase": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911",
-      "behindMain": 511,
+      "behindMain": 514,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1223,14 +1251,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "coa-00-output-audit-2",
       "headSha": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911",
       "mergeBase": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911",
-      "behindMain": 511,
+      "behindMain": 514,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1238,14 +1268,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "coa-00-output-audit-final",
       "headSha": "ac2e608b505cae5297d3afbaf7772ee581d2d93e",
       "mergeBase": "ac2e608b505cae5297d3afbaf7772ee581d2d93e",
-      "behindMain": 504,
+      "behindMain": 507,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1262,14 +1294,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "coa-01-output-contract",
       "headSha": "1868936d8ab36222bfb36ace873d94c5ab0d2651",
       "mergeBase": "1868936d8ab36222bfb36ace873d94c5ab0d2651",
-      "behindMain": 496,
+      "behindMain": 499,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1286,14 +1320,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "coa-02-report-extraction",
       "headSha": "814f020d858f2e26aa0547abc4f596aaf3f57455",
       "mergeBase": "814f020d858f2e26aa0547abc4f596aaf3f57455",
-      "behindMain": 483,
+      "behindMain": 486,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1310,14 +1346,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "coa-03-drawing-language",
       "headSha": "d7e1a1c42e9aaa94d9482579e5952e1f23585fa1",
       "mergeBase": "d7e1a1c42e9aaa94d9482579e5952e1f23585fa1",
-      "behindMain": 476,
+      "behindMain": 479,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1334,14 +1372,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "coa-05-topology-successors",
       "headSha": "5f76fc014c4754939afecb3e0cdd733d6bbc5e71",
       "mergeBase": "5f76fc014c4754939afecb3e0cdd733d6bbc5e71",
-      "behindMain": 474,
+      "behindMain": 477,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1349,14 +1389,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "coa-05-topology-successors-2",
       "headSha": "5f76fc014c4754939afecb3e0cdd733d6bbc5e71",
       "mergeBase": "5f76fc014c4754939afecb3e0cdd733d6bbc5e71",
-      "behindMain": 474,
+      "behindMain": 477,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1364,14 +1406,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "coa00-tmp",
       "headSha": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911",
       "mergeBase": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911",
-      "behindMain": 511,
+      "behindMain": 514,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1379,14 +1423,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "compiler-p0-kernel",
       "headSha": "deb524ba727b90992a75450d8c35acbe27746bed",
       "mergeBase": "deb524ba727b90992a75450d8c35acbe27746bed",
-      "behindMain": 1176,
+      "behindMain": 1179,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1403,14 +1449,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "compiler-p0-pat-xw-checkpoint",
       "headSha": "d7d42e8ae03ddec156c0e22773365de28f61179a",
       "mergeBase": "d7d42e8ae03ddec156c0e22773365de28f61179a",
-      "behindMain": 1165,
+      "behindMain": 1168,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1427,14 +1475,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "compiler-pat-xw-01",
       "headSha": "4643bd1edeb7edc0ff67cc5955349024f7563c9f",
       "mergeBase": "4643bd1edeb7edc0ff67cc5955349024f7563c9f",
-      "behindMain": 1170,
+      "behindMain": 1173,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1451,14 +1501,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "drw-01c",
       "headSha": "a1da0f3aaa287b4a93bdb79b183463d95ce0d7c7",
       "mergeBase": "a1da0f3aaa287b4a93bdb79b183463d95ce0d7c7",
-      "behindMain": 37,
+      "behindMain": 40,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1475,14 +1527,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "drw-01d",
       "headSha": "ba82786f3caef9f543d4a8810e25ef51489118f7",
       "mergeBase": "ba82786f3caef9f543d4a8810e25ef51489118f7",
-      "behindMain": 35,
+      "behindMain": 38,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1499,14 +1553,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "drw-01e",
       "headSha": "5e6cbbd8c1d391127dc231aaeb584b008617ade1",
       "mergeBase": "5e6cbbd8c1d391127dc231aaeb584b008617ade1",
-      "behindMain": 29,
+      "behindMain": 32,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1523,14 +1579,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "drw-02a",
       "headSha": "b77aac7bb33ddec4ac6185ef6b42cf4841343f13",
       "mergeBase": "b77aac7bb33ddec4ac6185ef6b42cf4841343f13",
-      "behindMain": 27,
+      "behindMain": 30,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1547,14 +1605,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "drw-02b",
       "headSha": "28bd93b54152161411436da4ece6309774a3dc57",
       "mergeBase": "28bd93b54152161411436da4ece6309774a3dc57",
-      "behindMain": 16,
+      "behindMain": 19,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1571,14 +1631,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "drw-02c",
       "headSha": "509be1384cce76d8ee19b584344d4490f9b2d08e",
       "mergeBase": "509be1384cce76d8ee19b584344d4490f9b2d08e",
-      "behindMain": 6,
+      "behindMain": 9,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1595,14 +1657,42 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
+    },
+    {
+      "name": "drw-02d",
+      "headSha": "b1067ec01574ab6ec1f639d8556e07581506bb07",
+      "mergeBase": "b1067ec01574ab6ec1f639d8556e07581506bb07",
+      "behindMain": 1,
+      "aheadOfMain": 0,
+      "postBRH00C": true,
+      "mergedHeadProof": true,
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0
+      },
+      "pullRequests": [
+        {
+          "number": 171,
+          "state": "closed",
+          "draft": false,
+          "mergedAt": "2026-10-18T06:36:48Z",
+          "headSha": "b1067ec01574ab6ec1f639d8556e07581506bb07",
+          "url": "https://github.com/adamnoden/architecture/pull/171"
+        }
+      ],
+      "classification": "A",
+      "rationale": "Post-BRH-00C ref re-audited at its current head; the head exactly matches a merged PR and is an ancestor of current main with zero branch-only commits and no open PR."
     },
     {
       "name": "editorial-overhaul",
       "headSha": "b238c4dbb98bc24e44808ca385326cff36a14116",
       "mergeBase": "b238c4dbb98bc24e44808ca385326cff36a14116",
-      "behindMain": 1271,
+      "behindMain": 1274,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1619,14 +1709,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "fix-publication-credibility-navigation",
       "headSha": "22ac81cabdfe37b367f1a3297f292a8750ae978c",
       "mergeBase": "22ac81cabdfe37b367f1a3297f292a8750ae978c",
-      "behindMain": 605,
+      "behindMain": 608,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1643,14 +1735,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "fix-sanitation-record-surface",
       "headSha": "ba0270e133ea8ddf876d0000180654c6a5726181",
       "mergeBase": "ba0270e133ea8ddf876d0000180654c6a5726181",
-      "behindMain": 369,
+      "behindMain": 372,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1667,14 +1761,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "ovids-house-migration",
       "headSha": "e6a8a9a75ad0a97bd28232c8f7539e6987bb541d",
       "mergeBase": "e6a8a9a75ad0a97bd28232c8f7539e6987bb541d",
-      "behindMain": 565,
+      "behindMain": 568,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1691,14 +1787,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pattern-language-phase7-close",
       "headSha": "bac80230ffbca080fb4c262eb41fb08ebd3574a4",
       "mergeBase": "bac80230ffbca080fb4c262eb41fb08ebd3574a4",
-      "behindMain": 1189,
+      "behindMain": 1192,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1715,14 +1813,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pattern-language-phase7-integration",
       "headSha": "e2971075966bb5df9e9cbbfa875de34155d82503",
       "mergeBase": "e2971075966bb5df9e9cbbfa875de34155d82503",
-      "behindMain": 1197,
+      "behindMain": 1200,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1739,14 +1839,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pattern-language-phase7-new-identities",
       "headSha": "c50f30b3a96a73326f8bed8489c3ad63ce7d6e3d",
       "mergeBase": "c50f30b3a96a73326f8bed8489c3ad63ce7d6e3d",
-      "behindMain": 1220,
+      "behindMain": 1223,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1763,14 +1865,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pattern-language-phase7-nonpattern-homes",
       "headSha": "0f421c2d5f6c9c71f0b5f9940a6beef6be5f8a64",
       "mergeBase": "0f421c2d5f6c9c71f0b5f9940a6beef6be5f8a64",
-      "behindMain": 1206,
+      "behindMain": 1209,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1787,14 +1891,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pattern-language-phase7-validation",
       "headSha": "ea9211d407f3da8b30085050157680c535e57d00",
       "mergeBase": "ea9211d407f3da8b30085050157680c535e57d00",
-      "behindMain": 1195,
+      "behindMain": 1198,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1811,14 +1917,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00-candidate-book-freeze-programme",
       "headSha": "315304bf41313f47c1ccf361d058397b4302c872",
       "mergeBase": "315304bf41313f47c1ccf361d058397b4302c872",
-      "behindMain": 553,
+      "behindMain": 556,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1835,14 +1943,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00a-candidate-book-ledger",
       "headSha": "882e640cf646da2d0b42a604ae927ef08625b0db",
       "mergeBase": "882e640cf646da2d0b42a604ae927ef08625b0db",
-      "behindMain": 550,
+      "behindMain": 553,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1859,14 +1969,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00b-back-matter",
       "headSha": "ecd55f8f31db0fd623dbc948c02f5651678aae66",
       "mergeBase": "ecd55f8f31db0fd623dbc948c02f5651678aae66",
-      "behindMain": 526,
+      "behindMain": 529,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1883,14 +1995,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00b-part-iii-framing",
       "headSha": "ea1d2ab1a6c0aa93060c49bab34472047c058ffc",
       "mergeBase": "ea1d2ab1a6c0aa93060c49bab34472047c058ffc",
-      "behindMain": 538,
+      "behindMain": 541,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1907,14 +2021,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00b-part-iv-authorship",
       "headSha": "b1dcb3e1f8ff405bffe8e69da21b724da22c9174",
       "mergeBase": "b1dcb3e1f8ff405bffe8e69da21b724da22c9174",
-      "behindMain": 545,
+      "behindMain": 548,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1931,14 +2047,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00b-part-v-recheck",
       "headSha": "4c637309c1c1aa75ece6c152d754718d57e4a7de",
       "mergeBase": "4c637309c1c1aa75ece6c152d754718d57e4a7de",
-      "behindMain": 524,
+      "behindMain": 527,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1955,14 +2073,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00c-authority-reconciliation",
       "headSha": "4ea8ca63d1414f1261677b2cb9aac5c19670ecf0",
       "mergeBase": "4ea8ca63d1414f1261677b2cb9aac5c19670ecf0",
-      "behindMain": 521,
+      "behindMain": 524,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -1979,14 +2099,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00c-closeout",
       "headSha": "09c5f61d900c9763ddacd1a020b6f097a6c1f37c",
       "mergeBase": "09c5f61d900c9763ddacd1a020b6f097a6c1f37c",
-      "behindMain": 512,
+      "behindMain": 515,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2003,14 +2125,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00d-d1-core-figures",
       "headSha": "8c7d67c8fc4fdc78f693201e0d0950b6f95be867",
       "mergeBase": "8c7d67c8fc4fdc78f693201e0d0950b6f95be867",
-      "behindMain": 457,
+      "behindMain": 460,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2027,14 +2151,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00d-d2-pattern-language-figure",
       "headSha": "c260b849f22378d536c440a7aff31198b9858648",
       "mergeBase": "c260b849f22378d536c440a7aff31198b9858648",
-      "behindMain": 453,
+      "behindMain": 456,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2051,14 +2177,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00d-figure-inventory",
       "headSha": "891565673355421d3618421c2fece07fb75a6b9f",
       "mergeBase": "891565673355421d3618421c2fece07fb75a6b9f",
-      "behindMain": 471,
+      "behindMain": 474,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2075,14 +2203,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00g-candidate-proof",
       "headSha": "f9ed50f2217d848e04bef8d0dd76e8dadd7c1775",
       "mergeBase": "f9ed50f2217d848e04bef8d0dd76e8dadd7c1775",
-      "behindMain": 442,
+      "behindMain": 445,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2099,14 +2229,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr00h-candidate-freeze",
       "headSha": "36634ee2f224a3059410a8a31d7af73c87a245bd",
       "mergeBase": "36634ee2f224a3059410a8a31d7af73c87a245bd",
-      "behindMain": 439,
+      "behindMain": 442,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2123,14 +2255,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-adversarial-programme",
       "headSha": "460070c5b0597ef7525e65786a4bc189f779f4c8",
       "mergeBase": "460070c5b0597ef7525e65786a4bc189f779f4c8",
-      "behindMain": 437,
+      "behindMain": 440,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2147,14 +2281,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r0-review-map",
       "headSha": "cb86869765f24b2a5fd336343c6e24f1655caadd",
       "mergeBase": "cb86869765f24b2a5fd336343c6e24f1655caadd",
-      "behindMain": 435,
+      "behindMain": 438,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2171,14 +2307,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r1-core-proposition",
       "headSha": "f98421cae79adafc34eb50241274f98423bf1f0e",
       "mergeBase": "f98421cae79adafc34eb50241274f98423bf1f0e",
-      "behindMain": 433,
+      "behindMain": 436,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2195,14 +2333,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r2-pattern-method",
       "headSha": "99b0166fcb2832b4aa25a7c05fb5a1fe6c972b1d",
       "mergeBase": "99b0166fcb2832b4aa25a7c05fb5a1fe6c972b1d",
-      "behindMain": 431,
+      "behindMain": 434,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2219,14 +2359,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r3-reference-house",
       "headSha": "fd0104d4593e1b31e7f51680a034b244cb9a5c90",
       "mergeBase": "fd0104d4593e1b31e7f51680a034b244cb9a5c90",
-      "behindMain": 429,
+      "behindMain": 432,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2243,14 +2385,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r4-hostile-architect",
       "headSha": "001b41431c934199134b5eb17ce76296efc378ac",
       "mergeBase": "001b41431c934199134b5eb17ce76296efc378ac",
-      "behindMain": 427,
+      "behindMain": 430,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2267,14 +2411,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r5-steelman-opposition",
       "headSha": "4bb8a47cfe93d66cd3198e096138b864f652e6d3",
       "mergeBase": "4bb8a47cfe93d66cd3198e096138b864f652e6d3",
-      "behindMain": 425,
+      "behindMain": 428,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2291,14 +2437,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r6-cross-book",
       "headSha": "3a0495a52df8157a5c752aabcc737d8d3652b555",
       "mergeBase": "3a0495a52df8157a5c752aabcc737d8d3652b555",
-      "behindMain": 423,
+      "behindMain": 426,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2315,14 +2463,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r7-findings-freeze",
       "headSha": "fc0a0ed24f791e929ae126b0066b7046d407dac5",
       "mergeBase": "fc0a0ed24f791e929ae126b0066b7046d407dac5",
-      "behindMain": 421,
+      "behindMain": 424,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2339,14 +2489,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r8a-proportionality",
       "headSha": "c9f1c717412241ae535aeeafbcd6e24ad742ddd1",
       "mergeBase": "c9f1c717412241ae535aeeafbcd6e24ad742ddd1",
-      "behindMain": 415,
+      "behindMain": 418,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2363,14 +2515,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r8b-life-course",
       "headSha": "e9adc414fc585e3b602f542fde0ca19ec25797c6",
       "mergeBase": "e9adc414fc585e3b602f542fde0ca19ec25797c6",
-      "behindMain": 411,
+      "behindMain": 414,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2387,14 +2541,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r8c-transfer",
       "headSha": "f06593358bec6ac03fc959c2d21a2e9087e67603",
       "mergeBase": "f06593358bec6ac03fc959c2d21a2e9087e67603",
-      "behindMain": 410,
+      "behindMain": 413,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2411,14 +2567,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r8d-pattern-taxonomy",
       "headSha": "9e2e9848237f378af27ed7924fcaf142b77c8260",
       "mergeBase": "9e2e9848237f378af27ed7924fcaf142b77c8260",
-      "behindMain": 407,
+      "behindMain": 410,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2435,14 +2593,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r8e-delivery-stewardship",
       "headSha": "8eace9665206c4b0e86ddf379a777511ebd50800",
       "mergeBase": "8eace9665206c4b0e86ddf379a777511ebd50800",
-      "behindMain": 406,
+      "behindMain": 409,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2459,14 +2619,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r8f-reconciliation",
       "headSha": "d4cd8474c329a87a26ba900d3fb3f6c02c32b57b",
       "mergeBase": "d4cd8474c329a87a26ba900d3fb3f6c02c32b57b",
-      "behindMain": 391,
+      "behindMain": 394,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2483,14 +2645,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-r9-reproof-refreeze",
       "headSha": "c0ca5d571fecb1793136ecd67e44a3426d47a653",
       "mergeBase": "c0ca5d571fecb1793136ecd67e44a3426d47a653",
-      "behindMain": 383,
+      "behindMain": 386,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2507,14 +2671,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pr01-status-reconciliation",
       "headSha": "6466f64ff739489bfe49b86c130058821d9815b7",
       "mergeBase": "6466f64ff739489bfe49b86c130058821d9815b7",
-      "behindMain": 379,
+      "behindMain": 382,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2531,14 +2697,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "preface-the-obvious-eventually",
       "headSha": "b3fa7550e2ccf985b2ec765e5a07e646f77d3089",
       "mergeBase": "b3fa7550e2ccf985b2ec765e5a07e646f77d3089",
-      "behindMain": 1411,
+      "behindMain": 1414,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2555,14 +2723,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "print-publication-pipeline",
       "headSha": "ecbaf05fbcf20bd863b6c38e58188ffbc6cdaf56",
       "mergeBase": "ecbaf05fbcf20bd863b6c38e58188ffbc6cdaf56",
-      "behindMain": 931,
+      "behindMain": 934,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2579,14 +2749,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "project-dataplate",
       "headSha": "7e207c178a807deed09356c7c780ded6b99dd275",
       "mergeBase": "7e207c178a807deed09356c7c780ded6b99dd275",
-      "behindMain": 191,
+      "behindMain": 194,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2603,14 +2775,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "prototype-w2-evidence-protocol",
       "headSha": "29c47b2ee3b836a6489c792e92269fcf19ab0b54",
       "mergeBase": "29c47b2ee3b836a6489c792e92269fcf19ab0b54",
-      "behindMain": 1160,
+      "behindMain": 1163,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2627,14 +2801,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-figure-hardening",
       "headSha": "6e893eba90cb054f74ede59a264b5e45a0979801",
       "mergeBase": "6e893eba90cb054f74ede59a264b5e45a0979801",
-      "behindMain": 352,
+      "behindMain": 355,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2651,14 +2827,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom",
       "headSha": "e4d46792221bb1801d5f2ed0fa04ecf94a9cf5f0",
       "mergeBase": "e4d46792221bb1801d5f2ed0fa04ecf94a9cf5f0",
-      "behindMain": 42,
+      "behindMain": 45,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2675,14 +2853,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-actual",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2690,14 +2870,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-audit-temp",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2705,14 +2887,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-enough",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2720,14 +2904,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-finalwork",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2735,14 +2921,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-last",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2750,14 +2938,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-no",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2765,14 +2955,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-real",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2780,14 +2972,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-scan",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2795,14 +2989,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-stage",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2810,14 +3006,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-work",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2825,14 +3023,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-x",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2840,14 +3040,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-z",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2855,14 +3057,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-nom-zz",
       "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
       "mergeBase": "e031fbabcb17724fb5561839fb4ff0ec27bd9790",
-      "behindMain": 188,
+      "behindMain": 191,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2870,14 +3074,16 @@
       },
       "pullRequests": [],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-closeout",
       "headSha": "f7bc2ea2cc741d8d54e294de96f8de1412b54fb6",
       "mergeBase": "f7bc2ea2cc741d8d54e294de96f8de1412b54fb6",
-      "behindMain": 210,
+      "behindMain": 213,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2894,14 +3100,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-first-reader",
       "headSha": "e035264695ea88c1100ef92e45f988dee225586f",
       "mergeBase": "e035264695ea88c1100ef92e45f988dee225586f",
-      "behindMain": 271,
+      "behindMain": 274,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2918,14 +3126,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-prototype-surface",
       "headSha": "74fcf25db99715819826513f231d49f0219fa5c5",
       "mergeBase": "74fcf25db99715819826513f231d49f0219fa5c5",
-      "behindMain": 291,
+      "behindMain": 294,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2942,14 +3152,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-public-cleanup",
       "headSha": "ec95c9f67cd77214845f299eab7a780147e75afe",
       "mergeBase": "ec95c9f67cd77214845f299eab7a780147e75afe",
-      "behindMain": 305,
+      "behindMain": 308,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2966,14 +3178,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-publication-surfaces",
       "headSha": "bd3a87bc1b1fa6ca6ac063ca12389661b453a5a2",
       "mergeBase": "bd3a87bc1b1fa6ca6ac063ca12389661b453a5a2",
-      "behindMain": 287,
+      "behindMain": 290,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -2990,14 +3204,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-reference-coordination",
       "headSha": "ac0d82b5b0eb51f563b721a97ad753c940856d86",
       "mergeBase": "ac0d82b5b0eb51f563b721a97ad753c940856d86",
-      "behindMain": 296,
+      "behindMain": 299,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3014,14 +3230,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-reference-review",
       "headSha": "817c6c5befb2878abe8be31045fd678e0e561d17",
       "mergeBase": "817c6c5befb2878abe8be31045fd678e0e561d17",
-      "behindMain": 300,
+      "behindMain": 303,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3038,14 +3256,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-resolved-work-cleanup",
       "headSha": "cac29844392a07d735b244c25f6636cc62d68d77",
       "mergeBase": "cac29844392a07d735b244c25f6636cc62d68d77",
-      "behindMain": 325,
+      "behindMain": 328,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3062,14 +3282,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-semantic-coherence",
       "headSha": "8e9b1dc14b7710e8b18f057d4cfb761fe830d9ec",
       "mergeBase": "8e9b1dc14b7710e8b18f057d4cfb761fe830d9ec",
-      "behindMain": 310,
+      "behindMain": 313,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3086,14 +3308,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "pub-san-source-link-cleanup",
       "headSha": "aff9deae0b3e34b1c86d2e8f215e967d25f329f8",
       "mergeBase": "aff9deae0b3e34b1c86d2e8f215e967d25f329f8",
-      "behindMain": 282,
+      "behindMain": 285,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3110,14 +3334,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "publication-pdf-metadata",
       "headSha": "7267aba14c78c6c8551fa7559f8c7bd3a68d54d3",
       "mergeBase": "7267aba14c78c6c8551fa7559f8c7bd3a68d54d3",
-      "behindMain": 198,
+      "behindMain": 201,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3134,14 +3360,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "record-post-freeze-figure-defect",
       "headSha": "6c1b081d5161ab7719dd7c5c0a1ff37c9a485f71",
       "mergeBase": "6c1b081d5161ab7719dd7c5c0a1ff37c9a485f71",
-      "behindMain": 350,
+      "behindMain": 353,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3158,14 +3386,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "site-build-timestamp",
       "headSha": "378028f2ad8f8745b750b86f2076a962245360ab",
       "mergeBase": "378028f2ad8f8745b750b86f2076a962245360ab",
-      "behindMain": 372,
+      "behindMain": 375,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3182,14 +3412,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "status-hygiene-2026-10-17",
       "headSha": "8da95e7428e155945f83fc14c6b2514a02ae2fef",
       "mergeBase": "8da95e7428e155945f83fc14c6b2514a02ae2fef",
-      "behindMain": 206,
+      "behindMain": 209,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3206,14 +3438,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "tectonic-honesty",
       "headSha": "28386a2debd5318a2680bcdae636120ceb7b48fb",
       "mergeBase": "28386a2debd5318a2680bcdae636120ceb7b48fb",
-      "behindMain": 1442,
+      "behindMain": 1445,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3230,14 +3464,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "vertical-bay-coordination",
       "headSha": "55f6a11f982d27c4b7c2c00c1b3cf2e5fed05eff",
       "mergeBase": "55f6a11f982d27c4b7c2c00c1b3cf2e5fed05eff",
-      "behindMain": 1423,
+      "behindMain": 1426,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3254,14 +3490,16 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     },
     {
       "name": "wall-bay-prototype-v1",
       "headSha": "b9d433220c507bc53433d7227aaeb5162a9ccd8c",
       "mergeBase": "b9d433220c507bc53433d7227aaeb5162a9ccd8c",
-      "behindMain": 1418,
+      "behindMain": 1421,
       "aheadOfMain": 0,
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "evidence": {
         "headIsAncestorOfMain": true,
         "branchOnlyCommitCount": 0,
@@ -3278,24 +3516,26 @@
         }
       ],
       "classification": "A",
-      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR, post-00C novelty, or active-packet protection applies."
+      "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     }
   ],
   "deferred": [
     {
       "name": "brh-01a-obvious-integrated",
-      "headSha": "9256fa46db8f49d58ecee9c13ed5bdf9b04237b5",
+      "headSha": "0ad1e2067344918289374064d3bd3741d11e0935",
       "reasons": [
         "active-packet-branch",
-        "post-BRH-00C-ref",
         "open-pr",
+        "post-BRH-00C-ref-without-merged-head-proof",
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": true,
+      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 2,
-        "uniquePatchCount": 2,
+        "branchOnlyCommitCount": 4,
+        "uniquePatchCount": 4,
         "equivalentPatchCount": 0
       },
       "provisionalClassification": "X"
@@ -3307,6 +3547,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 18,
@@ -3322,6 +3564,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 9,
@@ -3337,6 +3581,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 3,
@@ -3352,6 +3598,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 11,
@@ -3367,6 +3615,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 1,
@@ -3382,6 +3632,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 22,
@@ -3397,6 +3649,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 5,
@@ -3412,6 +3666,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 28,
@@ -3421,29 +3677,14 @@
       "provisionalClassification": null
     },
     {
-      "name": "drw-02d",
-      "headSha": "b1067ec01574ab6ec1f639d8556e07581506bb07",
-      "reasons": [
-        "post-BRH-00C-ref",
-        "open-pr",
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
-      ],
-      "mechanical": {
-        "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 2,
-        "uniquePatchCount": 1,
-        "equivalentPatchCount": 0
-      },
-      "provisionalClassification": "X"
-    },
-    {
       "name": "external-maintenance-geography",
       "headSha": "2b7edc1583b70da90315efe91f63a7566aabaed9",
       "reasons": [
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 1,
@@ -3459,6 +3700,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
@@ -3474,6 +3717,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
@@ -3489,6 +3734,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
@@ -3504,6 +3751,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
@@ -3519,6 +3768,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 3,
@@ -3534,6 +3785,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
@@ -3549,6 +3802,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 5,
@@ -3564,6 +3819,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
@@ -3579,6 +3836,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 1,
@@ -3594,6 +3853,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 21,
@@ -3609,6 +3870,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 9,
@@ -3624,6 +3887,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 22,
@@ -3639,6 +3904,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 16,
@@ -3654,6 +3921,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 14,
@@ -3669,6 +3938,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 8,
@@ -3684,6 +3955,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 8,
@@ -3699,6 +3972,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
@@ -3714,6 +3989,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
@@ -3729,6 +4006,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 5,
@@ -3744,6 +4023,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 1,
@@ -3759,6 +4040,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
@@ -3774,6 +4057,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 6,
@@ -3789,6 +4074,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 23,
@@ -3804,6 +4091,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 1,
@@ -3819,6 +4108,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 1,
@@ -3834,6 +4125,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 13,
@@ -3849,6 +4142,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 13,
@@ -3864,6 +4159,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 18,
@@ -3879,6 +4176,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
@@ -3894,6 +4193,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 12,
@@ -3909,6 +4210,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 8,
@@ -3924,6 +4227,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 23,
@@ -3939,6 +4244,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 29,
@@ -3954,6 +4261,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 36,
@@ -3969,6 +4278,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 21,
@@ -3984,6 +4295,8 @@
         "head-not-ancestor-of-main",
         "branch-only-commits"
       ],
+      "postBRH00C": false,
+      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 20,
