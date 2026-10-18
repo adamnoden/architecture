@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-02B",
   "programmeIssue": 161,
-  "baselineMainSha": "dfba4237107eda8c7a6d79e53607ba25e40a4f49",
+  "baselineMainSha": "ff760444b43aaad137c3ef7d110d5345af5a6036",
   "scopeGroup": "infrastructure-tooling",
   "branches": [
     {
@@ -10,7 +10,7 @@
       "headSha": "5f3ddadab402daaf9f01a3ea99531fc65734302d",
       "mechanicalEvidence": {
         "aheadBy": 23,
-        "behindBy": 929,
+        "behindBy": 933,
         "branchOnlyCommits": 23,
         "uniquePatchSignal": true
       },
@@ -35,7 +35,7 @@
       "headSha": "45fcb14128ae055a8b0724cbfbbc31bbc8758ceb",
       "mechanicalEvidence": {
         "aheadBy": 4,
-        "behindBy": 924,
+        "behindBy": 928,
         "branchOnlyCommits": 4,
         "uniquePatchSignal": true
       },
@@ -58,6 +58,18 @@
     "D": 0,
     "X": 0,
     "salvageRequired": 0
+  },
+  "leaseCorrection": {
+    "originalReviewBaseline": "dfba4237107eda8c7a6d79e53607ba25e40a4f49",
+    "interveningMainSha": "ff760444b43aaad137c3ef7d110d5345af5a6036",
+    "interveningPullRequest": 182,
+    "reason": "DRW-03B.1 merged in the final merge window after the last lease read and before PR #183 was committed to main.",
+    "interveningFiles": [
+      "compiler/reference-house/publication-plan-source.test.ts",
+      "compiler/reference-house/publication-plan-source.ts",
+      "docs/publication/architectural-drawing-drw03b1-passage-clearance.md"
+    ],
+    "authorityImpact": "none on either reviewed source head or the project-integrity/public-route authority set; both semantic dispositions were recomputed against the actual pre-merge main and remain C"
   },
   "nextPacket": {
     "packet": "BRH-02C",
