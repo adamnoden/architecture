@@ -4,17 +4,17 @@ Mechanical coverage freeze only. This packet does not decide semantic supersessi
 
 ## Baseline
 
-- current main: `fcf3691a639153827358664b73982e68e7c01707`
+- current main: `8aae956ed45a4bab5eac5ba5841a9784a75a500f`
 - current non-main branches: **160**
 - exact prior A heads carried: **110**
 - exact prior B heads carried: **5**
 - unresolved register: **45**
 - provisional X: **5**
 - provisional C/D: **40**
-- open PRs at proof time: **2**
-- enumeration SHA-256: `533be726011d1c8c820393a93e03be9944f2ccba020ea36a7214dc727d147241`
-- register JSON SHA-256: `3631df76056454310ac2225955375a97499d3f9c3c52f47e6c8ba5cb91927448`
-- restart: `drw-03a` advanced and PR #177 opened after the prior refresh; the full register was recomputed with its live head/PR association.
+- open PRs at proof time: **1**
+- enumeration SHA-256: `21e0b1d466769fc00349720901786c5923a6621a9f456640c96cae800d833f2f`
+- register JSON SHA-256: `02a614c83b74984a7bc98d89097c17ac2e1142f73f6cd52572237c69456d6bd1`
+- restart: DRW-03A PR #177 merged and moved main during the final lease check; the full register was recomputed.
 
 ## Unresolved review groups
 
@@ -23,7 +23,7 @@ Mechanical coverage freeze only. This packet does not decide semantic supersessi
 | Branch | Provisional | Ancestor | Branch-only | Unique | Equivalent | Reasons |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | `drw-02e` | X | yes | 0 | 0 | 0 | mechanically-integrated-outside-final-A-packet |
-| `drw-03a` | X | no | 1 | 1 | 0 | open-pr, post-BRH-01B-ref, unique-patch-signal |
+| `drw-03a` | X | yes | 0 | 0 | 0 | post-BRH-01B-ref, mechanically-integrated-outside-final-A-packet |
 
 ### branch-hygiene (3)
 
@@ -31,7 +31,7 @@ Mechanical coverage freeze only. This packet does not decide semantic supersessi
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | `brh-01a-obvious-integrated` | X | yes | 0 | 0 | 0 | mechanically-integrated-outside-final-A-packet |
 | `brh-01b-patch-equivalent` | X | yes | 0 | 0 | 0 | head-changed-since-BRH-01B, mechanically-integrated-outside-final-A-packet |
-| `brh-01c-unresolved-register` | X | no | 11 | 11 | 0 | active-BRH-01C-packet, open-pr, post-BRH-01B-ref, unique-patch-signal |
+| `brh-01c-unresolved-register` | X | no | 14 | 14 | 0 | active-BRH-01C-packet, open-pr, post-BRH-01B-ref, unique-patch-signal |
 
 ### compiler-computational (7)
 

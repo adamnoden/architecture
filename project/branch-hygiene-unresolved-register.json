@@ -1,18 +1,18 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "packet": "BRH-01C",
   "programmeIssue": 161,
-  "generatedAt": "2026-10-18T09:02:13.550Z",
+  "generatedAt": "2026-10-18T09:06:39.741Z",
   "repository": "adamnoden/architecture",
-  "baselineMainSha": "fcf3691a639153827358664b73982e68e7c01707",
-  "restartReason": "drw-03a advanced and PR #177 opened after the prior refresh; full register recomputed with live DRW head/PR association.",
+  "baselineMainSha": "8aae956ed45a4bab5eac5ba5841a9784a75a500f",
+  "restartReason": "DRW-03A PR #177 merged and moved main to 8aae956ed45a4bab5eac5ba5841a9784a75a500f during the final lease check; full register recomputed.",
   "priorPacket": {
     "packet": "BRH-01B",
     "sourceFile": "project/branch-hygiene-classification.json"
   },
   "enumeration": {
     "branchCount": 160,
-    "sha256": "533be726011d1c8c820393a93e03be9944f2ccba020ea36a7214dc727d147241",
+    "sha256": "21e0b1d466769fc00349720901786c5923a6621a9f456640c96cae800d833f2f",
     "branches": [
       {
         "ref": "origin/architectural-specificity-audit-execution",
@@ -52,7 +52,7 @@
       {
         "ref": "origin/brh-01c-unresolved-register",
         "name": "brh-01c-unresolved-register",
-        "headSha": "08c6300bd6fa3b006d2e96c15faf7c83cde2f6db"
+        "headSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb"
       },
       {
         "ref": "origin/candidate-pattern-hardening",
@@ -818,16 +818,9 @@
   },
   "openPrs": [
     {
-      "number": 177,
-      "headRefName": "drw-03a",
-      "headSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
-      "draft": true,
-      "url": "https://github.com/adamnoden/architecture/pull/177"
-    },
-    {
       "number": 175,
       "headRefName": "brh-01c-unresolved-register",
-      "headSha": "08c6300bd6fa3b006d2e96c15faf7c83cde2f6db",
+      "headSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
       "draft": true,
       "url": "https://github.com/adamnoden/architecture/pull/175"
     }
@@ -1343,7 +1336,7 @@
     },
     {
       "name": "brh-01c-unresolved-register",
-      "headSha": "08c6300bd6fa3b006d2e96c15faf7c83cde2f6db",
+      "headSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
       "group": "branch-hygiene",
       "provisionalReviewClass": "X",
       "reasons": [
@@ -1355,14 +1348,14 @@
       "openPr": {
         "number": 175,
         "draft": true,
-        "headSha": "08c6300bd6fa3b006d2e96c15faf7c83cde2f6db",
+        "headSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
         "url": "https://github.com/adamnoden/architecture/pull/175"
       },
       "mechanical": {
         "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 11,
-        "nonMergeBranchOnlyCommitCount": 11,
-        "uniquePatchCount": 11,
+        "branchOnlyCommitCount": 14,
+        "nonMergeBranchOnlyCommitCount": 14,
+        "uniquePatchCount": 14,
         "equivalentPatchCount": 0
       }
     },
@@ -1508,21 +1501,15 @@
       "group": "architectural-drawing",
       "provisionalReviewClass": "X",
       "reasons": [
-        "open-pr",
         "post-BRH-01B-ref",
-        "unique-patch-signal"
+        "mechanically-integrated-outside-final-A-packet"
       ],
-      "openPr": {
-        "number": 177,
-        "draft": true,
-        "headSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
-        "url": "https://github.com/adamnoden/architecture/pull/177"
-      },
+      "openPr": null,
       "mechanical": {
-        "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 1,
-        "nonMergeBranchOnlyCommitCount": 1,
-        "uniquePatchCount": 1,
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0,
+        "uniquePatchCount": 0,
         "equivalentPatchCount": 0
       }
     },
