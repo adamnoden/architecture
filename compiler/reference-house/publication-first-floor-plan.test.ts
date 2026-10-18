@@ -142,7 +142,8 @@ describe('DRW-04B first-floor publication plan scene', () => {
       'Family bathroom',
       'Bedroom 4',
       'North landing',
-      'Dressing / storage',
+      'Dressing /',
+      'storage',
       'Linen',
       'Courtyard'
     ]) {
@@ -158,6 +159,17 @@ describe('DRW-04B first-floor publication plan scene', () => {
       [
         { id: 'label-U-STAIR-01-1', value: 'South', x: 79.5, y: 104.5 },
         { id: 'label-U-STAIR-01-2', value: 'landing', x: 79.5, y: 107.5 }
+      ]
+    )
+  })
+
+  test('wraps the dressing/storage label clear of the north courtyard continuation wall', () => {
+    const dressing = texts().filter((text) => text.metadata?.space === 'U-DRESS-01')
+    assert.deepEqual(
+      dressing.map((text) => ({ id: text.id, value: text.value, x: text.x, y: text.y })),
+      [
+        { id: 'label-U-DRESS-01-1', value: 'Dressing /', x: 60.5, y: 21 },
+        { id: 'label-U-DRESS-01-2', value: 'storage', x: 60.5, y: 24 }
       ]
     )
   })

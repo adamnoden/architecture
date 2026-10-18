@@ -308,7 +308,7 @@ const roomLabelPositions: Record<string, RoomLabelSpec> = {
   'U-BATH-01': { x: 10550, y: 5400, label: 'Family bathroom' },
   'U-BED-04': { x: 10350, y: 9600, label: 'Bedroom 4' },
   'U-LAND-N01': { x: 7600, y: 8000, label: 'North landing' },
-  'U-DRESS-01': { x: 5250, y: 9750, label: 'Dressing / storage' },
+  'U-DRESS-01': { x: 5250, y: 9750, label: 'Dressing / storage', lines: ['Dressing /', 'storage'], lineGap: 300 },
   'U-LIN-01': { x: 7100, y: 9750, label: 'Linen' }
 }
 
