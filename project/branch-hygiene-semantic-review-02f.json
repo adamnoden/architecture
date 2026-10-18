@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02F",
+  "programmeIssue": 161,
+  "baselineMainSha": "6234476ae897847b2048740de1bf5600cbe1c657",
+  "restart": {
+    "supersededBaseline": "a497988d4c7c56e8b1f5da9b5a790915cd8601e7",
+    "reason": "PR #188 (site provenance and indexing) merged before durable freeze and moved main. Its four changed files are site/theme/settings surfaces and do not alter the reviewed pattern-language authority; all five mechanical comparisons were recomputed against the new baseline."
+  },
+  "scopeGroup": "pattern-language",
+  "branches": [
+    {
+      "name": "pattern-language-overhaul",
+      "headSha": "12af047641ef08f2f5a21a9621dbfc668abd48fc",
+      "mechanicalEvidence": {
+        "aheadBy": 21,
+        "behindBy": 1342,
+        "branchOnlyCommits": 21,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The branch is the initial migration-control stage. Current authority at docs/development/pattern-language-overhaul.md explicitly records the migration complete through Phase 8, with the evidence-qualified language, non-pattern homes, Reference House occurrence model, publication integration, metadata validation and computational handoff all completed. Restoring this stage head would revert the programme from completed authority to an early migration state.",
+      "currentAuthority": [
+        "docs/development/pattern-language-overhaul.md",
+        "docs/patterns/language-model.md",
+        "docs/patterns/README.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pattern-language-phase6-audit",
+      "headSha": "0c08c98d4792ccb63a24185303fe9295f36d8384",
+      "mechanicalEvidence": {
+        "aheadBy": 9,
+        "behindBy": 1340,
+        "branchOnlyCommits": 9,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "Phase 6 is a completed corpus-audit checkpoint. The current Phase-6 review still records PASS authorising controlled Phase 7 migration, and its audit/evidence surfaces remain on main in evolved nomenclature. Later Phase 7/8 completion consumes this result; the branch has no unresolved authority beyond the preserved historical gate record.",
+      "currentAuthority": [
+        "docs/development/pattern-language-corpus-audit.md",
+        "docs/development/pattern-language-phase6-review.md",
+        "docs/research/pattern-language-phase6-targeted-evidence.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pattern-language-phase7",
+      "headSha": "18c55e5b66bf1dcb04ddb42fa9850d3535a296f9",
+      "mechanicalEvidence": {
+        "aheadBy": 22,
+        "behindBy": 1339,
+        "branchOnlyCommits": 22,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "This is an intermediate canonical-migration stage. Current docs/development/pattern-language-phase7-plan.md records P7.1–P7.6 complete and passed. The canonical pattern prose survives on main; for example Controlled Utility Entry retains the same substantive pattern body while HSA-P-001 was deliberately neutralised to PAT-001 and the reader title became title-led. The branch is superseded process/identity state, not missing architectural content.",
+      "currentAuthority": [
+        "docs/development/pattern-language-phase7-plan.md",
+        "docs/development/pattern-language-phase7-review.md",
+        "docs/patterns/controlled-utility-entry.md"
+      ],
+      "identityEvolution": {
+        "branch": "HSA-P-001",
+        "current": "PAT-001",
+        "title": "Controlled Utility Entry"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pattern-language-phase7-migration",
+      "headSha": "876d43c6878b5e0ba5111f5634f69514d77966bd",
+      "mechanicalEvidence": {
+        "aheadBy": 16,
+        "behindBy": 1339,
+        "branchOnlyCommits": 16,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "This branch is a migration execution/control variant from the same Phase-7 programme. Its migration-plan surface is no longer current authority because the canonical Phase-7 plan and gate review record the migration complete. The migrated pattern corpus remains on main and has subsequently undergone the project-wide HSA→PAT identity cleanup. Reintroducing this branch would restore an obsolete migration-control state and legacy reader-facing identities.",
+      "currentAuthority": [
+        "docs/development/pattern-language-phase7-plan.md",
+        "docs/development/pattern-language-phase7-review.md",
+        "docs/patterns/README.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "pattern-language-phase8-crosswalk",
+      "headSha": "69dd1d10041b8c930c05a2eb2015d8357e887e67",
+      "mechanicalEvidence": {
+        "aheadBy": 14,
+        "behindBy": 1291,
+        "branchOnlyCommits": 14,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "Phase 8's paper computational crosswalk is preserved and extended on main. The current Phase-8 review remains PASS, the crosswalk model remains authoritative, and the model now records the executable PAT-XW-01 gate that followed the paper handoff. The branch is an earlier completed checkpoint whose intended contribution was consumed by later executable compiler work.",
+      "currentAuthority": [
+        "docs/development/pattern-language-phase8-review.md",
+        "docs/computational/pattern-crosswalk-model.md",
+        "docs/computational/p0-pat-xw-01-result.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    }
+  ],
+  "summary": {
+    "reviewed": 5,
+    "C": 5,
+    "D": 0,
+    "X": 0,
+    "salvageRequired": 0
+  },
+  "nextPacket": {
+    "packet": "BRH-02G",
+    "group": "publication-editorial-final",
+    "branches": [
+      "pr00b-part-iv-synthesis",
+      "pr00d-d3-reference-house-architecture",
+      "pr00d-d3-reference-house-figures",
+      "pr00d-d4-reference-house-systems",
+      "pr00d-d5-visual-integration",
+      "pr00e-editorial-hardening",
+      "pr00f-integrity",
+      "pub-san-computational-surface",
+      "pub-san-research-evidence",
+      "pub-san-rh-technical"
+    ],
+    "reason": "The remaining ten C/D candidates in the BRH-01C semantic queue form one coherent publication/editorial lineage and exactly meet the BRH-02 hard cap."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}

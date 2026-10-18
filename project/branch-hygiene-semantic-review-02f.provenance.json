@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02F",
+  "programmeIssue": 161,
+  "repository": "adamnoden/architecture",
+  "baselineMainSha": "6234476ae897847b2048740de1bf5600cbe1c657",
+  "supersededBaselineMainSha": "a497988d4c7c56e8b1f5da9b5a790915cd8601e7",
+  "restartReason": "PR #188 merged before durable freeze. Its four changed files were confined to site/theme/settings surfaces; all five target branches were re-compared against the moved main before review was frozen.",
+  "openPrCountAtFreeze": 0,
+  "reviewJsonSha256": "0894a5f3e7ab623660686d8daa466b36d0bc54511636fd5100b481353dfd06f7",
+  "sourceHeads": {
+    "pattern-language-overhaul": "12af047641ef08f2f5a21a9621dbfc668abd48fc",
+    "pattern-language-phase6-audit": "0c08c98d4792ccb63a24185303fe9295f36d8384",
+    "pattern-language-phase7": "18c55e5b66bf1dcb04ddb42fa9850d3535a296f9",
+    "pattern-language-phase7-migration": "876d43c6878b5e0ba5111f5634f69514d77966bd",
+    "pattern-language-phase8-crosswalk": "69dd1d10041b8c930c05a2eb2015d8357e887e67"
+  },
+  "summary": {
+    "reviewed": 5,
+    "C": 5,
+    "D": 0,
+    "X": 0,
+    "salvageRequired": 0
+  },
+  "validation": {
+    "policy": "standard pull-request validation is required on the final packet head before merge; the run identifier is recorded in the issue closeout rather than mutating this evidence file after validation"
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
