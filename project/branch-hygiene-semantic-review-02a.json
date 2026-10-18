@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02A",
+  "programmeIssue": 161,
+  "baselineMainSha": "cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c",
+  "scopeGroup": "prototype-research",
+  "branches": [
+    {
+      "name": "prototype-p03-engineer-review-brief",
+      "headSha": "1fe68d1f4da1531cc273573ea098709e3d6a1302",
+      "mechanicalEvidence": {
+        "aheadBy": 1,
+        "behindBy": 1200,
+        "branchOnlyCommits": 1,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The sole branch-only contribution is an obsolete pre-engineering P03 review brief. Its useful decision logic has been reimplemented and strengthened on current main by the current P03 engineering brief and P03 test protocol, using current Reference House geometry and authority. The branch still uses HSA naming, obsolete 12.6 × 11.4 m / 3.6 × 3.6 m geometry and period-specific reference framing. Preserving it as a second authority would create drift.",
+      "currentAuthority": [
+        "docs/prototypes/p03-floor-edge-engineering-brief.md",
+        "docs/prototypes/p03-floor-edge-test-protocol.md",
+        "docs/reference-house/structural-coordination.md",
+        "docs/research/seated-floor-structure-options.md"
+      ],
+      "issueDisposition": {
+        "issue": 30,
+        "stateAtReview": "open",
+        "decision": "leave-open",
+        "reason": "Issue #30 owns the actual competent-engineer option reduction and response. The stale branch is a preparatory brief, not the required engineer response, and does not satisfy the issue close conditions."
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "workmanship-robustness",
+      "headSha": "a049e8da6cd9133dcbbb654e2fc703a1c5baf712",
+      "mechanicalEvidence": {
+        "aheadBy": 20,
+        "behindBy": 1451,
+        "branchOnlyCommits": 20,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The branch was an integration campaign for workmanship robustness. Its durable semantic contribution has been reimplemented and evolved across current Ovid’s House research, manuscript, manufacturing, prototype, delivery and Reference House authority. The current corpus preserves the tolerance strategy, ordinary-competence target, mistake-proofing, workmanship allocation, representative-installer testing and architectural tolerance logic without retaining obsolete Long-Life House framing.",
+      "currentAuthority": [
+        "docs/research/workmanship-robustness.md",
+        "docs/manuscript/part-ii.md",
+        "docs/development/manufacturing-strategy.md",
+        "docs/development/tectonic-prototype-programme.md",
+        "docs/delivery/riba-implementation-brief-template.md",
+        "docs/reference-house/tectonic-architectural-language.md"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    }
+  ],
+  "summary": {
+    "reviewed": 2,
+    "C": 2,
+    "D": 0,
+    "X": 0,
+    "salvageRequired": 0
+  },
+  "nextPacket": {
+    "packet": "BRH-02B",
+    "group": "infrastructure-tooling",
+    "branches": [
+      "project-integrity-refactor",
+      "public-url-phase-1"
+    ],
+    "reason": "Next smallest coherent unresolved lineage; bounded two-branch semantic review."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
