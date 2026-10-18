@@ -135,7 +135,8 @@ describe('DRW-04B first-floor publication plan scene', () => {
     for (const label of [
       'Bedroom 2',
       'Principal bedroom',
-      'South landing',
+      'South',
+      'landing',
       'Bedroom 3',
       'East gallery',
       'Family bathroom',
@@ -148,6 +149,17 @@ describe('DRW-04B first-floor publication plan scene', () => {
       assert.ok(values.includes(label), label)
     }
     assert.equal(values.some((value) => /(?:U-|RH-C|DRW-)/.test(value)), false)
+  })
+
+  test('wraps the south-landing label inside the clear arrival strip without changing type size', () => {
+    const landing = texts().filter((text) => text.metadata?.space === 'U-STAIR-01')
+    assert.deepEqual(
+      landing.map((text) => ({ id: text.id, value: text.value, x: text.x, y: text.y })),
+      [
+        { id: 'label-U-STAIR-01-1', value: 'South', x: 79.5, y: 104.5 },
+        { id: 'label-U-STAIR-01-2', value: 'landing', x: 79.5, y: 107.5 }
+      ]
+    )
   })
 
   test('uses a leader to keep the east-gallery label out of the narrow circulation strip', () => {

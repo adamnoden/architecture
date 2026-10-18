@@ -31,7 +31,8 @@ describe('DRW-04C controlled first-floor publication SVG', () => {
 
     for (const label of [
       'Principal bedroom',
-      'South landing',
+      'South',
+      'landing',
       'East gallery',
       'Family bathroom',
       'North landing',
