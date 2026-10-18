@@ -1,18 +1,17 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-01C",
   "programmeIssue": 161,
-  "generatedAt": "2026-10-18T08:53:52.453Z",
+  "generatedAt": "2026-10-18T08:54:48.534Z",
   "repository": "adamnoden/architecture",
   "baselineMainSha": "fcf3691a639153827358664b73982e68e7c01707",
   "priorPacket": {
     "packet": "BRH-01B",
-    "mergeMainSha": "fcf3691a639153827358664b73982e68e7c01707",
     "sourceFile": "project/branch-hygiene-classification.json"
   },
   "enumeration": {
     "branchCount": 159,
-    "sha256": "9b36b14f4d7fea28c65b21e70bab4e8f3d8ae59089a2c995071da366c028dc96",
+    "sha256": "5212ea1acc4d6c1b618d67c5bf9591eaa2ef708253c0b880ceb67e628c7fd276",
     "branches": [
       {
         "ref": "origin/architectural-specificity-audit-execution",
@@ -52,7 +51,7 @@
       {
         "ref": "origin/brh-01c-unresolved-register",
         "name": "brh-01c-unresolved-register",
-        "headSha": "ac18cc3e7c4b66004e4e4a1fda88e419ac94197f"
+        "headSha": "aac2f074e9ce35c29812a82ce577d9303a9b4265"
       },
       {
         "ref": "origin/candidate-pattern-hardening",
@@ -811,7 +810,15 @@
       }
     ]
   },
-  "openPrs": [],
+  "openPrs": [
+    {
+      "number": 175,
+      "headRefName": "brh-01c-unresolved-register",
+      "headSha": "aac2f074e9ce35c29812a82ce577d9303a9b4265",
+      "draft": true,
+      "url": "https://github.com/adamnoden/architecture/pull/175"
+    }
+  ],
   "coverage": {
     "finalA": 110,
     "finalB": 5,
@@ -1323,20 +1330,26 @@
     },
     {
       "name": "brh-01c-unresolved-register",
-      "headSha": "ac18cc3e7c4b66004e4e4a1fda88e419ac94197f",
+      "headSha": "aac2f074e9ce35c29812a82ce577d9303a9b4265",
       "group": "branch-hygiene",
       "provisionalReviewClass": "X",
       "reasons": [
         "active-BRH-01C-packet",
+        "open-pr",
         "post-BRH-01B-ref",
         "unique-patch-signal"
       ],
-      "openPr": null,
+      "openPr": {
+        "number": 175,
+        "draft": true,
+        "headSha": "aac2f074e9ce35c29812a82ce577d9303a9b4265",
+        "url": "https://github.com/adamnoden/architecture/pull/175"
+      },
       "mechanical": {
         "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 3,
-        "nonMergeBranchOnlyCommitCount": 3,
-        "uniquePatchCount": 3,
+        "branchOnlyCommitCount": 5,
+        "nonMergeBranchOnlyCommitCount": 5,
+        "uniquePatchCount": 5,
         "equivalentPatchCount": 0
       }
     },

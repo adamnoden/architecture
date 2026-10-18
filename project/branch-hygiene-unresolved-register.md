@@ -11,9 +11,9 @@ Mechanical coverage freeze only. This packet does not decide semantic supersessi
 - unresolved register: **44**
 - provisional X: **4**
 - provisional C/D: **40**
-- open PRs at proof time: **0**
-- enumeration SHA-256: `9b36b14f4d7fea28c65b21e70bab4e8f3d8ae59089a2c995071da366c028dc96`
-- register JSON SHA-256: `2d402c8c18118e6905f7fffa0292523f27f27dcfcaad608bb36dca7cbadd4f7f`
+- open PRs at proof time: **1**
+- enumeration SHA-256: `5212ea1acc4d6c1b618d67c5bf9591eaa2ef708253c0b880ceb67e628c7fd276`
+- register JSON SHA-256: `390fbb9036daec7a82c0951a61aa0b44f495e3afdecb7ef7b2cc9b21893f9f6f`
 
 ## Unresolved review groups
 
@@ -29,7 +29,7 @@ Mechanical coverage freeze only. This packet does not decide semantic supersessi
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | `brh-01a-obvious-integrated` | X | yes | 0 | 0 | 0 | mechanically-integrated-outside-final-A-packet |
 | `brh-01b-patch-equivalent` | X | yes | 0 | 0 | 0 | head-changed-since-BRH-01B, mechanically-integrated-outside-final-A-packet |
-| `brh-01c-unresolved-register` | X | no | 3 | 3 | 0 | active-BRH-01C-packet, post-BRH-01B-ref, unique-patch-signal |
+| `brh-01c-unresolved-register` | X | no | 5 | 5 | 0 | active-BRH-01C-packet, open-pr, post-BRH-01B-ref, unique-patch-signal |
 
 ### compiler-computational (7)
 
