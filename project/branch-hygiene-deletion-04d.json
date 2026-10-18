@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-04D",
+  "programmeIssue": 161,
+  "status": "planned-preflight-manual-deletion-gate",
+  "packetBranch": "brh-04d-controlled-deletion-4",
+  "execution": {
+    "baselineMainSha": "2e9b4768c049cd3b5b8db15c34b73ba5bcab7321",
+    "sourceClassification": "BRH-01A",
+    "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+    "sourceRule": "A only: unchanged live head, mechanically proven ancestor of source baseline with zero branch-only commits and no open PR; source baseline remains an ancestor of execution main.",
+    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":190,"behindBy":0},
+    "branchCountAtPacketStartIncludingMain": 89,
+    "openPrCountAtPacketStart": 1,
+    "openPrHeadsAtPacketStart": [
+      {"pr":213,"branch":"drw-04d-plan-pair-proof","headSha":"8074dbe26da62e2858031ba49eb074850184cc17"}
+    ],
+    "hardDeletionCap": 25,
+    "connectorDeleteBranchActionAvailable": false
+  },
+  "candidateSetSha256": "549792fc53e179de3a3a24198c947fedaa56231495239847d88bb5b28c1aa2f5",
+  "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
+  "candidateEvidence": "Every candidate is final class A from BRH-01A, had ancestor=yes and branch-only=0 there, still exists at the exact frozen head, is not an open-PR head, and the BRH-01A baseline is ancestral to current main.",
+  "candidates": [
+    {"name":"print-publication-pipeline","expectedHeadSha":"ecbaf05fbcf20bd863b6c38e58188ffbc6cdaf56","class":"A"},
+    {"name":"project-dataplate","expectedHeadSha":"7e207c178a807deed09356c7c780ded6b99dd275","class":"A"},
+    {"name":"prototype-w2-evidence-protocol","expectedHeadSha":"29c47b2ee3b836a6489c792e92269fcf19ab0b54","class":"A"},
+    {"name":"pub-figure-hardening","expectedHeadSha":"6e893eba90cb054f74ede59a264b5e45a0979801","class":"A"},
+    {"name":"pub-nom","expectedHeadSha":"e4d46792221bb1801d5f2ed0fa04ecf94a9cf5f0","class":"A"},
+    {"name":"pub-nom-actual","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-audit-temp","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-enough","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-finalwork","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-last","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-no","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-real","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-scan","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-stage","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-work","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-x","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-z","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-nom-zz","expectedHeadSha":"e031fbabcb17724fb5561839fb4ff0ec27bd9790","class":"A"},
+    {"name":"pub-san-closeout","expectedHeadSha":"f7bc2ea2cc741d8d54e294de96f8de1412b54fb6","class":"A"},
+    {"name":"pub-san-first-reader","expectedHeadSha":"e035264695ea88c1100ef92e45f988dee225586f","class":"A"},
+    {"name":"pub-san-prototype-surface","expectedHeadSha":"74fcf25db99715819826513f231d49f0219fa5c5","class":"A"},
+    {"name":"pub-san-public-cleanup","expectedHeadSha":"ec95c9f67cd77214845f299eab7a780147e75afe","class":"A"},
+    {"name":"pub-san-publication-surfaces","expectedHeadSha":"bd3a87bc1b1fa6ca6ac063ca12389661b453a5a2","class":"A"},
+    {"name":"pub-san-reference-coordination","expectedHeadSha":"ac0d82b5b0eb51f563b721a97ad753c940856d86","class":"A"},
+    {"name":"pub-san-reference-review","expectedHeadSha":"817c6c5befb2878abe8be31045fd678e0e561d17","class":"A"}
+  ],
+  "explicitlyProtectedObservedRefs": [
+    {"name":"drw-04d-plan-pair-proof","reason":"open PR #213 and current DRW packet"},
+    {"name":"drw-04b2-dressing-label-fit","reason":"recent DRW corrective ref outside historical A tranche"},
+    {"name":"brh-01a-obvious-integrated","reason":"BRH authority ref; separate deletion eligibility"},
+    {"name":"brh-01b-patch-equivalent","reason":"BRH authority/B record; separate deletion eligibility"},
+    {"name":"brh-02g-publication-editorial-review","reason":"accidental/no-op ref requiring separate re-proof"},
+    {"name":"brh-03-salvage-necessity-proof","reason":"stale/superseded BRH-03 draft requiring separate re-proof"},
+    {"name":"pub-san-back-matter","reason":"class B; A-first packet excludes it"},
+    {"name":"pub-san-computational-surface","reason":"class C; excluded"},
+    {"name":"pub-san-research-evidence","reason":"class C; excluded"},
+    {"name":"pub-san-rh-technical","reason":"class C; excluded"}
+  ],
+  "deletionPreconditions": {
+    "executionMainMustStillEqualBaselineImmediatelyBeforeDeletion": true,
+    "allCandidatesMustStillExistAtExpectedHeadImmediatelyBeforeDeletion": true,
+    "noCandidateMayHaveOpenPrImmediatelyBeforeDeletion": true,
+    "candidateCountMustNotExceed25": true,
+    "postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover": true
+  },
+  "mutation": {"branchDeletionPerformed":false,"deletedCount":0,"repositorySettingsChanged":false},
+  "resumeRule": "Immediately before manual deletion, re-check main, open PRs and all 25 exact heads. If main or any candidate head moved, stop and recompute. After deletion, re-enumerate the complete namespace, prove exactly the authorised refs disappeared modulo independently observed concurrent ref turnover, then update this record and merge it under a fresh main/open-PR lease."
+}
