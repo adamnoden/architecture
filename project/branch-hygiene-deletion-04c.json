@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04C",
   "programmeIssue": 161,
-  "status": "planned-preflight-manual-deletion-gate",
+  "status": "complete",
   "packetBranch": "brh-04c-controlled-deletion-3",
   "execution": {
     "baselineMainSha": "79b55304b3d228b765a594f4495ed00acebcd8fd",
@@ -11,16 +11,21 @@
     "sourceRule": "A only: unchanged live head, mechanically proven ancestor of source baseline with zero branch-only commits and no open PR; source baseline remains an ancestor of execution main.",
     "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":179,"behindBy":0},
     "branchCountAtPacketStartIncludingMain": 114,
+    "branchCountImmediatelyBeforeDeletionIncludingMain": 115,
     "openPrCountAtPacketStart": 1,
-    "openPrHeadsAtPacketStart": [
-      {"pr":213,"branch":"drw-04d-plan-pair-proof","headSha":"9301935644f925473fd136941c5cee64bbf099fb"}
+    "openPrCountImmediatelyBeforeDeletion": 3,
+    "openPrHeadsImmediatelyBeforeDeletion": [
+      {"pr":213,"branch":"drw-04d-plan-pair-proof","headSha":"9301935644f925473fd136941c5cee64bbf099fb"},
+      {"pr":219,"branch":"drw-04b1-south-landing-label-fit","headSha":"2660ba791e105be1e562ba7ab9180a6d85348cbe"},
+      {"pr":220,"branch":"brh-04c-controlled-deletion-3","headSha":"3204a217683cf215629fcbb7025e76383da44961"}
     ],
     "hardDeletionCap": 25,
-    "connectorDeleteBranchActionAvailable": false
+    "connectorDeleteBranchActionAvailable": false,
+    "deletionActor": "repository owner via GitHub UI"
   },
   "candidateSetSha256": "e87c63fee13920b58a45b4c401db5d315a944b543d3d1ccc46a3bd4cc45c7e47",
   "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
-  "candidateEvidence": "Every candidate is final class A from BRH-01A, had ancestor=yes and branch-only=0 there, still exists at the exact frozen head, is not an open-PR head, and the BRH-01A baseline is ancestral to current main.",
+  "candidateEvidence": "Every candidate was final class A from BRH-01A, had ancestor=yes and branch-only=0 there, still existed at the exact frozen head immediately before deletion, was not an open-PR head, and the BRH-01A baseline remained ancestral to execution main.",
   "candidates": [
     {"name":"pr00c-authority-reconciliation","expectedHeadSha":"4ea8ca63d1414f1261677b2cb9aac5c19670ecf0","class":"A"},
     {"name":"pr00c-closeout","expectedHeadSha":"09c5f61d900c9763ddacd1a020b6f097a6c1f37c","class":"A"},
@@ -48,25 +53,47 @@
     {"name":"pr01-status-reconciliation","expectedHeadSha":"6466f64ff739489bfe49b86c130058821d9815b7","class":"A"},
     {"name":"preface-the-obvious-eventually","expectedHeadSha":"b3fa7550e2ccf985b2ec765e5a07e646f77d3089","class":"A"}
   ],
-  "explicitlyProtectedObservedRefs": [
-    {"name":"drw-04d-plan-pair-proof","reason":"open PR #213 and current DRW packet"},
-    {"name":"drw-04b1-south-landing-label-fit","reason":"recent DRW ref outside historical A tranche"},
-    {"name":"brh-01a-obvious-integrated","reason":"BRH authority ref; not part of original A deletion sequence"},
-    {"name":"brh-01b-patch-equivalent","reason":"B authority ref; deletion order remains A first"},
-    {"name":"brh-02g-publication-editorial-review","reason":"recent reconciliation ref; requires separate re-proof"},
-    {"name":"brh-03-salvage-necessity-proof","reason":"stale/superseded BRH-03 draft; requires separate re-proof"},
-    {"name":"pr00d-d3-reference-house-architecture","reason":"class C from semantic review"},
-    {"name":"pr00d-d3-reference-house-figures","reason":"class C from semantic review"},
-    {"name":"pr00d-d4-reference-house-systems","reason":"class C from semantic review"},
-    {"name":"pr00d-d5-visual-integration","reason":"class C from semantic review"}
-  ],
-  "deletionPreconditions": {
-    "executionMainMustStillEqualBaselineImmediatelyBeforeDeletion": true,
-    "allCandidatesMustStillExistAtExpectedHeadImmediatelyBeforeDeletion": true,
-    "noCandidateMayHaveOpenPrImmediatelyBeforeDeletion": true,
-    "candidateCountMustNotExceed25": true,
-    "postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover": true
+  "verification": {
+    "all25CandidateRefsAbsent": true,
+    "candidateCountDeleted": 25,
+    "postDeleteBranchCountIncludingMain": 90,
+    "namespaceCountReconciliation": "115 refs immediately before deletion - 25 BRH-04C deletions - 1 independently retired DRW ref + 1 independently created HFI ref = 90 refs after deletion",
+    "concurrentRefsCreatedOutsidePacket": ["hfi-02b-stairs-fall-risk"],
+    "concurrentRefsRetiredOutsidePacket": ["drw-04b1-south-landing-label-fit"],
+    "postDeleteOpenPrs": [213,220,221],
+    "survivingSentinels": [
+      "brh-01a-obvious-integrated",
+      "brh-01b-patch-equivalent",
+      "brh-02g-publication-editorial-review",
+      "brh-03-salvage-necessity-proof",
+      "brh-04c-controlled-deletion-3",
+      "drw-02e",
+      "drw-03a",
+      "drw-04d-plan-pair-proof",
+      "hfi-02b-stairs-fall-risk",
+      "pr00b-part-iv-synthesis",
+      "pr00d-d3-reference-house-architecture",
+      "pr00d-d3-reference-house-figures",
+      "pr00d-d4-reference-house-systems",
+      "pr00d-d5-visual-integration"
+    ],
+    "mainObservedPostDelete": "46a9bad2ff8af899111b44bceff17282f4961451",
+    "conclusion": "The intended 25 class-A refs are absent. The namespace count reconciles exactly after independent DRW retirement and HFI creation, active/open-PR branches survive, and nearby non-target B/C/BRH/DRW sentinels remain. No evidence of unintended BRH deletion was observed."
   },
-  "mutation": {"branchDeletionPerformed":false,"deletedCount":0,"repositorySettingsChanged":false},
-  "resumeRule": "Immediately before manual deletion, re-check main, open PRs and all 25 exact heads. If main or any candidate head moved, stop and recompute. After deletion, re-enumerate the complete namespace, prove exactly the authorised refs disappeared modulo independently observed concurrent ref turnover, then update this record and merge it under a fresh main/open-PR lease."
+  "result": {
+    "disposition": "complete",
+    "branchesDeleted": 25,
+    "ADeleted": 25,
+    "BDeleted": 0,
+    "CDeleted": 0,
+    "DDeleted": 0,
+    "XDeleted": 0
+  },
+  "safety": {
+    "mainDeleted": false,
+    "openPrBranchDeletedByBRH": false,
+    "repositorySettingsChanged": false,
+    "historicalBranchContentMergedOrCherryPicked": false
+  },
+  "nextPacket": "BRH-04D — recover then-current namespace and continue the A-first deletion phase with a fresh bounded batch; do not reuse BRH-04C leases."
 }
