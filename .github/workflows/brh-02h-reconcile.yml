@@ -55,7 +55,7 @@ jobs:
           const focusNames = [...new Set([...originalXNames, ...postFreezeNames])].sort()
           function gitEvidence(sha) {
             const exists = run('git', ['cat-file','-e',`${sha}^{commit}`], true).status === 0
-            if (!exists) return { commitAvailable: false }
+            if (!exists) return { commitAvailable:false }
             const ancestor = run('git', ['merge-base','--is-ancestor',sha,'origin/main'], true).status === 0
             const counts = run('git', ['rev-list','--left-right','--count',`origin/main...${sha}`]).stdout.split(/\s+/).map(Number)
             const branchOnly = Number(run('git', ['rev-list','--count',`origin/main..${sha}`]).stdout || 0)
@@ -66,6 +66,7 @@ jobs:
           const focus = focusNames.map(name => {
             const liveHeadSha = current.get(name) || null
             const frozenHeadSha = original.get(name) || null
+            const source = originalXNames.includes(name) ? 'original-X' : 'post-freeze'
             const prsForBranch = prs.filter(p => p.headRefName === name)
             const openForBranch = prsForBranch.filter(p => p.state === 'OPEN')
             const mergedForBranch = prsForBranch.filter(p => p.mergedAt)
@@ -73,9 +74,10 @@ jobs:
             const evidence = evidenceSha ? gitEvidence(evidenceSha) : { commitAvailable:false }
             let reconciliation = 'X', reason = 'uncertain-or-active'
             if (openForBranch.length) { reconciliation='X'; reason='open-pr' }
+            else if (source === 'post-freeze' && liveHeadSha && mergedForBranch.length === 0) { reconciliation='X'; reason='post-freeze-unmerged-live-ref' }
             else if (liveHeadSha && evidence.headIsAncestorOfMain && evidence.branchOnlyCommitCount===0) { reconciliation='A'; reason='live-ref-fully-integrated' }
             else if (!liveHeadSha && mergedForBranch.length && evidence.headIsAncestorOfMain && evidence.branchOnlyCommitCount===0) { reconciliation='A-ABSENT'; reason='ref-absent-but-final-merged-head-fully-integrated' }
-            return { name, source:originalXNames.includes(name)?'original-X':'post-freeze', liveRefPresent:Boolean(liveHeadSha), liveHeadSha, frozenHeadSha, evidenceSha, evidence, openPullRequests:openForBranch, mergedPullRequests:mergedForBranch, reconciliation, reason }
+            return { name, source, liveRefPresent:Boolean(liveHeadSha), liveHeadSha, frozenHeadSha, evidenceSha, evidence, openPullRequests:openForBranch, mergedPullRequests:mergedForBranch, reconciliation, reason }
           })
           const result = { schemaVersion:1, packet:'BRH-02H', repository:process.env.GH_REPO, generatedAt:new Date().toISOString(), baselineMainSha:mainSha, freezeMainSha:freeze.baselineMainSha, originalBranchCount:original.size, currentBranchCount:current.size, postFreezeBranchCount:postFreezeNames.length, missingOriginalBranchCount:missingOriginalNames.length, originalXNames, postFreezeNames, missingOriginalNames, openPrs, focus, counts:{ focus:focus.length, reconciledA:focus.filter(x=>x.reconciliation==='A').length, reconciledAbsentA:focus.filter(x=>x.reconciliation==='A-ABSENT').length, retainedX:focus.filter(x=>x.reconciliation==='X').length } }
           fs.mkdirSync('brh-02h-proof',{recursive:true})
