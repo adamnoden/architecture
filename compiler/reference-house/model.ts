@@ -130,6 +130,7 @@ export interface ReferenceHouseSource {
     galleryServiceX: SourceFact<Millimetres>
     upperNorthSplitY: SourceFact<Millimetres>
     upperDrySplitX: SourceFact<Millimetres>
+    upperSouthLandingTurnDepth: SourceFact<Millimetres>
   }
   levels: {
     groundFfl: SourceFact<Millimetres>

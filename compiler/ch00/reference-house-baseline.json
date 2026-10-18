@@ -9,7 +9,7 @@
     "sourcePath": "compiler/reference-house/fixture.ts",
     "sourceFingerprint": {
       "algorithm": "git-blob-sha1",
-      "value": "793923585266efcbab4d462aac172cdcc2e2738b"
+      "value": "8bce8f39b48873395be3922005890cc0f6dc06fa"
     }
   },
   "statuses": {
@@ -113,7 +113,7 @@
     },
     "rhc1FirstFloor": {
       "path": "docs/reference-house/rhc1-first-floor.svg",
-      "gitBlobSha1": "28c919b1aa958be9ec78d3afda26a1859f70eb56"
+      "gitBlobSha1": "4fcbe272b525035abc398ace3fcd52b17f26001a"
     },
     "rhc1PrincipalSection": {
       "path": "docs/reference-house/rhc1-principal-section.svg",
