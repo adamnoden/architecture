@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02H",
+  "programmeIssue": 161,
+  "repository": "adamnoden/architecture",
+  "baselineMainSha": "1849e0fe912378278c44f19ab09b8f8a3fe20546",
+  "freezeMainSha": "8aae956ed45a4bab5eac5ba5841a9784a75a500f",
+  "proof": {
+    "workflowRunId": 39129176842,
+    "jobId": 117680615684,
+    "artifactId": 12137870055,
+    "artifactName": "brh-02h-reconciliation-proof",
+    "artifactDigest": "sha256:bb67875d47206754940013a18196a8d0d67a3f970e777e6cca4670c9598b459e",
+    "reconciliationJsonSha256": "3981c3e543506dc9f98c3ec1beb2e5c513c0c4d3d7ca43d2a7f305f443f787c3",
+    "currentRefsSha256": "9c36e093395cfc78441fac9cb63670d192e6923328154598648ffd104cd005dc",
+    "currentRefCount": 161,
+    "postFreezeRefCount": 2,
+    "missingOriginalRefCount": 1
+  },
+  "classification": {
+    "originalXReconciledA": 4,
+    "originalXReconciledAbsentA": 1,
+    "retainedActiveX": 2,
+    "remainingD": 0,
+    "salvageRequired": 0
+  },
+  "activeProtectedAtProof": [
+    {
+      "branch": "drw-03e-controlled-ground-plan-svg",
+      "pr": 190,
+      "headSha": "1949d4ac53e148ccd481d31d14609525aec65ec4"
+    },
+    {
+      "branch": "brh-02h-x-reconciliation",
+      "pr": 192,
+      "headSha": "75ff3debcb1270904644f622483ce1b8ad3c5dc5"
+    }
+  ],
+  "temporaryWorkflow": {
+    "path": ".github/workflows/brh-02h-reconcile.yml",
+    "mustBeRemovedBeforeMerge": true
+  },
+  "validation": {
+    "policy": "After the temporary proof workflow is removed and durable records are final, standard pull-request validation must pass on the exact final packet head before merge."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
