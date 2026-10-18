@@ -1,30 +1,31 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "packet": "BRH-01B",
   "programmeIssue": 161,
   "pullRequest": 173,
   "baselineMainSha": "ce7f522e3b3bec286746fd093d21764670419e20",
+  "restartReason": "PR #174 / drw-02e appeared after the first BRH-01B audit. Main did not move, but the stale 157-branch result was discarded and the complete audit was rerun so the live branch is explicitly protected.",
   "priorPacket": {
     "packet": "BRH-01A",
     "pullRequest": 172,
     "baselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
     "aCandidateCount": 110
   },
-  "enumeratedBranchCount": 157,
-  "enumerationSha256": "1d3e5f37cc13eba50128458b0fd907b2ac9c31605cfe29b558dfcec33c6ff880",
-  "classificationJsonSha256": "78918ecf6af6677eb00028867accc744e8dab06ad381bf907aad340ac58cbc59",
+  "enumeratedBranchCount": 158,
+  "enumerationSha256": "cf028563ac9aab94f30dd9c58348933a1c69a212ed610d1a8baaf428afc3b345",
+  "classificationJsonSha256": "290f9fd295a53a94b877971ceca3a1af27a06aa09c92d867108629cb9ad99152",
   "carriedACount": 110,
   "invalidatedPriorACount": 0,
   "bCandidateCount": 5,
-  "unresolvedAfterABCount": 42,
-  "newSinceBRH01A": 1,
+  "unresolvedAfterABCount": 43,
+  "newSinceBRH01A": 2,
   "changedSinceBRH01A": 1,
   "post01AIntegratedSignalCount": 1,
-  "openPrCountAtClassification": 1,
-  "classificationWorkflowRun": 39110817230,
-  "classificationWorkflowHeadSha": "362f9a72a9f7b8b1614fa46cec38da96c520d495",
-  "artifactId": 12130830356,
-  "artifactDigest": "sha256:803f8c9f380669e96083e8dba6c1f6bb69fea8a2801e98b3f98eda91ec0e0980",
+  "openPrCountAtClassification": 2,
+  "classificationWorkflowRun": 39111076486,
+  "classificationWorkflowHeadSha": "885e13210fc416306c099746c2ba9dae94e72496",
+  "artifactId": 12130800997,
+  "artifactDigest": "sha256:54744456cc350ee6aad78a3bc9feb0848428cf29be0753b31a54a0f3023a9ef7",
   "bBranches": [
     "ch00-compiler-hardening-plan",
     "external-maintenance-geography",
@@ -32,6 +33,14 @@
     "pr00e-e2-e4-editorial-hardening",
     "pub-san-back-matter"
   ],
+  "protectedLiveBranches": [
+    {
+      "name": "drw-02e",
+      "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "pullRequest": 174,
+      "provisionalClassification": "X"
+    }
+  ],
   "authorisesDeletion": false,
-  "note": "Mechanical B classification only. No semantic supersession decision, salvage, branch deletion, or repository-setting mutation occurred. BRH-01C must form the explicit unresolved register from everything not final A/B, including the former BRH-01A packet branch that is now mechanically A-shaped but was deliberately not reclassified in BRH-01B."
+  "note": "Mechanical B classification only. No semantic supersession decision, salvage, branch deletion, or repository-setting mutation occurred. BRH-01C must form the explicit unresolved register from everything not final A/B, including the former BRH-01A packet branch that is now mechanically A-shaped but was deliberately not reclassified in BRH-01B and the live DRW-02E branch protected as X."
 }
