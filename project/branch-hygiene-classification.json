@@ -1,9 +1,10 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "packet": "BRH-01B",
-  "generatedAt": "2026-10-18T08:16:57.033Z",
+  "generatedAt": "2026-10-18T08:21:02.035Z",
   "repository": "adamnoden/architecture",
   "baselineMainSha": "ce7f522e3b3bec286746fd093d21764670419e20",
+  "restartReason": "PR #174 / drw-02e appeared after the first BRH-01B audit. Main did not move, but the stale 157-branch result was discarded and the complete audit was rerun so the live branch is explicitly protected.",
   "priorClassification": {
     "packet": "BRH-01A",
     "baselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
@@ -15,8 +16,8 @@
       "origin/HEAD",
       "origin/main"
     ],
-    "branchCount": 157,
-    "sha256": "1d3e5f37cc13eba50128458b0fd907b2ac9c31605cfe29b558dfcec33c6ff880",
+    "branchCount": 158,
+    "sha256": "cf028563ac9aab94f30dd9c58348933a1c69a212ed610d1a8baaf428afc3b345",
     "branches": [
       {
         "ref": "origin/architectural-specificity-audit-execution",
@@ -51,7 +52,7 @@
       {
         "ref": "origin/brh-01b-patch-equivalent",
         "name": "brh-01b-patch-equivalent",
-        "headSha": "362f9a72a9f7b8b1614fa46cec38da96c520d495"
+        "headSha": "885e13210fc416306c099746c2ba9dae94e72496"
       },
       {
         "ref": "origin/candidate-pattern-hardening",
@@ -242,6 +243,11 @@
         "ref": "origin/drw-02d",
         "name": "drw-02d",
         "headSha": "b1067ec01574ab6ec1f639d8556e07581506bb07"
+      },
+      {
+        "ref": "origin/drw-02e",
+        "name": "drw-02e",
+        "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6"
       },
       {
         "ref": "origin/editorial-overhaul",
@@ -806,13 +812,13 @@
     ]
   },
   "counts": {
-    "currentNonMainBranches": 157,
-    "openPrs": 1,
+    "currentNonMainBranches": 158,
+    "openPrs": 2,
     "carriedA": 110,
     "invalidatedPriorA": 0,
     "bCandidates": 5,
-    "unresolvedAfterAB": 42,
-    "newSinceBRH01A": 1,
+    "unresolvedAfterAB": 43,
+    "newSinceBRH01A": 2,
     "changedSinceBRH01A": 1,
     "post01AIntegratedSignal": 1
   },
@@ -837,7 +843,8 @@
     "authorisesDeletion": false
   },
   "newSinceBRH01A": [
-    "brh-01b-patch-equivalent"
+    "brh-01b-patch-equivalent",
+    "drw-02e"
   ],
   "changedSinceBRH01A": [
     {
@@ -848,8 +855,15 @@
   ],
   "openPrs": [
     {
+      "headRefName": "drw-02e",
+      "headRefOid": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "isDraft": false,
+      "number": 174,
+      "url": "https://github.com/adamnoden/architecture/pull/174"
+    },
+    {
       "headRefName": "brh-01b-patch-equivalent",
-      "headRefOid": "362f9a72a9f7b8b1614fa46cec38da96c520d495",
+      "headRefOid": "885e13210fc416306c099746c2ba9dae94e72496",
       "isDraft": true,
       "number": 173,
       "url": "https://github.com/adamnoden/architecture/pull/173"
@@ -3775,7 +3789,7 @@
     },
     {
       "name": "brh-01b-patch-equivalent",
-      "headSha": "362f9a72a9f7b8b1614fa46cec38da96c520d495",
+      "headSha": "885e13210fc416306c099746c2ba9dae94e72496",
       "reasons": [
         "active-packet-branch",
         "open-pr",
@@ -3785,9 +3799,9 @@
       ],
       "mechanical": {
         "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 1,
-        "nonMergeBranchOnlyCommitCount": 1,
-        "uniquePatchCount": 1,
+        "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
+        "uniquePatchCount": 4,
         "equivalentPatchCount": 0,
         "allCherryPatchesEquivalent": false
       },
@@ -3911,6 +3925,25 @@
         "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
+    },
+    {
+      "name": "drw-02e",
+      "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "reasons": [
+        "open-pr",
+        "post-BRH-01A-ref",
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
+      ],
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 1,
+        "nonMergeBranchOnlyCommitCount": 1,
+        "uniquePatchCount": 1,
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
+      },
+      "provisionalClassification": "X"
     },
     {
       "name": "g01-completion-programme",
