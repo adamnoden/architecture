@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-01A",
+  "programmeIssue": 161,
+  "pullRequest": 172,
+  "baselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+  "restartReason": "PR #171 / DRW-02D moved main after the first successful classification run. The stale result against 1ee3a0affc83b16f35c2f390a9d7ad1c8ea2e12e was discarded and the full mechanical audit was recomputed.",
+  "enumeratedBranchCount": 156,
+  "enumerationSha256": "8104f89d6aca7396af0878ad4977227edfd2339d13839db2fd5410886aaf2768",
+  "classificationJsonSha256": "2511dbb030fa9c7c350de8fedc24b1db7928885cd210a25abcb615994e8b6be6",
+  "aCandidateCount": 110,
+  "deferredCount": 46,
+  "openPrCountAtClassification": 1,
+  "classificationWorkflowRun": 39104702784,
+  "classificationWorkflowHeadSha": "0ad1e2067344918289374064d3bd3741d11e0935",
+  "artifactId": 12127961815,
+  "artifactDigest": "sha256:033ae831b5267b7867d7b838034b339160fcd454610e1b35a69ac46edfdae548",
+  "authorisesDeletion": false,
+  "note": "Mechanical A classification only. BRH-01B must recompute patch-equivalence evidence on its then-current main. No branch deletion, salvage, semantic supersession decision, or repository-setting mutation occurred in BRH-01A."
+}
