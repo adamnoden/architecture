@@ -1,24 +1,24 @@
-# BRH-04D — controlled deletion batch 4 preflight
+# BRH-04D — controlled deletion batch 4
 
-BRH-04D continues the **A-first** deletion phase under issue #161. It freezes the next bounded tranche of **25 historical class-A refs** after completed BRH-04A through BRH-04C.
+BRH-04D completes the fourth bounded **A-first** deletion packet under issue #161.
 
-## Final post-concurrency lease
+## Authorised destructive lease
 
-Four earlier destructive leases were discarded before any deletion because concurrent HFI/DRW work moved `main`. The current recomputed state is:
+The final destructive lease was taken only after four earlier leases were discarded because concurrent HFI/DRW work moved `main`.
 
-- execution `main`: `58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e`
+- final authorised `main`: `58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e`
 - source classification: BRH-01A at `b8e842cee5beef6981f1e075cd06a1c080fbfe3a`
-- source baseline → execution `main`: **ahead 200 / behind 0**
-- namespace now: **89 refs including `main`**
-- latest open-PR snapshot before this record write: only #223 `brh-04d-controlled-deletion-4`
-- fresh `drw-05b-principal-section-source` @ `58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e` is explicitly protected and remains outside the candidate set
-- HFI-02C and DRW-05A have merged and their packet refs retired
-- deletion cap: **25**
+- source baseline → authorised `main`: **ahead 200 / behind 0**
+- pre-delete namespace: **89 refs including `main`**
+- authorised deletion count: **25**
 - candidate-set SHA-256: `549792fc53e179de3a3a24198c947fedaa56231495239847d88bb5b28c1aa2f5`
+- every candidate was class **A — fully integrated**, was re-read at its exact frozen head immediately before authorisation, and had no open PR
 
-Every candidate below was class **A — fully integrated** in BRH-01A (`ancestor=yes`, `branch-only=0`), and every live head was re-read after `main` reached `58fbf4fc…`.
+## Deleted refs
 
-| Branch | Exact deletion head |
+The repository owner manually deleted exactly these 25 authorised refs:
+
+| Branch | Frozen deletion head |
 | --- | --- |
 | `print-publication-pipeline` | `ecbaf05fbcf20bd863b6c38e58188ffbc6cdaf56` |
 | `project-dataplate` | `7e207c178a807deed09356c7c780ded6b99dd275` |
@@ -46,12 +46,45 @@ Every candidate below was class **A — fully integrated** in BRH-01A (`ancestor
 | `pub-san-reference-coordination` | `ac0d82b5b0eb51f563b721a97ad753c940856d86` |
 | `pub-san-reference-review` | `817c6c5befb2878abe8be31045fd678e0e561d17` |
 
-## Protected namespace
+## Post-delete namespace proof
 
-This packet excludes active/fresh DRW work, BRH authority/stale-draft refs requiring separate re-proof, and every B/C branch. In particular, `pub-san-back-matter` is class B, while `pub-san-computational-surface`, `pub-san-research-evidence`, and `pub-san-rh-technical` are class C.
+The first complete post-delete snapshot contained **64 refs including `main`**.
 
-## Manual destructive gate
+Comparing branch names against the frozen 89-ref pre-delete snapshot gives:
 
-The connected GitHub capability has no first-class branch/ref deletion action. The repository owner may delete exactly the 25 refs above only after a final no-movement check confirms `main` is still `58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e`, all candidates remain at the recorded heads, and none has acquired an open PR.
+- missing refs: **25**
+- authorised refs: **25**
+- `missing == authorised`: **true**
+- unexpected missing refs: **0**
+- persistent added refs relative to the frozen pre-delete snapshot: **0**
 
-After deletion, the complete namespace must be re-enumerated and reconciled against concurrent DRW/HFI turnover. BRH-04D is not complete until that proof is committed, validated, merged, and recorded on #161.
+The namespace therefore equals the frozen pre-delete namespace **minus exactly the authorised deletion set**.
+
+All explicitly protected BRH/B/C/current-work refs remain present, including:
+
+- `brh-01a-obvious-integrated`
+- `brh-01b-patch-equivalent`
+- `brh-02g-publication-editorial-review`
+- `brh-03-salvage-necessity-proof`
+- `brh-04d-controlled-deletion-4`
+- `drw-05b-principal-section-source`
+- `pub-san-back-matter`
+- `pub-san-computational-surface`
+- `pub-san-research-evidence`
+- `pub-san-rh-technical`
+
+No B, C, D or X ref was deleted and no repository setting was changed.
+
+## Concurrent work during the manual window
+
+The repository remained active while the owner performed the bounded deletion:
+
+- HFI-02D PR #226 merged `58fbf4fc…` → `895d47d0ea356003eb5d37d4e1d2ce8a56df75a8`; the merge's first parent is the authorised BRH baseline, so this is independently attributable concurrent work rather than BRH mutation.
+- `drw-05b-principal-section-source` remained present and advanced independently to `d34c19db5580fa0d8cea0ea82d0a2c2d37ec44aa`.
+- no concurrent branch addition persisted in the complete post-delete branch snapshot.
+
+These movements do not weaken the destructive proof because the exact pre/post namespace set difference remains the frozen 25-ref candidate set.
+
+## Closeout gate
+
+The destructive mutation is complete and lossless. BRH-04D closes only after this proof passes repository validation, PR #223 is merged under a fresh `main` + open-PR lease, the merge first parent is verified against that lease, and issue #161 receives the exact closeout evidence.
