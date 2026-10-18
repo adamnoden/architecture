@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-01C",
+  "programmeIssue": 161,
+  "pullRequest": 175,
+  "baselineMainSha": "fcf3691a639153827358664b73982e68e7c01707",
+  "registerCommitHeadSha": "7e6a73f3c0485574aeed4a77f9236e6c8fb6ac69",
+  "enumeratedBranchCount": 159,
+  "finalACount": 110,
+  "finalBCount": 5,
+  "unresolvedCount": 44,
+  "provisionalXCount": 4,
+  "provisionalCDCount": 40,
+  "openPrCountAtProof": 1,
+  "enumerationSha256": "5212ea1acc4d6c1b618d67c5bf9591eaa2ef708253c0b880ceb67e628c7fd276",
+  "registerJsonSha256": "390fbb9036daec7a82c0951a61aa0b44f495e3afdecb7ef7b2cc9b21893f9f6f",
+  "proofWorkflowRun": 39113274440,
+  "proofWorkflowInputHeadSha": "aac2f074e9ce35c29812a82ce577d9303a9b4265",
+  "artifactId": 12131357096,
+  "artifactDigest": "sha256:98278cf4f0d3f17ea3e43bf6805459a06252129c2a221ad6422be973700e81c8",
+  "proofNotes": [
+    "The first successful register pass was superseded because it queried open PRs before PR #175 existed and therefore recorded openPrCount=0.",
+    "The final proof reran with PR #175 already open, captured it as the sole open PR, and removed all temporary workflow/trigger material before the durable register commit.",
+    "The active BRH-01C branch necessarily moved once after enumeration when the workflow committed the durable register; it remains provisional X and is not deletion-eligible."
+  ],
+  "nextPacket": {
+    "packet": "BRH-02A",
+    "group": "prototype-research",
+    "branches": [
+      "prototype-p03-engineer-review-brief",
+      "workmanship-robustness"
+    ],
+    "reason": "Start semantic review with the bounded two-branch prototype/research lineage, including the programme-mandated P03 disposition against issue #30 and current authority."
+  },
+  "semanticDecisionMade": false,
+  "authorisesDeletion": false
+}
