@@ -1,10 +1,10 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "packet": "BRH-01B",
-  "generatedAt": "2026-10-18T08:21:02.035Z",
+  "generatedAt": "2026-10-18T08:25:26.138Z",
   "repository": "adamnoden/architecture",
-  "baselineMainSha": "ce7f522e3b3bec286746fd093d21764670419e20",
-  "restartReason": "PR #174 / drw-02e appeared after the first BRH-01B audit. Main did not move, but the stale 157-branch result was discarded and the complete audit was rerun so the live branch is explicitly protected.",
+  "baselineMainSha": "b80920f74a677c3ddc0ebf70884ca3e0da02ca89",
+  "restartReason": "BRH-01B restarted twice: first when PR #174 / drw-02e appeared after the initial audit, then again when PR #174 merged and moved main from ce7f522e3b3bec286746fd093d21764670419e20 to b80920f74a677c3ddc0ebf70884ca3e0da02ca89. All stale results were discarded.",
   "priorClassification": {
     "packet": "BRH-01A",
     "baselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
@@ -17,7 +17,7 @@
       "origin/main"
     ],
     "branchCount": 158,
-    "sha256": "cf028563ac9aab94f30dd9c58348933a1c69a212ed610d1a8baaf428afc3b345",
+    "sha256": "78d91064b94c81b0ebc56b3125d503b0ac74baefdf53b64ada890d202b00d2ac",
     "branches": [
       {
         "ref": "origin/architectural-specificity-audit-execution",
@@ -52,7 +52,7 @@
       {
         "ref": "origin/brh-01b-patch-equivalent",
         "name": "brh-01b-patch-equivalent",
-        "headSha": "885e13210fc416306c099746c2ba9dae94e72496"
+        "headSha": "4bb220acdff95aba037f689bc21b14f09a7b90db"
       },
       {
         "ref": "origin/candidate-pattern-hardening",
@@ -813,14 +813,14 @@
   },
   "counts": {
     "currentNonMainBranches": 158,
-    "openPrs": 2,
+    "openPrs": 1,
     "carriedA": 110,
     "invalidatedPriorA": 0,
     "bCandidates": 5,
     "unresolvedAfterAB": 43,
     "newSinceBRH01A": 2,
     "changedSinceBRH01A": 1,
-    "post01AIntegratedSignal": 1
+    "post01AIntegratedSignal": 2
   },
   "rule": {
     "classification": "B — patch-equivalent",
@@ -855,15 +855,8 @@
   ],
   "openPrs": [
     {
-      "headRefName": "drw-02e",
-      "headRefOid": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
-      "isDraft": false,
-      "number": 174,
-      "url": "https://github.com/adamnoden/architecture/pull/174"
-    },
-    {
       "headRefName": "brh-01b-patch-equivalent",
-      "headRefOid": "885e13210fc416306c099746c2ba9dae94e72496",
+      "headRefOid": "4bb220acdff95aba037f689bc21b14f09a7b90db",
       "isDraft": true,
       "number": 173,
       "url": "https://github.com/adamnoden/architecture/pull/173"
@@ -3566,7 +3559,7 @@
       "name": "ch00-compiler-hardening-plan",
       "headSha": "23360b57002dd674abd48d8fc4ddf65b4eddc27a",
       "mergeBase": "0538be4a9124b107565717bb2f172e73ebfe86ba",
-      "behindMain": 726,
+      "behindMain": 728,
       "aheadOfMain": 1,
       "branchOnlyCommitCount": 1,
       "nonMergeBranchOnlyCommits": [
@@ -3605,7 +3598,7 @@
       "name": "external-maintenance-geography",
       "headSha": "2b7edc1583b70da90315efe91f63a7566aabaed9",
       "mergeBase": "f1e94ec4d3c0eace88032dd08428c322d285e510",
-      "behindMain": 1325,
+      "behindMain": 1327,
       "aheadOfMain": 1,
       "branchOnlyCommitCount": 1,
       "nonMergeBranchOnlyCommits": [
@@ -3644,7 +3637,7 @@
       "name": "maturity-model-enforcement",
       "headSha": "fb1a57750332c27485223a020eb8375a9a5683bf",
       "mergeBase": "fae4a5f03defc235f5d433c2d304ff7a2573ca74",
-      "behindMain": 871,
+      "behindMain": 873,
       "aheadOfMain": 1,
       "branchOnlyCommitCount": 1,
       "nonMergeBranchOnlyCommits": [
@@ -3683,7 +3676,7 @@
       "name": "pr00e-e2-e4-editorial-hardening",
       "headSha": "514d6ae7b6dfeca79f498e45a127f995972aef32",
       "mergeBase": "1f6c030bc158c46e642608eba3889475c01a5337",
-      "behindMain": 458,
+      "behindMain": 460,
       "aheadOfMain": 1,
       "branchOnlyCommitCount": 1,
       "nonMergeBranchOnlyCommits": [
@@ -3722,7 +3715,7 @@
       "name": "pub-san-back-matter",
       "headSha": "f519e6de4b5491be6f6aefce438c72e88e02dcf7",
       "mergeBase": "917eef47aa1eae16844ea45691c075b72afc4512",
-      "behindMain": 277,
+      "behindMain": 279,
       "aheadOfMain": 1,
       "branchOnlyCommitCount": 1,
       "nonMergeBranchOnlyCommits": [
@@ -3767,6 +3760,15 @@
         "head-changed-since-BRH-01A",
         "currently-A-shaped-but-outside-BRH-01B"
       ]
+    },
+    {
+      "name": "drw-02e",
+      "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "priorHeadSha": null,
+      "reasons": [
+        "post-BRH-01A-ref",
+        "currently-A-shaped-but-outside-BRH-01B"
+      ]
     }
   ],
   "unresolvedAfterAB": [
@@ -3789,7 +3791,7 @@
     },
     {
       "name": "brh-01b-patch-equivalent",
-      "headSha": "885e13210fc416306c099746c2ba9dae94e72496",
+      "headSha": "4bb220acdff95aba037f689bc21b14f09a7b90db",
       "reasons": [
         "active-packet-branch",
         "open-pr",
@@ -3799,9 +3801,9 @@
       ],
       "mechanical": {
         "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 4,
-        "nonMergeBranchOnlyCommitCount": 4,
-        "uniquePatchCount": 4,
+        "branchOnlyCommitCount": 7,
+        "nonMergeBranchOnlyCommitCount": 7,
+        "uniquePatchCount": 7,
         "equivalentPatchCount": 0,
         "allCherryPatchesEquivalent": false
       },
@@ -3930,16 +3932,14 @@
       "name": "drw-02e",
       "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
       "reasons": [
-        "open-pr",
         "post-BRH-01A-ref",
-        "unique-patch-signal",
-        "mixed-or-unique-git-cherry"
+        "head-ancestor-of-main-not-B"
       ],
       "mechanical": {
-        "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 1,
-        "nonMergeBranchOnlyCommitCount": 1,
-        "uniquePatchCount": 1,
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0,
+        "uniquePatchCount": 0,
         "equivalentPatchCount": 0,
         "allCherryPatchesEquivalent": false
       },
