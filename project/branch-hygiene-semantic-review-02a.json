@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "packet": "BRH-02A",
   "programmeIssue": 161,
-  "baselineMainSha": "cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c",
+  "baselineMainSha": "00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f",
   "scopeGroup": "prototype-research",
   "branches": [
     {
@@ -10,7 +10,7 @@
       "headSha": "1fe68d1f4da1531cc273573ea098709e3d6a1302",
       "mechanicalEvidence": {
         "aheadBy": 1,
-        "behindBy": 1200,
+        "behindBy": 1204,
         "branchOnlyCommits": 1,
         "uniquePatchSignal": true
       },
@@ -36,7 +36,7 @@
       "headSha": "a049e8da6cd9133dcbbb654e2fc703a1c5baf712",
       "mechanicalEvidence": {
         "aheadBy": 20,
-        "behindBy": 1451,
+        "behindBy": 1455,
         "branchOnlyCommits": 20,
         "uniquePatchSignal": true
       },
@@ -60,6 +60,10 @@
     "D": 0,
     "X": 0,
     "salvageRequired": 0
+  },
+  "restart": {
+    "reason": "DRW-03B PR #179 merged during the final lease and moved main from cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c to 00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f.",
+    "authorityImpact": "The intervening merge added only publication-plan source, tests and its DRW-03B audit record. Neither reviewed source head nor any P03/workmanship authority used by this semantic disposition changed. C/C was recomputed against the moved main."
   },
   "nextPacket": {
     "packet": "BRH-02B",
