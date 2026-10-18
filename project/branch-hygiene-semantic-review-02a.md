@@ -5,20 +5,24 @@ Semantic review only. This packet resolves the two `prototype-research` entries 
 ## Baseline
 
 - programme: issue #161
-- current main at review start: `cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c`
+- current main at review start: `00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f`
 - open PRs at review start: **0**
 - bounded branches reviewed: **2**
 - final C: **2**
 - final D: **0**
 - final X: **0**
-- review JSON SHA-256: `c95afd6f511cea634583286e2c161e9f4a52a4a94c2a74519e002832ce31cccd`
+- review JSON SHA-256: `63c3d4a62ddafd637e68c11517d3dcdc9c4d0cb52980ed8978b35aef908e8c8e`
+
+## Restart
+
+DRW-03B PR #179 merged during the final lease and moved `main` from `cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c` to `00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f`. The intervening merge added only publication-plan source, tests and its audit record. Neither reviewed source head nor any P03/workmanship authority used here changed, so the semantic review was recomputed against the moved main and the C/C result was retained.
 
 ## Dispositions
 
 | Branch | Head | Mechanical state | Final | Disposition |
 | --- | --- | --- | --- | --- |
-| `prototype-p03-engineer-review-brief` | `1fe68d1f4da1531cc273573ea098709e3d6a1302` | diverged; 1 ahead / 1200 behind; 1 unique branch-only commit | **C** | useful intent is superseded by current P03 authority; no salvage required |
-| `workmanship-robustness` | `a049e8da6cd9133dcbbb654e2fc703a1c5baf712` | diverged; 20 ahead / 1451 behind; 20 unique branch-only commits | **C** | semantic contribution has been reimplemented and evolved throughout current Ovid’s House authority; no salvage required |
+| `prototype-p03-engineer-review-brief` | `1fe68d1f4da1531cc273573ea098709e3d6a1302` | diverged; 1 ahead / 1204 behind; 1 unique branch-only commit | **C** | useful intent is superseded by current P03 authority; no salvage required |
+| `workmanship-robustness` | `a049e8da6cd9133dcbbb654e2fc703a1c5baf712` | diverged; 20 ahead / 1455 behind; 20 unique branch-only commits | **C** | semantic contribution has been reimplemented and evolved throughout current Ovid’s House authority; no salvage required |
 
 ## `prototype-p03-engineer-review-brief` → C
 
