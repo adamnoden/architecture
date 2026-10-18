@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-04C",
+  "programmeIssue": 161,
+  "status": "planned-preflight-manual-deletion-gate",
+  "packetBranch": "brh-04c-controlled-deletion-3",
+  "execution": {
+    "baselineMainSha": "79b55304b3d228b765a594f4495ed00acebcd8fd",
+    "sourceClassification": "BRH-01A",
+    "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+    "sourceRule": "A only: unchanged live head, mechanically proven ancestor of source baseline with zero branch-only commits and no open PR; source baseline remains an ancestor of execution main.",
+    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":179,"behindBy":0},
+    "branchCountAtPacketStartIncludingMain": 114,
+    "openPrCountAtPacketStart": 1,
+    "openPrHeadsAtPacketStart": [
+      {"pr":213,"branch":"drw-04d-plan-pair-proof","headSha":"9301935644f925473fd136941c5cee64bbf099fb"}
+    ],
+    "hardDeletionCap": 25,
+    "connectorDeleteBranchActionAvailable": false
+  },
+  "candidateSetSha256": "e87c63fee13920b58a45b4c401db5d315a944b543d3d1ccc46a3bd4cc45c7e47",
+  "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
+  "candidateEvidence": "Every candidate is final class A from BRH-01A, had ancestor=yes and branch-only=0 there, still exists at the exact frozen head, is not an open-PR head, and the BRH-01A baseline is ancestral to current main.",
+  "candidates": [
+    {"name":"pr00c-authority-reconciliation","expectedHeadSha":"4ea8ca63d1414f1261677b2cb9aac5c19670ecf0","class":"A"},
+    {"name":"pr00c-closeout","expectedHeadSha":"09c5f61d900c9763ddacd1a020b6f097a6c1f37c","class":"A"},
+    {"name":"pr00d-d1-core-figures","expectedHeadSha":"8c7d67c8fc4fdc78f693201e0d0950b6f95be867","class":"A"},
+    {"name":"pr00d-d2-pattern-language-figure","expectedHeadSha":"c260b849f22378d536c440a7aff31198b9858648","class":"A"},
+    {"name":"pr00d-figure-inventory","expectedHeadSha":"891565673355421d3618421c2fece07fb75a6b9f","class":"A"},
+    {"name":"pr00g-candidate-proof","expectedHeadSha":"f9ed50f2217d848e04bef8d0dd76e8dadd7c1775","class":"A"},
+    {"name":"pr00h-candidate-freeze","expectedHeadSha":"36634ee2f224a3059410a8a31d7af73c87a245bd","class":"A"},
+    {"name":"pr01-adversarial-programme","expectedHeadSha":"460070c5b0597ef7525e65786a4bc189f779f4c8","class":"A"},
+    {"name":"pr01-r0-review-map","expectedHeadSha":"cb86869765f24b2a5fd336343c6e24f1655caadd","class":"A"},
+    {"name":"pr01-r1-core-proposition","expectedHeadSha":"f98421cae79adafc34eb50241274f98423bf1f0e","class":"A"},
+    {"name":"pr01-r2-pattern-method","expectedHeadSha":"99b0166fcb2832b4aa25a7c05fb5a1fe6c972b1d","class":"A"},
+    {"name":"pr01-r3-reference-house","expectedHeadSha":"fd0104d4593e1b31e7f51680a034b244cb9a5c90","class":"A"},
+    {"name":"pr01-r4-hostile-architect","expectedHeadSha":"001b41431c934199134b5eb17ce76296efc378ac","class":"A"},
+    {"name":"pr01-r5-steelman-opposition","expectedHeadSha":"4bb8a47cfe93d66cd3198e096138b864f652e6d3","class":"A"},
+    {"name":"pr01-r6-cross-book","expectedHeadSha":"3a0495a52df8157a5c752aabcc737d8d3652b555","class":"A"},
+    {"name":"pr01-r7-findings-freeze","expectedHeadSha":"fc0a0ed24f791e929ae126b0066b7046d407dac5","class":"A"},
+    {"name":"pr01-r8a-proportionality","expectedHeadSha":"c9f1c717412241ae535aeeafbcd6e24ad742ddd1","class":"A"},
+    {"name":"pr01-r8b-life-course","expectedHeadSha":"e9adc414fc585e3b602f542fde0ca19ec25797c6","class":"A"},
+    {"name":"pr01-r8c-transfer","expectedHeadSha":"f06593358bec6ac03fc959c2d21a2e9087e67603","class":"A"},
+    {"name":"pr01-r8d-pattern-taxonomy","expectedHeadSha":"9e2e9848237f378af27ed7924fcaf142b77c8260","class":"A"},
+    {"name":"pr01-r8e-delivery-stewardship","expectedHeadSha":"8eace9665206c4b0e86ddf379a777511ebd50800","class":"A"},
+    {"name":"pr01-r8f-reconciliation","expectedHeadSha":"d4cd8474c329a87a26ba900d3fb3f6c02c32b57b","class":"A"},
+    {"name":"pr01-r9-reproof-refreeze","expectedHeadSha":"c0ca5d571fecb1793136ecd67e44a3426d47a653","class":"A"},
+    {"name":"pr01-status-reconciliation","expectedHeadSha":"6466f64ff739489bfe49b86c130058821d9815b7","class":"A"},
+    {"name":"preface-the-obvious-eventually","expectedHeadSha":"b3fa7550e2ccf985b2ec765e5a07e646f77d3089","class":"A"}
+  ],
+  "explicitlyProtectedObservedRefs": [
+    {"name":"drw-04d-plan-pair-proof","reason":"open PR #213 and current DRW packet"},
+    {"name":"drw-04b1-south-landing-label-fit","reason":"recent DRW ref outside historical A tranche"},
+    {"name":"brh-01a-obvious-integrated","reason":"BRH authority ref; not part of original A deletion sequence"},
+    {"name":"brh-01b-patch-equivalent","reason":"B authority ref; deletion order remains A first"},
+    {"name":"brh-02g-publication-editorial-review","reason":"recent reconciliation ref; requires separate re-proof"},
+    {"name":"brh-03-salvage-necessity-proof","reason":"stale/superseded BRH-03 draft; requires separate re-proof"},
+    {"name":"pr00d-d3-reference-house-architecture","reason":"class C from semantic review"},
+    {"name":"pr00d-d3-reference-house-figures","reason":"class C from semantic review"},
+    {"name":"pr00d-d4-reference-house-systems","reason":"class C from semantic review"},
+    {"name":"pr00d-d5-visual-integration","reason":"class C from semantic review"}
+  ],
+  "deletionPreconditions": {
+    "executionMainMustStillEqualBaselineImmediatelyBeforeDeletion": true,
+    "allCandidatesMustStillExistAtExpectedHeadImmediatelyBeforeDeletion": true,
+    "noCandidateMayHaveOpenPrImmediatelyBeforeDeletion": true,
+    "candidateCountMustNotExceed25": true,
+    "postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover": true
+  },
+  "mutation": {"branchDeletionPerformed":false,"deletedCount":0,"repositorySettingsChanged":false},
+  "resumeRule": "Immediately before manual deletion, re-check main, open PRs and all 25 exact heads. If main or any candidate head moved, stop and recompute. After deletion, re-enumerate the complete namespace, prove exactly the authorised refs disappeared modulo independently observed concurrent ref turnover, then update this record and merge it under a fresh main/open-PR lease."
+}
