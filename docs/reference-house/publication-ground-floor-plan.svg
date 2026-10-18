@@ -54,9 +54,10 @@
 <text x="55" y="110" class="text-marker" text-anchor="start" data-entity="stair-up" data-provisional="true">UP</text>
 <text x="28.5" y="94.5" class="text-label" text-anchor="middle" data-entity="label-G-DRAW-02" data-provisional="true" data-space="G-DRAW-02">Drawing room</text>
 <text x="29" y="41" class="text-label" text-anchor="middle" data-entity="label-G-FAM-02" data-provisional="true" data-space="G-FAM-02">Family room</text>
-<text x="79" y="102.5" class="text-label" text-anchor="middle" data-entity="label-G-HALL-02" data-provisional="true" data-space="G-HALL-02">Entrance hall</text>
+<text x="76" y="102.5" class="text-label" text-anchor="middle" data-entity="label-G-HALL-02" data-provisional="true" data-space="G-HALL-02">Entrance hall</text>
 <text x="113.5" y="103" class="text-label" text-anchor="middle" data-entity="label-G-STUDY-02" data-provisional="false" data-space="G-STUDY-02">Study</text>
-<text x="92.5" y="65.5" class="text-label" text-anchor="middle" data-entity="label-G-GAL-01" data-provisional="false" data-space="G-GAL-01">Gallery</text>
+<line x1="83" y1="56" x2="94" y2="56" class="line-secondary" data-entity="label-leader-G-GAL-01" data-provisional="false" data-space="G-GAL-01"/>
+<text x="82" y="56" class="text-label" text-anchor="end" data-entity="label-G-GAL-01" data-provisional="false" data-space="G-GAL-01">Gallery</text>
 <text x="113.5" y="66" class="text-label" text-anchor="middle" data-entity="label-G-SVC-02" data-provisional="false" data-space="G-SVC-02">Service suite</text>
 <text x="68" y="28.5" class="text-label" text-anchor="middle" data-entity="label-G-GARDEN-02" data-provisional="false" data-space="G-GARDEN-02">Garden dining</text>
 <text x="107" y="28.5" class="text-label" text-anchor="middle" data-entity="label-G-KIT-02" data-provisional="false" data-space="G-KIT-02">Kitchen</text>

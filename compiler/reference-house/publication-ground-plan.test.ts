@@ -143,6 +143,23 @@ describe('DRW-03D ground-floor publication plan scene', () => {
     assert.equal(values.some((value) => /(?:G-|RH-C|DRW-)/.test(value)), false)
   })
 
+  test('keeps collision-corrected room labels at their authored anchors and leader geometry', () => {
+    const entranceHall = texts().find((text) => text.value === 'Entrance hall')
+    assert.ok(entranceHall)
+    assert.deepEqual({ x: entranceHall.x, y: entranceHall.y, anchor: entranceHall.anchor }, { x: 76, y: 102.5, anchor: 'middle' })
+
+    const gallery = texts().find((text) => text.value === 'Gallery')
+    assert.ok(gallery)
+    assert.deepEqual({ x: gallery.x, y: gallery.y, anchor: gallery.anchor }, { x: 82, y: 56, anchor: 'end' })
+
+    const leader = scene().primitives.find((primitive) => primitive.id === 'label-leader-G-GAL-01')
+    assert.ok(leader && leader.kind === 'line')
+    assert.deepEqual(
+      { a: leader.a, b: leader.b, role: leader.role },
+      { a: { x: 83, y: 56 }, b: { x: 94, y: 56 }, role: 'secondary' }
+    )
+  })
+
   test('keeps dimensioning sparse and adds the required physical graphic scale bar', () => {
     const drawing = scene()
     const values = texts().map((text) => text.value)

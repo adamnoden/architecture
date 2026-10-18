@@ -260,12 +260,32 @@ const dimensionTick = (id: string, point: PaperPoint): DrawingLine =>
     'secondary'
   )
 
-const roomLabelPositions: Record<string, { x: number; y: number; label: string }> = {
+interface RoomLabelSpec {
+  x: number
+  y: number
+  label: string
+  anchor?: DrawingText['anchor']
+  leader?: {
+    from: { x: number; y: number }
+    to: { x: number; y: number }
+  }
+}
+
+const roomLabelPositions: Record<string, RoomLabelSpec> = {
   'G-DRAW-02': { x: 2050, y: 2550, label: 'Drawing room' },
   'G-FAM-02': { x: 2100, y: 7900, label: 'Family room' },
-  'G-HALL-02': { x: 7100, y: 1750, label: 'Entrance hall' },
+  'G-HALL-02': { x: 6800, y: 1750, label: 'Entrance hall' },
   'G-STUDY-02': { x: 10550, y: 1700, label: 'Study' },
-  'G-GAL-01': { x: 8450, y: 5450, label: 'Gallery' },
+  'G-GAL-01': {
+    x: 7400,
+    y: 6400,
+    label: 'Gallery',
+    anchor: 'end',
+    leader: {
+      from: { x: 7500, y: 6400 },
+      to: { x: 8600, y: 6400 }
+    }
+  },
   'G-SVC-02': { x: 10550, y: 5400, label: 'Service suite' },
   'G-GARDEN-02': { x: 6000, y: 9150, label: 'Garden dining' },
   'G-KIT-02': { x: 9900, y: 9150, label: 'Kitchen' }
@@ -428,11 +448,26 @@ export const createGroundFloorPublicationPlanScene = (
   for (const [spaceId, label] of Object.entries(roomLabelPositions)) {
     const space = result.derived.spaces.find((candidate) => candidate.levelId === 'GROUND' && candidate.id === spaceId)
     if (!space) throw new Error(`Ground-plan label refers to missing space ${spaceId}.`)
+    if (label.leader) {
+      primitives.push(
+        linePrimitive(
+          `label-leader-${spaceId}`,
+          project.point(label.leader.from.x, label.leader.from.y),
+          project.point(label.leader.to.x, label.leader.to.y),
+          'secondary',
+          { space: spaceId, provisional: space.provisional }
+        )
+      )
+    }
     primitives.push(
-      textPrimitive(`label-${spaceId}`, project.point(label.x, label.y), label.label, 'label', 'middle', {
-        space: spaceId,
-        provisional: space.provisional
-      })
+      textPrimitive(
+        `label-${spaceId}`,
+        project.point(label.x, label.y),
+        label.label,
+        'label',
+        label.anchor ?? 'middle',
+        { space: spaceId, provisional: space.provisional }
+      )
     )
   }
 
