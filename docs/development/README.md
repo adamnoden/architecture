@@ -8,6 +8,7 @@ It does **not** contain the prototype artefacts themselves. Build packs, drawing
 
 ## Live controls
 
+- [Human Factors and Low-Friction Inhabitation Programme](human-factors-low-friction-inhabitation-programme.md) + [execution plan](human-factors-low-friction-inhabitation-execution-plan.md) — research-first programme for anthropometric variance, movement, thresholds, circulation, object/task logistics and sequence-of-use controls; HFI-00A is the first authorised packet.
 - [Architectural Specificity Boundary](architectural-specificity-boundary.md) — continuing scope firewall between general Ovid’s House propositions, technical-domain restrictions, architectural grammars and Reference House choices.
 - [Reference House Design Programme](reference-house-design-programme.md) — restart-safe staged programme for driving the provisional Reference House through whole-building virtual coordination and into external review.
 - [Tectonic Prototype Programme](tectonic-prototype-programme.md) — physical/engineering validation programme, including the separation between general Ovid’s House evidence and Reference House/G-01 fit.
