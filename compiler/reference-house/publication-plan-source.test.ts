@@ -88,6 +88,22 @@ describe('DRW-03B ground-floor publication-plan source', () => {
     assert.ok(!('swing' in source.internalOpenings[0]))
   })
 
+  test('keeps the drawing-to-family passage fully clear of the courtyard wall planning body', () => {
+    const house = createReferenceHouseSource()
+    const source = createGroundFloorPublicationPlanSource()
+    const passage = source.internalOpenings.find((opening) => opening.id === 'G-INT-DRAW-FAM-01')
+    assert.ok(passage)
+
+    const courtWest = (house.shell.width.value - house.court.value.width) / 2
+    const courtWallInnerFace = courtWest - source.wallRepresentation.externalCourtBodyProxy.value
+    const passageRightEdge = passage.centreCoordinate.value + passage.width.value / 2
+
+    assert.equal(courtWest, 4200)
+    assert.equal(courtWallInnerFace, 3800)
+    assert.equal(passage.centreCoordinate.value, 3200)
+    assert.equal(passageRightEdge, courtWallInnerFace)
+  })
+
   test('makes the existing court and garden opening orders executable only at provisional plan resolution', () => {
     const source = createGroundFloorPublicationPlanSource()
 
