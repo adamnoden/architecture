@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "packet": "BRH-02H",
+  "programmeIssue": 161,
+  "baselineMainSha": "589f0ac2c37046d55c055373f2d32816f774eaba",
+  "freezeMainSha": "8aae956ed45a4bab5eac5ba5841a9784a75a500f",
+  "restart": {
+    "supersededBaselineMainSha": "1849e0fe912378278c44f19ab09b8f8a3fe20546",
+    "reason": "DRW-03E PR #190 merged during the final gate and moved main. The first proof was discarded; the full namespace proof was rerun. A newly-created DRW-03F ref was then conservatively retained X because it is post-freeze, live and unmerged even though its creation head equals main."
+  },
+  "proof": {
+    "workflowRunId": 39129501266,
+    "jobId": 117681580457,
+    "artifactId": 12137258436,
+    "artifactDigest": "sha256:8509eb4b4ece80faa6699549b6d8d3d3aede3f47d1324c17fcc46e5a72e232bd",
+    "reconciliationJsonSha256": "02d6b064deaffbca0c3fd4fb89bc90a061fecc6970eb91abbd52c2af8139c7ee",
+    "currentRefsSha256": "0c294c13d1e6e74502c1af7be2c6c2b166f62fafcf6ccc49d6163d2e0694fa82"
+  },
+  "namespace": {
+    "originalBranchCount": 160,
+    "currentBranchCount": 161,
+    "postFreezeBranchCount": 2,
+    "missingOriginalBranchCount": 1,
+    "postFreezeNames": [
+      "brh-02h-x-reconciliation",
+      "drw-03f-ground-plan-plate-proof"
+    ],
+    "missingOriginalNames": [
+      "brh-01c-unresolved-register"
+    ],
+    "mergedSinceSupersededProof": {
+      "branch": "drw-03e-controlled-ground-plan-svg",
+      "pr": 190,
+      "headSha": "1949d4ac53e148ccd481d31d14609525aec65ec4",
+      "mergeCommitSha": "589f0ac2c37046d55c055373f2d32816f774eaba",
+      "liveRefPresentAtFinalProof": false,
+      "judgement": "Its work is now in main and its source ref is no longer part of the live namespace."
+    }
+  },
+  "originalX": [
+    {
+      "name": "brh-01a-obvious-integrated",
+      "frozenHeadSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41",
+      "liveHeadSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41",
+      "reconciliation": "A",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 107,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 172
+      }
+    },
+    {
+      "name": "brh-01b-patch-equivalent",
+      "frozenHeadSha": "8ea68f5b5cfac84ea4aeb6b11ed24bd8fdca6660",
+      "liveHeadSha": "8ea68f5b5cfac84ea4aeb6b11ed24bd8fdca6660",
+      "reconciliation": "A",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 94,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 173
+      }
+    },
+    {
+      "name": "brh-01c-unresolved-register",
+      "frozenHeadSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
+      "liveRefPresent": false,
+      "finalMergedHeadSha": "1e49375fa14011a57490b70a4c900b6d5f3f771b",
+      "reconciliation": "A-ABSENT",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 75,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 175,
+        "judgement": "The live branch ref is absent, but the final merged PR head is fully ancestral to current main. Content is integrated; the dead ref is not recreated."
+      }
+    },
+    {
+      "name": "drw-02e",
+      "frozenHeadSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "liveHeadSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "reconciliation": "A",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 102,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 174
+      }
+    },
+    {
+      "name": "drw-03a",
+      "frozenHeadSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
+      "liveHeadSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
+      "reconciliation": "A",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 90,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 177
+      }
+    }
+  ],
+  "retainedX": [
+    {
+      "name": "drw-03f-ground-plan-plate-proof",
+      "proofHeadSha": "589f0ac2c37046d55c055373f2d32816f774eaba",
+      "openPr": null,
+      "reason": "post-freeze-unmerged-live-ref",
+      "deletionEligible": false
+    },
+    {
+      "name": "brh-02h-x-reconciliation",
+      "proofHeadSha": "fcf9a95773215b990505f075a6bbd7e05bb14d6c",
+      "openPr": 192,
+      "reason": "active-packet-open-pr",
+      "deletionEligible": false
+    }
+  ],
+  "summary": {
+    "focusBranches": 7,
+    "reconciledA": 4,
+    "reconciledAbsentA": 1,
+    "retainedX": 2,
+    "remainingOriginalCD": 0,
+    "D": 0,
+    "salvageRequired": 0
+  },
+  "brh02CloseCondition": {
+    "semanticQueueResolved": true,
+    "originalXReconciled": true,
+    "postFreezeNamespaceReconciled": true,
+    "activeOrRecentXMayRemainProtected": true,
+    "nextPhase": "BRH-03 — salvage necessity proof; expected vacuous because D=0"
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
