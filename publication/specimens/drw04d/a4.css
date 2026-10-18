@@ -1,0 +1,4 @@
+@page { size: A4; margin-top: 23mm; margin-bottom: 24mm; }
+@page plate:left { margin-left: 22mm; margin-right: 30mm; @top-left { content: none; } @top-right { content: none; } @bottom-left { content: counter(page); font: 7.5pt Arial; } }
+@page plate:right { margin-left: 30mm; margin-right: 22mm; @top-left { content: none; } @top-right { content: none; } @bottom-right { content: counter(page); font: 7.5pt Arial; } }
+@page blank { margin: 0; @top-left { content: none; } @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
