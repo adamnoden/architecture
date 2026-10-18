@@ -1,0 +1,2148 @@
+{
+  "schemaVersion": 5,
+  "packet": "BRH-01C",
+  "programmeIssue": 161,
+  "generatedAt": "2026-10-18T09:06:39.741Z",
+  "repository": "adamnoden/architecture",
+  "baselineMainSha": "8aae956ed45a4bab5eac5ba5841a9784a75a500f",
+  "restartReason": "DRW-03A PR #177 merged and moved main to 8aae956ed45a4bab5eac5ba5841a9784a75a500f during the final lease check; full register recomputed.",
+  "priorPacket": {
+    "packet": "BRH-01B",
+    "sourceFile": "project/branch-hygiene-classification.json"
+  },
+  "enumeration": {
+    "branchCount": 160,
+    "sha256": "21e0b1d466769fc00349720901786c5923a6621a9f456640c96cae800d833f2f",
+    "branches": [
+      {
+        "ref": "origin/architectural-specificity-audit-execution",
+        "name": "architectural-specificity-audit-execution",
+        "headSha": "dd5e50ffbe48b2cea1b7045e43b140839e7f7a29"
+      },
+      {
+        "ref": "origin/architectural-specificity-boundary",
+        "name": "architectural-specificity-boundary",
+        "headSha": "186f8d6b38d9add87d601149e370e6b2870cd9a7"
+      },
+      {
+        "ref": "origin/brh-00a-audit-method",
+        "name": "brh-00a-audit-method",
+        "headSha": "1485ce3e009ac6a4801625b61a546c9ee68ed63a"
+      },
+      {
+        "ref": "origin/brh-00b-full-inventory",
+        "name": "brh-00b-full-inventory",
+        "headSha": "bcca81ed13d63397afd3e085224b5d557e372935"
+      },
+      {
+        "ref": "origin/brh-00c-completeness-verification",
+        "name": "brh-00c-completeness-verification",
+        "headSha": "454daa685156ac3e73777239e588c66b91838534"
+      },
+      {
+        "ref": "origin/brh-01a-obvious-integrated",
+        "name": "brh-01a-obvious-integrated",
+        "headSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41"
+      },
+      {
+        "ref": "origin/brh-01b-patch-equivalent",
+        "name": "brh-01b-patch-equivalent",
+        "headSha": "8ea68f5b5cfac84ea4aeb6b11ed24bd8fdca6660"
+      },
+      {
+        "ref": "origin/brh-01c-unresolved-register",
+        "name": "brh-01c-unresolved-register",
+        "headSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb"
+      },
+      {
+        "ref": "origin/candidate-pattern-hardening",
+        "name": "candidate-pattern-hardening",
+        "headSha": "67dee3992d8353185233ee3e13fabfb88089d3df"
+      },
+      {
+        "ref": "origin/cf-01-contrast-fixture",
+        "name": "cf-01-contrast-fixture",
+        "headSha": "66470917264edf3419ebda2886fbf42c2466a125"
+      },
+      {
+        "ref": "origin/ch-00-baseline-freeze",
+        "name": "ch-00-baseline-freeze",
+        "headSha": "88af7b7c721b539eb7f219c93f42c1c3939db39a"
+      },
+      {
+        "ref": "origin/ch-01-fail-closed",
+        "name": "ch-01-fail-closed",
+        "headSha": "2888761157163453f094abbfa023a7951a3844bf"
+      },
+      {
+        "ref": "origin/ch-02-runtime-architecture",
+        "name": "ch-02-runtime-architecture",
+        "headSha": "6e2f1b413fd42cca3b344099d8c77765b3142ccc"
+      },
+      {
+        "ref": "origin/ch-03-single-pass-reference-house",
+        "name": "ch-03-single-pass-reference-house",
+        "headSha": "ae462eab87319f37f0d594021dcf6a0e276c991e"
+      },
+      {
+        "ref": "origin/ch-04-strengthen-representation",
+        "name": "ch-04-strengthen-representation",
+        "headSha": "8d9c5a93dde026ebe78c50ff459b3603d8f8b4f5"
+      },
+      {
+        "ref": "origin/ch-05-determinism-identity-provenance",
+        "name": "ch-05-determinism-identity-provenance",
+        "headSha": "77d0d0521a6ddbd6f7f27ac7d324247be1932721"
+      },
+      {
+        "ref": "origin/ch-05-housekeeping-sync",
+        "name": "ch-05-housekeeping-sync",
+        "headSha": "4971c87e788b814dfde1d111399edc64663d6c86"
+      },
+      {
+        "ref": "origin/ch-06-housekeeping-sync",
+        "name": "ch-06-housekeeping-sync",
+        "headSha": "658c947f8a0608dcfc8c8db8d19271087ebebc76"
+      },
+      {
+        "ref": "origin/ch-06-strengthen-test-kinds",
+        "name": "ch-06-strengthen-test-kinds",
+        "headSha": "5909864f4a48e016ae737a6a4d6b668448fadc79"
+      },
+      {
+        "ref": "origin/ch-07-housekeeping-sync",
+        "name": "ch-07-housekeeping-sync",
+        "headSha": "d278ed1d42c2cb633a815b9a699d060bcfcb6d9c"
+      },
+      {
+        "ref": "origin/ch-07-toolchain-ergonomics",
+        "name": "ch-07-toolchain-ergonomics",
+        "headSha": "30068c9303e2ebcab58e24c005ec06f1f38ad863"
+      },
+      {
+        "ref": "origin/ch-08-distillation-deletion",
+        "name": "ch-08-distillation-deletion",
+        "headSha": "4d7749f3cbb39a8b10defb8effa9c3a988482708"
+      },
+      {
+        "ref": "origin/ch00-compiler-hardening-plan",
+        "name": "ch00-compiler-hardening-plan",
+        "headSha": "23360b57002dd674abd48d8fc4ddf65b4eddc27a"
+      },
+      {
+        "ref": "origin/ci-pull-request-gate",
+        "name": "ci-pull-request-gate",
+        "headSha": "693b8e08923fc108ab232c4d067642017a7ddc66"
+      },
+      {
+        "ref": "origin/coa-00-output-audit",
+        "name": "coa-00-output-audit",
+        "headSha": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911"
+      },
+      {
+        "ref": "origin/coa-00-output-audit-2",
+        "name": "coa-00-output-audit-2",
+        "headSha": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911"
+      },
+      {
+        "ref": "origin/coa-00-output-audit-final",
+        "name": "coa-00-output-audit-final",
+        "headSha": "ac2e608b505cae5297d3afbaf7772ee581d2d93e"
+      },
+      {
+        "ref": "origin/coa-01-output-contract",
+        "name": "coa-01-output-contract",
+        "headSha": "1868936d8ab36222bfb36ace873d94c5ab0d2651"
+      },
+      {
+        "ref": "origin/coa-02-report-extraction",
+        "name": "coa-02-report-extraction",
+        "headSha": "814f020d858f2e26aa0547abc4f596aaf3f57455"
+      },
+      {
+        "ref": "origin/coa-03-drawing-language",
+        "name": "coa-03-drawing-language",
+        "headSha": "d7e1a1c42e9aaa94d9482579e5952e1f23585fa1"
+      },
+      {
+        "ref": "origin/coa-04-plan-section-successors",
+        "name": "coa-04-plan-section-successors",
+        "headSha": "95da828b7087abab7b66df763a18eee276c56202"
+      },
+      {
+        "ref": "origin/coa-05-topology-successors",
+        "name": "coa-05-topology-successors",
+        "headSha": "5f76fc014c4754939afecb3e0cdd733d6bbc5e71"
+      },
+      {
+        "ref": "origin/coa-05-topology-successors-2",
+        "name": "coa-05-topology-successors-2",
+        "headSha": "5f76fc014c4754939afecb3e0cdd733d6bbc5e71"
+      },
+      {
+        "ref": "origin/coa-05-topology-successors-final",
+        "name": "coa-05-topology-successors-final",
+        "headSha": "1a2cd8719791c50f3b5f29fb98436a3b657bfe11"
+      },
+      {
+        "ref": "origin/coa-06-output-integration",
+        "name": "coa-06-output-integration",
+        "headSha": "3ee3a9a501267ea2ca6b7b7d1f55d68cbd2bd585"
+      },
+      {
+        "ref": "origin/coa00-tmp",
+        "name": "coa00-tmp",
+        "headSha": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911"
+      },
+      {
+        "ref": "origin/compiler-p0-kernel",
+        "name": "compiler-p0-kernel",
+        "headSha": "deb524ba727b90992a75450d8c35acbe27746bed"
+      },
+      {
+        "ref": "origin/compiler-p0-pat-xw-checkpoint",
+        "name": "compiler-p0-pat-xw-checkpoint",
+        "headSha": "d7d42e8ae03ddec156c0e22773365de28f61179a"
+      },
+      {
+        "ref": "origin/compiler-pat-xw-01",
+        "name": "compiler-pat-xw-01",
+        "headSha": "4643bd1edeb7edc0ff67cc5955349024f7563c9f"
+      },
+      {
+        "ref": "origin/drw-01c",
+        "name": "drw-01c",
+        "headSha": "a1da0f3aaa287b4a93bdb79b183463d95ce0d7c7"
+      },
+      {
+        "ref": "origin/drw-01d",
+        "name": "drw-01d",
+        "headSha": "ba82786f3caef9f543d4a8810e25ef51489118f7"
+      },
+      {
+        "ref": "origin/drw-01e",
+        "name": "drw-01e",
+        "headSha": "5e6cbbd8c1d391127dc231aaeb584b008617ade1"
+      },
+      {
+        "ref": "origin/drw-02a",
+        "name": "drw-02a",
+        "headSha": "b77aac7bb33ddec4ac6185ef6b42cf4841343f13"
+      },
+      {
+        "ref": "origin/drw-02b",
+        "name": "drw-02b",
+        "headSha": "28bd93b54152161411436da4ece6309774a3dc57"
+      },
+      {
+        "ref": "origin/drw-02c",
+        "name": "drw-02c",
+        "headSha": "509be1384cce76d8ee19b584344d4490f9b2d08e"
+      },
+      {
+        "ref": "origin/drw-02d",
+        "name": "drw-02d",
+        "headSha": "b1067ec01574ab6ec1f639d8556e07581506bb07"
+      },
+      {
+        "ref": "origin/drw-02e",
+        "name": "drw-02e",
+        "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6"
+      },
+      {
+        "ref": "origin/drw-03a",
+        "name": "drw-03a",
+        "headSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8"
+      },
+      {
+        "ref": "origin/editorial-overhaul",
+        "name": "editorial-overhaul",
+        "headSha": "b238c4dbb98bc24e44808ca385326cff36a14116"
+      },
+      {
+        "ref": "origin/external-maintenance-geography",
+        "name": "external-maintenance-geography",
+        "headSha": "2b7edc1583b70da90315efe91f63a7566aabaed9"
+      },
+      {
+        "ref": "origin/fix-publication-credibility-navigation",
+        "name": "fix-publication-credibility-navigation",
+        "headSha": "22ac81cabdfe37b367f1a3297f292a8750ae978c"
+      },
+      {
+        "ref": "origin/fix-sanitation-record-surface",
+        "name": "fix-sanitation-record-surface",
+        "headSha": "ba0270e133ea8ddf876d0000180654c6a5726181"
+      },
+      {
+        "ref": "origin/g01-completion-programme",
+        "name": "g01-completion-programme",
+        "headSha": "0efb277130c59b7042726c3121f0529c011c2eb1"
+      },
+      {
+        "ref": "origin/g01-d10-normative",
+        "name": "g01-d10-normative",
+        "headSha": "8b59b09bcf3a47b190c9d6f0e0a849b5f5f997ad"
+      },
+      {
+        "ref": "origin/g01-d10s-specificity",
+        "name": "g01-d10s-specificity",
+        "headSha": "7cca300e719497230e8b9778037cd3379ef1bae4"
+      },
+      {
+        "ref": "origin/g01-d11-v01-freeze",
+        "name": "g01-d11-v01-freeze",
+        "headSha": "8adc19b0daa40a3615f9114453250c4ab2593fe9"
+      },
+      {
+        "ref": "origin/g01-d12-reference-house",
+        "name": "g01-d12-reference-house",
+        "headSha": "172957fb8fa568ba682908e3cf78a29cbc80460d"
+      },
+      {
+        "ref": "origin/g01-d13-closeout",
+        "name": "g01-d13-closeout",
+        "headSha": "6969c24301619ddeb92f3f18ef72fad69b5ccfc9"
+      },
+      {
+        "ref": "origin/g01-d8-falsification",
+        "name": "g01-d8-falsification",
+        "headSha": "89aab07fca5debbf77c35f0b6d713683a645163f"
+      },
+      {
+        "ref": "origin/g01-d9-holdout",
+        "name": "g01-d9-holdout",
+        "headSha": "c1cc56d17cd616a648e78d0a1851c39c05faa7ba"
+      },
+      {
+        "ref": "origin/maturity-model-enforcement",
+        "name": "maturity-model-enforcement",
+        "headSha": "fb1a57750332c27485223a020eb8375a9a5683bf"
+      },
+      {
+        "ref": "origin/ovids-house-migration",
+        "name": "ovids-house-migration",
+        "headSha": "e6a8a9a75ad0a97bd28232c8f7539e6987bb541d"
+      },
+      {
+        "ref": "origin/pattern-language-overhaul",
+        "name": "pattern-language-overhaul",
+        "headSha": "12af047641ef08f2f5a21a9621dbfc668abd48fc"
+      },
+      {
+        "ref": "origin/pattern-language-phase6-audit",
+        "name": "pattern-language-phase6-audit",
+        "headSha": "0c08c98d4792ccb63a24185303fe9295f36d8384"
+      },
+      {
+        "ref": "origin/pattern-language-phase7",
+        "name": "pattern-language-phase7",
+        "headSha": "18c55e5b66bf1dcb04ddb42fa9850d3535a296f9"
+      },
+      {
+        "ref": "origin/pattern-language-phase7-close",
+        "name": "pattern-language-phase7-close",
+        "headSha": "bac80230ffbca080fb4c262eb41fb08ebd3574a4"
+      },
+      {
+        "ref": "origin/pattern-language-phase7-integration",
+        "name": "pattern-language-phase7-integration",
+        "headSha": "e2971075966bb5df9e9cbbfa875de34155d82503"
+      },
+      {
+        "ref": "origin/pattern-language-phase7-migration",
+        "name": "pattern-language-phase7-migration",
+        "headSha": "876d43c6878b5e0ba5111f5634f69514d77966bd"
+      },
+      {
+        "ref": "origin/pattern-language-phase7-new-identities",
+        "name": "pattern-language-phase7-new-identities",
+        "headSha": "c50f30b3a96a73326f8bed8489c3ad63ce7d6e3d"
+      },
+      {
+        "ref": "origin/pattern-language-phase7-nonpattern-homes",
+        "name": "pattern-language-phase7-nonpattern-homes",
+        "headSha": "0f421c2d5f6c9c71f0b5f9940a6beef6be5f8a64"
+      },
+      {
+        "ref": "origin/pattern-language-phase7-validation",
+        "name": "pattern-language-phase7-validation",
+        "headSha": "ea9211d407f3da8b30085050157680c535e57d00"
+      },
+      {
+        "ref": "origin/pattern-language-phase8-crosswalk",
+        "name": "pattern-language-phase8-crosswalk",
+        "headSha": "69dd1d10041b8c930c05a2eb2015d8357e887e67"
+      },
+      {
+        "ref": "origin/pr00-candidate-book-freeze-programme",
+        "name": "pr00-candidate-book-freeze-programme",
+        "headSha": "315304bf41313f47c1ccf361d058397b4302c872"
+      },
+      {
+        "ref": "origin/pr00a-candidate-book-ledger",
+        "name": "pr00a-candidate-book-ledger",
+        "headSha": "882e640cf646da2d0b42a604ae927ef08625b0db"
+      },
+      {
+        "ref": "origin/pr00b-back-matter",
+        "name": "pr00b-back-matter",
+        "headSha": "ecd55f8f31db0fd623dbc948c02f5651678aae66"
+      },
+      {
+        "ref": "origin/pr00b-part-iii-framing",
+        "name": "pr00b-part-iii-framing",
+        "headSha": "ea1d2ab1a6c0aa93060c49bab34472047c058ffc"
+      },
+      {
+        "ref": "origin/pr00b-part-iv-authorship",
+        "name": "pr00b-part-iv-authorship",
+        "headSha": "b1dcb3e1f8ff405bffe8e69da21b724da22c9174"
+      },
+      {
+        "ref": "origin/pr00b-part-iv-synthesis",
+        "name": "pr00b-part-iv-synthesis",
+        "headSha": "4907af4556e2c546721fcfba6b7f29853014f935"
+      },
+      {
+        "ref": "origin/pr00b-part-v-recheck",
+        "name": "pr00b-part-v-recheck",
+        "headSha": "4c637309c1c1aa75ece6c152d754718d57e4a7de"
+      },
+      {
+        "ref": "origin/pr00c-authority-reconciliation",
+        "name": "pr00c-authority-reconciliation",
+        "headSha": "4ea8ca63d1414f1261677b2cb9aac5c19670ecf0"
+      },
+      {
+        "ref": "origin/pr00c-closeout",
+        "name": "pr00c-closeout",
+        "headSha": "09c5f61d900c9763ddacd1a020b6f097a6c1f37c"
+      },
+      {
+        "ref": "origin/pr00d-d1-core-figures",
+        "name": "pr00d-d1-core-figures",
+        "headSha": "8c7d67c8fc4fdc78f693201e0d0950b6f95be867"
+      },
+      {
+        "ref": "origin/pr00d-d2-pattern-language-figure",
+        "name": "pr00d-d2-pattern-language-figure",
+        "headSha": "c260b849f22378d536c440a7aff31198b9858648"
+      },
+      {
+        "ref": "origin/pr00d-d3-reference-house-architecture",
+        "name": "pr00d-d3-reference-house-architecture",
+        "headSha": "1789943590256278cd6152cb414c137634b8a7b7"
+      },
+      {
+        "ref": "origin/pr00d-d3-reference-house-figures",
+        "name": "pr00d-d3-reference-house-figures",
+        "headSha": "53097a2a42faa8488b7d528388ef45903c93e138"
+      },
+      {
+        "ref": "origin/pr00d-d4-reference-house-systems",
+        "name": "pr00d-d4-reference-house-systems",
+        "headSha": "064bdce830ea76c4ffa49737ee72d7092470619b"
+      },
+      {
+        "ref": "origin/pr00d-d5-visual-integration",
+        "name": "pr00d-d5-visual-integration",
+        "headSha": "d377665ae095b604979956d61dd36803ae7b3f6f"
+      },
+      {
+        "ref": "origin/pr00d-figure-inventory",
+        "name": "pr00d-figure-inventory",
+        "headSha": "891565673355421d3618421c2fece07fb75a6b9f"
+      },
+      {
+        "ref": "origin/pr00e-e2-e4-editorial-hardening",
+        "name": "pr00e-e2-e4-editorial-hardening",
+        "headSha": "514d6ae7b6dfeca79f498e45a127f995972aef32"
+      },
+      {
+        "ref": "origin/pr00e-editorial-hardening",
+        "name": "pr00e-editorial-hardening",
+        "headSha": "3e16b1cecde03dbdaa21becc6f8a02eaa4306d40"
+      },
+      {
+        "ref": "origin/pr00f-integrity",
+        "name": "pr00f-integrity",
+        "headSha": "ebd9d34497e83c3158915e98cd120e1fb296675f"
+      },
+      {
+        "ref": "origin/pr00g-candidate-proof",
+        "name": "pr00g-candidate-proof",
+        "headSha": "f9ed50f2217d848e04bef8d0dd76e8dadd7c1775"
+      },
+      {
+        "ref": "origin/pr00h-candidate-freeze",
+        "name": "pr00h-candidate-freeze",
+        "headSha": "36634ee2f224a3059410a8a31d7af73c87a245bd"
+      },
+      {
+        "ref": "origin/pr01-adversarial-programme",
+        "name": "pr01-adversarial-programme",
+        "headSha": "460070c5b0597ef7525e65786a4bc189f779f4c8"
+      },
+      {
+        "ref": "origin/pr01-r0-review-map",
+        "name": "pr01-r0-review-map",
+        "headSha": "cb86869765f24b2a5fd336343c6e24f1655caadd"
+      },
+      {
+        "ref": "origin/pr01-r1-core-proposition",
+        "name": "pr01-r1-core-proposition",
+        "headSha": "f98421cae79adafc34eb50241274f98423bf1f0e"
+      },
+      {
+        "ref": "origin/pr01-r2-pattern-method",
+        "name": "pr01-r2-pattern-method",
+        "headSha": "99b0166fcb2832b4aa25a7c05fb5a1fe6c972b1d"
+      },
+      {
+        "ref": "origin/pr01-r3-reference-house",
+        "name": "pr01-r3-reference-house",
+        "headSha": "fd0104d4593e1b31e7f51680a034b244cb9a5c90"
+      },
+      {
+        "ref": "origin/pr01-r4-hostile-architect",
+        "name": "pr01-r4-hostile-architect",
+        "headSha": "001b41431c934199134b5eb17ce76296efc378ac"
+      },
+      {
+        "ref": "origin/pr01-r5-steelman-opposition",
+        "name": "pr01-r5-steelman-opposition",
+        "headSha": "4bb8a47cfe93d66cd3198e096138b864f652e6d3"
+      },
+      {
+        "ref": "origin/pr01-r6-cross-book",
+        "name": "pr01-r6-cross-book",
+        "headSha": "3a0495a52df8157a5c752aabcc737d8d3652b555"
+      },
+      {
+        "ref": "origin/pr01-r7-findings-freeze",
+        "name": "pr01-r7-findings-freeze",
+        "headSha": "fc0a0ed24f791e929ae126b0066b7046d407dac5"
+      },
+      {
+        "ref": "origin/pr01-r8a-proportionality",
+        "name": "pr01-r8a-proportionality",
+        "headSha": "c9f1c717412241ae535aeeafbcd6e24ad742ddd1"
+      },
+      {
+        "ref": "origin/pr01-r8b-life-course",
+        "name": "pr01-r8b-life-course",
+        "headSha": "e9adc414fc585e3b602f542fde0ca19ec25797c6"
+      },
+      {
+        "ref": "origin/pr01-r8c-transfer",
+        "name": "pr01-r8c-transfer",
+        "headSha": "f06593358bec6ac03fc959c2d21a2e9087e67603"
+      },
+      {
+        "ref": "origin/pr01-r8d-pattern-taxonomy",
+        "name": "pr01-r8d-pattern-taxonomy",
+        "headSha": "9e2e9848237f378af27ed7924fcaf142b77c8260"
+      },
+      {
+        "ref": "origin/pr01-r8e-delivery-stewardship",
+        "name": "pr01-r8e-delivery-stewardship",
+        "headSha": "8eace9665206c4b0e86ddf379a777511ebd50800"
+      },
+      {
+        "ref": "origin/pr01-r8f-reconciliation",
+        "name": "pr01-r8f-reconciliation",
+        "headSha": "d4cd8474c329a87a26ba900d3fb3f6c02c32b57b"
+      },
+      {
+        "ref": "origin/pr01-r9-reproof-refreeze",
+        "name": "pr01-r9-reproof-refreeze",
+        "headSha": "c0ca5d571fecb1793136ecd67e44a3426d47a653"
+      },
+      {
+        "ref": "origin/pr01-status-reconciliation",
+        "name": "pr01-status-reconciliation",
+        "headSha": "6466f64ff739489bfe49b86c130058821d9815b7"
+      },
+      {
+        "ref": "origin/preface-the-obvious-eventually",
+        "name": "preface-the-obvious-eventually",
+        "headSha": "b3fa7550e2ccf985b2ec765e5a07e646f77d3089"
+      },
+      {
+        "ref": "origin/print-publication-pipeline",
+        "name": "print-publication-pipeline",
+        "headSha": "ecbaf05fbcf20bd863b6c38e58188ffbc6cdaf56"
+      },
+      {
+        "ref": "origin/project-dataplate",
+        "name": "project-dataplate",
+        "headSha": "7e207c178a807deed09356c7c780ded6b99dd275"
+      },
+      {
+        "ref": "origin/project-integrity-refactor",
+        "name": "project-integrity-refactor",
+        "headSha": "5f3ddadab402daaf9f01a3ea99531fc65734302d"
+      },
+      {
+        "ref": "origin/prototype-p03-engineer-review-brief",
+        "name": "prototype-p03-engineer-review-brief",
+        "headSha": "1fe68d1f4da1531cc273573ea098709e3d6a1302"
+      },
+      {
+        "ref": "origin/prototype-w2-evidence-protocol",
+        "name": "prototype-w2-evidence-protocol",
+        "headSha": "29c47b2ee3b836a6489c792e92269fcf19ab0b54"
+      },
+      {
+        "ref": "origin/pub-figure-hardening",
+        "name": "pub-figure-hardening",
+        "headSha": "6e893eba90cb054f74ede59a264b5e45a0979801"
+      },
+      {
+        "ref": "origin/pub-nom",
+        "name": "pub-nom",
+        "headSha": "e4d46792221bb1801d5f2ed0fa04ecf94a9cf5f0"
+      },
+      {
+        "ref": "origin/pub-nom-actual",
+        "name": "pub-nom-actual",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-audit-temp",
+        "name": "pub-nom-audit-temp",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-enough",
+        "name": "pub-nom-enough",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-finalwork",
+        "name": "pub-nom-finalwork",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-last",
+        "name": "pub-nom-last",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-no",
+        "name": "pub-nom-no",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-real",
+        "name": "pub-nom-real",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-scan",
+        "name": "pub-nom-scan",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-stage",
+        "name": "pub-nom-stage",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-work",
+        "name": "pub-nom-work",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-x",
+        "name": "pub-nom-x",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-z",
+        "name": "pub-nom-z",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-nom-zz",
+        "name": "pub-nom-zz",
+        "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+      },
+      {
+        "ref": "origin/pub-san-back-matter",
+        "name": "pub-san-back-matter",
+        "headSha": "f519e6de4b5491be6f6aefce438c72e88e02dcf7"
+      },
+      {
+        "ref": "origin/pub-san-closeout",
+        "name": "pub-san-closeout",
+        "headSha": "f7bc2ea2cc741d8d54e294de96f8de1412b54fb6"
+      },
+      {
+        "ref": "origin/pub-san-computational-surface",
+        "name": "pub-san-computational-surface",
+        "headSha": "fd527ace394db25b6ddb1c6c6de65728ce48cf0c"
+      },
+      {
+        "ref": "origin/pub-san-first-reader",
+        "name": "pub-san-first-reader",
+        "headSha": "e035264695ea88c1100ef92e45f988dee225586f"
+      },
+      {
+        "ref": "origin/pub-san-prototype-surface",
+        "name": "pub-san-prototype-surface",
+        "headSha": "74fcf25db99715819826513f231d49f0219fa5c5"
+      },
+      {
+        "ref": "origin/pub-san-public-cleanup",
+        "name": "pub-san-public-cleanup",
+        "headSha": "ec95c9f67cd77214845f299eab7a780147e75afe"
+      },
+      {
+        "ref": "origin/pub-san-publication-surfaces",
+        "name": "pub-san-publication-surfaces",
+        "headSha": "bd3a87bc1b1fa6ca6ac063ca12389661b453a5a2"
+      },
+      {
+        "ref": "origin/pub-san-reference-coordination",
+        "name": "pub-san-reference-coordination",
+        "headSha": "ac0d82b5b0eb51f563b721a97ad753c940856d86"
+      },
+      {
+        "ref": "origin/pub-san-reference-review",
+        "name": "pub-san-reference-review",
+        "headSha": "817c6c5befb2878abe8be31045fd678e0e561d17"
+      },
+      {
+        "ref": "origin/pub-san-research-evidence",
+        "name": "pub-san-research-evidence",
+        "headSha": "3090a7ed89f5e0a84d54eecedebf8ad82b5ca42f"
+      },
+      {
+        "ref": "origin/pub-san-resolved-work-cleanup",
+        "name": "pub-san-resolved-work-cleanup",
+        "headSha": "cac29844392a07d735b244c25f6636cc62d68d77"
+      },
+      {
+        "ref": "origin/pub-san-rh-technical",
+        "name": "pub-san-rh-technical",
+        "headSha": "023094149a998126ae8bf1389be8fc0ecd9fdd79"
+      },
+      {
+        "ref": "origin/pub-san-semantic-coherence",
+        "name": "pub-san-semantic-coherence",
+        "headSha": "8e9b1dc14b7710e8b18f057d4cfb761fe830d9ec"
+      },
+      {
+        "ref": "origin/pub-san-source-link-cleanup",
+        "name": "pub-san-source-link-cleanup",
+        "headSha": "aff9deae0b3e34b1c86d2e8f215e967d25f329f8"
+      },
+      {
+        "ref": "origin/public-url-phase-1",
+        "name": "public-url-phase-1",
+        "headSha": "45fcb14128ae055a8b0724cbfbbc31bbc8758ceb"
+      },
+      {
+        "ref": "origin/publication-pdf-metadata",
+        "name": "publication-pdf-metadata",
+        "headSha": "7267aba14c78c6c8551fa7559f8c7bd3a68d54d3"
+      },
+      {
+        "ref": "origin/record-post-freeze-figure-defect",
+        "name": "record-post-freeze-figure-defect",
+        "headSha": "6c1b081d5161ab7719dd7c5c0a1ff37c9a485f71"
+      },
+      {
+        "ref": "origin/reference-house-phase5",
+        "name": "reference-house-phase5",
+        "headSha": "456edac937e0de604f3983a6344902b8862fa761"
+      },
+      {
+        "ref": "origin/rh-c1",
+        "name": "rh-c1",
+        "headSha": "330e7bc0d0eda6a0ec33b51afed09c733c2dd4bd"
+      },
+      {
+        "ref": "origin/rh-c2-structural-view",
+        "name": "rh-c2-structural-view",
+        "headSha": "9be3155dd8ff34dd21ae5ea80c7ec8f94e8e6d20"
+      },
+      {
+        "ref": "origin/rh-c3-service-view",
+        "name": "rh-c3-service-view",
+        "headSha": "3226aa325190aa94803c18535d49b5951afe5458"
+      },
+      {
+        "ref": "origin/rh-c4-boundary-view",
+        "name": "rh-c4-boundary-view",
+        "headSha": "b3740c8196ad2a7ba969e27b89f304841fc94f8f"
+      },
+      {
+        "ref": "origin/rh-c5-target-calculations",
+        "name": "rh-c5-target-calculations",
+        "headSha": "bc219a9060316f023e90a06709999254bda6766a"
+      },
+      {
+        "ref": "origin/site-build-timestamp",
+        "name": "site-build-timestamp",
+        "headSha": "378028f2ad8f8745b750b86f2076a962245360ab"
+      },
+      {
+        "ref": "origin/status-hygiene-2026-10-17",
+        "name": "status-hygiene-2026-10-17",
+        "headSha": "8da95e7428e155945f83fc14c6b2514a02ae2fef"
+      },
+      {
+        "ref": "origin/tectonic-honesty",
+        "name": "tectonic-honesty",
+        "headSha": "28386a2debd5318a2680bcdae636120ceb7b48fb"
+      },
+      {
+        "ref": "origin/vertical-bay-coordination",
+        "name": "vertical-bay-coordination",
+        "headSha": "55f6a11f982d27c4b7c2c00c1b3cf2e5fed05eff"
+      },
+      {
+        "ref": "origin/wall-bay-prototype-v1",
+        "name": "wall-bay-prototype-v1",
+        "headSha": "b9d433220c507bc53433d7227aaeb5162a9ccd8c"
+      },
+      {
+        "ref": "origin/workmanship-robustness",
+        "name": "workmanship-robustness",
+        "headSha": "a049e8da6cd9133dcbbb654e2fc703a1c5baf712"
+      }
+    ]
+  },
+  "openPrs": [
+    {
+      "number": 175,
+      "headRefName": "brh-01c-unresolved-register",
+      "headSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
+      "draft": true,
+      "url": "https://github.com/adamnoden/architecture/pull/175"
+    }
+  ],
+  "coverage": {
+    "finalA": 110,
+    "finalB": 5,
+    "unresolved": 45,
+    "total": 160,
+    "missingPriorFinal": 0,
+    "invalidatedPriorFinal": 0
+  },
+  "finalA": [
+    {
+      "name": "architectural-specificity-audit-execution",
+      "headSha": "dd5e50ffbe48b2cea1b7045e43b140839e7f7a29"
+    },
+    {
+      "name": "architectural-specificity-boundary",
+      "headSha": "186f8d6b38d9add87d601149e370e6b2870cd9a7"
+    },
+    {
+      "name": "brh-00a-audit-method",
+      "headSha": "1485ce3e009ac6a4801625b61a546c9ee68ed63a"
+    },
+    {
+      "name": "brh-00b-full-inventory",
+      "headSha": "bcca81ed13d63397afd3e085224b5d557e372935"
+    },
+    {
+      "name": "brh-00c-completeness-verification",
+      "headSha": "454daa685156ac3e73777239e588c66b91838534"
+    },
+    {
+      "name": "candidate-pattern-hardening",
+      "headSha": "67dee3992d8353185233ee3e13fabfb88089d3df"
+    },
+    {
+      "name": "ch-00-baseline-freeze",
+      "headSha": "88af7b7c721b539eb7f219c93f42c1c3939db39a"
+    },
+    {
+      "name": "ch-01-fail-closed",
+      "headSha": "2888761157163453f094abbfa023a7951a3844bf"
+    },
+    {
+      "name": "ch-02-runtime-architecture",
+      "headSha": "6e2f1b413fd42cca3b344099d8c77765b3142ccc"
+    },
+    {
+      "name": "ch-03-single-pass-reference-house",
+      "headSha": "ae462eab87319f37f0d594021dcf6a0e276c991e"
+    },
+    {
+      "name": "ch-04-strengthen-representation",
+      "headSha": "8d9c5a93dde026ebe78c50ff459b3603d8f8b4f5"
+    },
+    {
+      "name": "ch-06-housekeeping-sync",
+      "headSha": "658c947f8a0608dcfc8c8db8d19271087ebebc76"
+    },
+    {
+      "name": "ch-06-strengthen-test-kinds",
+      "headSha": "5909864f4a48e016ae737a6a4d6b668448fadc79"
+    },
+    {
+      "name": "ch-07-housekeeping-sync",
+      "headSha": "d278ed1d42c2cb633a815b9a699d060bcfcb6d9c"
+    },
+    {
+      "name": "ch-07-toolchain-ergonomics",
+      "headSha": "30068c9303e2ebcab58e24c005ec06f1f38ad863"
+    },
+    {
+      "name": "ci-pull-request-gate",
+      "headSha": "693b8e08923fc108ab232c4d067642017a7ddc66"
+    },
+    {
+      "name": "coa-00-output-audit",
+      "headSha": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911"
+    },
+    {
+      "name": "coa-00-output-audit-2",
+      "headSha": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911"
+    },
+    {
+      "name": "coa-00-output-audit-final",
+      "headSha": "ac2e608b505cae5297d3afbaf7772ee581d2d93e"
+    },
+    {
+      "name": "coa-01-output-contract",
+      "headSha": "1868936d8ab36222bfb36ace873d94c5ab0d2651"
+    },
+    {
+      "name": "coa-02-report-extraction",
+      "headSha": "814f020d858f2e26aa0547abc4f596aaf3f57455"
+    },
+    {
+      "name": "coa-03-drawing-language",
+      "headSha": "d7e1a1c42e9aaa94d9482579e5952e1f23585fa1"
+    },
+    {
+      "name": "coa-05-topology-successors",
+      "headSha": "5f76fc014c4754939afecb3e0cdd733d6bbc5e71"
+    },
+    {
+      "name": "coa-05-topology-successors-2",
+      "headSha": "5f76fc014c4754939afecb3e0cdd733d6bbc5e71"
+    },
+    {
+      "name": "coa00-tmp",
+      "headSha": "836cf9624d90bd8f0dfa71e26b25bc718d1c6911"
+    },
+    {
+      "name": "compiler-p0-kernel",
+      "headSha": "deb524ba727b90992a75450d8c35acbe27746bed"
+    },
+    {
+      "name": "compiler-p0-pat-xw-checkpoint",
+      "headSha": "d7d42e8ae03ddec156c0e22773365de28f61179a"
+    },
+    {
+      "name": "compiler-pat-xw-01",
+      "headSha": "4643bd1edeb7edc0ff67cc5955349024f7563c9f"
+    },
+    {
+      "name": "drw-01c",
+      "headSha": "a1da0f3aaa287b4a93bdb79b183463d95ce0d7c7"
+    },
+    {
+      "name": "drw-01d",
+      "headSha": "ba82786f3caef9f543d4a8810e25ef51489118f7"
+    },
+    {
+      "name": "drw-01e",
+      "headSha": "5e6cbbd8c1d391127dc231aaeb584b008617ade1"
+    },
+    {
+      "name": "drw-02a",
+      "headSha": "b77aac7bb33ddec4ac6185ef6b42cf4841343f13"
+    },
+    {
+      "name": "drw-02b",
+      "headSha": "28bd93b54152161411436da4ece6309774a3dc57"
+    },
+    {
+      "name": "drw-02c",
+      "headSha": "509be1384cce76d8ee19b584344d4490f9b2d08e"
+    },
+    {
+      "name": "drw-02d",
+      "headSha": "b1067ec01574ab6ec1f639d8556e07581506bb07"
+    },
+    {
+      "name": "editorial-overhaul",
+      "headSha": "b238c4dbb98bc24e44808ca385326cff36a14116"
+    },
+    {
+      "name": "fix-publication-credibility-navigation",
+      "headSha": "22ac81cabdfe37b367f1a3297f292a8750ae978c"
+    },
+    {
+      "name": "fix-sanitation-record-surface",
+      "headSha": "ba0270e133ea8ddf876d0000180654c6a5726181"
+    },
+    {
+      "name": "ovids-house-migration",
+      "headSha": "e6a8a9a75ad0a97bd28232c8f7539e6987bb541d"
+    },
+    {
+      "name": "pattern-language-phase7-close",
+      "headSha": "bac80230ffbca080fb4c262eb41fb08ebd3574a4"
+    },
+    {
+      "name": "pattern-language-phase7-integration",
+      "headSha": "e2971075966bb5df9e9cbbfa875de34155d82503"
+    },
+    {
+      "name": "pattern-language-phase7-new-identities",
+      "headSha": "c50f30b3a96a73326f8bed8489c3ad63ce7d6e3d"
+    },
+    {
+      "name": "pattern-language-phase7-nonpattern-homes",
+      "headSha": "0f421c2d5f6c9c71f0b5f9940a6beef6be5f8a64"
+    },
+    {
+      "name": "pattern-language-phase7-validation",
+      "headSha": "ea9211d407f3da8b30085050157680c535e57d00"
+    },
+    {
+      "name": "pr00-candidate-book-freeze-programme",
+      "headSha": "315304bf41313f47c1ccf361d058397b4302c872"
+    },
+    {
+      "name": "pr00a-candidate-book-ledger",
+      "headSha": "882e640cf646da2d0b42a604ae927ef08625b0db"
+    },
+    {
+      "name": "pr00b-back-matter",
+      "headSha": "ecd55f8f31db0fd623dbc948c02f5651678aae66"
+    },
+    {
+      "name": "pr00b-part-iii-framing",
+      "headSha": "ea1d2ab1a6c0aa93060c49bab34472047c058ffc"
+    },
+    {
+      "name": "pr00b-part-iv-authorship",
+      "headSha": "b1dcb3e1f8ff405bffe8e69da21b724da22c9174"
+    },
+    {
+      "name": "pr00b-part-v-recheck",
+      "headSha": "4c637309c1c1aa75ece6c152d754718d57e4a7de"
+    },
+    {
+      "name": "pr00c-authority-reconciliation",
+      "headSha": "4ea8ca63d1414f1261677b2cb9aac5c19670ecf0"
+    },
+    {
+      "name": "pr00c-closeout",
+      "headSha": "09c5f61d900c9763ddacd1a020b6f097a6c1f37c"
+    },
+    {
+      "name": "pr00d-d1-core-figures",
+      "headSha": "8c7d67c8fc4fdc78f693201e0d0950b6f95be867"
+    },
+    {
+      "name": "pr00d-d2-pattern-language-figure",
+      "headSha": "c260b849f22378d536c440a7aff31198b9858648"
+    },
+    {
+      "name": "pr00d-figure-inventory",
+      "headSha": "891565673355421d3618421c2fece07fb75a6b9f"
+    },
+    {
+      "name": "pr00g-candidate-proof",
+      "headSha": "f9ed50f2217d848e04bef8d0dd76e8dadd7c1775"
+    },
+    {
+      "name": "pr00h-candidate-freeze",
+      "headSha": "36634ee2f224a3059410a8a31d7af73c87a245bd"
+    },
+    {
+      "name": "pr01-adversarial-programme",
+      "headSha": "460070c5b0597ef7525e65786a4bc189f779f4c8"
+    },
+    {
+      "name": "pr01-r0-review-map",
+      "headSha": "cb86869765f24b2a5fd336343c6e24f1655caadd"
+    },
+    {
+      "name": "pr01-r1-core-proposition",
+      "headSha": "f98421cae79adafc34eb50241274f98423bf1f0e"
+    },
+    {
+      "name": "pr01-r2-pattern-method",
+      "headSha": "99b0166fcb2832b4aa25a7c05fb5a1fe6c972b1d"
+    },
+    {
+      "name": "pr01-r3-reference-house",
+      "headSha": "fd0104d4593e1b31e7f51680a034b244cb9a5c90"
+    },
+    {
+      "name": "pr01-r4-hostile-architect",
+      "headSha": "001b41431c934199134b5eb17ce76296efc378ac"
+    },
+    {
+      "name": "pr01-r5-steelman-opposition",
+      "headSha": "4bb8a47cfe93d66cd3198e096138b864f652e6d3"
+    },
+    {
+      "name": "pr01-r6-cross-book",
+      "headSha": "3a0495a52df8157a5c752aabcc737d8d3652b555"
+    },
+    {
+      "name": "pr01-r7-findings-freeze",
+      "headSha": "fc0a0ed24f791e929ae126b0066b7046d407dac5"
+    },
+    {
+      "name": "pr01-r8a-proportionality",
+      "headSha": "c9f1c717412241ae535aeeafbcd6e24ad742ddd1"
+    },
+    {
+      "name": "pr01-r8b-life-course",
+      "headSha": "e9adc414fc585e3b602f542fde0ca19ec25797c6"
+    },
+    {
+      "name": "pr01-r8c-transfer",
+      "headSha": "f06593358bec6ac03fc959c2d21a2e9087e67603"
+    },
+    {
+      "name": "pr01-r8d-pattern-taxonomy",
+      "headSha": "9e2e9848237f378af27ed7924fcaf142b77c8260"
+    },
+    {
+      "name": "pr01-r8e-delivery-stewardship",
+      "headSha": "8eace9665206c4b0e86ddf379a777511ebd50800"
+    },
+    {
+      "name": "pr01-r8f-reconciliation",
+      "headSha": "d4cd8474c329a87a26ba900d3fb3f6c02c32b57b"
+    },
+    {
+      "name": "pr01-r9-reproof-refreeze",
+      "headSha": "c0ca5d571fecb1793136ecd67e44a3426d47a653"
+    },
+    {
+      "name": "pr01-status-reconciliation",
+      "headSha": "6466f64ff739489bfe49b86c130058821d9815b7"
+    },
+    {
+      "name": "preface-the-obvious-eventually",
+      "headSha": "b3fa7550e2ccf985b2ec765e5a07e646f77d3089"
+    },
+    {
+      "name": "print-publication-pipeline",
+      "headSha": "ecbaf05fbcf20bd863b6c38e58188ffbc6cdaf56"
+    },
+    {
+      "name": "project-dataplate",
+      "headSha": "7e207c178a807deed09356c7c780ded6b99dd275"
+    },
+    {
+      "name": "prototype-w2-evidence-protocol",
+      "headSha": "29c47b2ee3b836a6489c792e92269fcf19ab0b54"
+    },
+    {
+      "name": "pub-figure-hardening",
+      "headSha": "6e893eba90cb054f74ede59a264b5e45a0979801"
+    },
+    {
+      "name": "pub-nom",
+      "headSha": "e4d46792221bb1801d5f2ed0fa04ecf94a9cf5f0"
+    },
+    {
+      "name": "pub-nom-actual",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-audit-temp",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-enough",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-finalwork",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-last",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-no",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-real",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-scan",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-stage",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-work",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-x",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-z",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-nom-zz",
+      "headSha": "e031fbabcb17724fb5561839fb4ff0ec27bd9790"
+    },
+    {
+      "name": "pub-san-closeout",
+      "headSha": "f7bc2ea2cc741d8d54e294de96f8de1412b54fb6"
+    },
+    {
+      "name": "pub-san-first-reader",
+      "headSha": "e035264695ea88c1100ef92e45f988dee225586f"
+    },
+    {
+      "name": "pub-san-prototype-surface",
+      "headSha": "74fcf25db99715819826513f231d49f0219fa5c5"
+    },
+    {
+      "name": "pub-san-public-cleanup",
+      "headSha": "ec95c9f67cd77214845f299eab7a780147e75afe"
+    },
+    {
+      "name": "pub-san-publication-surfaces",
+      "headSha": "bd3a87bc1b1fa6ca6ac063ca12389661b453a5a2"
+    },
+    {
+      "name": "pub-san-reference-coordination",
+      "headSha": "ac0d82b5b0eb51f563b721a97ad753c940856d86"
+    },
+    {
+      "name": "pub-san-reference-review",
+      "headSha": "817c6c5befb2878abe8be31045fd678e0e561d17"
+    },
+    {
+      "name": "pub-san-resolved-work-cleanup",
+      "headSha": "cac29844392a07d735b244c25f6636cc62d68d77"
+    },
+    {
+      "name": "pub-san-semantic-coherence",
+      "headSha": "8e9b1dc14b7710e8b18f057d4cfb761fe830d9ec"
+    },
+    {
+      "name": "pub-san-source-link-cleanup",
+      "headSha": "aff9deae0b3e34b1c86d2e8f215e967d25f329f8"
+    },
+    {
+      "name": "publication-pdf-metadata",
+      "headSha": "7267aba14c78c6c8551fa7559f8c7bd3a68d54d3"
+    },
+    {
+      "name": "record-post-freeze-figure-defect",
+      "headSha": "6c1b081d5161ab7719dd7c5c0a1ff37c9a485f71"
+    },
+    {
+      "name": "site-build-timestamp",
+      "headSha": "378028f2ad8f8745b750b86f2076a962245360ab"
+    },
+    {
+      "name": "status-hygiene-2026-10-17",
+      "headSha": "8da95e7428e155945f83fc14c6b2514a02ae2fef"
+    },
+    {
+      "name": "tectonic-honesty",
+      "headSha": "28386a2debd5318a2680bcdae636120ceb7b48fb"
+    },
+    {
+      "name": "vertical-bay-coordination",
+      "headSha": "55f6a11f982d27c4b7c2c00c1b3cf2e5fed05eff"
+    },
+    {
+      "name": "wall-bay-prototype-v1",
+      "headSha": "b9d433220c507bc53433d7227aaeb5162a9ccd8c"
+    }
+  ],
+  "finalB": [
+    {
+      "name": "ch00-compiler-hardening-plan",
+      "headSha": "23360b57002dd674abd48d8fc4ddf65b4eddc27a"
+    },
+    {
+      "name": "external-maintenance-geography",
+      "headSha": "2b7edc1583b70da90315efe91f63a7566aabaed9"
+    },
+    {
+      "name": "maturity-model-enforcement",
+      "headSha": "fb1a57750332c27485223a020eb8375a9a5683bf"
+    },
+    {
+      "name": "pr00e-e2-e4-editorial-hardening",
+      "headSha": "514d6ae7b6dfeca79f498e45a127f995972aef32"
+    },
+    {
+      "name": "pub-san-back-matter",
+      "headSha": "f519e6de4b5491be6f6aefce438c72e88e02dcf7"
+    }
+  ],
+  "invalidatedPriorFinal": [],
+  "unresolved": [
+    {
+      "name": "brh-01a-obvious-integrated",
+      "headSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41",
+      "group": "branch-hygiene",
+      "provisionalReviewClass": "X",
+      "reasons": [
+        "mechanically-integrated-outside-final-A-packet"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0,
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "brh-01b-patch-equivalent",
+      "headSha": "8ea68f5b5cfac84ea4aeb6b11ed24bd8fdca6660",
+      "group": "branch-hygiene",
+      "provisionalReviewClass": "X",
+      "reasons": [
+        "head-changed-since-BRH-01B",
+        "mechanically-integrated-outside-final-A-packet"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0,
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "brh-01c-unresolved-register",
+      "headSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
+      "group": "branch-hygiene",
+      "provisionalReviewClass": "X",
+      "reasons": [
+        "active-BRH-01C-packet",
+        "open-pr",
+        "post-BRH-01B-ref",
+        "unique-patch-signal"
+      ],
+      "openPr": {
+        "number": 175,
+        "draft": true,
+        "headSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
+        "url": "https://github.com/adamnoden/architecture/pull/175"
+      },
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 14,
+        "nonMergeBranchOnlyCommitCount": 14,
+        "uniquePatchCount": 14,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "cf-01-contrast-fixture",
+      "headSha": "66470917264edf3419ebda2886fbf42c2466a125",
+      "group": "compiler-computational",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 18,
+        "nonMergeBranchOnlyCommitCount": 18,
+        "uniquePatchCount": 18,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "ch-05-determinism-identity-provenance",
+      "headSha": "77d0d0521a6ddbd6f7f27ac7d324247be1932721",
+      "group": "compiler-computational",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 9,
+        "nonMergeBranchOnlyCommitCount": 9,
+        "uniquePatchCount": 9,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "ch-05-housekeeping-sync",
+      "headSha": "4971c87e788b814dfde1d111399edc64663d6c86",
+      "group": "compiler-computational",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 3,
+        "nonMergeBranchOnlyCommitCount": 3,
+        "uniquePatchCount": 3,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "ch-08-distillation-deletion",
+      "headSha": "4d7749f3cbb39a8b10defb8effa9c3a988482708",
+      "group": "compiler-computational",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 11,
+        "nonMergeBranchOnlyCommitCount": 11,
+        "uniquePatchCount": 11,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "coa-04-plan-section-successors",
+      "headSha": "95da828b7087abab7b66df763a18eee276c56202",
+      "group": "compiler-computational",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 22,
+        "nonMergeBranchOnlyCommitCount": 22,
+        "uniquePatchCount": 22,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "coa-05-topology-successors-final",
+      "headSha": "1a2cd8719791c50f3b5f29fb98436a3b657bfe11",
+      "group": "compiler-computational",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 5,
+        "nonMergeBranchOnlyCommitCount": 5,
+        "uniquePatchCount": 5,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "coa-06-output-integration",
+      "headSha": "3ee3a9a501267ea2ca6b7b7d1f55d68cbd2bd585",
+      "group": "compiler-computational",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 28,
+        "nonMergeBranchOnlyCommitCount": 28,
+        "uniquePatchCount": 28,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "drw-02e",
+      "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "group": "architectural-drawing",
+      "provisionalReviewClass": "X",
+      "reasons": [
+        "mechanically-integrated-outside-final-A-packet"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0,
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "drw-03a",
+      "headSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
+      "group": "architectural-drawing",
+      "provisionalReviewClass": "X",
+      "reasons": [
+        "post-BRH-01B-ref",
+        "mechanically-integrated-outside-final-A-packet"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0,
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "g01-completion-programme",
+      "headSha": "0efb277130c59b7042726c3121f0529c011c2eb1",
+      "group": "g01-completion",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
+        "uniquePatchCount": 2,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "g01-d10-normative",
+      "headSha": "8b59b09bcf3a47b190c9d6f0e0a849b5f5f997ad",
+      "group": "g01-completion",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
+        "uniquePatchCount": 2,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "g01-d10s-specificity",
+      "headSha": "7cca300e719497230e8b9778037cd3379ef1bae4",
+      "group": "g01-completion",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
+        "uniquePatchCount": 4,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "g01-d11-v01-freeze",
+      "headSha": "8adc19b0daa40a3615f9114453250c4ab2593fe9",
+      "group": "g01-completion",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
+        "uniquePatchCount": 2,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "g01-d12-reference-house",
+      "headSha": "172957fb8fa568ba682908e3cf78a29cbc80460d",
+      "group": "g01-completion",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 3,
+        "nonMergeBranchOnlyCommitCount": 3,
+        "uniquePatchCount": 3,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "g01-d13-closeout",
+      "headSha": "6969c24301619ddeb92f3f18ef72fad69b5ccfc9",
+      "group": "g01-completion",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
+        "uniquePatchCount": 4,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "g01-d8-falsification",
+      "headSha": "89aab07fca5debbf77c35f0b6d713683a645163f",
+      "group": "g01-completion",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 5,
+        "nonMergeBranchOnlyCommitCount": 5,
+        "uniquePatchCount": 5,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "g01-d9-holdout",
+      "headSha": "c1cc56d17cd616a648e78d0a1851c39c05faa7ba",
+      "group": "g01-completion",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
+        "uniquePatchCount": 2,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pattern-language-overhaul",
+      "headSha": "12af047641ef08f2f5a21a9621dbfc668abd48fc",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 21,
+        "nonMergeBranchOnlyCommitCount": 21,
+        "uniquePatchCount": 21,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pattern-language-phase6-audit",
+      "headSha": "0c08c98d4792ccb63a24185303fe9295f36d8384",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 9,
+        "nonMergeBranchOnlyCommitCount": 9,
+        "uniquePatchCount": 9,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pattern-language-phase7",
+      "headSha": "18c55e5b66bf1dcb04ddb42fa9850d3535a296f9",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 22,
+        "nonMergeBranchOnlyCommitCount": 22,
+        "uniquePatchCount": 22,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pattern-language-phase7-migration",
+      "headSha": "876d43c6878b5e0ba5111f5634f69514d77966bd",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 16,
+        "nonMergeBranchOnlyCommitCount": 16,
+        "uniquePatchCount": 16,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pattern-language-phase8-crosswalk",
+      "headSha": "69dd1d10041b8c930c05a2eb2015d8357e887e67",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 14,
+        "nonMergeBranchOnlyCommitCount": 14,
+        "uniquePatchCount": 14,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pr00b-part-iv-synthesis",
+      "headSha": "4907af4556e2c546721fcfba6b7f29853014f935",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 8,
+        "nonMergeBranchOnlyCommitCount": 8,
+        "uniquePatchCount": 8,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pr00d-d3-reference-house-architecture",
+      "headSha": "1789943590256278cd6152cb414c137634b8a7b7",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 8,
+        "nonMergeBranchOnlyCommitCount": 8,
+        "uniquePatchCount": 8,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pr00d-d3-reference-house-figures",
+      "headSha": "53097a2a42faa8488b7d528388ef45903c93e138",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
+        "uniquePatchCount": 4,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pr00d-d4-reference-house-systems",
+      "headSha": "064bdce830ea76c4ffa49737ee72d7092470619b",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
+        "uniquePatchCount": 4,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pr00d-d5-visual-integration",
+      "headSha": "d377665ae095b604979956d61dd36803ae7b3f6f",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 5,
+        "nonMergeBranchOnlyCommitCount": 5,
+        "uniquePatchCount": 5,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pr00e-editorial-hardening",
+      "headSha": "3e16b1cecde03dbdaa21becc6f8a02eaa4306d40",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
+        "uniquePatchCount": 2,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pr00f-integrity",
+      "headSha": "ebd9d34497e83c3158915e98cd120e1fb296675f",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 6,
+        "nonMergeBranchOnlyCommitCount": 6,
+        "uniquePatchCount": 6,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "project-integrity-refactor",
+      "headSha": "5f3ddadab402daaf9f01a3ea99531fc65734302d",
+      "group": "infrastructure-tooling",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 23,
+        "nonMergeBranchOnlyCommitCount": 23,
+        "uniquePatchCount": 23,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "prototype-p03-engineer-review-brief",
+      "headSha": "1fe68d1f4da1531cc273573ea098709e3d6a1302",
+      "group": "prototype-research",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 1,
+        "nonMergeBranchOnlyCommitCount": 1,
+        "uniquePatchCount": 1,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pub-san-computational-surface",
+      "headSha": "fd527ace394db25b6ddb1c6c6de65728ce48cf0c",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 13,
+        "nonMergeBranchOnlyCommitCount": 13,
+        "uniquePatchCount": 13,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pub-san-research-evidence",
+      "headSha": "3090a7ed89f5e0a84d54eecedebf8ad82b5ca42f",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 13,
+        "nonMergeBranchOnlyCommitCount": 13,
+        "uniquePatchCount": 13,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "pub-san-rh-technical",
+      "headSha": "023094149a998126ae8bf1389be8fc0ecd9fdd79",
+      "group": "publication-editorial",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 18,
+        "nonMergeBranchOnlyCommitCount": 18,
+        "uniquePatchCount": 18,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "public-url-phase-1",
+      "headSha": "45fcb14128ae055a8b0724cbfbbc31bbc8758ceb",
+      "group": "infrastructure-tooling",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
+        "uniquePatchCount": 4,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "reference-house-phase5",
+      "headSha": "456edac937e0de604f3983a6344902b8862fa761",
+      "group": "reference-house",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 12,
+        "nonMergeBranchOnlyCommitCount": 12,
+        "uniquePatchCount": 12,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "rh-c1",
+      "headSha": "330e7bc0d0eda6a0ec33b51afed09c733c2dd4bd",
+      "group": "reference-house",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 8,
+        "nonMergeBranchOnlyCommitCount": 8,
+        "uniquePatchCount": 8,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "rh-c2-structural-view",
+      "headSha": "9be3155dd8ff34dd21ae5ea80c7ec8f94e8e6d20",
+      "group": "reference-house",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 23,
+        "nonMergeBranchOnlyCommitCount": 23,
+        "uniquePatchCount": 23,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "rh-c3-service-view",
+      "headSha": "3226aa325190aa94803c18535d49b5951afe5458",
+      "group": "reference-house",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 29,
+        "nonMergeBranchOnlyCommitCount": 29,
+        "uniquePatchCount": 29,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "rh-c4-boundary-view",
+      "headSha": "b3740c8196ad2a7ba969e27b89f304841fc94f8f",
+      "group": "reference-house",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 36,
+        "nonMergeBranchOnlyCommitCount": 36,
+        "uniquePatchCount": 36,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "rh-c5-target-calculations",
+      "headSha": "bc219a9060316f023e90a06709999254bda6766a",
+      "group": "reference-house",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 21,
+        "nonMergeBranchOnlyCommitCount": 21,
+        "uniquePatchCount": 21,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "workmanship-robustness",
+      "headSha": "a049e8da6cd9133dcbbb654e2fc703a1c5baf712",
+      "group": "prototype-research",
+      "provisionalReviewClass": "C/D",
+      "reasons": [
+        "unique-patch-signal"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 20,
+        "nonMergeBranchOnlyCommitCount": 20,
+        "uniquePatchCount": 20,
+        "equivalentPatchCount": 0
+      }
+    }
+  ],
+  "groups": {
+    "branch-hygiene": [
+      "brh-01a-obvious-integrated",
+      "brh-01b-patch-equivalent",
+      "brh-01c-unresolved-register"
+    ],
+    "compiler-computational": [
+      "cf-01-contrast-fixture",
+      "ch-05-determinism-identity-provenance",
+      "ch-05-housekeeping-sync",
+      "ch-08-distillation-deletion",
+      "coa-04-plan-section-successors",
+      "coa-05-topology-successors-final",
+      "coa-06-output-integration"
+    ],
+    "architectural-drawing": [
+      "drw-02e",
+      "drw-03a"
+    ],
+    "g01-completion": [
+      "g01-completion-programme",
+      "g01-d10-normative",
+      "g01-d10s-specificity",
+      "g01-d11-v01-freeze",
+      "g01-d12-reference-house",
+      "g01-d13-closeout",
+      "g01-d8-falsification",
+      "g01-d9-holdout"
+    ],
+    "publication-editorial": [
+      "pattern-language-overhaul",
+      "pattern-language-phase6-audit",
+      "pattern-language-phase7",
+      "pattern-language-phase7-migration",
+      "pattern-language-phase8-crosswalk",
+      "pr00b-part-iv-synthesis",
+      "pr00d-d3-reference-house-architecture",
+      "pr00d-d3-reference-house-figures",
+      "pr00d-d4-reference-house-systems",
+      "pr00d-d5-visual-integration",
+      "pr00e-editorial-hardening",
+      "pr00f-integrity",
+      "pub-san-computational-surface",
+      "pub-san-research-evidence",
+      "pub-san-rh-technical"
+    ],
+    "infrastructure-tooling": [
+      "project-integrity-refactor",
+      "public-url-phase-1"
+    ],
+    "prototype-research": [
+      "prototype-p03-engineer-review-brief",
+      "workmanship-robustness"
+    ],
+    "reference-house": [
+      "reference-house-phase5",
+      "rh-c1",
+      "rh-c2-structural-view",
+      "rh-c3-service-view",
+      "rh-c4-boundary-view",
+      "rh-c5-target-calculations"
+    ]
+  },
+  "rules": {
+    "finalAorBRequiresExactPriorHead": true,
+    "provisionalX": "active/open/new/moved/prior-final-invalidated/or mechanically integrated outside its final-classification packet",
+    "provisionalCD": "historical unresolved content with no live/recent signal; BRH-02 must decide C versus D versus correction",
+    "semanticDecisionMade": false,
+    "authorisesDeletion": false
+  }
+}

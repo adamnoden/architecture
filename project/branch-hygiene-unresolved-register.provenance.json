@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 4,
+  "packet": "BRH-01C",
+  "programmeIssue": 161,
+  "pullRequest": 175,
+  "baselineMainSha": "8aae956ed45a4bab5eac5ba5841a9784a75a500f",
+  "registerCommitHeadSha": "d4a052dc4958bb4bff9ea0774995484804e8113a",
+  "enumeratedBranchCount": 160,
+  "finalACount": 110,
+  "finalBCount": 5,
+  "unresolvedCount": 45,
+  "provisionalXCount": 5,
+  "provisionalCDCount": 40,
+  "openPrCountAtProof": 1,
+  "enumerationSha256": "21e0b1d466769fc00349720901786c5923a6621a9f456640c96cae800d833f2f",
+  "registerJsonSha256": "02a614c83b74984a7bc98d89097c17ac2e1142f73f6cd52572237c69456d6bd1",
+  "proofWorkflowRun": 39114042053,
+  "proofWorkflowInputHeadSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
+  "artifactId": 12131732114,
+  "artifactDigest": "sha256:f18077e55a6a98a715e69703ca7d0c4261b90882c658df7e2463ad8f7d205432",
+  "protectedXBranches": [
+    "brh-01a-obvious-integrated",
+    "brh-01b-patch-equivalent",
+    "brh-01c-unresolved-register",
+    "drw-02e",
+    "drw-03a"
+  ],
+  "proofNotes": [
+    "The first successful proof was superseded because it queried open PRs before PR #175 existed.",
+    "A later 159-branch proof was superseded when drw-03a appeared during the final lease check.",
+    "The first 160-branch proof was superseded when drw-03a advanced and draft PR #177 opened.",
+    "That live-DRW proof was superseded when PR #177 merged and moved main to 8aae956ed45a4bab5eac5ba5841a9784a75a500f.",
+    "The final moved-main proof recomputed the complete register against main 8aae956ed45a4bab5eac5ba5841a9784a75a500f. drw-03a is now mechanically integrated but remains X because it is post-BRH-01B and was outside the final A packet.",
+    "The active BRH-01C branch necessarily moved after enumeration when the workflow committed the durable register and again when provenance was written; it remains X and is not deletion-eligible.",
+    "No semantic C/D decision, salvage, deletion, branch rewrite, or repository-setting mutation occurred."
+  ],
+  "nextPacket": {
+    "packet": "BRH-02A",
+    "group": "prototype-research",
+    "branches": [
+      "prototype-p03-engineer-review-brief",
+      "workmanship-robustness"
+    ],
+    "reason": "Start semantic review with the bounded two-branch prototype/research lineage, including the programme-mandated P03 disposition against issue #30 and current authority."
+  },
+  "semanticDecisionMade": false,
+  "authorisesDeletion": false
+}
