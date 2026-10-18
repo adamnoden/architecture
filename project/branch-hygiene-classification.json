@@ -1,18 +1,23 @@
 {
-  "schemaVersion": 2,
-  "packet": "BRH-01A",
-  "generatedAt": "2026-10-18T06:37:52.896Z",
+  "schemaVersion": 5,
+  "packet": "BRH-01B",
+  "generatedAt": "2026-10-18T08:25:26.138Z",
   "repository": "adamnoden/architecture",
-  "baselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
-  "restartReason": "PR #171 / DRW-02D moved main after the first successful classification run; stale result discarded and full audit recomputed.",
+  "baselineMainSha": "b80920f74a677c3ddc0ebf70884ca3e0da02ca89",
+  "restartReason": "BRH-01B restarted twice: first when PR #174 / drw-02e appeared after the initial audit, then again when PR #174 merged and moved main from ce7f522e3b3bec286746fd093d21764670419e20 to b80920f74a677c3ddc0ebf70884ca3e0da02ca89. All stale results were discarded.",
+  "priorClassification": {
+    "packet": "BRH-01A",
+    "baselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+    "generatedAt": "2026-10-18T06:37:52.896Z"
+  },
   "enumeration": {
     "refNamespace": "refs/remotes/origin",
     "excluded": [
       "origin/HEAD",
       "origin/main"
     ],
-    "branchCount": 156,
-    "sha256": "8104f89d6aca7396af0878ad4977227edfd2339d13839db2fd5410886aaf2768",
+    "branchCount": 158,
+    "sha256": "78d91064b94c81b0ebc56b3125d503b0ac74baefdf53b64ada890d202b00d2ac",
     "branches": [
       {
         "ref": "origin/architectural-specificity-audit-execution",
@@ -42,7 +47,12 @@
       {
         "ref": "origin/brh-01a-obvious-integrated",
         "name": "brh-01a-obvious-integrated",
-        "headSha": "0ad1e2067344918289374064d3bd3741d11e0935"
+        "headSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41"
+      },
+      {
+        "ref": "origin/brh-01b-patch-equivalent",
+        "name": "brh-01b-patch-equivalent",
+        "headSha": "4bb220acdff95aba037f689bc21b14f09a7b90db"
       },
       {
         "ref": "origin/candidate-pattern-hardening",
@@ -233,6 +243,11 @@
         "ref": "origin/drw-02d",
         "name": "drw-02d",
         "headSha": "b1067ec01574ab6ec1f639d8556e07581506bb07"
+      },
+      {
+        "ref": "origin/drw-02e",
+        "name": "drw-02e",
+        "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6"
       },
       {
         "ref": "origin/editorial-overhaul",
@@ -797,35 +812,54 @@
     ]
   },
   "counts": {
-    "currentNonMainBranches": 156,
+    "currentNonMainBranches": 158,
     "openPrs": 1,
-    "aCandidates": 110,
-    "deferred": 46,
-    "newSinceBRH00C": 2
+    "carriedA": 110,
+    "invalidatedPriorA": 0,
+    "bCandidates": 5,
+    "unresolvedAfterAB": 43,
+    "newSinceBRH01A": 2,
+    "changedSinceBRH01A": 1,
+    "post01AIntegratedSignal": 2
   },
   "rule": {
-    "classification": "A — fully integrated",
+    "classification": "B — patch-equivalent",
     "requires": [
-      "headIsAncestorOfMain === true",
-      "branchOnlyCommits.length === 0",
+      "headIsAncestorOfMain === false",
+      "branchOnlyCommits.length > 0",
+      "nonMergeBranchOnlyCommits.length > 0",
+      "every non-merge branch-only commit has a stable patch id",
+      "git cherry result is non-empty",
+      "git cherry uniquePatchCount === 0",
+      "every git cherry entry is patch-equivalent",
+      "git cherry entry count equals non-merge branch-only commit count",
+      "branch head unchanged since BRH-01A",
+      "not a post-BRH-01A ref",
       "no open PR",
-      "not the active BRH-01A packet branch",
-      "for refs first observed after BRH-00C: exact current head must match a merged PR head"
+      "not the active BRH-01B packet branch"
     ],
+    "excludesFilenameOrBranchNameInference": true,
     "excludesSemanticSupersession": true,
     "authorisesDeletion": false
   },
-  "newSinceBRH00C": [
-    "brh-01a-obvious-integrated",
-    "drw-02d"
+  "newSinceBRH01A": [
+    "brh-01b-patch-equivalent",
+    "drw-02e"
+  ],
+  "changedSinceBRH01A": [
+    {
+      "name": "brh-01a-obvious-integrated",
+      "priorHeadSha": "0ad1e2067344918289374064d3bd3741d11e0935",
+      "currentHeadSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41"
+    }
   ],
   "openPrs": [
     {
-      "headRefName": "brh-01a-obvious-integrated",
-      "headRefOid": "0ad1e2067344918289374064d3bd3741d11e0935",
+      "headRefName": "brh-01b-patch-equivalent",
+      "headRefOid": "4bb220acdff95aba037f689bc21b14f09a7b90db",
       "isDraft": true,
-      "number": 172,
-      "url": "https://github.com/adamnoden/architecture/pull/172"
+      "number": 173,
+      "url": "https://github.com/adamnoden/architecture/pull/173"
     }
   ],
   "aCandidates": [
@@ -3519,24 +3553,259 @@
       "rationale": "Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies."
     }
   ],
-  "deferred": [
+  "invalidatedPriorA": [],
+  "bCandidates": [
+    {
+      "name": "ch00-compiler-hardening-plan",
+      "headSha": "23360b57002dd674abd48d8fc4ddf65b4eddc27a",
+      "mergeBase": "0538be4a9124b107565717bb2f172e73ebfe86ba",
+      "behindMain": 728,
+      "aheadOfMain": 1,
+      "branchOnlyCommitCount": 1,
+      "nonMergeBranchOnlyCommits": [
+        {
+          "sha": "23360b57002dd674abd48d8fc4ddf65b4eddc27a",
+          "committedAt": "2026-10-13T15:16:34+01:00",
+          "subject": "docs: record compiler hardening programme",
+          "stablePatchId": "093178cf426811d6bf66d311f9462642f869b013"
+        }
+      ],
+      "patchEquivalence": {
+        "gitCherry": [
+          {
+            "equivalence": "patch-equivalent",
+            "sha": "23360b57002dd674abd48d8fc4ddf65b4eddc27a"
+          }
+        ],
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 1,
+        "allCherryPatchesEquivalent": true
+      },
+      "pullRequests": [
+        {
+          "number": 48,
+          "state": "closed",
+          "draft": false,
+          "mergedAt": "2026-10-13T14:18:03Z",
+          "headSha": "23360b57002dd674abd48d8fc4ddf65b4eddc27a",
+          "url": "https://github.com/adamnoden/architecture/pull/48"
+        }
+      ],
+      "classification": "B",
+      "rationale": "Current head is non-ancestral, but every non-merge branch-only patch has a stable patch id and git cherry proves every meaningful patch equivalent to current main; branch head is unchanged from BRH-01A and no active/open/recent protection applies."
+    },
+    {
+      "name": "external-maintenance-geography",
+      "headSha": "2b7edc1583b70da90315efe91f63a7566aabaed9",
+      "mergeBase": "f1e94ec4d3c0eace88032dd08428c322d285e510",
+      "behindMain": 1327,
+      "aheadOfMain": 1,
+      "branchOnlyCommitCount": 1,
+      "nonMergeBranchOnlyCommits": [
+        {
+          "sha": "2b7edc1583b70da90315efe91f63a7566aabaed9",
+          "committedAt": "2026-10-05T09:32:36+01:00",
+          "subject": "Integrate external maintenance geography onto latest main",
+          "stablePatchId": "14c8ad29814d3af81c7c2c0c2b1b6d7530c7dcae"
+        }
+      ],
+      "patchEquivalence": {
+        "gitCherry": [
+          {
+            "equivalence": "patch-equivalent",
+            "sha": "2b7edc1583b70da90315efe91f63a7566aabaed9"
+          }
+        ],
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 1,
+        "allCherryPatchesEquivalent": true
+      },
+      "pullRequests": [
+        {
+          "number": 7,
+          "state": "closed",
+          "draft": false,
+          "mergedAt": "2026-10-05T08:33:10Z",
+          "headSha": "2b7edc1583b70da90315efe91f63a7566aabaed9",
+          "url": "https://github.com/adamnoden/architecture/pull/7"
+        }
+      ],
+      "classification": "B",
+      "rationale": "Current head is non-ancestral, but every non-merge branch-only patch has a stable patch id and git cherry proves every meaningful patch equivalent to current main; branch head is unchanged from BRH-01A and no active/open/recent protection applies."
+    },
+    {
+      "name": "maturity-model-enforcement",
+      "headSha": "fb1a57750332c27485223a020eb8375a9a5683bf",
+      "mergeBase": "fae4a5f03defc235f5d433c2d304ff7a2573ca74",
+      "behindMain": 873,
+      "aheadOfMain": 1,
+      "branchOnlyCommitCount": 1,
+      "nonMergeBranchOnlyCommits": [
+        {
+          "sha": "fb1a57750332c27485223a020eb8375a9a5683bf",
+          "committedAt": "2026-10-12T11:27:08+01:00",
+          "subject": "Codify project maturity model",
+          "stablePatchId": "d99a0a9a03c9723abc5097abbb2e8e957945be62"
+        }
+      ],
+      "patchEquivalence": {
+        "gitCherry": [
+          {
+            "equivalence": "patch-equivalent",
+            "sha": "fb1a57750332c27485223a020eb8375a9a5683bf"
+          }
+        ],
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 1,
+        "allCherryPatchesEquivalent": true
+      },
+      "pullRequests": [
+        {
+          "number": 28,
+          "state": "closed",
+          "draft": false,
+          "mergedAt": "2026-10-12T10:28:49Z",
+          "headSha": "fb1a57750332c27485223a020eb8375a9a5683bf",
+          "url": "https://github.com/adamnoden/architecture/pull/28"
+        }
+      ],
+      "classification": "B",
+      "rationale": "Current head is non-ancestral, but every non-merge branch-only patch has a stable patch id and git cherry proves every meaningful patch equivalent to current main; branch head is unchanged from BRH-01A and no active/open/recent protection applies."
+    },
+    {
+      "name": "pr00e-e2-e4-editorial-hardening",
+      "headSha": "514d6ae7b6dfeca79f498e45a127f995972aef32",
+      "mergeBase": "1f6c030bc158c46e642608eba3889475c01a5337",
+      "behindMain": 460,
+      "aheadOfMain": 1,
+      "branchOnlyCommitCount": 1,
+      "nonMergeBranchOnlyCommits": [
+        {
+          "sha": "514d6ae7b6dfeca79f498e45a127f995972aef32",
+          "committedAt": "2026-10-14T18:22:03+01:00",
+          "subject": "PR-00E — record whole-book editorial hardening closeout",
+          "stablePatchId": "9d684b5bb5826ce9a134c7bf2a9d7dcf07e5630c"
+        }
+      ],
+      "patchEquivalence": {
+        "gitCherry": [
+          {
+            "equivalence": "patch-equivalent",
+            "sha": "514d6ae7b6dfeca79f498e45a127f995972aef32"
+          }
+        ],
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 1,
+        "allCherryPatchesEquivalent": true
+      },
+      "pullRequests": [
+        {
+          "number": 111,
+          "state": "closed",
+          "draft": false,
+          "mergedAt": "2026-10-14T17:23:35Z",
+          "headSha": "514d6ae7b6dfeca79f498e45a127f995972aef32",
+          "url": "https://github.com/adamnoden/architecture/pull/111"
+        }
+      ],
+      "classification": "B",
+      "rationale": "Current head is non-ancestral, but every non-merge branch-only patch has a stable patch id and git cherry proves every meaningful patch equivalent to current main; branch head is unchanged from BRH-01A and no active/open/recent protection applies."
+    },
+    {
+      "name": "pub-san-back-matter",
+      "headSha": "f519e6de4b5491be6f6aefce438c72e88e02dcf7",
+      "mergeBase": "917eef47aa1eae16844ea45691c075b72afc4512",
+      "behindMain": 279,
+      "aheadOfMain": 1,
+      "branchOnlyCommitCount": 1,
+      "nonMergeBranchOnlyCommits": [
+        {
+          "sha": "f519e6de4b5491be6f6aefce438c72e88e02dcf7",
+          "committedAt": "2026-10-15T23:14:18+01:00",
+          "subject": "PUB-SAN: remove legacy migration residue from evidence notes",
+          "stablePatchId": "5cc86a6a4a67d466d95a081e6e5577d986a5aa73"
+        }
+      ],
+      "patchEquivalence": {
+        "gitCherry": [
+          {
+            "equivalence": "patch-equivalent",
+            "sha": "f519e6de4b5491be6f6aefce438c72e88e02dcf7"
+          }
+        ],
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 1,
+        "allCherryPatchesEquivalent": true
+      },
+      "pullRequests": [
+        {
+          "number": 149,
+          "state": "closed",
+          "draft": false,
+          "mergedAt": "2026-10-15T22:17:49Z",
+          "headSha": "f519e6de4b5491be6f6aefce438c72e88e02dcf7",
+          "url": "https://github.com/adamnoden/architecture/pull/149"
+        }
+      ],
+      "classification": "B",
+      "rationale": "Current head is non-ancestral, but every non-merge branch-only patch has a stable patch id and git cherry proves every meaningful patch equivalent to current main; branch head is unchanged from BRH-01A and no active/open/recent protection applies."
+    }
+  ],
+  "post01AIntegratedSignal": [
     {
       "name": "brh-01a-obvious-integrated",
-      "headSha": "0ad1e2067344918289374064d3bd3741d11e0935",
+      "headSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41",
+      "priorHeadSha": "0ad1e2067344918289374064d3bd3741d11e0935",
+      "reasons": [
+        "head-changed-since-BRH-01A",
+        "currently-A-shaped-but-outside-BRH-01B"
+      ]
+    },
+    {
+      "name": "drw-02e",
+      "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "priorHeadSha": null,
+      "reasons": [
+        "post-BRH-01A-ref",
+        "currently-A-shaped-but-outside-BRH-01B"
+      ]
+    }
+  ],
+  "unresolvedAfterAB": [
+    {
+      "name": "brh-01a-obvious-integrated",
+      "headSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41",
+      "reasons": [
+        "head-changed-since-BRH-01A",
+        "head-ancestor-of-main-not-B"
+      ],
+      "mechanical": {
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0,
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
+      },
+      "provisionalClassification": "X"
+    },
+    {
+      "name": "brh-01b-patch-equivalent",
+      "headSha": "4bb220acdff95aba037f689bc21b14f09a7b90db",
       "reasons": [
         "active-packet-branch",
         "open-pr",
-        "post-BRH-00C-ref-without-merged-head-proof",
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "post-BRH-01A-ref",
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": true,
-      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 4,
-        "uniquePatchCount": 4,
-        "equivalentPatchCount": 0
+        "branchOnlyCommitCount": 7,
+        "nonMergeBranchOnlyCommitCount": 7,
+        "uniquePatchCount": 7,
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": "X"
     },
@@ -3544,16 +3813,16 @@
       "name": "cf-01-contrast-fixture",
       "headSha": "66470917264edf3419ebda2886fbf42c2466a125",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 18,
+        "nonMergeBranchOnlyCommitCount": 18,
         "uniquePatchCount": 18,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3561,16 +3830,16 @@
       "name": "ch-05-determinism-identity-provenance",
       "headSha": "77d0d0521a6ddbd6f7f27ac7d324247be1932721",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 9,
+        "nonMergeBranchOnlyCommitCount": 9,
         "uniquePatchCount": 9,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3578,16 +3847,16 @@
       "name": "ch-05-housekeeping-sync",
       "headSha": "4971c87e788b814dfde1d111399edc64663d6c86",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 3,
+        "nonMergeBranchOnlyCommitCount": 3,
         "uniquePatchCount": 3,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3595,33 +3864,16 @@
       "name": "ch-08-distillation-deletion",
       "headSha": "4d7749f3cbb39a8b10defb8effa9c3a988482708",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 11,
+        "nonMergeBranchOnlyCommitCount": 11,
         "uniquePatchCount": 11,
-        "equivalentPatchCount": 0
-      },
-      "provisionalClassification": null
-    },
-    {
-      "name": "ch00-compiler-hardening-plan",
-      "headSha": "23360b57002dd674abd48d8fc4ddf65b4eddc27a",
-      "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
-      ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
-      "mechanical": {
-        "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 1,
-        "uniquePatchCount": 0,
-        "equivalentPatchCount": 1
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3629,16 +3881,16 @@
       "name": "coa-04-plan-section-successors",
       "headSha": "95da828b7087abab7b66df763a18eee276c56202",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 22,
+        "nonMergeBranchOnlyCommitCount": 22,
         "uniquePatchCount": 22,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3646,16 +3898,16 @@
       "name": "coa-05-topology-successors-final",
       "headSha": "1a2cd8719791c50f3b5f29fb98436a3b657bfe11",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 5,
+        "nonMergeBranchOnlyCommitCount": 5,
         "uniquePatchCount": 5,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3663,50 +3915,50 @@
       "name": "coa-06-output-integration",
       "headSha": "3ee3a9a501267ea2ca6b7b7d1f55d68cbd2bd585",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 28,
+        "nonMergeBranchOnlyCommitCount": 28,
         "uniquePatchCount": 28,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
     {
-      "name": "external-maintenance-geography",
-      "headSha": "2b7edc1583b70da90315efe91f63a7566aabaed9",
+      "name": "drw-02e",
+      "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "post-BRH-01A-ref",
+        "head-ancestor-of-main-not-B"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
-        "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 1,
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0,
         "uniquePatchCount": 0,
-        "equivalentPatchCount": 1
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
-      "provisionalClassification": null
+      "provisionalClassification": "X"
     },
     {
       "name": "g01-completion-programme",
       "headSha": "0efb277130c59b7042726c3121f0529c011c2eb1",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
         "uniquePatchCount": 2,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3714,16 +3966,16 @@
       "name": "g01-d10-normative",
       "headSha": "8b59b09bcf3a47b190c9d6f0e0a849b5f5f997ad",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
         "uniquePatchCount": 2,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3731,16 +3983,16 @@
       "name": "g01-d10s-specificity",
       "headSha": "7cca300e719497230e8b9778037cd3379ef1bae4",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
         "uniquePatchCount": 4,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3748,16 +4000,16 @@
       "name": "g01-d11-v01-freeze",
       "headSha": "8adc19b0daa40a3615f9114453250c4ab2593fe9",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
         "uniquePatchCount": 2,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3765,16 +4017,16 @@
       "name": "g01-d12-reference-house",
       "headSha": "172957fb8fa568ba682908e3cf78a29cbc80460d",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 3,
+        "nonMergeBranchOnlyCommitCount": 3,
         "uniquePatchCount": 3,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3782,16 +4034,16 @@
       "name": "g01-d13-closeout",
       "headSha": "6969c24301619ddeb92f3f18ef72fad69b5ccfc9",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
         "uniquePatchCount": 4,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3799,16 +4051,16 @@
       "name": "g01-d8-falsification",
       "headSha": "89aab07fca5debbf77c35f0b6d713683a645163f",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 5,
+        "nonMergeBranchOnlyCommitCount": 5,
         "uniquePatchCount": 5,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3816,33 +4068,16 @@
       "name": "g01-d9-holdout",
       "headSha": "c1cc56d17cd616a648e78d0a1851c39c05faa7ba",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
         "uniquePatchCount": 2,
-        "equivalentPatchCount": 0
-      },
-      "provisionalClassification": null
-    },
-    {
-      "name": "maturity-model-enforcement",
-      "headSha": "fb1a57750332c27485223a020eb8375a9a5683bf",
-      "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
-      ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
-      "mechanical": {
-        "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 1,
-        "uniquePatchCount": 0,
-        "equivalentPatchCount": 1
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3850,16 +4085,16 @@
       "name": "pattern-language-overhaul",
       "headSha": "12af047641ef08f2f5a21a9621dbfc668abd48fc",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 21,
+        "nonMergeBranchOnlyCommitCount": 21,
         "uniquePatchCount": 21,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3867,16 +4102,16 @@
       "name": "pattern-language-phase6-audit",
       "headSha": "0c08c98d4792ccb63a24185303fe9295f36d8384",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 9,
+        "nonMergeBranchOnlyCommitCount": 9,
         "uniquePatchCount": 9,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3884,16 +4119,16 @@
       "name": "pattern-language-phase7",
       "headSha": "18c55e5b66bf1dcb04ddb42fa9850d3535a296f9",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 22,
+        "nonMergeBranchOnlyCommitCount": 22,
         "uniquePatchCount": 22,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3901,16 +4136,16 @@
       "name": "pattern-language-phase7-migration",
       "headSha": "876d43c6878b5e0ba5111f5634f69514d77966bd",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 16,
+        "nonMergeBranchOnlyCommitCount": 16,
         "uniquePatchCount": 16,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3918,16 +4153,16 @@
       "name": "pattern-language-phase8-crosswalk",
       "headSha": "69dd1d10041b8c930c05a2eb2015d8357e887e67",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 14,
+        "nonMergeBranchOnlyCommitCount": 14,
         "uniquePatchCount": 14,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3935,16 +4170,16 @@
       "name": "pr00b-part-iv-synthesis",
       "headSha": "4907af4556e2c546721fcfba6b7f29853014f935",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 8,
+        "nonMergeBranchOnlyCommitCount": 8,
         "uniquePatchCount": 8,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3952,16 +4187,16 @@
       "name": "pr00d-d3-reference-house-architecture",
       "headSha": "1789943590256278cd6152cb414c137634b8a7b7",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 8,
+        "nonMergeBranchOnlyCommitCount": 8,
         "uniquePatchCount": 8,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3969,16 +4204,16 @@
       "name": "pr00d-d3-reference-house-figures",
       "headSha": "53097a2a42faa8488b7d528388ef45903c93e138",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
         "uniquePatchCount": 4,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -3986,16 +4221,16 @@
       "name": "pr00d-d4-reference-house-systems",
       "headSha": "064bdce830ea76c4ffa49737ee72d7092470619b",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
         "uniquePatchCount": 4,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4003,33 +4238,16 @@
       "name": "pr00d-d5-visual-integration",
       "headSha": "d377665ae095b604979956d61dd36803ae7b3f6f",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 5,
+        "nonMergeBranchOnlyCommitCount": 5,
         "uniquePatchCount": 5,
-        "equivalentPatchCount": 0
-      },
-      "provisionalClassification": null
-    },
-    {
-      "name": "pr00e-e2-e4-editorial-hardening",
-      "headSha": "514d6ae7b6dfeca79f498e45a127f995972aef32",
-      "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
-      ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
-      "mechanical": {
-        "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 1,
-        "uniquePatchCount": 0,
-        "equivalentPatchCount": 1
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4037,16 +4255,16 @@
       "name": "pr00e-editorial-hardening",
       "headSha": "3e16b1cecde03dbdaa21becc6f8a02eaa4306d40",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 2,
+        "nonMergeBranchOnlyCommitCount": 2,
         "uniquePatchCount": 2,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4054,16 +4272,16 @@
       "name": "pr00f-integrity",
       "headSha": "ebd9d34497e83c3158915e98cd120e1fb296675f",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 6,
+        "nonMergeBranchOnlyCommitCount": 6,
         "uniquePatchCount": 6,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4071,16 +4289,16 @@
       "name": "project-integrity-refactor",
       "headSha": "5f3ddadab402daaf9f01a3ea99531fc65734302d",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 23,
+        "nonMergeBranchOnlyCommitCount": 23,
         "uniquePatchCount": 23,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4088,33 +4306,16 @@
       "name": "prototype-p03-engineer-review-brief",
       "headSha": "1fe68d1f4da1531cc273573ea098709e3d6a1302",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": false,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 1,
+        "nonMergeBranchOnlyCommitCount": 1,
         "uniquePatchCount": 1,
-        "equivalentPatchCount": 0
-      },
-      "provisionalClassification": null
-    },
-    {
-      "name": "pub-san-back-matter",
-      "headSha": "f519e6de4b5491be6f6aefce438c72e88e02dcf7",
-      "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
-      ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
-      "mechanical": {
-        "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 1,
-        "uniquePatchCount": 0,
-        "equivalentPatchCount": 1
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4122,16 +4323,16 @@
       "name": "pub-san-computational-surface",
       "headSha": "fd527ace394db25b6ddb1c6c6de65728ce48cf0c",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 13,
+        "nonMergeBranchOnlyCommitCount": 13,
         "uniquePatchCount": 13,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4139,16 +4340,16 @@
       "name": "pub-san-research-evidence",
       "headSha": "3090a7ed89f5e0a84d54eecedebf8ad82b5ca42f",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 13,
+        "nonMergeBranchOnlyCommitCount": 13,
         "uniquePatchCount": 13,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4156,16 +4357,16 @@
       "name": "pub-san-rh-technical",
       "headSha": "023094149a998126ae8bf1389be8fc0ecd9fdd79",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 18,
+        "nonMergeBranchOnlyCommitCount": 18,
         "uniquePatchCount": 18,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4173,16 +4374,16 @@
       "name": "public-url-phase-1",
       "headSha": "45fcb14128ae055a8b0724cbfbbc31bbc8758ceb",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 4,
+        "nonMergeBranchOnlyCommitCount": 4,
         "uniquePatchCount": 4,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4190,16 +4391,16 @@
       "name": "reference-house-phase5",
       "headSha": "456edac937e0de604f3983a6344902b8862fa761",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 12,
+        "nonMergeBranchOnlyCommitCount": 12,
         "uniquePatchCount": 12,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4207,16 +4408,16 @@
       "name": "rh-c1",
       "headSha": "330e7bc0d0eda6a0ec33b51afed09c733c2dd4bd",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 8,
+        "nonMergeBranchOnlyCommitCount": 8,
         "uniquePatchCount": 8,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4224,16 +4425,16 @@
       "name": "rh-c2-structural-view",
       "headSha": "9be3155dd8ff34dd21ae5ea80c7ec8f94e8e6d20",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 23,
+        "nonMergeBranchOnlyCommitCount": 23,
         "uniquePatchCount": 23,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4241,16 +4442,16 @@
       "name": "rh-c3-service-view",
       "headSha": "3226aa325190aa94803c18535d49b5951afe5458",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 29,
+        "nonMergeBranchOnlyCommitCount": 29,
         "uniquePatchCount": 29,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4258,16 +4459,16 @@
       "name": "rh-c4-boundary-view",
       "headSha": "b3740c8196ad2a7ba969e27b89f304841fc94f8f",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 36,
+        "nonMergeBranchOnlyCommitCount": 36,
         "uniquePatchCount": 36,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4275,16 +4476,16 @@
       "name": "rh-c5-target-calculations",
       "headSha": "bc219a9060316f023e90a06709999254bda6766a",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 21,
+        "nonMergeBranchOnlyCommitCount": 21,
         "uniquePatchCount": 21,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     },
@@ -4292,16 +4493,16 @@
       "name": "workmanship-robustness",
       "headSha": "a049e8da6cd9133dcbbb654e2fc703a1c5baf712",
       "reasons": [
-        "head-not-ancestor-of-main",
-        "branch-only-commits"
+        "unique-patch-signal",
+        "mixed-or-unique-git-cherry"
       ],
-      "postBRH00C": false,
-      "mergedHeadProof": true,
       "mechanical": {
         "headIsAncestorOfMain": false,
         "branchOnlyCommitCount": 20,
+        "nonMergeBranchOnlyCommitCount": 20,
         "uniquePatchCount": 20,
-        "equivalentPatchCount": 0
+        "equivalentPatchCount": 0,
+        "allCherryPatchesEquivalent": false
       },
       "provisionalClassification": null
     }
