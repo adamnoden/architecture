@@ -1,17 +1,22 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04E",
   "programmeIssue": 161,
-  "baselineMainSha": "9379034a41b618191698e9842659c90ff69514b7",
-  "initialDiscardedBaselineMainSha": "439eb71841dae16ad10cb675d5b94f0430a146ca",
-  "discardReason": "HFI-03A PR #228 merged before BRH-04E durable freeze or deletion authorisation.",
-  "namespaceCountBeforePacketBranchIncludingMain": 63,
-  "openPrSnapshotBeforePacketBranch": [
-    {"pr":227,"head":"drw-05b-principal-section-source","headSha":"81445858b49c4ed77a0426c2aabb0960ca9a6001","protected":true}
+  "initialDiscoveryMainSha": "439eb71841dae16ad10cb675d5b94f0430a146ca",
+  "intermediateMainSha": "9379034a41b618191698e9842659c90ff69514b7",
+  "baselineMainSha": "d7a6e556e59c27512d73fdd2c0028924c5aad5e7",
+  "restartReason": "HFI-03A and DRW-05B each moved main before destructive authorisation; both prior leases were discarded without deletion.",
+  "namespaceCountAtRecomputedCheckpointIncludingMainAndPacketBranch": 63,
+  "openPrSnapshotAtRecomputedCheckpoint": [
+    {"pr":229,"head":"brh-04e-controlled-deletion-5","protected":true}
+  ],
+  "concurrentRetiredRefs": [
+    {"name":"hfi-03a-circulation-geometry","reason":"PR #228 merged before first durable freeze"},
+    {"name":"drw-05b-principal-section-source","reason":"PR #227 merged after first durable freeze; merge first parent was 9379034a41b618191698e9842659c90ff69514b7"}
   ],
   "sourceAuthority": {
     "brh01aBaseline":"b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
-    "compareToExecutionMain":{"status":"ahead","aheadBy":223,"behindBy":0},
+    "compareToExecutionMain":{"status":"ahead","aheadBy":225,"behindBy":0},
     "xReconciliation":"project/branch-hygiene-x-reconciliation.{json,md,provenance.json}",
     "salvageAuthority":"project/branch-hygiene-salvage-proof.{json,md,provenance.json}"
   },
@@ -37,5 +42,5 @@
   "candidateSetSha256":"2807c62f90e4bfb15cb422e0ae9403ce0669da2a363ad45ee370ee53ec8e9539",
   "mutationPerformed":false,
   "repositorySettingsChanged":false,
-  "nextAction":"After draft PR creation, take a fresh no-movement lease over main, open PRs, and all 16 candidate heads. Only then may the repository owner manually delete exactly the frozen candidates."
+  "nextAction":"Take one final post-record-write no-movement lease over main, open PRs, and all 16 candidate exact heads. Only then may the repository owner manually delete exactly the frozen candidates."
 }
