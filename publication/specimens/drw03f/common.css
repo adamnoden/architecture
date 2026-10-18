@@ -1,0 +1,20 @@
+:root {
+  --sans: Arial, Helvetica, sans-serif;
+  --serif: Georgia, Cambria, "Times New Roman", serif;
+  --ink: #000;
+  --paper: #fff;
+}
+html, body { margin: 0; padding: 0; color: var(--ink); background: var(--paper); }
+body { font-family: var(--serif); font-size: 10.5pt; line-height: 1.45; }
+* { box-sizing: border-box; }
+section.page { break-before: page; break-after: page; }
+section.page:first-child { break-before: auto; }
+.blank-page { page: blank; min-height: 1mm; }
+.blank-sentinel { width: 1mm; height: 1mm; }
+.plate-page { page: plate; font-family: var(--sans); }
+.plate-header { width: 140mm; margin: 0 auto 4mm; display: grid; grid-template-columns: 1fr auto; gap: 5mm; align-items: baseline; }
+.plate-title { margin: 0; font-size: 11pt; line-height: 1.15; font-weight: 700; }
+.plate-scale { font-size: 8.3pt; white-space: nowrap; }
+.plate-frame { width: 140mm; height: 153mm; margin: 0 auto; position: relative; overflow: hidden; }
+.ground-plan { position: absolute; left: 6mm; top: 5mm; display: block; width: 136mm; height: 145mm; max-width: none; }
+.plate-caption { width: 140mm; margin: 6mm auto 0; font-family: var(--sans); font-size: 8.3pt; line-height: 1.35; }
