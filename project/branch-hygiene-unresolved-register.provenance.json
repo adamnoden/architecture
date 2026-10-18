@@ -1,41 +1,36 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "packet": "BRH-01C",
   "programmeIssue": 161,
   "pullRequest": 175,
-  "baselineMainSha": "fcf3691a639153827358664b73982e68e7c01707",
-  "registerCommitHeadSha": "e9b508396cc6b2a85c334f83990c1486b70e585f",
+  "baselineMainSha": "8aae956ed45a4bab5eac5ba5841a9784a75a500f",
+  "registerCommitHeadSha": "d4a052dc4958bb4bff9ea0774995484804e8113a",
   "enumeratedBranchCount": 160,
   "finalACount": 110,
   "finalBCount": 5,
   "unresolvedCount": 45,
   "provisionalXCount": 5,
   "provisionalCDCount": 40,
-  "openPrCountAtProof": 2,
-  "enumerationSha256": "533be726011d1c8c820393a93e03be9944f2ccba020ea36a7214dc727d147241",
-  "registerJsonSha256": "3631df76056454310ac2225955375a97499d3f9c3c52f47e6c8ba5cb91927448",
-  "proofWorkflowRun": 39113748268,
-  "proofWorkflowInputHeadSha": "08c6300bd6fa3b006d2e96c15faf7c83cde2f6db",
-  "artifactId": 12131316973,
-  "artifactDigest": "sha256:15753860d8eaaa2108f631f57e42b3ae69f32d3cdc0b5607be24ba407325c703",
-  "protectedLiveBranches": [
-    {
-      "name": "brh-01c-unresolved-register",
-      "pullRequest": 175,
-      "provisionalClassification": "X"
-    },
-    {
-      "name": "drw-03a",
-      "proofHeadSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
-      "pullRequest": 177,
-      "provisionalClassification": "X"
-    }
+  "openPrCountAtProof": 1,
+  "enumerationSha256": "21e0b1d466769fc00349720901786c5923a6621a9f456640c96cae800d833f2f",
+  "registerJsonSha256": "02a614c83b74984a7bc98d89097c17ac2e1142f73f6cd52572237c69456d6bd1",
+  "proofWorkflowRun": 39114042053,
+  "proofWorkflowInputHeadSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
+  "artifactId": 12131732114,
+  "artifactDigest": "sha256:f18077e55a6a98a715e69703ca7d0c4261b90882c658df7e2463ad8f7d205432",
+  "protectedXBranches": [
+    "brh-01a-obvious-integrated",
+    "brh-01b-patch-equivalent",
+    "brh-01c-unresolved-register",
+    "drw-02e",
+    "drw-03a"
   ],
   "proofNotes": [
     "The first successful proof was superseded because it queried open PRs before PR #175 existed.",
     "A later 159-branch proof was superseded when drw-03a appeared during the final lease check.",
     "The first 160-branch proof was superseded when drw-03a advanced and draft PR #177 opened.",
-    "The final proof recomputed the full register against unchanged main fcf3691a639153827358664b73982e68e7c01707 with live drw-03a head bcc9b8a34469e1a9f2bebf65fdb0499f377248b8 and PR #177 explicitly protected as X.",
+    "That live-DRW proof was superseded when PR #177 merged and moved main to 8aae956ed45a4bab5eac5ba5841a9784a75a500f.",
+    "The final moved-main proof recomputed the complete register against main 8aae956ed45a4bab5eac5ba5841a9784a75a500f. drw-03a is now mechanically integrated but remains X because it is post-BRH-01B and was outside the final A packet.",
     "The active BRH-01C branch necessarily moved after enumeration when the workflow committed the durable register and again when provenance was written; it remains X and is not deletion-eligible.",
     "No semantic C/D decision, salvage, deletion, branch rewrite, or repository-setting mutation occurred."
   ],
