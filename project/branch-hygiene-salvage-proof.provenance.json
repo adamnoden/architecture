@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-03A",
+  "programmeIssue": 161,
+  "repository": "adamnoden/architecture",
+  "baselineMainSha": "481ffc81c78b3a18c73173f3fc2d82b6adbbfcca",
+  "proofRecord": {
+    "path": "project/branch-hygiene-salvage-proof.json",
+    "blobSha": "f396dac6a2513ecb6e567eb4b92c4d8a620a1a5c",
+    "sha256": "97ab4ebc254dbf16b70a83e85aeab99b7406f5adc7d646ddff59db31b42e9fa9"
+  },
+  "narrativeRecord": {
+    "path": "project/branch-hygiene-salvage-proof.md",
+    "blobSha": "c4b98d556693e5d1ceddea1ef9c3f5cec933ef4c"
+  },
+  "authorityBlobs": {
+    "project/branch-hygiene-semantic-review-02a.json": "5bf8540c189537099fa0615d476140abe3540ef3",
+    "project/branch-hygiene-semantic-review-02g.json": "28a53c12d8b1b22ea61be1b8b8bb08e6e30c43c5",
+    "project/branch-hygiene-x-reconciliation.json": "815c5a7cba4c03310ea589873a51120a1ae402d2"
+  },
+  "restart": {
+    "supersededBranch": "brh-03-salvage-necessity-proof",
+    "supersededHeadSha": "3043c99d360f17178332bf92a3294868abef506f",
+    "supersededBaselineMainSha": "24aa34e8806ccc721496fe55af9517a83a338d9d",
+    "closedPr": 201,
+    "reason": "DRW-03F and HFI-00 moved main after the stale draft was created. It was retained without rewrite; BRH-03A restarted from current main."
+  },
+  "result": {
+    "DTopics": 0,
+    "salvageQueueEntries": 0,
+    "salvageActionsPerformed": 0,
+    "disposition": "vacuous-complete"
+  },
+  "validation": {
+    "policy": "Standard pull-request validation must pass on the exact final packet head before merge. Run/head are recorded in the issue #161 closeout."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
