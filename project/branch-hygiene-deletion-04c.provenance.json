@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-04C",
+  "programmeIssue": 161,
+  "status": "preflight-frozen-awaiting-authorised-manual-deletion",
+  "baselineMainSha": "79b55304b3d228b765a594f4495ed00acebcd8fd",
+  "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+  "sourceBaselineCompare": {"status":"ahead","aheadBy":179,"behindBy":0},
+  "candidateCount": 25,
+  "candidateClass": "A",
+  "candidateSetSha256": "e87c63fee13920b58a45b4c401db5d315a944b543d3d1ccc46a3bd4cc45c7e47",
+  "liveHeadRecheck": "all 25 matched BRH-01A frozen heads before checkpoint creation",
+  "openPrLeaseAtPacketStart": [
+    {"pr":213,"head":"drw-04d-plan-pair-proof","headSha":"9301935644f925473fd136941c5cee64bbf099fb"}
+  ],
+  "namespaceCountIncludingMainAtPacketStart": 114,
+  "deletionActionAvailableToConnector": false,
+  "mutationPerformed": false,
+  "nextAction": "Open the BRH-04C checkpoint PR, then freshly recheck main/open PRs/all candidate heads. If every lease holds, repository owner manually deletes exactly the 25 frozen refs. Agent then performs post-delete proof and BRH-04C closeout."
+}
