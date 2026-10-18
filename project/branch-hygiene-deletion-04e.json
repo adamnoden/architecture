@@ -1,18 +1,20 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04E",
   "programmeIssue": 161,
   "status": "preflight-frozen-awaiting-authorised-manual-deletion",
   "packetBranch": "brh-04e-controlled-deletion-5",
   "execution": {
-    "baselineMainSha": "9379034a41b618191698e9842659c90ff69514b7",
-    "baselineMainEvent": "HFI-03A PR #228 merged after BRH-04E initial discovery; the earlier 439eb718 baseline was discarded before any durable packet record or deletion authorisation.",
+    "initialDiscoveryMainSha": "439eb71841dae16ad10cb675d5b94f0430a146ca",
+    "intermediateMainSha": "9379034a41b618191698e9842659c90ff69514b7",
+    "baselineMainSha": "d7a6e556e59c27512d73fdd2c0028924c5aad5e7",
+    "restartReason": "HFI-03A and then DRW-05B moved main before destructive authorisation. Each stale lease was discarded; no deletion occurred. DRW-05B merged with 9379034a as first parent and its active branch retired before this recomputation.",
     "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
-    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":223,"behindBy":0},
-    "branchCountBeforePacketBranchIncludingMain": 63,
-    "openPrCountBeforePacketBranch": 1,
-    "openPrHeadsBeforePacketBranch": [
-      {"pr":227,"branch":"drw-05b-principal-section-source","headSha":"81445858b49c4ed77a0426c2aabb0960ca9a6001"}
+    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":225,"behindBy":0},
+    "branchCountAtRecomputedCheckpointIncludingMainAndPacketBranch": 63,
+    "openPrCountAtRecomputedCheckpoint": 1,
+    "openPrHeadsAtRecomputedCheckpoint": [
+      {"pr":229,"branch":"brh-04e-controlled-deletion-5"}
     ],
     "hardDeletionCap": 25,
     "candidateCount": 16,
@@ -44,10 +46,7 @@
     {"name":"wall-bay-prototype-v1","expectedHeadSha":"b9d433220c507bc53433d7227aaeb5162a9ccd8c","class":"A"}
   ],
   "specialReproof": {
-    "brh-02g-publication-editorial-review": {
-      "result":"A",
-      "reason":"unchanged head is an exact ancestor of execution main; no branch-only history remains"
-    },
+    "brh-02g-publication-editorial-review": {"result":"A","reason":"unchanged head is an exact ancestor of execution main; no branch-only history remains"},
     "brh-03-salvage-necessity-proof": {
       "result":"C",
       "branchOnlyCommitCount":2,
@@ -58,13 +57,14 @@
   },
   "explicitlyProtected": [
     {"name":"main","reason":"never a deletion candidate"},
-    {"name":"drw-05b-principal-section-source","reason":"open PR #227 / active DRW work; protection follows the live ref if it advances"},
-    {"name":"ch00-compiler-hardening-plan","reason":"class B; A/re-proof packet excludes B"},
+    {"name":"brh-04e-controlled-deletion-5","reason":"current packet / open PR #229"},
+    {"name":"any newly created DRW/HFI ref","reason":"post-checkpoint active work remains X until separately proven"},
+    {"name":"ch00-compiler-hardening-plan","reason":"class B; excluded"},
     {"name":"external-maintenance-geography","reason":"class B; excluded"},
     {"name":"maturity-model-enforcement","reason":"class B; excluded"},
     {"name":"pr00e-e2-e4-editorial-hardening","reason":"class B; excluded"},
     {"name":"pub-san-back-matter","reason":"class B; excluded"},
-    {"name":"all surviving semantic-review C refs","reason":"deferred to subsequent bounded C deletion packets; this packet admits only the one separately re-proven stale BRH-03 draft"}
+    {"name":"all surviving semantic-review C refs","reason":"deferred to subsequent bounded C deletion packets; this packet admits only the separately re-proven stale BRH-03 draft"}
   ],
   "deletionPreconditions": {
     "executionMainMustStillEqualBaselineImmediatelyBeforeAuthorisation": true,
@@ -74,5 +74,5 @@
     "postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover": true
   },
   "mutation": {"branchDeletionPerformed":false,"deletedCount":0,"repositorySettingsChanged":false},
-  "resumeRule": "After durable records and draft PR exist, take a fresh main + open-PR + exact-candidate-head lease. If it holds, authorise the repository owner to delete exactly these 16 refs. Then re-enumerate the namespace, prove only authorised deletions modulo independently attributable concurrent ref turnover, validate, merge under a fresh lease, and close BRH-04E before any later packet begins."
+  "resumeRule": "Take one final no-movement check after these refreshed records. If main remains d7a6e556e59c27512d73fdd2c0028924c5aad5e7, the only open PR head is this packet (plus any independently protected new active ref), and all 16 candidates remain at exact heads with no open PR, authorise the owner to delete exactly these 16 refs. After deletion, fully reconcile namespace turnover before closeout."
 }
