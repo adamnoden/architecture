@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02A",
+  "programmeIssue": 161,
+  "baselineMainSha": "cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c",
+  "sourceBranchHeads": {
+    "prototype-p03-engineer-review-brief": "1fe68d1f4da1531cc273573ea098709e3d6a1302",
+    "workmanship-robustness": "a049e8da6cd9133dcbbb654e2fc703a1c5baf712"
+  },
+  "reviewJsonSha256": "c95afd6f511cea634583286e2c161e9f4a52a4a94c2a74519e002832ce31cccd",
+  "evidence": {
+    "p03Compare": {
+      "status": "diverged",
+      "aheadBy": 1,
+      "behindBy": 1200
+    },
+    "workmanshipCompare": {
+      "status": "diverged",
+      "aheadBy": 20,
+      "behindBy": 1451
+    },
+    "p03Issue": 30,
+    "p03IssueStateAtReview": "open",
+    "currentAuthority": [
+      "docs/prototypes/p03-floor-edge-engineering-brief.md",
+      "docs/prototypes/p03-floor-edge-test-protocol.md",
+      "docs/research/workmanship-robustness.md",
+      "docs/manuscript/part-ii.md",
+      "docs/development/manufacturing-strategy.md",
+      "docs/development/tectonic-prototype-programme.md",
+      "docs/delivery/riba-implementation-brief-template.md",
+      "docs/reference-house/tectonic-architectural-language.md"
+    ]
+  },
+  "finalDispositions": {
+    "prototype-p03-engineer-review-brief": "C",
+    "workmanship-robustness": "C"
+  },
+  "pullRequest": null,
+  "finalPacketHeadSha": null,
+  "validationRun": null,
+  "mergeCommitSha": null,
+  "semanticReviewComplete": true,
+  "salvagePerformed": false,
+  "branchDeletionPerformed": false,
+  "deletionAuthorised": false,
+  "nextPacket": "BRH-02B"
+}
