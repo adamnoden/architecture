@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-04A",
+  "programmeIssue": 161,
+  "status": "blocked-before-mutation",
+  "packetBranch": "brh-04a-controlled-deletion-1",
+  "baselineMainSha": "19170e6cac52a54e751ade0ccd0899cc6ee13ec4",
+  "candidateCount": 25,
+  "candidateClass": "A",
+  "candidateSetSha256": "cd9f328d8d0c7cbccc599c5e5f87a359de78fd9493f64af2d6713dfffacf50d9",
+  "proof": {
+    "sourceClassification": "BRH-01A",
+    "sourceBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+    "sourceBaselineToPacketBaseline": {"status":"ahead","aheadBy":149,"behindBy":0},
+    "allCandidateLiveHeadsMatchedFrozenHeads": true,
+    "openPrCountAtPacketStart": 0,
+    "branchCountAtPacketStartIncludingMain": 164,
+    "mainLeaseStillExactAfterPlanning": true
+  },
+  "mutationBlocker": {
+    "firstClassDeleteBranchOrRefActionAvailable": false,
+    "indirectWorkflowAttempted": true,
+    "indirectWorkflowResult": "blocked by platform safety checks before file creation",
+    "bypassAttempted": false,
+    "decision": "Do not weaken or bypass the destructive-action boundary. Leave the packet unexecuted and durable."
+  },
+  "mutation": {
+    "branchDeletionPerformed": false,
+    "deletedCount": 0,
+    "unexpectedRefMutationObserved": false,
+    "repositorySettingsChanged": false
+  },
+  "resumeRule": "Before any later deletion attempt, re-read current main, open PRs and all 25 candidate heads. Do not reuse this lease if main or any candidate has moved. Execute only through an authorised first-class deletion path, then prove the post-delete namespace equals the pre-delete namespace minus exactly the candidate set."
+}
