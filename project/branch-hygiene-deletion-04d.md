@@ -2,21 +2,21 @@
 
 BRH-04D continues the **A-first** deletion phase under issue #161. It freezes the next bounded tranche of **25 historical class-A refs** after completed BRH-04A through BRH-04C.
 
-## Current execution lease
+## Final post-concurrency lease
 
-Three earlier destructive leases were discarded before any deletion because concurrent HFI/DRW work moved `main`. The current recomputed state is:
+Four earlier destructive leases were discarded before any deletion because concurrent HFI/DRW work moved `main`. The current recomputed state is:
 
-- execution `main`: `168634941b5ba163dbdc2471e0936486ec256229`
+- execution `main`: `58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e`
 - source classification: BRH-01A at `b8e842cee5beef6981f1e075cd06a1c080fbfe3a`
-- source baseline → execution `main`: **ahead 196 / behind 0**
-- namespace now: **90 refs including `main`**
-- open PRs: #223 `brh-04d-controlled-deletion-4`; #224 `hfi-02c-vertical-life-course` @ `660e2061f1d85ffa543262ed1b7ced4d8606bb9a`
-- fresh `drw-05a-principal-section-authority` @ `168634941b5ba163dbdc2471e0936486ec256229` is explicitly protected
-- DRW-04D PR #213 merged and its packet branch retired before this lease
+- source baseline → execution `main`: **ahead 200 / behind 0**
+- namespace now: **89 refs including `main`**
+- latest open-PR snapshot before this record write: only #223 `brh-04d-controlled-deletion-4`
+- fresh `drw-05b-principal-section-source` @ `58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e` is explicitly protected and remains outside the candidate set
+- HFI-02C and DRW-05A have merged and their packet refs retired
 - deletion cap: **25**
 - candidate-set SHA-256: `549792fc53e179de3a3a24198c947fedaa56231495239847d88bb5b28c1aa2f5`
 
-Every candidate below was class **A — fully integrated** in BRH-01A (`ancestor=yes`, `branch-only=0`), and every live head was re-read after the latest `main` movement.
+Every candidate below was class **A — fully integrated** in BRH-01A (`ancestor=yes`, `branch-only=0`), and every live head was re-read after `main` reached `58fbf4fc…`.
 
 | Branch | Exact deletion head |
 | --- | --- |
@@ -48,10 +48,10 @@ Every candidate below was class **A — fully integrated** in BRH-01A (`ancestor
 
 ## Protected namespace
 
-This packet excludes active DRW/HFI work, BRH authority/stale-draft refs requiring separate re-proof, and every B/C branch. In particular, `pub-san-back-matter` is class B, while `pub-san-computational-surface`, `pub-san-research-evidence`, and `pub-san-rh-technical` are class C.
+This packet excludes active/fresh DRW work, BRH authority/stale-draft refs requiring separate re-proof, and every B/C branch. In particular, `pub-san-back-matter` is class B, while `pub-san-computational-surface`, `pub-san-research-evidence`, and `pub-san-rh-technical` are class C.
 
 ## Manual destructive gate
 
-The connected GitHub capability has no first-class branch/ref deletion action. The repository owner may delete exactly the 25 refs above only after a final check confirms `main` is still `168634941b5ba163dbdc2471e0936486ec256229`, the candidates remain at the recorded heads, and none has acquired an open PR.
+The connected GitHub capability has no first-class branch/ref deletion action. The repository owner may delete exactly the 25 refs above only after a final no-movement check confirms `main` is still `58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e`, all candidates remain at the recorded heads, and none has acquired an open PR.
 
-After deletion, the complete namespace must be re-enumerated and reconciled against concurrent DRW/HFI turnover. BRH-04D is not complete until the proof is committed, validated, merged, and recorded on #161.
+After deletion, the complete namespace must be re-enumerated and reconciled against concurrent DRW/HFI turnover. BRH-04D is not complete until that proof is committed, validated, merged, and recorded on #161.
