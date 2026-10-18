@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02H",
+  "programmeIssue": 161,
+  "baselineMainSha": "1849e0fe912378278c44f19ab09b8f8a3fe20546",
+  "freezeMainSha": "8aae956ed45a4bab5eac5ba5841a9784a75a500f",
+  "proof": {
+    "workflowRunId": 39129176842,
+    "artifactId": 12137870055,
+    "artifactDigest": "sha256:bb67875d47206754940013a18196a8d0d67a3f970e777e6cca4670c9598b459e",
+    "reconciliationJsonSha256": "3981c3e543506dc9f98c3ec1beb2e5c513c0c4d3d7ca43d2a7f305f443f787c3",
+    "currentRefsSha256": "9c36e093395cfc78441fac9cb63670d192e6923328154598648ffd104cd005dc"
+  },
+  "namespace": {
+    "originalBranchCount": 160,
+    "currentBranchCount": 161,
+    "postFreezeBranchCount": 2,
+    "missingOriginalBranchCount": 1,
+    "postFreezeNames": [
+      "brh-02h-x-reconciliation",
+      "drw-03e-controlled-ground-plan-svg"
+    ],
+    "missingOriginalNames": [
+      "brh-01c-unresolved-register"
+    ]
+  },
+  "originalX": [
+    {
+      "name": "brh-01a-obvious-integrated",
+      "frozenHeadSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41",
+      "liveHeadSha": "bbaf9b72df7758b4ff4d97d89ee6a798789b2c41",
+      "reconciliation": "A",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 105,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 172
+      }
+    },
+    {
+      "name": "brh-01b-patch-equivalent",
+      "frozenHeadSha": "8ea68f5b5cfac84ea4aeb6b11ed24bd8fdca6660",
+      "liveHeadSha": "8ea68f5b5cfac84ea4aeb6b11ed24bd8fdca6660",
+      "reconciliation": "A",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 92,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 173
+      }
+    },
+    {
+      "name": "brh-01c-unresolved-register",
+      "frozenHeadSha": "c20b03ce909dff48374b436bad6c4aa8a6edc3bb",
+      "liveRefPresent": false,
+      "finalMergedHeadSha": "1e49375fa14011a57490b70a4c900b6d5f3f771b",
+      "reconciliation": "A-ABSENT",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 73,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 175,
+        "judgement": "The live branch ref is absent, but the final merged PR head is fully ancestral to current main. Content is integrated; no ref is available or required to recreate."
+      }
+    },
+    {
+      "name": "drw-02e",
+      "frozenHeadSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "liveHeadSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6",
+      "reconciliation": "A",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 100,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 174
+      }
+    },
+    {
+      "name": "drw-03a",
+      "frozenHeadSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
+      "liveHeadSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
+      "reconciliation": "A",
+      "evidence": {
+        "headIsAncestorOfMain": true,
+        "aheadOfMain": 0,
+        "behindMain": 88,
+        "branchOnlyCommitCount": 0,
+        "mergedPr": 177
+      }
+    }
+  ],
+  "retainedX": [
+    {
+      "name": "drw-03e-controlled-ground-plan-svg",
+      "proofHeadSha": "1949d4ac53e148ccd481d31d14609525aec65ec4",
+      "openPr": 190,
+      "reason": "active-open-pr",
+      "deletionEligible": false
+    },
+    {
+      "name": "brh-02h-x-reconciliation",
+      "proofHeadSha": "75ff3debcb1270904644f622483ce1b8ad3c5dc5",
+      "openPr": 192,
+      "reason": "active-packet-open-pr",
+      "deletionEligible": false
+    }
+  ],
+  "summary": {
+    "focusBranches": 7,
+    "reconciledA": 4,
+    "reconciledAbsentA": 1,
+    "retainedX": 2,
+    "remainingOriginalCD": 0,
+    "D": 0,
+    "salvageRequired": 0
+  },
+  "brh02CloseCondition": {
+    "semanticQueueResolved": true,
+    "originalXReconciled": true,
+    "postFreezeNamespaceReconciled": true,
+    "activeXMayRemainProtected": true,
+    "nextPhase": "BRH-03 — salvage necessity proof; expected vacuous because D=0"
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
