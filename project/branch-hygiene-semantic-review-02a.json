@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-02A",
   "programmeIssue": 161,
-  "baselineMainSha": "00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f",
+  "baselineMainSha": "72e27764943cbeba9da6573b7dacb7d32f769937",
   "scopeGroup": "prototype-research",
   "branches": [
     {
@@ -10,7 +10,7 @@
       "headSha": "1fe68d1f4da1531cc273573ea098709e3d6a1302",
       "mechanicalEvidence": {
         "aheadBy": 1,
-        "behindBy": 1204,
+        "behindBy": 1211,
         "branchOnlyCommits": 1,
         "uniquePatchSignal": true
       },
@@ -36,7 +36,7 @@
       "headSha": "a049e8da6cd9133dcbbb654e2fc703a1c5baf712",
       "mechanicalEvidence": {
         "aheadBy": 20,
-        "behindBy": 1455,
+        "behindBy": 1462,
         "branchOnlyCommits": 20,
         "uniquePatchSignal": true
       },
@@ -61,10 +61,18 @@
     "X": 0,
     "salvageRequired": 0
   },
-  "restart": {
-    "reason": "DRW-03B PR #179 merged during the final lease and moved main from cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c to 00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f.",
-    "authorityImpact": "The intervening merge added only publication-plan source, tests and its DRW-03B audit record. Neither reviewed source head nor any P03/workmanship authority used by this semantic disposition changed. C/C was recomputed against the moved main."
-  },
+  "restarts": [
+    {
+      "mainSha": "00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f",
+      "reason": "DRW-03B PR #179 merged during the final lease and moved main from cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c.",
+      "authorityImpact": "The intervening merge added only publication-plan source, tests and its DRW-03B audit record. Neither reviewed source head nor any P03/workmanship authority used by this semantic disposition changed. C/C was recomputed and retained."
+    },
+    {
+      "mainSha": "72e27764943cbeba9da6573b7dacb7d32f769937",
+      "reason": "DRW-03C PR #180 merged before BRH-02A could close and moved main from 00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f.",
+      "authorityImpact": "The intervening merge added only publication-drawing renderer foundation code, its Reference House foundation test and its DRW-03C audit record. Neither reviewed source head nor any P03/workmanship authority used by this semantic disposition changed. C/C was recomputed and retained."
+    }
+  ],
   "nextPacket": {
     "packet": "BRH-02B",
     "group": "infrastructure-tooling",
