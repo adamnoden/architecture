@@ -1,23 +1,23 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-02A",
   "programmeIssue": 161,
-  "baselineMainSha": "cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c",
+  "baselineMainSha": "00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f",
   "sourceBranchHeads": {
     "prototype-p03-engineer-review-brief": "1fe68d1f4da1531cc273573ea098709e3d6a1302",
     "workmanship-robustness": "a049e8da6cd9133dcbbb654e2fc703a1c5baf712"
   },
-  "reviewJsonSha256": "c95afd6f511cea634583286e2c161e9f4a52a4a94c2a74519e002832ce31cccd",
+  "reviewJsonSha256": "63c3d4a62ddafd637e68c11517d3dcdc9c4d0cb52980ed8978b35aef908e8c8e",
   "evidence": {
     "p03Compare": {
       "status": "diverged",
       "aheadBy": 1,
-      "behindBy": 1200
+      "behindBy": 1204
     },
     "workmanshipCompare": {
       "status": "diverged",
       "aheadBy": 20,
-      "behindBy": 1451
+      "behindBy": 1455
     },
     "p03Issue": 30,
     "p03IssueStateAtReview": "open",
@@ -32,12 +32,22 @@
       "docs/reference-house/tectonic-architectural-language.md"
     ]
   },
+  "restart": {
+    "previousBaselineMainSha": "cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c",
+    "reason": "DRW-03B PR #179 merged during the final lease check and moved main.",
+    "interveningFiles": [
+      "compiler/reference-house/publication-plan-source.test.ts",
+      "compiler/reference-house/publication-plan-source.ts",
+      "docs/publication/architectural-drawing-drw03b-ground-plan-source.md"
+    ],
+    "authorityImpact": "none on reviewed source heads or the P03/workmanship authority set; semantic dispositions recomputed and retained"
+  },
   "finalDispositions": {
     "prototype-p03-engineer-review-brief": "C",
     "workmanship-robustness": "C"
   },
   "pullRequest": 178,
-  "reviewRecordHeadBeforeProvenanceFinalization": "9381ff6af47aad99f866043b055e099b45278da2",
+  "reviewRecordHeadBeforeProvenanceFinalization": "a52e1b65598239b2b8033cb1b8d8cfe8acc9058b",
   "validationAndMergeEvidence": "recorded in PR #178 and the BRH-02A closeout on issue #161 after final-head validation and lease checks",
   "semanticReviewComplete": true,
   "salvagePerformed": false,
