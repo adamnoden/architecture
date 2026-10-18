@@ -1,17 +1,18 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "packet": "BRH-01C",
   "programmeIssue": 161,
-  "generatedAt": "2026-10-18T08:54:48.534Z",
+  "generatedAt": "2026-10-18T08:58:21.302Z",
   "repository": "adamnoden/architecture",
   "baselineMainSha": "fcf3691a639153827358664b73982e68e7c01707",
+  "restartReason": "drw-03a appeared during the final lease check after the 159-branch proof; stale proof discarded and full register recomputed.",
   "priorPacket": {
     "packet": "BRH-01B",
     "sourceFile": "project/branch-hygiene-classification.json"
   },
   "enumeration": {
-    "branchCount": 159,
-    "sha256": "5212ea1acc4d6c1b618d67c5bf9591eaa2ef708253c0b880ceb67e628c7fd276",
+    "branchCount": 160,
+    "sha256": "05f97eb575f14ac0b92cc0ce4552ec67d7e161e0df80dac57f7dbea78891ec59",
     "branches": [
       {
         "ref": "origin/architectural-specificity-audit-execution",
@@ -51,7 +52,7 @@
       {
         "ref": "origin/brh-01c-unresolved-register",
         "name": "brh-01c-unresolved-register",
-        "headSha": "aac2f074e9ce35c29812a82ce577d9303a9b4265"
+        "headSha": "6659049c1a6bbb81f185f44d9ddb93412e7f14a0"
       },
       {
         "ref": "origin/candidate-pattern-hardening",
@@ -247,6 +248,11 @@
         "ref": "origin/drw-02e",
         "name": "drw-02e",
         "headSha": "374c5db6e5b559e58cbc6a54106fc64786d3b9e6"
+      },
+      {
+        "ref": "origin/drw-03a",
+        "name": "drw-03a",
+        "headSha": "fcf3691a639153827358664b73982e68e7c01707"
       },
       {
         "ref": "origin/editorial-overhaul",
@@ -814,7 +820,7 @@
     {
       "number": 175,
       "headRefName": "brh-01c-unresolved-register",
-      "headSha": "aac2f074e9ce35c29812a82ce577d9303a9b4265",
+      "headSha": "6659049c1a6bbb81f185f44d9ddb93412e7f14a0",
       "draft": true,
       "url": "https://github.com/adamnoden/architecture/pull/175"
     }
@@ -822,8 +828,8 @@
   "coverage": {
     "finalA": 110,
     "finalB": 5,
-    "unresolved": 44,
-    "total": 159,
+    "unresolved": 45,
+    "total": 160,
     "missingPriorFinal": 0,
     "invalidatedPriorFinal": 0
   },
@@ -1330,7 +1336,7 @@
     },
     {
       "name": "brh-01c-unresolved-register",
-      "headSha": "aac2f074e9ce35c29812a82ce577d9303a9b4265",
+      "headSha": "6659049c1a6bbb81f185f44d9ddb93412e7f14a0",
       "group": "branch-hygiene",
       "provisionalReviewClass": "X",
       "reasons": [
@@ -1342,14 +1348,14 @@
       "openPr": {
         "number": 175,
         "draft": true,
-        "headSha": "aac2f074e9ce35c29812a82ce577d9303a9b4265",
+        "headSha": "6659049c1a6bbb81f185f44d9ddb93412e7f14a0",
         "url": "https://github.com/adamnoden/architecture/pull/175"
       },
       "mechanical": {
         "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 5,
-        "nonMergeBranchOnlyCommitCount": 5,
-        "uniquePatchCount": 5,
+        "branchOnlyCommitCount": 8,
+        "nonMergeBranchOnlyCommitCount": 8,
+        "uniquePatchCount": 8,
         "equivalentPatchCount": 0
       }
     },
@@ -1478,6 +1484,24 @@
       "group": "architectural-drawing",
       "provisionalReviewClass": "X",
       "reasons": [
+        "mechanically-integrated-outside-final-A-packet"
+      ],
+      "openPr": null,
+      "mechanical": {
+        "headIsAncestorOfMain": true,
+        "branchOnlyCommitCount": 0,
+        "nonMergeBranchOnlyCommitCount": 0,
+        "uniquePatchCount": 0,
+        "equivalentPatchCount": 0
+      }
+    },
+    {
+      "name": "drw-03a",
+      "headSha": "fcf3691a639153827358664b73982e68e7c01707",
+      "group": "architectural-drawing",
+      "provisionalReviewClass": "X",
+      "reasons": [
+        "post-BRH-01B-ref",
         "mechanically-integrated-outside-final-A-packet"
       ],
       "openPr": null,
@@ -2067,7 +2091,8 @@
       "coa-06-output-integration"
     ],
     "architectural-drawing": [
-      "drw-02e"
+      "drw-02e",
+      "drw-03a"
     ],
     "g01-completion": [
       "g01-completion-programme",
