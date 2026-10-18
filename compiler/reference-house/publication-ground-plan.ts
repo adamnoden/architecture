@@ -58,6 +58,60 @@ const textPrimitive = (
   metadata
 })
 
+const internalWallBody = (
+  boundary: DerivedBoundary,
+  externalCourtThickness: number,
+  internalThickness: number,
+  result: ReferenceHouseCompileResult
+): ModelRect => {
+  const xMin = Math.min(boundary.x1, boundary.x2)
+  const xMax = Math.max(boundary.x1, boundary.x2)
+  const yMin = Math.min(boundary.y1, boundary.y2)
+  const yMax = Math.max(boundary.y1, boundary.y2)
+  const courtFrameX0 = result.derived.court.x0 - externalCourtThickness
+  const courtFrameX1 = result.derived.court.x1 + externalCourtThickness
+  const courtFrameY0 = result.derived.court.y0 - externalCourtThickness
+  const courtFrameY1 = result.derived.court.y1 + externalCourtThickness
+
+  if (boundary.orientation === 'vertical') {
+    let from = yMin
+    let to = yMax
+    const x = boundary.x1
+
+    if (close(from, 0)) from += externalCourtThickness
+    if (close(to, result.derived.shell.depth)) to -= externalCourtThickness
+    if (
+      close(from, result.derived.court.y1) &&
+      x >= courtFrameX0 && x <= courtFrameX1
+    ) from += externalCourtThickness
+    if (
+      close(to, result.derived.court.y0) &&
+      x >= courtFrameX0 && x <= courtFrameX1
+    ) to -= externalCourtThickness
+
+    if (to <= from) throw new Error(`Internal wall ${boundary.id} is consumed by permanent-wall junctions.`)
+    return { x: x - internalThickness / 2, y: from, width: internalThickness, height: to - from }
+  }
+
+  let from = xMin
+  let to = xMax
+  const y = boundary.y1
+
+  if (close(from, 0)) from += externalCourtThickness
+  if (close(to, result.derived.shell.width)) to -= externalCourtThickness
+  if (
+    close(from, result.derived.court.x1) &&
+    y >= courtFrameY0 && y <= courtFrameY1
+  ) from += externalCourtThickness
+  if (
+    close(to, result.derived.court.x0) &&
+    y >= courtFrameY0 && y <= courtFrameY1
+  ) to -= externalCourtThickness
+
+  if (to <= from) throw new Error(`Internal wall ${boundary.id} is consumed by permanent-wall junctions.`)
+  return { x: from, y: y - internalThickness / 2, width: to - from, height: internalThickness }
+}
+
 const wallBody = (
   boundary: DerivedBoundary,
   externalCourtThickness: number,
@@ -70,9 +124,7 @@ const wallBody = (
   const yMax = Math.max(boundary.y1, boundary.y2)
 
   if (boundary.kind === 'internal-planning') {
-    return boundary.orientation === 'vertical'
-      ? { x: boundary.x1 - internalThickness / 2, y: yMin, width: internalThickness, height: yMax - yMin }
-      : { x: xMin, y: boundary.y1 - internalThickness / 2, width: xMax - xMin, height: internalThickness }
+    return internalWallBody(boundary, externalCourtThickness, internalThickness, result)
   }
 
   const thickness = externalCourtThickness
@@ -86,12 +138,25 @@ const wallBody = (
   }
 
   if (boundary.kind === 'courtyard') {
+    // Court coordinates own the void faces. Extend along the wall length by one
+    // body thickness so the four offset wall bodies form a continuous frame at
+    // the outer corners rather than meeting only at four mathematical points.
     if (boundary.orientation === 'vertical') {
       const isWest = close(boundary.x1, result.derived.court.x0)
-      return { x: isWest ? boundary.x1 - thickness : boundary.x1, y: yMin, width: thickness, height: yMax - yMin }
+      return {
+        x: isWest ? boundary.x1 - thickness : boundary.x1,
+        y: yMin - thickness,
+        width: thickness,
+        height: yMax - yMin + thickness * 2
+      }
     }
     const isSouth = close(boundary.y1, result.derived.court.y0)
-    return { x: xMin, y: isSouth ? boundary.y1 - thickness : boundary.y1, width: xMax - xMin, height: thickness }
+    return {
+      x: xMin - thickness,
+      y: isSouth ? boundary.y1 - thickness : boundary.y1,
+      width: xMax - xMin + thickness * 2,
+      height: thickness
+    }
   }
 
   throw new Error(`Unsupported ground-plan boundary kind: ${boundary.kind}`)
