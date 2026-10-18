@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02C",
+  "programmeIssue": 161,
+  "baselineMainSha": "a5fecb8d867efe944f26e8aa68e0987c96c8990c",
+  "scopeGroup": "compiler-computational",
+  "restart": {
+    "previousBaselineMainSha": "aead661ac4956fc90b2395e9f8532a345b815b91",
+    "reason": "DRW-03D / PR #181 merged before the durable BRH-02C freeze and moved main.",
+    "interveningFiles": [
+      "compiler/reference-house/publication-ground-plan.test.ts",
+      "compiler/reference-house/publication-ground-plan.ts",
+      "docs/publication/architectural-drawing-drw03d-ground-plan-scene.md"
+    ],
+    "authorityImpact": "none on the reviewed CF/CH/COA source heads or defining packet contracts; all seven mechanical comparisons were recomputed against the moved main"
+  },
+  "branches": [
+    {
+      "name": "cf-01-contrast-fixture",
+      "headSha": "66470917264edf3419ebda2886fbf42c2466a125",
+      "mechanicalEvidence": {
+        "aheadBy": 18,
+        "behindBy": 807,
+        "branchOnlyCommits": 18,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The defining CF-01 contrast fixture and its acceptance test are byte-identical on current main; the plan-slice/reference-house adapter work was subsequently integrated and hardened. The branch's status/maturity edits are historical state, not missing capability.",
+      "preservedBlobs": {
+        "compiler/cf01/cf01.test.ts": "a2f53fdef514a3de04272857d779dcbd4fa3da6c",
+        "compiler/cf01/fixture.ts": "4642a32e27ad2866a2fbe7cff762da3d8629d2cd"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "ch-05-determinism-identity-provenance",
+      "headSha": "77d0d0521a6ddbd6f7f27ac7d324247be1932721",
+      "mechanicalEvidence": {
+        "aheadBy": 9,
+        "behindBy": 710,
+        "branchOnlyCommits": 9,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "CH-05's determinism, semantic identity and provenance hardening survives directly on main: the CH-05 README/test pair and compiler/core/identity.ts are byte-identical, and the Reference House identity/provenance path remains current authority. Later hardening builds on it.",
+      "preservedBlobs": {
+        "compiler/ch05/README.md": "4a55a89f7c8e07a3e2e687fa8933e07dbcef64d0",
+        "compiler/ch05/ch05.test.ts": "5e738bab208b1814b55f2e3d0635c1b68939adda",
+        "compiler/core/identity.ts": "497e308dc522edd3988c6c4fce0f269635a03f9c"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "ch-05-housekeeping-sync",
+      "headSha": "4971c87e788b814dfde1d111399edc64663d6c86",
+      "mechanicalEvidence": {
+        "aheadBy": 3,
+        "behindBy": 709,
+        "branchOnlyCommits": 3,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "This branch only synchronized STATUS, compiler-hardening programme prose and maturity state after CH-05. Current main has advanced through later CH phases and carries the evolved programme/maturity authority; replaying the old sync would regress state.",
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "ch-08-distillation-deletion",
+      "headSha": "4d7749f3cbb39a8b10defb8effa9c3a988482708",
+      "mechanicalEvidence": {
+        "aheadBy": 11,
+        "behindBy": 671,
+        "branchOnlyCommits": 11,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "CH-08's distillation/deletion contract is preserved directly on main: compiler/ch08/README.md and ch08.test.ts are byte-identical. The resulting compiler shape and deletions are already reflected in current authority, with later work layered on top.",
+      "preservedBlobs": {
+        "compiler/ch08/README.md": "2704db9202175a1e577d8eb1b877a020c24e0437",
+        "compiler/ch08/ch08.test.ts": "a5e7cf6e6b8ada88afd7893db265f9f0f8678032"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "coa-04-plan-section-successors",
+      "headSha": "95da828b7087abab7b66df763a18eee276c56202",
+      "mechanicalEvidence": {
+        "aheadBy": 22,
+        "behindBy": 561,
+        "branchOnlyCommits": 22,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "COA-04's plan/section successor contract is directly preserved: the packet README/test pair are byte-identical on main, and the spatial output implementation remains present and is subsequently extended by later COA/DRW work. Historical generated SVGs are reproducible output, not stranded authority.",
+      "preservedBlobs": {
+        "compiler/coa04/README.md": "3abdaf426ba7d2c7f0662057077dfe0821fce0c3",
+        "compiler/coa04/coa04.test.ts": "3a2987621b9374ba62996a11ea08bf290f269ab9"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "coa-05-topology-successors-final",
+      "headSha": "1a2cd8719791c50f3b5f29fb98436a3b657bfe11",
+      "mechanicalEvidence": {
+        "aheadBy": 5,
+        "behindBy": 560,
+        "branchOnlyCommits": 5,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "COA-05's topology/structure successor contract survives directly: the packet README/test and compiler/reference-house/output/structure.ts are byte-identical on current main. No branch-only semantic residue remains.",
+      "preservedBlobs": {
+        "compiler/coa05/README.md": "1f0ca2ffcbc2520c1de47ecac26ff87dd1d4c8ea",
+        "compiler/coa05/coa05.test.ts": "6e3c39983251eb207a395fb57be9d6fa852b677f",
+        "compiler/reference-house/output/structure.ts": "dd2f1ecf2aa3b69f61893638a4181dc409545d56"
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "coa-06-output-integration",
+      "headSha": "3ee3a9a501267ea2ca6b7b7d1f55d68cbd2bd585",
+      "mechanicalEvidence": {
+        "aheadBy": 28,
+        "behindBy": 559,
+        "branchOnlyCommits": 28,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "COA-06's integrated output build/generate/verify pipeline survives directly. The packet README/test pair and build/generate/verify plus most output modules are byte-identical on main; the output contract has only evolved under later authority. Generated artefacts are current-system outputs rather than missing source value.",
+      "preservedBlobs": {
+        "compiler/coa06/README.md": "031455fde4d46c2919239985dabae18b5d6aafec",
+        "compiler/coa06/coa06.test.ts": "d9f182c163855877f058f88fb0bba29ba9a441b2",
+        "compiler/reference-house/output/build.ts": "5417899aeb68d48d67b5e2443eecf5560f20f3ab",
+        "compiler/reference-house/output/generate.ts": "ef4c5dce1d80a35a497954cbae840e77e34bdfca",
+        "compiler/reference-house/output/verify.ts": "f9c3a81cb4e8a7749cd8930aa67a53862224f6e3",
+        "compiler/reference-house/output/spatial.ts": "dcafd5dd9c809e998dfcfc82375d62d3e6d76beb",
+        "compiler/reference-house/output/structure.ts": "dd2f1ecf2aa3b69f61893638a4181dc409545d56"
+      },
+      "evolvedAuthority": {
+        "compiler/reference-house/output/contract.ts": {
+          "branchBlob": "ae68d7494725e03637644ad372d9924525537be6",
+          "currentMainBlob": "2c253a16a089594932b43633c06442d539a30d5a"
+        }
+      },
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    }
+  ],
+  "summary": {
+    "reviewed": 7,
+    "C": 7,
+    "D": 0,
+    "X": 0,
+    "salvageRequired": 0
+  },
+  "nextPacket": {
+    "packet": "BRH-02D",
+    "group": "g01-completion",
+    "branches": [
+      "g01-completion-programme",
+      "g01-d10-normative",
+      "g01-d10s-specificity",
+      "g01-d11-v01-freeze",
+      "g01-d12-reference-house",
+      "g01-d13-closeout",
+      "g01-d8-falsification",
+      "g01-d9-holdout"
+    ],
+    "reason": "Next coherent unresolved lineage in the BRH-01C register; eight branches, within the BRH-02 hard cap."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
