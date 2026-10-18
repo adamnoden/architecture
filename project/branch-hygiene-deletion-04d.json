@@ -1,40 +1,44 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "packet": "BRH-04D",
   "programmeIssue": 161,
   "status": "preflight-frozen-awaiting-authorised-manual-deletion",
   "packetBranch": "brh-04d-controlled-deletion-4",
   "restart": {
     "initialPlanningMainSha": "2e9b4768c049cd3b5b8db15c34b73ba5bcab7321",
-    "intermediateMainShas": ["04add58465b59ebae56ad208b22e144df00efef9","b53f5c500babe107f98d50ba2c81f1afcd4f6796"],
-    "reason": "Three destructive leases were discarded before any deletion as concurrent HFI/DRW work moved main. Candidate heads, source ancestry and open-PR protections were refreshed after each movement."
+    "intermediateMainShas": [
+      "04add58465b59ebae56ad208b22e144df00efef9",
+      "b53f5c500babe107f98d50ba2c81f1afcd4f6796",
+      "168634941b5ba163dbdc2471e0936486ec256229"
+    ],
+    "reason": "Four earlier destructive leases were discarded before any deletion while concurrent HFI/DRW work moved main. Candidate heads, source ancestry and open-PR protection were refreshed after each movement."
   },
   "execution": {
-    "baselineMainSha": "168634941b5ba163dbdc2471e0936486ec256229",
+    "baselineMainSha": "58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e",
     "sourceClassification": "BRH-01A",
     "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
     "sourceRule": "A only: unchanged live head, mechanically proven ancestor of source baseline with zero branch-only commits and no open PR; source baseline remains an ancestor of execution main.",
-    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":196,"behindBy":0},
+    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":200,"behindBy":0},
     "branchCountAtPacketStartIncludingMain": 89,
-    "branchCountAtFinalDestructiveLeaseIncludingMain": 90,
-    "openPrCountAtFinalDestructiveLease": 2,
-    "openPrHeadsAtFinalDestructiveLease": [
-      {"pr":223,"branch":"brh-04d-controlled-deletion-4"},
-      {"pr":224,"branch":"hfi-02c-vertical-life-course","headSha":"660e2061f1d85ffa543262ed1b7ced4d8606bb9a"}
+    "branchCountAtFinalDestructiveLeaseIncludingMain": 89,
+    "openPrCountAtFinalDestructiveLeaseSnapshot": 1,
+    "openPrHeadsAtFinalDestructiveLeaseSnapshot": [
+      {"pr":223,"branch":"brh-04d-controlled-deletion-4"}
     ],
     "concurrentEventsBeforeFinalLease": [
       "Accidental HFI-02C stub on main was immediately reverted before destructive authorisation.",
-      "DRW-04B.2 PR #222 merged and retired its corrective branch before destructive authorisation.",
-      "DRW-04D PR #213 merged and retired drw-04d-plan-pair-proof before destructive authorisation.",
-      "HFI-02C opened as PR #224 and remains protected.",
-      "Fresh drw-05a-principal-section-authority appeared at current main and remains protected."
+      "DRW-04B.2 PR #222 merged and its corrective branch retired.",
+      "DRW-04D PR #213 merged and its packet branch retired.",
+      "HFI-02C merged and its packet branch retired.",
+      "DRW-05A PR #225 merged and its packet branch retired.",
+      "Fresh drw-05b-principal-section-source exists at the final baseline and is protected."
     ],
     "hardDeletionCap": 25,
     "connectorDeleteBranchActionAvailable": false
   },
   "candidateSetSha256": "549792fc53e179de3a3a24198c947fedaa56231495239847d88bb5b28c1aa2f5",
   "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
-  "candidateEvidence": "Every candidate is final class A from BRH-01A, had ancestor=yes and branch-only=0 there, and was freshly re-read after the DRW-04D main movement at the exact frozen head. No candidate is an open-PR head, and the BRH-01A baseline remains ancestral to execution main.",
+  "candidateEvidence": "Every candidate is final class A from BRH-01A, had ancestor=yes and branch-only=0 there, and was freshly re-read after the final 58fbf4fc main movement at the exact frozen head. No candidate is an open-PR head, and the BRH-01A baseline remains ancestral to execution main.",
   "candidates": [
     {"name":"print-publication-pipeline","expectedHeadSha":"ecbaf05fbcf20bd863b6c38e58188ffbc6cdaf56","class":"A"},
     {"name":"project-dataplate","expectedHeadSha":"7e207c178a807deed09356c7c780ded6b99dd275","class":"A"},
@@ -63,8 +67,7 @@
     {"name":"pub-san-reference-review","expectedHeadSha":"817c6c5befb2878abe8be31045fd678e0e561d17","class":"A"}
   ],
   "explicitlyProtectedObservedRefs": [
-    {"name":"hfi-02c-vertical-life-course","reason":"open PR #224 @ 660e2061f1d85ffa543262ed1b7ced4d8606bb9a"},
-    {"name":"drw-05a-principal-section-authority","reason":"fresh DRW ref @ 168634941b5ba163dbdc2471e0936486ec256229"},
+    {"name":"drw-05b-principal-section-source","reason":"fresh DRW ref @ 58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e; protection follows the live DRW ref if it advances"},
     {"name":"brh-01a-obvious-integrated","reason":"BRH authority ref; separate deletion eligibility"},
     {"name":"brh-01b-patch-equivalent","reason":"BRH authority/B record; separate deletion eligibility"},
     {"name":"brh-02g-publication-editorial-review","reason":"accidental/no-op ref requiring separate re-proof"},
@@ -75,12 +78,12 @@
     {"name":"pub-san-rh-technical","reason":"class C; excluded"}
   ],
   "deletionPreconditions": {
-    "executionMainMustStillEqualBaselineImmediatelyBeforeDeletion": true,
-    "allCandidatesMustStillExistAtExpectedHeadImmediatelyBeforeDeletion": true,
-    "noCandidateMayHaveOpenPrImmediatelyBeforeDeletion": true,
+    "executionMainMustStillEqualBaselineImmediatelyBeforeAuthorisation": true,
+    "allCandidatesMustStillExistAtExpectedHeadImmediatelyBeforeAuthorisation": true,
+    "noCandidateMayHaveOpenPrImmediatelyBeforeAuthorisation": true,
     "candidateCountMustNotExceed25": true,
     "postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover": true
   },
   "mutation": {"branchDeletionPerformed":false,"deletedCount":0,"repositorySettingsChanged":false},
-  "resumeRule": "Delete only against baseline 168634941b5ba163dbdc2471e0936486ec256229 after a final no-movement check. After manual deletion, re-enumerate the complete namespace, prove exactly the authorised refs disappeared modulo independently observed concurrent ref turnover, then update this record and merge it under a fresh main/open-PR lease."
+  "resumeRule": "Authorise manual deletion only after a final no-movement check against 58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e. After deletion, re-enumerate the complete namespace, prove exactly the authorised refs disappeared modulo independently observed concurrent ref turnover, then update this record and merge it under a fresh main/open-PR lease."
 }
