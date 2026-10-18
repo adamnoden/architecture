@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-03A",
+  "programmeIssue": 161,
+  "baselineMainSha": "24aa34e8806ccc721496fe55af9517a83a338d9d",
+  "purpose": "Prove whether BRH-03 has any D-class salvage topic to execute before deletion.",
+  "authority": {
+    "classificationRule": "Only D — unique and valuable / unresolved — enters BRH-03 salvage.",
+    "sourceRecords": [
+      {
+        "path": "project/branch-hygiene-semantic-review-02a.json",
+        "blobSha": "5bf8540c189537099fa0615d476140abe3540ef3",
+        "role": "mandatory P03/prototype salvage review",
+        "result": {
+          "reviewed": 2,
+          "C": 2,
+          "D": 0,
+          "salvageRequired": 0
+        }
+      },
+      {
+        "path": "project/branch-hygiene-semantic-review-02g.json",
+        "blobSha": "28a53c12d8b1b22ea61be1b8b8bb08e6e30c43c5",
+        "role": "aggregate close of original semantic queue",
+        "result": {
+          "originalCandidates": 40,
+          "resolvedC": 40,
+          "resolvedD": 0,
+          "remainingCD": 0
+        }
+      },
+      {
+        "path": "project/branch-hygiene-x-reconciliation.json",
+        "blobSha": "815c5a7cba4c03310ea589873a51120a1ae402d2",
+        "role": "BRH-02 uncertainty and namespace close condition",
+        "result": {
+          "remainingOriginalCD": 0,
+          "D": 0,
+          "salvageRequired": 0
+        }
+      }
+    ]
+  },
+  "mandatoryP03Disposition": {
+    "branch": "prototype-p03-engineer-review-brief",
+    "finalClass": "C",
+    "salvageRequired": false,
+    "owningIssue": 30,
+    "issueRemainsIndependent": true,
+    "reason": "BRH-02A proved the obsolete branch brief is superseded by current P03 engineering/test authority; issue #30 remains open for the actual competent-engineer option reduction, not for branch salvage."
+  },
+  "salvageQueue": [],
+  "summary": {
+    "DTopics": 0,
+    "salvagePacketsRequired": 0,
+    "salvageActionsPerformed": 0,
+    "BRH03Disposition": "vacuous-complete"
+  },
+  "nextPhase": {
+    "packet": "BRH-04A",
+    "purpose": "Controlled deletion candidate recomputation and first bounded deletion batch.",
+    "precondition": "Re-enumerate live refs and open PRs from then-current main; delete only currently re-proven A/B/C refs, maximum 25, never X/open/current/changed."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
