@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-04E",
+  "programmeIssue": 161,
+  "baselineMainSha": "9379034a41b618191698e9842659c90ff69514b7",
+  "initialDiscardedBaselineMainSha": "439eb71841dae16ad10cb675d5b94f0430a146ca",
+  "discardReason": "HFI-03A PR #228 merged before BRH-04E durable freeze or deletion authorisation.",
+  "namespaceCountBeforePacketBranchIncludingMain": 63,
+  "openPrSnapshotBeforePacketBranch": [
+    {"pr":227,"head":"drw-05b-principal-section-source","headSha":"81445858b49c4ed77a0426c2aabb0960ca9a6001","protected":true}
+  ],
+  "sourceAuthority": {
+    "brh01aBaseline":"b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+    "compareToExecutionMain":{"status":"ahead","aheadBy":223,"behindBy":0},
+    "xReconciliation":"project/branch-hygiene-x-reconciliation.{json,md,provenance.json}",
+    "salvageAuthority":"project/branch-hygiene-salvage-proof.{json,md,provenance.json}"
+  },
+  "specialReproofEvidence": {
+    "brh-02g-publication-editorial-review": {
+      "headSha":"708ca16ac46ee40f0759a1825f557924cfd0694c",
+      "currentMainRelation":"ancestor",
+      "classification":"A"
+    },
+    "brh-03-salvage-necessity-proof": {
+      "headSha":"3043c99d360f17178332bf92a3294868abef506f",
+      "mergeBaseSha":"24aa34e8806ccc721496fe55af9517a83a338d9d",
+      "branchOnlyCommitCount":2,
+      "branchOnlyCommitShas":["4e76a6f9fd9c7d7a8c06a8929fedb12fbc046940","3043c99d360f17178332bf92a3294868abef506f"],
+      "branchOnlyPaths":["project/branch-hygiene-salvage-closeout.json","project/branch-hygiene-salvage-closeout.md"],
+      "classification":"C",
+      "supersededBy":"project/branch-hygiene-salvage-proof.{json,md,provenance.json}",
+      "supersessionProof":"Merged BRH-03A explicitly records this stale branch and closed PR #201 as superseded, restarts from later main, and preserves/refines the same D=0 / empty salvage / vacuous-complete conclusion."
+    }
+  },
+  "candidateCount":16,
+  "candidateClassCounts":{"A":15,"C":1,"B":0,"D":0,"X":0},
+  "candidateSetSha256":"2807c62f90e4bfb15cb422e0ae9403ce0669da2a363ad45ee370ee53ec8e9539",
+  "mutationPerformed":false,
+  "repositorySettingsChanged":false,
+  "nextAction":"After draft PR creation, take a fresh no-movement lease over main, open PRs, and all 16 candidate heads. Only then may the repository owner manually delete exactly the frozen candidates."
+}
