@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02C",
+  "programmeIssue": 161,
+  "baselineMainSha": "a5fecb8d867efe944f26e8aa68e0987c96c8990c",
+  "sourceBranchHeads": {
+    "cf-01-contrast-fixture": "66470917264edf3419ebda2886fbf42c2466a125",
+    "ch-05-determinism-identity-provenance": "77d0d0521a6ddbd6f7f27ac7d324247be1932721",
+    "ch-05-housekeeping-sync": "4971c87e788b814dfde1d111399edc64663d6c86",
+    "ch-08-distillation-deletion": "4d7749f3cbb39a8b10defb8effa9c3a988482708",
+    "coa-04-plan-section-successors": "95da828b7087abab7b66df763a18eee276c56202",
+    "coa-05-topology-successors-final": "1a2cd8719791c50f3b5f29fb98436a3b657bfe11",
+    "coa-06-output-integration": "3ee3a9a501267ea2ca6b7b7d1f55d68cbd2bd585"
+  },
+  "reviewJsonSha256": "86327ddab3e07340d72979d8140f27e20545dbacb5d1b6345741eb5824861b43",
+  "restart": {
+    "previousBaselineMainSha": "aead661ac4956fc90b2395e9f8532a345b815b91",
+    "reason": "DRW-03D / PR #181 merged before durable review freeze.",
+    "authorityImpact": "none; all seven compares recomputed against moved main"
+  },
+  "strongPreservationSignals": [
+    "CF-01 defining fixture and test are byte-identical on current main",
+    "CH-05 README/test and compiler/core/identity.ts are byte-identical on current main",
+    "CH-08 README/test are byte-identical on current main",
+    "COA-04 README/test are byte-identical on current main",
+    "COA-05 README/test and structure.ts are byte-identical on current main",
+    "COA-06 README/test and integrated build/generate/verify plus most output modules are byte-identical on current main; output contract has evolved"
+  ],
+  "finalDispositions": {
+    "cf-01-contrast-fixture": "C",
+    "ch-05-determinism-identity-provenance": "C",
+    "ch-05-housekeeping-sync": "C",
+    "ch-08-distillation-deletion": "C",
+    "coa-04-plan-section-successors": "C",
+    "coa-05-topology-successors-final": "C",
+    "coa-06-output-integration": "C"
+  },
+  "validationAndMergeEvidence": "recorded in the BRH-02C PR and issue #161 closeout after final-head validation, fresh lease and merge-parent verification",
+  "semanticReviewComplete": true,
+  "salvagePerformed": false,
+  "branchDeletionPerformed": false,
+  "deletionAuthorised": false,
+  "nextPacket": "BRH-02D"
+}
