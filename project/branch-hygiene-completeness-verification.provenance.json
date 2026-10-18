@@ -1,0 +1,34 @@
+{
+  "packet": "BRH-00C",
+  "programmeIssue": 161,
+  "pullRequest": 170,
+  "snapshotBaselineMainSha": "c3ebe98a99cfe89956dc5b93bba3bc1dc2c305f7",
+  "verificationBaselineMainSha": "5e729e98028b3bca481bf8a6a4846fbb80312a11",
+  "snapshotBranchCount": 152,
+  "verificationBranchCount": 154,
+  "unchangedSnapshotHeadCount": 151,
+  "missingSnapshotBranches": [],
+  "newSinceSnapshot": [
+    "brh-00c-completeness-verification",
+    "drw-02c"
+  ],
+  "changedSnapshotHeads": [
+    {
+      "name": "brh-00b-full-inventory",
+      "inventoriedHeadSha": "427a790583759668119a17c9ee6ab0ed09aa43b5",
+      "verifiedHeadSha": "bcca81ed13d63397afd3e085224b5d557e372935"
+    }
+  ],
+  "provisionalX": [
+    "brh-00b-full-inventory",
+    "brh-00c-completeness-verification",
+    "drw-02c"
+  ],
+  "verificationEnumerationSha256": "f43762bd5bfc9f8319b6ea3e5ad6a3ea1dc52e66916d45153da2fdcec6192e0e",
+  "verificationWorkflowRun": 39104144579,
+  "verificationWorkflowInputHeadSha": "aa4f2d222400297d62a9561486b25fc7ae14510a",
+  "verificationArtifactId": 12128165316,
+  "verificationArtifactDigest": "sha256:1ca11a02afbe55787acd9ae4bdc063234275122728550e5d5fd28eb676eba270",
+  "verificationPassed": true,
+  "note": "BRH-00C completeness proof only. No branch deletion, semantic salvage, or BRH-01 classification. The packet branch is necessarily provisional X while this PR is active; final open-PR/head state is rechecked immediately before merge."
+}
