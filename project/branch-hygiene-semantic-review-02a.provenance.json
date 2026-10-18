@@ -36,10 +36,9 @@
     "prototype-p03-engineer-review-brief": "C",
     "workmanship-robustness": "C"
   },
-  "pullRequest": null,
-  "finalPacketHeadSha": null,
-  "validationRun": null,
-  "mergeCommitSha": null,
+  "pullRequest": 178,
+  "reviewRecordHeadBeforeProvenanceFinalization": "9381ff6af47aad99f866043b055e099b45278da2",
+  "validationAndMergeEvidence": "recorded in PR #178 and the BRH-02A closeout on issue #161 after final-head validation and lease checks",
   "semanticReviewComplete": true,
   "salvagePerformed": false,
   "branchDeletionPerformed": false,
