@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-03A",
+  "programmeIssue": 161,
+  "baselineMainSha": "481ffc81c78b3a18c73173f3fc2d82b6adbbfcca",
+  "purpose": "Prove whether BRH-03 has any D-class salvage topic to execute before controlled deletion begins.",
+  "authority": {
+    "classificationRule": "Only D — unique and valuable / unresolved — enters BRH-03 salvage.",
+    "sourceRecords": [
+      {
+        "path": "project/branch-hygiene-semantic-review-02a.json",
+        "blobSha": "5bf8540c189537099fa0615d476140abe3540ef3",
+        "role": "mandatory P03/prototype salvage review",
+        "result": {
+          "reviewed": 2,
+          "C": 2,
+          "D": 0,
+          "salvageRequired": 0
+        }
+      },
+      {
+        "path": "project/branch-hygiene-semantic-review-02g.json",
+        "blobSha": "28a53c12d8b1b22ea61be1b8b8bb08e6e30c43c5",
+        "role": "aggregate close of original semantic queue",
+        "result": {
+          "originalCandidates": 40,
+          "resolvedC": 40,
+          "resolvedD": 0,
+          "remainingCD": 0
+        }
+      },
+      {
+        "path": "project/branch-hygiene-x-reconciliation.json",
+        "blobSha": "815c5a7cba4c03310ea589873a51120a1ae402d2",
+        "role": "BRH-02 uncertainty and namespace close condition",
+        "result": {
+          "remainingOriginalCD": 0,
+          "D": 0,
+          "salvageRequired": 0
+        }
+      }
+    ]
+  },
+  "restartAndConcurrency": {
+    "supersededDraft": {
+      "branch": "brh-03-salvage-necessity-proof",
+      "headSha": "3043c99d360f17178332bf92a3294868abef506f",
+      "baselineMainSha": "24aa34e8806ccc721496fe55af9517a83a338d9d",
+      "closedPr": 201,
+      "reason": "A pre-existing BRH-03 draft was based on the BRH-02H merge baseline. DRW-03F and HFI-00 subsequently moved main, so that draft was not rewritten or merged; this packet restarted from current main."
+    },
+    "knownRecentRefsOutsideSalvageQueue": [
+      {
+        "branch": "brh-02g-publication-editorial-review",
+        "headSha": "708ca16ac46ee40f0759a1825f557924cfd0694c",
+        "status": "recent no-op reconciliation ref; not a D topic; retain for BRH-04 re-proof"
+      },
+      {
+        "branch": "brh-03-salvage-necessity-proof",
+        "headSha": "3043c99d360f17178332bf92a3294868abef506f",
+        "status": "superseded stale BRH-03 draft; not merged; retain for BRH-04 re-proof"
+      }
+    ],
+    "openPrCountAtPacketStart": 0
+  },
+  "mandatoryP03Disposition": {
+    "branch": "prototype-p03-engineer-review-brief",
+    "finalClass": "C",
+    "salvageRequired": false,
+    "owningIssue": 30,
+    "issueRemainsIndependent": true,
+    "reason": "BRH-02A proved the obsolete branch brief is superseded by current P03 engineering/test authority; issue #30 remains open for the actual competent-engineer option reduction, not for branch salvage."
+  },
+  "salvageQueue": [],
+  "summary": {
+    "DTopics": 0,
+    "salvagePacketsRequired": 0,
+    "salvageActionsPerformed": 0,
+    "BRH03Disposition": "vacuous-complete"
+  },
+  "nextPhase": {
+    "packet": "BRH-04A",
+    "purpose": "Controlled deletion candidate recomputation and first bounded deletion batch.",
+    "precondition": "Recover then-current main; re-enumerate all live refs and open PRs; re-prove a bounded eligible set; delete at most 25; never delete main, open/current work, X/D, or a branch whose head changed since proof."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "historicalCherryPickOrMergePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
