@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02G",
+  "programmeIssue": 161,
+  "repository": "adamnoden/architecture",
+  "baselineMainSha": "c08ae42f9ea348f09e60f8b5905775e113e24801",
+  "reviewJsonSha256": "a4c13a27bb76275d6aba8c12fffe4a3c58c6b814940e2b083aa5988ecf3cbdbe",
+  "concurrentProtectedWork": {
+    "openPr": 190,
+    "branch": "drw-03e-controlled-ground-plan-svg"
+  },
+  "sourceHeads": {
+    "pr00b-part-iv-synthesis": "4907af4556e2c546721fcfba6b7f29853014f935",
+    "pr00d-d3-reference-house-architecture": "1789943590256278cd6152cb414c137634b8a7b7",
+    "pr00d-d3-reference-house-figures": "53097a2a42faa8488b7d528388ef45903c93e138",
+    "pr00d-d4-reference-house-systems": "064bdce830ea76c4ffa49737ee72d7092470619b",
+    "pr00d-d5-visual-integration": "d377665ae095b604979956d61dd36803ae7b3f6f",
+    "pr00e-editorial-hardening": "3e16b1cecde03dbdaa21becc6f8a02eaa4306d40",
+    "pr00f-integrity": "ebd9d34497e83c3158915e98cd120e1fb296675f",
+    "pub-san-computational-surface": "fd527ace394db25b6ddb1c6c6de65728ce48cf0c",
+    "pub-san-research-evidence": "3090a7ed89f5e0a84d54eecedebf8ad82b5ca42f",
+    "pub-san-rh-technical": "023094149a998126ae8bf1389be8fc0ecd9fdd79"
+  },
+  "summary": {
+    "reviewed": 10,
+    "C": 10,
+    "D": 0,
+    "X": 0,
+    "salvageRequired": 0,
+    "originalSemanticCandidatesResolved": 40,
+    "remainingOriginalSemanticCandidates": 0
+  },
+  "validation": {
+    "policy": "standard pull-request validation is required on the final packet head before merge; the run identifier is recorded in the issue closeout"
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
