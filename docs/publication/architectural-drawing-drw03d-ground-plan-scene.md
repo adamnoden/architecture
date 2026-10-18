@@ -4,44 +4,25 @@
 **Programme:** DRW — Architectural Drawing Programme  
 **Packet:** DRW-03D  
 **Status:** DONE pending branch validation  
-**Issue:** #154  
-**Starting baseline:** `72e27764943cbeba9da6573b7dacb7d32f769937`
+**Issue:** #154
 
 ## 1. Outcome
 
-DRW-03D composes the first native Reference House architectural plan scene from:
+DRW-03D composes the first native Reference House architectural plan scene from canonical RH-C1 geometry, the bounded DRW-03B/03B.1 publication-plan source and the physical-mm renderer frozen by DRW-03C.
 
-- canonical RH-C1 compiled geometry;
-- the bounded publication-plan source added by DRW-03B;
-- the physical-mm scene/projection/SVG foundation frozen by DRW-03C.
+The scene builder is `compiler/reference-house/publication-ground-plan.ts`; focused proof is `compiler/reference-house/publication-ground-plan.test.ts`.
 
-The scene builder is:
-
-- `compiler/reference-house/publication-ground-plan.ts`
-
-Focused proof is:
-
-- `compiler/reference-house/publication-ground-plan.test.ts`
-
-This packet deliberately stops before committing a controlled generated SVG. DRW-03E owns generation/lineage/determinism of the committed artefact.
+This packet stops before committing the generated SVG. DRW-03E owns canonical generation, lineage and byte-for-byte regeneration proof.
 
 ## 2. Scale and paper territory
 
-The plan remains exactly **1:100**.
+The plan remains exactly **1:100**. The canonical `12,000 × 10,800 mm` shell therefore occupies exactly **120 × 108 mm** on paper.
 
-At that scale the canonical `12,000 × 10,800 mm` shell occupies exactly:
+The drawing scene is **136 × 145 mm**. This fits the conservative B5-territory body width without fit-scaling, while forcing dimensioning and notes to remain sparse.
 
-- `120 × 108 mm` on paper.
+## 3. Cut matter and junction geometry
 
-The drawing scene is `136 × 145 mm`, leaving only `8 mm` lateral drawing-space margin around the house geometry. This is intentional. The B5-territory proof gives approximately `138 mm` body width, so the plan is designed to fit the conservative physical target without reducing scale.
-
-The consequence is useful discipline: dimensioning and notes must remain sparse. This is an architectural publication plan, not a tender sheet.
-
-## 3. Cut matter
-
-Every canonical ground boundary is represented as cut matter using solid black poche.
-
-The plan contains:
+Every canonical ground boundary is represented as solid black cut matter. There are:
 
 - four outer cut-wall bodies;
 - four courtyard cut-wall bodies;
@@ -49,79 +30,56 @@ The plan contains:
 
 Total: **14 cut-wall bodies**.
 
-Wall bodies use DRW-03B’s explicit representation proxies:
+The wall bodies use the bounded DRW-03B planning proxies:
 
-- outer/court `≈400 mm` planning body;
-- internal `≈125 mm` planning body.
+- external/courtyard body ≈`400 mm`;
+- ordinary internal body ≈`125 mm`.
 
-The source metadata remains provisional. Black poche means only that planning matter is cut at this representation scale; it does not promote those proxies into construction thickness or material truth.
+Black poche means only that planning matter is cut; it does not promote either proxy into construction thickness or material truth.
 
-Wall direction follows DRW-03B face ownership:
+The already-frozen face-ownership rule determines body geometry:
 
-- shell coordinates are outer faces, so outer wall bodies offset inward;
-- court coordinates are void faces, so court wall bodies offset away from the void;
-- internal planning lines are centrelines, so internal bodies offset equally to both sides.
+- shell coordinates own outer faces, so outer wall bodies offset inward;
+- court coordinates own void faces, so courtyard bodies offset away from the void;
+- internal planning lines own centrelines.
+
+DRW-03D makes the deterministic junction consequences explicit rather than allowing overlapping rectangles to imply false geometry:
+
+1. the four courtyard bodies extend one wall-body thickness beyond their void-face endpoints so they form one continuous rectangular cut frame at the outer corners;
+2. internal planning bodies terminate at the inner faces of permanent outer/courtyard wall bodies rather than running through them.
+
+No new architectural fact is created by either operation; both derive from the face-ownership rule plus the authored body proxies.
+
+The first rendering pass exposed one source defect: the provisional drawing↔family passage initially extended `200 mm` into the courtyard-wall body. DRW-03B.1 corrected the source rather than hiding the conflict in rendering code. The retained ≈`1200 mm` passage now spans X≈`2600–3800`, terminating exactly at the west courtyard wall’s current inner planning face X≈`3800`.
 
 ## 4. Openings and passages
 
-Openings are created by cutting the black body back to paper white after all cut matter is drawn.
+Openings are created by cutting wall matter back to paper white after the cut bodies are drawn.
 
-The scene contains **20 authored cuts**:
+The scene contains **20 authorised cuts**:
 
 - 4 canonical front openings;
 - 7 internal open passages;
 - 6 courtyard openings;
 - 3 garden-side openings.
 
-This ordering is deliberate: wall intersections remain visually continuous first, then source-owned openings remove only the required matter.
+Window occurrences receive one minimal primary frame line across the opening body at `1:100`. Nine such window marks occur: three front, four courtyard and two garden.
 
-### Windows
-
-Window occurrences receive one minimal primary frame line across the opening body at `1:100`.
-
-Nine such window marks occur:
-
-- three front windows;
-- four courtyard windows;
-- two garden windows.
-
-The mark is sufficient to distinguish a window from an open passage without claiming frame, sash, reveal or threshold construction.
-
-### Entrance / major openings / passages
-
-The principal entrance, court major openings, garden logistics opening and seven internal circulation connections are represented as clean gaps.
-
-**No door leaf, swing, handing or hinge geometry is invented.**
-
-This is especially important internally: the source owns adjacency and planning passage geometry, not a door schedule.
+The entrance, major court openings, garden logistics opening and seven internal circulation connections remain clean gaps. **No door leaf, swing, handing or hinge geometry is invented.**
 
 ## 5. Stair notation
 
-The selected principal stair appears only at the authority actually owned.
+The principal stair appears only at planning authority:
 
-The scene shows:
+- ≈`2.5 × 2.5 m` reservation as a secondary provisional dashed box;
+- three-segment trace expressing north → east → south flight topology;
+- conventional `UP` marker and simple line arrowhead.
 
-- the DRW-03B `≈2.5 × 2.5 m` planning reservation as a secondary `1/1 mm` provisional dashed box;
-- a three-segment trace expressing the selected north → east → south flight sequence;
-- a conventional `UP` marker;
-- a simple line arrowhead.
-
-It does **not** show:
-
-- tread lines;
-- exact landings or well;
-- strings;
-- balustrade;
-- handrail;
-- nosings;
-- headroom construction;
-- compliance proof.
-
-The notation makes the hall/stair relationship inspectable without turning RH-03’s planning topology into invented technical geometry.
+No tread layout, strings, well construction, guarding, handrail, nosings, headroom construction or compliance proof is drawn.
 
 ## 6. Reader-facing labels
 
-Only human architectural names appear visibly:
+Visible text uses human architectural names only:
 
 - Drawing room
 - Family room
@@ -133,79 +91,51 @@ Only human architectural names appear visibly:
 - Kitchen
 - Courtyard
 
-Source IDs remain machine metadata only.
+Neutral machine/source identities remain metadata only.
 
-The scene adds two non-compass orientation phrases:
+Two non-compass orientation phrases are shown:
 
 - `Garden`
 - `Front / street surrogate`
 
-These help the reader understand the frozen type while explicitly refusing a true site orientation.
+There is no true north arrow because no real site orientation is owned.
 
 ## 7. Dimensions and scale bar
 
-The drawing uses the minimum dimension burden needed for architectural inspectability:
+The dimension burden is deliberately small:
 
 - overall width `12000`;
 - overall depth `10800`;
-- court `3600 × 4000` noted inside the court.
+- court `3600 × 4000` inside the court.
 
-Overall dimension chains use secondary lines and DRW-01C 45° ticks. Room-by-room dimensioning is deliberately absent.
+Overall chains use secondary lines and 45° ticks. Room-by-room dimensions are absent.
 
-The drawing includes a **30 mm physical graphic scale bar**, representing `0–3 m` at `1:100`.
+A **30 mm physical graphic scale bar** represents `0–3 m` at `1:100`.
 
-A short note states:
-
-> Approx. planning wall bodies, openings and stair.
-
-This makes the provisional representation visible without filling the drawing with repeated uncertainty labels.
+One short drawing note states: `Approx. planning wall bodies, openings and stair.`
 
 ## 8. Explicit refusals
 
-The scene contains no:
+The scene contains no north arrow, section marker, public figure number, visible machine ID, door swing, technical wall layer, service route, service-room packing, adaptation overlay, structural member, accessibility/compliance symbol or DRW/workflow label.
 
-- north arrow;
-- section marker;
-- public figure number;
-- machine ID in visible text;
-- door swing;
-- technical wall layer;
-- service route;
-- utility/WC/plant packing;
-- adaptation overlay;
-- structural member;
-- accessibility/compliance symbol;
-- DRW packet/history label.
-
-Those absences are intentional authority protection, not unfinished drafting.
+Those absences are authority protection, not incomplete drafting.
 
 ## 9. Proof
 
-`publication-ground-plan.test.ts` proves that:
+`publication-ground-plan.test.ts` proves:
 
-- scale remains exactly `1:100`;
-- shell paper size remains exactly `120 × 108 mm`;
-- all 14 ground wall bodies are cut matter;
-- all 20 authorised opening/passages cut those bodies;
-- only window occurrences gain simplified frame marks;
-- no door leaf/swing appears;
-- stair notation stays provisional and topological;
-- nine human architectural labels are present;
-- no machine IDs become visible text;
-- dimension burden remains bounded;
-- graphic scale bar is exactly `30 mm` long;
-- no true north or section marker appears;
-- repeated scene construction/SVG serialization is byte-deterministic;
-- no DRW/workflow residue appears in serialized output.
+- exact `1:100` scale and `120 × 108 mm` shell projection;
+- all 14 wall bodies and all 20 authorised cuts;
+- continuous courtyard-wall corner geometry;
+- internal planning walls terminate at permanent-wall inner faces;
+- the corrected drawing↔family passage ends exactly at the courtyard-wall inner face;
+- nine minimal window frame marks and no door swing;
+- provisional/topological stair notation only;
+- human architectural labels with no reader-visible machine IDs;
+- sparse dimensions and exactly 30 mm scale bar;
+- no north/section marker;
+- byte-deterministic SVG serialization with no workflow-history residue.
 
 ## 10. Handoff to DRW-03E
 
-DRW-03E may now:
-
-1. generate the scene deterministically;
-2. write the controlled ground-floor SVG to a canonical generated-output path;
-3. record source/view/style lineage in machine metadata without reader-facing workflow residue;
-4. prove the committed SVG is byte-for-byte identical to regeneration;
-5. add a generation/check command only if the existing artifact-generation structure genuinely needs it.
-
-DRW-03E must not manually edit the SVG or change architectural composition while generating it. A visual/semantic problem found there returns to DRW-03D.
+DRW-03E may generate this frozen scene deterministically, commit the controlled SVG under a publication-drawing output path, and prove that regeneration is byte-for-byte identical. It must not manually edit the SVG or change the scene composition while generating it; a semantic or visual defect returns to DRW-03D.

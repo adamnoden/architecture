@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, test } from 'node:test'
 
-import type { DrawingText } from '../publication-drawing/model.js'
+import type { DrawingRect, DrawingText } from '../publication-drawing/model.js'
 import { renderDrawingSceneSvg } from '../publication-drawing/svg.js'
 import { compileReferenceHouse } from './compile.js'
 import { createReferenceHouseSource } from './fixture.js'
@@ -16,6 +16,12 @@ const scene = () =>
 
 const texts = (): DrawingText[] => scene().primitives.filter((primitive): primitive is DrawingText => primitive.kind === 'text')
 
+const rect = (id: string): DrawingRect => {
+  const primitive = scene().primitives.find((candidate) => candidate.id === id)
+  assert.ok(primitive && primitive.kind === 'rect', id)
+  return primitive
+}
+
 describe('DRW-03D ground-floor publication plan scene', () => {
   test('keeps the frozen 1:100 plan at true paper size rather than fit-scaling it', () => {
     const drawing = scene()
@@ -28,12 +34,44 @@ describe('DRW-03D ground-floor publication plan scene', () => {
     )
     assert.equal(shellWalls.length, 4)
 
-    const south = shellWalls.find((primitive) => primitive.id === 'wall-G-OUTER-SOUTH')
-    assert.ok(south && south.kind === 'rect')
+    const south = rect('wall-G-OUTER-SOUTH')
     assert.equal(south.x, 8)
     assert.equal(south.y, 116)
     assert.equal(south.width, 120)
     assert.equal(south.height, 4)
+  })
+
+  test('forms one continuous courtyard cut-wall frame from the controlled void-face ownership rule', () => {
+    const south = rect('wall-G-COURT-SOUTH')
+    const west = rect('wall-G-COURT-WEST')
+
+    assert.deepEqual(
+      { x: south.x, y: south.y, width: south.width, height: south.height },
+      { x: 46, y: 86, width: 44, height: 4 }
+    )
+    assert.deepEqual(
+      { x: west.x, y: west.y, width: west.width, height: west.height },
+      { x: 46, y: 42, width: 4, height: 48 }
+    )
+
+    // South and west wall bodies overlap at the 4 × 4 mm paper-space corner;
+    // they do not meet only at a zero-thickness mathematical point.
+    assert.equal(south.x, west.x)
+    assert.equal(south.y, west.y + west.height - south.height)
+  })
+
+  test('terminates internal planning wall bodies at permanent-wall inner faces', () => {
+    const hallWest = rect('wall-G-HALL-WEST-B')
+    const westSplit = rect('wall-G-WEST-SPLIT-B')
+
+    assert.deepEqual(
+      { x: hallWest.x, y: hallWest.y, width: hallWest.width, height: hallWest.height },
+      { x: 47.375, y: 90, width: 1.25, height: 26 }
+    )
+    assert.deepEqual(
+      { x: westSplit.x, y: westSplit.y, width: westSplit.width, height: westSplit.height },
+      { x: 12, y: 69.375, width: 34, height: 1.25 }
+    )
   })
 
   test('renders all ground boundaries as cut matter and cuts every authorised opening back to paper white', () => {
@@ -51,6 +89,19 @@ describe('DRW-03D ground-floor publication plan scene', () => {
     assert.ok(cuts.some((primitive) => primitive.id === 'opening-G-FRONT-D01'))
     assert.ok(cuts.some((primitive) => primitive.id === 'opening-G-GARDEN-CENTRE-PUB-01'))
     assert.ok(cuts.some((primitive) => primitive.id === 'opening-G-INT-GARDEN-KIT-01'))
+  })
+
+  test('keeps the corrected drawing-family passage wholly inside its planning wall body', () => {
+    const passage = rect('opening-G-INT-DRAW-FAM-01')
+    const westSplit = rect('wall-G-WEST-SPLIT-B')
+    const courtWest = rect('wall-G-COURT-WEST')
+
+    assert.deepEqual(
+      { x: passage.x, y: passage.y, width: passage.width, height: passage.height },
+      { x: 34, y: 69.375, width: 12, height: 1.25 }
+    )
+    assert.equal(passage.x + passage.width, westSplit.x + westSplit.width)
+    assert.equal(passage.x + passage.width, courtWest.x)
   })
 
   test('shows windows as minimal frame lines but invents no hinged door or swing geometry', () => {

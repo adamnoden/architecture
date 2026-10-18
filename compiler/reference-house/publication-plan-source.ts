@@ -118,7 +118,9 @@ export const createGroundFloorPublicationPlanSource = (): GroundFloorPublication
       id: 'G-INT-DRAW-FAM-01',
       hostBoundaryId: 'G-WEST-SPLIT-B',
       connects: ['G-DRAW-02', 'G-FAM-02'],
-      centreCoordinate: provisional('DRW03B-INT-DRAW-FAM-C', mm(3400)),
+      // The 1200 mm planning opening terminates at the west courtyard wall's
+      // 3800 mm inner planning face under the 400 mm wall-body proxy.
+      centreCoordinate: provisional('DRW03B-INT-DRAW-FAM-C', mm(3200)),
       width: provisional('DRW03B-INT-DRAW-FAM-W', mm(1200)),
       treatment: 'open-passage'
     },
