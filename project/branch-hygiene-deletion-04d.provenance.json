@@ -1,20 +1,26 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04D",
   "programmeIssue": 161,
   "status": "preflight-frozen-awaiting-authorised-manual-deletion",
-  "baselineMainSha": "2e9b4768c049cd3b5b8db15c34b73ba5bcab7321",
+  "initialPlanningMainSha": "2e9b4768c049cd3b5b8db15c34b73ba5bcab7321",
+  "baselineMainSha": "04add58465b59ebae56ad208b22e144df00efef9",
+  "restartReason": "main moved during checkpoint creation; stale lease discarded and all candidate heads/open PRs refreshed",
   "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
-  "sourceBaselineCompare": {"status":"ahead","aheadBy":190,"behindBy":0},
+  "sourceBaselineCompare": {"status":"ahead","aheadBy":192,"behindBy":0},
   "candidateCount": 25,
   "candidateClass": "A",
   "candidateSetSha256": "549792fc53e179de3a3a24198c947fedaa56231495239847d88bb5b28c1aa2f5",
-  "liveHeadRecheck": "all 25 matched BRH-01A frozen heads before checkpoint creation",
-  "openPrLeaseAtPacketStart": [
-    {"pr":213,"head":"drw-04d-plan-pair-proof","headSha":"8074dbe26da62e2858031ba49eb074850184cc17"}
+  "liveHeadRecheck": "all 25 matched BRH-01A frozen heads after restart",
+  "openPrLeaseAtFinalDestructiveLease": [
+    {"pr":213,"head":"drw-04d-plan-pair-proof","headSha":"8074dbe26da62e2858031ba49eb074850184cc17"},
+    {"pr":222,"head":"drw-04b2-dressing-label-fit","headSha":"25798e8232acd2759430f14a6cee512b238f23c2"},
+    {"pr":223,"head":"brh-04d-controlled-deletion-4","headSha":"f49bd24485e493909c9faacecd7169ba86c1df18"}
   ],
   "namespaceCountIncludingMainAtPacketStart": 89,
+  "namespaceCountIncludingMainAtFinalDestructiveLease": 91,
+  "protectedConcurrentRef": {"name":"hfi-02c-vertical-life-course","headSha":"223ccafae614e22c265f76e1d98de6fa02dabf9c"},
   "deletionActionAvailableToConnector": false,
   "mutationPerformed": false,
-  "nextAction": "Open the BRH-04D checkpoint PR, then freshly recheck main/open PRs/all candidate heads. If every lease holds, repository owner manually deletes exactly the 25 frozen refs. Agent then performs post-delete proof and BRH-04D closeout."
+  "nextAction": "Repository owner manually deletes exactly the 25 frozen A refs if this refreshed lease remains unchanged. Agent then performs full post-delete namespace proof and BRH-04D closeout."
 }
