@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 6,
+  "packet": "BRH-04D",
+  "programmeIssue": 161,
+  "status": "post-delete-proof-complete-awaiting-validation-and-merge",
+  "initialPlanningMainSha": "2e9b4768c049cd3b5b8db15c34b73ba5bcab7321",
+  "intermediateMainShas": [
+    "04add58465b59ebae56ad208b22e144df00efef9",
+    "b53f5c500babe107f98d50ba2c81f1afcd4f6796",
+    "168634941b5ba163dbdc2471e0936486ec256229"
+  ],
+  "finalDestructiveLeaseMainSha": "58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e",
+  "postDeleteObservedMainSha": "895d47d0ea356003eb5d37d4e1d2ce8a56df75a8",
+  "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+  "candidateCount": 25,
+  "candidateClass": "A",
+  "candidateSetSha256": "549792fc53e179de3a3a24198c947fedaa56231495239847d88bb5b28c1aa2f5",
+  "namespaceCountIncludingMainBeforeDelete": 89,
+  "namespaceCountIncludingMainAfterDelete": 64,
+  "namespaceProof": {
+    "authorisedDeletedCount": 25,
+    "observedMissingCount": 25,
+    "unexpectedMissingCount": 0,
+    "persistentAddedCount": 0,
+    "observedMissingSetEqualsAuthorisedSet": true
+  },
+  "postDeleteOpenPrSnapshot": [
+    {"pr":223,"head":"brh-04d-controlled-deletion-4"}
+  ],
+  "protectedConcurrentRefs": [
+    {"name":"drw-05b-principal-section-source","headShaObservedPostDelete":"d34c19db5580fa0d8cea0ea82d0a2c2d37ec44aa","note":"active DRW ref remained present and advanced independently"}
+  ],
+  "concurrentEventsDuringManualWindow": [
+    {"pr":226,"programme":"HFI-02D","mergeSha":"895d47d0ea356003eb5d37d4e1d2ce8a56df75a8","firstParent":"58fbf4fc96cbd6023d4ce4d1a0b95094e52a977e"}
+  ],
+  "deletionActionAvailableToConnector": false,
+  "mutation": {
+    "performed": true,
+    "performedBy": "repository owner manually",
+    "deletedCount": 25,
+    "BDeleted": false,
+    "CDeleted": false,
+    "DDeleted": false,
+    "XDeleted": false,
+    "repositorySettingsChanged": false
+  },
+  "nextAction": "Validate PR #223, take a fresh main/open-PR/head lease, merge exact BRH-04D head, verify the merge first parent equals leased main, record closeout on issue #161, then stop."
+}
