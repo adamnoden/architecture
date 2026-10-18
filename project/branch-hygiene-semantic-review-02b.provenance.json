@@ -1,23 +1,23 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-02B",
   "programmeIssue": 161,
-  "baselineMainSha": "dfba4237107eda8c7a6d79e53607ba25e40a4f49",
+  "baselineMainSha": "ff760444b43aaad137c3ef7d110d5345af5a6036",
   "sourceBranchHeads": {
     "project-integrity-refactor": "5f3ddadab402daaf9f01a3ea99531fc65734302d",
     "public-url-phase-1": "45fcb14128ae055a8b0724cbfbbc31bbc8758ceb"
   },
-  "reviewJsonSha256": "0877fa63979c572f51ab518f37bd19fc975c9243d64d9855cb00431bcc79358b",
+  "reviewJsonSha256": "7c863108213db2095c9202749c4434ebda410a3a9379ed25b98c8d1e7b0bca0c",
   "evidence": {
     "projectIntegrityCompare": {
       "status": "diverged",
       "aheadBy": 23,
-      "behindBy": 929
+      "behindBy": 933
     },
     "publicUrlCompare": {
       "status": "diverged",
       "aheadBy": 4,
-      "behindBy": 924
+      "behindBy": 928
     },
     "strongEquivalenceSignals": [
       "publication/scope-report.ts has the same blob SHA 0055425f9b82fe79dbde3fb3c2b6ab839e4f156c on project-integrity-refactor and current main",
@@ -25,11 +25,22 @@
       "current site-routes and public-route validator retain the phase-1 route contracts while adding explicit public-surface handling"
     ]
   },
+  "leaseCorrection": {
+    "originalReviewBaseline": "dfba4237107eda8c7a6d79e53607ba25e40a4f49",
+    "actualPreMergeMainSha": "ff760444b43aaad137c3ef7d110d5345af5a6036",
+    "interveningPullRequest": 182,
+    "interveningMerge": "DRW-03B.1 passage clearance correction",
+    "authorityImpact": "none on reviewed source heads or semantic authority; review recomputed and C/C retained",
+    "correctionRequiredBecause": "the concurrent merge landed after the last lease read but before GitHub committed PR #183"
+  },
+  "originalPullRequest": 183,
+  "originalMergeSha": "7404ab637d24e310d27467342ad9558c9efa9315",
+  "originalValidationRun": 39116448724,
+  "correctionValidationAndMergeEvidence": "recorded in the BRH-02B correction PR and issue #161 closeout after final-head validation and a fresh lease",
   "finalDispositions": {
     "project-integrity-refactor": "C",
     "public-url-phase-1": "C"
   },
-  "validationAndMergeEvidence": "recorded in the BRH-02B PR and issue #161 closeout after final-head validation and lease checks",
   "semanticReviewComplete": true,
   "salvagePerformed": false,
   "branchDeletionPerformed": false,

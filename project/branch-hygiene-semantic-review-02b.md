@@ -5,17 +5,30 @@ Semantic review only. This packet resolves the two `infrastructure-tooling` entr
 ## Baseline
 
 - programme: issue #161
-- current `main` at review start: `dfba4237107eda8c7a6d79e53607ba25e40a4f49`
-- open PRs at review start: DRW-03D / #181 only; protected concurrent work
+- actual final review baseline before merge: `ff760444b43aaad137c3ef7d110d5345af5a6036`
 - bounded branches reviewed: **2**
 - final C: **2**
 - final D: **0**
 - final X: **0**
-- review JSON SHA-256: `0877fa63979c572f51ab518f37bd19fc975c9243d64d9855cb00431bcc79358b`
+- corrected review JSON SHA-256: `7c863108213db2095c9202749c4434ebda410a3a9379ed25b98c8d1e7b0bca0c`
+
+## Lease correction
+
+The initial semantic review and validation used `dfba4237107eda8c7a6d79e53607ba25e40a4f49`. After the final lease read but before GitHub committed PR #183 to `main`, DRW-03B.1 / PR #182 merged at `ff760444b43aaad137c3ef7d110d5345af5a6036`. The merge commit for #183 therefore correctly records `ff760444…` as its first parent, exposing a narrow merge-window race that occurred after the lease read.
+
+BRH-02B is not closed on the stale evidence. The dispositions were recomputed against `ff760444…`.
+
+DRW-03B.1 changed only:
+
+- `compiler/reference-house/publication-plan-source.test.ts`
+- `compiler/reference-house/publication-plan-source.ts`
+- `docs/publication/architectural-drawing-drw03b1-passage-clearance.md`
+
+Neither reviewed branch head moved, and none of the project-integrity or public-route authority used by this review changed. The semantic outcome therefore remains C/C. Mechanical behind counts increase only because the baseline advanced.
 
 ## `project-integrity-refactor` → C
 
-Head `5f3ddadab402daaf9f01a3ea99531fc65734302d` is mechanically diverged from the review baseline: **23 ahead / 929 behind**, with 23 branch-only commits.
+Head `5f3ddadab402daaf9f01a3ea99531fc65734302d` is mechanically diverged from the corrected review baseline: **23 ahead / 933 behind**, with 23 branch-only commits.
 
 The branch was not disposable merely because equivalent filenames now exist. Its semantic contribution was a coherent project-integrity architecture:
 
@@ -39,7 +52,7 @@ The unique branch topology therefore represents the development route by which t
 
 ## `public-url-phase-1` → C
 
-Head `45fcb14128ae055a8b0724cbfbbc31bbc8758ceb` is mechanically diverged from the review baseline: **4 ahead / 924 behind**, with four branch-only commits.
+Head `45fcb14128ae055a8b0724cbfbbc31bbc8758ceb` is mechanically diverged from the corrected review baseline: **4 ahead / 928 behind**, with four branch-only commits.
 
 Its contribution was the first coherent clean-public-URL layer: source-ID rewriting, public route mapping, Markdown-link translation, mapped navigation/sidebar routes and route-integrity validation.
 
@@ -60,7 +73,7 @@ There is no coherent useful residue absent from `main`. The branch is an earlier
 - No branch was rewritten.
 - No content was salvaged from either reviewed branch.
 - No repository setting was changed.
-- DRW-03D / #181 was treated as protected concurrent work and not touched.
+- Concurrent DRW work was treated as protected and not modified.
 - These C classifications are semantic dispositions only; deletion remains gated to BRH-04.
 
 ## Exact next packet
