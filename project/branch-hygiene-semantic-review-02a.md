@@ -5,24 +5,28 @@ Semantic review only. This packet resolves the two `prototype-research` entries 
 ## Baseline
 
 - programme: issue #161
-- current main at review start: `00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f`
-- open PRs at review start: **0**
+- current main at final semantic review: `72e27764943cbeba9da6573b7dacb7d32f769937`
 - bounded branches reviewed: **2**
 - final C: **2**
 - final D: **0**
 - final X: **0**
-- review JSON SHA-256: `63c3d4a62ddafd637e68c11517d3dcdc9c4d0cb52980ed8978b35aef908e8c8e`
+- review JSON SHA-256: `2c14918ddf9063989665c46cae098dd398f5304f3e4353e8ce748b05f952b381`
 
-## Restart
+## Restarts
 
-DRW-03B PR #179 merged during the final lease and moved `main` from `cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c` to `00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f`. The intervening merge added only publication-plan source, tests and its audit record. Neither reviewed source head nor any P03/workmanship authority used here changed, so the semantic review was recomputed against the moved main and the C/C result was retained.
+BRH-02A obeyed the programme lease rule through two concurrent DRW main movements:
+
+1. DRW-03B PR #179 moved `main` from `cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c` to `00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f`. It added publication-plan source, tests and its audit record only.
+2. DRW-03C PR #180 moved `main` from `00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f` to `72e27764943cbeba9da6573b7dacb7d32f769937`. It added publication-drawing renderer foundation code, its Reference House foundation test and its audit record only.
+
+Neither movement changed either reviewed branch head or any P03/workmanship authority used by the semantic dispositions. The review was recomputed after each movement and the C/C result was retained.
 
 ## Dispositions
 
 | Branch | Head | Mechanical state | Final | Disposition |
 | --- | --- | --- | --- | --- |
-| `prototype-p03-engineer-review-brief` | `1fe68d1f4da1531cc273573ea098709e3d6a1302` | diverged; 1 ahead / 1204 behind; 1 unique branch-only commit | **C** | useful intent is superseded by current P03 authority; no salvage required |
-| `workmanship-robustness` | `a049e8da6cd9133dcbbb654e2fc703a1c5baf712` | diverged; 20 ahead / 1455 behind; 20 unique branch-only commits | **C** | semantic contribution has been reimplemented and evolved throughout current Ovid’s House authority; no salvage required |
+| `prototype-p03-engineer-review-brief` | `1fe68d1f4da1531cc273573ea098709e3d6a1302` | diverged; 1 ahead / 1211 behind; 1 unique branch-only commit | **C** | useful intent is superseded by current P03 authority; no salvage required |
+| `workmanship-robustness` | `a049e8da6cd9133dcbbb654e2fc703a1c5baf712` | diverged; 20 ahead / 1462 behind; 20 unique branch-only commits | **C** | semantic contribution has been reimplemented and evolved throughout current Ovid’s House authority; no salvage required |
 
 ## `prototype-p03-engineer-review-brief` → C
 
@@ -67,6 +71,10 @@ Current authority preserves and develops the branch’s key propositions:
 The branch’s older Long-Life House naming and earlier publication structure are therefore historical implementation state, not stranded authority. There is no coherent residue worth salvaging into `main`.
 
 **Final classification: C — unique branch content, semantically reimplemented/evolved on current main. No salvage.**
+
+## Validation blocker repaired during the packet
+
+A rendered nomenclature validation run exposed a false positive: compact token `M1` occurred inside a generated Vite asset filename, not reader-visible content. The validator has therefore been narrowed to its intended surface: rendered reader text plus extracted PDF text. Regression locks prove a generated asset URL containing `M1` is ignored while reader-visible `M1` and `HSA-P-001` still fail. The nomenclature policy itself was not relaxed.
 
 ## Safety boundary
 
