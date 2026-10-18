@@ -2,30 +2,26 @@
 
 BRH-04E closes the remaining straightforward A-class tail and the two BRH refs deliberately retained for deletion-phase re-proof. It does **not** begin the general B/C deletion tranches.
 
-## Recomputed baseline
+## Final recomputed baseline
 
-Two concurrent merges occurred before destructive authorisation and therefore invalidated earlier leases: first HFI-03A, then DRW-05B. No deletion occurred under either stale lease. The current frozen state is:
+Several concurrent movements occurred before destructive authorisation; every stale lease was discarded and **no deletion occurred**. The current state is:
 
-- execution `main`: `d7a6e556e59c27512d73fdd2c0028924c5aad5e7`
-- previous intermediate `main`: `9379034a41b618191698e9842659c90ff69514b7`
-- initial discovery `main`: `439eb71841dae16ad10cb675d5b94f0430a146ca`
-- namespace at this refreshed checkpoint: **63 refs including `main` and this packet branch**
-- open PRs at refresh: **1** — #229 `brh-04e-controlled-deletion-5`
-- BRH-01A baseline `b8e842cee5beef6981f1e075cd06a1c080fbfe3a` → execution `main`: **ahead 225 / behind 0**
-- deletion cap: **25**
-- candidate count: **16**
+- execution `main`: `be0b328661e5fde92681c79082a8efec6775cd8a`
+- prior baselines: `439eb718…` → `9379034a…` → `d7a6e556…`
+- `d7a6e556…` → `be0b3286…`: **ahead 2 / behind 0 / zero net changed files**; an accidental noop file was added then removed
+- namespace at recomputed checkpoint: **64 refs including `main` and this packet branch**
+- fresh `drw-05c-principal-section-renderer` exists separately and is protected as active X
+- open PRs: **only #229** (`brh-04e-controlled-deletion-5`)
+- BRH-01A baseline `b8e842cee5beef6981f1e075cd06a1c080fbfe3a` → execution `main`: **ahead 227 / behind 0**
+- candidate count: **16** under the 25-ref cap
 - class mix: **15 A / 1 C / 0 B / 0 D / 0 X**
 - candidate-set SHA-256: `2807c62f90e4bfb15cb422e0ae9403ce0669da2a363ad45ee370ee53ec8e9539`
 
-DRW-05B PR #227 merged with `9379034a…` as its first parent and its source branch retired. It is not part of BRH-04E.
+## Special re-proof
 
-## Why one C appears in an A-tail packet
+`brh-02g-publication-editorial-review` is now **A — fully integrated**: its unchanged head is an exact ancestor of `main`.
 
-`brh-03-salvage-necessity-proof` was intentionally withheld from earlier deletion because it is not integrated history. It diverges from the BRH-02H baseline by two commits which add only the stale `project/branch-hygiene-salvage-closeout.{json,md}` proof draft.
-
-The later merged BRH-03A authority, `project/branch-hygiene-salvage-proof.{json,md,provenance.json}`, restarts from later `main`, reaches the same **D=0 / salvage queue empty / vacuous-complete** conclusion, and explicitly identifies the old branch and closed PR #201 as superseded. The stale branch therefore contains no unique architectural, computational, or unresolved salvage work. Its correct deletion-phase classification is **C — superseded evidence draft**.
-
-`brh-02g-publication-editorial-review`, also withheld for explicit re-proof, is simpler: its unchanged head is an exact ancestor of current `main`, so it is **A — fully integrated**.
+`brh-03-salvage-necessity-proof` is **C — superseded evidence draft**. Its two branch-only commits add only stale `project/branch-hygiene-salvage-closeout.{json,md}` files. The later merged BRH-03A authority (`project/branch-hygiene-salvage-proof.{json,md,provenance.json}`) restarts from later `main`, reaches the same **D=0 / empty salvage / vacuous-complete** conclusion, and explicitly records the old branch and closed PR #201 as superseded. No unique architectural, computational or unresolved salvage work remains there.
 
 ## Authorised candidate set
 
@@ -48,12 +44,8 @@ The later merged BRH-03A authority, `project/branch-hygiene-salvage-proof.{json,
 | `vertical-bay-coordination` | A | `55f6a11f982d27c4b7c2c00c1b3cf2e5fed05eff` |
 | `wall-bay-prototype-v1` | A | `b9d433220c507bc53433d7227aaeb5162a9ccd8c` |
 
-## Explicit exclusions
+## Exclusions and gate
 
-The current packet branch and `main` are protected. Any new DRW/HFI ref created after this checkpoint is protected as active X until separately proven. The five BRH-01B patch-equivalent branches remain for the next ordered phase: `ch00-compiler-hardening-plan`, `external-maintenance-geography`, `maturity-model-enforcement`, `pr00e-e2-e4-editorial-hardening`, and `pub-san-back-matter`. The surviving semantic-review C branches also remain untouched except for the separately re-proven stale BRH-03 draft above.
+Protected: `main`, this packet branch, `drw-05c-principal-section-renderer`, any new DRW/HFI ref, the five B refs (`ch00-compiler-hardening-plan`, `external-maintenance-geography`, `maturity-model-enforcement`, `pr00e-e2-e4-editorial-hardening`, `pub-san-back-matter`), and all other semantic-review C refs.
 
-## Destructive gate
-
-No branch has been deleted by this packet. The connector does not expose a first-class branch-delete operation. Before owner-side deletion, BRH must re-read `main`, all open PR heads, and all 16 exact candidate heads after these refreshed record writes. Any movement invalidates the destructive lease until recomputed.
-
-After manual deletion, BRH-04E must prove the complete namespace difference, account for unrelated concurrent DRW/HFI ref turnover, validate the durable proof, merge under a fresh `main` lease, verify merge-parent identity, and record closeout on issue #161.
+No branch has been deleted by this packet. Before owner-side deletion, BRH must take one final exact ref snapshot after these record writes and confirm `main`, open PRs and all 16 candidate heads remain unchanged. After manual deletion, BRH-04E must reconcile the complete namespace delta, validate, merge under a fresh lease, verify first-parent identity, and record closeout on #161.
