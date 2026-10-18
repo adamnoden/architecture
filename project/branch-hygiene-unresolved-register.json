@@ -1,18 +1,18 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "packet": "BRH-01C",
   "programmeIssue": 161,
-  "generatedAt": "2026-10-18T08:58:21.302Z",
+  "generatedAt": "2026-10-18T09:02:13.550Z",
   "repository": "adamnoden/architecture",
   "baselineMainSha": "fcf3691a639153827358664b73982e68e7c01707",
-  "restartReason": "drw-03a appeared during the final lease check after the 159-branch proof; stale proof discarded and full register recomputed.",
+  "restartReason": "drw-03a advanced and PR #177 opened after the prior refresh; full register recomputed with live DRW head/PR association.",
   "priorPacket": {
     "packet": "BRH-01B",
     "sourceFile": "project/branch-hygiene-classification.json"
   },
   "enumeration": {
     "branchCount": 160,
-    "sha256": "05f97eb575f14ac0b92cc0ce4552ec67d7e161e0df80dac57f7dbea78891ec59",
+    "sha256": "533be726011d1c8c820393a93e03be9944f2ccba020ea36a7214dc727d147241",
     "branches": [
       {
         "ref": "origin/architectural-specificity-audit-execution",
@@ -52,7 +52,7 @@
       {
         "ref": "origin/brh-01c-unresolved-register",
         "name": "brh-01c-unresolved-register",
-        "headSha": "6659049c1a6bbb81f185f44d9ddb93412e7f14a0"
+        "headSha": "08c6300bd6fa3b006d2e96c15faf7c83cde2f6db"
       },
       {
         "ref": "origin/candidate-pattern-hardening",
@@ -252,7 +252,7 @@
       {
         "ref": "origin/drw-03a",
         "name": "drw-03a",
-        "headSha": "fcf3691a639153827358664b73982e68e7c01707"
+        "headSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8"
       },
       {
         "ref": "origin/editorial-overhaul",
@@ -818,9 +818,16 @@
   },
   "openPrs": [
     {
+      "number": 177,
+      "headRefName": "drw-03a",
+      "headSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
+      "draft": true,
+      "url": "https://github.com/adamnoden/architecture/pull/177"
+    },
+    {
       "number": 175,
       "headRefName": "brh-01c-unresolved-register",
-      "headSha": "6659049c1a6bbb81f185f44d9ddb93412e7f14a0",
+      "headSha": "08c6300bd6fa3b006d2e96c15faf7c83cde2f6db",
       "draft": true,
       "url": "https://github.com/adamnoden/architecture/pull/175"
     }
@@ -1336,7 +1343,7 @@
     },
     {
       "name": "brh-01c-unresolved-register",
-      "headSha": "6659049c1a6bbb81f185f44d9ddb93412e7f14a0",
+      "headSha": "08c6300bd6fa3b006d2e96c15faf7c83cde2f6db",
       "group": "branch-hygiene",
       "provisionalReviewClass": "X",
       "reasons": [
@@ -1348,14 +1355,14 @@
       "openPr": {
         "number": 175,
         "draft": true,
-        "headSha": "6659049c1a6bbb81f185f44d9ddb93412e7f14a0",
+        "headSha": "08c6300bd6fa3b006d2e96c15faf7c83cde2f6db",
         "url": "https://github.com/adamnoden/architecture/pull/175"
       },
       "mechanical": {
         "headIsAncestorOfMain": false,
-        "branchOnlyCommitCount": 8,
-        "nonMergeBranchOnlyCommitCount": 8,
-        "uniquePatchCount": 8,
+        "branchOnlyCommitCount": 11,
+        "nonMergeBranchOnlyCommitCount": 11,
+        "uniquePatchCount": 11,
         "equivalentPatchCount": 0
       }
     },
@@ -1497,19 +1504,25 @@
     },
     {
       "name": "drw-03a",
-      "headSha": "fcf3691a639153827358664b73982e68e7c01707",
+      "headSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
       "group": "architectural-drawing",
       "provisionalReviewClass": "X",
       "reasons": [
+        "open-pr",
         "post-BRH-01B-ref",
-        "mechanically-integrated-outside-final-A-packet"
+        "unique-patch-signal"
       ],
-      "openPr": null,
+      "openPr": {
+        "number": 177,
+        "draft": true,
+        "headSha": "bcc9b8a34469e1a9f2bebf65fdb0499f377248b8",
+        "url": "https://github.com/adamnoden/architecture/pull/177"
+      },
       "mechanical": {
-        "headIsAncestorOfMain": true,
-        "branchOnlyCommitCount": 0,
-        "nonMergeBranchOnlyCommitCount": 0,
-        "uniquePatchCount": 0,
+        "headIsAncestorOfMain": false,
+        "branchOnlyCommitCount": 1,
+        "nonMergeBranchOnlyCommitCount": 1,
+        "uniquePatchCount": 1,
         "equivalentPatchCount": 0
       }
     },

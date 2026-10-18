@@ -11,10 +11,10 @@ Mechanical coverage freeze only. This packet does not decide semantic supersessi
 - unresolved register: **45**
 - provisional X: **5**
 - provisional C/D: **40**
-- open PRs at proof time: **1**
-- enumeration SHA-256: `05f97eb575f14ac0b92cc0ce4552ec67d7e161e0df80dac57f7dbea78891ec59`
-- register JSON SHA-256: `787d67a201be7b57fc39d005971c135a226736abaa732eb56dc490095810dd94`
-- restart: `drw-03a` appeared during the final lease check after the 159-branch proof; that proof was discarded and the full register recomputed.
+- open PRs at proof time: **2**
+- enumeration SHA-256: `533be726011d1c8c820393a93e03be9944f2ccba020ea36a7214dc727d147241`
+- register JSON SHA-256: `3631df76056454310ac2225955375a97499d3f9c3c52f47e6c8ba5cb91927448`
+- restart: `drw-03a` advanced and PR #177 opened after the prior refresh; the full register was recomputed with its live head/PR association.
 
 ## Unresolved review groups
 
@@ -23,7 +23,7 @@ Mechanical coverage freeze only. This packet does not decide semantic supersessi
 | Branch | Provisional | Ancestor | Branch-only | Unique | Equivalent | Reasons |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | `drw-02e` | X | yes | 0 | 0 | 0 | mechanically-integrated-outside-final-A-packet |
-| `drw-03a` | X | yes | 0 | 0 | 0 | post-BRH-01B-ref, mechanically-integrated-outside-final-A-packet |
+| `drw-03a` | X | no | 1 | 1 | 0 | open-pr, post-BRH-01B-ref, unique-patch-signal |
 
 ### branch-hygiene (3)
 
@@ -31,7 +31,7 @@ Mechanical coverage freeze only. This packet does not decide semantic supersessi
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | `brh-01a-obvious-integrated` | X | yes | 0 | 0 | 0 | mechanically-integrated-outside-final-A-packet |
 | `brh-01b-patch-equivalent` | X | yes | 0 | 0 | 0 | head-changed-since-BRH-01B, mechanically-integrated-outside-final-A-packet |
-| `brh-01c-unresolved-register` | X | no | 8 | 8 | 0 | active-BRH-01C-packet, open-pr, post-BRH-01B-ref, unique-patch-signal |
+| `brh-01c-unresolved-register` | X | no | 11 | 11 | 0 | active-BRH-01C-packet, open-pr, post-BRH-01B-ref, unique-patch-signal |
 
 ### compiler-computational (7)
 
