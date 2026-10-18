@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02E",
+  "programmeIssue": 161,
+  "baselineMainSha": "75780890b2cfffa8489181ba23aaac96c5fe8d1a",
+  "sourceBranchHeads": {
+    "reference-house-phase5": "456edac937e0de604f3983a6344902b8862fa761",
+    "rh-c1": "330e7bc0d0eda6a0ec33b51afed09c733c2dd4bd",
+    "rh-c2-structural-view": "9be3155dd8ff34dd21ae5ea80c7ec8f94e8e6d20",
+    "rh-c3-service-view": "3226aa325190aa94803c18535d49b5951afe5458",
+    "rh-c4-boundary-view": "b3740c8196ad2a7ba969e27b89f304841fc94f8f",
+    "rh-c5-target-calculations": "bc219a9060316f023e90a06709999254bda6766a"
+  },
+  "reviewJsonSha256": "3753d1f05f938f60cb85dfeedb5c17838e8cbe11dc9ef03994c9032912e2ebe9",
+  "strongPreservationSignals": [
+    "Phase-5 whole-house coordination and service-topology authority remain at their canonical paths; the service-zone candidate explicitly records admission as PAT-014",
+    "RH-C1 fixture, model, drawings and drawing tests are byte-identical on current main",
+    "RH-C2 fixture, drawing test, full acceptance test and structure-slice drawing are byte-identical on current main",
+    "RH-C3 retains byte-identical README, authority, compile wrapper, drawing test, fixture, hardening test, proof boundary and full acceptance test",
+    "RH-C4 retains byte-identical README, drawing test, fixture, occurrence test, proof boundary and full acceptance test",
+    "RH-C5 retains byte-identical README and full acceptance test while compile/method evolved and proof-boundary was added"
+  ],
+  "finalDispositions": {
+    "reference-house-phase5": "C",
+    "rh-c1": "C",
+    "rh-c2-structural-view": "C",
+    "rh-c3-service-view": "C",
+    "rh-c4-boundary-view": "C",
+    "rh-c5-target-calculations": "C"
+  },
+  "validationAndMergeEvidence": "recorded in the BRH-02E PR and issue #161 closeout after final-head validation, fresh lease and merge-parent verification",
+  "semanticReviewComplete": true,
+  "salvagePerformed": false,
+  "branchDeletionPerformed": false,
+  "deletionAuthorised": false,
+  "nextPacket": "BRH-02F"
+}
