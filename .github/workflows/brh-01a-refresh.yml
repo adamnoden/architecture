@@ -1,0 +1,214 @@
+name: BRH-01A refreshed A classification
+
+on:
+  push:
+    branches:
+      - brh-01a-obvious-integrated
+
+permissions:
+  contents: write
+  pull-requests: read
+  actions: write
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout complete Git history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Refresh remote refs
+        run: git fetch --all --prune
+
+      - name: Run full read-only branch audit
+        run: node scripts/branch-hygiene-audit.mjs --output=/tmp/brh-01a-audit.json
+
+      - name: Capture live open PRs
+        run: gh pr list --state open --limit 200 --json number,headRefName,headRefOid,isDraft,url > /tmp/brh-01a-open-prs.json
+
+      - name: Classify defensible A candidates
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const crypto = require('crypto');
+
+          const packetBranch = 'brh-01a-obvious-integrated';
+          const audit = JSON.parse(fs.readFileSync('/tmp/brh-01a-audit.json', 'utf8'));
+          const prior = JSON.parse(fs.readFileSync('project/branch-hygiene-completeness-verification.json', 'utf8'));
+          const openPrs = JSON.parse(fs.readFileSync('/tmp/brh-01a-open-prs.json', 'utf8'));
+
+          const priorSet = new Set([
+            ...prior.brh01RawCandidateSet.integratedSignal,
+            ...prior.brh01RawCandidateSet.patchEquivalentSignal,
+            ...prior.brh01RawCandidateSet.uniquePatchSignal,
+            ...prior.drift.provisionalX,
+          ]);
+          const openByBranch = new Map(openPrs.map(pr => [pr.headRefName, pr]));
+          const currentNames = new Set(audit.auditedBranches.map(b => b.name));
+          const newSince00C = [...currentNames].filter(name => !priorSet.has(name)).sort();
+          const newSet = new Set(newSince00C);
+
+          const aCandidates = [];
+          const deferred = [];
+
+          for (const b of audit.auditedBranches) {
+            const reasons = [];
+            const matchingMergedPr = b.pullRequests.some(pr => pr.mergedAt && pr.headSha === b.headSha);
+            if (b.name === packetBranch) reasons.push('active-packet-branch');
+            if (openByBranch.has(b.name)) reasons.push('open-pr');
+            if (newSet.has(b.name) && !matchingMergedPr) reasons.push('post-BRH-00C-ref-without-merged-head-proof');
+            if (!b.headIsAncestorOfMain) reasons.push('head-not-ancestor-of-main');
+            if (b.branchOnlyCommits.length !== 0) reasons.push('branch-only-commits');
+
+            if (reasons.length === 0) {
+              aCandidates.push({
+                name: b.name,
+                headSha: b.headSha,
+                mergeBase: b.mergeBase,
+                behindMain: b.behindMain,
+                aheadOfMain: b.aheadOfMain,
+                postBRH00C: newSet.has(b.name),
+                mergedHeadProof: matchingMergedPr,
+                evidence: {
+                  headIsAncestorOfMain: b.headIsAncestorOfMain,
+                  branchOnlyCommitCount: b.branchOnlyCommits.length,
+                  nonMergeBranchOnlyCommitCount: b.nonMergeBranchOnlyCommits.length,
+                },
+                pullRequests: b.pullRequests,
+                classification: 'A',
+                rationale: newSet.has(b.name)
+                  ? 'Post-BRH-00C ref re-audited at its current head; the head exactly matches a merged PR and is an ancestor of current main with zero branch-only commits and no open PR.'
+                  : 'Head is an ancestor of current main and has zero branch-only commits; no open PR or active-packet protection applies.'
+              });
+            } else {
+              deferred.push({
+                name: b.name,
+                headSha: b.headSha,
+                reasons,
+                postBRH00C: newSet.has(b.name),
+                mergedHeadProof: matchingMergedPr,
+                mechanical: {
+                  headIsAncestorOfMain: b.headIsAncestorOfMain,
+                  branchOnlyCommitCount: b.branchOnlyCommits.length,
+                  uniquePatchCount: b.patchEquivalence.uniquePatchCount,
+                  equivalentPatchCount: b.patchEquivalence.equivalentPatchCount,
+                },
+                provisionalClassification: reasons.some(r => ['active-packet-branch','open-pr','post-BRH-00C-ref-without-merged-head-proof'].includes(r)) ? 'X' : null
+              });
+            }
+          }
+
+          aCandidates.sort((a,b) => a.name.localeCompare(b.name));
+          deferred.sort((a,b) => a.name.localeCompare(b.name));
+
+          const record = {
+            schemaVersion: 2,
+            packet: 'BRH-01A',
+            generatedAt: new Date().toISOString(),
+            repository: audit.repository,
+            baselineMainSha: audit.mainSha,
+            restartReason: 'PR #171 / DRW-02D moved main after the first successful classification run; stale result discarded and full audit recomputed.',
+            enumeration: audit.enumeration,
+            counts: {
+              currentNonMainBranches: audit.auditedBranchCount,
+              openPrs: openPrs.length,
+              aCandidates: aCandidates.length,
+              deferred: deferred.length,
+              newSinceBRH00C: newSince00C.length,
+            },
+            rule: {
+              classification: 'A — fully integrated',
+              requires: [
+                'headIsAncestorOfMain === true',
+                'branchOnlyCommits.length === 0',
+                'no open PR',
+                'not the active BRH-01A packet branch',
+                'for refs first observed after BRH-00C: exact current head must match a merged PR head'
+              ],
+              excludesSemanticSupersession: true,
+              authorisesDeletion: false,
+            },
+            newSinceBRH00C: newSince00C,
+            openPrs,
+            aCandidates,
+            deferred,
+          };
+
+          const json = JSON.stringify(record, null, 2) + '\n';
+          fs.writeFileSync('project/branch-hygiene-classification.json', json);
+          const digest = crypto.createHash('sha256').update(json).digest('hex');
+
+          const md = [];
+          md.push('# BRH-01A — obvious integrated branches');
+          md.push('');
+          md.push('Mechanical classification only. No semantic supersession decisions, salvage, or branch deletion occur in this packet.');
+          md.push('');
+          md.push('## Baseline');
+          md.push('');
+          md.push(`- current main: \`${record.baselineMainSha}\``);
+          md.push(`- current non-main branches: **${record.counts.currentNonMainBranches}**`);
+          md.push(`- open PRs at classification time: **${record.counts.openPrs}**`);
+          md.push(`- enumeration SHA-256: \`${record.enumeration.sha256}\``);
+          md.push(`- classification JSON SHA-256: \`${digest}\``);
+          md.push(`- restart: ${record.restartReason}`);
+          md.push('');
+          md.push('## A classification rule');
+          md.push('');
+          md.push('A branch is classified **A — fully integrated** only when its current head is an ancestor of current `main`, it has zero branch-only commits, it has no open PR, and it is not the active packet branch. A ref first observed after BRH-00C additionally needs exact merged-PR-head proof before it can leave provisional X.');
+          md.push('');
+          md.push(`## A — fully integrated (${aCandidates.length})`);
+          md.push('');
+          md.push('| Branch | Head | Behind main | Evidence |');
+          md.push('| --- | --- | ---: | --- |');
+          for (const b of aCandidates) {
+            const extra = b.postBRH00C ? '; post-00C merged-head-proof=yes' : '';
+            md.push(`| \`${b.name}\` | \`${b.headSha}\` | ${b.behindMain} | ancestor=yes; branch-only=0${extra} |`);
+          }
+          md.push('');
+          md.push(`## Deferred from BRH-01A (${deferred.length})`);
+          md.push('');
+          md.push('These branches are **not** classified A in this packet. They remain for BRH-01B/01C or provisional X handling.');
+          md.push('');
+          md.push('| Branch | Head | Reason(s) |');
+          md.push('| --- | --- | --- |');
+          for (const b of deferred) md.push(`| \`${b.name}\` | \`${b.headSha}\` | ${b.reasons.join(', ')} |`);
+          md.push('');
+          md.push('## Safety boundary');
+          md.push('');
+          md.push('- No branch was deleted or rewritten.');
+          md.push('- No B/C/D semantic or patch-equivalent classification is assigned here.');
+          md.push('- A classification is mechanical integration evidence only; deletion remains gated to BRH-04.');
+          md.push('- New/live refs remain X unless this packet has current merged-head proof plus the normal A evidence.');
+          md.push('');
+          fs.writeFileSync('project/branch-hygiene-classification.md', md.join('\n'));
+          fs.writeFileSync('/tmp/brh-01a-classification-sha.txt', digest + '\n');
+          NODE
+
+      - name: Upload refreshed BRH-01A proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: brh-01a-refreshed-mechanical-proof
+          path: |
+            /tmp/brh-01a-audit.json
+            /tmp/brh-01a-open-prs.json
+            /tmp/brh-01a-classification-sha.txt
+            project/branch-hygiene-classification.json
+            project/branch-hygiene-classification.md
+
+      - name: Commit refreshed classification and remove temporary workflow
+        run: |
+          git config user.name "Adam Noden"
+          git config user.email "107278274+adamnoden@users.noreply.github.com"
+          git rm .github/workflows/brh-01a-refresh.yml
+          git add project/branch-hygiene-classification.json project/branch-hygiene-classification.md
+          git commit -m "BRH-01A: refresh A classification after DRW-02D"
+          git push origin HEAD:brh-01a-obvious-integrated
