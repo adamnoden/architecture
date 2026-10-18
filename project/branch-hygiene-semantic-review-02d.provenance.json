@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02D",
+  "programmeIssue": 161,
+  "baselineMainSha": "3f8103c638249e2dbbf257edefd56e111953321f",
+  "sourceBranchHeads": {
+    "g01-completion-programme": "0efb277130c59b7042726c3121f0529c011c2eb1",
+    "g01-d8-falsification": "89aab07fca5debbf77c35f0b6d713683a645163f",
+    "g01-d9-holdout": "c1cc56d17cd616a648e78d0a1851c39c05faa7ba",
+    "g01-d10-normative": "8b59b09bcf3a47b190c9d6f0e0a849b5f5f997ad",
+    "g01-d10s-specificity": "7cca300e719497230e8b9778037cd3379ef1bae4",
+    "g01-d11-v01-freeze": "8adc19b0daa40a3615f9114453250c4ab2593fe9",
+    "g01-d12-reference-house": "172957fb8fa568ba682908e3cf78a29cbc80460d",
+    "g01-d13-closeout": "6969c24301619ddeb92f3f18ef72fad69b5ccfc9"
+  },
+  "reviewJsonSha256": "efea146f54d3a75e4ac81a4046c4421a4e8e40682e752ca7038770934a2ecb99",
+  "strongPreservationSignals": [
+    "G01 completion programme is byte-identical on current main",
+    "D8 falsification result is byte-identical on current main",
+    "D9 held-out validation is byte-identical on current main",
+    "D10 normative reduction is byte-identical on current main",
+    "D10-S programme, frozen register and validation result are byte-identical on current main",
+    "D13 adversarial closeout is byte-identical on current main",
+    "D11 canonical G01 v0.1 and D12 Reference House conformance remain in the same authority paths with workflow-stage presentation deliberately evolved"
+  ],
+  "finalDispositions": {
+    "g01-completion-programme": "C",
+    "g01-d8-falsification": "C",
+    "g01-d9-holdout": "C",
+    "g01-d10-normative": "C",
+    "g01-d10s-specificity": "C",
+    "g01-d11-v01-freeze": "C",
+    "g01-d12-reference-house": "C",
+    "g01-d13-closeout": "C"
+  },
+  "validationAndMergeEvidence": "recorded in the BRH-02D PR and issue #161 closeout after final-head validation, fresh lease and merge-parent verification",
+  "semanticReviewComplete": true,
+  "salvagePerformed": false,
+  "branchDeletionPerformed": false,
+  "deletionAuthorised": false,
+  "nextPacket": "BRH-02E"
+}
