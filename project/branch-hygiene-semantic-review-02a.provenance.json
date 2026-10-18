@@ -1,23 +1,23 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "packet": "BRH-02A",
   "programmeIssue": 161,
-  "baselineMainSha": "00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f",
+  "baselineMainSha": "72e27764943cbeba9da6573b7dacb7d32f769937",
   "sourceBranchHeads": {
     "prototype-p03-engineer-review-brief": "1fe68d1f4da1531cc273573ea098709e3d6a1302",
     "workmanship-robustness": "a049e8da6cd9133dcbbb654e2fc703a1c5baf712"
   },
-  "reviewJsonSha256": "63c3d4a62ddafd637e68c11517d3dcdc9c4d0cb52980ed8978b35aef908e8c8e",
+  "reviewJsonSha256": "2c14918ddf9063989665c46cae098dd398f5304f3e4353e8ce748b05f952b381",
   "evidence": {
     "p03Compare": {
       "status": "diverged",
       "aheadBy": 1,
-      "behindBy": 1204
+      "behindBy": 1211
     },
     "workmanshipCompare": {
       "status": "diverged",
       "aheadBy": 20,
-      "behindBy": 1455
+      "behindBy": 1462
     },
     "p03Issue": 30,
     "p03IssueStateAtReview": "open",
@@ -32,18 +32,30 @@
       "docs/reference-house/tectonic-architectural-language.md"
     ]
   },
-  "restart": {
-    "previousBaselineMainSha": "cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c",
-    "reason": "DRW-03B PR #179 merged during the final lease check and moved main.",
-    "interveningFiles": [
-      "compiler/reference-house/publication-plan-source.test.ts",
-      "compiler/reference-house/publication-plan-source.ts",
-      "docs/publication/architectural-drawing-drw03b-ground-plan-source.md"
-    ],
-    "authorityImpact": "none on reviewed source heads or the P03/workmanship authority set; semantic dispositions recomputed and retained"
-  },
+  "restarts": [
+    {
+      "previousBaselineMainSha": "cf99b2bf74cc1e4553b2a74a6cfd381b2739f73c",
+      "newBaselineMainSha": "00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f",
+      "reason": "DRW-03B PR #179 merged during the final lease check and moved main.",
+      "authorityImpact": "none on reviewed source heads or the P03/workmanship authority set; semantic dispositions recomputed and retained"
+    },
+    {
+      "previousBaselineMainSha": "00a6f4c986b2fbbd2c71efca87bc99f8527dcc0f",
+      "newBaselineMainSha": "72e27764943cbeba9da6573b7dacb7d32f769937",
+      "reason": "DRW-03C PR #180 merged before packet close and moved main.",
+      "interveningFiles": [
+        "compiler/publication-drawing/model.ts",
+        "compiler/publication-drawing/projection.ts",
+        "compiler/publication-drawing/svg.ts",
+        "compiler/publication-drawing/tokens.ts",
+        "compiler/reference-house/publication-drawing-foundation.test.ts",
+        "docs/publication/architectural-drawing-drw03c-renderer-foundation.md"
+      ],
+      "authorityImpact": "none on reviewed source heads or the P03/workmanship authority set; semantic dispositions recomputed and retained"
+    }
+  ],
   "validationBlockerRepair": {
-    "trigger": "After the moved-main restart, rendered public nomenclature validation matched maturity token M1 inside a generated Vite modulepreload asset URL rather than reader-visible content.",
+    "trigger": "After the first moved-main restart, rendered public nomenclature validation matched maturity token M1 inside a generated Vite modulepreload asset URL rather than reader-visible content.",
     "evidence": "DRW-03B itself passed the same rendered gate; project/** is excluded from VitePress; the failing occurrence was the generated asset filename abnfDiagram-VCTEODGH.ByOrd-M1.js across rendered pages.",
     "repair": "Rendered HTML validation now strips comments, script/style/template/noscript payloads and markup attributes before nomenclature scanning, preserving title/body reader text and PDF scanning.",
     "regressionLocks": [
@@ -62,7 +74,7 @@
     "workmanship-robustness": "C"
   },
   "pullRequest": 178,
-  "reviewRecordHeadBeforeProvenanceFinalization": "a52e1b65598239b2b8033cb1b8d8cfe8acc9058b",
+  "reviewRecordHeadBeforeProvenanceFinalization": "ab2caa2e642839734f592a374b1589d854638853",
   "validationAndMergeEvidence": "recorded in PR #178 and the BRH-02A closeout on issue #161 after final-head validation and lease checks",
   "semanticReviewComplete": true,
   "salvagePerformed": false,
