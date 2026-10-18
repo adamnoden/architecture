@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-02B",
+  "programmeIssue": 161,
+  "baselineMainSha": "dfba4237107eda8c7a6d79e53607ba25e40a4f49",
+  "scopeGroup": "infrastructure-tooling",
+  "branches": [
+    {
+      "name": "project-integrity-refactor",
+      "headSha": "5f3ddadab402daaf9f01a3ea99531fc65734302d",
+      "mechanicalEvidence": {
+        "aheadBy": 23,
+        "behindBy": 929,
+        "branchOnlyCommits": 23,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The branch introduced a project-integrity architecture that is now present and materially evolved on main: central project identity, programme-control lifecycle registry, generated publication-scope reporting, repository integrity validation and PR validation. Current main carries the same mechanisms under current Ovid’s House authority, with later maturity/public-surface/nomenclature controls. publication/scope-report.ts is byte-identical to the branch version; the other core mechanisms are clear descendants or deliberate successors rather than stranded work.",
+      "currentAuthority": [
+        "project/identity.ts",
+        "project/programme-controls.ts",
+        "publication/scope-report.ts",
+        "publication/scripts/update-scope-report.ts",
+        "scripts/validate-repository.ts",
+        ".github/workflows/validate-pr.yml",
+        ".vitepress/config.ts",
+        "publication/scripts/prepare.ts",
+        "publication/scripts/validate.ts"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    },
+    {
+      "name": "public-url-phase-1",
+      "headSha": "45fcb14128ae055a8b0724cbfbbc31bbc8758ceb",
+      "mechanicalEvidence": {
+        "aheadBy": 4,
+        "behindBy": 924,
+        "branchOnlyCommits": 4,
+        "uniquePatchSignal": true
+      },
+      "semanticDisposition": "C",
+      "reason": "The branch's clean-public-URL and route-validation system is present and evolved on main. Current project/site-routes.ts retains the branch's source-ID rewriting, public route mapping, Markdown link rewriting and navigation/sidebar mapping, while adding explicit public-surface awareness and repository-source fallback for intentionally hidden records. Current scripts/validate-public-routes.ts retains collision, route-contract and navigation coverage checks while restricting validation to the resolved public surface. There is no useful branch-only residue to salvage.",
+      "currentAuthority": [
+        "project/site-routes.ts",
+        "project/public-surface.js",
+        "scripts/validate-public-routes.ts",
+        ".vitepress/config.ts",
+        "package.json"
+      ],
+      "salvageRequired": false,
+      "deletionAuthorised": false
+    }
+  ],
+  "summary": {
+    "reviewed": 2,
+    "C": 2,
+    "D": 0,
+    "X": 0,
+    "salvageRequired": 0
+  },
+  "nextPacket": {
+    "packet": "BRH-02C",
+    "group": "compiler-computational",
+    "branches": [
+      "cf-01-contrast-fixture",
+      "ch-05-determinism-identity-provenance",
+      "ch-05-housekeeping-sync",
+      "ch-08-distillation-deletion",
+      "coa-04-plan-section-successors",
+      "coa-05-topology-successors-final",
+      "coa-06-output-integration"
+    ],
+    "reason": "Next coherent unresolved lineage in the BRH-01C register; seven branches, within the BRH-02 hard cap."
+  },
+  "safety": {
+    "branchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "salvagePerformed": false,
+    "repositorySettingsChanged": false
+  }
+}
