@@ -1,0 +1,170 @@
+name: BRH-02H reconciliation proof
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/brh-02h-reconcile.yml'
+      - 'project/branch-hygiene-*.json'
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch complete branch namespace
+        run: git fetch --prune origin '+refs/heads/*:refs/remotes/origin/*'
+
+      - name: Build reconciliation proof
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          node <<'NODE'
+          const fs = require('fs')
+          const { spawnSync } = require('child_process')
+
+          function run(cmd, args, allowFail = false) {
+            const r = spawnSync(cmd, args, { encoding: 'utf8' })
+            if (!allowFail && r.status !== 0) {
+              console.error(r.stdout)
+              console.error(r.stderr)
+              process.exit(r.status || 1)
+            }
+            return { status: r.status, stdout: (r.stdout || '').trim(), stderr: (r.stderr || '').trim() }
+          }
+
+          const freeze = JSON.parse(fs.readFileSync('project/branch-hygiene-unresolved-register.json', 'utf8'))
+          const original = new Map(freeze.enumeration.branches.map(b => [b.name, b.headSha]))
+          if (original.size !== 160) throw new Error(`Expected 160 BRH-01C branches, found ${original.size}`)
+
+          const originalXNames = [
+            'drw-02e',
+            'drw-03a',
+            'brh-01a-obvious-integrated',
+            'brh-01b-patch-equivalent',
+            'brh-01c-unresolved-register'
+          ]
+
+          const refsText = run('git', ['for-each-ref', '--format=%(refname)|%(objectname)', 'refs/remotes/origin/']).stdout
+          const current = new Map()
+          for (const line of refsText.split('\n').filter(Boolean)) {
+            const [ref, sha] = line.split('|')
+            if (!ref.startsWith('refs/remotes/origin/')) continue
+            const name = ref.slice('refs/remotes/origin/'.length)
+            if (name === 'HEAD' || name === 'main') continue
+            current.set(name, sha)
+          }
+
+          const mainSha = run('git', ['rev-parse', 'origin/main']).stdout
+          const prJson = run('gh', ['pr', 'list', '--state', 'all', '--limit', '500', '--json', 'number,state,isDraft,headRefName,headRefOid,mergedAt,url,title']).stdout
+          const prs = JSON.parse(prJson || '[]')
+          const openPrs = prs.filter(p => p.state === 'OPEN')
+
+          const postFreezeNames = [...current.keys()].filter(name => !original.has(name)).sort()
+          const missingOriginalNames = [...original.keys()].filter(name => !current.has(name)).sort()
+          const focusNames = [...new Set([...originalXNames, ...postFreezeNames])].sort()
+
+          function gitEvidence(name, sha) {
+            const exists = run('git', ['cat-file', '-e', `${sha}^{commit}`], true).status === 0
+            if (!exists) return { commitAvailable: false }
+            const ancestor = run('git', ['merge-base', '--is-ancestor', sha, 'origin/main'], true).status === 0
+            const counts = run('git', ['rev-list', '--left-right', '--count', `origin/main...${sha}`]).stdout.split(/\s+/).map(Number)
+            const branchOnly = Number(run('git', ['rev-list', '--count', `origin/main..${sha}`]).stdout || 0)
+            const nonMergeBranchOnly = Number(run('git', ['rev-list', '--no-merges', '--count', `origin/main..${sha}`]).stdout || 0)
+            const cherryLines = run('git', ['cherry', 'origin/main', sha], true).stdout.split('\n').filter(Boolean)
+            return {
+              commitAvailable: true,
+              headIsAncestorOfMain: ancestor,
+              behindMain: counts[0] || 0,
+              aheadOfMain: counts[1] || 0,
+              branchOnlyCommitCount: branchOnly,
+              nonMergeBranchOnlyCommitCount: nonMergeBranchOnly,
+              cherryPlus: cherryLines.filter(x => x.startsWith('+')).length,
+              cherryMinus: cherryLines.filter(x => x.startsWith('-')).length
+            }
+          }
+
+          const focus = focusNames.map(name => {
+            const liveHeadSha = current.get(name) || null
+            const frozenHeadSha = original.get(name) || null
+            const prsForBranch = prs.filter(p => p.headRefName === name)
+            const openForBranch = prsForBranch.filter(p => p.state === 'OPEN')
+            const mergedForBranch = prsForBranch.filter(p => p.mergedAt)
+            const evidenceSha = liveHeadSha || (mergedForBranch.length ? mergedForBranch[0].headRefOid : frozenHeadSha)
+            const evidence = evidenceSha ? gitEvidence(name, evidenceSha) : { commitAvailable: false }
+            let reconciliation = 'X'
+            let reason = 'uncertain-or-active'
+            if (openForBranch.length) {
+              reconciliation = 'X'
+              reason = 'open-pr'
+            } else if (liveHeadSha && evidence.headIsAncestorOfMain && evidence.branchOnlyCommitCount === 0) {
+              reconciliation = 'A'
+              reason = 'live-ref-fully-integrated'
+            } else if (!liveHeadSha && mergedForBranch.length && evidence.headIsAncestorOfMain && evidence.branchOnlyCommitCount === 0) {
+              reconciliation = 'A-ABSENT'
+              reason = 'ref-absent-but-final-merged-head-fully-integrated'
+            } else if (!liveHeadSha && name === 'brh-01c-unresolved-register' && mergedForBranch.length) {
+              reconciliation = 'X'
+              reason = 'ref-absent-merged-pr-needs-final-head-integration-review'
+            }
+            return {
+              name,
+              source: originalXNames.includes(name) ? 'original-X' : 'post-freeze',
+              liveRefPresent: Boolean(liveHeadSha),
+              liveHeadSha,
+              frozenHeadSha,
+              evidenceSha,
+              evidence,
+              openPullRequests: openForBranch,
+              mergedPullRequests: mergedForBranch,
+              reconciliation,
+              reason
+            }
+          })
+
+          const result = {
+            schemaVersion: 1,
+            packet: 'BRH-02H',
+            repository: process.env.GH_REPO,
+            generatedAt: new Date().toISOString(),
+            baselineMainSha: mainSha,
+            freezeMainSha: freeze.baselineMainSha,
+            originalBranchCount: original.size,
+            currentBranchCount: current.size,
+            postFreezeBranchCount: postFreezeNames.length,
+            missingOriginalBranchCount: missingOriginalNames.length,
+            originalXNames,
+            postFreezeNames,
+            missingOriginalNames,
+            openPrs,
+            focus,
+            counts: {
+              focus: focus.length,
+              reconciledA: focus.filter(x => x.reconciliation === 'A').length,
+              reconciledAbsentA: focus.filter(x => x.reconciliation === 'A-ABSENT').length,
+              retainedX: focus.filter(x => x.reconciliation === 'X').length
+            }
+          }
+
+          fs.mkdirSync('brh-02h-proof', { recursive: true })
+          fs.writeFileSync('brh-02h-proof/reconciliation.json', JSON.stringify(result, null, 2) + '\n')
+          fs.writeFileSync('brh-02h-proof/current-refs.txt', [...current.entries()].sort().map(([n,s]) => `${n} ${s}`).join('\n') + '\n')
+          console.log(JSON.stringify(result.counts))
+          console.log(`main=${mainSha} current=${current.size} postFreeze=${postFreezeNames.length} missingOriginal=${missingOriginalNames.length}`)
+          NODE
+
+      - name: Upload proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: brh-02h-reconciliation-proof
+          path: brh-02h-proof/
+          if-no-files-found: error
