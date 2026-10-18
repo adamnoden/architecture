@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-04E",
+  "programmeIssue": 161,
+  "status": "preflight-frozen-awaiting-authorised-manual-deletion",
+  "packetBranch": "brh-04e-controlled-deletion-5",
+  "execution": {
+    "baselineMainSha": "9379034a41b618191698e9842659c90ff69514b7",
+    "baselineMainEvent": "HFI-03A PR #228 merged after BRH-04E initial discovery; the earlier 439eb718 baseline was discarded before any durable packet record or deletion authorisation.",
+    "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+    "sourceBaselineToExecutionMain": {"status":"ahead","aheadBy":223,"behindBy":0},
+    "branchCountBeforePacketBranchIncludingMain": 63,
+    "openPrCountBeforePacketBranch": 1,
+    "openPrHeadsBeforePacketBranch": [
+      {"pr":227,"branch":"drw-05b-principal-section-source","headSha":"81445858b49c4ed77a0426c2aabb0960ca9a6001"}
+    ],
+    "hardDeletionCap": 25,
+    "candidateCount": 16,
+    "candidateClassCounts": {"A":15,"C":1,"B":0,"D":0,"X":0},
+    "connectorDeleteBranchActionAvailable": false
+  },
+  "candidateSetSha256": "2807c62f90e4bfb15cb422e0ae9403ce0669da2a363ad45ee370ee53ec8e9539",
+  "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
+  "candidateEvidence": {
+    "A": "The original A-tail candidates retain their frozen heads and are exact ancestors of current main; BRH-02H separately reconciled brh-01a-obvious-integrated, brh-01b-patch-equivalent, drw-02e and drw-03a to A. brh-02g-publication-editorial-review was retained for BRH-04 re-proof and is now itself an exact ancestor of current main at its unchanged head.",
+    "C": "brh-03-salvage-necessity-proof is a superseded stale evidence draft. Its two branch-only commits add only project/branch-hygiene-salvage-closeout.json and .md. The later merged BRH-03A proof reaches the same D=0 / vacuous-complete result, explicitly records this branch and PR #201 as superseded, restarts from later main, and is the authoritative record. No unique architectural, computational or unresolved salvage work remains on the stale branch."
+  },
+  "candidates": [
+    {"name":"brh-01a-obvious-integrated","expectedHeadSha":"bbaf9b72df7758b4ff4d97d89ee6a798789b2c41","class":"A"},
+    {"name":"brh-01b-patch-equivalent","expectedHeadSha":"8ea68f5b5cfac84ea4aeb6b11ed24bd8fdca6660","class":"A"},
+    {"name":"brh-02g-publication-editorial-review","expectedHeadSha":"708ca16ac46ee40f0759a1825f557924cfd0694c","class":"A"},
+    {"name":"brh-03-salvage-necessity-proof","expectedHeadSha":"3043c99d360f17178332bf92a3294868abef506f","class":"C"},
+    {"name":"drw-02e","expectedHeadSha":"374c5db6e5b559e58cbc6a54106fc64786d3b9e6","class":"A"},
+    {"name":"drw-03a","expectedHeadSha":"bcc9b8a34469e1a9f2bebf65fdb0499f377248b8","class":"A"},
+    {"name":"pub-san-resolved-work-cleanup","expectedHeadSha":"cac29844392a07d735b244c25f6636cc62d68d77","class":"A"},
+    {"name":"pub-san-semantic-coherence","expectedHeadSha":"8e9b1dc14b7710e8b18f057d4cfb761fe830d9ec","class":"A"},
+    {"name":"pub-san-source-link-cleanup","expectedHeadSha":"aff9deae0b3e34b1c86d2e8f215e967d25f329f8","class":"A"},
+    {"name":"publication-pdf-metadata","expectedHeadSha":"7267aba14c78c6c8551fa7559f8c7bd3a68d54d3","class":"A"},
+    {"name":"record-post-freeze-figure-defect","expectedHeadSha":"6c1b081d5161ab7719dd7c5c0a1ff37c9a485f71","class":"A"},
+    {"name":"site-build-timestamp","expectedHeadSha":"378028f2ad8f8745b750b86f2076a962245360ab","class":"A"},
+    {"name":"status-hygiene-2026-10-17","expectedHeadSha":"8da95e7428e155945f83fc14c6b2514a02ae2fef","class":"A"},
+    {"name":"tectonic-honesty","expectedHeadSha":"28386a2debd5318a2680bcdae636120ceb7b48fb","class":"A"},
+    {"name":"vertical-bay-coordination","expectedHeadSha":"55f6a11f982d27c4b7c2c00c1b3cf2e5fed05eff","class":"A"},
+    {"name":"wall-bay-prototype-v1","expectedHeadSha":"b9d433220c507bc53433d7227aaeb5162a9ccd8c","class":"A"}
+  ],
+  "specialReproof": {
+    "brh-02g-publication-editorial-review": {
+      "result":"A",
+      "reason":"unchanged head is an exact ancestor of execution main; no branch-only history remains"
+    },
+    "brh-03-salvage-necessity-proof": {
+      "result":"C",
+      "branchOnlyCommitCount":2,
+      "branchOnlyPaths":["project/branch-hygiene-salvage-closeout.json","project/branch-hygiene-salvage-closeout.md"],
+      "authoritativeSuccessorPaths":["project/branch-hygiene-salvage-proof.json","project/branch-hygiene-salvage-proof.md","project/branch-hygiene-salvage-proof.provenance.json"],
+      "reason":"the later merged proof explicitly names the stale draft as superseded and preserves/refines its substantive D=0 conclusion"
+    }
+  },
+  "explicitlyProtected": [
+    {"name":"main","reason":"never a deletion candidate"},
+    {"name":"drw-05b-principal-section-source","reason":"open PR #227 / active DRW work; protection follows the live ref if it advances"},
+    {"name":"ch00-compiler-hardening-plan","reason":"class B; A/re-proof packet excludes B"},
+    {"name":"external-maintenance-geography","reason":"class B; excluded"},
+    {"name":"maturity-model-enforcement","reason":"class B; excluded"},
+    {"name":"pr00e-e2-e4-editorial-hardening","reason":"class B; excluded"},
+    {"name":"pub-san-back-matter","reason":"class B; excluded"},
+    {"name":"all surviving semantic-review C refs","reason":"deferred to subsequent bounded C deletion packets; this packet admits only the one separately re-proven stale BRH-03 draft"}
+  ],
+  "deletionPreconditions": {
+    "executionMainMustStillEqualBaselineImmediatelyBeforeAuthorisation": true,
+    "allCandidatesMustStillExistAtExpectedHeadImmediatelyBeforeAuthorisation": true,
+    "noCandidateMayHaveOpenPrImmediatelyBeforeAuthorisation": true,
+    "candidateCountMustNotExceed25": true,
+    "postDeleteNamespaceMustBeReconciledAgainstConcurrentRefTurnover": true
+  },
+  "mutation": {"branchDeletionPerformed":false,"deletedCount":0,"repositorySettingsChanged":false},
+  "resumeRule": "After durable records and draft PR exist, take a fresh main + open-PR + exact-candidate-head lease. If it holds, authorise the repository owner to delete exactly these 16 refs. Then re-enumerate the namespace, prove only authorised deletions modulo independently attributable concurrent ref turnover, validate, merge under a fresh lease, and close BRH-04E before any later packet begins."
+}
