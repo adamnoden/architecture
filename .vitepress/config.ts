@@ -1,8 +1,10 @@
+import { execSync } from 'node:child_process'
 import { relative, sep } from 'node:path'
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import { projectIdentity } from '../project/identity.js'
 import { filterPublicNavigation, publicSourceExcludeGlobs } from '../project/public-surface.js'
+import { siteIndexable } from '../project/site-settings.js'
 import {
   mapNavigationLinks,
   mapSidebarRoutes,
@@ -13,6 +15,22 @@ import { assertNavigationCoverage, nav, sidebar } from './navigation'
 
 assertNavigationCoverage()
 
+function resolveBuildCommit(): string {
+  if (process.env.GITHUB_SHA) return process.env.GITHUB_SHA
+
+  try {
+    return execSync('git rev-parse HEAD', {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore']
+    }).trim()
+  } catch {
+    return 'unknown'
+  }
+}
+
+const buildCommit = resolveBuildCommit()
+const buildTimestamp = new Date().toISOString()
+const crawlerPolicy = siteIndexable ? 'index, follow' : 'noindex, nofollow, noarchive'
 const publicNav = mapNavigationLinks(filterPublicNavigation(nav))
 const publicSidebar = mapSidebarRoutes(filterPublicNavigation(sidebar))
 
@@ -40,8 +58,17 @@ export default withMermaid(
     head: [
       ['link', { rel: 'icon', type: 'image/svg+xml', href: '/architecture/favicon.svg' }],
       ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/architecture/favicon-32.png' }],
-      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/architecture/apple-touch-icon.png' }]
+      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/architecture/apple-touch-icon.png' }],
+      ['meta', { name: 'robots', content: crawlerPolicy }],
+      ['meta', { name: 'googlebot', content: crawlerPolicy }]
     ],
+
+    vite: {
+      define: {
+        __SITE_BUILD_COMMIT__: JSON.stringify(buildCommit),
+        __SITE_BUILD_TIMESTAMP__: JSON.stringify(buildTimestamp)
+      }
+    },
 
     rewrites: rewriteSourceId,
 
