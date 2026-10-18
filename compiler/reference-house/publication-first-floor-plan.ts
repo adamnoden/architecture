@@ -281,6 +281,8 @@ interface RoomLabelSpec {
   x: number
   y: number
   label: string
+  lines?: string[]
+  lineGap?: number
   anchor?: DrawingText['anchor']
   leader?: {
     from: { x: number; y: number }
@@ -291,7 +293,7 @@ interface RoomLabelSpec {
 const roomLabelPositions: Record<string, RoomLabelSpec> = {
   'U-BED-02': { x: 2000, y: 2500, label: 'Bedroom 2' },
   'U-BED-P01': { x: 2000, y: 7800, label: 'Principal bedroom' },
-  'U-STAIR-01': { x: 7100, y: 1400, label: 'South landing' },
+  'U-STAIR-01': { x: 7150, y: 1400, label: 'South landing', lines: ['South', 'landing'], lineGap: 300 },
   'U-BED-03': { x: 10400, y: 1400, label: 'Bedroom 3' },
   'U-GAL-02': {
     x: 7550,
@@ -520,16 +522,21 @@ export const createFirstFloorPublicationPlanScene = (
         )
       )
     }
-    primitives.push(
-      textPrimitive(
-        `label-${spaceId}`,
-        project.point(label.x, label.y),
-        label.label,
-        'label',
-        label.anchor ?? 'middle',
-        { space: spaceId, provisional: space.provisional }
+    const values = label.lines ?? [label.label]
+    const lineGap = label.lineGap ?? 0
+    for (const [index, value] of values.entries()) {
+      const modelY = label.y + ((values.length - 1) / 2 - index) * lineGap
+      primitives.push(
+        textPrimitive(
+          values.length === 1 ? `label-${spaceId}` : `label-${spaceId}-${index + 1}`,
+          project.point(label.x, modelY),
+          value,
+          'label',
+          label.anchor ?? 'middle',
+          { space: spaceId, provisional: space.provisional }
+        )
       )
-    )
+    }
   }
 
   const courtCentre = project.point(result.derived.shell.centreX, result.derived.shell.centreY)
