@@ -1,10 +1,11 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04A",
   "programmeIssue": 161,
-  "status": "blocked-before-mutation",
+  "status": "blocked-before-mutation-and-baseline-stale",
   "packetBranch": "brh-04a-controlled-deletion-1",
   "baselineMainSha": "19170e6cac52a54e751ade0ccd0899cc6ee13ec4",
+  "mainAfterPlanningSha": "125d3893284cc6183b56ff2cc3ab187ff8f1c0a8",
   "candidateCount": 25,
   "candidateClass": "A",
   "candidateSetSha256": "cd9f328d8d0c7cbccc599c5e5f87a359de78fd9493f64af2d6713dfffacf50d9",
@@ -12,10 +13,17 @@
     "sourceClassification": "BRH-01A",
     "sourceBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
     "sourceBaselineToPacketBaseline": {"status":"ahead","aheadBy":149,"behindBy":0},
-    "allCandidateLiveHeadsMatchedFrozenHeads": true,
+    "allCandidateLiveHeadsMatchedFrozenHeadsAtPlanning": true,
     "openPrCountAtPacketStart": 0,
     "branchCountAtPacketStartIncludingMain": 164,
-    "mainLeaseStillExactAfterPlanning": true
+    "mainLeaseStillExactAfterPlanning": false,
+    "baselineInvalidation": {
+      "observedBeforeMutation": true,
+      "newMainSha": "125d3893284cc6183b56ff2cc3ab187ff8f1c0a8",
+      "newMainFirstParent": "19170e6cac52a54e751ade0ccd0899cc6ee13ec4",
+      "mergeTitle": "Project assurance: make discipline ownership explicit",
+      "effect": "No deletion had occurred. The destructive lease is discarded and must be recomputed before any later deletion."
+    }
   },
   "mutationBlocker": {
     "firstClassDeleteBranchOrRefActionAvailable": false,
@@ -30,5 +38,6 @@
     "unexpectedRefMutationObserved": false,
     "repositorySettingsChanged": false
   },
-  "resumeRule": "Before any later deletion attempt, re-read current main, open PRs and all 25 candidate heads. Do not reuse this lease if main or any candidate has moved. Execute only through an authorised first-class deletion path, then prove the post-delete namespace equals the pre-delete namespace minus exactly the candidate set."
+  "draftPr": 210,
+  "resumeRule": "Before any later deletion attempt, recover then-current main, open PRs and all 25 candidate heads from scratch. Do not reuse the 19170e6c lease. Execute only through an authorised first-class deletion path, then prove the post-delete namespace equals the pre-delete namespace minus exactly the candidate set."
 }
