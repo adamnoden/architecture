@@ -202,6 +202,28 @@ function renderedSiteSurface(root: string, file: string): NomenclatureSurface {
   return surfaceByRoute.get(routeForRenderedSiteFile(root, file)) ?? 'SITE_PRIMARY'
 }
 
+/**
+ * Rendered nomenclature is a reader-surface check, not a byte-level scan of
+ * build plumbing. Asset URLs, cache-busting hashes and script/style payloads
+ * are implementation metadata and can coincidentally contain compact tokens
+ * such as `M1`. Strip those regions while preserving title/body text so the
+ * validator remains strict on content a reader can actually encounter.
+ */
+function renderedHtmlReaderText(html: string): string {
+  return html
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<(script|style|template|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex: string) => String.fromCodePoint(Number.parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, decimal: string) => String.fromCodePoint(Number.parseInt(decimal, 10)))
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+}
+
 function renderedPublicationPdfs(): string[] {
   const dist = resolve(repoRoot, 'publication/dist')
   const files = [
@@ -223,7 +245,12 @@ async function validateRendered(): Promise<Failure[]> {
   const pdfs = renderedPublicationPdfs()
 
   for (const file of site.files) {
-    scanText(sourcePath(file), readFileSync(file, 'utf8'), renderedSiteSurface(site.root, file), failures)
+    scanText(
+      sourcePath(file),
+      renderedHtmlReaderText(readFileSync(file, 'utf8')),
+      renderedSiteSurface(site.root, file),
+      failures
+    )
   }
 
   for (const file of pdfs) {
