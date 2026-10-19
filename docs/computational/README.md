@@ -4,7 +4,7 @@ The computational track asks a narrow question within Ovid’s House:
 
 > **Which architectural relationships can be represented strongly enough that invalid arrangements, unresolved obligations or missing evidence are exposed deterministically?**
 
-**House Kernel** is the formal architectural/computational system used where facts, relationships, invariants, obligations and proof boundaries can legitimately be explicit. **Metamorph Compiler** is the implementation under [`../../compiler/`](../../compiler/) that compiles and checks those representations.
+**House Kernel** is the formal architectural/computational system used where facts, relationships, invariants, obligations and proof boundaries can legitimately be explicit. **Metamorph Compiler** is the implementation under `compiler/` that compiles and checks those representations.
 
 The computational system is deliberately narrower than the architecture. Architectural judgement is not converted into machine rules merely to make the model look complete.
 
@@ -19,7 +19,7 @@ The computational system is deliberately narrower than the architecture. Archite
 - compiler research and hardening records;
 - output/proof architecture and the limits of deterministic checks.
 
-Executable TypeScript, tests and renderers live in [`../../compiler/`](../../compiler/). Current project-wide status lives in [`../../STATUS.md`](../../STATUS.md).
+Executable TypeScript, tests and renderers live in `compiler/`. Current project-wide status lives in `STATUS.md`.
 
 ## Demonstrated capability
 
@@ -59,7 +59,7 @@ The system can admit a numeric method only when:
 3. unsupported and out-of-domain states fail closed;
 4. the result’s proof boundary can be stated without implying whole-building compliance.
 
-The private-stair correspondence is the current worked example. Its dimensions are **not repeated here**: they are controlled by the Reference House source and derived calculation chain, so copying them into this README would create another drift surface. See [`../../compiler/rhc5/`](../../compiler/rhc5/) for the selected-method contract and current executable result.
+The private-stair correspondence is the current worked example. Its dimensions are **not repeated here**: they are controlled by the Reference House source and derived calculation chain, so copying them into this README would create another drift surface. The executable selected-method contract lives at `compiler/rhc5/`.
 
 A passing selected calculation remains bounded method correspondence. It is not a Building Regulations compliance certificate.
 
@@ -85,11 +85,11 @@ Machine proof, human inspection and publication graphics have different jobs:
 
 The generated Reference House inspection surface is under [`../reference-house/generated/`](../reference-house/generated/). It is downstream from the canonical compile and must not be hand-edited to conceal a source problem.
 
-Drawing/publication records live under [`../publication/`](../publication/); publication build machinery lives at top-level [`../../publication/`](../../publication/).
+Drawing/publication records live under `docs/publication/`; publication build machinery lives at top-level `publication/`.
 
 ## Deployment and external targets
 
-A target, jurisdiction or site rule is not architecture merely because it may later be machine-checkable. The DPL programme under [`../../project/dpl/`](../../project/dpl/) is establishing the separate target/site/deployment model.
+A target, jurisdiction or site rule is not architecture merely because it may later be machine-checkable. The DPL programme under `project/dpl/` is establishing the separate target/site/deployment model.
 
 Until that work earns executable implementation, this computational README must not imply that a release-grade jurisdiction/site compiler exists. Future target or site checks should enter computation only through explicit authority, applicability, evidence and proof contracts.
 
@@ -107,7 +107,7 @@ Generated Reference House semantic inspection can be checked with:
 npm run outputs:check
 ```
 
-The canonical command list is [`../../package.json`](../../package.json). Local compiler directories retain narrower proof contracts where they are materially useful.
+The canonical command list is `package.json`. Local compiler directories retain narrower proof contracts where they are materially useful.
 
 A green check proves only the assertions actually encoded. Architectural quality, engineering adequacy, regulatory acceptance and physical performance remain outside that claim unless separately evidenced.
 
