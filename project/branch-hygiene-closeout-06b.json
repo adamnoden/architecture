@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 3,
+  "packet": "BRH-06B",
+  "programmeIssue": 161,
+  "status": "reconciliation-complete-pending-validation-merge",
+  "discoveryMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+  "reconciledMainSha": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+  "authority": {
+    "latestPriorBrhCloseoutCommentId": 6268946268,
+    "priorPacket": "BRH-06A",
+    "priorPacketMergeSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+    "priorCanonicalAuditRunId": 39263047435,
+    "priorCanonicalAuditJobId": 118095414246,
+    "priorProofArtifactId": 12190304401,
+    "priorProofArtifactDigest": "sha256:f37c50a1762e1458ed5835f9896d977849ba5a13f3c7ae1f4422ae4ed02ee39c"
+  },
+  "concurrentMainAdvances": [
+    {
+      "mergeSha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+      "firstParent": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+      "secondParent": "52661f049361d801f4eb71d95d4c4398e10e237c",
+      "sourcePr": 255,
+      "sourcePacket": "HFI-05C",
+      "closeoutCommentId": 6269097136,
+      "nextAuthorisedPacket": "HFI-05D"
+    },
+    {
+      "mergeSha": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+      "firstParent": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+      "secondParent": "c75953318879c1556413468fe4b5b896b960537b",
+      "sourcePr": 257,
+      "sourcePacket": "HFI-05D",
+      "closeoutCommentId": 6269213833,
+      "nextAuthorisedPacket": "HFI-06A"
+    }
+  ],
+  "liveStateAtReconciliation": {
+    "mainSha": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+    "activeProgrammeBranches": [
+      {
+        "name": "drw-05e-principal-section-spread-proof",
+        "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
+        "owningIssue": 154,
+        "openPr": 235,
+        "draft": true,
+        "purpose": "Active DRW-05E principal-section spread proof; blocked/split by rendered physical typography proof and awaiting corrective DRW-03C.2.",
+        "disposition": "retain-active"
+      },
+      {
+        "name": "hfi-06a-target-classes-derivation",
+        "headShaAtReconciliation": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+        "owningIssue": 195,
+        "openPrAtReconciliation": null,
+        "purpose": "Newly created current HFI-06A target-classes/derivation packet, explicitly authorised by the HFI-05D closeout.",
+        "disposition": "retain-active"
+      }
+    ],
+    "brhPacketBranch": "brh-06b-final-closeout",
+    "brhPr": 256,
+    "historicalMergedPacketRefsRemaining": 0,
+    "unexplainedSurvivingRefs": 0
+  },
+  "historicalLedgerReconciliation": {
+    "deletedTotal": 161,
+    "classCounts": {"A":115,"B":5,"C":41,"D":0,"X":0},
+    "everyDeletedRecordHasFormerHeadShaAndFinalDisposition": true,
+    "duplicateDeletedBranchNames": 0,
+    "canonicalMechanicalProof": "project/branch-hygiene-final-audit-06a.json",
+    "deletionRecords": "project/branch-hygiene-deletion-04a.json through 04g.json"
+  },
+  "semanticAndSalvageReconciliation": {
+    "originalSemanticCandidates": 40,
+    "resolvedC": 40,
+    "resolvedD": 0,
+    "remainingCD": 0,
+    "DTopics": 0,
+    "salvageQueueCount": 0,
+    "salvageActionsRequired": 0,
+    "mandatoryP03FinalClass": "C",
+    "mandatoryP03SalvageRequired": false,
+    "semanticAuthority": "project/branch-hygiene-semantic-review-02a.json through 02g.json",
+    "xReconciliation": "project/branch-hygiene-x-reconciliation.json",
+    "salvageProof": "project/branch-hygiene-salvage-proof.json"
+  },
+  "preventionReconciliation": {
+    "deleteBranchOnMerge": true,
+    "verifiedAgainstLiveRepository": true,
+    "orphanAuditWorkflow": ".github/workflows/branch-orphan-audit.yml",
+    "orphanAuditPermissions": ["contents: read","pull-requests: read"],
+    "automaticOrphanDeletion": false,
+    "lifecycleDoctrine": "project/branch-lifecycle.md",
+    "retentionRegistry": "project/branch-hygiene-retentions.json",
+    "explicitRetentionEntries": 0,
+    "steadyStateRule": "main + branches corresponding to genuinely active work"
+  },
+  "closeoutConditions": {
+    "losslessDispositionComplete": true,
+    "noUnresolvedUniqueWorkStranded": true,
+    "noHistoricalDOrXQueue": true,
+    "historicalNamespaceClean": true,
+    "everySurvivingNonBrhRefHasCurrentPurpose": true,
+    "preventionControlsInstalled": true,
+    "exactHeadValidationRequired": true,
+    "freshMergeLeaseRequired": true,
+    "postMergePublicationAndPagesRequired": true,
+    "closeIssueOnlyAfterAllChecks": true
+  },
+  "mutation": {
+    "historicalBranchDeletion": false,
+    "activeProgrammeBranchMutation": false,
+    "branchRewritePerformed": false,
+    "repositorySettingsChanged": false,
+    "salvagePerformed": false
+  },
+  "programmeDisposition": {
+    "nextPacket": null,
+    "closeIssueAfterSuccessfulMergeAndPostMergeProof": true
+  }
+}

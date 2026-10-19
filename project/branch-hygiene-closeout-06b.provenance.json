@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 3,
+  "packet": "BRH-06B",
+  "programmeIssue": 161,
+  "discoveryMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+  "reconciledMainSha": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+  "observations": {
+    "concurrentMainMerges": [
+      {
+        "sha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+        "pr": 255,
+        "packet": "HFI-05C",
+        "closeoutCommentId": 6269097136,
+        "nextAuthorisedPacket": "HFI-05D"
+      },
+      {
+        "sha": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+        "pr": 257,
+        "packet": "HFI-05D",
+        "closeoutCommentId": 6269213833,
+        "nextAuthorisedPacket": "HFI-06A"
+      }
+    ],
+    "namespaceAtReconciliation": {
+      "main": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+      "brhPacket": "brh-06b-final-closeout",
+      "drw": {
+        "branch": "drw-05e-principal-section-spread-proof",
+        "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
+        "pr": 235,
+        "draft": true
+      },
+      "hfi": {
+        "branch": "hfi-06a-target-classes-derivation",
+        "headShaAtCreation": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+        "authorisedByCommentId": 6269213833
+      },
+      "historicalRefs": []
+    },
+    "repositorySetting": {
+      "deleteBranchOnMerge": true,
+      "verifiedDuring06B": true
+    }
+  },
+  "priorMechanicalProof": {
+    "record": "project/branch-hygiene-final-audit-06a.json",
+    "runId": 39263047435,
+    "jobId": 118095414246,
+    "artifactId": 12190304401,
+    "artifactDigest": "sha256:f37c50a1762e1458ed5835f9896d977849ba5a13f3c7ae1f4422ae4ed02ee39c",
+    "deletedLedgerCount": 161,
+    "classCounts": {"A":115,"B":5,"C":41,"D":0,"X":0},
+    "semanticQueue": {"resolvedC":40,"resolvedD":0,"remaining":0},
+    "salvageQueueCount": 0
+  },
+  "sourceRecords": [
+    "project/branch-hygiene-final-audit-06a.json",
+    "project/branch-hygiene-deletion-04a.json through 04g.json",
+    "project/branch-hygiene-semantic-review-02a.json through 02g.json",
+    "project/branch-hygiene-x-reconciliation.json",
+    "project/branch-hygiene-salvage-proof.json",
+    "project/branch-lifecycle.md",
+    "project/branch-hygiene-retentions.json",
+    ".github/workflows/branch-orphan-audit.yml"
+  ],
+  "safety": {
+    "destructiveMutation": false,
+    "activeProgrammeRefMutation": false,
+    "repositorySettingMutation": false,
+    "branchRewrite": false,
+    "concurrentWorkPreserved": true
+  }
+}
