@@ -214,6 +214,7 @@ const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
       page('External review brief', '/docs/reference-house/external-review-brief'),
       page('Building physics & energy', '/docs/reference-house/external-review-building-physics-energy-rh11'),
       page('Fire & Building Control', '/docs/reference-house/external-review-fire-building-control-rh11'),
+      page('Human factors & inclusive design', '/docs/reference-house/external-review-human-factors-inclusive-design-rh11'),
       page('MEP & acoustic', '/docs/reference-house/external-review-mep-acoustic-rh11'),
       page('Regulatory baseline', '/docs/reference-house/external-review-regulatory-baseline-rh11'),
       page('Response template', '/docs/reference-house/external-review-response-template-rh11'),
