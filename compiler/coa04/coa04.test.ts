@@ -2,51 +2,60 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { describe, test } from 'node:test'
 
-import { createReferenceHouseOutputContext } from '../reference-house/output/context.js'
 import { REFERENCE_HOUSE_OUTPUTS } from '../reference-house/output/contract.js'
+import { createReferenceHouseOutputContext } from '../reference-house/output/context.js'
 import {
   renderReferenceHousePlan,
   renderReferenceHousePrincipalSection,
-  renderReferenceHouseSpatialSet
+  renderReferenceHouseSpatialInspectionSet
 } from '../reference-house/output/spatial.js'
 
-const context = createReferenceHouseOutputContext()
-const set = renderReferenceHouseSpatialSet(context)
-
 describe('COA-04 Reference House plan and section successors', () => {
+  const context = createReferenceHouseOutputContext()
+  const set = renderReferenceHouseSpatialInspectionSet(context)
+
   test('uses one canonical system compile and north-up inspection conventions', () => {
-    assert.equal(context.result.status, 'PASS')
-    assert.equal(set.groundFloor.includes('NORTH UP'), true)
-    assert.equal(set.firstFloor.includes('NORTH UP'), true)
-    assert.equal(set.principalSection.includes('LOOKING WEST'), true)
+    for (const plan of [set.groundFloor, set.firstFloor]) {
+      assert.match(plan, /data-convention="north-arrow"/)
+      assert.match(plan, /data-section="A–A"/)
+      assert.match(plan, /NORTH UP/)
+      assert.match(plan, new RegExp(`data-source-compile="${context.result.identity.compile.fingerprint}"`))
+    }
+    assert.match(set.principalSection, /data-section="A–A"/)
+    assert.match(set.principalSection, />S<\/text>/)
+    assert.match(set.principalSection, />N<\/text>/)
+    assert.match(set.principalSection, /SOUTH → NORTH/)
   })
 
   test('puts human architectural labels ahead of semantic IDs while preserving identity', () => {
-    assert.match(set.groundFloor, />Drawing<\/text>/)
-    assert.match(set.groundFloor, />G-DRAW-02<\/text>/)
-    assert.match(set.firstFloor, />Principal bedroom<\/text>/)
-    assert.match(set.firstFloor, />U-BED-P01<\/text>/)
+    for (const space of context.result.house.derived.spaces) {
+      const plan = space.levelId === 'GROUND' ? set.groundFloor : set.firstFloor
+      const human = space.label[0].toUpperCase() + space.label.slice(1)
+      assert.match(plan, new RegExp(`data-entity="${space.id}"`))
+      assert.match(plan, new RegExp(`<title>${human.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</title>`))
+      assert.ok(plan.indexOf(human) >= 0, `missing human label for ${space.id}`)
+      assert.ok(plan.indexOf(space.id) >= 0, `missing semantic ID ${space.id}`)
+    }
+    assert.match(set.firstFloor, /rotate\(-90[^)]*\)[^>]*>[\s\S]*East gallery/)
+    assert.match(set.firstFloor, /<title>Dry dressing \/ storage<\/title>/)
   })
 
   test('retains every numeric opening at its owned precision', () => {
-    for (const opening of context.result.house.derived.openings.filter(
-      (candidate) => candidate.widthAuthority !== 'unknown'
-    )) {
+    for (const opening of context.result.house.derived.openings) {
       const plan = opening.levelId === 'GROUND' ? set.groundFloor : set.firstFloor
       assert.match(plan, new RegExp(`data-entity="${opening.id}"`))
-      assert.match(plan, new RegExp(`data-width-authority="${opening.widthAuthority}"`))
+      assert.match(plan, new RegExp(`data-width-authority="${opening.width.kind}"`))
     }
   })
 
   test('shows qualitative opening obligations without inventing a point location', () => {
-    for (const opening of context.result.house.derived.openings.filter(
-      (candidate) => candidate.widthAuthority === 'unknown'
-    )) {
-      const plan = opening.levelId === 'GROUND' ? set.groundFloor : set.firstFloor
-      const start = plan.indexOf(`data-entity="${opening.id}"`)
-      assert.ok(start >= 0, `missing ${opening.id}`)
+    for (const relationship of context.source.qualitativeOpeningRelationships) {
+      const plan = relationship.levelId === 'GROUND' ? set.groundFloor : set.firstFloor
+      const start = plan.indexOf(`data-entity="${relationship.id}"`)
+      assert.ok(start >= 0, `missing ${relationship.id}`)
       const fragment = plan.slice(start, start + 500)
-      assert.match(fragment, /data-width-authority="unknown"/)
+      assert.match(fragment, /data-authority="qualitative"/)
+      assert.match(fragment, /data-geometry="unresolved"/)
       assert.doesNotMatch(fragment, /data-width=/)
     }
   })
@@ -97,7 +106,7 @@ describe('COA-04 Reference House plan and section successors', () => {
       'docs/reference-house/rhc3-service-topology.svg',
       'docs/reference-house/rhc4-boundary-topology.svg'
     ]) {
-      assert.doesNotThrow(() => readFileSync(path, 'utf8'))
+      assert.ok(readFileSync(path, 'utf8').startsWith('<svg'))
     }
   })
 })
