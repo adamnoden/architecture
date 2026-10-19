@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-05B",
   "programmeIssue": 161,
-  "status": "implementation_pending_proof",
+  "status": "implementation_proven_pending_merge",
   "baselineMainSha": "0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d",
   "entryState": {
     "historicalQueueRemaining": 0,
@@ -40,6 +40,22 @@
     "recent": "branch has no open PR or retention reason and head commit age is <= 14 days",
     "suspicious": "branch has no open PR, no retention reason and head commit age is > 14 days"
   },
+  "firstProof": {
+    "pr": 245,
+    "implementationHeadSha": "9725d95538fd38be9c3bd99826a7ded2029f2aad",
+    "workflowRunId": 39255049551,
+    "jobId": 118068114269,
+    "conclusion": "success",
+    "artifactId": 12187616745,
+    "artifactDigest": "sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623",
+    "summary": {
+      "total": 3,
+      "openPr": 2,
+      "recent": 1,
+      "retained": 0,
+      "suspicious": 0
+    }
+  },
   "safety": {
     "remoteMutationCapability": false,
     "automaticDeletion": false,
@@ -48,9 +64,9 @@
     "ageSignal": "head commit age; Git refs do not expose a reliable creation timestamp"
   },
   "acceptance": {
-    "auditWorkflowGreen": false,
-    "liveBranchClassificationProven": false,
-    "artifactUploaded": false,
+    "auditWorkflowGreen": true,
+    "liveBranchClassificationProven": true,
+    "artifactUploaded": true,
     "exactHeadPrValidationGreen": false,
     "merged": false,
     "postMergeValidationGreen": false,

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-05B",
   "programmeIssue": 161,
   "authority": {
@@ -44,11 +44,21 @@
     "mutationActions": []
   },
   "proof": {
-    "workflowRunId": null,
-    "workflowArtifactId": null,
-    "workflowArtifactDigest": null,
-    "prValidationRunId": null,
-    "result": null
+    "pr": 245,
+    "implementationHeadSha": "9725d95538fd38be9c3bd99826a7ded2029f2aad",
+    "workflowRunId": 39255049551,
+    "jobId": 118068114269,
+    "workflowConclusion": "success",
+    "workflowArtifactId": 12187616745,
+    "workflowArtifactDigest": "sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623",
+    "result": {
+      "total": 3,
+      "openPr": 2,
+      "recent": 1,
+      "retained": 0,
+      "suspicious": 0
+    },
+    "normalPrValidationRunId": null
   },
   "nextPacket": "BRH-05C"
 }

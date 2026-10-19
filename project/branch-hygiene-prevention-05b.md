@@ -6,93 +6,71 @@ BRH-05B installs the smallest durable branch-lifecycle monitor authorised by iss
 
 - baseline `main`: `0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d`
 - historical BRH deletion queue: empty
-- live namespace before packet creation:
-  - `main`
-  - `drw-05e-principal-section-spread-proof` — open draft PR #235
-  - `hfi-04d-kitchen-storage-fixed-work-zones` — newly created concurrent HFI work
+- live namespace before packet creation: `main`, DRW-05E and fresh concurrent HFI-04D
+- DRW-05E remained protected by open draft PR #235
 - `delete_branch_on_merge = true` remains established by BRH-05A
-
-The packet does not reinterpret or interfere with either live programme branch.
 
 ## Design
 
-The existing `scripts/branch-hygiene-audit.mjs` remains the single Git-history engine. It already provides the evidence 05B needs:
+The existing `scripts/branch-hygiene-audit.mjs` remains the single Git-history engine. It already provides exact head SHA, head commit timestamp, PR association, ahead/behind counts, branch-only commits, stable patch IDs and `git cherry` equivalence evidence.
 
-- exact branch head SHA;
-- head commit timestamp;
-- open/closed PR association;
-- ahead/behind counts;
-- branch-only and non-merge branch-only commits;
-- stable patch IDs;
-- `git cherry` unique/patch-equivalent signals.
+BRH-05B adds only `scripts/branch-orphan-report.mjs`, which classifies each non-`main` branch as:
 
-BRH-05B adds only `scripts/branch-orphan-report.mjs`, which classifies that evidence for review.
-
-A non-`main` branch is reported as:
-
-1. **`open-pr`** — at least one open PR exists for the branch;
-2. **`retained`** — no open PR, but `project/branch-hygiene-retentions.json` records a non-empty explicit retention reason;
-3. **`recent`** — no open PR or retention reason, but the head commit is no more than 14 days old;
+1. **`open-pr`** — at least one open PR exists;
+2. **`retained`** — no open PR, but `project/branch-hygiene-retentions.json` contains a non-empty reason;
+3. **`recent`** — neither of the above, but head commit age is no more than 14 days;
 4. **`suspicious`** — none of the above.
 
-`Suspicious` is deliberately only a review signal. The reporter exits successfully when suspicious branches exist; it does not turn a heuristic into an automatic destruction policy.
+`Suspicious` is a review signal only. It does not fail the workflow and never triggers deletion.
 
 ### Age limitation
 
-Git refs do not carry a reliable branch-creation timestamp. The audit therefore uses **head commit age** as the reproducible age signal. This is intentionally conservative: a newly created branch pointing at an old commit may be flagged early rather than silently treated as recent. Open PR or explicit retention evidence overrides that age signal.
+Git refs do not carry a reliable branch-creation timestamp. The reproducible age signal is therefore **head commit age**. This is conservative: a newly created ref pointing at an old commit may be surfaced for review rather than silently treated as new.
 
 ## Workflow
 
-`.github/workflows/branch-orphan-audit.yml` runs:
+`.github/workflows/branch-orphan-audit.yml` runs weekly (Monday 06:17 UTC), manually through `workflow_dispatch`, and on PRs that modify the audit itself.
 
-- weekly, Monday at 06:17 UTC;
-- manually through `workflow_dispatch`;
-- on PRs that modify the audit itself, so changes to the monitor are self-proving before merge.
-
-Permissions are restricted to:
+Its complete token permission set is:
 
 - `contents: read`
 - `pull-requests: read`
 
-The workflow:
+It checks out full history, runs the established audit, derives Markdown/JSON orphan reports, writes the Markdown to the Actions summary, and uploads all three report files as an artifact. There is no write permission, push command, deletion command or ref-update path.
 
-1. checks out full history;
-2. runs the established read-only branch-hygiene audit;
-3. derives the orphan report;
-4. writes the Markdown report to the Actions job summary;
-5. uploads raw audit JSON plus Markdown/JSON orphan reports as an artifact.
+## First live proof
 
-There is no write permission, deletion command, push command, branch mutation or stale-ref automation.
+The workflow self-tested on PR **#245** at implementation head `9725d95538fd38be9c3bd99826a7ded2029f2aad`.
+
+- workflow run: **39255049551**
+- job: **118068114269**
+- conclusion: **success**
+- artifact: **12187616745**
+- artifact digest: `sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623`
+- audited branches: **3**
+- `open-pr`: **2**
+- `recent`: **1**
+- `retained`: **0**
+- `suspicious`: **0**
+
+The proof matched the live topology: DRW-05E and BRH-05B had open PRs; HFI-04D was recent. No active branch was falsely labelled suspicious.
 
 ## Explicit retentions
 
-`project/branch-hygiene-retentions.json` is intentionally tiny. It maps a branch name to a human-readable reason when a durable branch without an open PR is intentionally retained. An empty map is the normal state.
-
-A retention entry suppresses only the `suspicious` label. It does not prevent later human review or grant permanent exemption from BRH doctrine.
+`project/branch-hygiene-retentions.json` is intentionally tiny. It maps branch names to human-readable reasons only when a durable branch without an open PR is intentionally retained. An empty map is normal. A retention entry suppresses only the `suspicious` label; it grants no permanent exemption from review.
 
 ## Report fields
 
-Every audited branch reports at least:
+Every audited branch reports branch/head identity, head-age signal, open PR association, ahead/behind `main`, branch-only commit count, unique/patch-equivalent counts, retention reason and review status.
 
-- branch name and exact head SHA;
-- head age signal;
-- open PR association;
-- ahead / behind `main`;
-- branch-only commit count;
-- unique / patch-equivalent `git cherry` counts;
-- explicit retention reason where present;
-- resulting review status.
+## Remaining acceptance
 
-## Acceptance
+Before BRH-05B closes:
 
-BRH-05B closes when:
-
-1. the workflow and reporter run successfully on the packet PR;
-2. the live branches are classified without false orphaning of DRW/HFI work;
-3. the generated report is available in both the job summary and uploaded artifact;
-4. normal repository validation is green on the exact final head;
-5. merge and post-merge publication validation pass;
-6. issue #161 records the proof and exact next packet.
+1. normal repository validation must be green on the exact final PR head;
+2. merge must use a fresh `main` lease;
+3. post-merge publication/Pages validation must pass;
+4. issue #161 must record the exact endpoint.
 
 ## Next packet
 
