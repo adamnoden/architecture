@@ -20,7 +20,8 @@
 <line x1="22" y1="73" x2="36" y2="62" class="line-secondary dash-provisional" data-entity="stair-flight-1-beyond" data-provisional="true" data-relation="beyond"/>
 <line x1="36" y1="62" x2="36" y2="51" class="line-secondary dash-provisional" data-entity="stair-flight-2-perpendicular-beyond" data-provisional="true" data-relation="perpendicular-beyond"/>
 <line x1="36" y1="51" x2="22" y2="40" class="line-cut" data-entity="stair-flight-3-cut" data-provisional="true" data-relation="cut"/>
-<text x="31" y="58.5" class="text-label" text-anchor="middle" data-entity="label-ground-south">Entrance hall / stair</text>
+<text x="27" y="57" class="text-label" text-anchor="middle" data-entity="label-ground-south-1">Entrance hall /</text>
+<text x="27" y="60" class="text-label" text-anchor="middle" data-entity="label-ground-south-2">stair</text>
 <text x="105" y="58.5" class="text-label" text-anchor="middle" data-entity="label-ground-north">Garden dining</text>
 <text x="31" y="27.5" class="text-label" text-anchor="middle" data-entity="label-upper-south">South landing / stair</text>
 <text x="94" y="26" class="text-label" text-anchor="middle" data-entity="label-upper-north-1">North</text>

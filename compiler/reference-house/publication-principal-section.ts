@@ -288,9 +288,14 @@ export const createPrincipalSectionPublicationScene = (
   const northLandingMid = spaceMidY(result, 'U-LAND-N01')
   const dressingMid = spaceMidY(result, 'U-DRESS-01')
   const courtMid = (result.derived.court.y0 + result.derived.court.y1) / 2
+  const groundSouthLabel = project.point(southMid, 1450)
 
   primitives.push(
-    textPrimitive('label-ground-south', project.point(southMid, 1450), 'Entrance hall / stair', 'label', 'middle'),
+    // Editorial fit only: the stair splits this room in section, so the original
+    // 22.6 mm single-line label cannot occupy the room without crossing a flight.
+    // Preserve the wording and move only the paper-space label block.
+    textPrimitive('label-ground-south-1', { x: groundSouthLabel.x - 4, y: groundSouthLabel.y - 1.5 }, 'Entrance hall /', 'label', 'middle'),
+    textPrimitive('label-ground-south-2', { x: groundSouthLabel.x - 4, y: groundSouthLabel.y + 1.5 }, 'stair', 'label', 'middle'),
     textPrimitive('label-ground-north', project.point(northGroundMid, 1450), 'Garden dining', 'label', 'middle'),
     textPrimitive('label-upper-south', project.point(upperSouthMid, 4550), 'South landing / stair', 'label', 'middle'),
     textPrimitive('label-upper-north-1', project.point(northLandingMid, 4700), 'North', 'label', 'middle'),
