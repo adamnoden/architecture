@@ -1,29 +1,26 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "packet": "BRH-04E",
   "programmeIssue": 161,
+  "status": "complete",
   "baselineHistory": [
     "439eb71841dae16ad10cb675d5b94f0430a146ca",
     "9379034a41b618191698e9842659c90ff69514b7",
     "d7a6e556e59c27512d73fdd2c0028924c5aad5e7",
     "be0b328661e5fde92681c79082a8efec6775cd8a"
   ],
-  "baselineMainSha": "be0b328661e5fde92681c79082a8efec6775cd8a",
-  "restartReason": "HFI-03A and DRW-05B moved main before destructive authorisation. Subsequently a direct-main noop file was added and removed; d7a6e556 to be0b3286 is ahead 2 / behind 0 with zero net files. Every prior lease was invalidated before deletion.",
-  "namespaceCountAtRecomputedCheckpointIncludingMainAndPacketBranch": 64,
-  "openPrSnapshotAtRecomputedCheckpoint": [{"pr":229,"head":"brh-04e-controlled-deletion-5","protected":true}],
-  "concurrentProtectedRefs": [{"name":"drw-05c-principal-section-renderer","reason":"fresh active DRW ref; X/protected"}],
+  "destructiveLeaseMainSha": "be0b328661e5fde92681c79082a8efec6775cd8a",
+  "postDeleteVerificationMainSha": "021d66930b09510defe30b6197cb8ab463c98d59",
   "sourceAuthority": {
     "brh01aBaseline":"b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
-    "compareToExecutionMain":{"status":"ahead","aheadBy":227,"behindBy":0},
     "xReconciliation":"project/branch-hygiene-x-reconciliation.{json,md,provenance.json}",
-    "salvageAuthority":"project/branch-hygiene-salvage-proof.{json,md,provenance.json}"
+    "salvageAuthority":"project/branch-hygiene-salvage-proof.{json,md,provenance.json}",
+    "semanticReviewAuthority":"project/branch-hygiene-semantic-review-02*.{json,md,provenance.json}"
   },
   "specialReproofEvidence": {
-    "brh-02g-publication-editorial-review": {"headSha":"708ca16ac46ee40f0759a1825f557924cfd0694c","currentMainRelation":"ancestor","classification":"A"},
+    "brh-02g-publication-editorial-review": {"headSha":"708ca16ac46ee40f0759a1825f557924cfd0694c","classification":"A","reason":"exact ancestor of main before deletion"},
     "brh-03-salvage-necessity-proof": {
       "headSha":"3043c99d360f17178332bf92a3294868abef506f",
-      "mergeBaseSha":"24aa34e8806ccc721496fe55af9517a83a338d9d",
       "branchOnlyCommitCount":2,
       "branchOnlyCommitShas":["4e76a6f9fd9c7d7a8c06a8929fedb12fbc046940","3043c99d360f17178332bf92a3294868abef506f"],
       "branchOnlyPaths":["project/branch-hygiene-salvage-closeout.json","project/branch-hygiene-salvage-closeout.md"],
@@ -34,7 +31,28 @@
   "candidateCount":16,
   "candidateClassCounts":{"A":15,"C":1,"B":0,"D":0,"X":0},
   "candidateSetSha256":"2807c62f90e4bfb15cb422e0ae9403ce0669da2a363ad45ee370ee53ec8e9539",
-  "mutationPerformed":false,
+  "deletionProof": {
+    "finalAuthorisationNamespaceCount":65,
+    "postDeleteNamespaceCount":47,
+    "authorisedDeletedCount":16,
+    "allAuthorisedCandidatesAbsent":true,
+    "unexpectedHistoricalDeletionCount":0,
+    "independentlyRetiredActiveRefs":[
+      {"branch":"drw-05c-principal-section-renderer","pr":230},
+      {"branch":"hfi-03b-continuous-ground-plane","pr":231}
+    ],
+    "transientNetZeroRefCycles":[
+      {"branch":"hfi-03c-object-movement","pr":232},
+      {"branch":"hfi-03d-domestic-task-routes","pr":233},
+      {"branch":"drw-05d-principal-section-artifact","pr":234}
+    ],
+    "endpointEquation":"65 - 16 - 2 = 47",
+    "remainingNamespaceComposition":{"main":1,"packetBranch":1,"classB":5,"reviewedClassC":40},
+    "openPrSnapshot":[{"pr":229,"head":"brh-04e-controlled-deletion-5","protected":true}]
+  },
+  "mutationPerformed":true,
   "repositorySettingsChanged":false,
-  "nextAction":"Take one final post-record-write exact ref snapshot plus main/open-PR check. Only if all 16 candidate heads and be0b3286 remain exact may owner-side deletion be authorised."
+  "branchRewritePerformed":false,
+  "nextPacket":"BRH-04F",
+  "nextAction":"Validate this exact completed proof head, then merge under a fresh main/open-PR lease and verify exact first-parent identity before issue closeout."
 }
