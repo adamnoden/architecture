@@ -74,8 +74,11 @@ const style = (): string => {
   const lines = Object.entries(t.lineMm)
     .map(([role, width]) => `.line-${role}{stroke:${t.ink.primary};stroke-width:${formatDrawingNumber(width)};fill:none;stroke-linecap:butt;stroke-linejoin:miter}`)
     .join('')
+  // The SVG viewBox is expressed in paper millimetres: one user unit maps to one
+  // physical mm at publication placement. CSS px preserves that user-space value;
+  // CSS mm would be converted by Chromium at 96 px/in before the viewBox transform.
   const text = (Object.keys(t.textMm) as Array<keyof typeof t.textMm>)
-    .map((role) => `.text-${role}{font-family:${t.fontFamily};font-size:${formatDrawingNumber(t.textMm[role])}mm;font-weight:${t.textWeight[role]};fill:${t.ink.primary}}`)
+    .map((role) => `.text-${role}{font-family:${t.fontFamily};font-size:${formatDrawingNumber(t.textMm[role])}px;font-weight:${t.textWeight[role]};fill:${t.ink.primary}}`)
     .join('')
   const dash = Object.entries(t.dashMm)
     .map(([role, values]) => `.dash-${role}{stroke-dasharray:${values.map(formatDrawingNumber).join(' ')}}`)
