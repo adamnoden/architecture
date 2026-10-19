@@ -1,0 +1,55 @@
+name: Prove DRW garden elevation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'publication/specimens/drw08c/**'
+      - 'docs/publication/architectural-drawing-drw08c-garden-elevation-proof.md'
+      - 'docs/reference-house/publication-garden-elevation.svg'
+      - 'compiler/reference-house/publication-garden-elevation*.ts'
+      - 'compiler/reference-house/generate-publication-garden-elevation.ts'
+      - '.github/workflows/drw-garden-elevation-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drw-garden-elevation-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate garden elevation SVG
+        run: npx tsx compiler/reference-house/generate-publication-garden-elevation.ts
+      - name: Prepare spread
+        run: npx tsx publication/specimens/drw08c/prepare.ts
+      - name: Build A4 proof
+        run: DRW08C_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw08c/vivliostyle.config.js
+      - name: Build B5 proof
+        run: DRW08C_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw08c/vivliostyle.config.js
+      - name: Validate garden elevation proof
+        run: npx tsx publication/specimens/drw08c/validate.ts
+      - name: Upload generated drawing and proof PDFs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-08c-garden-elevation-proof
+          path: |
+            docs/reference-house/publication-garden-elevation.svg
+            publication/specimens/drw08c/dist/drw08c-a4.pdf
+            publication/specimens/drw08c/dist/drw08c-b5.pdf
+          if-no-files-found: error
+          retention-days: 30
