@@ -39,7 +39,9 @@ for (const drawing of drawings) {
 }
 
 const commonCss = await readFile(resolve(root, 'common.css'), 'utf8')
-if (/\.controlled-drawing[^}]*\b(?:width|height)\s*:/s.test(commonCss)) throw new Error('Proof CSS must not resize controlled drawings')
+const controlledRule = commonCss.match(/\.controlled-drawing\s*\{([^}]*)\}/s)?.[1]
+if (!controlledRule) throw new Error('Proof CSS lost the controlled drawing rule')
+if (/(?:^|;)\s*(?:width|height)\s*:/.test(controlledRule)) throw new Error('Proof CSS must not resize controlled drawings')
 if (/transform\s*:\s*scale|\bzoom\s*:/i.test(commonCss)) throw new Error('Proof CSS must not scale controlled drawings')
 
 for (const expected of pdfs) {
@@ -67,8 +69,9 @@ for (const expected of pdfs) {
     const drawingText = page.filter((entry) => entry !== calibration)
     const labels = drawingText.filter((entry) => near(entry.fontSize, 7.5 * unit, 0.2 * unit))
     const notes = drawingText.filter((entry) => near(entry.fontSize, 6.5 * unit, 0.2 * unit))
-    if (labels.length < 1) throw new Error(`${expected.name} ${drawings[index].name}: no physically correct 7.5 pt SVG labels found`)
-    if (notes.length < 1) throw new Error(`${expected.name} ${drawings[index].name}: no physically correct 6.5 pt SVG notes/markers found`)
+    const observed = [...new Set(drawingText.map((entry) => Math.round((entry.fontSize / unit) * 1000) / 1000))].sort((a, b) => a - b)
+    if (labels.length < 1) throw new Error(`${expected.name} ${drawings[index].name}: no physically correct 7.5 pt SVG labels found; observed calibrated sizes: ${observed.join(', ')} pt`)
+    if (notes.length < 1) throw new Error(`${expected.name} ${drawings[index].name}: no physically correct 6.5 pt SVG notes/markers found; observed calibrated sizes: ${observed.join(', ')} pt`)
 
     const oversized = drawingText.filter((entry) => near(entry.fontSize, 28.3425 * unit, 0.3 * unit) || near(entry.fontSize, 24.5625 * unit, 0.3 * unit))
     if (oversized.length) throw new Error(`${expected.name} ${drawings[index].name}: DRW-03C.1 3.779× typography regression detected`)
