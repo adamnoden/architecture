@@ -1,73 +1,46 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04F",
   "programmeIssue": 161,
-  "status": "authorised_pending_execution",
+  "status": "complete",
   "packetBranch": "brh-04f-controlled-deletion-6",
   "discoveryMainSha": "ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
-  "authority": {
-    "programme": "issue #161",
-    "priorPacket": "project/branch-hygiene-deletion-04e.{json,md,provenance.json}",
-    "BClassification": "project/branch-hygiene-classification.{json,md,provenance.json}",
-    "semanticCompletion": "project/branch-hygiene-x-reconciliation.{json,md,provenance.json}",
-    "CReviews": [
-      "project/branch-hygiene-semantic-review-02c.{json,md,provenance.json}",
-      "project/branch-hygiene-semantic-review-02d.{json,md,provenance.json}",
-      "project/branch-hygiene-semantic-review-02f.{json,md,provenance.json}"
-    ]
+  "destructiveLeaseMainSha": "ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
+  "destructiveWorkflow": {
+    "path": ".github/workflows/brh-04f-controlled-delete.yml",
+    "headSha": "eb6bb50a0b9d25bd92c589df466b023db9f7bb05",
+    "runId": 39242660079,
+    "jobId": 118026967683,
+    "artifactId": 12182117366,
+    "artifactDigest": "sha256:c836f528c0043f41266fa3e5484b4dfaea53dce6fdd63b9543b506ab1ccb782f",
+    "temporaryWorkflowRemovedBeforeReview": true
   },
   "candidateCount": 25,
-  "candidateClassCounts": {
-    "B": 5,
-    "C": 20
-  },
+  "candidateClassCounts": {"B":5,"C":20},
   "candidateSetSha256": "0918c27ab42175ad27f1b81c40dd1a307bf384790119d3e290aa3c5106e89ff8",
-  "candidateNames": [
-    "ch00-compiler-hardening-plan",
-    "external-maintenance-geography",
-    "maturity-model-enforcement",
-    "pr00e-e2-e4-editorial-hardening",
-    "pub-san-back-matter",
-    "cf-01-contrast-fixture",
-    "ch-05-determinism-identity-provenance",
-    "ch-05-housekeeping-sync",
-    "ch-08-distillation-deletion",
-    "coa-04-plan-section-successors",
-    "coa-05-topology-successors-final",
-    "coa-06-output-integration",
-    "g01-completion-programme",
-    "g01-d10-normative",
-    "g01-d10s-specificity",
-    "g01-d11-v01-freeze",
-    "g01-d12-reference-house",
-    "g01-d13-closeout",
-    "g01-d8-falsification",
-    "g01-d9-holdout",
-    "pattern-language-overhaul",
-    "pattern-language-phase6-audit",
-    "pattern-language-phase7",
-    "pattern-language-phase7-migration",
-    "pattern-language-phase8-crosswalk"
-  ],
-  "protectedAtDiscovery": [
-    {
-      "branch": "drw-05e-principal-section-spread-proof",
-      "pr": 235,
-      "headSha": "e19e8be7db4f2063d3d9f8e5f47160cc4e469195"
-    },
-    {
-      "branch": "drw-03c1-physical-svg-type",
-      "reason": "fresh concurrent DRW corrective work"
-    }
-  ],
-  "destructiveControl": {
-    "requiredMainSha": "ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
-    "expectedHeadPerCandidate": true,
-    "openPrCandidateRefusal": true,
-    "leaseStyleDeletion": true,
-    "exactPostDeleteRemovedSetProof": true,
-    "workflowTemporary": true
+  "destructiveSnapshot": {
+    "namespaceCount": 50,
+    "mainSha": "ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
+    "packetHeadSha": "eb6bb50a0b9d25bd92c589df466b023db9f7bb05",
+    "candidateOpenPrConflictCount": 0
   },
-  "mutationPerformed": false,
-  "repositorySettingsChanged": false
+  "postDeleteProof": {
+    "namespaceCount": 25,
+    "removedCount": 25,
+    "unexpectedRemovedCount": 0,
+    "addedDuringWindowCount": 0,
+    "allCandidatesAbsent": true,
+    "remainingClassB": 0,
+    "remainingReviewedClassC": 20,
+    "remainingReviewedC": [
+      "pr00b-part-iv-synthesis","pr00d-d3-reference-house-architecture","pr00d-d3-reference-house-figures","pr00d-d4-reference-house-systems","pr00d-d5-visual-integration","pr00e-editorial-hardening","pr00f-integrity","project-integrity-refactor","prototype-p03-engineer-review-brief","pub-san-computational-surface","pub-san-research-evidence","pub-san-rh-technical","public-url-phase-1","reference-house-phase5","rh-c1","rh-c2-structural-view","rh-c3-service-view","rh-c4-boundary-view","rh-c5-target-calculations","workmanship-robustness"
+    ],
+    "activeSurvivors": ["drw-05e-principal-section-spread-proof","drw-03c1-physical-svg-type","hfi-04a-bathing-toileting-dressing"]
+  },
+  "mutationPerformed": true,
+  "atomicRemoteTransaction": true,
+  "repositorySettingsChanged": false,
+  "branchRewritePerformed": false,
+  "nextPacket": "BRH-04G",
+  "nextAction": "Take a fresh live lease and delete the remaining 20 reviewed C refs; do not reuse BRH-04F leases."
 }

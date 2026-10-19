@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04F",
   "programmeIssue": 161,
-  "status": "authorised_pending_execution",
+  "status": "complete",
   "packetBranch": "brh-04f-controlled-deletion-6",
   "execution": {
     "discoveryMainSha": "ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
@@ -12,56 +12,29 @@
     "expectedNamespaceCountAfterPacketBranchIncludingMain": 49,
     "hardDeletionCap": 25,
     "candidateCount": 25,
-    "candidateClassCounts": {
-      "B": 5,
-      "C": 20,
-      "A": 0,
-      "D": 0,
-      "X": 0
-    },
+    "candidateClassCounts": {"B":5,"C":20,"A":0,"D":0,"X":0},
     "deletionMechanism": "temporary packet-local GitHub Actions runner using exact-ref force-with-lease",
-    "connectorDeleteBranchActionAvailable": false
+    "connectorDeleteBranchActionAvailable": false,
+    "destructiveLeaseMainSha": "ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
+    "destructiveWorkflowHeadSha": "eb6bb50a0b9d25bd92c589df466b023db9f7bb05",
+    "destructiveWorkflowRunId": 39242660079,
+    "destructiveWorkflowJobId": 118026967683,
+    "proofArtifactId": 12182117366,
+    "proofArtifactDigest": "sha256:c836f528c0043f41266fa3e5484b4dfaea53dce6fdd63b9543b506ab1ccb782f",
+    "destructiveSnapshotCountIncludingMain": 50,
+    "postDeleteSnapshotCountIncludingMain": 25
   },
-  "discoveryOpenPrSnapshot": [
-    {
-      "pr": 235,
-      "branch": "drw-05e-principal-section-spread-proof",
-      "headSha": "e19e8be7db4f2063d3d9f8e5f47160cc4e469195",
-      "protected": true,
-      "draft": true
-    }
-  ],
-  "protectedRecentRefs": [
-    "drw-03c1-physical-svg-type",
-    "drw-05e-principal-section-spread-proof"
-  ],
+  "discoveryOpenPrSnapshot": [{"pr":235,"branch":"drw-05e-principal-section-spread-proof","headSha":"e19e8be7db4f2063d3d9f8e5f47160cc4e469195","protected":true,"draft":true}],
+  "protectedRecentRefs": ["drw-03c1-physical-svg-type","drw-05e-principal-section-spread-proof"],
   "selection": {
     "rule": "Consume the complete BRH-01B B queue first, then take whole reviewed-C semantic groups without exceeding the 25-ref BRH-04 cap.",
-    "BGroup": {
-      "authority": "project/branch-hygiene-classification.{json,md,provenance.json}",
-      "count": 5
-    },
+    "BGroup": {"authority":"project/branch-hygiene-classification.{json,md,provenance.json}","count":5},
     "CGroups": [
-      {
-        "packet": "BRH-02C",
-        "group": "compiler/computational",
-        "count": 7
-      },
-      {
-        "packet": "BRH-02D",
-        "group": "G01 completion",
-        "count": 8
-      },
-      {
-        "packet": "BRH-02F",
-        "group": "pattern language",
-        "count": 5
-      }
+      {"packet":"BRH-02C","group":"compiler/computational","count":7},
+      {"packet":"BRH-02D","group":"G01 completion","count":8},
+      {"packet":"BRH-02F","group":"pattern language","count":5}
     ],
-    "queueAfterSuccess": {
-      "B": 0,
-      "reviewedC": 20
-    }
+    "queueAfterSuccess": {"B":0,"reviewedC":20}
   },
   "candidateSetSha256": "0918c27ab42175ad27f1b81c40dd1a307bf384790119d3e290aa3c5106e89ff8",
   "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
@@ -93,16 +66,58 @@
     {"name":"pattern-language-phase8-crosswalk","expectedHeadSha":"69dd1d10041b8c930c05a2eb2015d8357e887e67","class":"C"}
   ],
   "safety": {
-    "requiredMainSha": "ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
-    "requireAllCandidateHeadsExact": true,
-    "rejectCandidateWithOpenPr": true,
-    "deleteWithExpectedHeadLease": true,
-    "rejectMainDeletion": true,
-    "postDeleteExactRemovedSetProof": true,
-    "concurrentAdditionsAllowedButRecorded": true,
-    "unexpectedConcurrentRemovalsFailProof": true,
-    "temporaryWorkflowMustBeRemovedBeforeReview": true,
-    "repositorySettingsChanged": false
+    "requiredMainSha":"ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
+    "requireAllCandidateHeadsExact":true,
+    "rejectCandidateWithOpenPr":true,
+    "deleteWithExpectedHeadLease":true,
+    "rejectMainDeletion":true,
+    "postDeleteExactRemovedSetProof":true,
+    "concurrentAdditionsAllowedButRecorded":true,
+    "unexpectedConcurrentRemovalsFailProof":true,
+    "temporaryWorkflowMustBeRemovedBeforeReview":true,
+    "repositorySettingsChanged":false
   },
-  "nextState": "After guarded deletion succeeds, re-enumerate the complete namespace, reconcile concurrent activity, replace this authorisation record with completed proof, remove the temporary workflow, and validate/merge the packet under a fresh lease."
+  "postDeleteProof": {
+    "all25CandidatesAbsent": true,
+    "authorisedDeletedCount": 25,
+    "unexpectedRemovedRefCount": 0,
+    "concurrentAddedDuringDeletionWindowCount": 0,
+    "BRemaining": 0,
+    "reviewedCRemaining": 20,
+    "remainingReviewedC": [
+      "pr00b-part-iv-synthesis","pr00d-d3-reference-house-architecture","pr00d-d3-reference-house-figures","pr00d-d4-reference-house-systems","pr00d-d5-visual-integration","pr00e-editorial-hardening","pr00f-integrity","project-integrity-refactor","prototype-p03-engineer-review-brief","pub-san-computational-surface","pub-san-research-evidence","pub-san-rh-technical","public-url-phase-1","reference-house-phase5","rh-c1","rh-c2-structural-view","rh-c3-service-view","rh-c4-boundary-view","rh-c5-target-calculations","workmanship-robustness"
+    ],
+    "protectedSurvivors": [
+      {"branch":"drw-05e-principal-section-spread-proof","pr":235,"headSha":"e19e8be7db4f2063d3d9f8e5f47160cc4e469195"},
+      {"branch":"drw-03c1-physical-svg-type","pr":236,"currentObservedHeadSha":"f63a8265407ae16ea13fb148b3b19b48a65e1fd1","note":"advanced after destructive snapshot; never a candidate"},
+      {"branch":"hfi-04a-bathing-toileting-dressing","currentObservedHeadSha":"ec5a4f84cc6706011c09bb9eb914eca252a798f5","note":"created before destructive snapshot; never a candidate"}
+    ],
+    "namespaceCompositionAtIndependentVerification": {"main":1,"packetBranch":1,"activeProgrammeRefs":3,"reviewedClassC":20,"total":25},
+    "reconciliationEquation": "50 destructive-snapshot refs - 25 authorised atomic deletions = 25 post-delete refs",
+    "discoveryToDestructiveSnapshotNote": "The namespace grew from expected 49 after packet-branch creation to 50 before mutation because HFI-04A appeared. It was included in the fresh destructive snapshot, was not a candidate, and survived.",
+    "openPrCandidateConflictsAtDeletion": 0,
+    "openPrSurvivorsObservedAfterDeletion": [
+      {"pr":235,"branch":"drw-05e-principal-section-spread-proof","draft":true},
+      {"pr":236,"branch":"drw-03c1-physical-svg-type","draft":true}
+    ]
+  },
+  "mutation": {
+    "branchDeletionPerformed": true,
+    "deletedCount": 25,
+    "BDeleted": 5,
+    "CDeleted": 20,
+    "ADeleted": 0,
+    "DDeleted": 0,
+    "XDeleted": 0,
+    "atomicRemoteTransaction": true,
+    "repositorySettingsChanged": false,
+    "branchRewritePerformed": false
+  },
+  "temporaryDeletionWorkflow": {
+    "path": ".github/workflows/brh-04f-controlled-delete.yml",
+    "purpose": "packet-local exact-head atomic deletion runner",
+    "removedBeforeReview": true
+  },
+  "nextPacket": "BRH-04G",
+  "nextAction": "Recover a fresh live main/open-PR/namespace lease and delete the remaining 20 reviewed C refs as a new bounded packet. Do not reuse BRH-04F leases."
 }
