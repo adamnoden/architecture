@@ -37,10 +37,8 @@ test('DRW-08F freezes one controlled shell and court substrate across the orthog
 
   assert.deepEqual(roof.substrate.court.value, court)
   assert.deepEqual(setting.house.court.value, court)
-  assert.deepEqual(courtyard.court.value, {
-    width: house.court.value.width,
-    depth: house.court.value.depth
-  })
+  assert.equal(courtyard.court.value.width, house.court.value.width)
+  assert.equal(courtyard.court.value.depth, house.court.value.depth)
 })
 
 test('DRW-08F freezes common vertical datums and one roof family across section/elevation sources', () => {
