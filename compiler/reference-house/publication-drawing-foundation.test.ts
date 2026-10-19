@@ -41,7 +41,7 @@ describe('DRW-03C publication drawing foundation', () => {
     })
   })
 
-  test('serializes deterministic SVG geometry in user-space millimetres and CSS type in explicit physical millimetres', () => {
+  test('serializes deterministic SVG geometry in user-space millimetres and type as matching SVG user units', () => {
     const scene: DrawingScene = {
       widthMm: 128,
       heightMm: 112,
@@ -95,10 +95,10 @@ describe('DRW-03C publication drawing foundation', () => {
     assert.match(a, /width="128mm" height="112mm" viewBox="0 0 128 112"/)
     assert.match(a, /\.line-cut\{stroke:#000000;stroke-width:0\.5;/)
     assert.match(a, /\.line-secondary\{stroke:#000000;stroke-width:0\.18;/)
-    assert.match(a, /\.text-label\{[^}]*font-size:2\.646mm;/)
-    assert.match(a, /\.text-note\{[^}]*font-size:2\.293mm;/)
-    assert.match(a, /\.text-marker\{[^}]*font-size:2\.293mm;/)
-    assert.doesNotMatch(a, /font-size:(?:2\.646|2\.293);/)
+    assert.match(a, /\.text-label\{[^}]*font-size:2\.646px;/)
+    assert.match(a, /\.text-note\{[^}]*font-size:2\.293px;/)
+    assert.match(a, /\.text-marker\{[^}]*font-size:2\.293px;/)
+    assert.doesNotMatch(a, /font-size:(?:2\.646|2\.293)mm;/)
     assert.match(a, /\.dash-provisional\{stroke-dasharray:1 1\}/)
     assert.match(a, /data-provisional="false" data-source="SHELL-01"/)
   })
