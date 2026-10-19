@@ -119,7 +119,7 @@ describe('DRW-06C principal-front-elevation renderer', () => {
     assert.doesNotMatch(ids, /ridge|canopy|panel|pilaster|seam|slab|course|decorative|roof-profile/i)
   })
 
-  test('uses controlled level datums only as side references, not facade courses', () => {
+  test('uses compact controlled level datums only as side references, not facade courses', () => {
     const datumLines = lines().filter((primitive) => primitive.id.startsWith('level-'))
     assert.equal(datumLines.length, 5)
     assert.ok(datumLines.every((primitive) => primitive.a.x > 134 && primitive.b.x > 134))
@@ -127,12 +127,18 @@ describe('DRW-06C principal-front-elevation renderer', () => {
     const values = texts().map((primitive) => primitive.value)
     for (const label of [
       'GFFL ±0.000',
-      'Ground ceiling +2.950',
+      'G ceiling +2.950',
       'First FFL +3.300',
-      'Upper ceiling +6.000',
-      '≈ Cornice control +6.250',
+      'U ceiling +6.000',
+      '≈ Cornice +6.250',
       '3 m'
     ]) assert.ok(values.includes(label), label)
+
+    for (const obsolete of [
+      'Ground ceiling +2.950',
+      'Upper ceiling +6.000',
+      '≈ Cornice control +6.250'
+    ]) assert.equal(values.includes(obsolete), false, obsolete)
   })
 
   test('serializes deterministically with uncertainty surviving black-only output and no packet-history leakage', () => {
