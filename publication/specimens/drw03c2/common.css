@@ -1,0 +1,24 @@
+html, body { margin: 0; padding: 0; }
+* { box-sizing: border-box; }
+.proof-page {
+  position: relative;
+  width: var(--page-width);
+  height: var(--page-height);
+  break-before: page;
+  break-after: page;
+  overflow: hidden;
+}
+.proof-page:first-child { break-before: auto; }
+.calibration {
+  position: absolute;
+  left: 5mm;
+  top: 5mm;
+  font: 10pt/1 Arial, Helvetica, sans-serif;
+}
+.controlled-drawing {
+  position: absolute;
+  left: 5mm;
+  top: 20mm;
+  display: block;
+  max-width: none;
+}
