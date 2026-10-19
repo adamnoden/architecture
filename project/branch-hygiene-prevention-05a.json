@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-05A",
+  "programmeIssue": 161,
+  "status": "verification_pending_merge",
+  "packetBranch": "brh-05a-auto-delete-verification",
+  "baselineMainSha": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
+  "entryState": {
+    "deleteBranchOnMerge": true,
+    "settingMutationRequired": false,
+    "settingMutationPerformed": false,
+    "historicalQueueRemaining": 0,
+    "liveBranchesBeforePacket": [
+      "main",
+      "drw-05e-principal-section-spread-proof",
+      "hfi-04c-environmental-electrical-controls"
+    ],
+    "openPrs": [
+      {
+        "pr": 235,
+        "branch": "drw-05e-principal-section-spread-proof",
+        "protected": true
+      }
+    ]
+  },
+  "functionalEvidenceOnEntry": {
+    "mergedPr": 241,
+    "mergedHeadBranch": "drw-05c1-principal-section-label-fit",
+    "mergedHeadSha": "b41d2e944d209427f4da0af42a10b8b88ce92501",
+    "mergeCommitSha": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
+    "headBranchAbsentFromFreshEnumeration": true
+  },
+  "acceptance": {
+    "exactHeadPrValidationGreen": false,
+    "mergedUnderFreshMainLease": false,
+    "postMergeSettingStillTrue": false,
+    "packetBranchAutoDeleted": false,
+    "issueCloseoutRecorded": false
+  },
+  "safety": {
+    "manualBranchDeletionPerformed": false,
+    "branchRewritePerformed": false,
+    "unrelatedRepositorySettingChanged": false,
+    "activeBranchesProtected": true
+  },
+  "nextPacket": "BRH-05B"
+}
