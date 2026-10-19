@@ -36,7 +36,7 @@ If the escape strategy requires a protected stair, different opening geometry or
 
 ## Human factors and inclusive design
 
-The project now carries a dedicated [RH-11 human-factors and inclusive-design review brief](external-review-human-factors-inclusive-design-rh11.md). It asks a competent reviewer to challenge repeated-use routes and interfaces as complete occupied actions without turning stronger project preferences into statutory claims or every specialist scenario into a universal design condition.
+The project also carries a dedicated specialist human-factors and inclusive-design review brief. It asks a competent reviewer to challenge repeated-use routes and interfaces as complete occupied actions without turning stronger project preferences into statutory claims or every specialist scenario into a universal design condition.
 
 The main questions include:
 
@@ -47,7 +47,7 @@ The main questions include:
 - whether repeated domestic tasks, especially the current upstairs sleeping/bathing ↔ ground-floor laundry relationship, create a material burden that deserves a local or architectural correction;
 - which questions must remain open until a real site, product family or user brief exists.
 
-Preparation of that review brief establishes review readiness only. It does not constitute external validation, inclusive-design certification or a maturity promotion.
+Preparation of that specialist brief establishes review readiness only. It does not constitute external validation, inclusive-design certification or a maturity promotion.
 
 ## Building services and acoustics
 
