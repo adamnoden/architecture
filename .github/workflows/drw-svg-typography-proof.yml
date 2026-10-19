@@ -1,0 +1,61 @@
+name: Prove DRW SVG physical typography
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/publication-drawing/**'
+      - 'compiler/reference-house/publication-*.ts'
+      - 'compiler/reference-house/generate-publication-*.ts'
+      - 'docs/reference-house/publication-ground-floor-plan.svg'
+      - 'docs/reference-house/publication-first-floor-plan.svg'
+      - 'docs/reference-house/publication-principal-section.svg'
+      - 'publication/specimens/drw03c2/**'
+      - '.github/workflows/drw-svg-typography-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drw-svg-typography-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Prepare fresh controlled drawings
+        run: npx tsx publication/specimens/drw03c2/prepare.ts
+
+      - name: Build A4 browser/PDF proof
+        run: DRW03C2_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw03c2/vivliostyle.config.js
+
+      - name: Build B5 browser/PDF proof
+        run: DRW03C2_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw03c2/vivliostyle.config.js
+
+      - name: Validate physical typography
+        run: npx tsx publication/specimens/drw03c2/validate.ts
+
+      - name: Upload proof PDFs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-03c2-svg-typography-proof
+          path: |
+            publication/specimens/drw03c2/dist/drw03c2-a4.pdf
+            publication/specimens/drw03c2/dist/drw03c2-b5.pdf
+          if-no-files-found: warn
+          retention-days: 30
