@@ -92,7 +92,7 @@ if (!/width="166mm" height="92mm"/.test(elevationSvg)) throw new Error('Controll
 if (!/data-scale-denominator="100"/.test(elevationSvg)) throw new Error('Controlled principal front elevation is not true 1:100')
 if (!elevationSvg.includes('font-size:2.646px') || !elevationSvg.includes('font-size:2.293px')) throw new Error('Controlled elevation lost browser-safe SVG user-space typography units')
 if (/font-size:(?:2\.646|2\.293)mm/.test(elevationSvg)) throw new Error('Controlled elevation regressed to browser-expanding CSS mm typography units')
-for (const semantic of ['Provisional opening geometry', 'Entrance lower termination unresolved', 'GFFL ±0.000', '≈ Cornice control +6.250']) if (!elevationSvg.includes(semantic)) throw new Error(`Controlled elevation lost semantic content: ${semantic}`)
+for (const semantic of ['Provisional opening geometry', 'Entrance lower termination unresolved', 'GFFL ±0.000', '≈ Cornice +6.250']) if (!elevationSvg.includes(semantic)) throw new Error(`Controlled elevation lost semantic content: ${semantic}`)
 for (const token of ['--fold-exclusion: 12mm', '--drawing-fold-offset: 5mm', 'width: 166mm', 'height: 92mm']) if (!commonCss.includes(token)) throw new Error(`Spread CSS lost physical token: ${token}`)
 if (/transform\s*:\s*scale|zoom\s*:/i.test(commonCss + a4Css + b5Css)) throw new Error('Spread proof must not scale controlled drawing geometry')
 if (!/dash-provisional/.test(elevationSvg)) throw new Error('Controlled elevation lost provisional line notation')
