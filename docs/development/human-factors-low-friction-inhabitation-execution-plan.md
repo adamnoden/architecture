@@ -2,7 +2,11 @@
 
 **Owning programme:** [`human-factors-low-friction-inhabitation-programme.md`](human-factors-low-friction-inhabitation-programme.md)  
 **Owning issue:** #195  
+**Execution state:** **COMPLETE — 41/41 packets integrated**  
+**Closeout:** HFI-10 / PR #307; merge `96c13ae4349ac1df0e125a08e1442e188e73ef77`; issue #195 closed  
 **Execution rule:** numbered stages establish dependency order; **lettered packets are the units of work**.
+
+This plan is retained as historical/restart provenance for the completed HFI programme. It is **not** a live work queue and authorises no further HFI packet. Future human-factors evidence should reopen its destination authority rather than revive HFI automatically.
 
 This plan exists because HFI cuts across doctrine, evidence, Reference House geometry, publication, delivery and computation. It must therefore be easier to pause safely than to continue vaguely.
 
@@ -324,8 +328,8 @@ Split rather than grind through when a packet:
 - creates a new computational proof family;
 - triggers a publication freeze break that cannot be reconciled locally.
 
-## First authorised packet
+## Historical first authorised packet
 
-**HFI-00A only after PR #196 merges.**
+**HFI-00A only after PR #196 merged.**
 
-HFI-00A ends with a durable authority map and names **HFI-00B — controlled baseline** as the sole next packet.
+This was the initial execution packet. HFI is now closed; the section is retained only as provenance.
