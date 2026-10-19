@@ -8,7 +8,6 @@ It does **not** contain the prototype artefacts themselves. Build packs, drawing
 
 ## Live controls
 
-- [Human Factors and Low-Friction Inhabitation Programme](human-factors-low-friction-inhabitation-programme.md) + [execution plan](human-factors-low-friction-inhabitation-execution-plan.md) — research-first programme for anthropometric variance, movement, thresholds, circulation, object/task logistics and sequence-of-use controls; HFI-00A is the first authorised packet.
 - [Architectural Specificity Boundary](architectural-specificity-boundary.md) — continuing scope firewall between general Ovid’s House propositions, technical-domain restrictions, architectural grammars and Reference House choices.
 - [Reference House Design Programme](reference-house-design-programme.md) — restart-safe staged programme for driving the provisional Reference House through whole-building virtual coordination and into external review.
 - [Tectonic Prototype Programme](tectonic-prototype-programme.md) — physical/engineering validation programme, including the separation between general Ovid’s House evidence and Reference House/G-01 fit.
@@ -17,6 +16,12 @@ It does **not** contain the prototype artefacts themselves. Build packs, drawing
 Project-wide maturity and priorities are owned by [`../../STATUS.md`](../../STATUS.md).
 
 ## Completed controls retained for provenance
+
+### Human Factors and Low-Friction Inhabitation
+
+The [Human Factors and Low-Friction Inhabitation Programme](human-factors-low-friction-inhabitation-programme.md) and [execution plan](human-factors-low-friction-inhabitation-execution-plan.md) are complete at **41/41 packets**. HFI closed through HFI-10 / PR #307 after integrating its accepted conclusions into their destination authorities and preserving unresolved or later-stage questions with explicit downstream owners.
+
+No further HFI packet is authorised. Future human-factors evidence should reopen the owning architectural, delivery, review, site or computational authority rather than reviving HFI as a parallel authority layer by default.
 
 ### Ovid’s House identity migration
 

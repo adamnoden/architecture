@@ -2,8 +2,11 @@
 
 **Programme code:** HFI  
 **Owning issue:** [#195 — HFI — human factors and low-friction inhabitation programme](https://github.com/adamnoden/architecture/issues/195)  
-**Programme state:** framed; HFI-00 is the first authorised packet  
-**Planning baseline:** `e7f324261034b95bee5d9027afcd9c6ace8fed77`
+**Programme state:** **COMPLETE — 41/41 packets integrated**  
+**Planning baseline:** `e7f324261034b95bee5d9027afcd9c6ace8fed77`  
+**Closeout:** HFI-10 / PR #307; merge `96c13ae4349ac1df0e125a08e1442e188e73ef77`; issue #195 closed
+
+The execution programme below is retained as historical control and provenance. It is **not** a live work queue. No further HFI packet is authorised. Future evidence should reopen the owning architectural, delivery, review, site or computational authority rather than revive HFI as a parallel authority layer by default.
 
 ## Purpose
 
@@ -459,10 +462,8 @@ Each packet must record:
 
 If a packet exposes several independent questions, split it. Do not allow “human factors” to become an open-ended excuse for general house redesign.
 
-## First authorised action
+## Historical first authorised action
 
 **HFI-00 only.**
 
-Recover the current project authority, freeze the relevant baseline and build the initial friction inventory. Do not change Reference House geometry, manuscript doctrine, patterns or compiler behaviour during HFI-00.
-
-If HFI proceeds while DRW remains active, keep the work isolated and explicitly reconcile any later architectural rewind with the drawing programme before merge.
+This was the programme’s initial execution gate. It is retained for provenance and does not authorise further HFI work after HFI-10 closeout.
