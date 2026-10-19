@@ -11,99 +11,138 @@ pageClass: house-kernel-landing-page
 
 A house should seek **permanence without stasis**.
 
-Buildings endure in a world that does not. Materials weather, services fail, technologies pass and successive lives ask different things of the same fabric. Longevity therefore cannot depend on preventing change.
+**Ovid’s House** is an architectural design-research project about how a house can remain durable while the shorter-lived things inside it are maintained, repaired, replaced and changed. It treats those relationships as architecture: access, interfaces, movement, failure, replacement and the geometry needed to work on a building after handover.
 
-**Ovid’s House explores permanence through transformation: an architecture designed to change without ceasing to be itself.** Its concern is practical rather than theatrical. A pipe should be replaceable without demolishing the wall around it; a window should be renewable without consuming sound finishes; predictable movement should be given a joint rather than allowed to become a crack.
+The project does not argue that everything should be demountable, exposed or technically novel. Capacity for change must earn its spatial, material and financial cost. Conventional construction should win where it is the better architectural answer.
 
-The useful model is a **domestic ecology**: a set of materials, systems and people connected through physical interfaces and exposed to different timescales of use, weathering, maintenance and change. A pipe and the wall around it become one architectural problem if the wall must be destroyed to reach the pipe; a window and its surrounding finishes become one if replacement consumes both. The relationships between parts, and the interfaces that govern them, are architectural material.
+The public architectural proposition begins in the [manuscript](docs/manuscript/) and its [governing principles](docs/manuscript/governing-principles.md). The [reading guide](docs/reading-guide.md) is the shortest route through the publication argument.
 
-Ovid’s House is a design-research programme for the house considered across that longer life. Its central concern is how architectural and technical systems meet: whether repair and replacement can remain local, foreseeable failures can be detected and contained, maintenance has enough working space, and one layer can change without needless destruction of another.
+## Project map
 
-The project does not propose a house in which everything comes apart. Capacity for change is concentrated where it earns its cost; elsewhere durability, simplicity and settled construction should win. Serviceability is one architectural demand among others. Any unusual proposition must still survive life safety, building physics, whole-life cost and carbon, ordinary workmanship and the quality of the rooms it produces.
-
-The aim is not a visibly technical house. The opposite should be possible: rooms can feel settled and permanent because the things that must change have been given somewhere else to go.
-
-## The proposition
-
-Replaceability is not a property of the component alone. It is also a property of the relationships around it. A component can be ordinary, inexpensive and nominally replaceable yet still be destructive to change because reaching, disconnecting or withdrawing it requires sound fabric to be removed.
-
-A cable route that requires masonry to be chased again, a valve that can be seen but not worked on, and a window whose removal destroys otherwise sound finishes are different manifestations of the same condition. The shorter-lived thing has been coupled unnecessarily to the longer-lived building around it.
-
-The project therefore develops several recurring propositions:
-
-- **Design for the building after handover.** Maintenance, repair, replacement and adaptation are design events, not matters left for future trades to improvise.
-- **Separate lifetimes where separation buys something.** Shorter-lived services and assemblies should not routinely consume longer-lived fabric when they change.
-- **Design the interface.** Support, restraint, movement, sealing, tolerance, access and disassembly should be resolved deliberately where systems meet.
-- **Give failure and maintenance real geometry.** Inspection, isolation, working space, withdrawal routes and containment occupy space and should be designed as such.
-- **Prefer ordinary parts in robust arrangements.** Novelty belongs where an arrangement or interface earns it; the building should tolerate ordinary competent workmanship and remain repairable without dependence on fragile proprietary knowledge.
-- **Keep the house architectural.** Serviceability cannot justify poor rooms, technical clutter, hollow construction, fragile comfort or needless complexity. Passive architecture should do the first work, and ordinary domestic spaces should be capable of repose.
-
-These propositions are expressed more formally in the [governing principles](docs/manuscript/governing-principles.md).
-
-## How the project works
+Ovid’s House deliberately separates architectural propositions, evidence, project-specific choices, executable representations and publication machinery. Those layers inform one another without becoming interchangeable.
 
 ```mermaid
 flowchart TB
-    subgraph S1["Foundations"]
-        direction LR
-        E["Research & evidence"] --> D["Doctrine"]
-    end
+    A["Architectural proposition<br/>docs/manuscript/"]
+    P["Reusable responses<br/>docs/patterns/"]
+    G["Architectural language<br/>docs/grammar/"]
+    E["Evidence & challenge<br/>docs/research/"]
+    RH["Reference House<br/>docs/reference-house/"]
+    C["Computation<br/>docs/computational/ + compiler/"]
+    V["Physical + professional evidence"]
+    PUB["Drawing + publication<br/>docs/publication/ + publication/"]
+    DPL["Target / jurisdiction / site / deployment context<br/>project/dpl/"]
+    GOV["Repository governance + history<br/>AGENTS.md · STATUS.md · project/"]
 
-    subgraph S2["Reusable design knowledge"]
-        direction LR
-        P["Pattern language"]
-        G["Architectural grammar"]
-    end
-
-    subgraph S3["Project integration"]
-        RH["Reference House"]
-    end
-
-    subgraph S4["Testing"]
-        direction LR
-        C["Computational checks"] --> F["Findings"]
-        V["Physical + professional validation"] --> F
-    end
-
-    subgraph S5["Outputs"]
-        direction LR
-        PUB["Publication"]
-        DEL["Delivery requirements"]
-    end
-
-    D --> P
-    E --> G
+    A --> RH
     P --> RH
     G --> RH
+    E -. "tests / qualifies" .-> A
+    E -. "tests / qualifies" .-> P
+    E -. "tests / qualifies" .-> G
+    E -. "tests / qualifies" .-> RH
     RH --> C
     RH --> V
-    F -. "feedback" .-> E
-    F --> PUB
-    F --> DEL
+    RH --> PUB
+    C -. "findings" .-> RH
+    V -. "findings" .-> RH
+    DPL -. "compatibility / bounded adaptation question" .-> RH
 ```
 
-Evidence supports or weakens the architectural claims. **Doctrine** states the durable propositions. The **pattern language** turns those propositions into reusable responses to recurring problems. A separate **architectural grammar** governs questions such as topology, hierarchy, proportion and composition without making one architectural language part of the project itself.
+The diagram is an **authority and navigation map**, not a claim that every arrow is an implemented data pipeline. In particular, the deployment/context relation is a separately governed question, not a claim that a site-deployment compiler already exists.
 
-The **Reference House** then forces those layers into one building. It is where patterns, grammar, programme, structure, envelope, services, environmental strategy and maintenance geometry have to coexist rather than remain convincing in isolation. Conflicts found there can send work back upstream.
+### Protected distinctions
 
-Some questions can be tested physically, some require competent professional review, and a narrower subset of relationships can be checked computationally. The publication develops the architectural argument from this work. Delivery material translates sufficiently mature findings into requirements for an appointed design team.
+- **Ovid’s House** is the architectural research project and public proposition.
+- The **formal architectural/computational system** covers only the facts, relationships, obligations and proof boundaries that can legitimately be made explicit. Its subsystem identity and detailed contract live in the computational/compiler documentation; it is narrower than the architecture.
+- The **pattern language** contains reusable architectural responses; a pattern is not proof.
+- **Architectural grammar** governs selectable questions of composition, hierarchy, topology and proportion. The current Reference House uses a Georgian-derived grammar, but Georgian architecture is not doctrine.
+- The **Reference House** is one deliberately specific integration test. Its choices are not universal rules.
+- **Research, prototypes and professional review** can support, narrow or falsify claims. Evidence does not become doctrine merely because it is favourable.
+- **Metamorph Compiler** checks bounded executable representations. A passing compile is not architectural merit, engineering adequacy or regulatory approval.
+- **Generated inspection outputs** are downstream views of controlled sources. They are not architectural source authority.
+- **Deployment, jurisdiction and real-site work** is a distinct layer. Its exact model is owned by the DPL programme while that foundation is being established; the README does not assume an implemented deployment compiler that does not yet exist.
 
-## Boundaries
+## What is authoritative for what?
 
-Several distinctions are deliberately protected.
+| Kind | Canonical owner | Read it as |
+|---|---|---|
+| Architectural proposition | [`docs/manuscript/`](docs/manuscript/) | Public architectural argument and governing principles |
+| Reusable design knowledge | [`docs/patterns/`](docs/patterns/) | Patterns, strategies, candidates and their stated evidence status |
+| Architectural language | [`docs/grammar/`](docs/grammar/) | Grammar framework and selectable grammar instances |
+| Evidence and precedent | [`docs/research/`](docs/research/) | Evidential support, challenge and options appraisal |
+| Worked project instance | [`docs/reference-house/`](docs/reference-house/) | Reference House choices, coordination and explicit proof limits |
+| Computational scope | [`docs/computational/`](docs/computational/) | What the executable model represents and what its checks prove |
+| Executable implementation | `compiler/` | Source, compilation, diagnostics, tests and generated inspection machinery |
+| Generated inspection | [`docs/reference-house/generated/`](docs/reference-house/generated/) | Derived human-readable views; do not hand-edit |
+| Drawing/publication records | `docs/publication/` | Authored authority, drawing and proof records for publication production |
+| Publication build system | `publication/` | Preparation, validation, metadata, layout and proof machinery |
+| Delivery requirements | [`docs/delivery/`](docs/delivery/) | Mature requirements intended for an appointed project team |
+| Current project state | `STATUS.md` | Present maturity, active programme state and next meaningful gates |
+| Operating rules | `AGENTS.md` | Durable rules for agents and contributors changing the repository |
+| Durable programme history | `project/` | Audits, programme records, provenance and machine-readable project controls |
 
-**Ovid’s House is not a historical or classical style.** The name describes a temporal problem, not an architectural language. The current Reference House selects a Georgian-derived grammar, courtyard morphology and its own tectonic language. Those are project choices. They may provide evidence, but Georgian architecture, symmetry, masonry, pitched roofs or any particular decorative vocabulary are not doctrine.
+A document’s existence does not make it authoritative outside its stated role. When two surfaces appear to disagree, follow the owning source rather than the most convenient copy.
 
-**A pattern is not proof.** Patterns are reusable architectural responses with explicit trade-offs and evidence status. A pattern can fail, narrow in scope or be replaced without invalidating the principle that motivated it.
+## Choose an entry path
 
-**The Reference House is not a universal solution.** It is an integration test: one sufficiently specific building used to expose conflicts that generic prose can hide.
+### Architect or reader
 
-**The computational model is subordinate to the architecture.** It formalises relationships only where deterministic checking adds something useful. Representability is not architectural merit, regulatory approval or evidence of physical adequacy.
+Start with the [reading guide](docs/reading-guide.md), then the [Preface](docs/manuscript/preface.md) and [governing principles](docs/manuscript/governing-principles.md). Continue into the [Pattern Language](docs/patterns/), [Architectural Grammar](docs/grammar/) or [Reference House](docs/reference-house/) according to the question you are following.
 
-The general promotion rule is simple: preserve the general reason upstream; keep stylistic, technical and project-specific choices at the narrowest layer that actually owns them.
+### Developer or contributor
 
-## Start reading
+Before changing the repository, read `AGENTS.md`. Use `docs/README.md` for documentation ownership, [`docs/computational/README.md`](docs/computational/) for computational proof boundaries and `compiler/README.md` for executable workflow. [`package.json`](package.json) is the command authority.
 
-The **[Reading guide](docs/reading-guide.md)** gives the primary publication sequence and alternative routes through the work.
+### Investigating a decision
 
-The architectural argument begins with the **[Preface](docs/manuscript/preface.md)** and continues through Parts I–V. The **[Pattern Language](docs/patterns/README.md)**, **[Architectural Grammar](docs/grammar/README.md)** and **[Reference House](docs/reference-house/README.md)** can also be explored directly.
+Start at the surface that owns the decision, then follow its explicit evidence/provenance links upstream. Architectural claims normally lead toward [`docs/research/`](docs/research/); Reference House decisions toward its coordination and gate records; computational conclusions toward compiler tests, method/source provenance and generated manifests. Historical programme records in `project/` explain how a result was reached but do not automatically remain the present authority.
+
+## Repository map
+
+| Area | Role |
+|---|---|
+| `docs/` | Architectural documents organised by what each document does: manuscript, patterns, grammar, research, Reference House, development, prototypes, delivery, computation, editorial and publication records |
+| `compiler/` | Metamorph Compiler source, controlled fixtures, tests, proof contracts and deterministic output machinery |
+| `publication/` | Publication preparation, validation, layout, metadata and physical/specimen proof tooling |
+| `project/` | Durable programme/audit records and machine-readable project controls; backstage history rather than public architectural authority |
+| `scripts/` | Repository-level validation, status, nomenclature and maintenance utilities invoked through `package.json` |
+| `public/` | Static website assets and publication-facing resources; not a source of architectural truth merely because material is publicly served |
+| `.github/` | CI and repository automation |
+| `.vitepress/` | Website configuration and navigation; website structure does not redefine repository ownership or publication order |
+
+The detailed ownership model inside `docs/` is recorded in `docs/README.md`.
+
+## Source and generated boundaries
+
+Prefer the owning authored source and regenerate downstream material.
+
+In particular, [`docs/reference-house/generated/`](docs/reference-house/generated/) is a generated semantic-inspection surface. Change the controlled compiler/source model and use the output workflow; do not patch those artefacts to make them look correct.
+
+Publication records, architectural publication drawings, compiler proof artefacts and generated semantic inspection are different classes of material. Not every SVG or Markdown file is generated. When working locally, follow the directory contract or owning gate before editing an artefact whose authority is unclear.
+
+## Build and verification
+
+Install the locked dependencies with `npm ci`. The canonical repository-health entry point is:
+
+```sh
+npm run check
+```
+
+That command checks the repository’s declared automated invariants and builds the documentation site. A green result proves only those encoded checks. It does **not** establish architectural quality, engineering adequacy, physical performance, professional acceptance or Building Regulations compliance.
+
+Useful narrower entry points include:
+
+```sh
+npm run docs:dev          # local documentation site
+npm run outputs:check     # verify committed generated Reference House inspection outputs
+npm run publication:build # prepare and build the full publication PDF
+```
+
+Use [`package.json`](package.json) for the current command set and local subsystem contracts for narrower proof workflows.
+
+## Current state
+
+The repository is intentionally ahead in some internal forms and behind in external validation. Physical testing, competent professional review and real-site evidence remain distinct from internal coordination and deterministic checks.
+
+For current project-wide state, maturity judgements and active work, use `STATUS.md`. This README is deliberately kept free of packet numbers, branch hashes and live work queues so that it remains a stable map rather than a second status system.
