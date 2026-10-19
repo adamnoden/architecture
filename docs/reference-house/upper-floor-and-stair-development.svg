@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="960" viewBox="0 0 1500 960" role="img" aria-labelledby="title desc">
   <title id="title">Reference House RH-03 selected upper-floor and stair development</title>
-  <desc id="desc">Schematic upper-floor plan of the Reference House showing a three-flight principal stair in the south centre, four bedrooms, an east courtyard gallery, a family bathroom stacked over the service hub, a north cross-landing and a conditional principal en-suite.</desc>
+  <desc id="desc">Schematic upper-floor plan of the Reference House showing a three-flight principal stair with 300 millimetre going in the south centre, four bedrooms, an east courtyard gallery, a family bathroom stacked over the service hub, a north cross-landing and the RH-03 historical conditional principal en-suite zone.</desc>
   <defs>
     <style>
       .head{font:700 28px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
@@ -80,15 +80,15 @@
     <rect x="470" y="108" width="112" height="62" class="furn"/>
     <rect x="602" y="26" width="28" height="105" class="furn"/>
 
-    <!-- north cross landing + ensuite/linen -->
+    <!-- north cross landing + ensuite/linen (historical RH-03 state) -->
     <rect x="231" y="121" width="198" height="66" class="gallery"/>
     <text x="330" y="150" text-anchor="middle" class="label">U-LAND-N01</text>
     <text x="330" y="168" text-anchor="middle" class="small">north cross-landing</text>
 
     <rect x="231" y="0" width="121" height="121" class="service"/>
     <text x="292" y="46" text-anchor="middle" class="label">U-ENS-01</text>
-    <text x="292" y="64" text-anchor="middle" class="small">conditional en-suite</text>
-    <text x="292" y="82" text-anchor="middle" class="small">RH-06 route gate</text>
+    <text x="292" y="64" text-anchor="middle" class="small">historical RH-03 hypothesis</text>
+    <text x="292" y="82" text-anchor="middle" class="small">later removed by RH-06</text>
 
     <rect x="352" y="0" width="77" height="121" class="room"/>
     <text x="390" y="48" text-anchor="middle" class="label">U-LIN-01</text>
@@ -107,17 +107,17 @@
   <g transform="translate(850,145)">
     <text x="0" y="0" class="head">Stair coordination</text>
     <text x="0" y="42" class="small">18 rises total · 3 flights × 6 rises</text>
-    <text x="0" y="64" class="small">planning rise: 180 mm at 3240 mm floor-to-floor</text>
-    <text x="0" y="86" class="small">going: 280 mm · 5 goings / flight</text>
+    <text x="0" y="64" class="small">planning rise: 183.3 mm at 3300 mm floor-to-floor</text>
+    <text x="0" y="86" class="small">going: 300 mm · 5 goings / flight · HFI-08B</text>
     <text x="0" y="108" class="small">target clear width: ≈ 1000 mm</text>
     <text x="0" y="130" class="small">full landings · no winders</text>
-    <text x="0" y="152" class="small">2R + G = 640 mm · pitch ≈ 33°</text>
+    <text x="0" y="152" class="small">2R + G ≈ 666.7 mm · pitch ≈ 31.4°</text>
 
     <text x="0" y="212" class="head">Upper order</text>
     <text x="0" y="254" class="small">4 bedrooms: one principal + three secondary.</text>
     <text x="0" y="276" class="small">No fifth bedroom is forced into the circulation ring.</text>
     <text x="0" y="298" class="small">Main family bathroom stacks over G-SVC-02.</text>
-    <text x="0" y="320" class="small">Principal en-suite survives only if RH-06 proves its route.</text>
+    <text x="0" y="320" class="small">RH-03 en-suite hypothesis was later removed by RH-06.</text>
 
     <text x="0" y="380" class="head">Courtyard circulation</text>
     <text x="0" y="422" class="small">South stair hall → east gallery → north cross-landing.</text>
@@ -129,11 +129,11 @@
     <text x="0" y="590" class="small">Outer shell and courtyard do not move.</text>
     <text x="0" y="612" class="small">Purpose: retain ≈ 1.05–1.15 m arrival passage beside stair.</text>
 
-    <text x="0" y="672" class="head">Later gates</text>
-    <text x="0" y="714" class="small">RH-04: final storey height + opening / elevation order</text>
-    <text x="0" y="736" class="small">RH-05: stair / courtyard trimming and load paths</text>
-    <text x="0" y="758" class="small">RH-06: riser, bath/en-suite drainage and extract</text>
-    <text x="0" y="780" class="small">RH-07: daylight / ventilation / overheating</text>
+    <text x="0" y="672" class="head">Proof boundary</text>
+    <text x="0" y="714" class="small">RH-04 datums rechecked and unchanged.</text>
+    <text x="0" y="736" class="small">Exact strings, guards and passage remain technical.</text>
+    <text x="0" y="758" class="small">Stairlift compatibility remains not modelled.</text>
+    <text x="0" y="780" class="small">This is coordination, not construction information.</text>
   </g>
 
   <text x="60" y="925" class="small">Schematic coordination drawing only. Furniture, stair and service symbols are fit tests, not construction information.</text>

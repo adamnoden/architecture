@@ -108,15 +108,15 @@ describe('DRW-05C principal-section publication renderer', () => {
 
     assert.deepEqual(
       { role: flight1.role, dash: flight1.dash, a: flight1.a, b: flight1.b },
-      { role: 'secondary', dash: 'provisional', a: { x: 22, y: 73 }, b: { x: 36, y: 62 } }
+      { role: 'secondary', dash: 'provisional', a: { x: 22, y: 73 }, b: { x: 37, y: 62 } }
     )
     assert.deepEqual(
       { role: flight2.role, dash: flight2.dash, a: flight2.a, b: flight2.b },
-      { role: 'secondary', dash: 'provisional', a: { x: 36, y: 62 }, b: { x: 36, y: 51 } }
+      { role: 'secondary', dash: 'provisional', a: { x: 37, y: 62 }, b: { x: 37, y: 51 } }
     )
     assert.deepEqual(
       { role: flight3.role, dash: flight3.dash, a: flight3.a, b: flight3.b },
-      { role: 'cut', dash: undefined, a: { x: 36, y: 51 }, b: { x: 22, y: 40 } }
+      { role: 'cut', dash: undefined, a: { x: 37, y: 51 }, b: { x: 22, y: 40 } }
     )
   })
 

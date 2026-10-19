@@ -73,7 +73,7 @@ describe('COA-04 Reference House plan and section successors', () => {
     assert.match(set.groundFloor, /Wall planning 400–425 mm/)
     assert.match(set.groundFloor, /Stress case 450 mm/)
     assert.match(set.groundFloor, /Stair 18 rises · 6\/6\/6/)
-    assert.match(set.groundFloor, /Going 280 mm · width target ≈1000 mm/)
+    assert.match(set.groundFloor, /Going 300 mm · width target ≈1000 mm/)
     assert.match(set.groundFloor, /Reservation 2400–2500 mm/)
     assert.match(set.groundFloor, /wall faces not represented/i)
     assert.match(set.principalSection, /No strings, treads, guards, headroom, floor build-up or exact well geometry is implied/)

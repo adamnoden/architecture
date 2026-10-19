@@ -119,7 +119,7 @@ export const createReferenceHouseSource = (): ReferenceHouseSource => ({
       flightRiseGroups: [6, 6, 6]
     }),
     goingTopology: controlled('RHCF-STAIR-G', {
-      going: mm(280),
+      going: mm(300),
       goingsPerFlight: 5
     }),
     clearWidthTarget: provisional('RHCF-STAIR-W', mm(1000)),

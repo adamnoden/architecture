@@ -101,12 +101,12 @@ describe('DRW-05B principal-section publication source', () => {
 
     assert.equal(source.stair.riseCount.value, 18)
     assert.deepEqual(source.stair.risesPerFlight.value, [6, 6, 6])
-    assert.equal(source.stair.going.value, 280)
+    assert.equal(source.stair.going.value, 300)
     assert.equal(source.stair.goingsPerFlight.value, 5)
 
     const flightRun = source.stair.going.value * source.stair.goingsPerFlight.value
     const rise = house.levels.firstFfl.value / source.stair.riseCount.value
-    assert.equal(flightRun, 1400)
+    assert.equal(flightRun, 1500)
     assert.equal(source.stair.flights[0].endPlanCoordinate.value - source.stair.flights[0].startPlanCoordinate.value, flightRun)
     assert.equal(source.stair.flights[1].endPlanCoordinate.value - source.stair.flights[1].startPlanCoordinate.value, flightRun)
     assert.equal(source.stair.flights[2].startPlanCoordinate.value - source.stair.flights[2].endPlanCoordinate.value, flightRun)

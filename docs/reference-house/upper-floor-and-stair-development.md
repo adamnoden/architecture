@@ -1,7 +1,7 @@
 # Reference House — RH-03 Stair, Upper Floor and Courtyard Circulation
 
-**Status:** RH-03 design gate record  
-**Date:** 2026-10-12  
+**Status:** RH-03 design gate record — stair going corrected by HFI-08B  
+**Date:** 2026-10-12; HFI-08B correction 2026-10-19  
 **Question:** can the stair, upper-floor rooms, bathrooms and courtyard circulation form one coherent domestic composition without damaging the controlled ground floor?  
 **Ground-floor authority:** [RH-02 Ground-Floor Development](ground-floor-development.md)  
 **Upper-floor drawing:** [upper-floor-and-stair-development.svg](upper-floor-and-stair-development.svg)  
@@ -10,6 +10,8 @@
 RH-03 is the first Reference House gate that must work simultaneously in plan and section. It fixes a **coordination stair**, upper-floor room order and circulation topology. It does not yet fix final storey heights, structural framing, façade openings, fire strategy, drainage pipe sizes or detailed bathroom layouts.
 
 The stage makes one local correction to RH-02: the entrance/stair hall is widened by approximately **200 mm into the front edge of the drawing-room reservation**. The outer shell, courtyard, principal ground-floor room order and service flank remain unchanged.
+
+HFI-08B later reopened only the stair-going decision after the human-factors audit. The complete-system comparison retained the RH-03 topology and selected a **300 mm going** at the already-controlled RH-04 first-floor datum of +3300 mm. No shell, courtyard, service or room-order rewind was required.
 
 ---
 
@@ -36,18 +38,18 @@ Use this as a **coordination target**, not final technical design:
 
 - **18 risers total**;
 - **three flights of six risers**;
-- **five 280 mm goings per flight**;
+- **five 300 mm goings per flight**;
 - **full landings, no winders**;
 - target clear flight width: **approximately 1000 mm**;
-- planning floor-to-floor datum for the section: **3240 mm**;
-- resulting planning rise at that datum: **180 mm**;
-- `2R + G = 640 mm`;
-- planning pitch approximately **33°**;
+- controlled floor-to-floor datum: **3300 mm**;
+- resulting planning rise: **183.3 mm**;
+- `2R + G ≈ 666.7 mm`;
+- planning pitch approximately **31.4°**;
 - clear headroom target: **not less than 2000 mm**.
 
-The 3240 mm floor-to-floor dimension exists only to test the stair. RH-04 owns final storey and opening datums. With 18 risers, a later floor-to-floor value in roughly the 3150–3300 mm range remains compatible with a comfortable rise of approximately 175–183 mm without changing the stair topology.
+RH-04 owns the +3300 mm first-floor datum. HFI-08B holds that datum fixed and changes only the going from 280 to 300 mm. Each five-going flight therefore increases from 1.40 m to **1.50 m run** without changing the stair topology.
 
-The project preference for deep, secure treads is therefore carried explicitly: **going is treated as a design quality, not merely a regulatory minimum**.
+The project preference for deep, secure treads is therefore carried explicitly: **going is treated as a design quality, not merely a regulatory minimum**. The 300 mm value is a Reference House project preference, not a claim that every private stair must use the maximum going permitted by this guidance family.
 
 ---
 
@@ -55,11 +57,11 @@ The project preference for deep, secure treads is therefore carried explicitly: 
 
 RH-02's front centre is only **3.4 m gross deep** between the front façade and courtyard.
 
-Once the temporary planning allowances for substantial external/courtyard walls are acknowledged, the clear front-wing depth is approximately **2.7 m**. A comfortable two-flight return stair using circa 280 mm goings needs roughly:
+Once the temporary planning allowances for substantial external/courtyard walls are acknowledged, the clear front-wing depth is approximately **2.7 m**. A comfortable two-flight return stair using circa 300 mm goings needs roughly:
 
-- about **2.24 m flight run** for eight goings in a nine-rise flight;
+- about **2.40 m flight run** for eight goings in a nine-rise flight;
 - plus a landing approximately the stair width;
-- therefore well over **3.2 m** in the flight direction.
+- therefore well over **3.4 m** in the flight direction.
 
 That stair can fit only by:
 
@@ -70,7 +72,7 @@ That stair can fit only by:
 
 RH-03 rejects all four responses.
 
-A three-flight stair reduces each flight run to **1.40 m** while retaining the 280 mm going. The additional landing is an acceptable cost because it makes the stair geometrically compatible with the compact house **without sacrificing tread quality**.
+A three-flight stair reduces each flight run to **1.50 m** while retaining the selected 300 mm going. The additional landing is an acceptable cost because it makes the stair geometrically compatible with the compact house **without sacrificing tread quality**.
 
 ---
 
@@ -80,7 +82,7 @@ A three-flight stair reduces each flight run to **1.40 m** while retaining the 2
 
 The stair sits in the western part of `G-HALL-02`, immediately beside the all-weather passage that continues into `G-GAL-01`.
 
-A coordination reservation of approximately **2.4–2.5 m square** is sufficient to develop three 6-rise flights around a small open well with full landings. The exact strings, balustrades, well and landing construction remain later work.
+A coordination reservation of approximately **2.4–2.5 m square** is sufficient to develop three 6-rise flights around a small open well with full landings. The HFI-08B 300 mm going uses the upper end of that already-authorised coordination field. The exact strings, balustrades, well and landing construction remain later work.
 
 To preserve a credible passage beside it, the ground-floor partition between the drawing room and entrance hall moves approximately **200 mm west** for the front-wing depth only:
 
@@ -328,6 +330,8 @@ The exact clear riser size, segregation, fire/acoustic closure and service conte
 
 `U-ENS-01` does **not** yet earn a pattern occurrence merely because an en-suite is drawn. Its service route is deliberately unresolved.
 
+HFI-08B changes no pattern occurrence: the stair-going correction is project geometry rather than a pattern-language selection.
+
 ---
 
 ## 11. Rejected moves that should remain rejected unless evidence changes
@@ -345,8 +349,10 @@ The exact clear riser size, segregation, fire/acoustic closure and service conte
 
 RH-03 does not fix:
 
-- final ground/first-floor ceiling heights;
 - exact stair strings, well size, balustrade or handrail profile;
+- detailed headroom geometry beyond the not-less-than-2000 mm target;
+- finished clear stair width after strings/guards;
+- stairlift equipment, parking/transfer or residual-route geometry;
 - exact front-door position within the eastern arrival field;
 - detailed upper partition thicknesses;
 - exact bedroom door positions;
@@ -358,17 +364,17 @@ RH-03 does not fix:
 - façade window centres, sill/head heights or hierarchy;
 - roof geometry.
 
-These are intentionally routed to RH-04 through RH-08.
+Later gates own those questions. HFI-08B does not convert absent technical geometry into proof.
 
 ---
 
 # RH-03 gate record
 
-**Result:** **PASS.**
+**Result:** **PASS after HFI-08B stair-going rewind.**
 
 The house now has:
 
-- a principal stair that fits the compact front wing without degrading tread quality;
+- a principal stair with **300 mm goings** that fits the compact front wing without degrading tread quality;
 - a four-bedroom upper-floor hierarchy;
 - a three-sided courtyard circulation topology rather than an area-hungry full ring;
 - a main family bathroom directly stacked over the ground service hub;
@@ -379,6 +385,4 @@ The house now has:
 
 **No maturity promotion is claimed.**
 
-**Next stage:** `RH-04 — Couple plan, section and G-01 elevation`.
-
-**Exact next action:** set a small number of candidate storey/ceiling datums and use the RH-02/RH-03 plan to derive front, courtyard and sectional opening orders. The off-centre entrance, three-flight stair, bathroom windows and courtyard gallery must be negotiated as one plan/section/elevation system rather than corrected independently.
+The subsequent RH-04/RH-05/RH-10 coordination is rechecked by HFI-08B and remains valid at its stated scope. The exact HFI rewind decision and propagation boundary are recorded in [`project/hfi/hfi-08b-rh03-stair-rewind.md`](../../project/hfi/hfi-08b-rh03-stair-rewind.md).

@@ -52,9 +52,9 @@ describe('RH-C5 selected target calculations', () => {
     assert.equal(stair.criteria.length, 4)
     assert.ok(stair.criteria.every((item) => item.status === 'PASS'))
     assert.equal(criterion(stair, 'ADK-K1-PRIVATE-RISE').observed, 3300 / 18)
-    assert.equal(criterion(stair, 'ADK-K1-PRIVATE-GOING').observed, 280)
-    assert.ok(Math.abs((criterion(stair, 'ADK-K1-PRIVATE-PITCH').observed ?? 0) - 33.2152514937372) < 1e-9)
-    assert.ok(Math.abs((criterion(stair, 'ADK-K1-PRIVATE-2R+G').observed ?? 0) - 646.6666666666667) < 1e-9)
+    assert.equal(criterion(stair, 'ADK-K1-PRIVATE-GOING').observed, 300)
+    assert.ok(Math.abs((criterion(stair, 'ADK-K1-PRIVATE-PITCH').observed ?? 0) - 31.429565614838516) < 1e-9)
+    assert.ok(Math.abs((criterion(stair, 'ADK-K1-PRIVATE-2R+G').observed ?? 0) - 666.6666666666667) < 1e-9)
   })
 
   test('carries explicit guidance authority and refuses to call the result Building Regulations compliance', () => {

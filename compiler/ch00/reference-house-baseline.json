@@ -9,7 +9,7 @@
     "sourcePath": "compiler/reference-house/fixture.ts",
     "sourceFingerprint": {
       "algorithm": "git-blob-sha1",
-      "value": "8bce8f39b48873395be3922005890cc0f6dc06fa"
+      "value": "68162a4b6336fac48fd18ecb96eaf915b38ac633"
     }
   },
   "statuses": {
@@ -100,9 +100,9 @@
       "criterionCount": 4,
       "observed": {
         "riseMm": 183.33333333333334,
-        "goingMm": 280,
-        "pitchDeg": 33.2152514937372,
-        "twoRPlusGMm": 646.6666666666667
+        "goingMm": 300,
+        "pitchDeg": 31.42956561483852,
+        "twoRPlusGMm": 666.6666666666667
       }
     }
   },
@@ -117,7 +117,7 @@
     },
     "rhc1PrincipalSection": {
       "path": "docs/reference-house/rhc1-principal-section.svg",
-      "gitBlobSha1": "1cd07791b7c8964762b19c383ed097786f629358"
+      "gitBlobSha1": "0d9a34a674f2e5a42d68a98838a08dc6f12a98a0"
     },
     "rhc2StructuralTopology": {
       "path": "docs/reference-house/rhc2-structural-topology.svg",

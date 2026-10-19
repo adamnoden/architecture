@@ -1,7 +1,7 @@
 # Reference House — RH-C0 Model Baseline
 
-**Status:** **RH-C0 PASS — controlled pre-compiler fixture frozen**  
-**Date:** 2026-10-12  
+**Status:** **RH-C0 PASS — controlled pre-compiler fixture frozen; HFI-08B stair fact refreshed**  
+**Date:** 2026-10-12; HFI-08B refresh 2026-10-19  
 **Reference House maturity:** **M3 — Coordinated at virtual-design scope (unchanged)**  
 **Programme:** [`../computational/reference-house-model-freeze-rhc0.md`](../computational/reference-house-model-freeze-rhc0.md)  
 **Downstream:** [`../computational/reference-house-executable-slice.md`](../computational/reference-house-executable-slice.md)
@@ -15,6 +15,8 @@ The freeze proves a narrower claim than construction readiness:
 RH-C0 does **not** validate structural adequacy, fire safety, acoustics, building physics, MEP capacity, products, workmanship, site response or regulatory compliance. TypeScript must not confer authority those things have not earned.
 
 Coordinates use the fixture convention: origin at the south-west outer corner; +X east; +Y north; front/street surrogate south. This convention belongs to this fixture, not House Kernel doctrine.
+
+HFI-08B changes exactly one controlled stair source fact in the canonical fixture: `RHCF-STAIR-G` goes from 280 to **300 mm**. The riser topology, storey datums, stair reservation and all non-stair source facts remain unchanged; run, pitch and `2R+G` remain derived consequences.
 
 ---
 
@@ -80,13 +82,13 @@ A **DERIVED** fact can be `FROZEN_FOR_RH_C1`: that means its relationship is fro
 | `RHCF-UPPER-CLEAR` | upper clear height | `2,700` | RH-04 | DERIVED | FROZEN_FOR_RH_C1 | `6000−3300` |
 | `RHCF-CORNICE` | outer cornice/eaves control | `≈+6,250` | RH-04 retained RH-08/RH-10 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | architectural datum, not roof build-up |
 | `RHCF-STAIR-N` | riser topology | `18`; `3 flights × 6` | RH-03 | AUTHORED | FROZEN_FOR_RH_C1 | source invariant |
-| `RHCF-STAIR-G` | going topology | `280 mm`; `5 goings/flight` | RH-03 | AUTHORED | FROZEN_FOR_RH_C1 | source invariant |
+| `RHCF-STAIR-G` | going topology | **`300 mm`**; `5 goings/flight` | RH-03 / HFI-08B | AUTHORED | FROZEN_FOR_RH_C1 | current controlled source; supersedes 280 mm |
 | `RHCF-STAIR-RISE` | rise | `183.33 mm` | RH-03 + RH-04 | DERIVED | FROZEN_FOR_RH_C1 | `3300/18` |
-| `RHCF-STAIR-RUN` | flight run | `1,400 mm` | RH-03 | DERIVED | FROZEN_FOR_RH_C1 | `5×280` |
+| `RHCF-STAIR-RUN` | flight run | **`1,500 mm`** | RH-03 / HFI-08B | DERIVED | FROZEN_FOR_RH_C1 | `5×300` |
 | `RHCF-STAIR-LVLS` | intermediate landing datums | `+1,100 / +2,200` | RH-03 + RH-04 | DERIVED | FROZEN_FOR_RH_C1 | six-rise increments |
-| `RHCF-STAIR-COMFORT` | stair arithmetic | `2R+G=646.67`; pitch `≈33.2°` | RH-03 + RH-04 | DERIVED | FROZEN_FOR_RH_C1 | deterministic arithmetic, not compliance certificate |
+| `RHCF-STAIR-COMFORT` | stair arithmetic | **`2R+G=666.67`; pitch `≈31.4°`** | RH-03 + RH-04 / HFI-08B | DERIVED | FROZEN_FOR_RH_C1 | deterministic arithmetic, not compliance certificate |
 | `RHCF-STAIR-W` | clear flight width target | `≈1,000` | RH-03 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | exact strings/guards reduce real clear width |
-| `RHCF-STAIR-BOX` | planning reservation | `≈2,400–2,500` square | RH-03 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | semantic reservation only |
+| `RHCF-STAIR-BOX` | planning reservation | `≈2,400–2,500` square | RH-03 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | 300 mm going uses upper end; semantic reservation only |
 | `RHCF-STAIR-PASSAGE` | east arrival passage target | `≈1,050–1,150 clear` | RH-03 | PROVISIONAL ASSUMPTION | PROVISIONAL_BUT_REPRESENTABLE | detailed fit not proved |
 | `RHCF-FRONT-FIELD` | principal front bay rule | `4 bays`; `2,700` spacing; field centred on shell centre X | RH-04 | AUTHORED | FROZEN_FOR_RH_C1 | source rule, not four independent coordinates |
 | `RHCF-FRONT-AXES` | front axes | `1,950 / 4,650 / 7,350 / 10,050` | RH-04 | DERIVED | FROZEN_FOR_RH_C1 | derive from front-field rule |
@@ -235,10 +237,10 @@ Encode:
 - 18 risers;
 - 3 groups of 6;
 - 5 goings per flight;
-- 280 mm planning going;
+- **300 mm planning going**;
 - provisional `≈1000` clear target and `≈2400–2500` planning reservation if needed by the drawing.
 
-Derive rise/run/landing datums/pitch/`2R+G`.
+Derive rise/run/landing datums/pitch/`2R+G`. At the current +3300 first-floor FFL those consequences are 183.33 mm rise, 1500 mm flight run, landing datums +1100/+2200, `2R+G=666.67 mm`, and pitch ≈31.4°.
 
 **Do not invent** strings, balustrades, handrails, tread placement around the well, exact landings, headroom construction or a certified stair. The RH-C1 principal section may show the controlled stair reservation/topology and derived landing datums, as the RH-C0 comparator does.
 
@@ -310,6 +312,7 @@ These are not omissions to fill with plausible defaults. They are controlled bou
 6. **RH-04 pitched-roof preference → RH-08/RH-10 outward-draining low-slope roof.** RH-04 still owns storey/cornice/opening hierarchy.
 7. **RH-02 350 mm wall allowance → RH-10 400–425 mm planning family + 450 mm stress boundary.** No shell growth follows automatically.
 8. **RH-10 north-centre upper garden opening host “cross-landing” → RH-C0.6 dry dressing/storage field.** The plan did not move; `outer-elevation-coordination-rh10.md` was repaired and the stale SVG demoted.
+9. **RH-03/RH-C0 principal-stair going `280 mm` → HFI-08B `300 mm`.** Eighteen risers, three flights, five goings per flight, full landings, +3300 first FFL, shell, courtyard and circulation topology retained; run/pitch/`2R+G` rederive from the changed source.
 
 ---
 
@@ -361,6 +364,7 @@ Full drawing classification and stale-material disposition live in [`rhc0-drawin
 - domestic/adversarial review: [`rhc0-domesticity-audit.md`](rhc0-domesticity-audit.md)
 - drawing parity/classification: [`rhc0-drawing-parity-audit.md`](rhc0-drawing-parity-audit.md)
 - material RH-C0 rewind/correction: [`outer-elevation-coordination-rh10.md`](outer-elevation-coordination-rh10.md) — north-centre upper garden host corrected at RH-C0.6
+- HFI stair-source correction: [`../../project/hfi/hfi-08b-rh03-stair-rewind.md`](../../project/hfi/hfi-08b-rh03-stair-rewind.md) — `RHCF-STAIR-G` corrected to 300 mm with RH-04/RH-05/RH-10 rechecks
 
 ## Ten-condition PASS gate
 
@@ -370,17 +374,17 @@ Full drawing classification and stale-material disposition live in [`rhc0-drawin
 | 2 | current authorities reconstruct one coherent house | **PASS** | independent reconstruction in RH-C0.2; both storeys close to 115.2 m² gross semantic field |
 | 3 | no compiler-bound fact is unknowingly authored twice | **PASS** | authored→derived dependency contract |
 | 4 | high-leverage mutation consequences are recorded | **PASS** | `rhc0-mutation-map.md`, including explicit propagation/failure/review outcomes |
-| 5 | fresh domestic/architectural adversarial review survived | **PASS** | `rhc0-domesticity-audit.md`; no protected defect requires morphology rewind |
-| 6 | current comparator drawings agree or stale drawings are demoted | **PASS** | `rhc0-drawing-parity-audit.md` + named RH-C0 comparator set |
+| 5 | fresh domestic/architectural adversarial review survived | **PASS** | `rhc0-domesticity-audit.md`; HFI-08B subsequently resolved the stair-going improvement through RH-03 without morphology rewind |
+| 6 | current comparator drawings agree or stale drawings are demoted | **PASS** | `rhc0-drawing-parity-audit.md` + named RH-C0 comparator set; current deterministic projections must follow the refreshed canonical source |
 | 7 | every relevant fact is frozen/provisional/outside | **PASS** | schedule above |
 | 8 | unresolved technical proof remains visible | **PASS** | explicit OUTSIDE/PROVISIONAL sections; no specialist adequacy promoted |
-| 9 | material contradictions found by RH-C0 are repaired through owning gate | **PASS** | RH-C0.6 garden-host defect repaired in RH-10 authority; other drawing drift demoted rather than blended |
-| 10 | maturity remains tied to real evidence | **PASS** | Reference House remains **M3**; no RH-C0 promotion |
+| 9 | material contradictions found by RH-C0 or later bounded audit are repaired through owning gate | **PASS** | RH-C0.6 garden-host defect repaired in RH-10; HFI-08B stair-going improvement repaired in RH-03/RH-04 authority |
+| 10 | maturity remains tied to real evidence | **PASS** | Reference House remains **M3**; no RH-C0/HFI-08B promotion |
 
 # RH-C0 result
 
-**PASS.** The Reference House is frozen strongly enough to act as the controlled regression fixture for RH-C1 at the bounded architectural scope above.
+**PASS.** The Reference House is frozen strongly enough to act as the controlled regression fixture for RH-C1 at the bounded architectural scope above, with the HFI-08B 300 mm stair going now part of that current source.
 
 This does **not** make the house a universal House Kernel template or gold-standard design. It is one controlled reference fixture against which the executable architecture can prove that semantic source, derivation and drawings remain consistent.
 
-RH-C1 may now begin. Its first job is reproduction, not invention: one semantic source for the released shell, court, levels, rooms/circulation, stair, walls/openings and principal axes; small pure derived calculations; then deterministic ground-plan, first-floor-plan and principal-section SVGs.
+RH-C1 consumes this current source. Its job remains reproduction, not invention: one semantic source for the released shell, court, levels, rooms/circulation, stair, walls/openings and principal axes; small pure derived calculations; then deterministic ground-plan, first-floor-plan and principal-section SVGs.

@@ -1,7 +1,7 @@
 # Reference House — RH-04 Plan / Section / Elevation Gate
 
-**Status:** RH-04 design gate record  
-**Date:** 2026-10-12  
+**Status:** RH-04 design gate record — HFI-08B stair recheck passed  
+**Date:** 2026-10-12; HFI-08B recheck 2026-10-19  
 **Question:** does the RH-03 spatial arrangement generate one convincing Georgian-derived architecture when plan, section and elevation are negotiated together?  
 **Plan authority:** [RH-02 Ground-Floor Development](ground-floor-development.md), as modified by [RH-03 Stair / Upper-Floor Development](upper-floor-and-stair-development.md)  
 **G-01 control:** [G-01 D5 / D6 Evidence Gate v0.3](../grammar/g01-d5-d6-web-pass-v03.md)  
@@ -10,6 +10,8 @@
 RH-04 does not attempt to invent a complete Georgian rulebook. G-01 has not earned one. It uses the evidence that *is* mature enough: explicit hierarchy, scoped order, first-class section, attribute-specific coupling, and the rejection of one universal room/proportion rule.
 
 The result is a coupled architectural baseline, not a façade style study.
+
+HFI-08B later rechecked this gate after RH-03 selected a 300 mm principal-stair going. RH-04's storey, opening and façade datums survive unchanged; only the derived stair arithmetic changes.
 
 ---
 
@@ -37,7 +39,7 @@ Three height families were tested.
 
 Approximate intent:
 
-- retain the RH-03 **3240 mm** ground-to-first datum;
+- retain the RH-03 **3240 mm** ground-to-first datum then under consideration;
 - give both occupied storeys near-equal perceived height;
 - differentiate hierarchy mainly through opening treatment.
 
@@ -59,14 +61,14 @@ Controlled planning datums:
 - outer cornice / eaves-control datum: approximately **+6250 mm**;
 - roof above: morphology only at RH-04; exact pitches, valleys, drainage and access belong to RH-08.
 
-Stair consequence:
+Current stair consequence after HFI-08B:
 
 - 18 rises over 3300 mm = **183.3 mm planning rise**;
-- 280 mm going retained;
-- `2R + G ≈ 647 mm`;
-- planning pitch ≈ **33.2°**.
+- **300 mm going**;
+- `2R + G ≈ 666.7 mm`;
+- planning pitch ≈ **31.4°**.
 
-This keeps RH-03's comfortable stair topology while giving the ground floor a modest but real sectional primacy.
+This keeps RH-03's comfortable stair topology while giving the ground floor a modest but real sectional primacy. HFI-08B changed the going from 280 to 300 mm without changing any RH-04 datum, opening head or façade axis.
 
 The difference is intentionally restrained. This is a compact contemporary family house, not a piano-nobile villa enlarged for spectacle.
 
@@ -92,6 +94,8 @@ The controlling architectural hierarchy is therefore:
 > **principal ground floor > private upper floor**, expressed through room height, opening height and entrance scale rather than through excessive monumentality.
 
 These are planning datums, not technical build-ups. RH-05 may alter floor depth locally if structure requires it; a material change to the visible storey hierarchy must return to this gate.
+
+HFI-08B recheck: **PASS.** The 300 mm-going stair retains the same 18-riser / three-flight / full-landing topology at +3300 mm FFL. Detailed string, guard, headroom and finished-clear-width geometry remains technical work.
 
 ---
 
@@ -333,6 +337,8 @@ It records one fine adjustment:
 
 - the front entrance centreline is controlled at **X = 7.35 m** as part of the four-bay field; this remains within the RH-03 arrival passage and does not require a room-order change.
 
+HFI-08B later reopens RH-03 only for stair going. Its 300 mm selection is rechecked here and requires **no RH-04 architectural rewind**: H1, the bay field, window hierarchy and visible storey proportions remain unchanged.
+
 Rejected:
 
 1. moving the stair to obtain a centred door;
@@ -364,12 +370,12 @@ RH-05 may change member depths and structural families. If it requires moving th
 
 # RH-04 gate record
 
-**Result:** **PASS**
+**Result:** **PASS; HFI-08B stair recheck PASS.**
 
 The house now has a coupled plan/section/elevation baseline in which:
 
 - the storey hierarchy is explicit;
-- the principal stair still fits at the selected datum;
+- the principal stair still fits at the selected datum with 300 mm goings;
 - the front is ordered without falsifying the off-centre entrance condition;
 - courtyard elevations derive from their actual architectural owners;
 - the front and courtyard use different scoped orders deliberately;
@@ -378,6 +384,8 @@ The house now has a coupled plan/section/elevation baseline in which:
 - no technical feature has been cosmetically hidden to achieve the composition.
 
 **No maturity promotion is claimed.** Structural, service, environmental and physical coordination remain open.
+
+The HFI-08B recheck changes no RH-04 datum or opening order. It records only the updated stair arithmetic derived from the corrected RH-03 source.
 
 **Next stage:** `RH-05 — Coordinate primary structure`.
 
