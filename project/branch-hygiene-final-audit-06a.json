@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-06A",
+  "programmeIssue": 161,
+  "status": "proof-complete-pending-review-merge",
+  "baselineMainSha": "ff50ca0e98419cc52338c0f3ff9d82b007100fe7",
+  "packetBranch": "brh-06a-final-mechanical-reaudit",
+  "canonicalAudit": {
+    "tool": "scripts/branch-hygiene-audit.mjs",
+    "workflowRunId": 39263047435,
+    "workflowJobId": 118095414246,
+    "workflowHeadSha": "e37cc1075f93907248709f197ff2062c9e7a4d98",
+    "artifactId": 12190304401,
+    "artifactDigest": "sha256:f37c50a1762e1458ed5835f9896d977849ba5a13f3c7ae1f4422ae4ed02ee39c",
+    "auditEnumerationSha256": "2f826d02538737cf83b8cf0fa5b001f67d9de961a53848a8910a8db478a1cec7",
+    "proofSha256": "1c1c28f4f108b1ce4359a5242debf2721c8b27c4022c26d835ff97eefe80d094",
+    "nonMainBranchCount": 3
+  },
+  "survivorsAtProof": [
+    {
+      "name": "drw-05e-principal-section-spread-proof",
+      "headSha": "29c520b7c82f24880d168c3e117370dec7837b8f",
+      "purpose": "DRW-05E principal-section spread proof; protected by open draft PR #235",
+      "openPr": 235,
+      "aheadOfMain": 1,
+      "behindMain": 16,
+      "uniquePatchCount": 1
+    },
+    {
+      "name": "hfi-05c-cross-discipline-conflict-matrix",
+      "headSha": "932dd67c61ba10cbc154f68745cf8571430f3ada",
+      "purpose": "HFI-05C cross-discipline conflict matrix; current authorised HFI packet under issue #195",
+      "openPr": null,
+      "aheadOfMain": 0,
+      "behindMain": 3,
+      "uniquePatchCount": 0
+    },
+    {
+      "name": "brh-06a-final-mechanical-reaudit",
+      "headSha": "e37cc1075f93907248709f197ff2062c9e7a4d98",
+      "purpose": "BRH-06A current proof packet",
+      "openPr": null,
+      "aheadOfMain": 1,
+      "behindMain": 0,
+      "uniquePatchCount": 1
+    }
+  ],
+  "historicalDeletionProof": {
+    "total": 161,
+    "classCounts": {"A": 115, "B": 5, "C": 41, "D": 0, "X": 0},
+    "everyRecordHasFormerHeadShaAndFinalDisposition": true,
+    "reconstructedRecordCount": 161,
+    "duplicateBranchNames": 0,
+    "fullReconstructedLedgerInProofArtifact": true,
+    "sources": [
+      "project/branch-hygiene-deletion-04a.json",
+      "project/branch-hygiene-deletion-04b.json",
+      "project/branch-hygiene-deletion-04c.json",
+      "project/branch-hygiene-deletion-04d.json",
+      "project/branch-hygiene-deletion-04e.json",
+      "project/branch-hygiene-deletion-04f.json",
+      "project/branch-hygiene-deletion-04g.json",
+      "project/branch-hygiene-semantic-review-02a.json through 02g.json"
+    ]
+  },
+  "semanticAndSalvageProof": {
+    "originalSemanticCandidates": 40,
+    "resolvedC": 40,
+    "resolvedD": 0,
+    "remainingCD": 0,
+    "unresolvedDTopics": 0,
+    "salvageQueueCount": 0,
+    "sourceXReconciliation": "project/branch-hygiene-x-reconciliation.json",
+    "sourceSalvageProof": "project/branch-hygiene-salvage-proof.json"
+  },
+  "preventionProof": {
+    "deleteBranchOnMerge": true,
+    "repositorySettingVerifiedAfterAudit": true,
+    "orphanAuditWorkflow": ".github/workflows/branch-orphan-audit.yml",
+    "orphanAuditScript": "scripts/branch-orphan-report.mjs",
+    "orphanAuditPermissions": ["contents: read", "pull-requests: read"],
+    "automaticOrphanDeletion": false,
+    "lifecycleDoctrine": "project/branch-lifecycle.md"
+  },
+  "temporaryProofWorkflow": {
+    "path": ".github/workflows/brh-06a-final-audit.yml",
+    "removedBeforeReview": true
+  },
+  "mutation": {
+    "historicalBranchDeletion": false,
+    "activeProgrammeBranchMutation": false,
+    "repositorySettingsChanged": false,
+    "branchRewritePerformed": false
+  },
+  "administrativeVoids": [253],
+  "nextPacket": "BRH-06B",
+  "nextAction": "After exact-head validation, fresh merge lease, merge and post-merge publication proof, run BRH-06B final reconciliation and close issue #161."
+}
