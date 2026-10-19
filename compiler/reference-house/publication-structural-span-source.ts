@@ -3,6 +3,7 @@ import { createReferenceHouseSource } from './fixture.js'
 import { referenceHouseCourtGeometry } from './plan-adapter.js'
 import { createGroundFloorPublicationPlanSource } from './publication-plan-source.js'
 import { createServiceTransverseSectionSource } from './publication-service-section-source.js'
+import { mm } from './units.js'
 import type { Millimetres } from './units.js'
 
 export type StructuralCoordinationAuthority = 'TECHNICAL_COORDINATION_SELECTED_OUTSIDE_RH_C1'
@@ -129,6 +130,7 @@ export const createStructuralSpanOverlaySource = (): StructuralSpanOverlaySource
   const court = referenceHouseCourtGeometry(house)
   const ground = createGroundFloorPublicationPlanSource()
   const service = createServiceTransverseSectionSource()
+  const zero = mm(0)
 
   const westSpan = court.x0
   const eastSpan = house.shell.width.value - court.x1
@@ -163,10 +165,10 @@ export const createStructuralSpanOverlaySource = (): StructuralSpanOverlaySource
         courtyardMasonryEnvelope: true,
         independentWholeHouseFrame: false
       }),
-      spanRegions: selected('DRW10A-SPANS', [
-        { id: 'WEST-SIDE', x0: 0, x1: court.x0, y0: 0, y1: house.shell.depth.value, direction: 'east-west', grossSpan: westSpan, qualification: 'ordinary-gross-span' },
-        { id: 'EAST-SIDE', x0: court.x1, x1: house.shell.width.value, y0: 0, y1: house.shell.depth.value, direction: 'east-west', grossSpan: eastSpan, qualification: 'ordinary-gross-span' },
-        { id: 'SOUTH-CENTRE', x0: court.x0, x1: court.x1, y0: 0, y1: court.y0, direction: 'north-south', grossSpan: southSpan, qualification: 'local-stair-framing-modifies-field' },
+      spanRegions: selected<readonly StructuralSpanRegion[]>('DRW10A-SPANS', [
+        { id: 'WEST-SIDE', x0: zero, x1: court.x0, y0: zero, y1: house.shell.depth.value, direction: 'east-west', grossSpan: westSpan, qualification: 'ordinary-gross-span' },
+        { id: 'EAST-SIDE', x0: court.x1, x1: house.shell.width.value, y0: zero, y1: house.shell.depth.value, direction: 'east-west', grossSpan: eastSpan, qualification: 'ordinary-gross-span' },
+        { id: 'SOUTH-CENTRE', x0: court.x0, x1: court.x1, y0: zero, y1: court.y0, direction: 'north-south', grossSpan: southSpan, qualification: 'local-stair-framing-modifies-field' },
         { id: 'NORTH-CENTRE', x0: court.x0, x1: court.x1, y0: court.y1, y1: house.shell.depth.value, direction: 'north-south', grossSpan: northSpan, qualification: 'ordinary-gross-span' }
       ]),
       courtEdgeBeamFamily: selected('DRW10A-COURT-EDGE-BEAM-FAMILY', {
