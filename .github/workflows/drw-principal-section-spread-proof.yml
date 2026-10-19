@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'publication/specimens/drw05e/**'
+      - 'docs/publication/architectural-drawing-drw05e-principal-section-spread-proof.md'
       - 'docs/reference-house/publication-principal-section.svg'
       - 'compiler/reference-house/publication-principal-section*.ts'
       - 'compiler/reference-house/generate-publication-principal-section.ts'
