@@ -35,7 +35,7 @@ test('DRW-07C projects the exact roof substrate at literal 1:100', () => {
 test('DRW-07C refuses scale drift or incomplete frozen topology', () => {
   const source = createRoofDrainagePublicationSource()
   const wrongScale = structuredClone(source)
-  wrongScale.view.value.scale = 50
+  Object.defineProperty(wrongScale.view.value, 'scale', { value: 50, configurable: true })
   assert.throws(() => createRoofDrainagePublicationScene(wrongScale), /frozen at 1:100/)
 
   const missingField = structuredClone(source)
