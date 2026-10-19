@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "packet": "BRH-05B",
   "programmeIssue": 161,
-  "status": "implementation_proven_pending_merge",
+  "status": "complete",
   "baselineMainSha": "0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d",
   "entryState": {
     "historicalQueueRemaining": 0,
@@ -11,13 +11,6 @@
       "main",
       "drw-05e-principal-section-spread-proof",
       "hfi-04d-kitchen-storage-fixed-work-zones"
-    ],
-    "openPrs": [
-      {
-        "pr": 235,
-        "branch": "drw-05e-principal-section-spread-proof",
-        "draft": true
-      }
     ]
   },
   "implementation": {
@@ -26,7 +19,7 @@
     "workflow": ".github/workflows/branch-orphan-audit.yml",
     "retentions": "project/branch-hygiene-retentions.json",
     "recentHeadWindowDays": 14,
-    "schedule": "17 6 * * 1",
+    "scheduleCronUtc": "17 6 * * 1",
     "manualDispatch": true,
     "pullRequestSelfTest": true,
     "permissions": [
@@ -40,37 +33,52 @@
     "recent": "branch has no open PR or retention reason and head commit age is <= 14 days",
     "suspicious": "branch has no open PR, no retention reason and head commit age is > 14 days"
   },
-  "firstProof": {
-    "pr": 245,
-    "implementationHeadSha": "9725d95538fd38be9c3bd99826a7ded2029f2aad",
-    "workflowRunId": 39255049551,
-    "jobId": 118068114269,
-    "conclusion": "success",
-    "artifactId": 12187616745,
-    "artifactDigest": "sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623",
-    "summary": {
-      "total": 3,
-      "openPr": 2,
-      "recent": 1,
-      "retained": 0,
-      "suspicious": 0
+  "proofs": {
+    "implementationHead": {
+      "headSha": "9725d95538fd38be9c3bd99826a7ded2029f2aad",
+      "workflowRunId": 39255049551,
+      "jobId": 118068114269,
+      "artifactId": 12187616745,
+      "artifactDigest": "sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623",
+      "summary": {"total":3,"openPr":2,"recent":1,"retained":0,"suspicious":0}
+    },
+    "finalHead": {
+      "headSha": "720965cebe88e2b76507e526f35ce9d4caff252b",
+      "orphanAuditRunId": 39255307550,
+      "orphanAuditJobId": 118068993234,
+      "artifactId": 12187617115,
+      "artifactDigest": "sha256:ab6dc8e2475a12491e145629f4021de140c8b54dc9c45d2a31393e15ad94ba0b",
+      "summary": {"total":3,"openPr":3,"recent":0,"retained":0,"suspicious":0},
+      "normalPrValidationRunId": 39255307341,
+      "normalPrValidationConclusion": "success"
     }
   },
+  "merge": {
+    "pr": 245,
+    "leasedMainSha": "6db87f9fc2e2e20d67b9004fd6ada53aac117d1d",
+    "mergeCommitSha": "0f0eb04786cae47b68477164bc476ee80dc158f9",
+    "firstParentSha": "6db87f9fc2e2e20d67b9004fd6ada53aac117d1d",
+    "secondParentSha": "720965cebe88e2b76507e526f35ce9d4caff252b",
+    "packetBranchAutoDeleted": true,
+    "manualPacketBranchDeletionPerformed": false
+  },
+  "postMerge": {
+    "pagesRunId": 39255699267,
+    "workingEdition": "success",
+    "primer": "success",
+    "pdfVerification": "success",
+    "pdfMetadata": "success",
+    "dataPlate": "success",
+    "pagesArtifact": "success",
+    "pagesDeployment": "success"
+  },
   "safety": {
-    "remoteMutationCapability": false,
-    "automaticDeletion": false,
+    "remoteMutationCapabilityInAudit": false,
+    "automaticStaleBranchDeletion": false,
     "branchRewrite": false,
     "suspiciousResultFailsWorkflow": false,
-    "ageSignal": "head commit age; Git refs do not expose a reliable creation timestamp"
-  },
-  "acceptance": {
-    "auditWorkflowGreen": true,
-    "liveBranchClassificationProven": true,
-    "artifactUploaded": true,
-    "exactHeadPrValidationGreen": false,
-    "merged": false,
-    "postMergeValidationGreen": false,
-    "issueCloseoutRecorded": false
+    "ageSignal": "head commit age; Git refs do not expose a reliable creation timestamp",
+    "activeProgrammeBranchesTouched": false
   },
   "nextPacket": "BRH-05C"
 }

@@ -1,64 +1,63 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "packet": "BRH-05B",
   "programmeIssue": 161,
+  "status": "complete",
   "authority": {
     "priorPacket": "project/branch-hygiene-prevention-05a.{json,md,provenance.json}",
     "baselineMainSha": "0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d",
     "historicalQueueRemaining": 0
   },
-  "entryNamespace": [
-    {
-      "branch": "drw-05e-principal-section-spread-proof",
-      "headSha": "29c520b7c82f24880d168c3e117370dec7837b8f",
-      "openPr": 235
-    },
-    {
-      "branch": "hfi-04d-kitchen-storage-fixed-work-zones",
-      "headSha": "0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d",
-      "openPr": null,
-      "note": "fresh concurrent HFI branch created from current main"
-    }
-  ],
-  "reuse": {
+  "implementation": {
     "auditScript": "scripts/branch-hygiene-audit.mjs",
-    "reason": "Avoid duplicating the already-proven Git-history and patch-equivalence engine."
-  },
-  "newFiles": [
-    "scripts/branch-orphan-report.mjs",
-    ".github/workflows/branch-orphan-audit.yml",
-    "project/branch-hygiene-retentions.json",
-    "project/branch-hygiene-prevention-05b.md",
-    "project/branch-hygiene-prevention-05b.json",
-    "project/branch-hygiene-prevention-05b.provenance.json"
-  ],
-  "workflow": {
+    "reportScript": "scripts/branch-orphan-report.mjs",
+    "workflow": ".github/workflows/branch-orphan-audit.yml",
+    "retentions": "project/branch-hygiene-retentions.json",
     "scheduleCronUtc": "17 6 * * 1",
     "workflowDispatch": true,
     "pullRequestSelfTest": true,
-    "permissions": {
-      "contents": "read",
-      "pull-requests": "read"
-    },
-    "artifact": "branch-orphan-audit",
+    "permissions": {"contents":"read","pull-requests":"read"},
     "mutationActions": []
   },
-  "proof": {
-    "pr": 245,
-    "implementationHeadSha": "9725d95538fd38be9c3bd99826a7ded2029f2aad",
-    "workflowRunId": 39255049551,
-    "jobId": 118068114269,
-    "workflowConclusion": "success",
-    "workflowArtifactId": 12187616745,
-    "workflowArtifactDigest": "sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623",
-    "result": {
-      "total": 3,
-      "openPr": 2,
-      "recent": 1,
-      "retained": 0,
-      "suspicious": 0
+  "proofs": [
+    {
+      "headSha": "9725d95538fd38be9c3bd99826a7ded2029f2aad",
+      "workflowRunId": 39255049551,
+      "jobId": 118068114269,
+      "artifactId": 12187616745,
+      "artifactDigest": "sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623",
+      "summary": {"total":3,"openPr":2,"recent":1,"retained":0,"suspicious":0}
     },
-    "normalPrValidationRunId": null
+    {
+      "headSha": "720965cebe88e2b76507e526f35ce9d4caff252b",
+      "workflowRunId": 39255307550,
+      "jobId": 118068993234,
+      "artifactId": 12187617115,
+      "artifactDigest": "sha256:ab6dc8e2475a12491e145629f4021de140c8b54dc9c45d2a31393e15ad94ba0b",
+      "summary": {"total":3,"openPr":3,"recent":0,"retained":0,"suspicious":0},
+      "normalPrValidationRunId": 39255307341,
+      "normalPrValidationConclusion": "success"
+    }
+  ],
+  "merge": {
+    "pr": 245,
+    "leasedMainSha": "6db87f9fc2e2e20d67b9004fd6ada53aac117d1d",
+    "validatedHeadSha": "720965cebe88e2b76507e526f35ce9d4caff252b",
+    "mergeCommitSha": "0f0eb04786cae47b68477164bc476ee80dc158f9",
+    "firstParentSha": "6db87f9fc2e2e20d67b9004fd6ada53aac117d1d",
+    "secondParentSha": "720965cebe88e2b76507e526f35ce9d4caff252b",
+    "packetBranchAutoDeleted": true
+  },
+  "postMerge": {
+    "pagesRunId": 39255699267,
+    "conclusion": "success"
+  },
+  "safety": {
+    "remoteMutationCapabilityInAudit": false,
+    "automaticOrphanDeletion": false,
+    "manualPacketBranchDeletion": false,
+    "branchRewrite": false,
+    "activeProgrammeBranchesTouched": false
   },
   "nextPacket": "BRH-05C"
 }
