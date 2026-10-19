@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-05B",
+  "programmeIssue": 161,
+  "status": "implementation_pending_proof",
+  "baselineMainSha": "0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d",
+  "entryState": {
+    "historicalQueueRemaining": 0,
+    "deleteBranchOnMerge": true,
+    "liveBranchesBeforePacket": [
+      "main",
+      "drw-05e-principal-section-spread-proof",
+      "hfi-04d-kitchen-storage-fixed-work-zones"
+    ],
+    "openPrs": [
+      {
+        "pr": 235,
+        "branch": "drw-05e-principal-section-spread-proof",
+        "draft": true
+      }
+    ]
+  },
+  "implementation": {
+    "historyEngine": "scripts/branch-hygiene-audit.mjs",
+    "reporter": "scripts/branch-orphan-report.mjs",
+    "workflow": ".github/workflows/branch-orphan-audit.yml",
+    "retentions": "project/branch-hygiene-retentions.json",
+    "recentHeadWindowDays": 14,
+    "schedule": "17 6 * * 1",
+    "manualDispatch": true,
+    "pullRequestSelfTest": true,
+    "permissions": [
+      "contents: read",
+      "pull-requests: read"
+    ]
+  },
+  "classification": {
+    "openPr": "branch has at least one open pull request",
+    "retained": "branch has an explicit non-empty retention reason",
+    "recent": "branch has no open PR or retention reason and head commit age is <= 14 days",
+    "suspicious": "branch has no open PR, no retention reason and head commit age is > 14 days"
+  },
+  "safety": {
+    "remoteMutationCapability": false,
+    "automaticDeletion": false,
+    "branchRewrite": false,
+    "suspiciousResultFailsWorkflow": false,
+    "ageSignal": "head commit age; Git refs do not expose a reliable creation timestamp"
+  },
+  "acceptance": {
+    "auditWorkflowGreen": false,
+    "liveBranchClassificationProven": false,
+    "artifactUploaded": false,
+    "exactHeadPrValidationGreen": false,
+    "merged": false,
+    "postMergeValidationGreen": false,
+    "issueCloseoutRecorded": false
+  },
+  "nextPacket": "BRH-05C"
+}

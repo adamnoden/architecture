@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-05B",
+  "programmeIssue": 161,
+  "authority": {
+    "priorPacket": "project/branch-hygiene-prevention-05a.{json,md,provenance.json}",
+    "baselineMainSha": "0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d",
+    "historicalQueueRemaining": 0
+  },
+  "entryNamespace": [
+    {
+      "branch": "drw-05e-principal-section-spread-proof",
+      "headSha": "29c520b7c82f24880d168c3e117370dec7837b8f",
+      "openPr": 235
+    },
+    {
+      "branch": "hfi-04d-kitchen-storage-fixed-work-zones",
+      "headSha": "0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d",
+      "openPr": null,
+      "note": "fresh concurrent HFI branch created from current main"
+    }
+  ],
+  "reuse": {
+    "auditScript": "scripts/branch-hygiene-audit.mjs",
+    "reason": "Avoid duplicating the already-proven Git-history and patch-equivalence engine."
+  },
+  "newFiles": [
+    "scripts/branch-orphan-report.mjs",
+    ".github/workflows/branch-orphan-audit.yml",
+    "project/branch-hygiene-retentions.json",
+    "project/branch-hygiene-prevention-05b.md",
+    "project/branch-hygiene-prevention-05b.json",
+    "project/branch-hygiene-prevention-05b.provenance.json"
+  ],
+  "workflow": {
+    "scheduleCronUtc": "17 6 * * 1",
+    "workflowDispatch": true,
+    "pullRequestSelfTest": true,
+    "permissions": {
+      "contents": "read",
+      "pull-requests": "read"
+    },
+    "artifact": "branch-orphan-audit",
+    "mutationActions": []
+  },
+  "proof": {
+    "workflowRunId": null,
+    "workflowArtifactId": null,
+    "workflowArtifactDigest": null,
+    "prValidationRunId": null,
+    "result": null
+  },
+  "nextPacket": "BRH-05C"
+}
