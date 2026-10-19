@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # DRW-06B — principal front-elevation source
 
 **Status:** source hardening packet  
