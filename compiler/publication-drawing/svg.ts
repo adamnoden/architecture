@@ -75,7 +75,7 @@ const style = (): string => {
     .map(([role, width]) => `.line-${role}{stroke:${t.ink.primary};stroke-width:${formatDrawingNumber(width)};fill:none;stroke-linecap:butt;stroke-linejoin:miter}`)
     .join('')
   const text = (Object.keys(t.textMm) as Array<keyof typeof t.textMm>)
-    .map((role) => `.text-${role}{font-family:${t.fontFamily};font-size:${formatDrawingNumber(t.textMm[role])};font-weight:${t.textWeight[role]};fill:${t.ink.primary}}`)
+    .map((role) => `.text-${role}{font-family:${t.fontFamily};font-size:${formatDrawingNumber(t.textMm[role])}mm;font-weight:${t.textWeight[role]};fill:${t.ink.primary}}`)
     .join('')
   const dash = Object.entries(t.dashMm)
     .map(([role, values]) => `.dash-${role}{stroke-dasharray:${values.map(formatDrawingNumber).join(' ')}}`)
