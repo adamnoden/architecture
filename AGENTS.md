@@ -1,8 +1,8 @@
 # Agent Operating Constitution
 
-This file governs how agents should work in this repository.
+This file governs **how agents work in this repository**. It does not establish architectural facts, project status, a roadmap or a work queue. Those belong to their owning sources.
 
-It is deliberately **not** a project status document, roadmap, architectural summary or command catalogue. Those belong to their owning sources. The rules here should remain useful as the project changes.
+Keep this file durable. Do not copy changing project facts into it.
 
 ## 1. Governing posture
 
@@ -14,239 +14,185 @@ When working here:
 - preserve explicit uncertainty over convenient certainty;
 - preserve source authority over downstream appearance;
 - prefer the smallest change that resolves the actual problem;
-- treat deletion, simplification and **no change required** as legitimate successful outcomes;
+- treat deletion, simplification and **no change required** as successful outcomes when earned;
 - do not create machinery merely because machinery can be created.
 
-Find the owning error, not the nearest editable symptom.
+**Find the owning error, not the nearest editable symptom.**
 
 ## 2. Canonical anchors
 
-Do not duplicate changing project facts into this file. Follow their owning sources.
+Follow changing facts at their source:
 
-- `README.md` — project proposition and high-level conceptual structure.
-- `docs/README.md` — repository documentation ownership and information architecture.
-- `STATUS.md` — present project-wide state and current maturity judgements.
-- `project/authority.ts` — machine-readable project claim ceiling.
-- `docs/editorial/editorial-doctrine.md` — public-facing editorial standard.
-- `docs/computational/README.md` and `compiler/README.md` — computational role, proof boundaries and output architecture.
-- `package.json` — current executable commands and repository health entry points.
+- `README.md` — project proposition and conceptual structure;
+- `docs/README.md` — documentation ownership and information architecture;
+- `STATUS.md` — present project-wide state and maturity judgements;
+- `project/authority.ts` — machine-readable claim ceiling;
+- `docs/editorial/editorial-doctrine.md` — public-facing editorial standard;
+- `docs/computational/README.md` and `compiler/README.md` — computational role and proof boundaries;
+- `package.json` — current commands and repository health entry points.
 
-For a particular workstream, also read its latest applicable gate/result and the README or programme control that owns it.
+For a particular workstream, also read its latest applicable gate/result and its owning README or programme control.
 
-If an older plan says “next: X”, that is historical evidence unless current authority confirms it. Never infer present state from an old execution record when a later gate or `STATUS.md` supersedes it.
+An older plan saying “next: X” is historical evidence unless current authority confirms it. `STATUS.md` and later explicit results control present-state questions.
+
+This constitution governs behaviour, not facts. If it ever appears to conflict with an owning source about an architectural, technical or status fact, the owning source controls that fact.
 
 ## 3. Establish authority before editing
 
-Before changing a fact, determine which layer owns it.
-
-The repository separates, among other things:
-
-- architectural doctrine and manuscript argument;
-- reusable patterns and strategies;
-- architectural grammar;
-- Reference House project choices;
-- research and evidence;
-- development/programme controls;
-- prototype artefacts and results;
-- delivery requirements;
-- computational representations and proofs;
-- generated inspection outputs;
-- publication figures and rendered artefacts.
+Determine which layer owns a fact before changing it. The repository deliberately separates doctrine, patterns, grammar, Reference House choices, research, development controls, prototypes, delivery requirements, computation, generated inspection outputs and publication artefacts.
 
 Change the owning source first, then propagate consequences downstream.
 
-Do not hand-edit a generated artefact to conceal a source problem. Do not make a publication drawing authoritative merely because it looks correct. Do not copy the same fact into another layer when a link, derivation or explicit reference will preserve ownership.
+Do not:
 
-Place new documents according to what they **do**, not merely what subject they mention. Cross-link rather than duplicate.
+- hand-edit a generated artefact to conceal a source problem;
+- make a rendered drawing authoritative merely because it looks correct;
+- duplicate a fact into another layer when derivation, linking or explicit reference preserves ownership;
+- place a document by subject when its actual role belongs elsewhere.
+
+Cross-link rather than duplicate.
 
 ## 4. Epistemic discipline
 
-A central obligation of this project is to avoid making stronger claims than the evidence earns.
+Never make a stronger claim than the evidence earns.
 
-Therefore:
+In particular:
 
 - a project choice is not a universal principle;
 - a Reference House decision is not proof of doctrine, pattern or grammar;
 - a pattern is not proof;
-- a precedent is not validation by resemblance;
+- precedent is not validation by resemblance;
 - guidance is not law;
-- correspondence with one regulatory method is not whole-building compliance;
+- one regulatory-method correspondence is not whole-building compliance;
 - representability is not adequacy;
-- a deterministic result is not automatically a physically meaningful result;
+- deterministic output is not automatically physical truth;
 - a passing compile is not architectural merit, engineering adequacy or regulatory approval;
 - a prototype plan is not a prototype result;
 - an unprocessed professional opinion is not resolved external validation;
 - maturity or progress does not silently widen authority.
 
-Unknown stays unknown. Unsupported stays unsupported. Unresolved stays visible until evidence resolves it.
+**Unknown stays unknown. Unsupported stays unsupported. Unresolved stays visible.**
 
-When a claim depends on jurisdiction, edition, applicability, assumptions or a supported domain, keep those boundaries explicit.
+Keep jurisdiction, edition, applicability, assumptions and supported-domain boundaries explicit where they matter.
 
-When evidence falsifies or narrows a working proposition, change the proposition. Do not rescue it by weakening the test after seeing the result.
+When evidence falsifies or narrows a proposition, change the proposition. Do not rescue it by weakening the test after seeing the result.
 
-Do not promote downstream specificity upstream merely because it appears repeatedly. Preserve the general reason at the highest justified layer and keep stylistic, technical, grammar-specific or project-specific implementations at the narrowest layer that owns them.
+Do not promote downstream specificity upstream merely because it recurs. Preserve the general reason at the highest justified layer; keep stylistic, technical, grammar-specific and project-specific implementations at the narrowest layer that owns them.
 
 ## 5. Computation is subordinate to architecture
 
 Formalise a relationship only when deterministic representation adds useful checking, traceability or inspection.
 
-Do not:
+Do not invent inputs, convert preferences into universal or statutory rules, broaden a supported domain because the code can represent more, or add compiler machinery without a concrete proof obligation or failure mode that earns it.
 
-- turn architectural judgement into arbitrary rules merely to make the model more complete;
-- invent inputs that the architecture or evidence has not established;
-- convert preferred project targets into statutory or universal minima;
-- broaden a supported domain because the code could technically represent more;
-- add a compiler rule, schema, abstraction or regression test without a concrete failure mode or proof obligation that earns it.
+**A machine-checked weak assumption remains a weak assumption.**
 
-A machine-checked weak assumption remains a weak assumption.
+Where authoritative evidence is missing, prefer an explicit unsupported/unknown result to guessed completion.
 
-The preferred failure mode for missing authoritative evidence is explicit unsupported/unknown state, not guessed completion.
-
-Generated machine/proof artefacts, semantic inspection outputs and publication graphics have different jobs. Do not collapse their authority boundaries.
+Machine/proof artefacts, semantic inspection outputs and publication graphics have different jobs and different authority. Do not collapse them.
 
 ## 6. Work in bounded questions
 
-Substantial work should be framed around a question, gate or packet whose conclusion can be stated clearly.
+Substantial work should answer a bounded question, gate or packet. Make clear:
 
-A good unit of work should make clear:
-
-- what question is being answered;
-- what authority and baseline it starts from;
-- what evidence or files are in scope;
-- what would falsify the working position;
+- the question and starting authority;
+- evidence and files in scope;
+- what could falsify the working position;
 - what changed, if anything;
 - what the result proves and does not prove;
-- what downstream material must be reconciled.
+- which downstream material must be reconciled.
 
-Do not broaden a packet merely because adjacent work becomes visible. Record or open the adjacent question separately unless it blocks the current result.
+Do not broaden a packet merely because adjacent work becomes visible. Separate the adjacent question unless it blocks the current result.
 
-If a bounded investigation demonstrates that the existing system is already correct, close it with no substantive change. Do not manufacture implementation to make the packet look productive.
+If investigation shows the existing system is already correct, close with no substantive change. Do not manufacture implementation to make work look productive.
 
-If the work exposes a defect in a shared upstream source, repair it there and then re-prove affected downstream outputs. Do not apply a local cosmetic patch unless the local layer genuinely owns the defect.
+If a local failure reveals a shared upstream defect, fix the upstream source and re-prove affected downstream outputs rather than applying a cosmetic local patch.
 
-## 7. Evidence before preference
+Distinguish observed defects, evidence-backed requirements, project preferences, unresolved trade-offs and speculative improvements. Never silently promote the latter categories into requirements.
 
-When architecture, prose, software or publication output is under review, distinguish:
+For external evidence, retain recoverable provenance, distinguish primary authority from interpretation, and record contradictory or negative evidence as readily as supportive evidence.
 
-1. an observed defect;
-2. an evidence-backed requirement;
-3. a project preference;
-4. an unresolved trade-off;
-5. a speculative improvement.
+## 7. Validation must match the claim
 
-Do not silently convert categories 3–5 into category 2.
+Use the canonical repository health command defined in `package.json` for repository-wide validation unless the owning workstream requires additional or narrower gates.
 
-For research and external sources:
-
-- preserve enough provenance to recover the source and applicability;
-- distinguish primary/authoritative material from secondary interpretation;
-- record negative and contradictory evidence, not only supportive evidence;
-- prefer exact mechanism and scope over persuasive generalisation;
-- do not imply professional validation that has not occurred.
-
-## 8. Validation must match the claim
-
-Use the canonical repository health command defined in `package.json` for repository-wide software/documentation validation unless the owning workstream specifies a narrower or additional gate.
-
-Passing automated tests proves only the assertions those tests legitimately cover.
-
-Use the validation mode appropriate to the thing changed:
+Automated tests prove only what they legitimately assert. Match validation to the boundary changed:
 
 - source/model changes — semantic and regression checks;
 - generated outputs — deterministic regeneration/verification;
-- publication changes — publication validation and rendered inspection where relevant;
-- scale, typography, linework or pagination — inspect the actual rendered physical output, not only source code;
-- architectural claims — architectural/evidential review at the appropriate authority layer;
-- physical propositions — physical evidence where the claim requires it;
-- professional or regulatory questions — competent external evidence where internal computation cannot establish the answer.
+- publication changes — publication validation and rendered inspection;
+- scale, typography, linework or pagination — inspect the actual rendered physical output;
+- architectural claims — architectural/evidential review;
+- physical propositions — physical evidence where required;
+- professional or regulatory questions — competent external evidence where internal proof cannot establish the answer.
 
 Do not substitute CI for judgement at a boundary CI does not test.
 
-If a change affects a controlled baseline, fingerprint, generated family or publication projection, reconcile all legitimately dependent artefacts rather than leaving a mixed state.
+When a controlled baseline, fingerprint, generated family or publication projection changes, reconcile all legitimately dependent artefacts. Do not leave a mixed state.
 
-## 9. Public and editorial surfaces
+## 8. Public surfaces
 
-Public-facing material is not an execution log.
+Public-facing material is not an execution log. Do not leak packet names, branch mechanics, temporary blockers, internal gate chatter or development-history residue into reader-facing prose unless the material is intentionally about provenance.
 
-Do not leak packet names, branch mechanics, temporary blockers, internal gate chatter or development-history residue into reader-facing prose unless the material is intentionally about provenance.
+Follow `docs/editorial/editorial-doctrine.md`. Never improve prose by making the underlying claim cleaner, stronger or more universal than the evidence permits.
 
-When editing public prose, follow `docs/editorial/editorial-doctrine.md` and preserve, in order:
+Website navigation, repository ownership and publication order are different structures. Changing one must not silently redefine the others.
 
-- substance and claim boundary;
-- precision;
-- explanatory sequence;
-- physical reality;
-- economy and rhythm.
+## 9. Git, merge safety and parallel work
 
-Do not improve prose by making the underlying claim stronger, cleaner or more universal than the evidence allows.
-
-Website navigation, repository ownership and publication order are different structures. A change to one must not silently redefine the others.
-
-## 10. Git and change isolation
-
-Treat Git history as part of the project’s evidence chain.
+Treat Git history as part of the evidence chain.
 
 For bounded work:
 
 - start from a known `main` baseline;
 - use a dedicated branch;
-- keep unrelated work out of the branch;
-- do not overwrite parallel work to simplify your own change;
-- preserve meaningful provenance when baselines or controlled artefacts move;
-- avoid force updates unless they are intentional, necessary and lease-protected.
+- isolate unrelated changes;
+- preserve parallel work rather than overwriting it for convenience;
+- preserve meaningful provenance when controlled baselines move;
+- avoid force updates unless intentional, necessary and lease-protected.
 
-Before merge, verify that the validated head is still the head being merged and that the intended base relationship still holds. If `main` has moved materially since validation, reconcile and revalidate rather than assuming the old green result proves the new merge result.
+Before merge, verify that the validated head is still the head being merged and that the intended base relationship still holds. If `main` has moved materially, reconcile and revalidate rather than assuming the earlier green result proves the resulting merge.
 
-Do not delete or rewrite branches, history or retained evidence merely because they look stale. Destructive cleanup requires positive evidence that the material is safe to remove and that no active or provenance dependency is being erased.
+Do not delete or rewrite branches, history or retained evidence merely because they look stale. Destructive cleanup requires positive evidence that no active or provenance dependency is being erased.
 
-## 11. Restart safety
+## 10. Restart safety
 
 Chat context is not the durable project record.
 
-When work is substantial, leave repository evidence sufficient for another competent agent with no conversation history to recover:
+Substantial work must leave enough repository evidence for another competent agent, without the conversation, to recover the question, starting authority, decision, reasoning, validation, unresolved limitations and downstream consequences.
 
-- the question;
-- the relevant baseline or authority;
-- the decision and reasoning;
-- evidence and validation performed;
-- unresolved limitations;
-- downstream consequences;
-- the next authorised step, when an owning programme actually defines one.
-
-Put transient identifiers such as current hashes, PR numbers, active packet names and temporary blockers in the workstream’s execution/gate records or PR, not in this constitution.
+Transient hashes, PR numbers, active packet names and temporary blockers belong in execution/gate records or the PR, not here.
 
 Update `STATUS.md` only when project-wide present state genuinely changes. Do not use it as a running diary.
 
-## 12. Restraint and proportionality
+## 11. Restraint and proportionality
 
-Every additional rule, abstraction, test, document, interface, service zone or architectural provision has a maintenance cost.
+Every rule, abstraction, test, document and architectural provision carries maintenance cost. Prefer an existing authoritative mechanism when it already catches the failure mode. Duplicate controls can create semantic drift and false confidence.
 
-Prefer reuse of an existing authoritative mechanism when it already catches the failure mode. Duplicate controls can create false confidence, semantic drift and unnecessary maintenance.
+Do not optimise for apparent completeness. Stop formalising when further formalisation outruns evidence or architectural value.
 
-Do not optimise for apparent completeness. This project is allowed to stop formalising a domain when further formalisation would outrun evidence or architectural value.
+A strong result may be rejection, narrowed scope, a conventional baseline, explicit unresolved status, deletion of unearned machinery, or confirmation that existing controls are sufficient.
 
-A strong result may be:
+## 12. Maintaining this constitution
 
-- rejection of the proposed idea;
-- narrowing of scope;
-- retention of a conventional baseline;
-- explicit unresolved status;
-- deletion of unearned machinery;
-- confirmation that existing controls are sufficient.
+Change `AGENTS.md` only when a **durable repository-wide operating rule** changes. Do not update it to reflect current programmes, maturity, issue numbers, PRs, hashes, dimensions, dependency versions or temporary workflow state.
 
-## 13. Final self-check
+Add a nested `AGENTS.md` only when a subtree has persistent local operating rules that would be wrong or noisy at repository scope. A nested file should add or tighten local behaviour, not duplicate project facts or create a competing constitution.
 
-Before considering work complete, ask:
+Before adding any instruction here, ask whether it belongs instead in an owning architectural, editorial, computational, status or programme document. If so, put it there.
 
-- Did I change the layer that actually owns the issue?
-- Did I preserve the distinction between evidence, judgement, preference and proof?
-- Did any local/project-specific decision leak upward into a general rule?
-- Did any generated or rendered output become an accidental source of truth?
-- Did I add machinery that is not earned by a real failure mode?
-- Did I preserve explicit unknowns rather than fill them with plausible guesses?
-- Did I validate the actual representation boundary affected by the change?
-- Did I leave stale downstream material or duplicated claims behind?
-- Could another agent reconstruct the decision from the repository without this conversation?
-- Is the resulting project simpler, truer or better evidenced—not merely more elaborate?
+## 13. Completion test
 
-If the answer to the last question is no, reconsider the change.
+Before calling substantial work complete, ask:
+
+- Did I change the layer that owns the issue?
+- Did I preserve evidence, judgement, preference and proof as distinct things?
+- Did local specificity leak into a general rule?
+- Did a generated output become an accidental source of truth?
+- Did I add unearned machinery or fill an unknown with a plausible guess?
+- Did I validate the actual representation boundary affected?
+- Did I reconcile dependent outputs and leave durable reasoning?
+- Could another agent reconstruct this decision from the repository alone?
+- Is the project now simpler, truer or better evidenced rather than merely more elaborate?
+
+If not, reconsider the change.
