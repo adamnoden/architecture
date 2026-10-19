@@ -32,8 +32,10 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
-      - name: Generate garden elevation SVG
+      - name: Regenerate controlled garden elevation SVG
         run: npx tsx compiler/reference-house/generate-publication-garden-elevation.ts
+      - name: Prove committed SVG bytes
+        run: git diff --exit-code -- docs/reference-house/publication-garden-elevation.svg
       - name: Prepare spread
         run: npx tsx publication/specimens/drw08c/prepare.ts
       - name: Build A4 proof
@@ -42,7 +44,7 @@ jobs:
         run: DRW08C_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw08c/vivliostyle.config.js
       - name: Validate garden elevation proof
         run: npx tsx publication/specimens/drw08c/validate.ts
-      - name: Upload generated drawing and proof PDFs
+      - name: Upload controlled drawing and proof PDFs
         if: always()
         uses: actions/upload-artifact@v6
         with:
