@@ -17,12 +17,12 @@ test('DRW-08E.2 uses field ticks and editorial occurrence notation, never fabric
   for (const id of ['service-field-middle-tick', 'service-field-north-tick']) {
     const primitive = scene.primitives.find((candidate) => candidate.id === id)
     assert.ok(primitive && primitive.kind === 'line')
-    assert.equal(primitive.metadata.treatment, 'plan-owned-field-break-not-facade-seam')
+    assert.equal(primitive.metadata?.treatment, 'plan-owned-field-break-not-facade-seam')
   }
   for (const id of ['service-study-window', 'service-bathroom-window', 'service-plant-opening', 'service-kitchen-window']) {
     const primitive = scene.primitives.find((candidate) => candidate.id === id)
     assert.ok(primitive && primitive.kind === 'text')
-    assert.equal(primitive.metadata.geometry, 'ABSENT')
+    assert.equal(primitive.metadata?.geometry, 'ABSENT')
   }
 })
 
@@ -31,8 +31,8 @@ test('DRW-08E.2 keeps technical service notation explicitly non-coordinate', () 
   for (const id of ['service-mvhr-zone', 'service-utility-zone', 'service-ashp-zone', 'service-cooker-zone', 'service-rwp-zones', 'service-soil-vent-zone']) {
     const primitive = scene.primitives.find((candidate) => candidate.id === id)
     assert.ok(primitive && primitive.kind === 'text')
-    assert.equal(primitive.metadata.geometry, 'ABSENT_TECHNICAL')
-    assert.equal(primitive.metadata.treatment, 'qualitative-zone-notation-not-terminal-coordinate')
+    assert.equal(primitive.metadata?.geometry, 'ABSENT_TECHNICAL')
+    assert.equal(primitive.metadata?.treatment, 'qualitative-zone-notation-not-terminal-coordinate')
   }
 })
 
