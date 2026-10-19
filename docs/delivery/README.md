@@ -24,9 +24,9 @@ Delivery does not own:
 - evidential validity — see [`../research/`](../research/) and [`../prototypes/`](../prototypes/);
 - Reference House project choices — see [`../reference-house/`](../reference-house/);
 - target, jurisdiction or real-site facts merely because they affect a commission;
-- present project-wide status — see [`../../STATUS.md`](../../STATUS.md).
+- present project-wide status — that lives in `STATUS.md`.
 
-The separate deployment programme under [`../../project/dpl/`](../../project/dpl/) is establishing the target/site/deployment layer. Delivery and deployment may exchange constraints, but they are not interchangeable authority layers.
+The separate deployment programme under `project/dpl/` is establishing the target/site/deployment layer. Delivery and deployment may exchange constraints, but they are not interchangeable authority layers.
 
 ## Rule
 
@@ -34,4 +34,4 @@ The separate deployment programme under [`../../project/dpl/`](../../project/dpl
 
 Where later engineering, site evidence, regulation or professional judgement changes an upstream proposition, update the owning source first and reconcile the delivery requirement downstream.
 
-See [`../README.md`](../README.md) for documentation ownership and the root [`../../README.md`](../../README.md) for the repository-wide map.
+The wider documentation ownership contract is `docs/README.md`; the repository-wide public map is the root [`README.md`](../../README.md).
