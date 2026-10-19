@@ -67,6 +67,10 @@ function collectReadmes(dir: string): string[] {
   return files
 }
 
+function markdownLinkSources(): string[] {
+  return [...new Set([...repositoryMarkdown(), ...collectReadmes(repoRoot)])]
+}
+
 function validateReadmeCommands(): number {
   const packageJson = JSON.parse(readFileSync(join(repoRoot, 'package.json'), 'utf8')) as {
     scripts?: Record<string, string>
@@ -109,7 +113,7 @@ function validateLocalMarkdownLinks(): void {
   const linkPattern = /(?<!!)\[[^\]]+\]\(([^\s)]+)(?:\s+[^)]*)?\)/g
   const failures: string[] = []
 
-  for (const source of repositoryMarkdown()) {
+  for (const source of markdownLinkSources()) {
     const markdown = readFileSync(source, 'utf8')
 
     for (const match of markdown.matchAll(linkPattern)) {
