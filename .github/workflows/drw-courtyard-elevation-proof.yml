@@ -29,8 +29,10 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
-      - name: Generate courtyard elevation SVG
+      - name: Regenerate controlled courtyard elevation SVG
         run: npx tsx compiler/reference-house/generate-publication-courtyard-elevation.ts
+      - name: Prove committed SVG bytes
+        run: git diff --exit-code -- docs/reference-house/publication-courtyard-elevation.svg
       - name: Prepare spread
         run: npx tsx publication/specimens/drw08d/prepare.ts
       - name: Build A4 proof
@@ -39,7 +41,7 @@ jobs:
         run: DRW08D_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw08d/vivliostyle.config.js
       - name: Validate courtyard elevation proof
         run: npx tsx publication/specimens/drw08d/validate.ts
-      - name: Upload generated drawing and proof PDFs
+      - name: Upload controlled drawing and proof PDFs
         if: always()
         uses: actions/upload-artifact@v6
         with:
