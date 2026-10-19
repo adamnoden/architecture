@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-04F",
+  "programmeIssue": 161,
+  "status": "authorised_pending_execution",
+  "packetBranch": "brh-04f-controlled-deletion-6",
+  "execution": {
+    "discoveryMainSha": "ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
+    "sourceClassificationBaselineMainSha": "b80920f74a677c3ddc0ebf70884ca3e0da02ca89",
+    "sourceSemanticCompletionMainSha": "589f0ac2c37046d55c055373f2d32816f774eaba",
+    "namespaceCountBeforePacketBranchIncludingMain": 48,
+    "expectedNamespaceCountAfterPacketBranchIncludingMain": 49,
+    "hardDeletionCap": 25,
+    "candidateCount": 25,
+    "candidateClassCounts": {
+      "B": 5,
+      "C": 20,
+      "A": 0,
+      "D": 0,
+      "X": 0
+    },
+    "deletionMechanism": "temporary packet-local GitHub Actions runner using exact-ref force-with-lease",
+    "connectorDeleteBranchActionAvailable": false
+  },
+  "discoveryOpenPrSnapshot": [
+    {
+      "pr": 235,
+      "branch": "drw-05e-principal-section-spread-proof",
+      "headSha": "e19e8be7db4f2063d3d9f8e5f47160cc4e469195",
+      "protected": true,
+      "draft": true
+    }
+  ],
+  "protectedRecentRefs": [
+    "drw-03c1-physical-svg-type",
+    "drw-05e-principal-section-spread-proof"
+  ],
+  "selection": {
+    "rule": "Consume the complete BRH-01B B queue first, then take whole reviewed-C semantic groups without exceeding the 25-ref BRH-04 cap.",
+    "BGroup": {
+      "authority": "project/branch-hygiene-classification.{json,md,provenance.json}",
+      "count": 5
+    },
+    "CGroups": [
+      {
+        "packet": "BRH-02C",
+        "group": "compiler/computational",
+        "count": 7
+      },
+      {
+        "packet": "BRH-02D",
+        "group": "G01 completion",
+        "count": 8
+      },
+      {
+        "packet": "BRH-02F",
+        "group": "pattern language",
+        "count": 5
+      }
+    ],
+    "queueAfterSuccess": {
+      "B": 0,
+      "reviewedC": 20
+    }
+  },
+  "candidateSetSha256": "0918c27ab42175ad27f1b81c40dd1a307bf384790119d3e290aa3c5106e89ff8",
+  "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
+  "candidates": [
+    {"name":"ch00-compiler-hardening-plan","expectedHeadSha":"23360b57002dd674abd48d8fc4ddf65b4eddc27a","class":"B"},
+    {"name":"external-maintenance-geography","expectedHeadSha":"2b7edc1583b70da90315efe91f63a7566aabaed9","class":"B"},
+    {"name":"maturity-model-enforcement","expectedHeadSha":"fb1a57750332c27485223a020eb8375a9a5683bf","class":"B"},
+    {"name":"pr00e-e2-e4-editorial-hardening","expectedHeadSha":"514d6ae7b6dfeca79f498e45a127f995972aef32","class":"B"},
+    {"name":"pub-san-back-matter","expectedHeadSha":"f519e6de4b5491be6f6aefce438c72e88e02dcf7","class":"B"},
+    {"name":"cf-01-contrast-fixture","expectedHeadSha":"66470917264edf3419ebda2886fbf42c2466a125","class":"C"},
+    {"name":"ch-05-determinism-identity-provenance","expectedHeadSha":"77d0d0521a6ddbd6f7f27ac7d324247be1932721","class":"C"},
+    {"name":"ch-05-housekeeping-sync","expectedHeadSha":"4971c87e788b814dfde1d111399edc64663d6c86","class":"C"},
+    {"name":"ch-08-distillation-deletion","expectedHeadSha":"4d7749f3cbb39a8b10defb8effa9c3a988482708","class":"C"},
+    {"name":"coa-04-plan-section-successors","expectedHeadSha":"95da828b7087abab7b66df763a18eee276c56202","class":"C"},
+    {"name":"coa-05-topology-successors-final","expectedHeadSha":"1a2cd8719791c50f3b5f29fb98436a3b657bfe11","class":"C"},
+    {"name":"coa-06-output-integration","expectedHeadSha":"3ee3a9a501267ea2ca6b7b7d1f55d68cbd2bd585","class":"C"},
+    {"name":"g01-completion-programme","expectedHeadSha":"0efb277130c59b7042726c3121f0529c011c2eb1","class":"C"},
+    {"name":"g01-d10-normative","expectedHeadSha":"8b59b09bcf3a47b190c9d6f0e0a849b5f5f997ad","class":"C"},
+    {"name":"g01-d10s-specificity","expectedHeadSha":"7cca300e719497230e8b9778037cd3379ef1bae4","class":"C"},
+    {"name":"g01-d11-v01-freeze","expectedHeadSha":"8adc19b0daa40a3615f9114453250c4ab2593fe9","class":"C"},
+    {"name":"g01-d12-reference-house","expectedHeadSha":"172957fb8fa568ba682908e3cf78a29cbc80460d","class":"C"},
+    {"name":"g01-d13-closeout","expectedHeadSha":"6969c24301619ddeb92f3f18ef72fad69b5ccfc9","class":"C"},
+    {"name":"g01-d8-falsification","expectedHeadSha":"89aab07fca5debbf77c35f0b6d713683a645163f","class":"C"},
+    {"name":"g01-d9-holdout","expectedHeadSha":"c1cc56d17cd616a648e78d0a1851c39c05faa7ba","class":"C"},
+    {"name":"pattern-language-overhaul","expectedHeadSha":"12af047641ef08f2f5a21a9621dbfc668abd48fc","class":"C"},
+    {"name":"pattern-language-phase6-audit","expectedHeadSha":"0c08c98d4792ccb63a24185303fe9295f36d8384","class":"C"},
+    {"name":"pattern-language-phase7","expectedHeadSha":"18c55e5b66bf1dcb04ddb42fa9850d3535a296f9","class":"C"},
+    {"name":"pattern-language-phase7-migration","expectedHeadSha":"876d43c6878b5e0ba5111f5634f69514d77966bd","class":"C"},
+    {"name":"pattern-language-phase8-crosswalk","expectedHeadSha":"69dd1d10041b8c930c05a2eb2015d8357e887e67","class":"C"}
+  ],
+  "safety": {
+    "requiredMainSha": "ffc870364bf28b7ab7d1f6337c9773b8580d7c19",
+    "requireAllCandidateHeadsExact": true,
+    "rejectCandidateWithOpenPr": true,
+    "deleteWithExpectedHeadLease": true,
+    "rejectMainDeletion": true,
+    "postDeleteExactRemovedSetProof": true,
+    "concurrentAdditionsAllowedButRecorded": true,
+    "unexpectedConcurrentRemovalsFailProof": true,
+    "temporaryWorkflowMustBeRemovedBeforeReview": true,
+    "repositorySettingsChanged": false
+  },
+  "nextState": "After guarded deletion succeeds, re-enumerate the complete namespace, reconcile concurrent activity, replace this authorisation record with completed proof, remove the temporary workflow, and validate/merge the packet under a fresh lease."
+}

@@ -1,0 +1,221 @@
+name: BRH-04F controlled deletion
+
+on:
+  push:
+    branches: [brh-04f-controlled-deletion-6]
+    paths:
+      - .github/workflows/brh-04f-controlled-delete.yml
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: brh-04f-controlled-delete
+  cancel-in-progress: false
+
+jobs:
+  delete:
+    if: github.repository == 'adamnoden/architecture' && github.ref == 'refs/heads/brh-04f-controlled-deletion-6'
+    runs-on: ubuntu-latest
+    env:
+      EXPECTED_MAIN: ffc870364bf28b7ab7d1f6337c9773b8580d7c19
+      EXPECTED_SET_HASH: 0918c27ab42175ad27f1b81c40dd1a307bf384790119d3e290aa3c5106e89ff8
+      PACKET_BRANCH: brh-04f-controlled-deletion-6
+    steps:
+      - name: Checkout guarded packet
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Prove lease and delete exact candidate refs atomically
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p proof
+          printf '%s\n' "$GITHUB_SHA" > proof/workflow-head.txt
+          cat > proof/candidates.tsv <<'EOF'
+          B	ch00-compiler-hardening-plan	23360b57002dd674abd48d8fc4ddf65b4eddc27a
+          B	external-maintenance-geography	2b7edc1583b70da90315efe91f63a7566aabaed9
+          B	maturity-model-enforcement	fb1a57750332c27485223a020eb8375a9a5683bf
+          B	pr00e-e2-e4-editorial-hardening	514d6ae7b6dfeca79f498e45a127f995972aef32
+          B	pub-san-back-matter	f519e6de4b5491be6f6aefce438c72e88e02dcf7
+          C	cf-01-contrast-fixture	66470917264edf3419ebda2886fbf42c2466a125
+          C	ch-05-determinism-identity-provenance	77d0d0521a6ddbd6f7f27ac7d324247be1932721
+          C	ch-05-housekeeping-sync	4971c87e788b814dfde1d111399edc64663d6c86
+          C	ch-08-distillation-deletion	4d7749f3cbb39a8b10defb8effa9c3a988482708
+          C	coa-04-plan-section-successors	95da828b7087abab7b66df763a18eee276c56202
+          C	coa-05-topology-successors-final	1a2cd8719791c50f3b5f29fb98436a3b657bfe11
+          C	coa-06-output-integration	3ee3a9a501267ea2ca6b7b7d1f55d68cbd2bd585
+          C	g01-completion-programme	0efb277130c59b7042726c3121f0529c011c2eb1
+          C	g01-d10-normative	8b59b09bcf3a47b190c9d6f0e0a849b5f5f997ad
+          C	g01-d10s-specificity	7cca300e719497230e8b9778037cd3379ef1bae4
+          C	g01-d11-v01-freeze	8adc19b0daa40a3615f9114453250c4ab2593fe9
+          C	g01-d12-reference-house	172957fb8fa568ba682908e3cf78a29cbc80460d
+          C	g01-d13-closeout	6969c24301619ddeb92f3f18ef72fad69b5ccfc9
+          C	g01-d8-falsification	89aab07fca5debbf77c35f0b6d713683a645163f
+          C	g01-d9-holdout	c1cc56d17cd616a648e78d0a1851c39c05faa7ba
+          C	pattern-language-overhaul	12af047641ef08f2f5a21a9621dbfc668abd48fc
+          C	pattern-language-phase6-audit	0c08c98d4792ccb63a24185303fe9295f36d8384
+          C	pattern-language-phase7	18c55e5b66bf1dcb04ddb42fa9850d3535a296f9
+          C	pattern-language-phase7-migration	876d43c6878b5e0ba5111f5634f69514d77966bd
+          C	pattern-language-phase8-crosswalk	69dd1d10041b8c930c05a2eb2015d8357e887e67
+          EOF
+
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune
+
+          git ls-remote --heads origin | LC_ALL=C sort -k2 > proof/before.refs.tsv
+          cut -f2 proof/before.refs.tsv | sed 's#refs/heads/##' | LC_ALL=C sort > proof/before.names.txt
+
+          remote_main="$(awk '$2=="refs/heads/main" {print $1}' proof/before.refs.tsv)"
+          remote_packet="$(awk -v ref="refs/heads/$PACKET_BRANCH" '$2==ref {print $1}' proof/before.refs.tsv)"
+          test "$remote_main" = "$EXPECTED_MAIN" || {
+            echo "Refusing: main moved: expected $EXPECTED_MAIN, found $remote_main" >&2
+            exit 21
+          }
+          test "$remote_packet" = "$GITHUB_SHA" || {
+            echo "Refusing: packet branch moved: workflow $GITHUB_SHA, remote $remote_packet" >&2
+            exit 22
+          }
+
+          python - <<'PY'
+          import csv, hashlib, json, os
+          rows = []
+          with open("proof/candidates.tsv", newline="") as f:
+              for cls, name, sha in csv.reader(f, delimiter="\t"):
+                  rows.append({"name": name, "expectedHeadSha": sha, "class": cls})
+          payload = json.dumps(rows, sort_keys=True, separators=(",", ":")).encode()
+          actual = hashlib.sha256(payload).hexdigest()
+          expected = os.environ["EXPECTED_SET_HASH"]
+          print(actual)
+          with open("proof/candidate-set-sha256.txt", "w") as f:
+              f.write(actual + "\n")
+          if actual != expected:
+              raise SystemExit(f"candidate set hash mismatch: {actual} != {expected}")
+          if len(rows) != 25:
+              raise SystemExit(f"candidate count is {len(rows)}, expected 25")
+          if [r["class"] for r in rows[:5]] != ["B"] * 5:
+              raise SystemExit("first five candidates are not the complete B tranche")
+          if [r["class"] for r in rows[5:]] != ["C"] * 20:
+              raise SystemExit("remaining candidates are not the authorised C tranche")
+          PY
+
+          curl -fsSL \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" \
+            > proof/open-prs.json
+
+          python - <<'PY'
+          import csv, json, os
+          candidates = set()
+          with open("proof/candidates.tsv", newline="") as f:
+              for cls, name, sha in csv.reader(f, delimiter="\t"):
+                  candidates.add(name)
+          prs = json.load(open("proof/open-prs.json"))
+          repo = os.environ["GITHUB_REPOSITORY"]
+          conflicts = []
+          for pr in prs:
+              head = pr.get("head") or {}
+              head_repo = (head.get("repo") or {}).get("full_name")
+              if head_repo == repo and head.get("ref") in candidates:
+                  conflicts.append({"pr": pr.get("number"), "branch": head.get("ref"), "sha": head.get("sha")})
+          json.dump(conflicts, open("proof/open-pr-candidate-conflicts.json", "w"), indent=2)
+          if conflicts:
+              raise SystemExit(f"candidate ref has open PR: {conflicts}")
+          PY
+
+          python - <<'PY'
+          import csv
+          before = {}
+          with open("proof/before.refs.tsv") as f:
+              for line in f:
+                  sha, ref = line.rstrip("\n").split("\t", 1)
+                  before[ref.removeprefix("refs/heads/")] = sha
+          failures = []
+          with open("proof/candidates.tsv", newline="") as f:
+              for cls, name, expected in csv.reader(f, delimiter="\t"):
+                  actual = before.get(name)
+                  if actual != expected:
+                      failures.append({"name": name, "expected": expected, "actual": actual})
+          if failures:
+              raise SystemExit(f"candidate head lease failed: {failures}")
+          PY
+
+          # One atomic remote transaction: no candidate is deleted unless every
+          # exact-old-SHA lease holds. No-op main and packet refspecs extend the
+          # transaction lease to those control refs as well.
+          push_args=(--atomic)
+          push_args+=(--force-with-lease="refs/heads/main:$EXPECTED_MAIN")
+          push_args+=(--force-with-lease="refs/heads/$PACKET_BRANCH:$GITHUB_SHA")
+          push_specs=("$EXPECTED_MAIN:refs/heads/main" "$GITHUB_SHA:refs/heads/$PACKET_BRANCH")
+
+          while IFS=$'\t' read -r cls name sha; do
+            test "$name" != "main"
+            test "$name" != "$PACKET_BRANCH"
+            push_args+=(--force-with-lease="refs/heads/$name:$sha")
+            push_specs+=(":refs/heads/$name")
+          done < proof/candidates.tsv
+
+          printf '%q ' git push "${push_args[@]}" origin "${push_specs[@]}" > proof/push-command-redacted.txt
+          printf '\n' >> proof/push-command-redacted.txt
+          git push "${push_args[@]}" origin "${push_specs[@]}"
+
+          git ls-remote --heads origin | LC_ALL=C sort -k2 > proof/after.refs.tsv
+          cut -f2 proof/after.refs.tsv | sed 's#refs/heads/##' | LC_ALL=C sort > proof/after.names.txt
+          cut -f2 proof/candidates.tsv | LC_ALL=C sort > proof/candidate.names.txt
+          comm -23 proof/before.names.txt proof/after.names.txt > proof/removed.names.txt
+          comm -13 proof/before.names.txt proof/after.names.txt > proof/added.names.txt
+
+          diff -u proof/candidate.names.txt proof/removed.names.txt
+
+          while IFS=$'\t' read -r cls name sha; do
+            if grep -Fxq "$name" proof/after.names.txt; then
+              echo "Candidate survived deletion: $name" >&2
+              exit 31
+            fi
+          done < proof/candidates.tsv
+
+          after_main="$(awk '$2=="refs/heads/main" {print $1}' proof/after.refs.tsv)"
+          after_packet="$(awk -v ref="refs/heads/$PACKET_BRANCH" '$2==ref {print $1}' proof/after.refs.tsv)"
+          test "$after_main" = "$EXPECTED_MAIN"
+          test "$after_packet" = "$GITHUB_SHA"
+
+          {
+            echo "status=success"
+            echo "workflow_head=$GITHUB_SHA"
+            echo "main=$after_main"
+            echo "candidate_set_sha256=$EXPECTED_SET_HASH"
+            echo "before_count=$(wc -l < proof/before.names.txt | tr -d ' ')"
+            echo "after_count=$(wc -l < proof/after.names.txt | tr -d ' ')"
+            echo "removed_count=$(wc -l < proof/removed.names.txt | tr -d ' ')"
+            echo "concurrent_added_count=$(wc -l < proof/added.names.txt | tr -d ' ')"
+          } > proof/result.txt
+
+          cat proof/result.txt
+          {
+            echo "## BRH-04F guarded deletion"
+            echo
+            echo '```'
+            cat proof/result.txt
+            echo '```'
+            echo
+            echo "Removed refs:"
+            sed 's/^/- `&`/' proof/removed.names.txt
+            if test -s proof/added.names.txt; then
+              echo
+              echo "Concurrent additions:"
+              sed 's/^/- `&`/' proof/added.names.txt
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload deletion proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brh-04f-deletion-proof
+          path: proof/
+          if-no-files-found: warn
