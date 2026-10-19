@@ -1,29 +1,37 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-04G",
   "programmeIssue": 161,
-  "status": "authorised_pending_execution",
+  "status": "complete",
   "packetBranch": "brh-04g-controlled-deletion-7",
   "discoveryMainSha": "552bc8fb84379287a032cd7f7e18cef74c03bcc9",
-  "authority": {
-    "priorPacket": "project/branch-hygiene-deletion-04f.{json,md,provenance.json}",
-    "semanticCompletion": "project/branch-hygiene-x-reconciliation.{json,md,provenance.json}",
-    "semanticReviewAuthority": "project/branch-hygiene-semantic-review-02*.{json,md,provenance.json}"
+  "destructiveWorkflow": {
+    "headSha": "aa05c4810ebc79678cd17d7e3427a1867c271c9b",
+    "runId": 39244674295,
+    "jobId": 118033603004,
+    "artifactId": 12183660607,
+    "artifactDigest": "sha256:a282da4e2643526c2545a37dcf96547ddc9248b7c19e0d89de9078ee4f8f2d64",
+    "temporaryWorkflowRemovedBeforeReview": true
   },
   "candidateCount": 20,
   "candidateClassCounts": {"C":20},
   "candidateSetSha256": "992e7e4703f69c8ff34e5053d1408c2f39ddb509fd657b8081f25b905a7f2e27",
-  "protectedAtDiscovery": [
-    {"branch":"drw-05e-principal-section-spread-proof","pr":235},
-    {"branch":"hfi-04b-doors-windows-hardware","reason":"fresh active packet"}
-  ],
-  "destructiveControl": {
-    "requiredMainSha":"552bc8fb84379287a032cd7f7e18cef74c03bcc9",
-    "expectedHeadPerCandidate":true,
-    "openPrCandidateRefusal":true,
-    "atomicDeletion":true,
-    "exactPostDeleteRemovedSetProof":true,
-    "workflowTemporary":true
+  "postDeleteProof": {
+    "destructiveSnapshotCount": 24,
+    "endpointCount": 4,
+    "removedCount": 20,
+    "unexpectedRemovedCount": 0,
+    "addedDuringWindowCount": 0,
+    "allCandidatesAbsent": true,
+    "historicalQueueRemaining": 0,
+    "endpointRefs": ["main","brh-04g-controlled-deletion-7","drw-05e-principal-section-spread-proof","hfi-04b-doors-windows-hardware"],
+    "postWindowConcurrentAddition": "drw-05c1-principal-section-label-fit"
   },
-  "mutationPerformed": false
+  "cumulativeBrh04Deletion": {"total":161,"A":115,"B":5,"C":41,"D":0,"X":0},
+  "mutationPerformed": true,
+  "atomicRemoteTransaction": true,
+  "repositorySettingsChanged": false,
+  "branchRewritePerformed": false,
+  "nextPacket": "BRH-05A",
+  "nextAction": "Take a fresh live lease, enable delete_branch_on_merge=true, and verify the repository setting."
 }
