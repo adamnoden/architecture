@@ -8,6 +8,10 @@ A house is lived in under conditions architectural photography rarely records. P
 
 Repose begins with a simple question: how much attention does the building require from the people living in it? Some answers are measurable. A room that overheats, admits too much noise or has poor air is uncomfortable before any subtler question of atmosphere arises. A serene composition beside an audible plant room is still a bad bedroom.
 
+Attention can also be demanded through ordinary bodily use. A stair that requires conscious foot placement, a corner that needs a rehearsed furniture manoeuvre, a door or control that repeatedly requires awkward reach, or a shower that must be entered before its condition can be controlled all impose small forms of compensation. None is automatically a design failure. The useful test is whether the compensation is frequent or consequential enough, and avoidable enough, that the building-side cause deserves correction rather than becoming a learned workaround.
+
+This is why an isolated dimension is rarely the whole human-factors question. A route, opening or control should be judged as a complete action in the states in which it is actually used: approaching, turning, carrying, opening, reaching, setting down, regripping, receiving feedback and leaving again. The same nominal dimension can perform differently when hands are occupied, surfaces are wet, light is low, another person is being assisted or an occupant is tired or temporarily impaired. Foreseeable human variation is normal design input; it is not a demand that every room satisfy every specialist scenario simultaneously.
+
 Other burdens come from the occupant’s ability to regulate ordinary conditions. Can the room be made private? Can direct sun be shaded? Can a window be opened or a light dimmed without negotiating an opaque control system? Is there somewhere to withdraw without leaving the household altogether? Research on privacy and perceived control gives these questions real weight, while warning against pretending that one arrangement suits everyone.
 
 This does not imply sparse rooms or visual restraint. A room can be rich in books, materials, pattern and the marks of ordinary life without becoming exhausting. The more useful distinction is between richness and confusion. Architectural order should be strong enough to receive occupation rather than depend on its absence.
@@ -23,6 +27,14 @@ The criterion is therefore less a style than a design burden: the house should a
 ### Physical conditions first
 
 Thermal comfort, indoor air quality, acoustic conditions, daylight and glare should be resolved through appropriate building-science methods. Repose must not become language for excusing poor measurable performance.
+
+### Embodied ease
+
+Repeated routes, controls and interfaces should not require unnecessary contortion, choreography, force, careful workaround or advance planning merely because the building has normalised them.
+
+Judge the complete action rather than one dimension in isolation. Test the occupied state that matters: carrying, wet-handed, one-handed, tired, distracted, assisting another person or otherwise operating with reduced spare attention where the scenario is foreseeable.
+
+Correct the causal bottleneck rather than enlarging everything around it. A trivial or rare inconvenience does not justify permanent area or technical complexity.
 
 ### Comprehensible space
 
@@ -48,14 +60,16 @@ Services, labels, access panels, joints and replacement interfaces should be as 
 
 ## Review questions
 
-For each principal room, ask:
+For each principal room, route or occupied interface, ask:
 
 1. Are temperature, air, noise and light conditions credible for long-duration occupation?
-2. Can the occupant understand the room’s relation to the rest of the house?
-3. Can privacy and exposure be regulated appropriately?
-4. Can important immediate conditions be altered without unnecessary complexity?
-5. Where structural expression is conspicuous, is its visual reading intentional rather than accidental?
-6. Do technical systems remain subordinate to ordinary occupation?
-7. Will the room remain coherent after furniture and everyday possessions arrive?
+2. Does ordinary repeated use require avoidable bodily or cognitive compensation?
+3. Has the complete action been considered in relevant occupied states rather than inferred from an isolated dimension?
+4. Can the occupant understand the room’s relation to the rest of the house?
+5. Can privacy and exposure be regulated appropriately?
+6. Can important immediate conditions be altered without unnecessary complexity?
+7. Where structural expression is conspicuous, is its visual reading intentional rather than accidental?
+8. Do technical systems remain subordinate to ordinary occupation?
+9. Will the room remain coherent after furniture and everyday possessions arrive?
 
 Where the answer can be measured, measure it. Where it depends on programme or occupants, brief it. Where it remains architectural judgement, say so.
