@@ -32,9 +32,9 @@ The Reference House does not own:
 - reusable pattern validity — see [`../patterns/`](../patterns/);
 - the architectural grammar framework — see [`../grammar/`](../grammar/);
 - external evidence merely because it supports a project decision — see [`../research/`](../research/);
-- compiler semantics or proof scope — see [`../computational/`](../computational/) and [`../../compiler/`](../../compiler/);
-- publication build machinery — see [`../../publication/`](../../publication/);
-- current project-wide status — see [`../../STATUS.md`](../../STATUS.md).
+- compiler semantics or proof scope — see [`../computational/`](../computational/) and the internal `compiler/` tree;
+- publication build machinery — see the internal `publication/` tree;
+- current project-wide status — that lives in `STATUS.md`.
 
 Occurrence is not proof. A pattern, grammar relation or technical idea does not become generally valid because this house uses it.
 
@@ -42,14 +42,14 @@ Occurrence is not proof. A pattern, grammar relation or technical idea does not 
 
 Use the following records according to the question:
 
-- [`brief-and-constraint-ledger.md`](brief-and-constraint-ledger.md) — project brief, constraints and controlled design obligations;
-- [`structural-coordination.md`](structural-coordination.md) — current whole-house architectural/technical coordination record and its proof limits;
-- [`plan-section-elevation-gate.md`](plan-section-elevation-gate.md) — cross-view architectural consistency gate;
-- [`pattern-occurrence-register.md`](pattern-occurrence-register.md) — which reusable patterns are actually selected here;
-- [`g01-v0.1-conformance-d12.md`](g01-v0.1-conformance-d12.md) — bounded conformance to the selected G-01 grammar;
-- [`external-review-brief.md`](external-review-brief.md) — questions that require competent professional review rather than internal assertion.
+- `docs/reference-house/brief-and-constraint-ledger.md` — project brief, constraints and controlled design obligations;
+- [Current Technical Coordination](structural-coordination.md) — whole-house architectural/technical coordination and its proof limits;
+- `docs/reference-house/plan-section-elevation-gate.md` — cross-view architectural consistency gate;
+- [Pattern Occurrence Register](pattern-occurrence-register.md) — which reusable patterns are actually selected here;
+- [G-01 conformance](g01-v0.1-conformance-d12.md) — bounded conformance to the selected G-01 grammar;
+- [Independent Review Questions](external-review-brief.md) — questions that require competent professional review rather than internal assertion.
 
-For current project-wide maturity or active work, use [`../../STATUS.md`](../../STATUS.md). This README intentionally does not duplicate live dimensions, packet state or model values that have their own owners.
+For current project-wide maturity or active work, use `STATUS.md`. This README intentionally does not duplicate live dimensions, packet state or model values that have their own owners.
 
 ## Source, drawings and generated inspection
 
@@ -69,7 +69,7 @@ A generated `PASS` does not prove engineering adequacy, building physics, regula
 
 ### Publication drawings
 
-Publication-facing architectural drawings and their proof/authority records are distinct from generated semantic inspection. The drawing/publication authority trail is under [`../publication/`](../publication/), while build/layout machinery lives at top-level [`../../publication/`](../../publication/).
+Publication-facing architectural drawings and their proof/authority records are distinct from generated semantic inspection. Their internal authority trail is under `docs/publication/`, while build/layout machinery lives at top-level `publication/`.
 
 Do not infer editability from file type alone. Follow the owning record before changing a controlled drawing.
 
@@ -91,6 +91,6 @@ Those checks establish only their encoded invariants. Structural capacity, fire 
 
 ## Deployment boundary
 
-The Reference House remains a controlled architectural proposition independently of any one real site. The separate deployment programme under [`../../project/dpl/`](../../project/dpl/) is establishing how target, jurisdiction, site evidence, scenarios and compatibility should relate to it.
+The Reference House remains a controlled architectural proposition independently of any one real site. The internal DPL programme at `project/dpl/` is establishing how target, jurisdiction, site evidence, scenarios and compatibility should relate to it.
 
 That programme may later determine whether a real site is compatible, incompatible or requires bounded adaptation. This README does not pre-empt that model or imply that a site-deployment compiler already exists.
