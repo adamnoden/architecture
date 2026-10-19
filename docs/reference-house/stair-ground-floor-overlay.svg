@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
   <title id="title">Reference House RH-03 ground-floor stair overlay</title>
-  <desc id="desc">Focused schematic of the south front band showing the entrance stair hall widened 200 millimetres into the drawing room, a compact three-flight stair reservation and a clear passage connecting the front entrance to the east inner gallery.</desc>
+  <desc id="desc">Focused schematic of the south front band showing the entrance stair hall widened 200 millimetres into the drawing room, a compact three-flight stair reservation with 300 millimetre going, and a clear passage connecting the front entrance to the east inner gallery.</desc>
   <defs>
     <style>
       .head{font:700 27px system-ui,sans-serif;fill:#111}.sub{font:15px system-ui,sans-serif;fill:#333}.label{font:600 14px system-ui,sans-serif;fill:#111}.small{font:12px system-ui,sans-serif;fill:#444}.dim{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#333}
@@ -74,13 +74,14 @@
 
     <text x="0" y="215" class="head">Why</text>
     <text x="0" y="257" class="small">A full-landing three-flight stair can retain</text>
-    <text x="0" y="279" class="small">deep 280 mm goings without displacing the</text>
+    <text x="0" y="279" class="small">deep 300 mm goings without displacing the</text>
     <text x="0" y="301" class="small">service hub or blocking the east gallery.</text>
 
-    <text x="0" y="364" class="head">Not final</text>
-    <text x="0" y="406" class="small">Exact strings, walls, door swing, well, guarding</text>
-    <text x="0" y="428" class="small">and clear passage require RH-04/RH-05 detail.</text>
+    <text x="0" y="364" class="head">HFI-08B recheck</text>
+    <text x="0" y="406" class="small">300 mm going uses the upper end of the</text>
+    <text x="0" y="428" class="small">existing stair reservation. Exact strings, guards</text>
+    <text x="0" y="450" class="small">and clear passage remain technical proof.</text>
   </g>
 
-  <text x="55" y="680" class="small">Schematic coordination overlay. Read with RH-02 ground-floor baseline and RH-03 stair/upper-floor gate record.</text>
+  <text x="55" y="680" class="small">Schematic coordination overlay. Read with RH-02 ground-floor baseline and current RH-03/HFI-08B stair authority.</text>
 </svg>
