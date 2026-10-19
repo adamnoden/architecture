@@ -1,0 +1,44 @@
+name: Generate DRW structural span overlay candidate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/reference-house/publication-structural-span*.ts'
+      - 'compiler/reference-house/generate-publication-structural-span-overlay.ts'
+      - 'docs/publication/architectural-drawing-drw10a-structural-span-overlay.md'
+      - '.github/workflows/drw-structural-span-overlay-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drw-structural-span-overlay-candidate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate candidate SVG
+        run: npx tsx compiler/reference-house/generate-publication-structural-span-overlay.ts
+      - name: Verify candidate semantics
+        run: |
+          test -s docs/reference-house/publication-structural-span-overlay.svg
+          grep -q 'data-view-id="REFERENCE-HOUSE-STRUCTURAL-SPAN-OVERLAY"' docs/reference-house/publication-structural-span-overlay.svg
+          grep -q 'gross-span-direction-not-joist-centreline' docs/reference-house/publication-structural-span-overlay.svg
+          grep -q 'ABSENT_STRUCTURAL_ENGINEERING' docs/reference-house/publication-structural-span-overlay.svg
+      - name: Upload candidate SVG
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-10a-structural-span-overlay-candidate
+          path: docs/reference-house/publication-structural-span-overlay.svg
+          if-no-files-found: error
+          retention-days: 30
