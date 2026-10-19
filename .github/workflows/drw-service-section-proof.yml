@@ -1,0 +1,57 @@
+name: Prove DRW service/transverse section
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'publication/specimens/drw08b/**'
+      - 'docs/publication/architectural-drawing-drw08b-service-section-proof.md'
+      - 'docs/reference-house/publication-service-transverse-section.svg'
+      - 'compiler/reference-house/publication-service-section*.ts'
+      - 'compiler/reference-house/generate-publication-service-section.ts'
+      - '.github/workflows/drw-service-section-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drw-service-section-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Regenerate controlled service/transverse section SVG
+        run: npx tsx compiler/reference-house/generate-publication-service-section.ts
+      - name: Prove committed SVG bytes
+        run: git diff --exit-code -- docs/reference-house/publication-service-transverse-section.svg
+      - name: Prepare spread
+        run: npx tsx publication/specimens/drw08b/prepare.ts
+      - name: Build A4 proof
+        run: DRW08B_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw08b/vivliostyle.config.js
+      - name: Build B5 proof
+        run: DRW08B_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw08b/vivliostyle.config.js
+      - name: Validate service/transverse proof
+        run: npx tsx publication/specimens/drw08b/validate.ts
+      - name: Upload controlled drawing and proof PDFs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-08b-service-section-proof
+          path: |
+            docs/reference-house/publication-service-transverse-section.svg
+            publication/specimens/drw08b/dist/drw08b-a4.pdf
+            publication/specimens/drw08b/dist/drw08b-b5.pdf
+          if-no-files-found: error
+          retention-days: 30
