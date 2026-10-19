@@ -1,0 +1,54 @@
+name: Prove DRW synthetic setting
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'publication/specimens/drw08e/**'
+      - 'docs/publication/architectural-drawing-drw08e-synthetic-setting-proof.md'
+      - 'docs/reference-house/publication-synthetic-setting.svg'
+      - 'compiler/reference-house/publication-synthetic-setting*.ts'
+      - 'compiler/reference-house/generate-publication-synthetic-setting.ts'
+      - '.github/workflows/drw-synthetic-setting-proof.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drw-synthetic-setting-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Regenerate controlled synthetic setting SVG
+        run: npx tsx compiler/reference-house/generate-publication-synthetic-setting.ts
+      - name: Prove committed SVG bytes
+        run: git diff --exit-code -- docs/reference-house/publication-synthetic-setting.svg
+      - name: Prepare spread
+        run: npx tsx publication/specimens/drw08e/prepare.ts
+      - name: Build A4 proof
+        run: DRW08E_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw08e/vivliostyle.config.js
+      - name: Build B5 proof
+        run: DRW08E_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw08e/vivliostyle.config.js
+      - name: Validate synthetic setting proof
+        run: npx tsx publication/specimens/drw08e/validate.ts
+      - name: Upload controlled drawing and proof PDFs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-08e-synthetic-setting-proof
+          path: |
+            docs/reference-house/publication-synthetic-setting.svg
+            publication/specimens/drw08e/dist/drw08e-a4.pdf
+            publication/specimens/drw08e/dist/drw08e-b5.pdf
+          if-no-files-found: error
+          retention-days: 30
