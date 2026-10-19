@@ -47,6 +47,6 @@ If the controlled scene breaches the physical envelope, the renderer must be cor
 
 ## Handoff
 
-**Next packet: DRW-08A — freeze the primary service-riser / plant-wall detail authority boundary.**
+**Next packet: DRW-08A — service/transverse section authority audit and required source hardening.**
 
-DRW-08A must audit the service-infrastructure sources before any detail geometry is rendered.
+DRW-08A must freeze the exact service/transverse cut/view, identify which service/vertical geometry is controlled, provisional or absent, and harden only the source facts required for an honest retained section before any new section artifact is generated.
