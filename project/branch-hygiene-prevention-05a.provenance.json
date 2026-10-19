@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-05A",
+  "programmeIssue": 161,
+  "authority": {
+    "issue": 161,
+    "priorPacket": "project/branch-hygiene-deletion-04g.{json,md,provenance.json}",
+    "requiredSetting": "delete_branch_on_merge = true"
+  },
+  "baselineMainSha": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
+  "repositorySettingRead": {
+    "source": "GitHub repository API",
+    "delete_branch_on_merge": true
+  },
+  "behaviouralWitness": {
+    "pr": 241,
+    "headBranch": "drw-05c1-principal-section-label-fit",
+    "headSha": "b41d2e944d209427f4da0af42a10b8b88ce92501",
+    "mergeCommit": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
+    "branchAbsentAtEntry": true
+  },
+  "mutation": {
+    "settingMutationPerformed": false,
+    "reason": "Target repository setting was already true on fresh live authority; toggling it would be a needless and temporarily unsafe regression.",
+    "manualDeletionPerformed": false
+  },
+  "postMergeSelfTest": {
+    "branch": "brh-05a-auto-delete-verification",
+    "expected": "absent after successful merge without manual deletion",
+    "verified": false
+  },
+  "nextPacket": "BRH-05B"
+}
