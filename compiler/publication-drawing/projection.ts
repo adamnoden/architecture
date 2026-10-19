@@ -28,6 +28,13 @@ export interface SectionPaperProjection {
   length: (modelMillimetres: number) => number
 }
 
+export interface ElevationPaperProjection {
+  scaleDenominator: number
+  point: (horizontal: number, elevation: number) => PaperPoint
+  rect: (box: ModelRect) => PaperRect
+  length: (modelMillimetres: number) => number
+}
+
 const requirePositiveScale = (scaleDenominator: number): void => {
   if (!Number.isFinite(scaleDenominator) || scaleDenominator <= 0) {
     throw new Error(`Invalid drawing scale denominator: ${scaleDenominator}`)
@@ -86,6 +93,47 @@ export const createSectionPaperProjection = (options: {
   requirePositiveScale(scaleDenominator)
   if (horizontalBounds.max <= horizontalBounds.min || verticalBounds.max <= verticalBounds.min) {
     throw new Error('Section projection requires positive horizontal and vertical bounds.')
+  }
+
+  const length = (modelMillimetres: number): number => modelMillimetres / scaleDenominator
+  const point = (horizontal: number, elevation: number): PaperPoint => ({
+    x: paperOrigin.x + length(horizontal - horizontalBounds.min),
+    y: paperOrigin.y + length(verticalBounds.max - elevation)
+  })
+
+  return {
+    scaleDenominator,
+    point,
+    length,
+    rect: (box) => {
+      const topLeft = point(box.x, box.y + box.height)
+      return {
+        x: topLeft.x,
+        y: topLeft.y,
+        width: length(box.width),
+        height: length(box.height)
+      }
+    }
+  }
+}
+
+/**
+ * Orthographic architectural-elevation projection in physical paper space.
+ * Model +X runs left-to-right and elevation runs upward while SVG +Y runs
+ * downward. It is deliberately literal: no perspective, foreshortening or
+ * fit-derived scaling is available at this boundary.
+ */
+export const createElevationPaperProjection = (options: {
+  scaleDenominator: number
+  horizontalBounds: { min: number; max: number }
+  verticalBounds: { min: number; max: number }
+  paperOrigin: PaperPoint
+}): ElevationPaperProjection => {
+  const { scaleDenominator, horizontalBounds, verticalBounds, paperOrigin } = options
+
+  requirePositiveScale(scaleDenominator)
+  if (horizontalBounds.max <= horizontalBounds.min || verticalBounds.max <= verticalBounds.min) {
+    throw new Error('Elevation projection requires positive horizontal and vertical bounds.')
   }
 
   const length = (modelMillimetres: number): number => modelMillimetres / scaleDenominator
