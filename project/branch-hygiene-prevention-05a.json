@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-05A",
   "programmeIssue": 161,
-  "status": "verification_pending_merge",
+  "status": "complete",
   "packetBranch": "brh-05a-auto-delete-verification",
   "baselineMainSha": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
   "entryState": {
@@ -14,14 +14,17 @@
       "main",
       "drw-05e-principal-section-spread-proof",
       "hfi-04c-environmental-electrical-controls"
-    ],
-    "openPrs": [
-      {
-        "pr": 235,
-        "branch": "drw-05e-principal-section-spread-proof",
-        "protected": true
-      }
     ]
+  },
+  "proofPr": {
+    "pr": 242,
+    "headSha": "e39fe58d586b2aa70026bc37aa4a8347b22c24a5",
+    "validationRunId": 39252790903,
+    "validationConclusion": "success",
+    "leasedMainSha": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
+    "mergeCommitSha": "a5683e0e7de44684eb7c5148ddb2686116010fda",
+    "mergeFirstParentSha": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
+    "mergeSecondParentSha": "e39fe58d586b2aa70026bc37aa4a8347b22c24a5"
   },
   "functionalEvidenceOnEntry": {
     "mergedPr": 241,
@@ -30,14 +33,18 @@
     "mergeCommitSha": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
     "headBranchAbsentFromFreshEnumeration": true
   },
-  "acceptance": {
-    "exactHeadPrValidationGreen": false,
-    "mergedUnderFreshMainLease": false,
-    "postMergeSettingStillTrue": false,
-    "packetBranchAutoDeleted": false,
-    "issueCloseoutRecorded": false
+  "postMergeVerification": {
+    "deleteBranchOnMerge": true,
+    "packetBranchAutoDeleted": true,
+    "manualPacketBranchDeletionPerformed": false,
+    "survivingBranchesObserved": [
+      "main",
+      "drw-05e-principal-section-spread-proof",
+      "hfi-04c-environmental-electrical-controls"
+    ]
   },
   "safety": {
+    "repositorySettingToggled": false,
     "manualBranchDeletionPerformed": false,
     "branchRewritePerformed": false,
     "unrelatedRepositorySettingChanged": false,

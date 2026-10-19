@@ -1,33 +1,45 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-05A",
   "programmeIssue": 161,
+  "status": "complete",
   "authority": {
     "issue": 161,
     "priorPacket": "project/branch-hygiene-deletion-04g.{json,md,provenance.json}",
     "requiredSetting": "delete_branch_on_merge = true"
   },
   "baselineMainSha": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
-  "repositorySettingRead": {
-    "source": "GitHub repository API",
-    "delete_branch_on_merge": true
+  "repositorySetting": {
+    "entryRead": true,
+    "postMergeRead": true,
+    "mutationPerformed": false,
+    "reason": "Target setting was already correct on fresh live authority; no redundant toggle was performed."
   },
-  "behaviouralWitness": {
+  "entryBehaviouralWitness": {
     "pr": 241,
     "headBranch": "drw-05c1-principal-section-label-fit",
     "headSha": "b41d2e944d209427f4da0af42a10b8b88ce92501",
     "mergeCommit": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
     "branchAbsentAtEntry": true
   },
-  "mutation": {
-    "settingMutationPerformed": false,
-    "reason": "Target repository setting was already true on fresh live authority; toggling it would be a needless and temporarily unsafe regression.",
+  "packetSelfTest": {
+    "pr": 242,
+    "branch": "brh-05a-auto-delete-verification",
+    "proofHeadSha": "e39fe58d586b2aa70026bc37aa4a8347b22c24a5",
+    "validationRunId": 39252790903,
+    "validationConclusion": "success",
+    "mergeCommit": "a5683e0e7de44684eb7c5148ddb2686116010fda",
+    "leasedMainSha": "a4fb2c706ff02a7c6089d857a33cf6d71c87c0a1",
+    "branchAbsentAfterMerge": true,
     "manualDeletionPerformed": false
   },
-  "postMergeSelfTest": {
-    "branch": "brh-05a-auto-delete-verification",
-    "expected": "absent after successful merge without manual deletion",
-    "verified": false
+  "endpoint": {
+    "survivingRefsObserved": [
+      "main",
+      "drw-05e-principal-section-spread-proof",
+      "hfi-04c-environmental-electrical-controls"
+    ],
+    "historicalQueueRemaining": 0
   },
   "nextPacket": "BRH-05B"
 }
