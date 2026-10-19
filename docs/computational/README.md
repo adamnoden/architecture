@@ -1,168 +1,117 @@
-# Computational Track
+# Computational track
 
-The computational track asks a narrow question within **Ovid’s House**:
+The computational track asks a narrow question within Ovid’s House:
 
-> **Which building relationships can be represented strongly enough that invalid arrangements, unresolved obligations or missing evidence are exposed during authoring rather than discovered later in drawings or construction?**
+> **Which architectural relationships can be represented strongly enough that invalid arrangements, unresolved obligations or missing evidence are exposed deterministically?**
 
-**House Kernel** is the formal architectural/computational system: a bounded set of facts, relationships, invariants, obligations and proof boundaries that can legitimately be made explicit. **Metamorph Compiler** is the software that compiles and checks those representations.
+**House Kernel** is the formal architectural/computational system used where facts, relationships, invariants, obligations and proof boundaries can legitimately be explicit. **Metamorph Compiler** is the implementation under `compiler/` that compiles and checks those representations.
 
-The computational system is deliberately narrower than the architecture. Rooms, walls, openings, structure, boundaries, service routes and maintenance paths may be represented semantically where doing so creates a useful check. Architectural judgement is not converted into arbitrary machine rules merely to make the model more complete.
+The computational system is deliberately narrower than the architecture. Architectural judgement is not converted into machine rules merely to make the model look complete.
 
-## What the compiler does
+## What this area owns
 
-The current implementation can represent and check a bounded chain through:
+`docs/computational/` owns the conceptual and evidential record for executable architecture:
+
+- semantic modelling and supported-domain boundaries;
+- validity, obligations and fail-closed behaviour;
+- evidence/provenance contracts;
+- bounded calculation-method reasoning;
+- compiler research and hardening records;
+- output/proof architecture and the limits of deterministic checks.
+
+Executable TypeScript, tests and renderers live in `compiler/`. Current project-wide status lives in `STATUS.md`.
+
+## Demonstrated capability
+
+At its bounded scope, the current system can represent and check selected relationships across:
 
 - plan geometry and spatial relationships;
 - qualitative structural topology;
 - service topology and registered crossings;
-- envelope/boundary obligations;
+- envelope and boundary obligations;
 - selected versioned numeric methods;
 - deterministic human-readable inspection outputs.
 
-The Reference House is the principal controlled fixture for this work. A materially different contrast fixture is also used to ensure that shared semantics do not silently depend on the Reference House’s Georgian grammar, courtyard morphology or other project-specific choices.
+The Reference House is the principal controlled fixture. Contrast fixtures are used where needed to test that shared semantics do not silently depend on its grammar, courtyard morphology or other project-specific choices.
 
-The executable model is a **controlled internal proof system at its stated boundaries**, not a building-release compiler.
+These are claims about **representation, traceability and internal coherence**. They do not establish structural capacity, environmental performance, fire adequacy, MEP sizing, product suitability, planning acceptability or regulatory approval.
 
-## What has been demonstrated
+## Proof boundary
 
-At bounded internal scope, the computational work demonstrates that:
+The computational model follows several durable rules:
 
-- semantic identity, typed relationships, obligations and scoped evidence can remain coherent from component to whole-house scale;
-- source and geometry well-formedness can be checked deterministically;
-- one architectural source can drive derived calculations and multiple deterministic projections without parallel authored geometry;
-- mutation tests can distinguish propagation, source-integrity failure, architectural review conditions, deliberate absence and unsupported technical evidence;
-- shared plan semantics can operate across materially unlike fixtures without fixture-specific branching;
-- structural topology can check support continuity, span/support coherence, reaction geometry, interruptions, diaphragm ownership and represented gravity handoff **without claiming structural capacity**;
-- service topology can check network continuity, route/crossing ownership, primary-service geography, maintenance access and structural-crossing coordination **without inventing MEP sizing or exact routing**;
-- envelope topology can keep weather, air, thermal and moisture duties separate across walls, roofs, openings and ground-interface handoffs;
-- opening and penetration obligations can remain visible even where exact geometry is not yet known;
-- service penetrations can derive boundary-reinstatement duties rather than disappearing between service and envelope abstractions;
-- roof catchments and drainage relationships can be derived from canonical geometry rather than redrawn independently;
-- critical slow-envelope functions can be prevented from migrating accidentally onto routinely removable trim or lining layers;
-- versioned numeric methods can consume canonical derived values while exposing applicability, source authority and unsupported states;
-- missing, wrong-unit, non-finite or out-of-domain evidence can fail closed rather than being guessed;
-- deterministic inspection views can expose what the model knows without manufacturing absent geometry.
+- a pattern is not a compiler primitive merely because the Reference House selects it;
+- architectural grammar is not owned by the compiler;
+- Reference House preferences are not universal or statutory rules;
+- guidance is not silently promoted into law;
+- representability is not evidence of adequacy;
+- deterministic output is not automatically physical truth;
+- missing or out-of-domain evidence should remain unsupported rather than being guessed.
 
-These are claims about representation and internal coherence. They do **not** establish structural, environmental, regulatory, fire, acoustic or MEP adequacy.
+A successful compile establishes only the claims encoded by the relevant supported domain and proof contract.
 
-## A bounded numeric example: the private stair
+## Selected numeric methods
 
-The current Reference House supplies enough controlled information for one deliberately narrow regulatory-guidance correspondence example.
+The system can admit a numeric method only when:
 
-The canonical stair values are approximately:
+1. the owning architectural source supplies sufficiently controlled inputs;
+2. the external method/authority and applicability are explicit;
+3. unsupported and out-of-domain states fail closed;
+4. the result’s proof boundary can be stated without implying whole-building compliance.
 
-- rise: **183.333 mm**;
-- going: **280 mm**;
-- pitch: **33.215°**;
-- `2R + G`: **646.667 mm**.
+The private-stair correspondence is the current worked example. Its dimensions are **not repeated here**: they are controlled by the Reference House source and derived calculation chain, so copying them into this README would create another drift surface. The executable selected-method contract lives at `compiler/rhc5/`.
 
-A versioned calculation-method record compares those values with the selected Approved Document K 2013 guidance for an England dwelling/private-stair context: 150–220 mm rise, 220–300 mm going, maximum 42° pitch and 550–700 mm for `2R + G`.
-
-The proof boundary is explicit:
-
-```text
-SELECTED NUMERIC METHOD CORRESPONDENCE  MACHINE-CHECKED
-APPROVED-DOCUMENT GUIDANCE COVERAGE     BOUNDED-METHOD-ONLY
-BUILDING REGULATIONS COMPLIANCE         NOT PROVED
-WHOLE-BUILDING TECHNICAL ADEQUACY       NOT PROVED
-```
-
-This distinction matters. Approved Document guidance is not silently promoted into law, and one passing calculation does not manufacture a whole-building compliance result.
+A passing selected calculation remains bounded method correspondence. It is not a Building Regulations compliance certificate.
 
 ## Semantic layers
 
-The current executable architecture separates several kinds of knowledge.
+The executable architecture separates several kinds of knowledge rather than collapsing the building into one pass/fail object.
 
-### Plan
+- **Plan** — spaces, voids, boundaries, openings and shared geometry needed by downstream checks.
+- **Structure** — support, span, reaction, interruption and gravity-handoff topology without pretending to prove member capacity.
+- **Services** — nodes, routes, networks, access obligations and registered crossings without automatic sizing/routing claims.
+- **Boundaries** — weather, air, thermal and moisture duties, including opening and penetration reinstatement obligations.
+- **Calculations** — bounded versioned methods with explicit authority, applicability, inputs and unsupported states.
 
-The plan layer represents orthogonal spatial geometry, spaces and voids, boundaries, openings, adjacency and plate closure. It establishes enough shared geometry for downstream structural, service and boundary reasoning without becoming a general CAD model.
-
-### Structure
-
-The structural layer represents supports, span fields, reactions, interruptions, diaphragm ownership and qualitative gravity handoff. It can reject incoherent topology while remaining explicitly unable to prove member capacity, connection adequacy, stability or foundations.
-
-### Services
-
-The service layer represents semantic nodes, routes, networks, access obligations and registered crossings. It is useful for questions such as whether a route is continuous, who owns a penetration, whether primary service geography is coherent and whether maintenance access has been forgotten.
-
-It does not route pipes and ducts automatically or size systems.
-
-### Exterior maintenance boundary
-
-The same semantic vocabulary can represent a maintenance task, an approach path, a working position and a withdrawal route, but the demonstrated software cases are primarily internal and service-related. **Exterior maintainability has not been established merely because those concepts exist in the model.**
-
-A real exterior task may also depend on scaffold, tower or MEWP setup geometry; supporting ground; equipment clearance and stabilisation; component withdrawal; neighbouring-land or highway permissions; and future landscape obstruction. Those conditions remain outside the demonstrated executable scope until a concrete project supplies enough geometry and evidence to check them without invention.
-
-### Boundaries
-
-The boundary layer represents weather, air, thermal and moisture carriers independently rather than collapsing “the wall” into one pass/fail object. Openings and penetrations transition those duties explicitly, allowing a crossing to create reinstatement obligations instead of vanishing between disciplines.
-
-### Calculations
-
-The calculation layer supports bounded, versioned methods with explicit applicability, authority, inputs and unsupported states. A method is admitted only where the model has sufficiently controlled inputs and the claim boundary can be stated honestly.
+The vocabulary may be capable of representing more than has been proved in a concrete case. Capability of representation must not be reported as demonstrated adequacy.
 
 ## Output architecture
 
-Machine proof, human inspection and publication graphics are different things.
+Machine proof, human inspection and publication graphics have different jobs:
 
-The compiler therefore distinguishes:
+1. **machine/proof artefacts** preserve exact identity, regression and traceability;
+2. **semantic inspection outputs** expose what a compiled model knows and does not know;
+3. **publication drawings** communicate architectural arguments and have their own drawing/publication authority.
 
-1. **machine/proof artefacts** — exact identity, regression and traceability;
-2. **semantic inspection outputs** — human-readable views of what the compiled model knows and does not know;
-3. **publication figures** — editorial architectural drawings whose job is to communicate, not to act as machine proof.
+The generated Reference House inspection surface is under [`../reference-house/generated/`](../reference-house/generated/). It is downstream from the canonical compile and must not be hand-edited to conceal a source problem.
 
-The generated Reference House inspection surface includes plans, a principal section, a structural view, service and boundary registers and an output manifest. Spatial/metric information is drawn; primarily relational topology is reported as structured text. That distinction prevents every domain from being forced into a diagram simply for visual symmetry.
+Drawing/publication records live under `docs/publication/`; publication build machinery lives at top-level `publication/`.
 
-See the [generated Reference House inspection surface](../reference-house/generated/).
+## Deployment and external targets
 
-## Authority boundary
+A target, jurisdiction or site rule is not architecture merely because it may later be machine-checkable. The DPL programme under `project/dpl/` is establishing the separate target/site/deployment model.
 
-The computational model has deliberately limited authority.
+Until that work earns executable implementation, this computational README must not imply that a release-grade jurisdiction/site compiler exists. Future target or site checks should enter computation only through explicit authority, applicability, evidence and proof contracts.
 
-- **A pattern is not a compiler primitive.**
-- **Pattern provenance is not technical authority.**
-- **An architectural grammar is not owned by the compiler.**
-- **Representability is not evidence of adequacy.**
-- **An Approved Document calculation correspondence is not Building Regulations compliance.**
-- **A research compile is not a building-release certificate.**
-- **A generated inspection drawing is not architectural source authority.**
-- **Architectural judgement remains architectural where no legitimate deterministic rule exists.**
+## Verification
 
-The compiler should fail closed when the evidence needed for a deterministic conclusion is absent.
+Repository-wide automated health begins with:
 
-## Relationship to architectural grammar
+```sh
+npm run check
+```
 
-Architectural grammar remains a separate layer. G-01-derived bay and opening facts may enter a particular fixture where relevant; they are not compiler defaults.
+Generated Reference House semantic inspection can be checked with:
 
-House Kernel may encode selected consequences of a grammar when deterministic representation is useful. It does not own the grammar itself, and a shared computational layer must remain capable of describing buildings that do not belong to G-01.
+```sh
+npm run outputs:check
+```
 
-## Relationship to external evidence
+The canonical command list is `package.json`. Local compiler directories retain narrower proof contracts where they are materially useful.
 
-Computation is only one evidence mode.
-
-A building proposition may require:
-
-1. deterministic calculation where method and authority are explicit;
-2. a bounded supported rule family whose domain has been established;
-3. competent external evidence from engineering, MEP, building physics, fire/building-control, product evidence or physical testing.
-
-The computational model cannot discharge obligations that belong to the third category merely because the missing answer could in principle be represented as a number.
-
-## Where computation should stop
-
-There is no standing requirement to encode more of the building.
-
-A new calculation family or semantic check should be introduced only when another part of the work creates a concrete relationship worth checking deterministically: for example, a professional review identifies a repeatable proof obligation, a physical prototype supplies authoritative parameters, a real project supplies site-specific inputs, or a technical family becomes controlled enough for deterministic checking.
-
-Likewise, a new drawing or topology view should exist only when it answers an inspection or publication question better than the existing representations.
-
-U-values, thermal bridges, condensation analysis, rainwater capacity, structural capacity and MEP sizing are therefore not a speculative implementation queue. Each would require authoritative inputs, a method contract, a supported domain, regression evidence and an explicit proof boundary before admission.
-
-The governing principle is simple: **a machine-checked weak assumption remains a weak assumption.**
+A green check proves only the assertions actually encoded. Architectural quality, engineering adequacy, regulatory acceptance and physical performance remain outside that claim unless separately evidenced.
 
 ## Further technical detail
-
-The resolved conceptual model is developed in:
 
 - [Executable Architecture](executable-architecture.md)
 - [Formal Architectural Model](formal-architectural-model.md)
