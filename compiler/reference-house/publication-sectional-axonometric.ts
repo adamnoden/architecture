@@ -202,22 +202,17 @@ export const createSectionalAxonometricPublicationScene = (): DrawingScene => {
     'provisional'
   )))
 
-  const courtLabel = paperPoint({ x: (court.x0 + court.x1) / 2, y: (court.y0 + court.y1) / 2, z: 2600 })
-  primitives.push(text('court-void-label', { x: courtLabel.x, y: courtLabel.y }, 'OPEN COURTYARD VOID', 'marker', 'middle', {
-    authority: 'CONTROLLED',
-    geometry: 'void-not-solid'
-  }))
-
   primitives.push(
     text('nts-title', { x: 118, y: 18 }, 'SECTIONAL AXONOMETRIC · NTS', 'label'),
     text('cut-note', { x: 118, y: 25 }, 'cut Y = 3.40 m · south court edge', 'note', 'start', { authority: 'CONTROLLED' }),
-    text('sv-note', { x: 118, y: 34 }, 'SV-01 · provisional capacity zone', 'note', 'start', { packing: 'ABSENT_TECHNICAL' }),
-    text('roof-note-1', { x: 118, y: 43 }, 'roof · outward-field topology retained', 'note'),
-    text('roof-note-2', { x: 118, y: 47 }, 'exact 3D fall surfaces not spatialised', 'note', 'start', { roofVerticalGeometry: 'ABSENT' }),
-    text('layers-note-1', { x: 118, y: 58 }, 'permanent support / enclosure order shown', 'note'),
-    text('layers-note-2', { x: 118, y: 62 }, 'replaceable layers remain semantic only', 'note', 'start', { layerThicknesses: 'ABSENT' }),
-    text('opening-note', { x: 118, y: 73 }, 'no composite aperture geometry', 'note', 'start', { viewLocalProxyComposition: 'FORBIDDEN' }),
-    text('composition-note', { x: 118, y: 84 }, 'paper fit is editorial · not architectural scale', 'note', 'start', { scale: 'NTS' })
+    text('court-void-label', { x: 118, y: 29 }, 'court · controlled open void', 'note', 'start', { authority: 'CONTROLLED', geometry: 'void-not-solid' }),
+    text('sv-note', { x: 118, y: 36 }, 'SV-01 · provisional capacity zone', 'note', 'start', { packing: 'ABSENT_TECHNICAL' }),
+    text('roof-note-1', { x: 118, y: 45 }, 'roof · outward-field topology retained', 'note'),
+    text('roof-note-2', { x: 118, y: 49 }, 'exact 3D fall surfaces absent', 'note', 'start', { roofVerticalGeometry: 'ABSENT' }),
+    text('layers-note-1', { x: 118, y: 60 }, 'permanent support / enclosure order', 'note'),
+    text('layers-note-2', { x: 118, y: 64 }, 'replaceable layers · semantic only', 'note', 'start', { layerThicknesses: 'ABSENT' }),
+    text('opening-note', { x: 118, y: 75 }, 'no composite aperture geometry', 'note', 'start', { viewLocalProxyComposition: 'FORBIDDEN' }),
+    text('composition-note', { x: 118, y: 86 }, 'editorial paper fit · NTS', 'note', 'start', { scale: 'NTS' })
   )
 
   return {
