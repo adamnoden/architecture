@@ -1,0 +1,50 @@
+name: Prove DRW sectional axonometric
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/publication-drawing/model.ts'
+      - 'compiler/publication-drawing/svg.ts'
+      - 'compiler/publication-drawing/svg-scale.test.ts'
+      - 'compiler/reference-house/publication-sectional-axonometric*.ts'
+      - 'compiler/reference-house/generate-publication-sectional-axonometric.ts'
+      - 'docs/publication/architectural-drawing-drw09d-sectional-axonometric.md'
+      - 'docs/reference-house/publication-sectional-axonometric.svg'
+      - '.github/workflows/drw-sectional-axonometric-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drw-sectional-axonometric-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Regenerate controlled SVG
+        run: npx tsx compiler/reference-house/generate-publication-sectional-axonometric.ts
+      - name: Prove committed SVG bytes
+        run: git diff --exit-code -- docs/reference-house/publication-sectional-axonometric.svg
+      - name: Verify truthful NTS metadata
+        run: |
+          test -s docs/reference-house/publication-sectional-axonometric.svg
+          grep -q 'data-scale="NTS"' docs/reference-house/publication-sectional-axonometric.svg
+          ! grep -q 'data-scale-denominator=' docs/reference-house/publication-sectional-axonometric.svg
+      - name: Upload controlled SVG
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-09d-sectional-axonometric
+          path: docs/reference-house/publication-sectional-axonometric.svg
+          if-no-files-found: error
+          retention-days: 30

@@ -88,9 +88,17 @@ const style = (): string => {
 
 export const renderDrawingSceneSvg = (scene: DrawingScene): string => {
   if (scene.widthMm <= 0 || scene.heightMm <= 0) throw new Error('Drawing scene requires positive paper dimensions.')
-  if (!Number.isFinite(scene.scaleDenominator) || scene.scaleDenominator <= 0) throw new Error('Drawing scene requires a positive scale denominator.')
 
-  const header = `<svg xmlns="http://www.w3.org/2000/svg" width="${formatDrawingNumber(scene.widthMm)}mm" height="${formatDrawingNumber(scene.heightMm)}mm" viewBox="0 0 ${formatDrawingNumber(scene.widthMm)} ${formatDrawingNumber(scene.heightMm)}" role="img" aria-labelledby="title desc" data-view-id="${escapeXml(scene.viewId)}" data-source-id="${escapeXml(scene.sourceId)}" data-scale-denominator="${formatDrawingNumber(scene.scaleDenominator)}">`
+  const scaleAttribute = scene.scaleDenominator === 'NTS'
+    ? 'data-scale="NTS"'
+    : (() => {
+        if (!Number.isFinite(scene.scaleDenominator) || scene.scaleDenominator <= 0) {
+          throw new Error('Drawing scene requires a positive scale denominator or NTS.')
+        }
+        return `data-scale-denominator="${formatDrawingNumber(scene.scaleDenominator)}"`
+      })()
+
+  const header = `<svg xmlns="http://www.w3.org/2000/svg" width="${formatDrawingNumber(scene.widthMm)}mm" height="${formatDrawingNumber(scene.heightMm)}mm" viewBox="0 0 ${formatDrawingNumber(scene.widthMm)} ${formatDrawingNumber(scene.heightMm)}" role="img" aria-labelledby="title desc" data-view-id="${escapeXml(scene.viewId)}" data-source-id="${escapeXml(scene.sourceId)}" ${scaleAttribute}>`
   const primitives = scene.primitives.map(renderPrimitive)
 
   return [
