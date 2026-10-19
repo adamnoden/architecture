@@ -1,0 +1,52 @@
+name: Prove DRW courtyard elevation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'publication/specimens/drw08d/**'
+      - 'docs/publication/architectural-drawing-drw08d-courtyard-elevation-proof.md'
+      - 'docs/reference-house/publication-courtyard-elevation.svg'
+      - 'compiler/reference-house/publication-courtyard-elevation*.ts'
+      - 'compiler/reference-house/generate-publication-courtyard-elevation.ts'
+      - '.github/workflows/drw-courtyard-elevation-proof.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drw-courtyard-elevation-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate courtyard elevation SVG
+        run: npx tsx compiler/reference-house/generate-publication-courtyard-elevation.ts
+      - name: Prepare spread
+        run: npx tsx publication/specimens/drw08d/prepare.ts
+      - name: Build A4 proof
+        run: DRW08D_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw08d/vivliostyle.config.js
+      - name: Build B5 proof
+        run: DRW08D_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw08d/vivliostyle.config.js
+      - name: Validate courtyard elevation proof
+        run: npx tsx publication/specimens/drw08d/validate.ts
+      - name: Upload generated drawing and proof PDFs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-08d-courtyard-elevation-proof
+          path: |
+            docs/reference-house/publication-courtyard-elevation.svg
+            publication/specimens/drw08d/dist/drw08d-a4.pdf
+            publication/specimens/drw08d/dist/drw08d-b5.pdf
+          if-no-files-found: error
+          retention-days: 30
