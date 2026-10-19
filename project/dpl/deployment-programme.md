@@ -474,7 +474,7 @@ The correct response is to route the finding to its owning authority. Do not pat
 
 ## Relationship with HFI and DRW
 
-HFI continues to own its human-factors conclusions and any architectural rewinds earned there. DPL should consume only integrated/controlled outcomes or explicitly acknowledge provisional dependencies.
+HFI is closed. Its integrated conclusions are now owned by their destination authorities: governing principles, Reference House source, N17 delivery verification and the RH-11 specialist-review handoff. Unresolved HFI closeout items remain with their explicit downstream owners rather than HFI as a parallel authority layer.
 
 DRW may continue against controlled geometry. DPL does not authorise drawing-side architectural mutation. If a later deployment finding changes Reference House authority, affected drawings must be regenerated/revalidated through the existing DRW controls.
 
