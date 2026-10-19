@@ -34,6 +34,21 @@ The main questions are:
 
 If the escape strategy requires a protected stair, different opening geometry or materially different circulation, those are architectural findings rather than downstream compliance details.
 
+## Human factors and inclusive design
+
+The project now carries a dedicated [RH-11 human-factors and inclusive-design review brief](external-review-human-factors-inclusive-design-rh11.md). It asks a competent reviewer to challenge repeated-use routes and interfaces as complete occupied actions without turning stronger project preferences into statutory claims or every specialist scenario into a universal design condition.
+
+The main questions include:
+
+- whether finished/net geometry preserves the usability implied by current planning reservations;
+- whether the substantially level principal route can remain low-friction once thresholds, weathering, drainage and door operation are resolved together;
+- whether the selected **300 mm** principal-stair going survives finished handrail/guard/headroom/landing and carrying-condition review;
+- whether entrance-storey fallback use, sanitary/washing provision and control placement preserve proportionate life-course capacity;
+- whether repeated domestic tasks, especially the current upstairs sleeping/bathing ↔ ground-floor laundry relationship, create a material burden that deserves a local or architectural correction;
+- which questions must remain open until a real site, product family or user brief exists.
+
+Preparation of that review brief establishes review readiness only. It does not constitute external validation, inclusive-design certification or a maturity promotion.
+
 ## Building services and acoustics
 
 The eastern service geography is intentionally compact. The current reservations are approximately **2.9 × 2.2 m gross** for plant and **900 × 700 mm clear** for the principal vertical service zone.
