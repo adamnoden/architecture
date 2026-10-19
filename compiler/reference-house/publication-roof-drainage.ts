@@ -9,13 +9,17 @@ import type {
 import { createPlanPaperProjection } from '../publication-drawing/projection.js'
 import type {
   RoofDrainagePublicationSource,
-  RoofPoint,
   RoofSide
 } from './publication-roof-drainage-source.js'
 
 const SCENE_WIDTH_MM = 166
 const SCENE_HEIGHT_MM = 145
 const PLAN_ORIGIN: PaperPoint = { x: 8, y: 12 }
+
+interface AnnotationPoint {
+  x: number
+  y: number
+}
 
 const rectPrimitive = (
   id: string,
@@ -93,14 +97,17 @@ const arrowPrimitives = (
   ]
 }
 
-const fallAnnotationModelPoints = (side: RoofSide): readonly [RoofPoint, RoofPoint] => {
+// These coordinates position drawing notation only. They are deliberately
+// ordinary numbers rather than branded model Millimetres so annotation layout
+// cannot masquerade as source-authored roof geometry.
+const fallAnnotationModelPoints = (side: RoofSide): readonly [AnnotationPoint, AnnotationPoint] => {
   if (side === 'SOUTH') return [{ x: 6000, y: 2700 }, { x: 6000, y: 700 }]
   if (side === 'NORTH') return [{ x: 6000, y: 8100 }, { x: 6000, y: 10100 }]
   if (side === 'WEST') return [{ x: 3300, y: 5400 }, { x: 800, y: 5400 }]
   return [{ x: 8700, y: 5400 }, { x: 11200, y: 5400 }]
 }
 
-const fieldLabelModelPoint = (side: RoofSide): RoofPoint => {
+const fieldLabelModelPoint = (side: RoofSide): AnnotationPoint => {
   if (side === 'SOUTH') return { x: 6000, y: 1800 }
   if (side === 'NORTH') return { x: 6000, y: 9000 }
   if (side === 'WEST') return { x: 2350, y: 5400 }
@@ -110,6 +117,13 @@ const fieldLabelModelPoint = (side: RoofSide): RoofPoint => {
 export const createRoofDrainagePublicationScene = (
   source: RoofDrainagePublicationSource
 ): DrawingScene => {
+  if (source.view.value.scale !== 100) {
+    throw new Error('Roof/drainage publication view is frozen at 1:100.')
+  }
+  if (source.fields.length !== 4 || source.watersheds.length !== 4 || source.rwps.length !== 4) {
+    throw new Error('Roof/drainage publication view requires the frozen four-field / four-watershed / four-RWP topology.')
+  }
+
   const width = source.substrate.shell.value.width
   const depth = source.substrate.shell.value.depth
   const court = source.substrate.court.value
@@ -177,23 +191,25 @@ export const createRoofDrainagePublicationScene = (
     )
   }
 
+  // Qualitative occurrence zones stay textual. Positioning this note block does
+  // not create RWP, vent, gutter or pipe coordinates in model space.
   primitives.push(
     textPrimitive(
       'outer-collection-note',
       { x: 134, y: 18 },
-      'External collection: all perimeter edges',
+      'Collection · perimeter',
       'note',
       'start',
       { authority: source.outerCollection.authority, exactProfile: false }
     ),
-    textPrimitive('rwp-sw-zone', { x: 134, y: 27 }, 'RWP SW — W return zone', 'note', 'start', { authority: source.rwps[0].authority, exactPosition: false }),
-    textPrimitive('rwp-se-zone', { x: 134, y: 31 }, 'RWP SE — E/service return zone', 'note', 'start', { authority: source.rwps[1].authority, exactPosition: false }),
-    textPrimitive('rwp-nw-zone', { x: 134, y: 35 }, 'RWP NW — rear/W zone', 'note', 'start', { authority: source.rwps[2].authority, exactPosition: false }),
-    textPrimitive('rwp-ne-zone', { x: 134, y: 39 }, 'RWP NE — rear/E zone', 'note', 'start', { authority: source.rwps[3].authority, exactPosition: false }),
+    textPrimitive('rwp-sw-zone', { x: 134, y: 27 }, 'SW · W return', 'note', 'start', { authority: source.rwps[0].authority, exactPosition: false }),
+    textPrimitive('rwp-se-zone', { x: 134, y: 31 }, 'SE · E return', 'note', 'start', { authority: source.rwps[1].authority, exactPosition: false }),
+    textPrimitive('rwp-nw-zone', { x: 134, y: 35 }, 'NW · rear/W', 'note', 'start', { authority: source.rwps[2].authority, exactPosition: false }),
+    textPrimitive('rwp-ne-zone', { x: 134, y: 39 }, 'NE · rear/E', 'note', 'start', { authority: source.rwps[3].authority, exactPosition: false }),
     textPrimitive(
       'soil-vent-zone',
       { x: 134, y: 50 },
-      'Soil vent — E/service roof-field zone',
+      'Soil vent · E zone',
       'note',
       'start',
       { authority: source.roofService.authority, exactPosition: false }
@@ -201,7 +217,15 @@ export const createRoofDrainagePublicationScene = (
     textPrimitive(
       'selected-absence-note',
       { x: 134, y: 59 },
-      'No internal roof outlet / no front RWP',
+      'No internal outlet',
+      'note',
+      'start',
+      { authority: 'ABSENT_SELECTED' }
+    ),
+    textPrimitive(
+      'selected-front-rwp-absence-note',
+      { x: 134, y: 63 },
+      'No front RWP',
       'note',
       'start',
       { authority: 'ABSENT_SELECTED' }

@@ -32,6 +32,17 @@ test('DRW-07C projects the exact roof substrate at literal 1:100', () => {
   assert.equal(court.metadata?.authority, 'CONTROLLED')
 })
 
+test('DRW-07C refuses scale drift or incomplete frozen topology', () => {
+  const source = createRoofDrainagePublicationSource()
+  const wrongScale = structuredClone(source)
+  wrongScale.view.value.scale = 50
+  assert.throws(() => createRoofDrainagePublicationScene(wrongScale), /frozen at 1:100/)
+
+  const missingField = structuredClone(source)
+  missingField.fields.pop()
+  assert.throws(() => createRoofDrainagePublicationScene(missingField), /four-field/)
+})
+
 test('DRW-07C draws only the four source-derived watersheds and keeps them provisional', () => {
   const watersheds = lines().filter((primitive) => primitive.id.startsWith('ROOF-WATERSHED-'))
   assert.equal(watersheds.length, 4)
@@ -78,8 +89,9 @@ test('DRW-07C represents courtyard drainage as topology text, not an invented pi
 
 test('DRW-07C protects selected absences and does not draw deferred technical systems', () => {
   const values = texts().map((primitive) => primitive.value)
-  assert.ok(values.includes('No internal roof outlet / no front RWP'))
-  assert.ok(values.includes('Soil vent — E/service roof-field zone'))
+  assert.ok(values.includes('No internal outlet'))
+  assert.ok(values.includes('No front RWP'))
+  assert.ok(values.includes('Soil vent · E zone'))
 
   const ids = scene().primitives.map((primitive) => primitive.id).join(' ')
   assert.doesNotMatch(ids, /hatch|rooflight|chimney|mvhr|cooker|pipe-diameter|gutter-profile|site-discharge|hydraulic/i)
