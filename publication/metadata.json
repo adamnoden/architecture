@@ -15,7 +15,7 @@
   },
   "primer": {
     "file": "publication/dist/ovids-house-primer.pdf",
-    "pages": 15,
+    "pages": 16,
     "duplexLeaves": 8,
     "pageSize": {
       "format": "A4",
