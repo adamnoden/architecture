@@ -1,0 +1,40 @@
+name: HFI-08B regeneration probe
+
+on:
+  push:
+    branches:
+      - hfi/hfi-08b-rh03-stair-rewind
+
+permissions:
+  contents: read
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Regenerate canonical Reference House outputs
+        run: |
+          npm run rh-c1:generate
+          npm run outputs:generate
+          npm run dataplate:write
+
+      - name: Print exact regeneration diff
+        run: |
+          git diff --no-color --unified=2 -- \
+            docs/reference-house/rhc1-ground-floor.svg \
+            docs/reference-house/rhc1-first-floor.svg \
+            docs/reference-house/rhc1-principal-section.svg \
+            docs/reference-house/generated \
+            project/dataplate.json
