@@ -7,6 +7,7 @@ import type { Millimetres } from './units.js'
 export type ServiceSelectionAuthority =
   | 'RH06_SELECTED_OUTSIDE_RH_C1'
   | 'RH07_SELECTED_OUTSIDE_RH_C1'
+  | 'RH08_SELECTED_OUTSIDE_RH_C1'
   | 'RH10_SELECTED_OUTSIDE_RH_C1'
 
 export interface ControlledDerived<T> {
@@ -114,20 +115,28 @@ export interface ServiceTransverseSectionSource {
       waterproofingIndependentOfAccess: true
     }>
   }
-  verticalBundle: SelectedServiceFact<{
-    serviceClasses: readonly [
-      'FS-01-soil-vent-100mm-class',
-      'domestic-water-risers',
-      'low-temperature-hydronic-risers',
-      'segregated-dry-electrical-data',
-      'MV-SUP-01-supply-air-trunk',
-      'MV-EXT-01-extract-air-trunk'
-    ]
-    mvhrPrincipalDuctClass: { min: Millimetres; max: Millimetres }
+  verticalBundle: {
+    rh06Base: SelectedServiceFact<{
+      serviceClasses: readonly [
+        'FS-01-soil-vent-100mm-class',
+        'domestic-water-risers',
+        'segregated-dry-electrical-data'
+      ]
+    }>
+    rh07Mvhr: SelectedServiceFact<{
+      serviceClasses: readonly [
+        'MV-SUP-01-supply-air-trunk',
+        'MV-EXT-01-extract-air-trunk'
+      ]
+      principalDuctClass: { min: Millimetres; max: Millimetres }
+    }>
+    rh10Hydronic: SelectedServiceFact<{
+      serviceClass: 'low-temperature-hydronic-risers'
+    }>
     exactPacking: 'ABSENT_TECHNICAL'
     exactSupports: 'ABSENT_TECHNICAL'
     exactFireAcousticClosure: 'ABSENT_TECHNICAL'
-  }>
+  }
   plant: SelectedServiceFact<{
     id: 'G-PLANT-01'
     classes: readonly [
@@ -367,26 +376,44 @@ export const createServiceTransverseSectionSource = (): ServiceTransverseSection
         ['RH-06', 'SV-01']
       )
     },
-    verticalBundle: selected(
-      'RH07_SELECTED_OUTSIDE_RH_C1',
-      'DRW08A-VERTICAL-BUNDLE',
-      {
-        serviceClasses: [
-          'FS-01-soil-vent-100mm-class',
-          'domestic-water-risers',
-          'low-temperature-hydronic-risers',
-          'segregated-dry-electrical-data',
-          'MV-SUP-01-supply-air-trunk',
-          'MV-EXT-01-extract-air-trunk'
-        ] as const,
-        mvhrPrincipalDuctClass: { min: mm(160), max: mm(200) },
-        exactPacking: 'ABSENT_TECHNICAL',
-        exactSupports: 'ABSENT_TECHNICAL',
-        exactFireAcousticClosure: 'ABSENT_TECHNICAL'
-      },
-      'approximate',
-      ['RH-06', 'RH-07', 'RH-10', 'RH-P005-08']
-    ),
+    verticalBundle: {
+      rh06Base: selected(
+        'RH06_SELECTED_OUTSIDE_RH_C1',
+        'DRW08A-VERTICAL-BUNDLE-RH06',
+        {
+          serviceClasses: [
+            'FS-01-soil-vent-100mm-class',
+            'domestic-water-risers',
+            'segregated-dry-electrical-data'
+          ] as const
+        },
+        'qualitative',
+        ['RH-06', 'RH-P005-08']
+      ),
+      rh07Mvhr: selected(
+        'RH07_SELECTED_OUTSIDE_RH_C1',
+        'DRW08A-VERTICAL-BUNDLE-RH07-MVHR',
+        {
+          serviceClasses: [
+            'MV-SUP-01-supply-air-trunk',
+            'MV-EXT-01-extract-air-trunk'
+          ] as const,
+          principalDuctClass: { min: mm(160), max: mm(200) }
+        },
+        'approximate',
+        ['RH-07', 'RH-P005-08']
+      ),
+      rh10Hydronic: selected(
+        'RH10_SELECTED_OUTSIDE_RH_C1',
+        'DRW08A-VERTICAL-BUNDLE-RH10-HYDRONIC',
+        { serviceClass: 'low-temperature-hydronic-risers' },
+        'qualitative',
+        ['RH-10', 'RH-P005-08']
+      ),
+      exactPacking: 'ABSENT_TECHNICAL',
+      exactSupports: 'ABSENT_TECHNICAL',
+      exactFireAcousticClosure: 'ABSENT_TECHNICAL'
+    },
     plant: selected(
       'RH10_SELECTED_OUTSIDE_RH_C1',
       'DRW08A-G-PLANT-01-PACKING',
@@ -407,7 +434,7 @@ export const createServiceTransverseSectionSource = (): ServiceTransverseSection
     ),
     externalInterfaces: {
       mvhrBoundary: selected(
-        'RH07_SELECTED_OUTSIDE_RH_C1',
+        'RH08_SELECTED_OUTSIDE_RH_C1',
         'DRW08A-PEN-MV-01',
         {
           id: 'PEN-MV-01',
@@ -441,7 +468,7 @@ export const createServiceTransverseSectionSource = (): ServiceTransverseSection
         ['RH-06', 'RH-P005-09']
       ),
       soilVentRoofContinuation: selected(
-        'RH06_SELECTED_OUTSIDE_RH_C1',
+        'RH08_SELECTED_OUTSIDE_RH_C1',
         'DRW08A-PEN-SV-RF-01',
         {
           id: 'PEN-SV-RF-01',

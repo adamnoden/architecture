@@ -69,17 +69,26 @@ describe('DRW-08A service/transverse publication source', () => {
     assert.equal(result.serviceZone.floorOpening.precision, 'approximate')
   })
 
-  test('reflects the current RH-07/RH-10 service bundle rather than the stale RH-06 SVG', () => {
+  test('preserves each service class at the gate that actually selected it', () => {
     const result = source()
-    assert.deepEqual(result.verticalBundle.value.serviceClasses, [
+    assert.deepEqual(result.verticalBundle.rh06Base.value.serviceClasses, [
       'FS-01-soil-vent-100mm-class',
       'domestic-water-risers',
-      'low-temperature-hydronic-risers',
-      'segregated-dry-electrical-data',
+      'segregated-dry-electrical-data'
+    ])
+    assert.equal(result.verticalBundle.rh06Base.authority, 'RH06_SELECTED_OUTSIDE_RH_C1')
+    assert.deepEqual(result.verticalBundle.rh07Mvhr.value.serviceClasses, [
       'MV-SUP-01-supply-air-trunk',
       'MV-EXT-01-extract-air-trunk'
     ])
-    assert.deepEqual(result.verticalBundle.value.mvhrPrincipalDuctClass, { min: 160, max: 200 })
+    assert.deepEqual(result.verticalBundle.rh07Mvhr.value.principalDuctClass, { min: 160, max: 200 })
+    assert.equal(result.verticalBundle.rh07Mvhr.authority, 'RH07_SELECTED_OUTSIDE_RH_C1')
+    assert.equal(result.verticalBundle.rh10Hydronic.value.serviceClass, 'low-temperature-hydronic-risers')
+    assert.equal(result.verticalBundle.rh10Hydronic.authority, 'RH10_SELECTED_OUTSIDE_RH_C1')
+  })
+
+  test('reflects current implementation state rather than the stale RH-06 SVG', () => {
+    const result = source()
     assert.equal(result.implementationState.bathroomExtract, 'CENTRAL_MVHR_BASELINE_DIRECT_WALL_FALLBACK_ONLY')
     assert.equal(result.implementationState.wholeDwellingVentilation, 'MVHR_SELECTED_WORKING_BASELINE')
     assert.equal(result.implementationState.heatSource, 'AIR_TO_WATER_HEAT_PUMP_SELECTED_WORKING_BASELINE')
@@ -91,12 +100,20 @@ describe('DRW-08A service/transverse publication source', () => {
 
   test('does not manufacture MEP packing, construction-detail or penetration coordinates', () => {
     const result = source()
-    assert.equal(result.verticalBundle.value.exactPacking, 'ABSENT_TECHNICAL')
+    assert.equal(result.verticalBundle.exactPacking, 'ABSENT_TECHNICAL')
     assert.equal(result.plant.value.exactEquipmentPacking, 'ABSENT_TECHNICAL')
     assert.equal(result.externalInterfaces.mvhrBoundary.value.exactPenetrations, 'ABSENT_TECHNICAL')
     assert.equal(result.externalInterfaces.heatPumpBoundary.value.exactPosition, 'ABSENT_TECHNICAL')
     assert.equal(result.externalInterfaces.foulExit.value.exactInvertAndGradient, 'ABSENT_TECHNICAL')
     assert.ok(Object.values(result.technicalAbsences).every((value) => value === 'ABSENT_TECHNICAL'))
+  })
+
+  test('keeps later external-interface selections at their actual current authority', () => {
+    const result = source()
+    assert.equal(result.externalInterfaces.mvhrBoundary.authority, 'RH08_SELECTED_OUTSIDE_RH_C1')
+    assert.equal(result.externalInterfaces.soilVentRoofContinuation.authority, 'RH08_SELECTED_OUTSIDE_RH_C1')
+    assert.equal(result.externalInterfaces.heatPumpBoundary.authority, 'RH10_SELECTED_OUTSIDE_RH_C1')
+    assert.equal(result.externalInterfaces.foulExit.authority, 'RH06_SELECTED_OUTSIDE_RH_C1')
   })
 
   test('quarantines the inherited RH-06 schematic from publication geometry authority', () => {
