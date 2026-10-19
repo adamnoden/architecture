@@ -1,47 +1,10 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "packet": "BRH-06B",
   "programmeIssue": 161,
+  "recordState": "terminal",
   "discoveryMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
   "reconciledMainSha": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
-  "observations": {
-    "concurrentMainMerges": [
-      {
-        "sha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
-        "pr": 255,
-        "packet": "HFI-05C",
-        "closeoutCommentId": 6269097136,
-        "nextAuthorisedPacket": "HFI-05D"
-      },
-      {
-        "sha": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
-        "pr": 257,
-        "packet": "HFI-05D",
-        "closeoutCommentId": 6269213833,
-        "nextAuthorisedPacket": "HFI-06A"
-      }
-    ],
-    "namespaceAtReconciliation": {
-      "main": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
-      "brhPacket": "brh-06b-final-closeout",
-      "drw": {
-        "branch": "drw-05e-principal-section-spread-proof",
-        "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
-        "pr": 235,
-        "draft": true
-      },
-      "hfi": {
-        "branch": "hfi-06a-target-classes-derivation",
-        "headShaAtCreation": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
-        "authorisedByCommentId": 6269213833
-      },
-      "historicalRefs": []
-    },
-    "repositorySetting": {
-      "deleteBranchOnMerge": true,
-      "verifiedDuring06B": true
-    }
-  },
   "priorMechanicalProof": {
     "record": "project/branch-hygiene-final-audit-06a.json",
     "runId": 39263047435,
@@ -52,6 +15,54 @@
     "classCounts": {"A":115,"B":5,"C":41,"D":0,"X":0},
     "semanticQueue": {"resolvedC":40,"resolvedD":0,"remaining":0},
     "salvageQueueCount": 0
+  },
+  "finalMerge": {
+    "pr": 256,
+    "validatedHeadSha": "22ccce14dd796eaa4f62da97d107a19e858d9543",
+    "validationRunId": 39266936864,
+    "mergeSha": "e5d00a69085d26b94dcf82fb213ad0fd7e600489",
+    "firstParent": "de71a941f432878ce0d6ba41c224e38ceef866e8",
+    "secondParent": "22ccce14dd796eaa4f62da97d107a19e858d9543",
+    "packetBranchAutoDeleted": true
+  },
+  "publicationProof": {
+    "nativeMergeRun": {
+      "runId": 39267541443,
+      "conclusion": "cancelled-before-jobs-by-concurrency",
+      "notARepositoryFailure": true
+    },
+    "exactMergeRecoveryRun": {
+      "runId": 39268991386,
+      "checkoutSha": "e5d00a69085d26b94dcf82fb213ad0fd7e600489",
+      "checkoutAssertion": "success",
+      "repositoryHealth": "success",
+      "workingEdition": "success",
+      "primer": "success",
+      "pdfExistence": "success",
+      "pdfMetadata": "success",
+      "dataPlateShaAssertion": "success",
+      "pagesArtifact": "success"
+    },
+    "successfulTransport": {
+      "descendantMergeSha": "b8b992b5107b04821ca160c41d797a6af270cd70",
+      "descendantFirstParent": "e5d00a69085d26b94dcf82fb213ad0fd7e600489",
+      "pagesRunId": 39268394053,
+      "buildConclusion": "success",
+      "deployConclusion": "success"
+    }
+  },
+  "issueCloseout": {
+    "finalCloseoutCommentId": 6269739998,
+    "postCloseoutNamespaceCommentId": 6269756072,
+    "state": "closed",
+    "stateReason": "completed"
+  },
+  "preventionState": {
+    "deleteBranchOnMerge": true,
+    "orphanAuditWorkflow": ".github/workflows/branch-orphan-audit.yml",
+    "orphanAuditReadOnly": true,
+    "automaticOrphanDeletion": false,
+    "lifecycleDoctrine": "project/branch-lifecycle.md"
   },
   "sourceRecords": [
     "project/branch-hygiene-final-audit-06a.json",
@@ -64,10 +75,15 @@
     ".github/workflows/branch-orphan-audit.yml"
   ],
   "safety": {
-    "destructiveMutation": false,
-    "activeProgrammeRefMutation": false,
-    "repositorySettingMutation": false,
-    "branchRewrite": false,
-    "concurrentWorkPreserved": true
+    "destructiveMutationInSealAmendment": false,
+    "activeProgrammeRefMutationInSealAmendment": false,
+    "repositorySettingMutationInSealAmendment": false,
+    "branchRewriteInSealAmendment": false,
+    "programmeReopened": false
+  },
+  "terminalDisposition": {
+    "nextPacket": null,
+    "complete": true,
+    "sealed": true
   }
 }
