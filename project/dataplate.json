@@ -19,7 +19,7 @@
   "maturity": {
     "public-architectural-position": {
       "level": "M4",
-      "reviewedOn": "2026-10-15"
+      "reviewedOn": "2026-10-19"
     },
     "pattern-language": {
       "level": "M4",
@@ -35,7 +35,7 @@
     },
     "reference-house": {
       "level": "M3",
-      "reviewedOn": "2026-10-12"
+      "reviewedOn": "2026-10-19"
     },
     "physical-prototypes": {
       "level": "M2",
@@ -47,7 +47,7 @@
     },
     "computational-track": {
       "level": "M4",
-      "reviewedOn": "2026-10-13"
+      "reviewedOn": "2026-10-19"
     },
     "evidence-research": {
       "level": "M3",
@@ -55,11 +55,15 @@
     },
     "publication": {
       "level": "M4",
-      "reviewedOn": "2026-10-17"
+      "reviewedOn": "2026-10-19"
+    },
+    "deployment-real-site": {
+      "level": "M1",
+      "reviewedOn": "2026-10-19"
     },
     "delivery": {
       "level": "M2",
-      "reviewedOn": "2026-10-12"
+      "reviewedOn": "2026-10-19"
     }
   },
   "corpus": {

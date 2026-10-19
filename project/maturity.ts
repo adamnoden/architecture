@@ -97,9 +97,9 @@ export const workstreamStatuses = [
     id: 'public-architectural-position',
     name: 'Public architectural position',
     maturity: 'M4',
-    reviewedOn: '2026-10-15',
+    reviewedOn: '2026-10-19',
     currentState:
-      'The core architectural position has survived the bounded PR-01 adversarial review after material narrowing: proportional serviceability can reject overprovision, transfer claims are bounded, foreseeable human life-course and future-climate change are explicit, the Repose structural-perception claim is qualified, and architecture is separated from delivery and stewardship assumptions.',
+      'The core architectural position remains the internally controlled PR-01 baseline after material narrowing: proportional serviceability can reject overprovision, transfer claims are bounded, foreseeable human life-course and future-climate change are explicit, the Repose structural-perception claim is qualified, and architecture is separated from delivery and stewardship assumptions. The completed HFI programme has now integrated foreseeable human variance and complete-action / low-vigilance consequences into the governing principles without creating a parallel human-factors doctrine.',
     nextGate:
       'Hold the corrected position as the internally controlled baseline through PR-02; PR-03/PR-04 external critical reading and downstream physical/professional evidence remain capable of reopening it. M5 requires competent independent validation at the stated scope.',
     evidence: {
@@ -113,7 +113,8 @@ export const workstreamStatuses = [
         'publication/pr01-r6-cross-book-contradiction-omission.md',
         'publication/pr01-r8a-comparative-proportionality-closeout.md',
         'publication/pr01-r8f-local-findings-constitution-climate.md',
-        'publication/pr01-r9-reproof-refreeze.md'
+        'publication/pr01-r9-reproof-refreeze.md',
+        'project/hfi/hfi-10-adversarial-closeout.md'
       ]
     }
   },
@@ -180,11 +181,11 @@ export const workstreamStatuses = [
     id: 'reference-house',
     name: 'Reference House',
     maturity: 'M3',
-    reviewedOn: '2026-10-12',
+    reviewedOn: '2026-10-19',
     currentState:
-      'RH-00 through RH-10 are coordinated at virtual-design scope, RH-11 provides issue-ready discipline review packages, and RH-C0 has frozen a controlled pre-compiler model without converting unresolved technical assumptions into certainty.',
+      'RH-00 through RH-10 remain coordinated at virtual-design scope and RH-11 remains issue-ready. HFI-RW-01 has deliberately rewound the principal stair from 280 mm to the project-preferred 300 mm going while preserving the shell, courtyard, programme and circulation topology; the HFI review handoff is integrated without claiming external validation.',
     nextGate:
-      'Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, and progress P03/P04 validation; RH-C0 does not raise Reference House maturity.',
+      'Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, progress P03/P04 validation, and retain the explicitly unresolved HFI handoffs for finished interfaces, real-site access, stairlift compatibility, future lift provision and laundry topology with their downstream owners.',
     evidence: {
       framed: ['docs/reference-house/README.md'],
       developed: [
@@ -196,7 +197,8 @@ export const workstreamStatuses = [
         'docs/reference-house/whole-house-coordination-audit.md',
         'docs/reference-house/energy-heat-coordination-rh10.md',
         'docs/reference-house/envelope-coordination-rh10.md',
-        'docs/reference-house/model-baseline-rhc0.md'
+        'docs/reference-house/model-baseline-rhc0.md',
+        'project/hfi/hfi-08b-rh03-stair-rewind.md'
       ]
     }
   },
@@ -238,11 +240,11 @@ export const workstreamStatuses = [
     id: 'computational-track',
     name: 'Computational track',
     maturity: 'M4',
-    reviewedOn: '2026-10-13',
+    reviewedOn: '2026-10-19',
     currentState:
-      'The bounded Reference House executable sequence remains closed PASS through RH-C5, and the CH-00 through CH-08 Compiler Hardening programme is complete. The compiler now has a frozen semantic/artefact baseline, deterministic fail-closed behaviour, machine-enforced runtime boundaries, single-pass Reference House orchestration, selective representation hardening, stable source/method/result/compile identity and lineage, deterministic law/property/metamorphic evidence, one reproducible repository-health and artefact-verification contract, and a final deletion/proof audit that preserves the pre-hardening conclusions while removing only unearned compatibility machinery. This is an internally validated/controlled computational baseline at its stated proof boundaries; it does not expand Reference House technical authority or establish physical, regulatory or whole-building adequacy.',
+      'The bounded Reference House executable sequence remains closed PASS through RH-C5 and CH-00 through CH-08 remain complete. The intentional HFI stair rewind has propagated through the controlled semantic source and deterministic projections; RH-C5 now checks the selected 300 mm going while HFI-09C/09D explicitly refuse to turn that project preference into a universal human-factors or statutory rule.',
     nextGate:
-      'Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope.',
+      'Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, DPL target/site work, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -296,7 +298,9 @@ export const workstreamStatuses = [
         'compiler/ch06/ch06.test.ts',
         'compiler/ch06/geometry-positive.test.ts',
         'compiler/ch07/ch07.test.ts',
-        'compiler/ch08/ch08.test.ts'
+        'compiler/ch08/ch08.test.ts',
+        'project/hfi/hfi-09c-computational-admission.md',
+        'project/hfi/hfi-09d-regression-locks.md'
       ]
     }
   },
@@ -318,18 +322,19 @@ export const workstreamStatuses = [
     id: 'publication',
     name: 'Publication',
     maturity: 'M4',
-    reviewedOn: '2026-10-17',
+    reviewedOn: '2026-10-19',
     currentState:
-      'PR-00 and PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 removed development-history residue, and PUB-NOM NOM-00 through NOM-10 completed the reader-facing nomenclature architecture and adversarial source/rendered enforcement. The completed DRW baseline through DRW-01B is now integrated on main; no architectural drawing implementation has begun. The resolved Working Edition remains the controlled publication source while DRW proceeds from DRW-01C.',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete. DRW has advanced from doctrine into production: DRW-03 through DRW-07 and DRW-08A through DRW-08E.2 are complete, including controlled true-scale plans, section/elevation/roof/service views and synthetic-setting material. Fixed-register completion is 43/66 (65.2%); conservative known-programme completion is 56/79 (70.9%).',
     nextGate:
-      'Resume DRW at DRW-01C, complete the controlled architectural-drawing programme and re-run the PUB-NOM integration gates at DRW-10 and DRW-12. PR-02 then produces the private 12-copy physical object without reopening the manuscript by preference; PR-03/PR-04 supply the independent critical cycle required before any M5 or public-release claim.',
+      'Execute DRW-08F orthographic-family parity review/freeze, then continue DRW-09 through DRW-12 with the mandatory PUB-NOM re-entry at DRW-10 and DRW-12. PR-02 then produces the private 12-copy physical object; PR-03/PR-04 supply the independent critical cycle required before any M5 or public-release claim.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
       coordinated: [
         'publication/pr00h-candidate-book-freeze.md',
         'publication/pr01-r8f-local-findings-constitution-climate.md',
-        'docs/publication/architectural-drawing-drw01b-graphic-tokens.md'
+        'docs/publication/architectural-drawing-programme.md',
+        'docs/publication/architectural-drawing-execution-plan.md'
       ],
       internallyValidated: [
         'publication/pr01-r7-findings-freeze.md',
@@ -340,16 +345,33 @@ export const workstreamStatuses = [
     }
   },
   {
+    id: 'deployment-real-site',
+    name: 'Deployment / real-site integration',
+    maturity: 'M1',
+    reviewedOn: '2026-10-19',
+    currentState:
+      'DPL-00 has framed deployment as a first-class layer between the controlled Reference House and real land: doctrine, Reference House, target stack, site manifest, evidence and scenarios remain distinct, with compatibility before adaptation as the architectural rule. DPL-01 through DPL-06 are the only authorised foundation set; no Reference Site, regulation encoding or real-plot deployment claim has yet been earned.',
+    nextGate:
+      'Complete DPL-01 through DPL-06 and pass the mandatory foundation review before authorising DPL-07 onward. Keep England / Greater London as declared implementation targets rather than universal doctrine, and preserve unknown/evidence/judgement states instead of manufacturing compliance certainty.',
+    evidence: {
+      framed: ['project/dpl/deployment-programme.md']
+    }
+  },
+  {
     id: 'delivery',
     name: 'Delivery',
     maturity: 'M2',
-    reviewedOn: '2026-10-12',
+    reviewedOn: '2026-10-19',
     currentState:
-      'The implementation-brief structure exists, but downstream requirements remain intentionally incomplete.',
-    nextGate: 'Populate only as architectural and validation decisions mature.',
+      'The implementation-brief structure exists and N17 now carries complete-action / finished-interface human-factors verification into RIBA 3/4 as appropriate, but downstream delivery requirements remain intentionally incomplete.',
+    nextGate:
+      'Populate only as architectural, DPL, professional-review and physical-validation decisions mature; delivery must remain a consequence of controlled architecture rather than a second source of doctrine.',
     evidence: {
       framed: ['docs/delivery/README.md'],
-      developed: ['docs/delivery/riba-implementation-brief-template.md']
+      developed: [
+        'docs/delivery/riba-implementation-brief-template.md',
+        'docs/delivery/human-factors-verification-requirements.md'
+      ]
     }
   }
 ] as const satisfies readonly WorkstreamStatus[]
