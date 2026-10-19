@@ -1,0 +1,47 @@
+name: DRW-03C.2 regenerate controlled drawings
+
+on:
+  push:
+    branches: [drw-03c2-browser-svg-type]
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v5
+        with:
+          ref: drw-03c2-browser-svg-type
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Regenerate controlled publication drawings
+        run: |
+          npx tsx compiler/reference-house/generate-publication-ground-plan.ts
+          npx tsx compiler/reference-house/generate-publication-first-floor-plan.ts
+          npx tsx compiler/reference-house/generate-publication-principal-section.ts
+
+      - name: Commit regenerated drawings
+        run: |
+          git add docs/reference-house/publication-ground-floor-plan.svg \
+                  docs/reference-house/publication-first-floor-plan.svg \
+                  docs/reference-house/publication-principal-section.svg
+          if git diff --cached --quiet; then
+            echo 'Controlled drawings already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore(drw): regenerate controlled publication drawings'
+          git push origin HEAD:drw-03c2-browser-svg-type
