@@ -1,0 +1,63 @@
+name: Branch orphan audit
+
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/branch-orphan-audit.yml
+      - scripts/branch-hygiene-audit.mjs
+      - scripts/branch-orphan-report.mjs
+      - project/branch-hygiene-retentions.json
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: branch-orphan-audit-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Audit remote branches
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/branch-hygiene-audit.mjs \
+            --repo="$GITHUB_REPOSITORY" \
+            --output=branch-hygiene-audit.json
+
+      - name: Classify orphan signals
+        run: |
+          node scripts/branch-orphan-report.mjs \
+            --input=branch-hygiene-audit.json \
+            --retentions=project/branch-hygiene-retentions.json \
+            --recent-days=14 \
+            --markdown=branch-orphan-report.md \
+            --json=branch-orphan-report.json
+          cat branch-orphan-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: branch-orphan-audit
+          path: |
+            branch-hygiene-audit.json
+            branch-orphan-report.json
+            branch-orphan-report.md
+          if-no-files-found: error

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 2,
+  "packet": "BRH-05B",
+  "programmeIssue": 161,
+  "authority": {
+    "priorPacket": "project/branch-hygiene-prevention-05a.{json,md,provenance.json}",
+    "baselineMainSha": "0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d",
+    "historicalQueueRemaining": 0
+  },
+  "entryNamespace": [
+    {
+      "branch": "drw-05e-principal-section-spread-proof",
+      "headSha": "29c520b7c82f24880d168c3e117370dec7837b8f",
+      "openPr": 235
+    },
+    {
+      "branch": "hfi-04d-kitchen-storage-fixed-work-zones",
+      "headSha": "0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d",
+      "openPr": null,
+      "note": "fresh concurrent HFI branch created from current main"
+    }
+  ],
+  "reuse": {
+    "auditScript": "scripts/branch-hygiene-audit.mjs",
+    "reason": "Avoid duplicating the already-proven Git-history and patch-equivalence engine."
+  },
+  "newFiles": [
+    "scripts/branch-orphan-report.mjs",
+    ".github/workflows/branch-orphan-audit.yml",
+    "project/branch-hygiene-retentions.json",
+    "project/branch-hygiene-prevention-05b.md",
+    "project/branch-hygiene-prevention-05b.json",
+    "project/branch-hygiene-prevention-05b.provenance.json"
+  ],
+  "workflow": {
+    "scheduleCronUtc": "17 6 * * 1",
+    "workflowDispatch": true,
+    "pullRequestSelfTest": true,
+    "permissions": {
+      "contents": "read",
+      "pull-requests": "read"
+    },
+    "artifact": "branch-orphan-audit",
+    "mutationActions": []
+  },
+  "proof": {
+    "pr": 245,
+    "implementationHeadSha": "9725d95538fd38be9c3bd99826a7ded2029f2aad",
+    "workflowRunId": 39255049551,
+    "jobId": 118068114269,
+    "workflowConclusion": "success",
+    "workflowArtifactId": 12187616745,
+    "workflowArtifactDigest": "sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623",
+    "result": {
+      "total": 3,
+      "openPr": 2,
+      "recent": 1,
+      "retained": 0,
+      "suspicious": 0
+    },
+    "normalPrValidationRunId": null
+  },
+  "nextPacket": "BRH-05C"
+}
