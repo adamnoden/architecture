@@ -1,0 +1,61 @@
+name: Prove DRW front-elevation spread
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'publication/specimens/drw06e/**'
+      - 'docs/publication/architectural-drawing-drw06e-front-elevation-spread-proof.md'
+      - 'docs/reference-house/publication-principal-front-elevation.svg'
+      - 'compiler/reference-house/publication-front-elevation*.ts'
+      - 'compiler/reference-house/generate-publication-front-elevation.ts'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/drw-front-elevation-spread-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drw-front-elevation-spread-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Prepare controlled front-elevation spread
+        run: npx tsx publication/specimens/drw06e/prepare.ts
+
+      - name: Build A4 front-elevation proof
+        run: DRW06E_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw06e/vivliostyle.config.js
+
+      - name: Build B5 front-elevation proof
+        run: DRW06E_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw06e/vivliostyle.config.js
+
+      - name: Validate front-elevation spread proof
+        run: npx tsx publication/specimens/drw06e/validate.ts
+
+      - name: Upload front-elevation proof PDFs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-06e-principal-front-elevation-spread-proof
+          path: |
+            publication/specimens/drw06e/dist/drw06e-a4.pdf
+            publication/specimens/drw06e/dist/drw06e-b5.pdf
+          if-no-files-found: error
+          retention-days: 30
