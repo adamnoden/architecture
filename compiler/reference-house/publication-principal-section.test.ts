@@ -120,6 +120,30 @@ describe('DRW-05C principal-section publication renderer', () => {
     )
   })
 
+  test('fits the split entrance-hall label clear of all three stair flights at frozen 7.5 pt type', () => {
+    const label1 = texts().find((primitive) => primitive.id === 'label-ground-south-1')
+    const label2 = texts().find((primitive) => primitive.id === 'label-ground-south-2')
+    const flight1 = lines().find((primitive) => primitive.id === 'stair-flight-1-beyond')
+    const flight2 = lines().find((primitive) => primitive.id === 'stair-flight-2-perpendicular-beyond')
+    const flight3 = lines().find((primitive) => primitive.id === 'stair-flight-3-cut')
+    assert.ok(label1 && label2 && flight1 && flight2 && flight3)
+
+    assert.deepEqual(
+      { value: label1.value, x: label1.x, y: label1.y, anchor: label1.anchor },
+      { value: 'Entrance hall /', x: 27, y: 57, anchor: 'middle' }
+    )
+    assert.deepEqual(
+      { value: label2.value, x: label2.x, y: label2.y, anchor: label2.anchor },
+      { value: 'stair', x: 27, y: 60, anchor: 'middle' }
+    )
+
+    const labelFontMm = (7.5 * 25.4) / 72
+    const entranceHallSlashHalfWidthMm = 16.912166666666664 / 2
+    assert.ok(label1.x + entranceHallSlashHalfWidthMm < flight2.a.x)
+    assert.ok(label1.y - labelFontMm > Math.max(flight3.a.y, flight3.b.y))
+    assert.ok(label2.y + labelFontMm * 0.3 < Math.min(flight1.a.y, flight1.b.y))
+  })
+
   test('terminates at ground FFL and introduces no below-ground or construction component geometry', () => {
     const termination = lines().find((primitive) => primitive.id === 'ground-termination')
     assert.ok(termination)
@@ -134,7 +158,8 @@ describe('DRW-05C principal-section publication renderer', () => {
   test('uses restrained human labels and level markers without machine IDs', () => {
     const values = texts().map((primitive) => primitive.value)
     for (const label of [
-      'Entrance hall / stair',
+      'Entrance hall /',
+      'stair',
       'Garden dining',
       'South landing / stair',
       'North',
