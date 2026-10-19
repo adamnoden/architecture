@@ -112,11 +112,7 @@ export const createSyntheticSettingPublicationSource = (): SyntheticSettingPubli
         width: house.shell.width.value,
         depth: house.shell.depth.value
       }),
-      court: controlled('DRW08E-COURT', {
-        width: house.court.value.width,
-        depth: house.court.value.depth,
-        ...court
-      })
+      court: controlled('DRW08E-COURT', { ...court })
     },
     surrogate: {
       width: surrogate('DRW08E-SURROGATE-WIDTH', surrogateWidth, 'approximate'),
