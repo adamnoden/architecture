@@ -27,6 +27,21 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
+      - name: HFI-08B temporary regeneration probe
+        run: |
+          npm run rh-c1:generate
+          npm run outputs:generate
+          npm run dataplate:write
+          echo '=== HFI-08B GENERATED DIFF ==='
+          git diff --no-color --unified=2 -- \
+            docs/reference-house/rhc1-ground-floor.svg \
+            docs/reference-house/rhc1-first-floor.svg \
+            docs/reference-house/rhc1-principal-section.svg \
+            docs/reference-house/generated \
+            project/dataplate.json
+          echo '=== END HFI-08B GENERATED DIFF ==='
+          git reset --hard HEAD
+
       - name: Check repository health
         run: npm run check
 
