@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 4,
+  "packet": "BRH-04E",
+  "programmeIssue": 161,
+  "status": "complete",
+  "packetBranch": "brh-04e-controlled-deletion-5",
+  "execution": {
+    "initialDiscoveryMainSha": "439eb71841dae16ad10cb675d5b94f0430a146ca",
+    "destructiveLeaseMainSha": "be0b328661e5fde92681c79082a8efec6775cd8a",
+    "postDeleteVerificationMainSha": "021d66930b09510defe30b6197cb8ab463c98d59",
+    "sourceClassificationBaselineMainSha": "b8e842cee5beef6981f1e075cd06a1c080fbfe3a",
+    "hardDeletionCap": 25,
+    "candidateCount": 16,
+    "candidateClassCounts": {"A": 15, "C": 1, "B": 0, "D": 0, "X": 0},
+    "connectorDeleteBranchActionAvailable": false,
+    "deletionActor": "repository owner via GitHub UI"
+  },
+  "candidateSetSha256": "2807c62f90e4bfb15cb422e0ae9403ce0669da2a363ad45ee370ee53ec8e9539",
+  "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
+  "candidates": [
+    {"name":"brh-01a-obvious-integrated","expectedHeadSha":"bbaf9b72df7758b4ff4d97d89ee6a798789b2c41","class":"A"},
+    {"name":"brh-01b-patch-equivalent","expectedHeadSha":"8ea68f5b5cfac84ea4aeb6b11ed24bd8fdca6660","class":"A"},
+    {"name":"brh-02g-publication-editorial-review","expectedHeadSha":"708ca16ac46ee40f0759a1825f557924cfd0694c","class":"A"},
+    {"name":"brh-03-salvage-necessity-proof","expectedHeadSha":"3043c99d360f17178332bf92a3294868abef506f","class":"C"},
+    {"name":"drw-02e","expectedHeadSha":"374c5db6e5b559e58cbc6a54106fc64786d3b9e6","class":"A"},
+    {"name":"drw-03a","expectedHeadSha":"bcc9b8a34469e1a9f2bebf65fdb0499f377248b8","class":"A"},
+    {"name":"pub-san-resolved-work-cleanup","expectedHeadSha":"cac29844392a07d735b244c25f6636cc62d68d77","class":"A"},
+    {"name":"pub-san-semantic-coherence","expectedHeadSha":"8e9b1dc14b7710e8b18f057d4cfb761fe830d9ec","class":"A"},
+    {"name":"pub-san-source-link-cleanup","expectedHeadSha":"aff9deae0b3e34b1c86d2e8f215e967d25f329f8","class":"A"},
+    {"name":"publication-pdf-metadata","expectedHeadSha":"7267aba14c78c6c8551fa7559f8c7bd3a68d54d3","class":"A"},
+    {"name":"record-post-freeze-figure-defect","expectedHeadSha":"6c1b081d5161ab7719dd7c5c0a1ff37c9a485f71","class":"A"},
+    {"name":"site-build-timestamp","expectedHeadSha":"378028f2ad8f8745b750b86f2076a962245360ab","class":"A"},
+    {"name":"status-hygiene-2026-10-17","expectedHeadSha":"8da95e7428e155945f83fc14c6b2514a02ae2fef","class":"A"},
+    {"name":"tectonic-honesty","expectedHeadSha":"28386a2debd5318a2680bcdae636120ceb7b48fb","class":"A"},
+    {"name":"vertical-bay-coordination","expectedHeadSha":"55f6a11f982d27c4b7c2c00c1b3cf2e5fed05eff","class":"A"},
+    {"name":"wall-bay-prototype-v1","expectedHeadSha":"b9d433220c507bc53433d7227aaeb5162a9ccd8c","class":"A"}
+  ],
+  "specialReproof": {
+    "brh-02g-publication-editorial-review": {"result":"A","reason":"unchanged head was an exact ancestor of main before deletion"},
+    "brh-03-salvage-necessity-proof": {"result":"C","branchOnlyCommitCount":2,"branchOnlyPaths":["project/branch-hygiene-salvage-closeout.json","project/branch-hygiene-salvage-closeout.md"],"authoritativeSuccessorPaths":["project/branch-hygiene-salvage-proof.json","project/branch-hygiene-salvage-proof.md","project/branch-hygiene-salvage-proof.provenance.json"],"reason":"later merged BRH-03A explicitly supersedes the stale draft and preserves/refines its D=0 conclusion"}
+  },
+  "postDeleteProof": {
+    "finalAuthorisationSnapshotCountIncludingMainAndPacketBranch": 65,
+    "postDeleteNamespaceCountIncludingMainAndPacketBranch": 47,
+    "authorisedDeletedCount": 16,
+    "allAuthorisedCandidatesAbsent": true,
+    "unexpectedHistoricalDeletionCount": 0,
+    "survivingClassBCount": 5,
+    "survivingReviewedClassCCount": 40,
+    "remainingNamespaceComposition": "main + BRH-04E packet branch + 5 B refs + 40 reviewed C refs",
+    "reconciliationEquation": "65 - 16 authorised deletions - 2 independently retired active refs = 47",
+    "independentlyRetiredActiveRefs": ["drw-05c-principal-section-renderer", "hfi-03b-continuous-ground-plane"],
+    "transientNetZeroRefCycles": ["hfi-03c-object-movement", "hfi-03d-domestic-task-routes", "drw-05d-principal-section-artifact"],
+    "openPrCountAtVerification": 1,
+    "openPrHeadsAtVerification": [{"pr":229,"branch":"brh-04e-controlled-deletion-5"}]
+  },
+  "mutation": {
+    "branchDeletionPerformed": true,
+    "deletedCount": 16,
+    "repositorySettingsChanged": false,
+    "branchRewritePerformed": false
+  },
+  "nextPacket": "BRH-04F",
+  "nextAction": "Recover a fresh main/open-PR/namespace lease and begin the ordered B/C deletion phase. BRH-04F is not begun by this record."
+}
