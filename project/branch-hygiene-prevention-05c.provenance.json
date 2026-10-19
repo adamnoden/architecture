@@ -10,17 +10,24 @@
   "inputs": [
     "issue #161",
     "project/branch-hygiene-prevention-05b.md",
-    "docs/development/README.md",
     "live branch namespace",
     "live open pull requests",
     "live repository settings"
   ],
   "outputs": [
-    "docs/development/branch-lifecycle.md",
-    "docs/development/README.md",
+    "project/branch-lifecycle.md",
     "project/branch-hygiene-prevention-05c.md",
     "project/branch-hygiene-prevention-05c.json",
     "project/branch-hygiene-prevention-05c.provenance.json"
+  ],
+  "validationHistory": [
+    {
+      "runId": 39258004630,
+      "result": "failure",
+      "gate": "repository health",
+      "reason": "first draft placed lifecycle page under published docs without curated navigation coverage",
+      "disposition": "corrected by moving internal lifecycle doctrine to project/ and removing public-doc/index changes"
+    }
   ],
   "safety": {
     "documentationOnly": true,

@@ -25,7 +25,7 @@ Do not create archive branches or archive tags merely to preserve a ref. Commit,
 
 ## Intentional durable exceptions are explicit
 
-A durable non-`main` branch should normally have an open PR. If a branch intentionally needs to remain without one, record a concise retention reason in [`../../project/branch-hygiene-retentions.json`](../../project/branch-hygiene-retentions.json).
+A durable non-`main` branch should normally have an open PR. If a branch intentionally needs to remain without one, record a concise retention reason in [`branch-hygiene-retentions.json`](branch-hygiene-retentions.json).
 
 Retention is an explicit exception, not a way to hide uncertainty. A recent branch can remain unclassified while active work is forming; age alone never makes a branch disposable.
 

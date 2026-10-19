@@ -16,10 +16,6 @@ It does **not** contain the prototype artefacts themselves. Build packs, drawing
 
 Project-wide maturity and priorities are owned by [`../../STATUS.md`](../../STATUS.md).
 
-## Repository workflow
-
-- [Branch Lifecycle](branch-lifecycle.md) — minimal rules for durable work, temporary branches, explicit retention and review-only orphan reporting.
-
 ## Completed controls retained for provenance
 
 ### Ovid’s House identity migration

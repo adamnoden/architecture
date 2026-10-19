@@ -16,7 +16,7 @@ Neither live programme branch is modified by BRH-05C.
 
 ## Doctrine recorded
 
-Canonical workflow: `docs/development/branch-lifecycle.md`.
+Canonical workflow: `project/branch-lifecycle.md`.
 
 It records only four operational rules:
 
@@ -42,9 +42,9 @@ BRH-05C does **not** add:
 
 The existing automatic post-merge deletion setting and read-only orphan audit remain the entire mechanical prevention layer.
 
-## Discoverability
+## Placement
 
-`docs/development/README.md` links the branch lifecycle under a small repository-workflow section so the rule is discoverable without promoting it into architectural doctrine.
+The lifecycle doctrine lives under `project/`, not the published documentation surface. Repository health correctly rejected the first draft when it was placed under `docs/development/` without curated navigation coverage; the packet used that failure to tighten scope rather than expanding public navigation for an internal process note.
 
 ## Administrative note
 
