@@ -1,21 +1,28 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "packet": "BRH-06B",
   "programmeIssue": 161,
   "discoveryMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
-  "reconciledMainSha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+  "reconciledMainSha": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
   "observations": {
-    "concurrentMainMerge": {
-      "sha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
-      "pr": 255,
-      "packet": "HFI-05C",
-      "firstParent": "049cb4455a1fcfce98069a7d43edd9723d849b53",
-      "secondParent": "52661f049361d801f4eb71d95d4c4398e10e237c",
-      "closeoutCommentId": 6269097136,
-      "nextAuthorisedHfiPacket": "HFI-05D"
-    },
+    "concurrentMainMerges": [
+      {
+        "sha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+        "pr": 255,
+        "packet": "HFI-05C",
+        "closeoutCommentId": 6269097136,
+        "nextAuthorisedPacket": "HFI-05D"
+      },
+      {
+        "sha": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+        "pr": 257,
+        "packet": "HFI-05D",
+        "closeoutCommentId": 6269213833,
+        "nextAuthorisedPacket": "HFI-06A"
+      }
+    ],
     "namespaceAtReconciliation": {
-      "main": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+      "main": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
       "brhPacket": "brh-06b-final-closeout",
       "drw": {
         "branch": "drw-05e-principal-section-spread-proof",
@@ -24,16 +31,15 @@
         "draft": true
       },
       "hfi": {
-        "branch": "hfi-05d-governing-principle-formation",
-        "headSha": "c75953318879c1556413468fe4b5b896b960537b",
-        "pr": 257,
-        "draft": false
+        "branch": "hfi-06a-target-classes-derivation",
+        "headShaAtCreation": "4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74",
+        "authorisedByCommentId": 6269213833
       },
       "historicalRefs": []
     },
     "repositorySetting": {
       "deleteBranchOnMerge": true,
-      "verifiedAfterConcurrentMainMerge": true
+      "verifiedDuring06B": true
     }
   },
   "priorMechanicalProof": {

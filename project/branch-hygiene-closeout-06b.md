@@ -2,22 +2,25 @@
 
 **Issue:** #161  
 **Discovery `main`:** `049cb4455a1fcfce98069a7d43edd9723d849b53`  
-**Reconciled `main`:** `7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f`
+**Reconciled `main`:** `4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74`
 
 BRH-06B reconciles the final branch ledger, surviving namespace, lifecycle controls and salvage record after the green BRH-06A mechanical re-audit. It performs no historical deletion, branch rewrite, salvage or repository-setting mutation.
 
-## Concurrent main movement was incorporated
+## Concurrent programme movement was incorporated
 
-While 06B was being prepared, HFI-05C completed and merged through PR #255 as `7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f`, whose first parent is the BRH-06A merge `049cb4455a1fcfce98069a7d43edd9723d849b53` and second parent is HFI-05C head `52661f049361d801f4eb71d95d4c4398e10e237c`.
+Two legitimate HFI merges landed while 06B was being prepared and validated:
 
-The HFI-05C closeout explicitly authorises **HFI-05D — governing-principle formation**. BRH therefore refreshes the survivor set and integrates the new `main` before validation rather than treating the old discovery snapshot as a merge lease.
+1. HFI-05C / PR #255 merged as `7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f`, then authorised HFI-05D.
+2. HFI-05D / PR #257 merged as `4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74`, then authorised **HFI-06A — target classes and derivation method**.
+
+Each movement was caught by a fresh BRH lease. The packet branch incorporates the latest signed `main` rather than merging against stale authority.
 
 ## Final survivor set at reconciliation
 
-| Branch | Current ref | Purpose | Disposition |
+| Branch | Ref at reconciliation | Purpose | Disposition |
 | --- | --- | --- | --- |
 | `drw-05e-principal-section-spread-proof` | `12de8f9878d809ca9e85e66978c8567a0c86c30d` | Active DRW-05E under draft PR #235; blocked/split by rendered physical typography proof and awaiting corrective DRW-03C.2. | retain — active |
-| `hfi-05d-governing-principle-formation` | `c75953318879c1556413468fe4b5b896b960537b` | Current authorised HFI-05D under PR #257 / issue #195. | retain — active |
+| `hfi-06a-target-classes-derivation` | `4d01396c02b4a8ea493f4a85fbcb058b8dd5ff74` at creation/reconciliation | Newly created current HFI-06A packet, explicitly authorised by the HFI-05D closeout. | retain — active |
 
 The BRH-06B packet branch is the only other non-`main` ref. No historical merged packet ref survives and no surviving programme ref is unexplained.
 
@@ -38,7 +41,7 @@ Canonical final mechanical proof remains `project/branch-hygiene-final-audit-06a
 
 ## Prevention state
 
-The live repository still reports:
+The live repository reports:
 
 - `delete_branch_on_merge = true`;
 - weekly/manual orphan audit at `.github/workflows/branch-orphan-audit.yml`;
