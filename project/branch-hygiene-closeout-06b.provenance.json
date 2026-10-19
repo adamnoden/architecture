@@ -1,78 +1,50 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-06B",
   "programmeIssue": 161,
-  "baselineMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
-  "recordSha256": "57f6498b0467bd22c0c1ec05161e1e80e354f52745ec8b166968fd872a13af95",
+  "discoveryMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+  "reconciledMainSha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
   "observations": {
-    "main": {
-      "sha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
-      "source": "GET /repos/adamnoden/architecture/branches/main"
+    "concurrentMainMerge": {
+      "sha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+      "pr": 255,
+      "packet": "HFI-05C",
+      "firstParent": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+      "secondParent": "52661f049361d801f4eb71d95d4c4398e10e237c",
+      "closeoutCommentId": 6269097136,
+      "nextAuthorisedHfiPacket": "HFI-05D"
     },
-    "namespace": {
-      "branchCountIncludingMain": 4,
-      "nonMainBranchCount": 3,
-      "source": "GET /repos/adamnoden/architecture/branches?per_page=100",
-      "note": "Includes BRH-06B packet branch; active programme refs excluding packet branch = 2."
-    },
-    "openPullRequests": {
-      "count": 2,
-      "pullRequests": [
-        {
-          "number": 235,
-          "branch": "drw-05e-principal-section-spread-proof",
-          "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
-          "draft": true
-        },
-        {
-          "number": 255,
-          "branch": "hfi-05c-cross-discipline-conflict-matrix",
-          "headSha": "52661f049361d801f4eb71d95d4c4398e10e237c",
-          "draft": false
-        }
-      ],
-      "source": "fresh PR-specific/open-PR API reads before BRH review"
+    "namespaceAtReconciliation": {
+      "main": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+      "brhPacket": "brh-06b-final-closeout",
+      "drw": {
+        "branch": "drw-05e-principal-section-spread-proof",
+        "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
+        "pr": 235,
+        "draft": true
+      },
+      "hfi": {
+        "branch": "hfi-05d-governing-principle-formation",
+        "headSha": "c75953318879c1556413468fe4b5b896b960537b",
+        "pr": 257,
+        "draft": false
+      },
+      "historicalRefs": []
     },
     "repositorySetting": {
       "deleteBranchOnMerge": true,
-      "source": "GET /repos/adamnoden/architecture"
-    },
-    "hfiAuthority": {
-      "issue": 195,
-      "currentPacket": "HFI-05C",
-      "branch": "hfi-05c-cross-discipline-conflict-matrix",
-      "headSha": "52661f049361d801f4eb71d95d4c4398e10e237c",
-      "openPr": 255
-    },
-    "drwAuthority": {
-      "issue": 154,
-      "pullRequest": 235,
-      "branch": "drw-05e-principal-section-spread-proof",
-      "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
-      "latestCommitMessage": "DRW-05E — keep rendered blocker record current",
-      "openPr": 235
+      "verifiedAfterConcurrentMainMerge": true
     }
   },
-  "priorProof": {
+  "priorMechanicalProof": {
     "record": "project/branch-hygiene-final-audit-06a.json",
-    "closeoutCommentId": 6268946268,
     "runId": 39263047435,
     "jobId": 118095414246,
     "artifactId": 12190304401,
     "artifactDigest": "sha256:f37c50a1762e1458ed5835f9896d977849ba5a13f3c7ae1f4422ae4ed02ee39c",
     "deletedLedgerCount": 161,
-    "classCounts": {
-      "A": 115,
-      "B": 5,
-      "C": 41,
-      "D": 0,
-      "X": 0
-    },
-    "semanticQueue": {
-      "resolvedC": 40,
-      "resolvedD": 0,
-      "remaining": 0
-    },
+    "classCounts": {"A":115,"B":5,"C":41,"D":0,"X":0},
+    "semanticQueue": {"resolvedC":40,"resolvedD":0,"remaining":0},
     "salvageQueueCount": 0
   },
   "sourceRecords": [
@@ -89,12 +61,7 @@
     "destructiveMutation": false,
     "activeProgrammeRefMutation": false,
     "repositorySettingMutation": false,
-    "branchRewrite": false
-  },
-  "concurrency": {
-    "programmeRefsAdvancedAfterInitialDiscovery": true,
-    "drw": "472d339a33490f3c076afcb4f78614c25ed9284e -> 12de8f9878d809ca9e85e66978c8567a0c86c30d",
-    "hfi": "932dd67c61ba10cbc154f68745cf8571430f3ada -> 52661f049361d801f4eb71d95d4c4398e10e237c",
-    "action": "refresh survivor evidence; do not mutate active refs"
+    "branchRewrite": false,
+    "concurrentWorkPreserved": true
   }
 }

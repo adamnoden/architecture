@@ -1,12 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "packet": "BRH-06B",
   "programmeIssue": 161,
-  "status": "reconciliation-complete-pending-review-merge",
-  "baselineMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+  "status": "reconciliation-complete-pending-validation-merge",
+  "discoveryMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+  "reconciledMainSha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
   "authority": {
-    "programmeIssue": 161,
-    "latestAuthorisedCloseoutCommentId": 6268946268,
+    "latestPriorCloseoutCommentId": 6268946268,
     "priorPacket": "BRH-06A",
     "priorPacketMergeSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
     "priorCanonicalAuditRunId": 39263047435,
@@ -14,55 +14,50 @@
     "priorProofArtifactId": 12190304401,
     "priorProofArtifactDigest": "sha256:f37c50a1762e1458ed5835f9896d977849ba5a13f3c7ae1f4422ae4ed02ee39c"
   },
-  "liveStateBeforePacketBranch": {
-    "branchCountIncludingMain": 3,
-    "nonMainBranchCount": 2,
-    "openPrCount": 1,
-    "branches": [
+  "concurrentMainAdvance": {
+    "occurred": true,
+    "mergeSha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+    "firstParent": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+    "secondParent": "52661f049361d801f4eb71d95d4c4398e10e237c",
+    "sourcePr": 255,
+    "sourcePacket": "HFI-05C",
+    "sourceCloseoutCommentId": 6269097136,
+    "result": "HFI-05C completed; HFI authority explicitly advances to HFI-05D. BRH survivor evidence was refreshed and the new main is integrated into the packet branch before validation."
+  },
+  "liveStateAtReconciliation": {
+    "mainSha": "7778074ea95fcc5bb43a72880ac5fa4cc3cdbc9f",
+    "activeProgrammeBranches": [
       {
         "name": "drw-05e-principal-section-spread-proof",
-        "headSha": "472d339a33490f3c076afcb4f78614c25ed9284e",
-        "purpose": "Active DRW-05E principal-section spread proof / corrective typography blocker record under issue #154.",
+        "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
+        "owningIssue": 154,
         "openPr": 235,
         "draft": true,
-        "disposition": "retain-active",
-        "concurrencyNote": "Advanced legitimately after BRH-06A from 29c520b7c82f24880d168c3e117370dec7837b8f to 472d339a33490f3c076afcb4f78614c25ed9284e; never historical deletion material."
+        "purpose": "Active DRW-05E principal-section spread proof; blocked/split by rendered physical typography proof and awaiting corrective DRW-03C.2.",
+        "disposition": "retain-active"
       },
       {
-        "name": "hfi-05c-cross-discipline-conflict-matrix",
-        "headSha": "932dd67c61ba10cbc154f68745cf8571430f3ada",
-        "purpose": "Current authorised HFI-05C cross-discipline conflict-matrix packet under issue #195.",
-        "openPr": null,
-        "draft": null,
-        "disposition": "retain-active",
-        "concurrencyNote": "Unchanged since BRH-06A. Issue #195 hands unresolved technical conflicts explicitly to HFI-05C; this is current programme work, not historical residue."
+        "name": "hfi-05d-governing-principle-formation",
+        "headSha": "c75953318879c1556413468fe4b5b896b960537b",
+        "owningIssue": 195,
+        "openPr": 257,
+        "draft": false,
+        "purpose": "Current authorised HFI-05D governing-principle formation packet, explicitly handed off by the HFI-05C closeout.",
+        "disposition": "retain-active"
       }
     ],
+    "brhPacketBranch": "brh-06b-final-closeout",
+    "brhPr": 256,
     "historicalMergedPacketRefsRemaining": 0,
-    "unexplainedSurvivingRefs": 0,
-    "observationRole": "initial BRH-06B discovery snapshot before packet branch creation"
+    "unexplainedSurvivingRefs": 0
   },
   "historicalLedgerReconciliation": {
-    "brh04DeletedTotal": 161,
-    "classCounts": {
-      "A": 115,
-      "B": 5,
-      "C": 41,
-      "D": 0,
-      "X": 0
-    },
+    "deletedTotal": 161,
+    "classCounts": {"A":115,"B":5,"C":41,"D":0,"X":0},
     "everyDeletedRecordHasFormerHeadShaAndFinalDisposition": true,
     "duplicateDeletedBranchNames": 0,
-    "canonicalProof": "project/branch-hygiene-final-audit-06a.json",
-    "deletionRecords": [
-      "project/branch-hygiene-deletion-04a.json",
-      "project/branch-hygiene-deletion-04b.json",
-      "project/branch-hygiene-deletion-04c.json",
-      "project/branch-hygiene-deletion-04d.json",
-      "project/branch-hygiene-deletion-04e.json",
-      "project/branch-hygiene-deletion-04f.json",
-      "project/branch-hygiene-deletion-04g.json"
-    ]
+    "canonicalMechanicalProof": "project/branch-hygiene-final-audit-06a.json",
+    "deletionRecords": "project/branch-hygiene-deletion-04a.json through 04g.json"
   },
   "semanticAndSalvageReconciliation": {
     "originalSemanticCandidates": 40,
@@ -72,21 +67,17 @@
     "DTopics": 0,
     "salvageQueueCount": 0,
     "salvageActionsRequired": 0,
-    "sourceSemanticAuthority": "project/branch-hygiene-semantic-review-02a.json through 02g.json",
-    "sourceXReconciliation": "project/branch-hygiene-x-reconciliation.json",
-    "sourceSalvageProof": "project/branch-hygiene-salvage-proof.json",
     "mandatoryP03FinalClass": "C",
-    "mandatoryP03SalvageRequired": false
+    "mandatoryP03SalvageRequired": false,
+    "semanticAuthority": "project/branch-hygiene-semantic-review-02a.json through 02g.json",
+    "xReconciliation": "project/branch-hygiene-x-reconciliation.json",
+    "salvageProof": "project/branch-hygiene-salvage-proof.json"
   },
   "preventionReconciliation": {
     "deleteBranchOnMerge": true,
-    "settingVerifiedAgainstLiveRepository": true,
+    "verifiedAgainstLiveRepositoryAfterConcurrentMainAdvance": true,
     "orphanAuditWorkflow": ".github/workflows/branch-orphan-audit.yml",
-    "orphanAuditScript": "scripts/branch-orphan-report.mjs",
-    "orphanAuditPermissions": [
-      "contents: read",
-      "pull-requests: read"
-    ],
+    "orphanAuditPermissions": ["contents: read","pull-requests: read"],
     "automaticOrphanDeletion": false,
     "lifecycleDoctrine": "project/branch-lifecycle.md",
     "retentionRegistry": "project/branch-hygiene-retentions.json",
@@ -96,13 +87,14 @@
   "closeoutConditions": {
     "losslessDispositionComplete": true,
     "noUnresolvedUniqueWorkStranded": true,
-    "noUnresolvedDOrXHistoricalQueue": true,
+    "noHistoricalDOrXQueue": true,
     "historicalNamespaceClean": true,
-    "survivingRefsHaveCurrentPurpose": true,
+    "everySurvivingNonBrhRefHasCurrentPurpose": true,
     "preventionControlsInstalled": true,
-    "repositoryHealthMustPassOnExactCloseoutHead": true,
-    "postMergePublicationAndPagesMustPass": true,
-    "issueMayCloseOnlyAfterThoseChecks": true
+    "exactHeadValidationRequired": true,
+    "freshMergeLeaseRequired": true,
+    "postMergePublicationAndPagesRequired": true,
+    "closeIssueOnlyAfterAllChecks": true
   },
   "mutation": {
     "historicalBranchDeletion": false,
@@ -112,48 +104,12 @@
     "salvagePerformed": false
   },
   "expectedPostMergeEndpoint": {
-    "main": true,
-    "activeBranches": [
-      "drw-05e-principal-section-spread-proof",
-      "hfi-05c-cross-discipline-conflict-matrix"
-    ],
-    "brh06bPacketBranchShouldAutoDelete": true,
-    "historicalRefsExpected": []
+    "historicalRefs": [],
+    "activeProgrammeBranches": ["drw-05e-principal-section-spread-proof","hfi-05d-governing-principle-formation"],
+    "brhPacketBranchAutoDeletes": true
   },
   "programmeDisposition": {
-    "closeIssueAfterExactHeadValidationMergeAndPages": true,
     "nextPacket": null,
-    "nextAction": null
-  },
-  "liveStateRefreshBeforeReview": {
-    "mainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
-    "branchCountIncludingMainAndPacketBranch": 4,
-    "activeNonMainBranchCountExcludingPacketBranch": 2,
-    "openPrCount": 2,
-    "packetBranch": {
-      "name": "brh-06b-final-closeout",
-      "headSha": "56ef8869a3a96ddb26c91bdfc57813e7e1542e86"
-    },
-    "activeBranches": [
-      {
-        "name": "drw-05e-principal-section-spread-proof",
-        "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
-        "openPr": 235,
-        "draft": true,
-        "purpose": "Active DRW-05E; blocked/split by physical typography proof and awaiting corrective DRW-03C.2.",
-        "movementSinceDiscovery": "472d339a33490f3c076afcb4f78614c25ed9284e -> 12de8f9878d809ca9e85e66978c8567a0c86c30d",
-        "latestCommitMessage": "DRW-05E — keep rendered blocker record current"
-      },
-      {
-        "name": "hfi-05c-cross-discipline-conflict-matrix",
-        "headSha": "52661f049361d801f4eb71d95d4c4398e10e237c",
-        "openPr": 255,
-        "draft": false,
-        "purpose": "Active HFI-05C cross-discipline conflict matrix under issue #195.",
-        "movementSinceDiscovery": "932dd67c61ba10cbc154f68745cf8571430f3ada -> 52661f049361d801f4eb71d95d4c4398e10e237c"
-      }
-    ],
-    "concurrentProgrammeMovementObserved": true,
-    "judgement": "Both surviving programme refs advanced legitimately after BRH-06B discovery. They remain active/protected; BRH performs no mutation against either."
+    "closeIssueAfterSuccessfulMergeAndPostMergeProof": true
   }
 }
