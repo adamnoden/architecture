@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-06A",
+  "programmeIssue": 161,
+  "baselineMainSha": "ff50ca0e98419cc52338c0f3ff9d82b007100fe7",
+  "proofExecution": {
+    "branch": "brh-06a-final-mechanical-reaudit",
+    "headSha": "e37cc1075f93907248709f197ff2062c9e7a4d98",
+    "workflowRunId": 39263047435,
+    "workflowJobId": 118095414246,
+    "artifactId": 12190304401,
+    "artifactDigest": "sha256:f37c50a1762e1458ed5835f9896d977849ba5a13f3c7ae1f4422ae4ed02ee39c",
+    "auditEnumerationSha256": "2f826d02538737cf83b8cf0fa5b001f67d9de961a53848a8910a8db478a1cec7",
+    "proofSha256": "1c1c28f4f108b1ce4359a5242debf2721c8b27c4022c26d835ff97eefe80d094"
+  },
+  "sourceAuthority": [
+    "scripts/branch-hygiene-audit.mjs",
+    "project/branch-hygiene-classification.json",
+    "project/branch-hygiene-semantic-review-02a.json through 02g.json",
+    "project/branch-hygiene-x-reconciliation.json",
+    "project/branch-hygiene-salvage-proof.json",
+    "project/branch-hygiene-deletion-04a.json through 04g.json",
+    "project/branch-hygiene-prevention-05a.json",
+    "project/branch-hygiene-prevention-05b.json",
+    "project/branch-hygiene-prevention-05c.json",
+    "project/branch-lifecycle.md"
+  ],
+  "proofResults": {
+    "nonMainRefs": 3,
+    "historicalRefsRemaining": 0,
+    "deletedRecordsReconstructed": 161,
+    "deletedClassCounts": {"A": 115, "B": 5, "C": 41, "D": 0, "X": 0},
+    "semanticOriginalCandidates": 40,
+    "semanticResolvedC": 40,
+    "semanticResolvedD": 0,
+    "semanticRemainingCD": 0,
+    "salvageQueue": 0,
+    "deleteBranchOnMergeVerified": true,
+    "orphanAuditPresentAndReadOnly": true
+  },
+  "temporaryWorkflow": {
+    "path": ".github/workflows/brh-06a-final-audit.yml",
+    "removedBeforeReview": true
+  },
+  "administrativeVoids": [253],
+  "nextPacket": "BRH-06B"
+}
