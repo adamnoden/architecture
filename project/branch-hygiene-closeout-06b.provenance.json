@@ -3,28 +3,35 @@
   "packet": "BRH-06B",
   "programmeIssue": 161,
   "baselineMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
-  "recordSha256": "051841c43fc92197c02377831fa4566717c4cb15091bd643ec484e4478423dcf",
+  "recordSha256": "57f6498b0467bd22c0c1ec05161e1e80e354f52745ec8b166968fd872a13af95",
   "observations": {
     "main": {
       "sha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
       "source": "GET /repos/adamnoden/architecture/branches/main"
     },
     "namespace": {
-      "branchCountIncludingMain": 3,
-      "nonMainBranchCount": 2,
-      "source": "GET /repos/adamnoden/architecture/branches?per_page=100"
+      "branchCountIncludingMain": 4,
+      "nonMainBranchCount": 3,
+      "source": "GET /repos/adamnoden/architecture/branches?per_page=100",
+      "note": "Includes BRH-06B packet branch; active programme refs excluding packet branch = 2."
     },
     "openPullRequests": {
-      "count": 1,
+      "count": 2,
       "pullRequests": [
         {
           "number": 235,
           "branch": "drw-05e-principal-section-spread-proof",
-          "headSha": "472d339a33490f3c076afcb4f78614c25ed9284e",
+          "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
           "draft": true
+        },
+        {
+          "number": 255,
+          "branch": "hfi-05c-cross-discipline-conflict-matrix",
+          "headSha": "52661f049361d801f4eb71d95d4c4398e10e237c",
+          "draft": false
         }
       ],
-      "source": "GET /repos/adamnoden/architecture/pulls?state=open&per_page=100"
+      "source": "fresh PR-specific/open-PR API reads before BRH review"
     },
     "repositorySetting": {
       "deleteBranchOnMerge": true,
@@ -34,14 +41,16 @@
       "issue": 195,
       "currentPacket": "HFI-05C",
       "branch": "hfi-05c-cross-discipline-conflict-matrix",
-      "headSha": "932dd67c61ba10cbc154f68745cf8571430f3ada"
+      "headSha": "52661f049361d801f4eb71d95d4c4398e10e237c",
+      "openPr": 255
     },
     "drwAuthority": {
       "issue": 154,
       "pullRequest": 235,
       "branch": "drw-05e-principal-section-spread-proof",
-      "headSha": "472d339a33490f3c076afcb4f78614c25ed9284e",
-      "latestCommitMessage": "DRW-05E — record rendered typography blocker"
+      "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
+      "latestCommitMessage": "DRW-05E — keep rendered blocker record current",
+      "openPr": 235
     }
   },
   "priorProof": {
@@ -81,5 +90,11 @@
     "activeProgrammeRefMutation": false,
     "repositorySettingMutation": false,
     "branchRewrite": false
+  },
+  "concurrency": {
+    "programmeRefsAdvancedAfterInitialDiscovery": true,
+    "drw": "472d339a33490f3c076afcb4f78614c25ed9284e -> 12de8f9878d809ca9e85e66978c8567a0c86c30d",
+    "hfi": "932dd67c61ba10cbc154f68745cf8571430f3ada -> 52661f049361d801f4eb71d95d4c4398e10e237c",
+    "action": "refresh survivor evidence; do not mutate active refs"
   }
 }

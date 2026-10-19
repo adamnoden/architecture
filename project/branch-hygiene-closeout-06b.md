@@ -5,16 +5,18 @@
 
 BRH-06B reconciles the final branch ledger, surviving namespace, lifecycle controls and salvage record after the green BRH-06A mechanical re-audit. It performs no historical deletion, branch rewrite, salvage or repository-setting mutation.
 
-## Final live namespace before the packet branch
+## Final live namespace
 
-The live repository contained exactly `main` plus two non-`main` branches:
+Initial BRH-06B discovery found exactly `main` plus DRW-05E and HFI-05C. Both active programme refs then advanced legitimately while this closeout record was being prepared, so the survivor set was refreshed before review rather than treated as frozen historical material.
 
-| Branch | Current purpose | Disposition |
-| --- | --- | --- |
-| `drw-05e-principal-section-spread-proof` @ `472d339a33490f3c076afcb4f78614c25ed9284e` | Active DRW-05E work under draft PR #235. The branch advanced after BRH-06A to record the rendered-typography blocker. | retain — active |
-| `hfi-05c-cross-discipline-conflict-matrix` @ `932dd67c61ba10cbc154f68745cf8571430f3ada` | Current authorised HFI-05C packet under issue #195. | retain — active |
+Pre-review refresh:
 
-The DRW head movement from the BRH-06A proof is legitimate concurrent programme activity, not historical residue. No other non-`main` ref survives.
+| Branch | Ref at refresh | Current purpose | Disposition |
+| --- | --- | --- | --- |
+| `drw-05e-principal-section-spread-proof` | `12de8f9878d809ca9e85e66978c8567a0c86c30d` | Active DRW-05E under open draft PR #235; blocked/split by the physical SVG typography proof and awaiting corrective DRW-03C.2. | retain — active |
+| `hfi-05c-cross-discipline-conflict-matrix` | `52661f049361d801f4eb71d95d4c4398e10e237c` | Active HFI-05C cross-discipline conflict matrix under open PR #255 / issue #195. | retain — active |
+
+The packet branch is the only additional ref during BRH-06B. No historical non-`main` ref survives. Concurrent movement of the two active refs is preserved and recorded; it is not a cleanup target.
 
 ## Lossless historical reconciliation
 

@@ -39,7 +39,8 @@
       }
     ],
     "historicalMergedPacketRefsRemaining": 0,
-    "unexplainedSurvivingRefs": 0
+    "unexplainedSurvivingRefs": 0,
+    "observationRole": "initial BRH-06B discovery snapshot before packet branch creation"
   },
   "historicalLedgerReconciliation": {
     "brh04DeletedTotal": 161,
@@ -123,5 +124,36 @@
     "closeIssueAfterExactHeadValidationMergeAndPages": true,
     "nextPacket": null,
     "nextAction": null
+  },
+  "liveStateRefreshBeforeReview": {
+    "mainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+    "branchCountIncludingMainAndPacketBranch": 4,
+    "activeNonMainBranchCountExcludingPacketBranch": 2,
+    "openPrCount": 2,
+    "packetBranch": {
+      "name": "brh-06b-final-closeout",
+      "headSha": "56ef8869a3a96ddb26c91bdfc57813e7e1542e86"
+    },
+    "activeBranches": [
+      {
+        "name": "drw-05e-principal-section-spread-proof",
+        "headSha": "12de8f9878d809ca9e85e66978c8567a0c86c30d",
+        "openPr": 235,
+        "draft": true,
+        "purpose": "Active DRW-05E; blocked/split by physical typography proof and awaiting corrective DRW-03C.2.",
+        "movementSinceDiscovery": "472d339a33490f3c076afcb4f78614c25ed9284e -> 12de8f9878d809ca9e85e66978c8567a0c86c30d",
+        "latestCommitMessage": "DRW-05E — keep rendered blocker record current"
+      },
+      {
+        "name": "hfi-05c-cross-discipline-conflict-matrix",
+        "headSha": "52661f049361d801f4eb71d95d4c4398e10e237c",
+        "openPr": 255,
+        "draft": false,
+        "purpose": "Active HFI-05C cross-discipline conflict matrix under issue #195.",
+        "movementSinceDiscovery": "932dd67c61ba10cbc154f68745cf8571430f3ada -> 52661f049361d801f4eb71d95d4c4398e10e237c"
+      }
+    ],
+    "concurrentProgrammeMovementObserved": true,
+    "judgement": "Both surviving programme refs advanced legitimately after BRH-06B discovery. They remain active/protected; BRH performs no mutation against either."
   }
 }
