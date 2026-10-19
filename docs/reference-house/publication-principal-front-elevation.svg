@@ -27,14 +27,14 @@
 <line x1="119" y1="32" x2="119" y2="16.5" class="line-secondary dash-provisional" data-entity="opening-U-FRONT-W04-width-min-right" data-authority="PROVISIONAL" data-bayIndex="4" data-level="FIRST" data-precisionHead="approximate" data-precisionSill="approximate" data-precisionWidth="range" data-role="principal-window"/>
 <line x1="137" y1="73" x2="144" y2="73" class="line-secondary dash-datum" data-entity="level-gffl-±0000" data-authority="CONTROLLED" data-elevation="0" data-visibleFacadeGeometry="false"/>
 <text x="145.5" y="73.8" class="text-note" text-anchor="start" data-entity="level-text-gffl-±0000">GFFL ±0.000</text>
-<line x1="137" y1="43.5" x2="144" y2="43.5" class="line-secondary dash-datum" data-entity="level-ground-ceiling-+2950" data-authority="CONTROLLED" data-elevation="2950" data-visibleFacadeGeometry="false"/>
-<text x="145.5" y="44.3" class="text-note" text-anchor="start" data-entity="level-text-ground-ceiling-+2950">Ground ceiling +2.950</text>
+<line x1="137" y1="43.5" x2="144" y2="43.5" class="line-secondary dash-datum" data-entity="level-g-ceiling-+2950" data-authority="CONTROLLED" data-elevation="2950" data-visibleFacadeGeometry="false"/>
+<text x="145.5" y="44.3" class="text-note" text-anchor="start" data-entity="level-text-g-ceiling-+2950">G ceiling +2.950</text>
 <line x1="137" y1="40" x2="144" y2="40" class="line-secondary dash-datum" data-entity="level-first-ffl-+3300" data-authority="CONTROLLED" data-elevation="3300" data-visibleFacadeGeometry="false"/>
 <text x="145.5" y="40.8" class="text-note" text-anchor="start" data-entity="level-text-first-ffl-+3300">First FFL +3.300</text>
-<line x1="137" y1="13" x2="144" y2="13" class="line-secondary dash-datum" data-entity="level-upper-ceiling-+6000" data-authority="CONTROLLED" data-elevation="6000" data-visibleFacadeGeometry="false"/>
-<text x="145.5" y="13.8" class="text-note" text-anchor="start" data-entity="level-text-upper-ceiling-+6000">Upper ceiling +6.000</text>
-<line x1="137" y1="10.5" x2="144" y2="10.5" class="line-secondary dash-provisional" data-entity="level-approx-cornice-control-+6250" data-authority="PROVISIONAL" data-elevation="6250" data-visibleFacadeGeometry="false"/>
-<text x="145.5" y="11.3" class="text-note" text-anchor="start" data-entity="level-text-approx-cornice-control-+6250">≈ Cornice control +6.250</text>
+<line x1="137" y1="13" x2="144" y2="13" class="line-secondary dash-datum" data-entity="level-u-ceiling-+6000" data-authority="CONTROLLED" data-elevation="6000" data-visibleFacadeGeometry="false"/>
+<text x="145.5" y="13.8" class="text-note" text-anchor="start" data-entity="level-text-u-ceiling-+6000">U ceiling +6.000</text>
+<line x1="137" y1="10.5" x2="144" y2="10.5" class="line-secondary dash-provisional" data-entity="level-approx-cornice-+6250" data-authority="PROVISIONAL" data-elevation="6250" data-visibleFacadeGeometry="false"/>
+<text x="145.5" y="11.3" class="text-note" text-anchor="start" data-entity="level-text-approx-cornice-+6250">≈ Cornice +6.250</text>
 <line x1="14" y1="84" x2="44" y2="84" class="line-primary" data-entity="scale-bar"/>
 <line x1="14" y1="82" x2="14" y2="86" class="line-secondary" data-entity="scale-tick-0"/>
 <line x1="24" y1="82" x2="24" y2="86" class="line-secondary" data-entity="scale-tick-1"/>

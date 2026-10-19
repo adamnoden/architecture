@@ -225,10 +225,10 @@ const levelPrimitives = (
   const tx = x1 + 1.5
   const levels = [
     ['GFFL ±0.000', source.levels.groundFfl.value, false],
-    ['Ground ceiling +2.950', source.levels.groundCeiling.value, false],
+    ['G ceiling +2.950', source.levels.groundCeiling.value, false],
     ['First FFL +3.300', source.levels.firstFfl.value, false],
-    ['Upper ceiling +6.000', source.levels.upperCeiling.value, false],
-    ['≈ Cornice control +6.250', source.levels.corniceControl.value, true]
+    ['U ceiling +6.000', source.levels.upperCeiling.value, false],
+    ['≈ Cornice +6.250', source.levels.corniceControl.value, true]
   ] as const
 
   return levels.flatMap(([label, z, provisional]) => {
