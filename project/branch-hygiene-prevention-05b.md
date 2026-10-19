@@ -1,77 +1,93 @@
-# BRH-05B — read-only orphan-branch audit
+# BRH-05B — read-only orphan-branch audit complete
 
-BRH-05B installs the smallest durable branch-lifecycle monitor authorised by issue #161. It reports branch hygiene signals; it never deletes, rewrites or pushes refs.
+BRH-05B installs the lightweight branch-lifecycle monitor authorised by issue #161. It reports branch hygiene signals and has no branch-mutation path.
 
-## Entry authority
+## Result
 
-- baseline `main`: `0da7f1ccd9a9d7ae540a6c326733a2fdb7ef3d0d`
-- historical BRH deletion queue: empty
-- live namespace before packet creation: `main`, DRW-05E and fresh concurrent HFI-04D
-- DRW-05E remained protected by open draft PR #235
-- `delete_branch_on_merge = true` remains established by BRH-05A
+The existing `scripts/branch-hygiene-audit.mjs` remains the single Git-history engine. BRH-05B adds only:
 
-## Design
+- `scripts/branch-orphan-report.mjs` — review classification and Markdown/JSON reporting;
+- `.github/workflows/branch-orphan-audit.yml` — weekly/manual/self-test execution;
+- `project/branch-hygiene-retentions.json` — explicit retention reasons for intentional durable branches without open PRs.
 
-The existing `scripts/branch-hygiene-audit.mjs` remains the single Git-history engine. It already provides exact head SHA, head commit timestamp, PR association, ahead/behind counts, branch-only commits, stable patch IDs and `git cherry` equivalence evidence.
+The workflow runs weekly on Monday at 06:17 UTC, supports `workflow_dispatch`, and self-tests on PRs that change its implementation.
 
-BRH-05B adds only `scripts/branch-orphan-report.mjs`, which classifies each non-`main` branch as:
-
-1. **`open-pr`** — at least one open PR exists;
-2. **`retained`** — no open PR, but `project/branch-hygiene-retentions.json` contains a non-empty reason;
-3. **`recent`** — neither of the above, but head commit age is no more than 14 days;
-4. **`suspicious`** — none of the above.
-
-`Suspicious` is a review signal only. It does not fail the workflow and never triggers deletion.
-
-### Age limitation
-
-Git refs do not carry a reliable branch-creation timestamp. The reproducible age signal is therefore **head commit age**. This is conservative: a newly created ref pointing at an old commit may be surfaced for review rather than silently treated as new.
-
-## Workflow
-
-`.github/workflows/branch-orphan-audit.yml` runs weekly (Monday 06:17 UTC), manually through `workflow_dispatch`, and on PRs that modify the audit itself.
-
-Its complete token permission set is:
+Its token permissions are restricted to:
 
 - `contents: read`
 - `pull-requests: read`
 
-It checks out full history, runs the established audit, derives Markdown/JSON orphan reports, writes the Markdown to the Actions summary, and uploads all three report files as an artifact. There is no write permission, push command, deletion command or ref-update path.
+There is no branch deletion, push, ref update, write permission or automatic stale-branch action.
 
-## First live proof
+## Classification
 
-The workflow self-tested on PR **#245** at implementation head `9725d95538fd38be9c3bd99826a7ded2029f2aad`.
+Every non-`main` branch is reported as one of:
 
-- workflow run: **39255049551**
+1. **`open-pr`** — at least one open PR exists;
+2. **`retained`** — no open PR but an explicit non-empty retention reason exists;
+3. **`recent`** — neither of the above and head commit age is no more than 14 days;
+4. **`suspicious`** — none of the above.
+
+`Suspicious` is deliberately a review signal only. It neither fails the workflow nor authorises deletion.
+
+Git refs do not expose a reliable branch-creation timestamp, so the reproducible age signal is head commit age. That is intentionally conservative.
+
+## Proof
+
+### Implementation-head proof
+
+At `9725d95538fd38be9c3bd99826a7ded2029f2aad`:
+
+- orphan-audit run: **39255049551**
 - job: **118068114269**
-- conclusion: **success**
 - artifact: **12187616745**
-- artifact digest: `sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623`
-- audited branches: **3**
-- `open-pr`: **2**
-- `recent`: **1**
-- `retained`: **0**
-- `suspicious`: **0**
+- digest: `sha256:f9f82676b17772d8ff49a05b394cda9d65b4a0b15387bcc0ffdb4e3a24db3623`
+- result: **3 branches = 2 open-PR + 1 recent + 0 retained + 0 suspicious**
 
-The proof matched the live topology: DRW-05E and BRH-05B had open PRs; HFI-04D was recent. No active branch was falsely labelled suspicious.
+This correctly classified DRW-05E and BRH-05B as open-PR work and fresh HFI-04D as recent.
 
-## Explicit retentions
+### Exact-final-head proof
 
-`project/branch-hygiene-retentions.json` is intentionally tiny. It maps branch names to human-readable reasons only when a durable branch without an open PR is intentionally retained. An empty map is normal. A retention entry suppresses only the `suspicious` label; it grants no permanent exemption from review.
+At `720965cebe88e2b76507e526f35ce9d4caff252b`:
 
-## Report fields
+- orphan-audit run: **39255307550**
+- job: **118068993234**
+- artifact: **12187617115**
+- digest: `sha256:ab6dc8e2475a12491e145629f4021de140c8b54dc9c45d2a31393e15ad94ba0b`
+- result: **3 branches = 3 open-PR + 0 recent + 0 retained + 0 suspicious**
+- normal PR validation run: **39255307341** — fully green
 
-Every audited branch reports branch/head identity, head-age signal, open PR association, ahead/behind `main`, branch-only commit count, unique/patch-equivalent counts, retention reason and review status.
+HFI-04D acquired PR #246 between the two proof snapshots. The audit therefore changed its classification from `recent` to `open-pr` from live authority rather than preserving a stale packet-start assumption.
 
-## Remaining acceptance
+## Merge proof
 
-Before BRH-05B closes:
+PR **#245** merged as `0f0eb04786cae47b68477164bc476ee80dc158f9` under a fresh lease:
 
-1. normal repository validation must be green on the exact final PR head;
-2. merge must use a fresh `main` lease;
-3. post-merge publication/Pages validation must pass;
-4. issue #161 must record the exact endpoint.
+- leased `main`: `6db87f9fc2e2e20d67b9004fd6ada53aac117d1d`
+- first parent: `6db87f9fc2e2e20d67b9004fd6ada53aac117d1d`
+- second parent: validated BRH head `720965cebe88e2b76507e526f35ce9d4caff252b`
+
+`brh-05b-orphan-audit` then disappeared automatically under the BRH-05A lifecycle setting. No manual branch deletion occurred.
+
+## Post-merge validation
+
+Pages/publication run **39255699267** passed in full on the exact merge commit:
+
+- repository health;
+- Working Edition PDF;
+- Primer PDF;
+- PDF existence and metadata;
+- project data plate;
+- Pages artifact;
+- Pages deployment.
+
+## Safety endpoint
+
+- historical queue: **0**
+- automatic post-merge PR-head deletion: remains enabled
+- automatic orphan/stale deletion: **none**
+- active programme branches touched by BRH-05B: **none**
 
 ## Next packet
 
-**BRH-05C — lifecycle doctrine.** Record only the minimum durable branch workflow rules authorised by #161; do not build a branch-management subsystem.
+**BRH-05C — lifecycle doctrine.** Record only the minimum durable branch workflow rules authorised by #161. Do not create a larger branch-management subsystem.
