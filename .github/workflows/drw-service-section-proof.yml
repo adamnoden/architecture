@@ -32,8 +32,10 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
-      - name: Generate service/transverse section SVG
+      - name: Regenerate controlled service/transverse section SVG
         run: npx tsx compiler/reference-house/generate-publication-service-section.ts
+      - name: Prove committed SVG bytes
+        run: git diff --exit-code -- docs/reference-house/publication-service-transverse-section.svg
       - name: Prepare spread
         run: npx tsx publication/specimens/drw08b/prepare.ts
       - name: Build A4 proof
@@ -42,7 +44,7 @@ jobs:
         run: DRW08B_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw08b/vivliostyle.config.js
       - name: Validate service/transverse proof
         run: npx tsx publication/specimens/drw08b/validate.ts
-      - name: Upload generated drawing and proof PDFs
+      - name: Upload controlled drawing and proof PDFs
         if: always()
         uses: actions/upload-artifact@v6
         with:
