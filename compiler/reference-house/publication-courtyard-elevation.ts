@@ -54,6 +54,11 @@ const facePrimitives = (
   id: 'SOUTH' | 'NORTH'
 ): DrawingPrimitive[] => {
   const face = faceById(source, id)
+  const axes = face.axisCoordinates
+  if (axes === 'ABSENT' || axes.length !== 1) {
+    throw new Error(`Courtyard ${id} face lost its one controlled-derived axis.`)
+  }
+  const axis = axes[0]
   const originX = FACE_ORIGINS[id]
   const project = createElevationPaperProjection({
     scaleDenominator: source.view.value.scale,
@@ -63,7 +68,6 @@ const facePrimitives = (
   })
   const z0 = source.levels.groundFfl.value
   const zCornice = source.levels.corniceControl.value
-  const axis = face.axisCoordinates[0]
   const envelopeMeta = {
     face: id,
     widthAuthority: face.widthAuthority,
