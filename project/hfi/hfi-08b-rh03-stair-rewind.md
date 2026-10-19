@@ -5,7 +5,7 @@
 **Execution plan:** [`docs/development/human-factors-low-friction-inhabitation-execution-plan.md`](../../docs/development/human-factors-low-friction-inhabitation-execution-plan.md)  
 **Owning issue:** #195  
 **Rewind authority:** [`hfi-07e-finding-rewind-register.md`](hfi-07e-finding-rewind-register.md)  
-**Baseline:** `e4f19846377bc9206e8d8030136fdda79585ad09`  
+**Baseline:** `5d2fc836c727f13aa3f01e797af7e09f8b9b4670`  
 **Owning Reference House gate:** RH-03  
 **Question:** does the complete principal stair perform better with the HFI-preferred 300 mm going once its coupled plan, section, structure and circulation costs are made explicit, or does the existing 280 mm stair justify retention?
 
@@ -187,6 +187,19 @@ Generated views are regenerated from source; they are never hand-adjusted merely
 
 Historical gate evidence is retained only where its historical role is explicit. Current reader-facing or canonical surfaces may not continue presenting 280 mm as the selected stair.
 
+### CH-00 semantic-baseline review
+
+CH-00 explicitly permits its canonical Reference House source fingerprint and selected frozen outputs to change when the architectural source itself is intentionally changed under an explicit semantic-change record. HFI-08B is that record.
+
+The CH-00 manifest update in this packet is therefore **not a refactor-baseline relaxation**. It records the reviewed architectural change only:
+
+- authoritative fixture fingerprint changes because `RHCF-STAIR-G` changes intentionally;
+- RH-C5 observed going/pitch/`2R+G` change as deterministic consequences;
+- the frozen RH-C1 principal-section blob changes as the deterministic downstream projection;
+- unrelated CH-00 statuses, proof boundaries, diagnostics, dimensions and historical identities remain untouched.
+
+A CH-00 change beyond those source-dependent consequences would require separate review and is not authorised here.
+
 ---
 
 ## 9. Authority / maturity consequence
@@ -221,6 +234,6 @@ HFI-08B is complete only when:
 - the HFI-08A.1 data-plate corrective packet has merged ahead of this packet;
 - full PR validation passes on the exact final head.
 
-`HFI-08B → HFI-RW-01/RH-03 → compare 280 vs 300 as complete stair system → select 300 mm; retain 18 risers / 3×6 flights / five goings / full landings / no winders / +3300 FFL → +100 mm flight run with no shell/court/service/programme sacrifice → RH-04 PASS; RH-05 PASS; RH-10 PASS; no pattern-occurrence delta → update RHCF-STAIR-G and regenerate genuine dependants → exact next packet HFI-08C`
+`HFI-08B → baseline 5d2fc836c727f13aa3f01e797af7e09f8b9b4670 → HFI-RW-01/RH-03 → compare 280 vs 300 as complete stair system → select 300 mm; retain 18 risers / 3×6 flights / five goings / full landings / no winders / +3300 FFL → +100 mm flight run with no shell/court/service/programme sacrifice → RH-04 PASS; RH-05 PASS; RH-10 PASS; no pattern-occurrence delta → update RHCF-STAIR-G and regenerate genuine dependants; explicitly rebaseline only source-dependent CH-00 facts → exact next packet HFI-08C`
 
 **Exact next packet:** **HFI-08C — entrance / threshold / door / right-sized movement-route corrections.**
