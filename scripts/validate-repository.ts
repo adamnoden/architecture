@@ -11,6 +11,7 @@ import {
 import { programmeControls } from '../project/programme-controls.js'
 import { dependenciesForAdapter } from '../publication/adapters.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
+import { missingReadmeNpmScripts, type ReadmeCommandSource } from './readme-command-contract.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -32,6 +33,60 @@ function repositoryMarkdown(): string[] {
     join(repoRoot, 'STATUS.md'),
     ...collectMarkdown(join(repoRoot, 'docs'))
   ]
+}
+
+const ignoredReadmeTrees = [
+  '.git',
+  'node_modules',
+  '.vitepress/cache',
+  '.vitepress/dist',
+  'publication/build'
+]
+
+function repositoryPath(path: string): string {
+  return relative(repoRoot, path).split(sep).join('/')
+}
+
+function ignoredReadmeTree(path: string): boolean {
+  const repoPath = repositoryPath(path)
+  return ignoredReadmeTrees.some((ignored) => repoPath === ignored || repoPath.startsWith(`${ignored}/`))
+}
+
+function collectReadmes(dir: string): string[] {
+  const files: string[] = []
+
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name)
+    if (entry.isDirectory()) {
+      if (!ignoredReadmeTree(path)) files.push(...collectReadmes(path))
+    } else if (entry.isFile() && entry.name.toLowerCase() === 'readme.md') {
+      files.push(path)
+    }
+  }
+
+  return files
+}
+
+function validateReadmeCommands(): number {
+  const packageJson = JSON.parse(readFileSync(join(repoRoot, 'package.json'), 'utf8')) as {
+    scripts?: Record<string, string>
+  }
+  const readmes = collectReadmes(repoRoot)
+  const sources: ReadmeCommandSource[] = readmes.map((path) => ({
+    path: repositoryPath(path),
+    markdown: readFileSync(path, 'utf8')
+  }))
+  const failures = missingReadmeNpmScripts(sources, packageJson.scripts ?? {})
+
+  if (failures.length) {
+    throw new Error(
+      `README command drift: referenced npm scripts do not exist in package.json:\n${failures
+        .map((failure) => `  - ${failure}`)
+        .join('\n')}`
+    )
+  }
+
+  return readmes.length
 }
 
 function localTarget(source: string, href: string): string | null {
@@ -243,10 +298,11 @@ function validateProjectIdentity(): void {
 
 assertNavigationCoverage()
 validateLocalMarkdownLinks()
+const readmeCount = validateReadmeCommands()
 validateProgrammeControlLifecycle()
 validateMaturityStatus()
 validateProjectIdentity()
 
 console.log(
-  `Repository integrity valid: navigation, local links, ${programmeControls.length} programme-control records, ${workstreamStatuses.length} maturity records and project identity.`
+  `Repository integrity valid: navigation, local links, ${readmeCount} README command surfaces, ${programmeControls.length} programme-control records, ${workstreamStatuses.length} maturity records and project identity.`
 )
