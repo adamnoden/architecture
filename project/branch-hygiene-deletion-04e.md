@@ -1,51 +1,44 @@
-# BRH-04E — controlled deletion batch 5 preflight
+# BRH-04E — controlled deletion batch 5 complete
 
-BRH-04E closes the remaining straightforward A-class tail and the two BRH refs deliberately retained for deletion-phase re-proof. It does **not** begin the general B/C deletion tranches.
+BRH-04E closes the remaining straightforward A-class tail plus the two BRH refs deliberately retained for deletion-phase re-proof. It does **not** begin the general B/C deletion tranches.
 
-## Final recomputed baseline
+## Result
 
-Several concurrent movements occurred before destructive authorisation; every stale lease was discarded and **no deletion occurred**. The current state is:
-
-- execution `main`: `be0b328661e5fde92681c79082a8efec6775cd8a`
-- prior baselines: `439eb718…` → `9379034a…` → `d7a6e556…`
-- `d7a6e556…` → `be0b3286…`: **ahead 2 / behind 0 / zero net changed files**; an accidental noop file was added then removed
-- namespace at recomputed checkpoint: **64 refs including `main` and this packet branch**
-- fresh `drw-05c-principal-section-renderer` exists separately and is protected as active X
-- open PRs: **only #229** (`brh-04e-controlled-deletion-5`)
-- BRH-01A baseline `b8e842cee5beef6981f1e075cd06a1c080fbfe3a` → execution `main`: **ahead 227 / behind 0**
-- candidate count: **16** under the 25-ref cap
+- authorised candidate set: **16 refs** under the 25-ref cap
 - class mix: **15 A / 1 C / 0 B / 0 D / 0 X**
 - candidate-set SHA-256: `2807c62f90e4bfb15cb422e0ae9403ce0669da2a363ad45ee370ee53ec8e9539`
+- owner-side deletions: **16/16 complete**
+- repository settings changed: **no**
+- branch rewrites performed: **no**
 
-## Special re-proof
+The sole C deletion was `brh-03-salvage-necessity-proof`. Its two unique commits contained only the stale `project/branch-hygiene-salvage-closeout.{json,md}` draft. The later merged BRH-03A authority explicitly supersedes that branch/closed PR #201 and preserves/refines the same **D=0 / empty salvage / vacuous-complete** conclusion. `brh-02g-publication-editorial-review` separately re-proved A because its unchanged head was already an exact ancestor of `main`.
 
-`brh-02g-publication-editorial-review` is now **A — fully integrated**: its unchanged head is an exact ancestor of `main`.
+## Post-delete namespace proof
 
-`brh-03-salvage-necessity-proof` is **C — superseded evidence draft**. Its two branch-only commits add only stale `project/branch-hygiene-salvage-closeout.{json,md}` files. The later merged BRH-03A authority (`project/branch-hygiene-salvage-proof.{json,md,provenance.json}`) restarts from later `main`, reaches the same **D=0 / empty salvage / vacuous-complete** conclusion, and explicitly records the old branch and closed PR #201 as superseded. No unique architectural, computational or unresolved salvage work remains there.
+The final destructive-authorisation snapshot contained **65 refs including `main` and the BRH-04E packet branch**. The complete post-delete namespace contains **47 refs**.
 
-## Authorised candidate set
+The endpoint reconciles exactly:
 
-| Branch | Class | Exact head |
-| --- | --- | --- |
-| `brh-01a-obvious-integrated` | A | `bbaf9b72df7758b4ff4d97d89ee6a798789b2c41` |
-| `brh-01b-patch-equivalent` | A | `8ea68f5b5cfac84ea4aeb6b11ed24bd8fdca6660` |
-| `brh-02g-publication-editorial-review` | A | `708ca16ac46ee40f0759a1825f557924cfd0694c` |
-| `brh-03-salvage-necessity-proof` | C | `3043c99d360f17178332bf92a3294868abef506f` |
-| `drw-02e` | A | `374c5db6e5b559e58cbc6a54106fc64786d3b9e6` |
-| `drw-03a` | A | `bcc9b8a34469e1a9f2bebf65fdb0499f377248b8` |
-| `pub-san-resolved-work-cleanup` | A | `cac29844392a07d735b244c25f6636cc62d68d77` |
-| `pub-san-semantic-coherence` | A | `8e9b1dc14b7710e8b18f057d4cfb761fe830d9ec` |
-| `pub-san-source-link-cleanup` | A | `aff9deae0b3e34b1c86d2e8f215e967d25f329f8` |
-| `publication-pdf-metadata` | A | `7267aba14c78c6c8551fa7559f8c7bd3a68d54d3` |
-| `record-post-freeze-figure-defect` | A | `6c1b081d5161ab7719dd7c5c0a1ff37c9a485f71` |
-| `site-build-timestamp` | A | `378028f2ad8f8745b750b86f2076a962245360ab` |
-| `status-hygiene-2026-10-17` | A | `8da95e7428e155945f83fc14c6b2514a02ae2fef` |
-| `tectonic-honesty` | A | `28386a2debd5318a2680bcdae636120ceb7b48fb` |
-| `vertical-bay-coordination` | A | `55f6a11f982d27c4b7c2c00c1b3cf2e5fed05eff` |
-| `wall-bay-prototype-v1` | A | `b9d433220c507bc53433d7227aaeb5162a9ccd8c` |
+`65 - 16 authorised deletions - 2 independently retired active refs = 47`
 
-## Exclusions and gate
+The two independently retired active refs were:
 
-Protected: `main`, this packet branch, `drw-05c-principal-section-renderer`, any new DRW/HFI ref, the five B refs (`ch00-compiler-hardening-plan`, `external-maintenance-geography`, `maturity-model-enforcement`, `pr00e-e2-e4-editorial-hardening`, `pub-san-back-matter`), and all other semantic-review C refs.
+- `drw-05c-principal-section-renderer` — merged through DRW-05C / PR #230 and retired outside BRH;
+- `hfi-03b-continuous-ground-plane` — merged through HFI-03B / PR #231 and retired outside BRH.
 
-No branch has been deleted by this packet. Before owner-side deletion, BRH must take one final exact ref snapshot after these record writes and confirm `main`, open PRs and all 16 candidate heads remain unchanged. After manual deletion, BRH-04E must reconcile the complete namespace delta, validate, merge under a fresh lease, verify first-parent identity, and record closeout on #161.
+Three later active refs were created and retired wholly within the same deletion window and therefore contribute net zero to the endpoint count: `hfi-03c-object-movement`, `hfi-03d-domestic-task-routes`, and `drw-05d-principal-section-artifact`.
+
+All **16 authorised candidate names are absent**. There is no unexpected historical deletion. The remaining 47 refs decompose exactly as:
+
+- `main`;
+- `brh-04e-controlled-deletion-5`;
+- the **5 BRH-01B patch-equivalent B refs**;
+- the **40 BRH-02 semantic-review C refs**.
+
+Thus BRH-04E has removed neither the ordered B queue nor the reviewed C queue.
+
+Post-delete verification `main` was `021d66930b09510defe30b6197cb8ab463c98d59`; PR #229 was the only open PR at that verification snapshot.
+
+## Next gate
+
+BRH-04E closes only after this exact proof head passes CI and merges under a fresh `main` + open-PR lease with exact first-parent verification. After closeout, the next packet is **BRH-04F**, recovering the then-current namespace before beginning the ordered B/C deletion phase. BRH-04F is not started here.
