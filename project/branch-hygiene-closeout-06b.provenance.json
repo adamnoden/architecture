@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-06B",
+  "programmeIssue": 161,
+  "baselineMainSha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+  "recordSha256": "051841c43fc92197c02377831fa4566717c4cb15091bd643ec484e4478423dcf",
+  "observations": {
+    "main": {
+      "sha": "049cb4455a1fcfce98069a7d43edd9723d849b53",
+      "source": "GET /repos/adamnoden/architecture/branches/main"
+    },
+    "namespace": {
+      "branchCountIncludingMain": 3,
+      "nonMainBranchCount": 2,
+      "source": "GET /repos/adamnoden/architecture/branches?per_page=100"
+    },
+    "openPullRequests": {
+      "count": 1,
+      "pullRequests": [
+        {
+          "number": 235,
+          "branch": "drw-05e-principal-section-spread-proof",
+          "headSha": "472d339a33490f3c076afcb4f78614c25ed9284e",
+          "draft": true
+        }
+      ],
+      "source": "GET /repos/adamnoden/architecture/pulls?state=open&per_page=100"
+    },
+    "repositorySetting": {
+      "deleteBranchOnMerge": true,
+      "source": "GET /repos/adamnoden/architecture"
+    },
+    "hfiAuthority": {
+      "issue": 195,
+      "currentPacket": "HFI-05C",
+      "branch": "hfi-05c-cross-discipline-conflict-matrix",
+      "headSha": "932dd67c61ba10cbc154f68745cf8571430f3ada"
+    },
+    "drwAuthority": {
+      "issue": 154,
+      "pullRequest": 235,
+      "branch": "drw-05e-principal-section-spread-proof",
+      "headSha": "472d339a33490f3c076afcb4f78614c25ed9284e",
+      "latestCommitMessage": "DRW-05E — record rendered typography blocker"
+    }
+  },
+  "priorProof": {
+    "record": "project/branch-hygiene-final-audit-06a.json",
+    "closeoutCommentId": 6268946268,
+    "runId": 39263047435,
+    "jobId": 118095414246,
+    "artifactId": 12190304401,
+    "artifactDigest": "sha256:f37c50a1762e1458ed5835f9896d977849ba5a13f3c7ae1f4422ae4ed02ee39c",
+    "deletedLedgerCount": 161,
+    "classCounts": {
+      "A": 115,
+      "B": 5,
+      "C": 41,
+      "D": 0,
+      "X": 0
+    },
+    "semanticQueue": {
+      "resolvedC": 40,
+      "resolvedD": 0,
+      "remaining": 0
+    },
+    "salvageQueueCount": 0
+  },
+  "sourceRecords": [
+    "project/branch-hygiene-final-audit-06a.json",
+    "project/branch-hygiene-deletion-04a.json through 04g.json",
+    "project/branch-hygiene-semantic-review-02a.json through 02g.json",
+    "project/branch-hygiene-x-reconciliation.json",
+    "project/branch-hygiene-salvage-proof.json",
+    "project/branch-lifecycle.md",
+    "project/branch-hygiene-retentions.json",
+    ".github/workflows/branch-orphan-audit.yml"
+  ],
+  "safety": {
+    "destructiveMutation": false,
+    "activeProgrammeRefMutation": false,
+    "repositorySettingMutation": false,
+    "branchRewrite": false
+  }
+}
