@@ -24,7 +24,7 @@ Longevity does not override whole-life cost, carbon, building physics or constru
 
 The relevant unit of design is not only the initial component but the maintenance, repair, replacement and adaptation that follow it. Cheap passive provision for foreseeable change is valuable; expensive provision for speculative futures must justify itself.
 
-Foreseeable change includes change in occupants as well as systems. Where a modest early decision can preserve ordinary use through reduced mobility, ageing or care, test that option by the same proportionality rule; do not turn every possible future incapacity into permanent infrastructure.
+Foreseeable change includes change in occupants as well as systems. Treat foreseeable variation in bodies, capability and ordinary temporary states as normal design input rather than a late accessibility check; do not design around a fictional average person. Where a modest early decision can preserve ordinary use through reduced mobility, ageing, injury or care, test that option by the same proportionality rule. Preserve durable enabling capacity where it earns itself, but keep specialist equipment demand-led unless the brief requires it.
 
 ## 2. Preserve the permanent fabric — core doctrine
 
@@ -75,6 +75,8 @@ Permanence carries the same burden of proof as adaptability: a permanent archite
 ## 8. Design for repose — standing occupation criterion
 
 **Treat the house as a place of repeated occupation and recovery. Its ordinary spaces should minimise unnecessary vigilance by being physically comfortable, spatially comprehensible, capable of privacy and retreat, locally controllable and perceptually settled.**
+
+Repeated bodily or cognitive compensation can itself be a form of vigilance. Judge ordinary routes, controls and interfaces as complete actions in the states in which they are actually used rather than as isolated dimensions. Where recurring use demands avoidable contortion, choreography, force, foresight or careful workaround, test the building-side cause before normalising the compensation. The response remains proportional: trivial, rare or technically necessary inconvenience does not automatically justify permanent area, mechanism or complexity.
 
 Repose does not require visual austerity. A room can be ornamented, strongly characterised and rich in ordinary possessions without becoming exhausting. The useful distinction is between richness and confusion.
 
