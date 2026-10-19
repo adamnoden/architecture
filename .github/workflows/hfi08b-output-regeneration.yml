@@ -1,0 +1,50 @@
+name: HFI-08B regenerate successor outputs
+
+on:
+  push:
+    branches:
+      - hfi/hfi-08b-rh03-stair-rewind
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hfi08b-output-regeneration
+  cancel-in-progress: true
+
+jobs:
+  regenerate:
+    if: ${{ !contains(github.event.head_commit.message, '[skip hfi08b regen]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v5
+        with:
+          ref: hfi/hfi-08b-rh03-stair-rewind
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Regenerate successor outputs and data plate
+        run: |
+          npm run outputs:generate
+          npm run dataplate:write
+
+      - name: Commit generated products
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/reference-house/generated project/dataplate.json
+          if git diff --cached --quiet; then
+            echo "No generated changes"
+            exit 0
+          fi
+          git commit -m "HFI-08B regenerate successor outputs [skip hfi08b regen]"
+          git push origin HEAD:hfi/hfi-08b-rh03-stair-rewind
