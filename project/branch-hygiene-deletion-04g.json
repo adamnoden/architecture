@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-04G",
+  "programmeIssue": 161,
+  "status": "authorised_pending_execution",
+  "packetBranch": "brh-04g-controlled-deletion-7",
+  "execution": {
+    "discoveryMainSha": "552bc8fb84379287a032cd7f7e18cef74c03bcc9",
+    "discoveryNamespaceCountIncludingMain": 23,
+    "expectedNamespaceAfterPacketBranch": 24,
+    "hardDeletionCap": 25,
+    "candidateCount": 20,
+    "candidateClassCounts": {"C":20,"A":0,"B":0,"D":0,"X":0},
+    "deletionMechanism": "temporary packet-local GitHub Actions runner using atomic exact-ref force-with-lease"
+  },
+  "candidateSetSha256": "992e7e4703f69c8ff34e5053d1408c2f39ddb509fd657b8081f25b905a7f2e27",
+  "candidateSetHashMethod": "SHA-256 of canonical JSON array containing only {class,expectedHeadSha,name}, sorted keys, compact separators, in listed order.",
+  "candidates": [
+    {"name":"pr00b-part-iv-synthesis","expectedHeadSha":"4907af4556e2c546721fcfba6b7f29853014f935","class":"C"},
+    {"name":"pr00d-d3-reference-house-architecture","expectedHeadSha":"1789943590256278cd6152cb414c137634b8a7b7","class":"C"},
+    {"name":"pr00d-d3-reference-house-figures","expectedHeadSha":"53097a2a42faa8488b7d528388ef45903c93e138","class":"C"},
+    {"name":"pr00d-d4-reference-house-systems","expectedHeadSha":"064bdce830ea76c4ffa49737ee72d7092470619b","class":"C"},
+    {"name":"pr00d-d5-visual-integration","expectedHeadSha":"d377665ae095b604979956d61dd36803ae7b3f6f","class":"C"},
+    {"name":"pr00e-editorial-hardening","expectedHeadSha":"3e16b1cecde03dbdaa21becc6f8a02eaa4306d40","class":"C"},
+    {"name":"pr00f-integrity","expectedHeadSha":"ebd9d34497e83c3158915e98cd120e1fb296675f","class":"C"},
+    {"name":"project-integrity-refactor","expectedHeadSha":"5f3ddadab402daaf9f01a3ea99531fc65734302d","class":"C"},
+    {"name":"prototype-p03-engineer-review-brief","expectedHeadSha":"1fe68d1f4da1531cc273573ea098709e3d6a1302","class":"C"},
+    {"name":"pub-san-computational-surface","expectedHeadSha":"fd527ace394db25b6ddb1c6c6de65728ce48cf0c","class":"C"},
+    {"name":"pub-san-research-evidence","expectedHeadSha":"3090a7ed89f5e0a84d54eecedebf8ad82b5ca42f","class":"C"},
+    {"name":"pub-san-rh-technical","expectedHeadSha":"023094149a998126ae8bf1389be8fc0ecd9fdd79","class":"C"},
+    {"name":"public-url-phase-1","expectedHeadSha":"45fcb14128ae055a8b0724cbfbbc31bbc8758ceb","class":"C"},
+    {"name":"reference-house-phase5","expectedHeadSha":"456edac937e0de604f3983a6344902b8862fa761","class":"C"},
+    {"name":"rh-c1","expectedHeadSha":"330e7bc0d0eda6a0ec33b51afed09c733c2dd4bd","class":"C"},
+    {"name":"rh-c2-structural-view","expectedHeadSha":"9be3155dd8ff34dd21ae5ea80c7ec8f94e8e6d20","class":"C"},
+    {"name":"rh-c3-service-view","expectedHeadSha":"3226aa325190aa94803c18535d49b5951afe5458","class":"C"},
+    {"name":"rh-c4-boundary-view","expectedHeadSha":"b3740c8196ad2a7ba969e27b89f304841fc94f8f","class":"C"},
+    {"name":"rh-c5-target-calculations","expectedHeadSha":"bc219a9060316f023e90a06709999254bda6766a","class":"C"},
+    {"name":"workmanship-robustness","expectedHeadSha":"a049e8da6cd9133dcbbb654e2fc703a1c5baf712","class":"C"}
+  ],
+  "protectedAtDiscovery": [
+    {"branch":"drw-05e-principal-section-spread-proof","reason":"open draft PR #235"},
+    {"branch":"hfi-04b-doors-windows-hardware","reason":"fresh active HFI packet"}
+  ],
+  "safety": {
+    "requiredMainSha":"552bc8fb84379287a032cd7f7e18cef74c03bcc9",
+    "requireAllCandidateHeadsExact":true,
+    "rejectCandidateWithOpenPr":true,
+    "atomicRemoteTransaction":true,
+    "deleteWithExpectedHeadLease":true,
+    "postDeleteExactRemovedSetProof":true,
+    "unexpectedConcurrentRemovalsFailProof":true,
+    "temporaryWorkflowMustBeRemovedBeforeReview":true
+  },
+  "mutationPerformed": false,
+  "nextState": "Run guarded deletion, reconcile the full namespace, remove temporary workflow, validate and merge under a fresh lease."
+}

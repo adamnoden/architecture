@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "packet": "BRH-04G",
+  "programmeIssue": 161,
+  "status": "authorised_pending_execution",
+  "packetBranch": "brh-04g-controlled-deletion-7",
+  "discoveryMainSha": "552bc8fb84379287a032cd7f7e18cef74c03bcc9",
+  "authority": {
+    "priorPacket": "project/branch-hygiene-deletion-04f.{json,md,provenance.json}",
+    "semanticCompletion": "project/branch-hygiene-x-reconciliation.{json,md,provenance.json}",
+    "semanticReviewAuthority": "project/branch-hygiene-semantic-review-02*.{json,md,provenance.json}"
+  },
+  "candidateCount": 20,
+  "candidateClassCounts": {"C":20},
+  "candidateSetSha256": "992e7e4703f69c8ff34e5053d1408c2f39ddb509fd657b8081f25b905a7f2e27",
+  "protectedAtDiscovery": [
+    {"branch":"drw-05e-principal-section-spread-proof","pr":235},
+    {"branch":"hfi-04b-doors-windows-hardware","reason":"fresh active packet"}
+  ],
+  "destructiveControl": {
+    "requiredMainSha":"552bc8fb84379287a032cd7f7e18cef74c03bcc9",
+    "expectedHeadPerCandidate":true,
+    "openPrCandidateRefusal":true,
+    "atomicDeletion":true,
+    "exactPostDeleteRemovedSetProof":true,
+    "workflowTemporary":true
+  },
+  "mutationPerformed": false
+}
