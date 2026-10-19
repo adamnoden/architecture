@@ -272,7 +272,8 @@ const deliverySidebar: DefaultTheme.SidebarItem[] = [
   group('Delivery', [
     page('Delivery overview', '/docs/delivery/'),
     page('RIBA implementation brief', '/docs/delivery/riba-implementation-brief-template'),
-    page('External maintenance access requirements', '/docs/delivery/external-maintenance-access-requirements')
+    page('External maintenance access requirements', '/docs/delivery/external-maintenance-access-requirements'),
+    page('Human-factors verification requirements', '/docs/delivery/human-factors-verification-requirements')
   ], false)
 ]
 
