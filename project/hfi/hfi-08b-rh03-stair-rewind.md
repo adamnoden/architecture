@@ -234,6 +234,8 @@ HFI-08B is complete only when:
 - the HFI-08A.1 data-plate corrective packet has merged ahead of this packet;
 - full PR validation passes on the exact final head.
 
-`HFI-08B → baseline 5d2fc836c727f13aa3f01e797af7e09f8b9b4670 → HFI-RW-01/RH-03 → compare 280 vs 300 as complete stair system → select 300 mm; retain 18 risers / 3×6 flights / five goings / full landings / no winders / +3300 FFL → +100 mm flight run with no shell/court/service/programme sacrifice → RH-04 PASS; RH-05 PASS; RH-10 PASS; no pattern-occurrence delta → update RHCF-STAIR-G and regenerate genuine dependants; explicitly rebaseline only source-dependent CH-00 facts → exact next packet HFI-08C`
+HFI-07E authorised no additional Reference House correction family beyond this stair rewind. Its entrance, threshold, door and detailed route questions remain `NOT-MODELLED` proof obligations, not permission for HFI-08B to manufacture further geometry rewinds.
 
-**Exact next packet:** **HFI-08C — entrance / threshold / door / right-sized movement-route corrections.**
+`HFI-08B → baseline 5d2fc836c727f13aa3f01e797af7e09f8b9b4670 → HFI-RW-01/RH-03 → compare 280 vs 300 as complete stair system → select 300 mm; retain 18 risers / 3×6 flights / five goings / full landings / no winders / +3300 FFL → +100 mm flight run with no shell/court/service/programme sacrifice → RH-04 PASS; RH-05 PASS; RH-10 PASS; no pattern-occurrence delta → update RHCF-STAIR-G and regenerate genuine dependants; explicitly rebaseline only source-dependent CH-00 facts → no further RH rewind authorised → exact next packet HFI-08C — delivery/prototype consequences`
+
+**Exact next packet:** **HFI-08C — delivery / prototype consequences.**
