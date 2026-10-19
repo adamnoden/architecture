@@ -4,15 +4,34 @@
 
 This is a provenance/work-control area, not a second source of public architectural truth and not the canonical answer to current project status.
 
-Typical material includes:
-
-- integration and migration programmes;
-- coordination registers and handoffs;
-- adversarial audits and closeout records;
-- prototype/manufacturing planning;
-- working architectural studies whose results are intended to settle elsewhere.
+Typical material includes integration and migration programmes, coordination registers and handoffs, adversarial audits and closeouts, prototype/manufacturing planning, and working architectural studies whose results are intended to settle elsewhere.
 
 Concrete build packs, test drawings, protocols and recorded physical results belong in [`../prototypes/`](../prototypes/). Mature appointed-team requirements belong in [`../delivery/`](../delivery/). Public architectural conclusions belong in their owning manuscript, pattern, grammar or Reference House records.
+
+## Live controls
+
+This section is the repository’s lifecycle index for development programme controls. It is deliberately terse: the linked records own their scope, while [`../../STATUS.md`](../../STATUS.md) owns project-wide present state.
+
+- [Architectural Specificity Boundary](architectural-specificity-boundary.md)
+- [Reference House Design Programme](reference-house-design-programme.md)
+- [Tectonic Prototype Programme](tectonic-prototype-programme.md)
+- [Manufacturing Strategy](manufacturing-strategy.md)
+
+## Completed controls retained for provenance
+
+These records remain useful evidence of how earlier work was framed, tested or closed. Their inclusion here does not reactivate them or make their historical “next” statements current.
+
+- [Human Factors and Low-Friction Inhabitation Programme](human-factors-low-friction-inhabitation-programme.md)
+- [Human Factors and Low-Friction Inhabitation Execution Plan](human-factors-low-friction-inhabitation-execution-plan.md)
+- [Ovid’s House Migration](ovids-house-migration.md)
+- [Architectural Specificity Audit](architectural-specificity-audit.md)
+- [Architectural Specificity Claim Ledger](architectural-specificity-ledger.md)
+- [Architectural Specificity Adversarial Test](architectural-specificity-adversarial-test.md)
+- [Pattern Language Overhaul](pattern-language-overhaul.md)
+- [Pattern Language Phase 8 Review](pattern-language-phase8-review.md)
+- [Pattern Language Phase 7 Review](pattern-language-phase7-review.md)
+- [Pattern Language Phase 8 Pilot Red-Team](pattern-language-phase8-pilot-review.md)
+- [Pattern Language Corpus Audit](pattern-language-corpus-audit.md)
 
 ## How to read development records
 
