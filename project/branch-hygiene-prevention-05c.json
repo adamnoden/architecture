@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "packet": "BRH-05C",
+  "programmeIssue": 161,
+  "status": "doctrine_recorded_pending_validation_merge",
+  "baselineMainSha": "932dd67c61ba10cbc154f68745cf8571430f3ada",
+  "entryState": {
+    "historicalQueueRemaining": 0,
+    "deleteBranchOnMerge": true,
+    "orphanAuditPresent": true,
+    "automaticStaleBranchDeletion": false,
+    "liveBranches": [
+      {
+        "name": "drw-05e-principal-section-spread-proof",
+        "purpose": "DRW-05E open draft PR #235"
+      },
+      {
+        "name": "hfi-05c-cross-discipline-conflict-matrix",
+        "purpose": "active HFI-05C work from packet baseline"
+      }
+    ]
+  },
+  "doctrine": {
+    "path": "project/branch-lifecycle.md",
+    "rules": [
+      "durable work normally gets an early draft PR",
+      "temporary diagnostic, CI and dependency branches end in the same bounded operation that completes their purpose",
+      "intentional durable no-PR branches carry an explicit retention reason",
+      "orphan or stale branches are reported for human review and never automatically deleted"
+    ],
+    "archiveModel": "Git, pull request, issue and proof history; no archive-ref cemetery"
+  },
+  "placement": {
+    "surface": "project-internal",
+    "publishedDocumentation": false,
+    "reason": "branch lifecycle is repository process, not reader-facing project documentation"
+  },
+  "nonScope": [
+    "branch naming regime",
+    "automatic stale or orphan deletion",
+    "stale branch failure gates",
+    "branch SLAs",
+    "archive tags or branches",
+    "new labels or bots",
+    "branch protection changes",
+    "merge policy changes",
+    "additional lifecycle automation"
+  ],
+  "mutations": {
+    "repositorySettings": false,
+    "branchDeletion": false,
+    "branchRewrite": false,
+    "activeProgrammeBranches": false
+  },
+  "validationHistory": {
+    "initialRunId": 39258004630,
+    "initialResult": "failed_repository_health",
+    "initialFailure": "published docs/development/branch-lifecycle.md lacked curated navigation coverage",
+    "resolution": "moved lifecycle doctrine to project/ and reverted public documentation/index changes"
+  },
+  "administrativeVoids": [250, 251],
+  "nextPacket": "BRH-06A"
+}

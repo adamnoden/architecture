@@ -1,0 +1,42 @@
+{
+  "packet": "BRH-05C",
+  "programmeIssue": 161,
+  "authority": {
+    "issueSection": "BRH-05C — lifecycle doctrine",
+    "baselineMainSha": "932dd67c61ba10cbc154f68745cf8571430f3ada",
+    "repositoryDeleteBranchOnMerge": true,
+    "predecessor": "project/branch-hygiene-prevention-05b.md"
+  },
+  "inputs": [
+    "issue #161",
+    "project/branch-hygiene-prevention-05b.md",
+    "live branch namespace",
+    "live open pull requests",
+    "live repository settings"
+  ],
+  "outputs": [
+    "project/branch-lifecycle.md",
+    "project/branch-hygiene-prevention-05c.md",
+    "project/branch-hygiene-prevention-05c.json",
+    "project/branch-hygiene-prevention-05c.provenance.json"
+  ],
+  "validationHistory": [
+    {
+      "runId": 39258004630,
+      "result": "failure",
+      "gate": "repository health",
+      "reason": "first draft placed lifecycle page under published docs without curated navigation coverage",
+      "disposition": "corrected by moving internal lifecycle doctrine to project/ and removing public-doc/index changes"
+    }
+  ],
+  "safety": {
+    "documentationOnly": true,
+    "noDeletion": true,
+    "noRefRewrite": true,
+    "noRepositorySettingMutation": true,
+    "noNewAutomation": true,
+    "activeDRWAndHFIUntouched": true
+  },
+  "administrativeNote": "Issues #250 and #251 were accidental connector-routing invocations, immediately marked VOID and closed not_planned; neither is project authority.",
+  "nextPacket": "BRH-06A"
+}
