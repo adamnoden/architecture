@@ -4,11 +4,7 @@ The **Reference House** is one deliberately specific integration test for Ovid�
 
 It is **not proof of Ovid’s House** and it is not a universal house type.
 
-## What this area owns
-
-`docs/reference-house/` owns the authored architectural record of this worked instance: its constraints, coordination decisions, unresolved obligations, review handoffs, controlled drawings and the provenance needed to understand why the house is the way it is.
-
-The Reference House may be highly specific. That specificity does not move upstream automatically.
+## Authority stack
 
 ```text
 Ovid’s House proposition
@@ -20,7 +16,17 @@ Ovid’s House proposition
 = Reference House
 ```
 
-The controlling rule is: **generalise the reason; localise the taste.**
+## Maturity
+
+The Reference House should be read as a coordinated architectural proposition with explicit proof boundaries. Drawings, deterministic checks and internal coordination make relationships more inspectable; they do not convert untested assumptions into technical adequacy.
+
+For the current maturity assessment and active work, use `STATUS.md`. Structural capacity, detailed building physics, regulatory acceptance, plant sizing, product selection, physical interface performance and real-site compatibility remain external or later-stage questions unless an owning evidence record explicitly resolves them.
+
+## What this area owns
+
+`docs/reference-house/` owns the authored architectural record of this worked instance: its constraints, coordination decisions, unresolved obligations, review handoffs, controlled drawings and the provenance needed to understand why the house is the way it is.
+
+The Reference House may be highly specific. That specificity does not move upstream automatically. The controlling rule is: **generalise the reason; localise the taste.**
 
 A real site, planning context, jurisdiction, utility condition or client brief is a further layer. Site/deployment work does not become Reference House authority merely because it may later constrain a deployed instance.
 
@@ -49,7 +55,7 @@ Use the following records according to the question:
 - [G-01 conformance](g01-v0.1-conformance-d12.md) — bounded conformance to the selected G-01 grammar;
 - [Independent Review Questions](external-review-brief.md) — questions that require competent professional review rather than internal assertion.
 
-For current project-wide maturity or active work, use `STATUS.md`. This README intentionally does not duplicate live dimensions, packet state or model values that have their own owners.
+This README intentionally does not duplicate live dimensions, packet state or model values that have their own owners.
 
 ## Source, drawings and generated inspection
 
