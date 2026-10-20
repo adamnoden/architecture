@@ -1,0 +1,60 @@
+name: Freeze reviewed DRW future-adaptation overlay
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/reference-house/publication-future-adaptation*.ts'
+      - 'compiler/reference-house/generate-publication-future-adaptation-overlay.ts'
+      - 'docs/publication/architectural-drawing-drw10e1-future-adaptation-overlay.md'
+      - '.github/workflows/drw-future-adaptation-overlay-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: drw-future-adaptation-freeze-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate reviewed SVG
+        run: npx tsx compiler/reference-house/generate-publication-future-adaptation-overlay.ts
+      - name: Verify reviewed semantics
+        run: |
+          test -s docs/reference-house/publication-future-adaptation-overlay.svg
+          grep -q 'data-scale-denominator="100"' docs/reference-house/publication-future-adaptation-overlay.svg
+          grep -q 'data-overlay="future-adaptation"' docs/reference-house/publication-future-adaptation-overlay.svg
+          grep -q 'M4(2)-informed comparator; no compliance claim' docs/reference-house/publication-future-adaptation-overlay.svg
+          grep -q 'Framework, not accessible-suite proof' docs/reference-house/publication-future-adaptation-overlay.svg
+          ! grep -Eqi 'data-entity="[^"]*(turning-circle|bed-clearance|wc-fixture|shower-tray|route-centreline)' docs/reference-house/publication-future-adaptation-overlay.svg
+      - name: Freeze reviewed bytes
+        if: github.event_name == 'pull_request'
+        run: |
+          git add docs/reference-house/publication-future-adaptation-overlay.svg
+          if git diff --cached --quiet -- docs/reference-house/publication-future-adaptation-overlay.svg; then
+            echo 'Controlled SVG already matches canonical generation.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'DRW-10E.1: freeze reviewed future-adaptation overlay'
+          git push origin HEAD:${{ github.head_ref }}
+      - name: Upload reviewed SVG
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-10e1-future-adaptation-candidate
+          path: docs/reference-house/publication-future-adaptation-overlay.svg
+          if-no-files-found: error
+          retention-days: 30
