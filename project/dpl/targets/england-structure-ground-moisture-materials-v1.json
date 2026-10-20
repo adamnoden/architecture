@@ -1,0 +1,273 @@
+{
+  "schemaVersion": "dpl.englandTechnicalSlice.v1",
+  "id": "ENG-BC-STRUCTURE-GROUND-MOISTURE-MATERIALS-2026-10-20",
+  "jurisdiction": "England",
+  "researchDate": "2026-10-20",
+  "referenceWorkClass": "new-low-rise-detached-dwelling-non-HRB",
+  "scope": [
+    "Schedule 1 Part A — Structure",
+    "Schedule 1 Part C — Site preparation and resistance to contaminants and moisture",
+    "Schedule 1 Part D — Toxic substances",
+    "Regulation 7(1) — Materials and workmanship"
+  ],
+  "sourceSnapshots": [
+    {
+      "id": "BR2010-SCH1-2026-07-20",
+      "sourceClass": "PRIMARY_OR_DELEGATED_LEGISLATION",
+      "title": "The Building Regulations 2010 — Schedule 1",
+      "instrument": "S.I. 2010/2214",
+      "pointInTime": "2026-07-20",
+      "canonicalSource": "https://www.legislation.gov.uk/uksi/2010/2214/schedule/1/2026-07-20?wrap=true",
+      "status": "OPERATIVE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-20"
+    },
+    {
+      "id": "BR2010-REG7-REVISED-2026-10-20",
+      "sourceClass": "PRIMARY_OR_DELEGATED_LEGISLATION",
+      "title": "The Building Regulations 2010 — regulation 7",
+      "instrument": "S.I. 2010/2214",
+      "canonicalSource": "https://www.legislation.gov.uk/uksi/2010/2214/regulation/7",
+      "status": "OPERATIVE_REVISED_VIEW_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-20",
+      "completenessNote": "Use the England extent/version. Fire-related regulation 7(1A)/(2) material restrictions are routed to the fire/material interface rather than implemented by this slice."
+    },
+    {
+      "id": "AD-A-CURRENT-2026-10-20",
+      "sourceClass": "OFFICIAL_COMPLIANCE_GUIDANCE",
+      "title": "Approved Document A — Structure",
+      "canonicalSource": "https://www.gov.uk/government/publications/structure-approved-document-a",
+      "status": "CURRENT_OFFICIAL_GUIDANCE_PAGE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-20"
+    },
+    {
+      "id": "AD-C-CURRENT-2026-10-20",
+      "sourceClass": "OFFICIAL_COMPLIANCE_GUIDANCE",
+      "title": "Approved Document C — Site preparation and resistance to contaminants and moisture",
+      "canonicalSource": "https://www.gov.uk/government/publications/site-preparation-and-resistance-to-contaminates-and-moisture-approved-document-c",
+      "status": "CURRENT_OFFICIAL_GUIDANCE_PAGE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-20"
+    },
+    {
+      "id": "AD-D-CURRENT-2026-10-20",
+      "sourceClass": "OFFICIAL_COMPLIANCE_GUIDANCE",
+      "title": "Approved Document D — Toxic substances",
+      "canonicalSource": "https://www.gov.uk/government/publications/toxic-substances-approved-document-d",
+      "status": "CURRENT_OFFICIAL_GUIDANCE_PAGE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-20",
+      "editionNote": "2010 edition incorporating 2010 and 2013 amendments"
+    },
+    {
+      "id": "AD-REG7-CURRENT-2026-10-20",
+      "sourceClass": "OFFICIAL_COMPLIANCE_GUIDANCE",
+      "title": "Approved Document 7 — Materials and workmanship",
+      "canonicalSource": "https://www.gov.uk/government/publications/material-and-workmanship-approved-document-7",
+      "status": "CURRENT_OFFICIAL_GUIDANCE_PAGE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-20",
+      "editionNote": "2013 edition incorporating 2018 amendments"
+    }
+  ],
+  "methodClasses": [
+    {
+      "id": "APPLICABILITY_FACT_GATE",
+      "kind": "NATIVE_DETERMINISTIC",
+      "claimBoundary": "Determines only whether an obligation is applicable from admitted facts. It does not establish technical adequacy."
+    },
+    {
+      "id": "EXTERNAL_STRUCTURAL_ENGINEERING",
+      "kind": "EXTERNAL_PROFESSIONAL_EVIDENCE",
+      "claimBoundary": "Competent structural/geotechnical design, calculation and evidence required. Existing compiler geometry checks may be supporting evidence only."
+    },
+    {
+      "id": "EXTERNAL_SITE_GROUND_ASSESSMENT",
+      "kind": "EXTERNAL_PROFESSIONAL_EVIDENCE",
+      "claimBoundary": "Ground, contamination, groundwater, sub-soil drainage and related site evidence required at appropriate scope."
+    },
+    {
+      "id": "EXTERNAL_BUILDING_PHYSICS_ENVELOPE",
+      "kind": "EXTERNAL_PROFESSIONAL_EVIDENCE",
+      "claimBoundary": "Moisture/weather/condensation adequacy requires technical assembly/site/product evidence; no native whole-assembly proof exists."
+    },
+    {
+      "id": "EXTERNAL_PRODUCT_SPECIFICATION_INSPECTION",
+      "kind": "EXTERNAL_EVIDENCE_AND_INSPECTION",
+      "claimBoundary": "Product suitability, preparation, installation and workmanship require product/specification/installation/inspection evidence."
+    }
+  ],
+  "obligations": [
+    {
+      "id": "ENG-BR-A1",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 A1",
+      "title": "Loading / safe transmission to ground",
+      "applicability": "APPLIES_TO_REFERENCE_WORK_CLASS",
+      "resolutionMethod": "EXTERNAL_STRUCTURAL_ENGINEERING",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "competent design loads/actions",
+        "structural system/material properties",
+        "support/foundation design",
+        "ground/site evidence where load transfer reaches ground"
+      ],
+      "partialNativeEvidence": [
+        "controlled Reference House geometry",
+        "bounded compiler span/load-path correspondence where explicitly proven"
+      ],
+      "nonClaim": "Native Reference House geometry/span checks do not establish A1 compliance."
+    },
+    {
+      "id": "ENG-BR-A2",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 A2",
+      "title": "Ground movement",
+      "applicability": "APPLIES_TO_REFERENCE_WORK_CLASS",
+      "resolutionMethod": "EXTERNAL_STRUCTURAL_ENGINEERING",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "ground profile and material behaviour",
+        "shrink/swell/freezing susceptibility where relevant",
+        "land-slip/subsidence risk where relevant",
+        "tree/root effects where relevant",
+        "foundation/ground response design"
+      ]
+    },
+    {
+      "id": "ENG-BR-A3",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 A3",
+      "title": "Disproportionate collapse",
+      "applicability": "APPLIES_TO_REFERENCE_WORK_CLASS",
+      "resolutionMethod": "EXTERNAL_STRUCTURAL_ENGINEERING",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "actual building consequence/classification route used by the selected guidance/technical method",
+        "competent structural robustness design/evidence"
+      ],
+      "nonClaim": "A3 itself is represented as applicable; this slice does not reproduce or implement standard-derived robustness methods or their consequence-class rules."
+    },
+    {
+      "id": "ENG-BR-C1-1",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 C1(1)",
+      "title": "Site preparation / harmful material affecting building or stability",
+      "applicability": "APPLIES_TO_REFERENCE_WORK_CLASS",
+      "resolutionMethod": "EXTERNAL_SITE_GROUND_ASSESSMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "site/ground investigation proportionate to risk",
+        "existing foundations/material/vegetation/topsoil conditions",
+        "site preparation specification/evidence"
+      ]
+    },
+    {
+      "id": "ENG-BR-C1-2",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 C1(2)",
+      "title": "Ground contaminants",
+      "applicability": "APPLIES_TO_REFERENCE_WORK_CLASS",
+      "resolutionMethod": "EXTERNAL_SITE_GROUND_ASSESSMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "contamination/ground-gas/radon evidence proportionate to site risk",
+        "competent mitigation design where required"
+      ]
+    },
+    {
+      "id": "ENG-BR-C1-3",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 C1(3)",
+      "title": "Sub-soil drainage where needed",
+      "applicability": "CONDITIONAL_ON_SITE_GROUND_AND_MOISTURE_EVIDENCE",
+      "applicabilityMethod": "APPLICABILITY_FACT_GATE",
+      "resolutionMethod": "EXTERNAL_SITE_GROUND_ASSESSMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "groundwater/ground moisture evidence",
+        "ground permeability/soil conditions where relevant",
+        "foundation/site drainage design where drainage is needed"
+      ]
+    },
+    {
+      "id": "ENG-BR-C2",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 C2",
+      "title": "Resistance to harmful effects of moisture",
+      "applicability": "APPLIES_TO_REFERENCE_WORK_CLASS",
+      "resolutionMethod": "EXTERNAL_BUILDING_PHYSICS_ENVELOPE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "ground-moisture strategy",
+        "precipitation/wind-driven-rain strategy",
+        "condensation analysis where required",
+        "water-spillage/wet-service assembly evidence where applicable",
+        "product/junction/site details"
+      ],
+      "nonClaim": "DPL-08B interface duties identify the problem boundary but do not discharge C2."
+    },
+    {
+      "id": "ENG-BR-D1",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 D1",
+      "title": "Toxic fumes from cavity insulation",
+      "applicability": "CONDITIONAL_ON_CAVITY_INSULATION_INSERTION",
+      "applicabilityMethod": "APPLICABILITY_FACT_GATE",
+      "resolutionMethod": "EXTERNAL_PRODUCT_SPECIFICATION_INSPECTION",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "whether insulating material is inserted into a cavity wall",
+        "selected insulation/product evidence",
+        "assembly/installation precautions where D1 applies"
+      ],
+      "deterministicApplicabilityRule": {
+        "input": "cavityInsulationInserted",
+        "true": "APPLIES",
+        "false": "NOT_APPLICABLE",
+        "unknown": "UNRESOLVED"
+      }
+    },
+    {
+      "id": "ENG-BR-REG7-1",
+      "sourceSnapshot": "BR2010-REG7-REVISED-2026-10-20",
+      "sourceProvision": "regulation 7(1)",
+      "title": "Adequate/proper materials and workmanlike execution",
+      "applicability": "APPLIES_TO_BUILDING_WORK_IN_REFERENCE_WORK_CLASS",
+      "resolutionMethod": "EXTERNAL_PRODUCT_SPECIFICATION_INSPECTION",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "selected materials/products and intended use",
+        "specification/product evidence",
+        "preparation/application/fixing evidence",
+        "workmanship/inspection evidence appropriate to the claim"
+      ],
+      "nonClaim": "A product name, CE/UKCA marking or specification entry alone is not a universal Regulation 7 pass."
+    }
+  ],
+  "delegatedSiblingScope": [
+    {
+      "sourceProvision": "regulation 7(1A)",
+      "reason": "Fire/material prohibition is better integrated with DPL-09C fire/product evidence rather than duplicated here."
+    },
+    {
+      "sourceProvision": "regulation 7(2)-(4)",
+      "reason": "External-wall combustibility/relevant-building rules are fire/material obligations. Current low-rise Reference House test class is below the relevant-building height threshold, but the source remains part of the England target and must be evaluated in DPL-09C for actual cases."
+    }
+  ],
+  "proofBoundary": {
+    "nativeNow": [
+      "source identity",
+      "work-class/source applicability routing",
+      "simple fact-gated conditional applicability such as D1"
+    ],
+    "externalNow": [
+      "structural adequacy",
+      "ground movement/foundation adequacy",
+      "contamination/ground-gas/radon assessment",
+      "sub-soil drainage need and design",
+      "moisture/condensation/weather adequacy",
+      "product/material/workmanship adequacy"
+    ],
+    "unsupportedUntilFurtherPacket": [
+      "standard-derived structural calculation methods not yet lawfully sourced/validated",
+      "whole-house Part A/C/D/Regulation 7 compliance conclusion"
+    ]
+  }
+}
