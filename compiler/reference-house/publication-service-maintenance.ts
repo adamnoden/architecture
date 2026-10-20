@@ -48,7 +48,7 @@ const text = (
   metadata: DrawingText['metadata'] = {}
 ): DrawingText => ({ kind: 'text', id, x: point.x, y: point.y, value, role, anchor, metadata })
 
-const requireCompiled = (): Extract<ReferenceHouseCompileResult, { status: 'PASS' | 'UNRESOLVED' | 'UNSUPPORTED' | 'EXTERNALLY_DISCHARGED' }> => {
+const requireCompiled = (): ReferenceHouseCompileResult => {
   const result = compileReferenceHouse(createReferenceHouseSource())
   if (result.status === 'FAIL') throw new Error('Cannot create DRW-10B overlays from failed Reference House compile.')
   return result
