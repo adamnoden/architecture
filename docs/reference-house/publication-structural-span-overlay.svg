@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="136mm" height="145mm" viewBox="0 0 136 145" role="img" aria-labelledby="title desc" data-view-id="REFERENCE-HOUSE-STRUCTURAL-SPAN-OVERLAY" data-source-id="REFERENCE-HOUSE-STRUCTURAL-SPAN-OVERLAY" data-scale-denominator="100">
+<title id="title">Reference House structural and span reading</title>
+<desc id="desc">Removable analytical overlay on the canonical first-floor plan. Permanent masonry support order, gross span directions and local opening-framing obligations are shown at architectural coordination level only; member sizes, joist centrelines, bearings, connections and foundations remain external structural-engineering work.</desc>
+<style>.line-cut{stroke:#000000;stroke-width:0.5;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-profile{stroke:#000000;stroke-width:0.35;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-primary{stroke:#000000;stroke-width:0.25;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-secondary{stroke:#000000;stroke-width:0.18;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.text-label{font-family:Arial, Helvetica, sans-serif;font-size:2.646px;font-weight:400;fill:#000000}.text-note{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:400;fill:#000000}.text-marker{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:700;fill:#000000}.dash-overhead{stroke-dasharray:3 1.5}.dash-datum{stroke-dasharray:6 1.5 1 1.5}.dash-provisional{stroke-dasharray:1 1}.fill-paper{fill:#ffffff;stroke:none}.fill-ink{fill:#000000;stroke:none}.fill-context{fill:#666666;stroke:none}.fill-faint{fill:#a6a6a6;stroke:none}</style>
+<rect x="86" y="42" width="4" height="48" class="fill-ink" data-entity="wall-U-COURT-EAST" data-provisional="true" data-source="U-COURT-EAST"/>
+<rect x="85.375" y="16" width="1.25" height="18" class="fill-ink" data-entity="wall-U-COURT-EAST-NORTH-CONT-B" data-provisional="true" data-source="U-COURT-EAST-NORTH-CONT-B"/>
+<rect x="85.375" y="99" width="1.25" height="17" class="fill-ink" data-entity="wall-U-COURT-EAST-SOUTH-CONT-B" data-provisional="true" data-source="U-COURT-EAST-SOUTH-CONT-B"/>
+<rect x="46" y="42" width="44" height="4" class="fill-ink" data-entity="wall-U-COURT-NORTH" data-provisional="true" data-source="U-COURT-NORTH"/>
+<rect x="46" y="86" width="44" height="4" class="fill-ink" data-entity="wall-U-COURT-SOUTH" data-provisional="true" data-source="U-COURT-SOUTH"/>
+<rect x="46" y="42" width="4" height="48" class="fill-ink" data-entity="wall-U-COURT-WEST" data-provisional="true" data-source="U-COURT-WEST"/>
+<rect x="49.375" y="16" width="1.25" height="26" class="fill-ink" data-entity="wall-U-COURT-WEST-NORTH-CONT-B" data-provisional="true" data-source="U-COURT-WEST-NORTH-CONT-B"/>
+<rect x="71.375" y="16" width="1.25" height="18" class="fill-ink" data-entity="wall-U-DRY-SPLIT-B" data-provisional="true" data-source="U-DRY-SPLIT-B"/>
+<rect x="98.375" y="34" width="1.25" height="65" class="fill-ink" data-entity="wall-U-GALLERY-SERVICE-B" data-provisional="true" data-source="U-GALLERY-SERVICE-B"/>
+<rect x="47.375" y="90" width="1.25" height="26" class="fill-ink" data-entity="wall-U-HALL-WEST-B" data-provisional="true" data-source="U-HALL-WEST-B"/>
+<rect x="50" y="33.375" width="36" height="1.25" class="fill-ink" data-entity="wall-U-NORTH-SPLIT-B" data-provisional="true" data-source="U-NORTH-SPLIT-B"/>
+<rect x="86" y="33.375" width="13" height="1.25" class="fill-ink" data-entity="wall-U-NORTH-TURN-B" data-provisional="true" data-source="U-NORTH-TURN-B"/>
+<rect x="124" y="12" width="4" height="108" class="fill-ink" data-entity="wall-U-OUTER-EAST" data-provisional="true" data-source="U-OUTER-EAST"/>
+<rect x="8" y="12" width="120" height="4" class="fill-ink" data-entity="wall-U-OUTER-NORTH" data-provisional="true" data-source="U-OUTER-NORTH"/>
+<rect x="8" y="116" width="120" height="4" class="fill-ink" data-entity="wall-U-OUTER-SOUTH" data-provisional="true" data-source="U-OUTER-SOUTH"/>
+<rect x="8" y="12" width="4" height="108" class="fill-ink" data-entity="wall-U-OUTER-WEST" data-provisional="true" data-source="U-OUTER-WEST"/>
+<rect x="86" y="98.375" width="13" height="1.25" class="fill-ink" data-entity="wall-U-SOUTH-TURN-B" data-provisional="true" data-source="U-SOUTH-TURN-B"/>
+<rect x="12" y="69.375" width="34" height="1.25" class="fill-ink" data-entity="wall-U-WEST-SPLIT-B" data-provisional="true" data-source="U-WEST-SPLIT-B"/>
+<rect x="22.75" y="116" width="9.5" height="4" class="fill-paper" data-entity="opening-U-FRONT-W01" data-host="U-OUTER-SOUTH" data-provisional="true" data-source="U-FRONT-W01" data-treatment="window" data-widthAuthority="range-max-cut"/>
+<line x1="22.75" y1="118" x2="32.25" y2="118" class="line-primary" data-entity="frame-U-FRONT-W01" data-provisional="true" data-source="U-FRONT-W01"/>
+<rect x="49.75" y="116" width="9.5" height="4" class="fill-paper" data-entity="opening-U-FRONT-W02" data-host="U-OUTER-SOUTH" data-provisional="true" data-source="U-FRONT-W02" data-treatment="window" data-widthAuthority="range-max-cut"/>
+<line x1="49.75" y1="118" x2="59.25" y2="118" class="line-primary" data-entity="frame-U-FRONT-W02" data-provisional="true" data-source="U-FRONT-W02"/>
+<rect x="76.75" y="116" width="9.5" height="4" class="fill-paper" data-entity="opening-U-FRONT-W03" data-host="U-OUTER-SOUTH" data-provisional="true" data-source="U-FRONT-W03" data-treatment="window" data-widthAuthority="range-max-cut"/>
+<line x1="76.75" y1="118" x2="86.25" y2="118" class="line-primary" data-entity="frame-U-FRONT-W03" data-provisional="true" data-source="U-FRONT-W03"/>
+<rect x="103.75" y="116" width="9.5" height="4" class="fill-paper" data-entity="opening-U-FRONT-W04" data-host="U-OUTER-SOUTH" data-provisional="true" data-source="U-FRONT-W04" data-treatment="window" data-widthAuthority="range-max-cut"/>
+<line x1="103.75" y1="118" x2="113.25" y2="118" class="line-primary" data-entity="frame-U-FRONT-W04" data-provisional="true" data-source="U-FRONT-W04"/>
+<rect x="47.375" y="107.5" width="1.25" height="9" class="fill

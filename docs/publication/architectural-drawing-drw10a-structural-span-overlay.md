@@ -4,7 +4,7 @@
 **Programme:** DRW — Architectural Drawing Programme  
 **Packet:** DRW-10A  
 **Issue:** #154  
-**Status:** CANDIDATE IMPLEMENTED — PENDING REVIEW / BYTE LOCK
+**Status:** REVIEWED — CONTROLLED SVG BYTE-LOCKED; EXACT-HEAD MERGE PENDING
 
 ## Purpose
 
@@ -79,20 +79,11 @@ DRW-10A does not draw or infer:
 
 The overlay therefore remains architectural coordination, not a structural drawing package.
 
-## Candidate protocol
+## Architectural review and controlled artefact
 
-The first validation pass generates an SVG candidate in CI and uploads it for architectural review.
+The candidate was reviewed as a drawing rather than accepted from source/tests alone. The first candidate was rejected for annotation collisions through the landing/service field and around the courtyard. The accepted revision shortens span labels, rotates the north–south span notation into its own fields, reduces the service note to `SV-01`, and compresses the qualification line without changing geometry or authority.
 
-The candidate must demonstrate that:
-
-- the canonical first-floor plan remains intact;
-- gross span arrows are legible as analytical notation, not joist members;
-- permanent courtyard support order reads without introducing fake beam geometry;
-- stair/service opening obligations remain visibly provisional;
-- structural absences remain explicit;
-- the overlay does not overwhelm the architectural substrate.
-
-If that review succeeds, the exact candidate bytes will be committed and deterministic regeneration will be locked before merge.
+The accepted candidate keeps the canonical first-floor plan intact and makes the analytical layer subordinate but legible. Exact reviewed SVG bytes are committed at `docs/reference-house/publication-structural-span-overlay.svg` and a deterministic regeneration test requires the source render to remain byte-identical.
 
 Physical A4/B5 family proof is deliberately **not duplicated here**. DRW-10F owns analytical-family consistency and plate proof across all retained analytical overlays.
 
