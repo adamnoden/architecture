@@ -159,7 +159,7 @@ export const createFutureAdaptationOverlayScene = (
       reading: source.route.value.reading,
       stroke: 'secondary',
       dash: 'provisional',
-      label: index === 0 ? 'ONE-LEVEL ROUTE' : 'ROUTE TERRITORY',
+      label: index === 0 ? 'ROUTE FIELD' : 'ROUTE TERRITORY',
       labelOffsetMm: index === 0 ? { x: 12, y: -9 } : { x: 1.5, y: 0 },
       ...(index === 1 ? { labelRotateDeg: -90 } : {}),
       geometryBoundary: 'whole-host-space-field-not-route-centreline-or-clear-width'
@@ -173,7 +173,7 @@ export const createFutureAdaptationOverlayScene = (
       sourceStatus: source.sanitary.value.sourceStatus,
       stroke: 'profile',
       dash: 'provisional',
-      label: 'SANITARY / SHOWER',
+      label: 'SANITARY ADAPT.',
       labelOffsetMm: { x: 0, y: 12 },
       geometryBoundary: 'gross-service-suite-only-no-subdivision-or-fixtures'
     }),
