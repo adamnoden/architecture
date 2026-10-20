@@ -20,7 +20,7 @@ const rect = (
   id,
   ...value,
   stroke: 'secondary',
-  fill: 'faint',
+  fill: 'none',
   dash: 'provisional',
   metadata
 })
@@ -89,6 +89,7 @@ export const createExternalMaintenancePublicationScene = (
     exactTowerFootprint: source.absences.exactTowerFootprint
   }
 
+  const legendX = 139
   const overlay: DrawingPrimitive[] = [
     rect(
       'maintenance-west-capacity',
@@ -166,15 +167,15 @@ export const createExternalMaintenancePublicationScene = (
     ),
     text(
       'maintenance-reading-title',
-      130,
+      legendX,
       28,
-      'MAINTENANCE READING',
+      'MAINTENANCE',
       'label',
       { overlay: 'external-maintenance-setting', role: 'legend-title' }
     ),
     text(
       'maintenance-reading-mode',
-      130,
+      legendX,
       33,
       'capacity, not method',
       'note',
@@ -182,7 +183,7 @@ export const createExternalMaintenancePublicationScene = (
     ),
     text(
       'maintenance-rear-title',
-      130,
+      legendX,
       41,
       'REAR LOGISTICS',
       'note',
@@ -194,7 +195,7 @@ export const createExternalMaintenancePublicationScene = (
     ),
     text(
       'maintenance-rear-note',
-      130,
+      legendX,
       45,
       'continuation only',
       'note',
@@ -206,7 +207,7 @@ export const createExternalMaintenancePublicationScene = (
     ),
     text(
       'maintenance-landscape-title',
-      130,
+      legendX,
       53,
       'LANDSCAPE',
       'note',
@@ -218,7 +219,7 @@ export const createExternalMaintenancePublicationScene = (
     ),
     text(
       'maintenance-landscape-note',
-      130,
+      legendX,
       57,
       'keep capacity open',
       'note',
@@ -229,7 +230,7 @@ export const createExternalMaintenancePublicationScene = (
     ),
     text(
       'maintenance-absence-title',
-      130,
+      legendX,
       65,
       'SITE FACTS ABSENT',
       'note',
@@ -237,7 +238,7 @@ export const createExternalMaintenancePublicationScene = (
     ),
     text(
       'maintenance-absence-boundary',
-      130,
+      legendX,
       69,
       'boundary / road',
       'note',
@@ -249,7 +250,7 @@ export const createExternalMaintenancePublicationScene = (
     ),
     text(
       'maintenance-absence-equipment',
-      130,
+      legendX,
       73,
       'ASHP / support footprints',
       'note',
