@@ -29,7 +29,8 @@ test('DRW-10B selects the bounded RHC3 service geography without inventing route
 test('DRW-10B reuses the existing service reservation and access authority rather than promoting it', () => {
   const source = createServiceMaintenanceOverlaySource()
 
-  assert.equal(source.ground.riserReservation.id, 'SV-01')
+  assert.equal(source.ground.riserReservation.id, 'DRW08A-SV-01')
+  assert.equal(source.ground.riserReservation.value.id, 'SV-01')
   assert.equal(source.ground.riserReservation.authority, 'RH06_SELECTED_OUTSIDE_RH_C1')
   assert.equal(source.ground.riserReservation.precision, 'approximate')
   assert.equal(source.ground.access.value.ground, 'G-GAL-01-or-G-PLANT-01')
