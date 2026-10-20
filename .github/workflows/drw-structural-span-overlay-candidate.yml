@@ -1,0 +1,47 @@
+name: Prove DRW structural span overlay
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/reference-house/publication-structural-span*.ts'
+      - 'compiler/reference-house/generate-publication-structural-span-overlay.ts'
+      - 'docs/reference-house/publication-structural-span-overlay.svg'
+      - 'docs/publication/architectural-drawing-drw10a-structural-span-overlay.md'
+      - '.github/workflows/drw-structural-span-overlay-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drw-structural-span-overlay-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  prove:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Regenerate controlled SVG
+        run: npx tsx compiler/reference-house/generate-publication-structural-span-overlay.ts
+      - name: Prove byte lock
+        run: git diff --exit-code -- docs/reference-house/publication-structural-span-overlay.svg
+      - name: Verify controlled semantics
+        run: |
+          test -s docs/reference-house/publication-structural-span-overlay.svg
+          grep -q 'data-view-id="REFERENCE-HOUSE-STRUCTURAL-SPAN-OVERLAY"' docs/reference-house/publication-structural-span-overlay.svg
+          grep -q 'gross-span-direction-not-joist-centreline' docs/reference-house/publication-structural-span-overlay.svg
+          grep -q 'ABSENT_STRUCTURAL_ENGINEERING' docs/reference-house/publication-structural-span-overlay.svg
+      - name: Upload proved SVG
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-10a-structural-span-overlay
+          path: docs/reference-house/publication-structural-span-overlay.svg
+          if-no-files-found: error
+          retention-days: 30
