@@ -3,6 +3,7 @@ import { dirname, extname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { applyAdapter, dependenciesForAdapter, readFrontmatterValue } from '../adapters.js'
 import { applyPublicationFigures, publicationFigurePlacements } from '../figures.js'
+import { publicationPlatePlacements } from '../plates.js'
 import {
   canonicalPatternOrder,
   primerPublicationEntries,
@@ -30,10 +31,12 @@ function localPath(source: string): string {
 
 function validateLocalImages(source: string, markdown: string): void {
   const sourceDirectory = dirname(localPath(source))
-  const imagePattern = /!\[[^\]]*\]\(([^\s)]+)(?:\s+[^)]*)?\)/g
+  const hrefs = [
+    ...[...markdown.matchAll(/!\[[^\]]*\]\(([^\s)]+)(?:\s+[^)]*)?\)/g)].map((match) => match[1]),
+    ...[...markdown.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi)].map((match) => match[1])
+  ]
 
-  for (const match of markdown.matchAll(imagePattern)) {
-    const href = match[1]
+  for (const href of hrefs) {
     if (/^(?:[a-z]+:|#|\/)/i.test(href)) continue
 
     const pathOnly = href.split(/[?#]/, 1)[0]
@@ -128,22 +131,14 @@ function validateFigureRegister(): void {
     'figures/designed-interface-functions.svg',
     'figures/failure-architecture-sequence.svg',
     'figures/maintenance-geography-route.svg',
-    '../docs/manuscript/figures/pattern-language-fields-sequence.svg',
-    'figures/reference-house-type-orientation.svg',
-    'figures/reference-house-spatial-sectional-order.svg',
-    'figures/reference-house-structural-assembly-logic.svg',
-    'figures/reference-house-service-maintenance-geography.svg',
-    'figures/reference-house-external-maintenance-geography.svg',
-    'figures/reference-house-water-failure-geography.svg'
+    '../docs/manuscript/figures/pattern-language-fields-sequence.svg'
   ])
 
   for (const placement of publicationFigurePlacements()) {
     if (!entryIds.has(placement.entryId)) {
       throw new Error(`${placement.image} targets unknown publication entry ${placement.entryId}.`)
     }
-    if (images.has(placement.image)) {
-      throw new Error(`Publication figure reused unexpectedly: ${placement.image}`)
-    }
+    if (images.has(placement.image)) throw new Error(`Publication figure reused unexpectedly: ${placement.image}`)
     images.add(placement.image)
   }
 
@@ -156,10 +151,55 @@ function validateFigureRegister(): void {
   }
 }
 
+function validatePlateRegister(): void {
+  const placements = publicationPlatePlacements()
+  const views = placements.flatMap((placement) => placement.views)
+  const expectedImages = new Set([
+    '../reference-house/publication-ground-floor-plan.svg',
+    '../reference-house/publication-first-floor-plan.svg',
+    '../reference-house/publication-synthetic-setting-plan.svg',
+    '../reference-house/publication-external-maintenance-setting-overlay.svg',
+    '../reference-house/publication-front-elevation.svg',
+    '../reference-house/publication-principal-section.svg',
+    '../reference-house/publication-courtyard-elevation.svg',
+    '../reference-house/publication-structural-span-overlay.svg',
+    '../reference-house/publication-service-transverse-section.svg',
+    '../reference-house/publication-service-side-elevation.svg',
+    '../reference-house/publication-ground-service-maintenance-overlay.svg',
+    '../reference-house/publication-first-floor-service-maintenance-overlay.svg',
+    '../reference-house/publication-roof-drainage-plan.svg',
+    '../reference-house/publication-roof-water-failure-overlay.svg',
+    '../reference-house/publication-garden-elevation.svg',
+    '../reference-house/publication-sectional-axonometric.svg',
+    '../reference-house/publication-future-adaptation-overlay.svg'
+  ])
+  const actualImages = new Set(views.map((view) => view.image))
+
+  if (placements.some((placement) => placement.entryId !== 'part-iv')) {
+    throw new Error('Architectural plate placements are restricted to Part IV.')
+  }
+  if (views.length !== expectedImages.size || actualImages.size !== expectedImages.size) {
+    throw new Error(`Expected ${expectedImages.size} unique controlled Part IV plate views, got ${views.length}.`)
+  }
+  for (const placement of placements) {
+    const expectedViewCount = placement.pageClass === 'PLATE_PAIR' ? 2 : 1
+    if (placement.views.length !== expectedViewCount) {
+      throw new Error(`${placement.pageClass} at ${placement.anchor} must contain ${expectedViewCount} view(s).`)
+    }
+  }
+  for (const image of expectedImages) {
+    if (!actualImages.has(image)) throw new Error(`Missing controlled Part IV plate placement: ${image}`)
+  }
+  for (const image of actualImages) {
+    if (!expectedImages.has(image)) throw new Error(`Unexpected Part IV plate placement: ${image}`)
+  }
+}
+
 validateEntries('smoke', smokePublicationEntries)
 validateEntries('primer', primerPublicationEntries)
 validateEntries('publication', publicationEntries)
 validateFigureRegister()
+validatePlateRegister()
 validateScopeReport()
 
 const mermaidFixture = smokePublicationEntries.find((entry) => entry.smokeOnly)
@@ -190,5 +230,5 @@ if (canonicalPatternOrder.every((id, index) => id === numericPatternOrder[index]
 }
 
 console.log(
-  `Publication manifests, adapters, figure composition and generated scope report valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
+  `Publication manifests, adapters, figure/plate composition and generated scope report valid: ${smokePublicationEntries.length} smoke entries; ${primerPublicationEntries.length} Primer entries; ${publicationEntries.length} Working Edition entries.`
 )
