@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # DRW-10E.1 — Entrance-storey future-adaptation overlay
 
 **Status:** bounded analytical overlay; publication candidate pending physical review
