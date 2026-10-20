@@ -24,7 +24,11 @@ test('DRW-10C makes outward visible failure and courtyard redundancy explicit', 
   const overlay = scene.primitives.filter((primitive) => primitive.metadata?.overlay === 'roof-water-failure')
 
   assert.equal(
-    overlay.filter((primitive) => primitive.metadata?.role === 'visible-outward-failure-direction-not-outlet-coordinate').length,
+    overlay.filter(
+      (primitive) =>
+        primitive.kind === 'line' &&
+        primitive.metadata?.role === 'visible-outward-failure-direction-not-outlet-coordinate'
+    ).length,
     12
   )
   assert.ok(overlay.some((primitive) => primitive.id === 'failure-court-primary-title'))
