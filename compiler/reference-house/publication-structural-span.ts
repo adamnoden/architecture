@@ -35,8 +35,19 @@ const text = (
   value: string,
   role: DrawingText['role'],
   anchor: DrawingText['anchor'] = 'middle',
-  metadata: DrawingText['metadata'] = {}
-): DrawingText => ({ kind: 'text', id, x: point.x, y: point.y, value, role, anchor, metadata })
+  metadata: DrawingText['metadata'] = {},
+  rotateDeg?: number
+): DrawingText => ({
+  kind: 'text',
+  id,
+  x: point.x,
+  y: point.y,
+  value,
+  role,
+  anchor,
+  ...(rotateDeg === undefined ? {} : { rotateDeg }),
+  metadata
+})
 
 const rect = (
   id: string,
@@ -92,7 +103,7 @@ const spanArrow = (
       line(`span-${region.id}`, a, b, 'primary', metadata),
       ...arrowHead(`span-${region.id}-west`, a, 'west', metadata),
       ...arrowHead(`span-${region.id}-east`, b, 'east', metadata),
-      text(`span-${region.id}-label`, project.point(2100, 5850), '≈4.2 m gross · E–W', 'marker', 'middle', metadata)
+      text(`span-${region.id}-label`, project.point(2100, 5850), '≈4.2 m', 'marker', 'middle', metadata)
     ]
   }
 
@@ -103,31 +114,21 @@ const spanArrow = (
       line(`span-${region.id}`, a, b, 'primary', metadata),
       ...arrowHead(`span-${region.id}-west`, a, 'west', metadata),
       ...arrowHead(`span-${region.id}-east`, b, 'east', metadata),
-      text(`span-${region.id}-label`, project.point(9900, 3950), '≈4.2 m gross · E–W', 'marker', 'middle', metadata)
+      text(`span-${region.id}-label`, project.point(9900, 3950), '≈4.2 m', 'marker', 'middle', metadata)
     ]
   }
 
   const x = region.id === 'SOUTH-CENTRE' ? 7000 : 6000
   const a = project.point(x, region.y0 + 650)
   const b = project.point(x, region.y1 - 650)
-  const labelY = region.id === 'SOUTH-CENTRE' ? 3050 : 8500
-  const parts: DrawingPrimitive[] = [
+  const labelX = region.id === 'SOUTH-CENTRE' ? x - 350 : x + 350
+  const labelY = (region.y0 + region.y1) / 2
+  return [
     line(`span-${region.id}`, a, b, 'primary', metadata),
     ...arrowHead(`span-${region.id}-south`, a, 'south', metadata),
     ...arrowHead(`span-${region.id}-north`, b, 'north', metadata),
-    text(`span-${region.id}-label`, project.point(x - 250, labelY), '≈3.4 m gross · N–S', 'marker', 'end', metadata)
+    text(`span-${region.id}-label`, project.point(labelX, labelY), '≈3.4 m', 'marker', 'middle', metadata, -90)
   ]
-  if (region.qualification === 'local-stair-framing-modifies-field') {
-    parts.push(text(
-      `span-${region.id}-qualification`,
-      project.point(x - 250, labelY - 350),
-      'stair opening modifies regular field',
-      'note',
-      'end',
-      metadata
-    ))
-  }
-  return parts
 }
 
 export const createStructuralSpanOverlayPublicationScene = (
@@ -190,16 +191,22 @@ export const createStructuralSpanOverlayPublicationScene = (
   ))
 
   overlay.push(
-    text('structural-court-note', project.point(6000, 6650), 'court masonry · permanent support order', 'note', 'middle', supportMetadata),
-    text('structural-service-note', project.point(10300, 7450), 'SV-01 · local framing required', 'note', 'middle', {
+    text('structural-service-note', project.point(9600, 7350), 'SV-01', 'marker', 'middle', {
       overlay: 'structural-span',
       finalTrimmers: 'ABSENT_STRUCTURAL_ENGINEERING'
     }),
-    text('structural-absence-note', { x: 8, y: 133 }, 'Concept only · no member sizes, joist centrelines, bearings, connections or foundations.', 'note', 'start', {
-      overlay: 'structural-span',
-      memberSizes: source.absences.memberSizes,
-      joistCentrelines: source.absences.joistCentrelines
-    })
+    text(
+      'structural-absence-note',
+      { x: 8, y: 133 },
+      'Structural reading only · outer/court masonry support · gross spans · stair/SV-01 local framing; no member sizes or joist centres.',
+      'note',
+      'start',
+      {
+        overlay: 'structural-span',
+        memberSizes: source.absences.memberSizes,
+        joistCentrelines: source.absences.joistCentrelines
+      }
+    )
   )
 
   return {
