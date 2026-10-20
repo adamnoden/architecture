@@ -1,0 +1,47 @@
+name: Generate DRW external maintenance candidate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/reference-house/publication-external-maintenance*.ts'
+      - 'compiler/reference-house/generate-publication-external-maintenance-overlay.ts'
+      - 'docs/publication/architectural-drawing-drw10d-external-maintenance-setting-overlay.md'
+      - '.github/workflows/drw-external-maintenance-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drw-external-maintenance-candidate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate candidate SVG
+        run: npx tsx compiler/reference-house/generate-publication-external-maintenance-overlay.ts
+      - name: Verify candidate semantics
+        run: |
+          test -s docs/reference-house/publication-external-maintenance-setting-overlay.svg
+          grep -q 'data-view-id="REFERENCE-HOUSE-EXTERNAL-MAINTENANCE-SETTING-OVERLAY"' docs/reference-house/publication-external-maintenance-setting-overlay.svg
+          grep -q 'data-overlay="external-maintenance-setting"' docs/reference-house/publication-external-maintenance-setting-overlay.svg
+          grep -q 'west-ground-supported-access-capacity-not-support-footprint' docs/reference-house/publication-external-maintenance-setting-overlay.svg
+          grep -q 'east-service-access-capacity-not-equipment-clearance' docs/reference-house/publication-external-maintenance-setting-overlay.svg
+          grep -q 'courtyard-working-area-not-tower-footprint' docs/reference-house/publication-external-maintenance-setting-overlay.svg
+          grep -q 'ABSENT_TECHNICAL' docs/reference-house/publication-external-maintenance-setting-overlay.svg
+      - name: Upload candidate SVG
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-10d-external-maintenance-candidate
+          path: docs/reference-house/publication-external-maintenance-setting-overlay.svg
+          if-no-files-found: error
+          retention-days: 30
