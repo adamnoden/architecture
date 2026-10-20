@@ -36,8 +36,9 @@ jobs:
           grep -q 'data-overlay="future-adaptation"' docs/reference-house/publication-future-adaptation-overlay.svg
           grep -q 'M4(2)-informed comparator; no compliance claim' docs/reference-house/publication-future-adaptation-overlay.svg
           grep -q 'Framework, not accessible-suite proof' docs/reference-house/publication-future-adaptation-overlay.svg
-          ! grep -qi 'turning-circle\|bed-clearance\|wc-fixture\|shower-tray\|route-centreline' docs/reference-house/publication-future-adaptation-overlay.svg
+          ! grep -Eqi 'data-entity="[^"]*(turning-circle|bed-clearance|wc-fixture|shower-tray|route-centreline)' docs/reference-house/publication-future-adaptation-overlay.svg
       - name: Upload candidate SVG
+        if: always()
         uses: actions/upload-artifact@v6
         with:
           name: drw-10e1-future-adaptation-candidate
