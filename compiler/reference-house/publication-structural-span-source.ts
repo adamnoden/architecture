@@ -133,9 +133,9 @@ export const createStructuralSpanOverlaySource = (): StructuralSpanOverlaySource
   const zero = mm(0)
 
   const westSpan = court.x0
-  const eastSpan = house.shell.width.value - court.x1
+  const eastSpan = mm(house.shell.width.value - court.x1)
   const southSpan = court.y0
-  const northSpan = house.shell.depth.value - court.y1
+  const northSpan = mm(house.shell.depth.value - court.y1)
 
   return {
     view: {
