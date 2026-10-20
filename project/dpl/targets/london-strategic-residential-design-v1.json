@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "dpl.londonStrategicPlanningSlice.v1",
+  "id": "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
+  "researchDate": "2026-10-20",
+  "jurisdictionContext": "Greater London",
+  "referenceDevelopmentClass": "one-new-self-contained-detached-C3-dwelling",
+  "sourceSnapshots": [
+    {
+      "id": "LONDON-PLAN-2021-CH3",
+      "sourceClass": "STATUTORY_DEVELOPMENT_PLAN_POLICY",
+      "title": "The London Plan 2021 — Chapter 3 Design",
+      "publicationStatus": "ADOPTED_OPERATIVE",
+      "publicationDate": "2021-03-01",
+      "canonicalSource": "https://www.london.gov.uk/programmes-strategies/planning/london-plan/the-london-plan-2021-online/chapter-3-design",
+      "retrievedAt": "2026-10-20"
+    },
+    {
+      "id": "LPG-OPTIMISING-SITE-CAPACITY-2023",
+      "sourceClass": "ADOPTED_LONDON_PLAN_GUIDANCE",
+      "title": "Optimising Site Capacity: A Design-led Approach LPG",
+      "publicationStatus": "ADOPTED_GUIDANCE",
+      "publicationDate": "2023-06-08",
+      "canonicalSource": "https://www.london.gov.uk/programmes-strategies/planning/implementing-london-plan/london-plan-guidance/optimising-site-capacity-design-led-approach-lpg",
+      "retrievedAt": "2026-10-20",
+      "authorityNote": "Guidance supporting Policy D3; not itself London Plan policy and not to be promoted into statutory development-plan status."
+    },
+    {
+      "id": "LPG-HOUSING-DESIGN-STANDARDS-2023",
+      "sourceClass": "ADOPTED_LONDON_PLAN_GUIDANCE",
+      "title": "Housing Design Standards LPG",
+      "publicationStatus": "ADOPTED_GUIDANCE",
+      "publicationDate": "2023-06-08",
+      "canonicalSource": "https://www.london.gov.uk/programmes-strategies/planning/implementing-london-plan/london-plan-guidance/housing-design-standards-lpg",
+      "retrievedAt": "2026-10-20",
+      "authorityNote": "Guidance interpreting London Plan housing-design policies; departures are material to decision-making but the LPG should not be applied mechanistically."
+    }
+  ],
+  "methodClasses": [
+    {
+      "id": "NATIVE_POLICY_NUMERIC",
+      "kind": "NATIVE_DETERMINISTIC",
+      "claimBoundary": "Evaluates an explicit numeric London Plan policy standard from admitted proposal facts. It does not decide the overall planning balance."
+    },
+    {
+      "id": "PLANNING_DESIGN_JUDGEMENT",
+      "kind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT",
+      "claimBoundary": "The compiler can organise source, facts and evidence but cannot convert design/context judgement into a scalar pass score."
+    },
+    {
+      "id": "PLANNING_INCLUSIVE_DESIGN_JUDGEMENT",
+      "kind": "EXTERNAL_PLANNING_OR_INCLUSIVE_DESIGN_JUDGEMENT",
+      "claimBoundary": "The compiler can expose the policy duty and evidence required; qualitative inclusive-design adequacy remains judgement-led."
+    },
+    {
+      "id": "PLANNING_CATEGORY_ASSIGNMENT",
+      "kind": "EXTERNAL_PLANNING_DETERMINATION",
+      "claimBoundary": "Planning policy/condition assigns an optional Building Regulations dwelling category. The compiler may transmit that resolved requirement to the building-control target but may not invent the assignment."
+    }
+  ],
+  "spaceTable": [
+    {"bedrooms":1,"bedspaces":1,"storeys":1,"minGIA":39,"minGIAWithShowerInsteadOfBathroom":37,"minBuiltInStorage":1.0},
+    {"bedrooms":1,"bedspaces":2,"storeys":1,"minGIA":50,"minBuiltInStorage":1.5},
+    {"bedrooms":1,"bedspaces":2,"storeys":2,"minGIA":58,"minBuiltInStorage":1.5},
+    {"bedrooms":2,"bedspaces":3,"storeys":1,"minGIA":61,"minBuiltInStorage":2.0},
+    {"bedrooms":2,"bedspaces":3,"storeys":2,"minGIA":70,"minBuiltInStorage":2.0},
+    {"bedrooms":2,"bedspaces":4,"storeys":1,"minGIA":70,"minBuiltInStorage":2.0},
+    {"bedrooms":2,"bedspaces":4,"storeys":2,"minGIA":79,"minBuiltInStorage":2.0},
+    {"bedrooms":3,"bedspaces":4,"storeys":1,"minGIA":74,"minBuiltInStorage":2.5},
+    {"bedrooms":3,"bedspaces":4,"storeys":2,"minGIA":84,"minBuiltInStorage":2.5},
+    {"bedrooms":3,"bedspaces":4,"storeys":3,"minGIA":90,"minBuiltInStorage":2.5},
+    {"bedrooms":3,"bedspaces":5,"storeys":1,"minGIA":86,"minBuiltInStorage":2.5},
+    {"bedrooms":3,"bedspaces":5,"storeys":2,"minGIA":93,"minBuiltInStorage":2.5},
+    {"bedrooms":3,"bedspaces":5,"storeys":3,"minGIA":99,"minBuiltInStorage":2.5},
+    {"bedrooms":3,"bedspaces":6,"storeys":1,"minGIA":95,"minBuiltInStorage":2.5},
+    {"bedrooms":3,"bedspaces":6,"storeys":2,"minGIA":102,"minBuiltInStorage":2.5},
+    {"bedrooms":3,"bedspaces":6,"storeys":3,"minGIA":108,"minBuiltInStorage":2.5},
+    {"bedrooms":4,"bedspaces":5,"storeys":1,"minGIA":90,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":5,"storeys":2,"minGIA":97,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":5,"storeys":3,"minGIA":103,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":6,"storeys":1,"minGIA":99,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":6,"storeys":2,"minGIA":106,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":6,"storeys":3,"minGIA":112,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":7,"storeys":1,"minGIA":108,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":7,"storeys":2,"minGIA":115,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":7,"storeys":3,"minGIA":121,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":8,"storeys":1,"minGIA":117,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":8,"storeys":2,"minGIA":124,"minBuiltInStorage":3.0},
+    {"bedrooms":4,"bedspaces":8,"storeys":3,"minGIA":130,"minBuiltInStorage":3.0},
+    {"bedrooms":5,"bedspaces":6,"storeys":1,"minGIA":103,"minBuiltInStorage":3.5},
+    {"bedrooms":5,"bedspaces":6,"storeys":2,"minGIA":110,"minBuiltInStorage":3.5},
+    {"bedrooms":5,"bedspaces":6,"storeys":3,"minGIA":116,"minBuiltInStorage":3.5},
+    {"bedrooms":5,"bedspaces":7,"storeys":1,"minGIA":112,"minBuiltInStorage":3.5},
+    {"bedrooms":5,"bedspaces":7,"storeys":2,"minGIA":119,"minBuiltInStorage":3.5},
+    {"bedrooms":5,"bedspaces":7,"storeys":3,"minGIA":125,"minBuiltInStorage":3.5},
+    {"bedrooms":5,"bedspaces":8,"storeys":1,"minGIA":121,"minBuiltInStorage":3.5},
+    {"bedrooms":5,"bedspaces":8,"storeys":2,"minGIA":128,"minBuiltInStorage":3.5},
+    {"bedrooms":5,"bedspaces":8,"storeys":3,"minGIA":134,"minBuiltInStorage":3.5},
+    {"bedrooms":6,"bedspaces":7,"storeys":1,"minGIA":116,"minBuiltInStorage":4.0},
+    {"bedrooms":6,"bedspaces":7,"storeys":2,"minGIA":123,"minBuiltInStorage":4.0},
+    {"bedrooms":6,"bedspaces":7,"storeys":3,"minGIA":129,"minBuiltInStorage":4.0},
+    {"bedrooms":6,"bedspaces":8,"storeys":1,"minGIA":125,"minBuiltInStorage":4.0},
+    {"bedrooms":6,"bedspaces":8,"storeys":2,"minGIA":132,"minBuiltInStorage":4.0},
+    {"bedrooms":6,"bedspaces":8,"storeys":3,"minGIA":138,"minBuiltInStorage":4.0}
+  ],
+  "obligations": [
+    {
+      "id": "LON-D3-DESIGN-LED",
+      "sourceSnapshot": "LONDON-PLAN-2021-CH3",
+      "sourceProvision": "Policy D3",
+      "title": "Optimise site capacity through a design-led response to context and infrastructure",
+      "applicability": "APPLIES_TO_DEVELOPMENT_PROPOSAL",
+      "resolutionMethod": "PLANNING_DESIGN_JUDGEMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "site/context evidence",
+        "development form and capacity rationale",
+        "surrounding form/character evidence",
+        "relevant infrastructure/accessibility context",
+        "design-option rationale proportionate to the proposal"
+      ],
+      "nonClaim": "No density, character or design-quality score is created. Compatibility before adaptation remains the Reference House response to site pressure."
+    },
+    {
+      "id": "LON-D5-INCLUSIVE",
+      "sourceSnapshot": "LONDON-PLAN-2021-CH3",
+      "sourceProvision": "Policy D5 B-C",
+      "title": "Highest standards of accessible and inclusive design",
+      "applicability": "APPLIES_TO_DEVELOPMENT_PROPOSAL",
+      "resolutionMethod": "PLANNING_INCLUSIVE_DESIGN_JUDGEMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "inclusive-design rationale proportionate to development scale/type",
+        "principal access/arrival evidence",
+        "barrier-free use evidence appropriate to proposal",
+        "relevant emergency-evacuation design evidence",
+        "design and access / inclusive-design statement where required"
+      ],
+      "nonClaim": "A machine-readable M4 category or a level threshold does not by itself discharge the qualitative D5 duty."
+    },
+    {
+      "id": "LON-D6-GIA-STORAGE",
+      "sourceSnapshot": "LONDON-PLAN-2021-CH3",
+      "sourceProvision": "Policy D6 F(1), Table 3.1",
+      "title": "Minimum gross internal area and built-in storage",
+      "applicability": "APPLIES_TO_SELF_CONTAINED_RESIDENTIAL_ACCOMMODATION",
+      "resolutionMethod": "NATIVE_POLICY_NUMERIC",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": ["bedroomCount","bedspaceCount","dwellingStoreys","policyDefinedGIA","builtInStorageArea"],
+      "deterministicRule": "Lookup minimums from spaceTable for exact bedroom/bedspace/storey tuple; compare policyDefinedGIA and builtInStorageArea independently.",
+      "currentReferenceHouseNote": "The Reference House currently selects four upper-floor bedrooms and two principal storeys, but planning bedspace count and policy-measured GIA/storage are not yet frozen at DPL authority; therefore no D6 pass is claimed."
+    },
+    {
+      "id": "LON-D6-CEILING-HEIGHT",
+      "sourceSnapshot": "LONDON-PLAN-2021-CH3",
+      "sourceProvision": "Policy D6 F(8)",
+      "title": "Minimum 2.5 m floor-to-ceiling height over at least 75% of dwelling GIA",
+      "applicability": "APPLIES_TO_SELF_CONTAINED_RESIDENTIAL_ACCOMMODATION",
+      "resolutionMethod": "NATIVE_POLICY_NUMERIC",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": ["policyDefinedGIA","areaWithFinishedFloorToCeilingHeightAtLeast2_5m"],
+      "deterministicRule": "areaWithFinishedFloorToCeilingHeightAtLeast2_5m / policyDefinedGIA >= 0.75",
+      "nonClaim": "The Reference House 3300 mm floor-to-floor datum is not equivalent to finished floor-to-ceiling height."
+    },
+    {
+      "id": "LON-D6-PRIVATE-OUTSIDE-SPACE",
+      "sourceSnapshot": "LONDON-PLAN-2021-CH3",
+      "sourceProvision": "Policy D6 F(9)",
+      "title": "Minimum private outdoor space where no higher borough standard applies",
+      "applicability": "CONDITIONAL_ON_NO_HIGHER_LOCAL_STANDARD",
+      "resolutionMethod": "NATIVE_POLICY_NUMERIC",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": ["bedspaceOrOccupantCount","qualifyingPrivateOutdoorArea","minimumQualifyingDepth","minimumQualifyingWidth","localHigherStandardStatus"],
+      "deterministicRule": "London baseline area = 5 sqm for 1-2 persons + 1 sqm for each additional person; qualifying space must achieve at least 1.5 m depth and 1.5 m width. A higher borough standard, if applicable, is composed separately and is not overwritten by this check."
+    },
+    {
+      "id": "LON-D7-ACCESSIBLE-HOUSING-MIX",
+      "sourceSnapshot": "LONDON-PLAN-2021-CH3",
+      "sourceProvision": "Policy D7 A",
+      "title": "Accessible/adaptable and wheelchair-user dwelling mix",
+      "applicability": "APPLIES_TO_DWELLINGS_CREATED_BY_WORK_TO_WHICH_PART_M_VOLUME_1_APPLIES",
+      "resolutionMethod": "PLANNING_CATEGORY_ASSIGNMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "strategicRequirement": {
+        "minimumShareM4_3": 0.10,
+        "allOtherDwellings": "M4(2)"
+      },
+      "requiredInputs": [
+        "developmentDwellingCountAndTypologies",
+        "PartMVolume1Applicability",
+        "planningProposalCategorySchedule",
+        "planningConditionOrDeterminationWhenAvailable"
+      ],
+      "crossTargetOutput": "When planning authority/proposal evidence resolves an individual dwelling category, emit that exact M4 category as an input obligation to the England building-control target.",
+      "singleDwellingGuardrail": "Do not assign M4(2) or M4(3) to a single dwelling by naive percentage rounding in this strategic slice. Preserve the strategic mix requirement and await the planning proposal/condition/local application decision that identifies the dwelling category.",
+      "nonClaim": "A resolved planning category does not itself prove compliance with the corresponding Building Regulations technical standard."
+    }
+  ],
+  "currentReferenceHouseDisposition": {
+    "D3": "UNRESOLVED_JUDGEMENT",
+    "D5": "UNRESOLVED_JUDGEMENT",
+    "D6_GIA_STORAGE": "UNRESOLVED_MISSING_PLANNING_OCCUPANCY_AND_POLICY_MEASUREMENT",
+    "D6_CEILING_HEIGHT": "UNRESOLVED_MISSING_FINISHED_HEIGHT_AREA_MEASUREMENT",
+    "D6_PRIVATE_OUTSIDE_SPACE": "UNRESOLVED_PENDING_OCCUPANCY_FINAL_LANDSCAPE_AND_LOCAL_STANDARD_COMPOSITION",
+    "D7": "UNRESOLVED_PENDING_PLANNING_CATEGORY_ASSIGNMENT"
+  },
+  "excludedFromOperativeSlice": [
+    {
+      "source": "Draft/replacement London Plan work current at research date",
+      "reason": "Emerging/non-operative source status is tracked by DPL-10A but is not substituted for adopted London Plan 2021 policy in this operative slice."
+    },
+    {
+      "source": "borough local-plan / SPD / design-code requirements",
+      "reason": "No first borough has yet been selected; local policy belongs to DPL-10C after corpus evidence earns selection."
+    }
+  ],
+  "proofBoundary": {
+    "nativeNow": [
+      "exact D6 Table 3.1 GIA/storage lookup",
+      "D6 finished floor-to-ceiling area ratio check",
+      "D6 London-baseline private-outside-space arithmetic when applicability inputs are known",
+      "strategic D7 mix representation"
+    ],
+    "judgementOrExternalNow": [
+      "D3 optimum site-capacity/context response",
+      "D4/D5 design scrutiny and inclusive-design adequacy",
+      "individual D7 dwelling category assignment before authoritative planning evidence",
+      "overall planning balance / permission"
+    ]
+  }
+}
