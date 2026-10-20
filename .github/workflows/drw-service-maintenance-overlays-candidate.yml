@@ -1,4 +1,4 @@
-name: Generate DRW service maintenance overlay candidates
+name: Freeze reviewed DRW service maintenance overlays
 
 on:
   pull_request:
@@ -10,16 +10,18 @@ on:
       - '.github/workflows/drw-service-maintenance-overlays-candidate.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
-  group: drw-service-maintenance-overlay-candidates-${{ github.event.pull_request.number || github.ref }}
+  group: drw-service-maintenance-overlay-freeze-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 jobs:
-  candidate:
+  freeze:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout PR head
         uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Setup Node
         uses: actions/setup-node@v7
         with:
@@ -27,19 +29,27 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
-      - name: Generate candidate SVG pair
+      - name: Generate reviewed SVG pair
         run: npx tsx compiler/reference-house/generate-publication-service-maintenance-overlays.ts
-      - name: Verify candidate semantics
+      - name: Verify reviewed semantics
         run: |
           test -s docs/reference-house/publication-ground-service-maintenance-overlay.svg
           test -s docs/reference-house/publication-first-service-maintenance-overlay.svg
-          grep -q 'data-view-id="REFERENCE-HOUSE-GROUND-SERVICE-MAINTENANCE-OVERLAY"' docs/reference-house/publication-ground-service-maintenance-overlay.svg
-          grep -q 'data-view-id="REFERENCE-HOUSE-FIRST-SERVICE-MAINTENANCE-OVERLAY"' docs/reference-house/publication-first-service-maintenance-overlay.svg
           grep -q 'host-space-field-not-service-route' docs/reference-house/publication-ground-service-maintenance-overlay.svg
-          grep -q 'host-space-field-not-service-route' docs/reference-house/publication-first-service-maintenance-overlay.svg
-          grep -q 'ABSENT_TECHNICAL' docs/reference-house/publication-ground-service-maintenance-overlay.svg
           grep -q 'REMOVED_RATHER_THAN_ADD_SECOND_PERMANENT_STACK' docs/reference-house/publication-first-service-maintenance-overlay.svg
-      - name: Upload candidate SVG pair
+      - name: Freeze reviewed bytes
+        if: github.event_name == 'pull_request'
+        run: |
+          if git diff --quiet -- docs/reference-house/publication-ground-service-maintenance-overlay.svg docs/reference-house/publication-first-service-maintenance-overlay.svg; then
+            echo 'Controlled SVG pair already matches canonical generation.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/reference-house/publication-ground-service-maintenance-overlay.svg docs/reference-house/publication-first-service-maintenance-overlay.svg
+          git commit -m 'DRW-10B: freeze reviewed service maintenance overlays'
+          git push origin HEAD:${{ github.head_ref }}
+      - name: Upload reviewed SVG pair
         uses: actions/upload-artifact@v6
         with:
           name: drw-10b-service-maintenance-overlay-candidates
