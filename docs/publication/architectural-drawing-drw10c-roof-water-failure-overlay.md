@@ -1,7 +1,7 @@
 <!-- nav-exclude: redirect -->
 # DRW-10C — roof water / failure analytical overlay
 
-**Status:** REVIEWED + BYTE-FROZEN — final exact-head validation pending  
+**Status:** MERGED + PHYSICALLY CORRECTED UNDER DRW-10F  
 **Programme:** DRW  
 **Parent:** #154
 
@@ -9,83 +9,39 @@
 
 Can the controlled DRW-07 roof/drainage drawing make failure behaviour legible without inventing drainage engineering?
 
-## Starting authority
+## Result
 
-DRW-07 already owns everything required for this analytical reading:
+Yes. The complete controlled DRW-07 roof/drainage scene remains the unchanged substrate. DRW-10C appends paper-space analytical notation only:
 
-- four provisional low-slope roof fields falling outward from the courtyard;
-- inspectable external perimeter collection;
-- qualitative RWP return zones with exact positions absent;
-- visible outward overflow behaviour clear of vulnerable fabric;
-- an east/service-side courtyard primary collector with removable-grate / silt access;
-- a short primary route to an external service-side inspection point, exact centreline absent;
-- an **independent** higher emergency overflow to a visible east/service-side outlet before occupied thresholds flood;
-- explicit absence of internal roof outlets and a courtyard roof gutter;
-- explicit technical absence of gutter profiles, RWP sizes/coordinates, drain centreline/depth/gradient/diameter, overflow level, threshold datums, site discharge and hydraulic sizing.
+- offset perimeter territory = inspectable external collection/failure zone, not gutter profile;
+- outward arrows = visible failure direction, not overflow coordinates;
+- east courtyard bracket = collector/inspection zone, not exact collector geometry;
+- PRIMARY / EMERGENCY hierarchy = consequence order and redundancy, not drawn pipework.
 
-No source-hardening packet is therefore required.
-
-## Representation rule
-
-The complete controlled DRW-07 roof/drainage scene is reused unchanged as the substrate. DRW-10C appends only analytical paper-space notation.
-
-Added marks mean:
-
-- **offset perimeter zone:** inspectable external collection / failure territory, not a gutter profile;
-- **outward arrows:** visible failure direction, not overflow-outlet coordinates;
-- **east courtyard bracket:** selected collector / inspection zone, not exact collector geometry;
-- **PRIMARY / EMERGENCY notes:** semantic redundancy and consequence order, not drain routes.
-
-The analytical layer must never make the unknown engineering look spatially solved.
-
-## Failure reading
-
-### Outer roof
-
-The useful failure argument is geometric and inspectable: water falls outward; collection stays at external edges; blockage/overflow should discharge visibly outward rather than first announcing itself as hidden damp inside the house.
-
-The overlay therefore reinforces all four external collection edges as a single analytical failure zone and adds outward-direction notation. It does not locate overflows or RWPs.
-
-### Courtyard
-
-The courtyard reading deliberately separates two systems:
-
-1. **PRIMARY** — east/service-side collector with removable-grate / silt access; short route to an external service-side inspection point;
-2. **EMERGENCY** — independent higher-level overflow to a visible external outlet, required to discharge before occupied thresholds flood.
-
-The two are shown as a hierarchy of consequences, not as drawn pipework.
+The architectural proposition remains: outward-falling roof fields, externally inspectable perimeter collection, visible outward failure, an inspectable courtyard primary collector/route and an independent emergency overflow before occupied thresholds flood.
 
 ## Explicit absences
 
-DRW-10C does not draw or infer:
+No gutter profile, RWP coordinate/diameter, collector dimension, drain centreline/depth/gradient/diameter, overflow coordinate/level, threshold datum, waterproofing build-up, real-site discharge or hydraulic sizing is asserted.
 
-- gutter section/profile;
-- RWP coordinates or diameter;
-- collector dimensions;
-- drain centreline, depth, gradient or diameter;
-- emergency-overflow inlet/outlet coordinate or level;
-- threshold datums;
-- waterproofing build-up;
-- real-site discharge;
-- hydraulic sizing.
+## Original closeout
 
-These remain technical design. The overlay proves only the architectural failure geography already selected by RH-08 / DRW-07.
+DRW-10C was reviewed, byte-frozen and merged as `fcbe462…`. Its semantic regression was corrected during review by narrowing the outward-arrow count to line primitives rather than changing drawing metadata or architecture.
 
-## Architectural review result
+## DRW-10F physical correction
 
-The generated drawing was reviewed at rendered output rather than accepted from CI alone. It passes the packet's architectural reading test:
+Family-level physical proof later exposed one genuine presentation defect in the accepted 10C plate: the long bottom absence/nonclaim sentence collided with the inherited roof scale-bar `0` label at both A4 and B5.
 
-- the controlled DRW-07 roof remains legible and unchanged beneath the analytical layer;
-- the perimeter collection/failure territory and four outward directions read immediately;
-- courtyard **PRIMARY** and **EMERGENCY** consequences remain distinct;
-- the inspection bracket reads as analytical territory rather than pipework;
-- the explicit absence note prevents the provisional marks from masquerading as hydraulic geometry.
+This was **not** a geometry, authority, renderer-scale or hydraulic defect. DRW-10F corrected presentation only:
 
-The review found no architectural or renderer defect requiring a source change. The only failed regression was an over-broad test predicate that counted two explanatory text nodes alongside the intended twelve arrow line primitives; the assertion was narrowed to line primitives without altering drawing semantics.
+- the inherited DRW-07 roof scene and scale bar remain unchanged;
+- the same absence semantics are now expressed in the unused right analytical legend as `ABSENT / DEFERRED` plus three short lines;
+- metadata/nonclaims remain intact;
+- a regression now keeps the absence block to the right of the inherited scale-bar territory.
 
-The accepted generated SVG is now tracked at `docs/reference-house/publication-roof-water-failure-overlay.svg`. The freeze workflow stages the generated file before comparing it, so a newly generated untracked SVG cannot be mistaken for a clean byte match.
+The corrected controlled SVG was frozen at `deb7afc3e74c76229070f94bd51a40df9a163316`; the human-authored regression head is `ec8700dd48d81024862d7813f6fe2eb107a46876`.
 
-DRW-10F retains analytical-family plate/physical proof.
+The complete A4 + conservative-B5 family was then regenerated and directly reviewed under run `39486843600`, artifact digest `sha256:23fce67a06629fcd8a98a30aa8f3bcdf03fc35afa4160779c5a207049362e572`. The corrected roof pair is legible and collision-free at both sizes.
 
 ## Files
 
@@ -95,6 +51,4 @@ DRW-10F retains analytical-family plate/physical proof.
 - `.github/workflows/drw-roof-water-failure-candidate.yml`
 - `docs/reference-house/publication-roof-water-failure-overlay.svg`
 
-## Next
-
-After final exact-head validation and merge: **DRW-10D — external-maintenance / setting overlay**.
+DRW-10F owns the family-level physical proof; this record preserves the bounded 10C authority and the later presentation correction.
