@@ -121,6 +121,14 @@ export const createRoofWaterFailureOverlayScene = (
     text('failure-court-collector-label', { x: 91.5, y: 66 }, 'INSPECT', 'marker', courtMetadata, 'middle', -90)
   )
 
+  const absenceMetadata = {
+    overlay: 'roof-water-failure',
+    internalRoofOutlet: source.selectedAbsences.internalRoofOutlet,
+    courtyardRoofGutter: source.selectedAbsences.courtyardRoofGutter,
+    hydraulicSizing: source.technicalAbsences.hydraulicSizing,
+    siteDischarge: source.technicalAbsences.siteDischarge
+  }
+
   overlay.push(
     text(
       'failure-perimeter-title',
@@ -198,16 +206,32 @@ export const createRoofWaterFailureOverlayScene = (
       }
     ),
     text(
-      'failure-absence-note',
-      { x: 8, y: 142 },
-      'No internal roof outlet · no hidden courtyard gutter · no hydraulic sizing or outlet coordinates.',
+      'failure-absence-title',
+      { x: 134, y: 127 },
+      'ABSENT / DEFERRED',
+      'marker',
+      absenceMetadata
+    ),
+    text(
+      'failure-absence-note-1',
+      { x: 134, y: 131 },
+      'no internal outlet',
       'note',
-      {
-        overlay: 'roof-water-failure',
-        internalRoofOutlet: source.selectedAbsences.internalRoofOutlet,
-        courtyardRoofGutter: source.selectedAbsences.courtyardRoofGutter,
-        siteDischarge: source.technicalAbsences.siteDischarge
-      }
+      absenceMetadata
+    ),
+    text(
+      'failure-absence-note-2',
+      { x: 134, y: 135 },
+      'no hidden court gutter',
+      'note',
+      absenceMetadata
+    ),
+    text(
+      'failure-absence-note-3',
+      { x: 134, y: 139 },
+      'no sizing / coordinates',
+      'note',
+      absenceMetadata
     )
   )
 
