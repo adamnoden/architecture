@@ -9,6 +9,7 @@ on:
       - 'docs/manuscript/figures/failure-architecture-sequence.svg'
       - 'docs/manuscript/figures/maintenance-geography-route.svg'
       - 'docs/manuscript/figures/pattern-language-fields-sequence.svg'
+      - 'docs/publication/architectural-drawing-drw11f*.md'
       - 'publication/specimens/drw11f/**'
       - '.github/workflows/drw-early-flow-proof.yml'
   workflow_dispatch:
