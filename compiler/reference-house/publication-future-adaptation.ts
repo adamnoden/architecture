@@ -42,8 +42,19 @@ const text = (
   value: string,
   role: DrawingText['role'],
   anchor: DrawingText['anchor'] = 'middle',
-  metadata: DrawingText['metadata'] = {}
-): DrawingText => ({ kind: 'text', id, x: point.x, y: point.y, value, role, anchor, metadata })
+  metadata: DrawingText['metadata'] = {},
+  rotateDeg?: number
+): DrawingText => ({
+  kind: 'text',
+  id,
+  x: point.x,
+  y: point.y,
+  value,
+  role,
+  anchor,
+  ...(rotateDeg === undefined ? {} : { rotateDeg }),
+  metadata
+})
 
 const requireCompiled = (): ReferenceHouseCompileResult => {
   const result = compileReferenceHouse(createReferenceHouseSource())
@@ -79,6 +90,8 @@ const fieldOverlay = (
     stroke: NonNullable<DrawingRect['stroke']>
     dash?: DrawingRect['dash']
     label: string
+    labelOffsetMm?: PaperPoint
+    labelRotateDeg?: number
     geometryBoundary: string
   }
 ): DrawingPrimitive[] => {
@@ -99,9 +112,12 @@ const fieldOverlay = (
     { stroke: options.stroke, ...(options.dash ? { dash: options.dash } : {}), metadata }
   ))
   const centre = centreOfBoxes(space.boxes)
+  const projectedCentre = project.point(centre.x, centre.y)
+  const offset = options.labelOffsetMm ?? { x: 0, y: 0 }
+  const labelPoint = { x: projectedCentre.x + offset.x, y: projectedCentre.y + offset.y }
   return [
     ...fields,
-    text(`${options.id}-label`, project.point(centre.x, centre.y), options.label, 'marker', 'middle', metadata)
+    text(`${options.id}-label`, labelPoint, options.label, 'marker', 'middle', metadata, options.labelRotateDeg)
   ]
 }
 
@@ -131,7 +147,8 @@ export const createFutureAdaptationOverlayScene = (
       sourceStatus: source.sleeping.value.sourceStatus,
       stroke: 'primary',
       dash: 'provisional',
-      label: 'FALLBACK SLEEPING OPTION',
+      label: 'FALLBACK SLEEPING',
+      labelOffsetMm: { x: 0, y: -16 },
       geometryBoundary: 'whole-host-space-field-no-bed-or-clearance-geometry'
     }),
     ...source.route.value.spaceIds.flatMap((spaceId, index) => fieldOverlay(result, project, {
@@ -142,7 +159,9 @@ export const createFutureAdaptationOverlayScene = (
       reading: source.route.value.reading,
       stroke: 'secondary',
       dash: 'provisional',
-      label: 'ROUTE TERRITORY',
+      label: index === 0 ? 'ONE-LEVEL ROUTE' : 'ROUTE TERRITORY',
+      labelOffsetMm: index === 0 ? { x: 12, y: -9 } : { x: 1.5, y: 0 },
+      ...(index === 1 ? { labelRotateDeg: -90 } : {}),
       geometryBoundary: 'whole-host-space-field-not-route-centreline-or-clear-width'
     })),
     ...fieldOverlay(result, project, {
@@ -154,12 +173,13 @@ export const createFutureAdaptationOverlayScene = (
       sourceStatus: source.sanitary.value.sourceStatus,
       stroke: 'profile',
       dash: 'provisional',
-      label: 'SANITARY / SHOWER ADAPTATION',
+      label: 'SANITARY / SHOWER',
+      labelOffsetMm: { x: 0, y: 12 },
       geometryBoundary: 'gross-service-suite-only-no-subdivision-or-fixtures'
     }),
     text(
       'future-adaptation-boundary-1',
-      { x: 8, y: 132 },
+      { x: 8, y: 130 },
       'Future adaptation · M4(2)-informed comparator; no compliance claim.',
       'note',
       'start',
@@ -171,8 +191,8 @@ export const createFutureAdaptationOverlayScene = (
     ),
     text(
       'future-adaptation-boundary-2',
-      { x: 8, y: 136 },
-      'Framework, not accessible-suite proof · no bed, route, fixture or clearance geometry.',
+      { x: 8, y: 133 },
+      'Framework, not accessible-suite proof · no bed, route or fixture geometry.',
       'note',
       'start',
       {
