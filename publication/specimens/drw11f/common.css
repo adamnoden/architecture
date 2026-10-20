@@ -1,0 +1,19 @@
+:root {
+  --sans: Arial, Helvetica, sans-serif;
+  --serif: Georgia, Cambria, "Times New Roman", serif;
+  --ink: #000;
+  --context: #666;
+  --paper: #fff;
+}
+html, body { margin: 0; padding: 0; color: var(--ink); background: var(--paper); }
+body { font-family: var(--serif); font-size: 10.5pt; line-height: 1.45; }
+* { box-sizing: border-box; }
+section.page { break-before: page; break-after: page; }
+section.page:first-child { break-before: auto; }
+.flow-page { page: flow; }
+.flow-page h1 { margin: 0 0 5mm; font-family: var(--sans); font-size: 21pt; line-height: 1.08; }
+.flow-page p { margin: 0 0 0.8em; }
+.flow-page figure { margin: 7mm auto 6mm; width: 128mm; break-inside: avoid; }
+.flow-page figure img { display: block; width: 128mm; max-width: none; height: auto; margin: 0 auto 3mm; }
+.flow-page figcaption { font-family: var(--sans); font-size: 8.3pt; line-height: 1.35; }
+.flow-page .proof-note { margin-top: 7mm; font-family: var(--sans); font-size: 8.3pt; color: var(--context); }
