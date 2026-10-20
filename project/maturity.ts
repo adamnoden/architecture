@@ -347,14 +347,23 @@ export const workstreamStatuses = [
   {
     id: 'deployment-real-site',
     name: 'Deployment / real-site integration',
-    maturity: 'M1',
-    reviewedOn: '2026-10-19',
+    maturity: 'M2',
+    reviewedOn: '2026-10-20',
     currentState:
-      'DPL-00 has framed deployment as a first-class layer between the controlled Reference House and real land: doctrine, Reference House, target stack, site manifest, evidence and scenarios remain distinct, with compatibility before adaptation as the architectural rule. DPL-01 through DPL-06 are the only authorised foundation set; no Reference Site, regulation encoding or real-plot deployment claim has yet been earned.',
+      'DPL-01 through DPL-06 are complete and the DPL-FR foundation review passes with bounded programme-control corrections. The developed foundation now separates Ovid’s House architectural authority, Reference House conformance, deployment assurance/results, assurance profiles, typed target composition and evidence-backed site manifests while preserving compatibility before adaptation and the compiler’s non-authoring role.',
     nextGate:
-      'Complete DPL-01 through DPL-06 and pass the mandatory foundation review before authorising DPL-07 onward. Keep England / Greater London as declared implementation targets rather than universal doctrine, and preserve unknown/evidence/judgement states instead of manufacturing compliance certainty.',
+      'Execute Wave A laterally: define the synthetic Reference Site (DPL-07), inventory the England new-dwelling regulatory target (DPL-09), recover the London/borough planning authority model (DPL-10) and define non-planning site due diligence (DPL-11). Defer site-interface integration, compiler substrate and real-plot corpus until their stated sequencing gates.',
     evidence: {
-      framed: ['project/dpl/deployment-programme.md']
+      framed: ['project/dpl/deployment-programme.md'],
+      developed: [
+        'project/dpl/dpl-01-deployment-ontology.md',
+        'project/dpl/dpl-02-reference-house-conformance.md',
+        'project/dpl/dpl-03-assurance-result-semantics.md',
+        'project/dpl/dpl-04-compilation-maturity.md',
+        'project/dpl/dpl-05-target-stack-model.md',
+        'project/dpl/dpl-06-site-manifest-model.md',
+        'project/dpl/dpl-foundation-coherence-review.md'
+      ]
     }
   },
   {
