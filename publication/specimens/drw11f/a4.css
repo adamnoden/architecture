@@ -1,0 +1,3 @@
+@page { size: A4; margin-top: 23mm; margin-bottom: 24mm; }
+@page flow:left { margin-left: 22mm; margin-right: 30mm; @top-left { content: "DRW-11F early FLOW proof"; font: 7.5pt Arial; color: #666; } @bottom-left { content: counter(page); font: 7.5pt Arial; } }
+@page flow:right { margin-left: 30mm; margin-right: 22mm; @top-right { content: "Physical figure proof"; font: 7.5pt Arial; color: #666; } @bottom-right { content: counter(page); font: 7.5pt Arial; } }
