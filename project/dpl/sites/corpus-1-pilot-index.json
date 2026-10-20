@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "dpl.realSitePilotIndex.v1",
+  "corpus": "DPL-CORPUS-1",
+  "packet": "DPL-14B",
+  "researchDate": "2026-10-20",
+  "assuranceProfile": "SCREENING",
+  "purpose": "Minimal stable pilot index only. Full site-claim schema remains governed by DPL-06 and is not frozen by this file.",
+  "sites": [
+    {
+      "id": "DPL-RP-001",
+      "displayName": "Land at 26 The Avenue, Finchley, N3 2FD",
+      "borough": "Barnet",
+      "siteKind": "REAL",
+      "corpusRole": "COVERAGE_ADDITION",
+      "admissionState": "ADMITTED",
+      "record": "dpl-rp-001-26-the-avenue-finchley.md",
+      "primaryIdentityBasis": "CURRENT_MARKETING_RECORD",
+      "challengeTags": [
+        "AREA_NEAR_REFERENCE_SITE",
+        "FOOTPATH_ACCESS",
+        "EXISTING_SMALL_BUILDING",
+        "CONSTRUCTION_ACCESS_UNKNOWN",
+        "UTILITY_ROUTE_UNKNOWN",
+        "EXACT_GEOMETRY_UNKNOWN"
+      ],
+      "decisionCriticalUnknowns": [
+        "legal_access_rights",
+        "vehicle_and_construction_access",
+        "exact_boundary_geometry",
+        "topography",
+        "ground_geotechnics",
+        "drainage_and_sewers",
+        "utility_routes_and_capacity"
+      ]
+    },
+    {
+      "id": "DPL-RP-002",
+      "displayName": "Land to the Rear of 10 Highland Road, Bromley, BR1 4AD",
+      "borough": "Bromley",
+      "siteKind": "REAL",
+      "corpusRole": "COVERAGE_ADDITION",
+      "admissionState": "ADMITTED",
+      "record": "dpl-rp-002-rear-10-highland-road-bromley.md",
+      "primaryIdentityBasis": "HISTORICAL_OFFICIAL_PLANNING_RECORD",
+      "challengeTags": [
+        "BACKLAND_GARAGE_SITE",
+        "NARROW_PRIVATE_ACCESS",
+        "TREE_TPO_HISTORY",
+        "NEIGHBOUR_CONTEXT_SENSITIVITY",
+        "HISTORICAL_SINGLE_DWELLING_PERMISSION",
+        "SURFACE_WATER_DESIGN_DUE"
+      ],
+      "decisionCriticalUnknowns": [
+        "current_legal_parcel",
+        "current_access_rights_and_geometry",
+        "current_tree_and_tpo_state",
+        "topography",
+        "ground_geotechnics",
+        "drainage_and_sewers",
+        "utility_routes_and_capacity"
+      ]
+    },
+    {
+      "id": "DPL-RP-003",
+      "displayName": "Rear of 73A and 73B Woodside Green, South Norwood, SE25 5HU",
+      "borough": "Croydon",
+      "siteKind": "REAL",
+      "corpusRole": "COVERAGE_ADDITION",
+      "admissionState": "ADMITTED",
+      "record": "dpl-rp-003-rear-73a-73b-woodside-green-croydon.md",
+      "primaryIdentityBasis": "OFFICIAL_PLANNING_AND_APPEAL_RECORDS",
+      "challengeTags": [
+        "URBAN_GARAGE_INFILL",
+        "SINGLE_DWELLING_PERMISSION_HISTORY",
+        "LATER_TWO_DWELLING_REFUSAL_AND_APPEAL_DISMISSAL",
+        "CHARACTER_MASSING_SENSITIVITY",
+        "PRIVATE_AMENITY_FUNCTIONALITY_SENSITIVITY",
+        "PROPOSAL_DEPENDENT_PLANNING_OUTCOME"
+      ],
+      "decisionCriticalUnknowns": [
+        "current_legal_parcel",
+        "current_physical_build_out_state",
+        "exact_boundary_geometry",
+        "topography",
+        "ground_geotechnics",
+        "drainage_and_sewers",
+        "utility_routes_and_capacity"
+      ]
+    }
+  ],
+  "pilotCoverage": {
+    "distinctBoroughs": 3,
+    "allSitesGreaterLondon": true,
+    "allSitesOneDwellingQuestionMeaningful": true,
+    "allSitesDeploymentNotEvaluated": true,
+    "notableGap": "The pilot does not contain a reliably evidenced sloping/topographic site and is intentionally too small to satisfy Corpus 1 diversity requirements. Future collection must add ordinary street-front, corner/edge, orientation-diverse and level/topography-evidenced sites."
+  },
+  "schemaBoundary": {
+    "stableEnoughNow": [
+      "site id",
+      "display identity",
+      "borough",
+      "site kind",
+      "assurance profile",
+      "corpus role",
+      "admission state",
+      "record path",
+      "primary identity basis",
+      "challenge tags",
+      "decision-critical unknown list"
+    ],
+    "notFrozenHere": [
+      "full site claim object schema",
+      "geometry schema",
+      "planning target schema",
+      "technical due-diligence schema",
+      "deployment compatibility fields",
+      "scores or rankings"
+    ]
+  }
+}
