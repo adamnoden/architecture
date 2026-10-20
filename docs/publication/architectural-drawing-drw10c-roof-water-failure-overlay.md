@@ -1,7 +1,7 @@
 <!-- nav-exclude: redirect -->
 # DRW-10C — roof water / failure analytical overlay
 
-**Status:** CANDIDATE IMPLEMENTED — architectural review pending  
+**Status:** REVIEWED + BYTE-FROZEN — final exact-head validation pending  
 **Programme:** DRW  
 **Parent:** #154
 
@@ -71,17 +71,21 @@ DRW-10C does not draw or infer:
 
 These remain technical design. The overlay proves only the architectural failure geography already selected by RH-08 / DRW-07.
 
-## Review protocol
+## Architectural review result
 
-The first candidate is generated in CI and reviewed as an architectural analytical drawing before any byte freeze. Acceptance requires:
+The generated drawing was reviewed at rendered output rather than accepted from CI alone. It passes the packet's architectural reading test:
 
-1. outward/visible failure reads faster than the existing detailed roof notes;
-2. PRIMARY and EMERGENCY courtyard paths remain unmistakably distinct;
-3. inspection/access geography is apparent without pseudo-routing;
-4. appended notation remains subordinate to the canonical 1:100 roof drawing;
-5. no note, arrow or bracket can plausibly be mistaken for an exact drainage coordinate or profile.
+- the controlled DRW-07 roof remains legible and unchanged beneath the analytical layer;
+- the perimeter collection/failure territory and four outward directions read immediately;
+- courtyard **PRIMARY** and **EMERGENCY** consequences remain distinct;
+- the inspection bracket reads as analytical territory rather than pipework;
+- the explicit absence note prevents the provisional marks from masquerading as hydraulic geometry.
 
-After review, exact accepted SVG bytes are committed and deterministic regeneration is locked. DRW-10F retains analytical-family plate/physical proof.
+The review found no architectural or renderer defect requiring a source change. The only failed regression was an over-broad test predicate that counted two explanatory text nodes alongside the intended twelve arrow line primitives; the assertion was narrowed to line primitives without altering drawing semantics.
+
+The accepted generated SVG is now tracked at `docs/reference-house/publication-roof-water-failure-overlay.svg`. The freeze workflow stages the generated file before comparing it, so a newly generated untracked SVG cannot be mistaken for a clean byte match.
+
+DRW-10F retains analytical-family plate/physical proof.
 
 ## Files
 
@@ -89,11 +93,8 @@ After review, exact accepted SVG bytes are committed and deterministic regenerat
 - `compiler/reference-house/publication-roof-water-failure.test.ts`
 - `compiler/reference-house/generate-publication-roof-water-failure-overlay.ts`
 - `.github/workflows/drw-roof-water-failure-candidate.yml`
-
-Candidate output:
-
 - `docs/reference-house/publication-roof-water-failure-overlay.svg`
 
 ## Next
 
-After reviewed-byte freeze, exact-head validation and merge: **DRW-10D — external-maintenance / setting overlay**.
+After final exact-head validation and merge: **DRW-10D — external-maintenance / setting overlay**.
