@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # DRW-10B — service / maintenance-geography overlays
 
 **Status:** IMPLEMENTED — candidate generation / architectural review pending  
