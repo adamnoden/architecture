@@ -59,7 +59,7 @@ const spaceOverlay = (
   levelId: LevelId,
   spaceId: string,
   project: ReturnType<typeof createPlanPaperProjection>,
-  role: 'plant-host' | 'wet-host' | 'distribution-host',
+  role: 'wet-host' | 'distribution-host',
   index: number
 ): DrawingRect[] => {
   const space = result.derived.spaces.find((candidate) => candidate.levelId === levelId && candidate.id === spaceId)
@@ -74,11 +74,9 @@ const spaceOverlay = (
   return space.boxes.map((box, boxIndex) => rect(
     `service-${levelId.toLowerCase()}-${role}-${index}-${boxIndex}`,
     project.rect(box),
-    role === 'plant-host'
-      ? { stroke: 'profile', fill: 'context', metadata }
-      : role === 'wet-host'
-        ? { stroke: 'primary', fill: 'faint', metadata }
-        : { stroke: 'secondary', dash: 'provisional', metadata }
+    role === 'wet-host'
+      ? { stroke: 'primary', metadata }
+      : { stroke: 'secondary', dash: 'provisional', metadata }
   ))
 }
 
@@ -125,25 +123,37 @@ export const createGroundServiceMaintenanceOverlayScene = (
     throw new Error('DRW-10B ground substrate no longer matches the frozen ground publication plan.')
   }
   const project = baseProjection(result)
-  const plant = new Set(source.ground.plantHostSpaceIds.value)
   const overlay: DrawingPrimitive[] = []
 
-  source.ground.plantHostSpaceIds.value.forEach((id, index) => overlay.push(...spaceOverlay(result, 'GROUND', id, project, 'plant-host', index)))
-  source.ground.wetHostSpaceIds.value.filter((id) => !plant.has(id)).forEach((id, index) => overlay.push(...spaceOverlay(result, 'GROUND', id, project, 'wet-host', index)))
-  source.ground.distributionHostSpaceIds.value.filter((id) => !plant.has(id)).forEach((id, index) => overlay.push(...spaceOverlay(result, 'GROUND', id, project, 'distribution-host', index)))
-  overlay.push(...riserOverlay(source, project, 'ground'))
+  source.ground.wetHostSpaceIds.value.forEach((id, index) => overlay.push(...spaceOverlay(result, 'GROUND', id, project, 'wet-host', index)))
+  source.ground.distributionHostSpaceIds.value.forEach((id, index) => overlay.push(...spaceOverlay(result, 'GROUND', id, project, 'distribution-host', index)))
 
-  const plantSpace = result.derived.spaces.find((space) => space.levelId === 'GROUND' && plant.has(space.id))
-  if (!plantSpace) throw new Error('DRW-10B ground plant host is unavailable.')
+  const plant = source.ground.plant.value
+  const plantBox = {
+    x: plant.x0,
+    y: plant.y0,
+    width: plant.x1 - plant.x0,
+    height: plant.y1 - plant.y0
+  }
+  const plantCentre = project.point(plant.x0 + plantBox.width / 2, plant.y0 + plantBox.height / 2)
   overlay.push(
-    text(
-      'service-ground-plant-label',
-      project.point(plantSpace.bounds.x + plantSpace.bounds.width / 2, plantSpace.bounds.y + plantSpace.bounds.height / 2),
-      'PLANT / ISOLATION',
-      'marker',
-      'middle',
-      { overlay: 'service-maintenance-geography', role: 'plant-working-and-isolation-hub' }
-    ),
+    rect('service-ground-plant-zone', project.rect(plantBox), {
+      stroke: 'profile',
+      dash: 'provisional',
+      metadata: {
+        overlay: 'service-maintenance-geography',
+        role: 'plant-host',
+        space: plant.id,
+        geometry: 'selected-plant-zone-not-product-packing',
+        authority: source.ground.plant.authority,
+        plantPacking: source.technicalAbsences.plantPacking
+      }
+    }),
+    text('service-ground-plant-label', { x: plantCentre.x, y: plantCentre.y - 1.2 }, 'PLANT / ISOLATION', 'marker', 'middle', {
+      overlay: 'service-maintenance-geography',
+      role: 'plant-working-and-isolation-hub'
+    }),
+    ...riserOverlay(source, project, 'ground'),
     text(
       'service-ground-note',
       { x: 8, y: 133 },
@@ -179,13 +189,12 @@ export const createFirstServiceMaintenanceOverlayScene = (
     throw new Error('DRW-10B first-floor substrate no longer matches the frozen first-floor publication plan.')
   }
   const project = baseProjection(result)
-  const wet = new Set(source.first.wetHostSpaceIds.value)
   const overlay: DrawingPrimitive[] = []
 
   source.first.wetHostSpaceIds.value.forEach((id, index) => overlay.push(...spaceOverlay(result, 'FIRST', id, project, 'wet-host', index)))
-  source.first.distributionHostSpaceIds.value.filter((id) => !wet.has(id)).forEach((id, index) => overlay.push(...spaceOverlay(result, 'FIRST', id, project, 'distribution-host', index)))
-  overlay.push(...riserOverlay(source, project, 'first'))
+  source.first.distributionHostSpaceIds.value.forEach((id, index) => overlay.push(...spaceOverlay(result, 'FIRST', id, project, 'distribution-host', index)))
   overlay.push(
+    ...riserOverlay(source, project, 'first'),
     text(
       'service-first-note',
       { x: 8, y: 133 },
