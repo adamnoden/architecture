@@ -76,7 +76,7 @@ The accepted candidate passes the packet test:
 
 The accepted SVG is tracked at `docs/reference-house/publication-external-maintenance-setting-overlay.svg`. The freeze workflow stages the generated file before byte comparison, so newly generated output cannot be mistaken for a clean tracked match.
 
-After the first exact-head pass, `main` advanced from the DRW-10C merge to DPL-02. The intervening change adds only `project/dpl/dpl-02-reference-house-conformance.md`; it is path-disjoint from DRW-10D. The exact current `main` tree was therefore merged into this branch without altering the accepted drawing bytes, and the combined head is revalidated before merge.
+During final validation `main` advanced twice beyond the DRW-10C merge: DPL-02 added `project/dpl/dpl-02-reference-house-conformance.md`, then DPL-03 added `project/dpl/dpl-03-assurance-result-semantics.md`. Both changes are path-disjoint from DRW-10D. Each exact current-main tree was merged into this branch without altering the accepted drawing bytes; the combined head is revalidated before merge.
 
 DRW-10F retains family-level physical plate proof.
 
