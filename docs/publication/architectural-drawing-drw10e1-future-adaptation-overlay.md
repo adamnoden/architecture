@@ -1,7 +1,7 @@
 <!-- nav-exclude: redirect -->
 # DRW-10E.1 — Entrance-storey future-adaptation overlay
 
-**Status:** bounded analytical overlay; publication candidate pending physical review
+**Status:** physically reviewed, byte-frozen analytical overlay
 
 ## Question
 
@@ -11,7 +11,7 @@ Can the retained entrance-storey future-adaptation view explain the house's one-
 
 Yes, but only as an architectural-geography overlay on the canonical ground-floor plan at true 1:100.
 
-The view may identify only:
+The view identifies only:
 
 - `G-FAM-02` as a **provisional fallback sleeping option / topological capability**;
 - `G-HALL-02` and `G-GAL-01` as existing **one-level all-weather route territory**, not a route centreline or clear-width proof;
@@ -27,7 +27,7 @@ Machine-readable selection and absences live in `compiler/reference-house/public
 
 ## Representation boundary
 
-The overlay must not add:
+The overlay adds no:
 
 - bed or furniture geometry;
 - route centrelines or claimed finished clear widths;
@@ -36,18 +36,31 @@ The overlay must not add:
 - exact sanitary subdivision;
 - drainage, controls, support or dry-staging geometry;
 - site-bound approach geometry;
-- any statement of Part M compliance.
+- statement of Part M compliance.
 
 It therefore uses whole already-owned host-space fields only. The canonical ground-plan scene is reused unchanged underneath.
 
+## Physical review and byte lock
+
+The accepted candidate was reviewed at the intended 1:100 drawing size after reconciliation onto exact `main` `7646cd6a21ae4d1108a720d0471b79f49b1848d3` in merge head `c9ce173354b756c9ed55a10d36d3a2c4b19a28c9`.
+
+The reconciled candidate was byte-identical to the visually accepted candidate:
+
+- file: `docs/reference-house/publication-future-adaptation-overlay.svg`
+- SHA-256: `0321309e9388ae71f9c6b40b46da2f83667f0d11f2efa1ad19b02290cd00bd84`
+- size: 19,109 bytes
+
+The reviewed bytes were then committed by the freeze workflow at `210a38f6db7b6ec945d77c159d77ef145e7aba07`. A deterministic artifact regression requires the committed SVG to equal the canonical renderer output exactly.
+
 ## Validation
 
-Completion requires:
+Completion requires and records:
 
 1. semantic tests proving the selected spaces, provenance and explicit absences;
 2. regression proof that the canonical ground-plan primitives remain unchanged;
 3. deterministic controlled SVG regeneration;
 4. actual physical review at the intended 1:100 publication size;
-5. family-level reconciliation in DRW-10F.
+5. committed-byte equality with the canonical render;
+6. family-level reconciliation in DRW-10F.
 
 This packet does not prove that a future accessible sleeping/bathing suite can be delivered without further design. It proves only that the current architectural topology preserves a bounded adaptation framework worth communicating.
