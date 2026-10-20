@@ -1,7 +1,7 @@
 <!-- nav-exclude: redirect -->
 # DRW-10D — external-maintenance / setting overlay
 
-**Status:** CANDIDATE IMPLEMENTED — architectural review pending  
+**Status:** REVIEWED + BYTE-FROZEN — final exact-head validation pending  
 **Programme:** DRW  
 **Parent:** #154
 
@@ -41,9 +41,11 @@ The complete DRW-08E 1:200 synthetic-setting scene is copied unchanged as the su
 
 No line primitive is added by the analytical layer. Rear logistics therefore remains a qualitative/open-ended relationship rather than acquiring a fictional route centreline.
 
+The capacity territories are unfilled provisional outlines rather than solid bands. That keeps the DRW-08E substrate visually primary while still making the maintenance reading explicit.
+
 ## Hard boundary
 
-The overlay must not draw or infer:
+The overlay does not draw or infer:
 
 - legal/front/rear boundaries or plot depth;
 - road/highway line or neighbour geometry;
@@ -55,20 +57,26 @@ The overlay must not draw or infer:
 - actual drains/chambers;
 - exact maintenance route centreline.
 
-The shaded side bands are **gross capacity**, not proof that a particular scaffold, tower or ASHP arrangement fits. The courtyard shade is **working territory**, not a selected tower setup.
+The side territories are **gross capacity**, not proof that a particular scaffold, tower or ASHP arrangement fits. The courtyard outline is **working territory**, not a selected tower setup.
 
-## Candidate review protocol
+## Architectural review result
 
-The candidate is generated in CI before any byte freeze. Architectural acceptance requires:
+Three generated candidates were inspected at rendered output.
 
-1. the left/right side capacities and courtyard working area read immediately;
-2. the controlled house/court and DRW-08E uncertainty remain more authoritative than the analytical shading;
-3. the east strip reads as a valuable shared service/access territory, not as a plant footprint;
-4. the drawing does not imply a bounded rear garden or exact logistics route;
-5. site/temporary-works absences remain unmistakable;
-6. the paired relationship with the unmodified DRW-08E synthetic setting remains suitable for the frozen DRW-02E `PLATE_PAIR`.
+The first was semantically correct but visually too forceful: solid grey capacity fills dominated the controlled substrate and the right-hand analytical legend collided with the existing east-side ≈1.75 m annotation. The second removed the fills and moved/shortened the legend, but the vertical side labels still crossed the inherited garden → dining → court note. The third moved those labels clear while changing no authority or geometry.
 
-After visual review, accepted SVG bytes will be tracked and deterministic regeneration locked. DRW-10F retains family-level physical plate proof.
+The accepted candidate passes the packet test:
+
+1. west/east side capacities and courtyard working area read immediately;
+2. the controlled house/court and DRW-08E uncertainty remain visually primary;
+3. the east strip reads as shared service/access capacity, not a plant footprint;
+4. rear logistics remains explicitly open-ended with no analytical route line;
+5. site and temporary-works absences are visible in the right-hand legend;
+6. the drawing remains a natural analytical partner for the unmodified DRW-08E setting in the frozen `PLATE_PAIR`.
+
+The accepted SVG is tracked at `docs/reference-house/publication-external-maintenance-setting-overlay.svg`. The freeze workflow stages the generated file before byte comparison, so newly generated output cannot be mistaken for a clean tracked match.
+
+DRW-10F retains family-level physical plate proof.
 
 ## Files
 
@@ -77,11 +85,8 @@ After visual review, accepted SVG bytes will be tracked and deterministic regene
 - `compiler/reference-house/publication-external-maintenance.test.ts`
 - `compiler/reference-house/generate-publication-external-maintenance-overlay.ts`
 - `.github/workflows/drw-external-maintenance-candidate.yml`
-
-Candidate output:
-
 - `docs/reference-house/publication-external-maintenance-setting-overlay.svg`
 
 ## Next
 
-After reviewed-byte freeze, exact-head validation and merge: **DRW-10E — decide whether a separate spatial / sectional-hierarchy drawing still earns a place**.
+After final exact-head validation and merge: **DRW-10E — decide whether a separate spatial / sectional-hierarchy drawing still earns a place**.
