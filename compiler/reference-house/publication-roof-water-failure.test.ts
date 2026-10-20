@@ -52,3 +52,16 @@ test('DRW-10C keeps technical water-management geometry absent', () => {
   assert.equal(scene.primitives.some((primitive) => primitive.id.includes('rwp-coordinate')), false)
   assert.equal(scene.primitives.some((primitive) => primitive.id.includes('drain-centreline')), false)
 })
+
+test('DRW-10F keeps roof-failure absence notes clear of the inherited scale bar', () => {
+  const scene = createRoofWaterFailureOverlayScene()
+  const absenceNotes = scene.primitives.filter(
+    (primitive) => primitive.kind === 'text' && primitive.id.startsWith('failure-absence-')
+  )
+
+  assert.equal(absenceNotes.length, 4)
+  assert.ok(absenceNotes.every((primitive) => primitive.kind === 'text' && primitive.x >= 134))
+  assert.ok(absenceNotes.some((primitive) => primitive.kind === 'text' && primitive.value === 'no internal outlet'))
+  assert.ok(absenceNotes.some((primitive) => primitive.kind === 'text' && primitive.value === 'no hidden court gutter'))
+  assert.ok(absenceNotes.some((primitive) => primitive.kind === 'text' && primitive.value === 'no sizing / coordinates'))
+})
