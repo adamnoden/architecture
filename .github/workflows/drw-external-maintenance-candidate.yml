@@ -1,4 +1,4 @@
-name: Generate DRW external maintenance candidate
+name: Freeze reviewed DRW external maintenance overlay
 
 on:
   pull_request:
@@ -10,16 +10,18 @@ on:
       - '.github/workflows/drw-external-maintenance-candidate.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
-  group: drw-external-maintenance-candidate-${{ github.event.pull_request.number || github.ref }}
+  group: drw-external-maintenance-freeze-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 jobs:
-  candidate:
+  freeze:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout PR head
         uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Setup Node
         uses: actions/setup-node@v7
         with:
@@ -27,9 +29,9 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
-      - name: Generate candidate SVG
+      - name: Generate reviewed SVG
         run: npx tsx compiler/reference-house/generate-publication-external-maintenance-overlay.ts
-      - name: Verify candidate semantics
+      - name: Verify reviewed semantics
         run: |
           test -s docs/reference-house/publication-external-maintenance-setting-overlay.svg
           grep -q 'data-view-id="REFERENCE-HOUSE-EXTERNAL-MAINTENANCE-SETTING-OVERLAY"' docs/reference-house/publication-external-maintenance-setting-overlay.svg
@@ -38,7 +40,19 @@ jobs:
           grep -q 'east-service-access-capacity-not-equipment-clearance' docs/reference-house/publication-external-maintenance-setting-overlay.svg
           grep -q 'courtyard-working-area-not-tower-footprint' docs/reference-house/publication-external-maintenance-setting-overlay.svg
           grep -q 'ABSENT_TECHNICAL' docs/reference-house/publication-external-maintenance-setting-overlay.svg
-      - name: Upload candidate SVG
+      - name: Freeze reviewed bytes
+        if: github.event_name == 'pull_request'
+        run: |
+          git add docs/reference-house/publication-external-maintenance-setting-overlay.svg
+          if git diff --cached --quiet -- docs/reference-house/publication-external-maintenance-setting-overlay.svg; then
+            echo 'Controlled SVG already matches canonical generation.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'DRW-10D: freeze reviewed external maintenance overlay'
+          git push origin HEAD:${{ github.head_ref }}
+      - name: Upload reviewed SVG
         uses: actions/upload-artifact@v6
         with:
           name: drw-10d-external-maintenance-candidate
