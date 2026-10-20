@@ -1,0 +1,46 @@
+name: Generate DRW future-adaptation overlay candidate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/reference-house/publication-future-adaptation*.ts'
+      - 'compiler/reference-house/generate-publication-future-adaptation-overlay.ts'
+      - 'docs/publication/architectural-drawing-drw10e1-future-adaptation-overlay.md'
+      - '.github/workflows/drw-future-adaptation-overlay-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drw-future-adaptation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Generate candidate SVG
+        run: npx tsx compiler/reference-house/generate-publication-future-adaptation-overlay.ts
+      - name: Verify bounded adaptation semantics
+        run: |
+          test -s docs/reference-house/publication-future-adaptation-overlay.svg
+          grep -q 'data-scale-denominator="100"' docs/reference-house/publication-future-adaptation-overlay.svg
+          grep -q 'data-overlay="future-adaptation"' docs/reference-house/publication-future-adaptation-overlay.svg
+          grep -q 'M4(2)-informed comparator; no compliance claim' docs/reference-house/publication-future-adaptation-overlay.svg
+          grep -q 'Framework, not accessible-suite proof' docs/reference-house/publication-future-adaptation-overlay.svg
+          ! grep -qi 'turning-circle\|bed-clearance\|wc-fixture\|shower-tray\|route-centreline' docs/reference-house/publication-future-adaptation-overlay.svg
+      - name: Upload candidate SVG
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-10e1-future-adaptation-candidate
+          path: docs/reference-house/publication-future-adaptation-overlay.svg
+          if-no-files-found: error
+          retention-days: 30
