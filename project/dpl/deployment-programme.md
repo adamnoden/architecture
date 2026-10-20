@@ -2,112 +2,203 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Programme state:** framed; DPL-01 is the first authorised packet  
-**Planning baseline:** `c0c12629ec21befc68cef778396b7bad51207bb7`
+**Foundation gate:** [#344 — DPL-FR — foundation coherence review gate](https://github.com/adamnoden/architecture/issues/344)  
+**Programme state:** foundation developed and coherence-reviewed; Wave A authorised after DPL-FR merge  
+**Foundation baseline:** `e581d18db732a8bd6ae9a10a967cf038ce5459eb`
 
 ## Purpose
 
-Ovid’s House currently separates general architectural doctrine from the coordinated Reference House, and the computational workstream deliberately refuses to claim whole-building technical or regulatory adequacy beyond its bounded proof families.
-
-DPL establishes the next layer: the machinery required to ask whether the Reference House can be deployed honestly onto real land under a declared jurisdiction and planning context.
+DPL establishes the machinery required to ask whether the controlled Ovid’s House Reference House can be deployed honestly onto real land under declared external normative contexts without confusing architectural authorship, site evidence, law/policy, compiler proof or professional judgement.
 
 The end-state question is:
 
-> **Can the Ovid’s House Reference House be deployed on this real residential plot without violating its doctrine, architectural identity, applicable hard constraints or known site facts?**
+> **Can this controlled Reference House revision be deployed on this site, under this exact target composition and evidence state, while preserving its architectural identity and satisfying every obligation due for the requested assurance profile?**
 
-The answer may be **yes**, **no**, or **unresolved pending named evidence**. All three are legitimate outcomes.
+The legitimate top-level answers are:
 
-DPL is not a generic house generator, not a Building Regulations product and not a substitute for planning permission, specialist engineering or competent statutory review.
+- `COMPATIBLE`;
+- `UNRESOLVED`;
+- `INCOMPATIBLE`;
+
+always qualified by the exact deployment case and assurance profile.
+
+DPL is not:
+
+- a generic house generator;
+- a Building Regulations product;
+- a planning-permission predictor;
+- a substitute for competent engineering, legal, planning or statutory review;
+- permission to mutate the Reference House until any plot passes.
 
 ## Governing proposition
 
 > **The doctrine says what we believe.**  
 > **The Reference House demonstrates it.**  
-> **The Reference Site makes the demonstration concrete.**  
-> **The target stack introduces the world of rules.**  
-> **The real site introduces reality.**  
-> **The site interface absorbs legitimate difference.**  
-> **The compiler prevents us from lying to ourselves.**
+> **The Reference Site makes one deployment demonstration concrete.**  
+> **The target composition introduces external normative authority.**  
+> **The site manifest records what we presently claim to know or assume about the site.**  
+> **The site interface absorbs only legitimate land/building variation.**  
+> **The compiler evaluates admitted representations and exposes unresolved obligations.**
 
-The core architectural rule is:
+Two rules govern the programme:
 
 > **Compatibility before adaptation.**
 
-A plot is not automatically entitled to deform the Reference House. If deployment would require changes that destroy the house’s architectural identity or violate controlled doctrine, the correct result is incompatibility rather than a progressively mutated “fit”.
+and:
 
-This preserves an existing Ovid’s House position: adaptability belongs where change is useful, while principal rooms, structural order, stairs, openings, axes, proportions and other defining architectural relationships may remain deliberately permanent.
+> **The compiler evaluates architecture; it does not silently author it.**
 
-## System model
+A site is not entitled to deform the Reference House. Where deployment would require an unauthorised change to controlled architectural identity or protected order, the correct result is a compatibility problem or an explicit upstream Reference House rewind.
 
-The programme is built around distinct objects rather than one undifferentiated “site-compliant house”.
+## Canonical authority model
+
+DPL-01 through DPL-06 freeze the following model:
 
 ```text
-HOUSE KERNEL
-    +
+OVID'S HOUSE ARCHITECTURAL PROPOSITION
+        +
+SELECTED PATTERNS / GRAMMAR / PROJECT DECISIONS
+        ↓
 REFERENCE HOUSE
-    +
-TARGET STACK
-    +
-SITE MANIFEST
-    +
-EVIDENCE
-    +
-SCENARIOS
-    ↓
-COMPILER
-    ↓
-DEPLOYMENT RESULT
+controlled authored architecture
+        │
+        │             REAL / REFERENCE SITE
+        │                    ↓
+        │          SITE EVIDENCE / ASSUMPTIONS
+        │                    ↓
+        │               SITE CLAIMS
+        │                    ↓
+        │               SITE MANIFEST
+        │
+        │        EXTERNAL NORMATIVE SOURCES
+        │                    ↓
+        │          COMPILER TARGET SNAPSHOTS
+        │                    ↓
+        │        TARGET COMPOSITION MANIFEST
+        │
+        │              PROJECT SCENARIOS
+        │                    │
+        └────────────┬───────┴───────────────┐
+                     ↓                       │
+              DEPLOYMENT CASE                │
+                     │                       │
+          architectural authoring            │
+                     ↓                       │
+            DEPLOYMENT CANDIDATE              │
+                     │                       │
+                     └────────┬──────────────┘
+                              ↓
+                         HOUSE KERNEL
+                 admitted formal representation
+                              ↓
+                    METAMORPH COMPILER
+                              ↓
+                OBLIGATIONS + EVIDENCE STATE
+                              ↓
+             COMPATIBLE / UNRESOLVED /
+                   INCOMPATIBLE
+             @ exact assurance profile
 ```
 
-The final semantics of these objects are owned by DPL-01. Until that packet closes, the following are working meanings only.
+The diagram is an authority model, not a claim that every arrow is already implemented.
 
-### House Kernel / doctrine
+## Architectural authority
 
-The general Ovid’s House architectural position. It should remain useful beyond one plot, one borough and one regulatory snapshot.
+### Ovid’s House architectural proposition / doctrine
+
+The manuscript and governing-principle authority own the architectural claims the project is prepared to defend.
+
+House Kernel is **not** a synonym for doctrine.
+
+A site-specific or jurisdiction-specific constraint may affect a project without becoming Ovid’s House doctrine.
+
+### House Kernel
+
+House Kernel is the narrower formal architectural/computational system used where selected facts, relationships, invariants, obligations and proof boundaries can legitimately be explicit.
+
+It may represent architectural commitments; representation does not transfer ownership of those commitments to the computational system.
 
 ### Reference House
 
-The authored architectural integration fixture that demonstrates the doctrine as a coherent house. It is not presumed to be infinitely deformable.
+The Reference House is one controlled, authored architectural integration fixture.
 
-### Reference Site
+It is not:
 
-A downstream synthetic but plausible site used to make hidden site assumptions explicit and to produce one canonical integrated specimen. It is not a claim that one “typical London plot” represents London.
+- a universal house;
+- a compiler output;
+- an infinitely deformable parametric family;
+- proof that every plot should accept its geometry.
 
-### Real site
+DPL-02 freezes a conformance contract over a specific controlled Reference House revision.
 
-An actual candidate plot whose known facts, unknowns and evidence are represented through a site manifest.
+## Reference House conformance
 
-### Site manifest
+The five DPL-02 classes are:
 
-The controlled representation of site facts and unknowns: geometry, levels, orientation, neighbours, trees, ground, drainage, utilities, access, title/private constraints, designations, construction logistics and other relevant conditions.
+1. **identity invariants** — categorical conditions whose loss creates another architectural proposition;
+2. **protected order** — earned current design decisions that are not deployment parameters;
+3. **permitted discrete variants** — bounded alternatives already licensed by current authority;
+4. **site-interface freedoms** — land/building relationships intentionally left site-dependent;
+5. **implementation freedoms / open detail** — bounded product/engineering/detail choices that do not alter architectural identity.
 
-### Target stack
+The governing conformance rule is:
 
-The versioned external rule environment against which deployment is evaluated. It is expected to carry jurisdiction, authority layers, building/use class, effective date, transitional basis, statutory requirements, guidance, standards and planning-policy layers without collapsing them into one category.
+> **Deployment freedoms are opt-in.**
 
-### Evidence
+A plausible redesign is not automatically an authorised deployment variant.
 
-Survey, calculation, certification, specialist report, product data, statutory source or other material required to support an obligation or result. Evidence must retain source, date, scope and applicability.
+A failed candidate does not itself prove site incompatibility. `INCOMPATIBLE` requires a blocking condition plus exhaustion of the relevant admitted conformance-preserving routes, or a failure invariant across them.
 
-### Scenario
+## Real site and site manifest
 
-A declared non-statutory or project-selected condition against which the design is deliberately tested, such as future climate, utility outage, ageing occupants or credible failure states.
+The real site exists independently of the repository and can never be assumed to be exhaustively captured by a model.
 
-### Deployment result
+DPL-06 defines the **site manifest** as an immutable, versioned site-state snapshot containing evidence-backed site claims, explicit unknowns and explicit assumptions.
 
-The structured output that identifies proved conditions, failures, unknowns, missing evidence, judgement-dependent matters, legitimate site adaptations, conformance status and unresolved obligations.
+A consequential site claim should preserve, where material:
 
-### Deployed instance
+- stable identity;
+- subject/entity;
+- proposition or value;
+- unit/reference frame;
+- spatial scope;
+- temporal/source scope;
+- epistemic basis;
+- evidence references;
+- assumptions/dependencies;
+- supersession/contradiction state;
+- relevant source limitations.
 
-A site-conditioned implementation that remains inside the Reference House conformance contract.
+Unknown is first-class.
 
-### Deployment envelope
+Missing does not mean false, zero, safe or not applicable.
 
-The empirically derived class of sites onto which the Reference House can deploy without ceasing to be itself. The envelope should be learned from canonical and real-plot trials rather than invented before evidence exists.
+Assumptions are explicit provisional dependencies with replacement evidence and invalidation consequences; they are not weak facts.
 
-## The site as a designed interface
+The manifest must not contain derived normative conclusions such as:
 
-DPL extends the project’s interface logic one level outward:
+- “planning compliant”;
+- “Reference House compatible”;
+- “buildable envelope”;
+- “foundation type required”;
+- “acceptable overlooking”;
+- “suitable for development”.
+
+Those belong to downstream evaluation, architectural authoring or external determination.
+
+## Reference Site
+
+The Reference Site is a future synthetic, explicitly authored site fixture used to make hidden site assumptions concrete for one canonical deployment exercise.
+
+It may use the DPL-06 manifest structure, but its provenance must remain synthetic/assumed rather than surveyed or observed.
+
+It is not evidence for a statistically typical London plot.
+
+Real-plot trials later determine the empirical deployment envelope.
+
+## Site interface
+
+DPL extends the project’s existing interface logic one level outward:
 
 ```text
 LAND / SITE
@@ -117,328 +208,368 @@ DESIGNED SITE INTERFACE
 REFERENCE HOUSE
 ```
 
-The future site interface should absorb legitimate differences between plots while preserving the enduring architecture. Candidate responsibilities include:
+DPL-08 will define the exact boundary.
+
+Likely responsibilities include:
 
 - foundation/geotechnical response;
-- finished ground levels and local transitions;
+- local finished levels and approach transitions;
 - perimeter dry-zone integration;
-- foul and surface-water connection;
-- incoming utility routes;
-- external approach and step-free transition;
+- below-ground foul/surface-water connection;
+- incoming utility routing outside controlled building geography;
+- step-free/entrance approach conditions;
 - retaining conditions;
-- selected external servicing;
-- landscape/building drainage junctions;
-- construction interfaces where they materially affect deployability.
+- selected external servicing and landscape/building junctions.
 
-The exact boundary is not frozen by this programme-control document. It is owned downstream by DPL-08 after the conformance, site and Reference Site foundations exist.
+A site-interface freedom is not a universal adapter. If the site cannot be resolved without crossing DPL-02 protected order, deployment must reject or explicitly reopen architecture.
 
-## Authority model
+## External normative authority and target composition
 
-DPL must keep separate categories that are often casually collapsed.
+A compiler target retains the existing computational definition:
 
-### Ovid’s House authority
+> **A named, immutable, versioned representation of the external normative environment against which defined claims are compiled.**
 
-- doctrine / House Kernel;
-- Reference House decisions;
-- controlled project-selected performance targets;
-- scenarios and design tests.
+DPL-05 freezes the deployment-level **target stack** as a human-facing name for an immutable **target composition manifest** over a typed graph of independently versioned target snapshots.
 
-### External normative authority
+It is not an ordered inheritance stack.
 
-- statute / legal requirements;
-- Building Regulations requirements;
-- official compliance guidance;
-- British/other referenced standards;
-- national, strategic and local planning policy;
-- other external technical guidance where relevant.
+No precedence may be inferred from:
 
-### Site evidence
+- array/list order;
+- geographic nesting;
+- “more local” status;
+- publication recency.
 
-- measured survey;
-- title/private-law evidence;
-- utilities and sewer records;
-- arboricultural, geotechnical, flood, contamination or other specialist evidence;
-- observed/verified context conditions.
+Any precedence, supplementation, supersession or incorporation relation must be grounded in the actual external authority system.
 
-### Human/professional judgement
+Initial target families include conceptually:
 
-Some planning, engineering, architectural and statutory matters remain judgement-dependent. The compiler may expose the question, inputs and evidence requirement; it must not impersonate an approval authority or professional opinion.
+- `BUILDING_CONTROL` — initial jurisdiction: England;
+- `STRATEGIC_PLANNING` — initial strategic context: Greater London;
+- `LOCAL_PLANNING` — a selected London borough/local layer where actually relevant.
 
-## Initial geographic posture
+Building control and planning remain distinct authority systems even when both constrain one deployment case.
 
-The initial deployment context is expected to be:
+## Target identity and time
 
-- **Building-regulation jurisdiction:** England;
-- **Strategic planning context:** Greater London;
-- **Local planning layer:** a London borough target selected downstream;
-- **Building type:** new detached dwelling, subject to DPL-05 confirmation of how type/class belongs in the target stack.
+“England”, “London” or “2026” are not sufficient target identities.
 
-These are implementation targets, not universal doctrine.
+DPL preserves four independent version identities:
 
-The publication should eventually signal this clearly but quietly. DPL does not authorise repeated UK/England badges or turn the book into a jurisdiction manual.
+1. external source/source-snapshot version;
+2. target-model version;
+3. method-implementation version;
+4. target-composition version.
 
-## Temporal/version discipline
+A corrected compiler method does not imply that the law changed.
 
-“England” and “London” are not sufficient target identities by themselves.
+A better target interpretation does not imply that the source changed.
 
-External rules change. Transitional provisions can mean two projects submitted or commenced at different times legitimately use different technical regimes. Planning policy also changes on a different timetable.
+Changing one constituent target changes composition identity without rewriting historical results.
 
-A target must therefore carry enough temporal identity to reproduce what rules were believed applicable to a given compile. Later target updates must not silently rewrite the historical meaning of an earlier deployment result.
+Target applicability may legitimately remain conditional on future project events, including transitional conditions. Unknown applicability fails closed when the distinction is due for the requested assurance profile.
 
-## Result and assurance discipline
+## Site facts and target applicability
 
-DPL must expose heterogeneous conclusions rather than compress them into a seductive scalar score.
-
-Candidate result states, to be tested and frozen by DPL-03, include:
-
-`PROVED / FAIL / UNKNOWN / EVIDENCE REQUIRED / JUDGEMENT REQUIRED / NOT APPLICABLE`
-
-Likewise, Reference House conformance should report explicit preserved invariants, permitted variants, site packages and non-conforming changes rather than “94% retained” or similar pseudo-precision.
-
-Examples of the intended distinction:
+The canonical relationship is:
 
 ```text
-stair geometric criterion          PROVED
-structural foundation capacity     EVIDENCE REQUIRED
-flood policy applicability         PROVED / NOT APPLICABLE
-neighbour daylight effect          ASSESSMENT REQUIRED
-local character response           JUDGEMENT REQUIRED
-Reference House principal axis     PRESERVED
-principal room depth change        NON-CONFORMING
+SITE CLAIM
+    ↓
+TARGET APPLICABILITY / METHOD
+    ↓
+OBLIGATION
+    ↓
+RESULT
 ```
 
-The final vocabulary and precedence rules belong to DPL-03.
+Not:
 
-## Compilation maturity
+```text
+SITE MANIFEST
+  planningCompliant = true
+  regulationRequired = false
+```
 
-Deployment is progressively evidenced rather than magically known at one moment.
+Site/project facts remain outside targets. Targets provide the normative conditions that act on those facts.
 
-Candidate stages, to be tested by DPL-04, are:
+## Obligations, evidence and result semantics
 
-1. **screening**;
-2. **feasibility**;
-3. **planning**;
-4. **technical design**;
-5. **construction**;
-6. **commissioned / as-built**.
+DPL reuses the existing House Kernel / Metamorph Compiler evidence architecture.
 
-An early land listing may support only approximate plot geometry and access. Later work may add title evidence, topo survey, arboriculture, utility records, drainage, geotechnics, specialist calculations, product evidence and commissioning results.
+### Obligation result
 
-The same site can therefore compile several times with different legitimate claim boundaries. Unknowns remain first-class rather than being silently defaulted.
+Canonical conceptual states remain:
 
-DPL compilation maturity is not the project-wide M1–M5 maturity system and must not be presented as such.
+- `PASS`;
+- `EXTERNALLY_DISCHARGED`;
+- `FAIL`;
+- `UNSUPPORTED`;
+- `UNRESOLVED`;
+- `NOT_APPLICABLE`;
+- `WARNING`;
+- `SUPERSEDED`.
+
+DPL creates no competing low-level status enum.
+
+### Evidence lifecycle
+
+Evidence lifecycle remains separate:
+
+- `PLANNED`;
+- `PRESENT`;
+- `ACCEPTED`;
+- `REJECTED`;
+- `STALE`;
+- `SUPERSEDED`;
+- `WITHDRAWN`.
+
+### Method / authority
+
+Resolution may be native/deterministic, geometry/calculation based, accepted external evidence, professional determination, planning/statutory judgement, inspection/commissioning or explicitly unsupported.
+
+The method/authority remains visible even when the result is satisfactory.
+
+### Presentation phrases are not statuses
+
+“Evidence required” usually means an `UNRESOLVED` obligation with a known external evidence route.
+
+“Judgement required” usually means an `UNRESOLVED` obligation whose admitted method is a professional/planning/statutory determination.
+
+Neither phrase creates a new result status.
+
+## Deployment conclusion
+
+The only current top-level DPL conclusions are:
+
+- `COMPATIBLE`;
+- `UNRESOLVED`;
+- `INCOMPATIBLE`.
+
+Every conclusion is scoped to:
+
+- exact Reference House revision;
+- exact conformance-contract revision;
+- exact deployment candidate/case;
+- exact site-manifest identity;
+- exact target-composition identity;
+- exact evidence/source state;
+- exact deployment assurance profile.
+
+`COMPATIBLE` never means approved, built, universally suitable or physically verified.
+
+## Deployment assurance profiles
+
+DPL-04 freezes six **assurance profiles**, not project stages:
+
+1. `SCREENING`;
+2. `FEASIBILITY`;
+3. `PLANNING_CASE`;
+4. `TECHNICAL_DESIGN`;
+5. `CONSTRUCTION`;
+6. `COMMISSIONED_AS_BUILT`.
+
+A profile is a claim boundary. It determines which applicable blocking obligations are due now and which may legitimately remain future-due.
+
+Profiles are not:
+
+- project-wide M1–M5 maturity;
+- RIBA Plan of Work stages;
+- a procurement sequence;
+- a confidence score;
+- one irreversible progress counter.
+
+The same deployment case may be recompiled under later profiles as evidence matures.
+
+New evidence may rewind a previously positive result without making the earlier, narrower profile result dishonest.
+
+## Decision-critical acceleration
+
+A normally later obligation becomes due earlier where credible current evidence shows that resolving it is necessary to support the present land/project decision.
+
+A known red flag may not be hidden as “future-due” merely because its category normally matures later.
+
+This applies to issues such as severe ground risk, dominant tree constraints, sewer/easement conflicts, heritage/context blockers, impossible service access or other conditions capable of overturning the current decision.
 
 ## Deployability is broader than Building Regulations
 
-DPL must eventually have a place for conditions capable of making an otherwise coherent house undeployable or materially different, including:
+The DPL model has room for materially different constraint families including:
 
-- plot geometry and levels;
-- orientation and surrounding built form;
-- neighbour windows/amenity conditions;
-- trees;
-- geotechnics and groundwater;
-- flood, ground gas and contamination where relevant;
-- foul and surface-water drainage;
+- physical plot geometry and levels;
+- neighbouring/context conditions;
+- trees and ecology;
+- geotechnics, groundwater, contamination and ground gas;
+- flood/water/drainage conditions;
 - utilities and capacity;
 - street/access conditions;
-- fire/service access where applicable;
-- construction logistics and working space;
-- heritage/environmental designations;
-- title constraints, easements and covenants;
-- Party Wall and boundary relationships where relevant;
-- planning policy and local judgement;
-- specialist engineering and product evidence;
-- cost/viability where explicitly treated as a project constraint.
+- construction logistics;
+- heritage/administrative designations;
+- title/private constraints, easements and covenants;
+- Party Wall / boundary relationships where relevant;
+- planning policy and judgement;
+- specialist engineering/product evidence;
+- explicit project cost/viability constraints where chosen.
 
-These are not one rule family. Their commonality is only that real deployment cannot honestly erase them.
+These are not one ruleset. DPL’s job is to preserve their distinct authority while allowing them to constrain one deployment case.
 
-## Programme decomposition
+## Initial geographic posture
 
-DPL is intentionally split into small dependency-linked issues. The foundation set is open now; downstream issues are recorded here but must not be opened automatically.
+The first implementation context is:
 
-### Foundation set — open
+- **building-control jurisdiction:** England;
+- **strategic planning context:** Greater London;
+- **local planning layer:** a selected London borough/local target where applicable;
+- **project class:** a new detached dwelling, subject to the actual DPL-09/DPL-10 applicability model.
 
-#### [DPL-01 — deployment ontology and governing model](https://github.com/adamnoden/architecture/issues/300)
+These are implementation targets, not universal doctrine.
 
-Freeze the canonical objects, authority flow, definitions and anti-collapses used throughout the programme.
+Publication treatment remains deferred to DPL-17.
 
-#### [DPL-02 — Reference House conformance contract](https://github.com/adamnoden/architecture/issues/301)
+## Foundation set — complete
 
-Define what must remain true for a site-conditioned implementation still to count as the Reference House; distinguish invariants, protected relationships, permitted variants, site packages and architectural rewinds.
+The six foundation packets are complete and controlled:
 
-#### [DPL-03 — assurance and deployment-result semantics](https://github.com/adamnoden/architecture/issues/302)
+- [DPL-01 — deployment ontology and governing model](dpl-01-deployment-ontology.md) / #300;
+- [DPL-02 — Reference House conformance contract](dpl-02-reference-house-conformance.md) / #301;
+- [DPL-03 — assurance and deployment-result semantics](dpl-03-assurance-result-semantics.md) / #302;
+- [DPL-04 — deployment assurance profiles](dpl-04-compilation-maturity.md) / #303;
+- [DPL-05 — compiler target-stack model](dpl-05-target-stack-model.md) / #304;
+- [DPL-06 — site manifest model](dpl-06-site-manifest-model.md) / #305.
 
-Freeze result states, evidence/provenance semantics, applicability, staleness, unknowns and professional-judgement boundaries.
+The mandatory foundation review is recorded in [DPL Foundation Coherence Review](dpl-foundation-coherence-review.md) / #344.
 
-#### [DPL-04 — compilation maturity model](https://github.com/adamnoden/architecture/issues/303)
+Its result is:
 
-Define what may honestly be claimed at screening, feasibility, planning, technical, construction and commissioned/as-built stages.
+> **PASS WITH BOUNDED CORRECTIONS**
 
-#### [DPL-05 — compiler target-stack model](https://github.com/adamnoden/architecture/issues/304)
+No foundation packet reopens.
 
-Define the abstract versioned jurisdiction/rule stack. Do not yet encode the substantive England/London corpus.
+## Programme maturity
 
-#### [DPL-06 — site manifest model](https://github.com/adamnoden/architecture/issues/305)
+After the foundation review, DPL is **M2 — Developed** at programme scope.
 
-Define how real-site facts, evidence, unknowns and assumptions are represented independently of rules/policy.
+The problem is no longer merely framed: substantive models now exist and their principal trade-offs/boundaries are visible.
 
-### Foundation dependency graph
+DPL is not yet M3 because the workstream has not coordinated the actual Reference Site, England/London target inventories, site interface, deployment compiler substrate or real-site evidence into one deployment case.
 
-```text
-DPL-00 (#299)
-   │
-DPL-01 (#300)
-   ├──────── DPL-02 (#301)
-   ├── DPL-03 (#302) ── DPL-04 (#303)
-   │       │
-   │       └────────── DPL-05 (#304)
-   └────────────────── DPL-06 (#305)
-```
+## Downstream programme
 
-DPL-02 may proceed after DPL-01. DPL-03 may proceed after DPL-01. DPL-04 depends on DPL-03. DPL-05 and DPL-06 depend on the DPL-01/DPL-03 semantics sufficiently to avoid incompatible models.
+The provisional DPL-07 through DPL-18 architecture remains valid with one sequencing refinement: **concrete Reference Site/target/due-diligence work should attack the foundation before shared compiler orchestration is frozen.**
 
-Where execution ordering inside the open foundation set becomes ambiguous, prefer finishing shared semantics rather than allowing each branch to invent its own vocabulary.
+### Wave A — authorised after DPL-FR merge
 
-## Mandatory foundation review gate
+#### DPL-07 — Reference Site
 
-**Do not open DPL-07 onward merely because DPL-01 through DPL-06 are individually complete.**
+Define one explicit synthetic Reference Site using DPL-06 site-claim semantics and DPL-05 contextual identity.
 
-First perform a programme-level coherence review covering:
+**Dependencies:** DPL-05 + DPL-06 + DPL-FR.
 
-- no duplicated or contradictory object meanings;
-- conformance and site facts remain separate;
-- target identity carries authority and time correctly;
-- assurance states compose across site/rule/evidence objects;
-- maturity does not manufacture certainty;
-- the system remains compatible with current compiler identity/provenance architecture;
-- Reference House architectural identity remains protected;
-- no legal/planning model overclaims machine authority;
-- no hidden requirement has already forced an unacknowledged house redesign.
+#### DPL-09 — England regulatory target inventory
 
-This is the cheapest formal point to alter course.
+Recover the actual England new-dwelling authority/applicability corpus first. Separate law, guidance, standards, routes and transitional conditions. Split into bounded technical-domain child packets only after the inventory reveals the correct seams.
 
-## Planned downstream work — recorded, not yet authorised
+**Dependencies:** DPL-05 + DPL-FR.
 
-The following issue names are provisional programme architecture. They should be opened only after the foundation review and may be split or renamed if the preceding work demonstrates a better seam.
+#### DPL-10 — London planning target inventory
 
-### DPL-07 — Reference Site
+Recover the actual Greater London + local planning authority relationship, including what is deterministic, evidence-led and judgement-dependent.
 
-Research and define one synthetic but plausible London Reference Site. Make every canonical site assumption explicit rather than letting the Reference House float in a white void.
+**Dependencies:** DPL-05 + DPL-06 + DPL-FR.
 
-**Expected dependencies:** DPL-05 + DPL-06.
+#### DPL-11 — site due-diligence / non-planning constraints
 
-### DPL-08 — house ↔ land site interface
+Define how title/private rights, boundary/Party Wall relationships, utilities/sewers, ground, trees, access and similar constraints enter deployment without being mislabeled as planning policy.
 
-Formalise foundations, levels, perimeter dry zone, drainage, service entry, approach/access, retaining conditions and other legitimate site-conditioned packages.
+**Dependencies:** DPL-06 + DPL-FR.
 
-**Expected dependencies:** DPL-02 + DPL-06 + DPL-07.
+These four lanes may proceed laterally.
 
-### DPL-09 — England regulatory target
+### Wave B — deliberately sequenced
 
-Establish a dated authoritative target for a new dwelling in England, including applicability, law/guidance/standards separation, transitional basis and obligation inventory. This gate should first inventory the actual corpus and then spawn bounded technical-domain children where justified; it must not become one mega “do all Building Regulations” packet.
+#### DPL-08 — house ↔ land site interface
 
-**Expected dependency:** DPL-05.
+Formalise foundations, levels, perimeter dry zone, drainage, utility entry, approach/access, retaining conditions and other legitimate site-conditioned packages.
 
-### DPL-10 — London planning target
+**Dependencies:** DPL-02 + DPL-06 + DPL-07.
 
-Establish the Greater London strategic layer and borough plug-in model; separate machine-checkable constraints, evidence requirements and planning judgement. As with DPL-09, inventory before decomposing substantive child work.
+#### DPL-12 — deployment compiler substrate
 
-**Expected dependencies:** DPL-05 + DPL-06.
+Implement shared target + site + conformance + evidence + assurance-profile orchestration.
 
-### DPL-11 — site due-diligence / non-planning constraints
+Its semantic dependencies are already present, but implementation is intentionally deferred until DPL-07/09/10/11 provide enough concrete material to attack the abstractions.
 
-Define how title/private constraints, easements/covenants, Party Wall relationships, sewers, utilities, trees, abnormal ground, construction access and similar deployment conditions enter the system without being mislabeled as planning policy.
+#### DPL-14 — real London plot corpus
 
-**Expected dependency:** DPL-06.
+Assemble a deliberately varied genuine plot corpus early enough to attack the site ontology, but only after DPL-07 establishes a usable first manifest field discipline.
 
-### DPL-12 — deployment compiler substrate
+**Core dependencies:** DPL-02 + DPL-06; sequencing dependency on initial DPL-07 site-manifest discipline.
 
-Implement shared target + site + conformance + evidence + maturity orchestration only after the semantic foundations exist. Do not begin by encoding a giant regulations ruleset.
+### Integration
 
-**Expected dependencies:** DPL-02 through DPL-06.
+#### DPL-13 — canonical deployment compile
 
-### DPL-13 — canonical deployment compile
-
-Compile Reference House × Reference Site × selected England/London target. Produce the first serious deployment obligation/evidence ledger and identify contradictions or missing authority.
+Compile Reference House × Reference Site × selected England/London target/context with explicit evidence/obligation ledger.
 
 **Expected dependencies:** DPL-07 through DPL-12.
 
-### DPL-14 — real London plot corpus
+#### DPL-15 — real-plot deployment trials
 
-Assemble a deliberately varied set of genuine candidate-style London plots and represent them through the site manifest. This may proceed laterally once DPL-02 and DPL-06 are stable; it should not wait for every regulatory rule to be encoded.
+Attempt deployment against the real-plot corpus. Record incompatible sites, legitimate site-interface adaptations, missing evidence and upstream weaknesses.
 
-**Expected dependencies:** DPL-02 + DPL-06.
+**Dependencies:** DPL-13 + DPL-14.
 
-### DPL-15 — real-plot deployment trials
+#### DPL-16 — deployment envelope v1
 
-Attempt deployment against the corpus. Record incompatibilities, legitimate adaptations, missing site facts, target failures and model weaknesses. Do not protect the Reference House from a genuine incompatibility finding.
+Derive the supported site class from trial evidence rather than inventing a “typical London plot”.
 
-**Expected dependencies:** DPL-13 + DPL-14.
+**Dependency:** DPL-15.
 
-### DPL-16 — deployment envelope v1
+#### DPL-17 — publication integration
 
-Derive the supported site class from the actual trial evidence rather than inventing a “typical London plot” first. Define the eventual land-screening output.
+Decide the small amount of England/London/site/deployment framing that genuinely belongs in the physical publication.
 
-**Expected dependency:** DPL-15.
+**Dependencies:** DPL-13 + DPL-16.
 
-### DPL-17 — publication integration
+#### DPL-18 — adversarial validation
 
-Only after canonical and real-site deployment work exists, determine the small amount of England/London/site framing that belongs in the book. Most machinery should remain below the publication surface.
+Attack the integrated programme for architectural mutation, legal/regulatory overclaiming, planning simplification, stale targets, false site certainty, omitted constraints and compiler proof-boundary inflation.
 
-**Expected dependencies:** DPL-13 + DPL-16.
+**Dependencies:** integrated DPL-13 through DPL-17 evidence.
 
-### DPL-18 — adversarial validation
-
-Attack the integrated programme for legal/regulatory overclaiming, planning simplification, stale targets, false site certainty, architectural mutation, Reference House overfit, omitted real-world constraints and compiler proof-boundary inflation.
-
-**Expected dependencies:** DPL-13 through DPL-17.
-
-## Full intended dependency shape
+## Dependency shape
 
 ```text
-DPL-00
-   │
+FOUNDATION — COMPLETE
+
 DPL-01
-   ├──────── DPL-02 ───────────────────────────────┐
-   │                                               │
-   ├── DPL-03 ── DPL-04                            │
-   │       │                                       │
-   │       └── DPL-05 ──┬── DPL-09                 │
-   │                    └── DPL-10                 │
-   │                                               │
-   └──────── DPL-06 ──┬── DPL-07 ── DPL-08        │
-                      ├── DPL-11                    │
-                      └────────────── DPL-14         │
-                                                    │
-DPL-02/03/04/05/06 ───────────── DPL-12            │
-                                      │             │
-DPL-07/08/09/10/11/12 ───────── DPL-13             │
-                                      │             │
-                         DPL-14 ───────┘
-                                      │
-                                  DPL-15
-                                      │
-                                  DPL-16
-                                   ┌──┴──┐
-                                DPL-17 DPL-18
+   ├── DPL-02
+   └── DPL-03 ── DPL-04
+          ├──── DPL-05
+          └──── DPL-06 (with DPL-01)
+
+             ↓
+          DPL-FR
+             ↓
+
+WAVE A
+
+DPL-07     DPL-09     DPL-10     DPL-11
+   │          │           │          │
+   └──DPL-08  │           │          │
+              └─────┬─────┴──────┬───┘
+                    │            │
+                DPL-12       DPL-14
+                    │            │
+                    └────DPL-13──┘
+                              │
+                           DPL-15
+                              │
+                           DPL-16
+                           ┌──┴──┐
+                        DPL-17 DPL-18
 ```
 
-The diagram is planning guidance rather than immutable architecture. Later foundation work may discover a better dependency seam; any change must be recorded explicitly rather than silently drifting.
-
-## Concurrency
-
-After DPL-01 and enough of DPL-03 are stable, the programme is intentionally capable of lateral work:
-
-```text
-HOUSE TRACK        DPL-02
-ASSURANCE TRACK    DPL-04
-TARGET TRACK       DPL-05 → later DPL-09 / DPL-10
-SITE TRACK         DPL-06 → later DPL-07 / DPL-11 / DPL-14
-```
-
-DPL-08 and DPL-12 become deliberate integration points.
-
-Real-site corpus work should begin early enough to attack the ontology. Do not spend months perfecting a synthetic site model only to discover that ordinary London plots contain unmodelled categories of constraint.
+The diagram is programme guidance, not an external-authority hierarchy.
 
 ## Relationship with the existing compiler
 
@@ -446,49 +577,52 @@ DPL begins from the current controlled computational baseline.
 
 It does **not** silently create RH-C6, broaden RH-C5 into whole-building compliance or reinterpret existing numeric correspondence as statutory adequacy.
 
-Future DPL computation should reuse established project values where appropriate:
+Future computation should reuse established values:
 
-- deterministic source/method/result identity;
-- provenance and lineage;
-- fail-closed handling of unsupported inputs;
-- controlled representation boundaries;
+- deterministic identity;
+- source/method/result provenance;
+- fail-closed unsupported inputs;
+- explicit supported-domain boundaries;
 - reproducible artefacts;
-- explicit proof scope.
+- selective invalidation;
+- bounded proof language.
 
-If deployment requires a materially new proof family, DPL should admit it deliberately under the new deployment architecture rather than retroactively pretending it was already proven.
+A materially new deployment proof family must be admitted explicitly rather than retroactively described as already proven.
 
 ## Relationship with the Reference House
 
-The current Reference House remains the controlled architectural source until a DPL finding earns an explicit upstream rewind.
+The current Reference House remains controlled architectural source until deployment evidence earns an explicit upstream rewind.
 
-DPL may discover:
+DPL may eventually discover:
 
 - a site-interface omission;
 - a regulatory conflict;
 - a planning conflict;
 - an unmodelled site dependency;
 - a conformance ambiguity;
-- a genuine house defect.
+- genuine architectural brittleness or defect.
 
-The correct response is to route the finding to its owning authority. Do not patch drawing code, deployment code or site data merely to preserve a green result.
+The correct response is to route that finding to its owning authority.
+
+Do not patch site data, compiler logic or drawings merely to preserve a green result.
 
 ## Relationship with HFI and DRW
 
-HFI is closed. Its integrated conclusions are now owned by their destination authorities: governing principles, Reference House source, N17 delivery verification and the RH-11 specialist-review handoff. Unresolved HFI closeout items remain with their explicit downstream owners rather than HFI as a parallel authority layer.
+HFI is closed. Its surviving conclusions live in their destination authorities rather than as a parallel DPL layer.
 
-DRW may continue against controlled geometry. DPL does not authorise drawing-side architectural mutation. If a later deployment finding changes Reference House authority, affected drawings must be regenerated/revalidated through the existing DRW controls.
+DRW may continue against controlled Reference House geometry. DPL does not authorise drawing-side mutation. If deployment later rewinds Reference House authority, affected drawings must return through the established drawing controls.
 
 ## Publication restraint
 
-Most DPL work is backstage evidence architecture.
+Most DPL machinery remains backstage.
 
-The physical publication should remain an architectural work, not a regulation/planning manual. The likely eventual reader-facing effect is small:
+The physical publication should remain an architectural work, not a regulations/planning manual.
+
+Possible reader-facing consequences are deferred to DPL-17 and may include only:
 
 - a clear Reference House jurisdiction/context statement;
-- an explanation that the Reference House is demonstrated against a declared Reference Site and technical/planning context;
-- selected evidence or deployment material only where it deepens the architectural argument.
-
-DPL-17 owns the exact treatment after the system has earned it.
+- explanation of the declared Reference Site/context;
+- selected deployment/evidence material where it materially deepens the architectural argument.
 
 ## Programme anti-goals
 
@@ -496,16 +630,16 @@ DPL must not become:
 
 - a generic parametric house generator;
 - a claim that one immutable house fits arbitrary London land;
-- a system that mutates the Reference House until any site “passes”;
+- a system that mutates protected architecture until any site passes;
 - a Building Regulations encyclopedia disconnected from architecture;
 - a planning-permission predictor;
-- a substitute for competent engineering, planning or statutory review;
+- a substitute for competent engineering, planning, legal or statutory review;
 - an excuse to treat Approved Documents as identical to law;
-- an undated “England target” that silently changes over time;
-- an aggregate compliance/compatibility score;
-- a site database whose unknown fields are silently defaulted;
-- a reason to duplicate public-facing regulatory material throughout the book;
-- an implicit new whole-building compiler authority.
+- an undated mutable “England target”;
+- an aggregate compatibility/compliance/confidence score;
+- a site database whose missing fields default optimistically;
+- a public regulatory appendix disguised as architecture;
+- an implicit whole-building compiler authority.
 
 ## Packet discipline
 
@@ -524,18 +658,13 @@ Split a packet when it:
 - starts treating professional/planning judgement as deterministic computation;
 - grows large enough that a later session could not reconstruct its state from the repository alone.
 
-## First authorised work
+## Current authorised work
 
-**DPL-01 through DPL-06 only.**
+After DPL-FR merges, open and execute **Wave A only**:
 
-The recommended execution sequence is:
+- DPL-07 — Reference Site;
+- DPL-09 — England regulatory target inventory;
+- DPL-10 — London planning target inventory;
+- DPL-11 — site due-diligence / non-planning constraints.
 
-1. DPL-01 — freeze ontology/governing model;
-2. DPL-03 — freeze assurance vocabulary sufficiently for dependent models;
-3. DPL-02 may proceed laterally once DPL-01 is stable;
-4. DPL-04 after DPL-03;
-5. DPL-05 and DPL-06 once shared ontology/assurance semantics are stable;
-6. perform the mandatory DPL foundation coherence review;
-7. only then decide whether to open DPL-07 onward.
-
-No Reference Site construction, substantive England rule encoding, London planning implementation, real-plot deployment or publication integration is authorised merely by opening this programme.
+Do not begin DPL-08, DPL-12, DPL-14 or later integration merely because the foundation exists. Follow the sequencing above and let concrete evidence attack the model before implementation hardens it.
