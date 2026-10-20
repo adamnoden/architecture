@@ -80,6 +80,7 @@ export const createExternalMaintenancePublicationScene = (
   const eastHouseEdge = house.x + house.width
   const eastX0 = Math.min(eastHouseEdge, eastStress.a.x)
   const eastX1 = Math.max(eastHouseEdge, eastStress.a.x)
+  const capacityLabelY = house.y + house.height * 0.72
 
   const common = {
     overlay: 'external-maintenance-setting',
@@ -126,7 +127,7 @@ export const createExternalMaintenancePublicationScene = (
     text(
       'maintenance-west-label',
       (westX0 + westX1) / 2,
-      house.y + house.height / 2,
+      capacityLabelY,
       'WEST ACCESS CAPACITY',
       'note',
       { overlay: 'external-maintenance-setting', role: 'capacity-label' },
@@ -136,7 +137,7 @@ export const createExternalMaintenancePublicationScene = (
     text(
       'maintenance-east-label',
       (eastX0 + eastX1) / 2,
-      house.y + house.height / 2,
+      capacityLabelY,
       'EAST SERVICE / ACCESS',
       'note',
       { overlay: 'external-maintenance-setting', role: 'capacity-label' },
