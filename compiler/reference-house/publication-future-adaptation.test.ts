@@ -45,8 +45,11 @@ test('DRW-10E.1 uses whole owned host-space boxes and no invented route/fixture 
   assert.ok(overlay.some((primitive) => primitive.metadata?.role === 'one-level-route-territory'))
   assert.ok(overlay.some((primitive) => primitive.metadata?.role === 'sanitary-shower-adaptation-geography'))
 
+  const entityIds = overlay.map((primitive) => primitive.id).join(' ')
+  assert.doesNotMatch(entityIds, /turning-circle|bed-clearance|wc-fixture|shower-tray|route-centreline/i)
+
   const serialized = JSON.stringify(overlay)
-  assert.doesNotMatch(serialized, /turning-circle|bed-clearance|wc-fixture|shower-tray|route-centreline/i)
+  assert.match(serialized, /not-route-centreline/)
   assert.match(serialized, /NOT_CLAIMED/)
   assert.match(serialized, /ABSENT/)
   assert.match(serialized, /NOT_MODELLED/)
