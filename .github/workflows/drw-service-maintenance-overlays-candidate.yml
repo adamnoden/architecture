@@ -40,14 +40,14 @@ jobs:
       - name: Freeze reviewed bytes
         if: github.event_name == 'pull_request'
         run: |
-          if git diff --quiet -- docs/reference-house/publication-ground-service-maintenance-overlay.svg docs/reference-house/publication-first-service-maintenance-overlay.svg; then
+          git add -f docs/reference-house/publication-ground-service-maintenance-overlay.svg docs/reference-house/publication-first-service-maintenance-overlay.svg
+          if git diff --cached --quiet -- docs/reference-house/publication-ground-service-maintenance-overlay.svg docs/reference-house/publication-first-service-maintenance-overlay.svg; then
             echo 'Controlled SVG pair already matches canonical generation.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/reference-house/publication-ground-service-maintenance-overlay.svg docs/reference-house/publication-first-service-maintenance-overlay.svg
-          git commit -m 'DRW-10B: freeze reviewed service maintenance overlays'
+          git commit -m 'DRW-10F: recover reviewed service maintenance artifacts'
           git push origin HEAD:${{ github.head_ref }}
       - name: Upload reviewed SVG pair
         uses: actions/upload-artifact@v6
