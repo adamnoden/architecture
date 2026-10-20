@@ -198,7 +198,7 @@ export const createStructuralSpanOverlayPublicationScene = (
     text(
       'structural-absence-note',
       { x: 8, y: 133 },
-      'Structural reading only · outer/court masonry support · gross spans · stair/SV-01 local framing; no member sizes or joist centres.',
+      'Structural reading · masonry support · gross spans · stair/SV-01 framing; no member sizes / joist centres.',
       'note',
       'start',
       {
