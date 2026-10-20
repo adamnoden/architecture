@@ -79,7 +79,7 @@ Delivery continues to lag the research deliberately. The implementation-brief st
 ## Maturity and workstream status
 
 <!-- maturity-status:start -->
-Ovid’s House uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems).
+Ovid’s House uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.
 
 ### Scale
 
