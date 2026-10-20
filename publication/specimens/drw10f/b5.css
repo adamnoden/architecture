@@ -1,0 +1,8 @@
+/* Conservative robustness proof only; not a final trim/binding decision.
+   The 166 mm setting and roof plates remain true-size on 176 mm B5,
+   leaving 5 mm at each trim edge rather than fit-scaling the drawings. */
+:root { --page-width: 176mm; --page-height: 250mm; }
+@page { size: B5; margin: 0; }
+@page blank { @top-left { content: none; } @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
+@page plate { @top-left { content: none; } @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
+@page prose { @top-left { content: none; } @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }

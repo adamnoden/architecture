@@ -1,0 +1,105 @@
+name: Prove DRW analytical drawing family
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/reference-house/publication-analytical-family-parity.test.ts'
+      - 'compiler/reference-house/publication-service-maintenance-artifact.test.ts'
+      - 'compiler/reference-house/publication-structural-span*.ts'
+      - 'compiler/reference-house/publication-service-maintenance*.ts'
+      - 'compiler/reference-house/publication-roof*.ts'
+      - 'compiler/reference-house/publication-synthetic-setting*.ts'
+      - 'compiler/reference-house/publication-external-maintenance*.ts'
+      - 'compiler/reference-house/publication-future-adaptation*.ts'
+      - 'compiler/reference-house/generate-publication-structural-span-overlay.ts'
+      - 'compiler/reference-house/generate-publication-synthetic-setting.ts'
+      - 'compiler/reference-house/generate-publication-external-maintenance-overlay.ts'
+      - 'compiler/reference-house/generate-publication-service-maintenance-overlays.ts'
+      - 'compiler/reference-house/generate-publication-roof-drainage.ts'
+      - 'compiler/reference-house/generate-publication-roof-water-failure-overlay.ts'
+      - 'compiler/reference-house/generate-publication-future-adaptation-overlay.ts'
+      - 'docs/reference-house/publication-*.svg'
+      - 'publication/specimens/drw10f/**'
+      - 'docs/publication/architectural-drawing-drw10f-analytical-family-proof.md'
+      - '.github/workflows/drw-analytical-family-proof.yml'
+      - '.github/workflows/drw-service-maintenance-overlays-candidate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drw-analytical-family-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  prove:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Install PDF proof utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils qpdf
+      - name: Regenerate controlled analytical family
+        run: |
+          npx tsx compiler/reference-house/generate-publication-structural-span-overlay.ts
+          npx tsx compiler/reference-house/generate-publication-synthetic-setting.ts
+          npx tsx compiler/reference-house/generate-publication-external-maintenance-overlay.ts
+          npx tsx compiler/reference-house/generate-publication-service-maintenance-overlays.ts
+          npx tsx compiler/reference-house/generate-publication-roof-drainage.ts
+          npx tsx compiler/reference-house/generate-publication-roof-water-failure-overlay.ts
+          npx tsx compiler/reference-house/generate-publication-future-adaptation-overlay.ts
+      - name: Prove controlled SVG bytes are current
+        run: |
+          git diff --exit-code -- \
+            docs/reference-house/publication-structural-span-overlay.svg \
+            docs/reference-house/publication-synthetic-setting.svg \
+            docs/reference-house/publication-external-maintenance-setting-overlay.svg \
+            docs/reference-house/publication-ground-service-maintenance-overlay.svg \
+            docs/reference-house/publication-first-service-maintenance-overlay.svg \
+            docs/reference-house/publication-roof-drainage.svg \
+            docs/reference-house/publication-roof-water-failure-overlay.svg \
+            docs/reference-house/publication-future-adaptation-overlay.svg
+      - name: Prove analytical substrate and artifact invariants
+        run: |
+          node --import tsx --test \
+            compiler/reference-house/publication-analytical-family-parity.test.ts \
+            compiler/reference-house/publication-service-maintenance-artifact.test.ts
+      - name: Prepare physical family specimen
+        run: npx tsx publication/specimens/drw10f/prepare.ts
+      - name: Build A4 proof
+        run: DRW10F_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw10f/vivliostyle.config.js
+      - name: Build conservative B5 proof
+        run: DRW10F_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw10f/vivliostyle.config.js
+      - name: Validate physical proof
+        run: npx tsx publication/specimens/drw10f/validate.ts
+      - name: Check PDF structure
+        run: |
+          qpdf --check publication/specimens/drw10f/dist/drw10f-a4.pdf
+          qpdf --check publication/specimens/drw10f/dist/drw10f-b5.pdf
+      - name: Render proof pages for physical review
+        run: |
+          mkdir -p publication/specimens/drw10f/dist/render-a4 publication/specimens/drw10f/dist/render-b5
+          pdftoppm -png -r 150 publication/specimens/drw10f/dist/drw10f-a4.pdf publication/specimens/drw10f/dist/render-a4/page
+          pdftoppm -png -r 150 publication/specimens/drw10f/dist/drw10f-b5.pdf publication/specimens/drw10f/dist/render-b5/page
+      - name: Upload physical proof
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-10f-analytical-family-proof
+          path: |
+            publication/specimens/drw10f/dist/drw10f-a4.pdf
+            publication/specimens/drw10f/dist/drw10f-b5.pdf
+            publication/specimens/drw10f/dist/render-a4/*.png
+            publication/specimens/drw10f/dist/render-b5/*.png
+          if-no-files-found: error
+          retention-days: 30

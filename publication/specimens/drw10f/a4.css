@@ -1,0 +1,5 @@
+:root { --page-width: 210mm; --page-height: 297mm; }
+@page { size: A4; margin: 0; }
+@page blank { @top-left { content: none; } @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
+@page plate { @top-left { content: none; } @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
+@page prose { @top-left { content: none; } @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
