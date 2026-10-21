@@ -3,6 +3,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import puppeteer from 'puppeteer'
 import { publicationFigurePlacements } from '../figures.js'
+import { publicationPlatePlacements } from '../plates.js'
 import { publicationEntries } from '../publication.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
@@ -15,6 +16,12 @@ interface Overflow {
   readonly sides: string[]
 }
 
+interface RenderedAsset {
+  readonly entryId: string
+  readonly image: string
+  readonly alt: string
+}
+
 function figurePath(entryId: string, image: string): string {
   const entry = publicationEntries.find((candidate) => candidate.id === entryId)
   if (!entry) throw new Error(`Unknown publication entry for figure validation: ${entryId}`)
@@ -25,6 +32,37 @@ function figureLabel(alt: string, image: string): string {
   return `${alt} (${image})`
 }
 
+const flowFigures = publicationFigurePlacements()
+if (flowFigures.length !== 5) throw new Error(`Expected exactly 5 early-book FLOW figures, got ${flowFigures.length}`)
+if (flowFigures.some((placement) => placement.entryId === 'part-iv')) {
+  throw new Error('Part IV must not contain legacy FLOW placements after DRW-12A')
+}
+
+const platePlacements = publicationPlatePlacements()
+const plateViews = platePlacements.flatMap((placement) =>
+  placement.views.map((view) => ({ entryId: placement.entryId, image: view.image, alt: view.alt }))
+)
+if (plateViews.length !== 17) throw new Error(`Expected exactly 17 controlled Part IV plate views, got ${plateViews.length}`)
+if (new Set(plateViews.map((view) => view.image)).size !== plateViews.length) {
+  throw new Error('Controlled Part IV plate assets must be unique in the active manifest')
+}
+for (const placement of platePlacements) {
+  const expectedViews = placement.pageClass === 'PLATE_PAIR' ? 2 : 1
+  if (placement.views.length !== expectedViews) {
+    throw new Error(`${placement.pageClass} at ${placement.anchor} must contain ${expectedViews} controlled view(s)`)
+  }
+}
+for (const view of plateViews) {
+  if (!view.image.startsWith('../reference-house/publication-') || !view.image.endsWith('.svg')) {
+    throw new Error(`Part IV active plate is not a controlled publication SVG: ${view.image}`)
+  }
+}
+
+const assets: readonly RenderedAsset[] = [
+  ...flowFigures.map(({ entryId, image, alt }) => ({ entryId, image, alt })),
+  ...plateViews
+]
+
 const browser = await puppeteer.launch({
   headless: true,
   args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -33,7 +71,7 @@ const browser = await puppeteer.launch({
 const failures: Overflow[] = []
 
 try {
-  for (const placement of publicationFigurePlacements()) {
+  for (const placement of assets) {
     const path = figurePath(placement.entryId, placement.image)
     const label = figureLabel(placement.alt, placement.image)
     const svg = readFileSync(path, 'utf8')
@@ -80,9 +118,7 @@ try {
       return result
     }, tolerance)
 
-    for (const overflow of overflows) {
-      failures.push({ figure: label, ...overflow })
-    }
+    for (const overflow of overflows) failures.push({ figure: label, ...overflow })
     await page.close()
   }
 } finally {
@@ -95,7 +131,7 @@ if (failures.length > 0) {
       `${figure}: <${element}>${text ? ` “${text}”` : ''} exceeds SVG ${sides.join(', ')}`
     )
     .join('\n')
-  throw new Error(`Publication figure clipping detected:\n${detail}`)
+  throw new Error(`Publication figure/plate clipping detected:\n${detail}`)
 }
 
-console.log(`Publication figure bounds valid: ${publicationFigurePlacements().length} retained figures.`)
+console.log(`Publication visual bounds valid: ${flowFigures.length} FLOW figures + ${plateViews.length} controlled Part IV plate views.`)
