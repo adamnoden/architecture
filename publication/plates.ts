@@ -30,7 +30,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## The site is allowed to change the house',
     pageClass: 'PLATE_PAIR',
     views: [
-      { title: 'Synthetic setting / type plan', image: '../reference-house/publication-synthetic-setting-plan.svg', alt: 'Reference House synthetic setting and type plan', scale: '1:200', caption: 'Surrogate setting: type and detached capacity without a fictional real site.' },
+      { title: 'Synthetic setting / type plan', image: '../reference-house/publication-synthetic-setting.svg', alt: 'Reference House synthetic setting and type plan', scale: '1:200', caption: 'Surrogate setting: type and detached capacity without a fictional real site.' },
       { title: 'External maintenance / setting overlay', image: '../reference-house/publication-external-maintenance-setting-overlay.svg', alt: 'Reference House external maintenance and setting overlay', scale: '1:200', caption: 'Working and withdrawal geography over the same bounded surrogate setting.' }
     ]
   },
@@ -39,7 +39,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Order without false symmetry',
     pageClass: 'PLATE_SINGLE',
     views: [
-      { title: 'Principal front elevation', image: '../reference-house/publication-front-elevation.svg', alt: 'Reference House principal front elevation', scale: '1:100', caption: 'Principal front: ordered four-bay field with the entrance deliberately off centre.' }
+      { title: 'Principal front elevation', image: '../reference-house/publication-principal-front-elevation.svg', alt: 'Reference House principal front elevation', scale: '1:100', caption: 'Principal front: ordered four-bay field with the entrance deliberately off centre.' }
     ]
   },
   {
@@ -88,7 +88,7 @@ const placements: readonly PlatePlacement[] = [
     pageClass: 'PLATE_PAIR',
     views: [
       { title: 'Ground service / maintenance overlay', image: '../reference-house/publication-ground-service-maintenance-overlay.svg', alt: 'Reference House ground service and maintenance overlay', scale: '1:100', caption: 'Ground-floor service hosts, access and maintenance geography without invented route centrelines.' },
-      { title: 'First-floor service / maintenance overlay', image: '../reference-house/publication-first-floor-service-maintenance-overlay.svg', alt: 'Reference House first-floor service and maintenance overlay', scale: '1:100', caption: 'Upper wet-service concentration and dry distribution geography over the canonical first-floor plan.' }
+      { title: 'First-floor service / maintenance overlay', image: '../reference-house/publication-first-service-maintenance-overlay.svg', alt: 'Reference House first-floor service and maintenance overlay', scale: '1:100', caption: 'Upper wet-service concentration and dry distribution geography over the canonical first-floor plan.' }
     ]
   },
   {
@@ -96,7 +96,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## The courtyard manages only itself',
     pageClass: 'PLATE_PAIR',
     views: [
-      { title: 'Roof / drainage plan', image: '../reference-house/publication-roof-drainage-plan.svg', alt: 'Reference House roof and drainage plan', scale: '1:100', caption: 'Ordinary roof architecture: outward-falling fields and bounded drainage geometry.' },
+      { title: 'Roof / drainage plan', image: '../reference-house/publication-roof-drainage.svg', alt: 'Reference House roof and drainage plan', scale: '1:100', caption: 'Ordinary roof architecture: outward-falling fields and bounded drainage geometry.' },
       { title: 'Roof water / failure overlay', image: '../reference-house/publication-roof-water-failure-overlay.svg', alt: 'Reference House roof water and failure overlay', scale: '1:100', caption: 'Failure reading: collection, visible overflow and courtyard consequence over the same roof substrate.' }
     ]
   },
