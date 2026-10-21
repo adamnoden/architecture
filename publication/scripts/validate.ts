@@ -166,7 +166,7 @@ function validatePlateRegister(): void {
     '../reference-house/publication-service-transverse-section.svg',
     '../reference-house/publication-service-side-elevation.svg',
     '../reference-house/publication-ground-service-maintenance-overlay.svg',
-    '../reference-house/publication-first-floor-service-maintenance-overlay.svg',
+    '../reference-house/publication-first-service-maintenance-overlay.svg',
     '../reference-house/publication-roof-drainage.svg',
     '../reference-house/publication-roof-water-failure-overlay.svg',
     '../reference-house/publication-garden-elevation.svg',
