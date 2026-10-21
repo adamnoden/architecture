@@ -14,7 +14,10 @@ interface DestroyablePdfDocument {
 }
 
 function normalized(value: string): string {
-  return value.replace(/\s+/g, ' ').trim()
+  return value
+    .replace(/[\u00ad\u2010]\s*/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
 async function extractPageText(path: string): Promise<readonly string[]> {
