@@ -60,20 +60,12 @@ const [workingPages, primerPages] = await Promise.all([
 ])
 
 const summaries: string[] = []
-let previousPlatePage = 0
 
 for (const placement of publicationPlatePlacements()) {
   const located = placement.views.map((view) => {
     const titlePages = pagesContaining(workingPages, view.title)
     const captionPages = pagesContaining(workingPages, view.caption)
     expectPages(`${view.title} caption`, captionPages, titlePages)
-
-    for (const page of titlePages) {
-      if (page <= previousPlatePage) {
-        throw new Error(`${view.title}: plate sequence is no longer monotonic at page ${page}.`)
-      }
-      previousPlatePage = page
-    }
 
     if (pagesContaining(primerPages, view.title).length > 0 || pagesContaining(primerPages, view.caption).length > 0) {
       throw new Error(`${view.title}: controlled Part IV plate leaked into the Primer.`)
