@@ -1,0 +1,73 @@
+{
+  "programme": "DRW",
+  "packet": "DRW-12E",
+  "release": "drawing-publication-v1",
+  "baseCommit": "476191f7b19c49d15df73968df63978a7065dbc5",
+  "renderer": {
+    "version": "publication-drawing-v1",
+    "path": "compiler/publication-drawing",
+    "gitObject": "14662cd5e816e3e2f17b55a2b7db11632cbc67df"
+  },
+  "style": {
+    "version": "drawing-style-v1",
+    "path": "compiler/publication-drawing/tokens.ts",
+    "gitObject": "90f27c778c396cb49764f42a5a39e2f8d516b072"
+  },
+  "plateRegister": {
+    "version": "rh01-part-iv-plate-register-v1",
+    "path": "publication/plates.ts",
+    "gitObject": "76ab2d427278361876041fb446871b606d426ebe"
+  },
+  "filePins": {
+    "compiler/reference-house/publication-ground-plan.ts": "a0cc08cab982625ca9689bb5150ce6fa18f46663",
+    "compiler/reference-house/publication-plan-source.ts": "1fe6233cbcb91b0b4df7233d6ef3d4badf356a99",
+    "compiler/reference-house/publication-first-floor-plan.ts": "04eff3c67143c283726aab7ccb4c8df1a2a0f1c3",
+    "compiler/reference-house/publication-first-floor-plan-source.ts": "833ae8dde93a85dfe20720587ebdadb460ecc57e",
+    "compiler/reference-house/publication-synthetic-setting.ts": "98d0dc1d2eaeb8b3635d38862a94d8abc2035376",
+    "compiler/reference-house/publication-synthetic-setting-source.ts": "196f8d504700324b209fa9eef800c267a47466a0",
+    "compiler/reference-house/publication-external-maintenance.ts": "d80d2780a0fb61096e6a2c5bcbd9a4babda720c0",
+    "compiler/reference-house/publication-external-maintenance-source.ts": "4f1d71f75542506c260fbced37c93ca396e7d357",
+    "compiler/reference-house/publication-front-elevation.ts": "eb9077f92bdb27d6221d92a6da193189a3f4dfdc",
+    "compiler/reference-house/publication-front-elevation-source.ts": "a3679d7673626114a2c7413081ac0e4403395253",
+    "compiler/reference-house/publication-principal-section.ts": "ede35d9e4220cc5206b11bebe18fe67520282418",
+    "compiler/reference-house/publication-principal-section-source.ts": "b058fa2278b7fd6879e193a5f6034d9a330f5de3",
+    "compiler/reference-house/publication-courtyard-elevation.ts": "c836e590e3259ddd1f369b6f466676ee7391f7c3",
+    "compiler/reference-house/publication-courtyard-elevation-source.ts": "7992d921e7172d1fd6c1b0d7d58b755f972a5438",
+    "compiler/reference-house/publication-structural-span.ts": "e1b674a521ea96fdec83e378c84f54d07c879a2a",
+    "compiler/reference-house/publication-structural-span-source.ts": "63f8f6109cc7f0bff0efff1de3c372ffff1aa638",
+    "compiler/reference-house/publication-service-section.ts": "f2f520f825408f623825cb8dd2f5907f8aebe935",
+    "compiler/reference-house/publication-service-section-source.ts": "87d71e629009b555e6d10f0e3fd5968b79b3f2e3",
+    "compiler/reference-house/publication-service-maintenance.ts": "ba895d674f311176b3171c4120a5626096aa4acd",
+    "compiler/reference-house/publication-service-maintenance-source.ts": "9e59f6567e7aee37b73aadede674953c39a05dca",
+    "compiler/reference-house/publication-service-side-elevation.ts": "7b1f587c381f1bfb71871d56300b248593c42c36",
+    "compiler/reference-house/publication-service-side-elevation-source.ts": "d62346770a20c4d3d8ade1fa0f383fd6803e2dd5",
+    "compiler/reference-house/publication-roof-drainage.ts": "5eaecb6428b30bb5b245eebaea18ec5c0118bd10",
+    "compiler/reference-house/publication-roof-drainage-source.ts": "995a1c9f95c5b93aa7a27763b54d0124391ecd02",
+    "compiler/reference-house/publication-roof-water-failure.ts": "3dd9bc0f8df6685b0910fcaad99b78b56c782a29",
+    "compiler/reference-house/publication-garden-elevation.ts": "d25d75af318e0efd7fe5cf10c8ddac7bbd2a481a",
+    "compiler/reference-house/publication-garden-elevation-source.ts": "14e3e310243c60867b02f7a649a7ebade7331f4d",
+    "compiler/reference-house/publication-sectional-axonometric.ts": "1c43cb66e337be19979915b7dcb2411bc8afbe99",
+    "compiler/reference-house/publication-sectional-axonometric-view.ts": "c1687b11598ac4f46b65224395138211ae94e511",
+    "compiler/reference-house/publication-future-adaptation.ts": "af1abce5161929083916c6a57294030cb686b6b0",
+    "compiler/reference-house/publication-future-adaptation-source.ts": "67a3fd9a8b2361aa63c02e5123bff2e0ee2c6332"
+  },
+  "views": [
+    {"id":"ground-plan","version":"rh01-ground-plan-v1","files":["compiler/reference-house/publication-ground-plan.ts","compiler/reference-house/publication-plan-source.ts"]},
+    {"id":"first-plan","version":"rh01-first-plan-v1","files":["compiler/reference-house/publication-first-floor-plan.ts","compiler/reference-house/publication-first-floor-plan-source.ts"]},
+    {"id":"setting-plan","version":"rh01-setting-plan-v1","files":["compiler/reference-house/publication-synthetic-setting.ts","compiler/reference-house/publication-synthetic-setting-source.ts"]},
+    {"id":"external-maintenance","version":"rh01-external-maintenance-v1","files":["compiler/reference-house/publication-external-maintenance.ts","compiler/reference-house/publication-external-maintenance-source.ts"]},
+    {"id":"front-elevation","version":"rh01-front-elevation-v1","files":["compiler/reference-house/publication-front-elevation.ts","compiler/reference-house/publication-front-elevation-source.ts"]},
+    {"id":"principal-section","version":"rh01-principal-section-v1","files":["compiler/reference-house/publication-principal-section.ts","compiler/reference-house/publication-principal-section-source.ts"]},
+    {"id":"courtyard-elevation","version":"rh01-courtyard-elevation-v1","files":["compiler/reference-house/publication-courtyard-elevation.ts","compiler/reference-house/publication-courtyard-elevation-source.ts"]},
+    {"id":"structural-span","version":"rh01-structural-span-v1","files":["compiler/reference-house/publication-structural-span.ts","compiler/reference-house/publication-structural-span-source.ts"]},
+    {"id":"service-transverse-section","version":"rh01-service-transverse-section-v1","files":["compiler/reference-house/publication-service-section.ts","compiler/reference-house/publication-service-section-source.ts"]},
+    {"id":"ground-maintenance","version":"rh01-ground-maintenance-v1","files":["compiler/reference-house/publication-service-maintenance.ts","compiler/reference-house/publication-service-maintenance-source.ts"]},
+    {"id":"first-maintenance","version":"rh01-first-maintenance-v1","files":["compiler/reference-house/publication-service-maintenance.ts","compiler/reference-house/publication-service-maintenance-source.ts"]},
+    {"id":"service-side-elevation","version":"rh01-service-side-elevation-v1","files":["compiler/reference-house/publication-service-side-elevation.ts","compiler/reference-house/publication-service-side-elevation-source.ts"]},
+    {"id":"roof-drainage","version":"rh01-roof-drainage-v1","files":["compiler/reference-house/publication-roof-drainage.ts","compiler/reference-house/publication-roof-drainage-source.ts"]},
+    {"id":"roof-water-failure","version":"rh01-roof-water-failure-v1","files":["compiler/reference-house/publication-roof-water-failure.ts","compiler/reference-house/publication-roof-drainage.ts","compiler/reference-house/publication-roof-drainage-source.ts"]},
+    {"id":"garden-elevation","version":"rh01-garden-elevation-v1","files":["compiler/reference-house/publication-garden-elevation.ts","compiler/reference-house/publication-garden-elevation-source.ts"]},
+    {"id":"sectional-axonometric","version":"rh01-sectional-axonometric-v1","files":["compiler/reference-house/publication-sectional-axonometric.ts","compiler/reference-house/publication-sectional-axonometric-view.ts"]},
+    {"id":"future-adaptation","version":"rh01-future-adaptation-v1","files":["compiler/reference-house/publication-future-adaptation.ts","compiler/reference-house/publication-future-adaptation-source.ts"]}
+  ]
+}
