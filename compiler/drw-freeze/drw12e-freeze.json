@@ -16,7 +16,7 @@
   "plateRegister": {
     "version": "rh01-part-iv-plate-register-v1",
     "path": "publication/plates.ts",
-    "gitObject": "76ab2d427278361876041fb446871b606d426ebe"
+    "gitObject": "76abdda72ed4d222e0c3546242e8efd7b77593dc"
   },
   "filePins": {
     "compiler/reference-house/publication-ground-plan.ts": "a0cc08cab982625ca9689bb5150ce6fa18f46663",
