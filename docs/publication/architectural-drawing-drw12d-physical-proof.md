@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # DRW-12D — whole-book physical-size proof
 
 **Programme:** DRW  
