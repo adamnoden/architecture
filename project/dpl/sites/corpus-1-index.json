@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "dpl.realSiteIndex.v1",
+  "corpus": "DPL-CORPUS-1",
+  "packet": "DPL-14C",
+  "researchDate": "2026-10-21",
+  "assuranceProfile": "SCREENING",
+  "purpose": "Minimal index over the admitted pilot plus five-site gap-correction cohort. Full claim semantics remain governed by DPL-06; this is not a property database, compatibility model or purchase shortlist.",
+  "sites": [
+    {
+      "id": "DPL-RP-001",
+      "displayName": "Land at 26 The Avenue, Finchley, N3 2FD",
+      "borough": "Barnet",
+      "admissionState": "ADMITTED",
+      "record": "dpl-rp-001-26-the-avenue-finchley.md",
+      "challengeTags": ["AREA_NEAR_REFERENCE_SITE", "FOOTPATH_ACCESS", "EXACT_GEOMETRY_UNKNOWN"]
+    },
+    {
+      "id": "DPL-RP-002",
+      "displayName": "Land to the Rear of 10 Highland Road, Bromley, BR1 4AD",
+      "borough": "Bromley",
+      "admissionState": "ADMITTED",
+      "record": "dpl-rp-002-rear-10-highland-road-bromley.md",
+      "challengeTags": ["BACKLAND_GARAGE_SITE", "NARROW_PRIVATE_ACCESS", "TREE_TPO_HISTORY", "SURFACE_WATER_DESIGN_DUE"]
+    },
+    {
+      "id": "DPL-RP-003",
+      "displayName": "Rear of 73A and 73B Woodside Green, South Norwood, SE25 5HU",
+      "borough": "Croydon",
+      "admissionState": "ADMITTED",
+      "record": "dpl-rp-003-rear-73a-73b-woodside-green-croydon.md",
+      "challengeTags": ["URBAN_GARAGE_INFILL", "PROPOSAL_DEPENDENT_PLANNING_OUTCOME", "CHARACTER_MASSING_SENSITIVITY"]
+    },
+    {
+      "id": "DPL-RP-004",
+      "displayName": "4 Nelmes Way, Hornchurch, RM11 2QZ",
+      "borough": "Havering",
+      "admissionState": "ADMITTED",
+      "record": "dpl-rp-004-4-nelmes-way-hornchurch.md",
+      "challengeTags": ["ORDINARY_STREET_FRONT", "REPLACEMENT_DWELLING", "EXISTING_HOUSE", "CURRENT_PLANNING_DECISION"]
+    },
+    {
+      "id": "DPL-RP-005",
+      "displayName": "Great West Road / Stucley Road corner site, Hounslow, TW5",
+      "borough": "Hounslow",
+      "admissionState": "ADMITTED_WITH_SOURCE_IDENTITY_RECHECK",
+      "record": "dpl-rp-005-great-west-road-stucley-road-hounslow.md",
+      "challengeTags": ["CORNER_SITE", "DUAL_FRONTAGE", "SIDE_ROAD_ACCESS", "SOURCE_IDENTITY_LINK_RECHECK"]
+    },
+    {
+      "id": "DPL-RP-006",
+      "displayName": "Land adjacent to 50 Camelot Close, Thamesmead, SE28 0ET",
+      "borough": "Greenwich",
+      "admissionState": "ADMITTED",
+      "record": "dpl-rp-006-land-adjacent-50-camelot-close-thamesmead.md",
+      "challengeTags": ["FLOOD_WATER_EVIDENCE", "CONTAMINATED_LAND_EVIDENCE", "FOUL_UTILITIES_EVIDENCE", "POSSIBLE_ADOPTED_HIGHWAY_OVERLAP"]
+    },
+    {
+      "id": "DPL-RP-007",
+      "displayName": "Land at 28 Godstone Road, Kenley, CR8 5JE",
+      "borough": "Croydon",
+      "admissionState": "ADMITTED_TOPOGRAPHY_STRESS",
+      "record": "dpl-rp-007-land-28-godstone-road-kenley.md",
+      "challengeTags": ["STEEP_TOPOGRAPHY", "TREE_VEGETATION_CONTEXT", "MULTI_DWELLING_HISTORY_NOT_CANDIDATE", "CONFLICTING_DECISION_SURFACES"]
+    },
+    {
+      "id": "DPL-RP-008",
+      "displayName": "Land at rear of 32 Gleneldon Road / Ashlake Road, Streatham, SW16 2BD",
+      "borough": "Lambeth",
+      "admissionState": "ADMITTED_WITH_DECISION_RECHECK",
+      "record": "dpl-rp-008-rear-32-gleneldon-road-streatham.md",
+      "challengeTags": ["ORDINARY_SMALL_PLOT_CONTROL", "APPROXIMATE_97SQM_GEOMETRY", "GARAGE_REDEVELOPMENT", "CURRENT_PERMISSION_STATUS_RECHECK"]
+    }
+  ],
+  "coverageAfterDpl14c": {
+    "admittedSiteRecords": 8,
+    "distinctBoroughs": 7,
+    "boroughs": ["Barnet", "Bromley", "Croydon", "Greenwich", "Havering", "Hounslow", "Lambeth"],
+    "allSitesGreaterLondon": true,
+    "allSitesDeploymentNotEvaluated": true,
+    "axes": {
+      "ordinaryStreetFrontReplacement": "COVERED_DPL_RP_004",
+      "cornerOrDualFrontage": "COVERED_WITH_IDENTITY_RECHECK_DPL_RP_005",
+      "authoritativeWaterEnvironmentalTrigger": "COVERED_DPL_RP_006",
+      "reliablyEvidencedSlopeTopography": "COVERED_WITH_CANDIDATE_SCOPE_CAUTION_DPL_RP_007",
+      "ordinaryControlClearGeometrySparseHistory": "PARTIALLY_COVERED_DPL_RP_008",
+      "orientationDiversity": "NOT_PROVEN_WITH_SURVEY_GRADE_ORIENTATION"
+    },
+    "remainingTargetedGaps": [
+      "an ordinary low-pathology parcel with directly proven sparse planning history",
+      "survey-grade orientation and topographic geometry rather than marketing/map inference",
+      "additional materially narrow and wide street-front parcels before deployment-envelope inference",
+      "more than one authoritative flood/environmental condition before treating it as recurrent"
+    ]
+  },
+  "provenanceRequirements": {
+    "sourceLineage": "MANDATORY",
+    "spatialScope": "MANDATORY",
+    "temporalState": "MANDATORY",
+    "identityLinkConfidence": ["EXACT_IDENTITY", "LIKELY_OVERLAP", "CONTEXT_ONLY", "UNRESOLVED_LINK"],
+    "missingOrConflictingFacts": "MUST_NOT_DEFAULT_TO_PASS"
+  },
+  "schemaBoundary": {
+    "stable": ["site id", "display identity", "borough", "admission state", "record path", "challenge tags", "coverage axes", "provenance requirements"],
+    "notFrozenHere": ["full site claim schema", "survey geometry model", "title model", "deployment compatibility", "planning likelihood", "purchase ranking", "scores"]
+  }
+}
