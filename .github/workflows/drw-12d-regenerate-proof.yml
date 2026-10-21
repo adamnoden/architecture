@@ -6,7 +6,7 @@ on:
       - drw-12d-whole-book-physical-proof
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   regenerate:
@@ -30,6 +30,16 @@ jobs:
             docs/reference-house/publication-first-floor-plan.svg \
             docs/reference-house/publication-first-service-maintenance-overlay.svg \
             docs/reference-house/publication-structural-span-overlay.svg | sort)"
+      - name: Commit exact generated plates
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            docs/reference-house/publication-first-floor-plan.svg \
+            docs/reference-house/publication-first-service-maintenance-overlay.svg \
+            docs/reference-house/publication-structural-span-overlay.svg
+          git commit -m 'DRW-12D regenerate corrected first-floor plate family'
+          git push origin HEAD:drw-12d-whole-book-physical-proof
       - uses: actions/upload-artifact@v4
         with:
           name: drw-12d-regenerated-controlled-plates
