@@ -160,6 +160,6 @@ test('DRW-12C publication serialization is byte-deterministic, styled by shared 
   assert.match(a, /\.line-primary\{stroke:#000000;stroke-width:0\.25;/)
   assert.match(a, /\.line-secondary\{stroke:#000000;stroke-width:0\.18;/)
   assert.match(a, /\.text-label\{[^}]*font-size:2\.646px;/)
-  assert.match(a, /\.fill-faint\{fill:#f2f0eb;stroke:none\}/)
+  assert.match(a, /\.fill-faint\{fill:#a6a6a6;stroke:none\}/)
   assert.doesNotMatch(a, /<image\b|<foreignObject\b|data:image\//i)
 })
