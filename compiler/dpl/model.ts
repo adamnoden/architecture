@@ -130,6 +130,12 @@ export interface LoadedPilotSite {
   readonly indexEntryFingerprint: string
 }
 
+export interface InterfaceContractRef {
+  readonly id: string
+  readonly path: string
+  readonly semanticFingerprint: string
+}
+
 export interface EvidenceItem {
   readonly id: string
   readonly version: string
@@ -143,6 +149,7 @@ export type ProposalFacts = Readonly<Record<string, unknown>>
 export interface DeploymentCaseInput {
   readonly assuranceProfile: AssuranceProfile
   readonly site: LoadedPilotSite
+  readonly interfaceContracts: readonly InterfaceContractRef[]
   readonly targets: readonly {
     readonly authorityClass: TargetAuthorityClass
     readonly target: RawTargetSlice
@@ -193,6 +200,7 @@ export interface DeploymentCaseIdentityManifest {
     readonly indexEntryFingerprint: string
     readonly recordFingerprint: string
   }
+  readonly interfaceContracts: readonly InterfaceContractRef[]
   readonly targets: readonly {
     readonly authorityClass: TargetAuthorityClass
     readonly targetId: string
@@ -214,6 +222,7 @@ export interface DeploymentLedger {
     readonly id: string
     readonly displayName: string
     readonly borough: string
+    readonly primaryIdentityBasis: string
     readonly decisionCriticalUnknowns: readonly string[]
     readonly recordFingerprint: string
   }
