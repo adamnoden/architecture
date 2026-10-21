@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - run: npm ci
+      - run: npm install --package-lock=false
       - name: Regenerate affected controlled plates
         run: |
           npx tsx compiler/reference-house/generate-publication-first-floor-plan.ts
