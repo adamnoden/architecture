@@ -41,6 +41,9 @@ jobs:
       - name: Check publication PDF metadata
         run: npm run publication:metadata:check
 
+      - name: Validate publication plate rhythm
+        run: npx tsx publication/scripts/validate-plate-rhythm.ts
+
       - name: Validate rendered public nomenclature
         run: npx tsx scripts/validate-public-nomenclature.ts --rendered
 
