@@ -9,6 +9,10 @@ const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const workingEditionPath = resolve(repoRoot, 'publication/dist/ovids-house.pdf')
 const primerPath = resolve(repoRoot, 'publication/dist/ovids-house-primer.pdf')
 
+interface DestroyablePdfDocument {
+  destroy?: () => Promise<void> | void
+}
+
 function normalized(value: string): string {
   return value.replace(/\s+/g, ' ').trim()
 }
@@ -31,7 +35,8 @@ async function extractPageText(path: string): Promise<readonly string[]> {
     }
     return extracted.text.map(normalized)
   } finally {
-    await document.destroy()
+    const destroy = (document as DestroyablePdfDocument).destroy
+    if (destroy) await destroy.call(document)
   }
 }
 
