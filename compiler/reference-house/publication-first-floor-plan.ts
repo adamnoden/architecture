@@ -103,7 +103,7 @@ const internalWallBody = (
 
   if (close(from, 0)) from += externalCourtThickness
   if (close(to, result.derived.shell.width)) to -= externalCourtThickness
-  if (close(from, result.derived.court.x1) && y >= courtFrameY0 && y <= courtFrameX1) {
+  if (close(from, result.derived.court.x1) && y >= courtFrameY0 && y <= courtFrameY1) {
     from += externalCourtThickness
   }
   if (close(to, result.derived.court.x0) && y >= courtFrameY0 && y <= courtFrameY1) {
