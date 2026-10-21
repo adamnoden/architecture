@@ -297,12 +297,12 @@ const roomLabelPositions: Record<string, RoomLabelSpec> = {
   'U-BED-03': { x: 10400, y: 1400, label: 'Bedroom 3' },
   'U-GAL-02': {
     x: 7550,
-    y: 5400,
+    y: 6400,
     label: 'East gallery',
     anchor: 'end',
     leader: {
-      from: { x: 7650, y: 5400 },
-      to: { x: 8450, y: 5400 }
+      from: { x: 7650, y: 6400 },
+      to: { x: 8450, y: 6400 }
     }
   },
   'U-BATH-01': { x: 10550, y: 5400, label: 'Family bathroom' },

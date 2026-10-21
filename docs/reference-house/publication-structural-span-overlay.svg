@@ -63,8 +63,8 @@
 <text x="79.5" y="104.5" class="text-label" text-anchor="middle" data-entity="label-U-STAIR-01-1" data-provisional="true" data-space="U-STAIR-01">South</text>
 <text x="79.5" y="107.5" class="text-label" text-anchor="middle" data-entity="label-U-STAIR-01-2" data-provisional="true" data-space="U-STAIR-01">landing</text>
 <text x="112" y="106" class="text-label" text-anchor="middle" data-entity="label-U-BED-03" data-provisional="true" data-space="U-BED-03">Bedroom 3</text>
-<line x1="84.5" y1="66" x2="92.5" y2="66" class="line-secondary" data-entity="label-leader-U-GAL-02" data-provisional="false" data-space="U-GAL-02"/>
-<text x="83.5" y="66" class="text-label" text-anchor="end" data-entity="label-U-GAL-02" data-provisional="false" data-space="U-GAL-02">East gallery</text>
+<line x1="84.5" y1="56" x2="92.5" y2="56" class="line-secondary" data-entity="label-leader-U-GAL-02" data-provisional="false" data-space="U-GAL-02"/>
+<text x="83.5" y="56" class="text-label" text-anchor="end" data-entity="label-U-GAL-02" data-provisional="false" data-space="U-GAL-02">East gallery</text>
 <text x="113.5" y="66" class="text-label" text-anchor="middle" data-entity="label-U-BATH-01" data-provisional="false" data-space="U-BATH-01">Family bathroom</text>
 <text x="111.5" y="24" class="text-label" text-anchor="middle" data-entity="label-U-BED-04" data-provisional="true" data-space="U-BED-04">Bedroom 4</text>
 <text x="84" y="40" class="text-label" text-anchor="middle" data-entity="label-U-LAND-N01" data-provisional="true" data-space="U-LAND-N01">North landing</text>
