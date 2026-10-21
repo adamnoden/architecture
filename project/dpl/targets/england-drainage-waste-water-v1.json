@@ -1,0 +1,321 @@
+{
+  "schemaVersion": "dpl.englandTechnicalSlice.v1",
+  "id": "ENG-BC-DRAINAGE-WASTE-WATER-2026-10-21",
+  "jurisdiction": "England",
+  "researchDate": "2026-10-21",
+  "referenceWorkClass": "new-low-rise-detached-dwelling-non-HRB",
+  "scope": [
+    "Schedule 1 H1 — Foul water drainage",
+    "Schedule 1 H2 — Wastewater treatment systems and cesspools (conditional)",
+    "Schedule 1 H3 — Rainwater drainage",
+    "Schedule 1 H4 — Building over sewers (conditional)",
+    "Schedule 1 H5 — Separate systems of drainage (conditional)"
+  ],
+  "sourceSnapshots": [
+    {
+      "id": "BR2010-SCH1-2026-07-20",
+      "sourceClass": "PRIMARY_OR_DELEGATED_LEGISLATION",
+      "title": "The Building Regulations 2010 — Schedule 1",
+      "instrument": "S.I. 2010/2214",
+      "pointInTime": "2026-07-20",
+      "canonicalSource": "https://www.legislation.gov.uk/uksi/2010/2214/schedule/1/2026-07-20?wrap=true",
+      "status": "OPERATIVE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-21"
+    },
+    {
+      "id": "AD-H-CURRENT-2026-10-21",
+      "sourceClass": "OFFICIAL_COMPLIANCE_GUIDANCE",
+      "title": "Approved Document H — Drainage and waste disposal",
+      "canonicalSource": "https://www.gov.uk/government/publications/drainage-and-waste-disposal-approved-document-h",
+      "status": "CURRENT_OFFICIAL_GUIDANCE_PAGE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-21",
+      "editionNote": "2015 edition for use in England",
+      "authorityNote": "Compliance guidance, not the statutory requirement itself."
+    },
+    {
+      "id": "WIA1991-S106-CURRENT-2026-10-21",
+      "sourceClass": "EXTERNAL_PRIMARY_LEGISLATION",
+      "title": "Water Industry Act 1991 — section 106 right to communicate with public sewers",
+      "canonicalSource": "https://www.legislation.gov.uk/ukpga/1991/56/section/106",
+      "status": "CURRENT_REVISED_VIEW_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-21",
+      "authorityNote": "Separate sewerage-law authority. DPL-09C does not treat this source as a Building Regulations requirement or as proof that a particular connection is technically available."
+    },
+    {
+      "id": "EA-SSD-GBR-2023-CURRENT-2026-10-21",
+      "sourceClass": "EXTERNAL_ENVIRONMENTAL_PERMITTING_AUTHORITY",
+      "title": "General binding rules for small sewage discharges with effect from 2 October 2023",
+      "canonicalSource": "https://www.gov.uk/government/publications/small-sewage-discharges-in-england-the-general-binding-rules/general-binding-rules-for-small-sewage-discharges-ssds-with-effect-from-2-october-2023",
+      "status": "CURRENT_OFFICIAL_ENVIRONMENT_AGENCY_GUIDANCE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-21",
+      "authorityNote": "Separate environmental-permitting regime relevant only if a non-mains small sewage discharge is proposed. It does not replace H1/H2."
+    }
+  ],
+  "methodClasses": [
+    {
+      "id": "APPLICABILITY_FACT_GATE",
+      "kind": "NATIVE_DETERMINISTIC",
+      "claimBoundary": "Determines only whether a conditional drainage obligation is triggered from admitted facts. Missing network/site facts remain unresolved."
+    },
+    {
+      "id": "EXTERNAL_DRAINAGE_DESIGN_EVIDENCE",
+      "kind": "EXTERNAL_PROFESSIONAL_EVIDENCE",
+      "claimBoundary": "Competent drainage/civil design and hydraulic evidence are required. Architectural topology or target routing does not establish adequacy."
+    },
+    {
+      "id": "EXTERNAL_NETWORK_ASSET_CONSENT_EVIDENCE",
+      "kind": "EXTERNAL_EVIDENCE_AND_INSPECTION",
+      "claimBoundary": "Sewer maps, surveyed asset facts, undertaker determinations/consents and rights evidence remain external. A planning drawing or listing does not discharge this method."
+    },
+    {
+      "id": "EXTERNAL_GROUND_INFILTRATION_EVIDENCE",
+      "kind": "EXTERNAL_PROFESSIONAL_EVIDENCE",
+      "claimBoundary": "Ground/permeability/groundwater/contamination evidence and competent infiltration design are required before infiltration can be treated as adequate or reasonably practicable."
+    },
+    {
+      "id": "EXTERNAL_ENVIRONMENTAL_DISCHARGE_EVIDENCE",
+      "kind": "EXTERNAL_EVIDENCE_AND_INSPECTION",
+      "claimBoundary": "Non-mains sewage/environmental discharge legality and permits/general-binding-rule compliance remain with the applicable environmental regime and evidence."
+    }
+  ],
+  "obligations": [
+    {
+      "id": "ENG-BR-H1-FOUL-DRAINAGE",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 H1",
+      "title": "Adequate foul-water drainage and disposal route",
+      "applicability": "APPLIES_TO_REFERENCE_WORK_CLASS",
+      "resolutionMethod": "EXTERNAL_DRAINAGE_DESIGN_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "actual foul appliance/discharge design",
+        "external route geometry and levels",
+        "public/private sewer evidence and connection position where relevant",
+        "evidence supporting whether each higher-priority route is reasonably practicable",
+        "competent drainage design"
+      ],
+      "priorityOrder": [
+        "public sewer",
+        "private sewer communicating with a public sewer where public sewer is not reasonably practicable",
+        "septic tank with appropriate secondary treatment or other wastewater treatment system where sewer routes are not reasonably practicable",
+        "cesspool where preceding routes are not reasonably practicable"
+      ],
+      "interfaceRef": "DPL-08C-W-H01",
+      "nonClaim": "The priority order is statutory, but whether a particular route is reasonably practicable is not inferred from absence/presence of a map symbol or from architectural preference."
+    },
+    {
+      "id": "ENG-BR-H2-NON-MAINS-TREATMENT",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 H2",
+      "title": "Wastewater treatment system / septic tank / cesspool adequacy",
+      "applicability": "CONDITIONAL_ON_NON_MAINS_FOUL_DISPOSAL_SELECTION",
+      "applicabilityMethod": "APPLICABILITY_FACT_GATE",
+      "resolutionMethod": "EXTERNAL_DRAINAGE_DESIGN_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "selected foul-disposal class",
+        "system siting and health/water-protection evidence",
+        "capacity/impermeability/ventilation evidence where applicable",
+        "emptying and maintenance access",
+        "power-failure performance where relevant",
+        "environmental-permitting/general-binding-rule evidence where the system discharges to ground or surface water"
+      ],
+      "externalAuthorityRefs": [
+        "EA-SSD-GBR-2023-CURRENT-2026-10-21"
+      ],
+      "nonClaim": "H2 applicability does not authorise or environmentally permit a non-mains discharge."
+    },
+    {
+      "id": "ENG-BR-H3-1-ROOF-RAINWATER",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 H3(1)",
+      "title": "Adequate provision to carry rainwater from the roof",
+      "applicability": "APPLIES_TO_REFERENCE_WORK_CLASS",
+      "resolutionMethod": "EXTERNAL_DRAINAGE_DESIGN_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "actual roof catchments and finished falls",
+        "design rainfall / selected lawful technical method",
+        "gutter/outlet/downpipe hydraulic design",
+        "external receiving-route design"
+      ],
+      "partialNativeEvidence": [
+        "RH-08 outward-draining roof-field topology",
+        "DRW-10C inspectable perimeter collection and outward-failure analytical evidence"
+      ],
+      "interfaceRef": "DPL-08C-W-H02",
+      "nonClaim": "Controlled roof-water topology does not establish H3 hydraulic adequacy."
+    },
+    {
+      "id": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 H3(2)",
+      "title": "Adequate drainage of applicable paved areas around the building",
+      "applicability": "CONDITIONAL_ON_APPLICABLE_PAVED_ACCESS_OR_PASSAGE_AREA",
+      "applicabilityMethod": "APPLICABILITY_FACT_GATE",
+      "resolutionMethod": "EXTERNAL_DRAINAGE_DESIGN_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "actual paved-area extent and use",
+        "whether the paved area falls within the H3(2) application conditions",
+        "levels/falls and surface-water route",
+        "competent drainage design"
+      ],
+      "interfaceRef": "DPL-08C-W-H05",
+      "nonClaim": "The presence of a conceptual step-free approach does not by itself prove the final H3(2) paved-area design."
+    },
+    {
+      "id": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 H3(3)",
+      "title": "Rainwater discharge route priority",
+      "applicability": "APPLIES_TO_H3_RAINWATER_SYSTEM_EXCEPT_GATHERING_FOR_REUSE",
+      "resolutionMethod": "EXTERNAL_DRAINAGE_DESIGN_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "whether rainwater is gathered for reuse",
+        "infiltration/soakaway feasibility and adequacy evidence",
+        "watercourse availability/legality evidence where infiltration is not reasonably practicable",
+        "sewer availability/connection evidence where preceding routes are not reasonably practicable",
+        "site levels and receiving-route design"
+      ],
+      "priorityOrder": [
+        "adequate soakaway or other adequate infiltration system",
+        "watercourse where infiltration is not reasonably practicable",
+        "sewer where neither preceding route is reasonably practicable"
+      ],
+      "interfaceRefs": [
+        "DPL-08C-W-H02",
+        "DPL-08C-W-H03",
+        "DPL-08C-W-H04",
+        "DPL-08C-W-H05"
+      ],
+      "nonClaim": "A garden is not infiltration evidence, and the statutory priority is not converted into a guessed site route."
+    },
+    {
+      "id": "ENG-BR-H4-MAPPED-SEWER",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 H4",
+      "title": "Building / underpinning work affecting mapped drain, sewer or disposal main",
+      "applicability": "CONDITIONAL_ON_MAPPED_DRAIN_SEWER_OR_DISPOSAL_MAIN_INTERFERENCE",
+      "applicabilityMethod": "APPLICABILITY_FACT_GATE",
+      "resolutionMethod": "EXTERNAL_NETWORK_ASSET_CONSENT_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "current sewerage-undertaker map evidence",
+        "actual site/building relationship to mapped asset",
+        "surveyed asset position/depth where decision-critical",
+        "maintenance/access implications",
+        "undertaker/build-over/diversion evidence where applicable"
+      ],
+      "externalAuthorityRefs": [
+        "WIA1991-S106-CURRENT-2026-10-21"
+      ],
+      "nonClaim": "A marketing or planning drainage line is not automatically the statutory map-of-sewers evidence referenced by H4."
+    },
+    {
+      "id": "ENG-BR-H5-SEPARATE-SYSTEMS",
+      "sourceSnapshot": "BR2010-SCH1-2026-07-20",
+      "sourceProvision": "Schedule 1 H5",
+      "title": "Separate foul and surface-water systems where the H5 conditions apply",
+      "applicability": "CONDITIONAL_ON_SURFACE_WATER_SEWER_ROUTE_AND_H5_APPLICATION_CONDITIONS",
+      "applicabilityMethod": "APPLICABILITY_FACT_GATE",
+      "resolutionMethod": "EXTERNAL_NETWORK_ASSET_CONSENT_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "whether H3 rainwater will discharge to sewer",
+        "map-of-sewers / under-construction separate-surface-water sewer evidence",
+        "whether direct/indirect discharge to the separate surface-water sewer is reasonably practicable",
+        "competent drainage/network design"
+      ],
+      "interfaceRefs": [
+        "DPL-08C-W-H01",
+        "DPL-08C-W-H02",
+        "DPL-08C-W-H03"
+      ],
+      "nonClaim": "H5 is not represented as a universal ban on combined drainage independent of its statutory application conditions."
+    }
+  ],
+  "externalRegimeEdges": [
+    {
+      "id": "H1-PUBLIC-SEWER-CONNECTION-LAW",
+      "fromObligation": "ENG-BR-H1-FOUL-DRAINAGE",
+      "sourceSnapshot": "WIA1991-S106-CURRENT-2026-10-21",
+      "reason": "Public-sewer connection rights/notice/undertaker law are separate from the Building Regulations adequacy obligation."
+    },
+    {
+      "id": "H2-NON-MAINS-ENVIRONMENTAL-RULES",
+      "fromObligation": "ENG-BR-H2-NON-MAINS-TREATMENT",
+      "sourceSnapshot": "EA-SSD-GBR-2023-CURRENT-2026-10-21",
+      "reason": "Environmental permitting/general binding rules remain a separate authority where a non-mains small sewage discharge is proposed."
+    }
+  ],
+  "delegatedSiblingScope": [
+    {
+      "sourceProvision": "Schedule 1 H6",
+      "reason": "Solid-waste storage/access is not a water/waste-water obligation and should be modelled with external-access/refuse/planning work rather than pulled into this vertical merely because it shares Part H."
+    },
+    {
+      "sourceProvision": "Schedule 1 Part G",
+      "reason": "Sanitary appliance/hot-water/water-efficiency requirements remain outside this packet. DPL-09C consumes only the fact that H1 drains foul water from relevant appliances; it does not become a full Part G implementation."
+    }
+  ],
+  "currentReferenceHouseDisposition": [
+    {
+      "obligationId": "ENG-BR-H1-FOUL-DRAINAGE",
+      "result": "UNRESOLVED",
+      "reason": "Building-side service handoff exists, but no evidenced external sewer/non-mains route, levels or competent drainage design is admitted."
+    },
+    {
+      "obligationId": "ENG-BR-H2-NON-MAINS-TREATMENT",
+      "result": "UNRESOLVED",
+      "reason": "Applicability cannot be resolved until the lawful/practicable foul-disposal route is evidenced."
+    },
+    {
+      "obligationId": "ENG-BR-H3-1-ROOF-RAINWATER",
+      "result": "UNRESOLVED",
+      "reason": "RH-08/DRW provide strong architectural topology evidence, not hydraulic sizing or external receiving-route proof."
+    },
+    {
+      "obligationId": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+      "result": "UNRESOLVED",
+      "reason": "Applicable paved-area extent and final access/surface drainage design are not yet fixed."
+    },
+    {
+      "obligationId": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+      "result": "UNRESOLVED",
+      "reason": "No infiltration, watercourse or sewer route has evidence sufficient to establish the statutory priority outcome."
+    },
+    {
+      "obligationId": "ENG-BR-H4-MAPPED-SEWER",
+      "result": "UNRESOLVED",
+      "reason": "No authoritative mapped-sewer/site-interference evidence is admitted for the Reference Site."
+    },
+    {
+      "obligationId": "ENG-BR-H5-SEPARATE-SYSTEMS",
+      "result": "UNRESOLVED",
+      "reason": "Surface-water sewer route and statutory H5 application conditions are not evidenced."
+    }
+  ],
+  "proofBoundary": {
+    "nativeNow": [
+      "source identity",
+      "work-class/source routing",
+      "explicit conditional-applicability gates once the relevant site/network facts are admitted"
+    ],
+    "externalNow": [
+      "hydraulic adequacy",
+      "pipe/chamber/gully sizing and falls",
+      "sewer asset position/depth/capacity",
+      "connection rights/consents",
+      "infiltration/permeability/groundwater adequacy",
+      "non-mains treatment/environmental-permitting adequacy",
+      "detailed site levels/exceedance design"
+    ],
+    "unsupportedUntilFurtherPacket": [
+      "whole-house Part H compliance conclusion",
+      "whole-site drainage feasibility conclusion",
+      "automatic sewer/infiltration route selection from incomplete site data"
+    ]
+  }
+}
