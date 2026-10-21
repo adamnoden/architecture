@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { sha256SemanticFingerprint } from '../core/identity.js'
 import type {
+  InterfaceContractRef,
   LoadedPilotSite,
   PilotSiteIndex,
   RawTargetSlice,
@@ -119,6 +120,18 @@ export const loadPilotSite = (
   }
 }
 
+export const loadInterfaceContract = (
+  id: string,
+  path: string
+): InterfaceContractRef => {
+  const content = readText(path)
+  return {
+    id,
+    path,
+    semanticFingerprint: sha256SemanticFingerprint({ path, content })
+  }
+}
+
 export const loadB2TargetComposition = () => [
   loadTargetSlice(
     'project/dpl/targets/england-structure-ground-moisture-materials-v1.json',
@@ -127,5 +140,12 @@ export const loadB2TargetComposition = () => [
   loadTargetSlice(
     'project/dpl/targets/london-strategic-residential-design-v1.json',
     'LONDON_STRATEGIC_PLANNING'
+  )
+] as const
+
+export const loadB2InterfaceContracts = () => [
+  loadInterfaceContract(
+    'DPL-08B-GROUND-DATUM-PLINTH-APPROACH',
+    'project/dpl/dpl-08b-ground-datum-plinth-approach-interface.md'
   )
 ] as const
