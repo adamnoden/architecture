@@ -28,7 +28,7 @@ Three boundaries are pinned deliberately:
 
 1. **Shared renderer / drawing engine** — `compiler/publication-drawing` tree `14662cd5e816e3e2f17b55a2b7db11632cbc67df`.
 2. **Physical graphic style** — `compiler/publication-drawing/tokens.ts` blob `e6c9bb122a33f393d87945426d841e6f3a57f1eb`.
-3. **Part IV plate/compositor register** — `publication/plates.ts` blob `76ab2d427278361876041fb446871b606d426ebe`.
+3. **Part IV plate/compositor register** — `publication/plates.ts` blob `76abdda72ed4d222e0c3546242e8efd7b77593dc`.
 
 The manifest additionally records 17 named RH01 view-spec versions and exact Git object IDs for every production scene/source module that defines those released views.
 
