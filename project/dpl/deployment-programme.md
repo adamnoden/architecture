@@ -476,7 +476,7 @@ B2 has now produced:
 
 But those objects have not yet been reconciled through an executable shared orchestration layer.
 
-The project-wide M3 criterion requires the workstream to be reconciled with adjacent parts of the project and internally coherent at its stated scope. DPL-12A is now the concrete coordination test.
+The project-wide M3 criterion requires the workstream to be reconciled with adjacent project parts and internally coherent at its stated scope. DPL-12A is now the concrete coordination test.
 
 Reconsider M3 only after DPL-12A executes against the actual B2 objects and a post-Wave-C gate reviews the result.
 
