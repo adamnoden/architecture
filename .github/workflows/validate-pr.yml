@@ -41,6 +41,15 @@ jobs:
       - name: Check publication PDF metadata
         run: npm run publication:metadata:check
 
+      - name: Upload DRW-12A publication proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: drw-12a-publication-proof
+          path: |
+            publication/dist/ovids-house.pdf
+            publication/dist/ovids-house-primer.pdf
+          if-no-files-found: error
+
       - name: Validate rendered public nomenclature
         run: npx tsx scripts/validate-public-nomenclature.ts --rendered
 
