@@ -29,6 +29,11 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
+      - name: Install PDF font inspector
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+
       - name: Build exact selected Source proof
         env:
           TYP03_PACK_ID: typ03f-source-confirmation
