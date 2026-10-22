@@ -2,14 +2,9 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Foundation gate:** [#344 — DPL-FR](https://github.com/adamnoden/architecture/issues/344)  
-**Wave-A gate:** [#356 — DPL-WA](https://github.com/adamnoden/architecture/issues/356)  
-**Wave-B1 gate:** [#373 — DPL-B1](https://github.com/adamnoden/architecture/issues/373)  
-**Wave-B2 gate:** [#390 — DPL-B2](https://github.com/adamnoden/architecture/issues/390)  
-**Wave-C gate:** [#412 — DPL-C](https://github.com/adamnoden/architecture/issues/412)  
-**Wave-D gate:** [#420 — DPL-D](https://github.com/adamnoden/architecture/issues/420)  
-**Programme state:** foundation through Wave D complete; DPL-D admits **DPL-13A only** as the next bounded canonical integration compile  
-**Programme maturity:** **M3 — Coordinated**
+**Latest gate:** [#426 — DPL-E](https://github.com/adamnoden/architecture/issues/426)  
+**Programme state:** DPL-13A canonical synthetic compile complete; DPL-E authorises Coverage Foundations only  
+**Programme maturity:** **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration scope; whole-site conclusion readiness excluded**
 
 ## Purpose
 
@@ -19,7 +14,7 @@ The eventual deployment question remains:
 
 > **Can this controlled Reference House revision be deployed on this site, under this exact target composition and evidence state, while preserving its architectural identity and satisfying every obligation due for the requested assurance profile?**
 
-The eventual whole-deployment conclusions remain:
+The eventual whole-site conclusions remain:
 
 - `COMPATIBLE`;
 - `UNRESOLVED`;
@@ -27,16 +22,7 @@ The eventual whole-deployment conclusions remain:
 
 **No current runtime is authorised to emit those whole-site conclusions.**
 
-DPL-D has now established that a canonical compile and a canonical conclusion are separate milestones. DPL-13A may assemble the first complete synthetic canonical case and ledger while whole-site conclusion readiness remains explicitly unproved.
-
-DPL is not:
-
-- a generic house generator;
-- a Building Regulations product;
-- a planning-permission predictor;
-- a substitute for competent engineering, legal, planning or statutory review;
-- permission to mutate the Reference House until a site passes;
-- a property-ranking or acquisition-scoring system.
+The current controlled baseline is narrower: DPL can deterministically assemble and boundedly evaluate one explicit Reference House × synthetic Reference Site deployment case while preserving provenance, unknowns, candidate authorship, target/interface authority and declared coverage gaps.
 
 ## Governing rules
 
@@ -44,33 +30,7 @@ DPL is not:
 
 > **The compiler evaluates architecture; it does not silently author it.**
 
-The governing authority chain remains:
-
-```text
-OVID'S HOUSE
-    ↓
-REFERENCE HOUSE
-controlled authored architecture
-    +
-SITE MANIFEST / CLAIMS / EVIDENCE
-    +
-TYPED TARGET COMPOSITION
-    +
-ASSURANCE PROFILE
-    ↓
-DEPLOYMENT CASE
-    ↓
-AUTHORED DEPLOYMENT CANDIDATE
-    ↓
-METAMORPH COMPILER
-    ↓
-CONFORMANCE + OBLIGATIONS + EVIDENCE
-    ↓
-EVENTUAL WHOLE-SITE CONCLUSION
-only when conclusion scope is itself proved
-```
-
-The diagram is an authority model, not a claim that every arrow is already executable.
+> **A deterministic ledger is not a deployment conclusion unless the scope over which that conclusion is derived is itself proved.**
 
 ---
 
@@ -95,13 +55,9 @@ Key frozen consequences:
 - target composition is typed rather than list-order inheritance;
 - evidence lifecycle remains independent from obligation result;
 - candidate failure is not site incompatibility;
-- `INCOMPATIBLE` requires route exhaustion or an invariant blocking proof;
+- `INCOMPATIBLE` requires route exhaustion or invariant blocking proof;
 - `COMPATIBLE @ <profile>` requires complete resolution of all applicable due-now blocking obligations at that profile;
-- a synthetic site must retain synthetic provenance.
-
-Canonical obligation results remain:
-
-`PASS / EXTERNALLY_DISCHARGED / FAIL / UNSUPPORTED / UNRESOLVED / NOT_APPLICABLE / WARNING / SUPERSEDED`
+- synthetic site provenance remains synthetic.
 
 Assurance profiles remain:
 
@@ -113,237 +69,207 @@ Assurance profiles remain:
 
 ## Foundation — complete
 
-DPL-01 through DPL-06 are complete.
+DPL-01 through DPL-06.
 
 ## Wave A — complete
 
-- [DPL-07 — Reference Site](dpl-07-reference-site.md) / #347;
-- [DPL-09 — England regulatory target inventory](dpl-09-england-regulatory-target-inventory.md) / #348;
-- [DPL-10 — London planning target inventory](dpl-10-london-planning-target-inventory.md) / #349;
-- [DPL-11 — site due-diligence / non-planning model](dpl-11-site-due-diligence-model.md) / #350.
+- [DPL-07 — Reference Site](dpl-07-reference-site.md);
+- [DPL-09 — England regulatory target inventory](dpl-09-england-regulatory-target-inventory.md);
+- [DPL-10 — London planning target inventory](dpl-10-london-planning-target-inventory.md);
+- [DPL-11 — site due-diligence / non-planning model](dpl-11-site-due-diligence-model.md).
 
 ## Wave B1 — complete
 
-- [DPL-08A — site-interface authority register](dpl-08a-site-interface-authority-register.md) / #358;
-- [DPL-09A — England source/applicability spine](dpl-09a-england-source-applicability-spine.md) / #359;
-- [DPL-10A — planning source/status spine](dpl-10a-planning-source-status-spine.md) / #360;
-- [DPL-14A — real-plot corpus protocol](dpl-14a-real-plot-corpus-protocol.md) / #361.
-
-DPL-B1 concluded:
-
-> **PASS — HOLD DPL-12; AUTHORISE B2 ONLY.**
+- [DPL-08A](dpl-08a-site-interface-authority-register.md);
+- [DPL-09A](dpl-09a-england-source-applicability-spine.md);
+- [DPL-10A](dpl-10a-planning-source-status-spine.md);
+- [DPL-14A](dpl-14a-real-plot-corpus-protocol.md).
 
 ## Wave B2 — complete
 
-- [DPL-08B — ground / datum / plinth / accessible approach](dpl-08b-ground-datum-plinth-approach-interface.md) / #376;
-- [DPL-09B — structure / ground / moisture / materials](dpl-09b-structure-ground-moisture-materials.md) / #377;
-- [DPL-10B — London strategic residential / design target](dpl-10b-london-strategic-residential-design.md) / #378;
-- [DPL-14B — three-site real London corpus pilot](dpl-14b-three-site-real-corpus-pilot.md) / #379.
-
-DPL-B2 concluded:
-
-> **PASS — ADMIT DPL-12A; KEEP DPL AT M2; AUTHORISE WAVE C ONLY.**
+- [DPL-08B](dpl-08b-ground-datum-plinth-approach-interface.md);
+- [DPL-09B](dpl-09b-structure-ground-moisture-materials.md);
+- [DPL-10B](dpl-10b-london-strategic-residential-design.md);
+- [DPL-14B](dpl-14b-three-site-real-corpus-pilot.md).
 
 ## Wave C — complete
 
-- [DPL-12A — minimal deployment orchestration](dpl-12a-minimal-orchestration.md) / #398;
-- [DPL-08C — foul / surface / site-water interface](dpl-08c-foul-surface-site-water-interface.md) / #399;
-- [DPL-09C — England drainage / waste-water target](dpl-09c-england-drainage-waste-water.md) / #400;
-- [DPL-10C — Croydon borough planning plug-in](dpl-10c-croydon-planning-plugin.md) / #401;
-- [DPL-14C — five-site corpus gap correction](dpl-14c-five-site-gap-correction.md) / #402.
+- [DPL-12A](dpl-12a-minimal-orchestration.md);
+- [DPL-08C](dpl-08c-foul-surface-site-water-interface.md);
+- [DPL-09C](dpl-09c-england-drainage-waste-water.md);
+- [DPL-10C](dpl-10c-croydon-planning-plugin.md);
+- [DPL-14C](dpl-14c-five-site-gap-correction.md).
 
-The controlled real-site corpus now contains eight screening-level sites across seven boroughs.
-
-The [post-Wave-C review](dpl-wave-c-integration-maturity-review.md) / #412 concluded:
-
-> **PASS — PROMOTE DPL TO M3; HOLD DPL-13; AUTHORISE WAVE D ONLY.**
+The [DPL-C review](dpl-wave-c-integration-maturity-review.md) promoted DPL to M3 and held whole-site conclusions.
 
 ## Wave D — complete
 
-- [DPL-12B — authored candidate + Reference House conformance](dpl-12b-authored-candidate-conformance.md) / #414;
-- [DPL-10D — Bromley adversarial borough replay](dpl-10d-bromley-adversarial-replay.md) / #415;
-- [DPL-12C — Wave-C runtime composition](dpl-12c-wave-c-runtime-composition.md) / #418.
+- [DPL-12B](dpl-12b-authored-candidate-conformance.md);
+- [DPL-10D](dpl-10d-bromley-adversarial-replay.md);
+- [DPL-12C](dpl-12c-wave-c-runtime-composition.md).
 
-The [post-Wave-D review](dpl-wave-d-integration-admission-review.md) / #420 concludes:
+The [DPL-D review](dpl-wave-d-integration-admission-review.md) admitted DPL-13A only.
 
-> **PASS — ADMIT DPL-13A ONLY; KEEP WHOLE-SITE CONCLUSIONS UNAUTHORISED; HOLD DPL-13B+ AND DPL-15+.**
+## DPL-13A — complete
+
+[DPL-13A — canonical Reference Site case assembly and deterministic deployment ledger](dpl-13a-canonical-reference-site-compile.md) establishes the first controlled Reference House × synthetic DPL-RS-01 canonical deployment case.
+
+It includes:
+
+- all 29 frozen DPL-07 site claims;
+- 11 explicit unknowns;
+- one authored unmirrored 180° `RH-V02` candidate;
+- bounded DPL-02 conformance;
+- DPL-08B/C interface identities;
+- DPL-09B/C England targets;
+- London strategic planning;
+- a first-class coverage manifest;
+- deterministic site/candidate/deployment/coverage/canonical identities;
+- explicit absence of whole-site conclusion authority.
+
+The [DPL-E review](dpl-e-post-13a-review.md) concludes:
+
+> **PASS — PROMOTE DPL TO M4 AT BOUNDED CANONICAL-COMPILE / NO-CONCLUSION SCOPE; AUTHORISE OWNER-SIDE COVERAGE REGISTRIES ONLY; HOLD DPL-13B AND WHOLE-SITE CONCLUSIONS.**
 
 ---
 
-# Current coordinated state
+# Current controlled baseline
+
+## Canonical integration
+
+DPL can now reproduce one exact synthetic canonical deployment case deterministically.
+
+The controlled proof boundary remains:
+
+```text
+wholeSiteCompatibilityConclusion = NOT_IMPLEMENTED
+conclusionReadiness = NOT_ESTABLISHED
+coverageCompleteness = NOT_ESTABLISHED
+routeExhaustion = NOT_IMPLEMENTED
+architecturalCandidateSelection = NOT_IMPLEMENTED
+```
+
+This boundary is part of the M4 baseline, not unfinished wording to be removed casually.
 
 ## Candidate / conformance
 
-DPL-12B gives the runtime explicit authored candidate identity and bounded executable Reference House conformance.
+DPL-12B preserves explicit candidate authorship and currently evaluates only earned native clauses. The full DPL-02 clause universe is not yet machine-readable as a coverage contract.
 
-Only earned clauses are native. Unrepresented DPL-02 authority remains `OPEN`; the runtime does not translate architectural prose into fake booleans.
+## England / site-water
 
-The only currently licensed discrete architectural deployment variants remain:
+DPL-08B/C and DPL-09B/C compose through one runtime. DPL-09's broader England family inventory remains substantially wider than current implemented target slices.
 
-- `RH-V01` — coherent whole-house mirror;
-- `RH-V02` — rigid placement / orientation.
+## Planning
 
-Candidate failure remains distinct from site incompatibility.
+London strategic planning is represented. Croydon and Bromley prove a narrow borough source/status/method envelope but no generic local-policy ontology.
 
-## England / site-water vertical
+The synthetic Reference Site has no real borough and no local target is fabricated.
 
-DPL-08B/C and DPL-09B/C now compose through one runtime while retaining distinct architecture/site-interface and England technical authority.
+## Non-planning due diligence
 
-The compiler does not design foundations or drainage, choose discharge destinations, infer sewer capacity or perform professional judgement.
+DPL-11 already owns the private-law, infrastructure, ground, sewer, utility, access and temporary-works family model. Those families are not yet exposed as a machine-readable SCREENING coverage registry.
 
-## London / borough planning
+## Real-site corpus
 
-The London strategic target is executable at its admitted bounded methods.
-
-Croydon + Bromley prove only a narrow reusable borough envelope. Borough policy families remain local.
-
-Bromley Policy 30 remains a deliberate unsupported temporal/conflict case rather than a stale numeric rule silently treated as current.
-
-## Real corpus
-
-DPL-12C can load the current eight-site corpus deterministically without inventing site facts.
-
-The current corpus index preserves site identity and challenge metadata but does **not** expose a complete machine-readable claim/unknown ledger. DPL-12C therefore refuses to mine prose for truth.
-
-This limits whole-site conclusion coverage but does not block the synthetic DPL-RS-01 canonical fixture, whose claim register is already explicit.
-
-## Reference Site
-
-[DPL-RS-01](dpl-07-reference-site.md) is now admitted as the site fixture for DPL-13A.
-
-It remains:
-
-`SYNTHETIC_REFERENCE`
-
-not a claim about a typical or real London parcel.
-
-Its authored rigid 180° house placement may become the canonical authored DPL-13A candidate under `RH-V02`; the compiler does not choose that placement.
+The eight-site corpus remains a bounded adversarial screening corpus, not a shortlist or statistical market sample. DPL-15 remains held.
 
 ---
 
-# DPL-D conclusion boundary
+# Coverage Foundations — current authorised work
 
-DPL-D separates three propositions that must not be collapsed.
+DPL-E establishes that scope coverage, not orchestration, is the next blocker.
 
-## Canonical compile — admitted
+The following three packets may proceed **laterally** after DPL-E merges.
 
-The project now has enough controlled architecture, site claims, targets, interface authority and compiler substrate to assemble one deterministic Reference House × DPL-RS-01 canonical case.
+## DPL-02C — Reference House conformance coverage registry
 
-That work is DPL-13A.
+Create a machine-readable registry of the complete current DPL-02 clause/route universe, including owner, class, current resolution mode and SCREENING blocking posture.
 
-## Canonical `COMPATIBLE` / `INCOMPATIBLE` — not admitted
+Do not turn every architectural clause into a native boolean.
 
-Positive compatibility remains blocked by incomplete executable due-now coverage, bounded DPL-02 conformance coverage, incomplete DPL-11 runtime coverage, partial target coverage and incomplete site-claim→obligation mapping.
+## DPL-09D — England SCREENING family coverage registry
 
-Incompatibility remains blocked by absent route-exhaustion / invariant-blocker machinery.
+Create a machine-readable registry of the England technical/process families already inventoried by DPL-09, including project-class applicability posture, SCREENING timing, acceleration triggers, current implementation coverage and external evidence routes.
 
-## Canonical top-level `UNRESOLVED` — also not yet admitted as runtime conclusion
+Do not implement the full regulations corpus.
 
-Although DPL-03 makes `UNRESOLVED` the semantic result when compatibility is unearned and incompatibility unproved, a deployment conclusion is still a derived result over a declared obligation scope.
+## DPL-11B — non-planning SCREENING family coverage registry
 
-The runtime does not yet prove that the represented obligation universe is complete for `SCREENING`.
+Create a machine-readable registry of DPL-11 due-diligence families, including default SCREENING timing, acceleration triggers, evidence/determination authority and current runtime coverage.
 
-DPL-13A must therefore preserve:
+Do not impersonate legal, professional, undertaker or statutory judgement.
 
-```text
-wholeSiteCompatibilityConclusion: NOT_IMPLEMENTED
-conclusionReadiness: NOT_ESTABLISHED
-coverageCompleteness: NOT_ESTABLISHED
-```
+### After all three
 
-or an equivalent explicit non-conclusion boundary.
+Run:
 
-It may enumerate represented unresolved/open findings. It may not imply that the full screening scope has been evaluated.
+> **DPL-F — post-Coverage-Foundations integration and DPL-13B admission gate.**
 
----
+DPL-F decides whether the owner-side registries plus the existing canonical case form a complete enough SCREENING family universe to admit conclusion-readiness implementation.
 
-# Current authorised work — DPL-13A only
-
-## DPL-13A — canonical Reference Site case assembly and deterministic deployment ledger
-
-DPL-13A must:
-
-1. encode the existing DPL-RS-01 claim register into a machine-readable synthetic site manifest;
-2. preserve each consequential claim's authored / derived / assumed / unknown basis;
-3. encode one authored canonical candidate from DPL-07's current unmirrored rigid 180° placement under `RH-V02`;
-4. compose DPL-08B + DPL-08C interface identities;
-5. compose DPL-09B + DPL-09C England targets;
-6. compose the London strategic planning target;
-7. **not invent a local borough target** for DPL-RS-01;
-8. preserve DPL-12B candidate/conformance findings;
-9. add a controlled coverage manifest distinguishing represented obligations, site claims/unknowns, known DPL-11/target/conformance gaps and not-yet-established due classifications;
-10. include that coverage scope in deterministic identity where material;
-11. prove repeatable canonical case/result identity and relevant invalidation;
-12. retain candidate generation/selection, route exhaustion and whole-site conclusion as unimplemented.
-
-DPL-13A is an integration specimen, not a deployability declaration.
-
-### DPL-13A success condition
-
-A successful result may be full of unresolved, unsupported, open and future work.
-
-The success criterion is that the canonical case exposes those states under the correct owners without filling them by assumption.
+**DPL-13B remains held until DPL-F.**
 
 ---
 
-# Held work
+# Whole-site conclusion boundary
 
-Until DPL-13A lands and is reviewed, hold:
+## `UNRESOLVED @ SCREENING`
 
-- DPL-13B+;
-- any runtime `COMPATIBLE / UNRESOLVED / INCOMPATIBLE` whole-site conclusion;
-- DPL-14D / bulk corpus expansion;
-- DPL-15 real-site deployment trials;
-- DPL-16 deployment-envelope derivation;
-- DPL-17 publication integration;
-- DPL-18 final adversarial closeout;
-- additional DPL-08 / DPL-09 technical/interface families not demanded by DPL-13A;
-- generic all-borough planning abstraction;
-- DRW changes.
+Still held.
 
-DPL-13A's result decides what comes next. Do not pre-author DPL-13B merely because its likely topic is visible.
+It may be admitted only after the complete declared SCREENING family universe is machine-readable and every family has a controlled profile disposition, including known missing/accelerated/unresolved coverage states.
+
+## `COMPATIBLE @ SCREENING`
+
+Materially further downstream. Requires complete scope plus positive resolution/discharge of every due-now blocking family at the evidence quality appropriate to the claim.
+
+## `INCOMPATIBLE`
+
+Still requires route exhaustion or invariant-blocker proof. Route-search machinery is not current work.
 
 ---
 
 # Programme maturity
 
-DPL remains **M3 — Coordinated**.
+DPL is now:
 
-Wave D strengthens the M3 case materially but does not establish an internally validated end-to-end deployment baseline.
+> **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration scope, explicitly excluding whole-site conclusion readiness.**
 
-M4 remains held until a canonical integrated deployment proposition exists and has been deliberately challenged against its declared scope. DPL-13A is the next experiment required before promotion can be reconsidered.
+The M4 baseline is the foundation through DPL-13A plus DPL-E's proof boundary.
+
+Future conclusion-readiness work extends the proposition and must itself survive internal challenge before the M4 claim may be broadened to include whole-site conclusions.
+
+M5 requires competent independent / real-world validation and remains unavailable.
 
 ---
 
-# DRW / publication boundary
+# Held work
 
-DRW remains complete and frozen.
+Until Coverage Foundations land and DPL-F reviews them, hold:
 
-> **DPL may earn a future representational duty, but it may not silently mutate the released DRW pipeline.**
-
-Any DPL-driven drawing change requires explicit new/reopened authority.
-
-Most DPL machinery remains backstage. Reader-facing deployment treatment remains deferred to DPL-17 after the machinery has earned it.
+- DPL-13B+;
+- runtime whole-site `COMPATIBLE / UNRESOLVED / INCOMPATIBLE`;
+- DPL-14D / bulk corpus expansion;
+- DPL-15 real-site deployment trials;
+- DPL-16 deployment-envelope derivation;
+- DPL-17 publication integration;
+- DPL-18 final adversarial closeout;
+- generic all-borough planning machinery;
+- unrelated technical/interface expansion;
+- route-search/optimisation machinery;
+- DRW changes.
 
 ---
 
 # Packet discipline
 
-Every DPL packet must remain restart-safe. Record at minimum:
+Every DPL packet remains restart-safe and must preserve authority ownership.
 
-`packet → baseline main SHA → authority recovered → exact question → source/evidence set → findings + rejected alternatives → artefacts/changes → checks → authority/proof consequences → downstream dependencies → exact next authorised packet`
+Split or refuse work that:
 
-Split a packet when it:
-
-- mixes materially independent ontology, architectural, legal or site questions;
-- freezes an abstraction before concrete evidence justifies it;
-- requires unrelated Reference House rewinds;
-- creates a new compiler proof family unexpectedly;
-- treats professional/planning judgement as deterministic computation;
-- makes a whole-site conclusion without first proving the scope over which that conclusion is derived.
-
-# Current authorised work
-
-**DPL-13A only after DPL-D merges.**
-
-Do not open DPL-13B+, DPL-15, another corpus wave, another technical/interface family or any whole-site conclusion implementation until DPL-13A has landed and its canonical result has been reviewed.
+- converts external professional/legal judgement into native truth;
+- makes missing evidence look not applicable;
+- broadens one borough/site/target accident into generic doctrine;
+- silently authors architecture;
+- changes claimed evaluation scope without invalidating case identity;
+- emits a whole-site conclusion before the profile coverage universe is proved.
