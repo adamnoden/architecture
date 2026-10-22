@@ -302,7 +302,11 @@ export const workstreamStatuses = [
     evidence: {
       framed: ['docs/research/README.md'],
       developed: ['docs/research/workmanship-robustness.md'],
-      coordinated: ['docs/research/candidate-pattern-hardening-summary.md']
+      coordinated: ['docs/development/pattern-language-phase8-review.md'],
+      internallyValidated: [
+        'docs/development/pattern-language-phase7-review.md',
+        'docs/development/pattern-language-phase8-review.md'
+      ]
     }
   },
   {
@@ -337,9 +341,9 @@ export const workstreamStatuses = [
     maturity: 'M3',
     reviewedOn: '2026-10-22',
     currentState:
-      'Wave C is complete and DPL is coordinated at its current bounded scope. DPL-12A now executes one deterministic deployment-case ledger across controlled Reference House identity, genuine real-site evidence, the first England technical target, London strategic planning, mixed method classes, evidence lifecycle and cross-target edges. DPL-08C/09C add a coherent water/drainage vertical, DPL-10C proves the first borough plug-in, and DPL-14C expands the controlled corpus to eight sites across seven boroughs. Candidate/conformance routing and full Wave-C runtime composition remain deliberately absent.',
+      'Wave D is complete and DPL remains M3 — Coordinated. DPL-12B adds authored candidate identity and bounded Reference House conformance; DPL-10D narrows reusable borough-planning semantics through the Bromley replay; DPL-12C composes the actual Wave-C water vertical, borough targets and eight-site corpus identities through the existing deterministic runtime. DPL-D admits DPL-13A as the first canonical Reference House × synthetic Reference Site integration compile while keeping whole-site conclusion readiness unproved.',
     nextGate:
-      'Execute bounded Wave D only: DPL-12B authored candidate + Reference House conformance orchestration and DPL-10D Bromley adversarial replay may proceed laterally; DPL-12C then composes the landed Wave-C water, borough and eight-site corpus objects through the runtime; DPL-D re-tests admission of DPL-13. Whole-site compatibility remains forbidden until candidate/conformance, due-obligation completeness and route-exhaustion semantics are explicitly earned.',
+      'Execute DPL-13A only: encode the DPL-RS-01 synthetic claim register, its already-authored RH-V02 rigid 180° candidate, DPL-08B/C interfaces, DPL-09B/C England targets and London strategic planning into one deterministic canonical ledger with explicit coverage gaps. Keep whole-site COMPATIBLE / UNRESOLVED / INCOMPATIBLE outputs, DPL-13B+, DPL-15+ and further family/corpus expansion held until the canonical result is reviewed.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -362,7 +366,11 @@ export const workstreamStatuses = [
         'project/dpl/dpl-09c-england-drainage-waste-water.md',
         'project/dpl/dpl-10c-croydon-planning-plugin.md',
         'project/dpl/dpl-14c-five-site-gap-correction.md',
-        'project/dpl/dpl-wave-c-integration-maturity-review.md'
+        'project/dpl/dpl-wave-c-integration-maturity-review.md',
+        'project/dpl/dpl-12b-authored-candidate-conformance.md',
+        'project/dpl/dpl-10d-bromley-adversarial-replay.md',
+        'project/dpl/dpl-12c-wave-c-runtime-composition.md',
+        'project/dpl/dpl-wave-d-integration-admission-review.md'
       ]
     }
   },
