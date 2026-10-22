@@ -207,7 +207,7 @@ Wave C produced the first executable shared deployment spine and expanded every 
 - [DPL-08C — foul / surface / site-water interface](dpl-08c-foul-surface-site-water-interface.md) / #399;
 - [DPL-09C — England drainage / waste-water target](dpl-09c-england-drainage-waste-water.md) / #400;
 - [DPL-10C — Croydon borough planning plug-in proof](dpl-10c-croydon-planning-plugin.md) / #401;
-- [DPL-14C — five-site corpus gap-correction cohort](dpl-14c-five-site-corpus-gap-correction.md) / #402.
+- [DPL-14C — five-site corpus gap-correction cohort](dpl-14c-five-site-gap-correction.md) / #402.
 
 The controlled corpus now contains eight screening-level sites across seven boroughs. It remains an adversarial design-of-experiments corpus rather than a statistical market sample or property shortlist.
 
