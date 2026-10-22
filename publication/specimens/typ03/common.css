@@ -97,7 +97,7 @@ li + li {
 
 @page :left {
   @top-left {
-    content: "TYP-03 · " var(--typ03-candidate);
+    content: "TYP-03 · " var(--typ03-display-label);
     font-family: var(--typ03-sans);
     font-size: 7pt;
     color: var(--typ03-muted);
