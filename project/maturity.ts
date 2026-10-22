@@ -42,26 +42,17 @@ interface WorkstreamBase {
 
 type M1Assessment = WorkstreamBase & {
   maturity: 'M1'
-  evidence: {
-    framed: EvidenceSet
-  }
+  evidence: { framed: EvidenceSet }
 }
 
 type M2Assessment = WorkstreamBase & {
   maturity: 'M2'
-  evidence: {
-    framed: EvidenceSet
-    developed: EvidenceSet
-  }
+  evidence: { framed: EvidenceSet; developed: EvidenceSet }
 }
 
 type M3Assessment = WorkstreamBase & {
   maturity: 'M3'
-  evidence: {
-    framed: EvidenceSet
-    developed: EvidenceSet
-    coordinated: EvidenceSet
-  }
+  evidence: { framed: EvidenceSet; developed: EvidenceSet; coordinated: EvidenceSet }
 }
 
 type M4Assessment = WorkstreamBase & {
@@ -161,10 +152,7 @@ export const workstreamStatuses = [
       'Hold v0.1 as the controlled baseline. Reopen only when competent external criticism, a real-project contradiction, a materially different second grammar, publication adversarial review or material new evidence creates a concrete question. M5 requires independent architectural validation at the stated scope.',
     evidence: {
       framed: ['docs/grammar/g01-grammar-charter.md'],
-      developed: [
-        'docs/grammar/g01-research-brief.md',
-        'docs/grammar/g01-v0.1.md'
-      ],
+      developed: ['docs/grammar/g01-research-brief.md', 'docs/grammar/g01-v0.1.md'],
       coordinated: [
         'docs/grammar/g01-d10-normative-reduction.md',
         'docs/reference-house/g01-v0.1-conformance-d12.md'
@@ -309,8 +297,7 @@ export const workstreamStatuses = [
     name: 'Evidence / precedent research',
     maturity: 'M3',
     reviewedOn: '2026-10-12',
-    currentState:
-      'Major evidence packages exist and taxonomy ambiguities are largely closed.',
+    currentState: 'Major evidence packages exist and taxonomy ambiguities are largely closed.',
     nextGate: 'Targeted claim hardening where physical or publication maturity requires it.',
     evidence: {
       framed: ['docs/research/README.md'],
@@ -322,11 +309,11 @@ export const workstreamStatuses = [
     id: 'publication',
     name: 'Publication',
     maturity: 'M4',
-    reviewedOn: '2026-10-19',
+    reviewedOn: '2026-10-21',
     currentState:
-      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete. DRW has advanced from doctrine into production: DRW-03 through DRW-07 and DRW-08A through DRW-08E.2 are complete, including controlled true-scale plans, section/elevation/roof/service views and synthetic-setting material. Fixed-register completion is 43/66 (65.2%); conservative known-programme completion is 56/79 (70.9%).',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete. DRW is fully closed and frozen through its final integration/physical-proof programme; the controlled architectural drawing family is released at the existing internal publication proof boundary without inventing construction or site authority.',
     nextGate:
-      'Execute DRW-08F orthographic-family parity review/freeze, then continue DRW-09 through DRW-12 with the mandatory PUB-NOM re-entry at DRW-10 and DRW-12. PR-02 then produces the private 12-copy physical object; PR-03/PR-04 supply the independent critical cycle required before any M5 or public-release claim.',
+      'Proceed to PR-02 private physical-object production without reopening frozen drawing authority by preference. PR-03/PR-04 then provide the independent critical cycle required before M5 or public release. Any later DPL-earned drawing duty requires an explicit DRW reopen or separately owned post-DRW representation authority.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
@@ -374,7 +361,7 @@ export const workstreamStatuses = [
         'project/dpl/dpl-08c-foul-surface-site-water-interface.md',
         'project/dpl/dpl-09c-england-drainage-waste-water.md',
         'project/dpl/dpl-10c-croydon-planning-plugin.md',
-        'project/dpl/dpl-14c-five-site-corpus-gap-correction.md',
+        'project/dpl/dpl-14c-five-site-gap-correction.md',
         'project/dpl/dpl-wave-c-integration-maturity-review.md'
       ]
     }
