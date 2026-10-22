@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+import { execFileSync } from 'node:child_process'
 import { resolve } from 'node:path'
 
 const pdfArg = process.argv[2]
@@ -12,9 +12,18 @@ if (expectedSet !== 'source') {
 }
 
 const pdfPath = resolve(pdfArg)
-const bytes = await readFile(pdfPath)
-const source = bytes.toString('latin1')
-const rawNames = [...source.matchAll(/\/BaseFont\s*\/([A-Za-z0-9+_.-]+)/g)].map((match) => match[1])
+let report: string
+try {
+  report = execFileSync('pdffonts', [pdfPath], { encoding: 'utf8' })
+} catch (error) {
+  throw new Error(`pdffonts is required for rendered font identity proof: ${String(error)}`)
+}
+
+const rawNames = report
+  .split(/\r?\n/)
+  .slice(2)
+  .map((line) => line.trim().split(/\s+/)[0])
+  .filter(Boolean)
 const normalizedNames = [...new Set(rawNames.map((name) => name.replace(/^[A-Z]{6}\+/, '')))].sort()
 
 const expected = [
@@ -28,8 +37,8 @@ const expected = [
 const missing = expected.filter((name) => !normalizedNames.includes(name))
 const fallbacks = normalizedNames.filter((name) => /Liberation|Arial|Helvetica|Times|Georgia/i.test(name))
 
-if (rawNames.length === 0) {
-  throw new Error(`No /BaseFont identities found in ${pdfPath}; cannot prove embedded font identity.`)
+if (normalizedNames.length === 0) {
+  throw new Error(`pdffonts found no embedded font identities in ${pdfPath}.`)
 }
 if (missing.length > 0 || fallbacks.length > 0) {
   throw new Error(
