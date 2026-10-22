@@ -35,6 +35,21 @@ test('DPL-13B composes exactly four controlled owner registries', () => {
   assert.equal(new Set(result.ownerRegistries.map((owner) => owner.registryFingerprint)).size, 4)
 })
 
+test('DPL-13B preserves the direct DPL-08B owner of the authored absolute FFL datum', () => {
+  const result = composeScreeningCoverageReadiness()
+  const ffl = result.claimOwnership.find((entry) => entry.claimId === 'RS-FFL-01')
+  assert.ok(ffl)
+  assert.deepEqual(ffl.owners, ['SITE_INTERFACE'])
+  assert.deepEqual(ffl.ownerEntryIds, ['SITE_INTERFACE:DPL-08B:GI-D02-DATUM'])
+  assert.deepEqual(result.siteInterfaceClaimAuthorities, [{
+    claimId: 'RS-FFL-01',
+    owner: 'SITE_INTERFACE',
+    authorityId: 'DPL-08B:GI-D02-DATUM',
+    authoritySource: 'project/dpl/dpl-08b-ground-datum-plinth-approach-interface.md',
+    claimBoundary: 'Owns the authored absolute site datum response only; does not prove ground, access, weathering, foundation or whole-site compatibility.'
+  }])
+})
+
 test('DPL-13B preserves the repaired planning strategic/local authority graph', () => {
   const result = composeScreeningCoverageReadiness()
   assert.equal(result.planningAuthorityGraph.strategicTargetId, 'LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20')
@@ -153,6 +168,7 @@ test('DPL-13B distinguishes profile disposition uncertainty from substantive UNR
   }
   const mutated = { ...england, registry, fingerprint: sha256SemanticFingerprint(registry) }
   const result = composeScreeningCoverageReadiness({ england: mutated })
+  assert.ok(result.normalizedCoverage.some((entry) => entry.normalizedDisposition === 'DUE_CLASSIFICATION_UNRESOLVED'))
   assert.equal(result.profileUniverseState, 'PROFILE_DISPOSITION_UNRESOLVED')
   assert.equal(result.conclusionReadiness, 'NOT_READY_PROFILE_DISPOSITION_UNRESOLVED')
   assert.equal(result.proofBoundary.wholeSiteCompatibilityConclusion, 'NOT_IMPLEMENTED')
@@ -169,10 +185,15 @@ test('DPL-13B never executes opaque acceleration prose', () => {
 
 test('DPL-13B identity changes with material registry/profile semantics', () => {
   const planning = loadPlanningCoverageRegistry()
+  const first = planning.registry.entries[0]
+  assert.ok(first)
+  const changedDisposition = first.defaultScreeningDisposition === 'FUTURE_DUE'
+    ? 'DUE_NOW_MISSING' as const
+    : 'FUTURE_DUE' as const
   const registry = {
     ...clone(planning.registry),
     entries: planning.registry.entries.map((entry, index) => index === 0
-      ? { ...entry, defaultScreeningDisposition: 'FUTURE_DUE' as const }
+      ? { ...entry, defaultScreeningDisposition: changedDisposition }
       : entry)
   }
   const mutated = { ...planning, registry, fingerprint: sha256SemanticFingerprint(registry) }
@@ -180,4 +201,16 @@ test('DPL-13B identity changes with material registry/profile semantics', () => 
   const result = composeScreeningCoverageReadiness({ planning: mutated })
   assert.notEqual(result.identityFingerprint, baseline.identityFingerprint)
   assert.notEqual(result.resultFingerprint, baseline.resultFingerprint)
+})
+
+test('DPL-13B treats the site-interface claim bridge as identity-bearing authority', () => {
+  const baseline = composeScreeningCoverageReadiness()
+  const changed = composeScreeningCoverageReadiness({
+    siteInterfaceClaimAuthorities: baseline.siteInterfaceClaimAuthorities.map((authority) => ({
+      ...authority,
+      authorityId: 'DPL-08B:GI-D02-DATUM-CHANGED'
+    }))
+  })
+  assert.notEqual(changed.identityFingerprint, baseline.identityFingerprint)
+  assert.notEqual(changed.resultFingerprint, baseline.resultFingerprint)
 })
