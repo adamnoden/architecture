@@ -2,11 +2,11 @@
 
 **Canonical project-wide status overview**  
 **Last updated:** 2026-10-22  
-**Current phase:** **post-DRW publication production / coordinated deployment integration / downstream validation**
+**Current phase:** **post-DRW publication production / controlled canonical deployment integration / downstream validation**
 
 This page records the current state, next meaningful work and principal risks. Detailed programme histories and gate records remain with their owning workstreams.
 
-The public architectural position and publication remain internally controlled at M4. The Reference House remains M3 at virtual-design scope. HFI is closed. DRW is fully closed and frozen at its current internal publication proof boundary. DPL remains **M3 — Coordinated** after Wave D added explicit authored candidate/conformance, survived a second-borough planning replay, composed the Wave-C water/borough/corpus objects through one runtime and admitted the first bounded canonical Reference Site compile. The largest unclosed evidence gaps remain physical prototypes, competent professional review, canonical deployment coverage/conclusion proof and independent architectural criticism.
+The public architectural position and publication remain internally controlled at M4. The Reference House remains M3 at virtual-design scope. HFI is closed. DRW is fully closed and frozen at its current internal publication proof boundary. DPL is now **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration scope**, explicitly excluding whole-site conclusion readiness. The largest unclosed evidence gaps remain physical prototypes, competent professional review, SCREENING coverage/conclusion-readiness proof and independent architectural criticism.
 
 ## Active now
 
@@ -20,7 +20,7 @@ The next value comes from competent RH-11 review and the P03/P04 physical-valida
 
 The bounded Reference House computational track remains **M4 — Internally validated / controlled** through RH-C5 and CH-08. There is no standing RH-C6 or CH-09. New computation must be demand-led.
 
-The separate DPL runtime now reaches DPL-12C: deterministic case identity, mixed external targets, evidence, authored candidate identity, bounded Reference House conformance, the Wave-C water vertical, Croydon/Bromley borough-envelope composition and the eight-site corpus identity all coexist without widening the Reference House proof family or claiming whole-site deployability.
+The separate DPL runtime now has an internally controlled canonical integration specimen through DPL-13A: deterministic case identity, all 29 frozen DPL-RS-01 claims including 11 explicit unknowns, explicit RH-V02 candidate authorship, bounded Reference House conformance, DPL-08B/C interface identities, DPL-09B/C England targets, London strategic planning and independent coverage identity coexist without claiming whole-site deployability.
 
 ### Publication
 
@@ -30,19 +30,17 @@ The next publication gate is PR-02: production of the private physical object. P
 
 ### Deployment / real-site integration
 
-**DPL remains M3 — Coordinated. Wave D is complete.**
+**DPL is M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration scope.**
 
-DPL-12B gives the runtime explicit authored deployment-candidate identity and bounded executable Reference House conformance without becoming a house generator or turning one candidate failure into site incompatibility.
+DPL-13A establishes the first controlled Reference House × synthetic DPL-RS-01 canonical case. The case preserves all 29 DPL-07 claim ids, 11 explicit unknowns, one authored unmirrored 180° RH-V02 candidate, bounded DPL-02 conformance, DPL-08B/C interfaces, DPL-09B/C England targets, London strategic planning, independent coverage scope and deterministic invalidation boundaries.
 
-DPL-10D replays the Croydon local-planning model against Bromley and narrows the reusable borough seam to source/status/method/evidence composition rather than one generic local-policy ontology. Bromley Policy 30 remains deliberately unsupported where local 2019 parking policy and later London strategic authority create an unresolved temporal/conflict question.
+DPL-E finds that this proposition has now been deliberately challenged strongly enough to act as the controlled baseline. The M4 claim is deliberately narrow: it does **not** establish conclusion readiness, real-site deployability, regulatory/planning/legal adequacy, external validation or route exhaustion.
 
-DPL-12C composes the actual Wave-C water/interface and England drainage target, the borough target envelope and current eight-site corpus identities through the same deterministic deployment runtime. The real-site corpus remains an adversarial screening corpus, not a property shortlist or statistical market sample.
+Whole-site `COMPATIBLE / UNRESOLVED / INCOMPATIBLE` remains unauthorised at runtime. Even official `UNRESOLVED @ SCREENING` is still held because the complete SCREENING family universe is not yet machine-readable and profile-classified.
 
-DPL-D now admits **DPL-13A only**: the first canonical Reference House × synthetic DPL-RS-01 integration compile. DPL-RS-01 may use its already-authored current unmirrored rigid 180° placement under RH-V02; the compiler must not choose or optimise that placement. The canonical compile must use London strategic planning only and must not invent a Croydon/Bromley borough for the synthetic site.
+**Next: Coverage Foundations laterally.** DPL-02C will encode the complete Reference House conformance clause/route coverage universe without inventing native booleans; DPL-09D will encode the England SCREENING technical/process family coverage registry without implementing the full regulations corpus; DPL-11B will encode the non-planning SCREENING due-diligence family coverage registry without impersonating external legal/professional/undertaker judgement. After all three land, DPL-F will decide whether DPL-13B conclusion-readiness work is justified.
 
-Whole-site `COMPATIBLE / UNRESOLVED / INCOMPATIBLE` remains unauthorised at runtime. The system still lacks proved complete screening due-obligation coverage and route-exhaustion/invariant-blocker authority; even a canonical top-level `UNRESOLVED @ SCREENING` would overstate the scope currently represented. DPL-13A must therefore expose explicit coverage incompleteness rather than emit a whole-site conclusion.
-
-**Next: DPL-13A only.** Encode the DPL-RS-01 synthetic claim register, canonical authored RH-V02 candidate, DPL-08B/C interfaces, DPL-09B/C England targets and London strategic target into one deterministic ledger plus controlled coverage manifest. DPL-13B+, DPL-15+, further corpus/technical expansion and whole-site conclusions remain held until that canonical result is reviewed.
+DPL-13B+, DPL-15+, bulk corpus expansion, unrelated technical/interface expansion and whole-site conclusions remain held.
 
 ### Physical and professional validation
 
@@ -89,7 +87,7 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 | **Computational track** | **M4** | 2026-10-19 | The bounded Reference House executable sequence remains closed PASS through RH-C5 and CH-00 through CH-08 remain complete. The intentional HFI stair rewind has propagated through the controlled semantic source and deterministic projections; RH-C5 now checks the selected 300 mm going while HFI-09C/09D explicitly refuse to turn that project preference into a universal human-factors or statutory rule. | Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, DPL target/site work, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope. |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | Major evidence packages exist and taxonomy ambiguities are largely closed. | Targeted claim hardening where physical or publication maturity requires it. |
 | **Publication** | **M4** | 2026-10-21 | PR-00, PR-01, PUB-SAN and PUB-NOM remain complete. DRW is fully closed and frozen through its final integration/physical-proof programme; the controlled architectural drawing family is released at the existing internal publication proof boundary without inventing construction or site authority. | Proceed to PR-02 private physical-object production without reopening frozen drawing authority by preference. PR-03/PR-04 then provide the independent critical cycle required before M5 or public release. Any later DPL-earned drawing duty requires an explicit DRW reopen or separately owned post-DRW representation authority. |
-| **Deployment / real-site integration** | **M3** | 2026-10-22 | Wave D is complete and DPL remains M3 — Coordinated. DPL-12B adds authored candidate identity and bounded Reference House conformance; DPL-10D narrows reusable borough-planning semantics through the Bromley replay; DPL-12C composes the actual Wave-C water vertical, borough targets and eight-site corpus identities through the existing deterministic runtime. DPL-D admits DPL-13A as the first canonical Reference House × synthetic Reference Site integration compile while keeping whole-site conclusion readiness unproved. | Execute DPL-13A only: encode the DPL-RS-01 synthetic claim register, its already-authored RH-V02 rigid 180° candidate, DPL-08B/C interfaces, DPL-09B/C England targets and London strategic planning into one deterministic canonical ledger with explicit coverage gaps. Keep whole-site COMPATIBLE / UNRESOLVED / INCOMPATIBLE outputs, DPL-13B+, DPL-15+ and further family/corpus expansion held until the canonical result is reviewed. |
+| **Deployment / real-site integration** | **M4** | 2026-10-22 | DPL-13A establishes an internally challenged deterministic Reference House × synthetic DPL-RS-01 canonical deployment-case baseline. The controlled proposition preserves all 29 DPL-07 claims including 11 explicit unknowns, explicit RH-V02 candidate authorship, bounded Reference House conformance, DPL-08B/C interfaces, DPL-09B/C England targets, London strategic planning, independent coverage identity and explicit no-conclusion proof boundaries. M4 is limited to this canonical integration scope: coverage completeness, conclusion readiness, real-site deployability, regulatory/planning/legal adequacy and route exhaustion remain unproved. | Execute Coverage Foundations laterally: DPL-02C Reference House conformance coverage registry, DPL-09D England SCREENING family coverage registry and DPL-11B non-planning SCREENING family coverage registry. Then run DPL-F to decide whether DPL-13B conclusion-readiness work is justified. Keep whole-site COMPATIBLE / UNRESOLVED / INCOMPATIBLE outputs and DPL-15+ held. |
 | **Delivery** | **M2** | 2026-10-19 | The implementation-brief structure exists and N17 now carries complete-action / finished-interface human-factors verification into RIBA 3/4 as appropriate, but downstream delivery requirements remain intentionally incomplete. | Populate only as architectural, DPL, professional-review and physical-validation decisions mature; delivery must remain a consequence of controlled architecture rather than a second source of doctrine. |
 <!-- maturity-status:end -->
 
@@ -97,11 +95,13 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 **Deployment authority.** Law, guidance, planning policy, site facts, professional judgement and project preference must not collapse into one machine result. Unknown evidence must remain unknown; England/London targets must not become doctrine; and incompatibility must remain an acceptable result rather than forcing the Reference House to mutate until every plot fits.
 
-**Candidate/conformance overreach.** DPL-12B must evaluate authored architecture, not become an optimiser or hidden parametric-house generator. One failed candidate is not site incompatibility.
+**Candidate/conformance overreach.** DPL must evaluate authored architecture, not become an optimiser or hidden parametric-house generator. One failed candidate is not site incompatibility.
 
-**Coverage overclaim.** A canonical DPL ledger may still be incomplete at the requested assurance profile. Missing due-obligation, site-claim, DPL-11 or conformance coverage must remain explicit; a conservative-looking `UNRESOLVED` conclusion is still too strong if the runtime cannot prove what scope it covered.
+**Coverage overclaim.** The canonical DPL ledger is still incomplete at the requested assurance profile. A conservative-looking `UNRESOLVED` conclusion remains too strong until the complete SCREENING family universe is machine-readable and profile-classified.
 
-**Physical and professional evidence.** Internal coordination does not prove structural, fire, MEP, building-physics or construction adequacy. P03/P04 and competent RH-11 review remain material evidence gaps.
+**M4 scope drift.** DPL's M4 claim covers canonical synthetic case integration only. It must not be repeated as shorthand for whole-site conclusion validity, real-site validation, regulatory compliance or deployability.
+
+**Physical and professional evidence.** Internal control does not prove structural, fire, MEP, building-physics or construction adequacy. P03/P04 and competent RH-11 review remain material evidence gaps.
 
 **Architectural authority drift.** Repetition of the Reference House can make its Georgian grammar, courtyard form, masonry family, low-slope roof, ASHP/PV or 300 mm stair preference appear universal. Generalise the reason; keep project choice local.
 
