@@ -99,7 +99,7 @@ describe('DPL-13A canonical Reference Site compile', () => {
     ])
     assert.ok(targets.includes('ENG-BC-STRUCTURE-GROUND-MOISTURE-MATERIALS-2026-10-20'))
     assert.ok(targets.includes('ENG-BC-DRAINAGE-WASTE-WATER-2026-10-21'))
-    assert.ok(targets.includes('LON-PLAN-2021-RESIDENTIAL-DESIGN-2026-10-20'))
+    assert.ok(targets.includes('LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20'))
     assert.equal(targets.some((id) => /CROYDON|BROMLEY/i.test(id)), false)
     assert.equal(result.canonicalCaseIdentity.manifest.localBoroughTarget, 'NOT_ASSIGNED_SYNTHETIC_REFERENCE')
     assert.equal(result.deploymentLedger.site.borough, 'SYNTHETIC_REFERENCE_NO_BOROUGH')
