@@ -21,11 +21,15 @@ const format = process.env.TYP03_FORMAT ?? 'a4'
 const rhythm = process.env.TYP03_RHYTHM ?? 'spaced'
 const alignment = process.env.TYP03_ALIGN ?? 'ragged'
 const fontRights = candidate === 'baseline' ? 'system-baseline' : process.env.TYP03_FONT_RIGHTS
+const blindLabel = process.env.TYP03_BLIND_LABEL?.trim() || null
 
 if (!candidates.has(candidate)) throw new Error(`Unsupported TYP03_CANDIDATE: ${candidate}`)
 if (!formats.has(format)) throw new Error(`Unsupported TYP03_FORMAT: ${format}`)
 if (!rhythms.has(rhythm)) throw new Error(`Unsupported TYP03_RHYTHM: ${rhythm}`)
 if (!alignments.has(alignment)) throw new Error(`Unsupported TYP03_ALIGN: ${alignment}`)
+if (blindLabel && !/^[A-Z0-9][A-Z0-9-]{0,31}$/.test(blindLabel)) {
+  throw new Error(`TYP03_BLIND_LABEL must be 1-32 uppercase letters, digits or hyphens; got ${blindLabel}`)
+}
 if (candidate !== 'baseline' && !fontRightsModes.has(fontRights ?? '')) {
   throw new Error(
     `TYP03_FONT_RIGHTS must be preview-only or pdf-embed-ok for TYP03_CANDIDATE=${candidate}`
@@ -104,15 +108,17 @@ const alignmentCss = alignment === 'justified'
   ? `body { text-align: justify; hyphens: auto; }`
   : `body { text-align: left; hyphens: none; }`
 
-fontCss += `\n:root {\n  --typ03-candidate: "${candidate}";\n}\n\n${rhythmCss}\n${alignmentCss}\n`
+fontCss += `\n:root {\n  --typ03-candidate: "${candidate}";\n}\n\nbody { font-optical-sizing: auto; }\n${rhythmCss}\n${alignmentCss}\n`
 await writeFile(resolve(workRoot, 'candidate.css'), fontCss, 'utf8')
 
-const specimen = `# TYP-03 body-text specimen\n\n<p class="typ03-meta">Candidate: ${candidate} · ${format.toUpperCase()} · ${rhythm} · ${alignment}</p>\n\n${sections.join('\n\n<div class="typ03-section-break"></div>\n\n')}\n`
+const visibleIdentity = blindLabel ? `Set ${blindLabel}` : `Candidate: ${candidate}`
+const specimen = `# TYP-03 body-text specimen\n\n<p class="typ03-meta">${visibleIdentity} · ${format.toUpperCase()} · ${rhythm} · ${alignment}</p>\n\n${sections.join('\n\n<div class="typ03-section-break"></div>\n\n')}\n`
 await writeFile(resolve(sourceRoot, 'specimen.md'), specimen, 'utf8')
 
 const manifest = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   candidate,
+  blindLabel,
   format,
   rhythm,
   alignment,
@@ -128,4 +134,6 @@ const manifest = {
 }
 await writeFile(resolve(workRoot, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
 
-console.log(`Prepared TYP-03 ${candidate} ${format}/${rhythm}/${alignment} specimen (${fontRights}).`)
+console.log(
+  `Prepared TYP-03 ${blindLabel ? `Set ${blindLabel} (${candidate})` : candidate} ${format}/${rhythm}/${alignment} specimen (${fontRights}).`
+)
