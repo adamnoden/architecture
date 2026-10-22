@@ -34,6 +34,12 @@ jobs:
           TYP03_PACK_ID: typ03f-source-confirmation
         run: npx tsx publication/specimens/typ03/proof-pack.ts --selected
 
+      - name: Verify embedded Source font identities
+        run: >-
+          npx tsx publication/specimens/typ03/validate-pdf-fonts.ts
+          publication/.work/typ03-proof-packs/typ03f-source-confirmation/typ03-set-selected-b5-spaced-ragged.pdf
+          source
+
       - name: Upload selected Source proof
         uses: actions/upload-artifact@v4
         with:
