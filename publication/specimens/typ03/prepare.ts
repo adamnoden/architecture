@@ -15,12 +15,15 @@ const formats = new Set(['a4', 'b5'])
 const rhythms = new Set(['spaced', 'indented'])
 const alignments = new Set(['ragged', 'justified'])
 const fontRightsModes = new Set(['preview-only', 'pdf-embed-ok'])
+const blindLabels = new Set(['A', 'B', 'C', 'D', 'E', 'BASELINE'])
 
 const candidate = process.env.TYP03_CANDIDATE ?? 'baseline'
 const format = process.env.TYP03_FORMAT ?? 'a4'
 const rhythm = process.env.TYP03_RHYTHM ?? 'spaced'
 const alignment = process.env.TYP03_ALIGN ?? 'ragged'
 const fontRights = candidate === 'baseline' ? 'system-baseline' : process.env.TYP03_FONT_RIGHTS
+const anonymous = process.env.TYP03_ANONYMOUS === '1'
+const blindLabel = process.env.TYP03_BLIND_LABEL
 
 if (!candidates.has(candidate)) throw new Error(`Unsupported TYP03_CANDIDATE: ${candidate}`)
 if (!formats.has(format)) throw new Error(`Unsupported TYP03_FORMAT: ${format}`)
@@ -31,7 +34,17 @@ if (candidate !== 'baseline' && !fontRightsModes.has(fontRights ?? '')) {
     `TYP03_FONT_RIGHTS must be preview-only or pdf-embed-ok for TYP03_CANDIDATE=${candidate}`
   )
 }
+if (anonymous && !blindLabels.has(blindLabel ?? '')) {
+  throw new Error('TYP03_BLIND_LABEL must be A, B, C, D, E or BASELINE when TYP03_ANONYMOUS=1')
+}
+if (anonymous && candidate === 'baseline' && blindLabel !== 'BASELINE') {
+  throw new Error('The baseline must use TYP03_BLIND_LABEL=BASELINE in anonymous mode')
+}
+if (anonymous && candidate !== 'baseline' && blindLabel === 'BASELINE') {
+  throw new Error('Only TYP03_CANDIDATE=baseline may use TYP03_BLIND_LABEL=BASELINE')
+}
 
+const displayLabel = anonymous ? blindLabel! : candidate
 const sha256 = (content: string | Buffer): string => createHash('sha256').update(content).digest('hex')
 
 function extractSection(markdown: string, heading: string, stopAtAnyHeading = false): string {
@@ -104,15 +117,18 @@ const alignmentCss = alignment === 'justified'
   ? `body { text-align: justify; hyphens: auto; }`
   : `body { text-align: left; hyphens: none; }`
 
-fontCss += `\n:root {\n  --typ03-candidate: "${candidate}";\n}\n\n${rhythmCss}\n${alignmentCss}\n`
+fontCss += `\n:root {\n  --typ03-display-label: "${displayLabel}";\n}\n\n${rhythmCss}\n${alignmentCss}\n`
 await writeFile(resolve(workRoot, 'candidate.css'), fontCss, 'utf8')
 
-const specimen = `# TYP-03 body-text specimen\n\n<p class="typ03-meta">Candidate: ${candidate} · ${format.toUpperCase()} · ${rhythm} · ${alignment}</p>\n\n${sections.join('\n\n<div class="typ03-section-break"></div>\n\n')}\n`
+const specimen = `# TYP-03 body-text specimen\n\n<p class="typ03-meta">Set: ${displayLabel} · ${format.toUpperCase()} · ${rhythm} · ${alignment}</p>\n\n${sections.join('\n\n<div class="typ03-section-break"></div>\n\n')}\n`
 await writeFile(resolve(sourceRoot, 'specimen.md'), specimen, 'utf8')
 
 const manifest = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   candidate,
+  anonymous,
+  blindLabel: anonymous ? blindLabel : null,
+  displayLabel,
   format,
   rhythm,
   alignment,
@@ -128,4 +144,6 @@ const manifest = {
 }
 await writeFile(resolve(workRoot, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
 
-console.log(`Prepared TYP-03 ${candidate} ${format}/${rhythm}/${alignment} specimen (${fontRights}).`)
+console.log(
+  `Prepared TYP-03 ${anonymous ? `blind set ${displayLabel}` : candidate} ${format}/${rhythm}/${alignment} specimen (${fontRights}).`
+)
