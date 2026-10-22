@@ -1,8 +1,10 @@
 import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
+import { evaluateCandidateConformance } from './conformance.js'
 import {
   DPL12A_SCHEMA_VERSION,
+  DPL12B_CANDIDATE_SCHEMA_VERSION,
   type ApplicabilityResolution,
   type CrossTargetEdge,
   type DeploymentCaseIdentityManifest,
@@ -338,10 +340,14 @@ export const compileDeploymentCase = (input: DeploymentCaseInput): DeploymentLed
   const targets = canonicalTargets(input.targets)
   const interfaceContracts = canonicalInterfaces(input.interfaceContracts)
   const referenceHouseSource = createReferenceHouseSource()
+  const currentReferenceHouseFingerprint = referenceHouseSourceFingerprint(referenceHouseSource)
+  const candidateConformance = input.candidate
+    ? evaluateCandidateConformance(input.candidate, referenceHouseSource)
+    : undefined
 
   const identityManifest: DeploymentCaseIdentityManifest = {
     schemaVersion: DPL12A_SCHEMA_VERSION,
-    referenceHouseSourceFingerprint: referenceHouseSourceFingerprint(referenceHouseSource),
+    referenceHouseSourceFingerprint: currentReferenceHouseFingerprint,
     assuranceProfile: input.assuranceProfile,
     site: {
       id: input.site.indexEntry.id,
@@ -354,6 +360,18 @@ export const compileDeploymentCase = (input: DeploymentCaseInput): DeploymentLed
       targetId: target.id,
       targetFingerprint: sha256SemanticFingerprint(target)
     })),
+    ...(candidateConformance
+      ? {
+          candidate: {
+            id: candidateConformance.candidate.id,
+            revision: candidateConformance.candidate.revision,
+            authoredSource: candidateConformance.candidate.authoredSource,
+            candidateFingerprint: candidateConformance.candidate.fingerprint,
+            referenceHouseSourceFingerprint: candidateConformance.candidate.referenceHouseSourceFingerprint,
+            conformanceMethodVersion: DPL12B_CANDIDATE_SCHEMA_VERSION
+          }
+        }
+      : {}),
     proposalFactsFingerprint: sha256SemanticFingerprint(facts),
     evidenceSetFingerprint: sha256SemanticFingerprint(evidence),
     methodVersion: DPL12A_SCHEMA_VERSION
@@ -380,7 +398,8 @@ export const compileDeploymentCase = (input: DeploymentCaseInput): DeploymentLed
     ...obligations.flatMap((entry) => [
       ...entry.missingInputs.map((id) => `proposal.${id}`),
       ...entry.applicability.missingFactIds.map((id) => `proposal.${id}`)
-    ])
+    ]),
+    ...(candidateConformance?.openClauseIds.map((id) => `candidateConformance.${id}`) ?? [])
   ])].sort()
 
   const resultManifest = {
@@ -388,6 +407,7 @@ export const compileDeploymentCase = (input: DeploymentCaseInput): DeploymentLed
     caseFingerprint,
     siteId: input.site.indexEntry.id,
     targetComposition: targets.map(({ authorityClass, target }) => ({ authorityClass, targetId: target.id })),
+    ...(candidateConformance ? { candidateConformance } : {}),
     obligations,
     crossTargetEdges: edges,
     unresolvedInputs,
@@ -415,6 +435,7 @@ export const compileDeploymentCase = (input: DeploymentCaseInput): DeploymentLed
       recordFingerprint: input.site.recordFingerprint
     },
     targetComposition: resultManifest.targetComposition,
+    ...(candidateConformance ? { candidateConformance } : {}),
     obligations,
     crossTargetEdges: edges,
     unresolvedInputs,
