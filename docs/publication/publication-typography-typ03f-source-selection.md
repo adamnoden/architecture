@@ -1,14 +1,14 @@
 <!-- nav-exclude: redirect -->
 # TYP-03F — Source selection and exact physical confirmation
 
-Status: **selected direction; exact physical confirmation still required**  
+Status: **COMPLETE — body reading system physically accepted and frozen**  
 Programme authority: GitHub issue **#425 — TYP — Publication Typography Programme**  
 Packet: **#467 — TYP-03F — physical body-text reading and freeze**  
 Depends on: TYP-03C physical review protocol + TYP-03D affordability/value frontier + TYP-03E pinned proof machinery
 
 ## 1. Decision
 
-The project owner has selected the open typography direction:
+The project owner has selected and physically accepted the open typography direction:
 
 - **body serif — Source Serif 4**;
 - **publication sans — Source Sans 3**.
@@ -23,17 +23,15 @@ The selection path changed explicitly: once the open Source direction proved con
 
 ### Source Serif 4 + Source Sans 3
 
-**SELECTED DIRECTION.**
+**SELECTED AND FROZEN.**
 
-The open-font shakedown established a physical preference for the Source direction. A later confirmation sheet using Source Serif 4 rather than the earlier Source Serif Pro proxy preserved that preference.
-
-The repo-pinned Source inputs remain the identity authority. The temporary confirmation sheet used outside the repo is supporting evidence only and does not replace exact pinned proof.
+The open-font shakedown established a physical preference for the Source direction. A later confirmation sheet using Source Serif 4 rather than the earlier Source Serif Pro proxy preserved that preference. The final exact-pinned B5 proof then passed physical owner review without earning any metric or composition change.
 
 ### Newsreader + Source Sans 3
 
 **REJECTED AS THE OPEN BODY CHALLENGER.**
 
-The recorded physical result is intentionally narrow: the owner preferred the Source direction. No stronger invented claim about Newsreader's page colour, delicacy, manner, italic or reproduction quality is warranted from the evidence recorded so far.
+The recorded physical result is intentionally narrow: the owner preferred the Source direction. No stronger invented claim about Newsreader's page colour, delicacy, manner, italic or reproduction quality is warranted from the evidence recorded.
 
 ### Lyon Text + Atlas Grotesk; Tiempos Text + Söhne; Scala Pro + Scala Sans Pro
 
@@ -41,11 +39,11 @@ The recorded physical result is intentionally narrow: the owner preferred the So
 
 The proprietary systems were not physically proved against Source in the full blind A–E pack. They therefore must not be described as having lost an aesthetic comparison.
 
-They are removed from the active selection path because the project owner does not consider purchase/licence effort worthwhile now that an open system is already preferred. Reopening a paid candidate requires a specific physical or functional defect in Source that the existing open system cannot solve.
+They are removed from the active selection path because the project owner does not consider purchase/licence effort worthwhile now that an open system is physically accepted. Reopening a paid candidate requires a specific physical or functional defect in Source that the frozen open system cannot solve.
 
 ## 3. Exact identity boundary
 
-Final TYP-03 proof must use the pins already frozen by TYP-03E:
+The frozen TYP-03 system uses the pins already established by TYP-03E:
 
 ### Source Serif 4
 
@@ -64,77 +62,74 @@ Final TYP-03 proof must use the pins already frozen by TYP-03E:
 
 `open-fonts.ts` remains responsible for retrieving those exact upstream files and failing closed if their Git blob identities do not match.
 
-## 4. Selected-system proof mode
+## 4. Exact selected-system proof
 
-TYP-03F adds a narrow selected-system path to the existing proof harness:
+The selected-system proof path is:
 
 ```sh
 npx tsx publication/specimens/typ03/proof-pack.ts --selected
 ```
 
-This builds only the chosen Source Serif 4 + Source Sans 3 B5 specimen using the exact pinned open-font inputs.
+The final accepted proof was generated through the repository Vivliostyle harness using the exact pinned open-font inputs.
 
-The output is **admissible for selected-system physical confirmation and body-metric freeze**. It is explicitly **not** evidence of a completed five-finalist blind comparison.
+Evidence:
 
-Default confirmation geometry remains the existing common envelope:
+- proof workflow: **TYP-03F selected Source proof**;
+- workflow run: **39817623755**;
+- artifact: **12442987462 — `typ03f-source-confirmation`**;
+- artifact digest: `sha256:8294927eeec2a4e054be46c257b26499ee55b7b07344e582d67aba2f7d73d647`;
+- proof PDF: `typ03-set-selected-b5-spaced-ragged.pdf`;
+- proof workflow merged by PR **#477** as `3fc5afa336fe514c79c10bdf98ac7496f8dc8418`.
 
-- body size: `10.5pt`;
-- leading: `1.5`;
-- B5 practical measure: `112mm`;
-- paragraph rhythm: `spaced`;
-- alignment: `ragged`.
+This evidence is admissible for the selected-system physical confirmation and body-metric freeze. It remains explicitly **not** evidence of a completed five-finalist blind comparison.
 
-## 5. Bounded second-pass tuning
+## 5. Frozen body reading system
 
-TYP-03C allows only surviving candidates to receive bounded tuning. Because Source is now the selected direction, the harness exposes exactly the three quantitative controls that remain legitimate to tune:
+The exact-pinned B5 proof was physically reviewed by the project owner and accepted as-is. No bounded second-pass adjustment was earned.
 
-```sh
-TYP03_BODY_SIZE_PT=10.5 \
-TYP03_LEADING=1.5 \
-TYP03_MEASURE_MM=112 \
-npx tsx publication/specimens/typ03/proof-pack.ts --selected
-```
+TYP-03 therefore freezes:
 
-These values are recorded in the specimen manifest. Existing defaults are unchanged when the variables are omitted.
+- body serif: **Source Serif 4**;
+- companion publication sans: **Source Sans 3**;
+- body size: **10.5 pt**;
+- leading: **1.5**;
+- conservative-B5 practical measure: **112 mm**;
+- paragraph rhythm: **spaced paragraphs**;
+- composition: **ragged-right**;
+- hyphenation under the frozen ragged composition: **off**;
+- widow/orphan posture: **3 / 3** where supported by the composition engine;
+- emphasis: **true Source Serif 4 italic**, not synthetic oblique;
+- ordinary roman: **Source Serif 4 regular**;
+- bold emphasis where semantically required: **Source Serif 4 bold**.
 
-Paragraph rhythm and composition remain the existing explicit controls:
+These values are a coherent reading system, not independent knobs. Later packets must not retune them merely to make a local page easier to style.
 
-```sh
-TYP03_RHYTHM=spaced|indented
-TYP03_ALIGN=ragged|justified
-```
+A change to any of these requires a concrete freeze-break reason and renewed physical proof.
 
-Do not turn this into a large factorial optimisation. Begin from the default Source confirmation. Alter a value only when the physical page identifies a specific reading problem worth correcting.
+## 6. Value / licence freeze
 
-## 6. Physical confirmation gate
+- Source Serif 4 + Source Sans 3 wins the active selection path.
+- The system is zero-cost/open and has deterministic pinned upstream identities.
+- Newsreader is the rejected open challenger.
+- Commercial candidates are retired on value/procurement grounds rather than falsely described as aesthetic losers.
+- No proprietary acquisition is authorised unless a concrete defect in the frozen Source system appears later and cannot be solved within the open system.
 
-Print the selected pack at **100% / actual size** on the same printer and paper assumptions used for the previous physical judgement.
+## 7. Production boundary
 
-Read normally before inspecting glyphs.
+TYP-03 freezes the **body reading contract**. It does not by itself perform the final production-wide typography integration.
 
-Confirm or adjust only what the physical page earns:
+Therefore:
 
-- body size;
-- leading;
-- practical measure;
-- spaced paragraphs versus first-line indentation;
-- ragged-right versus justified composition;
-- hyphenation consequence of that composition choice;
-- widow/orphan posture;
-- roman/italic relationship.
+- the frozen Source identities and body metrics are now mandatory inputs to TYP-04 and later TYP packets;
+- TYP-04 may design hierarchy/openings/navigation around this body system but may not reopen it silently;
+- TYP-05 may test difficult technical material without fragmenting the body voice;
+- TYP-06 remains the explicit publication-sans / drawing interface gate for PLT;
+- final production token integration and release remain under the later TYP programme gates.
 
-The exact pinned proof should also confirm that the earlier preference was not an artefact of the temporary proxy build.
+## 8. Closeout
 
-## 7. Freeze boundary
+TYP-03F is complete.
 
-TYP-03F may close only when the project owner has read the exact pinned Source specimen on paper and the final body reading system is recorded.
+The body-reading question is no longer open-ended. The book now has a physically accepted text system with exact upstream identity, reproducible proof machinery, frozen composition metrics and a clear value/licensing posture.
 
-Until then:
-
-- **face direction is selected**;
-- **commercial acquisition is retired**;
-- **production `publication/theme.css` is not yet changed**;
-- TYP-04 must not silently substitute its own body metrics;
-- TYP-03 must not be described as physically frozen.
-
-Once that exact physical confirmation is complete, record the final metrics and composition policy here, close #467, and advance to TYP-04.
+Next authorised packet: **#478 — TYP-04 — hierarchy, openings and navigation**.
