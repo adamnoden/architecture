@@ -281,32 +281,35 @@ const registryIdentities = (
   england: LoadedEnglandCoverageRegistry,
   planning: LoadedPlanningCoverageRegistry,
   nonPlanning: LoadedNonPlanningCoverageRegistry
-): OwnerRegistryIdentity[] => [
-  {
-    owner: 'REFERENCE_HOUSE',
-    registryId: conformance.registry.id,
-    registryFingerprint: conformance.fingerprint,
-    authorityFingerprint: conformance.authorityFingerprint
-  },
-  {
-    owner: 'ENGLAND',
-    registryId: england.registry.id,
-    registryFingerprint: england.fingerprint,
-    authorityFingerprint: england.authoritySetFingerprint
-  },
-  {
-    owner: 'PLANNING',
-    registryId: planning.registry.id,
-    registryFingerprint: planning.fingerprint,
-    authorityFingerprint: planning.authoritySetFingerprint
-  },
-  {
-    owner: 'NON_PLANNING',
-    registryId: nonPlanning.registry.id,
-    registryFingerprint: nonPlanning.fingerprint,
-    authorityFingerprint: nonPlanning.authoritySetFingerprint
-  }
-].sort((a, b) => ownerOrder[a.owner] - ownerOrder[b.owner])
+): OwnerRegistryIdentity[] => {
+  const identities: OwnerRegistryIdentity[] = [
+    {
+      owner: 'REFERENCE_HOUSE',
+      registryId: conformance.registry.id,
+      registryFingerprint: conformance.fingerprint,
+      authorityFingerprint: conformance.authorityFingerprint
+    },
+    {
+      owner: 'ENGLAND',
+      registryId: england.registry.id,
+      registryFingerprint: england.fingerprint,
+      authorityFingerprint: england.authoritySetFingerprint
+    },
+    {
+      owner: 'PLANNING',
+      registryId: planning.registry.id,
+      registryFingerprint: planning.fingerprint,
+      authorityFingerprint: planning.authoritySetFingerprint
+    },
+    {
+      owner: 'NON_PLANNING',
+      registryId: nonPlanning.registry.id,
+      registryFingerprint: nonPlanning.fingerprint,
+      authorityFingerprint: nonPlanning.authoritySetFingerprint
+    }
+  ]
+  return identities.sort((a, b) => ownerOrder[a.owner] - ownerOrder[b.owner])
+}
 
 const claimOwnership = (
   site: ReferenceSiteManifest,
