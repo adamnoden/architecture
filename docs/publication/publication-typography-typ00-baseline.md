@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # TYP-00 — publication typography baseline and proof brief
 
 Status: **candidate baseline**  
