@@ -50,12 +50,26 @@ If a non-baseline candidate is declared `preview-only`, the Vivliostyle config r
 ## Candidate ids
 
 - `baseline` — current Georgia / Arial working system; no font files required;
-- `lyon-atlas`
-- `tiempos-soehne`
-- `scala`
-- `source`
+- `lyon-atlas` — Lyon Text + Atlas Grotesk;
+- `tiempos-soehne` — Tiempos Text + Söhne;
+- `scala` — Scala Pro + Scala Sans Pro;
+- `source` — Source Serif 4 + Source Sans 3, open/free neutral control;
+- `newsreader-source` — Newsreader + Source Sans 3, open/free aesthetic challenger.
 
 Candidate ids are labels for the proof record. The supplied font-file fingerprints are the actual identity evidence.
+
+TYP-03D adds the `newsreader-source` candidate because affordability is now an explicit selection constraint. This does **not** reopen the candidate search generally. Source remains the open neutral control; Newsreader/Source asks whether a zero-cost system can also carry enough character to beat the commercial benchmarks outright.
+
+### Affordability rule
+
+Price and licence complexity must not contaminate the anonymous first reading pass. After identity reveal:
+
+- if an open/free candidate is physically equivalent or only marginally weaker than a paid candidate, the open/free candidate wins;
+- a paid candidate must show a clear, repeatable and materially valuable physical advantage to justify purchase;
+- a modest one-off cost remains admissible if that advantage is obvious;
+- recurring subscriptions, complex deployment rights and hosted-build uncertainty count against a candidate.
+
+The durable authority is `docs/publication/publication-typography-typ03d-value-frontier.md`.
 
 ## Comparison axes
 
@@ -132,7 +146,7 @@ Do **not** use the preview UI's PDF-save function unless the font licence also p
 Only when embedding rights are established:
 
 ```sh
-TYP03_CANDIDATE=source \
+TYP03_CANDIDATE=newsreader-source \
 TYP03_FONT_RIGHTS=pdf-embed-ok \
 TYP03_FORMAT=b5 \
 TYP03_RHYTHM=indented \
@@ -140,7 +154,7 @@ TYP03_ALIGN=ragged \
 # ...five TYP03_* font path variables... \
 npx tsx publication/specimens/typ03/prepare.ts
 
-TYP03_CANDIDATE=source \
+TYP03_CANDIDATE=newsreader-source \
 TYP03_FONT_RIGHTS=pdf-embed-ok \
 TYP03_FORMAT=b5 \
 TYP03_RHYTHM=indented \
@@ -148,12 +162,15 @@ TYP03_ALIGN=ragged \
 npx vivliostyle build -c publication/specimens/typ03/vivliostyle.config.js
 ```
 
+For open-source candidates, verify the licence for the exact files supplied before declaring `pdf-embed-ok`; do not infer rights merely from the candidate label.
+
 ## Foundry-specific evaluation notes
 
 These notes are **operational constraints, not substitutes for reading the licence actually accepted by the operator**.
 
 - Klim's published Test Font Licence allows internal test visualisations and presentation through print/web/mobile, but its licence summary marks test-font embedding as unavailable. Treat Klim test files as `preview-only` unless a different licence has been obtained.
 - Commercial Type offers trial fonts for private evaluation. Its current general EULA also contains restrictions around external distribution and generative-AI use. Keep Commercial Type trial files local and outside this AI/cloud workflow unless a licence expressly permits otherwise.
+- Newsreader's upstream Production Type repository states SIL Open Font License 1.1 and ships variable fonts. Source Sans 3's Adobe repository is also open under OFL-1.1. Verify the exact downloaded files/licence before a run.
 - Open-source candidates such as Source may use `pdf-embed-ok` when the operator has verified the applicable open-font licence for the exact files used.
 
 ## Review discipline
