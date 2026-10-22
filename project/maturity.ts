@@ -337,9 +337,9 @@ export const workstreamStatuses = [
     maturity: 'M4',
     reviewedOn: '2026-10-22',
     currentState:
-      'DPL-13A establishes an internally challenged deterministic Reference House × synthetic DPL-RS-01 canonical deployment-case baseline. The controlled proposition preserves all 29 DPL-07 claims including 11 explicit unknowns, explicit RH-V02 candidate authorship, bounded Reference House conformance, DPL-08B/C interfaces, DPL-09B/C England targets, London strategic planning, independent coverage identity and explicit no-conclusion proof boundaries. M4 is limited to this canonical integration scope: coverage completeness, conclusion readiness, real-site deployability, regulatory/planning/legal adequacy and route exhaustion remain unproved.',
+      'DPL-13A remains the internally controlled deterministic Reference House × synthetic DPL-RS-01 canonical deployment-case baseline. Coverage Foundations DPL-02C, DPL-09D and DPL-11B now make Reference House conformance, England technical/process and non-planning due-diligence universes machine-readable without turning coverage into substantive PASS. DPL-F finds the remaining coherent SCREENING owner gap in planning: DPL-10 inventory authority is broader than the current DPL-10B/C/D executable slices, including heritage, noise, ecology and other strategic/local planning families. M4 remains limited to canonical integration; coverage completeness, conclusion readiness, real-site deployability, regulatory/planning/legal adequacy and route exhaustion remain unproved.',
     nextGate:
-      'Execute Coverage Foundations laterally: DPL-02C Reference House conformance coverage registry, DPL-09D England SCREENING family coverage registry and DPL-11B non-planning SCREENING family coverage registry. Then run DPL-F to decide whether DPL-13B conclusion-readiness work is justified. Keep whole-site COMPATIBLE / UNRESOLVED / INCOMPATIBLE outputs and DPL-15+ held.',
+      'Execute DPL-10E only: encode the complete currently controlled London/borough planning SCREENING family universe as owner-side coverage authority without predicting permission or assigning a borough to the synthetic Reference Site. Then run DPL-G to re-test DPL-13B admission. Keep whole-site COMPATIBLE / UNRESOLVED / INCOMPATIBLE outputs, DPL-13B and DPL-15+ held until that gate.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -372,7 +372,11 @@ export const workstreamStatuses = [
         'project/dpl/dpl-13a-canonical-reference-site-compile.md',
         'compiler/dpl/canonical.ts',
         'compiler/dpl/dpl13a.test.ts',
-        'project/dpl/dpl-e-post-13a-review.md'
+        'project/dpl/dpl-e-post-13a-review.md',
+        'project/dpl/dpl-02c-conformance-coverage.md',
+        'project/dpl/dpl-09d-england-screening-coverage.md',
+        'project/dpl/dpl-11b-nonplanning-screening-coverage.md',
+        'project/dpl/dpl-f-coverage-foundations-integration-review.md'
       ]
     }
   },
