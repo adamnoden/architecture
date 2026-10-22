@@ -1,0 +1,328 @@
+{
+  "schemaVersion": "dpl.boroughPlanningSlice.v1",
+  "id": "BROMLEY-LOCAL-PLANNING-2019-2026-10-22",
+  "borough": "London Borough of Bromley",
+  "researchDate": "2026-10-22",
+  "parentStrategicTargetId": "LON-PLAN-2021-RESIDENTIAL-DESIGN-2026-10-20",
+  "proofSiteId": "DPL-RP-002",
+  "scope": [
+    "Local Plan 2019 backland / garden-land policy",
+    "Local Plan 2019 side-space and general-design policy",
+    "Local Plan 2019 trees / TPO-sensitive development policy",
+    "Local Plan 2019 parking / road-safety policy with current London-plan conflict/composition caution",
+    "Local Plan 2019 flood-risk / SuDS policy and current validation evidence",
+    "Urban Design Guide SPD guidance status",
+    "current Local Plan review / emerging-source status"
+  ],
+  "sourceSnapshots": [
+    {
+      "id": "BROM-DEVELOPMENT-PLAN-PAGE-2026-10-22",
+      "sourceClass": "OFFICIAL_DEVELOPMENT_PLAN_MEMBERSHIP_RECORD",
+      "title": "The Bromley Local Plan",
+      "canonicalSource": "https://www.bromley.gov.uk/planning-policy/bromley-local-plan",
+      "status": "CURRENT_COUNCIL_DEVELOPMENT_PLAN_PAGE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-22",
+      "authorityNote": "Council states the Bromley Local Plan was adopted on 16 January 2019 and, with the London Plan, is used to determine planning applications."
+    },
+    {
+      "id": "BROM-LOCAL-PLAN-2019",
+      "sourceClass": "ADOPTED_LOCAL_DEVELOPMENT_PLAN_POLICY",
+      "title": "Bromley Local Plan 2019",
+      "adoptedDate": "2019-01-16",
+      "canonicalSource": "https://www.bromley.gov.uk/downloads/file/51/bromley-local-plan",
+      "status": "OPERATIVE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-22"
+    },
+    {
+      "id": "BROM-LOCAL-PLAN-REVIEW-2026-10-22",
+      "sourceClass": "EMERGING_LOCAL_PLAN",
+      "title": "Review of the Bromley Local Plan",
+      "canonicalSource": "https://www.bromley.gov.uk/planning-policy/review-bromley-local-plan",
+      "status": "EMERGING_NON_OPERATIVE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-22",
+      "authorityNote": "The council's current review surface records the 2025 Direction of Travel as the second Regulation 18 consultation. The current official pages do not expose a Submission Draft Local Plan as operative development-plan policy."
+    },
+    {
+      "id": "BROM-DIRECTION-OF-TRAVEL-2025",
+      "sourceClass": "EMERGING_NON_POLICY_CONSULTATION_MATERIAL",
+      "title": "Direction of Travel Consultation July to September 2025",
+      "canonicalSource": "https://www.bromley.gov.uk/planning-policy/review-bromley-local-plan/2",
+      "status": "COMPLETED_REGULATION_18_DIRECTION_OF_TRAVEL_NON_OPERATIVE",
+      "retrievedAt": "2026-10-22",
+      "authorityNote": "Council explicitly states this document does not contain draft policies. Its stated intention to consult on a Submission Draft in Summer 2026 is a timetable statement, not evidence that such a draft has become operative."
+    },
+    {
+      "id": "BROM-URBAN-DESIGN-GUIDE-SPD-2023",
+      "sourceClass": "ADOPTED_SUPPLEMENTARY_PLANNING_DOCUMENT",
+      "title": "Urban Design Guide SPD",
+      "adoptedDate": "2023-07-05",
+      "canonicalSource": "https://www.bromley.gov.uk/planning-policy/supplementary-planning-guidance/3",
+      "status": "ADOPTED_GUIDANCE_MATERIAL_CONSIDERATION",
+      "retrievedAt": "2026-10-22",
+      "authorityNote": "The SPD guides interpretation of adopted policy; it does not create development-plan policy."
+    },
+    {
+      "id": "BROM-VALIDATION-REQUIREMENTS-2025",
+      "sourceClass": "CURRENT_LOCAL_VALIDATION_GUIDANCE",
+      "title": "Bromley Planning Validation Requirements — January 2025",
+      "canonicalSource": "https://www.bromley.gov.uk/downloads/file/35/validation-guidance-and-local-information-requirements-for-planning-applications",
+      "status": "CURRENT_VALIDATION_GUIDANCE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-22",
+      "authorityNote": "Current application-information guidance, not development-plan policy. Material here includes drainage evidence expectations and a current direction to use London Plan parking standards."
+    },
+    {
+      "id": "BROM-TPO-CURRENT-SERVICE-2026-10-22",
+      "sourceClass": "OFFICIAL_CURRENT_TREE_PROTECTION_SERVICE",
+      "title": "Tree Preservation Orders (TPOs)",
+      "canonicalSource": "https://www.bromley.gov.uk/trees/tree-protection",
+      "status": "CURRENT_COUNCIL_TPO_INFORMATION_SERVICE",
+      "retrievedAt": "2026-10-22",
+      "authorityNote": "Council directs users to its protected-trees map / enquiry route for current TPO status. DPL-RP-002's historic BB9 (1960) evidence is therefore not promoted to current site fact without a current authoritative recheck."
+    }
+  ],
+  "methodClasses": [
+    {
+      "id": "LOCAL_NATIVE_NUMERIC",
+      "kind": "NATIVE_DETERMINISTIC",
+      "claimBoundary": "Evaluates only explicit local numeric terms from admitted proposal/site facts; a numeric pass does not discharge qualitative/context duties."
+    },
+    {
+      "id": "LOCAL_DESIGN_JUDGEMENT",
+      "kind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT",
+      "claimBoundary": "Backland character, design, amenity, separation quality and context response remain planning/architectural judgement supported by evidence."
+    },
+    {
+      "id": "LOCAL_TECHNICAL_PLANNING_EVIDENCE",
+      "kind": "EXTERNAL_EVIDENCE_AND_INSPECTION",
+      "claimBoundary": "Tree, highway, flood and drainage questions require current site/specialist evidence and planning assessment; this does not replace technical design."
+    },
+    {
+      "id": "LOCAL_PLANNING_DETERMINATION",
+      "kind": "EXTERNAL_PLANNING_DETERMINATION",
+      "claimBoundary": "Planning permission, refusal, appeal and condition discharge remain external authority outcomes."
+    },
+    {
+      "id": "LOCAL_POLICY_CONFLICT_UNRESOLVED",
+      "kind": "UNSUPPORTED",
+      "claimBoundary": "A potentially conflicting/superseded local numeric provision is not executed natively until DPL-10A conflict/temporal composition establishes the applicable relationship to later strategic policy."
+    }
+  ],
+  "obligations": [
+    {
+      "id": "BROM-P3-BACKLAND-GARDEN",
+      "sourceSnapshot": "BROM-LOCAL-PLAN-2019",
+      "sourceProvision": "Policy 3",
+      "title": "Backland and garden-land development must avoid unacceptable character, landscape/habitat/amenity and residential-amenity harm and provide high separation/landscaping quality",
+      "applicability": "APPLIES_TO_BACKLAND_OR_GARDEN_LAND_RESIDENTIAL_DEVELOPMENT",
+      "resolutionMethod": "LOCAL_DESIGN_JUDGEMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "authoritative proposal scale / design / density / siting",
+        "evidenced local character and existing development pattern",
+        "current landscape / habitat / amenity-space evidence",
+        "surveyed neighbour/opening/private-space geometry",
+        "traffic/disturbance evidence proportionate to the proposal",
+        "separation and landscape proposal"
+      ],
+      "proofCaseEvidenceRefs": ["DPL-RP-002:RP002-C09", "DPL-RP-002:RP002-C04"],
+      "nonClaim": "The historic larger five-house refusal demonstrates proposal-specific sensitivity; it is not a universal refusal rule for the rear-of-10 parcel."
+    },
+    {
+      "id": "BROM-P8-SIDE-SPACE",
+      "sourceSnapshot": "BROM-LOCAL-PLAN-2019",
+      "sourceProvision": "Policy 8",
+      "title": "Residential side-space minimum with context-sensitive higher-separation remainder",
+      "applicability": "APPLIES_TO_RELEVANT_NEW_RESIDENTIAL_DEVELOPMENT; TWO_OR_MORE_STOREYS_TRIGGERS_EXPLICIT_ONE_METRE_TERM",
+      "resolutionMethod": "LOCAL_NATIVE_NUMERIC",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "authoritative site boundary geometry",
+        "proposal storey count",
+        "minimum building-to-side-boundary distances for full building height and length",
+        "evidenced prevailing separation character"
+      ],
+      "deterministicRule": "for a proposal of two or more storeys, retain at least 1m to the side boundary for the full height and length of the building",
+      "judgementRemainder": "Where higher standards of separation already exist, Policy 8 expects more generous side space; therefore >=1m is only the explicit numeric floor, not a complete policy pass.",
+      "proofCaseEvidenceRefs": ["DPL-RP-002:RP002-C06"],
+      "nonClaim": "DPL-RP-002 lacks survey/title-grade boundary geometry, so the native term cannot currently be run."
+    },
+    {
+      "id": "BROM-P37-GENERAL-DESIGN",
+      "sourceSnapshot": "BROM-LOCAL-PLAN-2019",
+      "sourceProvision": "Policy 37",
+      "title": "General high-quality design, context, amenity, inclusive access, landscape and waste-storage duties",
+      "applicability": "APPLIES_TO_DEVELOPMENT_WHERE_RELEVANT",
+      "resolutionMethod": "LOCAL_DESIGN_JUDGEMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "proposal architecture / layout / access / landscape evidence",
+        "adjacent scale / proportion / form / material context",
+        "daylight / sunlight / privacy / noise evidence where material",
+        "inclusive-access evidence",
+        "waste/recycling storage proposal"
+      ],
+      "guidanceRefs": ["BROM-URBAN-DESIGN-GUIDE-SPD-2023"],
+      "nonClaim": "Urban Design Guide SPD guidance informs judgement but is not promoted into Local Plan policy."
+    },
+    {
+      "id": "BROM-P73-TREES",
+      "sourceSnapshot": "BROM-LOCAL-PLAN-2019",
+      "sourceProvision": "Policy 73",
+      "title": "Development must account for desirable existing trees on-site/adjoining, with retention/protection and suitable replanting where loss is accepted",
+      "applicability": "APPLIES_WHERE_EXISTING_OR_ADJOINING_TREES_ARE_MATERIAL; TPO_SUBCLAUSES_REQUIRE_CURRENT_DESIGNATION_EVIDENCE",
+      "resolutionMethod": "LOCAL_TECHNICAL_PLANNING_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "current tree survey / arboricultural impact evidence",
+        "current authoritative TPO / conservation-area status",
+        "proposal footprint / levels / access / services relative to retained trees and RPAs",
+        "retention / protection / replacement proposal"
+      ],
+      "proofCaseEvidenceRefs": ["DPL-RP-002:RP002-C08"],
+      "nonClaim": "Historic application evidence records area TPO BB9 (1960), but current 2026 TPO coverage remains unresolved until the council's current protected-tree records are checked."
+    },
+    {
+      "id": "BROM-P30-PARKING",
+      "sourceSnapshot": "BROM-LOCAL-PLAN-2019",
+      "sourceProvision": "Policy 30",
+      "title": "Adopted local residential parking provisions with later London Plan composition/conflict unresolved",
+      "applicability": "APPLIES_TO_NEW_RESIDENTIAL_DEVELOPMENT_BUT_CURRENT_NUMERIC_RELATION_TO_LONDON_PLAN_2021_REQUIRES_EXPLICIT_COMPOSITION",
+      "resolutionMethod": "LOCAL_POLICY_CONFLICT_UNRESOLVED",
+      "defaultResultAtCurrentDPLEvidence": "UNSUPPORTED",
+      "requiredInputs": [
+        "current strategic London parking target",
+        "proposal bedroom count / parking provision",
+        "PTAL and local parking/access evidence",
+        "explicit DPL-10A conflict/temporal relationship between Policy 30 numeric terms and London Plan 2021"
+      ],
+      "policyFact": "The adopted 2019 policy contains local residential minimum/maximum parking standards by PTAL and bedroom count.",
+      "currentGuidanceFact": "Bromley's January 2025 validation requirements direct new residential car parking to London Plan Policy T6/T6.1 standards.",
+      "nonClaim": "DPL-10D does not execute the 2019 local parking table as though the 2021 London Plan had not intervened; nor does validation guidance itself repeal development-plan policy."
+    },
+    {
+      "id": "BROM-P32-ROAD-SAFETY",
+      "sourceSnapshot": "BROM-LOCAL-PLAN-2019",
+      "sourceProvision": "Policy 32",
+      "title": "Development must not significantly adversely affect road safety",
+      "applicability": "APPLIES_TO_DEVELOPMENT",
+      "resolutionMethod": "LOCAL_TECHNICAL_PLANNING_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "current access geometry / width / gradient / visibility / swept path",
+        "pedestrian/cycle/highway context",
+        "proposal traffic / servicing / refuse / emergency-access evidence proportionate to scale"
+      ],
+      "proofCaseEvidenceRefs": ["DPL-RP-002:RP002-C04"],
+      "nonClaim": "The historical 3.2-3.8m private-lane description is context evidence, not current survey or highway-safety proof."
+    },
+    {
+      "id": "BROM-P115-P116-FLOOD-SUDS",
+      "sourceSnapshot": "BROM-LOCAL-PLAN-2019",
+      "sourceProvision": "Policies 115 and 116",
+      "title": "Flood-risk reduction and sustainable surface-water management planning duties",
+      "applicability": "APPLIES_WITH_FLOOD_RISK_AND_EVIDENCE_SUBCLAUSES_FACT_GATED_BY_SITE_AND_PROPOSAL",
+      "resolutionMethod": "LOCAL_TECHNICAL_PLANNING_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "current flood-risk evidence",
+        "topographical survey",
+        "existing/proposed impermeable drainage areas",
+        "drainage hierarchy / discharge evidence",
+        "infiltration/geology/groundwater evidence where relied upon",
+        "runoff / attenuation / exceedance / maintenance evidence where due"
+      ],
+      "guidanceRefs": ["BROM-VALIDATION-REQUIREMENTS-2025"],
+      "proofCaseEvidenceRefs": ["DPL-RP-002:RP002-C11"],
+      "crossAuthorityRefs": ["DPL-08C water interface", "DPL-09C England Part H target", "London strategic planning target"],
+      "nonClaim": "The 2019 permission's drainage condition and current validation requirements prove drainage evidence is due; they do not establish an acceptable drainage solution for the current site."
+    }
+  ],
+  "excludedOrHeldSources": [
+    {
+      "id": "BROM-SUBMISSION-DRAFT-LOCAL-PLAN",
+      "reason": "The current official review pages at 2026-10-22 expose the 2025 Direction of Travel as the latest policy-stage consultation and do not expose a Submission Draft as operative policy. The stated Summer 2026 intention is not treated as evidence that a draft exists or carries weight."
+    },
+    {
+      "id": "BROM-HISTORIC-BB9-TPO-AS-CURRENT-FACT",
+      "reason": "Historic arboricultural evidence records area TPO BB9 (1960), but current council records must re-establish present coverage before DPL treats it as a current site designation."
+    },
+    {
+      "id": "BROM-P30-NATIVE-NUMERIC-PARKING",
+      "reason": "The 2019 Local Plan contains numeric residential parking standards, but later London Plan 2021 authority and current Bromley validation guidance create a real temporal/conflict-composition question. The local table is therefore not executed natively in this packet."
+    }
+  ],
+  "proofCaseEvidence": [
+    {
+      "id": "BROM-18-04241-FULL1",
+      "sourceClass": "CONTROLLED_CORPUS_PUBLIC_COPY_OF_OFFICIAL_COUNCIL_DECISION",
+      "siteRef": "DPL-RP-002",
+      "proposal": "demolition of garages and erection of one three-bedroom house to rear of 10 Highland Road",
+      "decisionDate": "2019-01",
+      "outcome": "PERMISSION_GRANTED_SUBJECT_TO_CONDITIONS",
+      "authorityBoundary": "Proposal-specific historical external decision evidence; not a current permission assertion and not a site pass."
+    },
+    {
+      "id": "BROM-17-04981-FULL1",
+      "sourceClass": "CONTROLLED_CORPUS_PUBLIC_COPY_OF_OFFICIAL_COUNCIL_REPORT_AND_REFUSAL",
+      "siteRef": "DPL-RP-002",
+      "proposal": "five terrace houses on larger combined rear-of-8-and-10 site",
+      "outcome": "REFUSED",
+      "issues": ["backland character / scale", "neighbour amenity", "overdevelopment", "private access context"],
+      "authorityBoundary": "Different proposal and larger parcel; useful interpretation context only, not a reusable refusal rule."
+    }
+  ],
+  "composition": {
+    "strategicTargetId": "LON-PLAN-2021-RESIDENTIAL-DESIGN-2026-10-20",
+    "rule": "Local and strategic obligations coexist as typed development-plan authority. No precedence is inferred from list order, locality or recency; actual conflict/supersession relations use DPL-10A planning-law semantics.",
+    "guidanceRule": "Adopted SPDs and validation requirements may inform evidence/judgement and application information but do not become development-plan policy.",
+    "siteDesignationRule": "A local target may define what a TPO/tree designation would require, but current site applicability belongs to authoritative site/designation evidence rather than being hard-coded from historical application material."
+  },
+  "boroughCommonSeamAfterCroydonAndBromley": {
+    "survives": [
+      "borough/source snapshot identity and status",
+      "parent strategic target identity",
+      "typed local obligations with applicability and method class",
+      "numeric policy only where genuinely explicit and fact-supported",
+      "qualitative design/amenity judgement remaining judgement-led",
+      "guidance/SPD separated from development-plan policy",
+      "site-specific designation applicability separated from target semantics",
+      "proposal-specific permission/refusal evidence separated from normative policy",
+      "emerging-plan sources kept non-operative until authority changes",
+      "no list-order or more-local-wins precedence"
+    ],
+    "doesNotSurviveAsGeneric": [
+      "Croydon DM10-style combined design/amenity structure",
+      "Croydon's local amenity-space formulas",
+      "Croydon's drainage/highway policy grouping",
+      "Croydon's revoked-guidance history",
+      "one uniform numeric-rule portfolio across boroughs",
+      "assumption that every local numeric policy can be executed without strategic-policy conflict analysis"
+    ],
+    "stillUnderdetermined": [
+      "generic machine schema for borough-specific designation families beyond typed applicability/evidence refs",
+      "generic resolution of local-plan numeric policy that conflicts with later London strategic policy",
+      "whether a third materially different borough would require another method class or source-status field"
+    ]
+  },
+  "proofBoundary": {
+    "nativeNow": [
+      "exact source/status identity",
+      "Policy 8 explicit 1m side-space floor once exact boundary/proposal facts exist, while retaining the higher-separation judgement remainder"
+    ],
+    "judgementOrExternalNow": [
+      "Policy 3 backland character / amenity / landscaping",
+      "Policy 37 general design / inclusive access / amenity",
+      "Policy 73 tree retention/protection with current arboricultural and designation evidence",
+      "Policy 32 road safety/access",
+      "Policies 115/116 flood/drainage evidence",
+      "Policy 30 temporal/conflict relationship to London Plan 2021"
+    ],
+    "forbiddenConclusions": [
+      "planning permission prediction",
+      "Reference House acceptability on DPL-RP-002",
+      "current TPO status inferred from historical evidence",
+      "whole-site compatibility",
+      "generic all-borough planning engine"
+    ]
+  }
+}
