@@ -24,6 +24,15 @@ test('DPL-13B canonical readiness result is deterministic and preserves the no-c
   })
 })
 
+test('DPL-13B canonical scope is complete but disposition remains unresolved pending opaque acceleration review', () => {
+  const result = composeScreeningCoverageReadiness()
+  assert.deepEqual(result.uncoveredClaimIds, [])
+  assert.ok(result.dispositionCounts.ACCELERATION_REVIEW_REQUIRED > 0)
+  assert.equal(result.profileUniverseState, 'PROFILE_DISPOSITION_UNRESOLVED')
+  assert.equal(result.conclusionReadiness, 'NOT_READY_PROFILE_DISPOSITION_UNRESOLVED')
+  assert.equal(result.proofBoundary.substantiveConclusionAggregation, 'NOT_ADMITTED')
+})
+
 test('DPL-13B composes exactly four controlled owner registries', () => {
   const result = composeScreeningCoverageReadiness()
   assert.deepEqual(result.ownerRegistries.map((owner) => owner.owner), [
@@ -177,6 +186,7 @@ test('DPL-13B distinguishes profile disposition uncertainty from substantive UNR
 test('DPL-13B never executes opaque acceleration prose', () => {
   const result = composeScreeningCoverageReadiness()
   const acceleration = result.normalizedCoverage.filter((entry) => entry.normalizedDisposition === 'ACCELERATION_REVIEW_REQUIRED')
+  assert.ok(acceleration.length > 0)
   for (const entry of acceleration) {
     assert.equal(entry.ownerSemantic.triggerKind, 'OPAQUE_OWNER_METADATA_NOT_EXECUTED')
     assert.ok(!('triggerResult' in entry.ownerSemantic))
