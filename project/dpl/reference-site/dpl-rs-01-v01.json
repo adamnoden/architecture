@@ -1,0 +1,261 @@
+{
+  "schemaVersion": "dpl.referenceSiteManifest.v1",
+  "siteId": "DPL-RS-01",
+  "manifestId": "DPL-RS-01-SM-v0.1",
+  "manifestRevision": "0.1",
+  "siteKind": "SYNTHETIC_REFERENCE",
+  "authoritySource": "project/dpl/dpl-07-reference-site.md",
+  "authorityBoundary": "Synthetic integration fixture only; no claim of London typicality, real-site evidence, planning compliance or deployability.",
+  "coordinateFrame": {
+    "origin": "south-west parcel corner",
+    "xPositive": "geographic east",
+    "yPositive": "geographic north",
+    "zDatum": "synthetic street/frontage datum",
+    "geographicNorth": "+Y"
+  },
+  "parcel": {
+    "southWestMm": [0, 0],
+    "southEastMm": [17400, 0],
+    "northEastMm": [17400, 30000],
+    "northWestMm": [0, 30000],
+    "widthMm": 17400,
+    "depthMm": 30000,
+    "derivedAreaM2": 522,
+    "streetEdge": "north / Y = 30000",
+    "rearGarden": "south"
+  },
+  "housePlacement": {
+    "referenceHouseHandedness": "UNMIRRORED",
+    "variantRoute": "RH-V02",
+    "rotationDeg": 180,
+    "boundingBoxMm": {
+      "west": 3000,
+      "east": 15000,
+      "south": 14000,
+      "north": 24800
+    },
+    "derivedClearancesMm": {
+      "westTechnicalServiceSide": 3000,
+      "eastPrincipalSide": 2400,
+      "northFrontSetback": 5200,
+      "southRearGarden": 14000
+    },
+    "modelToSiteTransform": {
+      "siteX": "15000 - modelX",
+      "siteY": "24800 - modelY"
+    },
+    "groundFflSiteZMm": 100
+  },
+  "claims": [
+    {
+      "id": "RS-PARCEL-01",
+      "proposition": "parcel rectangle 17.4 × 30.0 m",
+      "basis": "ASSUMED",
+      "basisDetail": "synthetic fixture",
+      "state": "AUTHORED",
+      "value": { "widthMm": 17400, "depthMm": 30000, "derivedAreaM2": 522 }
+    },
+    {
+      "id": "RS-FRAME-01",
+      "proposition": "local XY frame; +Y geographic north",
+      "basis": "ASSUMED",
+      "basisDetail": "synthetic fixture",
+      "state": "AUTHORED",
+      "value": {
+        "origin": "south-west parcel corner",
+        "xPositive": "geographic east",
+        "yPositive": "geographic north",
+        "zDatum": "synthetic street/frontage datum"
+      }
+    },
+    {
+      "id": "RS-STREET-01",
+      "proposition": "north boundary fronts established residential street",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "value": { "boundary": "north", "streetContext": "established residential street" }
+    },
+    {
+      "id": "RS-HOUSE-XFORM-01",
+      "proposition": "RH rigid rotation 180°, bbox X 3.0–15.0 m / Y 14.0–24.8 m",
+      "basis": "DERIVED_SITE_CLAIM",
+      "basisDetail": "authored placement + controlled Reference House shell",
+      "state": "AUTHORED",
+      "value": {
+        "rotationDeg": 180,
+        "referenceHouseHandedness": "UNMIRRORED",
+        "variantRoute": "RH-V02",
+        "boundingBoxMm": { "west": 3000, "east": 15000, "south": 14000, "north": 24800 }
+      }
+    },
+    {
+      "id": "RS-SIDES-01",
+      "proposition": "west 3.0 m / east 2.4 m gross side fields",
+      "basis": "DERIVED_SITE_CLAIM",
+      "state": "AUTHORED",
+      "value": { "westMm": 3000, "eastMm": 2400 }
+    },
+    {
+      "id": "RS-GARDENS-01",
+      "proposition": "north/front 5.2 m / south/rear 14.0 m",
+      "basis": "DERIVED_SITE_CLAIM",
+      "state": "AUTHORED",
+      "value": { "northFrontMm": 5200, "southRearMm": 14000 }
+    },
+    {
+      "id": "RS-TOPO-01",
+      "proposition": "broad ground falls 240 mm north→south",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "value": { "northBoundaryZMm": 0, "southBoundaryZMm": -240, "fallMm": 240, "lengthMm": 30000 }
+    },
+    {
+      "id": "RS-FFL-01",
+      "proposition": "RH ground FFL maps to site Z +0.100 m",
+      "basis": "ASSUMED_DEPLOYMENT_DATUM",
+      "state": "AUTHORED",
+      "value": { "groundFflSiteZMm": 100 }
+    },
+    {
+      "id": "RS-ACCESS-01",
+      "proposition": "west-side physical access zone at street frontage",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "value": { "side": "west", "frontage": "north", "alignedTechnicalStripWidthMm": 3000 }
+    },
+    {
+      "id": "RS-NBR-W-01",
+      "proposition": "approximate two-storey west neighbour mass",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "precision": "APPROXIMATE",
+      "value": { "nearestEastFaceXmm": -1800, "frontNorthYmm": 24300, "rearSouthYmm": 13800, "heightMm": 7800, "storeys": 2 }
+    },
+    {
+      "id": "RS-NBR-E-01",
+      "proposition": "approximate two-storey east neighbour mass",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "precision": "APPROXIMATE",
+      "value": { "nearestWestFaceXmm": 19200, "frontNorthYmm": 24800, "rearSouthYmm": 13500, "heightMm": 8200, "storeys": 2 }
+    },
+    {
+      "id": "RS-NBR-OPEN-01",
+      "proposition": "exact relevant neighbour openings",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "RS-TREE-01",
+      "proposition": "mature tree at approx (4.3, 5.0) m",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "precision": "APPROXIMATE",
+      "value": { "stemCentreMm": [4300, 5000], "stemDiameterMm": 450, "canopyRadiusMm": 3200, "species": "NOT_FROZEN" }
+    },
+    {
+      "id": "RS-TREE-ROOT-01",
+      "proposition": "root / arboricultural constraints",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "RS-GROUND-01",
+      "proposition": "geotechnical design condition",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN",
+      "unknownComponents": ["ground profile", "bearing parameters", "groundwater", "contamination", "ground gas / radon", "buried obstructions"]
+    },
+    {
+      "id": "RS-SEWER-STREET-01",
+      "proposition": "foul sewer serves street context",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "value": { "streetContextFoulSewer": "ASSUMED_PRESENT", "availabilityToConnect": "NOT_ASSERTED" }
+    },
+    {
+      "id": "RS-SEWER-DETAIL-01",
+      "proposition": "route/depth/capacity/connection rights",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "RS-SW-01",
+      "proposition": "lawful surface-water strategy",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "RS-UTIL-E-01",
+      "proposition": "electricity available in street context",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "value": { "streetContextAvailability": "ASSUMED" }
+    },
+    {
+      "id": "RS-UTIL-W-01",
+      "proposition": "water available in street context",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "value": { "streetContextAvailability": "ASSUMED" }
+    },
+    {
+      "id": "RS-UTIL-T-01",
+      "proposition": "telecom available in street context",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "value": { "streetContextAvailability": "ASSUMED" }
+    },
+    {
+      "id": "RS-UTIL-CAP-01",
+      "proposition": "connection capacities/routes",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "RS-HERITAGE-01",
+      "proposition": "no listed/conservation designation in fixture",
+      "basis": "ASSUMED",
+      "basisDetail": "synthetic baseline",
+      "state": "AUTHORED",
+      "value": { "listedBuildingOnParcel": "NONE_ASSUMED", "conservationArea": "NONE_ASSUMED", "otherHeritageDesignation": "NONE_ASSUMED" }
+    },
+    {
+      "id": "RS-TITLE-CONTROL-01",
+      "proposition": "one project-controlled parcel interest",
+      "basis": "ASSUMED",
+      "state": "AUTHORED",
+      "value": { "projectControlledParcelInterests": 1 }
+    },
+    {
+      "id": "RS-TITLE-DETAIL-01",
+      "proposition": "covenants/easements/rights/wayleaves",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "RS-FLOOD-01",
+      "proposition": "flood condition/classification",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "RS-NOISE-01",
+      "proposition": "external noise condition",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "RS-ECO-01",
+      "proposition": "ecology/habitat condition",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    },
+    {
+      "id": "RS-CONST-01",
+      "proposition": "detailed construction-logistics constraints",
+      "basis": "UNKNOWN",
+      "state": "UNKNOWN"
+    }
+  ]
+}
