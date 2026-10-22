@@ -13,7 +13,7 @@ import {
   type CanonicalCoverageManifest,
   type ReferenceSiteManifest
 } from './canonical.js'
-import type { DeploymentCandidateInput } from './model.js'
+import type { CandidateConformanceFinding, DeploymentCandidateInput } from './model.js'
 
 describe('DPL-13A canonical Reference Site compile', () => {
   test('reproduces one exact synthetic canonical case deterministically', () => {
@@ -79,7 +79,9 @@ describe('DPL-13A canonical Reference Site compile', () => {
     assert.ok(conformance)
 
     for (const clauseId of ['RH-I02', 'RH-PROT-01', 'RH-PROT-04', 'RH-PROT-06']) {
-      const finding = conformance.findings.find((item) => item.clauseId === clauseId)
+      const finding: CandidateConformanceFinding | undefined = conformance.findings.find(
+        (item) => item.clauseId === clauseId
+      )
       assert.ok(finding, `Expected ${clauseId}`)
       assert.equal(finding.result, 'CONFORMS')
     }
