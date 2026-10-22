@@ -18,6 +18,7 @@ import type {
   RawTargetSlice,
   TargetAuthorityClass
 } from './model.js'
+import { assertBoroughStrategicParent, strategicPlanningTargetId } from './planning-target-identity.js'
 
 export const DPL12C_COMPOSITION_VERSION = 'DPL-12C-COMPOSITION-1' as const
 
@@ -133,10 +134,7 @@ const validateCorpusIndex = (value: unknown, path: string): WaveCCorpusIndex => 
 
   const corpus = expectString(index.corpus, `Wave-C corpus index ${path} corpus`)
   const researchDate = expectString(index.researchDate, `Wave-C corpus index ${path} researchDate`)
-  const assuranceProfile = expectString(
-    index.assuranceProfile,
-    `Wave-C corpus index ${path} assuranceProfile`
-  )
+  const assuranceProfile = expectString(index.assuranceProfile, `Wave-C corpus index ${path} assuranceProfile`)
   if (!Array.isArray(index.sites)) {
     throw new Error(`Wave-C corpus index ${path} sites must be an array.`)
   }
@@ -150,20 +148,11 @@ const validateCorpusIndex = (value: unknown, path: string): WaveCCorpusIndex => 
 
     return {
       id,
-      displayName: expectString(
-        item.displayName,
-        `Wave-C corpus index ${path} sites[${siteIndex}].displayName`
-      ),
+      displayName: expectString(item.displayName, `Wave-C corpus index ${path} sites[${siteIndex}].displayName`),
       borough: expectString(item.borough, `Wave-C corpus index ${path} sites[${siteIndex}].borough`),
-      admissionState: expectString(
-        item.admissionState,
-        `Wave-C corpus index ${path} sites[${siteIndex}].admissionState`
-      ),
+      admissionState: expectString(item.admissionState, `Wave-C corpus index ${path} sites[${siteIndex}].admissionState`),
       record: expectString(item.record, `Wave-C corpus index ${path} sites[${siteIndex}].record`),
-      challengeTags: expectStringArray(
-        item.challengeTags,
-        `Wave-C corpus index ${path} sites[${siteIndex}].challengeTags`
-      )
+      challengeTags: expectStringArray(item.challengeTags, `Wave-C corpus index ${path} sites[${siteIndex}].challengeTags`)
     }
   })
 
@@ -263,10 +252,7 @@ const validateBoroughTarget = (value: unknown, path: string): RawTargetSlice => 
     const id = expectString(item.id, `Borough target ${path} obligations[${index}].id`)
     if (obligationIds.has(id)) throw new Error(`Duplicate borough obligation ${id} at ${path}.`)
     obligationIds.add(id)
-    const sourceSnapshot = expectString(
-      item.sourceSnapshot,
-      `Borough target ${path} obligations[${index}].sourceSnapshot`
-    )
+    const sourceSnapshot = expectString(item.sourceSnapshot, `Borough target ${path} obligations[${index}].sourceSnapshot`)
     if (!sourceIds.has(sourceSnapshot)) {
       throw new Error(`Borough obligation ${id} references missing source snapshot ${sourceSnapshot}.`)
     }
@@ -314,14 +300,25 @@ export const loadWaveCInterfaceContracts = () => [
   )
 ] as const
 
-export const loadWaveCTargetComposition = (borough: WaveCBoroughTarget) => [
-  ...loadB2TargetComposition(),
-  loadTargetSlice(
+export const composeWaveCTargets = (
+  b2Targets: ReturnType<typeof loadB2TargetComposition>,
+  drainageTarget: DeploymentCaseInput['targets'][number],
+  boroughTarget: LoadedWaveCBoroughTarget
+): readonly DeploymentCaseInput['targets'][number][] => {
+  const strategicTargetId = strategicPlanningTargetId(b2Targets)
+  assertBoroughStrategicParent(boroughTarget.target, strategicTargetId)
+  return [...b2Targets, drainageTarget, boroughTarget.runtimeTarget]
+}
+
+export const loadWaveCTargetComposition = (borough: WaveCBoroughTarget) => {
+  const b2Targets = loadB2TargetComposition()
+  const drainageTarget = loadTargetSlice(
     'project/dpl/targets/england-drainage-waste-water-v1.json',
     'ENGLAND_BUILDING_CONTROL'
-  ),
-  loadWaveCBoroughTarget(borough).runtimeTarget
-] as readonly DeploymentCaseInput['targets'][number][]
+  )
+  const boroughTarget = loadWaveCBoroughTarget(borough)
+  return composeWaveCTargets(b2Targets, drainageTarget, boroughTarget)
+}
 
 export const createWaveCDeploymentCaseInput = (
   request: WaveCDeploymentCaseRequest
@@ -339,6 +336,12 @@ export const createWaveCDeploymentCaseInput = (
     )
   }
 
+  const b2Targets = loadB2TargetComposition()
+  const drainageTarget = loadTargetSlice(
+    'project/dpl/targets/england-drainage-waste-water-v1.json',
+    'ENGLAND_BUILDING_CONTROL'
+  )
+
   return {
     site,
     boroughTarget,
@@ -346,14 +349,7 @@ export const createWaveCDeploymentCaseInput = (
       assuranceProfile: request.assuranceProfile ?? 'SCREENING',
       site: site.runtimeSite,
       interfaceContracts: loadWaveCInterfaceContracts(),
-      targets: [
-        ...loadB2TargetComposition(),
-        loadTargetSlice(
-          'project/dpl/targets/england-drainage-waste-water-v1.json',
-          'ENGLAND_BUILDING_CONTROL'
-        ),
-        boroughTarget.runtimeTarget
-      ],
+      targets: composeWaveCTargets(b2Targets, drainageTarget, boroughTarget),
       candidate: request.candidate,
       proposalFacts: request.proposalFacts,
       evidence: request.evidence

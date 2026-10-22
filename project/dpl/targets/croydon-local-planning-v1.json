@@ -3,7 +3,7 @@
   "id": "CROYDON-LOCAL-PLANNING-2018-2026-10-21",
   "borough": "London Borough of Croydon",
   "researchDate": "2026-10-21",
-  "parentStrategicTargetId": "LON-PLAN-2021-RESIDENTIAL-DESIGN-2026-10-20",
+  "parentStrategicTargetId": "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
   "proofSiteId": "DPL-RP-003",
   "scope": [
     "Local Plan 2018 design / character / amenity",
@@ -267,7 +267,7 @@
     }
   ],
   "composition": {
-    "strategicTargetId": "LON-PLAN-2021-RESIDENTIAL-DESIGN-2026-10-20",
+    "strategicTargetId": "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
     "rule": "Local and strategic obligations coexist as typed development-plan authority. No precedence is inferred from list order or locality. Apparent conflict requires the planning/legal conflict semantics defined by DPL-10A rather than a more-local-wins rule.",
     "duplicateNumericPolicyRule": "Where local and strategic policies express similar numeric requirements, preserve both obligation identities and their distinct additional conditions; do not merge them merely because the numeric baseline happens to match."
   },

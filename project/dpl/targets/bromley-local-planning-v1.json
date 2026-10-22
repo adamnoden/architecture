@@ -3,7 +3,7 @@
   "id": "BROMLEY-LOCAL-PLANNING-2019-2026-10-22",
   "borough": "London Borough of Bromley",
   "researchDate": "2026-10-22",
-  "parentStrategicTargetId": "LON-PLAN-2021-RESIDENTIAL-DESIGN-2026-10-20",
+  "parentStrategicTargetId": "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
   "proofSiteId": "DPL-RP-002",
   "scope": [
     "Local Plan 2019 backland / garden-land policy",
@@ -272,7 +272,7 @@
     }
   ],
   "composition": {
-    "strategicTargetId": "LON-PLAN-2021-RESIDENTIAL-DESIGN-2026-10-20",
+    "strategicTargetId": "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
     "rule": "Local and strategic obligations coexist as typed development-plan authority. No precedence is inferred from list order, locality or recency; actual conflict/supersession relations use DPL-10A planning-law semantics.",
     "guidanceRule": "Adopted SPDs and validation requirements may inform evidence/judgement and application information but do not become development-plan policy.",
     "siteDesignationRule": "A local target may define what a TPO/tree designation would require, but current site applicability belongs to authoritative site/designation evidence rather than being hard-coded from historical application material."
