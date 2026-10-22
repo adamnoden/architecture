@@ -9,6 +9,14 @@ const format = process.env.TYP03_FORMAT === 'b5' ? 'b5' : 'a4'
 const candidate = process.env.TYP03_CANDIDATE ?? 'baseline'
 const rhythm = process.env.TYP03_RHYTHM ?? 'spaced'
 const alignment = process.env.TYP03_ALIGN ?? 'ragged'
+const fontRights = candidate === 'baseline' ? 'system-baseline' : process.env.TYP03_FONT_RIGHTS
+const isPdfBuild = process.argv.some((argument) => argument === 'build')
+
+if (candidate !== 'baseline' && isPdfBuild && fontRights !== 'pdf-embed-ok') {
+  throw new Error(
+    `Refusing TYP-03 PDF build for ${candidate}: set TYP03_FONT_RIGHTS=pdf-embed-ok only when the supplied font licence permits PDF embedding. Use vivliostyle preview for preview-only evaluation fonts.`
+  )
+}
 
 export default defineConfig({
   title: `TYP-03 ${candidate} — ${format.toUpperCase()} / ${rhythm} / ${alignment}`,

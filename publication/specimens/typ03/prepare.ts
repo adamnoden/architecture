@@ -14,16 +14,23 @@ const candidates = new Set(['baseline', 'lyon-atlas', 'tiempos-soehne', 'scala',
 const formats = new Set(['a4', 'b5'])
 const rhythms = new Set(['spaced', 'indented'])
 const alignments = new Set(['ragged', 'justified'])
+const fontRightsModes = new Set(['preview-only', 'pdf-embed-ok'])
 
 const candidate = process.env.TYP03_CANDIDATE ?? 'baseline'
 const format = process.env.TYP03_FORMAT ?? 'a4'
 const rhythm = process.env.TYP03_RHYTHM ?? 'spaced'
 const alignment = process.env.TYP03_ALIGN ?? 'ragged'
+const fontRights = candidate === 'baseline' ? 'system-baseline' : process.env.TYP03_FONT_RIGHTS
 
 if (!candidates.has(candidate)) throw new Error(`Unsupported TYP03_CANDIDATE: ${candidate}`)
 if (!formats.has(format)) throw new Error(`Unsupported TYP03_FORMAT: ${format}`)
 if (!rhythms.has(rhythm)) throw new Error(`Unsupported TYP03_RHYTHM: ${rhythm}`)
 if (!alignments.has(alignment)) throw new Error(`Unsupported TYP03_ALIGN: ${alignment}`)
+if (candidate !== 'baseline' && !fontRightsModes.has(fontRights ?? '')) {
+  throw new Error(
+    `TYP03_FONT_RIGHTS must be preview-only or pdf-embed-ok for TYP03_CANDIDATE=${candidate}`
+  )
+}
 
 const sha256 = (content: string | Buffer): string => createHash('sha256').update(content).digest('hex')
 
@@ -109,6 +116,7 @@ const manifest = {
   format,
   rhythm,
   alignment,
+  fontRights,
   source: 'docs/manuscript/part-i.md',
   sourceSha256: sha256(canonical),
   anchors: [
@@ -120,4 +128,4 @@ const manifest = {
 }
 await writeFile(resolve(workRoot, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
 
-console.log(`Prepared TYP-03 ${candidate} ${format}/${rhythm}/${alignment} specimen.`)
+console.log(`Prepared TYP-03 ${candidate} ${format}/${rhythm}/${alignment} specimen (${fontRights}).`)
