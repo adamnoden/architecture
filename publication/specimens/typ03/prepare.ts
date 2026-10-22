@@ -10,7 +10,7 @@ const fontsRoot = resolve(workRoot, 'fonts')
 const sourceRoot = resolve(workRoot, 'source')
 const sourcePath = resolve(repoRoot, 'docs/manuscript/part-i.md')
 
-const candidates = new Set(['baseline', 'lyon-atlas', 'tiempos-soehne', 'scala', 'source'])
+const candidates = new Set(['baseline', 'lyon-atlas', 'tiempos-soehne', 'scala', 'source', 'newsreader-source'])
 const formats = new Set(['a4', 'b5'])
 const rhythms = new Set(['spaced', 'indented'])
 const alignments = new Set(['ragged', 'justified'])
