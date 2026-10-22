@@ -302,11 +302,7 @@ export const workstreamStatuses = [
     evidence: {
       framed: ['docs/research/README.md'],
       developed: ['docs/research/workmanship-robustness.md'],
-      coordinated: ['docs/development/pattern-language-phase8-review.md'],
-      internallyValidated: [
-        'docs/development/pattern-language-phase7-review.md',
-        'docs/development/pattern-language-phase8-review.md'
-      ]
+      coordinated: ['docs/research/candidate-pattern-hardening-summary.md']
     }
   },
   {
