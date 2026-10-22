@@ -1,98 +1,136 @@
-# Deployment orchestration
+# Deployment compiler
 
-This directory contains the bounded executable deployment-orchestration layer admitted by the DPL programme.
+This directory contains the bounded executable deployment layer admitted by the DPL programme.
 
-Its authority currently reaches **DPL-12B**. The layer remains intentionally narrower than the eventual deployment compiler.
+Its authority now reaches **DPL-13B** at SCREENING coverage/readiness scope.
+
+It is still intentionally narrower than an eventual whole-site deployment compiler.
 
 ## DPL-12A — obligation / evidence orchestration
 
-DPL-12A composes already-controlled inputs:
+DPL-12A composes controlled Reference House, site, interface, England and London target inputs into a deterministic obligation/evidence ledger.
 
-- the current Reference House source identity;
-- an admitted DPL site record and its explicit screening unknowns;
-- controlled site-interface contract identity;
-- the first England technical target slice;
-- the first London strategic-planning target slice;
-- explicit proposal facts supplied for a compile;
-- explicit evidence items supplied for a compile.
+It preserves:
 
-It produces a deterministic **obligation/evidence ledger** preserving:
-
-- target authority class;
-- applicability state;
+- target authority and applicability;
 - method class;
 - obligation result;
 - evidence lifecycle independently of result;
 - missing inputs;
 - cross-target edges;
-- semantic fingerprints for the deployment case and resulting ledger.
+- semantic case/result fingerprints.
 
-The loader intentionally reads controlled `project/dpl/` artefacts from disk. JSON imports are not used and unsupported schemas fail closed.
+It does not infer absent site facts or turn external judgement into native truth.
 
 ## DPL-12B — authored candidate / Reference House conformance
 
-DPL-12B adds one optional **authored deployment candidate** to that case.
+DPL-12B adds an explicit **authored deployment candidate** as compiler input.
 
-The candidate is an input, not compiler output. Its identity includes:
+The candidate is never compiler-authored or selected.
 
-- candidate id and revision;
-- authored-source id and revision;
-- exact Reference House source fingerprint it claims to instantiate;
-- explicit candidate facts;
-- selected DPL-02 variant routes;
-- referenced site-interface / implementation response classes.
+Current native conformance is deliberately bounded to:
 
-Candidate identity is fingerprinted into deployment-case identity. Reordering set-like route references does not change identity; changing a relevant authored candidate input does.
+- `RH-I02` — open-to-sky courtyard;
+- `RH-PROT-01` — controlled gross shell/courtyard/storey morphology;
+- `RH-PROT-04` — controlled principal-stair topology and 300 mm going;
+- `RH-PROT-06` — controlled four-bay front field / ranked entrance;
+- `RH-V01` — coherent whole-house mirror route admission;
+- `RH-V02` — rigid site placement/orientation route admission.
 
-### Native conformance coverage
+Other DPL-02 authority remains explicit rather than passing by omission.
 
-DPL-12B deliberately implements only clauses for which controlled computational facts already exist:
+## DPL-12C — Wave-C composition
 
-- `RH-I02` — genuine open-to-sky courtyard;
-- `RH-PROT-01` — 12.0 m × 10.8 m shell, centred 3.6 m × 4.0 m courtyard and two-storey gross morphology;
-- `RH-PROT-04` — controlled 18-riser / three-flight / 300 mm-going stair facts;
-- `RH-PROT-06` — controlled four-bay front field and ranked entrance, including mirror-equivalent entrance handling under `RH-V01`;
-- `RH-V01` — coherent whole-house left/right mirror route admission;
-- `RH-V02` — rigid site placement / cardinal-orientation route admission.
+DPL-12C composes the actual Wave-C water/interface target, borough-target envelope and controlled eight-site corpus identities through the same runtime.
 
-Every other DPL-02 identity/protected clause remains explicitly `OPEN` unless and until an authoritative representation is earned. Referencing a site-interface or implementation freedom also remains `OPEN`: the existence of the freedom does not prove that one proposed response stays inside its boundary.
+It does not turn the corpus into a property shortlist or borough examples into one generic policy engine.
 
-The clause findings are architectural findings:
+## DPL-13A — canonical synthetic deployment case
 
-`CONFORMS / NON_CONFORMING / REQUIRES_REFERENCE_HOUSE_REVISION / OPEN`
+DPL-13A assembles the first controlled Reference House × synthetic `DPL-RS-01` case.
 
-They are not a replacement for the existing obligation/evidence result lattice and they are never averaged into a score.
+It preserves:
+
+- all 29 frozen Reference Site claims;
+- explicit `UNKNOWN` / synthetic-assumption provenance;
+- the authored `RH-V02` placement;
+- DPL-08B/C interface identity;
+- DPL-09B/C England target identity;
+- London strategic planning without fabricating a local borough;
+- independent site/candidate/deployment/coverage/canonical fingerprints.
+
+DPL-13A explicitly does **not** establish coverage completeness or whole-site conclusion readiness.
+
+## Owner-side SCREENING coverage
+
+The generic readiness layer consumes, but does not replace, the controlled owner registries:
+
+- DPL-02C — Reference House conformance coverage;
+- DPL-09D — England technical/process coverage;
+- DPL-10E — planning coverage;
+- DPL-11B — non-planning due-diligence coverage.
+
+DPL-10F separately proves the exact London strategic → local borough target graph.
+
+DPL-08B remains the direct owner of the canonical authored absolute-datum claim `RS-FFL-01` under `GI-D02 — DATUM`; this site-interface ownership is preserved explicitly rather than forced into one of the four coverage registries.
+
+## DPL-13B — SCREENING coverage / conclusion readiness
+
+`coverage-readiness.ts` composes those controlled authorities into one deterministic profile-universe proposition.
+
+It may normalise owner posture into:
+
+- `DUE_NOW_REPRESENTED`;
+- `DUE_NOW_MISSING`;
+- `FUTURE_DUE`;
+- `DUE_CLASSIFICATION_UNRESOLVED`;
+- `NOT_APPLICABLE_PROVED`;
+- `ADVISORY_NON_BLOCKING`;
+- `ACCELERATION_REVIEW_REQUIRED`.
+
+Owner-specific semantics remain alongside that integration view.
+
+The canonical DPL-RS-01 result currently has:
+
+```text
+uncoveredClaimIds = []
+profileUniverseState = PROFILE_DISPOSITION_UNRESOLVED
+conclusionReadiness = NOT_READY_PROFILE_DISPOSITION_UNRESOLVED
+```
+
+The unresolved disposition comes from opaque owner acceleration metadata that may be relevant to unresolved/synthetic case facts. DPL-13B surfaces those questions for review but never parses prose into executable rules.
+
+### DPL-13B proof boundary
+
+The runtime retains:
+
+```text
+wholeSiteCompatibilityConclusion = NOT_IMPLEMENTED
+substantiveConclusionAggregation = NOT_ADMITTED
+routeExhaustion = NOT_IMPLEMENTED
+architecturalCandidateSelection = NOT_IMPLEMENTED
+```
+
+Therefore DPL-13B does not emit whole-site `COMPATIBLE`, `UNRESOLVED` or `INCOMPATIBLE`.
 
 ## What this layer still does not do
 
-DPL-12A/12B do not:
+The deployment compiler does not:
 
 - author, generate, optimise or rank architecture;
-- select a deployment candidate or site adaptation;
-- infer missing site or candidate facts;
-- make unrepresented DPL-02 clauses pass by omission;
-- perform structural, geotechnical, drainage or planning judgement;
+- infer missing site facts;
+- convert registry presence into substantive PASS;
+- perform structural, geotechnical, drainage, legal or planning judgement;
 - grant or predict statutory/planning approval;
-- implement the full England or London rule corpus;
+- implement the full England technical corpus;
 - rank land;
-- compute an aggregate compliance/confidence/conformance score;
+- compute a scalar compliance/confidence score;
+- parse human-language acceleration triggers;
+- assign a real borough to the synthetic Reference Site;
 - prove route exhaustion;
-- emit whole-site `COMPATIBLE`, `UNRESOLVED` or `INCOMPATIBLE`.
+- emit an authorised whole-site deployment result.
 
-A non-conforming candidate finding means **that candidate is outside the current Reference House contract**. It does not prove that the site is incompatible. Another already-admitted route may exist, or an explicit Reference House rewind may be warranted.
-
-A green represented subset likewise does not mean the site is deployable: unmodelled conformance clauses and unrepresented external obligations remain visible.
-
-## Current native target-method authority
-
-The target side still implements only deterministic methods already earned by B2:
-
-- explicit fact-gated applicability where the target artefact defines the rule;
-- London Plan D6 Table 3.1 GIA/storage arithmetic;
-- the bounded D6 finished-height coverage check;
-- the bounded D6 private-outside-space baseline where its applicability is itself resolved.
-
-External-evidence and planning/design-judgement methods remain external. Accepted evidence may discharge an obligation only when the compile input explicitly identifies that evidence as discharging that obligation.
+A failed candidate is not site incompatibility. A complete profile universe is not positive compatibility. A conservative-looking unknown result is not authorised until substantive aggregation semantics are separately proved.
 
 ## Tests
 
@@ -102,4 +140,4 @@ Run:
 npm run test:dpl
 ```
 
-The DPL-12A suite continues to prove the no-candidate obligation/evidence slice unchanged. The DPL-12B suite adds deterministic candidate identity, controlled native conformance checks, whole-house mirror handling, protected-change rewind, identity failure, explicit open/unmodelled handling, stale Reference House revision refusal and the continued absence of whole-site compatibility.
+The DPL suite now includes regression proof for orchestration, candidate conformance, Wave-C composition, owner coverage registries, planning target identity, canonical DPL-13A integration and DPL-13B coverage/readiness composition.
