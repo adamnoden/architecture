@@ -14,8 +14,8 @@ html {
 body {
   margin: 0 auto;
   font-family: var(--typ03-serif);
-  font-size: 10.5pt;
-  line-height: 1.5;
+  font-size: var(--typ03-body-size, 10.5pt);
+  line-height: var(--typ03-leading, 1.5);
   color: var(--typ03-text);
 }
 

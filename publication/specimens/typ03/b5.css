@@ -15,5 +15,5 @@
 }
 
 body {
-  max-width: 112mm;
+  max-width: var(--typ03-measure, 112mm);
 }

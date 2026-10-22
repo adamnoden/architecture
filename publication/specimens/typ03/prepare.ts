@@ -36,6 +36,18 @@ if (candidate !== 'baseline' && !fontRightsModes.has(fontRights ?? '')) {
   )
 }
 
+const positiveNumber = (name: string, fallback: number): number => {
+  const raw = process.env[name]?.trim()
+  if (!raw) return fallback
+  const value = Number(raw)
+  if (!Number.isFinite(value) || value <= 0) throw new Error(`${name} must be a positive number; got ${raw}`)
+  return value
+}
+
+const bodySizePt = positiveNumber('TYP03_BODY_SIZE_PT', 10.5)
+const leading = positiveNumber('TYP03_LEADING', 1.5)
+const measureMm = positiveNumber('TYP03_MEASURE_MM', format === 'b5' ? 112 : 125)
+
 const sha256 = (content: string | Buffer): string => createHash('sha256').update(content).digest('hex')
 
 function extractSection(markdown: string, heading: string, stopAtAnyHeading = false): string {
@@ -108,7 +120,7 @@ const alignmentCss = alignment === 'justified'
   ? `body { text-align: justify; hyphens: auto; }`
   : `body { text-align: left; hyphens: none; }`
 
-fontCss += `\n:root {\n  --typ03-candidate: "${candidate}";\n}\n\nbody { font-optical-sizing: auto; }\n${rhythmCss}\n${alignmentCss}\n`
+fontCss += `\n:root {\n  --typ03-candidate: "${candidate}";\n  --typ03-body-size: ${bodySizePt}pt;\n  --typ03-leading: ${leading};\n  --typ03-measure: ${measureMm}mm;\n}\n\nbody { font-optical-sizing: auto; }\n${rhythmCss}\n${alignmentCss}\n`
 await writeFile(resolve(workRoot, 'candidate.css'), fontCss, 'utf8')
 
 const visibleIdentity = blindLabel ? `Set ${blindLabel}` : `Candidate: ${candidate}`
@@ -116,12 +128,15 @@ const specimen = `# TYP-03 body-text specimen\n\n<p class="typ03-meta">${visible
 await writeFile(resolve(sourceRoot, 'specimen.md'), specimen, 'utf8')
 
 const manifest = {
-  schemaVersion: 2,
+  schemaVersion: 3,
   candidate,
   blindLabel,
   format,
   rhythm,
   alignment,
+  bodySizePt,
+  leading,
+  measureMm,
   fontRights,
   source: 'docs/manuscript/part-i.md',
   sourceSha256: sha256(canonical),
@@ -135,5 +150,5 @@ const manifest = {
 await writeFile(resolve(workRoot, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
 
 console.log(
-  `Prepared TYP-03 ${blindLabel ? `Set ${blindLabel} (${candidate})` : candidate} ${format}/${rhythm}/${alignment} specimen (${fontRights}).`
+  `Prepared TYP-03 ${blindLabel ? `Set ${blindLabel} (${candidate})` : candidate} ${format}/${rhythm}/${alignment} specimen (${fontRights}) at ${bodySizePt}pt/${leading}, ${measureMm}mm.`
 )

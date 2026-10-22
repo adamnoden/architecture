@@ -6,6 +6,7 @@ import { spawnSync } from 'node:child_process'
 import { fetchOpenFontCandidate } from './open-fonts.js'
 
 type Candidate = 'baseline' | 'lyon-atlas' | 'tiempos-soehne' | 'scala' | 'source' | 'newsreader-source'
+type Mode = 'selected' | 'open-only' | 'full'
 type FontEnvName =
   | 'TYP03_SERIF_REGULAR'
   | 'TYP03_SERIF_ITALIC'
@@ -22,10 +23,16 @@ const preparePath = resolve(specimenRoot, 'prepare.ts')
 const npx = process.platform === 'win32' ? 'npx.cmd' : 'npx'
 
 const args = new Set(process.argv.slice(2))
-const mode = args.has('--full') ? 'full' : args.has('--open-only') ? 'open-only' : null
-if (!mode || (args.has('--full') && args.has('--open-only'))) {
-  throw new Error('Usage: npx tsx publication/specimens/typ03/proof-pack.ts <--open-only|--full>')
+const requestedModes = [
+  args.has('--selected') ? 'selected' : null,
+  args.has('--open-only') ? 'open-only' : null,
+  args.has('--full') ? 'full' : null
+].filter((value): value is Mode => value !== null)
+
+if (requestedModes.length !== 1) {
+  throw new Error('Usage: npx tsx publication/specimens/typ03/proof-pack.ts <--selected|--open-only|--full>')
 }
+const mode = requestedModes[0]
 
 const rhythm = process.env.TYP03_RHYTHM ?? 'spaced'
 const alignment = process.env.TYP03_ALIGN ?? 'ragged'
@@ -109,11 +116,13 @@ const mapping: Array<{ candidate: Candidate; label: string }> = mode === 'full'
         label: String.fromCharCode('A'.charCodeAt(0) + index)
       }))
     ]
-  : [
-      { candidate: 'baseline', label: 'BASELINE' },
-      { candidate: 'source', label: 'SHAKEDOWN-A' },
-      { candidate: 'newsreader-source', label: 'SHAKEDOWN-B' }
-    ]
+  : mode === 'selected'
+    ? [{ candidate: 'source', label: 'SELECTED' }]
+    : [
+        { candidate: 'baseline', label: 'BASELINE' },
+        { candidate: 'source', label: 'SHAKEDOWN-A' },
+        { candidate: 'newsreader-source', label: 'SHAKEDOWN-B' }
+      ]
 
 const manifests: unknown[] = []
 
@@ -153,18 +162,24 @@ for (const { candidate, label } of mapping) {
 }
 
 const evidence = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   mode,
   admissibleForBlindDecision: mode === 'full',
+  admissibleForSelectedSystemConfirmation: mode === 'selected',
   packId,
   format: 'b5',
   rhythm,
   alignment,
+  bodySizePt: Number(process.env.TYP03_BODY_SIZE_PT ?? 10.5),
+  leading: Number(process.env.TYP03_LEADING ?? 1.5),
+  measureMm: Number(process.env.TYP03_MEASURE_MM ?? 112),
   mapping,
   manifests,
   warning: mode === 'open-only'
     ? 'SHAKEDOWN ONLY. This pack omits proprietary finalists and must not be used to choose the TYP-03 winner.'
-    : 'Keep this mapping record out of sight until anonymous reading notes are frozen.'
+    : mode === 'selected'
+      ? 'SELECTED-SYSTEM CONFIRMATION. Source Serif 4 + Source Sans 3 is already the owner-selected open direction; use this exact pinned pack to confirm physical reading and freeze body metrics. This is not evidence of a completed five-finalist blind comparison.'
+      : 'Keep this mapping record out of sight until anonymous reading notes are frozen.'
 }
 
 await writeFile(resolve(privateRoot, 'PRIVATE-MAPPING.json'), `${JSON.stringify(evidence, null, 2)}\n`, 'utf8')
@@ -172,7 +187,9 @@ await writeFile(
   resolve(packRoot, 'PRINT-ME.txt'),
   mode === 'full'
     ? `TYP-03 full blind B5 pack\nPrint BASELINE and Sets A-E at 100% / actual size on the same printer, settings and paper batch.\nDo not inspect private/ until reading notes are frozen.\n`
-    : `TYP-03 open-font shakedown pack\nPrint at 100% / actual size only to test machinery, scale and the two open systems.\nThis is not admissible final TYP-03 comparison evidence because three finalists are absent.\n`,
+    : mode === 'selected'
+      ? `TYP-03 selected Source B5 confirmation pack\nPrint Set SELECTED at 100% / actual size.\nThis pack uses the repo-pinned Source Serif 4 + Source Sans 3 inputs and is admissible for selected-system physical confirmation and body-metric freeze.\nIt is not evidence of a completed five-finalist blind comparison.\n`
+      : `TYP-03 open-font shakedown pack\nPrint at 100% / actual size only to test machinery, scale and the two open systems.\nThis is not admissible final TYP-03 comparison evidence because three finalists are absent.\n`,
   'utf8'
 )
 
