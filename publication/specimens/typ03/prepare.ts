@@ -1,12 +1,11 @@
 import { createHash } from 'node:crypto'
-import { copyFile, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { basename, dirname, extname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(root, '../../..')
 const workRoot = resolve(repoRoot, 'publication/.work/typ03')
-const fontsRoot = resolve(workRoot, 'fonts')
 const sourceRoot = resolve(workRoot, 'source')
 const sourcePath = resolve(repoRoot, 'docs/manuscript/part-i.md')
 
@@ -74,7 +73,6 @@ const sections = [
 ]
 
 await rm(workRoot, { recursive: true, force: true })
-await mkdir(fontsRoot, { recursive: true })
 await mkdir(sourceRoot, { recursive: true })
 
 const fontSlots = [
@@ -103,12 +101,13 @@ if (candidate === 'baseline') {
       throw new Error(`${envName} must point to an OTF, TTF or WOFF2 file; got ${extension || '(no extension)'}`)
     }
 
-    const localName = `${stem}${extension}`
-    await copyFile(absolute, resolve(fontsRoot, localName))
+    const mime = extension === '.woff2' ? 'font/woff2' : extension === '.otf' ? 'font/otf' : 'font/ttf'
+    const formatHint = extension === '.woff2' ? 'woff2' : extension === '.otf' ? 'opentype' : 'truetype'
+    const dataUri = `data:${mime};base64,${bytes.toString('base64')}`
     fontFingerprints[envName] = { sourceName: basename(absolute), sha256: sha256(bytes) }
 
     const family = stem.startsWith('serif') ? 'TYP03 Serif' : 'TYP03 Sans'
-    declarations.push(`@font-face {\n  font-family: "${family}";\n  src: url("fonts/${localName}");\n  font-style: ${style};\n  font-weight: ${weight};\n  font-display: block;\n}`)
+    declarations.push(`@font-face {\n  font-family: "${family}";\n  src: url("${dataUri}") format("${formatHint}");\n  font-style: ${style};\n  font-weight: ${weight};\n  font-display: block;\n}`)
   }
   fontCss = `${declarations.join('\n\n')}\n\n:root {\n  --typ03-serif: "TYP03 Serif", serif;\n  --typ03-sans: "TYP03 Sans", sans-serif;\n}\n`
 }
@@ -128,7 +127,7 @@ const specimen = `# TYP-03 body-text specimen\n\n<p class="typ03-meta">${visible
 await writeFile(resolve(sourceRoot, 'specimen.md'), specimen, 'utf8')
 
 const manifest = {
-  schemaVersion: 3,
+  schemaVersion: 4,
   candidate,
   blindLabel,
   format,
@@ -138,6 +137,7 @@ const manifest = {
   leading,
   measureMm,
   fontRights,
+  fontTransport: candidate === 'baseline' ? 'system-baseline' : 'verified-bytes-data-uri',
   source: 'docs/manuscript/part-i.md',
   sourceSha256: sha256(canonical),
   anchors: [
