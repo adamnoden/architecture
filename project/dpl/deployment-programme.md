@@ -2,8 +2,8 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Latest gate:** [#458 — DPL-G](https://github.com/adamnoden/architecture/issues/458)  
-**Programme state:** canonical synthetic compile complete; four owner-side SCREENING coverage registries complete; DPL-G holds DPL-13B on one planning target-identity edge and authorises DPL-10F only  
+**Latest gate:** [#471 — DPL-H](https://github.com/adamnoden/architecture/issues/471)  
+**Programme state:** canonical synthetic compile + four owner-side SCREENING coverage foundations complete; planning target identity graph repaired by DPL-10F; DPL-H admits **DPL-13B coverage/readiness composition only**  
 **Programme maturity:** **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration scope; whole-site conclusion readiness excluded**
 
 ## Purpose
@@ -18,7 +18,7 @@ The eventual whole-site conclusions remain `COMPATIBLE`, `UNRESOLVED` and `INCOM
 
 **No current runtime is authorised to emit those whole-site conclusions.**
 
-The controlled baseline is narrower: DPL can deterministically assemble and boundedly evaluate one explicit Reference House × synthetic Reference Site deployment case while preserving provenance, unknowns, candidate authorship, target/interface authority and declared coverage gaps.
+The current controlled baseline is narrower: DPL can deterministically assemble and boundedly evaluate one explicit Reference House × synthetic Reference Site deployment case while preserving provenance, unknowns, candidate authorship, target/interface authority and declared coverage gaps.
 
 ## Governing rules
 
@@ -32,16 +32,9 @@ The controlled baseline is narrower: DPL can deterministically assemble and boun
 
 # Canonical foundation
 
-The semantic foundation remains owned by:
+DPL-01 through DPL-06 freeze the ontology, Reference House conformance boundary, result semantics, assurance profiles, target composition and site-manifest model.
 
-- [DPL-01 — deployment ontology](dpl-01-deployment-ontology.md);
-- [DPL-02 — Reference House conformance](dpl-02-reference-house-conformance.md);
-- [DPL-03 — assurance/result semantics](dpl-03-assurance-result-semantics.md);
-- [DPL-04 — assurance profiles](dpl-04-compilation-maturity.md);
-- [DPL-05 — target composition](dpl-05-target-stack-model.md);
-- [DPL-06 — site manifest](dpl-06-site-manifest-model.md).
-
-Frozen consequences include:
+Core consequences remain:
 
 - deployment freedoms are opt-in;
 - site claims, evidence, rules and conclusions remain different objects;
@@ -49,9 +42,9 @@ Frozen consequences include:
 - target composition is typed rather than list-order inheritance;
 - evidence lifecycle remains independent from obligation result;
 - candidate failure is not site incompatibility;
-- `INCOMPATIBLE` requires route exhaustion or invariant blocking proof;
-- `COMPATIBLE @ <profile>` requires complete resolution of all applicable due-now blocking obligations at that profile;
-- synthetic site provenance remains synthetic.
+- `INCOMPATIBLE` requires route exhaustion or invariant-blocker proof;
+- `COMPATIBLE @ <profile>` requires complete positive resolution of every applicable due-now blocker;
+- synthetic provenance remains synthetic.
 
 Assurance profiles remain:
 
@@ -63,9 +56,9 @@ Assurance profiles remain:
 
 ## Foundation through Wave D — complete
 
-DPL-01 through DPL-12C and DPL-14A/C established the deployment ontology, Reference Site, target/interface inventories and bounded target slices, real-site adversarial corpus, authored candidate/conformance runtime, Croydon→Bromley local-planning replay and Wave-C runtime composition.
+The foundation and Waves A/B1/B2/C/D established the Reference Site, target/interface inventories and bounded slices, the eight-site adversarial corpus, authored candidate/conformance runtime, Croydon→Bromley local-planning replay and Wave-C runtime composition.
 
-The detailed restart-safe records remain under `project/dpl/`.
+Detailed restart-safe records remain under `project/dpl/`.
 
 ## DPL-13A — complete
 
@@ -87,7 +80,7 @@ The detailed restart-safe records remain under `project/dpl/`.
 
 ## Coverage Foundations — complete
 
-Four owner-side SCREENING coverage registries are now controlled:
+Four owner-side SCREENING coverage registries are controlled:
 
 - [DPL-02C — Reference House conformance coverage](dpl-02c-conformance-coverage.md);
 - [DPL-09D — England technical/process coverage](dpl-09d-england-screening-coverage.md);
@@ -96,27 +89,52 @@ Four owner-side SCREENING coverage registries are now controlled:
 
 They encode **coverage authority**, not blanket substantive PASS results.
 
-[DPL-F](dpl-f-coverage-foundations-integration-review.md) identified planning as the missing owner-side registry. DPL-10E closed that family-coverage gap.
+[DPL-F](dpl-f-coverage-foundations-integration-review.md) identified planning as the missing fourth coverage owner. DPL-10E closed that family gap and explicitly owned the former material canonical claim gaps including `RS-NOISE-01` and `RS-ECO-01`.
 
-## DPL-G — current gate
+## DPL-G — complete
 
-[DPL-G](dpl-g-post-planning-coverage-integration-review.md) concludes:
+[DPL-G](dpl-g-post-planning-coverage-integration-review.md) found that the four owner domains were conceptually coherent but refused DPL-13B because the two borough targets pointed to a stale London strategic target identity.
 
-> **PASS WITH HOLD — THE FOUR OWNER-SIDE COVERAGE FOUNDATIONS ARE COHERENT, BUT DPL-13B IS NOT YET ADMITTED. AUTHORISE DPL-10F PLANNING TARGET IDENTITY RECONCILIATION ONLY.**
+That was an authority-graph defect, not a policy-family defect.
 
-DPL-10E closes the prior planning-family gap, including explicit ownership of `RS-NOISE-01` and `RS-ECO-01`.
+## DPL-10F — complete
 
-The remaining blocker is narrower: Croydon and Bromley both declare a `parentStrategicTargetId` that does not identify the London strategic target actually composed by the runtime and controlled by DPL-10E.
+[DPL-10F](dpl-10f-planning-target-identity-reconciliation.md) repairs that defect.
+
+The controlled London strategic target id is:
+
+```text
+LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20
+```
+
+Croydon and Bromley now both declare that exact id in:
+
+- `parentStrategicTargetId`;
+- `composition.strategicTargetId`.
+
+Wave-C derives the expected parent from the London strategic target actually loaded and fails closed on a stale or contradictory local→strategic edge.
+
+No alias/fuzzy-name reconciliation exists.
+
+## DPL-H — current gate
+
+[DPL-H](dpl-h-post-planning-identity-admission-review.md) concludes:
+
+> **PASS — ADMIT DPL-13B COVERAGE / READINESS COMPOSITION ONLY. KEEP ALL WHOLE-SITE DEPLOYMENT CONCLUSIONS UNAUTHORISED.**
+
+The four owner-side coverage foundations, repaired planning target graph and canonical site-claim ownership are now coherent enough for a generic integration layer to prove **scope/readiness**.
+
+They are not yet sufficient authority for a whole-site deployment conclusion.
 
 ---
 
 # Current controlled baseline
 
-## Canonical integration
+## Canonical compile
 
-DPL can reproduce one exact synthetic canonical deployment case deterministically.
+DPL-13A remains the canonical synthetic integration specimen.
 
-The controlled proof boundary remains:
+Its current proof boundary remains:
 
 ```text
 wholeSiteCompatibilityConclusion = NOT_IMPLEMENTED
@@ -126,59 +144,55 @@ routeExhaustion = NOT_IMPLEMENTED
 architecturalCandidateSelection = NOT_IMPLEMENTED
 ```
 
-This boundary is part of the M4 baseline.
+DPL-13B may replace the two middle `NOT_ESTABLISHED` states with a controlled coverage/readiness proposition if its implementation earns them.
+
+It may not change `wholeSiteCompatibilityConclusion`.
 
 ## Reference House coverage
 
-DPL-02C exposes all current DPL-02 clauses/routes under stable machine-readable authority. Registry presence never means `CONFORMS`.
+DPL-02C exposes the complete current conformance clause/route universe. Registry presence never means `CONFORMS`.
 
 ## England coverage
 
-DPL-09D exposes the controlled England technical/process family universe at SCREENING. DPL-09B/C remain bounded partial slices and RH-C5 remains one selected Part K method only.
+DPL-09D exposes the controlled England technical/process family universe for SCREENING. DPL-09B/C remain bounded partial slices and RH-C5 remains a selected Part K method only.
 
-## Planning coverage
+## Planning coverage and authority graph
 
-DPL-10E exposes the controlled planning family universe at SCREENING, preserves the synthetic fixture's explicit `NO_REAL_BOROUGH_ASSIGNED` state, keeps planning judgement/statutory determination external, and maps the bounded London/Croydon/Bromley targets only as partial implementations.
+DPL-10E exposes the controlled planning family universe. DPL-10F proves the strategic/local target identity edges admitted by Wave-C.
 
-The planning family universe is now sufficiently visible for later generic coverage composition.
+Planning judgement and statutory determination remain external.
 
-### Current planning identity defect
-
-The controlled London strategic target id is:
+The canonical fixture remains explicitly:
 
 ```text
-LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20
+localPlanningTargetState = NO_REAL_BOROUGH_ASSIGNED
+localPlanningTargetIds = []
 ```
 
-Both current borough targets instead declare:
-
-```text
-parentStrategicTargetId = LON-PLAN-2021-RESIDENTIAL-DESIGN-2026-10-20
-```
-
-`compiler/dpl/wavec.ts` validates only that this parent field is non-empty. It does not prove that the parent equals the strategic target actually composed by `loadB2TargetComposition()`.
-
-DPL-10E proves the three controlled planning target node identities but does not prove the borough→strategic parent edge.
-
-A generic DPL-13B composer must not invent an alias to bridge that mismatch.
+This is deliberate synthetic-fixture truth, not permission to invent a borough.
 
 ## Non-planning coverage
 
-DPL-11B exposes the controlled title/private-rights/sewer/utilities/ground/flood/access/logistics families while preserving external legal/professional/provider authority.
+DPL-11B exposes the controlled title/private-rights/neighbour-process/sewer/utilities/ground/flood/access/logistics family universe while preserving external legal/professional/provider authority.
 
 ## Site-claim ownership
 
-The canonical 29-claim DPL-RS-01 set is now sufficiently assigned across the four owner domains for later SCREENING coverage composition work.
+The canonical 29-claim DPL-RS-01 set is sufficiently assigned across the four owner domains for generic SCREENING coverage composition.
 
-The former material gaps `RS-NOISE-01` and `RS-ECO-01` are now owned by DPL-10 planning coverage without being converted into policy discharge.
+A claim reference remains a reference:
+
+- `ASSUMED` remains assumed;
+- `UNKNOWN` remains unknown;
+- multi-owner consumption does not transfer authority;
+- registry mapping does not produce discharge.
 
 ---
 
-# Coverage/readiness semantics
+# Coverage/readiness semantics frozen for DPL-13B
 
-Future generic composition may normalise only the profile-level posture needed for integration while preserving owner-specific semantics.
+A generic composer may normalise only the profile-level posture needed for integration.
 
-The current common vocabulary includes:
+Common profile dispositions may include:
 
 - `DUE_NOW_REPRESENTED`;
 - `DUE_NOW_MISSING`;
@@ -186,62 +200,101 @@ The current common vocabulary includes:
 - `DUE_CLASSIFICATION_UNRESOLVED`;
 - `NOT_APPLICABLE_PROVED`;
 - `ADVISORY_NON_BLOCKING`;
-- later `ACCELERATION_REVIEW_REQUIRED` where opaque/non-native acceleration metadata may be engaged.
+- `ACCELERATION_REVIEW_REQUIRED` where current evidence may engage opaque/non-native acceleration metadata.
 
-Future coverage-universe state should distinguish:
+Owner-specific semantics must survive alongside those common references.
 
-- `PROFILE_UNIVERSE_COMPLETE`;
-- `PROFILE_UNIVERSE_INCOMPLETE`;
-- `PROFILE_DISPOSITION_UNRESOLVED`.
+Opaque acceleration-trigger prose must never be parsed into native rules.
 
-These are coverage/readiness states, not substantive deployment conclusions.
+## Profile-universe states
 
-Opaque acceleration-trigger prose must never be parsed into native rules by convenience.
+### `PROFILE_UNIVERSE_COMPLETE`
+
+The declared owner/family/clause universe required for the requested profile is represented, every consequential site claim has an owner or explicit admissible disposition, and every required authority relationship is coherent.
+
+This is **not** substantive PASS.
+
+### `PROFILE_UNIVERSE_INCOMPLETE`
+
+At least one required owner, family/clause, authority layer, target relationship or consequential claim mapping is absent.
+
+An incomplete universe forbids a whole-site conclusion.
+
+### `PROFILE_DISPOSITION_UNRESOLVED`
+
+The universe is represented but at least one profile timing/applicability/acceleration disposition cannot yet be classified honestly.
+
+This is distinct from substantive obligation `UNRESOLVED`.
 
 ---
 
-# Current authorised work — DPL-10F only
+# Current authorised work — DPL-13B only
 
-## DPL-10F — planning strategic/local target identity reconciliation
+## DPL-13B — SCREENING coverage universe and conclusion-readiness composer
 
-DPL-10F must:
+DPL-13B must be a thin generic compositor over owner authority, not a fifth substantive owner.
 
-1. treat `project/dpl/targets/london-strategic-residential-design-v1.json` as the controlled strategic target identity source;
-2. reconcile Croydon and Bromley `parentStrategicTargetId` values to that exact id;
-3. add a fail-closed proof that every borough target admitted to Wave-C composition declares the exact strategic target actually composed with it;
-4. add DPL-10E regression proof that controlled borough target identities and their declared parent reconcile to the controlled strategic target;
-5. preserve normal fingerprint invalidation when target identity changes;
-6. preserve all planning policy/evidence semantics unchanged;
-7. add no aliases, fuzzy id matching or generic name normalisation.
+It must at minimum:
 
-DPL-10F must not change policy content, source status, planning family scope, borough abstraction, planning prediction, Reference House geometry or DRW.
+1. load/fingerprint the DPL-02C, DPL-09D, DPL-10E and DPL-11B registries;
+2. preserve the DPL-10F planning strategic/local authority graph identity;
+3. consume the exact canonical DPL-RS-01 site-manifest identity;
+4. prove consequential claim→owner coverage without turning a claim reference into discharge;
+5. derive one profile-universe state from the frozen H semantics;
+6. derive profile-disposition/readiness state separately from substantive obligation results;
+7. expose due-now represented/missing, future-due, disposition-unresolved and acceleration-review-required references/counts;
+8. preserve owner-specific semantics rather than flattening them into one universal obligation model;
+9. make registry, target graph, site claim ownership and profile disposition identity-bearing;
+10. prove deterministic ordering/canonicalisation and material invalidation;
+11. preserve `NO_REAL_BOROUGH_ASSIGNED` for the synthetic fixture;
+12. retain:
 
-### After DPL-10F
+```text
+wholeSiteCompatibilityConclusion = NOT_IMPLEMENTED
+routeExhaustion = NOT_IMPLEMENTED
+architecturalCandidateSelection = NOT_IMPLEMENTED
+```
 
-Run:
+DPL-13B must not:
 
-> **DPL-H — post-planning-identity repair / DPL-13B admission gate.**
+- emit `COMPATIBLE`, `UNRESOLVED` or `INCOMPATIBLE`;
+- interpret registry presence as PASS;
+- parse prose acceleration triggers;
+- invent generic owner semantics;
+- infer/assign a local borough;
+- search or optimise deployment routes;
+- alter Reference House geometry;
+- reopen DRW.
 
-**DPL-13B remains held until DPL-H.**
+### After DPL-13B
 
-If DPL-H admits it, the expected smallest 13B scope is still coverage/readiness only:
+Run a new adversarial gate before any whole-site result implementation.
 
-- compose owner-registry identities;
-- prove site-claim ownership coverage;
-- derive profile-universe completeness/disposition state;
-- expose due-now/future/missing/review-required references;
-- fingerprint the readiness proposition;
-- retain `wholeSiteCompatibilityConclusion = NOT_IMPLEMENTED`.
+That gate must attack whether an official `UNRESOLVED @ SCREENING` has finally been earned.
 
 ---
 
 # Whole-site conclusion boundary
 
-`UNRESOLVED @ SCREENING` remains held. A conservative-looking result is still too strong until coverage/readiness machinery itself is admitted and challenged.
+## `UNRESOLVED @ SCREENING`
 
-`COMPATIBLE @ SCREENING` remains materially further downstream and requires complete scope plus positive resolution/discharge of every due-now blocker at appropriate evidence quality.
+Still held.
 
-`INCOMPATIBLE` still requires route exhaustion or an independently controlled invariant blocker. Route search is not current work.
+DPL-H rejects admitting it before the DPL-13B coverage/readiness runtime itself exists and survives adversarial proof.
+
+A complete declared universe is necessary, but coverage completeness is not yet the same thing as correct aggregation of substantive due-now findings.
+
+## `COMPATIBLE @ SCREENING`
+
+Still materially downstream.
+
+Requires complete profile scope plus positive resolution/discharge of every applicable due-now blocker at appropriate evidence quality, with current source/applicability identity and no unresolved decision-critical acceleration.
+
+## `INCOMPATIBLE`
+
+Still requires route exhaustion or a separately controlled invariant blocker.
+
+No search/optimisation engine is current work.
 
 ---
 
@@ -251,17 +304,16 @@ DPL remains:
 
 > **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration scope, explicitly excluding whole-site conclusion readiness.**
 
-DPL-G neither demotes nor broadens that claim. The current controlled baseline exposed a downstream authority-edge defect rather than hiding it.
+DPL-H authorises the next proposition to be built and challenged. It does not broaden M4 merely by authorising it.
 
-M5 requires competent independent / real-world validation and remains unavailable.
+M5 remains unavailable without competent independent / real-world validation.
 
 ---
 
 # Held work
 
-Until DPL-10F lands and DPL-H reviews the repaired planning identity graph, hold:
+Until DPL-13B lands and its result is adversarially reviewed, hold:
 
-- DPL-13B+;
 - runtime whole-site `COMPATIBLE / UNRESOLVED / INCOMPATIBLE`;
 - route exhaustion/search/optimisation;
 - DPL-14D / bulk corpus expansion;
@@ -271,6 +323,7 @@ Until DPL-10F lands and DPL-H reviews the repaired planning identity graph, hold
 - DPL-18 final closeout;
 - generic all-borough planning ontology;
 - unrelated technical/interface expansion;
+- Reference House geometry changes;
 - DRW changes.
 
 ---
@@ -286,5 +339,6 @@ Split or refuse work that:
 - broadens one borough/site/target accident into generic doctrine;
 - silently authors architecture;
 - changes claimed evaluation scope without invalidating case identity;
-- treats a deterministic set of nodes as a coherent authority graph without proving its controlled edges;
-- emits a whole-site conclusion before the profile coverage universe and result semantics are proved.
+- treats deterministic nodes as a coherent authority graph without proving controlled edges;
+- makes coverage metadata look like substantive discharge;
+- emits a whole-site conclusion before both profile scope and result aggregation semantics are proved.
