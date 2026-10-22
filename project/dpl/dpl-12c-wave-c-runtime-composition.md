@@ -6,13 +6,13 @@
 **Depends on:** DPL-12B / #414, DPL-10D / #415, DPL-08C / #399, DPL-09C / #400, DPL-10C / #401, DPL-14C / #402  
 **Baseline `main`:** `d51cce068abaa5aef593e4cf43ff1247aa53d4c0`  
 **Implementation PR:** #419  
-**Disposition:** **implementation candidate — merge only after exact-head validation passes**
+**Disposition:** **PASS — actual Wave-C water, borough and eight-site corpus objects compose through the existing deterministic deployment runtime without widening whole-site conclusion authority**
 
 ## 1. Question
 
 > **Can the actual landed Wave-C water, borough-planning and eight-site corpus objects execute through the same deterministic deployment runtime as DPL-12B's authored candidate/conformance seam without inventing generic borough policy, drainage design or whole-site compatibility authority?**
 
-The implementation answer is deliberately narrow.
+**Yes, at the bounded DPL-12C scope.**
 
 DPL-12C does **not** replace `compileDeploymentCase` and does not create a second evaluator. It adds a bounded composition adapter that validates the two new Wave-C envelopes which DPL-12A never claimed to understand:
 
