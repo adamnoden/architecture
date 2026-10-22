@@ -1,4 +1,5 @@
 export const DPL12A_SCHEMA_VERSION = 'DPL-12A-1' as const
+export const DPL12B_CANDIDATE_SCHEMA_VERSION = 'DPL-12B-CANDIDATE-1' as const
 
 export const assuranceProfiles = [
   'SCREENING',
@@ -146,6 +147,99 @@ export interface EvidenceItem {
 
 export type ProposalFacts = Readonly<Record<string, unknown>>
 
+export type CandidateVariantId = 'RH-V01' | 'RH-V02'
+export type CandidateSiteInterfaceRef =
+  | 'RH-SI01'
+  | 'RH-SI02'
+  | 'RH-SI03'
+  | 'RH-SI04'
+  | 'RH-SI05'
+  | 'RH-SI06'
+export type CandidateImplementationRef =
+  | 'RH-IMP01'
+  | 'RH-IMP02'
+  | 'RH-IMP03'
+  | 'RH-IMP04'
+  | 'RH-IMP05'
+  | 'RH-IMP06'
+  | 'RH-IMP07'
+  | 'RH-IMP08'
+
+export interface DeploymentCandidateFacts {
+  readonly courtyardOpenToSky?: boolean
+  readonly shellWidthMm?: number
+  readonly shellDepthMm?: number
+  readonly courtyardWidthMm?: number
+  readonly courtyardDepthMm?: number
+  readonly courtyardPlacement?: string
+  readonly storeys?: number
+  readonly stairRiserCount?: number
+  readonly stairFlightRiseGroups?: readonly number[]
+  readonly stairGoingMm?: number
+  readonly frontBayCount?: number
+  readonly frontBaySpacingMm?: number
+  readonly entranceBayIndex?: number
+}
+
+export interface DeploymentCandidateInput {
+  readonly id: string
+  readonly revision: string
+  readonly authoredSource: {
+    readonly id: string
+    readonly revision: string
+  }
+  readonly referenceHouseSourceFingerprint: string
+  readonly facts: DeploymentCandidateFacts
+  readonly variantSelections?: readonly CandidateVariantId[]
+  readonly siteInterfaceResponseRefs?: readonly CandidateSiteInterfaceRef[]
+  readonly implementationChoiceRefs?: readonly CandidateImplementationRef[]
+}
+
+export type CandidateConformanceClass =
+  | 'REFERENCE_REVISION'
+  | 'IDENTITY_INVARIANT'
+  | 'PROTECTED_ORDER'
+  | 'PERMITTED_DISCRETE_VARIANT'
+  | 'SITE_INTERFACE_FREEDOM'
+  | 'IMPLEMENTATION_FREEDOM'
+
+export type CandidateConformanceResult =
+  | 'CONFORMS'
+  | 'NON_CONFORMING'
+  | 'REQUIRES_REFERENCE_HOUSE_REVISION'
+  | 'OPEN'
+
+export type CandidateConformanceCheckKind =
+  | 'REVISION_GUARD'
+  | 'NATIVE_FACT'
+  | 'ADMITTED_ROUTE'
+  | 'EXTERNAL_OR_UNMODELLED'
+
+export interface CandidateConformanceFinding {
+  readonly clauseId: string
+  readonly conformanceClass: CandidateConformanceClass
+  readonly checkKind: CandidateConformanceCheckKind
+  readonly result: CandidateConformanceResult
+  readonly reason: string
+}
+
+export interface CandidateConformanceEvaluation {
+  readonly schemaVersion: typeof DPL12B_CANDIDATE_SCHEMA_VERSION
+  readonly candidate: {
+    readonly id: string
+    readonly revision: string
+    readonly authoredSource: DeploymentCandidateInput['authoredSource']
+    readonly fingerprint: string
+    readonly referenceHouseSourceFingerprint: string
+  }
+  readonly currentReferenceHouseSourceFingerprint: string
+  readonly referenceRevisionMatches: boolean
+  readonly executableClauseIds: readonly string[]
+  readonly openClauseIds: readonly string[]
+  readonly findings: readonly CandidateConformanceFinding[]
+  readonly resultFingerprint: string
+}
+
 export interface DeploymentCaseInput {
   readonly assuranceProfile: AssuranceProfile
   readonly site: LoadedPilotSite
@@ -154,6 +248,7 @@ export interface DeploymentCaseInput {
     readonly authorityClass: TargetAuthorityClass
     readonly target: RawTargetSlice
   }[]
+  readonly candidate?: DeploymentCandidateInput
   readonly proposalFacts?: ProposalFacts
   readonly evidence?: readonly EvidenceItem[]
 }
@@ -206,6 +301,14 @@ export interface DeploymentCaseIdentityManifest {
     readonly targetId: string
     readonly targetFingerprint: string
   }[]
+  readonly candidate?: {
+    readonly id: string
+    readonly revision: string
+    readonly authoredSource: DeploymentCandidateInput['authoredSource']
+    readonly candidateFingerprint: string
+    readonly referenceHouseSourceFingerprint: string
+    readonly conformanceMethodVersion: typeof DPL12B_CANDIDATE_SCHEMA_VERSION
+  }
   readonly proposalFactsFingerprint: string
   readonly evidenceSetFingerprint: string
   readonly methodVersion: typeof DPL12A_SCHEMA_VERSION
@@ -230,6 +333,7 @@ export interface DeploymentLedger {
     readonly authorityClass: TargetAuthorityClass
     readonly targetId: string
   }[]
+  readonly candidateConformance?: CandidateConformanceEvaluation
   readonly obligations: readonly DeploymentObligationLedgerEntry[]
   readonly crossTargetEdges: readonly CrossTargetEdge[]
   readonly unresolvedInputs: readonly string[]
