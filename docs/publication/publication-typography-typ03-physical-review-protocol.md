@@ -1,9 +1,9 @@
 <!-- nav-exclude: redirect -->
 # TYP-03C — body-text physical review protocol
 
-Status: **active TYP-03 review protocol**  
+Status: **active TYP-03 review protocol; amended by TYP-03D value frontier**  
 Programme authority: GitHub issue **#425 — TYP — Publication Typography Programme**  
-Depends on: TYP-03A specimen harness + TYP-03B licence-safe evaluation boundary
+Depends on: TYP-03A specimen harness + TYP-03B licence-safe evaluation boundary + TYP-03D affordability/value frontier
 
 ## 1. Purpose
 
@@ -11,14 +11,17 @@ TYP-03 must choose a body reading system by **reading actual Ovid’s House page
 
 This protocol freezes how that judgement is made so the current candidate hypotheses do not become self-fulfilling.
 
-The four admitted systems remain:
+The five admitted systems are:
 
 1. Lyon Text + Atlas Grotesk;
 2. Tiempos Text + Söhne;
 3. Scala Pro + Scala Sans Pro;
-4. Source Serif 4 + Source Sans 3.
+4. Source Serif 4 + Source Sans 3;
+5. Newsreader + Source Sans 3.
 
 Georgia / Arial remains the before-state, not a finalist.
+
+TYP-03D admits Newsreader/Source as the single free aesthetic challenger and adds a value rule after the blind review. It does not otherwise reopen the candidate search.
 
 ---
 
@@ -111,7 +114,7 @@ Not permitted:
 - giving one candidate more whitespace merely because it needs rescue;
 - changing the book’s intended character to suit the face.
 
-The purpose is to let each viable face become **itself at its best**, not to art-direct four different books.
+The purpose is to let each viable face become **itself at its best**, not to art-direct five different books.
 
 ---
 
@@ -122,7 +125,7 @@ The candidate ranking recorded in TYP-02 is a hypothesis, not privileged evidenc
 For the physical review:
 
 1. remove or cover candidate names on the printed sheets;
-2. label the physical sets **A / B / C / D / BASELINE** only;
+2. label the physical sets **A / B / C / D / E / BASELINE** only;
 3. shuffle the order before each sustained-reading pass;
 4. judge the pages before revealing the mapping;
 5. do not consult foundry marketing copy during the review;
@@ -190,7 +193,7 @@ A rejection must name a real observed failure. “I like another one more” is 
 
 ---
 
-## 8. Final-two decision
+## 8. Final-two decision and value rule
 
 Once only two systems remain, the question changes.
 
@@ -202,7 +205,13 @@ At this stage it is legitimate to prefer one because its page colour, italic voi
 
 The choice does **not** need to be reduced to a technical tie-break.
 
-Before freeze, however, the winning system must still survive:
+After that aesthetic judgement is written and candidate identities are revealed, apply TYP-03D’s affordability rule:
+
+> **If a zero-cost/open finalist is physically equivalent or only marginally weaker than a paid finalist, choose the zero-cost/open system. A paid system wins only when its advantage is clear, repeatable and materially important to the book.**
+
+Cost therefore cannot rescue a weaker free font during blind review, and prestige cannot justify paying for an imperceptible improvement after reveal.
+
+Before freeze, the winning system must still survive:
 
 - conservative B5 reproduction;
 - black-only printing;
@@ -221,9 +230,10 @@ Durable TYP records may store:
 - composition settings;
 - page-count/line-count measurements;
 - written reading observations;
-- anonymous A/B/C/D verdicts and later mapping;
+- anonymous A/B/C/D/E verdicts and later mapping;
 - physical-print method/paper/printer facts;
-- final decision and rejected-candidate reasons.
+- final decision and rejected-candidate reasons;
+- cost/licence consequence after the blind reading verdict is frozen.
 
 Do **not** commit restricted font binaries.
 
@@ -243,6 +253,7 @@ TYP-03 closes only when:
 - alignment/hyphenation strategy is frozen;
 - the winning face is aesthetically preferred, not merely operationally convenient;
 - the losing finalists have explicit observed rejection reasons;
+- the value decision has applied the TYP-03D free/minimal-cost preference after blind review;
 - the winning system has a credible licensing/build route for later integration;
 - the body decision does not pre-empt TYP-04 hierarchy or TYP-06 drawing-specific typography.
 
