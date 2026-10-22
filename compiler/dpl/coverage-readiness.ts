@@ -31,6 +31,7 @@ import { loadWaveCBoroughTarget, type LoadedWaveCBoroughTarget } from './wavec.j
 export const DPL13B_SCHEMA_VERSION = 'DPL-13B-COVERAGE-READINESS-1' as const
 
 export type CoverageOwner = 'REFERENCE_HOUSE' | 'ENGLAND' | 'PLANNING' | 'NON_PLANNING'
+export type ClaimOwner = CoverageOwner | 'SITE_INTERFACE'
 
 export type NormalizedCoverageDisposition =
   | 'DUE_NOW_REPRESENTED'
@@ -58,6 +59,14 @@ export interface OwnerRegistryIdentity {
   readonly authorityFingerprint: string
 }
 
+export interface SiteInterfaceClaimAuthority {
+  readonly claimId: string
+  readonly owner: 'SITE_INTERFACE'
+  readonly authorityId: string
+  readonly authoritySource: string
+  readonly claimBoundary: string
+}
+
 export interface NormalizedCoverageReference {
   readonly owner: CoverageOwner
   readonly ownerEntryId: string
@@ -71,7 +80,7 @@ export interface ClaimOwnershipReference {
   readonly claimId: string
   readonly state: ReferenceSiteClaim['state']
   readonly basis: ReferenceSiteClaim['basis']
-  readonly owners: readonly CoverageOwner[]
+  readonly owners: readonly ClaimOwner[]
   readonly ownerEntryIds: readonly string[]
 }
 
@@ -89,6 +98,7 @@ export interface ScreeningCoverageReadinessResult {
   readonly schemaVersion: typeof DPL13B_SCHEMA_VERSION
   readonly assuranceProfile: 'SCREENING'
   readonly ownerRegistries: readonly OwnerRegistryIdentity[]
+  readonly siteInterfaceClaimAuthorities: readonly SiteInterfaceClaimAuthority[]
   readonly planningAuthorityGraph: PlanningAuthorityGraph
   readonly site: {
     readonly siteId: 'DPL-RS-01'
@@ -122,6 +132,7 @@ export interface ScreeningCoverageReadinessOverrides {
   readonly nonPlanning?: LoadedNonPlanningCoverageRegistry
   readonly site?: ReferenceSiteManifest
   readonly boroughTargets?: readonly [LoadedWaveCBoroughTarget, LoadedWaveCBoroughTarget]
+  readonly siteInterfaceClaimAuthorities?: readonly SiteInterfaceClaimAuthority[]
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
@@ -133,6 +144,16 @@ const ownerOrder: Readonly<Record<CoverageOwner, number>> = {
   PLANNING: 2,
   NON_PLANNING: 3
 }
+
+const canonicalSiteInterfaceClaimAuthorities: readonly SiteInterfaceClaimAuthority[] = [
+  {
+    claimId: 'RS-FFL-01',
+    owner: 'SITE_INTERFACE',
+    authorityId: 'DPL-08B:GI-D02-DATUM',
+    authoritySource: 'project/dpl/dpl-08b-ground-datum-plinth-approach-interface.md',
+    claimBoundary: 'Owns the authored absolute site datum response only; does not prove ground, access, weathering, foundation or whole-site compatibility.'
+  }
+]
 
 const conformanceDisposition = (entry: ConformanceCoverageEntry): NormalizedCoverageDisposition => {
   switch (entry.screeningCoveragePosture) {
@@ -311,18 +332,32 @@ const registryIdentities = (
   return identities.sort((a, b) => ownerOrder[a.owner] - ownerOrder[b.owner])
 }
 
+const canonicalInterfaceAuthorities = (
+  authorities: readonly SiteInterfaceClaimAuthority[]
+): SiteInterfaceClaimAuthority[] => [...authorities]
+  .map((authority) => ({ ...authority }))
+  .sort((a, b) => a.claimId.localeCompare(b.claimId) || a.authorityId.localeCompare(b.authorityId))
+
 const claimOwnership = (
   site: ReferenceSiteManifest,
-  coverage: readonly NormalizedCoverageReference[]
+  coverage: readonly NormalizedCoverageReference[],
+  siteInterfaceAuthorities: readonly SiteInterfaceClaimAuthority[]
 ): ClaimOwnershipReference[] => site.claims
   .map((claim) => {
     const refs = coverage.filter((entry) => entry.claimRefs.includes(claim.id) && entry.normalizedDisposition !== 'ACCELERATION_REVIEW_REQUIRED')
+    const interfaceRefs = siteInterfaceAuthorities.filter((authority) => authority.claimId === claim.id)
     return {
       claimId: claim.id,
       state: claim.state,
       basis: claim.basis,
-      owners: canonicalStrings(refs.map((entry) => entry.owner)) as CoverageOwner[],
-      ownerEntryIds: canonicalStrings(refs.map((entry) => `${entry.owner}:${entry.ownerEntryId}`))
+      owners: canonicalStrings([
+        ...refs.map((entry) => entry.owner),
+        ...interfaceRefs.map((authority) => authority.owner)
+      ]) as ClaimOwner[],
+      ownerEntryIds: canonicalStrings([
+        ...refs.map((entry) => `${entry.owner}:${entry.ownerEntryId}`),
+        ...interfaceRefs.map((authority) => `${authority.owner}:${authority.authorityId}`)
+      ])
     }
   })
   .sort((a, b) => a.claimId.localeCompare(b.claimId))
@@ -352,6 +387,9 @@ export const composeScreeningCoverageReadiness = (
   const nonPlanning = overrides.nonPlanning ?? loadNonPlanningCoverageRegistry()
   const site = overrides.site ?? loadCanonicalReferenceSiteManifest()
   const boroughTargets = overrides.boroughTargets ?? [loadWaveCBoroughTarget('Bromley'), loadWaveCBoroughTarget('Croydon')]
+  const siteInterfaceClaimAuthorities = canonicalInterfaceAuthorities(
+    overrides.siteInterfaceClaimAuthorities ?? canonicalSiteInterfaceClaimAuthorities
+  )
 
   if (planning.registry.canonicalFixture.siteId !== site.siteId) {
     throw new Error(`Planning coverage fixture ${planning.registry.canonicalFixture.siteId} does not match canonical site ${site.siteId}.`)
@@ -361,6 +399,11 @@ export const composeScreeningCoverageReadiness = (
   }
   if (planning.registry.canonicalFixture.localPlanningTargetIds.length !== 0) {
     throw new Error('DPL-13B canonical synthetic fixture must not assign a real local planning target.')
+  }
+  for (const authority of siteInterfaceClaimAuthorities) {
+    if (!site.claims.some((claim) => claim.id === authority.claimId)) {
+      throw new Error(`Site-interface claim authority ${authority.authorityId} references unknown claim ${authority.claimId}.`)
+    }
   }
 
   const ownerRegistries = registryIdentities(conformance, england, planning, nonPlanning)
@@ -372,7 +415,7 @@ export const composeScreeningCoverageReadiness = (
     ...nonPlanning.registry.entries.map(nonPlanningReference),
     ...opaqueAccelerationReviews(planning, nonPlanning, site)
   ])
-  const ownership = claimOwnership(site, normalizedCoverage)
+  const ownership = claimOwnership(site, normalizedCoverage, siteInterfaceClaimAuthorities)
   const uncoveredClaimIds = ownership.filter((claim) => claim.owners.length === 0).map((claim) => claim.claimId)
   const counts = dispositionCounts(normalizedCoverage)
 
@@ -394,6 +437,7 @@ export const composeScreeningCoverageReadiness = (
     schemaVersion: DPL13B_SCHEMA_VERSION,
     assuranceProfile: 'SCREENING' as const,
     ownerRegistries,
+    siteInterfaceClaimAuthorities,
     planningAuthorityGraph,
     site: {
       siteId: site.siteId,
@@ -419,6 +463,7 @@ export const composeScreeningCoverageReadiness = (
     schemaVersion: DPL13B_SCHEMA_VERSION,
     assuranceProfile: 'SCREENING',
     ownerRegistries,
+    siteInterfaceClaimAuthorities,
     planningAuthorityGraph,
     site: {
       siteId: site.siteId,
