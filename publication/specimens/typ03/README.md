@@ -8,15 +8,7 @@ It deliberately contains **no proprietary font binaries** and does not download,
 
 The harness extracts real Ovid's House prose from canonical manuscript sources and renders it under a common page/composition envelope so shortlisted type systems can be compared without hand-tuning a flattering page for each candidate.
 
-It records:
-
-- candidate identity;
-- exact font-file SHA-256 fingerprints without storing the files in tracked source;
-- declared font-rights mode for the run;
-- canonical source SHA-256;
-- A4 or conservative B5 proof format;
-- paragraph-rhythm mode;
-- alignment mode.
+It records candidate identity, exact font-file SHA-256 fingerprints, declared font-rights mode, canonical source SHA-256, proof format, paragraph rhythm, alignment, and—when anonymous mode is enabled—the blind label used on the reviewer-facing proof.
 
 Generated work lives under `publication/.work/typ03/`, which is ignored by the repository.
 
@@ -40,12 +32,10 @@ The harness copies those files only into the ignored work directory for the curr
 
 Every non-baseline run must set `TYP03_FONT_RIGHTS` explicitly:
 
-- `preview-only` — the operator has permission to use the font for local visual evaluation, but has **not** established PDF-embedding rights;
-- `pdf-embed-ok` — the operator has established that the supplied font files may be embedded in the generated proof PDF for this use.
+- `preview-only` — local visual evaluation is permitted but PDF-embedding rights have not been established;
+- `pdf-embed-ok` — embedding rights for the supplied files and this proof use have been established.
 
-This is a fail-closed declaration, not a licence engine. The operator remains responsible for using the mode their actual licence permits.
-
-If a non-baseline candidate is declared `preview-only`, the Vivliostyle config refuses the `build` command. This prevents the harness from silently embedding a test font into a PDF.
+If a non-baseline candidate is declared `preview-only`, the Vivliostyle config refuses the `build` command.
 
 ## Candidate ids
 
@@ -56,11 +46,9 @@ If a non-baseline candidate is declared `preview-only`, the Vivliostyle config r
 - `source` — Source Serif 4 + Source Sans 3, open/free neutral control;
 - `newsreader-source` — Newsreader + Source Sans 3, open/free aesthetic challenger.
 
-Candidate ids are labels for the proof record. The supplied font-file fingerprints are the actual identity evidence.
+Candidate ids are labels for the private local proof record. The supplied font-file fingerprints are the actual identity evidence.
 
-TYP-03D adds the `newsreader-source` candidate because affordability is now an explicit selection constraint. This does **not** reopen the candidate search generally. Source remains the open neutral control; Newsreader/Source asks whether a zero-cost system can also carry enough character to beat the commercial benchmarks outright.
-
-### Affordability rule
+## Affordability rule
 
 Price and licence complexity must not contaminate the anonymous first reading pass. After identity reveal:
 
@@ -70,6 +58,48 @@ Price and licence complexity must not contaminate the anonymous first reading pa
 - recurring subscriptions, complex deployment rights and hosted-build uncertainty count against a candidate.
 
 The durable authority is `docs/publication/publication-typography-typ03d-value-frontier.md`.
+
+## Blind B5 review mode
+
+TYP-03E adds a fail-closed anonymous build surface.
+
+Set:
+
+- `TYP03_ANONYMOUS=1`
+- `TYP03_BLIND_LABEL=A|B|C|D|E|BASELINE`
+
+The candidate name is then replaced by the blind label in printed specimen metadata, running furniture, PDF title, entry title, output filename and Vivliostyle workspace path. The ignored local `manifest.json` keeps the actual candidate↔label mapping for reveal after the verdicts are frozen.
+
+The baseline must use `BASELINE`; non-baseline candidates must use A–E.
+
+Example open-font proof:
+
+```sh
+TYP03_CANDIDATE=newsreader-source \
+TYP03_ANONYMOUS=1 \
+TYP03_BLIND_LABEL=C \
+TYP03_FONT_RIGHTS=pdf-embed-ok \
+TYP03_FORMAT=b5 \
+TYP03_RHYTHM=indented \
+TYP03_ALIGN=ragged \
+TYP03_SERIF_REGULAR=/absolute/path/Newsreader.ttf \
+TYP03_SERIF_ITALIC=/absolute/path/Newsreader-Italic.ttf \
+TYP03_SERIF_BOLD=/absolute/path/Newsreader.ttf \
+TYP03_SANS_REGULAR=/absolute/path/SourceSans3.ttf \
+TYP03_SANS_BOLD=/absolute/path/SourceSans3.ttf \
+npx tsx publication/specimens/typ03/prepare.ts
+
+TYP03_CANDIDATE=newsreader-source \
+TYP03_ANONYMOUS=1 \
+TYP03_BLIND_LABEL=C \
+TYP03_FONT_RIGHTS=pdf-embed-ok \
+TYP03_FORMAT=b5 \
+TYP03_RHYTHM=indented \
+TYP03_ALIGN=ragged \
+npx vivliostyle build -c publication/specimens/typ03/vivliostyle.config.js
+```
+
+Print at **100%**, not “fit to page”. Use the same printer, quality setting and paper batch for every set. Use `review-sheet.md` for the reading record. Keep the A–E mapping out of sight until all verdicts are written.
 
 ## Comparison axes
 
@@ -88,11 +118,9 @@ The durable authority is `docs/publication/publication-typography-typ03d-value-f
 - `ragged` — ragged right;
 - `justified` — justified with hyphenation.
 
-Defaults are `a4`, `spaced`, `ragged` so the first run remains conservative.
+Defaults are `a4`, `spaced`, `ragged` so the ordinary non-anonymous run remains conservative.
 
 ## Baseline run
-
-Prepare:
 
 ```sh
 TYP03_CANDIDATE=baseline \
@@ -100,11 +128,7 @@ TYP03_FORMAT=a4 \
 TYP03_RHYTHM=spaced \
 TYP03_ALIGN=ragged \
 npx tsx publication/specimens/typ03/prepare.ts
-```
 
-Build the ordinary baseline PDF:
-
-```sh
 TYP03_CANDIDATE=baseline \
 TYP03_FORMAT=a4 \
 TYP03_RHYTHM=spaced \
@@ -114,72 +138,21 @@ npx vivliostyle build -c publication/specimens/typ03/vivliostyle.config.js
 
 ## Restricted evaluation-font run
 
-When the evaluation licence permits local visual/print testing but PDF embedding has not been established, use `preview-only`.
-
-Prepare with the five local font-path variables plus:
-
-```sh
-TYP03_CANDIDATE=tiempos-soehne \
-TYP03_FONT_RIGHTS=preview-only \
-TYP03_FORMAT=b5 \
-TYP03_RHYTHM=indented \
-TYP03_ALIGN=ragged \
-# ...five TYP03_* font path variables... \
-npx tsx publication/specimens/typ03/prepare.ts
-```
-
-Then open the local paginated preview:
-
-```sh
-TYP03_CANDIDATE=tiempos-soehne \
-TYP03_FONT_RIGHTS=preview-only \
-TYP03_FORMAT=b5 \
-TYP03_RHYTHM=indented \
-TYP03_ALIGN=ragged \
-npx vivliostyle preview -c publication/specimens/typ03/vivliostyle.config.js
-```
-
-Do **not** use the preview UI's PDF-save function unless the font licence also permits embedding. If the accepted evaluation licence permits printed internal visualisations, print locally by a method consistent with that licence.
-
-## PDF-licensed candidate run
-
-Only when embedding rights are established:
-
-```sh
-TYP03_CANDIDATE=newsreader-source \
-TYP03_FONT_RIGHTS=pdf-embed-ok \
-TYP03_FORMAT=b5 \
-TYP03_RHYTHM=indented \
-TYP03_ALIGN=ragged \
-# ...five TYP03_* font path variables... \
-npx tsx publication/specimens/typ03/prepare.ts
-
-TYP03_CANDIDATE=newsreader-source \
-TYP03_FONT_RIGHTS=pdf-embed-ok \
-TYP03_FORMAT=b5 \
-TYP03_RHYTHM=indented \
-TYP03_ALIGN=ragged \
-npx vivliostyle build -c publication/specimens/typ03/vivliostyle.config.js
-```
-
-For open-source candidates, verify the licence for the exact files supplied before declaring `pdf-embed-ok`; do not infer rights merely from the candidate label.
+When the evaluation licence permits local visual/print testing but PDF embedding has not been established, use `preview-only` and `vivliostyle preview`. Do **not** use the preview UI's PDF-save function unless the font licence also permits embedding.
 
 ## Foundry-specific evaluation notes
 
-These notes are **operational constraints, not substitutes for reading the licence actually accepted by the operator**.
+These notes are operational constraints, not substitutes for reading the licence actually accepted by the operator.
 
 - Klim's published Test Font Licence allows internal test visualisations and presentation through print/web/mobile, but its licence summary marks test-font embedding as unavailable. Treat Klim test files as `preview-only` unless a different licence has been obtained.
-- Commercial Type offers trial fonts for private evaluation. Its current general EULA also contains restrictions around external distribution and generative-AI use. Keep Commercial Type trial files local and outside this AI/cloud workflow unless a licence expressly permits otherwise.
-- Newsreader's upstream Production Type repository states SIL Open Font License 1.1 and ships variable fonts. Source Sans 3's Adobe repository is also open under OFL-1.1. Verify the exact downloaded files/licence before a run.
-- Open-source candidates such as Source may use `pdf-embed-ok` when the operator has verified the applicable open-font licence for the exact files used.
+- Commercial Type offers trial fonts for private evaluation. Keep trial files local and outside this AI/cloud workflow unless a licence expressly permits otherwise.
+- Newsreader's upstream Production Type repository states SIL Open Font License 1.1 and Source Sans 3's Adobe repository is also open under OFL-1.1. Verify the exact downloaded files/licence before a run.
+- Open-source candidates may use `pdf-embed-ok` only when the operator has verified the applicable licence for the exact files used.
 
 ## Review discipline
 
 The first comparison round keeps geometry and settings common. It is allowed to expose that one face is naturally larger, darker or wider.
 
-Only after that first pass may each surviving candidate receive a bounded second-pass adjustment to body size, leading and measure. This prevents both errors:
-
-1. forcing every candidate into Georgia's exact metrics;
-2. independently art-directing every candidate until all of them look good.
+Only after that first pass may each surviving candidate receive a bounded second-pass adjustment to body size, leading and measure. This prevents both forcing every candidate into Georgia's exact metrics and independently art-directing every candidate until all of them look good.
 
 No specimen becomes production typography merely by existing here.
