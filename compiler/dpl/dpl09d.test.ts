@@ -41,21 +41,21 @@ describe('DPL-09D England SCREENING family coverage registry', () => {
     const nineB = target09b()
     const nineC = target09c()
 
-    assert.equal(nineB.id, 'ENG-BC-STRUCTURE-GROUND-MOISTURE-MATERIALS-2026-10-20')
-    assert.equal(nineC.id, 'ENG-BC-DRAINAGE-WASTE-WATER-2026-10-21')
+    assert.equal(nineB.target.id, 'ENG-BC-STRUCTURE-GROUND-MOISTURE-MATERIALS-2026-10-20')
+    assert.equal(nineC.target.id, 'ENG-BC-DRAINAGE-WASTE-WATER-2026-10-21')
 
     for (const id of ['ENG-COV-A', 'ENG-COV-C', 'ENG-COV-D', 'ENG-COV-REG7']) {
       const entry = englandCoverageEntry(registry, id)
       assert.ok(entry, `Expected ${id}`)
       assert.equal(entry.implementationState, 'TARGET_SLICE_PARTIAL')
-      assert.deepEqual(entry.representedTargetIds, [nineB.id])
+      assert.deepEqual(entry.representedTargetIds, [nineB.target.id])
       assert.match(entry.claimBoundary, /not|bounded|selected/i)
     }
 
     const h = englandCoverageEntry(registry, 'ENG-COV-H')
     assert.ok(h)
     assert.equal(h.implementationState, 'TARGET_SLICE_PARTIAL')
-    assert.deepEqual(h.representedTargetIds, [nineC.id])
+    assert.deepEqual(h.representedTargetIds, [nineC.target.id])
     assert.match(h.claimBoundary, /selected H1-H5|does not/i)
   })
 
