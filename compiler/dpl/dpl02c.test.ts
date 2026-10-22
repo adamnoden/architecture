@@ -40,6 +40,9 @@ const canonicalCandidate = (): DeploymentCandidateInput => {
   }
 }
 
+const evaluateCoverageProbe = (candidate: DeploymentCandidateInput = canonicalCandidate()) =>
+  evaluateCandidateConformance(candidate, createReferenceHouseSource())
+
 describe('DPL-02C Reference House conformance coverage registry', () => {
   test('covers the complete frozen 38-entry DPL-02 clause/route universe exactly once', () => {
     const loaded = loadConformanceCoverageRegistry()
@@ -71,7 +74,7 @@ describe('DPL-02C Reference House conformance coverage registry', () => {
 
   test('registry native coverage is exactly the current DPL-12B executable clause/route set', () => {
     const registry = loadConformanceCoverageRegistry().registry
-    const runtime = evaluateCandidateConformance(canonicalCandidate())
+    const runtime = evaluateCoverageProbe()
 
     assert.deepEqual(nativeConformanceCoverageIds(registry), runtime.executableClauseIds)
     assert.deepEqual(runtime.executableClauseIds, [
@@ -86,7 +89,7 @@ describe('DPL-02C Reference House conformance coverage registry', () => {
 
   test('registry metadata does not cause non-native clauses to become conformance findings', () => {
     const registry = loadConformanceCoverageRegistry().registry
-    const runtime = evaluateCandidateConformance(canonicalCandidate())
+    const runtime = evaluateCoverageProbe()
 
     const grammarCoverage = registry.entries.find((entry) => entry.id === 'RH-I01')
     assert.ok(grammarCoverage)
@@ -125,7 +128,7 @@ describe('DPL-02C Reference House conformance coverage registry', () => {
       assert.equal(route.unresolvedBlocksPositiveConformance, false)
     }
 
-    const selected = evaluateCandidateConformance({
+    const selected = evaluateCoverageProbe({
       ...canonicalCandidate(),
       variantSelections: ['RH-V02']
     })
