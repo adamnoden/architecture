@@ -15,13 +15,13 @@ const target09b = () =>
   loadTargetSlice(
     'project/dpl/targets/england-structure-ground-moisture-materials-v1.json',
     'ENGLAND_BUILDING_CONTROL'
-  )
+  ).target
 
 const target09c = () =>
   loadTargetSlice(
     'project/dpl/targets/england-drainage-waste-water-v1.json',
     'ENGLAND_BUILDING_CONTROL'
-  )
+  ).target
 
 describe('DPL-09D England SCREENING family coverage registry', () => {
   test('covers the controlled England family universe exactly once', () => {
