@@ -334,12 +334,12 @@ export const workstreamStatuses = [
   {
     id: 'deployment-real-site',
     name: 'Deployment / real-site integration',
-    maturity: 'M3',
+    maturity: 'M4',
     reviewedOn: '2026-10-22',
     currentState:
-      'Wave D is complete and DPL remains M3 — Coordinated. DPL-12B adds authored candidate identity and bounded Reference House conformance; DPL-10D narrows reusable borough-planning semantics through the Bromley replay; DPL-12C composes the actual Wave-C water vertical, borough targets and eight-site corpus identities through the existing deterministic runtime. DPL-D admits DPL-13A as the first canonical Reference House × synthetic Reference Site integration compile while keeping whole-site conclusion readiness unproved.',
+      'DPL-13A establishes an internally challenged deterministic Reference House × synthetic DPL-RS-01 canonical deployment-case baseline. The controlled proposition preserves all 29 DPL-07 claims including 11 explicit unknowns, explicit RH-V02 candidate authorship, bounded Reference House conformance, DPL-08B/C interfaces, DPL-09B/C England targets, London strategic planning, independent coverage identity and explicit no-conclusion proof boundaries. M4 is limited to this canonical integration scope: coverage completeness, conclusion readiness, real-site deployability, regulatory/planning/legal adequacy and route exhaustion remain unproved.',
     nextGate:
-      'Execute DPL-13A only: encode the DPL-RS-01 synthetic claim register, its already-authored RH-V02 rigid 180° candidate, DPL-08B/C interfaces, DPL-09B/C England targets and London strategic planning into one deterministic canonical ledger with explicit coverage gaps. Keep whole-site COMPATIBLE / UNRESOLVED / INCOMPATIBLE outputs, DPL-13B+, DPL-15+ and further family/corpus expansion held until the canonical result is reviewed.',
+      'Execute Coverage Foundations laterally: DPL-02C Reference House conformance coverage registry, DPL-09D England SCREENING family coverage registry and DPL-11B non-planning SCREENING family coverage registry. Then run DPL-F to decide whether DPL-13B conclusion-readiness work is justified. Keep whole-site COMPATIBLE / UNRESOLVED / INCOMPATIBLE outputs and DPL-15+ held.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -367,6 +367,12 @@ export const workstreamStatuses = [
         'project/dpl/dpl-10d-bromley-adversarial-replay.md',
         'project/dpl/dpl-12c-wave-c-runtime-composition.md',
         'project/dpl/dpl-wave-d-integration-admission-review.md'
+      ],
+      internallyValidated: [
+        'project/dpl/dpl-13a-canonical-reference-site-compile.md',
+        'compiler/dpl/canonical.ts',
+        'compiler/dpl/dpl13a.test.ts',
+        'project/dpl/dpl-e-post-13a-review.md'
       ]
     }
   },
