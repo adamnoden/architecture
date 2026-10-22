@@ -347,12 +347,12 @@ export const workstreamStatuses = [
   {
     id: 'deployment-real-site',
     name: 'Deployment / real-site integration',
-    maturity: 'M2',
-    reviewedOn: '2026-10-20',
+    maturity: 'M3',
+    reviewedOn: '2026-10-22',
     currentState:
-      'DPL-01 through DPL-06 are complete and the DPL-FR foundation review passes with bounded programme-control corrections. The developed foundation now separates Ovid’s House architectural authority, Reference House conformance, deployment assurance/results, assurance profiles, typed target composition and evidence-backed site manifests while preserving compatibility before adaptation and the compiler’s non-authoring role.',
+      'Wave C is complete and DPL is coordinated at its current bounded scope. DPL-12A now executes one deterministic deployment-case ledger across controlled Reference House identity, genuine real-site evidence, the first England technical target, London strategic planning, mixed method classes, evidence lifecycle and cross-target edges. DPL-08C/09C add a coherent water/drainage vertical, DPL-10C proves the first borough plug-in, and DPL-14C expands the controlled corpus to eight sites across seven boroughs. Candidate/conformance routing and full Wave-C runtime composition remain deliberately absent.',
     nextGate:
-      'Execute Wave A laterally: define the synthetic Reference Site (DPL-07), inventory the England new-dwelling regulatory target (DPL-09), recover the London/borough planning authority model (DPL-10) and define non-planning site due diligence (DPL-11). Defer site-interface integration, compiler substrate and real-plot corpus until their stated sequencing gates.',
+      'Execute bounded Wave D only: DPL-12B authored candidate + Reference House conformance orchestration and DPL-10D Bromley adversarial replay may proceed laterally; DPL-12C then composes the landed Wave-C water, borough and eight-site corpus objects through the runtime; DPL-D re-tests admission of DPL-13. Whole-site compatibility remains forbidden until candidate/conformance, due-obligation completeness and route-exhaustion semantics are explicitly earned.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -362,7 +362,20 @@ export const workstreamStatuses = [
         'project/dpl/dpl-04-compilation-maturity.md',
         'project/dpl/dpl-05-target-stack-model.md',
         'project/dpl/dpl-06-site-manifest-model.md',
-        'project/dpl/dpl-foundation-coherence-review.md'
+        'project/dpl/dpl-foundation-coherence-review.md',
+        'project/dpl/dpl-08b-ground-datum-plinth-approach-interface.md',
+        'project/dpl/dpl-09b-structure-ground-moisture-materials.md',
+        'project/dpl/dpl-10b-london-strategic-residential-design.md',
+        'project/dpl/dpl-14b-three-site-real-corpus-pilot.md'
+      ],
+      coordinated: [
+        'project/dpl/dpl-12a-minimal-orchestration.md',
+        'compiler/dpl/compile.ts',
+        'project/dpl/dpl-08c-foul-surface-site-water-interface.md',
+        'project/dpl/dpl-09c-england-drainage-waste-water.md',
+        'project/dpl/dpl-10c-croydon-planning-plugin.md',
+        'project/dpl/dpl-14c-five-site-corpus-gap-correction.md',
+        'project/dpl/dpl-wave-c-integration-maturity-review.md'
       ]
     }
   },
