@@ -10,7 +10,9 @@ const candidate = process.env.TYP03_CANDIDATE ?? 'baseline'
 const rhythm = process.env.TYP03_RHYTHM ?? 'spaced'
 const alignment = process.env.TYP03_ALIGN ?? 'ragged'
 const fontRights = candidate === 'baseline' ? 'system-baseline' : process.env.TYP03_FONT_RIGHTS
+const blindLabel = process.env.TYP03_BLIND_LABEL?.trim() || null
 const isPdfBuild = process.argv.some((argument) => argument === 'build')
+const identity = blindLabel ? `set-${blindLabel.toLowerCase()}` : candidate
 
 if (candidate !== 'baseline' && isPdfBuild && fontRights !== 'pdf-embed-ok') {
   throw new Error(
@@ -19,19 +21,21 @@ if (candidate !== 'baseline' && isPdfBuild && fontRights !== 'pdf-embed-ok') {
 }
 
 export default defineConfig({
-  title: `TYP-03 ${candidate} — ${format.toUpperCase()} / ${rhythm} / ${alignment}`,
+  title: blindLabel
+    ? `TYP-03 Set ${blindLabel} — ${format.toUpperCase()} / ${rhythm} / ${alignment}`
+    : `TYP-03 ${candidate} — ${format.toUpperCase()} / ${rhythm} / ${alignment}`,
   language: 'en-GB',
   size: format === 'b5' ? 'B5' : 'A4',
   entryContext: workRoot,
-  entry: [{ path: 'source/specimen.md', title: `TYP-03 ${candidate}` }],
+  entry: [{ path: 'source/specimen.md', title: blindLabel ? `TYP-03 Set ${blindLabel}` : `TYP-03 ${candidate}` }],
   theme: [
     resolve(specimenRoot, 'common.css'),
     resolve(workRoot, 'candidate.css'),
     resolve(specimenRoot, `${format}.css`)
   ],
-  workspaceDir: resolve(workRoot, 'vivliostyle', `${candidate}-${format}-${rhythm}-${alignment}`),
+  workspaceDir: resolve(workRoot, 'vivliostyle', `${identity}-${format}-${rhythm}-${alignment}`),
   output: {
-    path: resolve(workRoot, 'dist', `typ03-${candidate}-${format}-${rhythm}-${alignment}.pdf`),
+    path: resolve(workRoot, 'dist', `typ03-${identity}-${format}-${rhythm}-${alignment}.pdf`),
     format: 'pdf'
   }
 })
