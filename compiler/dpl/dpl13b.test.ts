@@ -2,9 +2,9 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { sha256SemanticFingerprint } from '../core/identity.js'
 import { loadCanonicalReferenceSiteManifest } from './canonical.js'
+import { composeScreeningCoverageReadiness } from './coverage-readiness.js'
 import { loadEnglandCoverageRegistry } from './england-coverage.js'
 import { loadPlanningCoverageRegistry } from './planning-coverage.js'
-import { composeScreeningCoverageReadiness } from './coverage-readiness.js'
 import { loadWaveCBoroughTarget } from './wavec.js'
 
 const clone = <T>(value: T): T => structuredClone(value)
@@ -71,10 +71,12 @@ test('DPL-13B preserves synthetic no-borough state', () => {
 
 test('DPL-13B reports a removed consequential claim mapping as an incomplete universe', () => {
   const planning = loadPlanningCoverageRegistry()
-  const registry = clone(planning.registry)
-  registry.entries = registry.entries.map((entry) => entry.id === 'DPL10-COV-ECOLOGY-BIODIVERSITY-GREEN-INFRASTRUCTURE'
-    ? { ...entry, referenceSiteClaimIds: entry.referenceSiteClaimIds.filter((id) => id !== 'RS-ECO-01') }
-    : entry)
+  const registry = {
+    ...clone(planning.registry),
+    entries: planning.registry.entries.map((entry) => entry.id === 'DPL10-COV-ECOLOGY-BIODIVERSITY-GREEN-INFRASTRUCTURE'
+      ? { ...entry, referenceSiteClaimIds: entry.referenceSiteClaimIds.filter((id) => id !== 'RS-ECO-01') }
+      : entry)
+  }
   const mutated = {
     ...planning,
     registry,
@@ -143,10 +145,12 @@ test('DPL-13B preserves UNKNOWN and synthetic assumption provenance', () => {
 
 test('DPL-13B distinguishes profile disposition uncertainty from substantive UNRESOLVED', () => {
   const england = loadEnglandCoverageRegistry()
-  const registry = clone(england.registry)
-  registry.entries = registry.entries.map((entry, index) => index === 0
-    ? { ...entry, defaultScreeningDisposition: 'DUE_CLASSIFICATION_UNRESOLVED' as const }
-    : entry)
+  const registry = {
+    ...clone(england.registry),
+    entries: england.registry.entries.map((entry, index) => index === 0
+      ? { ...entry, defaultScreeningDisposition: 'DUE_CLASSIFICATION_UNRESOLVED' as const }
+      : entry)
+  }
   const mutated = { ...england, registry, fingerprint: sha256SemanticFingerprint(registry) }
   const result = composeScreeningCoverageReadiness({ england: mutated })
   assert.equal(result.profileUniverseState, 'PROFILE_DISPOSITION_UNRESOLVED')
@@ -165,10 +169,12 @@ test('DPL-13B never executes opaque acceleration prose', () => {
 
 test('DPL-13B identity changes with material registry/profile semantics', () => {
   const planning = loadPlanningCoverageRegistry()
-  const registry = clone(planning.registry)
-  registry.entries = registry.entries.map((entry, index) => index === 0
-    ? { ...entry, defaultScreeningDisposition: 'FUTURE_DUE' as const }
-    : entry)
+  const registry = {
+    ...clone(planning.registry),
+    entries: planning.registry.entries.map((entry, index) => index === 0
+      ? { ...entry, defaultScreeningDisposition: 'FUTURE_DUE' as const }
+      : entry)
+  }
   const mutated = { ...planning, registry, fingerprint: sha256SemanticFingerprint(registry) }
   const baseline = composeScreeningCoverageReadiness()
   const result = composeScreeningCoverageReadiness({ planning: mutated })
