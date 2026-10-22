@@ -1,0 +1,437 @@
+{
+  "schemaVersion": "dpl.planningScreeningCoverageRegistry.v1",
+  "id": "DPL-10-PLANNING-SCREENING-COVERAGE-v1",
+  "jurisdictionContext": "GREATER_LONDON",
+  "assuranceProfile": "SCREENING",
+  "authoritySources": [
+    "project/dpl/dpl-04-compilation-maturity.md",
+    "project/dpl/dpl-10-london-planning-target-inventory.md",
+    "project/dpl/dpl-10a-planning-source-status-spine.md",
+    "project/dpl/dpl-10b-london-strategic-residential-design.md",
+    "project/dpl/dpl-10c-croydon-planning-plugin.md",
+    "project/dpl/dpl-10d-bromley-adversarial-replay.md",
+    "project/dpl/targets/london-strategic-residential-design-v1.json",
+    "project/dpl/targets/croydon-local-planning-v1.json",
+    "project/dpl/targets/bromley-local-planning-v1.json",
+    "project/dpl/reference-site/dpl-rs-01-v01.json"
+  ],
+  "canonicalFixture": {
+    "siteId": "DPL-RS-01",
+    "siteManifestPath": "project/dpl/reference-site/dpl-rs-01-v01.json",
+    "localPlanningTargetState": "NO_REAL_BOROUGH_ASSIGNED",
+    "localPlanningTargetIds": []
+  },
+  "entries": [
+    {
+      "id": "DPL10-COV-SOURCE-COMPOSITION-STATUS",
+      "family": "planning source composition and status",
+      "subject": "development-plan membership, material-consideration status, guidance status and operative/emerging source selection",
+      "sourceClasses": [
+        "OFFICIAL_SOURCE_STATUS_RECORD",
+        "NATIONAL_MATERIAL_CONSIDERATION",
+        "LONDON_DEVELOPMENT_PLAN_POLICY",
+        "LONDON_ADOPTED_GUIDANCE",
+        "BOROUGH_DEVELOPMENT_PLAN_POLICY",
+        "BOROUGH_ADOPTED_GUIDANCE",
+        "EMERGING_NON_OPERATIVE_POLICY"
+      ],
+      "applicabilityClass": "SOURCE_STATUS_CORE",
+      "defaultScreeningDisposition": "DUE_NOW_REPRESENTED",
+      "accelerationTriggers": [],
+      "resolutionClasses": ["P2_MECHANICAL_APPLICABILITY"],
+      "implementationState": "SOURCE_STATUS_SPINE",
+      "representedTargetIds": [
+        "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
+        "CROYDON-LOCAL-PLANNING-2018-2026-10-21",
+        "BROMLEY-LOCAL-PLANNING-2019-2026-10-22"
+      ],
+      "referenceSiteClaimIds": [],
+      "ownerBoundaries": [
+        "DPL-10 owns planning-source status and composition; source chronology alone never selects a policy winner.",
+        "DPL-05 owns generic typed target composition outside planning-specific authority."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "Source/status coverage can identify what planning material exists and its authority class. It does not decide policy compliance, planning balance or permission."
+    },
+    {
+      "id": "DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY",
+      "family": "strategic design, context and site capacity",
+      "subject": "London strategic design-led approach, form/context response and bounded site-capacity questions",
+      "sourceClasses": ["LONDON_DEVELOPMENT_PLAN_POLICY", "LONDON_ADOPTED_GUIDANCE"],
+      "applicabilityClass": "CORE_LONDON",
+      "defaultScreeningDisposition": "DUE_NOW_REPRESENTED",
+      "accelerationTriggers": [
+        "known site/context condition appears capable of categorically defeating the controlled Reference House proposition"
+      ],
+      "resolutionClasses": [
+        "P1_SITE_PROJECT_FACT",
+        "P2_MECHANICAL_APPLICABILITY",
+        "P3_BOUNDED_QUANTITATIVE_POLICY",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "STRATEGIC_TARGET_SLICE_PARTIAL",
+      "representedTargetIds": ["LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20"],
+      "referenceSiteClaimIds": [
+        "RS-PARCEL-01",
+        "RS-FRAME-01",
+        "RS-STREET-01",
+        "RS-HOUSE-XFORM-01",
+        "RS-SIDES-01",
+        "RS-GARDENS-01",
+        "RS-TOPO-01"
+      ],
+      "ownerBoundaries": [
+        "Reference House identity and protected architectural order remain DPL-02 authority.",
+        "Site facts remain DPL-06 claims; planning may consume them without taking ownership."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "The current London target represents selected Chapter 3 design obligations only. Family presence and bounded numeric checks do not establish acceptable planning design or site capacity."
+    },
+    {
+      "id": "DPL10-COV-HOUSING-QUALITY-ACCESSIBILITY",
+      "family": "housing quality and accessibility planning policy",
+      "subject": "strategic dwelling quality, space, private amenity and planning-triggered accessibility category questions",
+      "sourceClasses": ["LONDON_DEVELOPMENT_PLAN_POLICY", "LONDON_ADOPTED_GUIDANCE"],
+      "applicabilityClass": "CORE_LONDON",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "known planning requirement or candidate fact creates an obvious housing-quality/accessibility blocker at screening"
+      ],
+      "resolutionClasses": [
+        "P1_SITE_PROJECT_FACT",
+        "P2_MECHANICAL_APPLICABILITY",
+        "P3_BOUNDED_QUANTITATIVE_POLICY",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "STRATEGIC_TARGET_SLICE_PARTIAL",
+      "representedTargetIds": ["LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20"],
+      "referenceSiteClaimIds": [],
+      "ownerBoundaries": [
+        "Planning may select an optional dwelling accessibility category; DPL-09/Building Regulations own technical Part M discharge.",
+        "Reference House human-factors and architectural decisions remain with their owning RH/HFI authorities."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "Selected strategic housing standards are represented. This is not a complete housing-quality determination and does not prove Building Regulations accessibility compliance."
+    },
+    {
+      "id": "DPL10-COV-NEIGHBOUR-AMENITY-PRIVACY-DAYLIGHT",
+      "family": "neighbour amenity, privacy and daylight/sunlight",
+      "subject": "planning effects on neighbouring occupiers and relationships requiring contextual/evidence-led judgement",
+      "sourceClasses": ["LONDON_DEVELOPMENT_PLAN_POLICY", "BOROUGH_DEVELOPMENT_PLAN_POLICY", "BOROUGH_ADOPTED_GUIDANCE"],
+      "applicabilityClass": "CONDITIONAL_SITE_CONTEXT",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "known neighbour geometry/openings indicate an obvious potentially categorical amenity or privacy conflict"
+      ],
+      "resolutionClasses": [
+        "P1_SITE_PROJECT_FACT",
+        "P2_MECHANICAL_APPLICABILITY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "BOROUGH_EXEMPLAR_PARTIAL",
+      "representedTargetIds": ["CROYDON-LOCAL-PLANNING-2018-2026-10-21", "BROMLEY-LOCAL-PLANNING-2019-2026-10-22"],
+      "referenceSiteClaimIds": ["RS-NBR-W-01", "RS-NBR-E-01", "RS-NBR-OPEN-01"],
+      "ownerBoundaries": [
+        "DPL-11 owns neighbour/private-rights/process evidence; planning owns public-law amenity judgement.",
+        "Site neighbour geometry remains a DPL-06 claim and may feed both owners."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "The registry exposes the planning family and evidence/judgement route. It does not calculate a universal amenity score or decide acceptability."
+    },
+    {
+      "id": "DPL10-COV-TRANSPORT-ACCESS-HIGHWAY-PARKING",
+      "family": "transport, access, highway and parking planning policy",
+      "subject": "planning transport/access relationships, highway safety, parking/cycle provision and supporting evidence",
+      "sourceClasses": ["LONDON_DEVELOPMENT_PLAN_POLICY", "BOROUGH_DEVELOPMENT_PLAN_POLICY", "BOROUGH_ADOPTED_GUIDANCE"],
+      "applicabilityClass": "CONDITIONAL_SITE_CONTEXT",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "known street/access geometry creates an obvious categorical access or road-safety concern",
+        "parking/access facts are decision-critical for applicable local or strategic policy"
+      ],
+      "resolutionClasses": [
+        "P1_SITE_PROJECT_FACT",
+        "P2_MECHANICAL_APPLICABILITY",
+        "P3_BOUNDED_QUANTITATIVE_POLICY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "BOROUGH_EXEMPLAR_PARTIAL",
+      "representedTargetIds": ["CROYDON-LOCAL-PLANNING-2018-2026-10-21", "BROMLEY-LOCAL-PLANNING-2019-2026-10-22"],
+      "referenceSiteClaimIds": ["RS-ACCESS-01", "RS-STREET-01", "RS-TOPO-01"],
+      "ownerBoundaries": [
+        "DPL-11 owns physical/legal access and rights evidence; DPL-08 owns building/site approach interfaces.",
+        "Planning owns transport/highway/parking policy applicability and judgement; a physically possible route is not a planning pass."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "Croydon/Bromley supply bounded examples only. Bromley parking conflict remains unsupported where strategic/local temporal composition is unresolved."
+    },
+    {
+      "id": "DPL10-COV-HERITAGE-DESIGNATION-SETTING",
+      "family": "heritage designation and setting",
+      "subject": "listed/conservation/heritage designation applicability and planning effects on significance/setting",
+      "sourceClasses": ["NATIONAL_MATERIAL_CONSIDERATION", "LONDON_DEVELOPMENT_PLAN_POLICY", "BOROUGH_DEVELOPMENT_PLAN_POLICY"],
+      "applicabilityClass": "CONDITIONAL_SITE_CONTEXT",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "credible designation or setting evidence could categorically defeat the controlled Reference House proposition"
+      ],
+      "resolutionClasses": [
+        "P1_SITE_PROJECT_FACT",
+        "P2_MECHANICAL_APPLICABILITY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "REGISTRY_ONLY",
+      "representedTargetIds": [],
+      "referenceSiteClaimIds": ["RS-HERITAGE-01"],
+      "ownerBoundaries": [
+        "The synthetic Reference Site's assumed absence of designation is a site-fixture assumption, not authoritative heritage evidence.",
+        "Planning heritage judgement remains distinct from architectural grammar/style preference."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "An ASSUMED synthetic no-designation claim cannot become NOT_APPLICABLE_PROVED or a heritage planning pass."
+    },
+    {
+      "id": "DPL10-COV-TREES-LANDSCAPE-URBAN-GREENING",
+      "family": "trees, landscape and urban greening planning policy",
+      "subject": "tree/designation retention, landscape response, arboricultural planning evidence and strategic greening duties",
+      "sourceClasses": ["LONDON_DEVELOPMENT_PLAN_POLICY", "BOROUGH_DEVELOPMENT_PLAN_POLICY", "BOROUGH_ADOPTED_GUIDANCE"],
+      "applicabilityClass": "CONDITIONAL_SITE_CONTEXT",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "known/protected tree or landscape condition dominates the only conformance-preserving placement"
+      ],
+      "resolutionClasses": [
+        "P1_SITE_PROJECT_FACT",
+        "P2_MECHANICAL_APPLICABILITY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "BOROUGH_EXEMPLAR_PARTIAL",
+      "representedTargetIds": ["BROMLEY-LOCAL-PLANNING-2019-2026-10-22"],
+      "referenceSiteClaimIds": ["RS-TREE-01", "RS-TREE-ROOT-01"],
+      "ownerBoundaries": [
+        "DPL-11 owns arboricultural/ground physical evidence; planning owns tree/landscape policy consequences.",
+        "Historic TPO references never become current designation facts without current evidence."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "Bromley Policy 73 is a bounded local example. It does not make tree status or all-London landscape judgement native."
+    },
+    {
+      "id": "DPL10-COV-ECOLOGY-BIODIVERSITY-GREEN-INFRASTRUCTURE",
+      "family": "ecology, biodiversity and green infrastructure planning policy",
+      "subject": "habitat/ecology evidence, biodiversity policy and green-infrastructure planning consequences",
+      "sourceClasses": ["NATIONAL_MATERIAL_CONSIDERATION", "LONDON_DEVELOPMENT_PLAN_POLICY", "BOROUGH_DEVELOPMENT_PLAN_POLICY"],
+      "applicabilityClass": "CONDITIONAL_SITE_CONTEXT",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "credible ecological/designation evidence indicates a potentially categorical site constraint"
+      ],
+      "resolutionClasses": [
+        "P1_SITE_PROJECT_FACT",
+        "P2_MECHANICAL_APPLICABILITY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "REGISTRY_ONLY",
+      "representedTargetIds": [],
+      "referenceSiteClaimIds": ["RS-ECO-01"],
+      "ownerBoundaries": [
+        "Ecological evidence remains external/site evidence; planning owns policy consequence and balance.",
+        "DPL-11 ground/environmental evidence does not silently absorb ecological planning policy."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "The canonical ecology claim is UNKNOWN. Registry presence does not provide habitat evidence, biodiversity calculation or planning acceptability."
+    },
+    {
+      "id": "DPL10-COV-FLOOD-DRAINAGE-SUDS-PLANNING",
+      "family": "flood, drainage and SuDS planning policy",
+      "subject": "planning flood-risk, sustainable-drainage and water-management evidence/judgement",
+      "sourceClasses": ["LONDON_DEVELOPMENT_PLAN_POLICY", "BOROUGH_DEVELOPMENT_PLAN_POLICY", "BOROUGH_ADOPTED_GUIDANCE"],
+      "applicabilityClass": "CONDITIONAL_SITE_CONTEXT",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "known flood/sewer/drainage condition threatens the only conformance-preserving deployment route"
+      ],
+      "resolutionClasses": [
+        "P1_SITE_PROJECT_FACT",
+        "P2_MECHANICAL_APPLICABILITY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "BOROUGH_EXEMPLAR_PARTIAL",
+      "representedTargetIds": ["CROYDON-LOCAL-PLANNING-2018-2026-10-21", "BROMLEY-LOCAL-PLANNING-2019-2026-10-22"],
+      "referenceSiteClaimIds": ["RS-FLOOD-01", "RS-SW-01", "RS-GROUND-01"],
+      "ownerBoundaries": [
+        "DPL-09 Part H owns Building Regulations drainage obligations; DPL-11 owns physical flood/water evidence; DPL-08 owns site-water interfaces.",
+        "Planning owns flood/SuDS policy applicability, evidence expectations and judgement without duplicating those other authorities."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "Planning-family coverage does not select a discharge destination, prove hydraulic capacity or establish Part H compliance."
+    },
+    {
+      "id": "DPL10-COV-AIR-QUALITY-NOISE-AGENT-OF-CHANGE",
+      "family": "air quality, noise and agent-of-change planning policy",
+      "subject": "environmental planning effects/evidence involving noise, air quality and sensitive-receptor relationships",
+      "sourceClasses": ["LONDON_DEVELOPMENT_PLAN_POLICY", "BOROUGH_DEVELOPMENT_PLAN_POLICY"],
+      "applicabilityClass": "CONDITIONAL_SITE_CONTEXT",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "known severe environmental exposure or sensitive-receptor condition could defeat residential suitability"
+      ],
+      "resolutionClasses": [
+        "P1_SITE_PROJECT_FACT",
+        "P2_MECHANICAL_APPLICABILITY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "REGISTRY_ONLY",
+      "representedTargetIds": [],
+      "referenceSiteClaimIds": ["RS-NOISE-01"],
+      "ownerBoundaries": [
+        "DPL-09 Part E technical acoustic requirements are separate from planning noise/agent-of-change policy.",
+        "Environmental measurements remain site/external evidence rather than compiler-created facts."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "The canonical external-noise claim is UNKNOWN. No planning-noise pass, exposure model or air-quality conclusion is inferred."
+    },
+    {
+      "id": "DPL10-COV-ENERGY-CARBON-SUSTAINABILITY-PLANNING",
+      "family": "energy, carbon and sustainability planning policy",
+      "subject": "strategic/local planning energy and sustainability duties distinct from Building Regulations technical compliance",
+      "sourceClasses": ["LONDON_DEVELOPMENT_PLAN_POLICY", "BOROUGH_DEVELOPMENT_PLAN_POLICY"],
+      "applicabilityClass": "CORE_LONDON",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "known planning energy/sustainability requirement forces a protected-order architectural change at the current decision point"
+      ],
+      "resolutionClasses": [
+        "P2_MECHANICAL_APPLICABILITY",
+        "P3_BOUNDED_QUANTITATIVE_POLICY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "REGISTRY_ONLY",
+      "representedTargetIds": [],
+      "referenceSiteClaimIds": [],
+      "ownerBoundaries": [
+        "DPL-09 Part L/F technical compliance remains Building Regulations authority.",
+        "Planning energy/carbon policy may consume technical modelling evidence without becoming the technical target itself."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "This family records planning coverage only; it does not perform energy modelling or establish regulatory/planning carbon compliance."
+    },
+    {
+      "id": "DPL10-COV-LOCAL-QUANTITATIVE-POLICY",
+      "family": "local quantitative planning policy",
+      "subject": "borough-specific explicit numeric standards whose applicability and authority are proven for the real site",
+      "sourceClasses": ["BOROUGH_DEVELOPMENT_PLAN_POLICY"],
+      "applicabilityClass": "LOCAL_AUTHORITY_DEPENDENT",
+      "defaultScreeningDisposition": "DUE_CLASSIFICATION_UNRESOLVED",
+      "accelerationTriggers": [
+        "real borough authority is assigned and a bounded quantitative local policy is decision-critical"
+      ],
+      "resolutionClasses": ["P2_MECHANICAL_APPLICABILITY", "P3_BOUNDED_QUANTITATIVE_POLICY"],
+      "implementationState": "BOROUGH_EXEMPLAR_PARTIAL",
+      "representedTargetIds": ["CROYDON-LOCAL-PLANNING-2018-2026-10-21", "BROMLEY-LOCAL-PLANNING-2019-2026-10-22"],
+      "referenceSiteClaimIds": [],
+      "ownerBoundaries": [
+        "Croydon and Bromley prove a common envelope, not common local numeric policy content.",
+        "DPL-RS-01 has no real borough target; no local numeric requirement may be invented for it."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "Local numeric methods are site/borough-specific. Bromley Policy 30 remains unsupported where current strategic/local conflict semantics are unresolved."
+    },
+    {
+      "id": "DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY",
+      "family": "local qualitative and evidence-led planning policy",
+      "subject": "borough-specific character, backland, amenity, trees, road-safety, flood and other judgement/evidence families",
+      "sourceClasses": ["BOROUGH_DEVELOPMENT_PLAN_POLICY", "BOROUGH_ADOPTED_GUIDANCE"],
+      "applicabilityClass": "LOCAL_AUTHORITY_DEPENDENT",
+      "defaultScreeningDisposition": "DUE_CLASSIFICATION_UNRESOLVED",
+      "accelerationTriggers": [
+        "real borough authority is assigned and a known local policy family could categorically affect the controlled proposal"
+      ],
+      "resolutionClasses": [
+        "P2_MECHANICAL_APPLICABILITY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT",
+        "P5_QUALITATIVE_PLANNING_JUDGEMENT"
+      ],
+      "implementationState": "BOROUGH_EXEMPLAR_PARTIAL",
+      "representedTargetIds": ["CROYDON-LOCAL-PLANNING-2018-2026-10-21", "BROMLEY-LOCAL-PLANNING-2019-2026-10-22"],
+      "referenceSiteClaimIds": [],
+      "ownerBoundaries": [
+        "The reusable borough seam is source/status/method/evidence composition only; substantive policy families remain local.",
+        "DPL-RS-01's explicit no-borough state is a coverage limitation, not permission to substitute an exemplar borough."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "The two borough exemplars do not establish an all-borough ontology, judgement model or local-planning pass."
+    },
+    {
+      "id": "DPL10-COV-VALIDATION-PROCESS-SPECIALIST-EVIDENCE",
+      "family": "planning validation, process and specialist evidence",
+      "subject": "application-validation information, specialist planning evidence and process material required by the selected authority/proposal",
+      "sourceClasses": ["BOROUGH_DEVELOPMENT_PLAN_POLICY", "BOROUGH_ADOPTED_GUIDANCE", "PLANNING_APPLICATION_EVIDENCE"],
+      "applicabilityClass": "PROCESS_DEPENDENT",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "known specialist evidence requirement is necessary to resolve a decision-critical screening uncertainty"
+      ],
+      "resolutionClasses": [
+        "P2_MECHANICAL_APPLICABILITY",
+        "P4_EVIDENCE_LED_TECHNICAL_PLANNING_ASSESSMENT"
+      ],
+      "implementationState": "BOROUGH_EXEMPLAR_PARTIAL",
+      "representedTargetIds": ["CROYDON-LOCAL-PLANNING-2018-2026-10-21", "BROMLEY-LOCAL-PLANNING-2019-2026-10-22"],
+      "referenceSiteClaimIds": [],
+      "ownerBoundaries": [
+        "Validation/evidence requirements do not themselves determine policy compliance or permission.",
+        "Professional studies remain external evidence even where the compiler tracks that they are required."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "This family records process/evidence coverage only and cannot manufacture specialist reports, validate an application or predict determination."
+    },
+    {
+      "id": "DPL10-COV-EMERGING-POLICY-MATERIAL-WEIGHT",
+      "family": "emerging planning policy and material weight",
+      "subject": "emerging/non-operative planning sources and the judgement-led question of material weight",
+      "sourceClasses": ["EMERGING_NON_OPERATIVE_POLICY"],
+      "applicabilityClass": "SOURCE_STATUS_CORE",
+      "defaultScreeningDisposition": "DUE_NOW_REPRESENTED",
+      "accelerationTriggers": [],
+      "resolutionClasses": ["P2_MECHANICAL_APPLICABILITY", "P5_QUALITATIVE_PLANNING_JUDGEMENT"],
+      "implementationState": "REGISTRY_ONLY",
+      "representedTargetIds": ["CROYDON-LOCAL-PLANNING-2018-2026-10-21", "BROMLEY-LOCAL-PLANNING-2019-2026-10-22"],
+      "referenceSiteClaimIds": [],
+      "ownerBoundaries": [
+        "Emerging source status can be represented; its planning weight is not a native numeric value.",
+        "An emerging source never silently replaces an operative development-plan source because it is newer."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "The registry can prove a source is emerging/non-operative. It cannot assign scalar weight or promote it into operative policy."
+    },
+    {
+      "id": "DPL10-COV-EXTERNAL-DETERMINATION-HISTORY-CONDITIONS",
+      "family": "external planning determination, history and conditions",
+      "subject": "planning permission/refusal, appeal/history evidence and conditions imposed by competent statutory decision-makers",
+      "sourceClasses": ["EXTERNAL_STATUTORY_DETERMINATION"],
+      "applicabilityClass": "EXTERNAL_DECISION_DEPENDENT",
+      "defaultScreeningDisposition": "FUTURE_DUE",
+      "accelerationTriggers": [
+        "existing proposal-specific planning history or condition is credible current evidence of a decision-critical constraint"
+      ],
+      "resolutionClasses": ["P6_STATUTORY_DETERMINATION"],
+      "implementationState": "EXTERNAL_ONLY",
+      "representedTargetIds": [],
+      "referenceSiteClaimIds": [],
+      "ownerBoundaries": [
+        "The compiler may record determination evidence but never grant/refuse permission or infer precedent as a reusable site rule.",
+        "Proposal-specific planning history is evidence, not a deterministic policy result for another proposal."
+      ],
+      "positiveCompatibilityBlockingWhenDue": true,
+      "claimBoundary": "P6 remains external statutory authority. No P1–P5 family or registry metadata may manufacture a permission, refusal or condition."
+    }
+  ]
+}
