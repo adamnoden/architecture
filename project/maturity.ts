@@ -337,9 +337,9 @@ export const workstreamStatuses = [
     maturity: 'M4',
     reviewedOn: '2026-10-23',
     currentState:
-      'DPL-13B and DPL-I remain the internally validated boundary for the controlled M4 proposition: the canonical Reference House × synthetic DPL-RS-01 SCREENING owner universe is complete and coverage/readiness composition is internally controlled. DPL-13C now exists as a deterministic runtime candidate that joins that complete scope to actual DPL-13A / DPL-12B findings and emits only provenance-bearing UNRESOLVED @ SCREENING or an explicit non-conclusion state. Its adversarial tests prove incomplete scope fails closed, all-positive scope cannot emit COMPATIBLE, and hard substantive failure cannot imply INCOMPATIBLE without route exhaustion. Whole-site result validation itself is not yet part of the controlled M4 proposition pending DPL-J.',
+      'DPL-13B/DPL-I establish the complete controlled SCREENING owner-universe and coverage/readiness proposition for the canonical Reference House × synthetic DPL-RS-01 case. DPL-13C plus DPL-J now internally validate the canonical whole-site UNRESOLVED @ SCREENING result at that exact scope: blocker ownership is complete, current/future separation is controlled, actual DPL-12B and London-D3 findings are consumed where admitted, missing evidence/evaluators remain explicit unresolved blockers, positive compatibility is refused, hard candidate/obligation failure cannot imply INCOMPATIBLE without route exhaustion, and material blocker/case changes invalidate identity. COMPATIBLE, INCOMPATIBLE, route exhaustion, multi-site/general result validity, real-site deployability and regulatory/planning/legal adequacy remain outside the controlled proposition.',
     nextGate:
-      'Run DPL-J only: adversarially attack the DPL-13C whole-site UNRESOLVED @ SCREENING proposition, including exact blocker ownership, the 17 acceleration plus two no-borough classification blockers, current/future separation, positive-result refusal and hard-failure non-incompatibility. Only DPL-J may decide whether M4 broadens to controlled whole-site UNRESOLVED result validation or what bounded repair must precede that. Keep COMPATIBLE, INCOMPATIBLE, route search/exhaustion, DPL-15+ and broader envelope work held.',
+      'Execute DPL-13D only: create a second canonical synthetic borough-assigned positive-readiness generalisation case using existing controlled Croydon local-planning authority and the same DPL-13B/DPL-13C machinery. Prove that changed borough/site disposition participates in identity and changes classification outcomes without fabricating external evidence. Keep COMPATIBLE, INCOMPATIBLE, route search/exhaustion, DPL-15+ and broader envelope work held pending a fresh post-DPL-13D gate.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -383,7 +383,11 @@ export const workstreamStatuses = [
         'project/dpl/dpl-h-post-planning-identity-admission-review.md',
         'project/dpl/dpl-13b-screening-coverage-readiness.md',
         'compiler/dpl/coverage-readiness.ts',
-        'project/dpl/dpl-i-post-13b-unresolved-admission-review.md'
+        'project/dpl/dpl-i-post-13b-unresolved-admission-review.md',
+        'project/dpl/dpl-13c-screening-substantive-aggregation.md',
+        'compiler/dpl/substantive-aggregation.ts',
+        'compiler/dpl/dpl13c.test.ts',
+        'project/dpl/dpl-j-post-13c-unresolved-result-validation.md'
       ]
     }
   },
