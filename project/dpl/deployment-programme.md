@@ -2,10 +2,10 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Latest gate:** [#486 — DPL-J](https://github.com/adamnoden/architecture/issues/486)  
-**Latest implemented packet:** [#498 — DPL-13D](https://github.com/adamnoden/architecture/issues/498)  
-**Next gate after merge:** **DPL-K — post-DPL-13D multi-fixture result-generalisation / positive-readiness admission gate**  
-**Programme maturity:** **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration + SCREENING coverage/readiness composition + canonical DPL-RS-01 `UNRESOLVED @ SCREENING` result scope; DPL-13D remains implementation evidence pending DPL-K**
+**Latest gate:** [#502 — DPL-K](https://github.com/adamnoden/architecture/issues/502) — **OPEN / PAUSED ON DPL-13D.1 REPAIR**  
+**Latest implemented packet:** [#498 — DPL-13D](https://github.com/adamnoden/architecture/issues/498), with authority correction [#503 — DPL-13D.1](https://github.com/adamnoden/architecture/issues/503) in validation  
+**Next gate after repair merge:** **resume DPL-K — post-DPL-13D multi-fixture result-generalisation / positive-readiness admission gate**  
+**Programme maturity:** **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration + SCREENING coverage/readiness composition + canonical DPL-RS-01 `UNRESOLVED @ SCREENING` result scope; DPL-13D remains implementation evidence pending repaired DPL-K review**
 
 ## Purpose
 
@@ -27,7 +27,7 @@ The only whole-site conclusion currently inside the controlled M4 proposition re
 UNRESOLVED @ SCREENING
 ```
 
-DPL-13D demonstrates a second synthetic execution of the same machinery, but DPL-K must decide whether that earns broader multi-fixture result authority.
+DPL-13D demonstrates a second synthetic execution of the same machinery. DPL-K found and rewound one narrow acceleration-classification overreach before deciding whether that execution earns broader multi-fixture result authority.
 
 `COMPATIBLE`, `INCOMPATIBLE`, route exhaustion and real-site deployment remain unauthorised.
 
@@ -137,7 +137,7 @@ DPL-J deliberately kept broader result authority held and identified the next ex
 
 ---
 
-# DPL-13D — second synthetic generalisation case — complete candidate
+# DPL-13D — second synthetic generalisation case — merged, narrow correction in flight
 
 [DPL-13D](dpl-13d-second-synthetic-fixture.md) adds `DPL-RS-02`, a second synthetic case with:
 
@@ -150,7 +150,23 @@ DPL-J deliberately kept broader result authority held and identified the next ex
 - the same DPL-13B coverage universe and DPL-13C substantive aggregator;
 - no optimiser, no Reference House mutation and no new result semantics.
 
-## DPL-13D exact classification result
+PR #501 merged the packet as `9b95af7b6cbc8babeed5afaafc04f9022b5293a4` after exact-head full-suite validation.
+
+## DPL-K finding — acceleration provenance defect
+
+DPL-K then exposed a narrow but material overreach in the first DPL-13D rebinding rule.
+
+The initial adapter removed an `ACCELERATION_REVIEW_REQUIRED` entry whenever its referenced synthetic claim became `AUTHORED / DERIVED_SITE_CLAIM`. That incorrectly inferred an opaque owner trigger disposition from **provenance state alone**.
+
+The inference was unsound because an authored adverse heritage or noise fact would also make the review disappear. Knowing the synthetic value does not prove an opaque professional/planning trigger false.
+
+DPL-13D.1 therefore freezes the correction:
+
+> **Opaque acceleration review survives synthetic rebinding unless explicit typed owner-side authority resolves it.**
+
+No trigger prose is parsed. No claim-value keyword becomes executable trigger logic. DPL-13D supplies no typed acceleration disposition, so the complete baseline opaque review set remains present.
+
+## Corrected DPL-13D classification result
 
 ```text
 DUE_NOW_REPRESENTED              = 31
@@ -159,20 +175,22 @@ FUTURE_DUE                       = 53
 DUE_CLASSIFICATION_UNRESOLVED    = 0
 NOT_APPLICABLE_PROVED            = 1
 ADVISORY_NON_BLOCKING            = 2
-ACCELERATION_REVIEW_REQUIRED     = 15
+ACCELERATION_REVIEW_REQUIRED     = 17
 ```
 
-The two no-borough local-policy classification blockers from DPL-RS-01 become represented due-now Croydon coverage. The two deliberately resolved synthetic context facts remove the heritage and noise acceleration-review questions.
+The only classification changes currently earned relative to DPL-RS-01 are the two no-borough local-policy entries, which become represented due-now coverage because the exact controlled Croydon target is explicitly assigned.
 
-The aggregation still contains:
+The authored heritage/noise scenario facts remain identity-bearing synthetic inputs, but they do **not** resolve their opaque acceleration-review questions.
+
+Corrected aggregation blockers:
 
 ```text
 substantiveUnresolved       = 27
-dueClassificationUnresolved = 15
+dueClassificationUnresolved = 17
 substantiveFailure          = 0
 ```
 
-and therefore correctly emits:
+Whole-site result remains:
 
 ```text
 UNRESOLVED @ SCREENING
@@ -187,40 +205,42 @@ incompatible = NOT_ADMITTED
 routeExhaustion = NOT_IMPLEMENTED
 ```
 
-The all-positive adversarial override still returns `POSITIVE_CONCLUSION_NOT_ADMITTED`.
+The all-positive adversarial override remains `POSITIVE_CONCLUSION_NOT_ADMITTED`.
 
-### DPL-13D interpretation
+### DPL-13D corrected interpretation
 
-The experiment has materially changed the classification ecology without changing the conclusion by fiat.
+The second fixture still materially changes one controlled semantic axis: it replaces the no-borough state with an exact Croydon target and thereby removes two local-planning classification blockers without making those planning families pass.
 
-DPL-RS-01 had 19 due-classification blockers: 17 acceleration-review plus two no-borough local-policy blockers.
+It does **not** earn a reduction in opaque acceleration uncertainty merely by authoring synthetic heritage/noise values.
 
-DPL-RS-02 has 15 acceleration-review blockers and zero base due-classification unresolved entries.
+The corrected experiment is therefore stricter and more informative:
 
-Yet 27 substantive blockers remain because external evidence, admitted evaluators or qualitative judgement are still absent.
+- local-target composition can improve classification honestly;
+- opaque owner review remains opaque until typed authority resolves it;
+- 27 substantive blockers remain because external evidence, admitted evaluators or qualitative judgement are still absent;
+- the same DPL-13C machinery still yields the evidence-appropriate middle result.
 
-This is evidence that `UNRESOLVED` is case/evidence-driven rather than merely a hard-coded no-borough outcome. It is **not yet** authority to claim the result machinery controlled across multiple fixtures; DPL-K must adjudicate that broader proposition.
+This remains implementation evidence only until DPL-K resumes after DPL-13D.1 merges.
 
 ---
 
-# Next gate — DPL-K
+# Current gate — DPL-K
 
-After DPL-13D merges, open:
+DPL-K is open as issue #502 and is **paused on the DPL-13D.1 repair**, not abandoned.
 
-> **DPL-K — post-DPL-13D multi-fixture result-generalisation / positive-readiness admission gate**
+After the repair merges, DPL-K must resume and attack at least:
 
-DPL-K must attack at least:
-
-1. whether DPL-RS-01 and DPL-RS-02 genuinely exercise the same coverage/readiness and aggregation semantics rather than two hidden paths;
-2. whether the changed classification ecology proves case-dependent generalisation rather than fixture-specific patching;
-3. whether DPL's M4 scope can broaden from one canonical result to a bounded two-synthetic-fixture result proposition;
-4. whether the dominant remaining blocker has now shifted from classification mechanics to substantive external evidence/judgement;
+1. whether DPL-RS-01 and corrected DPL-RS-02 genuinely exercise the same coverage/readiness and aggregation semantics rather than two hidden paths;
+2. whether the bounded rebinding/type-cast seam preserves authority rather than hiding a semantic mismatch;
+3. whether the exact Croydon classification delta is enough to prove case-dependent generalisation rather than fixture-specific patching;
+4. whether DPL's M4 scope can broaden from one canonical result to a bounded two-synthetic-fixture result proposition;
 5. which of the 27 substantive blockers are native/open implementation gaps versus intentionally external evidence/judgement routes;
-6. the exact prerequisites for any future positive compatibility rule;
-7. whether another bounded synthetic packet is needed before any positive-result implementation;
-8. whether DPL-15 real-site work remains premature.
+6. the exact distinction between positive **readiness** and positive **compatibility**;
+7. the exact prerequisites for any future positive compatibility rule;
+8. whether another bounded synthetic packet is needed before any positive-readiness implementation;
+9. whether DPL-15 real-site work remains premature.
 
-Do not admit `COMPATIBLE` merely because classification improved.
+Do not admit `COMPATIBLE` merely because target classification improved.
 
 ---
 
@@ -230,7 +250,7 @@ DPL remains **M4** at the DPL-J-controlled scope:
 
 > **deterministic bounded canonical synthetic deployment-case integration, controlled SCREENING owner-universe / coverage-readiness composition, and the canonical DPL-RS-01 whole-site `UNRESOLVED @ SCREENING` result proposition.**
 
-DPL-13D is additional implementation evidence awaiting DPL-K review.
+Corrected DPL-13D remains additional implementation evidence awaiting DPL-K review.
 
 M4 does not currently mean:
 
@@ -280,5 +300,6 @@ Split or refuse work that:
 - changes claimed evaluation scope without invalidating identity;
 - makes coverage metadata look like substantive discharge;
 - conflates direct site-interface authority with coverage-registry membership;
+- infers opaque trigger disposition from claim provenance or synthetic value;
 - emits `COMPATIBLE` without a separately admitted positive-aggregation rule;
 - emits `INCOMPATIBLE` without route exhaustion/invariant-blocker authority.
