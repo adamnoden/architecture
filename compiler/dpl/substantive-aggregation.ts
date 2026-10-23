@@ -86,7 +86,7 @@ export interface ScreeningSubstantiveAggregationResult {
     readonly deploymentResultFingerprint: string
     readonly siteManifestFingerprint: string
     readonly candidateFingerprint: string
-    readonly localBoroughTarget: 'NOT_ASSIGNED_SYNTHETIC_REFERENCE'
+    readonly localBoroughTarget: string
   }
   readonly coverageReadiness: {
     readonly identityFingerprint: string
@@ -111,7 +111,7 @@ export interface ScreeningSubstantiveAggregationResult {
     readonly incompatible: 'NOT_ADMITTED'
     readonly routeExhaustion: 'NOT_IMPLEMENTED'
     readonly architecturalCandidateSelection: 'NOT_IMPLEMENTED'
-    readonly localBoroughTarget: 'NOT_ASSIGNED_SYNTHETIC_REFERENCE'
+    readonly localBoroughTarget: string
   }
 }
 
@@ -448,6 +448,11 @@ const conclusionFor = (
   }
 }
 
+type GeneralizedReadinessSite = ScreeningCoverageReadinessResult['site'] & {
+  readonly localPlanningTargetState: string
+  readonly localPlanningTargetIds?: readonly string[]
+}
+
 const assertCompositionIdentity = (
   canonicalCase: CanonicalReferenceSiteCompile,
   readiness: ScreeningCoverageReadinessResult
@@ -464,11 +469,25 @@ const assertCompositionIdentity = (
   if (canonicalCase.site.manifest.siteId !== readiness.site.siteId) {
     throw new Error('DPL-13C refuses to aggregate readiness against a different site id.')
   }
-  if (readiness.site.localPlanningTargetState !== 'NO_REAL_BOROUGH_ASSIGNED') {
-    throw new Error('DPL-13C canonical synthetic fixture must retain NO_REAL_BOROUGH_ASSIGNED.')
+
+  const readinessSite = readiness.site as GeneralizedReadinessSite
+  const localBoroughTarget = canonicalCase.canonicalCaseIdentity.manifest.localBoroughTarget as string
+  if (readinessSite.localPlanningTargetState === 'NO_REAL_BOROUGH_ASSIGNED') {
+    if (localBoroughTarget !== 'NOT_ASSIGNED_SYNTHETIC_REFERENCE') {
+      throw new Error('DPL-13C refuses a local borough target when readiness declares NO_REAL_BOROUGH_ASSIGNED.')
+    }
+    return
   }
-  if (canonicalCase.canonicalCaseIdentity.manifest.localBoroughTarget !== 'NOT_ASSIGNED_SYNTHETIC_REFERENCE') {
-    throw new Error('DPL-13C canonical case must not acquire a fabricated local borough target.')
+
+  if (readinessSite.localPlanningTargetState !== 'CONTROLLED_BOROUGH_ASSIGNED') {
+    throw new Error(`DPL-13C does not recognise local planning target state ${readinessSite.localPlanningTargetState}.`)
+  }
+  const targetIds = readinessSite.localPlanningTargetIds ?? []
+  if (targetIds.length !== 1 || targetIds[0] !== localBoroughTarget) {
+    throw new Error('DPL-13C requires the canonical case local target to match the single controlled readiness local target exactly.')
+  }
+  if (!readiness.planningAuthorityGraph.localEdges.some((edge) => edge.localTargetId === localBoroughTarget)) {
+    throw new Error(`DPL-13C local target ${localBoroughTarget} is outside the controlled planning authority graph.`)
   }
 }
 
@@ -499,13 +518,14 @@ export const composeScreeningSubstantiveAggregation = (
     record.aggregationState === 'SUBSTANTIVE_FAILURE'
   ).length
 
+  const localBoroughTarget = canonicalCase.canonicalCaseIdentity.manifest.localBoroughTarget as string
   const canonicalCaseIdentity = {
     canonicalCaseFingerprint: canonicalCase.canonicalCaseIdentity.fingerprint,
     deploymentCaseFingerprint: canonicalCase.deploymentLedger.caseIdentity.fingerprint,
     deploymentResultFingerprint: canonicalCase.deploymentLedger.resultFingerprint,
     siteManifestFingerprint: canonicalCase.site.fingerprint,
     candidateFingerprint: canonicalCase.authoredCandidate.fingerprint,
-    localBoroughTarget: canonicalCase.canonicalCaseIdentity.manifest.localBoroughTarget
+    localBoroughTarget
   }
   const coverageReadiness = {
     identityFingerprint: readiness.identityFingerprint,
@@ -519,7 +539,7 @@ export const composeScreeningSubstantiveAggregation = (
     incompatible: 'NOT_ADMITTED' as const,
     routeExhaustion: 'NOT_IMPLEMENTED' as const,
     architecturalCandidateSelection: 'NOT_IMPLEMENTED' as const,
-    localBoroughTarget: 'NOT_ASSIGNED_SYNTHETIC_REFERENCE' as const
+    localBoroughTarget
   }
   const identityManifest = {
     schemaVersion: DPL13C_SCHEMA_VERSION,
