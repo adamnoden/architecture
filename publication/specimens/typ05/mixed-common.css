@@ -55,9 +55,7 @@ p { margin: 0 0 0.75em; }
   letter-spacing: -0.012em;
 }
 
-.proof-intro {
-  max-width: 95mm;
-}
+.proof-intro { max-width: 95mm; }
 
 .proof-meta,
 .proof-label,
@@ -120,15 +118,12 @@ p { margin: 0 0 0.75em; }
   border-bottom: 0.35pt solid #000;
 }
 
-.compact-table td {
-  border-bottom: 0.2pt solid var(--typ05-rule);
-}
-
+.compact-table td { border-bottom: 0.2pt solid var(--typ05-rule); }
 .compact-table tbody tr:last-child td { border-bottom: 0; }
 .compact-table th:last-child,
 .compact-table td:last-child { padding-right: 0; }
 
-/* The long Appendix C grid is treated as a schedule of records, not miniaturised. */
+/* The long Appendix C grid is a schedule of records, not a miniaturised report. */
 .schedule-record {
   margin: 0 0 8mm;
   padding-top: 3mm;
@@ -224,9 +219,7 @@ p { margin: 0 0 0.75em; }
   word-break: break-word;
 }
 
-.inline-figure {
-  margin: 4mm 0 0;
-}
+.inline-figure { margin: 4mm 0 0; }
 
 .inline-figure img {
   display: block;
@@ -276,11 +269,12 @@ p { margin: 0 0 0.75em; }
   font-variant-numeric: tabular-nums;
 }
 
-.plate-sample img {
-  display: block;
-  width: 100%;
-  max-height: 145mm;
-  object-fit: contain;
+/* Deliberately neutral: TYP-05 proves the furniture, not generated architecture. */
+.plate-drawing-placeholder {
+  height: 95mm;
+  box-sizing: border-box;
+  border-top: 0.35pt solid #000;
+  border-bottom: 0.35pt solid #000;
 }
 
 .plate-sample figcaption {
@@ -298,9 +292,7 @@ p { margin: 0 0 0.75em; }
 
 .list-control li + li { margin-top: 0.25em; }
 
-@page {
-  background: #fff;
-}
+@page { background: #fff; }
 
 @page :left {
   @bottom-left {
