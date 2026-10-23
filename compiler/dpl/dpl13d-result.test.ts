@@ -4,7 +4,7 @@ import { composeDPL13DSecondFixture } from './dpl13d.js'
 import { composeScreeningSubstantiveAggregation } from './substantive-aggregation.js'
 import type { ScreeningCoverageReadinessResult } from './coverage-readiness.js'
 
-test('DPL-13D executable result record', () => {
+test('DPL-13D executable result record probe', () => {
   const fixture = composeDPL13DSecondFixture()
   const aggregation = composeScreeningSubstantiveAggregation({
     canonicalCase: fixture.canonicalCase,
@@ -26,8 +26,5 @@ test('DPL-13D executable result record', () => {
     wholeSiteConclusion: aggregation.wholeSiteConclusion,
     localBoroughTarget: aggregation.canonicalCase.localBoroughTarget
   }
-  console.log(`DPL13D_RESULT ${JSON.stringify(summary)}`)
-  assert.equal(summary.siteId, 'DPL-RS-02')
-  assert.equal(summary.wholeSiteConclusion.status, 'EMITTED')
-  assert.equal(summary.localBoroughTarget, 'CROYDON-LOCAL-PLANNING-2018-2026-10-21')
+  assert.fail(`DPL13D_RESULT ${JSON.stringify(summary)}`)
 })
