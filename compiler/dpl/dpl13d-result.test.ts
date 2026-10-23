@@ -4,27 +4,45 @@ import { composeDPL13DSecondFixture } from './dpl13d.js'
 import { composeScreeningSubstantiveAggregation } from './substantive-aggregation.js'
 import type { ScreeningCoverageReadinessResult } from './coverage-readiness.js'
 
-test('DPL-13D corrected second-fixture result identity is deterministic and ready to refreeze', () => {
+test('DPL-13D corrected second-fixture result identity is frozen and deterministic', () => {
   const fixture = composeDPL13DSecondFixture()
   const aggregation = composeScreeningSubstantiveAggregation({
     canonicalCase: fixture.canonicalCase,
     readiness: fixture.readiness as unknown as ScreeningCoverageReadinessResult
   })
 
-  const identities = {
-    siteFingerprint: fixture.canonicalCase.site.fingerprint,
-    candidateFingerprint: fixture.canonicalCase.authoredCandidate.fingerprint,
-    canonicalCaseFingerprint: fixture.canonicalCase.canonicalCaseIdentity.fingerprint,
-    readinessIdentityFingerprint: fixture.readiness.identityFingerprint,
-    readinessResultFingerprint: fixture.readiness.resultFingerprint,
-    fixtureIdentityFingerprint: fixture.identityFingerprint,
-    aggregationIdentityFingerprint: aggregation.identityFingerprint,
-    aggregationResultFingerprint: aggregation.resultFingerprint
-  }
-  console.log(`DPL13D1_IDENTITIES=${JSON.stringify(identities)}`)
-
-  assert.equal(fixture.site.siteId, 'DPL-RS-02')
-  for (const value of Object.values(identities)) assert.match(value, /^[0-9a-f]{64}$/)
+  assert.equal(
+    fixture.canonicalCase.site.fingerprint,
+    'c1bc2e7fe0fc5778cda25de81ea0e4f0161962a59d5de80d6bea28d2df33e142'
+  )
+  assert.equal(
+    fixture.canonicalCase.authoredCandidate.fingerprint,
+    'c0b4618cb8203e4dfddcf7e7ef852fa6c92e905fcd8e3a7e5322154e11903d81'
+  )
+  assert.equal(
+    fixture.canonicalCase.canonicalCaseIdentity.fingerprint,
+    '0ee4d52ed66097ff735fee2d505ce6dbcc0ca5fac254dd9ea4308c7a90c04ecf'
+  )
+  assert.equal(
+    fixture.readiness.identityFingerprint,
+    'dae53dae431d77dfa6e2ebfed467fce85cb9e01bebf062b0c6c0456b6210310e'
+  )
+  assert.equal(
+    fixture.readiness.resultFingerprint,
+    '56b71e2afedef764dbec3499cf9f8d9882438716b3ac9535468a3cb8d8a6e318'
+  )
+  assert.equal(
+    fixture.identityFingerprint,
+    '95400f494615a5df0258de9a295edf75d340456a6bc8243bb482d1cb510ab514'
+  )
+  assert.equal(
+    aggregation.identityFingerprint,
+    'b9bb76178f4968818f3d6ad1ee51d5688d3c311608eedbc06468773ef752d590'
+  )
+  assert.equal(
+    aggregation.resultFingerprint,
+    'b18c45da18469164a4360357859f9762bc26136fa47c774fd03074f2a7742312'
+  )
 
   assert.deepEqual(fixture.readiness.dispositionCounts, {
     DUE_NOW_REPRESENTED: 31,
