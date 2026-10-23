@@ -1,0 +1,21 @@
+:root {
+  --typ05-measure: 125mm;
+  --typ05-live-height: 250mm;
+  --typ05-plate-width: 166mm;
+}
+
+@page {
+  size: A4;
+  margin-top: 23mm;
+  margin-bottom: 24mm;
+}
+
+@page :left {
+  margin-left: 22mm;
+  margin-right: 30mm;
+}
+
+@page :right {
+  margin-left: 30mm;
+  margin-right: 22mm;
+}
