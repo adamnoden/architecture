@@ -1,10 +1,10 @@
 <!-- nav-exclude: redirect -->
 # TYP-03F — Source selection and exact physical confirmation
 
-Status: **COMPLETE — body reading system physically accepted and frozen**  
+Status: **COMPLETE — corrected exact-font body reading system physically re-confirmed and frozen**  
 Programme authority: GitHub issue **#425 — TYP — Publication Typography Programme**  
 Packet: **#467 — TYP-03F — physical body-text reading and freeze**  
-Depends on: TYP-03C physical review protocol + TYP-03D affordability/value frontier + TYP-03E pinned proof machinery
+Depends on: TYP-03C physical review protocol + TYP-03D affordability/value frontier + TYP-03E pinned proof machinery + TYP-03G rendered-font identity correction
 
 ## 1. Decision
 
@@ -25,7 +25,7 @@ The selection path changed explicitly: once the open Source direction proved con
 
 **SELECTED AND FROZEN.**
 
-The open-font shakedown established a physical preference for the Source direction. A later confirmation sheet using Source Serif 4 rather than the earlier Source Serif Pro proxy preserved that preference. The final exact-pinned B5 proof then passed physical owner review without earning any metric or composition change.
+The open-font shakedown established a physical preference for the Source direction. A later confirmation sheet using Source Serif 4 rather than the earlier Source Serif Pro proxy preserved that preference. The final corrected exact-pinned B5 proof then passed physical owner review without earning any metric or composition change.
 
 ### Newsreader + Source Sans 3
 
@@ -60,9 +60,9 @@ The frozen TYP-03 system uses the pins already established by TYP-03E:
 - regular blob: `c5dd0b88cc8ff4edd7ebdcefee0290df15529657`
 - bold blob: `85693ccc852fbd7fa4ae9d89d6ccbf6d38f8e0f0`
 
-`open-fonts.ts` remains responsible for retrieving those exact upstream files and failing closed if their Git blob identities do not match.
+`open-fonts.ts` retrieves those exact upstream files and fails closed if their Git blob identities do not match. TYP-03G additionally proves the finished PDF's rendered font identity with `pdffonts`; verified inputs alone are not sufficient evidence.
 
-## 4. Exact selected-system proof
+## 4. Corrected exact selected-system proof
 
 The selected-system proof path is:
 
@@ -70,22 +70,29 @@ The selected-system proof path is:
 npx tsx publication/specimens/typ03/proof-pack.ts --selected
 ```
 
-The final accepted proof was generated through the repository Vivliostyle harness using the exact pinned open-font inputs.
+The first formal selected proof, workflow run `39817623755`, is **superseded and inadmissible as exact-font evidence**. TYP-04B inspection showed that its verified Source inputs were not actually loaded by Vivliostyle and the PDF embedded Liberation fallbacks. See `docs/publication/publication-typography-typ03g-font-identity-correction.md`.
 
-Evidence:
+The accepted proof is the corrected build generated after deterministic data-URI font transport and fail-closed rendered-font inspection were added.
 
-- proof workflow: **TYP-03F selected Source proof**;
-- workflow run: **39817623755**;
-- artifact: **12442987462 — `typ03f-source-confirmation`**;
-- artifact digest: `sha256:8294927eeec2a4e054be46c257b26499ee55b7b07344e582d67aba2f7d73d647`;
+Corrected evidence:
+
+- correction implementation: PR **#482**, merged as `912dbf14bb7733e4ca84e2d8a7754e7254360ef2`;
+- ordinary validation run: **39859180904 — SUCCESS**;
+- corrected selected-proof run: **39859180939 — SUCCESS**;
+- artifact: **12461610257 — `typ03f-source-confirmation`**;
+- artifact digest: `sha256:d6fb39aecd082e294943280e6a7e416bd225e62d9354a101849f668c8f8cef66`;
 - proof PDF: `typ03-set-selected-b5-spaced-ragged.pdf`;
-- proof workflow merged by PR **#477** as `3fc5afa336fe514c79c10bdf98ac7496f8dc8418`.
+- rendered-font identity gate: **PASS** before artifact upload;
+- independently observed embedded/subset faces: `SourceSerif4-Regular`, `SourceSerif4-It`, `SourceSerif4-Bold`, `SourceSans3-Regular`, `SourceSans3-Bold`;
+- common system fallback check: **no Liberation fallback observed**.
+
+The project owner physically re-confirmed the corrected exact-font B5 sheet on **23 October 2026** and reported it looked good. No metric or composition change was earned.
 
 This evidence is admissible for the selected-system physical confirmation and body-metric freeze. It remains explicitly **not** evidence of a completed five-finalist blind comparison.
 
 ## 5. Frozen body reading system
 
-The exact-pinned B5 proof was physically reviewed by the project owner and accepted as-is. No bounded second-pass adjustment was earned.
+The corrected exact-pinned B5 proof was physically reviewed by the project owner and accepted as-is. No bounded second-pass adjustment was earned.
 
 TYP-03 therefore freezes:
 
@@ -128,8 +135,10 @@ Therefore:
 
 ## 8. Closeout
 
-TYP-03F is complete.
+TYP-03F is complete after one explicit freeze break and correction.
 
-The body-reading question is no longer open-ended. The book now has a physically accepted text system with exact upstream identity, reproducible proof machinery, frozen composition metrics and a clear value/licensing posture.
+The original closeout was withdrawn when rendered-font inspection falsified its exact-font claim. The corrected proof chain now establishes both exact upstream font identity and exact rendered PDF font identity, followed by renewed physical owner acceptance.
+
+The body-reading question is therefore no longer open-ended. The book has a physically accepted text system with exact upstream identity, rendered-font verification, reproducible proof machinery, frozen composition metrics and a clear value/licensing posture.
 
 Next authorised packet: **#478 — TYP-04 — hierarchy, openings and navigation**.
