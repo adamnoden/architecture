@@ -36,6 +36,7 @@ It then tests the smallest role set earned by TYP-05A:
 - **No math family.** The current corpus has symbols but no display-math system.
 - **Dense schedule ≠ compact table.** Appendix C is shown as labelled schedule records so long prose obligations are not miniaturised into a five-column report grid.
 - **Plate furniture is book typography.** Drawing-internal annotation sizes remain PLT authority and are not frozen here.
+- **Generated plate drawings are not TYP-05 inputs.** The plate-furniture specimens use canonical title/scale/caption metadata against a neutral drawing field. This prevents the typography harness from regenerating or fabricating Reference House geometry. Actual drawing adjacency is re-proved in the later representative-signature and PLT/TYP interface gates.
 
 Candidate metrics are recorded in each generated `manifest.json`. They are not production tokens and remain unfrozen until physical B5 review.
 
