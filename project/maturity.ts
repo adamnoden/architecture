@@ -335,11 +335,11 @@ export const workstreamStatuses = [
     id: 'deployment-real-site',
     name: 'Deployment / real-site integration',
     maturity: 'M4',
-    reviewedOn: '2026-10-22',
+    reviewedOn: '2026-10-23',
     currentState:
-      'DPL-13A remains the internally controlled deterministic Reference House × synthetic DPL-RS-01 canonical deployment-case baseline. Coverage Foundations DPL-02C, DPL-09D and DPL-11B now make Reference House conformance, England technical/process and non-planning due-diligence universes machine-readable without turning coverage into substantive PASS. DPL-F finds the remaining coherent SCREENING owner gap in planning: DPL-10 inventory authority is broader than the current DPL-10B/C/D executable slices, including heritage, noise, ecology and other strategic/local planning families. M4 remains limited to canonical integration; coverage completeness, conclusion readiness, real-site deployability, regulatory/planning/legal adequacy and route exhaustion remain unproved.',
+      'DPL-13B now proves the declared SCREENING owner universe for the canonical Reference House × synthetic DPL-RS-01 case is complete: all 29 site claims are under controlled authority, the exact DPL-10F planning graph is proved, UNKNOWN/ASSUMED provenance is preserved, and direct DPL-08B datum ownership remains separate from the four profile coverage registries. DPL-I has adversarially re-proved that proposition and broadened M4 to canonical synthetic integration plus controlled SCREENING owner-universe / coverage-readiness composition. No merged runtime yet emits a whole-site deployment conclusion; COMPATIBLE, INCOMPATIBLE, route exhaustion, real-site deployability and regulatory/planning/legal adequacy remain outside the controlled proposition.',
     nextGate:
-      'Execute DPL-10E only: encode the complete currently controlled London/borough planning SCREENING family universe as owner-side coverage authority without predicting permission or assigning a borough to the synthetic Reference Site. Then run DPL-G to re-test DPL-13B admission. Keep whole-site COMPATIBLE / UNRESOLVED / INCOMPATIBLE outputs, DPL-13B and DPL-15+ held until that gate.',
+      'Execute DPL-13C only: join the complete DPL-13B SCREENING universe to actual DPL-13A / DPL-12B substantive findings and admit only a provenance-bearing whole-site UNRESOLVED @ SCREENING result when every due or due-classification-unresolved blocker is represented. Keep COMPATIBLE, INCOMPATIBLE, route search/exhaustion, DPL-15+ and broader envelope work held pending a fresh post-13C gate.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -376,7 +376,14 @@ export const workstreamStatuses = [
         'project/dpl/dpl-02c-conformance-coverage.md',
         'project/dpl/dpl-09d-england-screening-coverage.md',
         'project/dpl/dpl-11b-nonplanning-screening-coverage.md',
-        'project/dpl/dpl-f-coverage-foundations-integration-review.md'
+        'project/dpl/dpl-f-coverage-foundations-integration-review.md',
+        'project/dpl/dpl-10e-planning-screening-coverage.md',
+        'project/dpl/dpl-g-post-planning-coverage-integration-review.md',
+        'project/dpl/dpl-10f-planning-target-identity-reconciliation.md',
+        'project/dpl/dpl-h-post-planning-identity-admission-review.md',
+        'project/dpl/dpl-13b-screening-coverage-readiness.md',
+        'compiler/dpl/coverage-readiness.ts',
+        'project/dpl/dpl-i-post-13b-unresolved-admission-review.md'
       ]
     }
   },
