@@ -287,22 +287,9 @@ export const compileDPL13DSecondFixtureCase = (
   }
 }
 
-const claimIsClassificationUncertain = (
-  claim: SyntheticReferenceSiteManifest['claims'][number] | undefined
-): boolean => claim !== undefined && (
-  claim.state === 'UNKNOWN' ||
-  claim.basis === 'ASSUMED' ||
-  claim.basis === 'ASSUMED_DEPLOYMENT_DATUM'
-)
-
 const representedTargetIds = (entry: NormalizedCoverageReference): readonly string[] => {
   const value = entry.ownerSemantic.representedTargetIds
   return Array.isArray(value) && value.every((item) => typeof item === 'string') ? value as string[] : []
-}
-
-const accelerationTriggerCount = (entry: NormalizedCoverageReference): number => {
-  const value = entry.ownerSemantic.accelerationTriggerCount
-  return typeof value === 'number' && Number.isInteger(value) && value >= 0 ? value : 0
 }
 
 const reboundBaseDisposition = (
@@ -342,23 +329,12 @@ export const rebindScreeningCoverageReadinessToSyntheticContext = (
     claimRefs: canonicalStrings(entry.claimRefs),
     ownerSemantic: { ...entry.ownerSemantic }
   }))
-  const accelerationReviews = reboundBase
-    .filter((entry) =>
-      (entry.owner === 'PLANNING' || entry.owner === 'NON_PLANNING') &&
-      accelerationTriggerCount(entry) > 0 &&
-      entry.claimRefs.some((claimId) => claimIsClassificationUncertain(claims.get(claimId)))
-    )
+  const accelerationReviews = base.normalizedCoverage
+    .filter((entry) => entry.normalizedDisposition === 'ACCELERATION_REVIEW_REQUIRED')
     .map((entry): NormalizedCoverageReference => ({
-      owner: entry.owner,
-      ownerEntryId: `${entry.ownerEntryId}::ACCELERATION_REVIEW`,
-      normalizedDisposition: 'ACCELERATION_REVIEW_REQUIRED',
-      positiveCompatibilityBlockingWhenDue: entry.positiveCompatibilityBlockingWhenDue,
+      ...entry,
       claimRefs: canonicalStrings(entry.claimRefs),
-      ownerSemantic: {
-        sourceEntryId: entry.ownerEntryId,
-        triggerKind: 'OPAQUE_OWNER_METADATA_NOT_EXECUTED',
-        accelerationTriggerCount: accelerationTriggerCount(entry)
-      }
+      ownerSemantic: { ...entry.ownerSemantic }
     }))
   const normalizedCoverage = canonicalCoverage([...reboundBase, ...accelerationReviews])
 
