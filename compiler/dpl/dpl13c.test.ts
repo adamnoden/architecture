@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import { compileCanonicalReferenceSiteCase } from './canonical.js'
 import {
   composeScreeningCoverageReadiness,
   type ScreeningCoverageReadinessResult
@@ -262,18 +263,12 @@ test('DPL-13C rejects composition against a different site-manifest identity', (
   )
 })
 
-test('DPL-13C explicit mapping builder is deterministic', () => {
-  const first = composeScreeningSubstantiveAggregation()
+test('DPL-13C explicit mapping builder is deterministic from the same canonical inputs', () => {
+  const canonicalCase = compileCanonicalReferenceSiteCase()
   const readiness = composeScreeningCoverageReadiness()
-  const secondRecords = buildScreeningAggregationRecords(
-    // reuse canonical production inputs through the public compositor contract
-    // by re-running the compositor and stripping its record identities
-    // rather than creating a second architectural source.
-    // eslint is not used in this repository; this comment documents the boundary.
-    // @ts-expect-error canonical case is intentionally recovered below only for this assertion
-    undefined,
-    readiness
-  )
-  assert.ok(first.aggregationRecords.length > 0)
-  assert.ok(secondRecords.length > 0)
+  const first = buildScreeningAggregationRecords(canonicalCase, readiness)
+  const second = buildScreeningAggregationRecords(canonicalCase, readiness)
+
+  assert.deepEqual(first, second)
+  assert.ok(first.length > 0)
 })
