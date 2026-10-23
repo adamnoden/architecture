@@ -1,12 +1,12 @@
 # Project Status
 
 **Canonical project-wide status overview**  
-**Last updated:** 2026-10-22  
+**Last updated:** 2026-10-23  
 **Current phase:** **post-DRW publication production / controlled canonical deployment integration / downstream validation**
 
 This page records the current state, next meaningful work and principal risks. Detailed programme histories and gate records remain with their owning workstreams.
 
-The public architectural position and publication remain internally controlled at M4. The Reference House remains M3 at virtual-design scope. HFI is closed. DRW is fully closed and frozen at its current internal publication proof boundary. DPL is **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration scope**, explicitly excluding whole-site conclusion readiness. DPL-02C/09D/11B now make three owner-side SCREENING coverage universes machine-readable; DPL-F identifies planning as the remaining owner-side coverage gap before conclusion-readiness composition can be admitted. The largest unclosed evidence gaps remain physical prototypes, competent professional review, SCREENING planning coverage/conclusion-readiness proof and independent architectural criticism.
+The public architectural position and publication remain internally controlled at M4. The Reference House remains M3 at virtual-design scope. HFI is closed. DRW is fully closed and frozen at its current internal publication proof boundary. DPL is **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration plus SCREENING owner-universe / coverage-readiness composition scope**, explicitly excluding whole-site deployment-result validation. DPL-13B now proves the canonical SCREENING owner universe complete, and DPL-I admits implementation of an `UNRESOLVED @ SCREENING`-only substantive aggregator while keeping `COMPATIBLE`, `INCOMPATIBLE` and route exhaustion held. The largest unclosed evidence gaps remain physical prototypes, competent professional review, whole-site deployment-result validation and independent architectural criticism.
 
 ## Active now
 
@@ -20,7 +20,7 @@ The next value comes from competent RH-11 review and the P03/P04 physical-valida
 
 The bounded Reference House computational track remains **M4 — Internally validated / controlled** through RH-C5 and CH-08. There is no standing RH-C6 or CH-09. New computation must be demand-led.
 
-The separate DPL runtime retains its internally controlled canonical integration specimen through DPL-13A: deterministic case identity, all 29 frozen DPL-RS-01 claims including 11 explicit unknowns, explicit RH-V02 candidate authorship, bounded Reference House conformance, DPL-08B/C interface identities, DPL-09B/C England targets, bounded London strategic planning and independent coverage identity coexist without claiming whole-site deployability. DPL-02C, DPL-09D and DPL-11B add machine-readable owner-side coverage registries without turning family presence into substantive PASS.
+The separate DPL runtime now has an internally controlled canonical integration specimen through DPL-13B: deterministic case identity, all 29 frozen DPL-RS-01 claims under controlled authority, explicit UNKNOWN/ASSUMED provenance, explicit RH-V02 candidate authorship, bounded Reference House conformance, DPL-08B/C interface identities, DPL-09B/C England targets, the repaired DPL-10F planning graph and complete owner-side SCREENING coverage coexist without claiming deployability. DPL-I has admitted only the next conservative aggregation step; no merged runtime yet emits a whole-site deployment conclusion.
 
 ### Publication
 
@@ -30,17 +30,21 @@ The next publication gate is PR-02: production of the private physical object. P
 
 ### Deployment / real-site integration
 
-**DPL is M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration scope.**
+**DPL is M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration plus controlled SCREENING owner-universe / coverage-readiness composition scope.**
 
-DPL-13A remains the first controlled Reference House × synthetic DPL-RS-01 canonical case. DPL-02C now exposes all 38 current DPL-02 conformance clauses/routes as coverage authority; DPL-09D exposes the controlled England technical/process family universe; DPL-11B exposes the controlled non-planning due-diligence family universe. None of these registries converts coverage into conformance, compliance, legal clearance or deployment PASS.
+DPL-13B composes all four controlled owner coverage registries, the exact DPL-10F planning authority graph, the complete 29-claim DPL-RS-01 manifest and the separate DPL-08B direct datum authority. Its canonical result is owner-complete:
 
-DPL-F attacks those foundations as one SCREENING scope and finds one remaining coherent owner gap: **planning family coverage**. DPL-10 already inventories a materially wider strategic/local planning universe than DPL-10B currently represents, including heritage, neighbour amenity, transport/access, trees/landscape, ecology/biodiversity, flood/drainage and air-quality/noise families. Canonical claims such as `RS-HERITAGE-01`, `RS-NOISE-01` and `RS-ECO-01` therefore have legitimate DPL-10 ownership that is not yet machine-readable as complete family coverage.
+```text
+uncoveredClaimIds = []
+profileUniverseState = PROFILE_DISPOSITION_UNRESOLVED
+conclusionReadiness = NOT_READY_PROFILE_DISPOSITION_UNRESOLVED
+```
 
-Whole-site `COMPATIBLE / UNRESOLVED / INCOMPATIBLE` remains unauthorised at runtime. Even official `UNRESOLVED @ SCREENING` remains held: a conservative-looking conclusion would still overclaim while one known owner family universe is outside the declared machine-readable scope.
+DPL-I adversarially re-proves that proposition and establishes that unresolved due/applicability/acceleration classification may itself support a conservative whole-site `UNRESOLVED @ SCREENING` **only when every relevant uncertainty is represented inside the declared aggregation scope**. Coverage metadata remains distinct from substantive conformance, compliance, legal clearance or deployment PASS.
 
-**Next: DPL-10E only.** Encode the complete currently controlled London/borough planning SCREENING family universe as owner-side coverage authority, preserving strategic/local source status, qualitative judgement boundaries, explicit no-real-borough state for DPL-RS-01 and legitimate multi-owner interpretations of site claims. Then run DPL-G to re-test DPL-13B admission.
+No merged runtime yet emits a whole-site conclusion. `COMPATIBLE @ SCREENING` remains unauthorised because positive disposition/evidence is incomplete. `INCOMPATIBLE` remains unauthorised without invariant-blocker or route-exhaustion authority. Route search/exhaustion, DPL-15 real-site trials and broader envelope derivation remain held.
 
-DPL-13B+, DPL-15+, bulk corpus expansion, route-search machinery, unrelated technical/interface expansion and whole-site conclusions remain held.
+**Next: DPL-13C only.** Join the complete DPL-13B SCREENING universe to the actual DPL-13A / DPL-12B obligation, evidence, applicability and conformance findings. Every due-now or due-classification-unresolved blocker must have a provenance-bearing aggregation record; substantive unresolved state and due-classification uncertainty must remain distinct. DPL-13C may emit only `UNRESOLVED @ SCREENING`, and only when the complete admission rule is satisfied.
 
 ### Physical and professional validation
 
@@ -87,7 +91,7 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 | **Computational track** | **M4** | 2026-10-19 | The bounded Reference House executable sequence remains closed PASS through RH-C5 and CH-00 through CH-08 remain complete. The intentional HFI stair rewind has propagated through the controlled semantic source and deterministic projections; RH-C5 now checks the selected 300 mm going while HFI-09C/09D explicitly refuse to turn that project preference into a universal human-factors or statutory rule. | Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, DPL target/site work, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope. |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | Major evidence packages exist and taxonomy ambiguities are largely closed. | Targeted claim hardening where physical or publication maturity requires it. |
 | **Publication** | **M4** | 2026-10-21 | PR-00, PR-01, PUB-SAN and PUB-NOM remain complete. DRW is fully closed and frozen through its final integration/physical-proof programme; the controlled architectural drawing family is released at the existing internal publication proof boundary without inventing construction or site authority. | Proceed to PR-02 private physical-object production without reopening frozen drawing authority by preference. PR-03/PR-04 then provide the independent critical cycle required before M5 or public release. Any later DPL-earned drawing duty requires an explicit DRW reopen or separately owned post-DRW representation authority. |
-| **Deployment / real-site integration** | **M4** | 2026-10-22 | DPL-13A remains the internally controlled deterministic Reference House × synthetic DPL-RS-01 canonical deployment-case baseline. Coverage Foundations DPL-02C, DPL-09D and DPL-11B now make Reference House conformance, England technical/process and non-planning due-diligence universes machine-readable without turning coverage into substantive PASS. DPL-F finds the remaining coherent SCREENING owner gap in planning: DPL-10 inventory authority is broader than the current DPL-10B/C/D executable slices, including heritage, noise, ecology and other strategic/local planning families. M4 remains limited to canonical integration; coverage completeness, conclusion readiness, real-site deployability, regulatory/planning/legal adequacy and route exhaustion remain unproved. | Execute DPL-10E only: encode the complete currently controlled London/borough planning SCREENING family universe as owner-side coverage authority without predicting permission or assigning a borough to the synthetic Reference Site. Then run DPL-G to re-test DPL-13B admission. Keep whole-site COMPATIBLE / UNRESOLVED / INCOMPATIBLE outputs, DPL-13B and DPL-15+ held until that gate. |
+| **Deployment / real-site integration** | **M4** | 2026-10-23 | DPL-13B now proves the declared SCREENING owner universe for the canonical Reference House × synthetic DPL-RS-01 case is complete: all 29 site claims are under controlled authority, the exact DPL-10F planning graph is proved, UNKNOWN/ASSUMED provenance is preserved, and direct DPL-08B datum ownership remains separate from the four profile coverage registries. DPL-I has adversarially re-proved that proposition and broadened M4 to canonical synthetic integration plus controlled SCREENING owner-universe / coverage-readiness composition. No merged runtime yet emits a whole-site deployment conclusion; COMPATIBLE, INCOMPATIBLE, route exhaustion, real-site deployability and regulatory/planning/legal adequacy remain outside the controlled proposition. | Execute DPL-13C only: join the complete DPL-13B SCREENING universe to actual DPL-13A / DPL-12B substantive findings and admit only a provenance-bearing whole-site UNRESOLVED @ SCREENING result when every due or due-classification-unresolved blocker is represented. Keep COMPATIBLE, INCOMPATIBLE, route search/exhaustion, DPL-15+ and broader envelope work held pending a fresh post-13C gate. |
 | **Delivery** | **M2** | 2026-10-19 | The implementation-brief structure exists and N17 now carries complete-action / finished-interface human-factors verification into RIBA 3/4 as appropriate, but downstream delivery requirements remain intentionally incomplete. | Populate only as architectural, DPL, professional-review and physical-validation decisions mature; delivery must remain a consequence of controlled architecture rather than a second source of doctrine. |
 <!-- maturity-status:end -->
 
@@ -97,9 +101,9 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 **Candidate/conformance overreach.** DPL must evaluate authored architecture, not become an optimiser or hidden parametric-house generator. One failed candidate is not site incompatibility.
 
-**Coverage overclaim.** The canonical DPL ledger is still incomplete at the requested assurance profile. DPL-F identifies planning as the remaining known owner-side family gap; a conservative-looking `UNRESOLVED` conclusion remains too strong until that planning universe is machine-readable and profile-classified.
+**Aggregation overclaim.** DPL-13B now proves the declared SCREENING owner universe complete, but coverage is not substantive discharge. DPL-13C must not emit even conservative `UNRESOLVED @ SCREENING` unless every due-now or due-classification-unresolved blocker is represented in the aggregation ledger with owner/provenance identity and actual substantive findings used where available.
 
-**M4 scope drift.** DPL's M4 claim covers canonical synthetic case integration only. It must not be repeated as shorthand for whole-site conclusion validity, real-site validation, regulatory compliance or deployability.
+**M4 scope drift.** DPL's M4 claim now covers bounded canonical synthetic integration plus controlled SCREENING owner-universe / coverage-readiness composition. It does not cover whole-site result validation, positive compatibility, incompatibility, route exhaustion, real-site validation, regulatory compliance or deployability.
 
 **Physical and professional evidence.** Internal control does not prove structural, fire, MEP, building-physics or construction adequacy. P03/P04 and competent RH-11 review remain material evidence gaps.
 
