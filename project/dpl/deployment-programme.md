@@ -3,9 +3,9 @@
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
 **Latest gate:** [#486 — DPL-J](https://github.com/adamnoden/architecture/issues/486)  
-**Latest implemented packet:** [#484 — DPL-13C](https://github.com/adamnoden/architecture/issues/484)  
-**Next authorised packet after DPL-J merge:** **DPL-13D — second canonical synthetic fixture / borough-assigned positive-readiness generalisation case**  
-**Programme maturity:** **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration + SCREENING coverage/readiness composition + canonical DPL-RS-01 `UNRESOLVED @ SCREENING` result scope; broader result authority remains held**
+**Latest implemented packet:** [#498 — DPL-13D](https://github.com/adamnoden/architecture/issues/498)  
+**Next gate after merge:** **DPL-K — post-DPL-13D multi-fixture result-generalisation / positive-readiness admission gate**  
+**Programme maturity:** **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration + SCREENING coverage/readiness composition + canonical DPL-RS-01 `UNRESOLVED @ SCREENING` result scope; DPL-13D remains implementation evidence pending DPL-K**
 
 ## Purpose
 
@@ -21,11 +21,13 @@ Top-level deployment conclusions remain:
 - `UNRESOLVED`;
 - `INCOMPATIBLE`.
 
-The only whole-site conclusion currently admitted into the controlled proposition is the canonical DPL-RS-01 result:
+The only whole-site conclusion currently inside the controlled M4 proposition remains the DPL-RS-01 canonical result:
 
 ```text
 UNRESOLVED @ SCREENING
 ```
+
+DPL-13D demonstrates a second synthetic execution of the same machinery, but DPL-K must decide whether that earns broader multi-fixture result authority.
 
 `COMPATIBLE`, `INCOMPATIBLE`, route exhaustion and real-site deployment remain unauthorised.
 
@@ -43,41 +45,17 @@ UNRESOLVED @ SCREENING
 
 ## Foundation through DPL-12C — complete
 
-DPL-01 through DPL-12C establish:
-
-- deployment ontology and result semantics;
-- Reference House conformance boundaries and admitted variants;
-- assurance profiles;
-- typed target composition;
-- site-claim / evidence authority;
-- synthetic Reference Site;
-- England / London / borough target inventories and bounded executable slices;
-- site-interface authority and water/ground interfaces;
-- eight-site adversarial London corpus;
-- authored deployment-candidate identity;
-- bounded executable Reference House conformance;
-- Wave-C runtime composition.
+DPL-01 through DPL-12C establish deployment ontology/result semantics, Reference House conformance, assurance profiles, typed target composition, site-claim/evidence authority, the synthetic Reference Site, England/London/borough target slices, site interfaces, the adversarial London corpus, authored candidate identity and bounded runtime composition.
 
 Restart-safe records remain under `project/dpl/`.
 
 ## DPL-13A — canonical synthetic compile — complete
 
-[DPL-13A](dpl-13a-canonical-reference-site-compile.md) establishes the first controlled Reference House × synthetic DPL-RS-01 case.
-
-It preserves:
-
-- all 29 frozen DPL-07 site claims;
-- explicit `UNKNOWN` and synthetic-assumption provenance;
-- one authored unmirrored 180° `RH-V02` deployment candidate;
-- DPL-08B/C interface identity;
-- DPL-09B/C England target identity;
-- London strategic planning with no fabricated local borough;
-- bounded DPL-02 conformance;
-- deterministic site/candidate/deployment/coverage/canonical identities.
+[DPL-13A](dpl-13a-canonical-reference-site-compile.md) establishes the first controlled Reference House × DPL-RS-01 canonical case with all 29 frozen claims, explicit UNKNOWN/ASSUMED provenance, one authored RH-V02 candidate, bounded DPL-02 conformance, DPL-08B/C interfaces, DPL-09B/C England targets and London strategic planning without a fabricated borough.
 
 ## DPL-E — complete
 
-[DPL-E](dpl-e-post-13a-review.md) promoted DPL to M4 at bounded canonical synthetic integration / no-conclusion scope and identified profile-coverage completeness as the next blocker.
+[DPL-E](dpl-e-post-13a-review.md) promoted DPL to M4 at bounded canonical synthetic integration/no-conclusion scope and identified profile-coverage completeness as the next blocker.
 
 ## Coverage foundations — complete
 
@@ -92,38 +70,19 @@ Registry presence is coverage authority, not substantive PASS.
 
 ## DPL-F / DPL-G / DPL-10F / DPL-H — complete
 
-DPL-F found planning as the missing fourth owner.
-
-DPL-10E closed that family gap, including explicit ownership of `RS-NOISE-01`, `RS-ECO-01`, heritage and other planning/context claims.
-
-DPL-G then found a real authority-graph defect: Croydon/Bromley referenced a stale London strategic target identity.
-
-DPL-10F repaired the exact graph. Both borough exemplars point to:
+DPL-F found planning as the missing fourth owner. DPL-10E closed that family gap. DPL-G then exposed stale strategic-parent identity in Croydon/Bromley. DPL-10F repaired the exact graph to:
 
 ```text
 LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20
 ```
 
-DPL-H then admitted DPL-13B coverage/readiness composition only.
+DPL-H admitted DPL-13B coverage/readiness composition only.
 
 ## DPL-13B — SCREENING coverage/readiness — complete
 
-[DPL-13B](dpl-13b-screening-coverage-readiness.md) makes the declared SCREENING owner universe executable.
+[DPL-13B](dpl-13b-screening-coverage-readiness.md) composes all four owner coverage registries, the repaired planning graph and the exact DPL-RS-01 manifest.
 
-It composes:
-
-- all four owner coverage registries;
-- the repaired DPL-10F planning authority graph;
-- the exact DPL-RS-01 canonical site manifest;
-- claim→owner relationships;
-- profile disposition/readiness state;
-- identity/invalidation boundaries.
-
-### Material finding
-
-The first strong 29-claim composition proof exposed `RS-FFL-01` as outside the four profile registries.
-
-Authority recovery correctly retained its existing direct owner:
+Its implementation also preserved the direct DPL-08B owner of the authored absolute datum:
 
 ```text
 RS-FFL-01
@@ -131,9 +90,7 @@ RS-FFL-01
   → DPL-08B:GI-D02-DATUM
 ```
 
-This is not a fifth coverage registry.
-
-### Canonical DPL-13B result
+Canonical result:
 
 ```text
 uncoveredClaimIds = []
@@ -141,101 +98,27 @@ profileUniverseState = PROFILE_DISPOSITION_UNRESOLVED
 conclusionReadiness = NOT_READY_PROFILE_DISPOSITION_UNRESOLVED
 ```
 
-The declared SCREENING universe is owner-complete. Some due/applicability/acceleration classifications remain unresolved.
-
 ## DPL-I — complete
 
-[DPL-I](dpl-i-post-13b-unresolved-admission-review.md) concludes:
-
-> **PASS — ADMIT DPL-13C AS AN `UNRESOLVED @ SCREENING`-ONLY SUBSTANTIVE AGGREGATOR. BROADEN DPL'S M4 SCOPE TO INCLUDE CONTROLLED SCREENING COVERAGE/READINESS COMPOSITION. KEEP `COMPATIBLE` AND `INCOMPATIBLE` UNAUTHORISED.**
-
-DPL-I establishes the key semantic distinction:
+[DPL-I](dpl-i-post-13b-unresolved-admission-review.md) admitted DPL-13C as an `UNRESOLVED @ SCREENING`-only aggregator and established the key rule:
 
 > **A complete coverage universe does not require every proposition to be resolved before the system may honestly say the deployment is unresolved. It requires every relevant uncertainty to be inside the declared, provenance-bearing aggregation scope.**
 
-Opaque acceleration text remains non-executable. Unresolved due/profile classification may support conservative `UNRESOLVED`, but cannot become PASS/FAIL by inference.
-
 ## DPL-13C — substantive aggregation — complete
 
-[DPL-13C](dpl-13c-screening-substantive-aggregation.md) implements the first authorised whole-site conclusion path.
+[DPL-13C](dpl-13c-screening-substantive-aggregation.md) implements the first authorised whole-site middle-result path.
 
-Runtime:
+It:
 
-```text
-compiler/dpl/substantive-aggregation.ts
-```
+- maps DPL-02C clauses to exact DPL-12B candidate findings;
+- maps the strategic planning context family explicitly to `LON-D3-DESIGN-LED`;
+- keeps owner families without admitted evaluators/evidence explicit and unresolved;
+- separates `SUBSTANTIVE_UNRESOLVED` from `DUE_CLASSIFICATION_UNRESOLVED`;
+- keeps future-due obligations outside the current blocker ledger;
+- refuses `COMPATIBLE` even under an all-positive represented scope;
+- refuses `INCOMPATIBLE` without route exhaustion/invariant-blocker authority.
 
-Adversarial proof:
-
-```text
-compiler/dpl/dpl13c.test.ts
-```
-
-### Exact join strategy
-
-DPL-13C deliberately refuses fuzzy family→target inference.
-
-Reference House due-now DPL-02C clauses map by exact clause id to DPL-12B findings.
-
-The strategic planning family has one explicit substantive mapping:
-
-```text
-DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY
-  → LON-D3-DESIGN-LED
-```
-
-Due-now England/planning/non-planning families without an admitted case-specific substantive evaluator or accepted external determination remain explicit unresolved blockers.
-
-Synthetic site facts never become external discharge evidence.
-
-### Two blocker classes
-
-DPL-13C preserves separately:
-
-- `SUBSTANTIVE_UNRESOLVED`;
-- `DUE_CLASSIFICATION_UNRESOLVED`.
-
-The canonical synthetic case retains:
-
-- 17 acceleration-review classification blockers; and
-- 2 base local-planning due-classification blockers because no real borough is assigned:
-  - `DPL10-COV-LOCAL-QUANTITATIVE-POLICY`;
-  - `DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY`.
-
-No trigger prose is parsed or executed.
-
-### Fail-closed result semantics
-
-Incomplete owner/profile universe:
-
-```text
-NOT_ADMITTED
-reason = PROFILE_UNIVERSE_INCOMPLETE
-```
-
-Missing required blocker record:
-
-```text
-NOT_ADMITTED
-reason = BLOCKING_SCOPE_INCOMPLETE
-```
-
-Everything represented resolves positively:
-
-```text
-NOT_ADMITTED
-reason = POSITIVE_CONCLUSION_NOT_ADMITTED
-```
-
-Complete current scope with one or more blockers:
-
-```text
-UNRESOLVED @ SCREENING
-```
-
-A hard substantive failure still does not imply `INCOMPATIBLE` while route exhaustion or an invariant site-level blocker remains unproved.
-
-### Canonical DPL-13C result
+Canonical DPL-RS-01 result:
 
 ```text
 wholeSiteConclusion = UNRESOLVED @ SCREENING
@@ -246,83 +129,110 @@ architecturalCandidateSelection = NOT_IMPLEMENTED
 localBoroughTarget = NOT_ASSIGNED_SYNTHETIC_REFERENCE
 ```
 
----
+## DPL-J — complete
 
-# DPL-J — complete candidate
+[DPL-J](dpl-j-post-13c-unresolved-result-validation.md) adversarially validated that exact canonical middle-result proposition and broadened DPL's M4 scope to include it.
 
-[DPL-J](dpl-j-post-13c-unresolved-result-validation.md) adversarially attacks the DPL-13C result proposition and concludes:
-
-> **PASS — ADMIT DPL-13C AS THE INTERNALLY CONTROLLED CANONICAL `UNRESOLVED @ SCREENING` RESULT FOR DPL-RS-01. BROADEN DPL'S M4 SCOPE TO INCLUDE THAT CONTROLLED CANONICAL WHOLE-SITE RESULT. KEEP `COMPATIBLE`, `INCOMPATIBLE`, ROUTE EXHAUSTION AND REAL-SITE DEPLOYMENT UNAUTHORISED.**
-
-## DPL-J findings
-
-DPL-13C survives review because:
-
-- every current positive-compatibility blocker is represented exactly once under the correct owner identity;
-- DPL-02 consumes exact DPL-12B findings rather than treating coverage as conformance;
-- the London D3 join is explicit and narrow;
-- no fuzzy target-family association is used elsewhere;
-- absent evaluators/evidence remain explicit unresolved blockers;
-- `FUTURE_DUE` stays outside the current blocker ledger;
-- 17 acceleration-review and two no-borough local-planning classification blockers remain distinct and non-executable;
-- all-positive scope cannot emit `COMPATIBLE`;
-- hard substantive failure cannot emit `INCOMPATIBLE` without route exhaustion;
-- material case/readiness/blocker changes invalidate aggregation identity;
-- direct DPL-08B datum authority remains non-discharge authority.
-
-The controlled M4 proposition therefore now includes the **canonical DPL-RS-01 whole-site `UNRESOLVED @ SCREENING` result**, but no broader result authority.
+DPL-J deliberately kept broader result authority held and identified the next experiment: change the fixture rather than making DPL-RS-01 artificially optimistic.
 
 ---
 
-# Current authorised work — DPL-13D only
+# DPL-13D — second synthetic generalisation case — complete candidate
 
-## Why the experiment must change
+[DPL-13D](dpl-13d-second-synthetic-fixture.md) adds `DPL-RS-02`, a second synthetic case with:
 
-DPL-RS-01 is intentionally excellent for proving a conservative middle result:
+- the same parcel/Reference House geometry and exact 29-claim vocabulary as DPL-RS-01;
+- its own site, candidate, deployment, readiness and aggregation identities;
+- explicit existing Croydon local-planning target;
+- exact Croydon → London strategic parent proof;
+- two deliberately changed synthetic planning-context facts (`RS-HERITAGE-01`, `RS-NOISE-01`);
+- all other material external-evidence gaps preserved UNKNOWN where appropriate;
+- the same DPL-13B coverage universe and DPL-13C substantive aggregator;
+- no optimiser, no Reference House mutation and no new result semantics.
 
-- no real borough is assigned;
-- many site claims are `UNKNOWN` or synthetic assumptions;
-- external evidence and professional/planning determinations are absent.
+## DPL-13D exact classification result
 
-Those same properties make it structurally unsuitable for positive-readiness testing.
+```text
+DUE_NOW_REPRESENTED              = 31
+DUE_NOW_MISSING                  = 0
+FUTURE_DUE                       = 53
+DUE_CLASSIFICATION_UNRESOLVED    = 0
+NOT_APPLICABLE_PROVED            = 1
+ADVISORY_NON_BLOCKING            = 2
+ACCELERATION_REVIEW_REQUIRED     = 15
+```
 
-Two local-planning entries cannot be positively classified while the fixture remains no-borough. Seventeen acceleration questions also remain current classification blockers.
+The two no-borough local-policy classification blockers from DPL-RS-01 become represented due-now Croydon coverage. The two deliberately resolved synthetic context facts remove the heritage and noise acceleration-review questions.
 
-The next value is therefore not another generic conclusion function and not an attempt to force DPL-RS-01 to pass.
+The aggregation still contains:
 
-## DPL-13D — second canonical synthetic fixture / borough-assigned positive-readiness generalisation case
+```text
+substantiveUnresolved       = 27
+dueClassificationUnresolved = 15
+substantiveFailure          = 0
+```
 
-DPL-13D must introduce one second synthetic deployment case to test whether the existing DPL-13B/DPL-13C machinery generalises beyond the no-borough/UNKNOWN ecology of DPL-RS-01.
+and therefore correctly emits:
 
-Minimum posture:
+```text
+UNRESOLVED @ SCREENING
+```
 
-- new synthetic site identity, provisionally `DPL-RS-02`;
-- explicit London strategic target plus one already-controlled local borough target;
-- prefer the existing Croydon target so no new borough research is required;
-- enough authored synthetic facts to change selected due/acceleration classifications deliberately;
-- UNKNOWN remains where external evidence is intentionally absent;
-- synthetic facts never become title, survey, provider, building-control or professional evidence;
-- one explicitly authored Reference House deployment candidate;
-- no optimiser/candidate search;
-- reuse DPL-13B/DPL-13C machinery without fixture-specific result semantics;
-- prove changed borough/site disposition participates in case/readiness/result identity;
-- `COMPATIBLE` and `INCOMPATIBLE` remain unavailable.
+with:
 
-The purpose is **positive-readiness generalisation**, not a positive conclusion.
+```text
+localBoroughTarget = CROYDON-LOCAL-PLANNING-2018-2026-10-21
+compatibleAtScreening = NOT_ADMITTED
+incompatible = NOT_ADMITTED
+routeExhaustion = NOT_IMPLEMENTED
+```
 
-After DPL-13D lands, run a fresh gate before any positive-result implementation is admitted.
+The all-positive adversarial override still returns `POSITIVE_CONCLUSION_NOT_ADMITTED`.
+
+### DPL-13D interpretation
+
+The experiment has materially changed the classification ecology without changing the conclusion by fiat.
+
+DPL-RS-01 had 19 due-classification blockers: 17 acceleration-review plus two no-borough local-policy blockers.
+
+DPL-RS-02 has 15 acceleration-review blockers and zero base due-classification unresolved entries.
+
+Yet 27 substantive blockers remain because external evidence, admitted evaluators or qualitative judgement are still absent.
+
+This is evidence that `UNRESOLVED` is case/evidence-driven rather than merely a hard-coded no-borough outcome. It is **not yet** authority to claim the result machinery controlled across multiple fixtures; DPL-K must adjudicate that broader proposition.
+
+---
+
+# Next gate — DPL-K
+
+After DPL-13D merges, open:
+
+> **DPL-K — post-DPL-13D multi-fixture result-generalisation / positive-readiness admission gate**
+
+DPL-K must attack at least:
+
+1. whether DPL-RS-01 and DPL-RS-02 genuinely exercise the same coverage/readiness and aggregation semantics rather than two hidden paths;
+2. whether the changed classification ecology proves case-dependent generalisation rather than fixture-specific patching;
+3. whether DPL's M4 scope can broaden from one canonical result to a bounded two-synthetic-fixture result proposition;
+4. whether the dominant remaining blocker has now shifted from classification mechanics to substantive external evidence/judgement;
+5. which of the 27 substantive blockers are native/open implementation gaps versus intentionally external evidence/judgement routes;
+6. the exact prerequisites for any future positive compatibility rule;
+7. whether another bounded synthetic packet is needed before any positive-result implementation;
+8. whether DPL-15 real-site work remains premature.
+
+Do not admit `COMPATIBLE` merely because classification improved.
 
 ---
 
 # Current proof boundary
 
-DPL remains **M4**.
-
-The controlled M4 scope is now:
+DPL remains **M4** at the DPL-J-controlled scope:
 
 > **deterministic bounded canonical synthetic deployment-case integration, controlled SCREENING owner-universe / coverage-readiness composition, and the canonical DPL-RS-01 whole-site `UNRESOLVED @ SCREENING` result proposition.**
 
-This does not mean:
+DPL-13D is additional implementation evidence awaiting DPL-K review.
+
+M4 does not currently mean:
 
 - `COMPATIBLE @ SCREENING`;
 - `INCOMPATIBLE`;
@@ -340,7 +250,7 @@ M5 remains unavailable without competent independent / real-world validation.
 
 # Held work
 
-Until post-DPL-13D review, continue to hold:
+Until DPL-K decides otherwise, continue to hold:
 
 - `COMPATIBLE @ SCREENING` implementation;
 - `INCOMPATIBLE` implementation;
@@ -351,7 +261,6 @@ Until post-DPL-13D review, continue to hold:
 - DPL-17 publication integration;
 - DPL-18 final closeout;
 - generic all-borough planning ontology;
-- new borough research not required by DPL-13D;
 - unrelated technical/interface expansion;
 - Reference House geometry changes;
 - DRW changes.
