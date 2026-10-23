@@ -1,0 +1,321 @@
+:root {
+  --typ05-text: #000;
+  --typ05-muted: #555;
+  --typ05-rule: #888;
+}
+
+html,
+body {
+  margin: 0;
+  color: var(--typ05-text);
+  background: #fff;
+  font-family: var(--typ05-serif);
+  font-size: 10.5pt;
+  line-height: 1.5;
+  text-align: left;
+  hyphens: none;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+p,
+li,
+dd {
+  orphans: 3;
+  widows: 3;
+}
+
+p { margin: 0 0 0.75em; }
+
+.reading-column {
+  max-width: var(--typ05-measure);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.specimen-page {
+  break-before: page;
+  box-sizing: border-box;
+  min-height: var(--typ05-live-height);
+  padding-top: 5mm;
+}
+
+.proof-title {
+  break-before: auto;
+  padding-top: 24mm;
+}
+
+.proof-title h1 {
+  max-width: 105mm;
+  margin: 0 0 8mm;
+  font-family: var(--typ05-serif);
+  font-size: 24pt;
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
+
+.proof-intro {
+  max-width: 95mm;
+}
+
+.proof-meta,
+.proof-label,
+.specimen-note,
+.final-note {
+  font-family: var(--typ05-sans);
+}
+
+.proof-label {
+  margin: 0 0 5mm;
+  font-size: 7.5pt;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.proof-meta,
+.specimen-note,
+.final-note {
+  font-size: 7.5pt;
+  line-height: 1.35;
+  color: var(--typ05-muted);
+}
+
+.specimen-note { margin-bottom: 7mm; }
+.final-note { margin-top: 7mm; }
+
+.section-title {
+  margin: 0 0 5mm;
+  font-family: var(--typ05-sans);
+  font-size: 11pt;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Compact analytical table: still a table, but not a report grid. */
+.compact-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: var(--typ05-sans);
+  font-size: 8.5pt;
+  line-height: 1.32;
+  font-variant-numeric: tabular-nums;
+  border-top: 0.5pt solid #000;
+  border-bottom: 0.5pt solid #000;
+}
+
+.compact-table th,
+.compact-table td {
+  padding: 2mm 1.6mm 2mm 0;
+  vertical-align: top;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.compact-table th {
+  font-weight: 700;
+  border-bottom: 0.35pt solid #000;
+}
+
+.compact-table td {
+  border-bottom: 0.2pt solid var(--typ05-rule);
+}
+
+.compact-table tbody tr:last-child td { border-bottom: 0; }
+.compact-table th:last-child,
+.compact-table td:last-child { padding-right: 0; }
+
+/* The long Appendix C grid is treated as a schedule of records, not miniaturised. */
+.schedule-record {
+  margin: 0 0 8mm;
+  padding-top: 3mm;
+  border-top: 0.35pt solid #000;
+  break-inside: avoid-page;
+}
+
+.schedule-subject {
+  margin: 0 0 3.5mm;
+  font-family: var(--typ05-serif);
+  font-size: 10.5pt;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.schedule-record dl { margin: 0; }
+.schedule-field {
+  display: grid;
+  grid-template-columns: 27mm minmax(0, 1fr);
+  column-gap: 4mm;
+  align-items: start;
+  margin: 0 0 2.2mm;
+}
+
+.schedule-field dt {
+  margin: 0;
+  font-family: var(--typ05-sans);
+  font-size: 7.2pt;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.schedule-field dd {
+  min-width: 0;
+  margin: 0;
+  font-family: var(--typ05-serif);
+  font-size: 9.2pt;
+  line-height: 1.38;
+  overflow-wrap: anywhere;
+}
+
+/* Text sequences retain ordered logic without pretending to be code. */
+.sequence-block {
+  max-width: 94mm;
+  margin: 10mm auto 0;
+  font-family: var(--typ05-sans);
+  font-size: 8.5pt;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.sequence-step {
+  padding: 2.2mm 2mm;
+  border-top: 0.25pt solid var(--typ05-rule);
+  border-bottom: 0.25pt solid var(--typ05-rule);
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.sequence-arrow {
+  height: 5mm;
+  line-height: 5mm;
+  font-size: 10pt;
+}
+
+.source-list {
+  margin: 0;
+  padding-left: 5mm;
+}
+
+.source-row {
+  margin: 0 0 5mm;
+  padding-left: 1mm;
+}
+
+.source-citation {
+  display: block;
+  font-family: var(--typ05-serif);
+  font-size: 9.3pt;
+  line-height: 1.4;
+}
+
+.source-url {
+  display: block;
+  margin-top: 1mm;
+  font-family: var(--typ05-sans);
+  font-size: 7.6pt;
+  line-height: 1.3;
+  color: var(--typ05-muted);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.inline-figure {
+  margin: 4mm 0 0;
+}
+
+.inline-figure img {
+  display: block;
+  width: 100%;
+  max-height: 118mm;
+  object-fit: contain;
+  object-position: left top;
+}
+
+.inline-figure figcaption {
+  margin-top: 4mm;
+  font-family: var(--typ05-sans);
+  font-size: 8.3pt;
+  line-height: 1.35;
+  color: var(--typ05-muted);
+}
+
+.plate-page { padding-top: 5mm; }
+
+.plate-sample {
+  max-width: var(--typ05-plate-width);
+  margin: 8mm auto 0;
+}
+
+.plate-sample header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6mm;
+  margin-bottom: 5mm;
+  font-family: var(--typ05-sans);
+}
+
+.plate-sample header h2 {
+  margin: 0;
+  font-family: var(--typ05-sans);
+  font-size: 11pt;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.plate-scale {
+  flex: none;
+  font-family: var(--typ05-sans);
+  font-size: 8.3pt;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.plate-sample img {
+  display: block;
+  width: 100%;
+  max-height: 145mm;
+  object-fit: contain;
+}
+
+.plate-sample figcaption {
+  margin-top: 5mm;
+  font-family: var(--typ05-sans);
+  font-size: 8.3pt;
+  line-height: 1.35;
+  color: var(--typ05-muted);
+}
+
+.list-control ul {
+  margin: 3mm 0 0;
+  padding-left: 1.4em;
+}
+
+.list-control li + li { margin-top: 0.25em; }
+
+@page {
+  background: #fff;
+}
+
+@page :left {
+  @bottom-left {
+    content: counter(page);
+    font-family: var(--typ05-sans);
+    font-size: 7.5pt;
+    line-height: 1;
+  }
+}
+
+@page :right {
+  @bottom-right {
+    content: counter(page);
+    font-family: var(--typ05-sans);
+    font-size: 7.5pt;
+    line-height: 1;
+  }
+}
