@@ -2,10 +2,10 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Latest gate:** [#475 — DPL-I](https://github.com/adamnoden/architecture/issues/475)  
-**Latest implemented candidate:** [#484 — DPL-13C](https://github.com/adamnoden/architecture/issues/484)  
-**Next mandatory gate after DPL-13C merge:** **DPL-J — post-DPL-13C whole-site `UNRESOLVED @ SCREENING` adversarial review and positive-result admission gate**  
-**Programme maturity:** **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration + SCREENING coverage/readiness composition scope; whole-site result validation remains outside the controlled M4 proposition pending DPL-J**
+**Latest gate:** [#486 — DPL-J](https://github.com/adamnoden/architecture/issues/486)  
+**Latest implemented packet:** [#484 — DPL-13C](https://github.com/adamnoden/architecture/issues/484)  
+**Next authorised packet after DPL-J merge:** **DPL-13C.1 — exact obligation identity + `WARNING` / `SUPERSEDED` aggregation semantics**  
+**Programme maturity:** **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration + SCREENING coverage/readiness composition + canonical DPL-RS-01 whole-site `UNRESOLVED @ SCREENING` result-validation scope; generic whole-site result authority remains held**
 
 ## Purpose
 
@@ -21,7 +21,7 @@ Top-level deployment conclusions remain:
 - `UNRESOLVED`;
 - `INCOMPATIBLE`.
 
-The DPL-13C candidate is the first runtime authorised to emit one of them: **`UNRESOLVED @ SCREENING` only**. That implementation does not yet broaden the controlled M4 proposition to whole-site result validation; DPL-J must adversarially decide that question.
+The current controlled whole-site result authority is deliberately narrow: the exact canonical Reference House × DPL-RS-01 case may emit **`UNRESOLVED @ SCREENING`**. `COMPATIBLE`, `INCOMPATIBLE`, generic whole-site aggregation across arbitrary future compositions and route exhaustion remain unauthorised.
 
 ## Governing rules
 
@@ -117,11 +117,7 @@ It composes:
 - profile disposition/readiness state;
 - identity/invalidation boundaries.
 
-### Material finding
-
-The first strong 29-claim composition proof exposed `RS-FFL-01` as outside the four profile registries.
-
-Authority recovery correctly retained its existing direct owner:
+The first strong 29-claim composition proof exposed `RS-FFL-01` as outside the four profile registries. Authority recovery correctly retained its existing direct owner:
 
 ```text
 RS-FFL-01
@@ -131,7 +127,7 @@ RS-FFL-01
 
 This is not a fifth coverage registry. It preserves direct site-interface authority over the authored absolute datum.
 
-### Canonical DPL-13B result
+Canonical DPL-13B result:
 
 ```text
 uncoveredClaimIds = []
@@ -143,11 +139,11 @@ The declared SCREENING universe is owner-complete. Some due/applicability/accele
 
 ## DPL-I — complete
 
-[DPL-I](dpl-i-post-13b-unresolved-admission-review.md) concludes:
+[DPL-I](dpl-i-post-13b-unresolved-admission-review.md) concluded:
 
 > **PASS — ADMIT DPL-13C AS AN `UNRESOLVED @ SCREENING`-ONLY SUBSTANTIVE AGGREGATOR. BROADEN DPL'S M4 SCOPE TO INCLUDE CONTROLLED SCREENING COVERAGE/READINESS COMPOSITION. KEEP `COMPATIBLE` AND `INCOMPATIBLE` UNAUTHORISED.**
 
-DPL-I establishes the key semantic distinction:
+DPL-I froze the key semantic distinction:
 
 > **A complete coverage universe does not require every proposition to be resolved before the system may honestly say the deployment is unresolved. It requires every relevant uncertainty to be inside the declared, provenance-bearing aggregation scope.**
 
@@ -155,7 +151,7 @@ Opaque acceleration text remains non-executable. Unresolved due/profile classifi
 
 ---
 
-# DPL-13C — substantive aggregation — complete candidate
+# DPL-13C — substantive aggregation — complete
 
 [DPL-13C](dpl-13c-screening-substantive-aggregation.md) implements the first authorised whole-site conclusion path.
 
@@ -171,28 +167,28 @@ Adversarial proof:
 compiler/dpl/dpl13c.test.ts
 ```
 
-## Exact join strategy
+## Join strategy
 
 DPL-13C deliberately refuses fuzzy family→target inference.
 
 ### Reference House
 
-Due-now DPL-02C clauses map by exact clause id to the corresponding DPL-12B candidate-conformance finding.
+Due-now DPL-02C clauses map by exact clause id to corresponding DPL-12B candidate-conformance findings.
 
-Native clauses consume their actual `CONFORMS` result; non-native positive-conformance-required clauses consume the existing explicit `OPEN` result.
+Native clauses consume actual `CONFORMS` results; non-native positive-conformance-required clauses consume explicit `OPEN` results.
 
 ### Planning
 
-`DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY` maps explicitly to:
+`DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY` maps to the controlled London strategic design-led obligation:
 
 ```text
 LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20
   → LON-D3-DESIGN-LED
 ```
 
-The current obligation remains `UNRESOLVED` because qualitative planning judgement is required.
+The canonical current obligation remains `UNRESOLVED` because qualitative planning judgement is required.
 
-Other due-now planning families without a case-specific admitted evaluator remain explicit unresolved blockers.
+Other due-now planning families without an admitted case-specific evaluator remain explicit unresolved blockers.
 
 ### England technical/process
 
@@ -215,7 +211,7 @@ DPL-13C preserves separately:
 - `SUBSTANTIVE_UNRESOLVED`;
 - `DUE_CLASSIFICATION_UNRESOLVED`.
 
-The canonical synthetic case currently retains:
+The canonical synthetic case retains:
 
 - 17 acceleration-review classification blockers; and
 - 2 base local-planning due-classification blockers because no real borough is assigned:
@@ -270,7 +266,7 @@ UNRESOLVED @ SCREENING
 
 A hard substantive failure still does not imply `INCOMPATIBLE` while route exhaustion or an invariant site-level blocker remains unproved.
 
-## Canonical DPL-13C result
+Canonical DPL-13C result:
 
 ```text
 wholeSiteConclusion = UNRESOLVED @ SCREENING
@@ -281,53 +277,106 @@ architecturalCandidateSelection = NOT_IMPLEMENTED
 localBoroughTarget = NOT_ASSIGNED_SYNTHETIC_REFERENCE
 ```
 
-This is a runtime result candidate, not yet an internally validated whole-site-result proposition.
+---
+
+# DPL-J — complete candidate
+
+[DPL-J](dpl-j-post-13c-result-validation.md) independently attacks the DPL-13C result proposition.
+
+Its decision is:
+
+> **PASS — DPL-13C EARNS CONTROLLED M4 AUTHORITY FOR THE CANONICAL DPL-RS-01 WHOLE-SITE `UNRESOLVED @ SCREENING` RESULT. KEEP `COMPATIBLE`, `INCOMPATIBLE`, ROUTE EXHAUSTION AND GENERIC WHOLE-SITE RESULT AUTHORITY HELD. BEFORE ANY POSITIVE-CONTROL WORK, REQUIRE ONE BOUNDED DPL-13C.1 SEMANTIC-HARDENING PACKET.**
+
+The qualifier **canonical** is controlling. DPL-J validates the exact current Reference House × DPL-RS-01 SCREENING result, not a universal aggregation algebra.
+
+## What DPL-J re-proves
+
+DPL-J finds the canonical proposition sound because:
+
+- every current positive-compatibility-blocking DPL-13B entry is represented exactly once;
+- DPL-02 joins consume exact DPL-12B findings rather than coverage metadata;
+- the London D3 canonical join consumes the actual current `UNRESOLVED` obligation;
+- due-now owner families without exact evaluators/evidence remain explicit unresolved blockers;
+- synthetic facts never become external discharge evidence;
+- future-due families remain outside the current blocker ledger unless an owner acceleration-review record explicitly brings classification into current review;
+- the 17 acceleration + 2 no-borough local-policy classification blockers are the correct canonical state;
+- all-positive scope cannot emit `COMPATIBLE`;
+- hard substantive failure cannot emit `INCOMPATIBLE` while route exhaustion remains unproved;
+- case/readiness/record/future-due/site-interface identities are material to aggregation identity.
+
+## Two generic semantic debts exposed by DPL-J
+
+These debts do **not** falsify the canonical current result because neither ambiguous branch is exercised by the current London D3 `UNRESOLVED` obligation. They do block generic or positive-result work.
+
+### 1. Exact obligation identity
+
+The planning join is conceptually target-specific, but the current lookup selects by `obligationId` alone before recording the actual target id.
+
+`DeploymentObligationLedgerEntry` carries both `targetId` and `obligationId`; future target compositions are not authorised to assume obligation ids are globally unique.
+
+DPL-13C.1 must therefore map exact `(targetId, obligationId)` pairs and fail closed on zero or multiple current matches.
+
+### 2. `WARNING` / `SUPERSEDED` semantics
+
+Current generic `obligationState()` maps `WARNING` and `SUPERSEDED` into substantive unresolved alongside `UNRESOLVED`.
+
+DPL-03 is stricter:
+
+- a bare `WARNING` is valid at the mandatory level and does not block a deployment conclusion unless a separate mandatory proposition remains unresolved/failing;
+- `SUPERSEDED` is historical and must not participate as current authority.
+
+DPL-13C.1 must encode those distinctions explicitly and regression-lock them.
 
 ---
 
-# Current proof boundary
+# Current controlled proof boundary
 
-DPL remains **M4** at the scope admitted by DPL-I:
+DPL remains **M4**, with its internally controlled scope now broadened narrowly to:
 
-> **deterministic bounded canonical synthetic deployment-case integration plus controlled SCREENING owner-universe / coverage-readiness composition.**
+> **deterministic bounded canonical synthetic deployment-case integration, controlled SCREENING owner-universe / coverage-readiness composition, and controlled canonical DPL-RS-01 whole-site `UNRESOLVED @ SCREENING` result validation.**
 
-DPL-13C existing and passing its implementation tests does **not** automatically broaden M4 to whole-site deployment-result validation.
+This does **not** validate:
 
-That question belongs to DPL-J.
+- generic DPL-13C aggregation across arbitrary future target/site compositions;
+- `COMPATIBLE @ SCREENING`;
+- `INCOMPATIBLE`;
+- route search or exhaustion;
+- real-site deployability;
+- regulatory/planning/legal adequacy;
+- external validation.
 
 M5 remains unavailable without competent independent / real-world validation.
 
 ---
 
-# Next mandatory gate — DPL-J
+# Next authorised packet — DPL-13C.1 only
 
-After DPL-13C merges, open:
+After DPL-J merges, open:
 
-> **DPL-J — post-DPL-13C whole-site `UNRESOLVED @ SCREENING` adversarial review and positive-result admission gate**
+> **DPL-13C.1 — exact obligation identity + `WARNING` / `SUPERSEDED` aggregation semantics**
 
-DPL-J must attack at least:
+Required work:
 
-1. whether every canonical current blocker is genuinely represented once and under the right owner;
-2. whether any owner family has been incorrectly collapsed into generic unresolved state;
-3. whether the explicit London D3 mapping is sufficient and no fuzzy target-family inference escaped elsewhere;
-4. whether current/future separation is honest under the canonical fixture;
-5. whether 17 acceleration blockers plus two no-borough local-policy classification blockers are the correct canonical disposition;
-6. whether hard candidate/obligation failure remains safely distinct from site incompatibility;
-7. whether all-positive scope correctly refuses `COMPATIBLE`;
-8. whether DPL's M4 scope may now broaden to include controlled whole-site `UNRESOLVED @ SCREENING` validation;
-9. what exact bounded packet, if any, is required before positive compatibility can be considered;
-10. whether a second synthetic/real fixture is now required before further result authority.
+1. replace obligation-id-only mappings with exact `(targetId, obligationId)` pairs;
+2. fail closed if an exact mapping finds zero or more than one current ledger entry;
+3. make `WARNING` non-blocking in accordance with DPL-03 where no hidden mandatory failure exists;
+4. exclude `SUPERSEDED` as current authority and represent absence of a current mapped result explicitly;
+5. add regression tests for duplicate obligation ids across targets, wrong-target same-id obligations, warning-only mapped results, superseded-only mapped results and unchanged canonical DPL-RS-01 output;
+6. preserve all DPL-13C positive/incompatibility restraints.
 
-DPL-J must not implement broader result authority itself.
+After DPL-13C.1, run a fresh gate before deciding whether a second synthetic positive-control fixture is the correct next proof object.
+
+Do **not** mutate DPL-RS-01 merely to make a positive result possible.
 
 ---
 
 # Held work
 
-Until DPL-J decides otherwise, continue to hold:
+Continue to hold:
 
 - `COMPATIBLE @ SCREENING`;
 - `INCOMPATIBLE`;
+- generic whole-site result authority across arbitrary target/site compositions;
 - route search/exhaustion/optimisation;
 - DPL-14D bulk corpus expansion;
 - DPL-15 real-site deployment trials;
