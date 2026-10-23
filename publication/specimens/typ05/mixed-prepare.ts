@@ -8,7 +8,6 @@ import { fetchOpenFontCandidate } from '../typ03/open-fonts.js'
 
 const specimenRoot = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(specimenRoot, '../../..')
-const publicationRoot = resolve(repoRoot, 'publication')
 const format = process.env.TYP05_FORMAT === 'a4' ? 'a4' : 'b5'
 const workRoot = resolve(repoRoot, 'publication/.work/typ05b', format)
 
@@ -106,12 +105,6 @@ function bulletItems(section: string, count: number): string[] {
     .slice(0, count)
 }
 
-async function committedSvgDataUri(image: string): Promise<string> {
-  const path = resolve(publicationRoot, image)
-  const bytes = await readFile(path)
-  return `data:image/svg+xml;base64,${bytes.toString('base64')}`
-}
-
 const sources = Object.fromEntries(
   await Promise.all(Object.entries(sourcePaths).map(async ([name, path]) => [name, await readFile(resolve(repoRoot, path), 'utf8')]))
 ) as Record<keyof typeof sourcePaths, string>
@@ -174,11 +167,11 @@ const listForces = bulletItems(extractSection(sources.listControl, '## Forces'),
 
 const figures = publicationFigurePlacements()
 const longestFigure = [...figures].sort((a, b) => b.caption.length - a.caption.length)[0]
-const longestFigureData = await committedSvgDataUri(longestFigure.image)
 
-// Plate imagery is generated elsewhere and is not a TYP-05 input. The proof uses
-// canonical plate metadata against a neutral drawing field so this packet tests
-// only the book furniture it owns, without fabricating or regenerating architecture.
+// Existing figure SVGs currently carry their own drawing typography (including
+// legacy Arial declarations). TYP-05 owns the publication caption, not the
+// lettering inside the figure. Use canonical caption metadata beside a neutral
+// field so the finished-PDF font gate cannot be weakened by drawing-internal fonts.
 const plateViews = publicationPlatePlacements().flatMap((placement) => placement.views)
 const numericPlate = plateViews.find((view) => view.scale === '1:100') ?? plateViews[0]
 const ntsPlate = plateViews.find((view) => view.scale === 'NTS')
@@ -205,9 +198,10 @@ const sequenceHtml = (lines: string[]): string => `<div class="sequence-block">$
 
 const sourcesHtml = references.map((row) => `<li class="source-row"><span class="source-citation">${escapeHtml(row.citation)}</span><span class="source-url">${escapeHtml(row.url)}</span></li>`).join('\n')
 const listHtml = listForces.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n')
+const neutralField = '<div class="drawing-placeholder" role="img" aria-label="Neutral visual field omitted from typography proof"></div>'
 const plateHtml = (title: string, scale: string, caption: string): string => `<figure class="plate-sample">
   <header><h2>${escapeHtml(title)}</h2><span class="plate-scale">${escapeHtml(scale)}</span></header>
-  <div class="plate-drawing-placeholder" role="img" aria-label="Neutral drawing field omitted from typography proof"></div>
+  ${neutralField}
   <figcaption>${escapeHtml(caption)}</figcaption>
 </figure>`
 
@@ -262,7 +256,7 @@ const specimen = `<!doctype html>
   <section class="specimen-page reading-column figure-page">
     <p class="proof-label">06 · sustained figure caption</p>
     <figure class="inline-figure">
-      <img src="${longestFigureData}" alt="${escapeHtml(longestFigure.alt)}">
+      ${neutralField}
       <figcaption>${escapeHtml(longestFigure.caption)}</figcaption>
     </figure>
   </section>
@@ -290,12 +284,12 @@ const specimen = `<!doctype html>
 await writeFile(resolve(workRoot, 'specimen.html'), specimen, 'utf8')
 
 const manifest = {
-  schemaVersion: 2,
+  schemaVersion: 3,
   packet: 'TYP-05B',
   candidate: 'source-two-family-minimal-technical-roles',
   format,
   fontTransport: 'verified-bytes-data-uri',
-  plateDrawingBoundary: 'neutral-field; generated drawing assets intentionally excluded from TYP-05 proof inputs',
+  visualFieldBoundary: 'neutral fields; figure-internal and generated-drawing typography intentionally excluded from TYP-05 proof inputs',
   bodyAuthority: {
     serif: 'Source Serif 4',
     sans: 'Source Sans 3',
