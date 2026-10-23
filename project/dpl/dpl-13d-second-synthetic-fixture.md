@@ -1,10 +1,11 @@
-# DPL-13D — Second Canonical Synthetic Fixture / Borough-Assigned Positive-Readiness Generalisation
+# DPL-13D — Second Canonical Synthetic Fixture / Borough-Assigned Generalisation
 
 **Issue:** #498  
+**Repair:** #503 — DPL-13D.1  
 **Depends on:** DPL-J, DPL-13B, DPL-13C  
 **Fixture:** `DPL-RS-02`  
 **Local planning target:** Croydon controlled exemplar  
-**Status:** implementation candidate; exact executable result frozen pending final-head validation and post-merge DPL-K gate
+**Status:** implementation candidate corrected by DPL-13D.1; exact executable result frozen pending final-head validation and resumed DPL-K gate
 
 ## Purpose
 
@@ -47,7 +48,7 @@ No borough inference or alias reconciliation is permitted.
 
 ## Deliberately changed synthetic facts
 
-The fixture preserves most DPL-RS-01 uncertainty. Two planning-context claims are deliberately made explicit enough to change the **classification experiment**, not to become external evidence.
+The fixture preserves most DPL-RS-01 uncertainty. Two planning-context claims are deliberately made explicit as synthetic scenario facts.
 
 ### `RS-HERITAGE-01`
 
@@ -59,9 +60,11 @@ It is recorded as `DERIVED_SITE_CLAIM` only in the narrow sense that the proposi
 
 The synthetic scenario explicitly defines an ordinary residential acoustic context with no authored severe-noise/sensitive-receptor flag.
 
-Again, this is scenario classification input only. It is **not** an acoustic survey, agent-of-change assessment or planning discharge.
+Again, this is scenario input only. It is **not** an acoustic survey, agent-of-change assessment or planning discharge.
 
 These changes are intentionally sparse. Flood, ecology, ground, title detail, utility capacity, neighbour openings, sewer detail, surface-water strategy and construction logistics remain UNKNOWN where the original fixture preserved missing evidence.
+
+Crucially, after DPL-13D.1 these authored facts do **not** by themselves resolve opaque owner acceleration questions. Provenance state and scenario value are not trigger authority.
 
 ## Coverage/readiness generalisation seam
 
@@ -70,7 +73,6 @@ DPL-13D does **not** create a new owner registry.
 It reuses the complete DPL-13B owner universe and rebinds only the case-dependent parts:
 
 - site claim state/basis;
-- opaque acceleration-review presence, using only typed trigger-count metadata plus claim uncertainty and never parsing trigger prose;
 - local-authority-dependent planning disposition;
 - selected controlled local target identity;
 - claim ownership state/basis;
@@ -83,6 +85,20 @@ For an assigned controlled borough:
 - no local-policy entry becomes PASS merely because the borough is known.
 
 The rebinding adapter is also exercised against DPL-RS-01/no-borough context and must reproduce the existing DPL-13B normalized coverage, counts, uncovered-claim state and ownership semantics exactly before RS-02 is admitted as a valid experiment.
+
+### DPL-13D.1 acceleration correction
+
+DPL-K exposed a narrow but material defect in the first DPL-13D implementation.
+
+The initial adapter recreated `ACCELERATION_REVIEW_REQUIRED` only when a referenced claim remained `UNKNOWN`, `ASSUMED` or `ASSUMED_DEPLOYMENT_DATUM`. That accidentally treated `AUTHORED / DERIVED_SITE_CLAIM` as evidence that an opaque owner trigger had been resolved false.
+
+That inference was invalid. The same rule would have removed the review if the authored synthetic value described an adverse heritage or severe-noise condition.
+
+DPL-13D.1 therefore freezes the conservative rule:
+
+> **An opaque acceleration-review obligation survives synthetic rebinding unless explicit typed owner-side authority resolves it.**
+
+DPL-13D introduces no typed owner-side acceleration disposition. It therefore preserves the complete baseline acceleration-review set. No trigger prose is parsed and no claim-value keyword is executed.
 
 ## External-evidence boundary
 
@@ -97,13 +113,14 @@ DPL-RS-02 does not positively discharge, merely by authorship:
 - utility/provider capacity;
 - building-control evidence;
 - qualitative planning judgement;
-- planning permission/determination.
+- planning permission/determination;
+- opaque acceleration conditions owned outside the synthetic fixture.
 
 A better classified synthetic fixture may therefore still correctly remain `UNRESOLVED @ SCREENING`. DPL-13D is not authorised to emit `COMPATIBLE` in any event.
 
 ## Executable result
 
-The exact DPL-RS-02 implementation was first proved green as a complete repository candidate, then a controlled one-commit probe exposed the deterministic result payload so it could be frozen as assertions rather than described approximately. The probe itself is not part of the final proof boundary; the final test pins the exact identities and must pass on the exact final head.
+The exact DPL-RS-02 implementation is proved as a complete repository candidate and its deterministic result payload is pinned in assertions rather than described approximately.
 
 ### Identity freeze
 
@@ -117,6 +134,8 @@ This authority record is itself fingerprint-bearing, so it deliberately does **n
 
 ### Coverage/readiness disposition
 
+After DPL-13D.1:
+
 ```text
 DUE_NOW_REPRESENTED              = 31
 DUE_NOW_MISSING                  = 0
@@ -124,7 +143,7 @@ FUTURE_DUE                       = 53
 DUE_CLASSIFICATION_UNRESOLVED    = 0
 NOT_APPLICABLE_PROVED            = 1
 ADVISORY_NON_BLOCKING            = 2
-ACCELERATION_REVIEW_REQUIRED     = 15
+ACCELERATION_REVIEW_REQUIRED     = 17
 ```
 
 Compared with DPL-RS-01, the two local-planning entries that were unresolved only because no borough existed are now represented under the exact Croydon target:
@@ -134,25 +153,25 @@ PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY
 PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY
 ```
 
-The two deliberately changed scenario facts also remove the heritage and noise acceleration-review questions. The acceleration-review count therefore falls from 17 to 15, while the two base no-borough classification blockers disappear entirely.
+The deliberately authored heritage/noise scenario facts do **not** remove their opaque acceleration-review questions. Those questions remain blocking until typed owner authority can actually classify them.
 
 ### Aggregation blockers
 
 ```text
 substantiveUnresolved       = 27
-dueClassificationUnresolved = 15
+dueClassificationUnresolved = 17
 substantiveFailure          = 0
 ```
 
-This is the central DPL-13D finding.
+This is the corrected DPL-13D finding.
 
-Classification improves materially:
+Classification improves in exactly one earned way:
 
-- base due-classification uncertainty falls from 2 to 0;
-- acceleration review falls from 17 to 15;
-- no due-now coverage is missing.
+- the two no-borough local-policy classification blockers disappear because an exact controlled Croydon target is assigned;
+- no due-now coverage is missing;
+- opaque acceleration review remains unchanged because no typed acceleration decision exists.
 
-But **27 substantive blockers remain unresolved** because external evidence, admitted evaluators or qualitative judgement are still absent. The system therefore does not mistake better classification for positive compatibility.
+But **27 substantive blockers remain unresolved** because external evidence, admitted evaluators or qualitative judgement are still absent. The system therefore does not mistake better target classification for positive compatibility.
 
 ### Whole-site result
 
@@ -172,7 +191,7 @@ NOT_ADMITTED
 reason = POSITIVE_CONCLUSION_NOT_ADMITTED
 ```
 
-The second fixture therefore demonstrates that the DPL-13C middle result is not merely hard-coded to the no-borough DPL-RS-01 ecology. Case classification can improve substantially while the same aggregation machinery continues to return the evidence-appropriate middle result.
+The second fixture therefore demonstrates that the DPL-13C middle result is not merely hard-coded to the no-borough DPL-RS-01 ecology. Local-target classification can improve while the same aggregation machinery continues to return the evidence-appropriate middle result.
 
 ## Result authority
 
@@ -209,9 +228,9 @@ Material site/readiness mutation changes identity. Aggregation-record ordering r
 
 ## Proof boundary
 
-DPL-13D proves only a second controlled **synthetic candidate case** and the ability of the existing coverage/readiness + aggregation semantics to generalise across a changed site/planning context.
+DPL-13D proves only a second controlled **synthetic candidate case** and the ability of the existing coverage/readiness + aggregation semantics to execute across a changed local-target context.
 
-It does not yet broaden DPL's M4 claim beyond the DPL-J-controlled canonical RS-01 result. A fresh DPL-K gate must decide whether two-fixture result generalisation has earned a broader controlled scope.
+It does not yet broaden DPL's M4 claim beyond the DPL-J-controlled canonical RS-01 result. DPL-K must decide whether the corrected two-fixture execution earns a broader controlled scope.
 
 It does not prove:
 
@@ -223,6 +242,7 @@ It does not prove:
 - regulatory compliance;
 - legal clearance;
 - external validation;
-- general all-borough support.
+- generic all-borough support;
+- resolution of opaque acceleration triggers from synthetic claim provenance.
 
-A fresh post-DPL-13D gate is mandatory before any positive-result implementation or broader result-scope claim.
+A fresh/resumed post-DPL-13D DPL-K gate is mandatory before any positive-result implementation or broader result-scope claim.

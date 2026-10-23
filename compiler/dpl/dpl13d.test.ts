@@ -92,7 +92,7 @@ test('DPL-13D changes local planning classification without making local policy 
   }
 })
 
-test('DPL-13D authored scenario facts remove selected acceleration review questions without becoming discharge evidence', () => {
+test('DPL-13D preserves opaque acceleration reviews when synthetic claim values become authored', () => {
   const baseline = composeScreeningCoverageReadiness()
   const fixture = composeDPL13DSecondFixture()
   const heritageReview = 'DPL10-COV-HERITAGE-DESIGNATION-SETTING::ACCELERATION_REVIEW'
@@ -100,18 +100,50 @@ test('DPL-13D authored scenario facts remove selected acceleration review questi
 
   assert.ok(baseline.normalizedCoverage.some((entry) => entry.ownerEntryId === heritageReview))
   assert.ok(baseline.normalizedCoverage.some((entry) => entry.ownerEntryId === noiseReview))
-  assert.ok(!fixture.readiness.normalizedCoverage.some((entry) => entry.ownerEntryId === heritageReview))
-  assert.ok(!fixture.readiness.normalizedCoverage.some((entry) => entry.ownerEntryId === noiseReview))
-  assert.ok(fixture.readiness.dispositionCounts.ACCELERATION_REVIEW_REQUIRED < baseline.dispositionCounts.ACCELERATION_REVIEW_REQUIRED)
+  assert.ok(fixture.readiness.normalizedCoverage.some((entry) => entry.ownerEntryId === heritageReview))
+  assert.ok(fixture.readiness.normalizedCoverage.some((entry) => entry.ownerEntryId === noiseReview))
+  assert.equal(
+    fixture.readiness.dispositionCounts.ACCELERATION_REVIEW_REQUIRED,
+    baseline.dispositionCounts.ACCELERATION_REVIEW_REQUIRED
+  )
+})
 
-  const aggregation = composeScreeningSubstantiveAggregation({
-    canonicalCase: fixture.canonicalCase,
-    readiness: asReadiness(fixture.readiness)
+test('DPL-13D authored adverse planning facts cannot suppress opaque acceleration reviews', () => {
+  const site = loadDPL13DReferenceSiteManifest()
+  const adverseSite = {
+    ...site,
+    claims: site.claims.map((claim) => {
+      if (claim.id === 'RS-HERITAGE-01') {
+        return {
+          ...claim,
+          state: 'AUTHORED' as const,
+          basis: 'DERIVED_SITE_CLAIM' as const,
+          basisDetail: 'test-only adverse synthetic heritage condition',
+          value: { listedBuildingOnParcel: 'PRESENT_IN_SYNTHETIC_SCENARIO' }
+        }
+      }
+      if (claim.id === 'RS-NOISE-01') {
+        return {
+          ...claim,
+          state: 'AUTHORED' as const,
+          basis: 'DERIVED_SITE_CLAIM' as const,
+          basisDetail: 'test-only adverse synthetic acoustic condition',
+          value: { severeNoiseFlag: true, sensitiveReceptorFlag: true }
+        }
+      }
+      return claim
+    })
+  }
+  const rebound = rebindScreeningCoverageReadinessToSyntheticContext(adverseSite, {
+    state: 'CONTROLLED_BOROUGH_ASSIGNED',
+    targetIds: [DPL13D_LOCAL_TARGET_ID]
   })
-  assert.ok(aggregation.aggregationRecords.some((record) =>
-    record.owner === 'NON_PLANNING' &&
-    record.sourceKind === 'OWNER_EVIDENCE_REQUIRED' &&
-    record.aggregationState === 'SUBSTANTIVE_UNRESOLVED'
+
+  assert.ok(rebound.normalizedCoverage.some((entry) =>
+    entry.ownerEntryId === 'DPL10-COV-HERITAGE-DESIGNATION-SETTING::ACCELERATION_REVIEW'
+  ))
+  assert.ok(rebound.normalizedCoverage.some((entry) =>
+    entry.ownerEntryId === 'DPL10-COV-AIR-QUALITY-NOISE-AGENT-OF-CHANGE::ACCELERATION_REVIEW'
   ))
 })
 
