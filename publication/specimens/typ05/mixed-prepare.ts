@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { dirname, extname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { publicationFigurePlacements } from '../../figures.js'
 import { publicationPlatePlacements } from '../../plates.js'
 import { fetchOpenFontCandidate } from '../typ03/open-fonts.js'
@@ -47,7 +47,7 @@ function parseFirstMarkdownTable(markdown: string): { headers: string[]; rows: s
     .replace(/^\|/, '')
     .replace(/\|$/, '')
     .split('|')
-    .map((cell) => stripInline(cell))
+    .map(stripInline)
 
   for (let index = 0; index < lines.length - 1; index += 1) {
     if (!lines[index].includes('|') || !separator.test(lines[index + 1])) continue
@@ -83,17 +83,19 @@ function extractSection(markdown: string, heading: string): string {
 }
 
 function sourceRows(markdown: string, count: number): { citation: string; url: string }[] {
-  const matches = markdown.split('\n')
+  return markdown.split('\n')
     .filter((line) => /https?:\/\//.test(line))
     .map((line) => {
       const url = line.match(/https?:\/\/[^\s)]+/)?.[0] ?? ''
-      const citation = stripInline(line.replace(url, '').replace(/^\s*[-*+]\s*/, '').replace(/[()]+\s*$/, '').trim())
+      const citation = stripInline(
+        line.replace(url, '').replace(/^\s*[-*+]\s*/, '').replace(/[()]+\s*$/, '').trim()
+      )
       return { citation, url, score: url.length }
     })
     .filter((row) => row.url)
     .sort((a, b) => b.score - a.score)
     .slice(0, count)
-  return matches.map(({ citation, url }) => ({ citation, url }))
+    .map(({ citation, url }) => ({ citation, url }))
 }
 
 function bulletItems(section: string, count: number): string[] {
@@ -104,7 +106,7 @@ function bulletItems(section: string, count: number): string[] {
     .slice(0, count)
 }
 
-async function svgDataUri(image: string): Promise<string> {
+async function committedSvgDataUri(image: string): Promise<string> {
   const path = resolve(publicationRoot, image)
   const bytes = await readFile(path)
   return `data:image/svg+xml;base64,${bytes.toString('base64')}`
@@ -117,8 +119,7 @@ const sources = Object.fromEntries(
 await rm(workRoot, { recursive: true, force: true })
 await mkdir(workRoot, { recursive: true })
 
-// Reuse the TYP-03 pinned Source identities, but transport verified bytes directly
-// into proof CSS so Vivliostyle cannot silently fall back through relative paths.
+// Use the exact TYP-03 pins and put the verified bytes directly into proof CSS.
 const fontEnv = await fetchOpenFontCandidate('source')
 const fontSlots = [
   ['TYP03_SERIF_REGULAR', 'TYP05 Serif', 'normal', 400],
@@ -142,7 +143,11 @@ for (const [envName, family, style, weight] of fontSlots) {
         ? { mime: 'font/ttf', format: 'truetype' }
         : null
   if (!transport) throw new Error(`Unsupported TYP-05 font extension: ${extension || '(none)'}`)
-  fontFingerprints[envName] = { sourceName: supplied.split('/').at(-1) ?? supplied, sha256: sha256(bytes) }
+
+  fontFingerprints[envName] = {
+    sourceName: supplied.split('/').at(-1) ?? supplied,
+    sha256: sha256(bytes)
+  }
   const dataUri = `data:${transport.mime};base64,${bytes.toString('base64')}`
   faceRules.push(`@font-face {\n  font-family: "${family}";\n  src: url("${dataUri}") format("${transport.format}");\n  font-style: ${style};\n  font-weight: ${weight};\n  font-display: block;\n}`)
 }
@@ -169,14 +174,15 @@ const listForces = bulletItems(extractSection(sources.listControl, '## Forces'),
 
 const figures = publicationFigurePlacements()
 const longestFigure = [...figures].sort((a, b) => b.caption.length - a.caption.length)[0]
-const longestFigureData = await svgDataUri(longestFigure.image)
+const longestFigureData = await committedSvgDataUri(longestFigure.image)
 
+// Plate imagery is generated elsewhere and is not a TYP-05 input. The proof uses
+// canonical plate metadata against a neutral drawing field so this packet tests
+// only the book furniture it owns, without fabricating or regenerating architecture.
 const plateViews = publicationPlatePlacements().flatMap((placement) => placement.views)
 const numericPlate = plateViews.find((view) => view.scale === '1:100') ?? plateViews[0]
 const ntsPlate = plateViews.find((view) => view.scale === 'NTS')
-if (!ntsPlate) throw new Error('TYP-05B expected an NTS plate view.')
-const numericPlateData = await svgDataUri(numericPlate.image)
-const ntsPlateData = await svgDataUri(ntsPlate.image)
+if (!numericPlate || !ntsPlate) throw new Error('TYP-05B expected numeric and NTS plate furniture examples.')
 
 const tableHtml = `<table class="compact-table">
   <thead><tr>${compactTable.headers.map((cell) => `<th>${escapeHtml(cell)}</th>`).join('')}</tr></thead>
@@ -199,6 +205,11 @@ const sequenceHtml = (lines: string[]): string => `<div class="sequence-block">$
 
 const sourcesHtml = references.map((row) => `<li class="source-row"><span class="source-citation">${escapeHtml(row.citation)}</span><span class="source-url">${escapeHtml(row.url)}</span></li>`).join('\n')
 const listHtml = listForces.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n')
+const plateHtml = (title: string, scale: string, caption: string): string => `<figure class="plate-sample">
+  <header><h2>${escapeHtml(title)}</h2><span class="plate-scale">${escapeHtml(scale)}</span></header>
+  <div class="plate-drawing-placeholder" role="img" aria-label="Neutral drawing field omitted from typography proof"></div>
+  <figcaption>${escapeHtml(caption)}</figcaption>
+</figure>`
 
 const specimen = `<!doctype html>
 <html lang="en-GB">
@@ -258,20 +269,12 @@ const specimen = `<!doctype html>
 
   <section class="specimen-page plate-page">
     <p class="proof-label reading-column">07 · architectural plate furniture</p>
-    <figure class="plate-sample">
-      <header><h2>${escapeHtml(numericPlate.title)}</h2><span class="plate-scale">${escapeHtml(numericPlate.scale)}</span></header>
-      <img src="${numericPlateData}" alt="${escapeHtml(numericPlate.alt)}">
-      <figcaption>${escapeHtml(numericPlate.caption)}</figcaption>
-    </figure>
+    ${plateHtml(numericPlate.title, numericPlate.scale, numericPlate.caption)}
   </section>
 
   <section class="specimen-page plate-page">
     <p class="proof-label reading-column">08 · NTS plate furniture</p>
-    <figure class="plate-sample">
-      <header><h2>${escapeHtml(ntsPlate.title)}</h2><span class="plate-scale">${escapeHtml(ntsPlate.scale)}</span></header>
-      <img src="${ntsPlateData}" alt="${escapeHtml(ntsPlate.alt)}">
-      <figcaption>${escapeHtml(ntsPlate.caption)}</figcaption>
-    </figure>
+    ${plateHtml(ntsPlate.title, ntsPlate.scale, ntsPlate.caption)}
   </section>
 
   <section class="specimen-page reading-column list-control">
@@ -287,11 +290,12 @@ const specimen = `<!doctype html>
 await writeFile(resolve(workRoot, 'specimen.html'), specimen, 'utf8')
 
 const manifest = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   packet: 'TYP-05B',
   candidate: 'source-two-family-minimal-technical-roles',
   format,
   fontTransport: 'verified-bytes-data-uri',
+  plateDrawingBoundary: 'neutral-field; generated drawing assets intentionally excluded from TYP-05 proof inputs',
   bodyAuthority: {
     serif: 'Source Serif 4',
     sans: 'Source Sans 3',
@@ -316,7 +320,11 @@ const manifest = {
     monoFamilyAdmitted: false
   },
   scheduleRows: scheduleRows.map((row) => row[0]),
-  longestFigure: { entryId: longestFigure.entryId, alt: longestFigure.alt, captionChars: longestFigure.caption.length },
+  longestFigure: {
+    entryId: longestFigure.entryId,
+    alt: longestFigure.alt,
+    captionChars: longestFigure.caption.length
+  },
   plateViews: [numericPlate.title, ntsPlate.title],
   sourceHashes: Object.fromEntries(Object.entries(sources).map(([name, content]) => [name, sha256(content)])),
   fontFingerprints
