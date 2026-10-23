@@ -54,7 +54,7 @@ jobs:
             pdffonts "$pdf" | tee "$report"
 
             for required in SourceSerif4-Regular SourceSans3-Regular SourceSans3-Bold; do
-              awk -v required="$required" '$1 ~ required && $4 == "yes" { found=1 } END { exit found ? 0 : 1 }' "$report" || {
+              awk -v required="$required" '$1 ~ required && $(NF-4) == "yes" { found=1 } END { exit found ? 0 : 1 }' "$report" || {
                 echo "Missing embedded required font $required in $pdf" >&2
                 exit 1
               }
