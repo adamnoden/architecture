@@ -337,9 +337,9 @@ export const workstreamStatuses = [
     maturity: 'M4',
     reviewedOn: '2026-10-23',
     currentState:
-      'DPL-13B and DPL-I remain the internally validated boundary for the controlled M4 proposition: the canonical Reference House × synthetic DPL-RS-01 SCREENING owner universe is complete and coverage/readiness composition is internally controlled. DPL-13C now exists as a deterministic runtime candidate that joins that complete scope to actual DPL-13A / DPL-12B findings and emits only provenance-bearing UNRESOLVED @ SCREENING or an explicit non-conclusion state. Its adversarial tests prove incomplete scope fails closed, all-positive scope cannot emit COMPATIBLE, and hard substantive failure cannot imply INCOMPATIBLE without route exhaustion. Whole-site result validation itself is not yet part of the controlled M4 proposition pending DPL-J.',
+      'DPL-13B and DPL-I establish the complete canonical SCREENING owner universe and controlled coverage/readiness composition. DPL-13C now joins that scope to actual DPL-13A / DPL-12B findings and DPL-J has adversarially validated the exact canonical Reference House × synthetic DPL-RS-01 whole-site UNRESOLVED @ SCREENING result. The controlled M4 proposition therefore now includes this one canonical whole-site result while remaining explicitly narrower than generic aggregation authority. COMPATIBLE, INCOMPATIBLE, route exhaustion, real-site deployability and regulatory/planning/legal adequacy remain outside the controlled proposition. DPL-J also exposed two generic semantic debts—target+obligation exactness and WARNING/SUPERSEDED handling—that must be repaired before positive-control or broader result work.',
     nextGate:
-      'Run DPL-J only: adversarially attack the DPL-13C whole-site UNRESOLVED @ SCREENING proposition, including exact blocker ownership, the 17 acceleration plus two no-borough classification blockers, current/future separation, positive-result refusal and hard-failure non-incompatibility. Only DPL-J may decide whether M4 broadens to controlled whole-site UNRESOLVED result validation or what bounded repair must precede that. Keep COMPATIBLE, INCOMPATIBLE, route search/exhaustion, DPL-15+ and broader envelope work held.',
+      'Execute DPL-13C.1 only: harden explicit obligation joins to exact targetId + obligationId identity, fail closed on zero/multiple matches, make WARNING non-blocking under DPL-03, exclude SUPERSEDED as current authority, and regression-lock those semantics while proving the canonical DPL-RS-01 UNRESOLVED @ SCREENING result is unchanged. Then run a fresh gate before deciding whether a second synthetic positive-control fixture is the next proof object. Keep COMPATIBLE, INCOMPATIBLE, route search/exhaustion, DPL-15+ and broader envelope work held.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -383,7 +383,11 @@ export const workstreamStatuses = [
         'project/dpl/dpl-h-post-planning-identity-admission-review.md',
         'project/dpl/dpl-13b-screening-coverage-readiness.md',
         'compiler/dpl/coverage-readiness.ts',
-        'project/dpl/dpl-i-post-13b-unresolved-admission-review.md'
+        'project/dpl/dpl-i-post-13b-unresolved-admission-review.md',
+        'project/dpl/dpl-13c-screening-substantive-aggregation.md',
+        'compiler/dpl/substantive-aggregation.ts',
+        'compiler/dpl/dpl13c.test.ts',
+        'project/dpl/dpl-j-post-13c-result-validation.md'
       ]
     }
   },
