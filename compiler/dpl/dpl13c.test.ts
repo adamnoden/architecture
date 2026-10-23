@@ -122,20 +122,27 @@ test('DPL-13C keeps due-now non-planning families unresolved when external evide
   }
 })
 
-test('DPL-13C preserves acceleration review as due-classification uncertainty without executing trigger prose', () => {
+test('DPL-13C preserves acceleration review and base due-classification uncertainty without executing trigger prose', () => {
   const result = composeScreeningSubstantiveAggregation()
-  const acceleration = result.aggregationRecords.filter((record) =>
+  const classification = result.aggregationRecords.filter((record) =>
+    record.aggregationState === 'DUE_CLASSIFICATION_UNRESOLVED'
+  )
+  const acceleration = classification.filter((record) =>
     record.coverageDisposition === 'ACCELERATION_REVIEW_REQUIRED'
+  )
+  const baseClassification = classification.filter((record) =>
+    record.coverageDisposition === 'DUE_CLASSIFICATION_UNRESOLVED'
   )
 
   assert.ok(acceleration.length > 0)
-  for (const record of acceleration) {
+  assert.ok(baseClassification.length > 0)
+  for (const record of classification) {
     assert.equal(record.sourceKind, 'OWNER_CLASSIFICATION')
     assert.equal(record.sourceResult, 'DUE_CLASSIFICATION_UNRESOLVED')
-    assert.equal(record.aggregationState, 'DUE_CLASSIFICATION_UNRESOLVED')
     assert.equal(record.blockerClass, 'DUE_CLASSIFICATION_UNRESOLVED')
   }
-  assert.equal(result.blockerCounts.dueClassificationUnresolved, acceleration.length)
+  assert.equal(classification.length, acceleration.length + baseClassification.length)
+  assert.equal(result.blockerCounts.dueClassificationUnresolved, classification.length)
 })
 
 test('DPL-13C preserves direct DPL-08B datum authority without turning it into substantive discharge', () => {
