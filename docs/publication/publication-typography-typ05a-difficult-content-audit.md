@@ -1,10 +1,11 @@
 <!-- nav-exclude: redirect -->
 # TYP-05A — difficult-content inventory and failure map
 
-Status: **candidate closeout — merge required**  
+Status: **COMPLETE — inventory/failure map merged**  
 Programme authority: GitHub issue **#425 — TYP — Publication Typography Programme**  
 Owning packet: **#489 — TYP-05 — technical / mixed-content typography**  
 Audit packet: **#494 — TYP-05A — difficult-content inventory and failure map**  
+Merged via PR **#495** as `73be228a0841662cb38dce14de9c0a6a9a17040a`  
 Inherited body authority: `docs/publication/publication-typography-typ03f-source-selection.md`  
 Inherited hierarchy authority: `docs/publication/publication-typography-typ04c-hierarchy-freeze.md`
 
