@@ -82,16 +82,15 @@ const transformSvg = (name: keyof typeof sourcePaths, canonical: string): string
     .replaceAll(legacyFamily, candidateFamily)
 
   if (transformed.includes(legacyFamily)) throw new Error(`TYP-06B ${name} retained a legacy Arial-family declaration.`)
-  if ((transformed.split(candidateFamily).length - 1) !== 3) {
+  const transformedWithoutInjectedCss = transformed.replace(`<style>${injectedCss}`, '<style>')
+  if ((transformedWithoutInjectedCss.split(candidateFamily).length - 1) !== 3) {
     throw new Error(`TYP-06B ${name} did not map all three semantic text roles to the candidate family.`)
   }
 
   // Prove the specimen transformation is typography-only. Removing the injected
   // face/numeral rules and restoring the released working-family declaration must
   // reproduce the protected canonical SVG bytes exactly.
-  const reversed = transformed
-    .replace(`<style>${injectedCss}`, '<style>')
-    .replaceAll(candidateFamily, legacyFamily)
+  const reversed = transformedWithoutInjectedCss.replaceAll(candidateFamily, legacyFamily)
   if (reversed !== canonical) {
     throw new Error(`TYP-06B ${name} transformation changed more than the authorised typography seam.`)
   }
