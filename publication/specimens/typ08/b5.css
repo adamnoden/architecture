@@ -12,7 +12,10 @@
 }
 
 /* Match the TYP-08C named pages to the authoritative B5 proof geometry. */
-@page typ08-division,
+@page typ08-division {
+  size: 176mm 250mm;
+}
+
 @page typ08-imprint {
   size: 176mm 250mm;
 }
