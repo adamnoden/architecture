@@ -2,29 +2,24 @@
 
 **Issue:** #506  
 **Depends on:** DPL-K #502 / PR #505  
-**Landed DPL-K baseline:** `6eb965582819df4e5b12bd26b8d9e19cb352be42`  
-**Status:** **MECHANISM IMPLEMENTED; PROJECT-AUTHOR REVIEW NOT YET AUTHORED**
+**Mechanism merge:** PR #510 / `5a9f6cb6c1392a0c60c8a8a961f3de4176d80830`  
+**Status:** **PROJECT-AUTHOR-DELEGATED REVIEW COMPLETE — 16 / 16 PASS; POST-13E GATE REQUIRED**
 
 ## Purpose
 
-DPL-K established that sixteen of DPL-RS-02's twenty-seven substantive unresolved blockers are not missing compiler evaluators. DPL-02 deliberately classifies them as:
+DPL-13E provides a deterministic evidence seam for the sixteen DPL-02 clauses deliberately classified as:
 
 ```text
 resolutionMode = ARCHITECTURAL_REVIEW
 executableStatus = NOT_NATIVE
+unresolvedBlocksPositiveConformance = true
 ```
 
-DPL-13E therefore introduces a deterministic evidence seam for **human-authored architectural conformance judgement** without reclassifying that judgement as native computation.
+The compiler validates, binds, fingerprints and aggregates architectural judgement. It does not turn that judgement into native computation.
 
-The governing rule is:
+## Exact review universe
 
-> **The machine may validate, bind, fingerprint and aggregate an architectural review. It may not author the architectural verdict.**
-
-## Exact authority scope
-
-The review universe is derived from the current DPL-02 conformance-coverage registry, not maintained as a second hand-written runtime list.
-
-The resulting sixteen clauses are:
+The runtime derives the complete scope from DPL-02 authority:
 
 - `RH-I01`
 - `RH-I03`
@@ -43,15 +38,73 @@ The resulting sixteen clauses are:
 - `RH-PROT-13`
 - `RH-PROT-15`
 
-The runtime derives this set only where all three DPL-02 conditions hold:
+The declared ledger scope must equal this set exactly.
+
+## Mechanism
+
+The DPL-13E ledger records and fingerprints:
+
+- `SCREENING` assurance profile;
+- exact site and candidate identity;
+- exact Reference House source identity;
+- exact DPL-02 coverage and authority identities;
+- reviewer identity, role and authority basis;
+- authored date;
+- clause-level `PASS | UNRESOLVED | FAIL`;
+- reasons and evidence references.
+
+It composes above unchanged DPL-12B candidate conformance and through unchanged DPL-13C aggregation semantics.
+
+An authored review affects only the exact matching Reference House blocker:
+
+- `PASS` → `POSITIVE_RESOLVED`;
+- `UNRESOLVED` → `SUBSTANTIVE_UNRESOLVED`;
+- `FAIL` → `SUBSTANTIVE_FAILURE` at candidate/conformance level.
+
+Missing reviews remain unresolved. A FAIL cannot create site `INCOMPATIBLE`. An all-PASS architectural ledger cannot create `COMPATIBLE`.
+
+## Candidate / authority binding
+
+The reviewed DPL-RS-02 candidate is:
 
 ```text
-resolutionMode = ARCHITECTURAL_REVIEW
-executableStatus = NOT_NATIVE
-unresolvedBlocksPositiveConformance = true
+site fingerprint      = c1bc2e7fe0fc5778cda25de81ea0e4f0161962a59d5de80d6bea28d2df33e142
+candidate fingerprint = c0b4618cb8203e4dfddcf7e7ef852fa6c92e905fcd8e3a7e5322154e11903d81
+case fingerprint      = 0ee4d52ed66097ff735fee2d505ce6dbcc0ca5fac254dd9ea4308c7a90c04ecf
 ```
 
-The ledger's declared review scope must equal that complete set exactly.
+The final project review additionally locks the reviewed DPL-02 source bytes:
+
+```text
+DPL-02 authority git blob = f231541a98cb5d3a5adb7549ff37b143c6f84260
+DPL-02 coverage git blob  = 983ba9286519a5e7f17334e7364cc149a32274aa
+```
+
+The project-review factory refuses changed candidate or DPL-02 authority bytes before constructing the normal semantic-fingerprint-bound ledger. The review therefore cannot silently float onto a later Reference House or conformance contract.
+
+## Final architectural review
+
+The project author instructed the Architecture agent to proceed through the DPL packets. The resulting review is recorded as delegated project architectural authority:
+
+```text
+reviewer = PROJECT_AUTHOR_DELEGATED_ARCHITECTURE_AGENT
+role     = PROJECT_AUTHOR_DELEGATE_ARCHITECTURAL_REVIEW
+```
+
+This authority is project architectural judgement only. It is not independent professional, structural, statutory, planning or site evidence.
+
+The complete evidence-bearing review is:
+
+[`dpl-13e-rs02-project-review-2026-10-24.md`](dpl-13e-rs02-project-review-2026-10-24.md)
+
+Result:
+
+```text
+16 / 16 architectural-review clauses = PASS
+pending architectural-review clauses = 0
+```
+
+The central finding is narrow: DPL-RS-02 authorises only the `RH-V02` rigid placement/cardinal-orientation route and does not author an architectural mutation. Each non-native invariant/order was nevertheless checked individually against its owning Reference House record rather than passed merely because the candidate originated from Reference House source.
 
 ## Explicit exclusions
 
@@ -64,92 +117,17 @@ DPL-13E cannot review or discharge:
 - opaque acceleration-trigger disposition;
 - any site incompatibility or route-exhaustion proposition.
 
-These remain with their existing owning authorities.
+## Aggregation result after the real review
 
-## Ledger contract
-
-A DPL-13E ledger records:
-
-- schema and ledger id;
-- `SCREENING` assurance profile;
-- exact site id;
-- exact candidate id, revision and fingerprint;
-- exact Reference House source fingerprint;
-- exact DPL-02 coverage-registry fingerprint;
-- exact DPL-02 authority-source fingerprint;
-- reviewer identity, role and authority basis;
-- authored timestamp;
-- the complete architectural-review scope;
-- zero or more authored clause reviews;
-- per-review result: `PASS | UNRESOLVED | FAIL`;
-- per-review reason and evidence/source references;
-- deterministic review-record and ledger fingerprints.
-
-Review order and evidence-reference order are canonicalised because they are semantically set-like. Material changes to reason, evidence, reviewer authority, candidate identity or governing DPL-02 authority alter identity.
-
-## Candidate / authority binding
-
-The current controlled DPL-RS-02 identities are:
-
-```text
-site fingerprint      = c1bc2e7fe0fc5778cda25de81ea0e4f0161962a59d5de80d6bea28d2df33e142
-candidate fingerprint = c0b4618cb8203e4dfddcf7e7ef852fa6c92e905fcd8e3a7e5322154e11903d81
-case fingerprint      = 0ee4d52ed66097ff735fee2d505ce6dbcc0ca5fac254dd9ea4308c7a90c04ecf
-```
-
-These are frozen evidence for the present packet, but the runtime does not trust decorative copied hashes. It compares the ledger against the actual composed DPL-RS-02 candidate and current DPL-02 registry/authority identities and fails closed on mismatch.
-
-## Composition semantics
-
-DPL-12B remains unchanged.
-
-It continues to report these sixteen clauses as `OPEN / EXTERNAL_OR_UNMODELLED`, which correctly states that they are not natively evaluated.
-
-DPL-13E composes **above** that layer:
-
-```text
-DPL-12B candidate conformance
-        ↓
-DPL-13C complete SCREENING blocker ledger
-        ↓
-DPL-13E exact authored architectural-review overlay
-        ↓
-existing DPL-13C aggregation semantics
-```
-
-An authored review changes only the exact matching Reference House aggregation record:
-
-- `PASS` → `POSITIVE_RESOLVED`;
-- `UNRESOLVED` → remains `SUBSTANTIVE_UNRESOLVED`;
-- `FAIL` → `SUBSTANTIVE_FAILURE` at candidate/conformance level.
-
-Missing reviews remain exactly as the original DPL-12B `OPEN` records. Nothing disappears merely because a ledger exists.
-
-The source record carries both ledger and clause-review fingerprints so the human evidence remains visible in the deterministic result identity.
-
-## Result restraint
-
-DPL-13E does not add a new whole-site result rule.
-
-The existing DPL-13C aggregator remains authoritative.
-
-Adversarially, even a **test-only all-PASS** architectural ledger changes the repaired RS-02 blocker counts only from:
-
-```text
-substantiveUnresolved        = 27
-classificationUnresolved     = 17
-substantiveFailure           = 0
-```
-
-to:
+The sixteen architectural PASS records reduce substantive unresolved blockers from 27 to 11:
 
 ```text
 substantiveUnresolved        = 11
-classificationUnresolved     = 17
+dueClassificationUnresolved  = 17
 substantiveFailure           = 0
 ```
 
-and still yields:
+The whole-site result remains:
 
 ```text
 UNRESOLVED @ SCREENING
@@ -158,46 +136,24 @@ incompatible = NOT_ADMITTED
 routeExhaustion = NOT_IMPLEMENTED
 ```
 
-Likewise, an authored architectural `FAIL` is not site incompatibility. It may show that the present candidate does not conform to the controlled Reference House proposition, but DPL still lacks general route-exhaustion / invariant-site-blocker authority.
-
-## Current project review state
-
-No project-author architectural verdict is authored by this packet.
-
-Therefore the **actual project state remains pending** for all sixteen architectural-review clauses.
-
-This is deliberate. DPL-13E implements the controlled place where a genuine project-author review can be recorded; it does not manufacture one because the software machinery is ready to receive it.
-
-Synthetic PASS / UNRESOLVED / FAIL ledgers exist only inside adversarial tests and carry explicit test-only reviewer authority. They are not project evidence.
+This is the intended outcome. Architectural conformance evidence has entered the deterministic evidence graph without being confused with whole-site compatibility.
 
 ## Adversarial proof
 
-The DPL-13E tests prove at minimum:
+The mechanism and project-review tests prove:
 
-- the exact sixteen-clause scope is derived from DPL-02 authority;
-- a full test-only PASS ledger cannot emit `COMPATIBLE`;
-- a partial ledger resolves only reviewed clauses;
-- omitted clauses remain explicitly unresolved;
-- authored `UNRESOLVED` stays unresolved;
-- authored `FAIL` cannot emit `INCOMPATIBLE`;
-- `RH-PROT-08`, `RH-PROT-14` and foreign owner clauses are rejected;
-- duplicate review clauses are rejected;
-- candidate, Reference House and DPL-02 authority mismatches are rejected;
-- review/evidence ordering is identity-neutral;
+- exact review scope is derived from DPL-02 authority;
+- candidate / Reference House / DPL-02 mismatch fails closed;
+- the final review is byte-locked to the reviewed DPL-02 authority;
+- duplicate and foreign clauses are rejected;
+- order is identity-neutral;
 - material reason/evidence changes invalidate identity;
-- review composition cannot mutate candidate identity or select another architecture.
+- all-PASS still cannot emit `COMPATIBLE`;
+- architectural FAIL cannot emit `INCOMPATIBLE`;
+- review composition cannot mutate candidate geometry or select another route.
 
-## What remains after the mechanism
+## Close condition
 
-DPL-13E does **not** remove any actual project blocker until a genuine architectural review is authored.
+DPL-13E is complete when this exact review head passes repository validation and merges.
 
-After that review is supplied, a fresh gate must decide the next dependency-correct move. The remaining candidate paths are expected to include:
-
-- typed owner-side disposition of the seventeen acceleration reviews;
-- the two existing source/applicability integration gaps;
-- bounded local-quantitative integration;
-- external/professional/site/legal evidence;
-- planning judgement/evidence;
-- DPL-15 real-site work only when real evidence has become the dominant unanswered question.
-
-`COMPATIBLE`, `INCOMPATIBLE`, route exhaustion, DPL-15, DPL-16 and downstream publication claims remain held.
+A fresh post-DPL-13E gate must then choose the next dependency-correct bounded packet from the remaining classification, integration, external-evidence and real-site paths. DPL-15 remains held until that gate decides otherwise.
