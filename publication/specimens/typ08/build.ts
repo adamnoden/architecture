@@ -17,6 +17,10 @@ execFileSync('npx', ['tsx', 'publication/specimens/typ08/prepare.ts'], {
   cwd: repoRoot,
   stdio: 'inherit'
 })
+execFileSync('npx', ['tsx', 'publication/specimens/typ08/correct.ts'], {
+  cwd: repoRoot,
+  stdio: 'inherit'
+})
 
 for (const format of ['a4', 'b5'] as const) {
   const env = { ...process.env, TYP08_FORMAT: format }
@@ -27,4 +31,4 @@ for (const format of ['a4', 'b5'] as const) {
   })
 }
 
-console.log('Built TYP-08A full-book candidate in A4 and conservative B5.')
+console.log('Built TYP-08C corrected full-book candidate in A4 and conservative B5.')
