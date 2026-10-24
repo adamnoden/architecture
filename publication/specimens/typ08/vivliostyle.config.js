@@ -9,7 +9,8 @@ const proofRoot = resolve(publicationRoot, '.proof/typ08a')
 const format = process.env.TYP08_FORMAT === 'a4' ? 'a4' : 'b5'
 const build = JSON.parse(readFileSync(resolve(workRoot, 'build.json'), 'utf8'))
 
-if (build.mode !== 'full') throw new Error(`TYP-08A requires full mode, received ${build.mode}.`)
+if (build.mode !== 'full') throw new Error(`TYP-08C requires full mode, received ${build.mode}.`)
+if (!build.imprintPage) throw new Error('TYP-08C imprint/provenance page was not prepared.')
 
 const contentEntries = build.entries.map((entry) => ({
   path: entry.source,
@@ -23,6 +24,10 @@ const entries = [
     rel: 'titlepage'
   },
   {
+    path: build.imprintPage,
+    title: 'Imprint / provenance'
+  },
+  {
     path: build.contentsPage,
     output: 'contents.html',
     title: 'Contents',
@@ -32,7 +37,7 @@ const entries = [
 ]
 
 export default defineConfig({
-  title: `TYP-08A full-book candidate — ${format.toUpperCase()}`,
+  title: `TYP-08C corrected full-book candidate — ${format.toUpperCase()}`,
   language: build.language,
   size: format === 'b5' ? '176mm,250mm' : 'A4',
   entryContext: resolve(workRoot, 'source'),
@@ -40,6 +45,7 @@ export default defineConfig({
   theme: [
     resolve(workRoot, 'typ08a/fonts.css'),
     resolve(import.meta.dirname, 'common.css'),
+    resolve(import.meta.dirname, 'corrections.css'),
     resolve(import.meta.dirname, `${format}.css`)
   ],
   toc: {
