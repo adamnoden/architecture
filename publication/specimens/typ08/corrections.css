@@ -39,10 +39,16 @@
   letter-spacing: -0.012em;
 }
 
-/* Frozen TYP-04 entry threshold. The marker, not the heading, owns the page break
-   so the running-string update occurs on the opening page rather than the prior page. */
+/* Frozen TYP-04 entry threshold. Internal entries need an explicit page break.
+   A first H1 at a Vivliostyle document boundary already starts a new publication
+   page; do not add a second break merely because the same semantic entry marker
+   supplies running context. */
 .typ08-entry-context {
   break-before: page;
+}
+
+body > .typ08-entry-context:first-child {
+  break-before: auto;
 }
 
 .typ08-entry-context + h1 {
