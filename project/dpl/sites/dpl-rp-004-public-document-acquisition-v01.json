@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "dpl.realSitePlanningDocumentAcquisition.v1",
+  "siteId": "DPL-RP-004",
+  "assessmentId": "DPL-RP-004-DPL15D-v0.1",
+  "applicationRef": "P0366.26",
+  "assuranceProfile": "SCREENING",
+  "retrievalDate": "2026-10-24",
+  "baseline": {
+    "siteRecordPath": "project/dpl/sites/dpl-rp-004-4-nelmes-way-hornchurch.md",
+    "siteRecordGitBlobSha": "36b7fb53af2cd4522e671c721b828d07778757f0",
+    "dpl15cAssessmentPath": "project/dpl/sites/dpl-corpus-1-candidate-readiness-v01.json"
+  },
+  "sources": [
+    {
+      "id": "H1",
+      "url": "https://development.havering.gov.uk/OcellaWeb/planningDetails?from=planningSearch&reference=P0366.26",
+      "publisher": "London Borough of Havering",
+      "relationship": "FIRST_PARTY",
+      "authorityClass": "LOCAL_AUTHORITY_APPLICATION_REGISTER",
+      "retrievalState": "RECOVERED_AND_INSPECTABLE",
+      "geometryAuthority": "NO_GEOMETRY_AUTHORITY",
+      "recoveredFacts": [
+        "Reference P0366.26",
+        "Status: approved with conditions",
+        "Location: 4 Nelmes Way Hornchurch RM11 2QZ",
+        "Received 2026-03-25",
+        "Validated 2026-04-07",
+        "Decided 2026-07-09",
+        "Proposal: replacement dwelling with basement, habitable loft, ancillary outbuilding, bin/cycle storage and associated works following demolition of existing dwelling"
+      ],
+      "limitations": [
+        "Application-details record contains no controlled placement dimensions",
+        "No individual planning-document bytes were recovered from this source in the bounded pass"
+      ]
+    },
+    {
+      "id": "H2",
+      "url": "https://www.havering.gov.uk/downloads/file/7391/planning-applications-received-7-to-13-april-2026",
+      "publisher": "London Borough of Havering",
+      "relationship": "FIRST_PARTY",
+      "authorityClass": "LOCAL_AUTHORITY_WEEKLY_APPLICATION_LIST",
+      "retrievalState": "RECOVERED_AND_INSPECTABLE",
+      "geometryAuthority": "NO_GEOMETRY_AUTHORITY",
+      "recoveredFacts": [
+        "Reference P0366.26",
+        "Location 4 Nelmes Way Hornchurch",
+        "Same replacement-dwelling proposal lineage",
+        "Agent identified as Mr Asad Malik"
+      ],
+      "limitations": [
+        "Application-lineage evidence only",
+        "No site/block-plan dimensions or levels"
+      ]
+    },
+    {
+      "id": "H3",
+      "url": "https://planindex.co.uk/planning-applications/havering/p0366-26",
+      "publisher": "PlanIndex",
+      "relationship": "THIRD_PARTY",
+      "authorityClass": "PUBLIC_APPLICATION_DOCUMENT_INDEX",
+      "retrievalState": "RECOVERED_AND_INSPECTABLE",
+      "geometryAuthority": "NO_GEOMETRY_AUTHORITY",
+      "recoveredFacts": [
+        "PlanIndex reports 20 documents on file for P0366.26",
+        "Index states that plans, drawings and public comments remain on the council portal",
+        "Application status shown as granted"
+      ],
+      "limitations": [
+        "Third-party index is not authority for drawing contents",
+        "Document count cannot prove that a particular dimensioned plan exists",
+        "Individual document list/bytes are not exposed by the accessible index result"
+      ]
+    },
+    {
+      "id": "H4",
+      "url": "https://development.havering.gov.uk/OcellaWeb/planningSearch",
+      "publisher": "London Borough of Havering",
+      "relationship": "FIRST_PARTY",
+      "authorityClass": "LOCAL_AUTHORITY_DOCUMENT_ACCESS_ROUTE",
+      "retrievalState": "INDEXED_NOT_DOCUMENT_RETRIEVABLE",
+      "geometryAuthority": "NO_GEOMETRY_AUTHORITY",
+      "recoveredFacts": [
+        "Havering's planning search instructs users to select an application reference to view associated documents",
+        "The P0366.26 application record is publicly indexed"
+      ],
+      "limitations": [
+        "The bounded retrieval pass did not expose an itemised approved-plan schedule or inspectable document bytes for P0366.26",
+        "Direct searches for P0366.26 approved plans, drawing numbers and site plans returned no document-level planning source"
+      ]
+    }
+  ],
+  "documentTargets": [
+    {
+      "id": "T1_APPROVED_PLAN_SCHEDULE",
+      "priority": 1,
+      "state": "NOT_FOUND_IN_BOUNDED_SEARCH",
+      "requiredContent": "decision notice or condition identifying approved drawings/revisions"
+    },
+    {
+      "id": "T2_SITE_BLOCK_PLAN",
+      "priority": 2,
+      "state": "INDEXED_CORPUS_NOT_ITEMISED",
+      "requiredContent": "controlled location/site/block plan with usable scale or dimensions"
+    },
+    {
+      "id": "T3_DIMENSIONED_SITE_GEOMETRY",
+      "priority": 3,
+      "state": "NOT_FOUND_IN_BOUNDED_SEARCH",
+      "requiredContent": "explicit plot shape, width/depth or other dimensional geometry sufficient for a 12.0m x 10.8m footprint test"
+    },
+    {
+      "id": "T4_LEVEL_DATUM",
+      "priority": 4,
+      "state": "NOT_FOUND_IN_BOUNDED_SEARCH",
+      "requiredContent": "explicit levels, site section or topographical datum usable at screening"
+    },
+    {
+      "id": "T5_ACCESS_GEOMETRY",
+      "priority": 5,
+      "state": "NOT_FOUND_IN_BOUNDED_SEARCH",
+      "requiredContent": "explicit physical driveway/access/street relationship sufficient for placement"
+    }
+  ],
+  "dimensionState": {
+    "R1_CONTROLLED_SPATIAL_IDENTITY": "NOT_SATISFIED",
+    "R2_FOOTPRINT_TEST_GEOMETRY": "NOT_SATISFIED",
+    "R3_REAL_ORIENTATION_FRAME": "NOT_SATISFIED",
+    "R4_DATUM_LEVEL_EVIDENCE": "NOT_SATISFIED",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "NOT_SATISFIED",
+    "R6_SITE_IDENTITY_COHERENCE": "SATISFIED"
+  },
+  "result": "RP004_NOT_READY_DOCUMENT_RETRIEVAL_BOUNDARY",
+  "resultReason": "The current official register and weekly-list evidence prove the application identity/status, and a third-party index proves a bounded 20-document planning file exists, but the bounded public retrieval pass cannot obtain an itemised approved-plan schedule or inspectable dimensioned planning drawings. The system therefore refuses both a geometry verdict and candidate authoring.",
+  "unchangedEvidenceBoundary": {
+    "legalTitleControl": "UNRESOLVED",
+    "privateRights": "UNRESOLVED",
+    "currentPhysicalState": "UNRESOLVED",
+    "surveyGradeGeometry": "UNRESOLVED",
+    "groundDrainageSewerUtilities": "UNRESOLVED",
+    "structuralAdequacy": "UNRESOLVED"
+  },
+  "proofBoundary": {
+    "referenceHouseCandidate": "NOT_AUTHORED",
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "deploymentEnvelopeDpl16": "HELD",
+    "marketingGeometryAuthority": "FORBIDDEN",
+    "pixelDerivedMeasurement": "FORBIDDEN"
+  }
+}
