@@ -38,7 +38,7 @@ It then tests the smallest role set earned by TYP-05A:
 - **Plate furniture is book typography.** Drawing-internal annotation sizes remain PLT authority and are not frozen here.
 - **Generated plate drawings are not TYP-05 inputs.** The plate-furniture specimens use canonical title/scale/caption metadata against a neutral drawing field. This prevents the typography harness from regenerating or fabricating Reference House geometry. Actual drawing adjacency is re-proved in the later representative-signature and PLT/TYP interface gates.
 
-Candidate metrics are recorded in each generated `manifest.json`. They are not production tokens and remain unfrozen until physical B5 review.
+The candidate metrics recorded in each generated `manifest.json` were physically accepted at actual-size B5 on 24 October 2026 and are frozen by `docs/publication/publication-typography-typ05c-mixed-content-freeze.md`. They are specimen-contract values, not yet production theme tokens; production-wide integration remains later TYP work.
 
 ## Build
 
@@ -59,6 +59,6 @@ The CI proof performs a second, finished-PDF check with `pdffonts`. A build is n
 
 ## Evidence boundary
 
-A green build proves deterministic composition with the intended Source faces. It does not prove that the new technical-role metrics are aesthetically or physically correct.
+A green build proves deterministic composition with the intended Source faces. It does not by itself prove that technical-role metrics are aesthetically or physically correct.
 
-The B5 proof must be inspected at 100% / actual size before any TYP-05 role is frozen. If one case fails, revise the smallest role that explains the failure rather than reopening the body or hierarchy system.
+The exact B5 proof was reviewed at 100% / actual size and accepted with `LGTM` on 24 October 2026. Any later divergence from the frozen values is a TYP-05 freeze break unless downstream integration evidence demonstrates a concrete conflict that earns reopening the smallest affected role.
