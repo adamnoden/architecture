@@ -1,0 +1,55 @@
+name: TYP-08 full-book candidate
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/typ08-full-book-candidate.yml'
+      - 'publication/**'
+      - 'docs/**'
+      - 'project/**'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Install PDF inspectors
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Build exact A4 and B5 whole-book candidates
+        run: npx tsx publication/specimens/typ08/build.ts
+
+      - name: Verify finished PDFs
+        run: npx tsx publication/specimens/typ08/verify.ts
+
+      - name: Render B5 review corpus
+        run: npx tsx publication/specimens/typ08/render.ts
+
+      - name: Upload whole-book proof family
+        uses: actions/upload-artifact@v4
+        with:
+          name: typ08a-full-book-candidate
+          path: |
+            publication/.proof/typ08a/a4/typ08a-full-book-a4.pdf
+            publication/.proof/typ08a/b5/typ08a-full-book-b5.pdf
+            publication/.proof/typ08a/manifest.json
+            publication/.proof/typ08a/verification.json
+            publication/.proof/typ08a/review-index.json
+            publication/.proof/typ08a/b5-review/*.jpg
+          if-no-files-found: error
+          retention-days: 90

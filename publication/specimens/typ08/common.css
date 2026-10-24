@@ -1,0 +1,574 @@
+:root {
+  --typ08-text: #000;
+  --typ08-muted: #555;
+  --typ08-rule: #888;
+  --typ08-faint: #aaa;
+}
+
+html {
+  color: var(--typ08-text);
+  background: #fff;
+  font-family: var(--typ08-serif);
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  max-width: var(--typ08-measure);
+  margin: 0 auto;
+  color: var(--typ08-text);
+  background: #fff;
+  font-family: var(--typ08-serif);
+  font-size: 10.5pt;
+  line-height: 1.5;
+  text-align: left;
+  hyphens: none;
+}
+
+p,
+li,
+dd {
+  orphans: 3;
+  widows: 3;
+}
+
+p { margin: 0 0 0.75em; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+a {
+  color: inherit;
+  overflow-wrap: anywhere;
+  text-decoration-thickness: 0.35pt;
+  text-underline-offset: 0.12em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  break-after: avoid-page;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 8mm;
+  font-family: var(--typ08-serif);
+  font-size: 18pt;
+  line-height: 1.12;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+}
+
+h1[id^="part-"] {
+  break-before: right;
+  margin-top: 31mm;
+  margin-bottom: 16mm;
+  max-width: 115mm;
+  font-size: 24pt;
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+}
+
+h2 {
+  margin: 8mm 0 2.5mm;
+  font-family: var(--typ08-sans);
+  font-size: 11pt;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin: 6mm 0 2mm;
+  font-family: var(--typ08-sans);
+  font-size: 9.5pt;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+ul,
+ol {
+  margin: 0.5em 0 0.9em;
+  padding-left: 1.45em;
+}
+
+li + li { margin-top: 0.18em; }
+
+blockquote {
+  margin: 5mm 0 6mm;
+  padding-left: 6mm;
+  border-left: 0.35pt solid #000;
+}
+
+blockquote > :last-child { margin-bottom: 0; }
+
+hr {
+  width: 28mm;
+  height: 0;
+  margin: 9mm 0;
+  border: 0;
+  border-top: 0.35pt solid #000;
+}
+
+code {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+pre {
+  max-width: 100%;
+  margin: 4mm 0 5mm;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--typ08-serif);
+  font-size: 9.2pt;
+  line-height: 1.38;
+}
+
+/* Title / edition page ------------------------------------------------ */
+
+body.publication-title-page {
+  page: title;
+  max-width: none;
+  margin: 0;
+}
+
+.publication-title {
+  box-sizing: border-box;
+  min-height: var(--typ08-live-height);
+  padding-top: 19mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.publication-title__edition {
+  margin: 0 0 5mm;
+  font-family: var(--typ08-sans);
+  font-size: 7.5pt;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.publication-title h1 {
+  max-width: 120mm;
+  margin: 0;
+  font-family: var(--typ08-serif);
+  font-size: 31pt;
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
+
+.publication-title__meta {
+  font-family: var(--typ08-sans);
+  font-size: 8.5pt;
+  line-height: 1.45;
+}
+
+.publication-title__meta p { margin: 0.15em 0; }
+.publication-title__meta code { font-family: inherit; font-size: inherit; }
+
+/* Generated contents ------------------------------------------------- */
+
+body.publication-contents-page {
+  page: contents;
+  max-width: none;
+  margin: 0;
+}
+
+body.publication-contents-page > h1,
+nav[role="doc-toc"] > h1 { display: none; }
+
+nav[role="doc-toc"] {
+  max-width: var(--typ08-measure);
+  margin: 0 auto;
+  font-family: var(--typ08-sans);
+}
+
+nav[role="doc-toc"] > h2 {
+  margin: 0 0 9mm;
+  font-family: var(--typ08-serif);
+  font-size: 20pt;
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+nav[role="doc-toc"] ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav[role="doc-toc"] li {
+  break-inside: avoid;
+  margin: 0;
+}
+
+nav[role="doc-toc"] > ol > li:first-child:not(:has(a)) { display: none; }
+
+nav[role="doc-toc"] a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 5mm;
+  color: inherit;
+  text-decoration: none;
+}
+
+nav[role="doc-toc"] > ol > li > a {
+  margin-top: 2.8mm;
+  font-size: 9.5pt;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+nav[role="doc-toc"] a::after {
+  content: target-counter(attr(href), page);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+nav[role="doc-toc"] > ol > li > ol { display: none; }
+
+nav[role="doc-toc"] > ol > li > a[href*="docs/manuscript/part-i.html"] + ol,
+nav[role="doc-toc"] > ol > li > a[href*="docs/manuscript/part-ii.html"] + ol,
+nav[role="doc-toc"] > ol > li > a[href*="docs/manuscript/part-v.html"] + ol {
+  display: block;
+  margin-top: 1.2mm;
+  padding-left: 6mm;
+}
+
+nav[role="doc-toc"] > ol > li > a[href*="docs/manuscript/part-i.html"] + ol > li:first-child,
+nav[role="doc-toc"] > ol > li > a[href*="docs/manuscript/part-ii.html"] + ol > li:first-child,
+nav[role="doc-toc"] > ol > li > a[href*="docs/manuscript/part-v.html"] + ol > li:first-child {
+  display: none;
+}
+
+nav[role="doc-toc"] > ol > li > ol a,
+nav[role="doc-toc"] > ol > li > a[href*="docs/patterns/"]:not([href*="README.html"]),
+nav[role="doc-toc"] > ol > li > a[href*="docs/reference-house/"]:not([href*="README.html"]) {
+  margin-top: 1.2mm;
+  padding-left: 6mm;
+  font-size: 9pt;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+nav[role="doc-toc"] > ol > li > a[href*="docs/patterns/strategies/"]:not([href*="README.html"]),
+nav[role="doc-toc"] > ol > li > a[href*="docs/patterns/candidates/"]:not([href*="README.html"]) {
+  padding-left: 11mm;
+}
+
+/* Figures and captions ------------------------------------------------ */
+
+figure {
+  margin: 6mm 0;
+  break-inside: avoid-page;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 5mm auto;
+}
+
+figure > figcaption { display: none; }
+
+figure + p > em:only-child,
+img + em {
+  font-family: var(--typ08-sans);
+  font-size: 8.3pt;
+  line-height: 1.35;
+  color: var(--typ08-muted);
+}
+
+/* TYP-05 mixed-content roles ----------------------------------------- */
+
+table {
+  width: 100%;
+  margin: 5mm 0 6mm;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: var(--typ08-sans);
+  font-size: 8.5pt;
+  line-height: 1.32;
+  font-variant-numeric: tabular-nums;
+  border-top: 0.5pt solid #000;
+  border-bottom: 0.5pt solid #000;
+}
+
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+
+th,
+td {
+  padding: 2mm 1.6mm 2mm 0;
+  vertical-align: top;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+th {
+  font-weight: 700;
+  border-bottom: 0.35pt solid #000;
+}
+
+td { border-bottom: 0.2pt solid var(--typ08-rule); }
+tbody tr:last-child td { border-bottom: 0; }
+
+.schedule-records { margin: 5mm 0; }
+
+.schedule-record {
+  margin: 0 0 8mm;
+  padding-top: 3mm;
+  border-top: 0.35pt solid #000;
+  break-inside: avoid-page;
+}
+
+.schedule-subject {
+  margin: 0 0 3.5mm;
+  font-family: var(--typ08-serif);
+  font-size: 10.5pt;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.schedule-field {
+  display: grid;
+  grid-template-columns: 27mm minmax(0, 1fr);
+  column-gap: 4mm;
+  align-items: start;
+  margin: 0 0 2.2mm;
+}
+
+.schedule-label {
+  margin: 0;
+  font-family: var(--typ08-sans);
+  font-size: 7.2pt;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.schedule-value {
+  min-width: 0;
+  margin: 0;
+  font-family: var(--typ08-serif);
+  font-size: 9.2pt;
+  line-height: 1.38;
+  overflow-wrap: anywhere;
+}
+
+.sequence-block {
+  max-width: 94mm;
+  margin: 6mm auto;
+  font-family: var(--typ08-sans);
+  font-size: 8.5pt;
+  line-height: 1.25;
+  text-align: center;
+  break-inside: avoid-page;
+}
+
+.sequence-step {
+  padding: 2.5mm 2mm;
+  border-top: 0.2pt solid var(--typ08-rule);
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.sequence-step:last-child { border-bottom: 0.2pt solid var(--typ08-rule); }
+.sequence-arrow { font-size: 10pt; line-height: 1.1; }
+
+.reference-row {
+  margin: 0 0 5mm;
+  break-inside: avoid-page;
+}
+
+.reference-citation {
+  display: block;
+  font-family: var(--typ08-serif);
+  font-size: 9.3pt;
+  line-height: 1.4;
+}
+
+.reference-url {
+  display: block;
+  margin-top: 1mm;
+  font-family: var(--typ08-sans);
+  font-size: 7.6pt;
+  line-height: 1.3;
+  color: var(--typ08-muted);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-decoration: none;
+}
+
+/* Controlled architectural plate pages -------------------------------- */
+
+.hk-plate-page {
+  page: hk-plate;
+  break-before: page;
+  break-after: page;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--typ08-page-width);
+  height: var(--typ08-page-height);
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--typ08-sans);
+  background: #fff;
+}
+
+.hk-plate-page--pair-start,
+.hk-plate-page--spread-start { break-before: left; }
+
+.hk-plate-header {
+  position: absolute;
+  left: 22mm;
+  right: 22mm;
+  top: 14mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6mm;
+}
+
+.hk-plate-title {
+  margin: 0;
+  font-family: var(--typ08-sans);
+  font-size: 11pt;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.hk-plate-scale {
+  margin: 0;
+  font-family: var(--typ08-sans);
+  font-size: 8.3pt;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.hk-plate-drawing {
+  position: absolute;
+  left: 50%;
+  top: 34mm;
+  transform: translateX(-50%);
+  margin: 0;
+  max-width: none;
+  width: auto;
+  height: auto;
+}
+
+.hk-plate-caption {
+  position: absolute;
+  left: 22mm;
+  right: 22mm;
+  bottom: 24mm;
+  margin: 0;
+  font-family: var(--typ08-sans);
+  font-size: 8.3pt;
+  line-height: 1.35;
+  color: var(--typ08-muted);
+}
+
+.hk-plate-furniture {
+  position: absolute;
+  left: 30mm;
+  top: 32mm;
+  width: calc(var(--typ08-page-width) - 60mm);
+}
+
+.hk-plate-furniture .hk-plate-title { margin-bottom: 3mm; }
+.hk-plate-furniture .hk-plate-scale { margin-bottom: 12mm; }
+.hk-plate-furniture .hk-plate-caption {
+  position: static;
+  max-width: 132mm;
+  color: #000;
+}
+
+/* Page furniture ------------------------------------------------------ */
+
+@page { background: #fff; }
+
+@page :left {
+  @top-left {
+    content: env(pub-title);
+    font-family: var(--typ08-sans);
+    font-size: 7.2pt;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+  @bottom-left {
+    content: counter(page);
+    font-family: var(--typ08-sans);
+    font-size: 7.5pt;
+    line-height: 1;
+  }
+}
+
+@page :right {
+  @top-right {
+    content: env(doc-title);
+    font-family: var(--typ08-sans);
+    font-size: 7.2pt;
+    line-height: 1;
+    letter-spacing: 0.015em;
+  }
+  @bottom-right {
+    content: counter(page);
+    font-family: var(--typ08-sans);
+    font-size: 7.5pt;
+    line-height: 1;
+  }
+}
+
+@page :nth(1) {
+  @top-left { content: none; }
+  @top-right { content: none; }
+}
+
+@page title {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page contents {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page hk-plate {
+  margin: 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page :blank {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
