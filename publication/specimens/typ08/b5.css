@@ -1,0 +1,22 @@
+:root {
+  --typ08-page-width: 176mm;
+  --typ08-page-height: 250mm;
+  --typ08-measure: 112mm;
+  --typ08-live-height: 210mm;
+}
+
+@page {
+  size: 176mm 250mm;
+  margin-top: 20mm;
+  margin-bottom: 20mm;
+}
+
+@page :left {
+  margin-left: 18mm;
+  margin-right: 23mm;
+}
+
+@page :right {
+  margin-left: 23mm;
+  margin-right: 18mm;
+}

@@ -1,0 +1,22 @@
+:root {
+  --typ07-measure: 112mm;
+  --typ07-live-height: 210mm;
+  --typ07-plate-live-height: 224mm;
+  --typ07-plate-margin-y: 13mm;
+}
+
+@page {
+  size: 176mm 250mm;
+  margin-top: 20mm;
+  margin-bottom: 20mm;
+}
+
+@page :left {
+  margin-left: 18mm;
+  margin-right: 23mm;
+}
+
+@page :right {
+  margin-left: 23mm;
+  margin-right: 18mm;
+}
