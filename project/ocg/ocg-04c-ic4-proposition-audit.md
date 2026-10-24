@@ -35,7 +35,7 @@ The following OCG-02 findings are especially controlling:
 - architecture should not abolish the construction site; it should avoid unnecessary propagation beyond the task that genuinely requires it;
 - targeted latent capacity is stronger than generic flexibility where the future brief is not sufficiently credible.
 
-Evidence-state and conflict conventions follow OCG-04A unchanged.
+Evidence-state and conflict conventions follow OCG-04A unchanged. Source classes are used exactly as frozen in OCG-04A; downstream technical owners are recorded under proof route/upstream owner rather than invented as new source classes.
 
 ---
 
@@ -120,8 +120,8 @@ Evidence-state and conflict conventions follow OCG-04A unchanged.
 
 **Consequence / sequence:** bathroom unavailable while fixtures/wet finishes are intentionally removed/rebuilt and while selected wet products cure/dry.  
 **Existing proposition:** OCG-02 explicitly rejects a universal zero-disruption or zero-wet-trade promise; product/process recovery is recorded from actual technical evidence.  
-**Source / authority:** OCG-02A/02D; wet-room/product technical authority.  
-**Source class / maturity:** RESEARCH + OWNER TECHNICAL AUTHORITY.  
+**Source / authority:** OCG-02A/02D; downstream wet-room/material proof is not treated as current OCG source authority.  
+**Source class / maturity:** RESEARCH.  
 **Finding:** `NOT_ARCHITECTURE_OWNED` as an OCG serviceability gap where the work is intrinsic to the chosen complete refit.  
 **Causal ownership:** `NOT_ARCHITECTURE_OWNED` for the intentional room-function loss; `ASSEMBLY_DETAIL` for product-specific curing requirements.  
 **Evidence / knowledge state:** `PRESENT` as causal principle; actual duration `UNKNOWN`.  
@@ -248,14 +248,14 @@ Evidence-state and conflict conventions follow OCG-04A unchanged.
 ## OCG-04C-CI-09-R05 — bulky material/removal route
 
 **Consequence / sequence:** cabinets, worktops/appliances/waste forcing disproportionate occupation of unrelated domestic territory.  
-**Existing proposition:** OCG/HFI already requires complete task/material routes to be traced rather than inferred from room distances, but no dedicated contractor circulation is selected.  
-**Source / authority:** HFI task-route method; OCG-02C; current circulation architecture.  
-**Source class / maturity:** CROSS-PROGRAMME METHOD + RESEARCH; physical RH route proof still outstanding.  
+**Existing proposition:** HFI complete-task-route method and OCG-02C require full worker/material/waste routes to be traced rather than inferred from room distance; no dedicated contractor circulation is selected.  
+**Source / authority:** current HFI task-route strategy; OCG-02C; current circulation architecture.  
+**Source class / maturity:** STRATEGY + RESEARCH; physical RH route proof remains outstanding.  
 **Finding:** `PARTIAL`.  
 **Causal ownership:** `SHARED` — architecture owns permanent passage/turn/threshold geometry; delivery owns staging/protection/sequence.  
-**Evidence / knowledge state:** `PRESENT` as analytical method; actual CI-09 route `NOT_REPRESENTED`.  
+**Evidence / knowledge state:** `PRESENT` as analytical strategy; actual CI-09 route `NOT_REPRESENTED`.  
 **Evidence basis:** `CONTROLLED_SOURCE` + `SUPPORTED_INFERENCE`.  
-**Controls:** requirement to trace complete logistics; ordinary generous domestic circulation where already selected.  
+**Controls:** requirement to trace complete logistics; ordinary domestic circulation geometry where already selected.  
 **Does not control:** actual future package dimensions or contractor staging method.  
 **Permanent-burden / conflict note:** no second contractor corridor or permanent staging room is earned.  
 **Next proof route:** `MULTIPLE` — OCG-05 for house route geometry; delivery for staging/protection.  
@@ -289,7 +289,7 @@ Evidence-state and conflict conventions follow OCG-04A unchanged.
 
 **Intrinsic consequence protected from false failure:** a complete kitchen refit may genuinely surrender kitchen function; no duplicate permanent kitchen is earned by that fact.
 
-**OCG-05 queue:** service-edge/cabinet packing, actual local isolation, extract access and complete ingress/egress/turn route.
+**OCG-05 queue:** service-edge/cabinet packing, actual local isolation, extract access and complete bulky ingress/egress/turn route.
 
 **Owner/method queue:** extraction engineering, fabrication/package strategy, staging/protection and programme.
 
@@ -309,7 +309,7 @@ CI-10 is the principal anti-overprovision control below IC6. The current project
 **Consequence / sequence:** future remote en-suite requires new water/soil/waste/extract/electrical routes across currently quiet/slow territory.  
 **Existing proposition:** high-burden wet/soil/service geography is intentionally concentrated around selected demand; speculative remote wet-room infrastructure is not reserved merely for generic future flexibility.  
 **Source / authority:** Constitution 1/2/5/7; service-topology sequence; OCG-00B remote-en-suite deletion and service-geography baseline.  
-**Source class / maturity:** CONSTITUTION + STRATEGY/SEQUENCE + REFERENCE_OCCURRENCE/NEGATIVE BASELINE.  
+**Source class / maturity:** CONSTITUTION + STRATEGY + REFERENCE_OCCURRENCE.  
 **Finding:** `UNADDRESSED` **for the remote en-suite intervention consequence itself, deliberately**.  
 **Causal ownership:** `ARCHITECTURE` because current topology intentionally does not provide a cheap remote wet route.  
 **Evidence / knowledge state:** `PRESENT` — the non-provision is explicit, not model silence.  
