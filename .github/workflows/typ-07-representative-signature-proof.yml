@@ -1,0 +1,71 @@
+name: TYP-07 representative signature proof
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/typ-07-representative-signature-proof.yml'
+      - 'publication/specimens/typ07/**'
+      - 'publication/specimens/typ03/open-fonts.ts'
+      - 'publication/publication.ts'
+      - 'publication/figures.ts'
+      - 'publication/plates.ts'
+      - 'docs/manuscript/part-i.md'
+      - 'docs/manuscript/part-ii.md'
+      - 'docs/manuscript/part-iv.md'
+      - 'docs/manuscript/part-v.md'
+      - 'docs/manuscript/reference-house-implementation-schedule.md'
+      - 'docs/manuscript/sources-and-further-reading.md'
+      - 'publication/part-iii.md'
+      - 'docs/manuscript/figures/failure-architecture-sequence.svg'
+      - 'docs/manuscript/figures/pattern-language-fields-sequence.svg'
+      - 'docs/reference-house/publication-ground-floor-plan.svg'
+      - 'docs/reference-house/publication-first-floor-plan.svg'
+      - 'docs/reference-house/publication-principal-front-elevation.svg'
+  workflow_dispatch:
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Install PDF inspectors
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Build exact A4 and B5 representative proofs
+        run: npx tsx publication/specimens/typ07/build.ts
+
+      - name: Verify finished PDFs
+        run: npx tsx publication/specimens/typ07/verify.ts
+
+      - name: Render B5 inspection sheets
+        run: |
+          mkdir -p publication/.work/typ07b/preview
+          pdftoppm -png -r 120 \
+            publication/.work/typ07b/b5/typ07b-representative-b5.pdf \
+            publication/.work/typ07b/preview/typ07b-b5
+
+      - name: Upload representative proof family
+        uses: actions/upload-artifact@v4
+        with:
+          name: typ07b-representative-signature-proof
+          path: |
+            publication/.work/typ07b/a4/typ07b-representative-a4.pdf
+            publication/.work/typ07b/b5/typ07b-representative-b5.pdf
+            publication/.work/typ07b/a4/manifest.json
+            publication/.work/typ07b/b5/manifest.json
+            publication/.work/typ07b/verification.json
+            publication/.work/typ07b/preview/*.png
+          if-no-files-found: error
