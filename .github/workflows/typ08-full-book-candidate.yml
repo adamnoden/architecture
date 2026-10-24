@@ -37,6 +37,9 @@ jobs:
       - name: Verify finished PDFs
         run: npx tsx publication/specimens/typ08/verify.ts
 
+      - name: Verify TYP-08C bounded corrections
+        run: npx tsx publication/specimens/typ08/verify-corrections.ts
+
       - name: Render B5 review corpus
         run: npx tsx publication/specimens/typ08/render.ts
 
@@ -49,6 +52,8 @@ jobs:
             publication/.proof/typ08a/b5/typ08a-full-book-b5.pdf
             publication/.proof/typ08a/manifest.json
             publication/.proof/typ08a/verification.json
+            publication/.proof/typ08a/corrections.json
+            publication/.proof/typ08a/correction-verification.json
             publication/.proof/typ08a/review-index.json
             publication/.proof/typ08a/b5-review/*.jpg
           if-no-files-found: error
