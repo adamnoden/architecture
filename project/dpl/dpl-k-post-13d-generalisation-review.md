@@ -3,7 +3,7 @@
 **Issue:** #502  
 **Depends on:** DPL-13D #498 / PR #501 and DPL-13D.1 #503 / PR #504  
 **Reviewed repaired baseline:** `8cadb9b25baba8b6a3f033a2a286fc2de5aa18dc`  
-**Status:** **PASS DPL-13D AS A SECOND CONTROLLED SYNTHETIC EXECUTION; HOLD ANY POSITIVE/NEGATIVE RESULT AUTHORITY AND HOLD DPL-15. ADMIT DPL-13E NEXT.**
+**Status:** **PASS DPL-13D AS A SECOND CONTROLLED SYNTHETIC EXECUTION; HOLD POSITIVE/NEGATIVE RESULT AUTHORITY AND DPL-15; ADMIT DPL-13E NEXT.**
 
 ## 1. Decision
 
@@ -20,19 +20,19 @@ Both cases remain:
 UNRESOLVED @ SCREENING
 ```
 
-but not for an identical classification ecology. RS-02 removes exactly the two no-borough local-policy classification blockers because an exact controlled Croydon target is present. It does not convert those planning families to PASS and, after DPL-13D.1, it does not infer opaque acceleration-trigger disposition from synthetic claim provenance or value.
+RS-02 removes exactly the two no-borough local-policy classification blockers because an exact controlled Croydon target is present. It does not convert those planning families to PASS and, after DPL-13D.1, it does not infer opaque acceleration-trigger disposition from synthetic claim provenance or value.
 
-This is enough to accept DPL-13D as a genuine second controlled synthetic execution of the existing machinery. It is **not** enough to admit `COMPATIBLE`, `INCOMPATIBLE`, route exhaustion, generic borough support or real-site deployability.
+This is enough to accept DPL-13D as a genuine second controlled synthetic execution of the existing machinery. It is not enough to admit `COMPATIBLE`, `INCOMPATIBLE`, route exhaustion, generic borough support or real-site deployability.
 
-DPL remains M4 numerically. This gate does **not** promote M5.
+DPL remains M4 numerically. No M5 claim is earned.
 
-## 2. DPL-13D.1 rewind was necessary and sufficient
+## 2. DPL-13D.1 rewind — necessary and sufficient
 
-The first DPL-13D implementation incorrectly removed two `ACCELERATION_REVIEW_REQUIRED` records when `RS-HERITAGE-01` and `RS-NOISE-01` changed from unresolved/assumed provenance to `AUTHORED / DERIVED_SITE_CLAIM`.
+The first DPL-13D implementation removed two `ACCELERATION_REVIEW_REQUIRED` records when `RS-HERITAGE-01` and `RS-NOISE-01` became `AUTHORED / DERIVED_SITE_CLAIM`.
 
-That was not a harmless implementation detail. It inferred an opaque owner trigger decision from provenance state. An authored adverse heritage or severe-noise scenario would have made the same review disappear.
+That inferred an opaque owner trigger decision from provenance state. An authored adverse heritage or severe-noise scenario would have made the same review disappear.
 
-DPL-13D.1 repaired the rule to:
+DPL-13D.1 corrected the rule to:
 
 > **Opaque acceleration review survives synthetic rebinding unless explicit typed owner-side authority resolves it.**
 
@@ -48,25 +48,22 @@ ADVISORY_NON_BLOCKING            = 2
 ACCELERATION_REVIEW_REQUIRED     = 17
 ```
 
-and aggregation blockers:
+and:
 
 ```text
 substantiveUnresolved        = 27
 dueClassificationUnresolved  = 17
 substantiveFailure           = 0
+wholeSiteConclusion          = UNRESOLVED @ SCREENING
 ```
 
-The whole-site result remains `UNRESOLVED @ SCREENING`.
-
-Adversarial tests additionally prove that authored adverse heritage/noise synthetic facts cannot suppress the opaque review. No trigger prose or claim-value keyword is executed.
+Adversarial tests prove authored adverse heritage/noise synthetic facts cannot suppress those reviews. No trigger prose or claim-value keyword is executed.
 
 No further DPL-13D repair is required by this gate.
 
 ## 3. Same machinery, not a hidden second result path
 
-DPL-13D does not add a second aggregation rule.
-
-It reuses:
+DPL-13D reuses:
 
 - the DPL-13B owner-universe proposition;
 - the same four owner coverage registries;
@@ -74,71 +71,50 @@ It reuses:
 - the exact controlled planning authority graph;
 - the DPL-13C aggregation record model;
 - the same `UNRESOLVED @ SCREENING`-only conclusion authority;
-- the same refusal of positive compatibility;
-- the same refusal of site incompatibility without route exhaustion/invariant-blocker authority.
+- the same positive-compatibility refusal;
+- the same incompatibility refusal without route exhaustion or invariant-blocker authority.
 
-The only substantive aggregation change was to allow the canonical-case local-target identity to be either the explicit no-borough synthetic sentinel or an exact controlled local target that matches readiness identity. There is no borough inference, alias matching or fuzzy reconciliation.
+The canonical-case local-target identity may now be either the explicit no-borough synthetic sentinel or an exact controlled local target that matches readiness identity. There is no borough inference, alias matching or fuzzy reconciliation.
 
 ## 4. Bounded rebinding/type seam — KEEP
 
-The DPL-13D adapter contains local casts where a second synthetic site/readiness shape is passed through canonical RS-01-oriented interfaces.
+DPL-13D contains local casts where a second synthetic site/readiness shape is passed through canonical RS-01-oriented interfaces.
 
-Those casts are aesthetically undesirable but currently **honest bounded technical debt**, not evidence of a hidden semantic mismatch.
-
-The seam is protected by stronger executable invariants:
+Those casts are bounded technical debt, not presently evidence of a semantic mismatch, because executable invariants enforce:
 
 - exact site schema/version;
 - exact 29-claim vocabulary;
 - exact controlled Croydon target and London strategic parent;
-- exact site/candidate/deployment/readiness/aggregation identities;
-- RS-01 rebinding regression equality;
-- local-target mismatch rejection;
-- material site/readiness mutation invalidates identity;
-- aggregation-record ordering remains identity-neutral;
-- no result special-case keyed to site id.
+- site/candidate/deployment/readiness/aggregation identity;
+- RS-01 rebinding equality with the baseline;
+- rejection of local-target mismatch;
+- identity invalidation on material site/readiness change;
+- ordering neutrality where semantics are set-like;
+- no result special case keyed to site id.
 
 Decision:
 
-> **Keep the bounded adapter. Do not widen the canonical site/readiness types into a universal deployment schema merely to eliminate local casts.**
+> **Keep the bounded adapter. Do not widen the canonical site/readiness types into a universal deployment schema merely to remove local casts.**
 
-A later genuinely different third site shape may earn a first-class generalized type. DPL-K does not.
+A later genuinely different site shape may earn first-class generalized types.
 
-## 5. Two-fixture generalisation decision
+## 5. Two-fixture generalisation — bounded admit
 
-The evidence proves a narrow proposition:
+The evidence proves only:
 
-> The controlled `UNRESOLVED @ SCREENING` machinery executes without fixture-specific result semantics across the two authored synthetic fixtures DPL-RS-01 and DPL-RS-02, including an exact no-borough → controlled-borough classification change.
+> **The controlled `UNRESOLVED @ SCREENING` machinery executes without fixture-specific result semantics across DPL-RS-01 and DPL-RS-02, including an exact no-borough → controlled-borough classification change.**
 
-It does **not** prove:
+It does not prove all Croydon sites, all London sites, all boroughs, real-site validity, positive compatibility, incompatibility, route exhaustion, planning permission or regulatory/legal adequacy.
 
-- all Croydon sites;
-- all London sites;
-- all boroughs;
-- real-site validity;
-- positive compatibility;
-- incompatibility;
-- route exhaustion;
-- planning permission;
-- regulatory/legal adequacy.
-
-DPL-K deliberately does **not** broaden the project-wide maturity registry beyond the DPL-J canonical-result wording yet. The second fixture is accepted as controlled implementation evidence, but the next dominant evidence step is the deliberately non-native architectural-conformance authority. The maturity scope should be reconsidered after that review path has been exercised rather than inflated on fixture count alone.
+DPL-K accepts RS-02 as controlled implementation evidence. It deliberately holds a project-wide maturity-scope wording expansion until the next declared non-native authority path has itself been exercised.
 
 ## 6. The 27 substantive blockers are not 27 compiler gaps
 
-DPL-K executed the repaired RS-02 aggregation and decomposed all 27 `SUBSTANTIVE_UNRESOLVED` records against their owning registries.
+The repaired RS-02 aggregate contains 27 substantive unresolved records. Every one is classified below by its owning authority and actual resolution route.
 
-The result changes the programme direction materially.
+### 6.1 Architectural review — 16
 
-### 6.1 Sixteen are explicitly architectural review
-
-The following DPL-02 clauses are all:
-
-```text
-resolutionMode = ARCHITECTURAL_REVIEW
-executableStatus = NOT_NATIVE
-```
-
-and intentionally block positive conformance until reviewed:
+All of these DPL-02 clauses are `ARCHITECTURAL_REVIEW / NOT_NATIVE` and deliberately block positive conformance until reviewed:
 
 - `RH-I01` — G-01 architectural grammar;
 - `RH-I03` — compact detached contemporary family-house type;
@@ -157,60 +133,38 @@ and intentionally block positive conformance until reviewed:
 - `RH-PROT-13` — roof / water topology;
 - `RH-PROT-15` — tectonic / visible-interface hierarchy.
 
-These are **not missing native evaluators**. Turning them into compiler assertions simply to reduce a blocker count would violate DPL-02's authority model.
+These are not missing native evaluators. Turning them into compiler assertions merely to reduce a blocker count would violate DPL-02 authority.
 
-### 6.2 One Reference House blocker requires competent external evidence
+### 6.2 External/professional/site/legal evidence — 5
 
-`RH-PROT-08 — primary structural concept` is explicitly:
+- `RH-PROT-08` — `EXTERNAL_PROFESSIONAL_EVIDENCE` for the primary structural concept;
+- `RH-PROT-14` — `SITE_INTERFACE_EVIDENCE` for maintenance geography;
+- `DPL11-COV-SITE-CONTROL` — title/legal evidence;
+- `DPL11-COV-PHYSICAL-FLOOD-WATER` — external flood/water and environmental evidence;
+- `DPL11-COV-ACCESS-STATUS` — survey/title/highway/access evidence.
 
-```text
-resolutionMode = EXTERNAL_PROFESSIONAL_EVIDENCE
-```
+Synthetic data cannot discharge these authority classes.
 
-Its architectural concept may be preserved internally, but positive structural adequacy remains competent engineering evidence.
+### 6.3 Existing source/applicability integration — 2
 
-### 6.3 One Reference House blocker requires site-interface evidence
-
-`RH-PROT-14 — maintenance geography remains an architectural requirement` is explicitly:
-
-```text
-resolutionMode = SITE_INTERFACE_EVIDENCE
-```
-
-It should not be converted into a generic internal PASS without an actual site interface.
-
-### 6.4 Three non-planning blockers are external authority
-
-- `DPL11-COV-ACCESS-HIGHWAY`;
-- `DPL11-COV-FLOOD-WATER`;
-- `DPL11-COV-SITE-CONTROL-RIGHTS`.
-
-These require physical/legal/provider/statutory evidence as owned by DPL-11. Synthetic data cannot discharge them.
-
-### 6.5 Two blockers are existing source/applicability authority not yet surfaced as case-specific substantive resolution
-
-- `ENG-COV-SOURCE-APPLICABILITY` already has the England source-applicability spine and requires exact operative source/edition/effective/transition identity;
-- `DPL10-COV-SOURCE-COMPOSITION-STATUS` already has mechanical planning source/status composition authority.
+- `ENG-COV-SOURCE-APPLICABILITY` already has the England source/applicability spine but no admitted case-specific substantive resolution in DPL-13C;
+- `DPL10-COV-SOURCE-COMPOSITION-STATUS` already has mechanical planning source/status composition authority but likewise remains a generic unresolved aggregation record.
 
 These are bounded integration opportunities, not reasons to invent new regulatory or planning evaluators.
 
-### 6.6 Three blockers require planning judgement/evidence
+### 6.4 Planning judgement/evidence — 3
 
-- `DPL10-COV-EMERGING-POLICY-MATERIAL-WEIGHT` — source status may be mechanical, but material weight remains qualitative planning judgement;
-- `DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY` — intentionally combines applicability with evidence-led/qualitative planning judgement;
-- `DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY` — already consumes the admitted `LON-D3-DESIGN-LED` substantive result, which remains `UNRESOLVED` because the qualitative planning judgement/evidence is absent.
+- `DPL10-COV-EMERGING-POLICY-MATERIAL-WEIGHT` — source status may be mechanical; material weight remains qualitative planning judgement;
+- `DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY` — requires evidence-led/qualitative planning judgement after applicability is known;
+- `DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY` — consumes the admitted `LON-D3-DESIGN-LED` result, which remains `UNRESOLVED` because qualitative planning judgement/evidence is absent.
 
-### 6.7 One blocker is a bounded local-quantitative opportunity
+### 6.5 Bounded local-quantitative opportunity — 1
 
-`DPL10-COV-LOCAL-QUANTITATIVE-POLICY` admits mechanical applicability plus bounded quantitative policy methods where exact local authority exists.
+`DPL10-COV-LOCAL-QUANTITATIVE-POLICY` admits mechanical applicability plus bounded quantitative methods where exact local authority exists.
 
-It remains borough/site-specific. Croydon and Bromley prove the reusable envelope, not common numeric content; Bromley Policy 30 remains unsupported where temporal/strategic conflict semantics are unresolved.
+Croydon contains bounded native numeric methods, but family-level DPL-13C aggregation does not yet map those case-specific obligations into a positive resolution. This remains borough/site-specific and is not the dominant programme blocker.
 
-It is not currently the dominant programme blocker.
-
-### 6.8 Blocker summary
-
-The 27 substantive blockers therefore classify as:
+### 6.6 Summary
 
 ```text
 16  architectural review
@@ -222,41 +176,47 @@ The 27 substantive blockers therefore classify as:
 27
 ```
 
-This is the central DPL-K finding.
+The dominant substantive gap is deliberately non-native authority/evidence, not missing compiler machinery.
 
 ## 7. Positive readiness is not positive compatibility
 
-DPL-K freezes the following distinction.
+DPL-K freezes four distinct concepts.
 
 ### Coverage/profile completeness
 
-The relevant owner universe, applicability/classification questions and authority edges are represented.
-
-This says what is in scope. It is not a result.
+The relevant owner universe, applicability/classification questions and authority edges are represented. This says what is in scope; it is not a result.
 
 ### Substantive evaluation readiness
 
-Every due-now positive blocker has an admitted resolution route and the required evidence/review input exists or is explicitly obtainable.
-
-This says the case can be evaluated positively. It is not a PASS.
+Every due-now positive blocker has an admitted resolution route and the required review/evidence input exists or is explicitly obtainable. This says the case can be evaluated positively; it is not a PASS.
 
 ### Substantive positive resolution
 
-Each due-now blocker is actually resolved/discharged under its owning authority.
-
-This is clause/family-level positive evidence. It is not automatically a whole-site result.
+Each due-now blocker is actually resolved/discharged under its owning authority. This is clause/family-level evidence; it is not automatically a whole-site result.
 
 ### Positive whole-site aggregation authority
 
 A separately admitted aggregation rule proves that the complete positively resolved scope may be emitted as `COMPATIBLE @ SCREENING`.
 
-DPL does not currently possess this authority.
-
-Therefore:
+DPL does not possess this authority.
 
 > **READY must never mean PASS, and a collection of PASS records must never silently create COMPATIBLE.**
 
-## 8. `COMPATIBLE @ SCREENING` remains held
+## 8. The 17 acceleration reviews remain a separate critical path
+
+The repaired RS-02 still contains 17 `ACCELERATION_REVIEW_REQUIRED` records.
+
+They are classification blockers, not part of the 27 substantive-blocker count. They must ultimately be resolved through typed owner authority before positive compatibility can be admitted.
+
+DPL-K does **not** author a generic typed acceleration engine now because the current metadata spans planning and non-planning owners and deliberately contains opaque professional/evidence-led questions. A generic resolver created here would either parse prose or invent owner authority.
+
+This does not make DPL-13E out of order. The sixteen Reference House architectural-review clauses are already unambiguously due-now and independent of those acceleration classifications. Their declared resolution route can therefore be exercised without first deciding whether additional future-due owner families accelerate.
+
+Decision:
+
+> **Do the bounded, certainly-due architectural review first; keep typed acceleration disposition as a separate downstream owner-authority problem.**
+
+## 9. `COMPATIBLE @ SCREENING` remains held
 
 Before any positive-result implementation can be admitted, at minimum all of the following must be true:
 
@@ -264,7 +224,7 @@ Before any positive-result implementation can be admitted, at minimum all of the
 2. exact target/source authority graph coherent;
 3. due/applicability/acceleration classification resolved through typed authority;
 4. every due-now blocker represented substantively;
-5. every DPL-02 architectural-review clause actually reviewed under controlled human authority;
+5. every DPL-02 architectural-review clause reviewed under controlled human authority;
 6. required competent professional/site/legal/planning evidence present at the required authority level;
 7. admitted bounded native methods resolved positively where applicable;
 8. current evidence/source identities fingerprinted;
@@ -275,7 +235,7 @@ Before any positive-result implementation can be admitted, at minimum all of the
 
 DPL-K implements none of this positive aggregation authority.
 
-## 9. `INCOMPATIBLE` remains held
+## 10. `INCOMPATIBLE` remains held
 
 A failed clause, failed candidate, failed local method or adverse evidence item is not automatically site incompatibility.
 
@@ -286,38 +246,28 @@ A failed clause, failed candidate, failed local method or adverse evidence item 
 
 No such general authority exists here.
 
-## 10. No third synthetic fixture now
+## 11. No third synthetic fixture now
 
-A third synthetic fixture is not justified merely to increase sample count.
+A third synthetic fixture is not justified for sample-size optics.
 
-The two current fixtures already test the semantic axis that mattered for result generalisation:
+RS-01 and RS-02 already test the relevant result-generalisation axis: no-borough versus exact controlled borough, materially different local classification state, the same owner/aggregation machinery, and the same conservative middle result for different represented reasons.
 
-- explicit no-borough context;
-- exact controlled borough-assigned context;
-- materially different local classification state;
-- same coverage/readiness and aggregation machinery;
-- same conservative middle result for different represented reasons.
+The remaining dominant blockers are intentionally non-native. Another invented site would not create architectural judgement, structural evidence, title evidence, flood evidence or planning judgement.
 
-The remaining dominant blockers are overwhelmingly intentionally non-native. Another invented site would not create architectural judgement, structural evidence, title evidence, flood evidence, planning judgement or professional review.
+## 12. DPL-15 remains premature
 
-A third fixture should be opened only if a later gate names a genuinely new semantic axis that cannot be tested with RS-01/RS-02.
+Real-site work would supply some missing evidence classes, but opening DPL-15 now would mix two questions:
 
-## 11. DPL-15 remains premature
+- can the already-declared DPL-02 architectural-review authority participate in the deterministic evidence graph honestly; and
+- what does a real site actually prove?
 
-Real-site work would certainly supply some of the missing evidence classes, but opening DPL-15 now would mix two unresolved questions:
-
-- whether the DPL-02 architectural-conformance review authority can be exercised in a controlled, provenance-bearing way; and
-- what a real site actually says.
-
-The first question can and should be answered without pretending architecture is native computation.
-
-Therefore:
+The first can be answered without a real site.
 
 > **Hold DPL-15 for one more bounded packet.**
 
-After that packet, a fresh gate should decide whether real-site evidence has become the dominant remaining uncertainty.
+A post-DPL-13E gate should decide whether real-site evidence has then become the dominant uncertainty.
 
-## 12. Exact next packet — DPL-13E
+## 13. Exact next packet — DPL-13E
 
 Admit only:
 
@@ -326,20 +276,21 @@ Admit only:
 DPL-13E must:
 
 - consume the exact controlled DPL-RS-02 candidate identity;
-- cover exactly the sixteen DPL-02 clauses whose `resolutionMode` is `ARCHITECTURAL_REVIEW` and which currently block positive conformance;
-- keep the review explicitly human-authored rather than compiler-generated;
+- cover exactly the sixteen DPL-02 `ARCHITECTURAL_REVIEW` clauses above;
+- keep review explicitly human-authored rather than compiler-generated;
 - record reviewer identity/role, review basis, clause-level `PASS / UNRESOLVED / FAIL`, reasons and evidence references;
 - fingerprint the authored review ledger and its candidate/source authority;
-- demonstrate that the ledger cannot mutate Reference House geometry or invent a new route;
-- keep `RH-PROT-08` external professional evidence and `RH-PROT-14` site-interface evidence outside the architectural-review ledger;
-- keep DPL-11 external evidence and planning judgement outside the architectural-review ledger;
-- refuse to emit `COMPATIBLE` even if all sixteen architectural-review clauses are authored PASS;
-- refuse to turn an architectural-review FAIL into `INCOMPATIBLE`;
-- preserve the distinction between review evidence and native computation.
+- refuse candidate/source identity mismatch;
+- demonstrate that the ledger cannot mutate Reference House geometry or invent a deployment route;
+- keep `RH-PROT-08` professional evidence and `RH-PROT-14` site-interface evidence outside the ledger;
+- keep DPL-11 evidence, planning judgement and acceleration disposition outside the ledger;
+- refuse `COMPATIBLE` even if all sixteen architectural-review clauses are authored PASS;
+- refuse to turn architectural-review FAIL into `INCOMPATIBLE`;
+- preserve review evidence as authored authority rather than native computation.
 
-DPL-13E is not a request to automate taste or architecture. It is a test of whether deliberately human architectural authority can participate in the deterministic deployment evidence graph without being misrepresented as machine truth.
+DPL-13E is not a request to automate taste or architecture. It tests whether the human architectural authority already declared by DPL-02 can participate in the deterministic deployment evidence graph without being misrepresented as machine truth.
 
-## 13. Held work after DPL-K
+## 14. Held work
 
 Continue to hold:
 
@@ -347,7 +298,8 @@ Continue to hold:
 - `INCOMPATIBLE`;
 - route search/exhaustion/optimisation;
 - generic all-borough ontology;
-- third synthetic fixture without a new semantic question;
+- third synthetic fixture without a genuinely new semantic question;
+- generic typed acceleration inference from opaque metadata;
 - DPL-15 real-site trials until the post-DPL-13E gate;
 - DPL-16 deployment-envelope derivation;
 - DPL-17 publication integration;
@@ -355,13 +307,13 @@ Continue to hold:
 - Reference House geometry changes;
 - DRW reopening.
 
-## 14. Closeout
+## 15. Closeout
 
-DPL-13D, after DPL-13D.1, is a valid second controlled synthetic execution. It proves that the conservative middle-result machinery is not merely an artefact of the no-borough RS-01 context.
+Corrected DPL-13D is a valid second controlled synthetic execution. It proves that the conservative middle-result machinery is not merely an artefact of the no-borough RS-01 context.
 
-The more important finding is what it **does not** justify: the remaining blocker set is primarily authority/evidence work, not an invitation to grow the compiler.
+The more important finding is that the remaining blocker ecology is primarily authority/evidence work, not an invitation to grow the compiler.
 
-The next useful question is therefore not “what else can the machine infer?” It is:
+The next useful question is:
 
 > **Can the architectural-review authority already declared by DPL-02 be exercised explicitly, provenance-bearing and reproducibly without pretending human architectural judgement is computation?**
 
