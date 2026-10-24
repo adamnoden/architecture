@@ -10,7 +10,7 @@ const workRoot = resolve(repoRoot, 'publication/.work/typ07b', format)
 export default defineConfig({
   title: `TYP-07B representative signature — ${format.toUpperCase()}`,
   language: 'en-GB',
-  size: format === 'b5' ? '176mm,250mm' : 'A4',
+  size: format === 'b5' ? 'B5' : 'A4',
   entryContext: workRoot,
   entry: [{ path: 'specimen.html', title: 'TYP-07B representative signature' }],
   theme: [
