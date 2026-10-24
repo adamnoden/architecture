@@ -1,0 +1,39 @@
+name: TYP-07 representative manifest audit
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/typ-07-representative-manifest-audit.yml'
+      - 'docs/publication/publication-typography-typ07a-representative-audit.md'
+      - 'publication/specimens/typ07/**'
+      - 'publication/publication.ts'
+      - 'publication/figures.ts'
+      - 'publication/plates.ts'
+      - 'publication/theme.css'
+      - 'docs/manuscript/part-i.md'
+      - 'docs/manuscript/part-ii.md'
+      - 'docs/manuscript/part-iv.md'
+      - 'docs/manuscript/part-v.md'
+      - 'docs/manuscript/reference-house-implementation-schedule.md'
+      - 'docs/manuscript/sources-and-further-reading.md'
+      - 'publication/part-iii.md'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Audit representative corpus and build boundary
+        run: npx tsx publication/specimens/typ07/audit.ts
