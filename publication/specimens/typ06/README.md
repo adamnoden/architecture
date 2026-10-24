@@ -1,5 +1,8 @@
 # TYP-06 drawing-interface specimen
 
+Status: **PHYSICALLY ACCEPTED / FROZEN** — owner verdict `LGTM`, 24 October 2026.  
+Canonical closeout: `docs/publication/publication-typography-typ06c-sans-drawing-interface-freeze.md`.
+
 This directory contains the bounded TYP-06B proof that the frozen publication sans can cross into the released architectural-drawing typography without silently falling back or redesigning PLT geometry.
 
 ## Boundary
@@ -17,7 +20,7 @@ The proof harness reads those exact SVG bytes and creates temporary specimen cop
 - line/poche grammar;
 - architectural content.
 
-The only admitted candidate changes are:
+The only admitted proof changes are:
 
 1. replace the released Arial/Helvetica working-family declaration with a specimen-only Source Sans alias;
 2. embed the exact TYP-03 pinned Source Sans 3 Regular and Bold bytes as data URIs;
@@ -42,7 +45,22 @@ B5 is the decisive physical territory. The released DRW v1 paper-space sizes rem
 - `note`: 6.5 pt / regular;
 - `marker`: 6.5 pt / bold.
 
-Those sizes are proof territory, not a TYP decision about final PLT v2 typography.
+Those sizes are accepted **proof territory**, not a TYP decision about final PLT v2 typography.
+
+## Accepted proof provenance
+
+Final lease-clean proof:
+
+- PR: **#529**;
+- proof head: `c46a057b6d7f3386e712ea46306a8e52008dc05f`;
+- merged harness: `44874830560c5398d7409a140ff3c68721e06cca`;
+- TYP-06 workflow run: **40077256819 — SUCCESS**;
+- artifact: **12553472380**;
+- artifact digest: `sha256:3ba968bd0b2639f5e559adf1435606647f05be73c3c90a2efc50ce54684579dc`;
+- conservative-B5 proof: **176 × 250 mm, two pages**;
+- physical verdict at 100% / Actual Size: **`LGTM`**.
+
+The frozen interface decision is recorded in TYP-06C. PLT owns final drawing-specific sizes, hierarchy, placement, collisions and BOOK/WALL tuning.
 
 ## Build
 
@@ -56,5 +74,3 @@ Outputs:
 publication/.work/typ06b/a4/typ06b-drawing-interface-a4.pdf
 publication/.work/typ06b/b5/typ06b-drawing-interface-b5.pdf
 ```
-
-The candidate remains unfrozen until the B5 PDF is inspected at 100% / actual size.
