@@ -46,7 +46,7 @@ This distinction is frozen because later testing would otherwise be easy to game
 
 ## 2.1 Canonical scenario
 
-A canonical scenario is the architecture-independent brief frozen in this record:
+A canonical scenario is the **solution-independent, pre-verdict brief** frozen in this record:
 
 - intervention purpose;
 - technical object;
@@ -58,6 +58,8 @@ A canonical scenario is the architecture-independent brief frozen in this record
 - evidence assumptions;
 - known unknowns;
 - mechanism for which the scenario is included.
+
+Some scenarios deliberately preserve project-specific starting conditions that were frozen before OCG-03 — for example, testing a future wet room outside the already-selected wet-service geography. That is legitimate because it preserves the challenge rather than the answer. A canonical scenario must never prescribe the current architecture's preferred access method merely to make the result favourable.
 
 ## 2.2 Audit instance
 
@@ -194,10 +196,10 @@ This is the suite's principal **dirty IC1 case**. It tests whether inspection ge
 
 ---
 
-## OCG-CI-02 — inspect and clear roof rainwater collection from outside
+## OCG-CI-02 — inspect and clear roof rainwater collection / outlet
 
 **Class:** OCG-IC1 — Inspection / maintenance action  
-**Primary mechanisms:** external temporary access; site dependence; deliberate absence of permanent internal roof access; logistics; weather-boundary preservation  
+**Primary mechanisms:** roof-access method choice; site dependence; temporary external access versus permanent internal access; logistics; weather-boundary preservation  
 **Primary carried questions:** OCG-PQ-10; OCG-FR-03/10/12/14
 
 ### Purpose
@@ -206,7 +208,7 @@ Inspect and clear a local roof-edge rainwater collection / outlet condition with
 
 ### Technical object
 
-The relevant accessible roof-edge collection element, outlet or equivalent external rainwater-maintenance point.
+The relevant roof-edge collection element, outlet or equivalent rainwater-maintenance point.
 
 ### Starting condition
 
@@ -214,27 +216,29 @@ Planned inspection or local debris/partial restriction is present. No active int
 
 ### Necessary work sequence
 
-1. establish a safe temporary external access method;
-2. protect the immediate external work/staging area as required;
-3. reach the rainwater-maintenance point from outside;
+1. establish a safe access method appropriate to the controlled architecture and real site condition;
+2. protect the immediate work/staging area as required;
+3. reach the rainwater-maintenance point without presuming an internal or external route;
 4. inspect and clear local debris/restriction;
 5. test visible drainage performance where practicable;
-6. remove temporary access/protection and restore the external area.
+6. restore any technical boundary opened solely for access;
+7. remove temporary access/protection and restore affected territory.
 
 ### Occupied condition
 
-Normal internal occupation continues unless the actual temporary-access method creates a bounded safety exclusion adjacent to an opening or garden route.
+Normal internal occupation continues except where the actual access method or temporary safety zone materially affects an occupied room, opening, entrance or garden route.
 
 ### Return-to-use condition
 
-The maintenance point is functioning, no interior technical boundary has been opened and temporary external access/protection has been removed.
+The maintenance point is functioning, any technical boundary opened for access is restored and temporary access/protection has been removed.
 
 ### Evidence assumptions
 
-Competent temporary external access is a legitimate default method; OCG does not assume a permanent roof hatch is necessary.
+Competent temporary external access is a legitimate method **if the controlled site permits it**. No permanent roof hatch is assumed either present or necessary. The later audit must prove the actual access method and its consequences.
 
 ### Known unknowns
 
+- whether the controlled access route is internal, external or mixed;
 - real site boundary/ground-bearing conditions;
 - neighbour/access constraints;
 - exact roof-edge product and maintenance point;
@@ -243,7 +247,7 @@ Competent temporary external access is a legitimate default method; OCG does not
 
 ### Reason for inclusion
 
-This is the suite's strongest **site-dependent / temporary-access control**. It can falsify the instinct that every maintainable location deserves permanent internal access.
+This is the suite's strongest **site-dependent roof-access control**. It can falsify either instinct: that every maintainable location deserves permanent internal access, or that temporary external access is automatically adequate on every real site.
 
 ---
 
@@ -896,7 +900,7 @@ The 13 scenarios cover all six OCG classes without treating class number as disr
 
 | Class | Canonical scenarios | Coverage purpose |
 |---|---|---|
-| IC1 — inspection / maintenance | CI-01, CI-02 | one dirty/internal-or-external service-maintenance case and one external/site-dependent access control |
+| IC1 — inspection / maintenance | CI-01, CI-02 | one dirty/internal-or-external service-maintenance case and one site-dependent roof-access control |
 | IC2 — component / assembly replacement | CI-03, CI-04, CI-05 | small concealed wet component; large plant module; large envelope assembly |
 | IC3 — branch / subsystem | CI-06, CI-07 | wet branch renewal versus dry future branch addition |
 | IC4 — room / local functional refit | CI-08, CI-09, CI-10 | ordinary wet refit; furniture/service-heavy kitchen refit; deliberately unserved future wet-room brief |
@@ -915,7 +919,8 @@ The suite is selected because the scenarios are **not interchangeable**.
 |---|---|
 | diagnostic access without component renewal | CI-01, CI-02 |
 | hygienic/dirty maintenance | CI-01 |
-| external temporary access and real-site dependence | CI-02, CI-05 |
+| roof-access method choice and real-site dependence | CI-02 |
+| external temporary access and real-site dependence | CI-02 where selected by evidence, CI-05 |
 | local service isolation | CI-03, CI-06, CI-08, CI-09 |
 | waterproofing / wet technical-boundary independence | CI-03, CI-08, CI-10 |
 | actual component withdrawal, not mere reach | CI-03, CI-04, CI-05 |
@@ -974,7 +979,7 @@ OCG-03 is not an architecture audit, but the corpus must be capable of testing t
 | PQ-07 replaceable windows/doors in permanent openings | CI-05 (window representative) |
 | PQ-08 plant replacement opening / external route | CI-04 |
 | PQ-09 foul/drainage inspection geography | CI-01 |
-| PQ-10 roof/external maintenance from outside | CI-02 |
+| PQ-10 roof/external maintenance | CI-02 |
 | PQ-11 manufacturing / off-site preparation | CI-04, CI-05, CI-08, CI-09, CI-12 where sequence evidence exists |
 | PQ-12 deleted remote en-suite control | CI-10 |
 | PQ-13 future life-course adaptation | deliberately not frozen without a concrete HFI-owned adaptation brief |
@@ -1119,15 +1124,15 @@ Any added scenario must receive a stable ID, explicit rationale and coverage-gap
 
 ## 13.3 Mechanism diversity
 
-**PASS.** The corpus distinguishes diagnostic maintenance, contaminated work, site-dependent external access, concealed component access, large withdrawal, envelope replacement, wet/dry branch work, room refits, deliberate non-provision, primary dry/wet system renewal and structural replanning.
+**PASS.** The corpus distinguishes diagnostic maintenance, contaminated work, site-dependent roof access, concealed component access, large withdrawal, envelope replacement, wet/dry branch work, room refits, deliberate non-provision, primary dry/wet system renewal and structural replanning.
 
 ## 13.4 No trade catalogue
 
 **PASS.** Repetitive component examples were deliberately excluded where they added no new consequence mechanism.
 
-## 13.5 No Reference House tailoring
+## 13.5 No Reference House solution tailoring
 
-**PASS.** Canonical briefs are architecture-independent. Controlled Reference House facts enter only at audit-instantiation time.
+**PASS.** Canonical briefs are solution-independent. Project-anchored challenges preserve pre-existing starting conditions but do not bake in the current access method or a favourable verdict. Controlled Reference House facts enter only at audit-instantiation time.
 
 ## 13.6 No design conclusion
 
@@ -1158,7 +1163,7 @@ Any added scenario must receive a stable ID, explicit rationale and coverage-gap
 The durable corpus is:
 
 1. inspect/clear foul drainage;
-2. inspect/clear roof rainwater collection from outside;
+2. inspect/clear roof rainwater collection / outlet;
 3. replace concealed shower control/mixing-valve assembly;
 4. replace largest bounded finite-life plant module;
 5. replace complete window assembly;
