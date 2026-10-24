@@ -7,7 +7,7 @@ const proofRoot = resolve(repoRoot, 'publication/.work/typ07b')
 
 const requiredFonts = [
   'SourceSerif4-Regular',
-  'SourceSerif4-Italic',
+  'SourceSerif4-It',
   'SourceSerif4-Bold',
   'SourceSans3-Regular',
   'SourceSans3-Bold'
