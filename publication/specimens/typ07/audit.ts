@@ -1,5 +1,5 @@
 import { existsSync, readFileSync } from 'node:fs'
-import { dirname, posix, resolve } from 'node:path'
+import { posix, resolve } from 'node:path'
 
 import { publicationFigurePlacements } from '../../figures.js'
 import { publicationPlatePlacements } from '../../plates.js'
@@ -54,18 +54,21 @@ for (const unit of typ07ProofUnits) {
 
   switch (unit.selector.kind) {
     case 'heading-section': {
-      assertUniqueAnchor(source, unit.selector.heading)
-      sourceIdentities[unit.id] = { source: unit.source, selector: unit.selector.heading }
+      const { heading } = unit.selector
+      assertUniqueAnchor(source, heading)
+      sourceIdentities[unit.id] = { source: unit.source, selector: heading }
       break
     }
     case 'first-markdown-table-after': {
-      assertMarkdownTableAfter(source, unit.selector.heading)
-      sourceIdentities[unit.id] = { source: unit.source, selector: `${unit.selector.heading} -> first table` }
+      const { heading } = unit.selector
+      assertMarkdownTableAfter(source, heading)
+      sourceIdentities[unit.id] = { source: unit.source, selector: `${heading} -> first table` }
       break
     }
     case 'publication-contents': {
+      const { partEntryIds } = unit.selector
       const ids = new Set(publicationEntries.map((entry) => entry.id))
-      for (const id of unit.selector.partEntryIds) {
+      for (const id of partEntryIds) {
         if (!ids.has(id)) throw new Error(`TYP-07A contents manifest lost required entry: ${id}`)
       }
       const backMatterCount = publicationEntries.filter((entry) => entry.kind === 'back-matter').length
@@ -74,10 +77,12 @@ for (const unit of typ07ProofUnits) {
       break
     }
     case 'figure-placement': {
+      const { image } = unit.selector
+      const entryId = unit.entryId
       const matches = publicationFigurePlacements().filter((placement) =>
-        placement.image === unit.selector.image && (!unit.entryId || placement.entryId === unit.entryId)
+        placement.image === image && (!entryId || placement.entryId === entryId)
       )
-      if (matches.length !== 1) throw new Error(`TYP-07A expected one figure placement for ${unit.selector.image}; found ${matches.length}.`)
+      if (matches.length !== 1) throw new Error(`TYP-07A expected one figure placement for ${image}; found ${matches.length}.`)
       const placement = matches[0]
       const assetPath = assertAsset(unit.source, placement.image)
       assertUniqueAnchor(source, placement.anchor)
@@ -85,30 +90,32 @@ for (const unit of typ07ProofUnits) {
       break
     }
     case 'plate-placement': {
+      const { pageClass, title } = unit.selector
       const matches = publicationPlatePlacements().filter((placement) =>
-        placement.pageClass === unit.selector.pageClass &&
-        placement.views.some((view) => view.title === unit.selector.title)
+        placement.pageClass === pageClass &&
+        placement.views.some((view) => view.title === title)
       )
-      if (matches.length !== 1) throw new Error(`TYP-07A expected one ${unit.selector.pageClass} placement for ${unit.selector.title}; found ${matches.length}.`)
+      if (matches.length !== 1) throw new Error(`TYP-07A expected one ${pageClass} placement for ${title}; found ${matches.length}.`)
       const placement = matches[0]
       assertUniqueAnchor(source, placement.anchor)
-      if (unit.selector.pageClass === 'PLATE_PAIR' && placement.views.length !== 2) {
-        throw new Error(`TYP-07A paired plate ${unit.selector.title} no longer contains exactly two views.`)
+      if (pageClass === 'PLATE_PAIR' && placement.views.length !== 2) {
+        throw new Error(`TYP-07A paired plate ${title} no longer contains exactly two views.`)
       }
       for (const view of placement.views) assertAsset(unit.source, view.image)
-      if (unit.selector.title === 'Ground-floor plan' && !placement.views.some((view) => view.title === 'First-floor plan')) {
+      if (title === 'Ground-floor plan' && !placement.views.some((view) => view.title === 'First-floor plan')) {
         throw new Error('TYP-07A canonical plan pair no longer includes First-floor plan.')
       }
       sourceIdentities[unit.id] = {
         source: unit.source,
-        selector: `${unit.selector.pageClass}: ${placement.views.map((view) => view.title).join(' + ')}`
+        selector: `${pageClass}: ${placement.views.map((view) => view.title).join(' + ')}`
       }
       break
     }
     case 'long-url-reference-set': {
+      const { minimumUrls } = unit.selector
       const urls = source.match(/https?:\/\/[^\s)]+/g) ?? []
-      if (urls.length < unit.selector.minimumUrls) {
-        throw new Error(`TYP-07A expected at least ${unit.selector.minimumUrls} URLs in ${unit.source}; found ${urls.length}.`)
+      if (urls.length < minimumUrls) {
+        throw new Error(`TYP-07A expected at least ${minimumUrls} URLs in ${unit.source}; found ${urls.length}.`)
       }
       if (!source.includes('*')) throw new Error(`TYP-07A reference source no longer contains italic work-title material: ${unit.source}`)
       sourceIdentities[unit.id] = { source: unit.source, selector: `${urls.length} reader-facing URLs` }
