@@ -16,6 +16,14 @@ function normalized(page: string): string {
   return page.replace(/\s+/g, ' ').trim()
 }
 
+function firstVisibleLine(page: string): string {
+  return page.split('\n').map((line) => line.trim()).find(Boolean) ?? ''
+}
+
+function hasStandaloneFolio(page: string): boolean {
+  return page.split('\n').some((line) => /^\d+$/.test(line.trim()))
+}
+
 const results: Record<string, unknown> = {}
 const divisionTitles = [
   'Part I — The Proposition',
@@ -58,17 +66,26 @@ for (const format of ['a4', 'b5'] as const) {
 
   const divisionPages: Record<string, number> = {}
   for (const title of divisionTitles) {
-    const candidates = normalizedPages
-      .map((page, index) => ({ page, index }))
-      .filter(({ page, index }) => index > 2 && page.includes(title) && page.split(' ').length < 45)
-    if (!candidates.length) {
-      throw new Error(`TYP-08C ${format} has no dedicated sparse division page for ${title}.`)
+    const index = pages.findIndex((page, pageIndex) => pageIndex > 2 && firstVisibleLine(page) === title)
+    if (index < 0) {
+      throw new Error(`TYP-08C ${format} has no semantic division opening for ${title}.`)
     }
-    divisionPages[title] = candidates[0].index + 1
+    const pageNumber = index + 1
+    if (pageNumber % 2 !== 1) {
+      throw new Error(`TYP-08C ${format} division ${title} begins on verso page ${pageNumber}.`)
+    }
+    if (hasStandaloneFolio(pages[index])) {
+      throw new Error(`TYP-08C ${format} division ${title} still carries a folio on page ${pageNumber}.`)
+    }
+    divisionPages[title] = pageNumber
   }
 
-  const chapterNineIndex = normalizedPages.findIndex((page) => page.includes('9. Environmental resilience without dependence'))
-  if (chapterNineIndex < 0) throw new Error(`TYP-08C ${format} chapter 9 opening not found.`)
+  const chapterNineTitle = '9. Environmental resilience without dependence'
+  const chapterNineIndex = pages.findIndex((page) => firstVisibleLine(page) === chapterNineTitle)
+  if (chapterNineIndex < 0) throw new Error(`TYP-08C ${format} chapter 9 entry opening not found.`)
+  if (!hasStandaloneFolio(pages[chapterNineIndex])) {
+    throw new Error(`TYP-08C ${format} chapter 9 opening lost the folio retained by the TYP-04 entry role.`)
+  }
 
   results[format] = {
     pages: pages.length,
