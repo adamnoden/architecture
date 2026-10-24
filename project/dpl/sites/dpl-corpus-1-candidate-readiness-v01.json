@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "dpl.realSiteCandidateReadiness.v1",
+  "assessmentId": "DPL-15C-CORPUS-1-v0.1",
+  "assuranceProfile": "SCREENING",
+  "referenceHouseFootprintMm": { "width": 12000, "depth": 10800 },
+  "corpusIndex": {
+    "path": "project/dpl/sites/corpus-1-index.json",
+    "gitBlobSha": "aeaa0aaf0b97caea066934687a5c350d111d7233"
+  },
+  "dimensions": [
+    "R1_CONTROLLED_SPATIAL_IDENTITY",
+    "R2_FOOTPRINT_TEST_GEOMETRY",
+    "R3_REAL_ORIENTATION_FRAME",
+    "R4_DATUM_LEVEL_EVIDENCE",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY",
+    "R6_SITE_IDENTITY_COHERENCE"
+  ],
+  "sites": [
+    {
+      "siteId": "DPL-RP-001",
+      "recordPath": "project/dpl/sites/dpl-rp-001-26-the-avenue-finchley.md",
+      "recordGitBlobSha": "60b11c0cc48ed8584230de8943e2f201eeffda22",
+      "nextPublicEvidenceCandidate": false,
+      "assessments": [
+        { "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP001-C08"], "reason": "Exact survey/title parcel geometry is unknown; the marketing-lot identity and approximate area do not define a controlled placement extent." },
+        { "dimension": "R2_FOOTPRINT_TEST_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP001-C03", "RP001-C08"], "reason": "Approximate 491.7 m² marketed area provides no width, depth or shape and the listing carries no site plan." },
+        { "dimension": "R3_REAL_ORIENTATION_FRAME", "state": "NOT_SATISFIED", "evidenceRefs": ["RP001-C07", "RP001-C08"], "reason": "Broad relation to Manor View is known but no controlled parcel frame or legal frontage orientation is established." },
+        { "dimension": "R4_DATUM_LEVEL_EVIDENCE", "state": "NOT_SATISFIED", "evidenceRefs": ["RP001-C09"], "reason": "Approach gradient and parcel levels are unknown; postcode-level elevation is explicitly insufficient." },
+        { "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP001-C06", "RP001-C07"], "reason": "A public-footpath access description exists, but exact route geometry, vehicle/construction capability and site-boundary relationship are unresolved." },
+        { "dimension": "R6_SITE_IDENTITY_COHERENCE", "state": "SATISFIED", "evidenceRefs": ["RP001-C01"], "reason": "The real marketing-lot/site identity is coherent even though its exact spatial extent is not." }
+      ]
+    },
+    {
+      "siteId": "DPL-RP-002",
+      "recordPath": "project/dpl/sites/dpl-rp-002-rear-10-highland-road-bromley.md",
+      "recordGitBlobSha": "79e7c555b9274a2a9ff33e9ebcfc28f75e047c1d",
+      "nextPublicEvidenceCandidate": false,
+      "assessments": [
+        { "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP002-C05", "RP002-C06"], "reason": "The one-house rear-of-10 planning site is real, but its current controlled boundary/extent is not imported at placement precision." },
+        { "dimension": "R2_FOOTPRINT_TEST_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP002-C05", "RP002-C06"], "reason": "The approximately 950 m² figure belongs to the larger rear-of-8-and-10 site and is explicitly forbidden from transfer to this parcel; current dimensions are unknown." },
+        { "dimension": "R3_REAL_ORIENTATION_FRAME", "state": "NOT_SATISFIED", "evidenceRefs": ["RP002-C06"], "reason": "No controlled current parcel orientation/frame is admitted." },
+        { "dimension": "R4_DATUM_LEVEL_EVIDENCE", "state": "NOT_SATISFIED", "evidenceRefs": ["RP002-C10"], "reason": "No topographical survey or usable current level datum is admitted." },
+        { "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP002-C04"], "reason": "Historical 3.2–3.8 m lane evidence comes from the larger 2017 application context; current route width, levels and exact relationship remain unresolved." },
+        { "dimension": "R6_SITE_IDENTITY_COHERENCE", "state": "SATISFIED", "evidenceRefs": ["RP002-C01"], "reason": "The rear-of-10 one-dwelling planning-site identity is coherent; the blocker is insufficient current spatial evidence rather than an unresolved site-reference link." }
+      ]
+    },
+    {
+      "siteId": "DPL-RP-003",
+      "recordPath": "project/dpl/sites/dpl-rp-003-rear-73a-73b-woodside-green-croydon.md",
+      "recordGitBlobSha": "fb1c01a5e28044eda9ac275c2881082bb1917826",
+      "nextPublicEvidenceCandidate": false,
+      "assessments": [
+        { "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY", "state": "NOT_SATISFIED", "evidenceRefs": ["DPL-15B:geometryReadiness"], "reason": "Public evidence improved application identity/context but did not recover a controlled application/red-line geometry suitable for placement." },
+        { "dimension": "R2_FOOTPRINT_TEST_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["DPL-15B:geometryReadiness"], "reason": "No controlled dimensioned site/block plan, width/depth/area or usable drawing scale was acquired." },
+        { "dimension": "R3_REAL_ORIENTATION_FRAME", "state": "NOT_SATISFIED", "evidenceRefs": ["DPL-15B:E3"], "reason": "Indexed location-plan metadata contains a north arrow but controlled page/scale geometry was not acquired, so no placement frame is admitted." },
+        { "dimension": "R4_DATUM_LEVEL_EVIDENCE", "state": "NOT_SATISFIED", "evidenceRefs": ["DPL-15A:candidateAuthoring"], "reason": "Surveyed or screening-usable levels/topography remain absent." },
+        { "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["DPL-15B:geometryReadiness"], "reason": "Relationship to Dickenson's Lane is contextual only; explicit screening access dimensions were not acquired." },
+        { "dimension": "R6_SITE_IDENTITY_COHERENCE", "state": "SATISFIED", "evidenceRefs": ["RP003-C01", "DPL-15B:E1"], "reason": "The planning-defined real site/application identity is coherent and first-party decision provenance is controlled." }
+      ]
+    },
+    {
+      "siteId": "DPL-RP-004",
+      "recordPath": "project/dpl/sites/dpl-rp-004-4-nelmes-way-hornchurch.md",
+      "recordGitBlobSha": "36b7fb53af2cd4522e671c721b828d07778757f0",
+      "nextPublicEvidenceCandidate": true,
+      "assessments": [
+        { "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP004-C01"], "reason": "The current application/site identity is exact for screening, but the frozen record does not carry the application/red-line boundary geometry required for placement." },
+        { "dimension": "R2_FOOTPRINT_TEST_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Measured plot width/depth/area are unknown in the frozen corpus." },
+        { "dimension": "R3_REAL_ORIENTATION_FRAME", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Measured orientation/parcel frame is not admitted." },
+        { "dimension": "R4_DATUM_LEVEL_EVIDENCE", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Topographic survey and finished levels are unknown." },
+        { "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP004-C04"], "reason": "A normal public-street relationship is known contextually, but exact access geometry is unknown." },
+        { "dimension": "R6_SITE_IDENTITY_COHERENCE", "state": "SATISFIED", "evidenceRefs": ["RP004-C01", "RP004-C05"], "reason": "The current Havering application reference, address and replacement-dwelling decision are coherently linked with no known sub-parcel identity conflict." }
+      ]
+    },
+    {
+      "siteId": "DPL-RP-005",
+      "recordPath": "project/dpl/sites/dpl-rp-005-great-west-road-stucley-road-hounslow.md",
+      "recordGitBlobSha": "c52fcee52547b0b1e00d8d44ed42e2bdb6b74675",
+      "nextPublicEvidenceCandidate": false,
+      "assessments": [
+        { "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP005-C02", "RP005-C03"], "reason": "The rear-garage development area is asserted by marketing, but the exact planning/red-line parcel is not directly recovered." },
+        { "dimension": "R2_FOOTPRINT_TEST_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "One-dwelling parcel dimensions and shape are unknown." },
+        { "dimension": "R3_REAL_ORIENTATION_FRAME", "state": "NOT_SATISFIED", "evidenceRefs": ["RP005-C04"], "reason": "Dual-frontage context is known, but no controlled sub-parcel orientation/frame is admitted." },
+        { "dimension": "R4_DATUM_LEVEL_EVIDENCE", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Topography/levels are unknown." },
+        { "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP005-C02", "RP005-C04"], "reason": "Side-road access is asserted contextually; exact sub-parcel access geometry and rights are unresolved." },
+        { "dimension": "R6_SITE_IDENTITY_COHERENCE", "state": "NOT_SATISFIED", "evidenceRefs": ["RP005-C03", "provenance semantics"], "reason": "The planning/source-link confidence is only LIKELY_OVERLAP; direct official planning parcel identity remains unresolved." }
+      ]
+    },
+    {
+      "siteId": "DPL-RP-006",
+      "recordPath": "project/dpl/sites/dpl-rp-006-land-adjacent-50-camelot-close-thamesmead.md",
+      "recordGitBlobSha": "14a6209dc3e75e3690a1db209f0b82448d02dc43",
+      "nextPublicEvidenceCandidate": false,
+      "assessments": [
+        { "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP006-C03", "RP006-C04"], "reason": "The application identity is exact, but the frozen geometry is an indicative marketing plan with possible adopted-highway overlap rather than a controlled placement extent." },
+        { "dimension": "R2_FOOTPRINT_TEST_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP006-C03"], "reason": "Approximately 217 m² is marketing area only; exact surveyed dimensions/orientation are unresolved." },
+        { "dimension": "R3_REAL_ORIENTATION_FRAME", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "No controlled real parcel orientation/frame is admitted." },
+        { "dimension": "R4_DATUM_LEVEL_EVIDENCE", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Site levels/topography are unknown." },
+        { "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Access rights and exact approach geometry remain unresolved, including the possible adopted-highway overlap." },
+        { "dimension": "R6_SITE_IDENTITY_COHERENCE", "state": "SATISFIED", "evidenceRefs": ["RP006-C01"], "reason": "Application reference/location identity is exact; title/highway extent remains a separate spatial-authority problem." }
+      ]
+    },
+    {
+      "siteId": "DPL-RP-007",
+      "recordPath": "project/dpl/sites/dpl-rp-007-land-28-godstone-road-kenley.md",
+      "recordGitBlobSha": "9e11c755b9791e7d3a5b21c775230dfb142efc25",
+      "nextPublicEvidenceCandidate": false,
+      "assessments": [
+        { "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP007-C01", "decision-critical unknowns"], "reason": "The application/site reference is exact but current legal/application geometry is not represented at placement precision." },
+        { "dimension": "R2_FOOTPRINT_TEST_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Exact parcel dimensions/shape are not admitted." },
+        { "dimension": "R3_REAL_ORIENTATION_FRAME", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "No controlled parcel orientation/frame is admitted." },
+        { "dimension": "R4_DATUM_LEVEL_EVIDENCE", "state": "NOT_SATISFIED", "evidenceRefs": ["RP007-C02", "decision-critical unknowns"], "reason": "Steep/sloping topography is materially evidenced, but surveyed contours, gradients and usable level datum are absent." },
+        { "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Access rights and gradients are unresolved." },
+        { "dimension": "R6_SITE_IDENTITY_COHERENCE", "state": "SATISFIED", "evidenceRefs": ["RP007-C01"], "reason": "Application/site identity is exact; the unresolved decision-status conflict does not make the spatial subject ambiguous." }
+      ]
+    },
+    {
+      "siteId": "DPL-RP-008",
+      "recordPath": "project/dpl/sites/dpl-rp-008-rear-32-gleneldon-road-streatham.md",
+      "recordGitBlobSha": "80a7377877e8b817925f2e09dd2bcb4c05a613df",
+      "nextPublicEvidenceCandidate": false,
+      "assessments": [
+        { "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP008-C01", "decision-critical unknowns"], "reason": "The one-dwelling planning-site identity is exact, but exact red-line/legal extent is not represented as placement geometry." },
+        { "dimension": "R2_FOOTPRINT_TEST_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP008-C02"], "reason": "Approximately 97 m² is a marketing measurement only; exact dimensions and shape are absent and the approximation is not converted into incompatibility." },
+        { "dimension": "R3_REAL_ORIENTATION_FRAME", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Surveyed orientation is unknown." },
+        { "dimension": "R4_DATUM_LEVEL_EVIDENCE", "state": "NOT_SATISFIED", "evidenceRefs": ["decision-critical unknowns"], "reason": "Surveyed levels are unknown." },
+        { "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY", "state": "NOT_SATISFIED", "evidenceRefs": ["RP008-C05"], "reason": "Street-access context is relatively simple but legal access and precise geometry remain unknown." },
+        { "dimension": "R6_SITE_IDENTITY_COHERENCE", "state": "SATISFIED", "evidenceRefs": ["RP008-C01"], "reason": "The planning-site/address identity is coherent; current permission status is a separate planning-state recheck." }
+      ]
+    }
+  ],
+  "resultBoundary": {
+    "referenceHouseCandidate": "NOT_AUTHORED",
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "deploymentEnvelopeDpl16": "HELD",
+    "scalarSiteScore": "FORBIDDEN"
+  }
+}
