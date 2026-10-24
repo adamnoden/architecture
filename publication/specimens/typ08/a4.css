@@ -14,7 +14,10 @@
 /* Vivliostyle does not reliably inherit unnamed-page size onto a newly
    introduced named page. TYP-08C therefore pins only its new named page
    classes to the already-authoritative format geometry. */
-@page typ08-division,
+@page typ08-division {
+  size: A4;
+}
+
 @page typ08-imprint {
   size: A4;
 }
