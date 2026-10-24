@@ -1,0 +1,94 @@
+name: TYP-06 drawing-interface proof
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/typ06-drawing-interface-proof.yml'
+      - 'publication/specimens/typ06/**'
+      - 'publication/specimens/typ03/open-fonts.ts'
+      - 'docs/reference-house/publication-ground-floor-plan.svg'
+      - 'docs/reference-house/publication-principal-section.svg'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Install PDF inspectors
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Build exact A4 and B5 drawing-interface proofs
+        run: npx tsx publication/specimens/typ06/build.ts
+
+      - name: Verify finished-PDF Source Sans identity and page count
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          verify_pdf() {
+            local pdf="$1"
+            local font_report="${pdf}.fonts.txt"
+            local info_report="${pdf}.info.txt"
+
+            pdffonts "$pdf" | tee "$font_report"
+            pdfinfo "$pdf" | tee "$info_report"
+
+            for required in SourceSans3-Regular SourceSans3-Bold; do
+              grep -E "${required}.*yes[[:space:]]+yes" "$font_report" >/dev/null || {
+                echo "Missing embedded required font $required in $pdf" >&2
+                exit 1
+              }
+            done
+
+            if grep -Eiq 'Arial|Helvetica|Liberation|Times|Georgia' "$font_report"; then
+              echo "System-font fallback detected in $pdf" >&2
+              exit 1
+            fi
+
+            grep -E '^Pages:[[:space:]]+2$' "$info_report" >/dev/null || {
+              echo "TYP-06B proof must contain exactly two pages: $pdf" >&2
+              exit 1
+            }
+          }
+
+          verify_pdf publication/.work/typ06b/a4/typ06b-drawing-interface-a4.pdf
+          verify_pdf publication/.work/typ06b/b5/typ06b-drawing-interface-b5.pdf
+
+      - name: Upload drawing-interface proof family
+        uses: actions/upload-artifact@v4
+        with:
+          name: typ06b-drawing-interface-proof
+          path: |
+            publication/.work/typ06b/a4/typ06b-drawing-interface-a4.pdf
+            publication/.work/typ06b/a4/manifest.json
+            publication/.work/typ06b/a4/groundPlan.source-sans.svg
+            publication/.work/typ06b/a4/principalSection.source-sans.svg
+            publication/.work/typ06b/a4/typ06b-drawing-interface-a4.pdf.fonts.txt
+            publication/.work/typ06b/a4/typ06b-drawing-interface-a4.pdf.info.txt
+            publication/.work/typ06b/b5/typ06b-drawing-interface-b5.pdf
+            publication/.work/typ06b/b5/manifest.json
+            publication/.work/typ06b/b5/groundPlan.source-sans.svg
+            publication/.work/typ06b/b5/principalSection.source-sans.svg
+            publication/.work/typ06b/b5/typ06b-drawing-interface-b5.pdf.fonts.txt
+            publication/.work/typ06b/b5/typ06b-drawing-interface-b5.pdf.info.txt
+          if-no-files-found: error
+          retention-days: 14
