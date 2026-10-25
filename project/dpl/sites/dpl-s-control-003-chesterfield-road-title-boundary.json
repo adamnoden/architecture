@@ -1,0 +1,61 @@
+{
+  "schema": "dpl.controlTitleBoundary.v1",
+  "controlId": "DPL-S-CONTROL-003",
+  "site": "25A Chesterfield Road, Chiswick, London, W4 3HQ",
+  "uprn": "100021580413",
+  "retrievedAt": "2026-10-25",
+  "source": {
+    "dataset": "title-boundary",
+    "provider": "HM Land Registry via Planning Data",
+    "planningDataDatasetUrl": "https://www.planning.data.gov.uk/dataset/title-boundary",
+    "uprnQuery": "https://www.planning.data.gov.uk/entity.json?q=100021580413&dataset=title-boundary&limit=50",
+    "independentPointQuery": "https://www.planning.data.gov.uk/entity.json?dataset=title-boundary&latitude=51.485949&longitude=-0.267437&limit=50",
+    "entity": 12044235316,
+    "reference": "44235316",
+    "quality": "authoritative",
+    "entryDate": "2026-10-05",
+    "startDate": "2010-04-08",
+    "queryResultCount": 1,
+    "queryConvergence": "UPRN_AND_POINT_QUERIES_RETURN_IDENTICAL_SINGLE_ENTITY",
+    "sourceJsonSha256": "45240408b1a30743acfb5c06a98e9647ee55fa9bd6a24bcb5819163dee3b2b79"
+  },
+  "geometry": {
+    "sourceCrs": "EPSG:4326",
+    "wkt": "MULTIPOLYGON (((-0.267505 51.485697, -0.267403 51.485882, -0.267309 51.486055, -0.267396 51.486074, -0.267438 51.486015, -0.267626 51.485725, -0.267505 51.485697)))",
+    "representativePointWkt": "POINT (-0.267465 51.485879)",
+    "analysisCrs": "EPSG:27700",
+    "analysisMethod": "WGS84 source geometry transformed to British National Grid with PROJ/pyproj; planar metrics calculated with GEOS/Shapely",
+    "areaSquareMetres": 327.8688333923111,
+    "minimumRotatedEnvelopeDimensionsMetres": {
+      "width": 8.961940212430887,
+      "length": 42.070891384277026
+    },
+    "analysisBoundsBng": {
+      "minEasting": 520382.44688191684,
+      "minNorthing": 177727.8680350735,
+      "maxEasting": 520403.5875125228,
+      "maxNorthing": 177769.97138806566
+    }
+  },
+  "referenceHouseFootprintTest": {
+    "referenceHouseDimensionsMetres": [12.0, 10.8],
+    "minimumPossibleRectangleCaliperWidthMetres": 10.8,
+    "siteContainingStripWidthMetres": 8.961940212430887,
+    "marginMetres": -1.838059787569114,
+    "result": "UNCHANGED_REFERENCE_HOUSE_RECTANGLE_CANNOT_BE_CONTAINED",
+    "proof": "The title polygon lies wholly inside a strip 8.96194 m wide. A 12.0 m x 10.8 m rectangle has a minimum projection width of 10.8 m over all rotations. Any rectangle contained by the polygon must also lie within that strip. Therefore no rigid rotation can place the unchanged Reference House footprint inside this tested title polygon.",
+    "candidateAuthorship": "NO_PLACEMENT_AUTHORED"
+  },
+  "authorityLimitations": [
+    "HM Land Registry INSPIRE/index polygons show the position and indicative extent of a registered freehold property; they do not establish the exact legal extent of a registered title.",
+    "This result applies to the exact tested title-boundary entity 44235316 bound to UPRN 100021580413. It does not silently aggregate neighbouring titles or land outside that entity.",
+    "Absolute reprojection offsets do not rescue the footprint test: the decisive quantity is local polygon width, not absolute map position.",
+    "No screenshot, web-map pixel measurement or planning-drawing scaling was used."
+  ],
+  "licence": {
+    "licence": "Open Government Licence v3.0",
+    "hmlrAttribution": "This information is subject to Crown copyright and database rights 2026 and is reproduced with the permission of HM Land Registry.",
+    "osAttribution": "The polygons (including the associated geometry, namely x, y co-ordinates) are subject to Crown copyright and database rights 2026 Ordnance Survey 100026316.",
+    "conditionsUrl": "https://use-land-property-data.service.gov.uk/datasets/inspire/#conditions"
+  }
+}
