@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "contract": "publication-typography-v1-candidate",
   "proofAuthority": {
-    "packet": "TYP-09B",
-    "head": "7542b4cfcfeeb7fb90489b37dd97130d2bb9b828",
-    "run": 40198770522
+    "packet": "TYP-09D.1",
+    "head": "017f621e48be5bd313504088a86358a12a996825",
+    "run": 40231788974
   },
   "a4": {
     "pages": 278,
@@ -16,18 +16,18 @@
     "heightMm": 297
   },
   "b5": {
-    "pages": 335,
-    "duplexLeaves": 168,
+    "pages": 333,
+    "duplexLeaves": 167,
     "sixteenPageSections": 21,
     "pagesAtSixteenPageBoundary": 336,
-    "paddingToSixteenPageBoundary": 1,
+    "paddingToSixteenPageBoundary": 3,
     "widthMm": 176,
     "heightMm": 250
   },
   "comparison": {
-    "b5MinusA4Pages": 57,
-    "b5PageChangePercent": 20.5,
-    "b5MinusA4Leaves": 29,
+    "b5MinusA4Pages": 55,
+    "b5PageChangePercent": 19.78,
+    "b5MinusA4Leaves": 28,
     "spineWidthClaim": "not admissible without final paper caliper / manufacturing specification"
   }
 }
