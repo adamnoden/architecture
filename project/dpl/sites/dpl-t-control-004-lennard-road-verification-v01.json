@@ -1,0 +1,52 @@
+{
+  "payload": {
+    "schema": "dpl.lennardCandidateVerificationResult.v1",
+    "packet": "DPL-T4",
+    "controlId": "DPL-T-CONTROL-004",
+    "candidate": {
+      "id": "DPL-T-CANDIDATE-004-01",
+      "revision": "0.1"
+    },
+    "result": "VERIFIED_BOUNDED_CANDIDATE_READY_FOR_NEXT_DPL_GATE",
+    "sourceIdentity": {
+      "referenceHouseSourceGitBlobSha": "68162a4b6336fac48fd18ecb96eaf915b38ac633",
+      "referenceHouseCompileFingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c",
+      "titleBoundaryGitBlobSha": "2e73185ae1bd0cb8b9b10130abde31d14745f5b3",
+      "elevationGitBlobSha": "6665b293048b40015e08883f14548be40adb3b70",
+      "streetAccessGitBlobSha": "789b2591d113ea691bb9dc369685c03cc55917b3",
+      "analysisGeometryRevision": "0.1",
+      "analysisSourceWktSha256": "316c7f30cc418d1dcbd1a3900b98d2aeda4c3982821df023e2a45bacc6c7b676"
+    },
+    "geometry": {
+      "shellWidthM": 12,
+      "shellDepthM": 10.8,
+      "handedness": "UNMIRRORED",
+      "rigidTransform": "PASS",
+      "screeningContainment": true,
+      "minimumBoundaryClearanceM": 0.640023844673485,
+      "frontageBearingDegFromBngEasting": -44.63434764710605,
+      "frontBearingDegFromBngEasting": -51.63434764710605,
+      "frontSkewDeg": -7,
+      "groundFflM": 70.7
+    },
+    "conformance": {
+      "RH-I02": "CONFORMS",
+      "RH-PROT-01": "CONFORMS",
+      "RH-PROT-04": "CONFORMS",
+      "RH-PROT-06": "CONFORMS",
+      "RH-V02": "CONFORMS",
+      "RH-SI02": "OPEN",
+      "RH-SI05": "OPEN"
+    },
+    "proofBoundary": {
+      "wholeSiteCompatibilityConclusion": "NOT_ADMITTED",
+      "wholeSiteIncompatibilityConclusion": "NOT_ADMITTED",
+      "routeSearch": "NOT_IMPLEMENTED",
+      "planningAcceptability": "NOT_PROVED",
+      "legalTitleBoundary": "UNRESOLVED",
+      "measuredTopographicSurvey": "NOT_ACQUIRED",
+      "dpl16": "HELD"
+    }
+  },
+  "resultFingerprint": "0fafa462472370e54d5e1e3aba40e88cb594e8aafb877e0c687af0e5c5fc96dc"
+}
