@@ -50,70 +50,93 @@ const lightPocheScene = (scene: DrawingScene): DrawingScene => ({
   primitives: scene.primitives.map(clonePrimitiveForLightPoche)
 })
 
+const shiftPrimitiveY = (primitive: DrawingPrimitive, delta: number): DrawingPrimitive => {
+  if (primitive.kind === 'line') {
+    return {
+      ...primitive,
+      a: { ...primitive.a, y: primitive.a.y + delta },
+      b: { ...primitive.b, y: primitive.b.y + delta }
+    }
+  }
+  if (primitive.kind === 'rect') return { ...primitive, y: primitive.y + delta }
+  return { ...primitive, y: primitive.y + delta }
+}
+
 /**
  * Purely representational housekeeping for the current-authority specimen.
  * No coordinate below selects architectural geometry: the changes keep
- * relationship/occurrence notation visible against poche and prevent the
- * narrow gallery label from colliding with the courtyard edge.
+ * relationship/occurrence notation visible against poche, prevent the narrow
+ * gallery label from colliding with the courtyard edge and restore the released
+ * 136 × 145 mm physical specimen envelope. The raw experiment's north arrow is
+ * deliberately discarded because the canonical Reference House owns no true
+ * site orientation.
  */
 const refineCurrentSceneForSpecimen = (scene: DrawingScene): DrawingScene => ({
   ...scene,
-  primitives: scene.primitives.map((primitive) => {
-    if (primitive.kind === 'text' && primitive.id === 'plt03-label-G-GAL-01') {
-      return {
-        ...primitive,
-        rotateDeg: -90,
-        metadata: {
-          ...primitive.metadata,
-          representation: 'rotated-for-narrow-gallery'
+  widthMm: 136,
+  heightMm: 145,
+  primitives: scene.primitives
+    .filter((primitive) => !primitive.id.startsWith('plt03-north-'))
+    .map((rawPrimitive) => {
+      const primitive = rawPrimitive.id.startsWith('plt03-scale-')
+        ? shiftPrimitiveY(rawPrimitive, -6)
+        : rawPrimitive
+
+      if (primitive.kind === 'text' && primitive.id === 'plt03-label-G-GAL-01') {
+        return {
+          ...primitive,
+          rotateDeg: -90,
+          metadata: {
+            ...primitive.metadata,
+            representation: 'rotated-for-narrow-gallery'
+          }
         }
       }
-    }
 
-    if (primitive.kind === 'line' && primitive.id.startsWith('plt03-opening-centre-')) {
-      const dx = primitive.b.x - primitive.a.x
-      const dy = primitive.b.y - primitive.a.y
-      const length = Math.hypot(dx, dy)
-      if (length === 0) return primitive
-      const ux = dx / length
-      const uy = dy / length
-      const extensionMm = 2
-      return {
-        ...primitive,
-        a: {
-          x: primitive.a.x - ux * extensionMm,
-          y: primitive.a.y - uy * extensionMm
-        },
-        b: {
-          x: primitive.b.x + ux * extensionMm,
-          y: primitive.b.y + uy * extensionMm
-        },
-        metadata: {
-          ...primitive.metadata,
-          representation: 'extended-centre-occurrence-marker'
+      if (primitive.kind === 'line' && primitive.id.startsWith('plt03-opening-centre-')) {
+        const dx = primitive.b.x - primitive.a.x
+        const dy = primitive.b.y - primitive.a.y
+        const length = Math.hypot(dx, dy)
+        if (length === 0) return primitive
+        const ux = dx / length
+        const uy = dy / length
+        const extensionMm = 2
+        return {
+          ...primitive,
+          a: {
+            x: primitive.a.x - ux * extensionMm,
+            y: primitive.a.y - uy * extensionMm
+          },
+          b: {
+            x: primitive.b.x + ux * extensionMm,
+            y: primitive.b.y + uy * extensionMm
+          },
+          metadata: {
+            ...primitive.metadata,
+            representation: 'extended-centre-occurrence-marker'
+          }
         }
       }
-    }
 
-    if (primitive.kind === 'line' && primitive.id.startsWith('plt03-qualitative-opening-')) {
-      let offsetX = 0
-      let offsetY = 0
-      if (primitive.id.includes('COURT-E')) offsetX = -2
-      else if (primitive.id.includes('COURT-W')) offsetX = 2
-      else if (primitive.id.includes('GARDEN-CENTRE')) offsetY = -2
-      return {
-        ...primitive,
-        a: { x: primitive.a.x + offsetX, y: primitive.a.y + offsetY },
-        b: { x: primitive.b.x + offsetX, y: primitive.b.y + offsetY },
-        metadata: {
-          ...primitive.metadata,
-          representation: 'offset-host-relationship-trace'
+      if (primitive.kind === 'line' && primitive.id.startsWith('plt03-qualitative-opening-')) {
+        let offsetX = 0
+        let offsetY = 0
+        if (primitive.id.includes('COURT-E')) offsetX = -2
+        else if (primitive.id.includes('COURT-W')) offsetX = 2
+        else if (primitive.id.includes('GARDEN-CENTRE')) offsetY = -2
+        return {
+          ...primitive,
+          a: { x: primitive.a.x + offsetX, y: primitive.a.y + offsetY },
+          b: { x: primitive.b.x + offsetX, y: primitive.b.y + offsetY },
+          metadata: {
+            ...primitive.metadata,
+            representation: 'offset-host-relationship-trace'
+          }
         }
       }
-    }
 
-    return primitive
-  })
+      return primitive
+    })
 })
 
 await rm(workRoot, { recursive: true, force: true })
@@ -207,7 +230,8 @@ const semanticDiff = {
       'External/courtyard wall bodies use the minimum 400 mm extent of the controlled 400–425 mm planning range.',
       'Opening jamb marks express aperture extent/uncertainty only; no frame/reveal position is asserted.',
       'Unknown-width occurrence markers extend beyond wall poche and host-wide qualitative traces are offset from poche solely to remain legible.',
-      'The narrow gallery label is rotated within its own space to avoid a courtyard-edge collision.'
+      'The narrow gallery label is rotated within its own space to avoid a courtyard-edge collision.',
+      'The current-authority specimen remains in the protected 136 × 145 mm physical envelope and emits no north arrow because true site orientation is not owned.'
     ],
     unexplained: []
   },
@@ -227,7 +251,8 @@ const currentAuthorityChecks = {
   stairPlanPathOrWell: 'absent',
   frameRevealConstruction: 'absent',
   thresholdProfile: 'absent',
-  exactQualitativeApertureExtents: 'absent'
+  exactQualitativeApertureExtents: 'absent',
+  trueSiteOrientation: 'absent'
 } as const
 
 const manifest = {
