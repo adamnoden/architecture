@@ -1,0 +1,156 @@
+name: DPL-T2 Lennard evidence probe
+
+on:
+  push:
+    branches:
+      - dpl-t2-lennard-admission
+    paths:
+      - .github/workflows/dpl-t2-lennard-evidence-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Install bounded probe dependencies
+        run: python -m pip install --disable-pip-version-check --quiet beautifulsoup4 requests rasterio
+
+      - name: Acquire planning, LiDAR and open-road evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/planning evidence/lidar evidence/road
+          python3 - <<'PY'
+          import json, re, hashlib, pathlib, urllib.parse
+          import requests
+          from bs4 import BeautifulSoup
+
+          UA={'User-Agent':'Mozilla/5.0 DPL-T2 bounded evidence probe'}
+          out={'planning':{},'lidar':{},'road':{}}
+
+          # 1. Discovery-only mirror: recover exact council document URLs, then download only council bytes.
+          plota='https://plota.co.uk/application/zskczvxb'
+          r=requests.get(plota,headers=UA,timeout=30)
+          r.raise_for_status()
+          pathlib.Path('evidence/planning/plota-discovery.html').write_bytes(r.content)
+          soup=BeautifulSoup(r.text,'html.parser')
+          targets={
+            'aod':'Existing & Proposed Streetscene Elevations incl. AOD Levels',
+            'location':'Location Plan & Site Plan',
+            'existing_site':'Existing Floor, Roof & Site Plans',
+            'proposed_site':'Proposed Floor, Roof & Site Plans',
+          }
+          found={}
+          for a in soup.find_all('a', href=True):
+              text=' '.join(a.get_text(' ',strip=True).split())
+              href=urllib.parse.urljoin(plota,a['href'])
+              for key,needle in targets.items():
+                  if needle.lower() in text.lower() and 'planningaccess.bromley.gov.uk' in href:
+                      found.setdefault(key,[]).append({'text':text,'url':href})
+              if ('original council' in text.lower() or 'council record' in text.lower()) and 'bromley' in href.lower():
+                  found.setdefault('council_record',[]).append({'text':text,'url':href})
+          out['planning']['discoveredCouncilLinks']=found
+
+          # Also inspect every council URL embedded in page source in case anchors are JS-rendered.
+          raw_urls=sorted(set(re.findall(r'https?://[^\"\'<> ]*planningaccess\.bromley\.gov\.uk[^\"\'<> ]*',r.text)))
+          out['planning']['rawCouncilUrls']=raw_urls
+
+          # Download exact council PDFs for named targets if discovered.
+          for key,links in found.items():
+              if key=='council_record' or not links: continue
+              url=links[0]['url']
+              rr=requests.get(url,headers=UA,timeout=30,allow_redirects=True)
+              rec={'url':url,'status':rr.status_code,'finalUrl':rr.url,'contentType':rr.headers.get('content-type'),'bytes':len(rr.content)}
+              if rr.ok and ('pdf' in (rr.headers.get('content-type') or '').lower() or rr.content[:4]==b'%PDF'):
+                  p=pathlib.Path(f'evidence/planning/{key}.pdf')
+                  p.write_bytes(rr.content)
+                  rec['sha256']=hashlib.sha256(rr.content).hexdigest()
+              out['planning'][key]=rec
+
+          # Fetch council record page if link surfaced.
+          if found.get('council_record'):
+              url=found['council_record'][0]['url']
+              rr=requests.get(url,headers=UA,timeout=30)
+              out['planning']['councilRecord']={'url':url,'status':rr.status_code,'finalUrl':rr.url,'contentType':rr.headers.get('content-type'),'bytes':len(rr.content)}
+              if rr.ok:
+                  pathlib.Path('evidence/planning/council-record.html').write_bytes(rr.content)
+
+          # 2. Environment Agency 1m DTM via WCS.
+          wcs='https://environment.data.gov.uk/spatialdata/lidar-composite-digital-terrain-model-dtm-1m/wcs'
+          cap=requests.get(wcs,params={'request':'GetCapabilities','service':'WCS','version':'2.0.1'},headers=UA,timeout=30)
+          out['lidar']['capabilities']={'url':cap.url,'status':cap.status_code,'contentType':cap.headers.get('content-type'),'bytes':len(cap.content)}
+          pathlib.Path('evidence/lidar/capabilities.xml').write_bytes(cap.content)
+          ids=re.findall(rb'<(?:\w+:)?CoverageId>([^<]+)</(?:\w+:)?CoverageId>',cap.content)
+          ids=[x.decode('utf-8','replace') for x in ids]
+          out['lidar']['coverageIds']=ids
+          if ids:
+              cid=ids[0]
+              desc=requests.get(wcs,params={'request':'DescribeCoverage','service':'WCS','version':'2.0.1','coverageId':cid},headers=UA,timeout=30)
+              pathlib.Path('evidence/lidar/describe.xml').write_bytes(desc.content)
+              out['lidar']['describe']={'coverageId':cid,'url':desc.url,'status':desc.status_code,'contentType':desc.headers.get('content-type'),'bytes':len(desc.content)}
+
+              # Site-centred 140m x 160m extraction in BNG. Try common axis labels; retain failures explicitly.
+              attempts=[]
+              for axes in [('E','N'),('x','y'),('X','Y')]:
+                  params=[('service','WCS'),('version','2.0.1'),('request','GetCoverage'),('coverageId',cid),('subset',f'{axes[0]}(542840,542980)'),('subset',f'{axes[1]}(166140,166300)'),('format','image/tiff')]
+                  rr=requests.get(wcs,params=params,headers=UA,timeout=60)
+                  rec={'axes':axes,'url':rr.url,'status':rr.status_code,'contentType':rr.headers.get('content-type'),'bytes':len(rr.content)}
+                  attempts.append(rec)
+                  if rr.ok and (rr.content[:4] in (b'II*\x00',b'MM\x00*') or 'tiff' in (rr.headers.get('content-type') or '').lower()):
+                      pathlib.Path('evidence/lidar/site-dtm.tif').write_bytes(rr.content)
+                      rec['sha256']=hashlib.sha256(rr.content).hexdigest()
+                      break
+              out['lidar']['coverageAttempts']=attempts
+
+          # 3. Supplemental open physical-road geometry; never treated as legal highway-right authority.
+          q='[out:json];way(around:150,51.377028,0.051871)[highway][name="Lennard Road"];out tags geom;'
+          ov=requests.post('https://overpass-api.de/api/interpreter',data={'data':q},headers=UA,timeout=60)
+          out['road']['overpass']={'status':ov.status_code,'bytes':len(ov.content),'query':q}
+          if ov.ok:
+              pathlib.Path('evidence/road/lennard-road-osm.json').write_bytes(ov.content)
+              try: out['road']['elementCount']=len(ov.json().get('elements',[]))
+              except Exception: pass
+
+          pathlib.Path('evidence/probe-summary.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
+          print(json.dumps(out,indent=2))
+          PY
+
+      - name: Inspect acquired LiDAR raster numerically
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          p=pathlib.Path('evidence/lidar/site-dtm.tif')
+          if not p.exists():
+              print('No WCS raster acquired; leave R4 unproved from WCS in this run.')
+              raise SystemExit(0)
+          import rasterio, numpy as np
+          with rasterio.open(p) as ds:
+              a=ds.read(1,masked=True)
+              vals=a.compressed()
+              summary={
+                'crs':str(ds.crs),
+                'bounds':[ds.bounds.left,ds.bounds.bottom,ds.bounds.right,ds.bounds.top],
+                'width':ds.width,
+                'height':ds.height,
+                'nodata':ds.nodata,
+                'minMetresODN':float(vals.min()),
+                'maxMetresODN':float(vals.max()),
+                'meanMetresODN':float(vals.mean()),
+                'validCells':int(vals.size)
+              }
+          pathlib.Path('evidence/lidar/raster-summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
+          print(json.dumps(summary,indent=2))
+          PY
+
+      - name: Upload bounded evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: dpl-t2-lennard-evidence-probe
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 1
