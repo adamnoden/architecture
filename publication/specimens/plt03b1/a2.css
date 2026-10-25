@@ -1,0 +1,79 @@
+@page wall {
+  size: 420mm 594mm;
+  margin: 24mm;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background: #fff;
+  font-family: "PLT03 Source Sans";
+}
+* { box-sizing: border-box; }
+
+.wall-page {
+  page: wall;
+  break-after: page;
+  page-break-after: always;
+  position: relative;
+  width: 372mm;
+  height: 546mm;
+}
+
+.wall-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8pt;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+.proof-name { font-weight: 700; }
+.proof-scale { font-weight: 400; }
+
+.drawing {
+  position: absolute;
+  margin: 0;
+}
+.drawing > svg {
+  display: block;
+  max-width: none;
+  max-height: none;
+  transform: none;
+}
+
+/* Rejected control: exact PLT-03B 1:100 scene, centred without fit scaling. */
+.drawing-100 {
+  left: 118mm;
+  top: 200.5mm;
+  width: 136mm;
+  height: 145mm;
+}
+
+/* Candidate: true 1:50 scene generated at 272 × 282 mm. The shell itself is
+ * 240 × 216 mm; the remainder is fixed paper-space dimensions/markers. */
+.drawing-50 {
+  left: 50mm;
+  top: 132mm;
+  width: 272mm;
+  height: 282mm;
+}
+
+.wall-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 7pt;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
