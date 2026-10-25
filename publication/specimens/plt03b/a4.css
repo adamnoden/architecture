@@ -1,0 +1,8 @@
+@page proof {
+  size: 210mm 297mm;
+  margin: 24mm 35mm 24mm 35mm;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
