@@ -66,9 +66,14 @@
       "url": "https://www.planning.data.gov.uk/dataset/title-boundary",
       "authorityClass": "AUTHORITATIVE_SOURCE_DATASET",
       "role": ["CONTROLLED_SPATIAL_EXTENT", "FOOTPRINT_TEST_GEOMETRY", "ORIENTATION_FRAME"],
-      "state": "SOURCE_CLASS_ADMITTED_EXACT_ENTITY_PENDING",
+      "state": "EXACT_ENTITY_ACQUIRED_AND_FROZEN",
+      "entity": 12044235316,
+      "reference": "44235316",
+      "quality": "authoritative",
       "crs": "WGS84 / EPSG:4326 at Planning Data API boundary",
-      "limitations": ["Index polygon is indicative registered-property position/extent", "Not a determined legal boundary", "Exact 25A entity must be proved rather than visually selected"]
+      "sourceJsonSha256": "45240408b1a30743acfb5c06a98e9647ee55fa9bd6a24bcb5819163dee3b2b79",
+      "geometryRecord": "dpl-s-control-003-chesterfield-road-title-boundary.json",
+      "limitations": ["Index polygon is indicative registered-property position/extent", "Not a determined legal boundary", "No neighbouring title or land is aggregated by implication"]
     },
     {
       "sourceId": "S1-CHES-05",
@@ -77,11 +82,11 @@
       "url": "https://www.data.gov.uk/dataset/01b3ee39-da3f-47b6-83da-dc98e73a461f/lidar-composite-dtm-2022-1m",
       "authorityClass": "FIRST_PARTY_GOVERNMENT_ELEVATION_DATA",
       "role": ["DATUM_LEVEL_EVIDENCE", "TOPOGRAPHY_SCREENING"],
-      "state": "SOURCE_CLASS_ADMITTED_EXACT_SITE_EXTRACTION_PENDING",
+      "state": "SOURCE_CLASS_ADMITTED_NOT_EXTRACTED_AFTER_GEOMETRY_SHORT_CIRCUIT",
       "crs": "OS National Grid source tiles; heights metres to Ordnance Datum Newlyn; OSTN15",
       "resolution": "1m",
       "verticalAccuracy": "+/-15cm RMSE stated for contributing individual LiDAR surveys",
-      "limitations": ["Composite is not a measured private topographic survey", "Exact tile/cell and survey lineage must be frozen before use"]
+      "limitations": ["Composite is not a measured private topographic survey", "Exact site extraction is unnecessary to establish the current no-placement geometry result"]
     }
   ],
   "addressIdentity": {
@@ -89,19 +94,29 @@
     "exactUPRN": "100021580413",
     "state": "RESOLVED",
     "resolutionRecord": "DPL-S1I / #682",
-    "note": "Literal 25A address is bound to UPRN 100021580413. This key may now be used for exact parcel-entity lookup; it does not itself prove title geometry."
+    "note": "Literal 25A address is bound to UPRN 100021580413; both the UPRN query and independent point query return the same single authoritative title-boundary entity."
+  },
+  "geometryDisposition": {
+    "testedTitleBoundaryReference": "44235316",
+    "areaSquareMetres": 327.8688333923111,
+    "minimumRotatedEnvelopeWidthMetres": 8.961940212430887,
+    "minimumRotatedEnvelopeLengthMetres": 42.070891384277026,
+    "referenceHouseFootprintMetres": [12.0, 10.8],
+    "result": "UNCHANGED_REFERENCE_HOUSE_RECTANGLE_CANNOT_BE_CONTAINED",
+    "reason": "The tested title polygon lies inside an 8.96194 m-wide containing strip, while the minimum projection width of the unchanged 12.0 m x 10.8 m Reference House rectangle over all rotations is 10.8 m.",
+    "referenceHouseMutation": "PROHIBITED"
   },
   "readiness": {
-    "R1_CONTROLLED_SPATIAL_IDENTITY": "PARTIAL_EXACT_PARCEL_BINDING_PENDING_ADDRESS_KEY_RESOLVED",
-    "R2_FOOTPRINT_TEST_GEOMETRY": "PENDING_EXACT_TITLE_POLYGON",
-    "R3_REAL_ORIENTATION_FRAME": "PENDING_EXACT_TITLE_POLYGON",
-    "R4_DATUM_LEVEL_EVIDENCE": "PENDING_EXACT_EA_DTM_SITE_EXTRACTION",
-    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "PARTIAL_STREET_FRONT_IDENTITY_PROVED_EXACT_DISPOSITION_PENDING",
-    "R6_SITE_IDENTITY_COHERENCE": "PARTIAL_PARCEL_ENTITY_PENDING_ADDRESS_KEY_RESOLVED"
+    "R1_CONTROLLED_SPATIAL_IDENTITY": "SATISFIED_FOR_TESTED_TITLE_EXTENT",
+    "R2_FOOTPRINT_TEST_GEOMETRY": "SATISFIED_GEOMETRY_ACQUIRED_KNOWN_NO_PLACEMENT",
+    "R3_REAL_ORIENTATION_FRAME": "SATISFIED_EPSG4326_SOURCE_WITH_BNG_ANALYSIS",
+    "R4_DATUM_LEVEL_EVIDENCE": "NOT_ASSESSED_GEOMETRY_SHORT_CIRCUIT",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "PARTIAL_FIRST_PARTY_STREET_FRONT_IDENTITY_GEOMETRY_SHORT_CIRCUIT",
+    "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_FOR_TESTED_TITLE_EXTENT"
   },
-  "packetState": "CONTROL_003_SELECTED_ADDRESS_KEY_RESOLVED_EVIDENCE_COMPOSITION_IN_PROGRESS",
-  "finalResult": null,
-  "candidateAuthoringState": "NOT_AUTHORED_IN_DPL_S1",
+  "packetState": "CONTROL_003_AUTHORITATIVE_GEOMETRY_ACQUIRED_KNOWN_NO_UNCHANGED_RH_PLACEMENT",
+  "finalResult": "PENDING_DPL_S1C_RESULT_SEMANTIC_ADMISSION",
+  "candidateAuthoringState": "NOT_AUTHORED_GEOMETRY_PROVES_NO_RIGID_PLACEMENT",
   "restraints": {
     "pixelMeasurement": "PROHIBITED",
     "neighbourPolygonGuessing": "PROHIBITED",
