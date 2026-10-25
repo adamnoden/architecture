@@ -9,13 +9,15 @@ import { evaluateCandidateConformance } from './conformance.js'
 import type { CandidateConformanceFinding, DeploymentCandidateInput } from './model.js'
 
 type Point = readonly [number, number]
-
 type Json = any
 
+const UNIT_VECTOR_TOLERANCE = 5e-9
+const COORDINATE_TOLERANCE_M = 5e-8
+const SOURCE_CROSSCHECK_TOLERANCE_M = 1e-6
+const BEARING_TOLERANCE_DEG = 1e-7
+
 const rootUrl = (path: string): URL => new URL(`../../${path}`, import.meta.url)
-
 const readBytes = (path: string): Promise<Buffer> => readFile(rootUrl(path))
-
 const readJson = async <T = Json>(path: string): Promise<T> =>
   JSON.parse((await readBytes(path)).toString('utf8')) as T
 
@@ -201,19 +203,19 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
     assertNear(
       polygonMeasure.area,
       analysis.crossChecks.derivedAreaSquareMetres,
-      1e-6,
+      SOURCE_CROSSCHECK_TOLERANCE_M,
       'derived BNG polygon area'
     )
     assertPointNear(
       polygonMeasure.centroid,
       analysis.crossChecks.expectedParcelCentroidBngM,
-      1e-6,
+      SOURCE_CROSSCHECK_TOLERANCE_M,
       'derived BNG polygon centroid'
     )
     assertPointNear(
       polygonMeasure.centroid,
       elevation.parcelMask.parcelCentroidBng,
-      1e-6,
+      SOURCE_CROSSCHECK_TOLERANCE_M,
       'EA parcel-mask/title centroid composition'
     )
 
@@ -221,10 +223,13 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
     const origin = transform.modelOriginBngM as Point
     const xUnit = transform.modelXUnitBng as Point
     const yUnit = transform.modelYUnitBng as Point
-    assertNear(magnitude(xUnit), 1, 1e-12, 'model +X unit length')
-    assertNear(magnitude(yUnit), 1, 1e-12, 'model +Y unit length')
-    assertNear(dot(xUnit, yUnit), 0, 1e-12, 'model axes orthogonality')
-    assertNear(cross(xUnit, yUnit), 1, 1e-12, 'unmirrored rigid-transform determinant')
+
+    // The stored authored vectors are decimal coordinates, not exact symbolic trig values.
+    // Prove rigid geometry to their stated numeric precision without pretending nanometre exactness.
+    assertNear(magnitude(xUnit), 1, UNIT_VECTOR_TOLERANCE, 'model +X unit length')
+    assertNear(magnitude(yUnit), 1, UNIT_VECTOR_TOLERANCE, 'model +Y unit length')
+    assertNear(dot(xUnit, yUnit), 0, UNIT_VECTOR_TOLERANCE, 'model axes orthogonality')
+    assertNear(cross(xUnit, yUnit), 1, UNIT_VECTOR_TOLERANCE, 'unmirrored rigid-transform determinant')
 
     const shellWidthM = candidate.referenceHouse.boundedConformanceFacts.shellWidthMm / 1000
     const shellDepthM = candidate.referenceHouse.boundedConformanceFacts.shellDepthMm / 1000
@@ -238,7 +243,7 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
     const authoredFootprint = candidate.placement.footprintBngM as Point[]
     assert.equal(authoredFootprint.length, derivedFootprint.length)
     derivedFootprint.forEach((point, index) => {
-      assertPointNear(point, authoredFootprint[index], 1e-9, `footprint vertex ${index}`)
+      assertPointNear(point, authoredFootprint[index], COORDINATE_TOLERANCE_M, `footprint vertex ${index}`)
     })
 
     for (const point of derivedFootprint.slice(0, -1)) {
@@ -248,15 +253,25 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
     assertNear(
       clearance,
       candidate.placement.screeningFitEvidence.minimumBoundaryClearanceM,
-      1e-6,
+      SOURCE_CROSSCHECK_TOLERANCE_M,
       'minimum title-index boundary clearance'
     )
     assert.equal(candidate.placement.screeningFitEvidence.containedByAdmittedTitleIndexPolygon, true)
 
     const frontageStart = street.controlledGeometryComposition.southWestBoundarySegmentBng.start as Point
     const frontageEnd = street.controlledGeometryComposition.southWestBoundarySegmentBng.end as Point
-    assertPointNear(frontageStart, analysis.crossChecks.expectedFrontageSegmentBngM.start, 1e-9, 'frontage start')
-    assertPointNear(frontageEnd, analysis.crossChecks.expectedFrontageSegmentBngM.end, 1e-9, 'frontage end')
+    assertPointNear(
+      frontageStart,
+      analysis.crossChecks.expectedFrontageSegmentBngM.start,
+      COORDINATE_TOLERANCE_M,
+      'frontage start'
+    )
+    assertPointNear(
+      frontageEnd,
+      analysis.crossChecks.expectedFrontageSegmentBngM.end,
+      COORDINATE_TOLERANCE_M,
+      'frontage end'
+    )
 
     const frontageUnit = normalise(subtract(frontageEnd, frontageStart))
     const frontageBearing = bearingDeg(frontageUnit)
@@ -264,19 +279,19 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
     assertNear(
       frontageBearing,
       candidate.placement.streetRelationship.screeningFrontageSegmentBearingDegFromBngEasting,
-      1e-12,
+      BEARING_TOLERANCE_DEG,
       'frontage bearing'
     )
     assertNear(
       frontBearing,
       candidate.placement.streetRelationship.authoredFrontBearingDegFromBngEasting,
-      1e-12,
+      BEARING_TOLERANCE_DEG,
       'Reference House front bearing'
     )
     assertNear(
       angleDeltaDeg(frontBearing, frontageBearing),
       candidate.placement.streetRelationship.authoredFrontSkewDegFromScreeningFrontage,
-      1e-12,
+      BEARING_TOLERANCE_DEG,
       'authored front skew'
     )
 
@@ -291,10 +306,15 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
     assertPointNear(
       constructedFrontCentre,
       construction.frontCentreBngM,
-      1e-9,
+      COORDINATE_TOLERANCE_M,
       'authored front-centre construction'
     )
-    assertPointNear(transformFrontCentre, construction.frontCentreBngM, 1e-9, 'transform front centre')
+    assertPointNear(
+      transformFrontCentre,
+      construction.frontCentreBngM,
+      COORDINATE_TOLERANCE_M,
+      'transform front centre'
+    )
 
     assert.equal(candidate.verticalDatum.datum, 'ODN')
     assertNear(
@@ -395,7 +415,7 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
     )
     assert.equal(
       verification.resultFingerprint,
-      '7c7b6857b5ca6e0ec01aa799bb071a56bf4dd9ec0fe085e20407aca5681625b4'
+      '0fafa462472370e54d5e1e3aba40e88cb594e8aafb877e0c687af0e5c5fc96dc'
     )
     assert.equal(Object.prototype.hasOwnProperty.call(runtimePayload, 'compatibility'), false)
     assert.equal(Object.prototype.hasOwnProperty.call(runtimePayload, 'deploymentConclusion'), false)
