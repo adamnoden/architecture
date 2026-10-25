@@ -1,0 +1,1 @@
+Parent gate #700 should close or advance only after this packet merges. Until then, 41 Lennard Road remains a branch-level positive preflight and no downstream admission work is authoritative on main.
