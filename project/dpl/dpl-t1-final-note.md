@@ -1,0 +1,1 @@
+Final preflight disposition before merge: `DPL-T-CONTROL-004 / 41 Lennard Road` is selected; exact screening geometry admits a constructive unchanged-RH rectangle; downstream evidence remains held for the next packet.
