@@ -1,0 +1,1 @@
+Stop condition satisfied: one conventional street-front replacement candidate has passed exact geometry preflight. Do not expand the shortlist merely for sample-size optics. Further candidates remain held unless Lennard fails downstream R4/R5/full admission.
