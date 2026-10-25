@@ -11,6 +11,7 @@ mkdirSync(resolve(proofRoot, 'b5'), { recursive: true })
 
 execFileSync('npx', ['tsx', 'publication/scripts/prepare.ts', '--full'], {
   cwd: repoRoot,
+  env: { ...process.env, PUBLICATION_RAW_PREPARE: '1' },
   stdio: 'inherit'
 })
 execFileSync('npx', ['tsx', 'publication/specimens/typ08/prepare.ts'], {
@@ -30,11 +31,9 @@ for (const format of ['a4', 'b5'] as const) {
   const pdf = resolve(proofRoot, format, `typ08a-full-book-${format}.pdf`)
   const relativePdf = relative(repoRoot, pdf)
 
-  // The frozen TYP-04 contract is semantic: every Part starts on recto. The
-  // generated Part marker sits inside the actual ArticleEntry and carries
-  // break-before:right in all five Part documents. Vivliostyle therefore adds a
-  // genuine :blank page only when the preceding flow requires one; no page-count
-  // prediction or synthetic parity document is needed.
+  // Historical TYP-08 stays pinned to raw publication preparation and its own
+  // candidate-only transformations. TYP-09 production typography is deliberately
+  // bypassed above so this proof remains a reproducible frozen reference object.
   execFileSync('npx', ['vivliostyle', 'build', '-c', 'publication/specimens/typ08/vivliostyle.config.js'], {
     cwd: repoRoot,
     env: { ...process.env, TYP08_FORMAT: format },

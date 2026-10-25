@@ -1,0 +1,5 @@
+/* Applied only to Part ArticleEntries. Vivliostyle honours the recto break
+   on a marker inside the entry more reliably than on the ArticleEntry root. */
+.publication-division-context {
+  break-before: right;
+}

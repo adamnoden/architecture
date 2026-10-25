@@ -1,0 +1,63 @@
+/* Explicit named-page and Part-opening furniture suppression.
+   Kept separate from typography.css so page-role mechanics remain auditable. */
+@page title {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+@page contents {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+@page publication-imprint {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+@page hk-plate {
+  margin: 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+@page :blank {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+@page :nth(1 of publication-part-i) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
+@page :nth(1 of publication-part-ii) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
+@page :nth(1 of publication-part-iii) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
+@page :nth(1 of publication-part-iv) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
+@page :nth(1 of publication-part-v) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
