@@ -1,0 +1,57 @@
+{
+  "schema": "dpl.instrumentedRealControlSourceManifest.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "controlSiteKind": "INSTRUMENTED_REAL_CONTROL",
+  "sampleMembership": "EXCLUDED_FROM_DEPLOYMENT_ENVELOPE_SAMPLE",
+  "researchDate": "2026-10-25",
+  "site": {
+    "address": "41 Lennard Road, Bromley, BR2 8LN",
+    "planningAuthority": "London Borough of Bromley",
+    "applicationRef": "26/02618/FPA",
+    "proposal": "Demolition of existing bungalow and construction of detached two storey 4 bedroom dwellinghouse with habitable rooms in loftspace, cycle parking in rear garden, front driveway alterations and side boundary fence/gate",
+    "siteTypology": "CONVENTIONAL_STREET_FRONT_REPLACEMENT_DWELLING"
+  },
+  "addressIdentity": {
+    "uprn": "100020404537",
+    "planningCoordinateBng": [542903, 166217],
+    "uprnPointBng": [542903.0123, 166217.0333],
+    "coordinateDifferenceMetres": 0.0356,
+    "state": "RESOLVED_BY_EXACT_COORDINATE_CONVERGENCE"
+  },
+  "titleBoundary": {
+    "provider": "HM Land Registry via Planning Data",
+    "entity": 12057071807,
+    "reference": "57071807",
+    "quality": "authoritative",
+    "sourceCrs": "EPSG:4326",
+    "analysisCrs": "EPSG:27700",
+    "sourceJsonSha256": "faa4f7bf323166e92345db7e57208b70c197379388e3c9b3e6f1f457d6985450",
+    "geometryRecord": "dpl-t-control-004-lennard-road-title-boundary.json",
+    "authorityLimitation": "Indicative registered-property index extent; not a determined legal boundary."
+  },
+  "geometryPreflight": {
+    "areaSquareMetres": 783.6969066670147,
+    "minimumRotatedEnvelopeWidthMetres": 13.523492443872046,
+    "minimumRotatedEnvelopeLengthMetres": 67.10176553055364,
+    "referenceHouseFootprintMetres": [12.0, 10.8],
+    "constructiveWitnessContained": true,
+    "constructiveWitnessMinimumBoundaryClearanceMetres": 1.2320137983986683,
+    "result": "CONTROLLED_SCREENING_GEOMETRY_DOES_NOT_DISPROVE_PLACEMENT"
+  },
+  "readiness": {
+    "R1_CONTROLLED_SPATIAL_IDENTITY": "SATISFIED_FOR_SCREENING_TITLE_EXTENT",
+    "R2_FOOTPRINT_TEST_GEOMETRY": "SATISFIED_POSITIVE_CONSTRUCTIVE_PREFLIGHT",
+    "R3_REAL_ORIENTATION_FRAME": "SATISFIED_EPSG4326_SOURCE_WITH_BNG_ANALYSIS",
+    "R4_DATUM_LEVEL_EVIDENCE": "PENDING_NEXT_PACKET",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "PENDING_NEXT_PACKET",
+    "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDENTITY_LEVEL"
+  },
+  "candidateAuthoringState": "NOT_AUTHORED_PREFLIGHT_ONLY",
+  "restraints": {
+    "referenceHouseMutation": "PROHIBITED",
+    "compatibilityConclusion": "NOT_ADMITTED",
+    "incompatibilityConclusion": "NOT_ADMITTED",
+    "routeSearch": "NOT_IMPLEMENTED",
+    "dpl16": "HELD"
+  }
+}
