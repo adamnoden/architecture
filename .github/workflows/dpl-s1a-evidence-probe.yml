@@ -19,7 +19,7 @@ jobs:
       - name: Acquire exact public source material
         shell: bash
         run: |
-          set -euo pipefail
+          set -u
           mkdir -p evidence
 
           UPRN='100021580413'
@@ -36,9 +36,10 @@ jobs:
 
           curl --fail --location --retry 3 --silent --show-error \
             'https://use-land-property-data.service.gov.uk/datasets/inspire/download?back=true' \
-            -o evidence/hmlr-inspire-download.html
+            -o evidence/hmlr-inspire-download.html || true
 
-          python3 - <<'PY'
+          if [ -f evidence/hmlr-inspire-download.html ]; then
+            python3 - <<'PY' || true
           from html.parser import HTMLParser
           from urllib.parse import urljoin
 
@@ -76,20 +77,42 @@ jobs:
           open('evidence/hounslow-gml-url.txt', 'w').write(url + '\n')
           print(url)
           PY
+          fi
 
-          HMLR_URL="$(cat evidence/hounslow-gml-url.txt)"
-          curl --fail --location --retry 3 --silent --show-error "$HMLR_URL" -o evidence/hounslow.gml
+          if [ -f evidence/hounslow-gml-url.txt ]; then
+            HMLR_URL="$(cat evidence/hounslow-gml-url.txt)"
+            curl --silent --show-error --max-redirs 0 -D evidence/hmlr-first-response-headers.txt \
+              "$HMLR_URL" -o evidence/hmlr-first-response-body.bin || true
+            curl --fail --location --max-redirs 8 --silent --show-error \
+              -D evidence/hmlr-follow-headers.txt "$HMLR_URL" -o evidence/hounslow.gml || true
+          else
+            HMLR_URL='UNRESOLVED'
+          fi
 
           {
             echo "UPRN=${UPRN}"
             echo "point_wgs84=${LAT},${LON}"
             echo "hmlr_url=${HMLR_URL}"
-            echo "hmlr_bytes=$(wc -c < evidence/hounslow.gml)"
-            echo "hmlr_sha256=$(sha256sum evidence/hounslow.gml | awk '{print $1}')"
+            if [ -f evidence/hounslow.gml ]; then
+              echo "hmlr_bytes=$(wc -c < evidence/hounslow.gml)"
+              echo "hmlr_sha256=$(sha256sum evidence/hounslow.gml | awk '{print $1}')"
+            else
+              echo "hmlr_bytes=NOT_ACQUIRED"
+            fi
             for f in evidence/planning-data-title-boundary-*.json; do
               if [ -f "$f" ]; then
                 echo "$(basename "$f")_bytes=$(wc -c < "$f")"
                 echo "$(basename "$f")_sha256=$(sha256sum "$f" | awk '{print $1}')"
+                python3 - "$f" <<'PY' || true
+          import json, sys
+          p = sys.argv[1]
+          try:
+              d = json.load(open(p))
+              print(f"{p}_keys={sorted(d.keys())}")
+              print(f"{p}_entities={len(d.get('entities', []))}")
+          except Exception as e:
+              print(f"{p}_json_error={e}")
+          PY
               fi
             done
           } | tee evidence/probe-summary.txt
