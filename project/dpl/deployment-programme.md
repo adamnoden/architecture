@@ -2,9 +2,9 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Current packet:** [#722 — DPL-T2](https://github.com/adamnoden/architecture/issues/722) — 41 Lennard Road full R1–R6 admission  
-**Current real-control result:** `CONTROL_SITE_CANDIDATE_AUTHORING_READY`  
-**Next authorised packet after T2 lands:** **DPL-T3 — 41 Lennard Road unchanged Reference House candidate authoring**  
+**Current packet:** [#729 — DPL-T3](https://github.com/adamnoden/architecture/issues/729) — 41 Lennard Road unchanged Reference House candidate authoring  
+**Current real-control result:** `REFERENCE_HOUSE_CANDIDATE_AUTHORED_PENDING_POST_T3_VERIFICATION`  
+**Next authorised packet after T3 lands:** **fresh post-T3 deterministic candidate verification and conformance replay**  
 **Programme maturity:** **M4 — internally controlled at the bounded synthetic SCREENING-result scope. Real-site deployment remains unvalidated.**
 
 ## Purpose and governing rules
@@ -130,15 +130,59 @@ R6_SITE_IDENTITY_COHERENCE           = SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDEN
 result = CONTROL_SITE_CANDIDATE_AUTHORING_READY
 ```
 
-## Next packet — DPL-T3
+#### DPL-T3 authored candidate
 
-After T2 lands, authorise exactly:
+T3 now authors exactly one unchanged, unmirrored `RH-V02` placement:
 
-> **DPL-T3 — 41 Lennard Road unchanged Reference House candidate authoring**
+```text
+candidate                  = DPL-T-CANDIDATE-004-01 / rev 0.1
+canonical front            = 12.000 m model-south edge
+front bearing              = -51.6343476471° from BNG easting
+frontage bearing           = -44.6343476471° from BNG easting
+front skew                 = -7.000°
+front-centre construction  = frontage midpoint +4.5 m along frontage +26.0 m inward
+ground FFL                 = 70.70 m ODN
+screening containment      = YES
+min title-index clearance  = ~0.640 m
+```
 
-T3 must author **one explicit placement** against the frozen Lennard source package. The compiler must not search or optimise alternatives. Any placement must preserve the unchanged `12.0 m × 10.8 m` Reference House and carry the SCREENING authority limits forward.
+The earlier T1 constructive witness is not promoted into architecture: it proved only that the shell could fit. T3 keeps the canonical 12 m façade street-facing and uses a deliberately legible small skew rather than forcing false parallelism to the approximately 10.166 m indicative title-front segment.
 
-T3 candidate authoring is not `COMPATIBLE`.
+The `~0.640 m` clearance is a screening geometry result only. It is not a legal setback, planning separation, maintenance corridor, fire separation or construction tolerance.
+
+Durable artifact:
+
+`project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json`
+
+Decision record:
+
+`project/dpl/dpl-t3-lennard-authored-candidate.md`
+
+The candidate preserves the current controlled shell/courtyard/stair/front-field facts and pins `RH-V02`. `RH-SI02` absolute-datum/external-level transition and `RH-SI05` approach/access/landscape integration remain open site-interface work.
+
+## Active packet — DPL-T3
+
+DPL-T3 is the bounded **authoring** packet. It does not prove the candidate by letting a verifier search for something that works.
+
+The compiler role remains deterministic verification only:
+
+```text
+candidate generation / search   = PROHIBITED
+placement optimisation          = PROHIBITED
+Reference House mutation        = PROHIBITED
+whole-site COMPATIBLE           = NOT ADMITTED
+route exhaustion                = NOT IMPLEMENTED
+```
+
+The original #729 wording predates the final T2 acquisition and mentions coarse Open-Meteo / OSM evidence. The landed T2 authority supersedes that admission detail: HMLR / Planning Data title geometry, Environment Agency 1 m DTM, and exact-site planning frontage/access evidence are the source package pinned by T3.
+
+## Next gate after T3
+
+After T3 lands, authorise only a fresh verification packet:
+
+> **Deterministically replay `DPL-T-CANDIDATE-004-01` against the pinned Lennard evidence and current DPL-12B Reference House authority; prove source identity, rigid-transform reproduction, screening containment and bounded conformance without route search or compatibility inflation.**
+
+The post-T3 gate may reject the authored candidate. It may not silently author another one.
 
 ## Frozen programme boundaries
 
@@ -150,6 +194,8 @@ Reference House                       = UNCHANGED
 legal title boundary                  = UNRESOLVED
 private access rights                 = UNRESOLVED
 highway adoption extent               = UNRESOLVED
+measured private topographic survey   = NOT ACQUIRED
+planning acceptability                = NOT PROVED
 COMPATIBLE @ SCREENING                = NOT ADMITTED FOR REAL CONTROL
 whole-site INCOMPATIBLE               = NOT ADMITTED
 route search / exhaustion             = NOT IMPLEMENTED
@@ -160,7 +206,7 @@ DPL-18 final validation               = HELD
 
 ## Restart discipline
 
-Resume from this file, #722, `project/dpl/dpl-t2-lennard-r1-r6-admission.md`, and the `DPL-T-CONTROL-004` geometry/elevation/street-access records under `project/dpl/sites/`.
+Resume from this file, #729, `project/dpl/dpl-t3-lennard-authored-candidate.md`, and `project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json` together with the admitted T2 geometry/elevation/street-access records under `project/dpl/sites/`.
 
 Every packet must preserve:
 
