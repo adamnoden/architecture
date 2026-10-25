@@ -90,7 +90,8 @@ hr {
 
 code { font-family: inherit; font-size: inherit; }
 pre {
-  max-width: 100%;n  margin: 4mm 0 5mm;
+  max-width: 100%;
+  margin: 4mm 0 5mm;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-family: var(--publication-serif);
