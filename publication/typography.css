@@ -30,8 +30,8 @@ body {
 
 p, li, dd { orphans: 3; widows: 3; }
 p { margin: 0 0 0.75em; }
-strong { font-family: var(--publication-serif); font-weight: 700; }
-em { font-family: var(--publication-serif); font-style: italic; }
+strong { font-weight: 700; }
+em { font-style: italic; }
 
 a {
   color: inherit;
@@ -90,8 +90,7 @@ hr {
 
 code { font-family: inherit; font-size: inherit; }
 pre {
-  max-width: 100%;
-  margin: 4mm 0 5mm;
+  max-width: 100%;n  margin: 4mm 0 5mm;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-family: var(--publication-serif);
@@ -454,7 +453,8 @@ tbody tr:last-child td { border-bottom: 0; }
 .hk-plate-furniture .hk-plate-scale { margin-bottom: 12mm; }
 .hk-plate-furniture .hk-plate-caption { position: static; max-width: 132mm; color: #000; }
 
-/* Page furniture ------------------------------------------------------ */
+/* Running furniture. Named-page and blank suppression lives in
+   page-furniture.css so page-role mechanics have one explicit owner. */
 @page { background: #fff; }
 @page :left {
   @top-left {
@@ -489,30 +489,4 @@ tbody tr:last-child td { border-bottom: 0; }
 @page :nth(1) {
   @top-left { content: none; }
   @top-right { content: none; }
-}
-@page title,
-@page contents,
-@page publication-imprint,
-@page hk-plate {
-  @top-left { content: none; }
-  @top-right { content: none; }
-  @bottom-left { content: none; }
-  @bottom-right { content: none; }
-}
-@page hk-plate { margin: 0; }
-@page :blank {
-  @top-left { content: none; }
-  @top-right { content: none; }
-  @bottom-left { content: none; }
-  @bottom-right { content: none; }
-}
-@page :nth(1 of publication-part-i),
-@page :nth(1 of publication-part-ii),
-@page :nth(1 of publication-part-iii),
-@page :nth(1 of publication-part-iv),
-@page :nth(1 of publication-part-v) {
-  @top-left { content: none !important; }
-  @top-right { content: none !important; }
-  @bottom-left { content: none !important; }
-  @bottom-right { content: none !important; }
 }
