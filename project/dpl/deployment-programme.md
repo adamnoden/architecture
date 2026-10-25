@@ -163,7 +163,7 @@ Frozen verification result:
 
 Semantic result fingerprint:
 
-`7c7b6857b5ca6e0ec01aa799bb071a56bf4dd9ec0fe085e20407aca5681625b4`
+`0fafa462472370e54d5e1e3aba40e88cb594e8aafb877e0c687af0e5c5fc96dc`
 
 The replay proves:
 
@@ -238,15 +238,15 @@ Reference House                       = UNCHANGED
 legal title boundary                  = UNRESOLVED
 private access rights                 = UNRESOLVED
 highway adoption extent               = UNRESOLVED
-measured private topographic survey   = NOT ACQUIRED
-foundation / ground adequacy          = NOT PROVED
-accessible approach / threshold       = NOT PROVED
-foul / surface-water solution         = NOT PROVED
-utility approach / external plant     = NOT PROVED
-planning acceptability                = NOT PROVED
-COMPATIBLE @ SCREENING                = NOT ADMITTED FOR REAL CONTROL
-whole-site INCOMPATIBLE               = NOT ADMITTED
-route search / exhaustion             = NOT IMPLEMENTED
+measured private topographic survey   = NOT_ACQUIRED
+foundation / ground adequacy          = NOT_PROVED
+accessible approach / threshold       = NOT_PROVED
+foul / surface-water solution         = NOT_PROVED
+utility approach / external plant     = NOT_PROVED
+planning acceptability                = NOT_PROVED
+COMPATIBLE @ SCREENING                = NOT_ADMITTED FOR REAL CONTROL
+whole-site INCOMPATIBLE               = NOT_ADMITTED
+route search / exhaustion             = NOT_IMPLEMENTED
 DPL-16 deployment envelope            = HELD
 DPL-17 publication integration        = HELD
 DPL-18 final validation               = HELD
