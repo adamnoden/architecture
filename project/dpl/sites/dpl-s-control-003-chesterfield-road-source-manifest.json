@@ -4,7 +4,7 @@
   "controlSiteKind": "INSTRUMENTED_REAL_CONTROL",
   "sampleMembership": "EXCLUDED_FROM_DEPLOYMENT_ENVELOPE_SAMPLE",
   "researchDate": "2026-10-25",
-  "baselineMainSha": "7364609ddaeb263b1008a5ecd092b0c33ba55846",
+  "baselineMainSha": "098823083265f912cbc45b2906fde7e4eff647c6",
   "parentIssue": 663,
   "selectionIssue": 675,
   "dependencies": {
@@ -86,19 +86,20 @@
   ],
   "addressIdentity": {
     "postcode": "W4 3HQ",
-    "exactUPRN": null,
-    "state": "PENDING_ISSUE_682",
-    "note": "Postcode exposes multiple UPRNs including coincident points; do not infer 25A by visual ordering."
+    "exactUPRN": "100021580413",
+    "state": "RESOLVED",
+    "resolutionRecord": "DPL-S1I / #682",
+    "note": "Literal 25A address is bound to UPRN 100021580413. This key may now be used for exact parcel-entity lookup; it does not itself prove title geometry."
   },
   "readiness": {
-    "R1_CONTROLLED_SPATIAL_IDENTITY": "PARTIAL_EXACT_PARCEL_BINDING_PENDING",
+    "R1_CONTROLLED_SPATIAL_IDENTITY": "PARTIAL_EXACT_PARCEL_BINDING_PENDING_ADDRESS_KEY_RESOLVED",
     "R2_FOOTPRINT_TEST_GEOMETRY": "PENDING_EXACT_TITLE_POLYGON",
     "R3_REAL_ORIENTATION_FRAME": "PENDING_EXACT_TITLE_POLYGON",
     "R4_DATUM_LEVEL_EVIDENCE": "PENDING_EXACT_EA_DTM_SITE_EXTRACTION",
     "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "PARTIAL_STREET_FRONT_IDENTITY_PROVED_EXACT_DISPOSITION_PENDING",
-    "R6_SITE_IDENTITY_COHERENCE": "PARTIAL_PARCEL_ENTITY_PENDING"
+    "R6_SITE_IDENTITY_COHERENCE": "PARTIAL_PARCEL_ENTITY_PENDING_ADDRESS_KEY_RESOLVED"
   },
-  "packetState": "CONTROL_003_SELECTED_EVIDENCE_COMPOSITION_IN_PROGRESS",
+  "packetState": "CONTROL_003_SELECTED_ADDRESS_KEY_RESOLVED_EVIDENCE_COMPOSITION_IN_PROGRESS",
   "finalResult": null,
   "candidateAuthoringState": "NOT_AUTHORED_IN_DPL_S1",
   "restraints": {
