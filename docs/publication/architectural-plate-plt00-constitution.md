@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # PLT-00 — constitution, baseline and scope freeze
 
 **Programme:** PLT — Architectural Plate Refinement  
