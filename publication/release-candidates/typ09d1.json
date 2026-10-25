@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "packet": "TYP-09D.1",
+  "candidate": "publication-typography-v1-rc2",
+  "identityState": "CALIBRATION",
+  "supersedes": {
+    "candidate": "publication-typography-v1-rc1",
+    "reason": "Owner review found the serif bold emphasis too heavy and requested it come down one notch."
+  },
+  "change": {
+    "scope": "serif emphasis only",
+    "from": "Source Serif 4 Bold / 700",
+    "to": "Source Serif 4 Semibold / 600",
+    "sourceSerifCommit": "80d3f8894c09c937bebfa9011247d2e1c79fd6f4",
+    "semiboldGitBlobSha": "151e9a9d5c08dfd4751650ab4bff92771a132888",
+    "bodyMetricsChanged": false,
+    "sansContractChanged": false,
+    "drawingTypographyChanged": false
+  },
+  "productionObject": {
+    "a4": {
+      "pages": 278,
+      "duplexLeaves": 139,
+      "layoutTextSha256": null,
+      "bboxLayoutSha256": null,
+      "raster36DpiGrayPageSetSha256": null
+    },
+    "b5": {
+      "pages": 335,
+      "duplexLeaves": 168,
+      "layoutTextSha256": null,
+      "bboxLayoutSha256": null,
+      "raster36DpiGrayPageSetSha256": null
+    },
+    "finishedFonts": [
+      "SourceSans3-Bold",
+      "SourceSans3-Regular",
+      "SourceSerif4-It",
+      "SourceSerif4-Regular",
+      "SourceSerif4-Semibold"
+    ]
+  },
+  "crossRunProof": {
+    "requiredIndependentReplicas": 2,
+    "pagesPerReplica": 613,
+    "fingerprintedPagesPerReplica": 611,
+    "provenancePageExcluded": 2
+  },
+  "physicalOwnerVerdict": "REQUIRED_AFTER_FROZEN_RC2"
+}
