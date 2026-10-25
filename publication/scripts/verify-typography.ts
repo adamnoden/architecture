@@ -156,7 +156,17 @@ for (const format of ['a4', 'b5'] as const) {
   else if (!hasStandaloneFolio(rawPages[chapterNineIndex])) failures.push(`${format.toUpperCase()} chapter 9 opening lost its retained folio.`)
 
   const normalization = JSON.parse(await readFile(resolve(proofRoot, format, `publication-typography-production-${format}.destination-normalization.json`), 'utf8')) as any
-  if (normalization.packet !== 'TYP-09B' || normalization.qpdfCheck !== 'PASS') failures.push(`${format.toUpperCase()} destination-normalization evidence is invalid.`)
+  if (
+    normalization.packet !== 'TYP-09C' ||
+    normalization.schemaVersion !== 2 ||
+    normalization.qpdfCheck !== 'PASS' ||
+    normalization.deterministicByteIdempotence !== 'PASS' ||
+    normalization.deterministicIdPasses !== 2 ||
+    (normalization.volatileInfoDatesRemoved?.creationDate ?? 0) < 1 ||
+    (normalization.volatileInfoDatesRemoved?.modificationDate ?? 0) < 1
+  ) {
+    failures.push(`${format.toUpperCase()} reproducible PDF-normalization evidence is invalid.`)
+  }
 
   results[format] = {
     ...blockImplication(pages),
@@ -173,14 +183,17 @@ for (const format of ['a4', 'b5'] as const) {
     destinationNormalization: {
       needed: normalization.normalizationNeeded,
       uniqueNamesRenamed: normalization.uniqueNamesRenamed,
-      occurrencesRenamed: normalization.occurrencesRenamed
+      occurrencesRenamed: normalization.occurrencesRenamed,
+      volatileInfoDatesRemoved: normalization.volatileInfoDatesRemoved,
+      deterministicByteIdempotence: normalization.deterministicByteIdempotence,
+      outputSha256: normalization.outputSha256
     }
   }
 }
 
 const verification = {
-  schemaVersion: 1,
-  packet: 'TYP-09B',
+  schemaVersion: 2,
+  packet: 'TYP-09C',
   result: failures.length ? 'FAIL' : 'PASS',
   formats: results,
   comparison: {
