@@ -1,0 +1,113 @@
+{
+  "schema": "dpl.instrumentedRealControlSourceManifest.v1",
+  "controlId": "DPL-S-CONTROL-003",
+  "controlSiteKind": "INSTRUMENTED_REAL_CONTROL",
+  "sampleMembership": "EXCLUDED_FROM_DEPLOYMENT_ENVELOPE_SAMPLE",
+  "researchDate": "2026-10-25",
+  "baselineMainSha": "7364609ddaeb263b1008a5ecd092b0c33ba55846",
+  "parentIssue": 663,
+  "selectionIssue": 675,
+  "dependencies": {
+    "addressResolver": 682,
+    "parcelBinding": 672,
+    "datumAndStreetAccess": 673,
+    "planningSnapshotAudit": 679,
+    "admissionCloseout": 674,
+    "redTeam": 676
+  },
+  "site": {
+    "address": "25A Chesterfield Road, Chiswick, London, W4 3HQ",
+    "planningAuthority": "London Borough of Hounslow",
+    "applicationRef": "P/2025/1408",
+    "proposal": "Erection of a self build two storey detached house following demolition of the existing bungalow",
+    "siteTypology": "CONVENTIONAL_STREET_FRONT_REPLACEMENT_DWELLING",
+    "planningSnapshotState": "FIRST_PARTY_IDENTITY_PROVED_EXACT_DATE_AUDIT_PENDING"
+  },
+  "supersession": {
+    "supersedesAsActiveControl": "DPL-S-CONTROL-002",
+    "previousControlDisposition": "RETAIN_AS_VALID_DOCUMENT_TRANSPORT_BOUNDARY_EVIDENCE",
+    "reason": "Prefer direct cadastral/GIS source composition and ordinary street-front replacement-house conditions over backland planning-document transport."
+  },
+  "sources": [
+    {
+      "sourceId": "S1-CHES-01",
+      "publisher": "London Borough of Hounslow",
+      "sourceType": "PLANNING_APPLICATION_IDENTITY",
+      "url": "https://www.hounslow.gov.uk/downloads/file/11903/-week-39-pending-decisions-list-26-september-2025-to-3-october-2025-outcomes",
+      "authorityClass": "FIRST_PARTY_LOCAL_AUTHORITY",
+      "role": ["APPLICATION_IDENTITY", "ADDRESS_IDENTITY", "REPLACEMENT_DWELLING_PROPOSITION"],
+      "state": "ACQUIRED_AND_INSPECTED",
+      "limitations": ["Exact controlled decision/date snapshot remains under separate audit because secondary indexes conflict."]
+    },
+    {
+      "sourceId": "S1-CHES-02",
+      "publisher": "London Borough of Hounslow",
+      "sourceType": "TRAFFIC_ORDER_STREET_IDENTITY",
+      "url": "https://www.hounslow.gov.uk/downloads/file/14102/central-avenue-crossover-notice-of-making-p071-25",
+      "authorityClass": "FIRST_PARTY_LOCAL_AUTHORITY",
+      "role": ["STREET_SIDE_IDENTITY", "BOUNDARY_CONTEXT_25_25A"],
+      "state": "ACQUIRED_AND_INSPECTED",
+      "limitations": ["Not parcel coordinates", "Not private access-right evidence"]
+    },
+    {
+      "sourceId": "S1-CHES-03",
+      "publisher": "London Borough of Hounslow",
+      "sourceType": "TRAFFIC_ORDER_FLANK_WALL_IDENTITY",
+      "url": "https://www.hounslow.gov.uk/downloads/file/13513/electric-vehicle-on-street-consolidation-nom-tmo-p018-26",
+      "authorityClass": "FIRST_PARTY_LOCAL_AUTHORITY",
+      "role": ["STREET_FRONTAGE_IDENTITY", "WESTERN_FLANK_WALL_CONTEXT"],
+      "state": "ACQUIRED_AND_INSPECTED",
+      "limitations": ["Not parcel coordinates", "Not private access-right evidence"]
+    },
+    {
+      "sourceId": "S1-CHES-04",
+      "publisher": "HM Land Registry via Planning Data",
+      "sourceType": "TITLE_BOUNDARY",
+      "url": "https://www.planning.data.gov.uk/dataset/title-boundary",
+      "authorityClass": "AUTHORITATIVE_SOURCE_DATASET",
+      "role": ["CONTROLLED_SPATIAL_EXTENT", "FOOTPRINT_TEST_GEOMETRY", "ORIENTATION_FRAME"],
+      "state": "SOURCE_CLASS_ADMITTED_EXACT_ENTITY_PENDING",
+      "crs": "WGS84 / EPSG:4326 at Planning Data API boundary",
+      "limitations": ["Index polygon is indicative registered-property position/extent", "Not a determined legal boundary", "Exact 25A entity must be proved rather than visually selected"]
+    },
+    {
+      "sourceId": "S1-CHES-05",
+      "publisher": "Environment Agency",
+      "sourceType": "LIDAR_COMPOSITE_DTM_1M",
+      "url": "https://www.data.gov.uk/dataset/01b3ee39-da3f-47b6-83da-dc98e73a461f/lidar-composite-dtm-2022-1m",
+      "authorityClass": "FIRST_PARTY_GOVERNMENT_ELEVATION_DATA",
+      "role": ["DATUM_LEVEL_EVIDENCE", "TOPOGRAPHY_SCREENING"],
+      "state": "SOURCE_CLASS_ADMITTED_EXACT_SITE_EXTRACTION_PENDING",
+      "crs": "OS National Grid source tiles; heights metres to Ordnance Datum Newlyn; OSTN15",
+      "resolution": "1m",
+      "verticalAccuracy": "+/-15cm RMSE stated for contributing individual LiDAR surveys",
+      "limitations": ["Composite is not a measured private topographic survey", "Exact tile/cell and survey lineage must be frozen before use"]
+    }
+  ],
+  "addressIdentity": {
+    "postcode": "W4 3HQ",
+    "exactUPRN": null,
+    "state": "PENDING_ISSUE_682",
+    "note": "Postcode exposes multiple UPRNs including coincident points; do not infer 25A by visual ordering."
+  },
+  "readiness": {
+    "R1_CONTROLLED_SPATIAL_IDENTITY": "PARTIAL_EXACT_PARCEL_BINDING_PENDING",
+    "R2_FOOTPRINT_TEST_GEOMETRY": "PENDING_EXACT_TITLE_POLYGON",
+    "R3_REAL_ORIENTATION_FRAME": "PENDING_EXACT_TITLE_POLYGON",
+    "R4_DATUM_LEVEL_EVIDENCE": "PENDING_EXACT_EA_DTM_SITE_EXTRACTION",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "PARTIAL_STREET_FRONT_IDENTITY_PROVED_EXACT_DISPOSITION_PENDING",
+    "R6_SITE_IDENTITY_COHERENCE": "PARTIAL_PARCEL_ENTITY_PENDING"
+  },
+  "packetState": "CONTROL_003_SELECTED_EVIDENCE_COMPOSITION_IN_PROGRESS",
+  "finalResult": null,
+  "candidateAuthoringState": "NOT_AUTHORED_IN_DPL_S1",
+  "restraints": {
+    "pixelMeasurement": "PROHIBITED",
+    "neighbourPolygonGuessing": "PROHIBITED",
+    "referenceHouseMutation": "PROHIBITED",
+    "compatibilityConclusion": "NOT_ADMITTED",
+    "incompatibilityConclusion": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "dpl16": "HELD"
+  }
+}
