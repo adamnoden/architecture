@@ -1,0 +1,92 @@
+name: DPL-T1 geometry preflight
+
+on:
+  push:
+    branches:
+      - dpl-t1-geometry-preflight
+    paths:
+      - .github/workflows/dpl-t1-geometry-preflight.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Probe candidate address identities and Planning Data title geometry
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          python3 - <<'PY'
+          import json, re, urllib.parse, urllib.request
+          from html import unescape
+
+          candidates = [
+            {"id":"T1-01","address":"41 Lennard Road, Bromley, BR2 8LN","postcode":"BR2 8LN","needle":"41 Lennard Road"},
+            {"id":"T1-02","address":"4 Ninhams Wood, Orpington, BR6 8NJ","postcode":"BR6 8NJ","needle":"4 Ninhams Wood"},
+            {"id":"T1-03","address":"The Vicarage, 1B St James Road, Purley, CR8 2DL","postcode":"CR8 2DL","needle":"Vicarage"},
+            {"id":"T1-04","address":"15 Fairholme Gardens, London, N3 3ED","postcode":"N3 3ED","needle":"15 Fairholme Gardens"},
+            {"id":"T1-05","address":"The Bungalow, Routh Road, London, SW18 3SW","postcode":"SW18 3SW","needle":"The Bungalow"},
+          ]
+          ua = {'User-Agent':'Mozilla/5.0 DPL-T1 evidence probe'}
+          def get(url):
+              req=urllib.request.Request(url,headers=ua)
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  return r.read()
+          out=[]
+          for c in candidates:
+              row=dict(c)
+              uprn_url='https://www.doogal.co.uk/UPRN?postcode='+urllib.parse.quote_plus(c['postcode'])
+              try:
+                  raw=get(uprn_url).decode('utf-8','replace')
+                  open(f"evidence/{c['id']}-uprn.html",'w',encoding='utf-8').write(raw)
+                  # Capture rows containing our address needle. Keep raw candidate rows for audit.
+                  rows=re.findall(r'<tr[^>]*>(.*?)</tr>',raw,re.S|re.I)
+                  matches=[]
+                  for rr in rows:
+                      txt=re.sub(r'<[^>]+>',' ',rr)
+                      txt=' '.join(unescape(txt).split())
+                      if c['needle'].lower() in txt.lower():
+                          nums=re.findall(r'\b\d{8,12}\b',txt)
+                          matches.append({'text':txt,'numbers':nums})
+                  row['doogal_matches']=matches
+                  uprns=[]
+                  for m in matches:
+                      for n in m['numbers']:
+                          if 8 <= len(n) <= 12:
+                              uprns.append(n)
+                  # de-dupe, preserve order
+                  row['uprn_candidates']=list(dict.fromkeys(uprns))
+              except Exception as e:
+                  row['doogal_error']=repr(e)
+                  row['uprn_candidates']=[]
+
+              pd=[]
+              for uprn in row['uprn_candidates']:
+                  url='https://www.planning.data.gov.uk/entity.json?q='+urllib.parse.quote(uprn)+'&dataset=title-boundary&limit=20'
+                  try:
+                      b=get(url)
+                      open(f"evidence/{c['id']}-title-{uprn}.json",'wb').write(b)
+                      j=json.loads(b)
+                      ents=j.get('entities',j.get('entity',[]))
+                      if isinstance(ents,dict): ents=[ents]
+                      pd.append({'uprn':uprn,'count':len(ents),'entities':ents})
+                  except Exception as e:
+                      pd.append({'uprn':uprn,'error':repr(e)})
+              row['planning_data']=pd
+              out.append(row)
+          open('evidence/summary.json','w',encoding='utf-8').write(json.dumps(out,indent=2))
+          print(json.dumps(out,indent=2))
+          PY
+
+      - name: Upload evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: dpl-t1-geometry-preflight
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 1
