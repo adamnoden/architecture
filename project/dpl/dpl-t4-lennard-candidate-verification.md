@@ -58,13 +58,15 @@ It proves:
 ```text
 shell                         12.000 m × 10.800 m
 handedness                    UNMIRRORED
-|model +X|                    1
-|model +Y|                    1
-X·Y                           0
-determinant                   +1
+|model +X|                    1 within 5e-9 stored-vector precision
+|model +Y|                    1 within 5e-9 stored-vector precision
+X·Y                           0 within 5e-9
+determinant                   +1 within 5e-9
 screening containment         PASS
 minimum title-index clearance ~0.640024 m
 ```
+
+The stored transform vectors are decimal authored coordinates. T4 deliberately verifies their rigid properties to the precision they actually carry rather than pretending symbolic-trigonometric or nanometre exactness. Reconstructed candidate coordinates are checked within `5e-8 m`; bearings within `1e-7°`.
 
 The same replay reconstructs the architectural street relation from the controlled frontage segment:
 
@@ -125,7 +127,7 @@ Deterministic result record:
 
 Semantic result fingerprint:
 
-`7c7b6857b5ca6e0ec01aa799bb071a56bf4dd9ec0fe085e20407aca5681625b4`
+`0fafa462472370e54d5e1e3aba40e88cb594e8aafb877e0c687af0e5c5fc96dc`
 
 The executable proof is:
 
@@ -139,15 +141,15 @@ It fails closed on source-identity drift, transform drift, mirror/deformation, c
 legal title boundary               = UNRESOLVED
 private access rights               = UNRESOLVED
 highway adoption extent             = UNRESOLVED
-measured private topographic survey = NOT ACQUIRED
-foundation / ground adequacy        = NOT PROVED
-threshold / accessible approach     = NOT PROVED
-foul / surface-water solution       = NOT PROVED
-utility approach / external plant   = NOT PROVED
-planning acceptability              = NOT PROVED
-whole-site COMPATIBLE               = NOT ADMITTED
-whole-site INCOMPATIBLE             = NOT ADMITTED
-route search / exhaustion           = NOT IMPLEMENTED
+measured private topographic survey = NOT_ACQUIRED
+foundation / ground adequacy        = NOT_PROVED
+threshold / accessible approach     = NOT_PROVED
+foul / surface-water solution       = NOT_PROVED
+utility approach / external plant   = NOT_PROVED
+planning acceptability              = NOT_PROVED
+whole-site COMPATIBLE               = NOT_ADMITTED
+whole-site INCOMPATIBLE             = NOT_ADMITTED
+route search / exhaustion           = NOT_IMPLEMENTED
 DPL-16                              = HELD
 ```
 
