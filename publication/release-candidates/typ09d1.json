@@ -26,8 +26,8 @@
       "raster36DpiGrayPageSetSha256": null
     },
     "b5": {
-      "pages": 335,
-      "duplexLeaves": 168,
+      "pages": 333,
+      "duplexLeaves": 167,
       "layoutTextSha256": null,
       "bboxLayoutSha256": null,
       "raster36DpiGrayPageSetSha256": null
@@ -42,8 +42,8 @@
   },
   "crossRunProof": {
     "requiredIndependentReplicas": 2,
-    "pagesPerReplica": 613,
-    "fingerprintedPagesPerReplica": 611,
+    "pagesPerReplica": 611,
+    "fingerprintedPagesPerReplica": 609,
     "provenancePageExcluded": 2
   },
   "physicalOwnerVerdict": "REQUIRED_AFTER_FROZEN_RC2"
