@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "dpl.controlSiteCandidateReadiness.v1",
+  "assessmentId": "DPL-R1-UPHILL-24-1141-v0.1",
+  "assuranceProfile": "SCREENING",
+  "controlSiteKind": "INSTRUMENTED_REAL_CONTROL",
+  "controlSiteId": "DPL-R-CONTROL-001",
+  "siteSnapshot": {
+    "address": "92 Uphill Road, Mill Hill, London, NW7 4QE",
+    "planningPermissionRef": "24/1141/FUL",
+    "planningPermissionDecisionDate": "2024-10-18",
+    "acceptedNmaRef": "25/1691/NMA",
+    "acceptedDrawingLineage": [
+      "255402/12 Rev B — Proposed Location and Site Plan",
+      "255402/13 Rev B — Proposed Plans",
+      "255402/14 Rev B — Proposed Elevations",
+      "255402/15 Rev B — Proposed Site Section"
+    ],
+    "excludedLaterApplications": [
+      "26/1039/FUL",
+      "26/2819/CON"
+    ]
+  },
+  "referenceHouseFootprintMm": {
+    "width": 12000,
+    "depth": 10800
+  },
+  "inheritedReadinessDimensions": [
+    "R1_CONTROLLED_SPATIAL_IDENTITY",
+    "R2_FOOTPRINT_TEST_GEOMETRY",
+    "R3_REAL_ORIENTATION_FRAME",
+    "R4_DATUM_LEVEL_EVIDENCE",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY",
+    "R6_SITE_IDENTITY_COHERENCE"
+  ],
+  "sources": [
+    {
+      "id": "U24-S1",
+      "authorityClass": "PUBLIC_PLANNING_DRAWING_MIRROR",
+      "url": "https://docs.planning.org.uk/20250423/78/SUWUKPJIHG600/w3t0gwc2drqj4gz6.pdf",
+      "documentIdentity": "255402/12 Rev B — Proposed Location and Site Plan — 92 Uphill Road — 03/24",
+      "retrievedAt": "2026-10-25",
+      "byteFingerprintState": "NOT_AVAILABLE_CURRENT_RETRIEVAL",
+      "admittedFacts": [
+        "red line identifies DEMISE OF NEW SITE FOR PROPOSAL",
+        "blue line identifies DEMISE OF OWNERSHIP OF APPLICANT",
+        "SITE PLAN scale is 1:200 at A1",
+        "LOCATION PLAN scale is 1:1250",
+        "SECTION 1-1 scale is 1:100",
+        "red crosshair identifies PROPOSED DATUM",
+        "EXISTING GL 21.10",
+        "PROPOSED GL 20.93",
+        "PAVEMENT 20.23",
+        "Uphill Road and Marsh Lane are identified",
+        "new access drive maximum gradient is 1 in 10",
+        "new crossover is identified as previously approved under H/03962/09"
+      ]
+    },
+    {
+      "id": "U24-S2",
+      "authorityClass": "PUBLIC_APPLICANT_SUPPORTING_DOCUMENT_MIRROR",
+      "url": "https://docs.planning.org.uk/20250423/78/SUWUKPJIHG600/a2qm1l117h78ej1k.pdf",
+      "documentIdentity": "Non-material minor amendments for 92 Uphill Road 24/1141/FUL",
+      "retrievedAt": "2026-10-25",
+      "byteFingerprintState": "NOT_AVAILABLE_CURRENT_RETRIEVAL",
+      "admittedFacts": [
+        "document explicitly refers to planning permission 24/1141/FUL",
+        "Rev B drawings 255402-12 through 255402-15 supersede the corresponding Rev A approved documents"
+      ]
+    },
+    {
+      "id": "U24-S3",
+      "authorityClass": "PUBLIC_APPLICATION_FORM_MIRROR",
+      "url": "https://docs.planning.org.uk/20250423/78/SUWUKPJIHG600/2na2wjqk6t6jp6si.pdf",
+      "documentIdentity": "25/1691/NMA application form — Planning Portal PP-13956981",
+      "retrievedAt": "2026-10-25",
+      "byteFingerprintState": "NOT_AVAILABLE_CURRENT_RETRIEVAL",
+      "admittedFacts": [
+        "site address is 92 Uphill Road, Mill Hill, London, NW7 4QE",
+        "old drawings are 255402-12/13/14/15 Rev A",
+        "new drawings are 255402-12/13/14/15 Rev B",
+        "site can be seen from public road, public footpath, bridleway or other public land"
+      ]
+    },
+    {
+      "id": "U24-S4",
+      "authorityClass": "PUBLIC_REGISTER_SECONDARY_INDEX",
+      "url": "https://plota.co.uk/application/wqnel4no",
+      "documentIdentity": "Barnet site-history index for 92 Uphill Road",
+      "retrievedAt": "2026-10-25",
+      "byteFingerprintState": "NOT_APPLICABLE_HTML_INDEX",
+      "admittedFacts": [
+        "24/1141/FUL is recorded as approved on 18 October 2024",
+        "25/1691/NMA is recorded as the subsequent non-material-amendment application"
+      ]
+    }
+  ],
+  "sourceConflictState": "NONE_WITHIN_FROZEN_SNAPSHOT",
+  "assessments": [
+    {
+      "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY",
+      "state": "SATISFIED",
+      "evidenceRefs": ["U24-S1", "U24-S2", "U24-S3", "U24-S4"],
+      "reason": "The frozen 24/1141/FUL site is tied to the exact address and an explicit red proposal demise; the accepted NMA record binds Rev B drawing 255402/12 back to that permission. The red line is planning/application geometry, not legal title."
+    },
+    {
+      "dimension": "R2_FOOTPRINT_TEST_GEOMETRY",
+      "state": "SATISFIED",
+      "evidenceRefs": ["U24-S1", "U24-S2", "U24-S3"],
+      "reason": "Accepted drawing 255402/12 Rev B supplies the proposal demise on a controlled 1:200 A1 site plan. DPL-Q permits explicit scale and/or dimensions sufficient to reconstruct real shape/width/depth. A later candidate may derive geometry only from the controlled drawing scale/vector/document geometry; web-map, screenshot and marketing-pixel measurement remain forbidden."
+    },
+    {
+      "dimension": "R3_REAL_ORIENTATION_FRAME",
+      "state": "SATISFIED",
+      "evidenceRefs": ["U24-S1"],
+      "reason": "The controlled location/site drawing is tied to the real street framework and identifies Uphill Road, Marsh Lane and surrounding numbered properties, providing a real placement frame rather than the synthetic Reference-Site frame."
+    },
+    {
+      "dimension": "R4_DATUM_LEVEL_EVIDENCE",
+      "state": "SATISFIED",
+      "evidenceRefs": ["U24-S1"],
+      "reason": "Drawing 255402/12 Rev B identifies a proposed datum and explicit existing/proposed/pavement levels: 21.10, 20.93 and 20.23 respectively. This is sufficient to author a SCREENING house-ground relation without inventing a datum."
+    },
+    {
+      "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY",
+      "state": "SATISFIED",
+      "evidenceRefs": ["U24-S1", "U24-S3"],
+      "reason": "The controlled site plan identifies Uphill Road and the new crossover/access drive, states a maximum 1:10 drive gradient and ties the access to the proposal demise. This proves SCREENING placement/access geometry; legal access rights remain separately unresolved."
+    },
+    {
+      "dimension": "R6_SITE_IDENTITY_COHERENCE",
+      "state": "SATISFIED",
+      "evidenceRefs": ["U24-S1", "U24-S2", "U24-S3", "U24-S4"],
+      "reason": "Address, permission reference, accepted NMA drawing substitution and proposal demise all identify one coherent historical site snapshot. Later 2026 applications are explicitly excluded rather than blended into the control authority."
+    }
+  ],
+  "resultBoundary": {
+    "referenceHouseCandidate": "NOT_AUTHORED_IN_DPL_R1",
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "deploymentEnvelopeDpl16": "HELD",
+    "originalDpl15cCorpus": "UNCHANGED_DPL_RP_001_THROUGH_008",
+    "originalDpl15cReadyCount": 0,
+    "deploymentEnvelopeSampleMembership": "EXCLUDED",
+    "scalarSiteScore": "FORBIDDEN"
+  }
+}
