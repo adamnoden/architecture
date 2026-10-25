@@ -14,6 +14,7 @@ const globalThemes = fullPublication
       resolve(publicationRoot, 'theme.css'),
       resolve(workRoot, 'typography-fonts.css'),
       resolve(publicationRoot, 'typography.css'),
+      resolve(publicationRoot, 'page-furniture.css'),
       resolve(publicationRoot, 'formats', `${format}.css`)
     ]
   : [resolve(publicationRoot, 'theme.css')]
