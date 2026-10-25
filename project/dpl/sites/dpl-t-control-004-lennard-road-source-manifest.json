@@ -90,7 +90,7 @@
     "packet": "DPL-T4",
     "decisionRecord": "../dpl-t4-lennard-candidate-verification.md",
     "resultRecord": "dpl-t-control-004-lennard-road-verification-v01.json",
-    "resultFingerprint": "7c7b6857b5ca6e0ec01aa799bb071a56bf4dd9ec0fe085e20407aca5681625b4",
+    "resultFingerprint": "0fafa462472370e54d5e1e3aba40e88cb594e8aafb877e0c687af0e5c5fc96dc",
     "screeningContainment": true,
     "minimumBoundaryClearanceMetres": 0.640023844673485,
     "boundedConformance": {
