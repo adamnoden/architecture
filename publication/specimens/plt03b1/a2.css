@@ -1,0 +1,82 @@
+@page wall {
+  size: 420mm 594mm;
+  margin: 24mm;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background: #fff;
+  font-family: "PLT03 Source Sans";
+}
+* { box-sizing: border-box; }
+
+.wall-page {
+  page: wall;
+  break-after: page;
+  page-break-after: always;
+  position: relative;
+  width: 372mm;
+  height: 546mm;
+}
+.wall-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8pt;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+.wall-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 7pt;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+.wall-drawing {
+  position: absolute;
+  margin: 0;
+  overflow: visible;
+}
+.wall-drawing-100 {
+  left: 118mm;
+  top: 200.5mm;
+  width: 136mm;
+  height: 145mm;
+}
+.wall-drawing-50 {
+  left: 50mm;
+  top: 128mm;
+  width: 272mm;
+  height: 290mm;
+}
+.wall-drawing-100 > svg {
+  display: block;
+  width: 136mm;
+  height: 145mm;
+  max-width: none;
+  max-height: none;
+  transform: none;
+}
+.wall-drawing-50 > svg {
+  display: block;
+  width: 272mm;
+  height: 290mm;
+  max-width: none;
+  max-height: none;
+  transform: none;
+}
