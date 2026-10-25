@@ -187,7 +187,7 @@ writeFileSync(buildPath, JSON.stringify({
   entries
 }, null, 2))
 
-if (fullMode) {
+if (fullMode && process.env.PUBLICATION_RAW_PREPARE !== '1') {
   await applyProductionTypography({ repoRoot, publicationRoot, workRoot, workSourceRoot })
 }
 
