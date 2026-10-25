@@ -181,7 +181,35 @@ Add a nested `AGENTS.md` only when a subtree has persistent local operating rule
 
 Before adding any instruction here, ask whether it belongs instead in an owning architectural, editorial, computational, status or programme document. If so, put it there.
 
-## 13. Completion test
+## 13. Workstream closeout and repository hygiene
+
+Substantive completion is not the same thing as operational closure. Before calling a substantial workstream or programme **finished, closed, clean, fully complete or equivalent**, run a dedicated cleanup pass after its final substantive merge or release step.
+
+The cleanup pass must inspect workstream-owned residue, including:
+
+- open or obsolete parent/child issues and pull requests — close, supersede or explicitly retain only what is genuinely still active;
+- branches created during the work — identify all of them and delete merged or superseded refs when positive evidence shows no active or provenance dependency requires them;
+- scratch files, marker files, temporary manifests, local/probe outputs and other execution debris;
+- calibration, diagnostic or exploratory scripts and fixtures that have no durable regression or inspection role;
+- one-shot workflows, temporary write permissions, release/tag helpers and other execution machinery whose job has ended;
+- stale operational language such as `ACTIVE`, `NEXT`, `PENDING` or `BLOCKED` in owning durable records when the present state has changed;
+- promised tags, releases, refs and handoff identities — verify that they actually exist and resolve to the recorded authority;
+- generated artefacts and evidence — distinguish disposable residue from provenance that must be retained; do not delete accepted evidence merely to make the tree look tidy;
+- repository health after cleanup — re-run the appropriate validation so cleanup does not become an unproved final mutation.
+
+Cleanup should normally make the repository **simpler**. Do not create permanent machinery whose only purpose is to clean up temporary machinery.
+
+If tooling or permissions prevent a cleanup action:
+
+- complete every cleanup action that is available first;
+- reduce the residue to the smallest exact user/admin action possible;
+- surface that residue proactively in the closeout, with the exact ref/file/action and why it is safe;
+- do not wait for the user to ask whether anything remains;
+- do not report `cleanup: clean`, `nothing left` or an equivalent claim while that residue still exists.
+
+A workstream may be substantively complete while a permission-limited hygiene action remains, but that distinction must be explicit. The final closeout report should state either **`cleanup: clean`** or **`cleanup residue:`** followed by the exact remaining items and action owner.
+
+## 14. Completion test
 
 Before calling substantial work complete, ask:
 
@@ -193,6 +221,7 @@ Before calling substantial work complete, ask:
 - Did I validate the actual representation boundary affected?
 - Did I reconcile dependent outputs and leave durable reasoning?
 - Could another agent reconstruct this decision from the repository alone?
+- Did I run the workstream closeout/hygiene pass and proactively report any residue?
 - Is the project now simpler, truer or better evidenced rather than merely more elaborate?
 
 If not, reconsider the change.
