@@ -14,9 +14,10 @@ The production stack becomes:
 
 1. `publication/theme.css` — historical working/base-structure layer;
 2. generated `.work/typography-fonts.css` — exact pinned Source font transport;
-3. `publication/typography.css` — frozen TYP-03/04/05/06 reader-facing roles;
-4. `publication/formats/a4.css` or `publication/formats/b5.css` — proved page geometry;
-5. `publication/division-recto-entry.css` — Part-entry-only recto constraint.
+3. `publication/typography.css` — frozen TYP-03/04/05/06 reader-facing roles and running furniture;
+4. `publication/page-furniture.css` — explicit named-page, blank-page and Part-opening furniture suppression;
+5. `publication/formats/a4.css` or `publication/formats/b5.css` — proved page geometry;
+6. `publication/division-recto-entry.css` — Part-entry-only recto constraint.
 
 This ordering makes the migration legible, reversible and auditable. The older Georgia/Arial declarations remain visible as history/base fallback but cease to own the full-book reader-facing typography because the frozen production layer follows them in the cascade.
 
@@ -77,9 +78,15 @@ This ordering makes the migration legible, reversible and auditable. The older G
 
 Canonical manuscript, pattern and SVG bytes remain outside this transformation boundary.
 
-## Format boundary
+The historical TYP-08 proof path has an explicit `PUBLICATION_RAW_PREPARE=1` escape hatch. That path stages the pre-TYP-09 corpus and applies its own frozen candidate transformations, so TYP-09 production migration does not rewrite the historical proof object. The TYP-08 A4/B5 workflow has re-passed on the TYP-09A branch with this boundary in place.
+
+## Format and pagination boundary
 
 The existing `publication:build` path remains A4 by default for compatibility. The full-book production config also admits `PUBLICATION_FORMAT=b5`, using the exact conservative-B5 geometry proved through TYP-08. Auxiliary smoke/primer builds remain on the historical working theme in this packet; they are validation/derivative outputs and are not the PR-02 release object.
+
+The migrated production A4 build is **278 pages / 139 duplex leaves**. This replaces the previous 243-page / 122-leaf Working Edition ledger and is recorded in both `publication/metadata.json` and `project/dataplate.json`. The change is an explicit consequence of moving frozen typography and opening/front-matter semantics into the authoritative production path, not a body-metric retune.
+
+The final production B5 page count is intentionally not asserted by TYP-09A. TYP-09B will build and mechanically verify the paired A4/B5 production objects before TYP-09C treats either as a release candidate.
 
 ## Explicitly deferred to TYP-09B
 
