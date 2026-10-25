@@ -4,7 +4,7 @@
   "controlSiteKind": "INSTRUMENTED_REAL_CONTROL",
   "sampleMembership": "EXCLUDED_FROM_DEPLOYMENT_ENVELOPE_SAMPLE",
   "researchDate": "2026-10-25",
-  "baselineMainSha": "098823083265f912cbc45b2906fde7e4eff647c6",
+  "baselineMainSha": "21d74227b08f3dc8bba06fd0bda7be2d91021c6e",
   "parentIssue": 663,
   "selectionIssue": 675,
   "dependencies": {
@@ -21,7 +21,7 @@
     "applicationRef": "P/2025/1408",
     "proposal": "Erection of a self build two storey detached house following demolition of the existing bungalow",
     "siteTypology": "CONVENTIONAL_STREET_FRONT_REPLACEMENT_DWELLING",
-    "planningSnapshotState": "FIRST_PARTY_IDENTITY_PROVED_EXACT_DATE_AUDIT_PENDING"
+    "planningSnapshotState": "FIRST_PARTY_IDENTITY_SUFFICIENT_EXACT_DATE_NOT_REQUIRED_FOR_GEOMETRY_RESULT"
   },
   "supersession": {
     "supersedesAsActiveControl": "DPL-S-CONTROL-002",
@@ -37,7 +37,7 @@
       "authorityClass": "FIRST_PARTY_LOCAL_AUTHORITY",
       "role": ["APPLICATION_IDENTITY", "ADDRESS_IDENTITY", "REPLACEMENT_DWELLING_PROPOSITION"],
       "state": "ACQUIRED_AND_INSPECTED",
-      "limitations": ["Exact controlled decision/date snapshot remains under separate audit because secondary indexes conflict."]
+      "limitations": ["Exact decision date was not needed to establish the controlled geometry result."]
     },
     {
       "sourceId": "S1-CHES-02",
@@ -82,7 +82,7 @@
       "url": "https://www.data.gov.uk/dataset/01b3ee39-da3f-47b6-83da-dc98e73a461f/lidar-composite-dtm-2022-1m",
       "authorityClass": "FIRST_PARTY_GOVERNMENT_ELEVATION_DATA",
       "role": ["DATUM_LEVEL_EVIDENCE", "TOPOGRAPHY_SCREENING"],
-      "state": "SOURCE_CLASS_ADMITTED_NOT_EXTRACTED_AFTER_GEOMETRY_SHORT_CIRCUIT",
+      "state": "NOT_EXTRACTED_GEOMETRY_SHORT_CIRCUIT",
       "crs": "OS National Grid source tiles; heights metres to Ordnance Datum Newlyn; OSTN15",
       "resolution": "1m",
       "verticalAccuracy": "+/-15cm RMSE stated for contributing individual LiDAR surveys",
@@ -98,29 +98,31 @@
   },
   "geometryDisposition": {
     "testedTitleBoundaryReference": "44235316",
+    "authorityScope": "CONTROLLED_SCREENING_INDEX_GEOMETRY",
     "areaSquareMetres": 327.8688333923111,
     "minimumRotatedEnvelopeWidthMetres": 8.961940212430887,
     "minimumRotatedEnvelopeLengthMetres": 42.070891384277026,
     "referenceHouseFootprintMetres": [12.0, 10.8],
     "result": "UNCHANGED_REFERENCE_HOUSE_RECTANGLE_CANNOT_BE_CONTAINED",
-    "reason": "The tested title polygon lies inside an 8.96194 m-wide containing strip, while the minimum projection width of the unchanged 12.0 m x 10.8 m Reference House rectangle over all rotations is 10.8 m.",
+    "reason": "The tested SCREENING title-boundary polygon lies inside an 8.96194 m-wide containing strip, while the minimum projection width of the unchanged 12.0 m x 10.8 m Reference House rectangle over all rotations is 10.8 m.",
     "referenceHouseMutation": "PROHIBITED"
   },
   "readiness": {
-    "R1_CONTROLLED_SPATIAL_IDENTITY": "SATISFIED_FOR_TESTED_TITLE_EXTENT",
+    "R1_CONTROLLED_SPATIAL_IDENTITY": "SATISFIED_FOR_TESTED_SCREENING_TITLE_EXTENT",
     "R2_FOOTPRINT_TEST_GEOMETRY": "SATISFIED_GEOMETRY_ACQUIRED_KNOWN_NO_PLACEMENT",
     "R3_REAL_ORIENTATION_FRAME": "SATISFIED_EPSG4326_SOURCE_WITH_BNG_ANALYSIS",
     "R4_DATUM_LEVEL_EVIDENCE": "NOT_ASSESSED_GEOMETRY_SHORT_CIRCUIT",
     "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "PARTIAL_FIRST_PARTY_STREET_FRONT_IDENTITY_GEOMETRY_SHORT_CIRCUIT",
-    "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_FOR_TESTED_TITLE_EXTENT"
+    "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_FOR_TESTED_SCREENING_TITLE_EXTENT"
   },
-  "packetState": "CONTROL_003_AUTHORITATIVE_GEOMETRY_ACQUIRED_KNOWN_NO_UNCHANGED_RH_PLACEMENT",
-  "finalResult": "PENDING_DPL_S1C_RESULT_SEMANTIC_ADMISSION",
+  "packetState": "CONTROL_003_SCREENING_GEOMETRY_NO_UNCHANGED_RH_PLACEMENT",
+  "finalResult": "CONTROL_SITE_SCREENING_GEOMETRY_NO_UNCHANGED_RH_PLACEMENT",
   "candidateAuthoringState": "NOT_AUTHORED_GEOMETRY_PROVES_NO_RIGID_PLACEMENT",
   "restraints": {
     "pixelMeasurement": "PROHIBITED",
     "neighbourPolygonGuessing": "PROHIBITED",
     "referenceHouseMutation": "PROHIBITED",
+    "legalBoundaryInference": "PROHIBITED",
     "compatibilityConclusion": "NOT_ADMITTED",
     "incompatibilityConclusion": "NOT_ADMITTED",
     "routeExhaustion": "NOT_IMPLEMENTED",
