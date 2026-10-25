@@ -16,102 +16,81 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Install bounded probe dependencies
-        run: python -m pip install --disable-pip-version-check --quiet requests rasterio
+      - name: Install bounded geometry dependencies
+        run: python -m pip install --disable-pip-version-check --quiet requests shapely pyproj
 
-      - name: Acquire authoritative LiDAR and supplemental open-road geometry
+      - name: Acquire and relate Lennard Road open physical geometry
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p evidence/lidar evidence/road
+          mkdir -p evidence/road
           python3 - <<'PY'
-          import json, re, hashlib, pathlib
+          import json, pathlib, hashlib
           import requests
+          from shapely.geometry import LineString
+          from shapely import wkt
+          from shapely.ops import transform, nearest_points
+          from pyproj import Transformer
 
-          UA={'User-Agent':'Mozilla/5.0 DPL-T2 bounded evidence probe'}
-          out={'lidar':{},'road':{}}
+          UA={'User-Agent':'Mozilla/5.0 DPL-T2 bounded road evidence probe'}
+          q='[out:json][timeout:30];way(around:250,51.377028,0.051871)[highway][name="Lennard Road"];out tags geom;'
+          endpoints=[
+            'https://overpass.kumi.systems/api/interpreter',
+            'https://overpass-api.de/api/interpreter',
+            'https://overpass.nchc.org.tw/api/interpreter'
+          ]
+          attempts=[]; data=None; used=None
+          for ep in endpoints:
+              try:
+                  r=requests.get(ep,params={'data':q},headers=UA,timeout=60)
+                  rec={'endpoint':ep,'status':r.status_code,'bytes':len(r.content),'contentType':r.headers.get('content-type')}
+                  attempts.append(rec)
+                  if r.ok:
+                      j=r.json()
+                      if j.get('elements'):
+                          data=j; used=ep
+                          pathlib.Path('evidence/road/lennard-road-osm.json').write_bytes(r.content)
+                          rec['sha256']=hashlib.sha256(r.content).hexdigest()
+                          break
+              except Exception as e:
+                  attempts.append({'endpoint':ep,'error':repr(e)})
 
-          # 1. Environment Agency 1m DTM via first-party WCS.
-          wcs='https://environment.data.gov.uk/spatialdata/lidar-composite-digital-terrain-model-dtm-1m/wcs'
-          try:
-              cap=requests.get(wcs,params={'request':'GetCapabilities','service':'WCS','version':'2.0.1'},headers=UA,timeout=30)
-              out['lidar']['capabilities']={'url':cap.url,'status':cap.status_code,'contentType':cap.headers.get('content-type'),'bytes':len(cap.content)}
-              pathlib.Path('evidence/lidar/capabilities.xml').write_bytes(cap.content)
-              ids=re.findall(rb'<(?:\w+:)?CoverageId>([^<]+)</(?:\w+:)?CoverageId>',cap.content)
-              ids=[x.decode('utf-8','replace') for x in ids]
-              out['lidar']['coverageIds']=ids
-              if ids:
-                  cid=ids[0]
-                  desc=requests.get(wcs,params={'request':'DescribeCoverage','service':'WCS','version':'2.0.1','coverageId':cid},headers=UA,timeout=30)
-                  pathlib.Path('evidence/lidar/describe.xml').write_bytes(desc.content)
-                  out['lidar']['describe']={'coverageId':cid,'url':desc.url,'status':desc.status_code,'contentType':desc.headers.get('content-type'),'bytes':len(desc.content),'textPrefix':desc.text[:1000]}
-
-                  attempts=[]
-                  # Site-centred 140m x 160m extraction in British National Grid.
-                  for axes in [('E','N'),('x','y'),('X','Y')]:
-                      try:
-                          params=[('service','WCS'),('version','2.0.1'),('request','GetCoverage'),('coverageId',cid),('subset',f'{axes[0]}(542840,542980)'),('subset',f'{axes[1]}(166140,166300)'),('format','image/tiff')]
-                          rr=requests.get(wcs,params=params,headers=UA,timeout=60)
-                          rec={'axes':axes,'url':rr.url,'status':rr.status_code,'contentType':rr.headers.get('content-type'),'bytes':len(rr.content),'textPrefix':rr.text[:500] if 'xml' in (rr.headers.get('content-type') or '').lower() else None}
-                          attempts.append(rec)
-                          if rr.ok and (rr.content[:4] in (b'II*\x00',b'MM\x00*') or 'tiff' in (rr.headers.get('content-type') or '').lower()):
-                              pathlib.Path('evidence/lidar/site-dtm.tif').write_bytes(rr.content)
-                              rec['sha256']=hashlib.sha256(rr.content).hexdigest()
-                              break
-                      except Exception as e:
-                          attempts.append({'axes':axes,'error':repr(e)})
-                  out['lidar']['coverageAttempts']=attempts
-          except Exception as e:
-              out['lidar']['error']=repr(e)
-
-          # 2. Supplemental OPEN physical-road geometry. This is never legal highway-right authority.
-          q='[out:json];way(around:150,51.377028,0.051871)[highway][name="Lennard Road"];out tags geom;'
-          try:
-              ov=requests.post('https://overpass-api.de/api/interpreter',data={'data':q},headers=UA,timeout=60)
-              out['road']['overpass']={'status':ov.status_code,'bytes':len(ov.content),'query':q}
-              if ov.ok:
-                  pathlib.Path('evidence/road/lennard-road-osm.json').write_bytes(ov.content)
-                  j=ov.json(); out['road']['elementCount']=len(j.get('elements',[])); out['road']['elements']=j.get('elements',[])
-          except Exception as e:
-              out['road']['error']=repr(e)
-
-          pathlib.Path('evidence/probe-summary.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
+          out={'query':q,'attempts':attempts,'selectedEndpoint':used}
+          if data:
+              to_bng=Transformer.from_crs(4326,27700,always_xy=True).transform
+              parcel=wkt.loads('MULTIPOLYGON (((0.052538 51.377265, 0.052473 51.377319, 0.052342 51.377267, 0.052269 51.377235, 0.051941 51.377083, 0.051889 51.377056, 0.051696 51.376963, 0.051797 51.376897, 0.052125 51.377017, 0.052236 51.377069, 0.052376 51.377151, 0.052375 51.377151, 0.052402 51.377169, 0.052444 51.37719, 0.052538 51.377265)))')
+              parcel_bng=transform(to_bng,parcel)
+              ways=[]
+              for e in data['elements']:
+                  geom=e.get('geometry') or []
+                  if len(geom)<2: continue
+                  line=LineString([(p['lon'],p['lat']) for p in geom])
+                  lb=transform(to_bng,line)
+                  p1,p2=nearest_points(parcel_bng,lb)
+                  ways.append({
+                    'osmWayId':e.get('id'),
+                    'tags':e.get('tags',{}),
+                    'distanceParcelToRoadCentrelineMetres':parcel_bng.distance(lb),
+                    'nearestParcelPointBng':[p1.x,p1.y],
+                    'nearestRoadPointBng':[p2.x,p2.y],
+                    'roadBoundsBng':[lb.bounds[0],lb.bounds[1],lb.bounds[2],lb.bounds[3]]
+                  })
+              ways.sort(key=lambda x:x['distanceParcelToRoadCentrelineMetres'])
+              out['wayCount']=len(ways)
+              out['ways']=ways
+              if ways:
+                  out['nearestDistanceMetres']=ways[0]['distanceParcelToRoadCentrelineMetres']
+                  out['nearestWayId']=ways[0]['osmWayId']
+          pathlib.Path('evidence/road/road-relation.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
           print(json.dumps(out,indent=2))
+          if not data:
+              raise SystemExit('No Lennard Road geometry acquired from bounded open endpoints')
           PY
 
-      - name: Inspect acquired LiDAR raster numerically
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          import json, pathlib
-          p=pathlib.Path('evidence/lidar/site-dtm.tif')
-          if not p.exists():
-              print('No WCS raster acquired; preserve the transport result without inventing R4.')
-              raise SystemExit(0)
-          import rasterio
-          with rasterio.open(p) as ds:
-              a=ds.read(1,masked=True)
-              vals=a.compressed()
-              summary={
-                'crs':str(ds.crs),
-                'bounds':[ds.bounds.left,ds.bounds.bottom,ds.bounds.right,ds.bounds.top],
-                'width':ds.width,
-                'height':ds.height,
-                'nodata':ds.nodata,
-                'minMetresODN':float(vals.min()),
-                'maxMetresODN':float(vals.max()),
-                'meanMetresODN':float(vals.mean()),
-                'validCells':int(vals.size),
-                'sha256':__import__('hashlib').sha256(p.read_bytes()).hexdigest()
-              }
-          pathlib.Path('evidence/lidar/raster-summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
-          print(json.dumps(summary,indent=2))
-          PY
-
-      - name: Upload bounded evidence
+      - name: Upload bounded road evidence
         uses: actions/upload-artifact@v4
         with:
-          name: dpl-t2-lennard-evidence-probe
+          name: dpl-t2-lennard-road-probe
           path: evidence/
           if-no-files-found: error
           retention-days: 1
