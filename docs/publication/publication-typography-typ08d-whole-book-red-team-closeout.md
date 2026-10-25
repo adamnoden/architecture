@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # TYP-08D — Whole-book typography red-team closeout
 
 Status: **COMPLETE CANDIDATE — pending merge of this closeout record**  
