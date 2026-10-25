@@ -1,0 +1,1 @@
+DPL-T1 packet status: geometry-first preflight complete on branch; 41 Lennard Road selected as `DPL-T-CONTROL-004`; merge pending. Parent #700 remains open until merge. Candidate authoring remains held.
