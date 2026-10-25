@@ -211,7 +211,7 @@ export async function applyProductionTypography(context: ProductionTypographyCon
   const fontDefinitions = [
     ['PUBLICATION_SERIF_REGULAR', 'Publication Serif', 'normal', 400],
     ['PUBLICATION_SERIF_ITALIC', 'Publication Serif', 'italic', 400],
-    ['PUBLICATION_SERIF_BOLD', 'Publication Serif', 'normal', 700],
+    ['PUBLICATION_SERIF_SEMIBOLD', 'Publication Serif', 'normal', 600],
     ['PUBLICATION_SANS_REGULAR', 'Publication Sans', 'normal', 400],
     ['PUBLICATION_SANS_BOLD', 'Publication Sans', 'normal', 700]
   ] as const satisfies ReadonlyArray<readonly [PublicationFontSlot, string, string, number]>
