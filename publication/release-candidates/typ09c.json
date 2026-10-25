@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "packet": "TYP-09C",
+  "candidate": "publication-typography-v1-rc1",
+  "productionBaselineMerge": "59622075cf67e0bd7592480864ad37b5ef177817",
+  "exactProductionObject": {
+    "a4": {
+      "pages": 278,
+      "duplexLeaves": 139,
+      "sha256": "4e9c10878cf5382ab303f310be1a3ab1d9ee2b14efb2376a2a0e6e9d4d9698d9"
+    },
+    "b5": {
+      "pages": 335,
+      "duplexLeaves": 168,
+      "sha256": "fa186bf847d319b99d0af413742a77c932d24312cf35742f4ece87d5e2d4b255"
+    },
+    "finishedFonts": [
+      "SourceSans3-Bold",
+      "SourceSans3-Regular",
+      "SourceSerif4-Bold",
+      "SourceSerif4-It",
+      "SourceSerif4-Regular"
+    ]
+  },
+  "pltCompatibility": {
+    "status": "CONTRACT_COMPATIBLE_PRE_V2",
+    "authority": "docs/publication/publication-typography-typ06c-sans-drawing-interface-freeze.md",
+    "family": "Source Sans 3",
+    "admittedWeights": [400, 700],
+    "italicAdmitted": false,
+    "tabularFigures": "available where alignment earns them",
+    "historicalDrawingBaseline": "drawing-publication-v1",
+    "currentHistoricalToken": "Arial, Helvetica, sans-serif",
+    "interpretation": "The current token remains the protected drawing-publication-v1 working value. PLT has not yet frozen drawing-publication-v2. TYP-09C therefore certifies the TYP-06 interface and absence of a competing PLT family, not a nonexistent v2 implementation.",
+    "requiredJoinCondition": "Before drawing-publication-v2 release, PLT must make its central drawing-token seam consume the frozen Source Sans 3 identity and re-prove BOOK/WALL outputs without a local family fork."
+  },
+  "coldPdfReview": {
+    "sourceRun": 40199097721,
+    "sourceArtifact": 12600940982,
+    "reviewMode": "screen/PDF cold review; not a substitute for final physical proof",
+    "b5PagesSampled": [1, 2, 23, 59, 85, 103, 215, 216, 230, 231, 240, 273, 335],
+    "result": "PASS",
+    "finding": "No new typography design question was exposed. Title/imprint separation, division thresholds, ordinary chapter/prose hierarchy, Part IV transition, architectural plate typography, Part V threshold and dense source material remain coherent in the exact production object."
+  },
+  "manufacturing": {
+    "b5SixteenPageSections": 21,
+    "b5PagesAtBoundary": 336,
+    "b5PaddingToBoundary": 1,
+    "spineWidthClaim": "not admissible without final paper caliper / manufacturing specification"
+  },
+  "physicalOwnerVerdict": "REQUIRED_IN_TYP_09D"
+}
