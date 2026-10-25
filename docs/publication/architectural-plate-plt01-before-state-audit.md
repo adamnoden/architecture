@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # PLT-01 — forensic precedent re-read + 17-view before-state audit
 
 **Programme:** PLT — Architectural Plate Refinement  
