@@ -6,3 +6,17 @@
   @bottom-left { content: none; }
   @bottom-right { content: none; }
 }
+
+/* A2 content box is exactly 372 × 546 mm after the 24 mm page margins.
+ * Use physical coordinates rather than percentages: paged-media percentage
+ * containing blocks are not a reliable centring primitive. The 136 × 145 mm
+ * drawing remains true 1:100 and is centred without fit scaling. */
+.wall-page {
+  width: 372mm;
+  height: 546mm;
+}
+.wall-drawing {
+  left: 118mm;
+  top: 200.5mm;
+  margin: 0;
+}
