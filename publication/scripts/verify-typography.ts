@@ -11,7 +11,7 @@ await mkdir(diagnosticsRoot, { recursive: true })
 const allowedFonts = new Set([
   'SourceSerif4-Regular',
   'SourceSerif4-It',
-  'SourceSerif4-Bold',
+  'SourceSerif4-Semibold',
   'SourceSans3-Regular',
   'SourceSans3-Bold'
 ])
