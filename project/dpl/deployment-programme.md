@@ -2,10 +2,10 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Current packet:** [#729 — DPL-T3](https://github.com/adamnoden/architecture/issues/729) — 41 Lennard Road unchanged Reference House candidate authoring  
-**Current real-control result:** `REFERENCE_HOUSE_CANDIDATE_AUTHORED_PENDING_POST_T3_VERIFICATION`  
-**Next authorised packet after T3 lands:** **fresh post-T3 deterministic candidate verification and conformance replay**  
-**Programme maturity:** **M4 — internally controlled at the bounded synthetic SCREENING-result scope. Real-site deployment remains unvalidated.**
+**Current packet:** [#752 — DPL-T4](https://github.com/adamnoden/architecture/issues/752) — deterministic Lennard candidate verification  
+**Current real-control result:** `VERIFIED_BOUNDED_CANDIDATE_READY_FOR_NEXT_DPL_GATE`  
+**Next authorised packet:** **DPL-T5 — real-control deployment case assembly and screening-coverage replay**  
+**Programme maturity:** **M4 — internally controlled at bounded SCREENING-result scope. Real-site whole-deployment validation remains unearned.**
 
 ## Purpose and governing rules
 
@@ -21,7 +21,7 @@ DPL asks whether the controlled Ovid’s House Reference House can be deployed h
 
 ## Controlled synthetic and corpus state
 
-DPL-01 through DPL-13 establish the current controlled synthetic deployment machinery and SCREENING aggregation semantics.
+DPL-01 through DPL-13 establish the controlled deployment ontology, conformance seam, interface authority, target stack, runtime composition and SCREENING aggregation semantics.
 
 The empirical DPL-14 London corpus remains unchanged:
 
@@ -31,7 +31,7 @@ DPL-15C candidate-authoring readiness = 0 / 8
 DPL-16 deployment envelope            = HELD
 ```
 
-Instrumented controls are pipeline experiments only and are excluded from DPL-16 sampling.
+Instrumented controls are pipeline experiments only and remain excluded from DPL-16 sampling.
 
 ## Instrumented-control sequence
 
@@ -73,13 +73,12 @@ HMLR reference   = 57071807
 
 The site is the intended conventional condition: existing bungalow → demolition → one detached replacement house on the normal street frontage.
 
-#### Geometry
+#### T1 — fail-fast geometry preflight
 
 ```text
 area                            = 783.6969 m²
 minimum containing envelope     = 13.5235 m × 67.1018 m
 unchanged RH                    = 12.0 m × 10.8 m
-width margin                    = 2.7235 m
 constructive witness contained  = YES
 witness min boundary clearance  = ~1.232 m
 ```
@@ -88,36 +87,16 @@ Result:
 
 `CONTROLLED_SCREENING_GEOMETRY_DOES_NOT_DISPROVE_PLACEMENT`
 
-The witness is geometry proof only, not the authored deployment candidate.
+The witness proved only that the shell could fit. It was not promoted into architecture.
 
-#### Datum / topography
+#### T2 — R1–R6 admission
 
-Environment Agency 1 m DTM, EPSG:27700 / metres ODN, masked by the exact controlled SCREENING parcel:
+The admitted evidence package is:
 
-```text
-parcel minimum     = 70.20 m ODN
-parcel maximum     = 71.10 m ODN
-parcel mean        = 70.5288 m ODN
-terrain range      = 0.90 m
-planning-point     = 70.55 m ODN
-raster SHA-256     = ee7e04c7eee8f4391bc64cd57485439722e15687ffaad49b4a02804957fd1db9
-```
-
-This satisfies SCREENING datum/topography authority while remaining below measured private-survey assurance.
-
-#### Street / access relationship
-
-Exact-site submitted planning evidence identifies:
-
-- south-west/front adjacency to Lennard Road;
-- existing front-garden/front-door access;
-- a dropped kerb directly in front of the site.
-
-The current `26/02618/FPA` proposition independently includes front driveway alterations.
-
-Composed with the exact parcel polygon, this is sufficient to identify the real street/access side for honest SCREENING candidate placement. Legal highway extent/adoption and private rights remain unresolved and are not required to author the SCREENING candidate.
-
-#### Final R1–R6 state
+- HMLR / Planning Data indicative title-index geometry;
+- Environment Agency 1 m LiDAR Composite DTM, EPSG:27700 / ODN;
+- exact-site submitted planning evidence identifying the south-west Lennard Road frontage, front access and dropped kerb;
+- current `26/02618/FPA` proposition corroborating front driveway alterations.
 
 ```text
 R1_CONTROLLED_SPATIAL_IDENTITY       = SATISFIED_FOR_SCREENING_TITLE_EXTENT
@@ -130,9 +109,22 @@ R6_SITE_IDENTITY_COHERENCE           = SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDEN
 result = CONTROL_SITE_CANDIDATE_AUTHORING_READY
 ```
 
-#### DPL-T3 authored candidate
+EA parcel terrain evidence:
 
-T3 now authors exactly one unchanged, unmirrored `RH-V02` placement:
+```text
+minimum             = 70.20 m ODN
+maximum             = 71.10 m ODN
+mean                = 70.5288 m ODN
+terrain range       = 0.90 m
+centroid sample     = 70.4000 m ODN
+raster SHA-256      = ee7e04c7eee8f4391bc64cd57485439722e15687ffaad49b4a02804957fd1db9
+```
+
+This remains SCREENING evidence, not a measured private topographic survey.
+
+#### T3 — authored candidate
+
+T3 authored exactly one unchanged, unmirrored `RH-V02` placement:
 
 ```text
 candidate                  = DPL-T-CANDIDATE-004-01 / rev 0.1
@@ -146,43 +138,95 @@ screening containment      = YES
 min title-index clearance  = ~0.640 m
 ```
 
-The earlier T1 constructive witness is not promoted into architecture: it proved only that the shell could fit. T3 keeps the canonical 12 m façade street-facing and uses a deliberately legible small skew rather than forcing false parallelism to the approximately 10.166 m indicative title-front segment.
+T3 kept the canonical 12 m façade street-facing rather than reusing the arbitrary T1 fit witness. The small authored skew avoids false parallelism to an indicative title-front segment only ~10.166 m wide.
 
-The `~0.640 m` clearance is a screening geometry result only. It is not a legal setback, planning separation, maintenance corridor, fire separation or construction tolerance.
+Durable artifacts:
 
-Durable artifact:
+- `project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json`
+- `project/dpl/dpl-t3-lennard-authored-candidate.md`
 
-`project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json`
+#### T4 — deterministic candidate verification
 
-Decision record:
+T4 now machine-replays the exact candidate from pinned source authority.
 
-`project/dpl/dpl-t3-lennard-authored-candidate.md`
+Executable proof:
 
-The candidate preserves the current controlled shell/courtyard/stair/front-field facts and pins `RH-V02`. `RH-SI02` absolute-datum/external-level transition and `RH-SI05` approach/access/landscape integration remain open site-interface work.
+`compiler/dpl/dplT4Lennard.test.ts`
 
-## Active packet — DPL-T3
+Bounded BNG analysis artifact:
 
-DPL-T3 is the bounded **authoring** packet. It does not prove the candidate by letting a verifier search for something that works.
+`project/dpl/sites/dpl-t-control-004-lennard-road-analysis-bng-v01.json`
 
-The compiler role remains deterministic verification only:
+Frozen verification result:
+
+`project/dpl/sites/dpl-t-control-004-lennard-road-verification-v01.json`
+
+Semantic result fingerprint:
+
+`7c7b6857b5ca6e0ec01aa799bb071a56bf4dd9ec0fe085e20407aca5681625b4`
+
+The replay proves:
 
 ```text
-candidate generation / search   = PROHIBITED
-placement optimisation          = PROHIBITED
-Reference House mutation        = PROHIBITED
-whole-site COMPATIBLE           = NOT ADMITTED
-route exhaustion                = NOT IMPLEMENTED
+Reference House source identity    = CURRENT / PINNED
+Reference House compile identity   = CURRENT / PINNED
+rigid 12.0 × 10.8 m transform      = PASS
+handedness                         = UNMIRRORED
+title-index containment            = PASS
+minimum screening clearance        = ~0.640024 m
+frontage / front / -7° skew        = REPRODUCED
+70.70 m ODN screening FFL          = REPRODUCED
 ```
 
-The original #729 wording predates the final T2 acquisition and mentions coarse Open-Meteo / OSM evidence. The landed T2 authority supersedes that admission detail: HMLR / Planning Data title geometry, Environment Agency 1 m DTM, and exact-site planning frontage/access evidence are the source package pinned by T3.
+DPL-12B conformance replay:
 
-## Next gate after T3
+```text
+RH-I02       = CONFORMS
+RH-PROT-01   = CONFORMS
+RH-PROT-04   = CONFORMS
+RH-PROT-06   = CONFORMS
+RH-V02       = CONFORMS
+RH-SI02      = OPEN / EXTERNAL_OR_UNMODELLED
+RH-SI05      = OPEN / EXTERNAL_OR_UNMODELLED
+```
 
-After T3 lands, authorise only a fresh verification packet:
+This is a verified **candidate**, not a verified whole site.
 
-> **Deterministically replay `DPL-T-CANDIDATE-004-01` against the pinned Lennard evidence and current DPL-12B Reference House authority; prove source identity, rigid-transform reproduction, screening containment and bounded conformance without route search or compatibility inflation.**
+The open interface results are intentional. Under DPL-08, a site-interface freedom is discharged only by a controlled response between building handoff, evidenced site facts and applicable obligations. Placement alone cannot make `RH-SI02` or `RH-SI05` pass.
 
-The post-T3 gate may reject the authored candidate. It may not silently author another one.
+## Active packet — DPL-T4
+
+DPL-T4 is the bounded **verification** packet.
+
+It fails closed on:
+
+- stale Reference House or site-evidence identity;
+- transform drift, mirroring or deformation;
+- title-index containment failure;
+- frontage-relation drift;
+- protected Reference House fact drift;
+- unexpected DPL-12B conformance changes.
+
+It does not:
+
+```text
+search / generate another placement
+optimise the authored placement
+repair a failing candidate
+infer legal boundaries
+infer measured topography
+solve site interfaces
+assess planning acceptability
+emit whole-site COMPATIBLE / INCOMPATIBLE
+```
+
+## Next gate — DPL-T5
+
+The useful next question is no longer whether another placement can be found.
+
+> **Assemble `DPL-T-CONTROL-004` + `DPL-T-CANDIDATE-004-01` as one instrumented real-control deployment case through the existing DPL runtime, using current England/London/Bromley target slices and DPL-08 interface authorities; preserve all real-site unknowns and emit coverage/readiness evidence without whole-site compatibility inflation.**
+
+This follows the DPL-13A discipline: compose real evidence and current authority first, then observe what remains unresolved/unsupported. Do not pre-emptively design `RH-SI02`, `RH-SI05`, drainage, utilities or other site responses merely to manufacture a green case.
 
 ## Frozen programme boundaries
 
@@ -195,6 +239,10 @@ legal title boundary                  = UNRESOLVED
 private access rights                 = UNRESOLVED
 highway adoption extent               = UNRESOLVED
 measured private topographic survey   = NOT ACQUIRED
+foundation / ground adequacy          = NOT PROVED
+accessible approach / threshold       = NOT PROVED
+foul / surface-water solution         = NOT PROVED
+utility approach / external plant     = NOT PROVED
 planning acceptability                = NOT PROVED
 COMPATIBLE @ SCREENING                = NOT ADMITTED FOR REAL CONTROL
 whole-site INCOMPATIBLE               = NOT ADMITTED
@@ -206,7 +254,7 @@ DPL-18 final validation               = HELD
 
 ## Restart discipline
 
-Resume from this file, #729, `project/dpl/dpl-t3-lennard-authored-candidate.md`, and `project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json` together with the admitted T2 geometry/elevation/street-access records under `project/dpl/sites/`.
+Resume from this file, #752, `project/dpl/dpl-t4-lennard-candidate-verification.md`, and the T3/T4 artifacts under `project/dpl/sites/`.
 
 Every packet must preserve:
 
