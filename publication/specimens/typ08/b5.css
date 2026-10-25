@@ -11,6 +11,15 @@
   margin-bottom: 20mm;
 }
 
+/* Match the TYP-08C named pages to the authoritative B5 proof geometry. */
+@page typ08-division {
+  size: 176mm 250mm;
+}
+
+@page typ08-imprint {
+  size: 176mm 250mm;
+}
+
 @page :left {
   margin-left: 18mm;
   margin-right: 23mm;

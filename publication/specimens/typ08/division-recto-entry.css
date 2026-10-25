@@ -1,0 +1,7 @@
+/* TYP-08C pass-two only. Applied only to a Part whose measured provisional
+   opening would otherwise land on verso. The marker is inside the Part document,
+   so this reuses the renderer's ordinary break-before:right behaviour rather
+   than asking an ArticleEntry boundary to synthesize parity. */
+.typ08-division-context {
+  break-before: right;
+}
