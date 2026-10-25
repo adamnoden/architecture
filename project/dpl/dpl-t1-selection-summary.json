@@ -1,0 +1,15 @@
+{
+  "schema": "dpl.geometryFirstShortlist.v1",
+  "packet": "DPL-T1",
+  "parentGate": 700,
+  "candidates": [
+    {"id":"T1-01","site":"41 Lennard Road, Bromley, BR2 8LN","disposition":"SELECT_AFTER_POSITIVE_GEOMETRY_PREFLIGHT","controlId":"DPL-T-CONTROL-004"},
+    {"id":"T1-02","site":"4 Ninhams Wood, Orpington, BR6 8NJ","disposition":"HOLD_NOT_NEEDED_AFTER_FIRST_POSITIVE_CONTROL"},
+    {"id":"T1-03","site":"The Vicarage, 1B St James Road, Purley, CR8 2DL","disposition":"HOLD_NOT_NEEDED_AFTER_FIRST_POSITIVE_CONTROL"},
+    {"id":"T1-04","site":"15 Fairholme Gardens, London, N3 3ED","disposition":"HOLD_NOT_NEEDED_AFTER_FIRST_POSITIVE_CONTROL"},
+    {"id":"T1-05","site":"The Bungalow, Routh Road, London, SW18 3SW","disposition":"HOLD_NOT_NEEDED_AFTER_FIRST_POSITIVE_CONTROL"},
+    {"id":"T1-X1","site":"17 Tower Terrace, Wood Green, N22 6SX","disposition":"REJECT_TYPOLOGY_REAR_GARDEN_GARAGE_HISTORY"}
+  ],
+  "selectionRule":"STOP_AT_FIRST_CONTROL_THAT_PASSES_EXACT_GEOMETRY_PREFLIGHT_AND_MATCHES_CONVENTIONAL_STREET_FRONT_REPLACEMENT_TYPOLOGY",
+  "scalarRanking":"NOT_USED"
+}
