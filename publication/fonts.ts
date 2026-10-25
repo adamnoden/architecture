@@ -5,7 +5,7 @@ import { resolve } from 'node:path'
 export type PublicationFontSlot =
   | 'PUBLICATION_SERIF_REGULAR'
   | 'PUBLICATION_SERIF_ITALIC'
-  | 'PUBLICATION_SERIF_BOLD'
+  | 'PUBLICATION_SERIF_SEMIBOLD'
   | 'PUBLICATION_SANS_REGULAR'
   | 'PUBLICATION_SANS_BOLD'
 
@@ -41,10 +41,10 @@ const pins: Pin[] = [
   {
     repo: 'adobe-fonts/source-serif',
     commit: sourceSerifCommit,
-    path: 'TTF/SourceSerif4-Bold.ttf',
-    gitBlobSha: 'c4159ff2a409d9224dfa97af4e5167817e91e833',
-    outputName: 'SourceSerif4-Bold.ttf',
-    slot: 'PUBLICATION_SERIF_BOLD'
+    path: 'TTF/SourceSerif4-Semibold.ttf',
+    gitBlobSha: '151e9a9d5c08dfd4751650ab4bff92771a132888',
+    outputName: 'SourceSerif4-Semibold.ttf',
+    slot: 'PUBLICATION_SERIF_SEMIBOLD'
   },
   {
     repo: 'adobe-fonts/source-serif',
@@ -116,7 +116,7 @@ export async function fetchPublicationFonts(cacheRoot: string): Promise<Record<P
   const required: PublicationFontSlot[] = [
     'PUBLICATION_SERIF_REGULAR',
     'PUBLICATION_SERIF_ITALIC',
-    'PUBLICATION_SERIF_BOLD',
+    'PUBLICATION_SERIF_SEMIBOLD',
     'PUBLICATION_SANS_REGULAR',
     'PUBLICATION_SANS_BOLD'
   ]
