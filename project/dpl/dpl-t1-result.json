@@ -1,0 +1,17 @@
+{
+  "schema": "dpl.geometryFirstControlPreflightResult.v1",
+  "packet": "DPL-T1",
+  "parentGate": 700,
+  "selectedControl": "DPL-T-CONTROL-004",
+  "site": "41 Lennard Road, Bromley, BR2 8LN",
+  "planningRef": "26/02618/FPA",
+  "result": "CONTROLLED_SCREENING_GEOMETRY_DOES_NOT_DISPROVE_PLACEMENT",
+  "nextRequiredEvidence": [
+    "R4_DATUM_LEVEL_EVIDENCE",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY",
+    "CURRENT_PLANNING_IDENTITY_CROSS_CHECK"
+  ],
+  "candidateAuthoring": "HELD_UNTIL_FULL_R1_R6_ADMISSION",
+  "referenceHouse": "UNCHANGED_12.0_X_10.8_M",
+  "dpl16": "HELD"
+}
