@@ -23,7 +23,7 @@
     "packet": "DPL-T2",
     "result": "CONTROL_SITE_CANDIDATE_AUTHORING_READY",
     "sourceManifestPath": "project/dpl/sites/dpl-t-control-004-lennard-road-source-manifest.json",
-    "sourceManifestGitBlobSha": "82738a0459e8ec590ced84c71c86799ea6cb2344"
+    "admissionSourceManifestGitBlobSha": "82738a0459e8ec590ced84c71c86799ea6cb2344"
   },
   "referenceHouse": {
     "fixtureId": "RH-C1-REFERENCE-HOUSE",
