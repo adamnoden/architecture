@@ -76,8 +76,15 @@
     "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDENTITY_LEVEL"
   },
   "packetResult": "CONTROL_SITE_CANDIDATE_AUTHORING_READY",
-  "candidateAuthoringState": "NOT_AUTHORED_T2_ONLY_ADMITS_NEXT_PACKET",
-  "nextPacket": "DPL-T3 — 41 Lennard Road unchanged Reference House candidate authoring",
+  "candidateAuthoringState": "AUTHORED_DPL_T3_PENDING_POST_T3_VERIFICATION",
+  "candidate": {
+    "id": "DPL-T-CANDIDATE-004-01",
+    "revision": "0.1",
+    "record": "dpl-t-control-004-lennard-road-candidate-v01.json",
+    "decisionRecord": "../dpl-t3-lennard-authored-candidate.md",
+    "result": "REFERENCE_HOUSE_CANDIDATE_AUTHORED_PENDING_POST_T3_VERIFICATION"
+  },
+  "nextPacket": "Fresh post-T3 deterministic candidate verification and conformance replay",
   "restraints": {
     "referenceHouseMutation": "PROHIBITED",
     "compatibilityConclusion": "NOT_ADMITTED",
