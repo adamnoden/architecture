@@ -2,20 +2,17 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Latest landed real-control evidence:** PR #699 / `21d74227b08f3dc8bba06fd0bda7be2d91021c6e`  
-**DPL-S1:** complete — three instrumented-control experiments have now isolated transport, source and geometry boundaries  
-**Current authorised packet:** [#700 — DPL-T](https://github.com/adamnoden/architecture/issues/700) — conventional positive-control geometry preflight  
+**Current gate:** [#700 — DPL-T](https://github.com/adamnoden/architecture/issues/700) — conventional positive-control geometry preflight  
+**DPL-T1 selected control:** `DPL-T-CONTROL-004 — 41 Lennard Road, Bromley, BR2 8LN`  
+**DPL-T1 result:** `CONTROLLED_SCREENING_GEOMETRY_DOES_NOT_DISPROVE_PLACEMENT`  
+**Next authorised packet after DPL-T1 lands:** **DPL-T2 — 41 Lennard Road datum / street-access composition and full R1–R6 admission**  
 **Programme maturity:** **M4 — internally controlled at the bounded synthetic SCREENING-result scope. Real-site deployment remains unvalidated.**
 
 ## Purpose
 
 DPL asks whether the controlled Ovid’s House Reference House can be deployed honestly onto real land under declared site, jurisdiction, evidence and assurance conditions without confusing architectural authorship, site truth, external authority, compiler proof or professional judgement.
 
-The deployment question remains:
-
-> **Can this controlled Reference House revision be deployed on this site, under this exact target composition and evidence state, while preserving its architectural identity and satisfying every obligation due for the requested assurance profile?**
-
-Governing rules:
+Governing rules remain:
 
 > **Compatibility before adaptation.**
 
@@ -25,42 +22,19 @@ Governing rules:
 
 > **Spatial evidence retains its actual authority class. An index polygon is not a determined legal boundary.**
 
----
+## Controlled programme state
 
-# Controlled programme state
+DPL-01 through DPL-13 establish the controlled synthetic deployment machinery: ontology/result semantics, Reference House conformance, assurance profiles, target composition, site/interface authority, authored-candidate identity and SCREENING aggregation.
 
-## Synthetic deployment machinery
-
-DPL-01 through DPL-13 establish the controlled synthetic machinery: deployment ontology/result semantics, Reference House conformance, assurance profiles, target composition, site/interface authority, authored candidate identity and SCREENING aggregation.
-
-The controlled M4 proposition includes:
-
-- deterministic site / candidate / target / interface / result identity;
-- owner-complete SCREENING coverage composition;
-- explicit separation of architectural review, native computation and external evidence;
-- bounded London strategic + borough target composition;
-- canonical whole-site `UNRESOLVED @ SCREENING` authority;
-- refusal to emit `COMPATIBLE` merely because represented checks are green;
-- refusal to emit `INCOMPATIBLE` without separately controlled invariant-blocker / route-exhaustion authority.
-
-This does **not** establish real-site deployability, planning permission, regulatory compliance, legal clearance or M5 external validation.
-
-## Frozen real-site corpus
-
-DPL-14 retains the empirical eight-site London corpus:
-
-`DPL-RP-001 … DPL-RP-008`
-
-The corpus remains:
+The empirical DPL-14 London corpus remains:
 
 ```text
+DPL-RP-001 … DPL-RP-008
 DPL-15C candidate-authoring readiness = 0 / 8
 DPL-16 deployment envelope            = HELD
 ```
 
-That `0 / 8` state is an external spatial-evidence finding, not eight incompatibility verdicts.
-
-All instrumented controls described below are **excluded from DPL-16 sampling**.
+That `0 / 8` state is an external spatial-evidence finding, not eight incompatibility verdicts. Every instrumented control below is excluded from DPL-16 sampling.
 
 ---
 
@@ -71,21 +45,15 @@ All instrumented controls described below are **excluded from DPL-16 sampling**.
 ```text
 DPL-S-CONTROL-001
 92 Uphill Road, Mill Hill, NW7 4QE
-24/1141/FUL + accepted 25/1691/NMA Rev B lineage
 ```
 
-DPL-R1 established evidence sufficiency under R1–R6 in principle.
-
-DPL-R2 then failed cleanly at geometry acquisition:
+Evidence sufficiency existed in principle, but exact machine-readable geometry could not be recovered faithfully from the controlled planning drawing.
 
 ```text
-controlled proposal-demise geometry = EXISTS IN SOURCE
-machine-recoverable boundary path   = NOT RECOVERED
-Reference House candidate           = NOT AUTHORED
-result                              = REAL_CONTROL_CANDIDATE_NOT_AUTHORED_GEOMETRY_RECOVERY_FAILED
+result = REAL_CONTROL_CANDIDATE_NOT_AUTHORED_GEOMETRY_RECOVERY_FAILED
 ```
 
-Lesson: a scaled human drawing is not the same thing as acquired machine-readable geometry. Do not build OCR/raster/PDF machinery merely to force progress.
+Lesson: do not build OCR/raster/PDF machinery merely to force progress.
 
 ## Control 2 — 1 Whittington Road, Wood Green
 
@@ -95,151 +63,116 @@ DPL-S-CONTROL-002
 HGY/2026/2550
 ```
 
-The planning file exposes a submitted `SiteLocation.geojson` identity plus useful plans/sections, but the Haringey/Arcus transport layer did not expose the exact document bytes through the bounded retrieval path.
+A submitted `SiteLocation.geojson` identity and useful plans/sections existed, but the Haringey/Arcus transport layer did not expose the exact document bytes through the bounded retrieval path.
 
-Whittington therefore remains valid **document-transport boundary evidence**, not an authored candidate and not an incompatibility result.
-
-Lesson: prefer direct spatial authority over a planning portal merely because a machine-readable filename appears in its document list.
+Lesson: a machine-readable filename in a planning portal is not acquired geometry.
 
 ## Control 3 — 25A Chesterfield Road, Chiswick
 
 ```text
 DPL-S-CONTROL-003
 25A Chesterfield Road, Chiswick, W4 3HQ
-P/2025/1408
 UPRN 100021580413
 ```
 
-25A was deliberately selected as the more conventional experiment requested by the user:
+This deliberately conventional street-front bungalow-replacement control successfully reached direct HMLR/Planning Data geometry, but the exact SCREENING polygon proved too narrow:
 
 ```text
-existing street-front bungalow
-  → demolition
-  → one detached replacement house
-  → normal residential frontage
+area                         = 327.8688 m²
+minimum containing width     = 8.96194 m
+Reference House footprint    = 12.0 m × 10.8 m
+minimum RH projection width  = 10.8 m
+result                       = CONTROL_SITE_SCREENING_GEOMETRY_NO_UNCHANGED_RH_PLACEMENT
 ```
 
-It removed the backland-access confounder present at Whittington.
+This is a pre-candidate geometry result, not whole-site `INCOMPATIBLE`.
 
-### Exact source binding
+Lesson: test geometry before spending effort on datum/access evidence.
 
-Planning Data / HM Land Registry title-boundary evidence resolves exactly one entity for both the exact UPRN and an independent point query:
+## Control 4 — 41 Lennard Road, Bromley — selected by DPL-T1
 
 ```text
-entity                     = 12044235316
-reference                  = 44235316
-quality                    = authoritative
-source JSON SHA-256        = 45240408b1a30743acfb5c06a98e9647ee55fa9bd6a24bcb5819163dee3b2b79
-source CRS                 = EPSG:4326
+DPL-T-CONTROL-004
+41 Lennard Road, Bromley, BR2 8LN
+planning ref 26/02618/FPA
+UPRN 100020404537
 ```
 
-The source is controlled **SCREENING index geometry**. HM Land Registry describes INSPIRE/index polygons as showing indicative position/extent; this is not a determined legal-title boundary.
+The site matches the intended clean experimental typology: existing bungalow → demolition → one detached replacement dwelling on the normal street frontage.
 
-### Geometry result
+### Exact identity and geometry
 
-Metric analysis of the exact controlled polygon gives:
+An exact planning-source BNG point `542903,166217` and the public UPRN point for `100020404537` converge within approximately `0.036 m`, preventing neighbouring-title selection by visual judgement.
+
+Planning Data returns exactly one HMLR title-boundary entity:
 
 ```text
-area                               = 327.8688 m²
-minimum containing envelope        = 8.96194 m × 42.07089 m
-unchanged Reference House footprint = 12.0 m × 10.8 m
-minimum RH projection width        = 10.8 m
+entity                          = 12057071807
+reference                       = 57071807
+quality                         = authoritative
+source CRS                      = EPSG:4326
+analysis CRS                    = EPSG:27700
+area                            = 783.6969 m²
+minimum containing envelope     = 13.5235 m × 67.1018 m
+RH theoretical minimum width    = 10.8 m
+width margin                    = 2.7235 m
 ```
 
-The tested polygon lies wholly inside an `8.96194 m`-wide strip. A rigid `12.0 m × 10.8 m` rectangle has minimum orthogonal projection width `10.8 m` over every rotation.
+A constructive `12.0 m × 10.8 m` rigid rectangle is contained by the exact controlled SCREENING polygon with approximately `1.232 m` minimum boundary clearance at the witness placement.
 
-Therefore no rigid rotation or mirror of the unchanged Reference House footprint can be contained within the exact tested SCREENING polygon.
-
-Final S1 disposition:
-
-```text
-CONTROL_SITE_SCREENING_GEOMETRY_NO_UNCHANGED_RH_PLACEMENT
-```
-
-This is a **pre-candidate geometry result only**. It is not whole-site `INCOMPATIBLE`, legal-title impossibility, planning refusal or deployment-envelope evidence.
-
-R1–R6 closeout:
-
-```text
-R1 = SATISFIED_FOR_TESTED_SCREENING_TITLE_EXTENT
-R2 = SATISFIED_GEOMETRY_ACQUIRED_KNOWN_NO_PLACEMENT
-R3 = SATISFIED_EPSG4326_SOURCE_WITH_BNG_ANALYSIS
-R4 = NOT_ASSESSED_GEOMETRY_SHORT_CIRCUIT
-R5 = PARTIAL_FIRST_PARTY_STREET_FRONT_IDENTITY_GEOMETRY_SHORT_CIRCUIT
-R6 = SATISFIED_FOR_TESTED_SCREENING_TITLE_EXTENT
-```
-
-R4/R5 were deliberately short-circuited. Datum and access evidence cannot rescue a rigid footprint that cannot fit the controlled geometry.
-
-25A is retained as a useful **conventional street-front negative geometry control**.
-
----
-
-# DPL-S1 conclusion
-
-The three controls answer three different questions cleanly:
-
-```text
-Uphill Road   → evidence exists, geometry transport/recovery fails
-Whittington   → machine-readable document identity exists, portal byte transport fails
-Chesterfield  → direct machine-readable geometry succeeds and proves no unchanged placement
-```
-
-The key programme lesson is dependency order.
-
-For the next positive-control attempt, do **geometry preflight before downstream evidence acquisition**:
-
-```text
-exact address identity
-  → exact machine-readable SCREENING polygon
-  → rigid 12.0 m × 10.8 m footprint preflight
-  → only if geometry does not disprove placement:
-       datum / topography
-       street / access
-       full R1–R6 admission
-       authored candidate
-```
-
-This is fail-fast dependency discipline, not optimisation.
-
----
-
-# Current packet — DPL-T
-
-[#700 — DPL-T](https://github.com/adamnoden/architecture/issues/700) owns the next experiment.
-
-The next control should preserve the conventional condition that made 25A useful:
-
-- Greater London;
-- ordinary street-front detached residential plot;
-- existing house/bungalow demolition or credible replacement-house planning lineage;
-- house sits on the normal road frontage/building line, not rear/backland garage land;
-- reasonably conventional parcel shape;
-- instrumented control only, excluded from DPL-16.
-
-Before spending effort on datum/access/planning evidence, bind one exact machine-readable SCREENING polygon and test the unchanged footprint.
-
-Positive preflight means only:
+Therefore:
 
 ```text
 CONTROLLED_SCREENING_GEOMETRY_DOES_NOT_DISPROVE_PLACEMENT
 ```
 
-Negative preflight may emit:
+The witness is geometry proof only. It is **not** the authored deployment candidate, a setback decision, a planning proposition or an optimisation output.
+
+### Current R1–R6 frontier
 
 ```text
-CONTROL_SITE_SCREENING_GEOMETRY_NO_UNCHANGED_RH_PLACEMENT
+R1 = SATISFIED_FOR_SCREENING_TITLE_EXTENT
+R2 = SATISFIED_POSITIVE_CONSTRUCTIVE_PREFLIGHT
+R3 = SATISFIED_EPSG4326_SOURCE_WITH_BNG_ANALYSIS
+R4 = PENDING_DOWNSTREAM_DATUM_TOPOGRAPHY
+R5 = PENDING_DOWNSTREAM_STREET_ACCESS
+R6 = SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDENTITY_LEVEL
+Reference House candidate = NOT AUTHORED
 ```
 
-Neither is whole-site compatibility/incompatibility.
+The HMLR polygon remains indicative registered-property index geometry, not a determined legal-title boundary.
 
-The theoretical minimum containing width is `10.8 m`; prefer a sensible categorical margin beyond it so the next experiment is not dominated by centimetre-scale index/legal-boundary uncertainty. Do not create a scalar site score or rank land by width.
+---
+
+# DPL-T1 selection discipline
+
+The bounded shortlist was categorical, not scored:
+
+- `41 Lennard Road` — **selected** after exact positive geometry preflight;
+- `4 Ninhams Wood` — held after the first positive control was found;
+- `The Vicarage, 1B St James Road` — held;
+- `15 Fairholme Gardens` — held;
+- `The Bungalow, Routh Road` — held;
+- `17 Tower Terrace` — rejected before geometry because earlier planning history establishes rear-garden / garages / portacabins conditions rather than the clean street-front replacement experiment.
+
+Stop at the first legitimate positive control. Do not expand the shortlist for sample-size optics.
+
+---
+
+# Next packet — DPL-T2
+
+After DPL-T1 lands, acquire only the downstream evidence now justified by the positive geometry result:
+
+1. authoritative elevation/topography sufficient for `R4_DATUM_LEVEL_EVIDENCE`;
+2. controlled physical street/access relationship sufficient for `R5_PHYSICAL_ACCESS_STREET_GEOMETRY`;
+3. current planning identity/snapshot cross-check;
+4. final R1–R6 admission disposition.
+
+DPL-T2 may emit candidate-authoring readiness if all six dimensions are positively evidenced. It must **not** author the candidate itself; candidate authoring remains a subsequent packet.
 
 ---
 
 # Frozen programme boundaries
-
-Until separately reopened:
 
 ```text
 DPL-14 eight-site corpus              = UNCHANGED
@@ -254,22 +187,12 @@ DPL-17 publication integration        = HELD
 DPL-18 final validation               = HELD
 ```
 
-Do not shrink or deform the Reference House to rescue a site.
+Do not shrink or deform the Reference House to rescue a site. Do not aggregate neighbouring land without exact authority. Do not promote SCREENING index geometry to determined legal title. Do not infer a deployment envelope from instrumented controls.
 
-Do not aggregate neighbouring land without exact authority.
+## Restart discipline
 
-Do not promote SCREENING index geometry to determined legal title.
-
-Do not infer a deployment envelope from instrumented controls.
-
----
-
-# Restart discipline
-
-Resume from this file plus #700 and the durable control records under `project/dpl/sites/`.
+Resume from this file, #700, `project/dpl/dpl-t1-lennard-road-positive-control-selection.md`, and the two `DPL-T-CONTROL-004` records under `project/dpl/sites/`.
 
 Every packet must preserve:
 
 `baseline main SHA → exact question → controlled inputs → evidence/authority → deterministic result → boundaries → artefacts changed → checks → exact next packet`
-
-If reality rejects the Reference House, record the rejection before adapting the architecture.
