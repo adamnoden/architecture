@@ -15,6 +15,7 @@ const UNIT_VECTOR_TOLERANCE = 5e-9
 const COORDINATE_TOLERANCE_M = 5e-8
 const SOURCE_CROSSCHECK_TOLERANCE_M = 1e-6
 const BEARING_TOLERANCE_DEG = 1e-7
+const AUTHORED_FFL_PRECISION_M = 0.01
 
 const rootUrl = (path: string): URL => new URL(`../../${path}`, import.meta.url)
 const readBytes = (path: string): Promise<Buffer> => readFile(rootUrl(path))
@@ -317,11 +318,15 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
     )
 
     assert.equal(candidate.verticalDatum.datum, 'ODN')
+    const rawFfl =
+      elevation.parcelMask.centroidSampleMetresODN + candidate.verticalDatum.authoredBasis.authoredScreeningRaiseM
+    const roundedFfl =
+      Math.round(rawFfl / AUTHORED_FFL_PRECISION_M) * AUTHORED_FFL_PRECISION_M
     assertNear(
       candidate.verticalDatum.groundFflM,
-      elevation.parcelMask.centroidSampleMetresODN + candidate.verticalDatum.authoredBasis.authoredScreeningRaiseM,
-      1e-9,
-      'authored screening FFL'
+      roundedFfl,
+      Number.EPSILON * 100,
+      'authored screening FFL rounded to 0.01 m'
     )
   })
 
