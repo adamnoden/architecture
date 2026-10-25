@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "dpl.realControlCandidateAuthoring.v1",
+  "resultId": "DPL-R2-UPHILL-24-1141-v0.1",
+  "controlSiteId": "DPL-R-CONTROL-001",
+  "parentReadiness": {
+    "assessmentPath": "project/dpl/sites/dpl-control-001-92-uphill-road-readiness-v01.json",
+    "requiredResult": "CONTROL_SITE_CANDIDATE_AUTHORING_READY"
+  },
+  "geometryAuthority": {
+    "sourceId": "U24-S1",
+    "documentIdentity": "255402/12 Rev B — Proposed Location and Site Plan — 92 Uphill Road — 03/24",
+    "declaredSitePlanScale": "1:200 A1",
+    "proposalBoundaryClass": "RED_PROPOSAL_DEMISE",
+    "allowedRecoveryRoutes": [
+      "ORIGINAL_OR_VECTOR_PLANNING_DOCUMENT_GEOMETRY",
+      "EXPLICIT_DIMENSIONS_OR_COORDINATES_SAME_CONTROLLED_LINEAGE",
+      "EXACT_FIRST_PARTY_OR_FAITHFUL_SOURCE_OF_SAME_DRAWING_GEOMETRY"
+    ],
+    "forbiddenRecoveryRoutes": [
+      "ESTATE_AGENT_OR_MARKETING_GEOMETRY",
+      "WEB_MAP_PIXEL_MEASUREMENT",
+      "SCREENSHOT_OR_RASTER_DISPLAY_PIXEL_MEASUREMENT",
+      "DIFFERENT_APPLICATION_GEOMETRY",
+      "APPROVED_REPLACEMENT_HOUSE_AS_REFERENCE_HOUSE_SURROGATE"
+    ]
+  },
+  "geometryRecovery": {
+    "state": "NOT_RECOVERED_CONTROLLED_VECTOR_OR_COORDINATES",
+    "attempts": [
+      {
+        "id": "GR-01",
+        "route": "PUBLIC_INDEXED_PLANNING_DOCUMENT",
+        "outcome": "DOCUMENT_IDENTITY_SCALE_AND_TEXT_RECOVERED_ONLY",
+        "detail": "The public indexed drawing exposes the exact drawing identity, declared scales, proposal-demise legend, datum/levels and access notes, but not the red proposal-demise path as coordinates or controlled vector geometry to the current pipeline."
+      },
+      {
+        "id": "GR-02",
+        "route": "PUBLIC_PDF_DOCUMENT_RETRIEVAL",
+        "outcome": "DOCUMENT_BYTES_NOT_RETRIEVABLE_CURRENT_PIPELINE",
+        "detail": "The public PDF resolves as a one-page planning document in indexed retrieval, but the current retrieval path does not expose reusable source bytes or vector objects for deterministic geometry extraction."
+      },
+      {
+        "id": "GR-03",
+        "route": "ALTERNATE_PUBLIC_MACHINE_GEOMETRY_SEARCH",
+        "outcome": "NO_EQUIVALENT_CONTROLLED_BOUNDARY_GEOMETRY_FOUND",
+        "detail": "Bounded search did not recover an exact machine-readable proposal-demise polygon, explicit boundary coordinates or same-lineage dimensional geometry sufficient to substitute for the inaccessible drawing vectors."
+      }
+    ],
+    "screeningReadinessImplication": "NONE_DPL_R1_REMAINS_VALID",
+    "candidateAuthoringImplication": "FAIL_CLOSED_NO_PLACEMENT_COORDINATES"
+  },
+  "referenceHouse": {
+    "footprintMm": {
+      "width": 12000,
+      "depth": 10800
+    },
+    "mutation": "FORBIDDEN"
+  },
+  "candidate": null,
+  "result": "REAL_CONTROL_CANDIDATE_NOT_AUTHORED_GEOMETRY_RECOVERY_FAILED",
+  "proofBoundary": {
+    "referenceHouseCandidate": "NOT_AUTHORED",
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "referenceHouseMutation": "FORBIDDEN",
+    "originalDpl15cCorpus": "UNCHANGED_DPL_RP_001_THROUGH_008",
+    "originalDpl15cReadyCount": 0,
+    "deploymentEnvelopeSampleMembership": "EXCLUDED",
+    "deploymentEnvelopeDpl16": "HELD",
+    "scalarSiteScore": "FORBIDDEN"
+  }
+}
