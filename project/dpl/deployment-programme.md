@@ -2,10 +2,10 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Current packet:** [#752 — DPL-T4](https://github.com/adamnoden/architecture/issues/752) — deterministic Lennard candidate verification  
-**Current real-control result:** `VERIFIED_BOUNDED_CANDIDATE_READY_FOR_NEXT_DPL_GATE`  
-**Next authorised packet:** **DPL-T5 — real-control deployment case assembly and screening-coverage replay**  
-**Programme maturity:** **M4 — internally controlled at bounded SCREENING-result scope. Real-site whole-deployment validation remains unearned.**
+**Current packet:** [#763 — DPL-T5](https://github.com/adamnoden/architecture/issues/763) — Lennard real-control runtime assembly and screening-coverage replay  
+**Current real-control result:** `REAL_CONTROL_RUNTIME_COMPOSED_GAPS_EXPOSED`  
+**Next authorised packet:** **DPL-T6 — Lennard real-control SCREENING aggregation and architectural-review composition**  
+**Programme maturity:** **M4 — bounded real-control runtime composition is now proved; whole-site SCREENING conclusion remains unearned.**
 
 ## Purpose and governing rules
 
@@ -21,7 +21,7 @@ DPL asks whether the controlled Ovid’s House Reference House can be deployed h
 
 ## Controlled synthetic and corpus state
 
-DPL-01 through DPL-13 establish the controlled deployment ontology, conformance seam, interface authority, target stack, runtime composition and SCREENING aggregation semantics.
+DPL-01 through DPL-13 establish the deployment ontology, conformance seam, interface authority, target stack, runtime composition and SCREENING aggregation semantics.
 
 The empirical DPL-14 London corpus remains unchanged:
 
@@ -71,7 +71,7 @@ HMLR entity      = 12057071807
 HMLR reference   = 57071807
 ```
 
-The site is the intended conventional condition: existing bungalow → demolition → one detached replacement house on the normal street frontage.
+The site is the intended conventional condition: existing bungalow → demolition → one detached replacement house on a normal street frontage.
 
 #### T1 — fail-fast geometry preflight
 
@@ -91,7 +91,7 @@ The witness proved only that the shell could fit. It was not promoted into archi
 
 #### T2 — R1–R6 admission
 
-The admitted evidence package is:
+Admitted evidence:
 
 - HMLR / Planning Data indicative title-index geometry;
 - Environment Agency 1 m LiDAR Composite DTM, EPSG:27700 / ODN;
@@ -138,16 +138,14 @@ screening containment      = YES
 min title-index clearance  = ~0.640 m
 ```
 
-T3 kept the canonical 12 m façade street-facing rather than reusing the arbitrary T1 fit witness. The small authored skew avoids false parallelism to an indicative title-front segment only ~10.166 m wide.
+T3 kept the canonical 12 m façade street-facing rather than reusing the arbitrary T1 fit witness.
 
-Durable artifacts:
+Artifacts:
 
 - `project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json`
 - `project/dpl/dpl-t3-lennard-authored-candidate.md`
 
 #### T4 — deterministic candidate verification
-
-T4 now machine-replays the exact candidate from pinned source authority.
 
 Executable proof:
 
@@ -178,7 +176,7 @@ frontage / front / -7° skew        = REPRODUCED
 70.70 m ODN screening FFL          = REPRODUCED
 ```
 
-DPL-12B conformance replay:
+Bounded DPL-12B result:
 
 ```text
 RH-I02       = CONFORMS
@@ -192,27 +190,109 @@ RH-SI05      = OPEN / EXTERNAL_OR_UNMODELLED
 
 This is a verified **candidate**, not a verified whole site.
 
-The open interface results are intentional. Under DPL-08, a site-interface freedom is discharged only by a controlled response between building handoff, evidenced site facts and applicable obligations. Placement alone cannot make `RH-SI02` or `RH-SI05` pass.
+#### T5 — real-control runtime assembly
 
-## Active packet — DPL-T4
+T5 is the first instrumented real control to reach the generic DPL runtime with an authored and verified Reference House candidate.
 
-DPL-T4 is the bounded **verification** packet.
+Real-control manifest:
 
-It fails closed on:
+`project/dpl/sites/dpl-t-control-004-lennard-road-runtime-manifest-v01.json`
 
-- stale Reference House or site-evidence identity;
-- transform drift, mirroring or deformation;
-- title-index containment failure;
-- frontage-relation drift;
-- protected Reference House fact drift;
-- unexpected DPL-12B conformance changes.
+Adapter and proof:
+
+- `compiler/dpl/dplT5Lennard.ts`
+- `compiler/dpl/dplT5Lennard.test.ts`
+
+Decision record:
+
+`project/dpl/dpl-t5-lennard-real-control-runtime.md`
+
+T5 uses seventeen real claims, `LNR-C01 … LNR-C17`, mapped explicitly to current DPL-10 / DPL-11 coverage families. It does not rename real evidence into the synthetic `RS-*` vocabulary.
+
+Only one candidate-specific runtime proposal fact is admitted:
+
+```text
+dwellingStoreys = 2
+```
+
+The current applicant proposal's bedroom count, bedspace count, GIA, storage, private-outside-space geometry and M4 assignment are deliberately not transferred onto the different unchanged Reference House candidate.
+
+Frozen identities:
+
+```text
+manifest fingerprint
+  d45dda4d1c7faa46aaf08e773671590cf78a2bc7335079dfebec81091a56145b
+
+source-set fingerprint
+  a6af74fed8e78faa84bdcb3dcc28d2f245b74585f2a2024a3cec5ff729ce76d0
+
+deployment-case fingerprint
+  791cb427364d32208a00d02d7b42f2b472a64023e0e1b2eed58215e37fee52f3
+
+deployment-result fingerprint
+  3f2fdfb9573a31bfdf33fc418169f49d83cad303830e4e9a56370c65e22608f9
+
+T5 result fingerprint
+  c858fcac7b7481f43c33e49cf7e092ca749467370d75e7903973c1887401ecdf
+```
+
+Raw runtime:
+
+```text
+obligations               = 29
+UNRESOLVED                 = 27
+UNSUPPORTED                = 2
+FAIL                       = 0
+PASS                       = 0
+EXTERNALLY_DISCHARGED      = 0
+raw unresolved inputs      = 45
+```
+
+Candidate conformance:
+
+```text
+CONFORMS                           = 5
+OPEN                              = 20
+NON_CONFORMING                     = 0
+REQUIRES_REFERENCE_HOUSE_REVISION = 0
+```
+
+Real-claim coverage:
+
+```text
+real claims                    = 17
+mapped real claims             = 17
+unique owner coverage families = 18
+```
+
+The crucial interpretation is that **45 raw missing fields are not 45 SCREENING blockers**. DPL-12A is a deliberately low-level obligation ledger. Existing DPL-02 / DPL-09 / DPL-10 / DPL-11 authority must classify what is actually due at SCREENING before new evidence is commissioned.
+
+The 20 OPEN candidate findings likewise have an established authority split:
+
+```text
+16  DPL-13E project architectural-review clauses
+ 4  external/professional/site authority
+```
+
+The four non-architectural-review opens are:
+
+- `RH-PROT-08` — competent structural/professional evidence;
+- `RH-PROT-14` — actual maintenance/site-interface evidence;
+- `RH-SI02` — datum / external-level / threshold / grading response;
+- `RH-SI05` — approach / access / landscape / external-site response.
+
+Therefore T5 does not author a consultant shopping list from the raw runtime.
+
+## Active packet — DPL-T5
+
+T5 proves the real-control composition seam and freezes its diagnostic result.
 
 It does not:
 
 ```text
-search / generate another placement
-optimise the authored placement
-repair a failing candidate
+reuse the applicant scheme as the Reference House
+resolve all raw DPL-12A missing inputs
+reuse the RS-02 architectural-review ledger on a different candidate
 infer legal boundaries
 infer measured topography
 solve site interfaces
@@ -220,13 +300,22 @@ assess planning acceptability
 emit whole-site COMPATIBLE / INCOMPATIBLE
 ```
 
-## Next gate — DPL-T5
+## Next gate — DPL-T6
 
-The useful next question is no longer whether another placement can be found.
+> **Compose Lennard through a bounded real-control SCREENING aggregation seam and apply the existing DPL-13E architectural-review authority to the exact T5 candidate; classify raw runtime gaps by current DPL-02 / DPL-09 / DPL-10 / DPL-11 authority so only genuinely due external/site evidence survives as the next acquisition frontier.**
 
-> **Assemble `DPL-T-CONTROL-004` + `DPL-T-CANDIDATE-004-01` as one instrumented real-control deployment case through the existing DPL runtime, using current England/London/Bromley target slices and DPL-08 interface authorities; preserve all real-site unknowns and emit coverage/readiness evidence without whole-site compatibility inflation.**
+T6 must:
 
-This follows the DPL-13A discipline: compose real evidence and current authority first, then observe what remains unresolved/unsupported. Do not pre-emptively design `RH-SI02`, `RH-SI05`, drainage, utilities or other site responses merely to manufacture a green case.
+1. preserve the `LNR-C##` real-claim vocabulary and owner-family mappings;
+2. reuse/refactor DPL-13 readiness/aggregation only as narrowly required for a real-control case;
+3. author a fresh Lennard-specific review over the exact sixteen-clause DPL-13E universe;
+4. bind that review to the exact Lennard candidate, current Reference House source and DPL-02 authority;
+5. preserve `RH-PROT-08`, `RH-PROT-14`, `RH-SI02` and `RH-SI05` as external/site authority;
+6. distinguish due-now SCREENING blockers from future-due technical inputs and owner-judgement records;
+7. reuse existing source/applicability authority where already implemented;
+8. refuse `COMPATIBLE`, `INCOMPATIBLE` and route exhaustion.
+
+Only after T6 should the programme commission the next real evidence packet.
 
 ## Frozen programme boundaries
 
@@ -254,7 +343,7 @@ DPL-18 final validation               = HELD
 
 ## Restart discipline
 
-Resume from this file, #752, `project/dpl/dpl-t4-lennard-candidate-verification.md`, and the T3/T4 artifacts under `project/dpl/sites/`.
+Resume from this file, #763, `project/dpl/dpl-t5-lennard-real-control-runtime.md`, the T3/T4/T5 artifacts under `project/dpl/sites/`, and the existing DPL-13E architectural-review authority.
 
 Every packet must preserve:
 

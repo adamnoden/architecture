@@ -77,7 +77,7 @@
     "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "SATISFIED_SCREENING_PHYSICAL_STREET_ACCESS_RELATIONSHIP",
     "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDENTITY_LEVEL"
   },
-  "packetResult": "VERIFIED_BOUNDED_CANDIDATE_READY_FOR_NEXT_DPL_GATE",
+  "packetResult": "REAL_CONTROL_RUNTIME_COMPOSED_GAPS_EXPOSED",
   "candidateAuthoringState": "AUTHORED_DPL_T3_VERIFIED_DPL_T4",
   "candidate": {
     "id": "DPL-T-CANDIDATE-004-01",
@@ -103,7 +103,38 @@
       "RH-SI05": "OPEN"
     }
   },
-  "nextPacket": "DPL-T5 real-control deployment case assembly and screening-coverage replay",
+  "runtime": {
+    "packet": "DPL-T5",
+    "manifestRecord": "dpl-t-control-004-lennard-road-runtime-manifest-v01.json",
+    "decisionRecord": "../dpl-t5-lennard-real-control-runtime.md",
+    "manifestFingerprint": "d45dda4d1c7faa46aaf08e773671590cf78a2bc7335079dfebec81091a56145b",
+    "sourceSetFingerprint": "a6af74fed8e78faa84bdcb3dcc28d2f245b74585f2a2024a3cec5ff729ce76d0",
+    "deploymentCaseFingerprint": "791cb427364d32208a00d02d7b42f2b472a64023e0e1b2eed58215e37fee52f3",
+    "deploymentResultFingerprint": "3f2fdfb9573a31bfdf33fc418169f49d83cad303830e4e9a56370c65e22608f9",
+    "resultFingerprint": "c858fcac7b7481f43c33e49cf7e092ca749467370d75e7903973c1887401ecdf",
+    "result": "REAL_CONTROL_RUNTIME_COMPOSED_GAPS_EXPOSED",
+    "obligations": {
+      "total": 29,
+      "unresolved": 27,
+      "unsupported": 2,
+      "fail": 0,
+      "pass": 0,
+      "externallyDischarged": 0
+    },
+    "candidateConformance": {
+      "conforms": 5,
+      "open": 20,
+      "nonConforming": 0,
+      "requiresReferenceHouseRevision": 0
+    },
+    "realClaimCoverage": {
+      "claims": 17,
+      "mappedClaims": 17,
+      "coverageFamilies": 18,
+      "rawUnresolvedInputs": 45
+    }
+  },
+  "nextPacket": "DPL-T6 Lennard real-control screening aggregation and architectural-review composition",
   "restraints": {
     "referenceHouseMutation": "PROHIBITED",
     "compatibilityConclusion": "NOT_ADMITTED",
