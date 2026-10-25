@@ -1,0 +1,66 @@
+name: Publication typography production proof
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/publication-typography.yml'
+      - 'publication/**'
+      - 'docs/manuscript/**'
+      - 'docs/patterns/**'
+      - 'docs/reference-house/**'
+      - 'README.md'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Install PDF inspectors
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils qpdf
+
+      - name: Build paired production typography proof
+        run: npx tsx publication/scripts/build-typography-proof.ts
+
+      - name: Verify production typography
+        run: npx tsx publication/scripts/verify-typography.ts
+
+      - name: Upload reader-facing proof PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-typography-production-proof
+          path: |
+            publication/.proof/typ09b/a4/publication-typography-production-a4.pdf
+            publication/.proof/typ09b/b5/publication-typography-production-b5.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload typography diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-typography-production-diagnostics
+          path: |
+            publication/.proof/typ09b/verification.json
+            publication/.proof/typ09b/build.json
+            publication/.proof/typ09b/typography-integration.json
+            publication/.proof/typ09b/font-upstream-evidence.json
+            publication/.proof/typ09b/a4/*.destination-normalization.json
+            publication/.proof/typ09b/b5/*.destination-normalization.json
+            publication/.proof/typ09b/diagnostics/*
+          if-no-files-found: error
+          retention-days: 30

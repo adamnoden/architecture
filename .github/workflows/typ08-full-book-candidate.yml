@@ -1,14 +1,11 @@
 name: TYP-08 full-book candidate
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - '.github/workflows/typ08-full-book-candidate.yml'
-      - 'publication/**'
-      - 'docs/**'
-      - 'project/**'
-      - 'package.json'
-      - 'package-lock.json'
+      - 'publication/specimens/typ08/**'
 
 jobs:
   proof:
@@ -56,9 +53,7 @@ jobs:
             publication/.work/source/docs/manuscript/part-*.md
             publication/.work/source/publication/part-iii.md
             publication/.work/typ08a/vivliostyle-a4/**/*.html
-            publication/.work/typ08a/vivliostyle-a4/**/*.css
             publication/.work/typ08a/vivliostyle-b5/**/*.html
-            publication/.work/typ08a/vivliostyle-b5/**/*.css
           if-no-files-found: error
           include-hidden-files: true
           retention-days: 7
