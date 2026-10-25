@@ -9,7 +9,8 @@
     "planningAuthority": "London Borough of Bromley",
     "applicationRef": "26/02618/FPA",
     "proposal": "Demolition of existing bungalow and construction of detached two storey 4 bedroom dwellinghouse with habitable rooms in loftspace, cycle parking in rear garden, front driveway alterations and side boundary fence/gate",
-    "siteTypology": "CONVENTIONAL_STREET_FRONT_REPLACEMENT_DWELLING"
+    "siteTypology": "CONVENTIONAL_STREET_FRONT_REPLACEMENT_DWELLING",
+    "currentPublicRegisterState": "VALID_AWAITING_DECISION_AS_INDEXED_2026_10_25"
   },
   "addressIdentity": {
     "uprn": "100020404537",
@@ -38,20 +39,53 @@
     "constructiveWitnessMinimumBoundaryClearanceMetres": 1.2320137983986683,
     "result": "CONTROLLED_SCREENING_GEOMETRY_DOES_NOT_DISPROVE_PLACEMENT"
   },
+  "elevation": {
+    "provider": "Environment Agency",
+    "dataset": "LiDAR Composite Digital Terrain Model DTM 1m",
+    "coverageId": "13787b9a-26a4-4775-8523-806d13af58fc__Lidar_Composite_Elevation_DTM_1m",
+    "crs": "EPSG:27700",
+    "verticalDatum": "ODN",
+    "rasterSha256": "ee7e04c7eee8f4391bc64cd57485439722e15687ffaad49b4a02804957fd1db9",
+    "parcelMinMetresODN": 70.19999694824219,
+    "parcelMaxMetresODN": 71.0999984741211,
+    "parcelMeanMetresODN": 70.5288314819336,
+    "parcelTerrainRangeMetres": 0.9000015258789062,
+    "record": "dpl-t-control-004-lennard-road-elevation.json",
+    "authorityLimitation": "SCREENING DTM; not a measured private topographic survey."
+  },
+  "streetAccess": {
+    "streetSide": "SOUTH_WEST_FRONT",
+    "planningEvidence": [
+      "Exact-site submitted planning statement identifies front/south-west adjacency to Lennard Road and records dropped-kerb/front-garden access.",
+      "Current 26/02618/FPA proposal includes front driveway alterations."
+    ],
+    "frontageScreeningSegmentBng": {
+      "start": [542891.0360423778, 166209.4646066198],
+      "end": [542898.2701962102, 166202.3222028868],
+      "lengthMetres": 10.165968362933082
+    },
+    "record": "dpl-t-control-004-lennard-road-street-access.json",
+    "authorityLimitation": "Physical SCREENING relationship only; legal highway extent/adoption and private access rights remain unresolved."
+  },
   "readiness": {
     "R1_CONTROLLED_SPATIAL_IDENTITY": "SATISFIED_FOR_SCREENING_TITLE_EXTENT",
     "R2_FOOTPRINT_TEST_GEOMETRY": "SATISFIED_POSITIVE_CONSTRUCTIVE_PREFLIGHT",
     "R3_REAL_ORIENTATION_FRAME": "SATISFIED_EPSG4326_SOURCE_WITH_BNG_ANALYSIS",
-    "R4_DATUM_LEVEL_EVIDENCE": "PENDING_NEXT_PACKET",
-    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "PENDING_NEXT_PACKET",
+    "R4_DATUM_LEVEL_EVIDENCE": "SATISFIED_SCREENING_DATUM_TOPOGRAPHY_EA_DTM",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "SATISFIED_SCREENING_PHYSICAL_STREET_ACCESS_RELATIONSHIP",
     "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDENTITY_LEVEL"
   },
-  "candidateAuthoringState": "NOT_AUTHORED_PREFLIGHT_ONLY",
+  "packetResult": "CONTROL_SITE_CANDIDATE_AUTHORING_READY",
+  "candidateAuthoringState": "NOT_AUTHORED_T2_ONLY_ADMITS_NEXT_PACKET",
+  "nextPacket": "DPL-T3 — 41 Lennard Road unchanged Reference House candidate authoring",
   "restraints": {
     "referenceHouseMutation": "PROHIBITED",
     "compatibilityConclusion": "NOT_ADMITTED",
     "incompatibilityConclusion": "NOT_ADMITTED",
     "routeSearch": "NOT_IMPLEMENTED",
+    "legalTitleBoundary": "UNRESOLVED",
+    "privateAccessRights": "UNRESOLVED",
+    "highwayAdoptionExtent": "UNRESOLVED",
     "dpl16": "HELD"
   }
 }
