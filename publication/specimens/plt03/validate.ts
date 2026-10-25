@@ -85,6 +85,12 @@ const forbiddenCurrentAuthorityFragments = [
 ]
 
 for (const [name, svg] of Object.entries({ articulation, combined })) {
+  if (!svg.includes('width="136mm" height="145mm"')) {
+    throw new Error(`PLT-03A ${name} escaped the protected 136 × 145 mm physical comparison envelope.`)
+  }
+  if (svg.includes('plt03-north-')) {
+    throw new Error(`PLT-03A ${name} reintroduced a north arrow without canonical true-site orientation authority.`)
+  }
   if (!svg.includes('data-view-id="PLT03-CURRENT-GROUND-PLAN"')) {
     throw new Error(`PLT-03A ${name} is not rendered from the current-authority semantic scene.`)
   }
@@ -133,5 +139,8 @@ if (manifest.currentAuthorityChecks.internalDoorGeometry !== 'absent') {
 if (manifest.currentAuthorityChecks.stairPlanPathOrWell !== 'absent') {
   throw new Error('PLT-03A current-authority manifest no longer excludes finished stair plan geometry.')
 }
+if (manifest.currentAuthorityChecks.trueSiteOrientation !== 'absent') {
+  throw new Error('PLT-03A current-authority manifest no longer excludes unsupported true-site orientation.')
+}
 
-console.log('PLT-03A PASS — protected baseline, A/B authority boundary, Source Sans identity and R/S/X ledger are coherent.')
+console.log('PLT-03A PASS — protected baseline, A/B authority boundary, Source Sans identity, physical envelope and R/S/X ledger are coherent.')
