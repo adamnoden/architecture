@@ -1,0 +1,1 @@
+Acquisition/proof run: GitHub Actions `40206660586` (`DPL-T1 geometry preflight`, run 2), completed successfully on exact probe head `76f9a2bff6ad296817fd6fa41e4bd28d7f214aaa`. The workflow was disposable and has been removed from the branch after evidence extraction.
