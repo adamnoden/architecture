@@ -59,6 +59,12 @@ const shiftPrimitiveY = (primitive: DrawingPrimitive, delta: number): DrawingPri
     }
   }
   if (primitive.kind === 'rect') return { ...primitive, y: primitive.y + delta }
+  if (primitive.kind === 'path') {
+    return {
+      ...primitive,
+      rings: primitive.rings.map((ring) => ring.map((point) => ({ ...point, y: point.y + delta })))
+    }
+  }
   return { ...primitive, y: primitive.y + delta }
 }
 
