@@ -44,6 +44,12 @@ const transformPrimitive = (primitive: DrawingPrimitive): DrawingPrimitive => {
       height: primitive.height * SCALE_FACTOR
     }
   }
+  if (primitive.kind === 'path') {
+    return {
+      ...primitive,
+      rings: primitive.rings.map((ring) => ring.map(transformPoint))
+    }
+  }
   const point = transformPoint({ x: primitive.x, y: primitive.y })
   return { ...primitive, x: point.x, y: point.y }
 }
