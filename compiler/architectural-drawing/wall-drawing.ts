@@ -1,4 +1,4 @@
-import type { DrawingFillRole, DrawingLineRole, DrawingPath } from '../publication-drawing/model.js'
+import type { DrawingFillRole, DrawingLineRole, DrawingPath } from '../publication-drawing-v2/model.js'
 import type { PlanPaperProjection } from '../publication-drawing/projection.js'
 import type { AdeWallTopologyRegion } from './topology.js'
 
