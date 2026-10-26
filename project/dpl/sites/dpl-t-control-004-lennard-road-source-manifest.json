@@ -77,7 +77,7 @@
     "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "SATISFIED_SCREENING_PHYSICAL_STREET_ACCESS_RELATIONSHIP",
     "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDENTITY_LEVEL"
   },
-  "packetResult": "REAL_CONTROL_RUNTIME_COMPOSED_GAPS_EXPOSED",
+  "packetResult": "REAL_CONTROL_SCREENING_FRONTIER_CLASSIFIED",
   "candidateAuthoringState": "AUTHORED_DPL_T3_VERIFIED_DPL_T4",
   "candidate": {
     "id": "DPL-T-CANDIDATE-004-01",
@@ -134,7 +134,50 @@
       "rawUnresolvedInputs": 45
     }
   },
-  "nextPacket": "DPL-T6 Lennard real-control screening aggregation and architectural-review composition",
+  "runtimeReplay": {
+    "packet": "DPL-T6_PARENT_RECONCILIATION",
+    "decisionRecord": "../dpl-t5-merge-state-replay.md",
+    "manifestFingerprint": "7541bf23840f81af9089e7ce5fadbe62456ed9b51f0c9e2d1e601db9ee25bced",
+    "sourceSetFingerprint": "d3e08dfc8d411ff54dbd4d462878540a70c3b24bdd2729fcd35210df3d8242c9",
+    "deploymentCaseFingerprint": "e10a8fe8cc458a39254e3c8b82b0d64216b13fd74b69a87b9a945b06ae6aa475",
+    "deploymentResultFingerprint": "2557f147639ae1eebd34fd4ca8d01893996b634047c98be4ca206798bf971984",
+    "resultFingerprint": "bf04feb48795c0f5fddda5d9ddbe944428f06a52fd2afebc857a3b1bde1cf009",
+    "evidenceChanged": false,
+    "candidateChanged": false,
+    "referenceHouseMutation": false
+  },
+  "screeningAggregation": {
+    "packet": "DPL-T6",
+    "decisionRecord": "../dpl-t6-lennard-screening-aggregation.md",
+    "result": "UNRESOLVED_AT_SCREENING_GENUINE_FRONTIER_CLASSIFIED",
+    "resultFingerprint": "c59073cc2c6b073c2905a92b42b36b27f287e32e84d86d51f92cdd4d52ba3b45",
+    "readinessIdentityFingerprint": "8329522c604de85912b35aab4a3958f270bd7b246395ed0a534494f3b6d33853",
+    "architecturalReviewLedgerFingerprint": "d320507d8bf7d6a6606e502a49515bb1a071c36ed8ed248f0d4fb022d4e1365c",
+    "rawUnresolvedInputs": 45,
+    "postReviewBlockers": 25,
+    "blockerCountsByOwner": {
+      "REFERENCE_HOUSE": 2,
+      "ENGLAND": 1,
+      "PLANNING": 12,
+      "NON_PLANNING": 10
+    },
+    "blockerCountsByState": {
+      "SUBSTANTIVE_UNRESOLVED": 10,
+      "DUE_CLASSIFICATION_UNRESOLVED": 15
+    },
+    "architecturalReview": {
+      "reviewed": 16,
+      "passed": 16,
+      "pending": 0
+    },
+    "referenceHouseDueNow": ["RH-PROT-08", "RH-PROT-14"],
+    "referenceHouseFutureDueIncludes": ["RH-SI02", "RH-SI05"],
+    "siteEvidenceCommissioned": false,
+    "compatibilityConclusion": "NOT_ADMITTED",
+    "incompatibilityConclusion": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED"
+  },
+  "nextPacket": "DPL-T7 Lennard acceleration classification and public-evidence disposition",
   "restraints": {
     "referenceHouseMutation": "PROHIBITED",
     "compatibilityConclusion": "NOT_ADMITTED",
@@ -144,6 +187,7 @@
     "privateAccessRights": "UNRESOLVED",
     "highwayAdoptionExtent": "UNRESOLVED",
     "measuredTopographicSurvey": "NOT_ACQUIRED",
+    "siteEvidenceCommissionedByT6": "NO",
     "dpl16": "HELD"
   }
 }
