@@ -69,9 +69,12 @@ for (const [scale, svg] of [[100, svg100], [50, svg50]] as const) {
   if (moveCount(pathFor(svg, 'ADE04A-WA-MONO-MULTIPLE-OPENED')) !== 3) {
     throw new Error(`ADE-04A 1:${scale} multiple-opening control is not represented as three material islands.`)
   }
-  // The L-corner wall remains one connected material region around its turn.
-  if (moveCount(pathFor(svg, 'ADE04A-WA-MONO-CORNER-OPENED')) !== 1) {
-    throw new Error(`ADE-04A 1:${scale} near-corner opening incorrectly disconnects the L wall network.`)
+  // The near-corner aperture is still a full-depth cut. It therefore separates
+  // the upstream wall material from the short corner/return piece: two islands
+  // are the physically truthful result, even though both retain one semantic
+  // wall-network provenance object.
+  if (moveCount(pathFor(svg, 'ADE04A-WA-MONO-CORNER-OPENED')) !== 2) {
+    throw new Error(`ADE-04A 1:${scale} near-corner opening must produce exactly two genuine material islands.`)
   }
 }
 
