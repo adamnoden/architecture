@@ -11,6 +11,7 @@ import {
 
 const raw = (): Record<string, unknown> => JSON.parse(readFileSync(DPL15I_PATH, 'utf8')) as Record<string, unknown>
 const clone = <T>(value: T): T => JSON.parse(JSON.stringify(value)) as T
+const EXPECTED_RESULT_FINGERPRINT = 'd93a02d0c708ed4e4436668edafad9405e46209eccf85ed68af68d45a60c578e' as const
 
 test('DPL-15I binds the exact DPL-15H parent and RP-008 application identity', () => {
   const validated = validateDPL15I(raw())
@@ -93,6 +94,10 @@ test('DPL-15I semantic identity is ordering-neutral but evidence-sensitive', () 
   const attempts = changed.acquisitionAttempts as Record<string, unknown>[]
   attempts[0].authorityBoundary = `${String(attempts[0].authorityBoundary)} Material mutation.`
   assert.notEqual(composeDPL15IRp008(changed).resultFingerprint, baseline.resultFingerprint)
+})
+
+test('DPL-15I cross-locks the exact frozen semantic fingerprint', () => {
+  assert.equal(composeDPL15IRp008().resultFingerprint, EXPECTED_RESULT_FINGERPRINT)
 })
 
 test('DPL-15I emits one deterministic frozen line', () => {
