@@ -2,7 +2,7 @@
 
 **Question:** does the project overview identify the current open programmes and next gates without replaying superseded instructions?  
 **Starting baseline:** `224c7cc838c658beb1b1463b3a0c0029827f4178` (`main`, DPL-15E integration)  
-**Merge-reconciliation baseline:** `1995736c1d1b86fedf6a794e04f4414a61ba0678` (`main`, ADE-04B merged)  
+**Merge-reconciliation baseline:** `816c6ca71e20235dca83350eb0f3e2cd05186169` (`main`, ADE-05B and documentation-development fix merged)  
 **Tracking:** [#855 — Reconcile project status with current ADE, PLT, TYP and DPL gates](https://github.com/adamnoden/architecture/issues/855), implemented by [PR #858](https://github.com/adamnoden/architecture/pull/858). DEL remains separately open under [#854](https://github.com/adamnoden/architecture/issues/854).
 
 ## Reconciliation decisions
@@ -10,7 +10,7 @@
 | Stale or missing overview | Controlling evidence | Result |
 | --- | --- | --- |
 | DPL-13D presented as the next task; real-site trials held | `project/dpl/deployment-programme.md`, `project/dpl/dpl-15e-rp006-spatial-preflight.md`, `project/dpl/dpl-t11-lennard-no-spend-evidence.md` | DPL-15F is next; RP-006 still fails four readiness dimensions, corpus readiness remains 0/8, and Lennard remains excluded from the empirical sample. |
-| Publication summary omitted ADE and PLT dependencies | `docs/publication/architectural-drawing-engine-ade00-audit.md`, `docs/publication/architectural-drawing-engine-ade03b-wall-grammar.md`, `docs/publication/architectural-drawing-engine-ade04b-opening-uncertainty.md`, ADE-04A PR #833 and ADE-04B PR #851 | ADE-04 opening subtraction and uncertainty grammar are now merged. The current ADE gate is ADE-05: upstream internal-partition authority (#834) and partition/adjacency representation (#835). PLT physical review cannot accept the old candidate and resumes only after ADE-07 migration. |
+| Publication summary omitted ADE and PLT dependencies | `docs/publication/architectural-drawing-engine-ade00-audit.md`, `docs/publication/architectural-drawing-engine-ade03b-wall-grammar.md`, `docs/publication/architectural-drawing-engine-ade04b-opening-uncertainty.md`, `docs/publication/architectural-drawing-engine-ade05b-partition-adjacency.md` | ADE-04 opening subtraction/uncertainty and ADE-05B unresolved partition/adjacency representation are merged. Physical internal partitions remain gated by ADE-05A / #834; ADE-06 physical capability proof and ADE-07 migration remain downstream. PLT physical review cannot accept the old candidate and resumes only after ADE-07 migration. |
 | Private-object production appeared immediately ungated | `docs/publication/publication-typography-v1-release.md` | TYP RC2 acceptance permits manufacturing preparation; final 12-copy production still requires the independent PLT freeze. |
 | Delivery modules lacked a coordinated effort record | `docs/delivery/README.md`, current M2 assessment and `project/del/delivery-programme.md` | DEL is established under #854; preserve module/source ownership and external evidence dependencies. |
 | P01/P02 held states had no bounded issue tracking | `docs/development/validation-execution-register.md` | P01 remains held/optional research under #856 and reopens only when resources justify the generic evidence question or a real high-change lining task appears. P02 remains held under #857 and reopens only if service coordination places a genuinely maintainable component beneath a bounded circulation/floor zone. |
