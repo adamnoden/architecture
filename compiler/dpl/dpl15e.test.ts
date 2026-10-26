@@ -51,7 +51,7 @@ test('DPL-15E does not promote planning drawings or title-index route beyond the
   assert.match(e2.authorityBoundary, /not a determined legal boundary/i)
   assert.match(e2.authorityBoundary, /does not itself recover a placement-ready boundary vector/i)
   assert.match(e4.authorityBoundary, /not substituted for the source drawing bytes/i)
-  assert.match(e5.authorityBoundary, /has not yet been acquired/i)
+  assert.match(e5.authorityBoundary, /Route identified only/i)
   assert.match(e5.authorityBoundary, /not a determined legal boundary/i)
 })
 
