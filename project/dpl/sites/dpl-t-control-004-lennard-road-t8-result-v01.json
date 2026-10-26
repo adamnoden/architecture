@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "dpl.lennardT8SubstantiveDispositionResult.v1",
+  "packet": "DPL-T8",
+  "controlId": "DPL-T-CONTROL-004",
+  "candidateId": "DPL-T-CANDIDATE-004-01",
+  "parentT7ResultFingerprint": "f326bf64e599b08099edd21160e8e6a7af79477fd76a1f72b3b445e587f3c88c",
+  "result": "SUBSTANTIVE_FRONTIER_CLASSIFIED_MINIMUM_EVIDENCE_DEFINED",
+  "resultFingerprint": "e2532fe6bd77016cba92490120ea36d172fbed57ca66913d7419bcd5d6ef1bb7",
+  "authorityEvidenceFingerprint": "cc590a361fbda9b1e0e924b1a015dd20920752fdfd22aa15cb007fa349bc9d85",
+  "candidateFingerprint": "c732f708c6a4a048b2edb67564a50c9fc27a3873be77664a7f655d40a5f7a3a7",
+  "analysisGeometryFingerprint": "b409102bd6a4c09ce48e5945c75722a7bb79e2886470ea0d6ac144093628abfa",
+  "countsByDisposition": {
+    "RESOLVED_EXISTING_AUTHORITY": 1,
+    "RECLASSIFIED_FUTURE_DUE": 2,
+    "SURVIVES_DUE_NOW_EXTERNAL_EVIDENCE": 4,
+    "UNRESOLVED_AUTHORITY": 3
+  },
+  "inputSubstantiveBlockers": 10,
+  "currentUnresolvedBlockers": 7,
+  "resolvedBlockerIds": [
+    "NON_PLANNING:DPL11-COV-ACCESS-STATUS"
+  ],
+  "futureDueBlockerIds": [
+    "ENGLAND:ENG-COV-SOURCE-APPLICABILITY",
+    "NON_PLANNING:DPL11-COV-SITE-CONTROL"
+  ],
+  "dueNowUnresolvedBlockerIds": [
+    "NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER",
+    "PLANNING:DPL10-COV-EMERGING-POLICY-MATERIAL-WEIGHT",
+    "PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY",
+    "PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY",
+    "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY",
+    "REFERENCE_HOUSE:RH-PROT-08",
+    "REFERENCE_HOUSE:RH-PROT-14"
+  ],
+  "survivingEvidenceClasses": [
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+    "EA_ADDRESS_LEVEL_LONG_TERM_FLOOD_SCREEN",
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY"
+  ],
+  "survivingAuthorityClasses": [
+    "LOCAL_QUALITATIVE_DESIGN_JUDGEMENT",
+    "PLANNING_EMERGING_POLICY_WEIGHT_JUDGEMENT",
+    "STRATEGIC_CAPACITY_PLANNING_JUDGEMENT"
+  ],
+  "sideSpaceScreening": {
+    "policyId": "BROM-P8-SIDE-SPACE",
+    "policyNumericFloorM": 1,
+    "candidateStoreys": 2,
+    "westSideIndicativeMinimumClearanceM": 0.7603636181699739,
+    "eastSideIndicativeMinimumClearanceM": 0.6400238446118391,
+    "bothIndicativeSidesBelowNumericFloor": true,
+    "legalOrMeasuredBoundaryConclusion": "NOT_ADMITTED"
+  },
+  "proofBoundary": {
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "referenceHouseMutation": "NO",
+    "evidenceCommissioned": "NO",
+    "legalBoundaryDetermined": "NO",
+    "planningDetermination": "NO",
+    "dpl16": "HELD"
+  },
+  "nextPacket": "DPL-T9 Lennard no-cost authority closure and minimum external-evidence briefs"
+}
