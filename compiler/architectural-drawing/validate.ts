@@ -4,7 +4,8 @@ import type {
   AdeModelPoint,
   AdeModelSegment,
   AdeProvenance,
-  AdeSemanticEntity
+  AdeSemanticEntity,
+  AdeWallAssemblyLayer
 } from './model.js'
 import { architecturalPlanEntities } from './model.js'
 
@@ -12,6 +13,11 @@ export interface AdeValidationDiagnostic {
   code: string
   entityId: string
   message: string
+}
+
+interface NumericInterval {
+  min: number
+  max: number
 }
 
 const finitePoint = (point: AdeModelPoint): boolean => Number.isFinite(point.x) && Number.isFinite(point.y)
@@ -59,6 +65,33 @@ const validateDistance = (
   }
 }
 
+const numericInterval = (value: AdeDistanceAuthority): NumericInterval | undefined => {
+  switch (value.kind) {
+    case 'exact':
+    case 'approximate':
+      return Number.isFinite(value.value) ? { min: value.value, max: value.value } : undefined
+    case 'range':
+      return Number.isFinite(value.min) && Number.isFinite(value.max)
+        ? { min: value.min, max: value.max }
+        : undefined
+    case 'qualitative':
+    case 'unknown':
+      return undefined
+  }
+}
+
+const sumLayerIntervals = (layers: readonly AdeWallAssemblyLayer[]): NumericInterval | undefined => {
+  const intervals = layers.map((layer) => numericInterval(layer.thickness))
+  if (intervals.some((interval) => interval === undefined)) return undefined
+  return intervals.reduce<NumericInterval>(
+    (sum, interval) => ({ min: sum.min + interval!.min, max: sum.max + interval!.max }),
+    { min: 0, max: 0 }
+  )
+}
+
+const intervalsOverlap = (a: NumericInterval, b: NumericInterval): boolean =>
+  a.max >= b.min && b.max >= a.min
+
 const segmentValid = (segment: AdeModelSegment): boolean =>
   finitePoint(segment.a) && finitePoint(segment.b) && !samePoint(segment.a, segment.b)
 
@@ -90,19 +123,63 @@ export const validateArchitecturalPlan = (plan: AdeArchitecturalPlan): AdeValida
     if (!finitePoint(node.point)) diagnostics.push({ code: 'ADE-NODE-POINT', entityId: node.id, message: 'Node point must be finite.' })
   }
 
+  const layerIds = new Set<string>()
   const assemblies = new Map(plan.wallAssemblies.map((assembly) => [assembly.id, assembly]))
   for (const assembly of plan.wallAssemblies) {
     validateDistance(assembly.id, 'wall thickness', assembly.thickness, diagnostics)
+    if (assembly.layers === undefined) continue
+
+    if (assembly.layers.length === 0) {
+      diagnostics.push({ code: 'ADE-ASSEMBLY-LAYERS-EMPTY', entityId: assembly.id, message: 'Layered wall assembly must contain at least one authored layer.' })
+      continue
+    }
+
+    for (const layer of assembly.layers) {
+      if (!layer.id.trim()) diagnostics.push({ code: 'ADE-LAYER-ID', entityId: assembly.id, message: 'Wall assembly layer id must be non-empty.' })
+      if (ids.has(layer.id) || layerIds.has(layer.id)) {
+        diagnostics.push({ code: 'ADE-DUPLICATE-ID', entityId: layer.id, message: `Duplicate semantic/layer id ${layer.id}.` })
+      }
+      layerIds.add(layer.id)
+      validateProvenance(layer.id, layer.provenance, diagnostics)
+      validateDistance(layer.id, 'wall layer thickness', layer.thickness, diagnostics)
+    }
+
+    const assemblyInterval = numericInterval(assembly.thickness)
+    const layersInterval = sumLayerIntervals(assembly.layers)
+    if (assemblyInterval && layersInterval && !intervalsOverlap(assemblyInterval, layersInterval)) {
+      diagnostics.push({
+        code: 'ADE-ASSEMBLY-LAYER-SUM',
+        entityId: assembly.id,
+        message: `Layer thickness family ${layersInterval.min}–${layersInterval.max} mm cannot produce authored overall wall thickness ${assemblyInterval.min}–${assemblyInterval.max} mm.`
+      })
+    }
   }
 
   const walls = new Map(plan.walls.map((wall) => [wall.id, wall]))
   for (const wall of plan.walls) {
     const from = nodes.get(wall.fromNodeId)
     const to = nodes.get(wall.toNodeId)
+    const assembly = assemblies.get(wall.assemblyId)
     if (!from) diagnostics.push({ code: 'ADE-WALL-NODE', entityId: wall.id, message: `Wall references missing from-node ${wall.fromNodeId}.` })
     if (!to) diagnostics.push({ code: 'ADE-WALL-NODE', entityId: wall.id, message: `Wall references missing to-node ${wall.toNodeId}.` })
     if (from && to && samePoint(from.point, to.point)) diagnostics.push({ code: 'ADE-WALL-ZERO', entityId: wall.id, message: 'Wall run must have non-zero model-space length.' })
-    if (!assemblies.has(wall.assemblyId)) diagnostics.push({ code: 'ADE-WALL-ASSEMBLY', entityId: wall.id, message: `Physical wall requires known assembly ${wall.assemblyId}.` })
+    if (!assembly) {
+      diagnostics.push({ code: 'ADE-WALL-ASSEMBLY', entityId: wall.id, message: `Physical wall requires known assembly ${wall.assemblyId}.` })
+    } else if (assembly.layers?.length) {
+      if (!wall.assemblyStartFace) {
+        diagnostics.push({
+          code: 'ADE-WALL-LAYER-ORIENTATION',
+          entityId: wall.id,
+          message: `Wall using layered assembly ${assembly.id} must state which physical face starts the ordered layer sequence.`
+        })
+      }
+    } else if (wall.assemblyStartFace) {
+      diagnostics.push({
+        code: 'ADE-WALL-LAYER-ORIENTATION-UNUSED',
+        entityId: wall.id,
+        message: `Wall sets assemblyStartFace but assembly ${assembly.id} has no authored layers.`
+      })
+    }
   }
 
   for (const opening of plan.openings) {
@@ -141,7 +218,7 @@ export const validateArchitecturalPlan = (plan: AdeArchitecturalPlan): AdeValida
     }
   }
 
-  const targetIds = new Set(entities.filter((entity) => entity.kind !== 'label').map((entity) => entity.id))
+  const targetIds = new Set([...ids, ...layerIds])
   for (const label of plan.labels) {
     if (!label.text.trim()) diagnostics.push({ code: 'ADE-LABEL-TEXT', entityId: label.id, message: 'Label text must be non-empty.' })
     if (!finitePoint(label.anchor)) diagnostics.push({ code: 'ADE-LABEL-ANCHOR', entityId: label.id, message: 'Label anchor must be finite.' })
