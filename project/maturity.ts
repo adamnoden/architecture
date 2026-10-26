@@ -309,11 +309,11 @@ export const workstreamStatuses = [
     id: 'publication',
     name: 'Publication',
     maturity: 'M4',
-    reviewedOn: '2026-10-21',
+    reviewedOn: '2026-10-26',
     currentState:
-      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete. DRW is fully closed and frozen through its final integration/physical-proof programme; the controlled architectural drawing family is released at the existing internal publication proof boundary without inventing construction or site authority.',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. PLT v2 remains open but its previous ground-plan candidate is not eligible for final physical acceptance. ADE-04A/ADE-04B are merged, and ADE-05B has selected the deliberately non-physical unresolved partition-datum and adjacency grammar. Physical partition bodies remain gated by ADE-05A; no print tokens are frozen.',
     nextGate:
-      'Proceed to PR-02 private physical-object production without reopening frozen drawing authority by preference. PR-03/PR-04 then provide the independent critical cycle required before M5 or public release. Any later DPL-earned drawing duty requires an explicit DRW reopen or separately owned post-DRW representation authority.',
+      'Resolve ADE-05A upstream Reference House internal-partition authority, then complete ADE-06 capability/physical proof before ADE-07 migrates the Reference House ground plan and restarts PLT-03 physical review. PR-02 production preparation may consume the accepted typography contract, but final private-object manufacture waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
@@ -324,6 +324,10 @@ export const workstreamStatuses = [
         'docs/publication/architectural-drawing-execution-plan.md'
       ],
       internallyValidated: [
+        'docs/publication/publication-typography-v1-release.md',
+        'docs/publication/architectural-drawing-engine-ade00-audit.md',
+        'docs/publication/architectural-drawing-engine-ade03b-wall-grammar.md',
+        'docs/publication/architectural-drawing-engine-ade04b-opening-uncertainty.md',
         'publication/pr01-r7-findings-freeze.md',
         'publication/pr01-r9-reproof-refreeze.md',
         'docs/publication/resolved-work-sanitation-closeout.md',
@@ -335,11 +339,11 @@ export const workstreamStatuses = [
     id: 'deployment-real-site',
     name: 'Deployment / real-site integration',
     maturity: 'M4',
-    reviewedOn: '2026-10-23',
+    reviewedOn: '2026-10-26',
     currentState:
-      'DPL-13B/DPL-I establish the complete controlled SCREENING owner-universe and coverage/readiness proposition for the canonical Reference House × synthetic DPL-RS-01 case. DPL-13C plus DPL-J now internally validate the canonical whole-site UNRESOLVED @ SCREENING result at that exact scope: blocker ownership is complete, current/future separation is controlled, actual DPL-12B and London-D3 findings are consumed where admitted, missing evidence/evaluators remain explicit unresolved blockers, positive compatibility is refused, hard candidate/obligation failure cannot imply INCOMPATIBLE without route exhaustion, and material blocker/case changes invalidate identity. COMPATIBLE, INCOMPATIBLE, route exhaustion, multi-site/general result validity, real-site deployability and regulatory/planning/legal adequacy remain outside the controlled proposition.',
+      'The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. The programme has completed DPL-01 through DPL-14 and is active at DPL-15 empirical trials. DPL-15E improves RP-006 orientation and identity evidence, but R1/R2/R4/R5 remain unsatisfied and the corpus still has 0 of 8 candidate-ready sites. The Lennard instrumented control reaches its DPL-T11 no-spend evidence boundary and remains excluded from empirical sampling. Whole-site compatibility, incompatibility, route exhaustion and regulatory/construction adequacy remain unadmitted.',
     nextGate:
-      'Execute DPL-13D only: create a second canonical synthetic borough-assigned positive-readiness generalisation case using existing controlled Croydon local-planning authority and the same DPL-13B/DPL-13C machinery. Prove that changed borough/site disposition participates in identity and changes classification outcomes without fabricating external evidence. Keep COMPATIBLE, INCOMPATIBLE, route search/exhaustion, DPL-15+ and broader envelope work held pending a fresh post-DPL-13D gate.',
+      'Execute DPL-15F: recover controlled RP-006 boundary/footprint geometry, terrain/datum and access geometry through the exact no-spend routes identified in DPL-15E. Author no candidate in that packet. If the routes remain exhausted, compare RP-007 and RP-008. Keep DPL-16/17/18 held pending their explicit evidence gates; external Lennard judgement and measurement require separate acquisition.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -369,6 +373,8 @@ export const workstreamStatuses = [
         'project/dpl/dpl-wave-d-integration-admission-review.md'
       ],
       internallyValidated: [
+        'project/dpl/dpl-15e-rp006-spatial-preflight.md',
+        'project/dpl/dpl-t11-lennard-no-spend-evidence.md',
         'project/dpl/dpl-13a-canonical-reference-site-compile.md',
         'compiler/dpl/canonical.ts',
         'compiler/dpl/dpl13a.test.ts',
@@ -395,13 +401,13 @@ export const workstreamStatuses = [
     id: 'delivery',
     name: 'Delivery',
     maturity: 'M2',
-    reviewedOn: '2026-10-19',
+    reviewedOn: '2026-10-26',
     currentState:
-      'The implementation-brief structure exists and N17 now carries complete-action / finished-interface human-factors verification into RIBA 3/4 as appropriate, but downstream delivery requirements remain intentionally incomplete.',
+      'DEL frames coordination of the existing implementation brief, maintenance and human-factors modules under GitHub umbrella #854. N17 carries finished-interface verification into RIBA 3/4 as appropriate, while delivery requirements remain intentionally incomplete and evidence-dependent.',
     nextGate:
-      'Populate only as architectural, DPL, professional-review and physical-validation decisions mature; delivery must remain a consequence of controlled architecture rather than a second source of doctrine.',
+      'Use DEL #854 to inventory requirement readiness, responsible disciplines, stage gates and evidence dependencies. Populate modules only as architectural, DPL, professional-review and physical-validation decisions mature; retain manufacturing strategy as guidance unless a concrete assembly earns delivery work.',
     evidence: {
-      framed: ['docs/delivery/README.md'],
+      framed: ['docs/delivery/README.md', 'project/del/delivery-programme.md'],
       developed: [
         'docs/delivery/riba-implementation-brief-template.md',
         'docs/delivery/human-factors-verification-requirements.md'

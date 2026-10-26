@@ -55,15 +55,15 @@
     },
     "publication": {
       "level": "M4",
-      "reviewedOn": "2026-10-21"
+      "reviewedOn": "2026-10-26"
     },
     "deployment-real-site": {
       "level": "M4",
-      "reviewedOn": "2026-10-23"
+      "reviewedOn": "2026-10-26"
     },
     "delivery": {
       "level": "M2",
-      "reviewedOn": "2026-10-19"
+      "reviewedOn": "2026-10-26"
     }
   },
   "corpus": {
