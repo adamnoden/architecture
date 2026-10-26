@@ -2,10 +2,10 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Current packet:** [#763 — DPL-T5](https://github.com/adamnoden/architecture/issues/763) — Lennard real-control runtime assembly and screening-coverage replay  
-**Current real-control result:** `REAL_CONTROL_RUNTIME_COMPOSED_GAPS_EXPOSED`  
-**Next authorised packet:** **DPL-T6 — Lennard real-control SCREENING aggregation and architectural-review composition**  
-**Programme maturity:** **M4 — bounded real-control runtime composition is now proved; whole-site SCREENING conclusion remains unearned.**
+**Current packet:** [#778 — DPL-T6](https://github.com/adamnoden/architecture/issues/778) — Lennard SCREENING frontier classification and architectural review  
+**Current real-control result:** `UNRESOLVED_AT_SCREENING_GENUINE_FRONTIER_CLASSIFIED`  
+**Next authorised packet:** **DPL-T7 — Lennard acceleration classification and public-evidence disposition**  
+**Programme maturity:** **M5 — the real-control SCREENING frontier is now explicitly classified; whole-site compatibility and evidence procurement remain unearned.**
 
 ## Purpose and governing rules
 
@@ -217,7 +217,7 @@ dwellingStoreys = 2
 
 The current applicant proposal's bedroom count, bedspace count, GIA, storage, private-outside-space geometry and M4 assignment are deliberately not transferred onto the different unchanged Reference House candidate.
 
-Frozen identities:
+T5's branch-time frozen identities remain historical evidence:
 
 ```text
 manifest fingerprint
@@ -236,7 +236,24 @@ T5 result fingerprint
   c858fcac7b7481f43c33e49cf7e092ca749467370d75e7903973c1887401ecdf
 ```
 
-Raw runtime:
+T6 replayed the unchanged T5 control through the actual landed/current generic runtime. The current T5 parent identity is:
+
+```text
+manifest
+  7541bf23840f81af9089e7ce5fadbe62456ed9b51f0c9e2d1e601db9ee25bced
+source set
+  d3e08dfc8d411ff54dbd4d462878540a70c3b24bdd2729fcd35210df3d8242c9
+deployment case
+  e10a8fe8cc458a39254e3c8b82b0d64216b13fd74b69a87b9a945b06ae6aa475
+deployment result
+  2557f147639ae1eebd34fd4ca8d01893996b634047c98be4ca206798bf971984
+T5 result
+  bf04feb48795c0f5fddda5d9ddbe944428f06a52fd2afebc857a3b1bde1cf009
+```
+
+The change is shared-runtime identity invalidation, not Lennard evidence or candidate drift. See `project/dpl/dpl-t5-merge-state-replay.md`.
+
+Raw runtime remains:
 
 ```text
 obligations               = 29
@@ -248,7 +265,7 @@ EXTERNALLY_DISCHARGED      = 0
 raw unresolved inputs      = 45
 ```
 
-Candidate conformance:
+Candidate conformance remains:
 
 ```text
 CONFORMS                           = 5
@@ -257,65 +274,122 @@ NON_CONFORMING                     = 0
 REQUIRES_REFERENCE_HOUSE_REVISION = 0
 ```
 
-Real-claim coverage:
+The crucial interpretation is that **45 raw missing fields are not 45 SCREENING blockers**. T6 exists to apply the current owner authority to that low-level diagnostic set.
+
+#### T6 — SCREENING aggregation and architectural review
+
+Executable proof:
+
+- `compiler/dpl/dplT6Lennard.ts`
+- `compiler/dpl/dplT6Lennard.test.ts`
+
+Decision record:
+
+`project/dpl/dpl-t6-lennard-screening-aggregation.md`
+
+T6 reuses current DPL-02 / DPL-09 / DPL-10 / DPL-11 authority and the existing DPL-13 aggregation semantics rather than inventing a parallel real-site compatibility engine.
+
+The exact current DPL-02 architectural-review universe is sixteen clauses. A fresh Lennard-specific, evidence-bearing delegated project-author review passes all sixteen against the exact T5 candidate. `RH-PROT-08` and `RH-PROT-14` remain outside project-author review and remain current blockers. `RH-SI02` and `RH-SI05` are preserved as external site interfaces but are `FUTURE_DUE`, not current SCREENING blockers.
+
+T6 also performs narrow source/status composition:
 
 ```text
-real claims                    = 17
-mapped real claims             = 17
-unique owner coverage families = 18
+London / Bromley planning source composition = PASS
+England project-event source applicability   = UNRESOLVED
 ```
 
-The crucial interpretation is that **45 raw missing fields are not 45 SCREENING blockers**. DPL-12A is a deliberately low-level obligation ledger. Existing DPL-02 / DPL-09 / DPL-10 / DPL-11 authority must classify what is actually due at SCREENING before new evidence is commissioned.
+The planning PASS is source/status composition only. It is not planning compliance or permission.
 
-The 20 OPEN candidate findings likewise have an established authority split:
+Frozen identities:
 
 ```text
-16  DPL-13E project architectural-review clauses
- 4  external/professional/site authority
+T6 result fingerprint
+  c59073cc2c6b073c2905a92b42b36b27f287e32e84d86d51f92cdd4d52ba3b45
+
+readiness identity fingerprint
+  8329522c604de85912b35aab4a3958f270bd7b246395ed0a534494f3b6d33853
+
+architectural-review ledger fingerprint
+  d320507d8bf7d6a6606e502a49515bb1a071c36ed8ed248f0d4fb022d4e1365c
 ```
 
-The four non-architectural-review opens are:
-
-- `RH-PROT-08` — competent structural/professional evidence;
-- `RH-PROT-14` — actual maintenance/site-interface evidence;
-- `RH-SI02` — datum / external-level / threshold / grading response;
-- `RH-SI05` — approach / access / landscape / external-site response.
-
-Therefore T5 does not author a consultant shopping list from the raw runtime.
-
-## Active packet — DPL-T5
-
-T5 proves the real-control composition seam and freezes its diagnostic result.
-
-It does not:
+The intermediate normalized readiness contains 46 blocking coverage entries. After the sixteen-clause architectural review and narrow source/status composition, the actual post-review frontier is:
 
 ```text
-reuse the applicant scheme as the Reference House
-resolve all raw DPL-12A missing inputs
-reuse the RS-02 architectural-review ledger on a different candidate
-infer legal boundaries
-infer measured topography
-solve site interfaces
-assess planning acceptability
-emit whole-site COMPATIBLE / INCOMPATIBLE
+raw T5 unresolved inputs          = 45
+post-review T6 blockers           = 25
+SUBSTANTIVE_UNRESOLVED            = 10
+DUE_CLASSIFICATION_UNRESOLVED     = 15
+
+REFERENCE_HOUSE                   = 2
+ENGLAND                           = 1
+PLANNING                          = 12
+NON_PLANNING                      = 10
 ```
 
-## Next gate — DPL-T6
+The exact two due-now Reference House blockers are:
 
-> **Compose Lennard through a bounded real-control SCREENING aggregation seam and apply the existing DPL-13E architectural-review authority to the exact T5 candidate; classify raw runtime gaps by current DPL-02 / DPL-09 / DPL-10 / DPL-11 authority so only genuinely due external/site evidence survives as the next acquisition frontier.**
+```text
+RH-PROT-08
+RH-PROT-14
+```
 
-T6 must:
+The fifteen due-classification blockers are the exact `::ACCELERATION_REVIEW` records. They are **classification instructions, not survey instructions**. T6 deliberately does not commission site evidence from them.
 
-1. preserve the `LNR-C##` real-claim vocabulary and owner-family mappings;
-2. reuse/refactor DPL-13 readiness/aggregation only as narrowly required for a real-control case;
-3. author a fresh Lennard-specific review over the exact sixteen-clause DPL-13E universe;
-4. bind that review to the exact Lennard candidate, current Reference House source and DPL-02 authority;
-5. preserve `RH-PROT-08`, `RH-PROT-14`, `RH-SI02` and `RH-SI05` as external/site authority;
-6. distinguish due-now SCREENING blockers from future-due technical inputs and owner-judgement records;
-7. reuse existing source/applicability authority where already implemented;
-8. refuse `COMPATIBLE`, `INCOMPATIBLE` and route exhaustion.
+Result:
 
-Only after T6 should the programme commission the next real evidence packet.
+`UNRESOLVED_AT_SCREENING_GENUINE_FRONTIER_CLASSIFIED`
+
+T6 does not emit `COMPATIBLE`, `INCOMPATIBLE`, route exhaustion, planning acceptability, engineering adequacy or a survey/consultant procurement list.
+
+## Current gate — DPL-T6
+
+T6 answers its bounded question: it reduces the raw T5 diagnostic gaps to the exact current SCREENING frontier under existing authority.
+
+It proves:
+
+```text
+45 raw missing runtime inputs are not treated as 45 equal blockers
+16 architectural-review clauses are resolved by fresh exact-candidate review
+RH-PROT-08 / RH-PROT-14 remain due now
+RH-SI02 / RH-SI05 remain future-due
+25 post-review blockers remain
+15 of those are acceleration-classification questions
+no real claim is uncovered
+no site evidence has been commissioned
+```
+
+It does not prove:
+
+```text
+whole-site compatibility
+whole-site incompatibility
+route exhaustion
+legal boundary position
+private rights
+measured topography
+foundation adequacy
+planning acceptability
+site-interface design
+```
+
+## Next gate — DPL-T7
+
+> **Classify the exact fifteen Lennard `::ACCELERATION_REVIEW` records against present coverage authority and already-admitted or recoverable public evidence before commissioning anything; only evidence that survives that classification may become a due-now external acquisition requirement.**
+
+T7 must:
+
+1. start from the exact T6 result fingerprint and 25-item blocker frontier;
+2. review each of the fifteen acceleration records individually;
+3. use already-admitted or recoverable public evidence where it is authoritative enough for SCREENING;
+4. classify each acceleration item as resolved/dismissed, genuinely due now, future-due/downstream, or unresolved pending external authority;
+5. reconcile directly coupled substantive blockers only where the same evidence legitimately earns it;
+6. produce a minimum surviving external-evidence frontier rather than a default consultant shopping list;
+7. preserve `RH-PROT-08` and `RH-PROT-14` unless competent evidence actually resolves them;
+8. preserve the Reference House unchanged;
+9. refuse `COMPATIBLE`, `INCOMPATIBLE` and route exhaustion.
+
+Only after T7 should DPL decide what, if anything, must actually be commissioned for the next real-control gate.
 
 ## Frozen programme boundaries
 
@@ -333,6 +407,7 @@ accessible approach / threshold       = NOT_PROVED
 foul / surface-water solution         = NOT_PROVED
 utility approach / external plant     = NOT_PROVED
 planning acceptability                = NOT_PROVED
+site evidence commissioned by T6      = NO
 COMPATIBLE @ SCREENING                = NOT_ADMITTED FOR REAL CONTROL
 whole-site INCOMPATIBLE               = NOT_ADMITTED
 route search / exhaustion             = NOT_IMPLEMENTED
@@ -343,7 +418,7 @@ DPL-18 final validation               = HELD
 
 ## Restart discipline
 
-Resume from this file, #763, `project/dpl/dpl-t5-lennard-real-control-runtime.md`, the T3/T4/T5 artifacts under `project/dpl/sites/`, and the existing DPL-13E architectural-review authority.
+Resume from this file, #778, `project/dpl/dpl-t6-lennard-screening-aggregation.md`, `project/dpl/dpl-t5-merge-state-replay.md`, the T3/T4/T5 artifacts under `project/dpl/sites/`, and the exact T6 deterministic output.
 
 Every packet must preserve:
 
