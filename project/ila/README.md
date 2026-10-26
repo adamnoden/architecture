@@ -2,42 +2,46 @@
 
 This directory is the durable internal record of the **Intellectual Lineage and Attribution Audit** for Ovid’s House.
 
-ILA asks a bounded question:
+ILA asked a bounded question:
 
-> **What does Ovid’s House inherit, from whom, through what actual relationship, what does it materially add or change, and does the current project acknowledge that inheritance proportionately?**
+> **What does Ovid’s House inherit, from whom, through what actual relationship, what does it materially add or change, and does the project acknowledge that inheritance proportionately?**
 
-ILA is not a second technical-evidence system, a second bibliography or a general history of architectural ideas. It exists to keep intellectual ancestry, actual project contact, Ovid’s residual contribution and reader-facing attribution distinct.
+The audit is complete at this scope. It is not a second technical-evidence system, a second bibliography or a general history of architectural ideas. It exists to keep intellectual ancestry, actual project contact, Ovid’s residual contribution and reader-facing attribution distinct.
 
 ---
 
 ## 1. Authority order
 
-When ILA records appear to differ in emphasis, use this order.
+When ILA records differ in emphasis, use this order.
 
-1. **ILA-04 — final attribution / priority / treatment judgement**  
+1. **ILA-05D — downstream / freeze-break closeout audit**  
+   [`ila-05d-downstream-freeze-break-audit.md`](ila-05d-downstream-freeze-break-audit.md)  
+   Confirms that the final reader-facing integration matches the frozen treatment schedule and did not mutate doctrine, pattern semantics, Reference House geometry, compiler authority or publication contracts.
+
+2. **ILA-04 — final attribution / priority / treatment judgement**  
    [`ila-04-attribution-priority-delta-audit.md`](ila-04-attribution-priority-delta-audit.md)  
-   Controls final internal findings, Ovid-delta classifications, minimum T0–T5 public treatment and the authorised ILA-05 integration schedule.
+   Controls final attribution findings, Ovid-delta classifications and the minimum T0–T5 reader-facing treatment.
 
-2. **ILA-03B — canonical claim/source matrix**  
+3. **ILA-03B — canonical claim/source matrix**  
    [`ila-03b-claim-source-matrix.md`](ila-03b-claim-source-matrix.md)  
    Controls the claim-by-claim mapping of strongest antecedents, project-contact status, inherited territory, surviving Ovid delta, counterpoints and treatment pressure.
 
-3. **ILA-03A — typed lineage graph / non-edge ledger**  
+4. **ILA-03A — typed lineage graph / non-edge ledger**  
    [`ila-03a-typed-lineage-graph.md`](ila-03a-typed-lineage-graph.md)  
    Controls source→source derivation edges, source→claim relationship types and explicit prohibited genealogies.
 
-4. **ILA-02 — primary-source dossiers**  
+5. **ILA-02 — primary-source dossiers**  
    D01–D10 contain the deep source records, chronology, proposition maps and project-contact audits used to earn the graph and matrix.
 
-5. **ILA-01 — frozen discovery families**  
-   Eight concept-family freezes record bounded discovery and saturation. They remain useful for supporting sources not promoted to full dossiers.
+6. **ILA-01 — frozen discovery families**  
+   Eight concept-family freezes record bounded discovery and decision saturation.
 
-6. **ILA-00 — baseline / claim / method contract**  
+7. **ILA-00 — baseline / claim / method contract**  
    - [`ila-00a-current-intellectual-reference-inventory.md`](ila-00a-current-intellectual-reference-inventory.md) — pre-audit treatment baseline;  
    - [`ila-00b-canonical-claim-spine.md`](ila-00b-canonical-claim-spine.md) — fifteen canonical claims;  
    - [`ila-00c-lineage-source-publication-contract.md`](ila-00c-lineage-source-publication-contract.md) — relationship, contact, importance, confidence, delta and T0–T5 rules.
 
-Later authority does not erase earlier evidence. It resolves the decision made from it.
+Later authority does not erase earlier evidence. It records the decision made from it.
 
 ---
 
@@ -45,9 +49,9 @@ Later authority does not erase earlier evidence. It resolves the decision made f
 
 ### Technical evidence
 
-ILA records conceptual ancestry. They do **not** replace the project’s existing technical research/evidence architecture.
+ILA records conceptual ancestry. It does **not** replace the project’s technical research/evidence architecture.
 
-A historical source may be an important intellectual antecedent without proving structural, environmental, regulatory or construction performance. Technical claim ceilings, evidence maturity and external-review obligations continue to be governed by the existing research/evidence records and publication evidence apparatus.
+A historical source may be an important intellectual antecedent without proving structural, environmental, regulatory or construction performance. Technical claim ceilings, evidence maturity and external-review obligations remain governed by the existing research/evidence records and publication evidence apparatus.
 
 ### Reader-facing bibliography
 
@@ -55,63 +59,35 @@ The canonical reader-facing source surface remains:
 
 [`docs/manuscript/sources-and-further-reading.md`](../../docs/manuscript/sources-and-further-reading.md)
 
-ILA-05B may correct or extend that file. This directory must not become a competing public bibliography.
+ILA-05B corrected and extended that file. This directory must not become a competing public bibliography.
 
 ### Doctrine / patterns / compiler authority
 
-ILA findings do not silently mutate doctrine, patterns, Reference House geometry, semantic models or compiler rules. Any such change requires its own owning workstream and evidence.
+ILA findings do not silently mutate doctrine, patterns, Reference House geometry, semantic models or compiler rules. Any future change to those layers requires its own owning workstream and evidence.
 
-The ILA-05 integration authorised by ILA-04 is an **attribution correction**, not permission to redesign the architecture.
-
----
-
-## 3. Canonical claim spine
-
-ILA audits these fifteen propositions:
-
-| Claim | Short name |
-|---|---|
-| `C01` | Building as a temporal object |
-| `C02` | Differential rates and destructive coupling |
-| `C03` | Proportional serviceability |
-| `C04` | Selective permanence / permanence through transformation |
-| `C05` | Architectural platform |
-| `C06` | Designed interface |
-| `C07` | Failure architecture |
-| `C08` | Maintenance geography |
-| `C09` | Service topology as architectural ordering |
-| `C10` | Ordinary parts, stable interfaces and reproducible assembly |
-| `C11` | Intergenerational legibility and stewardship |
-| `C12` | Domestic Repose / low vigilance |
-| `C13` | Passive architecture does the first work |
-| `C14` | Technical necessity must become architecture |
-| `C15` | Pattern and generative-sequence knowledge |
-
-The exact proposition records remain in ILA-00B.
+ILA-05 was an **attribution correction**, not an architectural redesign.
 
 ---
 
-## 4. Final ILA-04 treatment judgement
+## 3. Canonical claim spine and final treatment
 
-ILA-04 authorises a deliberately small reader-facing footprint.
-
-| Claim | Final finding | Minimum treatment |
+| Claim | Short name | Final minimum treatment |
 |---|---|---:|
-| `C01` | `ADEQUATE` | `T1` |
-| `C02` | `UNDER_ATTRIBUTED + SUBSTANTIVE_QUALIFICATION_REQUIRED` | **`T5`** |
-| `C03` | `ADEQUATE + NO_PUBLIC_ACKNOWLEDGEMENT_REQUIRED` | `T0` |
-| `C04` | `UNDER_ATTRIBUTED` | **`T3`** |
-| `C05` | `ADEQUATE + NO_PUBLIC_ACKNOWLEDGEMENT_REQUIRED` | `T0` |
-| `C06` | `ADEQUATE + NO_PUBLIC_ACKNOWLEDGEMENT_REQUIRED` | `T0` |
-| `C07` | `ADEQUATE + NO_PUBLIC_ACKNOWLEDGEMENT_REQUIRED` | `T0` |
-| `C08` | `ADEQUATE` | `T2` |
-| `C09` | `ADEQUATE + NO_PUBLIC_ACKNOWLEDGEMENT_REQUIRED` | `T0` |
-| `C10` | `UNDER_ATTRIBUTED` | `T2` |
-| `C11` | `ADEQUATE + NO_PUBLIC_ACKNOWLEDGEMENT_REQUIRED` | `T0` |
-| `C12` | `UNDER_ATTRIBUTED` | **`T3`** |
-| `C13` | `ADEQUATE` | `T1` |
-| `C14` | `UNDER_ATTRIBUTED` | `T2` |
-| `C15` | `UNDER_ATTRIBUTED` | **`T3`** |
+| `C01` | Building as a temporal object | `T1` |
+| `C02` | Differential rates and destructive coupling | **`T5`** |
+| `C03` | Proportional serviceability | `T0` |
+| `C04` | Selective permanence / permanence through transformation | **`T3`** |
+| `C05` | Architectural platform | `T0` |
+| `C06` | Designed interface | `T0` |
+| `C07` | Failure architecture | `T0` |
+| `C08` | Maintenance geography | `T2` |
+| `C09` | Service topology as architectural ordering | `T0` |
+| `C10` | Ordinary parts, stable interfaces and reproducible assembly | `T2` |
+| `C11` | Intergenerational legibility and stewardship | `T0` |
+| `C12` | Domestic Repose / low vigilance | **`T3`** |
+| `C13` | Passive architecture does the first work | `T1` |
+| `C14` | Technical necessity must become architecture | `T2` |
+| `C15` | Pattern and generative-sequence knowledge | **`T3`** |
 
 Public footprint:
 
@@ -121,11 +97,11 @@ Public footprint:
 - 2 × `T1 REFERENCE_ONLY`;
 - 6 × `T0 INTERNAL_ONLY`.
 
-The audit deliberately does **not** earn an intellectual-history chapter.
+The audit deliberately did **not** earn an intellectual-history chapter.
 
 ---
 
-## 5. Core graph result
+## 4. Core graph result
 
 ILA-03A admits only three proposition-specific source→source derivation arrows to the core causal graph:
 
@@ -139,7 +115,7 @@ That sparse graph is intentional.
 
 ---
 
-## 6. Non-edge preservation gate
+## 5. Non-edge preservation gate
 
 Future diagrams, summaries and prose must preserve these negative findings unless new evidence explicitly reopens them:
 
@@ -160,11 +136,9 @@ An empty graph edge is not permission to draw a plausible arrow.
 
 ---
 
-## 7. Project-contact discipline
+## 6. Project-contact discipline
 
 Conceptual closeness is not evidence of influence.
-
-Particularly important project-contact results are:
 
 ### Alexander
 
@@ -196,7 +170,7 @@ Do not convert those sources into formative influences in later project storytel
 
 ---
 
-## 8. Recurring Ovid delta
+## 7. Recurring Ovid delta
 
 ILA does not establish historical priority for one isolated mechanism.
 
@@ -212,7 +186,7 @@ The strongest recurring project contribution is a **typed, proportional domestic
 8. typed authority — evidence, pattern maturity, project occurrence, semantic representation, compiler checks and publication rhetoric remain distinct;
 9. rewind authority — downstream evidence can invalidate upstream architectural decisions rather than being forced to fit them.
 
-The correct ILA delta vocabulary is generally some combination of:
+The appropriate ILA delta vocabulary is generally some combination of:
 
 `SYNTHESISES + OPERATIONALISES + NARROWS + TRANSFERS_DOMAIN`.
 
@@ -220,11 +194,11 @@ Do not turn that recurring synthesis into a `first`, `novel` or `unprecedented` 
 
 ---
 
-## 9. Project-authored formulations to preserve
+## 8. Project-authored formulations to preserve
 
 Prior art for an underlying mechanism does not require deleting a strong project formulation.
 
-ILA-04 specifically preserves:
+ILA-04 and ILA-05D preserve:
 
 > **A component’s lifespan matters less than the lifespan of the things that must be destroyed to replace it.**
 
@@ -233,145 +207,27 @@ and the project terms / formulations:
 - **selective permanence**;
 - **permanence through transformation**;
 - **A good home should minimise unnecessary vigilance**;
+- **maintenance geography** as prospective architectural composition;
+- **Build the permanent house. Assemble the changeable house inside it.**;
 - the project’s typed pattern / evidence / semantic / compiler / Reference House authority model.
 
-ILA-05 corrects implied ancestry around these formulations rather than diluting them.
+The ancestry around these formulations has been corrected without diluting them.
 
 ---
 
-## 10. Authorised ILA-05 reader-facing change schedule
-
-ILA-04 authorises only these nine attribution changes unless implementation exposes a direct contradiction.
-
-### `R1 — C02 temporal / coupling correction` — `T5`
-
-Target:
-
-- [`docs/manuscript/part-i.md`](../../docs/manuscript/part-i.md), Chapter 2 `Buildings change at different speeds`.
-
-Required result:
-
-- make Brand’s slippage / destructive-embedding territory explicit;
-- stop presenting coupling as Ovid’s conceptual move beyond Brand;
-- distinguish Habraken’s support/infill lineage from Duffy/Brand rate-of-change lineage sufficiently for accuracy;
-- preserve the Ovid destruction-test sentence;
-- keep SCAG / CHS mainly in reference/note apparatus unless prose needs them.
-
-### `R2 — C04 selective-permanence acknowledgement` — `T3`
-
-Target:
-
-- [`docs/manuscript/part-i.md`](../../docs/manuscript/part-i.md), Chapter 3 `Selective permanence`.
-
-Required result:
-
-- one compact Van Eyck / Hertzberger acknowledgement;
-- no invented Van Eyck→Hertzberger causal edge;
-- Open Building retains the support/infill precedent it actually owns;
-- preserve `selective permanence`, `permanence through transformation` and the current architectural argument.
-
-### `R3 — C12 Repose acknowledgement` — `T3`
-
-Target:
-
-- [`docs/manuscript/part-i.md`](../../docs/manuscript/part-i.md), `Repose as a domestic requirement`.
-
-Required result:
-
-- precise Wainwright/Bidlake attribution;
-- Wainwright’s 1902 article is the source that calls the reported first principle `Lamp of Repose`;
-- preserve `A good home should minimise unnecessary vigilance`;
-- do not create a clinical claim or theory parade.
-
-### `R4 — C15 Alexander acknowledgement` — `T3`
-
-Primary target:
-
-- [`docs/patterns/README.md`](../../docs/patterns/README.md), the current reader-facing pattern/generative-system threshold, subject to ILA-05C confirming the publication build path before edit.
-
-Required result:
-
-- acknowledge Alexander’s pattern-language and later generative-sequence work as major antecedents;
-- state the project-specific residual as typed evidence/maturity/occurrence/semantic/compiler authority governance;
-- preserve the distinction between Alexander’s documented role in a later Ovid revision and unresolved original project formation.
-
-### `R5 — C08 Strebel note` — `T2`
-
-Current candidate target:
-
-- [`docs/manuscript/part-i.md`](../../docs/manuscript/part-i.md), `Maintenance geography`.
-
-Important implementation observation:
-
-- current `main` already names Ignaz Strebel’s 2011 *The living building: towards a geography of maintenance work* and explicitly distinguishes its descriptive maintenance scholarship from Ovid’s prospective design use.
-
-ILA-05B/C should therefore treat R5 as **verify / source-precision**, not automatically add duplicate prose.
-
-### `R6 — C10 open-systems note` — `T2`
-
-Target:
-
-- [`docs/manuscript/part-v.md`](../../docs/manuscript/part-v.md), Chapter 21 `Standardisation, manufacture and reliable assembly`, especially `Standardise the interface before the appearance`;
-- canonical reader-facing source support in [`docs/manuscript/sources-and-further-reading.md`](../../docs/manuscript/sources-and-further-reading.md).
-
-Required result:
-
-- make the British Modular Society / Modular Assembly / SCSD / later Open Building lineage verifiable without turning Part V into a systems-building history.
-
-### `R7 — C14 Kahn note` — `T2`
-
-Candidate targets:
-
-- [`docs/manuscript/part-ii.md`](../../docs/manuscript/part-ii.md), technical-necessity / architectural-resolution context;
-- overlapping existing Kahn/Salk acknowledgement in Part I maintenance geography may carry part of the debt if ILA-05C proves it is sufficient;
-- canonical source record in [`docs/manuscript/sources-and-further-reading.md`](../../docs/manuscript/sources-and-further-reading.md).
-
-Required result:
-
-- make Kahn’s service-order antecedence verifiable once;
-- avoid duplicating a second C09 history passage.
-
-### `R8 — C01 Duffy source precision` — `T1`
-
-Target:
-
-- [`docs/manuscript/sources-and-further-reading.md`](../../docs/manuscript/sources-and-further-reading.md);
-- Part I note [6] only if needed to point at the exact source cleanly.
-
-Required result:
-
-- replace coarse `Duffy / Brand, various writings` treatment with enough bibliographic precision to recover Duffy / Cave / Worthington, *Planning Office Space* (1976) and Brand, *How Buildings Learn* (1994).
-
-### `R9 — C13 Olgyay / Hawkes references` — `T1`
-
-Target:
-
-- [`docs/manuscript/sources-and-further-reading.md`](../../docs/manuscript/sources-and-further-reading.md).
-
-Required result:
-
-- add/verify Olgyay’s bioclimatic programme and Hawkes’s selective-environment lineage;
-- no new passive-first prose is required.
-
-No other public intellectual-attribution edit is authorised by ILA-04.
-
----
-
-## 11. ILA-05 implementation sequence
-
-The integration order is fixed to minimise freeze-break surface.
+## 9. Completed ILA-05 implementation record
 
 ### ILA-05A — durable internal lineage reconciliation
 
-This README is that reconciliation.
+This README established the durable authority chain, non-edge ledger, project-contact discipline and bounded integration schedule.
 
-It creates no reader-facing source or prose change.
+It created no reader-facing source or prose change.
 
 ### ILA-05B — bibliography / reference correction
 
-Edit reader-verifiable source records **before** attribution prose so later notes point to stable final entries.
+Completed before prose integration so later acknowledgements could point to stable, reader-verifiable records.
 
-At minimum audit/add exact records for:
+The canonical source surface now includes proportionate records for:
 
 - Duffy / Cave / Worthington;
 - Brand;
@@ -384,39 +240,56 @@ At minimum audit/add exact records for:
 - Kahn;
 - Olgyay;
 - Hawkes;
-- Alexander primary pattern/generative sources proportionate to the final C15 acknowledgement.
+- Alexander primary pattern/generative sources.
 
-Do not create a performative bibliography dump.
+The bibliography expansion legitimately changed live production pagination to:
+
+- A4: **279 pages / 140 duplex leaves**;
+- conservative B5: **335 pages / 168 duplex leaves**.
+
+The immutable typography-release RC2 object remains separately frozen at its released pagination.
 
 ### ILA-05C — reader-facing attribution integration
 
-Order:
+The authorised R1–R9 schedule was completed with a deliberately small public footprint:
 
-1. Part I temporal spine — R1;
-2. Part I selective permanence + Repose — R2 + R3;
-3. Part II maintenance / technical order — verify R5 + implement R7 only if not already satisfied by existing local treatment and final source apparatus;
-4. Part V open systems — R6;
-5. pattern/generative-system threshold — R4 after confirming publication path;
-6. verify R8 + R9 and all reference links.
+- Brand is now credited with the slippage / destructive-embedding mechanism; Ovid’s destruction test is retained as project formulation / operationalisation rather than historical priority;
+- Van Eyck / Hertzberger are acknowledged as related selective-permanence antecedents without a fabricated derivation edge;
+- Wainwright’s 1902 report of Bidlake’s `Lamp of Repose` is acknowledged with the reporting qualification intact;
+- Alexander’s pattern-language and generative-sequence antecedence is acknowledged while Ovid’s residual is narrowed to typed project-governance machinery;
+- Strebel’s existing maintenance-geography acknowledgement was verified rather than duplicated;
+- British open-systems / SCSD / later Open Building interoperability precedent is acknowledged compactly and without a fabricated single genealogy;
+- Kahn’s service-order antecedence is made recoverable once through the existing Salk context;
+- Duffy / Brand references are exact;
+- Olgyay / Hawkes remain bibliography-level acknowledgement without unnecessary passive-first history prose.
+
+The final ILA-05C delta touched only:
+
+- `docs/manuscript/part-i.md`;
+- `docs/manuscript/part-v.md`;
+- `docs/patterns/README.md`.
 
 ### ILA-05D — downstream / freeze-break audit
 
-After all reader-facing edits:
+[`ila-05d-downstream-freeze-break-audit.md`](ila-05d-downstream-freeze-break-audit.md) records the final adversarial verification.
 
-- run full repository / publication validation;
-- render A4 and B5;
-- inspect note/source numbering and links;
-- inspect typography/page-flow consequences;
-- audit public nomenclature / glossary effects;
-- verify no doctrine, pattern semantics, Reference House geometry or compiler authority changed accidentally;
-- verify ILA’s internal taxonomy has not leaked into reader-facing prose;
-- verify the external attribution footprint remains small relative to the internal audit.
+It passed:
 
-After 05D, run the repository-level cleanup / hygiene pass required by `AGENTS.md` before declaring ILA fully complete.
+- R1–R9 treatment conformance;
+- non-edge preservation;
+- protected formulation preservation;
+- reader-facing taxonomy-leak audit;
+- Part I note/source recovery;
+- live A4/B5 pagination coherence;
+- immutable typography-release evidence preservation;
+- doctrine / pattern-semantics / Reference House / compiler-authority freeze-break checks;
+- full repository and publication validation.
+
+No further reader-facing edit was earned.
 
 ---
 
-## 12. Deep dossiers
+## 10. Deep dossiers
 
 The admitted ILA-02B dossiers are:
 
@@ -435,17 +308,22 @@ These dossiers are evidence beneath ILA-03/04. They do not individually override
 
 ---
 
-## 13. Final programme posture
+## 11. Closeout and reopening rule
 
-ILA should be **large internally and small externally**.
+ILA is **closed at this audit scope** after ILA-05D and repository hygiene.
 
-The purpose of the large internal record is to make it hard for Ovid’s House to:
+The cleanup pass:
 
-- appear original merely because an antecedent is absent from the page;
-- claim influence where only similarity exists;
-- lose genuinely useful project synthesis under an indiscriminate history survey;
-- let a strong project-authored phrase masquerade as invention of the mechanism beneath it.
+- closed the completed stale F05 saturation issue;
+- closed the SCAG 1970 and pre-CHS Utida provenance follow-ups as `not planned` because their earlier proposition-level dating no longer changes any attribution or publication treatment;
+- retained those two residual historical uncertainties explicitly in ILA-05D rather than pretending they were resolved;
+- verified that no open ILA issue, PR or work branch remained before this closeout edit.
 
-The next packet is:
+Reopen ILA only if one of these occurs:
 
-> **ILA-05B — bibliography / reference correction.**
+1. new primary evidence materially changes a lineage or project-contact judgement;
+2. external review exposes a real attribution defect;
+3. reader-facing text changes enough that the ILA-04 treatment judgement no longer describes the publication;
+4. a future project claims historical originality beyond the limits frozen here.
+
+Otherwise, ILA should remain **large internally and small externally**.
