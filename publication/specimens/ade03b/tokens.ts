@@ -31,7 +31,7 @@ export const ADE03B_PROOF_TOKENS: PublicationDrawingTokens = Object.freeze({
   }),
   ink: Object.freeze({
     primary: '#000000',
-    context: '#d1d1d1',
+    context: '#dfdfdf',
     faint: '#ededed',
     paper: '#ffffff'
   }),
