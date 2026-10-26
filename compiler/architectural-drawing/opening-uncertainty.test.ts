@@ -87,11 +87,15 @@ test('ADE-04B known centre / unknown width becomes a point marker, not a plausib
   const leader = primitives.find((primitive) => primitive.id === 'CENTRE-pin-leader')
   assert.ok(leader && leader.kind === 'line')
   if (!leader || leader.kind !== 'line') return
-  // Right-face wall material projects above the reference line; left-side
-  // annotation is below it. The leader must terminate at the physical face and
-  // never enter the wall body.
+
+  // W1 is directed west→east and references its right physical face. Material
+  // therefore extends 400 mm to the wall's left side. A left-side epistemic
+  // marker must sit beyond that material and its leader must stop exactly at
+  // the far (left) physical face, never tunnel through the wall to the authored
+  // reference line.
   const referenceY = projection.point(3000, 0).y
-  assert.ok(leader.a.y > referenceY && Math.abs(leader.b.y - referenceY) < 1e-6)
+  const selectedPhysicalFaceY = referenceY + projection.length(400)
+  assert.ok(leader.a.y > selectedPhysicalFaceY && Math.abs(leader.b.y - selectedPhysicalFaceY) < 1e-6)
 })
 
 test('ADE-04B unknown position becomes a host-span obligation with no invented centre', () => {
