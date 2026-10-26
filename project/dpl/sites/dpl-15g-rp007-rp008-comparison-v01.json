@@ -31,7 +31,7 @@
         "state": "EXACT_APPLICATION_IDENTITY",
         "uprn": "10095497120",
         "proposal": "Erection of three terraced dwellings with associated landscaping, cycle/refuse storage and communal garden.",
-        "decisionState": "REFUSED_2026_01_23_CAPTURED_REGISTER",
+        "decisionState": "CONFLICTING_PUBLIC_DECISION_LABELS_NOT_USED",
         "decisionUse": "PROVENANCE_ONLY_NOT_CANDIDATE_READINESS"
       },
       "publicEvidence": [
@@ -67,6 +67,16 @@
             "The DTM remains explicitly below private measured topographic survey authority."
           ],
           "authorityBoundary": "Proves an admissible SCREENING source class, not that RP-007 terrain bytes have already been acquired."
+        },
+        {
+          "id": "15G-RP007-E04",
+          "sourceClass": "FIRST_PARTY_CROYDON_WEEKLY_DECISION_PUBLICATION",
+          "source": "Croydon Weekly Decisions 05.01.26 to 25.01.26",
+          "observed": [
+            "The first-party weekly decision publication places 25/03774/FUL under a Permission Granted heading with decision date 23 January 2026.",
+            "This conflicts with the captured register and other public surfaces that label the same application refused."
+          ],
+          "authorityBoundary": "The conflicting decision label is retained as a provenance conflict and is not consumed by candidate-readiness selection. Direct decision-notice inspection is required before any planning-outcome use."
         }
       ],
       "dispositions": {
@@ -141,7 +151,7 @@
   "selection": {
     "siteId": "DPL-RP-007",
     "result": "RP007_SELECTED_NEXT_NO_SPEND_CORPUS_EVIDENCE_TARGET",
-    "reason": "RP-007 currently has the stronger demonstrated evidence transport: exact application identity and UPRN plus a 29-document council-linked stack containing the classes needed to pursue geometry, orientation and terrain. Its steep topography is a deliberate corpus stress condition, not a reason to reject the site, and DPL already has an admissible EA DTM route for SCREENING datum evidence. The three-dwelling applicant scheme is not transferred; the next packet must prove that the full controlled parcel can support one independently authored Reference House experiment without parcel redefinition. RP-008 remains the cleaner one-house control but its decision-critical geometry document route is not yet demonstrated strongly enough to displace RP-007."
+    "reason": "RP-007 currently has the stronger demonstrated evidence transport: exact application identity and UPRN plus a 29-document council-linked stack containing the classes needed to pursue geometry, orientation and terrain. Its steep topography is a deliberate corpus stress condition, not a reason to reject the site, and DPL already has an admissible EA DTM route for SCREENING datum evidence. The three-dwelling applicant scheme is not transferred; the next packet must prove that the full controlled parcel can support one independently authored Reference House experiment without parcel redefinition. RP-008 remains the cleaner one-house control but its decision-critical geometry document route is not yet demonstrated strongly enough to displace RP-007. The conflicting public planning-decision labels for RP-007 are explicitly irrelevant to this selection."
   },
   "nextPacket": "DPL-15H — RP-007 bounded spatial-evidence acquisition and R1-R6 re-run",
   "proofBoundary": {
