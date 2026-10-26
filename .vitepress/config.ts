@@ -64,6 +64,10 @@ export default withMermaid(
     ],
 
     vite: {
+      optimizeDeps: {
+        // Mermaid imports these CommonJS modules from its browser ESM chunks.
+        include: ['fastdom', 'fastdom/extensions/fastdom-promised.js']
+      },
       define: {
         __SITE_BUILD_COMMIT__: JSON.stringify(buildCommit),
         __SITE_BUILD_TIMESTAMP__: JSON.stringify(buildTimestamp)
