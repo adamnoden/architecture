@@ -10,6 +10,10 @@ The pattern set records reusable architectural responses developed from the gove
 
 The current system contains **21 active patterns**, three strategies and four held candidates. It is not presented as a uniformly mature Alexander-style pattern language. Its strongest demonstrated generative structure is the service-topology sequence; other pattern families have useful relationships but remain less completely connected and sequenced.
 
+Christopher Alexander's pattern-language work and his later return to generative sequences are major antecedents to both the pattern form and the proposition that design order matters. Ovid's House does not claim those concepts. Its project-specific machinery is the typed separation of evidence maturity, language maturity, pattern identity, implementation, project occurrence, semantic representation and compiler authority: one layer is not allowed to silently promote another.
+
+Alexander's work was also used explicitly in a later red-team of this corpus, which helped narrow the project's pattern-language claim. The surviving record does not establish Alexander as the origin of the project's initial pattern system, so that later documented use should not be rewritten as an origin story.
+
 That asymmetry is deliberate evidence about maturity, not a graph-completion task. New edges or sequences should appear only when repeated design work demonstrates that they carry real generative knowledge.
 
 Pattern identity is independent from evidence maturity. A pattern can have a stable place in the set while still requiring calculation, prototype work or professional review.
