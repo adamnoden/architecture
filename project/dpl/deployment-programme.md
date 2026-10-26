@@ -2,10 +2,10 @@
 
 **Programme code:** DPL  
 **Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Current packet:** [#778 — DPL-T6](https://github.com/adamnoden/architecture/issues/778) — Lennard SCREENING frontier classification and architectural review  
-**Current real-control result:** `UNRESOLVED_AT_SCREENING_GENUINE_FRONTIER_CLASSIFIED`  
-**Next authorised packet:** **DPL-T7 — Lennard acceleration classification and public-evidence disposition**  
-**Programme maturity:** **M5 — the real-control SCREENING frontier is now explicitly classified; whole-site compatibility and evidence procurement remain unearned.**
+**Current packet:** [#806 — DPL-T7](https://github.com/adamnoden/architecture/issues/806) — Lennard acceleration classification and public-evidence disposition  
+**Current real-control result:** `ACCELERATION_FRONTIER_DISPOSED_NO_NEW_DUE_NOW_EVIDENCE`  
+**Next authorised packet:** **DPL-T8 — Lennard substantive SCREENING blocker disposition and minimum evidence packet**  
+**Programme maturity:** **M6 — acceleration uncertainty has been separated from genuine due-now substance; ten substantive blockers remain and evidence procurement is still unearned.**
 
 ## Purpose and governing rules
 
@@ -274,7 +274,7 @@ NON_CONFORMING                     = 0
 REQUIRES_REFERENCE_HOUSE_REVISION = 0
 ```
 
-The crucial interpretation is that **45 raw missing fields are not 45 SCREENING blockers**. T6 exists to apply the current owner authority to that low-level diagnostic set.
+The crucial interpretation is that **45 raw missing fields are not 45 SCREENING blockers**. T6 applies current owner authority to that low-level diagnostic set.
 
 #### T6 — SCREENING aggregation and architectural review
 
@@ -334,62 +334,132 @@ RH-PROT-08
 RH-PROT-14
 ```
 
-The fifteen due-classification blockers are the exact `::ACCELERATION_REVIEW` records. They are **classification instructions, not survey instructions**. T6 deliberately does not commission site evidence from them.
+The fifteen due-classification blockers are the exact `::ACCELERATION_REVIEW` records. They are **classification instructions, not survey instructions**.
 
 Result:
 
 `UNRESOLVED_AT_SCREENING_GENUINE_FRONTIER_CLASSIFIED`
 
-T6 does not emit `COMPATIBLE`, `INCOMPATIBLE`, route exhaustion, planning acceptability, engineering adequacy or a survey/consultant procurement list.
+#### T7 — acceleration classification and public-evidence disposition
 
-## Current gate — DPL-T6
+Executable proof:
 
-T6 answers its bounded question: it reduces the raw T5 diagnostic gaps to the exact current SCREENING frontier under existing authority.
+- `compiler/dpl/dplT7Lennard.ts`
+- `compiler/dpl/dplT7Lennard.test.ts`
+
+Decision and evidence records:
+
+- `project/dpl/dpl-t7-lennard-acceleration-disposition.md`
+- `project/dpl/sites/dpl-t-control-004-lennard-road-t7-public-screening-v01.json`
+
+T7 evaluates each of the fifteen T6 `::ACCELERATION_REVIEW` entries against its literal registered trigger. It refuses the inference `UNKNOWN → trigger activated`.
+
+Frozen identities:
+
+```text
+T7 result fingerprint
+  f326bf64e599b08099edd21160e8e6a7af79477fd76a1f72b3b445e587f3c88c
+
+public evidence fingerprint
+  091dccbc6b5da1e4a7888a96aa605c1b91c28d27dbd64d26506094282166163e
+
+planning coverage fingerprint
+  d740bc9ddde53055e68d9cae407b306c92d4ed8c5004a2a5e525a6f1b87b90fc
+
+non-planning coverage fingerprint
+  0d855806e818b4ddfe35e9a38b44278f6d041a7feeee795998b9dc5d0df8c615
+```
+
+Result counts:
+
+```text
+acceleration inputs                          = 15
+NO_POSITIVE_TRIGGER_FACT_ADMITTED            = 15
+FUTURE_DUE_OR_DOWNSTREAM                     = 12
+TRIGGER_NOT_ACTIVATED_AT_SCREENING           = 3
+new acceleration-driven due-now evidence     = 0
+remaining substantive blockers               = 10
+```
+
+The three non-activated acceleration records whose base families remain independently due now are:
+
+```text
+DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY
+DPL11-COV-ACCESS-STATUS
+DPL11-COV-PHYSICAL-FLOOD-WATER
+```
+
+The other twelve return to their registered future/downstream timing. In particular:
+
+- unknown legal-boundary precision is not a known boundary discrepancy;
+- unknown ground, rights, sewer or utility evidence is not a positive fatal constraint;
+- approximate public flood/heritage/ecology context cannot prove absence or manufacture a positive trigger;
+- Bromley parking/access acceleration remains unsupported while strategic/local temporal policy composition is unresolved.
+
+Result:
+
+`ACCELERATION_FRONTIER_DISPOSED_NO_NEW_DUE_NOW_EVIDENCE`
+
+## Current gate — DPL-T7
+
+T7 has answered the acceleration question. It reduces the active frontier from 25 T6 blockers to exactly ten substantive blockers without pretending those ten are already procurement instructions:
+
+```text
+REFERENCE_HOUSE:RH-PROT-08
+REFERENCE_HOUSE:RH-PROT-14
+ENGLAND:ENG-COV-SOURCE-APPLICABILITY
+PLANNING:DPL10-COV-EMERGING-POLICY-MATERIAL-WEIGHT
+PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY
+PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY
+PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY
+NON_PLANNING:DPL11-COV-ACCESS-STATUS
+NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER
+NON_PLANNING:DPL11-COV-SITE-CONTROL
+```
 
 It proves:
 
 ```text
-45 raw missing runtime inputs are not treated as 45 equal blockers
-16 architectural-review clauses are resolved by fresh exact-candidate review
-RH-PROT-08 / RH-PROT-14 remain due now
-RH-SI02 / RH-SI05 remain future-due
-25 post-review blockers remain
-15 of those are acceleration-classification questions
-no real claim is uncovered
-no site evidence has been commissioned
+15 / 15 acceleration predicates evaluated individually
+15 / 15 have no admitted positive trigger fact
+12 return to FUTURE_DUE / downstream timing
+3 add no evidence burden beyond their independently due base families
+0 new accelerated external-evidence requirements
+25 → 10 active blockers
+no site evidence commissioned
 ```
 
 It does not prove:
 
 ```text
+that future-due constraints are absent
 whole-site compatibility
 whole-site incompatibility
 route exhaustion
+planning acceptability
+engineering adequacy
 legal boundary position
 private rights
 measured topography
-foundation adequacy
-planning acceptability
-site-interface design
 ```
 
-## Next gate — DPL-T7
+## Next gate — DPL-T8
 
-> **Classify the exact fifteen Lennard `::ACCELERATION_REVIEW` records against present coverage authority and already-admitted or recoverable public evidence before commissioning anything; only evidence that survives that classification may become a due-now external acquisition requirement.**
+> **Take only the exact ten substantive blockers surviving T7; challenge their present SCREENING timing and resolve everything that can be resolved from authoritative existing project/public evidence before defining the minimum genuinely external evidence packet.**
 
-T7 must:
+T8 must:
 
-1. start from the exact T6 result fingerprint and 25-item blocker frontier;
-2. review each of the fifteen acceleration records individually;
-3. use already-admitted or recoverable public evidence where it is authoritative enough for SCREENING;
-4. classify each acceleration item as resolved/dismissed, genuinely due now, future-due/downstream, or unresolved pending external authority;
-5. reconcile directly coupled substantive blockers only where the same evidence legitimately earns it;
-6. produce a minimum surviving external-evidence frontier rather than a default consultant shopping list;
-7. preserve `RH-PROT-08` and `RH-PROT-14` unless competent evidence actually resolves them;
+1. bind to T7 result `f326bf64e599b08099edd21160e8e6a7af79477fd76a1f72b3b445e587f3c88c` and the exact ten-item frontier;
+2. distinguish a true current SCREENING blocker from a downstream project-event or later-design obligation;
+3. resolve authoritative England/planning source and policy questions internally where possible;
+4. evaluate the independent access-status, physical-flood/water and site-control blockers against authoritative public/project evidence;
+5. preserve `RH-PROT-08` and `RH-PROT-14` unless their current timing can be legitimately reclassified or competent evidence resolves them;
+6. output the **minimum surviving evidence classes**, bundling only where authority supports it;
+7. commission nothing in T8;
 8. preserve the Reference House unchanged;
 9. refuse `COMPATIBLE`, `INCOMPATIBLE` and route exhaustion.
 
-Only after T7 should DPL decide what, if anything, must actually be commissioned for the next real-control gate.
+Only after T8 should DPL authorise an actual evidence-acquisition packet, if any external evidence still survives.
 
 ## Frozen programme boundaries
 
@@ -407,7 +477,7 @@ accessible approach / threshold       = NOT_PROVED
 foul / surface-water solution         = NOT_PROVED
 utility approach / external plant     = NOT_PROVED
 planning acceptability                = NOT_PROVED
-site evidence commissioned by T6      = NO
+site evidence commissioned by T7      = NO
 COMPATIBLE @ SCREENING                = NOT_ADMITTED FOR REAL CONTROL
 whole-site INCOMPATIBLE               = NOT_ADMITTED
 route search / exhaustion             = NOT_IMPLEMENTED
@@ -418,7 +488,7 @@ DPL-18 final validation               = HELD
 
 ## Restart discipline
 
-Resume from this file, #778, `project/dpl/dpl-t6-lennard-screening-aggregation.md`, `project/dpl/dpl-t5-merge-state-replay.md`, the T3/T4/T5 artifacts under `project/dpl/sites/`, and the exact T6 deterministic output.
+Resume from this file, #806, `project/dpl/dpl-t7-lennard-acceleration-disposition.md`, `project/dpl/dpl-t6-lennard-screening-aggregation.md`, the T3/T4/T5 artifacts under `project/dpl/sites/`, and the exact T7 deterministic output.
 
 Every packet must preserve:
 
