@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "dpl.rp006ResidualRecovery.v1",
+  "packet": "DPL-15F",
+  "siteId": "DPL-RP-006",
+  "assuranceProfile": "SCREENING",
+  "researchDate": "2026-10-26",
+  "parent": {
+    "packet": "DPL-15E",
+    "mergeSha": "224c7cc838c658beb1b1463b3a0c0029827f4178",
+    "resultFingerprint": "54c9dc580265e2b74f0cb5fa6113da4a93503265a38e9c96046477f3d48e9d8f",
+    "record": "project/dpl/sites/dpl-rp-006-15e-spatial-preflight-v01.json"
+  },
+  "residualInputUniverse": [
+    "R1_CONTROLLED_SPATIAL_IDENTITY",
+    "R2_FOOTPRINT_TEST_GEOMETRY",
+    "R4_DATUM_LEVEL_EVIDENCE",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY"
+  ],
+  "recoveryAttempts": [
+    {
+      "id": "15F-A01",
+      "targetDimensions": ["R1_CONTROLLED_SPATIAL_IDENTITY", "R2_FOOTPRINT_TEST_GEOMETRY"],
+      "sourceClass": "GOVERNMENT_TITLE_INDEX_API",
+      "source": "Planning Data / HM Land Registry title-boundary dataset",
+      "route": "entity.json spatial query at exact RP-006 WGS84 point derived from BNG 544654,179561",
+      "outcome": "ROUTE_CONFIRMED_EXACT_RESPONSE_BYTES_NOT_ACQUIRED",
+      "authorityBoundary": "Dataset/route authority is established, but no exact intersecting RP-006 title entity or polygon bytes were retained. Route discovery is not spatial evidence. Any future title-index polygon remains indicative registered-property extent, not a determined legal boundary."
+    },
+    {
+      "id": "15F-A02",
+      "targetDimensions": ["R1_CONTROLLED_SPATIAL_IDENTITY", "R2_FOOTPRINT_TEST_GEOMETRY", "R5_PHYSICAL_ACCESS_STREET_GEOMETRY"],
+      "sourceClass": "EXACT_SITE_PLANNING_DRAWING_RECOVERY",
+      "source": "25/3755/F location/site-arrangement drawing lineage and embedded Enclosure Architects (P)02 Rev A Site Plan & Landscape",
+      "route": "direct planning-document bytes / embedded drawing recovery",
+      "outcome": "SCALED_DRAWING_EXISTENCE_AND_TEXT_INDEXED_BYTES_NOT_ACQUIRED_FOR_CONTROLLED_GEOMETRY",
+      "authorityBoundary": "A 1:100 @ A3 exact-site planning drawing is evidenced, but the current retrieval environment did not provide inspectable original/vector geometry. No screenshot/raster-pixel measurement is admitted. Applicant-house dimensions remain non-transferable to the Reference House."
+    },
+    {
+      "id": "15F-A03",
+      "targetDimensions": ["R4_DATUM_LEVEL_EVIDENCE"],
+      "sourceClass": "ENVIRONMENT_AGENCY_LIDAR_WCS",
+      "source": "Environment Agency LiDAR Composite DTM 1 m",
+      "route": "WCS GetCoverage for EPSG:27700 subset around BNG 544654,179561",
+      "outcome": "OFFICIAL_ROUTE_AND_COVERAGE_ID_CONFIRMED_RASTER_BYTES_NOT_ACQUIRED",
+      "authorityBoundary": "The official DTM source/CRS/ODN route is known, but exact RP-006 raster bytes were not retained. Service discovery cannot become a site datum."
+    },
+    {
+      "id": "15F-A04",
+      "targetDimensions": ["R4_DATUM_LEVEL_EVIDENCE"],
+      "sourceClass": "EXACT_SITE_TECHNICAL_REPORT_APPROXIMATE_LEVEL",
+      "source": "Contaminated Land Risk Assessment PH1-2025-000093",
+      "route": "exact-site report text",
+      "outcome": "NUMERIC_APPROXIMATE_LEVEL_RECOVERED_AUTHORITY_INSUFFICIENT_FOR_R4",
+      "observed": [
+        "Report summary states site elevation approximately 5.0 mAOD.",
+        "Report later identifies Google Earth as the source for the general 5.0 mAOD site level.",
+        "The report states that a site walkover was not undertaken and photographs were taken from Google Maps."
+      ],
+      "authorityBoundary": "This narrows the expected terrain datum but is not controlled topographic/EA terrain evidence sufficient to author the Reference House ground relation under the existing DPL-15 readiness contract."
+    },
+    {
+      "id": "15F-A05",
+      "targetDimensions": ["R5_PHYSICAL_ACCESS_STREET_GEOMETRY"],
+      "sourceClass": "EXACT_SITE_DESIGN_ACCESS_TEXT",
+      "source": "50A Camelot Close Design & Access Statement",
+      "route": "indexed exact-site planning statement",
+      "outcome": "PHYSICAL_APPROACH_CONTEXT_IMPROVED_PLACEMENT_GEOMETRY_STILL_NOT_CONTROLLED",
+      "observed": [
+        "Proposal describes level front-door access via a gently sloping garden path at 1:100.",
+        "Eight-space parking area is described immediately adjacent at the Camelot Close turning head.",
+        "Statement says the site is not subject to a public right of way and there will be no public access."
+      ],
+      "authorityBoundary": "Proposal-specific access/context evidence does not by itself bind the gate/path/turning-head relationship to controlled RP-006 placement geometry, resolve adopted-highway overlap, or establish private access rights."
+    },
+    {
+      "id": "15F-A06",
+      "targetDimensions": ["R1_CONTROLLED_SPATIAL_IDENTITY", "R2_FOOTPRINT_TEST_GEOMETRY", "R5_PHYSICAL_ACCESS_STREET_GEOMETRY"],
+      "sourceClass": "AUCTION_LEGAL_PACK_ROUTE",
+      "source": "Auction House London Lot 205 — Land Adjacent to 50 Camelot Close",
+      "route": "public auction lot legal-pack link/search",
+      "outcome": "LEGAL_PACK_EXISTENCE_CONFIRMED_CONTROLLED_PACK_BYTES_NOT_ACQUIRED",
+      "authorityBoundary": "Auction listing identifies a legal pack but also expressly warns that its displayed plan/measurements are indicative and that some/all of the plot may comprise adopted highway. The listing is not promoted to controlled placement geometry."
+    }
+  ],
+  "readiness": [
+    {
+      "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15F-A01", "15F-A02", "15F-A06"],
+      "reason": "No placement-ready application/title polygon or equivalent controlled boundary geometry has been acquired. Exact site identity and source routes remain insufficient to define the placement extent."
+    },
+    {
+      "dimension": "R2_FOOTPRINT_TEST_GEOMETRY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15F-A01", "15F-A02", "15F-A06"],
+      "reason": "The exact-site 1:100 planning drawing and approximate site areas are evidenced, but no controlled boundary shape/dimensions have been acquired in a form that can test the unchanged 12.0 m x 10.8 m Reference House without pixel measurement or applicant-house substitution."
+    },
+    {
+      "dimension": "R3_REAL_ORIENTATION_FRAME",
+      "state": "SATISFIED",
+      "evidenceRefs": ["DPL-15E"],
+      "reason": "Inherited unchanged from DPL-15E: exact-site BNG centre and north-referenced mapping provide a real SCREENING frame."
+    },
+    {
+      "dimension": "R4_DATUM_LEVEL_EVIDENCE",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15F-A03", "15F-A04"],
+      "reason": "The exact-site report narrows general level to approximately 5.0 mAOD but explicitly derives it from Google Earth and had no site walkover. Exact EA DTM/survey terrain bytes remain unacquired, so the existing DPL-15 datum threshold is not met."
+    },
+    {
+      "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15F-A02", "15F-A05", "15F-A06"],
+      "reason": "The garden-path/turning-head relationship is materially evidenced, but it is not yet bound to controlled placement geometry and the possible adopted-highway overlap remains unresolved. Physical context is not silently upgraded to placement/access geometry or private rights."
+    },
+    {
+      "dimension": "R6_SITE_IDENTITY_COHERENCE",
+      "state": "SATISFIED",
+      "evidenceRefs": ["DPL-15E"],
+      "reason": "Inherited unchanged from DPL-15E: exact application and technical/supporting evidence identify the same land adjacent to 50 Camelot Close."
+    }
+  ],
+  "satisfiedDimensions": [
+    "R3_REAL_ORIENTATION_FRAME",
+    "R6_SITE_IDENTITY_COHERENCE"
+  ],
+  "residualDimensions": [
+    "R1_CONTROLLED_SPATIAL_IDENTITY",
+    "R2_FOOTPRINT_TEST_GEOMETRY",
+    "R4_DATUM_LEVEL_EVIDENCE",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY"
+  ],
+  "candidateAuthoringReady": false,
+  "sourceConflict": false,
+  "nextCorpusComparison": [
+    "DPL-RP-007",
+    "DPL-RP-008"
+  ],
+  "result": "RP006_NOT_READY_RESIDUAL_PUBLIC_GEOMETRY_DATUM_BOUNDARY",
+  "proofBoundary": {
+    "referenceHouseCandidate": "NOT_AUTHORISED",
+    "referenceHouseMutation": "PROHIBITED",
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "dpl16": "HELD",
+    "externalSpend": "NONE"
+  }
+}
