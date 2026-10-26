@@ -1,0 +1,48 @@
+name: Prove ADE composed dimension capability
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'publication/specimens/ade06a/**'
+      - '.github/workflows/ade-dimension-composition.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ade-dimension-composition-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Prove ADE semantic contracts
+        run: npm run test:architectural-drawing
+      - name: Generate exact-size dimension proof
+        run: npx tsx publication/specimens/ade06a/generate.ts
+      - name: Validate dimension composition and scale
+        run: npx tsx publication/specimens/ade06a/validate.ts
+      - name: Upload dimension proof
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ade-06a-composed-dimensions
+          path: |
+            publication/specimens/ade06a/.work/ade06a-dimensions-1-100.svg
+            publication/specimens/ade06a/.work/ade06a-dimensions-1-50.svg
+            publication/specimens/ade06a/.work/manifest.json
+          if-no-files-found: error
+          retention-days: 30
