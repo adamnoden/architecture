@@ -1035,8 +1035,8 @@
     },
     {
       "source": "publication/plates.ts",
-      "reviewSha256": "8797c2aee26a1c6c08543115a831a7c5d192b5b7fae24eba5baf8ddf7e72b4b7",
-      "disposition": "Descriptive caption text and claim limits retained. Heading-based placement anchors moved after their opening explanatory paragraph to prevent headings being stranded before full-page plates; drawing assets, scales, plate classes and membership unchanged."
+      "reviewSha256": "4e175b16bf09e120ac0a82b0c86b068a2b7b12e420e0462243dba80aa5b5261d",
+      "disposition": "Caption text reviewed; descriptive labels, scales, bounded qualifications and the frozen drawing register retained. Production heading/paragraph placement is repaired in publication/scripts/typography.ts, without altering this frozen source."
     }
   ]
 }

@@ -275,7 +275,7 @@ EDA is an editorial assurance gate, not evidence that the architecture itself is
 
 ## 8. Current execution state
 
-Source review, contextual candidate dispositions, whole-book recurrence and the adversarial pass are complete. EDA-08 is checking fresh A4, conservative B5 and Primer proofs after the final source repairs. The page reviews identified and repaired an empty numbered front-matter marker page, a one-sentence chapter ending isolated on a nearly empty page, and Part IV headings stranded before full-page plates. Heading-based plate anchors now follow the opening explanatory paragraph; drawings, scales and plate classes are unchanged. Final proof identities and acceptance follow only after rerendering and inspection.
+Source review, contextual candidate dispositions, whole-book recurrence and the adversarial pass are complete. EDA-08 is checking fresh A4, conservative B5 and Primer proofs after the final source repairs. The page reviews identified and repaired an empty numbered front-matter marker page, a one-sentence chapter ending isolated on a nearly empty page, and Part IV headings stranded before full-page plates. The production typography adapter keeps plate headings with their opening explanatory paragraph. The DRW freeze check identified the plate register as frozen: that register was restored unchanged and the repair belongs to the existing production-layout adapter. Drawings, scales, plate classes and frozen pins are unchanged. Final proof identities and acceptance follow only after rerendering and inspection.
 
 ### Execution environment and validation
 
