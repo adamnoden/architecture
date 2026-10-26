@@ -2,9 +2,9 @@ import { createHash } from 'node:crypto'
 import { mkdir, rm, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
-import type { DrawingPrimitive, DrawingScene, DrawingText } from '../../../compiler/publication-drawing/model.js'
+import type { DrawingPrimitiveV2, DrawingSceneV2, DrawingText } from '../../../compiler/publication-drawing-v2/model.js'
+import { renderDrawingSceneV2Svg } from '../../../compiler/publication-drawing-v2/svg.js'
 import { createPlanPaperProjection } from '../../../compiler/publication-drawing/projection.js'
-import { renderDrawingSceneSvg } from '../../../compiler/publication-drawing/svg.js'
 import { mm } from '../../../compiler/units.js'
 import type {
   AdeArchitecturalPlan,
@@ -132,8 +132,8 @@ const regionBounds = (rings: readonly (readonly { x: number; y: number }[])[]) =
   }
 }
 
-const sceneForScale = (scaleDenominator: number): DrawingScene => {
-  const primitives: DrawingPrimitive[] = [
+const sceneForScale = (scaleDenominator: number): DrawingSceneV2 => {
+  const primitives: DrawingPrimitiveV2[] = [
     label('sheet-title', 20, 13, `ADE-02 — joined wall topology capabilities — 1:${scaleDenominator}`, 'label'),
     label('sheet-note', 20, 19, 'One semantic wall network → one joined vector region. No internal rectangle seams.', 'note')
   ]
@@ -197,7 +197,7 @@ await mkdir(workRoot, { recursive: true })
 
 const outputs: Record<string, string> = {}
 for (const scale of [100, 50] as const) {
-  const svg = renderDrawingSceneSvg(sceneForScale(scale))
+  const svg = renderDrawingSceneV2Svg(sceneForScale(scale))
   const name = `ade02-wall-topology-1-${scale}.svg`
   outputs[name] = svg
   await writeFile(resolve(workRoot, name), svg, 'utf8')
@@ -206,6 +206,8 @@ for (const scale of [100, 50] as const) {
 const manifest = {
   schemaVersion: 1,
   packet: 'ADE-02',
+  terminalIr: 'publication-drawing-v2',
+  protectedV1Mutation: false,
   pageMm: { width: PAGE_WIDTH, height: PAGE_HEIGHT },
   scales: [100, 50],
   capabilities: fixtures.map(({ id, label: fixtureLabel }) => ({ id, label: fixtureLabel })),
@@ -215,4 +217,4 @@ const manifest = {
 }
 await writeFile(resolve(workRoot, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
 
-console.log('Prepared ADE-02 exact-size wall topology capability sheets at 1:100 and 1:50.')
+console.log('Prepared ADE-02 exact-size wall topology capability sheets at 1:100 and 1:50 through publication-drawing-v2.')
