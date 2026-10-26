@@ -133,7 +133,9 @@ const canonicalReview = (review: ArchitecturalReviewRecordInput): ArchitecturalR
   }
 }
 
-const canonicalLedger = (input: ArchitecturalReviewLedgerInput): ArchitecturalReviewLedger => {
+export const createArchitecturalReviewLedger = (
+  input: ArchitecturalReviewLedgerInput
+): ArchitecturalReviewLedger => {
   if (input.schemaVersion !== DPL13E_REVIEW_SCHEMA_VERSION) {
     throw new Error(`DPL-13E review ledger must use ${DPL13E_REVIEW_SCHEMA_VERSION}.`)
   }
@@ -150,7 +152,7 @@ const canonicalLedger = (input: ArchitecturalReviewLedgerInput): ArchitecturalRe
   requireNonEmpty(input.dpl02AuthorityFingerprint, 'DPL-13E DPL-02 authority fingerprint')
   requireNonEmpty(input.reviewer.identity, 'DPL-13E reviewer identity')
   requireNonEmpty(input.reviewer.role, 'DPL-13E reviewer role')
-  requireNonEmpty(input.reviewer.authorityBasis, 'DPL-13E reviewer authority basis')
+  requireNonEmpty(input.reviewer.authorityBasis, 'DPL-13E reviewer authorityBasis')
   requireNonEmpty(input.reviewer.authoredAt, 'DPL-13E reviewer authoredAt')
 
   const expectedScope = architecturalReviewClauseIds()
@@ -261,33 +263,41 @@ const applyReviewRecord = (
   }
 }
 
-export const composeDPL13EArchitecturalReview = (
-  input: ArchitecturalReviewLedgerInput,
-  fixture: DPL13DSecondFixtureResult = composeDPL13DSecondFixture()
-): DPL13EArchitecturalReviewResult => {
-  const ledger = canonicalLedger(input)
-  assertLedgerBinding(ledger, fixture)
-
-  const readiness = fixture.readiness as unknown as ScreeningCoverageReadinessResult
-  const baseRecords = buildScreeningAggregationRecords(fixture.canonicalCase, readiness)
+export const applyArchitecturalReviewLedger = (
+  records: readonly ScreeningAggregationRecord[],
+  ledger: ArchitecturalReviewLedger
+): ScreeningAggregationRecord[] => {
   const reviews = new Map(ledger.reviews.map((review) => [review.clauseId, review]))
-  const records = baseRecords.map((record) => {
-    if (record.owner !== 'REFERENCE_HOUSE') return record
+  return records.map((record) => {
+    if (record.owner !== 'REFERENCE_HOUSE') return { ...record }
     const review = reviews.get(record.ownerEntryId)
-    if (!review) return record
+    if (!review) return { ...record }
     if (record.sourceKind !== 'CANDIDATE_CONFORMANCE') {
       throw new Error(`DPL-13E expected ${record.ownerEntryId} to remain a candidate-conformance record.`)
     }
     return applyReviewRecord(record, review, ledger)
   })
+}
+
+export const composeDPL13EArchitecturalReview = (
+  input: ArchitecturalReviewLedgerInput,
+  fixture: DPL13DSecondFixtureResult = composeDPL13DSecondFixture()
+): DPL13EArchitecturalReviewResult => {
+  const ledger = createArchitecturalReviewLedger(input)
+  assertLedgerBinding(ledger, fixture)
+
+  const readiness = fixture.readiness as unknown as ScreeningCoverageReadinessResult
+  const baseRecords = buildScreeningAggregationRecords(fixture.canonicalCase, readiness)
+  const records = applyArchitecturalReviewLedger(baseRecords, ledger)
+  const reviewedClauseIds = ledger.reviews.map((review) => review.clauseId)
+  const reviewIds = new Set(reviewedClauseIds)
+  const pendingClauseIds = ledger.reviewScopeClauseIds.filter((id) => !reviewIds.has(id))
 
   const aggregation = composeScreeningSubstantiveAggregation({
     canonicalCase: fixture.canonicalCase,
     readiness,
     records
   })
-  const reviewedClauseIds = ledger.reviews.map((review) => review.clauseId)
-  const pendingClauseIds = ledger.reviewScopeClauseIds.filter((id) => !reviews.has(id))
   const proofBoundary = {
     humanAuthoredReview: true as const,
     nativeArchitecturalJudgement: 'NOT_IMPLEMENTED' as const,
