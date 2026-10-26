@@ -311,9 +311,9 @@ export const workstreamStatuses = [
     maturity: 'M4',
     reviewedOn: '2026-10-26',
     currentState:
-      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. PLT v2 is open but its previous ground-plan candidate is no longer eligible for final physical acceptance: ADE must first repair the architectural representation layer. ADE-03B advances the layered wall grammar without freezing print tokens.',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. PLT v2 remains open but its previous ground-plan candidate is not eligible for final physical acceptance. ADE-04A and ADE-04B are merged: wall openings now use true topology subtraction and the opening-precision/uncertainty grammar is capability-proved without freezing print tokens.',
     nextGate:
-      'Execute ADE-04 opening subtraction and uncertainty grammar; complete capability and physical proof before ADE-07 migrates the Reference House ground plan and restarts PLT-03 physical review. PR-02 production preparation may consume the accepted typography contract, but final private-object manufacture waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
+      'Resolve ADE-05 internal-partition authority and partition/adjacency representation, then complete ADE-06 capability/physical proof before ADE-07 migrates the Reference House ground plan and restarts PLT-03 physical review. PR-02 production preparation may consume the accepted typography contract, but final private-object manufacture waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
@@ -327,6 +327,7 @@ export const workstreamStatuses = [
         'docs/publication/publication-typography-v1-release.md',
         'docs/publication/architectural-drawing-engine-ade00-audit.md',
         'docs/publication/architectural-drawing-engine-ade03b-wall-grammar.md',
+        'docs/publication/architectural-drawing-engine-ade04b-opening-uncertainty.md',
         'publication/pr01-r7-findings-freeze.md',
         'publication/pr01-r9-reproof-refreeze.md',
         'docs/publication/resolved-work-sanitation-closeout.md',
@@ -402,9 +403,9 @@ export const workstreamStatuses = [
     maturity: 'M2',
     reviewedOn: '2026-10-26',
     currentState:
-      'DEL frames coordination of the existing implementation brief, maintenance and human-factors modules; GitHub umbrella creation remains pending API access. N17 carries finished-interface verification into RIBA 3/4 as appropriate, while delivery requirements remain intentionally incomplete and evidence-dependent.',
+      'DEL frames coordination of the existing implementation brief, maintenance and human-factors modules under GitHub umbrella #854. N17 carries finished-interface verification into RIBA 3/4 as appropriate, while delivery requirements remain intentionally incomplete and evidence-dependent.',
     nextGate:
-      'Check existing issue coverage and establish the DEL umbrella, then inventory requirement readiness, responsible disciplines, stage gates and evidence dependencies. Populate modules only as architectural, DPL, professional-review and physical-validation decisions mature; retain manufacturing strategy as guidance unless a concrete assembly earns delivery work.',
+      'Use DEL #854 to inventory requirement readiness, responsible disciplines, stage gates and evidence dependencies. Populate modules only as architectural, DPL, professional-review and physical-validation decisions mature; retain manufacturing strategy as guidance unless a concrete assembly earns delivery work.',
     evidence: {
       framed: ['docs/delivery/README.md', 'project/del/delivery-programme.md'],
       developed: [
