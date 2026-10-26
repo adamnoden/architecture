@@ -27,7 +27,7 @@ test('publication-drawing-v2 is byte-identical to frozen v1 for the v1 primitive
   assert.equal(renderDrawingSceneV2Svg(v2), renderDrawingSceneSvg(v1))
 })
 
-test('publication-drawing-v2 serializes multiple closed rings as one even-odd vector region', () => {
+test('publication-drawing-v2 serializes multiple closed rings as one even-odd vector region with composable fill and outline', () => {
   const scene: DrawingSceneV2 = {
     widthMm: 100,
     heightMm: 100,
@@ -53,9 +53,15 @@ test('publication-drawing-v2 serializes multiple closed rings as one even-odd ve
 
   const svg = renderDrawingSceneV2Svg(scene)
   assert.match(svg, /<path d="M 10 10 L 90 10 L 90 90 L 10 90 Z M 30 30 L 30 70 L 70 70 L 70 30 Z" fill-rule="evenodd"/)
-  assert.match(svg, /class="line-profile fill-faint"/)
+  assert.match(svg, /class="line-profile fill-faint path-stroke-profile"/)
+  assert.match(svg, /\.path-stroke-profile\{stroke:#000000;stroke-width:0\.35;stroke-linecap:butt;stroke-linejoin:miter\}/)
   assert.match(svg, /data-holeCount="1" data-topology="joined"/)
   assert.equal((svg.match(/<path /g) ?? []).length, 1)
+})
+
+test('publication-drawing-v2 does not append path-only CSS to a legacy scene', () => {
+  const v2: DrawingSceneV2 = { ...legacyScene(), primitives: [...legacyScene().primitives] }
+  assert.doesNotMatch(renderDrawingSceneV2Svg(v2), /path-stroke-/)
 })
 
 test('publication-drawing-v2 rejects degenerate path rings', () => {

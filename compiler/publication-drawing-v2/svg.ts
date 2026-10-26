@@ -64,10 +64,12 @@ const renderPath = (node: DrawingPath): string => {
     points.push('Z')
     return points.join(' ')
   }).join(' ')
+  const hasFill = Boolean(node.fill && node.fill !== 'none')
   const className = classes(
     node.stroke && `line-${node.stroke}`,
     node.dash && node.dash !== 'none' && `dash-${node.dash}`,
-    fillClass(node.fill)
+    fillClass(node.fill),
+    node.stroke && hasFill && `path-stroke-${node.stroke}`
   )
   const classAttribute = className ? ` class="${className}"` : ''
   return `<path d="${d}" fill-rule="evenodd"${classAttribute} ${primitiveAttributes(node)}/>`
@@ -90,7 +92,7 @@ const renderPrimitive = (primitive: DrawingPrimitiveV2): string => {
   }
 }
 
-const style = (tokens: PublicationDrawingTokens): string => {
+const style = (tokens: PublicationDrawingTokens, needsPathStrokeFillOverride: boolean): string => {
   const lines = Object.entries(tokens.lineMm)
     .map(([role, width]) => `.line-${role}{stroke:${tokens.ink.primary};stroke-width:${formatDrawingNumberV2(width)};fill:none;stroke-linecap:butt;stroke-linejoin:miter}`)
     .join('')
@@ -100,7 +102,16 @@ const style = (tokens: PublicationDrawingTokens): string => {
   const dash = Object.entries(tokens.dashMm)
     .map(([role, values]) => `.dash-${role}{stroke-dasharray:${values.map(formatDrawingNumberV2).join(' ')}}`)
     .join('')
-  return `${lines}${text}${dash}.fill-paper{fill:${tokens.ink.paper};stroke:none}.fill-ink{fill:${tokens.ink.primary};stroke:none}.fill-context{fill:${tokens.ink.context};stroke:none}.fill-faint{fill:${tokens.ink.faint};stroke:none}`
+  const legacyFillClasses = `.fill-paper{fill:${tokens.ink.paper};stroke:none}.fill-ink{fill:${tokens.ink.primary};stroke:none}.fill-context{fill:${tokens.ink.context};stroke:none}.fill-faint{fill:${tokens.ink.faint};stroke:none}`
+  // Frozen v1 fill classes deliberately force stroke:none. V2 preserves those
+  // bytes for legacy primitives and appends a path-only override only when a
+  // new DrawingPath explicitly asks for both fill and outline.
+  const pathStrokeOverrides = needsPathStrokeFillOverride
+    ? Object.entries(tokens.lineMm)
+        .map(([role, width]) => `.path-stroke-${role}{stroke:${tokens.ink.primary};stroke-width:${formatDrawingNumberV2(width)};stroke-linecap:butt;stroke-linejoin:miter}`)
+        .join('')
+    : ''
+  return `${lines}${text}${dash}${legacyFillClasses}${pathStrokeOverrides}`
 }
 
 export const renderDrawingSceneV2SvgWithTokens = (
@@ -118,6 +129,9 @@ export const renderDrawingSceneV2SvgWithTokens = (
         return `data-scale-denominator="${formatDrawingNumberV2(scene.scaleDenominator)}"`
       })()
 
+  const needsPathStrokeFillOverride = scene.primitives.some((primitive) =>
+    primitive.kind === 'path' && Boolean(primitive.stroke) && Boolean(primitive.fill && primitive.fill !== 'none')
+  )
   const header = `<svg xmlns="http://www.w3.org/2000/svg" width="${formatDrawingNumberV2(scene.widthMm)}mm" height="${formatDrawingNumberV2(scene.heightMm)}mm" viewBox="0 0 ${formatDrawingNumberV2(scene.widthMm)} ${formatDrawingNumberV2(scene.heightMm)}" role="img" aria-labelledby="title desc" data-view-id="${escapeXml(scene.viewId)}" data-source-id="${escapeXml(scene.sourceId)}" ${scaleAttribute}>`
   const primitives = scene.primitives.map(renderPrimitive)
 
@@ -125,7 +139,7 @@ export const renderDrawingSceneV2SvgWithTokens = (
     header,
     `<title id="title">${escapeXml(scene.title)}</title>`,
     `<desc id="desc">${escapeXml(scene.description)}</desc>`,
-    `<style>${style(tokens)}</style>`,
+    `<style>${style(tokens, needsPathStrokeFillOverride)}</style>`,
     ...primitives,
     '</svg>',
     ''
