@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'node:fs'
+import { readdirSync, readFileSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import type { DefaultTheme } from 'vitepress'
 
@@ -8,355 +8,109 @@ const group = (
   items: DefaultTheme.SidebarItem[],
   collapsed = true
 ): DefaultTheme.SidebarItem => ({ text, items, collapsed })
-const section = (
-  text: string,
-  link: string,
-  items: DefaultTheme.SidebarItem[] = [],
-  collapsed = false
-): DefaultTheme.SidebarItem => ({ text, link, items, collapsed })
-
-const startSidebar: DefaultTheme.SidebarItem[] = [
-  group('Start here', [
-    page('Project overview', '/'),
-    page('Reading guide', '/docs/reading-guide')
-  ], false)
-]
 
 const manuscriptSidebar: DefaultTheme.SidebarItem[] = [
-  group('Architectural argument', [
-    page('Manuscript overview', '/docs/manuscript/'),
-    page('Preface', '/docs/manuscript/preface'),
-    page("Reader's Guide", '/docs/manuscript/readers-guide'),
-    section('Part I — The Proposition', '/docs/manuscript/part-i', [
-      page('Eleven governing principles', '/docs/manuscript/governing-principles'),
-      page('Principle 8 — Design for Repose', '/docs/manuscript/principle-08-repose')
-    ]),
-    section('Part II — Architecture of the Platform', '/docs/manuscript/part-ii', [
-      page('Maintenance Geography — The Exterior', '/docs/manuscript/maintenance-geography-external')
-    ]),
-    page('Part III — Pattern Language', '/docs/patterns/'),
-    page('Part IV — Reference House', '/docs/manuscript/part-iv'),
-    page('Part V — Making and Testing the Platform', '/docs/manuscript/part-v'),
-    group('Back matter', [
-      page('Evidence and precedent notes', '/docs/manuscript/evidence-and-precedent-notes'),
-      page('Legacy doctrine register crosswalk', '/docs/manuscript/doctrine-register-crosswalk'),
-      page('Research agenda', '/docs/manuscript/research-agenda'),
-      page('Reference House implementation schedule', '/docs/manuscript/reference-house-implementation-schedule'),
-      page('Glossary', '/docs/manuscript/glossary'),
-      page('Sources and further reading', '/docs/manuscript/sources-and-further-reading')
-    ]),
-    group('Structure & reference', [
-      page('Publication architecture', '/docs/manuscript/publication-architecture'),
-      page('Publication credibility & release', '/docs/manuscript/publication-credibility-release-programme'),
-      page('PR-00 candidate-book freeze programme', '/docs/manuscript/pr00-candidate-book-freeze-programme'),
-      page('PR-00 candidate-book ledger', '/docs/manuscript/pr00-candidate-book-ledger'),
-      page('PR-00C authority / claim / evidence reconciliation', '/docs/manuscript/pr00c-authority-claim-evidence-reconciliation')
-    ])
+  group('Manuscript', [
+    page('Architectural argument', '/docs/manuscript/'),
+    page('Preface', '/docs/manuscript/00-preface'),
+    page('Part I — The Problem', '/docs/manuscript/01-the-problem'),
+    page('Part II — Principles', '/docs/manuscript/02-principles'),
+    page('Part III — Architectural Consequences', '/docs/manuscript/03-architectural-consequences'),
+    page('Part IV — Reference House', '/docs/manuscript/04-reference-house'),
+    page('Part V — Delivery', '/docs/manuscript/05-delivery')
   ], false)
 ]
 
 const patternsSidebar: DefaultTheme.SidebarItem[] = [
   group('Pattern language', [
-    page('Pattern overview', '/docs/patterns/'),
-    page('Language model & authoring contract', '/docs/patterns/language-model'),
-    page('Service-topology generative sequence', '/docs/patterns/service-topology-sequence')
-  ], false),
-  group('Canonical patterns', [
-    group('A · Service geography & distribution', [
-      page('Controlled Utility Entry', '/docs/patterns/controlled-utility-entry'),
-      page('Plant Room as Service Hub', '/docs/patterns/plant-room-service-hub'),
-      page('Accessible Vertical Service Zone', '/docs/patterns/accessible-vertical-service-zone'),
-      page('Coherent Horizontal Service Route', '/docs/patterns/coherent-horizontal-service-route'),
-      page('Accessible Room Service Route', '/docs/patterns/accessible-room-service-route'),
-      page('High-Service-Room Service Wall', '/docs/patterns/high-service-room-service-wall'),
-      page('Designed Structural Penetration', '/docs/patterns/designed-structural-penetration'),
-      page('Compartmented Service Void', '/docs/patterns/compartmented-service-void')
-    ], false),
-    group('B · Water, leakage & failure', [
-      page('Visible Leakage Path', '/docs/patterns/visible-leakage-path'),
-      page('Failure-Tolerant Wet Service Room', '/docs/patterns/failure-tolerant-wet-service-room'),
-      page('Accessible Rainwater Route', '/docs/patterns/accessible-rainwater-route')
-    ]),
-    group('C · Openings, movement & attachment', [
-      page('Permanent Opening / Replaceable Window', '/docs/patterns/permanent-opening-replaceable-window'),
-      page('Permanent Opening / Replaceable Door', '/docs/patterns/permanent-opening-replaceable-door'),
-      page('Designed Threshold', '/docs/patterns/designed-threshold'),
-      page('Movement / Slip Junction', '/docs/patterns/movement-slip-junction'),
-      page('Controlled Attachment Plane', '/docs/patterns/controlled-attachment-plane')
-    ]),
-    group('D · Environment & external maintenance', [
-      page('Source-Capture Kitchen Extract', '/docs/patterns/source-capture-kitchen-extract'),
-      page('Source-Capture Bathroom Extract', '/docs/patterns/source-capture-bathroom-extract'),
-      page('Roof Maintenance Route', '/docs/patterns/roof-maintenance-route'),
-      page('Ground-Supported Façade Access', '/docs/patterns/ground-supported-facade-access')
-    ]),
-    group('E · Stewardship', [
-      page('Physical Service Index', '/docs/patterns/physical-service-index')
-    ])
-  ], false),
-  group('Strategies', [
-    page('Strategy overview', '/docs/patterns/strategies/'),
-    page('Fail-Safe Water Distribution', '/docs/patterns/strategies/fail-safe-water-distribution'),
-    page('Decompose Structural Interface Functions', '/docs/patterns/strategies/decompose-structural-interface-functions'),
-    page('Separate Structural Floor from Changeable Layers', '/docs/patterns/strategies/separate-structural-floor-changeable-layers')
-  ]),
-  group('Held candidates', [
-    page('Candidate overview', '/docs/patterns/candidates/'),
-    page('Replaceable Architectural Lining', '/docs/patterns/candidates/replaceable-architectural-lining'),
-    page('Individually Isolatable Manifold Distribution', '/docs/patterns/candidates/individually-isolatable-manifold-distribution'),
-    page('Local Deep Service Zone', '/docs/patterns/candidates/local-deep-service-zone'),
-    page('Selective Floor Access', '/docs/patterns/candidates/selective-floor-access')
-  ]),
-  group('Retired identities', [
-    page('Retired pattern overview', '/docs/patterns/retired/'),
-    page('Water-Damage-Safe Service Route', '/docs/patterns/retired/hsa-p-006-water-damage-safe-service-route')
-  ]),
-  group('History & provenance', [
-    page('Core 12 — legacy aggregate', '/docs/patterns/core-12'),
-    page('Reversible assembly candidates — legacy aggregate', '/docs/patterns/reversible-assembly-candidates'),
-    page('Accessible Vertical Service Zone — pre-admission candidate', '/docs/patterns/candidates/accessible-vertical-service-zone'),
-    group('Service-topology pilot', [
-      page('Pilot index', '/docs/patterns/pilot/'),
-      page('Controlled Utility Entry', '/docs/patterns/pilot/controlled-utility-entry'),
-      page('Plant Room as Service Hub', '/docs/patterns/pilot/plant-room-service-hub'),
-      page('Horizontal Service Spine', '/docs/patterns/pilot/horizontal-service-spine'),
-      page('High-Service-Room Service Wall', '/docs/patterns/pilot/high-service-room-service-wall'),
-      page('Designed Structural Penetration', '/docs/patterns/pilot/designed-structural-penetration'),
-      page('Physical Service Index', '/docs/patterns/pilot/physical-service-index')
-    ])
-  ])
+    page('Pattern language', '/docs/patterns/'),
+    page('P-001 — Permanent / replaceable split', '/docs/patterns/P-001'),
+    page('P-002 — Accessible ≠ exposed', '/docs/patterns/P-002'),
+    page('P-003 — Permanent fabric exclusion', '/docs/patterns/P-003'),
+    page('P-004 — Service hierarchy', '/docs/patterns/P-004'),
+    page('P-005 — Service routes', '/docs/patterns/P-005'),
+    page('P-006 — Service crossings', '/docs/patterns/P-006'),
+    page('P-007 — Isolation', '/docs/patterns/P-007'),
+    page('P-008 — Wet-room clustering', '/docs/patterns/P-008'),
+    page('P-009 — Wet-room edge', '/docs/patterns/P-009'),
+    page('P-010 — Maintainable drainage', '/docs/patterns/P-010'),
+    page('P-011 — Replaceable openings', '/docs/patterns/P-011'),
+    page('P-012 — Slip interfaces', '/docs/patterns/P-012'),
+    page('P-013 — Controlled movement', '/docs/patterns/P-013'),
+    page('P-014 — Seated floor structure', '/docs/patterns/P-014'),
+    page('P-015 — Dry assembly preference', '/docs/patterns/P-015'),
+    page('P-016 — Moisture hierarchy', '/docs/patterns/P-016'),
+    page('P-017 — Passive-first environment', '/docs/patterns/P-017'),
+    page('P-018 — Roof drainage', '/docs/patterns/P-018'),
+    page('P-019 — Roof access', '/docs/patterns/P-019'),
+    page('P-020 — Legible structure', '/docs/patterns/P-020'),
+    page('P-021 — Bounded change', '/docs/patterns/P-021')
+  ], false)
 ]
 
 const grammarSidebar: DefaultTheme.SidebarItem[] = [
   group('Architectural grammar', [
-    page('Grammar overview', '/docs/grammar/'),
-    page('Grammar framework', '/docs/grammar/architectural-grammar-and-proportion'),
-    page('Modelling corrections', '/docs/grammar/architectural-grammar-modelling-corrections-v01')
-  ], false),
-  group('G-01 · Georgian-derived domestic grammar', [
-    page('G-01 v0.1 — frozen grammar', '/docs/grammar/g01-v0.1'),
-    page('Grammar charter', '/docs/grammar/g01-grammar-charter'),
-    page('Research brief', '/docs/grammar/g01-research-brief'),
-    page('Completion programme D8–D13', '/docs/grammar/g01-completion-programme'),
-    page('Corpus & source-quality register', '/docs/grammar/g01-corpus-register'),
-    page('Annotation schema', '/docs/grammar/g01-annotation-schema'),
-    page('Topology comparison', '/docs/grammar/g01-topology-comparison'),
-    page('Dimensional analysis', '/docs/grammar/g01-dimensional-analysis'),
-    page('Plan / section / elevation coupling', '/docs/grammar/g01-plan-section-elevation-coupling'),
-    page('Candidate constraints', '/docs/grammar/g01-candidate-constraints-v01')
-  ], false),
-  group('Precedent cases', [
-    page('Case index', '/docs/grammar/g01-cases/'),
-    page('76 Dean Street', '/docs/grammar/g01-cases/76-dean-street'),
-    page('Bedford Square', '/docs/grammar/g01-cases/bedford-square'),
-    page('Danson House', '/docs/grammar/g01-cases/danson-house'),
-    page('Danson House — D5/D6 web evidence', '/docs/grammar/g01-cases/danson-d5-d6-web-evidence-v02'),
-    page('Marble Hill House', '/docs/grammar/g01-cases/marble-hill-house'),
-    page('Marble Hill House — D5/D6 web evidence', '/docs/grammar/g01-cases/marble-hill-d5-d6-web-evidence-v02')
-  ]),
-  group('Evidence & derivation', [
-    page('D5/D6 web pass v0.2 — superseded', '/docs/grammar/g01-d5-d6-web-pass-v02'),
-    page('D5/D6 evidence gate v0.3 — current', '/docs/grammar/g01-d5-d6-web-pass-v03'),
-    page('D6 mutation run — Danson sequence', '/docs/grammar/g01-d6-mutation-run-01-danson-sequence'),
-    page('D8 controlled falsification', '/docs/grammar/g01-d8-falsification-result'),
-    page('D9 held-out validation', '/docs/grammar/g01-d9-held-out-validation'),
-    page('D10 normative reduction', '/docs/grammar/g01-d10-normative-reduction'),
-    page('D10-S positive-specificity programme', '/docs/grammar/g01-d10s-positive-specificity-programme'),
-    page('D10-S candidate register', '/docs/grammar/g01-d10s-positive-specificity-register-v01'),
-    page('D10-S validation result', '/docs/grammar/g01-d10s-validation-result'),
-    page('D13 adversarial closeout', '/docs/grammar/g01-d13-adversarial-closeout')
-  ])
+    page('Architectural grammar', '/docs/grammar/'),
+    page('Grammar framework', '/docs/grammar/grammar-framework'),
+    page('G-01 Reference House instance', '/docs/grammar/g01-reference-house')
+  ], false)
 ]
 
 const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
   group('Reference House', [
-    page('Reference House overview', '/docs/reference-house/'),
-    page('G-01 v0.1 conformance — D12', '/docs/reference-house/g01-v0.1-conformance-d12'),
-    page('Pattern occurrence register', '/docs/reference-house/pattern-occurrence-register'),
-    page('Tectonic architectural language', '/docs/reference-house/tectonic-architectural-language'),
-    page('Whole-house coordination fixture', '/docs/reference-house/whole-house-coordination-fixture'),
-    page('Vertical bay options', '/docs/reference-house/vertical-bay-options'),
-    page('Vertical bay coordination', '/docs/reference-house/vertical-bay-coordination'),
-    page('External access & maintenance', '/docs/reference-house/external-access-maintenance-plan'),
-    group('Generated compiler inspection', [
-      page('Generated inspection overview', '/docs/reference-house/generated/'),
-      page('Service topology register', '/docs/reference-house/generated/service-register'),
-      page('Envelope / boundary topology register', '/docs/reference-house/generated/boundary-register')
-    ])
-  ], false),
-  group('RH-C0 / RH-C1 fixture programme', [
-    page('Brief & constraint ledger', '/docs/reference-house/brief-and-constraint-ledger'),
-    page('RH-C0 model baseline', '/docs/reference-house/model-baseline-rhc0'),
-    page('RH-C0 discrepancy register', '/docs/reference-house/rhc0-discrepancy-register'),
-    page('RH-C0 domesticity audit', '/docs/reference-house/rhc0-domesticity-audit'),
-    page('RH-C0 drawing parity audit', '/docs/reference-house/rhc0-drawing-parity-audit'),
-    page('RH-C0 mutation map', '/docs/reference-house/rhc0-mutation-map'),
-    page('RH-C1 deterministic drawing parity', '/docs/reference-house/rhc1-drawing-parity-result')
-  ]),
-  group('Reference House development history', [
-    page('Morphology options', '/docs/reference-house/morphology-options'),
-    page('Ground-floor development', '/docs/reference-house/ground-floor-development'),
-    page('Upper floor & stair development', '/docs/reference-house/upper-floor-and-stair-development'),
-    page('Service topology RH-06', '/docs/reference-house/service-topology-rh06'),
-    page('Service crossing register RH-06', '/docs/reference-house/service-crossing-register-rh06'),
-    page('Service topology RH-07 MVHR addendum', '/docs/reference-house/service-topology-rh07-mvhr-addendum'),
-    page('Structural coordination', '/docs/reference-house/structural-coordination'),
-    page('Environmental coordination', '/docs/reference-house/environmental-coordination'),
-    page('Whole-house coordination audit', '/docs/reference-house/whole-house-coordination-audit'),
-    page('Roof drainage & access RH-08', '/docs/reference-house/roof-drainage-access-rh08'),
-    page('Prototype handoff RH-09', '/docs/reference-house/prototype-handoff-rh09'),
-    page('Tectonic integration RH-09', '/docs/reference-house/tectonic-integration-rh09'),
-    page('Plan / section / elevation gate', '/docs/reference-house/plan-section-elevation-gate'),
-    page('Envelope coordination RH-10', '/docs/reference-house/envelope-coordination-rh10'),
-    page('Energy & heat coordination RH-10', '/docs/reference-house/energy-heat-coordination-rh10'),
-    page('Outer elevation coordination RH-10', '/docs/reference-house/outer-elevation-coordination-rh10'),
-    group('RH-11 external review', [
-      page('External review brief', '/docs/reference-house/external-review-brief'),
-      page('Building physics & energy', '/docs/reference-house/external-review-building-physics-energy-rh11'),
-      page('Fire & Building Control', '/docs/reference-house/external-review-fire-building-control-rh11'),
-      page('Human factors & inclusive design', '/docs/reference-house/external-review-human-factors-inclusive-design-rh11'),
-      page('MEP & acoustic', '/docs/reference-house/external-review-mep-acoustic-rh11'),
-      page('Regulatory baseline', '/docs/reference-house/external-review-regulatory-baseline-rh11'),
-      page('Response template', '/docs/reference-house/external-review-response-template-rh11'),
-      page('Structural', '/docs/reference-house/external-review-structural-rh11')
-    ])
-  ]),
-  group('History & provenance', [
-    page('Service topology coordination brief', '/docs/reference-house/service-topology-coordination'),
-    page('Service topology run 01', '/docs/reference-house/service-topology-run-01')
-  ])
+    page('Reference House', '/docs/reference-house/'),
+    page('Reference House overview', '/docs/reference-house/reference-house'),
+    page('RH-01 — Plan order', '/docs/reference-house/RH-01'),
+    page('RH-02 — Ground floor', '/docs/reference-house/RH-02'),
+    page('RH-03 — First floor', '/docs/reference-house/RH-03'),
+    page('RH-04 — Stair and circulation', '/docs/reference-house/RH-04'),
+    page('RH-05 — Structure', '/docs/reference-house/RH-05'),
+    page('RH-06 — Services', '/docs/reference-house/RH-06'),
+    page('RH-07 — Wet rooms', '/docs/reference-house/RH-07'),
+    page('RH-08 — Roof and water', '/docs/reference-house/RH-08'),
+    page('RH-09 — Openings and envelope', '/docs/reference-house/RH-09'),
+    page('RH-10 — External interfaces', '/docs/reference-house/RH-10'),
+    page('RH-11 — Engineering review brief', '/docs/reference-house/RH-11')
+  ], false)
 ]
 
 const researchSidebar: DefaultTheme.SidebarItem[] = [
-  group('Research & evidence', [
-    page('Research overview', '/docs/research/')
-  ], false),
-  group('Human factors & repose', [
-    page('Repose & low vigilance', '/docs/research/repose-and-low-vigilance'),
-    page('Repose evidence audit', '/docs/research/repose-evidence-audit')
-  ], false),
-  group('Construction & robustness', [
-    page('Workmanship robustness', '/docs/research/workmanship-robustness'),
-    page('Candidate pattern hardening', '/docs/research/candidate-pattern-hardening-summary')
-  ]),
-  group('Floor & wall systems', [
-    page('Primary floor structure baseline', '/docs/research/primary-floor-structure-baseline'),
-    page('Seated floor structure options', '/docs/research/seated-floor-structure-options'),
-    page('Finish-agnostic floor platform options', '/docs/research/finish-agnostic-floor-platform-options'),
-    page('Replaceable wall system options', '/docs/research/replaceable-wall-system-options')
-  ]),
-  group('Maintenance & precedent', [
-    page('External maintenance access', '/docs/research/external-maintenance-access'),
-    page('Preface precedents', '/docs/research/preface-precedents')
-  ]),
-  group('Historical targeted evidence', [
-    page('Pattern-language Phase 6 evidence', '/docs/research/pattern-language-phase6-targeted-evidence')
-  ])
+  group('Research', [
+    page('Research overview', '/docs/research/'),
+    page('Evidence architecture', '/docs/research/evidence-architecture'),
+    page('Intellectual lineage', '/docs/research/intellectual-lineage'),
+    page('Human factors', '/docs/research/human-factors'),
+    page('Occupied change', '/docs/research/occupied-change'),
+    page('Deployment', '/docs/research/deployment')
+  ], false)
 ]
 
 const prototypesSidebar: DefaultTheme.SidebarItem[] = [
   group('Physical prototypes', [
     page('Prototype overview', '/docs/prototypes/'),
-    page('W2 wall-bay build pack', '/docs/prototypes/w2-wall-bay-build-pack'),
-    page('W2 wall-bay evidence protocol', '/docs/prototypes/w2-wall-bay-test-protocol')
-  ], false),
-  group('Programme history', [
-    page('P03 floor-edge engineering brief', '/docs/prototypes/p03-floor-edge-engineering-brief'),
-    page('P03 floor-edge test protocol', '/docs/prototypes/p03-floor-edge-test-protocol'),
-    page('P03 structural floor-edge handoff', '/docs/prototypes/p03-structural-floor-edge-handoff'),
-    page('P04 wall / ceiling build pack', '/docs/prototypes/p04-wall-ceiling-build-pack'),
-    page('P04 wall / ceiling test protocol', '/docs/prototypes/p04-wall-ceiling-test-protocol')
-  ])
+    page('Prototype programme', '/docs/prototypes/prototype-programme')
+  ], false)
 ]
 
 const deliverySidebar: DefaultTheme.SidebarItem[] = [
   group('Delivery', [
     page('Delivery overview', '/docs/delivery/'),
-    page('RIBA implementation brief', '/docs/delivery/riba-implementation-brief-template'),
-    page('Human-factors verification requirements', '/docs/delivery/human-factors-verification-requirements'),
-    page('External maintenance access requirements', '/docs/delivery/external-maintenance-access-requirements')
+    page('Delivery principles', '/docs/delivery/delivery-principles')
   ], false)
 ]
 
 const computationalSidebar: DefaultTheme.SidebarItem[] = [
   group('Computational track', [
-    page('Computational overview', '/docs/computational/')
+    page('Computational overview', '/docs/computational/'),
+    page('Compiler architecture', '/docs/computational/compiler-architecture'),
+    page('Reference House compiler', '/docs/computational/reference-house-compiler'),
+    page('Deployment compiler', '/docs/computational/deployment-compiler')
   ], false),
-  group('Reference House compiler programme', [
-    page('RH-C0 model-freeze plan', '/docs/computational/reference-house-model-freeze-rhc0'),
-    page('RH-C1 executable slice', '/docs/computational/reference-house-executable-slice'),
-    page('CF-01 generality assurance gate', '/docs/computational/compiler-generality-assurance-cf01'),
-    page('Compiler hardening programme', '/docs/computational/compiler-hardening-programme'),
-    page('Compiler output architecture programme', '/docs/computational/compiler-output-architecture-programme')
-  ], false),
-  group('Executable result & external review', [
-    page('P0 + PAT-XW-01 executable result — PASS', '/docs/computational/p0-pat-xw-01-result'),
-    page('H1 capability matrix v0.5 — frozen paper baseline', '/docs/computational/h1-capability-matrix-v05'),
-    page('External-maintenance doctrine delta — open fixture candidate', '/docs/computational/doctrine-delta-external-maintenance-v01'),
-    page('External review pack — H1 paper — open', '/docs/computational/external-review-pack-h1-paper-v02'),
-    page('External evidence trial — Mapeguard WP — completed', '/docs/computational/external-evidence-trial-mapeguard-wp-v01')
-  ], false),
-  group('Core model', [
-    page('Executable architecture', '/docs/computational/executable-architecture'),
-    page('Formal architectural model', '/docs/computational/formal-architectural-model'),
-    page('Validity & obligations', '/docs/computational/validity-and-obligations'),
-    page('Evidence & provenance', '/docs/computational/evidence-and-provenance'),
-    page('Compiler targets', '/docs/computational/compiler-targets'),
-    page('Structural semantics', '/docs/computational/structural-semantics'),
-    page('Boundary semantics', '/docs/computational/boundary-semantics'),
-    page('Interface obligation bundles', '/docs/computational/interface-obligation-bundles'),
-    page('Supported domain', '/docs/computational/supported-domain'),
-    page('Prior-art map', '/docs/computational/prior-art-map')
-  ], false),
-  group('Pattern crosswalk', [
-    page('Crosswalk model', '/docs/computational/pattern-crosswalk-model'),
-    page('Service-topology pilot', '/docs/computational/pattern-crosswalk-service-topology-pilot'),
-    page('Remaining active patterns', '/docs/computational/pattern-crosswalk-remaining-active'),
-    page('Strategies & held candidates', '/docs/computational/pattern-crosswalk-strategies-candidates'),
-    page('Implementation handoff', '/docs/computational/pattern-crosswalk-implementation-handoff')
-  ]),
-  group('Building & system families', [
-    page('S0 wall-bay assembly composition', '/docs/computational/assembly-composition-s0-wall-bay'),
-    group('Boundary families', [
-      page('Controlled service penetration', '/docs/computational/boundary-family-controlled-penetration-v01'),
-      page('External masonry corner', '/docs/computational/boundary-family-external-masonry-corner-v01'),
-      page('Ground floor / masonry perimeter', '/docs/computational/boundary-family-ground-floor-masonry-v01'),
-      page('Window / masonry wall', '/docs/computational/boundary-family-window-masonry-v01')
-    ]),
-    page('Principal masonry entrance', '/docs/computational/entrance-family-principal-masonry-v01'),
-    page('Two-storey fire / egress family', '/docs/computational/fire-family-two-storey-egress-v01'),
-    page('ASHP + radiator heating family', '/docs/computational/heating-family-ashp-radiators-v01'),
-    page('Floor / masonry interface bundle', '/docs/computational/interface-bundle-floor-masonry'),
-    page('Window / masonry interface bundle', '/docs/computational/interface-bundle-window-masonry'),
-    page('Trussed duo-pitch roof family', '/docs/computational/roof-family-trussed-duopitch-v01'),
-    page('Room low-level service family', '/docs/computational/service-family-room-low-level-v01'),
-    page('Private stair family', '/docs/computational/stair-family-private-v01'),
-    page('Structural assurance boundary — H1', '/docs/computational/structural-assurance-boundary-h1-v01'),
-    page('cMEV ventilation family', '/docs/computational/ventilation-family-cmev-v01'),
-    page('Hybrid stack ventilation family', '/docs/computational/ventilation-family-hybrid-stack-v01'),
-    page('Wet service core family', '/docs/computational/wet-service-family-core-v01'),
-    page('Bonded sheet wet-zone family', '/docs/computational/wet-zone-family-bonded-sheet-v01')
-  ]),
-  group('H1 environmental & services decisions', [
-    page('Heating strategy decision v0.1', '/docs/computational/h1-heating-strategy-decision-v01'),
-    page('Hybrid ventilation evidence trial v0.1', '/docs/computational/h1-hybrid-ventilation-evidence-trial-v01'),
-    page('Passive environmental strategy v0.1', '/docs/computational/h1-passive-environmental-strategy-v01'),
-    page('Services target extension v0.1', '/docs/computational/h1-services-target-extension-v01'),
-    page('Ventilation strategy decision v0.1', '/docs/computational/h1-ventilation-strategy-decision-v01'),
-    page('Ventilation strategy decision v0.2', '/docs/computational/h1-ventilation-strategy-decision-v02')
-  ]),
-  group('Paper-compilation history', [
+  group('Controlled research fixtures', [
     group('S0', [
-      page('Paper compilation S0', '/docs/computational/paper-compilation-s0'),
-      page('S0 complexity gate', '/docs/computational/s0-complexity-gate'),
-      page('S0 conventional workmanship route', '/docs/computational/s0-conventional-workmanship-route'),
-      page('S0 source package v0.1', '/docs/computational/s0-source-package'),
-      page('S0 source package v0.2', '/docs/computational/s0-source-package-v02'),
-      page('S0 target snapshot v0.1', '/docs/computational/s0-target-snapshot'),
-      page('S0 target snapshot v0.2', '/docs/computational/s0-target-snapshot-v02'),
-      page('S0 target snapshot v0.3', '/docs/computational/s0-target-snapshot-v03'),
+      page('S0 research brief', '/docs/computational/s0-research-brief'),
+      page('S0 source package', '/docs/computational/s0-source-package'),
       page('S0 paper compile run 01', '/docs/computational/s0-paper-compile-run-01'),
-      page('S0 paper compile run 02', '/docs/computational/s0-paper-compile-run-02'),
       page('S0 red-team run 01', '/docs/computational/s0-red-team-run-01')
     ]),
     group('S1', [
@@ -446,6 +200,8 @@ const editorialSidebar: DefaultTheme.SidebarItem[] = [
   group('Editorial', [
     page('Editorial overview', '/docs/editorial/'),
     page('Editorial doctrine', '/docs/editorial/editorial-doctrine'),
+    page('EDA programme', '/docs/editorial/eda-programme'),
+    page('EDA-00 doctrine audit', '/docs/editorial/eda-00-doctrine-audit'),
     page('Editorial overhaul plan — completed provenance', '/docs/editorial/editorial-overhaul-plan')
   ], false)
 ]
