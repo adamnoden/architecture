@@ -7,7 +7,7 @@ import type {
   DrawingScene,
   DrawingText
 } from './model.js'
-import { PUBLICATION_DRAWING_TOKENS } from './tokens.js'
+import { PUBLICATION_DRAWING_TOKENS, type PublicationDrawingTokens } from './tokens.js'
 
 const escapeXml = (value: string): string =>
   value
@@ -90,24 +90,26 @@ const renderPrimitive = (primitive: DrawingPrimitive): string => {
   }
 }
 
-const style = (): string => {
-  const t = PUBLICATION_DRAWING_TOKENS
-  const lines = Object.entries(t.lineMm)
-    .map(([role, width]) => `.line-${role}{stroke:${t.ink.primary};stroke-width:${formatDrawingNumber(width)};fill:none;stroke-linecap:butt;stroke-linejoin:miter}`)
+const style = (tokens: PublicationDrawingTokens): string => {
+  const lines = Object.entries(tokens.lineMm)
+    .map(([role, width]) => `.line-${role}{stroke:${tokens.ink.primary};stroke-width:${formatDrawingNumber(width)};fill:none;stroke-linecap:butt;stroke-linejoin:miter}`)
     .join('')
   // The SVG viewBox is expressed in paper millimetres: one user unit maps to one
   // physical mm at publication placement. CSS px preserves that user-space value;
   // CSS mm would be converted by Chromium at 96 px/in before the viewBox transform.
-  const text = (Object.keys(t.textMm) as Array<keyof typeof t.textMm>)
-    .map((role) => `.text-${role}{font-family:${t.fontFamily};font-size:${formatDrawingNumber(t.textMm[role])}px;font-weight:${t.textWeight[role]};fill:${t.ink.primary}}`)
+  const text = (Object.keys(tokens.textMm) as Array<keyof typeof tokens.textMm>)
+    .map((role) => `.text-${role}{font-family:${tokens.fontFamily};font-size:${formatDrawingNumber(tokens.textMm[role])}px;font-weight:${tokens.textWeight[role]};fill:${tokens.ink.primary}}`)
     .join('')
-  const dash = Object.entries(t.dashMm)
+  const dash = Object.entries(tokens.dashMm)
     .map(([role, values]) => `.dash-${role}{stroke-dasharray:${values.map(formatDrawingNumber).join(' ')}}`)
     .join('')
-  return `${lines}${text}${dash}.fill-paper{fill:${t.ink.paper};stroke:none}.fill-ink{fill:${t.ink.primary};stroke:none}.fill-context{fill:${t.ink.context};stroke:none}.fill-faint{fill:${t.ink.faint};stroke:none}`
+  return `${lines}${text}${dash}.fill-paper{fill:${tokens.ink.paper};stroke:none}.fill-ink{fill:${tokens.ink.primary};stroke:none}.fill-context{fill:${tokens.ink.context};stroke:none}.fill-faint{fill:${tokens.ink.faint};stroke:none}`
 }
 
-export const renderDrawingSceneSvg = (scene: DrawingScene): string => {
+export const renderDrawingSceneSvgWithTokens = (
+  scene: DrawingScene,
+  tokens: PublicationDrawingTokens
+): string => {
   if (scene.widthMm <= 0 || scene.heightMm <= 0) throw new Error('Drawing scene requires positive paper dimensions.')
 
   const scaleAttribute = scene.scaleDenominator === 'NTS'
@@ -126,9 +128,12 @@ export const renderDrawingSceneSvg = (scene: DrawingScene): string => {
     header,
     `<title id="title">${escapeXml(scene.title)}</title>`,
     `<desc id="desc">${escapeXml(scene.description)}</desc>`,
-    `<style>${style()}</style>`,
+    `<style>${style(tokens)}</style>`,
     ...primitives,
     '</svg>',
     ''
   ].join('\n')
 }
+
+export const renderDrawingSceneSvg = (scene: DrawingScene): string =>
+  renderDrawingSceneSvgWithTokens(scene, PUBLICATION_DRAWING_TOKENS)
