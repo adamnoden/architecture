@@ -1,6 +1,7 @@
 import type {
   DrawingFillRole,
   DrawingLine,
+  DrawingPath,
   DrawingPrimitive,
   DrawingRect,
   DrawingScene,
@@ -53,6 +54,25 @@ const renderRect = (node: DrawingRect): string => {
   return `<rect x="${formatDrawingNumber(node.x)}" y="${formatDrawingNumber(node.y)}" width="${formatDrawingNumber(node.width)}" height="${formatDrawingNumber(node.height)}"${classAttribute} ${primitiveAttributes(node)}/>`
 }
 
+const renderPath = (node: DrawingPath): string => {
+  if (node.rings.length === 0) throw new Error(`Drawing path ${node.id} requires at least one ring.`)
+  const d = node.rings.map((ring, ringIndex) => {
+    if (ring.length < 3) throw new Error(`Drawing path ${node.id} ring ${ringIndex + 1} requires at least three points.`)
+    const [first, ...rest] = ring
+    const points = [`M ${formatDrawingNumber(first.x)} ${formatDrawingNumber(first.y)}`]
+    for (const point of rest) points.push(`L ${formatDrawingNumber(point.x)} ${formatDrawingNumber(point.y)}`)
+    points.push('Z')
+    return points.join(' ')
+  }).join(' ')
+  const className = classes(
+    node.stroke && `line-${node.stroke}`,
+    node.dash && node.dash !== 'none' && `dash-${node.dash}`,
+    fillClass(node.fill)
+  )
+  const classAttribute = className ? ` class="${className}"` : ''
+  return `<path d="${d}" fill-rule="evenodd"${classAttribute} ${primitiveAttributes(node)}/>`
+}
+
 const renderText = (node: DrawingText): string => {
   const anchor = node.anchor ?? 'start'
   const rotation = node.rotateDeg === undefined
@@ -65,6 +85,7 @@ const renderPrimitive = (primitive: DrawingPrimitive): string => {
   switch (primitive.kind) {
     case 'line': return renderLine(primitive)
     case 'rect': return renderRect(primitive)
+    case 'path': return renderPath(primitive)
     case 'text': return renderText(primitive)
   }
 }
