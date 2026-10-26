@@ -61,6 +61,7 @@ export const validateDPL15G = (value: unknown): Record<string, unknown> => {
 
   const rp007Identity = record(rp007.currentPlanningIdentity, 'RP-007 currentPlanningIdentity')
   if (rp007Identity.uprn !== '10095497120') throw new Error('RP-007 exact UPRN is not frozen.')
+  if (rp007Identity.decisionState !== 'CONFLICTING_PUBLIC_DECISION_LABELS_NOT_USED') throw new Error('RP-007 decision-label conflict must remain explicit.')
   if (rp007Identity.decisionUse !== 'PROVENANCE_ONLY_NOT_CANDIDATE_READINESS') throw new Error('RP-007 planning outcome leaked into readiness.')
   const rp008Identity = record(rp008.currentPlanningIdentity, 'RP-008 currentPlanningIdentity')
   if (rp008Identity.decisionUse !== 'PROVENANCE_ONLY_NOT_CANDIDATE_READINESS') throw new Error('RP-008 planning outcome leaked into readiness.')
@@ -90,14 +91,22 @@ export const validateDPL15G = (value: unknown): Record<string, unknown> => {
 
 export const composeDPL15G = (value: unknown = JSON.parse(text(DPL15G_PATH)) as unknown): DPL15GResult => {
   const validated = validateDPL15G(value)
-  const sites = (validated.sites as Record<string, unknown>[]).map((site) => ({
-    ...site,
-    publicEvidence: [...(site.publicEvidence as Record<string, unknown>[])].map((evidence) => ({
+  const rawSites = validated.sites as Record<string, unknown>[]
+  const sites: Record<string, unknown>[] = rawSites.map((site): Record<string, unknown> => {
+    const rawEvidence = site.publicEvidence as Record<string, unknown>[]
+    const publicEvidence: Record<string, unknown>[] = rawEvidence.map((evidence): Record<string, unknown> => ({
       ...evidence,
       observed: [...(evidence.observed as string[])].sort()
-    })).sort((a, b) => String(a.id).localeCompare(String(b.id))),
-    dispositions: Object.fromEntries(Object.entries(site.dispositions as Record<string, unknown>).sort(([a], [b]) => a.localeCompare(b)))
-  })).sort((a, b) => String(a.siteId).localeCompare(String(b.siteId)))
+    }))
+    publicEvidence.sort((a, b) => String(a.id).localeCompare(String(b.id)))
+    return {
+      ...site,
+      publicEvidence,
+      dispositions: Object.fromEntries(Object.entries(site.dispositions as Record<string, unknown>).sort(([a], [b]) => a.localeCompare(b)))
+    }
+  })
+  sites.sort((a, b) => String(a.siteId).localeCompare(String(b.siteId)))
+
   const canonical = {
     ...validated,
     comparisonUniverse: [...(validated.comparisonUniverse as string[])].sort(),
