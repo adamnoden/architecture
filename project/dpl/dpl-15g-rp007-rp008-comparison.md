@@ -53,7 +53,7 @@ RP-008 is therefore preserved rather than consumed in another speculative retrie
 
 ## Planning-outcome restraint
 
-The captured Croydon register records RP-007 as refused on 23 January 2026. Planning outcome is provenance only in this packet. It is not a reason to select or reject the site.
+Public decision labels for RP-007 conflict. A Croydon first-party weekly-decision publication places `25/03774/FUL` under **Permission Granted** with decision date 23 January 2026, while the captured register and other public surfaces label the same application refused. DPL-15G preserves that conflict and does not use either label in the site-selection decision. Direct decision-notice inspection would be required before any planning-outcome conclusion mattered.
 
 Likewise DPL-15G does not require a planning-status verdict for RP-008. The gate asks only which site has the stronger controlled route to candidate-authoring evidence.
 
