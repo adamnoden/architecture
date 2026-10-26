@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "dpl.lennardCurrentState.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "site": "41 Lennard Road, Bromley, BR2 8LN",
+  "candidateId": "DPL-T-CANDIDATE-004-01",
+  "candidateRevision": "0.1",
+  "referenceHouseRoute": "RH-V02",
+  "instrumentedControl": true,
+  "excludedFromDPL14AndDPL16EmpiricalSample": true,
+  "currentPacket": "DPL-T11",
+  "currentResult": "NO_SPEND_EVIDENCE_EXHAUSTED_THREE_DEPENDENCIES_REMAIN_TWO_ACQUISITION_READY",
+  "currentResultFingerprint": "b24a1ee582f701c0414dbb396aeffc2320afa7e73a0c4e0535813a624b66e92b",
+  "currentEvidenceFingerprint": "c3a40ba5e2e957b1985832058519d0b3480f9b72ed2bb06a156454f3bda2b902",
+  "activeDependencyClasses": [
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+    "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY",
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY"
+  ],
+  "externalAcquisitionReady": [
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY"
+  ],
+  "noCostPublicRecoveryPending": [
+    "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY"
+  ],
+  "externalCommissioning": "NO",
+  "externalContact": "NO",
+  "spendAuthorised": "NO",
+  "referenceHouseMutation": "NO",
+  "compatibleAtScreening": "NOT_ADMITTED",
+  "incompatible": "NOT_ADMITTED",
+  "routeExhaustion": "NOT_IMPLEMENTED",
+  "dpl16": "HELD",
+  "historicalSourceAdmissionSnapshot": "project/dpl/sites/dpl-t-control-004-lennard-road-source-manifest.json",
+  "currentCloseout": "project/dpl/dpl-t11-lennard-no-spend-evidence.md"
+}
