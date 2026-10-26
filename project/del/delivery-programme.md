@@ -1,7 +1,7 @@
 # DEL — Delivery requirements
 
 **State:** framed umbrella; requirements remain evidence-dependent  
-**Tracking:** GitHub issue creation pending API access; no issue number assigned  
+**Tracking:** [#854 — DEL evidence-led delivery requirements and responsibility coordination](https://github.com/adamnoden/architecture/issues/854)  
 **Starting authority:** `docs/delivery/README.md`, `project/maturity.ts`, the RH-11 validation execution register and the owning DPL, HFI and OCG handoffs
 
 ## Question and scope
@@ -25,6 +25,6 @@ The umbrella can close when the declared commission/stage scope has a coherent r
 - HFI and OCG handoffs are inherited obligations, not reopened programmes.
 - `docs/development/manufacturing-strategy.md` remains a strategy; concrete delivery decisions must be tied to an actual assembly and evidence need.
 - No external contact, commissioning or spend is authorised by this umbrella.
-- P01/P02 retain their existing codes and held states. Check existing GitHub tracking before creating any deferred issues; API access has not yet permitted that check.
+- P01 remains held/optional research under [#856](https://github.com/adamnoden/architecture/issues/856); P02 remains held under [#857](https://github.com/adamnoden/architecture/issues/857). Their existing codes and validation-register reopening triggers are preserved.
 
 Keep programme history here and requirements in `docs/delivery/`. Present project-wide state remains owned by `STATUS.md` and the typed maturity registry.
