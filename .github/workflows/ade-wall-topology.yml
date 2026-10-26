@@ -5,9 +5,7 @@ on:
     branches: [main]
     paths:
       - 'compiler/architectural-drawing/**'
-      - 'compiler/publication-drawing/model.ts'
-      - 'compiler/publication-drawing/svg.ts'
-      - 'compiler/publication-drawing/path.test.ts'
+      - 'compiler/publication-drawing-v2/**'
       - 'publication/specimens/ade02/**'
       - '.github/workflows/ade-wall-topology.yml'
   workflow_dispatch:
@@ -35,8 +33,11 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Prove low-level path extension
-        run: npm run test:publication-drawing
+      - name: Prove frozen v1 renderer remains intact
+        run: npm run test:publication-drawing && npm run test:drw-freeze
+
+      - name: Prove v2 terminal IR compatibility and path extension
+        run: node --import tsx --test compiler/publication-drawing-v2/*.test.ts
 
       - name: Prove architectural wall topology
         run: npm run test:architectural-drawing
