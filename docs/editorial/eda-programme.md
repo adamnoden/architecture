@@ -1,9 +1,10 @@
 # EDA — Editorial Doctrine Audit
 
-**Status:** authorised / active  
+**Status:** authorised / active — EDA-00 closed; EDA-01 next  
 **Programme owner:** publication editorial control  
 **Baseline:** `816c6ca71e20235dca83350eb0f3e2cd05186169`  
 **Governing relationship:** post-migration assurance of the completed Editorial Overhaul  
+**Audit standard:** Editorial Doctrine v0.4, frozen at blob `30fb6b2d67c356664430bca4996e38898ce91084`  
 **Release effect:** EDA close is required before PR-02 private physical-object production
 
 ---
@@ -62,21 +63,22 @@ The governing question is not merely “is this a good sentence?” but “has t
 
 ## 4. Programme
 
-### EDA-00 — Audit and harden the Editorial Doctrine
+### EDA-00 — Audit and harden the Editorial Doctrine — CLOSED
 
 Audit the standard before using it as the audit instrument.
 
-Deliverables:
+Result:
 
-- identify blind spots exposed by the post-migration manuscript;
-- add staged significance and page-level rhetoric explicitly;
-- add whole-book recurrence / density review;
-- add the **remove the spotlight first** test: before deleting a strong sentence, return it to ordinary prose and see whether the thought survives;
-- distinguish diagnostics from verdicts;
-- ensure the guide itself is proportionate and does not grow into a bureaucratic style manual;
-- freeze the resulting doctrine version as the EDA audit standard.
+- Editorial Doctrine v0.4 is frozen at blob `30fb6b2d67c356664430bca4996e38898ce91084`;
+- staged significance and page-level rhetoric are explicit;
+- whole-book recurrence and dynamic-range review are explicit;
+- the **remove the spotlight first** test and related de-escalation tests are explicit;
+- mechanical diagnostics are explicitly non-authoritative;
+- preface rarity controls are strengthened;
+- fixed-layout publication requires typeset-page review;
+- the guide was self-audited for rule growth, duplication and over-hardening.
 
-Gate: no corpus conformance verdict before EDA-00 closes.
+Gate result: passed. Corpus conformance work may begin under v0.4.
 
 ### EDA-01 — Corpus and prose-mode register
 
@@ -193,7 +195,7 @@ The current preface already provides useful EDA candidates:
 - `The question is how to earn that permanence.` — ordinary transition given exceptional weight.
 - `That moment does not abolish expertise. It creates work for it.` — compressed cadence whose survival should depend on whole-book rhetorical density.
 
-These are calibration candidates, not pre-authorised deletions. EDA-03 decides their final form in context after EDA-00 freezes the standard.
+These are calibration candidates, not pre-authorised deletions. EDA-03 decides their final form in context under frozen Editorial Doctrine v0.4.
 
 ---
 
@@ -212,3 +214,9 @@ EDA closes only when:
 - no unresolved editorial defect material to PR-02 remains.
 
 EDA is an editorial assurance gate, not evidence that the architecture itself is externally validated.
+
+---
+
+## 8. Current next action
+
+Proceed to **EDA-01 — Corpus and prose-mode register**. Do not begin EDA-03 prose repair until the register is complete and EDA-02 has produced the non-authoritative candidate scan.
