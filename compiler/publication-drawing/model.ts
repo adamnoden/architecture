@@ -38,20 +38,6 @@ export interface DrawingRect extends PrimitiveBase {
   fill?: DrawingFillRole
 }
 
-/**
- * Closed paper-space rings rendered through SVG's even-odd fill rule. Multiple
- * rings allow a single semantic region to contain holes (for example a joined
- * perimeter wall around a courtyard) without decomposing it into seam-prone
- * rectangles. Ring closure is implicit; callers must not repeat the first point.
- */
-export interface DrawingPath extends PrimitiveBase {
-  kind: 'path'
-  rings: readonly (readonly PaperPoint[])[]
-  stroke?: DrawingLineRole
-  dash?: DrawingDashRole
-  fill?: DrawingFillRole
-}
-
 export interface DrawingText extends PrimitiveBase {
   kind: 'text'
   x: number
@@ -62,7 +48,7 @@ export interface DrawingText extends PrimitiveBase {
   rotateDeg?: number
 }
 
-export type DrawingPrimitive = DrawingLine | DrawingRect | DrawingPath | DrawingText
+export type DrawingPrimitive = DrawingLine | DrawingRect | DrawingText
 
 export interface DrawingScene {
   widthMm: number

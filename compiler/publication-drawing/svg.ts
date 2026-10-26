@@ -1,13 +1,12 @@
 import type {
   DrawingFillRole,
   DrawingLine,
-  DrawingPath,
   DrawingPrimitive,
   DrawingRect,
   DrawingScene,
   DrawingText
 } from './model.js'
-import { PUBLICATION_DRAWING_TOKENS, type PublicationDrawingTokens } from './tokens.js'
+import { PUBLICATION_DRAWING_TOKENS } from './tokens.js'
 
 const escapeXml = (value: string): string =>
   value
@@ -54,25 +53,6 @@ const renderRect = (node: DrawingRect): string => {
   return `<rect x="${formatDrawingNumber(node.x)}" y="${formatDrawingNumber(node.y)}" width="${formatDrawingNumber(node.width)}" height="${formatDrawingNumber(node.height)}"${classAttribute} ${primitiveAttributes(node)}/>`
 }
 
-const renderPath = (node: DrawingPath): string => {
-  if (node.rings.length === 0) throw new Error(`Drawing path ${node.id} requires at least one ring.`)
-  const d = node.rings.map((ring, ringIndex) => {
-    if (ring.length < 3) throw new Error(`Drawing path ${node.id} ring ${ringIndex + 1} requires at least three points.`)
-    const [first, ...rest] = ring
-    const points = [`M ${formatDrawingNumber(first.x)} ${formatDrawingNumber(first.y)}`]
-    for (const point of rest) points.push(`L ${formatDrawingNumber(point.x)} ${formatDrawingNumber(point.y)}`)
-    points.push('Z')
-    return points.join(' ')
-  }).join(' ')
-  const className = classes(
-    node.stroke && `line-${node.stroke}`,
-    node.dash && node.dash !== 'none' && `dash-${node.dash}`,
-    fillClass(node.fill)
-  )
-  const classAttribute = className ? ` class="${className}"` : ''
-  return `<path d="${d}" fill-rule="evenodd"${classAttribute} ${primitiveAttributes(node)}/>`
-}
-
 const renderText = (node: DrawingText): string => {
   const anchor = node.anchor ?? 'start'
   const rotation = node.rotateDeg === undefined
@@ -85,31 +65,28 @@ const renderPrimitive = (primitive: DrawingPrimitive): string => {
   switch (primitive.kind) {
     case 'line': return renderLine(primitive)
     case 'rect': return renderRect(primitive)
-    case 'path': return renderPath(primitive)
     case 'text': return renderText(primitive)
   }
 }
 
-const style = (tokens: PublicationDrawingTokens): string => {
-  const lines = Object.entries(tokens.lineMm)
-    .map(([role, width]) => `.line-${role}{stroke:${tokens.ink.primary};stroke-width:${formatDrawingNumber(width)};fill:none;stroke-linecap:butt;stroke-linejoin:miter}`)
+const style = (): string => {
+  const t = PUBLICATION_DRAWING_TOKENS
+  const lines = Object.entries(t.lineMm)
+    .map(([role, width]) => `.line-${role}{stroke:${t.ink.primary};stroke-width:${formatDrawingNumber(width)};fill:none;stroke-linecap:butt;stroke-linejoin:miter}`)
     .join('')
   // The SVG viewBox is expressed in paper millimetres: one user unit maps to one
   // physical mm at publication placement. CSS px preserves that user-space value;
   // CSS mm would be converted by Chromium at 96 px/in before the viewBox transform.
-  const text = (Object.keys(tokens.textMm) as Array<keyof typeof tokens.textMm>)
-    .map((role) => `.text-${role}{font-family:${tokens.fontFamily};font-size:${formatDrawingNumber(tokens.textMm[role])}px;font-weight:${tokens.textWeight[role]};fill:${tokens.ink.primary}}`)
+  const text = (Object.keys(t.textMm) as Array<keyof typeof t.textMm>)
+    .map((role) => `.text-${role}{font-family:${t.fontFamily};font-size:${formatDrawingNumber(t.textMm[role])}px;font-weight:${t.textWeight[role]};fill:${t.ink.primary}}`)
     .join('')
-  const dash = Object.entries(tokens.dashMm)
+  const dash = Object.entries(t.dashMm)
     .map(([role, values]) => `.dash-${role}{stroke-dasharray:${values.map(formatDrawingNumber).join(' ')}}`)
     .join('')
-  return `${lines}${text}${dash}.fill-paper{fill:${tokens.ink.paper};stroke:none}.fill-ink{fill:${tokens.ink.primary};stroke:none}.fill-context{fill:${tokens.ink.context};stroke:none}.fill-faint{fill:${tokens.ink.faint};stroke:none}`
+  return `${lines}${text}${dash}.fill-paper{fill:${t.ink.paper};stroke:none}.fill-ink{fill:${t.ink.primary};stroke:none}.fill-context{fill:${t.ink.context};stroke:none}.fill-faint{fill:${t.ink.faint};stroke:none}`
 }
 
-export const renderDrawingSceneSvgWithTokens = (
-  scene: DrawingScene,
-  tokens: PublicationDrawingTokens
-): string => {
+export const renderDrawingSceneSvg = (scene: DrawingScene): string => {
   if (scene.widthMm <= 0 || scene.heightMm <= 0) throw new Error('Drawing scene requires positive paper dimensions.')
 
   const scaleAttribute = scene.scaleDenominator === 'NTS'
@@ -128,12 +105,9 @@ export const renderDrawingSceneSvgWithTokens = (
     header,
     `<title id="title">${escapeXml(scene.title)}</title>`,
     `<desc id="desc">${escapeXml(scene.description)}</desc>`,
-    `<style>${style(tokens)}</style>`,
+    `<style>${style()}</style>`,
     ...primitives,
     '</svg>',
     ''
   ].join('\n')
 }
-
-export const renderDrawingSceneSvg = (scene: DrawingScene): string =>
-  renderDrawingSceneSvgWithTokens(scene, PUBLICATION_DRAWING_TOKENS)
