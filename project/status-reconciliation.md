@@ -2,7 +2,7 @@
 
 **Question:** does the project overview identify the current open programmes and next gates without replaying superseded instructions?  
 **Starting baseline:** `224c7cc838c658beb1b1463b3a0c0029827f4178` (`main`, DPL-15E integration)  
-**Merge-reconciliation baseline:** `816c6ca71e20235dca83350eb0f3e2cd05186169` (`main`, ADE-05B and documentation-development fix merged)  
+**Merge reconciliation:** PR #858 is lease-refreshed against current `main` immediately before merge; GitHub retains the exact base, validated head and merge identities.  
 **Tracking:** [#855 — Reconcile project status with current ADE, PLT, TYP and DPL gates](https://github.com/adamnoden/architecture/issues/855), implemented by [PR #858](https://github.com/adamnoden/architecture/pull/858). DEL remains separately open under [#854](https://github.com/adamnoden/architecture/issues/854).
 
 ## Reconciliation decisions
