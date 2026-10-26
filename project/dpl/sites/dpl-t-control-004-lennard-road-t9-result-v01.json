@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "dpl.lennardT9NoCostClosureResult.v1",
+  "packet": "DPL-T9",
+  "controlId": "DPL-T-CONTROL-004",
+  "candidateId": "DPL-T-CANDIDATE-004-01",
+  "parentT8ResultFingerprint": "e2532fe6bd77016cba92490120ea36d172fbed57ca66913d7419bcd5d6ef1bb7",
+  "result": "NO_COST_FRONTIER_REDUCED_MINIMUM_DECISION_DEPENDENCIES_FROZEN",
+  "resultFingerprint": "55c7020d704b1285527c7249c961783185f56d467e0cdd7f5c93fcdc80393e6a",
+  "authorityEvidenceFingerprint": "90c69b103fff3fe330a0b3f88fdeff8c44928e587ff8c864d01393161ca4946a",
+  "inputBlockerRecords": 7,
+  "currentActiveBlockerRecords": 6,
+  "uniqueDecisionDependencies": 4,
+  "countsByDisposition": {
+    "RESOLVED_BOUNDED_PROJECT_AUTHORITY": 1,
+    "PUBLIC_AUTHORITY_RECOVERY_PENDING": 1,
+    "SURVIVES_EXTERNAL_EVIDENCE_BRIEF": 3,
+    "CONSOLIDATED_PLANNING_CONTEXT_REVIEW": 2
+  },
+  "resolvedBlockerIds": [
+    "PLANNING:DPL10-COV-EMERGING-POLICY-MATERIAL-WEIGHT"
+  ],
+  "currentActiveBlockerIds": [
+    "NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER",
+    "PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY",
+    "PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY",
+    "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY",
+    "REFERENCE_HOUSE:RH-PROT-08",
+    "REFERENCE_HOUSE:RH-PROT-14"
+  ],
+  "decisionDependencies": [
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+    "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY",
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY",
+    "PLANNING_DESIGN_CONTEXT_REVIEW"
+  ],
+  "dependencyConsumers": {
+    "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY": [
+      "NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER"
+    ],
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW": [
+      "REFERENCE_HOUSE:RH-PROT-08"
+    ],
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY": [
+      "PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY",
+      "REFERENCE_HOUSE:RH-PROT-14"
+    ],
+    "PLANNING_DESIGN_CONTEXT_REVIEW": [
+      "PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY",
+      "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY"
+    ]
+  },
+  "externalProfessionalOrMeasurementDependencies": [
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY"
+  ],
+  "publicAuthorityRecoveryDependencies": [
+    "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY"
+  ],
+  "planningJudgementDependencies": [
+    "PLANNING_DESIGN_CONTEXT_REVIEW"
+  ],
+  "recordFingerprints": {
+    "NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER": "283b4ec8cb6aafd2a112896eb73bba9535de50541ee7316bb35ddd4e420a88d6",
+    "PLANNING:DPL10-COV-EMERGING-POLICY-MATERIAL-WEIGHT": "0d7f9e5304aca6ff662699a499a865d6dbc3035102b238e21f270ff3203b7ab6",
+    "PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY": "49f9ff9bdff3dce7f28a9cfe96667a54704dc53d6d1653f3eac201ad7aaa0294",
+    "PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY": "c33a9f3b3d0d381f37b69bc2df825948309222521984787fdbe26c0964652155",
+    "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY": "4c55d74c700ac0430e79f80b4848f7a552fbbaf474d147a4c3083769919982c0",
+    "REFERENCE_HOUSE:RH-PROT-08": "c78798580e99ed7aa25ba27f9ebaf64914ba4bb60c1001a4afb9c8a1a45fe162",
+    "REFERENCE_HOUSE:RH-PROT-14": "c162b6afb6e46c2a61097d731517da7537ab8360cb67b268d34db132ffb0672d"
+  },
+  "proofBoundary": {
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "referenceHouseMutation": "NO",
+    "evidenceCommissioned": "NO",
+    "statutoryPlanningDetermination": "NO",
+    "legalBoundaryDetermined": "NO",
+    "secondaryFloodEvidencePromoted": "NO",
+    "dpl16": "HELD"
+  },
+  "nextPacket": "DPL-T10 execute remaining no-cost decision work and freeze the commissioning threshold"
+}
