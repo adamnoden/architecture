@@ -446,6 +446,8 @@ const editorialSidebar: DefaultTheme.SidebarItem[] = [
   group('Editorial', [
     page('Editorial overview', '/docs/editorial/'),
     page('Editorial doctrine', '/docs/editorial/editorial-doctrine'),
+    page('EDA programme', '/docs/editorial/eda-programme'),
+    page('EDA-00 doctrine audit', '/docs/editorial/eda-00-doctrine-audit'),
     page('Editorial overhaul plan — completed provenance', '/docs/editorial/editorial-overhaul-plan')
   ], false)
 ]
