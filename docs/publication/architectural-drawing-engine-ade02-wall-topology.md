@@ -35,19 +35,22 @@ Exact synthetic micro-fixtures cover:
 
 The compiler deliberately rejects non-orthogonal wall runs. No current Reference House plan requirement earns a general angled/curved offset kernel yet.
 
-## Low-level backend extension
+## Terminal IR versioning
 
-ADE-02 adds one new terminal vector primitive: `DrawingPath`.
+ADE-02 earns one new terminal vector primitive: `DrawingPath`, carrying one or more closed paper-space rings rendered with SVG's even-odd fill rule. That is the minimum capability required for one continuous wall region containing a courtyard/hole.
 
-It carries one or more closed paper-space rings and renders using SVG's even-odd fill rule. This is the minimum extension required for a continuous region containing a hole.
+The DRW release freeze correctly rejected adding that primitive to `compiler/publication-drawing/`. The response is **not** to re-freeze history.
 
-This is **not** a change of backend architecture:
+Instead ADE introduces `compiler/publication-drawing-v2/` as a strict additive version of the terminal IR:
 
-- `DrawingScene` remains the terminal paper-space IR;
-- SVG remains the renderer;
-- line/text/rect primitives remain valid;
-- the path primitive contains no architectural intelligence;
-- wall topology remains upstream in ADE.
+- `publication-drawing` remains byte-frozen as the released v1 contract;
+- `publication-drawing-v2` adds `DrawingPath` and a token-aware v2 serializer;
+- a compatibility test requires v2 to serialize the entire v1 primitive set byte-identically to the frozen v1 serializer;
+- ADE capability sheets use v2;
+- released DRW/PLT-v1 proof code remains untouched;
+- the path primitive contains no architectural intelligence; wall topology remains upstream in ADE.
+
+This preserves the ADE-00 decision—keep the deterministic SVG backend—while also preserving the stronger historical invariant that `drawing-publication-v1` is immutable.
 
 ## Why the join defect is actually solved
 
@@ -66,7 +69,7 @@ ADE-02 instead:
 4. traces only the external boundary of that union;
 5. emits one joined path per connected wall network.
 
-No internal rectangle boundary survives into `DrawingScene`, so later token changes cannot accidentally reveal it.
+No internal rectangle boundary survives into the v2 terminal scene, so later token changes cannot accidentally reveal it.
 
 ## Exact-size scale proof
 
