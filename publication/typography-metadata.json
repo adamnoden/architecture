@@ -1,32 +1,32 @@
 {
   "schemaVersion": 1,
-  "contract": "publication-typography-v1-candidate",
+  "contract": "publication-typography-v1-production",
   "proofAuthority": {
-    "packet": "TYP-09D.1",
-    "head": "c6e123ce00429cd2ce6e40e1b6a514f2cec4cbf4",
-    "run": 40232057590
+    "typographyRelease": "publication-typography-v1",
+    "releaseCommit": "9fd9091b2c1ef2a8800f815e6eef39c3233e2701",
+    "note": "Typography authority is frozen by the v1 release; pagination below tracks the current reader-facing production content. Exact RC2 release pagination remains preserved in publication/release-candidates/typ09d1.json."
   },
   "a4": {
-    "pages": 278,
-    "duplexLeaves": 139,
+    "pages": 279,
+    "duplexLeaves": 140,
     "sixteenPageSections": 18,
     "pagesAtSixteenPageBoundary": 288,
-    "paddingToSixteenPageBoundary": 10,
+    "paddingToSixteenPageBoundary": 9,
     "widthMm": 210,
     "heightMm": 297
   },
   "b5": {
-    "pages": 333,
-    "duplexLeaves": 167,
+    "pages": 335,
+    "duplexLeaves": 168,
     "sixteenPageSections": 21,
     "pagesAtSixteenPageBoundary": 336,
-    "paddingToSixteenPageBoundary": 3,
+    "paddingToSixteenPageBoundary": 1,
     "widthMm": 176,
     "heightMm": 250
   },
   "comparison": {
-    "b5MinusA4Pages": 55,
-    "b5PageChangePercent": 19.78,
+    "b5MinusA4Pages": 56,
+    "b5PageChangePercent": 20.07,
     "b5MinusA4Leaves": 28,
     "spineWidthClaim": "not admissible without final paper caliper / manufacturing specification"
   }
