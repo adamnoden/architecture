@@ -93,11 +93,11 @@ export const validateDPL15H = (value: unknown): Record<string, unknown> => {
 
 export const composeDPL15HRp007 = (value: unknown = JSON.parse(text(DPL15H_PATH)) as unknown): DPL15HResult => {
   const validated = validateDPL15H(value)
-  const attempts = (validated.acquisitionAttempts as Record<string, unknown>[]).map((attempt) => ({
+  const attempts = (validated.acquisitionAttempts as Record<string, unknown>[]).map((attempt): Record<string, unknown> => ({
     ...attempt,
     observed: [...(attempt.observed as string[])].sort()
   })).sort((a, b) => String(a.id).localeCompare(String(b.id)))
-  const readiness = (validated.readiness as Record<string, unknown>[]).map((entry) => ({
+  const readiness = (validated.readiness as Record<string, unknown>[]).map((entry): Record<string, unknown> => ({
     ...entry,
     evidenceRefs: [...(entry.evidenceRefs as string[])].sort()
   })).sort((a, b) => String(a.dimension).localeCompare(String(b.dimension)))
