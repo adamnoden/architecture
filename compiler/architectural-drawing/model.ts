@@ -33,10 +33,26 @@ export interface AdePlanNode {
   provenance: AdeProvenance
 }
 
+export type AdeWallLayerRole =
+  | 'weathering-leaf'
+  | 'cavity-zone'
+  | 'structural-leaf'
+  | 'finish-zone'
+  | 'other'
+
+export interface AdeWallAssemblyLayer {
+  id: string
+  role: AdeWallLayerRole
+  thickness: AdeDistanceAuthority
+  provenance: AdeProvenance
+}
+
 export interface AdeWallAssembly {
   kind: 'wall-assembly'
   id: string
   thickness: AdeDistanceAuthority
+  /** Ordered source-owned layers. Omit for monolithic/unresolved assemblies. */
+  layers?: readonly AdeWallAssemblyLayer[]
   provenance: AdeProvenance
 }
 
@@ -47,6 +63,12 @@ export interface AdeWallAssembly {
  */
 export type AdeWallReference = 'centreline' | 'left-face' | 'right-face'
 
+/**
+ * For a layered assembly, identifies which physical face the ordered layer list
+ * starts from. This is architectural orientation, not renderer z-order.
+ */
+export type AdeAssemblyStartFace = 'left-face' | 'right-face'
+
 export interface AdeWallRun {
   kind: 'wall'
   id: string
@@ -54,6 +76,7 @@ export interface AdeWallRun {
   toNodeId: string
   reference: AdeWallReference
   assemblyId: string
+  assemblyStartFace?: AdeAssemblyStartFace
   provenance: AdeProvenance
 }
 
