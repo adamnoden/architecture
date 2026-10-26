@@ -311,9 +311,9 @@ export const workstreamStatuses = [
     maturity: 'M4',
     reviewedOn: '2026-10-26',
     currentState:
-      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. PLT v2 remains open but its previous ground-plan candidate is not eligible for final physical acceptance. ADE-04A and ADE-04B are merged: wall openings now use true topology subtraction and the opening-precision/uncertainty grammar is capability-proved without freezing print tokens.',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. PLT v2 remains open but its previous ground-plan candidate is not eligible for final physical acceptance. ADE-04A/ADE-04B are merged, and ADE-05B has selected the deliberately non-physical unresolved partition-datum and adjacency grammar. Physical partition bodies remain gated by ADE-05A; no print tokens are frozen.',
     nextGate:
-      'Resolve ADE-05 internal-partition authority and partition/adjacency representation, then complete ADE-06 capability/physical proof before ADE-07 migrates the Reference House ground plan and restarts PLT-03 physical review. PR-02 production preparation may consume the accepted typography contract, but final private-object manufacture waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
+      'Resolve ADE-05A upstream Reference House internal-partition authority, then complete ADE-06 capability/physical proof before ADE-07 migrates the Reference House ground plan and restarts PLT-03 physical review. PR-02 production preparation may consume the accepted typography contract, but final private-object manufacture waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
