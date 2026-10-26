@@ -118,11 +118,11 @@ The baseline candidate register is [`eda-02-candidates.json`](eda-02-candidates.
 
 Reproduce from repository root with `node --import tsx scripts/eda-candidates.ts <baseline-sha>`. The scanner rejects membership-authority drift. This overwrites the register; use a clean checkout of the recorded baseline when reproducing historical evidence. Source hashes and line locations bind findings to that snapshot, not to later edited line numbers.
 
-The flags include sentence isolation, bold block quotations, sentence bolding, announcement forms, contrast candidates, questions, short-declarative clusters and short paragraphs before rules. Paragraph-end morals, paired cadence and cumulative recurrence still require contextual reading; the scan does not certify them. Generated prose is inventoried but must be repaired at its generator if necessary. Every candidate remains pending review except the explicit contextual dispositions below. Zero findings does not certify a source.
+The flags include sentence isolation, bold block quotations, sentence bolding, announcement forms, contrast candidates, questions, short-declarative clusters and short paragraphs before rules. Paragraph-end morals, paired cadence and cumulative recurrence still require contextual reading; the scan does not certify them. Generated prose is inventoried but must be repaired at its generator if necessary. Contextual dispositions for all 128 sources and their baseline candidates are recorded in [`eda-review-register.json`](eda-review-register.json). Zero findings does not certify a source. The baseline register is retained unchanged as evidence; revised line locations are not retrofitted into it.
 
 Gate result: candidate production passed. No corpus-wide conformance claim follows.
 
-### EDA-03 — Preface and front-matter audit
+### EDA-03 — Preface and front-matter audit — SOURCE REVIEW COMPLETE
 
 Audit the highest-rhetoric surfaces first. Review sentence, paragraph and page staging together.
 
@@ -148,17 +148,29 @@ The Reader's Guide is retained unchanged: its bold reading-route labels are func
 
 Gate status: source review recorded; layout acceptance remains with EDA-08. EDA-03 is not represented as final physical proof.
 
-### EDA-04 — Main manuscript audit
+### EDA-04 — Main manuscript audit — CLOSED
 
-Audit governing doctrine and long-form manuscript material against their assigned modes. Preserve claim fidelity and architectural hierarchy.
+Reviewed the complete governing doctrine, manuscript, embedded canonical material and appendices under their assigned modes. Integrated duplicated transition announcements, removed repeated closing morals and the recurring “Build the permanent house…” display refrain, and reduced quotation/bold treatment where the text is explanatory. Definitions, actual governing requirements, technical constraints, evidence qualifications and references retain their different functions. The permanent-fabric rule remains visibly distinguished as a requirement. No architectural hierarchy or modality was revised.
 
-### EDA-05 — Pattern, technical and reference-house audit
+Gate result: passed at source level. Page acceptance is recorded under EDA-08.
 
-Audit low-rhetoric and technical surfaces for accidental manifesto voice, unnecessary repetition, terminology drift and explanatory-order failures.
+### EDA-05 — Pattern, technical and reference-house audit — CLOSED
 
-### EDA-06 — Whole-book rhythm audit
+Completed contextual review of all 128 registered sources, including patterns, Reference House material, research, grammar cases, computation, web entry pages, generated reports and compatibility redirects. [`eda-review-register.json`](eda-review-register.json) binds each disposition to baseline and reviewed source hashes. Reviewed publication figure and plate captions as supplemental authored surfaces; their descriptive labels and claim limits are retained.
 
-Read the publication in order and inspect recurrence rather than isolated quality.
+Removed incidental manifesto cards and repeated maxims from research/technical introductions. Preserved source qualifications, normative lists, task questions and unsupported-domain boundaries. Fixed duplicated labels in the service-topology sequence and grammar-case copy defects. Machine identifiers, historical research provenance and generated outputs were retained.
+
+One factual reconciliation is explicitly separate from stylistic revision: Appendix C's stale 280 mm planning going now reads 300 mm, matching the existing controlled `compiler/reference-house/fixture.ts` stair, RHC5 observations and principal-section proof. This records the existing Reference House choice; it does not change stair geometry, regulatory criteria or the fixture.
+
+Gate result: passed. No candidate count or deletion quota was used as a conformance score.
+
+### EDA-06 — Whole-book rhythm audit — CLOSED
+
+Following the complete source review, traversed the assembled Working Edition in publication order, using its actual adapters and embedded canonical sources. Compared openings, transitions and paragraph endings across Parts and appendices, rather than treating locally polished sentences as sufficient.
+
+The Preface retains the highest narrative range. Part I establishes terms and rules; Part II explains mechanisms; Part III uses a repeated reference anatomy; Part IV narrows to project choices; Part V explains execution; appendices carry evidence and reference records. Repeated pattern headings, removal/reinstatement checks and proof limits perform retrieval or safety-boundary work and are retained. These are not recurring paragraph-end applause lines. No global ban on contrast, short paragraphs or authorial compression was introduced.
+
+Gate result: passed. The ordered recurrence pass supplements the full source reading; it is not represented as an independent second word-by-word reading.
 
 Questions include:
 
@@ -170,13 +182,17 @@ Questions include:
 
 No fixed quota is authorised. Rarity is a compositional judgement, not a count target.
 
-### EDA-07 — Adversarial cold read
+### EDA-07 — Adversarial cold read — CLOSED
 
 Perform a hostile editorial read with one primary question:
 
 > Where can I hear the author trying to sound important?
 
 Also attack over-compression, bloodlessness and accidental loss of personality. EDA succeeds only if it removes performance without flattening the book.
+
+A separate hostile read of the revised Preface, manuscript openings/endings, Primer proposition and previously prominent web/research cards tested that question after the repair pass. Rechecked the full Preface without the candidate annotations, including the remaining terse turns. Thorpe's opening, the material aspirations, the ordinary-room ambition and the Ovid ending carry narrative or authorial work; retaining them avoids replacing personality with uniform technical prose. Conventional-construction comparisons and the permission for proposals to fail remain explicit. No material recurring mannerism or loss of claim qualification remained in this review.
+
+Gate result: passed. This was an adversarial pass by the completing editor, not an independent reviewer or external architectural validation.
 
 ### EDA-08 — Typeset proof and closeout
 
@@ -223,9 +239,9 @@ Every chapter needs enough unshowy explanatory prose that genuine compression ca
 
 ---
 
-## 6. Known calibration failures
+## 6. Baseline calibration failures
 
-The current preface already provides useful EDA candidates:
+The baseline Preface supplied the following calibration candidates:
 
 - `Some durable inventions are agreements about where things meet.` — good thought, likely over-promoted by isolation and surrounding section staging.
 - `Architecture has done this before.` — transition promoted into an event.
@@ -235,7 +251,7 @@ The current preface already provides useful EDA candidates:
 - `The question is how to earn that permanence.` — ordinary transition given exceptional weight.
 - `That moment does not abolish expertise. It creates work for it.` — compressed cadence whose survival should depend on whole-book rhetorical density.
 
-These are calibration candidates, not pre-authorised deletions. EDA-03 decides their final form in context under frozen Editorial Doctrine v0.4.
+These were calibration candidates, not pre-authorised deletions. Their explicit EDA-03 dispositions above preserve the useful distinctions under frozen Editorial Doctrine v0.4.
 
 ---
 
@@ -259,14 +275,8 @@ EDA is an editorial assurance gate, not evidence that the architecture itself is
 
 ## 8. Current execution state
 
-EDA-02 is closed. EDA-03 has a recorded source review and explicit calibration dispositions; EDA-08 physical proof is outstanding.
-
-EDA-04 has started with Part I and the reviewed interface/failure/interior sections of Part II. Changes remove duplicated headline propositions, the recurring “Build the permanent house…” refrain and unnecessary quotation treatment. The permanent-fabric rule remains visibly distinguished as an actual governing requirement. Definitions, modality, evidence qualifications and technical constraints remain intact. This is **not** a completed main-manuscript or whole-book audit.
-
-Next: finish EDA-04, then EDA-05 across the remaining registered surfaces and candidate dispositions; perform EDA-06 reading-order recurrence review, EDA-07 adversarial read, and EDA-08 fresh typeset proof and hygiene. Neither candidate counts nor a successful build substitutes for those readings. PR-02 remains gated.
+Source review, contextual candidate dispositions, whole-book recurrence and the adversarial pass are complete. EDA-08 is checking fresh A4, conservative B5 and Primer proofs after the final source repairs. The page reviews identified and repaired an empty numbered front-matter marker page, a one-sentence chapter ending isolated on a nearly empty page, and Part IV headings stranded before full-page plates. Heading-based plate anchors now follow the opening explanatory paragraph; drawings, scales and plate classes are unchanged. Final proof identities and acceptance follow only after rerendering and inspection.
 
 ### Execution environment and validation
 
-The local full-publication preparation succeeded (40 entries; frozen production typography applied). PDF rendering failed before browser launch: Vivliostyle could not download its required Chrome because the proxy tunnel timed out. No installed rendering browser was found. No physical-page review or EDA-08 acceptance is claimed. A later proof must be freshly built from the final sources, including changes made after the initial preparation.
-
-The restricted runtime rejects the `tsx` CLI IPC socket. The equivalent `node --import tsx` loader runs successfully; local checks use an exported shell function for this substitution, without changing package commands or tracked dependencies.
+The restricted runtime rejects the `tsx` CLI IPC socket. The equivalent `node --import tsx` loader runs successfully; local checks use an exported shell function for this substitution, without changing package commands or tracked dependencies. An isolated Chromium renderer and local PDF inspectors enabled actual page review after the initial browser-download failure. Frozen publication fonts and the existing proof assertions remain in force.

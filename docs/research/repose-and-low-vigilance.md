@@ -4,8 +4,7 @@ A house is an environment of unusually long and repeated exposure. It is occupie
 
 Ovid’s House therefore uses **repose** for a simple architectural objective:
 
-> **A good home should minimise unnecessary vigilance.**
-
+A good home should minimise unnecessary vigilance.
 “Vigilance” is used architecturally rather than clinically. Repose does not mean sensory deprivation, minimalism, symmetry, historical style or the elimination of surprise. It means that the ordinary background condition of the house should not continually demand monitoring, interpretation or corrective action from its occupants.
 
 A rich room can be restful. A sparse room can be stressful. The relevant distinction is between **richness that resolves into order** and stimulus that remains unresolved.
@@ -53,7 +52,7 @@ This does not mean every environmental variable should be manually controlled. I
 
 The stronger design question is:
 
-> **Can the occupant understand and alter the condition that is affecting them?**
+Can the occupant understand and alter the condition that is affecting them?
 
 ## Privacy, retreat and graded exposure
 
@@ -102,16 +101,14 @@ Vision science provides strong evidence that people rapidly infer physically mea
 
 That supports a bounded architectural review question:
 
-> **What account of support, mass and equilibrium does this room appear to present?**
-
+What account of support, mass and equilibrium does this room appear to present?
 Engineering legibility and perceptual structural legibility are different. The actual load path must be correct and calculable. The visible architecture does not need to reveal every beam, reinforcement bar or fixing.
 
 But where structure is conspicuous, substantial masses should not appear accidentally unsupported or precarious. A large cantilever, an apparently floating volume, a very slight-looking support beneath a heavy mass or an opening whose head appears inexplicable can make tension part of the permanent visual background.
 
 That may be desirable in a pavilion, museum or deliberate moment of drama. In ordinary domestic rooms the presumption is different:
 
-> **Principal spaces should normally present a plausible visual account of their own equilibrium.**
-
+Principal spaces should normally present a plausible visual account of their own equilibrium.
 This is an architectural hypothesis, not a physiological law. Current evidence does **not** establish that cantilevers cause stress, arches reduce stress, traditional load-bearing expression is universally preferred or literal structural exposure improves health.
 
 ## Prospect, refuge and protected outlook
@@ -120,8 +117,7 @@ Prospect-refuge theory is often used as if it were a universal formula for comfo
 
 The useful architectural question survives without the overclaim:
 
-> **Can an occupant look outward while retaining control over their own exposure?**
-
+Can an occupant look outward while retaining control over their own exposure?
 Deep reveals, bays, window seats, alcoves and seating with substantial enclosure behind may be excellent devices. Their value does not require an evolutionary law.
 
 ## Curvature

@@ -2,13 +2,11 @@
 
 The Reference House is not a prototype offered as proof, nor a model house intended for repetition. It is a worked interpretation: one contemporary family house in which the propositions of Ovid’s House are forced to coexist with an architectural language, a programme, a structure, an envelope, services, weather, maintenance and the ordinary inconveniences of occupation.
 
-Its value lies in specificity. General propositions are easy to preserve while they remain abstract. A house makes them collide.
+The worked house tests how general propositions interact in a specific arrangement.
 
 The Reference House therefore carries several authorities at once. Ovid’s House supplies the long-life architectural position. The pattern set supplies reusable responses, with the service-topology family providing the strongest current generative sequence. G-01 supplies a bounded Georgian-derived grammar. The courtyard is a project morphology. The material and tectonic choices belong to this house. Technical systems remain project selections rather than doctrine. None of these authorities is allowed to absorb the others.
 
 The result is a four-bedroom detached courtyard house, developed at virtual-design scope. It is coordinated strongly enough to expose architectural consequences, but it is not a completed technical design. Structural capacity, detailed building physics, regulatory approval, plant sizing, product selection and physical interface performance remain downstream work.
-
-That distinction is essential. The house is useful because it is concrete. It remains credible only if concreteness is not mistaken for proof.
 
 It is also a deliberately favourable integration fixture. A detached perimeter, open courtyard and concentrated service flank make several maintenance and service-topology problems easier than they would be in compact attached housing. A compact-terrace transfer test therefore matters separately: the value of this house is that the propositions coexist here, not that its plant room, service flank or maintenance strips should be exported as a template.
 
@@ -89,9 +87,7 @@ The principal front is organised as a centred four-bay field. The entrance occup
 
 That decision is not a tolerated imperfection. It is the architectural resolution of a real conflict. A centred entrance would interfere with the principal stair or require a contrived internal vestibule whose only purpose was to satisfy exterior symmetry. The alternative—allowing each room to punch an opening independently—would dissolve the façade into plan residue.
 
-The selected front therefore separates two ideas that are often lazily conflated:
-
-> the façade is ordered; the entrance is off-centre.
+The façade remains ordered while the entrance is off-centre.
 
 The principal bay axes remain stable while individual attributes respond to the spaces behind them. The stair window retains the bay centreline but raises its sill because the stair owns that requirement. Ground-floor principal openings are taller than the upper family. The entrance is ranked within the same field rather than enlarged into a portico-scale event.
 
@@ -132,8 +128,6 @@ Where structure is conspicuous, support, mass and equilibrium are reviewed as ar
 This has direct consequences.
 
 Quiet masonry walls remain directly finished where no service burden justifies another layer. Principal floors remain continuous rather than raised or panelised. Technical access is concentrated at real interfaces and service spaces. Plant and terminals are given hierarchy rather than hidden behind fake architecture. Metal is used sparsely where touch, wear, indexing or disassembly gives it a reason to exist.
-
-The house should not continually explain itself.
 
 ## Tectonic language
 
@@ -301,7 +295,7 @@ The service side is the most important current working strip because it combines
 
 The courtyard is also treated as a working space when necessary. Components of a mobile tower can be brought through the garden-to-court route and erected inside the court for maintenance to courtyard elevations.
 
-The architectural implication is subtle but significant: landscape cannot be treated as independent decoration. Permanent raised planters, fountains, stores or other fixed objects must not casually consume the only credible maintenance position.
+Landscape must be coordinated with those maintenance positions. Permanent raised planters, fountains, stores or other fixed objects must not casually consume the only credible maintenance position.
 
 A real site can invalidate this geography. If boundaries or ownership remove the assumed side route, the correct response is to mirror, relocate, simplify or reopen the architecture—not to cite the virtual strip as evidence that external maintenance has been solved.
 

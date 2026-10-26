@@ -6,7 +6,7 @@ The useful concept is **external maintenance geography**: the spatial relationsh
 
 The central test is:
 
-> **A building component is not accessible merely because it can be reached. The building must provide a credible route by which the foreseeable work on it can be performed.**
+A building component is not accessible merely because it can be reached. The building must provide a credible route by which the foreseeable work on it can be performed.
 
 ## Maintenance risk begins at design stage
 
@@ -54,8 +54,7 @@ A credible roof strategy considers the complete task:
 
 This leads to a useful design order:
 
-> **Reduce roof-mounted maintenance demand first; then provide a coherent route for the work that remains.**
-
+Reduce roof-mounted maintenance demand first; then provide a coherent route for the work that remains.
 A permanent hatch can be excellent where recurring tasks justify it. It can also add a weather, thermal, air, security and fire interface while doing nothing about edge protection or working platform. Its value has to come from the actual maintenance sequence.
 
 ## Façade geometry fixes access early
@@ -132,7 +131,7 @@ Yet a task may require:
 
 If another element occupies that space, the conflict is real even though two pieces of finished construction do not clash.
 
-> **Required empty space is sometimes a designed asset.**
+Required empty space is sometimes a designed asset.
 
 ## External maintenance envelope
 
@@ -160,7 +159,7 @@ The envelope is task-specific. Repointing masonry, cleaning a window, replacing 
 
 This produces a second useful rule:
 
-> **External maintenance begins at the site entrance, not at the wall.**
+External maintenance begins at the site entrance, not at the wall.
 
 ## Landscape is part of future access
 

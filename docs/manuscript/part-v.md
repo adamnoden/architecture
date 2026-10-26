@@ -5,9 +5,7 @@
 
 # 19. Whole-life value and proportionality
 
-A long-life building can become wasteful in the name of avoiding waste.
-
-Every additional void, rail, removable panel, spare conduit, structural allowance or containment system consumes material, labour, space and design attention at the beginning of the building's life. Some will prevent destructive work later. Others may never be used.
+A long-life building can become wasteful in the name of avoiding waste. Every additional void, rail, removable panel, spare conduit, structural allowance or containment system consumes material, labour, space and design attention at the beginning of the building's life. Some will prevent destructive work later. Others may never be used.
 
 Serviceability is therefore a **whole-life investment**, not an automatic good.
 
@@ -25,9 +23,7 @@ Novelty earns nothing by itself. Every non-standard provision should be compared
 
 The conventional option is allowed to be well designed: accessible plant, documented services, sensible local access panels, mechanically fixed windows, coordinated floor and ceiling zones, durable finishes and competent replacement planning.
 
-Ovid’s House has to show what it adds **beyond that**.
-
-The comparison must also be functionally fair. A serviceable option does not win by accepting worse fire, acoustic, moisture, thermal or architectural performance than the conventional one.
+Ovid’s House has to show what it adds beyond that. The comparison must also be functionally fair. A serviceable option does not win by accepting worse fire, acoustic, moisture, thermal or architectural performance than the conventional one.
 
 ## Four burdens of provision
 
@@ -185,9 +181,7 @@ A building passport, digital model and maintenance history can make future work 
 
 # 21. Standardisation, manufacture and reliable assembly
 
-The project favours ordinary parts in extraordinary arrangements. That principle extends into a manufacturing gradient:
-
-> **Build the permanent house. Assemble the changeable house inside it.**
+The project favours ordinary parts in extraordinary arrangements. Its manufacturing approach distinguishes permanent construction, interface infrastructure, replaceable architectural assemblies and commodity components.
 
 ## The four layers
 
@@ -248,8 +242,6 @@ Ursula Franklin's distinction between **holistic** and **prescriptive** technolo
 
 For each important operation ask whether skill is improving the architecture or merely compensating for dimensional conflict, ambiguous information or a badly designed sequence. Fine masonry, plaster, stone and joinery may properly retain workmanship of risk; repeated hidden mounting geometry usually should not.
 
-> **Spend workmanship where workmanship creates value.**
-
 ## Tolerance translation
 
 Precision components meet imperfect buildings. Their interface must translate between them.
@@ -291,9 +283,7 @@ Where a **repeated non-standard assembly has installation logic that is not alre
 
 Observe questions, sequence errors, extra measuring, unplanned packers or fixings, unexpected tools, inaccessible operations, ambiguous datums and whether errors remain visible before closure.
 
-The trial examines the design information and assembly logic, not the installer. A conventional assembly already covered by ordinary trade skill, inspection and specialist design does not need a ritual second-installer test.
-
-> **A non-standard repeated detail that works only when its designer assembles it is not yet a resolved detail.**
+The trial examines the design information and assembly logic, not the installer. A conventional assembly already covered by ordinary trade skill, inspection and specialist design does not need a ritual second-installer test. A non-standard repeated detail that works only when its designer assembles it is not yet a resolved detail.
 
 ---
 
@@ -411,9 +401,7 @@ A maintenance route that exists only on the architect's pre-landscape drawing ha
 
 Intervention does not end when the component is reached. Afterward verify that panels seat correctly, seals and fire stopping are restored, acoustic isolation is intact, waterproofing remains sound and labels or records still match reality.
 
-The same applies outside. Temporary access should not require damage to permanent planting, paving, drainage or envelope elements merely to perform a task that was supposed to be ordinary.
-
-An access strategy that cannot be reliably closed is not maintainable.
+The same applies outside. Temporary access should not require damage to permanent planting, paving, drainage or envelope elements merely to perform a task that was supposed to be ordinary. An access strategy that cannot be reliably closed is not maintainable.
 
 ---
 
@@ -547,6 +535,6 @@ A selected grammar or project dialect may add narrower material rules. The Refer
 
 A long-life house should not look provisional. Its rooms should be able to feel settled and permanent because the parts that need to change have disciplined places to do so.
 
-The platform succeeds when maintenance becomes less destructive **without making ordinary life feel like maintenance**.
+The platform succeeds when maintenance becomes less destructive without making ordinary life feel like maintenance.
 
 ---

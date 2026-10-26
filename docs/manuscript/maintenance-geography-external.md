@@ -6,11 +6,7 @@ That work is ordinary. Mortar is repointed, gutters are cleared and renewed, win
 
 External access is often considered only after the architecture has fixed the problem. A projecting bay removes the obvious scaffold line. A pond occupies the only firm ground beside an upper wall. A narrow side passage admits a person but not the equipment or replacement component. A roof hatch opens onto a steep slope with no credible onward route.
 
-The mistake is to ask only whether the component can be reached.
-
-> **A building component is not accessible merely because it can be reached. The building must provide a credible route by which the foreseeable work on it can be performed.**
-
-This is the external extension of maintenance geography.
+Reaching the component is only part of the task. The building must provide a credible route by which the foreseeable work on it can be performed. This is the external extension of maintenance geography.
 
 ## The maintenance route begins before the wall
 
@@ -174,10 +170,6 @@ For each scenario ask:
 - what must be damaged or dismantled merely to create access?
 
 A good answer is not necessarily zero inconvenience. It is inconvenience that is proportionate, anticipated and compatible with ordinary competent practice.
-
-> **External maintenance begins at the site entrance, not at the wall.**
-
-That is the exterior meaning of maintenance geography.
 
 ---
 

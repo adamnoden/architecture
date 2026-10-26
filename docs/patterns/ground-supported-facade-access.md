@@ -34,8 +34,6 @@ Upper-storey façades need inspection, cleaning, repair and eventual renewal, ye
 
 Bays, porches, low roofs, lightwells, retaining walls, ponds, planting and narrow passages may each be reasonable in isolation. Together they can turn routine work such as repointing, gutter renewal or window replacement into a specialist-access problem.
 
-A façade is not maintainable merely because someone can theoretically reach it.
-
 ## Problem
 
 Façade and landscape geometry are usually fixed long before a future maintenance method is chosen. Reasonable projections, level changes, planting and site constraints can therefore combine to remove the approach, bearing and working positions needed for ordinary access, making routine work unnecessarily dependent on specialist equipment, destructive alteration or third-party land.
@@ -100,8 +98,6 @@ A projection is not prohibited because it complicates access.
 
 For bays, porticos, canopies and balconies, ask whether ordinary access geometry can pass or bridge the element, whether useful support positions are lost, and whether a modest geometric change would materially simplify future work without weakening the architecture.
 
-The preferred outcome is **known complexity**, not geometric purity.
-
 ## Landscape integration
 
 Landscape should be designed in maintenance states as well as occupied states. Critical support positions may coincide with gravel, paving or ordinary clearings; planting may be removable or capable of being cut back; gates and passages should admit the equipment or components that must pass beyond them.
@@ -144,11 +140,9 @@ External maintenance geography should therefore be checked at completion, not on
 
 The pattern should be almost invisible in ordinary life. Critical space can coincide with paths, gravel margins, quiet hard landscape and normal garden clearings.
 
-The landscape remains landscape; its geometry simply retains an occasional second use.
-
 ## Architectural resolution
 
-The task is to make maintenance capability **latent rather than absent**. Where possible, the maintenance strategy should reinforce architectural order rather than appear as appended equipment.
+Where possible, access routes and support positions should form part of the architectural and landscape order rather than require appended equipment.
 
 ## Maintenance sequence
 

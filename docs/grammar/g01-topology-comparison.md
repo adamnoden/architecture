@@ -2,8 +2,6 @@
 
 Spatial organisation carries architectural information before exact dimensions are known. G-01 therefore compares topology, route, sequence and hierarchy separately from proportional analysis.
 
-> **Do not mistake one beautiful historical plan for the grammar that produced an architectural culture.**
-
 The comparison below uses Marble Hill House, Danson House and 76 Dean Street because they stress materially different domestic morphologies. Bedford Square extends the urban evidence at a larger terrace/block scale.
 
 ## Why topology precedes proportion

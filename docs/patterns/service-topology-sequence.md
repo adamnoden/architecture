@@ -2,9 +2,7 @@
 
 This sequence orders architectural decisions that strongly affect structure, room planning, boundaries, maintenance and later technical complexity. It is not a services-design specification and does not prescribe one mechanical or electrical system.
 
-Its practical question is:
-
-> **In what order should the building create places for services so that later systems can be resolved without consuming the architecture that should have constrained them?**
+It orders the creation of service geography so that later systems can be resolved without consuming the architecture that should have constrained them.
 
 ## Starting context
 
@@ -254,25 +252,25 @@ If the installed topology is too irregular to describe simply, do not solve that
 ```text
 SERVICE DEMAND MAP
         ↓
-Controlled Utility Entry  Controlled Utility Entry
+Controlled Utility Entry
         ↓
-Plant Room as Service Hub  Plant Room as Service Hub
+Plant Room as Service Hub
         ↓
-Accessible Vertical Service Zone  Accessible Vertical Service Zone — where justified
+Accessible Vertical Service Zone — where justified
         ↓
-High-Service-Room Service Wall  High-Service-Room Service Wall — where useful
+High-Service-Room Service Wall — where useful
         ↓
-Coherent Horizontal Service Route  Coherent Horizontal Service Route
+Coherent Horizontal Service Route
         ↓
-Compartmented Service Void  Compartmented Service Void
-      + Designed Structural Penetration  Designed Structural Penetration
+Compartmented Service Void
+      + Designed Structural Penetration
         ↓
 FAIL-SAFE WATER DISTRIBUTION
       ↳ Visible Leakage Path / Failure-Tolerant Wet Service Room where applicable
         ↓
-Accessible Room Service Route  Accessible Room Service Route — where useful
+Accessible Room Service Route — where useful
         ↓
-Physical Service Index  Physical Service Index
+Physical Service Index
 ```
 
 The sequence is not identical to the pattern graph. Graph relationships describe reusable architectural relationships; a generative sequence orders decisions by when they become expensive to reverse. A pattern may therefore be considered earlier or later than its graph relation alone would suggest.
