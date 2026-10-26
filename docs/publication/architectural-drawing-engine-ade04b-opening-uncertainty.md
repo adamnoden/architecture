@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # ADE-04B — opening precision and uncertainty grammar
 
 Status: screen-reviewed capability grammar; exact paper-space treatment remains provisional pending ADE-06 physical atlas.
