@@ -3,14 +3,14 @@
   "controlId": "DPL-T-CONTROL-004",
   "controlSiteKind": "INSTRUMENTED_REAL_CONTROL",
   "sampleMembership": "EXCLUDED_FROM_DEPLOYMENT_ENVELOPE_SAMPLE",
-  "researchDate": "2026-10-25",
+  "researchDate": "2026-10-26",
   "site": {
     "address": "41 Lennard Road, Bromley, BR2 8LN",
     "planningAuthority": "London Borough of Bromley",
     "applicationRef": "26/02618/FPA",
     "proposal": "Demolition of existing bungalow and construction of detached two storey 4 bedroom dwellinghouse with habitable rooms in loftspace, cycle parking in rear garden, front driveway alterations and side boundary fence/gate",
     "siteTypology": "CONVENTIONAL_STREET_FRONT_REPLACEMENT_DWELLING",
-    "currentPublicRegisterState": "VALID_AWAITING_DECISION_AS_INDEXED_2026_10_25"
+    "currentPublicRegisterState": "VALID_AWAITING_DECISION_AS_INDEXED_2026_10_26"
   },
   "addressIdentity": {
     "uprn": "100020404537",
@@ -77,7 +77,7 @@
     "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "SATISFIED_SCREENING_PHYSICAL_STREET_ACCESS_RELATIONSHIP",
     "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDENTITY_LEVEL"
   },
-  "packetResult": "REAL_CONTROL_SCREENING_FRONTIER_CLASSIFIED",
+  "packetResult": "REAL_CONTROL_ACCELERATION_FRONTIER_DISPOSED",
   "candidateAuthoringState": "AUTHORED_DPL_T3_VERIFIED_DPL_T4",
   "candidate": {
     "id": "DPL-T-CANDIDATE-004-01",
@@ -177,7 +177,43 @@
     "incompatibilityConclusion": "NOT_ADMITTED",
     "routeExhaustion": "NOT_IMPLEMENTED"
   },
-  "nextPacket": "DPL-T7 Lennard acceleration classification and public-evidence disposition",
+  "accelerationDisposition": {
+    "packet": "DPL-T7",
+    "decisionRecord": "../dpl-t7-lennard-acceleration-disposition.md",
+    "publicEvidenceRecord": "dpl-t-control-004-lennard-road-t7-public-screening-v01.json",
+    "result": "ACCELERATION_FRONTIER_DISPOSED_NO_NEW_DUE_NOW_EVIDENCE",
+    "resultFingerprint": "f326bf64e599b08099edd21160e8e6a7af79477fd76a1f72b3b445e587f3c88c",
+    "publicEvidenceFingerprint": "091dccbc6b5da1e4a7888a96aa605c1b91c28d27dbd64d26506094282166163e",
+    "planningCoverageFingerprint": "d740bc9ddde53055e68d9cae407b306c92d4ed8c5004a2a5e525a6f1b87b90fc",
+    "nonPlanningCoverageFingerprint": "0d855806e818b4ddfe35e9a38b44278f6d041a7feeee795998b9dc5d0df8c615",
+    "accelerationInputCount": 15,
+    "noPositiveTriggerFactAdmitted": 15,
+    "futureDueOrDownstream": 12,
+    "triggerNotActivatedAtScreening": 3,
+    "activatedDueNowExternalEvidenceSurvives": 0,
+    "unresolvedTriggerAuthority": 0,
+    "survivingAccelerationDueNowIds": [],
+    "remainingSubstantiveBlockers": 10,
+    "remainingBlockerIds": [
+      "REFERENCE_HOUSE:RH-PROT-08",
+      "REFERENCE_HOUSE:RH-PROT-14",
+      "ENGLAND:ENG-COV-SOURCE-APPLICABILITY",
+      "PLANNING:DPL10-COV-EMERGING-POLICY-MATERIAL-WEIGHT",
+      "PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY",
+      "PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY",
+      "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY",
+      "NON_PLANNING:DPL11-COV-ACCESS-STATUS",
+      "NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER",
+      "NON_PLANNING:DPL11-COV-SITE-CONTROL"
+    ],
+    "siteEvidenceCommissioned": false,
+    "applicantProposalFactsTransferred": false,
+    "unknownTreatedAsTrigger": false,
+    "compatibilityConclusion": "NOT_ADMITTED",
+    "incompatibilityConclusion": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED"
+  },
+  "nextPacket": "DPL-T8 Lennard substantive SCREENING blocker disposition and minimum evidence packet",
   "restraints": {
     "referenceHouseMutation": "PROHIBITED",
     "compatibilityConclusion": "NOT_ADMITTED",
@@ -187,7 +223,7 @@
     "privateAccessRights": "UNRESOLVED",
     "highwayAdoptionExtent": "UNRESOLVED",
     "measuredTopographicSurvey": "NOT_ACQUIRED",
-    "siteEvidenceCommissionedByT6": "NO",
+    "siteEvidenceCommissionedByT7": "NO",
     "dpl16": "HELD"
   }
 }
