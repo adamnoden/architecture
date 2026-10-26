@@ -116,15 +116,12 @@ export interface DPLT9Result {
 }
 
 const readText = (path: string): string => readFileSync(resolve(process.cwd(), path), 'utf8')
-
 const canonicalStrings = (values: readonly string[]): string[] =>
   [...new Set(values)].sort((a, b) => a.localeCompare(b))
 
 const readAuthorityEvidence = (): { record: T9AuthorityEvidence; fingerprint: string; sourceIds: Set<string> } => {
   const record = JSON.parse(readText(DPL_T9_AUTHORITY_PATH)) as T9AuthorityEvidence
-  if (record.schemaVersion !== 'dpl.lennardT9AuthorityEvidence.v1') {
-    throw new Error(`DPL-T9 authority schema drifted: ${String(record.schemaVersion)}.`)
-  }
+  if (record.schemaVersion !== 'dpl.lennardT9AuthorityEvidence.v1') throw new Error('DPL-T9 authority schema drifted.')
   if (record.controlId !== 'DPL-T-CONTROL-004' || record.candidateId !== 'DPL-T-CANDIDATE-004-01') {
     throw new Error('DPL-T9 authority control/candidate identity drifted.')
   }
@@ -147,25 +144,18 @@ const assertBriefs = (): void => {
   const geometry = readText(DPL_T9_GEOMETRY_BRIEF_PATH)
   const planning = readText(DPL_T9_PLANNING_REVIEW_PATH)
   const baseStructural = readText(DPL_T9_BASE_STRUCTURAL_BRIEF_PATH)
-
-  if (!structural.includes(DPL_T9_BASE_STRUCTURAL_BRIEF_PATH)) {
-    throw new Error('DPL-T9 structural addendum must bind to the existing RH-11 structural brief.')
-  }
-  if (!baseStructural.includes('no structural adequacy claim')) {
-    throw new Error('DPL-T9 base structural brief authority boundary drifted.')
-  }
+  if (!structural.includes(DPL_T9_BASE_STRUCTURAL_BRIEF_PATH)) throw new Error('DPL-T9 structural base brief binding drifted.')
+  if (!baseStructural.includes('no structural adequacy claim')) throw new Error('DPL-T9 RH-11 authority boundary drifted.')
   if (!geometry.includes('REFERENCE_HOUSE:RH-PROT-14') || !geometry.includes('PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY')) {
-    throw new Error('DPL-T9 measured-geometry brief must serve both RH-PROT-14 and local quantitative policy.')
+    throw new Error('DPL-T9 geometry brief consumer set drifted.')
   }
   if (!geometry.includes('does **not** request by default') || !geometry.includes('determined legal boundary')) {
-    throw new Error('DPL-T9 measured-geometry brief exclusions drifted.')
+    throw new Error('DPL-T9 geometry brief exclusions drifted.')
   }
   if (!planning.includes('PLANNING_DESIGN_CONTEXT_REVIEW') || !planning.includes('23/00297/FULL6')) {
-    throw new Error('DPL-T9 planning review does not preserve exact-site context and consolidated dependency.')
+    throw new Error('DPL-T9 planning-context binding drifted.')
   }
-  if (!planning.includes('not a reusable refusal rule')) {
-    throw new Error('DPL-T9 planning review overclaims the prior refusal.')
-  }
+  if (!planning.includes('not a reusable refusal rule')) throw new Error('DPL-T9 planning review overclaims prior refusal.')
 }
 
 const specs: readonly T9Spec[] = [
@@ -233,14 +223,9 @@ const counts = <T extends string>(values: readonly T[], observed: readonly T[]):
 
 export const composeDPLT9LennardNoCostClosure = (): DPLT9Result => {
   const t8 = composeDPLT8LennardSubstantiveDisposition()
-  if (t8.resultFingerprint !== DPL_T9_EXPECTED_T8_RESULT_FINGERPRINT) {
-    throw new Error(`DPL-T9 parent T8 drifted: ${t8.resultFingerprint}.`)
-  }
-  if (t8.dueNowUnresolvedBlockerIds.length !== 7) {
-    throw new Error(`DPL-T9 expected seven T8 blockers, found ${t8.dueNowUnresolvedBlockerIds.length}.`)
-  }
+  if (t8.resultFingerprint !== DPL_T9_EXPECTED_T8_RESULT_FINGERPRINT) throw new Error(`DPL-T9 parent T8 drifted: ${t8.resultFingerprint}.`)
   const t8Ids = canonicalStrings(t8.dueNowUnresolvedBlockerIds)
-  if (JSON.stringify(t8Ids) !== JSON.stringify(DPL_T9_EXPECTED_INPUT_BLOCKER_IDS)) {
+  if (t8Ids.length !== 7 || JSON.stringify(t8Ids) !== JSON.stringify(DPL_T9_EXPECTED_INPUT_BLOCKER_IDS)) {
     throw new Error('DPL-T9 seven-item parent frontier drifted.')
   }
 
@@ -248,17 +233,15 @@ export const composeDPLT9LennardNoCostClosure = (): DPLT9Result => {
   assertBriefs()
 
   const records = specs.map((spec): DPLT9Record => {
-    if (!t8Ids.includes(spec.blockerId)) {
-      throw new Error(`DPL-T9 spec references non-parent blocker ${spec.blockerId}.`)
-    }
+    if (!t8Ids.includes(spec.blockerId)) throw new Error(`DPL-T9 non-parent blocker ${spec.blockerId}.`)
     for (const ref of spec.evidenceRefs.filter((value) => value.startsWith('T9-'))) {
       if (!authority.sourceIds.has(ref)) throw new Error(`DPL-T9 unknown evidence ref ${ref}.`)
     }
     if (spec.disposition === 'RESOLVED_BOUNDED_PROJECT_AUTHORITY' && spec.dependencyClass !== null) {
-      throw new Error(`DPL-T9 resolved record ${spec.blockerId} cannot retain a dependency.`)
+      throw new Error(`DPL-T9 resolved record ${spec.blockerId} retains dependency.`)
     }
     if (spec.disposition !== 'RESOLVED_BOUNDED_PROJECT_AUTHORITY' && spec.dependencyClass === null) {
-      throw new Error(`DPL-T9 unresolved record ${spec.blockerId} requires a dependency class.`)
+      throw new Error(`DPL-T9 unresolved record ${spec.blockerId} lacks dependency.`)
     }
     const payload = {
       blockerId: spec.blockerId,
@@ -276,22 +259,18 @@ export const composeDPLT9LennardNoCostClosure = (): DPLT9Result => {
   }
 
   const countsByDisposition = counts(dplT9Dispositions, records.map((record) => record.disposition))
-  const resolvedBlockerIds = records
-    .filter((record) => record.disposition === 'RESOLVED_BOUNDED_PROJECT_AUTHORITY')
-    .map((record) => record.blockerId)
-    .sort((a, b) => a.localeCompare(b))
-  const currentActiveBlockerIds = records
-    .filter((record) => record.disposition !== 'RESOLVED_BOUNDED_PROJECT_AUTHORITY')
-    .map((record) => record.blockerId)
-    .sort((a, b) => a.localeCompare(b))
-  const decisionDependencies = canonicalStrings(
-    records.flatMap((record) => record.dependencyClass ? [record.dependencyClass] : [])
-  ) as DPLT9DependencyClass[]
+  const resolvedBlockerIds = records.filter((record) => record.disposition === 'RESOLVED_BOUNDED_PROJECT_AUTHORITY').map((record) => record.blockerId).sort((a, b) => a.localeCompare(b))
+  const currentActiveBlockerIds = records.filter((record) => record.disposition !== 'RESOLVED_BOUNDED_PROJECT_AUTHORITY').map((record) => record.blockerId).sort((a, b) => a.localeCompare(b))
+  const decisionDependencies = canonicalStrings(records.flatMap((record) => record.dependencyClass ? [record.dependencyClass] : [])) as DPLT9DependencyClass[]
 
-  const dependencyConsumers = Object.fromEntries(dplT9DependencyClasses.map((dependency) => [
-    dependency,
+  const consumers = (dependency: DPLT9DependencyClass): string[] =>
     records.filter((record) => record.dependencyClass === dependency).map((record) => record.blockerId).sort((a, b) => a.localeCompare(b))
-  ])) as Record<DPLT9DependencyClass, readonly string[]>
+  const dependencyConsumers: Record<DPLT9DependencyClass, readonly string[]> = {
+    EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY: consumers('EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY'),
+    COMPETENT_STRUCTURAL_CONCEPT_REVIEW: consumers('COMPETENT_STRUCTURAL_CONCEPT_REVIEW'),
+    MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY: consumers('MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY'),
+    PLANNING_DESIGN_CONTEXT_REVIEW: consumers('PLANNING_DESIGN_CONTEXT_REVIEW')
+  }
 
   const externalProfessionalOrMeasurementDependencies: DPLT9DependencyClass[] = [
     'COMPETENT_STRUCTURAL_CONCEPT_REVIEW',
@@ -299,7 +278,6 @@ export const composeDPLT9LennardNoCostClosure = (): DPLT9Result => {
   ]
   const publicAuthorityRecoveryDependencies: DPLT9DependencyClass[] = ['EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY']
   const planningJudgementDependencies: DPLT9DependencyClass[] = ['PLANNING_DESIGN_CONTEXT_REVIEW']
-
   const proofBoundary = {
     compatibleAtScreening: 'NOT_ADMITTED' as const,
     incompatible: 'NOT_ADMITTED' as const,
@@ -332,8 +310,5 @@ export const composeDPLT9LennardNoCostClosure = (): DPLT9Result => {
     proofBoundary
   }
 
-  return {
-    ...resultPayload,
-    resultFingerprint: sha256SemanticFingerprint(resultPayload)
-  }
+  return { ...resultPayload, resultFingerprint: sha256SemanticFingerprint(resultPayload) }
 }
