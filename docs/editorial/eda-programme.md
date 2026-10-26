@@ -1,10 +1,11 @@
 # EDA — Editorial Doctrine Audit
 
-**Status:** authorised / active — EDA-00 closed; EDA-01 next  
+**Status:** authorised / active — EDA-00 and EDA-01 closed; EDA-02 next  
 **Programme owner:** publication editorial control  
 **Baseline:** `816c6ca71e20235dca83350eb0f3e2cd05186169`  
 **Governing relationship:** post-migration assurance of the completed Editorial Overhaul  
 **Audit standard:** Editorial Doctrine v0.4, frozen at blob `30fb6b2d67c356664430bca4996e38898ce91084`  
+**Corpus register:** [EDA-01](eda-01-corpus-register.md)  
 **Release effect:** EDA close is required before PR-02 private physical-object production
 
 ---
@@ -80,11 +81,20 @@ Result:
 
 Gate result: passed. Corpus conformance work may begin under v0.4.
 
-### EDA-01 — Corpus and prose-mode register
+### EDA-01 — Corpus and prose-mode register — CLOSED
 
 Enumerate the current reader-facing surfaces and assign each a prose mode. Explicitly classify what is in scope, lightly controlled, or provenance/frozen.
 
-Gate: every audited surface has one owner, one mode and one disposition.
+Result:
+
+- Working Edition membership is bound to the existing mechanical publication manifest and adapter dependencies rather than duplicated manually;
+- Primer authored edges and canonical-derived content are distinguished;
+- the broader public website is included through the existing `project/public-surface.ts` boundary;
+- every current reader-facing prose surface receives an owner, one of the six Editorial Doctrine prose modes, and an audit disposition;
+- generated/machine-owned surfaces are distinguished from authored prose so EDA repairs the owning source rather than polishing projections;
+- internal provenance and programme records remain explicitly outside publication-voice conformance.
+
+Gate result: passed. [EDA-01 corpus register](eda-01-corpus-register.md) controls audit membership and mode assignment from EDA-02 onward.
 
 ### EDA-02 — Mechanical candidate scan
 
@@ -219,4 +229,4 @@ EDA is an editorial assurance gate, not evidence that the architecture itself is
 
 ## 8. Current next action
 
-Proceed to **EDA-01 — Corpus and prose-mode register**. Do not begin EDA-03 prose repair until the register is complete and EDA-02 has produced the non-authoritative candidate scan.
+Proceed to **EDA-02 — Mechanical candidate scan**. The scan is non-authoritative and must use [EDA-01](eda-01-corpus-register.md) for membership, prose mode and disposition. Do not begin EDA-03 prose repair until EDA-02 has produced the candidate register.
