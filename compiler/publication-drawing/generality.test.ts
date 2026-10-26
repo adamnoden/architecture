@@ -143,6 +143,16 @@ test('DRW-12C keeps the non-RH publication scene finite, inside paper space and 
       assert.ok(primitive.x >= 0 && primitive.y >= 0, `${primitive.id} starts outside paper`)
       assert.ok(primitive.x + primitive.width <= scene.widthMm, `${primitive.id} exceeds paper width`)
       assert.ok(primitive.y + primitive.height <= scene.heightMm, `${primitive.id} exceeds paper height`)
+    } else if (primitive.kind === 'path') {
+      assert.ok(primitive.rings.length > 0, `${primitive.id} has no rings`)
+      for (const [ringIndex, ring] of primitive.rings.entries()) {
+        assert.ok(ring.length >= 3, `${primitive.id} ring ${ringIndex + 1} is degenerate`)
+        for (const point of ring) {
+          assertFinitePoint(point.x, point.y, primitive.id)
+          assert.ok(point.x >= 0 && point.x <= scene.widthMm, `${primitive.id} path exceeds paper width`)
+          assert.ok(point.y >= 0 && point.y <= scene.heightMm, `${primitive.id} path exceeds paper height`)
+        }
+      }
     } else {
       assertFinitePoint(primitive.x, primitive.y, primitive.id)
       assert.ok(primitive.x >= 0 && primitive.x <= scene.widthMm, `${primitive.id} text anchor exceeds paper width`)
