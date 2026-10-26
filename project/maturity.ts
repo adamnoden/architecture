@@ -311,9 +311,9 @@ export const workstreamStatuses = [
     maturity: 'M4',
     reviewedOn: '2026-10-26',
     currentState:
-      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. PLT v2 remains open but its previous ground-plan candidate is not eligible for final physical acceptance. ADE-04A/ADE-04B are merged, and ADE-05B has selected the deliberately non-physical unresolved partition-datum and adjacency grammar. Physical partition bodies remain gated by ADE-05A; no print tokens are frozen.',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. PLT v2 remains open but its previous ground-plan candidate is not eligible for final physical acceptance. ADE-04A/ADE-04B are merged, and ADE-05B has selected the deliberately non-physical unresolved partition-datum and adjacency grammar; physical partition bodies remain gated by ADE-05A. EDA is now the active post-migration editorial assurance programme: EDA-00 froze Editorial Doctrine v0.4, EDA-01 established the corpus/prose-mode register, and EDA-02 is next. No print tokens are frozen and EDA close is required before PR-02 private physical-object production.',
     nextGate:
-      'Resolve ADE-05A upstream Reference House internal-partition authority, then complete ADE-06 capability/physical proof before ADE-07 migrates the Reference House ground plan and restarts PLT-03 physical review. PR-02 production preparation may consume the accepted typography contract, but final private-object manufacture waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
+      'Resolve ADE-05A upstream Reference House internal-partition authority, then complete ADE-06 capability/physical proof before ADE-07 migrates the Reference House ground plan and restarts PLT-03 physical review. In parallel continue EDA from EDA-02 through typeset closeout. PR-02 preparation may consume the accepted typography contract, but final private-object manufacture waits for both EDA close and the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
@@ -328,6 +328,9 @@ export const workstreamStatuses = [
         'docs/publication/architectural-drawing-engine-ade00-audit.md',
         'docs/publication/architectural-drawing-engine-ade03b-wall-grammar.md',
         'docs/publication/architectural-drawing-engine-ade04b-opening-uncertainty.md',
+        'docs/editorial/eda-programme.md',
+        'docs/editorial/eda-00-doctrine-audit.md',
+        'docs/editorial/eda-01-corpus-register.md',
         'publication/pr01-r7-findings-freeze.md',
         'publication/pr01-r9-reproof-refreeze.md',
         'docs/publication/resolved-work-sanitation-closeout.md',
@@ -341,9 +344,9 @@ export const workstreamStatuses = [
     maturity: 'M4',
     reviewedOn: '2026-10-26',
     currentState:
-      'The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. The programme has completed DPL-01 through DPL-14 and is active at DPL-15 empirical trials. DPL-15E improves RP-006 orientation and identity evidence, but R1/R2/R4/R5 remain unsatisfied and the corpus still has 0 of 8 candidate-ready sites. The Lennard instrumented control reaches its DPL-T11 no-spend evidence boundary and remains excluded from empirical sampling. Whole-site compatibility, incompatibility, route exhaustion and regulatory/construction adequacy remain unadmitted.',
+      'The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. The programme has completed DPL-01 through DPL-14 and is active at DPL-15 empirical trials. DPL-15F has now exhausted the bounded no-spend RP-006 residual routes without satisfying R1/R2/R4/R5; RP-006 remains 2/6 ready, candidate authoring remains prohibited and the corpus remains 0 of 8 candidate-ready sites. DPL-15G is the active categorical RP-007/RP-008 path-comparison gate under #865 / PR #867. The Lennard instrumented control remains excluded from empirical sampling. Whole-site compatibility, incompatibility, route exhaustion and regulatory/construction adequacy remain unadmitted.',
     nextGate:
-      'Execute DPL-15F: recover controlled RP-006 boundary/footprint geometry, terrain/datum and access geometry through the exact no-spend routes identified in DPL-15E. Author no candidate in that packet. If the routes remain exhausted, compare RP-007 and RP-008. Keep DPL-16/17/18 held pending their explicit evidence gates; external Lennard judgement and measurement require separate acquisition.',
+      'Complete DPL-15G without scoring sites or laundering planning/marketing evidence into readiness authority. If the gate lands with one selected site, perform only the bounded site-specific evidence-acquisition packet it authorises; candidate authoring remains subsequent unless R1–R6 become fully and deterministically satisfied. Keep DPL-16/17/18 held pending their explicit evidence gates; external Lennard judgement and measurement require separate acquisition.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -374,6 +377,7 @@ export const workstreamStatuses = [
       ],
       internallyValidated: [
         'project/dpl/dpl-15e-rp006-spatial-preflight.md',
+        'project/dpl/dpl-15f-rp006-residual-recovery.md',
         'project/dpl/dpl-t11-lennard-no-spend-evidence.md',
         'project/dpl/dpl-13a-canonical-reference-site-compile.md',
         'compiler/dpl/canonical.ts',
