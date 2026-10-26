@@ -1,0 +1,214 @@
+# EDA — Editorial Doctrine Audit
+
+**Status:** authorised / active  
+**Programme owner:** publication editorial control  
+**Baseline:** `816c6ca71e20235dca83350eb0f3e2cd05186169`  
+**Governing relationship:** post-migration assurance of the completed Editorial Overhaul  
+**Release effect:** EDA close is required before PR-02 private physical-object production
+
+---
+
+## 1. Purpose
+
+The completed Editorial Overhaul improved the prose substantially but did not prove that the resulting manuscript conforms to the Editorial Doctrine as a whole object.
+
+EDA exists to perform that proof.
+
+It is not another general rewrite and it must not reopen architectural substance by stealth. It audits the current reader-facing corpus against a hardened editorial standard, repairs demonstrated failures, then verifies the result in reading order and in typeset form.
+
+The trigger is a recurring failure visible in the current preface: sentences that are locally competent are sometimes given disproportionate rhetorical force through isolation, bolding, section rules, whitespace or page position. The existing doctrine already rejects over-shaped prose and continuous quotation-seeking, but the migration did not sufficiently control this page-level form of emphasis.
+
+EDA calls that failure **staged significance**: importance manufactured by rhetorical or typographic treatment beyond what the argument itself earns.
+
+---
+
+## 2. Authority and non-authority
+
+EDA may:
+
+- revise the Editorial Doctrine where the audit demonstrates a general editorial rule;
+- classify reader-facing prose by mode and audit it against that mode;
+- remove, combine, relocate or restyle rhetoric whose primary function is emphasis;
+- make local wording changes needed to restore ordinary explanatory prose;
+- inspect typeset pages because layout is part of rhetoric;
+- add diagnostics that flag likely editorial smells for human review.
+
+EDA may not silently:
+
+- change architectural propositions;
+- strengthen or weaken evidence claims;
+- alter controlled terminology or doctrine hierarchy;
+- rewrite research provenance or frozen programme records;
+- turn mechanical diagnostics into automatic editorial authority;
+- impose numerical quotas for sentence length, paragraph length or rhetorical devices.
+
+If an editorial repair appears to require a substantive architectural change, stop and hand the issue to the owning workstream.
+
+---
+
+## 3. Core distinction
+
+EDA separates three layers that the previous migration treated too locally:
+
+1. **Sentence rhetoric** — antithesis, aphorism, importance signalling, repeated polished cadence.
+2. **Paragraph rhetoric** — isolation, dramatic stepping, paragraph-end morals, repeated transition announcements.
+3. **Page and book rhetoric** — whitespace, bolding, rules, page turns, repeated section-break staging and the cumulative density of rhetorical peaks across chapters.
+
+A sentence can be acceptable at layer 1 and still fail at layers 2 or 3.
+
+The governing question is not merely “is this a good sentence?” but “has the manuscript earned the amount of attention this treatment asks the reader to give it?”
+
+---
+
+## 4. Programme
+
+### EDA-00 — Audit and harden the Editorial Doctrine
+
+Audit the standard before using it as the audit instrument.
+
+Deliverables:
+
+- identify blind spots exposed by the post-migration manuscript;
+- add staged significance and page-level rhetoric explicitly;
+- add whole-book recurrence / density review;
+- add the **remove the spotlight first** test: before deleting a strong sentence, return it to ordinary prose and see whether the thought survives;
+- distinguish diagnostics from verdicts;
+- ensure the guide itself is proportionate and does not grow into a bureaucratic style manual;
+- freeze the resulting doctrine version as the EDA audit standard.
+
+Gate: no corpus conformance verdict before EDA-00 closes.
+
+### EDA-01 — Corpus and prose-mode register
+
+Enumerate the current reader-facing surfaces and assign each a prose mode. Explicitly classify what is in scope, lightly controlled, or provenance/frozen.
+
+Gate: every audited surface has one owner, one mode and one disposition.
+
+### EDA-02 — Mechanical candidate scan
+
+Create a non-authoritative smell register for likely failures, including:
+
+- one-sentence paragraphs;
+- short paragraphs immediately adjacent to section rules;
+- full-sentence bold emphasis;
+- repeated paired antitheses;
+- repeated `The question is…`, `That is…`, `This is…` announcement constructions;
+- clusters of short declaratives;
+- repeated paragraph-end morals;
+- repeated rhetorical questions;
+- suspicious recurrence of the same cadence or punctuation pattern.
+
+The scan produces candidates only. It must be allowed to generate false positives.
+
+### EDA-03 — Preface and front-matter audit
+
+Audit the highest-rhetoric surfaces first. Review sentence, paragraph and page staging together.
+
+The current preface is the calibration case because it contains known failures that survived the previous overhaul.
+
+### EDA-04 — Main manuscript audit
+
+Audit governing doctrine and long-form manuscript material against their assigned modes. Preserve claim fidelity and architectural hierarchy.
+
+### EDA-05 — Pattern, technical and reference-house audit
+
+Audit low-rhetoric and technical surfaces for accidental manifesto voice, unnecessary repetition, terminology drift and explanatory-order failures.
+
+### EDA-06 — Whole-book rhythm audit
+
+Read the publication in order and inspect recurrence rather than isolated quality.
+
+Questions include:
+
+- how many rhetorical peaks remain, and are they actually peaks?
+- does the same device recur often enough to become mannerism?
+- do section endings repeatedly audition for quotation?
+- does the book periodically return to ordinary explanatory prose?
+- are the strongest sentences strengthened by surrounding restraint?
+
+No fixed quota is authorised. Rarity is a compositional judgement, not a count target.
+
+### EDA-07 — Adversarial cold read
+
+Perform a hostile editorial read with one primary question:
+
+> Where can I hear the author trying to sound important?
+
+Also attack over-compression, bloodlessness and accidental loss of personality. EDA succeeds only if it removes performance without flattening the book.
+
+### EDA-08 — Typeset proof and closeout
+
+Regenerate the publication and inspect physical pages, not merely Markdown.
+
+Check:
+
+- isolation created by pagination;
+- accidental page-turn cliffhangers;
+- rules and whitespace acting as emphasis;
+- bolding or typographic hierarchy that promotes ordinary transitions into pronouncements;
+- widows/orphans or layout artefacts that alter rhetorical force;
+- the cumulative reading rhythm of representative full sections.
+
+Only after this pass may EDA close and PR-02 proceed.
+
+---
+
+## 5. Editorial tests introduced by EDA
+
+### The spotlight test
+
+If a sentence appears powerful because it is isolated, bold or surrounded by whitespace, first remove that treatment and place it in ordinary prose.
+
+If the thought remains useful, keep the thought and remove the spotlight.
+
+If the thought collapses without staging, it probably was not carrying enough information.
+
+### The transplantation test
+
+Ask whether the sentence would still appear “important” if typeset as the middle sentence of a normal paragraph. If not, the layout may be doing the intellectual work.
+
+### The recurrence test
+
+A device can be excellent once and corny twenty times. Judge rhetorical forms at chapter and book scale, not only at the point of use.
+
+### The earned-isolation test
+
+A one-sentence paragraph or other isolated statement must earn isolation through a real structural function: a major turn, consequence, disclosure or compression that would be weakened by integration. “It sounds good alone” is not a structural function.
+
+### The ordinary-prose test
+
+Every chapter needs enough unshowy explanatory prose that genuine compression can register as compression. If every paragraph is polished to maximum finish, the chapter has no dynamic range.
+
+---
+
+## 6. Known calibration failures
+
+The current preface already provides useful EDA candidates:
+
+- `Some durable inventions are agreements about where things meet.` — good thought, likely over-promoted by isolation and surrounding section staging.
+- `Architecture has done this before.` — transition promoted into an event.
+- `I am not an architect.` — substantively important disclosure, but isolation plus section staging may over-dramatise it.
+- `That is the method of this book.` — likely pure importance signalling.
+- the bold paired lines `Convention deserves respect, not immunity.` / `Novelty deserves scrutiny, not admiration.` — central distinction presented with manifesto-card treatment.
+- `The question is how to earn that permanence.` — ordinary transition given exceptional weight.
+- `That moment does not abolish expertise. It creates work for it.` — compressed cadence whose survival should depend on whole-book rhetorical density.
+
+These are calibration candidates, not pre-authorised deletions. EDA-03 decides their final form in context after EDA-00 freezes the standard.
+
+---
+
+## 7. Acceptance criteria
+
+EDA closes only when:
+
+- the hardened Editorial Doctrine is frozen as the audit standard;
+- every in-scope public surface has a recorded prose mode and audit disposition;
+- mechanical diagnostics have been reviewed rather than blindly applied;
+- known staged-significance candidates have explicit dispositions;
+- a whole-book recurrence pass has been completed;
+- a cold adversarial read finds no material recurring rhetorical mannerism;
+- typeset proof has been reviewed for page-level manufactured emphasis;
+- claim fidelity is preserved;
+- no unresolved editorial defect material to PR-02 remains.
+
+EDA is an editorial assurance gate, not evidence that the architecture itself is externally validated.
