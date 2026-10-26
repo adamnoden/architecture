@@ -226,6 +226,8 @@ The most valuable standardisation is often hidden. Wall panels can vary in mater
 
 This permits architectural specificity without creating hundreds of unrelated technical inventions.
 
+Comparable open-systems precedents include the British Modular Society's 1950s pursuit of interchangeability through common dimensional and jointing conventions, the School Construction Systems Development programme's later cross-manufacturer compatibility through performance specifications, and later Open Building work on separated and replaceable subsystems. They are related precedents, not asserted here as one direct genealogy. The transfer is narrow: standardise the interface enough that future parts can vary without forcing the whole assembly to become proprietary.
+
 ## The manufacturing presumption
 
 For a faster-changing layer ask:
