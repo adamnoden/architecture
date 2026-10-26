@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "dpl.lennardT10Result.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "candidateId": "DPL-T-CANDIDATE-004-01",
+  "assuranceProfile": "SCREENING",
+  "parentT9ResultFingerprint": "55c7020d704b1285527c7249c961783185f56d467e0cdd7f5c93fcdc80393e6a",
+  "result": "NO_COST_DECISIONS_EXECUTED_COMMISSIONING_THRESHOLD_FROZEN",
+  "resultFingerprint": "7a429b81016943fb12ba84b08df5ee18f618f85fc896253f983dd0b95bdfdaca",
+  "evidenceFingerprint": "4cf6f09a0a0c387172777c03db544c44a3f7b05ef4ef550964624cbde6b59a15",
+  "activeDependencyClasses": [
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+    "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY",
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY"
+  ],
+  "externalEvidenceEligibleForCommissioning": [
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY"
+  ],
+  "noCostPublicRecoveryPending": [
+    "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY"
+  ],
+  "foldedDependencies": [
+    "PLANNING_DESIGN_CONTEXT_REVIEW"
+  ],
+  "planningReviewResult": "SCREENING_CONTEXT_CONCERN_REQUIRES_EXISTING_TARGETED_GEOMETRY_RETURN",
+  "recordFingerprints": [
+    {
+      "dependencyClass": "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+      "fingerprint": "bc1c4168e47f4cd752b5c36905b9fc14010c1bdea200aa7426b8195338544d77"
+    },
+    {
+      "dependencyClass": "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY",
+      "fingerprint": "5af435f46b56bf04c49889f9d7f4ada5c646ef08b1144e05d5d95d5eb00dc068"
+    },
+    {
+      "dependencyClass": "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY",
+      "fingerprint": "948f3f19c0ca1b1487d3dc98e5aa4001296904640e35b4d3a84dddde5e787063"
+    },
+    {
+      "dependencyClass": "PLANNING_DESIGN_CONTEXT_REVIEW",
+      "fingerprint": "77a093f2602f1745e949b064aa239c698879905cfbaa6b6d4efb7e67ede4bb97"
+    }
+  ],
+  "commissioning": {
+    "eligibleEvidenceClasses": 2,
+    "commissionedEvidenceClasses": 0,
+    "externalContactMade": false,
+    "spendAuthorised": false
+  },
+  "proofBoundary": {
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "referenceHouseMutation": "NO",
+    "legalBoundaryDetermined": "NO",
+    "statutoryPlanningDetermination": "NO",
+    "floodConclusion": "NO",
+    "dpl16": "HELD"
+  }
+}
