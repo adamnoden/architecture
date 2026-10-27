@@ -93,8 +93,8 @@ test('ADE-04B known centre / unknown width becomes a point marker, not a plausib
   // 400 mm to the wall's left side, so the marker leader must stop at the far
   // physical face rather than tunnelling through the wall to the reference line.
   const referenceY = projection.point(3000, 0).y
-  const selectedPhysicalFaceY = referenceY + projection.length(400)
-  assert.ok(leader.a.y > selectedPhysicalFaceY && Math.abs(leader.b.y - selectedPhysicalFaceY) < 1e-6)
+  const selectedPhysicalFaceY = referenceY - projection.length(400)
+  assert.ok(leader.a.y < selectedPhysicalFaceY && Math.abs(leader.b.y - selectedPhysicalFaceY) < 1e-6)
 })
 
 test('ADE-04B unknown position becomes a quiet host possibility band with no invented centre', () => {
@@ -131,4 +131,19 @@ test('ADE-04B host possibility band keeps physical thickness while host span sca
 test('ADE-04B refuses ranged position until a dedicated notation is earned', () => {
   const plan = planWith(opening('POS-RANGE', { kind: 'range', min: mm(2500), max: mm(3500) }, { kind: 'exact', value: mm(1200) }, provisional))
   assert.throws(() => compileOpeningUncertaintyInstruction(plan, 'POS-RANGE'), /ranged-position notation is not yet an earned capability/)
+})
+
+test('plan reflection keeps uncertainty leaders on the selected physical face in all four wall directions', () => {
+  for (const [x, y, faceX, faceY] of [[6000, 0, 3000, 400], [0, 6000, -400, 3000], [-6000, 0, -3000, -400], [0, -6000, 400, -3000]]) {
+    const plan = planWith(opening('REFLECTION', { kind: 'exact', value: mm(3000) }, { kind: 'unknown' }))
+    plan.nodes = [plan.nodes[0], { ...plan.nodes[1], point: { x: mm(x), y: mm(y) } }]
+    for (const scale of [100, 50] as const) {
+      const projection = projectionFor(scale)
+      const leader = openingUncertaintyToDrawingPrimitives(plan, compileOpeningUncertaintyInstruction(plan, 'REFLECTION'), projection, drawOptions).find((p) => p.id === 'REFLECTION-pin-leader')!
+      assert.equal(leader.kind, 'line')
+      if (leader.kind !== 'line') continue
+      const expected = projection.point(faceX, faceY)
+      assert.ok(Math.hypot(leader.b.x - expected.x, leader.b.y - expected.y) < 1e-8)
+    }
+  }
 })

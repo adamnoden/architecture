@@ -73,6 +73,8 @@ export const dimensionToDrawingPrimitives = (
   const value = dimension.label ?? `${Math.round(modelLength)} mm`
   const midpoint = { x: (d0.x + d1.x) / 2, y: (d0.y + d1.y) / 2 }
   const textPoint = offsetPoint(midpoint, nx, ny, textGap)
+  const angle = Math.atan2(dy, dx) * 180 / Math.PI
+  const labelAngle = angle >= 90 ? angle - 180 : angle < -90 ? angle + 180 : angle
   const label: DrawingText = {
     kind: 'text',
     id: `${dimension.id}-label`,
@@ -81,6 +83,7 @@ export const dimensionToDrawingPrimitives = (
     value,
     role: 'note',
     anchor: 'middle',
+    rotateDeg: Math.abs(dy) > EPSILON ? labelAngle : undefined,
     metadata
   }
 

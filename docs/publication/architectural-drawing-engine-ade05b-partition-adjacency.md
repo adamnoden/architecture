@@ -1,6 +1,8 @@
 <!-- nav-exclude: redirect -->
 # ADE-05B — partition datum + adjacency grammar verdict
 
+**Historical packet record. Current disposition:** ADE migration/generality is internally complete; [closeout and PLT physical-review handoff](architectural-drawing-engine-closeout.md). Earlier next/blocked statements below describe this packet’s historical gate.
+
 **Programme:** ADE — Architectural Drawing Engine capability uplift  
 **Parent:** #812 / #818  
 **Packet:** #835  

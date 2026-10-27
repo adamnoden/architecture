@@ -1,6 +1,8 @@
 <!-- nav-exclude: redirect -->
 # ADE-04B — opening precision and uncertainty grammar
 
+**Historical packet record. Current disposition:** ADE migration/generality is internally complete; [closeout and PLT physical-review handoff](architectural-drawing-engine-closeout.md). Earlier next/blocked statements below describe this packet’s historical gate.
+
 Status: screen-reviewed capability grammar; exact paper-space treatment remains provisional pending ADE-06 physical atlas.
 
 Parent: ADE #812  

@@ -1,0 +1,2191 @@
+{
+  "packet": "ADE-07",
+  "fitScaling": false,
+  "ownerPhysicalVerdict": "UNREVIEWED",
+  "printTokensFrozen": false,
+  "represented": {
+    "envelopeMm": 417.5,
+    "cavityMm": 160,
+    "partitionMm": 125,
+    "constructionSpecification": false
+  },
+  "comparisons": {
+    "protectedV1": {
+      "release": "drawing-publication-v1",
+      "sha256": "91eec9c3dd32e3a2154cf42c9d8db8525efeb92677289ca78056e0b1aa9c25ba",
+      "byteIdentical": true
+    },
+    "failedDirectPrimitiveControl": "21e9c0a5a8aebb3397377459144894dd1228919d4c809c7934799f627cd2e6d6"
+  },
+  "fonts": [
+    {
+      "slot": "TYP03_SANS_REGULAR",
+      "sha256": "4644c81b86ec9caaa76b634889968ed3c4f4f52f054855933acc7c2b21e53b0f"
+    },
+    {
+      "slot": "TYP03_SANS_BOLD",
+      "sha256": "9214b9d95e4231c609802815c2646c98174e2102d0d37f88978a7f8e71006e6a"
+    }
+  ],
+  "GROUND": {
+    "semanticEntities": 70,
+    "states": [
+      {
+        "kind": "centre-only",
+        "openingId": "G-COURT-NORTH-O01",
+        "hostWallId": "G-COURT-NORTH",
+        "centreOffset": 1800,
+        "sourceIds": [
+          "G-COURT-NORTH",
+          "G-COURT-NORTH-O01",
+          "RH-10"
+        ]
+      },
+      {
+        "kind": "centre-only",
+        "openingId": "G-COURT-SOUTH-O01",
+        "hostWallId": "G-COURT-SOUTH",
+        "centreOffset": 1800,
+        "sourceIds": [
+          "G-COURT-SOUTH",
+          "G-COURT-SOUTH-O01",
+          "RH-10"
+        ]
+      },
+      {
+        "kind": "range-width",
+        "openingId": "G-FRONT-D01",
+        "hostWallId": "G-OUTER-SOUTH",
+        "centreOffset": 7350,
+        "minimumWidth": 950,
+        "maximumWidth": 1050,
+        "sourceIds": [
+          "G-FRONT-D01",
+          "G-OUTER-SOUTH",
+          "RH-10"
+        ]
+      },
+      {
+        "kind": "approximate-aperture",
+        "openingId": "G-FRONT-W01",
+        "hostWallId": "G-OUTER-SOUTH",
+        "centreOffset": 1950,
+        "nominalWidth": 1050,
+        "sourceIds": [
+          "G-FRONT-W01",
+          "G-OUTER-SOUTH",
+          "RH-10"
+        ]
+      },
+      {
+        "kind": "approximate-aperture",
+        "openingId": "G-FRONT-W02",
+        "hostWallId": "G-OUTER-SOUTH",
+        "centreOffset": 4650,
+        "nominalWidth": 900,
+        "sourceIds": [
+          "G-FRONT-W02",
+          "G-OUTER-SOUTH",
+          "RH-10"
+        ]
+      },
+      {
+        "kind": "approximate-aperture",
+        "openingId": "G-FRONT-W04",
+        "hostWallId": "G-OUTER-SOUTH",
+        "centreOffset": 10050,
+        "nominalWidth": 1050,
+        "sourceIds": [
+          "G-FRONT-W04",
+          "G-OUTER-SOUTH",
+          "RH-10"
+        ]
+      },
+      {
+        "kind": "host-obligation",
+        "openingId": "RHCF-COURT-E-G",
+        "hostWallId": "G-COURT-EAST",
+        "sourceIds": [
+          "G-COURT-EAST",
+          "RH-10",
+          "RHCF-COURT-E-G"
+        ]
+      },
+      {
+        "kind": "host-obligation",
+        "openingId": "RHCF-COURT-W-G",
+        "hostWallId": "G-COURT-WEST",
+        "sourceIds": [
+          "G-COURT-WEST",
+          "RH-10",
+          "RHCF-COURT-W-G"
+        ]
+      },
+      {
+        "kind": "host-obligation",
+        "openingId": "RHCF-GARDEN-CENTRE-G",
+        "hostWallId": "G-OUTER-NORTH",
+        "sourceIds": [
+          "G-OUTER-NORTH",
+          "RH-10",
+          "RHCF-GARDEN-CENTRE-G"
+        ]
+      }
+    ],
+    "ledger": [
+      {
+        "id": "GROUND-NODE-7800-7400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-EAST",
+          "G-COURT-EAST-NORTH-CONT-B",
+          "G-COURT-NORTH"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-7800-3400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-EAST",
+          "G-COURT-EAST-SOUTH-CONT-B",
+          "G-COURT-SOUTH"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-7800-10800",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-EAST-NORTH-CONT-B"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-7800-0",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-EAST-SOUTH-CONT-B"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-4200-7400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-NORTH",
+          "G-COURT-WEST",
+          "G-COURT-WEST-NORTH-CONT-B"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-4200-3400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-SOUTH",
+          "G-COURT-WEST"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-4200-10800",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-WEST-NORTH-CONT-B"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-9100-0",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-GALLERY-SERVICE-B"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-9100-7400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-GALLERY-SERVICE-B"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-4000-0",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-HALL-WEST-B"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-4000-3400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-HALL-WEST-B"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-12000-0",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-OUTER-EAST",
+          "G-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-12000-10800",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-OUTER-EAST",
+          "G-OUTER-NORTH"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-0-10800",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-OUTER-NORTH",
+          "G-OUTER-WEST"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-0-0",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-OUTER-SOUTH",
+          "G-OUTER-WEST"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-0-5000",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-WEST-SPLIT-B"
+        ]
+      },
+      {
+        "id": "GROUND-NODE-4200-5000",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-WEST-SPLIT-B"
+        ]
+      },
+      {
+        "id": "RH-ADE-ENVELOPE",
+        "kind": "wall-assembly",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "docs/reference-house/envelope-coordination-rh10.md"
+        ]
+      },
+      {
+        "id": "RH-PART-DRY-01",
+        "kind": "wall-assembly",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "compiler/reference-house/internal-partitions.ts",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "G-COURT-EAST",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-EAST",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "G-COURT-EAST-NORTH-CONT-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-EAST-NORTH-CONT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "G-COURT-EAST-SOUTH-CONT-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-EAST-SOUTH-CONT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "G-COURT-NORTH",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-NORTH",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "G-COURT-SOUTH",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-SOUTH",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "G-COURT-WEST",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-WEST",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "G-COURT-WEST-NORTH-CONT-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-WEST-NORTH-CONT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "G-GALLERY-SERVICE-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-GALLERY-SERVICE-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "G-HALL-WEST-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-HALL-WEST-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "G-OUTER-EAST",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-OUTER-EAST",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "G-OUTER-NORTH",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-OUTER-NORTH",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "G-OUTER-SOUTH",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-OUTER-SOUTH",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "G-OUTER-WEST",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-OUTER-WEST",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "G-WEST-SPLIT-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-WEST-SPLIT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "G-COURT-NORTH-O01",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-NORTH-O01",
+          "G-COURT-NORTH"
+        ]
+      },
+      {
+        "id": "G-COURT-SOUTH-O01",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-COURT-SOUTH-O01",
+          "G-COURT-SOUTH"
+        ]
+      },
+      {
+        "id": "G-FRONT-D01",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-FRONT-D01",
+          "G-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "G-FRONT-W01",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-FRONT-W01",
+          "G-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "G-FRONT-W02",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-FRONT-W02",
+          "G-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "G-FRONT-W04",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-FRONT-W04",
+          "G-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "RHCF-COURT-E-G",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-COURT-E-G",
+          "G-COURT-EAST"
+        ]
+      },
+      {
+        "id": "RHCF-COURT-W-G",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-COURT-W-G",
+          "G-COURT-WEST"
+        ]
+      },
+      {
+        "id": "RHCF-GARDEN-CENTRE-G",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-GARDEN-CENTRE-G",
+          "G-OUTER-NORTH"
+        ]
+      },
+      {
+        "id": "G-DRAW-02",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-DRAW-02"
+        ]
+      },
+      {
+        "id": "G-FAM-02",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-FAM-02"
+        ]
+      },
+      {
+        "id": "G-GAL-01",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-GAL-01"
+        ]
+      },
+      {
+        "id": "G-GARDEN-02",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-GARDEN-02"
+        ]
+      },
+      {
+        "id": "G-HALL-02",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-HALL-02"
+        ]
+      },
+      {
+        "id": "G-KIT-02",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-KIT-02"
+        ]
+      },
+      {
+        "id": "G-STUDY-02",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-STUDY-02"
+        ]
+      },
+      {
+        "id": "G-SVC-02",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-SVC-02"
+        ]
+      },
+      {
+        "id": "ADJ-G-DRAW-FAM",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-G-DRAW-FAM"
+        ]
+      },
+      {
+        "id": "ADJ-G-DRAW-HALL",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-G-DRAW-HALL"
+        ]
+      },
+      {
+        "id": "ADJ-G-HALL-GAL",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-G-HALL-GAL"
+        ]
+      },
+      {
+        "id": "ADJ-G-STUDY-GAL",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-G-STUDY-GAL"
+        ]
+      },
+      {
+        "id": "ADJ-G-SVC-GAL",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-G-SVC-GAL"
+        ]
+      },
+      {
+        "id": "ADJ-G-FAM-GARDEN",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-G-FAM-GARDEN"
+        ]
+      },
+      {
+        "id": "ADJ-G-GARDEN-KIT",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-G-GARDEN-KIT"
+        ]
+      },
+      {
+        "id": "GROUND-width",
+        "kind": "dimension",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-SHELL-X"
+        ]
+      },
+      {
+        "id": "GROUND-depth",
+        "kind": "dimension",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-SHELL-Y"
+        ]
+      },
+      {
+        "id": "G-DRAW-02-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-DRAW-02"
+        ]
+      },
+      {
+        "id": "G-FAM-02-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-FAM-02"
+        ]
+      },
+      {
+        "id": "G-GAL-01-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-GAL-01"
+        ]
+      },
+      {
+        "id": "G-GARDEN-02-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-GARDEN-02"
+        ]
+      },
+      {
+        "id": "G-HALL-02-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-HALL-02"
+        ]
+      },
+      {
+        "id": "G-KIT-02-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-KIT-02"
+        ]
+      },
+      {
+        "id": "G-STUDY-02-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-STUDY-02"
+        ]
+      },
+      {
+        "id": "G-SVC-02-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "G-SVC-02"
+        ]
+      },
+      {
+        "id": "GROUND-court-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-COURT-SIZE"
+        ]
+      },
+      {
+        "id": "GROUND-court-size",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-COURT-SIZE"
+        ]
+      },
+      {
+        "id": "GROUND-stair-note",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-STAIR-N",
+          "RHCF-STAIR-G"
+        ]
+      }
+    ],
+    "X": []
+  },
+  "FIRST": {
+    "semanticEntities": 85,
+    "states": [
+      {
+        "kind": "centre-only",
+        "openingId": "U-COURT-NORTH-O01",
+        "hostWallId": "U-COURT-NORTH",
+        "centreOffset": 1800,
+        "sourceIds": [
+          "RH-10",
+          "U-COURT-NORTH",
+          "U-COURT-NORTH-O01"
+        ]
+      },
+      {
+        "kind": "centre-only",
+        "openingId": "U-COURT-SOUTH-O01",
+        "hostWallId": "U-COURT-SOUTH",
+        "centreOffset": 1800,
+        "sourceIds": [
+          "RH-10",
+          "U-COURT-SOUTH",
+          "U-COURT-SOUTH-O01"
+        ]
+      },
+      {
+        "kind": "range-width",
+        "openingId": "U-FRONT-W01",
+        "hostWallId": "U-OUTER-SOUTH",
+        "centreOffset": 1950,
+        "minimumWidth": 900,
+        "maximumWidth": 950,
+        "sourceIds": [
+          "RH-10",
+          "U-FRONT-W01",
+          "U-OUTER-SOUTH"
+        ]
+      },
+      {
+        "kind": "range-width",
+        "openingId": "U-FRONT-W02",
+        "hostWallId": "U-OUTER-SOUTH",
+        "centreOffset": 4650,
+        "minimumWidth": 900,
+        "maximumWidth": 950,
+        "sourceIds": [
+          "RH-10",
+          "U-FRONT-W02",
+          "U-OUTER-SOUTH"
+        ]
+      },
+      {
+        "kind": "range-width",
+        "openingId": "U-FRONT-W03",
+        "hostWallId": "U-OUTER-SOUTH",
+        "centreOffset": 7350,
+        "minimumWidth": 900,
+        "maximumWidth": 950,
+        "sourceIds": [
+          "RH-10",
+          "U-FRONT-W03",
+          "U-OUTER-SOUTH"
+        ]
+      },
+      {
+        "kind": "range-width",
+        "openingId": "U-FRONT-W04",
+        "hostWallId": "U-OUTER-SOUTH",
+        "centreOffset": 10050,
+        "minimumWidth": 900,
+        "maximumWidth": 950,
+        "sourceIds": [
+          "RH-10",
+          "U-FRONT-W04",
+          "U-OUTER-SOUTH"
+        ]
+      },
+      {
+        "kind": "host-obligation",
+        "openingId": "RHCF-COURT-E-U",
+        "hostWallId": "U-COURT-EAST",
+        "sourceIds": [
+          "RH-10",
+          "RHCF-COURT-E-U",
+          "U-COURT-EAST"
+        ]
+      },
+      {
+        "kind": "host-obligation",
+        "openingId": "RHCF-COURT-W-U",
+        "hostWallId": "U-COURT-WEST",
+        "sourceIds": [
+          "RH-10",
+          "RHCF-COURT-W-U",
+          "U-COURT-WEST"
+        ]
+      },
+      {
+        "kind": "host-obligation",
+        "openingId": "RHCF-GARDEN-CENTRE-U",
+        "hostWallId": "U-OUTER-NORTH",
+        "sourceIds": [
+          "RH-10",
+          "RHCF-GARDEN-CENTRE-U",
+          "U-OUTER-NORTH"
+        ]
+      }
+    ],
+    "ledger": [
+      {
+        "id": "FIRST-NODE-7800-7400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-EAST",
+          "U-COURT-NORTH"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-7800-3400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-EAST",
+          "U-COURT-SOUTH"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-7800-8600",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-EAST-NORTH-CONT-B",
+          "U-NORTH-SPLIT-B",
+          "U-NORTH-TURN-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-7800-10800",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-EAST-NORTH-CONT-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-7800-0",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-EAST-SOUTH-CONT-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-7800-2100",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-EAST-SOUTH-CONT-B",
+          "U-SOUTH-TURN-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-4200-7400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-NORTH",
+          "U-COURT-WEST",
+          "U-COURT-WEST-NORTH-CONT-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-4200-3400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-SOUTH",
+          "U-COURT-WEST"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-4200-8600",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-WEST-NORTH-CONT-B",
+          "U-NORTH-SPLIT-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-4200-10800",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-WEST-NORTH-CONT-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-6400-8600",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-DRY-SPLIT-B",
+          "U-NORTH-SPLIT-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-6400-10800",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-DRY-SPLIT-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-9100-2100",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-GALLERY-SERVICE-B",
+          "U-SOUTH-TURN-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-9100-8600",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-GALLERY-SERVICE-B",
+          "U-NORTH-TURN-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-4000-0",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-HALL-WEST-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-4000-3400",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-HALL-WEST-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-12000-0",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-OUTER-EAST",
+          "U-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-12000-10800",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-OUTER-EAST",
+          "U-OUTER-NORTH"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-0-10800",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-OUTER-NORTH",
+          "U-OUTER-WEST"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-0-0",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-OUTER-SOUTH",
+          "U-OUTER-WEST"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-0-5000",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-WEST-SPLIT-B"
+        ]
+      },
+      {
+        "id": "FIRST-NODE-4200-5000",
+        "kind": "node",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-WEST-SPLIT-B"
+        ]
+      },
+      {
+        "id": "RH-ADE-ENVELOPE",
+        "kind": "wall-assembly",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "docs/reference-house/envelope-coordination-rh10.md"
+        ]
+      },
+      {
+        "id": "RH-PART-DRY-01",
+        "kind": "wall-assembly",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "compiler/reference-house/internal-partitions.ts",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-COURT-EAST",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-EAST",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "U-COURT-EAST-NORTH-CONT-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-EAST-NORTH-CONT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-COURT-EAST-SOUTH-CONT-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-EAST-SOUTH-CONT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-COURT-NORTH",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-NORTH",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "U-COURT-SOUTH",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-SOUTH",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "U-COURT-WEST",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-WEST",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "U-COURT-WEST-NORTH-CONT-B::1",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-WEST-NORTH-CONT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-COURT-WEST-NORTH-CONT-B::2",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-WEST-NORTH-CONT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-DRY-SPLIT-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-DRY-SPLIT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-GALLERY-SERVICE-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-GALLERY-SERVICE-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-HALL-WEST-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-HALL-WEST-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-NORTH-SPLIT-B::1",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-NORTH-SPLIT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-NORTH-SPLIT-B::2",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-NORTH-SPLIT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-NORTH-TURN-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-NORTH-TURN-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-OUTER-EAST",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-OUTER-EAST",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "U-OUTER-NORTH",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-OUTER-NORTH",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "U-OUTER-SOUTH",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-OUTER-SOUTH",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "U-OUTER-WEST",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-OUTER-WEST",
+          "RH-10"
+        ]
+      },
+      {
+        "id": "U-SOUTH-TURN-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-SOUTH-TURN-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-WEST-SPLIT-B",
+        "kind": "wall",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-WEST-SPLIT-B",
+          "RH-PART-DRY-01"
+        ]
+      },
+      {
+        "id": "U-COURT-NORTH-O01",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-NORTH-O01",
+          "U-COURT-NORTH"
+        ]
+      },
+      {
+        "id": "U-COURT-SOUTH-O01",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-COURT-SOUTH-O01",
+          "U-COURT-SOUTH"
+        ]
+      },
+      {
+        "id": "U-FRONT-W01",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-FRONT-W01",
+          "U-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "U-FRONT-W02",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-FRONT-W02",
+          "U-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "U-FRONT-W03",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-FRONT-W03",
+          "U-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "U-FRONT-W04",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-FRONT-W04",
+          "U-OUTER-SOUTH"
+        ]
+      },
+      {
+        "id": "RHCF-COURT-E-U",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-COURT-E-U",
+          "U-COURT-EAST"
+        ]
+      },
+      {
+        "id": "RHCF-COURT-W-U",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-COURT-W-U",
+          "U-COURT-WEST"
+        ]
+      },
+      {
+        "id": "RHCF-GARDEN-CENTRE-U",
+        "kind": "opening",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-GARDEN-CENTRE-U",
+          "U-OUTER-NORTH"
+        ]
+      },
+      {
+        "id": "U-BATH-01",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BATH-01"
+        ]
+      },
+      {
+        "id": "U-BED-02",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BED-02"
+        ]
+      },
+      {
+        "id": "U-BED-03",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BED-03"
+        ]
+      },
+      {
+        "id": "U-BED-04",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BED-04"
+        ]
+      },
+      {
+        "id": "U-BED-P01",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BED-P01"
+        ]
+      },
+      {
+        "id": "U-DRESS-01",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-DRESS-01"
+        ]
+      },
+      {
+        "id": "U-GAL-02",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-GAL-02"
+        ]
+      },
+      {
+        "id": "U-LAND-N01",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-LAND-N01"
+        ]
+      },
+      {
+        "id": "U-LIN-01",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-LIN-01"
+        ]
+      },
+      {
+        "id": "U-STAIR-01",
+        "kind": "space",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-STAIR-01"
+        ]
+      },
+      {
+        "id": "ADJ-U-BED02-P01",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-U-BED02-P01"
+        ]
+      },
+      {
+        "id": "ADJ-U-BED02-STAIR",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-U-BED02-STAIR"
+        ]
+      },
+      {
+        "id": "ADJ-U-STAIR-BED03",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-U-STAIR-BED03"
+        ]
+      },
+      {
+        "id": "ADJ-U-STAIR-GAL",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-U-STAIR-GAL"
+        ]
+      },
+      {
+        "id": "ADJ-U-GAL-BATH",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-U-GAL-BATH"
+        ]
+      },
+      {
+        "id": "ADJ-U-GAL-LAND",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-U-GAL-LAND"
+        ]
+      },
+      {
+        "id": "ADJ-U-BED04-LAND",
+        "kind": "adjacency",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "ADJ-U-BED04-LAND"
+        ]
+      },
+      {
+        "id": "FIRST-width",
+        "kind": "dimension",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-SHELL-X"
+        ]
+      },
+      {
+        "id": "FIRST-depth",
+        "kind": "dimension",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-SHELL-Y"
+        ]
+      },
+      {
+        "id": "U-BATH-01-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BATH-01"
+        ]
+      },
+      {
+        "id": "U-BED-02-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BED-02"
+        ]
+      },
+      {
+        "id": "U-BED-03-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BED-03"
+        ]
+      },
+      {
+        "id": "U-BED-04-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BED-04"
+        ]
+      },
+      {
+        "id": "U-BED-P01-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-BED-P01"
+        ]
+      },
+      {
+        "id": "U-DRESS-01-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-DRESS-01"
+        ]
+      },
+      {
+        "id": "U-GAL-02-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-GAL-02"
+        ]
+      },
+      {
+        "id": "U-LAND-N01-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-LAND-N01"
+        ]
+      },
+      {
+        "id": "U-LIN-01-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-LIN-01"
+        ]
+      },
+      {
+        "id": "U-STAIR-01-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "U-STAIR-01"
+        ]
+      },
+      {
+        "id": "FIRST-court-label",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-COURT-SIZE"
+        ]
+      },
+      {
+        "id": "FIRST-court-size",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-COURT-SIZE"
+        ]
+      },
+      {
+        "id": "FIRST-stair-note",
+        "kind": "label",
+        "class": "S",
+        "reason": "Mapped from current architectural source or deterministic representation convention",
+        "sources": [
+          "RHCF-STAIR-N",
+          "RHCF-STAIR-G"
+        ]
+      }
+    ],
+    "X": []
+  },
+  "controlLedger": [
+    {
+      "id": "plt03-wall-G-COURT-EAST",
+      "class": "S",
+      "reason": "replace independent rectangles/lines with joined physical assemblies; partition authority now owned by ADE-05A"
+    },
+    {
+      "id": "plt03-boundary-G-COURT-EAST-NORTH-CONT-B",
+      "class": "S",
+      "reason": "replace planning-boundary strokes with source-owned physical partition intent"
+    },
+    {
+      "id": "plt03-boundary-G-COURT-EAST-SOUTH-CONT-B",
+      "class": "S",
+      "reason": "replace planning-boundary strokes with source-owned physical partition intent"
+    },
+    {
+      "id": "plt03-wall-G-COURT-NORTH",
+      "class": "S",
+      "reason": "replace independent rectangles/lines with joined physical assemblies; partition authority now owned by ADE-05A"
+    },
+    {
+      "id": "plt03-wall-G-COURT-SOUTH",
+      "class": "S",
+      "reason": "replace independent rectangles/lines with joined physical assemblies; partition authority now owned by ADE-05A"
+    },
+    {
+      "id": "plt03-wall-G-COURT-WEST",
+      "class": "S",
+      "reason": "replace independent rectangles/lines with joined physical assemblies; partition authority now owned by ADE-05A"
+    },
+    {
+      "id": "plt03-boundary-G-COURT-WEST-NORTH-CONT-B",
+      "class": "S",
+      "reason": "replace planning-boundary strokes with source-owned physical partition intent"
+    },
+    {
+      "id": "plt03-boundary-G-GALLERY-SERVICE-B",
+      "class": "S",
+      "reason": "replace planning-boundary strokes with source-owned physical partition intent"
+    },
+    {
+      "id": "plt03-boundary-G-HALL-WEST-B",
+      "class": "S",
+      "reason": "replace planning-boundary strokes with source-owned physical partition intent"
+    },
+    {
+      "id": "plt03-wall-G-OUTER-EAST",
+      "class": "S",
+      "reason": "replace independent rectangles/lines with joined physical assemblies; partition authority now owned by ADE-05A"
+    },
+    {
+      "id": "plt03-wall-G-OUTER-NORTH",
+      "class": "S",
+      "reason": "replace independent rectangles/lines with joined physical assemblies; partition authority now owned by ADE-05A"
+    },
+    {
+      "id": "plt03-wall-G-OUTER-SOUTH",
+      "class": "S",
+      "reason": "replace independent rectangles/lines with joined physical assemblies; partition authority now owned by ADE-05A"
+    },
+    {
+      "id": "plt03-wall-G-OUTER-WEST",
+      "class": "S",
+      "reason": "replace independent rectangles/lines with joined physical assemblies; partition authority now owned by ADE-05A"
+    },
+    {
+      "id": "plt03-boundary-G-WEST-SPLIT-B",
+      "class": "S",
+      "reason": "replace planning-boundary strokes with source-owned physical partition intent"
+    },
+    {
+      "id": "plt03-opening-centre-G-COURT-NORTH-O01",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-centre-G-COURT-SOUTH-O01",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-cut-G-FRONT-D01",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-max-G-FRONT-D01-1",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-max-G-FRONT-D01-2",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-min-G-FRONT-D01-1",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-min-G-FRONT-D01-2",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-cut-G-FRONT-W01",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-max-G-FRONT-W01-1",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-max-G-FRONT-W01-2",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-cut-G-FRONT-W02",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-max-G-FRONT-W02-1",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-max-G-FRONT-W02-2",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-cut-G-FRONT-W04",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-max-G-FRONT-W04-1",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-opening-max-G-FRONT-W04-2",
+      "class": "S",
+      "reason": "replace white cuts/dashed pseudo-jambs with topology subtraction and external uncertainty"
+    },
+    {
+      "id": "plt03-qualitative-opening-RHCF-COURT-E-G",
+      "class": "S",
+      "reason": "replace dashed host trace with explicit host possibility band"
+    },
+    {
+      "id": "plt03-qualitative-opening-RHCF-COURT-W-G",
+      "class": "S",
+      "reason": "replace dashed host trace with explicit host possibility band"
+    },
+    {
+      "id": "plt03-qualitative-opening-RHCF-GARDEN-CENTRE-G",
+      "class": "S",
+      "reason": "replace dashed host trace with explicit host possibility band"
+    },
+    {
+      "id": "plt03-adjacency-ADJ-G-DRAW-FAM-1",
+      "class": "S",
+      "reason": "retain complete shared-edge obligation as offset bracket; select no door"
+    },
+    {
+      "id": "plt03-adjacency-ADJ-G-DRAW-HALL-1",
+      "class": "S",
+      "reason": "retain complete shared-edge obligation as offset bracket; select no door"
+    },
+    {
+      "id": "plt03-adjacency-ADJ-G-DRAW-HALL-2",
+      "class": "S",
+      "reason": "retain complete shared-edge obligation as offset bracket; select no door"
+    },
+    {
+      "id": "plt03-adjacency-ADJ-G-HALL-GAL-1",
+      "class": "S",
+      "reason": "retain complete shared-edge obligation as offset bracket; select no door"
+    },
+    {
+      "id": "plt03-adjacency-ADJ-G-STUDY-GAL-1",
+      "class": "S",
+      "reason": "retain complete shared-edge obligation as offset bracket; select no door"
+    },
+    {
+      "id": "plt03-adjacency-ADJ-G-SVC-GAL-1",
+      "class": "S",
+      "reason": "retain complete shared-edge obligation as offset bracket; select no door"
+    },
+    {
+      "id": "plt03-adjacency-ADJ-G-FAM-GARDEN-1",
+      "class": "S",
+      "reason": "retain complete shared-edge obligation as offset bracket; select no door"
+    },
+    {
+      "id": "plt03-adjacency-ADJ-G-GARDEN-KIT-1",
+      "class": "S",
+      "reason": "retain complete shared-edge obligation as offset bracket; select no door"
+    },
+    {
+      "id": "plt03-label-G-DRAW-02",
+      "class": "R",
+      "reason": "retain room/court content; position and abbreviated labels follow the paper profile"
+    },
+    {
+      "id": "plt03-label-G-FAM-02",
+      "class": "R",
+      "reason": "retain room/court content; position and abbreviated labels follow the paper profile"
+    },
+    {
+      "id": "plt03-label-G-GAL-01",
+      "class": "R",
+      "reason": "retain room/court content; position and abbreviated labels follow the paper profile"
+    },
+    {
+      "id": "plt03-label-G-GARDEN-02",
+      "class": "R",
+      "reason": "retain room/court content; position and abbreviated labels follow the paper profile"
+    },
+    {
+      "id": "plt03-label-G-HALL-02",
+      "class": "R",
+      "reason": "retain room/court content; position and abbreviated labels follow the paper profile"
+    },
+    {
+      "id": "plt03-stair-topology",
+      "class": "R",
+      "reason": "retain rise/going topology annotation without invented stair-plan geometry"
+    },
+    {
+      "id": "plt03-label-G-KIT-02",
+      "class": "R",
+      "reason": "retain room/court content; position and abbreviated labels follow the paper profile"
+    },
+    {
+      "id": "plt03-label-G-STUDY-02",
+      "class": "R",
+      "reason": "retain room/court content; position and abbreviated labels follow the paper profile"
+    },
+    {
+      "id": "plt03-label-G-SVC-02",
+      "class": "R",
+      "reason": "retain room/court content; position and abbreviated labels follow the paper profile"
+    },
+    {
+      "id": "plt03-label-courtyard",
+      "class": "R",
+      "reason": "retain room/court content; position and abbreviated labels follow the paper profile"
+    },
+    {
+      "id": "plt03-dim-courtyard",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-front-axis-1",
+      "class": "R",
+      "reason": "retain authored bay axes as paper reference markers"
+    },
+    {
+      "id": "plt03-front-axis-label-1",
+      "class": "R",
+      "reason": "retain authored bay axes as paper reference markers"
+    },
+    {
+      "id": "plt03-front-axis-2",
+      "class": "R",
+      "reason": "retain authored bay axes as paper reference markers"
+    },
+    {
+      "id": "plt03-front-axis-label-2",
+      "class": "R",
+      "reason": "retain authored bay axes as paper reference markers"
+    },
+    {
+      "id": "plt03-front-axis-3",
+      "class": "R",
+      "reason": "retain authored bay axes as paper reference markers"
+    },
+    {
+      "id": "plt03-front-axis-label-3",
+      "class": "R",
+      "reason": "retain authored bay axes as paper reference markers"
+    },
+    {
+      "id": "plt03-front-axis-4",
+      "class": "R",
+      "reason": "retain authored bay axes as paper reference markers"
+    },
+    {
+      "id": "plt03-front-axis-label-4",
+      "class": "R",
+      "reason": "retain authored bay axes as paper reference markers"
+    },
+    {
+      "id": "plt03-dim-width",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-width-ext-left",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-width-ext-right",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-width-tick-left",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-width-tick-right",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-width-text",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-depth",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-depth-ext-top",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-depth-ext-bottom",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-depth-tick-top",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-depth-tick-bottom",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-dim-depth-text",
+      "class": "R",
+      "reason": "composed dimensions retain source values; rotate vertical labels"
+    },
+    {
+      "id": "plt03-scale-bar",
+      "class": "R",
+      "reason": "retain 3 m scale bar with fixed-paper ticks"
+    },
+    {
+      "id": "plt03-scale-tick-0",
+      "class": "R",
+      "reason": "retain 3 m scale bar with fixed-paper ticks"
+    },
+    {
+      "id": "plt03-scale-tick-1",
+      "class": "R",
+      "reason": "retain 3 m scale bar with fixed-paper ticks"
+    },
+    {
+      "id": "plt03-scale-tick-2",
+      "class": "R",
+      "reason": "retain 3 m scale bar with fixed-paper ticks"
+    },
+    {
+      "id": "plt03-scale-tick-3",
+      "class": "R",
+      "reason": "retain 3 m scale bar with fixed-paper ticks"
+    },
+    {
+      "id": "plt03-scale-zero",
+      "class": "R",
+      "reason": "retain 3 m scale bar with fixed-paper ticks"
+    },
+    {
+      "id": "plt03-scale-three",
+      "class": "R",
+      "reason": "retain 3 m scale bar with fixed-paper ticks"
+    },
+    {
+      "id": "plt03-north-shaft",
+      "class": "R",
+      "reason": "retain north convention in paper notation"
+    },
+    {
+      "id": "plt03-north-left",
+      "class": "R",
+      "reason": "retain north convention in paper notation"
+    },
+    {
+      "id": "plt03-north-right",
+      "class": "R",
+      "reason": "retain north convention in paper notation"
+    },
+    {
+      "id": "plt03-north-label",
+      "class": "R",
+      "reason": "retain north convention in paper notation"
+    }
+  ],
+  "X": [],
+  "files": {
+    "ground-100.svg": {
+      "sha256": "82bf0fd4ade8897beaa6af4d8556da5dae561437deb088fa615d72d60735b00f",
+      "widthMm": 140,
+      "heightMm": 155,
+      "scale": 100,
+      "entities": 100
+    },
+    "ground-50.svg": {
+      "sha256": "01dfda9e799b27fd6c84b63d38f131e1397b41d7a66344e850ea84009039eed5",
+      "widthMm": 420,
+      "heightMm": 594,
+      "scale": 50,
+      "entities": 100
+    },
+    "first-100.svg": {
+      "sha256": "5d02ed8388642a6c3eb67dcf15f17ccaf0284cd1f0ee98be8071e24d528c6194",
+      "widthMm": 140,
+      "heightMm": 155,
+      "scale": 100,
+      "entities": 114
+    },
+    "first-50.svg": {
+      "sha256": "b802f8272e91684933c517e06b8c47aba5bf5a478e6d088e38aa79ae21108fdb",
+      "widthMm": 420,
+      "heightMm": 594,
+      "scale": 50,
+      "entities": 114
+    },
+    "contrast-100.svg": {
+      "sha256": "42adac06d5ee8543a8ec6618c7e42586128fe05ca3ac46d9658c008dae2a598c",
+      "widthMm": 180,
+      "heightMm": 160,
+      "scale": 100,
+      "entities": 6
+    },
+    "contrast-50.svg": {
+      "sha256": "c105f788206bc4123b831ed49f2d5fc25b5399fc1a9a4d87ee7f374a83ffd0dd",
+      "widthMm": 180,
+      "heightMm": 160,
+      "scale": 50,
+      "entities": 6
+    }
+  }
+}

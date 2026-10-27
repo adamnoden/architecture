@@ -64,3 +64,9 @@ test('ADE dimension rejects zero-length geometry', () => {
     b: dimension.a
   }, projection(100), { annotationSide: 'left' }), /zero projected length/)
 })
+
+test('vertical dimensions rotate their label to keep the measured edge readable in a narrow paper margin', () => {
+  const items = dimensionToDrawingPrimitives({ ...dimension, b: { x: dimension.a.x, y: mm(dimension.a.y + 6000) } }, projection(100), { annotationSide: 'right' })
+  const label = items.find((p) => p.kind === 'text')!
+  assert.ok(label.kind === 'text' && label.rotateDeg === -90)
+})
