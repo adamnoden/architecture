@@ -169,6 +169,17 @@ export interface AdeReturnStair {
   provenance: AdeProvenance
 }
 
+/** Selected schematic occupancy envelopes, never manufactured product detail. */
+export interface AdePlanFitting {
+ kind:'fitting'
+ id:string
+ role:'wc'|'basin'|'storage'|'desk'
+ origin:AdeModelPoint
+ width:Millimetres
+ depth:Millimetres
+ provenance:AdeProvenance
+}
+
 export interface AdeArchitecturalPlan {
   id: string
   sourceId: string
@@ -182,6 +193,7 @@ export interface AdeArchitecturalPlan {
   dimensions: readonly AdeDimension[]
   labels: readonly AdePlanLabel[]
   stairs?: readonly AdeReturnStair[]
+  fittings?: readonly AdePlanFitting[]
 }
 
 export type AdeSemanticEntity =
@@ -195,6 +207,7 @@ export type AdeSemanticEntity =
   | AdeDimension
   | AdePlanLabel
   | AdeReturnStair
+  | AdePlanFitting
 
 export const architecturalPlanEntities = (plan: AdeArchitecturalPlan): readonly AdeSemanticEntity[] => [
   ...plan.nodes,
@@ -206,5 +219,6 @@ export const architecturalPlanEntities = (plan: AdeArchitecturalPlan): readonly 
   ...plan.adjacencies,
   ...plan.dimensions,
   ...plan.labels,
-  ...(plan.stairs ?? [])
+  ...(plan.stairs ?? []),
+  ...(plan.fittings ?? [])
 ]

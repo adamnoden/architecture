@@ -1,3 +1,4 @@
+import {fittingToDrawingPrimitives} from './fitting-drawing.js'
 import { returnStairToDrawingPrimitives } from './stair-drawing.js'
 import { openingSymbolToDrawingPrimitives } from './opening-symbol.js'
 import { compileWallAssemblyTopology, type AdeWallAssemblyTopologyOptions } from './assembly-topology.js'
@@ -108,6 +109,7 @@ export const compileArchitecturalPlanScene = (plan: AdeArchitecturalPlan, option
     endpointInsetPaperMm: Math.max(...plan.wallAssemblies.map((a) => options.projection.length(options.resolveAssemblyThicknessMm(a))), 0) + 1
   }))
   for (const stair of plan.stairs ?? []) primitives.push(...returnStairToDrawingPrimitives(stair, options.projection))
+  for(const fitting of plan.fittings ?? [])primitives.push(...fittingToDrawingPrimitives(fitting,options.projection))
   for (const dimension of plan.dimensions) primitives.push(...dimensionToDrawingPrimitives(dimension, options.projection,
     options.dimensionOptions ?? { annotationSide: 'right', offsetPaperMm: 13 }))
   for (const label of plan.labels) {

@@ -39,3 +39,12 @@ No compiler, whole-system or PLT migration may promote a successor house before 
 - `rsi-00-before-state.md` — exact architectural/site/drawing baseline.
 - `rsi-01-detached-plot-morphology.md` — bounded morphology evidence and synthesis.
 - `data/detached-plot-morphology.json` — machine-readable evidence record.
+
+## Later current-house refinement
+
+PLT #903 implements the owner's south-west study / eastern guest WC and walk-in
+cloakroom choice. It supersedes B4 as a current-house review candidate, while
+RSI's recorded B4 collision/before-state evidence retains its exact identity.
+It does not approve an RSI rough concept or the successor's final plan, and
+does not waive either owner gate. Refresh affected assumptions explicitly if
+RSI consumes this later programme; do not silently replace frozen inputs.

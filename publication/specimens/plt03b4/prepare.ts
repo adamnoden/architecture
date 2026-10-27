@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import {createHash} from 'node:crypto'
 import {mkdir,readFile,writeFile} from 'node:fs/promises'
 import {resolve} from 'node:path'
-import {createResolvedReferenceHouseSource,groundPlanResolution,auditCurrentStairReservation} from '../../../compiler/reference-house/plan-resolution.js'
+import {createResolvedReferenceHouseSource,groundPlanResolution,auditCurrentStairReservation} from '../../../compiler/reference-house/plan-resolution-b4.js'
 import {compileReferenceHouseSystem} from '../../../compiler/reference-house/system-compile.js'
 import {createResolvedReferenceHouseAdePlanScene} from '../../../compiler/reference-house/resolved-ade-plan-scene.js'
 import {createResolvedReferenceHouseAdePlan} from '../../../compiler/reference-house/resolved-ade-plan.js'
@@ -48,3 +48,7 @@ await writeFile(resolve(work,'manifest.json'),JSON.stringify({packet:'PLT-03B.4'
  profiles:{b5:[176,250,2,100],a4:[210,297,2,100],a2:[420,594,1,50]},
  architecturalChangeClass:'S — explicit provisional source choices; historical proofs untouched',X:[]},null,2)+'\n')
 console.log('Prepared PLT-03B.4 labelled comparison, paired-level coordination and actual return stair from provisional architectural source.')
+
+const retained=JSON.parse(await readFile(resolve(root,'retained-proof.json'),'utf8'))
+assert.deepEqual(files,retained.files,'Retained B4 drawings must remain byte-identical')
+assert.equal(hash(JSON.stringify({source,choices:groundPlanResolution})),retained.sourceSha256)
