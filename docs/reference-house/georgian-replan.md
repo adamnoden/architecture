@@ -2,7 +2,8 @@
 
 This architectural coordination proposal uses a 12 m square shell, a centred
 3.6 m open courtyard, a centred entrance and a west stair continuing from ground
-to first floor and attic. It succeeds the square-house plan for design review.
+to first floor and attic. The owner accepts this floor plan as the working basis for continued drawing
+development; personal layout refinements are deferred. It succeeds the square-house plan at that scope.
 The earlier plans remain historical comparison evidence. This proposal is not
 yet the complete structural, environmental or service-model successor.
 
