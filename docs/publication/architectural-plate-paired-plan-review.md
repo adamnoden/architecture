@@ -2,6 +2,11 @@
 
 # Paired-plan review and candidate grammar
 
+**Historical paired-plan evidence.** The owner now accepts the Georgian floor
+plan as the working basis and directs a return to PLT proper. Follow the
+[current source and rollout](architectural-plate-current-source-and-rollout.md)
+for live work. The earlier review and proof below remain historical evidence.
+
 The owner reviewed B6 and said: “Great. Looks good. Crack on with PLT”. This is
 screen approval to adopt the square ground plan and continue. The review medium
 was not identified as a physical print; actual-size print acceptance is not
