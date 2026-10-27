@@ -29,3 +29,11 @@ test('all five section/roof candidates are deterministic vectors with explicit d
  assert.ok(sectionRoofSource.limitations.some(s=>s.includes('Courtyard')))
  const s=createSectionRoofScene('ROOF-WATER',100);assert.equal(s.primitives.filter(p=>p.id.startsWith('outlet-')).length,4)
 })
+
+test('cut regions use outlined paths and windows retain glazing through the cut',()=>{
+ const s=createSectionRoofScene('PRINCIPAL',100),svg=renderDrawingSceneV2SvgWithTokens(s,PLT_CANDIDATE_TOKENS)
+ assert.ok(s.primitives.some(p=>p.kind==='path'&&p.stroke==='cut'&&p.fill==='faint'))
+ assert.ok(!s.primitives.some(p=>p.kind==='rect'&&p.fill==='faint'))
+ assert.ok(s.primitives.some(p=>p.id==='south-window-2-glazing'))
+ assert.ok(svg.includes('path-stroke-cut'))
+})

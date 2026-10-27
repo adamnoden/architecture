@@ -12,7 +12,7 @@ export const roofZ=(x:number,y:number)=>roofHeight(Math.min(x,y,12000-x,12000-y)
 export function sectionAt(x:number){
  const court=x>=4200&&x<=7800
  const envelope=court?[{id:'outer-south',lo:0,hi:417.5,top:6800},{id:'court-south',lo:3782.5,hi:4200,top:roofTop()},{id:'court-north',lo:7800,hi:8217.5,top:roofTop()},{id:'outer-north',lo:11582.5,hi:12000,top:6800}]:[{id:'outer-south',lo:0,hi:417.5,top:6800},{id:'outer-north',lo:11582.5,hi:12000,top:6800}]
- const walls=envelope.map(w=>({...w,holes:(['GROUND','FIRST'] as const).flatMap(level=>openings(level).filter(o=>o.wall===w.id&&Math.abs(o.centre-x)<o.width/2).map(o=>({id:o.id,lo:(level==='GROUND'?0:3450)+(o.kind==='door'?0:o.sill??750),hi:(level==='GROUND'?0:3450)+(o.head??2850)})))}))
+ const walls=envelope.map(w=>({...w,holes:(['GROUND','FIRST'] as const).flatMap(level=>openings(level).filter(o=>o.wall===w.id&&Math.abs(o.centre-x)<o.width/2).map(o=>({id:o.id,kind:o.kind,lo:(level==='GROUND'?0:3450)+(o.kind==='door'?0:o.sill??750),hi:(level==='GROUND'?0:3450)+(o.head??2850)})))}))
  const partitions=(['GROUND','FIRST'] as const).flatMap(level=>design.partitions[level].filter(w=>w.a[1]===w.b[1]&&x>w.a[0]&&x<w.b[0]).map(w=>({id:w.id,at:w.a[1],base:level==='GROUND'?0:3450,door:openings(level).some(o=>o.wall===w.id&&Math.abs(o.centre-x)<o.width/2)})))
  const floorRuns=court?[[417.5,3782.5],[8217.5,11582.5]]:[[417.5,11582.5]]
  return {x,court,walls,partitions,floorRuns}
@@ -23,11 +23,11 @@ export function createSectionRoofScene(view:TechnicalView,scale:100|50):DrawingS
  const scene:DrawingSceneV2={widthMm:scale===100?145:420,heightMm:scale===100?190:594,viewId:`PLT-${view}-${scale}`,sourceId:design.id,title:view,description:'Source-derived section and roof candidate; structural framing, access and drainage capacity unresolved.',scaleDenominator:scale,primitives}
  const line=(id:string,x:number,y:number,xx:number,yy:number,role:DrawingLineRole='secondary',dash?:DrawingDashRole)=>primitives.push({kind:'line',id,a:p(x,y),b:p(xx,yy),role,dash,metadata})
  const text=(id:string,x:number,y:number,value:string,role:'note'|'label'|'marker'='note')=>primitives.push({kind:'text',id,...p(x,y),value,role,anchor:'middle',metadata})
- const rect=(id:string,x:number,y:number,w:number,h:number,cut=false,dash?:DrawingDashRole)=>primitives.push({kind:'rect',id,...p(x,y+h),width:w/scale,height:h/scale,stroke:cut?'cut':'secondary',fill:cut?'faint':'none',dash,metadata})
+ const rect=(id:string,x:number,y:number,w:number,h:number,cut=false,dash?:DrawingDashRole)=>cut?primitives.push({kind:'path',id,rings:[[p(x,y),p(x+w,y),p(x+w,y+h),p(x,y+h)]],stroke:'cut',fill:'faint',metadata}):primitives.push({kind:'rect',id,...p(x,y+h),width:w/scale,height:h/scale,stroke:'secondary',fill:'none',dash,metadata})
  const arrow=(id:string,a:number[],b:number[])=>{line(id,a[0],a[1],b[0],b[1],'primary');const dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy),ux=dx/l,uy=dy/l;line(id+'-a',b[0],b[1],b[0]-ux*250-uy*120,b[1]-uy*250+ux*120,'primary');line(id+'-b',b[0],b[1],b[0]-ux*250+uy*120,b[1]-uy*250-ux*120,'primary')}
  if(view==='PRINCIPAL'||view==='SERVICE-SECTION'){
   const m=sectionAt(view==='PRINCIPAL'?sectionRoofSource.principalX:sectionRoofSource.serviceX)
-  for(const w of m.walls){let cursor=0;for(const h of w.holes.sort((a,b)=>a.lo-b.lo)){if(h.lo>cursor)rect(w.id+'-'+cursor,w.lo,cursor,w.hi-w.lo,h.lo-cursor,true);line(h.id+'-head',w.lo,h.hi,w.hi,h.hi,'primary');cursor=h.hi}if(cursor<w.top)rect(w.id+'-top',w.lo,cursor,w.hi-w.lo,w.top-cursor,true)}
+  for(const w of m.walls){let cursor=0;for(const h of w.holes.sort((a,b)=>a.lo-b.lo)){if(h.lo>cursor)rect(w.id+'-'+cursor,w.lo,cursor,w.hi-w.lo,h.lo-cursor,true);line(h.id+'-head',w.lo,h.hi,w.hi,h.hi,'primary');if(h.kind==='window')line(h.id+'-glazing',(w.lo+w.hi)/2,h.lo,(w.lo+w.hi)/2,h.hi);cursor=h.hi}if(cursor<w.top)rect(w.id+'-top',w.lo,cursor,w.hi-w.lo,w.top-cursor,true)}
   for(const [i,[a,b]]of m.floorRuns.entries()){
    rect('floor-'+i,a,3100,b-a,350,true);line('ground-'+i,a,0,b,0,'cut');line('ceiling-'+i,a,6550,b,6550)
    const lo=Math.max(a,sectionRoofSource.storageFloorInset),hi=Math.min(b,12000-sectionRoofSource.storageFloorInset)
