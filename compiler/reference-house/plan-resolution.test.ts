@@ -40,6 +40,9 @@ test('pantry is independently entered from kitchen and plant replacement stays i
  const services=createReferenceHouseServiceSource(source)
  assert.ok(services.nodes.find(n=>n.id==='DRY-G-TERMINALS')!.hostSpaceIds.includes('G-PANTRY-01'))
  assert.ok(!services.routes.some(r=>r.primaryInfrastructure&&r.hostSpaceIds.includes('G-PANTRY-01')))
+ const utilityWindow=choice.openings.find(o=>o.id==='G-SERVICE-E-W01')!
+ assert.ok(utilityWindow.centre-utilityWindow.width/2-(3845+62.5)>=100,'leave a nominal pier beside the utility partition')
+ assert.ok(plant.centre-plant.width/2-(utilityWindow.centre+utilityWindow.width/2)>=100,'window and replacement door keep separate jambs')
  assert.ok(plan.fittings!.some(f=>f.id==='RHPR-eastShelves'))
 })
 

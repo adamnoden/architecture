@@ -23,6 +23,7 @@ export const groundPlanResolution={
   if(['G-COURT-W-W02','G-COURT-E-W02'].includes(o.id))return {...o,centre:6900,width:1200}
   if(o.id==='G-PLANT-EXTERNAL-D01')return {...o,centre:5750}
   if(o.id==='G-KITCHEN-E-W01')return {...o,centre:10050}
+  if(o.id==='G-SERVICE-E-W01')return {...o,centre:4500}
   if(o.id==='G-SERVICE-GALLERY-D01')return {...o,centre:5100}
   if(o.id==='G-CLOAK-HALL-D01')return {...o,centre:1100,width:900}
   if(o.id==='G-WC-HALL-D01')return {...o,centre:2800,width:900}
