@@ -4,13 +4,14 @@ import {mkdir,readFile,writeFile} from 'node:fs/promises'
 import {resolve} from 'node:path'
 import {design} from '../../../compiler/reference-house/georgian/source.js'
 import {createGeorgianScene} from '../../../compiler/reference-house/georgian/scenes.js'
-import {auditGeorgianReplan} from '../../../compiler/reference-house/georgian/audit.js'
+import {auditGeorgianReplan,auditRoomAccess} from '../../../compiler/reference-house/georgian/audit.js'
 import {renderDrawingSceneV2SvgWithTokens} from '../../../compiler/publication-drawing-v2/svg.js'
 import {PLT_CANDIDATE_TOKENS} from '../../../compiler/publication-drawing-v2/plt-candidate-tokens.js'
 await import('../plt04/prepare.js')
 const root=import.meta.dirname,work=resolve(root,'.work');await mkdir(work,{recursive:true})
 const old=await readFile(resolve(root,'../plt04/.work/ground-100.svg'),'utf8'),fonts=(old.match(/@font-face\{[^}]+\}/g)??[]).join('')
 const views=['GROUND','FIRST','ATTIC','FRONT','REAR','SECTION','STAIR','SERVICES'] as const
+const access={ground:auditRoomAccess('GROUND'),first:auditRoomAccess('FIRST')};assert.ok(access.ground.pass&&access.first.pass,JSON.stringify(access));
 const audit=auditGeorgianReplan();assert.equal(audit.pass,true,JSON.stringify(audit.failures))
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex')
 const files:Record<string,{svg:string;scene:string}>={},html:Record<number,string[]>={100:[],50:[]}
@@ -23,5 +24,5 @@ for(const scale of [100,50] as const)for(const view of views){
 }
 for(const [name,scale]of [['book',100],['wall',50]] as const)await writeFile(resolve(work,name+'.html'),`<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>Georgian house re-plan</title><style>${fonts}</style></head><body>${html[scale].join('')}</body></html>`)
 await writeFile(resolve(work,'source.json'),JSON.stringify(design,null,2)+'\n')
-await writeFile(resolve(work,'manifest.json'),JSON.stringify({packet:'PLT-05.1',views,sourceSha256:hash(JSON.stringify(design)),files,audit,ownerPhysicalVerdict:'UNREVIEWED',printTokensFrozen:false,fullHistoricalSystemRevalidation:false,fitScaling:false,profiles:{b5:[176,250,8,100],a4:[210,297,8,100],a2:[420,594,8,50]}},null,2)+'\n')
+await writeFile(resolve(work,'manifest.json'),JSON.stringify({packet:'PLT-05.1',views,sourceSha256:hash(JSON.stringify(design)),files,audit,access,ownerPhysicalVerdict:'UNREVIEWED',printTokensFrozen:false,fullHistoricalSystemRevalidation:false,fitScaling:false,profiles:{b5:[176,250,8,100],a4:[210,297,8,100],a2:[420,594,8,50]}},null,2)+'\n')
 console.log('Georgian re-plan prepared: 3 plans, 2 elevations, roof section, developed stair and service access. Candidate limitations retained.')

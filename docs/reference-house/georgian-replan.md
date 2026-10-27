@@ -36,9 +36,10 @@ The same source generates the developed stair diagram and both plan flights.
 The west band cannot hold this stair and a separate full-width longitudinal
 gallery side by side. North and south landings therefore connect through the
 east gallery, which also supplies service access. No route through a bedroom or
-under a flight is assumed. The compact western front bedroom is represented with
-a 1200 × 2000 mm bed; this is not a claim that all four bedrooms are generous
-double rooms. The rear-west bedroom is broad but relatively shallow.
+under a flight is assumed. The western front bedroom combines the space above the study and cloakroom
+into an L-shaped room, preserving the stair approach. It is represented with a
+1200 × 2000 mm bed; the rear-west bedroom uses a 1350 mm double-bed template.
+This is not a claim that every bedroom is a generous double room. The rear-west bedroom is broad but relatively shallow.
 
 Furniture footprints fit their rooms. The stair has more generous clear width
 and turning space than the previous candidate, but a continuous three-dimensional
@@ -67,7 +68,10 @@ suite is north-east and includes its own walk-in wardrobe; the south-east bedroo
 has the second en suite. The 550 × 700 mm riser envelope is inside both the ground
 plant and upper bathroom reservation. Removable dry-side service lining and
 900 mm access-panel envelopes face the public gallery. Panel/riser access and
-the family-bathroom door do not overlap. Wet-room fixture selection, extract,
+the family-bathroom door do not overlap. A conservative 100 mm walking grid
+with a 600 mm person envelope connects every room to the entrance/stair arrival
+without using the courtyard or stair footprint as a shortcut; this does not
+establish furniture carrying or escape compliance. Wet-room fixture selection, extract,
 drainage gradients, acoustic/fire boundaries and actual withdrawal clearances
 remain to be resolved before technical adoption. No route is hidden inside
 permanent masonry merely to make the plan fit.

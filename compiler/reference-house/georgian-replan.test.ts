@@ -62,3 +62,8 @@ test('internal door sweeps stay in their room and clear selected furniture and e
   }
  }
 })
+
+test('all rooms connect to the entrance or stair arrival without courtyard/underflight shortcuts',async()=>{
+ const {auditRoomAccess}=await import('./georgian/audit.js')
+ for(const level of ['GROUND','FIRST'] as const){const a=auditRoomAccess(level);assert.equal(a.pass,true,JSON.stringify(a.rooms))}
+})
