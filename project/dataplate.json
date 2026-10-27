@@ -59,7 +59,7 @@
     },
     "deployment-real-site": {
       "level": "M4",
-      "reviewedOn": "2026-10-26"
+      "reviewedOn": "2026-10-27"
     },
     "delivery": {
       "level": "M2",
@@ -70,7 +70,7 @@
     "activePatterns": 21,
     "strategies": 3,
     "heldCandidates": 4,
-    "publicRoutes": 104,
+    "publicRoutes": 105,
     "workingEditionEntries": 40,
     "primerEntries": 5
   },

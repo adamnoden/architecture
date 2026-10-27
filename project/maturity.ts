@@ -342,11 +342,11 @@ export const workstreamStatuses = [
     id: 'deployment-real-site',
     name: 'Deployment / real-site integration',
     maturity: 'M4',
-    reviewedOn: '2026-10-26',
+    reviewedOn: '2026-10-27',
     currentState:
-      'The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. The programme has completed DPL-01 through DPL-14 and is active at DPL-15 empirical trials. DPL-15F has now exhausted the bounded no-spend RP-006 residual routes without satisfying R1/R2/R4/R5; RP-006 remains 2/6 ready, candidate authoring remains prohibited and the corpus remains 0 of 8 candidate-ready sites. DPL-15G is the active categorical RP-007/RP-008 path-comparison gate under #865 / PR #867. The Lennard instrumented control remains excluded from empirical sampling. Whole-site compatibility, incompatibility, route exhaustion and regulatory/construction adequacy remain unadmitted.',
+      'The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. DPL-01 through DPL-14 are complete. DPL-15J adds explicit assumption-based trials across all eight sites, a conditional envelope, reader-facing computational explanation and internal adversarial checks. Geometry hypotheses do not discharge evidence-backed readiness: corpus readiness remains 0/8 after DPL-15I, and real-site compatibility remains unestablished. The original empirical DPL-15/16/17/18 gates remain open; exploratory work is separately scoped. Lennard remains excluded from empirical sampling.',
     nextGate:
-      'Complete DPL-15G without scoring sites or laundering planning/marketing evidence into readiness authority. If the gate lands with one selected site, perform only the bounded site-specific evidence-acquisition packet it authorises; candidate authoring remains subsequent unless R1–R6 become fully and deterministically satisfied. Keep DPL-16/17/18 held pending their explicit evidence gates; external Lennard judgement and measurement require separate acquisition.',
+      'Replace assumptions for one genuine corpus parcel with controlled extent/identity and a coherent metric boundary/orientation/levels/access package, then author and evaluate one evidence-backed placement. Do not generate further uncalibrated rectangles or convenience-site searches as a substitute. Preserve stage-specific external structural, water, rights and planning dependencies; no external contact or spend is authorised.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -376,6 +376,8 @@ export const workstreamStatuses = [
         'project/dpl/dpl-wave-d-integration-admission-review.md'
       ],
       internallyValidated: [
+        'project/dpl/exploration/README.md',
+        'compiler/dpl/exploration.test.ts',
         'project/dpl/dpl-15e-rp006-spatial-preflight.md',
         'project/dpl/dpl-15f-rp006-residual-recovery.md',
         'project/dpl/dpl-t11-lennard-no-spend-evidence.md',

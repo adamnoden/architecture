@@ -91,7 +91,7 @@ Drawing/publication records live under `docs/publication/`; publication build ma
 
 A target, jurisdiction or site rule is not architecture merely because it may later be machine-checkable. The DPL programme under `project/dpl/` is establishing the separate target/site/deployment model.
 
-Until that work earns executable implementation, this computational README must not imply that a release-grade jurisdiction/site compiler exists. Future target or site checks should enter computation only through explicit authority, applicability, evidence and proof contracts.
+The bounded deployment runtime now checks authored candidate conformance and composes selected target obligations. It is not a release-grade jurisdiction/site compiler. [Deployment under explicit assumptions](deployment-exploration.md) adds conditional exploration while preserving evidence-backed site unknowns. Target and site checks retain explicit authority, applicability, evidence and proof contracts.
 
 ## Verification
 
