@@ -48,3 +48,4 @@ jobs:
             publication/specimens/ade06/.work/manifest.json
           if-no-files-found: error
           retention-days: 90
+          include-hidden-files: true
