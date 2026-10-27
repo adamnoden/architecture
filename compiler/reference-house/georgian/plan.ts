@@ -35,7 +35,7 @@ export const createGeorgianPlan=(level:Level):AdeArchitecturalPlan=>{
  const fit=(id:string,role:'storage'|'desk'|'wc'|'basin',b:Box)=>(p.fittings as Array<NonNullable<AdeArchitecturalPlan['fittings']>[number]>).push({kind:'fitting',id,role,origin:{x:mm(b.x),y:mm(b.y)},width:mm(b.width),depth:mm(b.depth),provenance})
  if(level==='GROUND'){
   fit('study-desk','desk',design.furniture.studyDesk);fit('cloak-hanging','storage',design.furniture.cloakHanging)
-  fit('wc-pan','wc',{x:10400,y:2200,width:400,depth:650});fit('wc-basin','basin',{x:11182.5,y:1900,width:400,depth:400})
+  fit('wc-pan','wc',design.wetFit.guestPan);fit('wc-basin','basin',design.wetFit.guestBasin)
   fit('plant-cylinder','storage',design.services.plantWater);fit('plant-dry','storage',design.services.plantDry)
  }
  if(level==='FIRST')for(const id of ['wardrobeWest','wardrobeEastNorth','wardrobeEastSouth'] as const)fit(id,'storage',design.furniture[id])

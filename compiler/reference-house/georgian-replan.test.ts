@@ -43,3 +43,22 @@ test('all eight views at both physical scales render deterministically without h
   assert.equal(a,b);assert.ok(!a.includes('<image'))
  }
 })
+
+test('internal door sweeps stay in their room and clear selected furniture and equipment',()=>{
+ const target:Record<string,string>={'study-door':'G-STUDY','cloak-door':'G-CLOAK','utility-door':'G-UTILITY','wc-door':'G-WC','plant-door':'G-PLANT','pantry-door':'G-PANTRY','bed2-door':'U-BED2','bed3-door':'U-BED3','ensuite3-door':'U-BED3','family-bath-door':'U-BATH','principal-ensuite-door':'U-ENSP','principal-door':'U-PRINCIPAL','bed4-door':'U-BED4','wardrobe-door':'U-PRINCIPAL'}
+ for(const level of ['GROUND','FIRST'] as const){
+  const plan=createGeorgianPlan(level)
+  const occupied=[...plan.fittings!.map(f=>({id:f.id,x:f.origin.x,y:f.origin.y,width:f.width,depth:f.depth})),...Object.entries(design.furniture).filter(([id])=>level==='FIRST'?['bed2','bed3','bed4','principal'].includes(id):id==='studyChair').map(([id,b])=>({id,...b})),...(level==='GROUND'?[{id:'riser',...design.services.riser}]:[])]
+  for(const o of plan.openings.filter(o=>target[o.id])){
+   const wall=plan.walls.find(w=>w.id===o.hostWallId)!,a=plan.nodes.find(n=>n.id===wall.fromNodeId)!.point,b=plan.nodes.find(n=>n.id===wall.toNodeId)!.point
+   assert.ok(o.symbol?.kind==='door'&&o.width.kind==='approximate'&&o.centreOffset.kind==='approximate')
+   const len=Math.hypot(b.x-a.x,b.y-a.y),ux=(b.x-a.x)/len,uy=(b.y-a.y)/len,high=o.symbol.hingeEnd==='high',hinge=o.centreOffset.value+(high?1:-1)*o.width.value/2,side=o.symbol.swingSide==='left'?1:-1
+   const boxes=design.rooms[level].find(r=>r.id===target[o.id])!.boxes
+   for(let step=0;step<=24;step++)for(let rad=1;rad<=8;rad++){
+    const angle=step*Math.PI/48,radius=o.width.value*rad/8,along=hinge+(high?-1:1)*radius*Math.cos(angle),normal=side*radius*Math.sin(angle),x=a.x+ux*along-uy*normal,y=a.y+uy*along+ux*normal
+    assert.ok(boxes.some(b=>x>=b.x-1&&x<=b.x+b.width+1&&y>=b.y-1&&y<=b.y+b.depth+1),`${o.id} leaves destination`)
+    for(const f of occupied)assert.ok(!(x>f.x+1&&x<f.x+f.width-1&&y>f.y+1&&y<f.y+f.depth-1),`${o.id} hits ${f.id}`)
+   }
+  }
+ }
+})

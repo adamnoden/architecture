@@ -17,7 +17,7 @@ The project does not argue that everything should be demountable, exposed or tec
 
 The public architectural proposition begins in the [manuscript](docs/manuscript/) and its [governing principles](docs/manuscript/governing-principles.md). The [reading guide](docs/reading-guide.md) is the shortest route through the publication argument.
 
-The current project brief excludes flat roofs, including dormer and ancillary roofs. The [constraint ledger](docs/reference-house/brief-and-constraint-ledger.md) owns this project-specific choice.
+The current project brief excludes flat roofs, including dormer and ancillary roofs. The [roof constraint](docs/reference-house/georgian-replan.md#roof-constraint) owns this project-specific choice.
 
 ## Project map
 

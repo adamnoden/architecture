@@ -14,7 +14,7 @@ A very-low-slope roof is not an acceptable substitute. Dormers have pitched
 gables; no flat-topped dormer or concealed flat terrace is admitted.
 
 This is a firm owner-imposed project constraint, recorded in the
-[brief ledger](brief-and-constraint-ledger.md) and `project/design-constraints.ts`.
+project brief and `project/design-constraints.ts`.
 It is not a universal claim that every flat roof fails. Historical fixtures and
 proof identities remain reproducible; they no longer prescribe the new roof.
 
