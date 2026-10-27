@@ -108,6 +108,9 @@ test('side daylight, wider garden doors and joined hall return are semantic choi
  const plan=createResolvedReferenceHouseAdePlan(result,source)
  for(const id of ['G-STUDY-E-W01','G-SERVICE-E-W01'])assert.equal(plan.openings.find(o=>o.id===id)?.symbol?.kind,'window')
  assert.equal(choices.openings.find(o=>o.id==='G-GARDEN-D01')?.width,1800)
+ const drawWindow=choices.openings.find(o=>o.id==='G-COURT-W-W01')!
+ assert.ok(drawWindow.centre+drawWindow.width/2 < source.partitions.westRoomSplitY.value-62.5,'window aperture must clear the family partition body')
+ assert.ok(drawWindow.centre-drawWindow.width/2 > result.derived.court.y0)
  const leaf=createResolvedReferenceHouseAdePlanScene(result,source,100).primitives.find(p=>p.id==='G-FRONT-D01-leaf-1')!
  assert.ok(leaf.kind==='line' && Math.abs(leaf.a.x-(16+7850/100))<1e-8)
  const ret=plan.walls.find(w=>w.id==='G-HALL-WEST-RETURN-B')!

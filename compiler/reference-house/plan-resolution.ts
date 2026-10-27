@@ -15,7 +15,7 @@ export const groundPlanResolution = {
       if(o.id === 'G-FRONT-D01') return {...o, hingeEnd: 'high' as const}
       if(o.id === 'G-GARDEN-D01') return {...o, width: 1800}
       if(o.id === 'G-DRAW-HALL-D01') return {...o, centre: 3150}
-      if(o.id === 'G-COURT-W-W01') return {...o, centre: 4600, width: 700}
+      if(o.id === 'G-COURT-W-W01') return {...o, centre: 4550, width: 700}
       if(o.id === 'G-COURT-W-W02') return {...o, centre: 6500}
       if(o.id === 'G-COURT-E-W01') return {...o, centre: 5000}
       if(o.id === 'G-COURT-E-W02') return {...o, centre: 6500}
