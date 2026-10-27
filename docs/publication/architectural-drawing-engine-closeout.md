@@ -47,7 +47,7 @@ The final ground/first-floor candidates at both scales and the asymmetric contra
 
 ## Regression and reproduction
 
-Local focused validation passed 49 architectural/migration tests, four v2 terminal tests, both specimen validators and the protected v1 regeneration check. The repository health run progressed through the semantic suites and publication checks, then its Chromium figure-validation subprocess hit this workspace’s browser-launch restriction. The dedicated GitHub proof workflow is the required clean-environment full-health and regeneration gate before merge.
+Local focused validation passed 49 architectural/migration tests, four v2 terminal tests, both specimen validators and the protected v1 regeneration check. The repository health run progressed through the semantic suites and publication checks, then its Chromium figure-validation subprocess hit this workspace’s browser-launch restriction. The clean-environment full-health check, v2 terminal contracts, atlas regeneration and migrated-plan proof all passed in PR #884. Its dedicated workflow additionally retains the exact proof artifacts; the PR checks identify the validated head and final run.
 
 - `npm run check` is the repository-wide health gate.
 - `npm run test:architectural-drawing` proves existing topology, assembly, opening, partition, dimension and scale contracts plus generic composition/contrast negatives.
@@ -82,3 +82,14 @@ ADE's internal capability/migration work is complete. PLT-03 can restart review 
 Print the A2 candidate at **100% / actual size**. Review outer/courtyard joins, the white cavity, quiet inner-leaf distinction, aperture subtraction, the opening range spans, the two courtyard point markers, host possibility bands, partition abutments, adjacency brackets, dimensions, text and scale bar. Review the book candidate at actual 1:100 alongside it. The review key is: external span = approximate/ranged aperture; diamond = centre known/width unknown; faint host band = occurrence without position; offset bracket = required connectivity without chosen door.
 
 **Owner physical verdict: UNREVIEWED. Print tokens: NOT FROZEN. Final manufacture: still gated by independent PLT drawing freeze.** These obligations remain open under PLT #422; they are not converted into an ADE completion claim.
+
+## Closeout hygiene
+
+No temporary release helper, write permission, calibration fixture or unearned backend extension was added. The asymmetric fixture and read-only proof workflow remain because they enforce the accepted generality/regeneration contract. Local specimen work directories are disposable and excluded or removed; accepted evidence remains in the source/proof manifests and workflow artifacts.
+
+**Cleanup residue — repository-owner action:** delete these two pre-existing orphan refs:
+
+- `ade-04a-opening-subtraction-replay` at `224c7cc838c658beb1b1463b3a0c0029827f4178`;
+- `ade-07-reference-house-ground-plan` at `e95c3c3df1224694ad8060775492ec6e2d8337fc`.
+
+Each tip was verified as an ancestor of the starting main; neither has an associated pull request. Their accepted history is therefore retained by main. The connected API exposes no branch-deletion operation and command-line deletion lacks authenticated push credentials, so those refs are not reported as removed. The PR #884 implementation branch is covered by the repository’s enabled automatic deletion after merge. This residue does not withhold ADE’s substantive internal completion or PLT handoff.
