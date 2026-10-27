@@ -1,4 +1,5 @@
 import { createReferenceHouseSource } from './fixture.js'
+import type { ReferenceHouseSource } from './model.js'
 import { mm } from '../units.js'
 
 /**
@@ -73,7 +74,7 @@ export const auditCurrentStairReservation = (going = 300, goingsPerFlight = 5, c
 /** Current coordination successor; historical C1 and its released drawings are
  * untouched. The former scalar reservation becomes an explicitly short-axis
  * check; the full rectangular reservation is owned above. */
-export const createResolvedReferenceHouseSource = () => {
+export const createResolvedReferenceHouseSource = (): ReferenceHouseSource => {
   const s = createReferenceHouseSource()
   s.partitions.frontHallWestX = { ...s.partitions.frontHallWestX, id:'RHPR-HALL-WEST',value:mm(3100) }
   s.partitions.galleryServiceX = { ...s.partitions.galleryServiceX,id:'RHPR-GALLERY-SERVICE',value:mm(9350),authority:'PROVISIONAL',disposition:'PROVISIONAL_BUT_REPRESENTABLE',authorship:'AUTHORED_PROVISIONAL' }

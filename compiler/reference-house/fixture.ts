@@ -79,7 +79,7 @@ const openingFamilies = (): OpeningFamilySource[] => [
   }
 ]
 
-export const createReferenceHouseSource = (): ReferenceHouseSource => ({
+export const createReferenceHouseSource = (): ReferenceHouseSource & { court: SourceFact<ReferenceHouseSource['court']['value'] & { placement: 'centred-in-shell' }> } => ({
   fixtureId: 'RH-C1-REFERENCE-HOUSE',
   coordinateConvention: controlled('RHCF-COORD', {
     origin: 'south-west-outer-corner',
