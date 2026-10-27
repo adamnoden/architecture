@@ -3,9 +3,10 @@ import { createPlanPaperProjection } from '../publication-drawing/projection.js'
 import { mm } from '../units.js'
 import { createResolvedReferenceHouseAdePlan } from './resolved-ade-plan.js'
 import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSource } from './model.js'
+import type { AdeArchitecturalPlan } from '../architectural-drawing/model.js'
 
-export const createResolvedReferenceHouseAdePlanScene = (result: ReferenceHouseCompileResult, source: ReferenceHouseCoordinationSource, scale: 100 | 50, level: LevelId = 'GROUND') => {
-  const plan=createResolvedReferenceHouseAdePlan(result,source,level)
+export const createResolvedReferenceHouseAdePlanScene = (result: ReferenceHouseCompileResult, source: ReferenceHouseCoordinationSource, scale: 100 | 50, level: LevelId = 'GROUND', resolvedPlan?: AdeArchitecturalPlan) => {
+  const plan=resolvedPlan??createResolvedReferenceHouseAdePlan(result,source,level)
   const origin=scale===100?{x:16,y:20}:{x:90,y:155}
   const projection=createPlanPaperProjection({scaleDenominator:scale,modelBounds:{x:0,y:0,width:12000,height:result.derived.shell.depth},paperOrigin:origin})
   const northDoorLeafPaperMm=Math.max(0,...plan.openings.filter(o=>o.hostWallId==='G-OUTER-NORTH'&&o.symbol?.kind==='door').map(o=>

@@ -4,3 +4,5 @@ node_modules/
 publication/.work/
 publication/dist/
 .DS_Store
+publication/specimens/plt04/.work/
+publication/specimens/plt04/dist/

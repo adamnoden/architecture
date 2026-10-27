@@ -198,6 +198,7 @@ const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
     page('Ground-floor development', '/docs/reference-house/ground-floor-development'),
     page('Upper floor & stair development', '/docs/reference-house/upper-floor-and-stair-development'),
     page('Ground-plan coordination revision', '/docs/reference-house/ground-plan-resolution'),
+    page('First-floor plan resolution', '/docs/reference-house/first-floor-plan-resolution'),
     page('Service topology RH-06', '/docs/reference-house/service-topology-rh06'),
     page('Service crossing register RH-06', '/docs/reference-house/service-crossing-register-rh06'),
     page('Service topology RH-07 MVHR addendum', '/docs/reference-house/service-topology-rh07-mvhr-addendum'),
