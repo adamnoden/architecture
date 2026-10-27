@@ -17,6 +17,8 @@ The project does not argue that everything should be demountable, exposed or tec
 
 The public architectural proposition begins in the [manuscript](docs/manuscript/) and its [governing principles](docs/manuscript/governing-principles.md). The [reading guide](docs/reading-guide.md) is the shortest route through the publication argument.
 
+The current project brief excludes flat roofs, including dormer and ancillary roofs. The [roof constraint](docs/reference-house/georgian-replan.md#roof-constraint) owns this project-specific choice.
+
 ## Project map
 
 Ovid’s House deliberately separates architectural propositions, evidence, project-specific choices, executable representations and publication machinery. Those layers inform one another without becoming interchangeable.

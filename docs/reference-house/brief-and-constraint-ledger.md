@@ -10,6 +10,21 @@ The current [Whole-House Coordination Fixture 01](whole-house-coordination-fixtu
 
 ---
 
+## Current owner constraints
+
+New project designs admit **no flat roofs**, including main roofs, dormers,
+porches and extensions; very-low-slope substitutions are also excluded. This
+owner-imposed project constraint supersedes the historical RH-08 low-slope
+selection for new design work. It does not rewrite historical fixtures or assert
+that all flat roofs inevitably fail. Machine-readable owner:
+`project/design-constraints.ts`.
+
+The current [Georgian re-plan](georgian-replan.md) develops the owner-selected
+12 m square shell, centred courtyard, five-bay front and four-bedroom programme,
+with two en suites, family bathroom, west stair to usable attic, separate ground
+plant and west cloak/study. Modest-site constraints are deferred. Its roof and
+technical model remain a proposal pending coordinated review and migration.
+
 ## 1. Authority model
 
 Reference House decisions come from different authorities. They must not be collapsed into one undifferentiated list of requirements.
