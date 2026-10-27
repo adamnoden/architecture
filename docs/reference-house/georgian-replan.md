@@ -63,11 +63,16 @@ These are equipment envelopes, not a selected or sized installation. The pantry
 is entered directly from the kitchen. The guest WC retains an east-side window.
 Family/garden dining sacrifices space to the stair core as instructed.
 
-Two en suites flank the family bathroom in the eastern wet band. The principal
-suite is north-east and includes its own walk-in wardrobe; the south-east bedroom
-has the second en suite. The 550 × 700 mm riser envelope is inside both the ground
+The principal en suite shares a transverse boundary with the family bathroom
+in the eastern wet band. The north-east principal suite includes its own
+walk-in wardrobe. The south-east en suite occupies the front bay beside its
+bedroom, preserving a real window and uninterrupted gallery. Its short branch
+runs through the accessible gallery service zone to the main riser, never
+through a bedroom; it is not falsely described as directly back-to-back with
+the family bathroom. The south-east bedroom is compact, about 7.53 m² clear,
+with a double-bed template and one main access side. The 550 × 700 mm riser envelope is inside both the ground
 plant and upper bathroom reservation. Removable dry-side service lining and
-900 mm access-panel envelopes face the public gallery. Panel/riser access and
+900 mm access-panel envelopes face the public gallery/landing. Panel/riser access and
 the family-bathroom door do not overlap. A conservative 100 mm walking grid
 with a 600 mm person envelope connects every room to the entrance/stair arrival
 without using the courtyard or stair footprint as a shortcut; this does not

@@ -26,13 +26,13 @@ export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'
   if(level!=='ATTIC'){
    text('hall-label',6100,1700,level==='GROUND'?'Entrance hall':'South landing','label')
    text('east-route',8750,6500,view==='SERVICES'?'Service approach':'Gallery','note')
-   text('north-route',6500,8750,'North landing','note')
+   if(level==='FIRST')text('north-route',6500,8750,'North landing','note')
   }else{
    rect('floor-outline',{x:0,y:0,width:12000,depth:12000},'overhead')
    const limit=(6900+2100+design.roof.buildZone-design.roof.breakZ)/Math.tan(Math.PI/6)+design.roof.breakInset
    rect('headroom-contour',{x:limit,y:limit,width:12000-2*limit,depth:12000-2*limit},'datum')
    text('attic-headroom',6000,3200,'Dashed line: nominal 2.1 m clear headroom')
-   text('attic-lowzone',6000,700,'Lower eaves: storage only')
+   text('attic-lowzone',6000,-800,'Lower eaves: storage only')
    text('attic-store-rear',6000,9400,'Storage / maintenance','label')
    rect('rear-roof-access',{x:7550,y:10850,width:1100,depth:1000},'overhead')
    text('access-note',8100,10200,'Roof access: platform unresolved')
@@ -41,17 +41,20 @@ export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'
   }
   if(view==='FIRST'){
    for(const id of ['bed2','bed3','bed4','principal'] as const){const b=design.furniture[id];rect(id+'-bed',b);line(id+'-pillow',b.x+100,b.y+300,b.x+b.width-100,b.y+300)}
-   rect('riser-upper',design.services.riser,'datum');rect('dry-access-lining',design.services.upperLining,'overhead')
-   for(const panel of design.services.panels)line(`panel-${panel.y}`,9400,panel.y-panel.width/2,9400,panel.y+panel.width/2,'primary','datum')
+   rect('riser-upper',design.services.riser,'datum');rect('dry-access-lining-lower',{x:9662.5,y:4062.5,width:250,depth:187.5},'overhead');rect('dry-access-lining-upper',{x:9662.5,y:5150,width:250,depth:1287.5},'overhead');rect('ensuite-access-lining',{x:9662.5,y:6562.5,width:250,depth:2075},'overhead')
+   const branch=design.services.guestEnsuiteBranch;for(let i=0;i<branch.length-1;i++)line('ensuite-branch-'+i,branch[i][0],branch[i][1],branch[i+1][0],branch[i+1][1],'secondary','datum')
+   for(const panel of design.services.panels)line(`panel-${panel.y}`,panel.x,panel.y-panel.width/2,panel.x,panel.y+panel.width/2,'primary','datum')
   }
   if(view==='GROUND'||view==='SERVICES')rect('plant-riser',design.services.riser,'datum')
   if(view==='SERVICES'){
    rect('plant-working',design.services.plantWorking,'datum')
-   text('plant-zone',10800,7550,'Working / replacement aisle')
-   text('cylinder-name',10210,4550,'Cylinder reserve')
-   text('dry-name',10120,6650,'Dry controls')
-   text('riser-name',10550,6000,'Riser')
-   text('lining-note',6000,1000,'Riser + dry-side access continue above plant')
+   scene.primitives=scene.primitives.filter(p=>!(p.kind==='text'&&['Plant room','Gallery','Service approach'].includes(p.value)))
+   text('plant-zone',11100,5400,'Working aisle');const workText=scene.primitives.at(-1);if(workText?.kind==='text')workText.rotateDeg=-90
+   text('cylinder-name',10212,3950,'HW')
+   text('dry-name',10112,7350,'Dry')
+   text('riser-name',9937,5850,'R')
+   text('service-approach',8750,6500,'Service approach');const routeText=scene.primitives.at(-1);if(routeText?.kind==='text')routeText.rotateDeg=-90
+   text('lining-note',6000,-900,'HW: cylinder reserve / R: riser / dashed: working and access space')
   }
  }else if(view==='FRONT'||view==='REAR'){
   const roof=design.roof
@@ -60,7 +63,7 @@ export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'
   // Outward-draining roof: the highest edge adjoins the open courtyard.
   line('roof-left',0,6800,600,8800,'profile');line('roof-left-upper',600,8800,4200,roofTop(),'profile')
   line('roof-high',4200,roofTop(),7800,roofTop(),'profile');line('roof-right-upper',7800,roofTop(),11400,8800,'profile');line('roof-right',11400,8800,12000,6800,'profile')
-  line('roof-break',600,8800,11400,8800)
+  let breakStart=600;for(const [i,c]of roof.dormerAxes.entries()){line('roof-break-'+i,breakStart,8800,c-550,8800);breakStart=c+550}line('roof-break-end',breakStart,8800,11400,8800)
   for(const level of ['GROUND','FIRST'] as const){const ffl=level==='GROUND'?0:3450;const ops=openings(level).filter(o=>o.wall===(view==='FRONT'?'outer-south':'outer-north'))
    for(const o of ops){const sill=o.kind==='door'?ffl:ffl+750,head=ffl+2850;rect(`${level}-${o.id}`,{x:o.centre-o.width/2,y:sill,width:o.width,depth:head-sill});line(`${level}-${o.id}-mid`,o.centre,sill,o.centre,head);if(o.kind==='window'){line(`${level}-${o.id}-meeting`,o.centre-o.width/2,sill+(head-sill)/2,o.centre+o.width/2,sill+(head-sill)/2)}}
   }
@@ -78,7 +81,7 @@ export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'
   }
   text('court-section',6000,4300,'OPEN COURTYARD','marker')
   text('roof-drainage',6000,11200,'All roof planes fall to external eaves')
-  text('roof-build',6000,1000,'Roof build zone: 300 mm coordination assumption')
+  text('roof-build',6000,-900,'Roof build zone: 300 mm coordination assumption')
  }else{
   const s=design.stair
   for(const [storey,z]of [0,3450].entries()){
@@ -95,9 +98,9 @@ export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'
   for(const z of [0,3450,6900]){line('floor-'+z,3500,z,4800,z,'cut');text('ffl-'+z,10500,z+100,`FFL ${z}`)}
   const y=7000,x=2050;line('roof-min',3500,roofHeight(x)-300,11000,roofHeight(x)-300,'secondary','datum')
   text('roof-datum',7600,roofHeight(x),'Minimum roof underside at attic arrival')
-  text('stair-rises',7600,10500,'20 × 172.5 mm rises per storey / 300 mm goings')
-  text('stair-clear',7600,9700,'1200 mm flights / 1750 mm half-landing')
-  text('stair-limit',7600,900,'Developed stair diagram; framing and fire enclosure unresolved')
+  text('stair-rises',7600,11100,'20 × 172.5 mm rises per storey / 300 mm goings')
+  text('stair-clear',7600,10600,'1200 mm flights / 1750 mm half-landing')
+  text('stair-limit',7600,-900,'Developed stair diagram; framing and fire enclosure unresolved')
  }
  // Shared physical notation, never fit to sheet.
  const yy=-1900

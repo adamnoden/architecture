@@ -33,7 +33,7 @@ test('new roofs obey the project ban and all primary planes drain outward at sub
 })
 test('service panels do not overlap the bathroom door and riser fits its accessible panel',()=>{
  const door=openings('FIRST').find(o=>o.id==='family-bath-door')!,panel=design.services.panels[1],riser=design.services.riser
- assert.ok(panel.y+panel.width/2+50<=door.centre-door.width/2)
+ assert.ok(door.centre+door.width/2+50<=panel.y-panel.width/2)
  assert.ok(riser.y>=panel.y-panel.width/2&&riser.y+riser.depth<=panel.y+panel.width/2)
  assert.equal(design.services.replacementDoor,1400)
 })
@@ -45,7 +45,7 @@ test('all eight views at both physical scales render deterministically without h
 })
 
 test('internal door sweeps stay in their room and clear selected furniture and equipment',()=>{
- const target:Record<string,string>={'study-door':'G-STUDY','cloak-door':'G-CLOAK','utility-door':'G-UTILITY','wc-door':'G-WC','plant-door':'G-PLANT','pantry-door':'G-PANTRY','bed2-door':'U-BED2','bed3-door':'U-BED3','ensuite3-door':'U-BED3','family-bath-door':'U-BATH','principal-ensuite-door':'U-ENSP','principal-door':'U-PRINCIPAL','bed4-door':'U-BED4','wardrobe-door':'U-PRINCIPAL'}
+ const target:Record<string,string>={'study-door':'G-STUDY','cloak-door':'G-CLOAK','utility-door':'G-UTILITY','wc-door':'G-WC','plant-door':'G-PLANT','pantry-door':'G-PANTRY','bed2-door':'U-BED2','bed3-door':'U-BED3','ensuite3-door':'U-ENS3','family-bath-door':'U-BATH','principal-ensuite-door':'U-ENSP','principal-door':'U-PRINCIPAL','bed4-door':'U-BED4','wardrobe-door':'U-PRINCIPAL'}
  for(const level of ['GROUND','FIRST'] as const){
   const plan=createGeorgianPlan(level)
   const occupied=[...plan.fittings!.map(f=>({id:f.id,x:f.origin.x,y:f.origin.y,width:f.width,depth:f.depth})),...Object.entries(design.furniture).filter(([id])=>level==='FIRST'?['bed2','bed3','bed4','principal'].includes(id):id==='studyChair').map(([id,b])=>({id,...b})),...(level==='GROUND'?[{id:'riser',...design.services.riser}]:[])]
@@ -66,4 +66,18 @@ test('internal door sweeps stay in their room and clear selected furniture and e
 test('all rooms connect to the entrance or stair arrival without courtyard/underflight shortcuts',async()=>{
  const {auditRoomAccess}=await import('./georgian/audit.js')
  for(const level of ['GROUND','FIRST'] as const){const a=auditRoomAccess(level);assert.equal(a.pass,true,JSON.stringify(a.rooms))}
+})
+
+test('exterior partitions never terminate inside a facade aperture',()=>{
+ for(const level of ['GROUND','FIRST'] as const)for(const w of design.partitions[level])for(const [x,y] of [w.a,w.b]){
+  const side=x===0?'west':x===12000?'east':y===0?'south':y===12000?'north':undefined
+  if(!side)continue
+  const along=side==='west'||side==='east'?y:x
+  for(const o of openings(level).filter(o=>o.wall==='outer-'+side))assert.ok(Math.abs(along-o.centre)>=o.width/2+62.5,`${level}: ${w.id} terminates in ${o.id}`)
+ }
+})
+
+test('guest en-suite branch reaches the main wet zone without crossing any bedroom',()=>{
+ const points=design.services.guestEnsuiteBranch,bedrooms=design.rooms.FIRST.filter(r=>/^U-(BED|PRINCIPAL)/.test(r.id))
+ for(let i=0;i<points.length-1;i++){const a=points[i],b=points[i+1],steps=Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/50);for(let j=0;j<=steps;j++){const x=a[0]+(b[0]-a[0])*j/steps,y=a[1]+(b[1]-a[1])*j/steps;for(const r of bedrooms)assert.ok(!r.boxes.some(b=>x>b.x&&x<b.x+b.width&&y>b.y&&y<b.y+b.depth),`Wet branch crosses ${r.id}`)}}
 })
