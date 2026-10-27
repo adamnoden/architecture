@@ -1,6 +1,10 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
+## Current section and roof candidates
+
+[Sections and roof](architectural-plate-sections-roof.md) now supply locator, principal/service cuts, a four-field roof plan and a separate water/failure reading. These consume the simple-roof successor; final book-spread composition, technical obligations and physical proof remain open.
+
 ## Current exterior revision
 
 The owner subsequently approves the [simplified roof and facade](architectural-plate-simple-roof.md). Use `georgian/facade-source.ts` for new exterior/section work, retaining the accepted ground/first plan geography. The mansard, dormers and standing attic stair are superseded; do not mix their historical previews into a current set.

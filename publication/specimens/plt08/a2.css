@@ -1,0 +1,3 @@
+@page { size: 420mm 594mm; margin: 0; }
+section { width: 420mm; height: 594mm; padding: 0; }
+header { position: absolute; top: 20mm; left: 20mm; font: 700 6pt "Source Sans 3"; }
