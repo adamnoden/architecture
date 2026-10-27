@@ -1,33 +1,23 @@
 # Deployment Programme
 
-**Programme code:** DPL  
-**Owning issue:** [#299 — DPL — deployment, jurisdiction and real-site integration programme](https://github.com/adamnoden/architecture/issues/299)  
-**Current formal stage:** **DPL-15 — real-plot deployment trials: ACTIVE / empirical corpus re-entry**  
-**Current completed empirical packet:** **DPL-15F — RP-006 residual spatial-evidence recovery**  
-**Current active gate:** **DPL-15G — RP-007 / RP-008 categorical no-spend path comparison** ([#865](https://github.com/adamnoden/architecture/issues/865), [PR #867](https://github.com/adamnoden/architecture/pull/867))  
-**Current frozen empirical result:** `RP006_NOT_READY_RESIDUAL_PUBLIC_GEOMETRY_DATUM_BOUNDARY`  
-**Instrumented-control programme:** **closed at DPL-T11 no-spend boundary**  
-**DPL-16:** **HELD**
+**Programme code:** DPL
+**Owning issue:** [#299](https://github.com/adamnoden/architecture/issues/299)
+**Current decision:** DPL-15J — explicit assumption-based exploration authorised 2026-10-27, under [#876](https://github.com/adamnoden/architecture/issues/876).
+**Exploratory state:** first pass through trials, conditional envelope, publication treatment and internal adversarial validation implemented.
+**Evidence-backed state:** DPL-15 paused at external spatial evidence boundary; 0/8 corpus sites candidate-ready.
+**Instrumented controls:** closed at DPL-T11 no-spend boundary; excluded from empirical sampling.
 
-This file is the compact current-state roll-up. Detailed packet decisions, evidence and frozen identities live in their packet-specific records and are not rewritten here.
+## Governing distinction
 
-## Governing rules
+The compiler evaluates authored architecture. It does not resize the house or search placements to make a site fit.
 
-> **Compatibility before adaptation.**
+Explicit assumptions may now support **conditional exploratory trials**. They do not satisfy the evidence-backed R1–R6 gate. This revises the proposed blanket DPL-15J pause: missing evidence no longer blocks the exploratory question, while stronger real-site claims still need evidence. The user's 2026-10-27 instruction controls this change.
 
-> **The compiler evaluates architecture; it does not silently author it.**
+Unknown site facts remain unknown in the evidence record. Hypotheses carry their own basis, numeric values, replacement evidence and conditional findings. Spatial evidence retains its actual authority class. A title-index polygon is not a determined legal boundary; EA DTM is not a private topographic survey.
 
-> **Unknown reality stays unknown. Missing evidence is not a pass.**
-
-> **Spatial evidence retains its actual authority class. An HMLR title-index polygon is not a determined legal boundary; EA DTM is not a measured private topo survey.**
-
-> **Instrumented controls prove machinery; they do not become empirical deployment-envelope samples by convenience.**
-
-The Reference House remains authored architecture. DPL may expose conflict, uncertainty, evidence requirements and legitimate site-interface variation, but may not silently deform the house to make a site fit.
+The complete current exploratory record is [Assumption-based deployment exploration](exploration/README.md); its inputs and derived results are adjacent. Historical packet decisions remain authoritative for their stated evidence scope.
 
 ## Formal programme state
-
-The named programme decomposition remains DPL-01 through DPL-18.
 
 | Stage | Current state |
 | --- | --- |
@@ -45,169 +35,69 @@ The named programme decomposition remains DPL-01 through DPL-18.
 | DPL-12 — deployment compiler substrate | COMPLETE |
 | DPL-13 — canonical deployment compile | COMPLETE |
 | DPL-14 — real London plot corpus | COMPLETE |
-| DPL-15 — real-plot deployment trials | ACTIVE / evidence-bound |
-| DPL-16 — deployment envelope v1 | HELD |
-| DPL-17 — publication integration | HELD |
-| DPL-18 — adversarial validation | HELD |
+| DPL-15 — real-plot deployment trials | EXPLORATORY PASS COMPLETE; EVIDENCE-BACKED TRIALS PAUSED |
+| DPL-16 — deployment envelope v1 | CONDITIONAL ENVELOPE RECORDED; EMPIRICAL ENVELOPE HELD |
+| DPL-17 — publication integration | EXPLORATORY EXPLANATION INTEGRATED; EMPIRICAL TREATMENT HELD |
+| DPL-18 — adversarial validation | EXPLORATORY REGRESSION PASS; EMPIRICAL CLOSEOUT HELD |
 
-On the deliberately crude named-stage count, **14 / 18 stages are complete (~78%)**. This is programme-stage progress, not a compatibility probability and not a claim that DPL-15 is 78% evidentially complete.
+The original named-stage completion count remains **14/18 (~78%)**. The new exploratory deliverables do not retrospectively satisfy the original empirical acceptance gates. Internally controlled exploration is complete at its declared scope; verified site deployment is not complete.
 
-## DPL-15 empirical frontier
+## What the exploratory pass establishes
 
-The frozen DPL-14 corpus remains exactly eight real sites:
+Eight source-linked scenarios preserve the unchanged 12.0 × 10.8 m house and one fixed authored placement. The study varies assumed width/depth, longitudinal slope, front-ground error and access width. No numeric confidence or planning probability is assigned.
 
-```text
-DPL-RP-001 … DPL-RP-008
-```
+Key conditional findings:
 
-DPL-15C found:
+- At a fixed 5.2 m front setback, bare rectangular containment needs 12 m width and 16 m depth. Adding the chosen 1 m side / 3 m rear working-space probes needs 14 m × 19 m. These are project experiment thresholds, not statutory or adequate-site minima.
+- A 300 mm rise needs 6 m of sloping approach under the illustrative 1:20 test; the tested front-level errors can require 12 m. Route layout, landings and width remain design tasks.
+- The reported 97 m² RP-008 extent, **if complete and correct**, cannot contain the 129.6 m² footprint under any rotation. Other dimensional probes expose shape sensitivity rather than proving actual site fit.
+- Hypothetical steep slopes produce material support, grading and water-interface work without altering the protected internal section.
+- Lennard's approximately 0.64 m index-polygon clearance is sensitive to hypothetical inward boundary offsets; its evidence class and empirical-sample exclusion remain unchanged.
 
-```text
-candidate-authoring ready = 0 / 8
-not ready                 = 8 / 8
-DPL-16                     = HELD
-```
+A provisional RP-004 street-front interface brief carries the nominal geometry through support, approach, water, utilities, maintenance and context. All six packages preserve their explicit unverified premises. Unsupported local borough coverage is exposed rather than substituted with another borough's plug-in.
 
-DPL-15D then attacked RP-004 and ended at:
+The reader-facing [deployment explanation](../../docs/computational/deployment-exploration.md) is integrated into the computational site. No hypothetical property atlas or unearned empirical London envelope is added to the monograph; frozen plates and book proofs are unaffected.
 
-```text
-RP004_NOT_READY_DOCUMENT_RETRIEVAL_BOUNDARY
-```
+## Latest evidence-backed frontier
 
-The Lennard instrumented control subsequently proved the full real candidate/evaluation seam and demonstrated that HMLR title-index geometry plus Environment Agency DTM can be legitimate SCREENING source classes when their limitations are preserved. That control remains excluded from the empirical sample.
+The frozen DPL-14 corpus remains DPL-RP-001 through DPL-RP-008. DPL-15C found 0/8 ready. Subsequent bounded routes produced:
 
-### DPL-15E — RP-006 corpus re-entry
-
-DPL-15E returned those lessons to a genuine corpus member:
-
-```text
-DPL-RP-006
-Land adjacent to 50 Camelot Close, Thamesmead, SE28 0ET
-Royal Borough of Greenwich
-25/3755/F
-```
-
-The no-spend evidence pass recovered materially stronger exact-site evidence than was available at DPL-15C, including exact current planning/application identity, a real BNG centre, north-referenced mapped material, exact-site technical material and concrete Planning Data / EA recovery routes.
-
-The executable preflight nevertheless remained fail-closed:
-
-| Readiness dimension | DPL-15E |
+| Packet | Result |
 | --- | --- |
-| R1 controlled spatial identity | NOT SATISFIED |
-| R2 footprint-test geometry | NOT SATISFIED |
-| R3 real orientation frame | **SATISFIED** |
-| R4 datum / level evidence | NOT SATISFIED |
-| R5 physical access / street geometry | NOT SATISFIED |
-| R6 site identity coherence | **SATISFIED** |
+| [DPL-15D / RP-004](dpl-15d-rp004-document-readiness.md) | NOT READY: document-retrieval boundary |
+| [DPL-15F / RP-006](dpl-15f-rp006-residual-recovery.md) | NOT READY: residual spatial/datum/access boundary; R3/R6 satisfied, 2/6 |
+| [DPL-15G](dpl-15g-rp007-rp008-comparison.md) | RP-007 selected for a bounded acquisition test |
+| [DPL-15H / RP-007](dpl-15h-rp007-spatial-evidence.md) | NOT READY: Croydon document transport and spatial-authority boundary |
+| [DPL-15I / RP-008](dpl-15i-rp008-spatial-evidence.md) | NOT READY: Lambeth document transport and controlled spatial-evidence boundary |
 
-Frozen DPL-15E result:
+DPL-15I result fingerprint: `d93a02d0c708ed4e4436668edafad9405e46209eccf85ed68af68d45a60c578e`. Its source history is retained. DPL-15J preserves that empirical boundary while introducing the separately labelled exploration above.
 
-```text
-54c9dc580265e2b74f0cb5fa6113da4a93503265a38e9c96046477f3d48e9d8f
+The repeated bounded no-spend transport experiment is closed. This is not generic route exhaustion and is not evidence of site incompatibility. No further convenience-site search is justified merely by inaccessible documents.
 
-RP006_MATERIALLY_STRONGER_PUBLIC_ROUTE_CONFIRMED_NOT_YET_CANDIDATE_READY
-```
-
-Durable closeout: `project/dpl/dpl-15e-rp006-spatial-preflight.md`.
-
-### DPL-15F — RP-006 residual spatial-evidence recovery — COMPLETE
-
-DPL-15F attacked only the four exact residual readiness dimensions left by DPL-15E:
-
-1. **R1 controlled spatial identity** — actual controlled boundary geometry bytes;
-2. **R2 footprint-test geometry** — controlled geometry sufficient to test the unchanged `12.0 m × 10.8 m` Reference House;
-3. **R4 datum / level evidence** — authoritative terrain/level evidence stronger than an approximate Google Earth-derived value;
-4. **R5 physical access / street geometry** — approach/frontage geometry bound to the same controlled site extent with adopted-highway uncertainty preserved.
-
-Six bounded no-spend recovery attempts materially improved knowledge but did not recover authority strong enough to satisfy any of R1/R2/R4/R5. The compiler is not the limiting system; evidence acquisition is.
-
-The `~5.0 mAOD` exact-site report clue remains insufficient for R4 because that report identifies Google Earth as its source and records no site walkover. Access prose is not promoted into placement geometry, and planning/title discovery is not promoted into boundary proof.
-
-Current RP-006 readiness remains:
-
-| Readiness dimension | DPL-15F |
-| --- | --- |
-| R1 controlled spatial identity | NOT SATISFIED |
-| R2 footprint-test geometry | NOT SATISFIED |
-| R3 real orientation frame | **SATISFIED** |
-| R4 datum / level evidence | NOT SATISFIED |
-| R5 physical access / street geometry | NOT SATISFIED |
-| R6 site identity coherence | **SATISFIED** |
-
-Therefore:
-
-```text
-RP-006 readiness dimensions = 2 / 6 positively evidenced
-candidate authoring         = NOT AUTHORISED
-corpus ready sites          = still 0 / 8
-```
-
-Frozen DPL-15F result:
-
-```text
-035ef8d620c4a1f7f5117344c298ddac5b58ed1d4260548975826ce6395bc942
-
-RP006_NOT_READY_RESIDUAL_PUBLIC_GEOMETRY_DATUM_BOUNDARY
-```
-
-Durable closeout: `project/dpl/dpl-15f-rp006-residual-recovery.md`.
-
-## Current active gate — DPL-15G
-
-DPL-15G is the active empirical gate under [#865](https://github.com/adamnoden/architecture/issues/865) / [PR #867](https://github.com/adamnoden/architecture/pull/867).
-
-Its comparison universe is exactly:
-
-- `DPL-RP-007` — Land at 28 Godstone Road, Kenley, CR8 5JE;
-- `DPL-RP-008` — land at rear of 32 Gleneldon Road / Ashlake Road, Streatham, SW16 2BD.
-
-The decision is categorical, not scored: choose at most one next no-spend evidence-acquisition target based on the strength and recoverability of controlled spatial/technical evidence under the unchanged R1–R6 contract. Planning desirability, marketing dimensions and applicant-house geometry do not control the decision.
-
-PR #867 currently proposes RP-007 and a subsequent DPL-15H evidence-acquisition packet. That proposal is **not canonical until merged**. Until then, the authoritative programme state is simply that DPL-15G is active and DPL-16 remains held.
-
-## Instrumented-control programme — closed proving ground
-
-Instrumented controls tried:
+## Instrumented-control results
 
 | Control | Outcome |
 | --- | --- |
-| 92 Uphill Road, Mill Hill | geometry recovery failed; no authored candidate |
-| 1 Whittington Road, Wood Green | useful planning metadata; controlled source bytes insufficient |
-| 25A Chesterfield Road, Chiswick | title-index screening geometry cannot contain unchanged 12.0 m × 10.8 m RH |
-| **41 Lennard Road, Bromley** | geometry-rich control; real unchanged-RH candidate authored and evaluated through T11 |
+| 92 Uphill Road, Mill Hill | Controlled vector geometry not recovered; candidate not authored |
+| 1 Whittington Road, Wood Green | Planning metadata recovered; controlled source bytes insufficient |
+| 25A Chesterfield Road, Chiswick | Indicative parcel geometry cannot contain the unchanged footprint |
+| 41 Lennard Road, Bromley | Unchanged candidate authored and evaluated; three evidence dependencies remain |
 
-All remain **excluded from DPL-14 / DPL-16 empirical sampling**.
+[Lennard T11](dpl-t11-lennard-no-spend-evidence.md) retains structural concept review, authoritative EA data recovery and measured side-boundary/maintenance geometry as its exact dependencies. All controls remain excluded from the empirical deployment-envelope sample.
 
-### Lennard final no-spend frontier
+## Reopening evidence-backed site work
 
-DPL-T11 compressed 45 raw unresolved runtime inputs to three exact decision dependencies:
+For one genuine corpus parcel, replace the assumptions with exactly two coherent evidence classes sufficient in principle for R1–R5, with R6 exact identity coherence:
 
-```text
-COMPETENT_STRUCTURAL_CONCEPT_REVIEW
-  ACQUISITION_READY_EXTERNAL_JUDGEMENT
+1. **Controlled site extent and identity:** an explicit parcel/application extent with provenance, authority and limitations. It need not be a determined legal title boundary for a bounded SCREENING experiment.
+2. **Metric spatial/topographic/access package:** boundary/usable dimensions, real orientation/frame, ground levels in a declared screening datum and physical frontage/approach geometry tied to that same extent. Several coherent sources may form the package.
 
-EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY
-  NO_COST_PUBLIC_RECOVERY_TECHNICALLY_BLOCKED
+Legal/private-right resolution, GI, drainage capacity investigations, professional structural review, flood consultancy unless triggered, planning permission and a full technical-design survey are not blanket preconditions merely to reopen candidate authoring. They become their own stage-specific obligations as needed for stronger findings.
 
-MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY
-  ACQUISITION_READY_EXTERNAL_MEASUREMENT
-```
+On receipt: preserve the old assumptions and results as history, bind the new evidence, author one real placement, replay conformance and target obligations, then reopen empirical DPL-16. Assumed success must never be counted as a verified corpus result.
 
-That compression is diagnostic only, not compatibility progress. No engineer, surveyor, planner or flood consultant has been contacted and no external spend is authorised.
+## Restart and closeout discipline
 
-## Next programme move
+Read this roll-up, `exploration/README.md`, the machine input/result and the latest evidence packet before further work. Reproduce the result with `node --import tsx scripts/dpl-exploration.ts --check`; run the canonical repository health command for implementation changes.
 
-Complete **DPL-15G**. If it lands with one selected site, the next packet may perform only the bounded site-specific evidence acquisition authorised by that gate. Candidate authoring remains subsequent unless R1–R6 become fully and deterministically satisfied.
-
-DPL-16 remains held until at least one genuine DPL-14 corpus site can be authored and evaluated under DPL-15.
-
-## Restart discipline
-
-When resuming DPL:
-
-1. read this roll-up;
-2. read the latest packet-specific closeout and the current active issue/PR;
-3. bind exact upstream fingerprints before implementation;
-4. preserve historical evidence/source records rather than rewriting them into current-state files;
-5. check whether a proposed new internal packet closes a real evidence or authority gap rather than merely generating more machinery;
-6. keep DPL-16/17/18 held until their explicit dependency gates are satisfied.
+The exploratory pass can finish without external spend. Completing the original empirical programme requires new site evidence and, where due, competent external judgement. No external contact, commissioning or spend has occurred or is authorised by this record.

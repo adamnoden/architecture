@@ -298,6 +298,7 @@ const computationalSidebar: DefaultTheme.SidebarItem[] = [
   ], false),
   group('Core model', [
     page('Executable architecture', '/docs/computational/executable-architecture'),
+    page('Deployment under assumptions', '/docs/computational/deployment-exploration'),
     page('Formal architectural model', '/docs/computational/formal-architectural-model'),
     page('Validity & obligations', '/docs/computational/validity-and-obligations'),
     page('Evidence & provenance', '/docs/computational/evidence-and-provenance'),
