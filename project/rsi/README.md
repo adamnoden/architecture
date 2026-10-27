@@ -48,3 +48,12 @@ RSI's recorded B4 collision/before-state evidence retains its exact identity.
 It does not approve an RSI rough concept or the successor's final plan, and
 does not waive either owner gate. Refresh affected assumptions explicitly if
 RSI consumes this later programme; do not silently replace frozen inputs.
+
+## Current owner priority
+
+PLT #905 develops the current house at 12 × 12 m with a centred square courtyard.
+The owner explicitly defers modest-plot constraints for now. Hold this as the
+current architectural study priority; do not use RSI's modest parcel to shrink
+it silently. RSI's before-state/collision and concept records retain their
+identities, and its owner gates remain in force when site work resumes. This
+is not approval of a different RSI successor or evidence of real-site fit.

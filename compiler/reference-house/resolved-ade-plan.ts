@@ -3,6 +3,7 @@ import { assertValidArchitecturalPlan } from '../architectural-drawing/validate.
 import { mm } from '../units.js'
 import { createReferenceHouseAdePlan } from './ade-plan.js'
 import { groundPlanResolution as currentChoice, type PlanOpeningChoice } from './plan-resolution.js'
+import {groundPlanResolution as b5Choice} from './plan-resolution-b5.js'
 import {groundPlanResolution as b4Choice} from './plan-resolution-b4.js'
 import { groundPlanResolution as previousChoice } from './plan-resolution-b3.js'
 import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSource } from './model.js'
@@ -10,24 +11,22 @@ import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSo
 /** Adapter of an upstream architectural choice register, not an admission of
  * publication-only geometry into the frozen historical C1 source. */
 export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseCoordinationSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
-  const legacy = source.court.value.placement === 'centred-in-shell'
+  const square=result.derived.shell.depth===12000
+  const legacy = !square && source.court.value.placement === 'centred-in-shell'
   const revision5=source.spaces.some(s=>s.id==='G-WC-01')
-  const choice = legacy ? previousChoice : revision5 ? currentChoice : b4Choice
-  if (result.derived.shell.width !== 12000 || result.derived.shell.depth !== 10800 || result.derived.court.x0 !== 4200 || result.derived.court.y0 !== (legacy ? 3400 : 4100)) throw new Error('Ground-plan choices require architectural reconciliation after base geometry changes.')
-  if (source.partitions.frontHallWestX.value !== 3100 || source.partitions.galleryServiceX.value !== 9350 ||
-    source.partitions.upperSouthLandingTurnDepth.value !== 1600 || result.derived.stair.flightRun !== 2400 ||
-    result.derived.stair.flightRiseGroups.join('/') !== '9/9' || result.derived.stair.riserCount !== 18 ||
-    result.derived.levels.firstFfl - result.derived.levels.groundFfl !== 3300) throw new Error('Resolved plan requires its paired architectural source; do not apply choices to historical geometry.')
-  if (!legacy && (source.partitions.serviceSouthY?.value !== 3400 || result.derived.court.y1 !== 7400)) throw new Error('Resolved service and courtyard geography must remain paired')
+  const choice = square ? currentChoice : legacy ? previousChoice : revision5 ? b5Choice : b4Choice
+  if(result.derived.shell.width!==12000 || result.derived.shell.depth!==(square?12000:10800) || result.derived.court.x0!==4200 || result.derived.court.y0!==(square?4200:legacy?3400:4100))throw new Error('Ground-plan choices require architectural reconciliation after base geometry changes.')
+  if(source.partitions.frontHallWestX.value!==(square?3200:3100) || source.partitions.galleryServiceX.value!==9350 || source.partitions.upperSouthLandingTurnDepth.value!==(square?2600:1600) || result.derived.stair.flightRun!==2400 || result.derived.stair.flightRiseGroups.join('/')!=='9/9' || result.derived.levels.firstFfl-result.derived.levels.groundFfl!==(square?3450:3300))throw new Error('Resolved plan requires its paired architectural source; do not apply choices to historical geometry.')
+  if(!legacy && (source.partitions.serviceSouthY?.value!==(square?3845:3400) || result.derived.court.y1!==(square?7800:7400)))throw new Error('Resolved service and courtyard geography must remain paired')
   const plan = createReferenceHouseAdePlan(result, source, level)
   plan.id = `RH-RESOLVED-${level}`
   const provenance = { authority: 'provisional' as const, precision: 'approximate' as const,
     sourceIds: ['docs/reference-house/ground-plan-resolution.md', 'compiler/reference-house/plan-resolution.ts', choice.id] }
   const stair=choice.stair
-  plan.stairs=[{kind:'return-stair',id:`RHPR-STAIR-${level}`,origin:{x:mm(stair.x),y:mm(stair.y)},riserCount:18,floorToFloor:mm(3300),going:mm(300),clearWidth:mm(1000),landingDepth:mm(1000),wellGap:mm(100),cutHeight:mm(1200),level,provenance}]
+  plan.stairs=[{kind:'return-stair',id:`RHPR-STAIR-${level}`,origin:{x:mm(stair.x),y:mm(stair.y)},riserCount:stair.risers,floorToFloor:mm(result.derived.levels.firstFfl-result.derived.levels.groundFfl),going:mm(stair.going),clearWidth:mm(stair.clearWidth),landingDepth:mm(stair.landingDepth),wellGap:mm(stair.wellGap),cutHeight:mm(1200),level,provenance}]
   plan.labels=plan.labels.filter((l)=>!l.id.endsWith('stair-note'))
   if(level==='FIRST') {
-    plan.labels=plan.labels.map((l)=>l.id==='U-STAIR-01-label'?{...l,text:'Stair / landing',anchor:{x:mm(5500),y:mm(500)}}:l)
+    plan.labels=plan.labels.map((l)=>l.id==='U-STAIR-01-label'?{...l,text:'Stair / landing',anchor:square?{x:mm(8000),y:mm(2100)}:{x:mm(5500),y:mm(500)}}:l)
     assertValidArchitecturalPlan(plan)
     return plan
   }
@@ -73,10 +72,15 @@ export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompil
   for (const adj of plan.adjacencies) if (!resolved.has(adj.id)) throw new Error(`Unresolved connectivity obligation ${adj.id}`)
   for (const o of source.qualitativeOpeningRelationships.filter((o)=>o.levelId==='GROUND')) if (!resolved.has(o.id)) throw new Error(`Unresolved opening relationship ${o.id}`)
   plan.adjacencies = [] // Each obligation is now resolved upstream to a doorway or open connection.
-  plan.labels = plan.labels.map((l)=>l.id==='G-SVC-02-label'?{...l,text:'Service suite',anchor:{x:mm(10550),y:mm(4300)}}:l.id==='G-STUDY-02-label'?{...l,anchor:revision5?{x:mm(2300),y:mm(1000)}:{x:mm(10675),y:mm(2500)}}:l.id==='G-HALL-02-label'?{...l,text:'Hall / stair',anchor:{x:mm(7900),y:mm(1400)}}:l)
+  plan.labels = plan.labels.map((l)=>l.id==='G-SVC-02-label'?{...l,text:square?'Utility / plant':'Service suite',anchor:{x:mm(10550),y:mm(square?4200:4300)}}:l.id==='G-STUDY-02-label'?{...l,anchor:revision5?{x:mm(2300),y:mm(1000)}:{x:mm(10675),y:mm(2500)}}:l.id==='G-HALL-02-label'?{...l,text:'Hall / stair',anchor:{x:mm(7900),y:mm(1400)}}:l)
   if(revision5){
-    plan.labels=plan.labels.map(l=>l.id==='G-WC-01-label'?{...l,anchor:{x:mm(10250),y:mm(1850)}}:l.id==='G-CLOAK-01-label'?{...l,text:'Cloakroom',anchor:{x:mm(10350),y:mm(500)}}:l)
-    plan.fittings=Object.entries({desk:currentChoice.roomFit.study.desk,storage:currentChoice.roomFit.cloak.storage,wc:currentChoice.roomFit.wc.pan,basin:currentChoice.roomFit.wc.basin}).map(([role,f])=>({kind:'fitting',id:`RHPR-${role}`,role:role as 'desk'|'storage'|'wc'|'basin',origin:{x:mm(f.x),y:mm(f.y)},width:mm(f.width),depth:mm(f.depth),provenance}))
+    plan.labels=plan.labels.map(l=>l.id==='G-WC-01-label'?{...l,anchor:{x:mm(10250),y:mm(square?2050:1850)}}:l.id==='G-CLOAK-01-label'?{...l,text:'Cloakroom',anchor:{x:mm(10350),y:mm(500)}}:l)
+    const fit=square?currentChoice.roomFit:b5Choice.roomFit
+    plan.fittings=Object.entries({desk:fit.study.desk,storage:fit.cloak.storage,wc:fit.wc.pan,basin:fit.wc.basin}).map(([role,f])=>({kind:'fitting',id:`RHPR-${role}`,role:role as 'desk'|'storage'|'wc'|'basin',origin:{x:mm(f.x),y:mm(f.y)},width:mm(f.width),depth:mm(f.depth),provenance}))
+  }
+  if(square){
+    plan.labels=plan.labels.map(l=>l.id==='G-PANTRY-01-label'?{...l,anchor:{x:mm(10450),y:mm(7000)}}:l.id==='G-GARDEN-02-label'?{...l,anchor:{x:mm(6000),y:mm(10000)}}:l.id==='G-KIT-02-label'?{...l,anchor:{x:mm(9900),y:mm(10000)}}:l)
+    plan.fittings=[...plan.fittings!,...Object.entries(currentChoice.roomFit.pantry).map(([id,f])=>({kind:'fitting' as const,id:`RHPR-${id}`,role:'storage' as const,origin:{x:mm(f.x),y:mm(f.y)},width:mm(f.width),depth:mm(f.depth),provenance}))]
   }
   plan.labels = plan.labels.filter((l)=>l.id!=='GROUND-stair-note')
   assertValidArchitecturalPlan(plan)

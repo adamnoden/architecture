@@ -7,13 +7,13 @@ import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSo
 export const createResolvedReferenceHouseAdePlanScene = (result: ReferenceHouseCompileResult, source: ReferenceHouseCoordinationSource, scale: 100 | 50, level: LevelId = 'GROUND') => {
   const plan=createResolvedReferenceHouseAdePlan(result,source,level)
   const origin=scale===100?{x:16,y:20}:{x:90,y:155}
-  const projection=createPlanPaperProjection({scaleDenominator:scale,modelBounds:{x:0,y:0,width:12000,height:10800},paperOrigin:origin})
+  const projection=createPlanPaperProjection({scaleDenominator:scale,modelBounds:{x:0,y:0,width:12000,height:result.derived.shell.depth},paperOrigin:origin})
   const northDoorLeafPaperMm=Math.max(0,...plan.openings.filter(o=>o.hostWallId==='G-OUTER-NORTH'&&o.symbol?.kind==='door').map(o=>
     o.width.kind==='approximate'&&o.symbol?.kind==='door'?o.width.value/o.symbol.leaves/scale:0))
   const scene=compileArchitecturalPlanScene(plan,{
     title:`Reference House ${level.toLowerCase()}-floor resolution — 1:${scale}`,
     profile:{id:`RESOLVED-${scale}`,output:scale===100?'BOOK':'WALL',scaleDenominator:scale},projection,
-    widthMm:scale===100?140:420,heightMm:scale===100?155:594,
+    widthMm:scale===100?140:420,heightMm:scale===100?(result.derived.shell.depth===12000?168:155):594,
     resolveAssemblyThicknessMm:(a)=>mm(a.id==='RH-ADE-ENVELOPE'?417.5:125),
     resolveLayerThicknessMm:(l)=>{
       if(l.thickness.kind==='approximate'||l.thickness.kind==='exact')return l.thickness.value
@@ -25,9 +25,9 @@ export const createResolvedReferenceHouseAdePlanScene = (result: ReferenceHouseC
     labelLayout:(l)=>l.id.endsWith('court-size')?{dyPaperMm:4}:l.id.endsWith('court-label')?{dyPaperMm:-1.5}:['G-GAL-01-label','U-GAL-02-label'].includes(l.id)?{rotateDeg:-90}:{}
   })
   // Retain the proven paper notation, independently of newly selected openings.
-  const y=origin.y+10800/scale+19,x=origin.x+12000/scale-3000/scale
-  if(source.court.value.placement === 'centred-in-shell') result.derived.frontAxes.forEach((axis,i)=>{
-    const px=origin.x+axis/scale,py=origin.y+10800/scale
+  const y=origin.y+result.derived.shell.depth/scale+19,x=origin.x+12000/scale-3000/scale
+  if(result.derived.shell.depth===10800 && source.court.value.placement === 'centred-in-shell') result.derived.frontAxes.forEach((axis,i)=>{
+    const px=origin.x+axis/scale,py=origin.y+result.derived.shell.depth/scale
     scene.primitives.push({kind:'line',id:`front-axis-${i+1}`,a:{x:px,y:py+6},b:{x:px,y:py+8},role:'secondary'})
     scene.primitives.push({kind:'text',id:`front-axis-label-${i+1}`,x:px,y:py+11,value:`B${i+1}`,role:'note',anchor:'middle'})
   })

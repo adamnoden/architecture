@@ -11,6 +11,7 @@ on:
       - 'publication/specimens/plt03b3/**'
       - 'publication/specimens/plt03b4/**'
       - 'publication/specimens/plt03b5/**'
+      - 'publication/specimens/plt03b6/**'
       - '.github/workflows/plt-owner-feedback-proof.yml'
   workflow_dispatch:
 permissions:
@@ -30,24 +31,26 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends poppler-utils
       - name: Regenerate historical control and revised architectural source
-        run: node --import tsx publication/specimens/plt03b5/prepare.ts
+        run: node --import tsx publication/specimens/plt03b6/prepare.ts
       - name: Build exact B5 comparison
-        run: PLT03B5_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt03b5/vivliostyle.config.js
+        run: PLT03B6_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt03b6/vivliostyle.config.js
       - name: Build A4 regression at same drawing scale
-        run: PLT03B5_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt03b5/vivliostyle.config.js
+        run: PLT03B6_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt03b6/vivliostyle.config.js
       - name: Build A2 WALL 1 to 50
-        run: PLT03B5_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt03b5/vivliostyle.config.js
+        run: PLT03B6_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt03b6/vivliostyle.config.js
       - name: Validate finished PDF scale and fonts
-        run: node --import tsx publication/specimens/plt03b5/validate.ts
+        run: node --import tsx publication/specimens/plt03b6/validate.ts
       - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: plt-owner-feedback-proof
           path: |
-            publication/specimens/plt03b5/dist/*.pdf
+            publication/specimens/plt03b6/dist/*.pdf
+            publication/specimens/plt03b6/.work/*.json
             publication/specimens/plt03b5/.work/*.json
             publication/specimens/plt03b4/.work/*.json
             publication/specimens/plt03b3/.work/*.json
+            publication/specimens/plt03b6/.work/*.svg
             publication/specimens/plt03b5/.work/*.svg
             publication/specimens/plt03b4/.work/*.svg
             publication/specimens/plt03b3/.work/*.svg

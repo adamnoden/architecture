@@ -139,6 +139,10 @@ export const createReferenceHouseServiceSource = (
   // Closable private study retains the primary-infrastructure-free protection.
   // WC service lining adjoins the suite; no route crosses the cloakroom/study.
  }
+ if(house.spaces.some(s=>s.id==='G-PANTRY-01')){
+  source.nodes.find(n=>n.id==='DRY-G-TERMINALS')!.hostSpaceIds.push('G-PANTRY-01')
+  source.routes.find(r=>r.id==='R-DRY-G-BRANCH')!.hostSpaceIds.push('G-PANTRY-01')
+ }
  return source
 }
 

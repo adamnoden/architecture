@@ -13,7 +13,106 @@ architecture; it is not a cosmetic completion of an old drawing. Physical
 acceptance, structural design, fire strategy and construction adequacy remain
 outside this coordination decision.
 
-## Current room programme
+## Square house and equal room heights
+
+The owner selects a 12000 × 12000 mm shell for the current-house study and
+defers modest-plot constraints. Centre a 3600 × 3600 mm courtyard exactly in
+it: each gross surrounding band is 4200 mm. The footprint increases from
+129.60 to 144.00 m² (11.1%); the gross enclosed plate excluding courtyard
+increases from 117.72 to 131.04 m² per level. These are not net usable areas.
+The separate site-integration records keep their historical inputs; this
+choice does not silently approve a different successor or real-site fit.
+
+Set **3100 mm clear ceilings on both floors**, with first-floor FFL at 3450 mm
+and the existing 350 mm floor zone retained. The upper ceiling is at 6550 mm;
+the outer roof-edge/cornice control rises from 6250 to 6800 mm, retaining its
+250 mm relationship to the upper ceiling. These are authored coordination
+heights, not selected floor construction or a headroom certificate.
+
+Align the service suite's **room-facing faces** to the corresponding courtyard
+wall faces. With the represented 417.5 mm envelope and 125 mm dry partitions,
+the service south centreline is Y 3845 mm and north centreline Y 8155 mm.
+Their south and north faces are Y 3782.5 / 8217.5 mm, exactly matching the
+courtyard faces. Matching unequal wall centrelines would leave visible steps.
+
+Retain these walls as non-loadbearing dry construction. The current eastern
+floor strip spans east-west between the courtyard and outer masonry; the new
+east-west enclosure walls run parallel to that span. This does not establish
+a useful bearing role for them. A later changed floor/load-path decision can
+select a structural assembly and foundation relationship; graphic thickness
+alone cannot. No services are to be buried in permanent masonry.
+
+The western and eastern courtyard walls each receive two **1200 mm windows**,
+centred at Y 5100 / 6900 mm and directly opposite each other. The north/south
+1400 mm paired doors remain centred. The four front bays retain equal spacing,
+now 2900 mm, with axes X 1650 / 4550 / 7450 / 10350 mm. This small re-spacing
+moves the entrance 100 mm east and gives the enlarged stair arrival clearance;
+it is an explicit facade change, not renderer drift. Internal study, WC,
+cloakroom, pantry and utility doors use 900 mm nominal apertures.
+
+## Study, pantry and utility
+
+The study's east wall moves 100 mm east; its north face meets the back of the
+stair's coordination envelope at Y 2775 mm. Its centreline is therefore
+Y 2712.5 mm. Clear study dimensions become **2720 × 2232.5 mm**, approximately
+6.07 m², versus 5.42 m² previously: a 12% gain. A 1600 × 700 mm desk and a
+1000 mm chair field are checked. The study remains private and naturally lit.
+
+Divide the service zone at Y 6650 mm. The northern **pantry** has approximately
+2170 × 1380 mm clear (2.99 m²), with 300 / 450 mm shelves and a 1420 mm aisle.
+Its door is directly from the kitchen, and it has its own high-sill side window.
+The southern **utility / plant** room has approximately 2170 × 2680 mm clear
+(5.82 m²). It retains gallery access and a separate external plant-replacement
+opening, moved to Y 5750 mm wholly inside that room. No replacement route
+passes through the pantry. Pantry electrical branches are admitted; heating
+and wet-service infrastructure are not casually extended into food storage.
+Appliance layout, plant working envelopes and actual ventilation/heat separation
+remain technical coordination, not established by these areas alone.
+
+The guest WC gains room from the face alignment. Its clear footprint is
+2170 × 1970 mm, leaving approximately **3.95 m² usable** after its provisional
+150 mm accessible service lining. It retains the separate basin and 900 mm
+high-sill east window. The front cloakroom gains 100 mm depth, with 600 mm
+hanging beside a 1570 mm aisle. Every room keeps independent access.
+
+## Stair alternatives and selected open-well return
+
+Taller ceilings add stair rise; they do not automatically make a grander stair
+fit. The bounded option comparison is `square-stair-audit.ts` beside the
+numeric choice register. It holds 300 mm goings, full floor/intermediate
+landings, the study and a separate 1000 mm circulation passage.
+
+- A 20-rise straight stair needs 5700 mm run plus floor landings: too long
+  for the selected hall and too deep for the front band in the other direction.
+- An ordinary three-sided 7/6/7 stair needs a 2900 mm clear plan depth plus
+  frame allowance and the independent passage. That exceeds the 3365 mm
+  available between the front and courtyard wall faces.
+- A balanced 10/10 return gives lower 172.5 mm rises, but adds 300 mm run.
+  At the selected location its full arrival field conflicts with the open
+  front-door leaf by 250 mm. Rescuing it requires moving the entrance or
+  taking back the study; no under-flight route is assumed.
+- Select a balanced **9/9 open-well return**, retaining 300 mm goings and
+  1000 mm clear flights, increasing the landing to **1100 mm** and the open
+  well from 100 to **250 mm**. Eighteen rises over 3450 mm give 191.7 mm per
+  rise, 8.3 mm higher than previously. This is a deliberate height trade-off.
+
+The clear-flight footprint is 3500 × 2250 mm, with a 3600 × 2350 mm
+coordination envelope. The passage behind it is **1007.5 mm clear**; the open
+entrance leaf stays clear of its 1000 mm arrival field. The upper south turn
+moves to Y 1600 mm to connect the upper arrival; the front-east bedroom loses
+approximately 0.22 m² gross against the previous plan after the other changes.
+The older companion drawing is not an accepted upper-floor publication plate.
+
+This selects the quieter, more open return at this location rather than
+claiming any alternative globally impossible. Actual balustrades, strings,
+structural floor opening/supports and stair headroom remain unproved. The
+whole-house compiler passes its existing bounded checks, including rise/going;
+that is not whole-building technical adequacy or physical acceptance.
+
+The following earlier decisions are retained as history and apply only where
+not superseded by the square-house geometry and room programme above.
+
+## Previous room programme
 
 The owner selects an open connection from entrance hall to family room. Remove
 the former drawing/family partition and the upper part of the drawing/hall
