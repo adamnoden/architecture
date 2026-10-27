@@ -1,6 +1,6 @@
 # EDA — Editorial Doctrine Audit
 
-**Status:** authorised / active — EDA-00–02 closed; EDA-03 source review recorded; EDA-04 started; final assurance open
+**Status:** CLOSED — EDA-00–08 passed; final editorial acceptance recorded 2026-10-27
 **Programme owner:** publication editorial control  
 **Baseline:** `816c6ca71e20235dca83350eb0f3e2cd05186169`  
 **Governing relationship:** post-migration assurance of the completed Editorial Overhaul  
@@ -122,7 +122,7 @@ The flags include sentence isolation, bold block quotations, sentence bolding, a
 
 Gate result: candidate production passed. No corpus-wide conformance claim follows.
 
-### EDA-03 — Preface and front-matter audit — SOURCE REVIEW COMPLETE
+### EDA-03 — Preface and front-matter audit — CLOSED
 
 Audit the highest-rhetoric surfaces first. Review sentence, paragraph and page staging together.
 
@@ -130,7 +130,7 @@ The current preface is the calibration case because it contains known failures t
 
 #### EDA-03 source review and calibration dispositions
 
-Reviewed the complete Preface, Reader's Guide, and the two authored Primer edges under their EDA-01 modes. The source pass preserves references, historical examples, uncertainty, author disclosure, architectural priorities and conventional-construction comparisons. Physical-page conformance is **not yet established**.
+Reviewed the complete Preface, Reader's Guide, and the two authored Primer edges under their EDA-01 modes. The source pass preserves references, historical examples, uncertainty, author disclosure, architectural priorities and conventional-construction comparisons. Physical-page acceptance is recorded under EDA-08 below.
 
 | Calibration candidate | Source disposition and reason |
 |---|---|
@@ -146,7 +146,7 @@ Other repeated closing morals were removed where their information was already c
 
 The Reader's Guide is retained unchanged: its bold reading-route labels are functional navigation, its lists define categories, and its qualifications carry necessary authority limits. The Primer proposition's two bold block quotations are returned to ordinary prose with their words intact. Primer outlook is retained: the prototype rejection permission and computational proof limits perform substantive work.
 
-Gate status: source review recorded; layout acceptance remains with EDA-08. EDA-03 is not represented as final physical proof.
+Gate result: passed, with physical-page acceptance completed under EDA-08.
 
 ### EDA-04 — Main manuscript audit — CLOSED
 
@@ -194,7 +194,7 @@ A separate hostile read of the revised Preface, manuscript openings/endings, Pri
 
 Gate result: passed. This was an adversarial pass by the completing editor, not an independent reviewer or external architectural validation.
 
-### EDA-08 — Typeset proof and closeout
+### EDA-08 — Typeset proof and closeout — CLOSED
 
 Regenerate the publication and inspect physical pages, not merely Markdown.
 
@@ -273,10 +273,40 @@ EDA is an editorial assurance gate, not evidence that the architecture itself is
 
 ---
 
-## 8. Current execution state
+## 8. Final acceptance — 2026-10-27
 
-Source review, contextual candidate dispositions, whole-book recurrence and the adversarial pass are complete. EDA-08 is checking fresh A4, conservative B5 and Primer proofs after the final source repairs. The page reviews identified and repaired an empty numbered front-matter marker page, a one-sentence chapter ending isolated on a nearly empty page, and Part IV headings stranded before full-page plates. The production typography adapter keeps plate headings with their opening explanatory paragraph. The DRW freeze check identified the plate register as frozen: that register was restored unchanged and the repair belongs to the existing production-layout adapter. Drawings, scales, plate classes and frozen pins are unchanged. Final proof identities and acceptance follow only after rerendering and inspection.
+EDA-00–08 have passed. All 128 registered sources have contextual dispositions bound to reviewed hashes; the 2,088 baseline candidate records remain recoverable. The complete source review, publication-order recurrence pass and adversarial editorial pass are recorded above. No unresolved editorial defect material to PR-02 remains in the reviewed object.
 
-### Execution environment and validation
+### Physical proof and repairs
 
-The restricted runtime rejects the `tsx` CLI IPC socket. The equivalent `node --import tsx` loader runs successfully; local checks use an exported shell function for this substitution, without changing package commands or tracked dependencies. An isolated Chromium renderer and local PDF inspectors enabled actual page review after the initial browser-download failure. Frozen publication fonts and the existing proof assertions remain in force.
+Built and inspected the Working Edition in A4 and conservative B5, and the complete 16-page A4 Primer. Whole-book contact sheets were used for composition and recurrence, followed by reading-size inspection of complete Preface and pattern sections and representative interface, reference-house, execution and appendix pages. The full Primer was inspected at reading size. This is page review, not a claim that every leaf received a separate high-resolution inspection.
+
+The page review repaired three demonstrated failures:
+
+- An otherwise empty numbered front-matter marker page and unnecessary parity blank: move the recto break to the front-matter context marker, keeping it with its heading.
+- A single closing sentence isolated on a nearly empty chapter-end page: integrate it with the explanation it qualifies. Ordinary short chapter tails remain permissible.
+- Twelve Part IV headings separated from their opening explanation by full-page plates: the existing production typography adapter now keeps the opening paragraph with its heading before the plate. The frozen DRW plate register, all drawing assets, scales, plate classes and pins remain unchanged. The prepared Part IV text was byte-compared against the visually reviewed composition when moving this repair into its proper production owner.
+
+The Preface's historical transitions and rules divide actual changes of subject. Its useful compressed turns remain within a wider field of ordinary explanation. Normative emphasis, pattern anatomy, evidence limits, plate furniture and deliberate Part openings remain distinguishable from rhetorical spotlighting. No remaining material staged-significance defect was found in the inspected sections. The page review does not replace the independent PLT physical drawing freeze.
+
+### Accepted proof identity
+
+The final-source production proof was rebuilt by [CI run 40396197085](https://github.com/adamnoden/architecture/actions/runs/40396197085) at `821212266485d7c0c3bbd90149ba9fb87ea0a2d2`. Its downloaded PDFs were inspected to confirm the front-matter and Part IV repairs in the CI renderer as well as the local renderer. Source dispositions are bound to their content hashes, not to line numbers in the baseline scan.
+
+| Proof | Pages | Duplex leaves | Normalised PDF SHA-256 |
+|---|---:|---:|---|
+| Working Edition A4 | 275 | 138 | `462f05341c4f04ae969272d4b5a430b91fc0f4ad9d909c8702e0e73a6e2cf87a` |
+| Working Edition B5 | 327 | 164 | `17b0a5a9ebb41439c53398720caa5b99adcf2fa7a365b418ab913512f9cfd50d` |
+| Primer A4 | 16 | 8 | Local complete-page inspection; metadata checked against the built PDF. |
+
+The paired production proof and diagnostics are attached to that run as `publication-typography-production-proof` and `publication-typography-production-diagnostics`. They record five frozen embedded font faces, correct page geometry, five recto Part openings, zero parser warnings, deterministic destination normalisation and all twelve heading/paragraph transformations. Artifact retention follows the existing CI policy; the source record and hashes remain in Git.
+
+`publication/metadata.json`, `publication/typography-metadata.json` and the derived project data plate track the current content. The exact RC2 release pagination and typography-release authority are preserved unchanged; this audit does not refreeze the historical release or assert a manufactured spine width.
+
+### Validation and boundaries
+
+All eight workflows passed on the accepted source/layout head: repository health and site build, paired production typography and ledger, selected Source proof, hierarchy proof, mixed-content proof, difficult-content inventory, representative manifest audit and representative signature proof. DRW freeze tests passed after restoring the frozen plate register. Final closure/status integration is revalidated at its exact PR head before merge; the post-merge cleanup result is recorded in [PR #871](https://github.com/adamnoden/architecture/pull/871).
+
+The local runtime required the equivalent `node --import tsx` loader in place of the restricted `tsx` IPC entry point, an isolated Chromium renderer and PDF inspectors. Tracked dependencies, package commands and proof assertions were not weakened to accommodate the environment.
+
+Claim fidelity is preserved apart from the separately documented reconciliation of stale stair-going prose to its existing controlled fixture. No architectural proposition, compiler supported domain, maturity level, regulatory criterion or external-validation claim is promoted. EDA removes its editorial block on PR-02; final manufacture still requires the independent PLT drawing freeze and its owning production authority.
