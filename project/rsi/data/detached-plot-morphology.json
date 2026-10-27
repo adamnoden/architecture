@@ -1,0 +1,158 @@
+{
+  "id": "RSI-01-MORPHOLOGY-V0.1",
+  "authority": "MORPHOLOGY_EVIDENCE_ONLY",
+  "baselineCommit": "8593bb43e4dfdadbca7c4923fa7e92e3b18c96b4",
+  "purpose": "Bounded evidence for ordinary London / outer-London detached-house plot morphology. Marketing dimensions are not title, survey or legal-boundary authority.",
+  "rules": {
+    "noPixelMeasurement": true,
+    "noBoundaryInferenceFromAerial": true,
+    "noLegalParcelClaims": true,
+    "missingValuesRemainNull": true
+  },
+  "coreDetachedExamples": [
+    {
+      "id": "RM-94138431",
+      "location": "Kings Avenue, Ealing W5",
+      "url": "https://www.rightmove.co.uk/properties/94138431",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": 11.63, "depthM": 4.42 },
+      "rearGarden": { "widthM": 10.92, "depthM": 26.95 },
+      "measurementBasis": "estate-agent floorplan dimensions",
+      "confidence": "MEDIUM",
+      "note": "Strong seed example of a substantial detached house on a long, relatively narrow urban plot morphology. Garden widths are not asserted as legal plot width."
+    },
+    {
+      "id": "RM-165027833",
+      "location": "Eaton Rise, Ealing W5",
+      "url": "https://www.rightmove.co.uk/properties/165027833",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": null, "depthM": 6.1 },
+      "rearGarden": { "widthM": null, "depthM": 29.26 },
+      "measurementBasis": "estate-agent listing/brochure approximate garden depths",
+      "confidence": "MEDIUM",
+      "note": "Deep rear-garden morphology with ordinary street frontage; exact parcel width is not recovered."
+    },
+    {
+      "id": "RM-167698106",
+      "location": "Coringway, Ealing W5",
+      "url": "https://www.rightmove.co.uk/properties/167698106",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": null, "depthM": null },
+      "rearGarden": { "widthM": 13.23, "depthM": 24.13 },
+      "measurementBasis": "estate-agent rear-garden dimensions",
+      "confidence": "MEDIUM",
+      "note": "Useful recoverable rear width/depth pair; rear-garden width is morphology evidence, not legal frontage."
+    },
+    {
+      "id": "RM-164538002",
+      "location": "The Ridings, Ealing W5",
+      "url": "https://www.rightmove.co.uk/properties/164538002",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": null, "depthM": null },
+      "rearGarden": { "widthM": null, "depthM": 18.9 },
+      "measurementBasis": "estate-agent approximate rear-garden depth",
+      "confidence": "MEDIUM",
+      "note": "Shorter-garden member of the core corpus; useful against selecting only unusually deep examples."
+    },
+    {
+      "id": "RM-164163029",
+      "location": "Crooked Usage, Finchley N3",
+      "url": "https://www.rightmove.co.uk/properties/164163029",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": null, "depthM": null },
+      "rearGarden": { "widthM": null, "depthM": 24.08 },
+      "measurementBasis": "estate-agent approximate rear-garden depth",
+      "confidence": "MEDIUM",
+      "note": "North-London check against learning only Ealing morphology."
+    },
+    {
+      "id": "RM-169050863",
+      "location": "Rowantree Road, Enfield EN2",
+      "url": "https://www.rightmove.co.uk/properties/169050863",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": null, "depthM": null },
+      "rearGarden": { "widthM": 10.49, "depthM": 19.0 },
+      "measurementBasis": "estate-agent rear-garden dimensions",
+      "confidence": "MEDIUM",
+      "note": "Outer-London example with a particularly useful recoverable garden width."
+    },
+    {
+      "id": "RM-168826421",
+      "location": "Park Way, Enfield EN2",
+      "url": "https://www.rightmove.co.uk/properties/168826421",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": null, "depthM": null },
+      "rearGarden": { "widthM": null, "depthM": 25.91 },
+      "measurementBasis": "estate-agent approximate rear-garden depth",
+      "confidence": "MEDIUM",
+      "note": "Outer-London deep-garden example."
+    },
+    {
+      "id": "RM-169233089",
+      "location": "Westbury Road, Bromley BR1",
+      "url": "https://www.rightmove.co.uk/properties/169233089",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": null, "depthM": null },
+      "rearGarden": { "widthM": null, "depthM": 21.34 },
+      "measurementBasis": "estate-agent approximate rear-garden depth",
+      "confidence": "MEDIUM",
+      "note": "South-east London check against west/north-London bias."
+    },
+    {
+      "id": "RM-168918770",
+      "location": "Friar Road, Orpington BR5",
+      "url": "https://www.rightmove.co.uk/properties/168918770",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": null, "depthM": null },
+      "rearGarden": { "widthM": null, "depthM": 15.85 },
+      "measurementBasis": "estate-agent approximate rear-garden depth",
+      "confidence": "MEDIUM",
+      "note": "Lower-depth control inside the ordinary detached corpus."
+    },
+    {
+      "id": "RM-166121852",
+      "location": "Park Road, Kingston upon Thames KT2",
+      "url": "https://www.rightmove.co.uk/properties/166121852",
+      "propertyForm": "detached house",
+      "frontGarden": { "widthM": null, "depthM": null },
+      "rearGarden": { "widthM": null, "depthM": 30.48 },
+      "measurementBasis": "estate-agent approximate rear-garden depth",
+      "confidence": "MEDIUM",
+      "note": "South-west London deep-garden member; retained inside corpus but not treated as a target by itself."
+    }
+  ],
+  "supportingControls": [
+    {
+      "id": "RM-89809551",
+      "location": "Woodville Gardens, Ealing",
+      "url": "https://www.rightmove.co.uk/properties/89809551",
+      "propertyForm": "non-detached urban house",
+      "role": "SUPPORTING_CONTEXT_ONLY",
+      "note": "Owner-supplied urban morphology reference. Excluded from detached core statistics."
+    },
+    {
+      "id": "DPL-RS-01",
+      "location": "synthetic",
+      "propertyForm": "synthetic reference site",
+      "role": "WIDE_SHALLOW_CONTROL",
+      "parcel": { "widthM": 17.4, "depthM": 30.0, "areaM2": 522 },
+      "note": "Historical DPL integration fixture; explicitly not a typical-London claim."
+    }
+  ],
+  "boundedSynthesis": {
+    "coreExampleCount": 10,
+    "reportedRearGardenDepthM": {
+      "min": 15.85,
+      "median": 24.105,
+      "max": 30.48,
+      "warning": "Descriptive only; the corpus is deliberately bounded and not a representative statistical sample."
+    },
+    "recoverableRearGardenWidthsM": [10.49, 10.92, 13.23],
+    "workingHypothesis": "The canonical constraint should primarily pressure frontage/side access rather than minimise total land area. A long/narrow parcel of roughly the same area as DPL-RS-01 can be materially more demanding than 17.4 x 30 m.",
+    "rsi02ExplorationBand": {
+      "frontageM": { "min": 13.0, "max": 15.0 },
+      "depthM": { "min": 38.0, "max": 45.0 },
+      "status": "WORKING_BAND_NOT_CANONICAL"
+    }
+  }
+}
