@@ -2,17 +2,21 @@ import type { AdeArchitecturalPlan, AdeModelPoint, AdeOpening, AdeWallRun } from
 import { assertValidArchitecturalPlan } from '../architectural-drawing/validate.js'
 import { mm } from '../units.js'
 import { createReferenceHouseAdePlan } from './ade-plan.js'
-import { groundPlanResolution as choice } from './plan-resolution.js'
-import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseSource } from './model.js'
+import { groundPlanResolution as currentChoice, type PlanOpeningChoice } from './plan-resolution.js'
+import { groundPlanResolution as previousChoice } from './plan-resolution-b3.js'
+import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSource } from './model.js'
 
 /** Adapter of an upstream architectural choice register, not an admission of
  * publication-only geometry into the frozen historical C1 source. */
-export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
-  if (result.derived.shell.width !== 12000 || result.derived.shell.depth !== 10800 || result.derived.court.x0 !== 4200 || result.derived.court.y0 !== 3400) throw new Error('Ground-plan choices require architectural reconciliation after base geometry changes.')
+export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseCoordinationSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
+  const legacy = source.court.value.placement === 'centred-in-shell'
+  const choice = legacy ? previousChoice : currentChoice
+  if (result.derived.shell.width !== 12000 || result.derived.shell.depth !== 10800 || result.derived.court.x0 !== 4200 || result.derived.court.y0 !== (legacy ? 3400 : 4100)) throw new Error('Ground-plan choices require architectural reconciliation after base geometry changes.')
   if (source.partitions.frontHallWestX.value !== 3100 || source.partitions.galleryServiceX.value !== 9350 ||
     source.partitions.upperSouthLandingTurnDepth.value !== 1600 || result.derived.stair.flightRun !== 2400 ||
     result.derived.stair.flightRiseGroups.join('/') !== '9/9' || result.derived.stair.riserCount !== 18 ||
     result.derived.levels.firstFfl - result.derived.levels.groundFfl !== 3300) throw new Error('Resolved plan requires its paired architectural source; do not apply choices to historical geometry.')
+  if (!legacy && (source.partitions.serviceSouthY?.value !== 3400 || result.derived.court.y1 !== 7400)) throw new Error('Resolved service and courtyard geography must remain paired')
   const plan = createReferenceHouseAdePlan(result, source, level)
   plan.id = `RH-RESOLVED-${level}`
   const provenance = { authority: 'provisional' as const, precision: 'approximate' as const,
@@ -48,7 +52,7 @@ export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompil
   })
   plan.walls = walls
   plan.nodes = [...nodes.values()]
-  plan.openings = choice.openings.map((o): AdeOpening => {
+  plan.openings = choice.openings.map((o: PlanOpeningChoice): AdeOpening => {
     const hosts = walls.filter((w) => w.id === o.hostBoundaryId || w.provenance.sourceIds.includes(o.hostBoundaryId))
     const host = hosts.find((w) => {
       const a=nodes.get(w.fromNodeId)!.point,b=nodes.get(w.toNodeId)!.point
@@ -60,7 +64,7 @@ export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompil
     const from=a.x===b.x?a.y:a.x,to=a.x===b.x?b.y:b.x
     return { kind:'opening',id:o.id,hostWallId:host.id,role:o.role,
       centreOffset:{kind:'approximate',value:mm((o.centre-from)*Math.sign(to-from))},width:{kind:'approximate',value:mm(o.width)},
-      symbol: o.role==='window' ? { kind:'window' } : {kind:'door',leaves:o.leaves??1,swingSide:o.swingSide??'left'},
+      symbol: o.role==='window' ? { kind:'window' } : {kind:'door',leaves:o.leaves??1,swingSide:o.swingSide??'left',...(o.hingeEnd ? {hingeEnd:o.hingeEnd} : {})},
       provenance:{...provenance,sourceIds:[...provenance.sourceIds,...o.replaces]} }
   })
   const resolved = new Set<string>([...choice.openConnections,...choice.openings.flatMap((o)=>o.replaces)])

@@ -1,7 +1,7 @@
 import type { AdeArchitecturalPlan, AdeModelPoint, AdeProvenance, AdeWallAssembly, AdeWallRun } from '../architectural-drawing/model.js'
 import { assertValidArchitecturalPlan } from '../architectural-drawing/validate.js'
 import { auditReferenceHouseInternalPartitionSource, createReferenceHouseInternalPartitionSource } from './internal-partitions.js'
-import type { DerivedBoundary, DerivedSpace, LevelId, ReferenceHouseCompileResult, ReferenceHouseSource } from './model.js'
+import type { DerivedBoundary, DerivedSpace, LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSource } from './model.js'
 import { mm } from '../units.js'
 
 const provenance = (sourceIds: string[], provisional = false, precision: AdeProvenance['precision'] = 'exact'): AdeProvenance => ({
@@ -43,7 +43,7 @@ const sharedSegments = (a: DerivedSpace, b: DerivedSpace) => {
   return [...result.values()]
 }
 
-export const createReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
+export const createReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseCoordinationSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
   if (result.status === 'FAIL') throw new Error('Cannot migrate a failed Reference House compile.')
   const partitionSource = createReferenceHouseInternalPartitionSource()
   const diagnostics = auditReferenceHouseInternalPartitionSource(source, partitionSource)
@@ -122,8 +122,8 @@ export const createReferenceHouseAdePlan = (result: ReferenceHouseCompileResult,
   const stairSpace = spaces.find((s) => s.id === (level === 'GROUND' ? 'G-HALL-02' : 'U-STAIR-01'))!
   const stairBox = [...stairSpace.boxes].sort((a, b) => b.width * b.height - a.width * a.height)[0]
   plan.labels = [...plan.labels,
-    { kind: 'label', id: `${level}-court-label`, text: 'Courtyard', anchor: point(result.derived.shell.centreX, result.derived.shell.centreY), role: 'space', provenance: provenance([source.court.id]) },
-    { kind: 'label', id: `${level}-court-size`, text: `${result.derived.court.width} × ${result.derived.court.depth}`, anchor: point(result.derived.shell.centreX, result.derived.shell.centreY), role: 'annotation', provenance: provenance([source.court.id]) },
+    { kind: 'label', id: `${level}-court-label`, text: 'Courtyard', anchor: point((result.derived.court.x0 + result.derived.court.x1) / 2, (result.derived.court.y0 + result.derived.court.y1) / 2), role: 'space', provenance: provenance([source.court.id]) },
+    { kind: 'label', id: `${level}-court-size`, text: `${result.derived.court.width} × ${result.derived.court.depth}`, anchor: point((result.derived.court.x0 + result.derived.court.x1) / 2, (result.derived.court.y0 + result.derived.court.y1) / 2), role: 'annotation', provenance: provenance([source.court.id]) },
     { kind: 'label', id: `${level}-stair-note`, text: `${result.derived.stair.riserCount} rises · ${result.derived.stair.flightRiseGroups.join('/')} · going ${result.derived.stair.going}`, anchor: point(stairBox.x + stairBox.width / 2, stairBox.y + stairBox.height / 2), role: 'annotation', provenance: provenance([source.stair.riseTopology.id, source.stair.goingTopology.id]) }
   ]
   plan.dimensions = [

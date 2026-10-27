@@ -3,7 +3,7 @@ import type {
   PlanLineSource,
   PlanSliceSource
 } from '../plan-slice/model.js'
-import type { OpeningPlacement, ReferenceHouseSource } from './model.js'
+import type { OpeningPlacement, ReferenceHouseCoordinationSource } from './model.js'
 import { mm } from './units.js'
 import type { Millimetres } from './units.js'
 
@@ -20,12 +20,16 @@ export interface ReferenceHouseCourtGeometry {
 }
 
 export const referenceHouseCourtGeometry = (
-  source: ReferenceHouseSource
+  source: ReferenceHouseCoordinationSource
 ): ReferenceHouseCourtGeometry => {
   const width = source.court.value.width
   const depth = source.court.value.depth
   const x0 = mm((source.shell.width.value - width) / 2)
-  const y0 = mm((source.shell.depth.value - depth) / 2)
+  const offset = source.court.value.offsetY
+  if (source.court.value.placement === 'centred-in-shell' && offset !== undefined) throw new Error('Centred courtyard cannot carry an offset')
+  if (source.court.value.placement === 'offset-from-shell-centre' && (offset === undefined || !Number.isFinite(offset))) throw new Error('Offset courtyard requires a finite offset')
+  const y0 = mm((source.shell.depth.value - depth) / 2 + (offset ?? 0))
+  if (width <= 0 || depth <= 0 || x0 <= 0 || y0 <= 0 || x0 + width >= source.shell.width.value || y0 + depth >= source.shell.depth.value) throw new Error('Courtyard must lie strictly within shell')
   return {
     width,
     depth,
@@ -36,7 +40,7 @@ export const referenceHouseCourtGeometry = (
   }
 }
 
-export const referenceHouseFrontAxes = (source: ReferenceHouseSource): Millimetres[] => {
+export const referenceHouseFrontAxes = (source: ReferenceHouseCoordinationSource): Millimetres[] => {
   const centreX = mm(source.shell.width.value / 2)
   const { count, spacing } = source.frontField.value
   return Array.from({ length: count }, (_, index) =>
@@ -44,7 +48,7 @@ export const referenceHouseFrontAxes = (source: ReferenceHouseSource): Millimetr
   )
 }
 
-export const referenceHousePlanLines = (source: ReferenceHouseSource): PlanLineSource[] => {
+export const referenceHousePlanLines = (source: ReferenceHouseCoordinationSource): PlanLineSource[] => {
   const court = referenceHouseCourtGeometry(source)
   return [
     { id: 'SHELL_WEST', coordinate: mm(0), provisional: false },
@@ -55,6 +59,7 @@ export const referenceHousePlanLines = (source: ReferenceHouseSource): PlanLineS
     { id: 'COURT_EAST', coordinate: court.x1, provisional: false },
     { id: 'COURT_SOUTH', coordinate: court.y0, provisional: false },
     { id: 'COURT_NORTH', coordinate: court.y1, provisional: false },
+    ...(source.partitions.serviceSouthY ? [{ id: 'SERVICE_SOUTH', coordinate: source.partitions.serviceSouthY.value, provisional: true }] : []),
     {
       id: 'WEST_ROOM_SPLIT',
       coordinate: source.partitions.westRoomSplitY.value,
@@ -90,7 +95,7 @@ export const referenceHousePlanLines = (source: ReferenceHouseSource): PlanLineS
 
 const adaptOpeningPlacement = (
   placement: OpeningPlacement,
-  source: ReferenceHouseSource,
+  source: ReferenceHouseCoordinationSource,
   frontAxes: Millimetres[]
 ): PlanOpeningPlacement => {
   if (placement.kind === 'front-bay') {
@@ -116,7 +121,7 @@ const adaptOpeningPlacement = (
 }
 
 export const adaptReferenceHousePlanSource = (
-  source: ReferenceHouseSource
+  source: ReferenceHouseCoordinationSource
 ): PlanSliceSource => {
   const frontAxes = referenceHouseFrontAxes(source)
   const levels = [

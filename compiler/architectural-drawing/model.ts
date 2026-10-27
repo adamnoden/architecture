@@ -95,7 +95,7 @@ export interface AdeOpening {
   centreOffset: AdeDistanceAuthority
   width: AdeDistanceAuthority
   /** Optional schematic architectural symbol; never a frame/doorset specification. */
-  symbol?: { kind: 'window' } | { kind: 'door'; leaves: 1 | 2; swingSide: 'left' | 'right' }
+  symbol?: { kind: 'window' } | { kind: 'door'; leaves: 1 | 2; swingSide: 'left' | 'right'; hingeEnd?: 'low' | 'high' }
   provenance: AdeProvenance
 }
 

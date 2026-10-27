@@ -1,4 +1,4 @@
-import type { ReferenceHouseSource } from './model.js'
+import type { ReferenceHouseCoordinationSource } from './model.js'
 import { mm } from './units.js'
 
 export type InternalPartitionFamilyId = 'RH-PART-DRY-01'
@@ -123,7 +123,7 @@ export const createReferenceHouseInternalPartitionSource = (): ReferenceHouseInt
 })
 
 export const auditReferenceHouseInternalPartitionSource = (
-  house: ReferenceHouseSource,
+  house: ReferenceHouseCoordinationSource,
   partitionSource: ReferenceHouseInternalPartitionSource
 ): InternalPartitionSourceDiagnostic[] => {
   const diagnostics: InternalPartitionSourceDiagnostic[] = []

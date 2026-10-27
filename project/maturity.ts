@@ -313,7 +313,7 @@ export const workstreamStatuses = [
     currentState:
       'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. EDA-00–08 are complete: the 128-source audit, whole-book recurrence, adversarial read and A4/B5/Primer page proof are accepted. Current production pagination is 275 A4 / 327 B5 pages plus the 16-page Primer. ADE capability/migration is internally complete with ground/first-floor candidates and a non-Reference-House contrast proof. The independent PLT physical review and drawing freeze remain open; no print tokens are frozen. EDA closure does not raise publication maturity or authorise final manufacture.',
     nextGate:
-      'Review the owner-feedback ground-plan revision, its architectural trade-offs and exact-size proofs before owner acceptance and exemplar/token freeze. PR-02 preparation may consume the accepted typography contract; final private-object manufacture still waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
+      'Review B4 circulation and its smaller courtyard, retained service area and exact-size comparison proofs before owner acceptance and exemplar/token freeze. PR-02 preparation may consume the accepted typography contract; final private-object manufacture still waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],

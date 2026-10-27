@@ -187,6 +187,7 @@ export const validateArchitecturalPlan = (plan: AdeArchitecturalPlan): AdeValida
     if (!host) diagnostics.push({ code: 'ADE-OPENING-HOST', entityId: opening.id, message: `Opening references missing physical host wall ${opening.hostWallId}.` })
     validateDistance(opening.id, 'opening centre offset', opening.centreOffset, diagnostics, { allowZero: true })
     validateDistance(opening.id, 'opening width', opening.width, diagnostics)
+    if(opening.symbol?.kind==='door' && (![1,2].includes(opening.symbol.leaves) || !['left','right'].includes(opening.symbol.swingSide) || (opening.symbol.hingeEnd !== undefined && (opening.symbol.leaves!==1 || !['low','high'].includes(opening.symbol.hingeEnd))))) diagnostics.push({code:'ADE-OPENING-SYMBOL',entityId:opening.id,message:'Door handing and leaf count must be explicit supported values; hinge end applies only to a single leaf.'})
     if (opening.symbol && (opening.role !== opening.symbol.kind || !['exact','approximate'].includes(opening.width.kind) || !['exact','approximate'].includes(opening.centreOffset.kind))) diagnostics.push({code:'ADE-OPENING-SYMBOL',entityId:opening.id,message:'Architectural symbol requires matching role and authored nominal position/width.'})
   }
 
