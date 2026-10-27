@@ -408,16 +408,17 @@ export const workstreamStatuses = [
     id: 'delivery',
     name: 'Delivery',
     maturity: 'M2',
-    reviewedOn: '2026-10-26',
+    reviewedOn: '2026-10-27',
     currentState:
-      'DEL frames coordination of the existing implementation brief, maintenance and human-factors modules under GitHub umbrella #854. N17 carries finished-interface verification into RIBA 3/4 as appropriate, while delivery requirements remain intentionally incomplete and evidence-dependent.',
+      'DEL-00 inventories the three existing delivery modules, N01–N17 and other brief obligations, with provisional discipline/stage allocations, evidence dependencies and rewind owners under #854. Current-house technical migration, competent review, physical evidence and commission-specific acceptance remain outstanding.',
     nextGate:
-      'Use DEL #854 to inventory requirement readiness, responsible disciplines, stage gates and evidence dependencies. Populate modules only as architectural, DPL, professional-review and physical-validation decisions mature; retain manufacturing strategy as guidance unless a concrete assembly earns delivery work.',
+      'Reconcile affected requirements when current-house review/technical migration, RH-11 findings, P03/P04 results or a real commission supplies evidence. Declare source applicability before issuing older packages for the Georgian proposal. No project acceptance, new prototype family or maturity increase follows from the inventory.',
     evidence: {
       framed: ['docs/delivery/README.md', 'project/del/delivery-programme.md'],
       developed: [
         'docs/delivery/riba-implementation-brief-template.md',
-        'docs/delivery/human-factors-verification-requirements.md'
+        'docs/delivery/human-factors-verification-requirements.md',
+        'project/del/del-00-delivery-baseline.md'
       ]
     }
   }

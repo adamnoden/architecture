@@ -1,7 +1,8 @@
 # Validation Execution Register
 
 **Status:** active evidence-control register  
-**Date:** 2026-10-27  
+**Date:** 2026-10-27
+
 **Purpose:** distinguish prepared work from issued work, physical work and actual evidence after RH-11.
 
 The Reference House is M3 at coordinated virtual-design scope. The design-gate sequence is closed. Progress now means converting bounded uncertainties into competent external findings, calculations, simulations or physical results.
@@ -42,11 +43,20 @@ Historical `P01`–`P04`, derived `P03-*` / `P04-*` identifiers and existing evi
 | `ER-FIRE-01` | fire / building-control review | **READY / UNISSUED** | `external-review-fire-building-control-rh11.md` | competent review of escape, Part M, service/interface closure | RH-03/RH-04/RH-09 as finding dictates |
 | `ER-MEP-01` | MEP / acoustic review | **READY / UNISSUED** | `external-review-mep-acoustic-rh11.md` | plant-room packing, MVHR/ASHP/acoustic response | RH-06/RH-07/RH-10 |
 | `ER-BPE-01` | building physics / energy review | **READY / UNISSUED** | `external-review-building-physics-energy-rh11.md` | envelope/junction/overheating/daylight/energy response | RH-02/RH-04/RH-07/RH-08/RH-10 |
+| `ER-HFI-01` | human-factors / inclusive-design review | **READY / UNISSUED** | `external-review-human-factors-inclusive-design-rh11.md` | competent complete-action / finished-interface response; unresolved laundry and life-course questions retained | relevant RH plan/stair/interface owner; site approach stays with DPL |
 
 Workstream owner: [EPR #913](https://github.com/adamnoden/architecture/issues/913).  
 Reference House execution gate: [RH-11 #32](https://github.com/adamnoden/architecture/issues/32).
 
 No row above may move to **EVIDENCED** because an email was sent or a meeting occurred. Record the actual finding and closure evidence.
+
+---
+
+## Baseline applicability before issue or build
+
+READY describes the prepared package at its recorded source scope. The [current Georgian re-plan](../reference-house/georgian-replan.md) is an architectural proposal awaiting technical migration, with changed stair, attic, roof and service geometry. Before issuing any RH-11 brief or releasing a prototype for that proposal, the execution owner must declare its source revision and reconcile affected inputs, review questions and acceptance limits. Historical compiler passes and older review/prototype geometry do not validate the successor.
+
+For P04, explicitly assess the applicability of the retained 2950 mm rig to the proposed 3100 mm clear rooms and the relevant movement demand before build. Height difference alone establishes neither adequacy nor failure. Retain the older baseline as provenance. The [DEL inventory](../../project/del/del-00-delivery-baseline.md) routes the delivery consequences without changing these execution states.
 
 ---
 

@@ -1,6 +1,7 @@
 # DEL — Delivery requirements
 
-**State:** framed umbrella; requirements remain evidence-dependent  
+**State:** DEL-00 baseline complete; commission-specific issue and technical closure remain evidence-dependent
+
 **Tracking:** [#854 — DEL evidence-led delivery requirements and responsibility coordination](https://github.com/adamnoden/architecture/issues/854)  
 **Starting authority:** `docs/delivery/README.md`, `project/maturity.ts`, the EPR/PHY validation execution register and the owning DPL, HFI and OCG handoffs
 
@@ -29,3 +30,9 @@ The umbrella can close when the declared commission/stage scope has a coherent r
 - PHY-01 remains held/optional research under [#856](https://github.com/adamnoden/architecture/issues/856); PHY-02 remains held under [#857](https://github.com/adamnoden/architecture/issues/857). Their historical P01/P02 identities and validation-register reopening triggers are preserved.
 
 Keep programme history here and requirements in `docs/delivery/`. Present project-wide state remains owned by `STATUS.md` and the typed maturity registry.
+
+## Execution result
+
+[DEL-00 — Delivery inventory and responsibility baseline](del-00-delivery-baseline.md) records N01–N17 and the remaining brief sections, provisional discipline/stage allocations, evidence routes and rewind owners. The three existing delivery modules retain requirement ownership. No commission or technical acceptance is claimed.
+
+The baseline also reconciles the HFI review route into the validation execution register and requires a declared source revision before older review/prototype packages are used for the current Georgian re-plan. Next work is evidence-triggered reconciliation after current-house review/technical migration, competent RH-11 responses, P03/P04 results or a real commission brief. These are closure dependencies, not reasons to leave the inventory undone. Delivery remains M2; #854 remains open.
