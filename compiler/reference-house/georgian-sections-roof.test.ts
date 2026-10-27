@@ -37,3 +37,9 @@ test('cut regions use outlined paths and windows retain glazing through the cut'
  assert.ok(s.primitives.some(p=>p.id==='south-window-2-glazing'))
  assert.ok(svg.includes('path-stroke-cut'))
 })
+
+test('principal section draws the source-owned west courtyard windows beyond the cut',()=>{
+ const s=createSectionRoofScene('PRINCIPAL',100)
+ assert.equal(s.primitives.filter(p=>p.kind==='rect'&&p.id.startsWith('beyond-')).length,4)
+ assert.ok(s.primitives.filter(p=>p.kind==='rect'&&p.id.startsWith('beyond-')).every(p=>p.stroke==='secondary'&&p.fill==='none'))
+})

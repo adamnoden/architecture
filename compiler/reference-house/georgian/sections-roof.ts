@@ -39,7 +39,15 @@ export function createSectionRoofScene(view:TechnicalView,scale:100|50):DrawingS
    const points=[a,...breaks.filter(y=>y>a&&y<b),b]
    for(let i=0;i<points.length-1;i++){const y=points[i],yy=points[i+1];line(`roof-${r}-${i}`,y,roofZ(m.x,y),yy,roofZ(m.x,yy),'profile');line(`roof-under-${r}-${i}`,y,roofZ(m.x,y)-300,yy,roofZ(m.x,yy)-300)}
   }
-  if(m.court){text('court',6000,4300,'OPEN COURTYARD','marker');text('south-ground',2100,1600,'Entrance hall','label');text('north-ground',9900,1600,'Family / dining','label');text('south-upper',2100,5100,'South landing','label');text('north-upper',9900,5100,'Walk-in','label')}
+  if(m.court){
+   // West courtyard face lies beyond the cut; keep it subordinate to cut fabric.
+   for(const level of ['GROUND','FIRST'] as const)for(const o of openings(level).filter(o=>o.wall==='court-west')){
+    const z=(level==='GROUND'?0:3450)+750,head=(level==='GROUND'?0:3450)+2850,id='beyond-'+level+'-'+o.id
+    rect(id,o.centre-o.width/2,z,o.width,head-z)
+    for(const third of [1,2])line(id+'-bar-'+third,o.centre-o.width/2+o.width*third/3,z,o.centre-o.width/2+o.width*third/3,head)
+    for(const quarter of [1,2,3])line(id+'-row-'+quarter,o.centre-o.width/2,z+(head-z)*quarter/4,o.centre+o.width/2,z+(head-z)*quarter/4)
+   }
+   text('court',6000,7200,'OPEN COURTYARD','marker');text('south-ground',2100,1600,'Entrance hall','label');text('north-ground',9900,1600,'Family / dining','label');text('south-upper',2100,5100,'South landing','label');text('north-upper',9900,5100,'Walk-in','label')}
   else{
    for(const [id,y,z,label]of [['wc',1500,1600,'Guest WC'],['plant',4500,1600,'Plant'],['pantry',8700,1600,'Pantry'],['kitchen',10600,1600,'Kitchen'],['bed',2000,5100,'Bedroom 3'],['bath',4750,5100,'Family bath'],['ens',7600,5100,'En suite'],['principal',10300,5100,'Principal']] as const)text(id,y,z,label,'label')
    rect('riser',design.services.riser.y,0,design.services.riser.depth,6550,false,'datum');text('riser-note',6000,-950,'Dashed: riser reserve; access is from dry-side gallery')
