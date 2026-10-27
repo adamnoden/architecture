@@ -3,7 +3,7 @@ import type {
   PlanLineSource,
   PlanSliceSource
 } from '../plan-slice/model.js'
-import type { OpeningPlacement, ReferenceHouseSource } from './model.js'
+import type { OpeningPlacement, ReferenceHouseCoordinationSource } from './model.js'
 import { mm } from './units.js'
 import type { Millimetres } from './units.js'
 
@@ -20,7 +20,7 @@ export interface ReferenceHouseCourtGeometry {
 }
 
 export const referenceHouseCourtGeometry = (
-  source: ReferenceHouseSource
+  source: ReferenceHouseCoordinationSource
 ): ReferenceHouseCourtGeometry => {
   const width = source.court.value.width
   const depth = source.court.value.depth
@@ -40,7 +40,7 @@ export const referenceHouseCourtGeometry = (
   }
 }
 
-export const referenceHouseFrontAxes = (source: ReferenceHouseSource): Millimetres[] => {
+export const referenceHouseFrontAxes = (source: ReferenceHouseCoordinationSource): Millimetres[] => {
   const centreX = mm(source.shell.width.value / 2)
   const { count, spacing } = source.frontField.value
   return Array.from({ length: count }, (_, index) =>
@@ -48,7 +48,7 @@ export const referenceHouseFrontAxes = (source: ReferenceHouseSource): Millimetr
   )
 }
 
-export const referenceHousePlanLines = (source: ReferenceHouseSource): PlanLineSource[] => {
+export const referenceHousePlanLines = (source: ReferenceHouseCoordinationSource): PlanLineSource[] => {
   const court = referenceHouseCourtGeometry(source)
   return [
     { id: 'SHELL_WEST', coordinate: mm(0), provisional: false },
@@ -95,7 +95,7 @@ export const referenceHousePlanLines = (source: ReferenceHouseSource): PlanLineS
 
 const adaptOpeningPlacement = (
   placement: OpeningPlacement,
-  source: ReferenceHouseSource,
+  source: ReferenceHouseCoordinationSource,
   frontAxes: Millimetres[]
 ): PlanOpeningPlacement => {
   if (placement.kind === 'front-bay') {
@@ -121,7 +121,7 @@ const adaptOpeningPlacement = (
 }
 
 export const adaptReferenceHousePlanSource = (
-  source: ReferenceHouseSource
+  source: ReferenceHouseCoordinationSource
 ): PlanSliceSource => {
   const frontAxes = referenceHouseFrontAxes(source)
   const levels = [

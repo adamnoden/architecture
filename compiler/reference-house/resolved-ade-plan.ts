@@ -4,11 +4,11 @@ import { mm } from '../units.js'
 import { createReferenceHouseAdePlan } from './ade-plan.js'
 import { groundPlanResolution as currentChoice, type PlanOpeningChoice } from './plan-resolution.js'
 import { groundPlanResolution as previousChoice } from './plan-resolution-b3.js'
-import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseSource } from './model.js'
+import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSource } from './model.js'
 
 /** Adapter of an upstream architectural choice register, not an admission of
  * publication-only geometry into the frozen historical C1 source. */
-export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
+export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseCoordinationSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
   const legacy = source.court.value.placement === 'centred-in-shell'
   const choice = legacy ? previousChoice : currentChoice
   if (result.derived.shell.width !== 12000 || result.derived.shell.depth !== 10800 || result.derived.court.x0 !== 4200 || result.derived.court.y0 !== (legacy ? 3400 : 4100)) throw new Error('Ground-plan choices require architectural reconciliation after base geometry changes.')

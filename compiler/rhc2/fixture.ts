@@ -1,9 +1,9 @@
-import type { ReferenceHouseSource } from '../reference-house/model.js'
+import type { ReferenceHouseCoordinationSource } from '../reference-house/model.js'
 import type { StructuralTopologySource } from '../structure-slice/model.js'
 import { mm } from '../units.js'
 
 export const createReferenceHouseStructuralSource = (
-  house: ReferenceHouseSource
+  house: ReferenceHouseCoordinationSource
 ): StructuralTopologySource => ({
   fixtureId: 'RH-C2-REFERENCE-HOUSE-STRUCTURE',
   planFixtureId: house.fixtureId,

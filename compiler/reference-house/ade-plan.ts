@@ -1,7 +1,7 @@
 import type { AdeArchitecturalPlan, AdeModelPoint, AdeProvenance, AdeWallAssembly, AdeWallRun } from '../architectural-drawing/model.js'
 import { assertValidArchitecturalPlan } from '../architectural-drawing/validate.js'
 import { auditReferenceHouseInternalPartitionSource, createReferenceHouseInternalPartitionSource } from './internal-partitions.js'
-import type { DerivedBoundary, DerivedSpace, LevelId, ReferenceHouseCompileResult, ReferenceHouseSource } from './model.js'
+import type { DerivedBoundary, DerivedSpace, LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSource } from './model.js'
 import { mm } from '../units.js'
 
 const provenance = (sourceIds: string[], provisional = false, precision: AdeProvenance['precision'] = 'exact'): AdeProvenance => ({
@@ -43,7 +43,7 @@ const sharedSegments = (a: DerivedSpace, b: DerivedSpace) => {
   return [...result.values()]
 }
 
-export const createReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
+export const createReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseCoordinationSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
   if (result.status === 'FAIL') throw new Error('Cannot migrate a failed Reference House compile.')
   const partitionSource = createReferenceHouseInternalPartitionSource()
   const diagnostics = auditReferenceHouseInternalPartitionSource(source, partitionSource)

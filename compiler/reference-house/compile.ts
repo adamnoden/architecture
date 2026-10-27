@@ -5,7 +5,7 @@ import { adaptReferenceHousePlanSource } from './plan-adapter.js'
 import type {
   ReferenceHouseCompileResult,
   ReferenceHouseDerived,
-  ReferenceHouseSource,
+  ReferenceHouseCoordinationSource,
   RhCompileStatus,
   RhDiagnostic
 } from './model.js'
@@ -17,7 +17,7 @@ const diagnostic = (
   message: string
 ): RhDiagnostic => ({ code, status, subjectIds: [...subjectIds].sort(), message })
 
-const sourceDiagnostics = (source: ReferenceHouseSource): RhDiagnostic[] => {
+const sourceDiagnostics = (source: ReferenceHouseCoordinationSource): RhDiagnostic[] => {
   const diagnostics: RhDiagnostic[] = []
 
   const { riserCount, flightRiseGroups } = source.stair.riseTopology.value
@@ -120,7 +120,7 @@ const sourceDiagnostics = (source: ReferenceHouseSource): RhDiagnostic[] => {
 }
 
 const referenceHouseDerivedDiagnostics = (
-  source: ReferenceHouseSource,
+  source: ReferenceHouseCoordinationSource,
   derived: ReferenceHouseDerived
 ): RhDiagnostic[] => {
   const diagnostics: RhDiagnostic[] = []
@@ -167,7 +167,7 @@ const aggregate = (diagnostics: RhDiagnostic[]): RhCompileStatus => {
 }
 
 export const compileReferenceHouseFromPlan = (
-  source: ReferenceHouseSource,
+  source: ReferenceHouseCoordinationSource,
   planResult: PlanSliceCompileResult
 ): ReferenceHouseCompileResult => {
   const referenceDiagnostics = sourceDiagnostics(source)
@@ -187,7 +187,7 @@ export const compileReferenceHouseFromPlan = (
   }
 }
 
-export const compileReferenceHouse = (source: ReferenceHouseSource): ReferenceHouseCompileResult => {
+export const compileReferenceHouse = (source: ReferenceHouseCoordinationSource): ReferenceHouseCompileResult => {
   const planResult = compilePlanSlice(adaptReferenceHousePlanSource(source))
   return compileReferenceHouseFromPlan(source, planResult)
 }

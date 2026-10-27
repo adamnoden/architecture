@@ -1,4 +1,4 @@
-import type { ReferenceHouseSource } from './model.js'
+import type { ReferenceHouseCoordinationSource } from './model.js'
 import { referenceHouseCourtGeometry } from './plan-adapter.js'
 import type { groundPlanResolution } from './plan-resolution.js'
 
@@ -6,7 +6,7 @@ import type { groundPlanResolution } from './plan-resolution.js'
  * chosen routes pass outside the FULL stair envelope: no under-flight
  * headroom assumption is used to rescue the drawing-room or courtyard door.
  * Fabric allowances must match the represented ADE assemblies. */
-export const auditResolvedHallCirculation = (source: ReferenceHouseSource, choice: Pick<typeof groundPlanResolution, 'stair' | 'openings'>) => {
+export const auditResolvedHallCirculation = (source: ReferenceHouseCoordinationSource, choice: Pick<typeof groundPlanResolution, 'stair' | 'openings'>) => {
   const court = referenceHouseCourtGeometry(source), s = choice.stair
   const envelope = 417.5, halfPartition = 62.5, routeWidth = 1000
   const stair = {x0:s.x-50, x1:s.x+s.footprintWidth+50, y0:s.y-50, y1:s.y+s.footprintDepth+50}

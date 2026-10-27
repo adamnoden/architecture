@@ -1,3 +1,4 @@
+import type { ReferenceHouseCoordinationSource } from './model.js'
 import { mm } from '../units.js'
 import { groundPlanResolution as previous, createResolvedReferenceHouseSource as previousSource } from './plan-resolution-b3.js'
 export { auditCurrentStairReservation } from './plan-resolution-b3.js'
@@ -28,7 +29,7 @@ export const groundPlanResolution = {
 }
 
 export const createResolvedReferenceHouseSource = () => {
-  const s = previousSource()
+  const s: ReferenceHouseCoordinationSource = previousSource()
   s.court = {...s.court, id: 'RHPR-COURT-B4', authority: 'PROVISIONAL', authorship: 'AUTHORED_PROVISIONAL', disposition: 'PROVISIONAL_BUT_REPRESENTABLE',
     value: {...s.court.value, depth: mm(3300), placement: 'offset-from-shell-centre', offsetY: mm(350)}}
   // Hold study/service and bedroom/bathroom geography when the courtyard's

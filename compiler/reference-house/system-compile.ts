@@ -39,7 +39,7 @@ import type {
 } from './identity.js'
 import type {
   ReferenceHouseCompileResult,
-  ReferenceHouseSource,
+  ReferenceHouseCoordinationSource,
   RhCompileStatus,
   RhDiagnostic
 } from './model.js'
@@ -107,7 +107,7 @@ const aggregate = (
 }
 
 export const compileReferenceHouseSystem = (
-  source: ReferenceHouseSource
+  source: ReferenceHouseCoordinationSource
 ): ReferenceHouseSystemCompileResult => {
   const plan = compilePlanSlice(adaptReferenceHousePlanSource(source))
   const house = compileReferenceHouseFromPlan(source, plan)
