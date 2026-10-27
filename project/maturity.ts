@@ -344,9 +344,9 @@ export const workstreamStatuses = [
     maturity: 'M4',
     reviewedOn: '2026-10-27',
     currentState:
-      'The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. DPL-01 through DPL-14 are complete. DPL-15J adds explicit assumption-based trials across all eight sites, a conditional envelope, reader-facing computational explanation and internal adversarial checks. Geometry hypotheses do not discharge evidence-backed readiness: corpus readiness remains 0/8 after DPL-15I, and real-site compatibility remains unestablished. The original empirical DPL-15/16/17/18 gates remain open; exploratory work is separately scoped. Lennard remains excluded from empirical sampling.',
+      'The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. DPL-01 through DPL-14 are complete. DPL-15J adds explicit assumption-based trials across all eight sites, a conditional envelope, reader-facing computational explanation and internal adversarial checks. Geometry hypotheses do not discharge evidence-backed readiness: corpus readiness remains 0/8 after DPL-15I, and real-site compatibility remains unestablished. The user has explicitly revised DPL-15/16/17/18 to conditional research scope. Their final authored case and closeout complete that revised programme; the original empirical criteria remain unearned and real-site verification is deferred. Lennard remains excluded from empirical sampling.',
     nextGate:
-      'Replace assumptions for one genuine corpus parcel with controlled extent/identity and a coherent metric boundary/orientation/levels/access package, then author and evaluate one evidence-backed placement. Do not generate further uncalibrated rectangles or convenience-site searches as a substitute. Preserve stage-specific external structural, water, rights and planning dependencies; no external contact or spend is authorised.',
+      'No standing DPL research packet remains. Trigger a separate verification follow-on only for a selected real commission/site or explicit evidence-backed request; then replace the applicable premises with controlled site data and stage-specific professional evidence. Conditional completion does not raise maturity or authority, and authorises no external contact or spend.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -377,6 +377,7 @@ export const workstreamStatuses = [
       ],
       internallyValidated: [
         'project/dpl/exploration/README.md',
+        'project/dpl/dpl-conditional-closeout.md',
         'compiler/dpl/exploration.test.ts',
         'project/dpl/dpl-15e-rp006-spatial-preflight.md',
         'project/dpl/dpl-15f-rp006-residual-recovery.md',

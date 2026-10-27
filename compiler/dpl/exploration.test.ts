@@ -80,3 +80,32 @@ test('sensitivity exposes the small-area, access, slope and direct-approach cons
   assert.deepEqual(r.lennardFixedPlacementSensitivity.inwardBoundaryOffsetsM.map(s => s.containedUnderUniformInwardOffset), [true, true, true, false])
   assert.throws(() => classifySamples([]))
 })
+
+// The final case is separately authored after the original sensitivity experiment.
+// It must not rewrite that experiment or turn external premises into evidence.
+test('final conditional case resolves approach length by moving the house, without changing it', () => {
+  const c = JSON.parse(readFileSync('project/dpl/exploration/conditional-case.json', 'utf8'))
+  const trial = { ...readExplorationInput().trials[3], fixedPlacement: c.fixedPlacement }
+  const fit = testPlacement(trial, c.parcel.widthM, c.parcel.depthM, 12, 10.8, 1, 3)
+  assert.equal(fit.contained, true)
+  assert.equal(fit.workingSpace, true)
+  assert.ok(Math.abs(fit.clearancesM.left - 2.7) < 1e-9)
+  assert.ok(Math.abs(fit.clearancesM.rear - 10.2) < 1e-9)
+  const a = c.approach
+  assert.equal(a.bottomLandingLengthM + a.slopingLengthM + a.topLandingLengthM, c.fixedPlacement.frontYM)
+  assert.ok(a.riseM / a.slopingLengthM <= a.illustrativeMaxGradient)
+  assert.equal(a.riseM, c.fixedPlacement.fflAboveFrontGroundM)
+  assert.equal(c.referenceHouseMutation, false)
+  assert.equal(readExplorationInput().trials[3].fixedPlacement.frontYM, 5.2)
+})
+
+test('conditional closeout retains all non-geometric adequacy as assumptions, never verified results', () => {
+  const c = JSON.parse(readFileSync('project/dpl/exploration/conditional-case.json', 'utf8'))
+  assert.equal(c.authority, 'CONDITIONAL_DESIGN_STUDY')
+  assert.equal(c.siteKind, 'SYNTHETIC_ORDINARY_STREET_FRONT')
+  assert.equal(c.verifiedReadiness, 'UNCHANGED_0_OF_8')
+  assert.deepEqual(c.premises.map((p: any) => p.id), ['SPATIAL', 'CONTROL_RIGHTS', 'SUPPORT_GROUND',
+    'WATER_ENVIRONMENT', 'DRAINAGE_UTILITIES', 'CONTEXT_PLANNING', 'ACCESS_LOGISTICS', 'TECHNICAL_COMPLETION'])
+  assert.ok(c.premises.every((p: any) => p.state === 'ASSUMED' && p.proposition.length && p.replacement.length))
+  assert.equal(composeExploration().proofBoundary.verifiedReadyCorpusSites, 0)
+})

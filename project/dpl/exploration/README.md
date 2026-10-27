@@ -2,7 +2,7 @@
 
 **Authority:** conditional design research, authorised by the user on 2026-10-27.
 **Owner:** DPL-15J / #876.
-**State:** exploratory trials, conditional envelope, publication treatment and internal adversarial checks implemented; evidence-backed deployment remains unresolved.
+**State:** complete at conditional scope; [the final closeout](../dpl-conditional-closeout.md) revises the remaining programme brief and records the final authored case. Real-site verification is deferred.
 
 ## Decision
 
@@ -42,7 +42,7 @@ The four project test choices are 1 m side working space, 3 m rear working space
 | DPL-17 publication | Reader-facing computational explanation, linked from its overview and site navigation; book inclusion reviewed below | Publication of an empirical result that does not yet exist |
 | DPL-18 adversarial validation | Mutation, rotated-geometry, provenance, authority, conformance and assumption/evidence-isolation regression checks | External judgement, physical testing and original empirical programme closeout |
 
-These activities complete the first assumption-based pass through all four questions. They do not increase the original formal completion count from 14/18 by quietly substituting a weaker deliverable.
+These activities completed the first assumption-based pass. The subsequent [conditional closeout](../dpl-conditional-closeout.md) explicitly revises the remaining acceptance scope, rather than claiming the original empirical gates were met.
 
 ## Conditional envelope
 
@@ -110,7 +110,7 @@ The explanatory page belongs in `docs/computational/deployment-exploration.md`. 
 
 Further uncalibrated rectangles would repeat a sensitivity experiment. They would not make an exact real parcel less uncertain. For the next real-site placement, select one corpus parcel and replace the assumptions with (1) a controlled extent tied to that exact parcel and (2) metric boundary/orientation/levels/access information adequate for the question. A coherent screening package suffices; determined legal title, GI, full utility investigations and a full technical-design survey are not blanket prerequisites to exploratory candidate authoring.
 
-Professional structural, water, rights and planning questions remain stage-specific dependencies for stronger deployment claims. No external contact or spend has been made. The original empirical DPL-15/16/17/18 closeout remains blocked by those evidence routes; this does not block the assumption-based study recorded here.
+Professional structural, water, rights and planning questions remain stage-specific dependencies for stronger deployment claims. No external contact or spend has been made. Those routes are deferred verification tasks under the revised brief, rather than active blockers to the conditional programme closeout.
 
 ## Implementation validation and handoff — 2026-10-27
 
