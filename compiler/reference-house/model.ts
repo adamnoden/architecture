@@ -122,9 +122,12 @@ export interface ReferenceHouseSource {
     id: string
     width: Millimetres
     depth: Millimetres
-    placement: 'centred-in-shell'
+    placement: 'centred-in-shell' | 'offset-from-shell-centre'
+    /** Positive northward offset; required only for the explicit offset placement. */
+    offsetY?: Millimetres
   }>
   partitions: {
+    serviceSouthY?: SourceFact<Millimetres>
     westRoomSplitY: SourceFact<Millimetres>
     frontHallWestX: SourceFact<Millimetres>
     galleryServiceX: SourceFact<Millimetres>

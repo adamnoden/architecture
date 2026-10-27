@@ -1,6 +1,37 @@
 <!-- nav-exclude: redirect -->
 # Ground-plan feedback resolution
 
+**Current successor: B4 / #892.** The image-7/image-8 follow-up rejects B3's
+hall/drawing junction and door approaches. The original 15-point record below
+is retained as history; its stair-box check did not establish circulation.
+
+## Follow-up disposition
+
+| Owner observation | B4 decision |
+|---|---|
+| Floating hall partition; possible southward drawing/family split | Join hall wall to courtyard with a short return. Keep the family split to avoid further shrinking the drawing room. |
+| Stair blocks drawing/courtyard doors | Move stair south/west, shorten courtyard to 3600 × 3300 mm, and provide 1032.5 mm clear passage behind the entire stair. Relocate drawing door to Y 3150. Eastern-jamb front-door hinge preserves the stair arrival field. |
+| Study/service lack side windows | Add 1200 mm study and 900 mm service east windows. Service high sill is provisional; equipment fit remains open. |
+| Wider garden doors | Increase nominal paired aperture from 1400 to 1800 mm. |
+| Some windows appear labelled B1 etc | Remove bay axes from presentation plans. B1–B4 were facade axes, not opening IDs. |
+
+Courtyard area reduces 14.40 → 11.88 m²; outer footprint does not grow. Study
+and service reservations stay 9.01 / 10.60 m² gross. Drawing loses a further
+0.77 m² against B3. The owning [architectural decision](../reference-house/ground-plan-resolution.md)
+records those costs, retained technical obligations and downstream daylight,
+elevation, roof and canonical-source reconciliation needs.
+
+`publication/specimens/plt03b4/` compares **B3 on page 1 / B4 on page 2** in
+B5 and A4; A2 contains B4 only. B3's four SVGs remain byte-identical through
+`plan-resolution-b3.ts`; the earlier released fixture and proofs also remain
+protected. Finished-PDF scale now uses room-label anchors rather than bay
+labels. Source/scene fingerprints, exact pages, embedded fonts and constant
+note size remain checked. The occupied-route test fails on B3 and on a door-only
+repair; it does not prove headroom along the stair or regulatory compliance.
+Owner physical review and token freeze remain OPEN.
+
+## Historical B3 incorporation record
+
 Parent: PLT #422 / #746 / #759. Revision packet: #889. Review medium was not
 stated. The owner's positive overall reaction is not physical acceptance;
 the specific defects reject PLT-03B.2 as a token-freeze candidate.

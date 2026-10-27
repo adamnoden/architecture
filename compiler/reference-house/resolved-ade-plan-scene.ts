@@ -26,7 +26,7 @@ export const createResolvedReferenceHouseAdePlanScene = (result: ReferenceHouseC
   })
   // Retain the proven paper notation, independently of newly selected openings.
   const y=origin.y+10800/scale+19,x=origin.x+12000/scale-3000/scale
-  result.derived.frontAxes.forEach((axis,i)=>{
+  if(source.court.value.placement === 'centred-in-shell') result.derived.frontAxes.forEach((axis,i)=>{
     const px=origin.x+axis/scale,py=origin.y+10800/scale
     scene.primitives.push({kind:'line',id:`front-axis-${i+1}`,a:{x:px,y:py+6},b:{x:px,y:py+8},role:'secondary'})
     scene.primitives.push({kind:'text',id:`front-axis-label-${i+1}`,x:px,y:py+11,value:`B${i+1}`,role:'note',anchor:'middle'})

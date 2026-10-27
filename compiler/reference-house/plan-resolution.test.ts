@@ -1,6 +1,10 @@
+import { mm } from '../units.js'
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { groundPlanResolution as choices, createResolvedReferenceHouseSource, auditCurrentStairReservation } from './plan-resolution.js'
+import { auditResolvedHallCirculation } from './hall-circulation.js'
+import { groundPlanResolution as b3Choices, createResolvedReferenceHouseSource as b3Source } from './plan-resolution-b3.js'
+import { referenceHouseCourtGeometry } from './plan-adapter.js'
 import { compileReferenceHouse } from './compile.js'
 import { createReferenceHouseSource } from './fixture.js'
 import { compileReferenceHouseSystem } from './system-compile.js'
@@ -31,27 +35,34 @@ test('all ground opening and connection obligations have explicit design disposi
   assert.ok(p.walls.some(w=>w.id.startsWith('G-GALLERY-SERVICE-B::resolution-')),'service enclosure T junctions must be split semantically')
 })
 
-test('real stair, floor landings and widened turning route fit the represented fabric on both levels',()=>{
+test('occupied door approaches and cross-hall route clear the entire stair on both floors',()=>{
   assert.equal(auditCurrentStairReservation().ordinaryThreeSidedUFitsSquare,false)
-  assert.equal(auditCurrentStairReservation().deficitMm,1000)
-  const s=choices.stair,envelope=417.5,partition=125
-  assert.equal(s.footprintWidth,(9-1)*s.going+s.landingDepth)
-  assert.equal(s.footprintDepth,2*s.clearWidth+s.wellGap)
-  assert.ok(s.landingDepth>=s.clearWidth)
-  assert.ok(s.x-50>source.partitions.frontHallWestX.value+partition/2)
-  assert.ok(s.y-50>envelope)
-  assert.ok(s.y+s.footprintDepth+50<3400-envelope)
-  // At the top landing, the east continuation is above the selected upper
-  // south-turn partition. Keep a full 1000 mm floor arrival beyond the well.
-  assert.ok(s.y+s.clearWidth+s.wellGap>3400-source.partitions.upperSouthLandingTurnDepth.value+partition/2)
-  assert.ok(s.x+s.footprintWidth+50+1000<source.partitions.galleryServiceX.value-partition/2)
-  const eastClear=source.partitions.galleryServiceX.value-partition/2-(7800+envelope)
-  const turnClear=(3400-envelope)-(3400-source.partitions.upperSouthLandingTurnDepth.value+partition/2)
-  assert.equal(eastClear,1070)
-  assert.equal(turnClear,1120)
-  // Entrance sweep's westernmost point stays east of the full stair envelope.
-  const door=choices.openings.find(o=>o.id==='G-FRONT-D01')!
-  assert.ok(door.centre-door.width/2>s.x+s.footprintWidth+50)
+  const audit=auditResolvedHallCirculation(source,choices)
+  assert.equal(audit.pass,true,JSON.stringify(audit.checks))
+  assert.equal(audit.clearCrossHallMm,1032.5)
+  assert.equal(audit.underFlightRouteUsed,false)
+  assert.equal(audit.stairHeadroomProved,false)
+  const previous=auditResolvedHallCirculation(b3Source(),b3Choices)
+  assert.equal(previous.pass,false)
+  assert.equal(previous.checks.crossHallWidth,false)
+  assert.equal(previous.checks.drawingApproach,false)
+  const wrongHand={...choices,openings:choices.openings.map(o=>o.id==='G-FRONT-D01'?{...o,hingeEnd:'low' as const}:o)}
+  assert.equal(auditResolvedHallCirculation(source,wrongHand).checks.entranceOpenLeafOutsideArrival,false)
+  // Moving just the doorway cannot repair the old 32.5 mm cross passage.
+  assert.equal(auditResolvedHallCirculation(b3Source(),{...b3Choices,openings:choices.openings}).pass,false)
+})
+
+test('courtyard reduction is explicit and service/study reservations retain their B3 area',()=>{
+  assert.deepEqual([result.derived.court.y0,result.derived.court.y1,result.derived.court.depth],[4100,7400,3300])
+  const previous=compileReferenceHouse(b3Source())
+  for(const id of ['G-STUDY-02','G-SVC-02'])assert.equal(result.derived.spaces.find(s=>s.id===id)!.area,previous.derived.spaces.find(s=>s.id===id)!.area)
+  const invalid=createResolvedReferenceHouseSource()
+  delete invalid.court.value.offsetY
+  assert.throws(()=>referenceHouseCourtGeometry(invalid),/requires a finite offset/)
+  invalid.court.value.offsetY=mm(10000)
+  assert.throws(()=>referenceHouseCourtGeometry(invalid),/strictly within shell/)
+  const centred=createReferenceHouseSource();centred.court.value.offsetY=mm(350)
+  assert.throws(()=>referenceHouseCourtGeometry(centred),/cannot carry an offset/)
 })
 
 for(const level of ['GROUND','FIRST'] as const)test(`${level}: two-scale stair and architectural symbols are deterministic`,()=>{
@@ -91,4 +102,17 @@ test('outward garden leaves clear the overall dimension at both scales',()=>{
   assert.ok(dim.kind==='line'&&leaf.kind==='line')
   if(dim.kind==='line'&&leaf.kind==='line')assert.ok(Math.min(leaf.a.y,leaf.b.y)-dim.a.y>=3.9)
  }
+})
+
+test('side daylight, wider garden doors and joined hall return are semantic choices; bay axes stay out of presentation',()=>{
+ const plan=createResolvedReferenceHouseAdePlan(result,source)
+ for(const id of ['G-STUDY-E-W01','G-SERVICE-E-W01'])assert.equal(plan.openings.find(o=>o.id===id)?.symbol?.kind,'window')
+ assert.equal(choices.openings.find(o=>o.id==='G-GARDEN-D01')?.width,1800)
+ const leaf=createResolvedReferenceHouseAdePlanScene(result,source,100).primitives.find(p=>p.id==='G-FRONT-D01-leaf-1')!
+ assert.ok(leaf.kind==='line' && Math.abs(leaf.a.x-(16+7850/100))<1e-8)
+ const ret=plan.walls.find(w=>w.id==='G-HALL-WEST-RETURN-B')!
+ const hall=plan.walls.filter(w=>w.provenance.sourceIds.includes('G-HALL-WEST-B'))
+ assert.ok(hall.some(w=>[w.fromNodeId,w.toNodeId].includes(ret.fromNodeId)))
+ assert.ok(!createResolvedReferenceHouseAdePlanScene(result,source,100).primitives.some(p=>p.id.startsWith('front-axis-')))
+ assert.ok(createResolvedReferenceHouseAdePlanScene(compileReferenceHouse(b3Source()),b3Source(),100).primitives.some(p=>p.id==='front-axis-label-1'))
 })

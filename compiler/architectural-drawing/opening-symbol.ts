@@ -33,7 +33,8 @@ export const openingSymbolToDrawingPrimitives = (plan: AdeArchitecturalPlan, ope
     const sign=opening.symbol.swingSide==='left'?1:-1
     const radius=width/opening.symbol.leaves
     for(let leaf=0;leaf<opening.symbol.leaves;leaf++){
-      const hinge=leaf===0?low:high,along=leaf===0?1:-1
+      const highHinge=opening.symbol.leaves===1?opening.symbol.hingeEnd==='high':leaf===1
+      const hinge=highHinge?high:low,along=highHinge?-1:1
       line(`leaf-${leaf+1}`,hinge,mid,hinge,mid+sign*radius)
       for(let step=0;step<16;step++){
         const t0=step*Math.PI/32,t1=(step+1)*Math.PI/32

@@ -1,4 +1,4 @@
-import type { SourceFact } from './model.js'
+import type { SourceFact, ReferenceHouseSource } from './model.js'
 import { createReferenceHouseSource } from './fixture.js'
 import { referenceHouseCourtGeometry } from './plan-adapter.js'
 import { createGroundFloorPublicationPlanSource } from './publication-plan-source.js'
@@ -51,12 +51,7 @@ export interface StructuralSpanOverlaySource {
       depth: SourceFact<Millimetres>
     }
     court: {
-      size: SourceFact<{
-        id: string
-        width: Millimetres
-        depth: Millimetres
-        placement: 'centred-in-shell'
-      }>
+      size: ReferenceHouseSource['court']
       extents: ControlledDerived<{
         x0: Millimetres
         x1: Millimetres
