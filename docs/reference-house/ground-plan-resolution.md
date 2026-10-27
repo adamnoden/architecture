@@ -1,13 +1,13 @@
 # Ground-floor coordination and stair resolution
 
 This is a provisional architectural successor to the deliberately incomplete
-C1 plan. The numeric choice register is
+earlier coordination plan. The numeric choice register is
 [`compiler/reference-house/plan-resolution.ts`](../../compiler/reference-house/plan-resolution.ts).
 Its source factory passes through the existing whole-house plan, structure,
 services, boundary and selected stair-geometry checks. Its explicit opening
 and wall choices are then adapted through the architectural drawing engine.
 
-The historical C1 fixture and released drawings remain recoverable. They do
+The historical coordination fixture and released drawings remain recoverable. They do
 not establish the missing decisions below. The current proposal changes real
 architecture; it is not a cosmetic completion of an old drawing. Physical
 acceptance, structural design, fire strategy and construction adequacy remain
@@ -30,11 +30,11 @@ relationships; an open-plan choice does not prove either.
 ## Service suite and circulation
 
 The study, service suite and kitchen are separate uses. Their shared planning
-edges were not all represented by physical walls in C1. Add the service suite's
+edges were not all represented by physical walls in the earlier source. Add the service suite's
 north and south enclosure walls; retain a doorway from the gallery. These
 walls are provisional service-free dry partitions, not loadbearing masonry.
 
-The suite continues to own utility, plant and WC geography from RH-06. This
+The suite continues to own utility, plant and WC geography from the service-topology study. This
 plan resolves its enclosure, not its internal sanitary/appliance layout. A
 plant replacement door is explicitly selected on the east wall. Its nominal
 aperture is not a certified clear replacement width.
@@ -60,7 +60,7 @@ longer appear as diamonds. Technical uncertainty about frames, seals, lintels,
 thresholds and performance remains, but does not require uncertainty about
 whether a room has a window or where its door belongs.
 
-The garden elevation follows RH-10's three room-owned axes: family window,
+The garden elevation follows the outer-elevation study's three room-owned axes: family window,
 central garden door, kitchen window. The courtyard receives paired doors on
 its north and south sides, two family/drawing-owned windows to the west and
 two gallery windows to the east. Internal drawing/hall, drawing/family,
@@ -126,7 +126,7 @@ the lighter interface outlines earn the needed distinction with fewer marks.
 
 The source factory and paired plans are the current provisional coordination
 candidate. They supersede the former stair reservation at this scope, while
-historical C1/DRW/ADE proof identities remain unchanged. Later elevations,
+historical source and drawing proof identities remain unchanged. Later elevations,
 sections, structural stair-opening coordination, room-fit checks and the DPL
 canonical-source delta check must consume this successor if it is adopted for
 release. The existing first-floor plan is a coordination companion, not a

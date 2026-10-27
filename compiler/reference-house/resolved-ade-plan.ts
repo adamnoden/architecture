@@ -9,6 +9,9 @@ import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseSource } from 
  * publication-only geometry into the frozen historical C1 source. */
 export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
   if (result.derived.shell.width !== 12000 || result.derived.shell.depth !== 10800 || result.derived.court.x0 !== 4200 || result.derived.court.y0 !== 3400) throw new Error('Ground-plan choices require architectural reconciliation after base geometry changes.')
+  if (source.partitions.frontHallWestX.value !== 3100 || source.partitions.galleryServiceX.value !== 9350 ||
+    source.partitions.upperSouthLandingTurnDepth.value !== 1600 || result.derived.stair.flightRun !== 2400 ||
+    result.derived.stair.flightRiseGroups.join('/') !== '9/9') throw new Error('Resolved plan requires its paired architectural source; do not apply choices to historical geometry.')
   const plan = createReferenceHouseAdePlan(result, source, level)
   plan.id = `RH-RESOLVED-${level}`
   const provenance = { authority: 'provisional' as const, precision: 'approximate' as const,

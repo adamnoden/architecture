@@ -8,6 +8,8 @@ export const createResolvedReferenceHouseAdePlanScene = (result: ReferenceHouseC
   const plan=createResolvedReferenceHouseAdePlan(result,source,level)
   const origin=scale===100?{x:16,y:20}:{x:90,y:155}
   const projection=createPlanPaperProjection({scaleDenominator:scale,modelBounds:{x:0,y:0,width:12000,height:10800},paperOrigin:origin})
+  const northDoorLeafPaperMm=Math.max(0,...plan.openings.filter(o=>o.hostWallId==='G-OUTER-NORTH'&&o.symbol?.kind==='door').map(o=>
+    o.width.kind==='approximate'&&o.symbol?.kind==='door'?o.width.value/o.symbol.leaves/scale:0))
   const scene=compileArchitecturalPlanScene(plan,{
     title:`Reference House ${level.toLowerCase()}-floor resolution — 1:${scale}`,
     profile:{id:`RESOLVED-${scale}`,output:scale===100?'BOOK':'WALL',scaleDenominator:scale},projection,
@@ -19,7 +21,7 @@ export const createResolvedReferenceHouseAdePlanScene = (result: ReferenceHouseC
       throw new Error(`Unresolved layer ${l.id}`)
     },
     abutments:{'RH-PART-DRY-01':['RH-ADE-ENVELOPE']},openingSide:()=> 'right',layerBoundaryOpacity:0.45,
-    dimensionOptions:{annotationSide:'right',offsetPaperMm:10},
+    dimensionOptions:{annotationSide:'right',offsetPaperMm:Math.max(10,northDoorLeafPaperMm+4)},
     labelLayout:(l)=>l.id.endsWith('court-size')?{dyPaperMm:4}:l.id.endsWith('court-label')?{dyPaperMm:-1.5}:['G-GAL-01-label','U-GAL-02-label'].includes(l.id)?{rotateDeg:-90}:{}
   })
   // Retain the proven paper notation, independently of newly selected openings.

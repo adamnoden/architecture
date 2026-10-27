@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { groundPlanResolution as choices, createResolvedReferenceHouseSource, auditCurrentStairReservation } from './plan-resolution.js'
+import { compileReferenceHouse } from './compile.js'
 import { createReferenceHouseSource } from './fixture.js'
 import { compileReferenceHouseSystem } from './system-compile.js'
 import { createResolvedReferenceHouseAdePlan } from './resolved-ade-plan.js'
@@ -72,4 +73,19 @@ test('an unknown aperture cannot acquire a window symbol and invalid stairs fail
   assert.ok(validateArchitecturalPlan(p).some(d=>d.code==='ADE-OPENING-SYMBOL'))
   p.stairs=[{...p.stairs![0],riserCount:17}]
   assert.ok(validateArchitecturalPlan(p).some(d=>d.code==='ADE-STAIR-GEOMETRY'))
+})
+
+test('successor cannot be drawn against stale historical source',()=>{
+ const old=createReferenceHouseSource()
+ assert.throws(()=>createResolvedReferenceHouseAdePlan(compileReferenceHouse(old),old),/paired architectural source/)
+})
+
+test('outward garden leaves clear the overall dimension at both scales',()=>{
+ for(const scale of [100,50] as const){
+  const scene=createResolvedReferenceHouseAdePlanScene(result,source,scale)
+  const dim=scene.primitives.find(p=>p.id==='GROUND-width-dimension-line')!
+  const leaf=scene.primitives.find(p=>p.id==='G-GARDEN-D01-leaf-1')!
+  assert.ok(dim.kind==='line'&&leaf.kind==='line')
+  if(dim.kind==='line'&&leaf.kind==='line')assert.ok(Math.min(leaf.a.y,leaf.b.y)-dim.a.y>=3.9)
+ }
 })

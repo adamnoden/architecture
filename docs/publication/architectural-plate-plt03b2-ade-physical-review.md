@@ -1,6 +1,11 @@
 <!-- nav-exclude: redirect -->
 # PLT-03B.2 — ADE ground-plan physical review
 
+**Next-review candidate superseded.** The owner's later 15-point feedback
+rejected this candidate for freeze. Use the [feedback resolution](architectural-plate-owner-feedback-resolution.md)
+and PLT-03B.3 revision for current review. The proof identities and earlier
+screen judgements below remain historical evidence; they are not acceptance.
+
 **Parents:** PLT #422 / PLT-03 #746 / PLT-03B #759.  
 **Starting main:** `a013de4`.  
 **Owner physical verdict:** `UNREVIEWED`. **Print tokens:** not frozen.
