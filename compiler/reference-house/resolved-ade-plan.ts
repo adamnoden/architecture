@@ -3,6 +3,7 @@ import { assertValidArchitecturalPlan } from '../architectural-drawing/validate.
 import { mm } from '../units.js'
 import { createReferenceHouseAdePlan } from './ade-plan.js'
 import { groundPlanResolution as currentChoice, type PlanOpeningChoice } from './plan-resolution.js'
+import {groundPlanResolution as b4Choice} from './plan-resolution-b4.js'
 import { groundPlanResolution as previousChoice } from './plan-resolution-b3.js'
 import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSource } from './model.js'
 
@@ -10,7 +11,8 @@ import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseCoordinationSo
  * publication-only geometry into the frozen historical C1 source. */
 export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseCoordinationSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
   const legacy = source.court.value.placement === 'centred-in-shell'
-  const choice = legacy ? previousChoice : currentChoice
+  const revision5=source.spaces.some(s=>s.id==='G-WC-01')
+  const choice = legacy ? previousChoice : revision5 ? currentChoice : b4Choice
   if (result.derived.shell.width !== 12000 || result.derived.shell.depth !== 10800 || result.derived.court.x0 !== 4200 || result.derived.court.y0 !== (legacy ? 3400 : 4100)) throw new Error('Ground-plan choices require architectural reconciliation after base geometry changes.')
   if (source.partitions.frontHallWestX.value !== 3100 || source.partitions.galleryServiceX.value !== 9350 ||
     source.partitions.upperSouthLandingTurnDepth.value !== 1600 || result.derived.stair.flightRun !== 2400 ||
@@ -71,7 +73,11 @@ export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompil
   for (const adj of plan.adjacencies) if (!resolved.has(adj.id)) throw new Error(`Unresolved connectivity obligation ${adj.id}`)
   for (const o of source.qualitativeOpeningRelationships.filter((o)=>o.levelId==='GROUND')) if (!resolved.has(o.id)) throw new Error(`Unresolved opening relationship ${o.id}`)
   plan.adjacencies = [] // Each obligation is now resolved upstream to a doorway or open connection.
-  plan.labels = plan.labels.map((l)=>l.id==='G-SVC-02-label'?{...l,text:'Service suite',anchor:{x:mm(10550),y:mm(4300)}}:l.id==='G-STUDY-02-label'?{...l,anchor:{x:mm(10675),y:mm(2500)}}:l.id==='G-HALL-02-label'?{...l,text:'Hall / stair',anchor:{x:mm(7900),y:mm(1400)}}:l)
+  plan.labels = plan.labels.map((l)=>l.id==='G-SVC-02-label'?{...l,text:'Service suite',anchor:{x:mm(10550),y:mm(4300)}}:l.id==='G-STUDY-02-label'?{...l,anchor:revision5?{x:mm(2300),y:mm(1000)}:{x:mm(10675),y:mm(2500)}}:l.id==='G-HALL-02-label'?{...l,text:'Hall / stair',anchor:{x:mm(7900),y:mm(1400)}}:l)
+  if(revision5){
+    plan.labels=plan.labels.map(l=>l.id==='G-WC-01-label'?{...l,anchor:{x:mm(10250),y:mm(1850)}}:l.id==='G-CLOAK-01-label'?{...l,text:'Cloakroom',anchor:{x:mm(10350),y:mm(500)}}:l)
+    plan.fittings=Object.entries({desk:currentChoice.roomFit.study.desk,storage:currentChoice.roomFit.cloak.storage,wc:currentChoice.roomFit.wc.pan,basin:currentChoice.roomFit.wc.basin}).map(([role,f])=>({kind:'fitting',id:`RHPR-${role}`,role:role as 'desk'|'storage'|'wc'|'basin',origin:{x:mm(f.x),y:mm(f.y)},width:mm(f.width),depth:mm(f.depth),provenance}))
+  }
   plan.labels = plan.labels.filter((l)=>l.id!=='GROUND-stair-note')
   assertValidArchitecturalPlan(plan)
   return plan

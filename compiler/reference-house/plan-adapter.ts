@@ -59,6 +59,8 @@ export const referenceHousePlanLines = (source: ReferenceHouseCoordinationSource
     { id: 'COURT_EAST', coordinate: court.x1, provisional: false },
     { id: 'COURT_SOUTH', coordinate: court.y0, provisional: false },
     { id: 'COURT_NORTH', coordinate: court.y1, provisional: false },
+    ...(source.partitions.groundStudyNorthY ? [{id:'STUDY_NORTH',coordinate:source.partitions.groundStudyNorthY.value,provisional:true}] : []),
+    ...(source.partitions.groundGuestSplitY ? [{id:'GUEST_SPLIT',coordinate:source.partitions.groundGuestSplitY.value,provisional:true}] : []),
     ...(source.partitions.serviceSouthY ? [{ id: 'SERVICE_SOUTH', coordinate: source.partitions.serviceSouthY.value, provisional: true }] : []),
     {
       id: 'WEST_ROOM_SPLIT',

@@ -182,6 +182,7 @@ export const validateArchitecturalPlan = (plan: AdeArchitecturalPlan): AdeValida
     }
   }
 
+  for(const f of plan.fittings ?? [])if(!finitePoint(f.origin)||!Number.isFinite(f.width)||!Number.isFinite(f.depth)||f.width<=0||f.depth<=0||!['wc','basin','storage','desk'].includes(f.role))diagnostics.push({code:'ADE-FITTING-GEOMETRY',entityId:f.id,message:'Fitting requires a supported role and positive finite envelope.'})
   for (const opening of plan.openings) {
     const host = walls.get(opening.hostWallId)
     if (!host) diagnostics.push({ code: 'ADE-OPENING-HOST', entityId: opening.id, message: `Opening references missing physical host wall ${opening.hostWallId}.` })

@@ -1,7 +1,15 @@
 <!-- nav-exclude: redirect -->
 # Ground-plan feedback resolution
 
-**Current successor: B4 / #892.** The image-7/image-8 follow-up rejects B3's
+**Current successor: B5 / #903.** Owner selects option 3 with a south-west
+study, open hall/family connection and separate eastern guest WC / walk-in
+cloakroom. B4 is retained for comparison. The new semantic room programme,
+service ownership and schematic fitting envelopes are documented in the
+[architectural decision](../reference-house/ground-plan-resolution.md).
+B5/A4 paper comparisons show B4 on page 1 and the revision on page 2; A2 shows
+the revision only. No physical acceptance or token freeze is earned.
+
+**Historical B4 incorporation: #892.** The image-7/image-8 follow-up rejects B3's
 hall/drawing junction and door approaches. The original 15-point record below
 is retained as history; its stair-box check did not establish circulation.
 

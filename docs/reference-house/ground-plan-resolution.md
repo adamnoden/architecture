@@ -13,6 +13,49 @@ architecture; it is not a cosmetic completion of an old drawing. Physical
 acceptance, structural design, fire strategy and construction adequacy remain
 outside this coordination decision.
 
+## Current room programme
+
+The owner selects an open connection from entrance hall to family room. Remove
+the former drawing/family partition and the upper part of the drawing/hall
+partition. Enclose the south-west corner as a compact study, with its new north
+wall at Y 2550 mm and a 900 mm nominal door into the family/arrival field.
+The study has approximately 2620 × 2070 mm clear at the represented walls,
+before finishes; a 1400 × 700 mm desk and a 900 mm chair envelope are checked.
+It retains the existing front window. There is no separate drawing room in
+this programme. The study's door opens inward, clear of the chair envelope.
+
+Split the former eastern study at Y 1650 mm. The front room becomes a walk-in
+cloakroom with a 600 mm hanging zone along its east wall, a 1570 mm clear aisle
+beside it and approximately 1170 mm clear room depth. It retains the front
+window. The northern room becomes the guest WC, beside the service suite, with
+its own inward-opening 800 mm nominal door. The cloakroom has a separate 800 mm
+door from the hall/gallery; neither room is reached through the other.
+
+The WC's represented clear footprint is 2170 × 1625 mm. A provisional 150 mm
+accessible service lining on the suite side leaves a 750+ mm working field
+in front of the selected 700 mm pan envelope; the basin is 400 × 400 mm.
+The former study's east window moves north and becomes a 900 mm high-sill WC
+window. The closet keeps the front sash. These are planning envelopes, not
+selected products, certified doorset clear widths or an accessibility verdict.
+
+Guest WC water, foul and extract obligations now belong to this room in the
+service topology. The service suite remains utility/plant geography; do not
+count a second unpositioned WC inside it. The adjacent removable lining is the
+provisional route to the suite, without burial in permanent masonry. Actual
+falls, rodding/isolation access, ventilation sizing, fire/acoustics and the
+suite's equipment layout remain technical design obligations. The topology
+check proves ownership/connectivity, not those physical capacities.
+
+The courtyard, stair, front facade axes, overall shell and upper-floor rooms
+stay at the preceding coordination positions. The 1032.5 mm passage behind the
+stair is preserved; the study enclosure stops short of obstructing its west
+connection. Semantic room reservations close exactly without overlaps. A
+small schematic fitting capability shows the WC, basin, desk and hanging zone
+from authored model envelopes; it is not decorative furnished imagery.
+
+The following earlier decisions remain applicable except where this room
+programme explicitly supersedes the former drawing room and eastern study.
+
 ## Rear living rooms
 
 Family, garden dining and kitchen become three occupied zones of one open-plan

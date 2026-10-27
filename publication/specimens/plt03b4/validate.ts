@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto'
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { getDocumentProxy } from 'unpdf'
-import {createResolvedReferenceHouseSource,groundPlanResolution} from '../../../compiler/reference-house/plan-resolution.js'
+import {createResolvedReferenceHouseSource,groundPlanResolution} from '../../../compiler/reference-house/plan-resolution-b4.js'
 import {compileReferenceHouseSystem} from '../../../compiler/reference-house/system-compile.js'
 import {createResolvedReferenceHouseAdePlanScene} from '../../../compiler/reference-house/resolved-ade-plan-scene.js'
 

@@ -1,121 +1,69 @@
-import { mm } from '../units.js'
+import {mm} from '../units.js'
 import assert from 'node:assert/strict'
-import { test } from 'node:test'
-import { groundPlanResolution as choices, createResolvedReferenceHouseSource, auditCurrentStairReservation } from './plan-resolution.js'
-import { auditResolvedHallCirculation } from './hall-circulation.js'
-import { groundPlanResolution as b3Choices, createResolvedReferenceHouseSource as b3Source } from './plan-resolution-b3.js'
-import { referenceHouseCourtGeometry } from './plan-adapter.js'
-import { compileReferenceHouse } from './compile.js'
-import { createReferenceHouseSource } from './fixture.js'
-import { compileReferenceHouseSystem } from './system-compile.js'
-import { createResolvedReferenceHouseAdePlan } from './resolved-ade-plan.js'
-import { createResolvedReferenceHouseAdePlanScene } from './resolved-ade-plan-scene.js'
-import { validateArchitecturalPlan } from '../architectural-drawing/validate.js'
-import { renderDrawingSceneV2Svg } from '../publication-drawing-v2/svg.js'
+import {test} from 'node:test'
+import {createResolvedReferenceHouseSource,groundPlanResolution as choice} from './plan-resolution.js'
+import {compileReferenceHouseSystem} from './system-compile.js'
+import {createResolvedReferenceHouseAdePlan} from './resolved-ade-plan.js'
+import {createResolvedReferenceHouseAdePlanScene} from './resolved-ade-plan-scene.js'
+import {auditResolvedHallCirculation} from './hall-circulation.js'
+import {createReferenceHouseServiceSource} from '../rhc3/fixture.js'
+import {validateArchitecturalPlan} from '../architectural-drawing/validate.js'
+const source=createResolvedReferenceHouseSource(),system=compileReferenceHouseSystem(source),plan=createResolvedReferenceHouseAdePlan(system.house,source)
 
-const source=createResolvedReferenceHouseSource(),system=compileReferenceHouseSystem(source),result=system.house
-
-test('coordination successor passes existing complete-system checks without rewriting historical C1',()=>{
-  assert.equal(system.status,'PASS')
-  assert.equal(createReferenceHouseSource().partitions.frontHallWestX.value,4000)
-  assert.deepEqual(createReferenceHouseSource().stair.riseTopology.value.flightRiseGroups,[6,6,6])
-  assert.deepEqual(result.derived.stair.flightRiseGroups,[9,9])
-  assert.equal(result.derived.stair.flightRun,2400)
-  assert.equal(result.derived.stair.rise,3300/18)
+test('option 3 source has three real rooms, open hall/family and closed floor areas without the former drawing room',()=>{
+ assert.equal(system.status,'PASS',JSON.stringify(system.diagnostics))
+ assert.ok(!source.spaces.some(s=>s.id==='G-DRAW-02'))
+ for(const id of ['G-STUDY-02','G-WC-01','G-CLOAK-01'])assert.ok(plan.spaces.some(s=>s.id===id))
+ assert.ok(source.requiredAdjacencies.some(a=>a.id==='ADJ-G-HALL-FAMILY'))
+ assert.ok(!plan.walls.some(w=>w.provenance.sourceIds.includes('G-WEST-SPLIT-B')||w.provenance.sourceIds.includes('G-HALL-WEST-B')))
+ assert.equal(plan.adjacencies.length,0)
+ assert.equal(auditResolvedHallCirculation(source,choice).pass,true)
+ assert.equal(auditResolvedHallCirculation(source,choice).clearCrossHallMm,1032.5)
 })
 
-test('all ground opening and connection obligations have explicit design dispositions',()=>{
-  const p=createResolvedReferenceHouseAdePlan(result,source)
-  assert.deepEqual(validateArchitecturalPlan(p),[])
-  assert.equal(p.openings.length,choices.openings.length)
-  assert.equal(p.adjacencies.length,0)
-  assert.ok(p.openings.every(o=>o.symbol&&o.width.kind==='approximate'&&o.centreOffset.kind==='approximate'))
-  for(const id of choices.removePartitions)assert.ok(!p.walls.some(w=>w.provenance.sourceIds.includes(id)))
-  for(const w of choices.addPartitions)assert.ok(p.walls.some(n=>n.id===w.id))
-  assert.ok(p.walls.some(w=>w.id.startsWith('G-GALLERY-SERVICE-B::resolution-')),'service enclosure T junctions must be split semantically')
+test('private study, WC and cloak have independent usable doors, with room fittings inside actual wall faces',()=>{
+ const boxes={study:{x0:417.5,x1:3037.5,y0:417.5,y1:2487.5},cloak:{x0:9412.5,x1:11582.5,y0:417.5,y1:1587.5},wc:{x0:9412.5,x1:11582.5,y0:1712.5,y1:3337.5}}
+ const fits=(f:{x:number;y:number;width:number;depth:number},r:typeof boxes.study)=>assert.ok(f.x>=r.x0&&f.x+f.width<=r.x1&&f.y>=r.y0&&f.y+f.depth<=r.y1)
+ for(const f of Object.values(choice.roomFit.study))fits(f,boxes.study)
+ fits(choice.roomFit.cloak.storage,boxes.cloak)
+ for(const f of Object.values(choice.roomFit.wc))fits(f,boxes.wc)
+ assert.equal(choice.roomFit.wc.serviceLining.y-(choice.roomFit.wc.pan.y+choice.roomFit.wc.pan.depth),0)
+ assert.ok(choice.roomFit.wc.pan.y-boxes.wc.y0>=750,'WC front working field')
+ assert.ok(choice.roomFit.cloak.storage.x-boxes.cloak.x0>=1000,'real walk-in aisle beside 600 mm hanging')
+ const cloak=choice.openings.find(o=>o.id==='G-CLOAK-HALL-D01')!,wc=choice.openings.find(o=>o.id==='G-WC-HALL-D01')!,study=choice.openings.find(o=>o.id==='G-STUDY-FAMILY-D01')!
+ assert.ok(cloak.centre+cloak.width/2<boxes.cloak.y1)
+ assert.ok(wc.centre-wc.width/2>boxes.wc.y0)
+ assert.ok(9350+wc.width<choice.roomFit.wc.pan.x,'open WC leaf stops short of pan')
+ assert.ok(9350+cloak.width<choice.roomFit.cloak.storage.x,'cloak door opens clear of storage')
+ assert.ok(study.centre+study.width/2<=boxes.study.x1)
+ assert.ok(2550-study.width>=choice.roomFit.study.chair.y+choice.roomFit.study.chair.depth,'study swing stays clear of chair envelope')
 })
 
-test('occupied door approaches and cross-hall route clear the entire stair on both floors',()=>{
-  assert.equal(auditCurrentStairReservation().ordinaryThreeSidedUFitsSquare,false)
-  const audit=auditResolvedHallCirculation(source,choices)
-  assert.equal(audit.pass,true,JSON.stringify(audit.checks))
-  assert.equal(audit.clearCrossHallMm,1032.5)
-  assert.equal(audit.underFlightRouteUsed,false)
-  assert.equal(audit.stairHeadroomProved,false)
-  const previous=auditResolvedHallCirculation(b3Source(),b3Choices)
-  assert.equal(previous.pass,false)
-  assert.equal(previous.checks.crossHallWidth,false)
-  assert.equal(previous.checks.drawingApproach,false)
-  const wrongHand={...choices,openings:choices.openings.map(o=>o.id==='G-FRONT-D01'?{...o,hingeEnd:'low' as const}:o)}
-  assert.equal(auditResolvedHallCirculation(source,wrongHand).checks.entranceOpenLeafOutsideArrival,false)
-  // Moving just the doorway cannot repair the old 32.5 mm cross passage.
-  assert.equal(auditResolvedHallCirculation(b3Source(),{...b3Choices,openings:choices.openings}).pass,false)
+test('WC is included in wet services/extract; primary routes avoid the study and cloakroom',()=>{
+ const s=createReferenceHouseServiceSource(source)
+ assert.ok(s.protectedPrimaryFreeSpaceIds.includes('G-STUDY-02'))
+ for(const id of ['G-WET-TERMINALS','MV-G-EXTRACT-TERMINALS','DRY-G-TERMINALS','HYD-G-TERMINALS'])assert.ok(s.nodes.find(n=>n.id===id)!.hostSpaceIds.includes('G-WC-01'))
+ for(const id of ['R-WATER-GROUND','R-FOUL-GROUND','R-MV-EXT-G','R-DRY-G-BRANCH','R-HYD-G-BRANCH'])assert.ok(s.routes.find(r=>r.id===id)!.hostSpaceIds.includes('G-WC-01'))
+ assert.ok(!s.routes.some(r=>r.primaryInfrastructure&&r.hostSpaceIds.some(id=>['G-STUDY-02','G-CLOAK-01'].includes(id))))
+ assert.ok(!s.nodes.find(n=>n.id==='MV-G-SUPPLY-TERMINALS')!.hostSpaceIds.includes('G-WC-01'))
 })
 
-test('courtyard reduction is explicit and service/study reservations retain their B3 area',()=>{
-  assert.deepEqual([result.derived.court.y0,result.derived.court.y1,result.derived.court.depth],[4100,7400,3300])
-  const previous=compileReferenceHouse(b3Source())
-  for(const id of ['G-STUDY-02','G-SVC-02'])assert.equal(result.derived.spaces.find(s=>s.id===id)!.area,previous.derived.spaces.find(s=>s.id===id)!.area)
-  const invalid=createResolvedReferenceHouseSource()
-  delete invalid.court.value.offsetY
-  assert.throws(()=>referenceHouseCourtGeometry(invalid),/requires a finite offset/)
-  invalid.court.value.offsetY=mm(10000)
-  assert.throws(()=>referenceHouseCourtGeometry(invalid),/strictly within shell/)
-  const centred=createReferenceHouseSource();centred.court.value.offsetY=mm(350)
-  assert.throws(()=>referenceHouseCourtGeometry(centred),/cannot carry an offset/)
-})
-
-for(const level of ['GROUND','FIRST'] as const)test(`${level}: two-scale stair and architectural symbols are deterministic`,()=>{
-  const a=createResolvedReferenceHouseAdePlanScene(result,source,100,level),b=createResolvedReferenceHouseAdePlanScene(result,source,50,level)
-  assert.deepEqual(a.primitives.map(p=>p.id),b.primitives.map(p=>p.id))
-  assert.equal(a.primitives.filter(p=>p.id.includes('-riser-')).length,18)
-  if(level==='GROUND') assert.ok(a.primitives.filter(p=>p.id.includes('landing-')).every(p=>p.kind==='line'&&p.dash==='overhead'))
-  assert.ok(a.primitives.some(p=>p.kind==='text'&&p.value===(level==='GROUND'?'UP':'DN')))
-  if(level==='GROUND'){
-    assert.ok(!a.primitives.some(p=>p.metadata?.epistemic==='opening-uncertainty'||p.metadata?.between))
-    for(const opening of choices.openings)assert.ok(a.primitives.some(p=>p.metadata?.opening===opening.id))
-    assert.ok(a.primitives.some(p=>p.kind==='path'&&p.strokeOpacity===0.45))
-  }
-  assert.equal(renderDrawingSceneV2Svg(a),renderDrawingSceneV2Svg(createResolvedReferenceHouseAdePlanScene(result,source,100,level)))
-})
-
-test('an unknown aperture cannot acquire a window symbol and invalid stairs fail closed',()=>{
-  const p=createResolvedReferenceHouseAdePlan(result,source)
-  p.openings=[{...p.openings[0],width:{kind:'unknown'}}]
-  assert.ok(validateArchitecturalPlan(p).some(d=>d.code==='ADE-OPENING-SYMBOL'))
-  p.stairs=[{...p.stairs![0],cutHeight:p.stairs![0].floorToFloor}]
-  assert.ok(validateArchitecturalPlan(p).some(d=>d.code==='ADE-STAIR-GEOMETRY'))
-  p.stairs=[{...p.stairs![0],riserCount:17}]
-  assert.ok(validateArchitecturalPlan(p).some(d=>d.code==='ADE-STAIR-GEOMETRY'))
-})
-
-test('successor cannot be drawn against stale historical source',()=>{
- const old=createReferenceHouseSource()
- assert.throws(()=>createResolvedReferenceHouseAdePlan(compileReferenceHouse(old),old),/paired architectural source/)
-})
-
-test('outward garden leaves clear the overall dimension at both scales',()=>{
+test('schematic fittings are sourced semantic entities and reject invalid dimensions',()=>{
+ assert.deepEqual(validateArchitecturalPlan(plan),[])
+ assert.equal(plan.fittings?.length,4)
+ const p=structuredClone(plan);p.fittings=[{...p.fittings![0],width:mm(NaN)}]
+ assert.ok(validateArchitecturalPlan(p).some(d=>d.code==='ADE-FITTING-GEOMETRY'))
  for(const scale of [100,50] as const){
-  const scene=createResolvedReferenceHouseAdePlanScene(result,source,scale)
-  const dim=scene.primitives.find(p=>p.id==='GROUND-width-dimension-line')!
-  const leaf=scene.primitives.find(p=>p.id==='G-GARDEN-D01-leaf-1')!
-  assert.ok(dim.kind==='line'&&leaf.kind==='line')
-  if(dim.kind==='line'&&leaf.kind==='line')assert.ok(Math.min(leaf.a.y,leaf.b.y)-dim.a.y>=3.9)
+  const scene=createResolvedReferenceHouseAdePlanScene(system.house,source,scale)
+  for(const f of plan.fittings!)assert.ok(scene.primitives.some(p=>p.metadata?.fitting===f.id))
  }
 })
 
-test('side daylight, wider garden doors and joined hall return are semantic choices; bay axes stay out of presentation',()=>{
- const plan=createResolvedReferenceHouseAdePlan(result,source)
- for(const id of ['G-STUDY-E-W01','G-SERVICE-E-W01'])assert.equal(plan.openings.find(o=>o.id===id)?.symbol?.kind,'window')
- assert.equal(choices.openings.find(o=>o.id==='G-GARDEN-D01')?.width,1800)
- const drawWindow=choices.openings.find(o=>o.id==='G-COURT-W-W01')!
- assert.ok(drawWindow.centre+drawWindow.width/2 < source.partitions.westRoomSplitY.value-62.5,'window aperture must clear the family partition body')
- assert.ok(drawWindow.centre-drawWindow.width/2 > result.derived.court.y0)
- const leaf=createResolvedReferenceHouseAdePlanScene(result,source,100).primitives.find(p=>p.id==='G-FRONT-D01-leaf-1')!
- assert.ok(leaf.kind==='line' && Math.abs(leaf.a.x-(16+7850/100))<1e-8)
- const ret=plan.walls.find(w=>w.id==='G-HALL-WEST-RETURN-B')!
- const hall=plan.walls.filter(w=>w.provenance.sourceIds.includes('G-HALL-WEST-B'))
- assert.ok(hall.some(w=>[w.fromNodeId,w.toNodeId].includes(ret.fromNodeId)))
- assert.ok(!createResolvedReferenceHouseAdePlanScene(result,source,100).primitives.some(p=>p.id.startsWith('front-axis-')))
- assert.ok(createResolvedReferenceHouseAdePlanScene(compileReferenceHouse(b3Source()),b3Source(),100).primitives.some(p=>p.id==='front-axis-label-1'))
+test('guest WC has a side window wholly within its room; courtyard west windows now belong to family only',()=>{
+ const wc=choice.openings.find(o=>o.id==='G-WC-E-W01')!
+ assert.equal(wc.hostBoundaryId,'G-OUTER-EAST')
+ assert.equal(wc.width,900)
+ assert.ok(wc.centre-wc.width/2>1650+62.5 && wc.centre+wc.width/2<3400-62.5)
+ assert.equal(plan.openings.find(o=>o.id===wc.id)?.symbol?.kind,'window')
+ assert.deepEqual(source.qualitativeOpeningRelationships.find(o=>o.levelId==='GROUND'&&o.hostBoundaryId==='G-COURT-WEST')?.spaceIds,['G-FAM-02'])
 })

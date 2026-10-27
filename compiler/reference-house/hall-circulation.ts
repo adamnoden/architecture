@@ -1,6 +1,6 @@
 import type { ReferenceHouseCoordinationSource } from './model.js'
 import { referenceHouseCourtGeometry } from './plan-adapter.js'
-import type { groundPlanResolution } from './plan-resolution.js'
+import type { groundPlanResolution } from './plan-resolution-b4.js'
 
 /** Bounded occupied-space check, not a navigation or compliance solver. The
  * chosen routes pass outside the FULL stair envelope: no under-flight
@@ -14,13 +14,14 @@ export const auditResolvedHallCirculation = (source: ReferenceHouseCoordinationS
     y0:stair.y1, y1:court.y0-envelope}
   const arrival = {x0:stair.x1, x1:stair.x1+routeWidth, y0:s.y, y1:crossHall.y0+routeWidth}
   const drawing = choice.openings.find(o=>o.id==='G-DRAW-HALL-D01')!
+  const study=choice.openings.find(o=>o.id==='G-STUDY-FAMILY-D01')
   const courtyard = choice.openings.find(o=>o.id==='G-COURT-SOUTH-O01')!
   const entrance = choice.openings.find(o=>o.id==='G-FRONT-D01')!
   const checks = {
     stairInsideHall: stair.x0 >= crossHall.x0 && stair.y0 >= envelope && stair.y1 <= crossHall.y1,
     crossHallWidth: crossHall.y1-crossHall.y0 >= routeWidth,
     // 900 mm nominal door receives a 1000 mm wide occupied approach field.
-    drawingApproach: drawing.centre-routeWidth/2 >= crossHall.y0 && drawing.centre+routeWidth/2 <= crossHall.y1,
+    ...(drawing?{drawingApproach: drawing.centre-routeWidth/2 >= crossHall.y0 && drawing.centre+routeWidth/2 <= crossHall.y1}:{studyApproach:!!study && study.centre-routeWidth/2>=envelope && study.centre+routeWidth/2<=source.partitions.frontHallWestX.value-halfPartition && source.partitions.groundStudyNorthY!.value+halfPartition+routeWidth<=court.y0}),
     courtyardApproach: courtyard.centre-courtyard.width/2 >= crossHall.x0 && courtyard.centre+courtyard.width/2 <= crossHall.x1,
     arrivalOutsideStair: arrival.x1 <= court.x1-halfPartition,
     entranceOpenLeafOutsideArrival: 'hingeEnd' in entrance && entrance.hingeEnd==='high' && entrance.centre+entrance.width/2 >= arrival.x1,

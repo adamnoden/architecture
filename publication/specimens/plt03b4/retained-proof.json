@@ -1,0 +1,23 @@
+{
+  "authority": "HISTORICAL_COMPARISON_ONLY_NOT_PHYSICAL_ACCEPTANCE",
+  "validatedHead": "2023ffa3d6535225c1fa19a45d02f27f7e79a1cc",
+  "files": {
+    "ground-100.svg": {
+      "sha256": "9797ca1316c34ea243888f6dded21f0751daccc78a753dea0908284f4d7c0b15",
+      "sceneSha256": "a01ef12f0ec750821c5de2c472d09a12d003bab5553159d9361a7f704361d277"
+    },
+    "ground-50.svg": {
+      "sha256": "75e686d1711bfbe29cc9e5e89c5c2e83f1dbe7224346fb8eb88314ecc8dc1f7d",
+      "sceneSha256": "f4dd5a243d6597d0982b7ffc88944c23d2ccb61ab4185b3a2ce5de781567b4ec"
+    },
+    "first-100.svg": {
+      "sha256": "224950ae12de788ab52ebee1826949aefe28c979ffdd127926f4697eb04333af",
+      "sceneSha256": "65c65fd33beda41b523b2dfd00de4f8b5e633042aaaa95a604df1ae4b787d4a3"
+    },
+    "first-50.svg": {
+      "sha256": "fdb4a33f366ad9679922ac88dcde3313352f7cabec511092a2b7aa588cb829b9",
+      "sceneSha256": "d0bf795898a4bf6bff52f01c3bbaa13089baeb5ea0d450fce7e51f101ad7d813"
+    }
+  },
+  "sourceSha256": "93333d189153df27bc35a67a1822b60012ad226afbc4267c4cde9d953f3cb3f4"
+}
