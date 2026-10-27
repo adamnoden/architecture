@@ -2,7 +2,7 @@
 
 **State:** framed umbrella; requirements remain evidence-dependent  
 **Tracking:** [#854 — DEL evidence-led delivery requirements and responsibility coordination](https://github.com/adamnoden/architecture/issues/854)  
-**Starting authority:** `docs/delivery/README.md`, `project/maturity.ts`, the RH-11 validation execution register and the owning DPL, HFI and OCG handoffs
+**Starting authority:** `docs/delivery/README.md`, `project/maturity.ts`, the EPR/PHY validation execution register and the owning DPL, HFI and OCG handoffs
 
 ## Question and scope
 
@@ -20,11 +20,12 @@ The umbrella can close when the declared commission/stage scope has a coherent r
 
 ## Dependencies and boundaries
 
-- RH-11 professional review and P03/P04 physical evidence remain with their existing execution owners.
+- EPR owns competent professional review; RH-11 remains the current Reference House review gate under EPR.
+- PHY-03/PHY-04 own the priority physical-validation evidence routes (historical aliases P03/P04).
 - DPL owns jurisdiction, site facts, deployment findings and site interfaces.
 - HFI and OCG handoffs are inherited obligations, not reopened programmes.
 - `docs/development/manufacturing-strategy.md` remains a strategy; concrete delivery decisions must be tied to an actual assembly and evidence need.
 - No external contact, commissioning or spend is authorised by this umbrella.
-- P01 remains held/optional research under [#856](https://github.com/adamnoden/architecture/issues/856); P02 remains held under [#857](https://github.com/adamnoden/architecture/issues/857). Their existing codes and validation-register reopening triggers are preserved.
+- PHY-01 remains held/optional research under [#856](https://github.com/adamnoden/architecture/issues/856); PHY-02 remains held under [#857](https://github.com/adamnoden/architecture/issues/857). Their historical P01/P02 identities and validation-register reopening triggers are preserved.
 
 Keep programme history here and requirements in `docs/delivery/`. Present project-wide state remains owned by `STATUS.md` and the typed maturity registry.
