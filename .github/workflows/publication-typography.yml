@@ -6,12 +6,18 @@ on:
     paths:
       - '.github/workflows/publication-typography.yml'
       - 'publication/**'
+      # Specimen harnesses do not feed the production book. Their own proofs remain.
+      - '!publication/specimens/**'
       - 'docs/manuscript/**'
       - 'docs/patterns/**'
       - 'docs/reference-house/**'
       - 'README.md'
       - 'package.json'
       - 'package-lock.json'
+
+concurrency:
+  group: publication-typography-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   proof:
@@ -26,13 +32,22 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - name: Install locked dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Install PDF inspectors
+      - name: Install locked dependencies and PDF inspectors
         run: |
-          sudo apt-get update
-          sudo apt-get install -y poppler-utils qpdf
+          # Independent installs; wait for both and preserve either failure.
+          (
+            sudo apt-get update
+            sudo apt-get install -y poppler-utils qpdf
+          ) &
+          pdf_inspectors_pid=$!
+          dependencies_status=0
+          npm ci --no-audit --no-fund || dependencies_status=$?
+          inspectors_status=0
+          wait "$pdf_inspectors_pid" || inspectors_status=$?
+          if (( dependencies_status != 0 || inspectors_status != 0 )); then
+            echo "Dependency install status: $dependencies_status; PDF inspectors status: $inspectors_status"
+            exit 1
+          fi
 
       - name: Build paired production typography proof
         run: npx tsx publication/scripts/build-typography-proof.ts
