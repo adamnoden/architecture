@@ -67,7 +67,7 @@ export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'
   for(const level of ['GROUND','FIRST'] as const){const ffl=level==='GROUND'?0:3450;const ops=openings(level).filter(o=>o.wall===(view==='FRONT'?'outer-south':'outer-north'))
    for(const o of ops){const sill=o.kind==='door'?ffl:ffl+750,head=ffl+2850;rect(`${level}-${o.id}`,{x:o.centre-o.width/2,y:sill,width:o.width,depth:head-sill});line(`${level}-${o.id}-mid`,o.centre,sill,o.centre,head);if(o.kind==='window'){line(`${level}-${o.id}-meeting`,o.centre-o.width/2,sill+(head-sill)/2,o.centre+o.width/2,sill+(head-sill)/2)}}
   }
-  for(const [i,c]of roof.dormerAxes.entries()){const half=roof.dormerWidth/2;const access=view==='REAR'&&i===2;rect('dormer-face-'+i,{x:c-half,y:access?6900:roof.dormerSill,width:1100,depth:access?2400:1300});line(`dormer-gable-a-${i}`,c-half-100,9300,c,9850,'profile');line(`dormer-gable-b-${i}`,c,9850,c+half+100,9300,'profile');line(`dormer-sash-${i}`,c,access?6900:8000,c,9300);if(access)text('rear-access-note',8100,10150,'Roof access — protection unresolved')}
+  for(const [i,c]of roof.dormerAxes.entries()){const half=roof.dormerWidth/2;const access=view==='REAR'&&i===2;rect('dormer-face-'+i,{x:c-half,y:access?6900:roof.dormerSill,width:1100,depth:access?2400:1300});line(`dormer-gable-a-${i}`,c-half-100,9300,c,9850,'profile');line(`dormer-gable-b-${i}`,c,9850,c+half+100,9300,'profile');line(`dormer-sash-${i}`,c,access?6900:8000,c,9300);if(access)text('rear-access-note',6000,-1050,'Roof access: platform and protection unresolved')}
   text('elevation-size',6000,-650,'12000 mm')
   text('roof-height',6000,11600,`Roof high edge ${Math.round(roofTop())} mm`)
  }else if(view==='SECTION'){
