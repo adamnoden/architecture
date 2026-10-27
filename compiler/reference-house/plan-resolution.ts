@@ -38,6 +38,6 @@ export const createResolvedReferenceHouseSource = () => {
  for(const [id,a,b] of [['ADJ-G-STUDY-FAMILY','G-STUDY-02','G-FAM-02'],['ADJ-G-HALL-FAMILY','G-HALL-02','G-FAM-02'],['ADJ-G-CLOAK-GAL','G-CLOAK-01','G-GAL-01'],['ADJ-G-WC-GAL','G-WC-01','G-GAL-01']])s.requiredAdjacencies.push({id,a,b,levelId:'GROUND'})
  const remap=(id:string)=>id==='G-DRAW-02'?'G-STUDY-02':id==='G-STUDY-02'?'G-CLOAK-01':id
  for(const o of s.openings)o.spaceIds=o.spaceIds.map(remap)
- for(const o of s.qualitativeOpeningRelationships)if(o.spaceIds)o.spaceIds=o.spaceIds.map(remap)
+ for(const o of s.qualitativeOpeningRelationships)if(o.spaceIds)o.spaceIds=o.levelId==='GROUND'&&o.hostBoundaryId==='G-COURT-WEST'?['G-FAM-02']:o.spaceIds.map(remap)
  return s
 }

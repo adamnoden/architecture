@@ -58,3 +58,12 @@ test('schematic fittings are sourced semantic entities and reject invalid dimens
   for(const f of plan.fittings!)assert.ok(scene.primitives.some(p=>p.metadata?.fitting===f.id))
  }
 })
+
+test('guest WC has a side window wholly within its room; courtyard west windows now belong to family only',()=>{
+ const wc=choice.openings.find(o=>o.id==='G-WC-E-W01')!
+ assert.equal(wc.hostBoundaryId,'G-OUTER-EAST')
+ assert.equal(wc.width,900)
+ assert.ok(wc.centre-wc.width/2>1650+62.5 && wc.centre+wc.width/2<3400-62.5)
+ assert.equal(plan.openings.find(o=>o.id===wc.id)?.symbol?.kind,'window')
+ assert.deepEqual(source.qualitativeOpeningRelationships.find(o=>o.levelId==='GROUND'&&o.hostBoundaryId==='G-COURT-WEST')?.spaceIds,['G-FAM-02'])
+})
