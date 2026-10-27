@@ -76,7 +76,7 @@ export const createPairedReferenceHouseAdePlan=(result:ReferenceHouseCompileResu
  const resolved=new Set([...choice.openConnections,...choice.openings.flatMap(o=>o.replaces)])
  for(const id of [...plan.adjacencies.map(a=>a.id),...source.qualitativeOpeningRelationships.filter(o=>o.levelId==='FIRST').map(o=>o.id),...result.derived.openings.filter(o=>o.levelId==='FIRST').map(o=>o.id)])if(!resolved.has(id))throw new Error(`Unresolved first-floor obligation ${id}`)
  plan.adjacencies=[]
- const anchors:Record<string,[number,number]>={'U-BED-02':[1600,3300],'U-BED-P01':[2100,9200],'U-BED-03':[10600,2100],'U-BED-04':[10400,10300],'U-BATH-01':[10675,7000],'U-LAND-N01':[6500,8700],'U-DRESS-01':[5100,10400],'U-LIN-01':[6900,10400]}
+ const anchors:Record<string,[number,number]>={'U-BED-02':[1600,3300],'U-BED-P01':[2100,9200],'U-BED-03':[10600,2100],'U-BED-04':[10400,10300],'U-BATH-01':[10675,7000],'U-LAND-N01':[6500,8700],'U-DRESS-01':[5100,11000],'U-LIN-01':[6900,11000]}
  const names:Record<string,string>={'U-BED-02':'Bedroom 2','U-BED-03':'Bedroom 3','U-BED-04':'Bedroom 4','U-DRESS-01':'Dressing','U-LAND-N01':'Landing'}
  plan.labels=plan.labels.map(l=>l.targetId&&anchors[l.targetId]?{...l,anchor:{x:mm(anchors[l.targetId][0]),y:mm(anchors[l.targetId][1])},text:names[l.targetId]??l.text}:l)
  assertValidArchitecturalPlan(plan)
