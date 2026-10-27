@@ -21,3 +21,11 @@ The eight-site exploratory study uses explicit rectangular, slope and access hyp
 A finding may hold at every tested sample, change as assumptions change, or fail at every tested sample. Sample counts are not probabilities. An adverse slope calculation identifies a support, grading or water-design task; it does not decide that the task is soluble or impossible.
 
 Each hypothesis records its input basis, replacement evidence, fixed placement and limitations. The study supports provisional architectural work and helps identify which measurements would change a decision. Evidence-backed site compatibility, regulatory approval and construction adequacy remain separate questions.
+
+## A completed conditional case
+
+The final worked case assumes a flat, usable 17.4 m by 30 m street-front rectangle. These are hypothetical dimensions, not measurements of an identified property. The unchanged house is placed 9 m behind the street edge, leaving 2.7 m at either side and 10.2 m behind.
+
+The front territory provides a 6 m sloping approach for the 300 mm rise, with a 1.5 m landing at each end. The total length is 9 m. This resolves the earlier direct-route length problem in the geometric model. Complete access adequacy remains an explicit premise, including the doorway, manoeuvring space and detailed route conditions.
+
+The study assumes that ground/support, water, drainage, utilities, rights, context, access/logistics and outstanding technical duties admit workable detailed solutions without changing the protected house. Those propositions are premises, not findings established by the geometric check. Under that declared scope the design study is complete. Verification on an actual commission remains a separate task.
