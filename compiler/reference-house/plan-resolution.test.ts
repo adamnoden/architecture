@@ -42,8 +42,8 @@ test('private study, WC and cloak have independent usable doors, with room fitti
 test('WC is included in wet services/extract; primary routes avoid the study and cloakroom',()=>{
  const s=createReferenceHouseServiceSource(source)
  assert.ok(s.protectedPrimaryFreeSpaceIds.includes('G-STUDY-02'))
- for(const id of ['G-WET-TERMINALS','MV-G-EXTRACT-TERMINALS'])assert.ok(s.nodes.find(n=>n.id===id)!.hostSpaceIds.includes('G-WC-01'))
- for(const id of ['R-WATER-GROUND','R-FOUL-GROUND','R-MV-EXT-G'])assert.ok(s.routes.find(r=>r.id===id)!.hostSpaceIds.includes('G-WC-01'))
+ for(const id of ['G-WET-TERMINALS','MV-G-EXTRACT-TERMINALS','DRY-G-TERMINALS','HYD-G-TERMINALS'])assert.ok(s.nodes.find(n=>n.id===id)!.hostSpaceIds.includes('G-WC-01'))
+ for(const id of ['R-WATER-GROUND','R-FOUL-GROUND','R-MV-EXT-G','R-DRY-G-BRANCH','R-HYD-G-BRANCH'])assert.ok(s.routes.find(r=>r.id===id)!.hostSpaceIds.includes('G-WC-01'))
  assert.ok(!s.routes.some(r=>r.primaryInfrastructure&&r.hostSpaceIds.some(id=>['G-STUDY-02','G-CLOAK-01'].includes(id))))
  assert.ok(!s.nodes.find(n=>n.id==='MV-G-SUPPLY-TERMINALS')!.hostSpaceIds.includes('G-WC-01'))
 })

@@ -134,8 +134,8 @@ export const createReferenceHouseServiceSource = (
   source.protectedPrimaryFreeSpaceIds=source.protectedPrimaryFreeSpaceIds.map(remap)
   for(const node of source.nodes)node.hostSpaceIds=node.hostSpaceIds.map(remap)
   for(const route of source.routes)route.hostSpaceIds=route.hostSpaceIds.map(remap)
-  for(const id of ['G-WET-TERMINALS','MV-G-EXTRACT-TERMINALS'])source.nodes.find(n=>n.id===id)!.hostSpaceIds.push('G-WC-01')
-  for(const id of ['R-WATER-GROUND','R-FOUL-GROUND','R-MV-EXT-G'])source.routes.find(r=>r.id===id)!.hostSpaceIds.push('G-WC-01')
+  for(const id of ['G-WET-TERMINALS','MV-G-EXTRACT-TERMINALS','DRY-G-TERMINALS','HYD-G-TERMINALS'])source.nodes.find(n=>n.id===id)!.hostSpaceIds.push('G-WC-01')
+  for(const id of ['R-WATER-GROUND','R-FOUL-GROUND','R-MV-EXT-G','R-DRY-G-BRANCH','R-HYD-G-BRANCH'])source.routes.find(r=>r.id===id)!.hostSpaceIds.push('G-WC-01')
   // Closable private study retains the primary-infrastructure-free protection.
   // WC service lining adjoins the suite; no route crosses the cloakroom/study.
  }
