@@ -7,7 +7,7 @@
 
 ## Purpose
 
-Own the project's competent external professional-review evidence route across structural engineering, fire/building control, MEP/acoustics and building physics/energy.
+Own the project's competent external professional-review evidence route across structural engineering, fire/building control, MEP/acoustics building physics/energy and human factors/inclusive design.
 
 EPR is the workstream identity. `RH-11` remains the Reference House gate that currently packages and receives this review; it is not renamed because it belongs to the established RH gate sequence.
 
@@ -18,7 +18,8 @@ Existing review-item identifiers remain valid:
 - `ER-STR-01` — structural engineering;
 - `ER-FIRE-01` — fire / building control;
 - `ER-MEP-01` — MEP / acoustics;
-- `ER-BPE-01` — building physics / energy.
+- `ER-BPE-01` — building physics / energy;
+- `ER-HFI-01` — human factors / inclusive design.
 
 These are execution items inside EPR, not competing workstream codes.
 

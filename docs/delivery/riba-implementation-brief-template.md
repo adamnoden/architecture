@@ -5,6 +5,12 @@
 
 The publication explains **why**. This brief records **what this project requires, who decides it, when it must be resolved, and how compliance will be demonstrated**.
 
+## Companion requirements
+
+Use this template with the [external-maintenance access module](external-maintenance-access-requirements.md) (proposed N16) and [human-factors verification module](human-factors-verification-requirements.md) (proposed N17). Confirm project selection, responsible appointments, evidence and acceptance stage before issuing a commission brief. Their schedules remain owned by those modules rather than duplicated here.
+
+Identify the architectural source revision being commissioned. A historical review, calculation or prototype does not validate a later design until its applicability has been checked.
+
 ---
 
 # 1. Project status
