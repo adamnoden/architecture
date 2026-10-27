@@ -2,9 +2,7 @@
 
 A design can be immaculate on paper and still fail if its success depends on exceptional workmanship, perfect incoming geometry, continuous designer supervision or undocumented judgement on site.
 
-The stronger question is not simply “how do we make builders follow the detail?” It is:
-
-> **How should the design itself behave when it meets the ordinary variability of real construction?**
+The question concerns how the design behaves under ordinary construction variability, as well as how the detail should be built.
 
 Ovid’s House uses **workmanship robustness** for the ability of a design to achieve its intended technical and architectural performance under ordinary competent construction, with foreseeable variation in materials, setting-out, sequence and human execution deliberately accommodated rather than left to improvisation.
 
@@ -14,21 +12,13 @@ This is not acceptance of poor workmanship. It distinguishes:
 - **correctable variation** — recoverable through a declared adjustment method;
 - **defect / out-of-range work** — not to be disguised by the next trade.
 
-The governing maxim is:
-
-> **Give variation somewhere to go.**
-
 ## Accuracy and tolerance are design problems
 
 BS 5606 treats accuracy and tolerance as matters requiring a strategy across design and construction. The important question is not merely whether each component lies inside its own permitted deviation, but whether the **assembly still works when credible deviations meet**.
 
 Construction-tolerance research reaches the same conclusion. Recurring dimensional problems are stronger when identified, allocated, communicated and measured before assembly rather than corrected ad hoc at the end.
 
-For Ovid’s House the useful rule is:
-
-> **Do not merely specify precision. Design the route from achievable construction to required precision.**
-
-This is particularly important where relatively coarse permanent work meets precise replaceable work: masonry to window frame, structural floor to manufactured joinery, wet-room substrate to fitted equipment, or site-built wall to a controlled attachment datum.
+The design should provide a route from achievable construction to required precision. This is particularly important where relatively coarse permanent work meets precise replaceable work: masonry to window frame, structural floor to manufactured joinery, wet-room substrate to fitted equipment, or site-built wall to a controlled attachment datum.
 
 ## Buildability is architectural performance
 
@@ -99,8 +89,6 @@ Move toward workmanship of certainty where:
 - future remanufacture depends on stable geometry;
 - site judgement adds no architectural value.
 
-> **Spend workmanship where workmanship creates value.**
-
 A mason adjusting a visible bond is using skill to make architecture. A builder inventing packers because a fixing interface has no tolerance strategy is spending skill to rescue design debt.
 
 ## The tolerance strategy
@@ -158,11 +146,7 @@ This is not a prescription for six literal layers. It is a way to prevent precis
 
 A packer is not inherently a bodge. A designed shim with a known material, position, maximum thickness and load path can be an excellent tolerance device. The same is true of a slotted bracket, threaded stand-off, scribed sacrificial piece, rebate or overlap.
 
-The difference is simple:
-
-> **Designed adjustment has a range, method and stopping point.**
-
-Improvisation begins when an assembly leaves its intended geometry and the site invents a correction whose material, load path, durability, fire/acoustic consequence or future removal was never considered.
+Designed adjustment has a range, method and stopping point. Improvisation begins when an assembly leaves its intended geometry and the site invents a correction whose material, load path, durability, fire/acoustic consequence or future removal was never considered.
 
 ## Architectural tolerance
 
@@ -189,9 +173,7 @@ A useful first article:
 5. inspects the completed datum and boundaries;
 6. tests an out-of-range condition and confirms that it produces a stop or remediation response rather than concealment.
 
-The person is not being tested. The design is.
-
-> **A detail that works only when its designer assembles it is not yet a resolved detail.**
+The trial tests the design rather than the installer. A detail that works only when its designer assembles it is not yet a resolved detail.
 
 ## Architectural consequences
 

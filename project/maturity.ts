@@ -309,11 +309,11 @@ export const workstreamStatuses = [
     id: 'publication',
     name: 'Publication',
     maturity: 'M4',
-    reviewedOn: '2026-10-26',
+    reviewedOn: '2026-10-27',
     currentState:
-      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. PLT v2 remains open but its previous ground-plan candidate is not eligible for final physical acceptance. ADE-04A/ADE-04B are merged, and ADE-05B has selected the deliberately non-physical unresolved partition-datum and adjacency grammar; physical partition bodies remain gated by ADE-05A. EDA is now the active post-migration editorial assurance programme: EDA-00 froze Editorial Doctrine v0.4, EDA-01 established the corpus/prose-mode register, and EDA-02 is next. No print tokens are frozen and EDA close is required before PR-02 private physical-object production.',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. EDA-00–08 are complete: the 128-source audit, whole-book recurrence, adversarial read and A4/B5/Primer page proof are accepted. Current production pagination is 275 A4 / 327 B5 pages plus the 16-page Primer. ADE capability/migration and the independent PLT drawing freeze remain open; no print tokens are frozen. EDA closure does not raise publication maturity or authorise final manufacture.',
     nextGate:
-      'Resolve ADE-05A upstream Reference House internal-partition authority, then complete ADE-06 capability/physical proof before ADE-07 migrates the Reference House ground plan and restarts PLT-03 physical review. In parallel continue EDA from EDA-02 through typeset closeout. PR-02 preparation may consume the accepted typography contract, but final private-object manufacture waits for both EDA close and the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
+      'Complete ADE-06 capability/physical proof, then ADE-07 Reference House migration and restarted PLT-03 physical review before exemplar/token freeze. PR-02 preparation may consume the accepted typography contract; final private-object manufacture still waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],

@@ -4,13 +4,11 @@ Somewhere between 1595 and 1603, John Thorpe drew a line through a house.
 
 The drawing was for Beaufort House in Chelsea. The line passes through the centre of the plan and gives access to rooms on either side. We would call it a corridor. The Sir John Soane's Museum describes its use here as innovative; nearly four centuries later, Robin Evans cautiously identified Beaufort House as the earliest English example he had found of a corridor used to remove traffic from rooms.[1]
 
-That phrase makes the familiar arrangement strange again: **to remove traffic from rooms**.
+That phrase makes the familiar arrangement strange again: to remove traffic from rooms.
 
 A house does not logically require a corridor. Rooms can simply lead into other rooms, and for long periods they did. Movement passed through the same spaces in which people slept, ate, received visitors and worked. The inconvenience was not invisible; it belonged to an arrangement that appeared normal.
 
 Thorpe's line gave movement a place of its own. Once that relationship exists, the older arrangement becomes difficult to see without wanting to redraw it. The corridor now feels less like an invention than a fact of nature.
-
-We inherit solutions, but we also inherit definitions of the problem.
 
 * * *
 
@@ -24,9 +22,7 @@ The eventual Speedee Service System changed the relationship between familiar th
 
 Mature practices are very good at producing local intelligence. A difficulty appears; a trade or profession learns to manage it. Tools and techniques improve. Standards accumulate. Specialists become very good at solving the problems presented to them.
 
-The shape of the problem can survive all of that improvement untouched.
-
-A service can be chased more neatly into a wall. A better panel can be added to reach it. A more forgiving sealant can be specified at a crack-prone joint. Each response may be competent. Sometimes the more useful question is one level earlier: why is the service in the wall? Why is the replaceable component behind a surface that must be destroyed to reach it? Why are two assemblies known to move differently being asked to appear monolithic?
+The shape of the problem can survive all of that improvement untouched. A service can be chased more neatly into a wall. A better panel can be added to reach it. A more forgiving sealant can be specified at a crack-prone joint. Each response may be competent. Sometimes the more useful question is one level earlier: why is the service in the wall? Why is the replaceable component behind a surface that must be destroyed to reach it? Why are two assemblies known to move differently being asked to appear monolithic?
 
 Those questions are not automatically better. Conventional construction often survives them easily. Their value is that they reopen decisions which familiarity has allowed to disappear.
 
@@ -42,15 +38,11 @@ Common dimensions and interfaces changed that. Independently owned ships, cranes
 
 Malcolm McLean is rightly central to this history, but the useful lesson is larger than the inventor. Engineers, ports, manufacturers, unions, shipping companies, military requirements and standards committees turned competing private systems into interoperable infrastructure. The breakthrough survived because the interface became larger than its originator.
 
-Standardisation is often imagined as the enemy of variety. At the right layer it can produce the opposite. A stable interface allows enormous variety on either side because neither side must be redesigned whenever the other changes. The container does not need to know which crane will lift it, and the crane does not need to know what is inside.
-
-Some durable inventions are agreements about where things meet.
+Standardisation is often imagined as the enemy of variety. At the right layer it can produce the opposite. A stable interface allows enormous variety on either side because neither side must be redesigned whenever the other changes. The container does not need to know which crane will lift it, and the crane does not need to know what is inside. Some durable inventions are agreements about where things meet.
 
 * * *
 
-Architecture has done this before.
-
-Joseph Paxton came to the Crystal Palace from gardens and glasshouses. As head gardener at Chatsworth he had spent years working with light, ventilation, condensation, drainage, structure, repeatable panes, ironwork and rapid assembly. His conservatories were not sketches for an exhibition hall in the ordinary sense. They were another building culture.
+Architecture has done this before. Joseph Paxton came to the Crystal Palace from gardens and glasshouses. As head gardener at Chatsworth he had spent years working with light, ventilation, condensation, drainage, structure, repeatable panes, ironwork and rapid assembly. His conservatories were not sketches for an exhibition hall in the ordinary sense. They were another building culture.
 
 In 1850, with the Great Exhibition approaching and the available schemes proving unsatisfactory, Paxton transferred that culture into a problem of very different scale.
 
@@ -58,7 +50,7 @@ The Crystal Palace was a system of standardised, prefabricated iron, timber and 
 
 A house is not an exhibition hall, and a temporary iron-and-glass building is not evidence that domestic architecture should become a kit of parts. The narrower lesson is more useful. Paxton carried knowledge across a professional boundary because he understood another construction culture well enough to recognise its principles in a new problem.
 
-The useful outsider is not valuable because ignorance is pure. Paxton's authority came from practical experience.
+Paxton's authority as an outsider came from practical experience.
 
 The result also matters because it became architecture. Technical rationality is no excuse for ugliness, and manufacture need not produce provisionality. A coherent construction system can result in a building whose architectural presence exceeds the logic by which it was assembled.
 
@@ -66,44 +58,29 @@ That requirement applies throughout this book. Visible services are not virtuous
 
 * * *
 
-I am not an architect.
-
-That fact requires neither apology nor romanticisation. Architecture contains knowledge that is difficult to see from outside it. Details that first appear irrational may embody lessons purchased through fire, water, movement, labour, litigation and failure. A regulation that frustrates a clean diagram may exist because somebody has already experienced the consequence of the simpler answer. A builder's conservative preference may reflect hundreds of repetitions of a detail that works. A plastered wall, properly made in the right place, can be beautiful, robust and extremely difficult to improve upon.
+I am not an architect. That fact requires neither apology nor romanticisation. Architecture contains knowledge that is difficult to see from outside it. Details that first appear irrational may embody lessons purchased through fire, water, movement, labour, litigation and failure. A regulation that frustrates a clean diagram may exist because somebody has already experienced the consequence of the simpler answer. A builder's conservative preference may reflect hundreds of repetitions of a detail that works. A plastered wall, properly made in the right place, can be beautiful, robust and extremely difficult to improve upon.
 
 An outsider can therefore mistake accumulated intelligence for inertia. Familiarity creates the opposite risk: a choice can stop looking like a choice.
 
 Settled disciplines accumulate both wisdom and sediment. Trades inherit scopes. Contracts acquire conventions. Manufacturers make products for the details people already draw, and people draw those details because the products exist. Regulation, procurement and training settle around the arrangement until it becomes difficult to distinguish the convention from the underlying physical problem.
 
-Distance can occasionally help. The outsider's privilege is not expertise. It is permission to remain surprised.
-
-It is reasonable to find it strange that a component expected to be replaced several times may be buried behind a surface intended to last much longer; that routine electrical change can require cutting masonry; or that access is sometimes declared complete when the component can be seen but not withdrawn.
+Distance can occasionally help an outsider remain surprised by familiar arrangements. It is reasonable to find it strange that a component expected to be replaced several times may be buried behind a surface intended to last much longer; that routine electrical change can require cutting masonry; or that access is sometimes declared complete when the component can be seen but not withdrawn.
 
 Surprise proves nothing. It opens the question. The responsibility then reverses: if the proposed alternative cannot survive the accumulated knowledge of the profession, it should die.
 
-That is the method of this book.
+Convention deserves respect, not immunity; novelty deserves scrutiny, not admiration. Those positions belong together. A common detail comes with serious advantages: trades understand it, suppliers support it, building control recognises it and generations of failure have already exposed many of its weaknesses. Common use is evidence that an arrangement can work. It is not proof that the arrangement is inevitable.
 
-**Convention deserves respect, not immunity.**  
-**Novelty deserves scrutiny, not admiration.**
-
-Those positions belong together. A common detail comes with serious advantages: trades understand it, suppliers support it, building control recognises it and generations of failure have already exposed many of its weaknesses. Common use is evidence that an arrangement can work. It is not proof that the arrangement is inevitable.
-
-A new detail earns nothing by being new. If a removable floor is noisy, it has failed. If a demountable wall feels hollow and temporary, it has failed. If an ingenious service interface depends on a vanished proprietary clip twenty years from now, it has failed. If a custom structural connection creates ambiguity where an ordinary certified hanger would work, the hanger should win.
-
-The comparison must be against excellent conventional construction, not a caricature of it.
+A new detail earns nothing by being new. If a removable floor is noisy, it has failed. If a demountable wall feels hollow and temporary, it has failed. If an ingenious service interface depends on a vanished proprietary clip twenty years from now, it has failed. If a custom structural connection creates ambiguity where an ordinary certified hanger would work, the hanger should win. The comparison must be against excellent conventional construction, not a caricature of it.
 
 Research before invention. Calculate where calculation decides. Mock up at full scale where touch, sound and movement decide. If something is claimed to be disassemblable, disassemble it. Try to replace the component. Count the tools. Check which boundaries were opened and whether they can be made whole again. Keep the right to abandon the idea.
-
-A doctrine that survives only by protecting its favourite details from failure is not useful.
 
 * * *
 
 The concerns behind this enquiry are not new. Architects, engineers, conservationists, facilities managers and building researchers have spent decades thinking about service life, adaptability, support and infill, changing layers, maintainability, loose fit, standardisation and design for disassembly. The chapters that follow owe a great deal to that work. No claim is made here to have discovered that buildings change or that maintenance matters.
 
-The dissatisfaction is more particular. It begins with the ordinary house.
+The dissatisfaction begins with the ordinary house. A house may stand for generations while much of what it contains lasts for years or decades. These timescales meet everywhere: windows meet masonry, pipes meet walls, services meet structure, tiles meet waterproofing, joinery meets plaster. Each junction is an agreement between things that may have different lives, movements and replacement cycles.
 
-A house may stand for generations while much of what it contains lasts for years or decades. These timescales meet everywhere: windows meet masonry, pipes meet walls, services meet structure, tiles meet waterproofing, joinery meets plaster. Each junction is an agreement between things that may have different lives, movements and replacement cycles.
-
-Too often the agreement is made permanent by default. Wet work closes the gap. Adhesive joins the layers. Filler erases the line. A chase makes room. Sealant becomes the last negotiator between materials. The building is completed, and then time begins.
+Too often the agreement is made permanent by default. Wet work closes the gap. Adhesive joins the layers. Filler erases the line. A chase makes room. Sealant becomes the last negotiator between materials. The completed junction must then accommodate their different replacement cycles.
 
 I do not accept that maintenance must ordinarily begin with demolition, or that a short-lived system acquires a right to consume long-lived fabric because burying it is convenient during construction. Predictable movement should not become an unforeseeable defect because the junction was drawn as a line. A hatch is not useful access if a person, tool or replacement component cannot perform the work. Technical necessity does not exempt anything visible from the obligations of architecture.
 
@@ -111,9 +88,7 @@ None of this means that services must be exposed, plaster is obsolete, every wal
 
 Nor is permanence the enemy. I want walls with mass and rooms with settled proportions. I want stairs that belong to the house rather than to a lease cycle; brick that weathers as brick, timber that wears as timber, brass that records the evidence of hands. I want architecture confident enough not to reorganise itself whenever a technology changes.
 
-The question is how to earn that permanence.
-
-One answer may be to stop faster-changing systems from continually consuming slower ones. Movement can be given a joint instead of a crack. Maintenance can have a geography rather than a trail of damage. A permanent wall can receive a small number of deliberate attachment points instead of generations of arbitrary holes. Traditional elements—skirtings, architraves, thresholds, cornices—can sometimes recover practical work alongside their architectural role.
+That permanence may depend on the interfaces between building layers. One answer may be to stop faster-changing systems from continually consuming slower ones. Movement can be given a joint instead of a crack. Maintenance can have a geography rather than a trail of damage. A permanent wall can receive a small number of deliberate attachment points instead of generations of arbitrary holes. Traditional elements—skirtings, architraves, thresholds, cornices—can sometimes recover practical work alongside their architectural role.
 
 And after all of that, the room should simply look like a room. The ambition is not to live inside the diagram.
 
@@ -127,11 +102,9 @@ What is not useful is refusing the question because the arrangement has become f
 
 I am interested in the moment when something ordinary becomes strange again: when the corridor returns to being a line somebody chose to draw; when a kitchen becomes bodies moving through space rather than a list of appliances; when the container becomes an agreement at its corners; when a gardener recognises the logic of a glasshouse in a monumental building.
 
-That moment does not abolish expertise. It creates work for it.
+Expertise is needed to test what follows from that reconsideration. The propositions in this book therefore move from argument to pattern, drawing and prototype. Some will survive; others should not. Where the conventional answer proves better, it should remain.
 
-The propositions in this book therefore move from argument to pattern, drawing and prototype. Some will survive. Some should not. Where the conventional answer proves better, it should remain.
-
-The objective is not a novel house. It is a house in which novelty is concentrated only where the inherited arrangement does not withstand examination. The rest can be ancient.
+Novelty should be concentrated where the inherited arrangement does not withstand examination. The rest can be ancient.
 
 This book is an attempt to give change its own architecture: not a house that changes continually, but a house able to remain itself because the things that must change have been given somewhere else to go.
 
@@ -141,9 +114,9 @@ The name **Ovid’s House** came late to this enquiry. Ovid’s *Metamorphoses* 
 
 Architecture usually meets that question without magic. A boiler is replaced. Wiring is renewed. A window reaches the end of its useful life. A room accepts another use. Roof coverings, controls and finishes disappear while structure and spatial order continue. Over a sufficiently long life, a house can become materially different from the thing first handed over while remaining, in ordinary architectural and cultural terms, the same house.
 
-Nor is transformation automatically good. In Ovid it is often violent, punitive or irreversible. In buildings too, change can destroy as easily as renew. The task is not to celebrate change. It is to decide what should endure, what should be allowed to change, and how necessary change can occur without needlessly consuming the rest.
+Nor is transformation automatically good. In Ovid it is often violent, punitive or irreversible. In buildings too, change can destroy as easily as renew. The task is to decide what should endure, what should be allowed to change, and how necessary change can occur without needlessly consuming the rest.
 
-Permanence, then, need not mean stasis. A house may remain itself not by refusing transformation, but by making some transformations ordinary enough that what matters can persist through them. That is the sense in which this is **Ovid’s House**.
+Permanence, then, need not mean stasis. A house may remain itself not by refusing transformation, but by making some transformations ordinary enough that what matters can persist through them. That is the sense in which this is Ovid’s House.
 
 ---
 

@@ -2,8 +2,7 @@
 
 The architectural proposition is stronger than any particular connection detail:
 
-> **Make gravity support explicit; distinguish restraint from support; provide only the movement freedom that has a demonstrated structural or constructional purpose.**
-
+Make gravity support explicit; distinguish restraint from support; provide only the movement freedom that has a demonstrated structural or constructional purpose.
 That proposition is captured by [Decompose Structural Interface Functions](../patterns/strategies/decompose-structural-interface-functions.md). A seated or bearing connection is only one possible implementation beneath it.
 
 For the Reference House, current evidence does **not** justify inventing a special sliding or loosely seated joist connection. A conventional certified engineered connection remains the baseline to beat.
@@ -49,7 +48,7 @@ Not all of those belong at the joist bearing.
 
 A small joist-end tolerance, ordinary connector deformation, correctly designed support and restraint, and a separate wall/ceiling movement detail may resolve the real condition more effectively than a literal sliding bearing.
 
-> **Put each movement where it can occur safely and usefully.**
+Put each movement where it can occur safely and usefully.
 
 ## Option A — certified restraint-type masonry hanger
 

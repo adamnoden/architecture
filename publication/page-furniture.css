@@ -61,3 +61,15 @@
   @bottom-left { content: none !important; }
   @bottom-right { content: none !important; }
 }
+
+/* Keep front-matter context markers on the recto opening they describe.
+   A marker on its own page followed by an h1 recto break creates an empty
+   numbered page and an unnecessary parity blank. */
+body:has(h1#preface--the-obvious-eventually) > .publication-entry-context:first-child,
+body:has(h1#readers-guide) > .publication-entry-context:first-child {
+  break-before: right;
+}
+h1#preface--the-obvious-eventually,
+h1#readers-guide {
+  break-before: auto;
+}

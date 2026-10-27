@@ -55,7 +55,7 @@
     },
     "publication": {
       "level": "M4",
-      "reviewedOn": "2026-10-26"
+      "reviewedOn": "2026-10-27"
     },
     "deployment-real-site": {
       "level": "M4",
@@ -78,8 +78,8 @@
     "schemaVersion": 1,
     "workingEdition": {
       "file": "publication/dist/ovids-house.pdf",
-      "pages": 279,
-      "duplexLeaves": 140,
+      "pages": 275,
+      "duplexLeaves": 138,
       "pageSize": {
         "format": "A4",
         "widthMm": 210,

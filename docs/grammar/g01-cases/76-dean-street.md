@@ -6,8 +6,6 @@
 **Evidence grade:** B descriptive + located historic survey-plan evidence; direct plan interpretation limited to what the record image safely supports  
 **Purpose:** use urban constraint to prevent villa-derived rules from being mistaken for universal Georgian rules.
 
-> The value of this case is partly what it refuses to let us assume.
-
 ## 1. Source register
 
 | ID | Source | Type | What it supports | Phase authority | Geometric authority |
@@ -402,8 +400,6 @@ Potential conflict:
 
 **COMPLETE AT SEMANTIC v0.1 LEVEL, WITH MATERIAL UNKNOWNS.**
 
-This is not a weakness.
-
 D3 has demonstrated that the schema can:
 
 - annotate an urban house without inventing room uses;
@@ -412,7 +408,7 @@ D3 has demonstrated that the schema can:
 - identify vertical and circulation hierarchy;
 - falsify villa-derived universal rules.
 
-The remaining drawing acquisition belongs primarily to D4 completion and measurement/coupling analysis measurement/coupling analysis.
+The remaining drawing acquisition belongs primarily to D4 completion and measurement/coupling analysis.
 
 ## Source anchors
 

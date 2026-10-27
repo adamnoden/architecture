@@ -4,8 +4,7 @@ A removable room surface is useful only if it adds genuine access, fixing or ren
 
 The strongest current direction is therefore not a universal removable wall. It is a selective hybrid:
 
-> **Permanent masonry performs the slow continuous work. A sparse controlled attachment plane is added only where it earns its keep. A removable architectural face is introduced only where physical testing shows that its serviceability value outweighs its depth, joints and tactile cost.**
-
+Permanent masonry performs the slow continuous work. A sparse controlled attachment plane is added only where it earns its keep. A removable architectural face is introduced only where physical testing shows that its serviceability value outweighs its depth, joints and tactile cost.
 [`Controlled Attachment Plane`](../patterns/controlled-attachment-plane.md) is the stable reusable pattern. [Replaceable Architectural Lining](../patterns/candidates/replaceable-architectural-lining.md) remains a held candidate because its decisive question is physical and architectural rather than merely technical.
 
 ## Boundary independence
@@ -114,7 +113,7 @@ Possible duties:
 - form skirting, dado, picture rail, cornice or architrave;
 - make the removal sequence intelligible.
 
-> **Do not make one finish layer perform every job merely because it can hide the joint.**
+Do not make one finish layer perform every job merely because it can hide the joint.
 
 ## Option A — direct plaster or mineral finish on masonry
 
@@ -309,8 +308,7 @@ Plausible approaches include:
 
 The controlling rule is:
 
-> **Do not fill the very joint that makes the panel removable.**
-
+Do not fill the very joint that makes the panel removable.
 If a room genuinely requires seamless monolithic plaster, use real plaster and solve services and fixings elsewhere.
 
 ## Fixing loads
@@ -340,7 +338,7 @@ Variables worth testing include panel mass, support spacing, resilient pads, cav
 
 The qualitative target is explicit:
 
-> **Tapping or leaning on the wall should not reveal it as a flimsy access panel.**
+Tapping or leaning on the wall should not reveal it as a flimsy access panel.
 
 ## Fire
 
@@ -396,8 +394,7 @@ The evidence already supports independent linings, robust mineral sheet products
 
 What remains unproved is the distinctive architectural claim:
 
-> **Can a removable occupied wall surface achieve the visual calm, tactile solidity and acoustic credibility of excellent conventional construction while adding useful reversible access?**
-
+Can a removable occupied wall surface achieve the visual calm, tactile solidity and acoustic credibility of excellent conventional construction while adding useful reversible access?
 If the answer is no, the house remains complete with direct quiet walls and selective controlled attachment datums. Failure of the removable lining would narrow the system rather than weaken the underlying doctrine.
 
 ## Sources
