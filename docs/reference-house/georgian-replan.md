@@ -21,7 +21,7 @@ proof identities remain reproducible; they no longer prescribe the new roof.
 ## Stair and entrance
 
 The five front axes are 1800 / 3900 / 6000 / 8100 / 10200 mm. The entrance is a
-1600 mm paired opening exactly on the centre. Four further openings per outer
+1800 mm paired opening exactly on the centre. Four further openings per outer
 side use equally spaced 1800 / 4600 / 7400 / 10200 mm axes. Window apertures
 are 1000 mm on both floors, with common sill/head datums; garden doors and the
 plant replacement door occupy the same axes with explicitly different widths.

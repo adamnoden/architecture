@@ -93,7 +93,8 @@ export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'
    }
   }
   for(const z of [0,3450,6900]){line('floor-'+z,3500,z,4800,z,'cut');text('ffl-'+z,10500,z+100,`FFL ${z}`)}
-  const y=7000,x=2050;line('roof-min',3500,roofHeight(x)-300,11000,roofHeight(x)-300,'profile')
+  const y=7000,x=2050;line('roof-min',3500,roofHeight(x)-300,11000,roofHeight(x)-300,'secondary','datum')
+  text('roof-datum',7600,roofHeight(x),'Minimum roof underside at attic arrival')
   text('stair-rises',7600,10500,'20 × 172.5 mm rises per storey / 300 mm goings')
   text('stair-clear',7600,9700,'1200 mm flights / 1750 mm half-landing')
   text('stair-limit',7600,900,'Developed stair diagram; framing and fire enclosure unresolved')

@@ -27,6 +27,9 @@ export const auditGeorgianReplan=()=>{
  check(nominalAtticHeadroom>=2100,'Attic arrival has less than 2100 mm nominal clear headroom')
  check(s.flight>=1200&&s.landing>=s.flight&&s.rise===d.levels.first/s.risers,'Stair dimensions inconsistent')
  check(!d.roof.flatRoofsAllowed&&d.roof.upperPitchDeg>=30,'Flat/low-slope roof candidate rejected')
+ check(2500+62.5+1200<=4200-417.5,'Ground turn into east gallery constricted')
+ check(9400-62.5-(7800+417.5)>=1100,'Upper gallery less than 1100 mm clear')
+ check(9400-62.5-(7800+417.5)>=1100,'North cross-landing less than 1100 mm clear')
  check(s.y-1200>=3537.5+62.5,'Full bottom landing overlaps study')
  const studyClearArea=(2600-417.5-62.5)*(3537.5-417.5-62.5)/1e6
  return {pass:failures.length===0,failures,nominalAtticHeadroom,roofHighEdgeMm:roofTop(),plantClearAreaM2:(12000-417.5-9600-62.5)*(8155-3000-125)/1e6,studyClearAreaM2:studyClearArea,stair:s,technicalHeadroomVerified:false,furnitureCarryingVerified:false,fullHistoricalSystemRevalidation:false}
