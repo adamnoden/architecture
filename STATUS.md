@@ -9,7 +9,7 @@ This page records the current state, next meaningful work and principal risks. D
 
 The public architectural position and publication remain internally controlled at M4; the Reference House remains M3 at virtual-design scope. ADE drawing-engine capability and Reference House migration are internally complete. The conditional DPL design study is complete; any real-site verification is a deferred follow-on. EDA editorial assurance is complete. PLT v2 can restart physical review from the ADE replacement; TYP has an accepted production release. EDA has cleared its editorial production gate; final private-object manufacture remains gated by **the independent PLT drawing freeze**. No maturity level or machine-readable authority ceiling is raised by this reconciliation.
 
-DPL retains its bounded M4 claim scope after conditional research closeout. Evidence recovery, candidate-readiness work and passing internal checks do not establish whole-site compatibility, construction adequacy or regulatory approval. Physical prototypes and competent professional review remain major unclosed evidence routes.
+DPL retains its bounded M4 claim scope after conditional research closeout. Evidence recovery, candidate-readiness work and passing internal checks do not establish whole-site compatibility, construction adequacy or regulatory approval. PHY physical validation and EPR competent professional review remain major unclosed evidence routes.
 
 ## Active now
 
@@ -17,7 +17,7 @@ DPL retains its bounded M4 claim scope after conditional research closeout. Evid
 
 The Reference House remains **M3 — Coordinated at virtual-design scope**. RH-00 through RH-10 are coordinated, RH-11 is issue-ready, and the 300 mm principal-stair going remains an explicit project preference rather than a statutory or universal ergonomic minimum.
 
-The next value comes from competent RH-11 review and the P03/P04 physical-validation work. Existing RH-C and compiler results remain internal model-control evidence, not construction validation.
+The next value comes from EPR/RH-11 competent review and the PHY-03/PHY-04 physical-validation work. Existing RH-C and compiler results remain internal model-control evidence, not construction validation.
 
 ### Computational implementation
 
@@ -27,15 +27,15 @@ The DPL runtime is a separate demand-led track. Its current execution frontier i
 
 ### Publication
 
-The publication workstream remains M4. DRW v1 remains a frozen historical release. [TYP](docs/publication/publication-typography-v1-release.md) has an accepted RC2 release and supplies the typography contract to PLT and PR-02.
+The publication workstream remains M4. DRW v1 remains a frozen historical release. [TYP](docs/publication/publication-typography-v1-release.md) has an accepted RC2 release and supplies the typography contract to PLT and PUB-02.
 
 **ADE — Architectural Drawing Engine capability uplift** is complete at internal representation scope under [#812](https://github.com/adamnoden/architecture/issues/812). The [closeout](docs/publication/architectural-drawing-engine-closeout.md) records the semantic engine, accepted capability atlas, migrated ground/first-floor candidates, non-Reference-House contrast proof and regression locks. BOOK 1:100 and A2 WALL 1:50 candidates are ready for restarted PLT review. Physical owner acceptance and print-token freeze remain unearned and stay with PLT; no source authority or maturity is raised.
 
-**EDA — Editorial Doctrine Audit** is complete through EDA-08 under the [EDA programme](docs/editorial/eda-programme.md). All 128 canonical sources have recorded dispositions; the whole-book recurrence and adversarial passes and A4/B5/Primer page proofs are accepted. Production pagination is 275 A4 / 327 B5 pages plus the 16-page Primer. The editorial block on PR-02 is cleared without raising maturity or external-validation claims.
+**EDA — Editorial Doctrine Audit** is complete through EDA-08 under the [EDA programme](docs/editorial/eda-programme.md). All 128 canonical sources have recorded dispositions; the whole-book recurrence and adversarial passes and A4/B5/Primer page proofs are accepted. Production pagination is 275 A4 / 327 B5 pages plus the 16-page Primer. The editorial block on PUB-02 is cleared without raising maturity or external-validation claims.
 
 **PLT — Architectural Plate Refinement** remains open under [#422](https://github.com/adamnoden/architecture/issues/422). The owner accepts the [Georgian floor plan](docs/reference-house/georgian-replan.md) as the working drawing basis and defers personal layout refinements. Resume plate work under the [current source and rollout record](docs/publication/architectural-plate-current-source-and-rollout.md): complete source-consistent elevations, sections, roof and analytical families, then whole-set subtraction, physical proof and integration. The elevation candidate now covers front, garden, service side and courtyard; its proof specimen retains the actual tall courtyard and explicitly revises BOOK court scale to 1:100. New designs prohibit flat roofs. Historical C1/v1/ADE/B6/PLT04/PLT05 identities stay protected; the complete technical compiler is not silently migrated. No physical acceptance or final print-token/drawing freeze is claimed.
 
-**PUB-01 / PR-02** remains under [#71](https://github.com/adamnoden/architecture/issues/71). Paper, trim, book-block and printer/binder preparation may proceed using the accepted typography contract; EDA is closed; final 12-copy manufacture still requires **the independent PLT drawing freeze**. PR-03/PR-04 independent criticism follows the private object and remains required before M5 or public-release claims.
+**PUB / PUB-02** remains under [#71](https://github.com/adamnoden/architecture/issues/71). Paper, trim, book-block and printer/binder preparation may proceed using the accepted typography contract; EDA is closed; final 12-copy manufacture still requires **the independent PLT drawing freeze**. PUB-03/PUB-04 independent criticism follows the private object and remains required before M5 or public-release claims. Historical `PR-*` labels remain provenance aliases only; live publication control uses `PUB-*`.
 
 ### Deployment / real-site integration
 
@@ -47,13 +47,17 @@ There is **no standing internal DPL packet**. Evidence-backed corpus readiness r
 
 ### Physical and professional validation
 
-Physical prototypes remain M2 and competent external review remains M1. P03/P04 and the RH-11 review pack remain the most important evidence routes outside DPL. Internal M4 control is not external proof.
+**PHY — Physical validation** remains M2 under [#912](https://github.com/adamnoden/architecture/issues/912). PHY-03 structural floor-edge engineering and PHY-04 wall/ceiling movement-junction testing are the priority physical evidence routes; PHY-01 remains held optional research and PHY-02 remains held.
+
+**EPR — External professional review** remains M1 under [#913](https://github.com/adamnoden/architecture/issues/913). RH-11 [#32](https://github.com/adamnoden/architecture/issues/32) remains the Reference House gate for the current structural, fire/building-control, MEP/acoustic and building-physics/energy review package. Internal M4 control is not external proof.
 
 ### Delivery
 
 Delivery remains M2. [DEL — Delivery requirements](project/del/delivery-programme.md) frames the existing brief and modules as one evidence-dependent effort under [#854](https://github.com/adamnoden/architecture/issues/854). Manufacturing remains a strategy unless a concrete assembly decision earns delivery work; architectural specificity remains a standing boundary rather than a new packet programme. DEL does not override the EDA or PLT production gates.
 
-The [validation execution register](docs/development/validation-execution-register.md) owns RH-11 [#32](https://github.com/adamnoden/architecture/issues/32), P03 [#30](https://github.com/adamnoden/architecture/issues/30) and P04 [#31](https://github.com/adamnoden/architecture/issues/31). Review briefs are ready/unissued; P03 geometry requires engineering before structural testing, and P04 requires physical construction and testing. P01 remains held optional research under [#856](https://github.com/adamnoden/architecture/issues/856); P02 remains held without a current house dependency under [#857](https://github.com/adamnoden/architecture/issues/857).
+The [validation execution register](docs/development/validation-execution-register.md) coordinates EPR/RH-11 [#32](https://github.com/adamnoden/architecture/issues/32), PHY-03 [#30](https://github.com/adamnoden/architecture/issues/30) and PHY-04 [#31](https://github.com/adamnoden/architecture/issues/31). Review briefs are ready/unissued; PHY-03 geometry requires engineering before structural testing, and PHY-04 requires physical construction and testing. PHY-01 remains held optional research under [#856](https://github.com/adamnoden/architecture/issues/856); PHY-02 remains held without a current house dependency under [#857](https://github.com/adamnoden/architecture/issues/857).
+
+Canonical live workstream and packet codes are recorded in [`project/workstream-codes.md`](project/workstream-codes.md). The generated maturity block below intentionally preserves some historical `PR-*` / `P0*` aliases where they are embedded in existing evidence descriptions; those aliases do not override the live `PUB` / `PHY` / `EPR` namespace.
 
 ## Maturity and workstream status
 
@@ -108,11 +112,11 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 **M4 scope drift.** Later DPL execution does not silently expand the declared M4 proposition into general multi-site validity, real-site deployability, regulatory compliance or construction adequacy.
 
-**Physical and professional evidence.** Internal control does not prove structural, fire, MEP, building-physics or construction adequacy. P03/P04 and competent RH-11 review remain material evidence gaps.
+**Physical and professional evidence.** Internal control does not prove structural, fire, MEP, building-physics or construction adequacy. PHY-03/PHY-04 and competent EPR/RH-11 review remain material evidence gaps.
 
 **Architectural authority drift.** Repetition of the Reference House can make its Georgian grammar, courtyard form, masonry family, low-slope roof, ASHP/PV or 300 mm stair preference appear universal. Generalise the reason; keep project choice local.
 
-**Publication freeze integrity.** DRW v1 and accepted TYP remain protected baselines. ADE/PLT successor work must preserve semantic authority and earn physical acceptance; the older PLT candidate cannot bypass ADE migration. EDA is closed; PR-02 final manufacture must still wait for the independent PLT drawing freeze.
+**Publication freeze integrity.** DRW v1 and accepted TYP remain protected baselines. ADE/PLT successor work must preserve semantic authority and earn physical acceptance; the older PLT candidate cannot bypass ADE migration. EDA is closed; PUB-02 final manufacture must still wait for the independent PLT drawing freeze.
 
 ## Closed or frozen tracks
 
