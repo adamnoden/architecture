@@ -13,6 +13,7 @@ on:
       - 'publication/specimens/plt03b5/**'
       - 'publication/specimens/plt03b6/**'
       - 'publication/specimens/plt04/**'
+      - 'publication/specimens/plt05/**'
       - '.github/workflows/plt-owner-feedback-proof.yml'
   workflow_dispatch:
 permissions:
@@ -51,11 +52,24 @@ jobs:
         run: PLT04_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt04/vivliostyle.config.js
       - name: Validate both levels in finished PDFs
         run: node --import tsx publication/specimens/plt04/validate.ts
+      - name: Prepare coordinated Georgian re-plan
+        run: node --import tsx publication/specimens/plt05/prepare.ts
+      - name: Build Georgian BOOK B5
+        run: PLT05_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt05/vivliostyle.config.js
+      - name: Build Georgian BOOK A4
+        run: PLT05_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt05/vivliostyle.config.js
+      - name: Build Georgian WALL A2
+        run: PLT05_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt05/vivliostyle.config.js
+      - name: Validate coordinated re-plan PDF pages
+        run: node --import tsx publication/specimens/plt05/validate.ts
       - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: plt-owner-feedback-proof
           path: |
+            publication/specimens/plt05/dist/*.pdf
+            publication/specimens/plt05/.work/*.json
+            publication/specimens/plt05/.work/*.svg
             publication/specimens/plt04/dist/*.pdf
             publication/specimens/plt04/.work/*.json
             publication/specimens/plt04/.work/*.svg
