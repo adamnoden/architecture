@@ -49,3 +49,7 @@ await writeFile(resolve(work,'manifest.json'),JSON.stringify({packet:'PLT-03B.6'
  profiles:{b5:[176,250,2,100],a4:[210,297,2,100],a2:[420,594,1,50]},
  architecturalChangeClass:'S — explicit provisional source choices; historical proofs untouched',X:[]},null,2)+'\n')
 console.log('Prepared PLT-03B.6 labelled comparison, paired-level coordination and actual return stair from provisional architectural source.')
+
+const retained=JSON.parse(await readFile(resolve(root,'retained-proof.json'),'utf8'))
+assert.deepEqual(files,retained.files,'Retained B6 drawings must remain byte-identical')
+assert.equal(hash(JSON.stringify({source,choices:groundPlanResolution})),retained.sourceSha256)
