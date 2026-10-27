@@ -41,7 +41,7 @@ export function createSectionRoofScene(view:TechnicalView,scale:100|50):DrawingS
   }
   if(m.court){text('court',6000,4300,'OPEN COURTYARD','marker');text('south-ground',2100,1600,'Entrance hall','label');text('north-ground',9900,1600,'Family / dining','label');text('south-upper',2100,5100,'South landing','label');text('north-upper',9900,5100,'Walk-in','label')}
   else{
-   for(const [id,y,z,label]of [['wc',1500,1600,'Guest WC'],['plant',5500,1600,'Plant'],['pantry',8700,1600,'Pantry'],['kitchen',10600,1600,'Kitchen'],['bed',2000,5100,'Bedroom 3'],['bath',5250,5100,'Family bath'],['ens',7600,5100,'En suite'],['principal',10300,5100,'Principal']] as const)text(id,y,z,label,'label')
+   for(const [id,y,z,label]of [['wc',1500,1600,'Guest WC'],['plant',4500,1600,'Plant'],['pantry',8700,1600,'Pantry'],['kitchen',10600,1600,'Kitchen'],['bed',2000,5100,'Bedroom 3'],['bath',4750,5100,'Family bath'],['ens',7600,5100,'En suite'],['principal',10300,5100,'Principal']] as const)text(id,y,z,label,'label')
    rect('riser',design.services.riser.y,0,design.services.riser.depth,6550,false,'datum');text('riser-note',6000,-950,'Dashed: riser reserve; access is from dry-side gallery')
   }
   for(const [i,z]of [0,3450,6900].entries()){line('level-'+i,-200,z,-50,z);text('level-label-'+i,-650,z+90,(z/1000).toFixed(2))}
