@@ -45,7 +45,7 @@ test('all eight views at both physical scales render deterministically without h
 })
 
 test('internal door sweeps stay in their room and clear selected furniture and equipment',()=>{
- const target:Record<string,string>={'study-door':'G-STUDY','cloak-door':'G-CLOAK','utility-door':'G-UTILITY','wc-door':'G-WC','plant-door':'G-PLANT','pantry-door':'G-KITCHEN','bed2-door':'U-BED2','bed3-door':'U-BED3','ensuite3-door':'U-ENS3','family-bath-door':'U-BATH','principal-ensuite-door':'U-ENSP','principal-door':'U-PRINCIPAL','bed4-door':'U-BED4','wardrobe-door':'U-PRINCIPAL'}
+ const target:Record<string,string>={'study-door':'G-STUDY','cloak-door':'G-CLOAK','utility-door':'G-UTILITY','wc-door':'G-WC','plant-door':'G-PLANT','pantry-door':'G-KITCHEN','bed2-door':'U-BED2','bed3-door':'U-BED3','ensuite3-door':'U-ENS3','family-bath-door':'U-BATH','principal-ensuite-door':'U-ENSP','principal-door':'U-PRINCIPAL','bed4-door':'U-BED4','wardrobe-door':'U-WIC'}
  for(const level of ['GROUND','FIRST'] as const){
   const plan=createGeorgianPlan(level)
   const occupied=[...plan.fittings!.map(f=>({id:f.id,x:f.origin.x,y:f.origin.y,width:f.width,depth:f.depth})),...Object.entries(design.furniture).filter(([id])=>level==='FIRST'?['bed2','bed3','bed4','principal'].includes(id):id==='studyChair').map(([id,b])=>({id,...b})),...(level==='GROUND'?[{id:'riser',...design.services.riser}]:[])]

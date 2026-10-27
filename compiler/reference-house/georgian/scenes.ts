@@ -40,6 +40,7 @@ export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'
    for(const [i,axis]of design.roof.dormerAxes.entries()){rect(`dormer-${i}`,{x:axis-550,y:150,width:1100,depth:1000});line(`dormer-glass-${i}`,axis-550,150,axis+550,150)}
   }
   if(view==='FIRST'){
+   text('upper-service-key',6000,-900,'Dashed: riser, dry-side access and guest en-suite service branch')
    for(const id of ['bed2','bed3','bed4','principal'] as const){const b=design.furniture[id];rect(id+'-bed',b);line(id+'-pillow',b.x+100,b.y+300,b.x+b.width-100,b.y+300)}
    rect('riser-upper',design.services.riser,'datum');rect('dry-access-lining-lower',{x:9662.5,y:4062.5,width:250,depth:187.5},'overhead');rect('dry-access-lining-upper',{x:9662.5,y:5150,width:250,depth:1287.5},'overhead');rect('ensuite-access-lining',{x:9662.5,y:6562.5,width:250,depth:2075},'overhead')
    const branch=design.services.guestEnsuiteBranch;for(let i=0;i<branch.length-1;i++)line('ensuite-branch-'+i,branch[i][0],branch[i][1],branch[i+1][0],branch[i+1][1],'secondary','datum')
