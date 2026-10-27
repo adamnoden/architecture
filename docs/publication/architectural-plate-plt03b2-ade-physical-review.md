@@ -99,3 +99,45 @@ exemplar; ADE first-floor compatibility is not their physical acceptance.
 
 The earlier PLT-03B.1 scale result survives as precedent only. Its drawing is
 superseded and cannot be used to bypass this replacement review.
+
+## Screen and mechanical result — 27 October 2026
+
+The corrected PDFs were downloaded and raster-inspected page by page. The
+paired atlas, ground/first-floor and asymmetric contrast SVG outputs were also
+re-rendered and inspected with the pinned Source Sans faces. Geometry and
+semantic fingerprint comparisons retain the boundaries above.
+
+| Hypothesis | Screen verdict | Physical boundary |
+|---|---|---|
+| Cut / wall layers | KEEP candidate: clear white cavity and quiet inner leaf; continuous joins | ordinary black-only print may alter faint separation |
+| Line family | KEEP candidate: partitions and obligations remain subordinate to envelope | inspect fine strokes at actual size |
+| 7 / 6 / 6 pt type | KEEP candidate: no visible overlap/clipping; architecture dominates | ordinary reading-distance legibility still unreviewed |
+| Uncertainty / adjacency | KEEP candidate with the explicit key above | confirm faint bands/brackets survive reproduction |
+| BOOK composition | KEEP candidate at intrinsic 1:100; A4 preserves the same scale | B5 page 2 requires actual-size acceptance |
+| WALL composition | KEEP candidate at A2 1:50; no extra typography enlargement earned | A2 page requires actual-size acceptance |
+
+These are screen judgements, not an owner physical verdict. No candidate token
+is frozen. The correction earns no wider architectural or technical claim.
+
+Exact corrected proof identity:
+
+- source head: `a5f534fe6af241a82dd5b8c60a3a8bab7551a481`;
+- PR: #888;
+- proof workflow: `40480540579`;
+- artifact: `12721779596` (`plt-03b2-ade-physical-proof`);
+- artifact SHA-256: `799f99312e2eafdff164ab03593ee6dbbafd4699a1652cf27ddf9ba5e0a2313a`;
+- B5 PDF SHA-256: `b9d9db6d79895c6ccb53717c2db238c753d7ef8be76ea7005e27987eb1680f74`;
+- A4 PDF SHA-256: `79c98ad4ce7f6d40f0892f54fac33247805816b60cac5760b4e25a216ed21def`;
+- A2 PDF SHA-256: `1417aacab9706d9784c0f75cbf8ce6029ba6b10016f234548b28a1f900e7503e`.
+
+The PDF validator measured 153.07031 pt between B1 and B3 in BOOK and
+306.14061 pt in WALL, with 6.00000 pt notes in all profiles. Candidate pages
+contain only embedded/subset Source Sans 3 Regular/Bold with Unicode mapping.
+The baseline remains visually independent of candidate CSS and contains no
+Source Sans. The source packet, manifest and PDF validation evidence are
+retained in the workflow artifact; later documentation-only closeout changes
+do not alter these proof inputs.
+
+**Next gate:** owner review of actual-size B5 page 2 and the A2 page. PLT-03B,
+PLT-03 and PLT remain open. PLT-03C/token freeze and downstream family rollout
+must wait for that verdict. Proof preparation and screen review are complete.
