@@ -1,6 +1,10 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
+## Current exterior revision
+
+The owner subsequently approves the [simplified roof and facade](architectural-plate-simple-roof.md). Use `georgian/facade-source.ts` for new exterior/section work, retaining the accepted ground/first plan geography. The mansard, dormers and standing attic stair are superseded; do not mix their historical previews into a current set.
+
 ## Current direction
 
 The owner accepts the PLT-05 floor plan as the working drawing basis and defers

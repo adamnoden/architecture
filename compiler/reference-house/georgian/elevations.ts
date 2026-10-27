@@ -1,4 +1,4 @@
-import {design, openings, roofTop} from './source.js'
+import {design, openings, roofTop} from './facade-source.js'
 import type {DrawingSceneV2, DrawingPrimitiveV2} from '../../publication-drawing-v2/model.js'
 
 /** Publication projections of the accepted drawing source. No technical successor claim. */
@@ -21,12 +21,8 @@ export function elevationSource(view:ElevationView) {
   return {id:`${level}-${o.id}`,sourceId:o.id,level,kind:o.kind,u:project(o.centre),width:o.width,sill,head,leaves:o.leaves??1}
  }))
  return {view,...c,min,max,width:max-min,apertures,sourceId:design.id,
-  // Only front and rear dormer faces have controlled projection extents.
-  dormers:c.court||view==='SERVICE'?[]:design.roof.dormerAxes.map((axis,i)=>({
-   id:`dormer-${i}`,u:project(axis),width:design.roof.dormerWidth,
-   sill:view==='REAR'&&i===2?design.levels.attic:design.roof.dormerSill,
-   head:design.roof.dormerHead,apex:design.roof.dormerApex,access:view==='REAR'&&i===2
-  }))}
+  dormers:[] as {id:string;u:number;width:number;sill:number;head:number;apex:number;access:boolean}[]}
+
 }
 
 export function createGeorgianElevation(view:ElevationView,scale:100|50):DrawingSceneV2 {
@@ -47,20 +43,32 @@ export function createGeorgianElevation(view:ElevationView,scale:100|50):Drawing
  else {
   line('eaves',0,top,design.shell,top,'primary')
   const roof=design.roof
-  const points=[[0,roof.eaves],[roof.breakInset,roof.breakZ],[design.court.x,roofTop()],[design.court.x+design.court.width,roofTop()],[design.shell-roof.breakInset,roof.breakZ],[design.shell,roof.eaves]]
+  const points=[[0,roof.eaves],[design.court.x,roofTop()],[design.court.x+design.court.width,roofTop()],[design.shell,roof.eaves]]
   for(let i=0;i<points.length-1;i++)line(`roof-envelope-${i}`,points[i][0],points[i][1],points[i+1][0],points[i+1][1],'profile')
-  // Occlude roof-break strokes behind each controlled dormer face.
-  let cursor=roof.breakInset
-  for(const d of [...model.dormers].sort((a,b)=>a.u-b.u)){line(`roof-break-before-${d.id}`,cursor,roof.breakZ,d.u-d.width/2,roof.breakZ);cursor=d.u+d.width/2}
-  line('roof-break-end',cursor,roof.breakZ,design.shell-roof.breakInset,roof.breakZ)
+  line('cornice-lower',0,roof.eaves-180,design.shell,roof.eaves-180,'primary')
+  line('cornice-fascia',0,roof.eaves-60,design.shell,roof.eaves-60)
+  // Plinth is interrupted at door apertures below.
+
  }
  for(const a of model.apertures){
   rect(a.id,a.u-a.width/2,a.sill,a.width,a.head-a.sill,'primary')
   // Aperture outline + sash convention only: no invented reveal or frame depth.
   if(a.kind==='window'){
    line(a.id+'-meeting',a.u-a.width/2,(a.sill+a.head)/2,a.u+a.width/2,(a.sill+a.head)/2)
-   line(a.id+'-division',a.u,a.sill,a.u,a.head)
-  }else if(a.leaves===2)line(a.id+'-leaves',a.u,a.sill,a.u,a.head)
+   rect(a.id+'-frame',a.u-a.width/2+60,a.sill+60,a.width-120,a.head-a.sill-120)
+   line(a.id+'-sill',a.u-a.width/2-80,a.sill-60,a.u+a.width/2+80,a.sill-60,'primary')
+   line(a.id+'-head',a.u-a.width/2-80,a.head+120,a.u+a.width/2+80,a.head+120)
+   for(const third of [1,2])line(a.id+'-bar-'+third,a.u-a.width/2+a.width*third/3,a.sill+60,a.u-a.width/2+a.width*third/3,a.head-60)
+   for(const quarter of [1,3])line(a.id+'-row-'+quarter,a.u-a.width/2+60,a.sill+(a.head-a.sill)*quarter/4,a.u+a.width/2-60,a.sill+(a.head-a.sill)*quarter/4)
+   }else {
+   if(a.leaves===2)line(a.id+'-leaves',a.u,a.sill,a.u,a.head)
+   line(a.id+'-threshold',a.u-a.width/2-80,50,a.u+a.width/2+80,50,'primary')
+   if(view==='FRONT'){
+    rect('entrance-surround',a.u-a.width/2-150,0,a.width+300,a.head+180,'primary')
+    line('fanlight-rail',a.u-a.width/2,a.head-550,a.u+a.width/2,a.head-550,'primary')
+    for(const direction of [-1,1])for(const z of [250,1150])rect('door-panel-'+direction+'-'+z,a.u+direction*a.width/4-a.width/4+110,z,a.width/2-220,700)
+   }
+  }
  }
  for(const d of model.dormers){
   rect(d.id,d.u-d.width/2,d.sill,d.width,d.head-d.sill,'primary')
@@ -73,10 +81,16 @@ export function createGeorgianElevation(view:ElevationView,scale:100|50):Drawing
   line('level-'+name,model.min-250,z,model.min-50,z)
   text('datum-'+name,model.min-650,z+90,name)
  }
- text('height',6000,11600,`High roof edge +${(roofTop()/1000).toFixed(2)} m`)
+ text('height',6000,roofTop()+650,`High roof edge +${(roofTop()/1000).toFixed(2)} m`)
  text('width',6000,-550,`${model.width/1000} m`)
- if(view==='SERVICE')text('scope',6000,-1000,'Roof envelope shown; dormer side returns unresolved')
- if(view==='REAR')text('scope',6000,-1000,'Roof-access platform and protection unresolved')
+ let cursor=model.min
+ for(const door of model.apertures.filter(a=>a.kind==='door'&&a.level==='GROUND').sort((a,b)=>a.u-b.u)){
+  line('plinth-'+door.id,cursor,150,door.u-door.width/2,150);cursor=door.u+door.width/2
+ }
+ line('plinth-end',cursor,150,model.max,150)
+ line('external-ground',model.min-100,-150,model.max+100,-150)
+ if(view==='FRONT')text('scope',6000,-1000,'External ground -150 mm; entrance landing at threshold')
+ if(view==='REAR')text('scope',6000,-1000,'Low storage roof; external maintenance access unresolved')
  if(view==='COURT-WINDOWS')text('scope',6000,-1000,'East and west share this nominal aperture arrangement')
  if(view==='COURT-ENTRY')text('scope',6000,-1000,'North wall viewed from courtyard; grand entrance below')
  const yy=-1900

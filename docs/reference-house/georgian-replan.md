@@ -7,6 +7,13 @@ development; personal layout refinements are deferred. It succeeds the square-ho
 The earlier plans remain historical comparison evidence. This proposal is not
 yet the complete structural, environmental or service-model successor.
 
+## Subsequent exterior decision
+
+The owner replaces the mansard and dormers with a consistent 25-degree outward
+pitch and no roof windows. Ground/first plans stay held; standing attic use and
+the full-height upper stair are withdrawn. The earlier roof/attic descriptions
+below are retained historical evidence, not current design.
+
 ## Roof constraint
 
 **No flat roofs are permitted in newly authored project designs.** This applies
