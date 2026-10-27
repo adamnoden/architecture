@@ -58,6 +58,7 @@ for(const level of ['GROUND','FIRST'] as const)test(`${level}: two-scale stair a
   const a=createResolvedReferenceHouseAdePlanScene(result,source,100,level),b=createResolvedReferenceHouseAdePlanScene(result,source,50,level)
   assert.deepEqual(a.primitives.map(p=>p.id),b.primitives.map(p=>p.id))
   assert.equal(a.primitives.filter(p=>p.id.includes('-riser-')).length,18)
+  if(level==='GROUND') assert.ok(a.primitives.filter(p=>p.id.includes('landing-')).every(p=>p.kind==='line'&&p.dash==='overhead'))
   assert.ok(a.primitives.some(p=>p.kind==='text'&&p.value===(level==='GROUND'?'UP':'DN')))
   if(level==='GROUND'){
     assert.ok(!a.primitives.some(p=>p.metadata?.epistemic==='opening-uncertainty'||p.metadata?.between))
@@ -71,6 +72,8 @@ test('an unknown aperture cannot acquire a window symbol and invalid stairs fail
   const p=createResolvedReferenceHouseAdePlan(result,source)
   p.openings=[{...p.openings[0],width:{kind:'unknown'}}]
   assert.ok(validateArchitecturalPlan(p).some(d=>d.code==='ADE-OPENING-SYMBOL'))
+  p.stairs=[{...p.stairs![0],cutHeight:p.stairs![0].floorToFloor}]
+  assert.ok(validateArchitecturalPlan(p).some(d=>d.code==='ADE-STAIR-GEOMETRY'))
   p.stairs=[{...p.stairs![0],riserCount:17}]
   assert.ok(validateArchitecturalPlan(p).some(d=>d.code==='ADE-STAIR-GEOMETRY'))
 })

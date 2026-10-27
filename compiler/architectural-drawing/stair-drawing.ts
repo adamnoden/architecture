@@ -10,13 +10,19 @@ export const returnStairToDrawingPrimitives = (s: AdeReturnStair, p: PlanPaperPr
   const out:DrawingPrimitiveV2[]=[]
   const line=(id:string,x0:number,y0:number,x1:number,y1:number,overhead=false)=>out.push({kind:'line',id:`${s.id}-${id}`,a:p.point(x0,y0),b:p.point(x1,y1),role:'secondary',dash:overhead?'overhead':undefined,metadata})
   // Intermediate landing spans the two parallel flights, with full clear depth.
-  line('landing-west',x,y,x,y+2*w+gap)
-  line('landing-south',x,y,x+s.landingDepth,y)
-  line('landing-north',x,y+2*w+gap,x+s.landingDepth,y+2*w+gap)
+  const landingOverhead=s.level==='GROUND'&&half*rise>s.cutHeight
+  line('landing-west',x,y,x,y+2*w+gap,landingOverhead)
+  line('landing-south',x,y,x+s.landingDepth,y,landingOverhead)
+  line('landing-north',x,y+2*w+gap,x+s.landingDepth,y+2*w+gap,landingOverhead)
   for(const [flight,fy] of [[0,y],[1,y+w+gap]] as const){
     const overhead=s.level==='GROUND'&&flight===1
-    line(`flight-${flight}-south`,x+s.landingDepth,fy,end,fy,overhead)
-    line(`flight-${flight}-north`,x+s.landingDepth,fy+w,end,fy+w,overhead)
+    for(const [side,edgeY] of [['south',fy],['north',fy+w]] as const){
+      if(s.level==='GROUND'&&flight===0){
+        const cutX=end-(s.cutHeight/rise-1)*s.going
+        line(`flight-${flight}-${side}-above`,x+s.landingDepth,edgeY,cutX,edgeY,true)
+        line(`flight-${flight}-${side}-below`,cutX,edgeY,end,edgeY)
+      }else line(`flight-${flight}-${side}`,x+s.landingDepth,edgeY,end,edgeY,overhead)
+    }
     for(let i=0;i<half;i++){
       const px=flight===0?end-i*s.going:x+s.landingDepth+i*s.going
       const riser=flight===0?i+1:half+i+1

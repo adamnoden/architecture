@@ -221,8 +221,8 @@ export const validateArchitecturalPlan = (plan: AdeArchitecturalPlan): AdeValida
 
   for (const stair of plan.stairs ?? []) {
     if (!finitePoint(stair.origin) || !Number.isInteger(stair.riserCount) || stair.riserCount < 4 || stair.riserCount % 2 !== 0 ||
-      ![stair.floorToFloor, stair.going, stair.clearWidth, stair.landingDepth, stair.wellGap, stair.cutHeight].every((n)=>Number.isFinite(n)&&n>0) || stair.landingDepth < stair.clearWidth) {
-      diagnostics.push({code:'ADE-STAIR-GEOMETRY',entityId:stair.id,message:'Return stair requires an even rise count, positive geometry and full-width intermediate landing.'})
+      ![stair.floorToFloor, stair.going, stair.clearWidth, stair.landingDepth, stair.wellGap, stair.cutHeight].every((n)=>Number.isFinite(n)&&n>0) || stair.landingDepth < stair.clearWidth || stair.cutHeight <= stair.floorToFloor/stair.riserCount || stair.cutHeight >= stair.floorToFloor/2) {
+      diagnostics.push({code:'ADE-STAIR-GEOMETRY',entityId:stair.id,message:'Return stair requires an even rise count, positive geometry, full-width intermediate landing and a cut within the lower flight.'})
     }
   }
 
