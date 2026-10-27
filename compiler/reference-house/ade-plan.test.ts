@@ -13,6 +13,9 @@ for (const level of ['GROUND', 'FIRST'] as const) test(`${level}: source coverag
   const plan = createReferenceHouseAdePlan(result, source, level)
   assert.deepEqual(validateArchitecturalPlan(plan), [])
   assert.equal(plan.partitionDatums.length, 0)
+  for (const boundary of result.derived.boundaries.filter((b) => b.levelId === level && b.provisional)) {
+    assert.ok(plan.nodes.filter((n) => n.provenance.sourceIds.includes(boundary.id)).every((n) => n.provenance.authority === 'provisional'), 'shared nodes cannot promote provisional boundary coordinates')
+  }
   const sources = plan.walls.flatMap((w) => w.provenance.sourceIds)
   assert.ok(result.derived.boundaries.filter((b) => b.levelId === level).every((b) => sources.includes(b.id)))
   assert.equal(plan.openings.length, source.openings.filter((o) => o.levelId === level).length + source.qualitativeOpeningRelationships.filter((o) => o.levelId === level).length)

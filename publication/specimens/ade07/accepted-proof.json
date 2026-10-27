@@ -137,6 +137,8 @@
         "id": "GROUND-NODE-7800-7400",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-EAST",
@@ -148,6 +150,8 @@
         "id": "GROUND-NODE-7800-3400",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-EAST",
@@ -159,6 +163,8 @@
         "id": "GROUND-NODE-7800-10800",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-EAST-NORTH-CONT-B"
@@ -168,6 +174,8 @@
         "id": "GROUND-NODE-7800-0",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-EAST-SOUTH-CONT-B"
@@ -177,6 +185,8 @@
         "id": "GROUND-NODE-4200-7400",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-NORTH",
@@ -188,6 +198,8 @@
         "id": "GROUND-NODE-4200-3400",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-SOUTH",
@@ -198,6 +210,8 @@
         "id": "GROUND-NODE-4200-10800",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-WEST-NORTH-CONT-B"
@@ -207,6 +221,8 @@
         "id": "GROUND-NODE-9100-0",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-GALLERY-SERVICE-B"
@@ -216,6 +232,8 @@
         "id": "GROUND-NODE-9100-7400",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-GALLERY-SERVICE-B"
@@ -225,6 +243,8 @@
         "id": "GROUND-NODE-4000-0",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-HALL-WEST-B"
@@ -234,6 +254,8 @@
         "id": "GROUND-NODE-4000-3400",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-HALL-WEST-B"
@@ -243,6 +265,8 @@
         "id": "GROUND-NODE-12000-0",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-OUTER-EAST",
@@ -253,6 +277,8 @@
         "id": "GROUND-NODE-12000-10800",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-OUTER-EAST",
@@ -263,6 +289,8 @@
         "id": "GROUND-NODE-0-10800",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-OUTER-NORTH",
@@ -273,6 +301,8 @@
         "id": "GROUND-NODE-0-0",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-OUTER-SOUTH",
@@ -283,6 +313,8 @@
         "id": "GROUND-NODE-0-5000",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-WEST-SPLIT-B"
@@ -292,6 +324,8 @@
         "id": "GROUND-NODE-4200-5000",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-WEST-SPLIT-B"
@@ -301,6 +335,8 @@
         "id": "RH-ADE-ENVELOPE",
         "kind": "wall-assembly",
         "class": "S",
+        "authority": "provisional",
+        "precision": "range",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "docs/reference-house/envelope-coordination-rh10.md"
@@ -310,6 +346,8 @@
         "id": "RH-PART-DRY-01",
         "kind": "wall-assembly",
         "class": "S",
+        "authority": "provisional",
+        "precision": "range",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "compiler/reference-house/internal-partitions.ts",
@@ -320,6 +358,8 @@
         "id": "G-COURT-EAST",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-EAST",
@@ -330,6 +370,8 @@
         "id": "G-COURT-EAST-NORTH-CONT-B",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-EAST-NORTH-CONT-B",
@@ -340,6 +382,8 @@
         "id": "G-COURT-EAST-SOUTH-CONT-B",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-EAST-SOUTH-CONT-B",
@@ -350,6 +394,8 @@
         "id": "G-COURT-NORTH",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-NORTH",
@@ -360,6 +406,8 @@
         "id": "G-COURT-SOUTH",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-SOUTH",
@@ -370,6 +418,8 @@
         "id": "G-COURT-WEST",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-WEST",
@@ -380,6 +430,8 @@
         "id": "G-COURT-WEST-NORTH-CONT-B",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-WEST-NORTH-CONT-B",
@@ -390,6 +442,8 @@
         "id": "G-GALLERY-SERVICE-B",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-GALLERY-SERVICE-B",
@@ -400,6 +454,8 @@
         "id": "G-HALL-WEST-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-HALL-WEST-B",
@@ -410,6 +466,8 @@
         "id": "G-OUTER-EAST",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-OUTER-EAST",
@@ -420,6 +478,8 @@
         "id": "G-OUTER-NORTH",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-OUTER-NORTH",
@@ -430,6 +490,8 @@
         "id": "G-OUTER-SOUTH",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-OUTER-SOUTH",
@@ -440,6 +502,8 @@
         "id": "G-OUTER-WEST",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-OUTER-WEST",
@@ -450,6 +514,8 @@
         "id": "G-WEST-SPLIT-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-WEST-SPLIT-B",
@@ -460,6 +526,8 @@
         "id": "G-COURT-NORTH-O01",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "unknown",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-NORTH-O01",
@@ -470,6 +538,8 @@
         "id": "G-COURT-SOUTH-O01",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "unknown",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-COURT-SOUTH-O01",
@@ -480,6 +550,8 @@
         "id": "G-FRONT-D01",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "range",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-FRONT-D01",
@@ -490,6 +562,8 @@
         "id": "G-FRONT-W01",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-FRONT-W01",
@@ -500,6 +574,8 @@
         "id": "G-FRONT-W02",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-FRONT-W02",
@@ -510,6 +586,8 @@
         "id": "G-FRONT-W04",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-FRONT-W04",
@@ -520,6 +598,8 @@
         "id": "RHCF-COURT-E-G",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-COURT-E-G",
@@ -530,6 +610,8 @@
         "id": "RHCF-COURT-W-G",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-COURT-W-G",
@@ -540,6 +622,8 @@
         "id": "RHCF-GARDEN-CENTRE-G",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-GARDEN-CENTRE-G",
@@ -550,6 +634,8 @@
         "id": "G-DRAW-02",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-DRAW-02"
@@ -559,6 +645,8 @@
         "id": "G-FAM-02",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-FAM-02"
@@ -568,6 +656,8 @@
         "id": "G-GAL-01",
         "kind": "space",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-GAL-01"
@@ -577,6 +667,8 @@
         "id": "G-GARDEN-02",
         "kind": "space",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-GARDEN-02"
@@ -586,6 +678,8 @@
         "id": "G-HALL-02",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-HALL-02"
@@ -595,6 +689,8 @@
         "id": "G-KIT-02",
         "kind": "space",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-KIT-02"
@@ -604,6 +700,8 @@
         "id": "G-STUDY-02",
         "kind": "space",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-STUDY-02"
@@ -613,6 +711,8 @@
         "id": "G-SVC-02",
         "kind": "space",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-SVC-02"
@@ -622,6 +722,8 @@
         "id": "ADJ-G-DRAW-FAM",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-G-DRAW-FAM"
@@ -631,6 +733,8 @@
         "id": "ADJ-G-DRAW-HALL",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-G-DRAW-HALL"
@@ -640,6 +744,8 @@
         "id": "ADJ-G-HALL-GAL",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-G-HALL-GAL"
@@ -649,6 +755,8 @@
         "id": "ADJ-G-STUDY-GAL",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-G-STUDY-GAL"
@@ -658,6 +766,8 @@
         "id": "ADJ-G-SVC-GAL",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-G-SVC-GAL"
@@ -667,6 +777,8 @@
         "id": "ADJ-G-FAM-GARDEN",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-G-FAM-GARDEN"
@@ -676,6 +788,8 @@
         "id": "ADJ-G-GARDEN-KIT",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-G-GARDEN-KIT"
@@ -685,6 +799,8 @@
         "id": "GROUND-width",
         "kind": "dimension",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-SHELL-X"
@@ -694,6 +810,8 @@
         "id": "GROUND-depth",
         "kind": "dimension",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-SHELL-Y"
@@ -703,6 +821,8 @@
         "id": "G-DRAW-02-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-DRAW-02"
@@ -712,6 +832,8 @@
         "id": "G-FAM-02-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-FAM-02"
@@ -721,6 +843,8 @@
         "id": "G-GAL-01-label",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-GAL-01"
@@ -730,6 +854,8 @@
         "id": "G-GARDEN-02-label",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-GARDEN-02"
@@ -739,6 +865,8 @@
         "id": "G-HALL-02-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-HALL-02"
@@ -748,6 +876,8 @@
         "id": "G-KIT-02-label",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-KIT-02"
@@ -757,6 +887,8 @@
         "id": "G-STUDY-02-label",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-STUDY-02"
@@ -766,6 +898,8 @@
         "id": "G-SVC-02-label",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "G-SVC-02"
@@ -775,6 +909,8 @@
         "id": "GROUND-court-label",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-COURT-SIZE"
@@ -784,6 +920,8 @@
         "id": "GROUND-court-size",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-COURT-SIZE"
@@ -793,6 +931,8 @@
         "id": "GROUND-stair-note",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-STAIR-N",
@@ -915,6 +1055,8 @@
         "id": "FIRST-NODE-7800-7400",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-EAST",
@@ -925,6 +1067,8 @@
         "id": "FIRST-NODE-7800-3400",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-EAST",
@@ -935,6 +1079,8 @@
         "id": "FIRST-NODE-7800-8600",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-EAST-NORTH-CONT-B",
@@ -946,6 +1092,8 @@
         "id": "FIRST-NODE-7800-10800",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-EAST-NORTH-CONT-B"
@@ -955,6 +1103,8 @@
         "id": "FIRST-NODE-7800-0",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-EAST-SOUTH-CONT-B"
@@ -964,6 +1114,8 @@
         "id": "FIRST-NODE-7800-2100",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-EAST-SOUTH-CONT-B",
@@ -974,6 +1126,8 @@
         "id": "FIRST-NODE-4200-7400",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-NORTH",
@@ -985,6 +1139,8 @@
         "id": "FIRST-NODE-4200-3400",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-SOUTH",
@@ -995,6 +1151,8 @@
         "id": "FIRST-NODE-4200-8600",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-WEST-NORTH-CONT-B",
@@ -1005,6 +1163,8 @@
         "id": "FIRST-NODE-4200-10800",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-WEST-NORTH-CONT-B"
@@ -1014,6 +1174,8 @@
         "id": "FIRST-NODE-6400-8600",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-DRY-SPLIT-B",
@@ -1024,6 +1186,8 @@
         "id": "FIRST-NODE-6400-10800",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-DRY-SPLIT-B"
@@ -1033,6 +1197,8 @@
         "id": "FIRST-NODE-9100-2100",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-GALLERY-SERVICE-B",
@@ -1043,6 +1209,8 @@
         "id": "FIRST-NODE-9100-8600",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-GALLERY-SERVICE-B",
@@ -1053,6 +1221,8 @@
         "id": "FIRST-NODE-4000-0",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-HALL-WEST-B"
@@ -1062,6 +1232,8 @@
         "id": "FIRST-NODE-4000-3400",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-HALL-WEST-B"
@@ -1071,6 +1243,8 @@
         "id": "FIRST-NODE-12000-0",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-OUTER-EAST",
@@ -1081,6 +1255,8 @@
         "id": "FIRST-NODE-12000-10800",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-OUTER-EAST",
@@ -1091,6 +1267,8 @@
         "id": "FIRST-NODE-0-10800",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-OUTER-NORTH",
@@ -1101,6 +1279,8 @@
         "id": "FIRST-NODE-0-0",
         "kind": "node",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-OUTER-SOUTH",
@@ -1111,6 +1291,8 @@
         "id": "FIRST-NODE-0-5000",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-WEST-SPLIT-B"
@@ -1120,6 +1302,8 @@
         "id": "FIRST-NODE-4200-5000",
         "kind": "node",
         "class": "S",
+        "authority": "provisional",
+        "precision": "approximate",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-WEST-SPLIT-B"
@@ -1129,6 +1313,8 @@
         "id": "RH-ADE-ENVELOPE",
         "kind": "wall-assembly",
         "class": "S",
+        "authority": "provisional",
+        "precision": "range",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "docs/reference-house/envelope-coordination-rh10.md"
@@ -1138,6 +1324,8 @@
         "id": "RH-PART-DRY-01",
         "kind": "wall-assembly",
         "class": "S",
+        "authority": "provisional",
+        "precision": "range",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "compiler/reference-house/internal-partitions.ts",
@@ -1148,6 +1336,8 @@
         "id": "U-COURT-EAST",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-EAST",
@@ -1158,6 +1348,8 @@
         "id": "U-COURT-EAST-NORTH-CONT-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-EAST-NORTH-CONT-B",
@@ -1168,6 +1360,8 @@
         "id": "U-COURT-EAST-SOUTH-CONT-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-EAST-SOUTH-CONT-B",
@@ -1178,6 +1372,8 @@
         "id": "U-COURT-NORTH",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-NORTH",
@@ -1188,6 +1384,8 @@
         "id": "U-COURT-SOUTH",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-SOUTH",
@@ -1198,6 +1396,8 @@
         "id": "U-COURT-WEST",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-WEST",
@@ -1208,6 +1408,8 @@
         "id": "U-COURT-WEST-NORTH-CONT-B::1",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-WEST-NORTH-CONT-B",
@@ -1218,6 +1420,8 @@
         "id": "U-COURT-WEST-NORTH-CONT-B::2",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-WEST-NORTH-CONT-B",
@@ -1228,6 +1432,8 @@
         "id": "U-DRY-SPLIT-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-DRY-SPLIT-B",
@@ -1238,6 +1444,8 @@
         "id": "U-GALLERY-SERVICE-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-GALLERY-SERVICE-B",
@@ -1248,6 +1456,8 @@
         "id": "U-HALL-WEST-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-HALL-WEST-B",
@@ -1258,6 +1468,8 @@
         "id": "U-NORTH-SPLIT-B::1",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-NORTH-SPLIT-B",
@@ -1268,6 +1480,8 @@
         "id": "U-NORTH-SPLIT-B::2",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-NORTH-SPLIT-B",
@@ -1278,6 +1492,8 @@
         "id": "U-NORTH-TURN-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-NORTH-TURN-B",
@@ -1288,6 +1504,8 @@
         "id": "U-OUTER-EAST",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-OUTER-EAST",
@@ -1298,6 +1516,8 @@
         "id": "U-OUTER-NORTH",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-OUTER-NORTH",
@@ -1308,6 +1528,8 @@
         "id": "U-OUTER-SOUTH",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-OUTER-SOUTH",
@@ -1318,6 +1540,8 @@
         "id": "U-OUTER-WEST",
         "kind": "wall",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-OUTER-WEST",
@@ -1328,6 +1552,8 @@
         "id": "U-SOUTH-TURN-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-SOUTH-TURN-B",
@@ -1338,6 +1564,8 @@
         "id": "U-WEST-SPLIT-B",
         "kind": "wall",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-WEST-SPLIT-B",
@@ -1348,6 +1576,8 @@
         "id": "U-COURT-NORTH-O01",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "unknown",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-NORTH-O01",
@@ -1358,6 +1588,8 @@
         "id": "U-COURT-SOUTH-O01",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "unknown",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-COURT-SOUTH-O01",
@@ -1368,6 +1600,8 @@
         "id": "U-FRONT-W01",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "range",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-FRONT-W01",
@@ -1378,6 +1612,8 @@
         "id": "U-FRONT-W02",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "range",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-FRONT-W02",
@@ -1388,6 +1624,8 @@
         "id": "U-FRONT-W03",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "range",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-FRONT-W03",
@@ -1398,6 +1636,8 @@
         "id": "U-FRONT-W04",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "range",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-FRONT-W04",
@@ -1408,6 +1648,8 @@
         "id": "RHCF-COURT-E-U",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-COURT-E-U",
@@ -1418,6 +1660,8 @@
         "id": "RHCF-COURT-W-U",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-COURT-W-U",
@@ -1428,6 +1672,8 @@
         "id": "RHCF-GARDEN-CENTRE-U",
         "kind": "opening",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-GARDEN-CENTRE-U",
@@ -1438,6 +1684,8 @@
         "id": "U-BATH-01",
         "kind": "space",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BATH-01"
@@ -1447,6 +1695,8 @@
         "id": "U-BED-02",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BED-02"
@@ -1456,6 +1706,8 @@
         "id": "U-BED-03",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BED-03"
@@ -1465,6 +1717,8 @@
         "id": "U-BED-04",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BED-04"
@@ -1474,6 +1728,8 @@
         "id": "U-BED-P01",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BED-P01"
@@ -1483,6 +1739,8 @@
         "id": "U-DRESS-01",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-DRESS-01"
@@ -1492,6 +1750,8 @@
         "id": "U-GAL-02",
         "kind": "space",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-GAL-02"
@@ -1501,6 +1761,8 @@
         "id": "U-LAND-N01",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-LAND-N01"
@@ -1510,6 +1772,8 @@
         "id": "U-LIN-01",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-LIN-01"
@@ -1519,6 +1783,8 @@
         "id": "U-STAIR-01",
         "kind": "space",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-STAIR-01"
@@ -1528,6 +1794,8 @@
         "id": "ADJ-U-BED02-P01",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-U-BED02-P01"
@@ -1537,6 +1805,8 @@
         "id": "ADJ-U-BED02-STAIR",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-U-BED02-STAIR"
@@ -1546,6 +1816,8 @@
         "id": "ADJ-U-STAIR-BED03",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-U-STAIR-BED03"
@@ -1555,6 +1827,8 @@
         "id": "ADJ-U-STAIR-GAL",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-U-STAIR-GAL"
@@ -1564,6 +1838,8 @@
         "id": "ADJ-U-GAL-BATH",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-U-GAL-BATH"
@@ -1573,6 +1849,8 @@
         "id": "ADJ-U-GAL-LAND",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-U-GAL-LAND"
@@ -1582,6 +1860,8 @@
         "id": "ADJ-U-BED04-LAND",
         "kind": "adjacency",
         "class": "S",
+        "authority": "provisional",
+        "precision": "qualitative",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "ADJ-U-BED04-LAND"
@@ -1591,6 +1871,8 @@
         "id": "FIRST-width",
         "kind": "dimension",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-SHELL-X"
@@ -1600,6 +1882,8 @@
         "id": "FIRST-depth",
         "kind": "dimension",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-SHELL-Y"
@@ -1609,6 +1893,8 @@
         "id": "U-BATH-01-label",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BATH-01"
@@ -1618,6 +1904,8 @@
         "id": "U-BED-02-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BED-02"
@@ -1627,6 +1915,8 @@
         "id": "U-BED-03-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BED-03"
@@ -1636,6 +1926,8 @@
         "id": "U-BED-04-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BED-04"
@@ -1645,6 +1937,8 @@
         "id": "U-BED-P01-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-BED-P01"
@@ -1654,6 +1948,8 @@
         "id": "U-DRESS-01-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-DRESS-01"
@@ -1663,6 +1959,8 @@
         "id": "U-GAL-02-label",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-GAL-02"
@@ -1672,6 +1970,8 @@
         "id": "U-LAND-N01-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-LAND-N01"
@@ -1681,6 +1981,8 @@
         "id": "U-LIN-01-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-LIN-01"
@@ -1690,6 +1992,8 @@
         "id": "U-STAIR-01-label",
         "kind": "label",
         "class": "S",
+        "authority": "provisional",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "U-STAIR-01"
@@ -1699,6 +2003,8 @@
         "id": "FIRST-court-label",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-COURT-SIZE"
@@ -1708,6 +2014,8 @@
         "id": "FIRST-court-size",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-COURT-SIZE"
@@ -1717,6 +2025,8 @@
         "id": "FIRST-stair-note",
         "kind": "label",
         "class": "S",
+        "authority": "controlled",
+        "precision": "exact",
         "reason": "Mapped from current architectural source or deterministic representation convention",
         "sources": [
           "RHCF-STAIR-N",

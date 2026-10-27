@@ -55,10 +55,11 @@ export const createReferenceHouseAdePlan = (result: ReferenceHouseCompileResult,
     }], walls: [], openings: [], partitionDatums: [], spaces: [], adjacencies: [], dimensions: [], labels: []
   }
   const nodes = new Map<string, AdeArchitecturalPlan['nodes'][number]>()
-  const nodeId = (p: AdeModelPoint, sourceId: string): string => {
+  const nodeId = (p: AdeModelPoint, sourceId: string, provisional: boolean): string => {
     const id = `${level}-NODE-${p.x}-${p.y}`
     const existing = nodes.get(id)
-    nodes.set(id, { kind: 'node', id, point: p, provenance: provenance([...new Set([...(existing?.provenance.sourceIds ?? []), sourceId])].sort()) })
+    const uncertain = provisional || existing?.provenance.authority === 'provisional'
+    nodes.set(id, { kind: 'node', id, point: p, provenance: provenance([...new Set([...(existing?.provenance.sourceIds ?? []), sourceId])].sort(), uncertain, uncertain ? 'approximate' : 'exact') })
     return id
   }
   const boundaries = result.derived.boundaries.filter((b) => b.levelId === level)
@@ -83,7 +84,7 @@ export const createReferenceHouseAdePlan = (result: ReferenceHouseCompileResult,
       .sort((a, b) => boundary.orientation === 'horizontal' ? (segment.b.x - segment.a.x) * (a.x - b.x) : (segment.b.y - segment.a.y) * (a.y - b.y))
     for (let index = 0; index < points.length - 1; index++) {
       const wall: AdeWallRun = { kind: 'wall', id: points.length === 2 ? boundary.id : `${boundary.id}::${index + 1}`,
-        fromNodeId: nodeId(points[index], boundary.id), toNodeId: nodeId(points[index + 1], boundary.id),
+        fromNodeId: nodeId(points[index], boundary.id, boundary.provisional), toNodeId: nodeId(points[index + 1], boundary.id, boundary.provisional),
         reference: physicalPartition ? 'centreline' : 'right-face', assemblyStartFace: physicalPartition ? undefined : 'right-face',
         assemblyId: physicalPartition ? partitionSource.family.id : 'RH-ADE-ENVELOPE',
         provenance: provenance([boundary.id, ...(physicalPartition ? [partitionSource.family.id] : ['RH-10'])], boundary.provisional) }

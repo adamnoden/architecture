@@ -51,7 +51,7 @@ for (const level of ['GROUND', 'FIRST'] as const) {
   }
   manifest[level] = { semanticEntities: architecturalPlanEntities(plan).length,
     states: plan.openings.map((o) => compileOpeningUncertaintyInstruction(plan, o.id)),
-    ledger: architecturalPlanEntities(plan).map((e) => ({ id: e.id, kind: e.kind, class: 'S', reason: 'Mapped from current architectural source or deterministic representation convention', sources: e.provenance.sourceIds })), X: [] }
+    ledger: architecturalPlanEntities(plan).map((e) => ({ id: e.id, kind: e.kind, class: 'S', authority: e.provenance.authority, precision: e.provenance.precision, reason: 'Mapped from current architectural source or deterministic representation convention', sources: e.provenance.sourceIds })), X: [] }
 }
 for (const scale of [100, 50]) {
   const scene = drawContrastPlan(contrastPlan(), scale)
