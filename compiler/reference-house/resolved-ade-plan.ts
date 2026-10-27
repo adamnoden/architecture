@@ -75,7 +75,7 @@ export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompil
   plan.adjacencies = [] // Each obligation is now resolved upstream to a doorway or open connection.
   plan.labels = plan.labels.map((l)=>l.id==='G-SVC-02-label'?{...l,text:'Service suite',anchor:{x:mm(10550),y:mm(4300)}}:l.id==='G-STUDY-02-label'?{...l,anchor:revision5?{x:mm(2300),y:mm(1000)}:{x:mm(10675),y:mm(2500)}}:l.id==='G-HALL-02-label'?{...l,text:'Hall / stair',anchor:{x:mm(7900),y:mm(1400)}}:l)
   if(revision5){
-    plan.labels=plan.labels.map(l=>l.id==='G-WC-01-label'?{...l,anchor:{x:mm(10250),y:mm(1850)}}:l.id==='G-CLOAK-01-label'?{...l,text:'Cloakroom',anchor:{x:mm(10350),y:mm(700)}}:l)
+    plan.labels=plan.labels.map(l=>l.id==='G-WC-01-label'?{...l,anchor:{x:mm(10250),y:mm(1850)}}:l.id==='G-CLOAK-01-label'?{...l,text:'Cloakroom',anchor:{x:mm(10350),y:mm(500)}}:l)
     plan.fittings=Object.entries({desk:currentChoice.roomFit.study.desk,storage:currentChoice.roomFit.cloak.storage,wc:currentChoice.roomFit.wc.pan,basin:currentChoice.roomFit.wc.basin}).map(([role,f])=>({kind:'fitting',id:`RHPR-${role}`,role:role as 'desk'|'storage'|'wc'|'basin',origin:{x:mm(f.x),y:mm(f.y)},width:mm(f.width),depth:mm(f.depth),provenance}))
   }
   plan.labels = plan.labels.filter((l)=>l.id!=='GROUND-stair-note')
