@@ -1,6 +1,8 @@
 <!-- nav-exclude: redirect -->
 # ADE-06 — exact-size architectural capability atlas
 
+**Historical packet record. Current disposition:** ADE migration/generality is internally complete; [closeout and PLT physical-review handoff](architectural-drawing-engine-closeout.md). Earlier next/blocked statements below describe this packet’s historical gate.
+
 **Programme:** ADE — architectural drawing engine capability uplift  
 **Parent:** #812  
 **Packet:** #819 / ADE-06  

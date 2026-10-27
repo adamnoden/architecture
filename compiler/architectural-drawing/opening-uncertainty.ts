@@ -149,8 +149,9 @@ const wallGeometry = (
   if (lengthPaper <= EPSILON) throw new Error(`ADE-04B wall ${wall.id} has zero paper-space length.`)
   const tx = dx / lengthPaper
   const ty = dy / lengthPaper
-  const leftNx = -ty
-  const leftNy = tx
+  // Plan projection reflects model +Y. Keep side names in architectural/model space.
+  const leftNx = ty
+  const leftNy = -tx
 
   const assembly = plan.wallAssemblies.find((candidate) => candidate.id === wall.assemblyId)
   if (!assembly) throw new Error(`ADE-04B wall ${wall.id} references missing assembly ${wall.assemblyId}.`)

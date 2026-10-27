@@ -22,6 +22,9 @@ export interface AdeAdjacencyDrawingOptions {
   annotationSide: 'left' | 'right'
   offsetPaperMm?: number
   tickPaperMm?: number
+  /** Trim annotations away from junction material without selecting a door. */
+  minimumSegmentPaperMm?: number
+  endpointInsetPaperMm?: number
 }
 
 const nodeFor = (nodes: ReadonlyMap<string, AdePlanNode>, id: string, owner: string): AdePlanNode => {
@@ -89,6 +92,9 @@ const bracketForSegment = (
   options: AdeAdjacencyDrawingOptions
 ): DrawingLine[] => {
   const geometry = projectedSegment(segment.a, segment.b, projection, `${adjacency.id}[${segmentIndex}]`)
+  const minimumSpan = options.minimumSegmentPaperMm ?? 0
+  if (!Number.isFinite(minimumSpan) || minimumSpan < 0) throw new Error('ADE adjacency minimum span must be non-negative finite paper millimetres.')
+  if (geometry.length < minimumSpan) return []
   const side = options.annotationSide === 'left' ? 1 : -1
   const nx = geometry.nx * side
   const ny = geometry.ny * side
@@ -97,8 +103,11 @@ const bracketForSegment = (
   if (!Number.isFinite(offset) || offset <= 0 || !Number.isFinite(tick) || tick <= 0) {
     throw new Error('ADE-05B adjacency bracket offset/tick must be positive finite paper millimetres.')
   }
-  const a = { x: geometry.p0.x + nx * offset, y: geometry.p0.y + ny * offset }
-  const b = { x: geometry.p1.x + nx * offset, y: geometry.p1.y + ny * offset }
+  const requestedInset = options.endpointInsetPaperMm ?? 0
+  if (!Number.isFinite(requestedInset) || requestedInset < 0) throw new Error('ADE adjacency endpoint inset must be non-negative finite paper millimetres.')
+  const inset = Math.min(requestedInset, geometry.length * 0.4)
+  const a = { x: geometry.p0.x + geometry.tx * inset + nx * offset, y: geometry.p0.y + geometry.ty * inset + ny * offset }
+  const b = { x: geometry.p1.x - geometry.tx * inset + nx * offset, y: geometry.p1.y - geometry.ty * inset + ny * offset }
   const metadata = {
     epistemic: 'adjacency-obligation',
     doorSelected: false,

@@ -1,0 +1,51 @@
+name: Prove ADE migrated plans and generality
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'compiler/reference-house/ade-*'
+      - 'compiler/reference-house/internal-partitions*'
+      - 'compiler/publication-drawing-v2/**'
+      - 'publication/specimens/ade06/**'
+      - 'publication/specimens/ade07/**'
+      - '.github/workflows/ade-reference-house-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ade-reference-house-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Repository health including migration and generality regressions
+        run: npm run check
+      - name: Frozen terminal v2 compatibility
+        run: node --import tsx --test compiler/publication-drawing-v2/*.test.ts
+      - name: Regenerate and verify capability fingerprints
+        run: node --import tsx publication/specimens/ade06/generate.ts && node --import tsx publication/specimens/ade06/validate.ts
+      - name: Generate and verify exact-size migrated plans
+        run: node --import tsx publication/specimens/ade07/generate.ts && node --import tsx publication/specimens/ade07/validate.ts
+      - uses: actions/upload-artifact@v6
+        with:
+          name: ade-migrated-plans-and-generality
+          path: |
+            publication/specimens/ade07/.work/*.svg
+            publication/specimens/ade07/.work/*.json
+            publication/specimens/ade06/.work/*.svg
+            publication/specimens/ade06/.work/manifest.json
+          if-no-files-found: error
+          retention-days: 90
+          include-hidden-files: true

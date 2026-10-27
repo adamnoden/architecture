@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
@@ -72,3 +73,10 @@ for (const [scale, svg] of svgs) {
 }
 
 console.log('ADE-06 atlas validation passed: exact A1 size, paired scale contract, 18 capabilities, provenance metadata, no raster/fit scaling or dashed pseudo-jambs.')
+
+// Accepted post-migration handedness correction; changes require renewed visual review.
+const acceptedLocks = JSON.parse(await readFile(resolve(import.meta.dirname, 'regression-locks.json'), 'utf8')) as Record<string, string>
+for (const [name, digest] of Object.entries(acceptedLocks)) {
+  const svg = await readFile(resolve(workRoot, name), 'utf8')
+  if (createHash('sha256').update(svg).digest('hex') !== digest) throw new Error(`ADE capability fingerprint changed: ${name}. Re-review the affected exact-size proof before updating locks.`)
+}
