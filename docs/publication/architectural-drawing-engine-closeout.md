@@ -88,3 +88,13 @@ Print the A2 candidate at **100% / actual size**. Review outer/courtyard joins, 
 No temporary release helper, write permission, calibration fixture or unearned backend extension was added. The asymmetric fixture and read-only proof workflow remain because they enforce the accepted generality/regeneration contract. Local specimen work directories are disposable and excluded or removed; accepted evidence remains in the source/proof manifests and workflow artifacts.
 
 **Cleanup: clean.** The two pre-existing orphan refs, `ade-04a-opening-subtraction-replay` and `ade-07-reference-house-ground-plan`, were absorbed into the existing `delete-me` disposal branch through PR #886 and PR #885 respectively. Both PRs were merged and both source refs were verified absent afterwards. Their original tips remain preserved by main's accepted history. The implementation branch was also automatically deleted after PR #884. The disposal branch is intentionally retained as the established cleanup sink.
+
+## PLT finished-font correction
+
+PLT-03B.2 found that the original SVG-only check did not prove rendered font
+identity: `Source Sans 3` was unquoted in the active shared proof token and
+embedded-face declaration, so finished PDFs fell back to system fonts. The
+[replacement physical review](architectural-plate-plt03b2-ade-physical-review.md)
+owns the correction, renewed fingerprints and finished-PDF font/scale gate.
+Geometry and semantic ledgers are unchanged. Earlier artifact identities above
+remain historical evidence; use the PLT-03B.2 outputs for physical review.

@@ -37,6 +37,10 @@ for (const format of ['b5', 'a4', 'a2'] as const) {
     near(viewport.width, width * pt, `${format} width`, 1)
     near(viewport.height, height * pt, `${format} height`, 1)
   }
+  if (!isWall) {
+    const baselineFonts = execFileSync('pdffonts', ['-f', '1', '-l', '1', path], { encoding: 'utf8' })
+    assert.ok(!baselineFonts.includes('SourceSans'), 'Candidate styles leaked into protected baseline')
+  }
   const page = await pdf.getPage(pages)
   const items = (await page.getTextContent()).items.filter((i): i is typeof i & { str: string; width: number; height: number; transform: number[] } => 'str' in i)
   const item = (text: string) => {

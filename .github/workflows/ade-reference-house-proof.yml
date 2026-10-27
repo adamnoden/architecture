@@ -8,6 +8,7 @@ on:
       - 'compiler/reference-house/ade-*'
       - 'compiler/reference-house/internal-partitions*'
       - 'compiler/publication-drawing-v2/**'
+      - 'publication/specimens/ade03b/tokens.ts'
       - 'publication/specimens/ade06/**'
       - 'publication/specimens/ade07/**'
       - '.github/workflows/ade-reference-house-proof.yml'

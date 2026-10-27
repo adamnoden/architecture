@@ -33,7 +33,7 @@ const manifest: Record<string, unknown> = { packet: 'ADE-07', fitScaling: false,
 const fontEnv = await fetchOpenFontCandidate('source')
 const fontCss = (await Promise.all(([['TYP03_SANS_REGULAR', 400], ['TYP03_SANS_BOLD', 700]] as const).map(async ([slot, weight]) => {
   const bytes = await readFile(fontEnv[slot])
-  return `@font-face{font-family:Source Sans 3;src:url(data:font/ttf;base64,${bytes.toString('base64')}) format('truetype');font-weight:${weight};font-style:normal}`
+  return `@font-face{font-family:"Source Sans 3";src:url(data:font/ttf;base64,${bytes.toString('base64')}) format('truetype');font-weight:${weight};font-style:normal}`
 }))).join('')
 manifest.fonts = await Promise.all(['TYP03_SANS_REGULAR', 'TYP03_SANS_BOLD'].map(async (s) => ({ slot: s, sha256: hash(await readFile(fontEnv[s as keyof typeof fontEnv])) })))
 const files: Record<string, unknown> = {}

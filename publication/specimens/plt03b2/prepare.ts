@@ -17,7 +17,15 @@ const book = await readFile(resolve(source, 'ground-100.svg'), 'utf8')
 const wall = await readFile(resolve(source, 'ground-50.svg'), 'utf8')
 const fonts = book.match(/@font-face\{[^}]+\}/g) ?? []
 assert.equal(fonts.length, 2)
-const page = (svg: string, name: string) => `<section data-candidate="${name}">${svg}</section>`
+// Inline SVG styles otherwise leak across the comparison: the successor's
+// generic .line/.text selectors would silently restyle the historical control.
+const isolate = (svg: string) => {
+  const view = svg.match(/data-view-id="([^"]+)"/)?.[1]
+  assert.ok(view)
+  return svg.replace(/<style>([\s\S]*?)<\/style>/, (_, css: string) =>
+    `<style>${css.replace(/(^|})(\.[^{]+)\{/g, `$1svg[data-view-id="${view}"] $2{`)}</style>`)
+}
+const page = (svg: string, name: string) => `<section data-candidate="${name}">${isolate(svg)}</section>`
 const html = (body: string) => `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>Ground-floor physical proof</title><style>${fonts.join('')}</style></head><body>${body}</body></html>`
 // Historical baseline is a source rewind, not a typography/hierarchy-only control.
 await writeFile(resolve(work, 'book.html'), html(page(baseline, 'protected-v1') + page(book, 'ADE replacement')))

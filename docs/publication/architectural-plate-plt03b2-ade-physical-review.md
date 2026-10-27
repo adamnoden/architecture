@@ -14,8 +14,32 @@ ADE has completed its internal engine/migration proof through PR #884. Its
 [closeout](architectural-drawing-engine-closeout.md) owns source admission,
 representation decisions, regression locks and the complete R/S/X ledger.
 This packet changes physical packaging and finished-PDF verification only.
-It does not change architectural geometry, proof tokens or the accepted ADE
-SVG fingerprints.
+It preserves architectural geometry and physical token metrics. The only
+source correction is the CSS family quotation described below. Embedded CSS selectors are namespaced by SVG view ID in the
+comparison HTML so successor styles cannot restyle the historical baseline.
+The finished baseline page must contain no Source Sans; candidate pages must
+contain only the admitted Source Sans faces.
+
+## Finished-PDF font defect and correction
+
+The first finished-PDF gate rejected Liberation fallback. Both the shared
+ADE-03B token and ADE-07 embedded-face declaration used the unquoted family
+`Source Sans 3`; the standalone number makes that CSS family invalid. The
+font bytes were present and correctly pinned, but the browser could not use
+them through those declarations. Earlier SVG-only font claims therefore did
+not establish rendered Source Sans identity.
+
+Quote the family in those two owning declarations. Regenerate all six ADE-07
+plan/contrast outputs and both ADE-06 atlas outputs. Before updating their
+fingerprints, reverse only that exact quotation in memory and require every
+result to reproduce the previous accepted hash. This proved that no geometry,
+label, layout, line/tint metric or semantic ledger changed. The new exact-font
+outputs require renewed rendered inspection; the finished-PDF gate is the
+regression that prevents another byte-presence-only acceptance.
+
+The historical ADE-04A/04B/05B isolated token fixtures are not current PLT
+candidates and remain historical evidence. This packet fixes the active
+shared atlas/migration path; it makes no new font-acceptance claim for them.
 
 ## Proof objects
 

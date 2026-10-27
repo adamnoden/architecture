@@ -35,5 +35,5 @@ export const ADE03B_PROOF_TOKENS: PublicationDrawingTokens = Object.freeze({
     faint: '#ededed',
     paper: '#ffffff'
   }),
-  fontFamily: 'Source Sans 3, Arial, sans-serif'
+  fontFamily: '"Source Sans 3", Arial, sans-serif'
 })
