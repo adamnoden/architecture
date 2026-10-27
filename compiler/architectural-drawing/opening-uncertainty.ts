@@ -1,4 +1,4 @@
-import type { DrawingLine, DrawingPrimitive, DrawingText } from '../publication-drawing/model.js'
+import type { DrawingLine, DrawingPrimitive, DrawingRect, DrawingText } from '../publication-drawing/model.js'
 import type { PlanPaperProjection } from '../publication-drawing/projection.js'
 import type { Millimetres } from '../units.js'
 import { assertResolvedDistanceWithinAuthority } from './authority.js'
@@ -52,6 +52,8 @@ export interface AdeOpeningUncertaintyDrawingOptions {
   gapPaperMm?: number
   tickPaperMm?: number
   markerPaperMm?: number
+  /** Physical-paper thickness of the host-only possibility band. */
+  hostBandPaperMm?: number
   showLabels?: boolean
 }
 
@@ -189,6 +191,39 @@ const note = (
   kind: 'text', id, x, y, value, role: 'note', anchor: 'middle', metadata
 })
 
+const hostPossibilityBand = (
+  id: string,
+  a: { x: number; y: number },
+  b: { x: number; y: number },
+  tx: number,
+  ty: number,
+  bandPaperMm: number,
+  metadata: Record<string, string | number | boolean | undefined>
+): DrawingRect => {
+  if (!Number.isFinite(bandPaperMm) || bandPaperMm <= 0) {
+    throw new Error('ADE-04B host possibility band must have positive finite paper thickness.')
+  }
+  const horizontal = Math.abs(ty) <= EPSILON
+  const vertical = Math.abs(tx) <= EPSILON
+  if (!horizontal && !vertical) {
+    throw new Error('ADE-04B host possibility band currently supports orthogonal host walls only.')
+  }
+  if (horizontal) {
+    return {
+      kind: 'rect', id,
+      x: Math.min(a.x, b.x), y: (a.y + b.y) / 2 - bandPaperMm / 2,
+      width: Math.abs(b.x - a.x), height: bandPaperMm,
+      fill: 'faint', metadata: { ...metadata, notation: 'possibility-band' }
+    }
+  }
+  return {
+    kind: 'rect', id,
+    x: (a.x + b.x) / 2 - bandPaperMm / 2, y: Math.min(a.y, b.y),
+    width: bandPaperMm, height: Math.abs(b.y - a.y),
+    fill: 'faint', metadata: { ...metadata, notation: 'possibility-band' }
+  }
+}
+
 const formatMm = (value: number): string => `${Math.round(value)} mm`
 
 export const openingUncertaintyToDrawingPrimitives = (
@@ -207,6 +242,7 @@ export const openingUncertaintyToDrawingPrimitives = (
   const gap = options.gapPaperMm ?? 3.5
   const tick = options.tickPaperMm ?? 1.6
   const marker = options.markerPaperMm ?? 1.7
+  const hostBand = options.hostBandPaperMm ?? 0.9
   const materialDepthPaper = projection.length(materialDepthOnSide(geometry.reference, options.annotationSide, geometry.thickness))
   const offset = materialDepthPaper + gap
   const metadata = {
@@ -226,10 +262,8 @@ export const openingUncertaintyToDrawingPrimitives = (
     const trim = Math.min(3, geometry.lengthPaper * 0.08)
     const a = { x: geometry.p0.x + geometry.tx * trim + nx * offset, y: geometry.p0.y + geometry.ty * trim + ny * offset }
     const b = { x: geometry.p1.x - geometry.tx * trim + nx * offset, y: geometry.p1.y - geometry.ty * trim + ny * offset }
-    const primitives: DrawingPrimitive[] = [
-      line(`${instruction.openingId}-host-span`, a.x, a.y, b.x, b.y, metadata),
-      tickAt(`${instruction.openingId}-host-a`, a), tickAt(`${instruction.openingId}-host-b`, b)
-    ]
+    const band = hostPossibilityBand(`${instruction.openingId}-host-band`, a, b, geometry.tx, geometry.ty, hostBand, metadata)
+    const primitives: DrawingPrimitive[] = [band]
     if (options.showLabels !== false) {
       primitives.push(note(
         `${instruction.openingId}-host-label`, (a.x + b.x) / 2 + nx * 2.3, (a.y + b.y) / 2 + ny * 2.3,

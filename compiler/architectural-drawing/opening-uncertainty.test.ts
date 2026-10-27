@@ -34,11 +34,12 @@ const planWith = (candidate: AdeOpening): AdeArchitecturalPlan => ({
   partitionDatums: [], spaces: [], adjacencies: [], dimensions: [], labels: []
 })
 
-const projection = createPlanPaperProjection({
-  scaleDenominator: 100,
+const projectionFor = (scaleDenominator: 100 | 50) => createPlanPaperProjection({
+  scaleDenominator,
   modelBounds: { x: 0, y: -1000, width: 6000, height: 2000 },
   paperOrigin: { x: 20, y: 20 }
 })
+const projection = projectionFor(100)
 const drawOptions = {
   annotationSide: 'left' as const,
   resolveAssemblyThicknessMm: () => mm(400),
@@ -88,25 +89,43 @@ test('ADE-04B known centre / unknown width becomes a point marker, not a plausib
   assert.ok(leader && leader.kind === 'line')
   if (!leader || leader.kind !== 'line') return
 
-  // W1 is directed west→east and references its right physical face. Material
-  // therefore extends 400 mm to the wall's left side. A left-side epistemic
-  // marker must sit beyond that material and its leader must stop exactly at
-  // the far (left) physical face, never tunnel through the wall to the authored
-  // reference line.
+  // W1 is west→east and references its right physical face. Material extends
+  // 400 mm to the wall's left side, so the marker leader must stop at the far
+  // physical face rather than tunnelling through the wall to the reference line.
   const referenceY = projection.point(3000, 0).y
   const selectedPhysicalFaceY = referenceY + projection.length(400)
   assert.ok(leader.a.y > selectedPhysicalFaceY && Math.abs(leader.b.y - selectedPhysicalFaceY) < 1e-6)
 })
 
-test('ADE-04B unknown position becomes a host-span obligation with no invented centre', () => {
+test('ADE-04B unknown position becomes a quiet host possibility band with no invented centre', () => {
   const plan = planWith(opening('HOST', { kind: 'unknown' }, { kind: 'unknown' }, {
     sourceIds: ['ADE-04B-HOST'], authority: 'provisional', precision: 'unknown'
   }))
   const instruction = compileOpeningUncertaintyInstruction(plan, 'HOST')
   assert.equal(instruction.kind, 'host-obligation')
   const primitives = openingUncertaintyToDrawingPrimitives(plan, instruction, projection, drawOptions)
-  assert.equal(primitives.filter((primitive) => primitive.kind === 'line').length, 3)
-  assert.ok(primitives.every((primitive) => primitive.metadata?.state === 'host-obligation'))
+  assert.equal(primitives.length, 1)
+  const band = primitives[0]
+  assert.equal(band.kind, 'rect')
+  if (band.kind !== 'rect') return
+  assert.equal(band.fill, 'faint')
+  assert.equal(band.metadata?.state, 'host-obligation')
+  assert.equal(band.metadata?.notation, 'possibility-band')
+  assert.equal(band.height, 0.9)
+  assert.equal(primitives.filter((primitive) => primitive.kind === 'line').length, 0)
+})
+
+test('ADE-04B host possibility band keeps physical thickness while host span scales', () => {
+  const plan = planWith(opening('HOST-SCALE', { kind: 'unknown' }, { kind: 'unknown' }, {
+    sourceIds: ['ADE-04B-HOST-SCALE'], authority: 'provisional', precision: 'unknown'
+  }))
+  const instruction = compileOpeningUncertaintyInstruction(plan, 'HOST-SCALE')
+  const at100 = openingUncertaintyToDrawingPrimitives(plan, instruction, projectionFor(100), drawOptions)[0]
+  const at50 = openingUncertaintyToDrawingPrimitives(plan, instruction, projectionFor(50), drawOptions)[0]
+  assert.ok(at100.kind === 'rect' && at50.kind === 'rect')
+  if (at100.kind !== 'rect' || at50.kind !== 'rect') return
+  assert.equal(at100.height, at50.height)
+  assert.ok(Math.abs(at50.width / at100.width - 2) < 0.12, 'host span should approximately double after fixed-paper endpoint trim')
 })
 
 test('ADE-04B refuses ranged position until a dedicated notation is earned', () => {
