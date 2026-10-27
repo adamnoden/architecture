@@ -87,9 +87,4 @@ Print the A2 candidate at **100% / actual size**. Review outer/courtyard joins, 
 
 No temporary release helper, write permission, calibration fixture or unearned backend extension was added. The asymmetric fixture and read-only proof workflow remain because they enforce the accepted generality/regeneration contract. Local specimen work directories are disposable and excluded or removed; accepted evidence remains in the source/proof manifests and workflow artifacts.
 
-**Cleanup residue — repository-owner action:** delete these two pre-existing orphan refs:
-
-- `ade-04a-opening-subtraction-replay` at `224c7cc838c658beb1b1463b3a0c0029827f4178`;
-- `ade-07-reference-house-ground-plan` at `e95c3c3df1224694ad8060775492ec6e2d8337fc`.
-
-Each tip was verified as an ancestor of the starting main; neither has an associated pull request. Their accepted history is therefore retained by main. The connected API exposes no branch-deletion operation and command-line deletion lacks authenticated push credentials, so those refs are not reported as removed. The PR #884 implementation branch is covered by the repository’s enabled automatic deletion after merge. This residue does not withhold ADE’s substantive internal completion or PLT handoff.
+**Cleanup: clean.** The two pre-existing orphan refs, `ade-04a-opening-subtraction-replay` and `ade-07-reference-house-ground-plan`, were absorbed into the existing `delete-me` disposal branch through PR #886 and PR #885 respectively. Both PRs were merged and both source refs were verified absent afterwards. Their original tips remain preserved by main's accepted history. The implementation branch was also automatically deleted after PR #884. The disposal branch is intentionally retained as the established cleanup sink.

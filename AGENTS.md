@@ -19,6 +19,16 @@ When working here:
 
 **Find the owning error, not the nearest editable symptom.**
 
+### Standing delegation and end-to-end agency
+
+The owner delegates the controls for authorised project work. Interpret requests by the intended outcome and carry the work through the routine steps needed to achieve it. Make reasonable implementation decisions, record material assumptions, and continue until the outcome is verified or a genuine blocker prevents further progress.
+
+Within that scope, this includes implementation, appropriate validation, PR creation, safe merge after the applicable checks, issue/status reconciliation and verified cleanup. Do not turn those ordinary steps into separate permission requests. When a PR is a cleanup mechanism, opening it is an intermediate step: merge it into the intended disposal branch and verify automatic head deletion. Do not hand the final routine step back to the owner merely because the request named the mechanism rather than spelling out every action.
+
+If one tool lacks a capability, pursue an available safe workaround before declaring the owner must do it. Preserve the repository's authority, merge-safety and provenance rules throughout. Delegated execution never permits invented evidence, unearned architectural claims, destruction of active work or a new external commitment outside the authorised goal.
+
+Ask only when a material ambiguity cannot reasonably be resolved from project context, an action exceeds the delegated scope, or a real blocker remains after available alternatives. Complete independent authorised work first and state the exact blocker rather than stopping at a proposal or partial handoff.
+
 ## 2. Canonical anchors
 
 Follow changing facts at their source:
