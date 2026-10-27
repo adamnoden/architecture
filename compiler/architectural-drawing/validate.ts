@@ -187,6 +187,7 @@ export const validateArchitecturalPlan = (plan: AdeArchitecturalPlan): AdeValida
     if (!host) diagnostics.push({ code: 'ADE-OPENING-HOST', entityId: opening.id, message: `Opening references missing physical host wall ${opening.hostWallId}.` })
     validateDistance(opening.id, 'opening centre offset', opening.centreOffset, diagnostics, { allowZero: true })
     validateDistance(opening.id, 'opening width', opening.width, diagnostics)
+    if (opening.symbol && (opening.role !== opening.symbol.kind || !['exact','approximate'].includes(opening.width.kind) || !['exact','approximate'].includes(opening.centreOffset.kind))) diagnostics.push({code:'ADE-OPENING-SYMBOL',entityId:opening.id,message:'Architectural symbol requires matching role and authored nominal position/width.'})
   }
 
   for (const datum of plan.partitionDatums) {
@@ -215,6 +216,13 @@ export const validateArchitecturalPlan = (plan: AdeArchitecturalPlan): AdeValida
   for (const dimension of plan.dimensions) {
     if (!finitePoint(dimension.a) || !finitePoint(dimension.b) || samePoint(dimension.a, dimension.b)) {
       diagnostics.push({ code: 'ADE-DIMENSION-GEOMETRY', entityId: dimension.id, message: 'Dimension endpoints must be finite and distinct.' })
+    }
+  }
+
+  for (const stair of plan.stairs ?? []) {
+    if (!finitePoint(stair.origin) || !Number.isInteger(stair.riserCount) || stair.riserCount < 4 || stair.riserCount % 2 !== 0 ||
+      ![stair.floorToFloor, stair.going, stair.clearWidth, stair.landingDepth, stair.wellGap, stair.cutHeight].every((n)=>Number.isFinite(n)&&n>0) || stair.landingDepth < stair.clearWidth || stair.cutHeight <= stair.floorToFloor/stair.riserCount || stair.cutHeight >= stair.floorToFloor/2) {
+      diagnostics.push({code:'ADE-STAIR-GEOMETRY',entityId:stair.id,message:'Return stair requires an even rise count, positive geometry, full-width intermediate landing and a cut within the lower flight.'})
     }
   }
 

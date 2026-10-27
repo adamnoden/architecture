@@ -29,6 +29,7 @@ export interface DrawingPath {
   id: string
   rings: readonly (readonly PaperPoint[])[]
   stroke?: DrawingLineRole
+  strokeOpacity?: number
   dash?: DrawingDashRole
   fill?: DrawingFillRole
   metadata?: Record<string, string | number | boolean | undefined>
