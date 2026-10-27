@@ -1,7 +1,21 @@
 <!-- nav-exclude: redirect -->
 # Ground-plan feedback resolution
 
-**Current successor: B5 / #903.** Owner selects option 3 with a south-west
+**Current successor: B6 / #905.** Owner selects a 12 m square current house,
+centred 3.6 m square courtyard, flush service-wall faces, regular opposing
+windows, separate kitchen pantry, larger study and 3.1 m ceilings on both
+floors. The open-well return is selected after bounded straight/three-flight/
+20-rise comparisons. Its passage is 1007.5 mm, with the increased rise and
+small facade/upper-room changes made explicit. Modest-plot work is deferred;
+its historical inputs and owner gates are not overwritten.
+
+`publication/specimens/plt03b6/` compares B5 on page 1 with B6 on page 2 in
+B5/A4 paper; A2 contains B6 only. Retained B3/B4/B5 source and SVG fingerprints
+remain checked. No loadbearing role, headroom certificate, physical acceptance
+or token freeze is claimed. The [architectural decision](../reference-house/ground-plan-resolution.md)
+owns the dimensions, option rejection reasons and technical limits.
+
+**Historical B5 incorporation: #903.** Owner selects option 3 with a south-west
 study, open hall/family connection and separate eastern guest WC / walk-in
 cloakroom. B4 is retained for comparison. The new semantic room programme,
 service ownership and schematic fitting envelopes are documented in the

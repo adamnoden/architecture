@@ -128,6 +128,8 @@ export interface ReferenceHouseSource<CourtPlacement extends 'centred-in-shell' 
   }>
   partitions: {
     serviceSouthY?: SourceFact<Millimetres>
+    serviceNorthY?: SourceFact<Millimetres>
+    pantrySouthY?: SourceFact<Millimetres>
     groundStudyNorthY?: SourceFact<Millimetres>
     groundGuestSplitY?: SourceFact<Millimetres>
     westRoomSplitY: SourceFact<Millimetres>
