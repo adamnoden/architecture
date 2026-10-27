@@ -1,6 +1,8 @@
 <!-- nav-exclude: redirect -->
 # Ground-plan feedback resolution
 
+B6 is now owner-approved on screen for continued PLT work. See [paired-plan review](architectural-plate-paired-plan-review.md) for the reusable candidate grammar and first-floor extension; physical acceptance remains open.
+
 **Current successor: B6 / #905.** Owner selects a 12 m square current house,
 centred 3.6 m square courtyard, flush service-wall faces, regular opposing
 windows, separate kitchen pantry, larger study and 3.1 m ceilings on both
