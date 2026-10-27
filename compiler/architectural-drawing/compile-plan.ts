@@ -1,3 +1,5 @@
+import { returnStairToDrawingPrimitives } from './stair-drawing.js'
+import { openingSymbolToDrawingPrimitives } from './opening-symbol.js'
 import { compileWallAssemblyTopology, type AdeWallAssemblyTopologyOptions } from './assembly-topology.js'
 import { wallAssemblyBandToDrawingPath } from './assembly-drawing.js'
 import { dimensionToDrawingPrimitives, type AdeDimensionDrawingOptions } from './dimension-drawing.js'
@@ -21,6 +23,8 @@ export interface AdePlanDrawingOptions extends AdeWallAssemblyTopologyOptions {
   title: string
   /** Explicit material abutments: subject bodies stop at host material, never by paint order. */
   abutments?: Readonly<Record<string, readonly string[]>>
+  /** Faint boundaries make the cavity legible without inventing masonry bond. */
+  layerBoundaryOpacity?: number
   openingSide: (opening: AdeOpening) => 'left' | 'right'
   adjacencySide?: (adjacency: AdeAdjacencyObligation) => 'left' | 'right'
   dimensionOptions?: AdeDimensionDrawingOptions
@@ -74,9 +78,12 @@ export const compileArchitecturalPlanScene = (plan: AdeArchitecturalPlan, option
         if (band.layerRole === 'cavity-zone') continue
         const rings = hostRects.length ? subtractRectilinearRectangles(band.rings, hostRects) : band.rings
         if (!rings.length) continue
-        primitives.push(wallAssemblyBandToDrawingPath({ ...band, rings }, options.projection, {
-          fill: ['structural-leaf', 'finish-zone'].includes(band.layerRole) ? 'context' : 'faint', metadata
-        }))
+        const path = wallAssemblyBandToDrawingPath({ ...band, rings }, options.projection, {
+          fill: ['structural-leaf', 'finish-zone'].includes(band.layerRole) ? 'context' : 'faint',
+          stroke: options.layerBoundaryOpacity === undefined ? undefined : 'secondary', metadata
+        })
+        if (options.layerBoundaryOpacity !== undefined) path.strokeOpacity = options.layerBoundaryOpacity
+        primitives.push(path)
       }
       for (const region of regions) if (region.rings.length) primitives.push(wallTopologyRegionToDrawingPath(region, options.projection, { stroke: 'profile', fill: 'none', metadata }))
     } else {
@@ -85,6 +92,10 @@ export const compileArchitecturalPlanScene = (plan: AdeArchitecturalPlan, option
   }
   for (const instruction of instructions) {
     const opening = plan.openings.find((o) => o.id === instruction.openingId)!
+    if (opening.symbol) {
+      primitives.push(...openingSymbolToDrawingPrimitives(plan, opening, options.projection, options.resolveAssemblyThicknessMm))
+      continue
+    }
     primitives.push(...openingUncertaintyToDrawingPrimitives(plan, instruction, options.projection, {
       annotationSide: options.openingSide(opening), resolveAssemblyThicknessMm: options.resolveAssemblyThicknessMm,
       gapPaperMm: 2.5, showLabels: false
@@ -96,6 +107,7 @@ export const compileArchitecturalPlanScene = (plan: AdeArchitecturalPlan, option
     minimumSegmentPaperMm: 2 * (Math.max(...plan.wallAssemblies.map((a) => options.projection.length(options.resolveAssemblyThicknessMm(a))), 0) + 1),
     endpointInsetPaperMm: Math.max(...plan.wallAssemblies.map((a) => options.projection.length(options.resolveAssemblyThicknessMm(a))), 0) + 1
   }))
+  for (const stair of plan.stairs ?? []) primitives.push(...returnStairToDrawingPrimitives(stair, options.projection))
   for (const dimension of plan.dimensions) primitives.push(...dimensionToDrawingPrimitives(dimension, options.projection,
     options.dimensionOptions ?? { annotationSide: 'right', offsetPaperMm: 13 }))
   for (const label of plan.labels) {

@@ -1,0 +1,70 @@
+import type { AdeArchitecturalPlan, AdeModelPoint, AdeOpening, AdeWallRun } from '../architectural-drawing/model.js'
+import { assertValidArchitecturalPlan } from '../architectural-drawing/validate.js'
+import { mm } from '../units.js'
+import { createReferenceHouseAdePlan } from './ade-plan.js'
+import { groundPlanResolution as choice } from './plan-resolution.js'
+import type { LevelId, ReferenceHouseCompileResult, ReferenceHouseSource } from './model.js'
+
+/** Adapter of an upstream architectural choice register, not an admission of
+ * publication-only geometry into the frozen historical C1 source. */
+export const createResolvedReferenceHouseAdePlan = (result: ReferenceHouseCompileResult, source: ReferenceHouseSource, level: LevelId = 'GROUND'): AdeArchitecturalPlan => {
+  if (result.derived.shell.width !== 12000 || result.derived.shell.depth !== 10800 || result.derived.court.x0 !== 4200 || result.derived.court.y0 !== 3400) throw new Error('Ground-plan choices require architectural reconciliation after base geometry changes.')
+  const plan = createReferenceHouseAdePlan(result, source, level)
+  plan.id = `RH-RESOLVED-${level}`
+  const provenance = { authority: 'provisional' as const, precision: 'approximate' as const,
+    sourceIds: ['docs/reference-house/ground-plan-resolution.md', 'compiler/reference-house/plan-resolution.ts', choice.id] }
+  const stair=choice.stair
+  plan.stairs=[{kind:'return-stair',id:`RHPR-STAIR-${level}`,origin:{x:mm(stair.x),y:mm(stair.y)},riserCount:18,floorToFloor:mm(3300),going:mm(300),clearWidth:mm(1000),landingDepth:mm(1000),wellGap:mm(100),cutHeight:mm(1200),level,provenance}]
+  plan.labels=plan.labels.filter((l)=>!l.id.endsWith('stair-note'))
+  if(level==='FIRST') {
+    plan.labels=plan.labels.map((l)=>l.id==='U-STAIR-01-label'?{...l,text:'Stair / landing',anchor:{x:mm(5500),y:mm(500)}}:l)
+    assertValidArchitecturalPlan(plan)
+    return plan
+  }
+  const nodes = new Map(plan.nodes.map((n) => [n.id, n]))
+  const node = (x: number, y: number) => {
+    const id = `GROUND-NODE-${x}-${y}`
+    if (!nodes.has(id)) nodes.set(id, { kind: 'node', id, point: { x: mm(x), y: mm(y) }, provenance })
+    return id
+  }
+  let walls = plan.walls.filter((w) => !choice.removePartitions.some((id) => w.provenance.sourceIds.includes(id)))
+  for (const w of choice.addPartitions) walls.push({ kind: 'wall', id: w.id, fromNodeId: node(w.a[0],w.a[1]), toNodeId: node(w.b[0],w.b[1]), reference: 'centreline', assemblyId: 'RH-PART-DRY-01', provenance: { ...provenance, sourceIds: [...provenance.sourceIds, w.id] } })
+  // New enclosure walls have real authored T junctions on the service spine.
+  // Split at these nodes before topology compilation, never patch with masks.
+  const ends = walls.filter((w) => w.assemblyId === 'RH-PART-DRY-01').flatMap((w) => [nodes.get(w.fromNodeId)!.point, nodes.get(w.toNodeId)!.point])
+  walls = walls.flatMap((w): AdeWallRun[] => {
+    if (w.assemblyId !== 'RH-PART-DRY-01') return [w]
+    const a = nodes.get(w.fromNodeId)!.point, b = nodes.get(w.toNodeId)!.point
+    const horizontal = a.y === b.y
+    const on = (p: AdeModelPoint) => horizontal ? p.y === a.y && p.x > Math.min(a.x,b.x) && p.x < Math.max(a.x,b.x) : p.x === a.x && p.y > Math.min(a.y,b.y) && p.y < Math.max(a.y,b.y)
+    const cuts = [...new Map(ends.filter(on).map((p) => [`${p.x},${p.y}`, p])).values()]
+    if (!cuts.length) return [w]
+    const points = [a,...cuts,b].sort((p,q) => horizontal ? (p.x-q.x)*Math.sign(b.x-a.x) : (p.y-q.y)*Math.sign(b.y-a.y))
+    return points.slice(0,-1).map((p,i) => ({ ...w, id: `${w.id}::resolution-${i+1}`, fromNodeId: node(p.x,p.y), toNodeId: node(points[i+1].x,points[i+1].y) }))
+  })
+  plan.walls = walls
+  plan.nodes = [...nodes.values()]
+  plan.openings = choice.openings.map((o): AdeOpening => {
+    const hosts = walls.filter((w) => w.id === o.hostBoundaryId || w.provenance.sourceIds.includes(o.hostBoundaryId))
+    const host = hosts.find((w) => {
+      const a=nodes.get(w.fromNodeId)!.point,b=nodes.get(w.toNodeId)!.point
+      const lo = Math.min(a.x===b.x?a.y:a.x,a.x===b.x?b.y:b.x), hi = Math.max(a.x===b.x?a.y:a.x,a.x===b.x?b.y:b.x)
+      return o.centre-o.width/2 > lo && o.centre+o.width/2 < hi
+    })
+    if (!host) throw new Error(`Authored aperture ${o.id} does not fit one host segment`)
+    const a=nodes.get(host.fromNodeId)!.point,b=nodes.get(host.toNodeId)!.point
+    const from=a.x===b.x?a.y:a.x,to=a.x===b.x?b.y:b.x
+    return { kind:'opening',id:o.id,hostWallId:host.id,role:o.role,
+      centreOffset:{kind:'approximate',value:mm((o.centre-from)*Math.sign(to-from))},width:{kind:'approximate',value:mm(o.width)},
+      symbol: o.role==='window' ? { kind:'window' } : {kind:'door',leaves:o.leaves??1,swingSide:o.swingSide??'left'},
+      provenance:{...provenance,sourceIds:[...provenance.sourceIds,...o.replaces]} }
+  })
+  const resolved = new Set<string>([...choice.openConnections,...choice.openings.flatMap((o)=>o.replaces)])
+  for (const adj of plan.adjacencies) if (!resolved.has(adj.id)) throw new Error(`Unresolved connectivity obligation ${adj.id}`)
+  for (const o of source.qualitativeOpeningRelationships.filter((o)=>o.levelId==='GROUND')) if (!resolved.has(o.id)) throw new Error(`Unresolved opening relationship ${o.id}`)
+  plan.adjacencies = [] // Each obligation is now resolved upstream to a doorway or open connection.
+  plan.labels = plan.labels.map((l)=>l.id==='G-SVC-02-label'?{...l,text:'Service suite',anchor:{x:mm(10550),y:mm(4300)}}:l.id==='G-STUDY-02-label'?{...l,anchor:{x:mm(10675),y:mm(2500)}}:l.id==='G-HALL-02-label'?{...l,text:'Hall / stair',anchor:{x:mm(7900),y:mm(1400)}}:l)
+  plan.labels = plan.labels.filter((l)=>l.id!=='GROUND-stair-note')
+  assertValidArchitecturalPlan(plan)
+  return plan
+}

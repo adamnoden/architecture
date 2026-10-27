@@ -72,7 +72,9 @@ const renderPath = (node: DrawingPath): string => {
     node.stroke && hasFill && `path-stroke-${node.stroke}`
   )
   const classAttribute = className ? ` class="${className}"` : ''
-  return `<path d="${d}" fill-rule="evenodd"${classAttribute} ${primitiveAttributes(node)}/>`
+  if (node.strokeOpacity !== undefined && (!Number.isFinite(node.strokeOpacity) || node.strokeOpacity < 0 || node.strokeOpacity > 1)) throw new Error('Path stroke opacity must be between 0 and 1.')
+  const opacity = node.strokeOpacity === undefined ? '' : ` stroke-opacity="${formatDrawingNumberV2(node.strokeOpacity)}"`
+  return `<path d="${d}" fill-rule="evenodd"${classAttribute}${opacity} ${primitiveAttributes(node)}/>`
 }
 
 const renderText = (node: DrawingText): string => {
