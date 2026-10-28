@@ -1,18 +1,19 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
-## Layout reopened — architectural review pair
+## Current working layout and coordinated family
 
-The owner subsequently reopens the plan using marked ground/first sketches.
-[Layout revision 02](../reference-house/layout-revision-02.md) owns the new
-3.5 m courtyard, aligned narrower stair/west gallery, compressed service stack,
-front study/cloak/WC/utility changes, southern courtyard entrance and upper
-entry void / four-bedroom arrangement. `georgian/layout-revision.ts` and PLT15
-are the current **plan review candidate**. The previous orthographic/analysis
-family below remains retained context and must not be mixed with the changed
-plans as a coordinated current house. Full family rollout follows plan review.
+The owner accepts [layout revision 02](../reference-house/layout-revision-02.md)
+for continued PLT development. The [coordinated revision record](architectural-plate-layout-family.md)
+owns `georgian/layout-family.ts`, `layout-analysis.ts` and PLT16: twelve revised
+orthographics and six analytical readings from the 3.5 m court / entry-void source.
+The first-floor section interrupts the floor at the atrium; both courtyard doors,
+rear bays, service geography and the roof ridge follow the reviewed plans.
+PLT13/14/15 remain historical proof identities. The old transparent anatomy is
+withheld from this successor; synthesis remains open. Screen approval is not
+physical acceptance. Use the new record for current geometry and next steps.
 
-## Previous working basis and source
+## Retained previous working basis and source
 
 The owner accepts the present 12 m square floor plan for continued PLT work and
 defers personal layout refinements and modest-plot redesign. Uniformity and

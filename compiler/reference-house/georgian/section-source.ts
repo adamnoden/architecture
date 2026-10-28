@@ -14,24 +14,25 @@ export const sectionAssemblyChoices={
 } as const
 export const sectionProvenance:AdeProvenance={sourceIds:['docs/publication/architectural-plate-section-assemblies.md'],authority:'provisional',precision:'approximate'}
 const layer=(id:string,depth:number,fill:SectionLayer['fill'],stroke:SectionLayer['stroke']='secondary',kind:SectionLayer['kind']='material'):SectionLayer=>({id,thickness:{kind:'approximate',value:mm(depth)},fill,stroke,kind})
-export function sectionAssemblyModels(m:ReturnType<typeof sectionAt>,topAt:(x:number)=>number):{walls:SectionWall[];floors:SectionFloor[]}{
+export function sectionAssemblyModels(m:ReturnType<typeof sectionAt>,topAt:(x:number)=>number,options:{firstFloorRuns?:number[][];storageDeckRuns?:number[][]}={}):{walls:SectionWall[];floors:SectionFloor[]}{
  const c=sectionAssemblyChoices
  const layers=[layer('weather',c.layers.weather,'context','primary'),layer('cavity',c.layers.cavity,'none','secondary','void'),layer('inner',c.layers.innerIncludingFinish,'faint','primary')]
  const walls:SectionWall[]=m.walls.map((w,i)=>({id:w.id,left:w.lo,exteriorFace:i===0||i===2?'left':'right',layers,base:0,top:[topAt(w.lo),topAt(w.hi)],
   openings:w.holes.map(h=>({id:h.id,bottom:h.lo,top:h.hi,head:{depth:c.headZone,layerIds:['weather','inner'],closeCavity:true}})),
   substructure:{bottom:-c.substructureDrawingDepth,reservationProjection:c.supportEnvelope.projection,reservationHeight:c.supportEnvelope.height},provenance:sectionProvenance}))
- const floors:SectionFloor[]=m.floorRuns.flatMap(([left,right],i)=>[
+ const firstRuns=options.firstFloorRuns??m.floorRuns
+ const floors:SectionFloor[]=firstRuns.map(([left,right],i)=>(
   {id:'first-floor-'+i,left,right,top:3450,layers:[
    {...layer('finish',c.floor.finish,'faint'),endGap:0},
    {...layer('deck',c.floor.deck,'faint'),endGap:0},
    {...layer('joist',c.floor.joist,'none','profile'),endGap:c.floor.endGap},
    {...layer('service-void',c.floor.void,'none','secondary','void'),endGap:0},
    {...layer('ceiling',c.floor.ceiling,'faint'),endGap:0}],
-   seats:{underLayerId:'joist',projection:c.floor.seatProjection,depth:c.floor.seatDepth},provenance:sectionProvenance},
-  {id:'roof-ceiling-'+i,left,right,top:c.roofCeiling.top,layers:[
+   seats:{underLayerId:'joist',projection:c.floor.seatProjection,depth:c.floor.seatDepth},provenance:sectionProvenance}))
+ floors.push(...m.floorRuns.map(([left,right],i)=>({id:'roof-ceiling-'+i,left,right,top:c.roofCeiling.top,layers:[
    {...layer('member',c.roofCeiling.member,'none'),endGap:c.floor.endGap},
-   {...layer('lining',c.roofCeiling.lining,'faint'),endGap:0}],provenance:sectionProvenance}
- ])
- for(const [i,[left,right]]of [[1000,3200],[8800,11000]].entries())floors.push({id:'storage-deck-'+i,left,right,top:c.roofCeiling.top+c.roofCeiling.deck,layers:[{...layer('deck',c.roofCeiling.deck,'faint'),endGap:0}],provenance:sectionProvenance})
- return {walls,floors}
+   {...layer('lining',c.roofCeiling.lining,'faint'),endGap:0}],provenance:sectionProvenance})))
+ for(const [i,[left,right]]of (options.storageDeckRuns??[[1000,3200],[8800,11000]]).entries())floors.push({id:'storage-deck-'+i,left,right,top:c.roofCeiling.top+c.roofCeiling.deck,layers:[{...layer('deck',c.roofCeiling.deck,'faint'),endGap:0}],provenance:sectionProvenance})
+ const ordered=options.firstFloorRuns?floors:m.floorRuns.flatMap((_,i)=>[floors[i],floors[m.floorRuns.length+i]]).concat(floors.slice(m.floorRuns.length*2))
+ return {walls,floors:ordered}
 }
