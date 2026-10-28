@@ -118,6 +118,10 @@ function metadata(flags: Map<string, string>) {
   }
 }
 
+/**
+ * Acquisition and whole-programme status must be evaluated against current
+ * durable PCO truth, not against a feature branch that is editing the graph.
+ */
 function ensureControlViewMatchesMain(): void {
   git(['fetch', 'origin', 'main', '--quiet'])
   try {
@@ -135,7 +139,7 @@ function ensureControlViewMatchesMain(): void {
   ])
   if (changed) {
     throw new Error(
-      `Local branch changes PCO structural state (${changed.split('\n').join(', ')}); run claim/status/verify/renew from a checkout whose control graph matches current main`
+      `Local branch changes PCO structural state (${changed.split('\n').join(', ')}); run status/claim/force from a checkout whose control graph matches current main`
     )
   }
 }
@@ -303,7 +307,12 @@ async function status(store: GitHubClaimStore): Promise<void> {
     if (state.occupancy === 'available') available.push(node.id)
     else if (state.occupancy === 'active-unclaimed') handoff.push(node.id)
     else if (state.occupancy === 'claimed' || state.occupancy === 'claim-grace') {
-      claimed.push({ node: node.id, structural: state.structural, record: state.claim!, grace: state.occupancy === 'claim-grace' })
+      claimed.push({
+        node: node.id,
+        structural: state.structural,
+        record: state.claim!,
+        grace: state.occupancy === 'claim-grace'
+      })
     } else if (state.occupancy === 'invalid-live-claim') {
       invalid.push({ node: node.id, structural: state.structural, record: state.claim! })
     }
@@ -320,7 +329,9 @@ async function status(store: GitHubClaimStore): Promise<void> {
 
   console.log('# Operational project control')
   console.log(`Observed: ${listed.observedAt.toISOString()} via GitHub`)
-  console.log(`Available: ${available.length} | Claimed: ${claimed.length} | Active unclaimed: ${handoff.length} | Invalid live claims: ${invalid.length}`)
+  console.log(
+    `Available: ${available.length} | Claimed: ${claimed.length} | Active unclaimed: ${handoff.length} | Invalid live claims: ${invalid.length}`
+  )
 
   console.log('\n## Available')
   for (const id of available) console.log(`- ${id}`)
@@ -328,7 +339,9 @@ async function status(store: GitHubClaimStore): Promise<void> {
 
   console.log('\n## Claimed')
   for (const item of claimed) {
-    console.log(`- ${item.node} — ${item.record.holder.label ?? item.record.holder.kind}; ${item.grace ? 'expiry grace through' : 'expires'} ${item.record.expiresAt}${item.record.branch ? `; branch ${item.record.branch}` : ''}${item.record.pr ? `; PR #${item.record.pr}` : ''}`)
+    console.log(
+      `- ${item.node} — ${item.record.holder.label ?? item.record.holder.kind}; ${item.grace ? 'expiry grace through' : 'expires'} ${item.record.expiresAt}${item.record.branch ? `; branch ${item.record.branch}` : ''}${item.record.pr ? `; PR #${item.record.pr}` : ''}`
+    )
   }
   if (!claimed.length) console.log('- none')
 
@@ -339,7 +352,9 @@ async function status(store: GitHubClaimStore): Promise<void> {
   if (invalid.length) {
     console.log('\n## Invalid live claims')
     for (const item of invalid) {
-      console.log(`- ${item.node} — structural ${item.structural}; lease ${item.record.leaseId} generation ${item.record.generation}`)
+      console.log(
+        `- ${item.node} — structural ${item.structural}; lease ${item.record.leaseId} generation ${item.record.generation}`
+      )
     }
     process.exitCode = 2
   }
@@ -364,7 +379,8 @@ async function main(): Promise<void> {
 
     case 'verify': {
       if (!args.node) throw new Error('verify requires NODE')
-      ensureControlViewMatchesMain()
+      // Verification is deliberately occupancy-only. PCO/merge validation is
+      // the independent durable structural check.
       const verified = await verifyClaimInStore(store, args.node, controlNodes, {
         leaseId: requiredFlag(args.flags, 'lease-id'),
         generation: optionalInt(args.flags, 'generation')
@@ -407,7 +423,9 @@ async function main(): Promise<void> {
 
     case 'renew': {
       if (!args.node) throw new Error('renew requires NODE')
-      ensureControlViewMatchesMain()
+      // Renew uses the caller's PCO graph to refuse a node already made
+      // non-claimable by the current work. It does not pretend branch-local
+      // occupancy is a durable PCO fact.
       printWrite(await renewClaimInStore(store, args.node, controlNodes, {
         leaseId: requiredFlag(args.flags, 'lease-id'),
         generation: optionalInt(args.flags, 'generation'),
