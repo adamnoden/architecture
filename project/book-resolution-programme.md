@@ -57,6 +57,14 @@ DEL #854 + available PHY #912 / EPR #913 evidence ──────────
                                                                      PUB-02
 ```
 
+## Project-control overlay
+
+[PCO — Project Control & Orchestration](pco/project-control-orchestration-programme.md) [#953](https://github.com/adamnoden/architecture/issues/953) is a priority infrastructure overlay for this programme. It does **not** add a new architectural dependency between BSR and IAS/OAS/HAD; those streams remain substantively unblocked.
+
+PCO exists because the intended IAS/OAS/HAD fan-out now exceeds what should be scheduled from hand-maintained prose. Already-authorised root exploration may continue, but deep high-concurrency fan-out should prefer the deterministic PCO execution frontier once **PCO-03** has migrated and proved the live architecture-programme graph.
+
+PCO owns execution-control machinery only. It may not redefine IAS/OAS/HAD architectural authority, promote maturity, or turn possible future PHY/EPR/DEL routes into blockers before a concrete obligation is earned.
+
 ## Parallelism rule
 
 IAS, OAS and HAD are now intentionally parallel because BSR has stabilised their chapter and authority boundaries.
@@ -64,6 +72,8 @@ IAS, OAS and HAD are now intentionally parallel because BSR has stabilised their
 They work against the controlled current Reference House/PLT geometry. They may discover reasons that geometry should change; they may **not silently change it**. Any material plan, section, wall-depth, opening, service-space or facade conflict is an explicit rewind request to the owning Reference House/PLT design source.
 
 This keeps parallel work useful without creating divergent houses.
+
+The shared Wave-0.5 interface freeze, pairwise reconciliation work and triad integration gate recorded in IAS #941, OAS #942 and HAD #943 remain the substantive concurrency controls. PCO should represent those gates; it must not replace them with software abstractions that weaken the architectural coordination rule.
 
 ## Authority boundaries
 
@@ -79,6 +89,7 @@ This keeps parallel work useful without creating divergent houses.
 - **DEL** remains the owner of delivery responsibility, stage and acceptance requirements.
 - **EDA** remains the editorial-doctrine assurance owner.
 - **PUB** remains the publication/release owner.
+- **PCO** owns machine-readable workstream/execution control and derived scheduling state; it does not own the architectural/evidential content of the nodes it represents.
 
 ## Validation and rewind rule
 
@@ -99,4 +110,6 @@ Physical-object preparation under PUB-02 may continue where content-independent.
 
 **IAS/OAS/HAD → BCR → HRS → final PLT integration/freeze → renewed EDA assurance → PUB-02 final manufacture gate.**
 
-BSR completion does not itself raise any maturity rating.
+PCO changes how that sequence is controlled and scheduled; it does not add a publication maturity gate of its own.
+
+BSR completion and PCO authorisation do not themselves raise any maturity rating.
