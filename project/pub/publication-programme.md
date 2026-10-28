@@ -22,7 +22,7 @@ This file establishes the live publication namespace. Historical release evidenc
 
 `PUB-02` may continue content-independent physical-object work—trim, paper, cloth, binding, printer/binder exploration and other preparation that safely consumes the accepted typography contract.
 
-The prior EDA/PLT freeze path is no longer sufficient for final manufacture because the owner has authorised a material enlargement and refactor of the book. The controlling programme is [`project/book-resolution-programme.md`](../book-resolution-programme.md); the provenance-preserving editorial successor trigger is [`docs/editorial/eda-successor-trigger-2026-10-28.md`](../../docs/editorial/eda-successor-trigger-2026-10-28.md).
+The prior EDA/PLT freeze path is no longer sufficient for final manufacture because the owner has authorised a material enlargement and refactor of the book. The controlling programme is [`project/book-resolution-programme.md`](../book-resolution-programme.md); the provenance-preserving editorial successor trigger is [`project/eda/eda-successor-trigger-2026-10-28.md`](../eda/eda-successor-trigger-2026-10-28.md).
 
 Final 12-copy content/drawing freeze and manufacture now require:
 
