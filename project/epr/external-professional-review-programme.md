@@ -3,7 +3,8 @@
 **State:** framed and issue-ready; no competent review response recorded  
 **Maturity:** M1 at current project scope  
 **Reference House gate:** `RH-11`  
-**Execution register:** `docs/development/validation-execution-register.md`
+**Execution register:** `docs/development/validation-execution-register.md`  
+**Current upstream design/convergence map:** [`../book-resolution-programme.md`](../book-resolution-programme.md)
 
 ## Purpose
 
@@ -29,13 +30,22 @@ Issuing a brief, sending an email, holding a meeting or receiving an unprocessed
 
 Use the existing processing chain:
 
-`finding → affected project object → owning RH gate → smallest correction → downstream material made stale → closure evidence`
+`finding → affected project object → owning architectural gate → smallest correction → downstream material made stale → closure evidence`
+
+## Book / house-resolution interface
+
+`IAS`, `OAS` and `HAD` will introduce selected assembly/design families that may sharpen, supersede or add professional-review questions. Their authorisation is not evidence, and issue-ready RH-11 material must not be treated as automatically applicable to later changed details.
+
+`BCR` owns comparison between selected architecture and unresolved technical obligations. It should reuse existing RH-11/EPR questions where still applicable, update source references where geometry/details changed, and add only the competent-review questions actually earned by the selected systems.
+
+Material EPR findings rewind through BCR to the owning IAS/OAS/HAD/Reference House decision and are absorbed by HRS before definitive PLT/Part VI freeze. EPR constrains and validates within professional scope; it does not become the architectural designer.
 
 ## Boundaries
 
 - `RH-11` owns the current Reference House review package and rewind routing.
 - PHY owns physical test evidence; EPR may be a prerequisite for a meaningful PHY test where engineering/specialist judgement is required.
+- BCR owns construction-resolution classification and targeted review routing; it does not replace EPR.
 - DPL owns jurisdiction, site facts and site-specific deployment evidence.
 - DEL consumes EPR findings as delivery requirements mature; it does not substitute for competent review.
 
-This workstream identity does not raise maturity or claim that any professional review has occurred. It provides a durable three-letter programme owner for the existing review route.
+Internal M4 controls, drawings, calculations, issue-ready briefs and BCR matrices are not competent external review. This workstream identity does not raise maturity or claim that professional review has occurred.
