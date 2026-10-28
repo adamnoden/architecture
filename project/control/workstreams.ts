@@ -51,6 +51,12 @@ const workstreamRegistry = [
   },
   { code: 'ILA', title: 'ILA workstream' },
   {
+    code: 'MRA',
+    title: 'Moisture Resilience Assurance',
+    issue: 959,
+    programme: 'project/mra/moisture-resilience-assurance-programme.md'
+  },
+  {
     code: 'OAS',
     title: 'Opening Assembly System',
     issue: 942,

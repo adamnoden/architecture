@@ -38,6 +38,7 @@ test('current ready frontier exposes useful parallel work without inventing cond
     'OAS-00',
     'HAD-00',
     'BCR-SCAFFOLD',
+    'MRA-00',
     'PHY-03-ENGINEERING',
     'PHY-04',
     'EPR-RH11'
@@ -49,9 +50,23 @@ test('current ready frontier exposes useful parallel work without inventing cond
 
   assert.deepEqual(directBlockers(node('BCR-CONVERGENCE'), controlNodes).sort(), [
     'BCR-SCAFFOLD',
+    'MRA-04',
     'TRIAD-GATE'
   ])
   assert.equal(node('BCR-CONVERGENCE').dependencies.some((id) => /PHY|EPR|DEL/.test(id)), false)
+})
+
+test('MRA starts in parallel but gates construction convergence and final synthesis at the correct boundaries', () => {
+  assert.deepEqual(node('MRA-00').dependencies, ['BSR-ROOT'])
+
+  for (const id of ['MRA-01', 'MRA-02', 'MRA-03']) {
+    assert.deepEqual(node(id).dependencies, ['MRA-00', 'TRIAD-GATE'])
+  }
+
+  assert.deepEqual(node('MRA-04').dependencies, ['MRA-01', 'MRA-02', 'MRA-03'])
+  assert.equal(node('BCR-CONVERGENCE').dependencies.includes('MRA-04'), true)
+  assert.deepEqual(node('MRA-05').dependencies, ['BCR-CONVERGENCE'])
+  assert.equal(node('HRS-SYNTHESIS').dependencies.includes('MRA-05'), true)
 })
 
 test('held evidence research never leaks into the ready frontier', () => {

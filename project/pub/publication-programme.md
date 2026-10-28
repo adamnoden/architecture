@@ -26,7 +26,9 @@ The prior EDA/PLT freeze path is no longer sufficient for final manufacture beca
 
 Final 12-copy content/drawing freeze and manufacture now require:
 
-**BSR → IAS/OAS/HAD → BCR → HRS → final PLT integration/freeze → renewed EDA assurance → PUB-02 final manufacture gate.**
+**BSR → IAS/OAS/HAD → MRA integrated-house assault → BCR → MRA post-BCR closeout → HRS → final PLT integration/freeze → renewed EDA assurance → PUB-02 final manufacture gate.**
+
+MRA #959 is an architectural/technical assurance dependency of the resolved-house source, not a publication-owned proof stream. PUB does not judge moisture adequacy; it simply refuses to freeze a supposedly final house before the owning programme has closed that risk at its stated scope.
 
 This does not erase or downgrade earlier EDA, TYP, ADE, DRW or publication evidence. It means those accepted results remain evidence for the source/object they actually reviewed and cannot silently certify newly authored chapters, systems or plates.
 
