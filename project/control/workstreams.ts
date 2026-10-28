@@ -7,6 +7,7 @@ export interface WorkstreamDefinition {
 }
 
 const workstreamRegistry = [
+  { code: 'ACO', title: 'Agent Claim Orchestration', issue: 960, programme: 'project/aco/agent-claim-orchestration-programme.md' },
   { code: 'ADE', title: 'Architectural Drawing Engine', issue: 812 },
   {
     code: 'BCR',

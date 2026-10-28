@@ -57,7 +57,6 @@ export function validateGraphStructure(
     }
   }
 
-  // Alias-vs-canonical collisions can only be checked completely after every id is known.
   for (const [alias, ownerId] of aliases) {
     if (byId.has(alias) && alias !== ownerId) {
       failures.push(`node alias ${alias} collides with canonical node ${alias}`)
@@ -139,6 +138,11 @@ export function validateControlPlane(repoRoot?: string): string[] {
   ]
 
   if (repoRoot) {
+    const runtimeClaims = join(repoRoot, '.pco', 'claims')
+    if (existsSync(runtimeClaims)) {
+      failures.push('runtime ACO claim files must never be committed to source branches: .pco/claims')
+    }
+
     for (const node of controlNodes) {
       if (node.lifecycle !== 'complete') continue
       for (const evidence of node.closeoutEvidence) {
