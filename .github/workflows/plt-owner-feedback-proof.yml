@@ -21,6 +21,7 @@ on:
       - 'publication/specimens/plt10/**'
       - 'publication/specimens/plt11/**'
       - 'publication/specimens/plt12/**'
+      - 'publication/specimens/plt13/**'
       - '.github/workflows/plt-owner-feedback-proof.yml'
   workflow_dispatch:
 permissions:
@@ -139,11 +140,24 @@ jobs:
         run: PLT12_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt12/vivliostyle.config.js
       - name: Validate all section assembly PDF pages
         run: node --import tsx publication/specimens/plt12/validate.ts
+      - name: Prepare coordinated orthographic family
+        run: node --import tsx publication/specimens/plt13/prepare.ts
+      - name: Build orthographic BOOK B5
+        run: PLT13_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt13/vivliostyle.config.js
+      - name: Build orthographic BOOK A4
+        run: PLT13_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt13/vivliostyle.config.js
+      - name: Build orthographic WALL A2
+        run: PLT13_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt13/vivliostyle.config.js
+      - name: Validate orthographic family PDF pages
+        run: node --import tsx publication/specimens/plt13/validate.ts
       - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: plt-owner-feedback-proof
           path: |
+            publication/specimens/plt13/dist/*.pdf
+            publication/specimens/plt13/.work/*.json
+            publication/specimens/plt13/.work/*.svg
             publication/specimens/plt12/dist/*.pdf
             publication/specimens/plt12/.work/*.json
             publication/specimens/plt12/.work/*.svg

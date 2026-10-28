@@ -45,3 +45,14 @@ test('range cut is the guaranteed minimum and wall geometry doubles without mark
     assert.ok(path.rings.flat().some((p) => p.x === 44.5))
   }
 })
+
+test('assembly-qualified successor identities distinguish monolithic families without changing geometry', async () => {
+  const {compileArchitecturalPlanScene}=await import('./compile-plan.js')
+  const {createPlanPaperProjection}=await import('../publication-drawing/projection.js')
+  const plan=contrastPlan();plan.wallAssemblies=[...plan.wallAssemblies,{...plan.wallAssemblies[0],id:'SECOND'}]
+  plan.walls=plan.walls.map((w,i)=>i===3?{...w,assemblyId:'SECOND'}:w)
+  const options={profile:{id:'CONTRAST',output:'PROOF' as const,scaleDenominator:100},projection:createPlanPaperProjection({scaleDenominator:100,modelBounds:{x:0,y:0,width:6300,height:5300},paperOrigin:{x:20,y:20}}),widthMm:180,heightMm:160,title:'Contrast',resolveAssemblyThicknessMm:()=>mm(300),resolveLayerThicknessMm:()=>mm(300),openingSide:()=> 'right' as const}
+  const legacy=compileArchitecturalPlanScene(plan,options),current=compileArchitecturalPlanScene(plan,{...options,wallRegionIds:'assembly-qualified'})
+  const ids=current.primitives.map(p=>p.id);assert.equal(new Set(ids).size,ids.length)
+  assert.deepEqual(current.primitives.map(({id,...p})=>p),legacy.primitives.map(({id,...p})=>p))
+})

@@ -26,6 +26,8 @@ export interface AdePlanDrawingOptions extends AdeWallAssemblyTopologyOptions {
   abutments?: Readonly<Record<string, readonly string[]>>
   /** Faint boundaries make the cavity legible without inventing masonry bond. */
   layerBoundaryOpacity?: number
+  /** Opt-in successor IDs preserve historical specimen fingerprints. */
+  wallRegionIds?: 'legacy' | 'assembly-qualified'
   openingSide: (opening: AdeOpening) => 'left' | 'right'
   adjacencySide?: (adjacency: AdeAdjacencyObligation) => 'left' | 'right'
   dimensionOptions?: AdeDimensionDrawingOptions
@@ -69,7 +71,7 @@ export const compileArchitecturalPlanScene = (plan: AdeArchitecturalPlan, option
     if (!topology) continue
     const hostRects = (options.abutments?.[assembly.id] ?? []).flatMap((id) => topologyByAssembly.get(id)!.sourceRectangles)
     const regions = applyOpeningCutoutsToWallRegions(topology.regions, cutouts).map((region) => ({
-      ...region, rings: hostRects.length ? subtractRectilinearRectangles(region.rings, hostRects) : region.rings
+      ...region, id: options.wallRegionIds === 'assembly-qualified' ? `${region.id}::${assembly.id}` : region.id, rings: hostRects.length ? subtractRectilinearRectangles(region.rings, hostRects) : region.rings
     }))
     const metadata = { authorityClass: 'A+B', authority: assembly.provenance.authority, precision: assembly.provenance.precision,
       assembly: assembly.id, assemblySources: assembly.provenance.sourceIds.join(',') }
