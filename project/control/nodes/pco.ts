@@ -51,32 +51,45 @@ export const pcoNodes = defineNodes([
     owners: ['PCO'],
     title: 'Status and naming projections',
     dependencies: ['PCO-03'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: [
+      'project/control/render.ts',
+      'scripts/update-status.ts',
+      '.github/workflows/project-control-projections.yml'
+    ]
   },
   {
     id: 'PCO-05',
     owners: ['PCO'],
     title: 'Maturity separation and stale-evidence guard',
     dependencies: ['PCO-04'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/maturity-freshness.ts', 'project/control/render.ts']
   },
   {
     id: 'PCO-06',
     owners: ['PCO'],
     title: 'Repository, CI and agent guardrails',
     dependencies: ['PCO-04', 'PCO-05'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: [
+      'scripts/validate-project-control.ts',
+      '.github/workflows/validate-pr.yml',
+      'project/control/control.test.ts',
+      'project/control/README.md'
+    ]
   },
   {
     id: 'PCO-07',
     owners: ['PCO'],
     title: 'Wider migration and overlap removal',
     dependencies: ['PCO-06'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: [
+      'project/control/nodes/evidence.ts',
+      'project/control/nodes/index.ts',
+      'project/programme-controls.ts'
+    ]
   },
   {
     id: 'PCO-08',
