@@ -9,7 +9,7 @@ Execution authority lives in `project/control/`. Epistemic maturity authority li
 <!-- project-control:start -->
 Execution state is derived from `project/control/`; this Markdown is a projection, not authority.
 
-**Ready:** 7 · **Active:** 2 · **Blocked:** 23 · **Held:** 2 · **Done:** 11 · **Cancelled:** 0
+**Ready:** 8 · **Active:** 2 · **Blocked:** 28 · **Held:** 2 · **Done:** 11 · **Cancelled:** 0
 
 ### Ready frontier
 
@@ -19,6 +19,7 @@ Execution state is derived from `project/control/`; this Markdown is a projectio
 | `OAS-00` | Opening taxonomy, baselines and invariants | OAS | — |
 | `HAD-00` | Architectural brief, hierarchy and invariants | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
+| `MRA-00` | Moisture constitution, inventory and threat model | MRA | — |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
@@ -54,15 +55,20 @@ Execution state is derived from `project/control/`; this Markdown is a projectio
 | `OAS-03` | Selected opening family and replacement/reinstatement set | OAS-01E, OAS-01I, IAS-OAS-JUNCTION, OAS-HAD-JUNCTION |
 | `HAD-03` | Architectural design convergence and visual synthesis | IAS-HAD-JUNCTION, OAS-HAD-JUNCTION, HAD-02M |
 | `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, OAS-03, HAD-03 |
-| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE |
-| `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE |
+| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE, MRA-04 |
+| `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05 |
+| `MRA-01` | External water and ground-envelope assault | MRA-00, TRIAD-GATE |
+| `MRA-02` | Internal water and wet-zone assault | MRA-00, TRIAD-GATE |
+| `MRA-03` | Vapour, condensation and drying assault | MRA-00, TRIAD-GATE |
+| `MRA-04` | Whole-house moisture failure matrix and adversarial gate | MRA-01, MRA-02, MRA-03 |
+| `MRA-05` | Post-BCR moisture assurance closeout | BCR-CONVERGENCE |
 | `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
 | `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE |
 | `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | PUB-02-PREP, EDA-RENEWED |
 
 ### Structural critical path
 
-`IAS-00` → `TRIAD-IFACE-FREEZE` → `IAS-01V` → `IAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `BCR-CONVERGENCE` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`IAS-00` → `TRIAD-IFACE-FREEZE` → `IAS-01V` → `IAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
