@@ -76,18 +76,43 @@ export interface ReleaseOptions {
   maxInfrastructureRetries?: number
 }
 
+export interface VerifyOptions {
+  leaseId: string
+  generation?: number
+}
+
+export interface VerifiedLease {
+  stored: StoredClaim
+  observedAt: Date
+  temporal: 'live' | 'grace'
+}
+
 function candidateLeaseId(explicit?: string): string {
   return explicit ?? randomUUID()
 }
 
 function retryLimit(value?: number): number {
   if (value === undefined) return 3
-  if (!Number.isInteger(value) || value < 0 || value > 10) throw new Error('Infrastructure retry limit must be an integer between 0 and 10')
+  if (!Number.isInteger(value) || value < 0 || value > 10) {
+    throw new Error('Infrastructure retry limit must be an integer between 0 and 10')
+  }
   return value
 }
 
 function sameStoredVersion(left: StoredClaim | null, right: StoredClaim | null): boolean {
   return left?.sha === right?.sha
+}
+
+function canonicalOrSafeStoredNode(inputNode: string, nodes: readonly ControlNode[]): NodeId {
+  try {
+    return canonicalNodeId(inputNode, nodes)
+  } catch (error) {
+    // Release/show recovery must remain possible after a canonical node is removed
+    // from the durable graph. Aliases cannot be recovered once their canonical
+    // mapping disappears, so only a syntactically canonical key is accepted.
+    if (/^[A-Z0-9][A-Z0-9-]*$/.test(inputNode)) return inputNode
+    throw error
+  }
 }
 
 async function resolveConflict(
@@ -143,7 +168,9 @@ export async function acquireClaimFromStore(
       }
 
       const current = resolution.current.stored?.record
-      if (current?.leaseId === leaseId) return { stored: resolution.current.stored!, observedAt: resolution.current.observedAt }
+      if (current?.leaseId === leaseId) {
+        return { stored: resolution.current.stored!, observedAt: resolution.current.observedAt }
+      }
       if (current) {
         const temporal = leaseTemporalState(current, resolution.current.observedAt)
         throw new ClaimConflictError(
@@ -170,9 +197,7 @@ export async function forceAcquireClaimFromStore(
   assertStructurallyClaimable(node, nodes)
 
   const before = await store.read(nodeId)
-  if (!before.stored) {
-    return acquireClaimFromStore(store, nodeId, nodes, options)
-  }
+  if (!before.stored) return acquireClaimFromStore(store, nodeId, nodes, options)
 
   const next = forceTakeover(before.stored.record, {
     node: nodeId,
@@ -192,10 +217,40 @@ export async function forceAcquireClaimFromStore(
     if (!(error instanceof ClaimConflictError)) throw error
     const current = await store.read(nodeId)
     if (current.stored?.sha !== before.stored.sha) {
-      throw new ClaimConflictError(`${nodeId} changed while force takeover was being decided; inspect the new holder before forcing again`)
+      throw new ClaimConflictError(
+        `${nodeId} changed while force takeover was being decided; inspect the new holder before forcing again`
+      )
     }
     throw error
   }
+}
+
+export async function verifyClaimInStore(
+  store: ClaimStore,
+  inputNode: string,
+  nodes: readonly ControlNode[],
+  options: VerifyOptions
+): Promise<VerifiedLease> {
+  const nodeId = canonicalNodeId(inputNode, nodes)
+  const node = nodes.find((candidate) => candidate.id === nodeId)
+  if (!node) throw new Error(`Unknown canonical node: ${nodeId}`)
+  assertStructurallyClaimable(node, nodes)
+
+  const current = await store.read(nodeId)
+  if (!current.stored) throw new Error(`No lease exists for ${nodeId}`)
+  const record = current.stored.record
+  if (record.leaseId !== options.leaseId) throw new Error(`Lease id does not own ${nodeId}`)
+  if (options.generation !== undefined && record.generation !== options.generation) {
+    throw new Error(`Lease generation ${options.generation} is stale for ${nodeId}; current generation is ${record.generation}`)
+  }
+  if (record.state !== 'claimed') throw new Error(`Lease for ${nodeId} is released`)
+
+  const temporal = leaseTemporalState(record, current.observedAt)
+  if (temporal !== 'live' && temporal !== 'grace') {
+    throw new Error(`Lease for ${nodeId} has expired; reacquire before continuing`)
+  }
+
+  return { stored: current.stored, observedAt: current.observedAt, temporal }
 }
 
 export async function renewClaimInStore(
@@ -205,9 +260,15 @@ export async function renewClaimInStore(
   options: LeaseMutationOptions
 ): Promise<ClaimWriteResult> {
   const nodeId = canonicalNodeId(inputNode, nodes)
+  const node = nodes.find((candidate) => candidate.id === nodeId)
+  if (!node) throw new Error(`Unknown canonical node: ${nodeId}`)
+  assertStructurallyClaimable(node, nodes)
   let retries = retryLimit(options.maxInfrastructureRetries)
 
   while (true) {
+    // Re-check durable claimability on each retry. A caller should pass the
+    // current main graph; the CLI enforces that before renewal.
+    assertStructurallyClaimable(node, nodes)
     const before = await store.read(nodeId)
     if (!before.stored) throw new Error(`No lease exists for ${nodeId}`)
     const next = renewClaim(
@@ -228,7 +289,9 @@ export async function renewClaimInStore(
         retries -= 1
         continue
       }
-      throw new ClaimConflictError(`${nodeId} lease changed before renewal completed; current generation must be re-read`)
+      throw new ClaimConflictError(
+        `${nodeId} lease changed before renewal completed; current generation must be re-read`
+      )
     }
   }
 }
@@ -239,7 +302,10 @@ export async function releaseClaimInStore(
   nodes: readonly ControlNode[],
   options: ReleaseOptions
 ): Promise<ClaimWriteResult> {
-  const nodeId = canonicalNodeId(inputNode, nodes)
+  // Release is intentionally more permissive than acquire/renew. A lease must
+  // remain releasable even if its canonical node has since been removed from the
+  // PCO graph. In that recovery case the caller must supply the canonical key.
+  const nodeId = canonicalOrSafeStoredNode(inputNode, nodes)
   let retries = retryLimit(options.maxInfrastructureRetries)
 
   while (true) {
@@ -262,9 +328,16 @@ export async function releaseClaimInStore(
         retries -= 1
         continue
       }
-      throw new ClaimConflictError(`${nodeId} lease changed before release completed; current generation must be re-read`)
+      throw new ClaimConflictError(
+        `${nodeId} lease changed before release completed; current generation must be re-read`
+      )
     }
   }
+}
+
+/** Read a claim key for diagnostics/recovery, including an orphaned canonical key. */
+export function claimKeyForRead(inputNode: string, nodes: readonly ControlNode[]): NodeId {
+  return canonicalOrSafeStoredNode(inputNode, nodes)
 }
 
 /** Validate a store payload before exposing it to orchestration logic. */
