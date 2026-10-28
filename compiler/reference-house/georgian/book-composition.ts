@@ -60,6 +60,7 @@ export function createBookSectionSpread(format:BookFormat):DrawingSceneV2{
  const d=layoutFamilySource.design,k=1/500,loc={x:24,y:30}
  box('locator-shell',loc.x,loc.y,d.shell*k,d.shell*k);box('locator-court',loc.x+d.court.x*k,loc.y+(d.shell-d.court.y-d.court.depth)*k,d.court.width*k,d.court.depth*k)
  const cut=loc.x+layoutFamilySource.cuts.A*k;line('locator-cut',cut,loc.y-1,cut,loc.y+d.shell*k+1);text('locator-a',cut,loc.y-3,'A','marker');text('locator-aa',cut,loc.y+d.shell*k+4,'A','marker');text('locator-scale',36,loc.y+d.shell*k+9,'1:500');text('locator-north',24,loc.y-4,'N ↑','marker')
+ text('spread-court-label',w-51,h-220,'Open courtyard','marker');line('spread-court-leader',w-44,h-218,w-31,h-202)
  const sx=w+62,sy=h-23;line('spread-scale',sx,sy,sx+60,sy);for(let i=0;i<4;i++)line('spread-scale-tick-'+i,sx+i*20,sy-1.5,sx+i*20,sy+1.5)
  text('spread-bar',sx+30,sy+8,'3 m');text('spread-ratio',w+38,sy,'1:50','marker')
  text('spread-note-1',84,h-20,'Provisional support and guarding;')

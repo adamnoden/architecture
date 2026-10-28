@@ -17,7 +17,7 @@ for(const format of ['b5','a4','spreads'] as const){
   const page=await pdf.getPage(n),vp=page.getViewport({scale:1});near(vp.width,w*pt,format+' page width',1);near(vp.height,h*pt,format+' page height',1)
   const all=(await page.getTextContent()).items.filter((i):i is typeof i & {str:string;width:number;height:number;transform:number[]}=>'str' in i)
   // Fully off-page text may remain in a clipped PDF stream; no visible text may be cut.
-  const items=all.filter(i=>i.width>0&&i.transform[4]+i.width>0&&i.transform[4]<w*pt&&i.transform[5]>=0&&i.transform[5]<=h*pt)
+  const items=all.filter(i=>i.str.trim().length>0&&i.width>0&&i.transform[4]+i.width>0&&i.transform[4]<w*pt&&i.transform[5]>=0&&i.transform[5]<=h*pt)
   for(const i of items)assert.ok(i.transform[4]>=-.2&&i.transform[4]+i.width<=w*pt+.2,`${format}/${n}: clipped text ${i.str}`)
   const fonts=execFileSync('pdffonts',['-f',String(n),'-l',String(n),path],{encoding:'utf8'}),rows=fonts.split('\n').slice(2).filter(r=>r.trim());assert.equal(rows.length,2,`${format}/${n}: fonts`)
   for(const row of rows){assert.match(row,/SourceSans3-(Regular|Bold)/);assert.match(row,/yes\s+yes\s+yes\s+\d+\s+\d+\s*$/)}

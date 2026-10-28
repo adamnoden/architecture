@@ -59,7 +59,7 @@ Pairs start on even pages: plans 2–3, section 4–5, services 6–7, roof 8–
 The section is one canonical 1:50 paper-space scene emitted as two physical
 viewport crops. No vector, type or stroke is resized to fit. Its small locator
 uses an explicit 1:500 geometry scale and unchanged physical type. The 12 mm
-critical-exclusion band on each side of the fold is retained. Room labels,
+critical-exclusion band on each side of the fold is retained. Room labels, the rehomed open-courtyard label,
 datums, locator letters, scale ratio, scale bar and notes sit wholly outside it.
 Only repetitive courtyard window/ground geometry crosses the band; no unique
 route event or sole dimension/marker depends on the fold.

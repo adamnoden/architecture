@@ -26,7 +26,7 @@ for(const format of ['b5','a4'] as const){
    await writeFile(resolve(work,`${format}-${spec.page}-scene.json`),JSON.stringify(scene,null,2)+'\n')
    drawing=renderDrawingSceneV2SvgWithTokens(scene,tokens)
   }
-  if(drawing){const id=`${format}-p${spec.page}`;drawing=drawing.replace('aria-labelledby="title desc"',`aria-labelledby="${id}-title ${id}-desc"`).replace('id="title"',`id="${id}-title"`).replace('id="desc"',`id="${id}-desc"`);sceneRecords[spec.page]={...(sceneRecords[spec.page] as object??{}),svg:hash(drawing)};await writeFile(resolve(work,`${format}-${spec.page}.svg`),drawing)}
+  if(drawing){drawing=drawing.replace('</style>',fonts+'</style>');assert.equal((drawing.match(/@font-face/g)??[]).length,2);const id=`${format}-p${spec.page}`;drawing=drawing.replace('aria-labelledby="title desc"',`aria-labelledby="${id}-title ${id}-desc"`).replace('id="title"',`id="${id}-title"`).replace('id="desc"',`id="${id}-desc"`);sceneRecords[spec.page]={...(sceneRecords[spec.page] as object??{}),svg:hash(drawing)};await writeFile(resolve(work,`${format}-${spec.page}.svg`),drawing)}
   const caption='caption' in spec?`<p class="caption">${esc(spec.caption)}</p>`:''
   const side=spec.page%2===0?'left':'right'
   pages[format].push(`<section class="page ${side}" data-page="${spec.page}">${spec.kind==='intro'?proofIntro:`${drawing}<header>${esc(spec.title)}</header>${caption}`}<footer>${String(spec.page).padStart(2,'0')}</footer></section>`)
