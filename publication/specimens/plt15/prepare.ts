@@ -24,5 +24,5 @@ for(const scale of [100,50] as const)for(const view of views){
 }
 for(const [name,scale]of [['book',100],['wall',50]] as const)await writeFile(resolve(work,name+'.html'),`<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>Sections and roof</title><style>${fonts}</style></head><body>${html[scale].join('')}</body></html>`)
 await writeFile(resolve(work,'source.json'),JSON.stringify(design,null,2)+'\n')
-await writeFile(resolve(work,'manifest.json'),JSON.stringify({packet:'PLT-LAYOUT-REVISION-02',workingSourceAccepted:true,views,sourceSha256:hash(JSON.stringify(design)),files,audit,access,ownerPhysicalVerdict:'UNREVIEWED',printTokensFrozen:false,fullHistoricalSystemRevalidation:false,fitScaling:false,profiles:{b5:[176,250,2,100],a4:[210,297,2,100],a2:[420,594,2,50]}},null,2)+'\n')
+await writeFile(resolve(work,'manifest.json'),JSON.stringify({packet:'PLT-LAYOUT-REVISION-02',workingSourceAccepted:false,ownerArchitecturalVerdict:'UNREVIEWED',views,sourceSha256:hash(JSON.stringify(design)),files,audit,access,ownerPhysicalVerdict:'UNREVIEWED',printTokensFrozen:false,fullHistoricalSystemRevalidation:false,fitScaling:false,profiles:{b5:[176,250,2,100],a4:[210,297,2,100],a2:[420,594,2,50]}},null,2)+'\n')
 console.log('Layout revision prepared: ground and first; owner review pending.')

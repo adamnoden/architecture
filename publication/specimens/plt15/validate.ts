@@ -8,7 +8,7 @@ import {layoutRevision as design,createRevisionScene} from '../../../compiler/re
 import {auditRevisionAccess,revisionMetrics} from '../../../compiler/reference-house/georgian/layout-revision-audit.js'
 const root=import.meta.dirname,work=resolve(root,'.work'),m=JSON.parse(await readFile(resolve(work,'manifest.json'),'utf8')),pt=72/25.4
 const hash=(s:string|Buffer)=>createHash('sha256').update(s).digest('hex')
-assert.equal(m.sourceSha256,hash(JSON.stringify(design)));assert.equal(m.audit.pass,true);assert.equal(m.ownerPhysicalVerdict,'UNREVIEWED');assert.equal(m.printTokensFrozen,false);assert.equal(m.fullHistoricalSystemRevalidation,false)
+assert.equal(m.workingSourceAccepted,false);assert.equal(m.ownerArchitecturalVerdict,'UNREVIEWED');assert.equal(m.sourceSha256,hash(JSON.stringify(design)));assert.equal(m.audit.pass,true);assert.equal(m.ownerPhysicalVerdict,'UNREVIEWED');assert.equal(m.printTokensFrozen,false);assert.equal(m.fullHistoricalSystemRevalidation,false)
 const near=(a:number,b:number,label:string,tol=.35)=>assert.ok(Math.abs(a-b)<=tol,`${label}: ${a} != ${b}`)
 const evidence:Record<string,unknown>={}
 for(const format of ['b5','a4','a2'] as const){
