@@ -7,12 +7,13 @@ import {
   forceAcquireClaimFromStore,
   releaseClaimInStore,
   renewClaimInStore,
+  verifyClaimInStore,
   type ClaimReadResult,
   type ClaimStore,
   type ClaimWriteResult,
   type StoredClaim
 } from './claim-store.js'
-import { serializeClaimRecord, type ClaimRecord } from './claims.js'
+import { createClaimRecord, serializeClaimRecord, type ClaimRecord } from './claims.js'
 
 class FakeStore implements ClaimStore {
   private readonly records = new Map<string, StoredClaim>()
@@ -76,7 +77,7 @@ test('unrelated branch-head contention retries when the node file itself is unch
   const store = new FakeStore()
   store.conflictNextWriteWithoutNodeChange = true
 
-  const result = await acquireClaimFromStore(store, 'ACO-01', controlNodes, {
+  const result = await acquireClaimFromStore(store, 'ACO-04', controlNodes, {
     holder: { kind: 'chatgpt', label: 'alpha' },
     leaseId: 'lease-alpha'
   })
@@ -87,14 +88,14 @@ test('unrelated branch-head contention retries when the node file itself is unch
 
 test('same-node acquisition race has one winner', async () => {
   const store = new FakeStore()
-  const first = await acquireClaimFromStore(store, 'ACO-01', controlNodes, {
+  const first = await acquireClaimFromStore(store, 'ACO-04', controlNodes, {
     holder: { kind: 'chatgpt', label: 'alpha' },
     leaseId: 'lease-alpha'
   })
   assert.equal(first.stored.record.leaseId, 'lease-alpha')
 
   await assert.rejects(
-    acquireClaimFromStore(store, 'ACO-01', controlNodes, {
+    acquireClaimFromStore(store, 'ACO-04', controlNodes, {
       holder: { kind: 'codex', label: 'beta' },
       leaseId: 'lease-beta'
     }),
@@ -102,22 +103,44 @@ test('same-node acquisition race has one winner', async () => {
   )
 })
 
+test('verify proves current ownership and temporal validity before merge/handoff', async () => {
+  const store = new FakeStore()
+  const first = await acquireClaimFromStore(store, 'ACO-04', controlNodes, {
+    holder: { kind: 'chatgpt' },
+    leaseId: 'lease-alpha'
+  })
+
+  const verified = await verifyClaimInStore(store, 'ACO-04', controlNodes, {
+    leaseId: 'lease-alpha',
+    generation: first.stored.record.generation
+  })
+  assert.equal(verified.temporal, 'live')
+
+  await assert.rejects(
+    verifyClaimInStore(store, 'ACO-04', controlNodes, {
+      leaseId: 'wrong',
+      generation: first.stored.record.generation
+    }),
+    /does not own/
+  )
+})
+
 test('renewal retries unrelated branch contention but not a changed lease generation', async () => {
   const store = new FakeStore()
-  const first = await acquireClaimFromStore(store, 'ACO-01', controlNodes, {
+  const first = await acquireClaimFromStore(store, 'ACO-04', controlNodes, {
     holder: { kind: 'chatgpt' },
     leaseId: 'lease-alpha'
   })
 
   store.now = new Date('2026-10-28T23:00:00.000Z')
   store.conflictNextWriteWithoutNodeChange = true
-  const renewed = await renewClaimInStore(store, 'ACO-01', controlNodes, {
+  const renewed = await renewClaimInStore(store, 'ACO-04', controlNodes, {
     leaseId: 'lease-alpha',
     generation: first.stored.record.generation
   })
   assert.equal(renewed.stored.record.heartbeatAt, '2026-10-28T23:00:00.000Z')
 
-  const current = store.get('ACO-01')!
+  const current = store.get('ACO-04')!
   store.onConflict = () => {
     const superseded: ClaimRecord = {
       ...current.record,
@@ -128,11 +151,11 @@ test('renewal retries unrelated branch contention but not a changed lease genera
       heartbeatAt: '2026-10-28T23:01:00.000Z',
       expiresAt: '2026-10-29T01:01:00.000Z'
     }
-    store.seed('ACO-01', { record: superseded, sha: 'sha-race-winner' })
+    store.seed('ACO-04', { record: superseded, sha: 'sha-race-winner' })
   }
 
   await assert.rejects(
-    renewClaimInStore(store, 'ACO-01', controlNodes, {
+    renewClaimInStore(store, 'ACO-04', controlNodes, {
       leaseId: 'lease-alpha',
       generation: current.record.generation
     }),
@@ -140,16 +163,36 @@ test('renewal retries unrelated branch contention but not a changed lease genera
   )
 })
 
+test('a lease cannot be renewed once its durable node is no longer claimable', async () => {
+  const store = new FakeStore()
+  const invalid = createClaimRecord({
+    node: 'ACO-03',
+    generation: 1,
+    leaseId: 'old-lease',
+    holder: { kind: 'chatgpt' },
+    now: store.now
+  })
+  store.seed('ACO-03', { record: invalid, sha: 'sha-invalid' })
+
+  await assert.rejects(
+    renewClaimInStore(store, 'ACO-03', controlNodes, {
+      leaseId: 'old-lease',
+      generation: 1
+    }),
+    /cannot be claimed while structurally done/
+  )
+})
+
 test('force takeover does not silently overwrite a lease that changed during the decision', async () => {
   const store = new FakeStore()
-  await acquireClaimFromStore(store, 'ACO-01', controlNodes, {
+  await acquireClaimFromStore(store, 'ACO-04', controlNodes, {
     holder: { kind: 'chatgpt', label: 'alpha' },
     leaseId: 'lease-alpha'
   })
 
-  const current = store.get('ACO-01')!
+  const current = store.get('ACO-04')!
   store.onConflict = () => {
-    store.seed('ACO-01', {
+    store.seed('ACO-04', {
       sha: 'sha-new-holder',
       record: {
         ...current.record,
@@ -164,7 +207,7 @@ test('force takeover does not silently overwrite a lease that changed during the
   }
 
   await assert.rejects(
-    forceAcquireClaimFromStore(store, 'ACO-01', controlNodes, {
+    forceAcquireClaimFromStore(store, 'ACO-04', controlNodes, {
       holder: { kind: 'human', label: 'owner' },
       leaseId: 'lease-owner',
       reason: 'ghost session'
@@ -175,14 +218,14 @@ test('force takeover does not silently overwrite a lease that changed during the
 
 test('release requires the current lease identity and leaves an auditable record', async () => {
   const store = new FakeStore()
-  const first = await acquireClaimFromStore(store, 'ACO-01', controlNodes, {
+  const first = await acquireClaimFromStore(store, 'ACO-04', controlNodes, {
     holder: { kind: 'chatgpt' },
     leaseId: 'lease-alpha'
   })
   store.now = new Date('2026-10-28T22:50:00.000Z')
 
   await assert.rejects(
-    releaseClaimInStore(store, 'ACO-01', controlNodes, {
+    releaseClaimInStore(store, 'ACO-04', controlNodes, {
       leaseId: 'wrong',
       generation: first.stored.record.generation,
       reason: 'handoff'
@@ -190,11 +233,31 @@ test('release requires the current lease identity and leaves an auditable record
     /does not own/
   )
 
-  const released = await releaseClaimInStore(store, 'ACO-01', controlNodes, {
+  const released = await releaseClaimInStore(store, 'ACO-04', controlNodes, {
     leaseId: 'lease-alpha',
     generation: first.stored.record.generation,
     reason: 'handoff'
   })
   assert.equal(released.stored.record.state, 'released')
   assert.match(serializeClaimRecord(released.stored.record), /"releaseReason": "handoff"/)
+})
+
+test('an orphaned canonical lease remains releasable after its node leaves the graph', async () => {
+  const store = new FakeStore()
+  const orphan = createClaimRecord({
+    node: 'OLD-00',
+    generation: 7,
+    leaseId: 'orphan-lease',
+    holder: { kind: 'chatgpt' },
+    now: store.now
+  })
+  store.seed('OLD-00', { record: orphan, sha: 'sha-orphan' })
+
+  const released = await releaseClaimInStore(store, 'OLD-00', controlNodes, {
+    leaseId: 'orphan-lease',
+    generation: 7,
+    reason: 'abandoned'
+  })
+  assert.equal(released.stored.record.state, 'released')
+  assert.equal(released.stored.record.generation, 7)
 })
