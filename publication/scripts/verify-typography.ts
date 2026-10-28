@@ -24,8 +24,9 @@ const divisions = [
   { id: 'part-i', title: 'Part I — The Proposition' },
   { id: 'part-ii', title: 'Part II — Architecture of the Platform' },
   { id: 'part-iii', title: 'Part III — Patterns and Generative Sequences' },
-  { id: 'part-iv', title: 'Part IV — Reference House' },
-  { id: 'part-v', title: 'Part V — Making and Testing the Platform' }
+  { id: 'part-iv', title: 'Part IV — The Reference House: Design Proposition' },
+  { id: 'part-v', title: 'Part V — Making and Proving the Platform' },
+  { id: 'part-vi', title: 'Part VI — The House' }
 ] as const
 
 const command = (name: string, args: string[]): string => execFileSync(name, args, { cwd: repoRoot, encoding: 'utf8' })
@@ -66,7 +67,7 @@ if (integration.canonicalMutation !== false || integration.productionThemeMigrat
   throw new Error('Production typography integration evidence lost its no-canonical-mutation / production-migration boundary.')
 }
 const transforms = integration.transforms ?? {}
-if (transforms.semanticDivisionOpenings !== 5) throw new Error(`Expected five semantic division openings; found ${transforms.semanticDivisionOpenings}.`)
+if (transforms.semanticDivisionOpenings !== 6) throw new Error(`Expected six semantic division openings; found ${transforms.semanticDivisionOpenings}.`)
 if ((transforms.semanticEntryOpenings ?? 0) < 50) throw new Error(`Suspicious production entry-opening count: ${transforms.semanticEntryOpenings}.`)
 if (transforms.partINoteCitationRows !== 31 || (transforms.partINoteUrlRows ?? 0) < 20) throw new Error('Part I Notes production role mapping drifted.')
 if ((transforms.scheduleRecords ?? 0) < 20 || transforms.arrowSequences !== 2 || (transforms.referenceUrlRows ?? 0) < 5) throw new Error('TYP-05 production mixed-content transforms are incomplete.')

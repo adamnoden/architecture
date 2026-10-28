@@ -339,7 +339,7 @@ export async function applyProductionTypography(context: ProductionTypographyCon
     if (entry.kind === 'part') after = withPartBodyMetadata(after)
     await writeFile(preparedPath, after, 'utf8')
   }
-  if (divisionOpenings !== 5) throw new Error(`Expected five production division openings; found ${divisionOpenings}.`)
+  if (divisionOpenings !== 6) throw new Error(`Expected six production division openings; found ${divisionOpenings}.`)
 
   const titlePath = resolve(workSourceRoot, build.titlePage)
   const titleBefore = await readFile(titlePath, 'utf8')

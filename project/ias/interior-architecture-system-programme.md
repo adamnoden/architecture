@@ -1,7 +1,9 @@
 # IAS — Interior Architecture System
 
-**State:** queued; starts after BSR establishes canonical chapter/authority boundaries  
-**Tracking:** [#941 — IAS interior architecture system](https://github.com/adamnoden/architecture/issues/941)  
+**State:** IAS-00 baseline complete; IAS-01 wall/backplane/panel family ready after BSR closure
+
+**Tracking:** [#941 — IAS interior architecture system](https://github.com/adamnoden/architecture/issues/941)
+
 **Programme map:** [`../book-resolution-programme.md`](../book-resolution-programme.md)
 
 ## Question and scope
@@ -32,7 +34,8 @@ overlaps a nominal partition return by 12.5 mm and is explicitly carried into
 IAS-01 as coordination item I00-C1, not silently repositioned.
 
 This is a read-only baseline packet, not a selected assembly or performance
-verdict. Substantive IAS-01 starts after BSR establishes the canonical interfaces.
+verdict. BSR closed through PR #950, establishing the canonical interfaces;
+substantive IAS-01 is now unblocked.
 Its first worked conditions are one quiet wall/attachment datum and one
 high-service access front, including returns and removal/reinstatement.
 

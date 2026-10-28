@@ -1,9 +1,15 @@
 # IAS-00 — current-source baseline and challengers
 
-**Outcome:** baseline inventory complete; substantive assembly design remains gated by BSR  
-**Tracking:** [IAS #941](https://github.com/adamnoden/architecture/issues/941)  
-**Starting main:** `63b429938b3db27b13a3ea80cfc9a98825ac9e86`  
-**House:** `RH-LAYOUT-REVISION-02`, consumed by `RH-LAYOUT-FAMILY-02`  
+**Outcome:** baseline inventory complete; IAS-01 unblocked after BSR closure
+
+**Tracking:** [IAS #941](https://github.com/adamnoden/architecture/issues/941)
+
+**Starting main:** `63b429938b3db27b13a3ea80cfc9a98825ac9e86`
+
+**Reconciled BSR main:** `64597a4a75a53c845f93605a824fee7db53b0421`
+
+**House:** `RH-LAYOUT-REVISION-02`, consumed by `RH-LAYOUT-FAMILY-02`
+
 **Scope:** read-only source audit, inherited baseline/challenger comparison and a bounded IAS-01 handoff. No architecture, drawing, manuscript topology, prototype state or performance authority is changed.
 
 ## 1. Question and dependency
@@ -14,10 +20,10 @@ selecting a buildable wall/floor/service family?
 
 The owner approves continuing from the current PLT candidates and defers later
 aesthetic refinement. That does not establish a physical print verdict or
-performance result. BSR #940 / PR #950 remains the owner of manuscript topology.
-This inventory does not author its new chapter or begin detailed assembly
-selection before those interfaces stabilise. IAS-01 is the next substantive
-packet once BSR closes.
+performance result. BSR #940 / PR #950 owns the manuscript topology and is now
+closed. Its six-part migration establishes the IAS chapter/ownership interface.
+This inventory does not author that chapter or select a detailed assembly;
+IAS-01 is the next substantive packet and is now unblocked.
 
 The baseline is deliberately selective. The project already rejected the
 presumption that every wall or floor should become removable. IAS must develop
@@ -97,6 +103,8 @@ component can pass through it. The actual frame/clear-opening requirement may
 make another answer better. Any adopted change must be recorded in the owning
 house/service source and propagated to PLT; this packet changes no source data.
 
+The comparison is one-dimensional; it does not establish clearance from door
+leaves, other openings, fixtures, pipework or the component being accessed.
 The audit returns UNKNOWN when a return, host or thickness is absent. It does
 not turn an unknown boundary into zero thickness or promote positive nominal
 clearance into access approval.
@@ -174,7 +182,7 @@ ordinary construction performs the task better, or competent/physical evidence
 rejects an implementation. Such results narrow or rewind the implementation;
 they do not justify hiding extra construction in the drawings.
 
-After BSR closure, **next: IAS-01 — wall/backplane/panel family**, beginning with
+BSR is closed. **Next: IAS-01 — wall/backplane/panel family**, beginning with
 the two representative conditions above and I00-C1. IAS-02/03/04 consume those
 interfaces in their declared scopes. BCR later routes actual technical questions;
 HRS and final PLT/EDA/PUB retain their existing downstream gates.

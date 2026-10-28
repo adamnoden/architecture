@@ -34,9 +34,10 @@ const manuscriptSidebar: DefaultTheme.SidebarItem[] = [
     section('Part II — Architecture of the Platform', '/docs/manuscript/part-ii', [
       page('Maintenance Geography — The Exterior', '/docs/manuscript/maintenance-geography-external')
     ]),
-    page('Part III — Pattern Language', '/docs/patterns/'),
-    page('Part IV — Reference House', '/docs/manuscript/part-iv'),
-    page('Part V — Making and Testing the Platform', '/docs/manuscript/part-v'),
+    page('Part III — Patterns and Generative Sequences', '/docs/patterns/'),
+    page('Part IV — The Reference House: Design Proposition', '/docs/manuscript/part-iv'),
+    page('Part V — Making and Proving the Platform', '/docs/manuscript/part-v'),
+    page('Part VI — The House', '/docs/manuscript/part-vi'),
     group('Back matter', [
       page('Evidence and precedent notes', '/docs/manuscript/evidence-and-precedent-notes'),
       page('Legacy doctrine register crosswalk', '/docs/manuscript/doctrine-register-crosswalk'),
