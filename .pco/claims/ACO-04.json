@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "ACO-04",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "bb5dda08-87a8-4119-a91a-255b80fe42de",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "architecture-control"
+  },
+  "claimedAt": "2026-10-28T22:59:13Z",
+  "heartbeatAt": "2026-10-28T22:59:13Z",
+  "expiresAt": "2026-10-29T00:59:13Z",
+  "note": "ACO-04 self-hosted adversarial closeout"
+}
