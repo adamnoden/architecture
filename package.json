@@ -40,6 +40,7 @@
     "control:leases": "tsx scripts/project-claims.ts",
     "control:claims": "tsx scripts/project-claims.ts status",
     "control:claim": "tsx scripts/project-claims.ts claim",
+    "control:verify": "tsx scripts/project-claims.ts verify",
     "control:renew": "tsx scripts/project-claims.ts renew",
     "control:release": "tsx scripts/project-claims.ts release",
     "control:force": "tsx scripts/project-claims.ts force",
