@@ -1,4 +1,4 @@
-# Making and testing the platform
+# Making and proving the platform
 
 Ovid’s House is a design position before it is a construction system. Its principles are intended to survive changes in material, technology, architectural language and project circumstance. The work downstream exists to test whether those principles can become useful architecture without turning into disproportionate cost, complexity or fragility.
 
@@ -60,7 +60,7 @@ Ovid’s House does not depend on software to be meaningful. Computation earns a
 
 ## From Primer to Working Edition
 
-The Primer carries the complete mental model in compact form. The **Working Edition** develops the argument in depth: evidence and qualifications, the full pattern set, strategies and held candidates, the worked Reference House, proportionality and governance, physical proof, computation and the implementation questions that remain open.
+The Primer carries the complete mental model in compact form. The **Working Edition** develops the argument in depth: evidence and qualifications, the full pattern set, strategies and held candidates, the worked Reference House, proportionality and governance, physical proof, computation, the Reference House ordeal and the implementation questions that remain open. Its final part is reserved for the resolved house once architectural and technical synthesis has genuinely earned that conclusion.
 
 Detailed development history, superseded options, pre-test build scripts and compiler gate records are retained separately for audit and recovery. They are not part of the resolved architectural argument merely because they were useful while producing it.
 
