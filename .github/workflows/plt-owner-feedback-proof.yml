@@ -26,6 +26,7 @@ on:
       - 'publication/specimens/plt15/**'
       - 'publication/specimens/plt16/**'
       - 'publication/specimens/plt17/**'
+      - 'publication/specimens/plt18/**'
       - '.github/workflows/plt-owner-feedback-proof.yml'
   workflow_dispatch:
 permissions:
@@ -194,11 +195,24 @@ jobs:
         run: PLT17_FORMAT=spreads npx vivliostyle build -c publication/specimens/plt17/vivliostyle.config.js
       - name: Validate book scales, fonts and fold exclusions
         run: node --import tsx publication/specimens/plt17/validate.ts
+      - name: Prepare current theoretical setting
+        run: node --import tsx publication/specimens/plt18/prepare.ts
+      - name: Build current setting BOOK B5
+        run: PLT18_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt18/vivliostyle.config.js
+      - name: Build current setting BOOK A4
+        run: PLT18_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt18/vivliostyle.config.js
+      - name: Build current setting WALL A2
+        run: PLT18_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt18/vivliostyle.config.js
+      - name: Validate current setting source and finished PDFs
+        run: node --import tsx publication/specimens/plt18/validate.ts
       - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: plt-owner-feedback-proof
           path: |
+            publication/specimens/plt18/dist/*.pdf
+            publication/specimens/plt18/.work/*.json
+            publication/specimens/plt18/.work/*.svg
             publication/specimens/plt17/dist/*.pdf
             publication/specimens/plt17/.work/*.json
             publication/specimens/plt17/.work/*.svg
