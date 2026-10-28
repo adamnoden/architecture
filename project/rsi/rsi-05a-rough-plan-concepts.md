@@ -1,5 +1,7 @@
 # RSI-05A — rough successor plan concepts
 
+> Historical RSI study. The programme was closed by owner scope decision on 2026-10-28; see [closure and current authority](README.md). Original handoffs and successor permissions below are retained as history, not an active work queue.
+
 Issue: #901  
 Programme: #891  
 Status: **OWNER GATE A — PENDING**  

@@ -41,8 +41,12 @@ This reduces the 18 current candidate drawings to 12 distinct readings, occupyin
 14 proof pages including a lead-in and the two-page principal section. Every
 current view has exactly one recorded disposition. This is an editorial proposal,
 not permission to erase source facts or rewrite the released 17-view register.
-Current synthetic-setting / external-setting views and a useful sectional
-axonometric remain programme gaps; old technical/site results cannot fill them.
+Current synthetic-setting / external-setting representations and a useful
+sectional axonometric remain programme gaps; old technical/site results cannot
+fill them. Main subsequently closes RSI by owner scope decision at
+`614f502d5a27b4c8b064499da0f30ad899abe3b8`; this packet preserves that closure.
+The current house and theoretical setting suffice. Updating their publication
+representations is not an RSI successor or a new modest-plot migration.
 
 ## Physical composition
 

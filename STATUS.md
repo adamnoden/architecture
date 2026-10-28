@@ -1,7 +1,7 @@
 # Project Status
 
 **Canonical project-wide status overview**  
-**Last updated:** 2026-10-27
+**Last updated:** 2026-10-28
 
 **Current phase:** **plate physical review / gated private-publication production**
 
@@ -38,6 +38,8 @@ The publication workstream remains M4. DRW v1 remains a frozen historical releas
 **PUB / PUB-02** remains under [#71](https://github.com/adamnoden/architecture/issues/71). Paper, trim, book-block and printer/binder preparation may proceed using the accepted typography contract; EDA is closed; final 12-copy manufacture still requires **the independent PLT drawing freeze**. PUB-03/PUB-04 independent criticism follows the private object and remains required before M5 or public-release claims. Historical `PR-*` labels remain provenance aliases only; live publication control uses `PUB-*`.
 
 ### Deployment / real-site integration
+
+**RSI — Reference Site Integration** is [closed by owner scope decision](project/rsi/README.md) under [#891](https://github.com/adamnoden/architecture/issues/891). The current Reference House and theoretical plot suffice for the current project; further hypothetical modest-plot migration and alternative layouts are cancelled. There is no standing RSI packet or successor dependency for PLT. Existing studies remain historical evidence. Choosing a real plot would trigger a new site-specific exercise; this closure does not establish real-site suitability or raise maturity.
 
 DPL is **complete at revised conditional design-study scope**, with maturity unchanged at M4. The user's repeated instruction to assume the remaining unknowns explicitly revises the last four stage contracts; it does not satisfy their original empirical criteria. The [closeout](project/dpl/dpl-conditional-closeout.md) retains the eight-site trials, conditional envelope, publication decision and adversarial checks.
 
