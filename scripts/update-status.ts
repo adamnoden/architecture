@@ -5,7 +5,7 @@ import { renderStatusDocument, renderWorkstreamCodeRegister } from '../project/c
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
-writeFileSync(join(repoRoot, 'STATUS.md'), `${renderStatusDocument()}\n`)
+writeFileSync(join(repoRoot, 'STATUS.md'), `${renderStatusDocument(repoRoot)}\n`)
 writeFileSync(join(repoRoot, 'project/workstream-codes.md'), `${renderWorkstreamCodeRegister()}\n`)
 
 console.log('Updated STATUS.md and project/workstream-codes.md from canonical typed sources.')
