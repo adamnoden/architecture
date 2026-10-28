@@ -248,29 +248,30 @@ export interface ReferenceHouseLineage {
 }
 
 export const createReferenceHouseLineage = (
+  source: ReferenceHouseCoordinationSource,
   result: ReferenceHouseSystemCoreResult
 ): ReferenceHouseLineage => {
   const stair = result.calculations.privateStairGeometry
   return {
     floorZoneDepth: {
-      sourceFactIds: ['RHCF-CEIL-G', 'RHCF-FFL-1'],
+      sourceFactIds: [source.levels.groundCeiling.id, source.levels.firstFfl.id],
       ruleId: 'RH-FLOOR-ZONE-DEPTH'
     },
     boundaryCoordination: {
       roofCatchmentTotal: {
-        sourceFactIds: ['RHCF-SHELL-X', 'RHCF-SHELL-Y', 'RHCF-COURT-SIZE'],
+        sourceFactIds: [source.shell.width.id, source.shell.depth.id, source.court.id],
         ruleId: 'RH-C4-ROOF-CATCHMENT-GEOMETRY'
       },
       enclosedPlateArea: {
-        sourceFactIds: ['RHCF-SHELL-X', 'RHCF-SHELL-Y', 'RHCF-COURT-SIZE'],
+        sourceFactIds: [source.shell.width.id, source.shell.depth.id, source.court.id],
         ruleId: 'RH-C4-ENCLOSED-PLATE-CLOSURE'
       },
       courtyardOpenSkyArea: {
-        sourceFactIds: ['RHCF-COURT-SIZE'],
+        sourceFactIds: [source.court.id],
         ruleId: 'RH-C4-COURTYARD-CATCHMENT-GEOMETRY'
       },
       wallPlanningStressThickness: {
-        sourceFactIds: ['RHCF-WALL-STRESS'],
+        sourceFactIds: [source.wallPlanning.stressThickness.id],
         ruleId: 'RH-C4-WALL-PLANNING-STRESS'
       }
     },
