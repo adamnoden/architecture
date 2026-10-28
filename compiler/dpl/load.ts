@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { validateTargetSlice } from './target.js'
 import { sha256SemanticFingerprint } from '../core/identity.js'
 import type {
   InterfaceContractRef,
@@ -28,45 +29,6 @@ const expectString = (value: unknown, label: string): string => {
 const expectArray = (value: unknown, label: string): readonly unknown[] => {
   if (!Array.isArray(value)) throw new Error(`${label} must be an array.`)
   return value
-}
-
-const validateTargetSlice = (value: unknown, path: string): RawTargetSlice => {
-  const target = expectRecord(value, `Target ${path}`)
-  const schemaVersion = expectString(target.schemaVersion, `Target ${path} schemaVersion`)
-  const allowedSchemas = new Set([
-    'dpl.englandTechnicalSlice.v1',
-    'dpl.londonStrategicPlanningSlice.v1'
-  ])
-  if (!allowedSchemas.has(schemaVersion)) {
-    throw new Error(`Unsupported DPL target schema ${schemaVersion} at ${path}.`)
-  }
-
-  expectString(target.id, `Target ${path} id`)
-  const methods = expectArray(target.methodClasses, `Target ${path} methodClasses`)
-  const sources = expectArray(target.sourceSnapshots, `Target ${path} sourceSnapshots`)
-  const obligations = expectArray(target.obligations, `Target ${path} obligations`)
-
-  for (const [index, method] of methods.entries()) {
-    const item = expectRecord(method, `Target ${path} methodClasses[${index}]`)
-    expectString(item.id, `Target ${path} methodClasses[${index}].id`)
-    expectString(item.kind, `Target ${path} methodClasses[${index}].kind`)
-  }
-
-  for (const [index, source] of sources.entries()) {
-    const item = expectRecord(source, `Target ${path} sourceSnapshots[${index}]`)
-    expectString(item.id, `Target ${path} sourceSnapshots[${index}].id`)
-  }
-
-  for (const [index, obligation] of obligations.entries()) {
-    const item = expectRecord(obligation, `Target ${path} obligations[${index}]`)
-    expectString(item.id, `Target ${path} obligations[${index}].id`)
-    expectString(item.sourceSnapshot, `Target ${path} obligations[${index}].sourceSnapshot`)
-    expectString(item.title, `Target ${path} obligations[${index}].title`)
-    expectString(item.applicability, `Target ${path} obligations[${index}].applicability`)
-    expectString(item.resolutionMethod, `Target ${path} obligations[${index}].resolutionMethod`)
-  }
-
-  return target as unknown as RawTargetSlice
 }
 
 export const loadTargetSlice = (
