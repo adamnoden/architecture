@@ -9,7 +9,7 @@ Durable execution authority lives in `project/control/`. Live claim occupancy li
 <!-- project-control:start -->
 Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.
 
-**Structurally ready:** 8 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 15 · **Cancelled:** 0
+**Structurally ready:** 7 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 16 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -17,7 +17,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `ACO-04` | Self-hosted adversarial closeout | ACO | — |
 | `IAS-00` | Interior architecture baseline, challengers and invariants | IAS | — |
 | `OAS-00` | Opening taxonomy, baselines and invariants | OAS | — |
 | `HAD-00` | Architectural brief, hierarchy and invariants | HAD | — |
