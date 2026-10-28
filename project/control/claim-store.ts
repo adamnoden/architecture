@@ -107,9 +107,9 @@ function canonicalOrSafeStoredNode(inputNode: string, nodes: readonly ControlNod
   try {
     return canonicalNodeId(inputNode, nodes)
   } catch (error) {
-    // Release/show recovery must remain possible after a canonical node is removed
-    // from the durable graph. Aliases cannot be recovered once their canonical
-    // mapping disappears, so only a syntactically canonical key is accepted.
+    // Recovery must remain possible after a canonical node is removed from the
+    // durable graph. Aliases cannot be recovered once their canonical mapping
+    // disappears, so only a syntactically canonical key is accepted here.
     if (/^[A-Z0-9][A-Z0-9-]*$/.test(inputNode)) return inputNode
     throw error
   }
@@ -225,17 +225,17 @@ export async function forceAcquireClaimFromStore(
   }
 }
 
+/**
+ * Verify occupancy only: does this execution still own a non-expired lease?
+ * Durable structural eligibility remains PCO's independent responsibility.
+ */
 export async function verifyClaimInStore(
   store: ClaimStore,
   inputNode: string,
   nodes: readonly ControlNode[],
   options: VerifyOptions
 ): Promise<VerifiedLease> {
-  const nodeId = canonicalNodeId(inputNode, nodes)
-  const node = nodes.find((candidate) => candidate.id === nodeId)
-  if (!node) throw new Error(`Unknown canonical node: ${nodeId}`)
-  assertStructurallyClaimable(node, nodes)
-
+  const nodeId = canonicalOrSafeStoredNode(inputNode, nodes)
   const current = await store.read(nodeId)
   if (!current.stored) throw new Error(`No lease exists for ${nodeId}`)
   const record = current.stored.record
@@ -266,8 +266,8 @@ export async function renewClaimInStore(
   let retries = retryLimit(options.maxInfrastructureRetries)
 
   while (true) {
-    // Re-check durable claimability on each retry. A caller should pass the
-    // current main graph; the CLI enforces that before renewal.
+    // Renewal is intentionally denied when the caller's durable PCO view says
+    // the node is no longer ready/active. The lease can still be released.
     assertStructurallyClaimable(node, nodes)
     const before = await store.read(nodeId)
     if (!before.stored) throw new Error(`No lease exists for ${nodeId}`)
