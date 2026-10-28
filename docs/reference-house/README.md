@@ -24,7 +24,7 @@ For the current maturity assessment and active work, use `STATUS.md`. Structural
 
 ## Authorised resolution programme
 
-The next major Reference House development is coordinated by [`project/book-resolution-programme.md`](../../project/book-resolution-programme.md). It does not invalidate the present M3 house or silently replace its controlled geometry. It adds first-class downstream design/resolution work that the current virtual-design scope deliberately does not complete:
+The next major Reference House development is coordinated internally by `project/book-resolution-programme.md`. It does not invalidate the present M3 house or silently replace its controlled geometry. It adds first-class downstream design/resolution work that the current virtual-design scope deliberately does not complete:
 
 - `BSR` refactors the book structure and ownership boundaries;
 - `IAS` develops the selected interior architecture system;
