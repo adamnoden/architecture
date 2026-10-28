@@ -34,6 +34,21 @@ external-access obligations without equipment or drainage inventions. B5/A4
 are exactly 1:200; A2 is 1:100. This is current representation of the accepted
 theoretical setting, not an RSI successor, real-site proof or physical verdict.
 
+## Current opaque synthesis and admission judgement
+
+The [current synthesis record](architectural-plate-current-synthesis.md) owns
+`georgian/sectional-synthesis.ts` and PLT19. It replaces transparent crossings
+with source-owned aperture voids, nominal enclosure/floor zones, the stair
+opening and twin roof, with depth-based hidden-edge clipping. It remains NTS
+and deliberately omits internal partition/joinery and technical detail.
+The B5/A4 canonical compositions supply physical spread crops; A2 uses the same
+model at its own fixed paper factor. Physical judgement is still unearned.
+
+The [candidate admission and handoff](architectural-plate-candidate-admission-and-handoff.md)
+accounts for all seventeen historical released roles and proposes fifteen current
+readings, retaining the obligations of omitted duplicate sheets. It owns the
+current review sequence and exact remaining handoffs; no register is released.
+
 HRS #945 now owns the final resolved-house handoff to PLT after BCR #944.
 Candidate representation work can continue; final publication drawing freeze
 must follow that design handoff and actual physical acceptance.
@@ -117,15 +132,15 @@ publication relies on that evidence.
 | PLT-05 elevations | Five current face readings share roof datums and aperture grammar. Final BOOK/WALL composition and physical acceptance remain. |
 | PLT-06 sections | Principal and service cuts now use current roof/assembly rules. Final BOOK spread, section annotation/subtraction and technical obligations remain. |
 | PLT-07 roof | Twin-pitch roof and collection reserve share one substrate. Complete supported water/failure/access reading without pretending drainage is sized. |
-| PLT-08 synthesis | Re-test sectional axonometric value against stabilised orthographics; do not invent unique 3D content. |
+| PLT-08 synthesis | Current opaque-zone candidate and BOOK/WALL proof exist; physical and final source/admission judgement remain. |
 | PLT-09 analysis | Complete source-consistent structure, services, external maintenance, water/failure and adaptation readings. Synthetic setting remains an explicit surrogate. |
-| PLT-10 subtraction | Review the entire family for necessary marks, hierarchy, authority and consistency. |
+| PLT-10 subtraction | PLT17 and the current admission table account for every candidate/released role; final admission follows HRS source and physical review. |
 | PLT-11 physical proof | Actual-size B5/A4 book, A2 wall and selected A1; pair/spread/gutter and three-distance review. PDFs/screen approval do not discharge this. |
 | PLT-12 integration | Trace v1 deltas, regenerate and inspect publication, freeze identities and release drawing v2 before final manufacture. |
 
-Next: analytical/synthesis work from the current orthographic substrates, then
-whole-set composition/subtraction, physical proof and atomic integration. Local
-candidate proof does not close an entire programme stage or raise maturity.
+Next: actual candidate print review and the HRS resolved-house handoff, followed
+by final admission/source reconciliation and atomic publication integration.
+Local candidate proof does not close an entire programme stage or raise maturity.
 
 ## Retained decision trail
 
