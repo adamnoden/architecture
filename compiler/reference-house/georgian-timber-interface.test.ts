@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
-import {design,createSectionExemplar} from './georgian/section-exemplar.js'
+import {design,createSectionExemplar} from './georgian/section-exemplar-02.js'
 test('floor separates timber, deck, service void and ceiling within the held 350 mm zone',()=>{
  const f=design.floor;assert.equal(f.finish+f.deck+f.joist+f.serviceVoid+f.ceiling,350)
  const s=createSectionExemplar('PRINCIPAL',100)
