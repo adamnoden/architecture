@@ -38,13 +38,18 @@ test('current ready frontier exposes useful parallel work without inventing cond
     'OAS-00',
     'HAD-00',
     'BCR-SCAFFOLD',
-    'MRA-00',
     'PHY-03-ENGINEERING',
     'PHY-04',
     'EPR-RH11'
   ]) {
     assert.equal(ready.has(expected), true, `${expected} should be ready`)
   }
+  assert.equal(ready.has('MRA-00'), false)
+  assert.equal(node('MRA-00').lifecycle, 'started')
+  assert.equal(
+    nodesByDerivedState(controlNodes).active.some((candidate) => candidate.id === 'MRA-00'),
+    true
+  )
   assert.equal(ready.has('PCO-08'), false)
   assert.equal(node('PCO-08').lifecycle, 'complete')
 
