@@ -167,9 +167,9 @@ test('serialization round-trips a valid record', () => {
 })
 
 test('operational state keeps structural truth orthogonal to occupancy', () => {
-  const readyNode = node('ACO-01')
+  const readyNode = node('ACO-04')
   const live = createClaimRecord({
-    node: 'ACO-01',
+    node: 'ACO-04',
     generation: 1,
     leaseId: 'lease-a',
     holder: { kind: 'chatgpt' },
@@ -178,9 +178,9 @@ test('operational state keeps structural truth orthogonal to occupancy', () => {
   assert.equal(operationalState(readyNode, controlNodes, null, now).occupancy, 'available')
   assert.equal(operationalState(readyNode, controlNodes, live, now).occupancy, 'claimed')
 
-  const blockedNode = node('ACO-02')
+  const blockedNode = node('PUB-02-FINAL')
   const invalidClaim = createClaimRecord({
-    node: 'ACO-02',
+    node: 'PUB-02-FINAL',
     generation: 1,
     leaseId: 'lease-b',
     holder: { kind: 'codex' },
