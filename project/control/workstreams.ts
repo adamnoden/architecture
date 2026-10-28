@@ -6,7 +6,7 @@ export interface WorkstreamDefinition {
   aliases?: readonly string[]
 }
 
-export const workstreams = [
+const workstreamRegistry = [
   { code: 'ADE', title: 'Architectural Drawing Engine', issue: 812 },
   {
     code: 'BCR',
@@ -49,14 +49,14 @@ export const workstreams = [
     issue: 941,
     programme: 'project/ias/interior-architecture-system-programme.md'
   },
-  { code: 'ILA', title: 'Interior / life-course architecture' },
+  { code: 'ILA', title: 'ILA workstream' },
   {
     code: 'OAS',
     title: 'Opening Assembly System',
     issue: 942,
     programme: 'project/oas/opening-assembly-system-programme.md'
   },
-  { code: 'OCG', title: 'Ovid’s House control / grammar workstream' },
+  { code: 'OCG', title: 'OCG workstream' },
   {
     code: 'PCO',
     title: 'Project Control & Orchestration',
@@ -75,7 +75,13 @@ export const workstreams = [
   { code: 'TYP', title: 'Publication typography' }
 ] as const satisfies readonly WorkstreamDefinition[]
 
-export type WorkstreamCode = (typeof workstreams)[number]['code']
+export type WorkstreamCode = (typeof workstreamRegistry)[number]['code']
+
+/**
+ * Widened public view keeps optional metadata ergonomic for generic validators
+ * while `WorkstreamCode` remains the literal union derived from the registry.
+ */
+export const workstreams: readonly WorkstreamDefinition[] = workstreamRegistry
 
 const workstreamCodeSet = new Set<string>(workstreams.map((workstream) => workstream.code))
 
@@ -83,7 +89,7 @@ export function isWorkstreamCode(value: string): value is WorkstreamCode {
   return workstreamCodeSet.has(value)
 }
 
-export function workstreamByCode(code: WorkstreamCode): (typeof workstreams)[number] {
+export function workstreamByCode(code: WorkstreamCode): WorkstreamDefinition {
   const workstream = workstreams.find((candidate) => candidate.code === code)
   if (!workstream) throw new Error(`Unknown registered workstream: ${code}`)
   return workstream
