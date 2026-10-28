@@ -65,7 +65,7 @@ test('held evidence research never leaks into the ready frontier', () => {
 
 test('PHY-03 engineering does not silently authorize a physical specimen node', () => {
   assert.equal(node('PHY-03-ENGINEERING').aliases?.includes('PHY-03'), true)
-  assert.equal(controlNodes.some((candidate) => candidate.id === 'PHY-03B'), false)
+  assert.equal(controlNodes.some((candidate) => String(candidate.id) === 'PHY-03B'), false)
 })
 
 test('shared interface work is canonical once with per-stream packet aliases', () => {
