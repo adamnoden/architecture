@@ -17,8 +17,8 @@ import {
   claimPath,
   claimsBranch,
   claimsDirectory,
+  leaseTemporalState,
   operationalState,
-  parseClaimRecord,
   serializeClaimRecord,
   type ClaimHolderKind,
   type ClaimRecord
@@ -66,18 +66,18 @@ function parseArgs(argv: readonly string[]): ParsedArgs {
   let node: string | undefined
   const flags = new Map<string, string>()
 
-  for (let index = 1; index < argv.length; index += 1) {
-    const value = argv[index]
+  for (let i = 1; i < argv.length; i += 1) {
+    const value = argv[i]
     if (!value.startsWith('--') && node === undefined) {
       node = value
       continue
     }
     if (!value.startsWith('--')) throw new Error(`Unexpected positional argument: ${value}`)
     const key = value.slice(2)
-    const next = argv[index + 1]
+    const next = argv[i + 1]
     if (!next || next.startsWith('--')) throw new Error(`Flag --${key} requires a value`)
     flags.set(key, next)
-    index += 1
+    i += 1
   }
 
   return { command, node, flags }
@@ -92,9 +92,9 @@ function optionalInt(flags: Map<string, string>, key: string): number | undefine
 }
 
 function requiredFlag(flags: Map<string, string>, key: string): string {
-  const value = flags.get(key)
-  if (!value?.trim()) throw new Error(`--${key} is required`)
-  return value.trim()
+  const value = flags.get(key)?.trim()
+  if (!value) throw new Error(`--${key} is required`)
+  return value
 }
 
 function holder(flags: Map<string, string>) {
@@ -126,10 +126,7 @@ function ensureControlViewMatchesMain(): void {
   }
 
   const changed = git([
-    'diff',
-    '--name-only',
-    'origin/main...HEAD',
-    '--',
+    'diff', '--name-only', 'origin/main...HEAD', '--',
     'project/control/nodes',
     'project/control/types.ts',
     'project/control/workstreams.ts',
@@ -200,12 +197,19 @@ class GitHubClaimStore implements ClaimStore {
     if (value.type !== 'file' || !value.content || value.encoding !== 'base64') {
       throw new ClaimStoreUnavailableError(`Unexpected GitHub contents response for ${path}`)
     }
-    const raw = Buffer.from(value.content.replace(/\n/g, ''), 'base64').toString('utf8')
-    return { stored: storedClaimFromRaw(raw, value.sha, node), observedAt: at }
+
+    try {
+      const raw = Buffer.from(value.content.replace(/\n/g, ''), 'base64').toString('utf8')
+      return { stored: storedClaimFromRaw(raw, value.sha, node), observedAt: at }
+    } catch (error) {
+      throw new ClaimStoreUnavailableError(
+        `Malformed lease record ${path}: ${error instanceof Error ? error.message : String(error)}`
+      )
+    }
   }
 
   async create(node: string, record: ClaimRecord): Promise<ClaimWriteResult> {
-    return this.write(node, record, undefined)
+    return this.write(node, record)
   }
 
   async update(node: string, expectedSha: string, record: ClaimRecord): Promise<ClaimWriteResult> {
@@ -264,16 +268,10 @@ class GitHubClaimStore implements ClaimStore {
 
 function storeFor(command: string): GitHubClaimStore {
   const mutation = ['claim', 'renew', 'release', 'force'].includes(command)
-  return new GitHubClaimStore(repositorySlug(), mutation ? tokenForMutation() : process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN)
-}
-
-function canonicalForMutation(input: string): string {
-  try {
-    return canonicalNodeId(input, controlNodes)
-  } catch {
-    if (/^[A-Z0-9][A-Z0-9-]*$/.test(input)) return input
-    throw new Error(`Unknown or unsafe node id: ${input}`)
-  }
+  return new GitHubClaimStore(
+    repositorySlug(),
+    mutation ? tokenForMutation() : process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN
+  )
 }
 
 function printWrite(result: ClaimWriteResult): void {
@@ -293,7 +291,7 @@ function printWrite(result: ClaimWriteResult): void {
 async function status(store: GitHubClaimStore): Promise<void> {
   ensureControlViewMatchesMain()
   const listed = await store.list()
-  const claims = new Map(listed.claims.map((claim) => [claim.record.node, claim.record]))
+  const claims = new Map<string, ClaimRecord>(listed.claims.map((claim) => [claim.record.node, claim.record]))
   const available: string[] = []
   const claimed: Array<{ node: string; structural: string; record: ClaimRecord; grace: boolean }> = []
   const handoff: string[] = []
@@ -301,30 +299,22 @@ async function status(store: GitHubClaimStore): Promise<void> {
 
   for (const node of controlNodes) {
     const state = operationalState(node, controlNodes, claims.get(node.id) ?? null, listed.observedAt)
-    switch (state.occupancy) {
-      case 'available':
-        available.push(node.id)
-        break
-      case 'active-unclaimed':
-        handoff.push(node.id)
-        break
-      case 'claimed':
-      case 'claim-grace':
-        claimed.push({ node: node.id, structural: state.structural, record: state.claim!, grace: state.occupancy === 'claim-grace' })
-        break
-      case 'invalid-live-claim':
-        invalid.push({ node: node.id, structural: state.structural, record: state.claim! })
-        break
-      case 'not-claimable':
-        break
+    if (state.occupancy === 'available') available.push(node.id)
+    else if (state.occupancy === 'active-unclaimed') handoff.push(node.id)
+    else if (state.occupancy === 'claimed' || state.occupancy === 'claim-grace') {
+      claimed.push({ node: node.id, structural: state.structural, record: state.claim!, grace: state.occupancy === 'claim-grace' })
+    } else if (state.occupancy === 'invalid-live-claim') {
+      invalid.push({ node: node.id, structural: state.structural, record: state.claim! })
     }
   }
 
-  const known = new Set(controlNodes.map((node) => node.id))
+  const known = new Set<string>(controlNodes.map((node) => node.id))
   for (const record of claims.values()) {
     if (known.has(record.node)) continue
-    const temporal = record.state === 'claimed' ? Date.parse(record.expiresAt) > listed.observedAt.getTime() : false
-    if (temporal) invalid.push({ node: record.node, structural: 'unknown', record })
+    const temporal = leaseTemporalState(record, listed.observedAt)
+    if (temporal === 'live' || temporal === 'grace') {
+      invalid.push({ node: record.node, structural: 'unknown', record })
+    }
   }
 
   console.log('# Operational project control')
@@ -362,65 +352,65 @@ async function main(): Promise<void> {
     case 'status':
       await status(store)
       return
+
+    case 'show': {
+      if (!args.node) throw new Error('show requires NODE')
+      const node = canonicalNodeId(args.node, controlNodes)
+      const read = await store.read(node)
+      console.log(read.stored ? serializeClaimRecord(read.stored.record) : `${node}: no lease record`)
+      return
+    }
+
     case 'claim': {
       if (!args.node) throw new Error('claim requires NODE')
       ensureControlViewMatchesMain()
-      const result = await acquireClaimFromStore(store, args.node, controlNodes, {
+      printWrite(await acquireClaimFromStore(store, args.node, controlNodes, {
         holder: holder(args.flags),
         ttlMinutes: optionalInt(args.flags, 'ttl'),
         leaseId: args.flags.get('lease-id'),
         ...metadata(args.flags)
-      })
-      printWrite(result)
+      }))
       return
     }
+
     case 'force': {
       if (!args.node) throw new Error('force requires NODE')
       ensureControlViewMatchesMain()
-      const result = await forceAcquireClaimFromStore(store, args.node, controlNodes, {
+      printWrite(await forceAcquireClaimFromStore(store, args.node, controlNodes, {
         holder: holder(args.flags),
         ttlMinutes: optionalInt(args.flags, 'ttl'),
         leaseId: args.flags.get('lease-id'),
         reason: requiredFlag(args.flags, 'reason'),
         ...metadata(args.flags)
-      })
-      printWrite(result)
+      }))
       return
     }
+
     case 'renew': {
       if (!args.node) throw new Error('renew requires NODE')
-      const node = canonicalForMutation(args.node)
-      const result = await renewClaimInStore(store, node, controlNodes, {
+      printWrite(await renewClaimInStore(store, args.node, controlNodes, {
         leaseId: requiredFlag(args.flags, 'lease-id'),
         generation: optionalInt(args.flags, 'generation'),
         ttlMinutes: optionalInt(args.flags, 'ttl'),
         ...metadata(args.flags)
-      })
-      printWrite(result)
+      }))
       return
     }
+
     case 'release': {
       if (!args.node) throw new Error('release requires NODE')
-      const node = canonicalForMutation(args.node)
       const reason = requiredFlag(args.flags, 'reason')
       if (!['completed', 'handoff', 'abandoned', 'superseded', 'other'].includes(reason)) {
         throw new Error('--reason must be completed, handoff, abandoned, superseded or other')
       }
-      const result = await releaseClaimInStore(store, node, controlNodes, {
+      printWrite(await releaseClaimInStore(store, args.node, controlNodes, {
         leaseId: requiredFlag(args.flags, 'lease-id'),
         generation: optionalInt(args.flags, 'generation'),
         reason: reason as NonNullable<ClaimRecord['releaseReason']>
-      })
-      printWrite(result)
+      }))
       return
     }
-    case 'show': {
-      if (!args.node) throw new Error('show requires NODE')
-      const node = canonicalForMutation(args.node)
-      const read = await store.read(node)
-      console.log(read.stored ? serializeClaimRecord(read.stored.record) : `${node}: no lease record`)
-      return
-    }
+
     default:
       throw new Error(`Unknown command ${args.command}. Use status, show, claim, renew, release or force.`)
   }
@@ -430,13 +420,11 @@ main().catch((error) => {
   if (error instanceof ClaimConflictError) {
     console.error(`CLAIM CONFLICT: ${error.message}`)
     process.exitCode = 3
-    return
-  }
-  if (error instanceof ClaimStoreUnavailableError) {
+  } else if (error instanceof ClaimStoreUnavailableError) {
     console.error(`CLAIM STORE UNAVAILABLE: ${error.message}`)
     process.exitCode = 4
-    return
+  } else {
+    console.error(error instanceof Error ? error.message : String(error))
+    process.exitCode = 1
   }
-  console.error(error instanceof Error ? error.message : String(error))
-  process.exitCode = 1
 })
