@@ -37,6 +37,15 @@ Courtyard sheets remain inner-wall face readings; complete roof form is shown in
 the principal/service sections and roof plan. No extra west outer elevation is
 added: its historical register exclusion remains.
 
+## Current analytical candidates
+
+The [analysis and synthesis record](architectural-plate-analysis-synthesis.md)
+owns `georgian/analysis-family.ts` and PLT14: six source-preserving plan/roof
+readings plus a sectional open-line anatomy study. Services show authored spatial
+reservations. Structure, failure, access and adaptation retain absent decisions
+as obligations. The transparent anatomy is a study, not accepted frame-grade
+synthesis; neither PLT-08 nor the full analytical family is closed.
+
 ## Authority and release boundaries
 
 | Object | Authority / use |
