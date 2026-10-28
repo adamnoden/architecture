@@ -1,135 +1,93 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
-## Shared section assemblies and current junction correction
+## Current direction and source
 
-The [section assembly review](architectural-plate-section-assemblies.md) records
-the latest feedback and the reusable engine extraction. Current section code
-consumes shared wall/head/substructure, floor/seat, face-on aperture and cut
-joinery functions; house choices remain in `georgian/section-source.ts`. PLT12
-adds an independent asymmetric engine fixture alongside the five held-house
-readings. Historical PLT11 consumes `section-exemplar-05.ts`. Foundation and
-lintel design remain unresolved; support envelopes are non-dimensionable.
-No physical freeze or full technical/family migration is claimed.
+The owner accepts the present 12 m square floor plan for continued PLT work and
+defers personal layout refinements and modest-plot redesign. Uniformity and
+flushness remain project preferences. Do not reopen discretionary architecture
+while finishing the drawing family. Screen approval authorises development;
+physical acceptance and release remain separate.
 
-## Current coordinated section grammar
+Use `compiler/reference-house/georgian/orthographic-family.ts` for the current
+coordinated candidate set. The [orthographic record](architectural-plate-orthographic-family.md)
+owns its proof and limits. Its inputs are the held ground/first plan geography,
+current twin roof and [shared section assemblies](architectural-plate-section-assemblies.md).
+House choices remain separate from the generic ADE representation engine.
 
-The [coherent section grammar](architectural-plate-coherent-section.md) now addresses both cut doorways, lighter leaf boundaries, separate support seats, explicit roof-space ceiling/deck, ground reservation and unresolved foundation continuation. It holds plan and roof and retains full aperture detail beyond the cut. Use current `section-exemplar.ts`; earlier interface proofs remain historical.
+The current roof has 25-degree falls inward and outward, both eaves +6800 mm,
+ridge about +7779 mm and no roof openings or flat roofs. Low storage is provisional;
+there is no standing attic storey or first-to-loft stair. Roof-space hatch,
+maintenance protection/access, collection, outlets and overflow remain unresolved.
+Do not use the earlier mansard/dormer/upper-stair or outward-only roof as current.
 
-## Current material interface refinement
+## Current proof set
 
-[Timber floor and entrance articulation](architectural-plate-timber-interface.md) separates the floor assembly from masonry, distinguishes leaf fills and makes door/threshold and elevation joinery legible. Plan and twin roof remain held. Use the current `section-exemplar.ts`; the previous fused-floor proof is historical.
+`publication/specimens/plt13` contains twelve sheets: ground, first, locator,
+principal section, service section, front, garden, service side, courtyard
+entrance, courtyard windows, roof and roof collection. B5/A4 BOOK is 1:100;
+A2 WALL is 1:50. These are conventional exact scales, never fit scaling.
 
-## Joined section exemplar and twin roof
+The two plan levels retain source geometry. The first-floor stair now descends
+only. Principal section geometry is retained; service section uses the same
+shared cavity/head/substructure and floor-package functions. The service floor
+band reserves assembly depth rather than specifying a full-width timber member.
+The five elevation readings use the same roof datums and shared nominal joinery.
+Courtyard sheets remain inner-wall face readings; complete roof form is shown in
+the principal/service sections and roof plan. No extra west outer elevation is
+added: its historical register exclusion remains.
 
-The owner approves the [joined section exemplar](architectural-plate-joined-section.md): plan-consistent cavity leaves, joined cut regions, nominal inner-leaf bearing and roof underside junctions, plus 25-degree falls inward and outward. Use `georgian/section-exemplar.ts` for this roof/section successor. Full family rollout follows exemplar review; older outward-only views remain historical.
+## Authority and release boundaries
 
-## Current section and roof candidates
-
-[Sections and roof](architectural-plate-sections-roof.md) now supply locator, principal/service cuts, a four-field roof plan and a separate water/failure reading. These consume the simple-roof successor; final book-spread composition, technical obligations and physical proof remain open.
-
-## Current exterior revision
-
-The owner subsequently approves the [simplified roof and facade](architectural-plate-simple-roof.md). Use `georgian/facade-source.ts` for new exterior/section work, retaining the accepted ground/first plan geography. The mansard, dormers and standing attic stair are superseded; do not mix their historical previews into a current set.
-
-## Current direction
-
-The owner accepts the PLT-05 floor plan as the working drawing basis and defers
-personal layout refinements. Resume plate refinement under PLT #422. Do not
-hold this work for another floor-plan review or use it to reopen discretionary
-house design. Screen acceptance authorises continued drawing development;
-actual-size physical acceptance and final drawing release remain separate.
-
-The working source is `compiler/reference-house/georgian/source.ts`, introduced
-through PR #910. Its source-owned room boundaries, apertures, levels, stair,
-services and pitched roof are held. The architectural decision remains
-[Georgian re-plan](../reference-house/georgian-replan.md). The no-flat-roof
-constraint continues to apply. Only a concrete defect that prevents an honest
-coordinated drawing warrants a source correction within PLT; record that delta
-explicitly rather than hiding it in linework.
-
-## Source and release boundaries
-
-| Object | Current authority / use |
+| Object | Authority / use |
 |---|---|
-| Georgian source | Accepted working architectural source for PLT candidate drawings |
-| `georgian/plan.ts` and `georgian/scenes.ts` | Existing source-derived plan and coordination previews |
-| `georgian/elevations.ts` | New elevation-family projections of the same source |
-| B6 / PLT04 / PLT05 review packs | Retained historical proof identities; do not silently redraw them |
-| Frozen DRW v1 and historical RH compiler | Retained historical releases and bounded technical proof; not proof of this changed house |
-| Final publication | Still consumes its controlled historical release until an atomic, validated v2 replacement |
+| `georgian/source.ts` and `plan.ts` | Held room, wall, aperture, stair and service geography; historical roof/attic fields are superseded for current orthographics. |
+| `georgian/section-exemplar.ts` and `section-source.ts` | Current twin roof, reviewed principal section and provisional assembly decisions. |
+| `georgian/orthographic-family.ts` | Current twelve-view projection/coordination adapter. |
+| Shared ADE plan, section and aperture modules | Reusable bounded representation; no engineering adequacy or project architecture invented. |
+| Earlier ADE/B6/PLT04-12 specimens | Historical comparison/provenance identities; not a mixed current set. |
+| Frozen DRW v1 / historical RH compiler | Protected release and bounded historical technical proof; not technical proof of the changed house. |
+| Final publication | Still consumes its controlled historical release until atomic validated v2 integration. |
 
-A candidate may reuse the shared v2 graphic tokens without claiming that the
-full frozen RH structural, service, boundary and calculation models have been
-migrated. In particular, an old span or service overlay must not be pasted over
-the new plan and described as a compiled result. Reconcile the source obligation
-for each family; retain unsupported facts explicitly. Full technical successor
-work is a separate obligation wherever publication relies on that evidence.
+Ground packages, below-ground support envelopes, lintel/head zones, seats and
+closure conventions are provisional. No footing type/depth, structural span,
+restraint, thermal/moisture detail or product suitability is established merely
+by drawing it. Non-dimensionable support envelopes must not be measured as
+foundation designs. Source-owned riser space does not establish checked floor
+penetrations, fire-stopping or service performance.
 
-## Remaining family work
+Do not paste historical structural/service overlays over the new plans and call
+them compiled results. Reconcile each analytical claim with the current source;
+retain unknowns explicitly. Full technical successor work remains separate where
+publication relies on that evidence.
 
-The [programme](https://github.com/adamnoden/architecture/issues/422) owns PLT's
-sequence. The historical [view register](architectural-drawing-drw02d-view-register.md)
-owns reader tasks unless an explicit revision below supersedes one. A review
-pack existing is not the same as its entire family being complete.
+## Remaining programme
 
-| Programme stage | Current candidate / remaining obligation |
+| Programme stage | Candidate / remaining obligation |
 |---|---|
-| Exemplar and plans, PLT-03/04 | Shared candidate grammar and three source-derived plans exist. Continue from accepted layout; finish BOOK facing relationships and final print review. |
-| Elevations, PLT-05 | Front, garden, service-side and two courtyard readings now have one source-derived candidate family. Finished-PDF and rendered proof precede adoption as release plates. |
-| Sections, PLT-06 | Existing transverse roof section and developed stair are coordination previews. Principal longitudinal and transverse service sections remain. |
-| Roof, PLT-07 | New pitched roof requires its own controlled roof/drainage substrate and honest water/failure reading. Historical low-slope geometry cannot stand in. |
-| Axonometric, PLT-08 | Re-test synthesis value after orthographics; never invent unique content. |
-| Analysis, PLT-09 | Ground plant overlay and upper service indications exist. Complete source-consistent structure, services, external maintenance, water/failure and adaptation readings. Synthetic setting remains an explicit surrogate, not the deferred modest-plot redesign. |
-| Subtraction, PLT-10 | Review every mark across the whole set for necessity, hierarchy and consistency. |
-| Physical proof, PLT-11 | Actual-size B5/A4 book, A2 wall and selected A1 proof; book pairing/gutter and three-distance inspection. Screen approval does not discharge it. |
-| Integration, PLT-12 | Trace every delta from v1, regenerate publication, inspect typeset book, freeze identities and release drawing v2 before final manufacture. |
+| PLT-03/04 exemplar and plans | Shared grammar and current ground/first candidates exist. Final token acceptance, BOOK facing relationship and physical review remain. |
+| PLT-05 elevations | Five current face readings share roof datums and aperture grammar. Final BOOK/WALL composition and physical acceptance remain. |
+| PLT-06 sections | Principal and service cuts now use current roof/assembly rules. Final BOOK spread, section annotation/subtraction and technical obligations remain. |
+| PLT-07 roof | Twin-pitch roof and collection reserve share one substrate. Complete supported water/failure/access reading without pretending drainage is sized. |
+| PLT-08 synthesis | Re-test sectional axonometric value against stabilised orthographics; do not invent unique 3D content. |
+| PLT-09 analysis | Complete source-consistent structure, services, external maintenance, water/failure and adaptation readings. Synthetic setting remains an explicit surrogate. |
+| PLT-10 subtraction | Review the entire family for necessary marks, hierarchy, authority and consistency. |
+| PLT-11 physical proof | Actual-size B5/A4 book, A2 wall and selected A1; pair/spread/gutter and three-distance review. PDFs/screen approval do not discharge this. |
+| PLT-12 integration | Trace v1 deltas, regenerate and inspect publication, freeze identities and release drawing v2 before final manufacture. |
 
-## Elevation-family decisions
+Next: analytical/synthesis work from the current orthographic substrates, then
+whole-set composition/subtraction, physical proof and atomic integration. Local
+candidate proof does not close an entire programme stage or raise maturity.
 
-`publication/specimens/plt06/` is the elevation proof specimen; its directory
-number is a specimen identity, **not a claim that programme PLT-06 sections are
-complete**. Five sheets show front, garden, service side, north courtyard and
-south courtyard. East/west courtyard faces have the same nominal aperture
-arrangement as the south face, so separate duplicate plates add no information.
-No dedicated west outer elevation is added; its historical register exclusion
-continues.
+## Retained decision trail
 
-The garden projection reverses the plan X direction, placing the asymmetric
-roof-access opening on the correct viewer's side. The service-side projection
-uses plan Y. Aperture widths, kinds and positions come directly from the same
-openings used by the plans. Shared floor, sill and head datums retain vertical
-registration. Aperture/sash conventions do not imply selected frame, flashing,
-reveal depth or sill construction.
-
-The older preview drew horizontal lines at storey datums as though they were
-built facade bands. The source does not select those bands. The elevation family
-uses discrete level ticks instead. Profile, aperture and secondary sash strokes
-use shared physical-paper roles; there are no shadows or invented mouldings.
-The roof silhouette is a projection of pitched fields, not a flat roof. The
-service-side sheet identifies the unmodelled dormer side returns; rear roof
-access keeps its unresolved platform/protection note.
-
-### Explicit scale revision for the tall courtyard
-
-The old register specifies a 1:50 courtyard BOOK elevation. The new 10878 mm
-high courtyard wall alone occupies **217.6 mm at 1:50**, exceeding the 190 mm
-candidate scene height before notes or scale bar. That is a concrete source/
-page conflict, not an aesthetic preference. Reopen this register entry for the
-current candidate: **BOOK B5/A4 1:100, WALL A2 1:50**. No fit scaling or shortened
-wall is allowed. The full-height court is retained so the massing consequence
-remains visible. Final physical review must assess whether this reading earns
-its publication space; the true height must not be disguised through cropping.
-
-## Validation and next step
-
-Semantic tests check plan/elevation aperture registration, rear-view handedness,
-service-side limits, courtyard entry differentiation and full wall height,
-dormer occlusion and deterministic vector output. The finished-PDF gate checks
-all 15 pages for exact physical scale, page size, embedded Source Sans/Unicode,
-source/scene identity and text bounds. Render every final sheet before adoption.
-No physical acceptance, engineering adequacy or token freeze is asserted.
-
-After the elevation candidate clears these checks, proceed to principal and
-service sections against the held source. Escalate only the specific missing
-architectural fact needed to draw them honestly; do not restart layout design.
+Earlier records retain the rationale and exact proof identities at their time:
+[Georgian re-plan](../reference-house/georgian-replan.md),
+[simple exterior](architectural-plate-simple-roof.md),
+[initial sections/roof](architectural-plate-sections-roof.md),
+[joined section/twin roof](architectural-plate-joined-section.md),
+[timber interfaces](architectural-plate-timber-interface.md),
+[coherent section](architectural-plate-coherent-section.md), and
+[shared assembly review](architectural-plate-section-assemblies.md).
+Use this current record and the latest family proof for present-state questions;
+old tall-courtyard, roof-access dormer and standing-attic notes are historical.

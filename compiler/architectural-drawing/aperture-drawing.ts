@@ -14,14 +14,14 @@ const positive=(...values:number[])=>{if(values.some(v=>!Number.isFinite(v)||v<=
  * Grid counts/style are caller-owned; this has no Georgian or RH defaults. */
 export function framedApertureToDrawingPrimitives(a:ApertureEvidence & {
  left:number;bottom:number;width:number;height:number;frameInset:number;columns:number;rows:number;
- head?:{height:number;projection:number};sill?:{height:number;projection:number};role:DrawingLineRole
+ head?:{height:number;projection:number};sill?:{height:number;projection:number};role:DrawingLineRole;outlineRole?:DrawingLineRole
 },p:SectionPaperProjection):DrawingPrimitiveV2[]{
  const meta=metadata(a)
  positive(a.width,a.height,a.frameInset,a.columns,a.rows)
  if(!Number.isFinite(a.left)||!Number.isFinite(a.bottom)||!Number.isInteger(a.columns)||!Number.isInteger(a.rows)||2*a.frameInset>=Math.min(a.width,a.height))throw new Error('Invalid aperture grid/frame')
  const out:DrawingPrimitiveV2[]=[]
  const line=(id:string,x0:number,z0:number,x1:number,z1:number)=>out.push({kind:'line',id:a.id+'-'+id,a:p.point(x0,z0),b:p.point(x1,z1),role:a.role,metadata:meta})
- const box=(id:string,x:number,z:number,w:number,h:number)=>out.push({kind:'path',id:a.id+'-'+id,rings:[[p.point(x,z),p.point(x+w,z),p.point(x+w,z+h),p.point(x,z+h)]],stroke:a.role,fill:'none',metadata:meta})
+ const box=(id:string,x:number,z:number,w:number,h:number)=>out.push({kind:'path',id:a.id+'-'+id,rings:[[p.point(x,z),p.point(x+w,z),p.point(x+w,z+h),p.point(x,z+h)]],stroke:id==='outline'?(a.outlineRole??a.role):a.role,fill:'none',metadata:meta})
  box('outline',a.left,a.bottom,a.width,a.height)
  const x=a.left+a.frameInset,z=a.bottom+a.frameInset,w=a.width-2*a.frameInset,h=a.height-2*a.frameInset
  box('frame',x,z,w,h)

@@ -6,7 +6,7 @@ import {mm} from '../../units.js'
 import {createGeorgianPlan,provenance} from './plan.js'
 import {design,roofHeight,roofTop,openings,type Level,type Box} from './source.js'
 const metadata={sources:provenance.sourceIds.join(','),authority:'provisional',precision:'approximate',constructionDetailSelected:false}
-export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'SECTION'|'STAIR'|'SERVICES',scale:100|50):DrawingSceneV2=>{
+export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'SECTION'|'STAIR'|'SERVICES',scale:100|50,options:{wallRegionIds?:'legacy'|'assembly-qualified'}={}):DrawingSceneV2=>{
  const origin=scale===100?{x:22,y:20}:{x:90,y:150},widthMm=scale===100?145:420,heightMm=scale===100?190:594
  const projection=createPlanPaperProjection({scaleDenominator:scale,modelBounds:{x:0,y:0,width:12000,height:12000},paperOrigin:origin})
  const groundView=view==='GROUND'||view==='SERVICES',isPlan=['GROUND','FIRST','ATTIC','SERVICES'].includes(view),level:Level=groundView?'GROUND':view==='ATTIC'?'ATTIC':'FIRST'
@@ -17,7 +17,7 @@ export const createGeorgianScene=(view:'GROUND'|'FIRST'|'ATTIC'|'FRONT'|'REAR'|'
  const rect=(id:string,b:Box,dash?:'overhead'|'datum')=>{const a=p(b.x,b.y+b.depth);scene.primitives.push({kind:'rect',id,x:a.x,y:a.y,width:b.width/scale,height:b.depth/scale,stroke:'secondary',fill:'none',dash,metadata})}
  if(isPlan){
   const plan=createGeorgianPlan(level)
-  scene=compileArchitecturalPlanScene(plan,{title:`Georgian re-plan ${view}`,profile:{id:`GEORGIAN-${view}-${scale}`,output:scale===100?'BOOK':'WALL',scaleDenominator:scale},projection,widthMm,heightMm,resolveAssemblyThicknessMm:a=>mm(a.id==='RH-ADE-ENVELOPE'?417.5:125),resolveLayerThicknessMm:l=>{if(l.thickness.kind==='approximate'||l.thickness.kind==='exact')return l.thickness.value;return mm(160)},abutments:level==='ATTIC'?{}:{'RH-PART-DRY-01':['RH-ADE-ENVELOPE']},openingSide:()=> 'right',layerBoundaryOpacity:.45,dimensionOptions:{annotationSide:'right',offsetPaperMm:18},labelLayout:()=>({})})
+  scene=compileArchitecturalPlanScene(plan,{wallRegionIds:options.wallRegionIds,title:`Georgian re-plan ${view}`,profile:{id:`GEORGIAN-${view}-${scale}`,output:scale===100?'BOOK':'WALL',scaleDenominator:scale},projection,widthMm,heightMm,resolveAssemblyThicknessMm:a=>mm(a.id==='RH-ADE-ENVELOPE'?417.5:125),resolveLayerThicknessMm:l=>{if(l.thickness.kind==='approximate'||l.thickness.kind==='exact')return l.thickness.value;return mm(160)},abutments:level==='ATTIC'?{}:{'RH-PART-DRY-01':['RH-ADE-ENVELOPE']},openingSide:()=> 'right',layerBoundaryOpacity:.45,dimensionOptions:{annotationSide:'right',offsetPaperMm:18},labelLayout:()=>({})})
   const stair=design.stair
   const stairProjection={...projection,point:(x:number,y:number)=>p(stair.x+y,stair.y+stair.length-x)}
   const stairPrimitives=returnStairToDrawingPrimitives({kind:'return-stair',id:`GEORGIAN-STAIR-${level}`,origin:{x:mm(0),y:mm(0)},riserCount:20,floorToFloor:mm(3450),going:mm(300),clearWidth:mm(1200),landingDepth:mm(stair.landing),wellGap:mm(300),cutHeight:mm(1200),level:level==='ATTIC'?'FIRST':'GROUND',provenance},stairProjection)
