@@ -259,7 +259,7 @@ The service side also hosts the principal utility approach, ventilation terminal
 
 This concentration protects principal rooms from becoming service corridors while avoiding the opposite mistake of hiding infrastructure so thoroughly that it can no longer be worked on.
 
-## Human adaptation within the same geography
+## Loss of stair use
 
 The same finite service suite now carries a second foreseeable future obligation.
 
