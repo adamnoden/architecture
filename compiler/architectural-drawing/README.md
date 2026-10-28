@@ -114,3 +114,27 @@ The Reference House adapter and candidate profiles live in `compiler/reference-h
 The existing v2 path backend suffices; v1 and unchanged terminal scenes retain their byte contracts. Plan topology is not a section, elevation or 3D model. Shared authority/provenance, physical units and terminal primitives can transfer, while other views must earn their own representation rules.
 
 Current acceptance, reproducible proof commands and PLT physical-review obligations are recorded in `docs/publication/architectural-drawing-engine-closeout.md`. ADE is internally complete; actual print-token acceptance remains with PLT.
+
+## Section and face-on aperture representation
+
+`section-assemblies.ts` adds bounded vertical wall cuts and horizontal floor
+packages in model millimetres (longitudinal member convention; no automatic
+framing orientation or cross-cut joist generation). Callers own layer thickness authority, orientation,
+opening extents, provisional head zones, sloping caps, underground continuation,
+support envelopes, floor packages, clear end gaps and indicative seats. Nominal
+geometry requires exact or approximate source values; unknown/ranged layer
+thicknesses fail closed. This API does not infer a building section from a plan.
+
+Both leaves continue to a source-authored support reservation, with explicit
+non-dimensionable metadata. That envelope is not a footing design. Opening head
+zones remain distinct from leaves and joinery; closure across a cavity is an
+authored convention, not a selected thermal/moisture detail. Floor voids produce
+no material strokes. Adjacent thin solid layers with identical extent/style can
+share a visual band at small physical scale while retaining every layer ID.
+
+`aperture-drawing.ts` supplies face-on frames/grids and closed cut joinery. Grid
+counts, frame/profile dimensions, fanlights and thresholds are caller choices;
+there is no Georgian style or Reference House geometry in the engine.
+`section-contrast-fixture.ts` exercises an asymmetric non-courtyard example with
+different layer sizes, span, levels and openings. This extends the accepted plan
+engine; it does not certify structural adequacy or complete 3D/BIM capability.

@@ -1,6 +1,17 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
+## Shared section assemblies and current junction correction
+
+The [section assembly review](architectural-plate-section-assemblies.md) records
+the latest feedback and the reusable engine extraction. Current section code
+consumes shared wall/head/substructure, floor/seat, face-on aperture and cut
+joinery functions; house choices remain in `georgian/section-source.ts`. PLT12
+adds an independent asymmetric engine fixture alongside the five held-house
+readings. Historical PLT11 consumes `section-exemplar-05.ts`. Foundation and
+lintel design remain unresolved; support envelopes are non-dimensionable.
+No physical freeze or full technical/family migration is claimed.
+
 ## Current coordinated section grammar
 
 The [coherent section grammar](architectural-plate-coherent-section.md) now addresses both cut doorways, lighter leaf boundaries, separate support seats, explicit roof-space ceiling/deck, ground reservation and unresolved foundation continuation. It holds plan and roof and retains full aperture detail beyond the cut. Use current `section-exemplar.ts`; earlier interface proofs remain historical.
