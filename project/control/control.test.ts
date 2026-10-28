@@ -15,7 +15,7 @@ import { validateControlPlane, validateGraphStructure } from './validate.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 
-function node(id: string): (typeof controlNodes)[number] {
+function node(id: string): ControlNode {
   const result = controlNodes.find((candidate) => candidate.id === id)
   if (!result) throw new Error(`Missing test node: ${id}`)
   return result
