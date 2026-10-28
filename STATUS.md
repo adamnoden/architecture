@@ -9,13 +9,12 @@ Execution authority lives in `project/control/`. Epistemic maturity authority li
 <!-- project-control:start -->
 Execution state is derived from `project/control/`; this Markdown is a projection, not authority.
 
-**Ready:** 8 · **Active:** 2 · **Blocked:** 23 · **Held:** 2 · **Done:** 10 · **Cancelled:** 0
+**Ready:** 7 · **Active:** 2 · **Blocked:** 23 · **Held:** 2 · **Done:** 11 · **Cancelled:** 0
 
 ### Ready frontier
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `PCO-08` | Adversarial closeout | PCO | — |
 | `IAS-00` | Interior architecture baseline, challengers and invariants | IAS | — |
 | `OAS-00` | Opening taxonomy, baselines and invariants | OAS | — |
 | `HAD-00` | Architectural brief, hierarchy and invariants | HAD | — |
