@@ -4,10 +4,13 @@ on:
     branches: [main]
     paths:
       - 'compiler/architectural-drawing/spatial-visibility*'
-      - 'compiler/reference-house/georgian/sectional-synthesis.ts'
+      - 'compiler/reference-house/georgian/**'
       - 'compiler/reference-house/georgian-sectional-synthesis.test.ts'
-      - 'compiler/reference-house/georgian/layout-*.ts'
-      - 'compiler/reference-house/georgian/section-source.ts'
+      - 'compiler/publication-drawing/projection-3d.ts'
+      - 'compiler/publication-drawing/visibility-3d.ts'
+      - 'compiler/publication-drawing-v2/**'
+      - 'compiler/publication-drawing/tokens.ts'
+      - 'publication/fonts.ts'
       - 'publication/specimens/plt19/**'
       - '.github/workflows/plt-current-synthesis-proof.yml'
   workflow_dispatch:
