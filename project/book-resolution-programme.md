@@ -93,7 +93,7 @@ No workstream may promote internal plausibility into engineering adequacy, physi
 
 ## Publication consequence
 
-The completed EDA audit and previous publication content freeze remain valid evidence for the manuscript they reviewed, but the authorised enlargement of the book makes them **stale as final-production gates** once BSR changes the canonical source set. The provenance-preserving successor trigger is [`docs/editorial/eda-successor-trigger-2026-10-28.md`](../docs/editorial/eda-successor-trigger-2026-10-28.md).
+The completed EDA audit and previous publication content freeze remain valid evidence for the manuscript they reviewed, but the authorised enlargement of the book makes them **stale as final-production gates** once BSR changes the canonical source set. The provenance-preserving successor trigger is [`project/eda/eda-successor-trigger-2026-10-28.md`](eda/eda-successor-trigger-2026-10-28.md).
 
 Physical-object preparation under PUB-02 may continue where content-independent. Final content/drawing freeze and manufacture now require, in order:
 
