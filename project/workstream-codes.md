@@ -6,6 +6,7 @@ New first-class workstreams use exactly three uppercase letters. Historical evid
 
 | Code | Workstream | Issue | Programme / control source | Historical aliases |
 |---|---|---:|---|---|
+| `ACO` | Agent Claim Orchestration | [#960](https://github.com/adamnoden/architecture/issues/960) | `project/aco/agent-claim-orchestration-programme.md` | — |
 | `ADE` | Architectural Drawing Engine | [#812](https://github.com/adamnoden/architecture/issues/812) | — | — |
 | `BCR` | Buildability & Construction Resolution | [#944](https://github.com/adamnoden/architecture/issues/944) | `project/bcr/buildability-construction-resolution-programme.md` | — |
 | `BSR` | Book Structure Refactor | [#940](https://github.com/adamnoden/architecture/issues/940) | `project/book-resolution-programme.md` | — |

@@ -2,19 +2,22 @@
 
 **Generated project-wide projection — do not hand-edit mutable status here.**
 
-Execution authority lives in `project/control/`. Epistemic maturity authority lives in `project/maturity.ts`. Workstream issues and programme/result records retain reasoning, scope and provenance. This document intentionally does not duplicate mutable programme prose.
+Durable execution authority lives in `project/control/`. Live claim occupancy lives separately in ACO on `runtime/claims`. Epistemic maturity authority lives in `project/maturity.ts`. Workstream issues and programme/result records retain reasoning, scope and provenance.
 
 ## Execution
 
 <!-- project-control:start -->
-Execution state is derived from `project/control/`; this Markdown is a projection, not authority.
+Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.
 
-**Ready:** 8 · **Active:** 2 · **Blocked:** 28 · **Held:** 2 · **Done:** 11 · **Cancelled:** 0
+**Structurally ready:** 9 · **Active:** 2 · **Blocked:** 28 · **Held:** 2 · **Done:** 15 · **Cancelled:** 0
 
-### Ready frontier
+### Structurally ready frontier
+
+These nodes satisfy hard dependencies. A structurally ready node may already have a live ACO lease; query `npm run control:claims` before starting collision-prone durable work.
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
+| `ACO-04` | Self-hosted adversarial closeout | ACO | — |
 | `IAS-00` | Interior architecture baseline, challengers and invariants | IAS | — |
 | `OAS-00` | Opening taxonomy, baselines and invariants | OAS | — |
 | `HAD-00` | Architectural brief, hierarchy and invariants | HAD | — |
@@ -26,7 +29,7 @@ Execution state is derived from `project/control/`; this Markdown is a projectio
 
 ### Active durable work
 
-`active` means the packet is durably started; it is not an agent-presence or branch lease.
+`active` means the packet is durably started; it is not an agent-presence or lease. Live occupancy belongs to ACO on `runtime/claims`.
 
 | Node | Work | Owner |
 |---|---|---|
@@ -109,7 +112,7 @@ PCO monitors the evidence content from baseline `c3701c5`. A changed evidence fi
 <details>
 <summary>Legacy maturity compatibility projection (non-authoritative)</summary>
 
-This collapsed block is retained temporarily because the existing repository-integrity check still verifies the historical renderer. Its `Current state` / `Next meaningful gate` columns are **not execution authority**; PCO owns current execution state above.
+This collapsed block is retained temporarily because the existing repository-integrity check still verifies the historical renderer. Its `Current state` / `Next meaningful gate` columns are **not execution authority**; PCO owns current durable execution state above.
 
 <!-- maturity-status:start -->
 Ovid’s House uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.
@@ -154,7 +157,8 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 ## Reading current state
 
-- Use the **Ready frontier** above for work that can start without violating a hard dependency.
+- Use the **Structurally ready frontier** above to identify work whose hard dependencies are satisfied.
+- Before substantial execution, query `npm run control:claims` and acquire the ACO lease; structural READY does not mean unclaimed.
 - Use owning workstream issues/programmes for the architectural question, scope and exit criteria behind a node.
 - A completed node does not itself raise maturity; maturity remains an explicit evidence-backed judgement.
 - Possible future PHY/EPR/DEL work is not a blocker until a concrete obligation is admitted into the graph.
