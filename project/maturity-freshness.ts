@@ -31,6 +31,24 @@ function evidencePathsForAssessment(assessment: (typeof maturityAssessments)[num
   return [...paths]
 }
 
+export function maturityFreshnessFromChangedPaths(
+  changed: ReadonlySet<string>
+): ReadonlyMap<string, MaturityEvidenceFreshness> {
+  const result = new Map<string, MaturityEvidenceFreshness>()
+
+  for (const assessment of maturityAssessments) {
+    const changedForAssessment = evidencePathsForAssessment(assessment).filter((path) => changed.has(path))
+    result.set(
+      assessment.id,
+      changedForAssessment.length
+        ? { state: 'stale', changedEvidence: changedForAssessment }
+        : { state: 'fresh', changedEvidence: [] }
+    )
+  }
+
+  return result
+}
+
 function git(repoRoot: string, args: readonly string[]): string {
   return execFileSync('git', args, {
     cwd: repoRoot,
@@ -62,30 +80,19 @@ function changedEvidencePaths(repoRoot: string): Set<string> | null {
 
 export function maturityFreshness(repoRoot: string): ReadonlyMap<string, MaturityEvidenceFreshness> {
   const changed = changedEvidencePaths(repoRoot)
-  const result = new Map<string, MaturityEvidenceFreshness>()
 
-  if (!changed) {
-    for (const assessment of maturityAssessments) {
-      result.set(assessment.id, {
+  if (changed) return maturityFreshnessFromChangedPaths(changed)
+
+  return new Map(
+    maturityAssessments.map((assessment) => [
+      assessment.id,
+      {
         state: 'unknown',
         changedEvidence: [],
         reason: 'PCO evidence-monitoring baseline is unavailable in this Git checkout'
-      })
-    }
-    return result
-  }
-
-  for (const assessment of maturityAssessments) {
-    const changedForAssessment = evidencePathsForAssessment(assessment).filter((path) => changed.has(path))
-    result.set(
-      assessment.id,
-      changedForAssessment.length
-        ? { state: 'stale', changedEvidence: changedForAssessment }
-        : { state: 'fresh', changedEvidence: [] }
-    )
-  }
-
-  return result
+      } satisfies MaturityEvidenceFreshness
+    ])
+  )
 }
 
 export function staleMaturityAssessments(repoRoot: string): Array<{
