@@ -1,7 +1,7 @@
 # MRA — Moisture Resilience Assurance
 
 **Issue:** [#959](https://github.com/adamnoden/architecture/issues/959)  
-**State:** authorised; MRA-00 ready  
+**State:** MRA-00 active; constitution, inventory and threat model in progress  
 **Date:** 2026-10-28
 
 ## Purpose
@@ -93,7 +93,7 @@ The key question is always: **what happens when the thing intended to keep water
 
 ### MRA-00 — constitution, inventory and threat model
 
-Ready immediately.
+**Active.** Working record: [`mra-00-moisture-constitution-threat-model.md`](mra-00-moisture-constitution-threat-model.md).
 
 - inventory existing moisture doctrine, patterns, strategies, Reference House choices and unresolved obligations;
 - freeze the heightened risk posture and precise claim boundary;
