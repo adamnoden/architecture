@@ -22,6 +22,21 @@ The Reference House should be read as a coordinated architectural proposition wi
 
 For the current maturity assessment and active work, use `STATUS.md`. Structural capacity, detailed building physics, regulatory acceptance, plant sizing, product selection, physical interface performance and real-site compatibility remain external or later-stage questions unless an owning evidence record explicitly resolves them.
 
+## Authorised resolution programme
+
+The next major Reference House development is coordinated by [`project/book-resolution-programme.md`](../../project/book-resolution-programme.md). It does not invalidate the present M3 house or silently replace its controlled geometry. It adds first-class downstream design/resolution work that the current virtual-design scope deliberately does not complete:
+
+- `BSR` refactors the book structure and ownership boundaries;
+- `IAS` develops the selected interior architecture system;
+- `OAS` develops the selected opening/door/window/threshold assembly family;
+- `HAD` resolves the exterior and interior architectural design;
+- `BCR` coordinates construction-resolution obligations and routes evidence to the correct existing owners;
+- `HRS` absorbs those findings into one final resolved-house architectural configuration.
+
+After BSR, IAS/OAS/HAD are intentionally parallel and must work against the controlled current Reference House/PLT source. They may raise explicit rewind requests; they may not silently fork the plan, section, opening geometry or architectural authority.
+
+Existing owners remain intact: PLT owns publication drawings, PHY owns physical validation, EPR owns competent external/professional review, DEL owns delivery requirements, and a real site/commission remains outside Reference House authority unless separately established.
+
 ## What this area owns
 
 `docs/reference-house/` owns the authored architectural record of this worked instance: its constraints, coordination decisions, unresolved obligations, review handoffs, controlled drawings and the provenance needed to understand why the house is the way it is.
@@ -69,7 +84,7 @@ Most coordination Markdown and controlled architectural drawing/source records a
 
 [`generated/`](generated/) is downstream of the canonical Metamorph Compiler source/compile. It contains human-readable semantic inspection views and reports.
 
-**Do not hand-edit generated inspection artefacts.** Change the owning source or renderer and regenerate them. The local [`generated/README.md`](generated/) explains the uncertainty language, manifest and verification command.
+**Do not hand-edit generated inspection artefacts.** Change the owning source or renderer and regenerate them. The local [`generated/README.md`](generated/README.md) explains the uncertainty language, manifest and verification command.
 
 A generated `PASS` does not prove engineering adequacy, building physics, regulatory compliance or construction readiness.
 
