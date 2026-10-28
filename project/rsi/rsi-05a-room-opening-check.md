@@ -1,5 +1,7 @@
 # RSI-05A — rough room / opening / replacement-path check
 
+> Historical RSI study. The programme was closed by owner scope decision on 2026-10-28; see [closure and current authority](README.md). Original handoffs and successor permissions below are retained as history, not an active work queue.
+
 Issue: #901  
 Status: supporting evidence for **OWNER GATE A**, not detailed coordination
 

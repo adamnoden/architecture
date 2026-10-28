@@ -1,59 +1,32 @@
 # RSI — Reference Site Integration
 
-Programme: #891
+Programme: [#891](https://github.com/adamnoden/architecture/issues/891)
 
-RSI asks a stronger question of the Reference House:
+**State: CLOSED — owner scope decision, 2026-10-28.**
 
-> How powerful, durable and generous can Ovid's House remain on an unexceptional piece of detached-house land?
+## Closure decision
 
-The programme keeps three objects distinct:
+The owner accepts the current Reference House and theoretical plot as sufficient for the current project. Further hypothetical modest-plot migration and alternative-layout development are no longer required. RSI is closed, with no standing packet or obligation to resume after PLT.
 
-- **Reference House** — intrinsic building architecture;
-- **Reference Site** — canonical synthetic parcel/context;
-- **Reference Deployment** — deterministic composition of house + site.
+This decision supersedes the previous deferred execution boundary and the unfulfilled successor-selection, migration and release requirements on #891. It does not select an RSI concept, approve an RSI successor floor plan, or assert that the original RSI-12 acceptance criteria were achieved. Unexecuted RSI-05B and RSI-06–12 work is cancelled, not completed by validation.
 
-The working direction is a long, relatively narrow ordinary detached-house plot rather than the generous/wide synthetic setting used by earlier DPL work. No new canonical rectangle is frozen by this directory until RSI-02 earns it.
+The current Reference House continues under its owning architectural sources and PLT records. Closing RSI changes no house or plot geometry and does not freeze house development, promote an older RSI fixture, or introduce a dependency on an RSI successor.
 
-## Current execution boundary
+## Future site-specific work
 
-- RSI-00 / #894 — freeze the before-state.
-- RSI-01 / #895 — ordinary detached-plot morphology benchmark.
-- RSI-02 — author and compare bounded synthetic candidate envelopes from the benchmark.
-- RSI-03 — unchanged-house collision test.
+Choosing a real plot would trigger a new, separately scoped site-specific design exercise using the existing house, deployment machinery and retained evidence. It would establish actual site geometry and constraints, then earn any necessary design changes explicitly. It is not a parked RSI continuation.
 
-PLT #892 has closed via PR #893, so its specific architectural defect packet no longer blocks RSI-03. The resulting B4 plan is nevertheless **provisional coordination**, not a frozen replacement for RH-C1/M3. RSI may use B4 as the best current collision-test input while preserving the controlled historical house identity.
+Real-site suitability, planning/regulatory approval, engineering adequacy and construction validation remain unproven. No maturity or authority ceiling is raised by this closure.
 
-Full PLT completion is not a prerequisite for RSI. DPL #299 and ADE #812 are complete upstream inputs. Final TYP-09 release is not a blocker.
+## Retained evidence
 
-## Owner gates
+The earlier records retain their historical identities and assumptions:
 
-The successor path has two explicit owner gates recorded on #891:
+- RSI-00 / #894: before-state freeze;
+- RSI-01 / #895: detached-plot morphology benchmark;
+- RSI-02 / #896: synthetic envelope selection, including the 15 × 40 m RSI-RS-01 collision fixture;
+- RSI-03 / #898: B4 unchanged-house collision study;
+- RSI-04 / #899: invariants/flexibility study;
+- RSI-05A / #901: rough-plan comparison and room/opening checks, with no owner-selected successor.
 
-1. rough-plan concept selection from a small family of materially different ground/first-floor schemes;
-2. explicit approval of the resolved final floor plan before any M4/successor freeze.
-
-No compiler, whole-system or PLT migration may promote a successor house before the second gate.
-
-## Records
-
-- `rsi-00-before-state.md` — exact architectural/site/drawing baseline.
-- `rsi-01-detached-plot-morphology.md` — bounded morphology evidence and synthesis.
-- `data/detached-plot-morphology.json` — machine-readable evidence record.
-
-## Later current-house refinement
-
-PLT #903 implements the owner's south-west study / eastern guest WC and walk-in
-cloakroom choice. It supersedes B4 as a current-house review candidate, while
-RSI's recorded B4 collision/before-state evidence retains its exact identity.
-It does not approve an RSI rough concept or the successor's final plan, and
-does not waive either owner gate. Refresh affected assumptions explicitly if
-RSI consumes this later programme; do not silently replace frozen inputs.
-
-## Current owner priority
-
-PLT #905 develops the current house at 12 × 12 m with a centred square courtyard.
-The owner explicitly defers modest-plot constraints for now. Hold this as the
-current architectural study priority; do not use RSI's modest parcel to shrink
-it silently. RSI's before-state/collision and concept records retain their
-identities, and its owner gates remain in force when site work resumes. This
-is not approval of a different RSI successor or evidence of real-site fit.
+Their original next-step language is historical, not current authorisation or an open queue. B4 collision results do not establish fit of the later square/Georgian house. The distinction between Reference House, Reference Site and Reference Deployment remains useful; existing DPL evidence is preserved.
