@@ -16,6 +16,11 @@ its bounded geometry/access evidence. The plan adapter accepts source inputs
 while its legacy defaults preserve old specimen identities. The shared ADE
 plan/opening/stair machinery draws both levels. No duplicated hand-drawn walls.
 
+The owner subsequently accepts this pair as satisfactory for now and authorises
+continued PLT work. It is the working basis for the
+coordinated successor,
+without implying physical or technical acceptance.
+
 ## Decisions
 
 - Keep the 12 m square shell. Centre a 3500 mm square courtyard: each surrounding
