@@ -1,0 +1,89 @@
+import { defineNodes } from '../types.js'
+
+export const pcoNodes = defineNodes([
+  {
+    id: 'PCO-00',
+    owners: ['PCO'],
+    title: 'Control-plane inventory and authority map',
+    dependencies: [],
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/pco/pco-00-control-plane-inventory.md']
+  },
+  {
+    id: 'PCO-01',
+    owners: ['PCO'],
+    title: 'Schema and concurrency-safe storage',
+    dependencies: ['PCO-00'],
+    lifecycle: 'complete',
+    closeoutEvidence: [
+      'project/control/workstreams.ts',
+      'project/control/types.ts',
+      'project/control/nodes/pco.ts'
+    ]
+  },
+  {
+    id: 'PCO-02',
+    owners: ['PCO'],
+    title: 'Derivation engine',
+    dependencies: ['PCO-01'],
+    lifecycle: 'complete',
+    closeoutEvidence: [
+      'project/control/derive.ts',
+      'project/control/validate.ts',
+      'project/control/control.test.ts',
+      'scripts/project-control.ts'
+    ]
+  },
+  {
+    id: 'PCO-03',
+    owners: ['PCO'],
+    title: 'Live-frontier migration',
+    dependencies: ['PCO-02'],
+    lifecycle: 'complete',
+    closeoutEvidence: [
+      'project/control/nodes/architecture.ts',
+      'project/control/nodes/publication.ts',
+      'project/control/nodes/index.ts'
+    ]
+  },
+  {
+    id: 'PCO-04',
+    owners: ['PCO'],
+    title: 'Status and naming projections',
+    dependencies: ['PCO-03'],
+    lifecycle: 'planned',
+    closeoutEvidence: []
+  },
+  {
+    id: 'PCO-05',
+    owners: ['PCO'],
+    title: 'Maturity separation and stale-evidence guard',
+    dependencies: ['PCO-04'],
+    lifecycle: 'planned',
+    closeoutEvidence: []
+  },
+  {
+    id: 'PCO-06',
+    owners: ['PCO'],
+    title: 'Repository, CI and agent guardrails',
+    dependencies: ['PCO-04', 'PCO-05'],
+    lifecycle: 'planned',
+    closeoutEvidence: []
+  },
+  {
+    id: 'PCO-07',
+    owners: ['PCO'],
+    title: 'Wider migration and overlap removal',
+    dependencies: ['PCO-06'],
+    lifecycle: 'planned',
+    closeoutEvidence: []
+  },
+  {
+    id: 'PCO-08',
+    owners: ['PCO'],
+    title: 'Adversarial closeout',
+    dependencies: ['PCO-07'],
+    lifecycle: 'planned',
+    closeoutEvidence: []
+  }
+])
