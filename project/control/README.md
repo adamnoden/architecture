@@ -48,7 +48,9 @@ npm run control:release -- NODE --lease-id UUID --generation N --reason complete
 npm run control:force -- NODE --holder-kind human --holder-label owner --reason "confirmed ghost session"
 ```
 
-Aliases resolve to canonical node ids before touching the lease store, so shared packet aliases cannot acquire separate leases. `verify` and `renew` require a checkout whose PCO structural graph matches current `main`. `release` is intentionally more permissive so an orphaned canonical lease can always be relinquished.
+Aliases resolve to canonical node ids before touching the lease store, so shared packet aliases cannot acquire separate leases.
+
+`status`, normal `claim` and `force` deliberately require a checkout whose PCO structural graph matches current `main`, because they answer structural availability. `verify` is occupancy-only: it proves that the supplied lease id/generation still owns a live lease, while PCO/merge validation independently proves durable structural correctness. `renew` refuses renewal when the caller’s graph already says the node is no longer ready/active. `release` is intentionally more permissive so an orphaned canonical lease can always be relinquished.
 
 ## Sources
 
