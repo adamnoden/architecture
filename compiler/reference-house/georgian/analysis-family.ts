@@ -22,7 +22,7 @@ export function createAnalysisScene(view:AnalysisView,scale:100|50):DrawingScene
  const s=design.services
  if(view==='GROUND-SERVICES'){
   box('plant-working',s.plantWorking);box('water',s.plantWater);box('dry',s.plantDry)
-  text('water-no',10212,4450,'1','marker');text('dry-no',10112,8100,'2','marker');text('riser-no',9937,6350,'3','marker')
+  text('water-no',10212,3350,'1','marker');text('dry-no',10550,7600,'2','marker');text('riser-no',9850,6500,'3','marker')
   key(['1: hot-water reserve / 2: dry plant reserve / 3: stacked riser','Dashed: working and replacement aisle; side door provides the opening','Products, carrying manoeuvres and service connections remain unverified'])
  }else if(view==='FIRST-SERVICES'){
   box('lining',s.upperLining)
@@ -41,7 +41,7 @@ export function createAnalysisScene(view:AnalysisView,scale:100|50):DrawingScene
   key(['1: outer eaves / 2: courtyard eaves require maintainable access','No roof openings or standing attic; hatch and roof-work method unresolved','No ladder, platform, fall protection or real-site access route selected'])
  }else{
   const study=design.rooms.GROUND.find(r=>r.id==='G-STUDY')!,wc=design.rooms.GROUND.find(r=>r.id==='G-WC')!
-  text('study-no',study.at[0],study.at[1]+500,'1','marker');text('wc-no',wc.at[0]-700,wc.at[1],'2','marker')
+  text('study-no',study.at[0]+500,study.at[1]-1400,'1','marker');text('wc-no',wc.at[0]-400,wc.at[1]-800,'2','marker')
   key(['1: ground-floor study / 2: existing guest WC are adaptation starting points','Internal partition geography is explicit; alteration is not approved','Bedroom / shower conversion, access and structure require a new source decision'])
  }
  scene.sourceId=analysisSource.id;scene.viewId=`ANALYSIS-${view}-${scale}`;scene.title=view;scene.description=analysisSource.scope
