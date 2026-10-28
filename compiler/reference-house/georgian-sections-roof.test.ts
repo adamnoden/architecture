@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {design,roofTop} from './georgian/facade-source.js'
-import {sectionAt,roofZ,sectionRoofSource,technicalViews,createSectionRoofScene} from './georgian/sections-roof.js'
+import {sectionAt,roofZ,sectionRoofSource,technicalViews,createSectionRoofScene} from './georgian/sections-roof-01.js'
 import {renderDrawingSceneV2SvgWithTokens} from '../publication-drawing-v2/svg.js'
 import {PLT_CANDIDATE_TOKENS} from '../publication-drawing-v2/plt-candidate-tokens.js'
 test('principal section intersects real doors/windows and leaves courtyard floors absent',()=>{

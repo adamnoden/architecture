@@ -1,6 +1,10 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
+## Joined section exemplar and twin roof
+
+The owner approves the [joined section exemplar](architectural-plate-joined-section.md): plan-consistent cavity leaves, joined cut regions, nominal inner-leaf bearing and roof underside junctions, plus 25-degree falls inward and outward. Use `georgian/section-exemplar.ts` for this roof/section successor. Full family rollout follows exemplar review; older outward-only views remain historical.
+
 ## Current section and roof candidates
 
 [Sections and roof](architectural-plate-sections-roof.md) now supply locator, principal/service cuts, a four-field roof plan and a separate water/failure reading. These consume the simple-roof successor; final book-spread composition, technical obligations and physical proof remain open.
