@@ -61,6 +61,12 @@
   @bottom-left { content: none !important; }
   @bottom-right { content: none !important; }
 }
+@page :nth(1 of publication-part-vi) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
 
 /* Keep front-matter context markers on the recto opening they describe.
    A marker on its own page followed by an h1 recto break creates an empty
