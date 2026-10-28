@@ -112,6 +112,6 @@ Those checks establish only their encoded invariants. Structural capacity, fire 
 
 ## Deployment boundary
 
-The Reference House remains a controlled architectural proposition independently of any one real site. The internal DPL programme at `project/dpl/` is establishing how target, jurisdiction, site evidence, scenarios and compatibility should relate to it.
+The Reference House remains a controlled architectural proposition independently of any one real site. The conditional DPL design-study programme is complete at its recorded bounded scope, and RSI is closed by owner scope decision; neither establishes real-site compatibility.
 
-That programme may later determine whether a real site is compatible, incompatible or requires bounded adaptation. This README does not pre-empt that model or imply that a site-deployment compiler already exists.
+A selected real plot, commission or explicit evidence-backed request would trigger a separate site-specific verification/deployment exercise using the recorded DPL evidence requirements. Until then, the theoretical plot remains sufficient for the current Reference House and book-resolution programme. No current record implies planning approval, utility/ground adequacy, whole-site suitability or a generally deployable site compiler.
