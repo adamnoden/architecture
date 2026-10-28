@@ -4,7 +4,7 @@
 
 Delivery material is downstream of architectural and evidential work. It does not make an unresolved research proposition true merely by turning it into a requirement.
 
-The live programme owner is [`project/del/delivery-programme.md`](../../project/del/delivery-programme.md). The current upstream book/Reference-House resolution sequence is recorded in [`project/book-resolution-programme.md`](../../project/book-resolution-programme.md): IAS/OAS/HAD author selected architecture, BCR classifies construction-resolution gaps and routes genuine delivery obligations here, and HRS absorbs material consequences back into the final house.
+The live internal programme owner is `project/del/delivery-programme.md`. The current upstream book/Reference-House resolution sequence is recorded internally in `project/book-resolution-programme.md`: IAS/OAS/HAD author selected architecture, BCR classifies construction-resolution gaps and routes genuine delivery obligations here, and HRS absorbs material consequences back into the final house.
 
 ## What this area owns
 
