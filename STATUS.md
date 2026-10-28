@@ -1,81 +1,110 @@
 # Project Status
 
-**Canonical project-wide status overview**  
-**Last updated:** 2026-10-28
+**Generated project-wide projection — do not hand-edit mutable status here.**
 
-**Current phase:** **book / Reference House resolution programme with gated private-publication production**
+Execution authority lives in `project/control/`. Epistemic maturity authority lives in `project/maturity.ts`. Workstream issues and programme/result records retain reasoning, scope and provenance. This document intentionally does not duplicate mutable programme prose.
 
-This page records the current state, next meaningful work and principal risks. Detailed programme histories and gate records remain with their owning workstreams.
+## Execution
 
-The public architectural position and publication remain internally controlled at M4; the Reference House remains M3 at virtual-design scope. ADE drawing-engine capability and the bounded Reference House computational track remain internally complete. The conditional DPL design study and RSI hypothetical-site work are closed at their stated scopes. BSR has now completed the six-part manuscript topology and authority handoff without raising maturity; IAS/OAS/HAD are therefore unblocked as parallel design streams, BCR remains their construction-resolution convergence gate, and HRS remains the final architectural synthesis before definitive PLT/EDA/PUB closure. Previous EDA assurance remains valid for the source set it reviewed but no longer constitutes final editorial clearance for the enlarged book.
+<!-- project-control:start -->
+Execution state is derived from `project/control/`; this Markdown is a projection, not authority.
 
-DPL retains its bounded M4 claim scope after conditional research closeout. Evidence recovery, candidate-readiness work and passing internal checks do not establish whole-site compatibility, construction adequacy or regulatory approval. PHY physical validation and EPR competent professional review remain major unclosed evidence routes.
+**Ready:** 8 · **Active:** 2 · **Blocked:** 23 · **Held:** 2 · **Done:** 10 · **Cancelled:** 0
 
-## Active now
+### Ready frontier
 
-### Book / Reference House resolution programme
+| Node | Work | Owner | Completion would immediately unlock |
+|---|---|---|---|
+| `PCO-08` | Adversarial closeout | PCO | — |
+| `IAS-00` | Interior architecture baseline, challengers and invariants | IAS | — |
+| `OAS-00` | Opening taxonomy, baselines and invariants | OAS | — |
+| `HAD-00` | Architectural brief, hierarchy and invariants | HAD | — |
+| `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
+| `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
+| `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
+| `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
 
-The canonical dependency map is [`project/book-resolution-programme.md`](project/book-resolution-programme.md).
+### Active durable work
 
-**BSR — Book Structure Refactor** is complete at structural scope under [#940](https://github.com/adamnoden/architecture/issues/940). The canonical reader object is now six-part: Part IV owns the Reference House design proposition, Part V owns proving/scenario/technical-closure material, and Part VI is the deliberately sparse resolved-house conclusion. The interior-architecture and opening-assembly chapter interfaces are stable but explicitly do not claim those systems are already designed.
+`active` means the packet is durably started; it is not an agent-presence or branch lease.
 
-Three first-class design streams are now intentionally parallel: **IAS — Interior Architecture System** [#941](https://github.com/adamnoden/architecture/issues/941), **OAS — Opening Assembly System** [#942](https://github.com/adamnoden/architecture/issues/942), and **HAD — House Architectural Design** [#943](https://github.com/adamnoden/architecture/issues/943). They work against the controlled current Reference House/PLT source. Material plan, section, wall-depth, opening or service-space conflicts are explicit rewind requests; no stream may silently fork the house.
+| Node | Work | Owner |
+|---|---|---|
+| `PLT-CURRENT-REVIEW` | Current-source plate capability and physical review work | PLT |
+| `PUB-02-PREP` | Content-independent private-object preparation | PUB |
 
-**BCR — Buildability & Construction Resolution** [#944](https://github.com/adamnoden/architecture/issues/944) is the convergence gate. It classifies construction-resolution gaps and routes genuine professional, physical or delivery questions to EPR, PHY and DEL rather than duplicating those authorities. **HRS — House Resolution & Synthesis** [#945](https://github.com/adamnoden/architecture/issues/945) follows BCR and absorbs material findings into one final architectural configuration for definitive PLT work and Part VI — *The House*.
+### Blocked
 
-The controlling production sequence is now **IAS/OAS/HAD → BCR → HRS → final PLT integration/freeze → renewed EDA assurance → PUB-02 final manufacture**. Content-independent private-object preparation may continue in parallel.
+| Node | Work | Direct blockers |
+|---|---|---|
+| `TRIAD-IFACE-FREEZE` | Shared IAS/OAS/HAD interface freeze | IAS-00, OAS-00, HAD-00 |
+| `IAS-01V` | Vertical interior system candidates | TRIAD-IFACE-FREEZE |
+| `IAS-01H` | Horizontal interior system candidates | TRIAD-IFACE-FREEZE |
+| `OAS-01E` | Envelope openings, external doors, thresholds and boundary candidates | TRIAD-IFACE-FREEZE |
+| `OAS-01I` | Internal door assembly candidates | TRIAD-IFACE-FREEZE |
+| `HAD-01E` | Exterior and courtyard architectural design | TRIAD-IFACE-FREEZE |
+| `HAD-01P` | Principal-interior architectural design | TRIAD-IFACE-FREEZE |
+| `HAD-01S` | Private and service-interior architectural design | TRIAD-IFACE-FREEZE |
+| `IAS-02S` | Interior services and access family | IAS-01V, IAS-01H |
+| `IAS-02W` | Wet-room and kitchen interior-system variants | IAS-01V, IAS-01H, HAD-01S |
+| `IAS-OAS-JUNCTION` | Interior-system to opening-assembly junction reconciliation | IAS-01V, IAS-01H, OAS-01E, OAS-01I |
+| `IAS-HAD-JUNCTION` | Interior-system to architectural-expression reconciliation | IAS-01V, IAS-01H, HAD-01P, HAD-01S |
+| `OAS-HAD-JUNCTION` | Opening-assembly to facade/interior-expression reconciliation | OAS-01E, OAS-01I, HAD-01E, HAD-01P, HAD-01S |
+| `HAD-02M` | Material and finish synthesis | HAD-01E, HAD-01P, HAD-01S, IAS-HAD-JUNCTION, OAS-HAD-JUNCTION |
+| `IAS-03` | Selected interior family, drawings and disassembly set | IAS-02S, IAS-02W, IAS-OAS-JUNCTION, IAS-HAD-JUNCTION |
+| `OAS-03` | Selected opening family and replacement/reinstatement set | OAS-01E, OAS-01I, IAS-OAS-JUNCTION, OAS-HAD-JUNCTION |
+| `HAD-03` | Architectural design convergence and visual synthesis | IAS-HAD-JUNCTION, OAS-HAD-JUNCTION, HAD-02M |
+| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, OAS-03, HAD-03 |
+| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE |
+| `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE |
+| `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
+| `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE |
+| `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | PUB-02-PREP, EDA-RENEWED |
 
-### Reference House
+### Structural critical path
 
-The Reference House remains **M3 — Coordinated at virtual-design scope**. RH-00 through RH-10 are coordinated, RH-11 is issue-ready, and the 300 mm principal-stair going remains an explicit project preference rather than a statutory or universal ergonomic minimum.
+`IAS-00` → `TRIAD-IFACE-FREEZE` → `IAS-01V` → `IAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `BCR-CONVERGENCE` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
-The present house is the controlled design field for IAS/OAS/HAD, not a claim that those downstream systems have already been resolved. Existing EPR/RH-11 and PHY evidence routes remain valid at their stated source applicability; BCR may later add or revise targeted questions once the new selected systems create concrete obligations. Existing RH-C and compiler results remain internal model-control evidence, not construction validation.
+This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
+<!-- project-control:end -->
 
-### Computational implementation
+## Maturity
 
-The bounded Reference House computational track remains **M4 — Internally validated / controlled** through RH-C5 and CH-08. There is no standing RH-C6 or CH-09. New computation must be demand-led.
+Maturity is an **epistemic judgement**, not execution progress. Completing a graph node does not promote maturity, and reopening work does not automatically demote it.
 
-The DPL runtime is a separate demand-led track. Its current execution frontier is recorded in the [deployment programme](project/dpl/deployment-programme.md). COA-00 through COA-06 are complete; no generic compiler expansion is authorised by the active book-resolution programme or closed DPL work.
+### Scale
 
-### Publication
+| Level | Meaning | Gate |
+|---|---|---|
+| **M1** | **Framed** | The problem, scope and intended direction are explicit enough to guide further work. |
+| **M2** | **Developed** | Substantive design or research material exists and the main choices and trade-offs are visible, but important coordination remains. |
+| **M3** | **Coordinated** | The workstream has been reconciled with adjacent parts of the project and is internally coherent at its stated scope. |
+| **M4** | **Internally validated / controlled** | The proposition has been deliberately challenged against internal tests or evidence and is stable enough to act as the controlled baseline. |
+| **M5** | **Externally validated / release-ready** | Competent independent review or real-world validation has tested the proposition, material findings are resolved, and it is release-ready at its stated scope. |
 
-The publication workstream remains M4. DRW v1 remains a frozen historical release. [TYP](docs/publication/publication-typography-v1-release.md) has an accepted RC2 release and supplies the typography contract to PLT and PUB-02.
+### Evidence freshness
 
-**ADE — Architectural Drawing Engine capability uplift** is complete at internal representation scope under [#812](https://github.com/adamnoden/architecture/issues/812). The [closeout](docs/publication/architectural-drawing-engine-closeout.md) records the semantic engine, accepted capability atlas, migrated ground/first-floor candidates, non-Reference-House contrast proof and regression locks. BOOK 1:100 and A2 WALL 1:50 candidates remain valid drawing-engine evidence. Physical owner acceptance and final print-token freeze remain unearned and stay with PLT; no source authority or maturity is raised.
+PCO monitors the evidence content from baseline `c3701c5`. A changed evidence file marks the affected assessment **stale / reassessment required**; it does not automatically lower the M-level. The baseline establishes future drift surveillance and does not itself constitute independent revalidation of earlier evidence.
 
-**EDA — Editorial Doctrine Audit** is complete through EDA-08 under the [EDA programme](docs/editorial/eda-programme.md). All 128 canonical sources in that audited source set have recorded dispositions; whole-book recurrence/adversarial passes and A4/B5/Primer page proofs are accepted. That assurance remains historical evidence for the object it actually reviewed. BSR has now changed the canonical source structure and IAS/OAS/HAD/BCR/HRS will add substantive content, so a proportionate renewed EDA pass is required after HRS/final PLT before final PUB-02 manufacture.
+| Assessment | Maturity | Reviewed | Evidence files | Evidence watch |
+|---|---:|---|---:|---|
+| **Public architectural position** | **M4** | 2026-10-19 | 12 | fresh against PCO evidence baseline |
+| **Pattern language** | **M4** | 2026-10-12 | 4 | fresh against PCO evidence baseline |
+| **Architectural grammar framework** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **G-01 grammar instance** | **M4** | 2026-10-14 | 9 | fresh against PCO evidence baseline |
+| **Reference House** | **M3** | 2026-10-19 | 9 | fresh against PCO evidence baseline |
+| **Physical prototypes** | **M2** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **External professional review** | **M1** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **Computational track** | **M4** | 2026-10-19 | 45 | fresh against PCO evidence baseline |
+| **Evidence / precedent research** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **Publication** | **M4** | 2026-10-28 | 17 | fresh against PCO evidence baseline |
+| **Deployment / real-site integration** | **M4** | 2026-10-27 | 48 | fresh against PCO evidence baseline |
+| **Delivery** | **M2** | 2026-10-28 | 5 | fresh against PCO evidence baseline |
 
-**PLT — Architectural Plate Refinement** continues under [#422](https://github.com/adamnoden/architecture/issues/422) from the owner screen-approved [layout revision 02](docs/reference-house/layout-revision-02.md). The [current source and rollout](docs/publication/architectural-plate-current-source-and-rollout.md) owns the coordinated twelve-view orthographic/six-view analytical family, [book composition and subtraction](docs/publication/architectural-plate-book-composition.md), [theoretical setting pair](docs/publication/architectural-plate-current-setting.md) and [opaque sectional synthesis candidate](docs/publication/architectural-plate-current-synthesis.md). The current house has a 12 m shell, centred 3.5 m courtyard, both courtyard doors, revised entrance void/services and twin 25-degree roof without flat roofs or roof openings. The [candidate admission and handoff](docs/publication/architectural-plate-candidate-admission-and-handoff.md) accounts for all seventeen historical released roles and proposes fifteen current readings; it does not change the frozen register. Actual BOOK/WALL physical review and the HRS #945 resolved-house handoff after BCR #944 precede final source/admission judgement, manuscript reconciliation and atomic v2 integration. Technical support, fire/guarding, service and water/access obligations remain explicit. Historical proofs and the released v1 publication remain protected. No physical acceptance, print-token freeze, engineering adequacy or maturity increase is claimed.
+<details>
+<summary>Legacy maturity compatibility projection (non-authoritative)</summary>
 
-PLT may continue controlled current-source capability/plate work in parallel, but the **definitive book drawing freeze is downstream of HRS**. PLT must not invent IAS/OAS/HAD architectural decisions merely to finish a sheet.
-
-**PUB / PUB-02** remains under [#71](https://github.com/adamnoden/architecture/issues/71). Paper, trim, cloth, binding, printer/binder exploration and other content-independent preparation may proceed using the accepted typography contract. Final 12-copy content/drawing freeze and manufacture now require **IAS/OAS/HAD → BCR → HRS → final PLT integration/freeze → renewed EDA assurance**. PUB-03/PUB-04 independent criticism follows the private object and remains required before M5 or public-release claims. Historical `PR-*` labels remain provenance aliases only; live publication control uses `PUB-*`.
-
-### Deployment / real-site integration
-
-**RSI — Reference Site Integration** is [closed by owner scope decision](project/rsi/README.md) under [#891](https://github.com/adamnoden/architecture/issues/891). The current Reference House and theoretical plot suffice for the current project; further hypothetical modest-plot migration and alternative layouts are cancelled. There is no standing RSI packet or successor dependency for PLT or the new book-resolution programme. Existing studies remain historical evidence. Choosing a real plot would trigger a new site-specific exercise; this closure does not establish real-site suitability or raise maturity.
-
-DPL is **complete at revised conditional design-study scope**, with maturity unchanged at M4. The user's repeated instruction to assume the remaining unknowns explicitly revises the last four stage contracts; it does not satisfy their original empirical criteria. The [closeout](project/dpl/dpl-conditional-closeout.md) retains the eight-site trials, conditional envelope, publication decision and adversarial checks.
-
-The final hypothetical ordinary-site case preserves the house and uses a 9 m front setback to accommodate the 6 m illustrative sloping approach and two 1.5 m landings. Site extent, ground/support, water, connections, rights, context, access/logistics and technical completion have explicit assumption registers. Checked geometry is kept distinct from stipulated adequacy.
-
-There is **no standing internal DPL packet**. Evidence-backed corpus readiness remains 0/8. Real-site verification is deferred until an actual commission/site or explicit request, using the recorded spatial and stage-specific evidence requirements. No whole-site compatibility, regulatory approval, construction adequacy or stronger maturity claim follows. [Lennard T11](project/dpl/dpl-t11-lennard-no-spend-evidence.md) remains historical control evidence, excluded from empirical sampling.
-
-### Physical and professional validation
-
-**PHY — Physical validation** remains M2 under [#912](https://github.com/adamnoden/architecture/issues/912). PHY-03 structural floor-edge engineering and PHY-04 wall/ceiling movement-junction testing remain the current priority evidence routes; PHY-01 remains held optional research and PHY-02 remains held. The new IAS/OAS programme does not automatically reopen held prototypes or invent new test families: BCR must first identify a concrete physical claim that earns targeted PHY work.
-
-**EPR — External professional review** remains M1 under [#913](https://github.com/adamnoden/architecture/issues/913). RH-11 [#32](https://github.com/adamnoden/architecture/issues/32) remains the Reference House gate for the current structural, fire/building-control, MEP/acoustic and building-physics/energy review package. Source applicability must be checked as IAS/OAS/HAD/BCR mature; BCR may route new or revised questions rather than treating old issue-ready briefs as proof of changed systems. Internal M4 control is not external proof.
-
-### Delivery
-
-Delivery remains M2. [DEL — Delivery requirements](project/del/delivery-programme.md) has a completed inventory and provisional responsibility/stage/evidence baseline under [#854](https://github.com/adamnoden/architecture/issues/854). The authorised IAS/OAS/HAD/BCR/HRS programme creates future concrete assembly inputs but no new delivery acceptance. BCR hands DEL only the fabrication, tolerance, shop-drawing, product-equivalence, first-article, commissioning or reinstatement obligations actually earned by selected systems; DEL does not become their designer. [DEL-00](project/del/del-00-delivery-baseline.md) retains commission-specific acceptance as unresolved and identifies source-applicability checks before historical review/prototype packages are used for the current Georgian proposal.
-
-The [validation execution register](docs/development/validation-execution-register.md) coordinates EPR/RH-11 [#32](https://github.com/adamnoden/architecture/issues/32), PHY-03 [#30](https://github.com/adamnoden/architecture/issues/30) and PHY-04 [#31](https://github.com/adamnoden/architecture/issues/31). Review briefs are ready/unissued; PHY-03 geometry requires engineering before structural testing, and PHY-04 requires physical construction and testing. PHY-01 remains held optional research under [#856](https://github.com/adamnoden/architecture/issues/856); PHY-02 remains held without a current house dependency under [#857](https://github.com/adamnoden/architecture/issues/857). BCR may add targeted routes only when the selected new systems create a concrete evidence need.
-
-Canonical live workstream and packet codes are recorded in [`project/workstream-codes.md`](project/workstream-codes.md). The generated maturity block below intentionally preserves some historical `PR-*` / `P0*` aliases where they are embedded in existing evidence descriptions; those aliases do not override the live `PUB` / `PHY` / `EPR` namespace.
-
-## Maturity and workstream status
+This collapsed block is retained temporarily because the existing repository-integrity check still verifies the historical renderer. Its `Current state` / `Next meaningful gate` columns are **not execution authority**; PCO owns current execution state above.
 
 <!-- maturity-status:start -->
 Ovid’s House uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.
@@ -116,37 +145,11 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 | **Delivery** | **M2** | 2026-10-28 | DEL-00 inventories the existing delivery modules, N01–N17 and other brief obligations, with provisional discipline/stage allocations, evidence dependencies and rewind owners under #854. The authorised IAS/OAS/HAD/BCR/HRS programme now creates concrete future assembly and construction-resolution inputs, but no new delivery acceptance is implied. Current-house technical migration, competent review, physical evidence and commission-specific acceptance remain outstanding. | Reconcile DEL when BCR admits concrete IAS/OAS/HAD assembly obligations, and when RH-11/EPR, applicable PHY results or a real commission supplies evidence. Add fabrication, tolerance, shop-drawing, equivalence, first-article, commissioning or reinstatement requirements only where a selected assembly earns them. Declare source applicability before issuing older packages for the Georgian proposal. No project acceptance or maturity increase follows from programme authorisation. |
 <!-- maturity-status:end -->
 
-## Principal risks
+</details>
 
-**Deployment authority.** Law, guidance, planning policy, site facts, professional judgement and project preference must not collapse into one machine result. Unknown evidence must remain unknown; England/London targets must not become doctrine; and incompatibility must remain an acceptable result rather than forcing the Reference House to mutate until every plot fits.
+## Reading current state
 
-**Candidate/conformance overreach.** DPL must evaluate authored architecture, not become an optimiser or hidden parametric-house generator. One failed candidate is not site incompatibility, and selecting a next evidence target is not candidate readiness.
-
-**Readiness and result overreach.** Candidate-authoring readiness is not compatibility. RP-006 remains unready at 2/6, the empirical corpus remains 0 of 8 ready, and instrumented controls must stay excluded from that sample. Neither positive compatibility nor incompatibility follows from a reduced blocker count.
-
-**Editorial assurance.** EDA has accepted the reviewed source hashes and typeset object. The six-part BSR migration and the substantive IAS/OAS/HAD/BCR/HRS work deliberately create material content and layout changes, so renewed proportionate whole-book and typeset-object assurance is a required downstream gate. Earlier EDA evidence remains valid for its reviewed source set; it does not certify new chapters or plates.
-
-**M4 scope drift.** Later DPL execution does not silently expand the declared M4 proposition into general multi-site validity, real-site deployability, regulatory compliance or construction adequacy.
-
-**Physical and professional evidence.** Internal control does not prove structural, fire, MEP, building-physics or construction adequacy. PHY-03/PHY-04 and competent EPR/RH-11 review remain material evidence gaps, with any additional IAS/OAS test/review routes requiring a concrete BCR trigger rather than automatic programme growth.
-
-**Architectural authority drift.** Repetition of the Reference House can make its Georgian grammar, courtyard form, masonry family, low-slope roof, ASHP/PV or 300 mm stair preference appear universal. Generalise the reason; keep project choice local.
-
-**Parallel-design drift.** IAS, OAS and HAD are intentionally parallel now that BSR has fixed their manuscript and authority interfaces. They must consume the same controlled Reference House/PLT geometry and raise explicit rewinds rather than silently creating incompatible plan/section/facade variants.
-
-**Publication freeze integrity.** DRW v1, accepted TYP and prior EDA evidence remain protected baselines for their stated scopes. The new programme is a deliberate substantive successor, not permission to mutate those historical releases. PUB-02 final manufacture must wait for HRS-resolved architecture, final PLT integration/physical drawing freeze and renewed EDA assurance.
-
-## Closed or frozen tracks
-
-- **BSR — complete.** The six-part book topology and downstream authority interfaces are fixed; reopen only for a demonstrated structural contradiction.
-- **HFI — complete.** All authorised packets are closed; surviving consequences live with their destination authorities.
-- **G-01 v0.1 — controlled.** Reopen only on an explicit evidence trigger.
-- **Reference House bounded compiler / CH — controlled.** RH-C1→RH-C5 and CH-00→CH-08 are closed at their stated proof scope.
-- **DRW — complete and frozen.** Any later representational change requires explicit authority.
-- **PUB-SAN / PUB-NOM — complete.** Their public-surface and naming constraints remain active.
-
-## Status-maintenance rule
-
-Update this page when a major workstream changes maturity, prototype or professional evidence changes a conclusion, the Reference House reaches a new integration state, a first-class programme opens/closes, or the recommended next work materially changes.
-
-The maturity block is generated from `project/maturity.ts`; use `npm run status:update` after changing the typed maturity registry and commit the generated result together.
+- Use the **Ready frontier** above for work that can start without violating a hard dependency.
+- Use owning workstream issues/programmes for the architectural question, scope and exit criteria behind a node.
+- A completed node does not itself raise maturity; maturity remains an explicit evidence-backed judgement.
+- Possible future PHY/EPR/DEL work is not a blocker until a concrete obligation is admitted into the graph.
