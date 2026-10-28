@@ -4,6 +4,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   directBlockers,
+  nodesByDerivedState,
   readyFrontier,
   structuralCriticalPath,
   unlocksOnCompletion,
@@ -12,6 +13,10 @@ import {
 import { controlNodes } from './nodes/index.js'
 import type { ControlNode } from './types.js'
 import { validateControlPlane, validateGraphStructure } from './validate.js'
+import {
+  maturityAssessments,
+  maturityFreshnessFromChangedPaths
+} from '../maturity-freshness.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 
@@ -28,7 +33,16 @@ test('current PCO registry and graph are internally valid', () => {
 test('current ready frontier exposes useful parallel work without inventing conditional evidence blockers', () => {
   const ready = new Set(readyFrontier(controlNodes).map((candidate) => candidate.id))
 
-  for (const expected of ['PCO-04', 'IAS-00', 'OAS-00', 'HAD-00', 'BCR-SCAFFOLD']) {
+  for (const expected of [
+    'PCO-08',
+    'IAS-00',
+    'OAS-00',
+    'HAD-00',
+    'BCR-SCAFFOLD',
+    'PHY-03-ENGINEERING',
+    'PHY-04',
+    'EPR-RH11'
+  ]) {
     assert.equal(ready.has(expected), true, `${expected} should be ready`)
   }
 
@@ -37,6 +51,21 @@ test('current ready frontier exposes useful parallel work without inventing cond
     'TRIAD-GATE'
   ])
   assert.equal(node('BCR-CONVERGENCE').dependencies.some((id) => /PHY|EPR|DEL/.test(id)), false)
+})
+
+test('held evidence research never leaks into the ready frontier', () => {
+  const groups = nodesByDerivedState(controlNodes)
+  assert.deepEqual(
+    groups.held.map((candidate) => candidate.id).sort(),
+    ['PHY-01', 'PHY-02']
+  )
+  assert.equal(groups.ready.some((candidate) => candidate.id === 'PHY-01'), false)
+  assert.equal(groups.ready.some((candidate) => candidate.id === 'PHY-02'), false)
+})
+
+test('PHY-03 engineering does not silently authorize a physical specimen node', () => {
+  assert.equal(node('PHY-03-ENGINEERING').aliases?.includes('PHY-03'), true)
+  assert.equal(controlNodes.some((candidate) => String(candidate.id) === 'PHY-03B'), false)
 })
 
 test('shared interface work is canonical once with per-stream packet aliases', () => {
@@ -77,6 +106,22 @@ test('structural critical path is available without pretending missing effort es
   assert.equal(path.length > 0, true)
   assert.equal(path.at(-1), 'PUB-02-FINAL')
   assert.equal(weightedCriticalPath(controlNodes), null)
+})
+
+test('maturity evidence drift becomes stale without changing the assessed M-level', () => {
+  const referenceHouse = maturityAssessments.find((assessment) => assessment.id === 'reference-house')
+  assert.ok(referenceHouse)
+  assert.equal(referenceHouse.maturity, 'M3')
+
+  const freshness = maturityFreshnessFromChangedPaths(
+    new Set(['docs/reference-house/whole-house-coordination-audit.md'])
+  )
+  const status = freshness.get('reference-house')
+  assert.equal(status?.state, 'stale')
+  assert.equal(referenceHouse.maturity, 'M3')
+
+  const unrelated = freshness.get('pattern-language')
+  assert.equal(unrelated?.state, 'fresh')
 })
 
 test('validation rejects dangling dependencies, cycles and started work with unmet hard prerequisites', () => {
