@@ -1,7 +1,18 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
-## Current direction and source
+## Layout reopened — architectural review pair
+
+The owner subsequently reopens the plan using marked ground/first sketches.
+[Layout revision 02](../reference-house/layout-revision-02.md) owns the new
+3.5 m courtyard, aligned narrower stair/west gallery, compressed service stack,
+front study/cloak/WC/utility changes, southern courtyard entrance and upper
+entry void / four-bedroom arrangement. `georgian/layout-revision.ts` and PLT15
+are the current **plan review candidate**. The previous orthographic/analysis
+family below remains retained context and must not be mixed with the changed
+plans as a coordinated current house. Full family rollout follows plan review.
+
+## Previous working basis and source
 
 The owner accepts the present 12 m square floor plan for continued PLT work and
 defers personal layout refinements and modest-plot redesign. Uniformity and
