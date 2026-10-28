@@ -31,6 +31,13 @@
   @bottom-left { content: none; }
   @bottom-right { content: none; }
 }
+
+/* Part VI was added after the original five-part production contract.
+   Assign it to the same named-page family before applying first-page furniture rules. */
+body.publication-part-document:has(h1[id="part-vi"], h1[id^="part-vi-"]) {
+  page: publication-part-vi;
+}
+
 @page :nth(1 of publication-part-i) {
   @top-left { content: none !important; }
   @top-right { content: none !important; }
