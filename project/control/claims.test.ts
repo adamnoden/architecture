@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import type { ControlNode } from './types.js'
 import { controlNodes } from './nodes/index.js'
 import {
   canonicalNodeId,
@@ -17,9 +18,36 @@ import {
 
 const now = new Date('2026-10-28T22:40:00.000Z')
 
-function node(id: string) {
-  const candidate = controlNodes.find((item) => item.id === id)
-  if (!candidate) throw new Error(`missing node ${id}`)
+const operationalFixture: readonly ControlNode[] = [
+  {
+    id: 'TST-READY',
+    owners: ['ACO'],
+    title: 'Synthetic ready fixture',
+    dependencies: [],
+    lifecycle: 'planned',
+    closeoutEvidence: []
+  },
+  {
+    id: 'TST-UPSTREAM',
+    owners: ['ACO'],
+    title: 'Synthetic incomplete upstream',
+    dependencies: [],
+    lifecycle: 'planned',
+    closeoutEvidence: []
+  },
+  {
+    id: 'TST-BLOCKED',
+    owners: ['ACO'],
+    title: 'Synthetic blocked fixture',
+    dependencies: ['TST-UPSTREAM'],
+    lifecycle: 'planned',
+    closeoutEvidence: []
+  }
+]
+
+function fixtureNode(id: string): ControlNode {
+  const candidate = operationalFixture.find((item) => item.id === id)
+  if (!candidate) throw new Error(`missing fixture node ${id}`)
   return candidate
 }
 
@@ -33,7 +61,7 @@ test('aliases resolve to one canonical lease path', () => {
 
 test('normal acquisition creates generation 1 and rejects a live second claimant', () => {
   const first = nextNormalAcquisition(null, {
-    node: 'ACO-01',
+    node: 'TST-READY',
     leaseId: 'lease-a',
     holder: { kind: 'chatgpt', label: 'session-a' },
     now
@@ -43,7 +71,7 @@ test('normal acquisition creates generation 1 and rejects a live second claimant
   assert.throws(
     () =>
       nextNormalAcquisition(first, {
-        node: 'ACO-01',
+        node: 'TST-READY',
         leaseId: 'lease-b',
         holder: { kind: 'codex', label: 'session-b' },
         now: new Date('2026-10-28T23:00:00.000Z')
@@ -54,7 +82,7 @@ test('normal acquisition creates generation 1 and rejects a live second claimant
 
 test('expiry grace prevents boundary overlap, then permits reacquisition', () => {
   const first = createClaimRecord({
-    node: 'ACO-01',
+    node: 'TST-READY',
     generation: 1,
     leaseId: 'lease-a',
     holder: { kind: 'chatgpt' },
@@ -66,7 +94,7 @@ test('expiry grace prevents boundary overlap, then permits reacquisition', () =>
   assert.throws(
     () =>
       nextNormalAcquisition(first, {
-        node: 'ACO-01',
+        node: 'TST-READY',
         leaseId: 'lease-b',
         holder: { kind: 'codex' },
         now: new Date('2026-10-28T22:55:30.000Z')
@@ -75,7 +103,7 @@ test('expiry grace prevents boundary overlap, then permits reacquisition', () =>
   )
 
   const second = nextNormalAcquisition(first, {
-    node: 'ACO-01',
+    node: 'TST-READY',
     leaseId: 'lease-b',
     holder: { kind: 'codex' },
     now: new Date('2026-10-28T22:57:01.000Z')
@@ -86,7 +114,7 @@ test('expiry grace prevents boundary overlap, then permits reacquisition', () =>
 
 test('release allows immediate reacquisition and increments generation', () => {
   const first = createClaimRecord({
-    node: 'ACO-01',
+    node: 'TST-READY',
     generation: 1,
     leaseId: 'lease-a',
     holder: { kind: 'chatgpt' },
@@ -96,7 +124,7 @@ test('release allows immediate reacquisition and increments generation', () => {
   assert.equal(released.state, 'released')
 
   const second = nextNormalAcquisition(released, {
-    node: 'ACO-01',
+    node: 'TST-READY',
     leaseId: 'lease-b',
     holder: { kind: 'codex' },
     now: new Date('2026-10-28T22:50:01.000Z')
@@ -106,14 +134,14 @@ test('release allows immediate reacquisition and increments generation', () => {
 
 test('superseded generations cannot renew or release a newer lease', () => {
   const first = createClaimRecord({
-    node: 'ACO-01',
+    node: 'TST-READY',
     generation: 1,
     leaseId: 'lease-a',
     holder: { kind: 'chatgpt' },
     now
   })
   const takeover = forceTakeover(first, {
-    node: 'ACO-01',
+    node: 'TST-READY',
     leaseId: 'lease-b',
     holder: { kind: 'human', label: 'owner' },
     now: new Date('2026-10-28T22:50:00.000Z'),
@@ -128,7 +156,7 @@ test('superseded generations cannot renew or release a newer lease', () => {
 
 test('renewal extends from renewal time but cannot resurrect a fully expired lease', () => {
   const first = createClaimRecord({
-    node: 'ACO-01',
+    node: 'TST-READY',
     generation: 1,
     leaseId: 'lease-a',
     holder: { kind: 'chatgpt' },
@@ -147,14 +175,14 @@ test('renewal extends from renewal time but cannot resurrect a fully expired lea
 test('malformed records fail closed', () => {
   assert.throws(() => parseClaimRecord('{'), /Malformed claim JSON/)
   assert.throws(
-    () => parseClaimRecord(JSON.stringify({ schemaVersion: 1, node: 'ACO-01' }), 'ACO-01'),
+    () => parseClaimRecord(JSON.stringify({ schemaVersion: 1, node: 'TST-READY' }), 'TST-READY'),
     /generation/
   )
 })
 
 test('serialization round-trips a valid record', () => {
   const record = createClaimRecord({
-    node: 'ACO-01',
+    node: 'TST-READY',
     generation: 1,
     leaseId: 'lease-a',
     holder: { kind: 'chatgpt', label: 'session-a' },
@@ -163,30 +191,30 @@ test('serialization round-trips a valid record', () => {
     pr: 123,
     note: 'implement runtime store'
   })
-  assert.deepEqual(parseClaimRecord(serializeClaimRecord(record), 'ACO-01'), record)
+  assert.deepEqual(parseClaimRecord(serializeClaimRecord(record), 'TST-READY'), record)
 })
 
 test('operational state keeps structural truth orthogonal to occupancy', () => {
-  const readyNode = node('ACO-04')
+  const readyNode = fixtureNode('TST-READY')
   const live = createClaimRecord({
-    node: 'ACO-04',
+    node: 'TST-READY',
     generation: 1,
     leaseId: 'lease-a',
     holder: { kind: 'chatgpt' },
     now
   })
-  assert.equal(operationalState(readyNode, controlNodes, null, now).occupancy, 'available')
-  assert.equal(operationalState(readyNode, controlNodes, live, now).occupancy, 'claimed')
+  assert.equal(operationalState(readyNode, operationalFixture, null, now).occupancy, 'available')
+  assert.equal(operationalState(readyNode, operationalFixture, live, now).occupancy, 'claimed')
 
-  const blockedNode = node('PUB-02-FINAL')
+  const blockedNode = fixtureNode('TST-BLOCKED')
   const invalidClaim = createClaimRecord({
-    node: 'PUB-02-FINAL',
+    node: 'TST-BLOCKED',
     generation: 1,
     leaseId: 'lease-b',
     holder: { kind: 'codex' },
     now
   })
-  const invalid = operationalState(blockedNode, controlNodes, invalidClaim, now)
+  const invalid = operationalState(blockedNode, operationalFixture, invalidClaim, now)
   assert.equal(invalid.structural, 'blocked')
   assert.equal(invalid.occupancy, 'invalid-live-claim')
 })

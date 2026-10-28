@@ -51,7 +51,7 @@ export const acoNodes = defineNodes([
     owners: ['ACO'],
     title: 'Self-hosted adversarial closeout',
     dependencies: ['ACO-03'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/aco/aco-04-adversarial-closeout.md']
   }
 ])
