@@ -48,7 +48,7 @@ export function createRevisionScene(level:'GROUND'|'FIRST',scale:100|50):Drawing
  text('north',10800,12600,'N ↑','marker')
  if(level==='FIRST'){
   line('wardrobe-label-leader',7000,10450,7000,10000);line('ensuite-label-leader',9200,3350,9700,3350);
-  const v=entryVoid;line('void-guard',v.x,v.y+v.depth,v.x+v.width,v.y+v.depth);line('void-diagonal',v.x,v.y,v.x+v.width,v.y+v.depth,'overhead')
+  const v=entryVoid;line('void-guard',v.x,v.y+v.depth,v.x+v.width,v.y+v.depth);line('void-diagonal-low',v.x,v.y,v.x+v.width*.24,v.y+v.depth*.24,'overhead');line('void-diagonal-high',v.x+v.width*.76,v.y+v.depth*.76,v.x+v.width,v.y+v.depth,'overhead')
   text('void-label',6000,1700,'Open to hall','label');text('landing-label',6000,3250,'Bridge','note')
   for(const id of ['bed2','bed3','bed4','principal'] as const){const b=d.furniture[id];const q=p.rect({x:b.x,y:b.y,width:b.width,height:b.depth});scene.primitives.push({kind:'rect',id:id+'-bed',...q,stroke:'secondary',fill:'none'})}
  }else text('hall-label',6200,1400,'Entrance hall','label')
