@@ -31,6 +31,8 @@ Normal agents must not force-take a live lease merely to avoid waiting. Force ta
 
 If the live lease store is unavailable or malformed, fail closed for new collision-prone work rather than assuming the node is free.
 
+If a node becomes blocked, held, complete or cancelled while a lease is live, the lease becomes an invalid coordination condition and cannot be renewed. It can still be released. A canonical orphaned lease can also be released even if its node has subsequently been removed from the graph.
+
 If substantial authorised work has no suitable node, add a bounded node to the owning workstream before treating the work as part of the execution programme. New first-class workstreams must be registered with exactly three uppercase letters; historical exceptions/aliases are not precedents for new codes.
 
 ## Lease commands
@@ -40,12 +42,13 @@ The GitHub-backed client uses `GH_TOKEN` or `GITHUB_TOKEN` for mutations. It pre
 ```text
 npm run control:claims
 npm run control:claim -- NODE --holder-kind chatgpt --holder-label session-name --branch work/example
+npm run control:verify -- NODE --lease-id UUID --generation N
 npm run control:renew -- NODE --lease-id UUID --generation N
 npm run control:release -- NODE --lease-id UUID --generation N --reason completed
 npm run control:force -- NODE --holder-kind human --holder-label owner --reason "confirmed ghost session"
 ```
 
-Aliases resolve to canonical node ids before touching the lease store, so shared packet aliases cannot acquire separate leases.
+Aliases resolve to canonical node ids before touching the lease store, so shared packet aliases cannot acquire separate leases. `verify` and `renew` require a checkout whose PCO structural graph matches current `main`. `release` is intentionally more permissive so an orphaned canonical lease can always be relinquished.
 
 ## Sources
 
@@ -53,7 +56,7 @@ Aliases resolve to canonical node ids before touching the lease store, so shared
 - `nodes/` — sharded executable packets/gates and deliberate lifecycle.
 - `derive.ts` — readiness, blockers, frontier, unlocks and structural critical path.
 - `claims.ts` — lease schema, canonical resolution, expiry and operational-state semantics.
-- `claim-store.ts` — race-safe store-level acquire/renew/release/takeover operations.
+- `claim-store.ts` — race-safe store-level acquire/verify/renew/release/takeover operations.
 - `validate.ts` — structural and evidence-contract guardrails.
 - `render.ts` — human-readable durable projections.
 - `../maturity.ts` — separate epistemic maturity authority.
