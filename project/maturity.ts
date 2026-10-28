@@ -309,11 +309,11 @@ export const workstreamStatuses = [
     id: 'publication',
     name: 'Publication',
     maturity: 'M4',
-    reviewedOn: '2026-10-27',
+    reviewedOn: '2026-10-28',
     currentState:
-      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete; DRW v1 remains frozen. TYP has an accepted RC2 production release. EDA-00–08 are complete: the 128-source audit, whole-book recurrence, adversarial read and A4/B5/Primer page proof are accepted. Current production pagination is 275 A4 / 327 B5 pages plus the 16-page Primer. ADE capability/migration is internally complete with ground/first-floor candidates and a non-Reference-House contrast proof. The independent PLT physical review and drawing freeze remain open; no print tokens are frozen. EDA closure does not raise publication maturity or authorise final manufacture.',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete for the source/object scopes they actually reviewed; DRW v1 remains frozen and TYP has an accepted RC2 production release. EDA-00–08 remain valid historical assurance for the 128-source candidate book, and ADE remains internally complete at its stated representation scope. The owner has now authorised a material six-part book/Reference-House resolution programme (BSR/IAS/OAS/HAD/BCR/HRS), so the previous EDA content clearance and PLT-only manufacture path are no longer sufficient to certify the enlarged final book. Publication maturity remains M4; no prior evidence is erased or promoted.',
     nextGate:
-      'Hold the owner-accepted Georgian floor plan and resume PLT plate refinement: source-consistent elevation, section, roof and analytical families, whole-set subtraction, physical proof and integration. Technical successor obligations, physical acceptance and final exemplar/token freeze remain open. PR-02 preparation may consume the accepted typography contract; final private-object manufacture still waits for the independent PLT drawing freeze. PR-03/PR-04 independent criticism remains required before M5 or public-release claims.',
+      'PUB-02 may continue content-independent object preparation using the accepted typography contract. Final private-object content/drawing freeze and manufacture now require BSR structural migration; IAS/OAS/HAD design resolution; BCR construction-resolution convergence; HRS final architectural synthesis; final PLT integration/physical drawing freeze; and renewed EDA assurance over the enlarged source/object. PUB-03/PUB-04 independent criticism remains required before M5 or public-release claims.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
@@ -408,11 +408,11 @@ export const workstreamStatuses = [
     id: 'delivery',
     name: 'Delivery',
     maturity: 'M2',
-    reviewedOn: '2026-10-27',
+    reviewedOn: '2026-10-28',
     currentState:
-      'DEL-00 inventories the three existing delivery modules, N01–N17 and other brief obligations, with provisional discipline/stage allocations, evidence dependencies and rewind owners under #854. Current-house technical migration, competent review, physical evidence and commission-specific acceptance remain outstanding.',
+      'DEL-00 inventories the existing delivery modules, N01–N17 and other brief obligations, with provisional discipline/stage allocations, evidence dependencies and rewind owners under #854. The authorised IAS/OAS/HAD/BCR/HRS programme now creates concrete future assembly and construction-resolution inputs, but no new delivery acceptance is implied. Current-house technical migration, competent review, physical evidence and commission-specific acceptance remain outstanding.',
     nextGate:
-      'Reconcile affected requirements when current-house review/technical migration, RH-11 findings, P03/P04 results or a real commission supplies evidence. Declare source applicability before issuing older packages for the Georgian proposal. No project acceptance, new prototype family or maturity increase follows from the inventory.',
+      'Reconcile DEL when BCR admits concrete IAS/OAS/HAD assembly obligations, and when RH-11/EPR, applicable PHY results or a real commission supplies evidence. Add fabrication, tolerance, shop-drawing, equivalence, first-article, commissioning or reinstatement requirements only where a selected assembly earns them. Declare source applicability before issuing older packages for the Georgian proposal. No project acceptance or maturity increase follows from programme authorisation.',
     evidence: {
       framed: ['docs/delivery/README.md', 'project/del/delivery-programme.md'],
       developed: [
