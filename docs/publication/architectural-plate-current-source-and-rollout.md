@@ -13,6 +13,17 @@ PLT13/14/15 remain historical proof identities. The old transparent anatomy is
 withheld from this successor; synthesis remains open. Screen approval is not
 physical acceptance. Use the new record for current geometry and next steps.
 
+## Current book composition and subtraction proof
+
+The [book composition record](architectural-plate-book-composition.md) owns
+`georgian/book-composition.ts` and PLT17: complete facing plans/services/roof,
+a true 1:50 principal spread with 1:500 locator, mirrored page frames and a
+12 mm critical fold band on each side. Eighteen candidate drawings are judged
+into twelve readings; every retained, merged, omitted or withheld view has an
+explicit disposition. The B5/A4 fourteen-page sampler and B5 facing review are
+not final manuscript sequence or physical acceptance. Frozen-register changes,
+current setting/synthesis gaps, prose intervals and integration remain open.
+
 ## Retained previous working basis and source
 
 The owner accepts the present 12 m square floor plan for continued PLT work and
