@@ -1,5 +1,7 @@
 # RSI-04 — Reference House invariants / flexibility contract
 
+> Historical RSI study. The programme was closed by owner scope decision on 2026-10-28; see [closure and current authority](README.md). Original handoffs and successor permissions below are retained as history, not an active work queue.
+
 Issue: #899  
 Programme: #891  
 Upstream: RSI-03 / #898  

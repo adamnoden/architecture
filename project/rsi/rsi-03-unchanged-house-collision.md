@@ -1,5 +1,7 @@
 # RSI-03 — unchanged B4 house × modest site collision test
 
+> Historical RSI study. The programme was closed by owner scope decision on 2026-10-28; see [closure and current authority](README.md). Original handoffs and successor permissions below are retained as history, not an active work queue.
+
 Issue: #898  
 Programme: #891  
 Site: `RSI-RS-01`  

@@ -1,5 +1,7 @@
 # RSI-01 — ordinary detached-plot morphology benchmark
 
+> Historical RSI study. The programme was closed by owner scope decision on 2026-10-28; see [closure and current authority](README.md). Original handoffs and successor permissions below are retained as history, not an active work queue.
+
 Issue: #895  
 Programme: #891  
 Evidence record: `project/rsi/data/detached-plot-morphology.json`  

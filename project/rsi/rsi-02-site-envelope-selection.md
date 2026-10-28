@@ -1,5 +1,7 @@
 # RSI-02 — modest detached Reference Site envelope selection
 
+> Historical RSI study. The programme was closed by owner scope decision on 2026-10-28; see [closure and current authority](README.md). Original handoffs and successor permissions below are retained as history, not an active work queue.
+
 Issue: #896  
 Programme: #891  
 Upstream: RSI-00 / #894; RSI-01 / #895

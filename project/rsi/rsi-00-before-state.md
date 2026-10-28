@@ -1,5 +1,7 @@
 # RSI-00 — before-state freeze
 
+> Historical RSI study. The programme was closed by owner scope decision on 2026-10-28; see [closure and current authority](README.md). Original handoffs and successor permissions below are retained as history, not an active work queue.
+
 Issue: #894  
 Programme: #891  
 Baseline main: `8593bb43e4dfdadbca7c4923fa7e92e3b18c96b4`  
