@@ -96,7 +96,7 @@ export const pcoNodes = defineNodes([
     owners: ['PCO'],
     title: 'Adversarial closeout',
     dependencies: ['PCO-07'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/pco/pco-08-adversarial-closeout.md']
   }
 ])
