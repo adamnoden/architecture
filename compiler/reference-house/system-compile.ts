@@ -160,6 +160,6 @@ export const compileReferenceHouseSystem = (
   return {
     ...core,
     identity: createReferenceHouseCompileIdentity(source, core, privateStairGeometryMethod),
-    lineage: createReferenceHouseLineage(core)
+    lineage: createReferenceHouseLineage(source, core)
   }
 }
