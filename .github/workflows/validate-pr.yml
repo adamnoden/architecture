@@ -29,6 +29,9 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
+      - name: Render project-control projections for validation
+        run: npm run status:update
+
       - name: Check repository health
         run: npm run check
 
