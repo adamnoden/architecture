@@ -1,6 +1,6 @@
 # BSR — Book Structure Refactor
 
-**State:** complete pending integration of this branch  
+**State:** complete  
 **Tracking:** [#940 — BSR book structure refactor](https://github.com/adamnoden/architecture/issues/940)  
 **Programme map:** [`../book-resolution-programme.md`](../book-resolution-programme.md)
 
@@ -26,7 +26,7 @@ The reader-facing authority for this structure is `docs/manuscript/publication-a
 - **BSR-00 — structural inventory: complete.** The old five-part topology, publication manifest/adapters, navigation and duplicate Reference House scenario ownership were mapped before mutation.
 - **BSR-01 — six-part migration: complete.** Parts III–V use the accepted titles; the Reference House future-intervention chapter has moved from the design-proposition part into the proving part; settled architectural prose was otherwise preserved.
 - **BSR-02 — new chapter stubs: complete.** Part IV now contains explicit interfaces for **The Interior Architecture System** and **Openings as Replaceable Assemblies**; Part V contains **Technical Closure and Construction Readiness**; Part VI — **The House** is established as a deliberately restrained final architectural section.
-- **BSR-03 — reconciliation: complete subject to repository CI on integration.** Manuscript overview, both reader guides, publication architecture, Working Edition manifest, Primer wording and VitePress navigation now express one six-part sequence and one authority boundary.
+- **BSR-03 — reconciliation: complete.** Manuscript overview, both reader guides, publication architecture, Working Edition manifest, Primer wording, VitePress navigation, project status and production pagination all express one six-part sequence and one authority boundary. Integration CI passed across repository health, publication, frozen drawing, nomenclature and production-typography checks.
 
 ## Ownership handoff
 
@@ -39,7 +39,7 @@ BSR has intentionally left substantive design unresolved.
 - `HRS` #945 owns final post-BCR architectural synthesis and the admission of resolved material to Part VI.
 - `PLT`, `PHY`, `EPR`, `DEL`, `EDA` and `PUB` retain their existing authorities.
 
-IAS/OAS/HAD are therefore unblocked by book topology once this closeout is integrated. They work in parallel against the same controlled Reference House/PLT source and must raise explicit rewind requests rather than fork geometry silently.
+IAS/OAS/HAD are therefore unblocked by book topology. They work in parallel against the same controlled Reference House/PLT source and must raise explicit rewind requests rather than fork geometry silently.
 
 ## Proof boundary
 
@@ -51,4 +51,4 @@ No architectural, technical, physical, professional, regulatory, site or publica
 
 ## Exit gate
 
-**Satisfied at BSR scope, subject only to integration CI.** The canonical repository now expresses the accepted six-part sequence; new chapter interfaces have explicit downstream owners and proof boundaries; Reference House future-intervention scenarios have one home in Part V; affected navigation/build/reader references are reconciled; and IAS/OAS/HAD can proceed without inventing book structure.
+**Satisfied.** The canonical repository expresses the accepted six-part book; new chapter interfaces have explicit downstream owners and proof boundaries; Reference House future-intervention scenarios have one home in Part V; affected navigation/build/reader references and production pagination are reconciled; integration CI is green; and IAS/OAS/HAD can proceed without inventing book structure.
