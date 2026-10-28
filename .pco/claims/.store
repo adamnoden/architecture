@@ -1,0 +1,9 @@
+ACO runtime claim store
+
+This branch is retained for volatile execution coordination only.
+
+- canonical branch: runtime/claims
+- canonical records: .pco/claims/<CANONICAL_NODE_ID>.json
+- never merge this branch into main
+- Git history is the lease audit trail
+- claim expiry is derived; released records are retained and reused by generation
