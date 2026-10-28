@@ -49,6 +49,9 @@ rhythm of a future Part VI whose design source is not yet settled.
 
 Print BOOK at actual size, retaining its lead-in pages and duplex sequence.
 Print the selected A2 WALL pages at actual size. Review across the room (A2),
+and include the selected A1 principal-section proof (`publication/specimens/plt20`)
+at true 1:25, as required by the original PLT-11 minimum. Its geometry is
+reprojected at that scale; physical strokes and type remain unchanged. Review
 at normal reading distance and in close scrutiny. Record keep/revise/reject for
 line hierarchy, cut/zone balance, small text, aperture legibility, book pairs,
 spread folds and overall subtraction. Screen inspection is separate evidence.

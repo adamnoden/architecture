@@ -16,10 +16,10 @@ const provenance={...sectionProvenance,sourceIds:['docs/publication/architectura
 const metadata={sources:provenance.sourceIds.join(','),authority:provenance.authority,precision:provenance.precision,constructionDetailSelected:false}
 /** Height of the authored twin-pitched ring, not a generic roof solver. */
 export const currentRoofZ=(x:number,y:number)=>roofHeight(Math.min(x,y,design.shell-x,design.shell-y))
-const context=(view:string,scale:100|50)=>{
- const origin=scale===100?{x:12.5,y:18}:{x:90,y:150}
+const context=(view:string,scale:100|50|25)=>{
+ const origin=scale===100?{x:12.5,y:18}:scale===25?{x:57,y:70}:{x:90,y:150}
  const p=createSectionPaperProjection({scaleDenominator:scale,horizontalBounds:{min:0,max:design.shell},verticalBounds:{min:-2400,max:design.shell},paperOrigin:origin})
- const scene:DrawingSceneV2={widthMm:scale===100?145:420,heightMm:scale===100?190:594,viewId:`LAYOUT-FAMILY-${view}-${scale}`,sourceId:layoutFamilySource.id,title:view,description:'Coordinated source-owned candidate; technical and physical acceptance limits retained.',scaleDenominator:scale,primitives:[]}
+ const scene:DrawingSceneV2={widthMm:scale===100?145:scale===25?594:420,heightMm:scale===100?190:scale===25?841:594,viewId:`LAYOUT-FAMILY-${view}-${scale}`,sourceId:layoutFamilySource.id,title:view,description:'Coordinated source-owned candidate; technical and physical acceptance limits retained.',scaleDenominator:scale,primitives:[]}
  const line=(id:string,x:number,z:number,xx:number,zz:number,role:DrawingLineRole='secondary',dash?:DrawingDashRole)=>scene.primitives.push({kind:'line',id,a:p.point(x,z),b:p.point(xx,zz),role,dash,metadata})
  const text=(id:string,x:number,z:number,value:string,role:'note'|'label'|'marker'='note')=>scene.primitives.push({kind:'text',id,...p.point(x,z),value,role,anchor:'middle',metadata})
  const box=(id:string,x:number,z:number,w:number,h:number,fill:'none'|'faint'='none',dash?:DrawingDashRole)=>scene.primitives.push({kind:'path',id,rings:[[p.point(x,z),p.point(x+w,z),p.point(x+w,z+h),p.point(x,z+h)]],stroke:'secondary',fill,dash,metadata})
@@ -70,7 +70,7 @@ export function createLayoutElevation(view:ElevationView,scale:100|50):DrawingSc
  return finish()
 }
 
-export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100|50){
+export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100|50|25){
  const {scene,p,line,text,box,finish}=context(view,scale),station=view==='PRINCIPAL'?layoutFamilySource.cuts.A:layoutFamilySource.cuts.B,m=layoutSectionAt(station)
  for(const w of m.walls)w.holes=w.holes.map(h=>({...h,id:(h.lo>=design.levels.first?'FIRST-':'GROUND-')+h.id}))
  const assemblies=sectionAssemblyModels(m,y=>currentRoofZ(station,y)-layoutFamilySource.roofBuildZone,{firstFloorRuns:m.firstFloorRuns,storageDeckRuns:m.storageDeckRuns})
