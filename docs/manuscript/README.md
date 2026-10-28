@@ -4,7 +4,7 @@ The manuscript develops the architectural argument for **Ovid’s House**. It be
 
 ## Current canonical reading sequence
 
-Until [BSR — Book Structure Refactor](../../project/bsr/book-structure-refactor-programme.md) closes, the canonical reading sequence remains:
+Until the internal `BSR — Book Structure Refactor` workstream closes, the canonical reading sequence remains:
 
 1. [Preface](preface.md)
 2. [Part I — The Proposition](part-i.md), including the [Governing Principles](governing-principles.md) and [Principle 8 — Design for Repose](principle-08-repose.md)
@@ -22,7 +22,7 @@ Do not infer from the authorised target below that files have already moved or t
 
 ## Authorised target structure
 
-The next major book-development programme is recorded in [`project/book-resolution-programme.md`](../../project/book-resolution-programme.md). BSR will migrate the reader-facing book to:
+The next major book-development programme is recorded internally in `project/book-resolution-programme.md`. BSR will migrate the reader-facing book to:
 
 1. **Part I — The Proposition**
 2. **Part II — Architecture of the Platform**
