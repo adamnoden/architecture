@@ -6,7 +6,9 @@ plan and twin-pitch roof. The owner requests a legible courtyard doorway,
 roof-space support/floor reading, restrained cavity strokes, clear timber support
 interfaces, grounded building and fully articulated windows beyond the cut.
 
-Current source is `georgian/section-exemplar.ts`; PLT10 retains the prior renderer
+This historical proof is retained in `georgian/section-exemplar-05.ts`; the
+[current successor](architectural-plate-section-assemblies.md) owns new work.
+PLT10 retains the prior renderer
 in `section-exemplar-02.ts`. New proof is PLT11 (a specimen identity, not completion
 of programme PLT-11 physical acceptance).
 

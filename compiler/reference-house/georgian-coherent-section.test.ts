@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
-import {createSectionExemplar,design,roofHeight} from './georgian/section-exemplar.js'
+import {createSectionExemplar,design,roofHeight} from './georgian/section-exemplar-05.js'
 test('section distinguishes doorway, roof-space structure and foundation unknowns',()=>{
  const s=createSectionExemplar('PRINCIPAL',100)
  for(const id of ['courtyard-door-leaf','courtyard-threshold','roof-ceiling-member-417.5','limited-storage-deck-1000','ground-build-up-0','foundation-axis-outer-south','foundation-key'])assert.ok(s.primitives.some(p=>p.id===id),id)
