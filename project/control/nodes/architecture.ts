@@ -216,7 +216,7 @@ export const architectureNodes = defineNodes([
     id: 'BCR-CONVERGENCE',
     owners: ['BCR'],
     title: 'Substantive construction-resolution convergence',
-    dependencies: ['BCR-SCAFFOLD', 'TRIAD-GATE'],
+    dependencies: ['BCR-SCAFFOLD', 'TRIAD-GATE', 'MRA-04'],
     lifecycle: 'planned',
     closeoutEvidence: []
   },
@@ -224,7 +224,7 @@ export const architectureNodes = defineNodes([
     id: 'HRS-SYNTHESIS',
     owners: ['HRS'],
     title: 'Post-BCR final house resolution and synthesis',
-    dependencies: ['BCR-CONVERGENCE'],
+    dependencies: ['BCR-CONVERGENCE', 'MRA-05'],
     lifecycle: 'planned',
     closeoutEvidence: []
   }
