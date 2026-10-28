@@ -4,16 +4,17 @@ import {
   ClaimConflictError,
   ClaimStoreUnavailableError,
   acquireClaimFromStore,
+  claimKeyForRead,
   forceAcquireClaimFromStore,
   releaseClaimInStore,
   renewClaimInStore,
   storedClaimFromRaw,
+  verifyClaimInStore,
   type ClaimStore,
   type ClaimWriteResult,
   type StoredClaim
 } from '../project/control/claim-store.js'
 import {
-  canonicalNodeId,
   claimPath,
   claimsBranch,
   claimsDirectory,
@@ -134,7 +135,7 @@ function ensureControlViewMatchesMain(): void {
   ])
   if (changed) {
     throw new Error(
-      `Local branch changes PCO structural state (${changed.split('\n').join(', ')}); run claim/status from a checkout whose control graph matches current main`
+      `Local branch changes PCO structural state (${changed.split('\n').join(', ')}); run claim/status/verify/renew from a checkout whose control graph matches current main`
     )
   }
 }
@@ -355,9 +356,27 @@ async function main(): Promise<void> {
 
     case 'show': {
       if (!args.node) throw new Error('show requires NODE')
-      const node = canonicalNodeId(args.node, controlNodes)
+      const node = claimKeyForRead(args.node, controlNodes)
       const read = await store.read(node)
       console.log(read.stored ? serializeClaimRecord(read.stored.record) : `${node}: no lease record`)
+      return
+    }
+
+    case 'verify': {
+      if (!args.node) throw new Error('verify requires NODE')
+      ensureControlViewMatchesMain()
+      const verified = await verifyClaimInStore(store, args.node, controlNodes, {
+        leaseId: requiredFlag(args.flags, 'lease-id'),
+        generation: optionalInt(args.flags, 'generation')
+      })
+      console.log(JSON.stringify({
+        node: verified.stored.record.node,
+        generation: verified.stored.record.generation,
+        leaseId: verified.stored.record.leaseId,
+        temporal: verified.temporal,
+        observedAt: verified.observedAt.toISOString(),
+        expiresAt: verified.stored.record.expiresAt
+      }, null, 2))
       return
     }
 
@@ -388,6 +407,7 @@ async function main(): Promise<void> {
 
     case 'renew': {
       if (!args.node) throw new Error('renew requires NODE')
+      ensureControlViewMatchesMain()
       printWrite(await renewClaimInStore(store, args.node, controlNodes, {
         leaseId: requiredFlag(args.flags, 'lease-id'),
         generation: optionalInt(args.flags, 'generation'),
@@ -412,7 +432,9 @@ async function main(): Promise<void> {
     }
 
     default:
-      throw new Error(`Unknown command ${args.command}. Use status, show, claim, renew, release or force.`)
+      throw new Error(
+        `Unknown command ${args.command}. Use status, show, verify, claim, renew, release or force.`
+      )
   }
 }
 
