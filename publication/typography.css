@@ -90,7 +90,8 @@ hr {
 
 code { font-family: inherit; font-size: inherit; }
 pre {
-  max-width: 100%;n  margin: 4mm 0 5mm;
+  max-width: 100%;
+  margin: 4mm 0 5mm;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   font-family: var(--publication-serif);
@@ -233,7 +234,6 @@ body.publication-part-document:has(h1[id="part-ii"], h1[id^="part-ii-"]) { page:
 body.publication-part-document:has(h1[id="part-iii"], h1[id^="part-iii-"]) { page: publication-part-iii; }
 body.publication-part-document:has(h1[id="part-iv"], h1[id^="part-iv-"]) { page: publication-part-iv; }
 body.publication-part-document:has(h1[id="part-v"], h1[id^="part-v-"]) { page: publication-part-v; }
-body.publication-part-document:has(h1[id="part-vi"], h1[id^="part-vi-"]) { page: publication-part-vi; }
 
 .publication-division-context { break-before: auto; }
 h1[id^="part-"] {
