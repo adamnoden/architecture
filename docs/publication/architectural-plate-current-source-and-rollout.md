@@ -1,6 +1,10 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
+## Current coordinated section grammar
+
+The [coherent section grammar](architectural-plate-coherent-section.md) now addresses both cut doorways, lighter leaf boundaries, separate support seats, explicit roof-space ceiling/deck, ground reservation and unresolved foundation continuation. It holds plan and roof and retains full aperture detail beyond the cut. Use current `section-exemplar.ts`; earlier interface proofs remain historical.
+
 ## Current material interface refinement
 
 [Timber floor and entrance articulation](architectural-plate-timber-interface.md) separates the floor assembly from masonry, distinguishes leaf fills and makes door/threshold and elevation joinery legible. Plan and twin roof remain held. Use the current `section-exemplar.ts`; the previous fused-floor proof is historical.

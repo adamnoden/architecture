@@ -4,7 +4,7 @@ import {sectionAt} from './sections-roof-01.js'
 import {subtractRectilinearRectangles} from '../../architectural-drawing/rectilinear-region.js'
 import {mm} from '../../units.js'
 import type {DrawingSceneV2,DrawingPrimitiveV2} from '../../publication-drawing-v2/model.js'
-export const design={...prior,id:'RH-TIMBER-INTERFACE-04',roof:{...prior.roof,kind:'inward-outward-pitched-ring',courtEaves:6800,ridgeInset:2100,overhang:200},section:{bearing:75,weather:102.5,cavity:160,inner:140,finish:15,storageInset:1000},floor:{finish:20,deck:22,joist:238,serviceVoid:55,ceiling:15,direction: "longitudinal to principal cut; nominal support on inner leaves"}}
+export const design={...prior,id:'RH-COHERENT-SECTION-05',roof:{...prior.roof,kind:'inward-outward-pitched-ring',courtEaves:6800,ridgeInset:2100,overhang:200},section:{bearing:75,weather:102.5,cavity:160,inner:140,finish:15,storageInset:1000},floor:{finish:20,deck:22,joist:238,serviceVoid:55,ceiling:15,endGap:25,supportProjection:100,ceilingMember:125,loftDeck:22,groundReserve:300,foundationDepthSelected:false,direction: "longitudinal to principal cut; nominal support on inner leaves"}}
 export const roofHeight=(d:number)=>6800+Math.min(d,4200-d)*Math.tan(25*Math.PI/180)
 export const roofTop=()=>roofHeight(2100)
 type R={x0:number;x1:number;y0:number;y1:number}
@@ -35,16 +35,22 @@ export function createSectionExemplar(view:ExemplarView,scale:100|50):DrawingSce
   }
   for(const [a,b]of m.floorRuns){line('ground-'+a,a,0,b,0,'profile');line('ceiling-'+a,a,6550,b,6550)}
   // Platforms stop short of both low eaves; no full-height attic stair.
-  for(const [a,b]of [[1000,3200],[8800,11000]])line('storage-reserve-'+a,a,6900,b,6900,'secondary','datum')
+  for(const [a,b]of m.floorRuns){
+   polygon('roof-ceiling-lining-'+a,[[a,6550],[b,6550],[b,6565],[a,6565]],'faint','secondary')
+   polygon('roof-ceiling-member-'+a,[[a+25,6565],[b-25,6565],[b-25,6690],[a+25,6690]],'none','secondary')
+   line('roof-seat-a-'+a,a,6565,a+100,6565,'primary');line('roof-seat-b-'+a,b-100,6565,b,6565,'primary')
+  }
+  for(const [a,b]of [[1000,3200],[8800,11000]])polygon('limited-storage-deck-'+a,[[a,6690],[b,6690],[b,6712],[a,6712]],'faint','secondary')
   for(const w of m.partitions)inner.push({x0:w.at-62.5,x1:w.at+62.5,y0:w.base+(w.door?2850:0),y1:w.base+3100})
-  for(const [id,rects,fill]of [['weather-leaves',weather,'context'],['inner-floor-partition',inner,'faint']] as const){let rings=joinSectionRegions(rects);if(id==='inner-floor-partition'){const pockets=m.floorRuns.map(([a,b])=>({x0:mm(a-90),x1:mm(b+90),y0:mm(3170),y1:mm(3450)}));rings=subtractRectilinearRectangles(rings,pockets);}primitives.push({kind:'path',id,rings:rings.map(r=>r.map(q=>p(q.x,q.y===6500?roofHeight(Math.min(q.x,12000-q.x))-300:q.y))),stroke:'cut',fill,metadata})}
+  for(const [id,rects,fill]of [['weather-leaves',weather,'context'],['inner-floor-partition',inner,'faint']] as const){let rings=joinSectionRegions(rects);primitives.push({kind:'path',id,rings:rings.map(r=>r.map(q=>p(q.x,q.y===6500?roofHeight(Math.min(q.x,12000-q.x))-300:q.y))),stroke:'primary',fill,metadata})}
   for(const [i,[a,b]]of m.floorRuns.entries()){
-   const lo=a-90,hi=b+90
+   const lo=a+25,hi=b-25
    polygon('floor-finish-'+i,[[a,3430],[b,3430],[b,3450],[a,3450]],'none','secondary')
    polygon('floor-deck-'+i,[[lo,3408],[hi,3408],[hi,3430],[lo,3430]],'faint','secondary')
    polygon('timber-joist-'+i,[[lo,3170],[hi,3170],[hi,3408],[lo,3408]],'none','profile')
-   // Longitudinal member convention; no decorative grain or fictitious spacing.
-   line('timber-end-a-'+i,lo,3170,lo+140,3310);line('timber-end-b-'+i,hi-140,3268,hi,3408)
+   // Separate indicative seats; no timber pockets, anchors or proprietary hanger invented.
+   polygon('seat-left-'+i,[[a,3130],[a+100,3130],[a+100,3170],[a,3170]],'faint','secondary')
+   polygon('seat-right-'+i,[[b-100,3130],[b,3130],[b,3170],[b-100,3170]],'faint','secondary')
    polygon('ceiling-'+i,[[a,3100],[b,3100],[b,3115],[a,3115]],'faint','secondary')
    line('service-void-'+i,a,3142.5,b,3142.5,'secondary','datum')
   }
@@ -54,11 +60,28 @@ export function createSectionExemplar(view:ExemplarView,scale:100|50):DrawingSce
   line('front-threshold',-120,0,470,0,'primary');line('external-ground',-400,-150,0,-150)
   for(const [id,pts]of [['south',[[-200,roofHeight(-200)],[2100,roofTop()],[4400,roofHeight(4400)]]],['north',[[7600,roofHeight(4400)],[9900,roofTop()],[12200,roofHeight(-200)]]]] as const){polygon('roof-'+id,[...pts.map(q=>[...q]),...[...pts].reverse().map(([x,z])=>[x,z-300])],'faint','profile')}
   for(const level of ['GROUND','FIRST'] as const)for(const o of openings(level).filter(o=>o.wall==='court-west')){const z=(level==='GROUND'?0:3450)+750;box('beyond-'+level+o.id,o.centre-500,z,1000,2100);for(const d of [1,2])line(o.id+level+'bar'+d,o.centre-500+1000*d/3,z,o.centre-500+1000*d/3,z+2100);for(const d of [1,2,3])line(o.id+level+'row'+d,o.centre-500,z+2100*d/4,o.centre+500,z+2100*d/4)}
+  // Ground package and support continuation are reservations, not invented footing sections.
+  for(const [i,[a,b]]of m.floorRuns.entries()){
+   polygon('ground-build-up-'+i,[[a,0],[b,0],[b,-300],[a,-300]],'faint','secondary')
+   line('ground-reserve-'+i,a,-180,b,-180,'secondary','datum')
+  }
+  for(const w of m.walls){const x=(w.lo+w.hi)/2;line('foundation-axis-'+w.id,x,-320,x,-900,'secondary','datum');line('foundation-break-a-'+w.id,x-65,-900,x+65,-950);line('foundation-break-b-'+w.id,x-65,-960,x+65,-1010)}
+  line('courtyard-ground',4200,-150,7800,-150)
+  polygon('courtyard-door-frame',[[7990,0],[8050,0],[8050,2850],[7990,2850]],'none','secondary')
+  line('courtyard-door-leaf',8075,50,8075,2790,'primary');line('courtyard-threshold',7750,0,8270,0,'primary')
+  // Retain aperture articulation beyond the cut, with subordinate strokes.
+  for(const level of ['GROUND','FIRST'] as const)for(const o of openings(level).filter(o=>o.wall==='court-west')){
+   const z=(level==='GROUND'?0:3450)+750,id='beyond-detail-'+level+o.id
+   box(id+'-frame',o.centre-440,z+60,880,1980)
+   box(id+'-sill',o.centre-580,z-60,1160,60)
+   box(id+'-head',o.centre-500,z+2100,1000,120)
+  }
   for(const [id,x,z,v]of [['court',6000,7150,'OPEN COURTYARD'],['a',2100,1600,'Entrance hall'],['b',9900,1600,'Family / dining'],['c',2100,5050,'South landing'],['d',9900,5050,'Walk-in']] as const)text(id,x,z,v,id==='court'?'marker':'label')
-  text('key',6000,9500,'Twin 25-degree pitches; low storage only')
-  text('layers',6000,-650,'Floor: finish 20 / deck 22 / joist 238 / service void 55 / ceiling 15 mm')
-  text('scope',6000,-1100,'Timber shown longitudinally; nominal bearing, sizes and junctions unverified')
-  for(const [i,z]of [0,3450,6900].entries()){line('tick-level'+i,-200,z,-50,z);text('level'+i,-650,z+90,(z/1000).toFixed(2))}
+  text('key',6000,10500,'Twin 25-degree pitches; low storage only')
+  text('layers',6000,10000,'Floor: finish 20 / deck 22 / joist 238 / service void 55 / ceiling 15 mm')
+  text('scope',6000,9500,'Indicative seats and limited storage deck; supports and sizes unverified')
+  text('foundation-key',6000,-1350,'Ground build-up reserved; foundation type and depth unresolved')
+  for(const [i,z]of [0,3450,6550].entries()){line('tick-level'+i,-200,z,-50,z);text('level'+i,-650,z+90,(z/1000).toFixed(2))}
  }else if(view==='ROOF'||view==='ROOF-WATER'){
   box('shell',0,0,12000,12000);box('court',4200,4200,3600,3600);box('ridge',2100,2100,7800,7800)
   for(const [x,y,xx,yy]of [[0,0,4200,4200],[12000,0,7800,4200],[12000,12000,7800,7800],[0,12000,4200,7800]])line('hip'+x+y,x,y,xx,yy)
