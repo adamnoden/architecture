@@ -9,7 +9,7 @@ Durable execution authority lives in `project/control/`. Live claim occupancy li
 <!-- project-control:start -->
 Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.
 
-**Structurally ready:** 9 · **Active:** 2 · **Blocked:** 28 · **Held:** 2 · **Done:** 15 · **Cancelled:** 0
+**Structurally ready:** 8 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 15 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,7 +22,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `OAS-00` | Opening taxonomy, baselines and invariants | OAS | — |
 | `HAD-00` | Architectural brief, hierarchy and invariants | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
-| `MRA-00` | Moisture constitution, inventory and threat model | MRA | — |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
@@ -33,6 +32,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner |
 |---|---|---|
+| `MRA-00` | Moisture constitution, inventory and threat model | MRA |
 | `PLT-CURRENT-REVIEW` | Current-source plate capability and physical review work | PLT |
 | `PUB-02-PREP` | Content-independent private-object preparation | PUB |
 
