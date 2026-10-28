@@ -22,7 +22,21 @@ a true 1:50 principal spread with 1:500 locator, mirrored page frames and a
 into twelve readings; every retained, merged, omitted or withheld view has an
 explicit disposition. The B5/A4 fourteen-page sampler and B5 facing review are
 not final manuscript sequence or physical acceptance. Frozen-register changes,
-current setting/synthesis gaps, prose intervals and integration remain open.
+current synthesis, prose intervals and integration remain open.
+
+## Current theoretical setting pair
+
+The [current setting record](architectural-plate-current-setting.md) owns
+`georgian/setting-family.ts` and PLT18. The current 12 m shell and 3.5 m court
+sit within the retained approximate 15.5 m theoretical width, with open-ended
+lateral guides. The companion reading locates the plant opening and states
+external-access obligations without equipment or drainage inventions. B5/A4
+are exactly 1:200; A2 is 1:100. This is current representation of the accepted
+theoretical setting, not an RSI successor, real-site proof or physical verdict.
+
+HRS #945 now owns the final resolved-house handoff to PLT after BCR #944.
+Candidate representation work can continue; final publication drawing freeze
+must follow that design handoff and actual physical acceptance.
 
 ## Retained previous working basis and source
 
@@ -32,9 +46,9 @@ flushness remain project preferences. Do not reopen discretionary architecture
 while finishing the drawing family. Screen approval authorises development;
 physical acceptance and release remain separate.
 
-Use `compiler/reference-house/georgian/orthographic-family.ts` for the current
-coordinated candidate set. The [orthographic record](architectural-plate-orthographic-family.md)
-owns its proof and limits. Its inputs are the held ground/first plan geography,
+The previous candidate set used `compiler/reference-house/georgian/orthographic-family.ts`.
+The [orthographic record](architectural-plate-orthographic-family.md)
+owns that historical proof and its limits. Its inputs were the held ground/first plan geography,
 current twin roof and [shared section assemblies](architectural-plate-section-assemblies.md).
 House choices remain separate from the generic ADE representation engine.
 
@@ -44,7 +58,7 @@ there is no standing attic storey or first-to-loft stair. Roof-space hatch,
 maintenance protection/access, collection, outlets and overflow remain unresolved.
 Do not use the earlier mansard/dormer/upper-stair or outward-only roof as current.
 
-## Current proof set
+## Retained previous orthographic proof
 
 `publication/specimens/plt13` contains twelve sheets: ground, first, locator,
 principal section, service section, front, garden, service side, courtyard
@@ -60,7 +74,7 @@ Courtyard sheets remain inner-wall face readings; complete roof form is shown in
 the principal/service sections and roof plan. No extra west outer elevation is
 added: its historical register exclusion remains.
 
-## Current analytical candidates
+## Retained previous analytical study
 
 The [analysis and synthesis record](architectural-plate-analysis-synthesis.md)
 owns `georgian/analysis-family.ts` and PLT14: six source-preserving plan/roof
@@ -73,9 +87,11 @@ synthesis; neither PLT-08 nor the full analytical family is closed.
 
 | Object | Authority / use |
 |---|---|
-| `georgian/source.ts` and `plan.ts` | Held room, wall, aperture, stair and service geography; historical roof/attic fields are superseded for current orthographics. |
+| `georgian/layout-revision.ts`, `layout-family.ts` and `layout-analysis.ts` | Current reviewed house geography and coordinated candidate drawings. |
+| `georgian/book-composition.ts` and `setting-family.ts` | Current book selection/composition and theoretical-setting candidates; no new architecture or technical approval. |
+| `georgian/source.ts` and `plan.ts` | Shared plan adapter and retained historical source; do not use old design geometry as the current house. |
 | `georgian/section-exemplar.ts` and `section-source.ts` | Current twin roof, reviewed principal section and provisional assembly decisions. |
-| `georgian/orthographic-family.ts` | Current twelve-view projection/coordination adapter. |
+| `georgian/orthographic-family.ts` | Retained pre-layout-revision twelve-view proof adapter. |
 | Shared ADE plan, section and aperture modules | Reusable bounded representation; no engineering adequacy or project architecture invented. |
 | Earlier ADE/B6/PLT04-12 specimens | Historical comparison/provenance identities; not a mixed current set. |
 | Frozen DRW v1 / historical RH compiler | Protected release and bounded historical technical proof; not technical proof of the changed house. |
