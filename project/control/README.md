@@ -19,6 +19,8 @@ For substantial bounded project work:
 
 Do not hand-author `READY` or `BLOCKED`. Do not treat GitHub issue open/closed state as execution authority. Do not create a graph node for every implementation micro-step.
 
+**READY means structurally dependency-eligible, not globally unclaimed.** PCO does not currently provide a live agent/branch lease. A separate session or branch may already be exploring a ready node without having established durable lifecycle state on `main`; check live concurrent work before launching duplicate execution when that matters.
+
 If substantial authorised work has no suitable node, add a bounded node to the owning workstream before treating the work as part of the execution programme. New first-class workstreams must be registered with exactly three uppercase letters; historical exceptions/aliases are not precedents for new codes.
 
 ## Sources

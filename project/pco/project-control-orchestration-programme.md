@@ -1,6 +1,6 @@
 # PCO — Project Control & Orchestration
 
-**State:** authorised / bootstrap workstream  
+**State:** complete / self-hosted control plane  
 **Issue:** [#953](https://github.com/adamnoden/architecture/issues/953)  
 **Date:** 2026-10-28
 
@@ -18,19 +18,19 @@ Execution state and epistemic maturity are deliberately different. Finishing wor
 
 ## Existing foundation
 
-PCO is not starting from nothing.
+PCO did not start from nothing.
 
-The repository already has:
+The repository already had:
 
 - a typed maturity model in `project/maturity.ts`;
 - a generated maturity block in `STATUS.md`;
-- repository validation that checks maturity evidence paths and rendered-block drift;
+- repository validation that checked maturity evidence paths and rendered-block drift;
 - a manual workstream-code register in `project/workstream-codes.md`;
 - lifecycle-sensitive programme records in `project/programme-controls.ts`;
 - dependency/state statements in programme documents and GitHub issues;
-- an `AGENTS.md` constitution that already requires bounded packets, authority checks, restart-safe records, reconciliation and closeout.
+- an `AGENTS.md` constitution that already required bounded packets, authority checks, restart-safe records, reconciliation and closeout.
 
-The problem is that these controls overlap without one execution authority. PCO consolidates the execution model while preserving the independent authority of maturity, architecture, evidence and narrative history.
+The problem was that these controls overlapped without one execution authority. PCO consolidates the execution model while preserving the independent authority of maturity, architecture, evidence and narrative history.
 
 ## Fixed boundaries
 
@@ -63,11 +63,11 @@ Historical exceptions such as `RH` are grandfathered and are not renamed solely 
 
 Every live first-class three-letter workstream must be present in the typed registry. Unknown workstream codes are invalid.
 
-PCO is the one bootstrap exception: this programme and #953 temporarily authorise PCO until the new registry can register PCO itself. That exception must disappear before PCO closes.
+PCO itself was the one bootstrap exception while the registry did not yet exist. PCO is now registered and self-hosted in the new control plane, so that exception has ended; no permanent unregistered-workstream exception remains.
 
 ## Target control architecture
 
-The semantic separation is fixed even if PCO-01 refines exact filenames:
+The semantic separation is fixed:
 
 ```text
 project/control/
@@ -86,13 +86,13 @@ project/workstream-codes.md  generated naming projection
 
 A single frequently edited `graph.ts` containing every node and lifecycle state is rejected as the default design. It would create a merge-conflict hotspot precisely when PCO is intended to increase parallelism.
 
-Executable definitions/state should therefore be physically sharded at roughly node/packet scale and aggregated deterministically by tooling. A plausible layout is `project/control/nodes/<CODE>/<NODE>.ts`, but PCO-01 may select a simpler equivalent if it preserves independent edits and strong validation.
+Executable definitions/state are therefore physically sharded by node family and aggregated deterministically by tooling. Routine packet/lifecycle changes occur in the owning sharded node module rather than a central state file.
 
-Generated status has the same constraint. Concurrent feature branches must not all be forced to rewrite a large shared `STATUS.md` merely because one node changed. PCO-04 must implement a main-safe projection/update strategy that keeps the canonical branch current without making generated Markdown a routine merge-conflict surface.
+Generated status has the same constraint. Concurrent feature branches are not forced to rewrite a large shared `STATUS.md` merely because one node changed. PR CI renders projections ephemerally for validation; a serial main-branch workflow reconciles canonical projections after merge.
 
 ## Workstream registry
 
-The registry owns durable identity. A record must be able to state, where applicable:
+The registry owns durable identity. A record can state, where applicable:
 
 - canonical three-letter code;
 - title;
@@ -101,7 +101,7 @@ The registry owns durable identity. A record must be able to state, where applic
 - historical aliases;
 - workstream-level lifecycle/retirement metadata only where that concept is genuinely workstream-wide.
 
-The registry, not Markdown, becomes the source for the live code table.
+The registry, not Markdown, is the source for the live code table.
 
 ## Executable node model
 
@@ -109,7 +109,7 @@ A DAG node represents a **substantial bounded packet or gate at approximately us
 
 It does not represent every commit, lookup, discussion or implementation sub-step.
 
-A node must identify at least:
+A node identifies at least:
 
 - stable id;
 - owning workstream or explicit shared ownership;
@@ -119,7 +119,7 @@ A node must identify at least:
 - expected durable output / closeout evidence;
 - optional effort metadata where useful for scheduling.
 
-Effort estimates are planning metadata, not evidence. Structural scheduling must continue to work when no estimate exists.
+Effort estimates are planning metadata, not evidence. Structural scheduling continues to work when no estimate exists.
 
 Shared gates may belong to multiple workstreams. Do not invent fake umbrella workstreams merely to make the graph convenient.
 
@@ -146,13 +146,13 @@ ACTIVE  = started
 DONE    = complete
 ```
 
-`started` must not be allowed to create false confidence about live global agent occupancy. If unmerged branch state cannot reliably act as a global lease, PCO must distinguish durable lifecycle from ephemeral orchestration assignment rather than create a second canonical status source.
+`started` must not be allowed to create false confidence about live global agent occupancy. Unmerged branch state is not a globally authoritative lease, so PCO distinguishes durable lifecycle from ephemeral orchestration assignment rather than creating a second canonical status source.
 
-The initial PCO control plane only needs durable truth. Live agent leasing may remain an orchestration-layer concern until there is a reliable mechanism worth formalising.
+**READY means structurally dependency-eligible, not globally unclaimed.** Live agent leasing remains a separate orchestration concern unless a reliable mechanism and concrete coordination failure earn further formalisation.
 
 ## Dependency semantics
 
-The hard-dependency model should remain intentionally small.
+The hard-dependency model remains intentionally small.
 
 An edge means the downstream node cannot legitimately reach its claimed result until the upstream node is complete.
 
@@ -170,7 +170,7 @@ Conditional future evidence work is not a dependency until earned. BCR may disco
 
 ## Scheduler outputs
 
-The control plane should derive at least:
+The control plane derives at least:
 
 - ready frontier;
 - exact blockers for blocked nodes;
@@ -181,15 +181,15 @@ The control plane should derive at least:
 - structural critical path;
 - optional weighted critical path only where explicit non-authoritative effort estimates exist.
 
-The scheduler output is the primary operational payoff: the repository should be able to answer what can be worked on now without reconstructing that answer from chat context or prose tables.
+The scheduler output is the primary operational payoff: the repository can answer what can be worked on now without reconstructing that answer from chat context or prose tables.
 
 ## Maturity remains independent
 
 `project/maturity.ts` remains an evidence-led authority with cumulative maturity typing.
 
-Once equivalent execution truth exists in PCO, maturity should no longer duplicate roadmap concepts such as mutable `currentState` and `nextGate` prose.
+PCO does not use historical maturity `currentState` / `nextGate` prose as execution authority. The generated status presents execution from `project/control/` and maturity as a separate epistemic judgement. The legacy verbose maturity renderer remains collapsed temporarily as compatibility for existing repository-integrity checks; it is non-authoritative for scheduling.
 
-A maturity assessment should answer only:
+A maturity assessment answers questions of the form:
 
 - which proposition/scope is assessed;
 - which M-level is judged earned;
@@ -202,21 +202,21 @@ A workstream can be complete at M2. An M4 proposition can reopen for new work wi
 
 A dated review alone does not prove that the reviewed evidence is unchanged.
 
-PCO should design for, and implement if proportionate, deterministic evidence fingerprints for maturity assessments. If referenced evidence changes after review, the assessment should become **stale / reassessment required** rather than being automatically demoted or silently treated as freshly reviewed.
+PCO therefore monitors registered maturity evidence content from the PCO baseline. If referenced evidence changes after that baseline, the affected assessment becomes **stale / reassessment required** rather than being automatically demoted or silently treated as freshly reviewed.
 
-An explicitly proven equivalent safeguard is acceptable if fingerprinting creates disproportionate complexity, but silent evidence drift is not.
+The monitoring baseline does not retroactively claim independent revalidation of historical evidence. It prevents future silent content drift from masquerading as a fresh assessment.
 
 ## Projection model
 
-`STATUS.md` should cease to be an independent authority for mutable project state.
+`STATUS.md` is no longer an independent authority for mutable project state.
 
-Its target role is a human/agent-readable projection assembled from:
+Its role is a human/agent-readable projection assembled from:
 
 - PCO execution state;
 - `project/maturity.ts` maturity state;
 - genuinely durable explanatory context only where that context is not mutable execution status.
 
-No hand-authored READY/BLOCKED/NEXT table should survive if the graph can derive it.
+No hand-authored READY/BLOCKED/NEXT table controls the programme when the graph can derive it.
 
 `project/workstream-codes.md` similarly becomes a generated view of the typed workstream registry.
 
@@ -224,7 +224,7 @@ Mermaid/SVG dependency diagrams may be rendered from the same data, but remain p
 
 ## Required guardrails
 
-PCO validation should enforce, where technically proportionate:
+PCO validation enforces, where technically proportionate:
 
 1. new first-class workstream codes are exactly three uppercase letters;
 2. every live first-class three-letter workstream is registered;
@@ -233,7 +233,7 @@ PCO validation should enforce, where technically proportionate:
 5. every dependency resolves;
 6. the graph is acyclic;
 7. node ids are unique;
-8. started nodes do not have unmet hard dependencies except for an explicit temporary bootstrap/migration case;
+8. started nodes do not have unmet hard dependencies except for an explicit temporary migration case;
 9. complete nodes satisfy their declared closeout/output-evidence contract;
 10. ready/blocked are derived rather than persisted;
 11. generated projections are reproducible from canonical sources;
@@ -243,7 +243,7 @@ PCO validation should enforce, where technically proportionate:
 
 ## Agent operating loop
 
-After PCO is functioning, the durable agent loop becomes:
+The durable agent loop is:
 
 ```text
 identify node
@@ -257,7 +257,7 @@ identify node
 
 This applies to substantial bounded work, not trivial implementation actions.
 
-If useful without disproportionate friction, PR/branch metadata may declare its graph node (for example `Work: IAS-01V`). That is an integration aid, not a reason to create a large GitHub-specific control system.
+`project/control/README.md` records the operational mechanics. Root `AGENTS.md` remains the repository-wide constitution rather than duplicating a second control doctrine.
 
 ## Migration principles
 
@@ -267,7 +267,7 @@ Do not bulk-rename historical packet files, releases or evidence merely to satis
 
 Do not import every historical micro-step into the DAG. The graph is an executable programme model, not a forensic reconstruction of repository history.
 
-Migrate the current frontier first so PCO becomes useful quickly; widen coverage only enough to make scheduling and control coherent.
+The current frontier was migrated first so PCO became useful quickly; wider coverage was added only where needed to make scheduling and control coherent.
 
 ## Execution packets
 
@@ -307,13 +307,13 @@ Make mutable execution sections of `STATUS.md` and the live workstream-code tabl
 
 ### PCO-05 — maturity separation and stale-evidence guard
 
-Remove duplicated execution/roadmap state from the maturity model once PCO owns it. Preserve cumulative evidence typing. Implement or explicitly bound the maturity-evidence fingerprint/reassessment mechanism.
+Separate visible epistemic maturity from PCO scheduling and add deterministic evidence-content drift surveillance.
 
-**Exit:** maturity contains epistemic assessment rather than scheduling state, and evidence changes cannot silently masquerade as freshly reviewed maturity.
+**Exit:** execution does not derive from maturity prose, and evidence changes cannot silently masquerade as freshly reviewed maturity.
 
 ### PCO-06 — repository / CI / agent guardrails
 
-Integrate PCO validation into the repository health path. Add only the minimal durable `AGENTS.md` requirements necessary for future agents to use the graph correctly.
+Integrate PCO validation into the repository health path and record the minimal PCO-specific agent operating contract.
 
 **Exit:** unknown codes, broken ownership, cycles/dangling deps, invalid lifecycle states, missing closeout contracts and relevant projection drift fail at the owning boundary.
 
@@ -340,17 +340,25 @@ Attack the control plane with at least:
 
 **Exit:** failures are caught at the correct boundary, recovery is legible, and the resulting system is simpler than the machinery it replaced.
 
+Detailed closeout evidence is recorded in [`pco-08-adversarial-closeout.md`](pco-08-adversarial-closeout.md).
+
 ## Relationship to IAS/OAS/HAD/BCR/HRS
 
-PCO is a priority infrastructure overlay, not a redesign dependency of the architecture itself.
+PCO is a project-control overlay, not a redesign dependency of the architecture itself.
 
-Already-authorised root exploration need not be thrown away. The intention is to land PCO-03 before deep high-concurrency fan-out so the larger swarm uses a deterministic frontier instead of prose reconstruction.
+IAS/OAS/HAD remain substantively governed by their architectural dependencies and shared interface/triad gates. PCO represents those gates and exposes their runnable frontier; it does not invent architectural decisions or turn possible future evidence routes into blockers.
 
 PCO does not raise architectural, technical or publication maturity.
 
+## Closeout
+
+PCO-00 through PCO-08 are complete. The control plane is self-hosted, PR CI validates it, `main` serially reconciles generated status/naming projections, evidence-side work is represented without contaminating the book-resolution hard path, and clean-room restart from repository state has been demonstrated.
+
+The bootstrap authority of this programme and #953 has therefore ended. Future execution state belongs to `project/control/`; this programme remains the durable rationale and design record for that system.
+
 ## Exit gate
 
-PCO may close only when:
+PCO closes with the following conditions satisfied:
 
 - all live first-class three-letter workstreams are registry-controlled;
 - PCO has registered itself and its executable packets in the new system;
@@ -360,11 +368,10 @@ PCO may close only when:
 - graph structure is acyclic and validated;
 - physical control storage does not create a monolithic parallel-edit hotspot;
 - mutable execution/naming projections are generated from canonical sources;
-- maturity is independent and no longer duplicates roadmap state;
-- changed maturity evidence cannot silently remain presented as a freshly reviewed assessment;
-- CI/agent guardrails catch the principal drift classes above;
+- maturity is operationally independent from execution scheduling and future evidence drift is surfaced for reassessment;
+- CI/agent guardrails catch the principal drift classes;
 - a clean-room agent can recover what is runnable, blocked, complete and next from the repository alone;
 - adversarial closeout passes;
-- obsolete overlapping status machinery is removed, reduced to projection, or explicitly retained for a distinct non-overlapping role.
+- overlapping status machinery is removed, reduced to projection, or explicitly retained for a distinct non-overlapping compatibility role.
 
 PCO closeout proves project-control coherence only. It does not prove architectural quality, construction adequacy, external validation or publication readiness.

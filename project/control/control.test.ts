@@ -34,7 +34,6 @@ test('current ready frontier exposes useful parallel work without inventing cond
   const ready = new Set(readyFrontier(controlNodes).map((candidate) => candidate.id))
 
   for (const expected of [
-    'PCO-08',
     'IAS-00',
     'OAS-00',
     'HAD-00',
@@ -45,6 +44,8 @@ test('current ready frontier exposes useful parallel work without inventing cond
   ]) {
     assert.equal(ready.has(expected), true, `${expected} should be ready`)
   }
+  assert.equal(ready.has('PCO-08'), false)
+  assert.equal(node('PCO-08').lifecycle, 'complete')
 
   assert.deepEqual(directBlockers(node('BCR-CONVERGENCE'), controlNodes).sort(), [
     'BCR-SCAFFOLD',
