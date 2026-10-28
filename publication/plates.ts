@@ -118,7 +118,7 @@ const placements: readonly PlatePlacement[] = [
   },
   {
     entryId: 'part-iv',
-    anchor: '## Loss of stair use',
+    anchor: '## Human adaptation within the same geography',
     pageClass: 'PLATE_SINGLE',
     views: [
       { title: 'Entrance-storey future adaptation', image: '../reference-house/publication-future-adaptation-overlay.svg', alt: 'Reference House entrance-storey future adaptation overlay', scale: '1:100', caption: 'Fallback one-level occupation and sanitary-adaptation capacity; not an accessibility-compliance claim.' }
