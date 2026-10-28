@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
-import {createSectionExemplar,joinSectionRegions,roofHeight,roofTop,design,exemplarViews} from './georgian/section-exemplar.js'
+import {createSectionExemplar,joinSectionRegions,roofHeight,roofTop,design,exemplarViews} from './georgian/section-exemplar-01.js'
 import {renderDrawingSceneV2SvgWithTokens} from '../publication-drawing-v2/svg.js'
 import {PLT_CANDIDATE_TOKENS} from '../publication-drawing-v2/plt-candidate-tokens.js'
 test('joined cut regions remove shared floor/wall interfaces rather than drawing independent boxes',()=>{
