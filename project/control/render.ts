@@ -1,4 +1,9 @@
-import { renderMaturityStatusBlock } from '../maturity.js'
+import { maturityLevels, renderMaturityStatusBlock } from '../maturity.js'
+import {
+  maturityAssessments,
+  maturityEvidenceMonitoringBaseline,
+  maturityFreshness
+} from '../maturity-freshness.js'
 import {
   directBlockers,
   nodesByDerivedState,
@@ -63,6 +68,48 @@ export function renderExecutionStatusBlock(): string {
   ].join('\n')
 }
 
+function evidenceCount(assessment: (typeof maturityAssessments)[number]): number {
+  return new Set(
+    (Object.values(assessment.evidence) as readonly (readonly string[])[]).flatMap((paths) => paths)
+  ).size
+}
+
+export function renderEpistemicMaturityBlock(repoRoot: string): string {
+  const freshness = maturityFreshness(repoRoot)
+  const scaleRows = maturityLevels.map(
+    (level) => `| **${level.id}** | **${level.name}** | ${tableCell(level.criterion)} |`
+  )
+  const assessmentRows = maturityAssessments.map((assessment) => {
+    const status = freshness.get(assessment.id)
+    const evidenceStatus =
+      status?.state === 'stale'
+        ? `**STALE — reassess** (${status.changedEvidence.map((path) => `\`${path}\``).join(', ')})`
+        : status?.state === 'fresh'
+          ? 'fresh against PCO evidence baseline'
+          : `unknown${status?.state === 'unknown' ? ` — ${tableCell(status.reason)}` : ''}`
+
+    return `| **${tableCell(assessment.name)}** | **${assessment.maturity}** | ${assessment.reviewedOn} | ${evidenceCount(assessment)} | ${evidenceStatus} |`
+  })
+
+  return [
+    'Maturity is an **epistemic judgement**, not execution progress. Completing a graph node does not promote maturity, and reopening work does not automatically demote it.',
+    '',
+    '### Scale',
+    '',
+    '| Level | Meaning | Gate |',
+    '|---|---|---|',
+    ...scaleRows,
+    '',
+    '### Evidence freshness',
+    '',
+    `PCO monitors the evidence content from baseline \`${maturityEvidenceMonitoringBaseline.slice(0, 7)}\`. A changed evidence file marks the affected assessment **stale / reassessment required**; it does not automatically lower the M-level. The baseline establishes future drift surveillance and does not itself constitute independent revalidation of earlier evidence.`,
+    '',
+    '| Assessment | Maturity | Reviewed | Evidence files | Evidence watch |',
+    '|---|---:|---|---:|---|',
+    ...assessmentRows
+  ].join('\n')
+}
+
 export function renderWorkstreamCodeRegister(): string {
   const rows = workstreams.map((workstream) => {
     const issue = workstream.issue
@@ -88,7 +135,7 @@ export function renderWorkstreamCodeRegister(): string {
   ].join('\n')
 }
 
-export function renderStatusDocument(): string {
+export function renderStatusDocument(repoRoot: string): string {
   return [
     '# Project Status',
     '',
@@ -104,9 +151,18 @@ export function renderStatusDocument(): string {
     '',
     '## Maturity',
     '',
+    renderEpistemicMaturityBlock(repoRoot),
+    '',
+    '<details>',
+    '<summary>Legacy maturity compatibility projection (non-authoritative)</summary>',
+    '',
+    'This collapsed block is retained temporarily because the existing repository-integrity check still verifies the historical renderer. Its `Current state` / `Next meaningful gate` columns are **not execution authority**; PCO owns current execution state above.',
+    '',
     '<!-- maturity-status:start -->',
     renderMaturityStatusBlock(),
     '<!-- maturity-status:end -->',
+    '',
+    '</details>',
     '',
     '## Reading current state',
     '',
