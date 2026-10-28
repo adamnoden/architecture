@@ -4,8 +4,8 @@ import {createHash} from 'node:crypto'
 import {readFile,writeFile} from 'node:fs/promises'
 import {resolve} from 'node:path'
 import {getDocumentProxy} from 'unpdf'
-import {design} from '../../../compiler/reference-house/georgian/section-exemplar.js'
-import {createSectionExemplar,design as sectionRoofSource} from '../../../compiler/reference-house/georgian/section-exemplar.js'
+import {design} from '../../../compiler/reference-house/georgian/section-exemplar-01.js'
+import {createSectionExemplar,design as sectionRoofSource} from '../../../compiler/reference-house/georgian/section-exemplar-01.js'
 const root=import.meta.dirname,work=resolve(root,'.work'),m=JSON.parse(await readFile(resolve(work,'manifest.json'),'utf8')),pt=72/25.4
 const hash=(s:string|Buffer)=>createHash('sha256').update(s).digest('hex')
 assert.equal(m.sourceSha256,hash(JSON.stringify({design,sectionRoofSource})));assert.equal(m.audit.pass,true);assert.equal(m.ownerPhysicalVerdict,'UNREVIEWED');assert.equal(m.printTokensFrozen,false);assert.equal(m.fullHistoricalSystemRevalidation,false)

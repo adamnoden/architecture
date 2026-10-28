@@ -1,6 +1,10 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
+## Current material interface refinement
+
+[Timber floor and entrance articulation](architectural-plate-timber-interface.md) separates the floor assembly from masonry, distinguishes leaf fills and makes door/threshold and elevation joinery legible. Plan and twin roof remain held. Use the current `section-exemplar.ts`; the previous fused-floor proof is historical.
+
 ## Joined section exemplar and twin roof
 
 The owner approves the [joined section exemplar](architectural-plate-joined-section.md): plan-consistent cavity leaves, joined cut regions, nominal inner-leaf bearing and roof underside junctions, plus 25-degree falls inward and outward. Use `georgian/section-exemplar.ts` for this roof/section successor. Full family rollout follows exemplar review; older outward-only views remain historical.
