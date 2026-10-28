@@ -84,7 +84,7 @@ Most coordination Markdown and controlled architectural drawing/source records a
 
 [`generated/`](generated/) is downstream of the canonical Metamorph Compiler source/compile. It contains human-readable semantic inspection views and reports.
 
-**Do not hand-edit generated inspection artefacts.** Change the owning source or renderer and regenerate them. The local [`generated/README.md`](generated/README.md) explains the uncertainty language, manifest and verification command.
+**Do not hand-edit generated inspection artefacts.** Change the owning source or renderer and regenerate them. The local [`generated/README.md`](generated/) explains the uncertainty language, manifest and verification command.
 
 A generated `PASS` does not prove engineering adequacy, building physics, regulatory compliance or construction readiness.
 
