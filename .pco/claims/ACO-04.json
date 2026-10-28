@@ -9,7 +9,8 @@
     "label": "architecture-control"
   },
   "claimedAt": "2026-10-28T22:59:13Z",
-  "heartbeatAt": "2026-10-28T22:59:13Z",
-  "expiresAt": "2026-10-29T00:59:13Z",
+  "heartbeatAt": "2026-10-28T23:00:51Z",
+  "expiresAt": "2026-10-29T01:00:51Z",
+  "branch": "work/aco-closeout",
   "note": "ACO-04 self-hosted adversarial closeout"
 }
