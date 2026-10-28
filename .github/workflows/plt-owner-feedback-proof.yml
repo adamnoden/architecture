@@ -23,6 +23,7 @@ on:
       - 'publication/specimens/plt12/**'
       - 'publication/specimens/plt13/**'
       - 'publication/specimens/plt14/**'
+      - 'publication/specimens/plt15/**'
       - '.github/workflows/plt-owner-feedback-proof.yml'
   workflow_dispatch:
 permissions:
@@ -161,11 +162,24 @@ jobs:
         run: PLT14_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt14/vivliostyle.config.js
       - name: Validate analysis and NTS synthesis PDF pages
         run: node --import tsx publication/specimens/plt14/validate.ts
+      - name: Prepare revised layout pair and clear-route evidence
+        run: node --import tsx publication/specimens/plt15/prepare.ts
+      - name: Build revised plans BOOK B5
+        run: PLT15_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt15/vivliostyle.config.js
+      - name: Build revised plans BOOK A4
+        run: PLT15_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt15/vivliostyle.config.js
+      - name: Build revised plans WALL A2
+        run: PLT15_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt15/vivliostyle.config.js
+      - name: Validate revised plan pair PDFs
+        run: node --import tsx publication/specimens/plt15/validate.ts
       - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: plt-owner-feedback-proof
           path: |
+            publication/specimens/plt15/dist/*.pdf
+            publication/specimens/plt15/.work/*.json
+            publication/specimens/plt15/.work/*.svg
             publication/specimens/plt14/dist/*.pdf
             publication/specimens/plt14/.work/*.json
             publication/specimens/plt14/.work/*.svg
