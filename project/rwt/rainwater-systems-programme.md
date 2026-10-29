@@ -1,7 +1,9 @@
 # RWT — Rainwater Systems Architecture
 
 **Issue:** #992  
-**State:** RWT-00/01/02/03 complete; material comparison remains
+**State:** RWT-00/01/02/03/04 complete; blockage/failure, access and network synthesis remain
+
+**Materials result:** [RWT-04 materials, joints and shared compatibility](rwt-04-materials-joints-compatibility.md); candidate interfaces remain conditional, with no material selection.
 
 **Current results:** [RWT-02 collection architecture](rwt-02-collection-architecture.md), [RWT-03 conveyance topology](rwt-03-conveyance-topology.md) and [RWT-01 rainfall and hydraulic basis](rwt-01-rainfall-and-hydraulic-basis.md); [RWT-00 baseline and interfaces](rwt-00-baseline-and-interfaces.md) remains the governing seam inventory.
 
