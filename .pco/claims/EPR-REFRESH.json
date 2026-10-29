@@ -9,12 +9,12 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T23:20:12.536Z",
-  "heartbeatAt": "2026-10-29T23:36:20.284Z",
-  "expiresAt": "2026-10-30T00:21:20.284Z",
+  "heartbeatAt": "2026-10-29T23:48:36.989Z",
+  "expiresAt": "2026-10-30T00:33:36.989Z",
   "branch": "work/zerg-epr-phy",
   "checkpoint": {
-    "evidence": "Reviewed EPR source1063/4497ed53 preserved in common1065/7fd1cc93 with PHY3063b1f8 and STAIR1e86b1b1; source, peer and integration checks passed.",
-    "next": "Verify canonical common binding, exact full CI, every holder fresh preflight then expected-head merge and closeout."
+    "evidence": "Final common d9a06147 passes full Validate40975081368 and Typography40975081433; historical T9 archive repair independently reviewed, all335 DPL passed; exact PLT40975081343 still running.",
+    "next": "Wait remaining owning PLT proof then all3 fresh preflights, expected-head merge, reconcile and release; next canonical scope EDA."
   },
   "pr": 1065
 }
