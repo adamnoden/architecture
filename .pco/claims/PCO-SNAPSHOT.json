@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "PCO-SNAPSHOT",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e5d304a4-3493-4384-a00d-06f6dcce083d",
   "holder": {
     "kind": "chatgpt",
     "label": "snapshot-bc7462"
   },
   "claimedAt": "2026-10-29T18:35:21.381Z",
-  "heartbeatAt": "2026-10-29T18:41:00.707Z",
-  "expiresAt": "2026-10-29T19:26:00.707Z",
+  "heartbeatAt": "2026-10-29T18:44:34.247Z",
+  "expiresAt": "2026-10-29T18:44:34.247Z",
   "checkpoint": {
     "evidence": "Ref isolation reproduced; 83 regressions pass",
     "next": "Merge snapshot corrections; verify both native event paths and release lease",
     "blocker": "CI running"
   },
   "branch": "pco/claim-snapshot",
-  "pr": 1019
+  "pr": 1019,
+  "releasedAt": "2026-10-29T18:44:34.247Z",
+  "releaseReason": "completed"
 }
