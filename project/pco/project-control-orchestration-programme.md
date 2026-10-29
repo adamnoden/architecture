@@ -385,6 +385,8 @@ PCO-00–08/VIS/DISPATCH retain their historical completion. The owner-directed 
 
 **Dependencies:** PCO-DISPATCH and HRS-BASELINE. **Dispatch:** self-service. **Result:** `project/pco/pco-applicability-result.md`.
 
+**Current result:** [PCO applicability repair](pco-applicability-result.md) is complete at monitoring/reporting scope. Existing M-levels, dates, historical evidence and current-house admission limits are preserved.
+
 On the audit baseline, changing `compiler/reference-house/georgian/layout-revision.ts` alone leaves Reference House and Computational track assessments fresh. The watch checks assessment-document paths, not necessarily the design being assessed. Bind each consequential assessment to its named design revision and the small set of actual controlling source inputs. Distinguish evidence-content freshness, subject applicability and maturity judgement. Historical M-level evidence survives at its original scope; a new assessment must be explicit.
 
 Acceptance: a material current-design change requires applicability reassessment even if old review prose is untouched; an evidence edit still triggers its own review; unrelated changes do not invalidate every assessment; missing/unreadable baseline is **unknown**, never reported as unchanged/fresh; rendered status and CLI messages preserve those distinctions. Reproduce the recorded source-change probe and test both positive and negative controls. Do not create a general provenance framework or silently change maturity levels.

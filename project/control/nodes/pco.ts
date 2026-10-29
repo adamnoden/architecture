@@ -195,7 +195,7 @@ export const pcoNodes = defineNodes([
     owners: ['PCO'],
     title: 'Bind maturity applicability to assessed design sources',
     dependencies: ['PCO-DISPATCH', 'HRS-BASELINE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/pco/pco-applicability-result.md']
   },
