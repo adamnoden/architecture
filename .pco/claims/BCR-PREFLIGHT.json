@@ -9,6 +9,12 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T23:00:58.369Z",
-  "heartbeatAt": "2026-10-29T23:00:58.369Z",
-  "expiresAt": "2026-10-29T23:45:58.369Z"
+  "heartbeatAt": "2026-10-29T23:09:06.354Z",
+  "expiresAt": "2026-10-29T23:54:06.354Z",
+  "branch": "work/zerg-bcr-preflight",
+  "pr": 1057,
+  "checkpoint": {
+    "evidence": "PR1057 head4cb1592c integrates all35 physical findings exactly once with source identities and open design admission constraints; focused study/type/control/repository/dataplate and docs15.43s pass; roof/structure/water peer review passed. IAS/HAD1051 accepted partial reconciled.",
+    "next": "Reconcile current main including ROF07, finish independent review, require exact-head full CI and fresh canonical preflight, then merge/release/reconcile in commander slot."
+  }
 }
