@@ -8,6 +8,10 @@ The system is the project's **execution scaffolding**. It makes architectural wo
 
 The shared vocabulary and interfaces form one cohesive system. Its authorities remain deliberately separate: a plan is not a reservation, a reservation is not evidence, and completed work is not construction readiness. Some coordination machinery may eventually be replaced or retired; accepted decisions, evidence and provenance must survive it.
 
+## Version and adoption policy
+
+The current operating-contract version and compatibility history live in [MVB versions](releases.md). The [external-platform assessment](../pco/mvb-platform-review.md) records what existing systems could replace and what still requires a deployment trial. Prefer adoption when it removes owned machinery or demonstrates a material execution improvement. Keep one authoritative project plan and one execution-ownership authority per packet; do not maintain competing editable task graphs.
+
 ## Start here
 
 | Visitor | Reading path |
