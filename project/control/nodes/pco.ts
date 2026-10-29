@@ -2,6 +2,13 @@ import { defineNodes } from '../types.js'
 
 export const pcoNodes = defineNodes([
   {
+    id: 'PCO-RESILIENCE', owners: ['PCO'],
+    title: 'Bound failure recovery and expose lease freshness and handoff evidence',
+    dependencies: ['PCO-SWARM'], lifecycle: 'planned',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed resilience hardening on 29 October 2026.' },
+    closeoutEvidence: ['project/pco/lease-resilience-result.md']
+  },
+  {
     id: 'PCO-HOUSE-PLAN', owners: ['PCO'],
     title: 'Record owner-house objective and delivery execution plan',
     dependencies: ['PCO-DISPATCH'], lifecycle: 'complete',
