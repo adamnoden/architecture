@@ -218,12 +218,12 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: ['project/oas/representative-detail-completion.md', 'docs/reference-house/opening-interface-studies.md', 'project/oas/studies/nominal-interface-studies.svg']
   },
 
-  // Wave 4 — one house, then construction-resolution convergence.
+  // Wave 4 — one house, including the separately reconciled roof/water system.
   {
     id: 'TRIAD-GATE',
     owners: ['IAS', 'OAS', 'HAD'],
     title: 'Shared selected-house integration gate',
-    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL'],
+    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL', 'ROF-RWT-GATE'],
     lifecycle: 'planned',
     aliases: ['IAS/OAS/HAD Wave 4'],
     agentDispatch: { mode: 'self-service' },
