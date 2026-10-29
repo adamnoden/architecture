@@ -1,6 +1,6 @@
 # CCR — Compiler Correctness Repair
 
-**State:** authorised, bounded successor programme; implementation not yet started.  
+**State:** bounded successor programme in progress; completed packet results are recorded below.  
 **Audit baseline:** `a31efba595449295ef8b19cd55c7d2d49d7cb129` (29 October 2026).  
 **Execution authority:** the registered CCR workstream and its canonical PCO nodes.
 
@@ -11,6 +11,10 @@ Repair the specific correctness and claim-boundary defects admitted by the whole
 CCR is a finite successor to the completed compiler work. It does not reopen CH by implication, erase historical evidence, broaden the supported architectural domain, or create a permanent hardening queue.
 
 Issue [#923](https://github.com/adamnoden/architecture/issues/923) retains its separate output-preserving Georgian source-to-view refactoring scope. CCR may intentionally change defective behaviour, diagnostics and consequent artefact identities; those changes must be recorded and validated, not concealed under an output-preservation claim. Current Georgian roof/layout selection and its migration remain with their architectural owners.
+
+## Current results
+
+- [CCR-PLAN — rectangle unions and plate closure](ccr-plan-result.md): complete at represented orthogonal-region scope; canonical and contrast outputs unchanged.
 
 ## Audit finding allocation
 

@@ -6,7 +6,7 @@ export const ccrNodes = defineNodes([
     owners: ['CCR'],
     title: 'Repair rectangle-union area and plate closure',
     dependencies: [],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/ccr-plan-result.md']
   },
