@@ -9,12 +9,13 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T22:12:16.360Z",
-  "heartbeatAt": "2026-10-29T22:22:01.122Z",
-  "expiresAt": "2026-10-29T23:07:01.122Z",
+  "heartbeatAt": "2026-10-29T22:43:30.181Z",
+  "expiresAt": "2026-10-29T23:28:30.181Z",
   "branch": "zerg/worker-6-wave4",
   "checkpoint": {
     "evidence": "Published RWT06 draft branch aa5740b8; owning result rwt-06-access-court-transition; located court crossing trial awaiting peer review",
     "next": "Complete source-bound plan/section and actual access task review; resolve or preserve adverse floor/support/threshold findings",
     "blocker": "Ground floor/support/threshold admission and high-level access unproved"
-  }
+  },
+  "pr": 1044
 }
