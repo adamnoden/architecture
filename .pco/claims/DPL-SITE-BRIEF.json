@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "DPL-SITE-BRIEF",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "601b15d9-8886-4ee5-8a95-85ad14ea69a0",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-29T23:00:55.647Z",
-  "heartbeatAt": "2026-10-29T23:12:52.375Z",
-  "expiresAt": "2026-10-29T23:57:52.375Z",
+  "heartbeatAt": "2026-10-29T23:18:33.587Z",
+  "expiresAt": "2026-10-29T23:18:33.587Z",
   "branch": "work/zerg-preflight-site-moisture",
   "pr": 1059,
   "checkpoint": {
     "evidence": "Root and RWT peer reviewed source1054 head8ade8231595f1a72da729188c0bc0b2167ff1f5b preserved as parent in common1059 head8c6d6c515a8969b0f01dc29ce5baa7f2ec1dd6c5; own two files verified unchanged",
     "next": "Wait exact combined-head full CI, run own fresh preflight, integrate under worker2 serial slot, verify release/reconcile then canonical PHY dispatch"
-  }
+  },
+  "releasedAt": "2026-10-29T23:18:33.587Z",
+  "releaseReason": "completed"
 }
