@@ -49,6 +49,15 @@ not freeze before the relevant rooms, opening and interior assemblies exist.
 Use the graph for lifecycle and dependency status; this index carries scope
 and restart records rather than a second mutable scheduling table.
 
+## Material synthesis
+
+- [Selected material, fitting and lighting family](had-02m-material-finish-synthesis.md).
+- [Material relationship board](studies/selected-material-family.svg).
+
+HAD-02M selects architectural intent without adopting actual products or fitted
+rooms. HAD-03 owns furnished-room/visual convergence and actual fit dispositions;
+U-ENS3 and the IAS wet/access obligations are not resolved by a palette.
+
 ## Governing tests
 
 The house should read as settled domestic architecture. Technical intelligence

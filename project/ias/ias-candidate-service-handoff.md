@@ -53,13 +53,10 @@ authorised source rewind, or bound the claim and retain the concrete technical
 obligation downstream. It cannot describe an unworkable access occurrence or
 unfitted room as coordinated merely because the generic family is coherent.
 
-## Next execution gate
+## Subsequent execution
 
-IAS-OAS-JUNCTION waits on OAS-01E and OAS-01I. IAS-03 waits on that shared
-junction; its IAS-02S/02W and IAS-HAD prerequisites are now complete at their
-stated scope. No remaining IAS-owned packet is runnable until OAS supplies its
-candidates, unless the canonical graph changes through separately authorised work.
-
-IAS #941 stays open for selected-family/detail/disassembly and TRIAD-GATE.
-No detailed 1:5/1:2 construction release is implied by the schematic candidate
-study. The selected detailed drawing set must follow actual new design authority.
+The shared opening junction is now complete. The
+[IAS-03 partial result](ias-03-partial-selection-result.md) supplies selected dry
+interfaces and disassembly, while retaining the unresolved wet/access/room-fit
+adoption obligations. IAS-03 remains incomplete and #941 stays open.
+The earlier candidate study alone was not a detailed construction release.

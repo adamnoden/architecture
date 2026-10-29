@@ -170,9 +170,9 @@ export const architectureNodes = defineNodes([
       'IAS-HAD-JUNCTION',
       'OAS-HAD-JUNCTION'
     ],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/had/had-02m-material-finish-synthesis.md', 'project/had/studies/selected-material-family.svg']
   },
 
   // Wave 3 — per-stream selection / convergence.
@@ -181,10 +181,10 @@ export const architectureNodes = defineNodes([
     owners: ['IAS'],
     title: 'Selected interior family, drawings and disassembly set',
     dependencies: ['IAS-02S', 'IAS-02W', 'IAS-OAS-JUNCTION', 'IAS-HAD-JUNCTION'],
-    lifecycle: 'planned',
+    lifecycle: 'started',
     aliases: ['IAS Wave 3'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/ias/ias-03-partial-selection-result.md']
   },
   {
     id: 'OAS-03',
