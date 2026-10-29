@@ -9,11 +9,12 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T23:34:15.371Z",
-  "heartbeatAt": "2026-10-29T23:34:15.371Z",
-  "expiresAt": "2026-10-30T00:19:15.371Z",
+  "heartbeatAt": "2026-10-29T23:39:22.957Z",
+  "expiresAt": "2026-10-30T00:24:22.957Z",
   "checkpoint": {
-    "evidence": "CCR-DRAINAGE accepted1061 and lease released. Prior timed-out BAY-BRIEF mailbox not serviced; exact remote path freshly404. Charter, delivery route, preflight and OAS bay evidence read.",
-    "next": "Select one consequential current-source bay with conventional comparator, exact extent and budgets, occupation installation renewal questions and named handoff; preserve TRIAD gate."
+    "evidence": "Frozen reviewed BAY1067 source5c617f93, exact source dimensions and budgets, root plus DEL seam review passed. Typecheck repository88controltests docsbuild pass.",
+    "next": "After1065 accepted main, lead preserved-parent BAY+DEL1066+PCO integration; reconcile PHY applicability wording, bind every lease, exact-head full CI and per-lease preflight before expected-head merge."
   },
-  "branch": "zerg/worker-1-packet-6"
+  "branch": "zerg/worker-1-packet-6",
+  "pr": 1067
 }
