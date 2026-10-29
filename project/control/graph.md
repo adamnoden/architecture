@@ -14,8 +14,7 @@ flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
   subgraph g_CCR["CCR"]
     direction TB
-    n_CCR_STAIR["CCR-STAIR<br/>Repair stair datum arithmetic and discrete topology<br/><b>READY</b>"]
-    n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>BLOCKED</b>"]
+    n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>READY</b>"]
   end
   subgraph g_PCO["PCO"]
     direction TB
@@ -100,8 +99,7 @@ flowchart LR
   subgraph g_EPR["EPR"]
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
-    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
-    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>READY</b>"]
+    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
   end
   subgraph g_DPL["DPL"]
     direction TB
@@ -112,19 +110,15 @@ flowchart LR
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
-    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>BLOCKED</b>"]
-    n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>BLOCKED</b>"]
-    n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>READY</b>"]
+    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>READY</b>"]
+    n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
   end
-  n_CCR_STAIR --> n_CCR_IDENTITY
   n_IAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
-  n_EPR_REFRESH --> n_BCR_CONVERGENCE
-  n_PHY_APPLICABILITY --> n_BCR_CONVERGENCE
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_PCO_APPLICABILITY --> n_HRS_SYNTHESIS
@@ -175,9 +169,6 @@ flowchart LR
   n_DPL_COMMISSION --> n_DPL_SITE_ASSESSMENT
   n_DPL_SITE_ASSESSMENT --> n_DEL_COMMISSION_PLAN
   n_EPR_BAY_REVIEW --> n_DEL_COMMISSION_PLAN
-  n_PHY_APPLICABILITY --> n_PHY_03_ENGINEERING
-  n_PHY_APPLICABILITY --> n_PHY_04
-  n_EPR_REFRESH --> n_EPR_RH11
   n_BCR_CONVERGENCE --> n_DEL_CURRENT
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
@@ -210,8 +201,7 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
-  class n_CCR_STAIR ready;
-  class n_CCR_IDENTITY blocked;
+  class n_CCR_IDENTITY ready;
   class n_PCO_APPLICABILITY ready;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
@@ -254,11 +244,9 @@ flowchart LR
   class n_DEL_COMMISSION_PLAN blocked;
   class n_PHY_01 held;
   class n_PHY_02 held;
-  class n_PHY_03_ENGINEERING blocked;
-  class n_PHY_04 blocked;
-  class n_EPR_RH11 blocked;
-  class n_EPR_REFRESH ready;
-  class n_PHY_APPLICABILITY ready;
+  class n_PHY_03_ENGINEERING ready;
+  class n_PHY_04 ready;
+  class n_EPR_RH11 ready;
   class n_DEL_CURRENT blocked;
 ```
 
@@ -282,9 +270,9 @@ flowchart LR
   subgraph g_CCR["CCR"]
     direction TB
     n_CCR_PLAN["CCR-PLAN<br/>Repair rectangle-union area and plate closure<br/><b>DONE</b>"]
-    n_CCR_STAIR["CCR-STAIR<br/>Repair stair datum arithmetic and discrete topology<br/><b>READY</b>"]
+    n_CCR_STAIR["CCR-STAIR<br/>Repair stair datum arithmetic and discrete topology<br/><b>DONE</b>"]
     n_CCR_DRAINAGE["CCR-DRAINAGE<br/>Repair drainage declaration validity and source consistency<br/><b>DONE</b>"]
-    n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>BLOCKED</b>"]
+    n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>READY</b>"]
   end
   subgraph g_PCO["PCO"]
     direction TB
@@ -441,8 +429,8 @@ flowchart LR
   subgraph g_EPR["EPR"]
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
-    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
-    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>READY</b>"]
+    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
+    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>DONE</b>"]
   end
   subgraph g_DPL["DPL"]
     direction TB
@@ -454,9 +442,9 @@ flowchart LR
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
-    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>BLOCKED</b>"]
-    n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>BLOCKED</b>"]
-    n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>READY</b>"]
+    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>READY</b>"]
+    n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
+    n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>DONE</b>"]
   end
   n_ACO_00 --> n_ACO_01
   n_ACO_01 --> n_ACO_02
@@ -706,9 +694,9 @@ flowchart LR
   class n_ACO_03 done;
   class n_ACO_04 done;
   class n_CCR_PLAN done;
-  class n_CCR_STAIR ready;
+  class n_CCR_STAIR done;
   class n_CCR_DRAINAGE done;
-  class n_CCR_IDENTITY blocked;
+  class n_CCR_IDENTITY ready;
   class n_PCO_COMMS done;
   class n_PCO_MVB_REVIEW done;
   class n_PCO_MANUAL done;
@@ -817,12 +805,12 @@ flowchart LR
   class n_DEL_COMMISSION_PLAN blocked;
   class n_PHY_01 held;
   class n_PHY_02 held;
-  class n_PHY_03_ENGINEERING blocked;
-  class n_PHY_04 blocked;
-  class n_EPR_RH11 blocked;
+  class n_PHY_03_ENGINEERING ready;
+  class n_PHY_04 ready;
+  class n_EPR_RH11 ready;
   class n_DEL_00 done;
-  class n_EPR_REFRESH ready;
-  class n_PHY_APPLICABILITY ready;
+  class n_EPR_REFRESH done;
+  class n_PHY_APPLICABILITY done;
   class n_DEL_CURRENT blocked;
 ```
 
