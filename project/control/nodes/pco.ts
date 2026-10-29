@@ -6,7 +6,7 @@ export const pcoNodes = defineNodes([
     owners: ['PCO'],
     title: 'Record owner-directed refurbishment scope and swarmable handoffs',
     dependencies: ['PCO-DISPATCH'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed coordination packet; bootstrap before acquiring its ACO lease.' },
     closeoutEvidence: ['project/pco/pco-refurbishment-plan-result.md']
   },

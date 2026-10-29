@@ -117,3 +117,5 @@ Every material construction-resolution obligation must have a current-house appl
 BCR closes only when material ROF/RWT and MRA-04 findings satisfy the first three dispositions, the conventional comparisons have current decisions, applicable EPR/PHY/DEL evidence has been reconciled, and the five physical studies agree with the adopted house. It must be stable enough for MRA-05 and HRS without calling unresolved physical relationships completed architecture. Moving an obligation to another programme does not discharge it.
 
 Closure does not claim planning/statutory approval, real-site suitability, complete engineering certification or M5 external validation.
+
+Current BCR convergence also requires `EPR-REFRESH` and `PHY-APPLICABILITY`: current-revision briefs and protocol applicability must be reconciled before technical scope is represented as coherent. These are preparation gates, not substitutes for actual external evidence. The typed graph owns the full dependency list.
