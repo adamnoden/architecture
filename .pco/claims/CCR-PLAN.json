@@ -9,7 +9,13 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T23:10:01.160Z",
-  "heartbeatAt": "2026-10-29T23:10:01.160Z",
-  "expiresAt": "2026-10-29T23:55:01.160Z",
-  "branch": "zerg/worker-4-packet-7"
+  "heartbeatAt": "2026-10-29T23:21:01.109Z",
+  "expiresAt": "2026-10-30T00:06:01.109Z",
+  "branch": "work/zerg-ccr-plan-drainage",
+  "pr": 1061,
+  "checkpoint": {
+    "evidence": "Reviewed source1060 head626cc044 preserved in combined1061 head57d3161e; all focused plan/drainage/identity and output checks pass, canonical artifacts unchanged",
+    "next": "Combined exact-head full CI and separate fresh canonical preflights, expected-head merge, own release and reconciliation",
+    "blocker": "Local pinned Chrome absent; combined GitHub full CI required"
+  }
 }
