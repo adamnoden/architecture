@@ -9,7 +9,13 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T21:11:23.136Z",
-  "heartbeatAt": "2026-10-29T21:11:23.136Z",
-  "expiresAt": "2026-10-29T21:56:23.136Z",
-  "branch": "zerg/worker-4-packet-2"
+  "heartbeatAt": "2026-10-29T21:21:37.110Z",
+  "expiresAt": "2026-10-29T22:06:37.110Z",
+  "branch": "zerg/worker-4-packet-2",
+  "pr": 1029,
+  "checkpoint": {
+    "evidence": "PR #1029 frozen sourcea57fcbb932c2339b2b944b018358e305832a2d1d; peer-reviewed; focused checks and docs build pass",
+    "next": "Rebind lease to forthcoming worker2 ROF02/RWT02/RWT03 integration PR, validate combined head then merge",
+    "blocker": "Await HRS accepted main and combined integration branch"
+  }
 }
