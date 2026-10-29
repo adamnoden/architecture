@@ -22,7 +22,6 @@ flowchart LR
   subgraph g_PCO["PCO"]
     direction TB
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>BLOCKED</b>"]
-    n_PCO_SWARM["PCO-SWARM<br/>Swarm continuation, startup transport and evidence-based run reporting<br/><b>READY</b>"]
   end
   subgraph g_IAS["IAS"]
     direction TB
@@ -298,7 +297,6 @@ flowchart LR
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
   class n_PCO_APPLICABILITY blocked;
-  class n_PCO_SWARM ready;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
   class n_TRIAD_GATE blocked;
@@ -411,7 +409,7 @@ flowchart LR
     n_PCO_VIS["PCO-VIS<br/>Generated structural and live Mermaid control graphs<br/><b>DONE</b>"]
     n_PCO_DISPATCH["PCO-DISPATCH<br/>Self-service agent dispatcher and race-safe claim-next policy<br/><b>DONE</b>"]
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>BLOCKED</b>"]
-    n_PCO_SWARM["PCO-SWARM<br/>Swarm continuation, startup transport and evidence-based run reporting<br/><b>READY</b>"]
+    n_PCO_SWARM["PCO-SWARM<br/>Swarm continuation, startup transport and evidence-based run reporting<br/><b>DONE</b>"]
   end
   subgraph g_BSR["BSR"]
     direction TB
@@ -820,7 +818,7 @@ flowchart LR
   class n_PCO_VIS done;
   class n_PCO_DISPATCH done;
   class n_PCO_APPLICABILITY blocked;
-  class n_PCO_SWARM ready;
+  class n_PCO_SWARM done;
   class n_BSR_ROOT done;
   class n_IAS_00 done;
   class n_OAS_00 done;
