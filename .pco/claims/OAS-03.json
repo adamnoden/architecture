@@ -2,15 +2,17 @@
   "schemaVersion": 1,
   "node": "OAS-03",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "oas-71cc3e4e-20261029-OAS-03",
   "holder": {
     "kind": "chatgpt",
     "label": "OAS execution 71cc3e4e"
   },
   "claimedAt": "2026-10-29T09:55:45.371Z",
-  "heartbeatAt": "2026-10-29T09:55:45.371Z",
-  "expiresAt": "2026-10-29T11:55:45.371Z",
+  "heartbeatAt": "2026-10-29T10:03:09.563Z",
+  "expiresAt": "2026-10-29T10:03:09.563Z",
   "branch": "workstream/oas-selection",
-  "note": "Bounded architectural family selection after merged shared junctions; no construction/performance claim."
+  "note": "Bounded architectural family selection after merged shared junctions; no construction/performance claim.",
+  "releasedAt": "2026-10-29T10:03:09.563Z",
+  "releaseReason": "completed"
 }
