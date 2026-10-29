@@ -128,9 +128,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Rainwater blockage, failure and exceedance',
     dependencies: ['RWT-02', 'RWT-03', 'RWT-04'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-05-blockage-failure-exceedance.md']
   },
   {
     id: 'RWT-06',

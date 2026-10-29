@@ -54,3 +54,5 @@ Across all of these subjects, the controlling question is the same: **what does 
 [Roof Failure and Recovery Evaluation](roof-failure-evaluation.md) establishes a common evidence-bounded comparison of roof water paths, layers, junctions, movement, drying, detection, access and renewal. It supports candidate research without selecting a covering or converting material longevity into whole-roof assurance.
 
 [Roof Topology and Water Paths](roof-topology-families.md) distinguishes hips from valleys, compares courtyard and conventional families, and exposes the height and water-path consequences of simplifying the current roof.
+
+[Rainwater Failure and Exceedance](rainwater-failure-and-exceedance.md) traces candidate blockage, leakage and compound-event paths. Inner roof spill transfers load to the court; a safe court escape remains unproved and constrains network selection.
