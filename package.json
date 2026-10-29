@@ -60,8 +60,8 @@
     "outputs:spatial:generate": "tsx compiler/reference-house/output/generate-spatial.ts",
     "outputs:generate": "tsx compiler/reference-house/output/generate.ts",
     "outputs:check": "tsx compiler/reference-house/output/verify.ts",
-    "test:repo": "tsx scripts/validate-repository.ts",
-    "test:project-control": "node --import tsx --test project/control/*.test.ts scripts/proof-scope.test.mjs",
+    "test:repo": "node scripts/validate-workflows.mjs && tsx scripts/validate-repository.ts",
+    "test:project-control": "node --import tsx --test project/control/*.test.ts scripts/proof-scope.test.mjs scripts/validate-workflows.test.mjs",
     "test:readme-contracts": "node --import tsx --test scripts/readme-command-contract.test.ts",
     "test:compiler-discovery": "node --import tsx --test scripts/compiler-test-discovery.test.ts",
     "test:publication-pdf": "node --import tsx --test publication/scripts/pdf-page-geometry.test.ts",
@@ -116,7 +116,8 @@
     "typescript": "^5.9.3",
     "unpdf": "1.8.1",
     "vitepress": "1.6.4",
-    "vitepress-plugin-mermaid": "2.0.17"
+    "vitepress-plugin-mermaid": "2.0.17",
+    "js-yaml": "4.3.2"
   },
   "engines": {
     "node": ">=22.12"
