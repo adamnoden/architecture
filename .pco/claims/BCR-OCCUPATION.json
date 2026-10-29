@@ -9,13 +9,13 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T21:37:37.741Z",
-  "heartbeatAt": "2026-10-29T21:51:01.441Z",
-  "expiresAt": "2026-10-29T22:36:01.441Z",
-  "branch": "zerg/worker-1-packet-3",
-  "pr": 1036,
+  "heartbeatAt": "2026-10-29T21:58:59.643Z",
+  "expiresAt": "2026-10-29T22:43:59.643Z",
+  "branch": "work/zerg-occupation-rainwater-wave3",
+  "pr": 1039,
   "checkpoint": {
-    "evidence": "PR1036 source2b03032c; commander reproduced geometry and inspected A3; typecheck/repo checks passed. Correcting current official ADB citation identified by review",
-    "next": "Correct source citation, integrate currentmain after roofpair, exact-head full CI then canonical preflight/expected-head merge and release",
-    "blocker": "Currentmain integration and final CI pending"
+    "evidence": "Reviewed BCRsource d4c3fba preserved directparent of PR1039 heada1d4a44a916f1f8d13a1e66e670c5efd72e4a2bb with RWT05; combined focused checks and websitebuild pass after accepted ROF03/04",
+    "next": "Verify both leasebindings, final exact-head full CI, both canonical preflights, expected-head merge and per-owner release/reconciliation",
+    "blocker": "Combined CI and per-lease preflights pending"
   }
 }
