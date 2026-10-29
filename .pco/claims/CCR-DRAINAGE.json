@@ -9,12 +9,12 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T23:05:41.638Z",
-  "heartbeatAt": "2026-10-29T23:11:40.922Z",
-  "expiresAt": "2026-10-29T23:56:40.922Z",
+  "heartbeatAt": "2026-10-29T23:21:03.612Z",
+  "expiresAt": "2026-10-30T00:06:03.612Z",
   "checkpoint": {
-    "evidence": "Draft1058 exact456a55bf source reviewed by commander; all3 original false passes reproduced and corrected.34 RH-C4,6CH05,8CH06 tests plus canonical output identity checks pass; no generated geometry change.",
-    "next": "Complete final current-main integration with independent CCR packet if ready, exact-head full CI and every lease preflight; expected-head merge and issue1004 reconciliation/release."
+    "evidence": "Combined1061 exact57d3161e preserves reviewed PLAN626cc044 and DRAINAGE456a55bf source parents, on settled c7d994a9.49 combined CF01/RHC4 tests, CH05/typecheck/repository/control/output checks pass; canonical output bytes unchanged.",
+    "next": "Confirm both common lease bindings; exact-head full CI, both fresh canonical preflights and expected-head merge, reconcile issue1004 and release each own lease."
   },
-  "branch": "zerg/worker-1-packet-5",
-  "pr": 1058
+  "branch": "work/zerg-ccr-plan-drainage",
+  "pr": 1061
 }
