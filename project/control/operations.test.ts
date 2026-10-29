@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import {declaredWork,operationsBrief,reconcileCompletedClaims,validatePacketDeclaration,type PullRequestObservation} from './operations.js'
+import {assertBriefSource,declaredWork,operationsBrief,reconcileCompletedClaims,validatePacketDeclaration,type PullRequestObservation} from './operations.js'
 import {createClaimRecord,type ClaimRecord} from './claims.js'
 import type {ClaimStore,StoredClaim} from './claim-store.js'
 import type {ControlNode} from './types.js'
@@ -59,4 +59,16 @@ test('runtime push entry point has read-only authority and delegates implementat
  const shared=readFileSync('.github/workflows/operations-report.yml','utf8')
  assert.match(shared,/ref: main/)
  assert.doesNotMatch(shared,/contents: write/)
+})
+
+
+test('briefing tolerates only generated main advances and records both source and observed revisions',()=>{
+ assert.doesNotThrow(()=>assertBriefSource(true,false,['STATUS.md','project/control/graph.md']))
+ assert.throws(()=>assertBriefSource(false,false,[]))
+ assert.throws(()=>assertBriefSource(true,true,[]))
+ assert.throws(()=>assertBriefSource(true,false,['project/control/nodes/pco.ts']))
+ assert.throws(()=>assertBriefSource(true,false,['scripts/control-operations.ts']))
+ const r=operationsBrief([node],[],at,'a'.repeat(40),'o/r',[],undefined,'b'.repeat(40))
+ assert.equal(r.snapshot.main,'a'.repeat(40));assert.equal(r.snapshot.currentMain,'b'.repeat(40))
+ assert.match(r.markdown,/only generated projection files differ/)
 })

@@ -1,11 +1,12 @@
+import { execFileSync } from 'node:child_process'
 import { spawnSync } from 'node:child_process'
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { mkdtempSync, readdirSync, readFileSync, writeFileSync, renameSync, rmSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, readdirSync, readFileSync, writeFileSync, renameSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { setTimeout as delay } from 'node:timers/promises'
-import { GitConnectorClaimStore, connectorMailbox, gitBlobSha, type ClaimGitSnapshot, type ConnectorWriteRequest } from './git-connector-claim-store.js'
+import { GitConnectorClaimStore, readGitClaimSnapshot, connectorMailbox, gitBlobSha, type ClaimGitSnapshot, type ConnectorWriteRequest } from './git-connector-claim-store.js'
 import { acquireClaimFromStore, ClaimConflictError, ClaimStoreUnavailableError } from './claim-store.js'
 import { createClaimRecord, serializeClaimRecord } from './claims.js'
 import type { ControlNode } from './types.js'
@@ -83,4 +84,29 @@ test('directories beginning with two dots are still inside the repository',()=>{
   assert.notEqual(child.status,0)
   assert.match(child.stderr,/outside the repository/)
  }finally{rmSync(inside,{recursive:true,force:true})}
+})
+
+
+test('fresh claim fetch leaves an unrelated FETCH_HEAD untouched and reads only the claim branch',()=>{
+ const dir=mkdtempSync(join(tmpdir(),'aco-ref-isolation-'))
+ const seed=join(dir,'seed'), origin=join(dir,'origin.git'), checkout=join(dir,'checkout')
+ const git=(cwd:string,args:string[])=>execFileSync('git',args,{cwd,encoding:'utf8',timeout:30000,stdio:['ignore','pipe','pipe']}).trim()
+ try{
+  git(dir,['init','--initial-branch=main',seed])
+  git(seed,['config','user.name','Fixture']);git(seed,['config','user.email','fixture@example.invalid'])
+  writeFileSync(join(seed,'main-marker'),'main source only')
+  git(seed,['add','.']);git(seed,['commit','-m','main source'])
+  git(seed,['checkout','--orphan','runtime/claims']);git(seed,['rm','-rf','.'])
+  mkdirSync(join(seed,'.pco/claims'),{recursive:true})
+  writeFileSync(join(seed,'.pco/claims/PCO-TEST.json'),serializeClaimRecord(record))
+  git(seed,['add','.']);git(seed,['commit','-m','claim record'])
+  git(dir,['init','--bare',origin]);git(seed,['remote','add','origin',origin]);git(seed,['push','origin','main','runtime/claims'])
+  git(dir,['clone','--branch','main',origin,checkout])
+  git(checkout,['fetch','origin','main'])
+  const mainFetch=git(checkout,['rev-parse','FETCH_HEAD'])
+  const snapshot=readGitClaimSnapshot(checkout)
+  assert.equal(snapshot.files.length,1)
+  assert.equal(snapshot.files[0].content,serializeClaimRecord(record))
+  assert.equal(git(checkout,['rev-parse','FETCH_HEAD']),mainFetch,'claim reads must not consume or overwrite shared FETCH_HEAD')
+ }finally{rmSync(dir,{recursive:true,force:true})}
 })

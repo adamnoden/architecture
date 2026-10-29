@@ -3,7 +3,7 @@ import {appendFileSync,readFileSync,writeFileSync} from 'node:fs'
 import {GitConnectorClaimStore,readGitClaimSnapshot} from '../project/control/git-connector-claim-store.js'
 import {GitHubClaimStore} from '../project/control/github-claim-store.js'
 import {controlNodes} from '../project/control/nodes/index.js'
-import {operationsBrief,reconcileCompletedClaims,validatePacketDeclaration,type PullRequestObservation} from '../project/control/operations.js'
+import {assertBriefSource,operationsBrief,reconcileCompletedClaims,validatePacketDeclaration,type PullRequestObservation} from '../project/control/operations.js'
 import {leaseTemporalState} from '../project/control/claims.js'
 const git=(args:string[])=>execFileSync('git',args,{encoding:'utf8',timeout:30000,stdio:['ignore','pipe','pipe']}).trim()
 const root=git(['rev-parse','--show-toplevel'])
@@ -32,8 +32,9 @@ async function main(){
   return
  }
  git(['fetch','origin','main','--quiet'])
- if(git(['rev-parse','HEAD'])!==git(['rev-parse','origin/main'])||git(['status','--porcelain','--untracked-files=no']))throw new Error('Operations require clean current main sources; do not publish a feature branch as programme state')
+ const source=git(['rev-parse','HEAD']),currentMain=git(['rev-parse','origin/main']),dirty=Boolean(git(['status','--porcelain','--untracked-files=no']))
  if(command==='reconcile'){
+  if(source!==currentMain||dirty)throw new Error('Mutating reconciliation requires clean current main sources')
   if(!token)throw new Error('Reconciliation requires configured GitHub mutation credentials')
   const authority=git(['rev-parse','HEAD'])
   const result=await reconcileCompletedClaims(controlNodes,new GitHubClaimStore(repository,token),repository,async n=>pr(await api(`pulls/${n}`)),async()=>{
@@ -46,12 +47,15 @@ async function main(){
   return
  }
  if(command!=='brief')throw new Error('Use brief, packet-check or reconcile')
+ let ancestor=false
+ try{git(['merge-base','--is-ancestor',source,currentMain]);ancestor=true}catch{/* Feature/divergent history cannot be a programme snapshot. */}
+ assertBriefSource(ancestor,dirty,git(['diff','--name-only',source,currentMain]).split('\n').filter(Boolean))
  let claims=null,at=new Date(),prs:PullRequestObservation[]|null=null
  const warnings:string[]=[]
  if(process.env.RECONCILE_RESULT==='failure')warnings.push('Post-merge reconciliation failed; inspect the reconcile job before assuming cleanup')
  try{const listed=await readStore.list();claims=listed.claims.map(c=>c.record);at=listed.observedAt}catch(e){warnings.push(String(e))}
  try{const values=await api('pulls?state=open&per_page=100');prs=values.map(pr);if(values.length===100)warnings.push('PR list truncated at 100; inspect GitHub for additional PRs')}catch(e){warnings.push(String(e))}
- const report=operationsBrief(controlNodes,claims,at,git(['rev-parse','HEAD']),repository,prs,warnings.join('; ')||undefined)
+ const report=operationsBrief(controlNodes,claims,at,git(['rev-parse','HEAD']),repository,prs,warnings.join('; ')||undefined,currentMain)
  const json=process.argv.indexOf('--json'),markdown=process.argv.indexOf('--markdown')
  if(json>=0){if(!process.argv[json+1])throw new Error('--json requires a path');writeFileSync(process.argv[json+1],JSON.stringify(report.snapshot,null,2)+'\n')}
  if(markdown>=0){if(!process.argv[markdown+1])throw new Error('--markdown requires a path');writeFileSync(process.argv[markdown+1],report.markdown)}

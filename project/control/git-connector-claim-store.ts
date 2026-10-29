@@ -80,8 +80,9 @@ export class GitConnectorClaimStore implements ClaimStore {
 export function readGitClaimSnapshot(repoRoot: string): ClaimGitSnapshot {
   const git = (args: string[]) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8', timeout: 30000, maxBuffer: 4 * 1024 * 1024, stdio: ['ignore','pipe','pipe'] }).trim()
   try {
-    git(['fetch','origin',`refs/heads/${claimsBranch}`,'--quiet'])
-    const ref = git(['rev-parse','FETCH_HEAD'])
+    // FETCH_HEAD is shared mutable state: an overlapping main fetch can replace it.
+    git(['fetch','--no-write-fetch-head','origin',`refs/heads/${claimsBranch}:refs/remotes/origin/${claimsBranch}`,'--quiet'])
+    const ref = git(['rev-parse',`refs/remotes/origin/${claimsBranch}`])
     if (!/^[a-f0-9]{40}$/.test(ref)) throw new Error('Unsupported Git object identity')
     const entries = git(['ls-tree','-r',ref,'--',claimsDirectory])
     // Git commit times are not server clock readings. Match the native client's explicit local-clock fallback.

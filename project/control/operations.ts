@@ -55,10 +55,15 @@ export async function reconcileCompletedClaims(nodes: readonly ControlNode[], st
   return results
 }
 const cell = (value: string) => value.replace(/[\r\n]+/g,' ').replace(/\|/g,'\\|').replace(/</g,'&lt;')
-export function operationsBrief(nodes: readonly ControlNode[], claims: readonly ClaimRecord[] | null, at: Date, main: string, repository: string, prs: readonly PullRequestObservation[] | null, warning?: string) {
+/** Read-only snapshots may span projection-only main advances, never source changes or feature branches. */
+export function assertBriefSource(ancestor:boolean,dirty:boolean,changes:readonly string[]) {
+  const tolerated=new Set(['STATUS.md','project/workstream-codes.md','project/control/graph.md','docs/project/dependency-graph.md','docs/project/graph-source.ts'])
+  if(!ancestor||dirty||changes.some(path=>!tolerated.has(path)))throw new Error('Briefing requires clean canonical main sources; only generated projection advances are tolerated')
+}
+export function operationsBrief(nodes: readonly ControlNode[], claims: readonly ClaimRecord[] | null, at: Date, main: string, repository: string, prs: readonly PullRequestObservation[] | null, warning?: string, currentMain=main) {
   const groups=nodesByDerivedState(nodes)
   const dispatch=claims ? buildDispatchSnapshot(nodes,claims,at) : null
-  const snapshot={schemaVersion:1,observedAt:at.toISOString(),main,repository,claimsAvailable:claims!==null,prsAvailable:prs!==null,warning:warning??null,
+  const snapshot={schemaVersion:1,observedAt:at.toISOString(),main,currentMain,repository,claimsAvailable:claims!==null,prsAvailable:prs!==null,warning:warning??null,
     counts:Object.fromEntries(Object.entries(groups).map(([key,value])=>[key,value.length])),
     safeForAutomaticClaim:dispatch?.safeForAutomaticClaim??null,
     unsafeReasons:dispatch?.unsafeReasons??[],
@@ -68,7 +73,8 @@ export function operationsBrief(nodes: readonly ControlNode[], claims: readonly 
     activeUnclaimed:dispatch?.activeUnclaimed.map(n=>n.id)??null,
     invalidClaims:dispatch?.invalidLiveClaims.map(c=>({node:c.node,reason:c.reason}))??null,
     prs:prs?prs.map(p=>({number:p.number,title:p.title,url:p.url,branch:p.branch,head:p.head,work:safeWork(p.body)})):null}
-  const md=['# Operations snapshot','',`Observed **${snapshot.observedAt}** · main \`${main}\``, '',
+  const md=['# Operations snapshot','',`Observed **${snapshot.observedAt}** · source main revision \`${main}\``, '',
+    ...(currentMain!==main?[`Observed main tip: \`${currentMain}\`; only generated projection files differ from the source revision.`, '']:[]),
     'Snapshot only. Read canonical live claims before acquisition or publication. Heartbeat age does not prove responsiveness.', '',
     ...(warning?[`**Observation warning:** ${cell(warning)}`,'']:[]),
     `Structural: ${groups.ready.length} ready · ${groups.blocked.length} blocked · ${groups.active.length} active · ${groups.held.length} held · ${groups.done.length} complete.`, '',
