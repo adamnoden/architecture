@@ -9,12 +9,13 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T21:36:32.491Z",
-  "heartbeatAt": "2026-10-29T21:43:09.330Z",
-  "expiresAt": "2026-10-29T22:28:09.330Z",
-  "branch": "zerg/worker-4-packet-3",
-  "pr": 1033,
+  "heartbeatAt": "2026-10-29T21:46:41.721Z",
+  "expiresAt": "2026-10-29T22:31:41.721Z",
+  "branch": "work/zerg-roof-wave3",
+  "pr": 1035,
   "checkpoint": {
-    "evidence": "PR1033 source6a89c876; three covering studies, local checks and website build passed",
-    "next": "Complete peer review and exact-head CI; coordinate paired integration with ROF04"
+    "evidence": "Combined PR1035 head93fa4617 preserves reviewed ROF03 source25d532b8 and ROF04 source",
+    "next": "Verify combined exact-head CI and per-lease preflight; merge then release",
+    "blocker": "Combined CI pending"
   }
 }
