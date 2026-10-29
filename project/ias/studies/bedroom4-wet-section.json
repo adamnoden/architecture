@@ -1,0 +1,148 @@
+{
+  "scope": "Conditional architectural section; no source adoption, product compatibility, capacity or waterproofing pass",
+  "sourceBlobs": {
+    "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+    "compiler/reference-house/georgian/section-source.ts": "1617867dc3441206c116ddf877dcfd5ba89fb5a4"
+  },
+  "hadCandidateBlob": "099bd8d74b4db3fa2941d21d32f6de728c2b7a57",
+  "house": {
+    "firstFFL": 3450,
+    "total": 350,
+    "finish": 20,
+    "deck": 22,
+    "framing": 238,
+    "service": 55,
+    "ceiling": 15,
+    "deckTop": 3430,
+    "soffit": 3100
+  },
+  "tray": {
+    "x": 1337.5,
+    "y": 9825,
+    "width": 1000,
+    "depth": 1000,
+    "profile": 40,
+    "localDrainFloor": 12,
+    "comparisonRim": 160
+  },
+  "cabinet": {
+    "x": 417.5,
+    "y": 8800,
+    "width": 300,
+    "depth": 750
+  },
+  "boxing": {
+    "width": 150,
+    "height": 170,
+    "face": 18,
+    "westAxis": 492.5,
+    "northAxis": 10750
+  },
+  "waste": {
+    "overallDepth": 81,
+    "outletAxisAboveBottom": 50,
+    "seat": 132,
+    "bottom": 51,
+    "outlet": 101
+  },
+  "fallPerMetre": 18,
+  "pipeOutsideComparison": 43,
+  "fittingOutsideComparison": 60,
+  "routes": [
+    {
+      "name": "corner NW",
+      "outlet": [
+        1502.5,
+        10660
+      ],
+      "points": [
+        [
+          1502.5,
+          10660
+        ],
+        [
+          1502.5,
+          10750
+        ],
+        [
+          492.5,
+          10750
+        ],
+        [
+          492.5,
+          9500
+        ]
+      ],
+      "length": 2350,
+      "fall": 42.3,
+      "axisAtEnd": 58.7,
+      "fittingBottomAtEnd": 28.700000000000003,
+      "lengthAtTrayExit": 255,
+      "axisAtTrayExit": 96.41,
+      "nominalUnderTrayClearanceAtExit": 2.0900000000000034,
+      "fittingUnderTrayClearanceAtExit": -6.409999999999997
+    },
+    {
+      "name": "central north",
+      "outlet": [
+        1837.5,
+        10660
+      ],
+      "points": [
+        [
+          1837.5,
+          10660
+        ],
+        [
+          1837.5,
+          10750
+        ],
+        [
+          492.5,
+          10750
+        ],
+        [
+          492.5,
+          9500
+        ]
+      ],
+      "length": 2685,
+      "fall": 48.33,
+      "axisAtEnd": 52.67,
+      "fittingBottomAtEnd": 22.67,
+      "lengthAtTrayExit": 590,
+      "axisAtTrayExit": 90.38,
+      "nominalUnderTrayClearanceAtExit": 8.120000000000005,
+      "fittingUnderTrayClearanceAtExit": -0.37999999999999545
+    }
+  ],
+  "rejectedWetTrial": {
+    "carrier": 12.5,
+    "membrane": 1,
+    "adhesive": 3,
+    "tile": 10,
+    "total": 26.5,
+    "extra": 6.5,
+    "wetFFL": 3456.5,
+    "raisedTrayTop": 3616.5
+  },
+  "flushComparison": {
+    "rim": 40,
+    "seat": 12,
+    "wasteBottom": -69,
+    "outletAxis": -19
+  },
+  "boxingComparison": {
+    "clearWidth": 114,
+    "underCap": 152,
+    "capMargin": 21
+  },
+  "unknowns": [
+    "matched .040 tray/waste/kit revision and outlet layout",
+    "actual underside, legs, bends and tool withdrawal",
+    "supported complete wet finish and threshold",
+    "branch/stack/vent capacity and connection",
+    "structural penetration/load and boundary duties"
+  ],
+  "provenance": "Mira 1493053-W2-D pp3–4/15–18 supplies conditional geometry/minimum fall.160rim,60fitting envelope and150×170boxing are authored comparisons; historical140–160range does not certify a current kit."
+}

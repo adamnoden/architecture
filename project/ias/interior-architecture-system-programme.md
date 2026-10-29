@@ -100,3 +100,8 @@ Closure is not construction adequacy or physical acceptance.
 Retain the explicit IS-01–06 adoption obligations, including the 26.5 mm wet trial against a 20 mm allowance, access-front section and U-ENS3 sanitary/door fit. Finish or simplify the actual occurrence; do not transfer an unfitted room to BCR as if it were resolved.
 
 The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.
+
+
+## Bedroom 4 wet-service section checkpoint
+
+The [located wet-service comparison](ias-03-bedroom4-wet-section.md) develops the unadopted HAD Bedroom 4 alternative with an explicit raised-tray/floor budget, perimeter waste route and disassembly sequence. It exposes an unresolved under-tray fitting/access condition and retains exact product-generation and wet-system holds. This narrows IW-01/IS-02; it does not close IAS-03, adopt the alternative, or remove the existing IS-01–06 obligations.
