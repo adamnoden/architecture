@@ -9,12 +9,12 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T22:12:23.816Z",
-  "heartbeatAt": "2026-10-29T22:43:46.072Z",
-  "expiresAt": "2026-10-29T23:28:46.072Z",
-  "branch": "zerg/worker-1-packet-4",
-  "pr": 1045,
+  "heartbeatAt": "2026-10-29T22:50:50.914Z",
+  "expiresAt": "2026-10-29T23:35:50.914Z",
+  "branch": "work/zerg-ias-had-checkpoint",
+  "pr": 1051,
   "checkpoint": {
-    "evidence": "PR1045 correction banner withdraws invalid b8745066 datum arithmetic. High-resolution manufacturer page4 and exploded page15 verified:50mm below housing flange,81mm housing depth,1000square edge-centred outlet. HAD candidate source recoverable in PR1046.",
-    "next": "Replace numerical study and SVG with corrected flange sensitivity; resolve retained NE perimeter route versus NW east-entry alternative using actual waste/clip and complete wet-floor evidence with HAD and BCR-WET workers."
+    "evidence": "Corrected source b69b6345 reviewed by commander/HAD. Combined draft1051 head4cb898df preserves IAS/HAD source parents; both artifact checks, TypeScript, repository/control checks and A3 review passed. Both nodes incomplete.",
+    "next": "Verify both lease bindings then exact-head full CI, integrate current main as queue advances, both canonical preflights and partial checkpoint merge; release IAS handoff and continue CCR dispatcher."
   }
 }
