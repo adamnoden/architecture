@@ -2,15 +2,17 @@
   "schemaVersion": 1,
   "node": "TRIAD-IFACE-FREEZE",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "had-71cc3e4e-20261029-iface",
   "holder": {
     "kind": "chatgpt",
     "label": "HAD execution 71cc3e4e"
   },
   "claimedAt": "2026-10-29T08:50:50.582Z",
-  "heartbeatAt": "2026-10-29T08:50:50.582Z",
-  "expiresAt": "2026-10-29T10:50:50.582Z",
+  "heartbeatAt": "2026-10-29T08:54:31.645Z",
+  "expiresAt": "2026-10-29T08:54:31.645Z",
   "branch": "workstream/had-interface",
-  "note": "Compose completed IAS-00/OAS-00/HAD-00; no selected-system claim."
+  "note": "Compose completed IAS-00/OAS-00/HAD-00; no selected-system claim.",
+  "releasedAt": "2026-10-29T08:54:31.645Z",
+  "releaseReason": "completed"
 }
