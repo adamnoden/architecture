@@ -320,3 +320,12 @@ class MemoryClaimStore implements ClaimStore {
     return { claims: [...this.records.values()], observedAt: this.at }
   }
 }
+
+
+test('expired work retains recovery evidence in dispatcher candidates without changing ranking', () => {
+  const node = planned('RECOVERY')
+  const previous = {...claim('RECOVERY', 'silent', new Date(now.getTime()-3*3600000)), branch:'work/preserved', checkpoint:{evidence:'PR #123',next:'Inspect tests'}}
+  const snapshot = buildDispatchSnapshot([node], [previous], now)
+  assert.equal(snapshot.candidates[0].previousClaim?.checkpoint?.evidence, 'PR #123')
+  assert.equal(snapshot.candidates[0].previousClaim?.branch, 'work/preserved')
+})

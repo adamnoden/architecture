@@ -1,4 +1,5 @@
 import { GitConnectorClaimStore, connectorMailbox, readGitClaimSnapshot } from '../project/control/git-connector-claim-store.js'
+import { leaseHealth, assertPublicationLease } from '../project/control/lease-health.js'
 import { execFileSync } from 'node:child_process'
 import { Buffer } from 'node:buffer'
 import {
@@ -143,7 +144,10 @@ function metadata(flags: Map<string, string>) {
   const branch = flags.get('branch')?.trim()
   const note = flags.get('note')?.trim()
   const pr = optionalInt(flags, 'pr')
+  const evidence = flags.get('checkpoint-evidence'), next = flags.get('checkpoint-next'), blocker = flags.get('checkpoint-blocker')
+  if ((evidence || next || blocker) && (!evidence?.trim() || !next?.trim())) throw new Error('Checkpoint requires --checkpoint-evidence and --checkpoint-next')
   return {
+    ...(evidence && next ? { checkpoint: { evidence, next, ...(blocker ? { blocker } : {}) } } : {}),
     ...(branch ? { branch } : {}),
     ...(note ? { note } : {}),
     ...(pr ? { pr } : {})
@@ -181,6 +185,7 @@ function ensureDispatcherViewMatchesMain(): void {
   ensureControlViewMatchesMain([
     'project/control/dispatch.ts',
     'project/control/claims.ts',
+    'project/control/lease-health.ts',
     'project/control/claim-store.ts',
     'project/control/git-connector-claim-store.ts',
     'scripts/project-claims.ts'
@@ -218,7 +223,7 @@ class GitHubClaimStore implements ClaimStore {
     if (this.branchChecked) return
     const response = await fetch(
       `https://api.github.com/repos/${this.repo}/branches/${encodeURIComponent(claimsBranch)}`,
-      { headers: this.headers() }
+      { headers: this.headers(), signal: AbortSignal.timeout(20000) }
     )
     if (!response.ok) {
       throw new ClaimStoreUnavailableError(
@@ -235,7 +240,7 @@ class GitHubClaimStore implements ClaimStore {
     const path = claimPath(node)
     const response = await fetch(
       `https://api.github.com/repos/${this.repo}/contents/${encodedPath(path)}?ref=${encodeURIComponent(claimsBranch)}`,
-      { headers: this.headers() }
+      { headers: this.headers(), signal: AbortSignal.timeout(20000) }
     )
     const at = observedAt(response)
     if (response.status === 404) return { stored: null, observedAt: at }
@@ -269,6 +274,7 @@ class GitHubClaimStore implements ClaimStore {
     if (!this.token) throw new ClaimStoreUnavailableError('Claim mutation requires GH_TOKEN or GITHUB_TOKEN')
     const path = claimPath(node)
     const response = await fetch(`https://api.github.com/repos/${this.repo}/contents/${encodedPath(path)}`, {
+      signal: AbortSignal.timeout(20000),
       method: 'PUT',
       headers: this.headers(true),
       body: JSON.stringify({
@@ -294,7 +300,7 @@ class GitHubClaimStore implements ClaimStore {
     await this.assertBranch()
     const response = await fetch(
       `https://api.github.com/repos/${this.repo}/contents/${encodedPath(claimsDirectory)}?ref=${encodeURIComponent(claimsBranch)}`,
-      { headers: this.headers() }
+      { headers: this.headers(), signal: AbortSignal.timeout(20000) }
     )
     const at = observedAt(response)
     if (response.status === 404) return { claims: [], observedAt: at }
@@ -348,6 +354,7 @@ function candidateJson(candidate: DispatchCandidate) {
     node: candidate.node.id,
     title: candidate.node.title,
     owners: candidate.node.owners,
+    recovery: candidate.previousClaim ? { branch: candidate.previousClaim.branch ?? null, pr: candidate.previousClaim.pr ?? null, checkpoint: candidate.previousClaim.checkpoint ?? null, note: candidate.previousClaim.note ?? null, generation: candidate.previousClaim.generation } : null,
     metrics: candidate.metrics
   }
 }
@@ -372,6 +379,8 @@ function snapshotJson(snapshot: DispatchSnapshot, limit = defaultDispatchLimit) 
       title: item.node.title,
       holder: item.claim.holder,
       expiresAt: item.claim.expiresAt,
+      health: leaseHealth(item.claim, snapshot.observedAt),
+      checkpoint: item.claim.checkpoint ?? null,
       grace: item.grace,
       branch: item.claim.branch ?? null,
       pr: item.claim.pr ?? null
@@ -427,7 +436,7 @@ function printDispatchSnapshot(snapshot: DispatchSnapshot, limit: number, format
   console.log('\n## Claimed')
   for (const item of snapshot.claimed) {
     console.log(
-      `- ${item.node.id} — ${item.claim.holder.label ?? item.claim.holder.kind}; ${item.grace ? 'grace through' : 'expires'} ${item.claim.expiresAt}`
+      `- ${item.node.id} — ${item.claim.holder.label ?? item.claim.holder.kind}; last heartbeat ${leaseHealth(item.claim, snapshot.observedAt).heartbeatAgeMinutes} min ago; ${item.grace ? 'grace; expires' : 'expires'} ${item.claim.expiresAt}; ${item.claim.checkpoint?.next ?? item.claim.note ?? 'no recovery checkpoint'}`
     )
   }
   if (!snapshot.claimed.length) console.log('- none')
@@ -549,7 +558,7 @@ async function status(store: ClaimStore): Promise<void> {
   console.log('\n## Claimed')
   for (const item of claimed) {
     console.log(
-      `- ${item.node} — ${item.record.holder.label ?? item.record.holder.kind}; ${item.grace ? 'expiry grace through' : 'expires'} ${item.record.expiresAt}${item.record.branch ? `; branch ${item.record.branch}` : ''}${item.record.pr ? `; PR #${item.record.pr}` : ''}`
+      `- ${item.node} — ${item.record.holder.label ?? item.record.holder.kind}; ${item.grace ? 'expiry grace through' : 'expires'} ${item.record.expiresAt}; heartbeat ${leaseHealth(item.record, listed.observedAt).heartbeatAgeMinutes} min ago${item.record.branch ? `; branch ${item.record.branch}` : ''}${item.record.pr ? `; PR #${item.record.pr}` : ''}`
     )
   }
   if (!claimed.length) console.log('- none')
@@ -574,6 +583,15 @@ async function main(): Promise<void> {
   const store = storeFor(args.command, args.flags)
 
   switch (args.command) {
+    case 'doctor': {
+      ensureDispatcherViewMatchesMain()
+      const listed = await store.list()
+      const transport = args.flags.get('transport') ?? 'github'
+      const configured = transport === 'connector' ? Boolean(args.flags.get('bridge-dir')) : Boolean(process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN)
+      console.log(JSON.stringify({ transport, read: 'verified', mutationConfigured: configured, writeAuthorization: 'unproven until successful CAS write', observedAt: listed.observedAt.toISOString(), claims: listed.claims.length }, null, 2))
+      if (!configured) process.exitCode = 2
+      return
+    }
     case 'status':
       await status(store)
       return
@@ -596,14 +614,30 @@ async function main(): Promise<void> {
       return
     }
 
+    case 'merge-check':
     case 'verify': {
       if (!args.node) throw new Error('verify requires NODE')
       // Verification is deliberately occupancy-only. PCO/merge validation is
       // the independent durable structural check.
-      const verified = await verifyClaimInStore(store, args.node, controlNodes, {
+      let verified = await verifyClaimInStore(store, args.node, controlNodes, {
         leaseId: requiredFlag(args.flags, 'lease-id'),
         generation: optionalInt(args.flags, 'generation')
       })
+      if (args.command === 'merge-check') {
+        const branch = requiredFlag(args.flags, 'branch'), head = requiredFlag(args.flags, 'head')
+        requiredFlag(args.flags, 'generation')
+        if (!/^[a-f0-9]{40}$/.test(head)) throw new Error('--head must be a full commit SHA')
+        if (git(['status', '--porcelain', '--untracked-files=no'])) throw new Error('Publication requires a clean tracked working tree matching the validated head')
+        git(['check-ref-format', '--branch', branch])
+        git(['fetch', 'origin', 'main', branch, '--quiet'])
+        if (git(['rev-parse', `origin/${branch}`]) !== head || git(['rev-parse', 'HEAD']) !== head) throw new Error('Validated local/remote head mismatch')
+        git(['merge-base', '--is-ancestor', 'origin/main', head])
+        // Re-read occupancy AFTER network/base/head checks, not before them.
+        verified = await verifyClaimInStore(store, args.node, controlNodes, {
+          leaseId: requiredFlag(args.flags, 'lease-id'), generation: optionalInt(args.flags, 'generation')
+        })
+        assertPublicationLease(verified.stored.record, verified.observedAt, { branch, leaseId: requiredFlag(args.flags, 'lease-id'), generation: Number(requiredFlag(args.flags, 'generation')) })
+      }
       console.log(JSON.stringify({
         node: verified.stored.record.node,
         generation: verified.stored.record.generation,
@@ -670,7 +704,7 @@ async function main(): Promise<void> {
 
     default:
       throw new Error(
-        `Unknown command ${args.command}. Use status, next, claim-next, show, verify, claim, renew, release or force.`
+        `Unknown command ${args.command}. Use doctor, status, next, claim-next, show, verify, merge-check, claim, renew, release or force.`
       )
   }
 }
