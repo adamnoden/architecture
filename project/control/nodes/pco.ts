@@ -104,7 +104,14 @@ export const pcoNodes = defineNodes([
     owners: ['PCO'],
     title: 'Generated structural and live Mermaid control graphs',
     dependencies: ['PCO-08'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: [
+      'project/control/mermaid.ts',
+      'project/control/mermaid.test.ts',
+      'scripts/project-control-graph.ts',
+      'scripts/update-status.ts',
+      '.github/workflows/project-control-projections.yml',
+      'project/control/README.md'
+    ]
   }
 ])

@@ -37,6 +37,8 @@
     "dataplate:update": "npm run publication:metadata:update && npm run dataplate:write",
     "status:update": "tsx scripts/update-status.ts",
     "control:status": "tsx scripts/project-control.ts",
+    "control:graph": "tsx scripts/project-control-graph.ts",
+    "control:graph:live": "tsx scripts/project-control-graph.ts --live",
     "control:leases": "tsx scripts/project-claims.ts",
     "control:claims": "tsx scripts/project-claims.ts status",
     "control:claim": "tsx scripts/project-claims.ts claim",

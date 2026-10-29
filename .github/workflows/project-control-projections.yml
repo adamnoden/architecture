@@ -37,12 +37,14 @@ jobs:
       - name: Commit projection delta only
         shell: bash
         run: |
-          if git diff --quiet -- STATUS.md project/workstream-codes.md; then
+          projection_paths=(STATUS.md project/workstream-codes.md project/control/graph.md)
+
+          if git diff --quiet -- "${projection_paths[@]}" && [ -z "$(git ls-files --others --exclude-standard -- project/control/graph.md)" ]; then
             echo "Project-control projections already current."
             exit 0
           fi
 
-          unexpected="$(git status --porcelain | grep -Ev '^( M|M |A |\?\?) (STATUS\.md|project/workstream-codes\.md)$' || true)"
+          unexpected="$(git status --porcelain | grep -Ev '^( M|M |A |\?\?) (STATUS\.md|project/workstream-codes\.md|project/control/graph\.md)$' || true)"
           if [ -n "$unexpected" ]; then
             echo "Refusing to commit unexpected projection-workflow changes:"
             echo "$unexpected"
@@ -51,6 +53,6 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add STATUS.md project/workstream-codes.md
+          git add "${projection_paths[@]}"
           git commit -m "Reconcile generated project-control projections"
           git push origin HEAD:main
