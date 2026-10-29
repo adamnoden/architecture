@@ -27,6 +27,8 @@ New first-class workstreams use exactly three uppercase letters. Historical evid
 | `PHY` | Physical validation | [#912](https://github.com/adamnoden/architecture/issues/912) | `docs/development/tectonic-prototype-programme.md` | `P01…P04` |
 | `PLT` | Architectural Plate Refinement | [#422](https://github.com/adamnoden/architecture/issues/422) | — | — |
 | `PUB` | Publication credibility and release | [#71](https://github.com/adamnoden/architecture/issues/71) | — | `PR` |
+| `ROF` | Roof Systems Architecture | [#991](https://github.com/adamnoden/architecture/issues/991) | `project/rof/roof-systems-programme.md` | — |
+| `RWT` | Rainwater Systems Architecture | [#992](https://github.com/adamnoden/architecture/issues/992) | `project/rwt/rainwater-systems-programme.md` | — |
 | `TYP` | Publication typography | — | — | — |
 
 Do not hand-edit this register. Change the typed registry and regenerate projections.
