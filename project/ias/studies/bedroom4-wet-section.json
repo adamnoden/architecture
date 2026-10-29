@@ -4,7 +4,11 @@
     "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
     "compiler/reference-house/georgian/section-source.ts": "1617867dc3441206c116ddf877dcfd5ba89fb5a4"
   },
-  "hadCandidateBlob": "099bd8d74b4db3fa2941d21d32f6de728c2b7a57",
+  "hadCandidate": {
+    "commit": "4c7e1047a4a96537d847356df39ca8907036533f",
+    "path": "project/had/studies/bedroom4-allocation-study.ts",
+    "blob": "099bd8d74b4db3fa2941d21d32f6de728c2b7a57"
+  },
   "house": {
     "firstFFL": 3450,
     "total": 350,
@@ -22,7 +26,7 @@
     "width": 1000,
     "depth": 1000,
     "profile": 40,
-    "localDrainFloor": 12,
+    "rimToLowWetFloor": 25,
     "comparisonRim": 160
   },
   "cabinet": {
@@ -39,51 +43,24 @@
     "northAxis": 10750
   },
   "waste": {
-    "overallDepth": 81,
-    "outletAxisAboveBottom": 50,
-    "seat": 132,
-    "bottom": 51,
-    "outlet": 101
+    "housingFlangeComparison": 135,
+    "outletBelowFlange": 50,
+    "bottomBelowFlange": 81,
+    "seat": 135,
+    "bottom": 54,
+    "outlet": 85
   },
   "fallPerMetre": 18,
   "pipeOutsideComparison": 43,
   "fittingOutsideComparison": 60,
+  "flangeOffsets": [
+    0,
+    10,
+    15
+  ],
   "routes": [
     {
-      "name": "corner NW",
-      "outlet": [
-        1502.5,
-        10660
-      ],
-      "points": [
-        [
-          1502.5,
-          10660
-        ],
-        [
-          1502.5,
-          10750
-        ],
-        [
-          492.5,
-          10750
-        ],
-        [
-          492.5,
-          9500
-        ]
-      ],
-      "length": 2350,
-      "fall": 42.3,
-      "axisAtEnd": 58.7,
-      "fittingBottomAtEnd": 28.700000000000003,
-      "lengthAtTrayExit": 255,
-      "axisAtTrayExit": 96.41,
-      "nominalUnderTrayClearanceAtExit": 2.0900000000000034,
-      "fittingUnderTrayClearanceAtExit": -6.409999999999997
-    },
-    {
-      "name": "central north",
+      "name": "NE central north",
       "outlet": [
         1837.5,
         10660
@@ -106,14 +83,160 @@
           9500
         ]
       ],
+      "lengthAtTrayExit": 590,
       "length": 2685,
       "fall": 48.33,
-      "axisAtEnd": 52.67,
-      "fittingBottomAtEnd": 22.67,
+      "axisAtEnd": 36.67,
+      "fittingBottomAtEnd": 6.670000000000002,
+      "axisAtTrayExit": 74.38,
+      "fittingUnderTrayClearanceAtExit": 15.620000000000005,
+      "sensitivity": [
+        {
+          "authoredFlangeOffsetBelowWetFloor": 0,
+          "flange": 135,
+          "outlet": 85,
+          "axisAtCabinetEntry": 36.67,
+          "fittingBottomAtCabinetEntry": 6.670000000000002,
+          "axisAfter125CabinetTravel": 34.42,
+          "fittingBottomAfter125CabinetTravel": 4.420000000000002
+        },
+        {
+          "authoredFlangeOffsetBelowWetFloor": 10,
+          "flange": 125,
+          "outlet": 75,
+          "axisAtCabinetEntry": 26.67,
+          "fittingBottomAtCabinetEntry": -3.3299999999999983,
+          "axisAfter125CabinetTravel": 24.42,
+          "fittingBottomAfter125CabinetTravel": -5.579999999999998
+        },
+        {
+          "authoredFlangeOffsetBelowWetFloor": 15,
+          "flange": 120,
+          "outlet": 70,
+          "axisAtCabinetEntry": 21.67,
+          "fittingBottomAtCabinetEntry": -8.329999999999998,
+          "axisAfter125CabinetTravel": 19.42,
+          "fittingBottomAfter125CabinetTravel": -10.579999999999998
+        }
+      ]
+    },
+    {
+      "name": "NE central west via north perimeter",
+      "outlet": [
+        1502.5,
+        10325
+      ],
+      "points": [
+        [
+          1502.5,
+          10325
+        ],
+        [
+          1502.5,
+          10750
+        ],
+        [
+          492.5,
+          10750
+        ],
+        [
+          492.5,
+          9500
+        ]
+      ],
       "lengthAtTrayExit": 590,
-      "axisAtTrayExit": 90.38,
-      "nominalUnderTrayClearanceAtExit": 8.120000000000005,
-      "fittingUnderTrayClearanceAtExit": -0.37999999999999545
+      "length": 2685,
+      "fall": 48.33,
+      "axisAtEnd": 36.67,
+      "fittingBottomAtEnd": 6.670000000000002,
+      "axisAtTrayExit": 74.38,
+      "fittingUnderTrayClearanceAtExit": 15.620000000000005,
+      "sensitivity": [
+        {
+          "authoredFlangeOffsetBelowWetFloor": 0,
+          "flange": 135,
+          "outlet": 85,
+          "axisAtCabinetEntry": 36.67,
+          "fittingBottomAtCabinetEntry": 6.670000000000002,
+          "axisAfter125CabinetTravel": 34.42,
+          "fittingBottomAfter125CabinetTravel": 4.420000000000002
+        },
+        {
+          "authoredFlangeOffsetBelowWetFloor": 10,
+          "flange": 125,
+          "outlet": 75,
+          "axisAtCabinetEntry": 26.67,
+          "fittingBottomAtCabinetEntry": -3.3299999999999983,
+          "axisAfter125CabinetTravel": 24.42,
+          "fittingBottomAfter125CabinetTravel": -5.579999999999998
+        },
+        {
+          "authoredFlangeOffsetBelowWetFloor": 15,
+          "flange": 120,
+          "outlet": 70,
+          "axisAtCabinetEntry": 21.67,
+          "fittingBottomAtCabinetEntry": -8.329999999999998,
+          "axisAfter125CabinetTravel": 19.42,
+          "fittingBottomAfter125CabinetTravel": -10.579999999999998
+        }
+      ]
+    },
+    {
+      "name": "NW tray south outlet alternative",
+      "outlet": [
+        917.5,
+        9990
+      ],
+      "points": [
+        [
+          917.5,
+          9990
+        ],
+        [
+          492.5,
+          9990
+        ],
+        [
+          492.5,
+          9500
+        ]
+      ],
+      "lengthAtTrayExit": 590,
+      "length": 915,
+      "fall": 16.47,
+      "axisAtEnd": 68.53,
+      "fittingBottomAtEnd": 38.53,
+      "axisAtTrayExit": 74.38,
+      "fittingUnderTrayClearanceAtExit": 15.620000000000005,
+      "sensitivity": [
+        {
+          "authoredFlangeOffsetBelowWetFloor": 0,
+          "flange": 135,
+          "outlet": 85,
+          "axisAtCabinetEntry": 68.53,
+          "fittingBottomAtCabinetEntry": 38.53,
+          "axisAfter125CabinetTravel": 66.28,
+          "fittingBottomAfter125CabinetTravel": 36.28
+        },
+        {
+          "authoredFlangeOffsetBelowWetFloor": 10,
+          "flange": 125,
+          "outlet": 75,
+          "axisAtCabinetEntry": 58.53,
+          "fittingBottomAtCabinetEntry": 28.53,
+          "axisAfter125CabinetTravel": 56.28,
+          "fittingBottomAfter125CabinetTravel": 26.28
+        },
+        {
+          "authoredFlangeOffsetBelowWetFloor": 15,
+          "flange": 120,
+          "outlet": 70,
+          "axisAtCabinetEntry": 53.53,
+          "fittingBottomAtCabinetEntry": 23.53,
+          "axisAfter125CabinetTravel": 51.28,
+          "fittingBottomAfter125CabinetTravel": 21.28
+        }
+      ]
     }
   ],
   "rejectedWetTrial": {
@@ -128,21 +251,27 @@
   },
   "flushComparison": {
     "rim": 40,
-    "seat": 12,
-    "wasteBottom": -69,
-    "outletAxis": -19
+    "upperWetFloor": 15,
+    "optimisticHousingBottom": -66,
+    "optimisticOutletAxis": -35
   },
   "boxingComparison": {
     "clearWidth": 114,
     "underCap": 152,
-    "capMargin": 21
+    "capMargin": 37
   },
+  "rejectedDirectWest": {
+    "length": 1835,
+    "fall": 33.03,
+    "reason": "Crosses770mm of open floor outside existing perimeter reservation"
+  },
+  "correction": "Withdraws b8745066 corner1000/seat132/outlet101 and2.1/-6.4 clearance claims. Current manual shows edge-centred1000square;50 and81 downward from housing flange. D12 is not local thickness.",
   "unknowns": [
-    "matched .040 tray/waste/kit revision and outlet layout",
-    "actual underside, legs, bends and tool withdrawal",
-    "supported complete wet finish and threshold",
-    "branch/stack/vent capacity and connection",
-    "structural penetration/load and boundary duties"
+    "housing flange relation to upper wet floor and gasket",
+    "current matched .040 tray/waste/kit height and leg locations",
+    "actual socket/clip/support envelope and withdrawal",
+    "supported wet floor/wall/threshold",
+    "actual stack fitting/branch connection and structure"
   ],
-  "provenance": "Mira 1493053-W2-D pp3–4/15–18 supplies conditional geometry/minimum fall.160rim,60fitting envelope and150×170boxing are authored comparisons; historical140–160range does not certify a current kit."
+  "provenance": "Mira1493053-W2-D pp3–4/15–18; flange deltas0/10/15 are authored sensitivities, not measured bounds.160rim and60fitting are comparison inputs; historical140–160range does not certify current kit."
 }

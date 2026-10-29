@@ -5,32 +5,40 @@ import {layoutRevision as d} from '../../../compiler/reference-house/georgian/la
 import {sectionAssemblyChoices as a} from '../../../compiler/reference-house/georgian/section-source.js'
 const f=a.floor, total=f.finish+f.deck+f.joist+f.void+f.ceiling
 if(d.id!=='RH-LAYOUT-REVISION-02'||d.levels.first!==3450||total!==350)throw Error('Reappraise candidate against changed house')
-const tray={x:1337.5,y:9825,width:1000,depth:1000,profile:40,localDrainFloor:12,comparisonRim:160}
+const tray={x:1337.5,y:9825,width:1000,depth:1000,profile:40,rimToLowWetFloor:25,comparisonRim:160}
 const cabinet={x:417.5,y:8800,width:300,depth:750}
 const boxing={width:150,height:170,face:18,westAxis:492.5,northAxis:10750}
 const fallPerMetre=18,pipeOutsideComparison=43,fittingOutsideComparison=60
-const seat=tray.comparisonRim-tray.profile+tray.localDrainFloor
-const waste={overallDepth:81,outletAxisAboveBottom:50,seat,bottom:seat-81,outlet:seat-81+50}
-const routes=[{name:'corner NW',outlet:[1502.5,10660]},{name:'central north',outlet:[1837.5,10660]}].map(r=>{
- const points=[r.outlet,[r.outlet[0],boxing.northAxis],[boxing.westAxis,boxing.northAxis],[boxing.westAxis,9500]]
- const length=points.slice(1).reduce((sum,p,i)=>sum+Math.abs(p[0]-points[i][0])+Math.abs(p[1]-points[i][1]),0)
+// Delta is an authored sensitivity, NOT a manufacturer tolerance or physical bound.
+const flangeOffsets=[0,10,15]
+const wetFloor=tray.comparisonRim-tray.rimToLowWetFloor
+const waste={housingFlangeComparison:wetFloor,outletBelowFlange:50,bottomBelowFlange:81,seat:wetFloor,bottom:wetFloor-81,outlet:wetFloor-50}
+const definitions=[
+ {name:'NE central north',outlet:[1837.5,10660],points:[[1837.5,10660],[1837.5,10750],[492.5,10750],[492.5,9500]],lengthAtTrayExit:590},
+ {name:'NE central west via north perimeter',outlet:[1502.5,10325],points:[[1502.5,10325],[1502.5,10750],[492.5,10750],[492.5,9500]],lengthAtTrayExit:590},
+ {name:'NW tray south outlet alternative',outlet:[917.5,9990],points:[[917.5,9990],[492.5,9990],[492.5,9500]],lengthAtTrayExit:590}
+]
+const routes=definitions.map(r=>{
+ const length=r.points.slice(1).reduce((sum,p,i)=>sum+Math.abs(p[0]-r.points[i][0])+Math.abs(p[1]-r.points[i][1]),0)
  const fall=length*fallPerMetre/1000,axisAtEnd=waste.outlet-fall
- const lengthAtTrayExit=boxing.northAxis-r.outlet[1]+r.outlet[0]-tray.x
- const axisAtTrayExit=waste.outlet-lengthAtTrayExit*fallPerMetre/1000
- return {...r,points,length,fall,axisAtEnd,fittingBottomAtEnd:axisAtEnd-fittingOutsideComparison/2,lengthAtTrayExit,axisAtTrayExit,
-   nominalUnderTrayClearanceAtExit:tray.comparisonRim-tray.profile-(axisAtTrayExit+pipeOutsideComparison/2),
-   fittingUnderTrayClearanceAtExit:tray.comparisonRim-tray.profile-(axisAtTrayExit+fittingOutsideComparison/2)}
+ const axisAtTrayExit=waste.outlet-r.lengthAtTrayExit*fallPerMetre/1000
+ return {...r,length,fall,axisAtEnd,fittingBottomAtEnd:axisAtEnd-fittingOutsideComparison/2,axisAtTrayExit,
+   fittingUnderTrayClearanceAtExit:tray.comparisonRim-tray.profile-(axisAtTrayExit+fittingOutsideComparison/2),
+   sensitivity:flangeOffsets.map(delta=>({authoredFlangeOffsetBelowWetFloor:delta,flange:wetFloor-delta,outlet:waste.outlet-delta,axisAtCabinetEntry:axisAtEnd-delta,fittingBottomAtCabinetEntry:axisAtEnd-delta-30,
+     axisAfter125CabinetTravel:axisAtEnd-delta-2.25,fittingBottomAfter125CabinetTravel:axisAtEnd-delta-2.25-30}))}
 })
 const record={scope:'Conditional architectural section; no source adoption, product compatibility, capacity or waterproofing pass',
  sourceBlobs:Object.fromEntries(['compiler/reference-house/georgian/layout-revision.ts','compiler/reference-house/georgian/section-source.ts'].map(p=>[p,execFileSync('git',['hash-object',p],{encoding:'utf8'}).trim()])),
- hadCandidateBlob:'099bd8d74b4db3fa2941d21d32f6de728c2b7a57',
+ hadCandidate:{commit:'4c7e1047a4a96537d847356df39ca8907036533f',path:'project/had/studies/bedroom4-allocation-study.ts',blob:'099bd8d74b4db3fa2941d21d32f6de728c2b7a57'},
  house:{firstFFL:d.levels.first,total,finish:f.finish,deck:f.deck,framing:f.joist,service:f.void,ceiling:f.ceiling,deckTop:d.levels.first-f.finish,soffit:d.levels.first-total},
- tray,cabinet,boxing,waste,fallPerMetre,pipeOutsideComparison,fittingOutsideComparison,routes,
+ tray,cabinet,boxing,waste,fallPerMetre,pipeOutsideComparison,fittingOutsideComparison,flangeOffsets,routes,
  rejectedWetTrial:{carrier:12.5,membrane:1,adhesive:3,tile:10,total:26.5,extra:26.5-f.finish,wetFFL:d.levels.first-f.finish+26.5,raisedTrayTop:d.levels.first-f.finish+26.5+tray.comparisonRim},
- flushComparison:{rim:40,seat:12,wasteBottom:12-81,outletAxis:12-81+50},
+ flushComparison:{rim:40,upperWetFloor:15,optimisticHousingBottom:15-81,optimisticOutletAxis:15-50},
  boxingComparison:{clearWidth:boxing.width-2*boxing.face,underCap:boxing.height-boxing.face,capMargin:boxing.height-boxing.face-waste.outlet-fittingOutsideComparison/2},
- unknowns:['matched .040 tray/waste/kit revision and outlet layout','actual underside, legs, bends and tool withdrawal','supported complete wet finish and threshold','branch/stack/vent capacity and connection','structural penetration/load and boundary duties'],
- provenance:'Mira 1493053-W2-D pp3–4/15–18 supplies conditional geometry/minimum fall.160rim,60fitting envelope and150×170boxing are authored comparisons; historical140–160range does not certify a current kit.'}
+ rejectedDirectWest:{length:1835,fall:33.03,reason:'Crosses770mm of open floor outside existing perimeter reservation'},
+ correction:'Withdraws b8745066 corner1000/seat132/outlet101 and2.1/-6.4 clearance claims. Current manual shows edge-centred1000square;50 and81 downward from housing flange. D12 is not local thickness.',
+ unknowns:['housing flange relation to upper wet floor and gasket','current matched .040 tray/waste/kit height and leg locations','actual socket/clip/support envelope and withdrawal','supported wet floor/wall/threshold','actual stack fitting/branch connection and structure'],
+ provenance:'Mira1493053-W2-D pp3–4/15–18; flange deltas0/10/15 are authored sensitivities, not measured bounds.160rim and60fitting are comparison inputs; historical140–160range does not certify current kit.'}
 const out=(name:string,body:string)=>{const p=new URL(name,import.meta.url);if(process.argv.includes('--check')){if(readFileSync(p,'utf8')!==body)throw Error(`Stale ${name}`)}else writeFileSync(p,body)}
 out('./bedroom4-wet-section.json',JSON.stringify(record,null,2)+'\n')
 const svg:string[]=[];const add=(s:string)=>svg.push(s),esc=(s:string)=>s.replaceAll('&','&amp;').replaceAll('<','&lt;')
@@ -49,16 +57,16 @@ rect(px(717.5),py(9155),560/25,355/25,'#dde3e2');text(px(760),py(8950),'WC',2.2)
 rect(px(1400),py(8512.5),400/25,220/25,'#dde3e2')
 rect(px(417.5),py(10825),150/25,1275/25,'#d9d1bd')
 rect(px(567.5),py(10825),770/25,150/25,'#d9d1bd')
-for(const [i,r] of routes.entries()){
+for(const [i,r] of routes.slice(0,2).entries()){
  const pts=r.points.map(([x,y])=>`${px(x)},${py(y)}`).join(' ')
  add(`<polyline points="${pts}" fill="none" stroke="${i?'#a56544':'#287364'}" stroke-width=".55" ${i?'stroke-dasharray="1.4 1"':''}/>`)
  add(`<circle cx="${px(r.outlet[0])}" cy="${py(r.outlet[1])}" r="1.1" fill="${i?'#a56544':'#287364'}"/>`)
 }
-text(12,157,'Green corner: 2350 length / 42.3 fall.',2.7)
-text(12,164,'Brown central: 2685 / 48.33 fall.',2.7)
+text(12,157,'NE north/west routes: 2685 / 48.33 fall.',2.7)
+text(12,164,'NW south alternative: 915 / 16.47 fall.',2.7)
 text(12,171,'150-wide boxing is real occupied space.',2.7)
 text(12,178,'No diagonal pipe across approach.',2.7)
-text(12,185,'NW waste requires a proven access task.',2.7)
+text(12,185,'NW alternative introduces wet window duty.',2.7)
 text(116,34,'B  Vertical budget / 1:5',3.5)
 // Section datum is proposed wet FFL=0; retained floor lower layers are diagrammed to scale.
 const sy=(z:number)=>86-z/5
@@ -67,7 +75,7 @@ text(160,sy(160)+2,'+160 rim: comparison input',2.7)
 text(160,sy(120)+2,'+120 nominal underside',2.7)
 rect(133,sy(waste.seat),9,81/5,'#e7c7b6')
 line(142,sy(waste.outlet),157,sy(waste.outlet),'#287364')
-text(160,sy(waste.outlet)+3,'+101 outlet / +51 housing bottom',2.7)
+text(160,sy(waste.outlet)+3,'+85 axis / +54 bottom ONLY if flange +135',2.7)
 line(112,sy(0),244,sy(0),'#23343a');text(160,sy(0)-2,'Wet finish +3456.5 in 26.5 trial',2.7)
 let z=0;for(const [name,n,fill] of [['wet trial',26.5,'#e7c7b6'],['deck',22,'#c9b395'],['framing reserve',238,'#edf0f0'],['service void',55,'#ffffff'],['ceiling',15,'#d3dadb']] as const){rect(116,sy(z),40,n/5,fill);text(160,sy(z)+n/10+1,`${name} ${n}`,2.7);z-=n}
 text(116,166,'Dry FFL +3450: wet trial adds 6.5.',2.7)
@@ -76,20 +84,20 @@ text(116,180,'Extra bedding/levelling is not included.',2.7)
 text(116,187,'Deck and lower floor package unchanged.',2.7)
 text(280,34,'C  Boxing / 1:5 and route checks',3.5)
 rect(280,45,30,34,'#d9d1bd');rect(283.6,48.6,22.8,30.4,'#fff')
-add(`<circle cx="295" cy="${79-101/5}" r="6" fill="#dce9ec" stroke="#287364" stroke-width=".4"/>`)
-text(316,49,'150 ×170 gross',2.7);text(316,57,'18 face/cap',2.7);text(316,65,'60 fitting envelope',2.7);text(316,73,'21 below cap',2.7)
+add(`<circle cx="295" cy="${79-85/5}" r="6" fill="#dce9ec" stroke="#287364" stroke-width=".4"/>`)
+text(316,49,'150 ×170 gross',2.7);text(316,57,'18 face/cap',2.7);text(316,65,'60 fitting envelope',2.7);text(316,73,'37 below cap at idealized flange',2.7)
 text(280,90,'Conditional end fitting underside:',2.7)
-text(280,97,'corner +28.7 / central +22.67.',2.7)
-text(280,109,'UNDER-TRAY HOLD',3.4)
-text(280,118,'At corner west exit, bare 43 pipe',2.7)
-text(280,125,'has only 2.1 below flat underside.',2.7)
-text(280,132,'A 60 fitting there overlaps by 6.4.',2.7)
-text(280,139,'Actual moulding, legs and bends govern.',2.7)
-text(280,146,'Raising tray does not change that gap.',2.7)
-text(280,158,'Flush 40 comparison: housing bottom −69;',2.7)
+text(280,97,'NE +6.67; NW +38.53 at delta 0.',2.7)
+text(280,109,'DATUM / STACK HOLD',3.4)
+text(280,118,'Flange delta 10 lowers every axis by10.',2.7)
+text(280,125,'NE end fitting then lies3.33 below floor.',2.7)
+text(280,132,'125 in cabinet adds2.25 fall, not zero.',2.7)
+text(280,139,'Idealized under-tray clearance15.62.',2.7)
+text(280,146,'Real legs, contour, clips still govern.',2.7)
+text(280,158,'Flush40 optimistic housing bottom −66;',2.7)
 text(280,165,'it is not an above-floor-only solution.',2.7)
-text(280,177,'Matched tray/waste/kit binding remains',2.7)
-text(280,184,'required before any selection.',2.7)
+text(280,177,'The old2.1/−6.4 clash is WITHDRAWN.',2.7)
+text(280,184,'No assumed flange tolerance is certified.',2.7)
 line(12,199,408,199)
 text(12,210,'D  Complete release and failure tasks',3.5)
 const notes=[
