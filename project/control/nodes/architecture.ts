@@ -324,7 +324,7 @@ export const architectureNodes = defineNodes([
     owners: ['BCR'],
     title: 'Reconcile early feasibility findings into selection constraints',
     dependencies: ['BCR-STRUCTURE', 'BCR-WET', 'BCR-SERVICES', 'BCR-WATER', 'BCR-OCCUPATION'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bcr-preflight-result.md']
   },

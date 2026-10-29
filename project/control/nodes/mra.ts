@@ -6,7 +6,7 @@ export const mraNodes = defineNodes([
     owners: ['MRA'],
     title: 'Moisture constitution, inventory and threat model',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/mra/mra-00-moisture-constitution-threat-model.md']
   },
