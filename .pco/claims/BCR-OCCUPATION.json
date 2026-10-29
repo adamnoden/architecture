@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "BCR-OCCUPATION",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "e84aa8fc-85c6-446a-856b-b1e2e9d5b137",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-rush-worker-1"
+  },
+  "claimedAt": "2026-10-29T21:37:37.741Z",
+  "heartbeatAt": "2026-10-29T21:37:37.741Z",
+  "expiresAt": "2026-10-29T22:22:37.741Z",
+  "branch": "zerg/worker-1-packet-3"
+}
