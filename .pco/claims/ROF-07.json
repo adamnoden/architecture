@@ -9,7 +9,13 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T22:49:31.089Z",
-  "heartbeatAt": "2026-10-29T22:49:31.089Z",
-  "expiresAt": "2026-10-29T23:34:31.089Z",
-  "branch": "zerg/worker-4-packet-6"
+  "heartbeatAt": "2026-10-29T23:01:24.121Z",
+  "expiresAt": "2026-10-29T23:46:24.121Z",
+  "branch": "zerg/worker-4-packet-6",
+  "pr": 1053,
+  "checkpoint": {
+    "evidence": "Concrete manufacturer-matched candidates peer reviewed; local focused validation and docs build passed; source published PR1053 at bea2688163018d583e2aea99e4226aa54b3b1473",
+    "next": "Full exact-head CI, accepted main integration after IAS/HAD slot, fresh preflight and expected-head merge",
+    "blocker": "No current packet blocker; roof selection remains separately gated"
+  }
 }
