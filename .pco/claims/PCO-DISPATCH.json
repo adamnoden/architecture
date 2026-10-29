@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-DISPATCH",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "47a84b0e-4afa-49dd-98cf-5748a0d2539f",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "architecture-dispatcher-build"
+  },
+  "claimedAt": "2026-10-29T09:08:07Z",
+  "heartbeatAt": "2026-10-29T09:08:07Z",
+  "expiresAt": "2026-10-29T11:08:07Z",
+  "note": "Design and build self-service agent dispatcher"
+}
