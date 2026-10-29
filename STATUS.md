@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 5 · **Active:** 3 · **Blocked:** 27 · **Held:** 2 · **Done:** 20 · **Cancelled:** 0
+**Structurally ready:** 11 · **Active:** 3 · **Blocked:** 20 · **Held:** 2 · **Done:** 21 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -19,7 +19,13 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `TRIAD-IFACE-FREEZE` | Shared IAS/OAS/HAD interface freeze | IAS / OAS / HAD | IAS-01V, IAS-01H, OAS-01E, OAS-01I, HAD-01E, HAD-01P, HAD-01S |
+| `IAS-01V` | Vertical interior system candidates | IAS | — |
+| `IAS-01H` | Horizontal interior system candidates | IAS | — |
+| `OAS-01E` | Envelope openings, external doors, thresholds and boundary candidates | OAS | — |
+| `OAS-01I` | Internal door assembly candidates | OAS | — |
+| `HAD-01E` | Exterior and courtyard architectural design | HAD | — |
+| `HAD-01P` | Principal-interior architectural design | HAD | — |
+| `HAD-01S` | Private and service-interior architectural design | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -39,13 +45,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `IAS-01V` | Vertical interior system candidates | TRIAD-IFACE-FREEZE |
-| `IAS-01H` | Horizontal interior system candidates | TRIAD-IFACE-FREEZE |
-| `OAS-01E` | Envelope openings, external doors, thresholds and boundary candidates | TRIAD-IFACE-FREEZE |
-| `OAS-01I` | Internal door assembly candidates | TRIAD-IFACE-FREEZE |
-| `HAD-01E` | Exterior and courtyard architectural design | TRIAD-IFACE-FREEZE |
-| `HAD-01P` | Principal-interior architectural design | TRIAD-IFACE-FREEZE |
-| `HAD-01S` | Private and service-interior architectural design | TRIAD-IFACE-FREEZE |
 | `IAS-02S` | Interior services and access family | IAS-01V, IAS-01H |
 | `IAS-02W` | Wet-room and kitchen interior-system variants | IAS-01V, IAS-01H, HAD-01S |
 | `IAS-OAS-JUNCTION` | Interior-system to opening-assembly junction reconciliation | IAS-01V, IAS-01H, OAS-01E, OAS-01I |
@@ -69,7 +68,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`TRIAD-IFACE-FREEZE` → `IAS-01V` → `IAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`IAS-01V` → `IAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
