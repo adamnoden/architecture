@@ -6,6 +6,12 @@ It does **not** own architectural truth, maturity judgement or narrative history
 
 Read the [owner-house charter](../owner-house-charter.md) and [delivery route](../del/owner-house-delivery-plan.md) before scoping substantial work. They establish why the work exists; this control plane establishes what can execute. Publication completion is not a prerequisite for the owner-house delivery path.
 
+## Swarm startup and reporting
+
+The [swarm runbook](swarm-runbook.md) owns startup, native/connector transport selection, validation cadence and the final report contract. `npm run swarm:run` captures a main-source baseline, records verified merge identities and renders before/after packet coverage and measured wall time. It is a session journal/report, not another scheduler or architectural maturity authority.
+
+Use `node --import tsx scripts/project-claims.ts …` if the `tsx` launcher cannot create its IPC socket. The same CLI supports `--transport connector` with Git-backed fresh reads and a private `--bridge-dir` mailbox for already-authorised GitHub connector writes. No placeholder token or HTTP monkey-patch is needed; the canonical dispatcher and CAS/lease protocol remain unchanged. If neither supported transport can establish safe live state, fail closed.
+
 ## Agent operating loop
 
 For substantial bounded project work intended to produce durable/authoritative output:
@@ -114,6 +120,9 @@ Aliases resolve to canonical node ids before touching the lease store, so shared
 - `dispatch.ts` — deterministic self-service eligibility, ranking and race-safe `claim-next` orchestration.
 - `claims.ts` — lease schema, canonical resolution, expiry and operational-state semantics.
 - `claim-store.ts` — race-safe store-level acquire/verify/renew/release/takeover operations.
+- `git-connector-claim-store.ts` — fresh Git snapshots and verified connector CAS writes through a bounded private mailbox.
+- `run-report.ts` — packet-coverage deltas and standard run-report rendering, separate from architectural maturity.
+- `../../scripts/swarm-run.ts` — baseline/merge journal and main-source report CLI.
 - `mermaid.ts` — deterministic structural/live Mermaid projection.
 - `graph.md` — generated structural Mermaid map; never runtime claim authority.
 - `validate.ts` — structural, dispatch-policy and evidence-contract guardrails.
