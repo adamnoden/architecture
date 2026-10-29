@@ -9,7 +9,12 @@
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-29T21:51:46.611Z",
-  "heartbeatAt": "2026-10-29T21:51:46.611Z",
-  "expiresAt": "2026-10-29T22:36:46.611Z",
-  "branch": "work/zerg-worker-3"
+  "heartbeatAt": "2026-10-29T22:06:21.086Z",
+  "expiresAt": "2026-10-29T22:51:21.086Z",
+  "branch": "work/zerg-worker-3",
+  "checkpoint": {
+    "evidence": "PR #1040 at 2d578630dc8ce6e832125d0d8f1becbbc3314342; BCR services result and source-bound physical study",
+    "next": "Verify exact-head CI and independent review, then serial merge",
+    "blocker": "CI pending"
+  }
 }
