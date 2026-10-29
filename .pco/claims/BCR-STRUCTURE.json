@@ -9,6 +9,12 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T21:58:05.261Z",
-  "heartbeatAt": "2026-10-29T21:58:05.261Z",
-  "expiresAt": "2026-10-29T22:43:05.261Z"
+  "heartbeatAt": "2026-10-29T22:13:02.870Z",
+  "expiresAt": "2026-10-29T22:58:02.870Z",
+  "branch": "work/zerg-bcr-structure",
+  "pr": 1043,
+  "checkpoint": {
+    "evidence": "PR1043 source f3e7588cbd252ba07703ee698ed68f88f12b16be; source geometry and A3 study complete; local checks and root review passed",
+    "next": "Await occupation seam review and queued bundle integration; reconcile final main, exact-head CI and canonical preflight before merge"
+  }
 }
