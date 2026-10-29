@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 57 · **Held:** 2 · **Done:** 45 · **Cancelled:** 0
+**Structurally ready:** 17 · **Active:** 0 · **Blocked:** 57 · **Held:** 2 · **Done:** 45 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -24,6 +24,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `CCR-PLAN` | Repair rectangle-union area and plate closure | CCR | — |
 | `CCR-STAIR` | Repair stair datum arithmetic and discrete topology | CCR | — |
 | `CCR-DRAINAGE` | Repair drainage declaration validity and source consistency | CCR | — |
+| `PCO-SNAPSHOT` | Isolate claim snapshots from concurrent main fetches | PCO | — |
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
