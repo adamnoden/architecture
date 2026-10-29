@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, realpathSync, renameSync, writeFileSync } from 'node:fs'
-import { isAbsolute, join, relative } from 'node:path'
+import { isAbsolute, join, relative, sep } from 'node:path'
 import { setTimeout as delay } from 'node:timers/promises'
 import { ClaimConflictError, ClaimStoreUnavailableError, storedClaimFromRaw, type ClaimStore, type StoredClaim, type ClaimWriteResult } from './claim-store.js'
 import { claimPath, claimsBranch, claimsDirectory, serializeClaimRecord, type ClaimRecord } from './claims.js'
@@ -100,7 +100,7 @@ export function readGitClaimSnapshot(repoRoot: string): ClaimGitSnapshot {
 export function connectorMailbox(repoRoot: string, directory: string, timeoutMs = 120000): ConnectorExchange {
   if (!isAbsolute(directory)) throw new Error('--bridge-dir must be absolute')
   const root = realpathSync(repoRoot), dir = realpathSync(directory), rel = relative(root, dir)
-  if (!rel.startsWith('..') && !isAbsolute(rel)) throw new Error('--bridge-dir must be outside the repository')
+  if (!(rel === '..' || rel.startsWith('..' + sep) || isAbsolute(rel))) throw new Error('--bridge-dir must be outside the repository')
   if (!Number.isFinite(timeoutMs) || timeoutMs < 1) throw new Error('Invalid connector timeout')
   return async request => {
     const prefix = join(dir, request.requestId), responsePath = `${prefix}.response.json`

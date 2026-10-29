@@ -48,6 +48,7 @@ export function progressDelta(before: ProgressSnapshot, after: ProgressSnapshot)
   return {
     added: after.nodes.filter(n => !a.has(n.id)).map(n => n.id),
     removed: before.nodes.filter(n => !b.has(n.id)).map(n => n.id),
+    addedComplete: after.nodes.filter(n => !a.has(n.id) && n.lifecycle === 'complete').map(n => n.id),
     completed: after.nodes.filter(n => a.has(n.id) && a.get(n.id)!.lifecycle !== 'complete' && n.lifecycle === 'complete').map(n => n.id),
     reopened: after.nodes.filter(n => a.get(n.id)?.lifecycle === 'complete' && n.lifecycle !== 'complete' && n.lifecycle !== 'cancelled').map(n => n.id),
     cancelled: after.nodes.filter(n => a.has(n.id) && a.get(n.id)!.lifecycle !== 'cancelled' && n.lifecycle === 'cancelled').map(n => n.id),
@@ -116,7 +117,7 @@ export function renderRunReport(run: SwarmRun, after: ProgressSnapshot, options:
       const before = run.baseline.nodes.filter(n => n.owners.includes(code)), now = after.nodes.filter(n => n.owners.includes(code))
       return `| ${code} | ${coverageText(before)} | ${coverageText(now)} | ${['ready','blocked','active','held'].map(s => now.filter(n => n.state === s).length).join(' | ')} | ${packetCoverage(now).cancelled} |`
     }), '',
-    `Scope changes: +${delta.added.length} added, −${delta.removed.length} removed, ${delta.cancelled.length} newly cancelled, ${delta.reopened.length} reopened. Net new completions: ${delta.completed.length}; these programme deltas may include other agents.`,
+    `Scope changes: +${delta.added.length} added, −${delta.removed.length} removed, ${delta.cancelled.length} newly cancelled, ${delta.reopened.length} reopened. Previously tracked packets newly complete: ${delta.completed.length}; added already complete: ${delta.addedComplete.length}. These programme deltas may include other agents.`,
     ...(delta.reopened.length ? [`Reopened: ${delta.reopened.join(', ')}.`] : []),
     `Current structural frontier: ${states('ready')} ready, ${states('blocked')} blocked, ${states('active')} active, ${states('held')} held.`,
     `Newly ready: ${delta.newlyReady.join(', ') || 'none'}.`,
