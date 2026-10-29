@@ -42,7 +42,7 @@ The accepted 12 × 12 m house is the working architectural basis. Early BCR work
 
 ## Early feasibility packets
 
-`BCR-SCAFFOLD` retains the initial matrix and ownership classification. Each study below depends on that scaffold and `HRS-BASELINE`; the six studies can then run independently. Each study owns a separate concise result with proposed finding rows. BCR-PREFLIGHT alone integrates the five physical studies into the shared matrix; final BCR integrates proportionality. Parallel study agents must not mutate the shared matrix.
+`BCR-SCAFFOLD` supplies the [initial construction-resolution matrix](construction-resolution-matrix.md) and [scaffold result](bcr-scaffold-result.md), including ownership classification and explicit discharge conditions. The inventory is not technical resolution. Each study below depends on that scaffold and `HRS-BASELINE`; the six studies can then run independently. Each study owns a separate concise result with proposed finding rows. BCR-PREFLIGHT alone integrates the five physical studies into the shared matrix; final BCR integrates proportionality. Parallel study agents must not mutate the shared matrix.
 
 | Node | Bounded question and required output | Design/evidence route |
 |---|---|---|
