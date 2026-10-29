@@ -1,18 +1,16 @@
 {
   "schemaVersion": 1,
   "node": "PLT-CURRENT-REVIEW",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "9bc24fdb-ca43-4fbd-a654-91139d7151d6",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "6edc9758-57d4-4b7a-bd3f-f7a34cfe4715",
   "holder": {
     "kind": "chatgpt",
-    "label": "Exterior isometric implementation"
+    "label": "Refurbishment continuation requeue"
   },
-  "claimedAt": "2026-10-29T14:34:05.838Z",
-  "heartbeatAt": "2026-10-29T14:34:05.838Z",
-  "expiresAt": "2026-10-29T16:34:05.838Z",
-  "branch": "plt/four-exterior-isometrics",
-  "note": "Implement issue994 full uncut four-corner exterior isometric family and direct web/SVG review",
-  "releasedAt": "2026-10-29T15:09:41.740Z",
-  "releaseReason": "completed"
+  "claimedAt": "2026-10-29T15:46:22.609Z",
+  "heartbeatAt": "2026-10-29T15:46:22.609Z",
+  "expiresAt": "2026-10-29T17:46:22.609Z",
+  "branch": "work/refurbishment-programme",
+  "note": "Owner-authorised guarded requeue with preserved partial results; no substantive packet completion claimed."
 }
