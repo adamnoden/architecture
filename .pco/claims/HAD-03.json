@@ -9,14 +9,14 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T23:09:30.879Z",
-  "expiresAt": "2026-10-29T23:54:30.879Z",
+  "heartbeatAt": "2026-10-29T23:16:52.449Z",
+  "expiresAt": "2026-10-30T00:01:52.449Z",
   "branch": "work/zerg-had-03-room-use",
   "note": "Product-sized ensuite fit review; HAD-03 remains incomplete",
   "pr": 1055,
   "checkpoint": {
-    "evidence": "Draft PR1055 head6dd2b877 preserves reviewed Bedroom3 reuse and court-level proposals after merged1051",
-    "next": "Continue actual kitchen appliance operations and coordinated court threshold/floor section; reconcile and validate next checkpoint",
-    "blocker": "HAD incomplete; no source adoption or installed water/operation acceptance"
+    "evidence": "PR1055 preserves reviewed Bedroom3 and court proposals; manufacturer kitchen dimensions retrieved for coherent continuous-counter comparison",
+    "next": "Complete kitchen plan and rear elevation comparison, validate and publish within PR1055, then coordinate exact-head integration",
+    "blocker": "HAD remains incomplete; no canonical geometry adoption, actual wet-floor and court boundary interfaces unresolved"
   }
 }
