@@ -1,18 +1,16 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "convergence-71cc3e4e-IAS-03",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "67193990-4e84-4009-9201-e8a2b6a32174",
   "holder": {
     "kind": "chatgpt",
-    "label": "IAS/HAD convergence"
+    "label": "Refurbishment continuation requeue"
   },
-  "claimedAt": "2026-10-29T12:56:36.758Z",
-  "heartbeatAt": "2026-10-29T12:56:36.758Z",
-  "expiresAt": "2026-10-29T14:56:36.758Z",
-  "branch": "workstream/interior-material-selection",
-  "releasedAt": "2026-10-29T13:15:03.721Z",
-  "releaseReason": "handoff",
-  "note": "Dry-family partial result merged in #988; adoption obligations remain in IS-01–06."
+  "claimedAt": "2026-10-29T15:46:16.176Z",
+  "heartbeatAt": "2026-10-29T15:46:16.176Z",
+  "expiresAt": "2026-10-29T17:46:16.176Z",
+  "branch": "work/refurbishment-programme",
+  "note": "Owner-authorised guarded requeue with preserved partial results; no substantive packet completion claimed."
 }
