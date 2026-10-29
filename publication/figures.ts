@@ -1,5 +1,5 @@
 import { applyPublicationIntegrityEdits } from './integrity-edits.js'
-import { applyPublicationPlates } from './plates.js'
+import { applyPublicationPlates } from './plates-current.js'
 
 interface FigurePlacement {
   readonly entryId: string

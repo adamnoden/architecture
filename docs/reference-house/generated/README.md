@@ -1,6 +1,6 @@
 # Generated compiler inspection
 
-This is the current **semantic inspection surface** for the compiled Reference House. It is generated downstream from the canonical single-pass Metamorph Compiler result and is intended for human checking: what the model knows, what remains unresolved, and whether the coordinated views agree.
+This is the **historical technical-fixture semantic inspection surface**, retained for regression and inspection of its own source. It does not depict or verify the accepted 12 × 12 m revision-02 house; see [Current House Basis](../current-house-basis.md). It is generated downstream from the canonical single-pass Metamorph Compiler result and is intended for human checking: what the model knows, what remains unresolved, and whether the coordinated views agree.
 
 It is **not architectural source authority** and it is not a construction drawing set. A generated `PASS` means only that the represented relationships are coherent at the compiler's bounded proof scope; it does not establish engineering, building-physics, regulatory or product adequacy.
 
