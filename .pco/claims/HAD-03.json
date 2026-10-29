@@ -9,13 +9,13 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T22:21:01.345Z",
-  "expiresAt": "2026-10-29T23:06:01.345Z",
+  "heartbeatAt": "2026-10-29T22:22:51.493Z",
+  "expiresAt": "2026-10-29T23:07:51.493Z",
   "branch": "work/zerg-had-03-bedroom4",
   "note": "Product-sized ensuite fit review; HAD-03 remains incomplete",
-  "pr": 1042,
+  "pr": 1046,
   "checkpoint": {
-    "evidence": "Partial checkpoint merged via #1042 bd2235f1; follow-on branch created at cd097fd9, draft PR pending",
-    "next": "Publish reviewed unadopted Bedroom4 spatial candidate and bind its new draft PR; coordinate IAS section"
+    "evidence": "Draft #1046 head4c7e1047; source-bound Bedroom4 plan and visible stack candidate; prior checkpoint merged #1042",
+    "next": "Coordinate IAS wet section and BCR service/structure reviews; continue remaining room and kitchen design"
   }
 }
