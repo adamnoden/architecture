@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, renameSync, writeFileSync, realpathSync } from 'node:fs'
-import { dirname, isAbsolute, relative, resolve } from 'node:path'
+import { dirname, isAbsolute, relative, resolve, sep } from 'node:path'
 import { controlNodes } from '../project/control/nodes/index.js'
 import { canonicalNodeId } from '../project/control/claims.js'
 import { parseSwarmRun, progressSnapshot, renderRunReport, type RunCloseout, type SwarmRun } from '../project/control/run-report.js'
@@ -29,7 +29,7 @@ function currentSnapshot() {
 function externalPath(value:string) {
   const path=resolve(value), root=realpathSync(git(['rev-parse','--show-toplevel']))
   const parent=realpathSync(dirname(path)), rel=relative(root,parent)
-  if(!rel.startsWith('..')&&!isAbsolute(rel))throw new Error('Run journals belong outside the repository (they are not another durable control plane)')
+  if(!(rel==='..'||rel.startsWith('..'+sep)||isAbsolute(rel)))throw new Error('Run journals belong outside the repository (they are not another durable control plane)')
   return path
 }
 function save(path:string,run:SwarmRun) {

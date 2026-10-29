@@ -1,3 +1,4 @@
+import { spawnSync } from 'node:child_process'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { mkdtempSync, readdirSync, readFileSync, writeFileSync, renameSync, rmSync } from 'node:fs'
@@ -72,4 +73,14 @@ test('mailbox is bounded, atomic, outside the repository and needs no token',asy
   assert.throws(()=>connectorMailbox(process.cwd(),process.cwd()),/outside/)
   await delay(1)
  }finally{rmSync(dir,{recursive:true,force:true})}
+})
+
+test('directories beginning with two dots are still inside the repository',()=>{
+ const inside=mkdtempSync(join(process.cwd(),'..aco-boundary-'))
+ try{
+  assert.throws(()=>connectorMailbox(process.cwd(),inside),/outside/)
+  const child=spawnSync(process.execPath,['--import','tsx','scripts/swarm-run.ts','start','--run',join(inside,'run.json')],{cwd:process.cwd(),encoding:'utf8'})
+  assert.notEqual(child.status,0)
+  assert.match(child.stderr,/outside the repository/)
+ }finally{rmSync(inside,{recursive:true,force:true})}
 })
