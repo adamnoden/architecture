@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "node": "PLT-CURRENT-REVIEW",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9bc24fdb-ca43-4fbd-a654-91139d7151d6",
   "holder": {
     "kind": "chatgpt",
@@ -12,5 +12,7 @@
   "heartbeatAt": "2026-10-29T14:34:05.838Z",
   "expiresAt": "2026-10-29T16:34:05.838Z",
   "branch": "plt/four-exterior-isometrics",
-  "note": "Implement issue994 full uncut four-corner exterior isometric family and direct web/SVG review"
+  "note": "Implement issue994 full uncut four-corner exterior isometric family and direct web/SVG review",
+  "releasedAt": "2026-10-29T15:09:41.740Z",
+  "releaseReason": "completed"
 }
