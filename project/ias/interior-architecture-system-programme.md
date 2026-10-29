@@ -45,10 +45,11 @@ IAS-01V and IAS-02S / IAS-02W as coordination item I00-C1, not silently repositi
 
 This is a read-only baseline packet, not a selected assembly or performance
 verdict. BSR closed through PR #950, establishing the chapter/ownership interfaces.
-IAS-00 now supplies the shared interface freeze; OAS-00 and HAD-00 must also
-complete before that contract. The vertical candidate work then starts with one
-quiet wall/attachment datum and one high-service access front, including returns
-and removal/reinstatement; horizontal candidates reconcile the 350 mm package.
+IAS-00 supplied the now-completed shared interface contract with OAS-00 and
+HAD-00. The vertical candidates work through one quiet wall/attachment datum
+and one service-access front; horizontal candidates reconcile the 350 mm package.
+The candidate/service handoff below records the surviving directions and
+unresolved adoption obligations.
 
 ## Candidate outputs
 
