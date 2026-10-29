@@ -43,7 +43,6 @@ flowchart LR
     n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
     n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>READY</b>"]
     n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>READY</b>"]
-    n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>READY</b>"]
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>READY</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
     n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
@@ -63,8 +62,7 @@ flowchart LR
   end
   subgraph g_RWT["RWT"]
     direction TB
-    n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>READY</b>"]
-    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
+    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>READY</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
@@ -153,14 +151,11 @@ flowchart LR
   n_BCR_WET --> n_BCR_PREFLIGHT
   n_BCR_SERVICES --> n_BCR_PREFLIGHT
   n_BCR_WATER --> n_BCR_PREFLIGHT
-  n_BCR_OCCUPATION --> n_BCR_PREFLIGHT
   n_TRIAD_GATE --> n_HRS_TECHNICAL
   n_CCR_IDENTITY --> n_HRS_TECHNICAL
   n_ROF_05 --> n_ROF_06
   n_ROF_05 --> n_ROF_07
   n_ROF_06 --> n_ROF_07
-  n_RWT_05 --> n_RWT_06
-  n_RWT_05 --> n_RWT_07
   n_RWT_06 --> n_RWT_07
   n_ROF_07 --> n_ROF_RWT_GATE
   n_RWT_07 --> n_ROF_RWT_GATE
@@ -261,15 +256,13 @@ flowchart LR
   class n_BCR_WET ready;
   class n_BCR_SERVICES ready;
   class n_BCR_WATER ready;
-  class n_BCR_OCCUPATION ready;
   class n_BCR_PROPORTIONALITY ready;
   class n_BCR_PREFLIGHT blocked;
   class n_HRS_TECHNICAL blocked;
   class n_ROF_05 ready;
   class n_ROF_06 blocked;
   class n_ROF_07 blocked;
-  class n_RWT_05 ready;
-  class n_RWT_06 blocked;
+  class n_RWT_06 ready;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
@@ -409,7 +402,7 @@ flowchart LR
     n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
     n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>READY</b>"]
     n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>READY</b>"]
-    n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>READY</b>"]
+    n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>DONE</b>"]
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>READY</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
     n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
@@ -440,8 +433,8 @@ flowchart LR
     n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>DONE</b>"]
     n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>DONE</b>"]
     n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>DONE</b>"]
-    n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>READY</b>"]
-    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
+    n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>DONE</b>"]
+    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>READY</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
@@ -813,7 +806,7 @@ flowchart LR
   class n_BCR_WET ready;
   class n_BCR_SERVICES ready;
   class n_BCR_WATER ready;
-  class n_BCR_OCCUPATION ready;
+  class n_BCR_OCCUPATION done;
   class n_BCR_PROPORTIONALITY ready;
   class n_BCR_PREFLIGHT blocked;
   class n_HRS_TECHNICAL blocked;
@@ -830,8 +823,8 @@ flowchart LR
   class n_RWT_02 done;
   class n_RWT_03 done;
   class n_RWT_04 done;
-  class n_RWT_05 ready;
-  class n_RWT_06 blocked;
+  class n_RWT_05 done;
+  class n_RWT_06 ready;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
