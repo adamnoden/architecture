@@ -18,6 +18,7 @@ import {
   type ClaimRecord
 } from './claims.js'
 import type { ControlNode, NodeId } from './types.js'
+import { validateGraphStructure } from './validate.js'
 
 const now = new Date('2026-10-29T09:00:00.000Z')
 
@@ -37,17 +38,6 @@ function planned(
       ? { mode, reason: `${id} requires directed execution` }
       : { mode },
     closeoutEvidence: []
-  }
-}
-
-function complete(id: string, dependencies: readonly string[] = []): ControlNode {
-  return {
-    id,
-    owners: ['PCO'],
-    title: id,
-    dependencies,
-    lifecycle: 'complete',
-    closeoutEvidence: [`project/pco/${id.toLowerCase()}.md`]
   }
 }
 
@@ -128,12 +118,11 @@ test('downstream reach breaks remaining structural ties', () => {
     planned('BBB'),
     planned('A-X', ['AAA', 'LOCK-A']),
     planned('A-Y', ['A-X']),
+    planned('A-Z', ['A-X']),
     planned('B-X', ['BBB', 'LOCK-B']),
     planned('B-Y', ['B-X']),
-    planned('A-Z', ['AAA', 'LOCK-C']),
     planned('LOCK-A'),
-    planned('LOCK-B'),
-    planned('LOCK-C')
+    planned('LOCK-B')
   ]
   const snapshot = buildDispatchSnapshot(nodes, [], now)
   const a = snapshot.candidates.find((item) => item.node.id === 'AAA')!
@@ -211,7 +200,7 @@ test('workstream filter narrows candidates without widening manual eligibility',
   assert.deepEqual(snapshot.manualReady.map((item) => item.node.id), ['IAS-MANUAL'])
 })
 
-test('missing live dispatch policy is fail-closed even before repository validation', async () => {
+test('missing live dispatch policy is rejected by validation and fail-closed by dispatcher', async () => {
   const nodes: ControlNode[] = [{
     id: 'NO-POLICY',
     owners: ['PCO'],
@@ -220,6 +209,11 @@ test('missing live dispatch policy is fail-closed even before repository validat
     lifecycle: 'planned',
     closeoutEvidence: []
   }]
+  assert.equal(
+    validateGraphStructure(nodes).some((failure) => failure.includes('live without an explicit agent dispatch policy')),
+    true
+  )
+
   const snapshot = buildDispatchSnapshot(nodes, [], now)
   assert.equal(snapshot.safeForAutomaticClaim, false)
   assert.equal(snapshot.policyErrors[0].node, 'NO-POLICY')
@@ -230,6 +224,22 @@ test('missing live dispatch policy is fail-closed even before repository validat
     DispatchUnsafeError
   )
   assert.equal(store.mutations, 0)
+})
+
+test('manual live policy without reason is rejected', () => {
+  const nodes: ControlNode[] = [{
+    id: 'MANUAL-NO-REASON',
+    owners: ['PCO'],
+    title: 'manual',
+    dependencies: [],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'manual' },
+    closeoutEvidence: []
+  }]
+  assert.equal(
+    validateGraphStructure(nodes).some((failure) => failure.includes('manual dispatch without a durable reason')),
+    true
+  )
 })
 
 test('claim-next reranks after losing the top candidate race and takes the new best node', async () => {
