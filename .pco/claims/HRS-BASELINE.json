@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "HRS-BASELINE",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "efff092c-109e-4ba2-baa1-c46c7fdb3498",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-6"
+  },
+  "claimedAt": "2026-10-29T20:49:06.036Z",
+  "heartbeatAt": "2026-10-29T20:49:06.036Z",
+  "expiresAt": "2026-10-29T21:34:06.036Z",
+  "branch": "zerg/worker-6"
+}
