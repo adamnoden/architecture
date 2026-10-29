@@ -101,9 +101,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Rainwater collection architecture',
     dependencies: ['RWT-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-02-collection-architecture.md']
   },
   {
     id: 'RWT-03',

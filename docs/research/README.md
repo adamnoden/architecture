@@ -39,6 +39,8 @@ They remain evidence and comparison material, not automatic Reference House sele
 
 [Rainfall and the Building-side Water Network](rainfall-and-hydraulic-basis.md) establishes the area, rainfall, capacity and failure questions needed to compare gravity drainage systems before a site is selected. Worked arithmetic exposes consequence without selecting a design storm or claiming hydraulic adequacy.
 
+[Rainwater Collection: Access and Failure Paths](rainwater-collection-options.md) compares exposed and trapped collection, transfer fittings and court drains by their capture, blockage, access and renewal consequences. It retains conventional exposed collection as a comparator without selecting the house network.
+
 ## Maintenance and external access
 
 [External Maintenance Access](external-maintenance-access.md) examines the spatial consequences of maintaining façades, roofs, rainwater goods and external plant with credible ordinary access methods. It treats approach, working position, temporary support, handling and replacement routes as architecture rather than assuming that a hatch or nominal reachability is proof of maintainability.

@@ -1,9 +1,9 @@
 # RWT — Rainwater Systems Architecture
 
 **Issue:** #992  
-**State:** RWT-00/01 complete; collection, conveyance and material comparisons remain
+**State:** RWT-00/01/02 complete; conveyance and material comparisons remain
 
-**Current result:** [RWT-01 rainfall and hydraulic basis](rwt-01-rainfall-and-hydraulic-basis.md); [RWT-00 baseline and interfaces](rwt-00-baseline-and-interfaces.md) remains the governing seam inventory.
+**Current results:** [RWT-02 collection architecture](rwt-02-collection-architecture.md); [RWT-01 rainfall and hydraulic basis](rwt-01-rainfall-and-hydraulic-basis.md); [RWT-00 baseline and interfaces](rwt-00-baseline-and-interfaces.md) remains the governing seam inventory.
 
 ## Purpose
 
@@ -81,6 +81,8 @@ Establish bounded generic architecture-level reasoning for:
 Use relevant standards/guidance as baselines without turning the Reference House into a site drainage design or hydraulic certification exercise.
 
 ### RWT-02 — collection architecture
+
+**Completed comparison:** [RWT-02 result](rwt-02-collection-architecture.md) and [collection research](../../docs/research/rainwater-collection-options.md). No collector or network is selected.
 
 Compare and classify:
 
