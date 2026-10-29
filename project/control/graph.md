@@ -20,10 +20,6 @@ flowchart LR
     direction TB
     n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>READY</b>"]
   end
-  subgraph g_OAS["OAS"]
-    direction TB
-    n_OAS_03["OAS-03<br/>Selected opening family and replacement/reinstatement set<br/><b>READY</b>"]
-  end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
@@ -73,7 +69,6 @@ flowchart LR
   end
   n_HAD_02M --> n_HAD_03
   n_IAS_03 --> n_TRIAD_GATE
-  n_OAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
@@ -109,7 +104,6 @@ flowchart LR
   classDef invalidClaim fill:#fff0f0,stroke:#c53030,color:#5b1515,stroke-width:4px;
   class n_HAD_02M ready;
   class n_IAS_03 ready;
-  class n_OAS_03 ready;
   class n_HAD_03 blocked;
   class n_TRIAD_GATE blocked;
   class n_BCR_SCAFFOLD ready;
@@ -181,7 +175,7 @@ flowchart LR
     n_OAS_00["OAS-00<br/>Opening taxonomy, baselines and invariants<br/><b>DONE</b>"]
     n_OAS_01E["OAS-01E<br/>Envelope openings, external doors, thresholds and boundary candidates<br/><b>DONE</b>"]
     n_OAS_01I["OAS-01I<br/>Internal door assembly candidates<br/><b>DONE</b>"]
-    n_OAS_03["OAS-03<br/>Selected opening family and replacement/reinstatement set<br/><b>READY</b>"]
+    n_OAS_03["OAS-03<br/>Selected opening family and replacement/reinstatement set<br/><b>DONE</b>"]
   end
   subgraph g_HAD["HAD"]
     direction TB
@@ -383,7 +377,7 @@ flowchart LR
   class n_OAS_HAD_JUNCTION done;
   class n_HAD_02M ready;
   class n_IAS_03 ready;
-  class n_OAS_03 ready;
+  class n_OAS_03 done;
   class n_HAD_03 blocked;
   class n_TRIAD_GATE blocked;
   class n_BCR_SCAFFOLD ready;
