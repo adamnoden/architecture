@@ -9,7 +9,13 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T20:49:06.036Z",
-  "heartbeatAt": "2026-10-29T20:49:06.036Z",
-  "expiresAt": "2026-10-29T21:34:06.036Z",
-  "branch": "zerg/worker-6"
+  "heartbeatAt": "2026-10-29T20:58:26.589Z",
+  "expiresAt": "2026-10-29T21:43:26.589Z",
+  "branch": "zerg/worker-6",
+  "pr": 1025,
+  "checkpoint": {
+    "evidence": "PR #1025; project/hrs/hrs-baseline-result.md; independent source review complete",
+    "next": "Inspect exact-head CI, then serial integration preflight and merge",
+    "blocker": "CI pending"
+  }
 }
