@@ -11,18 +11,9 @@ Completed/cancelled history is omitted here so the current dependency frontier r
 ```mermaid
 flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
-  subgraph g_HAD["HAD"]
-    direction TB
-    n_HAD_00["HAD-00<br/>Architectural brief, hierarchy and invariants<br/><b>READY</b>"]
-    n_HAD_01E["HAD-01E<br/>Exterior and courtyard architectural design<br/><b>BLOCKED</b>"]
-    n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>BLOCKED</b>"]
-    n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>BLOCKED</b>"]
-    n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>BLOCKED</b>"]
-    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>BLOCKED</b>"]
-  end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
-    n_TRIAD_IFACE_FREEZE["TRIAD-IFACE-FREEZE<br/>Shared IAS/OAS/HAD interface freeze<br/><b>BLOCKED</b>"]
+    n_TRIAD_IFACE_FREEZE["TRIAD-IFACE-FREEZE<br/>Shared IAS/OAS/HAD interface freeze<br/><b>READY</b>"]
     n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>BLOCKED</b>"]
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>BLOCKED</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>BLOCKED</b>"]
@@ -41,6 +32,14 @@ flowchart LR
     n_OAS_01E["OAS-01E<br/>Envelope openings, external doors, thresholds and boundary candidates<br/><b>BLOCKED</b>"]
     n_OAS_01I["OAS-01I<br/>Internal door assembly candidates<br/><b>BLOCKED</b>"]
     n_OAS_03["OAS-03<br/>Selected opening family and replacement/reinstatement set<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_HAD["HAD"]
+    direction TB
+    n_HAD_01E["HAD-01E<br/>Exterior and courtyard architectural design<br/><b>BLOCKED</b>"]
+    n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>BLOCKED</b>"]
+    n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>BLOCKED</b>"]
+    n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>BLOCKED</b>"]
+    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -85,7 +84,6 @@ flowchart LR
     direction TB
     n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
   end
-  n_HAD_00 --> n_TRIAD_IFACE_FREEZE
   n_TRIAD_IFACE_FREEZE --> n_IAS_01V
   n_TRIAD_IFACE_FREEZE --> n_IAS_01H
   n_TRIAD_IFACE_FREEZE --> n_OAS_01E
@@ -162,8 +160,7 @@ flowchart LR
   classDef claimGrace fill:#fff7e6,stroke:#b7791f,color:#3d2b0b,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#e8f1fb,stroke:#2b6cb0,color:#1a202c,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#fff0f0,stroke:#c53030,color:#5b1515,stroke-width:4px;
-  class n_HAD_00 ready;
-  class n_TRIAD_IFACE_FREEZE blocked;
+  class n_TRIAD_IFACE_FREEZE ready;
   class n_IAS_01V blocked;
   class n_IAS_01H blocked;
   class n_OAS_01E blocked;
@@ -253,7 +250,7 @@ flowchart LR
   end
   subgraph g_HAD["HAD"]
     direction TB
-    n_HAD_00["HAD-00<br/>Architectural brief, hierarchy and invariants<br/><b>READY</b>"]
+    n_HAD_00["HAD-00<br/>Architectural brief, hierarchy and invariants<br/><b>DONE</b>"]
     n_HAD_01E["HAD-01E<br/>Exterior and courtyard architectural design<br/><b>BLOCKED</b>"]
     n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>BLOCKED</b>"]
     n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>BLOCKED</b>"]
@@ -262,7 +259,7 @@ flowchart LR
   end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
-    n_TRIAD_IFACE_FREEZE["TRIAD-IFACE-FREEZE<br/>Shared IAS/OAS/HAD interface freeze<br/><b>BLOCKED</b>"]
+    n_TRIAD_IFACE_FREEZE["TRIAD-IFACE-FREEZE<br/>Shared IAS/OAS/HAD interface freeze<br/><b>READY</b>"]
     n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>BLOCKED</b>"]
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>BLOCKED</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>BLOCKED</b>"]
@@ -433,8 +430,8 @@ flowchart LR
   class n_BSR_ROOT done;
   class n_IAS_00 done;
   class n_OAS_00 done;
-  class n_HAD_00 ready;
-  class n_TRIAD_IFACE_FREEZE blocked;
+  class n_HAD_00 done;
+  class n_TRIAD_IFACE_FREEZE ready;
   class n_IAS_01V blocked;
   class n_IAS_01H blocked;
   class n_OAS_01E blocked;

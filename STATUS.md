@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 5 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 19 · **Cancelled:** 0
+**Structurally ready:** 5 · **Active:** 3 · **Blocked:** 27 · **Held:** 2 · **Done:** 20 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -19,7 +19,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `HAD-00` | Architectural brief, hierarchy and invariants | HAD | TRIAD-IFACE-FREEZE |
+| `TRIAD-IFACE-FREEZE` | Shared IAS/OAS/HAD interface freeze | IAS / OAS / HAD | IAS-01V, IAS-01H, OAS-01E, OAS-01I, HAD-01E, HAD-01P, HAD-01S |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -39,7 +39,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `TRIAD-IFACE-FREEZE` | Shared IAS/OAS/HAD interface freeze | HAD-00 |
 | `IAS-01V` | Vertical interior system candidates | TRIAD-IFACE-FREEZE |
 | `IAS-01H` | Horizontal interior system candidates | TRIAD-IFACE-FREEZE |
 | `OAS-01E` | Envelope openings, external doors, thresholds and boundary candidates | TRIAD-IFACE-FREEZE |
@@ -70,7 +69,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`HAD-00` → `TRIAD-IFACE-FREEZE` → `IAS-01V` → `IAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`TRIAD-IFACE-FREEZE` → `IAS-01V` → `IAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
