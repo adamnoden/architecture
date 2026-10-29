@@ -9,7 +9,12 @@
     "label": "mvb-review-bc7462"
   },
   "claimedAt": "2026-10-29T21:18:03.205Z",
-  "heartbeatAt": "2026-10-29T21:18:03.205Z",
-  "expiresAt": "2026-10-29T22:03:03.205Z",
-  "branch": "pco/mvb-platform-review"
+  "heartbeatAt": "2026-10-29T21:23:54.020Z",
+  "expiresAt": "2026-10-29T22:08:54.020Z",
+  "branch": "pco/mvb-platform-review",
+  "pr": 1030,
+  "checkpoint": {
+    "evidence": "PR #1030; project/pco/mvb-platform-review.md and project/control/releases.md",
+    "next": "Require exact-head CI, verify ownership and merge, then release and clean up"
+  }
 }
