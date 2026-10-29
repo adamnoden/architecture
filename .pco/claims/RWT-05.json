@@ -9,7 +9,12 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T21:42:23.341Z",
-  "heartbeatAt": "2026-10-29T21:42:23.341Z",
-  "expiresAt": "2026-10-29T22:27:23.341Z",
-  "branch": "zerg/worker-6-wave3"
+  "heartbeatAt": "2026-10-29T21:52:11.820Z",
+  "expiresAt": "2026-10-29T22:37:11.820Z",
+  "branch": "zerg/worker-6-wave3",
+  "checkpoint": {
+    "evidence": "Published RWT-05 branch; owning result project/rwt/rwt-05-blockage-failure-exceedance.md; peer review and focused checks passed",
+    "next": "Reconcile paired ROF main, inspect exact-head CI, preflight then merge in commander slot",
+    "blocker": "Awaiting serial integration slot and exact-head CI"
+  }
 }
