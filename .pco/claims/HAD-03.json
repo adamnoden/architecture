@@ -9,14 +9,14 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T22:50:37.705Z",
-  "expiresAt": "2026-10-29T23:35:37.705Z",
-  "branch": "work/zerg-ias-had-checkpoint",
+  "heartbeatAt": "2026-10-29T23:05:35.988Z",
+  "expiresAt": "2026-10-29T23:50:35.988Z",
+  "branch": "work/zerg-had-03-room-use",
   "note": "Product-sized ensuite fit review; HAD-03 remains incomplete",
   "pr": 1051,
   "checkpoint": {
-    "evidence": "Common PR1051 head4cb898df preserves HAD1046 and corrected IAS1045; partial coordinated design only",
-    "next": "Verify exact combined CI and fresh HAD merge preflight; keep HAD incomplete, rebind continuation after merge",
-    "blocker": "No current-house adoption; joint tray/stack/complete-action duties remain"
+    "evidence": "Merged PR1051 preserves earlier checkpoint; reviewed Bedroom3 and court proposal prepared for new continuation PR",
+    "next": "Publish reviewed continuation on rebound branch and replace historical PR1051 metadata with its new draft PR",
+    "blocker": "HAD incomplete; actual door/window/water boundary and full room duties continue"
   }
 }
