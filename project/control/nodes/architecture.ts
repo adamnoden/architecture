@@ -43,9 +43,9 @@ export const architectureNodes = defineNodes([
     owners: ['IAS', 'OAS', 'HAD'],
     title: 'Shared IAS/OAS/HAD interface freeze',
     dependencies: ['IAS-00', 'OAS-00', 'HAD-00'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     aliases: ['IAS/OAS/HAD Wave 0.5'],
-    closeoutEvidence: []
+    closeoutEvidence: ['project/triad-interface-contract.md']
   },
 
   // Wave 1 — genuinely independent core exploration.
