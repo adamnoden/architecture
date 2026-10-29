@@ -21,7 +21,6 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_RESILIENCE["PCO-RESILIENCE<br/>Bound failure recovery and expose lease freshness and handoff evidence<br/><b>READY</b>"]
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>BLOCKED</b>"]
   end
   subgraph g_IAS["IAS"]
@@ -297,7 +296,6 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
-  class n_PCO_RESILIENCE ready;
   class n_PCO_APPLICABILITY blocked;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
@@ -397,7 +395,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_RESILIENCE["PCO-RESILIENCE<br/>Bound failure recovery and expose lease freshness and handoff evidence<br/><b>READY</b>"]
+    n_PCO_RESILIENCE["PCO-RESILIENCE<br/>Bound failure recovery and expose lease freshness and handoff evidence<br/><b>DONE</b>"]
     n_PCO_HOUSE_PLAN["PCO-HOUSE-PLAN<br/>Record owner-house objective and delivery execution plan<br/><b>DONE</b>"]
     n_PCO_REFURB_PLAN["PCO-REFURB-PLAN<br/>Record owner-directed refurbishment scope and swarmable handoffs<br/><b>DONE</b>"]
     n_PCO_00["PCO-00<br/>Control-plane inventory and authority map<br/><b>DONE</b>"]
@@ -808,7 +806,7 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
-  class n_PCO_RESILIENCE ready;
+  class n_PCO_RESILIENCE done;
   class n_PCO_HOUSE_PLAN done;
   class n_PCO_REFURB_PLAN done;
   class n_PCO_00 done;
