@@ -1,19 +1,14 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "9137d7f5-9ac0-43ac-b149-8fae55aafdca",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "7e4750ef-3102-4df5-8ae7-43b716846f66",
   "holder": {
     "kind": "chatgpt",
-    "label": "Refurbishment continuation requeue"
+    "label": "zerg-worker-5"
   },
-  "claimedAt": "2026-10-29T15:46:18.259Z",
-  "heartbeatAt": "2026-10-29T16:12:21.139Z",
-  "expiresAt": "2026-10-29T16:12:21.139Z",
-  "branch": "work/refurbishment-programme",
-  "note": "Owner-authorised guarded requeue with preserved partial results; no substantive packet completion claimed.",
-  "releasedAt": "2026-10-29T16:12:21.139Z",
-  "releaseReason": "handoff",
-  "pr": 1006
+  "claimedAt": "2026-10-29T20:51:14.686Z",
+  "heartbeatAt": "2026-10-29T20:51:14.686Z",
+  "expiresAt": "2026-10-29T21:36:14.686Z"
 }
