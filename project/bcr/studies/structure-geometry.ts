@@ -56,7 +56,7 @@ text(292,31,'C  Lower flight and overhead sensitivity / 1:50','sub');
 const x0=294,y0=139,sc=50;
 for(let n=1;n<=10;n++){const u=(n-1)*s.going,z=n*rise;line(x0+u/sc,y0-z/sc,x0+(u+s.going)/sc,y0-z/sc,'edge');if(n<10)line(x0+(u+s.going)/sc,y0-z/sc,x0+(u+s.going)/sc,y0-(z+rise)/sc,'edge');}
 for(const c of cases)line(x0,y0-c.soffit/sc,x0+4300/sc,y0-c.soffit/sc,'warn');
-text(294,70,'Dashed levels: 3100 / 3050 / 3000');
+text(294,56,'Dashed levels: 3100 / 3050 / 3000');
 line(x0,y0-(rise+2000)/sc,x0+2700/sc,y0-(10*rise+2000)/sc);text(293,155,'Blue: pitch line plus 2000 vertical clearance.');text(293,162,'Red: hypothetical soffits 3100/3050/3000.');text(293,169,'No actual slab is asserted across the stair.');
 text(160,181,'D  Entrance void and bearing boundary','sub');text(160,190,'Void x 4862.5–7137.5; y 417.5–2712.5.');text(160,198,'Bridge band y 2712.5–3832.5: 1120 before guards.');text(160,206,'Void-edge side trimmers land over court door 4800–7200.');text(160,214,'Blue trial frame x 4600/7400 instead reaches pier strips:');text(160,222,'header span 2800 and 262.5 side offsets, not sized beams.');text(160,230,'Support, guards and services must fit the same section.');
 line(10,240,410,240);text(10,251,'No loads, strengths, member capacities, foundation size or fixing schedule inferred. Source-based dimensions are model millimetres.');
