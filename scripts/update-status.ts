@@ -15,7 +15,7 @@ writeFileSync(join(repoRoot, 'docs/project/graph-source.ts'), [
   `export const currentMermaid = ${JSON.stringify(renderControlMermaid(controlNodes))}`,
   `export const completeMermaid = ${JSON.stringify(renderControlMermaid(controlNodes, { includeDone: true }))}`,
   ''
-].join('\\n'))
+].join('\n'))
 writeFileSync(join(repoRoot, 'docs/project/dependency-graph.md'), [
   '# Project dependency graph',
   '',
@@ -37,6 +37,6 @@ writeFileSync(join(repoRoot, 'docs/project/dependency-graph.md'), [
   '',
   'The graph shows durable structural state, not live agent occupancy. ACO claims are maintained separately on the runtime branch.',
   ''
-].join('\\n'))
+].join('\n'))
 
 console.log('Updated STATUS.md, workstream codes and structural control-graph projections from canonical typed sources.')
