@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "RWT-06",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "31f93353-ecad-4ca6-a2e2-2aa352620732",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-6"
+  },
+  "claimedAt": "2026-10-29T22:12:16.360Z",
+  "heartbeatAt": "2026-10-29T22:12:16.360Z",
+  "expiresAt": "2026-10-29T22:57:16.360Z",
+  "branch": "zerg/worker-6-wave4"
+}
