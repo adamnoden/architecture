@@ -54,9 +54,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['ROF'],
     title: 'Roof junction and penetration families',
     dependencies: ['ROF-02', 'ROF-03', 'ROF-04'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rof/rof-05-junctions-and-penetrations.md']
   },
   {
     id: 'ROF-06',
