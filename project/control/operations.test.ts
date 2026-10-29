@@ -48,3 +48,15 @@ test('main movement before release retains the lease and reports why',async()=>{
  const result=await reconcileCompletedClaims([{...node,lifecycle:'complete'}],s,'o/r',async()=>pr,async()=>{throw Error('main moved')})
  assert.equal(s.writes,0);assert.equal(result[0].action,'retained');assert.match(result[0].reason,/main moved/)
 })
+
+
+test('runtime push entry point has read-only authority and delegates implementation to main',async()=>{
+ const {readFileSync}=await import('node:fs')
+ const shim=readFileSync('project/control/runtime-operations-workflow.yml','utf8')
+ assert.match(shim,/branches: \[runtime\/claims\]/)
+ assert.match(shim,/uses: adamnoden\/architecture\/.github\/workflows\/operations-report.yml@main/)
+ assert.doesNotMatch(shim,/contents: write|run:|secrets:/)
+ const shared=readFileSync('.github/workflows/operations-report.yml','utf8')
+ assert.match(shared,/ref: main/)
+ assert.doesNotMatch(shared,/contents: write/)
+})

@@ -20,3 +20,11 @@ Adversarial regressions cover missing/duplicate declarations, superseded identit
 The first deployment must be observed on GitHub: confirm projection completion, operational report generation and conservative lease reconciliation. Since this PR changes the selection mechanism itself, all affected specialised proofs run. Future coordination-only changes can earn skips. Native GitHub merge queue/ruleset configuration and atomic merge fencing are outside this slice; no unavailable permissions or guarantees are assumed.
 
 No architecture, evidence maturity or construction-readiness claim changes. Generated main projections own durable status. PR/issue closeout records carry actual CI, merge and cleanup identities.
+
+## First deployment and event integration correction
+
+#1016 merged at 93d3f3d4. All fourteen exact-head PR workflows passed. Native Project operations run 40928817685 succeeded; its trusted-main reconciliation released generation 1 at 18:14:33 UTC and emitted the first report. This establishes actual native mutation/reporting capability, not merely workflow configuration.
+
+Inspection then identified an event-placement defect: GitHub reads push workflows from the pushed branch. The retained runtime branch did not contain the new trigger. PCO-OPERATIONS was explicitly requeued rather than claiming that main-only wiring handled heartbeats, and generation 2 acquired normally after the automatic release. The reporting job is now one read-only reusable main workflow, with a small canonical trigger installed separately on runtime/claims. Main closeout and claim events share that reporting implementation. Runtime trigger installation is retained coordination infrastructure, never a source branch to merge/delete.
+
+Verify the claim-branch push run and its report before final closeout. The source template is deliberately small; change reporting logic on main rather than duplicating implementation on the runtime branch.
