@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "BCR-WATER",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "87fae76a-4408-4e1d-b508-432c98ebed0e",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-3"
+  },
+  "claimedAt": "2026-10-29T22:20:54.586Z",
+  "heartbeatAt": "2026-10-29T22:20:54.586Z",
+  "expiresAt": "2026-10-29T23:05:54.586Z",
+  "branch": "work/zerg-worker-3-bcr-next"
+}
