@@ -38,7 +38,6 @@ flowchart LR
   end
   subgraph g_BCR["BCR"]
     direction TB
-    n_BCR_SCAFFOLD["BCR-SCAFFOLD<br/>Construction-resolution inventory and matrix scaffolding<br/><b>READY</b>"]
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
     n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>BLOCKED</b>"]
     n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>BLOCKED</b>"]
@@ -147,7 +146,6 @@ flowchart LR
   n_HAD_03 --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_BCR_PREFLIGHT --> n_TRIAD_GATE
-  n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_BCR_PROPORTIONALITY --> n_BCR_CONVERGENCE
@@ -159,17 +157,11 @@ flowchart LR
   n_PCO_APPLICABILITY --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
-  n_BCR_SCAFFOLD --> n_BCR_STRUCTURE
   n_HRS_BASELINE --> n_BCR_STRUCTURE
-  n_BCR_SCAFFOLD --> n_BCR_WET
   n_HRS_BASELINE --> n_BCR_WET
-  n_BCR_SCAFFOLD --> n_BCR_SERVICES
   n_HRS_BASELINE --> n_BCR_SERVICES
-  n_BCR_SCAFFOLD --> n_BCR_WATER
   n_HRS_BASELINE --> n_BCR_WATER
-  n_BCR_SCAFFOLD --> n_BCR_OCCUPATION
   n_HRS_BASELINE --> n_BCR_OCCUPATION
-  n_BCR_SCAFFOLD --> n_BCR_PROPORTIONALITY
   n_HRS_BASELINE --> n_BCR_PROPORTIONALITY
   n_BCR_STRUCTURE --> n_BCR_PREFLIGHT
   n_BCR_WET --> n_BCR_PREFLIGHT
@@ -292,7 +284,6 @@ flowchart LR
   class n_IAS_03 ready;
   class n_HAD_03 ready;
   class n_TRIAD_GATE blocked;
-  class n_BCR_SCAFFOLD ready;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_BASELINE ready;
@@ -446,7 +437,7 @@ flowchart LR
   end
   subgraph g_BCR["BCR"]
     direction TB
-    n_BCR_SCAFFOLD["BCR-SCAFFOLD<br/>Construction-resolution inventory and matrix scaffolding<br/><b>READY</b>"]
+    n_BCR_SCAFFOLD["BCR-SCAFFOLD<br/>Construction-resolution inventory and matrix scaffolding<br/><b>DONE</b>"]
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
     n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>BLOCKED</b>"]
     n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>BLOCKED</b>"]
@@ -844,7 +835,7 @@ flowchart LR
   class n_HAD_03 ready;
   class n_OAS_DETAIL done;
   class n_TRIAD_GATE blocked;
-  class n_BCR_SCAFFOLD ready;
+  class n_BCR_SCAFFOLD done;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_BASELINE ready;
