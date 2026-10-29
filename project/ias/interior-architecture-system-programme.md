@@ -1,6 +1,6 @@
 # IAS — Interior Architecture System
 
-**State:** IAS-00 baseline complete; IAS-01 wall/backplane/panel family ready after BSR closure
+**State:** IAS-00 baseline complete; shared interface freeze awaits OAS-00 and HAD-00
 
 **Tracking:** [#941 — IAS interior architecture system](https://github.com/adamnoden/architecture/issues/941)
 
@@ -12,15 +12,25 @@ What bounded interior assembly family best realises the Reference House proposit
 
 IAS owns the Reference House implementation family for walls, floors, backplanes, panels, service skirtings, grilles, access pieces and their junctions. It does not own room-wide architectural taste, envelope-crossing opening assemblies, competent technical validation or delivery responsibility.
 
-## Work packets
+## Work packets and shared gates
 
-- **IAS-00 — baseline and challengers:** inventory existing doctrine/pattern/Reference House assumptions and define excellent conventional baselines plus candidate system families.
-- **IAS-01 — wall/backplane/panel family:** permanent background, sparse anchors, backplane/rail/grounds, panel geometry, fixing and tolerance strategy.
-- **IAS-02 — floor family:** structural boundary, acoustic/service/levelling layer, candidate removable platform, finish interfaces and lifting/reinstatement logic.
-- **IAS-03 — perimeter service family:** service-carrying skirting, dry-service segregation, accessory rises, corners, door/architrave transitions and compartment stops.
-- **IAS-04 — architectural interfaces:** grilles, access pieces, ceiling/cornice interfaces, kitchen attachment, wet-room variants and transitions to quiet permanent construction.
-- **IAS-05 — drawing/disassembly set:** representative room/assembly drawings, exploded axonometrics, selected 1:5 / 1:2 junctions and removal/reinstatement sequences.
-- **IAS-06 — selection gate:** compare against conventional construction, reject/hold weak candidates and issue the bounded selected family to BCR.
+The [canonical execution graph](../control/nodes/architecture.ts) owns lifecycle
+and dependencies. [Project control](../control/README.md) owns live lease mechanics.
+Issue #941 records the authorised parallel topology.
+
+- **IAS-00:** baseline, conventional controls, challengers and invariants.
+- **TRIAD-IFACE-FREEZE:** shared IAS/OAS/HAD contract after all three baselines;
+  controlled geometry, depth budgets, interfaces, ownership and rewind rules.
+- **IAS-01V / IAS-01H:** independent vertical and horizontal candidate exploration
+  after the shared contract; neither is a final selection.
+- **IAS-02S / IAS-02W:** service/access and wet/kitchen variants against actual candidates.
+- **IAS-OAS-JUNCTION / IAS-HAD-JUNCTION:** opening and visible architectural interfaces
+  reconciled with the corresponding streams, without silent geometry changes.
+- **IAS-03:** compare and select the bounded family; coordinate drawings and disassembly.
+- **TRIAD-GATE:** jointly establish one coordinated house before selected BCR input.
+
+This topology supersedes the earlier linear IAS-01…06 packet list. BSR completion
+unblocks the baselines; it does not by itself unblock deep candidate exploration.
 
 ## IAS-00 current-source baseline
 
@@ -31,13 +41,14 @@ actual nominal depth allocations rather than importing historical technical
 results. The represented 350 mm floor package has no unallocated depth; the
 ordinary envelope finish allowance is 15 mm. One upper service-panel reservation
 overlaps a nominal partition return by 12.5 mm and is explicitly carried into
-IAS-01 as coordination item I00-C1, not silently repositioned.
+IAS-01V and IAS-02S / IAS-02W as coordination item I00-C1, not silently repositioned.
 
 This is a read-only baseline packet, not a selected assembly or performance
-verdict. BSR closed through PR #950, establishing the canonical interfaces;
-substantive IAS-01 is now unblocked.
-Its first worked conditions are one quiet wall/attachment datum and one
-high-service access front, including returns and removal/reinstatement.
+verdict. BSR closed through PR #950, establishing the chapter/ownership interfaces.
+IAS-00 now supplies the shared interface freeze; OAS-00 and HAD-00 must also
+complete before that contract. The vertical candidate work then starts with one
+quiet wall/attachment datum and one high-service access front, including returns
+and removal/reinstatement; horizontal candidates reconcile the 350 mm package.
 
 ## Parallel interfaces
 
@@ -51,6 +62,7 @@ IAS may establish architectural geometry, assembly sequence, comparative reasoni
 
 ## Exit gate
 
-IAS closes when a selected bounded interior system is coordinated across representative conditions; rejected/held alternatives and reasons are explicit; drawings/disassembly logic are sufficient for BCR and prototype/review scoping; and every unresolved performance claim has a named downstream evidence owner.
+IAS closes when a selected bounded interior system is coordinated across representative conditions; rejected/held alternatives and reasons are explicit; drawings/disassembly logic are sufficient for BCR and prototype/review scoping; every unresolved performance claim has a named downstream evidence owner; and
+the shared TRIAD-GATE establishes one coordinated house with OAS and HAD.
 
 Closure is not construction adequacy or physical acceptance.

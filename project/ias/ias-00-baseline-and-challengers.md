@@ -1,6 +1,6 @@
 # IAS-00 — current-source baseline and challengers
 
-**Outcome:** baseline inventory complete; IAS-01 unblocked after BSR closure
+**Outcome:** baseline inventory complete; shared interface freeze awaits OAS-00 and HAD-00
 
 **Tracking:** [IAS #941](https://github.com/adamnoden/architecture/issues/941)
 
@@ -10,7 +10,7 @@
 
 **House:** `RH-LAYOUT-REVISION-02`, consumed by `RH-LAYOUT-FAMILY-02`
 
-**Scope:** read-only source audit, inherited baseline/challenger comparison and a bounded IAS-01 handoff. No architecture, drawing, manuscript topology, prototype state or performance authority is changed.
+**Scope:** read-only source audit, inherited baseline/challenger comparison and a bounded shared-interface and candidate-family handoff. No architecture, drawing, manuscript topology, prototype state or performance authority is changed.
 
 ## 1. Question and dependency
 
@@ -23,7 +23,8 @@ aesthetic refinement. That does not establish a physical print verdict or
 performance result. BSR #940 / PR #950 owns the manuscript topology and is now
 closed. Its six-part migration establishes the IAS chapter/ownership interface.
 This inventory does not author that chapter or select a detailed assembly;
-IAS-01 is the next substantive packet and is now unblocked.
+the next shared gate is `TRIAD-IFACE-FREEZE`, after OAS-00 and HAD-00.
+Only after that contract may IAS-01V and IAS-01H develop core candidates.
 
 The baseline is deliberately selective. The project already rejected the
 presumption that every wall or floor should become removable. IAS must develop
@@ -72,7 +73,7 @@ The 55 mm floor service void is an allocated zone, not an assurance that any
 particular service or additional construction fits. The 238 mm drawn framing
 zone is not a sized timber member. Older manuscript discussion of an approximately
 300 mm engineering comparator is not a second compatible build-up to insert
-without reconciliation. IAS-02/BCR must make that comparison explicit.
+without reconciliation. IAS-01H/BCR must make that comparison explicit.
 
 No floor level, wall face, room clearance or ceiling height is changed here.
 Any selected assembly that needs extra depth must show its replacement/reallocation
@@ -94,7 +95,7 @@ This is a source-coordination warning, not a claim about an installed panel.
 The drawing never selected a frame, panel height, fixing border, component or
 withdrawal envelope. A centreline-only check would miss the first overlap.
 
-**IAS-01 coordination item I00-C1:** resolve the U-ENS3 access assembly together
+**Coordination item I00-C1 (IAS-01V, then IAS-02S / IAS-02W):** resolve the U-ENS3 access assembly together
 with its intended service task, current return and source branch before drawing
 it as an opening. For comparison, the same 700 mm reservation centred at y =
 3300 would occupy 2950–3650 mm and leave nominal margins of 237.5 / 137.5 mm.
@@ -125,8 +126,8 @@ they do not promote held candidates into validated patterns.
 | Ordinary principal-room floor | Conventional continuous floor remains the control | Acoustic/fire/structural build-up still needs competent design; conventional does not mean already verified |
 | Selective floor-access band | Held until an actual current service intervention earns a location | Compare with a local hatch and wall/joinery access; clear fixed furniture, edges and thresholds |
 | Full-room access floor / dense-mineral platform | Not the first design move | Must solve a substantial problem left by selective access without exporting depth, joints, hollow footfall or supplier dependence |
-| Low-level dry route with declared rises | Develop selectively under IAS-03 | Appropriate service classes, segregation, protection, boundary stops and accessible accessories require competent design |
-| High-service access face | First detailed coordination task under IAS-01 | Keep routine removal on a maintainable side; identify actual components, tool space and removal path |
+| Low-level dry route with declared rises | Develop selectively under IAS-02S | Appropriate service classes, segregation, protection, boundary stops and accessible accessories require competent design |
+| High-service access face | Carry into IAS-01V, then IAS-02S / IAS-02W | Keep routine removal on a maintainable side; identify actual components, tool space and removal path |
 
 No score is assigned to untested acoustic, fire, cost, carbon or tactile
 performance. A mechanism with more reversible joints is not automatically the
@@ -137,16 +138,16 @@ a deliberately weak control.
 
 | Condition | Work that IAS must resolve | Interface / evidence owner |
 |---|---|---|
-| Quiet masonry wall and one declared fixing datum | Finished datum, boundary treatment, sparse anchor/ground, removable trim where needed; distinguish ordinary and consequential loads | IAS-01; EPR for anchor/load/performance questions; HAD for visible composition |
-| Lightweight partition return | Keep the 125 mm total as a planning constraint until a real build-up is chosen; do not assume masonry-style grounds or capacities | IAS-01; BCR/EPR for required performance and changed depth |
-| U-ENS3 / U-BATH / U-ENSP access fronts | Component/task list; dry-side approach; return/frame margins; service-reservation cross-section; panel height, capture and reinstatement sequence | IAS-01 / I00-C1; MEP/fire/acoustic input through BCR/EPR |
-| Floor edge and ceiling below | Reconcile the 350 mm package and actual service tasks before adding access; keep structural/boundary duties out of a decorative access layer | IAS-02; existing PHY-03 / EPR applicability check through BCR |
-| Dry skirting, corner and door-side rise | First release point, ordinary tool access, local pieces, service/no-fix map, accessory interruption and stop at significant boundaries | IAS-03; electrical design through BCR/EPR; OAS/HAD at opening/visible trim |
-| Wall/ceiling cover | One controlling attachment, independent movement, accessible release, boundary continuity and decoration that does not lock the joint | IAS-04; existing PHY-04 comparison, not an automatic new prototype |
-| Window/door-adjacent lining | Independent room-side termination, release order and no brittle bridge across the replaceable frame | IAS/OAS interface; OAS owns the envelope crossing and doorset/cassette |
-| Kitchen, wet-room and grille/access pieces | Support and isolation duties, opening sequence and reinstatement independent of brittle wet finishes where possible | IAS-04; HAD for appearance; BCR for technical evidence routes |
+| Quiet masonry wall and one declared fixing datum | Finished datum, boundary treatment, sparse anchor/ground, removable trim where needed; distinguish ordinary and consequential loads | IAS-01V; EPR for anchor/load/performance questions; HAD for visible composition |
+| Lightweight partition return | Keep the 125 mm total as a planning constraint until a real build-up is chosen; do not assume masonry-style grounds or capacities | IAS-01V; BCR/EPR for required performance and changed depth |
+| U-ENS3 / U-BATH / U-ENSP access fronts | Component/task list; dry-side approach; return/frame margins; service-reservation cross-section; panel height, capture and reinstatement sequence | IAS-01V then IAS-02S / IAS-02W / I00-C1; MEP/fire/acoustic input through BCR/EPR |
+| Floor edge and ceiling below | Reconcile the 350 mm package and actual service tasks before adding access; keep structural/boundary duties out of a decorative access layer | IAS-01H; existing PHY-03 / EPR applicability check through BCR |
+| Dry skirting, corner and door-side rise | First release point, ordinary tool access, local pieces, service/no-fix map, accessory interruption and stop at significant boundaries | IAS-02S; electrical design through BCR/EPR; OAS/HAD at opening/visible trim |
+| Wall/ceiling cover | One controlling attachment, independent movement, accessible release, boundary continuity and decoration that does not lock the joint | IAS-HAD-JUNCTION; existing PHY-04 comparison, not an automatic new prototype |
+| Window/door-adjacent lining | Independent room-side termination, release order and no brittle bridge across the replaceable frame | IAS-OAS-JUNCTION; OAS owns the envelope crossing and doorset/cassette |
+| Kitchen, wet-room and grille/access pieces | Support and isolation duties, opening sequence and reinstatement independent of brittle wet finishes where possible | IAS-02W / IAS-HAD-JUNCTION; HAD for appearance; BCR for technical evidence routes |
 
-The minimum next worked family is **one quiet wall/attachment datum plus one
+After the shared interface freeze, the minimum vertical worked family is **one quiet wall/attachment datum plus one
 high-service access front**, including a partition return and floor/ceiling
 termination. That answers a current need without requiring a universal removable
 wall. Reuse existing PHY-03/04 questions only after checking applicability;
@@ -182,10 +183,17 @@ ordinary construction performs the task better, or competent/physical evidence
 rejects an implementation. Such results narrow or rewind the implementation;
 they do not justify hiding extra construction in the drawings.
 
-BSR is closed. **Next: IAS-01 — wall/backplane/panel family**, beginning with
-the two representative conditions above and I00-C1. IAS-02/03/04 consume those
-interfaces in their declared scopes. BCR later routes actual technical questions;
-HRS and final PLT/EDA/PUB retain their existing downstream gates.
+BSR is closed. **Next: shared `TRIAD-IFACE-FREEZE` after OAS-00 and HAD-00.**
+This inventory contributes the current datums, depth budgets, retained controls
+and I00-C1 to that contract. IAS-01V / IAS-01H then explore vertical/horizontal
+candidates; IAS-02S / IAS-02W and the IAS-OAS / IAS-HAD junction nodes reconcile
+services, wet variants and shared interfaces against those candidates. IAS-03
+selects the family; the shared TRIAD-GATE precedes coordinated BCR input.
+HRS and final PLT/EDA/PUB retain their downstream gates.
+
+This handoff was reconciled with the parallel PCO/ACO topology added while
+IAS-00 was running. The earlier linear IAS-01…06 sequence is superseded by the
+canonical [execution graph](../control/nodes/architecture.ts) and issue #941.
 
 ## Reproduction and validation boundary
 
