@@ -83,9 +83,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Rainwater constitution, baseline and interfaces',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-00-baseline-and-interfaces.md']
   },
   {
     id: 'RWT-01',

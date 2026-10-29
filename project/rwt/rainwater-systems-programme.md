@@ -1,7 +1,9 @@
 # RWT — Rainwater Systems Architecture
 
 **Issue:** #992  
-**State:** authorised programme; execution not yet started
+**State:** RWT-00 complete; rainfall/hydraulic basis remains
+
+**Current result:** [RWT-00 baseline and interfaces](rwt-00-baseline-and-interfaces.md).
 
 ## Purpose
 
