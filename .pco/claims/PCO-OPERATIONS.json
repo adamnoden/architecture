@@ -9,13 +9,13 @@
     "label": "operations-events-bc7462"
   },
   "claimedAt": "2026-10-29T18:15:43.942Z",
-  "heartbeatAt": "2026-10-29T18:18:02.913Z",
-  "expiresAt": "2026-10-29T19:03:02.913Z",
+  "heartbeatAt": "2026-10-29T18:26:45.304Z",
+  "expiresAt": "2026-10-29T19:11:45.304Z",
   "checkpoint": {
-    "evidence": "PR #1017; #1016 native closeout verified; 79 control tests pass",
-    "next": "Merge event wiring, install canonical runtime trigger, observe push report and automated release",
-    "blocker": "Exact-head CI running"
+    "evidence": "Native YAML failure reproduced; 81 regressions pass",
+    "next": "Merge syntax guard; observe native reports and automatic lease release",
+    "blocker": "CI running"
   },
-  "branch": "pco/operations-events",
-  "pr": 1017
+  "branch": "pco/operations-yaml",
+  "pr": 1018
 }
