@@ -253,11 +253,14 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
   ]),
   group('Roof & rainwater', [
     page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis'),
+    page('Rainwater collection options', '/docs/research/rainwater-collection-options'),
+    page('Rainwater conveyance options', '/docs/research/rainwater-conveyance-options'),
     page('Roof & rainwater materials', '/docs/research/roof-rainwater-material-compatibility')
   ]),
   group('Maintenance & precedent', [
     page('External maintenance access', '/docs/research/external-maintenance-access'),
     page('Roof failure and recovery evaluation', '/docs/research/roof-failure-evaluation'),
+    page('Roof topology and water paths', '/docs/research/roof-topology-families'),
     page('Preface precedents', '/docs/research/preface-precedents')
   ]),
   group('Historical targeted evidence', [

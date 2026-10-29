@@ -21,7 +21,6 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_MVB_REVIEW["PCO-MVB-REVIEW<br/>Assess external orchestration systems and version the MVB operating contract<br/><b>READY</b>"]
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>READY</b>"]
   end
   subgraph g_IAS["IAS"]
@@ -57,7 +56,6 @@ flowchart LR
   end
   subgraph g_ROF["ROF"]
     direction TB
-    n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>READY</b>"]
     n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>READY</b>"]
     n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>READY</b>"]
     n_ROF_05["ROF-05<br/>Roof junction and penetration families<br/><b>BLOCKED</b>"]
@@ -67,8 +65,6 @@ flowchart LR
   end
   subgraph g_RWT["RWT"]
     direction TB
-    n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>READY</b>"]
-    n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>READY</b>"]
     n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>READY</b>"]
     n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>BLOCKED</b>"]
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
@@ -163,23 +159,16 @@ flowchart LR
   n_BCR_OCCUPATION --> n_BCR_PREFLIGHT
   n_TRIAD_GATE --> n_HRS_TECHNICAL
   n_CCR_IDENTITY --> n_HRS_TECHNICAL
-  n_ROF_02 --> n_ROF_05
   n_ROF_03 --> n_ROF_05
   n_ROF_04 --> n_ROF_05
   n_ROF_05 --> n_ROF_06
   n_ROF_05 --> n_ROF_07
   n_ROF_06 --> n_ROF_07
-  n_RWT_02 --> n_RWT_05
-  n_RWT_03 --> n_RWT_05
   n_RWT_04 --> n_RWT_05
-  n_RWT_03 --> n_RWT_06
   n_RWT_05 --> n_RWT_06
-  n_RWT_02 --> n_RWT_07
-  n_RWT_03 --> n_RWT_07
   n_RWT_04 --> n_RWT_07
   n_RWT_05 --> n_RWT_07
   n_RWT_06 --> n_RWT_07
-  n_ROF_02 --> n_RWT_07
   n_ROF_07 --> n_ROF_RWT_GATE
   n_RWT_07 --> n_ROF_RWT_GATE
   n_HAD_03 --> n_ROF_RWT_GATE
@@ -269,7 +258,6 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
-  class n_PCO_MVB_REVIEW ready;
   class n_PCO_APPLICABILITY ready;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
@@ -284,14 +272,11 @@ flowchart LR
   class n_BCR_PROPORTIONALITY ready;
   class n_BCR_PREFLIGHT blocked;
   class n_HRS_TECHNICAL blocked;
-  class n_ROF_02 ready;
   class n_ROF_03 ready;
   class n_ROF_04 ready;
   class n_ROF_05 blocked;
   class n_ROF_06 blocked;
   class n_ROF_07 blocked;
-  class n_RWT_02 ready;
-  class n_RWT_03 ready;
   class n_RWT_04 ready;
   class n_RWT_05 blocked;
   class n_RWT_06 blocked;
@@ -365,7 +350,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_MVB_REVIEW["PCO-MVB-REVIEW<br/>Assess external orchestration systems and version the MVB operating contract<br/><b>READY</b>"]
+    n_PCO_MVB_REVIEW["PCO-MVB-REVIEW<br/>Assess external orchestration systems and version the MVB operating contract<br/><b>DONE</b>"]
     n_PCO_MANUAL["PCO-MANUAL<br/>Document the integrated project execution system for outsiders and maintainers<br/><b>DONE</b>"]
     n_PCO_SNAPSHOT["PCO-SNAPSHOT<br/>Keep claim and briefing snapshots correct during main updates<br/><b>DONE</b>"]
     n_PCO_OPERATIONS["PCO-OPERATIONS<br/>Integrate agent briefing, scoped proof CI and safe post-merge reconciliation<br/><b>DONE</b>"]
@@ -449,7 +434,7 @@ flowchart LR
     direction TB
     n_ROF_00["ROF-00<br/>Roof constitution, baseline and inherited constraints<br/><b>DONE</b>"]
     n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>DONE</b>"]
-    n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>READY</b>"]
+    n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>DONE</b>"]
     n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>READY</b>"]
     n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>READY</b>"]
     n_ROF_05["ROF-05<br/>Roof junction and penetration families<br/><b>BLOCKED</b>"]
@@ -461,8 +446,8 @@ flowchart LR
     direction TB
     n_RWT_00["RWT-00<br/>Rainwater constitution, baseline and interfaces<br/><b>DONE</b>"]
     n_RWT_01["RWT-01<br/>Rainfall and hydraulic basis<br/><b>DONE</b>"]
-    n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>READY</b>"]
-    n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>READY</b>"]
+    n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>DONE</b>"]
+    n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>DONE</b>"]
     n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>READY</b>"]
     n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>BLOCKED</b>"]
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
@@ -784,7 +769,7 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
-  class n_PCO_MVB_REVIEW ready;
+  class n_PCO_MVB_REVIEW done;
   class n_PCO_MANUAL done;
   class n_PCO_SNAPSHOT done;
   class n_PCO_OPERATIONS done;
@@ -841,7 +826,7 @@ flowchart LR
   class n_HRS_TECHNICAL blocked;
   class n_ROF_00 done;
   class n_ROF_01 done;
-  class n_ROF_02 ready;
+  class n_ROF_02 done;
   class n_ROF_03 ready;
   class n_ROF_04 ready;
   class n_ROF_05 blocked;
@@ -849,8 +834,8 @@ flowchart LR
   class n_ROF_07 blocked;
   class n_RWT_00 done;
   class n_RWT_01 done;
-  class n_RWT_02 ready;
-  class n_RWT_03 ready;
+  class n_RWT_02 done;
+  class n_RWT_03 done;
   class n_RWT_04 ready;
   class n_RWT_05 blocked;
   class n_RWT_06 blocked;

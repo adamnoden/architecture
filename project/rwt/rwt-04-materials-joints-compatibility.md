@@ -1,7 +1,7 @@
 # RWT-04 — materials, joints and shared compatibility
 
 **Result:** complete at comparative research/interface scope; no material or network selection.
-**Starting main:** `befc5a51` after HRS-BASELINE (29 October 2026).
+**Starting main:** `befc5a518720de6eb46c78df4ec9ea1b36c77ac5` after HRS-BASELINE (29 October 2026).
 **Programme:** [RWT](rainwater-systems-programme.md), issue #992.
 **Owning shared evidence:** [Roof and rainwater materials: compatibility and renewal](../../docs/research/roof-rainwater-material-compatibility.md).
 
@@ -19,7 +19,7 @@ Primary manufacturer/industry records cover the six families, jointing, movement
 
 The review rejected: physical separation as a cure for incompatible runoff; same-metal identity as a complete assembly pass; fewer seams as automatic reliability; a painted barrier without edge/damage evidence; all soldering as movement accommodation; one generic sealant or bracket spacing; accessible-looking pipes without a removal task; and component material durability as whole-network assurance.
 
-ROF-02/RWT-02/03 peer-reviewed draft inputs were inspected in integration PR #1031 before its adoption: four inner valleys/court concentration, exposed versus trapped collection, and the unresolved low-level/high-transfer court route. They inform interface questions, not a selected network. Source geometry is unchanged. The shared roof-water contract points to this one record; ROF-03/05 and RWT-07 must extend the same cases with actual candidates rather than create contradictory schedules.
+ROF-02/RWT-02/03 peer-reviewed inputs were inspected in integration PR #1031, subsequently merged as `1d0009752bb11f4f36a400b8a1ebdc1c5d787f7a`: four inner valleys/court concentration, exposed versus trapped collection, and the unresolved low-level/high-transfer court route. They inform interface questions, not a selected network. Main projection `fde0b81d` and the compatible MVB 1.0.0 documentation release were retained during integration. Source geometry is unchanged. The shared roof-water contract points to this one record; ROF-03/05 and RWT-07 must extend the same cases with actual candidates rather than create contradictory schedules.
 
 Independent peer review confirmed the collection-interface limits and MGMA runoff restriction, and added guard/strainer materials plus the source-specific nonmetal-to-zinc exposure case to the shared inventory. Roof-side review independently checked MGMA and Uginox restrictions. No guard obstruction allowance, product sizing or siphonic claim was imported. Access limitations for the large iron guide and copper section are stated explicitly; their reviewed primary indexed excerpts are not presented as a full manual read.
 
