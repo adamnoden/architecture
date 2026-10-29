@@ -119,8 +119,17 @@ export const pcoNodes = defineNodes([
     owners: ['PCO'],
     title: 'Self-service agent dispatcher and race-safe claim-next policy',
     dependencies: ['PCO-VIS'],
-    lifecycle: 'started',
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: [
+      'project/pco/pco-dispatcher-design.md',
+      'project/pco/pco-dispatcher-closeout.md',
+      'project/control/types.ts',
+      'project/control/validate.ts',
+      'project/control/dispatch.ts',
+      'project/control/dispatch.test.ts',
+      'scripts/project-claims.ts',
+      'project/control/README.md',
+      'AGENTS.md'
+    ]
   }
 ])
