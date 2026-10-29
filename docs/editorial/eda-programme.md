@@ -1,6 +1,8 @@
 # EDA — Editorial Doctrine Audit
 
-**Status:** CLOSED — EDA-00–08 passed; final editorial acceptance recorded 2026-10-27
+**Historical audit status:** CLOSED — EDA-00–08 passed for the source/object accepted on 2026-10-27
+
+**Current successor:** EDA-ADAPTER planned; EDA-RENEWED remains gated on final PLT integration. See section 9 and the [cross-stream refurbishment plan](../../project/refurbishment-plan.md).
 **Programme owner:** publication editorial control  
 **Baseline:** `816c6ca71e20235dca83350eb0f3e2cd05186169`  
 **Governing relationship:** post-migration assurance of the completed Editorial Overhaul  
@@ -310,3 +312,45 @@ All eight workflows passed on the accepted source/layout head: repository health
 The local runtime required the equivalent `node --import tsx` loader in place of the restricted `tsx` IPC entry point, an isolated Chromium renderer and PDF inspectors. Tracked dependencies, package commands and proof assertions were not weakened to accommodate the environment.
 
 Claim fidelity is preserved apart from the separately documented reconciliation of stale stair-going prose to its existing controlled fixture. No architectural proposition, compiler supported domain, maturity level, regulatory criterion or external-validation claim is promoted. EDA removes its editorial block on PR-02; final manufacture still requires the independent PLT drawing freeze and its owning production authority.
+
+---
+
+## 9. Current successor — publication refurbishment
+
+The acceptance above remains historical evidence for its recorded source and typeset object. It does not clear the enlarged, changed-house book for manufacture. The [2026-10-28 successor trigger](../../project/eda/eda-successor-trigger-2026-10-28.md) remains applicable; the [refurbishment plan](../../project/refurbishment-plan.md) adds the bounded prerequisite and acceptance requirements below. No prose repair, new proof or maturity promotion is claimed by this programme amendment.
+
+### EDA-ADAPTER — authored ownership of publication prose
+
+**Dispatch:** self-service, independent of final architectural resolution. This is a narrow source-ownership repair, not a free-form editorial reopening during IAS/OAS/HAD.
+
+The packet asks whether every substantive Primer assertion is traceable to an authored source rather than hidden literal prose in `publication/adapters.ts`. Its demonstrated entry points are `adaptPrimerPatterns` and `adaptPrimerReferenceHouse`.
+
+Scope is the adapter, the existing substantive source owners, any narrowly necessary authored Primer material, and publication/EDA dependency discovery. Move substantive prose to its appropriate Markdown owner while keeping selection, compression and presentation in the adapter. Derive mutable inventory claims from existing canonical registries where appropriate. Do not create a second doctrine, a new prose registry or a general rewrite.
+
+Acceptance requires:
+
+- a discoverable authored source for each substantive emitted assertion;
+- all relevant source dependencies included in publication and EDA corpus membership;
+- an assembled Primer before/after comparison demonstrating preserved meaning and proof qualifications, with any deliberate output change explained;
+- inventory claims reconciled to their existing authority;
+- appropriate publication integrity/validation and repository-health checks, plus rendered inspection where layout changes;
+- a short source-bound result recording the ownership change and its validation.
+
+This packet does not change architectural propositions, migrate the house model, accept physical print or authorise manufacture. Its completion is a prerequisite for EDA-RENEWED, not renewed assurance itself.
+
+### EDA-RENEWED — enlarged-book assurance
+
+**Dispatch:** self-service after both EDA-ADAPTER and PLT-FINAL-FREEZE. Use the existing Editorial Doctrine and successor trigger; architectural and technical owners retain their decisions.
+
+In addition to the successor trigger's corpus, recurrence, adversarial-read and typeset checks, renewed assurance must:
+
+- reconcile the Working Edition, Primer, website entry paths, captions and implementation schedule to the same accepted current-house configuration;
+- identify historical fixtures and earlier results as historical wherever they remain reader-facing, preserving provenance without implying that they prove the changed house;
+- distinguish selected design, bounded analytical result, proposed test, completed demonstration and unresolved obligation in Parts IV–VI;
+- trace every claimed positive demonstration to an existing source-bound result from its owning workstream and preserve its actual scope;
+- represent the comparison, complexity and integration findings supplied by the house-resolution owners honestly, without inventing evidence or repeating their technical review;
+- confirm that EDA-ADAPTER's ownership correction survives in the enlarged final corpus.
+
+An unperformed test may remain a clearly identified proposal where the admitted research-publication scope permits it; it may not be narrated as a passed demonstration. A material source contradiction or missing required result returns to the owning workstream. Qualification cannot substitute for resolution, and EDA must not create new physical or professional proof work merely to make the book appear complete.
+
+Closeout records the exact reviewed source/object identities, findings and dispositions, final typeset inspection and remaining admitted limits. A later material change to accepted geometry, scale, placement, fold interaction or graphic hierarchy reopens the affected PLT proof before manufacture. Earlier EDA evidence is not rewritten, and the manual PUB-02 final gate remains intact.

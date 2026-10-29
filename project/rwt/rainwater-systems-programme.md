@@ -258,3 +258,9 @@ RWT closes only when:
 - unresolved technical claims have named downstream owners.
 
 Closure establishes a controlled building-side rainwater-system proposition, not real-site drainage acceptance, hydraulic certification, statutory approval or workmanship proof.
+
+## 29 October refurbishment interface
+
+Reuse completed RWT-00 and its interface contract. CCR-DRAINAGE repairs historical declaration/source validity independently and does not supply the selected physical network. Reconcile BCR-WATER findings through RWT-03/05/07 and the coupled gate; symbolic lines or unassigned downstream crossings cannot earn physical continuity. Preserve SITE-WATER-HANDOFF.
+
+The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.

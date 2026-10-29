@@ -93,3 +93,10 @@ IAS closes when a selected bounded interior system is coordinated across represe
 the shared TRIAD-GATE establishes one coordinated house with OAS and HAD.
 
 Closure is not construction adequacy or physical acceptance.
+
+
+## 29 October refurbishment interface
+
+Retain the explicit IS-01–06 adoption obligations, including the 26.5 mm wet trial against a 20 mm allowance, access-front section and U-ENS3 sanitary/door fit. Finish or simplify the actual occurrence; do not transfer an unfitted room to BCR as if it were resolved.
+
+The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.

@@ -49,3 +49,8 @@ Material EPR findings rewind through BCR to the owning IAS/OAS/HAD/Reference Hou
 - DEL consumes EPR findings as delivery requirements mature; it does not substitute for competent review.
 
 Internal M4 controls, drawings, calculations, issue-ready briefs and BCR matrices are not competent external review. This workstream identity does not raise maturity or claim that professional review has occurred.
+## Current-house refurbishment packets
+
+`EPR-REFRESH` is self-service after HRS-BASELINE and BCR-PREFLIGHT. Audit each RH-11 brief against the accepted 12 × 12 m house; retain, narrow, supersede or rewrite its applicability. Headers must name the reviewed revision and distinguish current questions from historical three-flight/3300 mm/low-slope facts. Produce `project/epr/current-house-review-applicability.md` with concrete discipline questions, required evidence and owning rewinds. A general disclaimer without corrected facts is insufficient.
+
+The existing manual `EPR-RH11` evidence gate consumes refreshed briefs. Brief preparation does not authorise outreach or commissioning and does not constitute review evidence. Refresh again if selected geometry changes materially before issue. BCR's material evidence dependencies remain explicit; a referral alone cannot discharge an unresolved fit, route, topology or safety dependency.

@@ -15,6 +15,7 @@ const workstreamRegistry = [
     issue: 944,
     programme: 'project/bcr/buildability-construction-resolution-programme.md'
   },
+  { code: 'CCR', title: 'Compiler Correctness Repair', issue: 1004, programme: 'project/ccr/compiler-correctness-repair-programme.md' },
   { code: 'BSR', title: 'Book Structure Refactor', issue: 940, programme: 'project/book-resolution-programme.md' },
   {
     code: 'DEL',
@@ -29,7 +30,7 @@ const workstreamRegistry = [
     programme: 'project/dpl/deployment-programme.md'
   },
   { code: 'DRW', title: 'Architectural drawing programme' },
-  { code: 'EDA', title: 'Editorial Doctrine Audit', programme: 'docs/editorial/eda-programme.md' },
+  { code: 'EDA', title: 'Editorial Doctrine Audit', issue: 1005, programme: 'docs/editorial/eda-programme.md' },
   { code: 'EPR', title: 'External professional review', issue: 913 },
   {
     code: 'HAD',

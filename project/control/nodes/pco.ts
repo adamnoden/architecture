@@ -140,5 +140,14 @@ export const pcoNodes = defineNodes([
       'project/control/README.md',
       'AGENTS.md'
     ]
+  },
+  {
+    id: 'PCO-APPLICABILITY',
+    owners: ['PCO'],
+    title: 'Bind maturity applicability to assessed design sources',
+    dependencies: ['PCO-DISPATCH', 'HRS-BASELINE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/pco/pco-applicability-result.md']
   }
 ])
