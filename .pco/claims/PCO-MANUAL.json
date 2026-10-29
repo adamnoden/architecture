@@ -9,11 +9,13 @@
     "label": "manual-bc7462"
   },
   "claimedAt": "2026-10-29T18:52:42.696Z",
-  "heartbeatAt": "2026-10-29T18:52:42.696Z",
-  "expiresAt": "2026-10-29T19:37:42.696Z",
+  "heartbeatAt": "2026-10-29T19:04:50.049Z",
+  "expiresAt": "2026-10-29T19:49:50.049Z",
   "checkpoint": {
-    "evidence": "Audit: project/control/README.md, swarm runbook, PCO/ACO programmes and native workflows",
-    "next": "Unify conceptual manual and maintenance map; preserve detailed owning contracts"
+    "evidence": "PR #1020; repository and PCO checks pass; integrated manual and discoverability updated",
+    "next": "Inspect exact-head CI; preflight; merge; release and clean branches",
+    "blocker": "CI running"
   },
-  "branch": "pco/execution-manual"
+  "branch": "pco/execution-manual",
+  "pr": 1020
 }
