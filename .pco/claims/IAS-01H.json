@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "node": "IAS-01H",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "ias-71cc3e4e-20261029-IAS-01H",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "IAS execution 71cc3e4e"
+  },
+  "claimedAt": "2026-10-29T09:20:50.206Z",
+  "heartbeatAt": "2026-10-29T09:20:50.206Z",
+  "expiresAt": "2026-10-29T11:20:50.206Z",
+  "branch": "workstream/ias-core-candidates",
+  "note": "Owner authorised IAS through unblocked packets; completed shared interface contract controls."
+}
