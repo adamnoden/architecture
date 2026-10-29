@@ -34,7 +34,6 @@ test('current ready frontier exposes useful parallel work without inventing cond
   const ready = new Set(readyFrontier(controlNodes).map((candidate) => candidate.id))
 
   for (const expected of [
-    'OAS-00',
     'HAD-00',
     'BCR-SCAFFOLD',
     'PHY-03-ENGINEERING',
@@ -43,9 +42,11 @@ test('current ready frontier exposes useful parallel work without inventing cond
   ]) {
     assert.equal(ready.has(expected), true, `${expected} should be ready`)
   }
+  assert.equal(ready.has('OAS-00'), false)
+  assert.equal(node('OAS-00').lifecycle, 'complete')
   assert.equal(ready.has('IAS-00'), false)
   assert.equal(node('IAS-00').lifecycle, 'complete')
-  assert.deepEqual(directBlockers(node('TRIAD-IFACE-FREEZE'), controlNodes).sort(), ['HAD-00', 'OAS-00'])
+  assert.deepEqual(directBlockers(node('TRIAD-IFACE-FREEZE'), controlNodes).sort(), ['HAD-00'])
   assert.equal(ready.has('IAS-01V'), false)
   assert.equal(ready.has('IAS-01H'), false)
   assert.equal(ready.has('MRA-00'), false)
