@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "MRA-00",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3c09a746-5679-4f85-bb4b-9b48b0961319",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T23:01:53.600Z",
-  "heartbeatAt": "2026-10-29T23:13:00.775Z",
-  "expiresAt": "2026-10-29T23:58:00.775Z",
+  "heartbeatAt": "2026-10-29T23:18:37.626Z",
+  "expiresAt": "2026-10-29T23:18:37.626Z",
   "checkpoint": {
     "evidence": "Reviewed MRA source08550ec0 preserved in commonPR1059 head8c6d6c51; root and peer reviews passed, sourceCI40970876378 success",
     "next": "Verify combined exact-head CI and canonical preflight; integrate then reconcile and release completed MRA00"
   },
   "branch": "work/zerg-preflight-site-moisture",
-  "pr": 1059
+  "pr": 1059,
+  "releasedAt": "2026-10-29T23:18:37.626Z",
+  "releaseReason": "completed"
 }
