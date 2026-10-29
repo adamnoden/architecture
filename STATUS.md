@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 20 · **Active:** 0 · **Blocked:** 51 · **Held:** 2 · **Done:** 49 · **Cancelled:** 0
+**Structurally ready:** 19 · **Active:** 0 · **Blocked:** 51 · **Held:** 2 · **Done:** 50 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -26,8 +26,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `CCR-DRAINAGE` | Repair drainage declaration validity and source consistency | CCR | — |
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
-| `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
-| `HRS-BASELINE` | Accepted 12 m house identity and historical-evidence applicability | HRS | PCO-APPLICABILITY, DPL-SITE-BRIEF |
+| `HRS-BASELINE` | Accepted 12 m house identity and historical-evidence applicability | HRS | PCO-APPLICABILITY, BCR-STRUCTURE, BCR-WET, BCR-SERVICES, BCR-WATER, BCR-OCCUPATION, BCR-PROPORTIONALITY, DPL-SITE-BRIEF |
 | `ROF-02` | Roof topology and geometry families | ROF | — |
 | `ROF-03` | Roof covering-system families | ROF | — |
 | `ROF-04` | Roof assembly beneath the covering | ROF | — |
@@ -57,14 +56,14 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `CCR-IDENTITY` | Adjudicate identity guarantees and integrate correctness repairs | CCR-PLAN, CCR-STAIR, CCR-DRAINAGE |
 | `PCO-APPLICABILITY` | Bind maturity applicability to assessed design sources | HRS-BASELINE |
 | `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03, ROF-RWT-GATE, BCR-PREFLIGHT |
-| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE, MRA-04, BCR-PROPORTIONALITY, HRS-TECHNICAL, EPR-REFRESH, PHY-APPLICABILITY |
+| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, BCR-PROPORTIONALITY, HRS-TECHNICAL, EPR-REFRESH, PHY-APPLICABILITY |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, PCO-APPLICABILITY, DEL-CURRENT, EDA-NARRATIVE |
-| `BCR-STRUCTURE` | Structure, stair and entry-void feasibility | BCR-SCAFFOLD, HRS-BASELINE |
-| `BCR-WET` | Wet-room sections, sanitary fit and foul-drainage feasibility | BCR-SCAFFOLD, HRS-BASELINE |
-| `BCR-SERVICES` | Plant, riser, distribution and replacement feasibility | BCR-SCAFFOLD, HRS-BASELINE |
-| `BCR-WATER` | Roof and courtyard normal/failure water-path feasibility | BCR-SCAFFOLD, HRS-BASELINE |
-| `BCR-OCCUPATION` | Complete occupation, escape and renewal actions | BCR-SCAFFOLD, HRS-BASELINE |
-| `BCR-PROPORTIONALITY` | Current-house conventional comparator and burden appraisal | BCR-SCAFFOLD, HRS-BASELINE |
+| `BCR-STRUCTURE` | Structure, stair and entry-void feasibility | HRS-BASELINE |
+| `BCR-WET` | Wet-room sections, sanitary fit and foul-drainage feasibility | HRS-BASELINE |
+| `BCR-SERVICES` | Plant, riser, distribution and replacement feasibility | HRS-BASELINE |
+| `BCR-WATER` | Roof and courtyard normal/failure water-path feasibility | HRS-BASELINE |
+| `BCR-OCCUPATION` | Complete occupation, escape and renewal actions | HRS-BASELINE |
+| `BCR-PROPORTIONALITY` | Current-house conventional comparator and burden appraisal | HRS-BASELINE |
 | `BCR-PREFLIGHT` | Reconcile early feasibility findings into selection constraints | BCR-STRUCTURE, BCR-WET, BCR-SERVICES, BCR-WATER, BCR-OCCUPATION |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE, CCR-IDENTITY |
 | `ROF-05` | Roof junction and penetration families | ROF-02, ROF-03, ROF-04 |
