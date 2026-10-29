@@ -36,7 +36,7 @@ Follow changing facts at their source:
 - `README.md` — project proposition and conceptual structure;
 - `docs/README.md` — documentation ownership and information architecture;
 - `STATUS.md` — generated durable structural execution state and maturity projection;
-- `project/control/README.md` — PCO/ACO execution and live-claim mechanics;
+- `project/control/README.md` — PCO/ACO execution, dispatcher and live-claim mechanics;
 - `project/authority.ts` — machine-readable claim ceiling;
 - `docs/editorial/editorial-doctrine.md` — public-facing editorial standard;
 - `docs/computational/README.md` and `compiler/README.md` — computational role and proof boundaries;
@@ -163,6 +163,8 @@ For bounded work:
 - avoid force updates unless intentional, necessary and lease-protected.
 
 For substantial execution against a PCO node, structural `READY` is necessary but not sufficient. Before beginning work that could collide with another agent's durable output, query ACO and acquire the canonical node lease. Renew it when necessary, verify ownership before final merge/handoff, and release it after completion, handoff or abandonment. Read-only investigation that cannot collide with durable output does not require a lease.
+
+When an agent is idle and has **not** been explicitly assigned a packet, it must use the PCO dispatcher (`npm run control:next` / `npm run control:claim-next`) rather than choosing an arbitrary READY node. The dispatcher may auto-claim only nodes whose durable `agentDispatch` policy is `self-service`; `manual` nodes require explicit direction even when structurally READY. A direct owner assignment overrides dispatcher ranking but never bypasses the ACO lease protocol.
 
 ACO occupancy is volatile and deliberately separate from PCO lifecycle. Do not infer ownership from branch names or `STATUS.md`. If the live lease store cannot be read safely, fail closed for new collision-prone work rather than assuming the node is free. Normal agents must not force-take an active lease; exceptional takeover requires explicit owner/admin intent and a recorded reason.
 
