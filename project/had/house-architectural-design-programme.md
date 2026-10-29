@@ -77,6 +77,7 @@ selection and shared compatibility checks.
 
 - [Selected expression and furnished rear-room/kitchen study](had-03-furnished-design-study.md).
 - [Scaled front, interior elevation and furnished plan](studies/selected-house-study.svg).
+- [Product-sized small-en-suite fit review](had-03-ensuite-fit-review.md) and [source-bound diagnostic](studies/ensuite-fit-study.svg).
 
 HAD-03 is started and incomplete. The worked kitchen uses solid-pier stations
 and a dry prep table because a continuous 900-high worktop would cross 750-sill
