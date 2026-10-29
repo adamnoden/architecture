@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "CCR-DRAINAGE",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "51ccfeb8-6484-422d-91d4-43091603797f",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T23:05:41.638Z",
-  "heartbeatAt": "2026-10-29T23:21:03.612Z",
-  "expiresAt": "2026-10-30T00:06:03.612Z",
+  "heartbeatAt": "2026-10-29T23:29:18.400Z",
+  "expiresAt": "2026-10-29T23:29:18.400Z",
   "checkpoint": {
     "evidence": "Combined1061 exact57d3161e preserves reviewed PLAN626cc044 and DRAINAGE456a55bf source parents, on settled c7d994a9.49 combined CF01/RHC4 tests, CH05/typecheck/repository/control/output checks pass; canonical output bytes unchanged.",
     "next": "Confirm both common lease bindings; exact-head full CI, both fresh canonical preflights and expected-head merge, reconcile issue1004 and release each own lease."
   },
   "branch": "work/zerg-ccr-plan-drainage",
-  "pr": 1061
+  "pr": 1061,
+  "releasedAt": "2026-10-29T23:29:18.400Z",
+  "releaseReason": "completed"
 }
