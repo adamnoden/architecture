@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "node": "HAD-02M",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "convergence-71cc3e4e-HAD-02M",
   "holder": {
     "kind": "chatgpt",
@@ -11,5 +11,7 @@
   "claimedAt": "2026-10-29T12:56:38.055Z",
   "heartbeatAt": "2026-10-29T12:56:38.055Z",
   "expiresAt": "2026-10-29T14:56:38.055Z",
-  "branch": "workstream/interior-material-selection"
+  "branch": "workstream/interior-material-selection",
+  "releasedAt": "2026-10-29T13:08:36.532Z",
+  "releaseReason": "completed"
 }
