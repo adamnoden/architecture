@@ -460,6 +460,7 @@ const editorialSidebar: DefaultTheme.SidebarItem[] = [
 
 const projectSidebar: DefaultTheme.SidebarItem[] = [
   group('Project records', [
+    page('Dependency graph', '/docs/project/dependency-graph'),
     page('Project status', '/STATUS'),
     page('Documentation structure', '/docs/'),
     page('Development', '/docs/development/'),
@@ -490,6 +491,7 @@ export const nav: DefaultTheme.NavItem[] = [
   {
     text: 'Project',
     items: [
+      { text: 'Dependency graph', link: '/docs/project/dependency-graph' },
       { text: 'Project status', link: '/STATUS' },
       { text: 'Documentation structure', link: '/docs/' },
       { text: 'Development records', link: '/docs/development/' },
@@ -509,6 +511,7 @@ export const sidebar = {
   '/docs/computational/': computationalSidebar,
   '/docs/development/': developmentSidebar,
   '/docs/editorial/': editorialSidebar,
+  '/docs/project/': projectSidebar,
   '/docs/reading-guide': startSidebar,
   '/STATUS': projectSidebar,
   '/docs/': projectSidebar,
