@@ -9,7 +9,13 @@
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-29T22:42:08.090Z",
-  "heartbeatAt": "2026-10-29T22:42:08.090Z",
-  "expiresAt": "2026-10-29T23:27:08.090Z",
-  "branch": "work/zerg-worker-3-bcr-third"
+  "heartbeatAt": "2026-10-29T22:49:55.602Z",
+  "expiresAt": "2026-10-29T23:34:55.602Z",
+  "branch": "work/zerg-worker-3-bcr-third",
+  "pr": 1049,
+  "checkpoint": {
+    "evidence": "PR #1049 head 0553ba6667af37c79c026247ba28fabd84e3d730; root-reviewed proportionality appraisal and budget calculation, current manufacturer edition reconciled",
+    "next": "Verify exact-head CI, refresh main if needed, then fresh preflight in commander merge slot",
+    "blocker": "CI and serial integration pending"
+  }
 }
