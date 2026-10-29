@@ -58,6 +58,16 @@ HAD-02M selects architectural intent without adopting actual products or fitted
 rooms. HAD-03 owns furnished-room/visual convergence and actual fit dispositions;
 U-ENS3 and the IAS wet/access obligations are not resolved by a palette.
 
+## Convergence development
+
+- [Selected expression and furnished rear-room/kitchen study](had-03-furnished-design-study.md).
+- [Scaled front, interior elevation and furnished plan](studies/selected-house-study.svg).
+
+HAD-03 is started and incomplete. The worked kitchen uses solid-pier stations
+and a dry prep table because a continuous900-high worktop would cross750-sill
+windows. Actual fitted products/operations and wet/private-room resolution remain
+explicit; the shared triad gate cannot pass on this representative partial set.
+
 ## Governing tests
 
 The house should read as settled domestic architecture. Technical intelligence
