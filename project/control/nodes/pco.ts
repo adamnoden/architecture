@@ -156,5 +156,15 @@ export const pcoNodes = defineNodes([
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/pco/pco-applicability-result.md']
+  },
+  {
+    id: 'PCO-SWARM',
+    owners: ['PCO'],
+    title: 'Swarm continuation, startup transport and evidence-based run reporting',
+    dependencies: ['PCO-DISPATCH'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed operating-contract and runtime integration change; explicitly assigned on 29 October 2026.' },
+    closeoutEvidence: []
   }
+
 ])
