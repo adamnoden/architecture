@@ -279,7 +279,7 @@ export const architectureNodes = defineNodes([
     owners: ['BCR'],
     title: 'Wet-room sections, sanitary fit and foul-drainage feasibility',
     dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bcr-wet-result.md']
   },
