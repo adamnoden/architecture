@@ -9,10 +9,12 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T22:24:36.716Z",
-  "heartbeatAt": "2026-10-29T22:41:13.804Z",
-  "expiresAt": "2026-10-29T23:26:13.804Z",
+  "heartbeatAt": "2026-10-29T22:49:59.793Z",
+  "expiresAt": "2026-10-29T23:34:59.793Z",
   "checkpoint": {
-    "evidence": "Source-bound wet feasibility generator prepared: floor and wall layer sensitivities, accepted small en-suite and branch geometry, explicit cabinet route lengths; corrected Mira datum independently inspected; owning result in progress",
-    "next": "Publish reviewed physical study and owning result, bind PR, reconcile current main and run full exact-head CI before canonical merge preflight"
-  }
+    "evidence": "PR1050 source fbd3fc6fa56f48c20a718959ab3437ff4fc32238; owning result and A3/JSON study published; local checks and root/HAD/IAS reviews with refinements",
+    "next": "Final source peer check, serial integration or merge slot, current-main reconciliation and exact-head full CI then canonical preflight"
+  },
+  "branch": "work/zerg-bcr-wet",
+  "pr": 1050
 }
