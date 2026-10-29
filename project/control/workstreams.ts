@@ -79,6 +79,18 @@ const workstreamRegistry = [
   },
   { code: 'PLT', title: 'Architectural Plate Refinement', issue: 422 },
   { code: 'PUB', title: 'Publication credibility and release', issue: 71, aliases: ['PR'] },
+  {
+    code: 'ROF',
+    title: 'Roof Systems Architecture',
+    issue: 991,
+    programme: 'project/rof/roof-systems-programme.md'
+  },
+  {
+    code: 'RWT',
+    title: 'Rainwater Systems Architecture',
+    issue: 992,
+    programme: 'project/rwt/rainwater-systems-programme.md'
+  },
   { code: 'TYP', title: 'Publication typography' }
 ] as const satisfies readonly WorkstreamDefinition[]
 
