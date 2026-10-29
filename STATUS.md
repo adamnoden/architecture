@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 23 · **Active:** 0 · **Blocked:** 43 · **Held:** 2 · **Done:** 55 · **Cancelled:** 0
+**Structurally ready:** 23 · **Active:** 0 · **Blocked:** 42 · **Held:** 2 · **Done:** 56 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -35,7 +35,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `BCR-PROPORTIONALITY` | Current-house conventional comparator and burden appraisal | BCR | — |
 | `ROF-03` | Roof covering-system families | ROF | — |
 | `ROF-04` | Roof assembly beneath the covering | ROF | — |
-| `RWT-04` | Rainwater materials, joints and compatibility | RWT | RWT-05 |
+| `RWT-05` | Rainwater blockage, failure and exceedance | RWT | RWT-06 |
 | `MRA-00` | Moisture constitution, inventory and threat model | MRA | — |
 | `PLT-CURRENT-REVIEW` | Current-house digital plate capability and review handoff | PLT | — |
 | `PUB-02-PREP` | Content-independent private-object preparation | PUB | — |
@@ -66,9 +66,8 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ROF-05` | Roof junction and penetration families | ROF-03, ROF-04 |
 | `ROF-06` | Roof access, maintenance, repair and renewal | ROF-05 |
 | `ROF-07` | Roof system synthesis and candidate families | ROF-05, ROF-06 |
-| `RWT-05` | Rainwater blockage, failure and exceedance | RWT-04 |
 | `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT-05 |
-| `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-04, RWT-05, RWT-06 |
+| `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-05, RWT-06 |
 | `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | ROF-07, RWT-07, HAD-03 |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |

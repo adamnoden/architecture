@@ -65,8 +65,7 @@ flowchart LR
   end
   subgraph g_RWT["RWT"]
     direction TB
-    n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>READY</b>"]
-    n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>BLOCKED</b>"]
+    n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>READY</b>"]
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
@@ -164,9 +163,7 @@ flowchart LR
   n_ROF_05 --> n_ROF_06
   n_ROF_05 --> n_ROF_07
   n_ROF_06 --> n_ROF_07
-  n_RWT_04 --> n_RWT_05
   n_RWT_05 --> n_RWT_06
-  n_RWT_04 --> n_RWT_07
   n_RWT_05 --> n_RWT_07
   n_RWT_06 --> n_RWT_07
   n_ROF_07 --> n_ROF_RWT_GATE
@@ -277,8 +274,7 @@ flowchart LR
   class n_ROF_05 blocked;
   class n_ROF_06 blocked;
   class n_ROF_07 blocked;
-  class n_RWT_04 ready;
-  class n_RWT_05 blocked;
+  class n_RWT_05 ready;
   class n_RWT_06 blocked;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
@@ -448,8 +444,8 @@ flowchart LR
     n_RWT_01["RWT-01<br/>Rainfall and hydraulic basis<br/><b>DONE</b>"]
     n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>DONE</b>"]
     n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>DONE</b>"]
-    n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>READY</b>"]
-    n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>BLOCKED</b>"]
+    n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>DONE</b>"]
+    n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>READY</b>"]
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
@@ -836,8 +832,8 @@ flowchart LR
   class n_RWT_01 done;
   class n_RWT_02 done;
   class n_RWT_03 done;
-  class n_RWT_04 ready;
-  class n_RWT_05 blocked;
+  class n_RWT_04 done;
+  class n_RWT_05 ready;
   class n_RWT_06 blocked;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
