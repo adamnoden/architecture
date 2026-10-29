@@ -52,8 +52,7 @@ flowchart LR
   end
   subgraph g_ROF["ROF"]
     direction TB
-    n_ROF_06["ROF-06<br/>Roof access, maintenance, repair and renewal<br/><b>READY</b>"]
-    n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>BLOCKED</b>"]
+    n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>READY</b>"]
     n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
   subgraph g_RWT["RWT"]
@@ -146,7 +145,6 @@ flowchart LR
   n_BCR_WET --> n_BCR_PREFLIGHT
   n_TRIAD_GATE --> n_HRS_TECHNICAL
   n_CCR_IDENTITY --> n_HRS_TECHNICAL
-  n_ROF_06 --> n_ROF_07
   n_RWT_06 --> n_RWT_07
   n_ROF_07 --> n_ROF_RWT_GATE
   n_RWT_07 --> n_ROF_RWT_GATE
@@ -247,8 +245,7 @@ flowchart LR
   class n_BCR_PROPORTIONALITY ready;
   class n_BCR_PREFLIGHT blocked;
   class n_HRS_TECHNICAL blocked;
-  class n_ROF_06 ready;
-  class n_ROF_07 blocked;
+  class n_ROF_07 ready;
   class n_RWT_06 ready;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
@@ -409,8 +406,8 @@ flowchart LR
     n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>DONE</b>"]
     n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>DONE</b>"]
     n_ROF_05["ROF-05<br/>Roof junction and penetration families<br/><b>DONE</b>"]
-    n_ROF_06["ROF-06<br/>Roof access, maintenance, repair and renewal<br/><b>READY</b>"]
-    n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>BLOCKED</b>"]
+    n_ROF_06["ROF-06<br/>Roof access, maintenance, repair and renewal<br/><b>DONE</b>"]
+    n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>READY</b>"]
     n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
   subgraph g_RWT["RWT"]
@@ -803,8 +800,8 @@ flowchart LR
   class n_ROF_03 done;
   class n_ROF_04 done;
   class n_ROF_05 done;
-  class n_ROF_06 ready;
-  class n_ROF_07 blocked;
+  class n_ROF_06 done;
+  class n_ROF_07 ready;
   class n_RWT_00 done;
   class n_RWT_01 done;
   class n_RWT_02 done;
