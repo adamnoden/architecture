@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 3,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f8496899-720e-4f9e-be08-2935cb69d33f",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T22:12:23.816Z",
-  "heartbeatAt": "2026-10-29T22:50:50.914Z",
-  "expiresAt": "2026-10-29T23:35:50.914Z",
+  "heartbeatAt": "2026-10-29T23:04:05.540Z",
+  "expiresAt": "2026-10-29T23:04:05.540Z",
   "branch": "work/zerg-ias-had-checkpoint",
   "pr": 1051,
   "checkpoint": {
     "evidence": "Corrected source b69b6345 reviewed by commander/HAD. Combined draft1051 head4cb898df preserves IAS/HAD source parents; both artifact checks, TypeScript, repository/control checks and A3 review passed. Both nodes incomplete.",
     "next": "Verify both lease bindings then exact-head full CI, integrate current main as queue advances, both canonical preflights and partial checkpoint merge; release IAS handoff and continue CCR dispatcher."
-  }
+  },
+  "releasedAt": "2026-10-29T23:04:05.540Z",
+  "releaseReason": "handoff"
 }
