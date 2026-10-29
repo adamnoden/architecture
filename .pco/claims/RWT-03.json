@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "RWT-03",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "7b6ae7f3-0ca6-47a4-80b5-55ed004c41a5",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T21:05:06.385Z",
-  "heartbeatAt": "2026-10-29T21:27:08.425Z",
-  "expiresAt": "2026-10-29T22:12:08.425Z",
+  "heartbeatAt": "2026-10-29T21:35:31.084Z",
+  "expiresAt": "2026-10-29T21:35:31.084Z",
   "branch": "work/zerg-roof-water-wave2",
   "checkpoint": {
     "evidence": "Reviewed source PR1028 retained as merge parent in integration PR1031 f2675a5d; combined HRS base reconciled",
     "next": "Exact combined head CI, all three lease preflights, expected-head merge and closeout"
   },
-  "pr": 1031
+  "pr": 1031,
+  "releasedAt": "2026-10-29T21:35:31.084Z",
+  "releaseReason": "completed"
 }
