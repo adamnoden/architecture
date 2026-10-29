@@ -12,6 +12,10 @@ Completed/cancelled history is omitted here so the current dependency frontier r
 %%{init: {"theme":"base","themeVariables":{"background":"#f7f6f2","primaryColor":"#f0eee9","primaryBorderColor":"#c9c6bd","primaryTextColor":"#20221f","clusterBkg":"#f8f7f4","clusterBorder":"#ccc9c1","lineColor":"#9eaaa1","fontFamily":"ui-sans-serif, system-ui, sans-serif","fontSize":"15px"},"flowchart":{"htmlLabels":true,"useMaxWidth":false,"nodeSpacing":42,"rankSpacing":68,"curve":"basis"}}}%%
 flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
+  subgraph g_PCO["PCO"]
+    direction TB
+    n_PCO_REFURB_PLAN["PCO-REFURB-PLAN<br/>Record owner-directed refurbishment scope and swarmable handoffs<br/><b>READY</b>"]
+  end
   subgraph g_IAS["IAS"]
     direction TB
     n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>ACTIVE</b>"]
@@ -143,6 +147,7 @@ flowchart LR
   n_EDA_RENEWED --> n_PUB_02_FINAL
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
+  style g_PCO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -167,6 +172,7 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
+  class n_PCO_REFURB_PLAN ready;
   class n_IAS_03 active;
   class n_HAD_03 active;
   class n_TRIAD_GATE blocked;
@@ -227,6 +233,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_REFURB_PLAN["PCO-REFURB-PLAN<br/>Record owner-directed refurbishment scope and swarmable handoffs<br/><b>READY</b>"]
     n_PCO_00["PCO-00<br/>Control-plane inventory and authority map<br/><b>DONE</b>"]
     n_PCO_01["PCO-01<br/>Schema and concurrency-safe storage<br/><b>DONE</b>"]
     n_PCO_02["PCO-02<br/>Derivation engine<br/><b>DONE</b>"]
@@ -353,6 +360,7 @@ flowchart LR
   n_ACO_01 --> n_ACO_02
   n_ACO_02 --> n_ACO_03
   n_ACO_03 --> n_ACO_04
+  n_PCO_DISPATCH --> n_PCO_REFURB_PLAN
   n_PCO_00 --> n_PCO_01
   n_PCO_01 --> n_PCO_02
   n_PCO_02 --> n_PCO_03
@@ -511,6 +519,7 @@ flowchart LR
   class n_ACO_02 done;
   class n_ACO_03 done;
   class n_ACO_04 done;
+  class n_PCO_REFURB_PLAN ready;
   class n_PCO_00 done;
   class n_PCO_01 done;
   class n_PCO_02 done;

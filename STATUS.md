@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 6 · **Active:** 5 · **Blocked:** 26 · **Held:** 2 · **Done:** 39 · **Cancelled:** 0
+**Structurally ready:** 7 · **Active:** 5 · **Blocked:** 26 · **Held:** 2 · **Done:** 39 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -19,6 +19,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
+| `PCO-REFURB-PLAN` | Record owner-directed refurbishment scope and swarmable handoffs | PCO | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `ROF-01` | Roof evidence, failure model and evaluation frame | ROF | ROF-02, ROF-03, ROF-04 |
 | `RWT-01` | Rainfall and hydraulic basis | RWT | RWT-02, RWT-03, RWT-04 |
