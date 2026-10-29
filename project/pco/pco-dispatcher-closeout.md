@@ -5,12 +5,12 @@
 
 ## Result
 
-The dispatcher implementation adds a self-service scheduling layer over PCO and ACO without becoming a third project-state authority.
+The dispatcher adds a self-service scheduling layer over PCO and ACO without becoming a third project-state authority.
 
-- PCO still owns durable structural eligibility and lifecycle.
-- ACO still owns volatile execution occupancy.
-- `agentDispatch` explicitly decides whether a generic undirected agent may self-serve a live node.
-- `control:next` ranks only structurally READY, ACO-available, self-service nodes.
+- PCO owns durable structural eligibility and lifecycle.
+- ACO owns volatile execution occupancy.
+- `agentDispatch` decides whether a generic undirected agent may self-serve a live node.
+- `control:next` ranks structurally READY, ACO-available, self-service nodes.
 - `control:claim-next` applies that ranking and acquires through the existing ACO compare-and-swap protocol.
 
 ## Frozen ranking policy
@@ -23,18 +23,16 @@ Candidates are ordered lexicographically by:
 4. current owning-workstream load ascending;
 5. canonical node id ascending.
 
-The dispatcher intentionally does not emit a weighted aggregate score. The tuple is inspectable and avoids presenting uncalibrated node-count metrics as false temporal precision.
+No weighted aggregate score is emitted. The tuple remains inspectable and does not present uncalibrated node-count metrics as false temporal precision.
 
 ## Dispatch boundary
 
-Every live non-terminal node must declare one of:
+Every live non-terminal node declares either:
 
 - `self-service` — eligible for generic dispatcher selection when READY and unclaimed;
 - `manual` — visible but excluded from automatic dispatch, with a durable reason.
 
-Physical validation, competent external review and final private-object manufacture/release gates are manual in the current graph. Missing live-node policy fails repository validation.
-
-Durably active but unclaimed work is shown as a handoff/resume candidate; it is not silently inherited by the default scheduler.
+Physical validation, competent external review and final private-object manufacture/release gates are manual in the current graph. Missing live-node policy fails repository validation. Durably active but unclaimed work is shown as a handoff/resume candidate rather than silently inherited.
 
 ## Race / safety model
 
@@ -52,22 +50,7 @@ The existing ACO store continues to distinguish a genuine same-node claimant rac
 
 ## Automated proof
 
-`project/control/dispatch.test.ts` uses synthetic DAG fixtures so advancing the real programme cannot invalidate policy tests. It proves:
-
-- deterministic ranking independent of input order;
-- critical-depth precedence;
-- blocker-relief precedence;
-- downstream-reach precedence;
-- owner-load tie-breaking;
-- live/grace claim exclusion;
-- expired/released claim availability;
-- manual READY visibility without auto-selection;
-- active/unclaimed handoff treatment;
-- known and unknown invalid live-claim fail-closed behaviour;
-- workstream filtering without eligibility widening;
-- missing/manual-without-reason policy validation;
-- full reranking after a lost top-candidate race;
-- no-candidate/no-mutation behaviour.
+`project/control/dispatch.test.ts` uses synthetic DAG fixtures so advancing the real programme cannot invalidate policy tests. It proves deterministic ranking, each ranking key, lease exclusion/expiry behaviour, manual-node exclusion, active-unclaimed handoff treatment, invalid-claim fail-closed behaviour, workstream filtering, dispatch-policy validation, full reranking after a lost acquisition race and no-candidate/no-mutation behaviour.
 
 Repository-wide validation also checks that every real live non-terminal PCO node has an explicit valid dispatch policy.
 
@@ -98,7 +81,7 @@ The implementation was protected through its merge by the real ACO lease:
 
 Implementation PR #974 passed the full repository/publication validation pipeline on validated head `1fe049f1a55f70ec5fb7885105ac1af9f144d95d` (workflow run `40848973679`). It was squash-merged while the ACO lease was still live as `c8bebd0c7984a81d8ebbdf97ce0eb9e15b5bf525`.
 
-The main-branch project-control projection reconciler then completed successfully and advanced `main` to `28d76be03aba42032d763df50a0b638e34a73a83`.
+The main-branch project-control projection reconciler then completed successfully and advanced `main` to `28d76be03aba42032d763df50a0b638e34a73a83` before later concurrent programme movement.
 
 ## Live dispatcher proof
 
@@ -123,7 +106,7 @@ The live ranking was:
 | 3 | `OAS-01I` | 12 | 1.0333333333333332 | 16 | 0 |
 | 4 | `BCR-SCAFFOLD` | 9 | 0.3333333333333333 | 8 | 0 |
 
-`IAS-01V`, which would otherwise be a high-value candidate, was correctly excluded because ACO showed it already claimed by `architecture-ias01v` on branch `ias/01v-vertical-candidates`.
+`IAS-01V`, which would otherwise be high-value, was correctly excluded because ACO showed it already claimed by `architecture-ias01v` on branch `ias/01v-vertical-candidates`.
 
 The READY evidence routes remained visible but manual:
 
@@ -131,11 +114,7 @@ The READY evidence routes remained visible but manual:
 - `PHY-04` — physical build/test;
 - `EPR-RH11` — competent independent professional review.
 
-The live dispatcher also surfaced the existing active/unclaimed handoff candidates:
-
-- `MRA-00`;
-- `PLT-CURRENT-REVIEW`;
-- `PUB-02-PREP`.
+The live dispatcher also surfaced the existing active/unclaimed handoff candidates `MRA-00`, `PLT-CURRENT-REVIEW` and `PUB-02-PREP`.
 
 This demonstrates that the dispatcher is not merely a static ranking function: it combined the merged PCO graph with real ACO occupancy and respected both self-service and manual authority boundaries.
 
@@ -145,14 +124,14 @@ Probe PR #976 was closed unmerged after its evidence was captured. Its temporary
 
 ## Completion state
 
-`PCO-DISPATCH` is now durably marked `complete` with its implementation/design/test/operating-contract evidence registered in the PCO node.
+`PCO-DISPATCH` is durably marked `complete` with its implementation/design/test/operating-contract evidence registered in the PCO node.
 
-The remaining closeout actions are operational only:
+The remaining actions are operational only:
 
 1. this closeout PR must pass normal validation and merge while the original ACO lease remains controlled;
 2. main projection reconciliation must observe `PCO-DISPATCH` as complete;
 3. the ACO lease must then be released with reason `completed`;
 4. this record must receive one final hygiene reconciliation recording that release;
-5. temporary dispatcher/probe branches must be removed or explicitly reduced to the established retained infrastructure (`runtime/claims`).
+5. temporary dispatcher/probe branches must be removed or explicitly reduced to retained infrastructure (`runtime/claims`).
 
 Until the lease release and final hygiene reconciliation are recorded, the packet is substantively complete but operational closeout is not yet clean.
