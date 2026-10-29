@@ -30,39 +30,42 @@ test('current PCO registry and graph are internally valid', () => {
   assert.deepEqual(validateControlPlane(repoRoot), [])
 })
 
-test('current ready frontier exposes useful parallel work without inventing conditional evidence blockers', () => {
-  const ready = new Set(readyFrontier(controlNodes).map((candidate) => candidate.id))
-
-  for (const expected of [
-    'HAD-00',
-    'BCR-SCAFFOLD',
-    'PHY-03-ENGINEERING',
-    'PHY-04',
-    'EPR-RH11'
-  ]) {
-    assert.equal(ready.has(expected), true, `${expected} should be ready`)
-  }
-  assert.equal(ready.has('OAS-00'), false)
-  assert.equal(node('OAS-00').lifecycle, 'complete')
-  assert.equal(ready.has('IAS-00'), false)
-  assert.equal(node('IAS-00').lifecycle, 'complete')
-  assert.deepEqual(directBlockers(node('TRIAD-IFACE-FREEZE'), controlNodes).sort(), ['HAD-00'])
-  assert.equal(ready.has('IAS-01V'), false)
-  assert.equal(ready.has('IAS-01H'), false)
-  assert.equal(ready.has('MRA-00'), false)
-  assert.equal(node('MRA-00').lifecycle, 'started')
-  assert.equal(
-    nodesByDerivedState(controlNodes).active.some((candidate) => candidate.id === 'MRA-00'),
-    true
-  )
-  assert.equal(ready.has('PCO-08'), false)
-  assert.equal(node('PCO-08').lifecycle, 'complete')
-
-  assert.deepEqual(directBlockers(node('BCR-CONVERGENCE'), controlNodes).sort(), [
-    'BCR-SCAFFOLD',
-    'MRA-04',
-    'TRIAD-GATE'
+test('triad fan-out advances only after constitutions and the shared interface gate', () => {
+  const candidateIds = [
+    'IAS-01V', 'IAS-01H', 'OAS-01E', 'OAS-01I',
+    'HAD-01E', 'HAD-01P', 'HAD-01S'
+  ]
+  const ids = new Set([
+    'BSR-ROOT', 'IAS-00', 'OAS-00', 'HAD-00',
+    'TRIAD-IFACE-FREEZE', ...candidateIds
   ])
+  // Exercise the real dependency topology at controlled lifecycle checkpoints.
+  // Live programme progress must not invalidate a historical scheduling test.
+  const fixture: ControlNode[] = controlNodes
+    .filter((candidate) => ids.has(candidate.id))
+    .map((candidate) => ({
+      ...candidate,
+      lifecycle: ['BSR-ROOT', 'IAS-00', 'OAS-00'].includes(candidate.id)
+        ? 'complete' : 'planned'
+    }))
+  const readyIds = () => readyFrontier(fixture).map((candidate) => candidate.id).sort()
+  assert.deepEqual(readyIds(), ['HAD-00'])
+  assert.deepEqual(
+    directBlockers(fixture.find((candidate) => candidate.id === 'TRIAD-IFACE-FREEZE')!, fixture),
+    ['HAD-00']
+  )
+  const complete = (id: string) => {
+    const index = fixture.findIndex((candidate) => candidate.id === id)
+    fixture[index] = { ...fixture[index], lifecycle: 'complete' }
+  }
+  complete('HAD-00')
+  assert.deepEqual(readyIds(), ['TRIAD-IFACE-FREEZE'])
+  assert.deepEqual(
+    unlocksOnCompletion('TRIAD-IFACE-FREEZE', fixture).map((candidate) => candidate.id).sort(),
+    [...candidateIds].sort()
+  )
+  complete('TRIAD-IFACE-FREEZE')
+  assert.deepEqual(readyIds(), [...candidateIds].sort())
   assert.equal(node('BCR-CONVERGENCE').dependencies.some((id) => /PHY|EPR|DEL/.test(id)), false)
 })
 

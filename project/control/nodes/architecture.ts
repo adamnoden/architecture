@@ -33,8 +33,8 @@ export const architectureNodes = defineNodes([
     owners: ['HAD'],
     title: 'Architectural brief, hierarchy and invariants',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/had/had-00-brief-result.md', 'docs/reference-house/architectural-design-brief.md']
   },
 
   // Wave 0.5 — one shared interface contract, not three duplicated tasks.
