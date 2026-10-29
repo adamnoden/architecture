@@ -38,6 +38,8 @@ export function renderExecutionStatusBlock(): string {
   return [
     'Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.',
     '',
+    'Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.',
+    '',
     `**Structurally ready:** ${groups.ready.length} · **Active:** ${groups.active.length} · **Blocked:** ${groups.blocked.length} · **Held:** ${groups.held.length} · **Done:** ${groups.done.length} · **Cancelled:** ${groups.cancelled.length}`,
     '',
     '### Structurally ready frontier',
@@ -169,6 +171,7 @@ export function renderStatusDocument(repoRoot: string): string {
     '## Reading current state',
     '',
     '- Use the **Structurally ready frontier** above to identify work whose hard dependencies are satisfied.',
+    '- Use [`project/control/graph.md`](project/control/graph.md) for the generated structural Mermaid dependency map.',
     '- Before substantial execution, query `npm run control:claims` and acquire the ACO lease; structural READY does not mean unclaimed.',
     '- Use owning workstream issues/programmes for the architectural question, scope and exit criteria behind a node.',
     '- A completed node does not itself raise maturity; maturity remains an explicit evidence-backed judgement.',
