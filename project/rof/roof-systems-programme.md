@@ -1,9 +1,9 @@
 # ROF — Roof Systems Architecture
 
 **Issue:** #991  
-**State:** ROF-00 complete; evidence/evaluation work remains
+**State:** ROF-00/01 complete; candidate research remains
 
-**Current result:** [ROF-00 baseline and inherited constraints](rof-00-baseline-and-constraints.md).
+**Current result:** [ROF-01 evidence and evaluation frame](rof-01-evidence-and-evaluation.md), retaining the [ROF-00 baseline and inherited constraints](rof-00-baseline-and-constraints.md).
 
 ## Purpose
 

@@ -44,3 +44,7 @@ They remain evidence and comparison material, not automatic Reference House sele
 [External Maintenance Access](external-maintenance-access.md) examines the spatial consequences of maintaining façades, roofs, rainwater goods and external plant with credible ordinary access methods. It treats approach, working position, temporary support, handling and replacement routes as architecture rather than assuming that a hatch or nominal reachability is proof of maintainability.
 
 Across all of these subjects, the controlling question is the same: **what does the evidence justify, and what does it not justify?**
+
+## Roof systems
+
+[Roof Failure and Recovery Evaluation](roof-failure-evaluation.md) establishes a common evidence-bounded comparison of roof water paths, layers, junctions, movement, drying, detection, access and renewal. It supports candidate research without selecting a covering or converting material longevity into whole-roof assurance.

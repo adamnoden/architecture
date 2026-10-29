@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 57 · **Held:** 2 · **Done:** 47 · **Cancelled:** 0
+**Structurally ready:** 18 · **Active:** 0 · **Blocked:** 54 · **Held:** 2 · **Done:** 48 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -28,7 +28,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `HRS-BASELINE` | Accepted 12 m house identity and historical-evidence applicability | HRS | PCO-APPLICABILITY, DPL-SITE-BRIEF |
-| `ROF-01` | Roof evidence, failure model and evaluation frame | ROF | ROF-02, ROF-03, ROF-04 |
+| `ROF-02` | Roof topology and geometry families | ROF | — |
+| `ROF-03` | Roof covering-system families | ROF | — |
+| `ROF-04` | Roof assembly beneath the covering | ROF | — |
 | `RWT-01` | Rainfall and hydraulic basis | RWT | RWT-02, RWT-03, RWT-04 |
 | `MRA-00` | Moisture constitution, inventory and threat model | MRA | — |
 | `PLT-CURRENT-REVIEW` | Current-house digital plate capability and review handoff | PLT | — |
@@ -63,9 +65,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `BCR-PROPORTIONALITY` | Current-house conventional comparator and burden appraisal | BCR-SCAFFOLD, HRS-BASELINE |
 | `BCR-PREFLIGHT` | Reconcile early feasibility findings into selection constraints | BCR-STRUCTURE, BCR-WET, BCR-SERVICES, BCR-WATER, BCR-OCCUPATION |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE, CCR-IDENTITY |
-| `ROF-02` | Roof topology and geometry families | ROF-01 |
-| `ROF-03` | Roof covering-system families | ROF-01 |
-| `ROF-04` | Roof assembly beneath the covering | ROF-01 |
 | `ROF-05` | Roof junction and penetration families | ROF-02, ROF-03, ROF-04 |
 | `ROF-06` | Roof access, maintenance, repair and renewal | ROF-05 |
 | `ROF-07` | Roof system synthesis and candidate families | ROF-05, ROF-06 |
@@ -110,7 +109,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`ROF-01` → `ROF-02` → `ROF-05` → `ROF-06` → `ROF-07` → `ROF-RWT-GATE` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`RWT-01` → `RWT-02` → `RWT-05` → `RWT-06` → `RWT-07` → `ROF-RWT-GATE` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
@@ -143,7 +142,7 @@ PCO monitors the evidence content from baseline `c3701c5`. A changed evidence fi
 | **Physical prototypes** | **M2** | 2026-10-12 | 3 | **STALE — reassess** (`docs/development/tectonic-prototype-programme.md`) |
 | **External professional review** | **M1** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
 | **Computational track** | **M4** | 2026-10-19 | 45 | fresh against PCO evidence baseline |
-| **Evidence / precedent research** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **Evidence / precedent research** | **M3** | 2026-10-12 | 3 | **STALE — reassess** (`docs/research/README.md`) |
 | **Publication** | **M4** | 2026-10-28 | 17 | **STALE — reassess** (`docs/editorial/eda-programme.md`) |
 | **Deployment / real-site integration** | **M4** | 2026-10-27 | 48 | **STALE — reassess** (`project/dpl/deployment-programme.md`) |
 | **Delivery** | **M2** | 2026-10-28 | 5 | **STALE — reassess** (`docs/delivery/README.md`, `project/del/delivery-programme.md`) |
