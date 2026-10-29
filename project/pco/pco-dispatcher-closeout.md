@@ -1,6 +1,6 @@
 # PCO-DISPATCH — dispatcher closeout
 
-**State:** candidate; live main-branch ranking and final lease release pending  
+**State:** closeout candidate; final lease release and hygiene reconciliation pending  
 **Date:** 2026-10-29
 
 ## Result
@@ -73,7 +73,7 @@ Repository-wide validation also checks that every real live non-terminal PCO nod
 
 ## Agent contract
 
-Root `AGENTS.md` now requires an idle undirected agent to self-serve through the dispatcher rather than choosing an arbitrary READY node. A direct owner assignment overrides dispatcher ranking but does not bypass the ACO lease protocol.
+Root `AGENTS.md` requires an idle undirected agent to self-serve through the dispatcher rather than choosing an arbitrary READY node. A direct owner assignment overrides dispatcher ranking but does not bypass the ACO lease protocol.
 
 `project/control/README.md` documents the human and machine interfaces:
 
@@ -85,23 +85,74 @@ npm run control:claim-next -- --holder-kind chatgpt --holder-label session-name
 
 ## Protected implementation
 
-This implementation is protected by the real ACO lease:
+The implementation was protected through its merge by the real ACO lease:
 
 - node: `PCO-DISPATCH`;
 - generation: `1`;
 - lease id: `47a84b0e-4afa-49dd-98cf-5748a0d2539f`;
 - holder: `architecture-dispatcher-build`;
-- branch: `work/pco-dispatch`.
+- branch: `work/pco-dispatch`;
+- lease remained live through the validated implementation merge and is intentionally retained until this durable closeout reaches `main`.
 
-## Remaining observations before completion
+## Implementation merge proof
 
-1. implementation PR passes full repository/publication CI;
-2. validated implementation merges while the lease is still owned;
-3. main projection reconciliation completes;
-4. `control:next` is run from reconciled `main` against the real ACO store and produces a coherent ranking/manual/handoff view;
-5. `PCO-DISPATCH` is marked complete with durable evidence;
-6. closeout change passes normal CI and merges;
-7. ACO lease is released only after durable completion is on `main`;
-8. temporary dispatcher branches are cleaned up.
+Implementation PR #974 passed the full repository/publication validation pipeline on validated head `1fe049f1a55f70ec5fb7885105ac1af9f144d95d` (workflow run `40848973679`). It was squash-merged while the ACO lease was still live as `c8bebd0c7984a81d8ebbdf97ce0eb9e15b5bf525`.
 
-Until those are observed, this record remains a closeout candidate.
+The main-branch project-control projection reconciler then completed successfully and advanced `main` to `28d76be03aba42032d763df50a0b638e34a73a83`.
+
+## Live dispatcher proof
+
+A disposable read-only Actions probe executed the **merged** dispatcher from an exact reconciled-main source tree against the real `runtime/claims` ACO store. Probe PR #976 was explicitly not merged to `main`; workflow run `40849561180`, job `123365338368`, passed the dispatcher step and the complete repository/publication validation tail.
+
+At GitHub-observed time `2026-10-29T09:24:35Z`, `control:next -- --format json --limit 20` reported:
+
+- `safeForAutomaticClaim: true`;
+- no unsafe reasons;
+- no invalid live claims;
+- no dispatch-policy errors;
+- four available self-service candidates;
+- physical/professional evidence gates remained manual;
+- durably active/unclaimed work remained visible as handoff candidates rather than being silently inherited.
+
+The live ranking was:
+
+| Rank | Node | Critical depth | Blocker relief | Downstream reach | Owner load |
+|---:|---|---:|---:|---:|---:|
+| 1 | `IAS-01H` | 13 | 1.2 | 17 | 0 |
+| 2 | `OAS-01E` | 12 | 1.0333333333333332 | 16 | 0 |
+| 3 | `OAS-01I` | 12 | 1.0333333333333332 | 16 | 0 |
+| 4 | `BCR-SCAFFOLD` | 9 | 0.3333333333333333 | 8 | 0 |
+
+`IAS-01V`, which would otherwise be a high-value candidate, was correctly excluded because ACO showed it already claimed by `architecture-ias01v` on branch `ias/01v-vertical-candidates`.
+
+The READY evidence routes remained visible but manual:
+
+- `PHY-03-ENGINEERING` — competent structural-engineering judgement;
+- `PHY-04` — physical build/test;
+- `EPR-RH11` — competent independent professional review.
+
+The live dispatcher also surfaced the existing active/unclaimed handoff candidates:
+
+- `MRA-00`;
+- `PLT-CURRENT-REVIEW`;
+- `PUB-02-PREP`.
+
+This demonstrates that the dispatcher is not merely a static ranking function: it combined the merged PCO graph with real ACO occupancy and respected both self-service and manual authority boundaries.
+
+## Disposable probe hygiene
+
+Probe PR #976 was closed unmerged after its evidence was captured. Its temporary source branch is being disposed through the repository cleanup path and is not project authority.
+
+## Completion state
+
+`PCO-DISPATCH` is now durably marked `complete` with its implementation/design/test/operating-contract evidence registered in the PCO node.
+
+The remaining closeout actions are operational only:
+
+1. this closeout PR must pass normal validation and merge while the original ACO lease remains controlled;
+2. main projection reconciliation must observe `PCO-DISPATCH` as complete;
+3. the ACO lease must then be released with reason `completed`;
+4. this record must receive one final hygiene reconciliation recording that release;
+5. temporary dispatcher/probe branches must be removed or explicitly reduced to the established retained infrastructure (`runtime/claims`).
+
+Until the lease release and final hygiene reconciliation are recorded, the packet is substantively complete but operational closeout is not yet clean.
