@@ -9,7 +9,7 @@ Durable execution authority lives in `project/control/`. Live claim occupancy li
 <!-- project-control:start -->
 Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.
 
-**Structurally ready:** 5 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 18 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 18 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -17,6 +17,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
+| `PCO-VIS` | Generated structural and live Mermaid control graphs | PCO | — |
 | `HAD-00` | Architectural brief, hierarchy and invariants | HAD | TRIAD-IFACE-FREEZE |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
