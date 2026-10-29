@@ -2,7 +2,7 @@
 
 The **Reference House** is one deliberately specific integration test for Ovid’s House. It forces doctrine, selected patterns, a selected architectural grammar, programme, structure, envelope, services, environmental strategy and maintenance geography into one building so conflicts cannot remain abstract.
 
-It is **not proof of Ovid’s House** and it is not a universal house type.
+It is **not proof of Ovid’s House** and it is not a universal house type. It is also the pre-site design study for the owner’s eventual home: a real London plot will establish a distinct site-specific design basis. The book and computational work support that objective; neither currently establishes construction readiness.
 
 ## Authority stack
 

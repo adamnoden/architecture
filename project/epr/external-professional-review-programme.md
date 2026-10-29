@@ -54,3 +54,10 @@ Internal M4 controls, drawings, calculations, issue-ready briefs and BCR matrice
 `EPR-REFRESH` is self-service after HRS-BASELINE and BCR-PREFLIGHT. Audit each RH-11 brief against the accepted 12 × 12 m house; retain, narrow, supersede or rewrite its applicability. Headers must name the reviewed revision and distinguish current questions from historical three-flight/3300 mm/low-slope facts. Produce `project/epr/current-house-review-applicability.md` with concrete discipline questions, required evidence and owning rewinds. A general disclaimer without corrected facts is insufficient.
 
 The existing manual `EPR-RH11` evidence gate consumes refreshed briefs. Brief preparation does not authorise outreach or commissioning and does not constitute review evidence. Refresh again if selected geometry changes materially before issue. BCR's material evidence dependencies remain explicit; a referral alone cannot discharge an unresolved fit, route, topology or safety dependency.
+
+
+## EPR-BAY-REVIEW — actual practitioner test of the delivery package
+
+After DEL-BAY-PACK, obtain and process real competent designer and contractor/buildability feedback on the selected construction-bay package. This is a manual node; preparing questions is not receipt of review, and no external contact, appointment or spend is implied. Reuse applicable RH-11 responses where the actual source/scope matches; do not duplicate professional effort merely to satisfy a new identifier.
+
+Record `project/epr/bay-review-result.md`: reviewer role/competence and scope, exact package revision, responses and limitations, findings on comprehensibility/buildability/pricing, and accountable dispositions. Ask what must still be invented by the recipient, what should be simplified, and whether conventional construction or existing tools offer a better route. Rejected proposals and a reviewed conventional fallback are valid outcomes. Do not record an adverse review as a pass; unresolved essential matters must enter the commissioned plan as blockers to the affected design/issue, with actual evidence required. Agent role-play cannot close this node.

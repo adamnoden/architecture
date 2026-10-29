@@ -107,3 +107,8 @@ Requeue means `started → planned` for remaining work under the owner's explici
 - Final release cannot bypass current-house synthesis, applicable correctness repairs, comparative burden review, physical print acceptance or renewed editorial assurance.
 
 The exact planning merge, validation and lease/hygiene outcome belong in `project/pco/pco-refurbishment-plan-result.md` and its PR. No completion percentage is invented.
+
+
+## Larger delivery purpose
+
+The subsequent [owner-house charter](owner-house-charter.md) and [DEL route](del/owner-house-delivery-plan.md) make the owner’s eventual home the primary project outcome. These repairs remain applicable; the publication endpoint above is one milestone, not completion of the actual commission. House delivery has a separate graph branch without editorial/print/manufacture prerequisites.

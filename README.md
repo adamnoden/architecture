@@ -13,6 +13,8 @@ A house should seek **permanence without stasis**.
 
 **Ovid’s House** is an architectural design-research project about how a house can remain durable while the shorter-lived things inside it are maintained, repaired, replaced and changed. It treats those relationships as architecture: access, interfaces, movement, failure, replacement and the geometry needed to work on a building after handover.
 
+The practical purpose is to design and ultimately build the owner’s own home on a later-selected London site. The book is a means of thinking through that architecture and communicating what it teaches; computational tools support consistent design information and bounded checks. The Reference House is the pre-site design study, with real-site adaptation and construction still to be undertaken.
+
 The project does not argue that everything should be demountable, exposed or technically novel. Capacity for change must earn its spatial, material and financial cost. Conventional construction should win where it is the better architectural answer.
 
 The public architectural proposition begins in the [manuscript](docs/manuscript/) and its [governing principles](docs/manuscript/governing-principles.md). The [reading guide](docs/reading-guide.md) is the shortest route through the publication argument.

@@ -1,4 +1,5 @@
 import type { ControlNode } from '../types.js'
+import { houseDeliveryNodes } from './house-delivery.js'
 import { ccrNodes } from './ccr.js'
 import { acoNodes } from './aco.js'
 import { architectureNodes } from './architecture.js'
@@ -22,5 +23,6 @@ export const controlNodes = [
   ...roofWaterNodes,
   ...mraNodes,
   ...publicationNodes,
+  ...houseDeliveryNodes,
   ...evidenceNodes
 ] as const satisfies readonly ControlNode[]

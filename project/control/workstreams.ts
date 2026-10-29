@@ -8,7 +8,7 @@ export interface WorkstreamDefinition {
 
 const workstreamRegistry = [
   { code: 'ACO', title: 'Agent Claim Orchestration', issue: 960, programme: 'project/aco/agent-claim-orchestration-programme.md' },
-  { code: 'ADE', title: 'Architectural Drawing Engine', issue: 812 },
+  { code: 'ADE', title: 'Architectural Drawing Engine', issue: 1008, programme: 'project/ade/construction-information-programme.md' },
   {
     code: 'BCR',
     title: 'Buildability & Construction Resolution',
@@ -26,12 +26,12 @@ const workstreamRegistry = [
   {
     code: 'DPL',
     title: 'Deployment / real-site design study',
-    issue: 299,
-    programme: 'project/dpl/deployment-programme.md'
+    issue: 1009,
+    programme: 'project/dpl/owner-house-site-programme.md'
   },
   { code: 'DRW', title: 'Architectural drawing programme' },
   { code: 'EDA', title: 'Editorial Doctrine Audit', issue: 1005, programme: 'docs/editorial/eda-programme.md' },
-  { code: 'EPR', title: 'External professional review', issue: 913 },
+  { code: 'EPR', title: 'External professional review', issue: 913, programme: 'project/epr/external-professional-review-programme.md' },
   {
     code: 'HAD',
     title: 'House Architectural Design',
