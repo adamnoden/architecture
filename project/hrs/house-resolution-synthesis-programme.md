@@ -61,7 +61,7 @@ The packet completes when every current claim in its declared migration scope re
 
 `HRS-TECHNICAL` requires `TRIAD-GATE` and `CCR-IDENTITY`; it feeds `BCR-CONVERGENCE`. This order allows feasibility to constrain design before the selected house is mapped to supported computational claims.
 
-`HRS-SYNTHESIS` begins only after `BCR-CONVERGENCE`, `MRA-05` and the current `HRS-TECHNICAL` result are complete. MRA-05 exists after BCR specifically to verify that technical closure did not create a new moisture trap, inaccessible defence or hidden water-risk debt. If later changes invalidate a material early result, reconcile that result before final acceptance rather than relying on its completed node.
+`HRS-SYNTHESIS` begins only after `BCR-CONVERGENCE`, `MRA-05`, `PCO-APPLICABILITY`, `DEL-CURRENT` and `EDA-NARRATIVE` are complete (BCR already consumes `HRS-TECHNICAL`). MRA-05 exists after BCR specifically to verify that technical closure did not create a new moisture trap, inaccessible defence or hidden water-risk debt. If later changes invalidate a material early result, reconcile that result before final acceptance rather than relying on its completed node.
 
 HRS then hands off to final PLT #422 drawing/plate freeze, followed by renewed EDA editorial assurance and PUB-02 final content/manufacture gate.
 

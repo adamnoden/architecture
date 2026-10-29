@@ -42,7 +42,7 @@ The accepted 12 × 12 m house is the working architectural basis. Early BCR work
 
 ## Early feasibility packets
 
-`BCR-SCAFFOLD` retains the initial matrix and ownership classification. Each study below depends on that scaffold and `HRS-BASELINE`; the six studies can then run independently. Use one concise evidence record per study and the shared matrix, not duplicate registers.
+`BCR-SCAFFOLD` retains the initial matrix and ownership classification. Each study below depends on that scaffold and `HRS-BASELINE`; the six studies can then run independently. Each study owns a separate concise result with proposed finding rows. BCR-PREFLIGHT alone integrates the five physical studies into the shared matrix; final BCR integrates proportionality. Parallel study agents must not mutate the shared matrix.
 
 | Node | Bounded question and required output | Design/evidence route |
 |---|---|---|
@@ -53,7 +53,7 @@ The accepted 12 × 12 m house is the working architectural basis. Early BCR work
 | `BCR-OCCUPATION` | Test complete representative actions: entry, WC/shower use, stair/bedroom access, door/window operation and large-component renewal. Record finished clearances, void/guard/headroom and escape assumptions; a walking grid alone is insufficient. | HAD/OAS/IAS; existing human-factors evidence; EPR for competent/regulatory judgement |
 | `BCR-PROPORTIONALITY` | Compare materially unusual provisions with credible conventional controls using spatial/depth, material, installation, maintenance/replacement, damage/reinstatement, supply/tool and owner-attention burdens. Use evidence-backed quantities/ranges; record uncertainty instead of inventing lifecycle savings. | Existing design owner decides retain/simplify/reject; BCR records comparison and final disposition; DEL carries delivery consequences |
 
-Each study completes when it names its current source, provides the stated physical study, identifies tested relationships and explicit limits, and enters every material conflict or evidence need in the shared matrix with its owner and discharge condition. An adverse result is a valid completed investigation. It is not a passed design. A blank study or generic referral does not complete the packet. Component envelopes or calculation assumptions must have a declared basis; unknown performance remains unknown.
+Each study completes when it names its current source, provides the stated physical study, identifies tested relationships and explicit limits, and records every material conflict or evidence need in its own result for serial integration into the shared matrix with its owner and discharge condition. An adverse result is a valid completed investigation. It is not a passed design. A blank study or generic referral does not complete the packet. Component envelopes or calculation assumptions must have a declared basis; unknown performance remains unknown.
 
 `BCR-PREFLIGHT` consumes the five physical studies and reconciles their shared spatial budgets and interfaces. It publishes the constraints and unresolved findings that `TRIAD-GATE` must consume. It can finish with explicit adverse findings, but cannot call an incompatible candidate feasible. TRIAD cannot adopt the affected occurrence until its design owner resolves/eliminates the material conflict or establishes a legitimate bounded residual under the exit rule below. This separates investigation completion from architectural acceptance without creating a cycle through finished design streams.
 

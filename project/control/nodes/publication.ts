@@ -75,5 +75,19 @@ export const publicationNodes = defineNodes([
     lifecycle: 'planned',
     agentDispatch: { mode: 'manual', reason: 'Actual-size physical print inspection needs owner or competent human evidence; digital rendering alone cannot close it.' },
     closeoutEvidence: ['project/plt/physical-print-review-result.md']
+  },
+  {
+    id: 'EDA-ARGUMENT', owners: ['EDA'],
+    title: 'Red-team architectural contribution and evidence for the central thesis',
+    dependencies: [], lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/eda/eda-argument-result.md']
+  },
+  {
+    id: 'EDA-NARRATIVE', owners: ['EDA'],
+    title: 'Reshape and subtract for a compelling architectural reader journey',
+    dependencies: ['EDA-ARGUMENT', 'EDA-ADAPTER'], lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/eda/eda-narrative-result.md']
   }
 ])

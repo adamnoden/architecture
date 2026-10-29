@@ -354,3 +354,30 @@ In addition to the successor trigger's corpus, recurrence, adversarial-read and 
 An unperformed test may remain a clearly identified proposal where the admitted research-publication scope permits it; it may not be narrated as a passed demonstration. A material source contradiction or missing required result returns to the owning workstream. Qualification cannot substitute for resolution, and EDA must not create new physical or professional proof work merely to make the book appear complete.
 
 Closeout records the exact reviewed source/object identities, findings and dispositions, final typeset inspection and remaining admitted limits. A later material change to accepted geometry, scale, placement, fold interaction or graphic hierarchy reopens the affected PLT proof before manufacture. Earlier EDA evidence is not rewritten, and the manual PUB-02 final gate remains intact.
+
+
+## Architect-facing value and narrative review — owner extension, 29 October
+
+The owner asks for a stronger test than intellectual consistency: would a distinguished architect find a consequential architectural contribution, a compelling house and a persuasive book? Do not manufacture novelty, praise or a need for wholesale replacement. No separate PDF report is requested. Record findings in the owning sources and execute through the following packets.
+
+### EDA-ARGUMENT — contribution and adversarial thesis
+
+Read the actual manuscript and relevant evidence. Produce a claim-to-demonstration map and a short adversarial assessment: strongest contribution, strongest objections, inherited ideas, project-specific synthesis, genuinely demonstrated additions and unearned claims. Verify prior-art assertions from primary sources. Compare against excellent ordinary construction, not an incompetent straw man. Test whether proportional serviceability and intervention consequences add a useful operational method beyond their acknowledged lineage. A negative result must be allowed to narrow the thesis.
+
+Exit: one defensible central proposition; each claimed contribution has an explicit demonstration or narrowed wording; objections have accountable dispositions; no assertion of immense value or novelty merely from internal coherence. Result: `project/eda/eda-argument-result.md`.
+
+### EDA-NARRATIVE — structure, subtraction and architectural reader journey
+
+After EDA-ARGUMENT, edit the publication architecture, manifests and owning manuscript sources as one bounded structural pass. The six parts are a working hypothesis, not protected doctrine. Test whether the house arrives too late; whether Parts I–III repeat the same argument; whether Part IV and VI earn separate roles; whether Part V demonstrates results or mostly describes future tests. Review philosophy/software analogies for explanatory return, avoid repeated qualifications, move specialist apparatus to notes where possible, and remove weak or redundant material rather than adding chapters reflexively.
+
+Provide a chapter-purpose map, keep/cut/move/add decisions and before/after reading sequence. An early, clearly provisional house encounter may establish the architectural stakes without pretending Part VI is resolved. Preserve source ownership and stable cross-reference identities. Avoid concurrent edits to HRS-owned final house prose; supply integration instructions for that owner.
+
+Exit: coherent beginning, argument, worked challenge and architectural payoff; every chapter advances the thesis or supplies necessary evidence; one short route for an architect to understand claim, house, comparison and limits. Result: `project/eda/eda-narrative-result.md`.
+
+### Architectural merit must be demonstrated by the house
+
+HAD selection and HRS synthesis must test spatial delight, room proportions, arrival, privacy, daylight, relationship to garden/court, architectural section and façade depth as design judgements with drawings and alternatives. A well-managed maintenance system alone is not an architectural achievement. BCR-PROPORTIONALITY supplies honest cost, space, carbon and stewardship trade-offs. PLT must supply a legible inhabited plan/section sequence and at least one actual before/during/after intervention sequence; labels and component inventories alone are insufficient. HRS must incorporate the EDA argument/narrative dispositions before final publication preparation.
+
+### Initial red-team judgement to test, not a claim of external endorsement
+
+Part I explicitly acknowledges that coupling is not a conceptual advance beyond its architectural lineage. The strongest candidate contribution is a precise domestic intervention method: tracing access, isolation, removal, collateral destruction and reinstatement into architectural decisions while retaining composed ordinary rooms. The current compulsory sequence puts constitution, platform taxonomy and the full pattern catalogue ahead of the worked house; Part V postpones its specific intervention ordeal until chapter 26. This risks asking the reader to grant significance before seeing it. Test an early house encounter and three or four comparative interventions as the argument’s spine. Scrutinise the long preface’s invention analogies and outsider defence for disproportionate claims. These are editorial judgements grounded in the current manuscript, not proof that the project has no originality or that a distinguished architect will approve it.

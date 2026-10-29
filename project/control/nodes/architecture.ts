@@ -251,7 +251,7 @@ export const architectureNodes = defineNodes([
     id: 'HRS-SYNTHESIS',
     owners: ['HRS'],
     title: 'Post-BCR final house resolution and synthesis',
-    dependencies: ['BCR-CONVERGENCE', 'MRA-05', 'PCO-APPLICABILITY', 'DEL-CURRENT'],
+    dependencies: ['BCR-CONVERGENCE', 'MRA-05', 'PCO-APPLICABILITY', 'DEL-CURRENT', 'EDA-NARRATIVE'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/hrs/hrs-synthesis-result.md'],
