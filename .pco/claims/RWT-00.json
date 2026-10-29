@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "RWT-00",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "c6da3b00-3677-4f42-bc3c-522e630e3a26",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "swarm-sol-56009cf"
+  },
+  "claimedAt": "2026-10-29T15:27:20.853Z",
+  "heartbeatAt": "2026-10-29T15:27:20.853Z",
+  "expiresAt": "2026-10-29T17:27:20.853Z"
+}
+
