@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-VIS",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "8f4503a4-84a2-4e8e-b8be-11646ebc586b",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "architecture-control-visualisation"
+  },
+  "claimedAt": "2026-10-29T08:34:38Z",
+  "heartbeatAt": "2026-10-29T08:34:38Z",
+  "expiresAt": "2026-10-29T10:34:38Z",
+  "note": "Generate structural and live Mermaid control graphs"
+}
