@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "RWT-05",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b026ba05-86fa-42be-b6ad-d1d44ce8ca28",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T21:42:23.341Z",
-  "heartbeatAt": "2026-10-29T21:58:58.423Z",
-  "expiresAt": "2026-10-29T22:43:58.423Z",
+  "heartbeatAt": "2026-10-29T22:10:38.925Z",
+  "expiresAt": "2026-10-29T22:10:38.925Z",
   "branch": "work/zerg-occupation-rainwater-wave3",
   "checkpoint": {
     "evidence": "PR #1039 preserves RWT-05 source6d0b7ff7; paired BCR occupation integration a1d4a44a; focused checks and reviews passed",
     "next": "Inspect exact combined-head full CI; perform RWT-05 fresh preflight alongside BCR owner before expected-head merge",
     "blocker": "Exact-head full CI and serial integration pending"
   },
-  "pr": 1039
+  "pr": 1039,
+  "releasedAt": "2026-10-29T22:10:38.925Z",
+  "releaseReason": "completed"
 }
