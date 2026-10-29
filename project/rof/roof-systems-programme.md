@@ -1,9 +1,9 @@
 # ROF — Roof Systems Architecture
 
 **Issue:** #991  
-**State:** ROF-00/01/02 complete; covering and assembly research remains
+**State:** ROF-00/01/02/03/04 complete; junction comparison is next
 
-**Current result:** [ROF-02 topology and geometry](rof-02-topology-and-geometry.md), using the [ROF-01 evaluation frame](rof-01-evidence-and-evaluation.md) and retaining the [ROF-00 baseline](rof-00-baseline-and-constraints.md).
+**Current results:** [ROF-03 covering families](rof-03-covering-system-families.md), [ROF-04 assembly and support](rof-04-assembly-and-support.md) and [ROF-02 topology and geometry](rof-02-topology-and-geometry.md), using the [ROF-01 evaluation frame](rof-01-evidence-and-evaluation.md) and retaining the [ROF-00 baseline](rof-00-baseline-and-constraints.md).
 
 ## Purpose
 
@@ -105,6 +105,8 @@ Develop a topology grammar for:
 Identify which topologies inherently create trapped or difficult-to-maintain water paths and which remain robust under ordinary degradation.
 
 ### ROF-03 — covering-system families
+
+Completed at comparative research scope: [covering-system result](rof-03-covering-system-families.md). No covering or pitch selected.
 
 Run three separable studies that can proceed in parallel after ROF-01:
 

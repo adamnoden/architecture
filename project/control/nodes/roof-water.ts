@@ -34,20 +34,20 @@ export const roofWaterNodes = defineNodes([
     owners: ['ROF'],
     title: 'Roof covering-system families',
     dependencies: ['ROF-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     aliases: ['ROF-03A', 'ROF-03B', 'ROF-03C'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rof/rof-03-covering-system-families.md']
   },
   {
     id: 'ROF-04',
     owners: ['ROF'],
     title: 'Roof assembly beneath the covering',
     dependencies: ['ROF-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     aliases: ['ROF-04A', 'ROF-04B'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rof/rof-04-assembly-and-support.md']
   },
   {
     id: 'ROF-05',
