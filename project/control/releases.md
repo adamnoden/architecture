@@ -2,7 +2,17 @@
 
 This file owns the **Minimum Viable Bureaucracy operating-contract version**. The [manual](README.md) is the current integrated explanation; executable sources and the [runbook](swarm-runbook.md) retain their existing authority.
 
-## Current: 1.0.0 — 29 October 2026
+## Current: 1.1.0 — 29 October 2026
+
+Additive communication discipline and evidence-bound publication reporting. The [phrasebook](communications.md) owns concise message meanings, selective readback, explicit correction, stale/duplicate-message handling and observed handoff progress. Labels are optional; clear English and existing workers remain valid. No new permission round trip, message transport or task state is introduced.
+
+`merge-check` keeps its default JSON and original top-level fields, adds a `publication` observation (repository, branch, head, immutable observed main, claim blob SHA, CI not checked, no atomic fence), and supports explicit `--format text`. Both renderings use the same checked result. Ancestry checking and reporting bind the same captured main SHA; ownership is re-read after Git checks.
+
+Starting deployment: [080ca3b5](https://github.com/adamnoden/architecture/tree/080ca3b5e2213d126f1440171ad47a0919a70b45/project/control), followed by the PCO-COMMS registration. The commit introducing this release identifies its exact implementation; the [result](../pco/mvb-communications-result.md) and owning PR record validation and integration evidence. This version claims compatible reporting/communication improvements, not measured throughput, assured message delivery or permission-enforced fencing.
+
+Compatibility: existing claim and connector `schemaVersion: 1` records are unchanged. `verify` stays unchanged; default JSON consumers retain their fields. No persisted state migration, permissions, workflows, dependencies or new service. Rollback restores the previous code without claim migration; retain accepted provenance and existing safety checks. Regression tests cover rejected publication paths and observation identity; exact-head CI is required before merge.
+
+## 1.0.0 — 29 October 2026
 
 First explicit version of the existing GitHub-backed, cooperative coordination system. This is a baseline and adoption-policy release, not a new scheduler or a claim of complete fault tolerance.
 

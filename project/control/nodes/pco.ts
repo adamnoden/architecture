@@ -4,7 +4,7 @@ export const pcoNodes = defineNodes([
   {
     id: 'PCO-COMMS', owners: ['PCO'],
     title: 'Introduce readable MVB communication discipline and scoped preflight observations',
-    dependencies: ['PCO-MVB-REVIEW'], lifecycle: 'planned',
+    dependencies: ['PCO-MVB-REVIEW'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed red team, implementation and MVB 1.1 communications release.' },
     closeoutEvidence: ['project/control/communications.md', 'project/pco/mvb-communications-result.md']
   },
