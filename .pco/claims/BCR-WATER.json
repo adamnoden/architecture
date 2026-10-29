@@ -9,7 +9,13 @@
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-29T22:20:54.586Z",
-  "heartbeatAt": "2026-10-29T22:20:54.586Z",
-  "expiresAt": "2026-10-29T23:05:54.586Z",
-  "branch": "work/zerg-worker-3-bcr-next"
+  "heartbeatAt": "2026-10-29T22:31:02.459Z",
+  "expiresAt": "2026-10-29T23:16:02.459Z",
+  "branch": "work/zerg-worker-3-bcr-next",
+  "pr": 1047,
+  "checkpoint": {
+    "evidence": "PR #1047 head 3b19bb509f5867c576a3eaf34365a78683dc24a9; source-bound water study and BCR result, root/RWT substantive review passed",
+    "next": "Verify exact-head CI and root visual QA, then fresh preflight and serial merge",
+    "blocker": "CI pending"
+  }
 }
