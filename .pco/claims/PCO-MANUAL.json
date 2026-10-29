@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "PCO-MANUAL",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a0d4b100-33bd-4a90-8d85-dc58a5454276",
   "holder": {
     "kind": "chatgpt",
     "label": "manual-bc7462"
   },
   "claimedAt": "2026-10-29T18:52:42.696Z",
-  "heartbeatAt": "2026-10-29T19:04:50.049Z",
-  "expiresAt": "2026-10-29T19:49:50.049Z",
+  "heartbeatAt": "2026-10-29T19:10:27.000Z",
+  "expiresAt": "2026-10-29T19:10:27.000Z",
   "checkpoint": {
     "evidence": "PR #1020; repository and PCO checks pass; integrated manual and discoverability updated",
     "next": "Inspect exact-head CI; preflight; merge; release and clean branches",
     "blocker": "CI running"
   },
   "branch": "pco/execution-manual",
-  "pr": 1020
+  "pr": 1020,
+  "releasedAt": "2026-10-29T19:10:27.000Z",
+  "releaseReason": "completed"
 }
