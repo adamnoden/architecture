@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 17 · **Active:** 0 · **Blocked:** 37 · **Held:** 2 · **Done:** 68 · **Cancelled:** 0
+**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 37 · **Held:** 2 · **Done:** 69 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -28,7 +28,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `BCR-PREFLIGHT` | Reconcile early feasibility findings into selection constraints | BCR | BCR-BAY-BRIEF, EPR-REFRESH, PHY-APPLICABILITY |
-| `ROF-07` | Roof system synthesis and candidate families | ROF | — |
 | `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | RWT-07 |
 | `MRA-00` | Moisture constitution, inventory and threat model | MRA | — |
 | `PLT-CURRENT-REVIEW` | Current-house digital plate capability and review handoff | PLT | — |
@@ -57,7 +56,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, PCO-APPLICABILITY, DEL-CURRENT, EDA-NARRATIVE |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE, CCR-IDENTITY |
 | `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-06 |
-| `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | ROF-07, RWT-07, HAD-03 |
+| `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | RWT-07, HAD-03 |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
 | `MRA-01` | External water and ground-envelope assault | MRA-00, TRIAD-GATE |
