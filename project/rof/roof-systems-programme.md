@@ -1,9 +1,9 @@
 # ROF — Roof Systems Architecture
 
 **Issue:** #991  
-**State:** ROF-00/01/02 complete; covering and assembly research remains
+**State:** ROF-00/01/02/04 complete; covering research remains before junction comparison
 
-**Current result:** [ROF-02 topology and geometry](rof-02-topology-and-geometry.md), using the [ROF-01 evaluation frame](rof-01-evidence-and-evaluation.md) and retaining the [ROF-00 baseline](rof-00-baseline-and-constraints.md).
+**Current results:** [ROF-04 assembly and support](rof-04-assembly-and-support.md) and [ROF-02 topology and geometry](rof-02-topology-and-geometry.md), using the [ROF-01 evaluation frame](rof-01-evidence-and-evaluation.md) and retaining the [ROF-00 baseline](rof-00-baseline-and-constraints.md).
 
 ## Purpose
 

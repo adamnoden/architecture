@@ -261,6 +261,7 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
     page('External maintenance access', '/docs/research/external-maintenance-access'),
     page('Roof failure and recovery evaluation', '/docs/research/roof-failure-evaluation'),
     page('Roof topology and water paths', '/docs/research/roof-topology-families'),
+    page('Roof assemblies and renewal', '/docs/research/roof-assembly-options'),
     page('Preface precedents', '/docs/research/preface-precedents')
   ]),
   group('Historical targeted evidence', [
