@@ -1,3 +1,4 @@
+import { GitConnectorClaimStore, connectorMailbox, readGitClaimSnapshot } from '../project/control/git-connector-claim-store.js'
 import { execFileSync } from 'node:child_process'
 import { Buffer } from 'node:buffer'
 import {
@@ -52,7 +53,7 @@ interface ParsedArgs {
 type OutputFormat = 'text' | 'json'
 
 function git(args: readonly string[]): string {
-  return execFileSync('git', [...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim()
+  return execFileSync('git', [...args], { encoding: 'utf8', timeout: 30000, stdio: ['ignore', 'pipe', 'pipe'] }).trim()
 }
 
 function repositorySlug(): string {
@@ -181,6 +182,7 @@ function ensureDispatcherViewMatchesMain(): void {
     'project/control/dispatch.ts',
     'project/control/claims.ts',
     'project/control/claim-store.ts',
+    'project/control/git-connector-claim-store.ts',
     'scripts/project-claims.ts'
   ])
 }
@@ -312,7 +314,14 @@ class GitHubClaimStore implements ClaimStore {
   }
 }
 
-function storeFor(command: string): GitHubClaimStore {
+function storeFor(command: string, flags: Map<string, string>): ClaimStore {
+  const transport = flags.get('transport') ?? 'github'
+  if (transport === 'connector') {
+    const root = git(['rev-parse', '--show-toplevel'])
+    const dir = flags.get('bridge-dir')
+    return new GitConnectorClaimStore(repositorySlug(), async () => readGitClaimSnapshot(root), dir ? connectorMailbox(root, dir) : undefined)
+  }
+  if (transport !== 'github') throw new Error('--transport must be github or connector')
   const mutation = ['claim', 'claim-next', 'renew', 'release', 'force'].includes(command)
   return new GitHubClaimStore(
     repositorySlug(),
@@ -437,7 +446,7 @@ function printDispatchSnapshot(snapshot: DispatchSnapshot, limit: number, format
   }
 }
 
-async function next(store: GitHubClaimStore, flags: Map<string, string>): Promise<void> {
+async function next(store: ClaimStore, flags: Map<string, string>): Promise<void> {
   ensureDispatcherViewMatchesMain()
   const listed = await store.list()
   const snapshot = buildDispatchSnapshot(
@@ -449,7 +458,7 @@ async function next(store: GitHubClaimStore, flags: Map<string, string>): Promis
   printDispatchSnapshot(snapshot, positiveInt(flags, 'limit', defaultDispatchLimit), outputFormat(flags))
 }
 
-async function claimNext(store: GitHubClaimStore, flags: Map<string, string>): Promise<void> {
+async function claimNext(store: ClaimStore, flags: Map<string, string>): Promise<void> {
   ensureDispatcherViewMatchesMain()
   const format = outputFormat(flags)
   const result = await claimNextFromStore(store, controlNodes, {
@@ -493,7 +502,7 @@ async function claimNext(store: GitHubClaimStore, flags: Map<string, string>): P
   printWrite(result.claim)
 }
 
-async function status(store: GitHubClaimStore): Promise<void> {
+async function status(store: ClaimStore): Promise<void> {
   ensureControlViewMatchesMain()
   const listed = await store.list()
   const claims = new Map<string, ClaimRecord>(listed.claims.map((claim) => [claim.record.node, claim.record]))
@@ -562,7 +571,7 @@ async function status(store: GitHubClaimStore): Promise<void> {
 
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2))
-  const store = storeFor(args.command)
+  const store = storeFor(args.command, args.flags)
 
   switch (args.command) {
     case 'status':

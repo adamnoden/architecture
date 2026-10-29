@@ -162,9 +162,9 @@ export const pcoNodes = defineNodes([
     owners: ['PCO'],
     title: 'Swarm continuation, startup transport and evidence-based run reporting',
     dependencies: ['PCO-DISPATCH'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed operating-contract and runtime integration change; explicitly assigned on 29 October 2026.' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/pco/swarm-operations-result.md', 'project/control/swarm-runbook.md', 'project/control/run-report.ts', 'project/control/git-connector-claim-store.ts']
   }
 
 ])
