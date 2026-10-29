@@ -9,7 +9,13 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T21:00:16.125Z",
-  "heartbeatAt": "2026-10-29T21:00:16.125Z",
-  "expiresAt": "2026-10-29T21:45:16.125Z",
-  "branch": "zerg/worker-1-packet-2"
+  "heartbeatAt": "2026-10-29T21:09:55.695Z",
+  "expiresAt": "2026-10-29T21:54:55.695Z",
+  "branch": "zerg/worker-1-packet-2",
+  "pr": 1027,
+  "checkpoint": {
+    "evidence": "PR #1027 head 90067e8c; commander reproduced geometry; CI full health passed",
+    "next": "Reconcile ordered main integrations, complete exact-head CI, canonical preflight and merge",
+    "blocker": "Publication CI and BCR/HRS merge queue pending"
+  }
 }
