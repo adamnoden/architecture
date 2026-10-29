@@ -36,6 +36,8 @@ external and internal families; final selection follows both shared junctions.
 
 ## Candidate outputs
 
+- [IAS/OAS candidate junction](ias-oas-junction.md).
+- [OAS/HAD candidate junction](oas-had-junction.md).
 - [External openings and thresholds](oas-01e-external-candidates.md).
 - [Internal doors](oas-01i-internal-candidates.md).
 - [Dimension-meaning and mounting study](studies/opening-candidate-budgets.svg).
