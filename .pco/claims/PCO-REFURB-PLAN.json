@@ -2,15 +2,18 @@
   "schemaVersion": 1,
   "node": "PCO-REFURB-PLAN",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "80e63df2-2662-4fcf-a698-bae905295d5e",
   "holder": {
     "kind": "chatgpt",
     "label": "Refurbishment director ce632d9a"
   },
   "claimedAt": "2026-10-29T15:45:54.083Z",
-  "heartbeatAt": "2026-10-29T15:45:54.083Z",
-  "expiresAt": "2026-10-29T17:45:54.083Z",
+  "heartbeatAt": "2026-10-29T16:12:16.481Z",
+  "expiresAt": "2026-10-29T16:12:16.481Z",
   "branch": "work/refurbishment-programme",
-  "note": "Owner-directed planning and guarded continuation requeue."
+  "note": "Owner-directed planning and guarded continuation requeue.",
+  "releasedAt": "2026-10-29T16:12:16.481Z",
+  "releaseReason": "completed",
+  "pr": 1006
 }
