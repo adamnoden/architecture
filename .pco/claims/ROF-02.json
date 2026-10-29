@@ -9,13 +9,13 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T21:00:16.125Z",
-  "heartbeatAt": "2026-10-29T21:09:55.695Z",
-  "expiresAt": "2026-10-29T21:54:55.695Z",
+  "heartbeatAt": "2026-10-29T21:21:47.130Z",
+  "expiresAt": "2026-10-29T22:06:47.130Z",
   "branch": "zerg/worker-1-packet-2",
   "pr": 1027,
   "checkpoint": {
-    "evidence": "PR #1027 head 90067e8c; commander reproduced geometry; CI full health passed",
-    "next": "Reconcile ordered main integrations, complete exact-head CI, canonical preflight and merge",
-    "blocker": "Publication CI and BCR/HRS merge queue pending"
+    "evidence": "PR1027 source head90067e8c4ed9f4a6dfbd0b7572072b5ed44f1452 frozen; exact-head CI40955050488 succeeded; commander and RWT peers reviewed geometry and evidence",
+    "next": "After HRS merge, worker2 integrates preserved source ancestry with RWT02/RWT03; renew binding to combined PR, validate combined head, preflight every lease, merge and close out",
+    "blocker": "Serial HRS integration ahead; combined PR not yet created"
   }
 }
