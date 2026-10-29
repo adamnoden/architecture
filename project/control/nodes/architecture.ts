@@ -213,9 +213,9 @@ export const architectureNodes = defineNodes([
     owners: ['OAS'],
     title: 'Representative dimensioned opening interfaces',
     dependencies: ['OAS-03'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/oas/representative-detail-completion.md', 'docs/reference-house/opening-interface-studies.md', 'project/oas/studies/nominal-interface-studies.svg']
   },
 
   // Wave 4 — one house, then construction-resolution convergence.

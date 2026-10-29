@@ -25,6 +25,7 @@ Issue #942 records the authorised parallel topology, superseding OAS-01…06.
 - **IAS-OAS-JUNCTION / OAS-HAD-JUNCTION:** room-side and visible architectural
   interfaces reconciled against actual core candidates.
 - **OAS-03:** selected family, replacement/reinstatement and canonical drawings.
+- **OAS-DETAIL:** representative nominal scaled head/jamb/sill, threshold and internal-door interfaces; explicitly required before triad.
 - **TRIAD-GATE:** one coordinated house before selected BCR input.
 
 OAS-00 records 44 nominal window and 19 door occurrences across the two current
@@ -38,6 +39,9 @@ explicitly unearned. OAS stays open until the shared triad gate.
 
 ## Candidate outputs
 
+- [Nominal interface design authority](../../docs/reference-house/opening-interface-studies.md).
+- [Scaled 1:5 / 1:2 interface sheet](studies/nominal-interface-studies.svg).
+- [Representative-detail completion](representative-detail-completion.md).
 - [Bounded opening family selection](../../docs/reference-house/opening-assembly-selection.md).
 - [OAS-03 selection result and scope](oas-03-selection-result.md).
 - [Canonical renewal/topology drawing](studies/selected-opening-renewal.svg).
