@@ -58,10 +58,9 @@ flowchart LR
   end
   subgraph g_ROF["ROF"]
     direction TB
-    n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>READY</b>"]
-    n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>BLOCKED</b>"]
-    n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>BLOCKED</b>"]
-    n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>BLOCKED</b>"]
+    n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>READY</b>"]
+    n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>READY</b>"]
+    n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>READY</b>"]
     n_ROF_05["ROF-05<br/>Roof junction and penetration families<br/><b>BLOCKED</b>"]
     n_ROF_06["ROF-06<br/>Roof access, maintenance, repair and renewal<br/><b>BLOCKED</b>"]
     n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>BLOCKED</b>"]
@@ -180,9 +179,6 @@ flowchart LR
   n_BCR_OCCUPATION --> n_BCR_PREFLIGHT
   n_TRIAD_GATE --> n_HRS_TECHNICAL
   n_CCR_IDENTITY --> n_HRS_TECHNICAL
-  n_ROF_01 --> n_ROF_02
-  n_ROF_01 --> n_ROF_03
-  n_ROF_01 --> n_ROF_04
   n_ROF_02 --> n_ROF_05
   n_ROF_03 --> n_ROF_05
   n_ROF_04 --> n_ROF_05
@@ -312,10 +308,9 @@ flowchart LR
   class n_BCR_PROPORTIONALITY blocked;
   class n_BCR_PREFLIGHT blocked;
   class n_HRS_TECHNICAL blocked;
-  class n_ROF_01 ready;
-  class n_ROF_02 blocked;
-  class n_ROF_03 blocked;
-  class n_ROF_04 blocked;
+  class n_ROF_02 ready;
+  class n_ROF_03 ready;
+  class n_ROF_04 ready;
   class n_ROF_05 blocked;
   class n_ROF_06 blocked;
   class n_ROF_07 blocked;
@@ -477,10 +472,10 @@ flowchart LR
   subgraph g_ROF["ROF"]
     direction TB
     n_ROF_00["ROF-00<br/>Roof constitution, baseline and inherited constraints<br/><b>DONE</b>"]
-    n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>READY</b>"]
-    n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>BLOCKED</b>"]
-    n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>BLOCKED</b>"]
-    n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>BLOCKED</b>"]
+    n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>DONE</b>"]
+    n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>READY</b>"]
+    n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>READY</b>"]
+    n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>READY</b>"]
     n_ROF_05["ROF-05<br/>Roof junction and penetration families<br/><b>BLOCKED</b>"]
     n_ROF_06["ROF-06<br/>Roof access, maintenance, repair and renewal<br/><b>BLOCKED</b>"]
     n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>BLOCKED</b>"]
@@ -867,10 +862,10 @@ flowchart LR
   class n_BCR_PREFLIGHT blocked;
   class n_HRS_TECHNICAL blocked;
   class n_ROF_00 done;
-  class n_ROF_01 ready;
-  class n_ROF_02 blocked;
-  class n_ROF_03 blocked;
-  class n_ROF_04 blocked;
+  class n_ROF_01 done;
+  class n_ROF_02 ready;
+  class n_ROF_03 ready;
+  class n_ROF_04 ready;
   class n_ROF_05 blocked;
   class n_ROF_06 blocked;
   class n_ROF_07 blocked;
