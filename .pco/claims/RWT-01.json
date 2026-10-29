@@ -9,6 +9,11 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T20:48:32.884Z",
-  "heartbeatAt": "2026-10-29T20:48:32.884Z",
-  "expiresAt": "2026-10-29T21:33:32.884Z"
+  "heartbeatAt": "2026-10-29T20:53:08.629Z",
+  "expiresAt": "2026-10-29T21:38:08.629Z",
+  "branch": "work/zerg-rwt-01",
+  "checkpoint": {
+    "evidence": "Research and RWT-01 result on work/zerg-rwt-01",
+    "next": "Open PR, verify full exact-head CI, then commander integration"
+  }
 }
