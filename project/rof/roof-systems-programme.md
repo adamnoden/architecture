@@ -222,7 +222,7 @@ ROF-03A/B/C and ROF-04A/B are intentionally parallel research families. They sho
 - **RWT** owns collection/conveyance after explicit roof collection interfaces and feeds back drainage consequences capable of forcing topology reconsideration.
 - **HAD** owns roof expression, silhouette, eaves/cornice and visible material language; it cannot overrule a demonstrated technical failure topology for appearance alone.
 - **OAS** retains opening/threshold authority. ROF/RWT can request a rewind but cannot silently alter it.
-- **MRA** attacks the selected system after coordination. It does not design the preferred roof.
+- **MRA** attacks the selected system after coordination. It does not design the preferred roof. The [MRA-00 roof/rainwater questions](../mra/mra-00-moisture-constitution-threat-model.md#11a-rofrwt-assurance-questions) define the later evidence burden without selecting this system.
 - **BCR** turns selected system obligations into construction-resolution dispositions.
 - **EPR** owns competent structural/building-physics judgement where required.
 - **PHY** is used only for genuinely material physical propositions that require testing.

@@ -60,6 +60,8 @@ OAS runs in parallel with IAS #941 and HAD #943 after BSR. It uses the controlle
 
 IAS owns the room-side assembly meeting the opening. HAD owns facade/opening composition and visible material/trim language.
 
+The [MRA-00 opening/interface questions](../mra/mra-00-moisture-constitution-threat-model.md#10-oas-assurance-questions) require the actual failed-seal, drainage, threshold and renewal paths. OAS retains detail design; named downstream evidence is not an assurance pass.
+
 ## Evidence boundary
 
 OAS may establish architectural detail logic, dimensions, sequence and internally controlled boundary intentions. Certified product performance, structural adequacy, thermal/moisture calculations, fire/security compliance and physical water/air testing remain external/specialist evidence routes under EPR/PHY/BCR/DEL.

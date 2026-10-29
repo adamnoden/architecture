@@ -239,7 +239,7 @@ RWT-02/03/04 are intentionally parallel after the hydraulic/interface basis. The
 - **ROF** supplies actual roof topology and collection interfaces; RWT can force topology reconsideration when drainage consequences are materially poor.
 - **HAD** owns visible expression. It cannot aesthetically erase a necessary overflow or access route.
 - **OAS** owns doors/windows/threshold assemblies; RWT owns adjacent surface-water consequence and can request an explicit rewind.
-- **MRA** owns adversarial moisture assurance after selection, not initial RWT design.
+- **MRA** owns adversarial moisture assurance after selection, not initial RWT design. The [MRA-00 roof/rainwater questions](../mra/mra-00-moisture-constitution-threat-model.md#11a-rofrwt-assurance-questions) define the later evidence burden without selecting this system.
 - **DPL** owns real-site drainage beyond `SITE-WATER-HANDOFF`.
 - **BCR/EPR** own construction resolution and competent technical questions exceeding architectural selection.
 - **PHY** may test a genuinely critical collection/overflow/junction proposition where evidence warrants it.
