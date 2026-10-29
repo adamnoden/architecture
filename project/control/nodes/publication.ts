@@ -7,6 +7,7 @@ export const publicationNodes = defineNodes([
     title: 'Current-source plate capability and physical review work',
     dependencies: ['BSR-ROOT'],
     lifecycle: 'started',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -15,6 +16,7 @@ export const publicationNodes = defineNodes([
     title: 'Final resolved-house plate integration and freeze',
     dependencies: ['HRS-SYNTHESIS', 'PLT-CURRENT-REVIEW'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -23,6 +25,7 @@ export const publicationNodes = defineNodes([
     title: 'Renewed editorial-doctrine assurance over enlarged final source',
     dependencies: ['PLT-FINAL-FREEZE'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -31,6 +34,7 @@ export const publicationNodes = defineNodes([
     title: 'Content-independent private-object preparation',
     dependencies: ['BSR-ROOT'],
     lifecycle: 'started',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -39,6 +43,10 @@ export const publicationNodes = defineNodes([
     title: 'Final private-object content, drawing and manufacture gate',
     dependencies: ['PUB-02-PREP', 'EDA-RENEWED'],
     lifecycle: 'planned',
+    agentDispatch: {
+      mode: 'manual',
+      reason: 'Final private-object manufacture/release is an owner-controlled gate rather than generic idle-agent work.'
+    },
     closeoutEvidence: []
   }
 ])
