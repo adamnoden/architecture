@@ -1,8 +1,10 @@
 # Reference House — RH-11 Structural Review Brief
 
-**Status:** ready for competent structural-engineer review  
+**Applicability / issue hold:** retained RH-11 predecessor review preparation (RH-02–RH-10 / HFI-08B), not issue-ready for RH-LAYOUT-REVISION-02. Its 12 × 10.8 m / +3300 mm / three-flight / low-slope assumptions, where used below, are historical. The [current questions and changed facts](external-review-brief.md) govern the present house. EPR refresh must reconcile this discipline pack after current feasibility work before issue; no competent review is claimed.
+
+**Historical status:** prepared for competent structural-engineer review  
 **Parent pack:** [RH-11 External Review Brief](external-review-brief.md)  
-**Current project maturity:** M3 coordinated virtual design; **no structural adequacy claim**
+**Historical assessed maturity:** M3 coordinated virtual design; **no structural adequacy claim**
 
 ## Review question
 
