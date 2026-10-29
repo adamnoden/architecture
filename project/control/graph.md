@@ -109,7 +109,6 @@ flowchart LR
   end
   subgraph g_DEL["DEL"]
     direction TB
-    n_DEL_BRIEF["DEL-BRIEF<br/>Reconcile owner requirements and open project decisions<br/><b>READY</b>"]
     n_DEL_ISSUE_PROFILES["DEL-ISSUE-PROFILES<br/>Define purpose-specific information and issue requirements<br/><b>READY</b>"]
     n_DEL_BAY_PACK["DEL-BAY-PACK<br/>Assemble one coherent construction-bay review issue<br/><b>BLOCKED</b>"]
     n_DEL_COMMISSION_PLAN["DEL-COMMISSION-PLAN<br/>Register grounded whole-house design construction and handover packets<br/><b>BLOCKED</b>"]
@@ -231,7 +230,6 @@ flowchart LR
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_EDA_ARGUMENT --> n_EDA_NARRATIVE
   n_EDA_ADAPTER --> n_EDA_NARRATIVE
-  n_DEL_BRIEF --> n_BCR_BAY_BRIEF
   n_HRS_BASELINE --> n_BCR_BAY_BRIEF
   n_BCR_PREFLIGHT --> n_BCR_BAY_BRIEF
   n_BCR_BAY_BRIEF --> n_BCR_BAY_DESIGN
@@ -251,7 +249,6 @@ flowchart LR
   n_ADE_EVIDENCE --> n_DEL_BAY_PACK
   n_DEL_ISSUE_PROFILES --> n_DEL_BAY_PACK
   n_DEL_BAY_PACK --> n_EPR_BAY_REVIEW
-  n_DEL_BRIEF --> n_DPL_SITE_BRIEF
   n_HRS_BASELINE --> n_DPL_SITE_BRIEF
   n_DPL_SITE_BRIEF --> n_DPL_COMMISSION
   n_DPL_COMMISSION --> n_DPL_SITE_ASSESSMENT
@@ -350,7 +347,6 @@ flowchart LR
   class n_PLT_PRINT_REVIEW blocked;
   class n_EDA_ARGUMENT ready;
   class n_EDA_NARRATIVE blocked;
-  class n_DEL_BRIEF ready;
   class n_DEL_ISSUE_PROFILES ready;
   class n_ADE_DELIVERY_AUDIT ready;
   class n_BCR_BAY_BRIEF blocked;
@@ -530,7 +526,7 @@ flowchart LR
   end
   subgraph g_DEL["DEL"]
     direction TB
-    n_DEL_BRIEF["DEL-BRIEF<br/>Reconcile owner requirements and open project decisions<br/><b>READY</b>"]
+    n_DEL_BRIEF["DEL-BRIEF<br/>Reconcile owner requirements and open project decisions<br/><b>DONE</b>"]
     n_DEL_ISSUE_PROFILES["DEL-ISSUE-PROFILES<br/>Define purpose-specific information and issue requirements<br/><b>READY</b>"]
     n_DEL_BAY_PACK["DEL-BAY-PACK<br/>Assemble one coherent construction-bay review issue<br/><b>BLOCKED</b>"]
     n_DEL_COMMISSION_PLAN["DEL-COMMISSION-PLAN<br/>Register grounded whole-house design construction and handover packets<br/><b>BLOCKED</b>"]
@@ -895,7 +891,7 @@ flowchart LR
   class n_PLT_PRINT_REVIEW blocked;
   class n_EDA_ARGUMENT ready;
   class n_EDA_NARRATIVE blocked;
-  class n_DEL_BRIEF ready;
+  class n_DEL_BRIEF done;
   class n_DEL_ISSUE_PROFILES ready;
   class n_ADE_DELIVERY_AUDIT ready;
   class n_BCR_BAY_BRIEF blocked;
