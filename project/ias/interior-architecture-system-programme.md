@@ -61,10 +61,11 @@ unresolved adoption obligations.
 - [Horizontal candidates](ias-01h-horizontal-candidates.md).
 - [Dimensioned section/access comparison](studies/ias-core-sections.svg).
 
-The shared interface contract and the candidate/service/HAD interfaces are
-complete at their stated scope. IAS-OAS still requires the opening candidates;
-IAS-03 owns actual selection and the detailed disassembly set. The adoption
-ledger carries unresolved fit, depth, access and performance questions forward.
+The shared interface contract and all candidate junctions are complete at their
+stated scope. [IAS/OAS reconciliation](../oas/ias-oas-junction.md) now supplies
+the opening edge/release contract. IAS-03 owns actual selection and the detailed
+disassembly set. The adoption ledger carries unresolved fit, depth, access and
+performance questions forward.
 
 ## Parallel interfaces
 
