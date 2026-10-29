@@ -9,8 +9,14 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T20:59:03.352Z",
-  "expiresAt": "2026-10-29T21:44:03.352Z",
+  "heartbeatAt": "2026-10-29T21:19:13.061Z",
+  "expiresAt": "2026-10-29T22:04:13.061Z",
   "branch": "work/zerg-had-03-convergence",
-  "note": "Product-sized ensuite fit review; HAD-03 remains incomplete"
+  "note": "Product-sized ensuite fit review; HAD-03 remains incomplete",
+  "pr": 1026,
+  "checkpoint": {
+    "evidence": "PR #1026; product-sized ensuite rejection and relocation trial",
+    "next": "Validate current head and integrate partial evidence; continue actual door and connected room design",
+    "blocker": "HAD-03 selection remains incomplete"
+  }
 }
