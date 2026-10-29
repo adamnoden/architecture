@@ -1,9 +1,9 @@
 # ROF — Roof Systems Architecture
 
 **Issue:** #991  
-**State:** ROF-00/01/02/03/04 complete; junction comparison is next
+**State:** ROF-00/01/02/03/04/05 complete; access and renewal comparison is next
 
-**Current results:** [ROF-03 covering families](rof-03-covering-system-families.md), [ROF-04 assembly and support](rof-04-assembly-and-support.md) and [ROF-02 topology and geometry](rof-02-topology-and-geometry.md), using the [ROF-01 evaluation frame](rof-01-evidence-and-evaluation.md) and retaining the [ROF-00 baseline](rof-00-baseline-and-constraints.md).
+**Current results:** [ROF-05 junction families](rof-05-junctions-and-penetrations.md), [ROF-03 covering families](rof-03-covering-system-families.md), [ROF-04 assembly and support](rof-04-assembly-and-support.md) and [ROF-02 topology and geometry](rof-02-topology-and-geometry.md), using the [ROF-01 evaluation frame](rof-01-evidence-and-evaluation.md) and retaining the [ROF-00 baseline](rof-00-baseline-and-constraints.md).
 
 ## Purpose
 
@@ -126,6 +126,8 @@ Split into two bounded packets:
 These packets select plausible architectural/system topologies and expose technical obligations. They do not manufacture competent structural or building-physics proof.
 
 ### ROF-05 — junctions and penetrations
+
+Completed at candidate-interface comparison scope: [junction result](rof-05-junctions-and-penetrations.md). No construction detail or penetration selected.
 
 Resolve candidate families for eaves, ridges, hips, valleys, verges, wall abutments, roof/wall transitions, hatches, flues/vents, anchors and future penetrations.
 
