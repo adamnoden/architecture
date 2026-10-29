@@ -1,7 +1,9 @@
 # IAS — Interior Architecture System
 
-**State:** queued; starts after BSR establishes canonical chapter/authority boundaries  
-**Tracking:** [#941 — IAS interior architecture system](https://github.com/adamnoden/architecture/issues/941)  
+**State:** IAS-00 baseline complete; IAS-01 wall/backplane/panel family ready after BSR closure
+
+**Tracking:** [#941 — IAS interior architecture system](https://github.com/adamnoden/architecture/issues/941)
+
 **Programme map:** [`../book-resolution-programme.md`](../book-resolution-programme.md)
 
 ## Question and scope
@@ -19,6 +21,23 @@ IAS owns the Reference House implementation family for walls, floors, backplanes
 - **IAS-04 — architectural interfaces:** grilles, access pieces, ceiling/cornice interfaces, kitchen attachment, wet-room variants and transitions to quiet permanent construction.
 - **IAS-05 — drawing/disassembly set:** representative room/assembly drawings, exploded axonometrics, selected 1:5 / 1:2 junctions and removal/reinstatement sequences.
 - **IAS-06 — selection gate:** compare against conventional construction, reject/hold weak candidates and issue the bounded selected family to BCR.
+
+## IAS-00 current-source baseline
+
+The [baseline and challenger inventory](ias-00-baseline-and-challengers.md) is
+prepared against `RH-LAYOUT-REVISION-02`. It retains the conventional W0/W1 and
+floor controls, keeps high-burden wall/floor systems rejectable, and checks the
+actual nominal depth allocations rather than importing historical technical
+results. The represented 350 mm floor package has no unallocated depth; the
+ordinary envelope finish allowance is 15 mm. One upper service-panel reservation
+overlaps a nominal partition return by 12.5 mm and is explicitly carried into
+IAS-01 as coordination item I00-C1, not silently repositioned.
+
+This is a read-only baseline packet, not a selected assembly or performance
+verdict. BSR closed through PR #950, establishing the canonical interfaces;
+substantive IAS-01 is now unblocked.
+Its first worked conditions are one quiet wall/attachment datum and one
+high-service access front, including returns and removal/reinstatement.
 
 ## Parallel interfaces
 
