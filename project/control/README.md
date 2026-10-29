@@ -97,6 +97,9 @@ The live view reads `runtime/claims`, evaluates leases at GitHub-observed time a
 
 ## Lease commands
 
+Use `control:doctor` before startup and `control:merge-check` immediately before publication; the [resilience and recovery protocol](swarm-runbook.md#resilience-recovery-and-publication-preflight) owns checkpoint, expiry and preflight semantics. `control:next -- --format json` includes heartbeat age, renewal advice and checkpoint information for occupied packets. These observations do not prove whether a session is responsive.
+
+
 The GitHub-backed client uses `GH_TOKEN` or `GITHUB_TOKEN` for mutations. It prefers GitHub server time when evaluating leases.
 
 ```text

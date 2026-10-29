@@ -99,3 +99,31 @@ Lead with the outcome, then provide the following consistently. Use the generate
 | Stop / next | Explicit stop category, evidence, remaining eligible work and resumable handoff |
 
 Packet percentages are **coverage of the current execution graph**. Tasks differ in size and future work can be added. They are not percentage of effort, architecture resolved, building ready to construct, or maturity validated. Shared nodes count once globally and in each owning workstream; do not sum workstream rows. Preserve the separate maturity/authority ceiling. Do not turn these counts into an ETA or weighted score without independently justified estimates. Never present an unmerged branch's `complete` lifecycle as shipped work.
+
+## Resilience, recovery and publication preflight
+
+Before acquiring work, run `npm run control:doctor -- --transport connector --bridge-dir /ABSOLUTE/PRIVATE/TEMP` (or the native transport). It verifies fresh main/protocol and claim reads, and reports whether mutation transport is configured. Configuration is not proof of write authorisation; only a successful canonical CAS operation proves that. Do not confuse a transport outage with an empty frontier or another agent owning all work. Native HTTP calls have a 20-second request deadline; Git operations have a 30-second command deadline. A whole multi-request command may take longer.
+
+New leases default to **45 minutes**, with the existing two-minute expiry grace. Existing records retain their authored expiry; explicit 15–480 minute TTLs remain available. Renew at real execution checkpoints around every 10–15 minutes and before a long operation if necessary. Do not create an independent heartbeat process: it could keep a dead worker's lease alive. Silence alone never permits takeover. Freshness is an observation, not proof of responsiveness. Clock uncertainty must be resolved before overlap or publication.
+
+Acquire/renew with recovery metadata:
+
+```sh
+node --import tsx scripts/project-claims.ts renew NODE --lease-id UUID --generation N --transport connector --bridge-dir /ABSOLUTE/PRIVATE/TEMP --branch work/example --checkpoint-evidence 'PR #123; owning result section Validation' --checkpoint-next 'Inspect CI, then merge' --checkpoint-blocker 'CI pending'
+```
+
+Evidence and next action must appear together. Store recoverable work on a pushed branch/draft PR or the owning durable result at meaningful boundaries. A scratch path is not a recovery record; a heartbeat or checkpoint is not evidence that an output is correct. Existing branch/PR/note fields remain usable for older records. Do not put credentials or private owner information in the public lease store.
+
+After expiry plus grace, normal acquisition increments generation; it does not delete the previous branch. The replacement inspects and selectively reuses verified evidence. It must not overwrite a potentially still-running worker's branch: use its own branch. A returning original worker must re-read ownership before publishing and stop if superseded; it may offer its preserved work through the normal recovery path. Never renew or release another generation. Issue probes are durable requests, not delivered messages or guaranteed wakeups.
+
+A lost write acknowledgement is reconciled by a single fresh read: only the exact intended record counts as confirmation. Otherwise the CLI reports the lease identity and unknown outcome, without replaying the write. Inspect remote state and any outstanding connector request before retrying. Never service a timed-out mailbox request later: that can still write an unwanted lease.
+
+Immediately before merging a leased packet:
+
+```sh
+npm run control:merge-check -- NODE --transport connector --lease-id UUID --generation N --branch work/example --head FULL_VALIDATED_HEAD_SHA
+```
+
+This checks local and fresh remote head identity, current main ancestry, then freshly re-reads the exact lease identity/generation and branch binding. It rejects grace, clock uncertainty and less than five minutes remaining. If renewal is needed after branch-local lifecycle was marked complete, renew from a clean current-main control checkout before final preflight. Merge immediately with the connector's `expected_head_sha` set to that same validated SHA; separately verify exact-head CI. On a delay, head/base change, expiry or takeover, repeat the preflight and relevant validation. No unattended lease may survive session end without explicit handoff.
+
+This is a cooperative publication preflight, **not atomic fencing**: runtime claims and the GitHub merge are different operations. CI can become stale and cannot close that race by itself. A hard fence would require a single authorised merge gateway and repository permissions preventing bypass. That larger operational change is not claimed here. Do not describe a fresh preflight or a green historical CI check as an atomic lock.

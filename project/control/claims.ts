@@ -4,7 +4,7 @@ import type { ControlNode, DerivedNodeState, NodeId } from './types.js'
 export const claimsBranch = 'runtime/claims'
 export const claimsDirectory = '.pco/claims'
 export const claimSchemaVersion = 1 as const
-export const defaultLeaseMinutes = 120
+export const defaultLeaseMinutes = 45
 export const minimumLeaseMinutes = 15
 export const maximumLeaseMinutes = 8 * 60
 export const expiryGraceMs = 2 * 60 * 1000
@@ -25,6 +25,13 @@ export interface SupersededLease {
   reason: string
 }
 
+export interface RecoveryCheckpoint {
+  /** Recoverable repository/PR evidence; never a path in another agent's scratch space. */
+  evidence: string
+  next: string
+  blocker?: string
+}
+
 export interface ClaimRecord {
   schemaVersion: typeof claimSchemaVersion
   node: NodeId
@@ -37,6 +44,7 @@ export interface ClaimRecord {
   expiresAt: string
   branch?: string
   pr?: number
+  checkpoint?: RecoveryCheckpoint
   note?: string
   releasedAt?: string
   releaseReason?: 'completed' | 'handoff' | 'abandoned' | 'superseded' | 'other'
@@ -46,6 +54,7 @@ export interface ClaimRecord {
 export interface ClaimMetadata {
   branch?: string
   pr?: number
+  checkpoint?: RecoveryCheckpoint
   note?: string
 }
 
@@ -136,6 +145,15 @@ export function parseClaimRecord(raw: string, expectedNode?: NodeId): ClaimRecor
   if (!isIsoDate(value.claimedAt) || !isIsoDate(value.heartbeatAt) || !isIsoDate(value.expiresAt)) {
     throw new Error('Claim record has invalid lease timestamps')
   }
+  if (Date.parse(value.claimedAt as string) > Date.parse(value.heartbeatAt as string) || Date.parse(value.heartbeatAt as string) > Date.parse(value.expiresAt as string)) {
+    throw new Error('Lease timestamps must satisfy claimedAt <= heartbeatAt <= expiresAt')
+  }
+  if (value.checkpoint !== undefined) {
+    const c = value.checkpoint
+    if (!isRecord(c) || !nonEmptyString(c.evidence) || !nonEmptyString(c.next) || !optionalNonEmptyString(c.blocker)) {
+      throw new Error('Invalid recovery checkpoint: evidence and next are required')
+    }
+  }
   if (!optionalNonEmptyString(value.branch) || !optionalNonEmptyString(value.note)) {
     throw new Error('Claim branch/note must be non-empty when present')
   }
@@ -211,6 +229,7 @@ export function createClaimRecord(input: AcquireClaimInput): ClaimRecord {
     claimedAt: now.toISOString(),
     heartbeatAt: now.toISOString(),
     expiresAt: expires.toISOString(),
+    ...(input.checkpoint ? { checkpoint: input.checkpoint } : {}),
     ...(input.branch ? { branch: input.branch } : {}),
     ...(input.pr ? { pr: input.pr } : {}),
     ...(input.note ? { note: input.note } : {}),
@@ -281,6 +300,7 @@ export function renewClaim(
     expiresAt: expires.toISOString(),
     ...(metadata.branch !== undefined ? { branch: metadata.branch } : {}),
     ...(metadata.pr !== undefined ? { pr: metadata.pr } : {}),
+    ...(metadata.checkpoint !== undefined ? { checkpoint: metadata.checkpoint } : {}),
     ...(metadata.note !== undefined ? { note: metadata.note } : {})
   }
 }

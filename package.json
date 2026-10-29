@@ -40,6 +40,8 @@
     "control:graph": "tsx scripts/project-control-graph.ts",
     "control:graph:live": "tsx scripts/project-control-graph.ts --live",
     "control:leases": "tsx scripts/project-claims.ts",
+    "control:doctor": "tsx scripts/project-claims.ts doctor",
+    "control:merge-check": "tsx scripts/project-claims.ts merge-check",
     "control:claims": "tsx scripts/project-claims.ts status",
     "control:next": "tsx scripts/project-claims.ts next",
     "control:claim-next": "tsx scripts/project-claims.ts claim-next",

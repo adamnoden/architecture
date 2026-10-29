@@ -8,6 +8,7 @@ import {
   leaseTemporalState,
   nextNormalAcquisition,
   parseClaimRecord,
+  serializeClaimRecord,
   releaseClaim,
   renewClaim,
   type ClaimHolder,
@@ -87,6 +88,22 @@ export interface VerifiedLease {
   temporal: 'live' | 'grace'
 }
 
+/** A lost acknowledgement is not a failed write. Reconcile once; never blindly replay. */
+async function confirmedWrite(store: ClaimStore, node: string, intended: ClaimRecord, sha?: string): Promise<ClaimWriteResult> {
+  try {
+    return sha ? await store.update(node, sha, intended) : await store.create(node, intended)
+  } catch (error) {
+    if (error instanceof ClaimConflictError) throw error
+    try {
+      const fresh = await store.read(node)
+      if (fresh.stored && serializeClaimRecord(fresh.stored.record) === serializeClaimRecord(intended)) {
+        return { stored: fresh.stored, observedAt: fresh.observedAt }
+      }
+    } catch { /* Unknown remote outcome; do not issue another write. */ }
+    throw new ClaimStoreUnavailableError(`Unconfirmed ${node} lease write (lease ${intended.leaseId}, generation ${intended.generation}); inspect remote state before retrying: ${String(error)}`)
+  }
+}
+
 function candidateLeaseId(explicit?: string): string {
   return explicit ?? randomUUID()
 }
@@ -152,13 +169,14 @@ export async function acquireClaimFromStore(
       ttlMinutes: options.ttlMinutes,
       branch: options.branch,
       pr: options.pr,
+      checkpoint: options.checkpoint,
       note: options.note
     })
 
     try {
       return before.stored
-        ? await store.update(nodeId, before.stored.sha, next)
-        : await store.create(nodeId, next)
+        ? await confirmedWrite(store, nodeId, next, before.stored.sha)
+        : await confirmedWrite(store, nodeId, next)
     } catch (error) {
       if (!(error instanceof ClaimConflictError)) throw error
       const resolution = await resolveConflict(store, nodeId, before.stored, retries)
@@ -207,12 +225,13 @@ export async function forceAcquireClaimFromStore(
     ttlMinutes: options.ttlMinutes,
     branch: options.branch,
     pr: options.pr,
+    checkpoint: options.checkpoint,
     note: options.note,
     reason: options.reason
   })
 
   try {
-    return await store.update(nodeId, before.stored.sha, next)
+    return await confirmedWrite(store, nodeId, next, before.stored.sha)
   } catch (error) {
     if (!(error instanceof ClaimConflictError)) throw error
     const current = await store.read(nodeId)
@@ -277,11 +296,11 @@ export async function renewClaimInStore(
       before.observedAt,
       options.ttlMinutes,
       options.generation,
-      { branch: options.branch, pr: options.pr, note: options.note }
+      { branch: options.branch, pr: options.pr, note: options.note, checkpoint: options.checkpoint }
     )
 
     try {
-      return await store.update(nodeId, before.stored.sha, next)
+      return await confirmedWrite(store, nodeId, next, before.stored.sha)
     } catch (error) {
       if (!(error instanceof ClaimConflictError)) throw error
       const resolution = await resolveConflict(store, nodeId, before.stored, retries)
@@ -320,7 +339,7 @@ export async function releaseClaimInStore(
     )
 
     try {
-      return await store.update(nodeId, before.stored.sha, next)
+      return await confirmedWrite(store, nodeId, next, before.stored.sha)
     } catch (error) {
       if (!(error instanceof ClaimConflictError)) throw error
       const resolution = await resolveConflict(store, nodeId, before.stored, retries)
