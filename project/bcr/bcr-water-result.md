@@ -25,6 +25,8 @@ The [current house basis](../../docs/reference-house/current-house-basis.md), [i
 
 The [A3 study](studies/water-path-study.svg), [exact data](studies/water-path-study.json) and [generator](studies/water-path-study.ts) retain the area accounting, crossing section and named failure cuts. Run `node --import tsx project/bcr/studies/water-path-study.ts`; `--check` checks retained outputs. Source guards reject a changed shell/court/ridge/overhang or court-door basis. This small study is not a hydraulic solver. RWT may change its candidate; that triggers reappraisal, not automatic adoption here.
 
+**29 October handoff:** RWT-06 is subsequently comparing a separate higher, shallow relief carrier. That moving, unadmitted alternative is outside the pinned low-twin snapshot tested here. The below-grade outlet finding applies to this snapshot; later outlet geometry and common-backwater consequences require their own recheck. The numeric study is deliberately not rewritten against an unpublished target.
+
 ## Catchment accounting before a pipe size
 
 The source roof height is controlled by distance from the nearest outer edge. Its ridge square is 7750 × 7750; the court is 3500 × 3500. At the nominal wall-line boundary:
