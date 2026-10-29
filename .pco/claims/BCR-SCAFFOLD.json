@@ -9,13 +9,13 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T20:50:08.560Z",
-  "heartbeatAt": "2026-10-29T20:56:12.926Z",
-  "expiresAt": "2026-10-29T21:41:12.926Z",
+  "heartbeatAt": "2026-10-29T21:05:51.007Z",
+  "expiresAt": "2026-10-29T21:50:51.007Z",
   "branch": "zerg/worker-4",
   "pr": 1024,
   "checkpoint": {
-    "evidence": "PR #1024, head 340f0d3052b273da3571745bd2d8491f98738fda; focused checks passed",
-    "next": "Require exact-head CI, reconcile serial integration, merge and release",
-    "blocker": "CI running; local browser unavailable"
+    "evidence": "PR #1024 integrated head065f878c2397fcfe4a2b612c4e190ac446762d50 includes main041f88a6; focused checks passed",
+    "next": "Verify exact-head CI, run merge-check, merge and release",
+    "blocker": "Combined-head CI running; commander serial slot assigned"
   }
 }
