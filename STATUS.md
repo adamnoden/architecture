@@ -9,7 +9,9 @@ Durable execution authority lives in `project/control/`. Live claim occupancy li
 <!-- project-control:start -->
 Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.
 
-**Structurally ready:** 6 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 18 · **Cancelled:** 0
+Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
+
+**Structurally ready:** 5 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 19 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -17,7 +19,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `PCO-VIS` | Generated structural and live Mermaid control graphs | PCO | — |
 | `HAD-00` | Architectural brief, hierarchy and invariants | HAD | TRIAD-IFACE-FREEZE |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
@@ -156,6 +157,7 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 ## Reading current state
 
 - Use the **Structurally ready frontier** above to identify work whose hard dependencies are satisfied.
+- Use [`project/control/graph.md`](project/control/graph.md) for the generated structural Mermaid dependency map.
 - Before substantial execution, query `npm run control:claims` and acquire the ACO lease; structural READY does not mean unclaimed.
 - Use owning workstream issues/programmes for the architectural question, scope and exit criteria behind a node.
 - A completed node does not itself raise maturity; maturity remains an explicit evidence-backed judgement.
