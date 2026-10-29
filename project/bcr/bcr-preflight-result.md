@@ -24,6 +24,7 @@ The matrix preserves all 27 original domain IDs and integrates all 35 physical f
 | [RWT-06 durable partial](../rwt/rwt-06-access-court-transition.md) | `a29b0db9e64f05186a799a83fc91649890d120e2` |
 | [IAS wet-section partial](../ias/ias-03-bedroom4-wet-section.md), accepted later through #1051 | `d73a02a3f2ccbec968204a076b2fe2262ed59f3b` |
 | [HAD Bedroom4 partial](../had/had-03-bedroom4-allocation.md), accepted later through #1051 | `999c39ec6bbc6550d3999384a54e4a4a3e3d8c21` |
+| [ROF candidate synthesis](../rof/rof-07-system-synthesis.md), accepted later through #1053 | `66713d65a8330c6fad90dba5084a1ba7f2e71a25` |
 | Matrix before this integration | `7cd8f407c32b3d11234af3ca7b15fed07c8a5095` |
 | `compiler/reference-house/georgian/layout-revision.ts` | `af955c7da2e2469fd24598f98db6fc942a119ed3` |
 | `compiler/reference-house/georgian/layout-family.ts` | `30ef287f3176e0f4cf2b03ef57c4fdfc915494c9` |
@@ -35,6 +36,8 @@ The studies' different starting commits still inspect the same listed current ge
 The accepted house remains revision02. HAD's rear-west sanitary proposal, IAS tray/section trials and RWT crossing alternatives are explicitly unadopted evidence. Their source snapshots can support questions and comparisons, but cannot eliminate a conflict in accepted geometry. The wet result binds the conditional cabinet/route inputs it actually tested; it does not claim a final HAD/IAS product installation. Later accepted partial studies remain partial until their own design authority adopts and reconciles a selection.
 
 **Integration reconciliation:** #1051 subsequently accepted the IAS/HAD partial records at main `0d0e6e9d`; their exact blobs are added above. Both retain incomplete lifecycle and unchanged house geometry. IAS explicitly withdraws the old outlet+101/under-tray clash, retains flange-offset uncertainty and the current NE route, and compares a shorter NW route with a new directly wetted west-window duty. The HAD cabinet remains gross300×750 and its support/lower-room tasks remain unadopted. BWT-02–08 and relevant structure/services/occupation findings therefore remain open; the added evidence narrows the candidate choice without satisfying their discharge conditions. No source-bound physical study needs numerical regeneration for this documentation-only acceptance.
+
+ROF-07 subsequently merged through #1053, with settled projection `f8e0f5a174374b6a7c39e9bbc417392cbd227ac4`. Its three [candidate families](../../docs/research/roof-system-candidates.md), including named Edgemere/underlay and VMZINC PLUS Structural Roof representatives at their stated evidence limits, are comparisons rather than admitted roof systems. The outward-only challenger changes the high court edge and transfers roof water outside; direct court rainfall and actual layer/support/access duties remain. BST-06/07 and BW-01–06 are therefore retained, with the rechecks below triggered if any family is adopted. Original current-ring study arithmetic is not rewritten to imply the challenger is current source.
 
 Primary manufacturer/guidance evidence and jurisdiction/edition limits remain in each owning study. This packet introduces no new product dimensions, regulatory interpretation or external requirement; it compares the already inspected evidence and resolves its interfaces.
 

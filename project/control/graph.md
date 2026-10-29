@@ -48,16 +48,15 @@ flowchart LR
     n_HRS_SYNTHESIS["HRS-SYNTHESIS<br/>Post-BCR final house resolution and synthesis<br/><b>BLOCKED</b>"]
     n_HRS_TECHNICAL["HRS-TECHNICAL<br/>Current-house technical migration and computational applicability<br/><b>BLOCKED</b>"]
   end
-  subgraph g_ROF["ROF"]
-    direction TB
-    n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>READY</b>"]
-    n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
-  end
   subgraph g_RWT["RWT"]
     direction TB
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>READY</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_ROF["ROF"]
+    direction TB
+    n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
     direction TB
@@ -142,7 +141,6 @@ flowchart LR
   n_TRIAD_GATE --> n_HRS_TECHNICAL
   n_CCR_IDENTITY --> n_HRS_TECHNICAL
   n_RWT_06 --> n_RWT_07
-  n_ROF_07 --> n_ROF_RWT_GATE
   n_RWT_07 --> n_ROF_RWT_GATE
   n_HAD_03 --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
@@ -205,8 +203,8 @@ flowchart LR
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_BCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MRA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -239,7 +237,6 @@ flowchart LR
   class n_HRS_SYNTHESIS blocked;
   class n_BCR_PREFLIGHT ready;
   class n_HRS_TECHNICAL blocked;
-  class n_ROF_07 ready;
   class n_RWT_06 ready;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
@@ -401,7 +398,7 @@ flowchart LR
     n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>DONE</b>"]
     n_ROF_05["ROF-05<br/>Roof junction and penetration families<br/><b>DONE</b>"]
     n_ROF_06["ROF-06<br/>Roof access, maintenance, repair and renewal<br/><b>DONE</b>"]
-    n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>READY</b>"]
+    n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>DONE</b>"]
     n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
   subgraph g_RWT["RWT"]
@@ -795,7 +792,7 @@ flowchart LR
   class n_ROF_04 done;
   class n_ROF_05 done;
   class n_ROF_06 done;
-  class n_ROF_07 ready;
+  class n_ROF_07 done;
   class n_RWT_00 done;
   class n_RWT_01 done;
   class n_RWT_02 done;
