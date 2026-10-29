@@ -54,3 +54,7 @@ Across all of these subjects, the controlling question is the same: **what does 
 [Roof Failure and Recovery Evaluation](roof-failure-evaluation.md) establishes a common evidence-bounded comparison of roof water paths, layers, junctions, movement, drying, detection, access and renewal. It supports candidate research without selecting a covering or converting material longevity into whole-roof assurance.
 
 [Roof Topology and Water Paths](roof-topology-families.md) distinguishes hips from valleys, compares courtyard and conventional families, and exposes the height and water-path consequences of simplifying the current roof.
+
+[Roof Covering Families](roof-covering-families.md) compares slate/tile, sheet-metal and flexible waterproofing through seams, movement, substrate, repair and renewal. It exposes the limits of a generic covering choice at the provisional 25° pitch without selecting a system or repealing the no-flat-roof constraint.
+
+[Roof Assemblies: Drying, Support and Renewal](roof-assembly-options.md) compares thermal and moisture boundaries with support, movement and repair. It tests the represented roof reserve and shallow storage space without selecting a build-up or treating a drawn void as access.
