@@ -13,6 +13,10 @@ export const evidenceNodes = defineNodes([
     dependencies: [],
     lifecycle: 'held',
     aliases: ['P01'],
+    agentDispatch: {
+      mode: 'manual',
+      reason: 'Physical research requires deliberate real-world execution rather than generic agent self-service.'
+    },
     closeoutEvidence: []
   },
   {
@@ -22,6 +26,10 @@ export const evidenceNodes = defineNodes([
     dependencies: [],
     lifecycle: 'held',
     aliases: ['P02'],
+    agentDispatch: {
+      mode: 'manual',
+      reason: 'Physical research requires deliberate real-world execution rather than generic agent self-service.'
+    },
     closeoutEvidence: []
   },
   {
@@ -31,6 +39,10 @@ export const evidenceNodes = defineNodes([
     dependencies: [],
     lifecycle: 'planned',
     aliases: ['PHY-03', 'P03'],
+    agentDispatch: {
+      mode: 'manual',
+      reason: 'The gate requires competent structural-engineering judgement; an agent may assist only when explicitly directed.'
+    },
     closeoutEvidence: []
   },
   {
@@ -40,6 +52,10 @@ export const evidenceNodes = defineNodes([
     dependencies: [],
     lifecycle: 'planned',
     aliases: ['P04'],
+    agentDispatch: {
+      mode: 'manual',
+      reason: 'The exit gate requires a physical build/test and cannot be completed by a generic repository agent.'
+    },
     closeoutEvidence: []
   },
   {
@@ -49,6 +65,10 @@ export const evidenceNodes = defineNodes([
     dependencies: [],
     lifecycle: 'planned',
     aliases: ['RH-11'],
+    agentDispatch: {
+      mode: 'manual',
+      reason: 'Competent independent professional review must be deliberately commissioned/received; it is not generic agent work.'
+    },
     closeoutEvidence: []
   },
   {

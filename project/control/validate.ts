@@ -22,6 +22,17 @@ export function validateGraphStructure(
       if (!registeredCodes.has(owner)) failures.push(`${node.id} references unknown workstream: ${owner}`)
     }
 
+    const terminal = node.lifecycle === 'complete' || node.lifecycle === 'cancelled'
+    if (!terminal) {
+      if (!node.agentDispatch) {
+        failures.push(`${node.id} is live without an explicit agent dispatch policy`)
+      } else if (!['self-service', 'manual'].includes(node.agentDispatch.mode)) {
+        failures.push(`${node.id} has invalid agent dispatch mode: ${String(node.agentDispatch.mode)}`)
+      } else if (node.agentDispatch.mode === 'manual' && !node.agentDispatch.reason?.trim()) {
+        failures.push(`${node.id} is manual dispatch without a durable reason`)
+      }
+    }
+
     const dependencySet = new Set(node.dependencies)
     if (dependencySet.size !== node.dependencies.length) failures.push(`${node.id} repeats a dependency`)
     if (dependencySet.has(node.id)) failures.push(`${node.id} depends on itself`)
