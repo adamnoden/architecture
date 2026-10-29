@@ -39,9 +39,7 @@ flowchart LR
   subgraph g_BCR["BCR"]
     direction TB
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
-    n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
-    n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>READY</b>"]
-    n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
+    n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>READY</b>"]
     n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
@@ -133,7 +131,6 @@ flowchart LR
   n_BCR_PREFLIGHT --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
-  n_BCR_PROPORTIONALITY --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
   n_EPR_REFRESH --> n_BCR_CONVERGENCE
   n_PHY_APPLICABILITY --> n_BCR_CONVERGENCE
@@ -142,7 +139,6 @@ flowchart LR
   n_PCO_APPLICABILITY --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
-  n_BCR_WET --> n_BCR_PREFLIGHT
   n_TRIAD_GATE --> n_HRS_TECHNICAL
   n_CCR_IDENTITY --> n_HRS_TECHNICAL
   n_RWT_06 --> n_RWT_07
@@ -241,9 +237,7 @@ flowchart LR
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
-  class n_BCR_WET ready;
-  class n_BCR_PROPORTIONALITY ready;
-  class n_BCR_PREFLIGHT blocked;
+  class n_BCR_PREFLIGHT ready;
   class n_HRS_TECHNICAL blocked;
   class n_ROF_07 ready;
   class n_RWT_06 ready;
@@ -383,12 +377,12 @@ flowchart LR
     n_BCR_SCAFFOLD["BCR-SCAFFOLD<br/>Construction-resolution inventory and matrix scaffolding<br/><b>DONE</b>"]
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
     n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>DONE</b>"]
-    n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
+    n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>DONE</b>"]
     n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>DONE</b>"]
     n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>DONE</b>"]
     n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>DONE</b>"]
-    n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>READY</b>"]
-    n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
+    n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>DONE</b>"]
+    n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>READY</b>"]
     n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
@@ -787,12 +781,12 @@ flowchart LR
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_BASELINE done;
   class n_BCR_STRUCTURE done;
-  class n_BCR_WET ready;
+  class n_BCR_WET done;
   class n_BCR_SERVICES done;
   class n_BCR_WATER done;
   class n_BCR_OCCUPATION done;
-  class n_BCR_PROPORTIONALITY ready;
-  class n_BCR_PREFLIGHT blocked;
+  class n_BCR_PROPORTIONALITY done;
+  class n_BCR_PREFLIGHT ready;
   class n_HRS_TECHNICAL blocked;
   class n_ROF_00 done;
   class n_ROF_01 done;
