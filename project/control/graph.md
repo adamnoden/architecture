@@ -39,7 +39,6 @@ flowchart LR
   subgraph g_BCR["BCR"]
     direction TB
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
-    n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>READY</b>"]
     n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
     n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>READY</b>"]
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>READY</b>"]
@@ -145,7 +144,6 @@ flowchart LR
   n_PCO_APPLICABILITY --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
-  n_BCR_STRUCTURE --> n_BCR_PREFLIGHT
   n_BCR_WET --> n_BCR_PREFLIGHT
   n_BCR_WATER --> n_BCR_PREFLIGHT
   n_TRIAD_GATE --> n_HRS_TECHNICAL
@@ -247,7 +245,6 @@ flowchart LR
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
-  class n_BCR_STRUCTURE ready;
   class n_BCR_WET ready;
   class n_BCR_WATER ready;
   class n_BCR_PROPORTIONALITY ready;
@@ -391,7 +388,7 @@ flowchart LR
     direction TB
     n_BCR_SCAFFOLD["BCR-SCAFFOLD<br/>Construction-resolution inventory and matrix scaffolding<br/><b>DONE</b>"]
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
-    n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>READY</b>"]
+    n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>DONE</b>"]
     n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
     n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>DONE</b>"]
     n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>READY</b>"]
@@ -795,7 +792,7 @@ flowchart LR
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_BASELINE done;
-  class n_BCR_STRUCTURE ready;
+  class n_BCR_STRUCTURE done;
   class n_BCR_WET ready;
   class n_BCR_SERVICES done;
   class n_BCR_WATER ready;
