@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "node": "BCR-WET",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "8f29a734-c7ea-4568-afa8-a55c6369b1f7",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-2"
+  },
+  "claimedAt": "2026-10-29T22:24:36.716Z",
+  "heartbeatAt": "2026-10-29T22:24:36.716Z",
+  "expiresAt": "2026-10-29T23:09:36.716Z"
+}
