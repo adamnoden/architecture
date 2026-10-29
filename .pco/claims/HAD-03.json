@@ -9,14 +9,13 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T21:19:13.061Z",
-  "expiresAt": "2026-10-29T22:04:13.061Z",
+  "heartbeatAt": "2026-10-29T21:41:43.032Z",
+  "expiresAt": "2026-10-29T22:26:43.032Z",
   "branch": "work/zerg-had-03-convergence",
   "note": "Product-sized ensuite fit review; HAD-03 remains incomplete",
   "pr": 1026,
   "checkpoint": {
-    "evidence": "PR #1026; product-sized ensuite rejection and relocation trial",
-    "next": "Validate current head and integrate partial evidence; continue actual door and connected room design",
-    "blocker": "HAD-03 selection remains incomplete"
+    "evidence": "PR #1026; connected route and coupled wet-door trial under review",
+    "next": "Publish checked kinematic model; continue shower, storage and service design"
   }
 }
