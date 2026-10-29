@@ -9,11 +9,11 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T23:21:32.149Z",
-  "heartbeatAt": "2026-10-29T23:21:32.149Z",
-  "expiresAt": "2026-10-30T00:06:32.149Z",
+  "heartbeatAt": "2026-10-29T23:33:31.696Z",
+  "expiresAt": "2026-10-30T00:18:31.696Z",
   "checkpoint": {
-    "evidence": "CCR programme and stair derive/validation/provenance read; prior MRA complete and released",
-    "next": "Reproduce stair counterexamples then repair datum arithmetic, discrete topology and actual input provenance without geometric redesign"
+    "evidence": "Relative-datum and discrete-topology repair; 344 reference-house tests and focused lineage/CH05/DPL checks pass; full health reaches missing-browser publication validation; parent reviews passed.",
+    "next": "Publish source PR; reconcile accepted CCR pair; exact-head full CI and coordinated preflight."
   },
   "branch": "zerg/worker-6-wave6"
 }
