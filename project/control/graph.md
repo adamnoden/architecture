@@ -22,6 +22,7 @@ flowchart LR
   subgraph g_SHARED["Shared integration gates"]
     direction TB
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
+    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -31,6 +32,30 @@ flowchart LR
   subgraph g_HRS["HRS"]
     direction TB
     n_HRS_SYNTHESIS["HRS-SYNTHESIS<br/>Post-BCR final house resolution and synthesis<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_ROF["ROF"]
+    direction TB
+    n_ROF_00["ROF-00<br/>Roof constitution, baseline and inherited constraints<br/><b>READY</b>"]
+    n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>BLOCKED</b>"]
+    n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>BLOCKED</b>"]
+    n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>BLOCKED</b>"]
+    n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>BLOCKED</b>"]
+    n_ROF_05["ROF-05<br/>Roof junction and penetration families<br/><b>BLOCKED</b>"]
+    n_ROF_06["ROF-06<br/>Roof access, maintenance, repair and renewal<br/><b>BLOCKED</b>"]
+    n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>BLOCKED</b>"]
+    n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_RWT["RWT"]
+    direction TB
+    n_RWT_00["RWT-00<br/>Rainwater constitution, baseline and interfaces<br/><b>READY</b>"]
+    n_RWT_01["RWT-01<br/>Rainfall and hydraulic basis<br/><b>BLOCKED</b>"]
+    n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>BLOCKED</b>"]
+    n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>BLOCKED</b>"]
+    n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>BLOCKED</b>"]
+    n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>BLOCKED</b>"]
+    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
+    n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
+    n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
     direction TB
@@ -68,11 +93,42 @@ flowchart LR
   end
   n_IAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
+  n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
+  n_ROF_00 --> n_ROF_01
+  n_ROF_01 --> n_ROF_02
+  n_ROF_01 --> n_ROF_03
+  n_ROF_01 --> n_ROF_04
+  n_ROF_02 --> n_ROF_05
+  n_ROF_03 --> n_ROF_05
+  n_ROF_04 --> n_ROF_05
+  n_ROF_05 --> n_ROF_06
+  n_ROF_05 --> n_ROF_07
+  n_ROF_06 --> n_ROF_07
+  n_RWT_00 --> n_RWT_01
+  n_RWT_01 --> n_RWT_02
+  n_RWT_01 --> n_RWT_03
+  n_RWT_01 --> n_RWT_04
+  n_RWT_02 --> n_RWT_05
+  n_RWT_03 --> n_RWT_05
+  n_RWT_04 --> n_RWT_05
+  n_RWT_03 --> n_RWT_06
+  n_RWT_05 --> n_RWT_06
+  n_RWT_02 --> n_RWT_07
+  n_RWT_03 --> n_RWT_07
+  n_RWT_04 --> n_RWT_07
+  n_RWT_05 --> n_RWT_07
+  n_RWT_06 --> n_RWT_07
+  n_ROF_02 --> n_RWT_07
+  n_ROF_07 --> n_ROF_RWT_GATE
+  n_RWT_07 --> n_ROF_RWT_GATE
+  n_HAD_03 --> n_ROF_RWT_GATE
+  n_ROF_RWT_GATE --> n_ROF_09
+  n_ROF_RWT_GATE --> n_RWT_08
   n_MRA_00 --> n_MRA_01
   n_TRIAD_GATE --> n_MRA_01
   n_MRA_00 --> n_MRA_02
@@ -106,6 +162,25 @@ flowchart LR
   class n_BCR_SCAFFOLD ready;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
+  class n_ROF_00 ready;
+  class n_ROF_01 blocked;
+  class n_ROF_02 blocked;
+  class n_ROF_03 blocked;
+  class n_ROF_04 blocked;
+  class n_ROF_05 blocked;
+  class n_ROF_06 blocked;
+  class n_ROF_07 blocked;
+  class n_RWT_00 ready;
+  class n_RWT_01 blocked;
+  class n_RWT_02 blocked;
+  class n_RWT_03 blocked;
+  class n_RWT_04 blocked;
+  class n_RWT_05 blocked;
+  class n_RWT_06 blocked;
+  class n_RWT_07 blocked;
+  class n_ROF_RWT_GATE blocked;
+  class n_ROF_09 blocked;
+  class n_RWT_08 blocked;
   class n_MRA_00 active;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
@@ -191,6 +266,7 @@ flowchart LR
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>DONE</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
+    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -200,6 +276,30 @@ flowchart LR
   subgraph g_HRS["HRS"]
     direction TB
     n_HRS_SYNTHESIS["HRS-SYNTHESIS<br/>Post-BCR final house resolution and synthesis<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_ROF["ROF"]
+    direction TB
+    n_ROF_00["ROF-00<br/>Roof constitution, baseline and inherited constraints<br/><b>READY</b>"]
+    n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>BLOCKED</b>"]
+    n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>BLOCKED</b>"]
+    n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>BLOCKED</b>"]
+    n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>BLOCKED</b>"]
+    n_ROF_05["ROF-05<br/>Roof junction and penetration families<br/><b>BLOCKED</b>"]
+    n_ROF_06["ROF-06<br/>Roof access, maintenance, repair and renewal<br/><b>BLOCKED</b>"]
+    n_ROF_07["ROF-07<br/>Roof system synthesis and candidate families<br/><b>BLOCKED</b>"]
+    n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_RWT["RWT"]
+    direction TB
+    n_RWT_00["RWT-00<br/>Rainwater constitution, baseline and interfaces<br/><b>READY</b>"]
+    n_RWT_01["RWT-01<br/>Rainfall and hydraulic basis<br/><b>BLOCKED</b>"]
+    n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>BLOCKED</b>"]
+    n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>BLOCKED</b>"]
+    n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>BLOCKED</b>"]
+    n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>BLOCKED</b>"]
+    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
+    n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
+    n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
     direction TB
@@ -306,12 +406,47 @@ flowchart LR
   n_OAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
   n_OAS_DETAIL --> n_TRIAD_GATE
+  n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_BSR_ROOT --> n_BCR_SCAFFOLD
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
+  n_BSR_ROOT --> n_ROF_00
+  n_ROF_00 --> n_ROF_01
+  n_ROF_01 --> n_ROF_02
+  n_ROF_01 --> n_ROF_03
+  n_ROF_01 --> n_ROF_04
+  n_ROF_02 --> n_ROF_05
+  n_ROF_03 --> n_ROF_05
+  n_ROF_04 --> n_ROF_05
+  n_ROF_05 --> n_ROF_06
+  n_ROF_05 --> n_ROF_07
+  n_ROF_06 --> n_ROF_07
+  n_BSR_ROOT --> n_RWT_00
+  n_RWT_00 --> n_RWT_01
+  n_RWT_01 --> n_RWT_02
+  n_RWT_01 --> n_RWT_03
+  n_RWT_01 --> n_RWT_04
+  n_RWT_02 --> n_RWT_05
+  n_RWT_03 --> n_RWT_05
+  n_RWT_04 --> n_RWT_05
+  n_RWT_03 --> n_RWT_06
+  n_RWT_05 --> n_RWT_06
+  n_RWT_02 --> n_RWT_07
+  n_RWT_03 --> n_RWT_07
+  n_RWT_04 --> n_RWT_07
+  n_RWT_05 --> n_RWT_07
+  n_RWT_06 --> n_RWT_07
+  n_ROF_02 --> n_RWT_07
+  n_ROF_07 --> n_ROF_RWT_GATE
+  n_RWT_07 --> n_ROF_RWT_GATE
+  n_HAD_03 --> n_ROF_RWT_GATE
+  n_OAS_03 --> n_ROF_RWT_GATE
+  n_OAS_DETAIL --> n_ROF_RWT_GATE
+  n_ROF_RWT_GATE --> n_ROF_09
+  n_ROF_RWT_GATE --> n_RWT_08
   n_BSR_ROOT --> n_MRA_00
   n_MRA_00 --> n_MRA_01
   n_TRIAD_GATE --> n_MRA_01
@@ -384,6 +519,25 @@ flowchart LR
   class n_BCR_SCAFFOLD ready;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
+  class n_ROF_00 ready;
+  class n_ROF_01 blocked;
+  class n_ROF_02 blocked;
+  class n_ROF_03 blocked;
+  class n_ROF_04 blocked;
+  class n_ROF_05 blocked;
+  class n_ROF_06 blocked;
+  class n_ROF_07 blocked;
+  class n_RWT_00 ready;
+  class n_RWT_01 blocked;
+  class n_RWT_02 blocked;
+  class n_RWT_03 blocked;
+  class n_RWT_04 blocked;
+  class n_RWT_05 blocked;
+  class n_RWT_06 blocked;
+  class n_RWT_07 blocked;
+  class n_ROF_RWT_GATE blocked;
+  class n_ROF_09 blocked;
+  class n_RWT_08 blocked;
   class n_MRA_00 active;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;

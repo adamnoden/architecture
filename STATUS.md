@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 4 · **Active:** 5 · **Blocked:** 11 · **Held:** 2 · **Done:** 37 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 5 · **Blocked:** 28 · **Held:** 2 · **Done:** 37 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -20,6 +20,8 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
+| `ROF-00` | Roof constitution, baseline and inherited constraints | ROF | ROF-01 |
+| `RWT-00` | Rainwater constitution, baseline and interfaces | RWT | RWT-01 |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
@@ -40,9 +42,26 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03 |
+| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03, ROF-RWT-GATE |
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE, MRA-04 |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05 |
+| `ROF-01` | Roof evidence, failure model and evaluation frame | ROF-00 |
+| `ROF-02` | Roof topology and geometry families | ROF-01 |
+| `ROF-03` | Roof covering-system families | ROF-01 |
+| `ROF-04` | Roof assembly beneath the covering | ROF-01 |
+| `ROF-05` | Roof junction and penetration families | ROF-02, ROF-03, ROF-04 |
+| `ROF-06` | Roof access, maintenance, repair and renewal | ROF-05 |
+| `ROF-07` | Roof system synthesis and candidate families | ROF-05, ROF-06 |
+| `RWT-01` | Rainfall and hydraulic basis | RWT-00 |
+| `RWT-02` | Rainwater collection architecture | RWT-01 |
+| `RWT-03` | Rainwater conveyance topology | RWT-01 |
+| `RWT-04` | Rainwater materials, joints and compatibility | RWT-01 |
+| `RWT-05` | Rainwater blockage, failure and exceedance | RWT-02, RWT-03, RWT-04 |
+| `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT-03, RWT-05 |
+| `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-02, RWT-03, RWT-04, RWT-05, RWT-06, ROF-02 |
+| `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | ROF-07, RWT-07, HAD-03 |
+| `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
+| `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
 | `MRA-01` | External water and ground-envelope assault | MRA-00, TRIAD-GATE |
 | `MRA-02` | Internal water and wet-zone assault | MRA-00, TRIAD-GATE |
 | `MRA-03` | Vapour, condensation and drying assault | MRA-00, TRIAD-GATE |
@@ -54,7 +73,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`IAS-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`ROF-00` → `ROF-01` → `ROF-02` → `ROF-05` → `ROF-06` → `ROF-07` → `ROF-RWT-GATE` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
