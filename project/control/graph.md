@@ -36,8 +36,7 @@ flowchart LR
   end
   subgraph g_ROF["ROF"]
     direction TB
-    n_ROF_00["ROF-00<br/>Roof constitution, baseline and inherited constraints<br/><b>READY</b>"]
-    n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>BLOCKED</b>"]
+    n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>READY</b>"]
     n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>BLOCKED</b>"]
     n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>BLOCKED</b>"]
     n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>BLOCKED</b>"]
@@ -100,7 +99,6 @@ flowchart LR
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
-  n_ROF_00 --> n_ROF_01
   n_ROF_01 --> n_ROF_02
   n_ROF_01 --> n_ROF_03
   n_ROF_01 --> n_ROF_04
@@ -177,8 +175,7 @@ flowchart LR
   class n_BCR_SCAFFOLD ready;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
-  class n_ROF_00 ready;
-  class n_ROF_01 blocked;
+  class n_ROF_01 ready;
   class n_ROF_02 blocked;
   class n_ROF_03 blocked;
   class n_ROF_04 blocked;
@@ -295,8 +292,8 @@ flowchart LR
   end
   subgraph g_ROF["ROF"]
     direction TB
-    n_ROF_00["ROF-00<br/>Roof constitution, baseline and inherited constraints<br/><b>READY</b>"]
-    n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>BLOCKED</b>"]
+    n_ROF_00["ROF-00<br/>Roof constitution, baseline and inherited constraints<br/><b>DONE</b>"]
+    n_ROF_01["ROF-01<br/>Roof evidence, failure model and evaluation frame<br/><b>READY</b>"]
     n_ROF_02["ROF-02<br/>Roof topology and geometry families<br/><b>BLOCKED</b>"]
     n_ROF_03["ROF-03<br/>Roof covering-system families<br/><b>BLOCKED</b>"]
     n_ROF_04["ROF-04<br/>Roof assembly beneath the covering<br/><b>BLOCKED</b>"]
@@ -554,8 +551,8 @@ flowchart LR
   class n_BCR_SCAFFOLD ready;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
-  class n_ROF_00 ready;
-  class n_ROF_01 blocked;
+  class n_ROF_00 done;
+  class n_ROF_01 ready;
   class n_ROF_02 blocked;
   class n_ROF_03 blocked;
   class n_ROF_04 blocked;
