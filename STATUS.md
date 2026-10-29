@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 6 · **Active:** 5 · **Blocked:** 27 · **Held:** 2 · **Done:** 38 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 5 · **Blocked:** 26 · **Held:** 2 · **Done:** 39 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,7 +21,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 |---|---|---|---|
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `ROF-01` | Roof evidence, failure model and evaluation frame | ROF | ROF-02, ROF-03, ROF-04 |
-| `RWT-00` | Rainwater constitution, baseline and interfaces | RWT | RWT-01 |
+| `RWT-01` | Rainfall and hydraulic basis | RWT | RWT-02, RWT-03, RWT-04 |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
@@ -51,7 +51,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ROF-05` | Roof junction and penetration families | ROF-02, ROF-03, ROF-04 |
 | `ROF-06` | Roof access, maintenance, repair and renewal | ROF-05 |
 | `ROF-07` | Roof system synthesis and candidate families | ROF-05, ROF-06 |
-| `RWT-01` | Rainfall and hydraulic basis | RWT-00 |
 | `RWT-02` | Rainwater collection architecture | RWT-01 |
 | `RWT-03` | Rainwater conveyance topology | RWT-01 |
 | `RWT-04` | Rainwater materials, joints and compatibility | RWT-01 |
@@ -72,7 +71,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`RWT-00` → `RWT-01` → `RWT-02` → `RWT-05` → `RWT-06` → `RWT-07` → `ROF-RWT-GATE` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`ROF-01` → `ROF-02` → `ROF-05` → `ROF-06` → `ROF-07` → `ROF-RWT-GATE` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
