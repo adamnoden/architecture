@@ -63,9 +63,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['ROF'],
     title: 'Roof access, maintenance, repair and renewal',
     dependencies: ['ROF-05'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rof/rof-06-access-maintenance-renewal.md']
   },
   {
     id: 'ROF-07',
