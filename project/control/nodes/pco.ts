@@ -113,5 +113,13 @@ export const pcoNodes = defineNodes([
       '.github/workflows/project-control-projections.yml',
       'project/control/README.md'
     ]
+  },
+  {
+    id: 'PCO-DISPATCH',
+    owners: ['PCO'],
+    title: 'Self-service agent dispatcher and race-safe claim-next policy',
+    dependencies: ['PCO-VIS'],
+    lifecycle: 'planned',
+    closeoutEvidence: []
   }
 ])
