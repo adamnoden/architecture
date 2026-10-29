@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-APPLICABILITY",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "705b6dc1-414b-4f08-8d4a-bbd462714d72",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-4"
+  },
+  "claimedAt": "2026-10-29T23:30:13.270Z",
+  "heartbeatAt": "2026-10-29T23:30:13.270Z",
+  "expiresAt": "2026-10-30T00:15:13.270Z",
+  "branch": "zerg/worker-4-packet-8"
+}
