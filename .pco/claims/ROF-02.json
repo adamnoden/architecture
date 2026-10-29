@@ -9,13 +9,13 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T21:00:16.125Z",
-  "heartbeatAt": "2026-10-29T21:21:47.130Z",
-  "expiresAt": "2026-10-29T22:06:47.130Z",
-  "branch": "zerg/worker-1-packet-2",
-  "pr": 1027,
+  "heartbeatAt": "2026-10-29T21:26:59.703Z",
+  "expiresAt": "2026-10-29T22:11:59.703Z",
+  "branch": "work/zerg-roof-water-wave2",
+  "pr": 1031,
   "checkpoint": {
-    "evidence": "PR1027 source head90067e8c4ed9f4a6dfbd0b7572072b5ed44f1452 frozen; exact-head CI40955050488 succeeded; commander and RWT peers reviewed geometry and evidence",
-    "next": "After HRS merge, worker2 integrates preserved source ancestry with RWT02/RWT03; renew binding to combined PR, validate combined head, preflight every lease, merge and close out",
-    "blocker": "Serial HRS integration ahead; combined PR not yet created"
+    "evidence": "ROF02 reviewed source90067e8c4ed9f4a6dfbd0b7572072b5ed44f1452 preserved in integration PR1031 headf2675a5dcbaa1e9b4032e84ab8d6e99d5a981b85 with RWT02/RWT03 after accepted HRS; original full CI40955050488 passed",
+    "next": "Worker2 runs final combined exact-head full CI; each owner reviews and preflights own lease; expected-head merge then release and reconcile original PR1027 by ancestry",
+    "blocker": "Combined exact-head CI and all lease preflights pending"
   }
 }
