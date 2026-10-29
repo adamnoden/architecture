@@ -37,7 +37,7 @@ They remain evidence and comparison material, not automatic Reference House sele
 
 ## Roof and rainwater
 
-[Rainfall and the Building-side Water Network](rainfall-and-hydraulic-basis.md) establishes the area, rainfall, capacity and failure questions needed to compare gravity drainage systems before a site is selected. Worked arithmetic exposes consequence without selecting a design storm or claiming hydraulic adequacy.
+[Rainfall and the Building-side Water Network](rainfall-and-hydraulic-basis.md) establishes the area, rainfall, capacity and failure questions needed to compare gravity drainage systems before a site is selected. Worked arithmetic exposes consequence without selecting a design storm or claiming hydraulic adequacy. [Rainwater Conveyance](rainwater-conveyance-options.md) compares separate drops and shared routes, including the physical crossing needed to take courtyard water outside the house.
 
 ## Maintenance and external access
 

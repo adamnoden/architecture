@@ -110,9 +110,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Rainwater conveyance topology',
     dependencies: ['RWT-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-03-conveyance-topology.md']
   },
   {
     id: 'RWT-04',
