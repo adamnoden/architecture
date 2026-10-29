@@ -1,6 +1,6 @@
-# Swarm runbook and report contract
+# Minimum Viable Bureaucracy: swarm runbook and report contract
 
-This is the operational companion to root `AGENTS.md` and the [control protocol](README.md). It introduces no scheduler, alternative lease authority, workstream maturity scale or permission grant.
+This is the operational companion to root `AGENTS.md` and the [Minimum Viable Bureaucracy (MVB) manual](README.md). It introduces no scheduler, alternative lease authority, workstream maturity scale or permission grant.
 
 ## Start once, then keep working
 

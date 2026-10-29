@@ -1,6 +1,6 @@
 # ACO — Agent Claim Orchestration
 
-**Role:** founding implementation programme and retained design rationale. For the current integrated system, start with the [project execution system manual](../control/README.md). Dated examples and rollout steps here do not override the current executable schema, runbook or later owning results.
+**Role:** founding implementation programme and retained design rationale. For the current integrated system, start with the [Minimum Viable Bureaucracy (MVB) manual](../control/README.md). Dated examples and rollout steps here do not override the current executable schema, runbook or later owning results.
 
 **State:** complete / self-hosted claim orchestration  
 **Issue:** [#960](https://github.com/adamnoden/architecture/issues/960)  
