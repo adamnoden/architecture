@@ -92,9 +92,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Rainfall and hydraulic basis',
     dependencies: ['RWT-00'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-01-rainfall-and-hydraulic-basis.md']
   },
   {
     id: 'RWT-02',
