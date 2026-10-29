@@ -9,12 +9,13 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T21:42:23.341Z",
-  "heartbeatAt": "2026-10-29T21:52:11.820Z",
-  "expiresAt": "2026-10-29T22:37:11.820Z",
-  "branch": "zerg/worker-6-wave3",
+  "heartbeatAt": "2026-10-29T21:58:58.423Z",
+  "expiresAt": "2026-10-29T22:43:58.423Z",
+  "branch": "work/zerg-occupation-rainwater-wave3",
   "checkpoint": {
-    "evidence": "Published RWT-05 branch; owning result project/rwt/rwt-05-blockage-failure-exceedance.md; peer review and focused checks passed",
-    "next": "Reconcile paired ROF main, inspect exact-head CI, preflight then merge in commander slot",
-    "blocker": "Awaiting serial integration slot and exact-head CI"
-  }
+    "evidence": "PR #1039 preserves RWT-05 source6d0b7ff7; paired BCR occupation integration a1d4a44a; focused checks and reviews passed",
+    "next": "Inspect exact combined-head full CI; perform RWT-05 fresh preflight alongside BCR owner before expected-head merge",
+    "blocker": "Exact-head full CI and serial integration pending"
+  },
+  "pr": 1039
 }
