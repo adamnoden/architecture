@@ -31,11 +31,16 @@ OAS-00 records 44 nominal window and 19 door occurrences across the two current
 occupied levels. Five doors have external threshold duties. The conventional
 mechanically fixed installation remains the comparison control; added subframes
 and cassettes must earn their burden. No geometry or performance claim changes.
-The shared interface contract is complete. Core candidates now develop the
-external and internal families; final selection follows both shared junctions.
+The shared contract, core candidates and both junctions are complete. OAS-03
+records the bounded architectural family selection and replacement set. Actual
+product-dependent dimensions, construction sections and performance remain
+explicitly unearned. OAS stays open until the shared triad gate.
 
 ## Candidate outputs
 
+- [Bounded opening family selection](../../docs/reference-house/opening-assembly-selection.md).
+- [OAS-03 selection result and scope](oas-03-selection-result.md).
+- [Canonical renewal/topology drawing](studies/selected-opening-renewal.svg).
 - [IAS/OAS candidate junction](ias-oas-junction.md).
 - [OAS/HAD candidate junction](oas-had-junction.md).
 - [External openings and thresholds](oas-01e-external-candidates.md).
