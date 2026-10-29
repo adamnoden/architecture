@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 9 · **Active:** 4 · **Blocked:** 17 · **Held:** 2 · **Done:** 26 · **Cancelled:** 0
+**Structurally ready:** 9 · **Active:** 3 · **Blocked:** 17 · **Held:** 2 · **Done:** 27 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -35,7 +35,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner |
 |---|---|---|
-| `PCO-DISPATCH` | Self-service agent dispatcher and race-safe claim-next policy | PCO |
 | `MRA-00` | Moisture constitution, inventory and threat model | MRA |
 | `PLT-CURRENT-REVIEW` | Current-source plate capability and physical review work | PLT |
 | `PUB-02-PREP` | Content-independent private-object preparation | PUB |
