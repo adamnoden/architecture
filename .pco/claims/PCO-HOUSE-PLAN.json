@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-HOUSE-PLAN",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "0e0e8dbb-d2bb-4a78-a6b3-d82a68a91079",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "Owner-house planning ce632d9a"
+  },
+  "claimedAt": "2026-10-29T16:56:05.107Z",
+  "heartbeatAt": "2026-10-29T16:56:05.107Z",
+  "expiresAt": "2026-10-29T18:56:05.107Z",
+  "branch": "work/house-delivery-plan",
+  "note": "Owner-directed charter, delivery programme and scoped swarm packets; no design implementation."
+}
