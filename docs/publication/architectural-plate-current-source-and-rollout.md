@@ -53,6 +53,15 @@ HRS #945 now owns the final resolved-house handoff to PLT after BCR #944.
 Candidate representation work can continue; final publication drawing freeze
 must follow that design handoff and actual physical acceptance.
 
+## Complete exterior isometric candidates
+
+The [four-view exterior record](architectural-plate-exterior-isometrics.md)
+owns the uncut south-west, south-east, north-east and north-west family.
+All cameras share the current complete roof/enclosure and the nominal elevation
+aperture convention. Standalone SVGs and a web comparison complement the cutaway;
+they do not replace it or expand the frozen register automatically. ROF/RWT/HAD
+source changes must propagate before final HRS admission and physical freeze.
+
 ## Retained previous working basis and source
 
 The owner accepts the present 12 m square floor plan for continued PLT work and
