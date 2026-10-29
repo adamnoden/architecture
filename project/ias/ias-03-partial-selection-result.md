@@ -32,3 +32,8 @@ depth allocation and physical SVG units/scales. The actual rendered sheet is
 inspected for labels, section relationships and clipping. Exact repository/PCO
 CI, PR head and merge identity are recorded in the PR and issue #941.
 Those checks do not prove physical performance or a safe installation.
+
+
+## Bedroom 4 wet-service section checkpoint
+
+The [located wet-service comparison](ias-03-bedroom4-wet-section.md) develops the unadopted HAD Bedroom 4 alternative with an explicit raised-tray/floor budget, perimeter waste route and disassembly sequence. It exposes an unresolved under-tray fitting/access condition and retains exact product-generation and wet-system holds. This narrows IW-01/IS-02; it does not close IAS-03, adopt the alternative, or remove the existing IS-01–06 obligations.
