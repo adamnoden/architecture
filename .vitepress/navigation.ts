@@ -255,7 +255,8 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
     page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis'),
     page('Rainwater collection options', '/docs/research/rainwater-collection-options'),
     page('Rainwater conveyance options', '/docs/research/rainwater-conveyance-options'),
-    page('Roof & rainwater materials', '/docs/research/roof-rainwater-material-compatibility')
+    page('Roof & rainwater materials', '/docs/research/roof-rainwater-material-compatibility'),
+    page('Rainwater failure & exceedance', '/docs/research/rainwater-failure-and-exceedance')
   ]),
   group('Maintenance & precedent', [
     page('External maintenance access', '/docs/research/external-maintenance-access'),

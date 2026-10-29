@@ -58,3 +58,5 @@ Across all of these subjects, the controlling question is the same: **what does 
 [Roof Covering Families](roof-covering-families.md) compares slate/tile, sheet-metal and flexible waterproofing through seams, movement, substrate, repair and renewal. It exposes the limits of a generic covering choice at the provisional 25° pitch without selecting a system or repealing the no-flat-roof constraint.
 
 [Roof Assemblies: Drying, Support and Renewal](roof-assembly-options.md) compares thermal and moisture boundaries with support, movement and repair. It tests the represented roof reserve and shallow storage space without selecting a build-up or treating a drawn void as access.
+
+[Rainwater Failure and Exceedance](rainwater-failure-and-exceedance.md) traces candidate blockage, leakage and compound-event paths. Inner roof spill transfers load to the court; a safe court escape remains unproved and constrains network selection.

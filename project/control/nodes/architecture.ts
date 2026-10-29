@@ -306,7 +306,7 @@ export const architectureNodes = defineNodes([
     owners: ['BCR'],
     title: 'Complete occupation, escape and renewal actions',
     dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bcr-occupation-result.md']
   },
