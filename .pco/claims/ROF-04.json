@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "ROF-04",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "25cf61ff-19cf-4ecd-bd32-70c7f56a3657",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T21:36:59.009Z",
-  "heartbeatAt": "2026-10-29T21:46:39.115Z",
-  "expiresAt": "2026-10-29T22:31:39.115Z",
+  "heartbeatAt": "2026-10-29T21:56:22.120Z",
+  "expiresAt": "2026-10-29T21:56:22.120Z",
   "branch": "work/zerg-roof-wave3",
   "checkpoint": {
     "evidence": "ROF04 source PR1034 f4115aa8 retained as parent in paired integration PR1035 93fa4617; peer arithmetic review and focused checks passed",
     "next": "Combined exact-head CI, both per-lease preflights, expected-head merge and closeout"
   },
-  "pr": 1035
+  "pr": 1035,
+  "releasedAt": "2026-10-29T21:56:22.120Z",
+  "releaseReason": "completed"
 }
