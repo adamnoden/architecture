@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "ROF-05",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "38245830-9a37-4a6c-9139-ac2626fe6071",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T21:57:19.987Z",
-  "heartbeatAt": "2026-10-29T22:12:38.933Z",
-  "expiresAt": "2026-10-29T22:57:38.933Z",
+  "heartbeatAt": "2026-10-29T22:19:47.641Z",
+  "expiresAt": "2026-10-29T22:19:47.641Z",
   "branch": "work/zerg-junction-services",
   "pr": 1042,
   "checkpoint": {
     "evidence": "Reviewed ROF source1041 preserved as direct parent of three-source integration1042 head869bd0f3",
     "next": "Final combined CI, all three holder preflights, expected-head merge and completed ROF release",
     "blocker": "Await common bindings and exact-head CI"
-  }
+  },
+  "releasedAt": "2026-10-29T22:19:47.641Z",
+  "releaseReason": "completed"
 }
