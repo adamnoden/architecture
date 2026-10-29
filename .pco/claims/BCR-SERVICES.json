@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "BCR-SERVICES",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b42a165f-dad7-4638-8602-0237eed292c3",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-29T21:51:46.611Z",
-  "heartbeatAt": "2026-10-29T22:12:44.026Z",
-  "expiresAt": "2026-10-29T22:57:44.026Z",
+  "heartbeatAt": "2026-10-29T22:19:52.045Z",
+  "expiresAt": "2026-10-29T22:19:52.045Z",
   "branch": "work/zerg-junction-services",
   "checkpoint": {
     "evidence": "Integration PR #1042 head869bd0f3cd846390c5ffb6171dc3e45d2f68fb25 preserves reviewed source PR #1040 parent2d578630dc8ce6e832125d0d8f1becbbc3314342",
     "next": "Verify combined exact-head CI, then own fresh preflight and worker4 serial merge",
     "blocker": "Combined CI pending"
   },
-  "pr": 1042
+  "pr": 1042,
+  "releasedAt": "2026-10-29T22:19:52.045Z",
+  "releaseReason": "completed"
 }
