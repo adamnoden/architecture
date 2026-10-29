@@ -12,6 +12,10 @@ The shared vocabulary and interfaces form one cohesive system. Its authorities r
 
 The current operating-contract version and compatibility history live in [MVB versions](releases.md). The [external-platform assessment](../pco/mvb-platform-review.md) records what existing systems could replace and what still requires a deployment trial. Prefer adoption when it removes owned machinery or demonstrates a material execution improvement. Keep one authoritative project plan and one execution-ownership authority per packet; do not maintain competing editable task graphs.
 
+## Operational communication
+
+Use the [MVB communication phrasebook](communications.md) for consequential assignment, correction, handoff and integration exchanges. It keeps receipt, intention, permission and verified result distinct, with selective readback and plain-language fallback. It adds no scheduler, message channel or conversational authority.
+
 ## Start here
 
 | Visitor | Reading path |
@@ -368,6 +372,7 @@ The scaffolding can be simplified or replaced when its maintenance burden exceed
 - `claims.ts` — lease schema, canonical resolution, expiry and operational-state semantics.
 - `claim-store.ts` — race-safe store-level acquire/verify/renew/release/takeover operations.
 - `github-claim-store.ts` — reusable native GitHub API store; the same canonical CAS protocol as the connector route.
+- `publication-preflight.ts` — checked head/base/ownership observations and optional readable reports; no CI or atomic-fence claim.
 - `lease-health.ts` — heartbeat observations, branch/lease publication boundaries and runway checks.
 - `operations.ts` and `../../scripts/control-operations.ts` — packet declarations, briefing consistency, native reconciliation and snapshots.
 - `../../scripts/proof-scope.mjs` — conservative specialised-proof selection; full health remains unconditional.
