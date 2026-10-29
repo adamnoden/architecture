@@ -9,13 +9,13 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T21:41:43.032Z",
-  "expiresAt": "2026-10-29T22:26:43.032Z",
+  "heartbeatAt": "2026-10-29T22:07:43.984Z",
+  "expiresAt": "2026-10-29T22:52:43.984Z",
   "branch": "work/zerg-had-03-convergence",
   "note": "Product-sized ensuite fit review; HAD-03 remains incomplete",
   "pr": 1026,
   "checkpoint": {
-    "evidence": "PR #1026; connected route and coupled wet-door trial under review",
-    "next": "Publish checked kinematic model; continue shower, storage and service design"
+    "evidence": "Frozen PR #1026 b16cf113 full CI passed; Bedroom4 allocation under coordinated review",
+    "next": "Merge partial checkpoint in serial slot; develop unadopted Bedroom4 plan and service section with IAS/BCR"
   }
 }
