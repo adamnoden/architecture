@@ -21,7 +21,6 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_MVB_REVIEW["PCO-MVB-REVIEW<br/>Assess external orchestration systems and version the MVB operating contract<br/><b>READY</b>"]
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>READY</b>"]
   end
   subgraph g_IAS["IAS"]
@@ -269,7 +268,6 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
-  class n_PCO_MVB_REVIEW ready;
   class n_PCO_APPLICABILITY ready;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
@@ -365,7 +363,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_MVB_REVIEW["PCO-MVB-REVIEW<br/>Assess external orchestration systems and version the MVB operating contract<br/><b>READY</b>"]
+    n_PCO_MVB_REVIEW["PCO-MVB-REVIEW<br/>Assess external orchestration systems and version the MVB operating contract<br/><b>DONE</b>"]
     n_PCO_MANUAL["PCO-MANUAL<br/>Document the integrated project execution system for outsiders and maintainers<br/><b>DONE</b>"]
     n_PCO_SNAPSHOT["PCO-SNAPSHOT<br/>Keep claim and briefing snapshots correct during main updates<br/><b>DONE</b>"]
     n_PCO_OPERATIONS["PCO-OPERATIONS<br/>Integrate agent briefing, scoped proof CI and safe post-merge reconciliation<br/><b>DONE</b>"]
@@ -784,7 +782,7 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
-  class n_PCO_MVB_REVIEW ready;
+  class n_PCO_MVB_REVIEW done;
   class n_PCO_MANUAL done;
   class n_PCO_SNAPSHOT done;
   class n_PCO_OPERATIONS done;
