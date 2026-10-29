@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 18 · **Active:** 0 · **Blocked:** 54 · **Held:** 2 · **Done:** 48 · **Cancelled:** 0
+**Structurally ready:** 20 · **Active:** 0 · **Blocked:** 51 · **Held:** 2 · **Done:** 49 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -31,7 +31,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ROF-02` | Roof topology and geometry families | ROF | — |
 | `ROF-03` | Roof covering-system families | ROF | — |
 | `ROF-04` | Roof assembly beneath the covering | ROF | — |
-| `RWT-01` | Rainfall and hydraulic basis | RWT | RWT-02, RWT-03, RWT-04 |
+| `RWT-02` | Rainwater collection architecture | RWT | — |
+| `RWT-03` | Rainwater conveyance topology | RWT | — |
+| `RWT-04` | Rainwater materials, joints and compatibility | RWT | — |
 | `MRA-00` | Moisture constitution, inventory and threat model | MRA | — |
 | `PLT-CURRENT-REVIEW` | Current-house digital plate capability and review handoff | PLT | — |
 | `PUB-02-PREP` | Content-independent private-object preparation | PUB | — |
@@ -68,9 +70,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ROF-05` | Roof junction and penetration families | ROF-02, ROF-03, ROF-04 |
 | `ROF-06` | Roof access, maintenance, repair and renewal | ROF-05 |
 | `ROF-07` | Roof system synthesis and candidate families | ROF-05, ROF-06 |
-| `RWT-02` | Rainwater collection architecture | RWT-01 |
-| `RWT-03` | Rainwater conveyance topology | RWT-01 |
-| `RWT-04` | Rainwater materials, joints and compatibility | RWT-01 |
 | `RWT-05` | Rainwater blockage, failure and exceedance | RWT-02, RWT-03, RWT-04 |
 | `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT-03, RWT-05 |
 | `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-02, RWT-03, RWT-04, RWT-05, RWT-06, ROF-02 |
@@ -109,7 +108,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`RWT-01` → `RWT-02` → `RWT-05` → `RWT-06` → `RWT-07` → `ROF-RWT-GATE` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`ROF-02` → `ROF-05` → `ROF-06` → `ROF-07` → `ROF-RWT-GATE` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->

@@ -68,10 +68,9 @@ flowchart LR
   end
   subgraph g_RWT["RWT"]
     direction TB
-    n_RWT_01["RWT-01<br/>Rainfall and hydraulic basis<br/><b>READY</b>"]
-    n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>BLOCKED</b>"]
-    n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>BLOCKED</b>"]
-    n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>BLOCKED</b>"]
+    n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>READY</b>"]
+    n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>READY</b>"]
+    n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>READY</b>"]
     n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>BLOCKED</b>"]
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
@@ -185,9 +184,6 @@ flowchart LR
   n_ROF_05 --> n_ROF_06
   n_ROF_05 --> n_ROF_07
   n_ROF_06 --> n_ROF_07
-  n_RWT_01 --> n_RWT_02
-  n_RWT_01 --> n_RWT_03
-  n_RWT_01 --> n_RWT_04
   n_RWT_02 --> n_RWT_05
   n_RWT_03 --> n_RWT_05
   n_RWT_04 --> n_RWT_05
@@ -314,10 +310,9 @@ flowchart LR
   class n_ROF_05 blocked;
   class n_ROF_06 blocked;
   class n_ROF_07 blocked;
-  class n_RWT_01 ready;
-  class n_RWT_02 blocked;
-  class n_RWT_03 blocked;
-  class n_RWT_04 blocked;
+  class n_RWT_02 ready;
+  class n_RWT_03 ready;
+  class n_RWT_04 ready;
   class n_RWT_05 blocked;
   class n_RWT_06 blocked;
   class n_RWT_07 blocked;
@@ -484,10 +479,10 @@ flowchart LR
   subgraph g_RWT["RWT"]
     direction TB
     n_RWT_00["RWT-00<br/>Rainwater constitution, baseline and interfaces<br/><b>DONE</b>"]
-    n_RWT_01["RWT-01<br/>Rainfall and hydraulic basis<br/><b>READY</b>"]
-    n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>BLOCKED</b>"]
-    n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>BLOCKED</b>"]
-    n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>BLOCKED</b>"]
+    n_RWT_01["RWT-01<br/>Rainfall and hydraulic basis<br/><b>DONE</b>"]
+    n_RWT_02["RWT-02<br/>Rainwater collection architecture<br/><b>READY</b>"]
+    n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>READY</b>"]
+    n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>READY</b>"]
     n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>BLOCKED</b>"]
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
@@ -870,10 +865,10 @@ flowchart LR
   class n_ROF_06 blocked;
   class n_ROF_07 blocked;
   class n_RWT_00 done;
-  class n_RWT_01 ready;
-  class n_RWT_02 blocked;
-  class n_RWT_03 blocked;
-  class n_RWT_04 blocked;
+  class n_RWT_01 done;
+  class n_RWT_02 ready;
+  class n_RWT_03 ready;
+  class n_RWT_04 ready;
   class n_RWT_05 blocked;
   class n_RWT_06 blocked;
   class n_RWT_07 blocked;
