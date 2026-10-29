@@ -134,10 +134,10 @@ export const architectureNodes = defineNodes([
     owners: ['IAS', 'OAS'],
     title: 'Interior-system to opening-assembly junction reconciliation',
     dependencies: ['IAS-01V', 'IAS-01H', 'OAS-01E', 'OAS-01I'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     aliases: ['IAS-02O', 'OAS-02I'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/oas/ias-oas-junction.md']
   },
   {
     id: 'IAS-HAD-JUNCTION',
@@ -154,10 +154,10 @@ export const architectureNodes = defineNodes([
     owners: ['OAS', 'HAD'],
     title: 'Opening-assembly to facade/interior-expression reconciliation',
     dependencies: ['OAS-01E', 'OAS-01I', 'HAD-01E', 'HAD-01P', 'HAD-01S'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     aliases: ['OAS-02H', 'HAD-02O'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/oas/oas-had-junction.md']
   },
   {
     id: 'HAD-02M',
