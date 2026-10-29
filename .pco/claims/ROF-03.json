@@ -9,7 +9,12 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T21:36:32.491Z",
-  "heartbeatAt": "2026-10-29T21:36:32.491Z",
-  "expiresAt": "2026-10-29T22:21:32.491Z",
-  "branch": "zerg/worker-4-packet-3"
+  "heartbeatAt": "2026-10-29T21:43:09.330Z",
+  "expiresAt": "2026-10-29T22:28:09.330Z",
+  "branch": "zerg/worker-4-packet-3",
+  "pr": 1033,
+  "checkpoint": {
+    "evidence": "PR1033 source6a89c876; three covering studies, local checks and website build passed",
+    "next": "Complete peer review and exact-head CI; coordinate paired integration with ROF04"
+  }
 }
