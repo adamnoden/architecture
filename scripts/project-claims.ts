@@ -627,6 +627,7 @@ async function main(): Promise<void> {
         const branch = requiredFlag(args.flags, 'branch'), head = requiredFlag(args.flags, 'head')
         requiredFlag(args.flags, 'generation')
         if (!/^[a-f0-9]{40}$/.test(head)) throw new Error('--head must be a full commit SHA')
+        if (git(['status', '--porcelain', '--untracked-files=no'])) throw new Error('Publication requires a clean tracked working tree matching the validated head')
         git(['check-ref-format', '--branch', branch])
         git(['fetch', 'origin', 'main', branch, '--quiet'])
         if (git(['rev-parse', `origin/${branch}`]) !== head || git(['rev-parse', 'HEAD']) !== head) throw new Error('Validated local/remote head mismatch')
