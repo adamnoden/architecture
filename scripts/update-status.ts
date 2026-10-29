@@ -10,5 +10,6 @@ const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 writeFileSync(join(repoRoot, 'STATUS.md'), `${renderStatusDocument(repoRoot)}\n`)
 writeFileSync(join(repoRoot, 'project/workstream-codes.md'), `${renderWorkstreamCodeRegister()}\n`)
 writeFileSync(join(repoRoot, 'project/control/graph.md'), `${renderControlGraphDocument(controlNodes)}\n`)
+writeFileSync(join(repoRoot, 'docs/project/dependency-graph.md'), `${renderControlGraphDocument(controlNodes)}\n`)
 
-console.log('Updated STATUS.md, workstream codes and project/control/graph.md from canonical typed sources.')
+console.log('Updated STATUS.md, workstream codes and structural control-graph projections from canonical typed sources.')
