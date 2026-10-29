@@ -2,6 +2,15 @@ import { defineNodes } from '../types.js'
 
 export const pcoNodes = defineNodes([
   {
+    id: 'PCO-REFURB-PLAN',
+    owners: ['PCO'],
+    title: 'Record owner-directed refurbishment scope and swarmable handoffs',
+    dependencies: ['PCO-DISPATCH'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed coordination packet; bootstrap before acquiring its ACO lease.' },
+    closeoutEvidence: ['project/pco/pco-refurbishment-plan-result.md']
+  },
+  {
     id: 'PCO-00',
     owners: ['PCO'],
     title: 'Control-plane inventory and authority map',
