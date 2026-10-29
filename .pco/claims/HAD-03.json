@@ -9,6 +9,8 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T20:51:14.686Z",
-  "expiresAt": "2026-10-29T21:36:14.686Z"
+  "heartbeatAt": "2026-10-29T20:59:03.352Z",
+  "expiresAt": "2026-10-29T21:44:03.352Z",
+  "branch": "work/zerg-had-03-convergence",
+  "note": "Product-sized ensuite fit review; HAD-03 remains incomplete"
 }
