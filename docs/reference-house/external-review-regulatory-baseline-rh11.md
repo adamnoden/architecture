@@ -1,5 +1,7 @@
 # Reference House — RH-11 Regulatory Baseline
 
+**Applicability / issue hold:** retained RH-11 predecessor review preparation (RH-02–RH-10 / HFI-08B), not issue-ready for RH-LAYOUT-REVISION-02. Its 12 × 10.8 m / +3300 mm / three-flight / low-slope assumptions, where used below, are historical. The [current questions and changed facts](external-review-brief.md) govern the present house. EPR refresh must reconcile this discipline pack after current feasibility work before issue; no competent review is claimed.
+
 **Status:** date-stamped review aid; not a legal opinion or substitute for the reviewer confirming applicability  
 **Date checked:** 2026-10-12  
 **Applies to:** Reference House external review in England

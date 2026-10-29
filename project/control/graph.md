@@ -22,7 +22,7 @@ flowchart LR
   subgraph g_PCO["PCO"]
     direction TB
     n_PCO_MVB_REVIEW["PCO-MVB-REVIEW<br/>Assess external orchestration systems and version the MVB operating contract<br/><b>READY</b>"]
-    n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>BLOCKED</b>"]
+    n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>READY</b>"]
   end
   subgraph g_IAS["IAS"]
     direction TB
@@ -40,12 +40,12 @@ flowchart LR
   subgraph g_BCR["BCR"]
     direction TB
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
-    n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>BLOCKED</b>"]
-    n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>BLOCKED</b>"]
-    n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>BLOCKED</b>"]
-    n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>BLOCKED</b>"]
-    n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>BLOCKED</b>"]
-    n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>BLOCKED</b>"]
+    n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>READY</b>"]
+    n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
+    n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>READY</b>"]
+    n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>READY</b>"]
+    n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>READY</b>"]
+    n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>READY</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
     n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
@@ -53,7 +53,6 @@ flowchart LR
   subgraph g_HRS["HRS"]
     direction TB
     n_HRS_SYNTHESIS["HRS-SYNTHESIS<br/>Post-BCR final house resolution and synthesis<br/><b>BLOCKED</b>"]
-    n_HRS_BASELINE["HRS-BASELINE<br/>Accepted 12 m house identity and historical-evidence applicability<br/><b>READY</b>"]
     n_HRS_TECHNICAL["HRS-TECHNICAL<br/>Current-house technical migration and computational applicability<br/><b>BLOCKED</b>"]
   end
   subgraph g_ROF["ROF"]
@@ -127,7 +126,7 @@ flowchart LR
   end
   subgraph g_DPL["DPL"]
     direction TB
-    n_DPL_SITE_BRIEF["DPL-SITE-BRIEF<br/>Derive owner-house plot criteria and evidence requirements<br/><b>BLOCKED</b>"]
+    n_DPL_SITE_BRIEF["DPL-SITE-BRIEF<br/>Derive owner-house plot criteria and evidence requirements<br/><b>READY</b>"]
     n_DPL_COMMISSION["DPL-COMMISSION<br/>Receive owner-nominated real plot and authorised assessment scope<br/><b>BLOCKED</b>"]
     n_DPL_SITE_ASSESSMENT["DPL-SITE-ASSESSMENT<br/>Assess actual site applicability and explicit adaptation choices<br/><b>BLOCKED</b>"]
   end
@@ -142,7 +141,6 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
-  n_HRS_BASELINE --> n_PCO_APPLICABILITY
   n_IAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
@@ -158,12 +156,6 @@ flowchart LR
   n_PCO_APPLICABILITY --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
-  n_HRS_BASELINE --> n_BCR_STRUCTURE
-  n_HRS_BASELINE --> n_BCR_WET
-  n_HRS_BASELINE --> n_BCR_SERVICES
-  n_HRS_BASELINE --> n_BCR_WATER
-  n_HRS_BASELINE --> n_BCR_OCCUPATION
-  n_HRS_BASELINE --> n_BCR_PROPORTIONALITY
   n_BCR_STRUCTURE --> n_BCR_PREFLIGHT
   n_BCR_WET --> n_BCR_PREFLIGHT
   n_BCR_SERVICES --> n_BCR_PREFLIGHT
@@ -214,7 +206,6 @@ flowchart LR
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_EDA_ARGUMENT --> n_EDA_NARRATIVE
   n_EDA_ADAPTER --> n_EDA_NARRATIVE
-  n_HRS_BASELINE --> n_BCR_BAY_BRIEF
   n_BCR_PREFLIGHT --> n_BCR_BAY_BRIEF
   n_BCR_BAY_BRIEF --> n_BCR_BAY_DESIGN
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
@@ -233,7 +224,6 @@ flowchart LR
   n_ADE_EVIDENCE --> n_DEL_BAY_PACK
   n_DEL_ISSUE_PROFILES --> n_DEL_BAY_PACK
   n_DEL_BAY_PACK --> n_EPR_BAY_REVIEW
-  n_HRS_BASELINE --> n_DPL_SITE_BRIEF
   n_DPL_SITE_BRIEF --> n_DPL_COMMISSION
   n_DPL_COMMISSION --> n_DPL_SITE_ASSESSMENT
   n_DPL_SITE_ASSESSMENT --> n_DEL_COMMISSION_PLAN
@@ -241,9 +231,7 @@ flowchart LR
   n_PHY_APPLICABILITY --> n_PHY_03_ENGINEERING
   n_PHY_APPLICABILITY --> n_PHY_04
   n_EPR_REFRESH --> n_EPR_RH11
-  n_HRS_BASELINE --> n_EPR_REFRESH
   n_BCR_PREFLIGHT --> n_EPR_REFRESH
-  n_HRS_BASELINE --> n_PHY_APPLICABILITY
   n_BCR_PREFLIGHT --> n_PHY_APPLICABILITY
   n_BCR_CONVERGENCE --> n_DEL_CURRENT
 
@@ -282,19 +270,18 @@ flowchart LR
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
   class n_PCO_MVB_REVIEW ready;
-  class n_PCO_APPLICABILITY blocked;
+  class n_PCO_APPLICABILITY ready;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
-  class n_HRS_BASELINE ready;
-  class n_BCR_STRUCTURE blocked;
-  class n_BCR_WET blocked;
-  class n_BCR_SERVICES blocked;
-  class n_BCR_WATER blocked;
-  class n_BCR_OCCUPATION blocked;
-  class n_BCR_PROPORTIONALITY blocked;
+  class n_BCR_STRUCTURE ready;
+  class n_BCR_WET ready;
+  class n_BCR_SERVICES ready;
+  class n_BCR_WATER ready;
+  class n_BCR_OCCUPATION ready;
+  class n_BCR_PROPORTIONALITY ready;
   class n_BCR_PREFLIGHT blocked;
   class n_HRS_TECHNICAL blocked;
   class n_ROF_02 ready;
@@ -338,7 +325,7 @@ flowchart LR
   class n_ADE_EVIDENCE blocked;
   class n_DEL_BAY_PACK blocked;
   class n_EPR_BAY_REVIEW blocked;
-  class n_DPL_SITE_BRIEF blocked;
+  class n_DPL_SITE_BRIEF ready;
   class n_DPL_COMMISSION blocked;
   class n_DPL_SITE_ASSESSMENT blocked;
   class n_DEL_COMMISSION_PLAN blocked;
@@ -396,7 +383,7 @@ flowchart LR
     n_PCO_08["PCO-08<br/>Adversarial closeout<br/><b>DONE</b>"]
     n_PCO_VIS["PCO-VIS<br/>Generated structural and live Mermaid control graphs<br/><b>DONE</b>"]
     n_PCO_DISPATCH["PCO-DISPATCH<br/>Self-service agent dispatcher and race-safe claim-next policy<br/><b>DONE</b>"]
-    n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>BLOCKED</b>"]
+    n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>READY</b>"]
     n_PCO_SWARM["PCO-SWARM<br/>Swarm continuation, startup transport and evidence-based run reporting<br/><b>DONE</b>"]
   end
   subgraph g_BSR["BSR"]
@@ -442,12 +429,12 @@ flowchart LR
     direction TB
     n_BCR_SCAFFOLD["BCR-SCAFFOLD<br/>Construction-resolution inventory and matrix scaffolding<br/><b>DONE</b>"]
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
-    n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>BLOCKED</b>"]
-    n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>BLOCKED</b>"]
-    n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>BLOCKED</b>"]
-    n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>BLOCKED</b>"]
-    n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>BLOCKED</b>"]
-    n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>BLOCKED</b>"]
+    n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>READY</b>"]
+    n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
+    n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>READY</b>"]
+    n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>READY</b>"]
+    n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>READY</b>"]
+    n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>READY</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
     n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
@@ -455,7 +442,7 @@ flowchart LR
   subgraph g_HRS["HRS"]
     direction TB
     n_HRS_SYNTHESIS["HRS-SYNTHESIS<br/>Post-BCR final house resolution and synthesis<br/><b>BLOCKED</b>"]
-    n_HRS_BASELINE["HRS-BASELINE<br/>Accepted 12 m house identity and historical-evidence applicability<br/><b>READY</b>"]
+    n_HRS_BASELINE["HRS-BASELINE<br/>Accepted 12 m house identity and historical-evidence applicability<br/><b>DONE</b>"]
     n_HRS_TECHNICAL["HRS-TECHNICAL<br/>Current-house technical migration and computational applicability<br/><b>BLOCKED</b>"]
   end
   subgraph g_ROF["ROF"]
@@ -535,7 +522,7 @@ flowchart LR
   end
   subgraph g_DPL["DPL"]
     direction TB
-    n_DPL_SITE_BRIEF["DPL-SITE-BRIEF<br/>Derive owner-house plot criteria and evidence requirements<br/><b>BLOCKED</b>"]
+    n_DPL_SITE_BRIEF["DPL-SITE-BRIEF<br/>Derive owner-house plot criteria and evidence requirements<br/><b>READY</b>"]
     n_DPL_COMMISSION["DPL-COMMISSION<br/>Receive owner-nominated real plot and authorised assessment scope<br/><b>BLOCKED</b>"]
     n_DPL_SITE_ASSESSMENT["DPL-SITE-ASSESSMENT<br/>Assess actual site applicability and explicit adaptation choices<br/><b>BLOCKED</b>"]
   end
@@ -815,7 +802,7 @@ flowchart LR
   class n_PCO_08 done;
   class n_PCO_VIS done;
   class n_PCO_DISPATCH done;
-  class n_PCO_APPLICABILITY blocked;
+  class n_PCO_APPLICABILITY ready;
   class n_PCO_SWARM done;
   class n_BSR_ROOT done;
   class n_IAS_00 done;
@@ -843,13 +830,13 @@ flowchart LR
   class n_BCR_SCAFFOLD done;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
-  class n_HRS_BASELINE ready;
-  class n_BCR_STRUCTURE blocked;
-  class n_BCR_WET blocked;
-  class n_BCR_SERVICES blocked;
-  class n_BCR_WATER blocked;
-  class n_BCR_OCCUPATION blocked;
-  class n_BCR_PROPORTIONALITY blocked;
+  class n_HRS_BASELINE done;
+  class n_BCR_STRUCTURE ready;
+  class n_BCR_WET ready;
+  class n_BCR_SERVICES ready;
+  class n_BCR_WATER ready;
+  class n_BCR_OCCUPATION ready;
+  class n_BCR_PROPORTIONALITY ready;
   class n_BCR_PREFLIGHT blocked;
   class n_HRS_TECHNICAL blocked;
   class n_ROF_00 done;
@@ -898,7 +885,7 @@ flowchart LR
   class n_ADE_EVIDENCE blocked;
   class n_DEL_BAY_PACK blocked;
   class n_EPR_BAY_REVIEW blocked;
-  class n_DPL_SITE_BRIEF blocked;
+  class n_DPL_SITE_BRIEF ready;
   class n_DPL_COMMISSION blocked;
   class n_DPL_SITE_ASSESSMENT blocked;
   class n_DEL_COMMISSION_PLAN blocked;

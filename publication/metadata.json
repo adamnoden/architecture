@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "workingEdition": {
     "file": "publication/dist/ovids-house.pdf",
-    "pages": 280,
-    "duplexLeaves": 140,
+    "pages": 281,
+    "duplexLeaves": 141,
     "pageSize": {
       "format": "A4",
       "widthMm": 210,

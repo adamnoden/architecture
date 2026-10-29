@@ -1,8 +1,10 @@
 # Reference House — RH-11 Human Factors & Inclusive-Design Review Brief
 
-**Status:** ready for competent human-factors / inclusive-design review  
+**Applicability / issue hold:** retained RH-11 predecessor review preparation (RH-02–RH-10 / HFI-08B), not issue-ready for RH-LAYOUT-REVISION-02. Its 12 × 10.8 m / +3300 mm / three-flight / low-slope assumptions, where used below, are historical. The [current questions and changed facts](external-review-brief.md) govern the present house. EPR refresh must reconcile this discipline pack after current feasibility work before issue; no competent review is claimed.
+
+**Historical status:** prepared for competent human-factors / inclusive-design review  
 **Parent pack:** [RH-11 External Review Brief](external-review-brief.md)  
-**Current project maturity:** M3 coordinated virtual design; **no accessibility, inclusive-design or compliance certification claim**
+**Historical assessed maturity:** M3 coordinated virtual design; **no accessibility, inclusive-design or compliance certification claim**
 
 ## Review question
 
