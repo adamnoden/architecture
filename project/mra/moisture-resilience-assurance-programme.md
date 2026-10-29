@@ -2,13 +2,17 @@
 
 **Issue:** [#959](https://github.com/adamnoden/architecture/issues/959)  
 **State:** MRA-00 active; constitution, inventory and threat model in progress  
-**Date:** 2026-10-28
+**Date:** 2026-10-29
 
 ## Purpose
 
 Treat moisture as a first-class whole-house failure domain and prove that the Reference House is exceptionally difficult to damage through rain, plumbing water, drainage failure, ground moisture, condensation or trapped construction moisture.
 
 The project already has strong local water patterns. MRA does not replace them. It asks the harder systems question: **do they compose into a house in which ordinary defects and ageing cannot quietly become prolonged concealed wetting of permanent fabric?**
+
+ROF and RWT now own constructive roof/rainwater system design. MRA deliberately remains **assurance**, not a competing design stream:
+
+> **ROF/RWT construct the preferred system; MRA tries to break it.**
 
 ## Heightened risk posture
 
@@ -49,6 +53,8 @@ MRA covers four moisture families.
 
 Roof coverings and junctions; eaves; rainwater collection, overflow and blockage; courtyard drainage; wind-driven facade rain; cavities and wall bases; windows, external doors and thresholds; penetrations and utility entries; splashback; surface-water geometry; capillary/ground moisture; DPC/DPM and below-ground/undercroft interfaces.
 
+ROF/RWT own the preferred roof/water architecture. MRA owns the adversarial question of what happens when that selected architecture degrades, blocks, leaks or is maintained imperfectly.
+
 ### 2. Internal bulk water
 
 Incoming water; hot/cold distribution; manifolds, valves and joints; water-bearing heating systems where selected; sanitary wastes, traps and cisterns; appliances; kitchens, utilities and bathrooms; relief/condensate routes; foul blockage/backflow consequences; local containment, visible leakage and isolation.
@@ -57,11 +63,13 @@ Incoming water; hot/cold distribution; manifolds, valves and joints; water-beari
 
 Surface condensation; interstitial moisture; air/vapour-control continuity; thermal bridges; wet-room source capture; purge paths; service/panel cavities that could trap water; and realistic drying after bounded wetting.
 
+ROF may select roof assembly topology and assumptions. MRA tests the resulting condensation/drying proposition; EPR owns competent building-physics judgement where internal reasoning cannot establish adequacy.
+
 ### 4. Construction and handover moisture
 
 Rain exposure during construction; wet trades; premature closure; trapped moisture in floors/walls/panels; and proportionate pre-handover leak, drainage, containment and drying verification.
 
-Site-specific flood, groundwater, drainage-authority and planning facts remain DPL-owned.
+Site-specific flood, groundwater, drainage-authority and planning facts remain DPL-owned. RWT ends at its explicit `SITE-WATER-HANDOFF`; MRA must not infer the downstream real-site answer.
 
 ## Existing project material to compose
 
@@ -77,6 +85,9 @@ MRA begins from, rather than duplicating, existing provisions including:
 - Roof Maintenance Route;
 - bathroom/kitchen source-capture patterns;
 - Fail-Safe Water Distribution strategy;
+- [ROF roof systems programme](../rof/roof-systems-programme.md);
+- [RWT rainwater systems programme](../rwt/rainwater-systems-programme.md);
+- [roof/water interface contract](../roof-water-interface-contract.md);
 - relevant Reference House, IAS, OAS, HAD, BCR, PHY, EPR, DEL and DPL obligations.
 
 If existing material already catches a failure mode, MRA should reference it rather than create another rule.
@@ -100,13 +111,15 @@ The key question is always: **what happens when the thing intended to keep water
 - define credible single failures and bounded compound failures;
 - establish the whole-house assurance matrix;
 - identify any required doctrinal clarification versus Reference House-specific assurance rule;
-- publish the assurance questions IAS/OAS/HAD must be able to answer without redesigning their in-flight work.
+- publish assurance questions IAS/OAS/HAD/ROF/RWT must be able to answer without redesigning those streams inside MRA.
+
+MRA-00 may proceed in parallel with ROF/RWT and should feed questions into them. It is not a hard prerequisite for their research packets.
 
 ### MRA-01 — external water and ground-envelope assault
 
-After `TRIAD-GATE`, attack the integrated external water path:
+After `TRIAD-GATE`, which now includes the prior `ROF-RWT-GATE`, attack the integrated external water path:
 
-`sky / ground → roof → collection → overflow → facade → openings → penetrations → wall base → site discharge`.
+`sky / ground → selected roof → selected collection/overflow → facade → openings → penetrations → wall base → RWT SITE-WATER-HANDOFF / real-site boundary`.
 
 Test rain, wind-driven rain, blockage, ageing seals, displaced local components, courtyard concentration, surface-water mistakes and maintainability. Require explicit failure and drying paths at each consequential junction.
 
@@ -120,7 +133,7 @@ Map every credible leak source to its first wetting consequence, visibility, iso
 
 ### MRA-03 — vapour, condensation and drying assault
 
-After `TRIAD-GATE`, in parallel with MRA-01/02, test cold surfaces, thermal bridges, interstitial moisture, air/vapour continuity, source capture, wet-room humidity, moisture traps and post-wetting drying.
+After `TRIAD-GATE`, in parallel with MRA-01/02, test cold surfaces, thermal bridges, interstitial moisture, air/vapour continuity, source capture, wet-room humidity, moisture traps and post-wetting drying, including the selected ROF roof build-up.
 
 Unresolved building-physics claims route to competent evidence rather than being inferred internally.
 
@@ -128,8 +141,9 @@ Unresolved building-physics claims route to competent evidence rather than being
 
 Compose MRA-01/02/03 into one house-level failure model and red-team at minimum:
 
-- local roof-covering/flashing defect;
-- blocked primary rainwater outlet during heavy rain;
+- local roof-covering/flashing/seam defect appropriate to the selected ROF system;
+- blocked primary RWT collection/outlet during heavy rain;
+- failed rainwater joint/downpipe where consequential;
 - failed window/door perimeter weather seal;
 - failed service-entry seal or tracking path;
 - concealed supply leak;
@@ -149,7 +163,7 @@ After `BCR-CONVERGENCE`:
 
 - verify every MRA obligation has a disposition and evidence state;
 - verify technical fixes did not create new traps, inaccessible inspection points or fragile dependencies;
-- verify any upstream rewinds reached the selected house;
+- verify any upstream ROF/RWT/OAS/HAD rewinds reached the selected house;
 - state remaining real-site, professional, product or commissioning limitations explicitly;
 - issue the final Reference House moisture-assurance record before HRS synthesis.
 
@@ -158,31 +172,35 @@ After `BCR-CONVERGENCE`:
 ```text
 BSR-ROOT ───────────────► MRA-00
                               │
-                              └──── assurance questions inform IAS/OAS/HAD
+                              └──── assurance questions inform IAS/OAS/HAD/ROF/RWT
 
-IAS / OAS / HAD ─► TRIAD-GATE
-                        │
-             ┌──────────┼──────────┐
-             ▼          ▼          ▼
-          MRA-01     MRA-02     MRA-03
-             └──────────┼──────────┘
-                        ▼
-                     MRA-04
-                        │
-                        ▼
-                BCR-CONVERGENCE
-                        │
-                        ▼
-                     MRA-05
-                        │
-                        ▼
-                  HRS-SYNTHESIS
+ROF / RWT / HAD ─► ROF-RWT-GATE
+                         │
+IAS / OAS / HAD ─────────┴──► TRIAD-GATE
+                                  │
+                       ┌──────────┼──────────┐
+                       ▼          ▼          ▼
+                    MRA-01     MRA-02     MRA-03
+                       └──────────┼──────────┘
+                                  ▼
+                               MRA-04
+                                  │
+                                  ▼
+                          BCR-CONVERGENCE
+                                  │
+                                  ▼
+                               MRA-05
+                                  │
+                                  ▼
+                            HRS-SYNTHESIS
 ```
 
 `BCR-SCAFFOLD` remains independently runnable. Substantive BCR convergence must consume the MRA-04 register rather than treating moisture as a generic matrix row.
 
 ## Authority boundaries
 
+- **ROF** owns roof-system design; MRA tests roof failure, wetting and drying consequences.
+- **RWT** owns building-side rainwater collection/conveyance and exceedance routes; MRA tests blockage/degradation consequences.
 - **IAS** owns interior assembly choices; MRA tests moisture failure and drying consequences.
 - **OAS** owns opening/threshold assemblies; MRA tests water-path robustness and replacement-state continuity.
 - **HAD** owns form and expression; MRA may require rewind where form creates avoidable water concentration or unmaintainable risk.
@@ -190,12 +208,12 @@ IAS / OAS / HAD ─► TRIAD-GATE
 - **PHY** owns physical tests when selected propositions require them.
 - **EPR** owns competent envelope/building-physics/MEP review where internal reasoning cannot establish adequacy.
 - **DEL** owns workmanship, commissioning, inspection and acceptance obligations.
-- **DPL** owns real-site flood, ground and deployment facts.
+- **DPL** owns real-site flood, ground and deployment facts beyond the defined building-side handoff.
 - **PLT** represents resolved water/failure architecture; it does not invent it.
 
 ## Non-goals
 
-MRA is not a literal leak-proof guarantee, a second pattern language, a reason to add drains/membranes/sensors everywhere, a substitute for competent technical evidence, or a licence for proprietary smart-home dependence.
+MRA is not a literal leak-proof guarantee, a second pattern language, a roof/rainwater design stream, a reason to add drains/membranes/sensors everywhere, a substitute for competent technical evidence, or a licence for proprietary smart-home dependence.
 
 Redundancy can reduce resilience when it creates stagnant water, hidden interfaces or maintenance burden. Simplicity remains a safety mechanism.
 
@@ -208,7 +226,7 @@ Close MRA only when:
 - credible single failures and selected compound cases have explicit consequences;
 - no high-consequence concealed route relies only on perfect workmanship, one ageing seal, one membrane, one sensor or one inaccessible component where a robust alternative is practical;
 - abnormal water preferentially becomes visible, containable, isolatable and dryable before permanent fabric is materially damaged;
-- roof, opening, penetration, ground, wet-room and service-water answers are coordinated as one house;
+- ROF roof, RWT collection/conveyance, opening, penetration, ground, wet-room and service-water answers are coordinated as one house;
 - unresolved claims have explicit BCR/EPR/PHY/DEL/DPL ownership;
 - post-BCR review confirms obligations are resolved, bounded or explicitly deferred without creating a new moisture debt;
 - HRS can synthesize the final house without inheriting an undisclosed moisture vulnerability.
