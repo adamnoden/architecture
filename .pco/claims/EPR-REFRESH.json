@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "EPR-REFRESH",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f563688a-c481-488e-89a8-3e2bac94b5d7",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T23:20:12.536Z",
-  "heartbeatAt": "2026-10-29T23:48:36.989Z",
-  "expiresAt": "2026-10-30T00:33:36.989Z",
+  "heartbeatAt": "2026-10-29T23:54:11.000Z",
+  "expiresAt": "2026-10-29T23:54:11.000Z",
   "branch": "work/zerg-epr-phy",
   "checkpoint": {
     "evidence": "Final common d9a06147 passes full Validate40975081368 and Typography40975081433; historical T9 archive repair independently reviewed, all335 DPL passed; exact PLT40975081343 still running.",
     "next": "Wait remaining owning PLT proof then all3 fresh preflights, expected-head merge, reconcile and release; next canonical scope EDA."
   },
-  "pr": 1065
+  "pr": 1065,
+  "releasedAt": "2026-10-29T23:54:11.000Z",
+  "releaseReason": "completed"
 }
