@@ -6,6 +6,8 @@ The purpose is not to prove that an assembly can be made once under ideal condit
 
 No current prototype has earned a house-wide technical conclusion merely by being designed. The questions below remain **pre-test** unless a measured result is stated explicitly.
 
+The [current-house applicability review](https://github.com/adamnoden/architecture/blob/main/project/phy/current-house-prototype-applicability.md) distinguishes retained methods from historical geometry and identifies the release conditions for a meaningful current specimen. The old prepared packs are not current build releases.
+
 ## Evidence authority
 
 A specimen can support only the claims it actually tests.
@@ -18,7 +20,7 @@ The controlling rule is:
 
 ## Structural floor edge
 
-The floor-to-masonry edge is the most important unresolved engineering interface in the current Reference House.
+The floor-to-masonry edge remains a priority engineering interface. Current entrance and stair interruptions, service crossings and boundary closures must be resolved alongside the ordinary edge.
 
 The architectural question is not whether a novel connector can be invented. It is whether gravity support, joist stability, wall restraint, diaphragm transfer, movement, tolerance, fire/acoustic closure, durability and realistic repair can be allocated clearly without creating disproportionate structure or serviceability theatre.
 
