@@ -9,6 +9,7 @@ This page visualises the durable PCO dependency graph. It does **not** persist A
 Completed/cancelled history is omitted here so the current dependency frontier remains legible.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"background":"#f7f6f2","primaryColor":"#f0eee9","primaryBorderColor":"#c9c6bd","primaryTextColor":"#20221f","clusterBkg":"#f8f7f4","clusterBorder":"#ccc9c1","lineColor":"#9eaaa1","fontFamily":"ui-sans-serif, system-ui, sans-serif","fontSize":"15px"},"flowchart":{"htmlLabels":true,"useMaxWidth":false,"nodeSpacing":42,"rankSpacing":68,"curve":"basis"}}}%%
 flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
   subgraph g_IAS["IAS"]
@@ -145,17 +146,31 @@ flowchart LR
   n_PUB_02_PREP --> n_PUB_02_FINAL
   n_EDA_RENEWED --> n_PUB_02_FINAL
 
-  classDef ready fill:#e9f7ef,stroke:#2f855a,color:#1a202c,stroke-width:2px;
-  classDef blocked fill:#f3f4f6,stroke:#718096,color:#2d3748;
-  classDef active fill:#e8f1fb,stroke:#2b6cb0,color:#1a202c,stroke-width:2px;
-  classDef held fill:#fff7e6,stroke:#b7791f,color:#3d2b0b;
-  classDef done fill:#f7fafc,stroke:#a0aec0,color:#718096;
-  classDef cancelled fill:#f7fafc,stroke:#a0aec0,color:#718096,stroke-dasharray:4 3;
-  classDef available fill:#e9f7ef,stroke:#2f855a,color:#1a202c,stroke-width:3px;
-  classDef claimed fill:#eee9ff,stroke:#6b46c1,color:#24144f,stroke-width:3px;
-  classDef claimGrace fill:#fff7e6,stroke:#b7791f,color:#3d2b0b,stroke-width:3px,stroke-dasharray:4 3;
-  classDef activeUnclaimed fill:#e8f1fb,stroke:#2b6cb0,color:#1a202c,stroke-width:3px,stroke-dasharray:4 3;
-  classDef invalidClaim fill:#fff0f0,stroke:#c53030,color:#5b1515,stroke-width:4px;
+  linkStyle default stroke:#aab1a9,stroke-width:1.5px;
+  style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_BCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_MRA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_PUB fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  classDef ready fill:#dce9df,stroke:#376249,color:#20392b,stroke-width:2px;
+  classDef blocked fill:#f0eee9,stroke:#a5a197,color:#54534e,stroke-width:1.5px;
+  classDef active fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:2px;
+  classDef held fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:1.5px;
+  classDef done fill:#f6f5f1,stroke:#c9c7c0,color:#85837c;
+  classDef cancelled fill:#f6f5f1,stroke:#c9c7c0,color:#85837c,stroke-dasharray:4 3;
+  classDef available fill:#dce9df,stroke:#376249,color:#20392b,stroke-width:3px;
+  classDef claimed fill:#e5e7e2,stroke:#52695d,color:#253c32,stroke-width:3px;
+  classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
+  classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
+  classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_IAS_03 active;
   class n_HAD_03 active;
   class n_TRIAD_GATE blocked;
@@ -205,6 +220,7 @@ flowchart LR
 <summary>Show completed and cancelled history</summary>
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"background":"#f7f6f2","primaryColor":"#f0eee9","primaryBorderColor":"#c9c6bd","primaryTextColor":"#20221f","clusterBkg":"#f8f7f4","clusterBorder":"#ccc9c1","lineColor":"#9eaaa1","fontFamily":"ui-sans-serif, system-ui, sans-serif","fontSize":"15px"},"flowchart":{"htmlLabels":true,"useMaxWidth":false,"nodeSpacing":42,"rankSpacing":68,"curve":"basis"}}}%%
 flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
   subgraph g_ACO["ACO"]
@@ -466,17 +482,36 @@ flowchart LR
   n_PUB_02_PREP --> n_PUB_02_FINAL
   n_EDA_RENEWED --> n_PUB_02_FINAL
 
-  classDef ready fill:#e9f7ef,stroke:#2f855a,color:#1a202c,stroke-width:2px;
-  classDef blocked fill:#f3f4f6,stroke:#718096,color:#2d3748;
-  classDef active fill:#e8f1fb,stroke:#2b6cb0,color:#1a202c,stroke-width:2px;
-  classDef held fill:#fff7e6,stroke:#b7791f,color:#3d2b0b;
-  classDef done fill:#f7fafc,stroke:#a0aec0,color:#718096;
-  classDef cancelled fill:#f7fafc,stroke:#a0aec0,color:#718096,stroke-dasharray:4 3;
-  classDef available fill:#e9f7ef,stroke:#2f855a,color:#1a202c,stroke-width:3px;
-  classDef claimed fill:#eee9ff,stroke:#6b46c1,color:#24144f,stroke-width:3px;
-  classDef claimGrace fill:#fff7e6,stroke:#b7791f,color:#3d2b0b,stroke-width:3px,stroke-dasharray:4 3;
-  classDef activeUnclaimed fill:#e8f1fb,stroke:#2b6cb0,color:#1a202c,stroke-width:3px,stroke-dasharray:4 3;
-  classDef invalidClaim fill:#fff0f0,stroke:#c53030,color:#5b1515,stroke-width:4px;
+  linkStyle default stroke:#aab1a9,stroke-width:1.5px;
+  style g_ACO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_PCO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_BSR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_OAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_BCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_MRA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_PUB fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_DEL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  classDef ready fill:#dce9df,stroke:#376249,color:#20392b,stroke-width:2px;
+  classDef blocked fill:#f0eee9,stroke:#a5a197,color:#54534e,stroke-width:1.5px;
+  classDef active fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:2px;
+  classDef held fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:1.5px;
+  classDef done fill:#f6f5f1,stroke:#c9c7c0,color:#85837c;
+  classDef cancelled fill:#f6f5f1,stroke:#c9c7c0,color:#85837c,stroke-dasharray:4 3;
+  classDef available fill:#dce9df,stroke:#376249,color:#20392b,stroke-width:3px;
+  classDef claimed fill:#e5e7e2,stroke:#52695d,color:#253c32,stroke-width:3px;
+  classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
+  classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
+  classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_ACO_00 done;
   class n_ACO_01 done;
   class n_ACO_02 done;
