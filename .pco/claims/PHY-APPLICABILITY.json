@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "PHY-APPLICABILITY",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "4e6153b3-af9b-4021-b021-7b4cce31b3c9",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-3"
+  },
+  "claimedAt": "2026-10-29T23:19:48.085Z",
+  "heartbeatAt": "2026-10-29T23:19:48.085Z",
+  "expiresAt": "2026-10-30T00:04:48.085Z",
+  "branch": "work/zerg-worker-3-phy"
+}
