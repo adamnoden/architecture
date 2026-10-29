@@ -72,18 +72,18 @@ export const architectureNodes = defineNodes([
     owners: ['OAS'],
     title: 'Envelope openings, external doors, thresholds and boundary candidates',
     dependencies: ['TRIAD-IFACE-FREEZE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/oas/oas-01e-external-candidates.md', 'project/oas/studies/opening-candidate-budgets.svg']
   },
   {
     id: 'OAS-01I',
     owners: ['OAS'],
     title: 'Internal door assembly candidates',
     dependencies: ['TRIAD-IFACE-FREEZE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/oas/oas-01i-internal-candidates.md', 'project/oas/studies/opening-candidate-budgets.svg']
   },
   {
     id: 'HAD-01E',
