@@ -9,7 +9,13 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T20:48:05.275Z",
-  "heartbeatAt": "2026-10-29T20:48:05.275Z",
-  "expiresAt": "2026-10-29T21:33:05.275Z",
-  "branch": "zerg/worker-1-packet-1"
+  "heartbeatAt": "2026-10-29T20:57:27.122Z",
+  "expiresAt": "2026-10-29T21:42:27.122Z",
+  "branch": "zerg/worker-1-packet-1",
+  "pr": 1022,
+  "checkpoint": {
+    "evidence": "PR #1022 head 592bcfb6; local 1043 tests pass; CI repository health passed",
+    "next": "Wait for publication CI, canonical merge-check, merge, reconcile and release",
+    "blocker": "Publication CI pending"
+  }
 }
