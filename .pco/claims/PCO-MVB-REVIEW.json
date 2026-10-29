@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-MVB-REVIEW",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "b5709f23-cfc9-4727-95a4-839f96a185ff",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "mvb-review-bc7462"
+  },
+  "claimedAt": "2026-10-29T21:18:03.205Z",
+  "heartbeatAt": "2026-10-29T21:18:03.205Z",
+  "expiresAt": "2026-10-29T22:03:03.205Z",
+  "branch": "pco/mvb-platform-review"
+}
