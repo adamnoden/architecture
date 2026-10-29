@@ -9,13 +9,12 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T21:05:06.385Z",
-  "heartbeatAt": "2026-10-29T21:19:22.509Z",
-  "expiresAt": "2026-10-29T22:04:22.509Z",
-  "branch": "work/zerg-rwt-03",
+  "heartbeatAt": "2026-10-29T21:27:08.425Z",
+  "expiresAt": "2026-10-29T22:12:08.425Z",
+  "branch": "work/zerg-roof-water-wave2",
   "checkpoint": {
-    "evidence": "PR #1028 dd5c9b2c full CI40955472857 passed; original branch frozen for reviewed three-packet integration",
-    "next": "After HRS merge, preserve ROF02/RWT02/RWT03 heads in integration PR and rebind leases",
-    "blocker": "Awaiting HRS accepted main and commander integration slot"
+    "evidence": "Reviewed source PR1028 retained as merge parent in integration PR1031 f2675a5d; combined HRS base reconciled",
+    "next": "Exact combined head CI, all three lease preflights, expected-head merge and closeout"
   },
-  "pr": 1028
+  "pr": 1031
 }
