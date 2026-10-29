@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "ROF-06",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "38c413b9-bca4-4025-bc44-40d44e0111dc",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-4"
+  },
+  "claimedAt": "2026-10-29T22:20:58.778Z",
+  "heartbeatAt": "2026-10-29T22:20:58.778Z",
+  "expiresAt": "2026-10-29T23:05:58.778Z",
+  "branch": "zerg/worker-4-packet-5"
+}
