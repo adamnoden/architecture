@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "PHY-APPLICABILITY",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4e6153b3-af9b-4021-b021-7b4cce31b3c9",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-29T23:19:48.085Z",
-  "heartbeatAt": "2026-10-29T23:47:35.253Z",
-  "expiresAt": "2026-10-30T00:32:35.253Z",
+  "heartbeatAt": "2026-10-29T23:54:12.000Z",
+  "expiresAt": "2026-10-29T23:54:12.000Z",
   "branch": "work/zerg-epr-phy",
   "pr": 1065,
   "checkpoint": {
     "evidence": "PR1065 d9a061472cafaa5993857e2e68ee5dcea1cc25ac exact full Validate40975081368 and typography green; PHY source unchanged; fresh preflight23:46:41Z passed",
     "next": "Await separate PLT40975081343 completion, repeat fresh preflight, worker2 expected-head merge, own PHY release/reconcile then canonical ADE audit"
-  }
+  },
+  "releasedAt": "2026-10-29T23:54:12.000Z",
+  "releaseReason": "completed"
 }
