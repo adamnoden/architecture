@@ -29,6 +29,11 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
+      - name: Probe live self-service dispatcher
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run control:next -- --format json --limit 20
+
       - name: Render project-control projections for validation
         run: npm run status:update
 
