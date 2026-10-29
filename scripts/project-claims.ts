@@ -24,7 +24,16 @@ import {
   type ClaimHolderKind,
   type ClaimRecord
 } from '../project/control/claims.js'
+import {
+  buildDispatchSnapshot,
+  claimNextFromStore,
+  defaultDispatchLimit,
+  DispatchUnsafeError,
+  type DispatchCandidate,
+  type DispatchSnapshot
+} from '../project/control/dispatch.js'
 import { controlNodes } from '../project/control/nodes/index.js'
+import { isWorkstreamCode, type WorkstreamCode } from '../project/control/workstreams.js'
 
 interface GitHubContentFile {
   type: 'file'
@@ -39,6 +48,8 @@ interface ParsedArgs {
   node?: string
   flags: Map<string, string>
 }
+
+type OutputFormat = 'text' | 'json'
 
 function git(args: readonly string[]): string {
   return execFileSync('git', [...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim()
@@ -92,9 +103,29 @@ function optionalInt(flags: Map<string, string>, key: string): number | undefine
   return parsed
 }
 
+function positiveInt(flags: Map<string, string>, key: string, fallback: number): number {
+  const value = optionalInt(flags, key)
+  if (value === undefined) return fallback
+  if (value < 1) throw new Error(`--${key} must be a positive integer`)
+  return value
+}
+
 function requiredFlag(flags: Map<string, string>, key: string): string {
   const value = flags.get(key)?.trim()
   if (!value) throw new Error(`--${key} is required`)
+  return value
+}
+
+function outputFormat(flags: Map<string, string>): OutputFormat {
+  const value = flags.get('format') ?? 'text'
+  if (value !== 'text' && value !== 'json') throw new Error('--format must be text or json')
+  return value
+}
+
+function workstreamFilter(flags: Map<string, string>): WorkstreamCode | undefined {
+  const value = flags.get('workstream')?.trim()
+  if (!value) return undefined
+  if (!isWorkstreamCode(value)) throw new Error(`--workstream must be a registered workstream code; got ${value}`)
   return value
 }
 
@@ -122,7 +153,7 @@ function metadata(flags: Map<string, string>) {
  * Acquisition and whole-programme status must be evaluated against current
  * durable PCO truth, not against a feature branch that is editing the graph.
  */
-function ensureControlViewMatchesMain(): void {
+function ensureControlViewMatchesMain(extraPaths: readonly string[] = []): void {
   git(['fetch', 'origin', 'main', '--quiet'])
   try {
     execFileSync('git', ['merge-base', '--is-ancestor', 'origin/main', 'HEAD'], { stdio: 'ignore' })
@@ -135,13 +166,23 @@ function ensureControlViewMatchesMain(): void {
     'project/control/nodes',
     'project/control/types.ts',
     'project/control/workstreams.ts',
-    'project/control/derive.ts'
+    'project/control/derive.ts',
+    ...extraPaths
   ])
   if (changed) {
     throw new Error(
-      `Local branch changes PCO structural state (${changed.split('\n').join(', ')}); run status/claim/force from a checkout whose control graph matches current main`
+      `Local branch changes PCO structural/dispatch state (${changed.split('\n').join(', ')}); run this command from a checkout whose control policy matches current main`
     )
   }
+}
+
+function ensureDispatcherViewMatchesMain(): void {
+  ensureControlViewMatchesMain([
+    'project/control/dispatch.ts',
+    'project/control/claims.ts',
+    'project/control/claim-store.ts',
+    'scripts/project-claims.ts'
+  ])
 }
 
 function observedAt(response: Response): Date {
@@ -272,7 +313,7 @@ class GitHubClaimStore implements ClaimStore {
 }
 
 function storeFor(command: string): GitHubClaimStore {
-  const mutation = ['claim', 'renew', 'release', 'force'].includes(command)
+  const mutation = ['claim', 'claim-next', 'renew', 'release', 'force'].includes(command)
   return new GitHubClaimStore(
     repositorySlug(),
     mutation ? tokenForMutation() : process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN
@@ -291,6 +332,165 @@ function printWrite(result: ClaimWriteResult): void {
     branch: claim.branch ?? null,
     pr: claim.pr ?? null
   }, null, 2))
+}
+
+function candidateJson(candidate: DispatchCandidate) {
+  return {
+    node: candidate.node.id,
+    title: candidate.node.title,
+    owners: candidate.node.owners,
+    metrics: candidate.metrics
+  }
+}
+
+function snapshotJson(snapshot: DispatchSnapshot, limit = defaultDispatchLimit) {
+  return {
+    policyVersion: snapshot.policyVersion,
+    observedAt: snapshot.observedAt.toISOString(),
+    workstream: snapshot.workstream ?? null,
+    safeForAutomaticClaim: snapshot.safeForAutomaticClaim,
+    unsafeReasons: snapshot.unsafeReasons,
+    candidates: snapshot.candidates.slice(0, limit).map(candidateJson),
+    totalCandidates: snapshot.candidates.length,
+    manualReady: snapshot.manualReady.map((item) => ({
+      node: item.node.id,
+      title: item.node.title,
+      owners: item.node.owners,
+      reason: item.reason
+    })),
+    claimed: snapshot.claimed.map((item) => ({
+      node: item.node.id,
+      title: item.node.title,
+      holder: item.claim.holder,
+      expiresAt: item.claim.expiresAt,
+      grace: item.grace,
+      branch: item.claim.branch ?? null,
+      pr: item.claim.pr ?? null
+    })),
+    activeUnclaimed: snapshot.activeUnclaimed.map((node) => ({
+      node: node.id,
+      title: node.title,
+      owners: node.owners
+    })),
+    invalidLiveClaims: snapshot.invalidLiveClaims.map((item) => ({
+      node: item.node,
+      structural: item.structural,
+      holder: item.claim.holder,
+      leaseId: item.claim.leaseId,
+      generation: item.claim.generation,
+      reason: item.reason
+    })),
+    policyErrors: snapshot.policyErrors
+  }
+}
+
+function formatMetric(value: number): string {
+  return Number.isInteger(value) ? String(value) : value.toFixed(3).replace(/0+$/, '').replace(/\.$/, '')
+}
+
+function printDispatchSnapshot(snapshot: DispatchSnapshot, limit: number, format: OutputFormat): void {
+  if (format === 'json') {
+    console.log(JSON.stringify(snapshotJson(snapshot, limit), null, 2))
+    return
+  }
+
+  console.log('# Agent dispatcher')
+  console.log(`Observed: ${snapshot.observedAt.toISOString()} via GitHub`)
+  console.log(`Automatic claim: ${snapshot.safeForAutomaticClaim ? 'SAFE' : 'UNSAFE'}`)
+  if (snapshot.workstream) console.log(`Workstream filter: ${snapshot.workstream}`)
+  console.log('Policy: critical depth ↓ > blocker relief ↓ > downstream reach ↓ > owner load ↑ > canonical id')
+  for (const reason of snapshot.unsafeReasons) console.log(`WARNING: ${reason}`)
+
+  console.log('\n## Ranked self-service READY')
+  snapshot.candidates.slice(0, limit).forEach((candidate, index) => {
+    const m = candidate.metrics
+    console.log(
+      `${index + 1}. ${candidate.node.id} — ${candidate.node.title} [${candidate.node.owners.join('/')}]\n` +
+      `   depth ${m.criticalDepth} | relief ${formatMetric(m.blockerRelief)} | reach ${m.downstreamReach} | immediate unlocks ${m.immediateUnlocks} | owner load ${formatMetric(m.ownerLoad)}`
+    )
+  })
+  if (!snapshot.candidates.length) console.log('- none')
+
+  console.log('\n## Manual READY')
+  for (const item of snapshot.manualReady) console.log(`- ${item.node.id} — ${item.node.title}: ${item.reason}`)
+  if (!snapshot.manualReady.length) console.log('- none')
+
+  console.log('\n## Claimed')
+  for (const item of snapshot.claimed) {
+    console.log(
+      `- ${item.node.id} — ${item.claim.holder.label ?? item.claim.holder.kind}; ${item.grace ? 'grace through' : 'expires'} ${item.claim.expiresAt}`
+    )
+  }
+  if (!snapshot.claimed.length) console.log('- none')
+
+  console.log('\n## Active / unclaimed handoff candidates')
+  for (const node of snapshot.activeUnclaimed) console.log(`- ${node.id} — ${node.title}`)
+  if (!snapshot.activeUnclaimed.length) console.log('- none')
+
+  if (snapshot.invalidLiveClaims.length) {
+    console.log('\n## Invalid live claims')
+    for (const item of snapshot.invalidLiveClaims) console.log(`- ${item.node} — ${item.reason}`)
+  }
+  if (snapshot.policyErrors.length) {
+    console.log('\n## Dispatch policy errors')
+    for (const item of snapshot.policyErrors) console.log(`- ${item.node} — ${item.reason}`)
+  }
+}
+
+async function next(store: GitHubClaimStore, flags: Map<string, string>): Promise<void> {
+  ensureDispatcherViewMatchesMain()
+  const listed = await store.list()
+  const snapshot = buildDispatchSnapshot(
+    controlNodes,
+    listed.claims.map((claim) => claim.record),
+    listed.observedAt,
+    { workstream: workstreamFilter(flags) }
+  )
+  printDispatchSnapshot(snapshot, positiveInt(flags, 'limit', defaultDispatchLimit), outputFormat(flags))
+}
+
+async function claimNext(store: GitHubClaimStore, flags: Map<string, string>): Promise<void> {
+  ensureDispatcherViewMatchesMain()
+  const format = outputFormat(flags)
+  const result = await claimNextFromStore(store, controlNodes, {
+    holder: holder(flags),
+    ttlMinutes: optionalInt(flags, 'ttl'),
+    leaseId: flags.get('lease-id'),
+    workstream: workstreamFilter(flags),
+    ...metadata(flags)
+  })
+
+  if (format === 'json') {
+    console.log(JSON.stringify({
+      policyVersion: result.snapshot.policyVersion,
+      observedAt: result.snapshot.observedAt.toISOString(),
+      selectionRaces: result.selectionRaces,
+      selected: result.selected ? candidateJson(result.selected) : null,
+      claim: result.claim ? {
+        node: result.claim.stored.record.node,
+        generation: result.claim.stored.record.generation,
+        state: result.claim.stored.record.state,
+        leaseId: result.claim.stored.record.leaseId,
+        holder: result.claim.stored.record.holder,
+        expiresAt: result.claim.stored.record.expiresAt,
+        branch: result.claim.stored.record.branch ?? null,
+        pr: result.claim.stored.record.pr ?? null
+      } : null
+    }, null, 2))
+    return
+  }
+
+  if (!result.selected || !result.claim) {
+    console.log('No self-service READY node is currently available; no lease was created.')
+    return
+  }
+
+  console.log(`Selected ${result.selected.node.id} — ${result.selected.node.title}`)
+  console.log(
+    `Ranking: depth ${result.selected.metrics.criticalDepth} | relief ${formatMetric(result.selected.metrics.blockerRelief)} | reach ${result.selected.metrics.downstreamReach} | owner load ${formatMetric(result.selected.metrics.ownerLoad)}`
+  )
+  if (result.selectionRaces) console.log(`Selection races lost before success: ${result.selectionRaces}`)
+  printWrite(result.claim)
 }
 
 async function status(store: GitHubClaimStore): Promise<void> {
@@ -367,6 +567,16 @@ async function main(): Promise<void> {
   switch (args.command) {
     case 'status':
       await status(store)
+      return
+
+    case 'next':
+      if (args.node) throw new Error('next does not accept a positional NODE; use --workstream CODE to narrow')
+      await next(store, args.flags)
+      return
+
+    case 'claim-next':
+      if (args.node) throw new Error('claim-next does not accept a positional NODE; use --workstream CODE to narrow')
+      await claimNext(store, args.flags)
       return
 
     case 'show': {
@@ -451,7 +661,7 @@ async function main(): Promise<void> {
 
     default:
       throw new Error(
-        `Unknown command ${args.command}. Use status, show, verify, claim, renew, release or force.`
+        `Unknown command ${args.command}. Use status, next, claim-next, show, verify, claim, renew, release or force.`
       )
   }
 }
@@ -463,6 +673,9 @@ main().catch((error) => {
   } else if (error instanceof ClaimStoreUnavailableError) {
     console.error(`CLAIM STORE UNAVAILABLE: ${error.message}`)
     process.exitCode = 4
+  } else if (error instanceof DispatchUnsafeError) {
+    console.error(`DISPATCH UNSAFE: ${error.message}`)
+    process.exitCode = 5
   } else {
     console.error(error instanceof Error ? error.message : String(error))
     process.exitCode = 1
