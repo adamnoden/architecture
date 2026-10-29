@@ -1,4 +1,6 @@
-# Project execution system
+# Minimum Viable Bureaucracy (MVB)
+
+**Minimum Viable Bureaucracy (MVB)** is Ovid’s House’s project execution and agent coordination system. The name expresses its design constraint: retain the coordination needed for safe, recoverable work, and make every additional rule or mechanism earn its maintenance cost.
 
 This is the **single entry point and integrated manual** for how Ovid’s House plans work, coordinates independent agents, validates changes, integrates results and recovers from interrupted execution. Humans and agents use the same system. Read this document for the whole model; follow its links for exact executable contracts and operating procedures.
 
@@ -43,7 +45,7 @@ flowchart TD
 
 The cycle shows the **execution process**. The PCO dependency graph inside it remains acyclic. This is not the compiler's graph of a building, nor the editorial order of the book.
 
-**PCO** means Project Control & Orchestration: durable work identity, dependencies, lifecycle and eligibility. **ACO** means Agent Claim Orchestration: temporary ownership of executable packets. They are cooperating layers of this execution system, not separate task queues. GitHub supplies versioned storage, PR integration, CI and event-driven automation. Agents supply bounded execution and judgement within their actual sessions.
+**PCO** means Project Control & Orchestration: durable work identity, dependencies, lifecycle and eligibility. **ACO** means Agent Claim Orchestration: temporary ownership of executable packets. They are cooperating layers of MVB, not separate task queues. MVB names the whole system; PCO and ACO remain its technical layer names. Existing workstream/node IDs, commands, source paths and the `runtime/claims` branch retain their identities. GitHub supplies versioned storage, PR integration, CI and event-driven automation. Agents supply bounded execution and judgement within their actual sessions.
 
 Read the [owner-house charter](../owner-house-charter.md) and [delivery route](../del/owner-house-delivery-plan.md) before scoping substantial work. They establish why the work exists; this system establishes how it can execute. Publication completion is not a prerequisite for progressing the owner's house.
 

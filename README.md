@@ -83,7 +83,7 @@ The diagram is an **authority and navigation map**, not a claim that every arrow
 | Publication build system | `publication/` | Preparation, validation, metadata, layout and proof machinery |
 | Delivery requirements | [`docs/delivery/`](docs/delivery/) | Mature requirements intended for an appointed project team |
 | Current project state | `STATUS.md` | Generated durable execution state and assessed maturity; query live claims separately |
-| Project execution system | [Integrated manual](https://github.com/adamnoden/architecture/blob/main/project/control/README.md) | Workstreams, packets, dependencies, agent leases, validation, integration and recovery |
+| Minimum Viable Bureaucracy (MVB) | [Integrated manual](https://github.com/adamnoden/architecture/blob/main/project/control/README.md) | Workstreams, packets, dependencies, agent leases, validation, integration and recovery |
 | Operating rules | `AGENTS.md` | Durable rules for agents and contributors changing the repository |
 | Durable programme history | `project/` | Audits, programme records, provenance and machine-readable project controls |
 
@@ -97,7 +97,7 @@ Start with the [reading guide](docs/reading-guide.md), then the [Preface](docs/m
 
 ### Developer or contributor
 
-Before changing the repository, read `AGENTS.md` and the [project execution system manual](https://github.com/adamnoden/architecture/blob/main/project/control/README.md). The manual explains the shared execution scaffolding, from workstream and dependency modelling through concurrent agent claims, GitHub automation and recovery. Use `docs/README.md` for documentation ownership, [`docs/computational/README.md`](docs/computational/) for computational proof boundaries and `compiler/README.md` for executable workflow. [`package.json`](package.json) is the command authority.
+Before changing the repository, read `AGENTS.md` and the [Minimum Viable Bureaucracy (MVB) manual](https://github.com/adamnoden/architecture/blob/main/project/control/README.md). The manual explains the shared execution scaffolding, from workstream and dependency modelling through concurrent agent claims, GitHub automation and recovery. Use `docs/README.md` for documentation ownership, [`docs/computational/README.md`](docs/computational/) for computational proof boundaries and `compiler/README.md` for executable workflow. [`package.json`](package.json) is the command authority.
 
 ### Investigating a decision
 
