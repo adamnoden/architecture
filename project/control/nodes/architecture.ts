@@ -234,7 +234,7 @@ export const architectureNodes = defineNodes([
     owners: ['BCR'],
     title: 'Construction-resolution inventory and matrix scaffolding',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bcr-scaffold-result.md'],
   },
