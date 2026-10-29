@@ -9,6 +9,7 @@ const root=import.meta.dirname,pt=72/25.4,manifest=JSON.parse(await readFile(res
 assert.equal(manifest.modelFingerprint,exteriorFingerprint);assert.equal(manifest.physicalAcceptance,false);assert.equal(manifest.roofSelectionFinal,false)
 for(const view of exteriorViews){const svg=await readFile(resolve(root,'../../../public/drawings/exterior-isometrics',view+'.svg'),'utf8');assert.equal(manifest.files[view],createHash('sha256').update(svg).digest('hex'))}
 for(const format of ['b5','a4','a2'] as const){
+ const html=await readFile(resolve(root,'.work',format+'.html'),'utf8'),ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(ids).size,ids.length,`${format}: duplicate proof DOM identities`)
  const path=resolve(root,'dist',`plt21-${format}.pdf`),bytes=await readFile(path),pdf=await getDocumentProxy(new Uint8Array(bytes)),profile=exteriorProfiles[format],count=format==='a2'?5:4
  assert.equal(pdf.numPages,count)
  for(let n=1;n<=count;n++){
