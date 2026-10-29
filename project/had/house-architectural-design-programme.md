@@ -76,6 +76,8 @@ selection and shared compatibility checks.
 ## Convergence development
 
 - [Selected expression and furnished rear-room/kitchen study](had-03-furnished-design-study.md).
+- [Bedroom 3 reuse after proposed suite relocation](had-03-bedroom3-reuse.md).
+- [Court walking level, lower water plane and threshold proposal](had-03-court-levels.md).
 - [Scaled front, interior elevation and furnished plan](studies/selected-house-study.svg).
 - [Continuation: relocate the en suite and test connected bedroom use](had-03-relocation-trial.md).
 - [Larger Bedroom 4 allocation and visible stack candidate](had-03-bedroom4-allocation.md) — unadopted; shared plan/section work continues.
