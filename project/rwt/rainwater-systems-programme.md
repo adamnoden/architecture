@@ -1,9 +1,9 @@
 # RWT — Rainwater Systems Architecture
 
 **Issue:** #992  
-**State:** RWT-00 complete; rainfall/hydraulic basis remains
+**State:** RWT-00/01 complete; collection, conveyance and material comparisons remain
 
-**Current result:** [RWT-00 baseline and interfaces](rwt-00-baseline-and-interfaces.md).
+**Current result:** [RWT-01 rainfall and hydraulic basis](rwt-01-rainfall-and-hydraulic-basis.md); [RWT-00 baseline and interfaces](rwt-00-baseline-and-interfaces.md) remains the governing seam inventory.
 
 ## Purpose
 

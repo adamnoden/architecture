@@ -250,8 +250,12 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
     page('Finish-agnostic floor platform options', '/docs/research/finish-agnostic-floor-platform-options'),
     page('Replaceable wall system options', '/docs/research/replaceable-wall-system-options')
   ]),
+  group('Roof & rainwater', [
+    page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis')
+  ]),
   group('Maintenance & precedent', [
     page('External maintenance access', '/docs/research/external-maintenance-access'),
+    page('Roof failure and recovery evaluation', '/docs/research/roof-failure-evaluation'),
     page('Preface precedents', '/docs/research/preface-precedents')
   ]),
   group('Historical targeted evidence', [

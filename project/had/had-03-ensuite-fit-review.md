@@ -139,6 +139,12 @@ The BCR scaffold receives these as wet/detail/occupation obligations. No
 performance class, maturity score, physical test result or whole-house PASS
 changes. HAD-03 must remain open until the intended architectural claim is earned.
 
+The subsequent [relocation trial](had-03-relocation-trial.md) pursues a retained-
+programme alternative above the ground guest WC. It identifies a further
+connected-route failure and the specific bed, opening and service decisions
+needed before any source rewind. The two rejected arrangements were a checkpoint,
+not the end of design exploration.
+
 ## Reproduction and verification
 
 Run `node --import tsx project/had/studies/ensuite-fit-study.ts` to regenerate,
