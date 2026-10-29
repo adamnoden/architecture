@@ -41,6 +41,8 @@ They remain evidence and comparison material, not automatic Reference House sele
 
 [Rainwater Collection: Access and Failure Paths](rainwater-collection-options.md) compares exposed and trapped collection, transfer fittings and court drains by their capture, blockage, access and renewal consequences. It retains conventional exposed collection as a comparator without selecting the house network.
 
+[Roof and Rainwater Materials](roof-rainwater-material-compatibility.md) compares joints, movement, repair and directional runoff compatibility in one shared candidate record. No material family is selected independently of the roof and network.
+
 ## Maintenance and external access
 
 [External Maintenance Access](external-maintenance-access.md) examines the spatial consequences of maintaining façades, roofs, rainwater goods and external plant with credible ordinary access methods. It treats approach, working position, temporary support, handling and replacement routes as architecture rather than assuming that a hatch or nominal reachability is proof of maintainability.
@@ -52,3 +54,9 @@ Across all of these subjects, the controlling question is the same: **what does 
 [Roof Failure and Recovery Evaluation](roof-failure-evaluation.md) establishes a common evidence-bounded comparison of roof water paths, layers, junctions, movement, drying, detection, access and renewal. It supports candidate research without selecting a covering or converting material longevity into whole-roof assurance.
 
 [Roof Topology and Water Paths](roof-topology-families.md) distinguishes hips from valleys, compares courtyard and conventional families, and exposes the height and water-path consequences of simplifying the current roof.
+
+[Roof Covering Families](roof-covering-families.md) compares slate/tile, sheet-metal and flexible waterproofing through seams, movement, substrate, repair and renewal. It exposes the limits of a generic covering choice at the provisional 25° pitch without selecting a system or repealing the no-flat-roof constraint.
+
+[Roof Assemblies: Drying, Support and Renewal](roof-assembly-options.md) compares thermal and moisture boundaries with support, movement and repair. It tests the represented roof reserve and shallow storage space without selecting a build-up or treating a drawn void as access.
+
+[Rainwater Failure and Exceedance](rainwater-failure-and-exceedance.md) traces candidate blockage, leakage and compound-event paths. Inner roof spill transfers load to the court; a safe court escape remains unproved and constrains network selection.
