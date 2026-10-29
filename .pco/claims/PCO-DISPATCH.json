@@ -9,7 +9,8 @@
     "label": "architecture-dispatcher-build"
   },
   "claimedAt": "2026-10-29T09:08:07Z",
-  "heartbeatAt": "2026-10-29T09:08:07Z",
-  "expiresAt": "2026-10-29T11:08:07Z",
+  "heartbeatAt": "2026-10-29T09:08:39Z",
+  "expiresAt": "2026-10-29T11:08:39Z",
+  "branch": "work/pco-dispatch",
   "note": "Design and build self-service agent dispatcher"
 }
