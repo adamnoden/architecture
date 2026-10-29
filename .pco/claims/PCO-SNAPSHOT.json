@@ -9,11 +9,13 @@
     "label": "snapshot-bc7462"
   },
   "claimedAt": "2026-10-29T18:35:21.381Z",
-  "heartbeatAt": "2026-10-29T18:35:21.381Z",
-  "expiresAt": "2026-10-29T19:20:21.381Z",
+  "heartbeatAt": "2026-10-29T18:41:00.707Z",
+  "expiresAt": "2026-10-29T19:26:00.707Z",
   "checkpoint": {
-    "evidence": "Overlapping main and claim fetches returned a false missing lease; CAS made no write",
-    "next": "Reproduce FETCH_HEAD interference; use branch-specific snapshot ref; validate and merge"
+    "evidence": "Ref isolation reproduced; 83 regressions pass",
+    "next": "Merge snapshot corrections; verify both native event paths and release lease",
+    "blocker": "CI running"
   },
-  "branch": "pco/claim-snapshot"
+  "branch": "pco/claim-snapshot",
+  "pr": 1019
 }
