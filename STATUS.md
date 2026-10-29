@@ -9,7 +9,7 @@ Durable execution authority lives in `project/control/`. Live claim occupancy li
 <!-- project-control:start -->
 Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.
 
-**Structurally ready:** 7 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 16 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 3 · **Blocked:** 28 · **Held:** 2 · **Done:** 17 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -17,7 +17,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `IAS-00` | Interior architecture baseline, challengers and invariants | IAS | — |
 | `OAS-00` | Opening taxonomy, baselines and invariants | OAS | — |
 | `HAD-00` | Architectural brief, hierarchy and invariants | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
@@ -39,7 +38,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `TRIAD-IFACE-FREEZE` | Shared IAS/OAS/HAD interface freeze | IAS-00, OAS-00, HAD-00 |
+| `TRIAD-IFACE-FREEZE` | Shared IAS/OAS/HAD interface freeze | OAS-00, HAD-00 |
 | `IAS-01V` | Vertical interior system candidates | TRIAD-IFACE-FREEZE |
 | `IAS-01H` | Horizontal interior system candidates | TRIAD-IFACE-FREEZE |
 | `OAS-01E` | Envelope openings, external doors, thresholds and boundary candidates | TRIAD-IFACE-FREEZE |
@@ -70,7 +69,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`IAS-00` → `TRIAD-IFACE-FREEZE` → `IAS-01V` → `IAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`OAS-00` → `TRIAD-IFACE-FREEZE` → `IAS-01V` → `IAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
