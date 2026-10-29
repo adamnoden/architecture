@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "BCR-SCAFFOLD",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "287d6f9c-8b19-4217-9990-4c1f262a4c2b",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T20:50:08.560Z",
-  "heartbeatAt": "2026-10-29T21:05:51.007Z",
-  "expiresAt": "2026-10-29T21:50:51.007Z",
+  "heartbeatAt": "2026-10-29T21:10:22.800Z",
+  "expiresAt": "2026-10-29T21:10:22.800Z",
   "branch": "zerg/worker-4",
   "pr": 1024,
   "checkpoint": {
     "evidence": "PR #1024 integrated head065f878c2397fcfe4a2b612c4e190ac446762d50 includes main041f88a6; focused checks passed",
     "next": "Verify exact-head CI, run merge-check, merge and release",
     "blocker": "Combined-head CI running; commander serial slot assigned"
-  }
+  },
+  "releasedAt": "2026-10-29T21:10:22.800Z",
+  "releaseReason": "completed"
 }
