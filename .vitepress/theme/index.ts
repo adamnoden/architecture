@@ -1,6 +1,7 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import ControlGraph from './ControlGraph.vue'
 import './custom.css'
 import './build-provenance.css'
 
@@ -34,6 +35,9 @@ const shortTimestamp = formatTimestamp(buildTimestamp)
 
 export default {
   extends: DefaultTheme,
+  enhanceApp({ app }) {
+    app.component('ControlGraph', ControlGraph)
+  },
   Layout: () =>
     h(DefaultTheme.Layout, null, {
       'layout-bottom': () =>
