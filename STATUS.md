@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 6 · **Active:** 3 · **Blocked:** 17 · **Held:** 2 · **Done:** 30 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 3 · **Blocked:** 15 · **Held:** 2 · **Done:** 32 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -19,8 +19,8 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `OAS-01E` | Envelope openings, external doors, thresholds and boundary candidates | OAS | — |
-| `OAS-01I` | Internal door assembly candidates | OAS | — |
+| `IAS-OAS-JUNCTION` | Interior-system to opening-assembly junction reconciliation | IAS / OAS | IAS-03 |
+| `OAS-HAD-JUNCTION` | Opening-assembly to facade/interior-expression reconciliation | OAS / HAD | HAD-02M |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -40,11 +40,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `IAS-OAS-JUNCTION` | Interior-system to opening-assembly junction reconciliation | OAS-01E, OAS-01I |
-| `OAS-HAD-JUNCTION` | Opening-assembly to facade/interior-expression reconciliation | OAS-01E, OAS-01I |
 | `HAD-02M` | Material and finish synthesis | OAS-HAD-JUNCTION |
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS-OAS-JUNCTION |
-| `OAS-03` | Selected opening family and replacement/reinstatement set | OAS-01E, OAS-01I, IAS-OAS-JUNCTION, OAS-HAD-JUNCTION |
+| `OAS-03` | Selected opening family and replacement/reinstatement set | IAS-OAS-JUNCTION, OAS-HAD-JUNCTION |
 | `HAD-03` | Architectural design convergence and visual synthesis | OAS-HAD-JUNCTION, HAD-02M |
 | `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, OAS-03, HAD-03 |
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE, MRA-04 |
@@ -60,7 +58,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`OAS-01E` → `OAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`OAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
