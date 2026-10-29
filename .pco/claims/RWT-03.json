@@ -9,11 +9,13 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T21:05:06.385Z",
-  "heartbeatAt": "2026-10-29T21:09:42.643Z",
-  "expiresAt": "2026-10-29T21:54:42.643Z",
+  "heartbeatAt": "2026-10-29T21:19:22.509Z",
+  "expiresAt": "2026-10-29T22:04:22.509Z",
   "branch": "work/zerg-rwt-03",
   "checkpoint": {
-    "evidence": "RWT-03 conveyance comparison and bounded result prepared for PR on work/zerg-rwt-03",
-    "next": "Publish checkpoint PR, inspect exact-head CI and serial integration slot"
-  }
+    "evidence": "PR #1028 dd5c9b2c full CI40955472857 passed; original branch frozen for reviewed three-packet integration",
+    "next": "After HRS merge, preserve ROF02/RWT02/RWT03 heads in integration PR and rebind leases",
+    "blocker": "Awaiting HRS accepted main and commander integration slot"
+  },
+  "pr": 1028
 }
