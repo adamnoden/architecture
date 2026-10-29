@@ -9,12 +9,12 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T22:24:36.716Z",
-  "heartbeatAt": "2026-10-29T22:49:59.793Z",
-  "expiresAt": "2026-10-29T23:34:59.793Z",
+  "heartbeatAt": "2026-10-29T22:54:27.769Z",
+  "expiresAt": "2026-10-29T23:39:27.769Z",
   "checkpoint": {
-    "evidence": "PR1050 source fbd3fc6fa56f48c20a718959ab3437ff4fc32238; owning result and A3/JSON study published; local checks and root/HAD/IAS reviews with refinements",
-    "next": "Final source peer check, serial integration or merge slot, current-main reconciliation and exact-head full CI then canonical preflight"
+    "evidence": "Reviewed WET source fbd3fc6fa56f48c20a718959ab3437ff4fc32238 preserved in combined PR1052 head edd7d7afa0a8ec57344969f701eafca645c37574; local artifact, type, control, links, dataplate and docs checks passed; independent architecture, visual, IAS, HAD and services reviews passed.",
+    "next": "Verify exact combined source preservation, full CI and fresh canonical preflight; integrate, release and reconcile, then claim canonical BCR work."
   },
-  "branch": "work/zerg-bcr-wet",
-  "pr": 1050
+  "branch": "work/zerg-rwt-wet-proportionality",
+  "pr": 1052
 }
