@@ -17,16 +17,9 @@ flowchart LR
     n_OAS_01I["OAS-01I<br/>Internal door assembly candidates<br/><b>READY</b>"]
     n_OAS_03["OAS-03<br/>Selected opening family and replacement/reinstatement set<br/><b>BLOCKED</b>"]
   end
-  subgraph g_IAS["IAS"]
-    direction TB
-    n_IAS_02S["IAS-02S<br/>Interior services and access family<br/><b>READY</b>"]
-    n_IAS_02W["IAS-02W<br/>Wet-room and kitchen interior-system variants<br/><b>READY</b>"]
-    n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>BLOCKED</b>"]
-  end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
     n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>BLOCKED</b>"]
-    n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>READY</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>BLOCKED</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
   end
@@ -34,6 +27,10 @@ flowchart LR
     direction TB
     n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>BLOCKED</b>"]
     n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_IAS["IAS"]
+    direction TB
+    n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -82,17 +79,12 @@ flowchart LR
   n_OAS_01I --> n_IAS_OAS_JUNCTION
   n_OAS_01E --> n_OAS_HAD_JUNCTION
   n_OAS_01I --> n_OAS_HAD_JUNCTION
-  n_IAS_HAD_JUNCTION --> n_HAD_02M
   n_OAS_HAD_JUNCTION --> n_HAD_02M
-  n_IAS_02S --> n_IAS_03
-  n_IAS_02W --> n_IAS_03
   n_IAS_OAS_JUNCTION --> n_IAS_03
-  n_IAS_HAD_JUNCTION --> n_IAS_03
   n_OAS_01E --> n_OAS_03
   n_OAS_01I --> n_OAS_03
   n_IAS_OAS_JUNCTION --> n_OAS_03
   n_OAS_HAD_JUNCTION --> n_OAS_03
-  n_IAS_HAD_JUNCTION --> n_HAD_03
   n_OAS_HAD_JUNCTION --> n_HAD_03
   n_HAD_02M --> n_HAD_03
   n_IAS_03 --> n_TRIAD_GATE
@@ -132,10 +124,7 @@ flowchart LR
   classDef invalidClaim fill:#fff0f0,stroke:#c53030,color:#5b1515,stroke-width:4px;
   class n_OAS_01E ready;
   class n_OAS_01I ready;
-  class n_IAS_02S ready;
-  class n_IAS_02W ready;
   class n_IAS_OAS_JUNCTION blocked;
-  class n_IAS_HAD_JUNCTION ready;
   class n_OAS_HAD_JUNCTION blocked;
   class n_HAD_02M blocked;
   class n_IAS_03 blocked;
@@ -202,8 +191,8 @@ flowchart LR
     n_IAS_00["IAS-00<br/>Interior architecture baseline, challengers and invariants<br/><b>DONE</b>"]
     n_IAS_01V["IAS-01V<br/>Vertical interior system candidates<br/><b>DONE</b>"]
     n_IAS_01H["IAS-01H<br/>Horizontal interior system candidates<br/><b>DONE</b>"]
-    n_IAS_02S["IAS-02S<br/>Interior services and access family<br/><b>READY</b>"]
-    n_IAS_02W["IAS-02W<br/>Wet-room and kitchen interior-system variants<br/><b>READY</b>"]
+    n_IAS_02S["IAS-02S<br/>Interior services and access family<br/><b>DONE</b>"]
+    n_IAS_02W["IAS-02W<br/>Wet-room and kitchen interior-system variants<br/><b>DONE</b>"]
     n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>BLOCKED</b>"]
   end
   subgraph g_OAS["OAS"]
@@ -226,7 +215,7 @@ flowchart LR
     direction TB
     n_TRIAD_IFACE_FREEZE["TRIAD-IFACE-FREEZE<br/>Shared IAS/OAS/HAD interface freeze<br/><b>DONE</b>"]
     n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>BLOCKED</b>"]
-    n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>READY</b>"]
+    n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>BLOCKED</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
   end
@@ -406,10 +395,10 @@ flowchart LR
   class n_HAD_01E done;
   class n_HAD_01P done;
   class n_HAD_01S done;
-  class n_IAS_02S ready;
-  class n_IAS_02W ready;
+  class n_IAS_02S done;
+  class n_IAS_02W done;
   class n_IAS_OAS_JUNCTION blocked;
-  class n_IAS_HAD_JUNCTION ready;
+  class n_IAS_HAD_JUNCTION done;
   class n_OAS_HAD_JUNCTION blocked;
   class n_HAD_02M blocked;
   class n_IAS_03 blocked;
