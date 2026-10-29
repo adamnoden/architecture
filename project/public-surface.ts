@@ -35,6 +35,7 @@ export const publicSourceExcludeGlobs = [
   'docs/reference-house/brief-and-constraint-ledger.md',
   'docs/reference-house/architectural-design-brief.md',
   'docs/reference-house/opening-assembly-selection.md',
+  'docs/reference-house/opening-interface-studies.md',
   'docs/reference-house/morphology-options.md',
   'docs/reference-house/ground-floor-development.md',
   'docs/reference-house/upper-floor-and-stair-development.md',

@@ -65,6 +65,11 @@ records; [IAS/OAS](../../project/oas/ias-oas-junction.md) and
 [OAS/HAD](../../project/oas/oas-had-junction.md) junctions; and the
 [replacement/topology drawing](../../project/oas/studies/selected-opening-renewal.svg).
 
+The subsequent [OAS-NOMINAL-01 studies](opening-interface-studies.md) supply the
+representative dimensioned architectural interfaces at 1:5 / 1:2. Their new
+local study assumptions are distinct from whole-house fabrication adoption.
+OAS-DETAIL explicitly gates triad on that missing original obligation.
+
 These are architectural interface/maintenance drawings. They do **not** reinstate
 the previously withheld OW-01 1:5 construction detail. A detailed construction
 section requires actual new support, frame and environmental-junction authority;
