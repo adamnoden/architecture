@@ -4,7 +4,7 @@ export const pcoNodes = defineNodes([
   {
     id: 'PCO-OPERATIONS', owners: ['PCO'],
     title: 'Integrate agent briefing, scoped proof CI and safe post-merge reconciliation',
-    dependencies: ['PCO-RESILIENCE'], lifecycle: 'complete',
+    dependencies: ['PCO-RESILIENCE'], lifecycle: 'planned',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed coordination-system upgrade on 29 October 2026.' },
     closeoutEvidence: ['project/pco/operations-result.md']
   },
