@@ -1,6 +1,6 @@
 # IAS — Interior Architecture System
 
-**State:** IAS-00 baseline complete; shared interface freeze awaits OAS-00 and HAD-00
+**State:** IAS-00 baseline complete; core candidates follow the shared interface freeze
 
 **Tracking:** [#941 — IAS interior architecture system](https://github.com/adamnoden/architecture/issues/941)
 

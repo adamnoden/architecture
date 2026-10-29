@@ -25,8 +25,8 @@ export const architectureNodes = defineNodes([
     owners: ['OAS'],
     title: 'Opening taxonomy, baselines and invariants',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/oas/oas-00-baseline-and-invariants.md']
   },
   {
     id: 'HAD-00',
