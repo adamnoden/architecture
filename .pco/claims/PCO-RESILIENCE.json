@@ -9,7 +9,9 @@
     "label": "resilience-bc7462"
   },
   "claimedAt": "2026-10-29T17:32:05.646Z",
-  "heartbeatAt": "2026-10-29T17:32:05.646Z",
-  "expiresAt": "2026-10-29T19:32:05.646Z",
-  "branch": "pco/lease-resilience"
+  "heartbeatAt": "2026-10-29T17:41:50.450Z",
+  "expiresAt": "2026-10-29T18:26:50.450Z",
+  "branch": "pco/lease-resilience",
+  "pr": 1015,
+  "note": "PR #1015; 69 control tests and TypeScript pass; next inspect exact-head CI, repeat merge-check, expected-head merge, release and clean branch. CI is installing dependencies."
 }
