@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 17 · **Active:** 0 · **Blocked:** 33 · **Held:** 2 · **Done:** 72 · **Cancelled:** 0
+**Structurally ready:** 15 · **Active:** 0 · **Blocked:** 33 · **Held:** 2 · **Done:** 74 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,9 +21,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `CCR-PLAN` | Repair rectangle-union area and plate closure | CCR | — |
-| `CCR-STAIR` | Repair stair datum arithmetic and discrete topology | CCR | — |
-| `CCR-DRAINAGE` | Repair drainage declaration validity and source consistency | CCR | — |
+| `CCR-STAIR` | Repair stair datum arithmetic and discrete topology | CCR | CCR-IDENTITY |
 | `PCO-APPLICABILITY` | Bind maturity applicability to assessed design sources | PCO | — |
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
@@ -51,7 +49,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `CCR-IDENTITY` | Adjudicate identity guarantees and integrate correctness repairs | CCR-PLAN, CCR-STAIR, CCR-DRAINAGE |
+| `CCR-IDENTITY` | Adjudicate identity guarantees and integrate correctness repairs | CCR-STAIR |
 | `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03, ROF-RWT-GATE |
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL, EPR-REFRESH, PHY-APPLICABILITY |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, PCO-APPLICABILITY, DEL-CURRENT, EDA-NARRATIVE |
@@ -119,7 +117,7 @@ PCO monitors the evidence content from baseline `c3701c5`. A changed evidence fi
 | **Reference House** | **M3** | 2026-10-19 | 9 | **STALE — reassess** (`docs/reference-house/README.md`, `docs/reference-house/pattern-occurrence-register.md`, `docs/reference-house/energy-heat-coordination-rh10.md`, `docs/reference-house/model-baseline-rhc0.md`) |
 | **Physical prototypes** | **M2** | 2026-10-12 | 3 | **STALE — reassess** (`docs/development/tectonic-prototype-programme.md`) |
 | **External professional review** | **M1** | 2026-10-12 | 3 | **STALE — reassess** (`docs/reference-house/external-review-brief.md`, `docs/reference-house/external-review-regulatory-baseline-rh11.md`) |
-| **Computational track** | **M4** | 2026-10-19 | 45 | **STALE — reassess** (`docs/reference-house/model-baseline-rhc0.md`) |
+| **Computational track** | **M4** | 2026-10-19 | 45 | **STALE — reassess** (`docs/reference-house/model-baseline-rhc0.md`, `docs/computational/compiler-generality-assurance-cf01.md`, `docs/computational/reference-house-executable-slice.md`, `compiler/rhc4/rhc4.test.ts`) |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | 3 | **STALE — reassess** (`docs/research/README.md`) |
 | **Publication** | **M4** | 2026-10-28 | 17 | **STALE — reassess** (`docs/editorial/eda-programme.md`) |
 | **Deployment / real-site integration** | **M4** | 2026-10-27 | 48 | **STALE — reassess** (`project/dpl/deployment-programme.md`) |

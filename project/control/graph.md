@@ -14,9 +14,7 @@ flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
   subgraph g_CCR["CCR"]
     direction TB
-    n_CCR_PLAN["CCR-PLAN<br/>Repair rectangle-union area and plate closure<br/><b>READY</b>"]
     n_CCR_STAIR["CCR-STAIR<br/>Repair stair datum arithmetic and discrete topology<br/><b>READY</b>"]
-    n_CCR_DRAINAGE["CCR-DRAINAGE<br/>Repair drainage declaration validity and source consistency<br/><b>READY</b>"]
     n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>BLOCKED</b>"]
   end
   subgraph g_PCO["PCO"]
@@ -118,9 +116,7 @@ flowchart LR
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>BLOCKED</b>"]
     n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>READY</b>"]
   end
-  n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
-  n_CCR_DRAINAGE --> n_CCR_IDENTITY
   n_IAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
@@ -214,9 +210,7 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
-  class n_CCR_PLAN ready;
   class n_CCR_STAIR ready;
-  class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
   class n_PCO_APPLICABILITY ready;
   class n_IAS_03 ready;
@@ -287,9 +281,9 @@ flowchart LR
   end
   subgraph g_CCR["CCR"]
     direction TB
-    n_CCR_PLAN["CCR-PLAN<br/>Repair rectangle-union area and plate closure<br/><b>READY</b>"]
+    n_CCR_PLAN["CCR-PLAN<br/>Repair rectangle-union area and plate closure<br/><b>DONE</b>"]
     n_CCR_STAIR["CCR-STAIR<br/>Repair stair datum arithmetic and discrete topology<br/><b>READY</b>"]
-    n_CCR_DRAINAGE["CCR-DRAINAGE<br/>Repair drainage declaration validity and source consistency<br/><b>READY</b>"]
+    n_CCR_DRAINAGE["CCR-DRAINAGE<br/>Repair drainage declaration validity and source consistency<br/><b>DONE</b>"]
     n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>BLOCKED</b>"]
   end
   subgraph g_PCO["PCO"]
@@ -711,9 +705,9 @@ flowchart LR
   class n_ACO_02 done;
   class n_ACO_03 done;
   class n_ACO_04 done;
-  class n_CCR_PLAN ready;
+  class n_CCR_PLAN done;
   class n_CCR_STAIR ready;
-  class n_CCR_DRAINAGE ready;
+  class n_CCR_DRAINAGE done;
   class n_CCR_IDENTITY blocked;
   class n_PCO_COMMS done;
   class n_PCO_MVB_REVIEW done;
