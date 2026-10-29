@@ -62,3 +62,5 @@ Across all of these subjects, the controlling question is the same: **what does 
 [Roof Junction Families](roof-junction-families.md) locates eave, ridge-corner and valley-receiver questions in the current house. It compares water, movement, support and replacement across junction and penetration families without selecting a construction detail or inventing a roof-access route.
 
 [Rainwater Failure and Exceedance](rainwater-failure-and-exceedance.md) traces candidate blockage, leakage and compound-event paths. Inner roof spill transfers load to the court; a safe court escape remains unproved and constrains network selection.
+
+[Roof Access and Renewal](roof-access-and-renewal.md) tests actual court access equipment against source geometry and traces repair, receiver withdrawal and major recovering. Rejected tower options remain visible; no high-level working method is accepted.

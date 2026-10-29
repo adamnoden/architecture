@@ -1,9 +1,9 @@
 # ROF — Roof Systems Architecture
 
 **Issue:** #991  
-**State:** ROF-00/01/02/03/04/05 complete; access and renewal comparison is next
+**State:** ROF-00/01/02/03/04/05/06 complete; system synthesis is next
 
-**Current results:** [ROF-05 junction families](rof-05-junctions-and-penetrations.md), [ROF-03 covering families](rof-03-covering-system-families.md), [ROF-04 assembly and support](rof-04-assembly-and-support.md) and [ROF-02 topology and geometry](rof-02-topology-and-geometry.md), using the [ROF-01 evaluation frame](rof-01-evidence-and-evaluation.md) and retaining the [ROF-00 baseline](rof-00-baseline-and-constraints.md).
+**Current results:** [ROF-06 access and renewal](rof-06-access-maintenance-renewal.md), [ROF-05 junction families](rof-05-junctions-and-penetrations.md), [ROF-03 covering families](rof-03-covering-system-families.md), [ROF-04 assembly and support](rof-04-assembly-and-support.md) and [ROF-02 topology and geometry](rof-02-topology-and-geometry.md), using the [ROF-01 evaluation frame](rof-01-evidence-and-evaluation.md) and retaining the [ROF-00 baseline](rof-00-baseline-and-constraints.md).
 
 ## Purpose
 
