@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 22 · **Active:** 0 · **Blocked:** 41 · **Held:** 2 · **Done:** 59 · **Cancelled:** 0
+**Structurally ready:** 21 · **Active:** 0 · **Blocked:** 41 · **Held:** 2 · **Done:** 60 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -29,7 +29,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `BCR-STRUCTURE` | Structure, stair and entry-void feasibility | BCR | — |
 | `BCR-WET` | Wet-room sections, sanitary fit and foul-drainage feasibility | BCR | — |
-| `BCR-SERVICES` | Plant, riser, distribution and replacement feasibility | BCR | — |
 | `BCR-WATER` | Roof and courtyard normal/failure water-path feasibility | BCR | — |
 | `BCR-OCCUPATION` | Complete occupation, escape and renewal actions | BCR | — |
 | `BCR-PROPORTIONALITY` | Current-house conventional comparator and burden appraisal | BCR | — |
@@ -60,7 +59,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03, ROF-RWT-GATE, BCR-PREFLIGHT |
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, BCR-PROPORTIONALITY, HRS-TECHNICAL, EPR-REFRESH, PHY-APPLICABILITY |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, PCO-APPLICABILITY, DEL-CURRENT, EDA-NARRATIVE |
-| `BCR-PREFLIGHT` | Reconcile early feasibility findings into selection constraints | BCR-STRUCTURE, BCR-WET, BCR-SERVICES, BCR-WATER, BCR-OCCUPATION |
+| `BCR-PREFLIGHT` | Reconcile early feasibility findings into selection constraints | BCR-STRUCTURE, BCR-WET, BCR-WATER, BCR-OCCUPATION |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE, CCR-IDENTITY |
 | `ROF-06` | Roof access, maintenance, repair and renewal | ROF-05 |
 | `ROF-07` | Roof system synthesis and candidate families | ROF-05, ROF-06 |

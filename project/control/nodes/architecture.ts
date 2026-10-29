@@ -288,7 +288,7 @@ export const architectureNodes = defineNodes([
     owners: ['BCR'],
     title: 'Plant, riser, distribution and replacement feasibility',
     dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bcr-services-result.md']
   },
