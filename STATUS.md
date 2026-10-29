@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 20 · **Active:** 0 · **Blocked:** 51 · **Held:** 2 · **Done:** 50 · **Cancelled:** 0
+**Structurally ready:** 27 · **Active:** 0 · **Blocked:** 43 · **Held:** 2 · **Done:** 51 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -25,9 +25,15 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `CCR-STAIR` | Repair stair datum arithmetic and discrete topology | CCR | — |
 | `CCR-DRAINAGE` | Repair drainage declaration validity and source consistency | CCR | — |
 | `PCO-MVB-REVIEW` | Assess external orchestration systems and version the MVB operating contract | PCO | — |
+| `PCO-APPLICABILITY` | Bind maturity applicability to assessed design sources | PCO | — |
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
-| `HRS-BASELINE` | Accepted 12 m house identity and historical-evidence applicability | HRS | PCO-APPLICABILITY, BCR-STRUCTURE, BCR-WET, BCR-SERVICES, BCR-WATER, BCR-OCCUPATION, BCR-PROPORTIONALITY, DPL-SITE-BRIEF |
+| `BCR-STRUCTURE` | Structure, stair and entry-void feasibility | BCR | — |
+| `BCR-WET` | Wet-room sections, sanitary fit and foul-drainage feasibility | BCR | — |
+| `BCR-SERVICES` | Plant, riser, distribution and replacement feasibility | BCR | — |
+| `BCR-WATER` | Roof and courtyard normal/failure water-path feasibility | BCR | — |
+| `BCR-OCCUPATION` | Complete occupation, escape and renewal actions | BCR | — |
+| `BCR-PROPORTIONALITY` | Current-house conventional comparator and burden appraisal | BCR | — |
 | `ROF-02` | Roof topology and geometry families | ROF | — |
 | `ROF-03` | Roof covering-system families | ROF | — |
 | `ROF-04` | Roof assembly beneath the covering | ROF | — |
@@ -41,6 +47,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `EDA-ARGUMENT` | Red-team architectural contribution and evidence for the central thesis | EDA | — |
 | `DEL-ISSUE-PROFILES` | Define purpose-specific information and issue requirements | DEL | — |
 | `ADE-DELIVERY-AUDIT` | Map construction-information needs to existing capabilities | ADE | — |
+| `DPL-SITE-BRIEF` | Derive owner-house plot criteria and evidence requirements | DPL | DPL-COMMISSION |
 
 ### Active durable work
 
@@ -55,16 +62,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Direct blockers |
 |---|---|---|
 | `CCR-IDENTITY` | Adjudicate identity guarantees and integrate correctness repairs | CCR-PLAN, CCR-STAIR, CCR-DRAINAGE |
-| `PCO-APPLICABILITY` | Bind maturity applicability to assessed design sources | HRS-BASELINE |
 | `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03, ROF-RWT-GATE, BCR-PREFLIGHT |
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, BCR-PROPORTIONALITY, HRS-TECHNICAL, EPR-REFRESH, PHY-APPLICABILITY |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, PCO-APPLICABILITY, DEL-CURRENT, EDA-NARRATIVE |
-| `BCR-STRUCTURE` | Structure, stair and entry-void feasibility | HRS-BASELINE |
-| `BCR-WET` | Wet-room sections, sanitary fit and foul-drainage feasibility | HRS-BASELINE |
-| `BCR-SERVICES` | Plant, riser, distribution and replacement feasibility | HRS-BASELINE |
-| `BCR-WATER` | Roof and courtyard normal/failure water-path feasibility | HRS-BASELINE |
-| `BCR-OCCUPATION` | Complete occupation, escape and renewal actions | HRS-BASELINE |
-| `BCR-PROPORTIONALITY` | Current-house conventional comparator and burden appraisal | HRS-BASELINE |
 | `BCR-PREFLIGHT` | Reconcile early feasibility findings into selection constraints | BCR-STRUCTURE, BCR-WET, BCR-SERVICES, BCR-WATER, BCR-OCCUPATION |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE, CCR-IDENTITY |
 | `ROF-05` | Roof junction and penetration families | ROF-02, ROF-03, ROF-04 |
@@ -87,7 +87,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
 | `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
 | `EDA-NARRATIVE` | Reshape and subtract for a compelling architectural reader journey | EDA-ARGUMENT, EDA-ADAPTER |
-| `BCR-BAY-BRIEF` | Select one consequential construction bay and its proof obligations | HRS-BASELINE, BCR-PREFLIGHT |
+| `BCR-BAY-BRIEF` | Select one consequential construction bay and its proof obligations | BCR-PREFLIGHT |
 | `BCR-BAY-DESIGN` | Resolve the selected bay as a coordinated design study | BCR-BAY-BRIEF, TRIAD-GATE |
 | `ADE-MODEL` | Connect current design identities to construction-information outputs | ADE-DELIVERY-AUDIT, HRS-TECHNICAL |
 | `ADE-DETAILS` | Produce source-bound technical bay drawings and details | ADE-MODEL, BCR-BAY-DESIGN |
@@ -95,15 +95,14 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ADE-EVIDENCE` | Bind bay calculations and external evidence to controlling inputs | ADE-DELIVERY-AUDIT, BCR-BAY-DESIGN, CCR-IDENTITY, PCO-APPLICABILITY |
 | `DEL-BAY-PACK` | Assemble one coherent construction-bay review issue | ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE, DEL-ISSUE-PROFILES |
 | `EPR-BAY-REVIEW` | Obtain and disposition actual designer and contractor bay feedback | DEL-BAY-PACK |
-| `DPL-SITE-BRIEF` | Derive owner-house plot criteria and evidence requirements | HRS-BASELINE |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL-SITE-BRIEF |
 | `DPL-SITE-ASSESSMENT` | Assess actual site applicability and explicit adaptation choices | DPL-COMMISSION |
 | `DEL-COMMISSION-PLAN` | Register grounded whole-house design construction and handover packets | DPL-SITE-ASSESSMENT, EPR-BAY-REVIEW |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY-APPLICABILITY |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY-APPLICABILITY |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR-REFRESH |
-| `EPR-REFRESH` | Refresh current-house review briefs and questions | HRS-BASELINE, BCR-PREFLIGHT |
-| `PHY-APPLICABILITY` | Reconcile prototype applicability and earned evidence requirements | HRS-BASELINE, BCR-PREFLIGHT |
+| `EPR-REFRESH` | Refresh current-house review briefs and questions | BCR-PREFLIGHT |
+| `PHY-APPLICABILITY` | Reconcile prototype applicability and earned evidence requirements | BCR-PREFLIGHT |
 | `DEL-CURRENT` | Reconcile selected-house delivery and reinstatement requirements | BCR-CONVERGENCE |
 
 ### Structural critical path
@@ -136,11 +135,11 @@ PCO monitors the evidence content from baseline `c3701c5`. A changed evidence fi
 | **Public architectural position** | **M4** | 2026-10-19 | 12 | fresh against PCO evidence baseline |
 | **Pattern language** | **M4** | 2026-10-12 | 4 | fresh against PCO evidence baseline |
 | **Architectural grammar framework** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
-| **G-01 grammar instance** | **M4** | 2026-10-14 | 9 | fresh against PCO evidence baseline |
-| **Reference House** | **M3** | 2026-10-19 | 9 | **STALE — reassess** (`docs/reference-house/README.md`) |
+| **G-01 grammar instance** | **M4** | 2026-10-14 | 9 | **STALE — reassess** (`docs/reference-house/g01-v0.1-conformance-d12.md`) |
+| **Reference House** | **M3** | 2026-10-19 | 9 | **STALE — reassess** (`docs/reference-house/README.md`, `docs/reference-house/pattern-occurrence-register.md`, `docs/reference-house/energy-heat-coordination-rh10.md`, `docs/reference-house/model-baseline-rhc0.md`) |
 | **Physical prototypes** | **M2** | 2026-10-12 | 3 | **STALE — reassess** (`docs/development/tectonic-prototype-programme.md`) |
-| **External professional review** | **M1** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
-| **Computational track** | **M4** | 2026-10-19 | 45 | fresh against PCO evidence baseline |
+| **External professional review** | **M1** | 2026-10-12 | 3 | **STALE — reassess** (`docs/reference-house/external-review-brief.md`, `docs/reference-house/external-review-regulatory-baseline-rh11.md`) |
+| **Computational track** | **M4** | 2026-10-19 | 45 | **STALE — reassess** (`docs/reference-house/model-baseline-rhc0.md`) |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | 3 | **STALE — reassess** (`docs/research/README.md`) |
 | **Publication** | **M4** | 2026-10-28 | 17 | **STALE — reassess** (`docs/editorial/eda-programme.md`) |
 | **Deployment / real-site integration** | **M4** | 2026-10-27 | 48 | **STALE — reassess** (`project/dpl/deployment-programme.md`) |
