@@ -109,6 +109,8 @@ Require finite positive integer counts and an explicit checked relationship betw
 
 The 30 m counterexample demonstrates missing internal relationships, not a pre-existing promise of complete stair-fit verification. Full landing geometry, headroom, guarding, access, fire strategy and construction tolerance remain outside this packet.
 
+**CCR-STAIR result:** [relative datums, discrete flights and provenance](ccr-stair-result.md) repairs the admitted counterexamples without changing fixture geometry or the numeric method. Current output identities are rederived; spatial and technical adequacy remain outside this packet.
+
 ## CCR-DRAINAGE — source truth and bounded drainage declarations
 
 Owning repair result: [CCR-DRAINAGE — source consistency and bounded declarations](ccr-drainage-result.md). This result closes its compiler counterexamples without selecting the current house's rainwater system.

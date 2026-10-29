@@ -107,7 +107,7 @@
     "status": "PASS",
     "sourceCompile": {
       "schemaVersion": "HK-RH-COMPILE-1",
-      "fingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c"
+      "fingerprint": "c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f"
     },
     "generatedArtefacts": 6,
     "rendererVersions": [
@@ -115,7 +115,7 @@
     ],
     "artefactSetFingerprint": {
       "algorithm": "sha256",
-      "fingerprint": "10ee363d34af4652df43a3c95fc01685c876e687dc717df70ae6fd2906dfe57c"
+      "fingerprint": "42d3070dfefcdc81be6acad206cb1103b5fa534192c61b139556965565162ef6"
     }
   },
   "toolchain": {

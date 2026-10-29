@@ -15,7 +15,7 @@ import {
 const canonicalInput = (): CalculationCheckInput => {
   const source = createReferenceHouseSource()
   const c4 = compileReferenceHouseBoundaryView(source)
-  return createReferenceHousePrivateStairInput(c4)
+  return createReferenceHousePrivateStairInput(c4, source)
 }
 
 const withValue = (

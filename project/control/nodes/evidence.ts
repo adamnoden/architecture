@@ -84,7 +84,7 @@ export const evidenceNodes = defineNodes([
     owners: ['EPR'],
     title: 'Refresh current-house review briefs and questions',
     dependencies: ['HRS-BASELINE', 'BCR-PREFLIGHT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/epr/current-house-review-applicability.md']
   },
@@ -93,7 +93,7 @@ export const evidenceNodes = defineNodes([
     owners: ['PHY'],
     title: 'Reconcile prototype applicability and earned evidence requirements',
     dependencies: ['HRS-BASELINE', 'BCR-PREFLIGHT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/phy/current-house-prototype-applicability.md']
   },
