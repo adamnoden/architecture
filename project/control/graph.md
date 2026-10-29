@@ -21,6 +21,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_COMMS["PCO-COMMS<br/>Introduce readable MVB communication discipline and scoped preflight observations<br/><b>READY</b>"]
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>READY</b>"]
   end
   subgraph g_IAS["IAS"]
@@ -255,6 +256,7 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
+  class n_PCO_COMMS ready;
   class n_PCO_APPLICABILITY ready;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
@@ -346,6 +348,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_COMMS["PCO-COMMS<br/>Introduce readable MVB communication discipline and scoped preflight observations<br/><b>READY</b>"]
     n_PCO_MVB_REVIEW["PCO-MVB-REVIEW<br/>Assess external orchestration systems and version the MVB operating contract<br/><b>DONE</b>"]
     n_PCO_MANUAL["PCO-MANUAL<br/>Document the integrated project execution system for outsiders and maintainers<br/><b>DONE</b>"]
     n_PCO_SNAPSHOT["PCO-SNAPSHOT<br/>Keep claim and briefing snapshots correct during main updates<br/><b>DONE</b>"]
@@ -522,6 +525,7 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_PCO_MVB_REVIEW --> n_PCO_COMMS
   n_PCO_MANUAL --> n_PCO_MVB_REVIEW
   n_PCO_SNAPSHOT --> n_PCO_MANUAL
   n_PCO_OPERATIONS --> n_PCO_SNAPSHOT
@@ -765,6 +769,7 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
+  class n_PCO_COMMS ready;
   class n_PCO_MVB_REVIEW done;
   class n_PCO_MANUAL done;
   class n_PCO_SNAPSHOT done;
