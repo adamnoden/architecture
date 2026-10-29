@@ -9,12 +9,12 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T23:01:53.600Z",
-  "heartbeatAt": "2026-10-29T23:07:25.370Z",
-  "expiresAt": "2026-10-29T23:52:25.370Z",
+  "heartbeatAt": "2026-10-29T23:13:00.775Z",
+  "expiresAt": "2026-10-29T23:58:00.775Z",
   "checkpoint": {
-    "evidence": "MRA00 source PR1056 head08550ec0; current-house inventory and unknown/pass rules reviewed by water/services/DPL peer; local checks pass",
-    "next": "Finish commander review, current-main integration and exact-head CI before canonical preflight/merge"
+    "evidence": "Reviewed MRA source08550ec0 preserved in commonPR1059 head8c6d6c51; root and peer reviews passed, sourceCI40970876378 success",
+    "next": "Verify combined exact-head CI and canonical preflight; integrate then reconcile and release completed MRA00"
   },
-  "branch": "zerg/worker-6-wave5",
-  "pr": 1056
+  "branch": "work/zerg-preflight-site-moisture",
+  "pr": 1059
 }
