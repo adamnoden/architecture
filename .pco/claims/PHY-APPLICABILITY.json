@@ -9,12 +9,12 @@
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-29T23:19:48.085Z",
-  "heartbeatAt": "2026-10-29T23:25:53.402Z",
-  "expiresAt": "2026-10-30T00:10:53.402Z",
-  "branch": "work/zerg-worker-3-phy",
-  "pr": 1062,
+  "heartbeatAt": "2026-10-29T23:36:27.878Z",
+  "expiresAt": "2026-10-30T00:21:27.878Z",
+  "branch": "work/zerg-epr-phy",
+  "pr": 1065,
   "checkpoint": {
-    "evidence": "Root-reviewed frozen source PR1062 head86e73b5e70100813d9474cb0a8b98fa54ccc804f; historical body/blob preservation, source/link/type/control88/public validators passed; no test results or activation",
-    "next": "Coordinate preserved-parent pair with EPR if ready, bind common PR, exact-head full CI and fresh canonical preflight then merge/reconcile/release"
+    "evidence": "Root-reviewed source1062 final3063b1f8fbc4ad5207e3815e363d10c012b5afe3 preserved in common1065 head7fd1cc930c73dc72227859ba6d9721e4d04ff213; own artifacts unchanged and shared node retains own PHY completion",
+    "next": "Verify common canonical metadata, wait exact-head full CI, fresh own merge-check, worker2 serial merge then reconcile/release"
   }
 }
