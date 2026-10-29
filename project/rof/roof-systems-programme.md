@@ -1,7 +1,9 @@
 # ROF — Roof Systems Architecture
 
 **Issue:** #991  
-**State:** authorised programme; execution not yet started
+**State:** ROF-00 complete; evidence/evaluation work remains
+
+**Current result:** [ROF-00 baseline and inherited constraints](rof-00-baseline-and-constraints.md).
 
 ## Purpose
 
