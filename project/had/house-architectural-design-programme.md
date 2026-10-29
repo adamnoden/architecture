@@ -39,6 +39,11 @@ not freeze before the relevant rooms, opening and interior assemblies exist.
 ## Durable outputs
 
 - [HAD-00 result](had-00-brief-result.md).
+- [Shared IAS/OAS/HAD interface contract](../triad-interface-contract.md).
+- [Exterior/court candidates](had-01e-exterior-candidates.md).
+- [Principal-interior candidates](had-01p-principal-interior-candidates.md).
+- [Private/service candidates](had-01s-private-service-candidates.md).
+- [Candidate handoff and visual/source verification](had-01-candidate-handoff.md).
 - [Architectural design brief](../../docs/reference-house/architectural-design-brief.md).
 
 Use the graph for lifecycle and dependency status; this index carries scope

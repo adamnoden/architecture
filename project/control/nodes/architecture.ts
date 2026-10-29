@@ -86,24 +86,24 @@ export const architectureNodes = defineNodes([
     owners: ['HAD'],
     title: 'Exterior and courtyard architectural design',
     dependencies: ['TRIAD-IFACE-FREEZE'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/had/had-01e-exterior-candidates.md', 'project/had/studies/exterior-candidates.svg', 'project/had/studies/courtyard-candidates.svg']
   },
   {
     id: 'HAD-01P',
     owners: ['HAD'],
     title: 'Principal-interior architectural design',
     dependencies: ['TRIAD-IFACE-FREEZE'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/had/had-01p-principal-interior-candidates.md', 'project/had/studies/principal-wall-candidates.svg']
   },
   {
     id: 'HAD-01S',
     owners: ['HAD'],
     title: 'Private and service-interior architectural design',
     dependencies: ['TRIAD-IFACE-FREEZE'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/had/had-01s-private-service-candidates.md', 'project/had/had-01-candidate-handoff.md']
   },
 
   // Wave 2 — stream-specific burdens and canonical shared interfaces.
