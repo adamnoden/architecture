@@ -1,13 +1,13 @@
 # Information issue profiles
 
 These project profiles define what a package may be **used for**, what it must
-contain and who must accept it. They implement the [owner-house delivery plan](../../project/del/owner-house-delivery-plan.md)
+contain and who must accept it. They implement the [owner-house delivery plan](https://github.com/adamnoden/architecture/blob/main/project/del/owner-house-delivery-plan.md)
 for the eventual house. They do not select a site, appoint a team, adopt a design,
 authorise expenditure or confer permission to construct or occupy.
 
 The same drawing can be useful for review and unfit for construction. A complete
 index proves neither that its design works nor that the named reviewer has
-accepted it. The profiles below are a delivery contract; [ADE](../../project/ade/construction-information-programme.md)
+accepted it. The profiles below are a delivery contract; [ADE](https://github.com/adamnoden/architecture/blob/main/project/ade/construction-information-programme.md)
 implements only the bounded checks needed by the selected bay. This document
 creates no new issue engine or alternative house model.
 
@@ -108,16 +108,15 @@ be resolved without hiding floor/support or maintenance conflicts?*
 
 | Example index item | Exact source at this revision | Status and use |
 |---|---|---|
-| Proposed room and service cabinet | [HAD allocation](../../project/had/had-03-bedroom4-allocation.md) and its [A3 plan](../../project/had/studies/bedroom4-allocation-study.svg) | Unadopted proposal; room/access geometry and maintenance costs, not an installed-system pass |
-| Located wet section and alternatives | [IAS section](../../project/ias/ias-03-bedroom4-wet-section.md) and [A3 section](../../project/ias/studies/bedroom4-wet-section.svg) | Corrected manufacturer datum reading; matched support/flange/branch details remain conditional |
-| Independent physical challenge | [BCR wet result](../../project/bcr/bcr-wet-result.md) and [A3 investigation](../../project/bcr/studies/wet-feasibility.svg) | Separates cabinet entry from actual stack connection and gross space from fittings/support |
-| Current-house identity and adoption ceiling | [Current house basis](../reference-house/current-house-basis.md) | Existing selected source still controls; the proposal is not silently substituted |
+| Proposed room and service cabinet | [HAD allocation](https://github.com/adamnoden/architecture/blob/04212ccdddab5a56b0599061cc6724444e409a08/project/had/had-03-bedroom4-allocation.md) and its [A3 plan](https://github.com/adamnoden/architecture/blob/04212ccdddab5a56b0599061cc6724444e409a08/project/had/studies/bedroom4-allocation-study.svg) | Unadopted proposal; room/access geometry and maintenance costs, not an installed-system pass |
+| Located wet section and alternatives | [IAS section](https://github.com/adamnoden/architecture/blob/04212ccdddab5a56b0599061cc6724444e409a08/project/ias/ias-03-bedroom4-wet-section.md) and [A3 section](https://github.com/adamnoden/architecture/blob/04212ccdddab5a56b0599061cc6724444e409a08/project/ias/studies/bedroom4-wet-section.svg) | Corrected manufacturer datum reading; matched support/flange/branch details remain conditional |
+| Independent physical challenge | [BCR wet result](https://github.com/adamnoden/architecture/blob/04212ccdddab5a56b0599061cc6724444e409a08/project/bcr/bcr-wet-result.md) and [A3 investigation](https://github.com/adamnoden/architecture/blob/04212ccdddab5a56b0599061cc6724444e409a08/project/bcr/studies/wet-feasibility.svg) | Separates cabinet entry from actual stack connection and gross space from fittings/support |
+| Current-house identity and adoption ceiling | [Current house basis](https://github.com/adamnoden/architecture/blob/04212ccdddab5a56b0599061cc6724444e409a08/docs/reference-house/current-house-basis.md) | Existing selected source still controls; the proposal is not silently substituted |
 
 All four document groups are indexed at full revision
 **`04212ccdddab5a56b0599061cc6724444e409a08`**, with their existing product-source versions and
 limitations retained. Resolve each indexed repository path at that immutable commit;
-relative links are navigation, not permission to substitute a later file into the
-frozen example. The following essential unknowns are explicit: actual
+the example links resolve that revision, not a later version of the file. The following essential unknowns are explicit: actual
 tray/waste flange seating and matching support kit; real socket/clip and WC
 outlet/branch geometry; stack/vent/outfall; supported floor opening and complete
 wet boundary. Responsible design owners are IAS, HAD/OAS and the relevant
