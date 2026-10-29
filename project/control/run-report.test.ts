@@ -31,6 +31,8 @@ test('session attribution is the explicit merge journal, not all concurrent comp
  const r=run();r.merges=[{node:'A',pr:'https://github.com/o/r/pull/1',merge:ref}]
  const after=progressSnapshot([node('A','complete'),node('B'),node('OTHER','complete')],ref,new Date('2026-10-29T12:10:00Z'))
  assert.match(renderRunReport(r,after),/1 merged packet\(s\) currently complete/)
+ assert.deepEqual(progressDelta(baseline,after).addedComplete,['OTHER'])
+ assert.match(renderRunReport(r,after),/Previously tracked packets newly complete: 1; added already complete: 1/)
  const reopened=progressSnapshot([node('A'),node('B')],ref,new Date('2026-10-29T12:11:00Z'))
  assert.match(renderRunReport(r,reopened),/0 merged packet\(s\) currently complete/)
  assert.match(renderRunReport(r,reopened),/Reopened\/removed since merge/)
