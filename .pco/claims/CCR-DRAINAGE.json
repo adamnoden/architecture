@@ -9,11 +9,12 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T23:05:41.638Z",
-  "heartbeatAt": "2026-10-29T23:05:41.638Z",
-  "expiresAt": "2026-10-29T23:50:41.638Z",
+  "heartbeatAt": "2026-10-29T23:11:40.922Z",
+  "expiresAt": "2026-10-29T23:56:40.922Z",
   "checkpoint": {
-    "evidence": "Prior IAS partial1051 accepted and handoff lease released. Current CCR programme and owning source read; no CCR implementation before acquisition.",
-    "next": "Reproduce assigned canonical CCR counterexample, repair owning source with meaningful regression and valid controls, validate and integrate through serial commander queue."
+    "evidence": "Draft1058 exact456a55bf source reviewed by commander; all3 original false passes reproduced and corrected.34 RH-C4,6CH05,8CH06 tests plus canonical output identity checks pass; no generated geometry change.",
+    "next": "Complete final current-main integration with independent CCR packet if ready, exact-head full CI and every lease preflight; expected-head merge and issue1004 reconciliation/release."
   },
-  "branch": "zerg/worker-1-packet-5"
+  "branch": "zerg/worker-1-packet-5",
+  "pr": 1058
 }
