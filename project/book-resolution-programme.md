@@ -129,3 +129,8 @@ Physical-object preparation under PUB-02 may continue where content-independent.
 PCO changes how that sequence is controlled and scheduled; it does not add a publication maturity gate of its own.
 
 BSR completion, MRA authorisation and PCO authorisation do not themselves raise any maturity rating.
+
+
+## Relationship to the owner's actual house
+
+The [owner-house charter](owner-house-charter.md) and [DEL route](del/owner-house-delivery-plan.md) establish the larger purpose. This programme remains the reference-house/book reconciliation path. Completing it does not complete the real commission; real-house work does not wait for publication manufacture or editorial freeze. Findings flow both ways, with current design ownership and evidence preserved.

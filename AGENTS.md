@@ -42,6 +42,7 @@ Run within the current execution's actual capabilities and time limits; this com
 Follow changing facts at their source:
 
 - `README.md` — project proposition and conceptual structure;
+- `project/owner-house-charter.md` — governing owner purpose and priority when house, book and tooling objectives conflict; read before scoping substantial work;
 - `docs/README.md` — documentation ownership and information architecture;
 - `STATUS.md` — generated durable structural execution state and maturity projection;
 - `project/control/README.md` — PCO/ACO execution, dispatcher and live-claim mechanics;

@@ -4,6 +4,8 @@ This directory is the machine-readable execution-control plane for Ovid’s Hous
 
 It does **not** own architectural truth, maturity judgement or narrative history.
 
+Read the [owner-house charter](../owner-house-charter.md) and [delivery route](../del/owner-house-delivery-plan.md) before scoping substantial work. They establish why the work exists; this control plane establishes what can execute. Publication completion is not a prerequisite for the owner-house delivery path.
+
 ## Agent operating loop
 
 For substantial bounded project work intended to produce durable/authoritative output:
