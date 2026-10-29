@@ -24,9 +24,17 @@ This file establishes the live publication namespace. Historical release evidenc
 
 The prior EDA/PLT freeze path is no longer sufficient for final manufacture because the owner has authorised a material enlargement and refactor of the book. The controlling programme is [`project/book-resolution-programme.md`](../book-resolution-programme.md); the provenance-preserving editorial successor trigger is [`project/eda/eda-successor-trigger-2026-10-28.md`](../eda/eda-successor-trigger-2026-10-28.md).
 
+The [cross-stream refurbishment plan](../refurbishment-plan.md) now governs the bounded repair sequence. The [PLT refurbishment handoff](../plt/refurbishment-handoff.md) separates digital preparation from the actual owner print verdict; [EDA's current successor](../../docs/editorial/eda-programme.md#9-current-successor-publication-refurbishment) adds independent adapter-prose ownership work before renewed final assurance. This programme amendment records no implementation, physical acceptance or maturity increase.
+
 Final 12-copy content/drawing freeze and manufacture now require:
 
-**BSR → IAS/OAS/HAD → MRA integrated-house assault → BCR → MRA post-BCR closeout → HRS → final PLT integration/freeze → renewed EDA assurance → PUB-02 final manufacture gate.**
+**BSR → IAS/OAS/HAD → MRA integrated-house assault → BCR → MRA post-BCR closeout → HRS → PLT-FINAL-PREP → manual PLT-PRINT-REVIEW → PLT-FINAL-FREEZE → EDA-RENEWED → manual PUB-02-FINAL.**
+
+EDA-ADAPTER may run earlier and joins EDA-RENEWED as a separate prerequisite. PLT-CURRENT-REVIEW supplies the remaining digital capability and candidate handoff to PLT-FINAL-PREP; it cannot supply its own physical acceptance.
+
+Final content/drawing freeze, an order for manufacture or a claim of a finished private edition requires the current HRS handoff, source-consistent PLT integration, the applicable actual physical print verdict and renewed EDA acceptance. PUB-02-FINAL verifies the exact source/object identities and applicability of those results. PDFs, scale/font checks and screen approval do not replace the physical verdict.
+
+PUB-02-FINAL remains manual and owner-controlled. A self-service preparation closeout does not itself authorise external contact, spending or manufacture. Content-independent preparation remains available within the existing delegation; final production cannot bypass an unresolved gate.
 
 MRA #959 is an architectural/technical assurance dependency of the resolved-house source, not a publication-owned proof stream. PUB does not judge moisture adequacy; it simply refuses to freeze a supposedly final house before the owning programme has closed that risk at its stated scope.
 

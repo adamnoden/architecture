@@ -118,3 +118,9 @@ the selected roof/rainwater architecture and TRIAD-GATE establishes one house.
 
 HRS owns later post-BCR/post-MRA architectural synthesis. PLT owns publication
 drawings. Neither is asked to invent unresolved HAD/ROF/RWT decisions.
+
+## 29 October refurbishment interface
+
+Continue the incomplete furnished/room studies and reconcile spatial consequences of actual fixtures, access, structure and services. Preserve the accepted 12 × 12 m shell; adopt explicit source rewinds for narrower conflicts rather than cosmetic closure.
+
+The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.

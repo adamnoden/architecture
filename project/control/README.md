@@ -120,3 +120,6 @@ Aliases resolve to canonical node ids before touching the lease store, so shared
 - `../maturity-freshness.ts` — evidence-content drift surveillance for maturity reassessment.
 
 Root `AGENTS.md` remains the repository-wide operating constitution. This README adds the PCO/ACO-specific execution mechanics; it does not duplicate or weaken the root rules.
+## Owner-directed refurbishment handoff
+
+The 29 October 2026 [refurbishment plan](../refurbishment-plan.md) records the accepted 12 × 12 m reference house, independent-assessment findings, owning repair programmes and explicit continuation handoffs. Use the normal dispatcher and ACO leases; the plan introduces no alternative scheduler. Physical/professional evidence and the actual-size print verdict retain manual dispatch. Existing partial evidence survives the owner-authorised continuation requeue.

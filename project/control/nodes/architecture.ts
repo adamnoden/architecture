@@ -181,10 +181,10 @@ export const architectureNodes = defineNodes([
     owners: ['IAS'],
     title: 'Selected interior family, drawings and disassembly set',
     dependencies: ['IAS-02S', 'IAS-02W', 'IAS-OAS-JUNCTION', 'IAS-HAD-JUNCTION'],
-    lifecycle: 'started',
+    lifecycle: 'planned',
     aliases: ['IAS Wave 3'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/ias/ias-03-partial-selection-result.md']
+    closeoutEvidence: ['project/ias/ias-03-selection-closeout.md'],
   },
   {
     id: 'OAS-03',
@@ -201,10 +201,10 @@ export const architectureNodes = defineNodes([
     owners: ['HAD'],
     title: 'Architectural design convergence and visual synthesis',
     dependencies: ['IAS-HAD-JUNCTION', 'OAS-HAD-JUNCTION', 'HAD-02M'],
-    lifecycle: 'started',
+    lifecycle: 'planned',
     aliases: ['HAD Wave 3'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/had/had-03-furnished-design-study.md']
+    closeoutEvidence: ['project/had/had-03-selection-closeout.md'],
   },
 
   // Final audit found the bounded OAS topology did not supply its dimensioned studies.
@@ -223,11 +223,11 @@ export const architectureNodes = defineNodes([
     id: 'TRIAD-GATE',
     owners: ['IAS', 'OAS', 'HAD'],
     title: 'Shared selected-house integration gate',
-    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL', 'ROF-RWT-GATE'],
+    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL', 'ROF-RWT-GATE', 'BCR-PREFLIGHT'],
     lifecycle: 'planned',
     aliases: ['IAS/OAS/HAD Wave 4'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/triad-integration-result.md'],
   },
   {
     id: 'BCR-SCAFFOLD',
@@ -236,24 +236,105 @@ export const architectureNodes = defineNodes([
     dependencies: ['BSR-ROOT'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/bcr/bcr-scaffold-result.md'],
   },
   {
     id: 'BCR-CONVERGENCE',
     owners: ['BCR'],
     title: 'Substantive construction-resolution convergence',
-    dependencies: ['BCR-SCAFFOLD', 'TRIAD-GATE', 'MRA-04'],
+    dependencies: ['BCR-SCAFFOLD', 'TRIAD-GATE', 'MRA-04', 'BCR-PROPORTIONALITY', 'HRS-TECHNICAL', 'EPR-REFRESH', 'PHY-APPLICABILITY'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/bcr/bcr-convergence-result.md'],
   },
   {
     id: 'HRS-SYNTHESIS',
     owners: ['HRS'],
     title: 'Post-BCR final house resolution and synthesis',
-    dependencies: ['BCR-CONVERGENCE', 'MRA-05'],
+    dependencies: ['BCR-CONVERGENCE', 'MRA-05', 'PCO-APPLICABILITY', 'DEL-CURRENT', 'EDA-NARRATIVE'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/hrs/hrs-synthesis-result.md'],
+  },
+  {
+    id: 'HRS-BASELINE',
+    owners: ['HRS'],
+    title: 'Accepted 12 m house identity and historical-evidence applicability',
+    dependencies: ['BSR-ROOT'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/hrs/hrs-baseline-result.md']
+  },
+  {
+    id: 'BCR-STRUCTURE',
+    owners: ['BCR'],
+    title: 'Structure, stair and entry-void feasibility',
+    dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/bcr/bcr-structure-result.md']
+  },
+  {
+    id: 'BCR-WET',
+    owners: ['BCR'],
+    title: 'Wet-room sections, sanitary fit and foul-drainage feasibility',
+    dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/bcr/bcr-wet-result.md']
+  },
+  {
+    id: 'BCR-SERVICES',
+    owners: ['BCR'],
+    title: 'Plant, riser, distribution and replacement feasibility',
+    dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/bcr/bcr-services-result.md']
+  },
+  {
+    id: 'BCR-WATER',
+    owners: ['BCR'],
+    title: 'Roof and courtyard normal/failure water-path feasibility',
+    dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/bcr/bcr-water-result.md']
+  },
+  {
+    id: 'BCR-OCCUPATION',
+    owners: ['BCR'],
+    title: 'Complete occupation, escape and renewal actions',
+    dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/bcr/bcr-occupation-result.md']
+  },
+  {
+    id: 'BCR-PROPORTIONALITY',
+    owners: ['BCR'],
+    title: 'Current-house conventional comparator and burden appraisal',
+    dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/bcr/bcr-proportionality-result.md']
+  },
+  {
+    id: 'BCR-PREFLIGHT',
+    owners: ['BCR'],
+    title: 'Reconcile early feasibility findings into selection constraints',
+    dependencies: ['BCR-STRUCTURE', 'BCR-WET', 'BCR-SERVICES', 'BCR-WATER', 'BCR-OCCUPATION'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/bcr/bcr-preflight-result.md']
+  },
+  {
+    id: 'HRS-TECHNICAL',
+    owners: ['HRS'],
+    title: 'Current-house technical migration and computational applicability',
+    dependencies: ['TRIAD-GATE', 'CCR-IDENTITY'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/hrs/hrs-technical-result.md']
   }
 ])

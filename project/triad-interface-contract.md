@@ -135,3 +135,9 @@ retroactively turn an interface freeze into construction proof.
 The gate unlocks IAS-01V/01H, OAS-01E/01I and HAD-01E/01P/01S. Junctions, material
 synthesis, selection, TRIAD-GATE, MRA and BCR retain their own dependencies.
 No physical test or competent review has been completed by this contract.
+
+## 29 October owner confirmation and refurbishment integration
+
+The owner confirms the **12 × 12 m house** as the reference for the refurbishment programme. This confirms the selected shell, not technical adequacy of every current reservation or final roof/water selection. The current layout and explicit source rewinds remain authoritative for narrower dimensions.
+
+The [refurbishment plan](refurbishment-plan.md) adds early BCR feasibility input to TRIAD-GATE. IAS/OAS/HAD reconcile applicable conflicts in actual sanitary fit, door operation, access continuity, layer budgets and physical routes. A coherent local detail does not establish that its occurrence fits the house; BCR referral cannot conceal an unresolved architectural conflict. Historical 12 × 10.8 m evidence remains usable only with an explicit applicability decision.

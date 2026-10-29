@@ -243,3 +243,9 @@ ROF closes only when:
 - no PLT drawing or current convention has been mistaken for design authority.
 
 Closure establishes a controlled architectural roof-system proposition, not structural, building-physics, regulatory, product or workmanship approval.
+
+## 29 October refurbishment interface
+
+Reuse completed ROF-00 rather than repeating its current/legacy inventory. Reconcile early BCR-WATER catchment, access and threshold constraints; the final coupled gate must supply located normal/failure paths and maintenance access at its stated scope. Existing research/selection dependencies remain intact.
+
+The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.

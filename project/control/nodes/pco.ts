@@ -6,7 +6,7 @@ export const pcoNodes = defineNodes([
     owners: ['PCO'],
     title: 'Record owner-directed refurbishment scope and swarmable handoffs',
     dependencies: ['PCO-DISPATCH'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed coordination packet; bootstrap before acquiring its ACO lease.' },
     closeoutEvidence: ['project/pco/pco-refurbishment-plan-result.md']
   },
@@ -140,5 +140,14 @@ export const pcoNodes = defineNodes([
       'project/control/README.md',
       'AGENTS.md'
     ]
+  },
+  {
+    id: 'PCO-APPLICABILITY',
+    owners: ['PCO'],
+    title: 'Bind maturity applicability to assessed design sources',
+    dependencies: ['PCO-DISPATCH', 'HRS-BASELINE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/pco/pco-applicability-result.md']
   }
 ])

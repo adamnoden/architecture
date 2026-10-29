@@ -70,3 +70,9 @@ OAS closes when representative window, external-door, internal-door and threshol
 shared TRIAD-GATE establishes one coordinated house with IAS/HAD.
 
 Closure does not establish regulatory approval, certification or physical performance.
+
+## 29 October refurbishment interface
+
+Reconcile actual finished opening, withdrawal and threshold meanings with early BCR occupation/water findings. Existing OAS selection remains evidence at its bounded scope; product performance or house occurrence is not earned by a nominal interface study.
+
+The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.

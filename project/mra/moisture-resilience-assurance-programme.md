@@ -232,3 +232,9 @@ Close MRA only when:
 - HRS can synthesize the final house without inheriting an undisclosed moisture vulnerability.
 
 MRA closeout is an internal Reference House assurance result at its stated scope. It is not real-site suitability, statutory acceptance, product certification or a claim that leakage is physically impossible.
+
+## 29 October refurbishment interface
+
+MRA-00 first reconciles current source and ROF/RWT baseline inventories. MRA-01/02/03 consume the selected five BCR physical studies and their assumptions. MRA-04 distinguishes material architectural blockers from bounded later evidence; MRA-05 verifies actual corrections. A referral alone does not discharge a moisture failure.
+
+The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.
