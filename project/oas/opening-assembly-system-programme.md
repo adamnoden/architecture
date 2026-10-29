@@ -1,6 +1,6 @@
 # OAS — Opening Assembly System
 
-**State:** OAS-00 baseline complete; shared interface freeze awaits HAD-00
+**State:** OAS-00 baseline complete; core candidates follow the shared interface freeze
 
 **Tracking:** [#942 — OAS opening assembly system](https://github.com/adamnoden/architecture/issues/942)  
 **Programme map:** [`../book-resolution-programme.md`](../book-resolution-programme.md)
