@@ -9,7 +9,13 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T21:26:47.794Z",
-  "heartbeatAt": "2026-10-29T21:26:47.794Z",
-  "expiresAt": "2026-10-29T22:11:47.794Z",
-  "branch": "zerg/worker-6-wave2"
+  "heartbeatAt": "2026-10-29T21:34:47.989Z",
+  "expiresAt": "2026-10-29T22:19:47.989Z",
+  "branch": "zerg/worker-6-wave2",
+  "pr": 1032,
+  "checkpoint": {
+    "evidence": "PR #1032; RWT04 shared compatibility record; roof and collection peer review complete",
+    "next": "Reconcile bundle1031 and exact-head CI then serial preflight",
+    "blocker": "Integration and CI pending"
+  }
 }
