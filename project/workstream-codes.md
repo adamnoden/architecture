@@ -9,11 +9,12 @@ New first-class workstreams use exactly three uppercase letters. Historical evid
 | `ACO` | Agent Claim Orchestration | [#960](https://github.com/adamnoden/architecture/issues/960) | `project/aco/agent-claim-orchestration-programme.md` | — |
 | `ADE` | Architectural Drawing Engine | [#812](https://github.com/adamnoden/architecture/issues/812) | — | — |
 | `BCR` | Buildability & Construction Resolution | [#944](https://github.com/adamnoden/architecture/issues/944) | `project/bcr/buildability-construction-resolution-programme.md` | — |
+| `CCR` | Compiler Correctness Repair | [#1004](https://github.com/adamnoden/architecture/issues/1004) | `project/ccr/compiler-correctness-repair-programme.md` | — |
 | `BSR` | Book Structure Refactor | [#940](https://github.com/adamnoden/architecture/issues/940) | `project/book-resolution-programme.md` | — |
 | `DEL` | Delivery requirements | [#854](https://github.com/adamnoden/architecture/issues/854) | `project/del/delivery-programme.md` | — |
 | `DPL` | Deployment / real-site design study | [#299](https://github.com/adamnoden/architecture/issues/299) | `project/dpl/deployment-programme.md` | — |
 | `DRW` | Architectural drawing programme | — | — | — |
-| `EDA` | Editorial Doctrine Audit | — | `docs/editorial/eda-programme.md` | — |
+| `EDA` | Editorial Doctrine Audit | [#1005](https://github.com/adamnoden/architecture/issues/1005) | `docs/editorial/eda-programme.md` | — |
 | `EPR` | External professional review | [#913](https://github.com/adamnoden/architecture/issues/913) | — | — |
 | `HAD` | House Architectural Design | [#943](https://github.com/adamnoden/architecture/issues/943) | `project/had/house-architectural-design-programme.md` | — |
 | `HFI` | Human factors / low-friction inhabitation | — | — | — |

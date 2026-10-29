@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 7 · **Active:** 5 · **Blocked:** 26 · **Held:** 2 · **Done:** 39 · **Cancelled:** 0
+**Structurally ready:** 14 · **Active:** 0 · **Blocked:** 45 · **Held:** 2 · **Done:** 40 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -19,13 +19,20 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `PCO-REFURB-PLAN` | Record owner-directed refurbishment scope and swarmable handoffs | PCO | — |
+| `CCR-PLAN` | Repair rectangle-union area and plate closure | CCR | — |
+| `CCR-STAIR` | Repair stair datum arithmetic and discrete topology | CCR | — |
+| `CCR-DRAINAGE` | Repair drainage declaration validity and source consistency | CCR | — |
+| `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
+| `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
+| `HRS-BASELINE` | Accepted 12 m house identity and historical-evidence applicability | HRS | PCO-APPLICABILITY |
 | `ROF-01` | Roof evidence, failure model and evaluation frame | ROF | ROF-02, ROF-03, ROF-04 |
 | `RWT-01` | Rainfall and hydraulic basis | RWT | RWT-02, RWT-03, RWT-04 |
-| `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
-| `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
-| `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
+| `MRA-00` | Moisture constitution, inventory and threat model | MRA | — |
+| `PLT-CURRENT-REVIEW` | Current-house digital plate capability and review handoff | PLT | — |
+| `PUB-02-PREP` | Content-independent private-object preparation | PUB | — |
+| `EDA-ADAPTER` | Restore authored ownership of architectural publication prose | EDA | — |
+| `EDA-ARGUMENT` | Red-team architectural contribution and evidence for the central thesis | EDA | — |
 
 ### Active durable work
 
@@ -33,19 +40,25 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner |
 |---|---|---|
-| `IAS-03` | Selected interior family, drawings and disassembly set | IAS |
-| `HAD-03` | Architectural design convergence and visual synthesis | HAD |
-| `MRA-00` | Moisture constitution, inventory and threat model | MRA |
-| `PLT-CURRENT-REVIEW` | Current-source plate capability and physical review work | PLT |
-| `PUB-02-PREP` | Content-independent private-object preparation | PUB |
+| — | No node is currently active | — |
 
 ### Blocked
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03, ROF-RWT-GATE |
-| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE, MRA-04 |
-| `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05 |
+| `CCR-IDENTITY` | Adjudicate identity guarantees and integrate correctness repairs | CCR-PLAN, CCR-STAIR, CCR-DRAINAGE |
+| `PCO-APPLICABILITY` | Bind maturity applicability to assessed design sources | HRS-BASELINE |
+| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03, ROF-RWT-GATE, BCR-PREFLIGHT |
+| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE, MRA-04, BCR-PROPORTIONALITY, HRS-TECHNICAL, EPR-REFRESH, PHY-APPLICABILITY |
+| `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, PCO-APPLICABILITY, DEL-CURRENT, EDA-NARRATIVE |
+| `BCR-STRUCTURE` | Structure, stair and entry-void feasibility | BCR-SCAFFOLD, HRS-BASELINE |
+| `BCR-WET` | Wet-room sections, sanitary fit and foul-drainage feasibility | BCR-SCAFFOLD, HRS-BASELINE |
+| `BCR-SERVICES` | Plant, riser, distribution and replacement feasibility | BCR-SCAFFOLD, HRS-BASELINE |
+| `BCR-WATER` | Roof and courtyard normal/failure water-path feasibility | BCR-SCAFFOLD, HRS-BASELINE |
+| `BCR-OCCUPATION` | Complete occupation, escape and renewal actions | BCR-SCAFFOLD, HRS-BASELINE |
+| `BCR-PROPORTIONALITY` | Current-house conventional comparator and burden appraisal | BCR-SCAFFOLD, HRS-BASELINE |
+| `BCR-PREFLIGHT` | Reconcile early feasibility findings into selection constraints | BCR-STRUCTURE, BCR-WET, BCR-SERVICES, BCR-WATER, BCR-OCCUPATION |
+| `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE, CCR-IDENTITY |
 | `ROF-02` | Roof topology and geometry families | ROF-01 |
 | `ROF-03` | Roof covering-system families | ROF-01 |
 | `ROF-04` | Roof assembly beneath the covering | ROF-01 |
@@ -66,13 +79,22 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `MRA-03` | Vapour, condensation and drying assault | MRA-00, TRIAD-GATE |
 | `MRA-04` | Whole-house moisture failure matrix and adversarial gate | MRA-01, MRA-02, MRA-03 |
 | `MRA-05` | Post-BCR moisture assurance closeout | BCR-CONVERGENCE |
-| `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
-| `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE |
+| `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | PLT-FINAL-PREP, PLT-PRINT-REVIEW |
+| `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE, EDA-ADAPTER |
 | `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | PUB-02-PREP, EDA-RENEWED |
+| `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
+| `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
+| `EDA-NARRATIVE` | Reshape and subtract for a compelling architectural reader journey | EDA-ARGUMENT, EDA-ADAPTER |
+| `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY-APPLICABILITY |
+| `PHY-04` | Wall/ceiling movement-junction build and test | PHY-APPLICABILITY |
+| `EPR-RH11` | Obtain and process competent Reference House reviews | EPR-REFRESH |
+| `EPR-REFRESH` | Refresh current-house review briefs and questions | HRS-BASELINE, BCR-PREFLIGHT |
+| `PHY-APPLICABILITY` | Reconcile prototype applicability and earned evidence requirements | HRS-BASELINE, BCR-PREFLIGHT |
+| `DEL-CURRENT` | Reconcile selected-house delivery and reinstatement requirements | BCR-CONVERGENCE |
 
 ### Structural critical path
 
-`ROF-01` → `ROF-02` → `ROF-05` → `ROF-06` → `ROF-07` → `ROF-RWT-GATE` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`ROF-01` → `ROF-02` → `ROF-05` → `ROF-06` → `ROF-07` → `ROF-RWT-GATE` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
@@ -102,13 +124,13 @@ PCO monitors the evidence content from baseline `c3701c5`. A changed evidence fi
 | **Architectural grammar framework** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
 | **G-01 grammar instance** | **M4** | 2026-10-14 | 9 | fresh against PCO evidence baseline |
 | **Reference House** | **M3** | 2026-10-19 | 9 | fresh against PCO evidence baseline |
-| **Physical prototypes** | **M2** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **Physical prototypes** | **M2** | 2026-10-12 | 3 | **STALE — reassess** (`docs/development/tectonic-prototype-programme.md`) |
 | **External professional review** | **M1** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
 | **Computational track** | **M4** | 2026-10-19 | 45 | fresh against PCO evidence baseline |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
-| **Publication** | **M4** | 2026-10-28 | 17 | fresh against PCO evidence baseline |
+| **Publication** | **M4** | 2026-10-28 | 17 | **STALE — reassess** (`docs/editorial/eda-programme.md`) |
 | **Deployment / real-site integration** | **M4** | 2026-10-27 | 48 | fresh against PCO evidence baseline |
-| **Delivery** | **M2** | 2026-10-28 | 5 | fresh against PCO evidence baseline |
+| **Delivery** | **M2** | 2026-10-28 | 5 | **STALE — reassess** (`project/del/delivery-programme.md`) |
 
 <details>
 <summary>Legacy maturity compatibility projection (non-authoritative)</summary>

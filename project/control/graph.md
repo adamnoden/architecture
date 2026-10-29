@@ -12,17 +12,24 @@ Completed/cancelled history is omitted here so the current dependency frontier r
 %%{init: {"theme":"base","themeVariables":{"background":"#f7f6f2","primaryColor":"#f0eee9","primaryBorderColor":"#c9c6bd","primaryTextColor":"#20221f","clusterBkg":"#f8f7f4","clusterBorder":"#ccc9c1","lineColor":"#9eaaa1","fontFamily":"ui-sans-serif, system-ui, sans-serif","fontSize":"15px"},"flowchart":{"htmlLabels":true,"useMaxWidth":false,"nodeSpacing":42,"rankSpacing":68,"curve":"basis"}}}%%
 flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
+  subgraph g_CCR["CCR"]
+    direction TB
+    n_CCR_PLAN["CCR-PLAN<br/>Repair rectangle-union area and plate closure<br/><b>READY</b>"]
+    n_CCR_STAIR["CCR-STAIR<br/>Repair stair datum arithmetic and discrete topology<br/><b>READY</b>"]
+    n_CCR_DRAINAGE["CCR-DRAINAGE<br/>Repair drainage declaration validity and source consistency<br/><b>READY</b>"]
+    n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>BLOCKED</b>"]
+  end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_REFURB_PLAN["PCO-REFURB-PLAN<br/>Record owner-directed refurbishment scope and swarmable handoffs<br/><b>READY</b>"]
+    n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>BLOCKED</b>"]
   end
   subgraph g_IAS["IAS"]
     direction TB
-    n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>ACTIVE</b>"]
+    n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>READY</b>"]
   end
   subgraph g_HAD["HAD"]
     direction TB
-    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>ACTIVE</b>"]
+    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>READY</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
@@ -33,10 +40,19 @@ flowchart LR
     direction TB
     n_BCR_SCAFFOLD["BCR-SCAFFOLD<br/>Construction-resolution inventory and matrix scaffolding<br/><b>READY</b>"]
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
+    n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>BLOCKED</b>"]
+    n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>BLOCKED</b>"]
+    n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>BLOCKED</b>"]
+    n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>BLOCKED</b>"]
+    n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>BLOCKED</b>"]
+    n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>BLOCKED</b>"]
+    n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
     direction TB
     n_HRS_SYNTHESIS["HRS-SYNTHESIS<br/>Post-BCR final house resolution and synthesis<br/><b>BLOCKED</b>"]
+    n_HRS_BASELINE["HRS-BASELINE<br/>Accepted 12 m house identity and historical-evidence applicability<br/><b>READY</b>"]
+    n_HRS_TECHNICAL["HRS-TECHNICAL<br/>Current-house technical migration and computational applicability<br/><b>BLOCKED</b>"]
   end
   subgraph g_ROF["ROF"]
     direction TB
@@ -62,7 +78,7 @@ flowchart LR
   end
   subgraph g_MRA["MRA"]
     direction TB
-    n_MRA_00["MRA-00<br/>Moisture constitution, inventory and threat model<br/><b>ACTIVE</b>"]
+    n_MRA_00["MRA-00<br/>Moisture constitution, inventory and threat model<br/><b>READY</b>"]
     n_MRA_01["MRA-01<br/>External water and ground-envelope assault<br/><b>BLOCKED</b>"]
     n_MRA_02["MRA-02<br/>Internal water and wet-zone assault<br/><b>BLOCKED</b>"]
     n_MRA_03["MRA-03<br/>Vapour, condensation and drying assault<br/><b>BLOCKED</b>"]
@@ -71,37 +87,79 @@ flowchart LR
   end
   subgraph g_PLT["PLT"]
     direction TB
-    n_PLT_CURRENT_REVIEW["PLT-CURRENT-REVIEW<br/>Current-source plate capability and physical review work<br/><b>ACTIVE</b>"]
+    n_PLT_CURRENT_REVIEW["PLT-CURRENT-REVIEW<br/>Current-house digital plate capability and review handoff<br/><b>READY</b>"]
     n_PLT_FINAL_FREEZE["PLT-FINAL-FREEZE<br/>Final resolved-house plate integration and freeze<br/><b>BLOCKED</b>"]
+    n_PLT_FINAL_PREP["PLT-FINAL-PREP<br/>Prepare coherent final current-house digital and print proof set<br/><b>BLOCKED</b>"]
+    n_PLT_PRINT_REVIEW["PLT-PRINT-REVIEW<br/>Receive and disposition actual-size BOOK and WALL print verdicts<br/><b>BLOCKED</b>"]
   end
   subgraph g_EDA["EDA"]
     direction TB
     n_EDA_RENEWED["EDA-RENEWED<br/>Renewed editorial-doctrine assurance over enlarged final source<br/><b>BLOCKED</b>"]
+    n_EDA_ADAPTER["EDA-ADAPTER<br/>Restore authored ownership of architectural publication prose<br/><b>READY</b>"]
+    n_EDA_ARGUMENT["EDA-ARGUMENT<br/>Red-team architectural contribution and evidence for the central thesis<br/><b>READY</b>"]
+    n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>BLOCKED</b>"]
   end
   subgraph g_PUB["PUB"]
     direction TB
-    n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>ACTIVE</b>"]
+    n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>READY</b>"]
     n_PUB_02_FINAL["PUB-02-FINAL<br/>Final private-object content, drawing and manufacture gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_PHY["PHY"]
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
-    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>READY</b>"]
-    n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
+    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>BLOCKED</b>"]
+    n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>BLOCKED</b>"]
+    n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>BLOCKED</b>"]
   end
   subgraph g_EPR["EPR"]
     direction TB
-    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
+    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
+    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>BLOCKED</b>"]
   end
+  subgraph g_DEL["DEL"]
+    direction TB
+    n_DEL_CURRENT["DEL-CURRENT<br/>Reconcile selected-house delivery and reinstatement requirements<br/><b>BLOCKED</b>"]
+  end
+  n_CCR_PLAN --> n_CCR_IDENTITY
+  n_CCR_STAIR --> n_CCR_IDENTITY
+  n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_HRS_BASELINE --> n_PCO_APPLICABILITY
   n_IAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
+  n_BCR_PREFLIGHT --> n_TRIAD_GATE
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
+  n_BCR_PROPORTIONALITY --> n_BCR_CONVERGENCE
+  n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
+  n_EPR_REFRESH --> n_BCR_CONVERGENCE
+  n_PHY_APPLICABILITY --> n_BCR_CONVERGENCE
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
+  n_PCO_APPLICABILITY --> n_HRS_SYNTHESIS
+  n_DEL_CURRENT --> n_HRS_SYNTHESIS
+  n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
+  n_BCR_SCAFFOLD --> n_BCR_STRUCTURE
+  n_HRS_BASELINE --> n_BCR_STRUCTURE
+  n_BCR_SCAFFOLD --> n_BCR_WET
+  n_HRS_BASELINE --> n_BCR_WET
+  n_BCR_SCAFFOLD --> n_BCR_SERVICES
+  n_HRS_BASELINE --> n_BCR_SERVICES
+  n_BCR_SCAFFOLD --> n_BCR_WATER
+  n_HRS_BASELINE --> n_BCR_WATER
+  n_BCR_SCAFFOLD --> n_BCR_OCCUPATION
+  n_HRS_BASELINE --> n_BCR_OCCUPATION
+  n_BCR_SCAFFOLD --> n_BCR_PROPORTIONALITY
+  n_HRS_BASELINE --> n_BCR_PROPORTIONALITY
+  n_BCR_STRUCTURE --> n_BCR_PREFLIGHT
+  n_BCR_WET --> n_BCR_PREFLIGHT
+  n_BCR_SERVICES --> n_BCR_PREFLIGHT
+  n_BCR_WATER --> n_BCR_PREFLIGHT
+  n_BCR_OCCUPATION --> n_BCR_PREFLIGHT
+  n_TRIAD_GATE --> n_HRS_TECHNICAL
+  n_CCR_IDENTITY --> n_HRS_TECHNICAL
   n_ROF_01 --> n_ROF_02
   n_ROF_01 --> n_ROF_03
   n_ROF_01 --> n_ROF_04
@@ -140,13 +198,28 @@ flowchart LR
   n_MRA_02 --> n_MRA_04
   n_MRA_03 --> n_MRA_04
   n_BCR_CONVERGENCE --> n_MRA_05
-  n_HRS_SYNTHESIS --> n_PLT_FINAL_FREEZE
-  n_PLT_CURRENT_REVIEW --> n_PLT_FINAL_FREEZE
+  n_PLT_FINAL_PREP --> n_PLT_FINAL_FREEZE
+  n_PLT_PRINT_REVIEW --> n_PLT_FINAL_FREEZE
   n_PLT_FINAL_FREEZE --> n_EDA_RENEWED
+  n_EDA_ADAPTER --> n_EDA_RENEWED
   n_PUB_02_PREP --> n_PUB_02_FINAL
   n_EDA_RENEWED --> n_PUB_02_FINAL
+  n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
+  n_PLT_CURRENT_REVIEW --> n_PLT_FINAL_PREP
+  n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
+  n_EDA_ARGUMENT --> n_EDA_NARRATIVE
+  n_EDA_ADAPTER --> n_EDA_NARRATIVE
+  n_PHY_APPLICABILITY --> n_PHY_03_ENGINEERING
+  n_PHY_APPLICABILITY --> n_PHY_04
+  n_EPR_REFRESH --> n_EPR_RH11
+  n_HRS_BASELINE --> n_EPR_REFRESH
+  n_BCR_PREFLIGHT --> n_EPR_REFRESH
+  n_HRS_BASELINE --> n_PHY_APPLICABILITY
+  n_BCR_PREFLIGHT --> n_PHY_APPLICABILITY
+  n_BCR_CONVERGENCE --> n_DEL_CURRENT
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
+  style g_CCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PCO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -161,6 +234,7 @@ flowchart LR
   style g_PUB fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_DEL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   classDef ready fill:#dce9df,stroke:#376249,color:#20392b,stroke-width:2px;
   classDef blocked fill:#f0eee9,stroke:#a5a197,color:#54534e,stroke-width:1.5px;
   classDef active fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:2px;
@@ -172,13 +246,26 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
-  class n_PCO_REFURB_PLAN ready;
-  class n_IAS_03 active;
-  class n_HAD_03 active;
+  class n_CCR_PLAN ready;
+  class n_CCR_STAIR ready;
+  class n_CCR_DRAINAGE ready;
+  class n_CCR_IDENTITY blocked;
+  class n_PCO_APPLICABILITY blocked;
+  class n_IAS_03 ready;
+  class n_HAD_03 ready;
   class n_TRIAD_GATE blocked;
   class n_BCR_SCAFFOLD ready;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
+  class n_HRS_BASELINE ready;
+  class n_BCR_STRUCTURE blocked;
+  class n_BCR_WET blocked;
+  class n_BCR_SERVICES blocked;
+  class n_BCR_WATER blocked;
+  class n_BCR_OCCUPATION blocked;
+  class n_BCR_PROPORTIONALITY blocked;
+  class n_BCR_PREFLIGHT blocked;
+  class n_HRS_TECHNICAL blocked;
   class n_ROF_01 ready;
   class n_ROF_02 blocked;
   class n_ROF_03 blocked;
@@ -196,22 +283,30 @@ flowchart LR
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_MRA_00 active;
+  class n_MRA_00 ready;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
   class n_MRA_03 blocked;
   class n_MRA_04 blocked;
   class n_MRA_05 blocked;
-  class n_PLT_CURRENT_REVIEW active;
+  class n_PLT_CURRENT_REVIEW ready;
   class n_PLT_FINAL_FREEZE blocked;
   class n_EDA_RENEWED blocked;
-  class n_PUB_02_PREP active;
+  class n_PUB_02_PREP ready;
   class n_PUB_02_FINAL blocked;
+  class n_EDA_ADAPTER ready;
+  class n_PLT_FINAL_PREP blocked;
+  class n_PLT_PRINT_REVIEW blocked;
+  class n_EDA_ARGUMENT ready;
+  class n_EDA_NARRATIVE blocked;
   class n_PHY_01 held;
   class n_PHY_02 held;
-  class n_PHY_03_ENGINEERING ready;
-  class n_PHY_04 ready;
-  class n_EPR_RH11 ready;
+  class n_PHY_03_ENGINEERING blocked;
+  class n_PHY_04 blocked;
+  class n_EPR_RH11 blocked;
+  class n_EPR_REFRESH blocked;
+  class n_PHY_APPLICABILITY blocked;
+  class n_DEL_CURRENT blocked;
 ```
 
 ## Complete graph
@@ -231,9 +326,16 @@ flowchart LR
     n_ACO_03["ACO-03<br/>Repository and agent integration<br/><b>DONE</b>"]
     n_ACO_04["ACO-04<br/>Self-hosted adversarial closeout<br/><b>DONE</b>"]
   end
+  subgraph g_CCR["CCR"]
+    direction TB
+    n_CCR_PLAN["CCR-PLAN<br/>Repair rectangle-union area and plate closure<br/><b>READY</b>"]
+    n_CCR_STAIR["CCR-STAIR<br/>Repair stair datum arithmetic and discrete topology<br/><b>READY</b>"]
+    n_CCR_DRAINAGE["CCR-DRAINAGE<br/>Repair drainage declaration validity and source consistency<br/><b>READY</b>"]
+    n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>BLOCKED</b>"]
+  end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_REFURB_PLAN["PCO-REFURB-PLAN<br/>Record owner-directed refurbishment scope and swarmable handoffs<br/><b>READY</b>"]
+    n_PCO_REFURB_PLAN["PCO-REFURB-PLAN<br/>Record owner-directed refurbishment scope and swarmable handoffs<br/><b>DONE</b>"]
     n_PCO_00["PCO-00<br/>Control-plane inventory and authority map<br/><b>DONE</b>"]
     n_PCO_01["PCO-01<br/>Schema and concurrency-safe storage<br/><b>DONE</b>"]
     n_PCO_02["PCO-02<br/>Derivation engine<br/><b>DONE</b>"]
@@ -245,6 +347,7 @@ flowchart LR
     n_PCO_08["PCO-08<br/>Adversarial closeout<br/><b>DONE</b>"]
     n_PCO_VIS["PCO-VIS<br/>Generated structural and live Mermaid control graphs<br/><b>DONE</b>"]
     n_PCO_DISPATCH["PCO-DISPATCH<br/>Self-service agent dispatcher and race-safe claim-next policy<br/><b>DONE</b>"]
+    n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>BLOCKED</b>"]
   end
   subgraph g_BSR["BSR"]
     direction TB
@@ -257,7 +360,7 @@ flowchart LR
     n_IAS_01H["IAS-01H<br/>Horizontal interior system candidates<br/><b>DONE</b>"]
     n_IAS_02S["IAS-02S<br/>Interior services and access family<br/><b>DONE</b>"]
     n_IAS_02W["IAS-02W<br/>Wet-room and kitchen interior-system variants<br/><b>DONE</b>"]
-    n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>ACTIVE</b>"]
+    n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>READY</b>"]
   end
   subgraph g_OAS["OAS"]
     direction TB
@@ -274,7 +377,7 @@ flowchart LR
     n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>DONE</b>"]
     n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>DONE</b>"]
     n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>DONE</b>"]
-    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>ACTIVE</b>"]
+    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>READY</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
@@ -289,10 +392,19 @@ flowchart LR
     direction TB
     n_BCR_SCAFFOLD["BCR-SCAFFOLD<br/>Construction-resolution inventory and matrix scaffolding<br/><b>READY</b>"]
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
+    n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>BLOCKED</b>"]
+    n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>BLOCKED</b>"]
+    n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>BLOCKED</b>"]
+    n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>BLOCKED</b>"]
+    n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>BLOCKED</b>"]
+    n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>BLOCKED</b>"]
+    n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
     direction TB
     n_HRS_SYNTHESIS["HRS-SYNTHESIS<br/>Post-BCR final house resolution and synthesis<br/><b>BLOCKED</b>"]
+    n_HRS_BASELINE["HRS-BASELINE<br/>Accepted 12 m house identity and historical-evidence applicability<br/><b>READY</b>"]
+    n_HRS_TECHNICAL["HRS-TECHNICAL<br/>Current-house technical migration and computational applicability<br/><b>BLOCKED</b>"]
   end
   subgraph g_ROF["ROF"]
     direction TB
@@ -320,7 +432,7 @@ flowchart LR
   end
   subgraph g_MRA["MRA"]
     direction TB
-    n_MRA_00["MRA-00<br/>Moisture constitution, inventory and threat model<br/><b>ACTIVE</b>"]
+    n_MRA_00["MRA-00<br/>Moisture constitution, inventory and threat model<br/><b>READY</b>"]
     n_MRA_01["MRA-01<br/>External water and ground-envelope assault<br/><b>BLOCKED</b>"]
     n_MRA_02["MRA-02<br/>Internal water and wet-zone assault<br/><b>BLOCKED</b>"]
     n_MRA_03["MRA-03<br/>Vapour, condensation and drying assault<br/><b>BLOCKED</b>"]
@@ -329,37 +441,48 @@ flowchart LR
   end
   subgraph g_PLT["PLT"]
     direction TB
-    n_PLT_CURRENT_REVIEW["PLT-CURRENT-REVIEW<br/>Current-source plate capability and physical review work<br/><b>ACTIVE</b>"]
+    n_PLT_CURRENT_REVIEW["PLT-CURRENT-REVIEW<br/>Current-house digital plate capability and review handoff<br/><b>READY</b>"]
     n_PLT_FINAL_FREEZE["PLT-FINAL-FREEZE<br/>Final resolved-house plate integration and freeze<br/><b>BLOCKED</b>"]
+    n_PLT_FINAL_PREP["PLT-FINAL-PREP<br/>Prepare coherent final current-house digital and print proof set<br/><b>BLOCKED</b>"]
+    n_PLT_PRINT_REVIEW["PLT-PRINT-REVIEW<br/>Receive and disposition actual-size BOOK and WALL print verdicts<br/><b>BLOCKED</b>"]
   end
   subgraph g_EDA["EDA"]
     direction TB
     n_EDA_RENEWED["EDA-RENEWED<br/>Renewed editorial-doctrine assurance over enlarged final source<br/><b>BLOCKED</b>"]
+    n_EDA_ADAPTER["EDA-ADAPTER<br/>Restore authored ownership of architectural publication prose<br/><b>READY</b>"]
+    n_EDA_ARGUMENT["EDA-ARGUMENT<br/>Red-team architectural contribution and evidence for the central thesis<br/><b>READY</b>"]
+    n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>BLOCKED</b>"]
   end
   subgraph g_PUB["PUB"]
     direction TB
-    n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>ACTIVE</b>"]
+    n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>READY</b>"]
     n_PUB_02_FINAL["PUB-02-FINAL<br/>Final private-object content, drawing and manufacture gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_PHY["PHY"]
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
-    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>READY</b>"]
-    n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
+    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>BLOCKED</b>"]
+    n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>BLOCKED</b>"]
+    n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>BLOCKED</b>"]
   end
   subgraph g_EPR["EPR"]
     direction TB
-    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
+    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
+    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>BLOCKED</b>"]
   end
   subgraph g_DEL["DEL"]
     direction TB
     n_DEL_00["DEL-00<br/>Delivery responsibility and evidence baseline<br/><b>DONE</b>"]
+    n_DEL_CURRENT["DEL-CURRENT<br/>Reconcile selected-house delivery and reinstatement requirements<br/><b>BLOCKED</b>"]
   end
   n_ACO_00 --> n_ACO_01
   n_ACO_01 --> n_ACO_02
   n_ACO_02 --> n_ACO_03
   n_ACO_03 --> n_ACO_04
+  n_CCR_PLAN --> n_CCR_IDENTITY
+  n_CCR_STAIR --> n_CCR_IDENTITY
+  n_CCR_DRAINAGE --> n_CCR_IDENTITY
   n_PCO_DISPATCH --> n_PCO_REFURB_PLAN
   n_PCO_00 --> n_PCO_01
   n_PCO_01 --> n_PCO_02
@@ -372,6 +495,8 @@ flowchart LR
   n_PCO_07 --> n_PCO_08
   n_PCO_08 --> n_PCO_VIS
   n_PCO_VIS --> n_PCO_DISPATCH
+  n_PCO_DISPATCH --> n_PCO_APPLICABILITY
+  n_HRS_BASELINE --> n_PCO_APPLICABILITY
   n_BSR_ROOT --> n_IAS_00
   n_BSR_ROOT --> n_OAS_00
   n_BSR_ROOT --> n_HAD_00
@@ -425,12 +550,40 @@ flowchart LR
   n_HAD_03 --> n_TRIAD_GATE
   n_OAS_DETAIL --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
+  n_BCR_PREFLIGHT --> n_TRIAD_GATE
   n_BSR_ROOT --> n_BCR_SCAFFOLD
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
+  n_BCR_PROPORTIONALITY --> n_BCR_CONVERGENCE
+  n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
+  n_EPR_REFRESH --> n_BCR_CONVERGENCE
+  n_PHY_APPLICABILITY --> n_BCR_CONVERGENCE
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
+  n_PCO_APPLICABILITY --> n_HRS_SYNTHESIS
+  n_DEL_CURRENT --> n_HRS_SYNTHESIS
+  n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
+  n_BSR_ROOT --> n_HRS_BASELINE
+  n_BCR_SCAFFOLD --> n_BCR_STRUCTURE
+  n_HRS_BASELINE --> n_BCR_STRUCTURE
+  n_BCR_SCAFFOLD --> n_BCR_WET
+  n_HRS_BASELINE --> n_BCR_WET
+  n_BCR_SCAFFOLD --> n_BCR_SERVICES
+  n_HRS_BASELINE --> n_BCR_SERVICES
+  n_BCR_SCAFFOLD --> n_BCR_WATER
+  n_HRS_BASELINE --> n_BCR_WATER
+  n_BCR_SCAFFOLD --> n_BCR_OCCUPATION
+  n_HRS_BASELINE --> n_BCR_OCCUPATION
+  n_BCR_SCAFFOLD --> n_BCR_PROPORTIONALITY
+  n_HRS_BASELINE --> n_BCR_PROPORTIONALITY
+  n_BCR_STRUCTURE --> n_BCR_PREFLIGHT
+  n_BCR_WET --> n_BCR_PREFLIGHT
+  n_BCR_SERVICES --> n_BCR_PREFLIGHT
+  n_BCR_WATER --> n_BCR_PREFLIGHT
+  n_BCR_OCCUPATION --> n_BCR_PREFLIGHT
+  n_TRIAD_GATE --> n_HRS_TECHNICAL
+  n_CCR_IDENTITY --> n_HRS_TECHNICAL
   n_BSR_ROOT --> n_ROF_00
   n_ROF_00 --> n_ROF_01
   n_ROF_01 --> n_ROF_02
@@ -477,15 +630,30 @@ flowchart LR
   n_MRA_03 --> n_MRA_04
   n_BCR_CONVERGENCE --> n_MRA_05
   n_BSR_ROOT --> n_PLT_CURRENT_REVIEW
-  n_HRS_SYNTHESIS --> n_PLT_FINAL_FREEZE
-  n_PLT_CURRENT_REVIEW --> n_PLT_FINAL_FREEZE
+  n_PLT_FINAL_PREP --> n_PLT_FINAL_FREEZE
+  n_PLT_PRINT_REVIEW --> n_PLT_FINAL_FREEZE
   n_PLT_FINAL_FREEZE --> n_EDA_RENEWED
+  n_EDA_ADAPTER --> n_EDA_RENEWED
   n_BSR_ROOT --> n_PUB_02_PREP
   n_PUB_02_PREP --> n_PUB_02_FINAL
   n_EDA_RENEWED --> n_PUB_02_FINAL
+  n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
+  n_PLT_CURRENT_REVIEW --> n_PLT_FINAL_PREP
+  n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
+  n_EDA_ARGUMENT --> n_EDA_NARRATIVE
+  n_EDA_ADAPTER --> n_EDA_NARRATIVE
+  n_PHY_APPLICABILITY --> n_PHY_03_ENGINEERING
+  n_PHY_APPLICABILITY --> n_PHY_04
+  n_EPR_REFRESH --> n_EPR_RH11
+  n_HRS_BASELINE --> n_EPR_REFRESH
+  n_BCR_PREFLIGHT --> n_EPR_REFRESH
+  n_HRS_BASELINE --> n_PHY_APPLICABILITY
+  n_BCR_PREFLIGHT --> n_PHY_APPLICABILITY
+  n_BCR_CONVERGENCE --> n_DEL_CURRENT
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
   style g_ACO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_CCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PCO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_BSR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -519,7 +687,11 @@ flowchart LR
   class n_ACO_02 done;
   class n_ACO_03 done;
   class n_ACO_04 done;
-  class n_PCO_REFURB_PLAN ready;
+  class n_CCR_PLAN ready;
+  class n_CCR_STAIR ready;
+  class n_CCR_DRAINAGE ready;
+  class n_CCR_IDENTITY blocked;
+  class n_PCO_REFURB_PLAN done;
   class n_PCO_00 done;
   class n_PCO_01 done;
   class n_PCO_02 done;
@@ -531,6 +703,7 @@ flowchart LR
   class n_PCO_08 done;
   class n_PCO_VIS done;
   class n_PCO_DISPATCH done;
+  class n_PCO_APPLICABILITY blocked;
   class n_BSR_ROOT done;
   class n_IAS_00 done;
   class n_OAS_00 done;
@@ -549,14 +722,23 @@ flowchart LR
   class n_IAS_HAD_JUNCTION done;
   class n_OAS_HAD_JUNCTION done;
   class n_HAD_02M done;
-  class n_IAS_03 active;
+  class n_IAS_03 ready;
   class n_OAS_03 done;
-  class n_HAD_03 active;
+  class n_HAD_03 ready;
   class n_OAS_DETAIL done;
   class n_TRIAD_GATE blocked;
   class n_BCR_SCAFFOLD ready;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
+  class n_HRS_BASELINE ready;
+  class n_BCR_STRUCTURE blocked;
+  class n_BCR_WET blocked;
+  class n_BCR_SERVICES blocked;
+  class n_BCR_WATER blocked;
+  class n_BCR_OCCUPATION blocked;
+  class n_BCR_PROPORTIONALITY blocked;
+  class n_BCR_PREFLIGHT blocked;
+  class n_HRS_TECHNICAL blocked;
   class n_ROF_00 done;
   class n_ROF_01 ready;
   class n_ROF_02 blocked;
@@ -576,23 +758,31 @@ flowchart LR
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_MRA_00 active;
+  class n_MRA_00 ready;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
   class n_MRA_03 blocked;
   class n_MRA_04 blocked;
   class n_MRA_05 blocked;
-  class n_PLT_CURRENT_REVIEW active;
+  class n_PLT_CURRENT_REVIEW ready;
   class n_PLT_FINAL_FREEZE blocked;
   class n_EDA_RENEWED blocked;
-  class n_PUB_02_PREP active;
+  class n_PUB_02_PREP ready;
   class n_PUB_02_FINAL blocked;
+  class n_EDA_ADAPTER ready;
+  class n_PLT_FINAL_PREP blocked;
+  class n_PLT_PRINT_REVIEW blocked;
+  class n_EDA_ARGUMENT ready;
+  class n_EDA_NARRATIVE blocked;
   class n_PHY_01 held;
   class n_PHY_02 held;
-  class n_PHY_03_ENGINEERING ready;
-  class n_PHY_04 ready;
-  class n_EPR_RH11 ready;
+  class n_PHY_03_ENGINEERING blocked;
+  class n_PHY_04 blocked;
+  class n_EPR_RH11 blocked;
   class n_DEL_00 done;
+  class n_EPR_REFRESH blocked;
+  class n_PHY_APPLICABILITY blocked;
+  class n_DEL_CURRENT blocked;
 ```
 
 </details>
