@@ -1,6 +1,6 @@
 # CCR — Compiler Correctness Repair
 
-**State:** authorised, bounded successor programme; implementation not yet started.  
+**State:** authorised, bounded successor programme; packet implementation and closeout are tracked by canonical control and the owning results below.
 **Audit baseline:** `a31efba595449295ef8b19cd55c7d2d49d7cb129` (29 October 2026).  
 **Execution authority:** the registered CCR workstream and its canonical PCO nodes.
 
@@ -106,6 +106,8 @@ Require finite positive integer counts and an explicit checked relationship betw
 The 30 m counterexample demonstrates missing internal relationships, not a pre-existing promise of complete stair-fit verification. Full landing geometry, headroom, guarding, access, fire strategy and construction tolerance remain outside this packet.
 
 ## CCR-DRAINAGE — source truth and bounded drainage declarations
+
+Owning repair result: [CCR-DRAINAGE — source consistency and bounded declarations](ccr-drainage-result.md). This result closes its compiler counterexamples without selecting the current house's rainwater system.
 
 ### Question and starting evidence
 

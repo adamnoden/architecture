@@ -24,7 +24,7 @@ export const ccrNodes = defineNodes([
     owners: ['CCR'],
     title: 'Repair drainage declaration validity and source consistency',
     dependencies: [],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/ccr-drainage-result.md']
   },
