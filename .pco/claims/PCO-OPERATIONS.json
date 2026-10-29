@@ -9,11 +9,13 @@
     "label": "operations-bc7462"
   },
   "claimedAt": "2026-10-29T17:59:53.052Z",
-  "heartbeatAt": "2026-10-29T17:59:53.052Z",
-  "expiresAt": "2026-10-29T18:44:53.052Z",
+  "heartbeatAt": "2026-10-29T18:09:37.872Z",
+  "expiresAt": "2026-10-29T18:54:37.872Z",
   "checkpoint": {
-    "evidence": "project/control/README.md; owner-directed integration packet",
-    "next": "Implement briefing, proof selection and post-merge reconciliation"
+    "evidence": "PR #1016; 78 control/selection tests and TypeScript pass",
+    "next": "Inspect exact-head CI; merge; observe native post-projection reconciliation and operations report",
+    "blocker": "CI running"
   },
-  "branch": "pco/operations"
+  "branch": "pco/operations",
+  "pr": 1016
 }
