@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "RWT-04",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a361ed6c-05c4-4282-bad2-5a803664f36d",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T21:26:47.794Z",
-  "heartbeatAt": "2026-10-29T21:34:47.989Z",
-  "expiresAt": "2026-10-29T22:19:47.989Z",
+  "heartbeatAt": "2026-10-29T21:41:01.307Z",
+  "expiresAt": "2026-10-29T21:41:01.307Z",
   "branch": "zerg/worker-6-wave2",
   "pr": 1032,
   "checkpoint": {
     "evidence": "PR #1032; RWT04 shared compatibility record; roof and collection peer review complete",
     "next": "Reconcile bundle1031 and exact-head CI then serial preflight",
     "blocker": "Integration and CI pending"
-  }
+  },
+  "releasedAt": "2026-10-29T21:41:01.307Z",
+  "releaseReason": "completed"
 }
