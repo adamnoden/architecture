@@ -9,12 +9,13 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T22:20:58.778Z",
-  "heartbeatAt": "2026-10-29T22:40:23.575Z",
-  "expiresAt": "2026-10-29T23:25:23.575Z",
+  "heartbeatAt": "2026-10-29T22:42:00.913Z",
+  "expiresAt": "2026-10-29T23:27:00.913Z",
   "branch": "zerg/worker-4-packet-5",
   "checkpoint": {
-    "evidence": "ROF06 source-bound access study and rendered A3 reviewed; source committed locally cc195f38, public sanitation passed; PR publication next",
-    "next": "Publish reviewed source PR, exact-head CI, fresh preflight and serial merge",
-    "blocker": "Await serial BCR-WATER1047 merge slot; no packet exit blocker"
-  }
+    "evidence": "Reviewed ROF06 source PR1048 headbb31fcfa; full local focused checks and A3 visual pass; BCR-WATER1047 integration underway",
+    "next": "Final exact-head CI and canonical preflight then expected-head merge and release",
+    "blocker": "Await final current-main reconciliation and CI; no substantive exit blocker"
+  },
+  "pr": 1048
 }
