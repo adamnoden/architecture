@@ -55,6 +55,7 @@ export const architectureNodes = defineNodes([
     title: 'Vertical interior system candidates',
     dependencies: ['TRIAD-IFACE-FREEZE'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -63,6 +64,7 @@ export const architectureNodes = defineNodes([
     title: 'Horizontal interior system candidates',
     dependencies: ['TRIAD-IFACE-FREEZE'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -71,6 +73,7 @@ export const architectureNodes = defineNodes([
     title: 'Envelope openings, external doors, thresholds and boundary candidates',
     dependencies: ['TRIAD-IFACE-FREEZE'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -79,6 +82,7 @@ export const architectureNodes = defineNodes([
     title: 'Internal door assembly candidates',
     dependencies: ['TRIAD-IFACE-FREEZE'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -113,6 +117,7 @@ export const architectureNodes = defineNodes([
     title: 'Interior services and access family',
     dependencies: ['IAS-01V', 'IAS-01H'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -121,6 +126,7 @@ export const architectureNodes = defineNodes([
     title: 'Wet-room and kitchen interior-system variants',
     dependencies: ['IAS-01V', 'IAS-01H', 'HAD-01S'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -130,6 +136,7 @@ export const architectureNodes = defineNodes([
     dependencies: ['IAS-01V', 'IAS-01H', 'OAS-01E', 'OAS-01I'],
     lifecycle: 'planned',
     aliases: ['IAS-02O', 'OAS-02I'],
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -139,6 +146,7 @@ export const architectureNodes = defineNodes([
     dependencies: ['IAS-01V', 'IAS-01H', 'HAD-01P', 'HAD-01S'],
     lifecycle: 'planned',
     aliases: ['IAS-02H', 'HAD-02I'],
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -148,6 +156,7 @@ export const architectureNodes = defineNodes([
     dependencies: ['OAS-01E', 'OAS-01I', 'HAD-01E', 'HAD-01P', 'HAD-01S'],
     lifecycle: 'planned',
     aliases: ['OAS-02H', 'HAD-02O'],
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -162,6 +171,7 @@ export const architectureNodes = defineNodes([
       'OAS-HAD-JUNCTION'
     ],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
 
@@ -173,6 +183,7 @@ export const architectureNodes = defineNodes([
     dependencies: ['IAS-02S', 'IAS-02W', 'IAS-OAS-JUNCTION', 'IAS-HAD-JUNCTION'],
     lifecycle: 'planned',
     aliases: ['IAS Wave 3'],
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -182,6 +193,7 @@ export const architectureNodes = defineNodes([
     dependencies: ['OAS-01E', 'OAS-01I', 'IAS-OAS-JUNCTION', 'OAS-HAD-JUNCTION'],
     lifecycle: 'planned',
     aliases: ['OAS Wave 3'],
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -191,6 +203,7 @@ export const architectureNodes = defineNodes([
     dependencies: ['IAS-HAD-JUNCTION', 'OAS-HAD-JUNCTION', 'HAD-02M'],
     lifecycle: 'planned',
     aliases: ['HAD Wave 3'],
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
 
@@ -202,6 +215,7 @@ export const architectureNodes = defineNodes([
     dependencies: ['IAS-03', 'OAS-03', 'HAD-03'],
     lifecycle: 'planned',
     aliases: ['IAS/OAS/HAD Wave 4'],
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -210,6 +224,7 @@ export const architectureNodes = defineNodes([
     title: 'Construction-resolution inventory and matrix scaffolding',
     dependencies: ['BSR-ROOT'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -218,6 +233,7 @@ export const architectureNodes = defineNodes([
     title: 'Substantive construction-resolution convergence',
     dependencies: ['BCR-SCAFFOLD', 'TRIAD-GATE', 'MRA-04'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
   {
@@ -226,6 +242,7 @@ export const architectureNodes = defineNodes([
     title: 'Post-BCR final house resolution and synthesis',
     dependencies: ['BCR-CONVERGENCE', 'MRA-05'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   }
 ])
