@@ -172,6 +172,7 @@ const grammarSidebar: DefaultTheme.SidebarItem[] = [
 const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
   group('Reference House', [
     page('Reference House overview', '/docs/reference-house/'),
+    page('Current house basis', '/docs/reference-house/current-house-basis'),
     page('G-01 v0.1 conformance — D12', '/docs/reference-house/g01-v0.1-conformance-d12'),
     page('Pattern occurrence register', '/docs/reference-house/pattern-occurrence-register'),
     page('Tectonic architectural language', '/docs/reference-house/tectonic-architectural-language'),
@@ -251,11 +252,15 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
     page('Replaceable wall system options', '/docs/research/replaceable-wall-system-options')
   ]),
   group('Roof & rainwater', [
-    page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis')
+    page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis'),
+    page('Rainwater collection options', '/docs/research/rainwater-collection-options'),
+    page('Rainwater conveyance options', '/docs/research/rainwater-conveyance-options'),
+    page('Roof & rainwater materials', '/docs/research/roof-rainwater-material-compatibility')
   ]),
   group('Maintenance & precedent', [
     page('External maintenance access', '/docs/research/external-maintenance-access'),
     page('Roof failure and recovery evaluation', '/docs/research/roof-failure-evaluation'),
+    page('Roof topology and water paths', '/docs/research/roof-topology-families'),
     page('Preface precedents', '/docs/research/preface-precedents')
   ]),
   group('Historical targeted evidence', [

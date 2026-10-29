@@ -25,9 +25,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['ROF'],
     title: 'Roof topology and geometry families',
     dependencies: ['ROF-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rof/rof-02-topology-and-geometry.md']
   },
   {
     id: 'ROF-03',
@@ -101,27 +101,27 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Rainwater collection architecture',
     dependencies: ['RWT-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-02-collection-architecture.md']
   },
   {
     id: 'RWT-03',
     owners: ['RWT'],
     title: 'Rainwater conveyance topology',
     dependencies: ['RWT-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-03-conveyance-topology.md']
   },
   {
     id: 'RWT-04',
     owners: ['RWT'],
     title: 'Rainwater materials, joints and compatibility',
     dependencies: ['RWT-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-04-materials-joints-compatibility.md']
   },
   {
     id: 'RWT-05',
