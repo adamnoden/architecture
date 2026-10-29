@@ -120,6 +120,7 @@ export const pcoNodes = defineNodes([
     title: 'Self-service agent dispatcher and race-safe claim-next policy',
     dependencies: ['PCO-VIS'],
     lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   }
 ])
