@@ -9,13 +9,13 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T22:12:16.360Z",
-  "heartbeatAt": "2026-10-29T22:43:30.181Z",
-  "expiresAt": "2026-10-29T23:28:30.181Z",
-  "branch": "zerg/worker-6-wave4",
+  "heartbeatAt": "2026-10-29T22:52:31.967Z",
+  "expiresAt": "2026-10-29T23:37:31.967Z",
+  "branch": "work/zerg-rwt-wet-proportionality",
   "checkpoint": {
-    "evidence": "Published RWT06 draft branch aa5740b8; owning result rwt-06-access-court-transition; located court crossing trial awaiting peer review",
-    "next": "Complete source-bound plan/section and actual access task review; resolve or preserve adverse floor/support/threshold findings",
-    "blocker": "Ground floor/support/threshold admission and high-level access unproved"
+    "evidence": "Reviewed RWT partial133940e7 preserved as directparent in commonPR1052 headedd7d7af; local combined validation passed",
+    "next": "Exact combined CI, three fresh preflights, merge durable partial then handoff release; RWT06 remains planned",
+    "blocker": "Actual court lowest vulnerable boundary, supported insulated removable floor and high receiver access remain unadmitted"
   },
-  "pr": 1044
+  "pr": 1052
 }
