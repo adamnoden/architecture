@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "PCO-OPERATIONS",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "637adbbb-3f06-4962-8bff-68f5cc6e7804",
   "holder": {
     "kind": "chatgpt",
     "label": "operations-events-bc7462"
   },
   "claimedAt": "2026-10-29T18:15:43.942Z",
-  "heartbeatAt": "2026-10-29T18:26:45.304Z",
-  "expiresAt": "2026-10-29T19:11:45.304Z",
+  "heartbeatAt": "2026-10-29T18:32:54.000Z",
+  "expiresAt": "2026-10-29T18:32:54.000Z",
   "checkpoint": {
     "evidence": "Native YAML failure reproduced; 81 regressions pass",
     "next": "Merge syntax guard; observe native reports and automatic lease release",
     "blocker": "CI running"
   },
   "branch": "pco/operations-yaml",
-  "pr": 1018
+  "pr": 1018,
+  "releasedAt": "2026-10-29T18:32:54.000Z",
+  "releaseReason": "completed"
 }
