@@ -119,9 +119,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Rainwater materials, joints and compatibility',
     dependencies: ['RWT-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-04-materials-joints-compatibility.md']
   },
   {
     id: 'RWT-05',

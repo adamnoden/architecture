@@ -252,7 +252,8 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
     page('Replaceable wall system options', '/docs/research/replaceable-wall-system-options')
   ]),
   group('Roof & rainwater', [
-    page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis')
+    page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis'),
+    page('Roof & rainwater materials', '/docs/research/roof-rainwater-material-compatibility')
   ]),
   group('Maintenance & precedent', [
     page('External maintenance access', '/docs/research/external-maintenance-access'),

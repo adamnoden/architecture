@@ -81,6 +81,10 @@ RWT may not define a real sewer, infiltration rate, soakaway, SuDS/attenuation v
 
 RWT may define adjacent surface falls, collection and exceedance requirements. OAS retains the threshold assembly itself. If the selected threshold cannot survive the water geometry, the conflict is rewound explicitly rather than patched by either stream.
 
+## Shared material evidence
+
+[Roof and rainwater materials: compatibility and renewal](../docs/research/roof-rainwater-material-compatibility.md) is the single shared candidate compatibility record. ROF and RWT extend its directional product/contact/runoff cases during selection; the comparison does not adopt a material or approve unresolved interfaces.
+
 ## Shared candidate discipline
 
 ROF and RWT may research independently where the question is genuinely separable, but final candidates must be evaluated as a coupled system.
