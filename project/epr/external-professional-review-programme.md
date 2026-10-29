@@ -1,6 +1,6 @@
 # EPR — External professional review
 
-**State:** framed and issue-ready; no competent review response recorded  
+**State:** current-house briefs refreshed; unissued, with no competent review response recorded  
 **Maturity:** M1 at current project scope  
 **Reference House gate:** `RH-11`  
 **Execution register:** `docs/development/validation-execution-register.md`  
@@ -49,6 +49,10 @@ Material EPR findings rewind through BCR to the owning IAS/OAS/HAD/Reference Hou
 - DEL consumes EPR findings as delivery requirements mature; it does not substitute for competent review.
 
 Internal M4 controls, drawings, calculations, issue-ready briefs and BCR matrices are not competent external review. This workstream identity does not raise maturity or claim that professional review has occurred.
+## Current-house applicability result
+
+[EPR-REFRESH](current-house-review-applicability.md) reconciles all five discipline briefs to RH-LAYOUT-REVISION-02 and the BCR physical findings, including the current roof comparison and partial sanitary/water alternatives. It replaces predecessor facts in the owning briefs, records the remaining issue inputs and updates the execution register. This completes preparation only: no review was commissioned or received, no manual gate closed and no physical finding discharged. Reconcile selected-source changes before issue.
+
 ## Current-house refurbishment packets
 
 `EPR-REFRESH` is self-service after HRS-BASELINE and BCR-PREFLIGHT. Audit each RH-11 brief against the accepted 12 × 12 m house; retain, narrow, supersede or rewrite its applicability. Headers must name the reviewed revision and distinguish current questions from historical three-flight/3300 mm/low-slope facts. Produce `project/epr/current-house-review-applicability.md` with concrete discipline questions, required evidence and owning rewinds. A general disclaimer without corrected facts is insufficient.
