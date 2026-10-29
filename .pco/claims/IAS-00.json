@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "node": "IAS-00",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "6a98c676-c6b4-4cc8-979e-5c14c73d2145",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "IAS-00 closeout takeover"
+  },
+  "claimedAt": "2026-10-29T06:53:41.336Z",
+  "heartbeatAt": "2026-10-29T06:53:41.336Z",
+  "expiresAt": "2026-10-29T08:53:41.336Z",
+  "branch": "ias/00-control-closeout",
+  "note": "Reconcile pre-ACO IAS-00 result PR952 with current PCO topology; no design continuation"
+}
