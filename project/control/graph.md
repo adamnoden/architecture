@@ -39,8 +39,7 @@ flowchart LR
   subgraph g_BCR["BCR"]
     direction TB
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
-    n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>READY</b>"]
-    n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
+    n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>READY</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
@@ -60,7 +59,6 @@ flowchart LR
   end
   subgraph g_MRA["MRA"]
     direction TB
-    n_MRA_00["MRA-00<br/>Moisture constitution, inventory and threat model<br/><b>READY</b>"]
     n_MRA_01["MRA-01<br/>External water and ground-envelope assault<br/><b>BLOCKED</b>"]
     n_MRA_02["MRA-02<br/>Internal water and wet-zone assault<br/><b>BLOCKED</b>"]
     n_MRA_03["MRA-03<br/>Vapour, condensation and drying assault<br/><b>BLOCKED</b>"]
@@ -105,12 +103,11 @@ flowchart LR
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
     n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
-    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>BLOCKED</b>"]
+    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>READY</b>"]
   end
   subgraph g_DPL["DPL"]
     direction TB
-    n_DPL_SITE_BRIEF["DPL-SITE-BRIEF<br/>Derive owner-house plot criteria and evidence requirements<br/><b>READY</b>"]
-    n_DPL_COMMISSION["DPL-COMMISSION<br/>Receive owner-nominated real plot and authorised assessment scope<br/><b>BLOCKED</b>"]
+    n_DPL_COMMISSION["DPL-COMMISSION<br/>Receive owner-nominated real plot and authorised assessment scope<br/><b>READY</b>"]
     n_DPL_SITE_ASSESSMENT["DPL-SITE-ASSESSMENT<br/>Assess actual site applicability and explicit adaptation choices<br/><b>BLOCKED</b>"]
   end
   subgraph g_PHY["PHY"]
@@ -119,7 +116,7 @@ flowchart LR
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
     n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>BLOCKED</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>BLOCKED</b>"]
-    n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>BLOCKED</b>"]
+    n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>READY</b>"]
   end
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
@@ -127,7 +124,6 @@ flowchart LR
   n_IAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
-  n_BCR_PREFLIGHT --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
@@ -145,11 +141,8 @@ flowchart LR
   n_HAD_03 --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
-  n_MRA_00 --> n_MRA_01
   n_TRIAD_GATE --> n_MRA_01
-  n_MRA_00 --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_02
-  n_MRA_00 --> n_MRA_03
   n_TRIAD_GATE --> n_MRA_03
   n_MRA_01 --> n_MRA_04
   n_MRA_02 --> n_MRA_04
@@ -166,7 +159,6 @@ flowchart LR
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_EDA_ARGUMENT --> n_EDA_NARRATIVE
   n_EDA_ADAPTER --> n_EDA_NARRATIVE
-  n_BCR_PREFLIGHT --> n_BCR_BAY_BRIEF
   n_BCR_BAY_BRIEF --> n_BCR_BAY_DESIGN
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
   n_ADE_DELIVERY_AUDIT --> n_ADE_MODEL
@@ -184,15 +176,12 @@ flowchart LR
   n_ADE_EVIDENCE --> n_DEL_BAY_PACK
   n_DEL_ISSUE_PROFILES --> n_DEL_BAY_PACK
   n_DEL_BAY_PACK --> n_EPR_BAY_REVIEW
-  n_DPL_SITE_BRIEF --> n_DPL_COMMISSION
   n_DPL_COMMISSION --> n_DPL_SITE_ASSESSMENT
   n_DPL_SITE_ASSESSMENT --> n_DEL_COMMISSION_PLAN
   n_EPR_BAY_REVIEW --> n_DEL_COMMISSION_PLAN
   n_PHY_APPLICABILITY --> n_PHY_03_ENGINEERING
   n_PHY_APPLICABILITY --> n_PHY_04
   n_EPR_REFRESH --> n_EPR_RH11
-  n_BCR_PREFLIGHT --> n_EPR_REFRESH
-  n_BCR_PREFLIGHT --> n_PHY_APPLICABILITY
   n_BCR_CONVERGENCE --> n_DEL_CURRENT
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
@@ -235,14 +224,12 @@ flowchart LR
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
-  class n_BCR_PREFLIGHT ready;
   class n_HRS_TECHNICAL blocked;
   class n_RWT_06 ready;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_MRA_00 ready;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
   class n_MRA_03 blocked;
@@ -260,7 +247,7 @@ flowchart LR
   class n_EDA_NARRATIVE blocked;
   class n_DEL_ISSUE_PROFILES ready;
   class n_ADE_DELIVERY_AUDIT ready;
-  class n_BCR_BAY_BRIEF blocked;
+  class n_BCR_BAY_BRIEF ready;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
@@ -268,8 +255,7 @@ flowchart LR
   class n_ADE_EVIDENCE blocked;
   class n_DEL_BAY_PACK blocked;
   class n_EPR_BAY_REVIEW blocked;
-  class n_DPL_SITE_BRIEF ready;
-  class n_DPL_COMMISSION blocked;
+  class n_DPL_COMMISSION ready;
   class n_DPL_SITE_ASSESSMENT blocked;
   class n_DEL_COMMISSION_PLAN blocked;
   class n_PHY_01 held;
@@ -277,8 +263,8 @@ flowchart LR
   class n_PHY_03_ENGINEERING blocked;
   class n_PHY_04 blocked;
   class n_EPR_RH11 blocked;
-  class n_EPR_REFRESH blocked;
-  class n_PHY_APPLICABILITY blocked;
+  class n_EPR_REFRESH ready;
+  class n_PHY_APPLICABILITY ready;
   class n_DEL_CURRENT blocked;
 ```
 
@@ -379,8 +365,8 @@ flowchart LR
     n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>DONE</b>"]
     n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>DONE</b>"]
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>DONE</b>"]
-    n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>READY</b>"]
-    n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
+    n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>DONE</b>"]
+    n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>READY</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
@@ -415,7 +401,7 @@ flowchart LR
   end
   subgraph g_MRA["MRA"]
     direction TB
-    n_MRA_00["MRA-00<br/>Moisture constitution, inventory and threat model<br/><b>READY</b>"]
+    n_MRA_00["MRA-00<br/>Moisture constitution, inventory and threat model<br/><b>DONE</b>"]
     n_MRA_01["MRA-01<br/>External water and ground-envelope assault<br/><b>BLOCKED</b>"]
     n_MRA_02["MRA-02<br/>Internal water and wet-zone assault<br/><b>BLOCKED</b>"]
     n_MRA_03["MRA-03<br/>Vapour, condensation and drying assault<br/><b>BLOCKED</b>"]
@@ -462,12 +448,12 @@ flowchart LR
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
     n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
-    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>BLOCKED</b>"]
+    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>READY</b>"]
   end
   subgraph g_DPL["DPL"]
     direction TB
-    n_DPL_SITE_BRIEF["DPL-SITE-BRIEF<br/>Derive owner-house plot criteria and evidence requirements<br/><b>READY</b>"]
-    n_DPL_COMMISSION["DPL-COMMISSION<br/>Receive owner-nominated real plot and authorised assessment scope<br/><b>BLOCKED</b>"]
+    n_DPL_SITE_BRIEF["DPL-SITE-BRIEF<br/>Derive owner-house plot criteria and evidence requirements<br/><b>DONE</b>"]
+    n_DPL_COMMISSION["DPL-COMMISSION<br/>Receive owner-nominated real plot and authorised assessment scope<br/><b>READY</b>"]
     n_DPL_SITE_ASSESSMENT["DPL-SITE-ASSESSMENT<br/>Assess actual site applicability and explicit adaptation choices<br/><b>BLOCKED</b>"]
   end
   subgraph g_PHY["PHY"]
@@ -476,7 +462,7 @@ flowchart LR
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
     n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>BLOCKED</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>BLOCKED</b>"]
-    n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>BLOCKED</b>"]
+    n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>READY</b>"]
   end
   n_ACO_00 --> n_ACO_01
   n_ACO_01 --> n_ACO_02
@@ -783,7 +769,7 @@ flowchart LR
   class n_BCR_WATER done;
   class n_BCR_OCCUPATION done;
   class n_BCR_PROPORTIONALITY done;
-  class n_BCR_PREFLIGHT ready;
+  class n_BCR_PREFLIGHT done;
   class n_HRS_TECHNICAL blocked;
   class n_ROF_00 done;
   class n_ROF_01 done;
@@ -804,7 +790,7 @@ flowchart LR
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_MRA_00 ready;
+  class n_MRA_00 done;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
   class n_MRA_03 blocked;
@@ -823,7 +809,7 @@ flowchart LR
   class n_DEL_BRIEF done;
   class n_DEL_ISSUE_PROFILES ready;
   class n_ADE_DELIVERY_AUDIT ready;
-  class n_BCR_BAY_BRIEF blocked;
+  class n_BCR_BAY_BRIEF ready;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
@@ -831,8 +817,8 @@ flowchart LR
   class n_ADE_EVIDENCE blocked;
   class n_DEL_BAY_PACK blocked;
   class n_EPR_BAY_REVIEW blocked;
-  class n_DPL_SITE_BRIEF ready;
-  class n_DPL_COMMISSION blocked;
+  class n_DPL_SITE_BRIEF done;
+  class n_DPL_COMMISSION ready;
   class n_DPL_SITE_ASSESSMENT blocked;
   class n_DEL_COMMISSION_PLAN blocked;
   class n_PHY_01 held;
@@ -841,8 +827,8 @@ flowchart LR
   class n_PHY_04 blocked;
   class n_EPR_RH11 blocked;
   class n_DEL_00 done;
-  class n_EPR_REFRESH blocked;
-  class n_PHY_APPLICABILITY blocked;
+  class n_EPR_REFRESH ready;
+  class n_PHY_APPLICABILITY ready;
   class n_DEL_CURRENT blocked;
 ```
 

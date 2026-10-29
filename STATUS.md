@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 37 · **Held:** 2 · **Done:** 69 · **Cancelled:** 0
+**Structurally ready:** 17 · **Active:** 0 · **Blocked:** 33 · **Held:** 2 · **Done:** 72 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -27,16 +27,17 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `PCO-APPLICABILITY` | Bind maturity applicability to assessed design sources | PCO | — |
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
-| `BCR-PREFLIGHT` | Reconcile early feasibility findings into selection constraints | BCR | BCR-BAY-BRIEF, EPR-REFRESH, PHY-APPLICABILITY |
 | `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | RWT-07 |
-| `MRA-00` | Moisture constitution, inventory and threat model | MRA | — |
 | `PLT-CURRENT-REVIEW` | Current-house digital plate capability and review handoff | PLT | — |
 | `PUB-02-PREP` | Content-independent private-object preparation | PUB | — |
 | `EDA-ADAPTER` | Restore authored ownership of architectural publication prose | EDA | — |
 | `EDA-ARGUMENT` | Red-team architectural contribution and evidence for the central thesis | EDA | — |
 | `DEL-ISSUE-PROFILES` | Define purpose-specific information and issue requirements | DEL | — |
 | `ADE-DELIVERY-AUDIT` | Map construction-information needs to existing capabilities | ADE | — |
-| `DPL-SITE-BRIEF` | Derive owner-house plot criteria and evidence requirements | DPL | DPL-COMMISSION |
+| `BCR-BAY-BRIEF` | Select one consequential construction bay and its proof obligations | BCR | — |
+| `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
+| `EPR-REFRESH` | Refresh current-house review briefs and questions | EPR | EPR-RH11 |
+| `PHY-APPLICABILITY` | Reconcile prototype applicability and earned evidence requirements | PHY | PHY-03-ENGINEERING, PHY-04 |
 
 ### Active durable work
 
@@ -51,7 +52,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Direct blockers |
 |---|---|---|
 | `CCR-IDENTITY` | Adjudicate identity guarantees and integrate correctness repairs | CCR-PLAN, CCR-STAIR, CCR-DRAINAGE |
-| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03, ROF-RWT-GATE, BCR-PREFLIGHT |
+| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, HAD-03, ROF-RWT-GATE |
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL, EPR-REFRESH, PHY-APPLICABILITY |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, PCO-APPLICABILITY, DEL-CURRENT, EDA-NARRATIVE |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE, CCR-IDENTITY |
@@ -59,9 +60,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | RWT-07, HAD-03 |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
-| `MRA-01` | External water and ground-envelope assault | MRA-00, TRIAD-GATE |
-| `MRA-02` | Internal water and wet-zone assault | MRA-00, TRIAD-GATE |
-| `MRA-03` | Vapour, condensation and drying assault | MRA-00, TRIAD-GATE |
+| `MRA-01` | External water and ground-envelope assault | TRIAD-GATE |
+| `MRA-02` | Internal water and wet-zone assault | TRIAD-GATE |
+| `MRA-03` | Vapour, condensation and drying assault | TRIAD-GATE |
 | `MRA-04` | Whole-house moisture failure matrix and adversarial gate | MRA-01, MRA-02, MRA-03 |
 | `MRA-05` | Post-BCR moisture assurance closeout | BCR-CONVERGENCE |
 | `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | PLT-FINAL-PREP, PLT-PRINT-REVIEW |
@@ -70,7 +71,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
 | `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
 | `EDA-NARRATIVE` | Reshape and subtract for a compelling architectural reader journey | EDA-ARGUMENT, EDA-ADAPTER |
-| `BCR-BAY-BRIEF` | Select one consequential construction bay and its proof obligations | BCR-PREFLIGHT |
 | `BCR-BAY-DESIGN` | Resolve the selected bay as a coordinated design study | BCR-BAY-BRIEF, TRIAD-GATE |
 | `ADE-MODEL` | Connect current design identities to construction-information outputs | ADE-DELIVERY-AUDIT, HRS-TECHNICAL |
 | `ADE-DETAILS` | Produce source-bound technical bay drawings and details | ADE-MODEL, BCR-BAY-DESIGN |
@@ -78,14 +78,11 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ADE-EVIDENCE` | Bind bay calculations and external evidence to controlling inputs | ADE-DELIVERY-AUDIT, BCR-BAY-DESIGN, CCR-IDENTITY, PCO-APPLICABILITY |
 | `DEL-BAY-PACK` | Assemble one coherent construction-bay review issue | ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE, DEL-ISSUE-PROFILES |
 | `EPR-BAY-REVIEW` | Obtain and disposition actual designer and contractor bay feedback | DEL-BAY-PACK |
-| `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL-SITE-BRIEF |
 | `DPL-SITE-ASSESSMENT` | Assess actual site applicability and explicit adaptation choices | DPL-COMMISSION |
 | `DEL-COMMISSION-PLAN` | Register grounded whole-house design construction and handover packets | DPL-SITE-ASSESSMENT, EPR-BAY-REVIEW |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY-APPLICABILITY |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY-APPLICABILITY |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR-REFRESH |
-| `EPR-REFRESH` | Refresh current-house review briefs and questions | BCR-PREFLIGHT |
-| `PHY-APPLICABILITY` | Reconcile prototype applicability and earned evidence requirements | BCR-PREFLIGHT |
 | `DEL-CURRENT` | Reconcile selected-house delivery and reinstatement requirements | BCR-CONVERGENCE |
 
 ### Structural critical path
