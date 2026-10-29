@@ -108,7 +108,7 @@ Structural eligibility is only one input to acquisition:
 | Which workstreams and packets exist? | Registry and sharded node sources on main | Issues, code register, DAG viewer and status tables |
 | Who owns execution now? | `.pco/claims/NODE.json` on retained `runtime/claims` | Briefings, job summaries, checkpoints and live graph overlays |
 | What was actually learned or accepted? | Owning source/result/gate and its evidence, with Git/PR provenance | Completion markers and summaries |
-| What maturity is earned? | [`maturity.ts`](../maturity.ts), its assessments and [freshness checks](../maturity-freshness.ts) | Generated maturity tables |
+| What maturity is earned? | [`maturity.ts`](../maturity.ts), its assessments, [named subject bindings](../maturity-subjects.ts) and [freshness checks](../maturity-freshness.ts) | Generated maturity tables |
 | What may the project claim? | [`authority.ts`](../authority.ts) and earned evidence | Neither packet coverage nor a passing compile widens that ceiling |
 | What is the present operational view? | Fresh derivation from the graph, leases and observation time | `control:brief`, Actions artifacts and generated status; snapshots are not another store |
 
@@ -385,6 +385,7 @@ The scaffolding can be simplified or replaced when its maintenance burden exceed
 - `validate.ts` — structural, dispatch-policy and evidence-contract guardrails.
 - `render.ts` — human-readable durable projections.
 - `../maturity.ts` — separate epistemic maturity authority.
-- `../maturity-freshness.ts` — evidence-content drift surveillance for maturity reassessment.
+- `../maturity-freshness.ts` — separate evidence-content and subject-source watches; changes require reassessment, unavailable baselines are unknown, and unchanged bytes do not prove applicability.
+- `../maturity-subjects.ts` — named existing assessment subjects, bounded controlling source inputs and explicit applicability limits. The HRS source-inspection baseline is not a new maturity judgement.
 
 Root `AGENTS.md` remains the repository-wide operating constitution. This README adds the PCO/ACO-specific execution mechanics; it does not duplicate or weaken the root rules.
