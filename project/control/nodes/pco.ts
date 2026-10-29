@@ -2,6 +2,13 @@ import { defineNodes } from '../types.js'
 
 export const pcoNodes = defineNodes([
   {
+    id: 'PCO-MVB-REVIEW', owners: ['PCO'],
+    title: 'Assess external orchestration systems and version the MVB operating contract',
+    dependencies: ['PCO-MANUAL'], lifecycle: 'planned',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed build-versus-adopt review and first explicit MVB version baseline.' },
+    closeoutEvidence: ['project/pco/mvb-platform-review.md', 'project/control/releases.md']
+  },
+  {
     id: 'PCO-MANUAL', owners: ['PCO'],
     title: 'Document the integrated project execution system for outsiders and maintainers',
     dependencies: ['PCO-SNAPSHOT'], lifecycle: 'complete',
