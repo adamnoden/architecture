@@ -9,11 +9,12 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T23:21:32.149Z",
-  "heartbeatAt": "2026-10-29T23:33:31.696Z",
-  "expiresAt": "2026-10-30T00:18:31.696Z",
+  "heartbeatAt": "2026-10-29T23:36:17.167Z",
+  "expiresAt": "2026-10-30T00:21:17.167Z",
   "checkpoint": {
-    "evidence": "Relative-datum and discrete-topology repair; 344 reference-house tests and focused lineage/CH05/DPL checks pass; full health reaches missing-browser publication validation; parent reviews passed.",
-    "next": "Publish source PR; reconcile accepted CCR pair; exact-head full CI and coordinated preflight."
+    "evidence": "Frozen reviewed source PR1064 1e86b1b1 incorporated in common PR1065 7fd1cc93; own regression and historical identity checks passed; accepted PLAN/DRAINAGE main included.",
+    "next": "Verify preserved ancestry and files, wait exact-head full CI, then fresh per-lease canonical preflight."
   },
-  "branch": "zerg/worker-6-wave6"
+  "branch": "work/zerg-epr-phy",
+  "pr": 1065
 }
