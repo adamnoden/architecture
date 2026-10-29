@@ -1,6 +1,6 @@
 # Rainfall and the building-side water network
 
-**Scope:** pre-site architectural selection for Ovid’s House; England is the intended jurisdiction. This basis supports comparison of ordinary gravity systems. It does not size the commissioned house, select a design storm or certify hydraulic adequacy. The [rainwater baseline](../../project/rwt/rwt-00-baseline-and-interfaces.md) and [roof/water interface contract](../../project/roof-water-interface-contract.md) retain geometry and ownership authority.
+**Scope:** pre-site architectural selection for Ovid’s House; England is the intended jurisdiction. This basis supports comparison of ordinary gravity systems. It does not size the commissioned house, select a design storm or certify hydraulic adequacy. The [Reference House](../reference-house/README.md) retains its own design authority; the reasoning here does not alter its geometry.
 
 ## Evidence and limits
 
@@ -70,7 +70,7 @@ Selection must compare the demand reaching **each** part of the route with evide
 | Gutter/channel → outlet | Can water reach and enter the outlet without crossing a vulnerable level? | Profile, length, actual fall, outlet position/form, operating water depth, grating/guard condition and applicable capacity method |
 | Outlet → downpipe | Is quoted flow achievable at the available head and installation? | Product/system capacity data and its test/configuration conditions; diameter alone is insufficient |
 | Downpipe → bends/branches | Does the actual route carry the combined inflow without unacceptable surcharge? | Vertical/offset geometry, fittings, junction loads, ventilation/flow regime and applicable design calculation |
-| Ground transition → handoff | Can the receiving condition throttle or back up the building-side route? | Required receiving envelope and explicit unknown backwater/outfall conditions, owned by DPL |
+| Ground transition → handoff | Can the receiving condition throttle or back up the building-side route? | Required receiving envelope and explicit unknown backwater/outfall conditions, owned by site design |
 
 Gravity requires an available head difference and a continuous viable path. Horizontal segments need an intentional fall and tolerance/deflection allowance appropriate to the chosen system; “gravity” is not proof that any line drawn downhill works. Do not invent one universal gutter slope, pipe velocity, minimum bore or freeboard. No siphonic behaviour is assumed to increase capacity; any such option would require a separately justified specialist system and failure analysis.
 
@@ -78,7 +78,7 @@ Approved Document H’s simple table assumes a particular level half-round eaves
 
 ## Normal operation, obstruction and exceedance are separate cases
 
-For each candidate, evaluate these scenarios before selection. These are project design questions; RWT-05 owns the detailed assault, and MRA later tests the selected whole-house consequences.
+For each candidate, evaluate these scenarios before selection. These are project design questions; Detailed rainwater failure analysis precedes whole-house moisture assurance.
 
 1. **Normal design operation:** all allocated inflow follows the primary route at an acceptable water level. No assumed emergency operation substitutes for primary capacity.
 2. **Primary collector/outlet blocked:** identify the next physical path and the first vulnerable boundary. An extra outlet to the same blocked throat is not independent protection against that blockage.
@@ -94,14 +94,14 @@ Visible overflow is an observation benefit, not proof of harmless discharge. Its
 
 | Decision/input | Owner | Latest useful decision point |
 |---|---|---|
-| Roof face allocation and exposed/trapped collection conditions | ROF with RWT | Before RWT-07 network synthesis; unresolved topology can force rewind |
-| Collection family, outlet evidence and safe operating level | RWT-02/05/07; BCR/EPR for technical adequacy | Before selecting a family whose fit depends on capacity |
-| Branching, falls, surcharge and accessible route | RWT-03/06/07; BCR-WATER | Before roof/water reconciliation |
-| Materials, guards, supports and joint restrictions affecting flow/maintenance | RWT-04 with ROF | Before selecting the coupled assembly |
-| Court falls, overflow route and vulnerable threshold datum | RWT with OAS/HAD | Before shared gate; not a later cosmetic detail |
-| Actual rainfall/event/risk/climate basis and licensed design-method application | Actual-project drainage designer via DPL/BCR/EPR | Before numerical sizing and technical acceptance |
-| Receiving levels, capacity, backwater, lawful destination and site flood routes | DPL / actual project | Before site-specific acceptance; never guessed by RWT |
-| Installation tolerances, inspection, flow testing and maintained access | DEL with technical designer; PHY where warranted | Before issue/acceptance, with requirements carried earlier into selection |
+| Roof face allocation and exposed/trapped collection conditions | Roof and rainwater design | Before network synthesis; unresolved topology can force rewind |
+| Collection family, outlet evidence and safe operating level | Rainwater design; construction resolution and competent review for technical adequacy | Before selecting a family whose fit depends on capacity |
+| Branching, falls, surcharge and accessible route | Rainwater design and construction resolution | Before roof/water reconciliation |
+| Materials, guards, supports and joint restrictions affecting flow/maintenance | Rainwater and roof material design | Before selecting the coupled assembly |
+| Court falls, overflow route and vulnerable threshold datum | Rainwater, opening and architectural design | Before shared gate; not a later cosmetic detail |
+| Actual rainfall/event/risk/climate basis and licensed design-method application | Actual-project drainage designer | Before numerical sizing and technical acceptance |
+| Receiving levels, capacity, backwater, lawful destination and site flood routes | Site design / actual project | Before site-specific acceptance; never guessed by building-side design |
+| Installation tolerances, inspection, flow testing and maintained access | Delivery and technical designer; physical testing where warranted | Before issue/acceptance, with requirements carried earlier into selection |
 
 Each `SITE-WATER-HANDOFF` must carry the contributing identities, demand/event basis (or explicit unknown), physical location and datum when earned, expected receiving condition, failure/overflow relationship, access and evidence owner. No sewer, infiltration rate, attenuation volume or connection consent is selected here.
 
