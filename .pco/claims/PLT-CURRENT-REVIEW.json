@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "PLT-CURRENT-REVIEW",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "6516f3a1-2708-45f3-88a5-0f84cb9c6c9d",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "Four exterior isometrics planning"
+  },
+  "claimedAt": "2026-10-29T14:14:54.440Z",
+  "heartbeatAt": "2026-10-29T14:14:54.440Z",
+  "expiresAt": "2026-10-29T14:44:54.440Z",
+  "note": "Owner-directed planning only; four whole-house exterior isometric views under existing PLT candidate node"
+}
