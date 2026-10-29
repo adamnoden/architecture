@@ -9,13 +9,12 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T22:12:23.816Z",
-  "heartbeatAt": "2026-10-29T22:22:20.668Z",
-  "expiresAt": "2026-10-29T23:07:20.668Z",
+  "heartbeatAt": "2026-10-29T22:43:46.072Z",
+  "expiresAt": "2026-10-29T23:28:46.072Z",
   "branch": "zerg/worker-1-packet-4",
   "pr": 1045,
   "checkpoint": {
-    "evidence": "PR1045 head b8745066: conditional wet floor, tray/waste section, perimeter route and disassembly; focused checks and A3 inspection pass; IAS remains incomplete",
-    "next": "Complete independent reviews, reconcile accepted HAD checkpoint and main, exact-head CI and preflight, merge partial evidence then handoff release",
-    "blocker": "Matched product/kit, under-tray route and full IS-01–06 adoption obligations remain open"
+    "evidence": "PR1045 correction banner withdraws invalid b8745066 datum arithmetic. High-resolution manufacturer page4 and exploded page15 verified:50mm below housing flange,81mm housing depth,1000square edge-centred outlet. HAD candidate source recoverable in PR1046.",
+    "next": "Replace numerical study and SVG with corrected flange sensitivity; resolve retained NE perimeter route versus NW east-entry alternative using actual waste/clip and complete wet-floor evidence with HAD and BCR-WET workers."
   }
 }
