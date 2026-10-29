@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "node": "CCR-STAIR",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "f5e8f005-6298-4332-b5db-33b9a47c6aeb",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-6"
+  },
+  "claimedAt": "2026-10-29T23:21:32.149Z",
+  "heartbeatAt": "2026-10-29T23:21:32.149Z",
+  "expiresAt": "2026-10-30T00:06:32.149Z",
+  "checkpoint": {
+    "evidence": "CCR programme and stair derive/validation/provenance read; prior MRA complete and released",
+    "next": "Reproduce stair counterexamples then repair datum arithmetic, discrete topology and actual input provenance without geometric redesign"
+  },
+  "branch": "zerg/worker-6-wave6"
+}
