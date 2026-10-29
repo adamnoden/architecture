@@ -15,7 +15,7 @@ export const ccrNodes = defineNodes([
     owners: ['CCR'],
     title: 'Repair stair datum arithmetic and discrete topology',
     dependencies: [],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/ccr-stair-result.md']
   },

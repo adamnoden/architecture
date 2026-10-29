@@ -128,7 +128,7 @@ export const compileReferenceHouseSystem = (
 
   const privateStairGeometry = runCalculationCheck(
     privateStairGeometryMethod,
-    createReferenceHousePrivateStairInputFromHouse(house)
+    createReferenceHousePrivateStairInputFromHouse(house, source)
   )
 
   const core: ReferenceHouseSystemCoreResult = {
