@@ -25,20 +25,17 @@ flowchart LR
     n_OAS_01I["OAS-01I<br/>Internal door assembly candidates<br/><b>READY</b>"]
     n_OAS_03["OAS-03<br/>Selected opening family and replacement/reinstatement set<br/><b>BLOCKED</b>"]
   end
-  subgraph g_HAD["HAD"]
-    direction TB
-    n_HAD_01E["HAD-01E<br/>Exterior and courtyard architectural design<br/><b>READY</b>"]
-    n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>READY</b>"]
-    n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>READY</b>"]
-    n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>BLOCKED</b>"]
-    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>BLOCKED</b>"]
-  end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
     n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>BLOCKED</b>"]
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>BLOCKED</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>BLOCKED</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_HAD["HAD"]
+    direction TB
+    n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>BLOCKED</b>"]
+    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -87,23 +84,14 @@ flowchart LR
   n_IAS_01H --> n_IAS_02S
   n_IAS_01V --> n_IAS_02W
   n_IAS_01H --> n_IAS_02W
-  n_HAD_01S --> n_IAS_02W
   n_IAS_01V --> n_IAS_OAS_JUNCTION
   n_IAS_01H --> n_IAS_OAS_JUNCTION
   n_OAS_01E --> n_IAS_OAS_JUNCTION
   n_OAS_01I --> n_IAS_OAS_JUNCTION
   n_IAS_01V --> n_IAS_HAD_JUNCTION
   n_IAS_01H --> n_IAS_HAD_JUNCTION
-  n_HAD_01P --> n_IAS_HAD_JUNCTION
-  n_HAD_01S --> n_IAS_HAD_JUNCTION
   n_OAS_01E --> n_OAS_HAD_JUNCTION
   n_OAS_01I --> n_OAS_HAD_JUNCTION
-  n_HAD_01E --> n_OAS_HAD_JUNCTION
-  n_HAD_01P --> n_OAS_HAD_JUNCTION
-  n_HAD_01S --> n_OAS_HAD_JUNCTION
-  n_HAD_01E --> n_HAD_02M
-  n_HAD_01P --> n_HAD_02M
-  n_HAD_01S --> n_HAD_02M
   n_IAS_HAD_JUNCTION --> n_HAD_02M
   n_OAS_HAD_JUNCTION --> n_HAD_02M
   n_IAS_02S --> n_IAS_03
@@ -156,9 +144,6 @@ flowchart LR
   class n_IAS_01H ready;
   class n_OAS_01E ready;
   class n_OAS_01I ready;
-  class n_HAD_01E ready;
-  class n_HAD_01P ready;
-  class n_HAD_01S ready;
   class n_IAS_02S blocked;
   class n_IAS_02W blocked;
   class n_IAS_OAS_JUNCTION blocked;
@@ -242,9 +227,9 @@ flowchart LR
   subgraph g_HAD["HAD"]
     direction TB
     n_HAD_00["HAD-00<br/>Architectural brief, hierarchy and invariants<br/><b>DONE</b>"]
-    n_HAD_01E["HAD-01E<br/>Exterior and courtyard architectural design<br/><b>READY</b>"]
-    n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>READY</b>"]
-    n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>READY</b>"]
+    n_HAD_01E["HAD-01E<br/>Exterior and courtyard architectural design<br/><b>DONE</b>"]
+    n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>DONE</b>"]
+    n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>DONE</b>"]
     n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>BLOCKED</b>"]
     n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>BLOCKED</b>"]
   end
@@ -427,9 +412,9 @@ flowchart LR
   class n_IAS_01H ready;
   class n_OAS_01E ready;
   class n_OAS_01I ready;
-  class n_HAD_01E ready;
-  class n_HAD_01P ready;
-  class n_HAD_01S ready;
+  class n_HAD_01E done;
+  class n_HAD_01P done;
+  class n_HAD_01S done;
   class n_IAS_02S blocked;
   class n_IAS_02W blocked;
   class n_IAS_OAS_JUNCTION blocked;

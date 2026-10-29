@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 11 · **Active:** 3 · **Blocked:** 20 · **Held:** 2 · **Done:** 21 · **Cancelled:** 0
+**Structurally ready:** 8 · **Active:** 3 · **Blocked:** 20 · **Held:** 2 · **Done:** 24 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -23,9 +23,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `IAS-01H` | Horizontal interior system candidates | IAS | — |
 | `OAS-01E` | Envelope openings, external doors, thresholds and boundary candidates | OAS | — |
 | `OAS-01I` | Internal door assembly candidates | OAS | — |
-| `HAD-01E` | Exterior and courtyard architectural design | HAD | — |
-| `HAD-01P` | Principal-interior architectural design | HAD | — |
-| `HAD-01S` | Private and service-interior architectural design | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -46,11 +43,11 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Direct blockers |
 |---|---|---|
 | `IAS-02S` | Interior services and access family | IAS-01V, IAS-01H |
-| `IAS-02W` | Wet-room and kitchen interior-system variants | IAS-01V, IAS-01H, HAD-01S |
+| `IAS-02W` | Wet-room and kitchen interior-system variants | IAS-01V, IAS-01H |
 | `IAS-OAS-JUNCTION` | Interior-system to opening-assembly junction reconciliation | IAS-01V, IAS-01H, OAS-01E, OAS-01I |
-| `IAS-HAD-JUNCTION` | Interior-system to architectural-expression reconciliation | IAS-01V, IAS-01H, HAD-01P, HAD-01S |
-| `OAS-HAD-JUNCTION` | Opening-assembly to facade/interior-expression reconciliation | OAS-01E, OAS-01I, HAD-01E, HAD-01P, HAD-01S |
-| `HAD-02M` | Material and finish synthesis | HAD-01E, HAD-01P, HAD-01S, IAS-HAD-JUNCTION, OAS-HAD-JUNCTION |
+| `IAS-HAD-JUNCTION` | Interior-system to architectural-expression reconciliation | IAS-01V, IAS-01H |
+| `OAS-HAD-JUNCTION` | Opening-assembly to facade/interior-expression reconciliation | OAS-01E, OAS-01I |
+| `HAD-02M` | Material and finish synthesis | IAS-HAD-JUNCTION, OAS-HAD-JUNCTION |
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS-02S, IAS-02W, IAS-OAS-JUNCTION, IAS-HAD-JUNCTION |
 | `OAS-03` | Selected opening family and replacement/reinstatement set | OAS-01E, OAS-01I, IAS-OAS-JUNCTION, OAS-HAD-JUNCTION |
 | `HAD-03` | Architectural design convergence and visual synthesis | IAS-HAD-JUNCTION, OAS-HAD-JUNCTION, HAD-02M |
