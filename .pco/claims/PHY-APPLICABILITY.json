@@ -9,7 +9,12 @@
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-29T23:19:48.085Z",
-  "heartbeatAt": "2026-10-29T23:19:48.085Z",
-  "expiresAt": "2026-10-30T00:04:48.085Z",
-  "branch": "work/zerg-worker-3-phy"
+  "heartbeatAt": "2026-10-29T23:25:53.402Z",
+  "expiresAt": "2026-10-30T00:10:53.402Z",
+  "branch": "work/zerg-worker-3-phy",
+  "pr": 1062,
+  "checkpoint": {
+    "evidence": "Root-reviewed frozen source PR1062 head86e73b5e70100813d9474cb0a8b98fa54ccc804f; historical body/blob preservation, source/link/type/control88/public validators passed; no test results or activation",
+    "next": "Coordinate preserved-parent pair with EPR if ready, bind common PR, exact-head full CI and fresh canonical preflight then merge/reconcile/release"
+  }
 }
