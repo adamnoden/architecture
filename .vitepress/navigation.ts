@@ -263,6 +263,7 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
     page('Roof failure and recovery evaluation', '/docs/research/roof-failure-evaluation'),
     page('Roof topology and water paths', '/docs/research/roof-topology-families'),
     page('Roof covering families', '/docs/research/roof-covering-families'),
+    page('Roof junction families', '/docs/research/roof-junction-families'),
     page('Roof assemblies and renewal', '/docs/research/roof-assembly-options'),
     page('Preface precedents', '/docs/research/preface-precedents')
   ]),

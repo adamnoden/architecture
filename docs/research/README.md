@@ -59,4 +59,6 @@ Across all of these subjects, the controlling question is the same: **what does 
 
 [Roof Assemblies: Drying, Support and Renewal](roof-assembly-options.md) compares thermal and moisture boundaries with support, movement and repair. It tests the represented roof reserve and shallow storage space without selecting a build-up or treating a drawn void as access.
 
+[Roof Junction Families](roof-junction-families.md) locates eave, ridge-corner and valley-receiver questions in the current house. It compares water, movement, support and replacement across junction and penetration families without selecting a construction detail or inventing a roof-access route.
+
 [Rainwater Failure and Exceedance](rainwater-failure-and-exceedance.md) traces candidate blockage, leakage and compound-event paths. Inner roof spill transfers load to the court; a safe court escape remains unproved and constrains network selection.
