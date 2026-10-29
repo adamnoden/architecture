@@ -9,7 +9,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'DEL-ISSUE-PROFILES', owners: ['DEL'], title: 'Define purpose-specific information and issue requirements',
-    dependencies: [], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: [], lifecycle: 'complete', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/del/issue-profiles-result.md']
   },
   {
