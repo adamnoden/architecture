@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "BCR-PREFLIGHT",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "634b033c-e8b6-4e30-ba5d-e4daa6aeec7d",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T23:00:58.369Z",
-  "heartbeatAt": "2026-10-29T23:12:57.265Z",
-  "expiresAt": "2026-10-29T23:57:57.265Z",
+  "heartbeatAt": "2026-10-29T23:18:40.273Z",
+  "expiresAt": "2026-10-29T23:18:40.273Z",
   "branch": "work/zerg-preflight-site-moisture",
   "pr": 1059,
   "checkpoint": {
     "evidence": "Reviewed sourcefe1d9db9 preserved as direct parent in combined PR1059 head8c6d6c51 with DPL8ade and MRA0855; combined control88/type/repository checks pass; all35 physical findings remain open. Root review passed; ROF07 and MRA seed currency reconciled.",
     "next": "Verify all holder bindings, exact combined CI and fresh per-lease preflights, merge expected head in reserved slot, release/reconcile all three results, then canonical EPR dispatch."
-  }
+  },
+  "releasedAt": "2026-10-29T23:18:40.273Z",
+  "releaseReason": "completed"
 }
