@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-COMMS",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "01f55f54-a063-4f20-9fe0-fef11e6a395c",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "mvb-comms-bc7462"
+  },
+  "claimedAt": "2026-10-29T21:50:23.021Z",
+  "heartbeatAt": "2026-10-29T21:50:23.021Z",
+  "expiresAt": "2026-10-29T22:35:23.021Z",
+  "branch": "pco/mvb-communications"
+}
