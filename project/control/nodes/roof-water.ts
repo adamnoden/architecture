@@ -16,9 +16,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['ROF'],
     title: 'Roof evidence, failure model and evaluation frame',
     dependencies: ['ROF-00'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rof/rof-01-evidence-and-evaluation.md']
   },
   {
     id: 'ROF-02',
@@ -92,9 +92,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Rainfall and hydraulic basis',
     dependencies: ['RWT-00'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-01-rainfall-and-hydraulic-basis.md']
   },
   {
     id: 'RWT-02',
