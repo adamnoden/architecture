@@ -1,6 +1,7 @@
 import type { PlanSliceCompileResult } from '../plan-slice/model.js'
 import type { ServiceTopologyCompileResult } from '../service-slice/model.js'
 import { deriveBoundaryTopology } from './derive.js'
+import { normaliseDrainageDeclaration } from './declarations.js'
 import type {
   BoundaryTopologyCompileResult,
   BoundaryTopologyDiagnostic,
@@ -325,6 +326,15 @@ export const compileBoundaryTopology = (
   }
 
   for (const route of source.drainageRoutes) {
+    for (const endpoint of ['from', 'to'] as const) {
+      if (normaliseDrainageDeclaration(route[endpoint])) continue
+      diagnostics.push(diagnostic(
+        'DRAINAGE_ENDPOINT_MISSING',
+        'FAIL',
+        [route.id],
+        `${route.id} has no non-blank ${endpoint} endpoint declaration.`
+      ))
+    }
     if ((route as { concealedPrimaryOutlet?: boolean }).concealedPrimaryOutlet !== false) {
       diagnostics.push(diagnostic(
         'CONCEALED_PRIMARY_DRAINAGE',
@@ -338,7 +348,7 @@ export const compileBoundaryTopology = (
         'DRAINAGE_FAILURE_NOT_VISIBLE',
         'FAIL',
         [route.id],
-        `${route.id} has no visible failure/overflow behaviour.`
+        `${route.id} does not declare visible failure/overflow behaviour; physical visibility is not proved by this flag.`
       ))
     }
     if (route.kind === 'roof-field' && route.direction !== 'outward') {
