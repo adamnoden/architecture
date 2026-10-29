@@ -9,12 +9,12 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T23:00:58.369Z",
-  "heartbeatAt": "2026-10-29T23:09:06.354Z",
-  "expiresAt": "2026-10-29T23:54:06.354Z",
-  "branch": "work/zerg-bcr-preflight",
-  "pr": 1057,
+  "heartbeatAt": "2026-10-29T23:12:57.265Z",
+  "expiresAt": "2026-10-29T23:57:57.265Z",
+  "branch": "work/zerg-preflight-site-moisture",
+  "pr": 1059,
   "checkpoint": {
-    "evidence": "PR1057 head4cb1592c integrates all35 physical findings exactly once with source identities and open design admission constraints; focused study/type/control/repository/dataplate and docs15.43s pass; roof/structure/water peer review passed. IAS/HAD1051 accepted partial reconciled.",
-    "next": "Reconcile current main including ROF07, finish independent review, require exact-head full CI and fresh canonical preflight, then merge/release/reconcile in commander slot."
+    "evidence": "Reviewed sourcefe1d9db9 preserved as direct parent in combined PR1059 head8c6d6c51 with DPL8ade and MRA0855; combined control88/type/repository checks pass; all35 physical findings remain open. Root review passed; ROF07 and MRA seed currency reconciled.",
+    "next": "Verify all holder bindings, exact combined CI and fresh per-lease preflights, merge expected head in reserved slot, release/reconcile all three results, then canonical EPR dispatch."
   }
 }
