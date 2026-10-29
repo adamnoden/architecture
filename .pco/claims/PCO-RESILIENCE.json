@@ -2,16 +2,18 @@
   "schemaVersion": 1,
   "node": "PCO-RESILIENCE",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3db5277c-f960-43ad-9d19-622dc536b561",
   "holder": {
     "kind": "chatgpt",
     "label": "resilience-bc7462"
   },
   "claimedAt": "2026-10-29T17:32:05.646Z",
-  "heartbeatAt": "2026-10-29T17:41:50.450Z",
-  "expiresAt": "2026-10-29T18:26:50.450Z",
+  "heartbeatAt": "2026-10-29T17:43:33.450Z",
+  "expiresAt": "2026-10-29T17:43:33.450Z",
   "branch": "pco/lease-resilience",
   "pr": 1015,
-  "note": "PR #1015; 69 control tests and TypeScript pass; next inspect exact-head CI, repeat merge-check, expected-head merge, release and clean branch. CI is installing dependencies."
+  "note": "PR #1015; 69 control tests and TypeScript pass; next inspect exact-head CI, repeat merge-check, expected-head merge, release and clean branch. CI is installing dependencies.",
+  "releasedAt": "2026-10-29T17:43:33.450Z",
+  "releaseReason": "completed"
 }
