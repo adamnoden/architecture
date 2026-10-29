@@ -9,12 +9,12 @@
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-29T23:19:48.085Z",
-  "heartbeatAt": "2026-10-29T23:36:27.878Z",
-  "expiresAt": "2026-10-30T00:21:27.878Z",
+  "heartbeatAt": "2026-10-29T23:47:35.253Z",
+  "expiresAt": "2026-10-30T00:32:35.253Z",
   "branch": "work/zerg-epr-phy",
   "pr": 1065,
   "checkpoint": {
-    "evidence": "Root-reviewed source1062 final3063b1f8fbc4ad5207e3815e363d10c012b5afe3 preserved in common1065 head7fd1cc930c73dc72227859ba6d9721e4d04ff213; own artifacts unchanged and shared node retains own PHY completion",
-    "next": "Verify common canonical metadata, wait exact-head full CI, fresh own merge-check, worker2 serial merge then reconcile/release"
+    "evidence": "PR1065 d9a061472cafaa5993857e2e68ee5dcea1cc25ac exact full Validate40975081368 and typography green; PHY source unchanged; fresh preflight23:46:41Z passed",
+    "next": "Await separate PLT40975081343 completion, repeat fresh preflight, worker2 expected-head merge, own PHY release/reconcile then canonical ADE audit"
   }
 }
