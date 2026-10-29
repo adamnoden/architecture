@@ -9,11 +9,12 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-29T23:01:53.600Z",
-  "heartbeatAt": "2026-10-29T23:01:53.600Z",
-  "expiresAt": "2026-10-29T23:46:53.600Z",
+  "heartbeatAt": "2026-10-29T23:07:25.370Z",
+  "expiresAt": "2026-10-29T23:52:25.370Z",
   "checkpoint": {
-    "evidence": "Current-main MRA threatmodel read; existing framework and source applicability sweep prepared",
-    "next": "Complete MRA00 targeted inventory and precise assurance handoff without design adoption"
+    "evidence": "MRA00 source PR1056 head08550ec0; current-house inventory and unknown/pass rules reviewed by water/services/DPL peer; local checks pass",
+    "next": "Finish commander review, current-main integration and exact-head CI before canonical preflight/merge"
   },
-  "branch": "zerg/worker-6-wave5"
+  "branch": "zerg/worker-6-wave5",
+  "pr": 1056
 }
