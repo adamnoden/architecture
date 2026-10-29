@@ -2,15 +2,17 @@
   "schemaVersion": 1,
   "node": "OAS-HAD-JUNCTION",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "oas-71cc3e4e-20261029-OAS-HAD-JUNCTION",
   "holder": {
     "kind": "chatgpt",
     "label": "OAS execution 71cc3e4e"
   },
   "claimedAt": "2026-10-29T09:51:16.117Z",
-  "heartbeatAt": "2026-10-29T09:51:16.117Z",
-  "expiresAt": "2026-10-29T11:51:16.117Z",
+  "heartbeatAt": "2026-10-29T09:55:42.412Z",
+  "expiresAt": "2026-10-29T09:55:42.412Z",
   "branch": "workstream/oas-junctions",
-  "note": "Directed shared opening junctions after merged core candidates."
+  "note": "Directed shared opening junctions after merged core candidates.",
+  "releasedAt": "2026-10-29T09:55:42.412Z",
+  "releaseReason": "completed"
 }
