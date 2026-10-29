@@ -13,6 +13,28 @@ const svgHost = ref<HTMLElement | null>(null)
 const pageUrl = withBase('/project/dependency-graph')
 const fullUrl = computed(() => `${pageUrl}?view=full&graph=current`)
 const percent = computed(() => Math.round(zoom.value * 100))
+// Derive swatches from the generated Mermaid rules so the legend always matches the DAG.
+const legend = [
+  { id: 'ready', label: 'Ready', meaning: 'Prerequisites satisfied' },
+  { id: 'active', label: 'Active', meaning: 'Work started' },
+  { id: 'blocked', label: 'Blocked', meaning: 'Awaiting prerequisites' },
+  { id: 'held', label: 'Held', meaning: 'Intentionally paused' },
+  { id: 'done', label: 'Done', meaning: 'Completed' },
+  { id: 'cancelled', label: 'Cancelled', meaning: 'No longer pursued' }
+].map((entry) => {
+  const rule = currentMermaid.match(
+    new RegExp(`classDef ${entry.id} fill:(#[0-9a-fA-F]{6}),stroke:(#[0-9a-fA-F]{6})`)
+  )
+  if (!rule) throw new Error(`Missing generated Mermaid colour for ${entry.id}`)
+  return {
+    ...entry,
+    colour: { backgroundColor: rule[1], borderColor: rule[2] }
+  }
+})
+const visibleLegend = computed(() =>
+  historical.value ? legend : legend.filter((entry) => entry.id !== 'done' && entry.id !== 'cancelled')
+)
+
 let svgElement: SVGSVGElement | null = null
 let naturalWidth = 3200
 let drag: { x: number; y: number; left: number; top: number; pointerId: number } | null = null
@@ -92,8 +114,8 @@ onMounted(async () => {
 
 <template>
   <div class="control-graph" :class="{ 'control-graph--full': full }">
+    <template v-if="!full">
     <a
-      v-if="!full"
       class="graph-preview"
       :href="fullUrl"
       target="_blank"
@@ -106,6 +128,14 @@ onMounted(async () => {
       </div>
       <span class="graph-preview-action">OPEN FULL-SIZE GRAPH <span aria-hidden="true">↗</span></span>
     </a>
+    <div class="graph-legend" role="group" aria-label="Dependency graph status colours">
+      <span v-for="item in visibleLegend" :key="item.id" class="graph-legend-item">
+        <span class="graph-legend-swatch" :style="item.colour" aria-hidden="true"></span>
+        <span class="graph-legend-label">{{ item.label }}</span>
+        <span class="graph-legend-meaning">{{ item.meaning }}</span>
+      </span>
+    </div>
+    </template>
     <template v-else>
       <div class="graph-toolbar">
         <div class="graph-heading">
@@ -137,7 +167,16 @@ onMounted(async () => {
           <span v-else>Could not render graph: {{ error }}</span>
         </div>
       </div>
-      <div class="graph-footnote">Drag to pan · Scroll to navigate · Zoom controls above · Structural state, not live agent occupancy</div>
+      <div class="graph-full-footer">
+        <div class="graph-legend" role="group" aria-label="Dependency graph status colours">
+          <span v-for="item in visibleLegend" :key="item.id" class="graph-legend-item">
+            <span class="graph-legend-swatch" :style="item.colour" aria-hidden="true"></span>
+            <span class="graph-legend-label">{{ item.label }}</span>
+            <span class="graph-legend-meaning">{{ item.meaning }}</span>
+          </span>
+        </div>
+        <div class="graph-footnote">Drag to pan · Scroll to navigate · Structural state, not live agent occupancy</div>
+      </div>
     </template>
   </div>
 </template>
@@ -223,9 +262,47 @@ onMounted(async () => {
 .graph-stage.is-dragging { cursor: grabbing; user-select: none; }
 .graph-stage .graph-svg { width: max-content; }
 .graph-stage .graph-svg :deep(svg) { display: block; height: auto !important; max-width: none !important; }
-.graph-footnote {
-  padding: 8px 18px;
+.graph-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: -0.9rem 0 2rem;
+  font: 12px/1.45 var(--vp-font-family-base);
+  color: var(--vp-c-text-2);
+}
+.graph-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.graph-legend-swatch {
+  display: inline-block;
+  width: 16px;
+  height: 13px;
+  flex: 0 0 auto;
+  border: 2px solid;
+  border-radius: 2px;
+}
+.graph-legend-label {
+  color: var(--vp-c-text-1);
+  font-weight: 650;
+}
+.graph-legend-meaning { color: var(--vp-c-text-2); }
+.graph-full-footer {
+  padding: 10px 18px 7px;
   border-top: 1px solid #d6d3cb;
+  background: #f7f6f2;
+}
+.graph-full-footer .graph-legend {
+  margin: 0;
+  gap: 8px 18px;
+}
+.graph-full-footer .graph-legend-label { color: #20221f; }
+.graph-full-footer .graph-legend-meaning { color: #666a62; }
+.graph-footnote {
+  padding-top: 4px;
   font-size: 11px;
   color: #6b6b65;
 }
