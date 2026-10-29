@@ -21,7 +21,6 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_HOUSE_PLAN["PCO-HOUSE-PLAN<br/>Record owner-house objective and delivery execution plan<br/><b>READY</b>"]
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>BLOCKED</b>"]
     n_PCO_SWARM["PCO-SWARM<br/>Swarm continuation, startup transport and evidence-based run reporting<br/><b>READY</b>"]
   end
@@ -49,6 +48,8 @@ flowchart LR
     n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>BLOCKED</b>"]
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>BLOCKED</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
+    n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
+    n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
     direction TB
@@ -106,6 +107,34 @@ flowchart LR
     n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>READY</b>"]
     n_PUB_02_FINAL["PUB-02-FINAL<br/>Final private-object content, drawing and manufacture gate<br/><b>BLOCKED</b>"]
   end
+  subgraph g_DEL["DEL"]
+    direction TB
+    n_DEL_BRIEF["DEL-BRIEF<br/>Reconcile owner requirements and open project decisions<br/><b>READY</b>"]
+    n_DEL_ISSUE_PROFILES["DEL-ISSUE-PROFILES<br/>Define purpose-specific information and issue requirements<br/><b>READY</b>"]
+    n_DEL_BAY_PACK["DEL-BAY-PACK<br/>Assemble one coherent construction-bay review issue<br/><b>BLOCKED</b>"]
+    n_DEL_COMMISSION_PLAN["DEL-COMMISSION-PLAN<br/>Register grounded whole-house design construction and handover packets<br/><b>BLOCKED</b>"]
+    n_DEL_CURRENT["DEL-CURRENT<br/>Reconcile selected-house delivery and reinstatement requirements<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_ADE["ADE"]
+    direction TB
+    n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>READY</b>"]
+    n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
+    n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
+    n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
+    n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_EPR["EPR"]
+    direction TB
+    n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
+    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
+    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_DPL["DPL"]
+    direction TB
+    n_DPL_SITE_BRIEF["DPL-SITE-BRIEF<br/>Derive owner-house plot criteria and evidence requirements<br/><b>BLOCKED</b>"]
+    n_DPL_COMMISSION["DPL-COMMISSION<br/>Receive owner-nominated real plot and authorised assessment scope<br/><b>BLOCKED</b>"]
+    n_DPL_SITE_ASSESSMENT["DPL-SITE-ASSESSMENT<br/>Assess actual site applicability and explicit adaptation choices<br/><b>BLOCKED</b>"]
+  end
   subgraph g_PHY["PHY"]
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
@@ -113,15 +142,6 @@ flowchart LR
     n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>BLOCKED</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>BLOCKED</b>"]
     n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>BLOCKED</b>"]
-  end
-  subgraph g_EPR["EPR"]
-    direction TB
-    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
-    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>BLOCKED</b>"]
-  end
-  subgraph g_DEL["DEL"]
-    direction TB
-    n_DEL_CURRENT["DEL-CURRENT<br/>Reconcile selected-house delivery and reinstatement requirements<br/><b>BLOCKED</b>"]
   end
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
@@ -211,6 +231,32 @@ flowchart LR
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_EDA_ARGUMENT --> n_EDA_NARRATIVE
   n_EDA_ADAPTER --> n_EDA_NARRATIVE
+  n_DEL_BRIEF --> n_BCR_BAY_BRIEF
+  n_HRS_BASELINE --> n_BCR_BAY_BRIEF
+  n_BCR_PREFLIGHT --> n_BCR_BAY_BRIEF
+  n_BCR_BAY_BRIEF --> n_BCR_BAY_DESIGN
+  n_TRIAD_GATE --> n_BCR_BAY_DESIGN
+  n_ADE_DELIVERY_AUDIT --> n_ADE_MODEL
+  n_HRS_TECHNICAL --> n_ADE_MODEL
+  n_ADE_MODEL --> n_ADE_DETAILS
+  n_BCR_BAY_DESIGN --> n_ADE_DETAILS
+  n_ADE_MODEL --> n_ADE_SCHEDULES
+  n_BCR_BAY_DESIGN --> n_ADE_SCHEDULES
+  n_ADE_DELIVERY_AUDIT --> n_ADE_EVIDENCE
+  n_BCR_BAY_DESIGN --> n_ADE_EVIDENCE
+  n_CCR_IDENTITY --> n_ADE_EVIDENCE
+  n_PCO_APPLICABILITY --> n_ADE_EVIDENCE
+  n_ADE_DETAILS --> n_DEL_BAY_PACK
+  n_ADE_SCHEDULES --> n_DEL_BAY_PACK
+  n_ADE_EVIDENCE --> n_DEL_BAY_PACK
+  n_DEL_ISSUE_PROFILES --> n_DEL_BAY_PACK
+  n_DEL_BAY_PACK --> n_EPR_BAY_REVIEW
+  n_DEL_BRIEF --> n_DPL_SITE_BRIEF
+  n_HRS_BASELINE --> n_DPL_SITE_BRIEF
+  n_DPL_SITE_BRIEF --> n_DPL_COMMISSION
+  n_DPL_COMMISSION --> n_DPL_SITE_ASSESSMENT
+  n_DPL_SITE_ASSESSMENT --> n_DEL_COMMISSION_PLAN
+  n_EPR_BAY_REVIEW --> n_DEL_COMMISSION_PLAN
   n_PHY_APPLICABILITY --> n_PHY_03_ENGINEERING
   n_PHY_APPLICABILITY --> n_PHY_04
   n_EPR_REFRESH --> n_EPR_RH11
@@ -234,9 +280,11 @@ flowchart LR
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PUB fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DEL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_DPL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   classDef ready fill:#dce9df,stroke:#376249,color:#20392b,stroke-width:2px;
   classDef blocked fill:#f0eee9,stroke:#a5a197,color:#54534e,stroke-width:1.5px;
   classDef active fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:2px;
@@ -252,7 +300,6 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
-  class n_PCO_HOUSE_PLAN ready;
   class n_PCO_APPLICABILITY blocked;
   class n_PCO_SWARM ready;
   class n_IAS_03 ready;
@@ -303,6 +350,21 @@ flowchart LR
   class n_PLT_PRINT_REVIEW blocked;
   class n_EDA_ARGUMENT ready;
   class n_EDA_NARRATIVE blocked;
+  class n_DEL_BRIEF ready;
+  class n_DEL_ISSUE_PROFILES ready;
+  class n_ADE_DELIVERY_AUDIT ready;
+  class n_BCR_BAY_BRIEF blocked;
+  class n_BCR_BAY_DESIGN blocked;
+  class n_ADE_MODEL blocked;
+  class n_ADE_DETAILS blocked;
+  class n_ADE_SCHEDULES blocked;
+  class n_ADE_EVIDENCE blocked;
+  class n_DEL_BAY_PACK blocked;
+  class n_EPR_BAY_REVIEW blocked;
+  class n_DPL_SITE_BRIEF blocked;
+  class n_DPL_COMMISSION blocked;
+  class n_DPL_SITE_ASSESSMENT blocked;
+  class n_DEL_COMMISSION_PLAN blocked;
   class n_PHY_01 held;
   class n_PHY_02 held;
   class n_PHY_03_ENGINEERING blocked;
@@ -339,7 +401,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
-    n_PCO_HOUSE_PLAN["PCO-HOUSE-PLAN<br/>Record owner-house objective and delivery execution plan<br/><b>READY</b>"]
+    n_PCO_HOUSE_PLAN["PCO-HOUSE-PLAN<br/>Record owner-house objective and delivery execution plan<br/><b>DONE</b>"]
     n_PCO_REFURB_PLAN["PCO-REFURB-PLAN<br/>Record owner-directed refurbishment scope and swarmable handoffs<br/><b>DONE</b>"]
     n_PCO_00["PCO-00<br/>Control-plane inventory and authority map<br/><b>DONE</b>"]
     n_PCO_01["PCO-01<br/>Schema and concurrency-safe storage<br/><b>DONE</b>"]
@@ -405,6 +467,8 @@ flowchart LR
     n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>BLOCKED</b>"]
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>BLOCKED</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
+    n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
+    n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
     direction TB
@@ -464,6 +528,35 @@ flowchart LR
     n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>READY</b>"]
     n_PUB_02_FINAL["PUB-02-FINAL<br/>Final private-object content, drawing and manufacture gate<br/><b>BLOCKED</b>"]
   end
+  subgraph g_DEL["DEL"]
+    direction TB
+    n_DEL_BRIEF["DEL-BRIEF<br/>Reconcile owner requirements and open project decisions<br/><b>READY</b>"]
+    n_DEL_ISSUE_PROFILES["DEL-ISSUE-PROFILES<br/>Define purpose-specific information and issue requirements<br/><b>READY</b>"]
+    n_DEL_BAY_PACK["DEL-BAY-PACK<br/>Assemble one coherent construction-bay review issue<br/><b>BLOCKED</b>"]
+    n_DEL_COMMISSION_PLAN["DEL-COMMISSION-PLAN<br/>Register grounded whole-house design construction and handover packets<br/><b>BLOCKED</b>"]
+    n_DEL_00["DEL-00<br/>Delivery responsibility and evidence baseline<br/><b>DONE</b>"]
+    n_DEL_CURRENT["DEL-CURRENT<br/>Reconcile selected-house delivery and reinstatement requirements<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_ADE["ADE"]
+    direction TB
+    n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>READY</b>"]
+    n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
+    n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
+    n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
+    n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_EPR["EPR"]
+    direction TB
+    n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
+    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
+    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_DPL["DPL"]
+    direction TB
+    n_DPL_SITE_BRIEF["DPL-SITE-BRIEF<br/>Derive owner-house plot criteria and evidence requirements<br/><b>BLOCKED</b>"]
+    n_DPL_COMMISSION["DPL-COMMISSION<br/>Receive owner-nominated real plot and authorised assessment scope<br/><b>BLOCKED</b>"]
+    n_DPL_SITE_ASSESSMENT["DPL-SITE-ASSESSMENT<br/>Assess actual site applicability and explicit adaptation choices<br/><b>BLOCKED</b>"]
+  end
   subgraph g_PHY["PHY"]
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
@@ -471,16 +564,6 @@ flowchart LR
     n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>BLOCKED</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>BLOCKED</b>"]
     n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>BLOCKED</b>"]
-  end
-  subgraph g_EPR["EPR"]
-    direction TB
-    n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>BLOCKED</b>"]
-    n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>BLOCKED</b>"]
-  end
-  subgraph g_DEL["DEL"]
-    direction TB
-    n_DEL_00["DEL-00<br/>Delivery responsibility and evidence baseline<br/><b>DONE</b>"]
-    n_DEL_CURRENT["DEL-CURRENT<br/>Reconcile selected-house delivery and reinstatement requirements<br/><b>BLOCKED</b>"]
   end
   n_ACO_00 --> n_ACO_01
   n_ACO_01 --> n_ACO_02
@@ -650,6 +733,32 @@ flowchart LR
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_EDA_ARGUMENT --> n_EDA_NARRATIVE
   n_EDA_ADAPTER --> n_EDA_NARRATIVE
+  n_DEL_BRIEF --> n_BCR_BAY_BRIEF
+  n_HRS_BASELINE --> n_BCR_BAY_BRIEF
+  n_BCR_PREFLIGHT --> n_BCR_BAY_BRIEF
+  n_BCR_BAY_BRIEF --> n_BCR_BAY_DESIGN
+  n_TRIAD_GATE --> n_BCR_BAY_DESIGN
+  n_ADE_DELIVERY_AUDIT --> n_ADE_MODEL
+  n_HRS_TECHNICAL --> n_ADE_MODEL
+  n_ADE_MODEL --> n_ADE_DETAILS
+  n_BCR_BAY_DESIGN --> n_ADE_DETAILS
+  n_ADE_MODEL --> n_ADE_SCHEDULES
+  n_BCR_BAY_DESIGN --> n_ADE_SCHEDULES
+  n_ADE_DELIVERY_AUDIT --> n_ADE_EVIDENCE
+  n_BCR_BAY_DESIGN --> n_ADE_EVIDENCE
+  n_CCR_IDENTITY --> n_ADE_EVIDENCE
+  n_PCO_APPLICABILITY --> n_ADE_EVIDENCE
+  n_ADE_DETAILS --> n_DEL_BAY_PACK
+  n_ADE_SCHEDULES --> n_DEL_BAY_PACK
+  n_ADE_EVIDENCE --> n_DEL_BAY_PACK
+  n_DEL_ISSUE_PROFILES --> n_DEL_BAY_PACK
+  n_DEL_BAY_PACK --> n_EPR_BAY_REVIEW
+  n_DEL_BRIEF --> n_DPL_SITE_BRIEF
+  n_HRS_BASELINE --> n_DPL_SITE_BRIEF
+  n_DPL_SITE_BRIEF --> n_DPL_COMMISSION
+  n_DPL_COMMISSION --> n_DPL_SITE_ASSESSMENT
+  n_DPL_SITE_ASSESSMENT --> n_DEL_COMMISSION_PLAN
+  n_EPR_BAY_REVIEW --> n_DEL_COMMISSION_PLAN
   n_PHY_APPLICABILITY --> n_PHY_03_ENGINEERING
   n_PHY_APPLICABILITY --> n_PHY_04
   n_EPR_REFRESH --> n_EPR_RH11
@@ -676,9 +785,11 @@ flowchart LR
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PUB fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DEL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_DPL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   classDef ready fill:#dce9df,stroke:#376249,color:#20392b,stroke-width:2px;
   classDef blocked fill:#f0eee9,stroke:#a5a197,color:#54534e,stroke-width:1.5px;
   classDef active fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:2px;
@@ -699,7 +810,7 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
-  class n_PCO_HOUSE_PLAN ready;
+  class n_PCO_HOUSE_PLAN done;
   class n_PCO_REFURB_PLAN done;
   class n_PCO_00 done;
   class n_PCO_01 done;
@@ -784,6 +895,21 @@ flowchart LR
   class n_PLT_PRINT_REVIEW blocked;
   class n_EDA_ARGUMENT ready;
   class n_EDA_NARRATIVE blocked;
+  class n_DEL_BRIEF ready;
+  class n_DEL_ISSUE_PROFILES ready;
+  class n_ADE_DELIVERY_AUDIT ready;
+  class n_BCR_BAY_BRIEF blocked;
+  class n_BCR_BAY_DESIGN blocked;
+  class n_ADE_MODEL blocked;
+  class n_ADE_DETAILS blocked;
+  class n_ADE_SCHEDULES blocked;
+  class n_ADE_EVIDENCE blocked;
+  class n_DEL_BAY_PACK blocked;
+  class n_EPR_BAY_REVIEW blocked;
+  class n_DPL_SITE_BRIEF blocked;
+  class n_DPL_COMMISSION blocked;
+  class n_DPL_SITE_ASSESSMENT blocked;
+  class n_DEL_COMMISSION_PLAN blocked;
   class n_PHY_01 held;
   class n_PHY_02 held;
   class n_PHY_03_ENGINEERING blocked;

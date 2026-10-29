@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 45 · **Held:** 2 · **Done:** 40 · **Cancelled:** 0
+**Structurally ready:** 18 · **Active:** 0 · **Blocked:** 57 · **Held:** 2 · **Done:** 41 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,7 +22,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `CCR-PLAN` | Repair rectangle-union area and plate closure | CCR | — |
 | `CCR-STAIR` | Repair stair datum arithmetic and discrete topology | CCR | — |
 | `CCR-DRAINAGE` | Repair drainage declaration validity and source consistency | CCR | — |
-| `PCO-HOUSE-PLAN` | Record owner-house objective and delivery execution plan | PCO | — |
 | `PCO-SWARM` | Swarm continuation, startup transport and evidence-based run reporting | PCO | — |
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
@@ -35,6 +34,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `PUB-02-PREP` | Content-independent private-object preparation | PUB | — |
 | `EDA-ADAPTER` | Restore authored ownership of architectural publication prose | EDA | — |
 | `EDA-ARGUMENT` | Red-team architectural contribution and evidence for the central thesis | EDA | — |
+| `DEL-BRIEF` | Reconcile owner requirements and open project decisions | DEL | — |
+| `DEL-ISSUE-PROFILES` | Define purpose-specific information and issue requirements | DEL | — |
+| `ADE-DELIVERY-AUDIT` | Map construction-information needs to existing capabilities | ADE | — |
 
 ### Active durable work
 
@@ -87,6 +89,18 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
 | `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
 | `EDA-NARRATIVE` | Reshape and subtract for a compelling architectural reader journey | EDA-ARGUMENT, EDA-ADAPTER |
+| `BCR-BAY-BRIEF` | Select one consequential construction bay and its proof obligations | DEL-BRIEF, HRS-BASELINE, BCR-PREFLIGHT |
+| `BCR-BAY-DESIGN` | Resolve the selected bay as a coordinated design study | BCR-BAY-BRIEF, TRIAD-GATE |
+| `ADE-MODEL` | Connect current design identities to construction-information outputs | ADE-DELIVERY-AUDIT, HRS-TECHNICAL |
+| `ADE-DETAILS` | Produce source-bound technical bay drawings and details | ADE-MODEL, BCR-BAY-DESIGN |
+| `ADE-SCHEDULES` | Produce linked bay schedules specifications and quantities | ADE-MODEL, BCR-BAY-DESIGN |
+| `ADE-EVIDENCE` | Bind bay calculations and external evidence to controlling inputs | ADE-DELIVERY-AUDIT, BCR-BAY-DESIGN, CCR-IDENTITY, PCO-APPLICABILITY |
+| `DEL-BAY-PACK` | Assemble one coherent construction-bay review issue | ADE-DETAILS, ADE-SCHEDULES, ADE-EVIDENCE, DEL-ISSUE-PROFILES |
+| `EPR-BAY-REVIEW` | Obtain and disposition actual designer and contractor bay feedback | DEL-BAY-PACK |
+| `DPL-SITE-BRIEF` | Derive owner-house plot criteria and evidence requirements | DEL-BRIEF, HRS-BASELINE |
+| `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL-SITE-BRIEF |
+| `DPL-SITE-ASSESSMENT` | Assess actual site applicability and explicit adaptation choices | DPL-COMMISSION |
+| `DEL-COMMISSION-PLAN` | Register grounded whole-house design construction and handover packets | DPL-SITE-ASSESSMENT, EPR-BAY-REVIEW |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY-APPLICABILITY |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY-APPLICABILITY |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR-REFRESH |
@@ -125,13 +139,13 @@ PCO monitors the evidence content from baseline `c3701c5`. A changed evidence fi
 | **Pattern language** | **M4** | 2026-10-12 | 4 | fresh against PCO evidence baseline |
 | **Architectural grammar framework** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
 | **G-01 grammar instance** | **M4** | 2026-10-14 | 9 | fresh against PCO evidence baseline |
-| **Reference House** | **M3** | 2026-10-19 | 9 | fresh against PCO evidence baseline |
+| **Reference House** | **M3** | 2026-10-19 | 9 | **STALE — reassess** (`docs/reference-house/README.md`) |
 | **Physical prototypes** | **M2** | 2026-10-12 | 3 | **STALE — reassess** (`docs/development/tectonic-prototype-programme.md`) |
 | **External professional review** | **M1** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
 | **Computational track** | **M4** | 2026-10-19 | 45 | fresh against PCO evidence baseline |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
 | **Publication** | **M4** | 2026-10-28 | 17 | **STALE — reassess** (`docs/editorial/eda-programme.md`) |
-| **Deployment / real-site integration** | **M4** | 2026-10-27 | 48 | fresh against PCO evidence baseline |
+| **Deployment / real-site integration** | **M4** | 2026-10-27 | 48 | **STALE — reassess** (`project/dpl/deployment-programme.md`) |
 | **Delivery** | **M2** | 2026-10-28 | 5 | **STALE — reassess** (`project/del/delivery-programme.md`) |
 
 <details>
