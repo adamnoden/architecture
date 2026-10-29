@@ -7,9 +7,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['ROF'],
     title: 'Roof constitution, baseline and inherited constraints',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rof/rof-00-baseline-and-constraints.md']
   },
   {
     id: 'ROF-01',
