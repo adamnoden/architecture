@@ -52,13 +52,18 @@ and removal/reinstatement; horizontal candidates reconcile the 350 mm package.
 
 ## Candidate outputs
 
+- [Service/access family](ias-02s-services-access.md).
+- [Wet/kitchen variants](ias-02w-wet-kitchen-variants.md).
+- [IAS/HAD candidate junction](ias-had-junction.md).
+- [Candidate/service handoff and adoption ledger](ias-candidate-service-handoff.md).
 - [Vertical candidates](ias-01v-vertical-candidates.md).
 - [Horizontal candidates](ias-01h-horizontal-candidates.md).
 - [Dimensioned section/access comparison](studies/ias-core-sections.svg).
 
-The shared interface contract is complete. These are candidates, not selected
-assemblies; services, wet variants and cross-stream junctions follow their
-canonical dependencies.
+The shared interface contract and the candidate/service/HAD interfaces are
+complete at their stated scope. IAS-OAS still requires the opening candidates;
+IAS-03 owns actual selection and the detailed disassembly set. The adoption
+ledger carries unresolved fit, depth, access and performance questions forward.
 
 ## Parallel interfaces
 

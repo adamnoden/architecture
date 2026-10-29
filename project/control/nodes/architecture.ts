@@ -116,18 +116,18 @@ export const architectureNodes = defineNodes([
     owners: ['IAS'],
     title: 'Interior services and access family',
     dependencies: ['IAS-01V', 'IAS-01H'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/ias/ias-02s-services-access.md']
   },
   {
     id: 'IAS-02W',
     owners: ['IAS'],
     title: 'Wet-room and kitchen interior-system variants',
     dependencies: ['IAS-01V', 'IAS-01H', 'HAD-01S'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/ias/ias-02w-wet-kitchen-variants.md']
   },
   {
     id: 'IAS-OAS-JUNCTION',
@@ -144,10 +144,10 @@ export const architectureNodes = defineNodes([
     owners: ['IAS', 'HAD'],
     title: 'Interior-system to architectural-expression reconciliation',
     dependencies: ['IAS-01V', 'IAS-01H', 'HAD-01P', 'HAD-01S'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     aliases: ['IAS-02H', 'HAD-02I'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/ias/ias-had-junction.md', 'project/ias/ias-candidate-service-handoff.md']
   },
   {
     id: 'OAS-HAD-JUNCTION',
