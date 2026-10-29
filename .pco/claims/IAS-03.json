@@ -1,19 +1,15 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "67193990-4e84-4009-9201-e8a2b6a32174",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "f8496899-720e-4f9e-be08-2935cb69d33f",
   "holder": {
     "kind": "chatgpt",
-    "label": "Refurbishment continuation requeue"
+    "label": "zerg-rush-worker-1"
   },
-  "claimedAt": "2026-10-29T15:46:16.176Z",
-  "heartbeatAt": "2026-10-29T16:12:18.607Z",
-  "expiresAt": "2026-10-29T16:12:18.607Z",
-  "branch": "work/refurbishment-programme",
-  "note": "Owner-authorised guarded requeue with preserved partial results; no substantive packet completion claimed.",
-  "releasedAt": "2026-10-29T16:12:18.607Z",
-  "releaseReason": "handoff",
-  "pr": 1006
+  "claimedAt": "2026-10-29T22:12:23.816Z",
+  "heartbeatAt": "2026-10-29T22:12:23.816Z",
+  "expiresAt": "2026-10-29T22:57:23.816Z",
+  "branch": "zerg/worker-1-packet-4"
 }
