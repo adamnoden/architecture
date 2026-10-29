@@ -191,10 +191,10 @@ export const architectureNodes = defineNodes([
     owners: ['OAS'],
     title: 'Selected opening family and replacement/reinstatement set',
     dependencies: ['OAS-01E', 'OAS-01I', 'IAS-OAS-JUNCTION', 'OAS-HAD-JUNCTION'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     aliases: ['OAS Wave 3'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/oas/oas-03-selection-result.md', 'docs/reference-house/opening-assembly-selection.md', 'project/oas/studies/selected-opening-renewal.svg']
   },
   {
     id: 'HAD-03',
