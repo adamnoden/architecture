@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "BCR-WET",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "8f29a734-c7ea-4568-afa8-a55c6369b1f7",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T22:24:36.716Z",
-  "heartbeatAt": "2026-10-29T22:54:27.769Z",
-  "expiresAt": "2026-10-29T23:39:27.769Z",
+  "heartbeatAt": "2026-10-29T22:59:38.682Z",
+  "expiresAt": "2026-10-29T22:59:38.682Z",
   "checkpoint": {
     "evidence": "Reviewed WET source fbd3fc6fa56f48c20a718959ab3437ff4fc32238 preserved in combined PR1052 head edd7d7afa0a8ec57344969f701eafca645c37574; local artifact, type, control, links, dataplate and docs checks passed; independent architecture, visual, IAS, HAD and services reviews passed.",
     "next": "Verify exact combined source preservation, full CI and fresh canonical preflight; integrate, release and reconcile, then claim canonical BCR work."
   },
   "branch": "work/zerg-rwt-wet-proportionality",
-  "pr": 1052
+  "pr": 1052,
+  "releasedAt": "2026-10-29T22:59:38.682Z",
+  "releaseReason": "completed"
 }
