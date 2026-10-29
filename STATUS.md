@@ -11,7 +11,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 5 · **Active:** 4 · **Blocked:** 11 · **Held:** 2 · **Done:** 37 · **Cancelled:** 0
+**Structurally ready:** 4 · **Active:** 5 · **Blocked:** 11 · **Held:** 2 · **Done:** 37 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -19,7 +19,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
-| `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -32,6 +31,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Owner |
 |---|---|---|
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS |
+| `HAD-03` | Architectural design convergence and visual synthesis | HAD |
 | `MRA-00` | Moisture constitution, inventory and threat model | MRA |
 | `PLT-CURRENT-REVIEW` | Current-source plate capability and physical review work | PLT |
 | `PUB-02-PREP` | Content-independent private-object preparation | PUB |

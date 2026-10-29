@@ -17,7 +17,7 @@ flowchart LR
   end
   subgraph g_HAD["HAD"]
     direction TB
-    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>READY</b>"]
+    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>ACTIVE</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
@@ -101,7 +101,7 @@ flowchart LR
   classDef activeUnclaimed fill:#e8f1fb,stroke:#2b6cb0,color:#1a202c,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#fff0f0,stroke:#c53030,color:#5b1515,stroke-width:4px;
   class n_IAS_03 active;
-  class n_HAD_03 ready;
+  class n_HAD_03 active;
   class n_TRIAD_GATE blocked;
   class n_BCR_SCAFFOLD ready;
   class n_BCR_CONVERGENCE blocked;
@@ -182,7 +182,7 @@ flowchart LR
     n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>DONE</b>"]
     n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>DONE</b>"]
     n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>DONE</b>"]
-    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>READY</b>"]
+    n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>ACTIVE</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
@@ -378,7 +378,7 @@ flowchart LR
   class n_HAD_02M done;
   class n_IAS_03 active;
   class n_OAS_03 done;
-  class n_HAD_03 ready;
+  class n_HAD_03 active;
   class n_OAS_DETAIL done;
   class n_TRIAD_GATE blocked;
   class n_BCR_SCAFFOLD ready;
