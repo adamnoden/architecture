@@ -207,12 +207,23 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: []
   },
 
+  // Final audit found the bounded OAS topology did not supply its dimensioned studies.
+  {
+    id: 'OAS-DETAIL',
+    owners: ['OAS'],
+    title: 'Representative dimensioned opening interfaces',
+    dependencies: ['OAS-03'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: []
+  },
+
   // Wave 4 — one house, then construction-resolution convergence.
   {
     id: 'TRIAD-GATE',
     owners: ['IAS', 'OAS', 'HAD'],
     title: 'Shared selected-house integration gate',
-    dependencies: ['IAS-03', 'OAS-03', 'HAD-03'],
+    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL'],
     lifecycle: 'planned',
     aliases: ['IAS/OAS/HAD Wave 4'],
     agentDispatch: { mode: 'self-service' },
