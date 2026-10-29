@@ -64,3 +64,5 @@ Across all of these subjects, the controlling question is the same: **what does 
 [Rainwater Failure and Exceedance](rainwater-failure-and-exceedance.md) traces candidate blockage, leakage and compound-event paths. Inner roof spill transfers load to the court; a safe court escape remains unproved and constrains network selection.
 
 [Roof Access and Renewal](roof-access-and-renewal.md) tests actual court access equipment against source geometry and traces repair, receiver withdrawal and major recovering. Rejected tower options remain visible; no high-level working method is accepted.
+
+[Roof System Candidates](roof-system-candidates.md) combines three topology, covering, assembly and renewal propositions. It exposes the outward-only challenger’s height and exterior-water consequences and retains essential admission conditions without selecting a roof.
