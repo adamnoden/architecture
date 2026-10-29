@@ -9,9 +9,11 @@ Durable execution authority lives in `project/control/`. Live claim occupancy li
 <!-- project-control:start -->
 Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.
 
+[Operations snapshots on GitHub](https://github.com/adamnoden/architecture/actions/workflows/control-operations.yml) · Agent briefing: `npm run control:brief`. Snapshots show their observation time; acquire through the live dispatcher.
+
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 17 · **Active:** 0 · **Blocked:** 57 · **Held:** 2 · **Done:** 44 · **Cancelled:** 0
+**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 57 · **Held:** 2 · **Done:** 45 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,7 +24,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `CCR-PLAN` | Repair rectangle-union area and plate closure | CCR | — |
 | `CCR-STAIR` | Repair stair datum arithmetic and discrete topology | CCR | — |
 | `CCR-DRAINAGE` | Repair drainage declaration validity and source consistency | CCR | — |
-| `PCO-OPERATIONS` | Integrate agent briefing, scoped proof CI and safe post-merge reconciliation | PCO | — |
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
