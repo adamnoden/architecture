@@ -265,6 +265,7 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
     page('Roof covering families', '/docs/research/roof-covering-families'),
     page('Roof junction families', '/docs/research/roof-junction-families'),
     page('Roof access and renewal', '/docs/research/roof-access-and-renewal'),
+    page('Roof system candidates', '/docs/research/roof-system-candidates'),
     page('Roof assemblies and renewal', '/docs/research/roof-assembly-options'),
     page('Preface precedents', '/docs/research/preface-precedents')
   ]),

@@ -72,9 +72,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['ROF'],
     title: 'Roof system synthesis and candidate families',
     dependencies: ['ROF-05', 'ROF-06'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rof/rof-07-system-synthesis.md']
   },
 
   // RWT — building-side rainwater systems architecture.
