@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "node": "BCR-BAY-BRIEF",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "c6d8b368-143e-40d5-94ec-c3f528932e2e",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-rush-worker-1"
+  },
+  "claimedAt": "2026-10-29T23:34:15.371Z",
+  "heartbeatAt": "2026-10-29T23:34:15.371Z",
+  "expiresAt": "2026-10-30T00:19:15.371Z",
+  "checkpoint": {
+    "evidence": "CCR-DRAINAGE accepted1061 and lease released. Prior timed-out BAY-BRIEF mailbox not serviced; exact remote path freshly404. Charter, delivery route, preflight and OAS bay evidence read.",
+    "next": "Select one consequential current-source bay with conventional comparator, exact extent and budgets, occupation installation renewal questions and named handoff; preserve TRIAD gate."
+  },
+  "branch": "zerg/worker-1-packet-6"
+}
