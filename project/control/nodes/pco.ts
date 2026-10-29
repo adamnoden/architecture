@@ -3,8 +3,8 @@ import { defineNodes } from '../types.js'
 export const pcoNodes = defineNodes([
   {
     id: 'PCO-SNAPSHOT', owners: ['PCO'],
-    title: 'Isolate claim snapshots from concurrent main fetches',
-    dependencies: ['PCO-OPERATIONS'], lifecycle: 'planned',
+    title: 'Keep claim and briefing snapshots correct during main updates',
+    dependencies: ['PCO-OPERATIONS'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed operations verification exposed shared FETCH_HEAD interference.' },
     closeoutEvidence: ['project/pco/claim-snapshot-result.md']
   },
