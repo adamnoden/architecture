@@ -4,7 +4,7 @@ import { defineNodes } from '../types.js'
 export const houseDeliveryNodes = defineNodes([
   {
     id: 'DEL-BRIEF', owners: ['DEL'], title: 'Reconcile owner requirements and open project decisions',
-    dependencies: [], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: [], lifecycle: 'complete', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/del/owner-brief-result.md']
   },
   {

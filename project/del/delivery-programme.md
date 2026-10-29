@@ -52,3 +52,6 @@ After BCR-CONVERGENCE, the self-service `DEL-CURRENT` packet reconciles adopted 
 The [owner-house charter](../owner-house-charter.md) makes actual house delivery the primary objective. The [delivery plan](owner-house-delivery-plan.md) owns stage outcomes and exact DEL-BRIEF, DEL-ISSUE-PROFILES, DEL-BAY-PACK and DEL-COMMISSION-PLAN contracts. Existing DEL-CURRENT remains the selected reference-house reconciliation feeding HRS; the new route can progress independently of book completion.
 
 DEL #854 now tracks this admitted delivery scope as well as its original requirements baseline. Do not close the umbrella because the near-term plan or review package exists. Future actual design, procurement, construction and occupation work is registered when the commission supplies its evidence and responsibilities.
+
+
+DEL-BRIEF is complete at reconciled pre-site brief scope: [result](owner-brief-result.md). The [brief](../../docs/delivery/owner-project-brief.md) records open decisions OB-01–15 and their decision points. These remain unresolved until actual answers/evidence arrive; the broader delivery scope stays open.
