@@ -40,7 +40,6 @@ flowchart LR
     direction TB
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
     n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
-    n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>READY</b>"]
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>READY</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
     n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>BLOCKED</b>"]
@@ -145,7 +144,6 @@ flowchart LR
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
   n_BCR_WET --> n_BCR_PREFLIGHT
-  n_BCR_WATER --> n_BCR_PREFLIGHT
   n_TRIAD_GATE --> n_HRS_TECHNICAL
   n_CCR_IDENTITY --> n_HRS_TECHNICAL
   n_ROF_06 --> n_ROF_07
@@ -246,7 +244,6 @@ flowchart LR
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
   class n_BCR_WET ready;
-  class n_BCR_WATER ready;
   class n_BCR_PROPORTIONALITY ready;
   class n_BCR_PREFLIGHT blocked;
   class n_HRS_TECHNICAL blocked;
@@ -391,7 +388,7 @@ flowchart LR
     n_BCR_STRUCTURE["BCR-STRUCTURE<br/>Structure, stair and entry-void feasibility<br/><b>DONE</b>"]
     n_BCR_WET["BCR-WET<br/>Wet-room sections, sanitary fit and foul-drainage feasibility<br/><b>READY</b>"]
     n_BCR_SERVICES["BCR-SERVICES<br/>Plant, riser, distribution and replacement feasibility<br/><b>DONE</b>"]
-    n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>READY</b>"]
+    n_BCR_WATER["BCR-WATER<br/>Roof and courtyard normal/failure water-path feasibility<br/><b>DONE</b>"]
     n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>DONE</b>"]
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>READY</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>BLOCKED</b>"]
@@ -795,7 +792,7 @@ flowchart LR
   class n_BCR_STRUCTURE done;
   class n_BCR_WET ready;
   class n_BCR_SERVICES done;
-  class n_BCR_WATER ready;
+  class n_BCR_WATER done;
   class n_BCR_OCCUPATION done;
   class n_BCR_PROPORTIONALITY ready;
   class n_BCR_PREFLIGHT blocked;
