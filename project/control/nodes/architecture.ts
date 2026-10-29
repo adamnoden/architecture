@@ -54,18 +54,18 @@ export const architectureNodes = defineNodes([
     owners: ['IAS'],
     title: 'Vertical interior system candidates',
     dependencies: ['TRIAD-IFACE-FREEZE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/ias/ias-01v-vertical-candidates.md', 'project/ias/studies/ias-core-sections.svg']
   },
   {
     id: 'IAS-01H',
     owners: ['IAS'],
     title: 'Horizontal interior system candidates',
     dependencies: ['TRIAD-IFACE-FREEZE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/ias/ias-01h-horizontal-candidates.md', 'project/ias/studies/ias-core-sections.svg']
   },
   {
     id: 'OAS-01E',
