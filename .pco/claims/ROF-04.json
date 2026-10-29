@@ -9,6 +9,11 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T21:36:59.009Z",
-  "heartbeatAt": "2026-10-29T21:36:59.009Z",
-  "expiresAt": "2026-10-29T22:21:59.009Z"
+  "heartbeatAt": "2026-10-29T21:43:18.357Z",
+  "expiresAt": "2026-10-29T22:28:18.357Z",
+  "branch": "work/zerg-rof-04",
+  "checkpoint": {
+    "evidence": "ROF04A/B draft complete with current-source roof reserve and deck clearance checks; prior unserviced renewal timeout reconciled remote unchanged UUID/gen/blob",
+    "next": "Peer review ROF03/04, focused checks, source PR and paired integration if approved"
+  }
 }
