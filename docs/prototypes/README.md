@@ -53,11 +53,13 @@ The proposition is simple:
 
 > **No brittle finish should bridge two assemblies that are expected to move independently.**
 
-The current physical comparison uses three families:
+The retained prepared comparison contains three families:
 
 1. **excellent conventional control**;
 2. **concealed-slip cornice or cover** fixed to one controlling assembly while the other can move behind it;
 3. **restrained metal slip/protection element** only where the metal performs a real function such as edge protection, sliding, location or removable cover.
+
+For the current house, start with the selected ordinary upper termination. The optional local wall-fixed cover needs a real independently moving junction; a house-wide cornice and all three prepared families are not mandatory. Actual movement demand and the applicable primary boundaries must be established before a technical adequacy claim.
 
 The test must keep three verdicts separate:
 
