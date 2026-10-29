@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "node": "CCR-DRAINAGE",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "51ccfeb8-6484-422d-91d4-43091603797f",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-rush-worker-1"
+  },
+  "claimedAt": "2026-10-29T23:05:41.638Z",
+  "heartbeatAt": "2026-10-29T23:05:41.638Z",
+  "expiresAt": "2026-10-29T23:50:41.638Z",
+  "checkpoint": {
+    "evidence": "Prior IAS partial1051 accepted and handoff lease released. Current CCR programme and owning source read; no CCR implementation before acquisition.",
+    "next": "Reproduce assigned canonical CCR counterexample, repair owning source with meaningful regression and valid controls, validate and integrate through serial commander queue."
+  },
+  "branch": "zerg/worker-1-packet-5"
+}
