@@ -1,6 +1,6 @@
 # IAS — Interior Architecture System
 
-**State:** IAS-00 baseline complete; core candidates follow the shared interface freeze
+**Execution authority:** `project/control/`; live occupancy is separate in ACO.
 
 **Tracking:** [#941 — IAS interior architecture system](https://github.com/adamnoden/architecture/issues/941)
 
@@ -49,6 +49,16 @@ IAS-00 now supplies the shared interface freeze; OAS-00 and HAD-00 must also
 complete before that contract. The vertical candidate work then starts with one
 quiet wall/attachment datum and one high-service access front, including returns
 and removal/reinstatement; horizontal candidates reconcile the 350 mm package.
+
+## Candidate outputs
+
+- [Vertical candidates](ias-01v-vertical-candidates.md).
+- [Horizontal candidates](ias-01h-horizontal-candidates.md).
+- [Dimensioned section/access comparison](studies/ias-core-sections.svg).
+
+The shared interface contract is complete. These are candidates, not selected
+assemblies; services, wet variants and cross-stream junctions follow their
+canonical dependencies.
 
 ## Parallel interfaces
 
