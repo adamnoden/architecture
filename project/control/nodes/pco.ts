@@ -4,7 +4,7 @@ export const pcoNodes = defineNodes([
   {
     id: 'PCO-MVB-REVIEW', owners: ['PCO'],
     title: 'Assess external orchestration systems and version the MVB operating contract',
-    dependencies: ['PCO-MANUAL'], lifecycle: 'planned',
+    dependencies: ['PCO-MANUAL'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed build-versus-adopt review and first explicit MVB version baseline.' },
     closeoutEvidence: ['project/pco/mvb-platform-review.md', 'project/control/releases.md']
   },
