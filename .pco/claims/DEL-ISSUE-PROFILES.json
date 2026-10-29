@@ -9,7 +9,13 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T23:31:04.341Z",
-  "heartbeatAt": "2026-10-29T23:31:04.341Z",
-  "expiresAt": "2026-10-30T00:16:04.341Z",
-  "branch": "work/zerg-del-issue-profiles"
+  "heartbeatAt": "2026-10-29T23:37:39.223Z",
+  "expiresAt": "2026-10-30T00:22:39.223Z",
+  "branch": "work/zerg-del-issue-profiles",
+  "pr": 1066,
+  "checkpoint": {
+    "evidence": "PR1066 exact397712d9 preserves six reviewed profiles and frozen worked example; 88 control tests, types, repo/routes/dataplate and docs build pass",
+    "next": "Integrate reviewed parent with next BCR-BAY/PCO bundle after1065, bind common lease, full exact-head CI and fresh preflight",
+    "blocker": "Awaiting serial integration; packet complete only at information-contract scope, no actual issue or approval"
+  }
 }
