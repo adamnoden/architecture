@@ -17,8 +17,8 @@ export const architectureNodes = defineNodes([
     owners: ['IAS'],
     title: 'Interior architecture baseline, challengers and invariants',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
-    closeoutEvidence: []
+    lifecycle: 'complete',
+    closeoutEvidence: ['project/ias/ias-00-baseline-and-challengers.md']
   },
   {
     id: 'OAS-00',
