@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "ROF-01",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1b0a6318-2be1-46bf-affb-8a7afaa2e8cd",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T20:48:05.275Z",
-  "heartbeatAt": "2026-10-29T20:57:27.122Z",
-  "expiresAt": "2026-10-29T21:42:27.122Z",
+  "heartbeatAt": "2026-10-29T20:59:10.862Z",
+  "expiresAt": "2026-10-29T20:59:10.862Z",
   "branch": "zerg/worker-1-packet-1",
   "pr": 1022,
   "checkpoint": {
     "evidence": "PR #1022 head 592bcfb6; local 1043 tests pass; CI repository health passed",
     "next": "Wait for publication CI, canonical merge-check, merge, reconcile and release",
     "blocker": "Publication CI pending"
-  }
+  },
+  "releasedAt": "2026-10-29T20:59:10.862Z",
+  "releaseReason": "completed"
 }
