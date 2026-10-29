@@ -12,6 +12,18 @@ The [swarm runbook](swarm-runbook.md) owns startup, native/connector transport s
 
 Use `node --import tsx scripts/project-claims.ts …` if the `tsx` launcher cannot create its IPC socket. The same CLI supports `--transport connector` with Git-backed fresh reads and a private `--bridge-dir` mailbox for already-authorised GitHub connector writes. No placeholder token or HTTP monkey-patch is needed; the canonical dispatcher and CAS/lease protocol remain unchanged. If neither supported transport can establish safe live state, fail closed.
 
+## One operational briefing
+
+Run `npm run control:brief` from clean current main. It derives dispatcher order, live lease age/runway/checkpoints, expired recovery pointers, manual gates, invalid claims and open PR identities in one read-only view. Unavailable sources remain unknown. Use `-- --json /ABSOLUTE/TEMP/operations.json --markdown /ABSOLUTE/TEMP/operations.md` for machine and human snapshots.
+
+[GitHub operations reports](https://github.com/adamnoden/architecture/actions/workflows/control-operations.yml) publish timestamped job summaries and JSON/Markdown artifacts after claim-branch events and completion of main projection reconciliation. They are observations, never a second queue or an alive/dead oracle. GitHub's report and artifact visibility follows repository access; do not put private owner information in checkpoints.
+
+Packet PRs carry `Work: CANONICAL-NODE` and `Lease: NODE / UUID / generation N` (one lease line per comma-separated packet). CI checks canonical identity, branch/PR association, live state and lease generation. Trivial non-packet PRs use `Work: none` and `Work reason: ...`; changes to node sources cannot use that exemption. CI can become stale; repeat `control:merge-check` immediately before merge.
+
+Specialised proof workflows can skip a narrowly proven coordination-only change; full repository health remains unconditional. Shared dependencies, lockfiles, non-control commands, workflow/selector changes, renames crossing source boundaries and unknown paths conservatively run proofs. Manual proof dispatch always runs. The selector explains each decision in a job summary; it is not a complete architectural dependency engine.
+
+After main projection reconciliation, a trusted-main Actions job releases only exact-generation leases on terminal canonical nodes with a matching merged main PR and packet declaration. It rechecks main before writes and uses normal CAS. Missing or contradictory provenance is retained with a reason, not force-cleaned. The same run then emits an operational report. GitHub's normal merged-branch deletion and the existing branch audit retain their respective jobs; workstream issues still need evidence-led reconciliation. This automation never acquires work, steals quiet leases, edits source lifecycle, closes a workstream issue, or deletes a working branch.
+
 ## Agent operating loop
 
 For substantial bounded project work intended to produce durable/authoritative output:

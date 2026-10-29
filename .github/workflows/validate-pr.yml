@@ -29,6 +29,11 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
+      - name: Validate packet and lease declaration
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node --import tsx scripts/control-operations.ts packet-check
+
       - name: Render project-control projections for validation
         run: npm run status:update
 
