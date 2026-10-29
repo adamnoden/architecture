@@ -4,7 +4,7 @@ export const pcoNodes = defineNodes([
   {
     id: 'PCO-MANUAL', owners: ['PCO'],
     title: 'Document the integrated project execution system for outsiders and maintainers',
-    dependencies: ['PCO-SNAPSHOT'], lifecycle: 'planned',
+    dependencies: ['PCO-SNAPSHOT'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed cohesive documentation and discoverability review.' },
     closeoutEvidence: ['project/pco/execution-manual-result.md']
   },
