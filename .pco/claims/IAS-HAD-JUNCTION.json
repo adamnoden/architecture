@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "node": "IAS-HAD-JUNCTION",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "ias-71cc3e4e-20261029-IAS-HAD-JUNCTION",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "IAS execution 71cc3e4e"
+  },
+  "claimedAt": "2026-10-29T09:33:10.736Z",
+  "heartbeatAt": "2026-10-29T09:33:10.736Z",
+  "expiresAt": "2026-10-29T11:33:10.736Z",
+  "branch": "workstream/ias-services-junctions",
+  "note": "Directed IAS continuation after merged core candidates; HAD candidates complete."
+}
