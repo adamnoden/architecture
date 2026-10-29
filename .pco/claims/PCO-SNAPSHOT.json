@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-SNAPSHOT",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "e5d304a4-3493-4384-a00d-06f6dcce083d",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "snapshot-bc7462"
+  },
+  "claimedAt": "2026-10-29T18:35:21.381Z",
+  "heartbeatAt": "2026-10-29T18:35:21.381Z",
+  "expiresAt": "2026-10-29T19:20:21.381Z",
+  "checkpoint": {
+    "evidence": "Overlapping main and claim fetches returned a false missing lease; CAS made no write",
+    "next": "Reproduce FETCH_HEAD interference; use branch-specific snapshot ref; validate and merge"
+  },
+  "branch": "pco/claim-snapshot"
+}
