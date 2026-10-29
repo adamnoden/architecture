@@ -21,8 +21,8 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Programme before symmetry',
     pageClass: 'PLATE_PAIR',
     views: [
-      { title: 'Ground-floor plan', image: '../reference-house/publication-ground-floor-plan.svg', alt: 'Reference House ground-floor plan', scale: '1:100', caption: 'Ground floor — canonical architectural plan substrate.' },
-      { title: 'First-floor plan', image: '../reference-house/publication-first-floor-plan.svg', alt: 'Reference House first-floor plan', scale: '1:100', caption: 'First floor — canonical architectural plan substrate.' }
+      { title: 'Ground-floor plan', image: '../reference-house/publication-ground-floor-plan.svg', alt: 'Reference House ground-floor plan', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Ground floor — canonical architectural plan substrate.' },
+      { title: 'First-floor plan', image: '../reference-house/publication-first-floor-plan.svg', alt: 'Reference House first-floor plan', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. First floor — canonical architectural plan substrate.' }
     ]
   },
   {
@@ -30,8 +30,8 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## The site is allowed to change the house',
     pageClass: 'PLATE_PAIR',
     views: [
-      { title: 'Synthetic setting / type plan', image: '../reference-house/publication-synthetic-setting.svg', alt: 'Reference House synthetic setting and type plan', scale: '1:200', caption: 'Surrogate setting: type and detached capacity without a fictional real site.' },
-      { title: 'External maintenance / setting overlay', image: '../reference-house/publication-external-maintenance-setting-overlay.svg', alt: 'Reference House external maintenance and setting overlay', scale: '1:200', caption: 'Working and withdrawal geography over the same bounded surrogate setting.' }
+      { title: 'Synthetic setting / type plan', image: '../reference-house/publication-synthetic-setting.svg', alt: 'Reference House synthetic setting and type plan', scale: '1:200', caption: 'Historical predecessor; not the current 12 m square house. Surrogate setting: type and detached capacity without a fictional real site.' },
+      { title: 'External maintenance / setting overlay', image: '../reference-house/publication-external-maintenance-setting-overlay.svg', alt: 'Reference House external maintenance and setting overlay', scale: '1:200', caption: 'Historical predecessor; not the current 12 m square house. Working and withdrawal geography over the same bounded surrogate setting.' }
     ]
   },
   {
@@ -39,7 +39,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Order without false symmetry',
     pageClass: 'PLATE_SINGLE',
     views: [
-      { title: 'Principal front elevation', image: '../reference-house/publication-principal-front-elevation.svg', alt: 'Reference House principal front elevation', scale: '1:100', caption: 'Principal front: ordered four-bay field with the entrance deliberately off centre.' }
+      { title: 'Principal front elevation', image: '../reference-house/publication-principal-front-elevation.svg', alt: 'Reference House principal front elevation', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Principal front: ordered four-bay field with the entrance deliberately off centre.' }
     ]
   },
   {
@@ -47,7 +47,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Section as architecture',
     pageClass: 'PLATE_SPREAD',
     views: [
-      { title: 'Principal longitudinal section', image: '../reference-house/publication-principal-section.svg', alt: 'Reference House principal longitudinal section', scale: '1:100', caption: 'North–south through the courtyard centreline, looking west; planning cut bodies and levels, not construction detail.' }
+      { title: 'Principal longitudinal section', image: '../reference-house/publication-principal-section.svg', alt: 'Reference House principal longitudinal section', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. North–south through the courtyard centreline, looking west; planning cut bodies and levels, not construction detail.' }
     ]
   },
   {
@@ -55,7 +55,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Arrival, compression and recentering',
     pageClass: 'PLATE_SINGLE',
     views: [
-      { title: 'Courtyard architectural elevation', image: '../reference-house/publication-courtyard-elevation.svg', alt: 'Reference House courtyard architectural elevation', scale: '1:50', caption: 'The courtyard as a distinct intimate architectural order.' }
+      { title: 'Courtyard architectural elevation', image: '../reference-house/publication-courtyard-elevation.svg', alt: 'Reference House courtyard architectural elevation', scale: '1:50', caption: 'Historical predecessor; not the current 12 m square house. The courtyard as a distinct intimate architectural order.' }
     ]
   },
   {
@@ -63,7 +63,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Structure generated by the courtyard',
     pageClass: 'PLATE_SINGLE',
     views: [
-      { title: 'Structural / span overlay', image: '../reference-house/publication-structural-span-overlay.svg', alt: 'Reference House structural and span overlay', scale: '1:100', caption: 'Pre-engineering support and span reading over canonical ground-plan geometry.' }
+      { title: 'Structural / span overlay', image: '../reference-house/publication-structural-span-overlay.svg', alt: 'Reference House structural and span overlay', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Pre-engineering support and span reading over canonical ground-plan geometry.' }
     ]
   },
   {
@@ -71,7 +71,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Vertical distribution',
     pageClass: 'PLATE_SINGLE',
     views: [
-      { title: 'Service / transverse section', image: '../reference-house/publication-service-transverse-section.svg', alt: 'Reference House service transverse section', scale: '1:100', caption: 'Vertical relationship between plant/service suite, bounded riser and upper bathroom geography.' }
+      { title: 'Service / transverse section', image: '../reference-house/publication-service-transverse-section.svg', alt: 'Reference House service transverse section', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Vertical relationship between plant/service suite, bounded riser and upper bathroom geography.' }
     ]
   },
   {
@@ -79,7 +79,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## External maintenance',
     pageClass: 'PLATE_SINGLE',
     views: [
-      { title: 'Service-side elevation', image: '../reference-house/publication-service-side-elevation.svg', alt: 'Reference House service-side elevation', scale: '1:100', caption: 'Controlled technical expression, replacement opening and terminal concentration on the service flank.' }
+      { title: 'Service-side elevation', image: '../reference-house/publication-service-side-elevation.svg', alt: 'Reference House service-side elevation', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Controlled technical expression, replacement opening and terminal concentration on the service flank.' }
     ]
   },
   {
@@ -87,17 +87,17 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Horizontal routes',
     pageClass: 'PLATE_PAIR',
     views: [
-      { title: 'Ground service / maintenance overlay', image: '../reference-house/publication-ground-service-maintenance-overlay.svg', alt: 'Reference House ground service and maintenance overlay', scale: '1:100', caption: 'Ground-floor service hosts, access and maintenance geography without invented route centrelines.' },
-      { title: 'First-floor service / maintenance overlay', image: '../reference-house/publication-first-service-maintenance-overlay.svg', alt: 'Reference House first-floor service and maintenance overlay', scale: '1:100', caption: 'Upper wet-service concentration and dry distribution geography over the canonical first-floor plan.' }
+      { title: 'Ground service / maintenance overlay', image: '../reference-house/publication-ground-service-maintenance-overlay.svg', alt: 'Reference House ground service and maintenance overlay', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Ground-floor service hosts, access and maintenance geography without invented route centrelines.' },
+      { title: 'First-floor service / maintenance overlay', image: '../reference-house/publication-first-service-maintenance-overlay.svg', alt: 'Reference House first-floor service and maintenance overlay', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Upper wet-service concentration and dry distribution geography over the canonical first-floor plan.' }
     ]
   },
   {
     entryId: 'part-iv',
-    anchor: '## The courtyard manages only itself',
+    anchor: '## Roof and courtyard water',
     pageClass: 'PLATE_PAIR',
     views: [
-      { title: 'Roof / drainage plan', image: '../reference-house/publication-roof-drainage.svg', alt: 'Reference House roof and drainage plan', scale: '1:100', caption: 'Ordinary roof architecture: outward-falling fields and bounded drainage geometry.' },
-      { title: 'Roof water / failure overlay', image: '../reference-house/publication-roof-water-failure-overlay.svg', alt: 'Reference House roof water and failure overlay', scale: '1:100', caption: 'Failure reading: collection, visible overflow and courtyard consequence over the same roof substrate.' }
+      { title: 'Roof / drainage plan', image: '../reference-house/publication-roof-drainage.svg', alt: 'Reference House roof and drainage plan', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Ordinary roof architecture: outward-falling fields and bounded drainage geometry.' },
+      { title: 'Roof water / failure overlay', image: '../reference-house/publication-roof-water-failure-overlay.svg', alt: 'Reference House roof water and failure overlay', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Failure reading: collection, visible overflow and courtyard consequence over the same roof substrate.' }
     ]
   },
   {
@@ -105,15 +105,15 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Passive environmental hierarchy',
     pageClass: 'PLATE_SINGLE',
     views: [
-      { title: 'Garden elevation', image: '../reference-house/publication-garden-elevation.svg', alt: 'Reference House garden elevation', scale: '1:100', caption: 'Garden order, retained masonry and disciplined glazing.' }
+      { title: 'Garden elevation', image: '../reference-house/publication-garden-elevation.svg', alt: 'Reference House garden elevation', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Garden order, retained masonry and disciplined glazing.' }
     ]
   },
   {
     entryId: 'part-iv',
-    anchor: 'The architecture’s current claim is prior and narrower: it has not knowingly created a form that must be rescued by inaccessible drainage or excessive active systems under the bounded virtual assumptions used so far.',
+    anchor: 'The current design exposes these questions so that adverse findings can change the house.',
     pageClass: 'PLATE_SPREAD',
     views: [
-      { title: 'Sectional axonometric', image: '../reference-house/publication-sectional-axonometric.svg', alt: 'Reference House sectional axonometric', scale: 'NTS', caption: 'Bounded synthesis of shell, courtyard, level order and service geography; no new claim depends on this projection alone.' }
+      { title: 'Sectional axonometric', image: '../reference-house/publication-sectional-axonometric.svg', alt: 'Reference House sectional axonometric', scale: 'NTS', caption: 'Historical predecessor; not the current 12 m square house. Bounded synthesis of shell, courtyard, level order and service geography; no new claim depends on this projection alone.' }
     ]
   },
   {
@@ -121,7 +121,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Loss of stair use',
     pageClass: 'PLATE_SINGLE',
     views: [
-      { title: 'Entrance-storey future adaptation', image: '../reference-house/publication-future-adaptation-overlay.svg', alt: 'Reference House entrance-storey future adaptation overlay', scale: '1:100', caption: 'Fallback one-level occupation and sanitary-adaptation capacity; not an accessibility-compliance claim.' }
+      { title: 'Entrance-storey future adaptation', image: '../reference-house/publication-future-adaptation-overlay.svg', alt: 'Reference House entrance-storey future adaptation overlay', scale: '1:100', caption: 'Historical predecessor; not the current 12 m square house. Fallback one-level occupation and sanitary-adaptation capacity; not an accessibility-compliance claim.' }
     ]
   }
 ]
