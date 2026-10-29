@@ -1,6 +1,6 @@
 # OAS — Opening Assembly System
 
-**State:** OAS-00 baseline complete; core candidates follow the shared interface freeze
+**Execution authority:** `project/control/`; live occupancy is separate in ACO.
 
 **Tracking:** [#942 — OAS opening assembly system](https://github.com/adamnoden/architecture/issues/942)  
 **Programme map:** [`../book-resolution-programme.md`](../book-resolution-programme.md)
@@ -31,8 +31,17 @@ OAS-00 records 44 nominal window and 19 door occurrences across the two current
 occupied levels. Five doors have external threshold duties. The conventional
 mechanically fixed installation remains the comparison control; added subframes
 and cassettes must earn their burden. No geometry or performance claim changes.
-BSR is complete; deep candidate work follows the shared interface freeze,
-which still requires HAD-00.
+The shared interface contract is complete. Core candidates now develop the
+external and internal families; final selection follows both shared junctions.
+
+## Candidate outputs
+
+- [External openings and thresholds](oas-01e-external-candidates.md).
+- [Internal doors](oas-01i-internal-candidates.md).
+- [Dimension-meaning and mounting study](studies/opening-candidate-budgets.svg).
+
+These records compare families and expose boundary/replacement duties. No
+nominal aperture becomes an order size or a practical clear-passage claim.
 
 ## Parallel interfaces
 
