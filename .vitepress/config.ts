@@ -41,6 +41,7 @@ const siteNav = publicNav.map((item) => {
     ...item,
     items: [
       ...item.items,
+      { text: 'Dependency graph', link: '/project/status#dependency-graph' },
       { text: 'Source repository', link: 'https://github.com/adamnoden/architecture' }
     ]
   }
