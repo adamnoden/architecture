@@ -11,6 +11,10 @@ Completed/cancelled history is omitted here so the current dependency frontier r
 ```mermaid
 flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
+  subgraph g_PCO["PCO"]
+    direction TB
+    n_PCO_DISPATCH["PCO-DISPATCH<br/>Self-service agent dispatcher and race-safe claim-next policy<br/><b>READY</b>"]
+  end
   subgraph g_IAS["IAS"]
     direction TB
     n_IAS_01V["IAS-01V<br/>Vertical interior system candidates<br/><b>READY</b>"]
@@ -140,6 +144,7 @@ flowchart LR
   classDef claimGrace fill:#fff7e6,stroke:#b7791f,color:#3d2b0b,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#e8f1fb,stroke:#2b6cb0,color:#1a202c,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#fff0f0,stroke:#c53030,color:#5b1515,stroke-width:4px;
+  class n_PCO_DISPATCH ready;
   class n_IAS_01V ready;
   class n_IAS_01H ready;
   class n_OAS_01E ready;
@@ -203,6 +208,7 @@ flowchart LR
     n_PCO_07["PCO-07<br/>Wider migration and overlap removal<br/><b>DONE</b>"]
     n_PCO_08["PCO-08<br/>Adversarial closeout<br/><b>DONE</b>"]
     n_PCO_VIS["PCO-VIS<br/>Generated structural and live Mermaid control graphs<br/><b>DONE</b>"]
+    n_PCO_DISPATCH["PCO-DISPATCH<br/>Self-service agent dispatcher and race-safe claim-next policy<br/><b>READY</b>"]
   end
   subgraph g_BSR["BSR"]
     direction TB
@@ -302,6 +308,7 @@ flowchart LR
   n_PCO_06 --> n_PCO_07
   n_PCO_07 --> n_PCO_08
   n_PCO_08 --> n_PCO_VIS
+  n_PCO_VIS --> n_PCO_DISPATCH
   n_BSR_ROOT --> n_IAS_00
   n_BSR_ROOT --> n_OAS_00
   n_BSR_ROOT --> n_HAD_00
@@ -403,6 +410,7 @@ flowchart LR
   class n_PCO_07 done;
   class n_PCO_08 done;
   class n_PCO_VIS done;
+  class n_PCO_DISPATCH ready;
   class n_BSR_ROOT done;
   class n_IAS_00 done;
   class n_OAS_00 done;
