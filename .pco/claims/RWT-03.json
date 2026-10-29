@@ -9,6 +9,11 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T21:05:06.385Z",
-  "heartbeatAt": "2026-10-29T21:05:06.385Z",
-  "expiresAt": "2026-10-29T21:50:06.385Z"
+  "heartbeatAt": "2026-10-29T21:09:42.643Z",
+  "expiresAt": "2026-10-29T21:54:42.643Z",
+  "branch": "work/zerg-rwt-03",
+  "checkpoint": {
+    "evidence": "RWT-03 conveyance comparison and bounded result prepared for PR on work/zerg-rwt-03",
+    "next": "Publish checkpoint PR, inspect exact-head CI and serial integration slot"
+  }
 }
