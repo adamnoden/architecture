@@ -29,6 +29,14 @@ If one tool lacks a capability, pursue an available safe workaround before decla
 
 Ask only when a material ambiguity cannot reasonably be resolved from project context, an action exceeds the delegated scope, or a real blocker remains after available alternatives. Complete independent authorised work first and state the exact blocker rather than stopping at a proposal or partial handoff.
 
+### Undirected swarm sessions
+
+The owner's standalone command **`swarm`** (case-insensitive) means: enter the existing autonomous, self-service project-control loop, not an invitation to redesign it. Start by reading this constitution and `project/control/README.md`; establish current `main` authority and live occupancy, then use the canonical dispatcher (`npm run control:claim-next`) to acquire the highest-ranked eligible packet. Complete and verify the bounded packet, integrate and close it out, release its lease, and repeat while safe, useful, unclaimed work remains. Prefer another eligible packet over stopping because one candidate is blocked. Never bypass manual-dispatch policy, leases, validation or merge safety.
+
+For human navigation, announce the first claimed work as **`CODE · concise packet title`**, using its canonical three-letter workstream code. If the chat environment offers an authorised rename action, use that title; otherwise offer it as a title suggestion without claiming to have renamed the chat. At subsequent workstream changes, report the new code in the ordinary checkpoint/SITREP. Do not fabricate completion percentages or suggest that a ChatGPT sidebar title can be updated automatically when no such control exists. Live progress belongs to the control plane, not a manually maintained title.
+
+Run within the current execution's actual capabilities and time limits; this command does not authorise asynchronous work beyond the active task or silently retaining an unmaintained lease. On interruption or unavoidable limits, leave durable handoff state and handle the lease according to the protocol.
+
 ## 2. Canonical anchors
 
 Follow changing facts at their source:
