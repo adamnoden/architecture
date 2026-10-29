@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "ROF-02",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b3756136-822c-4f64-be53-ea524d0b4c69",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T21:00:16.125Z",
-  "heartbeatAt": "2026-10-29T21:26:59.703Z",
-  "expiresAt": "2026-10-29T22:11:59.703Z",
+  "heartbeatAt": "2026-10-29T21:36:00.000Z",
+  "expiresAt": "2026-10-29T21:36:00.000Z",
   "branch": "work/zerg-roof-water-wave2",
   "pr": 1031,
   "checkpoint": {
     "evidence": "ROF02 reviewed source90067e8c4ed9f4a6dfbd0b7572072b5ed44f1452 preserved in integration PR1031 headf2675a5dcbaa1e9b4032e84ab8d6e99d5a981b85 with RWT02/RWT03 after accepted HRS; original full CI40955050488 passed",
     "next": "Worker2 runs final combined exact-head full CI; each owner reviews and preflights own lease; expected-head merge then release and reconcile original PR1027 by ancestry",
     "blocker": "Combined exact-head CI and all lease preflights pending"
-  }
+  },
+  "releasedAt": "2026-10-29T21:36:00.000Z",
+  "releaseReason": "completed"
 }
