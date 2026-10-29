@@ -21,6 +21,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_HOUSE_PLAN["PCO-HOUSE-PLAN<br/>Record owner-house objective and delivery execution plan<br/><b>READY</b>"]
     n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>BLOCKED</b>"]
   end
   subgraph g_IAS["IAS"]
@@ -250,6 +251,7 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
+  class n_PCO_HOUSE_PLAN ready;
   class n_PCO_APPLICABILITY blocked;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
@@ -335,6 +337,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_HOUSE_PLAN["PCO-HOUSE-PLAN<br/>Record owner-house objective and delivery execution plan<br/><b>READY</b>"]
     n_PCO_REFURB_PLAN["PCO-REFURB-PLAN<br/>Record owner-directed refurbishment scope and swarmable handoffs<br/><b>DONE</b>"]
     n_PCO_00["PCO-00<br/>Control-plane inventory and authority map<br/><b>DONE</b>"]
     n_PCO_01["PCO-01<br/>Schema and concurrency-safe storage<br/><b>DONE</b>"]
@@ -483,6 +486,7 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_PCO_DISPATCH --> n_PCO_HOUSE_PLAN
   n_PCO_DISPATCH --> n_PCO_REFURB_PLAN
   n_PCO_00 --> n_PCO_01
   n_PCO_01 --> n_PCO_02
@@ -691,6 +695,7 @@ flowchart LR
   class n_CCR_STAIR ready;
   class n_CCR_DRAINAGE ready;
   class n_CCR_IDENTITY blocked;
+  class n_PCO_HOUSE_PLAN ready;
   class n_PCO_REFURB_PLAN done;
   class n_PCO_00 done;
   class n_PCO_01 done;
