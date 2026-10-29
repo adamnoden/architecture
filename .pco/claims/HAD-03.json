@@ -9,13 +9,13 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T22:07:43.984Z",
-  "expiresAt": "2026-10-29T22:52:43.984Z",
-  "branch": "work/zerg-had-03-convergence",
+  "heartbeatAt": "2026-10-29T22:14:37.055Z",
+  "expiresAt": "2026-10-29T22:59:37.055Z",
+  "branch": "work/zerg-junction-services",
   "note": "Product-sized ensuite fit review; HAD-03 remains incomplete",
-  "pr": 1026,
+  "pr": 1042,
   "checkpoint": {
-    "evidence": "Frozen PR #1026 b16cf113 full CI passed; Bedroom4 allocation under coordinated review",
-    "next": "Merge partial checkpoint in serial slot; develop unadopted Bedroom4 plan and service section with IAS/BCR"
+    "evidence": "PR #1042 preserves frozen HAD source b16cf113; original #1026 draft superseded awaiting integration",
+    "next": "Verify combined exact-head CI and provide fresh preflight; then rebind follow-on Bedroom4 branch"
   }
 }
