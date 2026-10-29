@@ -67,6 +67,16 @@ the opening edge/release contract. IAS-03 owns actual selection and the detailed
 disassembly set. The adoption ledger carries unresolved fit, depth, access and
 performance questions forward.
 
+## Selected dry-family development
+
+- [Partial selection and adoption hold](ias-03-partial-selection-result.md).
+- [Selected dry family, dimensions and disassembly](../../docs/reference-house/interior-family-selection.md).
+- [Dimensioned dry interface sheet](studies/selected-dry-interfaces.svg).
+
+IAS-03 has a bounded dry-family result but remains incomplete. Wet depth, actual
+service-front section/task, small-en-suite fit and wet-component failure records
+remain explicit adoption obligations; TRIAD-GATE cannot pass on the partial set.
+
 ## Parallel interfaces
 
 IAS runs in parallel with OAS #942 and HAD #943 after BSR. It works against the controlled current Reference House/PLT geometry. Any material section-depth, plan, opening or service-space conflict is an explicit rewind request; IAS may not silently fork the house.
