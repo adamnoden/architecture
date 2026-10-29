@@ -9,7 +9,12 @@
     "label": "mvb-comms-bc7462"
   },
   "claimedAt": "2026-10-29T21:50:23.021Z",
-  "heartbeatAt": "2026-10-29T21:50:23.021Z",
-  "expiresAt": "2026-10-29T22:35:23.021Z",
-  "branch": "pco/mvb-communications"
+  "heartbeatAt": "2026-10-29T21:55:49.427Z",
+  "expiresAt": "2026-10-29T22:40:49.427Z",
+  "branch": "pco/mvb-communications",
+  "pr": 1038,
+  "checkpoint": {
+    "evidence": "PR #1038; phrasebook, publication preflight and adversarial tests",
+    "next": "Require exact-head CI, run text publication preflight, merge and release"
+  }
 }
