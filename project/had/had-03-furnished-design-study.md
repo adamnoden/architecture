@@ -116,6 +116,11 @@ The dry prep table adds no hidden wet joint. Dishwasher, washer, refrigeration
 and other appliances are not silently fitted into the900 sink cabinet. Utility
 appliances, their isolation and failure records remain distinct IAS/HAD work.
 
+The subsequent [small-en-suite fit review](had-03-ensuite-fit-review.md) rejects
+two product-sized arrangements against the held service lining, fixture support
+and operation space. It establishes specific rewind constraints, without adopting
+a new room or claiming all compact arrangements impossible.
+
 ## Explicit limits and next decisions
 
 | Item | Present result | Work still needed for convergence |
