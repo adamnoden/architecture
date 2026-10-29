@@ -31,10 +31,6 @@ writeFileSync(join(repoRoot, 'docs/project/dependency-graph.md'), [
   '',
   '[Open the complete DAG in the full-size viewer](?view=full&graph=all){target="_blank" rel="noopener noreferrer"}',
   '',
-  '## What the colours mean',
-  '',
-  '**Ready** — prerequisites satisfied · **Active** — durably started · **Blocked** — awaiting prerequisites · **Held** — deliberately paused. Completed work appears in the historical viewer.',
-  '',
   'The graph shows durable structural state, not live agent occupancy. ACO claims are maintained separately on the runtime branch.',
   ''
 ].join('\n'))
