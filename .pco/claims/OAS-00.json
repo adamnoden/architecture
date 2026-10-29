@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "node": "OAS-00",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "672ccb20-981d-4ced-91a7-5b361d340f41",
   "holder": {
     "kind": "chatgpt",
@@ -12,5 +12,7 @@
   "heartbeatAt": "2026-10-29T07:02:24.520Z",
   "expiresAt": "2026-10-29T09:02:24.520Z",
   "branch": "oas/00-baseline",
-  "note": "Current-source opening taxonomy, conventional controls and interface invariants"
+  "note": "Current-source opening taxonomy, conventional controls and interface invariants",
+  "releasedAt": "2026-10-29T07:10:32.568Z",
+  "releaseReason": "completed"
 }
