@@ -28,7 +28,8 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: node --import tsx scripts/control-operations.ts brief --json operations.json --markdown operations.md
       - name: Preserve machine and human briefing
-            uses: actions/upload-artifact@v6
+        if: always()
+        uses: actions/upload-artifact@v6
         with:
           name: project-operations
           path: |
