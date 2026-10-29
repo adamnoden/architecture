@@ -1,3 +1,4 @@
+<!-- nav-exclude: redirect -->
 # Reference House — architectural design brief
 
 This brief selects the architectural direction for the current house. It is a
