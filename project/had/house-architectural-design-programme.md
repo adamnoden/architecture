@@ -76,6 +76,8 @@ selection and shared compatibility checks.
 ## Convergence development
 
 - [Selected expression and furnished rear-room/kitchen study](had-03-furnished-design-study.md).
+- [Bedroom 3 reuse after proposed suite relocation](had-03-bedroom3-reuse.md).
+- [Court walking level, lower water plane and threshold proposal](had-03-court-levels.md).
 - [Scaled front, interior elevation and furnished plan](studies/selected-house-study.svg).
 - [Continuation: relocate the en suite and test connected bedroom use](had-03-relocation-trial.md).
 - [Larger Bedroom 4 allocation and visible stack candidate](had-03-bedroom4-allocation.md) — unadopted; shared plan/section work continues.
@@ -127,3 +129,5 @@ drawings. Neither is asked to invent unresolved HAD/ROF/RWT decisions.
 Continue the incomplete furnished/room studies and reconcile spatial consequences of actual fixtures, access, structure and services. Preserve the accepted 12 × 12 m shell; adopt explicit source rewinds for narrower conflicts rather than cosmetic closure.
 
 The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.
+
+The unadopted [kitchen options](had-03-kitchen-options.md) bind real appliance envelopes and compare two higher rear sills against the retained discontinuous stations. They do not adopt openings or complete HAD-03.
