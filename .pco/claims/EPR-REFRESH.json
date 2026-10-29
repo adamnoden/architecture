@@ -9,6 +9,11 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-29T23:20:12.536Z",
-  "heartbeatAt": "2026-10-29T23:20:12.536Z",
-  "expiresAt": "2026-10-30T00:05:12.536Z"
+  "heartbeatAt": "2026-10-29T23:31:07.274Z",
+  "expiresAt": "2026-10-30T00:16:07.274Z",
+  "branch": "work/zerg-epr-refresh",
+  "checkpoint": {
+    "evidence": "Five current-house discipline briefs rewritten; applicability record and register reconciled; substantive review requested; no source geometry or external evidence promotion.",
+    "next": "Complete peer/repository checks, publish reviewed source and pair with PHY under commander merge slot."
+  }
 }
