@@ -118,9 +118,9 @@ sequence. Vertical capacity, supports, vent, cleanout, leak declaration, floor
 penetration and reinstatement are not certified by alignment. Existing wet-floor
 build-up deficits and the ground WC door operation remain unresolved.
 
-Preserve this front-bedroom trial as conditional evidence. Next compare a more
-generous room allocation within the accepted shell, including moving the second
-en suite to the larger Bedroom 4 while retaining four bedrooms/two en suites.
+Preserve this front-bedroom trial as conditional evidence. The [next comparison](had-03-bedroom4-allocation.md) develops a more generous
+room allocation within the accepted shell, moving the second en suite to the
+larger Bedroom 4 while retaining four bedrooms/two en suites.
 That changes the room association and requires a new visible service route;
 it must earn its bedroom, wardrobe, shower and maintenance fields. No owner
 preference, source adoption, current-house applicability change or HAD-03

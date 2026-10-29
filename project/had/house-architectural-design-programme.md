@@ -78,6 +78,7 @@ selection and shared compatibility checks.
 - [Selected expression and furnished rear-room/kitchen study](had-03-furnished-design-study.md).
 - [Scaled front, interior elevation and furnished plan](studies/selected-house-study.svg).
 - [Continuation: relocate the en suite and test connected bedroom use](had-03-relocation-trial.md).
+- [Larger Bedroom 4 allocation and visible stack candidate](had-03-bedroom4-allocation.md) — unadopted; shared plan/section work continues.
 - [Product-sized small-en-suite fit review](had-03-ensuite-fit-review.md) and [source-bound diagnostic](studies/ensuite-fit-study.svg).
 
 HAD-03 is started and incomplete. The worked kitchen uses solid-pier stations
