@@ -1,6 +1,7 @@
 import { GitHubClaimStore } from '../project/control/github-claim-store.js'
 import { GitConnectorClaimStore, connectorMailbox, readGitClaimSnapshot } from '../project/control/git-connector-claim-store.js'
-import { leaseHealth, assertPublicationLease } from '../project/control/lease-health.js'
+import { leaseHealth } from '../project/control/lease-health.js'
+import { publicationPreflight, renderPublicationReport } from '../project/control/publication-preflight.js'
 import { execFileSync } from 'node:child_process'
 import {
   ClaimConflictError,
@@ -480,27 +481,26 @@ async function main(): Promise<void> {
     case 'merge-check':
     case 'verify': {
       if (!args.node) throw new Error('verify requires NODE')
+      const node = args.node
+      if (args.command === 'merge-check') {
+        // Preserve the existing default JSON; readable operational wording is explicit opt-in.
+        const format = args.flags.has('format') ? outputFormat(args.flags) : 'json'
+        const leaseId = requiredFlag(args.flags, 'lease-id')
+        requiredFlag(args.flags, 'generation')
+        const generation = optionalInt(args.flags, 'generation')!
+        const result = await publicationPreflight({
+          repository: repositorySlug(), branch: requiredFlag(args.flags, 'branch'),
+          head: requiredFlag(args.flags, 'head'), leaseId, generation
+        }, { git, verify: () => verifyClaimInStore(store, node, controlNodes, {leaseId, generation}) })
+        console.log(format === 'text' ? renderPublicationReport(result) : JSON.stringify(result, null, 2))
+        return
+      }
       // Verification is deliberately occupancy-only. PCO/merge validation is
       // the independent durable structural check.
-      let verified = await verifyClaimInStore(store, args.node, controlNodes, {
+      const verified = await verifyClaimInStore(store, node, controlNodes, {
         leaseId: requiredFlag(args.flags, 'lease-id'),
         generation: optionalInt(args.flags, 'generation')
       })
-      if (args.command === 'merge-check') {
-        const branch = requiredFlag(args.flags, 'branch'), head = requiredFlag(args.flags, 'head')
-        requiredFlag(args.flags, 'generation')
-        if (!/^[a-f0-9]{40}$/.test(head)) throw new Error('--head must be a full commit SHA')
-        if (git(['status', '--porcelain', '--untracked-files=no'])) throw new Error('Publication requires a clean tracked working tree matching the validated head')
-        git(['check-ref-format', '--branch', branch])
-        git(['fetch', 'origin', 'main', branch, '--quiet'])
-        if (git(['rev-parse', `origin/${branch}`]) !== head || git(['rev-parse', 'HEAD']) !== head) throw new Error('Validated local/remote head mismatch')
-        git(['merge-base', '--is-ancestor', 'origin/main', head])
-        // Re-read occupancy AFTER network/base/head checks, not before them.
-        verified = await verifyClaimInStore(store, args.node, controlNodes, {
-          leaseId: requiredFlag(args.flags, 'lease-id'), generation: optionalInt(args.flags, 'generation')
-        })
-        assertPublicationLease(verified.stored.record, verified.observedAt, { branch, leaseId: requiredFlag(args.flags, 'lease-id'), generation: Number(requiredFlag(args.flags, 'generation')) })
-      }
       console.log(JSON.stringify({
         node: verified.stored.record.node,
         generation: verified.stored.record.generation,

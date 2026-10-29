@@ -2,6 +2,8 @@
 
 This is the operational companion to root `AGENTS.md` and the [Minimum Viable Bureaucracy (MVB) manual](README.md). It introduces no scheduler, alternative lease authority, workstream maturity scale or permission grant.
 
+Use the [communication phrasebook](communications.md) at consequential coordination boundaries. Clear English remains valid; markers never grant ownership. Keep ordinary progress updates concise and retain the measured closeout contract below.
+
 ## Start once, then keep working
 
 1. Read root instructions and control documentation. Inspect the configured runtime/network guidance, tool descriptions and available GitHub connector schema before guessing arguments. Do not print credentials.
@@ -123,6 +125,8 @@ Immediately before merging a leased packet:
 ```sh
 npm run control:merge-check -- NODE --transport connector --lease-id UUID --generation N --branch work/example --head FULL_VALIDATED_HEAD_SHA
 ```
+
+Add `--format text` for a readable, evidence-bound REPORT; default output remains JSON, with additive publication context. The report explicitly leaves CI unverified and atomic fencing absent.
 
 This checks local and fresh remote head identity, current main ancestry, then freshly re-reads the exact lease identity/generation and branch binding. It rejects grace, clock uncertainty and less than five minutes remaining. If renewal is needed after branch-local lifecycle was marked complete, renew from a clean current-main control checkout before final preflight. Merge immediately with the connector's `expected_head_sha` set to that same validated SHA; separately verify exact-head CI. On a delay, head/base change, expiry or takeover, repeat the preflight and relevant validation. No unattended lease may survive session end without explicit handoff.
 
