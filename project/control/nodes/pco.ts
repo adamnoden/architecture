@@ -98,5 +98,13 @@ export const pcoNodes = defineNodes([
     dependencies: ['PCO-07'],
     lifecycle: 'complete',
     closeoutEvidence: ['project/pco/pco-08-adversarial-closeout.md']
+  },
+  {
+    id: 'PCO-VIS',
+    owners: ['PCO'],
+    title: 'Generated structural and live Mermaid control graphs',
+    dependencies: ['PCO-08'],
+    lifecycle: 'planned',
+    closeoutEvidence: []
   }
 ])
