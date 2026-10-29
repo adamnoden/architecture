@@ -9,14 +9,14 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T22:40:51.677Z",
-  "expiresAt": "2026-10-29T23:25:51.677Z",
-  "branch": "work/zerg-had-03-bedroom4",
+  "heartbeatAt": "2026-10-29T22:50:37.705Z",
+  "expiresAt": "2026-10-29T23:35:37.705Z",
+  "branch": "work/zerg-ias-had-checkpoint",
   "note": "Product-sized ensuite fit review; HAD-03 remains incomplete",
-  "pr": 1046,
+  "pr": 1051,
   "checkpoint": {
-    "evidence": "PR1046 head4c7e1047; coordinated Bedroom4 allocation, primary Mira datum review with IAS1045",
-    "next": "Reconcile actual tray waste route with IAS, paired evidence integration, then court threshold and complete room-use design",
-    "blocker": "Candidate unadopted pending shared wet section and complete actions"
+    "evidence": "Common PR1051 head4cb898df preserves HAD1046 and corrected IAS1045; partial coordinated design only",
+    "next": "Verify exact combined CI and fresh HAD merge preflight; keep HAD incomplete, rebind continuation after merge",
+    "blocker": "No current-house adoption; joint tray/stack/complete-action duties remain"
   }
 }
