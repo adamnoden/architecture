@@ -39,6 +39,8 @@ The accepted house remains revision02. HAD's rear-west sanitary proposal, IAS tr
 
 ROF-07 subsequently merged through #1053, with settled projection `f8e0f5a174374b6a7c39e9bbc417392cbd227ac4`. Its three [candidate families](../../docs/research/roof-system-candidates.md), including named Edgemere/underlay and VMZINC PLUS Structural Roof representatives at their stated evidence limits, are comparisons rather than admitted roof systems. The outward-only challenger changes the high court edge and transfers roof water outside; direct court rainfall and actual layer/support/access duties remain. BST-06/07 and BW-01–06 are therefore retained, with the rechecks below triggered if any family is adopted. Original current-ring study arithmetic is not rewritten to imply the challenger is current source.
 
+The integrating PR also preserves MRA-00 source `08550ec0e6ca885f7725cc47d9bd930598330083` and DPL brief source `8ade8231595f1a72da729188c0bc0b2167ff1f5b`. The matrix's moisture paragraph is reconciled to MRA's completed definition sweep and routes EXT-11/12 and CMP-06 without duplicating the register or passing a house scenario. DPL's [owner site brief](../dpl/owner-site-brief.md) defines requirements and reject/hold conditions, not an actual site's suitability or an accepted foul/water handoff. Neither preparation closes a physical finding or changes the accepted house.
+
 Primary manufacturer/guidance evidence and jurisdiction/edition limits remain in each owning study. This packet introduces no new product dimensions, regulatory interpretation or external requirement; it compares the already inspected evidence and resolves its interfaces.
 
 ## Reconciled shared budgets

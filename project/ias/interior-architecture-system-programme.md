@@ -83,6 +83,8 @@ IAS runs in parallel with OAS #942 and HAD #943 after BSR. It works against the 
 
 OAS owns the opening cassette/envelope crossing; IAS owns the room-side assembly meeting it. HAD owns visible composition/material expression and consumes IAS dimensional/assembly constraints.
 
+The [MRA-00 interior/interface questions](../mra/mra-00-moisture-constitution-threat-model.md#9-ias-assurance-questions) require actual first-wetted surfaces, declaration, isolation, drying and complete renewal. IAS retains constructive design; a waterproof core, accessible face or named evidence owner is not an assurance pass.
+
 ## Evidence boundary
 
 IAS may establish architectural geometry, assembly sequence, comparative reasoning and internally controlled details. Fire, acoustic, structural, moisture, product and physical-performance claims beyond internal design evidence remain with EPR/PHY and must be routed by BCR/DEL as appropriate.

@@ -60,7 +60,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'DPL-SITE-BRIEF', owners: ['DPL'], title: 'Derive owner-house plot criteria and evidence requirements',
-    dependencies: ['DEL-BRIEF', 'HRS-BASELINE'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['DEL-BRIEF', 'HRS-BASELINE'], lifecycle: 'complete', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/dpl/owner-site-brief.md']
   },
   {
