@@ -2,15 +2,18 @@
   "schemaVersion": 1,
   "node": "PUB-02-PREP",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ecb7419c-9eb7-48be-9d96-d588636878cd",
   "holder": {
     "kind": "chatgpt",
     "label": "Refurbishment continuation requeue"
   },
   "claimedAt": "2026-10-29T15:46:24.734Z",
-  "heartbeatAt": "2026-10-29T15:46:24.734Z",
-  "expiresAt": "2026-10-29T17:46:24.734Z",
+  "heartbeatAt": "2026-10-29T16:12:26.519Z",
+  "expiresAt": "2026-10-29T16:12:26.519Z",
   "branch": "work/refurbishment-programme",
-  "note": "Owner-authorised guarded requeue with preserved partial results; no substantive packet completion claimed."
+  "note": "Owner-authorised guarded requeue with preserved partial results; no substantive packet completion claimed.",
+  "releasedAt": "2026-10-29T16:12:26.519Z",
+  "releaseReason": "handoff",
+  "pr": 1006
 }
