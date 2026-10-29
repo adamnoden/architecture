@@ -57,6 +57,8 @@ Each study completes when it names its current source, provides the stated physi
 
 The [occupation study](bcr-occupation-result.md) records the accepted-source bedroom-to-en-suite route obstruction, guest-WC door approach, stair opening/guard obligations and complete entry, opening and renewal sequences. Its adverse findings remain pending design resolution; completion of the study does not establish usable sanitary fit, safe escape or construction readiness.
 
+The [structure study](bcr-structure-result.md) compares source-bound floor/support geometry, entrance-void frames and stair-opening alternatives. It identifies doorway-bearing and bridge/service crossings without selecting members, capacity or a source aperture; its findings remain pending design resolution.
+
 `BCR-PREFLIGHT` consumes the five physical studies and reconciles their shared spatial budgets and interfaces. It publishes the constraints and unresolved findings that `TRIAD-GATE` must consume. It can finish with explicit adverse findings, but cannot call an incompatible candidate feasible. TRIAD cannot adopt the affected occurrence until its design owner resolves/eliminates the material conflict or establishes a legitimate bounded residual under the exit rule below. This separates investigation completion from architectural acceptance without creating a cycle through finished design streams.
 
 `BCR-PROPORTIONALITY` feeds final convergence. Its early comparison must be updated for material selection changes. Unknown cost alone does not make every design impossible, but a claimed whole-life advantage cannot survive without support. Carbon comparisons are included where the available quantities and evidence support them.

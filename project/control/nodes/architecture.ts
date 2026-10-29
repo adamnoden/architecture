@@ -270,7 +270,7 @@ export const architectureNodes = defineNodes([
     owners: ['BCR'],
     title: 'Structure, stair and entry-void feasibility',
     dependencies: ['BCR-SCAFFOLD', 'HRS-BASELINE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bcr-structure-result.md']
   },
