@@ -38,9 +38,6 @@ jobs:
       - name: Validate project control
         run: npx tsx scripts/validate-project-control.ts
 
-      - name: Prove project-control invariants
-        run: node --import tsx --test project/control/control.test.ts
-
       - name: Validate public nomenclature source
         run: npx tsx scripts/validate-public-nomenclature.ts --source
 

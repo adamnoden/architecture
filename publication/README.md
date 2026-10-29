@@ -38,6 +38,32 @@ Install locked dependencies first:
 npm ci
 ```
 
+### Browser prerequisites
+
+The figure-bounds validator and Mermaid preparation use Puppeteer and require a compatible Chrome/Chromium browser. If a browser is already installed, select it before running those commands (adjust the path for your machine):
+
+```sh
+export PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+```
+
+Otherwise, install Puppeteer's pinned browsers from the repository root:
+
+```sh
+npx puppeteer browsers install chrome
+npx puppeteer browsers install chrome-headless-shell
+```
+
+Vivliostyle uses its own browser selection. To render with an existing browser, prepare the source and pass its executable explicitly:
+
+```sh
+npm run publication:prepare:smoke
+npx vivliostyle build -c publication/vivliostyle.config.js --executable-browser /usr/bin/chromium
+```
+
+Mermaid preparation loads a local HTML file. A managed browser policy that rejects it with `ERR_BLOCKED_BY_ADMINISTRATOR` requires supported browser access from the environment administrator; selecting an executable does not override that policy. Figure-bounds validation can pass independently of PDF rendering. Keep TLS verification and managed browser policies intact.
+
+### Commands
+
 Useful stable entry points are:
 
 ```sh
