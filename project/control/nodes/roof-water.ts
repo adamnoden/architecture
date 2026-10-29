@@ -25,9 +25,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['ROF'],
     title: 'Roof topology and geometry families',
     dependencies: ['ROF-01'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rof/rof-02-topology-and-geometry.md']
   },
   {
     id: 'ROF-03',
