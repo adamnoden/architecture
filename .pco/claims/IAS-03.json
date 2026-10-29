@@ -9,7 +9,13 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T22:12:23.816Z",
-  "heartbeatAt": "2026-10-29T22:12:23.816Z",
-  "expiresAt": "2026-10-29T22:57:23.816Z",
-  "branch": "zerg/worker-1-packet-4"
+  "heartbeatAt": "2026-10-29T22:22:20.668Z",
+  "expiresAt": "2026-10-29T23:07:20.668Z",
+  "branch": "zerg/worker-1-packet-4",
+  "pr": 1045,
+  "checkpoint": {
+    "evidence": "PR1045 head b8745066: conditional wet floor, tray/waste section, perimeter route and disassembly; focused checks and A3 inspection pass; IAS remains incomplete",
+    "next": "Complete independent reviews, reconcile accepted HAD checkpoint and main, exact-head CI and preflight, merge partial evidence then handoff release",
+    "blocker": "Matched product/kit, under-tray route and full IS-01–06 adoption obligations remain open"
+  }
 }
