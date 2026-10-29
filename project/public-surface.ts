@@ -5,6 +5,7 @@ export const publicSourceExcludeGlobs = [
   'publication/**',
   'scripts/**',
   'docs/README.md',
+  'docs/delivery/owner-project-brief.md',
   'docs/development/**',
   'docs/editorial/**',
   'docs/publication/**',
