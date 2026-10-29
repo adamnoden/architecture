@@ -9,7 +9,13 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T21:57:19.987Z",
-  "heartbeatAt": "2026-10-29T21:57:19.987Z",
-  "expiresAt": "2026-10-29T22:42:19.987Z",
-  "branch": "zerg/worker-4-packet-4"
+  "heartbeatAt": "2026-10-29T22:06:23.389Z",
+  "expiresAt": "2026-10-29T22:51:23.389Z",
+  "branch": "zerg/worker-4-packet-4",
+  "pr": 1041,
+  "checkpoint": {
+    "evidence": "PR1041 head10726b1d; located junction studies peer reviewed; local checks passed",
+    "next": "Integrate preceding serial merges, run exact-head CI and fresh preflight, merge then release",
+    "blocker": "Serial integration queue"
+  }
 }
