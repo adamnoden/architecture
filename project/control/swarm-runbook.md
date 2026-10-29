@@ -5,7 +5,7 @@ This is the operational companion to root `AGENTS.md` and the [control protocol]
 ## Start once, then keep working
 
 1. Read root instructions and control documentation. Inspect the configured runtime/network guidance, tool descriptions and available GitHub connector schema before guessing arguments. Do not print credentials.
-2. Establish current `main`, a clean authoritative graph and live claims. Use a dedicated checkout/worktree; preserve other sessions' files. Capture a run baseline before the first lease. If capture begins late, label the earlier duration unknown rather than backdating it.
+2. Run `npm run control:brief` for a consolidated snapshot when current-main source and Git access are available. Read its timestamp, warnings and PR head identities; use the canonical dispatcher for acquisition. Establish current `main`, a clean authoritative graph and live claims. Use a dedicated checkout/worktree; preserve other sessions' files. Capture a run baseline before the first lease. If capture begins late, label the earlier duration unknown rather than backdating it.
 3. Choose the supported transport below. Run the canonical dispatcher for undirected work; directly claim only an explicitly assigned canonical node.
 4. Execute, validate, merge, reconcile issues/projections and clean up the bounded packet. Verify the lease before merge, then release it promptly. Record the merged packet from current main, not an unmerged branch.
 5. Dispatch again. Successful completion of one or two packets is not a stopping condition. If a candidate cannot proceed, prefer another eligible candidate. Do not silently convert `swarm` into a trial.

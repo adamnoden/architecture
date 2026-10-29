@@ -49,7 +49,7 @@ Follow changing facts at their source:
 - `project/owner-house-charter.md` — governing owner purpose and priority when house, book and tooling objectives conflict; read before scoping substantial work;
 - `docs/README.md` — documentation ownership and information architecture;
 - `STATUS.md` — generated durable structural execution state and maturity projection;
-- `project/control/README.md` — PCO/ACO execution, dispatcher and live-claim mechanics;
+- `project/control/README.md` — PCO/ACO execution, dispatcher and live-claim mechanics; `npm run control:brief` gives a current-main operational briefing, never an alternative scheduler;
 - `project/authority.ts` — machine-readable claim ceiling;
 - `docs/editorial/editorial-doctrine.md` — public-facing editorial standard;
 - `docs/computational/README.md` and `compiler/README.md` — computational role and proof boundaries;
@@ -184,6 +184,8 @@ When an agent is idle and has **not** been explicitly assigned a packet, it must
 ACO occupancy is volatile and deliberately separate from PCO lifecycle. Do not infer ownership from branch names or `STATUS.md`. If the live lease store cannot be read safely, fail closed for new collision-prone work rather than assuming the node is free. Normal agents must not force-take an active lease; exceptional takeover requires explicit owner/admin intent and a recorded reason.
 
 `runtime/claims` is retained coordination infrastructure, not a feature branch. Never merge it into `main`, and do not delete it during ordinary branch cleanup. Its per-node records are runtime state and must not be copied into source branches.
+
+Packet PRs declare `Work: CANONICAL-NODE` (comma-separated for shared scopes) and one `Lease: NODE / UUID / generation N` line per packet. Non-packet PRs declare `Work: none` and `Work reason: ...`; that exemption may not change canonical node sources. CI observes the declaration and current lease; it does not replace final publication preflight.
 
 Before merge, verify that the validated head is still the head being merged and that the intended base relationship still holds. If `main` has moved materially, reconcile and revalidate rather than assuming the earlier green result proves the resulting merge.
 

@@ -38,6 +38,8 @@ export function renderExecutionStatusBlock(): string {
   return [
     'Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.',
     '',
+    '[Operations snapshots on GitHub](https://github.com/adamnoden/architecture/actions/workflows/control-operations.yml) · Agent briefing: `npm run control:brief`. Snapshots show their observation time; acquire through the live dispatcher.',
+    '',
     'Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.',
     '',
     `**Structurally ready:** ${groups.ready.length} · **Active:** ${groups.active.length} · **Blocked:** ${groups.blocked.length} · **Held:** ${groups.held.length} · **Done:** ${groups.done.length} · **Cancelled:** ${groups.cancelled.length}`,
