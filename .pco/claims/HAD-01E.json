@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "node": "HAD-01E",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "had-71cc3e4e-20261029-HAD-01E",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "HAD execution 71cc3e4e"
+  },
+  "claimedAt": "2026-10-29T08:55:05.340Z",
+  "heartbeatAt": "2026-10-29T08:55:05.340Z",
+  "expiresAt": "2026-10-29T10:55:05.340Z",
+  "branch": "workstream/had-candidates",
+  "note": "Candidate design after merged shared interface freeze; selected assemblies remain later."
+}
