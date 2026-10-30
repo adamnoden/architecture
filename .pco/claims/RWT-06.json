@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "2da99f58-bad3-457a-937b-c6d57a80d5e8",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-30T00:28:19.657Z",
-  "heartbeatAt": "2026-10-30T00:51:22.356Z",
-  "expiresAt": "2026-10-30T01:36:22.356Z",
+  "heartbeatAt": "2026-10-30T08:45:27.639Z",
+  "expiresAt": "2026-10-30T08:45:27.639Z",
   "branch": "work/zerg-rwt-court",
   "checkpoint": {
     "evidence": "Published reviewed partial1080 b272be70, five-file tree exact. Full layer/support/renewal/receiver comparison; previous shallow combination rejected. Local type/repo/NOM/sanitation/dataplate/95tests pass, A3 independently reviewed. RWT remains planned.",
     "next": "Integrate in commander serial house batch after current main; exact CI, canonical preflight, partial closeout. Further threshold/support/product/access design is not exhausted."
   },
-  "pr": 1080
+  "pr": 1080,
+  "releaseReason": "handoff",
+  "releasedAt": "2026-10-30T08:45:27.639Z"
 }
