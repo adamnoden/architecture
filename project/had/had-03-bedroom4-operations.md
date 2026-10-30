@@ -17,7 +17,8 @@ x 427.5–2335 and y 8295–10822.5, with the north-east 1000 tray at 1335/9822.
 The current IAS successor owns the assembly and support questions; these are
 proposed finished coordinates, not a technical house migration. The waste-box
 comparison now includes a 250-deep north run and 150-wide west run; the larger
-north box pays for actual trap-body release rather than merely pipe containment.
+north box reserves space to investigate trap-body release rather than merely
+pipe containment; the authored handling envelope is not a measured component.
 
 Compare an ordinary **outward-opening 826 × 2040 × 44 leaf**, north hinge,
 against the previous inward swing. Widen the proposed wet-room rough opening
@@ -146,9 +147,11 @@ The wet-wall grounds and sealed penetrations belong in the IAS assembly.
 [GP85108](https://www.croydex.co.uk/product-284.html) is a real 2100 × 2100
 polyester curtain with weighted hem and twelve eyelets. One curtain has only
 300 excess width over the nominal 1800 rail run before fullness, end closure
-and overlap; no watertight or generous closure is inferred. A nominal hem 50
-below the proposed tray rim would place its top 2050 above that rim, subject
-to actual eyelet/hook offsets and clearance from the tray floor. The hem must
+and overlap; no watertight or generous closure is inferred. If the actual
+tray permits a hem 10 below its rim, the nominal curtain top is 2090 above
+that rim, before eyelet/hook offsets. A 50-below-rim hem is rejected: it would
+fall beneath the entire 45 tray profile. Even the 10 trial requires the actual
+inner tray floor and moving-fabric clearance to be checked. The hem must
 discharge inside the tray and must not trail underfoot. Actual parked fabric,
 hooks, entry movement, shower position and splash containment require a located
 assembly check. This remains a named conventional comparison, not an adopted
