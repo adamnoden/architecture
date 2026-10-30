@@ -46,6 +46,9 @@ test('invalid inputs cannot produce plausible catalogue or motion results', () =
   assert.throws(() => openingLowerBound(400, 220, -1));
   assert.throws(() => planeGaps([[2, 0], [0, -1]], [-1, -1]));
   assert.throws(() => planeGaps([[-1, 0], [0, -1]], [NaN, -1]));
+  assert.throws(() => planeGaps(new Array(2), [-1, -1]));
+  assert.throws(() => planeGaps([[-1, 0], [0, -1]], new Array(2)));
+  assert.throws(() => planeGaps([new Array(2), [0, -1]], [-1, -1]));
 });
 
 test('deterministic result cannot promote normal separation to installed acceptance', () => {
