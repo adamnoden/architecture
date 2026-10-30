@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "CCR-IDENTITY",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a5f79636-658b-4601-9934-7af74ce21d01",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-30T00:01:18.541Z",
-  "heartbeatAt": "2026-10-30T00:18:15.579Z",
-  "expiresAt": "2026-10-30T01:03:15.579Z",
+  "heartbeatAt": "2026-10-30T00:27:51.000Z",
+  "expiresAt": "2026-10-30T00:27:51.000Z",
   "checkpoint": {
     "evidence": "Frozen reviewed CCR1071 source5b5788af integrated as parent in1073 a0652cc6; bounded identity tests and matched computational assessment complete; only authorised result sentence clarifies derived dataplate reviewdate.",
     "next": "Verify all own source files and ancestry, await full exact common CI, then fresh own canonical preflight and coordinated merge."
   },
   "branch": "work/zerg-eda-identity-audit",
-  "pr": 1073
+  "pr": 1073,
+  "releasedAt": "2026-10-30T00:27:51.000Z",
+  "releaseReason": "completed"
 }
