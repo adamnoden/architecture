@@ -50,6 +50,8 @@ Only hardware that actually remains on the carrier belongs in its withdrawal env
 
 The bay's cover, walls, floor and outlet must be traced under court flooding and a blocked receiver. An open access well below the court flood level is not dry service territory. A sealed chamber with no observable drainage is not a safe leak collector. Where a sleeve is retained, carrier leakage must still reach an inspectable outward tell-tale without soaking the floor; the permanent sleeve and pan remain larger-life-cycle components with their own eventual repair.
 
+The later [ground-water policy](../../docs/reference-house/ground-water-policy.md) also governs this bay: do not deepen a wet service well and make it usable through pumping or inaccessible groundwater tanking. Test loss of power, the primary outlet blocked and relevant receiving-water flooding. A raised or rerouted service section may be preferable, but is not selected here.
+
 Do not promote a new chamber merely to preserve the sleeve concept. If a credible retained W2 boundary plus independent terminal release needs excessive depth, buried joints or routine cutting, return to the accessible-route comparator and the house section. RWT-06/HAD own any resulting spatial change.
 
 ## Ranked options and the next physical detail
