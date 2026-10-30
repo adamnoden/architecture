@@ -6,12 +6,13 @@
   "leaseId": "ad2d015c-a818-47bb-82dd-88d074725262",
   "holder": { "kind": "chatgpt", "label": "owner-material-water-20261030" },
   "claimedAt": "2026-10-30T20:22:32Z",
-  "heartbeatAt": "2026-10-30T20:22:32Z",
-  "expiresAt": "2026-10-30T21:07:32Z",
+  "heartbeatAt": "2026-10-30T20:40:35Z",
+  "expiresAt": "2026-10-30T21:25:35Z",
   "branch": "work/mvb-chat-6532658645",
-  "note": "Owner-directed MAT-00 bootstrap under issue #1100. New node absent from main until policy/graph PR merges; automatic dispatch may fail closed during this bounded registration. No takeover.",
+  "pr": 1101,
+  "note": "Owner-directed MAT-00 bootstrap under issue #1100. New node absent from main until policy/graph PR merges; automatic dispatch may fail closed during this bounded registration. No takeover. Exact-blob CAS checkpoint; no CLI mutation is claimed.",
   "checkpoint": {
-    "evidence": "Issue #1100 records owner mandate and bounded bootstrap; baseline main 6f7bfef005cd22fe5ab0737be1fa871376ac2123; RWT-06 separately leased generation 11",
-    "next": "Publish policy, evidence and canonical graph; exact-head CI and fresh canonical preflight for both leases before merge"
+    "evidence": "PR #1101 head c61da8fc1f4e8fd39a284975ec38bad25928860b contains policy, researched rebrief, nine new graph nodes and gate regression tests",
+    "next": "Observe exact-head CI and canonical preflight for both leases on the cleaned head; merge and release after verification"
   }
 }
