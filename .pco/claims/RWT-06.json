@@ -4,14 +4,12 @@
   "generation": 11,
   "state": "claimed",
   "leaseId": "5bf0bbdb-e8db-4ad8-8d82-c3f34fbd26ca",
-  "holder": {
-    "kind": "chatgpt",
-    "label": "issue-comment-6532658645"
-  },
+  "holder": { "kind": "chatgpt", "label": "issue-comment-6532658645" },
   "claimedAt": "2026-10-30T20:21:07.000Z",
-  "heartbeatAt": "2026-10-30T20:33:52.000Z",
-  "expiresAt": "2026-10-30T21:18:52.000Z",
+  "heartbeatAt": "2026-10-30T20:40:55.000Z",
+  "expiresAt": "2026-10-30T21:25:55.000Z",
   "branch": "work/mvb-chat-6532658645",
+  "pr": 1101,
   "predecessor": {
     "leaseId": "477705b6-8a6c-4e79-afc7-fb021b6c46b2",
     "generation": 10,
@@ -34,9 +32,10 @@
       "blocker": "Published comparison is not installed compatibility, structural, hydraulic, threshold or site acceptance; RWT-06 remains planned"
     }
   },
+  "note": "Owner-directed rebrief, shared MAT bootstrap PR #1101. Exact-blob CAS metadata binding while MAT-00 is not on main; canonical acquisition remains the original gateway result.",
   "checkpoint": {
-    "evidence": "Branch work/mvb-chat-6532658645 contains binding material policy, researched rainwater rebrief and MAT registration; tracking #1100",
-    "next": "Finish graph and owning-source reconciliation, then exact-head CI and canonical two-lease preflight",
-    "blocker": "Policy/programme scope only; actual product, free-shed and hydraulic design remain follow-on work"
+    "evidence": "PR #1101 head c61da8fc1f4e8fd39a284975ec38bad25928860b supersedes plastic defaults and registers free-shed, metals and robustness work",
+    "next": "Require final exact-head CI and both canonical lease preflights; merge bounded rebrief, retain RWT-06 planned and release",
+    "blocker": "Actual product, free-shed capture and hydraulic/threshold design remain follow-on work"
   }
 }
