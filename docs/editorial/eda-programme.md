@@ -378,6 +378,8 @@ Provide a chapter-purpose map, keep/cut/move/add decisions and before/after read
 
 Exit: coherent beginning, argument, worked challenge and architectural payoff; every chapter advances the thesis or supplies necessary evidence; one short route for an architect to understand claim, house, comparison and limits. Result: `project/eda/eda-narrative-result.md`.
 
+The [narrative result](../../project/eda/eda-narrative-result.md) records the chapter-purpose map, reference-catalogue relocation, front-matter subtraction and rendered review. HRS retains ownership of the unresolved final architectural account.
+
 ### Architectural merit must be demonstrated by the house
 
 HAD selection and HRS synthesis must test spatial delight, room proportions, arrival, privacy, daylight, relationship to garden/court, architectural section and façade depth as design judgements with drawings and alternatives. A well-managed maintenance system alone is not an architectural achievement. BCR-PROPORTIONALITY supplies honest cost, space, carbon and stewardship trade-offs. PLT must supply a legible inhabited plan/section sequence and at least one actual before/during/after intervention sequence; labels and component inventories alone are insufficient. HRS must incorporate the EDA argument/narrative dispositions before final publication preparation.
