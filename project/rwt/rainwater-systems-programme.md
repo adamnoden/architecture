@@ -9,6 +9,8 @@
 
 **Materials result:** [RWT-04 materials, joints and shared compatibility](rwt-04-materials-joints-compatibility.md); candidate interfaces remain conditional, with no material selection. RWT-METALS reconciles that same compatibility record against the new material brief.
 
+**Free-shedding comparison:** [RWT-SHED result](rwt-shed-result.md) and [research](../../docs/research/roof-shedding-and-ground-receivers.md) map all eight edges, compare shallow ground receivers with copper collection, quantify source-bound loads and land take, and reject direct roof shedding into the present court as the default. Open garden portions remain conditional trials; no physical receiver, safe width or site destination is accepted.
+
 **Current results:** [RWT-02 collection architecture](rwt-02-collection-architecture.md), [RWT-03 conveyance topology](rwt-03-conveyance-topology.md) and [RWT-01 rainfall and hydraulic basis](rwt-01-rainfall-and-hydraulic-basis.md); [RWT-00 baseline and interfaces](rwt-00-baseline-and-interfaces.md) remains the governing seam inventory.
 
 ## Purpose
