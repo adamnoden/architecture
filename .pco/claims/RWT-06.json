@@ -9,8 +9,8 @@
     "label": "swarm-983b7ee4744e"
   },
   "claimedAt": "2026-10-30T23:30:13.671Z",
-  "heartbeatAt": "2026-10-30T23:30:13.671Z",
-  "expiresAt": "2026-10-31T00:15:13.671Z",
+  "heartbeatAt": "2026-10-30T23:42:15.553Z",
+  "expiresAt": "2026-10-31T00:27:15.553Z",
   "branch": "work/swarm-983b7ee4744e-2",
   "predecessor": {
     "leaseId": "fc350d62-1c50-405d-a7c3-9d8e5c67e02a",
@@ -27,5 +27,11 @@
       "next": "Develop the raised or daylighted court crossing with actual threshold, support and terminal geometry; re-derive receiving and leak-outlet levels before hydraulic admission",
       "blocker": "RWT-06 remains planned; matched court threshold, non-plastic assembly, safe maintenance and actual receiving evidence remain unresolved"
     }
+  },
+  "pr": 1119,
+  "checkpoint": {
+    "evidence": "PR #1119 head d0d44bf64f4e93e20e39881a80beeb4525b6821b; source-pinned arithmetic, TypeScript, independent review and rendered A3 inspection passed.",
+    "next": "Inspect exact-head CI, reconcile moved main if needed, run canonical publication preflight, merge partial and release for handoff.",
+    "blocker": "RWT-06 remains planned: complete terminal, connected floor and threshold, actual release/access and receiving-water evidence unresolved."
   }
 }
