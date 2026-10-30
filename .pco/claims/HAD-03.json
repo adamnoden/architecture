@@ -9,8 +9,8 @@
     "label": "issue-comment-6535821509"
   },
   "claimedAt": "2026-10-30T23:40:08.000Z",
-  "heartbeatAt": "2026-10-30T23:40:08.000Z",
-  "expiresAt": "2026-10-31T00:25:08.000Z",
+  "heartbeatAt": "2026-10-30T23:54:51.000Z",
+  "expiresAt": "2026-10-31T00:39:51.000Z",
   "branch": "work/mvb-chat-6535821509",
   "predecessor": {
     "leaseId": "56dc2ab8-02cc-404d-ab44-d1850d85f075",
@@ -33,5 +33,11 @@
       "next": "Reconcile moved main, inspect exact-head full CI, then fresh canonical preflight and merge",
       "blocker": "Local full health requires absent Chrome155; exact-head CI pending"
     }
+  },
+  "pr": 1120,
+  "checkpoint": {
+    "evidence": "PR #1120 at 02dd80968aa3edcc1969896c17809b8d6e54a9b3: product-bound dining comparison, inspected A3 sheet and independent reviews. Current main 5a28e4d retained.",
+    "next": "Inspect exact-head CI, run fresh canonical preflight, merge bounded dining result and hand off remaining HAD-03 fit duties.",
+    "blocker": "Household seating, actual occupied use, table/apron fit, installed opening and material admission remain unknown; HAD-03 stays planned."
   }
 }
