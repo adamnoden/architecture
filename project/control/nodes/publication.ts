@@ -86,7 +86,7 @@ export const publicationNodes = defineNodes([
   {
     id: 'EDA-NARRATIVE', owners: ['EDA'],
     title: 'Reshape and subtract for a compelling architectural reader journey',
-    dependencies: ['EDA-ARGUMENT', 'EDA-ADAPTER'], lifecycle: 'planned',
+    dependencies: ['EDA-ARGUMENT', 'EDA-ADAPTER'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/eda/eda-narrative-result.md']
   }
