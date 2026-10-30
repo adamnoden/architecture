@@ -141,11 +141,40 @@ export const roofWaterNodes = defineNodes([
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
   },
+
+  // Owner-directed successor questions; original research remains historical evidence.
+  {
+    id: 'RWT-SHED',
+    owners: ['RWT', 'ROF', 'HAD'],
+    title: 'Develop free-shedding edges and planted ground-receiver comparisons',
+    dependencies: ['MAT-00', 'RWT-01', 'ROF-02'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: []
+  },
+  {
+    id: 'RWT-METALS',
+    owners: ['RWT'],
+    title: 'Develop copper collection, brass channels and non-plastic concealed routes',
+    dependencies: ['MAT-00', 'RWT-04'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: []
+  },
+  {
+    id: 'RWT-ROBUSTNESS',
+    owners: ['RWT'],
+    title: 'Test full-duty independent paths, reserve and common-cause rainwater failures',
+    dependencies: ['RWT-SHED', 'RWT-METALS', 'RWT-05'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: []
+  },
   {
     id: 'RWT-07',
     owners: ['RWT'],
     title: 'Rainwater network synthesis and Reference House candidates',
-    dependencies: ['RWT-02', 'RWT-03', 'RWT-04', 'RWT-05', 'RWT-06', 'ROF-02'],
+    dependencies: ['RWT-02', 'RWT-03', 'RWT-04', 'RWT-05', 'RWT-06', 'ROF-02', 'RWT-SHED', 'RWT-METALS', 'RWT-ROBUSTNESS'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
