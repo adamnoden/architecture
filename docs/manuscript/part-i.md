@@ -39,8 +39,6 @@ Those questions become architectural because their answers occupy space. They af
 
 The intended result should be quieter than the reasoning that produces it. Rooms may feel solid and permanent precisely because the shorter-lived systems around them have somewhere else to change.
 
----
-
 # 2. Buildings change at different speeds
 
 A building does not possess one useful life. Structure, envelope, windows, services, controls, finishes and appliances exist on different timescales. The precise number of years matters less here than the ordering. A pump and a masonry wall should not be treated as though they belong to the same temporal layer.
