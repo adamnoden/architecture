@@ -9,11 +9,12 @@
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-30T00:28:58.793Z",
-  "heartbeatAt": "2026-10-30T00:42:59.872Z",
-  "expiresAt": "2026-10-30T01:27:59.872Z",
+  "heartbeatAt": "2026-10-30T00:47:47.423Z",
+  "expiresAt": "2026-10-30T01:32:47.423Z",
   "checkpoint": {
-    "evidence": "Primary JT and McAlpine datum research with worker1 found north-facing first junction fails60lead versus82body. Successor floor/wall/threshold source and located study authored; HAD action and commander cistern research active.",
-    "next": "Resolve west-facing connection and actual cabinet assembly, complete release/failure drawing and peer review; preserve IAS planned until whole adoption duties earned."
+    "evidence": "Durable draft1078 at fb0acae09085a4adde93166b0b6cfd920a95fbdb; source/artifact checks, typecheck, repo integrity and independent primary-datum/floor review passed. Exact lower fitting, leg pattern and cistern/soil assembly remain held.",
+    "next": "Complete cabinet and renewal study with HAD/commander, review actual connector and floor compatibility limits; validate final recoverable partial before any coordinated merge."
   },
-  "branch": "zerg/worker-6-wave8"
+  "branch": "zerg/worker-6-wave8",
+  "pr": 1078
 }
