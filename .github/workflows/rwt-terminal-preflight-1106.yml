@@ -1,0 +1,81 @@
+name: Temporary read-only RWT terminal publication check 1106
+on:
+  push:
+    branches: [work/mvb-chat-6534295424]
+permissions:
+  contents: read
+  pull-requests: read
+  checks: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Observe cleaned final PR head and exact validation
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          ready=false
+          for attempt in $(seq 1 64); do
+            if ! pr="$(gh api repos/adamnoden/architecture/pulls/1106)"; then sleep 15; continue; fi
+            test "$(jq -r '.state' <<< "$pr")" = open
+            test "$(jq -r '.head.ref' <<< "$pr")" = work/mvb-chat-6534295424
+            test "$(jq -r '.head.repo.full_name' <<< "$pr")" = adamnoden/architecture
+            test "$(jq -r '.base.ref' <<< "$pr")" = main
+            grep -Fxq 'Work: RWT-METALS' <<< "$(jq -r '.body' <<< "$pr")"
+            grep -Fxq 'Lease: RWT-METALS / 47ee91b9-0bff-4df9-abe3-0610f20d1181 / generation 2' <<< "$(jq -r '.body' <<< "$pr")"
+            head="$(jq -r '.head.sha' <<< "$pr")"
+            git fetch origin main work/mvb-chat-6534295424 --quiet
+            test "$(git rev-parse origin/work/mvb-chat-6534295424)" = "$head"
+            if git cat-file -e "$head:.github/workflows/rwt-terminal-preflight-1106.yml" 2>/dev/null; then sleep 15; continue; fi
+            git diff --quiet origin/main "$head" -- project/control scripts/project-claims.ts package.json package-lock.json .nvmrc .github/workflows
+            if ! checks="$(gh api "repos/adamnoden/architecture/commits/$head/check-runs?per_page=100")"; then sleep 15; continue; fi
+            latest="$(jq '[.check_runs[] | select(.app.slug == "github-actions")] | sort_by(.name) | group_by(.name) | map(sort_by(.id) | last)' <<< "$checks")"
+            validate="$(jq '[.[] | select(.name == "validate")] | last // {}' <<< "$latest")"
+            bad="$(jq '[.[] | select(.name != "preflight") | select(.status == "completed" and (.conclusion != "success" and .conclusion != "skipped" and .conclusion != "neutral"))] | length' <<< "$latest")"
+            if (( bad > 0 )); then echo 'Failed final-head check; publication prohibited'; exit 1; fi
+            pending="$(jq '[.[] | select(.name != "preflight" and .status != "completed")] | length' <<< "$latest")"
+            if test "$(jq -r '.conclusion' <<< "$validate")" = success && test "$pending" = 0; then
+              echo "Validated final head: $head"
+              jq -r '.[] | [.name,.status,.conclusion,.details_url] | @tsv' <<< "$latest"
+              echo "TARGET_HEAD=$head" >> "$GITHUB_ENV"
+              ready=true
+              break
+            fi
+            sleep 15
+          done
+          test "$ready" = true
+      - name: Verify published blobs and reproduce terminal diagnostic
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout --detach "$TARGET_HEAD"
+          test "$(git hash-object project/rwt/copper-terminal-renewal.md)" = e8dca68b331a0b6075fe2ab241f83da1ffedf246
+          test "$(git hash-object project/rwt/studies/copper-terminal-release.mjs)" = bb67e3b47b4ed58fd6759229586a84983f117f92
+          test "$(git hash-object project/rwt/studies/copper-terminal-release.test.mjs)" = 409aa9845fc51db37ec5887c44ea2751fbd55137
+          test "$(git hash-object project/rwt/studies/copper-terminal-release.json)" = ad34d4675f919d47d261426c79abaf71eca7fc23
+          test "$(git hash-object project/rwt/studies/copper-terminal-release.svg)" = a99b2e9294e71797c0e4058b1a57e543899b9246
+          node --test project/rwt/studies/copper-terminal-release.test.mjs
+          node project/rwt/studies/copper-terminal-release.mjs --check
+          test -z "$(git status --porcelain --untracked-files=no)"
+      - name: Canonical publication preflight
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          node --import tsx scripts/project-claims.ts merge-check RWT-METALS \
+            --lease-id 47ee91b9-0bff-4df9-abe3-0610f20d1181 --generation 2 \
+            --branch work/mvb-chat-6534295424 --head "$TARGET_HEAD" --format text
