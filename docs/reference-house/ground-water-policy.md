@@ -1,6 +1,6 @@
 # Ground water and rising-damp policy
 
-**Owner requirement, established 30 October 2026.** This policy records the owner's direction for Ovid's House under the [owner-house charter](../../project/owner-house-charter.md). It governs the future site-specific house and constrains further development of the pre-site study. It establishes requirements and evidence obligations, not an accepted foundation, basement, damp-proof-course assembly or service-life result.
+**Owner requirement, established 30 October 2026.** This policy records the owner's direction for Ovid's House under the owner-house charter. It governs the future site-specific house and constrains further development of the pre-site study. It establishes requirements and evidence obligations, not an accepted foundation, basement, damp-proof-course assembly or service-life result.
 
 ## Dryness by position and geometry
 
