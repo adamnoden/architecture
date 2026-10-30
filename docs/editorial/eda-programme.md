@@ -366,6 +366,8 @@ Read the actual manuscript and relevant evidence. Produce a claim-to-demonstrati
 
 Exit: one defensible central proposition; each claimed contribution has an explicit demonstration or narrowed wording; objections have accountable dispositions; no assertion of immense value or novelty merely from internal coherence. Result: `project/eda/eda-argument-result.md`.
 
+The [argument review result](../../project/eda/eda-argument-result.md) records the bounded thesis, inspected comparisons, primary lineage and corrected current-house claims. It does not close architectural resolution or final typeset assurance.
+
 ### EDA-NARRATIVE — structure, subtraction and architectural reader journey
 
 After EDA-ARGUMENT, edit the publication architecture, manifests and owning manuscript sources as one bounded structural pass. The six parts are a working hypothesis, not protected doctrine. Test whether the house arrives too late; whether Parts I–III repeat the same argument; whether Part IV and VI earn separate roles; whether Part V demonstrates results or mostly describes future tests. Review philosophy/software analogies for explanatory return, avoid repeated qualifications, move specialist apparatus to notes where possible, and remove weak or redundant material rather than adding chapters reflexively.

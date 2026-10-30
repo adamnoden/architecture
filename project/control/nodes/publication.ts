@@ -79,7 +79,7 @@ export const publicationNodes = defineNodes([
   {
     id: 'EDA-ARGUMENT', owners: ['EDA'],
     title: 'Red-team architectural contribution and evidence for the central thesis',
-    dependencies: [], lifecycle: 'planned',
+    dependencies: [], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/eda/eda-argument-result.md']
   },
