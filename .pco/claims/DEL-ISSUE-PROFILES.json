@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "DEL-ISSUE-PROFILES",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1a9942cb-fd6f-4ce5-962b-13acd641f2b8",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T23:31:04.341Z",
-  "heartbeatAt": "2026-10-30T00:01:02.620Z",
-  "expiresAt": "2026-10-30T00:46:02.620Z",
+  "heartbeatAt": "2026-10-30T00:12:51.845Z",
+  "expiresAt": "2026-10-30T00:12:51.845Z",
   "branch": "work/zerg-bay-delivery-applicability",
   "pr": 1069,
   "checkpoint": {
     "evidence": "Reviewed DEL source cf6f036c is preserved in common PR1069; requirements contract only, no actual issue or construction authority.",
     "next": "Wait for exact common-head full CI, then fresh DEL merge-check, verify accepted lifecycle, reconcile and release completed.",
     "blocker": "No substantive blocker; serial integration with BAY and PCO."
-  }
+  },
+  "releasedAt": "2026-10-30T00:12:51.845Z",
+  "releaseReason": "completed"
 }
