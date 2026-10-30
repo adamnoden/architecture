@@ -1,22 +1,19 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 4,
-  "state": "released",
-  "leaseId": "6bf424e6-7808-42f4-a3bf-4552b7bfa4c6",
+  "generation": 5,
+  "state": "claimed",
+  "leaseId": "7e6520e0-66c6-42e5-bbf0-aae1c1bbdd71",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-worker-3"
+    "label": "recovery-sequential-20261030"
   },
-  "claimedAt": "2026-10-30T00:28:55.827Z",
-  "heartbeatAt": "2026-10-30T08:45:39.253Z",
-  "expiresAt": "2026-10-30T08:45:39.253Z",
-  "branch": "work/zerg-worker-3-had",
+  "claimedAt": "2026-10-30T09:11:44.132Z",
+  "heartbeatAt": "2026-10-30T09:11:44.132Z",
+  "expiresAt": "2026-10-30T09:56:44.132Z",
+  "branch": "recovery/had-1079-20261030",
   "checkpoint": {
-    "evidence": "PR1079 head2f2e6e4: finished-face door witnesses, connected pan staging/return and tray stance pass; actual Duravit datums recovered; finite remaining actions and evidence gates explicit",
-    "next": "Peer-reviewed connected partial integration with IAS/RWT; no HAD completion or house adoption; actual frame/enclosure/connector/handling actions remain"
-  },
-  "pr": 1079,
-  "releaseReason": "handoff",
-  "releasedAt": "2026-10-30T08:45:39.253Z"
+    "evidence": "Original draft #1079 head 52fe61768f8c00a36792ee7c8bc015ddc719f015, six-file source-controlled Bedroom 4 maintenance states; previous green CI and independent study review",
+    "next": "Reconcile source with fresh main and RWT partial; determine remaining actual product/fit blockers, exact CI and bounded merge without unearned HAD selection."
+  }
 }
