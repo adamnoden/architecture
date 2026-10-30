@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 3,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "d0f0f993-64c8-4df7-90b3-934d86e5cf14",
   "holder": {
     "kind": "chatgpt",
     "label": "recovery-sequential-20261030"
   },
   "claimedAt": "2026-10-30T09:05:47.278Z",
-  "heartbeatAt": "2026-10-30T09:07:18.621Z",
-  "expiresAt": "2026-10-30T09:52:18.621Z",
+  "heartbeatAt": "2026-10-30T09:10:58.109Z",
+  "expiresAt": "2026-10-30T09:10:58.109Z",
   "branch": "recovery/rwt-1080-20261030",
   "checkpoint": {
-    "evidence": "PR #1084 current-main source replay at 2ca14e53680a8ecb0f106d68e5a92a1b42d9bf92, preserves all five verified original source blobs; RWT-06 remains planned",
-    "next": "Exact-head CI, compare main ancestry and live lease; merge partial checkpoint, close superseded #1080, release as handoff. Do not claim engineering adequacy."
+    "evidence": "Merged reviewed partial RWT source via PR #1084 at b4b42f46574b2851e9c2514b61d7317d1b2260c4; exact-head PR CI passed; RWT-06 planned and not adopted",
+    "next": "Reopen through new generation only after coordinated HAD/IAS/BCR threshold, support, product, hydraulic and lower receiving-water design evidence. Consult source holding register."
   },
-  "pr": 1084
+  "pr": 1084,
+  "releaseReason": "handoff",
+  "releasedAt": "2026-10-30T09:10:58.109Z"
 }
