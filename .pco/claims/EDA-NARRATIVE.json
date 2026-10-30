@@ -9,11 +9,12 @@
     "label": "recovery-sequential-20261030"
   },
   "claimedAt": "2026-10-30T08:53:01.066Z",
-  "heartbeatAt": "2026-10-30T08:53:01.066Z",
-  "expiresAt": "2026-10-30T09:38:01.066Z",
+  "heartbeatAt": "2026-10-30T08:57:31.354Z",
+  "expiresAt": "2026-10-30T09:42:31.354Z",
   "branch": "recovery/eda-1081-20261030",
   "checkpoint": {
-    "evidence": "Recover PR #1081 at 8c49ea0288f7cad7fdef71f1be43d7fa125b61d3; original branch retained; prior green source tests, known production metadata drift",
-    "next": "Create successor branch; reconcile actual A4 and B5 pagination and inspect production proof; exact CI then canonical publication preflight"
-  }
+    "evidence": "Draft PR #1082 head 9122f8e391d2f143a0fd1e580ab11c80fc5df3f7; measured A4 279/B5 331, bounded actual PDF inspection and metadata reconciliation recorded",
+    "next": "Check exact PR CI and production proof; reconcile any failures, run canonical merge preflight and merge after head validation"
+  },
+  "pr": 1082
 }
