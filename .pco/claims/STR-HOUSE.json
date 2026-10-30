@@ -9,8 +9,12 @@
     "label": "STR whole-house coordinator /root"
   },
   "claimedAt": "2026-10-30T22:58:52.000Z",
-  "heartbeatAt": "2026-10-30T22:58:52.000Z",
-  "expiresAt": "2026-10-30T23:43:52.000Z",
+  "heartbeatAt": "2026-10-30T23:01:57.000Z",
+  "expiresAt": "2026-10-30T23:46:57.000Z",
   "branch": "work/str-house-20261030-f297f5ec",
-  "note": "Explicit owner direction to progress STR. Fresh main ebfb41c30690ea10e2c3e1eddcc4250c31c063ca has STR-MASONRY, STR-SPANS and BCR-PREFLIGHT complete, STR-HOUSE self-service/planned; exact runtime claim absent. Bounded connector CAS transport after unavailable terminal Git; no CLI acquisition claimed. Existing preparatory investigation was read-only."
+  "note": "Explicit owner direction to progress STR. Fresh main ebfb41c30690ea10e2c3e1eddcc4250c31c063ca has STR-MASONRY, STR-SPANS and BCR-PREFLIGHT complete, STR-HOUSE self-service/planned; exact runtime claim absent. Bounded connector CAS transport after unavailable terminal Git; no CLI acquisition claimed. Existing preparatory investigation was read-only.",
+  "checkpoint": {
+    "evidence": "Recovery branch work/str-house-20261030-f297f5ec headfd62f5f497d8c0fb6fb2dde63e241e6afa3d5bac contains owning working result; initial capable-runner preflight run41141804769 succeeded. Source-bound paired-plan and finite-support alternatives are under independent read-only review, not yet a passed house.",
+    "next": "Resolve rear room return/doors, living and sanitary operations, finite arch/header supports and accessible service crossing; integrate final bounded evidence, remove temporary workflow, full exact-head CI and fresh preflight"
+  }
 }
