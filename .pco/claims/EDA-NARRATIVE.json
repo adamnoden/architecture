@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "EDA-NARRATIVE",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "da27b0a4-1520-4f09-9cc6-a2064cfa968b",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-5"
+  },
+  "claimedAt": "2026-10-30T00:53:45.219Z",
+  "heartbeatAt": "2026-10-30T00:53:45.219Z",
+  "expiresAt": "2026-10-30T01:38:45.219Z",
+  "branch": "work/zerg-eda-narrative"
+}
