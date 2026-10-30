@@ -9,8 +9,8 @@
     "label": "issue-comment-6535452701"
   },
   "claimedAt": "2026-10-30T23:12:07.000Z",
-  "heartbeatAt": "2026-10-30T23:12:07.000Z",
-  "expiresAt": "2026-10-30T23:57:07.000Z",
+  "heartbeatAt": "2026-10-30T23:26:05.000Z",
+  "expiresAt": "2026-10-31T00:11:05.000Z",
   "branch": "work/mvb-chat-6535452701",
   "predecessor": {
     "leaseId": "f408a295-c812-431f-a5c4-eaace939de52",
@@ -31,5 +31,11 @@
       "evidence": "PR #1086 merged at fa27ee8b4f564858b46da25246811955a1499d6d; node remains planned.",
       "next": "Continue actual IAS-03 product fit and assembly admission."
     }
+  },
+  "pr": 1114,
+  "checkpoint": {
+    "evidence": "PR #1114 at 7d83bf45159e8aaeccf679b9bb73f98a9776d3fd: source-bound sink/cabinet comparison, inspected A3 sheet and independent reviews; reconciled with main b8544ee3.",
+    "next": "Inspect exact-head CI, run fresh canonical publication preflight, merge this partial result and release for handoff.",
+    "blocker": "A complete material-admissible sink/waste/trap/appliance assembly, installed connector dimensions and release travel remain unavailable. IAS-03 remains planned."
   }
 }
