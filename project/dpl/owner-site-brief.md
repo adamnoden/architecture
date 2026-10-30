@@ -37,7 +37,7 @@ The owner's [ground-water and rising-damp policy](../../docs/reference-house/gro
 
 For any proposed basement, undercroft, service trench, sunken perimeter margin or courtyard, show the receiving destination, backwater/flooded-outlet condition and safe overflow with power unavailable and the primary outlet obstructed under agreed design conditions. If the arrangement requires active dewatering or inaccessible groundwater tanking to keep usable space dry, redesign it or reject that site/design combination. Preserve the principal approach and lawful discharge obligations. Foul-drainage pumping remains a separate assessed question, not an exception to the groundwater rule.
 
-Non-plastic DPCs and the three-barrier requirement are assembly duties under MAT/BCR with MRA assurance. A favourable plot screen does not prove them, and unresolved groundwater/outfall evidence cannot support a suitability claim. This amendment supplies no accepted site datum, storm, water level, clearance dimension or engineering result.
+Substantial non-plastic DPCs and their justified extra margin are assembly duties under MAT/BCR with MRA assurance. A favourable plot screen does not prove them, and unresolved groundwater/outfall evidence cannot support a suitability claim. This amendment supplies no accepted site datum, storm, water level, clearance dimension or engineering result.
 
 ## Plot criteria and evidence needed
 

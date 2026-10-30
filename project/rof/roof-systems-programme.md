@@ -41,6 +41,12 @@ ROF owns roof-system architecture from topology through weathering assembly and 
 
 ROF does **not** own structural sizing, wind engineering, final condensation/thermal proof, building-side rainwater conveyance after collection interfaces, site drainage, overall architectural expression independent of technical consequences, drawings, or delivery acceptance. Those remain with BCR/EPR/PHY, MRA/EPR, RWT, DPL, HAD, PLT and DEL respectively.
 
+### Primary structure and the STR handoff
+
+The [STR programme](../str/structural-architecture-programme.md) owns the primary roof-support proposition and its load paths into the house. ROF retains roof form, weathering, secondary substrate/fixing systems and renewal. Agree the actual component boundary: a deck or rail cannot become an unowned structural assumption. ROF supplies support spacing, dead/imposed-load and uplift requirements, movement and maintenance/access demands; STR returns a declared support/reaction envelope, with competent calculation and review routed through BCR/EPR.
+
+The owner's [structural brief](../../docs/reference-house/structural-brief.md) requires investigation of non-timber primary structure and direct support. Earlier ROF candidate assumptions remain dated evidence and must be rechecked where affected. ROF-RWT-GATE consumes STR-RECONCILE and verifies that the actual selected roof lies within its envelope. A changed demand requires structural reconciliation before selection, without making STR depend on the final roof gate. The workstream does not acquire structural sizing authority through this interface.
+
 ## Governing comparison model
 
 Do not begin with a scalar `roof complexity index`, joints-per-square-metre score or weighted beauty/reliability ranking. Preserve the dimensions that create different failure behaviour.

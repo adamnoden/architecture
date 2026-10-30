@@ -17,6 +17,12 @@ RWT owns building-side rainwater collection/conveyance. HAD owns how those
 systems resolve visibly into the house. HAD does not establish competent
 performance validation, final construction readiness or publication freeze.
 
+## Structural architecture coordination
+
+The [STR programme](../str/structural-architecture-programme.md) develops solid walls, arches, aligned support and primary floor/roof choices under the owner's [structural brief](../../docs/reference-house/structural-brief.md). HAD retains room quality, circulation, composition and adopted house geometry. STR-HOUSE is a shared comparison of structural and inhabited-space consequences, using the owning plan/section and the existing source-rewind procedure; no second authoritative house model is introduced.
+
+Current HAD studies may continue with named provisional structural assumptions. STR-RECONCILE feeds both ROF-RWT-GATE and TRIAD-GATE, which must verify compatibility with their actual selections. Thicker walls or changed opening heads must earn their place in the rooms, stair, sanitary access and renewal routes; a visually convincing structure cannot conceal a known fit failure.
+
 ## Packet topology
 
 The original linear HAD-00…06 outline is superseded by the topology below,

@@ -185,7 +185,7 @@ export const roofWaterNodes = defineNodes([
     id: 'ROF-RWT-GATE',
     owners: ['ROF', 'RWT', 'HAD'],
     title: 'Reference House roof and rainwater reconciliation gate',
-    dependencies: ['ROF-07', 'RWT-07', 'HAD-03', 'OAS-03', 'OAS-DETAIL'],
+    dependencies: ['ROF-07', 'RWT-07', 'HAD-03', 'OAS-03', 'OAS-DETAIL', 'STR-RECONCILE'],
     lifecycle: 'planned',
     aliases: ['ROOF-WATER-GATE'],
     agentDispatch: { mode: 'self-service' },

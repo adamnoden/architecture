@@ -33,11 +33,17 @@ Prefer simple, forgiving roof shedding into designed ground receivers where the 
 
 The [MAT programme](mat/material-integrity-programme.md) and existing RWT workstream carry this direction into the canonical execution graph. Earlier plastic carrier and polymer-dependent assembly studies remain historical evidence; their material preferences do not override the owner's new requirement. The actual assembly redesign and hydraulic proof still have to be earned.
 
+## Structural direction — 30 October 2026
+
+The owner prefers solid internal masonry, genuine arches at internal and external openings, direct bearing and walls/supports aligned between storeys. Explore non-timber primary floor and roof structure first. The [structural brief](../docs/reference-house/structural-brief.md) owns these preferences, their exception boundaries and the distinction between solidity and loadbearing; it selects no blanket wall thickness and does not prohibit necessary tension resistance.
+
+The [STR programme](str/structural-architecture-programme.md) develops a coherent structural proposition with HAD and the existing assembly/evidence owners. It must test both load paths and the quality of the inhabited house. The owner's sense of repose is a valid design motive, not a general physiological or safety claim. This direction does not silently adopt new geometry or turn earlier structural concepts into verified systems.
+
 ## Ground water and rising-damp direction — 30 October 2026
 
 The owner requires **dryness by position and geometry**: accommodation and essential services must not depend on active dewatering or inaccessible waterproofing holding back groundwater. Ground-contact foundations may tolerate their assessed wet exposure; the house must not depend on pumping to suppress groundwater around it. This constrains plot selection, building levels and any proposed basement, undercroft, deeper service trench, sunken perimeter margin or courtyard. Raising the house must preserve a coherent accessible principal approach.
 
-Plastic damp-proof courses are rejected as the design direction. Develop suitable slate and engineering-brick alternatives and demonstrate **three independent passive protections against upward capillary moisture**. The owner's **1,000-year ambition** governs long-term durability and stewardship; it is not an established service life or a zero-risk promise. No material build-up or third barrier is selected by this instruction.
+Plastic damp-proof courses are rejected as the design direction. Develop suitable slate and engineering-brick alternatives with **substantial construction and generous evidence-based margin**. The owner clarified that "triple redundancy" meant overbuilding, such as greater slate depth, with thickness and arrangement left to design judgement; three separate systems or a literal multiplier are not required. The owner's **1,000-year ambition** governs long-term durability and stewardship; it is not an established service life or a zero-risk promise. No material build-up is selected by this instruction.
 
 The [ground-water and rising-damp policy](../docs/reference-house/ground-water-policy.md) owns the exact acceptance boundaries and source evidence. Existing MAT, DPL, RWT, BCR, MRA and delivery work carry the requirement into design and assurance. Policy adoption does not mark those technical questions resolved.
 

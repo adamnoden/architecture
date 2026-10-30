@@ -28,43 +28,43 @@ Specify an evidenced DPC assembly, not merely a material name. The Brick Develop
 
 Any metallic alternative remains a separately evidenced candidate. A metal cavity tray is not automatically a suitable load-bearing horizontal DPC, and its accessories may contain polymers. ACS's stainless A-Tray, for example, requires butyl-tape joints in its stated installation [5]. Do not remove required accessories and retain the original performance claim.
 
-## Three independent protections against rising damp
+## Substantial protection with generous margin
 
-The owner requires **triple redundancy against upward capillary moisture**, rather than merely meeting an ordinary single-barrier baseline. Develop three separately identifiable passive, non-plastic barriers across each consequential ground-to-dry-fabric capillary path. This is a design requirement still to be demonstrated; no three-barrier construction is accepted here.
+**Develop an unusually robust, substantial non-plastic damp barrier with generous evidence-based margin.** The owner clarified that "triple redundancy" meant overbuilding, such as greater slate depth, with the final arrangement left to design judgement. It does not prescribe three independent systems, a third material or a literal threefold thickness multiplier.
 
-For a candidate to earn that description:
+Start with a sound conventional mineral assembly. Compare greater thickness, additional courses or better protected joints where they address an identified weakness and deliver a real whole-assembly benefit. Extra material is welcome when it earns that benefit; thickness alone must not be treated as proportionally greater moisture resistance or service life. Add a separate backup layer only where its failure benefit justifies its interfaces and structural consequences.
 
-1. Map each relevant moisture path through external and internal walls, both applicable masonry leaves, piers, floor interfaces, corners, thresholds and penetrations. Each of the three barriers must be continuous across the path it claims to interrupt, including its joints and transitions. A convincing straight-wall section is insufficient.
-2. Establish each barrier's ability to prevent the defined harmful upward moisture transfer under the specified exposure when the other two are ineffective. Record what evidence supports that performance and what remains unknown. Redundancy cannot be inferred from layer count, different material names or multiplying assumed probabilities.
-3. Identify shared failures: mortar, render or plaster bridging; debris; raised paving or soil; roots; penetrating services; joint discontinuity; settlement; crushing; incompatible movement; and later alteration. Show how a single credible defect or common bypass is prevented from defeating all three. RICS documents moisture bypassing an intact slate DPC through bridging mortar [4].
-4. Resolve bearing, compression, shear, sliding, restraint and movement with the actual structure, including any consequential arch thrust. Added DPC layers must not create an unassessed slip plane or moisture trap. BDA guidance treats mechanical performance and junction continuity as necessary DPC duties [3].
-5. Show construction verification, inspection of vulnerable boundaries, detection of abnormal moisture, drying and a credible intervention route. Repairs must respect the project's protection of permanent fabric; repeated destructive wall cutting is not an assumed maintenance strategy.
+The design must establish:
 
-Low water exposure, gravity drainage, splash control and inspection are essential supporting protections. **They are not three redundant capillary barriers.** An air gap counts only where its complete detail actually interrupts the claimed capillary path; a void beside a continuous wet masonry pier does not do that. Two brick courses, several slate pieces or a cavity tray serving another water path must not be counted repeatedly.
+1. The complete moisture path through external and internal walls, applicable masonry leaves, piers, floor interfaces, corners, thresholds and penetrations. The barrier must remain continuous through its joints and transitions; a convincing straight-wall section is insufficient.
+2. Appropriate material grade, thickness, number of courses, bedding and joint arrangement for the actual exposure, loads, workmanship tolerances and long-term movement. Record the conventional baseline, the proposed extra margin and the evidence for its benefit, without inventing a numerical reliability improvement.
+3. Protection against bypass through mortar, render or plaster; debris; raised paving or soil; roots; services; joint discontinuity; settlement; crushing; and later alteration. RICS documents moisture bypassing an intact slate DPC through bridging mortar [4]. Increasing the thickness of the barrier does not by itself remove such a route.
+4. Bearing, compression, shear, sliding, restraint and movement compatibility with the actual structure, including any consequential arch thrust. Additional layers must not create an unassessed slip plane or moisture trap. BDA guidance treats mechanical performance and junction continuity as necessary DPC duties [3].
+5. Construction verification, inspection of vulnerable boundaries, detection of abnormal moisture, drying and a credible intervention route. Repairs must respect the project's protection of permanent fabric; repeated destructive wall cutting is not an assumed maintenance strategy.
 
-Appropriate brick and slate assemblies are preferred candidate families. The third independent barrier, the arrangement of all three and their structural compatibility remain unresolved. If a safe, proportionate arrangement cannot be demonstrated, retain that conflict for an explicit owner decision or redesign; do not silently reduce the requirement, install plastic or label complementary measures as achieved triple redundancy.
+Low water exposure, gravity drainage, splash control and retained ground clearances support this substantial barrier. Any claimed independent backup must actually interrupt the relevant moisture path; a void beside a continuous wet masonry pier is not an additional capillary break. The final thickness, courses and construction remain open for design development. This policy approves no product or layered detail.
 
 ## The thousand-year ambition
 
-**Use 1,000 years as the owner's ambition for enduring protection against rising damp.** It is not a validated service life, a quantified reliability result, a maintenance-free specification or a promise of zero risk. None of the sources below establishes a thousand-year three-barrier assembly.
+**Use 1,000 years as the owner's ambition for enduring protection against rising damp.** It is not a validated service life, a quantified reliability result, a maintenance-free specification or a promise of zero risk. None of the sources below establishes a thousand-year assembly.
 
-The practical consequences are durable ground-contact materials, avoidance of dependence on inaccessible short-lived components, independently effective barriers, retained ground clearances, observable bypass risks and stewardship that future owners can understand. State inspection and renewal obligations honestly. A long-lived material does not establish the life of its joints, workmanship or surrounding geometry, and a century of apparently sound precedent does not prove another nine centuries.
+The practical consequences are durable ground-contact materials, avoidance of dependence on inaccessible short-lived components, substantial and well-detailed moisture separation, retained ground clearances, observable bypass risks and stewardship that future owners can understand. State inspection and renewal obligations honestly. A long-lived material does not establish the life of its joints, workmanship or surrounding geometry, and a century of apparently sound precedent does not prove another nine centuries.
 
 ## Existing design and assurance owners
 
 | Owner | Required consequence |
 |---|---|
 | DPL | Apply passive dryness to plot selection and actual groundwater, flood, outfall and approach-level assessment; retain unknowns until site evidence exists. |
-| MAT-ENVELOPE with BCR and the assembly designers | Develop complete non-plastic ground/wall/floor moisture boundaries; compare the three-barrier candidates, structural effects, buildability, costs and intervention routes. Preserve necessary gas, thermal and other envelope duties. |
+| MAT-ENVELOPE with BCR and the assembly designers | Develop complete non-plastic ground/wall/floor moisture boundaries; establish substantial barrier construction and justified extra margin, structural effects, buildability, costs and intervention routes. Preserve necessary gas, thermal and other envelope duties. |
 | RWT with ROF/HAD/OAS/IAS as applicable | Coordinate roof and court collection, landscape, thresholds and any proposed service void with the dry building section and the named site-water handoff. No new drain sizing is established here. |
-| MRA-01 and MRA-04 | Attack the actual proposed geometry and capillary barriers, including each barrier left acting alone, common bypasses, blocked outlets, unavailable power and relevant flooded-outfall cases. Record limitations rather than award independence from a diagram. |
+| MRA-01 and MRA-04 | Attack the actual proposed geometry and damp barrier, including joints, bypasses, movement, blocked outlets, unavailable power and relevant flooded-outfall cases. Check any claimed benefit from added thickness or backup layers; retain the existing single-failure and compound-case assurance rules. |
 | DEL | Carry accepted details, ground-level controls, construction hold points, maintenance information and substitution rules into delivery and handover. |
 
 This is a requirement amendment routed through existing workstreams. It does not complete their design or assurance work, change the accepted house geometry or create a parallel task graph. Historical studies retain their original scope; their earlier completion is not evidence of compliance with this later requirement.
 
 ## Evidence and applicability
 
-Primary sources consulted on 30 October 2026. These support candidate materials and known failure mechanisms; the heightened owner requirement and its three-barrier acceptance test are project decisions.
+Primary sources consulted on 30 October 2026. These support candidate materials and known failure mechanisms; the heightened robustness requirement is an owner decision with the detailed arrangement delegated to design judgement.
 
 1. [Approved Document C, 2004 edition incorporating 2010 and 2013 amendments](https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf), particularly paragraphs 4.14 and 5.5. England guidance; material alternatives, moisture separation and protection against water collection. It is not a whole-house compliance or lifetime certificate.
 2. [Brick Development Association, Brickwork Durability, Design Note 7](https://www.brick.org.uk/uploads/downloads/g-brickwork-durability.pdf), section on damp-proof-course brickwork. DPC suitability, brick categories, bonding and mortar requirements; not proof of a redundant hybrid assembly.

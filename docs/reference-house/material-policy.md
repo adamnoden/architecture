@@ -35,7 +35,7 @@ Do not introduce hazardous legacy materials, deficient insulation, unsuitable le
 
 ### Ground moisture and damp-proof courses
 
-The owner specifically rejects plastic DPCs and favours suitable slate and engineering-brick assemblies. Apply the [ground-water and rising-damp policy](ground-water-policy.md): develop three independently effective passive, non-plastic capillary barriers, with a 1,000-year durability ambition and explicit evidence limits. Material names or extra courses do not establish redundancy. Appropriate brick/slate grades, bedding, mortar, joints, continuity with floors and thresholds, movement and structural load transfer must be established for the complete assembly. The third barrier and the combined detail remain unresolved; no default polymer exception, selected stack or lifetime guarantee is created here.
+The owner specifically rejects plastic DPCs and favours suitable slate and engineering-brick assemblies. Apply the [ground-water and rising-damp policy](ground-water-policy.md): develop substantial non-plastic protection with generous evidence-based margin, a 1,000-year durability ambition and explicit evidence limits. The owner's clarified intent is overbuilding where useful, with thickness and arrangement left to design judgement. Appropriate brick/slate grades, bedding, mortar, joints, continuity with floors and thresholds, movement and structural load transfer must be established for the complete assembly. No three-system requirement, literal thickness multiplier, default polymer exception, selected stack or lifetime guarantee is created here.
 
 ## Evidence and exceptions
 
