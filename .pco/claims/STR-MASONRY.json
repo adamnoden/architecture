@@ -9,12 +9,13 @@
     "label": "STR masonry worker /root/masonry_wall_review"
   },
   "claimedAt": "2026-10-30T22:07:49.000Z",
-  "heartbeatAt": "2026-10-30T22:46:03.000Z",
-  "expiresAt": "2026-10-30T23:31:03.000Z",
+  "heartbeatAt": "2026-10-30T22:54:26.000Z",
+  "expiresAt": "2026-10-30T23:39:26.000Z",
   "branch": "work/str-masonry-20261030-a3f5f8b3",
   "note": "Explicit owner-directed STR-MASONRY assignment; canonical main c32b66570d4a4946f8286fe4f0809fe225a0b495 shows ready. Terminal Git transport unavailable. Earlier subagent create request returned aborted after a long wait with no acknowledgement; fresh exact-path read at 22:06:41 UTC confirmed absence. Root now relays this fresh exact create-if-absent for the worker; no CLI acquisition or takeover claimed.",
   "checkpoint": {
-    "evidence": "Recovery branch work/str-masonry-20261030-a3f5f8b3 at302b60b863325326e931887d788346068aded600; source-bound final wall/arch study and A3 sheet reviewed locally by two workers; final publication not yet claimed",
-    "next": "Reconcile final source with STR-SPANS merge, publish final MASONRY PR, run full exact-head CI and canonical preflight"
-  }
+    "evidence": "PR #1108 final head f545c8d78087a4662dfcd4baf595313ea98c957a; integrated on main90cbc; reviewed wall/arch study, geometry, node lifecycle and public routes; exact-head CI running",
+    "next": "Inspect full health/publication CI, run fresh canonical publication preflight, merge and release if both pass"
+  },
+  "pr": 1108
 }
