@@ -1,23 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "193d4386-501a-43bc-a24a-c794154d0b37",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6533365522"
+    "label": "issue-comment-6534295424"
   },
-  "claimedAt": "2026-10-30T21:01:53.000Z",
-  "heartbeatAt": "2026-10-30T21:26:29.000Z",
-  "expiresAt": "2026-10-30T21:26:29.000Z",
-  "branch": "work/mvb-chat-6533365522",
-  "checkpoint": {
-    "evidence": "PR #1102 merged at ba20c2aea46d013c07ed3f9f0aa2bbd5b644e847; final head 830f126a passed full CI 41130150368 and canonical preflight 41130067395; seven tests reproduced",
-    "next": "Resolve copper profiles, support/exposure and joint consumables, actual brass fabrication and renewable pressure-qualified concealed end assembly; use compartment failure result",
-    "blocker": "No installed compatibility, hydraulic capacity or threshold acceptance; RWT-METALS remains planned"
+  "claimedAt": "2026-10-30T21:54:11.000Z",
+  "heartbeatAt": "2026-10-30T21:54:11.000Z",
+  "expiresAt": "2026-10-30T22:39:11.000Z",
+  "branch": "work/mvb-chat-6534295424",
+  "predecessor": {
+    "leaseId": "193d4386-501a-43bc-a24a-c794154d0b37",
+    "generation": 1,
+    "branch": "work/mvb-chat-6533365522",
+    "pr": 1102,
+    "checkpoint": {
+      "evidence": "PR #1102 merged at ba20c2aea46d013c07ed3f9f0aa2bbd5b644e847; final head 830f126a passed full CI 41130150368 and canonical preflight 41130067395; seven tests reproduced",
+      "next": "Resolve copper profiles, support/exposure and joint consumables, actual brass fabrication and renewable pressure-qualified concealed end assembly; use compartment failure result",
+      "blocker": "No installed compatibility, hydraulic capacity or threshold acceptance; RWT-METALS remains planned"
+    }
   },
-  "pr": 1102,
-  "releasedAt": "2026-10-30T21:26:29.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "193d4386-501a-43bc-a24a-c794154d0b37",
+    "generation": 1,
+    "branch": "work/mvb-chat-6533365522",
+    "pr": 1102,
+    "checkpoint": {
+      "evidence": "PR #1102 merged at ba20c2aea46d013c07ed3f9f0aa2bbd5b644e847; final head 830f126a passed full CI 41130150368 and canonical preflight 41130067395; seven tests reproduced",
+      "next": "Resolve copper profiles, support/exposure and joint consumables, actual brass fabrication and renewable pressure-qualified concealed end assembly; use compartment failure result",
+      "blocker": "No installed compatibility, hydraulic capacity or threshold acceptance; RWT-METALS remains planned"
+    }
+  }
 }
