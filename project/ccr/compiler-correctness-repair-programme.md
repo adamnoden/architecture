@@ -1,6 +1,6 @@
 # CCR — Compiler Correctness Repair
 
-**State:** bounded successor programme in progress; canonical control and the owning results below record packet implementation and closeout.
+**State:** bounded correctness repairs and integrated identity-contract review complete; no expanded physical or regulatory proof.
 **Audit baseline:** `a31efba595449295ef8b19cd55c7d2d49d7cb129` (29 October 2026).  
 **Execution authority:** the registered CCR workstream and its canonical PCO nodes.
 
@@ -15,6 +15,10 @@ Issue [#923](https://github.com/adamnoden/architecture/issues/923) retains its s
 ## Current results
 
 - [CCR-PLAN — rectangle unions and plate closure](ccr-plan-result.md): complete at represented orthogonal-region scope; canonical and contrast outputs unchanged.
+
+- [CCR-STAIR — relative datums and discrete topology](ccr-stair-result.md): complete at arithmetic/source-provenance scope.
+- [CCR-DRAINAGE — source truth and bounded declarations](ccr-drainage-result.md): complete at authored topology scope; physical rainwater selection remains with RWT.
+- [CCR-IDENTITY — tested compact identity guarantee and integration](ccr-identity-result.md): complete; existing schema retained, output byte identity remains separate.
 
 ## Audit finding allocation
 
