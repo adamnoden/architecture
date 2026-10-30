@@ -14,7 +14,7 @@ Owner-directed PCO-CRASH, 30 October 2026; implementation issue #1083. After the
 
 ## Implemented scope
 
-- `claims.ts`: new **optional** `predecessor` evidence identity on a next-normal-acquisition generation. It records the prior UUID/generation, branch/PR and checkpoint; no prior checkpoint is copied to the successor's own `checkpoint`. Malformed, future/self predecessor identities fail parsing. Reusing the predecessor branch is rejected where both branches are given.
+- `claims.ts`: new **optional** `predecessor` identity and `recoverySource` (latest durable checkpoint origin) on a next-normal-acquisition generation, including survival through multiple empty successor runs. It records the prior UUID/generation, branch/PR and checkpoint; no prior checkpoint is copied to the successor's own `checkpoint`. Malformed, future/self predecessor identities fail parsing. Reusing the predecessor branch is rejected where both branches are given.
 - `dispatch.ts`: guarded started-node recovery through **the existing self-service dispatcher**, only if a prior non-occupying claim has a branch plus evidence/next checkpoint. Manual and evidence-free active nodes remain outside automatic dispatch. Existing critical-depth and relief ranking remains intact.
 - `claim-store.ts`: recheck active recovery evidence after candidate selection, immediately at store acquisition. If evidence was altered between dispatch snapshot and claim, treat it as a selection race and rerank, without issuing a mutation for that node.
 - `operations.ts`: additive read-only recovery fields and a human-facing report distinguishing candidate predecessor evidence, active nodes needing review, and observed unmerged PRs. Missing claims or PR evidence stays unknown.
