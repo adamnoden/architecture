@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "PCO-CRASH",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3a92a08b-8671-4b8d-b5c3-4c672e97da32",
   "holder": {
     "kind": "chatgpt",
     "label": "regular-chat-pco-crash-20261030"
   },
   "claimedAt": "2026-10-30T09:24:17.600Z",
-  "heartbeatAt": "2026-10-30T09:25:08.386Z",
-  "expiresAt": "2026-10-30T10:10:08.386Z",
+  "heartbeatAt": "2026-10-30T09:33:35.045Z",
+  "expiresAt": "2026-10-30T09:33:35.045Z",
   "branch": "work/pco-mvb-crash-recovery-1-2",
   "checkpoint": {
-    "evidence": "PR #1087 head 022f5705511667403b1ee160ec86efb668180ebb; 13 changed paths",
-    "next": "Exact-head CI and current-main reconciliation, followed by expected-head publication"
+    "evidence": "PR #1087 merged to main at 6a5874f7ff66c6249c7d5d2b6a74debbc6f6fb23",
+    "next": "No execution needed; canonical node complete; verify projections and CI."
   },
   "note": "Owner-directed bootstrap: PCO-CRASH new node exists on feature branch and awaits integration on main. Temporary unknown-live claim on main is known.",
-  "pr": 1087
+  "pr": 1087,
+  "releasedAt": "2026-10-30T09:33:35.045Z",
+  "releaseReason": "completed"
 }
