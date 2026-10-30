@@ -33,7 +33,7 @@ export const publicationNodes = defineNodes([
     owners: ['PUB'],
     title: 'Content-independent private-object preparation',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/pub/pub-02-preparation-result.md'],
   },
