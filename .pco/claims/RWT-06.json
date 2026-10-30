@@ -9,11 +9,12 @@
     "label": "recovery-sequential-20261030"
   },
   "claimedAt": "2026-10-30T09:05:47.278Z",
-  "heartbeatAt": "2026-10-30T09:05:47.278Z",
-  "expiresAt": "2026-10-30T09:50:47.278Z",
+  "heartbeatAt": "2026-10-30T09:07:18.621Z",
+  "expiresAt": "2026-10-30T09:52:18.621Z",
   "branch": "recovery/rwt-1080-20261030",
   "checkpoint": {
-    "evidence": "Review original draft #1080 head b272be70b9a294e2124ab60a05c2cd9fddc03276. Source has prior peer review and explicit unadopted adverse findings.",
-    "next": "Replay reviewed study on current main, resolve any further supported selection, validate exact head; merge bounded partial only if correctly scoped and leave node planned otherwise."
-  }
+    "evidence": "PR #1084 current-main source replay at 2ca14e53680a8ecb0f106d68e5a92a1b42d9bf92, preserves all five verified original source blobs; RWT-06 remains planned",
+    "next": "Exact-head CI, compare main ancestry and live lease; merge partial checkpoint, close superseded #1080, release as handoff. Do not claim engineering adequacy."
+  },
+  "pr": 1084
 }
