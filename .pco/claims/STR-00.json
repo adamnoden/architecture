@@ -2,20 +2,21 @@
   "schemaVersion": 1,
   "node": "STR-00",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ac1bbd7c-52f5-4c39-b6af-1a7bd5757ebf",
   "holder": {
     "kind": "chatgpt",
     "label": "owner-str-authoring-20261030"
   },
   "claimedAt": "2026-10-30T21:22:08.000Z",
-  "heartbeatAt": "2026-10-30T21:43:19.000Z",
-  "expiresAt": "2026-10-30T22:28:19.000Z",
+  "heartbeatAt": "2026-10-30T21:45:55.000Z",
+  "expiresAt": "2026-10-30T21:45:55.000Z",
   "branch": "work/str-architecture-ac1bbd7c",
   "note": "Owner-directed STR-00 bootstrap under issue #1103 and swarm-runbook connector-only boundary. STR-00 is absent from main until programme/graph registration merges; undirected dispatch may fail closed meanwhile. Exact create-if-absent CAS; no CLI acquisition or takeover is claimed.",
   "checkpoint": {
-    "evidence": "PR #1104 final source head b25c07c5383e01e0c5b52b0037f393c11949e289; full repository health and paired production typography proof passed; temporary preflight source removed",
-    "next": "Finish publication PDF checks, rerun fresh canonical merge-check for this exact head, merge, reconcile issue/projections and release",
-    "blocker": "Remaining exact-head publication checks running"
-  }
+    "evidence": "PR #1104 merged as eddb0db5ae155c19edab5b74cfa5d8ddb9e7c1b0; final source b25c07c5383e01e0c5b52b0037f393c11949e289 passed full repository/publication checks and fresh canonical merge-check at 21:44:39 UTC",
+    "next": "STR-00 authoring complete; parent #1103 remains open for STR-MASONRY and STR-SPANS, followed by house/reconciliation packets"
+  },
+  "releasedAt": "2026-10-30T21:45:55.000Z",
+  "releaseReason": "completed"
 }
