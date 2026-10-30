@@ -14,7 +14,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'ADE-DELIVERY-AUDIT', owners: ['ADE'], title: 'Map construction-information needs to existing capabilities',
-    dependencies: [], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: [], lifecycle: 'complete', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/delivery-audit-result.md']
   },
   {
