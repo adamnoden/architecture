@@ -55,7 +55,6 @@ flowchart LR
   end
   subgraph g_PLT["PLT"]
     direction TB
-    n_PLT_CURRENT_REVIEW["PLT-CURRENT-REVIEW<br/>Current-house digital plate capability and review handoff<br/><b>READY</b>"]
     n_PLT_FINAL_FREEZE["PLT-FINAL-FREEZE<br/>Final resolved-house plate integration and freeze<br/><b>BLOCKED</b>"]
     n_PLT_FINAL_PREP["PLT-FINAL-PREP<br/>Prepare coherent final current-house digital and print proof set<br/><b>BLOCKED</b>"]
     n_PLT_PRINT_REVIEW["PLT-PRINT-REVIEW<br/>Receive and disposition actual-size BOOK and WALL print verdicts<br/><b>BLOCKED</b>"]
@@ -63,12 +62,10 @@ flowchart LR
   subgraph g_EDA["EDA"]
     direction TB
     n_EDA_RENEWED["EDA-RENEWED<br/>Renewed editorial-doctrine assurance over enlarged final source<br/><b>BLOCKED</b>"]
-    n_EDA_ARGUMENT["EDA-ARGUMENT<br/>Red-team architectural contribution and evidence for the central thesis<br/><b>READY</b>"]
-    n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>BLOCKED</b>"]
+    n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>READY</b>"]
   end
   subgraph g_PUB["PUB"]
     direction TB
-    n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>READY</b>"]
     n_PUB_02_FINAL["PUB-02-FINAL<br/>Final private-object content, drawing and manufacture gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_ADE["ADE"]
@@ -127,12 +124,9 @@ flowchart LR
   n_PLT_FINAL_PREP --> n_PLT_FINAL_FREEZE
   n_PLT_PRINT_REVIEW --> n_PLT_FINAL_FREEZE
   n_PLT_FINAL_FREEZE --> n_EDA_RENEWED
-  n_PUB_02_PREP --> n_PUB_02_FINAL
   n_EDA_RENEWED --> n_PUB_02_FINAL
   n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
-  n_PLT_CURRENT_REVIEW --> n_PLT_FINAL_PREP
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
-  n_EDA_ARGUMENT --> n_EDA_NARRATIVE
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
   n_HRS_TECHNICAL --> n_ADE_MODEL
   n_ADE_MODEL --> n_ADE_DETAILS
@@ -193,15 +187,12 @@ flowchart LR
   class n_MRA_03 blocked;
   class n_MRA_04 blocked;
   class n_MRA_05 blocked;
-  class n_PLT_CURRENT_REVIEW ready;
   class n_PLT_FINAL_FREEZE blocked;
   class n_EDA_RENEWED blocked;
-  class n_PUB_02_PREP ready;
   class n_PUB_02_FINAL blocked;
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
-  class n_EDA_ARGUMENT ready;
-  class n_EDA_NARRATIVE blocked;
+  class n_EDA_NARRATIVE ready;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
@@ -362,7 +353,7 @@ flowchart LR
   end
   subgraph g_PLT["PLT"]
     direction TB
-    n_PLT_CURRENT_REVIEW["PLT-CURRENT-REVIEW<br/>Current-house digital plate capability and review handoff<br/><b>READY</b>"]
+    n_PLT_CURRENT_REVIEW["PLT-CURRENT-REVIEW<br/>Current-house digital plate capability and review handoff<br/><b>DONE</b>"]
     n_PLT_FINAL_FREEZE["PLT-FINAL-FREEZE<br/>Final resolved-house plate integration and freeze<br/><b>BLOCKED</b>"]
     n_PLT_FINAL_PREP["PLT-FINAL-PREP<br/>Prepare coherent final current-house digital and print proof set<br/><b>BLOCKED</b>"]
     n_PLT_PRINT_REVIEW["PLT-PRINT-REVIEW<br/>Receive and disposition actual-size BOOK and WALL print verdicts<br/><b>BLOCKED</b>"]
@@ -371,12 +362,12 @@ flowchart LR
     direction TB
     n_EDA_RENEWED["EDA-RENEWED<br/>Renewed editorial-doctrine assurance over enlarged final source<br/><b>BLOCKED</b>"]
     n_EDA_ADAPTER["EDA-ADAPTER<br/>Restore authored ownership of architectural publication prose<br/><b>DONE</b>"]
-    n_EDA_ARGUMENT["EDA-ARGUMENT<br/>Red-team architectural contribution and evidence for the central thesis<br/><b>READY</b>"]
-    n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>BLOCKED</b>"]
+    n_EDA_ARGUMENT["EDA-ARGUMENT<br/>Red-team architectural contribution and evidence for the central thesis<br/><b>DONE</b>"]
+    n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>READY</b>"]
   end
   subgraph g_PUB["PUB"]
     direction TB
-    n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>READY</b>"]
+    n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>DONE</b>"]
     n_PUB_02_FINAL["PUB-02-FINAL<br/>Final private-object content, drawing and manufacture gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_DEL["DEL"]
@@ -748,16 +739,16 @@ flowchart LR
   class n_MRA_03 blocked;
   class n_MRA_04 blocked;
   class n_MRA_05 blocked;
-  class n_PLT_CURRENT_REVIEW ready;
+  class n_PLT_CURRENT_REVIEW done;
   class n_PLT_FINAL_FREEZE blocked;
   class n_EDA_RENEWED blocked;
-  class n_PUB_02_PREP ready;
+  class n_PUB_02_PREP done;
   class n_PUB_02_FINAL blocked;
   class n_EDA_ADAPTER done;
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
-  class n_EDA_ARGUMENT ready;
-  class n_EDA_NARRATIVE blocked;
+  class n_EDA_ARGUMENT done;
+  class n_EDA_NARRATIVE ready;
   class n_DEL_BRIEF done;
   class n_DEL_ISSUE_PROFILES done;
   class n_ADE_DELIVERY_AUDIT done;

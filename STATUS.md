@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 10 · **Active:** 0 · **Blocked:** 29 · **Held:** 2 · **Done:** 83 · **Cancelled:** 0
+**Structurally ready:** 8 · **Active:** 0 · **Blocked:** 28 · **Held:** 2 · **Done:** 86 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -24,9 +24,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | RWT-07 |
-| `PLT-CURRENT-REVIEW` | Current-house digital plate capability and review handoff | PLT | — |
-| `PUB-02-PREP` | Content-independent private-object preparation | PUB | — |
-| `EDA-ARGUMENT` | Red-team architectural contribution and evidence for the central thesis | EDA | EDA-NARRATIVE |
+| `EDA-NARRATIVE` | Reshape and subtract for a compelling architectural reader journey | EDA | — |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -59,10 +57,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `MRA-05` | Post-BCR moisture assurance closeout | BCR-CONVERGENCE |
 | `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | PLT-FINAL-PREP, PLT-PRINT-REVIEW |
 | `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE |
-| `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | PUB-02-PREP, EDA-RENEWED |
-| `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
+| `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | EDA-RENEWED |
+| `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS |
 | `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
-| `EDA-NARRATIVE` | Reshape and subtract for a compelling architectural reader journey | EDA-ARGUMENT |
 | `BCR-BAY-DESIGN` | Resolve the selected bay as a coordinated design study | TRIAD-GATE |
 | `ADE-MODEL` | Connect current design identities to construction-information outputs | HRS-TECHNICAL |
 | `ADE-DETAILS` | Produce source-bound technical bay drawings and details | ADE-MODEL, BCR-BAY-DESIGN |
@@ -101,7 +98,7 @@ PCO monitors the evidence content from baseline `c3701c5`. A changed evidence fi
 
 | Assessment | Maturity | Reviewed | Evidence files | Evidence watch |
 |---|---:|---|---:|---|
-| **Public architectural position** | **M4** | 2026-10-19 | 12 | content unchanged against PCO evidence baseline |
+| **Public architectural position** | **M4** | 2026-10-19 | 12 | **STALE — reassess** (`docs/manuscript/part-i.md`, `docs/manuscript/part-ii.md`) |
 | **Pattern language** | **M4** | 2026-10-12 | 4 | content unchanged against PCO evidence baseline |
 | **Architectural grammar framework** | **M3** | 2026-10-12 | 3 | content unchanged against PCO evidence baseline |
 | **G-01 grammar instance** | **M4** | 2026-10-14 | 9 | **STALE — reassess** (`docs/reference-house/g01-v0.1-conformance-d12.md`) |
@@ -120,7 +117,7 @@ The named subject/source bindings live in `project/maturity-subjects.ts`. Source
 
 | Assessment | Named assessed subject / revision | Source watch | Applicability limit |
 |---|---|---|---|
-| **Public architectural position** | PR-01 controlled architectural proposition with HFI integration (reviewed 2026-10-19) | monitored sources unchanged; no automatic applicability pass | Architectural doctrine at its stated scope; no particular house or construction acceptance. |
+| **Public architectural position** | PR-01 controlled architectural proposition with HFI integration (reviewed 2026-10-19) | **REASSESS applicability** (`docs/manuscript/part-i.md`, `docs/manuscript/part-ii.md`) | Architectural doctrine at its stated scope; no particular house or construction acceptance. |
 | **Pattern language** | 21 active patterns, three strategies and held candidates (reviewed 2026-10-12) | monitored sources unchanged; no automatic applicability pass | Pattern meanings and corpus only; occurrence in a changed house needs separate design evidence. |
 | **Architectural grammar framework** | Coordinated grammar framework (reviewed 2026-10-12) | monitored sources unchanged; no automatic applicability pass | Framework scope only; neither a new grammar nor a house conformance result is admitted. |
 | **G-01 grammar instance** | G-01 v0.1 frozen grammar and its historical D12/D13 tests (reviewed 2026-10-14) | monitored sources unchanged; no automatic applicability pass | G-01 grammar evidence survives; historical conformance does not transfer automatically to revision 02. |
@@ -129,7 +126,7 @@ The named subject/source bindings live in `project/maturity-subjects.ts`. Source
 | **External professional review** | Historical RH-11 and H1 review preparation (reviewed 2026-10-12) | **REASSESS applicability** (`docs/reference-house/external-review-brief.md`, `docs/reference-house/external-review-regulatory-baseline-rh11.md`) | No competent review response; historical packs are not issue-ready current-house professional acceptance. |
 | **Computational track** | Historical Reference House/RH-C5 and CH-00–08 bounded compiler with finite CCR repairs (reviewed 2026-10-30) | **REASSESS applicability** (`compiler/boundary-slice/compile.ts`, `compiler/boundary-slice/declarations.ts`, `compiler/boundary-slice/model.ts`, `compiler/plan-slice/compile.ts`, `compiler/plan-slice/derive.ts`, `compiler/plan-slice/region-area.ts`, `compiler/reference-house/compile.ts`, `compiler/reference-house/derive.ts`, `compiler/reference-house/identity.ts`, `compiler/reference-house/model.ts`, `compiler/reference-house/system-compile.ts`, `compiler/rhc4/README.md`, `compiler/rhc4/drainage-declarations.test.ts`, `compiler/rhc4/hardening.ts`, `compiler/rhc4/rhc4.test.ts`, `compiler/rhc5/README.md`, `compiler/rhc5/compile.ts`, `compiler/rhc5/method.ts`, `compiler/rhc5/rhc5.test.ts`) | Historical fixture/domain only. Geometry, implementation and controlling-input provenance can change applicability independently; no current-house technical pass follows. |
 | **Evidence / precedent research** | Coordinated evidence/research corpus (reviewed 2026-10-12) | **REASSESS applicability** (`docs/research/README.md`, `docs/research/rainfall-and-hydraulic-basis.md`, `docs/research/rainwater-collection-options.md`, `docs/research/rainwater-conveyance-options.md`, `docs/research/rainwater-failure-and-exceedance.md`, `docs/research/roof-access-and-renewal.md`, `docs/research/roof-assembly-options.md`, `docs/research/roof-covering-families.md`, `docs/research/roof-failure-evaluation.md`, `docs/research/roof-junction-families.md`, `docs/research/roof-rainwater-material-compatibility.md`, `docs/research/roof-system-candidates.md`, `docs/research/roof-topology-families.md`) | Each study retains its own subject and evidence limits; corpus freshness is not a design approval. |
-| **Publication** | Controlled PR-01/publication object with later final-integration holds (reviewed 2026-10-28) | **REASSESS applicability** (`docs/manuscript/part-iv.md`, `docs/manuscript/reference-house-implementation-schedule.md`, `publication/README.md`, `publication/adapters.test.ts`, `publication/adapters.ts`, `publication/figures.ts`, `publication/metadata.json`, `publication/plates-current.ts`, `publication/primer/constitution.md`, `publication/primer/patterns.md`, `publication/primer/reference-house.md`, `publication/scripts/typography.ts`, `publication/scripts/validate-figures.ts`, `publication/scripts/validate-plate-rhythm.ts`, `publication/scripts/validate.ts`, `publication/specimens/typ05/inventory.ts`, `publication/specimens/typ05/mixed-prepare.ts`, `publication/specimens/typ07/audit.ts`, `publication/specimens/typ07/manifest.ts`, `publication/specimens/typ07/prepare.ts`, `publication/typography-metadata.json`) | Internal object/process scope; changed house/content needs final PLT/EDA integration, not automatic release or maturity promotion. |
+| **Publication** | Controlled PR-01/publication object with later final-integration holds (reviewed 2026-10-28) | **REASSESS applicability** (`docs/manuscript/evidence-and-precedent-notes.md`, `docs/manuscript/part-i.md`, `docs/manuscript/part-ii.md`, `docs/manuscript/part-iv.md`, `docs/manuscript/part-v.md`, `docs/manuscript/reference-house-implementation-schedule.md`, `publication/README.md`, `publication/adapters.test.ts`, `publication/adapters.ts`, `publication/figures.ts`, `publication/metadata.json`, `publication/plates-current.ts`, `publication/primer/constitution.md`, `publication/primer/patterns.md`, `publication/primer/reference-house.md`, `publication/scripts/typography.ts`, `publication/scripts/validate-figures.ts`, `publication/scripts/validate-plate-rhythm.ts`, `publication/scripts/validate.ts`, `publication/specimens/typ05/inventory.ts`, `publication/specimens/typ05/mixed-prepare.ts`, `publication/specimens/typ07/audit.ts`, `publication/specimens/typ07/manifest.ts`, `publication/specimens/typ07/prepare.ts`, `publication/typography-metadata.json`) | Internal object/process scope; changed house/content needs final PLT/EDA integration, not automatic release or maturity promotion. |
 | **Deployment / real-site integration** | DPL synthetic SCREENING and DPL-RS-01 UNRESOLVED/conditional evidence (reviewed 2026-10-27) | **REASSESS applicability** (`compiler/dpl/dplT4Lennard.test.ts`, `compiler/dpl/dplT9Lennard.test.ts`, `compiler/dpl/dplT9Lennard.ts`, `compiler/dpl/fixtures/lennard-pre-ccr-reference-output-manifest.json`, `compiler/reference-house/compile.ts`, `compiler/reference-house/derive.ts`, `compiler/reference-house/model.ts`) | Historical candidate and conditional/site-transform evidence only; no empirical compatibility, revision-02 site placement or real commission is established. |
 | **Delivery** | DEL-00 delivery inventory and provisional allocations (reviewed 2026-10-28) | **REASSESS applicability** (`docs/delivery/README.md`, `docs/delivery/information-issue-profiles.md`) | Inventory/preparation only; current-house assemblies, professional/physical evidence and commission acceptance remain outstanding. |
 
