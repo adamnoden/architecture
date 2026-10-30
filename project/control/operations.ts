@@ -2,7 +2,7 @@ import { buildDispatchSnapshot } from './dispatch.js'
 import { nodesByDerivedState } from './derive.js'
 import { leaseHealth } from './lease-health.js'
 import { releaseClaimInStore, type ClaimStore } from './claim-store.js'
-import type { ClaimRecord } from './claims.js'
+import { lastRecoverableEvidence, type ClaimRecord } from './claims.js'
 import type { ControlNode } from './types.js'
 
 export interface PullRequestObservation {
@@ -68,9 +68,9 @@ export function operationsBrief(nodes: readonly ControlNode[], claims: readonly 
   const recoveryCandidates=dispatch?.safeForAutomaticClaim ? dispatch.candidates
     .filter(candidate=>candidate.previousClaim)
     .map(candidate=>({node:candidate.node.id,previousGeneration:candidate.previousClaim!.generation,
-      predecessorBranch:candidate.previousClaim!.branch??null,
-      predecessorPR:candidate.previousClaim!.pr??null,
-      checkpoint:candidate.previousClaim!.checkpoint??null,
+      predecessorBranch:lastRecoverableEvidence(candidate.previousClaim!)?.branch??candidate.previousClaim!.branch??null,
+      predecessorPR:lastRecoverableEvidence(candidate.previousClaim!)?.pr??candidate.previousClaim!.pr??null,
+      checkpoint:lastRecoverableEvidence(candidate.previousClaim!)?.checkpoint??candidate.previousClaim!.checkpoint??null,
       resumeActive:!!candidate.resumeActive})) : null
   const recoveryReview=dispatch?.activeUnclaimed.map(node=>({node:node.id,
     reason:'Active packet lacks eligible self-service recovery evidence or is manually dispatched',
