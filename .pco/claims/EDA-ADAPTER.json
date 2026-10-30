@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "node": "EDA-ADAPTER",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "0d120f6e-0a46-42e0-af32-86b0d661853f",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-2"
+  },
+  "claimedAt": "2026-10-30T00:04:12.194Z",
+  "heartbeatAt": "2026-10-30T00:04:12.194Z",
+  "expiresAt": "2026-10-30T00:49:12.194Z"
+}
