@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 10,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "477705b6-8a6c-4e79-afc7-fb021b6c46b2",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6531802596"
   },
   "claimedAt": "2026-10-30T19:32:50.000Z",
-  "heartbeatAt": "2026-10-30T19:54:22.000Z",
-  "expiresAt": "2026-10-30T20:39:22.000Z",
+  "heartbeatAt": "2026-10-30T19:55:34.000Z",
+  "expiresAt": "2026-10-30T19:55:34.000Z",
   "branch": "work/mvb-chat-6531802596",
   "predecessor": {
     "leaseId": "5eb01e18-1537-4377-8ec2-2a32bed5be9b",
@@ -39,5 +39,7 @@
     "evidence": "PR #1099 merged at 6f7bfef005cd22fe5ab0737be1fa871376ac2123; exact-head full CI 41118417298 and read-only preflight 41118375053 passed; eleven tests reproduced",
     "next": "Confirm or falsify the eight-ring solid-wall PVC candidate: actual stiffness, ring retention, independently supported couplings and pressure-qualified court seal",
     "blocker": "Published comparison is not installed compatibility, structural, hydraulic, threshold or site acceptance; RWT-06 remains planned"
-  }
+  },
+  "releasedAt": "2026-10-30T19:55:34.000Z",
+  "releaseReason": "handoff"
 }
