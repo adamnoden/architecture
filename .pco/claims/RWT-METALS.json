@@ -9,8 +9,8 @@
     "label": "issue-comment-6535138180"
   },
   "claimedAt": "2026-10-30T22:49:32.000Z",
-  "heartbeatAt": "2026-10-30T23:10:10.000Z",
-  "expiresAt": "2026-10-30T23:55:10.000Z",
+  "heartbeatAt": "2026-10-30T23:25:20.000Z",
+  "expiresAt": "2026-10-31T00:10:20.000Z",
   "branch": "work/mvb-chat-6535138180",
   "predecessor": {
     "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1112 incorporates main 68d0273 at head 5d18296; actual flange clash, right-angle mechanism, clarified lateral-removal counterexample; eight local tests pass",
-    "next": "Run final exact-head CI and read-only canonical preflight with Node24 reproduction, then merge and release",
-    "blocker": "Installed face/gasket, dry access section, supports and hydraulics remain unproved; RWT-METALS stays planned"
+    "evidence": "PR #1112 merged ca19138d0315e000d40d06a056fc0b91054b2802; head 68fbbb13 passed full CI 41143884504 and canonical preflight 41142788420 job124364332950; eight tests reproduced",
+    "next": "Locate accessible carrier and retained courtyard water boundary with RWT-06/HAD/STR before enlarging blind sleeves; specify actual face/gasket and full removal sweep",
+    "blocker": "No matched polymer-free installed terminal, dry service section, support or hydraulic acceptance; RWT-METALS remains planned"
   },
   "pr": 1112
 }
