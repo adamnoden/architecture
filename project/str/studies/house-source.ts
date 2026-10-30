@@ -5,8 +5,8 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { layoutRevision as d, revisionOpenings, entryVoid } from '../../../compiler/reference-house/georgian/layout-revision.ts'
-import { layoutFamilySource } from '../../../compiler/reference-house/georgian/layout-family.ts'
+import { layoutRevision as d, revisionOpenings, entryVoid } from '../../../compiler/reference-house/georgian/layout-revision.js'
+import { layoutFamilySource } from '../../../compiler/reference-house/georgian/layout-family.js'
 
 const out = dirname(fileURLToPath(import.meta.url))
 const repo = resolve(out, '../../..')

@@ -21,9 +21,9 @@ export const materialNodes = defineNodes([
     owners: ['MAT'],
     title: 'Inventory synthetic constituents across visible and concealed house assemblies',
     dependencies: ['MAT-00'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/mat/constituent-audit.md']
   },
   {
     id: 'MAT-ENVELOPE',

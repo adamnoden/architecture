@@ -88,6 +88,7 @@ selection and shared compatibility checks.
 - [Continuation: relocate the en suite and test connected bedroom use](had-03-relocation-trial.md).
 - [Larger Bedroom 4 allocation and visible stack candidate](had-03-bedroom4-allocation.md) — unadopted; shared plan/section work continues.
 - [Product-sized small-en-suite fit review](had-03-ensuite-fit-review.md) and [source-bound diagnostic](studies/ensuite-fit-study.svg).
+- [Guest-WC privacy, open-gap sightlines and the shutter-space comparison](had-03-guest-wc-privacy.md) — glazing-first direction with optical, site and actual-operation admission still open.
 
 HAD-03 is started and incomplete. The worked kitchen uses solid-pier stations
 and a dry prep table because a continuous 900-high worktop would cross 750-sill

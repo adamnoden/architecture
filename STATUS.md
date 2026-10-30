@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 11 · **Active:** 0 · **Blocked:** 34 · **Held:** 2 · **Done:** 94 · **Cancelled:** 0
+**Structurally ready:** 12 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 96 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -24,10 +24,11 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | — |
-| `RWT-SHED` | Develop free-shedding edges and planted ground-receiver comparisons | RWT / ROF / HAD | — |
-| `RWT-METALS` | Develop copper collection, brass channels and non-plastic concealed routes | RWT | — |
+| `RWT-METALS` | Develop copper collection, brass channels and non-plastic concealed routes | RWT | RWT-ROBUSTNESS |
 | `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | STR-RECONCILE |
-| `MAT-AUDIT` | Inventory synthetic constituents across visible and concealed house assemblies | MAT | MAT-ENVELOPE, MAT-SERVICES, MAT-INTERIORS |
+| `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT | — |
+| `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
+| `MAT-INTERIORS` | Resolve non-plastic interior and wet-room assembly alternatives | MAT | — |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -49,15 +50,12 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, DEL-CURRENT |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE |
-| `RWT-ROBUSTNESS` | Test full-duty independent paths, reserve and common-cause rainwater failures | RWT-SHED, RWT-METALS |
-| `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-06, RWT-SHED, RWT-METALS, RWT-ROBUSTNESS |
+| `RWT-ROBUSTNESS` | Test full-duty independent paths, reserve and common-cause rainwater failures | RWT-METALS |
+| `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-06, RWT-METALS, RWT-ROBUSTNESS |
 | `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | RWT-07, HAD-03, STR-RECONCILE |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
 | `STR-RECONCILE` | Reconcile structural interfaces and affected evidence for house selection | STR-HOUSE |
-| `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT-AUDIT |
-| `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT-AUDIT |
-| `MAT-INTERIORS` | Resolve non-plastic interior and wet-room assembly alternatives | MAT-AUDIT |
 | `MAT-COORDINATION` | Reconcile selected-house material compliance and explicit owner exceptions | MAT-ENVELOPE, MAT-SERVICES, MAT-INTERIORS, IAS-03, HAD-03, ROF-RWT-GATE |
 | `MRA-01` | External water and ground-envelope assault | TRIAD-GATE |
 | `MRA-02` | Internal water and wet-zone assault | TRIAD-GATE |
@@ -82,7 +80,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`RWT-SHED` → `RWT-ROBUSTNESS` → `RWT-07` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`RWT-METALS` → `RWT-ROBUSTNESS` → `RWT-07` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
@@ -134,7 +132,7 @@ The named subject/source bindings live in `project/maturity-subjects.ts`. Source
 | **Physical prototypes** | P01/W2 challenger and P03/P04 prototype preparation (reviewed 2026-10-12) | **REASSESS applicability** (`docs/prototypes/README.md`, `docs/prototypes/p03-floor-edge-engineering-brief.md`, `docs/prototypes/p03-floor-edge-test-protocol.md`, `docs/prototypes/p03-structural-floor-edge-handoff.md`, `docs/prototypes/p04-wall-ceiling-build-pack.md`, `docs/prototypes/p04-wall-ceiling-test-protocol.md`, `project/triad-interface-contract.md`) | Preparation at its historical configurations; no physical result or current-house prototype applicability is established. |
 | **External professional review** | Historical RH-11 and H1 review preparation (reviewed 2026-10-12) | **REASSESS applicability** (`docs/reference-house/external-review-brief.md`, `docs/reference-house/external-review-regulatory-baseline-rh11.md`, `project/triad-interface-contract.md`) | No competent review response; historical packs are not issue-ready current-house professional acceptance. |
 | **Computational track** | Historical Reference House/RH-C5 and CH-00–08 bounded compiler with finite CCR repairs (reviewed 2026-10-30) | **REASSESS applicability** (`compiler/boundary-slice/compile.ts`, `compiler/boundary-slice/declarations.ts`, `compiler/boundary-slice/model.ts`, `compiler/plan-slice/compile.ts`, `compiler/plan-slice/derive.ts`, `compiler/plan-slice/region-area.ts`, `compiler/reference-house/compile.ts`, `compiler/reference-house/derive.ts`, `compiler/reference-house/identity.ts`, `compiler/reference-house/model.ts`, `compiler/reference-house/system-compile.ts`, `compiler/rhc4/README.md`, `compiler/rhc4/drainage-declarations.test.ts`, `compiler/rhc4/hardening.ts`, `compiler/rhc4/rhc4.test.ts`, `compiler/rhc5/README.md`, `compiler/rhc5/compile.ts`, `compiler/rhc5/method.ts`, `compiler/rhc5/rhc5.test.ts`, `project/triad-interface-contract.md`) | Historical fixture/domain only. Geometry, implementation and controlling-input provenance can change applicability independently; no current-house technical pass follows. |
-| **Evidence / precedent research** | Coordinated evidence/research corpus (reviewed 2026-10-12) | **REASSESS applicability** (`docs/research/README.md`, `docs/research/rainfall-and-hydraulic-basis.md`, `docs/research/rainwater-collection-options.md`, `docs/research/rainwater-conveyance-options.md`, `docs/research/rainwater-failure-and-exceedance.md`, `docs/research/roof-access-and-renewal.md`, `docs/research/roof-assembly-options.md`, `docs/research/roof-covering-families.md`, `docs/research/roof-failure-evaluation.md`, `docs/research/roof-junction-families.md`, `docs/research/roof-rainwater-material-compatibility.md`, `docs/research/roof-system-candidates.md`, `docs/research/roof-topology-families.md`, `docs/research/solid-walls-and-masonry-arches.md`, `docs/research/structural-floor-roof-options.md`) | Each study retains its own subject and evidence limits; corpus freshness is not a design approval. |
+| **Evidence / precedent research** | Coordinated evidence/research corpus (reviewed 2026-10-12) | **REASSESS applicability** (`docs/research/README.md`, `docs/research/rainfall-and-hydraulic-basis.md`, `docs/research/rainwater-collection-options.md`, `docs/research/rainwater-conveyance-options.md`, `docs/research/rainwater-failure-and-exceedance.md`, `docs/research/roof-access-and-renewal.md`, `docs/research/roof-assembly-options.md`, `docs/research/roof-covering-families.md`, `docs/research/roof-failure-evaluation.md`, `docs/research/roof-junction-families.md`, `docs/research/roof-rainwater-material-compatibility.md`, `docs/research/roof-shedding-and-ground-receivers.md`, `docs/research/roof-system-candidates.md`, `docs/research/roof-topology-families.md`, `docs/research/solid-walls-and-masonry-arches.md`, `docs/research/structural-floor-roof-options.md`) | Each study retains its own subject and evidence limits; corpus freshness is not a design approval. |
 | **Publication** | Controlled PR-01/publication object with later final-integration holds (reviewed 2026-10-28) | **REASSESS applicability** (`docs/manuscript/evidence-and-precedent-notes.md`, `docs/manuscript/governing-principles.md`, `docs/manuscript/part-i.md`, `docs/manuscript/part-ii.md`, `docs/manuscript/part-iv.md`, `docs/manuscript/part-v.md`, `docs/manuscript/preface.md`, `docs/manuscript/publication-architecture.md`, `docs/manuscript/readers-guide.md`, `docs/manuscript/reference-house-implementation-schedule.md`, `project/triad-interface-contract.md`, `publication/README.md`, `publication/adapters.test.ts`, `publication/adapters.ts`, `publication/figures.ts`, `publication/metadata.json`, `publication/part-iii.md`, `publication/pattern-reference.md`, `publication/plates-current.ts`, `publication/primer/constitution.md`, `publication/primer/patterns.md`, `publication/primer/reference-house.md`, `publication/publication.ts`, `publication/scripts/prepare.ts`, `publication/scripts/typography.ts`, `publication/scripts/validate-figures.ts`, `publication/scripts/validate-plate-rhythm.ts`, `publication/scripts/validate.ts`, `publication/specimens/typ05/inventory.ts`, `publication/specimens/typ05/mixed-prepare.ts`, `publication/specimens/typ07/audit.ts`, `publication/specimens/typ07/manifest.ts`, `publication/specimens/typ07/prepare.ts`, `publication/typography-metadata.json`) | Internal object/process scope; changed house/content needs final PLT/EDA integration, not automatic release or maturity promotion. |
 | **Deployment / real-site integration** | DPL synthetic SCREENING and DPL-RS-01 UNRESOLVED/conditional evidence (reviewed 2026-10-27) | **REASSESS applicability** (`compiler/dpl/dplT4Lennard.test.ts`, `compiler/dpl/dplT9Lennard.test.ts`, `compiler/dpl/dplT9Lennard.ts`, `compiler/dpl/fixtures/lennard-pre-ccr-reference-output-manifest.json`, `compiler/reference-house/compile.ts`, `compiler/reference-house/derive.ts`, `compiler/reference-house/model.ts`, `project/triad-interface-contract.md`) | Historical candidate and conditional/site-transform evidence only; no empirical compatibility, revision-02 site placement or real commission is established. |
 | **Delivery** | DEL-00 delivery inventory and provisional allocations (reviewed 2026-10-28) | **REASSESS applicability** (`docs/delivery/README.md`, `docs/delivery/information-issue-profiles.md`, `project/triad-interface-contract.md`) | Inventory/preparation only; current-house assemblies, professional/physical evidence and commission acceptance remain outstanding. |
