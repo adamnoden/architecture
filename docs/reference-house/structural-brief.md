@@ -1,6 +1,6 @@
 # Reference House — structural brief
 
-**Authority:** the owner's direction of 30 October 2026, under the [owner-house charter](../../project/owner-house-charter.md). This page owns the structural preferences for this house. It does not select assemblies, establish capacities or revise the accepted plan. The [current house basis](current-house-basis.md) owns adopted geometry; the [structural architecture programme](../../project/str/structural-architecture-programme.md) owns the work needed to test and coordinate this brief.
+**Authority:** the owner's direction of 30 October 2026, under the [owner-house charter](https://github.com/adamnoden/architecture/blob/main/project/owner-house-charter.md). This page owns the structural preferences for this house. It does not select assemblies, establish capacities or revise the accepted plan. The [current house basis](current-house-basis.md) owns adopted geometry; the [structural architecture programme](https://github.com/adamnoden/architecture/blob/main/project/str/structural-architecture-programme.md) owns the work needed to test and coordinate this brief.
 
 ## The desired house
 
