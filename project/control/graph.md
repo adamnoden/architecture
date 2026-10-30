@@ -12,10 +12,6 @@ Completed/cancelled history is omitted here so the current dependency frontier r
 %%{init: {"theme":"base","themeVariables":{"background":"#f7f6f2","primaryColor":"#f0eee9","primaryBorderColor":"#c9c6bd","primaryTextColor":"#20221f","clusterBkg":"#f8f7f4","clusterBorder":"#ccc9c1","lineColor":"#9eaaa1","fontFamily":"ui-sans-serif, system-ui, sans-serif","fontSize":"15px"},"flowchart":{"htmlLabels":true,"useMaxWidth":false,"nodeSpacing":42,"rankSpacing":68,"curve":"basis"}}}%%
 flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
-  subgraph g_CCR["CCR"]
-    direction TB
-    n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>READY</b>"]
-  end
   subgraph g_IAS["IAS"]
     direction TB
     n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>READY</b>"]
@@ -67,7 +63,6 @@ flowchart LR
   subgraph g_EDA["EDA"]
     direction TB
     n_EDA_RENEWED["EDA-RENEWED<br/>Renewed editorial-doctrine assurance over enlarged final source<br/><b>BLOCKED</b>"]
-    n_EDA_ADAPTER["EDA-ADAPTER<br/>Restore authored ownership of architectural publication prose<br/><b>READY</b>"]
     n_EDA_ARGUMENT["EDA-ARGUMENT<br/>Red-team architectural contribution and evidence for the central thesis<br/><b>READY</b>"]
     n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>BLOCKED</b>"]
   end
@@ -78,7 +73,6 @@ flowchart LR
   end
   subgraph g_ADE["ADE"]
     direction TB
-    n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>READY</b>"]
     n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
@@ -118,7 +112,6 @@ flowchart LR
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
-  n_CCR_IDENTITY --> n_HRS_TECHNICAL
   n_RWT_06 --> n_RWT_07
   n_RWT_07 --> n_ROF_RWT_GATE
   n_HAD_03 --> n_ROF_RWT_GATE
@@ -134,24 +127,19 @@ flowchart LR
   n_PLT_FINAL_PREP --> n_PLT_FINAL_FREEZE
   n_PLT_PRINT_REVIEW --> n_PLT_FINAL_FREEZE
   n_PLT_FINAL_FREEZE --> n_EDA_RENEWED
-  n_EDA_ADAPTER --> n_EDA_RENEWED
   n_PUB_02_PREP --> n_PUB_02_FINAL
   n_EDA_RENEWED --> n_PUB_02_FINAL
   n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
   n_PLT_CURRENT_REVIEW --> n_PLT_FINAL_PREP
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_EDA_ARGUMENT --> n_EDA_NARRATIVE
-  n_EDA_ADAPTER --> n_EDA_NARRATIVE
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
-  n_ADE_DELIVERY_AUDIT --> n_ADE_MODEL
   n_HRS_TECHNICAL --> n_ADE_MODEL
   n_ADE_MODEL --> n_ADE_DETAILS
   n_BCR_BAY_DESIGN --> n_ADE_DETAILS
   n_ADE_MODEL --> n_ADE_SCHEDULES
   n_BCR_BAY_DESIGN --> n_ADE_SCHEDULES
-  n_ADE_DELIVERY_AUDIT --> n_ADE_EVIDENCE
   n_BCR_BAY_DESIGN --> n_ADE_EVIDENCE
-  n_CCR_IDENTITY --> n_ADE_EVIDENCE
   n_ADE_DETAILS --> n_DEL_BAY_PACK
   n_ADE_SCHEDULES --> n_DEL_BAY_PACK
   n_ADE_EVIDENCE --> n_DEL_BAY_PACK
@@ -162,7 +150,6 @@ flowchart LR
   n_BCR_CONVERGENCE --> n_DEL_CURRENT
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
-  style g_CCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -190,7 +177,6 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
-  class n_CCR_IDENTITY ready;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
   class n_TRIAD_GATE blocked;
@@ -212,12 +198,10 @@ flowchart LR
   class n_EDA_RENEWED blocked;
   class n_PUB_02_PREP ready;
   class n_PUB_02_FINAL blocked;
-  class n_EDA_ADAPTER ready;
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
   class n_EDA_ARGUMENT ready;
   class n_EDA_NARRATIVE blocked;
-  class n_ADE_DELIVERY_AUDIT ready;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
@@ -258,7 +242,7 @@ flowchart LR
     n_CCR_PLAN["CCR-PLAN<br/>Repair rectangle-union area and plate closure<br/><b>DONE</b>"]
     n_CCR_STAIR["CCR-STAIR<br/>Repair stair datum arithmetic and discrete topology<br/><b>DONE</b>"]
     n_CCR_DRAINAGE["CCR-DRAINAGE<br/>Repair drainage declaration validity and source consistency<br/><b>DONE</b>"]
-    n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>READY</b>"]
+    n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>DONE</b>"]
   end
   subgraph g_PCO["PCO"]
     direction TB
@@ -386,7 +370,7 @@ flowchart LR
   subgraph g_EDA["EDA"]
     direction TB
     n_EDA_RENEWED["EDA-RENEWED<br/>Renewed editorial-doctrine assurance over enlarged final source<br/><b>BLOCKED</b>"]
-    n_EDA_ADAPTER["EDA-ADAPTER<br/>Restore authored ownership of architectural publication prose<br/><b>READY</b>"]
+    n_EDA_ADAPTER["EDA-ADAPTER<br/>Restore authored ownership of architectural publication prose<br/><b>DONE</b>"]
     n_EDA_ARGUMENT["EDA-ARGUMENT<br/>Red-team architectural contribution and evidence for the central thesis<br/><b>READY</b>"]
     n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>BLOCKED</b>"]
   end
@@ -406,7 +390,7 @@ flowchart LR
   end
   subgraph g_ADE["ADE"]
     direction TB
-    n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>READY</b>"]
+    n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>DONE</b>"]
     n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
@@ -682,7 +666,7 @@ flowchart LR
   class n_CCR_PLAN done;
   class n_CCR_STAIR done;
   class n_CCR_DRAINAGE done;
-  class n_CCR_IDENTITY ready;
+  class n_CCR_IDENTITY done;
   class n_PCO_COMMS done;
   class n_PCO_MVB_REVIEW done;
   class n_PCO_MANUAL done;
@@ -769,14 +753,14 @@ flowchart LR
   class n_EDA_RENEWED blocked;
   class n_PUB_02_PREP ready;
   class n_PUB_02_FINAL blocked;
-  class n_EDA_ADAPTER ready;
+  class n_EDA_ADAPTER done;
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
   class n_EDA_ARGUMENT ready;
   class n_EDA_NARRATIVE blocked;
   class n_DEL_BRIEF done;
   class n_DEL_ISSUE_PROFILES done;
-  class n_ADE_DELIVERY_AUDIT ready;
+  class n_ADE_DELIVERY_AUDIT done;
   class n_BCR_BAY_BRIEF done;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
