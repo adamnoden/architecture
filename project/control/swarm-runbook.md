@@ -54,6 +54,18 @@ Other responses use `"outcome":"conflict"` or `"outcome":"unavailable"` with an 
 
 A timeout is **unknown remote outcome**, not a free node. Retain the request, read remote state and reconcile its exact lease UUID/generation before another attempt. Never process an old timed-out request after starting a replacement acquisition. Remove temporary mailboxes only after successful reconciliation and lease cleanup. If fresh Git reads or connector writes cannot be established safely, stop new collision-prone work and report the precise blocker.
 
+## Regular-chat gateway: three commands only
+
+The locked [MVB control mailbox #1089](https://github.com/adamnoden/architecture/issues/1089) accepts owner-authored one-line command comments, for example:
+
+```text
+MVB/1 {"cmd":"claim-next"}
+MVB/1 {"cmd":"renew","node":"ABC-01","leaseId":"UUID","generation":1,"checkpoint":{"evidence":"PR #123","next":"Inspect CI"}}
+MVB/1 {"cmd":"release","node":"ABC-01","leaseId":"UUID","generation":1,"reason":"handoff"}
+```
+
+The gateway assigns unique `work/mvb-chat-COMMENT_ID` branch identity on acquisition; create that branch only after the returned claim is verified. A GitHub Actions runner executes the canonical `project-claims.ts` CLI, and a bot comment starting `MVB/1 RESULT COMMENT_ID` reports the outcome. If a response is absent or ambiguous, inspect the canonical claim record and workflow run; **do not post another claim-next blindly**. Use `renew` to update a pushed branch/PR recovery checkpoint; only `handoff` and `abandoned` are permitted for explicit release. Merged-packet completion is reconciled by existing main automation. This gateway does not merge or restart the chat.
+
 ## Connector-only chat boundary
 
 Some ordinary ChatGPT sessions expose GitHub connector reads and writes but cannot clone/fetch GitHub from their local terminal. **Do not claim that a GitHub tool call ran the canonical CLI.** This is a degraded, owner-directed transport boundary, not another dispatcher. Undirected `swarm` still requires fresh `control:claim-next`; without it, report the limitation and do useful read-only planning instead of inventing ranking.
