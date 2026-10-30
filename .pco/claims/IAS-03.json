@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 5,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f408a295-c812-431f-a5c4-eaace939de52",
   "holder": {
     "kind": "chatgpt",
     "label": "recovery-sequential-20261030"
   },
   "claimedAt": "2026-10-30T09:16:57.866Z",
-  "heartbeatAt": "2026-10-30T09:18:58.336Z",
-  "expiresAt": "2026-10-30T10:03:58.336Z",
+  "heartbeatAt": "2026-10-30T09:22:27.221Z",
+  "expiresAt": "2026-10-30T09:22:27.221Z",
   "branch": "recovery/ias-1078-20261030",
   "checkpoint": {
-    "evidence": "Draft recovery PR #1086 head 8d8778274e7fb9ad519a010b733e2f8968d5521a; 6 recovered IAS source files and explicit source-to-source HAD datum check, while IAS-03 planned",
-    "next": "Validate exact CI, fresh main ancestry, lease and branch preflight; merge bounded research, release as handoff. Do not claim installation product fit."
+    "evidence": "PR #1086 merged at fa27ee8b4f564858b46da25246811955a1499d6d; node remains planned.",
+    "next": "Continue actual IAS-03 product fit and assembly admission."
   },
-  "pr": 1086
+  "pr": 1086,
+  "releaseReason": "handoff",
+  "releasedAt": "2026-10-30T09:22:27.221Z"
 }
