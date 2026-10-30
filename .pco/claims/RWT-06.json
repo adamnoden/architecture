@@ -1,26 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 4,
-  "state": "released",
-  "leaseId": "9181ef08-b21b-47d1-a7de-b8bb9e81e519",
+  "generation": 5,
+  "state": "claimed",
+  "leaseId": "de1bad63-e857-440f-ae7b-d099e0d1c9ca",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6520709036"
+    "label": "issue-comment-6520748498"
   },
-  "claimedAt": "2026-10-30T10:40:54.000Z",
-  "heartbeatAt": "2026-10-30T10:41:53.000Z",
-  "expiresAt": "2026-10-30T10:41:53.000Z",
-  "branch": "work/mvb-chat-6520709036",
+  "claimedAt": "2026-10-30T10:43:15.000Z",
+  "heartbeatAt": "2026-10-30T10:43:15.000Z",
+  "expiresAt": "2026-10-30T11:28:15.000Z",
+  "branch": "work/mvb-chat-6520748498",
   "predecessor": {
-    "leaseId": "d0f0f993-64c8-4df7-90b3-934d86e5cf14",
-    "generation": 3,
-    "branch": "recovery/rwt-1080-20261030",
-    "pr": 1084,
-    "checkpoint": {
-      "evidence": "Merged reviewed partial RWT source via PR #1084 at b4b42f46574b2851e9c2514b61d7317d1b2260c4; exact-head PR CI passed; RWT-06 planned and not adopted",
-      "next": "Reopen through new generation only after coordinated HAD/IAS/BCR threshold, support, product, hydraulic and lower receiving-water design evidence. Consult source holding register."
-    }
+    "leaseId": "9181ef08-b21b-47d1-a7de-b8bb9e81e519",
+    "generation": 4,
+    "branch": "work/mvb-chat-6520709036"
   },
   "recoverySource": {
     "leaseId": "d0f0f993-64c8-4df7-90b3-934d86e5cf14",
@@ -31,7 +26,5 @@
       "evidence": "Merged reviewed partial RWT source via PR #1084 at b4b42f46574b2851e9c2514b61d7317d1b2260c4; exact-head PR CI passed; RWT-06 planned and not adopted",
       "next": "Reopen through new generation only after coordinated HAD/IAS/BCR threshold, support, product, hydraulic and lower receiving-water design evidence. Consult source holding register."
     }
-  },
-  "releasedAt": "2026-10-30T10:41:53.000Z",
-  "releaseReason": "abandoned"
+  }
 }
