@@ -107,3 +107,8 @@ The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO 
 ## Bedroom 4 wet-service section checkpoint
 
 The [located wet-service comparison](ias-03-bedroom4-wet-section.md) develops the unadopted HAD Bedroom 4 alternative with an explicit raised-tray/floor budget, perimeter waste route and disassembly sequence. It exposes an unresolved under-tray fitting/access condition and retains exact product-generation and wet-system holds. This narrows IW-01/IS-02; it does not close IAS-03, adopt the alternative, or remove the existing IS-01–06 obligations.
+
+
+## Connected Bedroom 4 assembly successor — 30 October
+
+The [connected successor](ias-03-bedroom4-assembly-successor.md) adds a complete 25 floor / 25 wet-wall comparison, an explicitly constituted 127.5 partition, continuous membrane and stepped saddle, and current JT/McAlpine product and release constraints. It rejects a literal north-facing first joint because the 60 lead is shorter than the 82 body-to-union dimension. The enlarged 900 cabinet pays for an actual cistern application and preserves the more useful original pan passage. Product connection levels, actual fittings/supports, complete disassembly and installation compatibility remain admission duties; the old Mira trial stays separate provenance. No canonical house geometry or IAS-03 completion is claimed.
