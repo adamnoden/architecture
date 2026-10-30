@@ -69,6 +69,8 @@ Use the following records according to the question:
 
 - `docs/reference-house/brief-and-constraint-ledger.md` — project brief, constraints and controlled design obligations;
 - [Current House Basis](current-house-basis.md) — current architectural source and explicit technical/applicability limits;
+- [Whole-house material policy](material-policy.md) — owner requirements for installed materials and constituent evidence;
+- [Ground water and rising-damp policy](ground-water-policy.md) — passive dryness, non-plastic DPCs and the requirement to demonstrate three independent capillary barriers;
 - [Coordinated current drawing family](https://github.com/adamnoden/architecture/blob/main/docs/publication/architectural-plate-layout-family.md) — source-derived plan, section and elevation correspondence;
 - [Historical Pattern Occurrence Register](pattern-occurrence-register.md) — predecessor occurrences to recheck against current selections;
 - [Historical G-01 conformance](g01-v0.1-conformance-d12.md) — bounded predecessor judgement, not automatic successor conformance;

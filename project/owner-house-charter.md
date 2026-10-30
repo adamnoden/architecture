@@ -33,6 +33,14 @@ Prefer simple, forgiving roof shedding into designed ground receivers where the 
 
 The [MAT programme](mat/material-integrity-programme.md) and existing RWT workstream carry this direction into the canonical execution graph. Earlier plastic carrier and polymer-dependent assembly studies remain historical evidence; their material preferences do not override the owner's new requirement. The actual assembly redesign and hydraulic proof still have to be earned.
 
+## Ground water and rising-damp direction — 30 October 2026
+
+The owner requires **dryness by position and geometry**: accommodation and essential services must not depend on active dewatering or inaccessible waterproofing holding back groundwater. Ground-contact foundations may tolerate their assessed wet exposure; the house must not depend on pumping to suppress groundwater around it. This constrains plot selection, building levels and any proposed basement, undercroft, deeper service trench, sunken perimeter margin or courtyard. Raising the house must preserve a coherent accessible principal approach.
+
+Plastic damp-proof courses are rejected as the design direction. Develop suitable slate and engineering-brick alternatives and demonstrate **three independent passive protections against upward capillary moisture**. The owner's **1,000-year ambition** governs long-term durability and stewardship; it is not an established service life or a zero-risk promise. No material build-up or third barrier is selected by this instruction.
+
+The [ground-water and rising-damp policy](../docs/reference-house/ground-water-policy.md) owns the exact acceptance boundaries and source evidence. Existing MAT, DPL, RWT, BCR, MRA and delivery work carry the requirement into design and assurance. Policy adoption does not mark those technical questions resolved.
+
 ## Working limits
 
 - Establish the brief and cost questions early. No budget, household detail, completion date or procurement decision may be invented from this objective.
