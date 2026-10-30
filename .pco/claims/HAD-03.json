@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 7,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "56dc2ab8-02cc-404d-ab44-d1850d85f075",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-983b7ee4744e"
   },
   "claimedAt": "2026-10-30T23:06:55.500Z",
-  "heartbeatAt": "2026-10-30T23:21:14.538Z",
-  "expiresAt": "2026-10-31T00:06:14.538Z",
+  "heartbeatAt": "2026-10-30T23:29:30.163Z",
+  "expiresAt": "2026-10-30T23:29:30.163Z",
   "branch": "work/swarm-983b7ee4744e",
   "predecessor": {
     "leaseId": "4d9244c4-57f0-443f-9187-675cb9c81fb6",
@@ -39,5 +39,7 @@
     "evidence": "PR #1113; source-bound WC privacy comparison, local geometry/type checks and independent review passed",
     "next": "Reconcile moved main, inspect exact-head full CI, then fresh canonical preflight and merge",
     "blocker": "Local full health requires absent Chrome155; exact-head CI pending"
-  }
+  },
+  "releasedAt": "2026-10-30T23:29:30.163Z",
+  "releaseReason": "handoff"
 }
