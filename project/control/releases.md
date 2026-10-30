@@ -2,7 +2,15 @@
 
 This file owns the **Minimum Viable Bureaucracy operating-contract version**. The [manual](README.md) is the current integrated explanation; executable sources and the [runbook](swarm-runbook.md) retain their existing authority.
 
-## Current: 1.1.0 — 29 October 2026
+## Current: 1.2.0 — 30 October 2026
+
+**Crash recovery and constrained-chat operating boundary.** An interrupted worker's lease, durable branch and actual verified result remain different sources of truth. The existing dispatcher now considers started self-service work only where a previous non-occupying claim provides a branch and actionable checkpoint; evidence is rechecked at the CAS boundary, not trusted from a stale discovery snapshot. New claim generations carry optional historical predecessor identity and last-durable-evidence source pointers, preserved through repeated crashes without making a predecessor's checkpoint the successor's achievement. Operations briefing surfaces preserved unmerged PR evidence and recovery/review distinctions. The MVB manual/runbook and agent constitution describe safe owner-directed connector-only work in ordinary chats when CLI Git access is unavailable, without pretending this is undirected swarm capability.
+
+Compatibility: `schemaVersion: 1` claim records and connector mailbox schema remain unchanged. The optional `predecessor` field is additive; older records parse unchanged. Existing `control:next` candidate ordering still uses critical depth/relief/reach/load, and existing manual, lease and CI gates remain. The report schema receives additive `recovery` fields. No runtime-branch migration, new scheduler, process watchdog, permissions or credentials. Rollback requires confirming no active 1.2-only started-node recovery claims remain before restoring the older dispatcher, otherwise pause such packets and reconcile. Old readers that strictly reject unknown optional record fields require compatibility review before rollback.
+
+Implementation and rationale: [PCO-CRASH result](../pco/mvb-crash-recovery-result.md), [design/acceptance issue #1083](https://github.com/adamnoden/architecture/issues/1083). The integrating PR and exact-head validation, not this draft alone, establish the deployed release. The guarantees remain cooperative and do not include ChatGPT-session wakeup or atomic GitHub claim/merge fencing.
+
+## 1.1.0 — 29 October 2026
 
 Additive communication discipline and evidence-bound publication reporting. The [phrasebook](communications.md) owns concise message meanings, selective readback, explicit correction, stale/duplicate-message handling and observed handoff progress. Labels are optional; clear English and existing workers remain valid. No new permission round trip, message transport or task state is introduced.
 

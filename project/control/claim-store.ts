@@ -6,6 +6,7 @@ import {
   createClaimRecord,
   forceTakeover,
   leaseTemporalState,
+  lastRecoverableEvidence,
   nextNormalAcquisition,
   parseClaimRecord,
   serializeClaimRecord,
@@ -57,6 +58,8 @@ export interface AcquireOptions extends ClaimMetadata {
   ttlMinutes?: number
   leaseId?: string
   maxInfrastructureRetries?: number
+  /** Canonical undirected dispatcher requires a durable pointer for started nodes. */
+  requireRecoveryEvidence?: boolean
 }
 
 export interface ForceAcquireOptions extends AcquireOptions {
@@ -161,6 +164,10 @@ export async function acquireClaimFromStore(
 
   while (true) {
     const before = await store.read(nodeId)
+    if (options.requireRecoveryEvidence && node.lifecycle === 'started' &&
+      !(before.stored && lastRecoverableEvidence(before.stored.record))) {
+      throw new ClaimConflictError(`${nodeId}: started-node recovery evidence changed or is missing; re-dispatch`)
+    }
     const next = nextNormalAcquisition(before.stored?.record ?? null, {
       node: nodeId,
       leaseId,

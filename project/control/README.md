@@ -291,6 +291,14 @@ An operations snapshot records its source revision and observed main tip. A clea
 
 The report can be stale by the time a visitor opens it. It does not reserve the highest-ranked packet or establish publication permission. Unknown claim availability stays unknown, and invalid coordination state does not become an apparently empty safe frontier. A report's PR list is an observation of heads, not proof that their CI has passed.
 
+## Crash recovery and connector-only chats
+
+MVB assumes workers can disappear at any instruction, including from usage exhaustion. This is **execution loss**, not automatically a failed packet or an abandoned branch. An expired/released planned self-service lease can already be reacquired; a started self-service packet now re-enters the **same** dispatcher only when its predecessor claim has a branch and actionable checkpoint. Otherwise it remains an active-unclaimed handoff for review. No automatic force takeover, dead-worker verdict or second queue exists. Acquisition rechecks recovery evidence and writes a new generation with an immediate predecessor identity and a separately retained **last durable evidence source**. If a replacement itself dies before checkpointing, a later generation can still recover the earlier pushed work without falsely attributing that evidence to the dead successor. That pointer does not copy the old checkpoint as current progress or authorise publishing its head.
+
+The read-only operations briefing distinguishes eligible predecessor recovery, active packets requiring review, and observed unmerged PR evidence. **A released lease is not a merged PR.** Missing PR observations or claims remain unknown; missing local-only work and lost-session wall time cannot be reconstructed. The [runbook](swarm-runbook.md#resilience-recovery-and-publication-preflight) owns startup, validation and exact-head publication, including the stale-worker rule. Prefer useful separate work if one packet needs review.
+
+**Regular chats are a supported collaboration surface, but not necessarily a full execution runtime.** Some can use an authorised GitHub connector while lacking a Git network path, full repository checkout or CLI transport. A connector write capability alone does not prove that `control:claim-next`, exact-head validation or publication preflight ran. The [connector-only boundary](swarm-runbook.md#connector-only-chat-boundary) allows narrowly owner-directed CAS work with explicit checks, or read-only planning when those checks cannot be established. Undirected swarms require the canonical dispatcher; the connector is not a parallel task scheduler.
+
 ## Failures, recovery and limits
 
 | Observation | Meaning and response |

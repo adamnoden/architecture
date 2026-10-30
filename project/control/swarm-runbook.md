@@ -54,6 +54,14 @@ Other responses use `"outcome":"conflict"` or `"outcome":"unavailable"` with an 
 
 A timeout is **unknown remote outcome**, not a free node. Retain the request, read remote state and reconcile its exact lease UUID/generation before another attempt. Never process an old timed-out request after starting a replacement acquisition. Remove temporary mailboxes only after successful reconciliation and lease cleanup. If fresh Git reads or connector writes cannot be established safely, stop new collision-prone work and report the precise blocker.
 
+## Connector-only chat boundary
+
+Some ordinary ChatGPT sessions expose GitHub connector reads and writes but cannot clone/fetch GitHub from their local terminal. **Do not claim that a GitHub tool call ran the canonical CLI.** This is a degraded, owner-directed transport boundary, not another dispatcher. Undirected `swarm` still requires fresh `control:claim-next`; without it, report the limitation and do useful read-only planning instead of inventing ranking.
+
+For an **explicitly owner-directed bounded packet** in such a chat, connector-only execution may proceed only if all of these checks are established: read current main's canonical PCO node definition and dispatch/manual policy; read the exact claim file on retained `runtime/claims` (not another ref); observe expiry plus grace conservatively and clock reliability; use connector create-if-absent or update with the **exact previous blob SHA**, never blind replacement; verify returned remote content, UUID, generation and new branch; preserve old branch/PR; and recheck ownership prior to dependent writes. If a prior write is uncertain, reconcile it before any new mutation. Never claim a node absent from current main without recording an exceptional bootstrap decision and its temporary effect on dispatch safety.
+
+This connector-only path does not itself run repository tests or `control:merge-check`. Require exact-head CI and a verified fresh publication preflight on a capable runner before merging. If those cannot be established, leave the PR unmerged and report the precise missing proof. Do not treat an issue/PR comment as lease authority. Connector-only behaviour must be provenance-bound and attributable, not a general alternative to the canonical dispatcher.
+
 ## Validation cadence
 
 - Iterate with checks that cover the changed boundary. Run the canonical full-health command locally when supported; otherwise require full health on the exact submitted head in CI and record the local runtime limitation.
@@ -103,6 +111,10 @@ Lead with the outcome, then provide the following consistently. Use the generate
 Packet percentages are **coverage of the current execution graph**. Tasks differ in size and future work can be added. They are not percentage of effort, architecture resolved, building ready to construct, or maturity validated. Shared nodes count once globally and in each owning workstream; do not sum workstream rows. Preserve the separate maturity/authority ceiling. Do not turn these counts into an ETA or weighted score without independently justified estimates. Never present an unmerged branch's `complete` lifecycle as shipped work.
 
 ## Resilience, recovery and publication preflight
+
+At startup, inspect the crash-recovery section of `control:brief` before dispatching. Check preserved unmerged PRs, previous claims and active-unclaimed review items; none is an instruction to merge. A valid previous branch plus checkpoint permits guarded started-node self-service recovery in the existing dispatcher, with evidence rechecked at acquisition. New leases carry the immediate predecessor identity plus the last durable remote evidence source, even through repeated empty successor runs, but *not* the predecessor's checkpoint as the successor's present achievement. Compare actual branch/PR head to current main and validate anew.
+
+A sudden session death can interrupt between remote push, lease renewal, PR creation, CI, merge and release. Recover using fresh remote observations, never the last chat transcript, and never infer missing labour time or local-only changes. Branch/PR evidence should be pushed before recording a matching checkpoint; do not depend on a final goodbye message. Returning workers must stop publishing if their generation is superseded.
 
 Before acquiring work, run `npm run control:doctor -- --transport connector --bridge-dir /ABSOLUTE/PRIVATE/TEMP` (or the native transport). It verifies fresh main/protocol and claim reads, and reports whether mutation transport is configured. Configuration is not proof of write authorisation; only a successful canonical CAS operation proves that. Do not confuse a transport outage with an empty frontier or another agent owning all work. Native HTTP calls have a 20-second request deadline; Git operations have a 30-second command deadline. A whole multi-request command may take longer.
 
