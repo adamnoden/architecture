@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 13,
-  "state": "released",
-  "leaseId": "fc350d62-1c50-405d-a7c3-9d8e5c67e02a",
+  "generation": 14,
+  "state": "claimed",
+  "leaseId": "70d03fe9-7eb7-4a0b-bd36-7cc37e600d6a",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-root-1cd2b9a76146"
+    "label": "swarm-983b7ee4744e"
   },
-  "claimedAt": "2026-10-30T23:19:22.416Z",
-  "heartbeatAt": "2026-10-30T23:21:23.668Z",
-  "expiresAt": "2026-10-30T23:21:23.668Z",
-  "branch": "work/swarm-root-1cd2b9a76146-mat",
+  "claimedAt": "2026-10-30T23:30:13.671Z",
+  "heartbeatAt": "2026-10-30T23:30:13.671Z",
+  "expiresAt": "2026-10-31T00:15:13.671Z",
+  "branch": "work/swarm-983b7ee4744e-2",
   "predecessor": {
-    "leaseId": "52897e23-b876-4778-8597-6a743dda5d55",
-    "generation": 12,
-    "branch": "work/mvb-chat-6535293702",
-    "pr": 1111,
-    "checkpoint": {
-      "evidence": "PR #1111 merged at d73bd0992c201472d8547faf473b738e60e2d4d6; final head be440d6dc8f47b9cb232d67d2e0551d54b1300db passed full CI 41142869385 and canonical publication preflight",
-      "next": "Develop the raised or daylighted court crossing with actual threshold, support and terminal geometry; re-derive receiving and leak-outlet levels before hydraulic admission",
-      "blocker": "RWT-06 remains planned; matched court threshold, non-plastic assembly, safe maintenance and actual receiving evidence remain unresolved"
-    }
+    "leaseId": "fc350d62-1c50-405d-a7c3-9d8e5c67e02a",
+    "generation": 13,
+    "branch": "work/swarm-root-1cd2b9a76146-mat"
   },
   "recoverySource": {
     "leaseId": "52897e23-b876-4778-8597-6a743dda5d55",
@@ -33,7 +27,5 @@
       "next": "Develop the raised or daylighted court crossing with actual threshold, support and terminal geometry; re-derive receiving and leak-outlet levels before hydraulic admission",
       "blocker": "RWT-06 remains planned; matched court threshold, non-plastic assembly, safe maintenance and actual receiving evidence remain unresolved"
     }
-  },
-  "releasedAt": "2026-10-30T23:21:23.668Z",
-  "releaseReason": "handoff"
+  }
 }
