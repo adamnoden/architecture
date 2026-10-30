@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 4,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "d415f786-5097-41af-b4d3-9c872fa4ed62",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-6"
   },
   "claimedAt": "2026-10-30T00:28:58.793Z",
-  "heartbeatAt": "2026-10-30T00:47:47.423Z",
-  "expiresAt": "2026-10-30T01:32:47.423Z",
+  "heartbeatAt": "2026-10-30T08:46:01.440Z",
+  "expiresAt": "2026-10-30T08:46:01.440Z",
   "checkpoint": {
     "evidence": "Durable draft1078 at fb0acae09085a4adde93166b0b6cfd920a95fbdb; source/artifact checks, typecheck, repo integrity and independent primary-datum/floor review passed. Exact lower fitting, leg pattern and cistern/soil assembly remain held.",
     "next": "Complete cabinet and renewal study with HAD/commander, review actual connector and floor compatibility limits; validate final recoverable partial before any coordinated merge."
   },
   "branch": "zerg/worker-6-wave8",
-  "pr": 1078
+  "pr": 1078,
+  "releaseReason": "handoff",
+  "releasedAt": "2026-10-30T08:46:01.440Z"
 }
