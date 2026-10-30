@@ -4,17 +4,17 @@
 
 ## Finding
 
-Develop **short-way prestressed hollowcore floors on masonry supports**, starting with actual 150 and 200 mm product families, and **a tied steel primary roof**. Retain a reinforced-concrete floor comparison and a lighter steel/mineral-panel floor challenger. The first task is to reconcile the heavy upper walls and major openings with actual supports. A nominally short ordinary span does not establish that the whole house can use one repeating floor arrangement.
+Develop **short-way prestressed hollowcore floors on masonry supports**, starting with actual 150 and 200 mm product families, and **a tied steel primary roof**. Retain an **exposed masonry-vault floor as the compression-led architectural challenger**, with services deliberately relocated. Reinforced concrete and steel/mineral-panel floors remain useful secondary comparisons. The first task is to reconcile the heavy upper walls and major openings with actual supports. A nominally short ordinary span does not establish that the whole house can use one repeating floor arrangement.
 
 This priority follows the owner's non-timber preference and the house's geometry. It is not a claim that timber is unsafe or that concrete and steel deliver greater calm, durability or acoustic quality in every assembly. The earlier [I-joist working baseline](primary-floor-structure-baseline.md) and [floor-to-masonry comparison](seated-floor-structure-options.md) remain useful controls; their former selection priority is superseded for this enquiry by the structural brief. Timber primary structure remains a disclosed fallback requiring the owner's decision before adoption.
 
-Every shortlisted spanning family contains tension resistance. Prestressed floors depend on stressed steel; reinforced concrete depends on reinforcement; steel beams bend; a tied roof uses tension members and wind restraint. Direct bearing makes gravity support legible. It does not remove diaphragms, connections, reinforcement or horizontal actions.
+The conventional spanning families retain tension resistance. Prestressed floors depend on stressed steel; reinforced concrete depends on reinforcement; steel beams bend; a tied roof uses tension members and wind restraint. A masonry vault needs a demonstrated thrust and stability system, which may also require ties. Direct bearing makes gravity support legible. It does not remove the house's diaphragm, connection and horizontal-action duties.
 
 ## What the house gives the comparison
 
 The accepted model has a 12 m square shell around a 3.5 m court. Its ordinary wing is 4250 mm gross, **3415 mm between finished wall faces**. The represented inner structural faces are 3445 mm apart and their centres 3585 mm apart. These are three different source measurements; none selects a bearing centre, effective design span or capacity. The 417.5 mm envelope includes two leaves, cavity and finish, and is not a solid bearing wall.
 
-The [existing structural feasibility result](../../project/bcr/bcr-structure-result.md) already locates the exceptional cases:
+The [existing structural feasibility result](https://github.com/adamnoden/architecture/blob/main/project/bcr/bcr-structure-result.md) already locates the exceptional cases:
 
 - Heavy upper rear bedroom, wardrobe and wet-room partitions do not all align over ground walls. Their support must be reconciled with the family/kitchen plan, or separately designed; an averaged floor allowance is not a substitute for line loads.
 - The entrance void removes a 2275 × 2295 mm rectangle. Its nominal side lines meet the court doorway, not solid piers. A real arch and spandrel carrying those finite reactions is one enquiry; the existing offset-frame comparison is another.
@@ -23,6 +23,8 @@ The [existing structural feasibility result](../../project/bcr/bcr-structure-res
 - Corner plates, roof hips and inner valleys interrupt any simple four-strip interpretation of the ring.
 
 These are candidate-design duties, not reasons to dismiss the shortlist. A new wall, pier, arch or transfer must be shown on both storeys and continued to the ground support. An arch only transfers loads within its actual structural plane; it does not align an offset upper wall by its name.
+
+The ordinary short-way diagnostic does not accept a full-length unsupported rear segment or a corner plate. The actual supported edges, plank direction and heavy-wall reactions must be drawn together; neither the 4250 mm gross wing nor a long section-cut interval supplies that missing support plan.
 
 ## Intermediate floors: complete depth accounting
 
@@ -122,7 +124,21 @@ For an **ideal three-hinged parabolic arch under uniform vertical load per horiz
 
 With an expressly hypothetical **102.5 mm crown thickness**, a 200 mm rise consumes 302.5 mm from springing intrados to crown extrados. Keeping the current 20/55/15 mm finish/service/ceiling functions gives **392.5 mm before other levelling or fill**. A 100 mm rise reduces that geometric lower bound to 292.5 mm, while doubling the ideal thrust ratio. This illustrates why shallowness cannot be counted as a free gain. Actual masonry arches need a justified thrust path and lateral stability [V1].
 
-Do not develop a whole-wing vault as the ordinary 350 mm flat-ceiling solution. An exposed curved ceiling, different services and a changed room section could form an explicit alternative, but must earn its space and abutments. Shorter jack-arch or tile-vault bays between beams change the proposition: beam bending, ties, fire protection, infill and numerous junctions return. Keep that family in reserve only for a located architectural advantage, not as a route to claiming a tension-free floor.
+This rejects keeping the present flat ceiling and service arrangement beneath that vault; it does **not** reject a compression-led section replan. A concrete exposed-intrados comparator is geometrically possible:
+
+| Exposed-vault section variable | 200 mm rise | 500 mm rise |
+|---|---:|---:|
+| Floor FFL / finish | +3450 / 20 | +3450 / 20 |
+| Hypothetical crown fill / crown masonry thickness | 27.5 / 102.5 | 27.5 / 102.5 |
+| Crown intrados | +3300 | +3300 |
+| Intrados springing | **+3100** | **+2800** |
+| FFL to springing | 350 | 650 |
+
+Dimensions are millimetres. At 200 mm rise, `3450 − 20 − 27.5 − 102.5 − 200 = 3100`: the minimum clear height can match the present ceiling, while the centre rises to 3300. The 55 mm service and 15 mm ceiling functions are **removed from this location and must be relocated**, not claimed within the same space. At 500 mm rise, keeping the crown and floor fixed lowers the springing by 300 mm. Neither crown thickness nor fill is structurally sized.
+
+Flat upper flooring creates variable spandrel fill. A declared geometric model with a parabolic intrados and **constant vertical** 102.5 mm masonry offset gives average fill `27.5 + rise/3`: 94.2 mm at 200 rise, 194.2 mm at 500. At an illustrative fill weight of 20 kN/m³ those add **1.883 / 3.883 kN/m²**, before masonry, finish and imposed loads. This offset is not a constant radial ring or a masonry design. Fill loading is nonuniform: the UDL thrust ratio above must not be applied to that mass as if it solved the actual vault.
+
+Retain the 200-rise exposed vault for the whole-house comparison because it directly tests the owner's structural and spatial preference. It must earn its abutments or disclosed ties, upper-wall support, lateral restraint, construction centering, acoustic/thermal interfaces and maintainable service routes without chasing permanent masonry. Vault ends, the stair and bridge, and an accessible route for wet-room branches are decisive. Hollowcore remains the first conventional enquiry, but its tension-dependent prestressing cannot count as meeting the compression preference merely because the units bear on masonry. Shorter jack-arch/tile-vault bays between beams remain secondary unless a located advantage justifies their returning beam bending, ties and junctions.
 
 ## Durability, erection and renewal decide the complete system
 
@@ -139,11 +155,13 @@ The sensible renewal ambition is to renew finishes, services and roof weathering
 
 ## Next decisions and falsification
 
-The next whole-house comparison should take hollowcore 150/200 and a tied steel roof into paired support plans, alongside one concrete floor and one steel/mineral-panel challenge where they solve a located problem. It can proceed internally with wall alignment, plank/framing direction, opening and stair geometry, complete layer budgets, access and material constituent enquiries.
+The next whole-house comparison should take hollowcore 150/200, the exposed 200-rise vault challenger and a tied steel roof into paired support plans. Concrete and steel/mineral-panel floors remain secondary where they solve a located problem. Internal work can advance wall alignment, plank/vault/framing direction, openings, stair geometry, complete layer budgets, access and material constituent enquiries.
 
 Before a candidate is accepted, competent review must establish actual design actions/combinations, effective spans, slab/member/connection capacities, diaphragms, masonry bearing/eccentricity, deflection/vibration, arch or transfer reactions, fire design, durability, temporary works and the foundation/DPC interface. Existing BCR and ER-STR-01 routes retain these duties. Physical validation should test a concrete unsupported proposition—such as an acoustic junction, service-access/renewal sequence or unusual connection—not repeat a generic material comparison.
 
 Reject or redesign a candidate if its required upper layers exceed the held floor; its reactions have no credible lower support; necessary restraint undermines an arch/partition or cannot reach stability walls; the stair/bridge or service crossing fails; its roof requires an unrepresented ridge support; or the complete moisture/fire/material assembly cannot be reconciled. These are decision-changing failures. Generic referral to an engineer cannot close an already located geometric conflict.
+
+The [A3 comparison plate](https://github.com/adamnoden/architecture/blob/main/project/str/studies/span-envelopes.svg), [exact data](https://github.com/adamnoden/architecture/blob/main/project/str/studies/span-envelopes.json) and [reproducible calculation](https://github.com/adamnoden/architecture/blob/main/project/str/studies/span-envelopes.ts) retain source-file fingerprints and the stated arithmetic. They check accounting and declared ideal models; they do not add physical or professional validation.
 
 ## Primary evidence
 

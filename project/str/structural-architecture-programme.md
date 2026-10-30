@@ -102,6 +102,8 @@ Use conventional technical evidence where it answers the actual question. Escala
 
 ## Initial evidence routes
 
+The completed floor and roof comparison is retained in the [spans result](str-spans-result.md), its [public options study](../../docs/research/structural-floor-roof-options.md) and [source-bound section sheet](studies/span-envelopes.svg). Hollowcore and a tied steel roof lead the conventional enquiry; an exposed masonry vault remains an explicit compression-led challenger. The comparison adopts no whole-house arrangement.
+
 These primary sources seed the studies, not a selected design. Links checked 30 October 2026; applicability, edition and jurisdiction must be established for each later claim.
 
 - [Brick Industry Association, Technical Note 31: Brick Masonry Arches (1995)](https://www.gobrick.com/media/file/31-brick-masonry-arches.pdf): arch action, thrust, abutments and construction; US guidance, not UK approval.
