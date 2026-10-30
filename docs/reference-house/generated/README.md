@@ -45,7 +45,7 @@ A graphical service or boundary companion should exist only where spatial form a
 
 ## Machine identity
 
-The [generated output manifest](./output-manifest.json) records the canonical compile fingerprint, renderer version and SHA-256 identity of each output. `npm run outputs:check` regenerates the family in memory and refuses stale committed outputs.
+The [generated output manifest](./output-manifest.json) records the canonical compile fingerprint, renderer version and SHA-256 identity of each output. `npm run outputs:check` regenerates the family in memory and refuses stale committed outputs. The compile stamp identifies a bounded source/method/result summary, not every runtime route or the output bytes. Equal compile stamps can accompany different reports; the separate content hashes and regeneration check establish output equality. Neither layer establishes current-house applicability or physical adequacy.
 
 ## Reading the uncertainty language
 
