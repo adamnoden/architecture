@@ -1,6 +1,6 @@
 # Whole-house material policy
 
-**Owner requirement, established 30 October 2026.** This policy applies to Ovid's House under the [owner-house charter](../../project/owner-house-charter.md). It governs the whole installed house, not just its appearance. It is a deliberate preference and design constraint; it is not a claim that every natural material is safe or every synthetic material is technically inferior.
+**Owner requirement, established 30 October 2026.** This policy governs material selection throughout Ovid's House and its [current house study](current-house-basis.md). It governs the whole installed house, not just its appearance. It is a deliberate preference and design constraint; it is not a claim that every natural material is safe or every synthetic material is technically inferior.
 
 ## Governing rule
 
@@ -27,7 +27,7 @@ Wood, cellulose and other naturally occurring polymers are not excluded merely b
 
 ## Starting material directions, not product approvals
 
-Exposed rainwater collection is to develop in **copper**, with brass/bronze channel and grate details investigated where suitable. Other non-plastic materials can be compared for a stated technical or architectural reason; they do not replace the copper direction by habit. Prefer genuine exposed material and an intentional ageing strategy over an undisclosed polymer clearcoat. The [rainwater design brief](../../project/rwt/rainwater-elegance-brief.md) owns water-handling choices.
+Exposed rainwater collection is to develop in **copper**, with brass/bronze channel and grate details investigated where suitable. Other non-plastic materials can be compared for a stated technical or architectural reason; they do not replace the copper direction by habit. Prefer genuine exposed material and an intentional ageing strategy over an undisclosed polymer clearcoat. The complete roof-to-ground water route still needs its own collection, capacity, failure, access and replacement design; a material preference does not establish those results.
 
 For the rest of the house, investigate solid timber and mechanically fixed joinery, mineral plasters and appropriate finishes, masonry and ceramics, metallic service routes, and inorganic insulation or other verified alternatives. These are candidate families, not a claim that every version, glue, backing, gasket or coating complies. Investigate mineral-insulated electrical routes where useful, but assess the entire certified circuit and its terminations; a metal conduit around polymer-insulated wiring is not polymer elimination.
 
@@ -37,7 +37,7 @@ Do not introduce hazardous legacy materials, deficient insulation, unsuitable le
 
 Each selected assembly must disclose its constituent materials and installed accessories with recoverable product revision and technical evidence. Supplier marketing alone is insufficient; missing constituent information is **unknown**, not zero plastic. Seek composition declarations, technical data and installation instructions; no single safety data sheet or environmental declaration is presumed exhaustive.
 
-A proposed exception must state: exact product/constituent and function; location and visibility; approximate installed quantity and uncertainty; exposure and expected replacement interval; alternatives actually considered, including redesign/deletion; why each alternative failed; the safety/performance evidence; access and replacement method; and the owner's dated approval or rejection. Proposed, approved, rejected and unknown are distinct. Approval applies only to that location, function and revision, and must be reconsidered after substitution. Silence or agent judgement does not count as owner approval.
+A proposed exception must state: exact product/constituent and function; location and visibility; approximate installed quantity and uncertainty; exposure and expected replacement interval; alternatives actually considered, including redesign/deletion; why each alternative failed; the safety/performance evidence; access and replacement method; and the owner's dated approval or rejection. Proposed, approved, rejected and unknown are distinct. Approval applies only to that location, function and revision, and must be reconsidered after substitution. Silence or delegated design judgement does not count as owner approval.
 
 No generic exception exists for 'hidden', 'small', 'necessary', 'industry standard' or 'inside an appliance'. Review priority is visible/touchable surfaces first, then substantial or inaccessible concealed assemblies, then remaining functional residues; all remain in scope. Do not game compliance with a mass percentage dominated by masonry. Report the unresolved assemblies and the count, location and extent of approved exceptions. Do not advertise a plastic-free house while undisclosed or approved polymer contents remain.
 
@@ -45,4 +45,4 @@ No generic exception exists for 'hidden', 'small', 'necessary', 'industry standa
 
 Earlier PVC/PE drainage and polymer-dependent wet-room studies remain recoverable evidence of their stated geometry and failure tests. Their material preferences are superseded by this policy, **including hidden carriers, sleeves and spacers**. Their successful arithmetic is not approval for the current house. Reusing a route with copper, another metal or clay requires new product, support, joint, movement, corrosion and renewal checks; do not substitute a material name into the old calculation.
 
-The research and alternative-selection programme is [Material integrity](../../project/mat/material-integrity-programme.md). Its compliance review must be reconciled with the owning roof, opening, interior, service and house-design sources before selected-house integration. The transferable architectural lesson to test is reducing concealed dependency and making residual materials inspectable; this owner's stronger material prohibition is not silently promoted to a universal pattern.
+Before the whole-house design is accepted, reconcile material compliance across the actual roof, openings, interiors and services, including every constituent and any approved exception. The transferable architectural lesson to test is reducing concealed dependency and making residual materials inspectable; this owner's stronger material prohibition is not silently promoted to a universal pattern.
