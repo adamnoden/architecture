@@ -9,8 +9,8 @@
     "label": "issue-comment-6535138180"
   },
   "claimedAt": "2026-10-30T22:49:32.000Z",
-  "heartbeatAt": "2026-10-30T22:49:32.000Z",
-  "expiresAt": "2026-10-30T23:34:32.000Z",
+  "heartbeatAt": "2026-10-30T23:06:29.000Z",
+  "expiresAt": "2026-10-30T23:51:29.000Z",
   "branch": "work/mvb-chat-6535138180",
   "predecessor": {
     "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
@@ -33,5 +33,10 @@
       "next": "Resolve an actual separating terminal and retained court water boundary; compare the accessible route and respect passive dryness; do not transplant PVC slip-coupling motion",
       "blocker": "Actual joint dimensions and consumables, first body removal, bay flooding, loaded withdrawal, supports and hydraulics remain unresolved; RWT-METALS planned"
     }
+  },
+  "checkpoint": {
+    "evidence": "Branch work/mvb-chat-6535138180 head 6d7d1d35 contains catalogue-bound flange clash, right-angle terminal mechanism and eight locally passing tests",
+    "next": "Finish adversarial review, publish PR, reproduce on Node24 and require exact-head full CI plus canonical publication preflight before merge",
+    "blocker": "No assembled face/gasket approval or located dry access section; this is bounded option reduction, not RWT-METALS closure"
   }
 }
