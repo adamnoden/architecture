@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import {MVB_MAILBOX_ISSUE,assertGatewayEvent,parseGatewayCommand} from '../../scripts/mvb-issue-gateway.js'
+import {MVB_MAILBOX_ISSUE,assertGatewayEvent,assertGatewayPrBinding,parseGatewayCommand} from '../../scripts/mvb-issue-gateway.js'
+import {createClaimRecord} from './claims.js'
 
 const id='aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee'
 const at=new Date('2026-10-30T10:00:00Z')
@@ -41,4 +42,47 @@ test('owner-only locked mailbox event and short expiry',()=>{
     {action:'edited'}
   ]) assert.throws(()=>assertGatewayEvent({...event('MVB/1 {"cmd":"claim-next"}'),...change},'adamnoden/architecture',at))
   assert.throws(()=>assertGatewayEvent(event('MVB/1 {"cmd":"claim-next"}'),'adamnoden/architecture',new Date(at.getTime()+11*60000)))
+})
+
+
+test('renew accepts optional positive PR number without adding a command',()=>{
+ const command=parseGatewayCommand('MVB/1 '+JSON.stringify({
+   cmd:'renew',node:'PCO-GATEWAY',leaseId:id,generation:2,pr:1090,
+   checkpoint:{evidence:'PR #1090 current head',next:'Merge after CI'}}))
+ assert.equal(command.cmd,'renew')
+ if(command.cmd==='renew') assert.equal(command.pr,1090)
+ for(const pr of [0,-3,1.5,'1090',Number.MAX_SAFE_INTEGER+1,null]){
+   assert.throws(()=>parseGatewayCommand('MVB/1 '+JSON.stringify({
+     cmd:'renew',node:'PCO-GATEWAY',leaseId:id,generation:2,pr
+   })))
+ }
+ assert.throws(()=>parseGatewayCommand('MVB/1 '+JSON.stringify({
+   cmd:'release',node:'PCO-GATEWAY',leaseId:id,generation:2,reason:'abandoned',pr:1090
+ })))
+})
+
+
+test('PR binding requires matching branch, main base, open state and lease declaration',()=>{
+ const c=createClaimRecord({
+   node:'PCO-GATEWAY',generation:2,leaseId:id,holder:{kind:'chatgpt'},
+   now:at,branch:'work/chat-pr-verified'
+ })
+ const pr={
+   number:1090,state:'open',merged_at:null,
+   body:'Work: PCO-GATEWAY\nLease: PCO-GATEWAY / '+id+' / generation 2',
+   head:{ref:'work/chat-pr-verified',sha:'a'.repeat(40),repo:{full_name:'adamnoden/architecture'}},
+   base:{ref:'main',repo:{full_name:'adamnoden/architecture'}}
+ }
+ assert.doesNotThrow(()=>assertGatewayPrBinding(pr,c,[c],'adamnoden/architecture'))
+ for(const changed of [
+   {...pr,state:'closed'},
+   {...pr,merged_at:'2026-10-30T11:00:00Z'},
+   {...pr,base:{...pr.base,ref:'other'}},
+   {...pr,head:{...pr.head,ref:'work/unrelated'}},
+   {...pr,head:{...pr.head,repo:{full_name:'other/repo'}}},
+   {...pr,head:{...pr.head,sha:'short'}},
+   {...pr,body:'Work: none\nWork reason: synthetic'},
+   {...pr,body:pr.body.replace('generation 2','generation 1')},
+   {...pr,body:'Work: PCO-CRASH\nLease: PCO-CRASH / '+id+' / generation 2'}
+ ]) assert.throws(()=>assertGatewayPrBinding(changed,c,[c],'adamnoden/architecture'))
 })

@@ -2,6 +2,9 @@ import { execFileSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import { pathToFileURL } from 'node:url'
 import { GitHubClaimStore } from '../project/control/github-claim-store.js'
+import { validatePacketDeclaration } from '../project/control/operations.js'
+import { controlNodes } from '../project/control/nodes/index.js'
+import type { ClaimRecord } from '../project/control/claims.js'
 
 /** GitHub issue comments are a transport, not a scheduler or ownership authority. */
 export const MVB_MAILBOX_ISSUE = 1089
@@ -11,7 +14,7 @@ const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 
 type Command =
   | { cmd: 'claim-next' }
-  | { cmd: 'renew'; node: string; leaseId: string; generation: number; checkpoint?: {evidence:string;next:string;blocker?:string} }
+  | { cmd: 'renew'; node: string; leaseId: string; generation: number; pr?: number; checkpoint?: {evidence:string;next:string;blocker?:string} }
   | { cmd: 'release'; node: string; leaseId: string; generation: number; reason: 'handoff' | 'abandoned' }
 
 function object(x: unknown): x is Record<string, unknown> {
@@ -34,7 +37,7 @@ export function parseGatewayCommand(raw: string): Command {
   }
   if (value.cmd === 'renew' || value.cmd === 'release') {
     exactKeys(value, value.cmd === 'renew'
-      ? ['cmd','node','leaseId','generation','checkpoint']
+      ? ['cmd','node','leaseId','generation','pr','checkpoint']
       : ['cmd','node','leaseId','generation','reason'])
     if (typeof value.node !== 'string' || !NODE.test(value.node) ||
         typeof value.leaseId !== 'string' || !UUID.test(value.leaseId) ||
@@ -44,6 +47,8 @@ export function parseGatewayCommand(raw: string): Command {
       if (value.reason !== 'handoff' && value.reason !== 'abandoned') throw new Error('Release requires handoff or abandoned')
       return {cmd:'release',node:value.node,leaseId:value.leaseId,generation:Number(value.generation),reason:value.reason}
     }
+    if (value.pr !== undefined && (!Number.isSafeInteger(value.pr) || Number(value.pr) < 1))
+      throw new Error('PR number must be a positive safe integer')
     let checkpoint: {evidence:string;next:string;blocker?:string} | undefined
     if (value.checkpoint !== undefined) {
       if (!object(value.checkpoint)) throw new Error('Invalid checkpoint')
@@ -55,9 +60,31 @@ export function parseGatewayCommand(raw: string): Command {
         ...(value.checkpoint.blocker ? {blocker:value.checkpoint.blocker as string} : {})}
     }
     return {cmd:'renew',node:value.node,leaseId:value.leaseId,generation:Number(value.generation),
+      ...(value.pr !== undefined ? {pr: Number(value.pr)} : {}),
       ...(checkpoint ? {checkpoint} : {})}
   }
   throw new Error('Unsupported gateway command')
+}
+
+interface GatewayPrObservation {
+  number: number
+  state: string
+  merged_at: string | null
+  body: string | null
+  head: { ref: string; sha: string; repo: { full_name: string } }
+  base: { ref: string; repo: { full_name: string } }
+}
+
+/** Bind a real open PR to the current lease, never to user-supplied PR text. */
+export function assertGatewayPrBinding(pr: GatewayPrObservation, claim: ClaimRecord, claims: readonly ClaimRecord[], repository: string): void {
+  if (pr.state !== 'open' || pr.merged_at !== null ||
+      pr.base.ref !== 'main' || pr.base.repo.full_name !== repository ||
+      pr.head.repo.full_name !== repository || pr.head.ref !== claim.branch ||
+      !/^[0-9a-f]{40}$/.test(pr.head.sha)) {
+    throw new Error('PR does not match the current repository, open state, base and lease branch')
+  }
+  const declared = validatePacketDeclaration(pr.body ?? '', controlNodes, claims, pr.head.ref, pr.number)
+  if (!declared.includes(claim.node)) throw new Error('PR does not declare the leased packet')
 }
 
 export function assertGatewayEvent(event: any, repository: string, now: Date): { id: number; createdAt: Date; command: Command } {
@@ -132,21 +159,32 @@ async function main() {
       const c=current.find(c=>c.node===('node' in req.command ? req.command.node : ''))
       if(!c || c.leaseId!==req.command.leaseId || c.generation!==req.command.generation)
         throw new Error('Missing or superseded lease; no mutation')
+      if(req.command.cmd==='renew' && req.command.pr !== undefined) {
+        const response=await fetch(`https://api.github.com/repos/${repository}/pulls/${req.command.pr}`,{
+          headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json',
+            'X-GitHub-Api-Version':'2022-11-28'},signal:AbortSignal.timeout(20_000)})
+        if(!response.ok) throw new Error(`GitHub PR lookup ${response.status}; no renewal performed`)
+        assertGatewayPrBinding(await response.json(),c,current,repository)
+      }
       if(req.command.cmd==='release'&&c.state==='released'){
         result={reconciled:true,node:c.node,state:c.state,generation:c.generation}
       } else if(req.command.cmd==='renew'&&c.state==='claimed'&&
           Date.parse(c.heartbeatAt)>=req.createdAt.getTime() &&
-          (!req.command.checkpoint || JSON.stringify(c.checkpoint)===JSON.stringify(req.command.checkpoint))){
+          (!req.command.checkpoint || JSON.stringify(c.checkpoint)===JSON.stringify(req.command.checkpoint)) &&
+          (req.command.pr === undefined || c.pr === req.command.pr)){
         result={reconciled:true,node:c.node,state:c.state,generation:c.generation,expiresAt:c.expiresAt}
       } else {
         const args=[req.command.cmd,req.command.node,'--lease-id',req.command.leaseId,
           '--generation',String(req.command.generation)]
         if(req.command.cmd==='release'){
           args.push('--reason',req.command.reason)
-        } else if(req.command.checkpoint){
-          args.push('--checkpoint-evidence',req.command.checkpoint.evidence,
-            '--checkpoint-next',req.command.checkpoint.next)
-          if(req.command.checkpoint.blocker)args.push('--checkpoint-blocker',req.command.checkpoint.blocker)
+        } else {
+          if(req.command.pr !== undefined) args.push('--pr',String(req.command.pr))
+          if(req.command.checkpoint){
+            args.push('--checkpoint-evidence',req.command.checkpoint.evidence,
+              '--checkpoint-next',req.command.checkpoint.next)
+            if(req.command.checkpoint.blocker)args.push('--checkpoint-blocker',req.command.checkpoint.blocker)
+          }
         }
         result=runCanonical(args)
       }
