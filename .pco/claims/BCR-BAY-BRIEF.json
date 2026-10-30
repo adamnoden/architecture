@@ -9,12 +9,12 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T23:34:15.371Z",
-  "heartbeatAt": "2026-10-29T23:52:22.541Z",
-  "expiresAt": "2026-10-30T00:37:22.541Z",
+  "heartbeatAt": "2026-10-30T00:01:03.634Z",
+  "expiresAt": "2026-10-30T00:46:03.634Z",
   "checkpoint": {
-    "evidence": "BAY1067 reviewed source5c617f93 plus DELcf6f036c and PCO5948c854 preserved in clean local common tree. Combined sanitation/typecheck95control passed; structural and ADE seam reviews passed. Current1065 full health green, remaining mandatory PLT proof still running.",
-    "next": "Take settled1065 main, reconcile current evidence links and generated125route dataplate withc303 identity, publish common PR, bind3leases, exact-head full CI,3preflights and expected-head merge."
+    "evidence": "Common1069 exact3d4e86fb preserves BAY5c617f93 DELcf6f036c PCO5948c854 on accepted d419d4b7. Eighteen-file tree verified; final type repo sanitation routes dataplate95control pass, targeted reviews pass.",
+    "next": "Verify all3bindings, mark common ready and require full exact-head CI, fresh per-lease merge-checks and expected-head merge; own issue944 journal release completed and branch closeout."
   },
-  "branch": "zerg/worker-1-packet-6",
-  "pr": 1067
+  "branch": "work/zerg-bay-delivery-applicability",
+  "pr": 1069
 }
