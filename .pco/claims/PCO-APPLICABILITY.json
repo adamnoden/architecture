@@ -9,7 +9,13 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-29T23:30:13.270Z",
-  "heartbeatAt": "2026-10-29T23:30:13.270Z",
-  "expiresAt": "2026-10-30T00:15:13.270Z",
-  "branch": "zerg/worker-4-packet-8"
+  "heartbeatAt": "2026-10-30T00:02:49.963Z",
+  "expiresAt": "2026-10-30T00:47:49.963Z",
+  "branch": "work/zerg-bay-delivery-applicability",
+  "pr": 1069,
+  "checkpoint": {
+    "evidence": "Reviewed PCO source 5948c854 preserved in common PR1069 head3d4e86fb; seven applicability regressions and focused checks passed.",
+    "next": "Exact combined-head full CI then fresh own merge preflight and completed lease release.",
+    "blocker": "Await combined exact-head CI; no maturity promotion."
+  }
 }
