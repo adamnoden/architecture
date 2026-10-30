@@ -2,17 +2,22 @@
   "schemaVersion": 1,
   "node": "MAT-00",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ad2d015c-a818-47bb-82dd-88d074725262",
-  "holder": { "kind": "chatgpt", "label": "owner-material-water-20261030" },
+  "holder": {
+    "kind": "chatgpt",
+    "label": "owner-material-water-20261030"
+  },
   "claimedAt": "2026-10-30T20:22:32Z",
-  "heartbeatAt": "2026-10-30T20:40:35Z",
-  "expiresAt": "2026-10-30T21:25:35Z",
+  "heartbeatAt": "2026-10-30T21:00:04.000Z",
+  "expiresAt": "2026-10-30T21:00:04.000Z",
   "branch": "work/mvb-chat-6532658645",
   "pr": 1101,
   "note": "Owner-directed MAT-00 bootstrap under issue #1100. New node absent from main until policy/graph PR merges; automatic dispatch may fail closed during this bounded registration. No takeover. Exact-blob CAS checkpoint; no CLI mutation is claimed.",
   "checkpoint": {
     "evidence": "PR #1101 head c61da8fc1f4e8fd39a284975ec38bad25928860b contains policy, researched rebrief, nine new graph nodes and gate regression tests",
     "next": "Observe exact-head CI and canonical preflight for both leases on the cleaned head; merge and release after verification"
-  }
+  },
+  "releasedAt": "2026-10-30T21:00:04.000Z",
+  "releaseReason": "completed"
 }
