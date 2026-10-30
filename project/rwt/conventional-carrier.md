@@ -1,12 +1,14 @@
 # North court carrier — conventional pipe and accessible terminals
 
+**Material direction superseded later on 30 October 2026.** The owner's [whole-house material policy](../../docs/reference-house/material-policy.md) rejects plastic defaults, including concealed carriers, sleeves and spacers. The PVC/PE ranking below is retained as a **dated historical comparison**, not the current preferred house solution. Continue through the [rainwater rebrief](rainwater-elegance-brief.md), developing copper or another explicitly justified non-plastic complete assembly. No old stiffness, fitting, support or clearance result transfers merely by renaming its material.
+
 **30 October 2026 · RWT-06 bounded development · not for construction.** Starting main: `27b32f233983219c287e5bb3c03cabfb9646b0b2`. This compares a conventional gravity-drain carrier with the [previous PE support study](carrier-support.md). The [north crossing](north-court-carrier.md) remains an unadopted architectural comparison; its original levels and drawings are not silently changed.
 
 [Calculation](studies/conventional-carrier.json) · [source](studies/conventional-carrier.mjs) · [tests](studies/conventional-carrier.test.mjs) · [A3 axial study](studies/conventional-carrier.svg).
 
-## Decision
+## Historical decision — no longer the material brief
 
-**Prioritise a solid-wall PVC-U gravity carrier, using Marley UL406 as the dimensioned comparator, rather than treating the eleven-ring PE assembly as the default.** The new finite comparison has eight ring stations per carrier, with actual stiffness still to be established. Keep PE as a fallback, not an adopted material. This removes six ring stations across two carriers in the model; it does not remove the sleeves, four accessible terminal supports, seals, inspection or withdrawal tasks.
+**The study prioritised a solid-wall PVC-U gravity carrier, using Marley UL406 as the dimensioned comparator, rather than treating the eleven-ring PE assembly as the default.** The finite comparison has eight ring stations per carrier, with actual stiffness still to be established. PE was a fallback, not an adopted material. This removes six ring stations across two carriers in the model; it does not remove the sleeves, four accessible terminal supports, seals, inspection or withdrawal tasks. Neither plastic candidate is now an admissible default under the subsequent owner policy.
 
 The useful trade-off is explicit: fewer interior supports, but a larger end-service reservation. Separating the proposed terminal saddle and coupling changes each exposed pipe projection from 100 to 200, the removable body from 4450 to 4650, and the exterior renewal territory from 5250 to **5450 × 1600**. These are successor-trial dimensions, not amendments to the selected house or verified site provision.
 
@@ -76,4 +78,4 @@ node --test project/rwt/studies/conventional-carrier.test.mjs
 node project/rwt/studies/conventional-carrier.mjs --check
 ```
 
-**Earned:** a ranked conventional development choice, six fewer interior ring stations in the stated model, quantified stiffness evidence thresholds and a located terminal reservation with its real spatial cost. **Not earned:** manufacturer approval of the installed assembly, support/pressure-seal design, pullability, hydraulic capacity, courtyard threshold protection or real-site suitability. RWT-06 stays planned. The immediate material decision is now narrowed to confirming or falsifying this PVC assembly, not continuing to add PE hardware by default.
+**Earned at the original comparison scope:** six fewer interior ring stations in the stated model, quantified stiffness evidence thresholds and a located terminal reservation with its real spatial cost. **Not earned:** manufacturer approval of the installed assembly, support/pressure-seal design, pullability, hydraulic capacity, courtyard threshold protection or real-site suitability. RWT-06 stays planned. The subsequent material policy supersedes the original PVC preference; retain the adverse geometric lessons while re-designing the complete non-plastic assembly or its route.
