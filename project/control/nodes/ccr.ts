@@ -33,7 +33,7 @@ export const ccrNodes = defineNodes([
     owners: ['CCR'],
     title: 'Adjudicate identity guarantees and integrate correctness repairs',
     dependencies: ['CCR-PLAN', 'CCR-STAIR', 'CCR-DRAINAGE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ccr/ccr-identity-result.md']
   }

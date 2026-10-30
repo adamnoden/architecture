@@ -69,7 +69,7 @@ export const maturitySubjectBindings = {
     applicabilityLimit: 'No competent review response; historical packs are not issue-ready current-house professional acceptance.'
   },
   'computational-track': {
-    assessedSubject: 'Historical Reference House/RH-C5 and CH-00–08 bounded compiler (reviewed 2026-10-19)',
+    assessedSubject: 'Historical Reference House/RH-C5 and CH-00–08 bounded compiler with finite CCR repairs (reviewed 2026-10-30)',
     controllingSources: [
       ...historicalHouseSources, ...currentHouseSources,
       'compiler/reference-house/system-compile.ts', 'compiler/reference-house/identity.ts',

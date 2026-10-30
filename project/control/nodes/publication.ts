@@ -54,7 +54,7 @@ export const publicationNodes = defineNodes([
     owners: ['EDA'],
     title: 'Restore authored ownership of architectural publication prose',
     dependencies: [],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/eda/eda-adapter-result.md']
   },
