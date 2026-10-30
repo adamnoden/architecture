@@ -9,7 +9,13 @@
     "label": "issue-comment-6535149623"
   },
   "claimedAt": "2026-10-30T22:50:33.000Z",
-  "heartbeatAt": "2026-10-30T22:50:33.000Z",
-  "expiresAt": "2026-10-30T23:35:33.000Z",
-  "branch": "work/mvb-chat-6535149623"
+  "heartbeatAt": "2026-10-30T23:02:10.000Z",
+  "expiresAt": "2026-10-30T23:47:10.000Z",
+  "branch": "work/mvb-chat-6535149623",
+  "pr": 1110,
+  "checkpoint": {
+    "evidence": "PR #1110 head 7ec3e41521f91ee006a411bd53fbaffff890e86d; source-bound flow and land-take comparison, inspected A3 sheet, independent architectural/numerical review; parallel STR-MASONRY reconciled",
+    "next": "Inspect exact-head full CI, run fresh canonical publication preflight, merge and verify terminal cleanup",
+    "blocker": "Installed capture width, hydraulic capacity, site outfall and physical tests remain outside this completed options-study scope"
+  }
 }
