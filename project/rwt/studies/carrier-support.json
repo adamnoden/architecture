@@ -1,0 +1,523 @@
+{
+  "authority": "Unadopted finite support/clearance screen. No installed assembly, allowable tolerance or safe drainage pass.",
+  "inputs": {
+    "run": 4250,
+    "fall": 60,
+    "endProjection": 100,
+    "endStation": 175,
+    "carrier": {
+      "product": "Radius VS2751 / black PE100 SDR17 / 6 m straight",
+      "odMin": 110,
+      "odMax": 110.7,
+      "wallMin": 6.6,
+      "wallMax": 7.4,
+      "boreMin": 95.2,
+      "boreMax": 97.5,
+      "handlingMassKgM": 2.3
+    },
+    "sleeve": {
+      "product": "Radius VS3050 / black PE100 SDR17 / dimensional comparator only",
+      "odMin": 180,
+      "odMax": 181.1,
+      "boreMin": 156.2,
+      "boreMax": 159.7
+    },
+    "spacer": {
+      "family": "PSI CaseX DSI PA/PE 4",
+      "carrierMin": 106.6,
+      "carrierMax": 120,
+      "skid": 16,
+      "part": "3-001-01028",
+      "rejectedSkid": 25,
+      "rejectedPart": "3-001-01029"
+    },
+    "modulusReference": 160,
+    "modulusSensitivity": 80,
+    "waterDensityKgM3": 1000,
+    "gravity": 9.80665,
+    "adverseDifferentialMm": 3,
+    "stationZoneMm": 100,
+    "originalEccentricityMm": 5
+  },
+  "inertia": 2876943.0399382724,
+  "waterMassKgM": 7.466191290796993,
+  "load": 0.09577361982189433,
+  "chordFallMmM": 14.11764705882353,
+  "cases": [
+    {
+      "span": 2500,
+      "modulus": 160,
+      "sag": 105.82626552494747,
+      "endpointRotation": 0.13545761987193275,
+      "residualDownhillMmM": -121.33997281310923,
+      "monotoneInThisModel": false
+    },
+    {
+      "span": 1250,
+      "modulus": 160,
+      "sag": 6.614141595309217,
+      "endpointRotation": 0.016932202483991594,
+      "residualDownhillMmM": -2.814555425168064,
+      "monotoneInThisModel": false
+    },
+    {
+      "span": 487.5,
+      "modulus": 160,
+      "sag": 0.1530142634639375,
+      "endpointRotation": 0.0010044013191478974,
+      "residualDownhillMmM": 13.113245739675632,
+      "monotoneInThisModel": true
+    }
+  ],
+  "spacingSearch": [
+    {
+      "count": 3,
+      "pitch": 1950,
+      "intact": {
+        "span": 1950,
+        "modulus": 80,
+        "sag": 78.343302893536,
+        "endpointRotation": 0.12856336885093086,
+        "residualDownhillMmM": -115.98418333056887,
+        "monotoneInThisModel": false
+      },
+      "oneInactive": {
+        "span": 3900,
+        "modulus": 80,
+        "sag": 1253.492846296576,
+        "endpointRotation": 1.028506950807447,
+        "residualDownhillMmM": -1015.1585345178542,
+        "monotoneInThisModel": false
+      },
+      "eligible": false
+    },
+    {
+      "count": 4,
+      "pitch": 1300,
+      "intact": {
+        "span": 1300,
+        "modulus": 80,
+        "sag": 15.475220324649086,
+        "endpointRotation": 0.038092850029905444,
+        "residualDownhillMmM": -26.28289527877422,
+        "monotoneInThisModel": false
+      },
+      "oneInactive": {
+        "span": 2600,
+        "modulus": 80,
+        "sag": 247.60352519438538,
+        "endpointRotation": 0.30474280023924355,
+        "residualDownhillMmM": -291.77899933426613,
+        "monotoneInThisModel": false
+      },
+      "eligible": false
+    },
+    {
+      "count": 5,
+      "pitch": 975,
+      "intact": {
+        "span": 975,
+        "modulus": 80,
+        "sag": 4.896456430846,
+        "endpointRotation": 0.016070421106366358,
+        "residualDownhillMmM": -5.029697124465906,
+        "monotoneInThisModel": false
+      },
+      "oneInactive": {
+        "span": 1950,
+        "modulus": 80,
+        "sag": 78.343302893536,
+        "endpointRotation": 0.12856336885093086,
+        "residualDownhillMmM": -115.98418333056887,
+        "monotoneInThisModel": false
+      },
+      "eligible": false
+    },
+    {
+      "count": 6,
+      "pitch": 780,
+      "intact": {
+        "span": 780,
+        "modulus": 80,
+        "sag": 2.0055885540745217,
+        "endpointRotation": 0.008228055606459577,
+        "residualDownhillMmM": 2.043437606210107,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 1560,
+        "modulus": 80,
+        "sag": 32.08941686519235,
+        "endpointRotation": 0.06582444485167661,
+        "residualDownhillMmM": -53.62987471593,
+        "monotoneInThisModel": false
+      },
+      "eligible": false
+    },
+    {
+      "count": 7,
+      "pitch": 650,
+      "intact": {
+        "span": 650,
+        "modulus": 80,
+        "sag": 0.9672012702905679,
+        "endpointRotation": 0.0047616062537381805,
+        "residualDownhillMmM": 4.740656189700735,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 1300,
+        "modulus": 80,
+        "sag": 15.475220324649086,
+        "endpointRotation": 0.038092850029905444,
+        "residualDownhillMmM": -26.28289527877422,
+        "monotoneInThisModel": false
+      },
+      "eligible": false
+    },
+    {
+      "count": 8,
+      "pitch": 557.1428571428571,
+      "intact": {
+        "span": 557.1428571428571,
+        "modulus": 80,
+        "sag": 0.5220711563084447,
+        "endpointRotation": 0.0029985625387972206,
+        "residualDownhillMmM": 5.734469135410924,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 1114.2857142857142,
+        "modulus": 80,
+        "sag": 8.353138500935115,
+        "endpointRotation": 0.023988500310377765,
+        "residualDownhillMmM": -12.563160943861927,
+        "monotoneInThisModel": false
+      },
+      "eligible": false
+    },
+    {
+      "count": 9,
+      "pitch": 487.5,
+      "intact": {
+        "span": 487.5,
+        "modulus": 80,
+        "sag": 0.306028526927875,
+        "endpointRotation": 0.0020088026382957948,
+        "residualDownhillMmM": 5.954998266681581,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 975,
+        "modulus": 80,
+        "sag": 4.896456430846,
+        "endpointRotation": 0.016070421106366358,
+        "residualDownhillMmM": -5.029697124465906,
+        "monotoneInThisModel": false
+      },
+      "eligible": false
+    },
+    {
+      "count": 10,
+      "pitch": 433.3333333333333,
+      "intact": {
+        "span": 433.3333333333333,
+        "modulus": 80,
+        "sag": 0.19105210277344545,
+        "endpointRotation": 0.001410846297403905,
+        "residualDownhillMmM": 5.783723838342702,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 866.6666666666666,
+        "modulus": 80,
+        "sag": 3.056833644375127,
+        "endpointRotation": 0.01128677037923124,
+        "residualDownhillMmM": -0.6306617819461722,
+        "monotoneInThisModel": false
+      },
+      "eligible": false
+    },
+    {
+      "count": 11,
+      "pitch": 390,
+      "intact": {
+        "span": 390,
+        "modulus": 80,
+        "sag": 0.1253492846296576,
+        "endpointRotation": 0.001028506950807447,
+        "residualDownhillMmM": 5.39683241570839,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 780,
+        "modulus": 80,
+        "sag": 2.0055885540745217,
+        "endpointRotation": 0.008228055606459577,
+        "residualDownhillMmM": 2.043437606210107,
+        "monotoneInThisModel": true
+      },
+      "eligible": true
+    },
+    {
+      "count": 12,
+      "pitch": 354.54545454545456,
+      "intact": {
+        "span": 354.54545454545456,
+        "modulus": 80,
+        "sag": 0.08561524802244219,
+        "endpointRotation": 0.0007727324949717858,
+        "residualDownhillMmM": 4.8833761023132825,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 709.0909090909091,
+        "modulus": 80,
+        "sag": 1.369843968359075,
+        "endpointRotation": 0.006181859959774287,
+        "residualDownhillMmM": 3.7050178682800126,
+        "monotoneInThisModel": true
+      },
+      "eligible": true
+    },
+    {
+      "count": 13,
+      "pitch": 325,
+      "intact": {
+        "span": 325,
+        "modulus": 80,
+        "sag": 0.060450079393160494,
+        "endpointRotation": 0.0005952007817172726,
+        "residualDownhillMmM": 4.291677046337026,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 650,
+        "modulus": 80,
+        "sag": 0.9672012702905679,
+        "endpointRotation": 0.0047616062537381805,
+        "residualDownhillMmM": 4.740656189700735,
+        "monotoneInThisModel": true
+      },
+      "eligible": true
+    },
+    {
+      "count": 14,
+      "pitch": 300,
+      "intact": {
+        "span": 300,
+        "modulus": 80,
+        "sag": 0.04388826883850622,
+        "endpointRotation": 0.0004681415342773996,
+        "residualDownhillMmM": 3.64950552454613,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 600,
+        "modulus": 80,
+        "sag": 0.7022123014160995,
+        "endpointRotation": 0.003745132274219197,
+        "residualDownhillMmM": 5.372514784604332,
+        "monotoneInThisModel": true
+      },
+      "eligible": true
+    },
+    {
+      "count": 15,
+      "pitch": 278.57142857142856,
+      "intact": {
+        "span": 278.57142857142856,
+        "modulus": 80,
+        "sag": 0.03262944726927779,
+        "endpointRotation": 0.00037482031734965257,
+        "residualDownhillMmM": 2.9735959722431065,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 557.1428571428571,
+        "modulus": 80,
+        "sag": 0.5220711563084447,
+        "endpointRotation": 0.0029985625387972206,
+        "residualDownhillMmM": 5.734469135410924,
+        "monotoneInThisModel": true
+      },
+      "eligible": true
+    },
+    {
+      "count": 16,
+      "pitch": 260,
+      "intact": {
+        "span": 260,
+        "modulus": 80,
+        "sag": 0.024760352519438537,
+        "endpointRotation": 0.00030474280023924357,
+        "residualDownhillMmM": 2.2744427201227473,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 520,
+        "modulus": 80,
+        "sag": 0.3961656403110166,
+        "endpointRotation": 0.0024379424019139485,
+        "residualDownhillMmM": 5.910473887678812,
+        "monotoneInThisModel": true
+      },
+      "eligible": true
+    },
+    {
+      "count": 17,
+      "pitch": 243.75,
+      "intact": {
+        "span": 243.75,
+        "modulus": 80,
+        "sag": 0.01912678293299219,
+        "endpointRotation": 0.00025110032978697435,
+        "residualDownhillMmM": 1.558854421344248,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 487.5,
+        "modulus": 80,
+        "sag": 0.306028526927875,
+        "endpointRotation": 0.0020088026382957948,
+        "residualDownhillMmM": 5.954998266681581,
+        "monotoneInThisModel": true
+      },
+      "eligible": true
+    },
+    {
+      "count": 18,
+      "pitch": 229.41176470588235,
+      "intact": {
+        "span": 229.41176470588235,
+        "modulus": 80,
+        "sag": 0.015008115878600304,
+        "endpointRotation": 0.00020934397533227088,
+        "residualDownhillMmM": 0.831380006568181,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 458.8235294117647,
+        "modulus": 80,
+        "sag": 0.24012985405760487,
+        "endpointRotation": 0.001674751802658167,
+        "residualDownhillMmM": 5.904433717703824,
+        "monotoneInThisModel": true
+      },
+      "eligible": true
+    },
+    {
+      "count": 19,
+      "pitch": 216.66666666666666,
+      "intact": {
+        "span": 216.66666666666666,
+        "modulus": 80,
+        "sag": 0.01194075642334034,
+        "endpointRotation": 0.00017635578717548812,
+        "residualDownhillMmM": 0.09513742549419521,
+        "monotoneInThisModel": true
+      },
+      "oneInactive": {
+        "span": 433.3333333333333,
+        "modulus": 80,
+        "sag": 0.19105210277344545,
+        "endpointRotation": 0.001410846297403905,
+        "residualDownhillMmM": 5.783723838342702,
+        "monotoneInThisModel": true
+      },
+      "eligible": true
+    },
+    {
+      "count": 20,
+      "pitch": 205.26315789473685,
+      "intact": {
+        "span": 205.26315789473685,
+        "modulus": 80,
+        "sag": 0.009618502361834057,
+        "endpointRotation": 0.00014994998553833605,
+        "residualDownhillMmM": -0.6476875420994214,
+        "monotoneInThisModel": false
+      },
+      "oneInactive": {
+        "span": 410.5263157894737,
+        "modulus": 80,
+        "sag": 0.1538960377893449,
+        "endpointRotation": 0.0011995998843066884,
+        "residualDownhillMmM": 5.610354866824534,
+        "monotoneInThisModel": true
+      },
+      "eligible": false
+    }
+  ],
+  "candidate": {
+    "countPerCarrier": 11,
+    "countForTwo": 22,
+    "pitch": 390,
+    "stations": [
+      175,
+      565,
+      955,
+      1345,
+      1735,
+      2125,
+      2515,
+      2905,
+      3295,
+      3685,
+      4075
+    ],
+    "intact": {
+      "span": 390,
+      "modulus": 80,
+      "sag": 0.1253492846296576,
+      "endpointRotation": 0.001028506950807447,
+      "residualDownhillMmM": 5.39683241570839,
+      "monotoneInThisModel": true
+    },
+    "oneInactive": {
+      "span": 780,
+      "modulus": 80,
+      "sag": 2.0055885540745217,
+      "endpointRotation": 0.008228055606459577,
+      "residualDownhillMmM": 2.043437606210107,
+      "monotoneInThisModel": true
+    },
+    "twoInactive": {
+      "span": 1170,
+      "modulus": 80,
+      "sag": 10.153292055002266,
+      "endpointRotation": 0.027769687671801067,
+      "residualDownhillMmM": -16.216143177080102,
+      "monotoneInThisModel": false
+    },
+    "assumedAxialZone": 100,
+    "clearEndTerritory": 125,
+    "terminalTailToBodyEnd": 275,
+    "terminalCondition": "Independent accessible end supports required; end cantilevers, fittings and seal loads NOT analysed."
+  },
+  "clearance": {
+    "bareConcentricRadialMin": 22.749999999999993,
+    "originalEccentricLowerGap": 17.749999999999993,
+    "ideal16Envelope": 142.7,
+    "ideal16ConcentricRadialRemaining": 6.75,
+    "ideal16RemainingAtOriginalEccentricity": 1.75,
+    "idealGravityOffsetMin": 6.749999999999993,
+    "idealGravityOffsetMax": 8.849999999999994,
+    "ideal25SmallestEnvelope": 160,
+    "ideal25BestDiametralClearance": -0.30000000000001137
+  },
+  "unresolved": [
+    "Actual ring collar/bolt dimensions, clocking, bearing and installed centreline",
+    "Radius approval of casing spacer contact and sustained load/temperature modulus",
+    "Sleeve burial, ovality, settlement, continuous support and tell-tale drainage",
+    "Pressure-rated removable court annular seal, tool access and independent terminal supports",
+    "Loaded installation/withdrawal force and joint-free replacement",
+    "Inlets, capacity, hydraulic head, first vulnerable fabric and actual receiving water"
+  ],
+  "subject": {
+    "path": "project/rwt/studies/north-court-carrier.json",
+    "blob": "e516ebb375a2120a300e05bd869e7edcbb28f2c8",
+    "sourceId": "RH-LAYOUT-REVISION-02",
+    "boundary": "Applies to the dated unadopted north comparison only, not proof of current-house adoption or freshness of its historical prose fingerprints."
+  }
+}
