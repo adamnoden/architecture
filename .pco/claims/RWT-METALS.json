@@ -9,8 +9,8 @@
     "label": "issue-comment-6535138180"
   },
   "claimedAt": "2026-10-30T22:49:32.000Z",
-  "heartbeatAt": "2026-10-30T23:06:29.000Z",
-  "expiresAt": "2026-10-30T23:51:29.000Z",
+  "heartbeatAt": "2026-10-30T23:10:10.000Z",
+  "expiresAt": "2026-10-30T23:55:10.000Z",
   "branch": "work/mvb-chat-6535138180",
   "predecessor": {
     "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Branch work/mvb-chat-6535138180 head 6d7d1d35 contains catalogue-bound flange clash, right-angle terminal mechanism and eight locally passing tests",
-    "next": "Finish adversarial review, publish PR, reproduce on Node24 and require exact-head full CI plus canonical publication preflight before merge",
-    "blocker": "No assembled face/gasket approval or located dry access section; this is bounded option reduction, not RWT-METALS closure"
-  }
+    "evidence": "PR #1112 incorporates main 68d0273 at head 5d18296; actual flange clash, right-angle mechanism, clarified lateral-removal counterexample; eight local tests pass",
+    "next": "Run final exact-head CI and read-only canonical preflight with Node24 reproduction, then merge and release",
+    "blocker": "Installed face/gasket, dry access section, supports and hydraulics remain unproved; RWT-METALS stays planned"
+  },
+  "pr": 1112
 }
