@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 7,
-  "state": "released",
-  "leaseId": "56dc2ab8-02cc-404d-ab44-d1850d85f075",
+  "generation": 8,
+  "state": "claimed",
+  "leaseId": "b64706fe-18d1-4f60-ad03-70c3a471ecd6",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-983b7ee4744e"
+    "label": "issue-comment-6535821509"
   },
-  "claimedAt": "2026-10-30T23:06:55.500Z",
-  "heartbeatAt": "2026-10-30T23:29:30.163Z",
-  "expiresAt": "2026-10-30T23:29:30.163Z",
-  "branch": "work/swarm-983b7ee4744e",
+  "claimedAt": "2026-10-30T23:40:08.000Z",
+  "heartbeatAt": "2026-10-30T23:40:08.000Z",
+  "expiresAt": "2026-10-31T00:25:08.000Z",
+  "branch": "work/mvb-chat-6535821509",
   "predecessor": {
-    "leaseId": "4d9244c4-57f0-443f-9187-675cb9c81fb6",
-    "generation": 6,
-    "branch": "work/mvb-had-court-20261030",
-    "pr": 1096,
+    "leaseId": "56dc2ab8-02cc-404d-ab44-d1850d85f075",
+    "generation": 7,
+    "branch": "work/swarm-983b7ee4744e",
+    "pr": 1113,
     "checkpoint": {
-      "evidence": "PR #1096 source head 956c5e3d1c2cd161fa731363b49aafd355114da9; current HAD threshold first-failure gate",
-      "next": "Check exact-head CI and canonical merge preflight, then merge",
-      "blocker": "Prior GitHub 500 was reconciled: runtime record unchanged; reissuing fresh CAS renew"
+      "evidence": "PR #1113; source-bound WC privacy comparison, local geometry/type checks and independent review passed",
+      "next": "Reconcile moved main, inspect exact-head full CI, then fresh canonical preflight and merge",
+      "blocker": "Local full health requires absent Chrome155; exact-head CI pending"
     }
   },
   "recoverySource": {
-    "leaseId": "4d9244c4-57f0-443f-9187-675cb9c81fb6",
-    "generation": 6,
-    "branch": "work/mvb-had-court-20261030",
-    "pr": 1096,
+    "leaseId": "56dc2ab8-02cc-404d-ab44-d1850d85f075",
+    "generation": 7,
+    "branch": "work/swarm-983b7ee4744e",
+    "pr": 1113,
     "checkpoint": {
-      "evidence": "PR #1096 source head 956c5e3d1c2cd161fa731363b49aafd355114da9; current HAD threshold first-failure gate",
-      "next": "Check exact-head CI and canonical merge preflight, then merge",
-      "blocker": "Prior GitHub 500 was reconciled: runtime record unchanged; reissuing fresh CAS renew"
+      "evidence": "PR #1113; source-bound WC privacy comparison, local geometry/type checks and independent review passed",
+      "next": "Reconcile moved main, inspect exact-head full CI, then fresh canonical preflight and merge",
+      "blocker": "Local full health requires absent Chrome155; exact-head CI pending"
     }
-  },
-  "pr": 1113,
-  "checkpoint": {
-    "evidence": "PR #1113; source-bound WC privacy comparison, local geometry/type checks and independent review passed",
-    "next": "Reconcile moved main, inspect exact-head full CI, then fresh canonical preflight and merge",
-    "blocker": "Local full health requires absent Chrome155; exact-head CI pending"
-  },
-  "releasedAt": "2026-10-30T23:29:30.163Z",
-  "releaseReason": "handoff"
+  }
 }
