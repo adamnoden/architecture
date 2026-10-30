@@ -378,3 +378,15 @@ test('dispatcher rechecks active predecessor evidence at CAS boundary after a ra
   assert.equal(store.mutations,1)
   assert.equal(result.selectionRaces,1)
 })
+
+test('active successor with no own checkpoint remains safely resumable after a second cutoff',()=>{
+ const earlier={...claim('ACTIVE','old',new Date(now.getTime()-3*3600000)),
+   branch:'work/original',checkpoint:{evidence:'PR #11',next:'Validate'}}
+ const next={...claim('ACTIVE','replacement',new Date(now.getTime()-2*3600000),45,2),
+   branch:'work/empty-successor',checkpoint:undefined,
+   predecessor:{leaseId:earlier.leaseId,generation:1,branch:'work/original',checkpoint:earlier.checkpoint},
+   recoverySource:{leaseId:earlier.leaseId,generation:1,branch:'work/original',checkpoint:earlier.checkpoint}}
+ const r=buildDispatchSnapshot([started('ACTIVE')],[next],now)
+ assert.equal(r.candidates[0]?.node.id,'ACTIVE')
+ assert.equal(r.candidates[0]?.resumeActive,true)
+})
