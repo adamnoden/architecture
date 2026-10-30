@@ -26,6 +26,15 @@ export interface SupersededLease {
 }
 
 /** Historical evidence pointer, not transferred ownership or validated current progress. */
+/** Most recent durable remote evidence, retained across repeated empty successor runs. */
+export interface RecoverySource {
+  leaseId: string
+  generation: number
+  branch: string
+  pr?: number
+  checkpoint: RecoveryCheckpoint
+}
+
 export interface PredecessorClaim {
   leaseId: string
   generation: number
@@ -59,6 +68,7 @@ export interface ClaimRecord {
   releaseReason?: 'completed' | 'handoff' | 'abandoned' | 'superseded' | 'other'
   supersedes?: SupersededLease
   predecessor?: PredecessorClaim
+  recoverySource?: RecoverySource
 }
 
 export interface ClaimMetadata {
@@ -70,6 +80,7 @@ export interface ClaimMetadata {
 
 export interface AcquireClaimInput extends ClaimMetadata {
   predecessor?: PredecessorClaim
+  recoverySource?: RecoverySource
   node: NodeId
   generation: number
   leaseId: string
@@ -177,6 +188,17 @@ export function parseClaimRecord(raw: string, expectedNode?: NodeId): ClaimRecor
     }
   }
 
+  if (value.recoverySource !== undefined) {
+    const r = value.recoverySource
+    if (!isRecord(r) || !nonEmptyString(r.leaseId) || !Number.isInteger(r.generation) || Number(r.generation) < 1 || Number(r.generation) >= Number(value.generation) || r.leaseId === value.leaseId || !nonEmptyString(r.branch)) {
+      throw new Error('Invalid retained recovery source identity')
+    }
+    if (r.pr !== undefined && (!Number.isInteger(r.pr) || Number(r.pr) <= 0)) throw new Error('Invalid retained recovery PR')
+    if (!isRecord(r.checkpoint) || !nonEmptyString(r.checkpoint.evidence) || !nonEmptyString(r.checkpoint.next) || !optionalNonEmptyString(r.checkpoint.blocker)) {
+      throw new Error('Invalid retained recovery source checkpoint')
+    }
+  }
+
   if (value.predecessor !== undefined) {
     const p = value.predecessor
     if (!isRecord(p) || !nonEmptyString(p.leaseId) || !Number.isInteger(p.generation) || Number(p.generation) < 1 || Number(p.generation) >= Number(value.generation) || p.leaseId === value.leaseId) {
@@ -244,6 +266,12 @@ export function createClaimRecord(input: AcquireClaimInput): ClaimRecord {
   if (input.predecessor && (input.predecessor.generation >= input.generation || input.predecessor.leaseId === input.leaseId)) {
     throw new Error('Predecessor must identify an older, distinct lease')
   }
+  if (input.recoverySource && (input.recoverySource.generation >= input.generation || input.recoverySource.leaseId === input.leaseId)) {
+    throw new Error('Recovery source must identify an older, distinct lease')
+  }
+  if (input.recoverySource?.branch && input.branch === input.recoverySource.branch) {
+    throw new Error('Recovery must not reuse the source branch')
+  }
   if (input.predecessor?.branch && input.branch === input.predecessor.branch) {
     throw new Error('Recovery must not reuse the predecessor branch')
   }
@@ -264,13 +292,30 @@ export function createClaimRecord(input: AcquireClaimInput): ClaimRecord {
     ...(input.pr ? { pr: input.pr } : {}),
     ...(input.note ? { note: input.note } : {}),
     ...(input.supersedes ? { supersedes: input.supersedes } : {}),
-    ...(input.predecessor ? { predecessor: input.predecessor } : {})
+    ...(input.predecessor ? { predecessor: input.predecessor } : {}),
+    ...(input.recoverySource ? { recoverySource: input.recoverySource } : {})
   }
+}
+
+/** An evidence pointer, never an acceptance or ownership claim. */
+export function lastRecoverableEvidence(record: ClaimRecord): RecoverySource | null {
+  if (record.branch && record.checkpoint) return {
+    leaseId: record.leaseId, generation: record.generation, branch: record.branch,
+    ...(record.pr ? { pr: record.pr } : {}), checkpoint: record.checkpoint
+  }
+  if (record.recoverySource) return record.recoverySource
+  if (record.predecessor?.branch && record.predecessor.checkpoint) return {
+    leaseId: record.predecessor.leaseId, generation: record.predecessor.generation,
+    branch: record.predecessor.branch,
+    ...(record.predecessor.pr ? { pr: record.predecessor.pr } : {}),
+    checkpoint: record.predecessor.checkpoint
+  }
+  return null
 }
 
 export function nextNormalAcquisition(
   previous: ClaimRecord | null,
-  input: Omit<AcquireClaimInput, 'generation' | 'predecessor'>
+  input: Omit<AcquireClaimInput, 'generation' | 'predecessor' | 'recoverySource'>
 ): ClaimRecord {
   if (previous) {
     const state = leaseTemporalState(previous, input.now)
@@ -282,6 +327,7 @@ export function nextNormalAcquisition(
   return createClaimRecord({
     ...input,
     generation: previous ? previous.generation + 1 : 1,
+    ...(previous && lastRecoverableEvidence(previous) ? { recoverySource: lastRecoverableEvidence(previous)! } : {}),
     ...(previous ? { predecessor: {
       leaseId: previous.leaseId,
       generation: previous.generation,
