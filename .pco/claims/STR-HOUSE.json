@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f297f5ec-e390-4475-93d4-7532709a79de",
   "holder": {
     "kind": "chatgpt",
@@ -14,7 +14,10 @@
   "branch": "work/str-house-20261030-f297f5ec",
   "note": "Explicit owner direction to progress STR. Fresh main ebfb41c30690ea10e2c3e1eddcc4250c31c063ca has STR-MASONRY, STR-SPANS and BCR-PREFLIGHT complete, STR-HOUSE self-service/planned; exact runtime claim absent. Bounded connector CAS transport after unavailable terminal Git; no CLI acquisition claimed. Existing preparatory investigation was read-only.",
   "checkpoint": {
-    "evidence": "PR1118 at7b193b2f875815b0e68ac8c5db423df1c8c7a9e4 retains26 files of joined HOUSE evidence: paired plans, source/control data, exact occupation limits, finite support and arch/service alternatives. Main reconciled throughbb8e94ad; all10 source guards unchanged. Local checks and independent review passed; exact-head CI pending. HOUSE remains unpassed.",
-    "next": "Observe exact-head full CI, rerun canonical preflight job124357608915 against current branch/lease/main, merge safely, release handoff, reconcile parent1103 and verify cleanup. Do not mark HOUSE complete."
-  }
+    "evidence": "PR #1118 merged2c22f71f86ff9eeae7fbf4b724db637d697bb04f; full exact-head CI41145753531 succeeded at7b193b2f875815b0e68ac8c5db423df1c8c7a9e4; canonical preflight124371233830 observed23:42:44.252UTC against mainbb8e94ad and lease46a6f516. Joined partial plans, support sections, quantity/occupation diagnostics and real limitations are retained.",
+    "next": "STR-HOUSE remains planned/open. Resume from project/str/str-house-result.md: front-room allocation and full door/occupation states; opposed bearings and upper-wall transmission; stair/bridge finite seats; riser framing; actual thrust closure; roof heel/corners. STR-RECONCILE remains blocked. No accepted geometry or system selected."
+  },
+  "pr": 1118,
+  "releasedAt": "2026-10-30T23:43:43.000Z",
+  "releaseReason": "handoff"
 }
