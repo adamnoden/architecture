@@ -45,6 +45,8 @@ They remain evidence and comparison material, not automatic Reference House sele
 
 [Rainwater Collection: Access and Failure Paths](rainwater-collection-options.md) compares exposed and trapped collection, transfer fittings and court drains by their capture, blockage, access and renewal consequences. It retains conventional exposed collection as a comparator without selecting the house network.
 
+[Roof Shedding and Ground Receivers](roof-shedding-and-ground-receivers.md) maps each house edge against controlled copper collection. Shallow accessible garden receivers remain conditional candidates; the narrow court and occupied door routes favour controlled collection. Source-bound flow and land-take comparisons keep planting, infiltration and physical acceptance distinct.
+
 [Roof and Rainwater Materials](roof-rainwater-material-compatibility.md) compares joints, movement, repair and directional runoff compatibility in one shared candidate record. No material family is selected independently of the roof and network.
 
 ## Maintenance and external access
