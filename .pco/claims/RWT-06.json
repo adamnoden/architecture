@@ -9,8 +9,8 @@
     "label": "issue-comment-6524672516"
   },
   "claimedAt": "2026-10-30T14:03:06.000Z",
-  "heartbeatAt": "2026-10-30T14:03:06.000Z",
-  "expiresAt": "2026-10-30T14:48:06.000Z",
+  "heartbeatAt": "2026-10-30T14:04:52.000Z",
+  "expiresAt": "2026-10-30T14:49:52.000Z",
   "branch": "work/mvb-chat-6524672516",
   "predecessor": {
     "leaseId": "f26fd38c-5d47-4cf5-b4d0-0fc52684afe1",
@@ -33,5 +33,11 @@
       "next": "On a CLI-capable runner, re-claim RWT-06, reconcile PR lease identity, run fresh control:merge-check and merge only with valid exact-head CI",
       "blocker": "Regular-chat terminal cannot reach GitHub, so canonical merge-check is unavailable; no merge attempted"
     }
+  },
+  "pr": 1094,
+  "checkpoint": {
+    "evidence": "PR #1094 on new recovery branch; source identical to prior CI-passed #1093; head 42be5042661474ebe274afcd3b3d61210259251a",
+    "next": "Await fresh exact-head CI, then canonical runner publication preflight and safe merge",
+    "blocker": "Preflight must run on GitHub runner because local terminal has no GitHub DNS"
   }
 }
