@@ -9,8 +9,8 @@
     "label": "issue-comment-6534295424"
   },
   "claimedAt": "2026-10-30T21:54:11.000Z",
-  "heartbeatAt": "2026-10-30T22:11:54.000Z",
-  "expiresAt": "2026-10-30T22:56:54.000Z",
+  "heartbeatAt": "2026-10-30T22:24:11.000Z",
+  "expiresAt": "2026-10-30T23:09:11.000Z",
   "branch": "work/mvb-chat-6534295424",
   "predecessor": {
     "leaseId": "193d4386-501a-43bc-a24a-c794154d0b37",
@@ -36,8 +36,8 @@
   },
   "pr": 1106,
   "checkpoint": {
-    "evidence": "PR #1106 head 3857ba72ecd7528a6177d601e3c37f404143d288; real metal joint research, nine local tests, deterministic inspected A3 release diagnostic",
-    "next": "Reconcile moved main, reproduce on Node24, require exact-head CI and fresh canonical publication preflight, merge and release",
-    "blocker": "Actual fitted terminal, retained court water boundary and hydraulic acceptance remain unresolved; no construction or material exception claimed"
+    "evidence": "PR #1106 merged at 6d24ac888d55c85fd6db15f15208c93e1cea8929; final head da0912dc passed full CI 41136865682 and preflight 41136800771; nine tests and evidence blobs reproduced",
+    "next": "Resolve an actual separating terminal and retained court water boundary; compare the accessible route and respect passive dryness; do not transplant PVC slip-coupling motion",
+    "blocker": "Actual joint dimensions and consumables, first body removal, bay flooding, loaded withdrawal, supports and hydraulics remain unresolved; RWT-METALS planned"
   }
 }
