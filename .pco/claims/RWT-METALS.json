@@ -9,8 +9,8 @@
     "label": "issue-comment-6535667492"
   },
   "claimedAt": "2026-10-30T23:28:04.000Z",
-  "heartbeatAt": "2026-10-30T23:28:04.000Z",
-  "expiresAt": "2026-10-31T00:13:04.000Z",
+  "heartbeatAt": "2026-10-30T23:53:42.000Z",
+  "expiresAt": "2026-10-31T00:38:42.000Z",
   "branch": "work/mvb-chat-6535667492",
   "predecessor": {
     "leaseId": "26286684-da96-4e05-ae47-8e2024d5b45c",
@@ -33,5 +33,10 @@
       "next": "Locate accessible carrier and retained courtyard water boundary with RWT-06/HAD/STR before enlarging blind sleeves; specify actual face/gasket and full removal sweep",
       "blocker": "No matched polymer-free installed terminal, dry service section, support or hydraulic acceptance; RWT-METALS remains planned"
     }
+  },
+  "checkpoint": {
+    "evidence": "Independent source/geometry review complete; no draft yet. Two child connector writes timed out without mutation. Branch created from main 5a28e4d; PR #1119 retained.",
+    "next": "Author bounded segmented north-floor access comparison and exact Endex evidence. Root relays remote writes; worker owns this lease.",
+    "blocker": "No matched terminal face/seal, full removal sweep or dry access proof; RWT-METALS remains planned."
   }
 }
