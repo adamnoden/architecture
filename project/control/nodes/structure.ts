@@ -20,9 +20,15 @@ export const structureNodes = defineNodes([
     owners: ['STR'],
     title: 'Compare solid wall roles and genuine masonry opening systems',
     dependencies: ['STR-00'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: [
+      'docs/research/solid-walls-and-masonry-arches.md',
+      'project/str/str-masonry-result.md',
+      'project/str/studies/wall-arch-envelope.ts',
+      'project/str/studies/wall-arch-envelope.json',
+      'project/str/studies/wall-arch-envelope.svg'
+    ]
   },
   {
     id: 'STR-SPANS',
