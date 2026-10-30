@@ -12,6 +12,7 @@ import {
 import {
   leaseTemporalState,
   operationalState,
+  lastRecoverableEvidence,
   type ClaimRecord
 } from './claims.js'
 import type { ControlNode, NodeId } from './types.js'
@@ -292,7 +293,7 @@ export function buildDispatchSnapshot(
     // Fresh CAS acquisition rechecks this evidence against the current record.
     const resumeActive = state.occupancy === 'active-unclaimed' &&
       node.agentDispatch?.mode === 'self-service' &&
-      Boolean(claim?.branch && claim.checkpoint?.evidence && claim.checkpoint?.next)
+      Boolean(claim && lastRecoverableEvidence(claim))
     if (state.occupancy === 'active-unclaimed' && !resumeActive) {
       activeUnclaimed.push(node)
       continue
