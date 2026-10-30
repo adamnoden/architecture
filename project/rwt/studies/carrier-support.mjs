@@ -101,6 +101,14 @@ export function render(r) {
   v+=text(12,289,'Read ../carrier-support.md and executable source for evidence, assumptions and exclusions. RWT-06 remains open.',3.1);
   return v+'</g></svg>\n';
 }
+/** Publication precision only: classification and model calculations stay unrounded. */
+export function reportJson(value) {
+  return JSON.stringify(value, (_key, item) => {
+    if(typeof item!=='number')return item;
+    if(!Number.isFinite(item))throw Error('Nonfinite result cannot be published');
+    return Number(item.toPrecision(12));
+  }, 2)+'\n';
+}
 function gitBlob(raw){return createHash('sha1').update(`blob ${raw.length}\0`).update(raw).digest('hex');}
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const root=dirname(fileURLToPath(import.meta.url));
@@ -108,9 +116,9 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   assert.equal(gitBlob(raw),'e516ebb375a2120a300e05bd869e7edcbb28f2c8','Reassess changed north-trial evidence; do not silently regenerate');
   const trial=JSON.parse(raw);
   assert.equal(trial.run,inputs.run);assert.equal(trial.trial.fall,inputs.fall);assert.equal(trial.trial.endProjection,inputs.endProjection);
-  const result={...derive(),subject:{path:'project/rwt/studies/north-court-carrier.json',blob:gitBlob(raw),sourceId:trial.sourceId,
+  const result={...derive(),numericalPresentation:'JSON numbers use 12 significant digits; decisions use unrounded calculations. This is not physical measurement accuracy.',subject:{path:'project/rwt/studies/north-court-carrier.json',blob:gitBlob(raw),sourceId:trial.sourceId,
     boundary:'Applies to the dated unadopted north comparison only, not proof of current-house adoption or freshness of its historical prose fingerprints.'}};
-  const outputs={'carrier-support.json':JSON.stringify(result,null,2)+'\n','carrier-support.svg':render(result)};
+  const outputs={'carrier-support.json':reportJson(result),'carrier-support.svg':render(result)};
   if(process.argv.some(x=>!['--check'].includes(x)&&x.startsWith('--')))throw Error('Use --check or no flag');
   for(const [name,content] of Object.entries(outputs)) {
     const path=resolve(root,name);

@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {inputs,beam,displacement,derive,render} from './carrier-support.mjs';
+import {inputs,beam,displacement,derive,render,reportJson} from './carrier-support.mjs';
 const r=derive();
 const near=(a,b,t=1e-9)=>assert.ok(Math.abs(a-b)<t,`${a} != ${b}`);
 test('inertia uses minimum OD and wall; load combines upper water and handling mass',()=>{
@@ -42,6 +42,10 @@ test('bad dimensions and nonfinite values fail closed',()=>{
  assert.throws(()=>derive({...inputs,run:100}));assert.throws(()=>displacement(2,1,80,1,1));
 });
 test('render is deterministic, explicit physical page and no construction claim',()=>{
+ assert.equal(reportJson({rotation:0.0029985625387972206}),reportJson({rotation:0.002998562538797221}));
+ assert.equal(reportJson({rotation:0.00037482031734965257}),reportJson({rotation:0.0003748203173496526}));
+ assert.deepEqual(JSON.parse(reportJson(r)).spacingSearch.map(x=>x.eligible),r.spacingSearch.map(x=>x.eligible));
+ assert.throws(()=>reportJson({sag:Infinity}));
  assert.equal(render(r),render(derive()));assert.match(render(r),/width="420mm" height="297mm"/);
  assert.match(render(r),/not for construction/);assert.match(render(r),/RWT-06 remains open/);
 });

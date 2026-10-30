@@ -39,33 +39,33 @@
     "stationZoneMm": 100,
     "originalEccentricityMm": 5
   },
-  "inertia": 2876943.0399382724,
-  "waterMassKgM": 7.466191290796993,
-  "load": 0.09577361982189433,
-  "chordFallMmM": 14.11764705882353,
+  "inertia": 2876943.03994,
+  "waterMassKgM": 7.4661912908,
+  "load": 0.0957736198219,
+  "chordFallMmM": 14.1176470588,
   "cases": [
     {
       "span": 2500,
       "modulus": 160,
-      "sag": 105.82626552494747,
-      "endpointRotation": 0.13545761987193275,
-      "residualDownhillMmM": -121.33997281310923,
+      "sag": 105.826265525,
+      "endpointRotation": 0.135457619872,
+      "residualDownhillMmM": -121.339972813,
       "monotoneInThisModel": false
     },
     {
       "span": 1250,
       "modulus": 160,
-      "sag": 6.614141595309217,
-      "endpointRotation": 0.016932202483991594,
-      "residualDownhillMmM": -2.814555425168064,
+      "sag": 6.61414159531,
+      "endpointRotation": 0.016932202484,
+      "residualDownhillMmM": -2.81455542517,
       "monotoneInThisModel": false
     },
     {
       "span": 487.5,
       "modulus": 160,
-      "sag": 0.1530142634639375,
-      "endpointRotation": 0.0010044013191478974,
-      "residualDownhillMmM": 13.113245739675632,
+      "sag": 0.153014263464,
+      "endpointRotation": 0.00100440131915,
+      "residualDownhillMmM": 13.1132457397,
       "monotoneInThisModel": true
     }
   ],
@@ -76,17 +76,17 @@
       "intact": {
         "span": 1950,
         "modulus": 80,
-        "sag": 78.343302893536,
-        "endpointRotation": 0.12856336885093086,
-        "residualDownhillMmM": -115.98418333056887,
+        "sag": 78.3433028935,
+        "endpointRotation": 0.128563368851,
+        "residualDownhillMmM": -115.984183331,
         "monotoneInThisModel": false
       },
       "oneInactive": {
         "span": 3900,
         "modulus": 80,
-        "sag": 1253.492846296576,
-        "endpointRotation": 1.028506950807447,
-        "residualDownhillMmM": -1015.1585345178542,
+        "sag": 1253.4928463,
+        "endpointRotation": 1.02850695081,
+        "residualDownhillMmM": -1015.15853452,
         "monotoneInThisModel": false
       },
       "eligible": false
@@ -97,17 +97,17 @@
       "intact": {
         "span": 1300,
         "modulus": 80,
-        "sag": 15.475220324649086,
-        "endpointRotation": 0.038092850029905444,
-        "residualDownhillMmM": -26.28289527877422,
+        "sag": 15.4752203246,
+        "endpointRotation": 0.0380928500299,
+        "residualDownhillMmM": -26.2828952788,
         "monotoneInThisModel": false
       },
       "oneInactive": {
         "span": 2600,
         "modulus": 80,
-        "sag": 247.60352519438538,
-        "endpointRotation": 0.30474280023924355,
-        "residualDownhillMmM": -291.77899933426613,
+        "sag": 247.603525194,
+        "endpointRotation": 0.304742800239,
+        "residualDownhillMmM": -291.778999334,
         "monotoneInThisModel": false
       },
       "eligible": false
@@ -118,17 +118,17 @@
       "intact": {
         "span": 975,
         "modulus": 80,
-        "sag": 4.896456430846,
-        "endpointRotation": 0.016070421106366358,
-        "residualDownhillMmM": -5.029697124465906,
+        "sag": 4.89645643085,
+        "endpointRotation": 0.0160704211064,
+        "residualDownhillMmM": -5.02969712447,
         "monotoneInThisModel": false
       },
       "oneInactive": {
         "span": 1950,
         "modulus": 80,
-        "sag": 78.343302893536,
-        "endpointRotation": 0.12856336885093086,
-        "residualDownhillMmM": -115.98418333056887,
+        "sag": 78.3433028935,
+        "endpointRotation": 0.128563368851,
+        "residualDownhillMmM": -115.984183331,
         "monotoneInThisModel": false
       },
       "eligible": false
@@ -139,17 +139,17 @@
       "intact": {
         "span": 780,
         "modulus": 80,
-        "sag": 2.0055885540745217,
-        "endpointRotation": 0.008228055606459577,
-        "residualDownhillMmM": 2.043437606210107,
+        "sag": 2.00558855407,
+        "endpointRotation": 0.00822805560646,
+        "residualDownhillMmM": 2.04343760621,
         "monotoneInThisModel": true
       },
       "oneInactive": {
         "span": 1560,
         "modulus": 80,
-        "sag": 32.08941686519235,
-        "endpointRotation": 0.06582444485167661,
-        "residualDownhillMmM": -53.62987471593,
+        "sag": 32.0894168652,
+        "endpointRotation": 0.0658244448517,
+        "residualDownhillMmM": -53.6298747159,
         "monotoneInThisModel": false
       },
       "eligible": false
@@ -160,38 +160,38 @@
       "intact": {
         "span": 650,
         "modulus": 80,
-        "sag": 0.9672012702905679,
-        "endpointRotation": 0.0047616062537381805,
-        "residualDownhillMmM": 4.740656189700735,
+        "sag": 0.967201270291,
+        "endpointRotation": 0.00476160625374,
+        "residualDownhillMmM": 4.7406561897,
         "monotoneInThisModel": true
       },
       "oneInactive": {
         "span": 1300,
         "modulus": 80,
-        "sag": 15.475220324649086,
-        "endpointRotation": 0.038092850029905444,
-        "residualDownhillMmM": -26.28289527877422,
+        "sag": 15.4752203246,
+        "endpointRotation": 0.0380928500299,
+        "residualDownhillMmM": -26.2828952788,
         "monotoneInThisModel": false
       },
       "eligible": false
     },
     {
       "count": 8,
-      "pitch": 557.1428571428571,
+      "pitch": 557.142857143,
       "intact": {
-        "span": 557.1428571428571,
+        "span": 557.142857143,
         "modulus": 80,
-        "sag": 0.5220711563084447,
-        "endpointRotation": 0.0029985625387972206,
-        "residualDownhillMmM": 5.734469135410924,
+        "sag": 0.522071156308,
+        "endpointRotation": 0.0029985625388,
+        "residualDownhillMmM": 5.73446913541,
         "monotoneInThisModel": true
       },
       "oneInactive": {
-        "span": 1114.2857142857142,
+        "span": 1114.28571429,
         "modulus": 80,
-        "sag": 8.353138500935115,
-        "endpointRotation": 0.023988500310377765,
-        "residualDownhillMmM": -12.563160943861927,
+        "sag": 8.35313850094,
+        "endpointRotation": 0.0239885003104,
+        "residualDownhillMmM": -12.5631609439,
         "monotoneInThisModel": false
       },
       "eligible": false
@@ -202,38 +202,38 @@
       "intact": {
         "span": 487.5,
         "modulus": 80,
-        "sag": 0.306028526927875,
-        "endpointRotation": 0.0020088026382957948,
-        "residualDownhillMmM": 5.954998266681581,
+        "sag": 0.306028526928,
+        "endpointRotation": 0.0020088026383,
+        "residualDownhillMmM": 5.95499826668,
         "monotoneInThisModel": true
       },
       "oneInactive": {
         "span": 975,
         "modulus": 80,
-        "sag": 4.896456430846,
-        "endpointRotation": 0.016070421106366358,
-        "residualDownhillMmM": -5.029697124465906,
+        "sag": 4.89645643085,
+        "endpointRotation": 0.0160704211064,
+        "residualDownhillMmM": -5.02969712447,
         "monotoneInThisModel": false
       },
       "eligible": false
     },
     {
       "count": 10,
-      "pitch": 433.3333333333333,
+      "pitch": 433.333333333,
       "intact": {
-        "span": 433.3333333333333,
+        "span": 433.333333333,
         "modulus": 80,
-        "sag": 0.19105210277344545,
-        "endpointRotation": 0.001410846297403905,
-        "residualDownhillMmM": 5.783723838342702,
+        "sag": 0.191052102773,
+        "endpointRotation": 0.0014108462974,
+        "residualDownhillMmM": 5.78372383834,
         "monotoneInThisModel": true
       },
       "oneInactive": {
-        "span": 866.6666666666666,
+        "span": 866.666666667,
         "modulus": 80,
-        "sag": 3.056833644375127,
-        "endpointRotation": 0.01128677037923124,
-        "residualDownhillMmM": -0.6306617819461722,
+        "sag": 3.05683364438,
+        "endpointRotation": 0.0112867703792,
+        "residualDownhillMmM": -0.630661781946,
         "monotoneInThisModel": false
       },
       "eligible": false
@@ -244,38 +244,38 @@
       "intact": {
         "span": 390,
         "modulus": 80,
-        "sag": 0.1253492846296576,
-        "endpointRotation": 0.001028506950807447,
-        "residualDownhillMmM": 5.39683241570839,
+        "sag": 0.12534928463,
+        "endpointRotation": 0.00102850695081,
+        "residualDownhillMmM": 5.39683241571,
         "monotoneInThisModel": true
       },
       "oneInactive": {
         "span": 780,
         "modulus": 80,
-        "sag": 2.0055885540745217,
-        "endpointRotation": 0.008228055606459577,
-        "residualDownhillMmM": 2.043437606210107,
+        "sag": 2.00558855407,
+        "endpointRotation": 0.00822805560646,
+        "residualDownhillMmM": 2.04343760621,
         "monotoneInThisModel": true
       },
       "eligible": true
     },
     {
       "count": 12,
-      "pitch": 354.54545454545456,
+      "pitch": 354.545454545,
       "intact": {
-        "span": 354.54545454545456,
+        "span": 354.545454545,
         "modulus": 80,
-        "sag": 0.08561524802244219,
-        "endpointRotation": 0.0007727324949717858,
-        "residualDownhillMmM": 4.8833761023132825,
+        "sag": 0.0856152480224,
+        "endpointRotation": 0.000772732494972,
+        "residualDownhillMmM": 4.88337610231,
         "monotoneInThisModel": true
       },
       "oneInactive": {
-        "span": 709.0909090909091,
+        "span": 709.090909091,
         "modulus": 80,
-        "sag": 1.369843968359075,
-        "endpointRotation": 0.006181859959774287,
-        "residualDownhillMmM": 3.7050178682800126,
+        "sag": 1.36984396836,
+        "endpointRotation": 0.00618185995977,
+        "residualDownhillMmM": 3.70501786828,
         "monotoneInThisModel": true
       },
       "eligible": true
@@ -286,17 +286,17 @@
       "intact": {
         "span": 325,
         "modulus": 80,
-        "sag": 0.060450079393160494,
-        "endpointRotation": 0.0005952007817172726,
-        "residualDownhillMmM": 4.291677046337026,
+        "sag": 0.0604500793932,
+        "endpointRotation": 0.000595200781717,
+        "residualDownhillMmM": 4.29167704634,
         "monotoneInThisModel": true
       },
       "oneInactive": {
         "span": 650,
         "modulus": 80,
-        "sag": 0.9672012702905679,
-        "endpointRotation": 0.0047616062537381805,
-        "residualDownhillMmM": 4.740656189700735,
+        "sag": 0.967201270291,
+        "endpointRotation": 0.00476160625374,
+        "residualDownhillMmM": 4.7406561897,
         "monotoneInThisModel": true
       },
       "eligible": true
@@ -307,38 +307,38 @@
       "intact": {
         "span": 300,
         "modulus": 80,
-        "sag": 0.04388826883850622,
-        "endpointRotation": 0.0004681415342773996,
-        "residualDownhillMmM": 3.64950552454613,
+        "sag": 0.0438882688385,
+        "endpointRotation": 0.000468141534277,
+        "residualDownhillMmM": 3.64950552455,
         "monotoneInThisModel": true
       },
       "oneInactive": {
         "span": 600,
         "modulus": 80,
-        "sag": 0.7022123014160995,
-        "endpointRotation": 0.003745132274219197,
-        "residualDownhillMmM": 5.372514784604332,
+        "sag": 0.702212301416,
+        "endpointRotation": 0.00374513227422,
+        "residualDownhillMmM": 5.3725147846,
         "monotoneInThisModel": true
       },
       "eligible": true
     },
     {
       "count": 15,
-      "pitch": 278.57142857142856,
+      "pitch": 278.571428571,
       "intact": {
-        "span": 278.57142857142856,
+        "span": 278.571428571,
         "modulus": 80,
-        "sag": 0.03262944726927779,
-        "endpointRotation": 0.00037482031734965257,
-        "residualDownhillMmM": 2.9735959722431065,
+        "sag": 0.0326294472693,
+        "endpointRotation": 0.00037482031735,
+        "residualDownhillMmM": 2.97359597224,
         "monotoneInThisModel": true
       },
       "oneInactive": {
-        "span": 557.1428571428571,
+        "span": 557.142857143,
         "modulus": 80,
-        "sag": 0.5220711563084447,
-        "endpointRotation": 0.0029985625387972206,
-        "residualDownhillMmM": 5.734469135410924,
+        "sag": 0.522071156308,
+        "endpointRotation": 0.0029985625388,
+        "residualDownhillMmM": 5.73446913541,
         "monotoneInThisModel": true
       },
       "eligible": true
@@ -349,17 +349,17 @@
       "intact": {
         "span": 260,
         "modulus": 80,
-        "sag": 0.024760352519438537,
-        "endpointRotation": 0.00030474280023924357,
-        "residualDownhillMmM": 2.2744427201227473,
+        "sag": 0.0247603525194,
+        "endpointRotation": 0.000304742800239,
+        "residualDownhillMmM": 2.27444272012,
         "monotoneInThisModel": true
       },
       "oneInactive": {
         "span": 520,
         "modulus": 80,
-        "sag": 0.3961656403110166,
-        "endpointRotation": 0.0024379424019139485,
-        "residualDownhillMmM": 5.910473887678812,
+        "sag": 0.396165640311,
+        "endpointRotation": 0.00243794240191,
+        "residualDownhillMmM": 5.91047388768,
         "monotoneInThisModel": true
       },
       "eligible": true
@@ -370,80 +370,80 @@
       "intact": {
         "span": 243.75,
         "modulus": 80,
-        "sag": 0.01912678293299219,
-        "endpointRotation": 0.00025110032978697435,
-        "residualDownhillMmM": 1.558854421344248,
+        "sag": 0.019126782933,
+        "endpointRotation": 0.000251100329787,
+        "residualDownhillMmM": 1.55885442134,
         "monotoneInThisModel": true
       },
       "oneInactive": {
         "span": 487.5,
         "modulus": 80,
-        "sag": 0.306028526927875,
-        "endpointRotation": 0.0020088026382957948,
-        "residualDownhillMmM": 5.954998266681581,
+        "sag": 0.306028526928,
+        "endpointRotation": 0.0020088026383,
+        "residualDownhillMmM": 5.95499826668,
         "monotoneInThisModel": true
       },
       "eligible": true
     },
     {
       "count": 18,
-      "pitch": 229.41176470588235,
+      "pitch": 229.411764706,
       "intact": {
-        "span": 229.41176470588235,
+        "span": 229.411764706,
         "modulus": 80,
-        "sag": 0.015008115878600304,
-        "endpointRotation": 0.00020934397533227088,
-        "residualDownhillMmM": 0.831380006568181,
+        "sag": 0.0150081158786,
+        "endpointRotation": 0.000209343975332,
+        "residualDownhillMmM": 0.831380006568,
         "monotoneInThisModel": true
       },
       "oneInactive": {
-        "span": 458.8235294117647,
+        "span": 458.823529412,
         "modulus": 80,
-        "sag": 0.24012985405760487,
-        "endpointRotation": 0.001674751802658167,
-        "residualDownhillMmM": 5.904433717703824,
+        "sag": 0.240129854058,
+        "endpointRotation": 0.00167475180266,
+        "residualDownhillMmM": 5.9044337177,
         "monotoneInThisModel": true
       },
       "eligible": true
     },
     {
       "count": 19,
-      "pitch": 216.66666666666666,
+      "pitch": 216.666666667,
       "intact": {
-        "span": 216.66666666666666,
+        "span": 216.666666667,
         "modulus": 80,
-        "sag": 0.01194075642334034,
-        "endpointRotation": 0.00017635578717548812,
-        "residualDownhillMmM": 0.09513742549419521,
+        "sag": 0.0119407564233,
+        "endpointRotation": 0.000176355787175,
+        "residualDownhillMmM": 0.0951374254942,
         "monotoneInThisModel": true
       },
       "oneInactive": {
-        "span": 433.3333333333333,
+        "span": 433.333333333,
         "modulus": 80,
-        "sag": 0.19105210277344545,
-        "endpointRotation": 0.001410846297403905,
-        "residualDownhillMmM": 5.783723838342702,
+        "sag": 0.191052102773,
+        "endpointRotation": 0.0014108462974,
+        "residualDownhillMmM": 5.78372383834,
         "monotoneInThisModel": true
       },
       "eligible": true
     },
     {
       "count": 20,
-      "pitch": 205.26315789473685,
+      "pitch": 205.263157895,
       "intact": {
-        "span": 205.26315789473685,
+        "span": 205.263157895,
         "modulus": 80,
-        "sag": 0.009618502361834057,
-        "endpointRotation": 0.00014994998553833605,
-        "residualDownhillMmM": -0.6476875420994214,
+        "sag": 0.00961850236183,
+        "endpointRotation": 0.000149949985538,
+        "residualDownhillMmM": -0.647687542099,
         "monotoneInThisModel": false
       },
       "oneInactive": {
-        "span": 410.5263157894737,
+        "span": 410.526315789,
         "modulus": 80,
-        "sag": 0.1538960377893449,
-        "endpointRotation": 0.0011995998843066884,
-        "residualDownhillMmM": 5.610354866824534,
+        "sag": 0.153896037789,
+        "endpointRotation": 0.00119959988431,
+        "residualDownhillMmM": 5.61035486682,
         "monotoneInThisModel": true
       },
       "eligible": false
@@ -469,25 +469,25 @@
     "intact": {
       "span": 390,
       "modulus": 80,
-      "sag": 0.1253492846296576,
-      "endpointRotation": 0.001028506950807447,
-      "residualDownhillMmM": 5.39683241570839,
+      "sag": 0.12534928463,
+      "endpointRotation": 0.00102850695081,
+      "residualDownhillMmM": 5.39683241571,
       "monotoneInThisModel": true
     },
     "oneInactive": {
       "span": 780,
       "modulus": 80,
-      "sag": 2.0055885540745217,
-      "endpointRotation": 0.008228055606459577,
-      "residualDownhillMmM": 2.043437606210107,
+      "sag": 2.00558855407,
+      "endpointRotation": 0.00822805560646,
+      "residualDownhillMmM": 2.04343760621,
       "monotoneInThisModel": true
     },
     "twoInactive": {
       "span": 1170,
       "modulus": 80,
-      "sag": 10.153292055002266,
-      "endpointRotation": 0.027769687671801067,
-      "residualDownhillMmM": -16.216143177080102,
+      "sag": 10.153292055,
+      "endpointRotation": 0.0277696876718,
+      "residualDownhillMmM": -16.2161431771,
       "monotoneInThisModel": false
     },
     "assumedAxialZone": 100,
@@ -496,15 +496,15 @@
     "terminalCondition": "Independent accessible end supports required; end cantilevers, fittings and seal loads NOT analysed."
   },
   "clearance": {
-    "bareConcentricRadialMin": 22.749999999999993,
-    "originalEccentricLowerGap": 17.749999999999993,
+    "bareConcentricRadialMin": 22.75,
+    "originalEccentricLowerGap": 17.75,
     "ideal16Envelope": 142.7,
     "ideal16ConcentricRadialRemaining": 6.75,
     "ideal16RemainingAtOriginalEccentricity": 1.75,
-    "idealGravityOffsetMin": 6.749999999999993,
-    "idealGravityOffsetMax": 8.849999999999994,
+    "idealGravityOffsetMin": 6.75,
+    "idealGravityOffsetMax": 8.85,
     "ideal25SmallestEnvelope": 160,
-    "ideal25BestDiametralClearance": -0.30000000000001137
+    "ideal25BestDiametralClearance": -0.3
   },
   "unresolved": [
     "Actual ring collar/bolt dimensions, clocking, bearing and installed centreline",
@@ -514,6 +514,7 @@
     "Loaded installation/withdrawal force and joint-free replacement",
     "Inlets, capacity, hydraulic head, first vulnerable fabric and actual receiving water"
   ],
+  "numericalPresentation": "JSON numbers use 12 significant digits; decisions use unrounded calculations. This is not physical measurement accuracy.",
   "subject": {
     "path": "project/rwt/studies/north-court-carrier.json",
     "blob": "e516ebb375a2120a300e05bd869e7edcbb28f2c8",
