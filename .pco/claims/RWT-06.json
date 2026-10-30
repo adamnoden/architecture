@@ -9,8 +9,8 @@
     "label": "issue-comment-6524367636"
   },
   "claimedAt": "2026-10-30T13:48:38.000Z",
-  "heartbeatAt": "2026-10-30T13:54:11.000Z",
-  "expiresAt": "2026-10-30T14:39:11.000Z",
+  "heartbeatAt": "2026-10-30T13:57:27.000Z",
+  "expiresAt": "2026-10-30T14:42:27.000Z",
   "branch": "work/mvb-chat-6524367636",
   "predecessor": {
     "leaseId": "de1bad63-e857-440f-ae7b-d099e0d1c9ca",
@@ -29,8 +29,8 @@
   },
   "pr": 1093,
   "checkpoint": {
-    "evidence": "PR #1093 head 6d04e0c821b32a5b33f42f19e4a4d7dd65478965; raised-pan/relief hierarchy documented; no RWT adoption",
-    "next": "Observe exact-head CI; run canonical control:merge-check on a capable runner then merge only if fresh and green",
-    "blocker": "Regular-chat terminal cannot reach GitHub; cannot run canonical merge preflight here"
+    "evidence": "PR #1093 head 6d04e0c821b32a5b33f42f19e4a4d7dd65478965, exact-head CI run 41066845964 PASS; RWT-06 remains planned",
+    "next": "On a CLI-capable runner, re-claim RWT-06, reconcile PR lease identity, run fresh control:merge-check and merge only with valid exact-head CI",
+    "blocker": "Regular-chat terminal cannot reach GitHub, so canonical merge-check is unavailable; no merge attempted"
   }
 }
