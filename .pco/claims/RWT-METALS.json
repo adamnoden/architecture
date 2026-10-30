@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "26286684-da96-4e05-ae47-8e2024d5b45c",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6534295424"
+    "label": "issue-comment-6535138180"
   },
-  "claimedAt": "2026-10-30T21:54:11.000Z",
-  "heartbeatAt": "2026-10-30T22:25:13.000Z",
-  "expiresAt": "2026-10-30T22:25:13.000Z",
-  "branch": "work/mvb-chat-6534295424",
+  "claimedAt": "2026-10-30T22:49:32.000Z",
+  "heartbeatAt": "2026-10-30T22:49:32.000Z",
+  "expiresAt": "2026-10-30T23:34:32.000Z",
+  "branch": "work/mvb-chat-6535138180",
   "predecessor": {
-    "leaseId": "193d4386-501a-43bc-a24a-c794154d0b37",
-    "generation": 1,
-    "branch": "work/mvb-chat-6533365522",
-    "pr": 1102,
+    "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
+    "generation": 2,
+    "branch": "work/mvb-chat-6534295424",
+    "pr": 1106,
     "checkpoint": {
-      "evidence": "PR #1102 merged at ba20c2aea46d013c07ed3f9f0aa2bbd5b644e847; final head 830f126a passed full CI 41130150368 and canonical preflight 41130067395; seven tests reproduced",
-      "next": "Resolve copper profiles, support/exposure and joint consumables, actual brass fabrication and renewable pressure-qualified concealed end assembly; use compartment failure result",
-      "blocker": "No installed compatibility, hydraulic capacity or threshold acceptance; RWT-METALS remains planned"
+      "evidence": "PR #1106 merged at 6d24ac888d55c85fd6db15f15208c93e1cea8929; final head da0912dc passed full CI 41136865682 and preflight 41136800771; nine tests and evidence blobs reproduced",
+      "next": "Resolve an actual separating terminal and retained court water boundary; compare the accessible route and respect passive dryness; do not transplant PVC slip-coupling motion",
+      "blocker": "Actual joint dimensions and consumables, first body removal, bay flooding, loaded withdrawal, supports and hydraulics remain unresolved; RWT-METALS planned"
     }
   },
   "recoverySource": {
-    "leaseId": "193d4386-501a-43bc-a24a-c794154d0b37",
-    "generation": 1,
-    "branch": "work/mvb-chat-6533365522",
-    "pr": 1102,
+    "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
+    "generation": 2,
+    "branch": "work/mvb-chat-6534295424",
+    "pr": 1106,
     "checkpoint": {
-      "evidence": "PR #1102 merged at ba20c2aea46d013c07ed3f9f0aa2bbd5b644e847; final head 830f126a passed full CI 41130150368 and canonical preflight 41130067395; seven tests reproduced",
-      "next": "Resolve copper profiles, support/exposure and joint consumables, actual brass fabrication and renewable pressure-qualified concealed end assembly; use compartment failure result",
-      "blocker": "No installed compatibility, hydraulic capacity or threshold acceptance; RWT-METALS remains planned"
+      "evidence": "PR #1106 merged at 6d24ac888d55c85fd6db15f15208c93e1cea8929; final head da0912dc passed full CI 41136865682 and preflight 41136800771; nine tests and evidence blobs reproduced",
+      "next": "Resolve an actual separating terminal and retained court water boundary; compare the accessible route and respect passive dryness; do not transplant PVC slip-coupling motion",
+      "blocker": "Actual joint dimensions and consumables, first body removal, bay flooding, loaded withdrawal, supports and hydraulics remain unresolved; RWT-METALS planned"
     }
-  },
-  "pr": 1106,
-  "checkpoint": {
-    "evidence": "PR #1106 merged at 6d24ac888d55c85fd6db15f15208c93e1cea8929; final head da0912dc passed full CI 41136865682 and preflight 41136800771; nine tests and evidence blobs reproduced",
-    "next": "Resolve an actual separating terminal and retained court water boundary; compare the accessible route and respect passive dryness; do not transplant PVC slip-coupling motion",
-    "blocker": "Actual joint dimensions and consumables, first body removal, bay flooding, loaded withdrawal, supports and hydraulics remain unresolved; RWT-METALS planned"
-  },
-  "releasedAt": "2026-10-30T22:25:13.000Z",
-  "releaseReason": "handoff"
+  }
 }
