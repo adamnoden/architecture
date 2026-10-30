@@ -9,7 +9,12 @@
     "label": "mat-audit-ground-water-session"
   },
   "claimedAt": "2026-10-30T22:50:50.233Z",
-  "heartbeatAt": "2026-10-30T22:50:50.233Z",
-  "expiresAt": "2026-10-30T23:35:50.233Z",
-  "branch": "work/mat-audit-20261030"
+  "heartbeatAt": "2026-10-30T23:04:11.734Z",
+  "expiresAt": "2026-10-30T23:49:11.734Z",
+  "branch": "work/mat-audit-20261030",
+  "pr": 1109,
+  "checkpoint": {
+    "evidence": "PR #1109; constituent register published at 19b4c644fd4d1219919d42b7dd67c021fc18e7d2; independent reviews complete",
+    "next": "Apply traceability corrections, reconcile STR-MASONRY, validate and merge audit"
+  }
 }
