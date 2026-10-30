@@ -97,3 +97,5 @@ They verify arithmetic and ideal plane gaps, not catalogue accuracy, full collis
 **Earned:** a defined right-angle mechanism, catalogue-envelope rejection, quantified blind-route costs and access-first priority. **Not earned:** an approved polymer-free terminal, a dimensioned dry bay, hydraulic sizing, support adequacy, physical renewal or RWT-METALS completion.
 
 Next is the **connected access and water-boundary section**, with exact mating faces and a disclosed suitable seal inside it. RWT-06/HAD/STR own spatial reconciliation; MAT controls residual materials. More isolated fittings or synthetic clearance drawings cannot substitute for that decision.
+
+The subsequent [RWT-06 raised-terminal section comparison](raised-terminal-section.md) supplies a necessary constraint for that work: the historical 435 mm relative raise does not clear even the centred flange envelope at the historical exterior-interface axis. It does not select the terminal, its removal travel or the connected route.
