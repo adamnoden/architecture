@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "node": "STR-00",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "ac1bbd7c-52f5-4c39-b6af-1a7bd5757ebf",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "owner-str-authoring-20261030"
+  },
+  "claimedAt": "2026-10-30T21:22:08.000Z",
+  "heartbeatAt": "2026-10-30T21:22:08.000Z",
+  "expiresAt": "2026-10-30T22:07:08.000Z",
+  "branch": "work/str-architecture-ac1bbd7c",
+  "note": "Owner-directed STR-00 bootstrap under issue #1103 and swarm-runbook connector-only boundary. STR-00 is absent from main until programme/graph registration merges; undirected dispatch may fail closed meanwhile. Exact create-if-absent CAS; no CLI acquisition or takeover is claimed.",
+  "checkpoint": {
+    "evidence": "Issue #1103 records owner authority, scoped bootstrap and programme; baseline main 886c9a3fe85e0edaf33701872c076b757cd72c4c inspected",
+    "next": "Author bounded programme and canonical graph on isolated branch; validate and publish PR"
+  }
+}
