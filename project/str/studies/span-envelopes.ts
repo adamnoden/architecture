@@ -155,7 +155,7 @@ for(const [i,[label,fill]] of legend.entries()){
 text(10,219,'HC200 + 75 topping = 365 mm before upper functions.','warning')
 text(10,227,'The 50/75 toppings and steel/RC depths are comparisons.','small')
 text(10,234,'No acoustic, fire, camber or deflection performance proved.','small')
-text(10,242,'Exposed vault trial / section 1:25 / services relocated','small')
+text(10,242,'Exposed vault trial / 1:25 / constant vertical ring offset','small')
 const vx=15,vy=260,vs=25,vw=spanGeometry.finishedFaceGapMm/vs,vRise=200/vs,vt=vaultThicknessMm/vs
 const finishBottomY=vy-(house.levels.first-f.finish-exposedVaultCases[0].springingIntradosMm)/vs
 const finishTopY=finishBottomY-f.finish/vs
