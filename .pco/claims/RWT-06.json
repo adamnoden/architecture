@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 9,
-  "state": "released",
-  "leaseId": "5eb01e18-1537-4377-8ec2-2a32bed5be9b",
+  "generation": 10,
+  "state": "claimed",
+  "leaseId": "477705b6-8a6c-4e79-afc7-fb021b6c46b2",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6529831185"
+    "label": "issue-comment-6531802596"
   },
-  "claimedAt": "2026-10-30T17:59:50.000Z",
-  "heartbeatAt": "2026-10-30T18:46:05.000Z",
-  "expiresAt": "2026-10-30T18:46:05.000Z",
-  "branch": "work/mvb-chat-6529831185",
+  "claimedAt": "2026-10-30T19:32:50.000Z",
+  "heartbeatAt": "2026-10-30T19:32:50.000Z",
+  "expiresAt": "2026-10-30T20:17:50.000Z",
+  "branch": "work/mvb-chat-6531802596",
   "predecessor": {
-    "leaseId": "5b2cdce2-d8ee-4a16-a3a2-565b3e316366",
-    "generation": 8,
-    "branch": "work/mvb-chat-6524816900",
-    "pr": 1095,
+    "leaseId": "5eb01e18-1537-4377-8ec2-2a32bed5be9b",
+    "generation": 9,
+    "branch": "work/mvb-chat-6529831185",
+    "pr": 1098,
     "checkpoint": {
-      "evidence": "PR #1095 head b05a2b4e7dc1eef85294b741efb30c553cd0e5a6; PE100 exterior renewal study completed, remains unadopted",
-      "next": "Observe fresh exact-head CI and run one-shot canonical publication preflight; merge then release",
-      "blocker": "Terminal lacks GitHub DNS; canonical preflight must run in GitHub Actions"
+      "evidence": "PR #1098 merged at 27b32f233983219c287e5bb3c03cabfb9646b0b2; exact-head full CI and read-only canonical preflight passed; nine tests and generated artifacts verified on runner",
+      "next": "Resolve actual ring contact/retention, pressure-rated court end seal and independent terminal supports; compare conventional carrier before adopting extra support burden",
+      "blocker": "Installed compatibility, thermal/contact behaviour, loaded withdrawal and hydraulic/threshold evidence remain unverified; RWT-06 stays planned"
     }
   },
   "recoverySource": {
-    "leaseId": "5b2cdce2-d8ee-4a16-a3a2-565b3e316366",
-    "generation": 8,
-    "branch": "work/mvb-chat-6524816900",
-    "pr": 1095,
+    "leaseId": "5eb01e18-1537-4377-8ec2-2a32bed5be9b",
+    "generation": 9,
+    "branch": "work/mvb-chat-6529831185",
+    "pr": 1098,
     "checkpoint": {
-      "evidence": "PR #1095 head b05a2b4e7dc1eef85294b741efb30c553cd0e5a6; PE100 exterior renewal study completed, remains unadopted",
-      "next": "Observe fresh exact-head CI and run one-shot canonical publication preflight; merge then release",
-      "blocker": "Terminal lacks GitHub DNS; canonical preflight must run in GitHub Actions"
+      "evidence": "PR #1098 merged at 27b32f233983219c287e5bb3c03cabfb9646b0b2; exact-head full CI and read-only canonical preflight passed; nine tests and generated artifacts verified on runner",
+      "next": "Resolve actual ring contact/retention, pressure-rated court end seal and independent terminal supports; compare conventional carrier before adopting extra support burden",
+      "blocker": "Installed compatibility, thermal/contact behaviour, loaded withdrawal and hydraulic/threshold evidence remain unverified; RWT-06 stays planned"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1098 merged at 27b32f233983219c287e5bb3c03cabfb9646b0b2; exact-head full CI and read-only canonical preflight passed; nine tests and generated artifacts verified on runner",
-    "next": "Resolve actual ring contact/retention, pressure-rated court end seal and independent terminal supports; compare conventional carrier before adopting extra support burden",
-    "blocker": "Installed compatibility, thermal/contact behaviour, loaded withdrawal and hydraulic/threshold evidence remain unverified; RWT-06 stays planned"
-  },
-  "pr": 1098,
-  "releasedAt": "2026-10-30T18:46:05.000Z",
-  "releaseReason": "handoff"
+  }
 }
