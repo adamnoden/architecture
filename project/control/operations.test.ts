@@ -72,3 +72,24 @@ test('briefing tolerates only generated main advances and records both source an
  assert.equal(r.snapshot.main,'a'.repeat(40));assert.equal(r.snapshot.currentMain,'b'.repeat(40))
  assert.match(r.markdown,/only generated projection files differ/)
 })
+
+test('crash recovery briefing separates surviving PR evidence from actual integration',()=>{
+ const earlier=createClaimRecord({node:node.id,leaseId:'old',generation:1,
+   holder:{kind:'chatgpt'},now:new Date('2026-10-29T09:00:00Z'),
+   branch:'work/preserved',pr:123,
+   checkpoint:{evidence:'PR #123 old head',next:'Reconcile and validate'}})
+ const open={...pr,merged:false}
+ const r=operationsBrief([node],[earlier],at,'a'.repeat(40),'o/r',[open])
+ assert.equal(r.snapshot.recovery.claimable?.[0].node,node.id)
+ assert.equal(r.snapshot.recovery.claimable?.[0].previousGeneration,1)
+ assert.equal(r.snapshot.recovery.preservedUnmergedPRs?.[0].number,123)
+ assert.match(r.markdown,/Preserved unmerged/)
+ assert.match(r.markdown,/not shipped/)
+})
+
+test('unknown lease availability stays unknown even when surviving PR is observable',()=>{
+ const r=operationsBrief([node],null,at,'a'.repeat(40),'o/r',[{...pr,merged:false}])
+ assert.equal(r.snapshot.recovery.claimable,null)
+ assert.equal(r.snapshot.recovery.preservedUnmergedPRs?.length,1)
+ assert.match(r.markdown,/Recoverable claim availability unknown/)
+})
