@@ -1,46 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 11,
-  "state": "released",
-  "leaseId": "5bf0bbdb-e8db-4ad8-8d82-c3f34fbd26ca",
+  "generation": 12,
+  "state": "claimed",
+  "leaseId": "52897e23-b876-4778-8597-6a743dda5d55",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6532658645"
+    "label": "issue-comment-6535293702"
   },
-  "claimedAt": "2026-10-30T20:21:07.000Z",
-  "heartbeatAt": "2026-10-30T21:00:15.000Z",
-  "expiresAt": "2026-10-30T21:00:15.000Z",
-  "branch": "work/mvb-chat-6532658645",
-  "pr": 1101,
+  "claimedAt": "2026-10-30T23:00:35.000Z",
+  "heartbeatAt": "2026-10-30T23:00:35.000Z",
+  "expiresAt": "2026-10-30T23:45:35.000Z",
+  "branch": "work/mvb-chat-6535293702",
   "predecessor": {
-    "leaseId": "477705b6-8a6c-4e79-afc7-fb021b6c46b2",
-    "generation": 10,
-    "branch": "work/mvb-chat-6531802596",
-    "pr": 1099,
+    "leaseId": "5bf0bbdb-e8db-4ad8-8d82-c3f34fbd26ca",
+    "generation": 11,
+    "branch": "work/mvb-chat-6532658645",
+    "pr": 1101,
     "checkpoint": {
-      "evidence": "PR #1099 merged at 6f7bfef005cd22fe5ab0737be1fa871376ac2123; exact-head full CI 41118417298 and read-only preflight 41118375053 passed; eleven tests reproduced",
-      "next": "Confirm or falsify the eight-ring solid-wall PVC candidate: actual stiffness, ring retention, independently supported couplings and pressure-qualified court seal",
-      "blocker": "Published comparison is not installed compatibility, structural, hydraulic, threshold or site acceptance; RWT-06 remains planned"
+      "evidence": "PR #1101 head c61da8fc1f4e8fd39a284975ec38bad25928860b supersedes plastic defaults and registers free-shed, metals and robustness work",
+      "next": "Require final exact-head CI and both canonical lease preflights; merge bounded rebrief, retain RWT-06 planned and release",
+      "blocker": "Actual product, free-shed capture and hydraulic/threshold design remain follow-on work"
     }
   },
   "recoverySource": {
-    "leaseId": "477705b6-8a6c-4e79-afc7-fb021b6c46b2",
-    "generation": 10,
-    "branch": "work/mvb-chat-6531802596",
-    "pr": 1099,
+    "leaseId": "5bf0bbdb-e8db-4ad8-8d82-c3f34fbd26ca",
+    "generation": 11,
+    "branch": "work/mvb-chat-6532658645",
+    "pr": 1101,
     "checkpoint": {
-      "evidence": "PR #1099 merged at 6f7bfef005cd22fe5ab0737be1fa871376ac2123; exact-head full CI 41118417298 and read-only preflight 41118375053 passed; eleven tests reproduced",
-      "next": "Confirm or falsify the eight-ring solid-wall PVC candidate: actual stiffness, ring retention, independently supported couplings and pressure-qualified court seal",
-      "blocker": "Published comparison is not installed compatibility, structural, hydraulic, threshold or site acceptance; RWT-06 remains planned"
+      "evidence": "PR #1101 head c61da8fc1f4e8fd39a284975ec38bad25928860b supersedes plastic defaults and registers free-shed, metals and robustness work",
+      "next": "Require final exact-head CI and both canonical lease preflights; merge bounded rebrief, retain RWT-06 planned and release",
+      "blocker": "Actual product, free-shed capture and hydraulic/threshold design remain follow-on work"
     }
-  },
-  "note": "Owner-directed rebrief, shared MAT bootstrap PR #1101. Exact-blob CAS metadata binding while MAT-00 is not on main; canonical acquisition remains the original gateway result.",
-  "checkpoint": {
-    "evidence": "PR #1101 head c61da8fc1f4e8fd39a284975ec38bad25928860b supersedes plastic defaults and registers free-shed, metals and robustness work",
-    "next": "Require final exact-head CI and both canonical lease preflights; merge bounded rebrief, retain RWT-06 planned and release",
-    "blocker": "Actual product, free-shed capture and hydraulic/threshold design remain follow-on work"
-  },
-  "releasedAt": "2026-10-30T21:00:15.000Z",
-  "releaseReason": "handoff"
+  }
 }
