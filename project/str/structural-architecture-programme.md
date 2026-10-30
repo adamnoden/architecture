@@ -102,6 +102,8 @@ Use conventional technical evidence where it answers the actual question. Escala
 
 ## Initial evidence routes
 
+The [first joined house comparison](str-house-result.md) brings the two option studies onto paired inhabited plans and located support/service sections. It records a useful aligned replan, actual arch and frame alternatives, and specific unresolved bearing, riser, roof-heel and occupation conditions. **STR-HOUSE remains open**; this partial evidence does not unlock STR-RECONCILE or a final selection gate.
+
 The completed floor and roof comparison is retained in the [spans result](str-spans-result.md), its [public options study](../../docs/research/structural-floor-roof-options.md) and [source-bound section sheet](studies/span-envelopes.svg). Hollowcore and a tied steel roof lead the conventional enquiry; an exposed masonry vault remains an explicit compression-led challenger. The comparison adopts no whole-house arrangement.
 
 The completed option comparison is retained in the [masonry result](str-masonry-result.md), its [public wall and arch study](../../docs/research/solid-walls-and-masonry-arches.md) and [source-bound geometry sheet](studies/wall-arch-envelope.svg). Its shortlist and limits feed STR-HOUSE; no whole-house arrangement is adopted by that comparison.
