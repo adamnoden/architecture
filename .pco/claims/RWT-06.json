@@ -9,8 +9,8 @@
     "label": "issue-comment-6531802596"
   },
   "claimedAt": "2026-10-30T19:32:50.000Z",
-  "heartbeatAt": "2026-10-30T19:32:50.000Z",
-  "expiresAt": "2026-10-30T20:17:50.000Z",
+  "heartbeatAt": "2026-10-30T19:49:05.000Z",
+  "expiresAt": "2026-10-30T20:34:05.000Z",
   "branch": "work/mvb-chat-6531802596",
   "predecessor": {
     "leaseId": "5eb01e18-1537-4377-8ec2-2a32bed5be9b",
@@ -33,5 +33,11 @@
       "next": "Resolve actual ring contact/retention, pressure-rated court end seal and independent terminal supports; compare conventional carrier before adopting extra support burden",
       "blocker": "Installed compatibility, thermal/contact behaviour, loaded withdrawal and hydraulic/threshold evidence remain unverified; RWT-06 stays planned"
     }
+  },
+  "pr": 1099,
+  "checkpoint": {
+    "evidence": "PR #1099 head 2eac822ff1265bc8f0b9f0fa0d4deede999c8f8c; eleven tests and deterministic JSON/SVG passed locally; published blobs verified",
+    "next": "Require exact-head full CI and fresh read-only canonical preflight, then merge; RWT-06 remains planned",
+    "blocker": "Installed stiffness, terminals, pressure seal and hydraulic/threshold acceptance remain unverified"
   }
 }
