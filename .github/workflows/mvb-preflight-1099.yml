@@ -1,0 +1,76 @@
+name: Temporary read-only RWT publication check 1099
+on:
+  push:
+    branches: [work/mvb-chat-6531802596]
+    paths: [.github/workflows/mvb-preflight-1099.yml]
+permissions:
+  contents: read
+  pull-requests: read
+  checks: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Observe final cleaned PR head and its exact validation
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          ready=false
+          for attempt in $(seq 1 48); do
+            if ! pr="$(gh api repos/adamnoden/architecture/pulls/1099)"; then sleep 15; continue; fi
+            test "$(jq -r '.state' <<< "$pr")" = open
+            test "$(jq -r '.head.ref' <<< "$pr")" = work/mvb-chat-6531802596
+            test "$(jq -r '.head.repo.full_name' <<< "$pr")" = adamnoden/architecture
+            test "$(jq -r '.base.ref' <<< "$pr")" = main
+            grep -Fxq 'Work: RWT-06' <<< "$(jq -r '.body' <<< "$pr")"
+            grep -Fxq 'Lease: RWT-06 / 477705b6-8a6c-4e79-afc7-fb021b6c46b2 / generation 10' <<< "$(jq -r '.body' <<< "$pr")"
+            head="$(jq -r '.head.sha' <<< "$pr")"
+            git fetch origin main work/mvb-chat-6531802596 --quiet
+            test "$(git rev-parse origin/work/mvb-chat-6531802596)" = "$head"
+            if git cat-file -e "$head:.github/workflows/mvb-preflight-1099.yml" 2>/dev/null; then sleep 15; continue; fi
+            git diff --quiet origin/main "$head" -- project/control scripts/project-claims.ts package.json package-lock.json
+            if ! checks="$(gh api "repos/adamnoden/architecture/commits/$head/check-runs?per_page=100")"; then sleep 15; continue; fi
+            latest="$(jq '[.check_runs[] | select(.name == "validate" and .app.slug == "github-actions")] | sort_by(.id) | last // {}' <<< "$checks")"
+            if test "$(jq -r '.status' <<< "$latest")" = completed; then
+              test "$(jq -r '.conclusion' <<< "$latest")" = success
+              echo "Validated final head: $head"
+              echo "Validation evidence: $(jq -r '.details_url' <<< "$latest")"
+              echo "TARGET_HEAD=$head" >> "$GITHUB_ENV"
+              ready=true
+              break
+            fi
+            sleep 15
+          done
+          test "$ready" = true
+      - name: Reproduce bounded study on the validated head
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout --detach "$TARGET_HEAD"
+          node --test project/rwt/studies/conventional-carrier.test.mjs
+          node project/rwt/studies/conventional-carrier.mjs --check
+          test -z "$(git status --porcelain --untracked-files=no)"
+      - name: Canonical publication preflight
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          node --import tsx scripts/project-claims.ts merge-check RWT-06 \
+            --lease-id 477705b6-8a6c-4e79-afc7-fb021b6c46b2 \
+            --generation 10 \
+            --branch work/mvb-chat-6531802596 \
+            --head "$TARGET_HEAD" --format text
