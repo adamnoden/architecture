@@ -63,6 +63,20 @@ export function assertBriefSource(ancestor:boolean,dirty:boolean,changes:readonl
 export function operationsBrief(nodes: readonly ControlNode[], claims: readonly ClaimRecord[] | null, at: Date, main: string, repository: string, prs: readonly PullRequestObservation[] | null, warning?: string, currentMain=main) {
   const groups=nodesByDerivedState(nodes)
   const dispatch=claims ? buildDispatchSnapshot(nodes,claims,at) : null
+  // Evidence-bound recovery projection. PR existence and prior checkpoints do
+  // not establish correctness, readiness to merge or a dead predecessor.
+  const recoveryCandidates=dispatch?.safeForAutomaticClaim ? dispatch.candidates
+    .filter(candidate=>candidate.previousClaim)
+    .map(candidate=>({node:candidate.node.id,previousGeneration:candidate.previousClaim!.generation,
+      predecessorBranch:candidate.previousClaim!.branch??null,
+      predecessorPR:candidate.previousClaim!.pr??null,
+      checkpoint:candidate.previousClaim!.checkpoint??null,
+      resumeActive:!!candidate.resumeActive})) : null
+  const recoveryReview=dispatch?.activeUnclaimed.map(node=>({node:node.id,
+    reason:'Active packet lacks eligible self-service recovery evidence or is manually dispatched',
+    previousClaim:claims?.find(c=>c.node===node.id)?.generation??null}))??null
+  const preservedPRs=prs?.filter(p=>!p.merged&&safeWork(p.body).some(id=>nodes.some(node=>node.id===id)))
+    .map(p=>({number:p.number,url:p.url,head:p.head,work:safeWork(p.body)}))??null
   const snapshot={schemaVersion:1,observedAt:at.toISOString(),main,currentMain,repository,claimsAvailable:claims!==null,prsAvailable:prs!==null,warning:warning??null,
     counts:Object.fromEntries(Object.entries(groups).map(([key,value])=>[key,value.length])),
     safeForAutomaticClaim:dispatch?.safeForAutomaticClaim??null,
@@ -72,7 +86,8 @@ export function operationsBrief(nodes: readonly ControlNode[], claims: readonly 
     manual:dispatch?.manualReady.map(c=>({node:c.node.id,reason:c.reason}))??null,
     activeUnclaimed:dispatch?.activeUnclaimed.map(n=>n.id)??null,
     invalidClaims:dispatch?.invalidLiveClaims.map(c=>({node:c.node,reason:c.reason}))??null,
-    prs:prs?prs.map(p=>({number:p.number,title:p.title,url:p.url,branch:p.branch,head:p.head,work:safeWork(p.body)})):null}
+    prs:prs?prs.map(p=>({number:p.number,title:p.title,url:p.url,branch:p.branch,head:p.head,work:safeWork(p.body)})):null,
+    recovery:{claimable:recoveryCandidates,needsReview:recoveryReview,preservedUnmergedPRs:preservedPRs}}
   const md=['# Operations snapshot','',`Observed **${snapshot.observedAt}** · source main revision \`${main}\``, '',
     ...(currentMain!==main?[`Observed main tip: \`${currentMain}\`; only generated projection files differ from the source revision.`, '']:[]),
     'Snapshot only. Read canonical live claims before acquisition or publication. Heartbeat age does not prove responsiveness.', '',
@@ -86,6 +101,14 @@ export function operationsBrief(nodes: readonly ControlNode[], claims: readonly 
     ...(snapshot.occupied?.length?snapshot.occupied.map(n=>`| ${n.node} | ${cell(n.holder)} | ${n.health.heartbeatAgeMinutes} min | ${n.health.expiresInMinutes} min | ${cell(n.checkpoint?.next??n.note??'No checkpoint')} |`):[claims?'| — | None | — | — | — |':'| — | Unknown | — | — | — |']), '',
     '## Manual gates','',...(snapshot.manual?.map(n=>`- **${n.node}**: ${cell(n.reason)}`)??['Unknown']), '',
     '## Active without lease','',snapshot.activeUnclaimed?.join(', ')|| (dispatch?'None':'Unknown'), '',
+    '## Crash recovery (read-only)','',
+    'Claimable predecessor work requires fresh acquisition; old branches and CI are unverified evidence.', '',
+    ...(recoveryCandidates===null?['- Recoverable claim availability unknown.']:
+      recoveryCandidates.length?recoveryCandidates.map(c=>`- **${c.node}**: previous generation ${c.previousGeneration}; ${c.resumeActive?'guarded active resume':'planned reacquisition'}; ${cell(c.checkpoint?.next??c.predecessorBranch??'checkpoint missing')}`):['- No predecessor claims in current automatic frontier.']),
+    ...(recoveryReview?.map(c=>`- **${c.node}**: review required (not automatically claimed).`)??[]),
+    ...(preservedPRs===null?['- Unmerged PR observation unavailable.']:
+      preservedPRs.map(p=>`- Preserved unmerged [#${p.number}](${p.url}) · ${p.work.join(', ')} · head \`${p.head.slice(0,8)}\` (not shipped)`)), '',
+    'A crash cannot prove local-only work, session duration or a worker\'s death. Merge and release are distinct events.','',
     '## Open pull requests','',...(snapshot.prs?.map(p=>`- [#${p.number}](${p.url}) ${cell(p.title)} · ${p.work.join(', ')||'No valid packet declaration'} · \`${p.head.slice(0,8)}\``)??['PR observations unavailable']), '',
     '## Next action','',dispatch?.safeForAutomaticClaim?(dispatch.candidates.length?'Use `npm run control:claim-next` to acquire the current highest-ranked eligible packet; do not reserve it from this snapshot.':'No self-service candidate at observation. Inspect manual gates and active handoffs.'):'Resolve unavailable/invalid coordination state before new collision-prone work.', '',
     'Packet counts are execution coverage, not effort, architectural maturity or construction readiness.',''].join('\n')
