@@ -9,13 +9,13 @@
     "label": "issue-comment-6533365522"
   },
   "claimedAt": "2026-10-30T21:01:53.000Z",
-  "heartbeatAt": "2026-10-30T21:18:58.000Z",
-  "expiresAt": "2026-10-30T22:03:58.000Z",
+  "heartbeatAt": "2026-10-30T21:25:12.000Z",
+  "expiresAt": "2026-10-30T22:10:12.000Z",
   "branch": "work/mvb-chat-6533365522",
   "checkpoint": {
-    "evidence": "PR #1102 head 91f175ef8366ef58b401ecfa1887fe4d7824fd14; copper/brass assembly comparison, seven tests and inspected A3; study blobs verified",
-    "next": "Require exact-head full CI and fresh read-only canonical publication preflight on the cleaned head, then merge and release",
-    "blocker": "No installed joint, structural or hydraulic acceptance; RWT-METALS remains planned"
+    "evidence": "PR #1102 merged at ba20c2aea46d013c07ed3f9f0aa2bbd5b644e847; final head 830f126a passed full CI 41130150368 and canonical preflight 41130067395; seven tests reproduced",
+    "next": "Resolve copper profiles, support/exposure and joint consumables, actual brass fabrication and renewable pressure-qualified concealed end assembly; use compartment failure result",
+    "blocker": "No installed compatibility, hydraulic capacity or threshold acceptance; RWT-METALS remains planned"
   },
   "pr": 1102
 }
