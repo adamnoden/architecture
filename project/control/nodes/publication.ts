@@ -6,7 +6,7 @@ export const publicationNodes = defineNodes([
     owners: ['PLT'],
     title: 'Current-house digital plate capability and review handoff',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/plt/current-review-digital-closeout.md'],
   },
@@ -33,7 +33,7 @@ export const publicationNodes = defineNodes([
     owners: ['PUB'],
     title: 'Content-independent private-object preparation',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/pub/pub-02-preparation-result.md'],
   },
@@ -79,7 +79,7 @@ export const publicationNodes = defineNodes([
   {
     id: 'EDA-ARGUMENT', owners: ['EDA'],
     title: 'Red-team architectural contribution and evidence for the central thesis',
-    dependencies: [], lifecycle: 'planned',
+    dependencies: [], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/eda/eda-argument-result.md']
   },

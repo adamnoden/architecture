@@ -1,6 +1,8 @@
 <!-- nav-exclude: redirect -->
 # PLT working source and family rollout
 
+The [digital closeout and exact review-file index](https://github.com/adamnoden/architecture/blob/main/project/plt/current-review-digital-closeout.md) reconcile PLT16–21 at the 30 October 2026 source baseline. Final HRS admission, actual-size print review and v2 release remain open.
+
 ## Current working layout and coordinated family
 
 The owner accepts [layout revision 02](../reference-house/layout-revision-02.md)
@@ -10,7 +12,7 @@ orthographics and six analytical readings from the 3.5 m court / entry-void sour
 The first-floor section interrupts the floor at the atrium; both courtyard doors,
 rear bays, service geography and the roof ridge follow the reviewed plans.
 PLT13/14/15 remain historical proof identities. The old transparent anatomy is
-withheld from this successor; synthesis remains open. Screen approval is not
+withheld from this successor; PLT19 below supplies its opaque synthesis candidate. Screen approval is not
 physical acceptance. Use the new record for current geometry and next steps.
 
 ## Current book composition and subtraction proof
@@ -22,7 +24,7 @@ a true 1:50 principal spread with 1:500 locator, mirrored page frames and a
 into twelve readings; every retained, merged, omitted or withheld view has an
 explicit disposition. The B5/A4 fourteen-page sampler and B5 facing review are
 not final manuscript sequence or physical acceptance. Frozen-register changes,
-current synthesis, prose intervals and integration remain open.
+physical acceptance, prose intervals and integration remain open.
 
 ## Current theoretical setting pair
 
@@ -76,8 +78,9 @@ owns that historical proof and its limits. Its inputs were the held ground/first
 current twin roof and [shared section assemblies](architectural-plate-section-assemblies.md).
 House choices remain separate from the generic ADE representation engine.
 
-The current roof has 25-degree falls inward and outward, both eaves +6800 mm,
-ridge about +7779 mm and no roof openings or flat roofs. Low storage is provisional;
+That previous roof had a 2100 mm ridge inset and ridge about +7779 mm.
+The current revision uses a 2125 mm inset: 25-degree falls inward and outward,
+both eaves +6800 mm and ridge about +7791 mm, with no roof openings or flat roofs. Low storage is provisional;
 there is no standing attic storey or first-to-loft stair. Roof-space hatch,
 maintenance protection/access, collection, outlets and overflow remain unresolved.
 Do not use the earlier mansard/dormer/upper-stair or outward-only roof as current.
