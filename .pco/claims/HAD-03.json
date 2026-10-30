@@ -9,7 +9,11 @@
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-30T00:28:55.827Z",
-  "heartbeatAt": "2026-10-30T00:28:55.827Z",
-  "expiresAt": "2026-10-30T01:13:55.827Z",
-  "branch": "work/zerg-worker-3-had"
+  "heartbeatAt": "2026-10-30T00:39:47.214Z",
+  "expiresAt": "2026-10-30T01:24:47.214Z",
+  "branch": "work/zerg-worker-3-had",
+  "checkpoint": {
+    "evidence": "Accepted Bedroom4 allocation and current manufacturer pan/door evidence; successor coupled outward-door witness passes600/650body with actual handle reserve",
+    "next": "Publish located operation successor, complete pan withdrawal/staging and enclosure/threshold comparison with IAS"
+  }
 }
