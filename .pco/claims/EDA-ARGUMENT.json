@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "EDA-ARGUMENT",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f12e8434-f8c4-4115-b5f1-bcf831474b5e",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-30T00:14:22.881Z",
-  "heartbeatAt": "2026-10-30T00:45:50.378Z",
-  "expiresAt": "2026-10-30T01:30:50.378Z",
+  "heartbeatAt": "2026-10-30T00:52:14.410Z",
+  "expiresAt": "2026-10-30T00:52:14.410Z",
   "branch": "work/zerg-plt-pub-argument",
   "pr": 1077,
   "checkpoint": {
     "evidence": "Exact corrected production proof dbb92629/run40981152059 reviewed in both formats; redundant source separator removed, measured A4 281/B5 334, owning ledger and durable review evidence supplied to common integration.",
     "next": "Await unchanged-reader-source final common CI, verify rendered source continuity, fresh exact-head merge-check, serial acceptance and canonical release before EDA-scoped next claim.",
     "blocker": "Final exact-head common validation pending; no physical print or current house plate acceptance inferred."
-  }
+  },
+  "releasedAt": "2026-10-30T00:52:14.410Z",
+  "releaseReason": "completed"
 }
