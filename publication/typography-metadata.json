@@ -16,18 +16,18 @@
     "heightMm": 297
   },
   "b5": {
-    "pages": 332,
-    "duplexLeaves": 166,
+    "pages": 334,
+    "duplexLeaves": 167,
     "sixteenPageSections": 21,
     "pagesAtSixteenPageBoundary": 336,
-    "paddingToSixteenPageBoundary": 4,
+    "paddingToSixteenPageBoundary": 2,
     "widthMm": 176,
     "heightMm": 250
   },
   "comparison": {
-    "b5MinusA4Pages": 51,
-    "b5PageChangePercent": 18.15,
-    "b5MinusA4Leaves": 25,
+    "b5MinusA4Pages": 53,
+    "b5PageChangePercent": 18.86,
+    "b5MinusA4Leaves": 26,
     "spineWidthClaim": "not admissible without final paper caliper / manufacturing specification"
   }
 }

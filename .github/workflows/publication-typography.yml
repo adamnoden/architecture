@@ -83,6 +83,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: publication-typography-production-diagnostics
+          include-hidden-files: true
           path: |
             publication/typography-metadata.json
             publication/.proof/typ09b/verification.json
