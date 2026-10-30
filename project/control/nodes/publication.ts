@@ -6,7 +6,7 @@ export const publicationNodes = defineNodes([
     owners: ['PLT'],
     title: 'Current-house digital plate capability and review handoff',
     dependencies: ['BSR-ROOT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/plt/current-review-digital-closeout.md'],
   },

@@ -1,6 +1,6 @@
 # PLT — refurbishment handoff and physical-review boundary
 
-**State:** planned successor obligations; existing candidate evidence retained
+**State:** current digital capability complete; final preparation, physical review and freeze remain open
 **Owner:** PLT — Architectural Plate Refinement, parent #422
 **Cross-stream control:** [Refurbishment plan](../refurbishment-plan.md)
 
@@ -10,12 +10,12 @@ This record makes the existing current-source, integration and physical-review o
 
 | Node | Dispatch | Dependencies | Bounded result |
 |---|---|---|---|
-| PLT-CURRENT-REVIEW | Self-service; requeued for remaining digital work | BSR-ROOT | Complete the remaining candidate representation capability, source-consistent review pack and explicit handoff. Retain and cite useful partial evidence; no physical acceptance is inferred. |
+| PLT-CURRENT-REVIEW | Complete; [digital result](current-review-digital-closeout.md) | BSR-ROOT | Complete the remaining candidate representation capability, source-consistent review pack and explicit handoff. Retain and cite useful partial evidence; no physical acceptance is inferred. |
 | PLT-FINAL-PREP | Self-service | HRS-SYNTHESIS, PLT-CURRENT-REVIEW | Prepare the source-reconciled candidate publication integration, role dispositions, complete source delta and final print-review files. No release or final freeze. |
 | PLT-PRINT-REVIEW | Manual | PLT-FINAL-PREP | Process the actual owner BOOK/WALL print verdict, bound to the prepared source/object. Material revise/reject findings require repair and acceptance of affected reprints. |
 | PLT-FINAL-FREEZE | Self-service | PLT-FINAL-PREP, PLT-PRINT-REVIEW | Verify that current source still matches accepted evidence; complete atomic publication integration, freeze/release and normal closeout. |
 
-Requeueing PLT-CURRENT-REVIEW does not erase its completed candidate work. It separates the remaining digital packet from the physical judgement it cannot autonomously provide. Do not retain an idle agent lease while awaiting physical evidence; leave a durable handoff and release normally.
+The [digital closeout](current-review-digital-closeout.md) and [artifact index](current-review-artifacts.json) reconcile the retained candidate work and exact review files. Requeueing PLT-CURRENT-REVIEW did not erase its completed candidate work. It separates the remaining digital packet from the physical judgement it cannot autonomously provide. Do not retain an idle agent lease while awaiting physical evidence; leave a durable handoff and release normally.
 
 ## Current-source preparation
 
