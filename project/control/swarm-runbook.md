@@ -112,7 +112,7 @@ Packet percentages are **coverage of the current execution graph**. Tasks differ
 
 ## Resilience, recovery and publication preflight
 
-At startup, inspect the crash-recovery section of `control:brief` before dispatching. Check preserved unmerged PRs, previous claims and active-unclaimed review items; none is an instruction to merge. A valid previous branch plus checkpoint permits guarded started-node self-service recovery in the existing dispatcher, with evidence rechecked at acquisition. New leases carry historical predecessor identity but *not* its checkpoint as the successor's present achievement. Compare actual branch/PR head to current main and validate anew.
+At startup, inspect the crash-recovery section of `control:brief` before dispatching. Check preserved unmerged PRs, previous claims and active-unclaimed review items; none is an instruction to merge. A valid previous branch plus checkpoint permits guarded started-node self-service recovery in the existing dispatcher, with evidence rechecked at acquisition. New leases carry the immediate predecessor identity plus the last durable remote evidence source, even through repeated empty successor runs, but *not* the predecessor's checkpoint as the successor's present achievement. Compare actual branch/PR head to current main and validate anew.
 
 A sudden session death can interrupt between remote push, lease renewal, PR creation, CI, merge and release. Recover using fresh remote observations, never the last chat transcript, and never infer missing labour time or local-only changes. Branch/PR evidence should be pushed before recording a matching checkpoint; do not depend on a final goodbye message. Returning workers must stop publishing if their generation is superseded.
 
