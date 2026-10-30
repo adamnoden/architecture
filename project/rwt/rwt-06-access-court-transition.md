@@ -4,6 +4,10 @@
 **Starting main:** `8cd642ef8ea7c7ec919c71c902f7f8daaf987034`, after the RWT-05/BCR occupation integration.
 **Purpose:** replace an unspecified court crossing with a located architectural trial and a complete clearance/renewal task, while retaining real-site and competent technical authority.
 
+## Later connected comparison
+
+The [30 October north-axis study](north-court-carrier.md) tests a continuous full floor over separate sleeved carriers, exterior-only renewal and a lower explicit receiving limit. It also rejects the earlier shallow insulated-cover/free-outfall combination using matched product evidence and clearance arithmetic. This does not adopt the north route or close the threshold/support/access conditions below; RWT-06 remains planned. The original eastward study and its values are retained.
+
 ## Current source and proposed trial
 
 The accepted court is x4250–7750/y4250–7750. Its eastern wall occupies x7750–8167.5; the east gallery ends at the service partition face x9437.5; that partition occupies x9437.5–9562.5; the pantry's clear x interval is 9562.5–11582.5; the outer wall ends at12000. The **4250 mm** court-edge-to-outside crossing therefore includes **three support/boundary crossings**, not one unobstructed service corridor.
