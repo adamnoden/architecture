@@ -9,11 +9,11 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-30T00:15:33.760Z",
-  "heartbeatAt": "2026-10-30T00:15:33.760Z",
-  "expiresAt": "2026-10-30T01:00:33.760Z",
+  "heartbeatAt": "2026-10-30T00:24:05.830Z",
+  "expiresAt": "2026-10-30T01:09:05.830Z",
   "checkpoint": {
-    "evidence": "BAY1069 completed released and reconciled. PLT current source/admission/refurbishment contracts read; retained16–21 exact proof artifacts downloaded and digests/source fingerprints checked, selected PDFs inspected read-only.",
-    "next": "Audit remaining current digital capability and source-consistent review handoff, reuse applicable artifacts, correct only demonstrated stale prose/representation gaps, preserve historical releases and manual actual-size print gate."
+    "evidence": "Source-consistent PLT16–21 proof audit complete; exact archive/PDF index and bounded digital handoff drafted, six current source hashes matched; focused checks and peer review running.",
+    "next": "Publish reviewed source, preserve PUB1074 and EDA1075 parents in common integration after1073, exact-head checks and physical-boundary handoff."
   },
   "branch": "zerg/worker-1-packet-7"
 }
