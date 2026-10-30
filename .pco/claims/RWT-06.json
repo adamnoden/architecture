@@ -9,8 +9,8 @@
     "label": "issue-comment-6529831185"
   },
   "claimedAt": "2026-10-30T17:59:50.000Z",
-  "heartbeatAt": "2026-10-30T17:59:50.000Z",
-  "expiresAt": "2026-10-30T18:44:50.000Z",
+  "heartbeatAt": "2026-10-30T18:17:26.000Z",
+  "expiresAt": "2026-10-30T19:02:26.000Z",
   "branch": "work/mvb-chat-6529831185",
   "predecessor": {
     "leaseId": "5b2cdce2-d8ee-4a16-a3a2-565b3e316366",
@@ -33,5 +33,9 @@
       "next": "Observe fresh exact-head CI and run one-shot canonical publication preflight; merge then release",
       "blocker": "Terminal lacks GitHub DNS; canonical preflight must run in GitHub Actions"
     }
+  },
+  "checkpoint": {
+    "evidence": "Published carrier-support.mjs, nine tests and owning result at 229175f7751645c8c4f4d0f2285c6a60a0434eac on work/mvb-chat-6529831185",
+    "next": "Generate source-bound JSON/SVG, inspect output, open PR, validate exact head and run canonical merge preflight"
   }
 }
