@@ -9,13 +9,13 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-30T00:14:22.881Z",
-  "heartbeatAt": "2026-10-30T00:28:47.553Z",
-  "expiresAt": "2026-10-30T01:13:47.553Z",
+  "heartbeatAt": "2026-10-30T00:45:50.378Z",
+  "expiresAt": "2026-10-30T01:30:50.378Z",
   "branch": "work/zerg-plt-pub-argument",
   "pr": 1077,
   "checkpoint": {
-    "evidence": "Frozen reviewed EDA source c96d2d60 is preserved in common1077 b8811119; manuscript and result unchanged, shared programme reconciled with1073.",
-    "next": "Inspect exact common-head typography A4/B5 affected pages, require full CI, then own fresh merge-check and serial expected-head merge.",
-    "blocker": "Awaiting exact-head PDF evidence; no architectural or physical acceptance implied."
+    "evidence": "Exact corrected production proof dbb92629/run40981152059 reviewed in both formats; redundant source separator removed, measured A4 281/B5 334, owning ledger and durable review evidence supplied to common integration.",
+    "next": "Await unchanged-reader-source final common CI, verify rendered source continuity, fresh exact-head merge-check, serial acceptance and canonical release before EDA-scoped next claim.",
+    "blocker": "Final exact-head common validation pending; no physical print or current house plate acceptance inferred."
   }
 }
