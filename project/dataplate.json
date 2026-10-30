@@ -71,7 +71,7 @@
     "strategies": 3,
     "heldCandidates": 4,
     "publicRoutes": 125,
-    "workingEditionEntries": 41,
+    "workingEditionEntries": 42,
     "primerEntries": 5
   },
   "publication": {
@@ -86,7 +86,7 @@
         "heightMm": 297,
         "orientation": "portrait"
       },
-      "entries": 41,
+      "entries": 42,
       "figures": 5
     },
     "primer": {

@@ -1,6 +1,8 @@
 # Part V — Making and Proving the Platform
 
----
+The comparisons already have consequences. Ordinary dry interiors remain preferable to a universal removable platform at the present selection scope. Conventional renewable frames avoid an unearned continuous cassette, while still owing a complete seal-renewal and handling detail. These are choices about the burden of provision, not measured lifetime savings.
+
+Other questions remain adverse. The current court and roof geometry has not established a complete water-failure route; wet-room and plant reservations have not demonstrated every fitted operation. Chapter 26 follows those interventions. The intervening chapters ask what evidence, responsibility and construction control a consequential proposal needs, while allowing a simpler design to remove the special duty.
 
 # 19. Whole-life value and proportionality
 
