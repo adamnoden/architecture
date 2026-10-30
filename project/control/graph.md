@@ -23,7 +23,6 @@ flowchart LR
   subgraph g_SHARED["Shared integration gates"]
     direction TB
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
-    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>READY</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
     n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>READY</b>"]
   end
@@ -55,10 +54,9 @@ flowchart LR
   end
   subgraph g_MAT["MAT"]
     direction TB
-    n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>READY</b>"]
-    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>BLOCKED</b>"]
-    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>BLOCKED</b>"]
-    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>BLOCKED</b>"]
+    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>READY</b>"]
+    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>READY</b>"]
+    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>READY</b>"]
     n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
@@ -125,10 +123,8 @@ flowchart LR
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
-  n_RWT_SHED --> n_RWT_ROBUSTNESS
   n_RWT_METALS --> n_RWT_ROBUSTNESS
   n_RWT_06 --> n_RWT_07
-  n_RWT_SHED --> n_RWT_07
   n_RWT_METALS --> n_RWT_07
   n_RWT_ROBUSTNESS --> n_RWT_07
   n_RWT_07 --> n_ROF_RWT_GATE
@@ -137,9 +133,6 @@ flowchart LR
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
   n_STR_HOUSE --> n_STR_RECONCILE
-  n_MAT_AUDIT --> n_MAT_ENVELOPE
-  n_MAT_AUDIT --> n_MAT_SERVICES
-  n_MAT_AUDIT --> n_MAT_INTERIORS
   n_MAT_ENVELOPE --> n_MAT_COORDINATION
   n_MAT_SERVICES --> n_MAT_COORDINATION
   n_MAT_INTERIORS --> n_MAT_COORDINATION
@@ -212,7 +205,6 @@ flowchart LR
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_TECHNICAL blocked;
   class n_RWT_06 ready;
-  class n_RWT_SHED ready;
   class n_RWT_METALS ready;
   class n_RWT_ROBUSTNESS blocked;
   class n_RWT_07 blocked;
@@ -221,10 +213,9 @@ flowchart LR
   class n_RWT_08 blocked;
   class n_STR_HOUSE ready;
   class n_STR_RECONCILE blocked;
-  class n_MAT_AUDIT ready;
-  class n_MAT_ENVELOPE blocked;
-  class n_MAT_SERVICES blocked;
-  class n_MAT_INTERIORS blocked;
+  class n_MAT_ENVELOPE ready;
+  class n_MAT_SERVICES ready;
+  class n_MAT_INTERIORS ready;
   class n_MAT_COORDINATION blocked;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
@@ -342,7 +333,7 @@ flowchart LR
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>DONE</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
-    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>READY</b>"]
+    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>DONE</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
     n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>READY</b>"]
   end
@@ -402,10 +393,10 @@ flowchart LR
   subgraph g_MAT["MAT"]
     direction TB
     n_MAT_00["MAT-00<br/>Establish whole-house material policy and coordinated rainwater rebrief<br/><b>DONE</b>"]
-    n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>READY</b>"]
-    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>BLOCKED</b>"]
-    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>BLOCKED</b>"]
-    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>BLOCKED</b>"]
+    n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>DONE</b>"]
+    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>READY</b>"]
+    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>READY</b>"]
+    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>READY</b>"]
     n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
@@ -836,7 +827,7 @@ flowchart LR
   class n_RWT_04 done;
   class n_RWT_05 done;
   class n_RWT_06 ready;
-  class n_RWT_SHED ready;
+  class n_RWT_SHED done;
   class n_RWT_METALS ready;
   class n_RWT_ROBUSTNESS blocked;
   class n_RWT_07 blocked;
@@ -849,10 +840,10 @@ flowchart LR
   class n_STR_HOUSE ready;
   class n_STR_RECONCILE blocked;
   class n_MAT_00 done;
-  class n_MAT_AUDIT ready;
-  class n_MAT_ENVELOPE blocked;
-  class n_MAT_SERVICES blocked;
-  class n_MAT_INTERIORS blocked;
+  class n_MAT_AUDIT done;
+  class n_MAT_ENVELOPE ready;
+  class n_MAT_SERVICES ready;
+  class n_MAT_INTERIORS ready;
   class n_MAT_COORDINATION blocked;
   class n_MRA_00 done;
   class n_MRA_01 blocked;
