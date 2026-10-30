@@ -4,7 +4,7 @@ export const pcoNodes = defineNodes([
   {
     id: 'PCO-MODES', owners: ['PCO'],
     title: 'Close regular-chat PR association and confirm shared worker topologies',
-    dependencies: ['PCO-GATEWAY'], lifecycle: 'planned',
+    dependencies: ['PCO-GATEWAY'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed MVB release fix and cross-topology regression (#1091).' },
     closeoutEvidence: ['project/pco/mvb-barbell-modes-result.md']
   },
