@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 7 · **Active:** 0 · **Blocked:** 28 · **Held:** 2 · **Done:** 87 · **Cancelled:** 0
+**Structurally ready:** 7 · **Active:** 0 · **Blocked:** 28 · **Held:** 2 · **Done:** 88 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
