@@ -1,6 +1,6 @@
 # Rainwater study evidence
 
-These are bounded, unadopted RWT comparisons, not selected construction information. The [rainwater programme](../rainwater-systems-programme.md) owns scope; the current graph and live leases own execution status.
+These are bounded, unadopted RWT comparisons, not selected construction information. The [rainwater programme](../rainwater-systems-programme.md) owns scope; the current graph and live leases own execution status. The [whole-house material policy](../../../docs/reference-house/material-policy.md) supersedes polymer material preferences in the earlier studies, without deleting their technical evidence.
 
 | Study | Owning interpretation | Retained evidence |
 |---|---|---|
@@ -8,17 +8,21 @@ These are bounded, unadopted RWT comparisons, not selected construction informat
 | North sleeved crossing | [North carrier comparison](../north-court-carrier.md) | [Source](north-court-carrier.ts), [values](north-court-carrier.json), [sheet](north-court-carrier.svg) |
 | Product-bound carrier support | [Support and renewal subassembly](../carrier-support.md) | [Source](carrier-support.mjs), [tests](carrier-support.test.mjs), [values](carrier-support.json), [sheet](carrier-support.svg) |
 | Conventional carrier and terminals | [Material choice and renewal cost](../conventional-carrier.md) | [Source](conventional-carrier.mjs), [tests](conventional-carrier.test.mjs), [values](conventional-carrier.json), [sheet](conventional-carrier.svg) |
+| Copper movement and divided-gutter backup | [Copper assembly candidates](../copper-assembly-candidates.md) | [Source](copper-compartments.mjs), [tests](copper-compartments.test.mjs), [values](copper-compartments.json), [sheet](copper-compartments.svg) |
 
 The carrier-support continuation retains the north comparison's identity rather than rewriting its historical levels. Its 11-station layout is conditional on declared model and product assumptions; it does not establish hydraulic capacity, installed compatibility or physical renewal.
 
-The conventional successor prioritises an eight-station solid-wall PVC-U comparison, not an adopted product assembly. Its separate terminal reservation spends longer pipe projections and exterior withdrawal space. The historical 11-station and original north dimensions remain unchanged; generic material stiffness does not certify the new installation.
+The conventional successor investigated an eight-station solid-wall PVC-U comparison, not an adopted product assembly or a current admissible material default. Its separate terminal reservation spends longer pipe projections and exterior withdrawal space. The historical 11-station and original north dimensions remain unchanged; generic material stiffness does not certify the new installation.
+
+The copper fixture checks two authored movement compartments and proves that a pipe beyond a solid divider cannot back up its neighbour. Its separate-relief graph is a necessary-path test only: no crest, capacity or safe destination is established. The thermal ranges and joint dimensions are comparison assumptions, not a selected house detail.
 
 For the finite studies, run from repository root:
 
 ```sh
-node --test project/rwt/studies/carrier-support.test.mjs project/rwt/studies/conventional-carrier.test.mjs
+node --test project/rwt/studies/carrier-support.test.mjs project/rwt/studies/conventional-carrier.test.mjs project/rwt/studies/copper-compartments.test.mjs
 node project/rwt/studies/carrier-support.mjs --check
 node project/rwt/studies/conventional-carrier.mjs --check
+node project/rwt/studies/copper-compartments.mjs --check
 ```
 
-Regenerate with the relevant command without `--check` only after reviewing changed inputs. The PE generator refuses a changed north-comparison input blob; the conventional comparison refuses a changed reviewed support-model blob until applicability is reassessed.
+Regenerate with the relevant command without `--check` only after reviewing changed inputs. The PE generator refuses a changed north-comparison input blob; the conventional comparison refuses a changed reviewed support-model blob until applicability is reassessed. Copper fixture dimensions live in its generator and must remain labelled as authored assumptions.
