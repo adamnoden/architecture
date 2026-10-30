@@ -131,6 +131,12 @@ a new room or claiming all compact arrangements impossible.
 | Wet rooms | Quiet wet/dry language only | U-ENS3 actual sanitary/door fit or explicit source/programme rewind; other wet fixtures, build-up and supports |
 | Technical expression | Independent local releases; no universal cassette/grid | Actual grilles, guarding, handrails, electrical/MEP support and required boundaries |
 
+The later [guest-WC privacy study](had-03-guest-wc-privacy.md) advances the
+service-room opening: full-pane etched glazing remains the leading direction,
+with a bounded upper-opening comparison and an adverse shutter-space test.
+It establishes neither night-time optical privacy nor an installed window,
+and does not close the other room and assembly questions above.
+
 The drawing and interval checks advance design; they do not replace these
 missing rooms/tasks. HAD-03 cannot close yet, and TRIAD-GATE remains blocked by
 both IAS-03 and HAD-03. A complete next result needs actual fit/product-dependent
