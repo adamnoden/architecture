@@ -9,13 +9,13 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-29T23:31:04.341Z",
-  "heartbeatAt": "2026-10-29T23:49:18.962Z",
-  "expiresAt": "2026-10-30T00:34:18.962Z",
-  "branch": "work/zerg-del-issue-profiles",
-  "pr": 1066,
+  "heartbeatAt": "2026-10-30T00:01:02.620Z",
+  "expiresAt": "2026-10-30T00:46:02.620Z",
+  "branch": "work/zerg-bay-delivery-applicability",
+  "pr": 1069,
   "checkpoint": {
-    "evidence": "Final frozen PR1066 cf6f036c preserves reviewed six profiles; immutable worked-example URLs, sanitation and nomenclature proof now pass alongside other checks",
-    "next": "Worker1 integrates preserved DEL/BAY/PCO parents after1065; rebind common lease, verify full CI and run own preflight, then release completed and dispatch EDA",
-    "blocker": "Awaiting preceding integration and common exact-head CI; no actual issue/approval or maturity increase is claimed"
+    "evidence": "Reviewed DEL source cf6f036c is preserved in common PR1069; requirements contract only, no actual issue or construction authority.",
+    "next": "Wait for exact common-head full CI, then fresh DEL merge-check, verify accepted lifecycle, reconcile and release completed.",
+    "blocker": "No substantive blocker; serial integration with BAY and PCO."
   }
 }
