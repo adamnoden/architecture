@@ -9,7 +9,7 @@ uses the held source at 1:100 / 1:50 and the
 New furniture/workstation dimensions below are explicit local project design
 assumptions, not product selection or a mutation of the canonical house.
 
-**HAD-03 remains active and incomplete.** This is a useful representative
+**HAD-03 remains planned and incomplete.** This is a useful representative
 design result, not one fully fitted house. Wet-room fit, actual products,
 threshold/shade operation, service tasks and technical boundaries remain open.
 The unresolved small en suite is not absorbed into a generic taste decision.
@@ -95,6 +95,13 @@ overlap is not spare tolerance. Actual chairs/leaf/handles must earn a margin
 or the furniture moves; neither the garden aperture nor circulation is reduced
 to preserve the table. Loose furniture may be adjusted without rewriting the
 house geometry, but no actual product fit is claimed here.
+
+The later [dining-chair and garden-operation comparison](had-03-dining-garden.md)
+tests a published chair envelope and authored withdrawal. It finds independent
+sofa/court-corner flags in a six-station trial and develops a four-side-place
+alternative with a tight connected route. Its inward garden sweep is this
+study's unselected comparison, not the source scene's outward symbol. No seat
+count, furniture move, occupied comfort or installed opening is adopted.
 
 ## Light, services and water at the worked room
 
