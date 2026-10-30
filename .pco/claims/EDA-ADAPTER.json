@@ -9,12 +9,12 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-30T00:04:12.194Z",
-  "heartbeatAt": "2026-10-30T00:11:11.036Z",
-  "expiresAt": "2026-10-30T00:56:11.036Z",
-  "branch": "work/zerg-eda-adapter",
+  "heartbeatAt": "2026-10-30T00:18:18.669Z",
+  "expiresAt": "2026-10-30T01:03:18.669Z",
+  "branch": "work/zerg-eda-identity-audit",
   "checkpoint": {
-    "evidence": "Reviewed source PR1070 head2aac33fa published; exact five-entry byte equality and actual EDA hash-mutation proof passed, 88control tests passed.",
-    "next": "Preserve source parent in EDA/CCR/ADE integration after1069; bind shared PR, full exact-head CI, independent lease checks and expected-head merge."
+    "evidence": "Common1073 a0652cc6 preserves EDA1070, CCR1071 and ADE1072 parents on settledf3884933; source reviews passed; combined102tests/type/repo/sanitation/data plate verified.",
+    "next": "Verify every holder binding and exact-head CI, then fresh canonical preflights and expected-head merge; reconcile and release all3; next root scope RWT06 connected court candidate."
   },
-  "pr": 1070
+  "pr": 1073
 }
