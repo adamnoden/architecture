@@ -60,3 +60,29 @@ test('renew accepts optional positive PR number without adding a command',()=>{
    cmd:'release',node:'PCO-GATEWAY',leaseId:id,generation:2,reason:'abandoned',pr:1090
  })))
 })
+
+
+test('PR binding requires matching branch, main base, open state and lease declaration',()=>{
+ const c=createClaimRecord({
+   node:'PCO-GATEWAY',generation:2,leaseId:id,holder:{kind:'chatgpt'},
+   now:at,branch:'work/chat-pr-verified'
+ })
+ const pr={
+   number:1090,state:'open',merged_at:null,
+   body:'Work: PCO-GATEWAY\nLease: PCO-GATEWAY / '+id+' / generation 2',
+   head:{ref:'work/chat-pr-verified',sha:'a'.repeat(40),repo:{full_name:'adamnoden/architecture'}},
+   base:{ref:'main',repo:{full_name:'adamnoden/architecture'}}
+ }
+ assert.doesNotThrow(()=>assertGatewayPrBinding(pr,c,[c],'adamnoden/architecture'))
+ for(const changed of [
+   {...pr,state:'closed'},
+   {...pr,merged_at:'2026-10-30T11:00:00Z'},
+   {...pr,base:{...pr.base,ref:'other'}},
+   {...pr,head:{...pr.head,ref:'work/unrelated'}},
+   {...pr,head:{...pr.head,repo:{full_name:'other/repo'}}},
+   {...pr,head:{...pr.head,sha:'short'}},
+   {...pr,body:'Work: none\nWork reason: synthetic'},
+   {...pr,body:pr.body.replace('generation 2','generation 1')},
+   {...pr,body:'Work: PCO-CRASH\nLease: PCO-CRASH / '+id+' / generation 2'}
+ ]) assert.throws(()=>assertGatewayPrBinding(changed,c,[c],'adamnoden/architecture'))
+})
