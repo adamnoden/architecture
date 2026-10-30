@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 6,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4fe6938b-652a-4723-977d-c0195b751a97",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6535452701"
   },
   "claimedAt": "2026-10-30T23:12:07.000Z",
-  "heartbeatAt": "2026-10-30T23:37:51.000Z",
-  "expiresAt": "2026-10-31T00:22:51.000Z",
+  "heartbeatAt": "2026-10-30T23:39:01.000Z",
+  "expiresAt": "2026-10-30T23:39:01.000Z",
   "branch": "work/mvb-chat-6535452701",
   "predecessor": {
     "leaseId": "f408a295-c812-431f-a5c4-eaace939de52",
@@ -37,5 +37,7 @@
     "evidence": "PR #1114 merged bb8e94adbbbe705b5609ba5d1d0e98727a20a4e1. Head 77765932 passed full CI 41144804865, typography 41144804900 and fresh preflight 124368498033. Sink/cabinet result and inspected A3 sheet retained.",
     "next": "Continue actual wet/utility fit. Obtain installed waste/trap/appliance-branch geometry and constituents; retain unadopted HAD Option B and MAT/STR constraints.",
     "blocker": "No complete material-admissible sink assembly or demonstrated human/removal clearance. Merged partial only; IAS-03 remains planned."
-  }
+  },
+  "releasedAt": "2026-10-30T23:39:01.000Z",
+  "releaseReason": "handoff"
 }
