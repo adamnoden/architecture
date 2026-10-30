@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 9,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "5eb01e18-1537-4377-8ec2-2a32bed5be9b",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6529831185"
   },
   "claimedAt": "2026-10-30T17:59:50.000Z",
-  "heartbeatAt": "2026-10-30T18:44:21.000Z",
-  "expiresAt": "2026-10-30T19:29:21.000Z",
+  "heartbeatAt": "2026-10-30T18:46:05.000Z",
+  "expiresAt": "2026-10-30T18:46:05.000Z",
   "branch": "work/mvb-chat-6529831185",
   "predecessor": {
     "leaseId": "5b2cdce2-d8ee-4a16-a3a2-565b3e316366",
@@ -39,5 +39,7 @@
     "next": "Resolve actual ring contact/retention, pressure-rated court end seal and independent terminal supports; compare conventional carrier before adopting extra support burden",
     "blocker": "Installed compatibility, thermal/contact behaviour, loaded withdrawal and hydraulic/threshold evidence remain unverified; RWT-06 stays planned"
   },
-  "pr": 1098
+  "pr": 1098,
+  "releasedAt": "2026-10-30T18:46:05.000Z",
+  "releaseReason": "handoff"
 }
