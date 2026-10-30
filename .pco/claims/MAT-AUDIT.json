@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "MAT-AUDIT",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "535249d6-1358-4881-8a7f-28882c4f89ed",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "mat-audit-ground-water-session"
+  },
+  "claimedAt": "2026-10-30T22:50:50.233Z",
+  "heartbeatAt": "2026-10-30T22:50:50.233Z",
+  "expiresAt": "2026-10-30T23:35:50.233Z",
+  "branch": "work/mat-audit-20261030"
+}
