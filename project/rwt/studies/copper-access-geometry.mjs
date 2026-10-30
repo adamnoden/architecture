@@ -54,11 +54,11 @@ export function openingLowerBound(axisSpacing, carriedEnvelope, sideAllowance) {
  */
 export function planeGaps(normals, translation) {
   if (!Array.isArray(normals) || normals.length !== 2 || !Array.isArray(translation) ||
-      translation.length !== 2 || !translation.every(Number.isFinite)) {
+      translation.length !== 2 || ![translation[0], translation[1]].every(Number.isFinite)) {
     throw new TypeError('Exactly two 2D unit normals and a finite 2D translation are required');
   }
-  return normals.map(normal => {
-    if (!Array.isArray(normal) || normal.length !== 2 || !normal.every(Number.isFinite) ||
+  return [normals[0], normals[1]].map(normal => {
+    if (!Array.isArray(normal) || normal.length !== 2 || ![normal[0], normal[1]].every(Number.isFinite) ||
         Math.abs(Math.hypot(...normal) - 1) > 1e-12) {
       throw new RangeError('Each normal must be a finite unit vector');
     }
