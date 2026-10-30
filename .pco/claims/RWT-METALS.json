@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-METALS",
   "generation": 3,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "26286684-da96-4e05-ae47-8e2024d5b45c",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6535138180"
   },
   "claimedAt": "2026-10-30T22:49:32.000Z",
-  "heartbeatAt": "2026-10-30T23:25:20.000Z",
-  "expiresAt": "2026-10-31T00:10:20.000Z",
+  "heartbeatAt": "2026-10-30T23:26:21.000Z",
+  "expiresAt": "2026-10-30T23:26:21.000Z",
   "branch": "work/mvb-chat-6535138180",
   "predecessor": {
     "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
@@ -39,5 +39,7 @@
     "next": "Locate accessible carrier and retained courtyard water boundary with RWT-06/HAD/STR before enlarging blind sleeves; specify actual face/gasket and full removal sweep",
     "blocker": "No matched polymer-free installed terminal, dry service section, support or hydraulic acceptance; RWT-METALS remains planned"
   },
-  "pr": 1112
+  "pr": 1112,
+  "releasedAt": "2026-10-30T23:26:21.000Z",
+  "releaseReason": "handoff"
 }
