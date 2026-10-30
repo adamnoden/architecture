@@ -2,7 +2,13 @@
 
 This file owns the **Minimum Viable Bureaucracy operating-contract version**. The [manual](README.md) is the current integrated explanation; executable sources and the [runbook](swarm-runbook.md) retain their existing authority.
 
-## Current: 1.2.0 — 30 October 2026
+## Current: 1.3.0 — 30 October 2026
+
+**Additive connector-only command access.** A locked, owner-authenticated GitHub issue/comment workflow invokes the existing canonical CLI for exactly three bounded operations: `claim-next`, `renew`, `release`. Comment IDs provide transport correlation; all actual work eligibility and execution permission remain in PCO/ACO. Read-only briefing and PR integration remain on existing paths. No new task graph, service, supervisor, merge authority or credentials. The gateway is a transport, not an alternative scheduler or an assurance of automatic ChatGPT wakeup.
+
+Compatibility: no claim, dispatcher, task-node semantics, runtime branch or connector mailbox wire migration. Existing full-runtime agents continue unchanged; old regular-chat clients need not use this gateway. Rollback deletes/disables the issue-comment workflow and handler without touching current leases. Owner-authored command attempts remain durable historical comments. The [implementation result](../pco/mvb-issue-gateway-result.md) and integrating PR hold validation and actual native trigger proof.
+
+## 1.2.0 — 30 October 2026
 
 **Crash recovery and constrained-chat operating boundary.** An interrupted worker's lease, durable branch and actual verified result remain different sources of truth. The existing dispatcher now considers started self-service work only where a previous non-occupying claim provides a branch and actionable checkpoint; evidence is rechecked at the CAS boundary, not trusted from a stale discovery snapshot. New claim generations carry optional historical predecessor identity and last-durable-evidence source pointers, preserved through repeated crashes without making a predecessor's checkpoint the successor's achievement. Operations briefing surfaces preserved unmerged PR evidence and recovery/review distinctions. The MVB manual/runbook and agent constitution describe safe owner-directed connector-only work in ordinary chats when CLI Git access is unavailable, without pretending this is undirected swarm capability.
 
