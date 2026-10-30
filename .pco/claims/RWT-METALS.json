@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 3,
-  "state": "released",
-  "leaseId": "26286684-da96-4e05-ae47-8e2024d5b45c",
+  "generation": 4,
+  "state": "claimed",
+  "leaseId": "834b5455-21ea-4ef4-ba75-0933aeb68c53",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6535138180"
+    "label": "issue-comment-6535667492"
   },
-  "claimedAt": "2026-10-30T22:49:32.000Z",
-  "heartbeatAt": "2026-10-30T23:26:21.000Z",
-  "expiresAt": "2026-10-30T23:26:21.000Z",
-  "branch": "work/mvb-chat-6535138180",
+  "claimedAt": "2026-10-30T23:28:04.000Z",
+  "heartbeatAt": "2026-10-30T23:28:04.000Z",
+  "expiresAt": "2026-10-31T00:13:04.000Z",
+  "branch": "work/mvb-chat-6535667492",
   "predecessor": {
-    "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
-    "generation": 2,
-    "branch": "work/mvb-chat-6534295424",
-    "pr": 1106,
+    "leaseId": "26286684-da96-4e05-ae47-8e2024d5b45c",
+    "generation": 3,
+    "branch": "work/mvb-chat-6535138180",
+    "pr": 1112,
     "checkpoint": {
-      "evidence": "PR #1106 merged at 6d24ac888d55c85fd6db15f15208c93e1cea8929; final head da0912dc passed full CI 41136865682 and preflight 41136800771; nine tests and evidence blobs reproduced",
-      "next": "Resolve an actual separating terminal and retained court water boundary; compare the accessible route and respect passive dryness; do not transplant PVC slip-coupling motion",
-      "blocker": "Actual joint dimensions and consumables, first body removal, bay flooding, loaded withdrawal, supports and hydraulics remain unresolved; RWT-METALS planned"
+      "evidence": "PR #1112 merged ca19138d0315e000d40d06a056fc0b91054b2802; head 68fbbb13 passed full CI 41143884504 and canonical preflight 41142788420 job124364332950; eight tests reproduced",
+      "next": "Locate accessible carrier and retained courtyard water boundary with RWT-06/HAD/STR before enlarging blind sleeves; specify actual face/gasket and full removal sweep",
+      "blocker": "No matched polymer-free installed terminal, dry service section, support or hydraulic acceptance; RWT-METALS remains planned"
     }
   },
   "recoverySource": {
-    "leaseId": "47ee91b9-0bff-4df9-abe3-0610f20d1181",
-    "generation": 2,
-    "branch": "work/mvb-chat-6534295424",
-    "pr": 1106,
+    "leaseId": "26286684-da96-4e05-ae47-8e2024d5b45c",
+    "generation": 3,
+    "branch": "work/mvb-chat-6535138180",
+    "pr": 1112,
     "checkpoint": {
-      "evidence": "PR #1106 merged at 6d24ac888d55c85fd6db15f15208c93e1cea8929; final head da0912dc passed full CI 41136865682 and preflight 41136800771; nine tests and evidence blobs reproduced",
-      "next": "Resolve an actual separating terminal and retained court water boundary; compare the accessible route and respect passive dryness; do not transplant PVC slip-coupling motion",
-      "blocker": "Actual joint dimensions and consumables, first body removal, bay flooding, loaded withdrawal, supports and hydraulics remain unresolved; RWT-METALS planned"
+      "evidence": "PR #1112 merged ca19138d0315e000d40d06a056fc0b91054b2802; head 68fbbb13 passed full CI 41143884504 and canonical preflight 41142788420 job124364332950; eight tests reproduced",
+      "next": "Locate accessible carrier and retained courtyard water boundary with RWT-06/HAD/STR before enlarging blind sleeves; specify actual face/gasket and full removal sweep",
+      "blocker": "No matched polymer-free installed terminal, dry service section, support or hydraulic acceptance; RWT-METALS remains planned"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1112 merged ca19138d0315e000d40d06a056fc0b91054b2802; head 68fbbb13 passed full CI 41143884504 and canonical preflight 41142788420 job124364332950; eight tests reproduced",
-    "next": "Locate accessible carrier and retained courtyard water boundary with RWT-06/HAD/STR before enlarging blind sleeves; specify actual face/gasket and full removal sweep",
-    "blocker": "No matched polymer-free installed terminal, dry service section, support or hydraulic acceptance; RWT-METALS remains planned"
-  },
-  "pr": 1112,
-  "releasedAt": "2026-10-30T23:26:21.000Z",
-  "releaseReason": "handoff"
+  }
 }
