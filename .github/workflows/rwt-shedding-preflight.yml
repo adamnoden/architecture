@@ -1,0 +1,23 @@
+name: RWT shedding publication preflight (temporary)
+on:
+  push:
+    branches: [work/mvb-chat-6535149623]
+    paths: ['.github/workflows/rwt-shedding-preflight.yml']
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6535149623
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Fresh canonical publication preflight on current branch
+        run: |
+          node --import tsx scripts/project-claims.ts merge-check RWT-SHED --transport connector --lease-id 1f2d6c63-cf91-4dbb-8a5d-30033f848f7f --generation 1 --branch work/mvb-chat-6535149623 --head "$(git rev-parse HEAD)" --format text
