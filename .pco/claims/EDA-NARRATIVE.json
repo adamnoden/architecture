@@ -9,7 +9,13 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-30T00:53:45.219Z",
-  "heartbeatAt": "2026-10-30T00:53:45.219Z",
-  "expiresAt": "2026-10-30T01:38:45.219Z",
-  "branch": "work/zerg-eda-narrative"
+  "heartbeatAt": "2026-10-30T01:04:42.384Z",
+  "expiresAt": "2026-10-30T01:49:42.384Z",
+  "branch": "work/zerg-eda-narrative",
+  "pr": 1081,
+  "checkpoint": {
+    "evidence": "Source PR1081 at8c49ea02 preserves all41 entry records and moves28 consultation entries after narrative; net930 reader words removed. Root and worker4 source reviews passed; full preparation and docs build passed.",
+    "next": "Reconcile manuscript navigation observation, inspect exact A4/B5 CI output and actual running context, update only measured pagination metadata, then complete lifecycle and final serial validation.",
+    "blocker": "Initial exact production proof pending; existing measured page counts deliberately retained until actual output. No physical print or HRS architectural payoff accepted."
+  }
 }
