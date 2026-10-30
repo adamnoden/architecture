@@ -2,12 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 11,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "5bf0bbdb-e8db-4ad8-8d82-c3f34fbd26ca",
-  "holder": { "kind": "chatgpt", "label": "issue-comment-6532658645" },
+  "holder": {
+    "kind": "chatgpt",
+    "label": "issue-comment-6532658645"
+  },
   "claimedAt": "2026-10-30T20:21:07.000Z",
-  "heartbeatAt": "2026-10-30T20:40:55.000Z",
-  "expiresAt": "2026-10-30T21:25:55.000Z",
+  "heartbeatAt": "2026-10-30T21:00:15.000Z",
+  "expiresAt": "2026-10-30T21:00:15.000Z",
   "branch": "work/mvb-chat-6532658645",
   "pr": 1101,
   "predecessor": {
@@ -37,5 +40,7 @@
     "evidence": "PR #1101 head c61da8fc1f4e8fd39a284975ec38bad25928860b supersedes plastic defaults and registers free-shed, metals and robustness work",
     "next": "Require final exact-head CI and both canonical lease preflights; merge bounded rebrief, retain RWT-06 planned and release",
     "blocker": "Actual product, free-shed capture and hydraulic/threshold design remain follow-on work"
-  }
+  },
+  "releasedAt": "2026-10-30T21:00:15.000Z",
+  "releaseReason": "handoff"
 }
