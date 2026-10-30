@@ -56,7 +56,7 @@ Do not connect this garden candidate casually to the historical north-carrier re
 
 ### Catchment conservation
 
-This reuses the existing [construction water study](../../project/bcr/bcr-water-result.md) and [rainfall basis](rainfall-and-hydraulic-basis.md). With shell side 12 m, ridge square 7.75 m and court 3.5 m, the vertical-rain wall-line areas are:
+This reuses the existing [construction water study](https://github.com/adamnoden/architecture/blob/main/project/bcr/bcr-water-result.md) and [rainfall basis](rainfall-and-hydraulic-basis.md). With shell side 12 m, ridge square 7.75 m and court 3.5 m, the vertical-rain wall-line areas are:
 
 | Area | Wall-line comparison | Consistent 200 mm square-offset sensitivity |
 |---|---:|---:|
