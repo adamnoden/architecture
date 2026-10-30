@@ -25,7 +25,7 @@ flowchart LR
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>READY</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
-    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>BLOCKED</b>"]
+    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>READY</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -51,7 +51,6 @@ flowchart LR
   end
   subgraph g_STR["STR"]
     direction TB
-    n_STR_MASONRY["STR-MASONRY<br/>Compare solid wall roles and genuine masonry opening systems<br/><b>READY</b>"]
     n_STR_RECONCILE["STR-RECONCILE<br/>Reconcile structural interfaces and affected evidence for house selection<br/><b>BLOCKED</b>"]
   end
   subgraph g_MAT["MAT"]
@@ -137,7 +136,6 @@ flowchart LR
   n_STR_RECONCILE --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
-  n_STR_MASONRY --> n_STR_HOUSE
   n_STR_HOUSE --> n_STR_RECONCILE
   n_MAT_AUDIT --> n_MAT_ENVELOPE
   n_MAT_AUDIT --> n_MAT_SERVICES
@@ -221,8 +219,7 @@ flowchart LR
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_STR_MASONRY ready;
-  class n_STR_HOUSE blocked;
+  class n_STR_HOUSE ready;
   class n_STR_RECONCILE blocked;
   class n_MAT_AUDIT ready;
   class n_MAT_ENVELOPE blocked;
@@ -347,7 +344,7 @@ flowchart LR
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>READY</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
-    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>BLOCKED</b>"]
+    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>READY</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -398,7 +395,7 @@ flowchart LR
   subgraph g_STR["STR"]
     direction TB
     n_STR_00["STR-00<br/>Establish the structural brief and coordinated architecture programme<br/><b>DONE</b>"]
-    n_STR_MASONRY["STR-MASONRY<br/>Compare solid wall roles and genuine masonry opening systems<br/><b>READY</b>"]
+    n_STR_MASONRY["STR-MASONRY<br/>Compare solid wall roles and genuine masonry opening systems<br/><b>DONE</b>"]
     n_STR_SPANS["STR-SPANS<br/>Compare primary floor and roof systems with direct support<br/><b>DONE</b>"]
     n_STR_RECONCILE["STR-RECONCILE<br/>Reconcile structural interfaces and affected evidence for house selection<br/><b>BLOCKED</b>"]
   end
@@ -847,9 +844,9 @@ flowchart LR
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
   class n_STR_00 done;
-  class n_STR_MASONRY ready;
+  class n_STR_MASONRY done;
   class n_STR_SPANS done;
-  class n_STR_HOUSE blocked;
+  class n_STR_HOUSE ready;
   class n_STR_RECONCILE blocked;
   class n_MAT_00 done;
   class n_MAT_AUDIT ready;

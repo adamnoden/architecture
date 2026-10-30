@@ -250,6 +250,7 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
   ]),
   group('Floor & wall systems', [
     page('Primary floor and roof options', '/docs/research/structural-floor-roof-options'),
+    page('Solid walls and masonry arches', '/docs/research/solid-walls-and-masonry-arches'),
     page('Primary floor structure baseline', '/docs/research/primary-floor-structure-baseline'),
     page('Seated floor structure options', '/docs/research/seated-floor-structure-options'),
     page('Finish-agnostic floor platform options', '/docs/research/finish-agnostic-floor-platform-options'),
@@ -258,6 +259,7 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
   group('Roof & rainwater', [
     page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis'),
     page('Rainwater collection options', '/docs/research/rainwater-collection-options'),
+    page('Roof shedding & ground receivers', '/docs/research/roof-shedding-and-ground-receivers'),
     page('Rainwater conveyance options', '/docs/research/rainwater-conveyance-options'),
     page('Roof & rainwater materials', '/docs/research/roof-rainwater-material-compatibility'),
     page('Rainwater failure & exceedance', '/docs/research/rainwater-failure-and-exceedance')

@@ -29,6 +29,8 @@ The objective is broader than any one psychological measure: domestic space shou
 
 [Primary Floors and Roofs](structural-floor-roof-options.md) compares non-timber spanning systems on actual masonry supports and retains an exposed masonry-vault floor as a compression-led alternative. Complete floor and roof depth budgets, declared weight sensitivities and the consequences for services and restraint guide the next house study; they select no construction system.
 
+[Solid Walls and Masonry Arches](solid-walls-and-masonry-arches.md) compares solid wall roles, thickness and weight with genuine internal and external arch families. Located opening and wall sections show where the house needs space, abutments, restraint and an explicit load path. The comparison develops the owner's structural brief without selecting a wall or certifying an arch.
+
 Three options studies test whether more reversible assemblies add enough value to displace excellent conventional construction:
 
 - [Floor-to-Masonry Structural Interface](seated-floor-structure-options.md)
@@ -42,6 +44,8 @@ They remain evidence and comparison material, not automatic Reference House sele
 [Rainfall and the Building-side Water Network](rainfall-and-hydraulic-basis.md) establishes the area, rainfall, capacity and failure questions needed to compare gravity drainage systems before a site is selected. Worked arithmetic exposes consequence without selecting a design storm or claiming hydraulic adequacy. [Rainwater Conveyance](rainwater-conveyance-options.md) compares separate drops and shared routes, including the physical crossing needed to take courtyard water outside the house.
 
 [Rainwater Collection: Access and Failure Paths](rainwater-collection-options.md) compares exposed and trapped collection, transfer fittings and court drains by their capture, blockage, access and renewal consequences. It retains conventional exposed collection as a comparator without selecting the house network.
+
+[Roof Shedding and Ground Receivers](roof-shedding-and-ground-receivers.md) maps each house edge against controlled copper collection. Shallow accessible garden receivers remain conditional candidates; the narrow court and occupied door routes favour controlled collection. Source-bound flow and land-take comparisons keep planting, infiltration and physical acceptance distinct.
 
 [Roof and Rainwater Materials](roof-rainwater-material-compatibility.md) compares joints, movement, repair and directional runoff compatibility in one shared candidate record. No material family is selected independently of the roof and network.
 
