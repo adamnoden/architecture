@@ -9,12 +9,13 @@
     "label": "regular-chat-mvb-modes"
   },
   "claimedAt": "2026-10-30T11:56:54.230Z",
-  "heartbeatAt": "2026-10-30T11:56:54.230Z",
-  "expiresAt": "2026-10-30T12:41:54.230Z",
+  "heartbeatAt": "2026-10-30T11:57:29.091Z",
+  "expiresAt": "2026-10-30T12:42:29.091Z",
   "branch": "work/pco-mvb-barbell-handoff",
   "checkpoint": {
-    "evidence": "Issue #1091; code and regression on branch work/pco-mvb-barbell-handoff",
-    "next": "Verify exact-head CI, merge, release"
+    "evidence": "PR #1092 head 90c78814b63576ad5a9b4b70279cacc686bc7d6a; issue #1091",
+    "next": "Run exact-head CI and validate before expected-head merge"
   },
-  "note": "Owner-directed registration bootstrap, PCO-MODES pending main integration."
+  "note": "Owner-directed registration bootstrap, PCO-MODES pending main integration.",
+  "pr": 1092
 }
