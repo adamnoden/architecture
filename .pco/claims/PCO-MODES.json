@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "PCO-MODES",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b6f8b34f-0b93-4c5b-8b89-aed9012cf06b",
   "holder": {
     "kind": "chatgpt",
     "label": "regular-chat-mvb-modes"
   },
   "claimedAt": "2026-10-30T11:56:54.230Z",
-  "heartbeatAt": "2026-10-30T11:57:29.091Z",
-  "expiresAt": "2026-10-30T12:42:29.091Z",
+  "heartbeatAt": "2026-10-30T12:02:07.427Z",
+  "expiresAt": "2026-10-30T12:02:07.427Z",
   "branch": "work/pco-mvb-barbell-handoff",
   "checkpoint": {
-    "evidence": "PR #1092 head 90c78814b63576ad5a9b4b70279cacc686bc7d6a; issue #1091",
-    "next": "Run exact-head CI and validate before expected-head merge"
+    "evidence": "PR #1092 merged to main at 722eb7eabe2bfcf1eddb99fffdbe0ce4b23f8273",
+    "next": "Verify projection reconciliation, tidy issue, no further packet work"
   },
   "note": "Owner-directed registration bootstrap, PCO-MODES pending main integration.",
-  "pr": 1092
+  "pr": 1092,
+  "releaseReason": "completed",
+  "releasedAt": "2026-10-30T12:02:07.427Z"
 }
