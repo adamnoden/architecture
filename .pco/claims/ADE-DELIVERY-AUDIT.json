@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "ADE-DELIVERY-AUDIT",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "8502daf4-4bf8-450b-898f-5c4e77e90a4b",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-3"
+  },
+  "claimedAt": "2026-10-30T00:01:47.746Z",
+  "heartbeatAt": "2026-10-30T00:01:47.746Z",
+  "expiresAt": "2026-10-30T00:46:47.746Z",
+  "branch": "work/zerg-worker-3-ade"
+}
