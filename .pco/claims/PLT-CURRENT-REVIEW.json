@@ -9,11 +9,12 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-30T00:15:33.760Z",
-  "heartbeatAt": "2026-10-30T00:24:05.830Z",
-  "expiresAt": "2026-10-30T01:09:05.830Z",
+  "heartbeatAt": "2026-10-30T00:28:35.338Z",
+  "expiresAt": "2026-10-30T01:13:35.338Z",
   "checkpoint": {
-    "evidence": "Source-consistent PLT16–21 proof audit complete; exact archive/PDF index and bounded digital handoff drafted, six current source hashes matched; focused checks and peer review running.",
-    "next": "Publish reviewed source, preserve PUB1074 and EDA1075 parents in common integration after1073, exact-head checks and physical-boundary handoff."
+    "evidence": "Reviewed source1076 preserved in common1077 exact b88111198b6a806b4f99ea62d73f1cb388c647a7 on settled7516984f; source/tree equality and combined focused checks passed.",
+    "next": "Complete all common lease bindings, exact-head full and typography CI plus EDA rendered review, then each holder preflight and expected-head merge; own PLT release/reconciliation."
   },
-  "branch": "zerg/worker-1-packet-7"
+  "branch": "work/zerg-plt-pub-argument",
+  "pr": 1077
 }
