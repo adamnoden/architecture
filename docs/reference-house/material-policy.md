@@ -33,6 +33,10 @@ For the rest of the house, investigate solid timber and mechanically fixed joine
 
 Do not introduce hazardous legacy materials, deficient insulation, unsuitable lead-containing water-contact components or untested wet assemblies to satisfy this policy. Do not remove manufacturer-required seals, fire-stopping, insulation or compatible accessories without an engineered alternative.
 
+### Ground moisture and damp-proof courses
+
+The owner specifically rejects plastic DPCs and favours suitable slate and engineering-brick assemblies. Apply the [ground-water and rising-damp policy](ground-water-policy.md): develop substantial non-plastic protection with generous evidence-based margin, a 1,000-year durability ambition and explicit evidence limits. The owner's clarified intent is overbuilding where useful, with thickness and arrangement left to design judgement. Appropriate brick/slate grades, bedding, mortar, joints, continuity with floors and thresholds, movement and structural load transfer must be established for the complete assembly. No three-system requirement, literal thickness multiplier, default polymer exception, selected stack or lifetime guarantee is created here.
+
 ## Evidence and exceptions
 
 Each selected assembly must disclose its constituent materials and installed accessories with recoverable product revision and technical evidence. Supplier marketing alone is insufficient; missing constituent information is **unknown**, not zero plastic. Seek composition declarations, technical data and installation instructions; no single safety data sheet or environmental declaration is presumed exhaustive.

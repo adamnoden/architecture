@@ -13,6 +13,7 @@ The accepted pre-site house is RH-LAYOUT-REVISION-02. Its [current basis](../../
 | Confirmed direction | London; retain the accepted 12 × 12 m house as a strong plot-selection criterion. A different commissioned house requires an explicit owner/design decision, not an unnoticed fit correction. |
 | Selected architectural study | Two storeys around a genuine open court; centred entrance–court–garden relationship; current four-bedroom/two-en-suite reservations; Georgian-derived exterior and contemporary interiors. Arrangement is not proof of room, access or technical adequacy, nor a confirmed household brief. |
 | Confirmed design constraint | No flat or very-low-slope substitute roof. The present twin-pitch form is provisional; roof/water selection remains with ROF/RWT. |
+| Confirmed design constraint — 30 October 2026 | [Dryness by position and geometry](../../docs/reference-house/ground-water-policy.md): no accommodation or essential service space whose usability depends on active groundwater pumping or inaccessible tanking. Assess site levels and safe gravity/overflow routes before treating a plot as compatible. |
 | Preferences to test | Useful garden and outlook, privacy, light, calm rooms, work capability, understandable maintenance and a credible principal approach. Their relative priorities and acceptable compromises remain owner decisions OB-04–07 and OB-10. |
 | Derived needs | Enough usable three-dimensional territory for the represented house, actual projections, access, construction and maintenance, water destinations and landscape. Individual fields must be tested together; no generic strip width is adopted. |
 | Professional / external constraints | Applicable planning, heritage, environmental, access, ground, drainage, fire and utility requirements; boundaries and rights. Their actual applicability and adequacy require the relevant evidence and competent determination. This brief supplies no legal setback or compliance verdict. |
@@ -29,6 +30,14 @@ For an initial measured overlay, place the actual house outline within the evide
 The represented eaves are +6800 mm and ridge approximately +7791 mm relative to ground-floor FFL. These are architectural source coordinates, not approved building height or a complete roof-assembly envelope. Absolute house datum, surveyed ground, covering/terminal projections and the applicable measurement basis are unknown. The drawn −150 mm outside grade is a study value, not the land's level. An assessment must show the full section against real neighbours, terrain and constraints.
 
 Plan labels such as north/east name the current drawing axes. They do not establish geographic orientation on a future site. Rotate a measured model with its entrance, garden, court, windows and service side together; evaluate sun, daylight, overheating, privacy, views and noise against actual context before choosing orientation. No preferred compass bearing is selected here.
+
+## Passive dryness as a plot criterion
+
+The owner's [ground-water and rising-damp policy](../../docs/reference-house/ground-water-policy.md) now governs the site screen. Establish assessed groundwater and surface/flood levels, including relevant seasonal/perched water and uncertainty, before selecting the house datum and protective margin. Do not adopt the study's outside grade, a dry inspection or a downhill pipe as proof of passive dryness. A foot-of-hill plot is not categorically excluded; its actual water paths and dry-building section must work together.
+
+For any proposed basement, undercroft, service trench, sunken perimeter margin or courtyard, show the receiving destination, backwater/flooded-outlet condition and safe overflow with power unavailable and the primary outlet obstructed under agreed design conditions. If the arrangement requires active dewatering or inaccessible groundwater tanking to keep usable space dry, redesign it or reject that site/design combination. Preserve the principal approach and lawful discharge obligations. Foul-drainage pumping remains a separate assessed question, not an exception to the groundwater rule.
+
+Substantial non-plastic DPCs and their justified extra margin are assembly duties under MAT/BCR with MRA assurance. A favourable plot screen does not prove them, and unresolved groundwater/outfall evidence cannot support a suitability claim. This amendment supplies no accepted site datum, storm, water level, clearance dimension or engineering result.
 
 ## Plot criteria and evidence needed
 

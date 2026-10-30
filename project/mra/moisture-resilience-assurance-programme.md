@@ -123,6 +123,10 @@ After `TRIAD-GATE`, which now includes the prior `ROF-RWT-GATE`, attack the inte
 
 Test rain, wind-driven rain, blockage, ageing seals, displaced local components, courtyard concentration, surface-water mistakes and maintainability. Require explicit failure and drying paths at each consequential junction.
 
+Apply the owner's [ground-water and rising-damp policy](../../docs/reference-house/ground-water-policy.md) as a later requirement amendment. Challenge passive dryness with power unavailable, the primary outlet blocked and relevant flooded-outfall/backwater cases under explicit design conditions. Include any proposed undercroft, deeper trench, sunken perimeter margin and courtyard; their names confer no exemption. DPL supplies actual site-water evidence and MAT/BCR supply the proposed non-plastic moisture boundaries.
+
+For the substantial non-plastic damp barrier, attack bridges, joints, ground-level changes and movement, and examine the claimed benefit of extra thickness, courses or any justified backup. The owner clarified "triple redundancy" as overbuilding with the arrangement left to design judgement; no three-system test or numerical multiplier is mandatory. Preserve the existing single-failure and compound-case assurance rules. Carry findings into MRA-04's existing whole-house matrix, including structural interaction, detectability, intervention and drying. The owner's 1,000-year ambition is not a service-life result or zero-risk acceptance criterion that a desk review can certify. MRA-01 remains future assurance; this amendment records no passed assault or selected assembly.
+
 ### MRA-02 — internal water and wet-zone assault
 
 After `TRIAD-GATE`, in parallel with MRA-01, attack:

@@ -39,6 +39,14 @@ The owner prefers solid internal masonry, genuine arches at internal and externa
 
 The [STR programme](str/structural-architecture-programme.md) develops a coherent structural proposition with HAD and the existing assembly/evidence owners. It must test both load paths and the quality of the inhabited house. The owner's sense of repose is a valid design motive, not a general physiological or safety claim. This direction does not silently adopt new geometry or turn earlier structural concepts into verified systems.
 
+## Ground water and rising-damp direction — 30 October 2026
+
+The owner requires **dryness by position and geometry**: accommodation and essential services must not depend on active dewatering or inaccessible waterproofing holding back groundwater. Ground-contact foundations may tolerate their assessed wet exposure; the house must not depend on pumping to suppress groundwater around it. This constrains plot selection, building levels and any proposed basement, undercroft, deeper service trench, sunken perimeter margin or courtyard. Raising the house must preserve a coherent accessible principal approach.
+
+Plastic damp-proof courses are rejected as the design direction. Develop suitable slate and engineering-brick alternatives with **substantial construction and generous evidence-based margin**. The owner clarified that "triple redundancy" meant overbuilding, such as greater slate depth, with thickness and arrangement left to design judgement; three separate systems or a literal multiplier are not required. The owner's **1,000-year ambition** governs long-term durability and stewardship; it is not an established service life or a zero-risk promise. No material build-up is selected by this instruction.
+
+The [ground-water and rising-damp policy](../docs/reference-house/ground-water-policy.md) owns the exact acceptance boundaries and source evidence. Existing MAT, DPL, RWT, BCR, MRA and delivery work carry the requirement into design and assurance. Policy adoption does not mark those technical questions resolved.
+
 ## Working limits
 
 - Establish the brief and cost questions early. No budget, household detail, completion date or procurement decision may be invented from this objective.
