@@ -9,7 +9,12 @@
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-30T00:01:47.746Z",
-  "heartbeatAt": "2026-10-30T00:01:47.746Z",
-  "expiresAt": "2026-10-30T00:46:47.746Z",
-  "branch": "work/zerg-worker-3-ade"
+  "heartbeatAt": "2026-10-30T00:15:55.529Z",
+  "expiresAt": "2026-10-30T01:00:55.529Z",
+  "branch": "work/zerg-worker-3-ade",
+  "pr": 1072,
+  "checkpoint": {
+    "evidence": "Frozen reviewed PR1072 c404d17ee7c6106f4b2d6c8e446003699557e966; accepted1069 inputs pinned; type/90control/repository/sanitation/link checks passed",
+    "next": "Worker2 preserved-parent EDA/CCR/ADE integration; rebind same lease when common PR exists; exact combined CI and fresh preflight then release/reconcile"
+  }
 }
