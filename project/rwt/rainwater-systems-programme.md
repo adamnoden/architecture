@@ -178,6 +178,8 @@ Resolve:
 
 Do not cross the handoff by inventing real-site drainage facts. The old plastic-carrier comparisons remain dated evidence of geometry and failure cases, not permitted defaults for continued detailing.
 
+The [passive court/site interface review](passive-court-site-interface.md) now supplies the level-feasibility screen for this handoff. Require separate receiving-water, annular-leakage, usable-service-space and court-threshold evidence before committing to a deeper route or service well. A failed historical free-outlet condition calls for an explicit route/section comparison; it neither proves all gravity discharge impossible nor permits a pump-dependent workaround. The actual matched section, access and hydraulic acceptance remain open.
+
 ### RWT-SHED — free shedding and planted ground receivers
 
 After MAT-00, RWT-01 and ROF-02, develop the condition-by-condition comparisons specified in the [new brief](rainwater-elegance-brief.md): catchment flow, eave detachment/wind/splash evidence, receiving section, independent no-plant performance, access, foundations and safe overflow. Compare each eligible edge against controlled copper collection. Identify actual mock-up/evidence needs; do not adopt a safe overhang from a ballistic toy model or generic hedge interception.
