@@ -77,6 +77,10 @@ npm run publication:metadata:check # verify committed publication metadata
 
 Use the dedicated specimen command named by a drawing/proof record when validating a physical page, spread, typography or scale boundary. Do not substitute a generic PDF build for a specialised proof that checks more specific geometry or physical-output invariants.
 
+## Authored Primer framing
+
+`primer/` is a narrow authored-source exception within this build tree. Its proposition, outlook and composition fragments own the Primer’s editorial framing; the linked manuscript, pattern and Reference House sources retain architectural authority. `adapters.ts` selects and compresses those sources and fills explicit `<!-- primer:… -->` composition slots. It does not own architectural prose. All fragments and all pattern metadata used by the complete map are declared through the existing adapter dependencies, which publication preparation and EDA corpus discovery both consume. Inventory counts use the existing canonical pattern order and publication manifest; there is no separate Primer inventory.
+
 ## Source and generated boundaries
 
 The publication pipeline consumes authored architectural/documentation sources and controlled drawing assets, then prepares downstream publication material for rendering.

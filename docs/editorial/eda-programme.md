@@ -2,7 +2,7 @@
 
 **Historical audit status:** CLOSED — EDA-00–08 passed for the source/object accepted on 2026-10-27
 
-**Current successor:** EDA-ADAPTER planned; EDA-RENEWED remains gated on final PLT integration. See section 9 and the [cross-stream refurbishment plan](../../project/refurbishment-plan.md).
+**Current successor:** EDA-ADAPTER complete — [source-ownership result](../../project/eda/eda-adapter-result.md); EDA-RENEWED remains gated on final PLT integration. See section 9 and the [cross-stream refurbishment plan](../../project/refurbishment-plan.md).
 **Programme owner:** publication editorial control  
 **Baseline:** `816c6ca71e20235dca83350eb0f3e2cd05186169`  
 **Governing relationship:** post-migration assurance of the completed Editorial Overhaul  
@@ -320,6 +320,8 @@ Claim fidelity is preserved apart from the separately documented reconciliation 
 The acceptance above remains historical evidence for its recorded source and typeset object. It does not clear the enlarged, changed-house book for manufacture. The [2026-10-28 successor trigger](../../project/eda/eda-successor-trigger-2026-10-28.md) remains applicable; the [refurbishment plan](../../project/refurbishment-plan.md) adds the bounded prerequisite and acceptance requirements below. No prose repair, new proof or maturity promotion is claimed by this programme amendment.
 
 ### EDA-ADAPTER — authored ownership of publication prose
+
+**Accepted result:** [authored Primer ownership](../../project/eda/eda-adapter-result.md). Three authored framing fragments and complete pattern metadata dependencies replace hidden adapter prose; all five adapted and prepared Primer entries remain byte-identical. This completes source ownership only.
 
 **Dispatch:** self-service, independent of final architectural resolution. This is a narrow source-ownership repair, not a free-form editorial reopening during IAS/OAS/HAD.
 
