@@ -4,7 +4,7 @@ export const pcoNodes = defineNodes([
   {
     id: 'PCO-CRASH', owners: ['PCO'],
     title: 'Recover interrupted swarms and support connector-constrained chat execution',
-    dependencies: ['PCO-COMMS'], lifecycle: 'planned',
+    dependencies: ['PCO-COMMS'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed crash-recovery and cross-runtime MVB uplift (issue #1083).' },
     closeoutEvidence: ['project/pco/mvb-crash-recovery-result.md']
   },
