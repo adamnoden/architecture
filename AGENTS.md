@@ -31,6 +31,8 @@ Ask only when a material ambiguity cannot reasonably be resolved from project co
 
 ### Undirected swarm sessions
 
+Workers in independent chats and centrally coordinated sessions use the same canonical claims; each executing worker owns its own lease.
+
 The owner's standalone command **`swarm`** (case-insensitive) means: enter the existing autonomous, self-service project-control loop, not an invitation to redesign it. Start by reading this constitution and `project/control/README.md`; establish current `main` authority and live occupancy, then use the canonical dispatcher (`npm run control:claim-next`) to acquire the highest-ranked eligible packet. Complete and verify the bounded packet, integrate and close it out, release its lease, and repeat while safe, useful, unclaimed work remains. Prefer another eligible packet over stopping because one candidate is blocked. Never bypass manual-dispatch policy, leases, validation or merge safety.
 
 A successful packet is a checkpoint, not a reason to end an undirected swarm. Do not invent a trial, packet-count cap or elapsed-time budget. Stop only for owner interruption, an actual execution limit, an evidenced empty eligible frontier or a coordination/environment blocker after safe alternatives. If one candidate is blocked, dispatch another. A directed, explicitly bounded assignment may end when its scope is complete. State the concrete stop reason and evidence; never imply the frontier is exhausted because you chose to stop.
