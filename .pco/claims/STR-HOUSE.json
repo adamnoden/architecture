@@ -9,12 +9,12 @@
     "label": "STR whole-house coordinator /root"
   },
   "claimedAt": "2026-10-30T22:58:52.000Z",
-  "heartbeatAt": "2026-10-30T23:19:57.000Z",
-  "expiresAt": "2026-10-31T00:04:57.000Z",
+  "heartbeatAt": "2026-10-30T23:39:41.000Z",
+  "expiresAt": "2026-10-31T00:24:41.000Z",
   "branch": "work/str-house-20261030-f297f5ec",
   "note": "Explicit owner direction to progress STR. Fresh main ebfb41c30690ea10e2c3e1eddcc4250c31c063ca has STR-MASONRY, STR-SPANS and BCR-PREFLIGHT complete, STR-HOUSE self-service/planned; exact runtime claim absent. Bounded connector CAS transport after unavailable terminal Git; no CLI acquisition claimed. Existing preparatory investigation was read-only.",
   "checkpoint": {
-    "evidence": "Recovery branch a3a33f4634032cb625277794788f301757254d52 retains HOUSE working result and reproducible source-geometry control. Independent junction/support studies now reviewed locally: court1800, finite stair-header failure/lowered-window comparison, actual bulkhead/transoms and riser edge problem. Paired occupation/utility test finishing; HOUSE still unpassed.",
-    "next": "Freeze and integrate the partial joined-house evidence with exact open junctions; remove temporary workflow, create PR and run full exact-head CI plus fresh preflight; do not mark HOUSE complete"
+    "evidence": "PR1118 at7b193b2f875815b0e68ac8c5db423df1c8c7a9e4 retains26 files of joined HOUSE evidence: paired plans, source/control data, exact occupation limits, finite support and arch/service alternatives. Main reconciled throughbb8e94ad; all10 source guards unchanged. Local checks and independent review passed; exact-head CI pending. HOUSE remains unpassed.",
+    "next": "Observe exact-head full CI, rerun canonical preflight job124357608915 against current branch/lease/main, merge safely, release handoff, reconcile parent1103 and verify cleanup. Do not mark HOUSE complete."
   }
 }
