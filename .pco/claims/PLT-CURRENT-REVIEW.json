@@ -9,11 +9,11 @@
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-30T00:15:33.760Z",
-  "heartbeatAt": "2026-10-30T00:28:35.338Z",
-  "expiresAt": "2026-10-30T01:13:35.338Z",
+  "heartbeatAt": "2026-10-30T00:47:39.676Z",
+  "expiresAt": "2026-10-30T01:32:39.676Z",
   "checkpoint": {
-    "evidence": "Reviewed source1076 preserved in common1077 exact b88111198b6a806b4f99ea62d73f1cb388c647a7 on settled7516984f; source/tree equality and combined focused checks passed.",
-    "next": "Complete all common lease bindings, exact-head full and typography CI plus EDA rendered review, then each holder preflight and expected-head merge; own PLT release/reconciliation."
+    "evidence": "Final common1077 b6f96d5d preserves reviewed sources; actual B5 orphan separator repaired and inspected334-page ledger reconciled; root reviewed failure-artifact retention and exact owning evidence.",
+    "next": "Wait final exact-head workflows and EDA continuity check, then each-holder fresh canonical preflight, expected-head merge, own PLT release and issue422 closeout."
   },
   "branch": "work/zerg-plt-pub-argument",
   "pr": 1077
