@@ -9,8 +9,8 @@
     "label": "owner-single-worker-20261030"
   },
   "claimedAt": "2026-10-30T14:20:29.000Z",
-  "heartbeatAt": "2026-10-30T14:20:29.000Z",
-  "expiresAt": "2026-10-30T15:05:29.000Z",
+  "heartbeatAt": "2026-10-30T14:28:59.000Z",
+  "expiresAt": "2026-10-30T15:13:59.000Z",
   "branch": "work/mvb-had-court-20261030",
   "predecessor": {
     "leaseId": "7e6520e0-66c6-42e5-bbf0-aae1c1bbdd71",
@@ -31,5 +31,11 @@
       "evidence": "Merged HAD partial via PR #1085 at 95f0772d5d18f5f7be94e888f6d7956e6d601c16, exact-head CI passed, six original source blobs retained",
       "next": "Further HAD-03 design: IAS joint product/fixture packing, proper pan and screen renewal, actual handling and full selected-family convergence. Remains PLANNED."
     }
+  },
+  "pr": 1096,
+  "checkpoint": {
+    "evidence": "PR #1096 source head 956c5e3d1c2cd161fa731363b49aafd355114da9; current HAD threshold first-failure gate",
+    "next": "Check exact-head CI and canonical merge preflight, then merge",
+    "blocker": "Prior GitHub 500 was reconciled: runtime record unchanged; reissuing fresh CAS renew"
   }
 }
