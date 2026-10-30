@@ -33,6 +33,12 @@ Prefer simple, forgiving roof shedding into designed ground receivers where the 
 
 The [MAT programme](mat/material-integrity-programme.md) and existing RWT workstream carry this direction into the canonical execution graph. Earlier plastic carrier and polymer-dependent assembly studies remain historical evidence; their material preferences do not override the owner's new requirement. The actual assembly redesign and hydraulic proof still have to be earned.
 
+## Structural direction — 30 October 2026
+
+The owner prefers solid internal masonry, genuine arches at internal and external openings, direct bearing and walls/supports aligned between storeys. Explore non-timber primary floor and roof structure first. The [structural brief](../docs/reference-house/structural-brief.md) owns these preferences, their exception boundaries and the distinction between solidity and loadbearing; it selects no blanket wall thickness and does not prohibit necessary tension resistance.
+
+The [STR programme](str/structural-architecture-programme.md) develops a coherent structural proposition with HAD and the existing assembly/evidence owners. It must test both load paths and the quality of the inhabited house. The owner's sense of repose is a valid design motive, not a general physiological or safety claim. This direction does not silently adopt new geometry or turn earlier structural concepts into verified systems.
+
 ## Working limits
 
 - Establish the brief and cost questions early. No budget, household detail, completion date or procurement decision may be invented from this objective.

@@ -21,6 +21,8 @@ that all flat roofs inevitably fail. Machine-readable owner:
 
 The accepted [layout revision 02](layout-revision-02.md) develops the 12 m square shell, 3.5 m square court, five-bay front and four-bedroom programme, with two en-suite reservations, family bathroom, ground-to-first return stair, separate plant room and west study/cloakroom. It has no loft stair or usable attic. The [current design basis](current-house-basis.md) identifies its sources and technical limits; the earlier Georgian re-plan remains a predecessor study. Site fit and technical performance remain unresolved.
 
+The [structural brief](structural-brief.md) records the owner's 30 October direction for solid masonry, direct support, arches and structural-family investigation. The [material policy](material-policy.md) owns the whole-house plastic-avoidance constraint. Both qualify future assembly selection without silently changing the accepted layout or rewriting the dated ledger below.
+
 ## Original RH-00 ledger
 
 The sections below retain the 12 October brief-stage record. Their unselected geometry and programme statements describe that stage. Later adopted dimensions, programme and scope are governed by [Current House Basis](current-house-basis.md) and the [owner project brief](../delivery/owner-project-brief.md).

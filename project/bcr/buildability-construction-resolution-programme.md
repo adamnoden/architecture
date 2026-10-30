@@ -67,6 +67,12 @@ The [wet feasibility study](bcr-wet-result.md) tests source sanitary/service res
 
 The [physical preflight result](bcr-preflight-result.md) integrates all 35 findings from the five physical studies into the shared matrix, reconciles their common floor/bridge/wet/service/court budgets, and supplies explicit architectural admission constraints and affected-change rechecks. Every material physical finding remains routed-pending / blocked at its design claim. Completion earns preparation of current review/prototype applicability and the bounded construction-bay brief; it does not admit an incompatible candidate or close BCR.
 
+## Structural design ownership
+
+The [STR programme](../str/structural-architecture-programme.md) owns the structural design proposition in response to the owner's [structural brief](../../docs/reference-house/structural-brief.md). BCR-STRUCTURE and BCR-PREFLIGHT remain completed investigations at their stated scope; their adverse findings are inputs to STR, not a selected structural design. STR and HAD must resolve the actual doorway/entrance-void reactions, stair/floor geometry and service crossings through a coordinated candidate and explicit source changes where earned.
+
+STR-RECONCILE records dispositions in the existing obligation matrix and identifies affected bay, OAS detail, EPR and PHY rechecks. It creates no parallel matrix or review process. ER-STR-01 retains competent structural review; site-specific foundation duties remain with the actual-site/delivery owners. ROF-RWT-GATE and TRIAD-GATE consume the structural handoff before BCR-CONVERGENCE, and must reject incompatible selected geometry rather than relying on historical study completion.
+
 ## Dependency gate
 
 `BCR-SCAFFOLD` may run while IAS/OAS/HAD, ROF/RWT and MRA-00 are in progress. The six early studies require `BCR-SCAFFOLD` and `HRS-BASELINE`, not finished selected-system gates. `BCR-PREFLIGHT` is an input to `TRIAD-GATE`.
