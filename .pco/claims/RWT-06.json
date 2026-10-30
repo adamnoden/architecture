@@ -1,23 +1,14 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "31f93353-ecad-4ca6-a2e2-2aa352620732",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "2da99f58-bad3-457a-937b-c6d57a80d5e8",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-worker-6"
+    "label": "zerg-worker-2"
   },
-  "claimedAt": "2026-10-29T22:12:16.360Z",
-  "heartbeatAt": "2026-10-29T22:59:41.229Z",
-  "expiresAt": "2026-10-29T22:59:41.229Z",
-  "branch": "work/zerg-rwt-wet-proportionality",
-  "checkpoint": {
-    "evidence": "Reviewed RWT partial133940e7 preserved as directparent in commonPR1052 headedd7d7af; local combined validation passed",
-    "next": "Exact combined CI, three fresh preflights, merge durable partial then handoff release; RWT06 remains planned",
-    "blocker": "Actual court lowest vulnerable boundary, supported insulated removable floor and high receiver access remain unadmitted"
-  },
-  "pr": 1052,
-  "releasedAt": "2026-10-29T22:59:41.229Z",
-  "releaseReason": "handoff"
+  "claimedAt": "2026-10-30T00:28:19.657Z",
+  "heartbeatAt": "2026-10-30T00:28:19.657Z",
+  "expiresAt": "2026-10-30T01:13:19.657Z"
 }
