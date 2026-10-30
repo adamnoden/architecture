@@ -174,6 +174,7 @@ const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
     page('Reference House overview', '/docs/reference-house/'),
     page('Current house basis', '/docs/reference-house/current-house-basis'),
     page('Whole-house material policy', '/docs/reference-house/material-policy'),
+    page('Structural brief', '/docs/reference-house/structural-brief'),
     page('G-01 v0.1 conformance — D12', '/docs/reference-house/g01-v0.1-conformance-d12'),
     page('Pattern occurrence register', '/docs/reference-house/pattern-occurrence-register'),
     page('Tectonic architectural language', '/docs/reference-house/tectonic-architectural-language'),
