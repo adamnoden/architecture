@@ -25,6 +25,15 @@ export interface SupersededLease {
   reason: string
 }
 
+/** Historical evidence pointer, not transferred ownership or validated current progress. */
+export interface PredecessorClaim {
+  leaseId: string
+  generation: number
+  branch?: string
+  pr?: number
+  checkpoint?: RecoveryCheckpoint
+}
+
 export interface RecoveryCheckpoint {
   /** Recoverable repository/PR evidence; never a path in another agent's scratch space. */
   evidence: string
@@ -49,6 +58,7 @@ export interface ClaimRecord {
   releasedAt?: string
   releaseReason?: 'completed' | 'handoff' | 'abandoned' | 'superseded' | 'other'
   supersedes?: SupersededLease
+  predecessor?: PredecessorClaim
 }
 
 export interface ClaimMetadata {
@@ -59,6 +69,7 @@ export interface ClaimMetadata {
 }
 
 export interface AcquireClaimInput extends ClaimMetadata {
+  predecessor?: PredecessorClaim
   node: NodeId
   generation: number
   leaseId: string
@@ -166,6 +177,19 @@ export function parseClaimRecord(raw: string, expectedNode?: NodeId): ClaimRecor
     }
   }
 
+  if (value.predecessor !== undefined) {
+    const p = value.predecessor
+    if (!isRecord(p) || !nonEmptyString(p.leaseId) || !Number.isInteger(p.generation) || Number(p.generation) < 1 || Number(p.generation) >= Number(value.generation) || p.leaseId === value.leaseId) {
+      throw new Error('Invalid predecessor lease identity/generation')
+    }
+    if (!optionalNonEmptyString(p.branch) || (p.pr !== undefined && (!Number.isInteger(p.pr) || Number(p.pr) <= 0))) {
+      throw new Error('Invalid predecessor branch/PR')
+    }
+    if (p.checkpoint !== undefined && (!isRecord(p.checkpoint) || !nonEmptyString(p.checkpoint.evidence) || !nonEmptyString(p.checkpoint.next) || !optionalNonEmptyString(p.checkpoint.blocker))) {
+      throw new Error('Invalid predecessor checkpoint')
+    }
+  }
+
   if (value.supersedes !== undefined) {
     if (!isRecord(value.supersedes)) throw new Error('Claim supersedes metadata must be an object')
     if (!nonEmptyString(value.supersedes.leaseId)) throw new Error('Superseded lease has invalid leaseId')
@@ -217,6 +241,12 @@ export function createClaimRecord(input: AcquireClaimInput): ClaimRecord {
   if (!Number.isFinite(now.getTime())) throw new Error('Claim time is invalid')
   if (!Number.isInteger(input.generation) || input.generation < 1) throw new Error('Claim generation must be positive')
   if (!nonEmptyString(input.leaseId)) throw new Error('Claim leaseId must be non-empty')
+  if (input.predecessor && (input.predecessor.generation >= input.generation || input.predecessor.leaseId === input.leaseId)) {
+    throw new Error('Predecessor must identify an older, distinct lease')
+  }
+  if (input.predecessor?.branch && input.branch === input.predecessor.branch) {
+    throw new Error('Recovery must not reuse the predecessor branch')
+  }
 
   const expires = new Date(now.getTime() + ttl * 60 * 1000)
   return {
@@ -233,13 +263,14 @@ export function createClaimRecord(input: AcquireClaimInput): ClaimRecord {
     ...(input.branch ? { branch: input.branch } : {}),
     ...(input.pr ? { pr: input.pr } : {}),
     ...(input.note ? { note: input.note } : {}),
-    ...(input.supersedes ? { supersedes: input.supersedes } : {})
+    ...(input.supersedes ? { supersedes: input.supersedes } : {}),
+    ...(input.predecessor ? { predecessor: input.predecessor } : {})
   }
 }
 
 export function nextNormalAcquisition(
   previous: ClaimRecord | null,
-  input: Omit<AcquireClaimInput, 'generation'>
+  input: Omit<AcquireClaimInput, 'generation' | 'predecessor'>
 ): ClaimRecord {
   if (previous) {
     const state = leaseTemporalState(previous, input.now)
@@ -250,7 +281,14 @@ export function nextNormalAcquisition(
 
   return createClaimRecord({
     ...input,
-    generation: previous ? previous.generation + 1 : 1
+    generation: previous ? previous.generation + 1 : 1,
+    ...(previous ? { predecessor: {
+      leaseId: previous.leaseId,
+      generation: previous.generation,
+      ...(previous.branch ? { branch: previous.branch } : {}),
+      ...(previous.pr ? { pr: previous.pr } : {}),
+      ...(previous.checkpoint ? { checkpoint: previous.checkpoint } : {})
+    } } : {})
   })
 }
 
