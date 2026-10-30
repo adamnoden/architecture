@@ -21,6 +21,7 @@ New first-class workstreams use exactly three uppercase letters. Historical evid
 | `HRS` | House Resolution & Synthesis | [#945](https://github.com/adamnoden/architecture/issues/945) | `project/hrs/house-resolution-synthesis-programme.md` | — |
 | `IAS` | Interior Architecture System | [#941](https://github.com/adamnoden/architecture/issues/941) | `project/ias/interior-architecture-system-programme.md` | — |
 | `ILA` | ILA workstream | — | — | — |
+| `MAT` | Material Integrity and Synthetic-Polymer Avoidance | [#1100](https://github.com/adamnoden/architecture/issues/1100) | `project/mat/material-integrity-programme.md` | — |
 | `MRA` | Moisture Resilience Assurance | [#959](https://github.com/adamnoden/architecture/issues/959) | `project/mra/moisture-resilience-assurance-programme.md` | — |
 | `OAS` | Opening Assembly System | [#942](https://github.com/adamnoden/architecture/issues/942) | `project/oas/opening-assembly-system-programme.md` | — |
 | `OCG` | OCG workstream | — | — | — |

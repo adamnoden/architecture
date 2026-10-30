@@ -23,6 +23,7 @@ flowchart LR
   subgraph g_SHARED["Shared integration gates"]
     direction TB
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
+    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>READY</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
@@ -38,12 +39,22 @@ flowchart LR
   subgraph g_RWT["RWT"]
     direction TB
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>READY</b>"]
+    n_RWT_METALS["RWT-METALS<br/>Develop copper collection, brass channels and non-plastic concealed routes<br/><b>READY</b>"]
+    n_RWT_ROBUSTNESS["RWT-ROBUSTNESS<br/>Test full-duty independent paths, reserve and common-cause rainwater failures<br/><b>BLOCKED</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
   subgraph g_ROF["ROF"]
     direction TB
     n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_MAT["MAT"]
+    direction TB
+    n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>READY</b>"]
+    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>BLOCKED</b>"]
+    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>BLOCKED</b>"]
+    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>BLOCKED</b>"]
+    n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
     direction TB
@@ -100,6 +111,7 @@ flowchart LR
   n_IAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
+  n_MAT_COORDINATION --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
@@ -107,11 +119,25 @@ flowchart LR
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
+  n_RWT_SHED --> n_RWT_ROBUSTNESS
+  n_RWT_METALS --> n_RWT_ROBUSTNESS
   n_RWT_06 --> n_RWT_07
+  n_RWT_SHED --> n_RWT_07
+  n_RWT_METALS --> n_RWT_07
+  n_RWT_ROBUSTNESS --> n_RWT_07
   n_RWT_07 --> n_ROF_RWT_GATE
   n_HAD_03 --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
+  n_MAT_AUDIT --> n_MAT_ENVELOPE
+  n_MAT_AUDIT --> n_MAT_SERVICES
+  n_MAT_AUDIT --> n_MAT_INTERIORS
+  n_MAT_ENVELOPE --> n_MAT_COORDINATION
+  n_MAT_SERVICES --> n_MAT_COORDINATION
+  n_MAT_INTERIORS --> n_MAT_COORDINATION
+  n_IAS_03 --> n_MAT_COORDINATION
+  n_HAD_03 --> n_MAT_COORDINATION
+  n_ROF_RWT_GATE --> n_MAT_COORDINATION
   n_TRIAD_GATE --> n_MRA_01
   n_TRIAD_GATE --> n_MRA_02
   n_TRIAD_GATE --> n_MRA_03
@@ -149,6 +175,7 @@ flowchart LR
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_MAT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MRA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -176,10 +203,18 @@ flowchart LR
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_TECHNICAL blocked;
   class n_RWT_06 ready;
+  class n_RWT_SHED ready;
+  class n_RWT_METALS ready;
+  class n_RWT_ROBUSTNESS blocked;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
+  class n_MAT_AUDIT ready;
+  class n_MAT_ENVELOPE blocked;
+  class n_MAT_SERVICES blocked;
+  class n_MAT_INTERIORS blocked;
+  class n_MAT_COORDINATION blocked;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
   class n_MRA_03 blocked;
@@ -296,6 +331,7 @@ flowchart LR
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>DONE</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
+    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>READY</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
@@ -339,8 +375,19 @@ flowchart LR
     n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>DONE</b>"]
     n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>DONE</b>"]
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>READY</b>"]
+    n_RWT_METALS["RWT-METALS<br/>Develop copper collection, brass channels and non-plastic concealed routes<br/><b>READY</b>"]
+    n_RWT_ROBUSTNESS["RWT-ROBUSTNESS<br/>Test full-duty independent paths, reserve and common-cause rainwater failures<br/><b>BLOCKED</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_MAT["MAT"]
+    direction TB
+    n_MAT_00["MAT-00<br/>Establish whole-house material policy and coordinated rainwater rebrief<br/><b>DONE</b>"]
+    n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>READY</b>"]
+    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>BLOCKED</b>"]
+    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>BLOCKED</b>"]
+    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>BLOCKED</b>"]
+    n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
     direction TB
@@ -493,6 +540,7 @@ flowchart LR
   n_OAS_DETAIL --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_BCR_PREFLIGHT --> n_TRIAD_GATE
+  n_MAT_COORDINATION --> n_TRIAD_GATE
   n_BSR_ROOT --> n_BCR_SCAFFOLD
   n_BCR_SCAFFOLD --> n_BCR_CONVERGENCE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
@@ -547,12 +595,23 @@ flowchart LR
   n_RWT_04 --> n_RWT_05
   n_RWT_03 --> n_RWT_06
   n_RWT_05 --> n_RWT_06
+  n_MAT_00 --> n_RWT_SHED
+  n_RWT_01 --> n_RWT_SHED
+  n_ROF_02 --> n_RWT_SHED
+  n_MAT_00 --> n_RWT_METALS
+  n_RWT_04 --> n_RWT_METALS
+  n_RWT_SHED --> n_RWT_ROBUSTNESS
+  n_RWT_METALS --> n_RWT_ROBUSTNESS
+  n_RWT_05 --> n_RWT_ROBUSTNESS
   n_RWT_02 --> n_RWT_07
   n_RWT_03 --> n_RWT_07
   n_RWT_04 --> n_RWT_07
   n_RWT_05 --> n_RWT_07
   n_RWT_06 --> n_RWT_07
   n_ROF_02 --> n_RWT_07
+  n_RWT_SHED --> n_RWT_07
+  n_RWT_METALS --> n_RWT_07
+  n_RWT_ROBUSTNESS --> n_RWT_07
   n_ROF_07 --> n_ROF_RWT_GATE
   n_RWT_07 --> n_ROF_RWT_GATE
   n_HAD_03 --> n_ROF_RWT_GATE
@@ -560,6 +619,18 @@ flowchart LR
   n_OAS_DETAIL --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
+  n_HRS_BASELINE --> n_MAT_00
+  n_MAT_00 --> n_MAT_AUDIT
+  n_MAT_AUDIT --> n_MAT_ENVELOPE
+  n_MAT_AUDIT --> n_MAT_SERVICES
+  n_MAT_AUDIT --> n_MAT_INTERIORS
+  n_MAT_ENVELOPE --> n_MAT_COORDINATION
+  n_MAT_SERVICES --> n_MAT_COORDINATION
+  n_MAT_INTERIORS --> n_MAT_COORDINATION
+  n_IAS_03 --> n_MAT_COORDINATION
+  n_HAD_03 --> n_MAT_COORDINATION
+  n_OAS_DETAIL --> n_MAT_COORDINATION
+  n_ROF_RWT_GATE --> n_MAT_COORDINATION
   n_BSR_ROOT --> n_MRA_00
   n_MRA_00 --> n_MRA_01
   n_TRIAD_GATE --> n_MRA_01
@@ -632,6 +703,7 @@ flowchart LR
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_MAT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MRA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -735,10 +807,19 @@ flowchart LR
   class n_RWT_04 done;
   class n_RWT_05 done;
   class n_RWT_06 ready;
+  class n_RWT_SHED ready;
+  class n_RWT_METALS ready;
+  class n_RWT_ROBUSTNESS blocked;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
+  class n_MAT_00 done;
+  class n_MAT_AUDIT ready;
+  class n_MAT_ENVELOPE blocked;
+  class n_MAT_SERVICES blocked;
+  class n_MAT_INTERIORS blocked;
+  class n_MAT_COORDINATION blocked;
   class n_MRA_00 done;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
