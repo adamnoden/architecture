@@ -9,8 +9,8 @@
     "label": "issue-comment-6535293702"
   },
   "claimedAt": "2026-10-30T23:00:35.000Z",
-  "heartbeatAt": "2026-10-30T23:00:35.000Z",
-  "expiresAt": "2026-10-30T23:45:35.000Z",
+  "heartbeatAt": "2026-10-30T23:07:04.278Z",
+  "expiresAt": "2026-10-30T23:52:04.278Z",
   "branch": "work/mvb-chat-6535293702",
   "predecessor": {
     "leaseId": "5bf0bbdb-e8db-4ad8-8d82-c3f34fbd26ca",
@@ -33,5 +33,11 @@
       "next": "Require final exact-head CI and both canonical lease preflights; merge bounded rebrief, retain RWT-06 planned and release",
       "blocker": "Actual product, free-shed capture and hydraulic/threshold design remain follow-on work"
     }
+  },
+  "pr": 1111,
+  "checkpoint": {
+    "evidence": "PR #1111 at dfe4f3dde2df1fdfa8027333584272a0cc0cd351; source-pinned passive receiving-level comparison and independent design reviews",
+    "next": "Verify full health and submitted-head CI; run canonical merge-check; integrate partial result without closing RWT-06",
+    "blocker": "Matched threshold, route, hydraulic and maintenance interfaces remain unresolved; no actual site accepted"
   }
 }
