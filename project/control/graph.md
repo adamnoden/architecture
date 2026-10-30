@@ -16,10 +16,6 @@ flowchart LR
     direction TB
     n_CCR_IDENTITY["CCR-IDENTITY<br/>Adjudicate identity guarantees and integrate correctness repairs<br/><b>READY</b>"]
   end
-  subgraph g_PCO["PCO"]
-    direction TB
-    n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>READY</b>"]
-  end
   subgraph g_IAS["IAS"]
     direction TB
     n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>READY</b>"]
@@ -36,7 +32,6 @@ flowchart LR
   subgraph g_BCR["BCR"]
     direction TB
     n_BCR_CONVERGENCE["BCR-CONVERGENCE<br/>Substantive construction-resolution convergence<br/><b>BLOCKED</b>"]
-    n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>READY</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
@@ -81,13 +76,6 @@ flowchart LR
     n_PUB_02_PREP["PUB-02-PREP<br/>Content-independent private-object preparation<br/><b>READY</b>"]
     n_PUB_02_FINAL["PUB-02-FINAL<br/>Final private-object content, drawing and manufacture gate<br/><b>BLOCKED</b>"]
   end
-  subgraph g_DEL["DEL"]
-    direction TB
-    n_DEL_ISSUE_PROFILES["DEL-ISSUE-PROFILES<br/>Define purpose-specific information and issue requirements<br/><b>READY</b>"]
-    n_DEL_BAY_PACK["DEL-BAY-PACK<br/>Assemble one coherent construction-bay review issue<br/><b>BLOCKED</b>"]
-    n_DEL_COMMISSION_PLAN["DEL-COMMISSION-PLAN<br/>Register grounded whole-house design construction and handover packets<br/><b>BLOCKED</b>"]
-    n_DEL_CURRENT["DEL-CURRENT<br/>Reconcile selected-house delivery and reinstatement requirements<br/><b>BLOCKED</b>"]
-  end
   subgraph g_ADE["ADE"]
     direction TB
     n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>READY</b>"]
@@ -95,6 +83,12 @@ flowchart LR
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
     n_ADE_EVIDENCE["ADE-EVIDENCE<br/>Bind bay calculations and external evidence to controlling inputs<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_DEL["DEL"]
+    direction TB
+    n_DEL_BAY_PACK["DEL-BAY-PACK<br/>Assemble one coherent construction-bay review issue<br/><b>BLOCKED</b>"]
+    n_DEL_COMMISSION_PLAN["DEL-COMMISSION-PLAN<br/>Register grounded whole-house design construction and handover packets<br/><b>BLOCKED</b>"]
+    n_DEL_CURRENT["DEL-CURRENT<br/>Reconcile selected-house delivery and reinstatement requirements<br/><b>BLOCKED</b>"]
   end
   subgraph g_EPR["EPR"]
     direction TB
@@ -121,7 +115,6 @@ flowchart LR
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
-  n_PCO_APPLICABILITY --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
@@ -149,7 +142,6 @@ flowchart LR
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_EDA_ARGUMENT --> n_EDA_NARRATIVE
   n_EDA_ADAPTER --> n_EDA_NARRATIVE
-  n_BCR_BAY_BRIEF --> n_BCR_BAY_DESIGN
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
   n_ADE_DELIVERY_AUDIT --> n_ADE_MODEL
   n_HRS_TECHNICAL --> n_ADE_MODEL
@@ -160,11 +152,9 @@ flowchart LR
   n_ADE_DELIVERY_AUDIT --> n_ADE_EVIDENCE
   n_BCR_BAY_DESIGN --> n_ADE_EVIDENCE
   n_CCR_IDENTITY --> n_ADE_EVIDENCE
-  n_PCO_APPLICABILITY --> n_ADE_EVIDENCE
   n_ADE_DETAILS --> n_DEL_BAY_PACK
   n_ADE_SCHEDULES --> n_DEL_BAY_PACK
   n_ADE_EVIDENCE --> n_DEL_BAY_PACK
-  n_DEL_ISSUE_PROFILES --> n_DEL_BAY_PACK
   n_DEL_BAY_PACK --> n_EPR_BAY_REVIEW
   n_DPL_COMMISSION --> n_DPL_SITE_ASSESSMENT
   n_DPL_SITE_ASSESSMENT --> n_DEL_COMMISSION_PLAN
@@ -173,7 +163,6 @@ flowchart LR
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
   style g_CCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_PCO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -185,8 +174,8 @@ flowchart LR
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EDA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PUB fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_DEL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ADE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_DEL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DPL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -202,7 +191,6 @@ flowchart LR
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_CCR_IDENTITY ready;
-  class n_PCO_APPLICABILITY ready;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
   class n_TRIAD_GATE blocked;
@@ -229,9 +217,7 @@ flowchart LR
   class n_PLT_PRINT_REVIEW blocked;
   class n_EDA_ARGUMENT ready;
   class n_EDA_NARRATIVE blocked;
-  class n_DEL_ISSUE_PROFILES ready;
   class n_ADE_DELIVERY_AUDIT ready;
-  class n_BCR_BAY_BRIEF ready;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
@@ -295,7 +281,7 @@ flowchart LR
     n_PCO_08["PCO-08<br/>Adversarial closeout<br/><b>DONE</b>"]
     n_PCO_VIS["PCO-VIS<br/>Generated structural and live Mermaid control graphs<br/><b>DONE</b>"]
     n_PCO_DISPATCH["PCO-DISPATCH<br/>Self-service agent dispatcher and race-safe claim-next policy<br/><b>DONE</b>"]
-    n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>READY</b>"]
+    n_PCO_APPLICABILITY["PCO-APPLICABILITY<br/>Bind maturity applicability to assessed design sources<br/><b>DONE</b>"]
     n_PCO_SWARM["PCO-SWARM<br/>Swarm continuation, startup transport and evidence-based run reporting<br/><b>DONE</b>"]
   end
   subgraph g_BSR["BSR"]
@@ -348,7 +334,7 @@ flowchart LR
     n_BCR_OCCUPATION["BCR-OCCUPATION<br/>Complete occupation, escape and renewal actions<br/><b>DONE</b>"]
     n_BCR_PROPORTIONALITY["BCR-PROPORTIONALITY<br/>Current-house conventional comparator and burden appraisal<br/><b>DONE</b>"]
     n_BCR_PREFLIGHT["BCR-PREFLIGHT<br/>Reconcile early feasibility findings into selection constraints<br/><b>DONE</b>"]
-    n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>READY</b>"]
+    n_BCR_BAY_BRIEF["BCR-BAY-BRIEF<br/>Select one consequential construction bay and its proof obligations<br/><b>DONE</b>"]
     n_BCR_BAY_DESIGN["BCR-BAY-DESIGN<br/>Resolve the selected bay as a coordinated design study<br/><b>BLOCKED</b>"]
   end
   subgraph g_HRS["HRS"]
@@ -412,7 +398,7 @@ flowchart LR
   subgraph g_DEL["DEL"]
     direction TB
     n_DEL_BRIEF["DEL-BRIEF<br/>Reconcile owner requirements and open project decisions<br/><b>DONE</b>"]
-    n_DEL_ISSUE_PROFILES["DEL-ISSUE-PROFILES<br/>Define purpose-specific information and issue requirements<br/><b>READY</b>"]
+    n_DEL_ISSUE_PROFILES["DEL-ISSUE-PROFILES<br/>Define purpose-specific information and issue requirements<br/><b>DONE</b>"]
     n_DEL_BAY_PACK["DEL-BAY-PACK<br/>Assemble one coherent construction-bay review issue<br/><b>BLOCKED</b>"]
     n_DEL_COMMISSION_PLAN["DEL-COMMISSION-PLAN<br/>Register grounded whole-house design construction and handover packets<br/><b>BLOCKED</b>"]
     n_DEL_00["DEL-00<br/>Delivery responsibility and evidence baseline<br/><b>DONE</b>"]
@@ -716,7 +702,7 @@ flowchart LR
   class n_PCO_08 done;
   class n_PCO_VIS done;
   class n_PCO_DISPATCH done;
-  class n_PCO_APPLICABILITY ready;
+  class n_PCO_APPLICABILITY done;
   class n_PCO_SWARM done;
   class n_BSR_ROOT done;
   class n_IAS_00 done;
@@ -789,9 +775,9 @@ flowchart LR
   class n_EDA_ARGUMENT ready;
   class n_EDA_NARRATIVE blocked;
   class n_DEL_BRIEF done;
-  class n_DEL_ISSUE_PROFILES ready;
+  class n_DEL_ISSUE_PROFILES done;
   class n_ADE_DELIVERY_AUDIT ready;
-  class n_BCR_BAY_BRIEF ready;
+  class n_BCR_BAY_BRIEF done;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
