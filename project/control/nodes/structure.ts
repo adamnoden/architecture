@@ -20,18 +20,30 @@ export const structureNodes = defineNodes([
     owners: ['STR'],
     title: 'Compare solid wall roles and genuine masonry opening systems',
     dependencies: ['STR-00'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: [
+      'docs/research/solid-walls-and-masonry-arches.md',
+      'project/str/str-masonry-result.md',
+      'project/str/studies/wall-arch-envelope.ts',
+      'project/str/studies/wall-arch-envelope.json',
+      'project/str/studies/wall-arch-envelope.svg'
+    ]
   },
   {
     id: 'STR-SPANS',
     owners: ['STR'],
     title: 'Compare primary floor and roof systems with direct support',
     dependencies: ['STR-00'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: [
+      'docs/research/structural-floor-roof-options.md',
+      'project/str/str-spans-result.md',
+      'project/str/studies/span-envelopes.ts',
+      'project/str/studies/span-envelopes.json',
+      'project/str/studies/span-envelopes.svg'
+    ]
   },
   {
     id: 'STR-HOUSE',

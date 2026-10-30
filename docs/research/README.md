@@ -27,6 +27,10 @@ The objective is broader than any one psychological measure: domestic space shou
 
 ## Floor and wall systems
 
+[Primary Floors and Roofs](structural-floor-roof-options.md) compares non-timber spanning systems on actual masonry supports and retains an exposed masonry-vault floor as a compression-led alternative. Complete floor and roof depth budgets, declared weight sensitivities and the consequences for services and restraint guide the next house study; they select no construction system.
+
+[Solid Walls and Masonry Arches](solid-walls-and-masonry-arches.md) compares solid wall roles, thickness and weight with genuine internal and external arch families. Located opening and wall sections show where the house needs space, abutments, restraint and an explicit load path. The comparison develops the owner's structural brief without selecting a wall or certifying an arch.
+
 Three options studies test whether more reversible assemblies add enough value to displace excellent conventional construction:
 
 - [Floor-to-Masonry Structural Interface](seated-floor-structure-options.md)
