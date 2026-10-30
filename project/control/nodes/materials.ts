@@ -56,7 +56,7 @@ export const materialNodes = defineNodes([
     id: 'MAT-COORDINATION',
     owners: ['MAT'],
     title: 'Reconcile selected-house material compliance and explicit owner exceptions',
-    dependencies: ['MAT-ENVELOPE', 'MAT-SERVICES', 'MAT-INTERIORS'],
+    dependencies: ['MAT-ENVELOPE', 'MAT-SERVICES', 'MAT-INTERIORS', 'IAS-03', 'HAD-03', 'OAS-DETAIL', 'ROF-RWT-GATE'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
