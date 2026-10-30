@@ -218,3 +218,30 @@ test('operational state keeps structural truth orthogonal to occupancy', () => {
   assert.equal(invalid.structural, 'blocked')
   assert.equal(invalid.occupancy, 'invalid-live-claim')
 })
+
+test('normal recovery atomically preserves predecessor provenance, without transferring its checkpoint', () => {
+  const earlier = createClaimRecord({
+    node: 'TST-READY', generation: 2, leaseId: 'old-lease',
+    holder: { kind: 'chatgpt' }, now, branch: 'work/old',
+    pr: 432, checkpoint: { evidence: 'PR #432 head abc', next: 'Re-run validation' }
+  })
+  const released = releaseClaim(earlier, earlier.leaseId, new Date('2026-10-28T22:45:00Z'), 'abandoned', 2)
+  const newer = nextNormalAcquisition(released, {
+    node: 'TST-READY', leaseId: 'new-lease', holder: { kind: 'chatgpt' },
+    now: new Date('2026-10-28T22:46:00Z'), branch: 'work/new'
+  })
+  assert.equal(newer.generation, 3)
+  assert.deepEqual(newer.predecessor, {
+    leaseId: 'old-lease', generation: 2, branch: 'work/old', pr: 432,
+    checkpoint: { evidence: 'PR #432 head abc', next: 'Re-run validation' }
+  })
+  assert.equal(newer.checkpoint, undefined)
+  assert.deepEqual(parseClaimRecord(serializeClaimRecord(newer)), newer)
+  assert.throws(() => renewClaim(newer, 'old-lease', new Date('2026-10-28T22:47:00Z'), 45, 2), /does not own/)
+  assert.throws(() => nextNormalAcquisition(released, {
+    node: 'TST-READY', leaseId: 'bad-lease', holder: { kind: 'chatgpt' },
+    now: new Date('2026-10-28T22:46:00Z'), branch: 'work/old'
+  }), /must not reuse/)
+  assert.throws(() => parseClaimRecord(JSON.stringify({...newer, predecessor: {...newer.predecessor, generation: 3}})), /predecessor/i)
+  assert.equal(parseClaimRecord(serializeClaimRecord(earlier)).predecessor, undefined)
+})
