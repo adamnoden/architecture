@@ -62,7 +62,6 @@ flowchart LR
   subgraph g_EDA["EDA"]
     direction TB
     n_EDA_RENEWED["EDA-RENEWED<br/>Renewed editorial-doctrine assurance over enlarged final source<br/><b>BLOCKED</b>"]
-    n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>READY</b>"]
   end
   subgraph g_PUB["PUB"]
     direction TB
@@ -107,7 +106,6 @@ flowchart LR
   n_BCR_CONVERGENCE --> n_HRS_SYNTHESIS
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
-  n_EDA_NARRATIVE --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
   n_RWT_06 --> n_RWT_07
   n_RWT_07 --> n_ROF_RWT_GATE
@@ -192,7 +190,6 @@ flowchart LR
   class n_PUB_02_FINAL blocked;
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
-  class n_EDA_NARRATIVE ready;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
@@ -363,7 +360,7 @@ flowchart LR
     n_EDA_RENEWED["EDA-RENEWED<br/>Renewed editorial-doctrine assurance over enlarged final source<br/><b>BLOCKED</b>"]
     n_EDA_ADAPTER["EDA-ADAPTER<br/>Restore authored ownership of architectural publication prose<br/><b>DONE</b>"]
     n_EDA_ARGUMENT["EDA-ARGUMENT<br/>Red-team architectural contribution and evidence for the central thesis<br/><b>DONE</b>"]
-    n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>READY</b>"]
+    n_EDA_NARRATIVE["EDA-NARRATIVE<br/>Reshape and subtract for a compelling architectural reader journey<br/><b>DONE</b>"]
   end
   subgraph g_PUB["PUB"]
     direction TB
@@ -748,7 +745,7 @@ flowchart LR
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
   class n_EDA_ARGUMENT done;
-  class n_EDA_NARRATIVE ready;
+  class n_EDA_NARRATIVE done;
   class n_DEL_BRIEF done;
   class n_DEL_ISSUE_PROFILES done;
   class n_ADE_DELIVERY_AUDIT done;
