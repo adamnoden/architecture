@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "RWT-METALS",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "193d4386-501a-43bc-a24a-c794154d0b37",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "issue-comment-6533365522"
+  },
+  "claimedAt": "2026-10-30T21:01:53.000Z",
+  "heartbeatAt": "2026-10-30T21:01:53.000Z",
+  "expiresAt": "2026-10-30T21:46:53.000Z",
+  "branch": "work/mvb-chat-6533365522"
+}
