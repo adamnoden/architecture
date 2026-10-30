@@ -1,22 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 5,
-  "state": "released",
-  "leaseId": "7e6520e0-66c6-42e5-bbf0-aae1c1bbdd71",
+  "generation": 6,
+  "state": "claimed",
+  "leaseId": "4d9244c4-57f0-443f-9187-675cb9c81fb6",
   "holder": {
     "kind": "chatgpt",
-    "label": "recovery-sequential-20261030"
+    "label": "owner-single-worker-20261030"
   },
-  "claimedAt": "2026-10-30T09:11:44.132Z",
-  "heartbeatAt": "2026-10-30T09:16:08.081Z",
-  "expiresAt": "2026-10-30T09:16:08.081Z",
-  "branch": "recovery/had-1079-20261030",
-  "checkpoint": {
-    "evidence": "Merged HAD partial via PR #1085 at 95f0772d5d18f5f7be94e888f6d7956e6d601c16, exact-head CI passed, six original source blobs retained",
-    "next": "Further HAD-03 design: IAS joint product/fixture packing, proper pan and screen renewal, actual handling and full selected-family convergence. Remains PLANNED."
+  "claimedAt": "2026-10-30T14:20:29.000Z",
+  "heartbeatAt": "2026-10-30T14:20:29.000Z",
+  "expiresAt": "2026-10-30T15:05:29.000Z",
+  "branch": "work/mvb-had-court-20261030",
+  "predecessor": {
+    "leaseId": "7e6520e0-66c6-42e5-bbf0-aae1c1bbdd71",
+    "generation": 5,
+    "branch": "recovery/had-1079-20261030",
+    "pr": 1085,
+    "checkpoint": {
+      "evidence": "Merged HAD partial via PR #1085 at 95f0772d5d18f5f7be94e888f6d7956e6d601c16, exact-head CI passed, six original source blobs retained",
+      "next": "Further HAD-03 design: IAS joint product/fixture packing, proper pan and screen renewal, actual handling and full selected-family convergence. Remains PLANNED."
+    }
   },
-  "pr": 1085,
-  "releaseReason": "handoff",
-  "releasedAt": "2026-10-30T09:16:08.081Z"
+  "recoverySource": {
+    "leaseId": "7e6520e0-66c6-42e5-bbf0-aae1c1bbdd71",
+    "generation": 5,
+    "branch": "recovery/had-1079-20261030",
+    "pr": 1085,
+    "checkpoint": {
+      "evidence": "Merged HAD partial via PR #1085 at 95f0772d5d18f5f7be94e888f6d7956e6d601c16, exact-head CI passed, six original source blobs retained",
+      "next": "Further HAD-03 design: IAS joint product/fixture packing, proper pan and screen renewal, actual handling and full selected-family convergence. Remains PLANNED."
+    }
+  }
 }
