@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "ADE-DELIVERY-AUDIT",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "8502daf4-4bf8-450b-898f-5c4e77e90a4b",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-30T00:01:47.746Z",
-  "heartbeatAt": "2026-10-30T00:18:25.969Z",
-  "expiresAt": "2026-10-30T01:03:25.969Z",
+  "heartbeatAt": "2026-10-30T00:26:55.773Z",
+  "expiresAt": "2026-10-30T00:26:55.773Z",
   "branch": "work/zerg-eda-identity-audit",
   "pr": 1073,
   "checkpoint": {
     "evidence": "Reviewed frozen ADE1072 c404d17e preserved in common1073 a0652cc6; accepted BAY/DEL/PCO basis and agreed CCR result crosslink",
     "next": "Verify common source equality and canonical metadata, wait exact full CI, fresh ADE merge-check before worker2 expected-head merge"
-  }
+  },
+  "releasedAt": "2026-10-30T00:26:55.773Z",
+  "releaseReason": "completed"
 }
