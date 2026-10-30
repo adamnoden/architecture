@@ -128,7 +128,7 @@ async function main() {
           '--branch',branch,'--format','json'])
       }
     } else {
-      const c=current.find(c=>c.node===req.command.node)
+      const c=current.find(c=>c.node===('node' in req.command ? req.command.node : ''))
       if(!c || c.leaseId!==req.command.leaseId || c.generation!==req.command.generation)
         throw new Error('Missing or superseded lease; no mutation')
       if(req.command.cmd==='release'&&c.state==='released'){
