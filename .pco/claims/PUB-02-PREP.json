@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "PUB-02-PREP",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3a2bcc6e-314b-48dc-9f96-091975fdb19f",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-30T00:14:35.075Z",
-  "heartbeatAt": "2026-10-30T00:28:39.857Z",
-  "expiresAt": "2026-10-30T01:13:39.857Z",
+  "heartbeatAt": "2026-10-30T00:52:16.572Z",
+  "expiresAt": "2026-10-30T00:52:16.572Z",
   "branch": "work/zerg-plt-pub-argument",
   "pr": 1077,
   "checkpoint": {
     "evidence": "Reviewed source1074 head3551b821 with successful fullCI40979055464 preserved in common1077 headb8811119.",
     "next": "Final combined exact-head CI, editorial rendered inspection and fresh own merge preflight, then release.",
     "blocker": "Await final combined validation; no physical or manufacture acceptance."
-  }
+  },
+  "releasedAt": "2026-10-30T00:52:16.572Z",
+  "releaseReason": "completed"
 }
