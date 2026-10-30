@@ -1,24 +1,15 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 3,
-  "state": "released",
-  "leaseId": "7e4750ef-3102-4df5-8ae7-43b716846f66",
+  "generation": 4,
+  "state": "claimed",
+  "leaseId": "6bf424e6-7808-42f4-a3bf-4552b7bfa4c6",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-worker-5"
+    "label": "zerg-worker-3"
   },
-  "claimedAt": "2026-10-29T20:51:14.686Z",
-  "heartbeatAt": "2026-10-29T23:29:47.568Z",
-  "expiresAt": "2026-10-29T23:29:47.568Z",
-  "branch": "work/zerg-ccr-plan-drainage",
-  "note": "Product-sized ensuite fit review; HAD-03 remains incomplete",
-  "pr": 1061,
-  "checkpoint": {
-    "evidence": "Reviewed HAD1055 exact e9a390e0 preserved in common1061 ba5b5c21; three A3 studies and both generators, typecheck, repository and docs checks pass",
-    "next": "Verify exact common full CI and fresh HAD preflight; after merge record exact incomplete handoff and release, then dispatch DEL",
-    "blocker": "No HAD completion: actual matched wet-floor/trap/branch/stack and court doorset/water-boundary/support evidence remain unresolved"
-  },
-  "releasedAt": "2026-10-29T23:29:47.568Z",
-  "releaseReason": "handoff"
+  "claimedAt": "2026-10-30T00:28:55.827Z",
+  "heartbeatAt": "2026-10-30T00:28:55.827Z",
+  "expiresAt": "2026-10-30T01:13:55.827Z",
+  "branch": "work/zerg-worker-3-had"
 }
