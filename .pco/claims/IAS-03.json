@@ -1,22 +1,19 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 4,
-  "state": "released",
-  "leaseId": "d415f786-5097-41af-b4d3-9c872fa4ed62",
+  "generation": 5,
+  "state": "claimed",
+  "leaseId": "f408a295-c812-431f-a5c4-eaace939de52",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-worker-6"
+    "label": "recovery-sequential-20261030"
   },
-  "claimedAt": "2026-10-30T00:28:58.793Z",
-  "heartbeatAt": "2026-10-30T08:46:01.440Z",
-  "expiresAt": "2026-10-30T08:46:01.440Z",
+  "claimedAt": "2026-10-30T09:16:57.866Z",
+  "heartbeatAt": "2026-10-30T09:16:57.866Z",
+  "expiresAt": "2026-10-30T10:01:57.866Z",
+  "branch": "recovery/ias-1078-20261030",
   "checkpoint": {
-    "evidence": "Durable draft1078 at fb0acae09085a4adde93166b0b6cfd920a95fbdb; source/artifact checks, typecheck, repo integrity and independent primary-datum/floor review passed. Exact lower fitting, leg pattern and cistern/soil assembly remain held.",
-    "next": "Complete cabinet and renewal study with HAD/commander, review actual connector and floor compatibility limits; validate final recoverable partial before any coordinated merge."
-  },
-  "branch": "zerg/worker-6-wave8",
-  "pr": 1078,
-  "releaseReason": "handoff",
-  "releasedAt": "2026-10-30T08:46:01.440Z"
+    "evidence": "Recover original draft #1078 head c52c12fbe5170c725b77903c0b3b24e616f4080c; six source files, peer-reviewed wet floor assembly and real drain-junction adverse result",
+    "next": "Rebase exact source onto current main; check interface with merged HAD partial; exact-head CI, integrate only bounded study, preserve unselected IAS-03 duties."
+  }
 }
