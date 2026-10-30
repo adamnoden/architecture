@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 12,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "52897e23-b876-4778-8597-6a743dda5d55",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6535293702"
   },
   "claimedAt": "2026-10-30T23:00:35.000Z",
-  "heartbeatAt": "2026-10-30T23:14:10.876Z",
-  "expiresAt": "2026-10-30T23:59:10.876Z",
+  "heartbeatAt": "2026-10-30T23:14:26.302Z",
+  "expiresAt": "2026-10-30T23:14:26.302Z",
   "branch": "work/mvb-chat-6535293702",
   "predecessor": {
     "leaseId": "5bf0bbdb-e8db-4ad8-8d82-c3f34fbd26ca",
@@ -39,5 +39,7 @@
     "evidence": "PR #1111 merged at d73bd0992c201472d8547faf473b738e60e2d4d6; final head be440d6dc8f47b9cb232d67d2e0551d54b1300db passed full CI 41142869385 and canonical publication preflight",
     "next": "Develop the raised or daylighted court crossing with actual threshold, support and terminal geometry; re-derive receiving and leak-outlet levels before hydraulic admission",
     "blocker": "RWT-06 remains planned; matched court threshold, non-plastic assembly, safe maintenance and actual receiving evidence remain unresolved"
-  }
+  },
+  "releasedAt": "2026-10-30T23:14:26.302Z",
+  "releaseReason": "handoff"
 }
