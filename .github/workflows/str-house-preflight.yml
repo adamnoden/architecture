@@ -1,0 +1,23 @@
+name: STR house publication preflight (temporary)
+on:
+  push:
+    branches: [work/str-house-20261030-f297f5ec]
+    paths: ['.github/workflows/str-house-preflight.yml']
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: work/str-house-20261030-f297f5ec
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Fresh canonical publication preflight on current branch
+        run: |
+          node --import tsx scripts/project-claims.ts merge-check STR-HOUSE --transport connector --lease-id f297f5ec-e390-4475-93d4-7532709a79de --generation 1 --branch work/str-house-20261030-f297f5ec --head "$(git rev-parse HEAD)" --format text
