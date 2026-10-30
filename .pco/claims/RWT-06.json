@@ -9,8 +9,8 @@
     "label": "issue-comment-6529831185"
   },
   "claimedAt": "2026-10-30T17:59:50.000Z",
-  "heartbeatAt": "2026-10-30T18:24:30.000Z",
-  "expiresAt": "2026-10-30T19:09:30.000Z",
+  "heartbeatAt": "2026-10-30T18:37:42.000Z",
+  "expiresAt": "2026-10-30T19:22:42.000Z",
   "branch": "work/mvb-chat-6529831185",
   "predecessor": {
     "leaseId": "5b2cdce2-d8ee-4a16-a3a2-565b3e316366",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1098 head 713e1e2d34694ad078d61e0b9c3256ea5f8911ec; nine local tests and exact-blob deterministic JSON/SVG check passed; A3 inspected",
-    "next": "Observe exact-head full CI; require a fresh canonical publication preflight before any main merge",
-    "blocker": "Tool safety checks blocked temporary runner creation; local GitHub DNS unavailable. No canonical merge-check claimed."
+    "evidence": "PR #1098 updated head f572748c679f77df16421d18ffccce806ace1461; nine local tests pass; precision counterexamples fixed; generated blob identities verified",
+    "next": "Finish exact-head CI and read-only canonical publication preflight, then merge and reconcile",
+    "blocker": "Old preflight failed artifact byte consistency across Node versions; corrected source awaits new-head runner validation"
   },
   "pr": 1098
 }
