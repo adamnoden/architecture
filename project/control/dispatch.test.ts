@@ -329,3 +329,52 @@ test('expired work retains recovery evidence in dispatcher candidates without ch
   assert.equal(snapshot.candidates[0].previousClaim?.checkpoint?.evidence, 'PR #123')
   assert.equal(snapshot.candidates[0].previousClaim?.branch, 'work/preserved')
 })
+
+test('started self-service work with a preserved branch and actionable checkpoint can be redispatched', async () => {
+  const first = {...claim('ACTIVE', 'old', new Date(now.getTime() - 3 * 3600000)),
+    branch: 'work/old-active',
+    checkpoint: { evidence: 'PR #17 validated on old head', next: 'Check current main' }}
+  const nodes = [started('ACTIVE'), planned('OTHER')]
+  const snapshot = buildDispatchSnapshot(nodes, [first], now)
+  assert.equal(snapshot.candidates.find(c => c.node.id === 'ACTIVE')?.resumeActive, true)
+  assert.equal(snapshot.activeUnclaimed.length, 0)
+  const store = new MemoryClaimStore(now, [first])
+  const result = await claimNextFromStore(store, nodes, {holder:{kind:'chatgpt'}, branch:'work/successor'})
+  assert.equal(result.selected?.node.id, 'ACTIVE')
+  assert.equal(result.claim?.stored.record.predecessor?.leaseId, first.leaseId)
+  assert.equal(result.claim?.stored.record.predecessor?.branch, 'work/old-active')
+  assert.equal(result.claim?.stored.record.checkpoint, undefined)
+})
+
+test('started work without predecessor evidence or with manual policy is never automatically inherited', () => {
+  const manual: ControlNode = {...started('MANUAL'), agentDispatch:{mode:'manual',reason:'Owner review'}}
+  const noCheckpoint = {...claim('ACTIVE', 'old', new Date(now.getTime() - 3 * 3600000)), branch:'work/old'}
+  const evidence = {...claim('MANUAL', 'old', new Date(now.getTime() - 3 * 3600000)),
+    branch:'work/manual', checkpoint:{evidence:'PR #99',next:'Review'}}
+  const snapshot = buildDispatchSnapshot([started('ACTIVE'),manual,planned('OTHER')],[noCheckpoint,evidence],now)
+  assert.deepEqual(ids(snapshot), ['OTHER'])
+  assert.deepEqual(snapshot.activeUnclaimed.map(n=>n.id), ['ACTIVE','MANUAL'])
+})
+
+test('dispatcher rechecks active predecessor evidence at CAS boundary after a racing update', async () => {
+  const previous = {...claim('ACTIVE', 'old', new Date(now.getTime() - 3 * 3600000)),
+    branch:'work/old', checkpoint:{evidence:'PR #100',next:'Resume'}}
+  const nodes = [started('ACTIVE'),planned('OTHER')]
+  const store = new MemoryClaimStore(now,[previous])
+  const originalRead = store.read.bind(store)
+  let changed = false
+  store.read = async (node: NodeId) => {
+    if (node === 'ACTIVE' && !changed) {
+      changed = true
+      store.records.set(node,{record:{...previous,checkpoint:undefined},sha:'raced-remote'})
+    }
+    return originalRead(node)
+  }
+  const result = await claimNextFromStore(store,nodes,{
+    holder:{kind:'chatgpt'},branch:'work/successor',maxSelectionRaceRetries:3
+  })
+  assert.equal(result.selected?.node.id,'OTHER')
+  assert.equal(store.records.get('ACTIVE')?.record.leaseId,previous.leaseId)
+  assert.equal(store.mutations,1)
+  assert.equal(result.selectionRaces,1)
+})
