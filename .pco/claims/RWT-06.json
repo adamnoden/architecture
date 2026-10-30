@@ -9,8 +9,8 @@
     "label": "issue-comment-6524816900"
   },
   "claimedAt": "2026-10-30T14:09:46.000Z",
-  "heartbeatAt": "2026-10-30T14:09:46.000Z",
-  "expiresAt": "2026-10-30T14:54:46.000Z",
+  "heartbeatAt": "2026-10-30T14:14:54.000Z",
+  "expiresAt": "2026-10-30T14:59:54.000Z",
   "branch": "work/mvb-chat-6524816900",
   "predecessor": {
     "leaseId": "9e2f5e0d-6f1d-4563-93dc-d38a5e79b780",
@@ -33,5 +33,11 @@
       "next": "Await fresh exact-head CI, then canonical runner publication preflight and safe merge",
       "blocker": "Preflight must run on GitHub runner because local terminal has no GitHub DNS"
     }
+  },
+  "pr": 1095,
+  "checkpoint": {
+    "evidence": "PR #1095 head b05a2b4e7dc1eef85294b741efb30c553cd0e5a6; PE100 exterior renewal study completed, remains unadopted",
+    "next": "Observe fresh exact-head CI and run one-shot canonical publication preflight; merge then release",
+    "blocker": "Terminal lacks GitHub DNS; canonical preflight must run in GitHub Actions"
   }
 }
