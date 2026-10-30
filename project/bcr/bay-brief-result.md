@@ -66,7 +66,7 @@ A conventional solution is not exempt from these duties. Any added interface mus
 
 ## Required issue content and named receiving owners
 
-These are deliverables for the later review issue, not completed drawings or appointments. Use [DEL IP-03 coordinated technical review](../../docs/delivery/information-issue-profiles.md#six-purpose-profiles) for the issue purpose and declared gaps; no IP-04 construction authority follows. ADE should use existing source identities and rendering capabilities; absence of a detail here does not justify a parallel design model.
+These are deliverables for the later review issue, not completed drawings or appointments. Use [DEL IP-03 coordinated technical review](../../docs/delivery/information-issue-profiles.md#six-purpose-profiles) for the issue purpose and declared gaps; no IP-05 construction authority follows. ADE should use existing source identities and rendering capabilities; absence of a detail here does not justify a parallel design model.
 
 | Required record | Question it must answer | Design/evidence owner |
 |---|---|---|
