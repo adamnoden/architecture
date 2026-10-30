@@ -9,12 +9,13 @@
     "label": "issue-comment-6533365522"
   },
   "claimedAt": "2026-10-30T21:01:53.000Z",
-  "heartbeatAt": "2026-10-30T21:17:20.000Z",
-  "expiresAt": "2026-10-30T22:02:20.000Z",
+  "heartbeatAt": "2026-10-30T21:18:58.000Z",
+  "expiresAt": "2026-10-30T22:03:58.000Z",
   "branch": "work/mvb-chat-6533365522",
   "checkpoint": {
-    "evidence": "Branch work/mvb-chat-6533365522 at afc1a986f0392a64e51e61a96a7563c1bab9d5c9 contains copper/brass candidates, seven tested movement/path checks and inspected A3; published study blobs match local",
-    "next": "Finish adverse exposure review, create PR, require exact-head full CI and fresh canonical preflight",
-    "blocker": "Actual profiles, copper end joints and hydraulic capacity remain unverified; packet stays planned"
-  }
+    "evidence": "PR #1102 head 91f175ef8366ef58b401ecfa1887fe4d7824fd14; copper/brass assembly comparison, seven tests and inspected A3; study blobs verified",
+    "next": "Require exact-head full CI and fresh read-only canonical publication preflight on the cleaned head, then merge and release",
+    "blocker": "No installed joint, structural or hydraulic acceptance; RWT-METALS remains planned"
+  },
+  "pr": 1102
 }
