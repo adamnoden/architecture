@@ -27,6 +27,8 @@ The objective is broader than any one psychological measure: domestic space shou
 
 ## Floor and wall systems
 
+[Primary Floors and Roofs](structural-floor-roof-options.md) compares non-timber spanning systems on actual masonry supports and retains an exposed masonry-vault floor as a compression-led alternative. Complete floor and roof depth budgets, declared weight sensitivities and the consequences for services and restraint guide the next house study; they select no construction system.
+
 Three options studies test whether more reversible assemblies add enough value to displace excellent conventional construction:
 
 - [Floor-to-Masonry Structural Interface](seated-floor-structure-options.md)
