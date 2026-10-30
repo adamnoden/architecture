@@ -9,12 +9,14 @@
     "label": "STR spans worker /root/compression_red_team"
   },
   "claimedAt": "2026-10-30T22:26:24.000Z",
-  "heartbeatAt": "2026-10-30T22:32:04.000Z",
-  "expiresAt": "2026-10-30T23:17:04.000Z",
+  "heartbeatAt": "2026-10-30T22:40:46.000Z",
+  "expiresAt": "2026-10-30T23:25:46.000Z",
   "branch": "work/str-spans-20261030",
   "note": "Explicit owner-directed STR-SPANS assignment. Fresh current main 6d24ac888d55c85fd6db15f15208c93e1cea8929 retains ready self-service node dependent on completed STR-00; exact runtime claim absent. Terminal Git transport unavailable. Earlier child create aborted without acknowledgement and subsequent exact reads confirmed absence. Root relays this fresh create-if-absent for worker; no CLI acquisition claimed.",
   "checkpoint": {
-    "evidence": "Remote branch work/str-spans-20261030 verified at 6371f4e87b2f4163cbf745d5b2a1585994dea151; two-file working option study/result checkpoint",
-    "next": "Complete source-bound arithmetic and rendered study; prepare exact-head CI and canonical runner publication preflight"
-  }
+    "evidence": "PR #1107; final source head e9cd3ee9ea6fff51a6107495f87c7e219303f4b9; bounded study, exact arithmetic and inspected A3 plate; temporary workflow removed",
+    "next": "Verify exact-head full CI, rerun canonical publication preflight against current head/main, then merge and release",
+    "blocker": "Exact-head CI pending"
+  },
+  "pr": 1107
 }
