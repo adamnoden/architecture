@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import {MVB_MAILBOX_ISSUE,assertGatewayEvent,parseGatewayCommand} from '../../scripts/mvb-issue-gateway.js'
+import {MVB_MAILBOX_ISSUE,assertGatewayEvent,assertGatewayPrBinding,parseGatewayCommand} from '../../scripts/mvb-issue-gateway.js'
+import {createClaimRecord} from './claims.js'
 
 const id='aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee'
 const at=new Date('2026-10-30T10:00:00Z')
