@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "MAT-AUDIT",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "535249d6-1358-4881-8a7f-28882c4f89ed",
   "holder": {
     "kind": "chatgpt",
     "label": "mat-audit-ground-water-session"
   },
   "claimedAt": "2026-10-30T22:50:50.233Z",
-  "heartbeatAt": "2026-10-30T23:12:14.816Z",
-  "expiresAt": "2026-10-30T23:57:14.816Z",
+  "heartbeatAt": "2026-10-30T23:18:55.546Z",
+  "expiresAt": "2026-10-30T23:18:55.546Z",
   "branch": "work/mat-audit-20261030",
   "pr": 1109,
   "checkpoint": {
     "evidence": "PR #1109; reviewed audit head 9019dc5357755111b4018256dad93e67db4b5bb5 incorporates STR-MASONRY and RWT-SHED; prior exact-head full CI passed",
     "next": "Verify combined-head CI, run fresh publication preflight, merge and release",
     "blocker": "Combined-head CI in progress"
-  }
+  },
+  "releasedAt": "2026-10-30T23:18:55.546Z",
+  "releaseReason": "completed"
 }
