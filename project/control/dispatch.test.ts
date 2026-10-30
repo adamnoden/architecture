@@ -390,3 +390,52 @@ test('active successor with no own checkpoint remains safely resumable after a s
  assert.equal(r.candidates[0]?.node.id,'ACTIVE')
  assert.equal(r.candidates[0]?.resumeActive,true)
 })
+
+
+test('barbell handover: independent chats and a returning commander share one lease frontier',async()=>{
+  const nodes=[
+    ...['AAA','BBB','CCC','DDD','EEE','FFF','GGG','HHH'].map(id=>planned(id)),
+    started('RECOVER'),
+    planned('OWNER-GATE',[],['PCO'],'manual')
+  ]
+  const staleTime=new Date(now.getTime()-3*3600000)
+  const rwtOld={...claim('RECOVER','astra',staleTime),branch:'work/previous-astra',
+    checkpoint:{evidence:'Pushed PR #123',next:'Revalidate against main'}}
+  const previous=[
+    claim('AAA','astra-live'), claim('BBB','astra-live'),
+    claim('CCC','astra-expired',staleTime),
+    releaseClaim(claim('DDD','astra-released'),'lease-DDD-1',now,'handoff',1),
+    rwtOld
+  ]
+  const store=new MemoryClaimStore(now,previous)
+  const fallback=await Promise.all([1,2,3,4].map(n=>claimNextFromStore(store,nodes,{
+    holder:{kind:'chatgpt',label:'regular-'+n},branch:'work/regular-'+n
+  })))
+  const fallbackNodes=fallback.map(r=>r.claim?.stored.record.node)
+  assert.equal(new Set(fallbackNodes).size,4)
+  assert.deepEqual([...fallbackNodes].sort(),['CCC','DDD','EEE','FFF'])
+  assert.equal(store.records.get('AAA')?.record.holder.label,'astra-live')
+  assert.equal(store.records.get('BBB')?.record.holder.label,'astra-live')
+  assert.equal(store.records.get('CCC')?.record.generation,2)
+
+  const commander=await Promise.all([1,2,3].map(n=>claimNextFromStore(store,nodes,{
+    holder:{kind:'chatgpt',label:'astra-worker-'+n},branch:'work/astra-return-'+n
+  })))
+  assert.deepEqual(commander.map(r=>r.claim?.stored.record.node).sort(),['GGG','HHH','RECOVER'])
+  const recovered=store.records.get('RECOVER')?.record
+  assert.equal(recovered?.generation,2)
+  assert.equal(recovered?.predecessor?.branch,'work/previous-astra')
+  assert.equal(recovered?.checkpoint,undefined)
+  assert.equal((await claimNextFromStore(store,nodes,{
+    holder:{kind:'chatgpt',label:'extra'}
+  })).claim,null)
+
+  const reclaimed=store.records.get('CCC')!
+  await store.update('CCC',reclaimed.sha,releaseClaim(reclaimed.record,reclaimed.record.leaseId,now,'handoff',2))
+  const next=await claimNextFromStore(store,nodes,{
+    holder:{kind:'chatgpt',label:'astra-after-handoff'},branch:'work/astra-after-handoff'
+  })
+  assert.equal(next.claim?.stored.record.node,'CCC')
+  assert.equal(next.claim?.stored.record.generation,3)
+  assert.equal(store.records.get('OWNER-GATE'),undefined)
+})
