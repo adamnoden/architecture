@@ -1,5 +1,6 @@
 import { execFileSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
+import { pathToFileURL } from 'node:url'
 import { GitHubClaimStore } from '../project/control/github-claim-store.js'
 
 /** GitHub issue comments are a transport, not a scheduler or ownership authority. */
@@ -158,4 +159,6 @@ async function main() {
   await api('POST',{body})
   console.log(`Responded to request ${req.id}`)
 }
-if(process.env.GITHUB_EVENT_PATH)main().catch(error=>{console.error(String(error));process.exitCode=1})
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch(error=>{console.error(String(error));process.exitCode=1})
+}
