@@ -10,6 +10,7 @@ The accepted pre-site design is **RH-LAYOUT-REVISION-02**, the 12 × 12 m courty
 | Section, facade and roof composition | `layout-family.ts` and its upstream `section-exemplar.ts` / `source.ts`; [coordinated family](https://github.com/adamnoden/architecture/blob/main/docs/publication/architectural-plate-layout-family.md) | Source-derived views; no engineered member, roof assembly or performance selection |
 | Apertures | `revisionOpenings()` in `layout-revision.ts`, keyed by level, host and ID | Nominal location and width; masonry opening, frame, clear passage and removal dimensions remain distinct |
 | Shared dimensional budgets and design ownership | `project/triad-interface-contract.md` | Current constraints for interior, opening and architectural studies; not a selected-system freeze |
+| Structural direction | [Structural brief](structural-brief.md) | Solid masonry, direct support, arches and structural-family preferences; no adopted thickness, member or revised geometry |
 | Roof prohibition | `project/design-constraints.ts` and [brief ledger](https://github.com/adamnoden/architecture/blob/main/docs/reference-house/brief-and-constraint-ledger.md) | No flat or very-low-slope new roof; the present twin-pitch form remains provisional |
 | Exterior views | [Exterior isometrics](exterior-isometrics.md) | Four views of the same current geometry; no construction-detail inference |
 | Project needs and open owner decisions | [Owner project brief](https://github.com/adamnoden/architecture/blob/main/docs/delivery/owner-project-brief.md) | Confirmed purpose, inherited assumptions and unresolved decisions; no invented site or budget |
@@ -32,7 +33,7 @@ The roof has 25° inward and outward pitches, +6800 mm eaves and a 2125 mm ridge
 
 ## Technical position
 
-Masonry support and engineered-timber framing remain concepts to test against this geometry. The entrance void, stair and service interruptions need current load paths and member/connection design. A diagram of short spans does not establish that the house needs no transfer structure.
+The [structural brief](structural-brief.md) now directs investigation of solid masonry, aligned support, real arches and non-timber primary structure. Earlier engineered-timber framing is an inherited concept, not a selected system or an exemption from that brief. The entrance void, stair and service interruptions need current load paths and member/connection design. A diagram of short spans does not establish that the house needs no transfer structure. The [structural architecture programme](https://github.com/adamnoden/architecture/blob/main/project/str/structural-architecture-programme.md) must earn any changes to the present partition and floor reservations through coordinated source revision.
 
 Concentrated services, separate cooker source capture, accessible isolation and proportionate replacement access remain design intentions. The historical heat-pump, emitter and MVHR studies are evidence about an earlier arrangement; their capacities, routes and fit have not been established for this house. Passive environmental form remains a priority. The current ventilation decision must reconcile owner preferences, indoor-air requirements, moisture, acoustics and route feasibility without treating a remembered system choice as a completed design.
 

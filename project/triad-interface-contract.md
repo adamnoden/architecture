@@ -44,6 +44,7 @@ No universal head/sill, moulding ratio or frame material becomes doctrine.
 |---|---|---|
 | Room-side lining, grounds, access front and removal order | IAS | HAD composition; OAS at reveal/door; competent boundaries through BCR |
 | Floor/ceiling layers, access and terminations | IAS | HAD floor/ceiling expression; OAS threshold; structure/acoustics/fire through BCR |
+| Permanent wall roles, primary floor/roof support and structural opening heads | STR | HAD source/room order; IAS complete layers and services; OAS arch/head and mounting interfaces; ROF support demands; competent evidence through BCR/EPR |
 | Opening mount, frame/tolerance relationship, weather/air/thermal/vapour transitions | OAS | IAS room-side edge; HAD visible sightlines; competent evidence through BCR |
 | External door and threshold as one envelope assembly | OAS | IAS interior floor end; HAD exterior/room expression; external levels and drainage with house/source owners |
 | Facade/room hierarchy, opening composition, trim and material expression | HAD | Actual IAS/OAS depths and operation; no cosmetic closure over unresolved mechanics |
@@ -54,6 +55,14 @@ No universal head/sill, moulding ratio or frame material becomes doctrine.
 
 Decorative trim never becomes the primary environmental/fire/acoustic boundary
 merely because it covers that boundary in an image.
+
+## Structural direction and selection compatibility
+
+The [structural brief](../docs/reference-house/structural-brief.md) and [STR programme](str/structural-architecture-programme.md) direct investigation of solid masonry, real arches, aligned support and non-timber primary structure. The controlled 125 mm partitions and 350 mm floor remain actual source reservations until an explicit rewind is adopted; neither is a preselected solution. IAS owns renewable layers and service fronts; STR owns the permanent support they connect to. An outer-leaf arch cannot certify the inner-leaf head or a doorway bearing below a floor reaction.
+
+STR-HOUSE coordinates proposed structure with HAD in the owning plan/section. STR-RECONCILE supplies exact candidate/source identities, support/reaction envelopes, interface budgets and affected-evidence dispositions. ROF-RWT-GATE must check its selected roof against that handoff. TRIAD-GATE must check actual selected walls, floor layers, opening heads, stair/void and service crossings against it, including the selected construction bay. Changed geometry or assembly outside the declared envelope requires targeted rechecking before admission; a completed study is not automatic compatibility.
+
+This adds no second source-rewind mechanism or retrospective technical approval. Existing selection packets may continue on explicitly provisional assumptions; the final gates cannot bypass the structural handoff.
 
 ## Candidate obligations
 

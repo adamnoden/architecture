@@ -9,6 +9,7 @@ import { mraNodes } from './mra.js'
 import { pcoNodes } from './pco.js'
 import { publicationNodes } from './publication.js'
 import { roofWaterNodes } from './roof-water.js'
+import { structureNodes } from './structure.js'
 
 /**
  * Deterministic aggregation point only.
@@ -22,6 +23,7 @@ export const controlNodes = [
   ...pcoNodes,
   ...architectureNodes,
   ...roofWaterNodes,
+  ...structureNodes,
   ...materialNodes,
   ...mraNodes,
   ...publicationNodes,
