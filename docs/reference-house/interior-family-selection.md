@@ -14,6 +14,8 @@ below. It is not completion of IAS-03: the wet assemblies, actual service-front
 section and sanitary fit remain unresolved. The house is not yet a coordinated
 selected interior system. No whole-house geometry, product or maturity changes.
 
+Apply the later [whole-house material policy](material-policy.md) and [structural brief](structural-brief.md) to this partial selection. The 125 mm partition and 350 mm floor allocations below are source reservations, not approval of a stud wall, timber primary frame or synthetic constituent. The [located sink-cabinet comparison](../../project/ias/ias-03-sink-cabinet.md) now rejects the earlier resin bowl and conventional polypropylene siphon as defaults; actual connected assembly and maintenance admission remain open.
+
 Source: RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02, the
 [shared contract](../../project/triad-interface-contract.md), completed IAS
 candidate/junction records and the selected [opening family](opening-assembly-selection.md).
