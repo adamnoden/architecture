@@ -9,12 +9,13 @@
     "label": "regular-chat-pco-crash-20261030"
   },
   "claimedAt": "2026-10-30T09:24:17.600Z",
-  "heartbeatAt": "2026-10-30T09:24:17.600Z",
-  "expiresAt": "2026-10-30T10:09:17.600Z",
+  "heartbeatAt": "2026-10-30T09:25:08.386Z",
+  "expiresAt": "2026-10-30T10:10:08.386Z",
   "branch": "work/pco-mvb-crash-recovery-1-2",
   "checkpoint": {
-    "evidence": "Branch work/pco-mvb-crash-recovery-1-2; PCO result and source changes, issue #1083",
-    "next": "Open PR and validate exact head; reconcile main; merge with source checks"
+    "evidence": "PR #1087 head 022f5705511667403b1ee160ec86efb668180ebb; 13 changed paths",
+    "next": "Exact-head CI and current-main reconciliation, followed by expected-head publication"
   },
-  "note": "Owner-directed bootstrap: PCO-CRASH new node exists on feature branch and awaits integration on main. Temporary unknown-live claim on main is known."
+  "note": "Owner-directed bootstrap: PCO-CRASH new node exists on feature branch and awaits integration on main. Temporary unknown-live claim on main is known.",
+  "pr": 1087
 }
