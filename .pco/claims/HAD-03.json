@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 4,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "6bf424e6-7808-42f4-a3bf-4552b7bfa4c6",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-3"
   },
   "claimedAt": "2026-10-30T00:28:55.827Z",
-  "heartbeatAt": "2026-10-30T01:02:38.807Z",
-  "expiresAt": "2026-10-30T01:47:38.807Z",
+  "heartbeatAt": "2026-10-30T08:45:39.253Z",
+  "expiresAt": "2026-10-30T08:45:39.253Z",
   "branch": "work/zerg-worker-3-had",
   "checkpoint": {
     "evidence": "PR1079 head2f2e6e4: finished-face door witnesses, connected pan staging/return and tray stance pass; actual Duravit datums recovered; finite remaining actions and evidence gates explicit",
     "next": "Peer-reviewed connected partial integration with IAS/RWT; no HAD completion or house adoption; actual frame/enclosure/connector/handling actions remain"
   },
-  "pr": 1079
+  "pr": 1079,
+  "releaseReason": "handoff",
+  "releasedAt": "2026-10-30T08:45:39.253Z"
 }
