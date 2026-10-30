@@ -50,17 +50,17 @@ Low water exposure, gravity drainage, splash control and retained ground clearan
 
 The practical consequences are durable ground-contact materials, avoidance of dependence on inaccessible short-lived components, substantial and well-detailed moisture separation, retained ground clearances, observable bypass risks and stewardship that future owners can understand. State inspection and renewal obligations honestly. A long-lived material does not establish the life of its joints, workmanship or surrounding geometry, and a century of apparently sound precedent does not prove another nine centuries.
 
-## Existing design and assurance owners
+## Design and assurance requirements
 
-| Owner | Required consequence |
+| Responsibility | Required consequence |
 |---|---|
-| DPL | Apply passive dryness to plot selection and actual groundwater, flood, outfall and approach-level assessment; retain unknowns until site evidence exists. |
-| MAT-ENVELOPE with BCR and the assembly designers | Develop complete non-plastic ground/wall/floor moisture boundaries; establish substantial barrier construction and justified extra margin, structural effects, buildability, costs and intervention routes. Preserve necessary gas, thermal and other envelope duties. |
-| RWT with ROF/HAD/OAS/IAS as applicable | Coordinate roof and court collection, landscape, thresholds and any proposed service void with the dry building section and the named site-water handoff. No new drain sizing is established here. |
-| MRA-01 and MRA-04 | Attack the actual proposed geometry and damp barrier, including joints, bypasses, movement, blocked outlets, unavailable power and relevant flooded-outfall cases. Check any claimed benefit from added thickness or backup layers; retain the existing single-failure and compound-case assurance rules. |
-| DEL | Carry accepted details, ground-level controls, construction hold points, maintenance information and substitution rules into delivery and handover. |
+| Site assessment | Apply passive dryness to plot selection and actual groundwater, flood, outfall and approach-level assessment; retain unknowns until site evidence exists. |
+| Materials and construction details | Develop complete non-plastic ground/wall/floor moisture boundaries; establish substantial barrier construction and justified extra margin, structural effects, buildability, costs and intervention routes. Preserve necessary gas, thermal and other envelope duties. |
+| Water and landscape coordination | Coordinate roof and court collection, landscape, thresholds and any proposed service void with the dry building section and the point where building drainage joins site drainage. No new drain sizing is established here. |
+| Moisture assurance | Challenge the actual proposed geometry and damp barrier, including joints, bypasses, movement, blocked outlets, unavailable power and relevant flooded-outfall cases. Check any claimed benefit from added thickness or backup layers, including individual failures and relevant combinations. |
+| Delivery and handover | Carry accepted details, ground-level controls, construction hold points, maintenance information and substitution rules into delivery and handover. |
 
-This is a requirement amendment routed through existing workstreams. It does not complete their design or assurance work, change the accepted house geometry or create a parallel task graph. Historical studies retain their original scope; their earlier completion is not evidence of compliance with this later requirement.
+This policy establishes requirements. Detailed assemblies, site suitability and performance evidence remain to be developed. It does not change the accepted house geometry, and earlier studies do not establish compliance with this later brief.
 
 ## Evidence and applicability
 
