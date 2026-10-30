@@ -14,6 +14,12 @@ Use the [communication phrasebook](communications.md) at consequential coordinat
 
 Stop only for interruption, an actual execution limit, an evidenced empty eligible frontier, or a coordination/environment blocker after safe alternatives. A directed assignment may finish at its explicitly bounded scope. Do not invent an execution deadline, infer approval from silence or leave an unattended lease. Preserve unfinished work and exact handoff evidence, release/handoff leases and state what remains. No background execution after the turn is implied.
 
+## Shared execution across chat environments
+
+Independent regular chats, independent Work chats, and a Work coordinator with parallel agents all use the **same PCO dispatcher and ACO leases**. Each executing worker claims one canonical packet independently, verifies before publishing, and releases after completion or handoff. A coordinator may sequence workers and report combined results, but cannot replace a worker's lease with a conversation assignment or maintain a competing task queue.
+
+Four regular chats and eight parallel workers are illustrative, not settings or limits. Moving between these arrangements needs no reset: read current main and live claims, respect occupied packets, reuse verified recovery evidence and continue. A coordinator stopping does not revoke other workers' leases. Session-level progress and individual verified merges remain separate.
+
 ## Runtime and supported transports
 
 Check the repository's Node requirement and locked dependencies once. The direct launch form avoids `tsx`'s IPC launcher and retains its TypeScript loader:
