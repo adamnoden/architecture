@@ -1,23 +1,19 @@
 {
   "schemaVersion": 1,
   "node": "EDA-NARRATIVE",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "da27b0a4-1520-4f09-9cc6-a2064cfa968b",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "8d0b779f-d78b-4607-b927-55ccf8661d32",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-worker-5"
+    "label": "recovery-sequential-20261030"
   },
-  "claimedAt": "2026-10-30T00:53:45.219Z",
-  "heartbeatAt": "2026-10-30T08:45:49.721Z",
-  "expiresAt": "2026-10-30T08:45:49.721Z",
-  "branch": "work/zerg-eda-narrative",
-  "pr": 1081,
+  "claimedAt": "2026-10-30T08:53:01.066Z",
+  "heartbeatAt": "2026-10-30T08:53:01.066Z",
+  "expiresAt": "2026-10-30T09:38:01.066Z",
+  "branch": "recovery/eda-1081-20261030",
   "checkpoint": {
-    "evidence": "Source PR1081 at8c49ea02 preserves all41 entry records and moves28 consultation entries after narrative; net930 reader words removed. Root and worker4 source reviews passed; full preparation and docs build passed.",
-    "next": "Reconcile manuscript navigation observation, inspect exact A4/B5 CI output and actual running context, update only measured pagination metadata, then complete lifecycle and final serial validation.",
-    "blocker": "Initial exact production proof pending; existing measured page counts deliberately retained until actual output. No physical print or HRS architectural payoff accepted."
-  },
-  "releaseReason": "handoff",
-  "releasedAt": "2026-10-30T08:45:49.721Z"
+    "evidence": "Recover PR #1081 at 8c49ea0288f7cad7fdef71f1be43d7fa125b61d3; original branch retained; prior green source tests, known production metadata drift",
+    "next": "Create successor branch; reconcile actual A4 and B5 pagination and inspect production proof; exact CI then canonical publication preflight"
+  }
 }
