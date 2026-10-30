@@ -21,7 +21,7 @@ assert prior['basis'] == 'RH-LAYOUT-REVISION-02' and prior['wetClear'] == [1920,
 # Successor proposal: new127.5 partition holds dry faces; west finish adds10.
 # All dimensions below are deliberate design comparisons, not current-house adoption.
 OBSTACLES = [(2335,8295,127.5,152),(2335,9253,127.5,1569.5),
- (427.5,8800,300,750),(727.5,8850,560,355),(1400,8295,400,220),
+ (427.5,8650,300,900),(727.5,8800,560,355),(1400,8295,400,220),
  (1335,9822.5,1000,1000),(2462.5,9450,660,1500),(3847.5,9400,2090,1500)]
 HX, HY, LEAF = 2462.5, 9263, 826
 HANDLE_STATION, HANDLE_RADIUS, REACH = 766, 135, 650

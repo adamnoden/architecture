@@ -9,14 +9,14 @@ const old=JSON.parse(readFileSync(new URL('bedroom4-allocation-study.json',impor
 if(d.id!=='RH-LAYOUT-REVISION-02'||d.envelope!==417.5||d.partition!==125||old.wetClear.join()!=='1920,2532.5'||!revisionOpenings('FIRST').some(o=>o.id==='bed4-door'&&o.centre===3300&&o.width===900))throw Error('Reappraise changed source')
 // IAS successor proposal:90 stud+12.5dry+25wet, holding dry faces; west15→25.
 const fixed=[box('wet south door return',2335,8295,127.5,152),box('wet north door return',2335,9253,127.5,1569.5),box('wet north wall',0,10822.5,2400,127.5),
- box('stack gross reservation',427.5,8800,300,750),box('basin',1400,8295,400,220),box('NE shower',1335,9822.5,1000,1000),
+ box('stack gross reservation',427.5,8650,300,900),box('basin',1400,8295,400,220),box('NE shower',1335,9822.5,1000,1000),
  box('west waste boxing',427.5,9550,150,1272.5),box('north waste boxing',577.5,10572.5,757.5,250),
  box('wardrobe',2462.5,9450,660,1500),box('base',3847.5,9400,2000,1500),box('headboard',5847.5,9400,90,1500),
- box('held open door reserve',2440.5,9179,889,168)]
+ box('held open door reserve',2440.5,9179,890,168)]
 //At90 degrees,44leaf plus62 handle projection gives84 normal from centreline;
 //102 lever length is bounded each way along the leaf. The continuous-door
 //search separately uses a conservative135-radius handle bound.
-const pan=box('pan at fixture',727.5,8850,560,355)
+const pan=box('pan at fixture',727.5,8800,560,355)
 const panCentre:Point=[pan.x+280,pan.y+177.5]
 const centreBox=(id:string,p:Point,w=660,h=455)=>box(id,p[0]-w/2,p[1]-h/2,w,h)
 const stage:Point=[4500,8547.5]
@@ -42,14 +42,16 @@ function rectanglePath(points:Point[],w:number,h:number,objects:Box[]){
  }
  return true
 }
-const withdrawal:Point[]=[panCentre,[1407.5,9027.5]]
-const carry:Point[]=[[1407.5,9027.5],[1407.5,8845],[4500,8845],stage]
-const frontWithdrawal:Point[]=[[1657.5,9027.5],[2057.5,9027.5]]
-const frontCarry:Point[]=[[2057.5,9027.5],[2057.5,8845],[5150,8845]]
+const withdrawal:Point[]=[panCentre,[1407.5,8977.5]]
+const carry:Point[]=[[1407.5,8977.5],[1407.5,8845],[4500,8845],stage]
+const frontWithdrawal:Point[]=[[1657.5,8977.5],[2057.5,8977.5]]
+const frontCarry:Point[]=[[2057.5,8977.5],[2057.5,8845],[5150,8845]]
 const rearRegrip:Point[]=[[1100,9530],[1050,9530],[1050,8845],[1450,8845]]
 const rearCarry:Point[]=[[1450,8845],[3850,8845]]
-const returnToFace:Point[]=[[5150,8845],[5150,9087.5],[3650,9087.5],[3650,8845],[1200,8845],[1200,9027.5]]
-const paths={withdrawal,carry,frontWithdrawal,frontCarry,rearRegrip,rearCarry,returnToFace}
+const returnToFace:Point[]=[[5150,8845],[5150,9087.5],[3650,9087.5],[3650,8845],[1200,8845],[1200,8977.5]]
+const northHelperApproach:Point[]=[[1900,8845],[1900,9490],[1100,9490],[1100,9530]]
+const trayServiceApproach:Point[]=[[1900,8845],[1900,9490],[1100,9490],[1100,9600],[1050,9600],[1050,9700],[1000,9700],[1000,9900],[950,9900],[950,10200]]
+const paths={northHelperApproach,trayServiceApproach,withdrawal,carry,frontWithdrawal,frontCarry,rearRegrip,rearCarry,returnToFace}
 const pause=centreBox('pan at regrip',[2100,8845])
 const results={
  panWithdrawal:rectanglePath(withdrawal,560,355,fixed),
@@ -57,8 +59,10 @@ const results={
  frontWithdrawal:bodyPath(frontWithdrawal,fixed),frontCarry:bodyPath(frontCarry,fixed),
  rearRegrip:bodyPath(rearRegrip,[...fixed,pause]),rearCarry:bodyPath(rearCarry,fixed),
  returnToEastFace:bodyPath(returnToFace,[...fixed,protectedStage]),
+ northHelperApproach:bodyPath(northHelperApproach,[...fixed,pan]),
+ trayServiceApproach:bodyPath(trayServiceApproach,[...fixed,pan]),
  northHelper:bodyPath([[1100,9530],[1100,9530]],[...fixed,pan]),
- rejectedNorthStage:rectanglePath([[1407.5,9027.5],[1407.5,9880],[1000,9880]],660,455,fixed)
+ rejectedNorthStage:rectanglePath([[1407.5,8977.5],[1407.5,9880],[1000,9880]],660,455,fixed)
 }
 if(!Object.entries(results).filter(([k])=>k!=='rejectedNorthStage').every(([,v])=>v)||results.rejectedNorthStage)throw Error('A retained operation witness or adverse control changed: '+JSON.stringify(results))
 const output={basis:d.id,scope:'unadopted plan-reserved pan maintenance sequence; no ergonomic, lifting, connector-release or water-boundary certification',fixed,pan,protectedStage,paths,results,
@@ -70,24 +74,25 @@ const svg:string[]=[];const add=(s:string)=>svg.push(s),t=(x:number,y:number,s:s
 add('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="DejaVu Sans,sans-serif"><rect width="420" height="297" fill="#fffef9"/>')
 t(15,17,'Bedroom 4 / door and pan-removal successor',5);t(15,26,'Located architectural proposal; current RH-LAYOUT-REVISION-02 remains unchanged',3.2)
 const px=(x:number)=>15+(x-400)/25,py=(y:number)=>43+(11600-y)/25
-function draw(r:Box,fill:string,dash=false){add(`<rect x="${px(r.x)}" y="${py(r.y+r.h)}" width="${r.w/25}" height="${r.h/25}" fill="${fill}" stroke="#6c7677" stroke-width=".25" ${dash?'stroke-dasharray="1 1"':''}/>`)}
+function draw(raw:Box,fill:string,dash=false){const r={...raw,x:Math.max(raw.x,427.5),w:raw.x+raw.w-Math.max(raw.x,427.5)};add(`<rect x="${px(r.x)}" y="${py(r.y+r.h)}" width="${r.w/25}" height="${r.h/25}" fill="${fill}" stroke="#6c7677" stroke-width=".25" ${dash?'stroke-dasharray="1 1"':''}/>`)}
 draw(box('floor',427.5,8295,5510,3287.5),'#f4f0e7');fixed.forEach(r=>draw(r,r.id.includes('door reserve')?'#efd2bd':r.id.includes('wall')||r.id.includes('return')?'#d6cbb7':'#dce5e4'))
 draw(pan,'#c9b28c');draw(protectedStage,'none',true);draw(pause,'none',true)
 function route(p:Point[],colour:string,dash=false){add(`<polyline points="${p.map(([x,y])=>`${px(x)},${py(y)}`).join(' ')}" fill="none" stroke="${colour}" stroke-width=".65" ${dash?'stroke-dasharray="1 1"':''}/>`)}
 route(carry,'#a66035');route(returnToFace,'#237060');route(rearRegrip,'#41648d',true)
-for(const [x,y] of [[1100,9530],[2057.5,9027.5],[5150,8845],[1200,9027.5]])add(`<circle cx="${px(x)}" cy="${py(y)}" r="12" fill="none" stroke="#41648d" stroke-width=".3" stroke-dasharray="1 1"/>`)
+for(const [x,y] of [[1100,9530],[2057.5,8977.5],[5150,8845],[1200,8977.5]])add(`<circle cx="${px(x)}" cy="${py(y)}" r="12" fill="none" stroke="#41648d" stroke-width=".3" stroke-dasharray="1 1"/>`)
 t(px(1500),py(10380),'1000 tray',2.6);t(px(2500),py(10200),'wardrobe',2.5);t(px(4200),py(10100),'2000 × 1500 base',2.7)
-t(px(4240),py(8500),'pan stage',2.4);t(px(760),py(9380),'WC +50 north',2.3)
+t(px(4240),py(8500),'pan stage',2.4);t(px(760),py(9380),'WC retained y8800',2.3)
 t(255,50,'Sequence and measurable limits',3.6)
-const notes=['1. Isolate, drain and release actual fixings.','2. Reserve400 forward withdrawal.','3. Regrip at2100 /8845, not behind cabinet.','4. Protected660 ×455 pan envelope crosses door.','5. Two600 body fields are shown separately.','6. Stage near south wall; return gap625.','7. East cabinet face remains reachable.','8. Reverse; reconnect and inspect reinstatement.','','Orange: pan. Green: returning worker.','Blue: regrip. Circles: distinct600 body fields.','','22kg ceramic is not a safe-lift assessment.','No whole-house carrying route is established.','The20-high saddle needs a real crossing action.','The proposed400 release is not connector proof.','Glass, cistern, stack and ground renewal differ.','No pan is reached through a750-long tunnel.']
+const notes=['1. Isolate, drain and release actual fixings.','2. Reserve 400 forward withdrawal.','3. Regrip at 2100 / 8845, not behind cabinet.','4. Protected 660 × 455 pan envelope crosses door.','5. Two 600 body fields are shown separately.','6. Stage near south wall; return gap 625.','7. East cabinet face remains reachable.','8. Reverse; reconnect and inspect reinstatement.','','Orange: pan. Green: returning worker.','Blue: regrip. Circles: distinct 600 body fields.','','22 kg ceramic is not a safe-lift assessment.','No whole-house carrying route is established.','The 20-high saddle needs a real crossing action.','The proposed 400 release is not connector proof.','Glass, cistern, stack and ground renewal differ.','No pan is reached through a 750-long tunnel.']
 notes.forEach((s,i)=>t(255,59+i*6,s,2.65))
-t(15,187,'1:25 at A3 · north ↑ · proposed finished wet faces and250-deep north waste boxing included',3)
-t(15,199,'Outward826 ×44 leaf comparison:950 rough;832 jamb clear;806 conservative stopped throat.',3)
-t(15,208,'The coupled door witness checks continuous translations and swept five-degree sectors, including a135-radius handle bound.',2.9)
-t(15,217,'600 and650 diameter body witnesses enter and close;700 has no witness on the stated grid. This is not ergonomic acceptance.',2.9)
-t(15,226,'Door hardware sweep ends52 south of wardrobe. Actual lining section, hinge/stop, strength, latch and undercut remain to bind.',2.9)
-t(15,239,'Negative control: a proposed north-west pan stage fails the connected route; it is not rescued by an isolated empty rectangle.',2.9)
-t(15,252,'The temporary625 return passage has only25 total spare width for a600 circle. No simultaneous occupation or carrying is claimed there.',2.8)
+t(15,187,'1:25 at A3 · north ↑ · proposed finished wet faces and 250-deep north waste boxing included',3)
+t(15,199,'Outward 826 × 44 leaf comparison: 950 rough; 832 jamb clear; 806 conservative stopped throat.',3)
+t(15,208,'The coupled door witness checks continuous translations and swept five-degree sectors, including a 135-radius handle bound.',2.9)
+t(15,217,'600 and 650 diameter body witnesses enter and close; 700 has no witness on the stated grid. This is not ergonomic acceptance.',2.9)
+t(15,226,'Door hardware sweep ends 52 south of wardrobe. Actual lining section, hinge/stop, strength, latch and undercut remain to bind.',2.9)
+route(trayServiceApproach,'#637541',true)
+ t(15,239,'Negative control: a proposed north-west pan stage fails the connected route; it is not rescued by an isolated empty rectangle.',2.9)
+t(15,252,'The temporary 625 return passage has only 25 total spare width for a 600 circle. No simultaneous occupation or carrying is claimed there.',2.8)
 t(15,265,'IAS owns wet assembly, cistern/connector packing, sill and release faces. HAD owns the located action and visible room consequences.',2.8)
 t(15,280,'Conditional spatial development only; no adopted house, full maintenance acceptance, physical evidence or HAD-03 completion.',3)
 add('</svg>')
