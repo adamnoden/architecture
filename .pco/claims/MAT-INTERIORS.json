@@ -9,7 +9,12 @@
     "label": "swarm-worker-c-1cd2b9a76146"
   },
   "claimedAt": "2026-10-30T23:24:27.057Z",
-  "heartbeatAt": "2026-10-30T23:24:27.057Z",
-  "expiresAt": "2026-10-31T00:09:27.057Z",
-  "branch": "work/swarm-c-materials-20261030"
+  "heartbeatAt": "2026-10-30T23:30:55.376Z",
+  "expiresAt": "2026-10-31T00:15:55.376Z",
+  "branch": "work/swarm-c-materials-20261030",
+  "checkpoint": {
+    "evidence": "PR #1115; published head bd22447008a9ff38054237fbf10119151ddfff29; interior-shower-tray-alternatives.md",
+    "next": "Reconcile current main, require exact-head CI, run canonical merge-check, integrate bounded partial and release",
+    "blocker": "Exact-head CI and base reconciliation pending; no complete installation accepted"
+  }
 }
