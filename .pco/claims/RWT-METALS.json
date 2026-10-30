@@ -9,7 +9,12 @@
     "label": "issue-comment-6533365522"
   },
   "claimedAt": "2026-10-30T21:01:53.000Z",
-  "heartbeatAt": "2026-10-30T21:01:53.000Z",
-  "expiresAt": "2026-10-30T21:46:53.000Z",
-  "branch": "work/mvb-chat-6533365522"
+  "heartbeatAt": "2026-10-30T21:17:20.000Z",
+  "expiresAt": "2026-10-30T22:02:20.000Z",
+  "branch": "work/mvb-chat-6533365522",
+  "checkpoint": {
+    "evidence": "Branch work/mvb-chat-6533365522 at afc1a986f0392a64e51e61a96a7563c1bab9d5c9 contains copper/brass candidates, seven tested movement/path checks and inspected A3; published study blobs match local",
+    "next": "Finish adverse exposure review, create PR, require exact-head full CI and fresh canonical preflight",
+    "blocker": "Actual profiles, copper end joints and hydraulic capacity remain unverified; packet stays planned"
+  }
 }
