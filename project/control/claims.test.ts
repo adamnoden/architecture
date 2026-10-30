@@ -245,3 +245,26 @@ test('normal recovery atomically preserves predecessor provenance, without trans
   assert.throws(() => parseClaimRecord(JSON.stringify({...newer, predecessor: {...newer.predecessor, generation: 3}})), /predecessor/i)
   assert.equal(parseClaimRecord(serializeClaimRecord(earlier)).predecessor, undefined)
 })
+
+test('second abrupt cutoff retains the last pushed predecessor evidence rather than losing it', () => {
+  const original=createClaimRecord({node:'TST-READY',generation:1,leaseId:'original',
+    holder:{kind:'chatgpt'},now,branch:'work/original',pr:100,
+    checkpoint:{evidence:'PR #100 head abc',next:'Inspect architecture'}})
+  const first=nextNormalAcquisition(releaseClaim(original,'original',new Date('2026-10-28T22:45:00Z'),'abandoned',1),{
+    node:'TST-READY',leaseId:'replacement-1',holder:{kind:'chatgpt'},
+    now:new Date('2026-10-28T22:46:00Z'),branch:'work/replacement-1'
+  })
+  assert.equal(first.checkpoint,undefined)
+  const second=nextNormalAcquisition(releaseClaim(first,'replacement-1',new Date('2026-10-28T22:47:00Z'),'abandoned',2),{
+    node:'TST-READY',leaseId:'replacement-2',holder:{kind:'chatgpt'},
+    now:new Date('2026-10-28T22:48:00Z'),branch:'work/replacement-2'
+  })
+  assert.equal(second.predecessor?.leaseId,'replacement-1')
+  assert.equal(second.recoverySource?.leaseId,'original')
+  assert.equal(second.recoverySource?.generation,1)
+  assert.equal(second.recoverySource?.branch,'work/original')
+  assert.equal(second.recoverySource?.checkpoint.next,'Inspect architecture')
+  assert.equal(second.checkpoint,undefined)
+  assert.deepEqual(parseClaimRecord(serializeClaimRecord(second)),second)
+  assert.throws(()=>parseClaimRecord(JSON.stringify({...second,recoverySource:{...second.recoverySource,generation:3}})),/recovery source/i)
+})
