@@ -11,6 +11,10 @@ const wall={stud:90,dryBoard:12.5,wetBoard:12.5,adhesive:4.5,tile:8},wetWall=wal
 const clear={west:417.5+(wetWall-15),east:2337.5-(partition-125),south:8292.5+(partition-125),north:10825-(partition-125)}
 const trays={NE:{x:clear.east-1000,y:clear.north-1000,w:1000,h:1000},NW:{x:clear.west,y:clear.north-1000,w:1000,h:1000}}
 const boxing={westWidth:150,northDepth:250,face:18,axisX:clear.west+75}
+const cabinet={west:clear.west,east:clear.west+300,south:8650,north:9550,panel:18,panCentreY:8977.5,
+ internalDepth:264,internalLength:864,cisternApplicationWidth:500,cisternApplicationDepth:200,cisternApplicationHeight:800,
+ applicationSouth:8727.5,applicationNorth:9227.5,sideReserves:[59.5,304.5],
+ scope:'Authored 900 gross cabinet comparison; application and side reserves do not prove actual isolation, flush, soil, support or removal fit; connection levels unresolved'}
 const cabinetEntry=[boxing.axisX,9500],stackReference=[boxing.axisX,9375]
 const cornerOffset=135,profile=45,legMaximum=140,comparisonRim=profile+legMaximum
 const routes=[
@@ -19,17 +23,17 @@ const routes=[
 ].map(r=>{const length=r.points.slice(1).reduce((sum,p,i)=>sum+Math.abs(p[0]-r.points[i][0])+Math.abs(p[1]-r.points[i][1]),0);return {...r,length:round(length),fallAt18PerMetre:round(length*.018),status:'centreline topology only; actual fittings/legs not admitted'}})
 const mcAlpine={bodyHeight:70,bodyAxisBelowTop:35,centreToUnion:82,largestNamedWasher:12.5,comparisonFittingOutside:60,
  lowerBoundAxisIfWholeTrayAndSupportAssumptionsHold:comparisonRim-profile-12.5-35,
- scope:'Dimensions from named manufacturer range drawings; 60 fitting and entire45tray/pad inclusion are comparison assumptions, not measured compatibility or tolerance bounds'}
+ scope:'Dimensions from named manufacturer range drawings; 60 fitting and entire 45 tray/pad inclusion are comparison assumptions, not measured compatibility or tolerance bounds'}
 const conditionalRoutes=routes.map(r=>({...r,conditionalEndAxis:round(mcAlpine.lowerBoundAxisIfWholeTrayAndSupportAssumptionsHold-r.fallAt18PerMetre),conditionalEnvelopeBottom:round(mcAlpine.lowerBoundAxisIfWholeTrayAndSupportAssumptionsHold-r.fallAt18PerMetre-30)}))
-const withdrawal={northBoxDepth:250,northBoxHeight:180,wallFace:18,internalWidth:214,axisFromNorth:135,handlingWidthReservation:160,sideMargins:[17,37],firstReleaseLength:300,pullWestComparison:235,scope:'Authored handling reservation only: actual McAlpine body/connector diameter and leg pattern must fit, with vertical thread release and tool clearance still unproved'}
+const withdrawal={northBoxDepth:250,northBoxHeight:180,wallFace:18,internalWidth:214,axisFromNorth:135,handlingWidthReservation:160,sideMargins:[17,37],firstReleaseLength:300,pullWestComparison:235,scope:'Authored handling reservation only: actual McAlpine body/connector diameter and leg pattern must fit, with top-flange removal, body holding, gasket release and tool clearance still unproved'}
 const rejectedNorthLead={available:cornerOffset-75,bodyToUnion:mcAlpine.centreToUnion,shortfallBeforeAdapter:mcAlpine.centreToUnion-(cornerOffset-75)}
 const threshold={wetFFL,dryFFL:d.levels.first,crest:wetFFL+15,wetRise:15,dryRise:wetFFL+15-d.levels.first,wetBevelRun:30,dryBevelRun:40,flatCrest:30,
  scope:'authored 1:2 bevels and stepped saddle comparison; HAD action review and support/sealed jamb returns required, not level access'}
 const record={scope:'Unadopted architectural comparison; no complete room/product/hydraulic or waterproofing pass',
  sourceBlobs:Object.fromEntries(['compiler/reference-house/georgian/layout-revision.ts','compiler/reference-house/georgian/section-source.ts'].map(p=>[p,execFileSync('git',['hash-object',p],{encoding:'utf8'}).trim()])),
- floorLayers,floorDepth,wetFFL,deckTop:d.levels.first-a.floor.finish,wall,wetWall,partition,clear,trays,boxing,cornerOffset,profile,legMaximum,comparisonRim,
+ floorLayers,floorDepth,wetFFL,deckTop:d.levels.first-a.floor.finish,wall,wetWall,partition,clear,trays,boxing,cabinet,cornerOffset,profile,legMaximum,comparisonRim,
  routes:conditionalRoutes,mcAlpine,withdrawal,rejectedNorthLead,threshold,
- holds:['actual delivered tray local underside and support/pad datums','all moulded leg positions and unobstructed housing withdrawal','compatible waste flange/washer and actual connector/pipe/support geometry','actual stack/cistern/pan connections and cabinet faces','deck/load/support and complete membrane penetration set','full-bed and taped-corner sample within25floor/25wall','stepped doorway action and seal review','NW needs deliberate wet-window redesign'],
+ holds:['actual delivered tray local underside and support/pad datums','all moulded leg positions and unobstructed housing withdrawal','compatible waste flange/washer and actual connector/pipe/support geometry','actual stack/cistern/pan connections and cabinet faces','deck/load/support and complete membrane penetration set','full-bed and taped-corner sample within 25 floor/25 wall','stepped doorway action and seal review','NW needs deliberate wet-window redesign'],
  firstFailure:'Threshold crest is only a proposed visible spill boundary after all lower penetrations and perimeter joints are earned; damaged joints can fail earlier',
  geometryBoundary:'Original Mira/HAD artifacts remain unchanged; no compiler house source or lifecycle mutation'}
 if(floorDepth!==25||partition!==127.5||rejectedNorthLead.shortfallBeforeAdapter<=0)throw Error('Internal comparison arithmetic changed: review the owning result')
@@ -48,7 +52,7 @@ rect(px(clear.west),py(clear.north),(clear.east-clear.west)/25,(clear.north-clea
 rect(px(trays.NE.x),py(clear.north),40,40,'#dce9ec')
 rect(px(clear.west),py(clear.north),6,(clear.north-9550)/25,'#d7c7aa')
 rect(px(clear.west+150),py(clear.north),(trays.NE.x-clear.west-150)/25,10,'#d7c7aa')
-rect(px(clear.west),py(9550),12,30,'#c2a77e')
+rect(px(clear.west),py(cabinet.north),12,(cabinet.north-cabinet.south)/25,'#c2a77e')
 const r=routes[0];add(`<polyline points="${r.points.map(([x,y])=>`${px(x)},${py(y)}`).join(' ')}" fill="none" stroke="#2d7a67" stroke-width=".6" stroke-dasharray="1.5 1"/>`)
 add(`<circle cx="${px(r.points[0][0])}" cy="${py(r.points[0][1])}" r="1.1" fill="#2d7a67"/>`)
 line(px(clear.west),py(9700),px(clear.west),py(10700),'#547da1')

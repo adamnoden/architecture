@@ -6,7 +6,7 @@
 <rect x="48.3" y="42" width="40" height="40" fill="#dce9ec" stroke="#51616a" stroke-width=".25"/>
 <rect x="12" y="42" width="6" height="50.9" fill="#d7c7aa" stroke="#51616a" stroke-width=".25"/>
 <rect x="18" y="42" width="30.3" height="10" fill="#d7c7aa" stroke="#51616a" stroke-width=".25"/>
-<rect x="12" y="92.9" width="12" height="30" fill="#c2a77e" stroke="#51616a" stroke-width=".25"/>
+<rect x="12" y="92.9" width="12" height="36" fill="#c2a77e" stroke="#51616a" stroke-width=".25"/>
 <polyline points="53.7,47.4 15,47.4 15,94.9 15,99.9" fill="none" stroke="#2d7a67" stroke-width=".6" stroke-dasharray="1.5 1"/>
 <circle cx="53.7" cy="47.4" r="1.1" fill="#2d7a67"/>
 <path d="M12,86.9L12,46.9" fill="none" stroke="#547da1" stroke-width=".45"/>
