@@ -11,7 +11,7 @@ sequence. V3 is a task-specific principle, not an adopted upper-front occurrence
 
 ## What did not pass
 
-IAS-03 is **active, incomplete**. It cannot close on this partial result.
+IAS-03 is **planned, incomplete**. It cannot close on this partial result.
 The original 26.5 wet trial fails the 20 allowance. The later connected successor
 below now authors a 25 floor / wet +5 comparison, but its complete connected
 installation has not been admitted. U-ENS3 has no demonstrated actual
@@ -27,6 +27,8 @@ No room, aperture, source fingerprint, prototype state or epistemic maturity
 changes. No new active physical test is invented. TRIAD-GATE remains blocked.
 
 ## Verification
+
+The later [sink-cabinet comparison](ias-03-sink-cabinet.md) applies the 30 October material direction to an actual kitchen occurrence. It retains a plain-metal bowl candidate, identifies known resin/polypropylene defaults and an EPDM valve comparator, and leaves the connected waste/trap, support, leak declaration and service actions unadmitted. Its drawing is an explicit cabinet/mounting comparison; IAS-03 stays planned.
 
 Sheet geometry is independently checked against the written dimensions, source
 depth allocation and physical SVG units/scales. The actual rendered sheet is
