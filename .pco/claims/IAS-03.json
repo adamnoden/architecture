@@ -1,22 +1,19 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 3,
-  "state": "released",
-  "leaseId": "f8496899-720e-4f9e-be08-2935cb69d33f",
+  "generation": 4,
+  "state": "claimed",
+  "leaseId": "d415f786-5097-41af-b4d3-9c872fa4ed62",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-rush-worker-1"
+    "label": "zerg-worker-6"
   },
-  "claimedAt": "2026-10-29T22:12:23.816Z",
-  "heartbeatAt": "2026-10-29T23:04:05.540Z",
-  "expiresAt": "2026-10-29T23:04:05.540Z",
-  "branch": "work/zerg-ias-had-checkpoint",
-  "pr": 1051,
+  "claimedAt": "2026-10-30T00:28:58.793Z",
+  "heartbeatAt": "2026-10-30T00:28:58.793Z",
+  "expiresAt": "2026-10-30T01:13:58.793Z",
   "checkpoint": {
-    "evidence": "Corrected source b69b6345 reviewed by commander/HAD. Combined draft1051 head4cb898df preserves IAS/HAD source parents; both artifact checks, TypeScript, repository/control checks and A3 review passed. Both nodes incomplete.",
-    "next": "Verify both lease bindings then exact-head full CI, integrate current main as queue advances, both canonical preflights and partial checkpoint merge; release IAS handoff and continue CCR dispatcher."
+    "evidence": "CCR-IDENTITY completed and exact lease released; primary JT tray/support/waste evidence inspected for matched wet-room assembly comparison.",
+    "next": "Compare actual NE and NW tray orientations, support and waste datums, then complete coordinated wet floor/wall/threshold with HAD owner."
   },
-  "releasedAt": "2026-10-29T23:04:05.540Z",
-  "releaseReason": "handoff"
+  "branch": "zerg/worker-6-wave8"
 }
