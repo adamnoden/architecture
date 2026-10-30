@@ -4,6 +4,7 @@ import { ccrNodes } from './ccr.js'
 import { acoNodes } from './aco.js'
 import { architectureNodes } from './architecture.js'
 import { evidenceNodes } from './evidence.js'
+import { materialNodes } from './materials.js'
 import { mraNodes } from './mra.js'
 import { pcoNodes } from './pco.js'
 import { publicationNodes } from './publication.js'
@@ -21,6 +22,7 @@ export const controlNodes = [
   ...pcoNodes,
   ...architectureNodes,
   ...roofWaterNodes,
+  ...materialNodes,
   ...mraNodes,
   ...publicationNodes,
   ...houseDeliveryNodes,
