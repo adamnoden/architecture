@@ -8,6 +8,21 @@
 
 The [30 October north-axis study](north-court-carrier.md) tests a continuous full floor over separate sleeved carriers, exterior-only renewal and a lower explicit receiving limit. It also rejects the earlier shallow insulated-cover/free-outfall combination using matched product evidence and clearance arithmetic. This does not adopt the north route or close the threshold/support/access conditions below; RWT-06 remains planned. The original eastward study and its values are retained.
 
+## Current raised-court pan and relief-level reconciliation (30 October 2026)
+
+The subsequent [HAD-03 court-level study](../had/had-03-court-levels.md) retains a walking level at **0**, with a lower drained pan whose **waterproofing top** is at **−180 mm at its perimeter** and **−215 mm at the illustrated central low point**. These are trial levels, not an adopted four-way pan or a selected threshold. They must be compared explicitly with RWT's *uncomputed* relief activation **−75 mm** and maximum operating-water target **−50 mm**, rather than carrying those two targets forward as proven safe.
+
+| Trial water level | Above pan at perimeter (−180) | Above illustrated pan low point (−215) | Below walking surface (0) |
+|---|---:|---:|---:|
+| Relief activation, −75 mm | 105 mm | 140 mm | 75 mm |
+| Nominal operating target, −50 mm | 130 mm | 165 mm | 50 mm |
+
+These subtractions are **geometry only**, not allowable ponding depths, a capacity calculation or an inferred overflow margin. For an illustrative **uniform 1 mm rain event**, the 3500 × 3500 mm open court has **12.25 litres of gross direct-rain exposure**, before any assigned inward-roof runoff. That is an area-based precipitation calculation, **not** proven pan inflow or a time-to-flood estimate: interception/losses, pan shape, usable storage, outlet behaviour, storm profile and roof allocations remain unresolved. Raised paving does not make the water underneath harmless, and its support and panel-removal duties persist when the void is wet.
+
+**Admission order matters.** HAD/OAS/IAS must first identify every lower susceptible joint in the actual sill/frame, pan, wall base, anchors, cavity closure and floor assembly, with its elevation, wetting path and replaceability. RWT must then calculate the operating water under the named blocked-primary case and establish that an independently reachable, debris-tolerant relief inlet and separate downstream route activate **before** water endangers the controlling boundary, allowing for splash, transient head, product and construction tolerances. If any vulnerable interface is reached before a relief path works, the assumed **−75/−50** combination fails and must be reselected; raising a pan upstand or lowering a pipe on paper does not cure it. The HAD comparison of a +15 rear upstand to −50 gives a **conditional nominal 65 mm**, not an accepted water-resistance or safety margin.
+
+The earlier east crossing and newer north sleeved-carrier study remain **unadopted comparisons**, not alternative proof of this water-level hierarchy. The north route's much lower required exterior receiving level addresses destination geometry, not court overflow timing, joint wetting, inlet capacity or common-cause blockage. These issues must be resolved internally before the SITE-WATER-HANDOFF can be treated as a candidate for real-site matching. No RWT-06 closure or RWT-07 unlock is earned by this reconciliation.
+
 ## Current source and proposed trial
 
 The accepted court is x4250–7750/y4250–7750. Its eastern wall occupies x7750–8167.5; the east gallery ends at the service partition face x9437.5; that partition occupies x9437.5–9562.5; the pantry's clear x interval is 9562.5–11582.5; the outer wall ends at12000. The **4250 mm** court-edge-to-outside crossing therefore includes **three support/boundary crossings**, not one unobstructed service corridor.
