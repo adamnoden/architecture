@@ -1,0 +1,80 @@
+name: Temporary read-only RWT access publication check 1112
+on:
+  push:
+    branches: [work/mvb-chat-6535138180]
+permissions:
+  contents: read
+  pull-requests: read
+  checks: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Observe cleaned final PR head and exact validation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          ready=false
+          for attempt in $(seq 1 64); do
+            if ! pr="$(gh api repos/adamnoden/architecture/pulls/1112)"; then sleep 15; continue; fi
+            test "$(jq -r '.state' <<< "$pr")" = open
+            test "$(jq -r '.head.ref' <<< "$pr")" = work/mvb-chat-6535138180
+            test "$(jq -r '.head.repo.full_name' <<< "$pr")" = adamnoden/architecture
+            test "$(jq -r '.base.ref' <<< "$pr")" = main
+            grep -Fxq 'Work: RWT-METALS' <<< "$(jq -r '.body' <<< "$pr")"
+            grep -Fxq 'Lease: RWT-METALS / 26286684-da96-4e05-ae47-8e2024d5b45c / generation 3' <<< "$(jq -r '.body' <<< "$pr")"
+            head="$(jq -r '.head.sha' <<< "$pr")"
+            git fetch origin main work/mvb-chat-6535138180 --quiet
+            test "$(git rev-parse origin/work/mvb-chat-6535138180)" = "$head"
+            if git cat-file -e "$head:.github/workflows/rwt-access-preflight-1112.yml" 2>/dev/null; then sleep 15; continue; fi
+            git diff --quiet origin/main "$head" -- project/control scripts/project-claims.ts package.json package-lock.json .nvmrc .github/workflows
+            if ! checks="$(gh api "repos/adamnoden/architecture/commits/$head/check-runs?per_page=100")"; then sleep 15; continue; fi
+            latest="$(jq '[.check_runs[] | select(.app.slug == "github-actions")] | sort_by(.name) | group_by(.name) | map(sort_by(.id) | last)' <<< "$checks")"
+            validate="$(jq '[.[] | select(.name == "validate")] | last // {}' <<< "$latest")"
+            bad="$(jq '[.[] | select(.name != "preflight") | select(.status == "completed" and (.conclusion != "success" and .conclusion != "skipped" and .conclusion != "neutral"))] | length' <<< "$latest")"
+            if (( bad > 0 )); then echo 'Failed final-head check; publication prohibited'; exit 1; fi
+            pending="$(jq '[.[] | select(.name != "preflight" and .status != "completed")] | length' <<< "$latest")"
+            if test "$(jq -r '.conclusion' <<< "$validate")" = success && test "$pending" = 0; then
+              echo "Validated final head: $head"
+              jq -r '.[] | [.name,.status,.conclusion,.details_url] | @tsv' <<< "$latest"
+              echo "TARGET_HEAD=$head" >> "$GITHUB_ENV"
+              ready=true
+              break
+            fi
+            sleep 15
+          done
+          test "$ready" = true
+      - name: Verify reviewed sources and reproduce bounded calculations
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout --detach "$TARGET_HEAD"
+          test "$(git hash-object project/rwt/copper-access-first-result.md)" = 749fcaaa07a26b31baacaa426b9e11bbc19ed14e
+          test "$(git hash-object project/rwt/studies/copper-access-geometry.mjs)" = 16fae978af9fdf5cdc0532c92513f11d3e1dedd1
+          test "$(git hash-object project/rwt/studies/copper-access-geometry.test.mjs)" = b6c8376097a020efeed6f944cd72883003a96586
+          test "$(git hash-object project/rwt/studies/README.md)" = 8e63d4fd885d9d398fa46da0d399d69ee0a9eea4
+          node --test project/rwt/studies/copper-access-geometry.test.mjs
+          node project/rwt/studies/copper-access-geometry.mjs
+          test -z "$(git status --porcelain --untracked-files=no)"
+      - name: Canonical publication preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --import tsx scripts/project-claims.ts merge-check RWT-METALS \
+            --lease-id 26286684-da96-4e05-ae47-8e2024d5b45c --generation 3 \
+            --branch work/mvb-chat-6535138180 --head "$TARGET_HEAD" --format text
