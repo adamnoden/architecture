@@ -9,7 +9,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'DEL-ISSUE-PROFILES', owners: ['DEL'], title: 'Define purpose-specific information and issue requirements',
-    dependencies: [], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: [], lifecycle: 'complete', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/del/issue-profiles-result.md']
   },
   {
@@ -19,7 +19,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'BCR-BAY-BRIEF', owners: ['BCR'], title: 'Select one consequential construction bay and its proof obligations',
-    dependencies: ['DEL-BRIEF', 'HRS-BASELINE', 'BCR-PREFLIGHT'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['DEL-BRIEF', 'HRS-BASELINE', 'BCR-PREFLIGHT'], lifecycle: 'complete', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bay-brief-result.md']
   },
   {
