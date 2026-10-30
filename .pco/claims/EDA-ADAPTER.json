@@ -9,11 +9,12 @@
     "label": "zerg-worker-2"
   },
   "claimedAt": "2026-10-30T00:04:12.194Z",
-  "heartbeatAt": "2026-10-30T00:10:01.209Z",
-  "expiresAt": "2026-10-30T00:55:01.209Z",
+  "heartbeatAt": "2026-10-30T00:11:11.036Z",
+  "expiresAt": "2026-10-30T00:56:11.036Z",
   "branch": "work/zerg-eda-adapter",
   "checkpoint": {
-    "evidence": "All five adapted/prepared Primer entries byte-identical; three source propagation regressions, actual committed EDA discovery and isolated source-hash mutation proof pass; peer review passed.",
-    "next": "Publish reviewed source; integrate with CCR identity and ADE after1069; full exact-head CI and fresh preflights before merge."
-  }
+    "evidence": "Reviewed source PR1070 head2aac33fa published; exact five-entry byte equality and actual EDA hash-mutation proof passed, 88control tests passed.",
+    "next": "Preserve source parent in EDA/CCR/ADE integration after1069; bind shared PR, full exact-head CI, independent lease checks and expected-head merge."
+  },
+  "pr": 1070
 }
