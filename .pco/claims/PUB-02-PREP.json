@@ -9,7 +9,13 @@
     "label": "zerg-worker-4"
   },
   "claimedAt": "2026-10-30T00:14:35.075Z",
-  "heartbeatAt": "2026-10-30T00:14:35.075Z",
-  "expiresAt": "2026-10-30T00:59:35.075Z",
-  "branch": "zerg/worker-4-packet-9"
+  "heartbeatAt": "2026-10-30T00:20:48.709Z",
+  "expiresAt": "2026-10-30T01:05:48.709Z",
+  "branch": "zerg/worker-4-packet-9",
+  "pr": 1074,
+  "checkpoint": {
+    "evidence": "Reviewed frozen source PR1074 head3551b821; four primary sources independently checked; focused validation and docsbuild passed.",
+    "next": "Integrate with commander-authorised PLT/EDA group, rebind common PR, require exact-head CI and own preflight.",
+    "blocker": "Await serial integration; final manufacture remains manual."
+  }
 }
