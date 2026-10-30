@@ -8,6 +8,8 @@
 
 The [30 October north-axis study](north-court-carrier.md) tests a continuous full floor over separate sleeved carriers, exterior-only renewal and a lower explicit receiving limit. It also rejects the earlier shallow insulated-cover/free-outfall combination using matched product evidence and clearance arithmetic. This does not adopt the north route or close the threshold/support/access conditions below; RWT-06 remains planned. The original eastward study and its values are retained.
 
+The [passive court/site interface review](passive-court-site-interface.md) applies the later ground-water policy to that historical section. It distinguishes an actually lower receiving water level from a deeper local well, keeps the lower sleeve tell-tale separate from the carrier, and compares a raised building section with the retained deep route. Its conditional 435 mm datum shortfall is not a selected plinth height or a hydraulic verdict. Material and terminal successors must re-derive their levels; no old allowance transfers to them automatically. RWT-06 remains unfinished.
+
 ## Current raised-court pan and relief-level reconciliation (30 October 2026)
 
 The subsequent [HAD-03 court-level study](../had/had-03-court-levels.md) retains a walking level at **0**, with a lower drained pan whose **waterproofing top** is at **−180 mm at its perimeter** and **−215 mm at the illustrated central low point**. These are trial levels, not an adopted four-way pan or a selected threshold. They must be compared explicitly with RWT's *uncomputed* relief activation **−75 mm** and maximum operating-water target **−50 mm**, rather than carrying those two targets forward as proven safe.

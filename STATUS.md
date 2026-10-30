@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 10 · **Active:** 0 · **Blocked:** 34 · **Held:** 2 · **Done:** 95 · **Cancelled:** 0
+**Structurally ready:** 12 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 96 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -26,7 +26,9 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | — |
 | `RWT-METALS` | Develop copper collection, brass channels and non-plastic concealed routes | RWT | RWT-ROBUSTNESS |
 | `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | STR-RECONCILE |
-| `MAT-AUDIT` | Inventory synthetic constituents across visible and concealed house assemblies | MAT | MAT-ENVELOPE, MAT-SERVICES, MAT-INTERIORS |
+| `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT | — |
+| `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
+| `MAT-INTERIORS` | Resolve non-plastic interior and wet-room assembly alternatives | MAT | — |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -54,9 +56,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
 | `STR-RECONCILE` | Reconcile structural interfaces and affected evidence for house selection | STR-HOUSE |
-| `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT-AUDIT |
-| `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT-AUDIT |
-| `MAT-INTERIORS` | Resolve non-plastic interior and wet-room assembly alternatives | MAT-AUDIT |
 | `MAT-COORDINATION` | Reconcile selected-house material compliance and explicit owner exceptions | MAT-ENVELOPE, MAT-SERVICES, MAT-INTERIORS, IAS-03, HAD-03, ROF-RWT-GATE |
 | `MRA-01` | External water and ground-envelope assault | TRIAD-GATE |
 | `MRA-02` | Internal water and wet-zone assault | TRIAD-GATE |

@@ -54,10 +54,9 @@ flowchart LR
   end
   subgraph g_MAT["MAT"]
     direction TB
-    n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>READY</b>"]
-    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>BLOCKED</b>"]
-    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>BLOCKED</b>"]
-    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>BLOCKED</b>"]
+    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>READY</b>"]
+    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>READY</b>"]
+    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>READY</b>"]
     n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
@@ -134,9 +133,6 @@ flowchart LR
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
   n_STR_HOUSE --> n_STR_RECONCILE
-  n_MAT_AUDIT --> n_MAT_ENVELOPE
-  n_MAT_AUDIT --> n_MAT_SERVICES
-  n_MAT_AUDIT --> n_MAT_INTERIORS
   n_MAT_ENVELOPE --> n_MAT_COORDINATION
   n_MAT_SERVICES --> n_MAT_COORDINATION
   n_MAT_INTERIORS --> n_MAT_COORDINATION
@@ -217,10 +213,9 @@ flowchart LR
   class n_RWT_08 blocked;
   class n_STR_HOUSE ready;
   class n_STR_RECONCILE blocked;
-  class n_MAT_AUDIT ready;
-  class n_MAT_ENVELOPE blocked;
-  class n_MAT_SERVICES blocked;
-  class n_MAT_INTERIORS blocked;
+  class n_MAT_ENVELOPE ready;
+  class n_MAT_SERVICES ready;
+  class n_MAT_INTERIORS ready;
   class n_MAT_COORDINATION blocked;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
@@ -398,10 +393,10 @@ flowchart LR
   subgraph g_MAT["MAT"]
     direction TB
     n_MAT_00["MAT-00<br/>Establish whole-house material policy and coordinated rainwater rebrief<br/><b>DONE</b>"]
-    n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>READY</b>"]
-    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>BLOCKED</b>"]
-    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>BLOCKED</b>"]
-    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>BLOCKED</b>"]
+    n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>DONE</b>"]
+    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>READY</b>"]
+    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>READY</b>"]
+    n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>READY</b>"]
     n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
@@ -845,10 +840,10 @@ flowchart LR
   class n_STR_HOUSE ready;
   class n_STR_RECONCILE blocked;
   class n_MAT_00 done;
-  class n_MAT_AUDIT ready;
-  class n_MAT_ENVELOPE blocked;
-  class n_MAT_SERVICES blocked;
-  class n_MAT_INTERIORS blocked;
+  class n_MAT_AUDIT done;
+  class n_MAT_ENVELOPE ready;
+  class n_MAT_SERVICES ready;
+  class n_MAT_INTERIORS ready;
   class n_MAT_COORDINATION blocked;
   class n_MRA_00 done;
   class n_MRA_01 blocked;
