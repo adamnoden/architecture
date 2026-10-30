@@ -234,6 +234,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_GATEWAY["PCO-GATEWAY<br/>Expose canonical self-service leases to connector-only chats through a minimal issue gateway<br/><b>DONE</b>"]
     n_PCO_CRASH["PCO-CRASH<br/>Recover interrupted swarms and support connector-constrained chat execution<br/><b>DONE</b>"]
     n_PCO_COMMS["PCO-COMMS<br/>Introduce readable MVB communication discipline and scoped preflight observations<br/><b>DONE</b>"]
     n_PCO_MVB_REVIEW["PCO-MVB-REVIEW<br/>Assess external orchestration systems and version the MVB operating contract<br/><b>DONE</b>"]
@@ -412,6 +413,7 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_PCO_CRASH --> n_PCO_GATEWAY
   n_PCO_COMMS --> n_PCO_CRASH
   n_PCO_MVB_REVIEW --> n_PCO_COMMS
   n_PCO_MANUAL --> n_PCO_MVB_REVIEW
@@ -657,6 +659,7 @@ flowchart LR
   class n_CCR_STAIR done;
   class n_CCR_DRAINAGE done;
   class n_CCR_IDENTITY done;
+  class n_PCO_GATEWAY done;
   class n_PCO_CRASH done;
   class n_PCO_COMMS done;
   class n_PCO_MVB_REVIEW done;
