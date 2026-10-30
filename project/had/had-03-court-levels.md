@@ -8,6 +8,8 @@ reused as evidence here. This proposal separates the walking surface from the
 lower drained surface, then identifies the actual threshold and floor interfaces
 that must be designed before RWT can admit the route. The [A3 plan and section crop](studies/court-levels-proposal.svg) separates retained source geometry from these proposed interfaces.
 
+The [current first-failure and renewal gate](had-03-court-threshold-first-failure.md) tests the trial's actual sill, pan, jamb, fixing, floor and carrier interfaces. In particular it rejects the 5 mm nominal underside-to-water comparison as any kind of threshold pass. It retains the preferred step-free pan-led direction as unadopted pending a matched section and RWT hydraulic result.
+
 ## Located spatial choice
 
 Retain the source 3500 square court, x 4250–7750/y 4250–7750, and the paired
