@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 8,
-  "state": "released",
-  "leaseId": "5b2cdce2-d8ee-4a16-a3a2-565b3e316366",
+  "generation": 9,
+  "state": "claimed",
+  "leaseId": "5eb01e18-1537-4377-8ec2-2a32bed5be9b",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6524816900"
+    "label": "issue-comment-6529831185"
   },
-  "claimedAt": "2026-10-30T14:09:46.000Z",
-  "heartbeatAt": "2026-10-30T14:18:34.000Z",
-  "expiresAt": "2026-10-30T14:18:34.000Z",
-  "branch": "work/mvb-chat-6524816900",
+  "claimedAt": "2026-10-30T17:59:50.000Z",
+  "heartbeatAt": "2026-10-30T17:59:50.000Z",
+  "expiresAt": "2026-10-30T18:44:50.000Z",
+  "branch": "work/mvb-chat-6529831185",
   "predecessor": {
-    "leaseId": "9e2f5e0d-6f1d-4563-93dc-d38a5e79b780",
-    "generation": 7,
-    "branch": "work/mvb-chat-6524672516",
-    "pr": 1094,
+    "leaseId": "5b2cdce2-d8ee-4a16-a3a2-565b3e316366",
+    "generation": 8,
+    "branch": "work/mvb-chat-6524816900",
+    "pr": 1095,
     "checkpoint": {
-      "evidence": "PR #1094 on new recovery branch; source identical to prior CI-passed #1093; head 42be5042661474ebe274afcd3b3d61210259251a",
-      "next": "Await fresh exact-head CI, then canonical runner publication preflight and safe merge",
-      "blocker": "Preflight must run on GitHub runner because local terminal has no GitHub DNS"
+      "evidence": "PR #1095 head b05a2b4e7dc1eef85294b741efb30c553cd0e5a6; PE100 exterior renewal study completed, remains unadopted",
+      "next": "Observe fresh exact-head CI and run one-shot canonical publication preflight; merge then release",
+      "blocker": "Terminal lacks GitHub DNS; canonical preflight must run in GitHub Actions"
     }
   },
   "recoverySource": {
-    "leaseId": "9e2f5e0d-6f1d-4563-93dc-d38a5e79b780",
-    "generation": 7,
-    "branch": "work/mvb-chat-6524672516",
-    "pr": 1094,
+    "leaseId": "5b2cdce2-d8ee-4a16-a3a2-565b3e316366",
+    "generation": 8,
+    "branch": "work/mvb-chat-6524816900",
+    "pr": 1095,
     "checkpoint": {
-      "evidence": "PR #1094 on new recovery branch; source identical to prior CI-passed #1093; head 42be5042661474ebe274afcd3b3d61210259251a",
-      "next": "Await fresh exact-head CI, then canonical runner publication preflight and safe merge",
-      "blocker": "Preflight must run on GitHub runner because local terminal has no GitHub DNS"
+      "evidence": "PR #1095 head b05a2b4e7dc1eef85294b741efb30c553cd0e5a6; PE100 exterior renewal study completed, remains unadopted",
+      "next": "Observe fresh exact-head CI and run one-shot canonical publication preflight; merge then release",
+      "blocker": "Terminal lacks GitHub DNS; canonical preflight must run in GitHub Actions"
     }
-  },
-  "pr": 1095,
-  "checkpoint": {
-    "evidence": "PR #1095 head b05a2b4e7dc1eef85294b741efb30c553cd0e5a6; PE100 exterior renewal study completed, remains unadopted",
-    "next": "Observe fresh exact-head CI and run one-shot canonical publication preflight; merge then release",
-    "blocker": "Terminal lacks GitHub DNS; canonical preflight must run in GitHub Actions"
-  },
-  "releasedAt": "2026-10-30T14:18:34.000Z",
-  "releaseReason": "handoff"
+  }
 }
