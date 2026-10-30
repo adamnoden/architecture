@@ -2,7 +2,15 @@
 
 This file owns the **Minimum Viable Bureaucracy operating-contract version**. The [manual](README.md) is the current integrated explanation; executable sources and the [runbook](swarm-runbook.md) retain their existing authority.
 
-## Current: 1.3.0 — 30 October 2026
+## Current: 1.4.0 — 30 October 2026
+
+**Compatible regular-chat PR closeout and worker-topology clarification.** The three-command gateway's existing `renew` request now accepts an optional positive `pr` number. Before forwarding it to the canonical renew CLI, the gateway reads the actual open PR and verifies repository, main base, exact branch, `Work:` node and `Lease:` UUID/generation. A repeated command with unchanged lease/checkpoint/PR is reconciled rather than blindly replayed. No fourth command, lease schema change or new allocation authority.
+
+Independent regular chats, independent Work sessions and a coordinator overseeing multiple workers all use the same PCO/ACO protocol. Each executing worker owns its packet lease. Switching topology is a recovery/observation exercise, not an authority migration. The documented numbers of chats/workers are examples, not controls. Deterministic regression exercises simultaneous independent claims, expired and released work, inherited evidence and return to a coordinator.
+
+Compatibility: old `MVB/1` renew requests without `pr` still work; existing claims, mailbox branch, task graph and dispatcher ranking are unchanged. No new service, timer, supervisor, database or merge privilege. Rollback removes the optional PR-bound renewal capability without changing stored records. [Implementation result](../pco/mvb-barbell-modes-result.md) owns exact validation and remaining limits.
+
+## 1.3.0 — 30 October 2026
 
 **Additive connector-only command access.** A locked, owner-authenticated GitHub issue/comment workflow invokes the existing canonical CLI for exactly three bounded operations: `claim-next`, `renew`, `release`. Comment IDs provide transport correlation; all actual work eligibility and execution permission remain in PCO/ACO. Read-only briefing and PR integration remain on existing paths. No new task graph, service, supervisor, merge authority or credentials. The gateway is a transport, not an alternative scheduler or an assurance of automatic ChatGPT wakeup.
 
