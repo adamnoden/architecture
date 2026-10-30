@@ -1,22 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 5,
-  "state": "released",
-  "leaseId": "f408a295-c812-431f-a5c4-eaace939de52",
+  "generation": 6,
+  "state": "claimed",
+  "leaseId": "4fe6938b-652a-4723-977d-c0195b751a97",
   "holder": {
     "kind": "chatgpt",
-    "label": "recovery-sequential-20261030"
+    "label": "issue-comment-6535452701"
   },
-  "claimedAt": "2026-10-30T09:16:57.866Z",
-  "heartbeatAt": "2026-10-30T09:22:27.221Z",
-  "expiresAt": "2026-10-30T09:22:27.221Z",
-  "branch": "recovery/ias-1078-20261030",
-  "checkpoint": {
-    "evidence": "PR #1086 merged at fa27ee8b4f564858b46da25246811955a1499d6d; node remains planned.",
-    "next": "Continue actual IAS-03 product fit and assembly admission."
+  "claimedAt": "2026-10-30T23:12:07.000Z",
+  "heartbeatAt": "2026-10-30T23:12:07.000Z",
+  "expiresAt": "2026-10-30T23:57:07.000Z",
+  "branch": "work/mvb-chat-6535452701",
+  "predecessor": {
+    "leaseId": "f408a295-c812-431f-a5c4-eaace939de52",
+    "generation": 5,
+    "branch": "recovery/ias-1078-20261030",
+    "pr": 1086,
+    "checkpoint": {
+      "evidence": "PR #1086 merged at fa27ee8b4f564858b46da25246811955a1499d6d; node remains planned.",
+      "next": "Continue actual IAS-03 product fit and assembly admission."
+    }
   },
-  "pr": 1086,
-  "releaseReason": "handoff",
-  "releasedAt": "2026-10-30T09:22:27.221Z"
+  "recoverySource": {
+    "leaseId": "f408a295-c812-431f-a5c4-eaace939de52",
+    "generation": 5,
+    "branch": "recovery/ias-1078-20261030",
+    "pr": 1086,
+    "checkpoint": {
+      "evidence": "PR #1086 merged at fa27ee8b4f564858b46da25246811955a1499d6d; node remains planned.",
+      "next": "Continue actual IAS-03 product fit and assembly admission."
+    }
+  }
 }
