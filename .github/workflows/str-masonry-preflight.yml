@@ -1,0 +1,23 @@
+name: STR masonry publication preflight (temporary)
+on:
+  push:
+    branches: [work/str-masonry-20261030-a3f5f8b3]
+    paths: ['.github/workflows/str-masonry-preflight.yml']
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: work/str-masonry-20261030-a3f5f8b3
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Fresh canonical publication preflight on current branch
+        run: |
+          node --import tsx scripts/project-claims.ts merge-check STR-MASONRY --transport connector --lease-id a3f5f8b3-573e-4791-b3da-13ea6e526cf1 --generation 1 --branch work/str-masonry-20261030-a3f5f8b3 --head "$(git rev-parse HEAD)" --format text
