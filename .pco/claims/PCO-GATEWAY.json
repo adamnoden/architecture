@@ -9,12 +9,13 @@
     "label": "regular-chat-mvb-gateway-20261030"
   },
   "claimedAt": "2026-10-30T10:32:06.370Z",
-  "heartbeatAt": "2026-10-30T10:32:06.370Z",
-  "expiresAt": "2026-10-30T11:17:06.370Z",
+  "heartbeatAt": "2026-10-30T10:32:43.686Z",
+  "expiresAt": "2026-10-30T11:17:43.686Z",
   "branch": "work/pco-gateway-three-commands",
   "checkpoint": {
-    "evidence": "Owner-directed issue #1088; branch work/pco-gateway-three-commands; mailbox issue #1089 locked",
-    "next": "Exact-head CI, merge, native issue_comment test, then release"
+    "evidence": "PR #1090 head cfc33c2cdf7efcb0ff6183b003c5f4264d9f6048; issue #1088; locked mailbox #1089",
+    "next": "Run exact-head CI; merge; prove native issue_comment round trip"
   },
-  "note": "Exceptional first-registration bootstrap: PCO-GATEWAY registered on proposed branch; no generic dispatch while unknown live claim."
+  "note": "Exceptional first-registration bootstrap: PCO-GATEWAY registered on proposed branch; no generic dispatch while unknown live claim.",
+  "pr": 1090
 }
