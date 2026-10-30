@@ -259,6 +259,7 @@ const researchSidebar: DefaultTheme.SidebarItem[] = [
   group('Roof & rainwater', [
     page('Rainfall & hydraulic basis', '/docs/research/rainfall-and-hydraulic-basis'),
     page('Rainwater collection options', '/docs/research/rainwater-collection-options'),
+    page('Roof shedding & ground receivers', '/docs/research/roof-shedding-and-ground-receivers'),
     page('Rainwater conveyance options', '/docs/research/rainwater-conveyance-options'),
     page('Roof & rainwater materials', '/docs/research/roof-rainwater-material-compatibility'),
     page('Rainwater failure & exceedance', '/docs/research/rainwater-failure-and-exceedance')
