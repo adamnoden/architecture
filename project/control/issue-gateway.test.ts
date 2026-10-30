@@ -43,3 +43,20 @@ test('owner-only locked mailbox event and short expiry',()=>{
   ]) assert.throws(()=>assertGatewayEvent({...event('MVB/1 {"cmd":"claim-next"}'),...change},'adamnoden/architecture',at))
   assert.throws(()=>assertGatewayEvent(event('MVB/1 {"cmd":"claim-next"}'),'adamnoden/architecture',new Date(at.getTime()+11*60000)))
 })
+
+
+test('renew accepts optional positive PR number without adding a command',()=>{
+ const command=parseGatewayCommand('MVB/1 '+JSON.stringify({
+   cmd:'renew',node:'PCO-GATEWAY',leaseId:id,generation:2,pr:1090,
+   checkpoint:{evidence:'PR #1090 current head',next:'Merge after CI'}}))
+ assert.equal(command.cmd,'renew')
+ if(command.cmd==='renew') assert.equal(command.pr,1090)
+ for(const pr of [0,-3,1.5,'1090',Number.MAX_SAFE_INTEGER+1,null]){
+   assert.throws(()=>parseGatewayCommand('MVB/1 '+JSON.stringify({
+     cmd:'renew',node:'PCO-GATEWAY',leaseId:id,generation:2,pr
+   })))
+ }
+ assert.throws(()=>parseGatewayCommand('MVB/1 '+JSON.stringify({
+   cmd:'release',node:'PCO-GATEWAY',leaseId:id,generation:2,reason:'abandoned',pr:1090
+ })))
+})
