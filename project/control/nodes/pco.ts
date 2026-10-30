@@ -4,7 +4,7 @@ export const pcoNodes = defineNodes([
   {
     id: 'PCO-GATEWAY', owners: ['PCO'],
     title: 'Expose canonical self-service leases to connector-only chats through a minimal issue gateway',
-    dependencies: ['PCO-CRASH'], lifecycle: 'planned',
+    dependencies: ['PCO-CRASH'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed, security-sensitive privileged workflow change (#1088).' },
     closeoutEvidence: ['project/pco/mvb-issue-gateway-result.md']
   },
