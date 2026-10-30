@@ -6,6 +6,7 @@ import {
   createClaimRecord,
   forceTakeover,
   leaseTemporalState,
+  lastRecoverableEvidence,
   nextNormalAcquisition,
   parseClaimRecord,
   serializeClaimRecord,
@@ -164,7 +165,7 @@ export async function acquireClaimFromStore(
   while (true) {
     const before = await store.read(nodeId)
     if (options.requireRecoveryEvidence && node.lifecycle === 'started' &&
-      !(before.stored?.record.branch && before.stored.record.checkpoint?.evidence && before.stored.record.checkpoint?.next)) {
+      !(before.stored && lastRecoverableEvidence(before.stored.record))) {
       throw new ClaimConflictError(`${nodeId}: started-node recovery evidence changed or is missing; re-dispatch`)
     }
     const next = nextNormalAcquisition(before.stored?.record ?? null, {
