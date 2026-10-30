@@ -223,7 +223,7 @@ export const architectureNodes = defineNodes([
     id: 'TRIAD-GATE',
     owners: ['IAS', 'OAS', 'HAD'],
     title: 'Shared selected-house integration gate',
-    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL', 'ROF-RWT-GATE', 'BCR-PREFLIGHT'],
+    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL', 'ROF-RWT-GATE', 'BCR-PREFLIGHT', 'MAT-COORDINATION'],
     lifecycle: 'planned',
     aliases: ['IAS/OAS/HAD Wave 4'],
     agentDispatch: { mode: 'self-service' },

@@ -1,11 +1,13 @@
 # RWT — Rainwater Systems Architecture
 
 **Issue:** #992  
-**State:** RWT-00/01/02/03/04/05 complete; access/transition and network synthesis remain
+**State:** RWT-00/01/02/03/04/05 complete at their original research scope; access/transition, the owner-directed successor questions and network synthesis remain.
+
+**30 October owner direction:** the [rainwater elegance and failure-tolerance brief](rainwater-elegance-brief.md) now controls development: free shedding into designed ground receivers where demonstrably forgiving; copper collection where control is needed; English-hedge and brass-channel studies; genuinely independent blockage routes. The [whole-house material policy](../../docs/reference-house/material-policy.md) includes hidden components. Earlier PVC/PE preferences are superseded, not erased. RWT-SHED, RWT-METALS and RWT-ROBUSTNESS feed RWT-07 through the canonical graph.
 
 **Failure result:** [RWT-05 blockage, failure and exceedance](rwt-05-blockage-failure-exceedance.md); comparative attack complete, with safe court escape still unproved. RWT-06/07 must resolve or reject the candidate before the joint gate.
 
-**Materials result:** [RWT-04 materials, joints and shared compatibility](rwt-04-materials-joints-compatibility.md); candidate interfaces remain conditional, with no material selection.
+**Materials result:** [RWT-04 materials, joints and shared compatibility](rwt-04-materials-joints-compatibility.md); candidate interfaces remain conditional, with no material selection. RWT-METALS reconciles that same compatibility record against the new material brief.
 
 **Current results:** [RWT-02 collection architecture](rwt-02-collection-architecture.md), [RWT-03 conveyance topology](rwt-03-conveyance-topology.md) and [RWT-01 rainfall and hydraulic basis](rwt-01-rainfall-and-hydraulic-basis.md); [RWT-00 baseline and interfaces](rwt-00-baseline-and-interfaces.md) remains the governing seam inventory.
 
@@ -30,6 +32,7 @@ RWT owns building-intrinsic rainwater collection and conveyance:
 - roof catchment interfaces supplied by ROF;
 - open-to-sky courtyard surface collection because the courtyard is intrinsic Reference House architecture;
 - eaves gutters, valley/box gutters where selected, outlets, hoppers, scuppers and overflows;
+- free-shedding capture and ground-receiver interfaces, coordinated with ROF/HAD and the actual site handoff;
 - downpipes, offsets, branches, bends, junctions, supports and accessible demounting logic;
 - visible emergency/exceedance routes;
 - building-side gullies/inspection transitions only as needed to define the site boundary;
@@ -37,7 +40,7 @@ RWT owns building-intrinsic rainwater collection and conveyance:
 - cleaning, rodding, replacement and access;
 - Reference House network selection jointly reconciled with ROF and HAD.
 
-RWT ends at a stable **`SITE-WATER-HANDOFF`**. It does not select a real sewer, soakaway, infiltration rate, attenuation volume, SuDS arrangement, groundwater response or drainage-authority route. Those are DPL/real-project matters.
+RWT ends at a stable **`SITE-WATER-HANDOFF`**. It does not select a real sewer, soakaway, infiltration rate, attenuation volume, SuDS arrangement, groundwater response or drainage-authority route. Those are DPL/real-project matters. Ground collection does not silently move that boundary or presume infiltration beside foundations.
 
 RWT also does not own roof covering/weathering, opening/threshold assembly design, foul drainage, whole-house moisture assurance, architecture independent of system constraints, delivery acceptance or drawing invention.
 
@@ -53,7 +56,7 @@ and separately:
 
 The system should prefer gravity, access, visible overflow and local replaceability over hidden complexity or sensor dependence.
 
-Do not minimise pipe/outlet count mechanically. Fewer components can increase coupling and consequence. More outlets can increase maintenance and interfaces. Preserve the trade-off explicitly.
+Do not minimise pipe/outlet count mechanically. Fewer components can increase coupling and consequence. More outlets can increase maintenance and interfaces. Preserve the trade-off explicitly. Where redundancy is claimed, show the surviving full-flow path with either primary element blocked, including gutter falls and receiving-water constraints; a pair sharing the blocked throat is not independent.
 
 ## Programme
 
@@ -124,7 +127,7 @@ Do not trade fault containment/access away merely to reduce downpipe count.
 
 ### RWT-04 — materials, joints and compatibility
 
-Compare realistic material families such as cast iron, copper, zinc, aluminium, stainless steel and suitable polymeric systems at project-relevant scope.
+The completed comparison included cast iron, copper, zinc, aluminium, stainless steel and polymeric systems at its original research scope. That historical inclusion does not approve polymers under the subsequent owner policy; RWT-METALS now owns material re-selection and compatibility reconciliation.
 
 Record:
 
@@ -173,7 +176,19 @@ Resolve:
 - wall-base/splash interfaces;
 - one explicit `SITE-WATER-HANDOFF` containing only facts the downstream site problem legitimately needs.
 
-Do not cross the handoff by inventing real-site drainage facts.
+Do not cross the handoff by inventing real-site drainage facts. The old plastic-carrier comparisons remain dated evidence of geometry and failure cases, not permitted defaults for continued detailing.
+
+### RWT-SHED — free shedding and planted ground receivers
+
+After MAT-00, RWT-01 and ROF-02, develop the condition-by-condition comparisons specified in the [new brief](rainwater-elegance-brief.md): catchment flow, eave detachment/wind/splash evidence, receiving section, independent no-plant performance, access, foundations and safe overflow. Compare each eligible edge against controlled copper collection. Identify actual mock-up/evidence needs; do not adopt a safe overhang from a ballistic toy model or generic hedge interception.
+
+### RWT-METALS — copper, brass and non-plastic concealed systems
+
+After MAT-00 and RWT-04, develop complete copper collection and brass-channel candidates, with justified alternatives and hidden routes included. Reconcile joint/seal/coating constituents, movement, support, material compatibility including runoff, maintenance and renewal. Reuse the existing shared compatibility record. A metal tube with plastic sleeves/spacers is not a completed response.
+
+### RWT-ROBUSTNESS — independent paths and degraded operation
+
+After RWT-SHED, RWT-METALS and RWT-05, compare full-duty surviving paths under blockage, accessible capacity/freeboard, common debris/frost/backwater and passive final spill. Use actual candidate elevation ledgers and downstream topology. A second outlet must have a reachable and independent path; a clean-system capacity result cannot prove degraded-operation safety.
 
 ### RWT-07 — network synthesis and Reference House candidates
 
@@ -181,7 +196,7 @@ Combine:
 
 `collection × conveyance × materials/joints × failure routes × access`.
 
-Produce a deliberately small candidate set. Selection remains provisional until the shared ROF-RWT-GATE reconciles it against actual roof topology and HAD architecture.
+Consume the three successor results above as well as the original prerequisites and RWT-06. Produce a deliberately small candidate set. Selection remains provisional until the shared ROF-RWT-GATE reconciles it against actual roof topology and HAD architecture.
 
 ### ROF-RWT-GATE — Reference House roof/water reconciliation
 
@@ -197,7 +212,7 @@ RWT must prove:
 - cleaning, rodding and replacement are plausible;
 - downstream site dependency is a handoff, not a guessed solution.
 
-Only then may the roof/water architecture enter TRIAD-GATE as part of the coordinated house.
+Only then may the roof/water architecture enter TRIAD-GATE as part of the coordinated house. MAT-COORDINATION is a separate material-policy input to TRIAD-GATE; a drainage pass does not waive it.
 
 ### RWT-08 — formalisation / regression admission
 
@@ -207,37 +222,13 @@ Do not create a generic hydraulic solver, false precision or pseudo-certificatio
 
 ## Parallel topology
 
-```text
-BSR-ROOT
-   │
-   └──────────────► RWT-00
-                      │
-                   RWT-01
-             ┌────────┼────────┐
-             ▼        ▼        ▼
-          RWT-02   RWT-03   RWT-04
-             └────────┼────────┘
-                      ▼
-                   RWT-05
-                      ▼
-                   RWT-06
-                      ▼
-                   RWT-07
-                      │
-         ROF-07 ──────┼──── HAD-03
-                      ▼
-                ROF-RWT-GATE
-                      │
-                      ▼
-                  TRIAD-GATE
-```
-
-RWT-02/03/04 are intentionally parallel after the hydraulic/interface basis. They remain packets inside one workstream.
+The executable graph is [the canonical node shard](../control/nodes/roof-water.ts); the [generated dependency map](../control/graph.md) is its navigable projection. RWT-02/03/04 were intentionally parallel after the hydraulic/interface basis. Under the successor brief, RWT-SHED and RWT-METALS can start independently after their completed prerequisites; both feed RWT-ROBUSTNESS and RWT-07. RWT-06 remains unfinished. The shared roof/water gate still precedes selected-house integration. Do not maintain an additional hand-edited scheduling diagram here.
 
 ## Interfaces
 
+- **MAT** owns the whole-house material requirement and explicit exception procedure, not a second rainwater assembly specification.
 - **ROF** supplies actual roof topology and collection interfaces; RWT can force topology reconsideration when drainage consequences are materially poor.
-- **HAD** owns visible expression. It cannot aesthetically erase a necessary overflow or access route.
+- **HAD** owns visible expression and the hedge/receiver relationship to occupation. It cannot aesthetically erase a necessary overflow or access route.
 - **OAS** owns doors/windows/threshold assemblies; RWT owns adjacent surface-water consequence and can request an explicit rewind.
 - **MRA** owns adversarial moisture assurance after selection, not initial RWT design. The [MRA-00 roof/rainwater questions](../mra/mra-00-moisture-constitution-threat-model.md#11a-rofrwt-assurance-questions) define the later evidence burden without selecting this system.
 - **DPL** owns real-site drainage beyond `SITE-WATER-HANDOFF`.
@@ -256,12 +247,12 @@ RWT is not site-drainage/SuDS design, foul drainage design, a second ROF, a seco
 RWT closes only when:
 
 - every intrinsic Reference House rain catchment has a selected primary path;
-- high-consequence blockage/exceedance routes are explicit;
+- high-consequence blockage/exceedance routes are explicit and independently effective for their named failures;
 - access, cleaning and replacement are designed;
-- material compatibility is controlled;
+- material compatibility is controlled under the owner policy;
 - the site boundary is a precise handoff rather than invented site evidence;
 - the selected network has passed ROF-RWT-GATE with roof and architecture;
-- unresolved technical claims have named downstream owners.
+- unresolved technical claims have named downstream owners without concealing a material selection or safety dependency.
 
 Closure establishes a controlled building-side rainwater-system proposition, not real-site drainage acceptance, hydraulic certification, statutory approval or workmanship proof.
 

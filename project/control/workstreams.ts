@@ -53,6 +53,12 @@ const workstreamRegistry = [
   },
   { code: 'ILA', title: 'ILA workstream' },
   {
+    code: 'MAT',
+    title: 'Material Integrity and Synthetic-Polymer Avoidance',
+    issue: 1100,
+    programme: 'project/mat/material-integrity-programme.md'
+  },
+  {
     code: 'MRA',
     title: 'Moisture Resilience Assurance',
     issue: 959,

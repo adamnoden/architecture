@@ -25,6 +25,14 @@ Writing and design remain reciprocal: writing exposes muddled design; design exp
 
 The accepted envelope is a strong project choice and a plot-selection criterion. It is not evidence that the house fits an unknown site. Retain dated studies as evidence; do not silently promote their assumptions or old technical proofs to the commissioned design.
 
+## Material and rainwater direction — 30 October 2026
+
+The owner requires the strongest practicable avoidance of plastic across the **whole installed house**, including concealed parts and especially visible/touchable surfaces. This is a binding design constraint, not an optional finish preference. Concealment, industry custom and a metal exterior do not exempt hidden constituents. The [whole-house material policy](../docs/reference-house/material-policy.md) owns the exact scope, evidence and explicit owner-approved exception procedure. No exception is approved by this charter, and no safety/performance duty may be omitted to produce a nominally plastic-free result.
+
+Prefer simple, forgiving roof shedding into designed ground receivers where the full geometry and failure case support it; where controlled collection is needed, develop copper rainwater goods. Explore English hedges and genuine brass channels as integrated architecture, without depending on living foliage to prevent water damage. Provide demonstrably independent backup paths and safe overflow, not merely an extra pipe sharing the same failure. The [rainwater rebrief](rwt/rainwater-elegance-brief.md) owns the design questions and acceptance boundaries.
+
+The [MAT programme](mat/material-integrity-programme.md) and existing RWT workstream carry this direction into the canonical execution graph. Earlier plastic carrier and polymer-dependent assembly studies remain historical evidence; their material preferences do not override the owner's new requirement. The actual assembly redesign and hydraulic proof still have to be earned.
+
 ## Working limits
 
 - Establish the brief and cost questions early. No budget, household detail, completion date or procurement decision may be invented from this objective.
