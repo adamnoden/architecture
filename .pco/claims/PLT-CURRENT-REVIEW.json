@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "PLT-CURRENT-REVIEW",
   "generation": 4,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "5cb8826f-8856-412e-9038-687251f40ae5",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-30T00:15:33.760Z",
-  "heartbeatAt": "2026-10-30T00:47:39.676Z",
-  "expiresAt": "2026-10-30T01:32:39.676Z",
+  "heartbeatAt": "2026-10-30T00:52:54.000Z",
+  "expiresAt": "2026-10-30T00:52:54.000Z",
   "checkpoint": {
     "evidence": "Final common1077 b6f96d5d preserves reviewed sources; actual B5 orphan separator repaired and inspected334-page ledger reconciled; root reviewed failure-artifact retention and exact owning evidence.",
     "next": "Wait final exact-head workflows and EDA continuity check, then each-holder fresh canonical preflight, expected-head merge, own PLT release and issue422 closeout."
   },
   "branch": "work/zerg-plt-pub-argument",
-  "pr": 1077
+  "pr": 1077,
+  "releasedAt": "2026-10-30T00:52:54.000Z",
+  "releaseReason": "completed"
 }
