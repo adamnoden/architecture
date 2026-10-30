@@ -9,13 +9,13 @@
     "label": "zerg-worker-5"
   },
   "claimedAt": "2026-10-30T00:14:22.881Z",
-  "heartbeatAt": "2026-10-30T00:22:24.167Z",
-  "expiresAt": "2026-10-30T01:07:24.167Z",
-  "branch": "work/zerg-eda-argument",
-  "pr": 1075,
+  "heartbeatAt": "2026-10-30T00:28:47.553Z",
+  "expiresAt": "2026-10-30T01:13:47.553Z",
+  "branch": "work/zerg-plt-pub-argument",
+  "pr": 1077,
   "checkpoint": {
-    "evidence": "Reviewed frozen source c96d2d60 / PR1075 corrects unearned current-house claims and records primary-lineage/intervention argument; local checks pass.",
-    "next": "Preserve source parent in common integration, inspect exact-head typography artifact, then full CI and fresh merge-check before serial merge.",
-    "blocker": "No substantive blocker. Await exact integration CI and rendered page inspection; no final print or house acceptance."
+    "evidence": "Frozen reviewed EDA source c96d2d60 is preserved in common1077 b8811119; manuscript and result unchanged, shared programme reconciled with1073.",
+    "next": "Inspect exact common-head typography A4/B5 affected pages, require full CI, then own fresh merge-check and serial expected-head merge.",
+    "blocker": "Awaiting exact-head PDF evidence; no architectural or physical acceptance implied."
   }
 }
