@@ -9,8 +9,8 @@
     "label": "issue-comment-6532658645"
   },
   "claimedAt": "2026-10-30T20:21:07.000Z",
-  "heartbeatAt": "2026-10-30T20:21:07.000Z",
-  "expiresAt": "2026-10-30T21:06:07.000Z",
+  "heartbeatAt": "2026-10-30T20:33:52.000Z",
+  "expiresAt": "2026-10-30T21:18:52.000Z",
   "branch": "work/mvb-chat-6532658645",
   "predecessor": {
     "leaseId": "477705b6-8a6c-4e79-afc7-fb021b6c46b2",
@@ -33,5 +33,10 @@
       "next": "Confirm or falsify the eight-ring solid-wall PVC candidate: actual stiffness, ring retention, independently supported couplings and pressure-qualified court seal",
       "blocker": "Published comparison is not installed compatibility, structural, hydraulic, threshold or site acceptance; RWT-06 remains planned"
     }
+  },
+  "checkpoint": {
+    "evidence": "Branch work/mvb-chat-6532658645 contains binding material policy, researched rainwater rebrief and MAT registration; tracking #1100",
+    "next": "Finish graph and owning-source reconciliation, then exact-head CI and canonical two-lease preflight",
+    "blocker": "Policy/programme scope only; actual product, free-shed and hydraulic design remain follow-on work"
   }
 }
