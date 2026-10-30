@@ -23,7 +23,6 @@ flowchart LR
   subgraph g_SHARED["Shared integration gates"]
     direction TB
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
-    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>READY</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
     n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>READY</b>"]
   end
@@ -125,10 +124,8 @@ flowchart LR
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
-  n_RWT_SHED --> n_RWT_ROBUSTNESS
   n_RWT_METALS --> n_RWT_ROBUSTNESS
   n_RWT_06 --> n_RWT_07
-  n_RWT_SHED --> n_RWT_07
   n_RWT_METALS --> n_RWT_07
   n_RWT_ROBUSTNESS --> n_RWT_07
   n_RWT_07 --> n_ROF_RWT_GATE
@@ -212,7 +209,6 @@ flowchart LR
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_TECHNICAL blocked;
   class n_RWT_06 ready;
-  class n_RWT_SHED ready;
   class n_RWT_METALS ready;
   class n_RWT_ROBUSTNESS blocked;
   class n_RWT_07 blocked;
@@ -342,7 +338,7 @@ flowchart LR
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>DONE</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
-    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>READY</b>"]
+    n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>DONE</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
     n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>READY</b>"]
   end
@@ -836,7 +832,7 @@ flowchart LR
   class n_RWT_04 done;
   class n_RWT_05 done;
   class n_RWT_06 ready;
-  class n_RWT_SHED ready;
+  class n_RWT_SHED done;
   class n_RWT_METALS ready;
   class n_RWT_ROBUSTNESS blocked;
   class n_RWT_07 blocked;

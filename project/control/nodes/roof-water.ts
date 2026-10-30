@@ -148,9 +148,15 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT', 'ROF', 'HAD'],
     title: 'Develop free-shedding edges and planted ground-receiver comparisons',
     dependencies: ['MAT-00', 'RWT-01', 'ROF-02'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: [
+      'docs/research/roof-shedding-and-ground-receivers.md',
+      'project/rwt/rwt-shed-result.md',
+      'project/rwt/studies/free-shedding.ts',
+      'project/rwt/studies/free-shedding.json',
+      'project/rwt/studies/free-shedding.svg'
+    ]
   },
   {
     id: 'RWT-METALS',
