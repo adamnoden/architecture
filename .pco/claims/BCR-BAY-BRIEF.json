@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "BCR-BAY-BRIEF",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c6d8b368-143e-40d5-94ec-c3f528932e2e",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rush-worker-1"
   },
   "claimedAt": "2026-10-29T23:34:15.371Z",
-  "heartbeatAt": "2026-10-30T00:01:03.634Z",
-  "expiresAt": "2026-10-30T00:46:03.634Z",
+  "heartbeatAt": "2026-10-30T00:12:59.851Z",
+  "expiresAt": "2026-10-30T00:12:59.851Z",
   "checkpoint": {
     "evidence": "Common1069 exact3d4e86fb preserves BAY5c617f93 DELcf6f036c PCO5948c854 on accepted d419d4b7. Eighteen-file tree verified; final type repo sanitation routes dataplate95control pass, targeted reviews pass.",
     "next": "Verify all3bindings, mark common ready and require full exact-head CI, fresh per-lease merge-checks and expected-head merge; own issue944 journal release completed and branch closeout."
   },
   "branch": "work/zerg-bay-delivery-applicability",
-  "pr": 1069
+  "pr": 1069,
+  "releasedAt": "2026-10-30T00:12:59.851Z",
+  "releaseReason": "completed"
 }
