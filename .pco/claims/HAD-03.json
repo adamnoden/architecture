@@ -9,8 +9,8 @@
     "label": "swarm-782cae-root-rwt"
   },
   "claimedAt": "2026-10-31T17:16:15.611Z",
-  "heartbeatAt": "2026-10-31T17:34:58.182Z",
-  "expiresAt": "2026-10-31T18:19:58.182Z",
+  "heartbeatAt": "2026-10-31T17:45:13.548Z",
+  "expiresAt": "2026-10-31T18:30:13.548Z",
   "branch": "work/swarm-782cae-had-review",
   "predecessor": {
     "leaseId": "3c0342c6-a6c9-4683-b892-2f238354cfb3",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1159 at b68dd4930d826d6ae7c087e7b77e5b03367db162 develops exposed inside slider pull, full hall/close/approach/reopen proxy sequence and located guide. Pinned inputs, adverse controls, continuous bounds, independent geometry and rendered review pass.",
-    "next": "Complete result review, exact-head full CI and fresh canonical preflight; then merge, record limits and release.",
-    "blocker": "HAD-03 remains planned. 638 opening, 650 reach sensitivity and 5 mm basin reserve do not prove installed hardware, material admission, actual privacy or human use."
+    "evidence": "PR #1159 refreshed to current main at 8c94c444a515db6db88278de8897914827be4d3e, tree d0e1764f5fc62f7bec43ab80ce1927885a35d83b. Independent geometry/source/drawing reviews and pinned/adverse checks pass. Earlier exact-head full CI passed; current integrated-head run 41225843519 is in progress.",
+    "next": "Require successful integrated-head full CI, then fresh canonical preflight and expected-head merge. Broader HAD continuation is being assessed read-only; all other self-service nodes were occupied at 17:43:11.",
+    "blocker": "HAD-03 remains planned. Actual hardware and support sections, material disposition, privacy, operation and physical use are not established by the geometric proxy sequence."
   },
   "pr": 1159
 }
