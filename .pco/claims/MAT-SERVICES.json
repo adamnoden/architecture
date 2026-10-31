@@ -9,12 +9,18 @@
     "label": "swarm-resume-interiors-983b7ee"
   },
   "claimedAt": "2026-10-31T09:10:38.085Z",
-  "heartbeatAt": "2026-10-31T09:10:38.085Z",
-  "expiresAt": "2026-10-31T09:55:38.085Z",
+  "heartbeatAt": "2026-10-31T09:18:11.005Z",
+  "expiresAt": "2026-10-31T10:03:11.005Z",
   "branch": "work/swarm-resume-interiors-20261031",
   "predecessor": {
     "leaseId": "6ffa2193-9eaf-4029-9db8-b5e646c1438c",
     "generation": 1,
     "branch": "work/swarm-root-mat-services-20261030"
+  },
+  "pr": 1125,
+  "checkpoint": {
+    "evidence": "PR #1125 at f955db535028f9420ec0578d8d1d29f2735cb87f, tree 1ce6c2dff4b5bf72bcb4c722ab7a467aed935387; recovers #1116 unchanged after main 178c4381; repository/publication checks and 54-row guard passed; remote tree matched.",
+    "next": "Observe full exact-head CI; fresh canonical preflight; root merges expected head; retain MAT-SERVICES planned.",
+    "blocker": "Full exact-head CI pending."
   }
 }
