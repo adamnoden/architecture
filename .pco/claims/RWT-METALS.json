@@ -1,43 +1,38 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 12,
-  "state": "released",
-  "leaseId": "45fa55f9-1e07-4d40-b771-15826efeaf76",
+  "generation": 13,
+  "state": "claimed",
+  "leaseId": "516a1970-2115-4092-bea7-825005c6900a",
   "holder": {
     "kind": "chatgpt",
-    "label": "services-recovery-next-20261031"
+    "label": "swarm-782cae-rwt-worker"
   },
-  "claimedAt": "2026-10-31T17:53:34.129Z",
-  "heartbeatAt": "2026-10-31T18:19:48.864Z",
-  "expiresAt": "2026-10-31T18:19:48.864Z",
-  "checkpoint": {
-    "evidence": "PR1165 merged at 76addac4dfcb64d54ce6a794b07d012de7349435. Accepted tree 25f1c6c0f46afde10bc510305694d3c4eaec0f3d exactly equals the validated head9eb985832ea9fcbb0e297d3e4eeda3036c51410a tree. Full CI41228323275 passed; fresh canonical preflight passed18:17:14.811Z against main7f747d98 and live generation12. Native verification confirms all three reviewed owner blobs, remote source eaa5165f9a368435355eeb18fe58e238d53d3faf and tested-head ancestry. Remote feature ref is absent. The bounded copper sheet-seam fabrication, cleanup, repair and brass recipe-transfer result is integrated; RWT-METALS remains planned.",
-    "next": "Release for handoff after verified integration. Next candidate qualification requires the actual pan or trough seam and section, current supplied formulation and retained constituents after demonstrated cleaning, matched joining/repair process, support and movement, water/backwater duty and complete access. Preserve the distinction between removed process aids and installed residues, and between copper and brass joining instructions.",
-    "blocker": "No complete installed pan, brass wet-body or hidden carrier assembly is admitted by this bounded result; actual construction and process qualification remain design duties rather than publication failures."
-  },
-  "branch": "work/swarm-recovery-1753-20261031",
+  "claimedAt": "2026-10-31T19:58:31.071Z",
+  "heartbeatAt": "2026-10-31T19:58:31.071Z",
+  "expiresAt": "2026-10-31T20:43:31.071Z",
+  "branch": "work/swarm-782cae-rwt-1957",
+  "note": "Owner-directed RWT-METALS, 31 October 2026: outer-west copper receiver cross-seam bearing, thermal movement and first release. Inspect accepted PR1165 evidence. Worker live_triage executes; root services connector transport and integration.",
   "predecessor": {
-    "leaseId": "36194ab6-602a-45d9-8d36-5aec601235dd",
-    "generation": 11,
-    "branch": "work/swarm-court-access-20261031",
-    "pr": 1160,
+    "leaseId": "45fa55f9-1e07-4d40-b771-15826efeaf76",
+    "generation": 12,
+    "branch": "work/swarm-recovery-1753-20261031",
+    "pr": 1165,
     "checkpoint": {
-      "evidence": "PR1160 merged as08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Tested PR head6cf4e839953eb79adf89af10cb0575db3f0a4968/treea688337692d8f327a416d5ee114c7b71690b978a passed PR CI. Accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b differs because first parentab36b0bd added seven disjoint IAS/MAT files after preflight. Exact accepted-tree push run41225736909 now passed canonical check, both PDFs and metadata in build124610030013; deploy124610418674 passed. Native verification confirms all four reviewed navigation blobs unchanged, all five accepted incoming fragments valid, and source5ef0c8a438362136ea279c7bb37b07bfaf39145a plus tested head are ancestors. No equal-tree or lifecycle-completion claim.",
-      "next": "Navigation repair is integrated and independently checked. Release handoff; RWT-METALS remains planned for actual pan/outlet and carrier construction, supplied consumables, joint duty, support and complete repair access. Preserve the accepted primary-source limits and use coordinated fresh canonical dispatch before new work."
+      "evidence": "PR1165 merged at 76addac4dfcb64d54ce6a794b07d012de7349435. Accepted tree 25f1c6c0f46afde10bc510305694d3c4eaec0f3d exactly equals the validated head9eb985832ea9fcbb0e297d3e4eeda3036c51410a tree. Full CI41228323275 passed; fresh canonical preflight passed18:17:14.811Z against main7f747d98 and live generation12. Native verification confirms all three reviewed owner blobs, remote source eaa5165f9a368435355eeb18fe58e238d53d3faf and tested-head ancestry. Remote feature ref is absent. The bounded copper sheet-seam fabrication, cleanup, repair and brass recipe-transfer result is integrated; RWT-METALS remains planned.",
+      "next": "Release for handoff after verified integration. Next candidate qualification requires the actual pan or trough seam and section, current supplied formulation and retained constituents after demonstrated cleaning, matched joining/repair process, support and movement, water/backwater duty and complete access. Preserve the distinction between removed process aids and installed residues, and between copper and brass joining instructions.",
+      "blocker": "No complete installed pan, brass wet-body or hidden carrier assembly is admitted by this bounded result; actual construction and process qualification remain design duties rather than publication failures."
     }
   },
   "recoverySource": {
-    "leaseId": "36194ab6-602a-45d9-8d36-5aec601235dd",
-    "generation": 11,
-    "branch": "work/swarm-court-access-20261031",
-    "pr": 1160,
+    "leaseId": "45fa55f9-1e07-4d40-b771-15826efeaf76",
+    "generation": 12,
+    "branch": "work/swarm-recovery-1753-20261031",
+    "pr": 1165,
     "checkpoint": {
-      "evidence": "PR1160 merged as08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Tested PR head6cf4e839953eb79adf89af10cb0575db3f0a4968/treea688337692d8f327a416d5ee114c7b71690b978a passed PR CI. Accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b differs because first parentab36b0bd added seven disjoint IAS/MAT files after preflight. Exact accepted-tree push run41225736909 now passed canonical check, both PDFs and metadata in build124610030013; deploy124610418674 passed. Native verification confirms all four reviewed navigation blobs unchanged, all five accepted incoming fragments valid, and source5ef0c8a438362136ea279c7bb37b07bfaf39145a plus tested head are ancestors. No equal-tree or lifecycle-completion claim.",
-      "next": "Navigation repair is integrated and independently checked. Release handoff; RWT-METALS remains planned for actual pan/outlet and carrier construction, supplied consumables, joint duty, support and complete repair access. Preserve the accepted primary-source limits and use coordinated fresh canonical dispatch before new work."
+      "evidence": "PR1165 merged at 76addac4dfcb64d54ce6a794b07d012de7349435. Accepted tree 25f1c6c0f46afde10bc510305694d3c4eaec0f3d exactly equals the validated head9eb985832ea9fcbb0e297d3e4eeda3036c51410a tree. Full CI41228323275 passed; fresh canonical preflight passed18:17:14.811Z against main7f747d98 and live generation12. Native verification confirms all three reviewed owner blobs, remote source eaa5165f9a368435355eeb18fe58e238d53d3faf and tested-head ancestry. Remote feature ref is absent. The bounded copper sheet-seam fabrication, cleanup, repair and brass recipe-transfer result is integrated; RWT-METALS remains planned.",
+      "next": "Release for handoff after verified integration. Next candidate qualification requires the actual pan or trough seam and section, current supplied formulation and retained constituents after demonstrated cleaning, matched joining/repair process, support and movement, water/backwater duty and complete access. Preserve the distinction between removed process aids and installed residues, and between copper and brass joining instructions.",
+      "blocker": "No complete installed pan, brass wet-body or hidden carrier assembly is admitted by this bounded result; actual construction and process qualification remain design duties rather than publication failures."
     }
-  },
-  "pr": 1165,
-  "releasedAt": "2026-10-31T18:19:48.864Z",
-  "releaseReason": "handoff"
+  }
 }
