@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "EPR-DESK-REVIEW",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a9f63e1c-4799-4006-9ed1-580764bce334",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-epr-internal-20261031"
   },
   "claimedAt": "2026-10-31T20:18:18.662Z",
-  "heartbeatAt": "2026-10-31T20:37:37.429Z",
-  "expiresAt": "2026-10-31T22:07:37.429Z",
+  "heartbeatAt": "2026-10-31T20:41:41.024Z",
+  "expiresAt": "2026-10-31T20:41:41.024Z",
   "branch": "work/swarm-internal-technical-review-20261031",
   "checkpoint": {
     "evidence": "Reviewed six-file EPR investigation published in PR1183 at2aa15ddd39f99ac165d0fd29eb91b671c61fd3f0 with exact native tree4620a09a76fb2a2d23b58a895518ca4da7143829; sourceb71d9031c61ee70e46da7bee4e953383f045b805 and accepted base1378 preserved in provenance. Whole33-answer and focused fire/services internal challenges, arithmetic, source applicability, control/publication and docs checks passed. Only EPR-DESK-REVIEW lifecycle changes; no geometry, material exception, physical result or external EPR completion.",
     "next": "Verify actual remote head and six blobs; require full canonical CI on that exact head, reconcile any moved main, run fresh canonical preflight, expected-head merge and accepted-tree/lifecycle checks, then record completion and release/clean branch."
   },
-  "pr": 1183
+  "pr": 1183,
+  "releasedAt": "2026-10-31T20:41:41.024Z",
+  "releaseReason": "completed"
 }
