@@ -1,0 +1,89 @@
+{
+  "authority": "Necessary screens for the stated conditional arrangements only. No actual leak collector, joint location, dry access, material or hydraulic acceptance.",
+  "startingMain": "adee2d3197fd7af8af06fd5b0668f7acd6c8debd",
+  "sources": [
+    {
+      "path": "project/rwt/studies/segmented-copper-access.json",
+      "blob": "8e1a32d97118faa5697b1f77aaf1a4449a1c5733"
+    },
+    {
+      "path": "project/rwt/studies/copper-access-geometry.mjs",
+      "blob": "16fae978af9fdf5cdc0532c92513f11d3e1dedd1"
+    }
+  ],
+  "plan": {
+    "courtFace": 7750,
+    "roomFace": 8167.5,
+    "gardenThreshold": {
+      "from": 11582.5,
+      "to": 12000,
+      "length": 417.5
+    },
+    "exteriorFace": 12000,
+    "retainedBand": 417.5,
+    "remainingNorthwardPlanRun": 3832.5,
+    "totalPlanRun": 4250
+  },
+  "conditionalFall": {
+    "overTotalPlanRun": 60,
+    "slope": 0.01411764705882353,
+    "acrossCourtBand": 5.894117647058824,
+    "appliesTo": "Straight constant-envelope W1 tail only. No fall is selected for the separate leak route."
+  },
+  "courtwardReturn": {
+    "datum": "z0 is the W1 outside-bottom elevation at the court face; elevations increase upwards.",
+    "variables": "a>=0 is minimum vertical separation down to the collector flow line at the room-side low point; f>=0 is further total fall from there to the return outlet.",
+    "necessaryOutletBound": "z_out <= z0 - 5.894117647058824 - a - f",
+    "freeOutletCondition": "R + delta < z_out <= z0 - d - a - f; R and delta are unselected receiving-water elevation and discharge clearance.",
+    "returnProfile": "Court-face flow-line gap must be at least a + d + f; a constant gap below the falling W1 tail does not drain courtwards.",
+    "lipAtOrAboveZ0": "Rejected for this continuous no-ponding gravity-return arrangement.",
+    "limitingDropWithZeroAandF": 5.894117647058824,
+    "boundary": "A lower outlet only passes this elevation screen. Receiving backwater, flow, containment and observation remain unproved. No pan elevation is substituted for z0."
+  },
+  "depth": {
+    "basis": "Same centred vertical 108/220 envelope convention as the earlier screen; no exact installed fitting orientation inferred.",
+    "cover": 50,
+    "tube": 108,
+    "flange": 220,
+    "nominalReserve": 300,
+    "kMeaning": "Complete secondary-collector projection below the tube outside-bottom envelope, including its gap/body; not flow-line separation a. k is local to each slice; common probes are not an installed collector profile.",
+    "lowerExtentFromAxis": "max(110,54+k)",
+    "incrementalDepthBeyondFlange": "max(0,k-56)",
+    "overlapInEnvelopeOnly": 56,
+    "cases": [
+      {
+        "k": 0,
+        "extraBelowFlange": 0,
+        "roomFaceDepth": 275.8941176470588,
+        "exteriorFaceDepth": 330,
+        "roomFaceNominalRemainder": 24.105882352941194,
+        "exteriorFaceNominalRemainder": -30
+      },
+      {
+        "k": 56,
+        "extraBelowFlange": 0,
+        "roomFaceDepth": 275.8941176470588,
+        "exteriorFaceDepth": 330,
+        "roomFaceNominalRemainder": 24.105882352941194,
+        "exteriorFaceNominalRemainder": -30
+      },
+      {
+        "k": 76,
+        "extraBelowFlange": 20,
+        "roomFaceDepth": 295.8941176470588,
+        "exteriorFaceDepth": 350,
+        "roomFaceNominalRemainder": 4.105882352941194,
+        "exteriorFaceNominalRemainder": -50
+      }
+    ],
+    "boundary": "Superposed lower extents do not prove parts can coexist. The flange occupies the 56 mm, so it is not spare drain space. These are comparison slices, not joint positions. No flange is placed throughout the retained tail."
+  },
+  "withheld": [
+    "Actual pan/outlet/tail and separate collector sections and all retained constituents",
+    "Actual first service-joint position, axial/tool envelopes, support and movement",
+    "Collector slope, flow, complete capture, visible terminal and receiving backwater",
+    "Open-bore maintenance diversion, rain isolation and safe surviving escape",
+    "Floor support, insulation and independent ground damp/gas boundary",
+    "Renewal of the retained tail and its secondary containment"
+  ]
+}
