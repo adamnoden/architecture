@@ -9,8 +9,8 @@
     "label": "swarm-envelope-dpc-983b7ee"
   },
   "claimedAt": "2026-10-31T09:18:30.617Z",
-  "heartbeatAt": "2026-10-31T10:09:43.179Z",
-  "expiresAt": "2026-10-31T10:54:43.179Z",
+  "heartbeatAt": "2026-10-31T10:16:27.168Z",
+  "expiresAt": "2026-10-31T11:01:27.168Z",
   "branch": "work/swarm-materials-integration-20261031",
   "predecessor": {
     "leaseId": "650de713-dbb7-479c-a948-c5e784f2560f",
@@ -34,8 +34,7 @@
   },
   "pr": 1145,
   "checkpoint": {
-    "evidence": "Published combined draft PR #1145 head18a8f2bdf39e3fef253e866a148cfdf1cbbc402a tree03bc2783319a7229e9940615449b9c010d73e177; exact local/remote tree and all four parents verified. Envelope G02/study remains identical to reviewed PR1133 head013ace83. Combined repository, publication source/integrity, docs build, diff and shared-audit guards passed; independent services ownership review passed.",
-    "next": "Require full exact-head CI and fresh canonical preflight for all three live Work entries, then verify integration, record own final checkpoint and release handoff. MAT-ENVELOPE remains planned: connected floor/wall/threshold/penetration assembly and actual mortar/slate qualification remain open. After closeout, re-enter canonical dispatcher before the separate floor-barrier/service-access comparison.",
-    "blocker": "Awaiting full combined-head CI; local browser-dependent full check is limited by missing Chrome155. No source, node lifecycle or assembly acceptance is expanded."
+    "evidence": "PR #1145 merged as adee2d3197fd7af8af06fd5b0668f7acd6c8debd. Full CI41191566272 succeeded on exact18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; all three canonical preflights passed against main4d, envelope at2026-10-31T10:15:04.090Z. Fresh fetch verified accepted tree03bc2783319a7229e9940615449b9c010d73e177, exact envelope study/G02 and all three source-head ancestries. Combined remote branch deletion verified. Root owns superseded PR1133 and source-branch cleanup.",
+    "next": "Release this integrated bounded amendment as handoff, then re-enter canonical MAT dispatcher on a fresh dedicated branch. MAT-ENVELOPE remains planned. If selected again, develop the separate floor-barrier/service-access comparison using dated IKO floor-field and repair evidence plus MAC wall-key limits; preserve W1, fixed court W2 and ground damp/gas as distinct duties. Exact mortar/slate, connected wall/floor/threshold/penetration, thermal/support and actual constituents remain unqualified."
   }
 }
