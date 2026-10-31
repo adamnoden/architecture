@@ -188,3 +188,19 @@ test('Y-oriented facade, runtime camera rejection, and SVG semantic hierarchy', 
   assert.match(svg, /data-meaning="hosted-aperture:contrast-east-wall\/high-sash"/)
   assert.equal(svg, renderDrawingSceneV2Svg(createSectionViewContrastScene(100)))
 })
+
+test('source-owned opaque background partitions hide glazing but produce no spurious wall outlines',()=>{
+ const screen:ModelFace3D={id:'intervening-opaque-screen',vertices:[
+  {x:4500,y:0,z:0},{x:4500,y:6000,z:0},
+  {x:4500,y:6000,z:3800},{x:4500,y:0,z:3800}
+ ]}
+ const before=compileOrthographicSectionView({section,facades:[facade],contextFaces:[roof]})
+ const after=compileOrthographicSectionView({section,facades:[facade],contextFaces:[roof],
+  occluderFaces:[screen]})
+ assert.ok(before.background.some(s=>s.meaning.includes('upper-window')))
+ assert.equal(after.background.filter(s=>s.meaning.includes('upper-window')).length,0)
+ assert.ok(!after.background.some(s=>s.meaning.includes('intervening-opaque-screen')))
+ assert.ok(!after.retainedFaces.some(f=>f.id==='intervening-opaque-screen'))
+ assert.throws(()=>compileOrthographicSectionView({section,facades:[facade],
+  occluderFaces:[{...screen,id:facade.id+':material:0:0'}]}),/Duplicate/)
+})
