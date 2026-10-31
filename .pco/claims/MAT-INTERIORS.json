@@ -9,8 +9,8 @@
     "label": "mat-tray-integration-20261031-1706"
   },
   "claimedAt": "2026-10-31T17:06:33.742Z",
-  "heartbeatAt": "2026-10-31T17:15:47.041Z",
-  "expiresAt": "2026-10-31T18:00:47.041Z",
+  "heartbeatAt": "2026-10-31T17:19:50.528Z",
+  "expiresAt": "2026-10-31T18:04:50.528Z",
   "branch": "work/mat-tray-integration-20261031-1706",
   "predecessor": {
     "leaseId": "a65098e6-f17f-45df-a781-c83ba02da995",
@@ -34,8 +34,8 @@
   },
   "pr": 1156,
   "checkpoint": {
-    "evidence": "PR #1156 at 7073cb4853b07741b62d414d45bbd39de9fa4d1f integrates preserved #1149 with #1150 and current main including #1153; source/renumbering reviews and unchanged-plan check passed",
-    "next": "Verify exact-head CI and fresh canonical preflight, then merge and close out the recovered draft",
-    "blocker": "Complete configured installation and renewal remain unresolved; CI pending"
+    "evidence": "PR 1156 merged as 25c1f610fe3b6b28fe410d5936a7009972a39890. Accepted tree f34033123918b2a8da38df4acedfee022c120ea6 equals exact validated head 7073cb4853b07741b62d414d45bbd39de9fa4d1f; full CI 41223632606 succeeded and canonical preflight passed at 17:19:10Z. PR 1149 is merged by preserved ancestry; both remote feature refs are absent.",
+    "next": "Bind the configured tray/Upstand/frame/waste package and all support/contact constituents, then draw north/east wall and independent west service sections with full waste withdrawal and the tray/frame carrying route.",
+    "blocker": "Complete non-synthetic installation, applicable support details, physical fit and renewal remain unresolved. MAT-INTERIORS stays planned; this is bounded partial progress."
   }
 }
