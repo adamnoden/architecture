@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "SWE-PUBLICATION",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "48b0aeac-e4d7-431d-906e-2cd60a467b76",
+  "holder": {
+    "kind": "codex",
+    "label": "swe-1174-publication"
+  },
+  "claimedAt": "2026-10-31T20:29:23.177Z",
+  "heartbeatAt": "2026-10-31T20:29:23.177Z",
+  "expiresAt": "2026-10-31T21:14:23.177Z",
+  "branch": "work/swe-publication-1174"
+}
