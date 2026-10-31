@@ -49,6 +49,71 @@ The later [sheet-solder evidence](../../docs/research/roof-rainwater-material-co
 
 This strategy reduces routine disassembly of the watertight body. It does not make the body immortal, every seam externally visible, or repair compatible with uncontrolled rain.
 
+## A supported seam must keep its movement and release
+
+**31 October 2026 continuation, main `899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b`.** Retain R1's terminal-side datum as the development direction, with a **separately supported, releasable dry-side restraint**. A soldered sheet-to-sheet seam does not anchor the liner to its frame. Fixing every cross-seam to cure a support problem would change the restraint system, rather than complete the proposed freely moving liner.
+
+The [local seam/support and keeper sheet](studies/outer-west-seam-support.svg) and `seamSupportContinuation` in the existing [numerical record](studies/outer-west-receiver-renewal.json) develop two distinct matters: necessary longitudinal support coverage, and the conditional first motion of an authored removable keeper. **They do not establish a physically qualified sliding bearing or complete wet-body extraction.** The original R1/R2 sheet and its unselected receiver dimensions remain intact.
+
+### Construction basis: support, anchorage and capture are different
+
+Develop a mechanically locked and soldered **copper** transverse seam, with the matched-process and cleanup obligations already recorded in the [shared compatibility source](../../docs/research/roof-rainwater-material-compatibility.md#sheet-solder-cleanup-and-the-brass-boundary). CDA 10.3F supplies that construction family, not a removable joint. The outside-frame fabrication/inspection approach is a useful starting point before the liner is placed in its supports. The same process is not transferred to CuZn10 brass.
+
+The further [Aurubis/CDA inspection](../../docs/research/roof-rainwater-material-compatibility.md#liner-support-movement-and-release) supports identifying the fixed zone and movement at connections. Aurubis's gutter-frame discussion does **not** prescribe an isolated narrow bearing under each seam. Its complete roof-box construction is not adopted as this ground receiver. The liner field, cross-seam and outlet each need adequate backing; pedestrian, grate, impact-piece and hedge loads remain on independent supports.
+
+A fold, rivet head or solder projection can snag a seat or concentrate bearing. Calling a joint a flat seam does not give it a smooth underside. Here **40 mm is an authored longitudinal support-demand footprint at installation temperature**, not a measured seam profile or minimum bearing requirement. A shaped or relieved contact surface, adjacent sheet support, restraint, wear and corrosion compatibility still require a real fabrication detail. A recess cannot simply remove support from the seam and inherit a pass.
+
+### The finite seat comparison
+
+Use local coordinate `s` along the outer-west wet body. Put the separate dry-side restraint at `s=0`, at the terminal station, and compare a seam centred `L=2000` away. This is a **gauge length**, not the total body length, a selected module or a global site coordinate. Receiver width, water depth, full length and capture territory remain unknown.
+
+| Input | Basis |
+|---|---|
+| Copper coefficient `α=17×10⁻⁶/K` | Aurubis, second edition 2013, printed p 81 architectural temperature-range comparison; not the different CuZn10 coefficient |
+| Installation 20°C; extremes −10/+70°C | Authored sensitivity, not London climate evidence or measured sheet temperatures |
+| Footprint 40; seat 50, narrower control 46 | Authored longitudinal geometry, not a selected section or structural bearing requirement |
+| Initial relative position `e=±2` | Authored placement sensitivity; it changes the actual copper gauge and is not an admitted fabrication tolerance |
+| Seat and fixed datum stationary | Explicit model assumption; actual frame thermal movement, settlement and deflection require relative-motion reassessment |
+
+For each installation footprint endpoint `p=±20`, its position relative to the nominal seat centre is:
+
+`q(T,e,p) = (L + e + p) × [1 + α(T − 20)] − L`.
+
+The footprint itself expands; the calculation does not translate an artificially rigid 40 mm box. The expression is affine in each variable separately, so evaluating the temperature, placement and endpoint corners gives its complete interval. The centre alone travels −1.020 cold and +1.700 hot. The complete support-demand sweep is **−23.00878 to +23.71870 mm** about the stationary seat centre.
+
+| Comparison | Necessary longitudinal result |
+|---|---|
+| Centred 50 mm seat | Minimum coverage margin **1.28130 mm**, at the hot/right edge |
+| Centred 46 mm seat | Misses the hot/right edge by **0.71870 mm**, although the installation-temperature footprint fits |
+| Same 50 mm seat shifted +2 relative to the fixed datum | Misses the cold/left edge by **0.00878 mm**; the stationary-support assumption matters |
+| Put the fixed datum at the seam instead | Local sweep becomes±22.01870, both extremes at hot; this changes the terminal's movement obligation and is not selected merely for the larger local margin |
+
+These are exact arithmetic within the declared ideal model, not manufacturing precision or installed reserves. A positive interval result establishes no contact area, load capacity, friction, wear, uplift resistance or transverse freedom. Actual sheet/seat temperatures can differ. A material or dimension change requires the relative movement to be recalculated.
+
+“Near the terminal” also does not mean the terminal is motionless. A rigid pipe connection at a second, authored station `s=300` would need to absorb the freely expanding copper's −0.153/+0.255 mm travel relative to the `s=0` restraint. This exposes a second-anchor obligation; it calculates neither stress nor failure. Either place the relevant restraints within one qualified fixed zone, provide a real movement-capable connection, or design the restrained assembly deliberately. The soldered outlet attachment is not credited with structural anchorage or lifting force. An open receiving transition remains a different candidate, with its capture and backwater duties still unresolved.
+
+### An authored dry-side keeper with a finite release
+
+The local section develops a removable cap over a folded dry-edge envelope, rather than an unexplained lift through a hooked perimeter. Its fastener is outside the represented wet liner. During service the liner can move **along the run beneath the cap**, while the cap retains upward movement. This does not resolve transverse expansion or select the folded edge, hardware or material contacts.
+
+All keeper dimensions are authored. The edge envelope is 20 wide × 3 high, from transverse `v=0–20` and `z=0–3`. The cap spans `v=−5–50`, `z=5–9`, with 30 width along the run. An **8 mm cylindrical through-hole** and **6 mm cylindrical stud**, coaxial at `v=40`, leave 1 nominal radial clearance. The stud ends at `z=20`. The model does not infer thread, torque, strength or nut/tool space from those diameters.
+
+**After removing the nut and independent upper unit**, lift the cap 16: its underside reaches 21, clearing the stud by 1. It can then translate 65 outwards through the declared empty working field; its nearest edge ends 17 beyond the stud. The entire axial passage is checked, not just the end position. A 15 lift gives contact at the stud tip and fails the free-runout condition. With the cap still installed, a direct 5 liner lift overlaps it. Thus longitudinal slip and vertical release are demonstrably different in this local geometry.
+
+This is a conditional **cap-release** result. It does not prove access to remove the nut, overcome deposits, support a long body, or lift the receiver. Those operations cannot be credited to an empty geometric pocket. The represented 20 × 3 edge envelope is also separate from the unresolved cross-seam underside.
+
+### Three interfaces before whole-body release
+
+Before eventual body repair or renewal, qualify incoming-water diversion, protect the work area, remove/stage the independent grate or impact units and provide independent temporary support. Then check these three interfaces:
+
+1. **The terminal and every carried projection.** A pipe disconnection may leave a tail or flange below retained support. For the limited straight-lift screen, the aperture must exceed the maximum carried width plus twice its lateral offset; a clear stem alone is insufficient. Actual terminal dimensions remain null in the record. An open receiving transition may have no connection to disconnect, but still needs a free movement envelope and qualified water-management state. It cannot silently be substituted for a sealed pipe.
+2. **The dry-side fixed restraint.** Removing sliding caps does not release a still-attached longitudinal anchor.
+3. **Every uplift capture.** The local cap sequence demonstrates one possible geometry; it does not release unseen perimeter locks or other retainers.
+
+The eventual sequence must retain independent support at every stage. A body lift, length, mass, handling route or temporary water-management pass is not claimed. Local solder repair remains a consumptive operation with its own sound-metal, all-round joining, cleaning and inspection access. A larger repair that opens a seam or support must state what is rebuilt and how fall, restraint, joints and water routes are reinstated.
+
+**Decision advanced:** keep a defined terminal-station restraint, require the cross-seam's full relative support envelope, and develop a removable dry-side keeper instead of equating sliding with lift-out. Return the actual backing, loads and anchorage demands to STR when the profile is chosen. No court pan, room floor, DPC, threshold, landscape level or occupied IAS/MAT source is changed.
+
 ## R2 — separately renewable wet trays with open transfers
 
 Each tray has its own qualified watertight body, restraint and terminal lip. It discharges across a **visible separation** into the next receiving tray or independently accessible collector. Removal must not require tearing the neighbour's waterproof seam. A spanning grate or impact frame is independently removable; it must not tie the two trays rigidly together. At a terminal outlet, compare an open receiving space with a genuinely releasable sealed connection rather than silently substituting one for the other.
@@ -87,6 +152,6 @@ The outboard spill must act below the first harmful wall, opening or boundary le
 
 ## Validation and handoff
 
-Run `node project/rwt/studies/outer-west-receiver-renewal.mjs --check` to verify the pinned inherited edge source and deterministic record/sheet. Visually inspect the rendered A3. The new work is a located construction and maintenance comparison with a symbolic level constraint; it is not a hydraulic solver or an installed prototype test.
+Run `node project/rwt/studies/outer-west-receiver-renewal.mjs --check` to verify the pinned inherited edge source and deterministic record/sheets, and `node project/rwt/studies/outer-west-receiver-renewal.test.mjs` for the eight focused controls. They cover full footprint/placement expansion, a narrow seat, relative support movement, signed and zero gauges, retained stud/cap capture, complete terminal envelopes, invalid inputs and deterministic outputs. The local A3 sheet is rendered and inspected. Exact-head repository/publication checks remain required for integration. This is a located construction and maintenance comparison, not a hydraulic solver, structural calculation or installed prototype test.
 
 RWT-METALS remains planned. RWT-SHED's edge disposition is retained; RWT-ROBUSTNESS still owns full-duty failure acceptance, ROF/HAD the roof and architectural interfaces, MAT the complete constituents and DPL the real receiving/site conditions. No house geometry, completion status or construction authority changes.
