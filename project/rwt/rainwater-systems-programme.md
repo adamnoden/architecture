@@ -200,6 +200,8 @@ The [local repair continuation](segmented-copper-access.md#local-cutting-is-not-
 
 The [retained court-tail comparison](segmented-copper-access.md#a-retained-court-tail-changes-the-maintenance-boundary) adds an explicit alternative to a separately renewable threshold piece: keep the fixed pan attachment and threshold tail during ordinary room-carrier renewal, while qualifying their eventual larger repair as a separate operation. Primary copper pan/flange/pipe details ground the construction family; they supply no house fit, backwater rating or movement/release proof. Concealed tail leakage and an open outlet bore during service remain separate water paths to resolve. RWT-METALS remains planned.
 
+The [retained-tail leak-route result](retained-tail-leak-route.md) locates the secondary-water duty: a high return fails its no-ponding elevation screen, while a northward continuation crosses another 3832.5 mm before the exterior face. Its combined collector/flange screen preserves the unresolved floor, support, receiving-water and maintenance duties. No retained-tail assembly is selected.
+
 ### RWT-ROBUSTNESS — independent paths and degraded operation
 
 After RWT-SHED, RWT-METALS and RWT-05, compare full-duty surviving paths under blockage, accessible capacity/freeboard, common debris/frost/backwater and passive final spill. Use actual candidate elevation ledgers and downstream topology. A second outlet must have a reachable and independent path; a clean-system capacity result cannot prove degraded-operation safety.

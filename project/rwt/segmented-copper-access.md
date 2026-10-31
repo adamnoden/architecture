@@ -101,6 +101,8 @@ During room-carrier renewal, retaining the circumferential pan attachment also l
 
 Keep support and movement equally explicit. A rigid attachment can receive forces from a restrained tail, carrier or handling operation. The actual fixed/sliding supports and movement provision must protect the pan joint; the roof precedent does not demonstrate that separation. The room joint still needs its complete seal, fastener, tool and removal envelope. The existing 300 mm reserve and 220 mm flange screens remain unchanged, as do the passive-groundwater and receiving-level constraints.
 
+The [located leak-route comparison](retained-tail-leak-route.md) now tests the missing secondary path. It rejects the stated high courtward return, exposes the further room/garden crossing required by a northward alternative, and combines collector and flange lower envelopes without double counting. It supplies no actual collector or safe receiver.
+
 **Earned:** a construction-based outlet starting point and a second, explicit allocation of renewal work. **Still open:** the connected section that chooses between these allocations, actual constituent disclosure, supported outlet/tail geometry, pressure duty, passive leak observation and demonstrated renewal of both the room carrier and the larger fixed package. The current diagram continues to show the separately renewable-threshold comparator; it is not a drawing of this retained-tail alternative.
 
 ## What must now be resolved
