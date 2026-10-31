@@ -1,41 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 3,
+  "generation": 4,
   "state": "claimed",
-  "leaseId": "44f12563-59a9-4117-aa66-8bf547550f46",
+  "leaseId": "9666a1cd-0d68-4864-8ba1-dd2ab4de6a17",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6541491670"
+    "label": "issue-comment-6546346708"
   },
-  "claimedAt": "2026-10-31T09:07:16.000Z",
-  "heartbeatAt": "2026-10-31T09:45:11.000Z",
-  "expiresAt": "2026-10-31T10:30:11.000Z",
-  "branch": "work/mvb-chat-6541491670",
+  "claimedAt": "2026-10-31T16:53:38.000Z",
+  "heartbeatAt": "2026-10-31T16:53:38.000Z",
+  "expiresAt": "2026-10-31T17:38:38.000Z",
+  "branch": "work/mvb-chat-6546346708",
   "predecessor": {
-    "leaseId": "b717f35b-d7cc-49c4-bff0-dc440d6fa5da",
-    "generation": 2,
-    "branch": "work/swarm-983b7ee4744e-worker2",
-    "pr": 1122,
+    "leaseId": "44f12563-59a9-4117-aa66-8bf547550f46",
+    "generation": 3,
+    "branch": "work/mvb-chat-6541491670",
+    "pr": 1131,
     "checkpoint": {
-      "evidence": "PR #1122 merged dfb60fd3483839f326a27d16116dad4ce7a45f1e; exact-head CI41148424270 passed f2ba757aa81a258d5d85c3afd4a94d644fa4385a; canonical publication preflight passed00:11:04.335Z against main8d6c7841.",
-      "next": "STR-HOUSE stays open. Develop supplier-specific HC150 compatibility, anchorage, upper-wall transmission and temporary works at y6570-7770; widening needs explicit room/service replan."
+      "evidence": "PR #1131 head 5132b6217269017c2fc6863859de03d6ce838de8 preserves current main b9f64d69 and all four reviewed blobs. Earlier exact-head CI passed and Node24 reproduced ten tests/SVG; main moved before canonical publication, so combined head is being revalidated.",
+      "next": "Observe final-head CI and rerun 41189042508 canonical preflight, re-read main/head/lease, expected-head merge then release.",
+      "blocker": "Parallel main changes require fresh integration checks. Architectural scope remains a bounded support/access comparison, not STR-HOUSE completion."
     }
   },
   "recoverySource": {
-    "leaseId": "b717f35b-d7cc-49c4-bff0-dc440d6fa5da",
-    "generation": 2,
-    "branch": "work/swarm-983b7ee4744e-worker2",
-    "pr": 1122,
+    "leaseId": "44f12563-59a9-4117-aa66-8bf547550f46",
+    "generation": 3,
+    "branch": "work/mvb-chat-6541491670",
+    "pr": 1131,
     "checkpoint": {
-      "evidence": "PR #1122 merged dfb60fd3483839f326a27d16116dad4ce7a45f1e; exact-head CI41148424270 passed f2ba757aa81a258d5d85c3afd4a94d644fa4385a; canonical publication preflight passed00:11:04.335Z against main8d6c7841.",
-      "next": "STR-HOUSE stays open. Develop supplier-specific HC150 compatibility, anchorage, upper-wall transmission and temporary works at y6570-7770; widening needs explicit room/service replan."
+      "evidence": "PR #1131 head 5132b6217269017c2fc6863859de03d6ce838de8 preserves current main b9f64d69 and all four reviewed blobs. Earlier exact-head CI passed and Node24 reproduced ten tests/SVG; main moved before canonical publication, so combined head is being revalidated.",
+      "next": "Observe final-head CI and rerun 41189042508 canonical preflight, re-read main/head/lease, expected-head merge then release.",
+      "blocker": "Parallel main changes require fresh integration checks. Architectural scope remains a bounded support/access comparison, not STR-HOUSE completion."
     }
-  },
-  "pr": 1131,
-  "checkpoint": {
-    "evidence": "PR #1131 head 5132b6217269017c2fc6863859de03d6ce838de8 preserves current main b9f64d69 and all four reviewed blobs. Earlier exact-head CI passed and Node24 reproduced ten tests/SVG; main moved before canonical publication, so combined head is being revalidated.",
-    "next": "Observe final-head CI and rerun 41189042508 canonical preflight, re-read main/head/lease, expected-head merge then release.",
-    "blocker": "Parallel main changes require fresh integration checks. Architectural scope remains a bounded support/access comparison, not STR-HOUSE completion."
   }
 }
