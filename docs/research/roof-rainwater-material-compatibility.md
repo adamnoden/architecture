@@ -89,6 +89,21 @@ For local copper repair, product size and removability must be distinguished fro
 
 The unselected filler, flux and retained residues remain within the material policy. A slip coupling is an assembly aid before joining, not an expansion joint or a demountable joint after joining. The existing metal/runoff exclusions and actual service-duty requirements still apply.
 
+## Fixed copper outlet evidence — 31 October 2026
+
+Two inspected primary details give the fixed collector-to-pipe interface a construction basis. They establish no complete assembly for the house.
+
+| Primary source, accessed 31 October 2026 | Evidence and limit |
+|---|---|
+| **C9 — [Aurubis Copper Book](https://www.nordiccopper.com/nordic-copper-aurubis-com/sv/dam/jcr%3A70b6c19f-a408-4165-98f4-74b15e7c3fb3/copperbook-2024.pdf), second edition 2013, printed p119** | Describes rigid hard-soldered/welded roof outlets serving internal downpipes, with seamed and soldered, or welded, flange interfaces and a removable strainer. Internal downpipe installation remains outside its scope. The filename does not make this a 2024 edition. |
+| **C10 — [CDA Copper in Architecture Design Handbook](https://copper.org/wp-content/uploads/2026/04/A4050-Architectural-Handbook.pdf), A4050-8/24, detail10.6B, printed p154** | Shows a continuously soldered copper pan-to-flange joint and a brazed flange-to-copper-pipe joint. Its steel-deck/wood-blocking support is not a house detail. The drawing supplies no exact product, backwater rating or downstream renewal method. |
+
+Both pages were visually inspected. US/regional dimensions, supports and hydraulic recommendations are not adopted. The flange here joins sheet and pipe through fixed seams; its name does not establish a separating mechanical joint.
+
+| Candidate interface | Disposition | Evidence required before selection |
+|---|---|---|
+| Copper pan → fixed copper flange/outlet → retained tail → accessible service joint | **Conditional construction and maintenance comparator.** Keeping the tail during carrier replacement transfers its own eventual renewal into a larger fixed-assembly intervention. | Exact metals, solder/braze/flux and residues; qualified pan/outlet joint and service duty; independent support/movement; accessible service-joint release; passive observation of concealed tail leakage and a credible larger repair route. Retaining the pan seam does not close the outlet bore during maintenance. |
+
 ## Applying the comparison to the house
 
 The represented inward/outward pitched ring concentrates water at inner valleys as well as along inner eaves. A courtyard collector therefore cannot be chosen from a facade colour chart. Roof and rainwater design must trace each covering/valley/collector/outlet chain, including secondary or failed-flow paths, before selecting metals. The current drawings do not prove either safe access or a viable court-to-outside route.
