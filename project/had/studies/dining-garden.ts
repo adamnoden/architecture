@@ -42,15 +42,16 @@ const fabric = [box('west court wall and corner', house.court.x-e, 7500, e, cour
   box('stair footprint in crop', house.stair.x, 7500, house.stair.width, house.stair.y+house.stair.length-7500),
   box('north wall west', e, north, garden.centre-garden.width/2-e, e),
   box('north wall east', garden.centre+garden.width/2, north, house.shell-e-(garden.centre+garden.width/2), e)]
-function seats(table: Box, sideOffsets: [number, number], ends: boolean, travel = 0): Box[] {
-  const out = chair.depth - action.underTableProjection + travel
+function seats(table: Box, sideOffsets: readonly number[], ends: boolean, travel = 0,
+  dimensions: {width:number; depth:number} = chair, insertion = action.underTableProjection): Box[] {
+  const out = dimensions.depth - insertion + travel
   const result = sideOffsets.flatMap((offset, i) => [
-    box(`W${i+1}`, table.x-out, table.y+offset-chair.width/2, chair.depth, chair.width),
-    box(`E${i+1}`, table.x+table.w-action.underTableProjection+travel,
-      table.y+offset-chair.width/2, chair.depth, chair.width)])
-  if (ends) result.push(box('S', table.x+table.w/2-chair.width/2, table.y-out, chair.width, chair.depth),
-    box('N', table.x+table.w/2-chair.width/2,
-      table.y+table.h-action.underTableProjection+travel, chair.width, chair.depth))
+    box(`W${i+1}`, table.x-out, table.y+offset-dimensions.width/2, dimensions.depth, dimensions.width),
+    box(`E${i+1}`, table.x+table.w-insertion+travel,
+      table.y+offset-dimensions.width/2, dimensions.depth, dimensions.width)])
+  if (ends) result.push(box('S', table.x+table.w/2-dimensions.width/2, table.y-out, dimensions.width, dimensions.depth),
+    box('N', table.x+table.w/2-dimensions.width/2,
+      table.y+table.h-insertion+travel, dimensions.width, dimensions.depth))
   return result
 }
 const overlap = (a: Box, b: Box) => ({x: Math.max(0, Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x)),
@@ -130,6 +131,64 @@ const result={basis:house.id,sourceFurnished:'project/had/had-03-furnished-desig
   acceptance:{geometricEnvelopeCandidateOnly:true,occupiedComfort:null,actualChairTableFit:null,
     requiredSeatCount:null,installedDoorAndThreshold:null,materialAdmission:null,maintenanceRoute:null}}
 
+// A different, manufacturer-matched pair. Keep the earlier Quaker studies unchanged.
+// The PDF's placement dimension is not a complete three-dimensional leg/occupant model.
+const fairmile={manufacturer:'ercol',tableModel:'4291G',chairModel:'4102G',
+  table:{closedLength:1800,extendedLength:2200,width:950,height:750,massKg:41,
+    longitudinalChairPlacementClosed:1140,longitudinalChairPlacementExtended:1540,
+    transverseChairPlacement:660,underframeHeight:660},
+  chair:{width:450,depth:520,height:920,seatHeight:470,seatDepth:400,massKg:5},
+  source:{table:'https://www.ercol.com/application/files/1617/6942/1776/ercol_-_Fairmile_Large_Extending_Dining_Table_-_4291G_-_datasheet.pdf',
+    tableSha256:'a823c4225c1ba02e51a61149e175dd205a3ba47cc1e8b5e935d66847c1820b89',
+    chair:'https://www.ercol.com/download_file/35861/9568',
+    assembly:'https://www.ercol.com/download_file/30063/9566',inspectedOn:'2026-10-31'}}
+const sixTable=box('extended Fairmile comparison',3600,8950,fairmile.table.width,fairmile.table.extendedLength)
+const placement={start:sixTable.y+(sixTable.h-fairmile.table.longitudinalChairPlacementExtended)/2,
+  length:fairmile.table.longitudinalChairPlacementExtended,centredInTable:'authored assumption, not separately dimensioned offsets'}
+const pitches=[600,500].map(pitch=>({pitch,threeChairSpan:2*pitch+fairmile.chair.width,
+  remainder:placement.length-(2*pitch+fairmile.chair.width),
+  endMarginIfCentred:(placement.length-(2*pitch+fairmile.chair.width))/2,
+  adjacentEnvelopeGap:pitch-fairmile.chair.width}))
+assert.equal(pitches[0].remainder,-110)
+assert.equal(pitches[1].endMarginIfCentred,45)
+// 500 is a sensitivity only. Do not label a narrowed station pitch an occupied-use pass.
+const sixOffsets=[600,1100,1600]
+const sixInitial=seats(sixTable,sixOffsets,false,0,fairmile.chair,0)
+const sixPulled=seats(sixTable,sixOffsets,false,400,fairmile.chair,0)
+const sixSweeps=sixInitial.map((s,i)=>swept(s,sixPulled[i]))
+const sixFlags=sixSweeps.flatMap(s=>[...furniture,...fabric].filter(o=>overlaps(s,o)).map(o=>({chair:s.id,obstacle:o.id})))
+assert.equal(sixFlags.length,0)
+const sixInwardFlags=sixSweeps.filter(s=>inQuarterSweep(s,true)||inQuarterSweep(s,false)).map(s=>s.id)
+assert.deepEqual(sixInwardFlags,['E3'])
+const sixRouteY=(courtNorth+e+sixTable.y)/2
+const sixPath:Point[]=[[3325,7900],[3325,sixRouteY],[6000,sixRouteY],[6000,north]]
+// The positive path uses the outward garden symbol, not the old inward comparison.
+// Actual frame/threshold/exterior travel is absent; court leaves stay into the court.
+const sixObjects=[...furniture,...fabric,sixTable,...sixSweeps,...doorLines.slice(2)]
+const sixMargin=pathMargin(sixPath,sixObjects,300)
+assert.equal(sixMargin,91.25)
+const sixShift=(dy:number):Point[]=>[[3325,7900],[3325,sixRouteY+dy],[6000,sixRouteY+dy],[6000,north]]
+assert.equal(pathMargin(sixShift(-92),sixObjects,300),-.75)
+assert.equal(pathMargin(sixShift(92),sixObjects,300),-.75)
+assert(pathMargin(sixPath,[courtIntoFamily],300)<0)
+const sixResult={basis:house.id,scope:'Unadopted six-side-chair envelope sensitivity, not a selected six-person dining arrangement.',
+  fairmile,table:sixTable,placement,pitches,
+  action:{underTableProjection:0,outwardTranslation:400,centres:sixOffsets.map(v=>sixTable.y+v),
+    noEndChairs:true,occupiedUse:null,extensionOperation:null},
+  edgeAdjacent:sixInitial,pulled:sixPulled,sweeps:sixSweeps,obstacleFlags:sixFlags,inwardGardenFlags:sixInwardFlags,
+  quantities:{outwardProjection:fairmile.chair.depth+400,
+    westSofaMargin:sixTable.x-fairmile.chair.depth-400-2600,
+    westMarginWithSeparateBedroom4SofaShift:sixTable.x-fairmile.chair.depth-400-2650,
+    eastMarginToOld1000Strip:5500-(sixTable.x+sixTable.w+fairmile.chair.depth+400),
+    northTableToWall:north-sixTable.y-sixTable.h,southCorridor:sixTable.y-(courtNorth+e),
+    seatToUnderframeGross:fairmile.table.underframeHeight-fairmile.chair.seatHeight,
+    closedTableThreeChair500PitchRemainder:fairmile.table.longitudinalChairPlacementClosed-(2*500+fairmile.chair.width)},
+  route:{points:sixPath,diameter:600,minModelObstacleMargin:sixMargin,endsAtRoomFace:true,
+    conditions:'Outward garden symbol; court leaves into court; zero chair insertion; all six straight withdrawal sweeps. No occupied chair access, actual opening or exterior continuation.',
+    falsification:{lowered92Margin:-.75,raised92Margin:-.75,courtLeafIntoFamilyCutsRoute:true}},
+  acceptance:{sixHundredPitchEnvelopeAdmission:false,fiveHundredPitchOccupiedAdmission:null,
+    actualLegApronKneeFit:null,conversionInRoom:null,householdCapacity:null,materialAdmission:null}}
+
 const svg:string[]=[], add=(s:string)=>svg.push(s)
 const esc=(s:string)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;')
 const text=(x:number,y:number,s:string,size=2.65,color='#263c40')=>add(`<text x="${x}" y="${y}" font-size="${size}" fill="${color}">${esc(s)}</text>`)
@@ -194,6 +253,63 @@ text(15,262,'North court leaves must remain into court. Occupied use, open RWT f
 text(15,273,'Envelope overlap flags prevent admission from this model; they are not measured solid collisions or a regulatory/ergonomic verdict.',2.65)
 text(15,284,'Source: RH-LAYOUT-REVISION-02 + HAD furnished study; manufacturer fact sheet inspected 30 Oct 2026. HAD-03 remains planned.',2.6)
 add('</svg>')
-const outputs=new Map([['dining-garden.json',JSON.stringify(result,null,2)+'\n'],['dining-garden.svg',svg.join('\n')+'\n']])
+const sixSvg:string[]=[]
+const sa=(s:string)=>sixSvg.push(s)
+const st=(x:number,y:number,s:string,size=2.7,color='#263c40')=>sa(`<text x="${x}" y="${y}" font-size="${size}" fill="${color}">${esc(s)}</text>`)
+sa('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="DejaVu Sans,sans-serif"><rect width="420" height="297" fill="#fffdf7"/>')
+st(15,16,'HAD / six side chairs: table construction changes the answer',5)
+st(15,25,'31 October 2026 · dimensions in mm · unadopted comparison; six chairs drawn does not prove occupied use',2.9)
+st(15,39,'A / room-envelope sensitivity, 1:40 at A3',3.3)
+const sx=(x:number)=>15+(x-400)/40,sy=(y:number)=>49+(12000-y)/40
+const sr=(r:Box,fill:string,stroke='#657873',dash=false)=>sa(`<rect x="${sx(r.x)}" y="${sy(r.y+r.h)}" width="${r.w/40}" height="${r.h/40}" fill="${fill}" stroke="${stroke}" stroke-width=".25" ${dash?'stroke-dasharray="1.2 .8"':''}/>`)
+sa('<defs><clipPath id="six-plan"><rect x="15" y="49" width="183" height="116"/></clipPath></defs><g clip-path="url(#six-plan)">')
+sr(box('floor',e,7500,7200-e,north-7500),'#f3f0e7')
+sr(box('old route strip',5500,courtNorth+e,1000,north-courtNorth-e),'#e1eee7','#a4c6b4',true)
+for(const q of fabric)sr(q,'#d1ccc0')
+for(const q of furniture)sr(q,'#dfd7c4')
+sr(sixTable,'#c8b38a','#725c3f')
+for(const q of sixInitial)sr(q,'#d6e8ec','#527e88')
+for(const q of sixPulled){sr(q,'none','#53816e',true);st(sx(q.x+q.w/2)-2,sy(q.y+q.h/2)+1,q.id,2.3)}
+sa(`<polyline points="${sixPath.map(([x,y])=>`${sx(x)},${sy(y)}`).join(' ')}" fill="none" stroke="#34735c" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity=".14"/><polyline points="${sixPath.map(([x,y])=>`${sx(x)},${sy(y)}`).join(' ')}" fill="none" stroke="#34735c" stroke-width=".35"/>`)
+const il=sx(inward.left),ir=sx(inward.right),iy=sy(north),rad=inward.radius/40
+sa(`<path d="M${il+rad} ${iy}A${rad} ${rad} 0 0 1 ${il} ${iy+rad}M${ir-rad} ${iy}A${rad} ${rad} 0 0 0 ${ir} ${iy+rad}" fill="none" stroke="#b65f41" stroke-width=".35" stroke-dasharray="1 1"/>`)
+st(sx(3735),sy(10200),'2200',2.4);st(sx(3735),sy(10050),'×950',2.4)
+st(sx(850),sy(8900),'sofa',2.4);st(sx(850),sy(11100),'sofa',2.4)
+sa('</g>')
+st(15,174,'500 mm station pitch; chairs 450 wide × 520 deep.',2.7)
+st(15,182,'Zero insertion + 400 pull: no assumed tuck under the top.',2.7)
+st(15,190,'Green: 600 disc through-route, not approach to each seat.',2.7)
+st(15,198,'Red dashed arc: unselected inward door hits E3.',2.7,'#9b4b33')
+st(222,39,'B / the manufacturer placement dimension',3.3)
+const gapX=233,gapScale=.075,gapEnd=gapX+1540*gapScale
+for(const [row,pitch,color] of [[65,600,'#b65f41'],[100,500,'#53816e']] as const){
+  const span=2*pitch+450,start=gapX+(1540-span)/2*gapScale
+  sa(`<path d="M${gapX} ${row-9}V${row+16}M${gapEnd} ${row-9}V${row+16}" stroke="#6b6d67" stroke-width=".35"/>`)
+  sa(`<path d="M${gapX} ${row-6}H${gapEnd}" stroke="#6b6d67" stroke-width=".25"/>`)
+  for(let n=0;n<3;n++)sa(`<rect x="${start+n*pitch*gapScale}" y="${row}" width="${450*gapScale}" height="11" fill="none" stroke="${color}" stroke-width=".5"/>`)
+  st(222,row+23,pitch===600?'600 pitch → 1650 span; 110 beyond available 1540.':'500 pitch → 1450 span; 45 each end if centred.',2.7,color)
+}
+st(222,135,'Top is 2200 long; published placement space is 1540.',2.7)
+st(222,143,'50 between adjacent envelopes is not elbow clearance.',2.7)
+st(222,151,'660 underframe − 470 seat = 190 gross; knees unknown.',2.7)
+st(222,164,'C / limits that the plan cannot close',3.3)
+const sn=[
+  'Zero-tuck withdrawal: 80 to sofa / 30 to old central strip.',
+  'Separate + 50 sofa trial leaves only 30 on the west.',
+  'South corridor 782.5; centred disc margin 91.25 each side.',
+  'Table north end 432.5 from wall: no proved operator space.',
+  'Extension needs catches, lifting and temporary separation.',
+  'No actual chair-entry, occupied comfort or knee-space proof.'
+]
+sn.forEach((s,i)=>st(222,175+i*8,s,2.6))
+st(15,231,'Decision: reject the 600-pitch fit claim. Retain 500-pitch as an unresolved sensitivity, with both sofas and six chairs visible.',2.8)
+st(15,241,'Do not adopt a seat count, crowded arrangement, door direction or plastic-containing finish merely to obtain a geometric pass.',2.7)
+st(15,254,'Source: RH-LAYOUT-REVISION-02; ercol 4291G + 4102G drawings, inspected 31 Oct 2026. Controlled PDF identity is recorded in the note.',2.6)
+st(15,264,'Plan shows the finished extended table; conversion, moving 41 kg, window access, RWT maintenance and exterior landing remain open.',2.6)
+st(15,278,'Envelope screen only · household brief, actual assembly/material admission and HAD-03 completion remain unresolved.',2.9)
+sa('</svg>')
+const outputs=new Map([['dining-garden.json',JSON.stringify(result,null,2)+'\n'],['dining-garden.svg',svg.join('\n')+'\n'],
+  ['dining-six-side.json',JSON.stringify(sixResult,null,2)+'\n'],['dining-six-side.svg',sixSvg.join('\n')+'\n']])
 for(const [name,content] of outputs){const path=fileURLToPath(new URL(name,import.meta.url));if(process.argv.includes('--check'))assert.equal(readFileSync(path,'utf8'),content,`Regenerate ${name}`);else writeFileSync(path,content)}
 console.log(JSON.stringify({baselineFlags:a.obstacleFlags,inwardFlags:a.inwardLeafFlags,candidateFlags:b.obstacleFlags,quantities:result.quantities,route:result.route},null,2))
+console.log(JSON.stringify({sixSide:pitches,quantities:sixResult.quantities,route:sixResult.route,inwardFlags:sixInwardFlags},null,2))
