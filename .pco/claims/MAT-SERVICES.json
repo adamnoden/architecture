@@ -9,8 +9,8 @@
     "label": "mat-drain-detail-20261031-1728"
   },
   "claimedAt": "2026-10-31T17:27:43.167Z",
-  "heartbeatAt": "2026-10-31T17:48:20.374Z",
-  "expiresAt": "2026-10-31T18:33:20.374Z",
+  "heartbeatAt": "2026-10-31T17:57:39.271Z",
+  "expiresAt": "2026-10-31T18:42:39.271Z",
   "branch": "work/mat-drain-detail-20261031-1728",
   "predecessor": {
     "leaseId": "5b44c665-d4bc-4838-991f-5419beda9ee8",
@@ -36,8 +36,8 @@
   },
   "pr": 1161,
   "checkpoint": {
-    "evidence": "PR 1161 now publishes integrated head b2fca880cdd8b190e635685116580427f3b18673 with tree92291ee0520464a97534ef95779e5e98caadb045 equal to the reviewed local index. Main08c68ef0 and its concurrent materials, structural and rainwater results are preserved. Source-bound drawing check and independent source/geometry/integration reviews passed.",
-    "next": "Verify full exact-head CI run41226155544, then fresh canonical publication preflight and expected-head merge; record exact accepted tree and release for handoff.",
-    "blocker": "Complete matched joint, body/support/opening envelope and physical renewal remain unresolved. Packet remains planned. Exact-head CI is in progress."
+    "evidence": "PR #1161 merged as d81aab99cd8900395deffc16a26f1490fb9658f6; validated head 4c06eeaa17b46d02d71efb9cd20f675753207f3f and merge both have tree a3a1f77d828e4db5767aec5dc69fa410454125d2. Exact-head full CI 41226495636 passed; drawing, source and integration reviews passed. Four separate installation/release/crossing/parking conditions are recorded without accepting a complete assembly.",
+    "next": "Bind an exact compatible outlet-to-branch joint, all retained constituents and its installed/release envelopes; combine with complete waste/support/clear-opening section. Reconcile the current caulked cast-iron stack package and its removal path.",
+    "blocker": "Complete material package, physical fit and renewal remain unresolved. MAT-SERVICES stays planned; the bounded study is merged, not an installed-system acceptance."
   }
 }
