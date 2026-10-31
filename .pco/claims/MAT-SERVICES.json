@@ -9,8 +9,8 @@
     "label": "swarm-mat-followon-983b7ee"
   },
   "claimedAt": "2026-10-31T09:23:30.382Z",
-  "heartbeatAt": "2026-10-31T10:09:42.062Z",
-  "expiresAt": "2026-10-31T10:54:42.062Z",
+  "heartbeatAt": "2026-10-31T10:17:07.022Z",
+  "expiresAt": "2026-10-31T11:02:07.022Z",
   "branch": "work/swarm-materials-integration-20261031",
   "predecessor": {
     "leaseId": "b81cce7d-4da5-440d-8c97-c8a733678faa",
@@ -34,8 +34,7 @@
   },
   "pr": 1145,
   "checkpoint": {
-    "evidence": "Draft PR #1145 published at 18a8f2bdf39e3fef253e866a148cfdf1cbbc402a, tree 03bc2783319a7229e9940615449b9c010d73e177. Reviewed services parent b6b4d21f4a20f2536ef1fde227ba285566cb3e50 preserved. Combined local ownership check passed: exact study blob 90e9ed837fa965b0625bdccbbf8c8015788d4713, S01, SUPPLY-STUDY and programme link unchanged; all 54 row identities/order preserved.",
-    "next": "Keep source frozen. Root will observe full exact-head CI and run all three canonical preflights from the common checkout before expected-head integration. MAT-SERVICES remains planned; water-system admission and repair geometry remain open.",
-    "blocker": "Draft combined PR: exact-head CI and all three lease preflights pending."
+    "evidence": "PR #1145 accepted as adee2d3197fd7af8af06fd5b0668f7acd6c8debd, tree 03bc2783319a7229e9940615449b9c010d73e177. Full CI 41191566272 passed on 18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; canonical MAT-SERVICES preflight passed 2026-10-31T10:15:05.088Z. Fresh main readback matches accepted merge and exact reviewed S01, SUPPLY-STUDY, programme link and study blob 90e9ed837fa965b0625bdccbbf8c8015788d4713. Validated head and services parent b6b4d21f4a20f2536ef1fde227ba285566cb3e50 are ancestors of accepted main.",
+    "next": "Release handoff after this receipt, then use fresh canonical dispatch. MAT-SERVICES remains planned: complete valve/insulation/support/residue admission, actual duty and isolation/drain/first-release geometry remain open. Bounded read-only alternative-valve search found no admitted exact build: Hattersley 33X leaves packing/gasket chemistry undisclosed; Apollo 101T-LF 30LF00401 has a declared epoxy-coated handwheel and unresolved complete-build evidence. Primary leads: https://www.hattersley.com/product/gate/33x-33xls/ and https://aalberts-ips.us/products/detail/30lf00x01/ . This is not a universal no-valve claim and earns no additional catalogue-only document."
   }
 }
