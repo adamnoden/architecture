@@ -9,8 +9,8 @@
     "label": "issue-comment-6541503746"
   },
   "claimedAt": "2026-10-31T09:08:23.000Z",
-  "heartbeatAt": "2026-10-31T09:08:23.000Z",
-  "expiresAt": "2026-10-31T09:53:23.000Z",
+  "heartbeatAt": "2026-10-31T09:16:08.000Z",
+  "expiresAt": "2026-10-31T10:01:08.000Z",
   "branch": "work/mvb-chat-6541503746",
   "predecessor": {
     "leaseId": "70d03fe9-7eb7-4a0b-bd36-7cc37e600d6a",
@@ -33,5 +33,10 @@
       "next": "Locate the actual complete terminal and required release sweep in the accessible or raised crossing; coordinate floor and threshold, then rederive receiving and leak-outlet levels before hydraulic admission.",
       "blocker": "Partial only: old 435 mm raise is not an access pass; actual terminal, safe working arrangement, connected water boundaries and site evidence remain unselected."
     }
+  },
+  "checkpoint": {
+    "evidence": "RWT-06 branch work/mvb-chat-6541503746 at ba68ed64; predecessor #1119 reviewed. Current work isolates threshold-only renewal direction and access, without editing RWT-METALS components.",
+    "next": "Compare inward withdrawal with leading/trailing joint positions; bind actual cutting/reinstatement access and retained W2 duties, then draw and review.",
+    "blocker": "No installed assembly, water isolation, working clearance or site/hydraulic acceptance; RWT-06 stays planned."
   }
 }
