@@ -1,27 +1,33 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "b0f79a4c-1354-49b1-b3c4-d31f64293123",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "650de713-dbb7-479c-a948-c5e784f2560f",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-983b7ee4744e-independent"
+    "label": "swarm-resume-envelope-983b7ee"
   },
-  "claimedAt": "2026-10-31T00:13:51.960Z",
-  "heartbeatAt": "2026-10-31T00:19:51.805Z",
-  "expiresAt": "2026-10-31T00:19:51.805Z",
-  "branch": "work/swarm-983b7ee4744e-worker3",
+  "claimedAt": "2026-10-31T09:05:17.339Z",
+  "heartbeatAt": "2026-10-31T09:05:17.339Z",
+  "expiresAt": "2026-10-31T09:50:17.339Z",
+  "branch": "work/swarm-resume-envelope-20261031",
   "predecessor": {
-    "leaseId": "2985c3ea-8a76-44a3-bb65-d61109f3bdeb",
-    "generation": 1,
-    "branch": "work/swarm-b-20261030-2324"
+    "leaseId": "b0f79a4c-1354-49b1-b3c4-d31f64293123",
+    "generation": 2,
+    "branch": "work/swarm-983b7ee4744e-worker3",
+    "checkpoint": {
+      "evidence": "Owner interruption before new work. Predecessor PR #1117 head8e6eddb0e2ae2f64c37810bd0a337596a93637d3 remains open and preserved. Local recovery copied its three docs only; worker3 has no remote branch or new output.",
+      "next": "Resume from predecessor PR #1117 on a fresh canonical lease and own branch; verify its primary sources, reconcile current main and require exact-head CI/preflight. MAT-ENVELOPE remains planned."
+    }
   },
-  "checkpoint": {
-    "evidence": "Owner interruption before new work. Predecessor PR #1117 head8e6eddb0e2ae2f64c37810bd0a337596a93637d3 remains open and preserved. Local recovery copied its three docs only; worker3 has no remote branch or new output.",
-    "next": "Resume from predecessor PR #1117 on a fresh canonical lease and own branch; verify its primary sources, reconcile current main and require exact-head CI/preflight. MAT-ENVELOPE remains planned."
-  },
-  "note": "Cleanup after owner interruption. No new substantive output or selected assembly; predecessor branch preserved.",
-  "releasedAt": "2026-10-31T00:19:51.805Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "b0f79a4c-1354-49b1-b3c4-d31f64293123",
+    "generation": 2,
+    "branch": "work/swarm-983b7ee4744e-worker3",
+    "checkpoint": {
+      "evidence": "Owner interruption before new work. Predecessor PR #1117 head8e6eddb0e2ae2f64c37810bd0a337596a93637d3 remains open and preserved. Local recovery copied its three docs only; worker3 has no remote branch or new output.",
+      "next": "Resume from predecessor PR #1117 on a fresh canonical lease and own branch; verify its primary sources, reconcile current main and require exact-head CI/preflight. MAT-ENVELOPE remains planned."
+    }
+  }
 }
