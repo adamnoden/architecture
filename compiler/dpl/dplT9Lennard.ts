@@ -1,7 +1,7 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPLT8LennardSubstantiveDisposition } from './dplT8Lennard.js'
 
 export const DPL_T9_SCHEMA_VERSION = 'DPL-T9-LENNARD-NO-COST-CLOSURE-1' as const
@@ -47,7 +47,7 @@ export const DPL_T9_EXPECTED_INPUT_BLOCKER_IDS = [
   'PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY',
   'REFERENCE_HOUSE:RH-PROT-08',
   'REFERENCE_HOUSE:RH-PROT-14'
-].sort((a, b) => a.localeCompare(b)) as readonly string[]
+].sort((a, b) => compareDplIdentityStrings(a, b)) as readonly string[]
 
 interface T9AuthoritySource {
   readonly id: string
@@ -123,7 +123,7 @@ export interface DPLT9Result {
 
 const readText = (path: string): string => readFileSync(resolve(process.cwd(), path), 'utf8')
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => a.localeCompare(b))
+  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const readAuthorityEvidence = (): { record: T9AuthorityEvidence; fingerprint: string; sourceIds: Set<string> } => {
   const record = JSON.parse(readText(DPL_T9_AUTHORITY_PATH)) as T9AuthorityEvidence
@@ -142,7 +142,7 @@ const readAuthorityEvidence = (): { record: T9AuthorityEvidence; fingerprint: st
   }
   const sourceIds = new Set(record.sources.map((source) => source.id))
   if (sourceIds.size !== record.sources.length) throw new Error('DPL-T9 authority source IDs are not unique.')
-  return { record, fingerprint: sha256SemanticFingerprint(record), sourceIds }
+  return { record, fingerprint: sha256DplSemanticFingerprint(record), sourceIds }
 }
 
 /** Historical byte identity is required before replay; current briefs cannot substitute. */
@@ -270,20 +270,20 @@ export const composeDPLT9LennardNoCostClosure = (): DPLT9Result => {
       evidenceRefs: canonicalStrings(spec.evidenceRefs),
       briefPath: spec.briefPath ?? null
     }
-    return { ...payload, fingerprint: sha256SemanticFingerprint(payload) }
-  }).sort((a, b) => a.blockerId.localeCompare(b.blockerId))
+    return { ...payload, fingerprint: sha256DplSemanticFingerprint(payload) }
+  }).sort((a, b) => compareDplIdentityStrings(a.blockerId, b.blockerId))
 
   if (records.length !== 7 || new Set(records.map((record) => record.blockerId)).size !== 7) {
     throw new Error('DPL-T9 must classify exactly seven unique blockers.')
   }
 
   const countsByDisposition = counts(dplT9Dispositions, records.map((record) => record.disposition))
-  const resolvedBlockerIds = records.filter((record) => record.disposition === 'RESOLVED_BOUNDED_PROJECT_AUTHORITY').map((record) => record.blockerId).sort((a, b) => a.localeCompare(b))
-  const currentActiveBlockerIds = records.filter((record) => record.disposition !== 'RESOLVED_BOUNDED_PROJECT_AUTHORITY').map((record) => record.blockerId).sort((a, b) => a.localeCompare(b))
+  const resolvedBlockerIds = records.filter((record) => record.disposition === 'RESOLVED_BOUNDED_PROJECT_AUTHORITY').map((record) => record.blockerId).sort((a, b) => compareDplIdentityStrings(a, b))
+  const currentActiveBlockerIds = records.filter((record) => record.disposition !== 'RESOLVED_BOUNDED_PROJECT_AUTHORITY').map((record) => record.blockerId).sort((a, b) => compareDplIdentityStrings(a, b))
   const decisionDependencies = canonicalStrings(records.flatMap((record) => record.dependencyClass ? [record.dependencyClass] : [])) as DPLT9DependencyClass[]
 
   const consumers = (dependency: DPLT9DependencyClass): string[] =>
-    records.filter((record) => record.dependencyClass === dependency).map((record) => record.blockerId).sort((a, b) => a.localeCompare(b))
+    records.filter((record) => record.dependencyClass === dependency).map((record) => record.blockerId).sort((a, b) => compareDplIdentityStrings(a, b))
   const dependencyConsumers: Record<DPLT9DependencyClass, readonly string[]> = {
     EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY: consumers('EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY'),
     COMPETENT_STRUCTURAL_CONCEPT_REVIEW: consumers('COMPETENT_STRUCTURAL_CONCEPT_REVIEW'),
@@ -329,5 +329,5 @@ export const composeDPLT9LennardNoCostClosure = (): DPLT9Result => {
     proofBoundary
   }
 
-  return { ...resultPayload, resultFingerprint: sha256SemanticFingerprint(resultPayload) }
+  return { ...resultPayload, resultFingerprint: sha256DplSemanticFingerprint(resultPayload) }
 }

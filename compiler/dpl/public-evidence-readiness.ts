@@ -1,6 +1,6 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPL15ATrial } from './real-site-trial.js'
 
 export const DPL15B_SCHEMA_VERSION = 'dpl.realSitePublicEvidenceSupplement.v1' as const
@@ -110,7 +110,7 @@ const expectStrings = (value: unknown, label: string, allowEmpty = false): strin
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => a.localeCompare(b))
+  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const exact = <T extends string>(value: unknown, expected: T, label: string): T => {
   if (value !== expected) throw new Error(`${label} must equal ${expected}; got ${String(value)}.`)
@@ -179,7 +179,7 @@ export const validateDPL15BSupplement = (value: unknown): DPL15BSupplement => {
   exact(baseline.manifestPath, 'project/dpl/sites/dpl-rp-003-trial-manifest-v01.json', 'baseline.manifestPath')
 
   if (!Array.isArray(raw.sources) || raw.sources.length !== 4) throw new Error('DPL-15B requires exactly E1-E4 sources.')
-  const sources = raw.sources.map(canonicalSource).sort((a, b) => a.id.localeCompare(b.id))
+  const sources = raw.sources.map(canonicalSource).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
   if (JSON.stringify(sources.map((source) => source.id)) !== JSON.stringify(['E1', 'E2', 'E3', 'E4'])) {
     throw new Error('DPL-15B source ids must be exactly E1, E2, E3, E4.')
   }
@@ -216,7 +216,7 @@ export const validateDPL15BSupplement = (value: unknown): DPL15BSupplement => {
 
   const externalRaw = expectRecord(raw.unchangedExternalEvidenceBoundary, 'unchangedExternalEvidenceBoundary')
   const external: Record<string, 'UNRESOLVED'> = {}
-  for (const [key, value] of Object.entries(externalRaw).sort(([a], [b]) => a.localeCompare(b))) {
+  for (const [key, value] of Object.entries(externalRaw).sort(([a], [b]) => compareDplIdentityStrings(a, b))) {
     external[key] = exact(value, 'UNRESOLVED', `unchangedExternalEvidenceBoundary.${key}`)
   }
   if (Object.keys(external).length < 7) throw new Error('DPL-15B must preserve the external evidence boundary explicitly.')
@@ -277,7 +277,7 @@ export const composeDPL15BPublicEvidence = (
   const baseline = composeDPL15ATrial()
   const sourceFingerprints = supplement.sources.map((source) => ({
     id: source.id,
-    fingerprint: sha256SemanticFingerprint(source)
+    fingerprint: sha256DplSemanticFingerprint(source)
   }))
   const dimensionedGeometrySourceIds = supplement.sources
     .filter((source) =>
@@ -285,8 +285,8 @@ export const composeDPL15BPublicEvidence = (
       source.geometryAuthority === 'APPROVED_DIMENSIONED_SCREENING_GEOMETRY'
     )
     .map((source) => source.id)
-    .sort((a, b) => a.localeCompare(b))
-  const evidenceFingerprint = sha256SemanticFingerprint({
+    .sort((a, b) => compareDplIdentityStrings(a, b))
+  const evidenceFingerprint = sha256DplSemanticFingerprint({
     supplement,
     baselineManifestFingerprint: baseline.manifestFingerprint,
     sourceFingerprints
@@ -303,7 +303,7 @@ export const composeDPL15BPublicEvidence = (
     geometryReadiness: supplement.geometryReadiness.state,
     dimensionedGeometrySourceIds,
     evidenceFingerprint,
-    resultFingerprint: sha256SemanticFingerprint({
+    resultFingerprint: sha256DplSemanticFingerprint({
       evidenceFingerprint,
       geometryReadiness: supplement.geometryReadiness.state,
       decisionStatus: supplement.decisionStatusResolution,

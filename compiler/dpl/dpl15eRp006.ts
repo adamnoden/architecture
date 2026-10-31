@@ -1,7 +1,7 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 
 export const DPL15E_PATH = 'project/dpl/sites/dpl-rp-006-15e-spatial-preflight-v01.json' as const
 export const DPL15E_SCHEMA_VERSION = 'dpl.rp006SpatialPreflight.v1' as const
@@ -111,7 +111,7 @@ const exact = <T extends string | boolean>(value: unknown, expected: T, label: s
   return expected
 }
 
-const uniqueSorted = (values: readonly string[]): string[] => [...new Set(values)].sort((a, b) => a.localeCompare(b))
+const uniqueSorted = (values: readonly string[]): string[] => [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const canonicalSource = (value: unknown, index: number): SourceRecord => {
   const raw = asRecord(value, `sources[${index}]`)
@@ -161,7 +161,7 @@ export const validateDPL15ERp006 = (value: unknown): RawPreflight => {
   }
 
   if (!Array.isArray(raw.sources) || raw.sources.length < 4) throw new Error('DPL-15E requires its bounded evidence source set.')
-  const sources = raw.sources.map(canonicalSource).sort((a, b) => a.id.localeCompare(b.id))
+  const sources = raw.sources.map(canonicalSource).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
   const sourceIds = sources.map((source) => source.id)
   if (new Set(sourceIds).size !== sources.length) throw new Error('DPL-15E source ids must be unique.')
 
@@ -175,7 +175,7 @@ export const validateDPL15ERp006 = (value: unknown): RawPreflight => {
   }
 
   if (!Array.isArray(raw.readiness) || raw.readiness.length !== DPL15E_DIMENSIONS.length) throw new Error('DPL-15E must assess all six R1-R6 dimensions exactly once.')
-  const readiness = raw.readiness.map(canonicalReadiness).sort((a, b) => a.dimension.localeCompare(b.dimension))
+  const readiness = raw.readiness.map(canonicalReadiness).sort((a, b) => compareDplIdentityStrings(a.dimension, b.dimension))
   if (JSON.stringify(readiness.map((entry) => entry.dimension)) !== JSON.stringify([...DPL15E_DIMENSIONS].sort())) {
     throw new Error('DPL-15E readiness universe must be exactly R1-R6.')
   }
@@ -267,7 +267,7 @@ export const composeDPL15ERp006 = (
     residualDimensions: preflight.residualDimensions,
     counts: { satisfied: preflight.satisfiedDimensions.length, residual: preflight.residualDimensions.length },
     sourceIds: preflight.sources.map((source) => source.id).sort(),
-    resultFingerprint: sha256SemanticFingerprint(canonical),
+    resultFingerprint: sha256DplSemanticFingerprint(canonical),
     proofBoundary: {
       referenceHouseCandidate: 'NOT_AUTHORISED',
       compatibleAtScreening: 'NOT_ADMITTED',

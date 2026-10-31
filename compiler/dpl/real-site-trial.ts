@@ -1,7 +1,7 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { loadWaveCBoroughTarget } from './wavec.js'
 
 export const DPL15A_SCHEMA_VERSION = 'dpl.realSiteTrialManifest.v1' as const
@@ -128,7 +128,7 @@ const strings = (value: unknown, label: string, allowEmpty = false): readonly st
 }
 
 const uniqueSorted = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => a.localeCompare(b))
+  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const loadCoverageIds = (path: string, owner: CoverageOwner): Set<string> => {
   const json = JSON.parse(readText(path)) as unknown
@@ -221,7 +221,7 @@ export const validateDPL15AManifest = (value: unknown): DPL15AManifest => {
   exactString(raw.authorityGitBlobSha, DPL15A_AUTHORITY_GIT_BLOB_SHA, 'authorityGitBlobSha')
 
   if (!Array.isArray(raw.sources) || raw.sources.length !== 3) throw new Error('DPL-15A requires exactly S1/S2/S3 source records.')
-  const sources = raw.sources.map(canonicalSource).sort((a, b) => a.id.localeCompare(b.id))
+  const sources = raw.sources.map(canonicalSource).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
   const sourceIdList = sources.map((entry) => entry.id)
   if (JSON.stringify(sourceIdList) !== JSON.stringify(['S1', 'S2', 'S3'])) {
     throw new Error('DPL-15A source ids must be exactly S1, S2, S3.')
@@ -231,7 +231,7 @@ export const validateDPL15AManifest = (value: unknown): DPL15AManifest => {
   if (!Array.isArray(raw.claims) || raw.claims.length !== 15) throw new Error('DPL-15A requires exactly 15 RP003 claims.')
   const ids = coverageIds()
   const claims = raw.claims.map((entry, index) => canonicalClaim(entry, index, sourceIds, ids))
-    .sort((a, b) => a.id.localeCompare(b.id))
+    .sort((a, b) => compareDplIdentityStrings(a.id, b.id))
   const claimIds = claims.map((entry) => entry.id)
   if (new Set(claimIds).size !== claimIds.length) throw new Error('DPL-15A claim ids must be unique.')
   if (JSON.stringify(claimIds) !== JSON.stringify(DPL15A_EXPECTED_CLAIM_IDS)) {
@@ -324,14 +324,14 @@ export const composeDPL15ATrial = (
   const intersection = manifest.claims.map((claim) => claim.id).filter((id) => syntheticIds.has(id)).sort()
   if (intersection.length > 0) throw new Error(`DPL-15A real claims collide with synthetic fixture claims: ${intersection.join(', ')}.`)
 
-  const authorityFingerprint = sha256SemanticFingerprint({
+  const authorityFingerprint = sha256DplSemanticFingerprint({
     path: DPL15A_AUTHORITY_PATH,
     gitBlobSha: DPL15A_AUTHORITY_GIT_BLOB_SHA,
     researchDate: manifest.researchDate
   })
-  const manifestFingerprint = sha256SemanticFingerprint(manifest)
+  const manifestFingerprint = sha256DplSemanticFingerprint(manifest)
   const proofBoundary = manifest.resultBoundary
-  const resultFingerprint = sha256SemanticFingerprint({
+  const resultFingerprint = sha256DplSemanticFingerprint({
     manifestFingerprint,
     authorityFingerprint,
     claimCount: manifest.claims.length,

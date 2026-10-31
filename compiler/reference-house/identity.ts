@@ -1,12 +1,12 @@
 import type { CalculationMethod } from '../calculation-slice/model.js'
-import { sha256SemanticFingerprint } from '../core/identity.js'
+import { compareCanonicalStrings, sha256SemanticFingerprint } from '../core/identity.js'
 import type { ReferenceHouseCoordinationSource } from './model.js'
 import type { ReferenceHouseSystemCoreResult } from './system-compile.js'
 
 export const REFERENCE_HOUSE_COMPILE_SCHEMA_VERSION = 'HK-RH-COMPILE-1' as const
 
 const byId = <T extends { id: string }>(items: readonly T[]): T[] =>
-  [...items].sort((a, b) => a.id.localeCompare(b.id))
+  [...items].sort((a, b) => compareCanonicalStrings(a.id, b.id))
 
 /**
  * Canonicalizes only collections whose order is not an architectural source fact.
@@ -45,11 +45,11 @@ const domainDiagnostics = (
       subjectIds: [...item.subjectIds].sort()
     }))
     .sort((a, b) => {
-      const byCode = a.code.localeCompare(b.code)
+      const byCode = compareCanonicalStrings(a.code, b.code)
       if (byCode) return byCode
-      const byStatus = a.status.localeCompare(b.status)
+      const byStatus = compareCanonicalStrings(a.status, b.status)
       if (byStatus) return byStatus
-      return a.subjectIds.join('|').localeCompare(b.subjectIds.join('|'))
+      return compareCanonicalStrings(a.subjectIds.join('|'), b.subjectIds.join('|'))
     })
 
 /** Compact controlled summary only: detailed runtime routes, effective adapter inputs,
@@ -80,7 +80,7 @@ export const referenceHouseSemanticResultManifest = (
       boundary: domainDiagnostics(result.diagnostics.boundary),
       privateStairGeometry: result.diagnostics.privateStairGeometry
         .map((item) => ({ code: item.code }))
-        .sort((a, b) => a.code.localeCompare(b.code))
+        .sort((a, b) => compareCanonicalStrings(a.code, b.code))
     },
     derived: {
       shellMm: {
@@ -94,7 +94,7 @@ export const referenceHouseSemanticResultManifest = (
       floorZoneDepthMm: result.floorZoneDepth,
       planPlateAreaMm2: Object.fromEntries(
         [...result.plan.derived.plateAreas]
-          .sort((a, b) => a.levelId.localeCompare(b.levelId))
+          .sort((a, b) => compareCanonicalStrings(a.levelId, b.levelId))
           .map((item) => [item.levelId, item.area])
       ),
       structure: {
@@ -122,7 +122,7 @@ export const referenceHouseSemanticResultManifest = (
         methodVersion: stair.methodVersion,
         inputId: stair.inputId,
         criteria: [...stair.criteria]
-          .sort((a, b) => a.criterionId.localeCompare(b.criterionId))
+          .sort((a, b) => compareCanonicalStrings(a.criterionId, b.criterionId))
           .map((item) => ({
             criterionId: item.criterionId,
             status: item.status,

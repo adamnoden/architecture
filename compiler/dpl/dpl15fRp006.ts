@@ -1,6 +1,6 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPL15ERp006, DPL15E_DIMENSIONS, type DPL15EDimension } from './dpl15eRp006.js'
 
 export const DPL15F_PATH = 'project/dpl/sites/dpl-rp-006-15f-residual-recovery-v01.json' as const
@@ -99,7 +99,7 @@ const exact = <T extends string | boolean>(value: unknown, expected: T, label: s
   if (value !== expected) throw new Error(`${label} must equal ${String(expected)}; got ${String(value)}.`)
   return expected
 }
-const uniqueSorted = (values: readonly string[]): string[] => [...new Set(values)].sort((a, b) => a.localeCompare(b))
+const uniqueSorted = (values: readonly string[]): string[] => [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 const dimension = (value: unknown, label: string): DPL15EDimension => {
   const candidate = asString(value, label)
   if (!(DPL15E_DIMENSIONS as readonly string[]).includes(candidate)) throw new Error(`${label} has unsupported dimension ${candidate}.`)
@@ -157,7 +157,7 @@ export const validateDPL15FRp006 = (value: unknown): RawDPL15F => {
       ...(observed ? { observed } : {}),
       authorityBoundary: asString(record.authorityBoundary, `recoveryAttempts[${index}].authorityBoundary`)
     }
-  }).sort((a, b) => a.id.localeCompare(b.id))
+  }).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
   if (new Set(recoveryAttempts.map((attempt) => attempt.id)).size !== recoveryAttempts.length) throw new Error('DPL-15F recovery attempt ids must be unique.')
 
   if (!Array.isArray(raw.readiness) || raw.readiness.length !== DPL15E_DIMENSIONS.length) throw new Error('DPL-15F must return all six readiness dimensions.')
@@ -172,7 +172,7 @@ export const validateDPL15FRp006 = (value: unknown): RawDPL15F => {
       evidenceRefs: uniqueSorted(asStrings(record.evidenceRefs, `${dim}.evidenceRefs`)),
       reason: asString(record.reason, `${dim}.reason`)
     }
-  }).sort((a, b) => a.dimension.localeCompare(b.dimension))
+  }).sort((a, b) => compareDplIdentityStrings(a.dimension, b.dimension))
   if (JSON.stringify(readiness.map((entry) => entry.dimension)) !== JSON.stringify([...DPL15E_DIMENSIONS].sort())) throw new Error('DPL-15F readiness universe must be exactly R1-R6.')
 
   const satisfied = readiness.filter((entry) => entry.state === 'SATISFIED').map((entry) => entry.dimension).sort()
@@ -260,7 +260,7 @@ export const composeDPL15FRp006 = (value: unknown = JSON.parse(text(DPL15F_PATH)
     satisfiedDimensions: validated.satisfiedDimensions,
     residualDimensions: validated.residualDimensions,
     recoveryAttemptCount: validated.recoveryAttempts.length,
-    resultFingerprint: sha256SemanticFingerprint(canonical),
+    resultFingerprint: sha256DplSemanticFingerprint(canonical),
     nextCorpusComparison: validated.nextCorpusComparison
   }
 }
