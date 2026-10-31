@@ -11,7 +11,7 @@ architectural-drawing semantic model
         ↓
 architectural-drawing representation compiler
         ↓
-publication-drawing / DrawingScene
+publication-drawing-v2 / DrawingSceneV2
         ↓
 SVG / PDF
 ```
@@ -28,7 +28,7 @@ This layer may own **representation semantics** such as:
 - authority / precision / provenance carried into representation;
 - model-space dimensions and labels;
 - architectural scale and BOOK/WALL/PROOF representation profiles;
-- later, proved rules for joins, opening subtraction, uncertainty and scale-appropriate assembly visibility.
+- bounded rules for joins, opening subtraction, uncertainty and scale-appropriate assembly visibility.
 
 ## What this layer does not own
 
@@ -113,7 +113,7 @@ The Reference House adapter and candidate profiles live in `compiler/reference-h
 
 The existing v2 path backend suffices; v1 and unchanged terminal scenes retain their byte contracts. Plan topology is not a section, elevation or 3D model. Shared authority/provenance, physical units and terminal primitives can transfer, while other views must earn their own representation rules.
 
-Current acceptance, reproducible proof commands and PLT physical-review obligations are recorded in `docs/publication/architectural-drawing-engine-closeout.md`. ADE is internally complete; actual print-token acceptance remains with PLT.
+The original plan-engine acceptance, reproducible proof commands and PLT physical-review obligations are recorded in [the ADE closeout](../../docs/publication/architectural-drawing-engine-closeout.md). That programme's internal work is complete; later representation extensions are described below, and actual print-token acceptance remains with PLT.
 
 ## Section and face-on aperture representation
 
