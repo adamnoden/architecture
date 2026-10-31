@@ -42,7 +42,7 @@ The following is an architectural consequence of the **existing conditional cabi
 
 | Territory | Available gross interval in the retained comparison | Task that must be located before a release claim |
 |---|---|---|
-| West side | Inside side face x8724 to outer rim x8835: **111** | Fixing approach and a released clip/strip path without opening the neighbouring dishwasher cabinet or relying on appliance withdrawal. |
+| West side | Inside side face x8724 to outer rim x8835: **111** | Fixing approach and released clip/strip path; expose any side-access or appliance-removal dependency, including prior isolation/disconnection. |
 | East side | Outer rim x9365 to inside side face x9476: **111** | Approach without interference from the side, retained support or adjacent storage. |
 | Front | Counter edge y10982.5 to outer rim y11046: **63.5** | Front-face/rail state, hand/tool approach and the rim-seal release path. This strip is not a clear aperture. |
 | Rear | Outer rim y11486 to counter back y11582.5: **96.5** | Approach around the actual tap, overflow, tails, support and back closure, while the bowl is still retained. |
