@@ -1,41 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 3,
-  "state": "released",
-  "leaseId": "650de713-dbb7-479c-a948-c5e784f2560f",
+  "generation": 4,
+  "state": "claimed",
+  "leaseId": "66e37744-c45f-484e-800d-f583195525e2",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-resume-envelope-983b7ee"
+    "label": "swarm-envelope-dpc-983b7ee"
   },
-  "claimedAt": "2026-10-31T09:05:17.339Z",
-  "heartbeatAt": "2026-10-31T09:17:26.195Z",
-  "expiresAt": "2026-10-31T09:17:26.195Z",
-  "branch": "work/swarm-resume-envelope-20261031",
+  "claimedAt": "2026-10-31T09:18:30.617Z",
+  "heartbeatAt": "2026-10-31T09:18:30.617Z",
+  "expiresAt": "2026-10-31T10:03:30.617Z",
+  "branch": "work/swarm-envelope-dpc-20261031",
   "predecessor": {
-    "leaseId": "b0f79a4c-1354-49b1-b3c4-d31f64293123",
-    "generation": 2,
-    "branch": "work/swarm-983b7ee4744e-worker3",
+    "leaseId": "650de713-dbb7-479c-a948-c5e784f2560f",
+    "generation": 3,
+    "branch": "work/swarm-resume-envelope-20261031",
+    "pr": 1124,
     "checkpoint": {
-      "evidence": "Owner interruption before new work. Predecessor PR #1117 head8e6eddb0e2ae2f64c37810bd0a337596a93637d3 remains open and preserved. Local recovery copied its three docs only; worker3 has no remote branch or new output.",
-      "next": "Resume from predecessor PR #1117 on a fresh canonical lease and own branch; verify its primary sources, reconcile current main and require exact-head CI/preflight. MAT-ENVELOPE remains planned."
+      "evidence": "PR #1124 merged as 178c43815ba318a09f0f62c344aed37f15a71f16 after full CI41187669477 success on head24b7f82b8408f4582241e220ea83d85eef416443 and fresh merge-check09:15:46.537Z. Fresh main tree2bada5b4ea5aeff43f51ab9179f7fd06d2b62d65 matches all three recovered files; new work branch auto-deleted. This integrates reviewed #1117 plus precise product-label DoP attribution only.",
+      "next": "MAT-ENVELOPE remains planned. Bind exact DPC1 unit/mortar and suitable slate, then qualify complete straight wall/floor junctions for both boundary locations and internal-support, threshold, penetration and movement details. Other envelope assemblies, site inputs, thermal/structural proof, constituents and costs remain unresolved. Root will supersede predecessor #1117 after this verified integration."
     }
   },
   "recoverySource": {
-    "leaseId": "b0f79a4c-1354-49b1-b3c4-d31f64293123",
-    "generation": 2,
-    "branch": "work/swarm-983b7ee4744e-worker3",
+    "leaseId": "650de713-dbb7-479c-a948-c5e784f2560f",
+    "generation": 3,
+    "branch": "work/swarm-resume-envelope-20261031",
+    "pr": 1124,
     "checkpoint": {
-      "evidence": "Owner interruption before new work. Predecessor PR #1117 head8e6eddb0e2ae2f64c37810bd0a337596a93637d3 remains open and preserved. Local recovery copied its three docs only; worker3 has no remote branch or new output.",
-      "next": "Resume from predecessor PR #1117 on a fresh canonical lease and own branch; verify its primary sources, reconcile current main and require exact-head CI/preflight. MAT-ENVELOPE remains planned."
+      "evidence": "PR #1124 merged as 178c43815ba318a09f0f62c344aed37f15a71f16 after full CI41187669477 success on head24b7f82b8408f4582241e220ea83d85eef416443 and fresh merge-check09:15:46.537Z. Fresh main tree2bada5b4ea5aeff43f51ab9179f7fd06d2b62d65 matches all three recovered files; new work branch auto-deleted. This integrates reviewed #1117 plus precise product-label DoP attribution only.",
+      "next": "MAT-ENVELOPE remains planned. Bind exact DPC1 unit/mortar and suitable slate, then qualify complete straight wall/floor junctions for both boundary locations and internal-support, threshold, penetration and movement details. Other envelope assemblies, site inputs, thermal/structural proof, constituents and costs remain unresolved. Root will supersede predecessor #1117 after this verified integration."
     }
-  },
-  "pr": 1124,
-  "checkpoint": {
-    "evidence": "PR #1124 merged as 178c43815ba318a09f0f62c344aed37f15a71f16 after full CI41187669477 success on head24b7f82b8408f4582241e220ea83d85eef416443 and fresh merge-check09:15:46.537Z. Fresh main tree2bada5b4ea5aeff43f51ab9179f7fd06d2b62d65 matches all three recovered files; new work branch auto-deleted. This integrates reviewed #1117 plus precise product-label DoP attribution only.",
-    "next": "MAT-ENVELOPE remains planned. Bind exact DPC1 unit/mortar and suitable slate, then qualify complete straight wall/floor junctions for both boundary locations and internal-support, threshold, penetration and movement details. Other envelope assemblies, site inputs, thermal/structural proof, constituents and costs remain unresolved. Root will supersede predecessor #1117 after this verified integration."
-  },
-  "note": "Bounded recovery integrated; no complete installed assembly, product selection, exception or lifecycle completion. Releasing this generation for canonical future work.",
-  "releasedAt": "2026-10-31T09:17:26.195Z",
-  "releaseReason": "handoff"
+  }
 }
