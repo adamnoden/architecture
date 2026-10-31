@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 11,
+  "generation": 12,
   "state": "claimed",
-  "leaseId": "12aa043e-cef4-4c1a-8ae8-8401e2ca7664",
+  "leaseId": "7619f2db-fb07-4914-b2fb-dd2284fe29a0",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-2900-worker-two-next"
+    "label": "swarm-ias-floor-recovery-1937"
   },
-  "claimedAt": "2026-10-31T17:46:06.841Z",
-  "heartbeatAt": "2026-10-31T18:07:45.324Z",
-  "expiresAt": "2026-10-31T18:52:45.324Z",
-  "branch": "work/swarm-2900-next-20261031",
+  "claimedAt": "2026-10-31T19:40:53.427Z",
+  "heartbeatAt": "2026-10-31T19:40:53.427Z",
+  "expiresAt": "2026-10-31T20:25:53.427Z",
+  "branch": "work/swarm-ias-recovery-1937-20261031",
   "predecessor": {
-    "leaseId": "73aa7dc9-af13-474b-b663-5780130655fd",
-    "generation": 10,
-    "branch": "work/swarm-2900-interfaces-20261031",
-    "pr": 1157,
-    "checkpoint": {
-      "evidence": "PR #1157 merged as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b; accepted tree equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI 41225448974 succeeded; IAS canonical preflight passed 17:40:56.322Z. Independent manual/source review, repository validation and docs build passed.",
-      "next": "Handoff this merged partial result. Obtain an identified current bowl-seat/downstream waste assembly and bind its full constituents, actual sealing faces, support and withdrawal sequence before further IAS adoption.",
-      "blocker": "Current supplied variant, every retained ring and connection, installed clearance and release travel remain unbound; generic assembly diagrams do not resolve those inputs. IAS-03 remains incomplete."
-    }
+    "leaseId": "12aa043e-cef4-4c1a-8ae8-8401e2ca7664",
+    "generation": 11,
+    "branch": "work/swarm-2900-next-20261031"
   },
   "recoverySource": {
     "leaseId": "73aa7dc9-af13-474b-b663-5780130655fd",
@@ -33,6 +27,5 @@
       "next": "Handoff this merged partial result. Obtain an identified current bowl-seat/downstream waste assembly and bind its full constituents, actual sealing faces, support and withdrawal sequence before further IAS adoption.",
       "blocker": "Current supplied variant, every retained ring and connection, installed clearance and release travel remain unbound; generic assembly diagrams do not resolve those inputs. IAS-03 remains incomplete."
     }
-  },
-  "note": "Local source e3cc9bfabb829e8653ae43a19e464630c88a99e8 independently reviewed and checked on d81aab99; shared STR/IAS integration pending. No remote publication claimed. A/C cabinet comparison retains pinned HAD sequence conditionally on supported flush floor closure; actual closure, component withdrawal and acceptance remain unresolved."
+  }
 }
