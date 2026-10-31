@@ -10,6 +10,7 @@ import { pcoNodes } from './pco.js'
 import { publicationNodes } from './publication.js'
 import { roofWaterNodes } from './roof-water.js'
 import { structureNodes } from './structure.js'
+import { softwareNodes } from './software.js'
 
 /**
  * Deterministic aggregation point only.
@@ -28,5 +29,6 @@ export const controlNodes = [
   ...mraNodes,
   ...publicationNodes,
   ...houseDeliveryNodes,
-  ...evidenceNodes
+  ...evidenceNodes,
+  ...softwareNodes
 ] as const satisfies readonly ControlNode[]
