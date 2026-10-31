@@ -1,6 +1,7 @@
 # PLT B4 circulation and opening comparison
 
-Current owner-review candidate for image-7/image-8 feedback, issue #892.
+Retained owner-review candidate for image-7/image-8 feedback, issue #892.
+For the current house and review family, see the [current-source rollout](../../../docs/publication/architectural-plate-current-source-and-rollout.md).
 Architecture is owned by `docs/reference-house/ground-plan-resolution.md` and
 `compiler/reference-house/plan-resolution.ts`. This is not a physical acceptance
 or token freeze. Stair headroom/framing and service equipment fit remain open.

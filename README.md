@@ -53,7 +53,7 @@ flowchart TB
     DPL -. "compatibility / bounded adaptation question" .-> RH
 ```
 
-The diagram is an **authority and navigation map**, not a claim that every arrow is an implemented data pipeline. In particular, the deployment/context relation is a separately governed question, not a claim that a site-deployment compiler already exists.
+The diagram is an **authority and navigation map**, not a claim that every arrow is an implemented data pipeline. The [deployment compiler](https://github.com/adamnoden/architecture/blob/main/compiler/dpl/README.md) implements bounded conformance and obligation/evidence checks; it does not establish whole-site compatibility or select architecture.
 
 ### Protected distinctions
 
@@ -65,7 +65,7 @@ The diagram is an **authority and navigation map**, not a claim that every arrow
 - **Research, prototypes and professional review** can support, narrow or falsify claims. Evidence does not become doctrine merely because it is favourable.
 - **Metamorph Compiler** checks bounded executable representations. A passing compile is not architectural merit, engineering adequacy or regulatory approval.
 - **Generated inspection outputs** are downstream views of controlled sources. They are not architectural source authority.
-- **Deployment, jurisdiction and real-site work** is a distinct layer. Its exact model is owned by the DPL programme while that foundation is being established; the README does not assume an implemented deployment compiler that does not yet exist.
+- **Deployment, jurisdiction and real-site work** is a distinct layer. The DPL programme and [bounded implementation](https://github.com/adamnoden/architecture/blob/main/compiler/dpl/README.md) own its model and checks. The completed conditional studies retain their historical house basis; [owner-house site work](https://github.com/adamnoden/architecture/blob/main/project/dpl/owner-house-site-programme.md) must establish applicability to the accepted design and an actual site.
 
 ## What is authoritative for what?
 
@@ -150,4 +150,4 @@ Use [`package.json`](package.json) for the current command set and local subsyst
 
 The repository is intentionally ahead in some internal forms and behind in external validation. Physical testing, competent professional review and real-site evidence remain distinct from internal coordination and deterministic checks.
 
-For current project-wide state, maturity judgements and active work, use `STATUS.md`. This README is deliberately kept free of packet numbers, branch hashes and live work queues so that it remains a stable map rather than a second status system.
+For current project-wide durable state and maturity judgements, use `STATUS.md`; use `npm run control:brief` for observed live occupancy and available work. The [current Reference House basis](docs/reference-house/current-house-basis.md) distinguishes the accepted design from historical technical studies. This README is deliberately kept free of packet numbers, branch hashes and live work queues so that it remains a stable map rather than a second status system.
