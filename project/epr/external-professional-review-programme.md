@@ -1,6 +1,7 @@
 # EPR — External professional review
 
-**State:** current-house briefs refreshed; unissued, with no competent review response recorded  
+**State:** current-house briefs refreshed and internal technical investigation complete; briefs unissued, with no competent external review response recorded
+
 **Maturity:** M1 at current project scope  
 **Reference House gate:** `RH-11`  
 **Execution register:** `docs/development/validation-execution-register.md`  
@@ -71,6 +72,8 @@ Record `project/epr/bay-review-result.md`: reviewer role/competence and scope, e
 DEL-COMMISSION-PLAN can proceed from the real-site assessment and DEL-BAY-PACK while this feedback is outstanding. It must register the affected acceptance decisions and review timing; planning completion neither accepts the package nor closes this evidence gate.
 
 ## EPR-DESK-REVIEW — internal technical answers and challenge
+
+**Completed bounded investigation:** the [internal technical review](internal-technical-review.md) answers all 33 questions against the accepted house and explicitly separate alternatives. It records primary editions/application limits, reproducible calculations, contrary evidence, conventional comparisons, reasoned recommendations, internal adversarial dispositions and exact residual owners/resolution points. The findings include real support/section conflicts, the enclosed-court escape limitation, category-conditioned door-opening discrepancies and coupled ventilation/acoustic/water duties. Completion does not select a design, discharge those residuals, provide external review or raise maturity; EPR-RH11 remains manual and incomplete.
 
 **Self-service after EPR-REFRESH.** Produce `project/epr/internal-technical-review.md`, answering the five discipline briefs as far as recoverable evidence and explicit assumptions permit. This is substantive technical investigation, not another request for someone else to investigate. Start from a named available house revision; do not wait for final design selection. Separate the accepted source from each unadopted STR, roof, water or assembly alternative and use bounded scenarios where decisions remain open.
 
