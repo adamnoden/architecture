@@ -121,16 +121,16 @@ def world(p, angle):
 def grip(angle, side=0):
     return world((STATION,side*84.), angle)
 
-def point_checks(body, angle, side):
-    contact = grip(angle, side)
-    bl, gl = local(body,angle), local(contact,angle)
+def point_checks(body, angle, side, to_local=local, contact=grip):
+    g = contact(angle, side)
+    bl, gl = to_local(body,angle), to_local(g,angle)
     return {
         'body_fixed': min(point_rect_gap(body,r)-BODY_RADIUS for _,r in DOOR_FIXED),
         'body_leaf': point_rect_gap(bl,LEAF_LOCAL)-BODY_RADIUS,
         'body_handle_bound': point_rect_gap(bl,HANDLE_LOCAL)-BODY_RADIUS,
         'arm_leaf': polygon_rect_gap([bl,gl],LEAF_LOCAL)-ARM_RADIUS,
-        'arm_fixed': min(polygon_rect_gap([body,contact],r)-ARM_RADIUS for _,r in DOOR_FIXED),
-        'face_reach': math.dist(body,contact),
+        'arm_fixed': min(polygon_rect_gap([body,g],r)-ARM_RADIUS for _,r in DOOR_FIXED),
+        'face_reach': math.dist(body,g),
     }
 
 def turn(start, finish, body_function, side, intervals, speed):
@@ -154,13 +154,14 @@ def turn(start, finish, body_function, side, intervals, speed):
             'sampled_maximum_face_reach_mm':reach,'continuous_face_reach_upper_mm':reach_upper,
             'illustrative_states':samples}
 
-def walk(points, angle, side=0, hold=False, fixed=None):
+def walk(points, angle, side=0, hold=False, fixed=None,
+         to_local=local, contact=grip):
     fixed = DOOR_FIXED if fixed is None else fixed
-    g = grip(angle,side); gl = local(g,angle)
+    g = contact(angle,side); gl = to_local(g,angle)
     keys = ['body_fixed','body_leaf','body_handle_bound'] + (['arm_leaf','arm_fixed'] if hold else [])
     minima = {key:math.inf for key in keys}; reach = 0.
     for p,q in zip(points,points[1:]):
-        pl,ql = local(p,angle),local(q,angle)
+        pl,ql = to_local(p,angle),to_local(q,angle)
         values = {
             'body_fixed':min(polygon_rect_gap([p,q],r)-BODY_RADIUS for _,r in fixed),
             'body_leaf':polygon_rect_gap([pl,ql],LEAF_LOCAL)-BODY_RADIUS,
@@ -347,7 +348,176 @@ text(12,269,'Quaker 1875 dimensions support the chair envelope only. No seated c
 text(12,281,'Sources and complete movement bounds: study-operation.py / .json. Front Study window duties remain with the existing HAD/BAY/OAS handoff.',2.65)
 svg.append('</svg>')
 
-for name,content in [('study-operation.json',json.dumps(result,indent=2)+'\n'),('study-operation.svg','\n'.join(svg)+'\n')]:
+# A fair handing comparison must allow the retained door the same unheld
+# pre-contact approach as the mirrored trial. The original two-hand witness
+# and its generated artifacts above remain unchanged.
+def single_contact_body(angle):
+    c = grip(angle)
+    return (min(max(c[0],2530.),3000.),c[1]-500.)
+
+SINGLE_ENTRY = [(6000.,3250.),(2850.,3250.),(2850.,2200.),
+                (3020.,2200.),(3020.,1385.5),(2530.,1385.5)]
+SINGLE_CLOSED = single_contact_body(0.)
+assert SINGLE_ENTRY[-1] == single_contact_body(math.pi/2)
+assert SINGLE_CLOSED == (3000.,2087.5)
+single_speed = {
+    'body_fixed':STATION,'body_leaf':STATION+leaf_speed,
+    'body_handle_bound':STATION+handle_speed,
+    'arm_fixed':max(STATION,grip_speed),
+    'arm_leaf':max(STATION,grip_speed)+leaf_speed,'reach':STATION+grip_speed,
+}
+single_stages = {
+    'parked_90_unheld_entry':walk(SINGLE_ENTRY,math.pi/2),
+    'close_90_to_0_same_minus_contact':turn(math.pi/2,0.,single_contact_body,-1,1800,single_speed),
+    'closed_join_to_accepted_task_origin':walk([SINGLE_CLOSED,CLOSED],0.),
+    'closed_chair_side':walk([SINGLE_CLOSED,*CHAIR_APPROACH],0.),
+}
+assert all(v['clear'] for v in single_stages.values() if 'clear' in v)
+
+HIGH_H = (2*DOOR['centre']-H[0],H[1])
+assert HIGH_H == (3231.,2587.5)
+def high_basis(angle):
+    return (-math.cos(angle),-math.sin(angle)),(math.sin(angle),-math.cos(angle))
+
+def high_world(p, angle):
+    u,n = high_basis(angle)
+    return (HIGH_H[0]+p[0]*u[0]+p[1]*n[0],HIGH_H[1]+p[0]*u[1]+p[1]*n[1])
+
+def high_local(p, angle):
+    u,n = high_basis(angle); v = (p[0]-HIGH_H[0],p[1]-HIGH_H[1])
+    return (v[0]*u[0]+v[1]*u[1],v[0]*n[0]+v[1]*n[1])
+
+def high_grip(angle, side=0):
+    return high_world((STATION,side*84.),angle)
+
+A85 = math.radians(85)
+HIGH_INITIAL = (min(high_grip(A85)[0],3000.),high_grip(A85)[1]-500.)
+HIGH_ENTRY = [(6000.,3250.),(2800.,3250.),(2800.,2350.),(2700.,2350.),
+              (2700.,HIGH_INITIAL[1]),HIGH_INITIAL]
+high_entry = walk(HIGH_ENTRY,A85,to_local=high_local,contact=high_grip)
+high_initial = point_checks(HIGH_INITIAL,A85,+1,to_local=high_local,contact=high_grip)
+high_straight_entry = walk([(6000.,3250.),(2800.,3250.),
+                           (2800.,HIGH_INITIAL[1]),HIGH_INITIAL],A85,
+                          to_local=high_local,contact=high_grip)
+high_west = walk(WEST_PATH,0.,fixed=ROOM_FIXED+[('stowed chair',STOWED_CHAIR)],
+                 to_local=high_local,contact=high_grip)
+high_90_contact = high_grip(math.pi/2,+1)
+cloak = next(r for name,r in EXTRA if name=='cloak unavailable')
+high_90_endpoint_margin = point_rect_gap(high_90_contact,cloak)-ARM_RADIUS
+assert high_entry['clear'] and high_initial['arm_leaf'] < 0
+assert not high_straight_entry['clear'] and not high_west['clear']
+assert abs(high_90_endpoint_margin-(-17.5)) < 1e-9
+
+handing_result = {
+    'basis':'Same accepted RH-LAYOUT-REVISION-02 and exact proxies as study-operation.json',
+    'starting_main':'76addac4dfcb64d54ce6a794b07d012de7349435',
+    'accepted_predecessor_pr':1163,'source_sha256':PINS,'adopted':False,
+    'source_handing':'low; unchanged','unadopted_trial_handing':'high; exact mirror about x2850',
+    'state_assumption':'The leaf is already stationary at the declared angle and remains there during unheld entry and reversed exit. Establishing or maintaining that state is not proved.',
+    'unchanged_proxy_mm':{'body_diameter':600,'arm_diameter':80,'reach_limit':600,
+        'leaf_width':762,'leaf_thickness':44,'spindle_station':702,
+        'face_offsets':[-84,84],'body_only_handle_bound':HANDLE_LOCAL},
+    'retained_low':{
+        'hinge':H,'parked_angle_degrees':90,'body_path':'(clamp(C.x,2530,3000), C.y-500)',
+        'contact':'G-minus throughout modelled closing and reopening; no handover',
+        'stages':single_stages,'movement_speed_bounds_mm_per_radian':single_speed,
+        'reverse':'Return from the task to (3000,2087.5), reacquire the same authored G-minus, reverse P(theta) from0 to90, release at the stationary leaf, then reverse SINGLE_ENTRY. The same exact swept sets and continuous bounds apply.',
+        'accepted_tasks':'The explicit closed connector reaches the unchanged (2871,2087.5) origin of study-operation.json. Its chair-stow/window-approach states and limitations remain unchanged, including restoring the chair before returning.',
+    },
+    'mirrored_high_trials':{
+        'hinge':HIGH_H,'closed_room_face_contact':'G-plus in the mirrored basis',
+        'parked_90':{'contact':high_90_contact,'endpoint_to_cloak_margin_mm':high_90_endpoint_margin,
+            'result':'The radius40 capsule at this contact overlaps the cloak independently of torso position; no full90 same-contact loop is earned.'},
+        'parked_85':{'body_path_trial':'(min(C.x,3000), C.y-500)','initial_body':HIGH_INITIAL,
+            'entry':high_entry,'initial_contact_checks':high_initial,
+            'result':'This particular turn fails already at its initial forearm/leaf capsule. A clear body entry is not a clear turn; no claim about all85-degree paths.'},
+        'adverse_straight_entry_at_85':high_straight_entry,
+        'separate_closed_state_west_window_path':high_west,
+        'closed_handle_bound_world_vertices':[high_world(p,0.) for p in vertices(HANDLE_LOCAL)],
+    },
+    'decision':'Retain the source handing as eligible: removing the earlier witness handover does not require rehanding. These failed high trials are not a universal impossibility proof. No handing or doorset is adopted by the comparison.',
+    'limits':[
+        'One unchanged face contact is not a one-handed human-use result; grip acquisition, orientation, force, balance and release are unproved.',
+        'Zero angle is geometrically closed, not proved latched; reverse geometry does not qualify actual unlatching.',
+        'No stop, detent, closer or hold-open hardware is inferred from either parked angle.',
+        'The handle rectangle is a body-clearance bound, not actual hardware/frame fit or a recovered contact shape.',
+        'Small proxy margins do not establish comfort, accessibility, construction tolerance or preference.',
+        'The original two-hand witness and its chair/window task evidence remain valid within their own states; no high-hinge inheritance.',
+        'No material admission, source geometry change, product selection or HAD lifecycle completion.',
+    ],
+}
+
+handing_svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="DejaVu Sans,sans-serif" fill="#24343b"><rect width="420" height="297" fill="#fffef9"/>']
+def htext(x,y,value,size=3,colour='#24343b'):
+    handing_svg.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{colour}">{escape(str(value))}</text>')
+htext(12,14,'HAD / Study: a grip change does not require a hinge change',5.0)
+htext(12,23,'Same accepted room, furniture and 600 body / 80 arm / 600 reach proxies. Source low hinge remains unchanged.',3.0)
+htext(12,31,'Both comparisons begin with an already stationary leaf. Parking, latch, actual grasp and released-leaf control are unproved.',2.8,'#934b40')
+for panel,ox in enumerate([12.,218.]):
+    px = lambda x:ox+x/25
+    py = lambda y:45+(3400-y)/25
+    def hrect(r,fill,stroke='#78878b',dash=False):
+        x,y,w,h=r
+        handing_svg.append(f'<rect x="{px(x):.4f}" y="{py(y+h):.4f}" width="{w/25:.4f}" height="{h/25:.4f}" fill="{fill}" stroke="{stroke}" stroke-width=".24"'+(' stroke-dasharray="1 1"' if dash else '')+'/>')
+    def hline(points,colour,width=.5,dash=False):
+        handing_svg.append('<polyline points="'+' '.join(f'{px(x):.4f},{py(y):.4f}' for x,y in points)+f'" fill="none" stroke="{colour}" stroke-width="{width}"'+(' stroke-dasharray="1 1"' if dash else '')+'/>')
+    def hcircle(p,r,colour,dash=False):
+        handing_svg.append(f'<circle cx="{px(p[0]):.4f}" cy="{py(p[1]):.4f}" r="{r/25:.4f}" fill="none" stroke="{colour}" stroke-width=".3"'+(' stroke-dasharray="1 1"' if dash else '')+'/>')
+    hrect([0,0,4800,3400],'#f4f0e7')
+    for name,r in WALLS+SHELL+EXTRA:
+        x,y,w,h=r; left,right=max(0,x),min(4800,x+w); low,high=max(0,y),min(3400,y+h)
+        if right>left and high>low: hrect([left,low,right-left,high-low],'#cbd2d1')
+    hrect(DESK,'#c7dbe1'); htext(px(1000),py(950),'retained desk',2.6)
+    hrect(RESERVATION,'none','#96918a',True)
+    htext(px(1050),py(2350),'chair reservation',2.35)
+    for o in WINDOWS:
+        a,b=o['centre']-o['width']/2,o['centre']+o['width']/2
+        hline([(a,417.5),(b,417.5)] if o['wall']=='outer-south' else [(417.5,a),(417.5,b)],'#447f9c',.9)
+    if panel==0:
+        for angle,col in [(math.pi/2,'#af7b55'),(0,'#596f80')]:
+            corners=[world(p,angle) for p in vertices(LEAF_LOCAL)]
+            hline(corners+[corners[0]],col,.5)
+        hline([(4800,3250),*SINGLE_ENTRY[1:]],'#277f77',.65,True)
+        hline([single_contact_body(math.pi/2*i/90) for i in range(90,-1,-1)],'#825b9a',.65)
+        hline([SINGLE_CLOSED,*CHAIR_APPROACH],'#277f77',.55)
+        for angle in [math.pi/2,math.pi/4,0.]:
+            hline([single_contact_body(angle),grip(angle,-1)],'#825b9a',.35)
+        hcircle(SINGLE_ENTRY[-1],BODY_RADIUS,'#825b9a',True)
+        hcircle(SINGLE_CLOSED,BODY_RADIUS,'#825b9a',True)
+        hline([(3050,1100),SINGLE_ENTRY[-1]],'#825b9a',.25)
+        hcircle(SINGLE_ENTRY[-1],15,'#825b9a')
+        htext(px(3100),py(1030),'first contact pose',2.35,'#825b9a')
+        htext(ox,188,'A  Retained low hinge / parked 90°',3.35)
+        htext(ox,197,'Dashed entry: walk around the free end before first G− contact.',2.65)
+        htext(ox,205,'Purple: close/reopen with that same contact; no handover.',2.65)
+        htext(ox,213,'Continuous arm/leaf margin ≥ 2.194 mm; reach < 521.216.',2.65)
+        htext(ox,221,'Closed connector retains the accepted chair/window task origin.',2.65)
+    else:
+        for angle,col,dash in [(math.pi/2,'#af7b55',True),(A85,'#a4473e',False)]:
+            corners=[high_world(p,angle) for p in vertices(LEAF_LOCAL)]
+            hline(corners+[corners[0]],col,.5,dash)
+        hline([(4800,3250),*HIGH_ENTRY[1:]],'#277f77',.65,True)
+        hcircle(HIGH_INITIAL,BODY_RADIUS,'#a4473e',True)
+        hline([HIGH_INITIAL,high_grip(A85,+1)],'#a4473e',.65)
+        hcircle(high_grip(A85,+1),ARM_RADIUS,'#a4473e')
+        hcircle(high_90_contact,ARM_RADIUS,'#a4473e')
+        htext(px(3400),py(1900),'90° endpoint',2.3,'#934b40')
+        htext(px(3060),py(1280),'85° start fails',2.3,'#934b40')
+        htext(ox,188,'B  Unadopted mirrored high hinge / separate trials',3.35)
+        htext(ox,197,'At 90°, the grip-end capsule overlaps the cloak by 17.5 mm.',2.65)
+        htext(ox,205,'At 85°, the shown entry clears; the tested arm/leaf fails.',2.65)
+        htext(ox,213,'Initial arm/leaf penetration 5.304 mm; no passing turn.',2.65)
+        htext(ox,221,'Failure of this path does not reject every rehanded operation.',2.65)
+    htext(ox,231,'1:25 at A3 · north up · hall cropped at x4800 · mm',2.5)
+htext(12,247,'Decision: retain the current handing as eligible. A simpler contact sequence alone does not support changing the source door.',3.15)
+htext(12,258,'The high hinge also moves the closed handle bound into the accepted west-window approach: −26.5 mm body clearance in that separate state.',2.7)
+htext(12,269,'All contacts and frame/stop positions are authored. These are finite geometric comparisons, not one-handed use, comfort or installed-door passes.',2.65)
+htext(12,281,'The earlier two-hand sequence and its generated sheets are preserved. Exact paths, movement bounds and limits: study-handing-comparison.json.',2.65)
+handing_svg.append('</svg>')
+
+for name,content in [('study-operation.json',json.dumps(result,indent=2)+'\n'),('study-operation.svg','\n'.join(svg)+'\n'),
+                     ('study-handing-comparison.json',json.dumps(handing_result,indent=2)+'\n'),
+                     ('study-handing-comparison.svg','\n'.join(handing_svg)+'\n')]:
     path=HERE/name
     if '--check' in sys.argv:
         assert path.read_text()==content, f'Stale {name}'
@@ -358,4 +528,7 @@ print(json.dumps({'door_entry':stages['entry']['exact_swept_minima_mm'],
     'around_tip':stages['around_tip']['exact_swept_minima_mm'],
     'final_close':stages['close_80_to_0']['continuous_lower_bounds_mm'],
     'chair_move':chair_body_fixed['exact_swept_minima_mm'],
-    'window_approaches':{k:v['exact_swept_minima_mm'] for k,v in window_paths.items()}},indent=2))
+    'window_approaches':{k:v['exact_swept_minima_mm'] for k,v in window_paths.items()},
+    'same_contact_retained_turn':single_stages['close_90_to_0_same_minus_contact']['continuous_lower_bounds_mm'],
+    'high_90_endpoint_margin':high_90_endpoint_margin,'high_85_initial_arm_leaf':high_initial['arm_leaf'],
+    'high_closed_west_path':high_west['exact_swept_minima_mm']},indent=2))
