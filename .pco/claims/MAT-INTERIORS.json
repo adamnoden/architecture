@@ -9,8 +9,8 @@
     "label": "swarm-782cae-root-materials"
   },
   "claimedAt": "2026-10-31T17:50:42.793Z",
-  "heartbeatAt": "2026-10-31T17:50:42.793Z",
-  "expiresAt": "2026-10-31T18:35:42.793Z",
+  "heartbeatAt": "2026-10-31T17:58:06.253Z",
+  "expiresAt": "2026-10-31T18:43:06.253Z",
   "branch": "work/swarm-782cae-interiors",
   "predecessor": {
     "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
@@ -33,5 +33,11 @@
       "next": "Bind the actual plaster, patching and preparation to a room surface and its allocated thickness; confirm supplied powder shade and Fixative revisions; assess representative finish and repair. Preserve the separate configured tray/support/withdrawal obligations in the wet-assembly study.",
       "blocker": "Actual substrate, complete preparation/accessory set, supplied colour/revision and physical finish/repair evidence remain unresolved. No finished wall, ceiling or complete interior assembly is accepted; MAT-INTERIORS remains incomplete."
     }
+  },
+  "pr": 1162,
+  "checkpoint": {
+    "evidence": "PR #1162 published at 86c7c5aab4b44506ca95b900cb8f362771246c92, tree 830edea432e9172c102f2467fdbd7da198b0a1eb. Located Conserv plaster comparison shows 24 mm recommended build-up against 15 mm allowance; authored 14 mm remains conditional. Independent sources/arithmetic/hashes review and local repository validation pass.",
+    "next": "Require full exact-head publication CI and fresh canonical preflight, then expected-head merge, accepted checkpoint and release. Actual substrate, complete preparation/edge constituents and supported thinner build-up remain inputs for adoption.",
+    "blocker": "No complete finish or geometry change is selected. Plaster product descriptions and family SDS do not clear the whole installed assembly; MAT-INTERIORS remains planned."
   }
 }
