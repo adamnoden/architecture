@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "SWE-CONTROL",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "4d1fc99d-e8d3-4b87-b7c8-03ec637915b1",
+  "holder": {
+    "kind": "codex",
+    "label": "swe-1174-control"
+  },
+  "claimedAt": "2026-10-31T20:29:13.618Z",
+  "heartbeatAt": "2026-10-31T20:29:13.618Z",
+  "expiresAt": "2026-10-31T21:14:13.618Z",
+  "branch": "work/swe-control-1174"
+}
