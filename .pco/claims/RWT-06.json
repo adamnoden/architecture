@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 18,
-  "state": "released",
-  "leaseId": "328b2897-435b-45d5-8a05-2736278c2f43",
+  "generation": 19,
+  "state": "claimed",
+  "leaseId": "c9511c0e-98d6-4364-9f1d-3155ae1fa7fc",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-court-continuation-983b7ee"
+    "label": "swarm-782cae-worker-two-next"
   },
-  "claimedAt": "2026-10-31T17:53:59.254Z",
-  "heartbeatAt": "2026-10-31T18:01:48.698Z",
-  "expiresAt": "2026-10-31T18:01:48.698Z",
-  "branch": "work/swarm-court-continuation-20261031",
+  "claimedAt": "2026-10-31T18:06:01.816Z",
+  "heartbeatAt": "2026-10-31T18:06:01.816Z",
+  "expiresAt": "2026-10-31T18:51:01.816Z",
+  "branch": "work/swarm-782cae-worker-two-next",
   "predecessor": {
-    "leaseId": "1e53ffc7-faca-4bfe-ad2e-48876601b545",
-    "generation": 17,
-    "branch": "work/swarm-court-access-20261031",
-    "pr": 1160,
+    "leaseId": "328b2897-435b-45d5-8a05-2736278c2f43",
+    "generation": 18,
+    "branch": "work/swarm-court-continuation-20261031",
     "checkpoint": {
-      "evidence": "PR1160 merged at 08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Premerge CI41225375984 passed head6cf4e839/treea688337692d8f327a416d5ee114c7b71690b978a; concurrent disjoint IAS/MAT main additions produced accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b. Exact accepted-merge push run41225736909 passed canonical repository health, both publication builds and metadata checks. All seven combined owner blobs and both reviewed source parents are retained. RWT-06 delivers the bounded court personnel-platform task comparison and preserves the threshold witness; no complete house access or load pass is inferred.",
-      "next": "Handoff the still-planned RWT-06 packet after verified integration and cleanup. Next actual court access design needs located machine/task geometry, door and threshold transport, independently qualified wheel and outrigger support, lowered entry/control access, and a separate receiver/roof renewal method. Threshold work still requires its actual W2, ground-boundary and release-interface section.",
-      "blocker": "No complete installed access, support-load, eave-work or renewable threshold assembly is qualified; these are remaining design duties, not an unresolved publication failure."
+      "evidence": "Read-only follow-on from accepted main9f1e6f8b4df6e9df4e617238a75b3e202f93b191 earned NO SOURCE CHANGE. PR1160/accepted08c68ef0 with successful accepted-tree push41225736909 remains predecessor evidence, not a new publication. Four facets checked: current Genie1337927GT CE AWPT-6454+ manual and primary indexes/search supply no matched general arrangement, wheel/foot coordinates or deployment sweep; older1323937 dimensions differ. Reopened Wade roof-outlet guide printedp30 gives generic fixed-body/spigot/clamp duties but no dimensioned W2/W1 release. Threshold-renewal and accepted STR north-drainage-support already contain the finite inward witness, independent supports and arch interference. Passive-site and raised-court studies already bound receiving levels and first vulnerable joints; no new exact receiver or site datum resolves them. No diagram, audit, geometry or lifecycle change was made.",
+      "next": "Handoff the still-planned RWT-06 packet. Reopen a connected section when current-configuration machine layout or an exact matched retained W2 penetration, renewable W1 joint, support and complete release geometry is available. Preserve1160 and existing threshold/structural/site evidence. Root coordinates a fresh frontier; do not immediately reacquire the unchanged question.",
+      "blocker": "Missing matched W2/W1/support/release geometry and current-configuration machine layout; actual receiving and vulnerable-interface conditions remain unbound. This is an evidence limitation, not a publication failure."
     }
   },
   "recoverySource": {
-    "leaseId": "1e53ffc7-faca-4bfe-ad2e-48876601b545",
-    "generation": 17,
-    "branch": "work/swarm-court-access-20261031",
-    "pr": 1160,
+    "leaseId": "328b2897-435b-45d5-8a05-2736278c2f43",
+    "generation": 18,
+    "branch": "work/swarm-court-continuation-20261031",
     "checkpoint": {
-      "evidence": "PR1160 merged at 08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Premerge CI41225375984 passed head6cf4e839/treea688337692d8f327a416d5ee114c7b71690b978a; concurrent disjoint IAS/MAT main additions produced accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b. Exact accepted-merge push run41225736909 passed canonical repository health, both publication builds and metadata checks. All seven combined owner blobs and both reviewed source parents are retained. RWT-06 delivers the bounded court personnel-platform task comparison and preserves the threshold witness; no complete house access or load pass is inferred.",
-      "next": "Handoff the still-planned RWT-06 packet after verified integration and cleanup. Next actual court access design needs located machine/task geometry, door and threshold transport, independently qualified wheel and outrigger support, lowered entry/control access, and a separate receiver/roof renewal method. Threshold work still requires its actual W2, ground-boundary and release-interface section.",
-      "blocker": "No complete installed access, support-load, eave-work or renewable threshold assembly is qualified; these are remaining design duties, not an unresolved publication failure."
+      "evidence": "Read-only follow-on from accepted main9f1e6f8b4df6e9df4e617238a75b3e202f93b191 earned NO SOURCE CHANGE. PR1160/accepted08c68ef0 with successful accepted-tree push41225736909 remains predecessor evidence, not a new publication. Four facets checked: current Genie1337927GT CE AWPT-6454+ manual and primary indexes/search supply no matched general arrangement, wheel/foot coordinates or deployment sweep; older1323937 dimensions differ. Reopened Wade roof-outlet guide printedp30 gives generic fixed-body/spigot/clamp duties but no dimensioned W2/W1 release. Threshold-renewal and accepted STR north-drainage-support already contain the finite inward witness, independent supports and arch interference. Passive-site and raised-court studies already bound receiving levels and first vulnerable joints; no new exact receiver or site datum resolves them. No diagram, audit, geometry or lifecycle change was made.",
+      "next": "Handoff the still-planned RWT-06 packet. Reopen a connected section when current-configuration machine layout or an exact matched retained W2 penetration, renewable W1 joint, support and complete release geometry is available. Preserve1160 and existing threshold/structural/site evidence. Root coordinates a fresh frontier; do not immediately reacquire the unchanged question.",
+      "blocker": "Missing matched W2/W1/support/release geometry and current-configuration machine layout; actual receiving and vulnerable-interface conditions remain unbound. This is an evidence limitation, not a publication failure."
     }
-  },
-  "checkpoint": {
-    "evidence": "Read-only follow-on from accepted main9f1e6f8b4df6e9df4e617238a75b3e202f93b191 earned NO SOURCE CHANGE. PR1160/accepted08c68ef0 with successful accepted-tree push41225736909 remains predecessor evidence, not a new publication. Four facets checked: current Genie1337927GT CE AWPT-6454+ manual and primary indexes/search supply no matched general arrangement, wheel/foot coordinates or deployment sweep; older1323937 dimensions differ. Reopened Wade roof-outlet guide printedp30 gives generic fixed-body/spigot/clamp duties but no dimensioned W2/W1 release. Threshold-renewal and accepted STR north-drainage-support already contain the finite inward witness, independent supports and arch interference. Passive-site and raised-court studies already bound receiving levels and first vulnerable joints; no new exact receiver or site datum resolves them. No diagram, audit, geometry or lifecycle change was made.",
-    "next": "Handoff the still-planned RWT-06 packet. Reopen a connected section when current-configuration machine layout or an exact matched retained W2 penetration, renewable W1 joint, support and complete release geometry is available. Preserve1160 and existing threshold/structural/site evidence. Root coordinates a fresh frontier; do not immediately reacquire the unchanged question.",
-    "blocker": "Missing matched W2/W1/support/release geometry and current-configuration machine layout; actual receiving and vulnerable-interface conditions remain unbound. This is an evidence limitation, not a publication failure."
-  },
-  "releasedAt": "2026-10-31T18:01:48.698Z",
-  "releaseReason": "handoff"
+  }
 }
