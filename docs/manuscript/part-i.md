@@ -7,17 +7,13 @@
 
 Architecture often ends its story at handover. Drawings describe the building to be made; photographs catch the brief period when it is complete, clean and apparently still. Technical information gathers around the same event. Practical completion becomes the end point.
 
-For a long-lived house, it is the beginning.
-
-From then on the building moves, weathers and wears. Components fail or become obsolete. Bathrooms and kitchens are renewed. New cables and equipment are added. Windows fail while the masonry around them remains sound. Pipes leak, drains block and rooms acquire uses absent from the original brief. This is the ordinary life of a building.
+For a long-lived house, it is the beginning. From then on the building moves, weathers and wears. Components fail or become obsolete. Bathrooms and kitchens are renewed. New cables and equipment are added. Windows fail while the masonry around them remains sound. Pipes leak, drains block and rooms acquire uses absent from the original brief. This is the ordinary life of a building.
 
 Durable materials do not necessarily produce a building that is durable in use. A masonry wall may remain sound for generations while being repeatedly chased for electrical work. A bathroom may be demolished to reach a failed valve. A window may last decades yet be so absorbed into plaster and surrounding finishes that replacing it destroys work that was otherwise sound.
 
 The useful measure is not only how long a component lasts, but how much longer-lived building must be consumed when it moves, fails or is renewed.
 
-This book starts from a simple proposition:
-
-> **The permanent architecture should remain stable because change has been given deliberate places to occur.**
+The permanent architecture should remain stable because change has been given deliberate places to occur.
 
 That shifts the design problem. Maintenance, replacement, access and movement are not matters to resolve after the architecture is finished. They are part of it from the beginning.
 
@@ -47,9 +43,7 @@ The intended result should be quieter than the reasoning that produces it. Rooms
 
 # 2. Buildings change at different speeds
 
-A building does not possess one useful life.
-
-Structure, envelope, windows, services, controls, finishes and appliances exist on different timescales. The precise number of years matters less here than the ordering. A pump and a masonry wall should not be treated as though they belong to the same temporal layer.
+A building does not possess one useful life. Structure, envelope, windows, services, controls, finishes and appliances exist on different timescales. The precise number of years matters less here than the ordering. A pump and a masonry wall should not be treated as though they belong to the same temporal layer.
 
 This observation has a substantial architectural lineage. N. John Habraken's distinction between long-lived **support** and changeable **infill** helped establish Open Building; it is a related lineage of control and physical separation rather than the source of the later rate-of-change model. Frank Duffy described buildings as assemblies of elements changing at different rates. Stewart Brand developed Duffy's schema into six “shearing layers” and, drawing also on slow/fast systems thinking, made the interaction problem explicit: differently paced layers need **slippage**, because embedding faster systems in slower ones can make later change destructive. Alex Gordon's “long life, loose fit, low energy” likewise joined durability to accommodation of change. Contemporary adaptable-building work often describes **layer independence** or **lifetime compatibility**: shorter-cycle components should be capable of change without forcing unnecessary change in slower ones.[5][6][7]
 
@@ -63,9 +57,7 @@ If two components have very different expected lives but the shorter-lived one c
 
 A cable chased into masonry makes the mechanism obvious. The wall may remain sound for generations, yet changing the route means cutting, filling and refinishing it. The same relationship appears when a concealed cistern sits behind bonded stone or a pump can be serviced in place but cannot be withdrawn without dismantling unrelated construction.
 
-This gives a useful design test:
-
-> **A component's lifespan matters less than the lifespan of the things that must be destroyed to replace it.**
+A component's lifespan matters less than the lifespan of the things that must be destroyed to replace it.
 
 The principle does not require everything to be exposed or individually demountable. A component expected to last as long as the assembly around it may reasonably be enclosed. Structural crossings may be unavoidable. Bonded finishes may sometimes be the best technical answer. The dependency should be deliberate rather than accidental.
 
@@ -95,9 +87,7 @@ A detail may perform well at one and poorly at another. Design-for-disassembly l
 
 # 3. Selective permanence
 
-The existence of change does not imply infinite flexibility.
-
-Ecology offers a useful distinction. C. S. Holling separated resilience—the capacity to persist through disturbance—from stability understood as remaining near one equilibrium.[28] The architectural analogy is limited but useful: a house can preserve its identity without requiring every technical arrangement to remain fixed.
+The existence of change does not imply infinite flexibility. Ecology offers a useful distinction. C. S. Holling separated resilience—the capacity to persist through disturbance—from stability understood as remaining near one equilibrium.[28] The architectural analogy is limited but useful: a house can preserve its identity without requiring every technical arrangement to remain fixed.
 
 An uncertain future can make an open neutral shell, lightweight partitions and maximum reconfigurability look like the obvious answer. In some building types it is. A house can also achieve functional longevity through durable architectural commitments combined with capacity for change where change is useful.
 
@@ -135,9 +125,7 @@ Longevity is inadequate if the resulting house is exhausting to inhabit.
 
 A house is occupied while people are sleeping, ill, tired, working or seeking privacy. Its ordinary spaces should not depend on continuous novelty, exposure, perceptual tension or understanding a technical performance.
 
-This book uses **repose** for a simple architectural objective:
-
-> **A good home should minimise unnecessary vigilance.**
+This book uses **repose** for the architectural objective that a good home should minimise unnecessary vigilance.
 
 Repose is a doctrine term, not a clinical construct or a single experimentally measured state.
 
@@ -156,8 +144,6 @@ Repose also limits the technical agenda. If every floor is removable, every wall
 Selective permanence therefore asks which changes are sufficiently probable, consequential and difficult to retrofit that they deserve to shape the original architecture. A spare conduit may be cheap and prudent; designing an entire structure for an unknown extra storey may not be. Working clearance around a pump is easy to justify; a walk-in undercroft beneath the whole house needs a stronger case.
 
 The doctrine rejects both a finished object that resists all change and a universal kit of parts in which nothing is allowed to become architecture.
-
-> **Change should be given deliberate places to occur so that architecture can afford to remain permanent elsewhere.**
 
 ---
 
@@ -223,19 +209,13 @@ It does not require four physical layers everywhere. It asks where replacement s
 
 The objective is not universal modularity. It is a deliberate boundary between what should endure and what should change.
 
-A useful shorthand is:
-
-> **Build the permanent house. Assemble the changeable house inside it.**
-
 ## Maintenance geography
 
 Accessible components do not necessarily make a maintainable building.
 
 Plant, risers, wet rooms, service voids, external utilities and replacement routes form a spatial system. Individually accessible components can still produce disruptive maintenance if technical work is scattered through principal rooms or large equipment has no credible route out.
 
-This book uses **maintenance geography** to mean:
-
-> **the deliberate spatial organisation of maintenance-intensive systems, working spaces, access routes and replacement paths into a coherent topology established during design.**
+This book uses **maintenance geography** to mean the deliberate spatial organisation of maintenance-intensive systems, working spaces, access routes and replacement paths into a coherent topology established during design.
 
 The professional concern is established. CIBSE treats maintainability as a design responsibility; CDM requires designers to consider people who will maintain, repair and clean buildings; access and maintenance strategies and plant-replacement routes already appear in sophisticated briefs. Louis Kahn had already made technical services an architectural ordering problem; at the Salk Institute, utility floors separate laboratory occupation from service distribution so systems can change without continually invading working space.[12][13]
 

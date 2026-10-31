@@ -2,8 +2,6 @@
 
 G-01 is derived from a deliberately mixed body of normative texts, measured or researched buildings, urban counterexamples and later adaptations. The purpose of the corpus is not to collect admired Georgian work. It is to make the evidential basis of the grammar inspectable and to prevent a few remembered precedents from hardening into rules by taste alone.
 
-> **Do not derive a rule from a building merely because the building is famous. Derive only what the available evidence can actually support.**
-
 The current normative grammar is [G-01 v0.1](g01-v0.1.md). [Scope, Evidence and Derivation Method](g01-research-brief.md) explains how the corpus is used; [Precedent Annotation Method](g01-annotation-schema.md) explains how individual buildings are read.
 
 ## Evidence-quality scale

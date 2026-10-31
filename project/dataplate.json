@@ -55,30 +55,30 @@
     },
     "publication": {
       "level": "M4",
-      "reviewedOn": "2026-10-21"
+      "reviewedOn": "2026-10-28"
     },
     "deployment-real-site": {
       "level": "M4",
-      "reviewedOn": "2026-10-23"
+      "reviewedOn": "2026-10-27"
     },
     "delivery": {
       "level": "M2",
-      "reviewedOn": "2026-10-19"
+      "reviewedOn": "2026-10-28"
     }
   },
   "corpus": {
     "activePatterns": 21,
     "strategies": 3,
     "heldCandidates": 4,
-    "publicRoutes": 104,
-    "workingEditionEntries": 40,
+    "publicRoutes": 109,
+    "workingEditionEntries": 41,
     "primerEntries": 5
   },
   "publication": {
     "schemaVersion": 1,
     "workingEdition": {
       "file": "publication/dist/ovids-house.pdf",
-      "pages": 279,
+      "pages": 280,
       "duplexLeaves": 140,
       "pageSize": {
         "format": "A4",
@@ -86,7 +86,7 @@
         "heightMm": 297,
         "orientation": "portrait"
       },
-      "entries": 40,
+      "entries": 41,
       "figures": 5
     },
     "primer": {

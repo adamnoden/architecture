@@ -1,0 +1,49 @@
+name: Prove PLT ADE physical profiles
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'compiler/reference-house/ade-*'
+      - 'compiler/publication-drawing-v2/**'
+      - 'publication/specimens/ade07/**'
+      - 'publication/specimens/ade03b/tokens.ts'
+      - 'publication/specimens/plt03b2/**'
+      - '.github/workflows/plt-ade-physical-proof.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: plt-ade-physical-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends poppler-utils
+      - name: Regenerate verified ADE candidates and proof sources
+        run: node --import tsx publication/specimens/plt03b2/prepare.ts
+      - name: Build exact B5 comparison
+        run: PLT03B2_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt03b2/vivliostyle.config.js
+      - name: Build A4 regression at same drawing scale
+        run: PLT03B2_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt03b2/vivliostyle.config.js
+      - name: Build A2 WALL 1 to 50
+        run: PLT03B2_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt03b2/vivliostyle.config.js
+      - name: Validate finished PDF scale and fonts
+        run: node --import tsx publication/specimens/plt03b2/validate.ts
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: plt-03b2-ade-physical-proof
+          path: |
+            publication/specimens/plt03b2/dist/*.pdf
+            publication/specimens/plt03b2/.work/*.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 90

@@ -1,6 +1,6 @@
 # Editorial Doctrine
 
-**Status:** v0.3 — current editorial standard  
+**Status:** v0.4 — frozen EDA audit standard  
 **Scope:** public-facing manuscript prose, governing principles, pattern prose, reference-house writing and related explanatory material  
 **Purpose:** make Ovid’s House’s editorial judgement reproducible without changing its architectural substance
 
@@ -17,6 +17,8 @@ The publication should be intellectually ambitious without sounding impressed by
 The primary editorial failure to avoid is **over-shaped prose**: writing in which every paragraph is rhetorically finished, every distinction arrives as an antithesis, every important idea is converted into an aphorism, and the reader can hear the machinery producing significance.
 
 The project should not sound as though it is continuously auditioning sentences for quotation.
+
+Mechanical diagnostics may help locate likely failures, but they are never editorial verdicts. One-sentence paragraphs, antithesis, bolding, em dashes and other visible devices are not prohibited forms. Their legitimacy depends on what they do in context and how often the manuscript asks them to do it.
 
 ---
 
@@ -245,13 +247,15 @@ Allowed:
 
 Constraints:
 
-- rhetorical peaks must be sparse;
+- rhetorical peaks must be sparse across the preface as a whole, not merely defensible one by one;
 - do not turn every subsection into a miniature keynote speech;
+- section breaks do not automatically authorise another rhetorical peak;
 - an analogy must carry an argument, not merely atmosphere;
 - strong sentences should be surrounded by ordinary competent prose, otherwise nothing remains strong;
+- historical examples should normally be allowed to deliver their own force rather than being followed by a maxim that explains what to feel about them;
 - do not repeatedly explain why an example "matters" after the example has already shown it.
 
-The preface may have the strongest authorial voice in the book. That privilege should not leak indiscriminately into the technical manuscript.
+The preface may have the strongest authorial voice in the book. That privilege should not leak indiscriminately into the technical manuscript, and it does not exempt the preface from book-scale recurrence and dynamic-range review.
 
 ### Mode 2 — Governing doctrine
 
@@ -385,9 +389,9 @@ Never replace a precise ordinary word with a more elevated near-synonym merely t
 
 ---
 
-## 9. Sentence, paragraph and example economy
+## 9. Sentence, paragraph, page and example economy
 
-Good prose does not require visible variety for its own sake, but monotonous rhetorical patterning makes the authorial machinery audible.
+Good prose does not require visible variety for its own sake, but monotonous rhetorical patterning makes the authorial machinery audible. That judgement must be made at more than sentence scale.
 
 ### Sentence length
 
@@ -435,13 +439,56 @@ Em dashes, semicolons, colons, parentheses and Oxford commas are legitimate tool
 
 If several consecutive sentences use the same rhetorical punctuation, revise at least some of them unless the repetition serves a clear purpose.
 
+### Rhetorical scale
+
+Judge rhetorical devices at four scales:
+
+1. sentence;
+2. paragraph;
+3. section or chapter;
+4. whole book.
+
+A construction can be justified locally and still fail through recurrence. A strong aphorism, isolated paragraph or antithesis may be excellent once and mannered when repeated. Ordinary explanatory prose is therefore not a lesser register; it provides the dynamic range that lets genuine compression retain force.
+
+Do not use numerical quotas to enforce rarity. Read for recurrence.
+
+### Page composition and staged significance
+
+Typography and layout can perform the same rhetorical work as syntax.
+
+Treat the following as editorial devices when they affect how a sentence is experienced:
+
+- isolation by whitespace;
+- horizontal or ornamental rules;
+- full-sentence bold emphasis;
+- page-turn placement;
+- a short paragraph placed immediately before or after a section break;
+- repeated visual separation that turns transitions into pronouncements.
+
+**Staged significance** is importance manufactured by rhetorical or typographic treatment beyond what the argument itself earns.
+
+Structural clarity remains legitimate. A section break may organise a change of subject; bold may support navigation; whitespace may make a dense page readable. The question is whether the treatment clarifies structure or instructs the reader to experience an ordinary statement as profound.
+
+### De-escalation before deletion
+
+When a sentence appears over-promoted, remove the spotlight before removing the thought.
+
+Use four tests:
+
+- **Spotlight test:** remove isolation, bolding, rule adjacency or other dramatic treatment. If the thought remains useful, keep it in ordinary prose.
+- **Transplantation test:** imagine the sentence as the middle sentence of a normal paragraph. If its force disappears entirely, the presentation may be doing the intellectual work.
+- **Recurrence test:** ask how often the same device appears across the section, chapter and book. Local justification is not enough if recurrence turns it into mannerism.
+- **Earned-isolation test:** a one-sentence paragraph or isolated declaration should perform a real structural function — major turn, consequence, disclosure or earned compression — rather than merely sounding good alone.
+
+Also apply the **ordinary-prose test**: each substantial section should contain enough unshowy explanatory prose that the genuinely strong moments can register as strong.
+
 ---
 
 ## 10. AI-slop failure modes
 
 Recent corpus research has found sharp post-LLM increases in particular evaluative vocabulary, em dashes, list-of-three patterns and negative parallelism. These features are not individually evidence of bad writing. Their value here is diagnostic: they identify habits that language models reach for too easily.
 
-The project should therefore inspect for the following patterns.
+The project should therefore inspect for the following patterns. Detection produces a candidate for review, not a verdict. A form that survives contextual, recurrence and claim-fidelity review may remain.
 
 ### 10.1 Negative parallelism
 
@@ -529,6 +576,12 @@ AI-assisted prose often keeps supplying examples after the reader already unders
 A sentence beginning with three useful particulars can become six or eight because each additional example is locally plausible. The result feels comprehensive but weakens the prose by delaying the actual point.
 
 Keep the smallest representative set that establishes the class. Continue only when the next example changes the reader's model.
+
+### 10.10 Staged significance
+
+A sentence may be unobjectionable in isolation yet become over-shaped through its treatment: a rule before it, a large field of whitespace around it, full-sentence bolding, a page turn that delays it, or repeated placement as the final isolated line of a section.
+
+Do not assess such sentences only as text. Apply the spotlight and transplantation tests, then judge recurrence across the larger object.
 
 ---
 
@@ -698,9 +751,10 @@ Inspect for:
 - importance signalling;
 - aphoristic endings;
 - unnecessary rhetorical questions;
-- repeated restatement.
+- repeated restatement;
+- staged significance created by isolation, bolding, rules or section placement where those are already visible.
 
-Keep only the instances that perform intellectual work.
+Keep only the instances that perform intellectual work. For an over-promoted sentence, remove the spotlight before deleting the thought.
 
 ### Pass 6 — test examples and analogies
 
@@ -722,7 +776,19 @@ Look first at surplus examples, duplicated implications, explanatory tails and t
 
 Look for sentences that all arrive with the same degree of finish. Insert no deliberate roughness, but allow ordinary explanatory prose to remain ordinary.
 
-### Pass 10 — red-team the result
+### Pass 10 — review recurrence and dynamic range
+
+Read the whole section or chapter, then enough adjacent material to judge recurrence. Ask whether locally defensible devices have accumulated into a mannerism and whether ordinary prose is present in sufficient quantity for rhetorical peaks to remain peaks.
+
+For a book-scale audit, repeat this in publication order. No count or quota substitutes for this reading.
+
+### Pass 11 — inspect the typeset object when layout is fixed
+
+For material headed to a fixed-layout publication, inspect the rendered pages after pagination. Check whether whitespace, rules, bolding, page turns, widows/orphans or section breaks have changed rhetorical force.
+
+Markdown conformance is not sufficient proof of page-level conformance.
+
+### Pass 12 — red-team the result
 
 Use the checklist below.
 
@@ -747,11 +813,17 @@ Before accepting public-facing prose, ask:
 - Does a coined term buy enough explanatory compression to justify teaching it to the reader?
 - Have I repeated the same thought at increasing rhetorical intensity?
 - Does every one-sentence paragraph genuinely require isolation?
+- Is this sentence being made important by isolation, bolding, a rule, a section break or a page turn?
+- If I remove that spotlight, does the thought still earn its place?
+- Is a locally justified rhetorical device recurring often enough across the section, chapter or book to become mannerism?
+- Does this section contain enough ordinary explanatory prose for its strongest moments to retain force?
 - Is the conclusion already obvious from the preceding material?
 - Could one sentence be deleted with no loss of information or rhythm?
 - Could the passage lose roughly five per cent without losing meaning, precision or necessary qualification?
 - Would a diagram be clearer than another paragraph?
 - Does the passage sound more certain than the evidence permits?
+- Am I treating a mechanical diagnostic as an editorial verdict?
+- For fixed-layout publication, have I inspected the typeset page rather than trusting the source alone?
 - Does it sound as though the author is trying to impress an architect rather than communicate with one?
 
 If the answer to the last question is yes, rewrite.
@@ -762,7 +834,7 @@ If the answer to the last question is yes, rewrite.
 
 When context is limited, use this as the compressed form of the doctrine:
 
-> Preserve substance exactly. Identify the prose mode before editing. Prefer physical mechanism, concrete cases and explanatory sequence over abstract significance claims. Use cross-domain analogy only when a shared mechanism can be stated precisely. Introduce terminology only when it buys precision or compression. Keep rhetoric sparse: do not default to antithesis, triads, one-line dramatic paragraphs, aphorisms, importance signalling or polished paragraph morals. Stop enumerating examples once the reader can see the category. Allow ordinary sentences to remain ordinary so that genuinely strong sentences retain force. Technical prose should correct the reader's intuitive model step by step. Doctrine should be compact and bounded. The preface may carry more personality, but not continuous performance. After the first competent rewrite, attempt a modest further compression without sacrificing qualification or mechanism. Then compare modality, scope, evidence status, exceptions and defined terms against the source.
+> Preserve substance exactly. Identify the prose mode before editing. Prefer physical mechanism, concrete cases and explanatory sequence over abstract significance claims. Use cross-domain analogy only when a shared mechanism can be stated precisely. Introduce terminology only when it buys precision or compression. Keep rhetoric sparse: do not default to antithesis, triads, one-line dramatic paragraphs, aphorisms, importance signalling or polished paragraph morals. Judge those devices at sentence, paragraph, chapter and whole-book scale; local quality does not excuse repetitive mannerism. Treat isolation, bolding, rules, whitespace and page turns as rhetoric when they manufacture significance. Remove the spotlight before deleting a potentially good thought. Stop enumerating examples once the reader can see the category. Allow ordinary sentences to remain ordinary so that genuinely strong sentences retain force. Technical prose should correct the reader's intuitive model step by step. Doctrine should be compact and bounded. The preface may carry more personality, but its rhetorical peaks must remain rare across the preface as a whole. After the first competent rewrite, attempt a modest further compression without sacrificing qualification or mechanism. Then compare modality, scope, evidence status, exceptions and defined terms against the source. For fixed-layout publication, finish by inspecting the typeset pages. Mechanical diagnostics identify candidates only; they do not decide what survives.
 
 This paragraph is a fallback, not a replacement for the full document.
 

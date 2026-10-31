@@ -1,0 +1,103 @@
+{
+  "id": "RSI-RS-01",
+  "kind": "SYNTHETIC_MODEST_DETACHED_REFERENCE_SITE",
+  "status": "SELECTED_FOR_RSI_COLLISION_TEST",
+  "authority": "AUTHORED_SYNTHETIC",
+  "sourceProgramme": "RSI-02",
+  "baselineCommit": "8593bb43e4dfdadbca7c4923fa7e92e3b18c96b4",
+  "parcel": {
+    "frame": {
+      "origin": "south-west parcel corner",
+      "xPositive": "east",
+      "yPositive": "north",
+      "streetBoundary": "north"
+    },
+    "widthMm": 15000,
+    "depthMm": 40000,
+    "areaM2": 600,
+    "polygonMm": [[0,0],[15000,0],[15000,40000],[0,40000]]
+  },
+  "testHouse": {
+    "source": "B4 provisional current-house coordination",
+    "shellWidthMm": 12000,
+    "shellDepthMm": 10800,
+    "rotationDeg": 180,
+    "boundsMm": {
+      "west": 1750,
+      "east": 13750,
+      "south": 24200,
+      "north": 35000
+    },
+    "derivedTerritoryMm": {
+      "technicalWest": 1750,
+      "principalEast": 1250,
+      "frontSetback": 5000,
+      "rearGarden": 24200
+    },
+    "mutationAllowedDuringCollisionTest": false
+  },
+  "levels": {
+    "northStreetBoundaryM": 0.0,
+    "southRearBoundaryM": -0.24,
+    "transverseFallAuthored": false,
+    "houseGroundFflM": 0.1,
+    "authority": "SYNTHETIC_BROAD_GROUND_ONLY"
+  },
+  "neighbourContext": {
+    "westNearestFaceOutsideBoundaryMm": 1800,
+    "eastNearestFaceOutsideBoundaryMm": 1800,
+    "storeyClass": "two-storey domestic context",
+    "geometryAuthority": "APPROXIMATE_SYNTHETIC_CONTEXT",
+    "windows": "UNKNOWN",
+    "rights": "UNKNOWN",
+    "exactRoofGeometry": "UNKNOWN"
+  },
+  "streetAndAccess": {
+    "establishedResidentialStreetNorth": true,
+    "pedestrianFrontageOpportunity": true,
+    "technicalSideAccessOpportunity": "west",
+    "crossoverConsent": "UNKNOWN",
+    "vehicleGeometry": "UNKNOWN",
+    "refusePosition": "UNKNOWN",
+    "hardscape": "UNKNOWN"
+  },
+  "unknowns": [
+    "title/legal boundary evidence",
+    "planning acceptability",
+    "neighbour windows and rights",
+    "exact sewer/utility routes and capacity",
+    "ground-bearing parameters",
+    "groundwater and contamination",
+    "detailed surface-water solution",
+    "detailed vehicle/refuse/fire access",
+    "trees/protected landscape",
+    "finished grading/retaining/threshold design"
+  ],
+  "rejectedOrControlCandidates": [
+    {
+      "id": "RSI-RS-CAND-A",
+      "widthMm": 13000,
+      "depthMm": 40000,
+      "areaM2": 520,
+      "technicalWestMm": 750,
+      "principalEastMm": 250,
+      "disposition": "STRESS_CONTROL_NOT_CANONICAL"
+    },
+    {
+      "id": "RSI-RS-CAND-B",
+      "widthMm": 14000,
+      "depthMm": 40000,
+      "areaM2": 560,
+      "technicalWestMm": 1250,
+      "principalEastMm": 750,
+      "disposition": "NARROW_COUNTERFACTUAL"
+    },
+    {
+      "id": "DPL-RS-01",
+      "widthMm": 17400,
+      "depthMm": 30000,
+      "areaM2": 522,
+      "disposition": "HISTORICAL_WIDE_SHALLOW_CONTROL"
+    }
+  ]
+}

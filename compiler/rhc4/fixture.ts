@@ -1,5 +1,5 @@
 import type { PlanSliceCompileResult } from '../plan-slice/model.js'
-import type { ReferenceHouseSource } from '../reference-house/model.js'
+import type { ReferenceHouseCoordinationSource } from '../reference-house/model.js'
 import type { ServiceTopologyCompileResult } from '../service-slice/model.js'
 import type {
   BoundaryCarrierSource,
@@ -104,7 +104,7 @@ const backboneTransitions = (): BoundaryTransitionSource[] =>
   ])
 
 const openingTransitions = (
-  house: ReferenceHouseSource,
+  house: ReferenceHouseCoordinationSource,
   plan: PlanSliceCompileResult
 ): BoundaryTransitionSource[] => {
   const numeric = plan.derived.openings.flatMap((opening) => {
@@ -235,7 +235,7 @@ const drainageRoutes = (): DrainageRouteSource[] => [
 ]
 
 export const createReferenceHouseBoundarySource = (
-  house: ReferenceHouseSource,
+  house: ReferenceHouseCoordinationSource,
   plan: PlanSliceCompileResult,
   services: ServiceTopologyCompileResult
 ): BoundaryTopologySource => {

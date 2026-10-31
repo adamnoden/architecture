@@ -2,7 +2,9 @@
 
 This directory contains the bounded executable deployment layer admitted by the DPL programme.
 
-Its authority now reaches **DPL-13B** at SCREENING coverage/readiness scope.
+The sections below retain the DPL-12/13 foundations. Current programme authority and real-control results are owned by [`project/dpl/deployment-programme.md`](../../project/dpl/deployment-programme.md).
+
+[Assumption-based exploration](../../project/dpl/exploration/README.md) adds explicit conditional geometry, level and access studies. It does not feed assumptions into the evidence-backed obligation ledger or change the verified readiness contract.
 
 It is still intentionally narrower than an eventual whole-site deployment compiler.
 

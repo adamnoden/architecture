@@ -1,13 +1,10 @@
-# Ovid’s House
-## Part V — Making and Testing the Platform
+# Part V — Making and Proving the Platform
 
 ---
 
 # 19. Whole-life value and proportionality
 
-A long-life building can become wasteful in the name of avoiding waste.
-
-Every additional void, rail, removable panel, spare conduit, structural allowance or containment system consumes material, labour, space and design attention at the beginning of the building's life. Some will prevent destructive work later. Others may never be used.
+A long-life building can become wasteful in the name of avoiding waste. Every additional void, rail, removable panel, spare conduit, structural allowance or containment system consumes material, labour, space and design attention at the beginning of the building's life. Some will prevent destructive work later. Others may never be used.
 
 Serviceability is therefore a **whole-life investment**, not an automatic good.
 
@@ -25,9 +22,7 @@ Novelty earns nothing by itself. Every non-standard provision should be compared
 
 The conventional option is allowed to be well designed: accessible plant, documented services, sensible local access panels, mechanically fixed windows, coordinated floor and ceiling zones, durable finishes and competent replacement planning.
 
-Ovid’s House has to show what it adds **beyond that**.
-
-The comparison must also be functionally fair. A serviceable option does not win by accepting worse fire, acoustic, moisture, thermal or architectural performance than the conventional one.
+Ovid’s House has to show what it adds beyond that. The comparison must also be functionally fair. A serviceable option does not win by accepting worse fire, acoustic, moisture, thermal or architectural performance than the conventional one.
 
 ## Four burdens of provision
 
@@ -185,9 +180,7 @@ A building passport, digital model and maintenance history can make future work 
 
 # 21. Standardisation, manufacture and reliable assembly
 
-The project favours ordinary parts in extraordinary arrangements. That principle extends into a manufacturing gradient:
-
-> **Build the permanent house. Assemble the changeable house inside it.**
+The project favours ordinary parts in extraordinary arrangements. Its manufacturing approach distinguishes permanent construction, interface infrastructure, replaceable architectural assemblies and commodity components.
 
 ## The four layers
 
@@ -248,8 +241,6 @@ Ursula Franklin's distinction between **holistic** and **prescriptive** technolo
 
 For each important operation ask whether skill is improving the architecture or merely compensating for dimensional conflict, ambiguous information or a badly designed sequence. Fine masonry, plaster, stone and joinery may properly retain workmanship of risk; repeated hidden mounting geometry usually should not.
 
-> **Spend workmanship where workmanship creates value.**
-
 ## Tolerance translation
 
 Precision components meet imperfect buildings. Their interface must translate between them.
@@ -291,9 +282,7 @@ Where a **repeated non-standard assembly has installation logic that is not alre
 
 Observe questions, sequence errors, extra measuring, unplanned packers or fixings, unexpected tools, inaccessible operations, ambiguous datums and whether errors remain visible before closure.
 
-The trial examines the design information and assembly logic, not the installer. A conventional assembly already covered by ordinary trade skill, inspection and specialist design does not need a ritual second-installer test.
-
-> **A non-standard repeated detail that works only when its designer assembles it is not yet a resolved detail.**
+The trial examines the design information and assembly logic, not the installer. A conventional assembly already covered by ordinary trade skill, inspection and specialist design does not need a ritual second-installer test. A non-standard repeated detail that works only when its designer assembles it is not yet a resolved detail.
 
 ---
 
@@ -411,9 +400,7 @@ A maintenance route that exists only on the architect's pre-landscape drawing ha
 
 Intervention does not end when the component is reached. Afterward verify that panels seat correctly, seals and fire stopping are restored, acoustic isolation is intact, waterproofing remains sound and labels or records still match reality.
 
-The same applies outside. Temporary access should not require damage to permanent planting, paving, drainage or envelope elements merely to perform a task that was supposed to be ordinary.
-
-An access strategy that cannot be reliably closed is not maintainable.
+The same applies outside. Temporary access should not require damage to permanent planting, paving, drainage or envelope elements merely to perform a task that was supposed to be ordinary. An access strategy that cannot be reliably closed is not maintainable.
 
 ---
 
@@ -421,7 +408,7 @@ An access strategy that cannot be reliably closed is not maintainable.
 
 The final design should be reviewed through events rather than abstract claims.
 
-Part IV shows how this can be done for one worked house. The method here is broader: scenarios are used to test whether the architecture still holds when future work, failure, occupation or environmental change places stress on the assumptions made during design.
+The method here is deliberately broader than one worked house: scenarios are used to test whether architecture still holds when future work, failure, occupation or environmental change places stress on assumptions made during design. The following chapter then applies that ordeal to the Reference House itself.
 
 A scenario is allowed to do more than expose a missing detail. If a downstream technical problem is large because an earlier architectural decision was poor, the correct response is a **rewind**, not a more elaborate workaround.
 
@@ -547,6 +534,150 @@ A selected grammar or project dialect may add narrower material rules. The Refer
 
 A long-life house should not look provisional. Its rooms should be able to feel settled and permanent because the parts that need to change have disciplined places to do so.
 
-The platform succeeds when maintenance becomes less destructive **without making ordinary life feel like maintenance**.
+The platform succeeds when maintenance becomes less destructive without making ordinary life feel like maintenance.
 
 ---
+
+# 26. Reference House ordeal: future interventions
+
+A long-life proposition should be judged by future interventions, not by the stillness of a completion photograph.
+
+The scenarios below are not predictions and they are not physical proof. They are design tests: plausible future tasks used to ask whether the Reference House provides approach, isolation, working space, release, replacement route and reinstatement without unnecessary destruction.
+
+## Plant replacement
+
+A major plant component reaches the end of its service life.
+
+The intervention begins on the service side rather than in a principal room. The current external plant-room opening target provides a candidate direct handling route. Isolation and distribution are available within the plant geography. The intent is that replacement should not require enlarging a kitchen doorway, removing a façade window or dismantling permanent masonry merely to move equipment.
+
+The exact future appliance is unknown, and the proportionality test does not treat the present plant-room size as pre-approved. Equipment selection, area, working clearance and the value of the external opening must still earn the final geometry.
+
+If a future system exceeds the justified envelope, the house should first question whether the equipment is proportionate before enlarging permanent service infrastructure.
+
+## Window replacement
+
+A frame fails or becomes obsolete while the masonry opening remains sound.
+
+Internal trim is removed to expose the fixing/tolerance zone. Sash, glazing and hardware may be serviced from inside where the selected product permits. Full frame replacement can use ordinary external scaffold or tower access preserved by the site/landscape strategy where the real site actually provides it.
+
+The permanent wall opening remains intact. New frame tolerances are resolved within the designed interface rather than by breaking back large areas of masonry or wet finish.
+
+The scenario depends on a technically successful jamb/head/sill detail that has not yet been physically proven. The life-separation logic is selected; the final interface remains a validation task.
+
+## A leak in the service suite
+
+A connection or appliance leaks.
+
+The event occurs inside deliberately high-service geography with a robust floor and a visible/manageable failure route. Primary isolation is nearby. The leak does not first announce itself as staining in a principal ceiling several rooms away.
+
+This does not imply that every fitting is exposed. It means the house concentrates the places most likely to require intervention and gives failure somewhere intelligible to appear.
+
+Sensors may supplement this behaviour. They do not replace it.
+
+## Bathroom intervention
+
+A concealed valve, waste connection or service component associated with the family bathroom requires work.
+
+Where practical, access is taken from the dry gallery side rather than through waterproofed tile. The wet surface remains intact while the maintainable component is reached through a real joinery or panel field on the dry side.
+
+The principle is consequence-based: keep routine service access out of the highest-consequence finish layer.
+
+## New dry service route
+
+A future owner adds data, controls or another small dry service.
+
+Where the room already contains the selected route family, a local skirting section can be removed and the service carried along the low-level path. It rises at a known door/architrave or other declared service zone to an accessible accessory position.
+
+The whole wall is not opened. The permanent masonry remains outside the routine distribution path.
+
+Where no route exists, the house does not pretend that every possible future service has been pre-provisioned. Local alteration remains legitimate.
+
+## Roof and gutter maintenance
+
+An external gutter blocks or a roof edge requires repair.
+
+The task is approached from planned ground-supported scaffold or tower positions within the current surrogate-site geometry. The primary rainwater system sits at external edges rather than inside an inaccessible roof valley. Failure is visible outside. Materials and workers reach the task without passing through a decorative roof hatch that provides no working platform.
+
+Courtyard-side work uses the court as a temporary working zone when necessary, reached through the garden-to-court logistics route.
+
+The landscape is therefore part of the maintenance design: it must remain possible to occupy the necessary ground temporarily. A real boundary that removes that ground is an architectural/site finding, not something the virtual house has already solved.
+
+## Loss of stair use
+
+An occupant is temporarily or permanently unable to use the principal stair.
+
+The west/rear family room can become an entrance-storey sleeping room without structural alteration. The detailed plan must preserve a step-free route to entrance-storey living and to the service-suite sanitary room, whose subdivision must allow a potential level-access shower without enlarging the house.
+
+The current stair width also preserves a lower-burden future stair-lift option. A lift shaft is not reserved merely because reduced mobility is foreseeable.
+
+This scenario demonstrates a different kind of selective permanence: the stair can remain a strong enduring architectural element while the ground floor preserves a credible way to live when that stair becomes unusable.
+
+## A changed household
+
+The family composition changes without requiring wholesale reconstruction.
+
+The house is not designed as an infinitely neutral shell. Its stair, courtyard, principal rooms and major loadbearing boundaries are deliberately enduring. Adaptation occurs within that persistent architecture.
+
+Bedrooms can change use. The study can absorb work or guest functions. Dry fit-out and services can change more readily than the masonry order. A bathroom can be renewed without moving the primary service geography. Plant can change technology while remaining in plant/service geography.
+
+This is selective permanence rather than universal flexibility.
+
+## A change the house did not prepare for
+
+A future owner wants to move the kitchen to the opposite flank, far from the concentrated wet-service geography.
+
+The house does **not** contain duplicate stacks and wet routes merely to make that arbitrary future change easy. The owner may accept a major renovation, new local route, opening and making-good, or a broader redesign.
+
+That destruction is not automatically evidence of failure. Some future change should remain expensive if avoiding it today would require permanent infrastructure with no proportionate case.
+
+The same limit applies when a bounded riser eventually fills or a future system requires geometry nobody could responsibly predict. Remove obsolete services, reuse capacity, add a local route or undertake a later project; do not make the first building infinitely provisional.
+
+## The final test
+
+These scenarios matter only if the completed house remains desirable in ordinary life.
+
+A house that is easy to dismantle but unpleasant to inhabit has failed. A house whose maintenance logic dominates every room has failed. A house whose infrastructure anticipates so many hypothetical futures that the present becomes expensive, thick and technical has also failed.
+
+The Reference House therefore treats future work as one claimant among several.
+
+Architecture remains the enduring frame. The faster systems are given enough room to change without asking the whole building to become temporary.
+
+Transfer remains a separate question. The detached perimeter, courtyard and service flank make this a favourable worked house; a compact attached house should be allowed to satisfy the same decision logic with materially less serviceability infrastructure.
+
+---
+
+# 27. Technical Closure and Construction Readiness
+
+Technical closure is not the moment a convincing drawing becomes detailed enough to look buildable. It is the point at which the selected architecture has been reconciled with the obligations that can materially change it, and the remaining delivery work is known rather than hidden.
+
+This chapter is structurally established before that closure has been earned.
+
+## What closure must answer
+
+For each consequential selected system or interface, the final account must distinguish:
+
+- architectural decisions that are fixed because they define the house;
+- technical decisions that have been competently resolved;
+- physical claims that have been demonstrated where physical proof is necessary;
+- regulatory or statutory questions that remain project/site dependent;
+- product or fabrication choices that may vary without changing the architecture;
+- delivery obligations that properly belong to detailed design, procurement, construction or commissioning;
+- unresolved findings that are large enough to rewind the architecture.
+
+The objective is not to eliminate every downstream decision. It is to prevent an unresolved architectural or high-consequence technical problem from being disguised as “contractor design” or pushed into a note at the end of the book.
+
+## Construction-readiness boundary
+
+A Reference House can be internally coherent without being construction-ready.
+
+Construction readiness requires more than this manuscript can establish by itself: competent structural and building-physics design, fire and regulatory resolution, detailed services design, product/system evidence, real-site information, tolerances, fabrication/installation responsibility, inspection and commissioning strategy, and any required physical validation.
+
+Where those authorities do not yet exist, this chapter must say so plainly.
+
+## Rewind rule
+
+If technical resolution shows that a selected wall depth, opening, threshold, floor zone, service space, roof/drainage arrangement, access route or other architectural decision cannot perform proportionately, the result is not automatically a more elaborate detail.
+
+The architecture is allowed to change.
+
+Only after material findings have been absorbed back into one coherent house should the work pass to final architectural synthesis and definitive publication drawings.

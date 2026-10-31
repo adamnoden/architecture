@@ -3,7 +3,8 @@ import { resolve } from 'node:path'
 import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
-import { compileDeploymentCase } from './compile.js'
+import { evaluateDeploymentCase } from './evaluate.js'
+import type { ReferenceHouseSource } from '../reference-house/model.js'
 import {
   loadB2InterfaceContracts,
   loadB2TargetComposition,
@@ -446,8 +447,10 @@ export const loadCanonicalCoverageManifest = (
   path = coverageManifestPath
 ): CanonicalCoverageManifest => validateCoverageManifest(readJson(path), path)
 
-const createCandidateInput = (site: ReferenceSiteManifest): DeploymentCandidateInput => {
-  const source = createReferenceHouseSource()
+const createCandidateInput = (
+  site: ReferenceSiteManifest,
+  source: ReferenceHouseSource = createReferenceHouseSource()
+): DeploymentCandidateInput => {
   return {
     id: 'DPL-13A-CANONICAL-RS01-CANDIDATE',
     revision: '1',
@@ -539,24 +542,48 @@ const runtimeSite = (
   })
 })
 
+/** A captured evidence set. Evaluation never consults cwd or reloads authority files. */
+export interface CanonicalReferenceSiteEvidence {
+  readonly referenceHouseSource: ReferenceHouseSource
+  readonly site: ReferenceSiteManifest
+  readonly coverage: CanonicalCoverageManifest
+  readonly authoredCandidate: CanonicalAuthoredCandidate
+  readonly interfaces: readonly InterfaceContractRef[]
+  readonly targets: DeploymentCaseInput['targets']
+  readonly siteAuthorityFingerprint: string
+  readonly coverageAuthoritySetFingerprint: string
+}
+
+export const loadCanonicalReferenceSiteEvidence = (
+  overrides: CanonicalCompileOverrides = {}
+): CanonicalReferenceSiteEvidence => {
+  const referenceHouseSource = createReferenceHouseSource()
+  const site = canonicalizeSiteManifest(overrides.siteManifest ?? loadCanonicalReferenceSiteManifest())
+  const coverage = canonicalizeCoverageManifest(overrides.coverageManifest ?? loadCanonicalCoverageManifest())
+  return {
+    referenceHouseSource, site, coverage,
+    authoredCandidate: createCanonicalReferenceSiteCandidate(
+      site, overrides.candidateInput ?? createCandidateInput(site, referenceHouseSource), overrides.placement ?? site.housePlacement
+    ),
+    interfaces: overrides.interfaces ?? loadCanonicalInterfaces(),
+    targets: overrides.targets ?? loadCanonicalTargets(),
+    siteAuthorityFingerprint: authorityFingerprint(site.authoritySource),
+    coverageAuthoritySetFingerprint: authoritySetFingerprint(coverage.authoritySources)
+  }
+}
+
 export const compileCanonicalReferenceSiteCase = (
   overrides: CanonicalCompileOverrides = {}
+): CanonicalReferenceSiteCompile => evaluateCanonicalReferenceSiteCase(loadCanonicalReferenceSiteEvidence(overrides))
+
+export const evaluateCanonicalReferenceSiteCase = (
+  evidence: CanonicalReferenceSiteEvidence
 ): CanonicalReferenceSiteCompile => {
-  const site = canonicalizeSiteManifest(overrides.siteManifest ?? loadCanonicalReferenceSiteManifest())
-  const coverage = canonicalizeCoverageManifest(
-    overrides.coverageManifest ?? loadCanonicalCoverageManifest()
-  )
+  const { referenceHouseSource, authoredCandidate, interfaces, targets, siteAuthorityFingerprint, coverageAuthoritySetFingerprint } = evidence
+  const site = canonicalizeSiteManifest(evidence.site)
+  const coverage = canonicalizeCoverageManifest(evidence.coverage)
   const siteFingerprint = sha256SemanticFingerprint(site)
-  const siteAuthorityFingerprint = authorityFingerprint(site.authoritySource)
   const coverageFingerprint = sha256SemanticFingerprint(coverage)
-  const coverageAuthoritySetFingerprint = authoritySetFingerprint(coverage.authoritySources)
-  const authoredCandidate = createCanonicalReferenceSiteCandidate(
-    site,
-    overrides.candidateInput ?? createCandidateInput(site),
-    overrides.placement ?? site.housePlacement
-  )
-  const interfaces = overrides.interfaces ?? loadCanonicalInterfaces()
-  const targets = overrides.targets ?? loadCanonicalTargets()
 
   if (targets.some(({ target }) => /CROYDON|BROMLEY/i.test(target.id))) {
     throw new Error('DPL-13A canonical synthetic Reference Site must not fabricate a local borough target.')
@@ -565,13 +592,13 @@ export const compileCanonicalReferenceSiteCase = (
     throw new Error('DPL-13A canonical case requires the London strategic planning target.')
   }
 
-  const deploymentLedger = compileDeploymentCase({
+  const deploymentLedger = evaluateDeploymentCase({
     assuranceProfile: 'SCREENING',
     site: runtimeSite(site, siteFingerprint),
     interfaceContracts: interfaces,
     targets,
     candidate: authoredCandidate.input
-  })
+  }, referenceHouseSource)
 
   const canonicalInterfaceIds = deploymentLedger.caseIdentity.manifest.interfaceContracts
     .map((item) => item.id)

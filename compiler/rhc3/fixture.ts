@@ -1,9 +1,10 @@
-import type { ReferenceHouseSource } from '../reference-house/model.js'
+import type { ReferenceHouseCoordinationSource } from '../reference-house/model.js'
 import type { ServiceTopologySource } from '../service-slice/model.js'
 
 export const createReferenceHouseServiceSource = (
-  house: ReferenceHouseSource
-): ServiceTopologySource => ({
+  house: ReferenceHouseCoordinationSource
+): ServiceTopologySource => {
+ const source:ServiceTopologySource = ({
   fixtureId: 'RH-C3-REFERENCE-HOUSE-SERVICES',
   planFixtureId: house.fixtureId,
   structuralFixtureId: 'RH-C2-REFERENCE-HOUSE-STRUCTURE',
@@ -127,7 +128,23 @@ export const createReferenceHouseServiceSource = (
     { id: 'ACC-ASHP-REPLACE', targetNodeId: 'ASHP-01', kind: 'replacement', viaSpaceIds: [], external: true },
     { id: 'ACC-KX-INSPECT', targetNodeId: 'KX-01', kind: 'inspection', viaSpaceIds: ['G-KIT-02'], external: false }
   ]
-})
+ })
+ if(house.spaces.some(s=>s.id==='G-WC-01')){
+  const remap=(id:string)=>id==='G-DRAW-02'?'G-STUDY-02':id==='G-STUDY-02'?'G-CLOAK-01':id
+  source.protectedPrimaryFreeSpaceIds=source.protectedPrimaryFreeSpaceIds.map(remap)
+  for(const node of source.nodes)node.hostSpaceIds=node.hostSpaceIds.map(remap)
+  for(const route of source.routes)route.hostSpaceIds=route.hostSpaceIds.map(remap)
+  for(const id of ['G-WET-TERMINALS','MV-G-EXTRACT-TERMINALS','DRY-G-TERMINALS','HYD-G-TERMINALS'])source.nodes.find(n=>n.id===id)!.hostSpaceIds.push('G-WC-01')
+  for(const id of ['R-WATER-GROUND','R-FOUL-GROUND','R-MV-EXT-G','R-DRY-G-BRANCH','R-HYD-G-BRANCH'])source.routes.find(r=>r.id===id)!.hostSpaceIds.push('G-WC-01')
+  // Closable private study retains the primary-infrastructure-free protection.
+  // WC service lining adjoins the suite; no route crosses the cloakroom/study.
+ }
+ if(house.spaces.some(s=>s.id==='G-PANTRY-01')){
+  source.nodes.find(n=>n.id==='DRY-G-TERMINALS')!.hostSpaceIds.push('G-PANTRY-01')
+  source.routes.find(r=>r.id==='R-DRY-G-BRANCH')!.hostSpaceIds.push('G-PANTRY-01')
+ }
+ return source
+}
 
 export const cloneReferenceHouseServiceSource = (
   source: ServiceTopologySource

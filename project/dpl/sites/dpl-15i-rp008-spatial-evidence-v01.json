@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "dpl.rp008SpatialEvidence.v1",
+  "packet": "DPL-15I",
+  "issue": 874,
+  "siteId": "DPL-RP-008",
+  "site": "Land at the rear of 32 Gleneldon Road / Ashlake Road, Streatham, SW16 2BD",
+  "assuranceProfile": "SCREENING",
+  "researchDate": "2026-10-26",
+  "parent": {
+    "packet": "DPL-15H",
+    "mergeSha": "2a6edb261ff0d16b6217864896a81a9e21c8978f",
+    "resultFingerprint": "3033112069a44c4676e333ee7afa51f66607d9bd9141cd789d84992f9ba201c3",
+    "result": "RP007_NOT_READY_CROYDON_DOCUMENT_TRANSPORT_AND_SPATIAL_AUTHORITY_BOUNDARY"
+  },
+  "controlledIdentity": {
+    "planningAuthority": "London Borough of Lambeth",
+    "applicationRef": "24/00124/FUL",
+    "proposal": "Demolition of three existing garages and erection of a new one-bedroom dwelling.",
+    "corpusRole": "LOWER_PATHOLOGY_ONE_HOUSE_CONTROL",
+    "applicantProposalTransfer": "PROHIBITED",
+    "marketingGeometryUse": "PROHIBITED_FOR_FIT_NO_FIT"
+  },
+  "acquisitionAttempts": [
+    {
+      "id": "15I-A01",
+      "target": "OFFICIAL_LAMBETH_APPLICATION_AND_SOURCE_DRAWING_BYTES",
+      "route": "Lambeth weekly-list publication plus Lambeth Public Access document route",
+      "observed": [
+        "Lambeth's official weekly list identifies Land at the Rear of 32 Gleneldon Road, Streatham, London SW16 2BD, application 24/00124/FUL, for demolition of three garages and erection of one dwelling.",
+        "Lambeth states that its planning database contains applications from 1986 onward and that newer applications normally expose plans and documents through Public Access.",
+        "The exact application record is form-driven and the decisive source drawing/document bytes were not transported into the controlled evidence packet through the available no-spend interfaces."
+      ],
+      "result": "APPLICATION_IDENTITY_CONFIRMED_SOURCE_GEOMETRY_BYTES_NOT_RECOVERED",
+      "authorityBoundary": "Official weekly-list identity proves application/site/proposal identity but not parcel shape, dimensions, orientation or datum. Portal capability does not substitute for the exact source bytes."
+    },
+    {
+      "id": "15I-A02",
+      "target": "CONTROLLED_APPLICATION_OR_TITLE_SPATIAL_GEOMETRY",
+      "route": "Lambeth Public Access / Planning Data title-boundary route / address identity",
+      "observed": [
+        "The planning application describes a distinct rear-garage development site, but no controlled application red-line geometry was recovered into this packet.",
+        "The host address contains multiple property interests; postcode/address records do not establish that any host title polygon equals the rear development parcel.",
+        "No exact HM Land Registry title-index entity has been identity-bound to the one-house rear parcel in this packet."
+      ],
+      "result": "CONTROLLED_REAR_PARCEL_GEOMETRY_NOT_RECOVERED",
+      "authorityBoundary": "Host-property, postcode and marketing geometry are not substitutes for the application parcel. Any later HMLR title-index polygon remains indicative and is not a determined legal boundary."
+    },
+    {
+      "id": "15I-A03",
+      "target": "AUTHORITATIVE_SCREENING_DATUM",
+      "route": "Environment Agency LiDAR Composite DTM 1 m / postcode source-routing context",
+      "observed": [
+        "Postcode-level elevation values exist publicly but vary by aggregator and are not parcel terrain evidence.",
+        "DPL accepts EA 1 m DTM as SCREENING terrain authority only when bound to a controlled site extent or frame.",
+        "Because no controlled RP-008 parcel geometry/frame has entered the evidence graph, no authoritative parcel terrain sample or ODN datum is admitted."
+      ],
+      "result": "DATUM_NOT_BOUND_TO_CONTROLLED_SITE_EXTENT",
+      "authorityBoundary": "Postcode elevation is source-routing context only; it is not R4 evidence and EA DTM is not a private measured topographic survey."
+    },
+    {
+      "id": "15I-A04",
+      "target": "PHYSICAL_ASHLAKE_ROAD_FRONTAGE_AND_ACCESS_GEOMETRY",
+      "route": "Official Lambeth Ashlake Road street context plus exact-site application/marketing context",
+      "observed": [
+        "Official Lambeth public material describes Ashlake Road as a two-way predominantly residential through road.",
+        "The exact-site public record and current marketing consistently place the development site behind 32 Gleneldon Road with an Ashlake Road relationship.",
+        "No controlled parcel frontage segment, entrance geometry or access relationship tied to an authoritative site extent has been recovered."
+      ],
+      "result": "STREET_CONTEXT_RECOVERED_PLACEMENT_ACCESS_GEOMETRY_NOT_RECOVERED",
+      "authorityBoundary": "Street character and marketing frontage context do not prove Reference House access geometry, legal access rights or a controlled frontage segment."
+    },
+    {
+      "id": "15I-A05",
+      "target": "ONE_HOUSE_EXPERIMENT_COHERENCE_AND_MARKETING_GEOMETRY_FIREWALL",
+      "route": "Official one-dwelling application identity plus current market context",
+      "observed": [
+        "The official application proves that the planning subject was a single dwelling on the rear-garage site, making the one-house experiment coherent at site-identity level.",
+        "Current marketing asserts approximately 97 square metres and depicts a consented one-house scheme, but those measurements and applicant-house geometry remain non-authoritative for Reference House fit/no-fit.",
+        "No planning-likelihood or compatibility inference is taken from the applicant scheme."
+      ],
+      "result": "ONE_HOUSE_IDENTITY_COHERENT_GEOMETRY_NON_TRANSFERABLE",
+      "authorityBoundary": "A previous one-house proposal establishes experiment coherence only. It does not provide controlled Reference House placement geometry."
+    }
+  ],
+  "readiness": [
+    {
+      "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15I-A01", "15I-A02"],
+      "reason": "Exact application/site identity is controlled, but no placement-ready application/title geometry for the rear development parcel entered the evidence graph."
+    },
+    {
+      "dimension": "R2_FOOTPRINT_TEST_GEOMETRY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15I-A01", "15I-A02", "15I-A05"],
+      "reason": "No controlled parcel shape/dimensions can honestly test the unchanged 12.0 m x 10.8 m Reference House footprint; marketing area and applicant-house geometry are explicitly non-transferable."
+    },
+    {
+      "dimension": "R3_REAL_ORIENTATION_FRAME",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15I-A01", "15I-A02"],
+      "reason": "Street/address context is known, but no controlled application/title geometry or source drawing bytes establish the real parcel orientation frame."
+    },
+    {
+      "dimension": "R4_DATUM_LEVEL_EVIDENCE",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15I-A03"],
+      "reason": "No authoritative parcel terrain sample or usable ODN datum is bound to a controlled RP-008 site extent."
+    },
+    {
+      "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15I-A04"],
+      "reason": "Ashlake Road context and the site's broad street relationship are known, but exact placement-level frontage/access geometry tied to the controlled parcel is absent."
+    },
+    {
+      "dimension": "R6_SITE_IDENTITY_COHERENCE",
+      "state": "SATISFIED",
+      "evidenceRefs": ["15I-A01", "15I-A05"],
+      "reason": "Official application reference, site description and one-house proposal coherently identify the same rear-garage development subject."
+    }
+  ],
+  "satisfiedDimensions": ["R6_SITE_IDENTITY_COHERENCE"],
+  "residualDimensions": [
+    "R1_CONTROLLED_SPATIAL_IDENTITY",
+    "R2_FOOTPRINT_TEST_GEOMETRY",
+    "R3_REAL_ORIENTATION_FRAME",
+    "R4_DATUM_LEVEL_EVIDENCE",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY"
+  ],
+  "candidateAuthoringReady": false,
+  "programmeDisposition": {
+    "noSpendCorpusTransportSearch": "CLOSE_AFTER_DPL15I",
+    "reason": "RP-004, RP-006, RP-007 and now the deliberately lower-pathology RP-008 have each failed to admit enough controlled spatial/datum evidence for candidate authoring through bounded no-spend public routes. Further convenience-selected site searching would optimize for retrievability rather than deployability and repeat the same evidence class.",
+    "nextAction": "AUTHOR_PROGRAMME_LEVEL_DPL15_EXTERNAL_EVIDENCE_BOUNDARY",
+    "additionalConvenienceSiteSearch": "PROHIBITED_UNLESS_NEW_EXPERIMENT_INDEPENDENT_OF_DOCUMENT_ACCESSIBILITY"
+  },
+  "proofBoundary": {
+    "marketingGeometryAsAuthority": "PROHIBITED",
+    "applicantProposalTransfer": "PROHIBITED",
+    "planningRedLineAsLegalTitle": "PROHIBITED",
+    "titleIndexAsDeterminedBoundary": "PROHIBITED",
+    "postcodeElevationAsDatum": "PROHIBITED",
+    "referenceHouseCandidate": "NOT_AUTHORISED",
+    "referenceHouseMutation": "PROHIBITED",
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_CLAIMED_BEYOND_BOUNDED_NO_SPEND_CORPUS_TRANSPORT_EXPERIMENT",
+    "externalSpend": "NONE",
+    "dpl16": "HELD"
+  },
+  "result": "RP008_NOT_READY_LAMBETH_DOCUMENT_TRANSPORT_AND_CONTROLLED_SPATIAL_EVIDENCE_BOUNDARY",
+  "nextPacket": "DPL-15J — programme-level empirical external-evidence boundary and reopening contract"
+}

@@ -19,7 +19,7 @@ const globalThemes = fullPublication
       resolve(publicationRoot, 'formats', `${format}.css`)
     ]
   : [resolve(publicationRoot, 'theme.css')]
-const divisionIds = new Set(['part-i', 'part-ii', 'part-iii', 'part-iv', 'part-v'])
+const divisionIds = new Set(['part-i', 'part-ii', 'part-iii', 'part-iv', 'part-v', 'part-vi'])
 const divisionRectoTheme = resolve(publicationRoot, 'division-recto-entry.css')
 const contentEntries = build.entries.map((entry) => ({
   path: entry.source,

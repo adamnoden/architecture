@@ -4,10 +4,6 @@ A computational building system is trustworthy only if it states clearly what it
 
 A **supported domain** is the bounded set of building types, semantic relationships, geometric conditions, technical families and proof methods for which the system has legitimate authority.
 
-The governing rule is:
-
-> **Do less; prove more.**
-
 The domain is not a temporary limitation to hide. It is part of the product’s epistemic contract.
 
 ## Four configuration layers
@@ -242,5 +238,3 @@ Representability alone is not a reason to grow the domain.
 The present computational system is intentionally useful before it is comprehensive.
 
 It can expose missing or incoherent relationships across plan, qualitative structure, services, envelope boundaries and selected calculations while preserving a clean distinction between what it knows, what requires external evidence and what lies outside its scope.
-
-That boundedness is not a precursor to trustworthiness. It is one of the conditions of trustworthiness.

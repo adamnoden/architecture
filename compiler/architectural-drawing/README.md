@@ -81,7 +81,7 @@ When architecture actually selects a physical partition family, that condition i
 
 An `AdeWallRun` is physical enough to require an `AdeWallAssembly` reference. The assembly's thickness may still be exact, approximate, ranged or unresolved depending on source authority.
 
-ADE-03 will extend this boundary only as much as required to express source-owned coordination layers such as the Reference House cavity-wall family.
+The assembly compiler expresses source-owned coordination layers such as the Reference House cavity-wall family without selecting technical construction.
 
 ## Opening contract
 
@@ -92,10 +92,49 @@ An `AdeOpening`:
 - may be exact, approximate, ranged, qualitative or unknown;
 - does not imply a door leaf, frame, reveal or technical closure unless those facts are separately owned.
 
-ADE-04 owns the later graphic grammar for these precision states.
+The opening compiler and uncertainty grammar preserve these precision states through composition.
 
-## Current packet boundary
+## Accepted API and supported domain
 
-ADE-01 defines and validates semantic intent only. It does **not** compile wall bodies, joins, openings or uncertainty into `DrawingScene` yet.
+`compileArchitecturalPlanScene(plan, options)` composes the accepted wall, assembly, opening, datum, adjacency, dimension and label capabilities into `DrawingSceneV2`. The caller supplies projection/profile, explicit admissible thickness resolutions, annotation sides and material abutments. The engine contains no Reference House identifiers or source decisions.
 
-That separation is intentional. The next packet, ADE-02, must prove wall topology and join behaviour against small fixtures before any Reference House redraw resumes.
+- `topology.ts` — joined orthogonal physical runs and explicit shared-node junctions;
+- `assembly-topology.ts` — face-referenced ordered assembly bands;
+- `opening-topology.ts` — true subtraction, wholly inside a host run;
+- `opening-uncertainty.ts` — exact/approximate/range/centre-only/host-only states, with model left/right preserved through plan projection;
+- `partition-adjacency.ts` — non-physical datum loci and connectivity obligations;
+- `dimension-drawing.ts` — composed physical-paper dimensions with direction-aware labels;
+- `compile-plan.ts` — generic composition, guaranteed-minimum range apertures and explicit material abutments;
+- `contrast-fixture.ts` — durable asymmetric non-Reference-House regression/inspection fixture.
+
+Unknown/qualitative aperture geometry is never cut. Non-orthogonal runs, ranged opening positions and apertures touching host endpoints remain unsupported. A physical partition remains an ordinary wall with an upstream assembly; it does not select a door or admit services.
+
+The Reference House adapter and candidate profiles live in `compiler/reference-house/ade-plan.ts` and `ade-plan-scene.ts`. They preserve the source-owned wall families and their provisional ranges. Source choices belong there, never in the generic engine.
+
+The existing v2 path backend suffices; v1 and unchanged terminal scenes retain their byte contracts. Plan topology is not a section, elevation or 3D model. Shared authority/provenance, physical units and terminal primitives can transfer, while other views must earn their own representation rules.
+
+Current acceptance, reproducible proof commands and PLT physical-review obligations are recorded in `docs/publication/architectural-drawing-engine-closeout.md`. ADE is internally complete; actual print-token acceptance remains with PLT.
+
+## Section and face-on aperture representation
+
+`section-assemblies.ts` adds bounded vertical wall cuts and horizontal floor
+packages in model millimetres (longitudinal member convention; no automatic
+framing orientation or cross-cut joist generation). Callers own layer thickness authority, orientation,
+opening extents, provisional head zones, sloping caps, underground continuation,
+support envelopes, floor packages, clear end gaps and indicative seats. Nominal
+geometry requires exact or approximate source values; unknown/ranged layer
+thicknesses fail closed. This API does not infer a building section from a plan.
+
+Both leaves continue to a source-authored support reservation, with explicit
+non-dimensionable metadata. That envelope is not a footing design. Opening head
+zones remain distinct from leaves and joinery; closure across a cavity is an
+authored convention, not a selected thermal/moisture detail. Floor voids produce
+no material strokes. Adjacent thin solid layers with identical extent/style can
+share a visual band at small physical scale while retaining every layer ID.
+
+`aperture-drawing.ts` supplies face-on frames/grids and closed cut joinery. Grid
+counts, frame/profile dimensions, fanlights and thresholds are caller choices;
+there is no Georgian style or Reference House geometry in the engine.
+`section-contrast-fixture.ts` exercises an asymmetric non-courtyard example with
+different layer sizes, span, levels and openings. This extends the accepted plan
+engine; it does not certify structural adequacy or complete 3D/BIM capability.

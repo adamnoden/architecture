@@ -1,24 +1,14 @@
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { renderMaturityStatusBlock } from '../project/maturity.js'
+import { renderControlGraphDocument } from '../project/control/mermaid.js'
+import { controlNodes } from '../project/control/nodes/index.js'
+import { renderStatusDocument, renderWorkstreamCodeRegister } from '../project/control/render.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const statusPath = join(repoRoot, 'STATUS.md')
-const startMarker = '<!-- maturity-status:start -->'
-const endMarker = '<!-- maturity-status:end -->'
 
-const source = readFileSync(statusPath, 'utf8')
-const start = source.indexOf(startMarker)
-const end = source.indexOf(endMarker)
+writeFileSync(join(repoRoot, 'STATUS.md'), `${renderStatusDocument(repoRoot)}\n`)
+writeFileSync(join(repoRoot, 'project/workstream-codes.md'), `${renderWorkstreamCodeRegister()}\n`)
+writeFileSync(join(repoRoot, 'project/control/graph.md'), `${renderControlGraphDocument(controlNodes)}\n`)
 
-if (start < 0 || end < 0 || end < start) {
-  throw new Error('STATUS.md is missing the maturity-status markers')
-}
-
-const replacement = `${startMarker}\n${renderMaturityStatusBlock()}\n${endMarker}`
-const updated = `${source.slice(0, start)}${replacement}${source.slice(end + endMarker.length)}`
-
-writeFileSync(statusPath, updated)
-
-console.log('Updated STATUS.md maturity block from project/maturity.ts.')
+console.log('Updated STATUS.md, workstream codes and project/control/graph.md from canonical typed sources.')

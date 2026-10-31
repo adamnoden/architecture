@@ -7,7 +7,7 @@ This document defines what belongs in the public intellectual product and how th
 
 ## 1. Working Edition
 
-The Working Edition is an illustrated architectural design-research monograph. It carries the complete resolved architectural argument, the current pattern language, one worked Reference House, and the evidence/professional boundaries required to read those claims responsibly.
+The Working Edition is an illustrated architectural design-research monograph. It carries the complete resolved architectural argument, the current pattern language, one worked Reference House, the ordeal through which that proposition is tested, and the evidence/professional boundaries required to read those claims responsibly.
 
 ### Front matter
 
@@ -38,19 +38,29 @@ Pattern identity is separate from evidence maturity. The service-topology field 
 
 Stable `PAT-*` identifiers remain because they support current cross-reference across architectural evidence and computational representations. Retired identities, pilot catalogues, migration crosswalks and pattern-hardening history remain internal.
 
-### Part IV — Reference House
+### Part IV — The Reference House: Design Proposition
 
-The Reference House is one coordinated interpretation of the proposition, not a style doctrine and not proof of the general system.
+Part IV owns one coordinated interpretation of the proposition, not a style doctrine and not proof of the general system.
 
 It forces doctrine, selected patterns, G-01, one courtyard morphology, one domestic programme and bounded technical choices to coexist in one building. Project-specific decisions stay project-specific even when repeated throughout the house.
 
-The reader-facing account states the current building, technical coordination and proof limits directly. RH-stage chronology, supersession history and stale comparison fixtures are not part of Part IV.
+The part owns the designed object: site/type, architectural order, material/structural proposition, maintenance geography, environmental systems and the selected interior/opening architectural interfaces. The dedicated interior-architecture and opening-assembly chapter interfaces may remain visibly incomplete until their substantive owners resolve them; structural placement is not a claim of maturity.
 
-### Part V — Making and Testing the Platform
+Future-intervention scenarios do **not** live here. They belong to Part V so the book first presents the house and then attacks it.
 
-Part V addresses proportionality, interface ownership, reliable assembly, physical testing, procurement, commissioning, stewardship and review through failure/change/occupation scenarios.
+### Part V — Making and Proving the Platform
 
-Its function is to explain how unusual propositions earn their place and how they are allowed to fail. It is not a project-management log of the tests used to develop the manuscript.
+Part V addresses proportionality, interface ownership, reliable assembly, physical testing, procurement, commissioning, failure/change/occupation scenarios, the Reference House intervention ordeal and technical/construction closure.
+
+Its function is to show how unusual propositions earn their place, how the worked house is challenged, and where architecture must rewind when technical resolution exposes a bad assumption. It is not a project-management log of the tests used to develop the manuscript.
+
+### Part VI — The House
+
+Part VI is the concise architectural payoff after technical reconciliation and final synthesis.
+
+It is intentionally visual and spare: the resolved house, selected plans/sections/elevations/views and only enough text to understand the final architectural object and its remaining project-specific limits. It must not repeat Part IV as a second explanatory case study, and it must not absorb unresolved proof work merely to produce a satisfying ending.
+
+Until the house has passed the required synthesis and publication-drawing gates, Part VI may remain a deliberate structural placeholder rather than pretending that the conclusion already exists.
 
 ## 2. Back matter
 
@@ -74,7 +84,9 @@ Its sequence is:
 2. governing constitution;
 3. current pattern language, with representative patterns expanded;
 4. Reference House;
-5. making and testing the platform.
+5. making and proving the platform.
+
+The Primer does not need to reproduce Part VI while that final resolved-house section remains intentionally incomplete.
 
 Where possible, Primer content is deterministically derived from canonical sources through publication adapters. Compression may reduce detail; it must not create a second authority layer or reintroduce obsolete history.
 

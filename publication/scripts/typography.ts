@@ -259,7 +259,24 @@ export async function applyProductionTypography(context: ProductionTypographyCon
   if (plateStyles.length !== 1 || !plateStyles[0].includes('Arial, Helvetica, sans-serif') || !plateStyles[0].includes('size: A4')) {
     throw new Error(`Prepared Part IV no longer exposes the one known working A4 plate stylesheet; found ${plateStyles.length}.`)
   }
-  await writeFile(partIVPath, partIVBefore.replace(plateStylePattern, ''), 'utf8')
+  // The frozen drawing register inserts plates directly after section headings.
+  // In production, keep each heading with its opening explanation before the
+  // full-page plate. This changes pagination, not the frozen register or views.
+  let plateHeadingParagraphs = 0
+  const partIVWithoutWorkingStyle = partIVBefore.replace(plateStylePattern, '')
+  const partIVWithExplanations = partIVWithoutWorkingStyle.replace(
+    /(^## [^\n]+\n\n)((?:<section class="hk-plate-page\b[\s\S]*?<\/section>\s*)+)([^\n]+)(?=\n\n|$)/gm,
+    (_whole, heading: string, plates: string, paragraph: string) => {
+      if (/^[#<|>*-]/.test(paragraph)) throw new Error('A plate heading has no opening explanatory paragraph.')
+      plateHeadingParagraphs += 1
+      return `${heading}${paragraph}\n\n${plates.trimEnd()}`
+    }
+  )
+  const expectedPlateHeadingParagraphs = publicationPlatePlacements().filter((placement) => placement.anchor.startsWith('## ')).length
+  if (plateHeadingParagraphs !== expectedPlateHeadingParagraphs) {
+    throw new Error(`Expected ${expectedPlateHeadingParagraphs} plate headings with opening explanations; found ${plateHeadingParagraphs}.`)
+  }
+  await writeFile(partIVPath, partIVWithExplanations, 'utf8')
 
   const entryById = new Map(publicationEntries.map((entry) => [entry.id, entry]))
   const controlledAssets = new Set<string>()
@@ -322,7 +339,7 @@ export async function applyProductionTypography(context: ProductionTypographyCon
     if (entry.kind === 'part') after = withPartBodyMetadata(after)
     await writeFile(preparedPath, after, 'utf8')
   }
-  if (divisionOpenings !== 5) throw new Error(`Expected five production division openings; found ${divisionOpenings}.`)
+  if (divisionOpenings !== 6) throw new Error(`Expected six production division openings; found ${divisionOpenings}.`)
 
   const titlePath = resolve(workSourceRoot, build.titlePage)
   const titleBefore = await readFile(titlePath, 'utf8')
@@ -353,6 +370,7 @@ export async function applyProductionTypography(context: ProductionTypographyCon
     arrowSequences: partIISequence.replacements + partIIISequence.replacements,
     referenceUrlRows: references.rows,
     strippedWorkingPlateStyles: plateStyles.length,
+    plateHeadingsWithOpeningParagraph: plateHeadingParagraphs,
     controlledSvgCount: controlledAssets.size
   }
   await writeFile(buildPath, `${JSON.stringify(build, null, 2)}\n`, 'utf8')

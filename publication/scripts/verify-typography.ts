@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto'
 import { execFileSync, spawnSync } from 'node:child_process'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { parsePdfPageSizes } from './pdf-page-geometry.js'
 
 const repoRoot = resolve(import.meta.dirname, '../..')
 const proofRoot = resolve(repoRoot, 'publication/.proof/typ09b')
@@ -23,8 +24,9 @@ const divisions = [
   { id: 'part-i', title: 'Part I — The Proposition' },
   { id: 'part-ii', title: 'Part II — Architecture of the Platform' },
   { id: 'part-iii', title: 'Part III — Patterns and Generative Sequences' },
-  { id: 'part-iv', title: 'Part IV — Reference House' },
-  { id: 'part-v', title: 'Part V — Making and Testing the Platform' }
+  { id: 'part-iv', title: 'Part IV — The Reference House: Design Proposition' },
+  { id: 'part-v', title: 'Part V — Making and Proving the Platform' },
+  { id: 'part-vi', title: 'Part VI — The House' }
 ] as const
 
 const command = (name: string, args: string[]): string => execFileSync(name, args, { cwd: repoRoot, encoding: 'utf8' })
@@ -34,11 +36,6 @@ function parsePageCount(info: string): number {
   const pages = Number(info.match(/^Pages:\s+(\d+)/m)?.[1] ?? '')
   if (!Number.isFinite(pages) || pages < 1) throw new Error('Could not parse production PDF page count.')
   return pages
-}
-function parsePageSize(info: string): { widthPt: number; heightPt: number } {
-  const match = info.match(/^Page(?:\s+\d+)?\s+size:\s+([\d.]+)\s+x\s+([\d.]+)\s+pts/m)
-  if (!match) throw new Error('Could not parse production PDF page geometry.')
-  return { widthPt: Number(match[1]), heightPt: Number(match[2]) }
 }
 function finishedFonts(raw: string): string[] {
   const lines = raw.split('\n').slice(2).map((line) => line.trim()).filter(Boolean)
@@ -70,7 +67,7 @@ if (integration.canonicalMutation !== false || integration.productionThemeMigrat
   throw new Error('Production typography integration evidence lost its no-canonical-mutation / production-migration boundary.')
 }
 const transforms = integration.transforms ?? {}
-if (transforms.semanticDivisionOpenings !== 5) throw new Error(`Expected five semantic division openings; found ${transforms.semanticDivisionOpenings}.`)
+if (transforms.semanticDivisionOpenings !== 6) throw new Error(`Expected six semantic division openings; found ${transforms.semanticDivisionOpenings}.`)
 if ((transforms.semanticEntryOpenings ?? 0) < 50) throw new Error(`Suspicious production entry-opening count: ${transforms.semanticEntryOpenings}.`)
 if (transforms.partINoteCitationRows !== 31 || (transforms.partINoteUrlRows ?? 0) < 20) throw new Error('Part I Notes production role mapping drifted.')
 if ((transforms.scheduleRecords ?? 0) < 20 || transforms.arrowSequences !== 2 || (transforms.referenceUrlRows ?? 0) < 5) throw new Error('TYP-05 production mixed-content transforms are incomplete.')
@@ -91,9 +88,10 @@ for (const format of ['a4', 'b5'] as const) {
 
   const target = expectedGeometry[format]
   const tolerancePt = 0.75
-  for (let page = 1; page <= pages; page += 1) {
-    const pageInfo = command('pdfinfo', ['-f', String(page), '-l', String(page), pdf])
-    const size = parsePageSize(pageInfo)
+  const pageInfo = command('pdfinfo', ['-f', '1', '-l', String(pages), pdf])
+  const pageSizes = parsePdfPageSizes(pageInfo, pages)
+  for (const [index, size] of pageSizes.entries()) {
+    const page = index + 1
     if (Math.abs(size.widthPt - target.widthPt) > tolerancePt || Math.abs(size.heightPt - target.heightPt) > tolerancePt) {
       failures.push(`${format.toUpperCase()} page ${page} geometry changed: ${size.widthPt} × ${size.heightPt} pt.`)
       break

@@ -83,9 +83,9 @@ Consequence: retain as an alteration/counterexample case, not a clean dimensiona
 
 The survey records a distinctive Leverton-type composition and a full-width entrance hall divided into three bays, with the stair in the left bay. No material plan alteration is identified in the passage currently used for this analysis.
 
-Consequence: strong plan/elevation coupling analysis topology/coupling case; metric extraction remains tied to the measured plan.
+Consequence: strong topology/coupling case; metric extraction remains tied to the measured plan.
 
-## 6. dimensional analysis — admitted dimensions
+## 6. Dimensional analysis — admitted dimensions
 
 The table below contains only values supportable from public text or a declared derivation.
 
@@ -103,7 +103,7 @@ The mean frontage is **not** an assertion that every one of Nos. 24–27 measure
 
 This distinction is precisely the kind of provenance dimensional analysis needs.
 
-## 7. dimensional analysis — measured-plan pool
+## 7. Dimensional analysis — measured-plan pool
 
 The public *Survey of London* identifies the following as measured ground/first-floor plans:
 
@@ -127,7 +127,7 @@ No new room ratio is admitted from that image.
 
 That restraint is intentional.
 
-## 8. dimensional analysis finding — urban proportion has more than one scale
+## 8. Dimensional analysis finding — urban proportion has more than one scale
 
 The earlier dimensional analysis concentrated on room width:length:height relationships in Marble Hill and Danson.
 
@@ -249,7 +249,7 @@ The two cases now have different jobs:
 | Case | Primary job |
 |---|---|
 | 76 Dean Street | early-Georgian urban counterexample; off-centre entrance; vertical hierarchy; route differentiation; strong UNKNOWN discipline |
-| Bedford Square | later-Georgian measured urban family; dimensional module; aggregate/row composition; scope-aware plan/elevation coupling analysis coupling |
+| Bedford Square | later-Georgian measured urban family; dimensional module; aggregate/row composition; scope-aware plan/elevation coupling |
 
 This is stronger than forcing one case to satisfy every evidence need.
 

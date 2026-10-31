@@ -1,5 +1,8 @@
 # Reference House Design Programme
 
+**Current-house supersession:** the owner-selected [Georgian re-plan](../reference-house/georgian-replan.md) develops the square-house programme and a west stair to attic. New project designs exclude flat and very-low-slope roofs. The RH-08/RH-10 low-slope roof and dimensions below remain historical technical coordination, not the new architectural brief. Full successor technical migration remains open.
+
+
 **Status:** active programme control  
 **Purpose:** drive the Reference House from provisional coordination fixture to a coordinated virtual building through small, restart-safe design gates.
 

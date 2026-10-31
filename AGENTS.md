@@ -19,13 +19,24 @@ When working here:
 
 **Find the owning error, not the nearest editable symptom.**
 
+### Standing delegation and end-to-end agency
+
+The owner delegates the controls for authorised project work. Interpret requests by the intended outcome and carry the work through the routine steps needed to achieve it. Make reasonable implementation decisions, record material assumptions, and continue until the outcome is verified or a genuine blocker prevents further progress.
+
+Within that scope, this includes implementation, appropriate validation, PR creation, safe merge after the applicable checks, issue/status reconciliation and verified cleanup. Do not turn those ordinary steps into separate permission requests. When a PR is a cleanup mechanism, opening it is an intermediate step: merge it into the intended disposal branch and verify automatic head deletion. Do not hand the final routine step back to the owner merely because the request named the mechanism rather than spelling out every action.
+
+If one tool lacks a capability, pursue an available safe workaround before declaring the owner must do it. Preserve the repository's authority, merge-safety and provenance rules throughout. Delegated execution never permits invented evidence, unearned architectural claims, destruction of active work or a new external commitment outside the authorised goal.
+
+Ask only when a material ambiguity cannot reasonably be resolved from project context, an action exceeds the delegated scope, or a real blocker remains after available alternatives. Complete independent authorised work first and state the exact blocker rather than stopping at a proposal or partial handoff.
+
 ## 2. Canonical anchors
 
 Follow changing facts at their source:
 
 - `README.md` — project proposition and conceptual structure;
 - `docs/README.md` — documentation ownership and information architecture;
-- `STATUS.md` — present project-wide state and maturity judgements;
+- `STATUS.md` — generated durable structural execution state and maturity projection;
+- `project/control/README.md` — PCO/ACO execution, dispatcher and live-claim mechanics;
 - `project/authority.ts` — machine-readable claim ceiling;
 - `docs/editorial/editorial-doctrine.md` — public-facing editorial standard;
 - `docs/computational/README.md` and `compiler/README.md` — computational role and proof boundaries;
@@ -33,7 +44,7 @@ Follow changing facts at their source:
 
 For a particular workstream, also read its latest applicable gate/result and its owning README or programme control.
 
-An older plan saying “next: X” is historical evidence unless current authority confirms it. `STATUS.md` and later explicit results control present-state questions.
+An older plan saying “next: X” is historical evidence unless current authority confirms it. `STATUS.md` and later explicit results control durable present-state questions; live agent occupancy is queried through ACO rather than inferred from `STATUS.md`.
 
 This constitution governs behaviour, not facts. If it ever appears to conflict with an owning source about an architectural, technical or status fact, the owning source controls that fact.
 
@@ -151,6 +162,14 @@ For bounded work:
 - preserve meaningful provenance when controlled baselines move;
 - avoid force updates unless intentional, necessary and lease-protected.
 
+For substantial execution against a PCO node, structural `READY` is necessary but not sufficient. Before beginning work that could collide with another agent's durable output, query ACO and acquire the canonical node lease. Renew it when necessary, verify ownership before final merge/handoff, and release it after completion, handoff or abandonment. Read-only investigation that cannot collide with durable output does not require a lease.
+
+When an agent is idle and has **not** been explicitly assigned a packet, it must use the PCO dispatcher (`npm run control:next` / `npm run control:claim-next`) rather than choosing an arbitrary READY node. The dispatcher may auto-claim only nodes whose durable `agentDispatch` policy is `self-service`; `manual` nodes require explicit direction even when structurally READY. A direct owner assignment overrides dispatcher ranking but never bypasses the ACO lease protocol.
+
+ACO occupancy is volatile and deliberately separate from PCO lifecycle. Do not infer ownership from branch names or `STATUS.md`. If the live lease store cannot be read safely, fail closed for new collision-prone work rather than assuming the node is free. Normal agents must not force-take an active lease; exceptional takeover requires explicit owner/admin intent and a recorded reason.
+
+`runtime/claims` is retained coordination infrastructure, not a feature branch. Never merge it into `main`, and do not delete it during ordinary branch cleanup. Its per-node records are runtime state and must not be copied into source branches.
+
 Before merge, verify that the validated head is still the head being merged and that the intended base relationship still holds. If `main` has moved materially, reconcile and revalidate rather than assuming the earlier green result proves the resulting merge.
 
 Do not delete or rewrite branches, history or retained evidence merely because they look stale. Destructive cleanup requires positive evidence that no active or provenance dependency is being erased.
@@ -163,7 +182,7 @@ Substantial work must leave enough repository evidence for another competent age
 
 Transient hashes, PR numbers, active packet names and temporary blockers belong in execution/gate records or the PR, not here.
 
-Update `STATUS.md` only when project-wide present state genuinely changes. Do not use it as a running diary.
+Update `STATUS.md` only when project-wide durable state genuinely changes. Do not use it as a running diary or a volatile lease table.
 
 ## 11. Restraint and proportionality
 

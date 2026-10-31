@@ -1,0 +1,168 @@
+{
+  "id": "RSI-03-COLLISION-V0.1",
+  "programme": "RSI",
+  "issue": 898,
+  "site": "RSI-RS-01",
+  "house": {
+    "source": "RH-GROUND-PLAN-RESOLUTION-02 / B4 provisional coordination",
+    "shellMm": [12000, 10800],
+    "courtMm": [3600, 3300],
+    "mutationAllowed": false
+  },
+  "result": "SUCCESSOR_EXPLORATION_EARNED",
+  "resultBoundary": "The current house can be placed coherently on the 15 x 40 m site, but its 12 m width leaves the maintenance/service doctrine materially frontage-sensitive. This is not a compliance failure and does not prove a narrower house is superior; it earns RSI-04/05 exploration.",
+  "primarySite": {
+    "widthMm": 15000,
+    "depthMm": 40000,
+    "frontSetbackMm": 5000,
+    "rearGardenMm": 24200,
+    "technicalSideMm": 1750,
+    "principalSideMm": 1250,
+    "housePlotWidthRatio": 0.8
+  },
+  "sensitivitySite": {
+    "widthMm": 14000,
+    "depthMm": 40000,
+    "technicalSideMm": 1250,
+    "principalSideMm": 750,
+    "housePlotWidthRatio": 0.8571428571,
+    "role": "NARROW_COUNTERFACTUAL_ONLY"
+  },
+  "findings": [
+    {
+      "id": "FIT",
+      "topic": "gross fit and detached reading",
+      "classification": "SITE_RESPONSE",
+      "severity": "LOW",
+      "state": "PASS_WITH_PRESSURE",
+      "finding": "The 12 m shell fits the 15 m parcel with two real side fields and a deep rear garden. The site does not predetermine failure, but 80% plot-width occupation makes side conditions architecturally consequential."
+    },
+    {
+      "id": "TECH_SIDE",
+      "topic": "technical-side ordinary passage and service geography",
+      "classification": "HOUSE_DEFECT",
+      "severity": "MODERATE",
+      "state": "FRAGILE",
+      "finding": "A 1.75 m technical flank is a credible passage, but the current 12 m shell makes the house's service/maintenance proposition depend strongly on scarce lateral land. DPL-RS-01 had deliberately expanded this territory to 3.0 m. The house therefore carries an unproven frontage dependency relative to its serviceability ambitions."
+    },
+    {
+      "id": "PRINCIPAL_SIDE",
+      "topic": "principal-side ordinary passage",
+      "classification": "SITE_RESPONSE",
+      "severity": "LOW",
+      "state": "PASS_WITH_PRESSURE",
+      "finding": "The 1.25 m principal flank remains a real pedestrian/inspection route. It is not generous working territory, so deployment design must keep it clear rather than consuming it casually."
+    },
+    {
+      "id": "FACADE_MAINT",
+      "topic": "outer-facade and rainwater-goods maintenance",
+      "classification": "EXTERNAL_EVIDENCE",
+      "severity": "MODERATE",
+      "state": "UNPROVED",
+      "finding": "The doctrine requires credible facade and roof-edge maintenance, but no controlled equipment-specific working-width requirement has been recovered. Ordinary access exists; adequacy for each maintenance operation cannot be asserted from geometry alone."
+    },
+    {
+      "id": "TEMP_WORKS",
+      "topic": "temporary scaffold/tower support positions",
+      "classification": "EXTERNAL_EVIDENCE",
+      "severity": "HIGH",
+      "state": "UNPROVED",
+      "finding": "The controlled maintenance plan explicitly requires temporary scaffold/tower support positions, but no exact platform/outrigger/support geometry is frozen. RSI must not invent a minimum width. This is the sharpest unresolved evidence item on the side fields."
+    },
+    {
+      "id": "PLANT_METERS",
+      "topic": "plant, meters and external isolation geography",
+      "classification": "HOUSE_DEFECT",
+      "severity": "MODERATE",
+      "state": "FRAGILE",
+      "finding": "The technical flank is asked to carry access and technical work simultaneously. Without a compact/explicit external plant-and-meter arrangement, the 1.75 m field risks becoming both route and equipment bay. The current house does not yet prove those duties can coexist on modest frontage."
+    },
+    {
+      "id": "DRAINAGE_UTILITIES",
+      "topic": "foul, surface-water and utility routes",
+      "classification": "EXTERNAL_EVIDENCE",
+      "severity": "MODERATE",
+      "state": "UNPROVED",
+      "finding": "Physical route territory exists, especially along the technical side and front/rear fields, but outfalls, capacities, rights and exact routes are intentionally unknown. No compatibility conclusion is earned."
+    },
+    {
+      "id": "ARRIVAL",
+      "topic": "bins, deliveries and front arrival",
+      "classification": "SITE_RESPONSE",
+      "severity": "LOW",
+      "state": "PASS",
+      "finding": "A 5 m front field and direct street frontage provide ample synthetic territory to resolve ordinary pedestrian arrival, bins and deliveries without changing the house. Detailed vehicle/refuse geometry remains deployment design."
+    },
+    {
+      "id": "STEP_FREE",
+      "topic": "step-free approach against broad datum",
+      "classification": "SITE_RESPONSE",
+      "severity": "LOW",
+      "state": "GEOMETRICALLY_PLAUSIBLE",
+      "finding": "The authored FFL is 100 mm above street datum with 5 m of front territory, equivalent to only a 1:50 average rise if used directly. A gentle approach is geometrically plausible without house mutation; detailed compliant thresholds/landings/drainage remain later design."
+    },
+    {
+      "id": "COURT_LOGISTICS",
+      "topic": "garden-to-courtyard material replacement logistics",
+      "classification": "HOUSE_DEFECT",
+      "severity": "MODERATE",
+      "state": "UNPROVED",
+      "finding": "The site provides excellent rear staging territory, but the house must still prove a controlled replacement path from an external side/garden route into the internal courtyard. The modest side fields make any hidden dependence on generous external manoeuvring space more consequential."
+    },
+    {
+      "id": "SIDE_WINDOWS",
+      "topic": "side-window usefulness, privacy and neighbour pressure",
+      "classification": "EXTERNAL_EVIDENCE",
+      "severity": "MODERATE",
+      "state": "CONTEXT_SENSITIVE",
+      "finding": "B4's study/service side windows are valuable openings, but simplified neighbour masses put adjacent buildings roughly 3.05-3.55 m from the house faces. Exact neighbour windows, room uses, privacy/daylight baselines and rights are unknown, so the openings cannot be declared universally acceptable or defective."
+    },
+    {
+      "id": "REAR_GARDEN",
+      "topic": "rear-garden domestic quality",
+      "classification": "SITE_RESPONSE",
+      "severity": "LOW",
+      "state": "PASS",
+      "finding": "The 24.2 m rear garden is intentionally generous in depth while the frontage remains constrained. The house is not being tested by land austerity and retains convincing domestic garden territory."
+    },
+    {
+      "id": "CONSTRUCTION_REPLACEMENT",
+      "topic": "construction access and future large-component replacement",
+      "classification": "EXTERNAL_EVIDENCE",
+      "severity": "HIGH",
+      "state": "UNPROVED",
+      "finding": "The doctrine values future replacement and ordinary builder viability, but exact component sizes, lifting strategy and temporary works are operation-specific. The selected site exposes the question without supplying enough evidence to certify it."
+    },
+    {
+      "id": "WALL_BASE",
+      "topic": "wall-base drainage and external service moat territory",
+      "classification": "SITE_RESPONSE",
+      "severity": "MODERATE",
+      "state": "PLAUSIBLE_BUT_COMPETING",
+      "finding": "Both side fields can physically contain wall-base drainage/inspection territory, but this consumes the same scarce width required for passage and maintenance. Detailed deployment must coordinate rather than stack these duties implicitly."
+    },
+    {
+      "id": "FRONTAGE_DEPENDENCY",
+      "topic": "dependence on generous lateral land",
+      "classification": "HOUSE_DEFECT",
+      "severity": "HIGH",
+      "state": "CONFIRMED_SENSITIVITY",
+      "finding": "The 14 m counterfactual leaves only 1.25 m technical and 0.75 m principal side fields. A single metre of plot-width reduction therefore removes one third of the 15 m case's total side territory. The 12 m shell is materially frontage-sensitive, which is a weak fit with the project's ambitions for robust ordinary deployment and maintainability."
+    }
+  ],
+  "categoryCounts": {
+    "SITE_RESPONSE": 5,
+    "HOUSE_DEFECT": 4,
+    "REFERENCE_SITE_ARTIFACT": 0,
+    "EXTERNAL_EVIDENCE": 6
+  },
+  "rsi04Earned": true,
+  "rsi04Questions": [
+    "How much shell width can be removed before room/courtyard quality materially regresses?",
+    "Can the service topology be arranged so external technical equipment does not consume the sole maintenance route?",
+    "What minimum side-territory duties are architectural invariants versus project-specific temporary-works evidence?",
+    "Can garden-to-courtyard replacement logistics be made explicit rather than assumed?",
+    "Can a narrower/deeper organisation preserve Georgian composure and generous room proportions?",
+    "How does the plan perform on the retained 14 m counterfactual without being optimised separately for it?"
+  ]
+}

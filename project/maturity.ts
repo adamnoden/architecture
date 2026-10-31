@@ -309,11 +309,11 @@ export const workstreamStatuses = [
     id: 'publication',
     name: 'Publication',
     maturity: 'M4',
-    reviewedOn: '2026-10-21',
+    reviewedOn: '2026-10-28',
     currentState:
-      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete. DRW is fully closed and frozen through its final integration/physical-proof programme; the controlled architectural drawing family is released at the existing internal publication proof boundary without inventing construction or site authority.',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete for the source/object scopes they actually reviewed; DRW v1 remains frozen and TYP has an accepted RC2 production release. EDA-00–08 remain valid historical assurance for the 128-source candidate book, and ADE remains internally complete at its stated representation scope. BSR has now completed the six-part structural migration: the Working Edition has stable Part IV design-proposition, Part V proving/technical-closure and Part VI resolved-house interfaces. IAS/OAS/HAD are unblocked against those interfaces, but the previous EDA clearance and PLT-only manufacture path remain insufficient for the enlarged final book. Publication maturity remains M4; no prior evidence is erased or promoted.',
     nextGate:
-      'Proceed to PR-02 private physical-object production without reopening frozen drawing authority by preference. PR-03/PR-04 then provide the independent critical cycle required before M5 or public release. Any later DPL-earned drawing duty requires an explicit DRW reopen or separately owned post-DRW representation authority.',
+      'PUB-02 may continue content-independent object preparation using the accepted typography contract. Final private-object content/drawing freeze and manufacture now require IAS/OAS/HAD design resolution; BCR construction-resolution convergence; HRS final architectural synthesis; final PLT integration/physical drawing freeze; and renewed EDA assurance over the enlarged source/object. PUB-03/PUB-04 independent criticism remains required before M5 or public-release claims.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
@@ -324,6 +324,13 @@ export const workstreamStatuses = [
         'docs/publication/architectural-drawing-execution-plan.md'
       ],
       internallyValidated: [
+        'docs/publication/publication-typography-v1-release.md',
+        'docs/publication/architectural-drawing-engine-ade00-audit.md',
+        'docs/publication/architectural-drawing-engine-ade03b-wall-grammar.md',
+        'docs/publication/architectural-drawing-engine-ade04b-opening-uncertainty.md',
+        'docs/editorial/eda-programme.md',
+        'docs/editorial/eda-00-doctrine-audit.md',
+        'docs/editorial/eda-01-corpus-register.md',
         'publication/pr01-r7-findings-freeze.md',
         'publication/pr01-r9-reproof-refreeze.md',
         'docs/publication/resolved-work-sanitation-closeout.md',
@@ -335,11 +342,11 @@ export const workstreamStatuses = [
     id: 'deployment-real-site',
     name: 'Deployment / real-site integration',
     maturity: 'M4',
-    reviewedOn: '2026-10-23',
+    reviewedOn: '2026-10-27',
     currentState:
-      'DPL-13B/DPL-I establish the complete controlled SCREENING owner-universe and coverage/readiness proposition for the canonical Reference House × synthetic DPL-RS-01 case. DPL-13C plus DPL-J now internally validate the canonical whole-site UNRESOLVED @ SCREENING result at that exact scope: blocker ownership is complete, current/future separation is controlled, actual DPL-12B and London-D3 findings are consumed where admitted, missing evidence/evaluators remain explicit unresolved blockers, positive compatibility is refused, hard candidate/obligation failure cannot imply INCOMPATIBLE without route exhaustion, and material blocker/case changes invalidate identity. COMPATIBLE, INCOMPATIBLE, route exhaustion, multi-site/general result validity, real-site deployability and regulatory/planning/legal adequacy remain outside the controlled proposition.',
+      'The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. DPL-01 through DPL-14 are complete. DPL-15J adds explicit assumption-based trials across all eight sites, a conditional envelope, reader-facing computational explanation and internal adversarial checks. Geometry hypotheses do not discharge evidence-backed readiness: corpus readiness remains 0/8 after DPL-15I, and real-site compatibility remains unestablished. The user has explicitly revised DPL-15/16/17/18 to conditional research scope. Their final authored case and closeout complete that revised programme; the original empirical criteria remain unearned and real-site verification is deferred. Lennard remains excluded from empirical sampling.',
     nextGate:
-      'Execute DPL-13D only: create a second canonical synthetic borough-assigned positive-readiness generalisation case using existing controlled Croydon local-planning authority and the same DPL-13B/DPL-13C machinery. Prove that changed borough/site disposition participates in identity and changes classification outcomes without fabricating external evidence. Keep COMPATIBLE, INCOMPATIBLE, route search/exhaustion, DPL-15+ and broader envelope work held pending a fresh post-DPL-13D gate.',
+      'No standing DPL research packet remains. Trigger a separate verification follow-on only for a selected real commission/site or explicit evidence-backed request; then replace the applicable premises with controlled site data and stage-specific professional evidence. Conditional completion does not raise maturity or authority, and authorises no external contact or spend.',
     evidence: {
       framed: ['project/dpl/deployment-programme.md'],
       developed: [
@@ -369,6 +376,12 @@ export const workstreamStatuses = [
         'project/dpl/dpl-wave-d-integration-admission-review.md'
       ],
       internallyValidated: [
+        'project/dpl/exploration/README.md',
+        'project/dpl/dpl-conditional-closeout.md',
+        'compiler/dpl/exploration.test.ts',
+        'project/dpl/dpl-15e-rp006-spatial-preflight.md',
+        'project/dpl/dpl-15f-rp006-residual-recovery.md',
+        'project/dpl/dpl-t11-lennard-no-spend-evidence.md',
         'project/dpl/dpl-13a-canonical-reference-site-compile.md',
         'compiler/dpl/canonical.ts',
         'compiler/dpl/dpl13a.test.ts',
@@ -395,16 +408,17 @@ export const workstreamStatuses = [
     id: 'delivery',
     name: 'Delivery',
     maturity: 'M2',
-    reviewedOn: '2026-10-19',
+    reviewedOn: '2026-10-28',
     currentState:
-      'The implementation-brief structure exists and N17 now carries complete-action / finished-interface human-factors verification into RIBA 3/4 as appropriate, but downstream delivery requirements remain intentionally incomplete.',
+      'DEL-00 inventories the existing delivery modules, N01–N17 and other brief obligations, with provisional discipline/stage allocations, evidence dependencies and rewind owners under #854. The authorised IAS/OAS/HAD/BCR/HRS programme now creates concrete future assembly and construction-resolution inputs, but no new delivery acceptance is implied. Current-house technical migration, competent review, physical evidence and commission-specific acceptance remain outstanding.',
     nextGate:
-      'Populate only as architectural, DPL, professional-review and physical-validation decisions mature; delivery must remain a consequence of controlled architecture rather than a second source of doctrine.',
+      'Reconcile DEL when BCR admits concrete IAS/OAS/HAD assembly obligations, and when RH-11/EPR, applicable PHY results or a real commission supplies evidence. Add fabrication, tolerance, shop-drawing, equivalence, first-article, commissioning or reinstatement requirements only where a selected assembly earns them. Declare source applicability before issuing older packages for the Georgian proposal. No project acceptance or maturity increase follows from programme authorisation.',
     evidence: {
-      framed: ['docs/delivery/README.md'],
+      framed: ['docs/delivery/README.md', 'project/del/delivery-programme.md'],
       developed: [
         'docs/delivery/riba-implementation-brief-template.md',
-        'docs/delivery/human-factors-verification-requirements.md'
+        'docs/delivery/human-factors-verification-requirements.md',
+        'project/del/del-00-delivery-baseline.md'
       ]
     }
   }

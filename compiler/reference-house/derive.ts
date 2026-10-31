@@ -12,7 +12,7 @@ import type {
   DerivedSpace,
   OpeningPlacement,
   ReferenceHouseDerived,
-  ReferenceHouseSource
+  ReferenceHouseCoordinationSource
 } from './model.js'
 import { deg, mm, square } from './units.js'
 import type { Millimetres } from './units.js'
@@ -41,7 +41,7 @@ const referenceHousePlanProjection = (plan: PlanSliceDerived): {
 })
 
 export const deriveReferenceHouse = (
-  source: ReferenceHouseSource,
+  source: ReferenceHouseCoordinationSource,
   compiledPlan: PlanSliceDerived = derivePlanSlice(adaptReferenceHousePlanSource(source))
 ): ReferenceHouseDerived => {
   const shellWidth = source.shell.width.value

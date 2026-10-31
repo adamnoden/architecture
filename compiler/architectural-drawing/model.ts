@@ -94,6 +94,8 @@ export interface AdeOpening {
   role: AdeOpeningRole
   centreOffset: AdeDistanceAuthority
   width: AdeDistanceAuthority
+  /** Optional schematic architectural symbol; never a frame/doorset specification. */
+  symbol?: { kind: 'window' } | { kind: 'door'; leaves: 1 | 2; swingSide: 'left' | 'right'; hingeEnd?: 'low' | 'high' }
   provenance: AdeProvenance
 }
 
@@ -150,6 +152,34 @@ export interface AdePlanLabel {
   provenance: AdeProvenance
 }
 
+/** Supported straight, parallel two-flight return stair, with its turn landing
+ * to model west and floor arrivals to east. Clear flight geometry only. */
+export interface AdeReturnStair {
+  kind: 'return-stair'
+  id: string
+  origin: AdeModelPoint
+  riserCount: number
+  floorToFloor: Millimetres
+  going: Millimetres
+  clearWidth: Millimetres
+  landingDepth: Millimetres
+  wellGap: Millimetres
+  cutHeight: Millimetres
+  level: 'GROUND' | 'FIRST'
+  provenance: AdeProvenance
+}
+
+/** Selected schematic occupancy envelopes, never manufactured product detail. */
+export interface AdePlanFitting {
+ kind:'fitting'
+ id:string
+ role:'wc'|'basin'|'storage'|'desk'
+ origin:AdeModelPoint
+ width:Millimetres
+ depth:Millimetres
+ provenance:AdeProvenance
+}
+
 export interface AdeArchitecturalPlan {
   id: string
   sourceId: string
@@ -162,6 +192,8 @@ export interface AdeArchitecturalPlan {
   adjacencies: readonly AdeAdjacencyObligation[]
   dimensions: readonly AdeDimension[]
   labels: readonly AdePlanLabel[]
+  stairs?: readonly AdeReturnStair[]
+  fittings?: readonly AdePlanFitting[]
 }
 
 export type AdeSemanticEntity =
@@ -174,6 +206,8 @@ export type AdeSemanticEntity =
   | AdeAdjacencyObligation
   | AdeDimension
   | AdePlanLabel
+  | AdeReturnStair
+  | AdePlanFitting
 
 export const architecturalPlanEntities = (plan: AdeArchitecturalPlan): readonly AdeSemanticEntity[] => [
   ...plan.nodes,
@@ -184,5 +218,7 @@ export const architecturalPlanEntities = (plan: AdeArchitecturalPlan): readonly 
   ...plan.spaces,
   ...plan.adjacencies,
   ...plan.dimensions,
-  ...plan.labels
+  ...plan.labels,
+  ...(plan.stairs ?? []),
+  ...(plan.fittings ?? [])
 ]
