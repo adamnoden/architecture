@@ -82,6 +82,8 @@ If the exact undermount assembly cannot achieve admissible materials and practic
 
 ## Next concrete input and closeout
 
+The [service-parts and fixing-release continuation](ias-03-sink-service-parts.md) now identifies exact model-associated waste, overflow, plug/seal and clip service codes, and distinguishes two generic anchoring arrangements. It locates the four-side access duties in this same cabinet. Those associations do not verify a delivered kit, convert the dated waste datum into a current connection face or demonstrate complete renewal.
+
 The useful next step is the **current kit identity and coordinated assembly section**: actual sink/waste/overflow; a compatible kitchen trap and authorised appliance connection; all constituent declarations; clip/support arrangement; wet isolation; installed datums and disconnection travel. Locate them in this cabinet and show both ordinary service and supported bowl withdrawal. Source facts should displace the dated illustrative values when the current assembly is verified.
 
 This result earns the missing waste projection, a bounded cutout/set-out comparison and a clear renewal design direction. It does not close IS-04, adopt Option B, select a complete sink family or finish IAS-03. Worktop capacity, human maintenance, first-water declaration, drying and plumbing performance remain unproved. The other IS-01–06 obligations survive.
