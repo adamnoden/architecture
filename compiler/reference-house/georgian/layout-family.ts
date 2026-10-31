@@ -106,10 +106,17 @@ export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100
    {x:station,y:b.y,z:b.z-z},{x:station,y:a.y,z:a.z-z}
   ]}
  }))
- // Draw actual background first. Cut construction is subsequently rendered on
- // top, while the 3D visibility compiler has already removed hidden intervals.
+ // The cut partitions are opaque at their actual storey only. Door passages
+ // remain empty rather than acting as fictitious full-height screens.
+ const cutPartitions=m.partitions.map(w=>({
+  id:'partition-'+w.id+'-'+w.base,lo:w.at-62.5,hi:w.at+62.5,
+  bottom:w.base,top:w.base+3100,
+  holes:w.door?[{id:'door-'+w.id,lo:w.base,hi:w.base+2850}]:[]
+ }))
+ // Draw actual background first; geometry is occluded before rendering
+ // the section cut in its stronger line/assembly hierarchy.
  const background=compileCurrentSectionContext({station,roofBuildDepth:layoutFamilySource.roofBuildZone,
-  walls:m.walls,cutRoofFaces:roofCutFaces})
+  walls:[...m.walls,...cutPartitions],cutRoofFaces:roofCutFaces})
  scene.primitives.push(...spatialSegmentsToDrawingPrimitives(background.background,{
   basis:background.basis,paperOrigin:p.point(0,0),paperMmPerModelMm:1/scale,provenance
  }))
