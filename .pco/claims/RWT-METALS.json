@@ -9,8 +9,8 @@
     "label": "swarm-resume-root-983b7ee"
   },
   "claimedAt": "2026-10-31T09:05:14.207Z",
-  "heartbeatAt": "2026-10-31T09:05:14.207Z",
-  "expiresAt": "2026-10-31T09:50:14.207Z",
+  "heartbeatAt": "2026-10-31T09:22:15.396Z",
+  "expiresAt": "2026-10-31T10:07:15.396Z",
   "branch": "work/swarm-resume-root-20261031",
   "predecessor": {
     "leaseId": "834b5455-21ea-4ef4-ba75-0933aeb68c53",
@@ -33,5 +33,11 @@
       "next": "Develop actual fixed W2 penetration, matched joints/seals and complete threshold/module release with supports, floor/thermal continuity and occupied maintenance states.",
       "blocker": "No installed terminal, dry access, reduced handling corridor, support or hydraulic acceptance. RWT-METALS remains planned."
     }
+  },
+  "pr": 1128,
+  "checkpoint": {
+    "evidence": "PR #1128 at e733527d711e9a762fd85016616ef4ff2ce27cef; exact tree 0c47c4802176fbe516fe0cb3dd4cba3a3bbd5ceb matched. Primary-source and independent review passed; local docs, publication integrity, unchanged study checks passed.",
+    "next": "Require full exact-head CI, reconcile any moved main, fresh canonical merge-check, then integrate bounded repair comparison. RWT-METALS remains planned.",
+    "blocker": "Full exact-head CI pending; physical repair assembly and complete crossing remain unproved."
   }
 }
