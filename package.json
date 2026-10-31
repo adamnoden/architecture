@@ -40,9 +40,6 @@
     "control:graph": "tsx scripts/project-control-graph.ts",
     "control:graph:live": "tsx scripts/project-control-graph.ts --live",
     "control:leases": "tsx scripts/project-claims.ts",
-    "control:brief": "tsx scripts/control-operations.ts brief",
-    "control:doctor": "tsx scripts/project-claims.ts doctor",
-    "control:merge-check": "tsx scripts/project-claims.ts merge-check",
     "control:claims": "tsx scripts/project-claims.ts status",
     "control:next": "tsx scripts/project-claims.ts next",
     "control:claim-next": "tsx scripts/project-claims.ts claim-next",
@@ -60,11 +57,10 @@
     "outputs:spatial:generate": "tsx compiler/reference-house/output/generate-spatial.ts",
     "outputs:generate": "tsx compiler/reference-house/output/generate.ts",
     "outputs:check": "tsx compiler/reference-house/output/verify.ts",
-    "test:repo": "node scripts/validate-workflows.mjs && tsx scripts/validate-repository.ts",
-    "test:project-control": "node --import tsx --test project/control/*.test.ts scripts/proof-scope.test.mjs scripts/validate-workflows.test.mjs",
+    "test:repo": "tsx scripts/validate-repository.ts",
+    "test:project-control": "node --import tsx --test project/control/*.test.ts",
     "test:readme-contracts": "node --import tsx --test scripts/readme-command-contract.test.ts",
     "test:compiler-discovery": "node --import tsx --test scripts/compiler-test-discovery.test.ts",
-    "test:publication-adapters": "node --import tsx --test publication/adapters.test.ts",
     "test:publication-pdf": "node --import tsx --test publication/scripts/pdf-page-geometry.test.ts",
     "test:brand": "tsx scripts/validate-project-brand.ts",
     "test:routes": "tsx scripts/validate-public-routes.ts",
@@ -105,8 +101,7 @@
     "test:coa04": "node --import tsx --test compiler/coa04/*.test.ts",
     "test:coa05": "node --import tsx --test compiler/coa05/*.test.ts",
     "test:coa06": "node --import tsx --test compiler/coa06/*.test.ts",
-    "test": "npm run typecheck && npm run test:project-control && npm run test:repo && npm run test:compiler-discovery && npm run test:readme-contracts && npm run test:publication-pdf && npm run test:publication-adapters && npm run test:brand && npm run test:routes && npm run test:sanitation && npm run test:nomenclature-regressions && npm run test:dataplate && npm run test:core && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:publication-drawing && npm run test:publication-drawing-v2 && npm run test:architectural-drawing && npm run test:drw-freeze && npm run test:rh-c2 && npm run test:rh-c3 && npm run test:rh-c4 && npm run test:rh-c5 && npm run test:ch00 && npm run test:ch01 && npm run test:ch02 && npm run test:ch03 && npm run test:ch04 && npm run test:ch05 && npm run test:ch06 && npm run test:ch07 && npm run test:ch08 && npm run test:dpl && npm run test:coa00 && npm run test:coa01 && npm run test:coa02 && npm run test:coa03 && npm run test:coa04 && npm run test:coa05 && npm run test:coa06 && npm run outputs:check && npm run publication:validate && npm run publication:integrity",
-    "swarm:run": "node --import tsx scripts/swarm-run.ts"
+    "test": "npm run typecheck && npm run test:project-control && npm run test:repo && npm run test:compiler-discovery && npm run test:readme-contracts && npm run test:publication-pdf && npm run test:brand && npm run test:routes && npm run test:sanitation && npm run test:nomenclature-regressions && npm run test:dataplate && npm run test:core && npm run test:p0 && npm run test:crosswalk && npm run test:rh-c1 && npm run test:cf01 && npm run test:publication-drawing && npm run test:publication-drawing-v2 && npm run test:architectural-drawing && npm run test:drw-freeze && npm run test:rh-c2 && npm run test:rh-c3 && npm run test:rh-c4 && npm run test:rh-c5 && npm run test:ch00 && npm run test:ch01 && npm run test:ch02 && npm run test:ch03 && npm run test:ch04 && npm run test:ch05 && npm run test:ch06 && npm run test:ch07 && npm run test:ch08 && npm run test:dpl && npm run test:coa00 && npm run test:coa01 && npm run test:coa02 && npm run test:coa03 && npm run test:coa04 && npm run test:coa05 && npm run test:coa06 && npm run outputs:check && npm run publication:validate && npm run publication:integrity"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "11.17.0",
@@ -117,8 +112,7 @@
     "typescript": "^5.9.3",
     "unpdf": "1.8.1",
     "vitepress": "1.6.4",
-    "vitepress-plugin-mermaid": "2.0.17",
-    "js-yaml": "4.3.2"
+    "vitepress-plugin-mermaid": "2.0.17"
   },
   "engines": {
     "node": ">=22.12"

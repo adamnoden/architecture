@@ -47,7 +47,7 @@
     },
     "computational-track": {
       "level": "M4",
-      "reviewedOn": "2026-10-30"
+      "reviewedOn": "2026-10-19"
     },
     "evidence-research": {
       "level": "M3",
@@ -70,15 +70,15 @@
     "activePatterns": 21,
     "strategies": 3,
     "heldCandidates": 4,
-    "publicRoutes": 131,
-    "workingEditionEntries": 42,
+    "publicRoutes": 109,
+    "workingEditionEntries": 41,
     "primerEntries": 5
   },
   "publication": {
     "schemaVersion": 1,
     "workingEdition": {
       "file": "publication/dist/ovids-house.pdf",
-      "pages": 279,
+      "pages": 280,
       "duplexLeaves": 140,
       "pageSize": {
         "format": "A4",
@@ -86,7 +86,7 @@
         "heightMm": 297,
         "orientation": "portrait"
       },
-      "entries": 42,
+      "entries": 41,
       "figures": 5
     },
     "primer": {
@@ -107,7 +107,7 @@
     "status": "PASS",
     "sourceCompile": {
       "schemaVersion": "HK-RH-COMPILE-1",
-      "fingerprint": "c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f"
+      "fingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c"
     },
     "generatedArtefacts": 6,
     "rendererVersions": [
@@ -115,7 +115,7 @@
     ],
     "artefactSetFingerprint": {
       "algorithm": "sha256",
-      "fingerprint": "42d3070dfefcdc81be6acad206cb1103b5fa534192c61b139556965565162ef6"
+      "fingerprint": "10ee363d34af4652df43a3c95fc01685c876e687dc717df70ae6fd2906dfe57c"
     }
   },
   "toolchain": {

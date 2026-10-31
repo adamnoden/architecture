@@ -36,7 +36,7 @@ export const evidenceNodes = defineNodes([
     id: 'PHY-03-ENGINEERING',
     owners: ['PHY'],
     title: 'Structural floor-edge engineering option reduction',
-    dependencies: ['PHY-APPLICABILITY'],
+    dependencies: [],
     lifecycle: 'planned',
     aliases: ['PHY-03', 'P03'],
     agentDispatch: {
@@ -49,7 +49,7 @@ export const evidenceNodes = defineNodes([
     id: 'PHY-04',
     owners: ['PHY'],
     title: 'Wall/ceiling movement-junction build and test',
-    dependencies: ['PHY-APPLICABILITY'],
+    dependencies: [],
     lifecycle: 'planned',
     aliases: ['P04'],
     agentDispatch: {
@@ -62,7 +62,7 @@ export const evidenceNodes = defineNodes([
     id: 'EPR-RH11',
     owners: ['EPR'],
     title: 'Obtain and process competent Reference House reviews',
-    dependencies: ['EPR-REFRESH'],
+    dependencies: [],
     lifecycle: 'planned',
     aliases: ['RH-11'],
     agentDispatch: {
@@ -78,32 +78,5 @@ export const evidenceNodes = defineNodes([
     dependencies: [],
     lifecycle: 'complete',
     closeoutEvidence: ['project/del/del-00-delivery-baseline.md']
-  },
-  {
-    id: 'EPR-REFRESH',
-    owners: ['EPR'],
-    title: 'Refresh current-house review briefs and questions',
-    dependencies: ['HRS-BASELINE', 'BCR-PREFLIGHT'],
-    lifecycle: 'complete',
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/epr/current-house-review-applicability.md']
-  },
-  {
-    id: 'PHY-APPLICABILITY',
-    owners: ['PHY'],
-    title: 'Reconcile prototype applicability and earned evidence requirements',
-    dependencies: ['HRS-BASELINE', 'BCR-PREFLIGHT'],
-    lifecycle: 'complete',
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/phy/current-house-prototype-applicability.md']
-  },
-  {
-    id: 'DEL-CURRENT',
-    owners: ['DEL'],
-    title: 'Reconcile selected-house delivery and reinstatement requirements',
-    dependencies: ['BCR-CONVERGENCE'],
-    lifecycle: 'planned',
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/del/current-house-delivery-result.md']
   }
 ])

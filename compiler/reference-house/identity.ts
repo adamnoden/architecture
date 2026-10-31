@@ -52,9 +52,6 @@ const domainDiagnostics = (
       return a.subjectIds.join('|').localeCompare(b.subjectIds.join('|'))
     })
 
-/** Compact controlled summary only: detailed runtime routes, effective adapter inputs,
- * implementation bytes and incidental prose are not covered by HK-RH-COMPILE-1.
- * Output content identity is a separate contract; see CH-05 and CCR-IDENTITY. */
 export const referenceHouseSemanticResultManifest = (
   result: ReferenceHouseSystemCoreResult
 ) => {
@@ -293,9 +290,6 @@ export const createReferenceHouseLineage = (
   }
 }
 
-/** Associates caller-supplied artefact identities with a compact compile identity.
- * This helper reads no artefact bytes and proves neither their validity nor that
- * the supplied map was produced by this compiler. Owning byte/replay checks remain required. */
 export const linkReferenceHouseArtefacts = <T extends Readonly<Record<string, unknown>>>(
   identity: ReferenceHouseCompileIdentity,
   artefacts: T

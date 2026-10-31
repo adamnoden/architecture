@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
-import { canonicalPatternOrder, publicationEntries, type PublicationAdapter } from './publication.js'
+import { canonicalPatternOrder, type PublicationAdapter } from './publication.js'
 
 export interface AdapterContext {
   repoRoot: string
@@ -26,12 +26,16 @@ const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
   'pattern-page': [],
   'reference-house-overview': [],
   'reference-house-page': [],
-  'primer-principles': ['publication/primer/constitution.md'],
+  'primer-principles': [],
   'primer-patterns': [
-    'publication/primer/patterns.md',
-    ...publicationEntries.filter((entry) => entry.kind === 'pattern').map((entry) => entry.source)
+    'docs/patterns/controlled-utility-entry.md',
+    'docs/patterns/designed-structural-penetration.md',
+    'docs/patterns/failure-tolerant-wet-service-room.md',
+    'docs/patterns/permanent-opening-replaceable-window.md',
+    'docs/patterns/ground-supported-facade-access.md',
+    'docs/patterns/physical-service-index.md'
   ],
-  'primer-reference-house': ['publication/primer/reference-house.md']
+  'primer-reference-house': []
 }
 
 export function dependenciesForAdapter(adapter?: PublicationAdapter): readonly string[] {
@@ -315,26 +319,7 @@ function firstParagraphs(markdown: string, count: number): string[] {
     .slice(0, count)
 }
 
-// Authored framing is a normal publication/EDA source; only selected material is inserted here.
-function composePrimer(context: AdapterContext, source: string, slots: Record<string, string>): string {
-  let text = readWork(context, source)
-  for (const [name, value] of Object.entries(slots)) {
-    const marker = `<!-- primer:${name} -->`
-    if (text.split(marker).length !== 2) throw new Error(`${source}: expected one ${marker}`)
-    text = text.replace(marker, () => value)
-  }
-  if (/<!-- primer:/.test(text)) throw new Error(`${source}: unknown Primer composition slot`)
-  return text
-}
-
-function inventoryWord(kind: 'strategy' | 'candidate', capitalise = false): string {
-  const count = publicationEntries.filter((entry) => entry.kind === kind).length
-  const word = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine',
-    'ten', 'eleven', 'twelve'][count] ?? String(count)
-  return capitalise ? word[0].toUpperCase() + word.slice(1) : word
-}
-
-function adaptPrimerPrinciples(markdown: string, context: AdapterContext): string {
+function adaptPrimerPrinciples(markdown: string): string {
   const constraints = markdownSection(markdown, 'Governing constraints')
     .replace(/\n?---\s*$/, '')
     .trim()
@@ -359,10 +344,7 @@ function adaptPrimerPrinciples(markdown: string, context: AdapterContext): strin
     return `## ${number}. ${title}\n\n**${rule}**\n\n${support}`
   })
 
-  return composePrimer(context, 'publication/primer/constitution.md', {
-    'constraints': constraints,
-    'provisions': rendered.join('\n\n')
-  })
+  return `# Governing constitution\n\nThe constitution retains eleven stable numbered provisions because the wider project refers to them. They are not eleven co-equal novelty claims: core doctrine is distinguished from standing architectural disciplines. All operate within non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance.\n\n${constraints}\n\n${rendered.join('\n\n')}\n`
 }
 
 function activePatternsInCanonicalOrder(context: AdapterContext): PatternMetadata[] {
@@ -427,16 +409,10 @@ function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string
     .map((id) => concisePattern(context, id))
     .join('\n\n')
 
-  return composePrimer(context, 'publication/primer/patterns.md', {
-    'pattern-list': primerPatternList(context),
-    'representatives': representative,
-    'pattern-count': String(activePatternsInCanonicalOrder(context).length),
-    'strategy-count': inventoryWord('strategy', true),
-    'candidate-count': inventoryWord('candidate')
-  })
+  return `# From constitution to patterns\n\nThe governing constitution is intentionally too general to specify a building. Ovid’s House therefore keeps four levels of authority distinct:\n\n**Constitution** — core doctrine plus standing disciplines.  \n**Strategy** — a general way to satisfy it.  \n**Pattern** — a reusable architectural response with stated trade-offs and evidence.  \n**Reference implementation** — one project-specific choice.\n\nA pattern is not a product detail and does not become universally correct because it has a stable name. It is specific enough to shape design, but general enough to admit materially different implementations. Evidence maturity is recorded separately from pattern identity.\n\nThe current system contains **21 active patterns**. Service topology has the strongest demonstrated generative sequence; the other fields are not presented as one uniformly mature pattern language. Three broader strategies sit beside the set; four plausible propositions remain held candidates rather than being promoted prematurely. The complete active set is listed below so the Primer remains complete in coverage even though only a small set is expanded.\n\n## The complete current pattern set\n\n${primerPatternList(context)}\n\n## Six patterns in brief\n\nThe following examples are not a privileged inner canon. They are chosen because, together, they show the range of consequences that follows from the constitution: service topology, permanent-fabric protection, water failure, replaceable openings, external maintenance and intergenerational legibility.\n\n${representative}\n`
 }
 
-function adaptPrimerReferenceHouse(markdown: string, context: AdapterContext): string {
+function adaptPrimerReferenceHouse(markdown: string): string {
   const opening = '# Reference House\n'
   if (!markdown.startsWith(opening)) {
     throw new Error('Reference House opening changed; update the Primer adapter deliberately.')
@@ -465,12 +441,7 @@ function adaptPrimerReferenceHouse(markdown: string, context: AdapterContext): s
     throw new Error('Primer expected two Reference House Maturity paragraphs.')
   }
 
-  return composePrimer(context, 'publication/primer/reference-house.md', {
-    'scope': architecturalScope.join('\n\n'),
-    'authority-chain': compositionChain,
-    'coordination': coordination.join('\n\n'),
-    'orientation-figure': '![Reference House type and orientation](../manuscript/figures/reference-house-type-orientation.svg)'
-  })
+  return `# The Reference House\n\n## One interpretation, not a style doctrine\n\n${architecturalScope.join('\n\n')}\n\n## What is being integrated\n\n${compositionChain}\n\nThe layers constrain one another without becoming interchangeable. A project-specific choice can satisfy an Ovid’s House provision without being promoted into Ovid’s House doctrine, and use of a pattern in the Reference House does not increase that pattern's general evidence.\n\n## Current coordination test\n\n${coordination.join('\n\n')}\n\n![Reference House type and orientation](../manuscript/figures/reference-house-type-orientation.svg)\n\n*The Reference House is a compact two-storey ring around an open court, with a concentrated service flank and a legible front-to-court-to-garden sequence.*\n`
 }
 
 export function applyAdapter(
@@ -496,11 +467,11 @@ export function applyAdapter(
     case 'reference-house-page':
       return adaptReferenceHousePage(markdown)
     case 'primer-principles':
-      return adaptPrimerPrinciples(markdown, context)
+      return adaptPrimerPrinciples(markdown)
     case 'primer-patterns':
       return adaptPrimerPatterns(markdown, context)
     case 'primer-reference-house':
-      return adaptPrimerReferenceHouse(markdown, context)
+      return adaptPrimerReferenceHouse(markdown)
   }
 }
 

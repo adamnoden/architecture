@@ -11,8 +11,8 @@ The Working Edition is an illustrated architectural design-research monograph. I
 
 ### Front matter
 
-1. **Reader’s Guide** — begins with the provisional house and three concrete interventions, then offers a short architectural route through claim, object, comparison and limits. Specialised definitions remain in the Glossary.
-2. **Preface — The Obvious, Eventually** — establishes the temperament of the enquiry and the Ovidian frame of permanence through transformation. Its historical comparisons support that enquiry without asking the reader to accept architectural merit by analogy.
+1. **Preface — The Obvious, Eventually** — establishes the temperament of the enquiry and the Ovidian frame of permanence through transformation.
+2. **Reader’s Guide** — explains the authority layers, evidence boundary and intended reading paths without narrating project development.
 
 ### Part I — The Proposition
 
@@ -28,7 +28,7 @@ The permanent/changeable distinction is treated as an architectural relationship
 
 ### Part III — Patterns and Generative Sequences
 
-Part III explains selection, fields and the demonstrated service-topology sequence, then proceeds directly to the worked house. The complete consultation entries are placed in the Pattern Reference after Part VI, rather than interrupting the main argument. That reference retains:
+Part III is the current reusable architectural language:
 
 - **21 active patterns**;
 - **3 broader strategies**;
@@ -50,7 +50,7 @@ Future-intervention scenarios do **not** live here. They belong to Part V so the
 
 ### Part V — Making and Proving the Platform
 
-Part V opens with actual conventional selections and unresolved adverse cases before addressing proportionality, interface ownership, reliable assembly, physical testing, procurement, commissioning, failure/change/occupation scenarios, the Reference House intervention ordeal and technical/construction closure.
+Part V addresses proportionality, interface ownership, reliable assembly, physical testing, procurement, commissioning, failure/change/occupation scenarios, the Reference House intervention ordeal and technical/construction closure.
 
 Its function is to show how unusual propositions earn their place, how the worked house is challenged, and where architecture must rewind when technical resolution exposes a bad assumption. It is not a project-management log of the tests used to develop the manuscript.
 
@@ -64,9 +64,7 @@ Until the house has passed the required synthesis and publication-drawing gates,
 
 ## 2. Back matter
 
-The back matter begins with the **Pattern Reference**: the unchanged active pattern, strategy and held-candidate entries, preceded by a short consultation guide. It retains stable entry identities and the existing editorial order within the catalogue. This placement lets the main argument reach the house without first reading every reference entry; it does not promote any pattern or candidate. The existing back-matter running context also separates the catalogue from Part VI’s house account.
-
-Five following appendices retain their existing identities and continuing reader functions:
+The Working Edition contains five pieces of back matter. Each has a continuing reader function:
 
 A. **Evidence and Precedent Notes** — distinguishes kinds of support and the limits of precedent, internal design research, computation and professional/physical evidence.  
 B. **Research Agenda** — records genuinely open architectural questions capable of falsifying, narrowing or materially improving the work.  

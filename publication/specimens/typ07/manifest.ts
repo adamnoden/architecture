@@ -176,7 +176,7 @@ export const typ07ProductionDebt = {
     'font-size: 28pt',
     'font-size: 21pt'
   ],
-  plates: 'publication/plates-current.ts',
+  plates: 'publication/plates.ts',
   plateLegacyMarkers: [
     'font-family: Arial, Helvetica, sans-serif',
     'font: 700 11pt/1.15 Arial, Helvetica, sans-serif',
