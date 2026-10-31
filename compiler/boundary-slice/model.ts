@@ -49,11 +49,9 @@ export interface BoundaryTransitionSource {
 export interface DrainageRouteSource {
   id: string
   kind: 'roof-field' | 'courtyard-primary' | 'courtyard-emergency'
-  /** Non-blank declarations; distinct text does not prove independent physical paths. */
   from: string
   to: string
   direction: 'outward' | 'service-side'
-  /** Authored obligation, not evidence of visibility in the actual building. */
   visibleFailure: boolean
   concealedPrimaryOutlet: false
   provisional: boolean

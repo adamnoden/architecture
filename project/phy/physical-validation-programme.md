@@ -20,10 +20,6 @@ PHY does not convert a prepared prototype into evidence merely because drawings,
 
 Historical derived identifiers such as `P03-A`, `P03-B`, `P04-BUILD`, `P04-TEST` and existing `p03-*` / `p04-*` filenames remain valid evidence identities. New live control should use `PHY-*` and may include the historical alias where it materially aids recovery.
 
-## Current-house applicability
-
-The [current-house applicability result](current-house-prototype-applicability.md) reconciles retained P03/P04 records with the current geometry and bounded dry selection after early physical feasibility. Use its release conditions before current-house issue/build; historical READY labels do not release a new specimen. No physical result, new prototype activation or maturity change follows.
-
 ## Current priority
 
 1. `PHY-03` — competent structural engineering must first reduce the floor-edge options to calculable/testable geometry. No structural specimen should be treated as evidence before that release.

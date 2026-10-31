@@ -1,8 +1,6 @@
 <!-- nav-exclude: redirect -->
 # PLT book composition and whole-set subtraction candidate
 
-**Later applicability:** this retained PLT17 packet record describes its original setting/synthesis gaps. PLT18 and PLT19 subsequently supplied those candidates; PLT21 adds intact exterior views. The [current digital handoff](https://github.com/adamnoden/architecture/blob/main/project/plt/current-review-digital-closeout.md) owns the reconciled review index. Physical acceptance and final manuscript integration remain open.
-
 ## Authority and bounded question
 
 Starting main `2e9d23f3c6e92116a852aa2d60d19e2491c8c314`. The owner holds

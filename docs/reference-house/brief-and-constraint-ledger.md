@@ -4,9 +4,9 @@
 **Date:** 2026-10-12  
 **Purpose:** establish what the Reference House must satisfy, what it currently selects, what the owner prefers, what is merely inherited from earlier studies, and what remains unknown before gross morphology is redesigned.
 
-This dated ledger preserves the starting brief for Reference House design decisions. The current adopted house and owner brief are linked below; earlier open choices are not silently reopened by this record. It deliberately strips incumbency from the existing coordination fixture. A dimension, room, route or construction family does not become part of the brief merely because an earlier drawing needed one.
+This ledger is the restart point for Reference House design decisions. It deliberately strips incumbency from the existing coordination fixture. A dimension, room, route or construction family does not become part of the brief merely because an earlier drawing needed one.
 
-The historical [Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) remains useful as a coordination benchmark. It is **not** the design to be preserved.
+The current [Whole-House Coordination Fixture 01](whole-house-coordination-fixture.md) remains useful as a coordination benchmark. It is **not** the design to be preserved.
 
 ---
 
@@ -19,13 +19,11 @@ selection for new design work. It does not rewrite historical fixtures or assert
 that all flat roofs inevitably fail. Machine-readable owner:
 `project/design-constraints.ts`.
 
-The accepted [layout revision 02](layout-revision-02.md) develops the 12 m square shell, 3.5 m square court, five-bay front and four-bedroom programme, with two en-suite reservations, family bathroom, ground-to-first return stair, separate plant room and west study/cloakroom. It has no loft stair or usable attic. The [current design basis](current-house-basis.md) identifies its sources and technical limits; the earlier Georgian re-plan remains a predecessor study. Site fit and technical performance remain unresolved.
-
-The [structural brief](structural-brief.md) records the owner's 30 October direction for solid masonry, direct support, arches and structural-family investigation. The [material policy](material-policy.md) owns the whole-house plastic-avoidance constraint. Both qualify future assembly selection without silently changing the accepted layout or rewriting the dated ledger below.
-
-## Original RH-00 ledger
-
-The sections below retain the 12 October brief-stage record. Their unselected geometry and programme statements describe that stage. Later adopted dimensions, programme and scope are governed by [Current House Basis](current-house-basis.md) and the [owner project brief](../delivery/owner-project-brief.md).
+The current [Georgian re-plan](georgian-replan.md) develops the owner-selected
+12 m square shell, centred courtyard, five-bay front and four-bedroom programme,
+with two en suites, family bathroom, west stair to usable attic, separate ground
+plant and west cloak/study. Modest-site constraints are deferred. Its roof and
+technical model remain a proposal pending coordinated review and migration.
 
 ## 1. Authority model
 

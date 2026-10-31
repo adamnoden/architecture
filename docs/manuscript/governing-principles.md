@@ -94,8 +94,6 @@ Occupants should have intelligible means to regulate privacy and ordinary enviro
 
 A long-lived real project must also test permanent geometry against a reasonable range of **future climate and hazard conditions appropriate to its site**. Orientation, opening distribution, shading opportunity, purge paths, roof/drainage capacity, landscape and envelope choices can be expensive to change later. Do not select one speculative future-weather file as doctrine; state the scenarios, uncertainty and adaptation consequences, and allow the architecture to rewind where a robust passive response cannot be achieved proportionately.
 
-At the ground, establish the intended dry spaces through siting, level, separation and safe water routes before accepting a continuing dependence on pumping or inaccessible waterproofing. Ground-contact structure may tolerate wet conditions; occupied space and moisture-vulnerable fabric need a deliberate boundary from them. Ask where water goes when power is unavailable or an outlet is blocked, within stated design conditions. Give protective construction generous margin where its benefit can be established, and resolve joints, bypasses and movement as carefully as material thickness. Particular basement prohibitions, material preferences and longevity targets belong to the project's brief and evidence, rather than becoming universal architectural claims.
-
 ## 10. Make the building legible across generations — core doctrine
 
 **Preserve enough information—in records and, for critical systems, in the building itself—that future owners and trades can understand, isolate, maintain and alter it safely.**
