@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 7,
-  "state": "released",
-  "leaseId": "474d1e5a-af8d-4cc7-be02-8a7baad71022",
+  "generation": 8,
+  "state": "claimed",
+  "leaseId": "15e1539e-9225-472e-9c06-1bc2a00d6a4e",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-third-root-983b7ee"
+    "label": "swarm-receivers-root-983b7ee"
   },
-  "claimedAt": "2026-10-31T10:27:06.840Z",
-  "heartbeatAt": "2026-10-31T10:53:04.684Z",
-  "expiresAt": "2026-10-31T10:53:04.684Z",
-  "branch": "work/swarm-maintenance-integration-20261031",
+  "claimedAt": "2026-10-31T10:53:50.280Z",
+  "heartbeatAt": "2026-10-31T10:53:50.280Z",
+  "expiresAt": "2026-10-31T11:38:50.280Z",
+  "branch": "work/swarm-receivers-20261031",
   "predecessor": {
-    "leaseId": "2e587ba5-88a2-4da1-ac81-7a556a28cdb8",
-    "generation": 6,
-    "branch": "work/swarm-materials-integration-20261031",
-    "pr": 1145,
+    "leaseId": "474d1e5a-af8d-4cc7-be02-8a7baad71022",
+    "generation": 7,
+    "branch": "work/swarm-maintenance-integration-20261031",
+    "pr": 1148,
     "checkpoint": {
-      "evidence": "PR #1145 merged as adee2d3197fd7af8af06fd5b0668f7acd6c8debd after full CI41191566272 success on exact head18a8f2bdf39e3fef253e866a148cfdf1cbbc402a and all three fresh canonical preflights; RWT preflight10:15:06.125Z. Native fresh main verification proves all three reviewed source heads are ancestors and the accepted merge tree equals the validated combined head. RWT retained-tail comparison and concurrent threshold result preserved.",
-      "next": "RWT-METALS remains planned. Qualify the actual fixed pan/outlet and choose between a separately renewable threshold piece and retained tail with a credible larger repair, passive leak observation, exact service joint, independent support/movement and full W1/W2 maintenance sequence. Coordinate real floor/threshold and receiving-level evidence with RWT-06 and MAT. Root will dispose only verified integrated old source refs.",
-      "blocker": "No complete connected assembly, constituent admission, physical renewal or hydraulic rating is established by these bounded comparisons."
+      "evidence": "PR1148 merged at 2512f116e277d3ab724fd0bcf0f13ba1d04533c3; exact accepted tree8967b8d8feea905ccc5cf7582447deca7af351e0 and all source-parent ancestry verified. Full CI41193874119 succeeded at head90de6288688004c8568f0a0665977e1045f953d8; RWT preflight2026-10-31T10:51:39.690Z passed. Retained-tail leak-route comparator and routine-versus-larger-repair distinction accepted as bounded partial evidence, no geometry, hydraulic, installed-material or lifecycle pass.",
+      "next": "Release completed integration lease and re-enter canonical dispatcher. A connected outer-west copper collection and brass or bronze ground-receiver construction comparison is a useful remaining RWT-METALS direction if selected."
     }
   },
   "recoverySource": {
-    "leaseId": "2e587ba5-88a2-4da1-ac81-7a556a28cdb8",
-    "generation": 6,
-    "branch": "work/swarm-materials-integration-20261031",
-    "pr": 1145,
+    "leaseId": "474d1e5a-af8d-4cc7-be02-8a7baad71022",
+    "generation": 7,
+    "branch": "work/swarm-maintenance-integration-20261031",
+    "pr": 1148,
     "checkpoint": {
-      "evidence": "PR #1145 merged as adee2d3197fd7af8af06fd5b0668f7acd6c8debd after full CI41191566272 success on exact head18a8f2bdf39e3fef253e866a148cfdf1cbbc402a and all three fresh canonical preflights; RWT preflight10:15:06.125Z. Native fresh main verification proves all three reviewed source heads are ancestors and the accepted merge tree equals the validated combined head. RWT retained-tail comparison and concurrent threshold result preserved.",
-      "next": "RWT-METALS remains planned. Qualify the actual fixed pan/outlet and choose between a separately renewable threshold piece and retained tail with a credible larger repair, passive leak observation, exact service joint, independent support/movement and full W1/W2 maintenance sequence. Coordinate real floor/threshold and receiving-level evidence with RWT-06 and MAT. Root will dispose only verified integrated old source refs.",
-      "blocker": "No complete connected assembly, constituent admission, physical renewal or hydraulic rating is established by these bounded comparisons."
+      "evidence": "PR1148 merged at 2512f116e277d3ab724fd0bcf0f13ba1d04533c3; exact accepted tree8967b8d8feea905ccc5cf7582447deca7af351e0 and all source-parent ancestry verified. Full CI41193874119 succeeded at head90de6288688004c8568f0a0665977e1045f953d8; RWT preflight2026-10-31T10:51:39.690Z passed. Retained-tail leak-route comparator and routine-versus-larger-repair distinction accepted as bounded partial evidence, no geometry, hydraulic, installed-material or lifecycle pass.",
+      "next": "Release completed integration lease and re-enter canonical dispatcher. A connected outer-west copper collection and brass or bronze ground-receiver construction comparison is a useful remaining RWT-METALS direction if selected."
     }
-  },
-  "pr": 1148,
-  "checkpoint": {
-    "evidence": "PR1148 merged at 2512f116e277d3ab724fd0bcf0f13ba1d04533c3; exact accepted tree8967b8d8feea905ccc5cf7582447deca7af351e0 and all source-parent ancestry verified. Full CI41193874119 succeeded at head90de6288688004c8568f0a0665977e1045f953d8; RWT preflight2026-10-31T10:51:39.690Z passed. Retained-tail leak-route comparator and routine-versus-larger-repair distinction accepted as bounded partial evidence, no geometry, hydraulic, installed-material or lifecycle pass.",
-    "next": "Release completed integration lease and re-enter canonical dispatcher. A connected outer-west copper collection and brass or bronze ground-receiver construction comparison is a useful remaining RWT-METALS direction if selected."
-  },
-  "releasedAt": "2026-10-31T10:53:04.684Z",
-  "releaseReason": "handoff"
+  }
 }
