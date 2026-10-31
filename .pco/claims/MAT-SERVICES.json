@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b81cce7d-4da5-440d-8c97-c8a733678faa",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-resume-interiors-983b7ee"
   },
   "claimedAt": "2026-10-31T09:10:38.085Z",
-  "heartbeatAt": "2026-10-31T09:22:02.374Z",
-  "expiresAt": "2026-10-31T10:07:02.374Z",
+  "heartbeatAt": "2026-10-31T09:22:46.191Z",
+  "expiresAt": "2026-10-31T09:22:46.191Z",
   "branch": "work/swarm-resume-interiors-20261031",
   "predecessor": {
     "leaseId": "6ffa2193-9eaf-4029-9db8-b5e646c1438c",
@@ -21,5 +21,7 @@
   "checkpoint": {
     "evidence": "PR #1125 integrated as aa22421b5cf86b0bf893218191f82b22c36d9786; validated head f955db535028f9420ec0578d8d1d29f2735cb87f; full CI 41188095197 success; canonical preflight passed 2026-10-31T09:21:01.127Z; current main tree 1ce6c2dff4b5bf72bcb4c722ab7a467aed935387 matches; recovery branch deletion verified.",
     "next": "MAT-SERVICES stays planned. Bind exact current bare cable and complete matching termination, support, enclosure and accessory declarations to real IAS/BCR route/renewal design. Water, heating, waste, ventilation, controls and equipment constituents remain open; no accepted circuit or exception."
-  }
+  },
+  "releasedAt": "2026-10-31T09:22:46.191Z",
+  "releaseReason": "handoff"
 }
