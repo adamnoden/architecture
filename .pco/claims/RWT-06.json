@@ -9,8 +9,8 @@
     "label": "services-recovery-983b7ee-20261031"
   },
   "claimedAt": "2026-10-31T17:15:27.079Z",
-  "heartbeatAt": "2026-10-31T17:15:27.079Z",
-  "expiresAt": "2026-10-31T18:00:27.079Z",
+  "heartbeatAt": "2026-10-31T17:36:15.216Z",
+  "expiresAt": "2026-10-31T18:21:15.216Z",
   "branch": "work/swarm-court-access-20261031",
   "predecessor": {
     "leaseId": "72497b0a-9437-4b0f-9488-cf5ce88ff19b",
@@ -31,5 +31,10 @@
       "next": "Before another threshold motion witness, supply the actual fixed W2 and ground-boundary contours, moving coupon, both release planes and any closure touching the coupon; show installed, first-release and fully absent states with leak/open-bore paths. Broader RWT-06 duties remain open.",
       "blocker": "The next matched-interface trial lacks a qualified penetration/closure/release section. Existing geometry and repeated warnings cannot prove it. This bounded recovery does not complete or hold the whole RWT-06 packet."
     }
+  },
+  "pr": 1160,
+  "checkpoint": {
+    "evidence": "PR1160 published at d273cbf0807fc9cfa1a0084e2ced1eaae49a8c00. All three RWT-06 source blobs match the independently reviewed payload. Source parent43b5b4dec25cc287a761613232980055f0da6ca9 is preserved. Primary source and architecture reviews, local non-browser health stages, integrity, final docs build and rendered anchor checks passed; full local health was limited by missing Chrome155.",
+    "next": "Require full exact-head CI and fresh canonical preflight for both common-PR nodes, then expected-head merge and closeout. This is a bounded court personnel-platform comparison; RWT-06 remains planned with actual load paths, work position and receiver/roof renewal unresolved."
   }
 }
