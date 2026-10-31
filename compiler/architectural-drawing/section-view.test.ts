@@ -151,9 +151,9 @@ test('generic section contrast composes exact scale-independent vectors with sem
   assert.equal(new Set(ids).size, ids.length)
   // The roof ridge survives behind the wall; the nearer cut obscures its centre.
   const ridges = book.primitives.filter(p => p.kind === 'line' &&
-    p.metadata?.meaning?.includes('contrast-leaning-roof') &&
-    p.metadata?.modelA?.includes('"z":4980') &&
-    p.metadata?.modelB?.includes('"z":4980'))
+    String(p.metadata?.meaning ?? '').includes('contrast-leaning-roof') &&
+    String(p.metadata?.modelA ?? '').includes('"z":4980') &&
+    String(p.metadata?.modelB ?? '').includes('"z":4980'))
   assert.equal(ridges.length, 2)
   // True architectural scale, not a fit-to-box transformation.
   const length = (p: typeof book.primitives[number]) => p.kind === 'line'
