@@ -1,15 +1,20 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 1,
+  "generation": 2,
   "state": "claimed",
-  "leaseId": "2985c3ea-8a76-44a3-bb65-d61109f3bdeb",
+  "leaseId": "b0f79a4c-1354-49b1-b3c4-d31f64293123",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-worker-b-1cd2b9a76146"
+    "label": "swarm-983b7ee4744e-independent"
   },
-  "claimedAt": "2026-10-30T23:23:45.165Z",
-  "heartbeatAt": "2026-10-30T23:23:45.165Z",
-  "expiresAt": "2026-10-31T00:08:45.165Z",
-  "branch": "work/swarm-b-20261030-2324"
+  "claimedAt": "2026-10-31T00:13:51.960Z",
+  "heartbeatAt": "2026-10-31T00:13:51.960Z",
+  "expiresAt": "2026-10-31T00:58:51.960Z",
+  "branch": "work/swarm-983b7ee4744e-worker3",
+  "predecessor": {
+    "leaseId": "2985c3ea-8a76-44a3-bb65-d61109f3bdeb",
+    "generation": 1,
+    "branch": "work/swarm-b-20261030-2324"
+  }
 }
