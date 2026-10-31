@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 5,
-  "state": "released",
-  "leaseId": "c04b4d58-10c3-48e1-be2c-beb3db9d2129",
+  "generation": 6,
+  "state": "claimed",
+  "leaseId": "2e587ba5-88a2-4da1-ac81-7a556a28cdb8",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-resume-root-983b7ee"
+    "label": "swarm-next-root-983b7ee"
   },
-  "claimedAt": "2026-10-31T09:05:14.207Z",
-  "heartbeatAt": "2026-10-31T09:27:20.300Z",
-  "expiresAt": "2026-10-31T09:27:20.300Z",
-  "branch": "work/swarm-resume-root-20261031",
+  "claimedAt": "2026-10-31T09:27:55.733Z",
+  "heartbeatAt": "2026-10-31T09:27:55.733Z",
+  "expiresAt": "2026-10-31T10:12:55.733Z",
+  "branch": "work/swarm-next-20261031",
   "predecessor": {
-    "leaseId": "834b5455-21ea-4ef4-ba75-0933aeb68c53",
-    "generation": 4,
-    "branch": "work/mvb-chat-6535667492",
-    "pr": 1121,
+    "leaseId": "c04b4d58-10c3-48e1-be2c-beb3db9d2129",
+    "generation": 5,
+    "branch": "work/swarm-resume-root-20261031",
+    "pr": 1128,
     "checkpoint": {
-      "evidence": "PR #1121 merged 8d6c7841f7ccfd5f63ad77fb4e8b630259645fe2. Head d30173b passed full CI 41147845050 and canonical preflight 124378080990; inspected sheet, source and geometry reviews retained.",
-      "next": "Develop actual fixed W2 penetration, matched joints/seals and complete threshold/module release with supports, floor/thermal continuity and occupied maintenance states.",
-      "blocker": "No installed terminal, dry access, reduced handling corridor, support or hydraulic acceptance. RWT-METALS remains planned."
+      "evidence": "PR #1128 merged as 1486df666d2c6758ccc0e93212f9d5290f7da7dd. Corrected head d6b2cdf3c8425e431e8a92a8736f909d4193a835 passed full CI41188529412 and fresh canonical preflight2026-10-31T09:26:27.552Z. Main matches all three RWT changed files. Initial public-link CI failure corrected; no check weakened.",
+      "next": "RWT-METALS remains planned. Bind an actual matched108mm repair/joint assembly, fixed W2 outlet, threshold withdrawal/reinstatement, supports and floor/thermal continuity; complete collection, brass-channel and concealed-system comparisons still required. No crossing or hydraulic acceptance."
     }
   },
   "recoverySource": {
-    "leaseId": "834b5455-21ea-4ef4-ba75-0933aeb68c53",
-    "generation": 4,
-    "branch": "work/mvb-chat-6535667492",
-    "pr": 1121,
+    "leaseId": "c04b4d58-10c3-48e1-be2c-beb3db9d2129",
+    "generation": 5,
+    "branch": "work/swarm-resume-root-20261031",
+    "pr": 1128,
     "checkpoint": {
-      "evidence": "PR #1121 merged 8d6c7841f7ccfd5f63ad77fb4e8b630259645fe2. Head d30173b passed full CI 41147845050 and canonical preflight 124378080990; inspected sheet, source and geometry reviews retained.",
-      "next": "Develop actual fixed W2 penetration, matched joints/seals and complete threshold/module release with supports, floor/thermal continuity and occupied maintenance states.",
-      "blocker": "No installed terminal, dry access, reduced handling corridor, support or hydraulic acceptance. RWT-METALS remains planned."
+      "evidence": "PR #1128 merged as 1486df666d2c6758ccc0e93212f9d5290f7da7dd. Corrected head d6b2cdf3c8425e431e8a92a8736f909d4193a835 passed full CI41188529412 and fresh canonical preflight2026-10-31T09:26:27.552Z. Main matches all three RWT changed files. Initial public-link CI failure corrected; no check weakened.",
+      "next": "RWT-METALS remains planned. Bind an actual matched108mm repair/joint assembly, fixed W2 outlet, threshold withdrawal/reinstatement, supports and floor/thermal continuity; complete collection, brass-channel and concealed-system comparisons still required. No crossing or hydraulic acceptance."
     }
-  },
-  "pr": 1128,
-  "checkpoint": {
-    "evidence": "PR #1128 merged as 1486df666d2c6758ccc0e93212f9d5290f7da7dd. Corrected head d6b2cdf3c8425e431e8a92a8736f909d4193a835 passed full CI41188529412 and fresh canonical preflight2026-10-31T09:26:27.552Z. Main matches all three RWT changed files. Initial public-link CI failure corrected; no check weakened.",
-    "next": "RWT-METALS remains planned. Bind an actual matched108mm repair/joint assembly, fixed W2 outlet, threshold withdrawal/reinstatement, supports and floor/thermal continuity; complete collection, brass-channel and concealed-system comparisons still required. No crossing or hydraulic acceptance."
-  },
-  "releasedAt": "2026-10-31T09:27:20.300Z",
-  "releaseReason": "handoff"
+  }
 }
