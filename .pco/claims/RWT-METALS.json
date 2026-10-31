@@ -1,46 +1,38 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 13,
-  "state": "released",
-  "leaseId": "516a1970-2115-4092-bea7-825005c6900a",
+  "generation": 14,
+  "state": "claimed",
+  "leaseId": "fb8a27f4-48d8-452f-8d08-afd2baae5724",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-782cae-rwt-worker"
+    "label": "services-next-2041-20261031"
   },
-  "claimedAt": "2026-10-31T19:58:31.071Z",
-  "heartbeatAt": "2026-10-31T20:33:47.241Z",
-  "expiresAt": "2026-10-31T20:33:47.241Z",
-  "branch": "work/swarm-782cae-rwt-1957",
-  "note": "Owner-directed RWT-METALS, 31 October 2026: outer-west copper receiver cross-seam bearing, thermal movement and first release. Inspect accepted PR1165 evidence. Worker live_triage executes; root services connector transport and integration.",
+  "claimedAt": "2026-10-31T20:45:51.135Z",
+  "heartbeatAt": "2026-10-31T20:45:51.135Z",
+  "expiresAt": "2026-10-31T22:15:51.135Z",
+  "branch": "work/swarm-next-services-2041-20261031",
+  "note": "Fresh accepted main d4cad187; predecessor PR1179 merged and exact-head CI verified. Next bounded question, if RWT-METALS is selected: compare supported copper wet-sheet backing, water/debris load path, underside inspection and repair access. No selected receiver dimensions, nonlinear collapse, site levels or STR capacity claim. Root owns all connector mutations.",
   "predecessor": {
-    "leaseId": "45fa55f9-1e07-4d40-b771-15826efeaf76",
-    "generation": 12,
-    "branch": "work/swarm-recovery-1753-20261031",
-    "pr": 1165,
+    "leaseId": "516a1970-2115-4092-bea7-825005c6900a",
+    "generation": 13,
+    "branch": "work/swarm-782cae-rwt-1957",
+    "pr": 1179,
     "checkpoint": {
-      "evidence": "PR1165 merged at 76addac4dfcb64d54ce6a794b07d012de7349435. Accepted tree 25f1c6c0f46afde10bc510305694d3c4eaec0f3d exactly equals the validated head9eb985832ea9fcbb0e297d3e4eeda3036c51410a tree. Full CI41228323275 passed; fresh canonical preflight passed18:17:14.811Z against main7f747d98 and live generation12. Native verification confirms all three reviewed owner blobs, remote source eaa5165f9a368435355eeb18fe58e238d53d3faf and tested-head ancestry. Remote feature ref is absent. The bounded copper sheet-seam fabrication, cleanup, repair and brass recipe-transfer result is integrated; RWT-METALS remains planned.",
-      "next": "Release for handoff after verified integration. Next candidate qualification requires the actual pan or trough seam and section, current supplied formulation and retained constituents after demonstrated cleaning, matched joining/repair process, support and movement, water/backwater duty and complete access. Preserve the distinction between removed process aids and installed residues, and between copper and brass joining instructions.",
-      "blocker": "No complete installed pan, brass wet-body or hidden carrier assembly is admitted by this bounded result; actual construction and process qualification remain design duties rather than publication failures."
+      "evidence": "PR1179 merged1378e24905ceca1713e217355eacd7fab01e2815, accepted tree9b30f56506cac89a4583e81e03a69714f914d4fe. Submitted head2711eb62 passed full CI41238730075 and fresh generation13 preflight20:27:27.542Z. Concurrent gallery4860d98 landed before merge; exact accepted-main build41239002188 now passes full npm run check, both publication PDFs, metadata and Pages artifact assembly. Five gallery and eight copper controls plus deterministic outputs pass locally; independent gallery adjacency review passes. All seven RWT blobs and source/head ancestry verified. Remote feature ref absent.",
+      "next": "Release handoff after verified integration and complete local cleanup. Next RWT-METALS work needs the actual seam underside/backing and load path, frame-relative movement, terminal profile and complete accessible repair sequence; retain terminal-side restraint development direction and all authored-input limits.",
+      "blocker": "No integration blocker remains. This bounded support/release investigation does not qualify actual bearing, hardware, site levels, complete wet-body extraction or the wider copper/brass/hidden-route candidate; RWT-METALS remains planned."
     }
   },
   "recoverySource": {
-    "leaseId": "45fa55f9-1e07-4d40-b771-15826efeaf76",
-    "generation": 12,
-    "branch": "work/swarm-recovery-1753-20261031",
-    "pr": 1165,
+    "leaseId": "516a1970-2115-4092-bea7-825005c6900a",
+    "generation": 13,
+    "branch": "work/swarm-782cae-rwt-1957",
+    "pr": 1179,
     "checkpoint": {
-      "evidence": "PR1165 merged at 76addac4dfcb64d54ce6a794b07d012de7349435. Accepted tree 25f1c6c0f46afde10bc510305694d3c4eaec0f3d exactly equals the validated head9eb985832ea9fcbb0e297d3e4eeda3036c51410a tree. Full CI41228323275 passed; fresh canonical preflight passed18:17:14.811Z against main7f747d98 and live generation12. Native verification confirms all three reviewed owner blobs, remote source eaa5165f9a368435355eeb18fe58e238d53d3faf and tested-head ancestry. Remote feature ref is absent. The bounded copper sheet-seam fabrication, cleanup, repair and brass recipe-transfer result is integrated; RWT-METALS remains planned.",
-      "next": "Release for handoff after verified integration. Next candidate qualification requires the actual pan or trough seam and section, current supplied formulation and retained constituents after demonstrated cleaning, matched joining/repair process, support and movement, water/backwater duty and complete access. Preserve the distinction between removed process aids and installed residues, and between copper and brass joining instructions.",
-      "blocker": "No complete installed pan, brass wet-body or hidden carrier assembly is admitted by this bounded result; actual construction and process qualification remain design duties rather than publication failures."
+      "evidence": "PR1179 merged1378e24905ceca1713e217355eacd7fab01e2815, accepted tree9b30f56506cac89a4583e81e03a69714f914d4fe. Submitted head2711eb62 passed full CI41238730075 and fresh generation13 preflight20:27:27.542Z. Concurrent gallery4860d98 landed before merge; exact accepted-main build41239002188 now passes full npm run check, both publication PDFs, metadata and Pages artifact assembly. Five gallery and eight copper controls plus deterministic outputs pass locally; independent gallery adjacency review passes. All seven RWT blobs and source/head ancestry verified. Remote feature ref absent.",
+      "next": "Release handoff after verified integration and complete local cleanup. Next RWT-METALS work needs the actual seam underside/backing and load path, frame-relative movement, terminal profile and complete accessible repair sequence; retain terminal-side restraint development direction and all authored-input limits.",
+      "blocker": "No integration blocker remains. This bounded support/release investigation does not qualify actual bearing, hardware, site levels, complete wet-body extraction or the wider copper/brass/hidden-route candidate; RWT-METALS remains planned."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1179 merged1378e24905ceca1713e217355eacd7fab01e2815, accepted tree9b30f56506cac89a4583e81e03a69714f914d4fe. Submitted head2711eb62 passed full CI41238730075 and fresh generation13 preflight20:27:27.542Z. Concurrent gallery4860d98 landed before merge; exact accepted-main build41239002188 now passes full npm run check, both publication PDFs, metadata and Pages artifact assembly. Five gallery and eight copper controls plus deterministic outputs pass locally; independent gallery adjacency review passes. All seven RWT blobs and source/head ancestry verified. Remote feature ref absent.",
-    "next": "Release handoff after verified integration and complete local cleanup. Next RWT-METALS work needs the actual seam underside/backing and load path, frame-relative movement, terminal profile and complete accessible repair sequence; retain terminal-side restraint development direction and all authored-input limits.",
-    "blocker": "No integration blocker remains. This bounded support/release investigation does not qualify actual bearing, hardware, site levels, complete wet-body extraction or the wider copper/brass/hidden-route candidate; RWT-METALS remains planned."
-  },
-  "pr": 1179,
-  "releasedAt": "2026-10-31T20:33:47.241Z",
-  "releaseReason": "handoff"
+  }
 }
