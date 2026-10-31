@@ -9,8 +9,8 @@
     "label": "swarm-2900-authorised-resume"
   },
   "claimedAt": "2026-10-31T16:54:40.699Z",
-  "heartbeatAt": "2026-10-31T16:56:53.570Z",
-  "expiresAt": "2026-10-31T17:41:53.570Z",
+  "heartbeatAt": "2026-10-31T17:01:31.967Z",
+  "expiresAt": "2026-10-31T17:46:31.967Z",
   "branch": "work/swarm-2900-had-20261031",
   "predecessor": {
     "leaseId": "01578a4c-862a-45a3-aa70-d52bf32157e7",
@@ -36,8 +36,8 @@
   },
   "pr": 1151,
   "checkpoint": {
-    "evidence": "PR #1151; remote head f558d6fd837195b038fcf72c7086e5bcc32fc5fa. Generator and docs build passed; source and integration reviews passed.",
-    "next": "Reconcile current main, require full exact-head CI and fresh canonical preflight, then merge.",
-    "blocker": "HAD-03 remains planned; occupied use, household seating, conversion and material admission unresolved."
+    "evidence": "PR #1151 merged at 20ca2ad086984af13b1054baac8bb2e5b15dc244. Head fadfa3964aa68fd4ec0c991e6b316826ca226ef0 passed full CI 41222154331 and canonical preflight 17:00:47.912 UTC.",
+    "next": "Confirm required regular and guest seating and obtain actual paired sections and occupied-use evidence; preserve both unadopted comparisons and opening/conversion limits.",
+    "blocker": "HAD-03 remains planned. Six-side envelope study does not select furniture, establish occupied comfort, material admission or actual conversion."
   }
 }
