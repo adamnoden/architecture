@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 8,
-  "state": "released",
-  "leaseId": "77833f2c-876c-438a-bdd9-a2e43f2d1353",
+  "generation": 9,
+  "state": "claimed",
+  "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-2900-worker-three-mat"
+    "label": "issue-comment-6546969637"
   },
-  "claimedAt": "2026-10-31T17:10:34.409Z",
-  "heartbeatAt": "2026-10-31T17:42:46.187Z",
-  "expiresAt": "2026-10-31T17:42:46.187Z",
-  "branch": "work/swarm-2900-interfaces-20261031",
+  "claimedAt": "2026-10-31T17:48:34.000Z",
+  "heartbeatAt": "2026-10-31T17:48:34.000Z",
+  "expiresAt": "2026-10-31T18:33:34.000Z",
+  "branch": "work/mvb-chat-6546969637",
   "predecessor": {
-    "leaseId": "456fc77f-d505-42da-8915-c81dbfcb16db",
-    "generation": 7,
-    "branch": "work/swarm-access-recovery-20261031",
-    "pr": 1150,
+    "leaseId": "77833f2c-876c-438a-bdd9-a2e43f2d1353",
+    "generation": 8,
+    "branch": "work/swarm-2900-interfaces-20261031",
+    "pr": 1157,
     "checkpoint": {
-      "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
-      "next": "MAT-ENVELOPE remains planned. Resolve the actual mineral DPC, floor return, clear-cavity or drained-tray junction and constituent-qualified outlets/supports. Preserve the lowest relevant DPC datum, structural fill role and passive site-water conditions."
+      "evidence": "PR1157 merged at 17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree 0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946; full CI 41225448974 passed. MAT-ENVELOPE canonical preflight passed at 17:40:08.475Z against current main aa8e85bb. Fresh main ancestry verified; shared remote branch absent per root verification. Envelope study and G06 preserve independent source review. Bounded partial result only; MAT-ENVELOPE remains planned.",
+      "next": "Resolve one configured wall-base and floor-to-mineral-DPC junction, preserving the clear-cavity/drained-tray alternatives, all retained constituents, structural fill, passive site-water conditions and maintainable-side service access. Reconcile NCCT outlet instructions and its separate inner-leaf membrane interface before any selection.",
+      "blocker": "No exact complete inner-leaf/floor transition, installed membrane/auxiliary disclosure, project outlet setting-out or actual brick/mortar/load qualification; site levels and complete assembly remain unselected."
     }
   },
   "recoverySource": {
-    "leaseId": "456fc77f-d505-42da-8915-c81dbfcb16db",
-    "generation": 7,
-    "branch": "work/swarm-access-recovery-20261031",
-    "pr": 1150,
+    "leaseId": "77833f2c-876c-438a-bdd9-a2e43f2d1353",
+    "generation": 8,
+    "branch": "work/swarm-2900-interfaces-20261031",
+    "pr": 1157,
     "checkpoint": {
-      "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
-      "next": "MAT-ENVELOPE remains planned. Resolve the actual mineral DPC, floor return, clear-cavity or drained-tray junction and constituent-qualified outlets/supports. Preserve the lowest relevant DPC datum, structural fill role and passive site-water conditions."
+      "evidence": "PR1157 merged at 17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree 0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946; full CI 41225448974 passed. MAT-ENVELOPE canonical preflight passed at 17:40:08.475Z against current main aa8e85bb. Fresh main ancestry verified; shared remote branch absent per root verification. Envelope study and G06 preserve independent source review. Bounded partial result only; MAT-ENVELOPE remains planned.",
+      "next": "Resolve one configured wall-base and floor-to-mineral-DPC junction, preserving the clear-cavity/drained-tray alternatives, all retained constituents, structural fill, passive site-water conditions and maintainable-side service access. Reconcile NCCT outlet instructions and its separate inner-leaf membrane interface before any selection.",
+      "blocker": "No exact complete inner-leaf/floor transition, installed membrane/auxiliary disclosure, project outlet setting-out or actual brick/mortar/load qualification; site levels and complete assembly remain unselected."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1157 merged at 17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree 0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946; full CI 41225448974 passed. MAT-ENVELOPE canonical preflight passed at 17:40:08.475Z against current main aa8e85bb. Fresh main ancestry verified; shared remote branch absent per root verification. Envelope study and G06 preserve independent source review. Bounded partial result only; MAT-ENVELOPE remains planned.",
-    "next": "Resolve one configured wall-base and floor-to-mineral-DPC junction, preserving the clear-cavity/drained-tray alternatives, all retained constituents, structural fill, passive site-water conditions and maintainable-side service access. Reconcile NCCT outlet instructions and its separate inner-leaf membrane interface before any selection.",
-    "blocker": "No exact complete inner-leaf/floor transition, installed membrane/auxiliary disclosure, project outlet setting-out or actual brick/mortar/load qualification; site levels and complete assembly remain unselected."
-  },
-  "pr": 1157,
-  "releasedAt": "2026-10-31T17:42:46.187Z",
-  "releaseReason": "handoff"
+  }
 }
