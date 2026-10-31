@@ -9,8 +9,8 @@
     "label": "issue-comment-6546346708"
   },
   "claimedAt": "2026-10-31T16:53:38.000Z",
-  "heartbeatAt": "2026-10-31T16:53:38.000Z",
-  "expiresAt": "2026-10-31T17:38:38.000Z",
+  "heartbeatAt": "2026-10-31T17:00:42.377Z",
+  "expiresAt": "2026-10-31T17:45:42.377Z",
   "branch": "work/mvb-chat-6546346708",
   "predecessor": {
     "leaseId": "44f12563-59a9-4117-aa66-8bf547550f46",
@@ -33,5 +33,11 @@
       "next": "Observe final-head CI and rerun 41189042508 canonical preflight, re-read main/head/lease, expected-head merge then release.",
       "blocker": "Parallel main changes require fresh integration checks. Architectural scope remains a bounded support/access comparison, not STR-HOUSE completion."
     }
+  },
+  "pr": 1152,
+  "checkpoint": {
+    "evidence": "PR #1152 at 391459a405345f810db7bb916ac6ae83186a64fb recovers #1131 calculation/tests/SVG, with current-source links and explicit ideal-section limits. Ten tests, deterministic check and rendered inspection passed.",
+    "next": "Reconcile moved main, require exact-head full CI, then run fresh canonical preflight and expected-head merge.",
+    "blocker": "STR-HOUSE remains planned; support/wet assembly selection and engineering remain unresolved."
   }
 }
