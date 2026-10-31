@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 4,
-  "state": "released",
-  "leaseId": "d5937b54-a057-41e5-89f0-2fb76d65e801",
+  "generation": 5,
+  "state": "claimed",
+  "leaseId": "5b44c665-d4bc-4838-991f-5419beda9ee8",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-mat-floor-983b7ee"
+    "label": "mat-waste-20261031-1653"
   },
-  "claimedAt": "2026-10-31T10:25:01.213Z",
-  "heartbeatAt": "2026-10-31T10:53:20.382Z",
-  "expiresAt": "2026-10-31T10:53:20.382Z",
-  "branch": "work/swarm-maintenance-integration-20261031",
+  "claimedAt": "2026-10-31T16:53:20.924Z",
+  "heartbeatAt": "2026-10-31T16:53:20.924Z",
+  "expiresAt": "2026-10-31T17:38:20.924Z",
+  "branch": "work/mat-waste-20261031-1653",
   "predecessor": {
-    "leaseId": "af7d4f6b-5ea9-4059-995c-02faf541f7db",
-    "generation": 3,
-    "branch": "work/swarm-materials-integration-20261031",
-    "pr": 1145,
+    "leaseId": "d5937b54-a057-41e5-89f0-2fb76d65e801",
+    "generation": 4,
+    "branch": "work/swarm-maintenance-integration-20261031",
+    "pr": 1148,
     "checkpoint": {
-      "evidence": "PR #1145 accepted as adee2d3197fd7af8af06fd5b0668f7acd6c8debd, tree 03bc2783319a7229e9940615449b9c010d73e177. Full CI 41191566272 passed on 18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; canonical MAT-SERVICES preflight passed 2026-10-31T10:15:05.088Z. Fresh main readback matches accepted merge and exact reviewed S01, SUPPLY-STUDY, programme link and study blob 90e9ed837fa965b0625bdccbbf8c8015788d4713. Validated head and services parent b6b4d21f4a20f2536ef1fde227ba285566cb3e50 are ancestors of accepted main.",
-      "next": "Release handoff after this receipt, then use fresh canonical dispatch. MAT-SERVICES remains planned: complete valve/insulation/support/residue admission, actual duty and isolation/drain/first-release geometry remain open. Bounded read-only alternative-valve search found no admitted exact build: Hattersley 33X leaves packing/gasket chemistry undisclosed; Apollo 101T-LF 30LF00401 has a declared epoxy-coated handwheel and unresolved complete-build evidence. Primary leads: https://www.hattersley.com/product/gate/33x-33xls/ and https://aalberts-ips.us/products/detail/30lf00x01/ . This is not a universal no-valve claim and earns no additional catalogue-only document."
+      "evidence": "PR 1148 accepted by merge 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Accepted tree 8967b8d8feea905ccc5cf7582447deca7af351e0 exactly matches full-CI head 90de6288688004c8568f0a0665977e1045f953d8; CI run 41193874119 passed and services canonical preflight passed at 2026-10-31T10:51:33.864Z. Fresh native verification confirms common head and published services source 22890a23e8cd89f5262b58738ac2d1bc8639215a are main ancestors, exact services study and S01 bytes are preserved, and common feature ref is absent.",
+      "next": "Release handoff and re-enter fresh canonical dispatch. MAT-SERVICES remains planned: actual union compound, first-release geometry, pipe-end repair and full water system remain unresolved; the next useful services comparison may address soil/waste/vent joints and their accessible support and penetration reinstatement duties rather than repeat exhausted catalogue-only water-joint searches."
     }
   },
   "recoverySource": {
-    "leaseId": "af7d4f6b-5ea9-4059-995c-02faf541f7db",
-    "generation": 3,
-    "branch": "work/swarm-materials-integration-20261031",
-    "pr": 1145,
+    "leaseId": "d5937b54-a057-41e5-89f0-2fb76d65e801",
+    "generation": 4,
+    "branch": "work/swarm-maintenance-integration-20261031",
+    "pr": 1148,
     "checkpoint": {
-      "evidence": "PR #1145 accepted as adee2d3197fd7af8af06fd5b0668f7acd6c8debd, tree 03bc2783319a7229e9940615449b9c010d73e177. Full CI 41191566272 passed on 18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; canonical MAT-SERVICES preflight passed 2026-10-31T10:15:05.088Z. Fresh main readback matches accepted merge and exact reviewed S01, SUPPLY-STUDY, programme link and study blob 90e9ed837fa965b0625bdccbbf8c8015788d4713. Validated head and services parent b6b4d21f4a20f2536ef1fde227ba285566cb3e50 are ancestors of accepted main.",
-      "next": "Release handoff after this receipt, then use fresh canonical dispatch. MAT-SERVICES remains planned: complete valve/insulation/support/residue admission, actual duty and isolation/drain/first-release geometry remain open. Bounded read-only alternative-valve search found no admitted exact build: Hattersley 33X leaves packing/gasket chemistry undisclosed; Apollo 101T-LF 30LF00401 has a declared epoxy-coated handwheel and unresolved complete-build evidence. Primary leads: https://www.hattersley.com/product/gate/33x-33xls/ and https://aalberts-ips.us/products/detail/30lf00x01/ . This is not a universal no-valve claim and earns no additional catalogue-only document."
+      "evidence": "PR 1148 accepted by merge 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Accepted tree 8967b8d8feea905ccc5cf7582447deca7af351e0 exactly matches full-CI head 90de6288688004c8568f0a0665977e1045f953d8; CI run 41193874119 passed and services canonical preflight passed at 2026-10-31T10:51:33.864Z. Fresh native verification confirms common head and published services source 22890a23e8cd89f5262b58738ac2d1bc8639215a are main ancestors, exact services study and S01 bytes are preserved, and common feature ref is absent.",
+      "next": "Release handoff and re-enter fresh canonical dispatch. MAT-SERVICES remains planned: actual union compound, first-release geometry, pipe-end repair and full water system remain unresolved; the next useful services comparison may address soil/waste/vent joints and their accessible support and penetration reinstatement duties rather than repeat exhausted catalogue-only water-joint searches."
     }
-  },
-  "pr": 1148,
-  "checkpoint": {
-    "evidence": "PR 1148 accepted by merge 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Accepted tree 8967b8d8feea905ccc5cf7582447deca7af351e0 exactly matches full-CI head 90de6288688004c8568f0a0665977e1045f953d8; CI run 41193874119 passed and services canonical preflight passed at 2026-10-31T10:51:33.864Z. Fresh native verification confirms common head and published services source 22890a23e8cd89f5262b58738ac2d1bc8639215a are main ancestors, exact services study and S01 bytes are preserved, and common feature ref is absent.",
-    "next": "Release handoff and re-enter fresh canonical dispatch. MAT-SERVICES remains planned: actual union compound, first-release geometry, pipe-end repair and full water system remain unresolved; the next useful services comparison may address soil/waste/vent joints and their accessible support and penetration reinstatement duties rather than repeat exhausted catalogue-only water-joint searches."
-  },
-  "releasedAt": "2026-10-31T10:53:20.382Z",
-  "releaseReason": "handoff"
+  }
 }
