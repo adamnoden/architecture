@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
   "generation": 10,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "6fa407d3-8717-438a-820e-c95fd705d962",
   "holder": {
     "kind": "chatgpt",
     "label": "mat-waste-package-recovery-20261031-1934"
   },
   "claimedAt": "2026-10-31T19:34:04.422Z",
-  "heartbeatAt": "2026-10-31T19:40:01.266Z",
-  "expiresAt": "2026-10-31T20:25:01.266Z",
+  "heartbeatAt": "2026-10-31T19:40:19.059Z",
+  "expiresAt": "2026-10-31T19:40:19.059Z",
   "checkpoint": {
     "evidence": "PR #1168 merged as c9e9a2c0087ef4e18b5fa4527826767ba4f0c8bd; accepted tree 4d5c281bf9a42ddc6c740e4116f5a0bf193d4705 equals validated head aa1f164e39204f34e6a10949b9af1274d9a349e5. Full CI 41234904005 passed. Fresh canonical preflight passed at 19:38:40.785 UTC. Sources, three independent reviews and final integration review passed. Recovery branch automatic deletion is verified; predecessor commit is an ancestor of accepted main and draft #1167 is closed as superseded.",
     "next": "Bind the current 5600 outlet seat, all constituents and complete vertical/support/wall package before adopting the alternative; then prove connected flow, first disengagement and outlet/trap renewal. Session will finish tracker reconciliation and dispose the superseded branch through the established sink.",
@@ -33,5 +33,7 @@
       "blocker": "MAT-INTERIORS remains planned. No complete installed finish, supplied-batch constituent pass, physical bond/repair evidence, owner exception or house source change is accepted."
     }
   },
-  "pr": 1168
+  "pr": 1168,
+  "releasedAt": "2026-10-31T19:40:19.059Z",
+  "releaseReason": "handoff"
 }
