@@ -9,8 +9,8 @@
     "label": "swarm-782cae-rwt-worker"
   },
   "claimedAt": "2026-10-31T19:58:31.071Z",
-  "heartbeatAt": "2026-10-31T20:17:35.092Z",
-  "expiresAt": "2026-10-31T21:02:35.092Z",
+  "heartbeatAt": "2026-10-31T20:29:40.555Z",
+  "expiresAt": "2026-10-31T21:14:40.555Z",
   "branch": "work/swarm-782cae-rwt-1957",
   "note": "Owner-directed RWT-METALS, 31 October 2026: outer-west copper receiver cross-seam bearing, thermal movement and first release. Inspect accepted PR1165 evidence. Worker live_triage executes; root services connector transport and integration.",
   "predecessor": {
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1179 open. Published head 1c5ab71a4cec6aa0e274732c4cf70f26d6d2c9a1, tree 6fbad2720bfe9910701ca490db04488c9acf2491 incorporates main2489393e. Seven independently reviewed owner blobs preserved. Eight focused controls, deterministic artifacts, repository/workflow integrity, publication manifests/integrity and docs build pass; generated projections clean. Owner assurance-policy compatibility reviewed.",
-    "next": "Observe full canonical CI on this exact head, reconcile any newer main, run fresh canonical merge-check, merge with expected head, verify accepted tree and release for handoff.",
-    "blocker": "Exact-head CI pending. Local Chrome155 is absent so browser publication/full health must be established by CI. Remaining physical geometry, contact, load and complete renewal evidence limits remain in owner sources; RWT-METALS remains planned."
+    "evidence": "PR1179 merged at1378e24905ceca1713e217355eacd7fab01e2815. Submitted head2711eb62453d3ef86e5ae13785335ecaaa587651 passed full CI41238730075 and fresh canonical preflight20:27:27.542Z against main6e1260e. Drawing-gallery main4860d98 landed before merge20:27:36, so accepted tree9b30f56506cac89a4583e81e03a69714f914d4fe includes that concurrent work. Native verification confirms all seven corrected/reviewed RWT blobs and both submitted/source ancestry; remote feature ref is absent.",
+    "next": "Validate the actual combined accepted tree through existing main push run41239002188 (docs-pages: full npm run check, both PDFs and metadata); complete gallery adjacency review, then release handoff and clean local worktree/branch and QA files.",
+    "blocker": "Post-merge combined-tree validation pending because main advanced in the non-atomic preflight/merge interval. RWT-METALS remains planned; actual receiver/contact/load/terminal and whole-body renewal acceptance remain bounded design obligations in the owner study."
   },
   "pr": 1179
 }
