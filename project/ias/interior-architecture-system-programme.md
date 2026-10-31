@@ -81,6 +81,8 @@ remain explicit adoption obligations; TRIAD-GATE cannot pass on the partial set.
 
 The [sink-cabinet material and maintenance comparison](ias-03-sink-cabinet.md) rejects the earlier resin-composite bowl and the manufacturer's polypropylene siphon as current defaults, develops a plain-stainless bowl comparison, and keeps complete connected fit unknown. It exposes the nominal-width and mounting-datum traps and rejects appliance connections accessible only after withdrawal. This is a bounded IS-04 / IW-04 advance, not IAS-03 completion.
 
+The [sink set-out and renewal successor](ias-03-sink-renewal.md) adds the manufacturer's dated waste projection and cutout, distinguishes nominal set-out from tolerance, and develops a supported lowering/front-withdrawal direction. It does not identify the current waste kit, prove a complete removal route or clear materials; IS-04 and IAS-03 remain open.
+
 IAS runs in parallel with OAS #942 and HAD #943 after BSR. It works against the controlled current Reference House/PLT geometry. Any material section-depth, plan, opening or service-space conflict is an explicit rewind request; IAS may not silently fork the house.
 
 OAS owns the opening cassette/envelope crossing; IAS owns the room-side assembly meeting it. HAD owns visible composition/material expression and consumes IAS dimensional/assembly constraints.
