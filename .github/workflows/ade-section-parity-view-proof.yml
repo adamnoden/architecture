@@ -42,3 +42,4 @@ jobs:
           name: ade-current-sections
           path: .ade-section-proof/
           if-no-files-found: error
+          include-hidden-files: true
