@@ -184,6 +184,8 @@ The [passive court/site interface review](passive-court-site-interface.md) now s
 
 The [raised copper-terminal comparison](raised-terminal-section.md) rejects transferring the historical 435 mm raise into an automatic access solution: a centred 220 mm flange at the retained exterior-interface axis already crosses the fixed comparison ground plane by 5 mm. Release travel and an actual access plane add requirements; raising the house does not resolve the upper, transverse or blind-passage conflicts. These are necessary section constraints for the connected design, not a selected house height or working clearance.
 
+The [threshold-only renewal comparison](threshold-renewal-access.md) develops inward withdrawal into an opened room route, distinguishing a leading enlargement from one that must traverse the band. Its finite-body witness and actual cutting/reinstatement evidence narrow the next joint-and-access trial while retaining the fixed water-boundary, floor/support, occupation and site duties. It selects no assembly or working allowance and does not close RWT-06.
+
 ### RWT-SHED — free shedding and planted ground receivers
 
 After MAT-00, RWT-01 and ROF-02, develop the condition-by-condition comparisons specified in the [new brief](rainwater-elegance-brief.md): catchment flow, eave detachment/wind/splash evidence, receiving section, independent no-plant performance, access, foundations and safe overflow. Compare each eligible edge against controlled copper collection. Identify actual mock-up/evidence needs; do not adopt a safe overhang from a ballistic toy model or generic hedge interception.
