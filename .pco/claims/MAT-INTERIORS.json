@@ -9,8 +9,8 @@
     "label": "swarm-access-recovery-mat-b-983b7ee"
   },
   "claimedAt": "2026-10-31T16:50:36.707Z",
-  "heartbeatAt": "2026-10-31T16:50:36.707Z",
-  "expiresAt": "2026-10-31T17:35:36.707Z",
+  "heartbeatAt": "2026-10-31T16:53:39.415Z",
+  "expiresAt": "2026-10-31T17:38:39.415Z",
   "branch": "work/swarm-access-recovery-20261031",
   "predecessor": {
     "leaseId": "5921a8d9-3549-4eac-acd9-ac34c0167a12",
@@ -27,5 +27,11 @@
       "next": "Bind exact tray/Upstand/metal-frame/waste package and complete west-access section, whole-body withdrawal and carrying route; wider MAT-INTERIORS stays open",
       "blocker": "Complete constituent disclosure and installation/renewal evidence remain unresolved; no assembly accepted"
     }
+  },
+  "pr": 1150,
+  "checkpoint": {
+    "evidence": "PR 1150 publishes reviewed common head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 / tree e235ccc6c960795483ba906f10dae0a2ff01ec07 on unchanged main 2512f116. Native fetch verified exact tree and all three published source parents. Independent source/architectural reviews and combined owner-byte, repository/publication and docs checks pass. Fresh generation reacquired after delayed publication outlasted earlier claims; no expired request replayed.",
+    "next": "Observe full exact-head CI, verify all three common source owners, run three fresh canonical merge-checks and expected-head merge, then verify accepted main and release. All three nodes remain planned.",
+    "blocker": "Full published-head CI and fresh preflights pending; no complete installed assembly, material, hydraulic or physical pass."
   }
 }
