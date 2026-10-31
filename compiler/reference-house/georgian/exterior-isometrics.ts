@@ -1,6 +1,7 @@
 import {createHash} from 'node:crypto'
 import {layoutRevision as d,revisionOpenings} from './layout-revision.js'
-import {currentRoofZ,layoutFamilySource,layoutAperturePrimitives} from './layout-family.js'
+import {layoutFamilySource,layoutAperturePrimitives} from './layout-family.js'
+import {roofRingFaces} from './roof-surfaces.js'
 import {boundaryMeshEdges} from '../../architectural-drawing/boundary-mesh-edges.js'
 import {visibleSpatialSegments} from '../../architectural-drawing/spatial-visibility.js'
 import {spatialSegmentsToDrawingPrimitives,type SpatialSegment} from '../../architectural-drawing/spatial-line-drawing.js'
@@ -46,13 +47,7 @@ export function exteriorFaces():ModelFace3D[]{
   const vertices=[onFace(host,host.lo,0),onFace(host,host.hi,0),onFace(host,host.hi,d.roof.eaves),onFace(host,host.lo,d.roof.eaves)]
   return {id:host.id,vertices:host.reverse?vertices.reverse():vertices}
  })
- const ring=(a:number)=>[[a,a],[d.shell-a,a],[d.shell-a,d.shell-a],[a,d.shell-a]]
- const outer=ring(-d.roof.overhang),ridge=ring(d.roof.ridgeInset),inner=ring(d.court.x+d.roof.overhang)
- for(const [band,a,b]of [['outer',outer,ridge],['inner',ridge,inner]] as const)for(let i=0;i<4;i++){
-  const j=(i+1)%4,top=[a[i],a[j],b[j],b[i]].map(([x,y])=>point(x,y,currentRoofZ(x,y))),bottom=top.map(p=>({...p,z:p.z-layoutFamilySource.roofBuildZone}))
-  const shell=[top,[...bottom].reverse(),...top.map((p,k)=>[p,top[(k+1)%4],bottom[(k+1)%4],bottom[k]])]
-  for(const [k,vertices]of shell.entries())faces.push({id:`roof-${band}-${i}-${k}`,vertices})
- }
+ faces.push(...roofRingFaces({shell:d.shell,courtInset:d.court.x,ridgeInset:d.roof.ridgeInset,overhang:d.roof.overhang,eaves:d.roof.eaves,pitchDeg:d.roof.upperPitchDeg,buildDepth:layoutFamilySource.roofBuildZone}))
  return faces
 }
 
