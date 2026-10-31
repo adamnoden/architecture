@@ -43,3 +43,14 @@ test('current cut and beyond data remain source-referenced across roof shapes',(
   assert.ok(v.background.length>0)
  }
 })
+
+test('service spine prevents courtyard sash grids from appearing through solid rooms',()=>{
+ const service=createLayoutSection('SERVICE-SECTION',100)
+ const principal=createLayoutSection('PRINCIPAL',100)
+ const grids=(scene:ReturnType<typeof createLayoutSection>)=>scene.primitives.filter(p=>
+  p.kind==='line'&&String(p.metadata?.meaning??'').startsWith('hosted-aperture:'))
+ const serviceGrid=grids(service),principalGrid=grids(principal)
+ assert.ok(principalGrid.length>=8)
+ assert.ok(serviceGrid.length<principalGrid.length,'courtyard windows must be occluded by the service spine')
+ assert.ok(!service.primitives.some(p=>String(p.metadata?.meaning??'').startsWith('partition-')))
+})
