@@ -9,8 +9,8 @@
     "label": "swarm-983b7ee4744e-independent"
   },
   "claimedAt": "2026-10-30T23:47:51.616Z",
-  "heartbeatAt": "2026-10-30T23:47:51.616Z",
-  "expiresAt": "2026-10-31T00:32:51.616Z",
+  "heartbeatAt": "2026-10-31T00:03:36.803Z",
+  "expiresAt": "2026-10-31T00:48:36.803Z",
   "branch": "work/swarm-983b7ee4744e-worker2",
   "predecessor": {
     "leaseId": "f297f5ec-e390-4475-93d4-7532709a79de",
@@ -31,5 +31,10 @@
       "evidence": "PR #1118 merged2c22f71f86ff9eeae7fbf4b724db637d697bb04f; full exact-head CI41145753531 succeeded at7b193b2f875815b0e68ac8c5db423df1c8c7a9e4; canonical preflight124371233830 observed23:42:44.252UTC against mainbb8e94ad and lease46a6f516. Joined partial plans, support sections, quantity/occupation diagnostics and real limitations are retained.",
       "next": "STR-HOUSE remains planned/open. Resume from project/str/str-house-result.md: front-room allocation and full door/occupation states; opposed bearings and upper-wall transmission; stair/bridge finite seats; riser framing; actual thrust closure; roof heel/corners. STR-RECONCILE remains blocked. No accepted geometry or system selected."
     }
+  },
+  "pr": 1122,
+  "checkpoint": {
+    "evidence": "PR #1122 head b423f7eef96573550fc8bea4eef2c9ff61b7d4a2; source-bound shared-bearing study, JSON and A3 verified; independent geometry and supplier review passed.",
+    "next": "Inspect exact-head CI, reconcile main, run fresh publication preflight and merge partial; STR-HOUSE remains open."
   }
 }
