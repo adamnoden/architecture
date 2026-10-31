@@ -1,6 +1,8 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { canonicalPatternOrder, publicationEntries, type PublicationAdapter } from './publication.js'
+import { layoutRevision } from '../compiler/reference-house/georgian/layout-revision.js'
+import { renderPrimerGroundPlanSvg } from './primer/figure.js'
 
 export interface AdapterContext {
   repoRoot: string
@@ -31,7 +33,11 @@ const adapterDependencies: Record<PublicationAdapter, readonly string[]> = {
     'publication/primer/patterns.md',
     ...publicationEntries.filter((entry) => entry.kind === 'pattern').map((entry) => entry.source)
   ],
-  'primer-reference-house': ['publication/primer/reference-house.md']
+  'primer-reference-house': [
+    'publication/primer/reference-house.md',
+    'docs/reference-house/current-house-basis.md',
+    'project/owner-house-charter.md'
+  ]
 }
 
 export function dependenciesForAdapter(adapter?: PublicationAdapter): readonly string[] {
@@ -327,11 +333,33 @@ function composePrimer(context: AdapterContext, source: string, slots: Record<st
   return text
 }
 
-function inventoryWord(kind: 'strategy' | 'candidate', capitalise = false): string {
-  const count = publicationEntries.filter((entry) => entry.kind === kind).length
-  const word = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine',
-    'ten', 'eleven', 'twelve'][count] ?? String(count)
-  return capitalise ? word[0].toUpperCase() + word.slice(1) : word
+// The anchors select complete source sentences, not a second maintained paraphrase.
+// A changed or ambiguous selection requires an editorial decision instead of a silent fallback.
+function sourceSentences(markdown: string, starts: readonly string[], label: string): string {
+  const sentences = markdown.trim().split(/\n{2,}/)
+    .filter((paragraph) => !paragraph.startsWith('#'))
+    .flatMap((paragraph) => paragraph.split(/(?<=[.!?])\s+(?=[A-Z“])/u))
+    .map((sentence) => sentence.trim())
+  return starts.map((start) => {
+    const matches = sentences.filter((sentence) => sentence.replace(/\*\*/g, '').startsWith(start))
+    if (matches.length !== 1) throw new Error(`${label}: expected one source sentence beginning “${start}”, found ${matches.length}.`)
+    return matches[0]
+  }).join(' ')
+}
+
+// Supporting explanations are selected for meaning, never merely by paragraph position.
+const primerPrincipleSupport: Record<number, readonly string[]> = {
+  1: ['Foreseeable change includes', 'Where a modest early decision'],
+  2: ['Mechanical fasteners', 'Reversible screws', 'The objective is'],
+  3: ['Required load paths', 'Where constructions of different'],
+  4: ['Ask how the system fails'],
+  5: ['A person needs', 'The same rule applies outside'],
+  6: ['Test for understandability', 'Repeated construction should'],
+  7: ['Well-proportioned rooms', 'Permanence carries'],
+  8: ['Where recurring use demands', 'A room can be ornamented', 'Thermal conditions'],
+  9: ['Mechanical systems are the correct answer', 'A long-lived real project', 'At the ground'],
+  10: ['The strongest form of legibility', 'A restrained amount'],
+  11: ['Architecture may cover services', 'Cosmetic continuity']
 }
 
 function adaptPrimerPrinciples(markdown: string, context: AdapterContext): string {
@@ -353,10 +381,9 @@ function adaptPrimerPrinciples(markdown: string, context: AdapterContext): strin
 
     const title = match[2].trim()
     const rule = match[3].trim()
-    const support = firstParagraphs(match[4], 1)[0]
-    if (!support) throw new Error(`Primer governing provision ${number} has no supporting paragraph.`)
+    const support = sourceSentences(match[4], primerPrincipleSupport[number], `Primer provision ${number}`)
 
-    return `## ${number}. ${title}\n\n**${rule}**\n\n${support}`
+    return `<section class="primer-provision">\n\n## ${number}. ${title}\n\n**${rule}**\n\n${support}\n\n</section>`
   })
 
   return composePrimer(context, 'publication/primer/constitution.md', {
@@ -366,11 +393,12 @@ function adaptPrimerPrinciples(markdown: string, context: AdapterContext): strin
 }
 
 function activePatternsInCanonicalOrder(context: AdapterContext): PatternMetadata[] {
-  const active = new Map(
-    patternMetadata(context)
-      .filter((pattern) => pattern.state === 'active')
-      .map((pattern) => [pattern.id, pattern])
-  )
+  const metadata = patternMetadata(context).filter((pattern) => pattern.state === 'active')
+  const active = new Map(metadata.map((pattern) => [pattern.id, pattern]))
+  if (active.size !== metadata.length || new Set(canonicalPatternOrder).size !== canonicalPatternOrder.length ||
+      active.size !== canonicalPatternOrder.length) {
+    throw new Error('Primer active pattern inventory differs from the canonical order; review the complete map.')
+  }
 
   return canonicalPatternOrder.map((id) => {
     const pattern = active.get(id)
@@ -390,16 +418,21 @@ function primerPatternList(context: AdapterContext): string {
     { title: 'E · Stewardship', ids: canonicalPatternOrder.slice(20, 21) }
   ]
 
-  return groups
+  const groupedIds = groups.flatMap((group) => group.ids)
+  if (groupedIds.length !== patterns.length || new Set(groupedIds).size !== patterns.length) {
+    throw new Error('Primer pattern grouping omits or duplicates an active pattern; review the complete map.')
+  }
+  const rows = groups
     .map(({ title, ids }) => {
-      const rows = ids.map((id) => {
+      const links = ids.map((id) => {
         const pattern = byId.get(id)
         if (!pattern) throw new Error(`Primer pattern group is missing ${id}.`)
-        return `- [${pattern.title}](${pattern.href})`
+        return `[${pattern.title}](${pattern.href})`
       })
-      return `### ${title}\n\n${rows.join('\n')}`
+      return `| ${title.replace(/^[A-E] · /, '')} | ${links.join('; ')} |`
     })
-    .join('\n\n')
+    .join('\n')
+  return `| Field | Patterns |\n| --- | --- |\n${rows}`
 }
 
 function concisePattern(context: AdapterContext, id: string): string {
@@ -407,12 +440,23 @@ function concisePattern(context: AdapterContext, id: string): string {
   if (!metadata) throw new Error(`Primer representative pattern missing: ${id}`)
 
   const source = readWork(context, `docs/patterns/${metadata.href}`)
-  const problem = firstParagraphs(markdownSection(source, 'Problem'), 1)[0]
-  const pattern = firstParagraphs(markdownSection(source, 'Pattern'), 1)[0]
-  if (!problem || !pattern) throw new Error(`Primer could not compress representative pattern ${id}.`)
-
-  const invariant = pattern.replace(/^\*\*/, '').replace(/\*\*$/, '')
-  return `### ${metadata.title}\n\n**Problem.** ${problem}\n\n**Pattern.** ${invariant}`
+  const patternSection = markdownSection(source, 'Pattern')
+  const pattern = firstParagraphs(patternSection, 1)[0]
+  if (!pattern?.startsWith('**') || !pattern.endsWith('**')) {
+    throw new Error(`Primer representative ${id} has no complete canonical pattern statement.`)
+  }
+  const qualifications: Record<string, readonly string[]> = {
+    'PAT-001': ['The pattern does not require', 'Supplier rules'],
+    'PAT-005': ['An ordinary engineered opening'],
+    'PAT-018': ['The invariant is room-scale'],
+    'PAT-007': ['The required outcome'],
+    'PAT-013': ['For ground-supported access', 'The pattern does'],
+    'PAT-012': ['Typical content may include']
+  }
+  const invariant = pattern.slice(2, -2)
+  const contextText = id === 'PAT-018' ? `${markdownSection(source, 'Context')}\n\n` : ''
+  const qualification = sourceSentences(patternSection, qualifications[id], `Primer pattern ${id}`)
+  return `<section class="primer-pattern">\n\n### ${metadata.title}\n\n*Evidence: ${metadata.evidence}.*\n\n${contextText}${invariant} ${qualification}\n\n</section>`
 }
 
 function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string {
@@ -430,9 +474,7 @@ function adaptPrimerPatterns(_markdown: string, context: AdapterContext): string
   return composePrimer(context, 'publication/primer/patterns.md', {
     'pattern-list': primerPatternList(context),
     'representatives': representative,
-    'pattern-count': String(activePatternsInCanonicalOrder(context).length),
-    'strategy-count': inventoryWord('strategy', true),
-    'candidate-count': inventoryWord('candidate')
+    'pattern-count': String(activePatternsInCanonicalOrder(context).length)
   })
 }
 
@@ -448,28 +490,30 @@ function adaptPrimerReferenceHouse(markdown: string, context: AdapterContext): s
     throw new Error('Reference House Authority stack changed; update the Primer adapter deliberately.')
   }
 
-  const architecturalScope = firstParagraphs(
-    markdown.slice(opening.length, authorityStart).trim(),
-    2
-  )
-  if (architecturalScope.length !== 2) {
-    throw new Error('Primer expected two opening Reference House scope paragraphs.')
-  }
-
-  const authority = markdownSection(markdown, 'Authority stack')
-  const compositionChain = authority.match(/```text\n[\s\S]*?```/)?.[0]
-  if (!compositionChain) throw new Error('Primer could not find the Reference House authority chain.')
-
-  const coordination = firstParagraphs(markdownSection(markdown, 'Maturity'), 2)
-  if (coordination.length !== 2) {
-    throw new Error('Primer expected two Reference House Maturity paragraphs.')
+  const basis = readWork(context, 'docs/reference-house/current-house-basis.md')
+  const facts = markdownSection(basis, 'Current architectural facts')
+  const charter = readWork(context, 'project/owner-house-charter.md')
+  const roofRow = markdownSection(basis, 'Sources to use').split('\n').find((line) => line.startsWith('| Roof prohibition |'))
+  if (!roofRow) throw new Error('Primer current-house roof requirement is missing from its owning basis.')
+  if (layoutRevision.court.width !== layoutRevision.court.depth) throw new Error('Primer courtyard description requires review: current court is no longer square.')
+  if (layoutRevision.court.x !== (layoutRevision.shell - layoutRevision.court.width) / 2 ||
+      layoutRevision.court.y !== (layoutRevision.shell - layoutRevision.court.depth) / 2) {
+    throw new Error('Primer courtyard description requires review: current court is no longer centred.')
   }
 
   return composePrimer(context, 'publication/primer/reference-house.md', {
-    'scope': architecturalScope.join('\n\n'),
-    'authority-chain': compositionChain,
-    'coordination': coordination.join('\n\n'),
-    'orientation-figure': '![Reference House type and orientation](../manuscript/figures/reference-house-type-orientation.svg)'
+    'scope': sourceSentences(markdown.slice(opening.length, authorityStart), [
+      'The Reference House is', 'It forces doctrine', 'It is not proof'
+    ], 'Primer Reference House scope'),
+    'shell': String(layoutRevision.shell / 1000),
+    'court': String(layoutRevision.court.width / 1000),
+    'arrangement': sourceSentences(facts, ['The front has five bays', 'Four bedrooms'], 'Primer current-house arrangement'),
+    'material-direction': sourceSentences(charter, ['The owner requires the strongest practicable avoidance'], 'Primer material direction'),
+    'structural-direction': sourceSentences(charter, ['The owner prefers solid internal masonry', 'Explore non-timber primary'], 'Primer structural direction'),
+    'water-direction': sourceSentences(charter, ['The owner requires dryness by position and geometry'], 'Primer water direction'),
+    'roof-direction': `${roofRow.split('|')[3].trim()}.`,
+    'technical-limit': sourceSentences(facts, ['Actual structural, thermal'], 'Primer technical limit'),
+    'ground-plan': renderPrimerGroundPlanSvg()
   })
 }
 

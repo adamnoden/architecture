@@ -32,6 +32,7 @@ New first-class workstreams use exactly three uppercase letters. Historical evid
 | `ROF` | Roof Systems Architecture | [#991](https://github.com/adamnoden/architecture/issues/991) | `project/rof/roof-systems-programme.md` | — |
 | `RWT` | Rainwater Systems Architecture | [#992](https://github.com/adamnoden/architecture/issues/992) | `project/rwt/rainwater-systems-programme.md` | — |
 | `STR` | Structural Architecture | [#1103](https://github.com/adamnoden/architecture/issues/1103) | `project/str/structural-architecture-programme.md` | — |
+| `SWE` | Software Reliability and Efficiency | [#1174](https://github.com/adamnoden/architecture/issues/1174) | `project/swe/software-reliability-programme.md` | — |
 | `TYP` | Publication typography | — | — | — |
 
 Do not hand-edit this register. Change the typed registry and regenerate projections.

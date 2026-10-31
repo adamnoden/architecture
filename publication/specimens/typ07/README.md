@@ -6,7 +6,7 @@ This directory carries the bounded TYP-07 proof programme defined by issues #541
 
 `manifest.ts` freezes ten real representative obligations and `audit.ts` proves their canonical source/registry identities.
 
-Production `publication/theme.css` is deliberately **not** the visual authority here. It remains the historical Working Edition theme until later TYP integration work.
+The harness's accepted specimen contracts are its visual authority. The base `publication/theme.css` retains historical Working Edition styles; the current full-production build adds the released typography overlays. See the [production release](../../../docs/publication/publication-typography-v1-release.md) for that later authority.
 
 ## TYP-07B proof
 
@@ -42,7 +42,7 @@ The finished-PDF gate requires Source Serif 4 Regular/Italic/Bold and Source San
 
 ## Physical boundary
 
-The B5 PDF is decisive and remains unfrozen until reviewed at **100% / Actual Size**.
+The exact B5 proof was reviewed at **100% / Actual Size** and accepted with `LGTM`, as recorded in the [TYP-07C physical freeze](../../../docs/publication/publication-typography-typ07c-representative-signature-freeze.md). Regenerated proofs do not automatically inherit that exact object's physical verdict.
 
 Plate pages preserve controlled paper-space drawing size rather than shrinking 1:100 architectural drawings into the prose measure. Final drawing-specific typography and geometry remain PLT authority.
 

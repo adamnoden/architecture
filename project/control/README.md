@@ -247,7 +247,7 @@ npm run control:graph:live
 npm run control:graph:live -- --all
 ```
 
-The live view reads `runtime/claims`, evaluates leases using the transport observation clock (GitHub server time when available, explicit local-clock fallback for Git snapshots) and marks claimable nodes as `AVAILABLE`, `CLAIMED`, `CLAIM GRACE` or `ACTIVE · UNCLAIMED`. A live lease on a blocked/held/done/cancelled node is rendered as an explicit invalid-claim condition rather than masking PCO state.
+The live graph command reads `runtime/claims` through the GitHub API and evaluates leases using response server time when available, with a local-clock fallback. Unlike the claims CLI, this command does not implement the Git/connector transport. It marks structurally eligible nodes as `AVAILABLE`, `CLAIMED`, `CLAIM GRACE` or `ACTIVE · UNCLAIMED`; `AVAILABLE` describes occupancy, not self-service dispatch permission. Use `control:next` for dispatch policy and recovery eligibility. A live lease on a blocked/held/done/cancelled node is rendered as an explicit invalid-claim condition rather than masking PCO state.
 
 ## Lease commands
 
