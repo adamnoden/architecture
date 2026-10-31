@@ -9,8 +9,8 @@
     "label": "swarm-983b7ee4744e"
   },
   "claimedAt": "2026-10-30T23:50:27.148Z",
-  "heartbeatAt": "2026-10-31T00:10:15.981Z",
-  "expiresAt": "2026-10-31T00:55:15.981Z",
+  "heartbeatAt": "2026-10-31T00:12:19.578Z",
+  "expiresAt": "2026-10-31T00:57:19.578Z",
   "branch": "work/swarm-983b7ee4744e-3",
   "predecessor": {
     "leaseId": "4fe6938b-652a-4723-977d-c0195b751a97",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published head 68986388aa10da760ee7b2d64b3916ea25de5327; recovered Franke section/cutout, source-bound JSON and A3; independent review, regeneration, typecheck, repository/publication checks and docs build pass.",
-    "next": "Create PR after structural integration; reconcile main, require exact-head full CI and fresh canonical preflight; IAS-03 remains planned.",
-    "blocker": "Current waste-kit identity, complete connected assembly, materials and physical renewal remain unresolved."
-  }
+    "evidence": "PR #1123 head f43c6bc8933fa883e8161e00a84783fd93e63554; source-bound section/cutout and renewal comparison reviewed, rendered and locally validated; reconciled main dfb60fd3.",
+    "next": "Require exact-head full CI and fresh canonical preflight, merge bounded partial and release. Current kit, connected fit, material and physical renewal remain open."
+  },
+  "pr": 1123
 }
