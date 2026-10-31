@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 4,
-  "state": "released",
-  "leaseId": "66e37744-c45f-484e-800d-f583195525e2",
+  "generation": 5,
+  "state": "claimed",
+  "leaseId": "6a340394-845c-4377-b276-8cc209132648",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-envelope-dpc-983b7ee"
+    "label": "swarm-mat-next-983b7ee"
   },
-  "claimedAt": "2026-10-31T09:18:30.617Z",
-  "heartbeatAt": "2026-10-31T10:18:19.380Z",
-  "expiresAt": "2026-10-31T10:18:19.380Z",
-  "branch": "work/swarm-materials-integration-20261031",
+  "claimedAt": "2026-10-31T10:20:03.100Z",
+  "heartbeatAt": "2026-10-31T10:20:03.100Z",
+  "expiresAt": "2026-10-31T11:05:03.100Z",
+  "branch": "work/swarm-mat-next-983b7ee-20261031",
   "predecessor": {
-    "leaseId": "650de713-dbb7-479c-a948-c5e784f2560f",
-    "generation": 3,
-    "branch": "work/swarm-resume-envelope-20261031",
-    "pr": 1124,
+    "leaseId": "66e37744-c45f-484e-800d-f583195525e2",
+    "generation": 4,
+    "branch": "work/swarm-materials-integration-20261031",
+    "pr": 1145,
     "checkpoint": {
-      "evidence": "PR #1124 merged as 178c43815ba318a09f0f62c344aed37f15a71f16 after full CI41187669477 success on head24b7f82b8408f4582241e220ea83d85eef416443 and fresh merge-check09:15:46.537Z. Fresh main tree2bada5b4ea5aeff43f51ab9179f7fd06d2b62d65 matches all three recovered files; new work branch auto-deleted. This integrates reviewed #1117 plus precise product-label DoP attribution only.",
-      "next": "MAT-ENVELOPE remains planned. Bind exact DPC1 unit/mortar and suitable slate, then qualify complete straight wall/floor junctions for both boundary locations and internal-support, threshold, penetration and movement details. Other envelope assemblies, site inputs, thermal/structural proof, constituents and costs remain unresolved. Root will supersede predecessor #1117 after this verified integration."
+      "evidence": "PR #1145 merged as adee2d3197fd7af8af06fd5b0668f7acd6c8debd. Full CI41191566272 succeeded on exact18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; all three canonical preflights passed against main4d, envelope at2026-10-31T10:15:04.090Z. Fresh fetch verified accepted tree03bc2783319a7229e9940615449b9c010d73e177, exact envelope study/G02 and all three source-head ancestries. Combined remote branch deletion verified. Root owns superseded PR1133 and source-branch cleanup.",
+      "next": "Release this integrated bounded amendment as handoff, then re-enter canonical MAT dispatcher on a fresh dedicated branch. MAT-ENVELOPE remains planned. If selected again, develop the separate floor-barrier/service-access comparison using dated IKO floor-field and repair evidence plus MAC wall-key limits; preserve W1, fixed court W2 and ground damp/gas as distinct duties. Exact mortar/slate, connected wall/floor/threshold/penetration, thermal/support and actual constituents remain unqualified."
     }
   },
   "recoverySource": {
-    "leaseId": "650de713-dbb7-479c-a948-c5e784f2560f",
-    "generation": 3,
-    "branch": "work/swarm-resume-envelope-20261031",
-    "pr": 1124,
+    "leaseId": "66e37744-c45f-484e-800d-f583195525e2",
+    "generation": 4,
+    "branch": "work/swarm-materials-integration-20261031",
+    "pr": 1145,
     "checkpoint": {
-      "evidence": "PR #1124 merged as 178c43815ba318a09f0f62c344aed37f15a71f16 after full CI41187669477 success on head24b7f82b8408f4582241e220ea83d85eef416443 and fresh merge-check09:15:46.537Z. Fresh main tree2bada5b4ea5aeff43f51ab9179f7fd06d2b62d65 matches all three recovered files; new work branch auto-deleted. This integrates reviewed #1117 plus precise product-label DoP attribution only.",
-      "next": "MAT-ENVELOPE remains planned. Bind exact DPC1 unit/mortar and suitable slate, then qualify complete straight wall/floor junctions for both boundary locations and internal-support, threshold, penetration and movement details. Other envelope assemblies, site inputs, thermal/structural proof, constituents and costs remain unresolved. Root will supersede predecessor #1117 after this verified integration."
+      "evidence": "PR #1145 merged as adee2d3197fd7af8af06fd5b0668f7acd6c8debd. Full CI41191566272 succeeded on exact18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; all three canonical preflights passed against main4d, envelope at2026-10-31T10:15:04.090Z. Fresh fetch verified accepted tree03bc2783319a7229e9940615449b9c010d73e177, exact envelope study/G02 and all three source-head ancestries. Combined remote branch deletion verified. Root owns superseded PR1133 and source-branch cleanup.",
+      "next": "Release this integrated bounded amendment as handoff, then re-enter canonical MAT dispatcher on a fresh dedicated branch. MAT-ENVELOPE remains planned. If selected again, develop the separate floor-barrier/service-access comparison using dated IKO floor-field and repair evidence plus MAC wall-key limits; preserve W1, fixed court W2 and ground damp/gas as distinct duties. Exact mortar/slate, connected wall/floor/threshold/penetration, thermal/support and actual constituents remain unqualified."
     }
-  },
-  "pr": 1145,
-  "checkpoint": {
-    "evidence": "PR #1145 merged as adee2d3197fd7af8af06fd5b0668f7acd6c8debd. Full CI41191566272 succeeded on exact18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; all three canonical preflights passed against main4d, envelope at2026-10-31T10:15:04.090Z. Fresh fetch verified accepted tree03bc2783319a7229e9940615449b9c010d73e177, exact envelope study/G02 and all three source-head ancestries. Combined remote branch deletion verified. Root owns superseded PR1133 and source-branch cleanup.",
-    "next": "Release this integrated bounded amendment as handoff, then re-enter canonical MAT dispatcher on a fresh dedicated branch. MAT-ENVELOPE remains planned. If selected again, develop the separate floor-barrier/service-access comparison using dated IKO floor-field and repair evidence plus MAC wall-key limits; preserve W1, fixed court W2 and ground damp/gas as distinct duties. Exact mortar/slate, connected wall/floor/threshold/penetration, thermal/support and actual constituents remain unqualified."
-  },
-  "releasedAt": "2026-10-31T10:18:19.380Z",
-  "releaseReason": "handoff"
+  }
 }
