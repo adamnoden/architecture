@@ -83,8 +83,7 @@ flowchart LR
   end
   subgraph g_ADE["ADE"]
     direction TB
-    n_ADE_SECTION_VIEW["ADE-SECTION-VIEW<br/>Prove source-owned orthographic cut, context and occlusion semantics<br/><b>READY</b>"]
-    n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>BLOCKED</b>"]
+    n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>READY</b>"]
     n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
@@ -161,7 +160,6 @@ flowchart LR
   n_HRS_SYNTHESIS --> n_PLT_FINAL_PREP
   n_PLT_FINAL_PREP --> n_PLT_PRINT_REVIEW
   n_TRIAD_GATE --> n_BCR_BAY_DESIGN
-  n_ADE_SECTION_VIEW --> n_ADE_SECTION_PARITY
   n_HRS_TECHNICAL --> n_ADE_MODEL
   n_ADE_MODEL --> n_ADE_DETAILS
   n_BCR_BAY_DESIGN --> n_ADE_DETAILS
@@ -238,8 +236,7 @@ flowchart LR
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
   class n_BCR_BAY_DESIGN blocked;
-  class n_ADE_SECTION_VIEW ready;
-  class n_ADE_SECTION_PARITY blocked;
+  class n_ADE_SECTION_PARITY ready;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
   class n_ADE_SCHEDULES blocked;
@@ -455,8 +452,8 @@ flowchart LR
   subgraph g_ADE["ADE"]
     direction TB
     n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>DONE</b>"]
-    n_ADE_SECTION_VIEW["ADE-SECTION-VIEW<br/>Prove source-owned orthographic cut, context and occlusion semantics<br/><b>READY</b>"]
-    n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>BLOCKED</b>"]
+    n_ADE_SECTION_VIEW["ADE-SECTION-VIEW<br/>Prove source-owned orthographic cut, context and occlusion semantics<br/><b>DONE</b>"]
+    n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>READY</b>"]
     n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
@@ -904,8 +901,8 @@ flowchart LR
   class n_ADE_DELIVERY_AUDIT done;
   class n_BCR_BAY_BRIEF done;
   class n_BCR_BAY_DESIGN blocked;
-  class n_ADE_SECTION_VIEW ready;
-  class n_ADE_SECTION_PARITY blocked;
+  class n_ADE_SECTION_VIEW done;
+  class n_ADE_SECTION_PARITY ready;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
   class n_ADE_SCHEDULES blocked;
