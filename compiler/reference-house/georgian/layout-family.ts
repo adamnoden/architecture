@@ -4,6 +4,8 @@ import {sectionAssemblyModels,sectionAssemblyChoices,sectionProvenance} from './
 import {sectionWallToDrawingPrimitives,sectionFloorToDrawingPrimitives} from '../../architectural-drawing/section-assemblies.js'
 import {framedApertureToDrawingPrimitives,cutApertureToDrawingPrimitives} from '../../architectural-drawing/aperture-drawing.js'
 import {createSectionPaperProjection} from '../../publication-drawing/projection.js'
+import {compileCurrentSectionContext} from './section-context.js'
+import {spatialSegmentsToDrawingPrimitives} from '../../architectural-drawing/spatial-line-drawing.js'
 import type {DrawingSceneV2,DrawingLineRole,DrawingDashRole} from '../../publication-drawing-v2/model.js'
 
 /** One current candidate family; older specimen adapters retain their exact identities. */
@@ -83,6 +85,30 @@ export function layoutAperturePrimitives(view:ElevationView,apertures:ReturnType
 export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100|50|25){
  const {scene,p,line,text,box,finish}=context(view,scale),station=view==='PRINCIPAL'?layoutFamilySource.cuts.A:layoutFamilySource.cuts.B,m=layoutSectionAt(station)
  for(const w of m.walls)w.holes=w.holes.map(h=>({...h,id:(h.lo>=design.levels.first?'FIRST-':'GROUND-')+h.id}))
+ const distance=Math.min(station,design.shell-station),r=design.roof.ridgeInset,c=design.court
+ const roofRanges=m.court?[[-200,c.y+200],[c.y+c.depth-200,design.shell+200]]:[[-200,design.shell+200]]
+ // The same source-derived cut profile supplies both the filled section and
+ // exact planar occluder faces; neither is an independently invented roof.
+ const roofSections=roofRanges.map(([lo,hi],i)=>{
+  const run=[lo,...[distance,r,design.shell-r,design.shell-distance].filter(y=>y>lo&&y<hi),hi].sort((a,b)=>a-b).filter((y,i,a)=>i===0||y!==a[i-1])
+  const top=run.map(y=>({y,z:currentRoofZ(station,y)}))
+  const lower=[...top].reverse().map(q=>({...q,z:q.z-layoutFamilySource.roofBuildZone}))
+  return {i,top,lower}
+ })
+ const roofCutFaces=roofSections.flatMap(section=>section.top.slice(0,-1).map((a,i)=>{
+  const b=section.top[i+1],z=layoutFamilySource.roofBuildZone
+  return {id:'section-roof-cut-'+section.i+'-'+i,vertices:[
+   {x:station,y:a.y,z:a.z},{x:station,y:b.y,z:b.z},
+   {x:station,y:b.y,z:b.z-z},{x:station,y:a.y,z:a.z-z}
+  ]}
+ }))
+ // Draw actual background first. Cut construction is subsequently rendered on
+ // top, while the 3D visibility compiler has already removed hidden intervals.
+ const background=compileCurrentSectionContext({station,roofBuildDepth:layoutFamilySource.roofBuildZone,
+  walls:m.walls,cutRoofFaces:roofCutFaces})
+ scene.primitives.push(...spatialSegmentsToDrawingPrimitives(background.background,{
+  basis:background.basis,paperOrigin:p.point(0,0),paperMmPerModelMm:1/scale,provenance
+ }))
  const assemblies=sectionAssemblyModels(m,y=>currentRoofZ(station,y)-layoutFamilySource.roofBuildZone,{firstFloorRuns:m.firstFloorRuns,storageDeckRuns:m.storageDeckRuns})
  for(const w of assemblies.walls)scene.primitives.push(...sectionWallToDrawingPrimitives(w,p))
  for(const f of assemblies.floors){
@@ -97,18 +123,14 @@ export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100
   box('partition-'+i,w.at-62.5,w.base+(w.door?2850:0),125,w.door?250:3100,'faint')
   if(w.door)scene.primitives.push(...cutApertureToDrawingPrimitives({id:w.id+'-'+w.base,frameLeft:w.at-25,frameWidth:50,bottom:w.base,top:w.base+2850,leafX:w.at,leafBottom:w.base+50,leafTop:w.base+2800,provenance},p))
  }
- const distance=Math.min(station,design.shell-station),r=design.roof.ridgeInset,c=design.court
- const runs=m.court?[[-200,c.y+200],[c.y+c.depth-200,12200]]:[[-200,12200]]
- for(const [i,[lo,hi]]of runs.entries()){
-  const run=[lo,...[distance,r,design.shell-r,design.shell-distance].filter(y=>y>lo&&y<hi),hi].sort((a,b)=>a-b).filter((y,i,a)=>i===0||y!==a[i-1])
-  const upper=run.map(y=>p.point(y,currentRoofZ(station,y))),lower=[...run].reverse().map(y=>p.point(y,currentRoofZ(station,y)-300))
-  scene.primitives.push({kind:'path',id:'section-roof-'+i,rings:[[...upper,...lower]],stroke:'profile',fill:'faint',metadata:{...metadata,representation:'source-derived-roof-trace',flatRoof:false}})
+ for(const roof of roofSections){
+  scene.primitives.push({kind:'path',id:'section-roof-'+roof.i,
+   rings:[[...roof.top,...roof.lower].map(q=>p.point(q.y,q.z))],
+   stroke:'profile',fill:'faint',metadata:{...metadata,representation:'source-derived-roof-trace',flatRoof:false}})
  }
  if(m.court){
-  for(const level of ['GROUND','FIRST'] as const)for(const o of revisionOpenings(level).filter(o=>o.wall==='court-west')){
-   const base=level==='GROUND'?0:design.levels.first,z=base+(o.sill??750),head=base+(o.head??2850)
-   scene.primitives.push(...framedApertureToDrawingPrimitives({id:'beyond-'+level+'-'+o.id,left:o.centre-o.width/2,bottom:z,width:o.width,height:head-z,frameInset:60,columns:3,rows:4,sill:{height:60,projection:80},head:{height:120,projection:0},role:'secondary',provenance},p))
-  }
+  // Hosted apertures and their wall termination come from the visible 3D
+  // courtyard facades above; no unsupported free-floating window glyphs.
   text('open-court',6000,7200,'OPEN COURTYARD','marker');line('court-grade',c.y,-150,c.y+c.depth,-150)
  }
  if(m.voidCut){
