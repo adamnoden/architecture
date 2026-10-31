@@ -51,6 +51,9 @@ export interface SectionViewInput {
   facades?: readonly HostedFacade[]
   /** Other controlled planar surfaces, e.g. roof fields, not silhouette sketches. */
   contextFaces?: readonly ModelFace3D[]
+  /** Opaque source-owned geometry that masks farther edges without drawing
+   * its own background outlines. */
+  occluderFaces?: readonly ModelFace3D[]
   /** Explicit intersections/section caps. This compiler does not infer solids. */
   cutFaces?: readonly ModelFace3D[]
 }
@@ -171,7 +174,8 @@ function validateFace(face: ModelFace3D): void {
 export function compileOrthographicSectionView(input: SectionViewInput): OrthographicSectionView {
   const basis = sectionProjectionBasis(input.section)
   createParallelProjection3D({basis})
-  const facades = input.facades ?? [], context = input.contextFaces ?? [], cutFaces = input.cutFaces ?? []
+  const facades = input.facades ?? [], context = input.contextFaces ?? []
+  const occluders = input.occluderFaces ?? [], cutFaces = input.cutFaces ?? []
   const facadeIds = new Set<string>()
   const built = facades.map(f => {
     if (facadeIds.has(f.id)) throw new Error(`Duplicate hosted facade id: ${f.id}`)
@@ -182,7 +186,7 @@ export function compileOrthographicSectionView(input: SectionViewInput): Orthogr
   const details = built.flatMap(f => f.details)
   if (!faces.length && !cutFaces.length) throw new Error('Section view requires actual source surfaces')
   const ids = new Set<string>()
-  for (const face of [...faces, ...cutFaces]) {
+  for (const face of [...faces, ...occluders, ...cutFaces]) {
     validateFace(face)
     if (ids.has(face.id)) throw new Error(`Duplicate section face id: ${face.id}`)
     ids.add(face.id)
@@ -199,10 +203,15 @@ export function compileOrthographicSectionView(input: SectionViewInput): Orthogr
     axis: input.section.axis, coordinate: input.section.at,
     keep: input.section.looking === 'negative' ? 'less-or-equal' : 'greater-or-equal'
   })).filter((f): f is ModelFace3D => f !== null)
+  const retainedOccluders = [...occluders].sort((a,b)=>a.id.localeCompare(b.id))
+    .map(face => clipModelFaceByAxisPlane(face, {
+      axis: input.section.axis, coordinate: input.section.at,
+      keep: input.section.looking === 'negative' ? 'less-or-equal' : 'greater-or-equal'
+    })).filter((f): f is ModelFace3D => f !== null)
   const rawEdges = boundaryMeshEdges(ordered, () => 'secondary')
   const candidates = [...rawEdges, ...details].map(s => retainSegment(s, input.section))
     .filter((s): s is SpatialSegment => s !== null)
-  const background = visibleSpatialSegments(candidates, [...retainedFaces, ...cutFaces], basis)
+  const background = visibleSpatialSegments(candidates, [...retainedFaces, ...retainedOccluders, ...cutFaces], basis)
   const cut = boundaryMeshEdges([...cutFaces].sort((a, b) => a.id.localeCompare(b.id)), () => 'cut')
   return {basis, background, cut, retainedFaces}
 }
