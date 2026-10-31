@@ -9,8 +9,8 @@
     "label": "swarm-next-root-983b7ee"
   },
   "claimedAt": "2026-10-31T09:27:55.733Z",
-  "heartbeatAt": "2026-10-31T09:27:55.733Z",
-  "expiresAt": "2026-10-31T10:12:55.733Z",
+  "heartbeatAt": "2026-10-31T09:43:52.615Z",
+  "expiresAt": "2026-10-31T10:28:52.615Z",
   "branch": "work/swarm-next-20261031",
   "predecessor": {
     "leaseId": "c04b4d58-10c3-48e1-be2c-beb3db9d2129",
@@ -31,5 +31,10 @@
       "evidence": "PR #1128 merged as 1486df666d2c6758ccc0e93212f9d5290f7da7dd. Corrected head d6b2cdf3c8425e431e8a92a8736f909d4193a835 passed full CI41188529412 and fresh canonical preflight2026-10-31T09:26:27.552Z. Main matches all three RWT changed files. Initial public-link CI failure corrected; no check weakened.",
       "next": "RWT-METALS remains planned. Bind an actual matched108mm repair/joint assembly, fixed W2 outlet, threshold withdrawal/reinstatement, supports and floor/thermal continuity; complete collection, brass-channel and concealed-system comparisons still required. No crossing or hydraulic acceptance."
     }
+  },
+  "checkpoint": {
+    "evidence": "Published head8768c44101ba3977f84b05bd243467517bf16f61 tree5a7adac35c92e0e650104409aeda896491f6c08e on mainb9f64d69. Independently reviewed retained court-tail versus separate crossing renewal; exact copper pan/flange/brazed-pipe source family and W1 leakage/open-bore limits. Repository/publication/source/docs/diff checks passed; no geometry, product, pressure or lifecycle pass claimed.",
+    "next": "Reconcile pending envelope and water-service integrations, open bounded PR, require full exact-head CI and fresh canonical preflight, then integrate and reconcile/release. Current source remains RWT-METALS planned with connected assembly and physical qualification open.",
+    "blocker": "Serialising main integration before final PR checks; local Chrome155 missing, full health to be established by exact-head CI."
   }
 }
