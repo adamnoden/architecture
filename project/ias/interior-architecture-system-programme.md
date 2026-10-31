@@ -85,6 +85,8 @@ The [sink set-out and renewal successor](ias-03-sink-renewal.md) adds the manufa
 
 The [service-parts and fixing-release continuation](ias-03-sink-service-parts.md) supplies current model-associated service codes and distinguishes generic clip anchorage from the complete installed mounting assembly. It carries the release task into all four sides of the existing cabinet comparison, while leaving delivered-kit identity, connection faces, constituent admission and actual human access unverified. IS-04 and IAS-03 remain open.
 
+The [integral sinktop comparison](ias-03-sink-renewal.md#integral-sinktop-comparison--31-october-2026) tests a real alternative to separate bowl-rim release. A welded top moves renewal to the bowl and top together; the ordinary bonded backing remains unadmitted, and the manufacturer's silicone Clamp Join prevents a local wet-top module from being treated as a dry metal-only solution. An authored full-length rectangular top cannot lie wholly within the existing flat staging field at any rotation. The source counter territory is not assumed to be one-piece fabrication, and a smaller module still needs its new support, joints and complete release. No integrated family, geometry change or IAS-03 completion is selected.
+
 IAS runs in parallel with OAS #942 and HAD #943 after BSR. It works against the controlled current Reference House/PLT geometry. Any material section-depth, plan, opening or service-space conflict is an explicit rewind request; IAS may not silently fork the house.
 
 OAS owns the opening cassette/envelope crossing; IAS owns the room-side assembly meeting it. HAD owns visible composition/material expression and consumes IAS dimensional/assembly constraints.

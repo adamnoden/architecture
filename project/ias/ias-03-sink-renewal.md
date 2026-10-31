@@ -80,13 +80,59 @@ The S8905AA metal-trap enquiry has not recovered a complete installed/release en
 
 If the exact undermount assembly cannot achieve admissible materials and practical renewal, compare a real alternative mounting family with its own waste and support details. A generic inset outline would simply reopen the same gaps. The witness surface, first-wetting paths, accessible isolation, appliance disconnection before withdrawal and all-affected-surface drying duties from the parent result remain active.
 
+## Integral sinktop comparison — 31 October 2026
+
+**Continuation base: `b9f64d69c8c5226580a9a459c1820bce42c51b7b`.** A welded bowl and worktop offer a real alternative to the separate rim fixings, but change the object being renewed. The result is to retain an integral sinktop as an explicit assembly challenger, with its replacement boundary designed at the same time. It earns neither material admission nor a smaller maintenance task.
+
+The current Franke waste remains unbound. A fresh read of the [French manufacturer page for 112.0264.985][current-waste] recovers its 90 mm description, overflow connection and an installation-guide label, but no usable current installed section. That retrieval limit is not evidence that a drawing does not exist. Those facts do not convert the earlier approximate 636 datum into a current sealing plane or establish the delivered UK kit.
+
+### One actual integrated family, with the support and joint duties retained
+
+The following manufacturer HTML pages were read on 31 October 2026. No GEC source drawing was visually inspected or scaled, and no installed assembly was selected.
+
+| Primary evidence | Consequence for this comparison |
+|---|---|
+| [GEC Anderson Decimetric Classic][gec-classic] offers worktops 500–3800 long and 600 or 700 wide; its [G54 bowl][gec-g54] is 500 × 400 × 250 with a stated Ø38 waste and overflow. The [worktop configurations][gec-configurations] identify integral bowls. | A genuine integral family exists in the relevant range. G54 is a different bowl and outlet arrangement; the Franke cutout, 234 waste projection, connections and clip layout cannot be transferred to it. |
+| The ordinary [edge description][gec-edges] specifies a bonded 19 mm substrate. The [installation page][gec-installation] describes a sealed board substrate and screw fixing from below; the [FAQ][gec-faq] locates the worktop on supporting cabinets. | Removing the separate rim clips does not remove underside fixing access. The backing, bond, board seal, cabinet support and all fasteners need their own declarations and release detail. Their complete chemistry is not established here. |
+| The same [edge page][gec-edges] separately describes SolidTop as solid steel plate, with welded bowls and 4 / 5 / 6 / 8 mm options. | This is a distinct lead, not proof of a backing-free installed assembly. Its actual support, damping, attachment and complete constituents remain unknown; ordinary board-and-screw instructions are not assigned to the plate variant. |
+| The [configuration page][gec-configurations] says the Clamp Join bolts the sections together and uses clear silicone within the joint. The [FAQ][gec-faq] also describes a mastic-sealed butt join. | A mechanical clamp is not a dry metal-only water boundary. The declared silicone joint is rejected as a current default under the owner policy. Removing its seal without a supported alternative is not an admissible detail. |
+
+A sound welded bowl-to-top junction removes the separate rim-seal and clip-release task. It also removes ordinary independent bowl release: cutting and re-welding would be a different repair process, with its own access, heat, finish and reinstatement evidence. Routine waste/trap maintenance must still work beneath the retained bowl, before any larger assembly is moved.
+
+### Locate the replacement boundary before treating the join as solved
+
+The [HAD Option B quantity record](../had/studies/kitchen-options.json) describes a continuous **counter territory**, x8100–11582.5 / y10982.5–11582.5. It does not specify one-piece fabrication. The following compares the retained trial with two authored alternatives within that unadopted kitchen; none changes the house source.
+
+| Alternative | Renewal consequence |
+|---|---|
+| Retain the separate Franke undermount comparison | Renewing the bowl can retain the top only if all clips, anchors, seal and services can actually be released. The earlier supported-lowering/front-withdrawal direction remains unproved. |
+| Make the entire 3482.5 × 600 counter territory one integral sinktop | The ordinary replacement object becomes the top and bowl together. Release its fixings and every service or adjacent connection restraining the chosen moving assembly. Any tap or cooking component carried with it belongs in the moving envelope and mass; otherwise its separate release must be shown. The previous flat staging field does not contain this top. |
+| Author a separately replaceable 800 × 600 wet top over the existing sink module, x8700–9500 | The nominal plan rectangle is smaller, but the candidate introduces two worktop interfaces at the module ends. Both require independent support, accessible release and an admitted water joint. The published silicone Clamp Join does not satisfy that last condition. This is a possible replacement boundary, not a selected manufacturer configuration. |
+
+The [cabinet quantity record](studies/sink-cabinet.json) reserves a temporary **3300 × 1200** field at x8100–11400 / y9782.5–10982.5. Its area alone cannot establish containment. For the hypothetical full rectangular top, the opposite-corner distance exceeds the largest distance between two points in that field:
+
+```text
+Full-top plan diagonal = sqrt(3482.5² + 600²)  = 3533.8 mm
+Staging-field diagonal = sqrt(3300² + 1200²)   = 3511.4 mm
+```
+
+Thus that complete rectangular plan cannot lie wholly inside the field at **any in-plane rotation**. This is a necessary containment test, not a claim that every top shape, tilted movement, carrying method or larger room arrangement is impossible. The field is an authored reservation, not a physical wall. A different maintenance arrangement could be designed, but it is not supplied by the previous 600-body approach paths. The exact nominal squared diagonals are 12,487,806.25 and 12,330,000 mm²; the displayed rounding is not a handling clearance or tolerance.
+
+The proposed 800 × 600 wet-top rectangle can be contained in the empty field without rotation. That says nothing about its projecting bowl, actual mass, supports, hands, safe lift, vertical release or route out of the house. The existing sink-front aperture and the inherited 636 waste datum do not describe this new assembly.
+
+### Assembly disposition
+
+Continue the separate-bowl route only with its actual retaining and connected assembly. Develop an integral alternative only with an explicit top replacement boundary. A local wet top must resolve both new counter joints; a whole top must pay for its larger support and handling operation. Both integrated-top alternatives must account for any wall seals, splashback or window-sill capture, tap tails, waste/overflow and appliance connections that restrain the chosen moving assembly. These are not assumed to be release tasks for a separate bowl beneath a retained top. A metal surface does not disclose the underside or establish access to inspect and dry first-wetted backing.
+
+The documented silicone clamp joint cannot be selected by default, the ordinary bonded top is not materially admitted, and SolidTop's complete installed support remains unresolved. No exception, alternative seal or omitted function is assumed. The useful design advance is this comparison between independent bowl renewal and top-plus-bowl renewal, including the additional joints required by segmentation; it does not select GEC, alter Option B or close IS-04.
+
 ## Next concrete input and closeout
 
 The [service-parts and fixing-release continuation](ias-03-sink-service-parts.md) now identifies exact model-associated waste, overflow, plug/seal and clip service codes, and distinguishes two generic anchoring arrangements. It locates the four-side access duties in this same cabinet. Those associations do not verify a delivered kit, convert the dated waste datum into a current connection face or demonstrate complete renewal.
 
-The useful next step is the **current kit identity and coordinated assembly section**: actual sink/waste/overflow; a compatible kitchen trap and authorised appliance connection; all constituent declarations; clip/support arrangement; wet isolation; installed datums and disconnection travel. Locate them in this cabinet and show both ordinary service and supported bowl withdrawal. Source facts should displace the dated illustrative values when the current assembly is verified.
+The useful next step is the **current kit identity and coordinated assembly section**: actual sink/waste/overflow; a compatible kitchen trap and authorised appliance connection; all constituent declarations; clip/support arrangement; wet isolation; installed datums and disconnection travel. Locate them in this cabinet and show both ordinary service and supported bowl withdrawal. Source facts should displace the dated illustrative values when the current assembly is verified. If an integral sinktop is pursued instead, bind its support and replacement boundary first; the comparison above identifies the additional joint or handling burden that its assembly section must resolve.
 
-This result earns the missing waste projection, a bounded cutout/set-out comparison and a clear renewal design direction. It does not close IS-04, adopt Option B, select a complete sink family or finish IAS-03. Worktop capacity, human maintenance, first-water declaration, drying and plumbing performance remain unproved. The other IS-01–06 obligations survive.
+This result earns the dated illustrated waste projection, a bounded cutout/set-out comparison, a renewal design direction and the integral-family replacement-boundary comparison. It does not close IS-04, adopt Option B, select a complete sink family or finish IAS-03. Worktop capacity, human maintenance, first-water declaration, drying and plumbing performance remain unproved. The other IS-01–06 obligations survive.
 
 ## Reproduction and validation
 
@@ -95,8 +141,16 @@ node --import tsx project/ias/studies/sink-cabinet.ts --check
 node --import tsx project/ias/studies/sink-renewal.ts --check
 ```
 
-The new generator fingerprints the previous cabinet JSON and its upstream HAD candidate, records the exact source-document identities, checks the derived quantities and preserves unknown physical assembly values. The source pages and analytical sheet are visually inspected, and an independent review checked the source datums, nominal/tolerance distinction and arithmetic. Applicable repository checks, exact-head full CI and fresh canonical publication preflight are integration evidence only; none supplies physical product approval.
+The earlier Franke generator fingerprints the previous cabinet JSON and its upstream HAD candidate, records the exact source-document identities, checks the derived quantities and preserves unknown physical assembly values. For that earlier comparison, the source PDFs and analytical sheet were visually inspected, and an independent review checked the source datums, nominal/tolerance distinction and arithmetic. Applicable repository checks, exact-head full CI and fresh canonical publication preflight are integration evidence only; none supplies physical product approval.
 
+The integral-family continuation uses the linked manufacturer HTML and the unchanged counter/staging records. Its diagonal test is an independent planning-envelope calculation; the existing generator, JSON and drawing still describe the Franke comparison and are not relabelled as an integrated-top study. Independent source/claim and geometry/prose reviews passed: they checked the manufacturer facts, exact-main JSON inputs, diagonal arithmetic and limits of the conclusions. No new physical test or installed assembly acceptance is recorded.
+
+[current-waste]: https://www.franke.com/fr/fr/home-solutions/produits/accessoires/product-detail-page.html/112.0264.985.html
+[gec-classic]: https://gecanderson.co.uk/products/decimetric-modular-kitchen-furniture-system-stainless-steel-finish/classic/
+[gec-g54]: https://gecanderson.co.uk/products/decimetric-modular-kitchen-furniture-system-stainless-steel-finish/classic/4dm/
+[gec-configurations]: https://gecanderson.co.uk/products/made-to-measure/configurations/
+[gec-edges]: https://gecanderson.co.uk/products/made-to-measure/edges/
+[gec-installation]: https://gecanderson.co.uk/services/installation/
+[gec-faq]: https://gecanderson.co.uk/faqs/
 [drawing]: https://fcl-p-100-api.prod.apimanagement.eu10.hana.ondemand.com/media/medias/TDM-0050569F32AD1EDEB9EB2D45CC04FD55-V06-000.pdf?context=bWFzdGVyfHJvb3R8MjcxMjg4fGFwcGxpY2F0aW9uL3BkZnxhREUwTDJneU9DOHhNemczTkRjNE5UTXlNRGs1TUM5VVJFMWZNREExTURVMk9VWXpNa0ZFTVVWRVJVSTVSVUl5UkRRMVEwTXdORVpFTlRWZlZqQTJYekF3TUM1d1pHWXw2ODE4ZDFiOGE0N2RmOWQ0ZjM0YjEwZjk1M2ZiOWEzNTc3ZWEyMDM0YmQyOWVhNjhhMDkzNDhkYmEzMzJhZWY1
 [manual]: https://fcl-p-100-api.prod.apimanagement.eu10.hana.ondemand.com/media/medias/TUM-B3C1396B10711FD190EAC457654FE97D-V02-MU.pdf?context=bWFzdGVyfHJvb3R8Mzc5NzgyN3xhcHBsaWNhdGlvbi9wZGZ8YURBeUwyZzRPQzh6TURBd09EY3pNakV5TXpFMk5pOVVWVTFmUWpORE1UTTVOa0l4TURjeE1VWkVNVGt3UlVGRE5EVTNOalUwUmtVNU4wUmZWakF5WDAxVkxuQmtaZ3w4MmE2NWU1N2JjNDIzMzBiNzYzZTI4NmEyZjI3MjZlZmU1YzljOGMwNjEwNTY1ZjJjOWI5MTlhNTYyYzNmMDNj
-
