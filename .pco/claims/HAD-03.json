@@ -9,8 +9,8 @@
     "label": "swarm-782cae-live-triage"
   },
   "claimedAt": "2026-10-31T17:47:38.664Z",
-  "heartbeatAt": "2026-10-31T18:05:25.180Z",
-  "expiresAt": "2026-10-31T18:50:25.180Z",
+  "heartbeatAt": "2026-10-31T18:10:32.460Z",
+  "expiresAt": "2026-10-31T18:55:32.460Z",
   "branch": "work/swarm-782cae-next",
   "predecessor": {
     "leaseId": "a4306499-2ae9-43d1-b3df-4e343c541df6",
@@ -36,8 +36,8 @@
   },
   "pr": 1163,
   "checkpoint": {
-    "evidence": "PR #1163 published at f8b896d8cc18a1c341099f50aceb54412feb80b7, tree b40ba15da326928f8a16ff14faa2b231060c1c38. Retained Study handing has a reversible two-grip sequence within 600 mm reach; a separate 90 mm chair move enables the west-window approach. Independent movement and source/chair/window reviews, rendered A3 inspection, deterministic checks and repository validation pass.",
-    "next": "Require full exact-head publication CI and fresh canonical preflight, then expected-head merge, accepted checkpoint and release. Bind actual frame/stop/hardware, human operation, Study chair and first south-window use/release before adoption.",
-    "blocker": "HAD-03 remains planned. Two hands and small nominal margins are conditions of this proxy witness, not evidence of comfortable or inclusive installed operation. No source geometry or material selection changes."
+    "evidence": "PR #1163 merged as 7f747d98d17887bd66b0bdce78ec0cbdbe94087b. Accepted tree b40ba15da326928f8a16ff14faa2b231060c1c38 equals validated head f8b896d8cc18a1c341099f50aceb54412feb80b7. Full CI 41227653759 passed; fresh canonical preflight passed at 18:08:47.747 UTC. Independent movement and chair/window/source reviews, rendered A3 inspection, deterministic controls and repository validation passed; remote branch absence verified.",
+    "next": "Carry the retained-handing two-grip sequence and reversible chair/window state comparison into actual doorset and room decisions. Bind actual frame/stop/hardware placement and real two-hand operation, the Study chair/desk section, and first south-window use/release. Assess broader HAD continuation from current sources before producing another isolated witness.",
+    "blocker": "HAD-03 remains planned. Small proxy clearances and authored contacts establish neither installed fit nor human suitability, seated comfort, material admission, sash operation or a coherent completed house selection."
   }
 }
