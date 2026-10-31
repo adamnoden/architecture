@@ -9,8 +9,8 @@
     "label": "issue-comment-6535667492"
   },
   "claimedAt": "2026-10-30T23:28:04.000Z",
-  "heartbeatAt": "2026-10-30T23:59:59.000Z",
-  "expiresAt": "2026-10-31T00:44:59.000Z",
+  "heartbeatAt": "2026-10-31T00:06:56.000Z",
+  "expiresAt": "2026-10-31T00:51:56.000Z",
   "branch": "work/mvb-chat-6535667492",
   "predecessor": {
     "leaseId": "26286684-da96-4e05-ae47-8e2024d5b45c",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1121 head c636f406631a7baa762054f2215e9383a4aceafc: six-path segmented-access and Endex source result; inspected sheet and independent reviews; main ceeb3af0 retained.",
-    "next": "Inspect exact-head CI, rerun canonical preflight on current branch, merge partial result and release for handoff. Root relays remote writes.",
-    "blocker": "Installed joints/seals, W2 penetration, module handling, dry access, supports and hydraulics remain unproved; RWT-METALS stays planned."
+    "evidence": "PR #1121 merged 8d6c7841f7ccfd5f63ad77fb4e8b630259645fe2. Head d30173b passed full CI 41147845050 and canonical preflight 124378080990; inspected sheet, source and geometry reviews retained.",
+    "next": "Develop actual fixed W2 penetration, matched joints/seals and complete threshold/module release with supports, floor/thermal continuity and occupied maintenance states.",
+    "blocker": "No installed terminal, dry access, reduced handling corridor, support or hydraulic acceptance. RWT-METALS remains planned."
   },
   "pr": 1121
 }
