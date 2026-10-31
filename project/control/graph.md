@@ -108,7 +108,6 @@ flowchart LR
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
-    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Internal floor-edge research, calculations and provisional option reduction<br/><b>READY</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
   end
   subgraph g_SWE["SWE"]
@@ -247,7 +246,6 @@ flowchart LR
   class n_DEL_COMMISSION_PLAN blocked;
   class n_PHY_01 held;
   class n_PHY_02 held;
-  class n_PHY_03_ENGINEERING ready;
   class n_PHY_04 ready;
   class n_EPR_RH11 ready;
   class n_DEL_CURRENT blocked;
@@ -474,7 +472,7 @@ flowchart LR
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
-    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Internal floor-edge research, calculations and provisional option reduction<br/><b>READY</b>"]
+    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Internal floor-edge research, calculations and provisional option reduction<br/><b>DONE</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
     n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>DONE</b>"]
   end
@@ -908,7 +906,7 @@ flowchart LR
   class n_DEL_COMMISSION_PLAN blocked;
   class n_PHY_01 held;
   class n_PHY_02 held;
-  class n_PHY_03_ENGINEERING ready;
+  class n_PHY_03_ENGINEERING done;
   class n_PHY_04 ready;
   class n_EPR_DESK_REVIEW done;
   class n_EPR_RH11 ready;
