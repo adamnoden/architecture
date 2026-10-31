@@ -13,8 +13,8 @@
   "expiresAt": "2026-10-31T22:29:19.996Z",
   "branch": "work/ade-section-view-resume-1187",
   "checkpoint": {
-    "evidence": "Owner continuation after handoff: prior PR #1188 exact head 605a454 with 10 green checks; predecessor lease released",
-    "next": "Create recovery branch, PR and get runner-side publication preflight on exact head before merge."
+    "evidence": "Recovered predecessor 605a454 on distinct branch and new draft PR #1189; exact-head independent CI pending",
+    "next": "Establish runner-side native merge preflight on verified exact head then merge; do not merge if unchecked."
   },
   "predecessor": {
     "leaseId": "ef3a98c4-6fc9-4fbc-8034-913830891a3a",
@@ -25,5 +25,6 @@
       "evidence": "ADE-SECTION-VIEW code and generic tests complete on draft PR #1188 head 605a454e, full PR validation success on implementation head aa720044; latest closeout-head CI in progress; packet-check passed",
       "next": "Reacquire ADE-SECTION-VIEW generation 2 (manual owner-directed), update PR Lease line, inspect exact-head CI, execute native control:merge-check on runner, merge with expected head SHA, release and verify main. Then claim ADE-SECTION-PARITY for accepted layout-family current house migration."
     }
-  }
+  },
+  "pr": 1189
 }
