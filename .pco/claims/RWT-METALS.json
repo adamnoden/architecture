@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-METALS",
   "generation": 13,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "516a1970-2115-4092-bea7-825005c6900a",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-782cae-rwt-worker"
   },
   "claimedAt": "2026-10-31T19:58:31.071Z",
-  "heartbeatAt": "2026-10-31T20:33:27.390Z",
-  "expiresAt": "2026-10-31T21:18:27.390Z",
+  "heartbeatAt": "2026-10-31T20:33:47.241Z",
+  "expiresAt": "2026-10-31T20:33:47.241Z",
   "branch": "work/swarm-782cae-rwt-1957",
   "note": "Owner-directed RWT-METALS, 31 October 2026: outer-west copper receiver cross-seam bearing, thermal movement and first release. Inspect accepted PR1165 evidence. Worker live_triage executes; root services connector transport and integration.",
   "predecessor": {
@@ -40,5 +40,7 @@
     "next": "Release handoff after verified integration and complete local cleanup. Next RWT-METALS work needs the actual seam underside/backing and load path, frame-relative movement, terminal profile and complete accessible repair sequence; retain terminal-side restraint development direction and all authored-input limits.",
     "blocker": "No integration blocker remains. This bounded support/release investigation does not qualify actual bearing, hardware, site levels, complete wet-body extraction or the wider copper/brass/hidden-route candidate; RWT-METALS remains planned."
   },
-  "pr": 1179
+  "pr": 1179,
+  "releasedAt": "2026-10-31T20:33:47.241Z",
+  "releaseReason": "handoff"
 }
