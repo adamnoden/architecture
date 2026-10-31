@@ -43,6 +43,8 @@ The audit locates hidden polymer dependencies in wet-room bonding products and f
 
 MAT-ENVELOPE should first develop the ground/wall/floor section and substantial mineral damp barrier, including joints, bypasses and structural interfaces, under the amendment above. MAT-SERVICES owns complete service/equipment alternatives with RWT retaining its single metal-compatibility record. MAT-INTERIORS must revisit the complete wet assembly and actual finish/joinery constituents. Current design unknowns remain visible work, not an exemption from the policy.
 
+The [enamelled shower-tray alternatives study](interior-shower-tray-alternatives.md) advances MAT-INTERIORS through the complete tray/support/wall/waste boundary. The steel/enamel body is promising; the examined EPS and Basic supports do not clear the assembly. Drain location, accessible renewal and a fully disclosed support remain active design work. This is partial progress and does not complete MAT-INTERIORS.
+
 Historical holds preserve the old source identities and technical learning. Existing completed research packets remain complete at their original scope; successors and the final material gate prevent old evidence being silently promoted to new policy compliance.
 
 ## Primary-source reconnaissance, accessed 30 October 2026
