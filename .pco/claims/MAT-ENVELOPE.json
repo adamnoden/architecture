@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 8,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "77833f2c-876c-438a-bdd9-a2e43f2d1353",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-2900-worker-three-mat"
   },
   "claimedAt": "2026-10-31T17:10:34.409Z",
-  "heartbeatAt": "2026-10-31T17:42:09.935Z",
-  "expiresAt": "2026-10-31T18:27:09.935Z",
+  "heartbeatAt": "2026-10-31T17:42:46.187Z",
+  "expiresAt": "2026-10-31T17:42:46.187Z",
   "branch": "work/swarm-2900-interfaces-20261031",
   "predecessor": {
     "leaseId": "456fc77f-d505-42da-8915-c81dbfcb16db",
@@ -37,5 +37,7 @@
     "next": "Resolve one configured wall-base and floor-to-mineral-DPC junction, preserving the clear-cavity/drained-tray alternatives, all retained constituents, structural fill, passive site-water conditions and maintainable-side service access. Reconcile NCCT outlet instructions and its separate inner-leaf membrane interface before any selection.",
     "blocker": "No exact complete inner-leaf/floor transition, installed membrane/auxiliary disclosure, project outlet setting-out or actual brick/mortar/load qualification; site levels and complete assembly remain unselected."
   },
-  "pr": 1157
+  "pr": 1157,
+  "releasedAt": "2026-10-31T17:42:46.187Z",
+  "releaseReason": "handoff"
 }
