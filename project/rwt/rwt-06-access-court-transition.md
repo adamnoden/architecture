@@ -6,6 +6,8 @@
 
 ## Later connected comparison
 
+The [threshold-only renewal comparison](threshold-renewal-access.md) now distinguishes the leading room-side fitting from the trailing fitting that must pass through the threshold band. It develops inward withdrawal of a finite short carrier and binds cutting, reinstatement, retained water-boundary and support duties. Its historical outstand sensitivity is not an installed assembly or working clearance; RWT-06 remains planned.
+
 The [30 October north-axis study](north-court-carrier.md) tests a continuous full floor over separate sleeved carriers, exterior-only renewal and a lower explicit receiving limit. It also rejects the earlier shallow insulated-cover/free-outfall combination using matched product evidence and clearance arithmetic. This does not adopt the north route or close the threshold/support/access conditions below; RWT-06 remains planned. The original eastward study and its values are retained.
 
 The [passive court/site interface review](passive-court-site-interface.md) applies the later ground-water policy to that historical section. It distinguishes an actually lower receiving water level from a deeper local well, keeps the lower sleeve tell-tale separate from the carrier, and compares a raised building section with the retained deep route. Its conditional 435 mm datum shortfall is not a selected plinth height or a hydraulic verdict. Material and terminal successors must re-derive their levels; no old allowance transfers to them automatically. RWT-06 remains unfinished.
