@@ -85,6 +85,8 @@ The north court symbols open into the court. The positive route retains that sid
 
 The central room is also being examined for an accessible rainwater route. Normal dining geometry does not prove maintenance with [RWT floor panels, removable modules or tools](../rwt/copper-access-first-result.md). Keep occupation and intervention as different states. Do not preserve a service corridor by quietly reducing the household's required seating, narrowing garden access or changing permanent fabric.
 
+The [table/chair fit continuation](had-03-table-chair-fit.md) adds a real table's reported underside and leg-gap values. It keeps the 100 mm insertion unverified, separates a conditional width comparison from a three-dimensional opening, and does not transfer this room study to the different product. Occasional seats remain a distinct furnishing and occupied-use question.
+
 First confirm the regular/guest seating requirement, then compare the actual table/apron/chair pairing and human actions. If six places are required in the ordinary state, this four-place comparison has not satisfied it; develop a different complete furnishing arrangement. Test it with the selected garden and court doors, window/curtain operation, lighting and any adopted stack/floor-access changes. No budget, household size, product order or external test is inferred.
 
 ## Validation and limit
