@@ -1,37 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 9,
-  "state": "released",
-  "leaseId": "717428f5-9876-4909-956f-12fc5180865b",
+  "generation": 10,
+  "state": "claimed",
+  "leaseId": "5304f182-0e60-4948-87e1-527354d1a11b",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-access-recovery-root-983b7ee"
+    "label": "swarm-copper-joining-root-983b7ee"
   },
-  "claimedAt": "2026-10-31T16:49:34.863Z",
-  "heartbeatAt": "2026-10-31T16:58:23.560Z",
-  "expiresAt": "2026-10-31T16:58:23.560Z",
-  "branch": "work/swarm-access-recovery-20261031",
+  "claimedAt": "2026-10-31T17:01:18.306Z",
+  "heartbeatAt": "2026-10-31T17:01:18.306Z",
+  "expiresAt": "2026-10-31T17:46:18.306Z",
+  "branch": "work/swarm-copper-joining-20261031",
   "predecessor": {
-    "leaseId": "15e1539e-9225-472e-9c06-1bc2a00d6a4e",
-    "generation": 8,
-    "branch": "work/swarm-receivers-20261031"
-  },
-  "recoverySource": {
-    "leaseId": "474d1e5a-af8d-4cc7-be02-8a7baad71022",
-    "generation": 7,
-    "branch": "work/swarm-maintenance-integration-20261031",
-    "pr": 1148,
+    "leaseId": "717428f5-9876-4909-956f-12fc5180865b",
+    "generation": 9,
+    "branch": "work/swarm-access-recovery-20261031",
+    "pr": 1150,
     "checkpoint": {
-      "evidence": "PR1148 merged at 2512f116e277d3ab724fd0bcf0f13ba1d04533c3; exact accepted tree8967b8d8feea905ccc5cf7582447deca7af351e0 and all source-parent ancestry verified. Full CI41193874119 succeeded at head90de6288688004c8568f0a0665977e1045f953d8; RWT preflight2026-10-31T10:51:39.690Z passed. Retained-tail leak-route comparator and routine-versus-larger-repair distinction accepted as bounded partial evidence, no geometry, hydraulic, installed-material or lifecycle pass.",
-      "next": "Release completed integration lease and re-enter canonical dispatcher. A connected outer-west copper collection and brass or bronze ground-receiver construction comparison is a useful remaining RWT-METALS direction if selected."
+      "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
+      "next": "RWT-METALS remains planned. Obtain a complete retained wet-body fabrication/support/contact/outlet detail and credible larger repair, or justify open transfers with actual capture and receiving levels. Concealed crossing and whole-assembly constituent/hydraulic/renewal duties remain open."
     }
   },
-  "pr": 1150,
-  "checkpoint": {
-    "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
-    "next": "RWT-METALS remains planned. Obtain a complete retained wet-body fabrication/support/contact/outlet detail and credible larger repair, or justify open transfers with actual capture and receiving levels. Concealed crossing and whole-assembly constituent/hydraulic/renewal duties remain open."
-  },
-  "releasedAt": "2026-10-31T16:58:23.560Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "717428f5-9876-4909-956f-12fc5180865b",
+    "generation": 9,
+    "branch": "work/swarm-access-recovery-20261031",
+    "pr": 1150,
+    "checkpoint": {
+      "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
+      "next": "RWT-METALS remains planned. Obtain a complete retained wet-body fabrication/support/contact/outlet detail and credible larger repair, or justify open transfers with actual capture and receiving levels. Concealed crossing and whole-assembly constituent/hydraulic/renewal duties remain open."
+    }
+  }
 }
