@@ -9,11 +9,12 @@
     "label": "swarm-epr-internal-20261031"
   },
   "claimedAt": "2026-10-31T20:18:18.662Z",
-  "heartbeatAt": "2026-10-31T20:32:22.476Z",
-  "expiresAt": "2026-10-31T22:02:22.476Z",
+  "heartbeatAt": "2026-10-31T20:37:37.429Z",
+  "expiresAt": "2026-10-31T22:07:37.429Z",
   "branch": "work/swarm-internal-technical-review-20261031",
   "checkpoint": {
-    "evidence": "Current accepted baseline 1378e24905ceca1713e217355eacd7fab01e2815 reconciled after 1175 ventilation and 1179 receiver support; source geometry pins verified and current triad0ff9e055 distinguished from historical789df054. Internal 33-question technical-answer draft prepared, root whole-document challenge passed subject to explicit DHW density units; independent FIRE1-7/MEP5-6 challenge passed. Embedded calculations and exact rational controls, repository/publication integrity and docs build passed on prior source. Draft is not yet published; no design adoption, physical evidence or external EPR completion is claimed.",
-    "next": "Apply DHW-unit clarification, record final internal review dispositions and current-main applicability, complete only EPR-DESK-REVIEW node/programme, run targeted checks and provide exact committed publication payload to root. Root will publish and bind actual PR/head before full CI and fresh preflight; external EPR-RH11 stays manual and incomplete."
-  }
+    "evidence": "Reviewed six-file EPR investigation published in PR1183 at2aa15ddd39f99ac165d0fd29eb91b671c61fd3f0 with exact native tree4620a09a76fb2a2d23b58a895518ca4da7143829; sourceb71d9031c61ee70e46da7bee4e953383f045b805 and accepted base1378 preserved in provenance. Whole33-answer and focused fire/services internal challenges, arithmetic, source applicability, control/publication and docs checks passed. Only EPR-DESK-REVIEW lifecycle changes; no geometry, material exception, physical result or external EPR completion.",
+    "next": "Verify actual remote head and six blobs; require full canonical CI on that exact head, reconcile any moved main, run fresh canonical preflight, expected-head merge and accepted-tree/lifecycle checks, then record completion and release/clean branch."
+  },
+  "pr": 1183
 }
