@@ -9,8 +9,8 @@
     "label": "swarm-2900-worker-one-ias"
   },
   "claimedAt": "2026-10-31T17:09:27.406Z",
-  "heartbeatAt": "2026-10-31T17:38:22.625Z",
-  "expiresAt": "2026-10-31T18:23:22.625Z",
+  "heartbeatAt": "2026-10-31T17:42:04.352Z",
+  "expiresAt": "2026-10-31T18:27:04.352Z",
   "branch": "work/swarm-2900-interfaces-20261031",
   "predecessor": {
     "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1157 published head 2c8169e4584c1196e1e0a60dad3cc86226d0e946; reviewed IAS source unchanged; independent manual/source review, repository validation and docs build passed.",
-    "next": "Require full exact-head CI and fresh canonical preflight, then merge and release this partial result; bind an identified supplied waste assembly before further IAS adoption.",
-    "blocker": "CI pending. Exact current bowl-seat/downstream combination, retained ring and connection constituents, sealing faces and release travel remain unbound."
+    "evidence": "PR #1157 merged as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b; accepted tree equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI 41225448974 succeeded; IAS canonical preflight passed 17:40:56.322Z. Independent manual/source review, repository validation and docs build passed.",
+    "next": "Handoff this merged partial result. Obtain an identified current bowl-seat/downstream waste assembly and bind its full constituents, actual sealing faces, support and withdrawal sequence before further IAS adoption.",
+    "blocker": "Current supplied variant, every retained ring and connection, installed clearance and release travel remain unbound; generic assembly diagrams do not resolve those inputs. IAS-03 remains incomplete."
   },
   "pr": 1157
 }
