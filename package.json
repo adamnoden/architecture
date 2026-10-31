@@ -64,7 +64,7 @@
     "test:project-control": "node --import tsx --test project/control/*.test.ts scripts/proof-scope.test.mjs scripts/validate-workflows.test.mjs",
     "test:readme-contracts": "node --import tsx --test scripts/readme-command-contract.test.ts",
     "test:compiler-discovery": "node --import tsx --test scripts/compiler-test-discovery.test.ts",
-    "test:publication-adapters": "node --import tsx --test publication/adapters.test.ts",
+    "test:publication-adapters": "node --import tsx --test publication/adapters.test.ts publication/primer/figure.test.ts",
     "test:publication-pdf": "node --import tsx --test publication/scripts/pdf-page-geometry.test.ts",
     "test:brand": "tsx scripts/validate-project-brand.ts",
     "test:routes": "tsx scripts/validate-public-routes.ts",
