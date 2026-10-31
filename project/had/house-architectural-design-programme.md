@@ -93,7 +93,7 @@ selection and shared compatibility checks.
 - [Actual table/chair fit limits](had-03-table-chair-fit.md) — one manufacturer's underside and leg-gap values narrow the insertion question; the three-dimensional opening, occupied use and household seat counts remain unverified.
 - [Six side chairs and the actual table underside](had-03-six-side-dining.md) — manufacturer-matched comparison rejects the 600 mm pitch envelope-fit claim, retains both sofas and distinguishes an unadopted tighter alternative from actual occupied and extension operations.
 - [Family-bath inside slider sequence in joined STR candidate B](had-03-family-bath-slider.md) — retains an exposed inside pull and a connected hall/close/approach/reopen comparison, with the reduced opening, reach sensitivity and actual hardware/material duties explicit; neither B nor an installed doorset is adopted.
-- [Study door, chair and window-approach sequence](had-03-study-operation.md) — the retained low hinge has a reversible geometric sequence with an explicit two-hand handover; a separate chair movement restores one window approach without selecting actual furniture, hardware or window operation.
+- [Study door, chair and window-approach sequence](had-03-study-operation.md) — preserve the retained low hinge's two-hand witness and a second route with one unchanged contact after an unheld approach; bounded mirrored-hinge trials do not justify rehanding. An explicit closed connector retains the chair/window task evidence, with actual parking, hardware and occupied operation unresolved.
 
 HAD-03 is planned and incomplete. The worked kitchen uses solid-pier stations
 and a dry prep table because a continuous 900-high worktop would cross 750-sill
