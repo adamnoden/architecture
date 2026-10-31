@@ -1,46 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
-  "generation": 7,
-  "state": "released",
-  "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
+  "generation": 8,
+  "state": "claimed",
+  "leaseId": "159ca45a-6ae5-4ddc-b848-6ea159652f44",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-2900-worker-two-duct"
+    "label": "swarm-782cae-root-materials"
   },
-  "claimedAt": "2026-10-31T17:22:25.363Z",
-  "heartbeatAt": "2026-10-31T17:43:16.481Z",
-  "expiresAt": "2026-10-31T17:43:16.481Z",
-  "branch": "work/swarm-2900-interfaces-20261031",
+  "claimedAt": "2026-10-31T17:50:42.793Z",
+  "heartbeatAt": "2026-10-31T17:50:42.793Z",
+  "expiresAt": "2026-10-31T18:35:42.793Z",
+  "branch": "work/swarm-782cae-interiors",
   "predecessor": {
-    "leaseId": "8f8a053b-9104-42c3-a1a5-02b4b34db3ca",
-    "generation": 6,
-    "branch": "work/mat-tray-integration-20261031-1706",
-    "pr": 1156,
+    "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
+    "generation": 7,
+    "branch": "work/swarm-2900-interfaces-20261031",
+    "pr": 1157,
     "checkpoint": {
-      "evidence": "PR 1156 merged as 25c1f610fe3b6b28fe410d5936a7009972a39890. Accepted tree f34033123918b2a8da38df4acedfee022c120ea6 equals exact validated head 7073cb4853b07741b62d414d45bbd39de9fa4d1f; full CI 41223632606 succeeded and canonical preflight passed at 17:19:10Z. PR 1149 is merged by preserved ancestry; both remote feature refs are absent.",
-      "next": "Bind the configured tray/Upstand/frame/waste package and all support/contact constituents, then draw north/east wall and independent west service sections with full waste withdrawal and the tray/frame carrying route.",
-      "blocker": "Complete non-synthetic installation, applicable support details, physical fit and renewal remain unresolved. MAT-INTERIORS stays planned; this is bounded partial progress."
+      "evidence": "PR1157 merged at17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI41225448974 succeeded; canonical MAT-INTERIORS preflight passed17:40:17.505Z. Independent primary-source and integrated-source reviews passed. Shared remote branch is absent.",
+      "next": "Bind the actual plaster, patching and preparation to a room surface and its allocated thickness; confirm supplied powder shade and Fixative revisions; assess representative finish and repair. Preserve the separate configured tray/support/withdrawal obligations in the wet-assembly study.",
+      "blocker": "Actual substrate, complete preparation/accessory set, supplied colour/revision and physical finish/repair evidence remain unresolved. No finished wall, ceiling or complete interior assembly is accepted; MAT-INTERIORS remains incomplete."
     }
   },
   "recoverySource": {
-    "leaseId": "8f8a053b-9104-42c3-a1a5-02b4b34db3ca",
-    "generation": 6,
-    "branch": "work/mat-tray-integration-20261031-1706",
-    "pr": 1156,
+    "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
+    "generation": 7,
+    "branch": "work/swarm-2900-interfaces-20261031",
+    "pr": 1157,
     "checkpoint": {
-      "evidence": "PR 1156 merged as 25c1f610fe3b6b28fe410d5936a7009972a39890. Accepted tree f34033123918b2a8da38df4acedfee022c120ea6 equals exact validated head 7073cb4853b07741b62d414d45bbd39de9fa4d1f; full CI 41223632606 succeeded and canonical preflight passed at 17:19:10Z. PR 1149 is merged by preserved ancestry; both remote feature refs are absent.",
-      "next": "Bind the configured tray/Upstand/frame/waste package and all support/contact constituents, then draw north/east wall and independent west service sections with full waste withdrawal and the tray/frame carrying route.",
-      "blocker": "Complete non-synthetic installation, applicable support details, physical fit and renewal remain unresolved. MAT-INTERIORS stays planned; this is bounded partial progress."
+      "evidence": "PR1157 merged at17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI41225448974 succeeded; canonical MAT-INTERIORS preflight passed17:40:17.505Z. Independent primary-source and integrated-source reviews passed. Shared remote branch is absent.",
+      "next": "Bind the actual plaster, patching and preparation to a room surface and its allocated thickness; confirm supplied powder shade and Fixative revisions; assess representative finish and repair. Preserve the separate configured tray/support/withdrawal obligations in the wet-assembly study.",
+      "blocker": "Actual substrate, complete preparation/accessory set, supplied colour/revision and physical finish/repair evidence remain unresolved. No finished wall, ceiling or complete interior assembly is accepted; MAT-INTERIORS remains incomplete."
     }
-  },
-  "note": "PR1157 merged; the I02 coating component result is accepted as partial evidence. MAT-INTERIORS remains incomplete.",
-  "pr": 1157,
-  "checkpoint": {
-    "evidence": "PR1157 merged at17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI41225448974 succeeded; canonical MAT-INTERIORS preflight passed17:40:17.505Z. Independent primary-source and integrated-source reviews passed. Shared remote branch is absent.",
-    "next": "Bind the actual plaster, patching and preparation to a room surface and its allocated thickness; confirm supplied powder shade and Fixative revisions; assess representative finish and repair. Preserve the separate configured tray/support/withdrawal obligations in the wet-assembly study.",
-    "blocker": "Actual substrate, complete preparation/accessory set, supplied colour/revision and physical finish/repair evidence remain unresolved. No finished wall, ceiling or complete interior assembly is accepted; MAT-INTERIORS remains incomplete."
-  },
-  "releasedAt": "2026-10-31T17:43:16.481Z",
-  "releaseReason": "handoff"
+  }
 }
