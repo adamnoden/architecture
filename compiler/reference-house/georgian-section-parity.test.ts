@@ -51,6 +51,7 @@ test('service spine prevents courtyard sash grids from appearing through solid r
   p.kind==='line'&&String(p.metadata?.meaning??'').startsWith('hosted-aperture:'))
  const serviceGrid=grids(service),principalGrid=grids(principal)
  assert.ok(principalGrid.length>=8)
+ assert.equal(serviceGrid.length,0,'service cuts omit incidental far glazing glimpses')
  assert.ok(serviceGrid.length<principalGrid.length,'courtyard windows must be occluded by the service spine')
  assert.ok(!service.primitives.some(p=>String(p.metadata?.meaning??'').startsWith('partition-')))
 })
