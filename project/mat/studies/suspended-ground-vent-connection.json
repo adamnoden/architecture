@@ -1,0 +1,157 @@
+{
+  "authority": "Located continuation of the authored straight-wall trial, not an installed vent, floor, airflow or material pass.",
+  "sourceCommit": "c9e9a2c0087ef4e18b5fa4527826767ba4f0c8bd",
+  "sectionOutputBlob": "48289c4ac6c26c0ba81f1c703b617f3b3189739d",
+  "sources": {
+    "clay": {
+      "url": "https://mediahub.wavin.com/m/4aa7792f0c8f0a84/original/Data-Sheet-Airbricks.pdf",
+      "edition": "TE115, June 2017, one page; current-hosted historical sheet",
+      "sha256": "9793bd248e21d1b562093a2d575e50c3355b2e3ad22ee0b393e8870308b40b4c"
+    },
+    "offset": {
+      "url": "https://www.vents.co.uk/pdf/a1-dwgs/periscope/rytons-a1pufvrgs-v5i.pdf",
+      "edition": "A1PUFVRGS V5i, two pages; no issue date printed",
+      "sha256": "6a23814f6825dc688401e9b9472390d1f63864ddc1e4438b93f8057e4c4a196b"
+    },
+    "constituents": {
+      "url": "https://www.vents.co.uk/pdf/policy-downloads/Rytons-Golden-Thread-of-Information.pdf",
+      "edition": "23-page bundle; Materials Statement V2 15 September 2026, letter 17 June 2026, acrylic PDS March 2020 version 02.02",
+      "sha256": "e23b439a9fbdaea24447b07b8f8a193f74a25e822c7af58cd500293d4ea86ede"
+    }
+  },
+  "wallLengthMm": 12000,
+  "linealFreeAreaPerMetre": 1500,
+  "groundAboveSolum": 0,
+  "clay": [
+    {
+      "airbrick": "YA13",
+      "liner": "YB11",
+      "width": 215,
+      "height": 65,
+      "airbrickDepth": 50,
+      "linerLength": 200,
+      "freeArea": 1300
+    },
+    {
+      "airbrick": "YA14",
+      "liner": "YB13",
+      "width": 215,
+      "height": 140,
+      "airbrickDepth": 50,
+      "linerLength": 200,
+      "freeArea": 2890
+    },
+    {
+      "airbrick": "YA15",
+      "liner": "YB15",
+      "width": 215,
+      "height": 215,
+      "airbrickDepth": 50,
+      "linerLength": 200,
+      "freeArea": 4624
+    }
+  ],
+  "inheritedSourceBlobs": {
+    "compiler/reference-house/georgian/section-source.ts": "1617867dc3441206c116ddf877dcfd5ba89fb5a4",
+    "compiler/reference-house/georgian/section-exemplar.ts": "75bf5c749da5095c07eed46105817a79095ca418"
+  },
+  "levels": {
+    "ffl": 0,
+    "soffit": -330,
+    "dpcBandBottom": -480,
+    "envelopeTop": -500,
+    "solum": -630,
+    "outsideGround": -630
+  },
+  "gaps": {
+    "upper": 20,
+    "lower": 30
+  },
+  "voidDepth": 300,
+  "dpcBand": 150,
+  "linealOnlyTargetArea": 18000,
+  "formulae": {
+    "minimumVoid": "B + a + nominal component H + b; installed envelope may be larger",
+    "envelopeClearance": "V - B - a - H - outside-ground rise above solum"
+  },
+  "rows": [
+    {
+      "airbrick": "YA13",
+      "liner": "YB11",
+      "width": 215,
+      "height": 65,
+      "airbrickDepth": 50,
+      "linerLength": 200,
+      "freeArea": 1300,
+      "linealOnlyCount": 14,
+      "minimumVoid": 265,
+      "nominalDepthResidual": 35,
+      "envelopeBottom": -565,
+      "envelopeBottomAboveGround": 65,
+      "completeFit": "not-established"
+    },
+    {
+      "airbrick": "YA14",
+      "liner": "YB13",
+      "width": 215,
+      "height": 140,
+      "airbrickDepth": 50,
+      "linerLength": 200,
+      "freeArea": 2890,
+      "linealOnlyCount": 7,
+      "minimumVoid": 340,
+      "nominalDepthResidual": -40,
+      "envelopeBottom": -640,
+      "envelopeBottomAboveGround": -10,
+      "completeFit": "not-established"
+    },
+    {
+      "airbrick": "YA15",
+      "liner": "YB15",
+      "width": 215,
+      "height": 215,
+      "airbrickDepth": 50,
+      "linerLength": 200,
+      "freeArea": 4624,
+      "linealOnlyCount": 4,
+      "minimumVoid": 415,
+      "nominalDepthResidual": -115,
+      "envelopeBottom": -715,
+      "envelopeBottomAboveGround": -85,
+      "completeFit": "not-established"
+    }
+  ],
+  "wallCrossing": {
+    "grossAllocation": 417.5,
+    "cavityAllocation": 160,
+    "linerLength": 200,
+    "totalLengthBeyondCavity": 40,
+    "selectedEngagement": null,
+    "clearLinerPassage": null,
+    "completeMasonryThroat": null,
+    "scope": "40 mm is a total nominal length budget, not qualified bearing; full outer/inner throats and water protection remain unresolved."
+  },
+  "offsetControl": {
+    "id": "A1PUFVRGS",
+    "bodyWidth": 220,
+    "branchOutsideHeight": 65,
+    "declaredGrilleFreeArea": 7200,
+    "customerDimensions": [
+      "A",
+      "B",
+      "C"
+    ],
+    "tolerancePercent": 5,
+    "telescopicAdjustmentUpTo": 30,
+    "disposition": "Unmodified supplied comparator excluded: maker-linked acrylic factory sealant. No generic metal-vent rejection.",
+    "wholeAssemblyRemoval": "not-established; telescopic adjustment is not a renewal procedure"
+  },
+  "unresolved": [
+    "Actual served floor area and opposing-wall/compartment airflow",
+    "Clear passage and applicability of the 100 mm pipe guidance to this rectangular route",
+    "Installed envelope, structural opening, beds, engagements and masonry support",
+    "Cavity-water protection: TE115 actually illustrates a D.P.M. over the liner",
+    "Actual external ground, lowest aperture, safe exposure and passive drainage",
+    "Complete retained constituents and accessible clearing/whole-unit replacement"
+  ]
+}
