@@ -13,7 +13,8 @@
   "expiresAt": "2026-10-31T22:38:32.902Z",
   "branch": "work/ade-section-parity-1187",
   "checkpoint": {
-    "evidence": "View compiler merged in PR #1189",
-    "next": "Implement and validate current-house section parity"
-  }
+    "evidence": "Shared roof-surfaces extraction and source parity tests committed 31e375a; draft PR #1192",
+    "next": "Implement hosted courtyard background view for principal and service sections, then cross-view tests and rendered proof."
+  },
+  "pr": 1192
 }
