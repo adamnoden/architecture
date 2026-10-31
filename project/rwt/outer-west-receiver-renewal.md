@@ -1,6 +1,6 @@
 # Outer-west receiver: what can actually be lifted out?
 
-**31 October 2026 — bounded RWT-METALS construction comparison.** Starting main `2512f116e277d3ab724fd0bcf0f13ba1d04533c3`. This develops the [C-B1 brass-trough candidate](copper-assembly-candidates.md#c-b1--genuine-low-zinc-brass-receiving-trough) at the [outer-west trial edge](rwt-shed-result.md). It selects no installed system, receiver width, plot level or alloy. The [material policy](../../docs/reference-house/material-policy.md), [passive ground-water policy](../../docs/reference-house/ground-water-policy.md) and [shared compatibility record](../../docs/research/roof-rainwater-material-compatibility.md#ground-receiver-construction--31-october-2026) govern.
+**31 October 2026 — bounded RWT-METALS construction comparison.** Starting main `2512f116e277d3ab724fd0bcf0f13ba1d04533c3`. This develops the [C-B1 brass-trough candidate](copper-assembly-candidates.md#c-b1--genuine-low-zinc-brass-receiving-trough) at the [outer-west trial edge](rwt-shed-result.md). It selects no installed system, receiver width, plot level or alloy. The [material policy](../../docs/reference-house/material-policy.md), [passive ground-water policy](../../docs/reference-house/ground-water-policy.md) and [shared compatibility record](../../docs/research/roof-rainwater-material-compatibility.md#ground-receiver-construction) govern.
 
 ## Decision earned
 
