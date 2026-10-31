@@ -27,14 +27,42 @@ export interface SectionCutWall {
   id:string
   lo:number
   hi:number
+  bottom?:number
   top:number
   holes:readonly {id:string;lo:number;hi:number}[]
 }
 export function sectionCutWallOccluders(station:number,walls:readonly SectionCutWall[]):ModelFace3D[]{
   return walls.flatMap(w=>hostedFacadeGeometry({
-    id:'section-cut-'+w.id,axis:'x',plane:station,start:w.lo,end:w.hi,bottom:0,top:w.top,
+    id:'section-cut-'+w.id,axis:'x',plane:station,start:w.lo,end:w.hi,bottom:w.bottom??0,top:w.top,
     openings:w.holes.map(h=>({id:h.id,start:w.lo,end:w.hi,sill:h.lo,head:h.hi}))
   }).faces)
+}
+
+
+/** Existing interior partitions mask background views; they do not acquire
+ * speculative visible outlines merely because they can obstruct sight lines. */
+export function currentPartitionOccluders():ModelFace3D[] {
+  return (['GROUND','FIRST'] as const).flatMap(level=>{
+    const bottom=level==='GROUND'?0:d.levels.first
+    const top=level==='GROUND'?d.levels.ceilingGround:d.levels.ceilingFirst
+    const openings=revisionOpenings(level)
+    return d.partitions[level].flatMap(w=>{
+      const vertical=w.a[0]===w.b[0],horizontal=w.a[1]===w.b[1]
+      if (vertical===horizontal) throw Error('Non-orthogonal or degenerate partition: '+w.id)
+      const axis=vertical?'x' as const:'y' as const
+      const plane=vertical?w.a[0]:w.a[1]
+      const start=Math.min(vertical?w.a[1]:w.a[0],vertical?w.b[1]:w.b[0])
+      const end=Math.max(vertical?w.a[1]:w.a[0],vertical?w.b[1]:w.b[0])
+      const host:HostedFacade={id:'partition-'+level+'-'+w.id,axis,plane,
+        start,end,bottom,top,
+        openings:openings.filter(o=>o.wall===w.id).map(o=>({
+          id:level+'-'+o.id,start:o.centre-o.width/2,end:o.centre+o.width/2,
+          sill:bottom+(o.kind==='door'?0:o.sill??750),head:bottom+(o.head??2850)
+        }))
+      }
+      return hostedFacadeGeometry(host).faces
+    })
+  })
 }
 
 export interface CurrentSectionContextInput {
@@ -64,6 +92,7 @@ export function compileCurrentSectionContext(input:CurrentSectionContextInput):O
     section:{axis:'x',at:input.station,looking:'negative'},
     facades:currentCourtyardSectionFacades(),
     contextFaces:roof,
+    occluderFaces:currentPartitionOccluders(),
     cutFaces
   })
 }
