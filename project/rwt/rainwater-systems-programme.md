@@ -194,6 +194,8 @@ After MAT-00 and RWT-04, develop complete copper collection and brass-channel ca
 
 The [segmented copper-access comparison](segmented-copper-access.md) now locates the access-first north crossing through its occupied-room run and two threshold/support bands. It separates possible modular renewal from unproved joint release, exposes conditional flange/floor-envelope conflicts, and keeps the fixed court-water boundary distinct from removable service joints. The [component source update](copper-access-first-result.md#actual-components-and-evidence-boundaries) recovers exact Endex drawings and brazing-only scope without claiming an installed face/seal assembly. RWT-METALS remains planned.
 
+The [local repair continuation](segmented-copper-access.md#local-cutting-is-not-yet-a-complete-renewal-method) now tests reinstatement as well as removal: a small coupling envelope does not prove insertion between retained ends or safe joining beside W2 and threshold construction. A primary 108 mm slip-coupling listing keeps conventional repair open as a specific lead, subject to matched assembly evidence; small-bore repair instructions are not extrapolated. The same three-territory renewal test applies to this alternative. No smaller floor reserve, selected joint or complete crossing follows.
+
 ### RWT-ROBUSTNESS — independent paths and degraded operation
 
 After RWT-SHED, RWT-METALS and RWT-05, compare full-duty surviving paths under blockage, accessible capacity/freeboard, common debris/frost/backwater and passive final spill. Use actual candidate elevation ledgers and downstream topology. A second outlet must have a reachable and independent path; a clean-system capacity result cannot prove degraded-operation safety.
