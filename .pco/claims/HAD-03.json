@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 8,
-  "state": "released",
-  "leaseId": "b64706fe-18d1-4f60-ad03-70c3a471ecd6",
+  "generation": 9,
+  "state": "claimed",
+  "leaseId": "94253a5c-bac5-44d8-b016-7c1f4b0fc69b",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6535821509"
+    "label": "swarm-2900c830a334-root"
   },
-  "claimedAt": "2026-10-30T23:40:08.000Z",
-  "heartbeatAt": "2026-10-31T00:00:44.000Z",
-  "expiresAt": "2026-10-31T00:00:44.000Z",
-  "branch": "work/mvb-chat-6535821509",
+  "claimedAt": "2026-10-31T09:08:48.049Z",
+  "heartbeatAt": "2026-10-31T09:08:48.049Z",
+  "expiresAt": "2026-10-31T09:53:48.049Z",
+  "branch": "work/swarm-2900-had-20261031",
   "predecessor": {
-    "leaseId": "56dc2ab8-02cc-404d-ab44-d1850d85f075",
-    "generation": 7,
-    "branch": "work/swarm-983b7ee4744e",
-    "pr": 1113,
+    "leaseId": "b64706fe-18d1-4f60-ad03-70c3a471ecd6",
+    "generation": 8,
+    "branch": "work/mvb-chat-6535821509",
+    "pr": 1120,
     "checkpoint": {
-      "evidence": "PR #1113; source-bound WC privacy comparison, local geometry/type checks and independent review passed",
-      "next": "Reconcile moved main, inspect exact-head full CI, then fresh canonical preflight and merge",
-      "blocker": "Local full health requires absent Chrome155; exact-head CI pending"
+      "evidence": "PR #1120 merged ceeb3af04520f41f5e2bb15669553f578510d1a0. Head 02dd8096 passed full CI 41147146898 and canonical preflight 124375641292; inspected A3 and independent reviews retained.",
+      "next": "Continue HAD-03 with required regular/guest seating and actual occupied table/chair/door fit; preserve unadopted four-side-place comparison and source-operation distinctions.",
+      "blocker": "No household seating adoption, occupied comfort, actual table/apron fit or installed opening/material admission; HAD-03 remains planned."
     }
   },
   "recoverySource": {
-    "leaseId": "56dc2ab8-02cc-404d-ab44-d1850d85f075",
-    "generation": 7,
-    "branch": "work/swarm-983b7ee4744e",
-    "pr": 1113,
+    "leaseId": "b64706fe-18d1-4f60-ad03-70c3a471ecd6",
+    "generation": 8,
+    "branch": "work/mvb-chat-6535821509",
+    "pr": 1120,
     "checkpoint": {
-      "evidence": "PR #1113; source-bound WC privacy comparison, local geometry/type checks and independent review passed",
-      "next": "Reconcile moved main, inspect exact-head full CI, then fresh canonical preflight and merge",
-      "blocker": "Local full health requires absent Chrome155; exact-head CI pending"
+      "evidence": "PR #1120 merged ceeb3af04520f41f5e2bb15669553f578510d1a0. Head 02dd8096 passed full CI 41147146898 and canonical preflight 124375641292; inspected A3 and independent reviews retained.",
+      "next": "Continue HAD-03 with required regular/guest seating and actual occupied table/chair/door fit; preserve unadopted four-side-place comparison and source-operation distinctions.",
+      "blocker": "No household seating adoption, occupied comfort, actual table/apron fit or installed opening/material admission; HAD-03 remains planned."
     }
-  },
-  "pr": 1120,
-  "checkpoint": {
-    "evidence": "PR #1120 merged ceeb3af04520f41f5e2bb15669553f578510d1a0. Head 02dd8096 passed full CI 41147146898 and canonical preflight 124375641292; inspected A3 and independent reviews retained.",
-    "next": "Continue HAD-03 with required regular/guest seating and actual occupied table/chair/door fit; preserve unadopted four-side-place comparison and source-operation distinctions.",
-    "blocker": "No household seating adoption, occupied comfort, actual table/apron fit or installed opening/material admission; HAD-03 remains planned."
-  },
-  "releasedAt": "2026-10-31T00:00:44.000Z",
-  "releaseReason": "handoff"
+  }
 }
