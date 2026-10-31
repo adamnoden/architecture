@@ -9,8 +9,8 @@
     "label": "services-next-2041-20261031"
   },
   "claimedAt": "2026-10-31T20:45:51.135Z",
-  "heartbeatAt": "2026-10-31T20:56:04.243Z",
-  "expiresAt": "2026-10-31T22:26:04.243Z",
+  "heartbeatAt": "2026-10-31T21:07:33.754Z",
+  "expiresAt": "2026-10-31T22:37:33.754Z",
   "branch": "work/swarm-next-services-2041-20261031",
   "note": "Fresh accepted main d4cad187; predecessor PR1179 merged and exact-head CI verified. Next bounded question, if RWT-METALS is selected: compare supported copper wet-sheet backing, water/debris load path, underside inspection and repair access. No selected receiver dimensions, nonlinear collapse, site levels or STR capacity claim. Root owns all connector mutations.",
   "predecessor": {
@@ -36,7 +36,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Predecessor PR1179 verified merged at1378e249, exact accepted-main health41239002188 and released gen13 retained. Current source base d4cad187. Aurubis Copper Book second edition2013 SHA256c4e9867841bb4c05e05c3e6211897dfabd1256d3fe72efc1187da51f48d891bc pp31/32/106/108 inspected; R220 proof140MPa is MAX, E118000 and density8900. CDA A4050-8/24 SHA256da66c45cfb35fb94adaad908fffc79545a722faa2b4e8694ab4c913c9ea6d7c0 introduction is p144, seam p148. Local uncommitted backing/strip sensitivity is in progress, not durable published evidence. Root and independent reviewer agree source and scope limits.",
-    "next": "Complete connected backed-liner versus unsupported inspection-gap comparison, preserving installed material, independent loads, temporary support and hidden-underface limits; independently review exact model and A3; then source commit and reconcile latest main including accepted EPR/PHY. RWT-METALS remains planned."
-  }
+    "evidence": "PR1186 published: remote reviewed source369a55353fa7786886e7edd24d4bfea480798863 on d4cad187, treea2f42b20778ef2e234985c7c819a565168451661. Published integration2c458cd85591b74648cc26c5f8e11150fdd0ca2e, treed6694191f424d315104c9c856d24a709c3684031, contains source369a and accepted PHY72c6 as exact parents. Independently fetched and verified all seven reviewed blobs and ancestry; local609c source and899f integration retained in preserved refs. Root and independent source/math/architecture/A3 review PASS;96 SI cases independently matched,11 focused tests and scoped repository/publication/docs checks pass. Both original SVGs unchanged; prior JSON only C11 page provenance correction. RWT-METALS remains planned.",
+    "next": "Await full CI on actual published2c458cd8, then fresh canonical preflight/current-main ancestry and expected-head merge by root. Verify accepted tree and seven owner blobs, preserve source ancestry, final evidence checkpoint/release and cleanup. Actual backing/contact, profile/load capacity, leak observation, terminal and complete liner handling remain unresolved."
+  },
+  "pr": 1186
 }
