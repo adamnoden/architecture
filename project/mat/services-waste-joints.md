@@ -23,6 +23,16 @@ Sources accessed **31 October 2026**. **P/N/U** retain the register's meanings a
 
 The traditional route remains a repair task involving its joint media, not an indefinitely reusable sealing interface. Current supply of an exact lead-wool/packing/coating package and a workable renewal method must be established before selection. Historical catalogue dimensions or statements about long life do not settle these duties. No supplier has been contacted and no sample or physical joint has been tested.
 
+### Current component follow-up — 31 October 2026
+
+The **[Heritage April 2026 catalogue](https://www.rainwaterdirect.co.uk/contentfiles/Rainwater-119.pdf?_=12:22:06)**, PDF pp32, 39–43 / printed pp31, 37–41, identifies nominal 100 mm traditional pipe as **actual 114 mm**. Named parts include **SL40/6FT** pipe, **SL40/AP** access pipe, **SL40/PS** loose socket and the distinct **SL40/SS** slip collar, with `/NE` non-eared variants. The size column is not the collar's outside envelope. No collar depth, engagement, parking or first-release dimensions are established.
+
+The installation text acknowledges traditional lead caulking but recommends cord with marine sealant; **MS991563 is explicitly marine silicone**, **P**. This recommendation does not prove that another lead-based method is obsolete or identify a matched cold-compacted lead-wool package. Do not combine the older glass-fibre/lead-wool method above with the current cord SKU or silently substitute its joint media. The catalogue's **30 mm painting gap** is not a removal or hand/tool allowance. Even the 114 mm body exceeds BCR's 110 mm comparison before its socket, support and access are added.
+
+The **[Hargreaves May 2026 trade catalogue](https://www.hargreavesfoundry.co.uk/wp-content/uploads/May-2026-HF-Trade-Price-List.pdf)**, PDF p33 / printed pp64–65, binds the nominal 100 mm Premier access-door parts: **S4069** loose door, **S4069G** rubber gasket and **S0002** screw pair. It also names **S0006** caulking cord and **S0007** joint sealant. The gasket is now identifiable, but its formulation remains **U**: the word rubber does not distinguish natural from synthetic material. This parts identity does not transfer Heritage dimensions or approve a polymer-free Premier joint.
+
+**[Calder's current lead-wool page](https://calderlead.co.uk/products-and-services/industrial/lead-wool/)** describes in-house manufacture and application-dependent alloys ranging from 0.5% antimony to high-purity lead. A manufactured component therefore remains available for enquiry; no LCC-compatible grade, complete packing/coating package or repair result is selected here.
+
 ## Separate body, socket and movement dimensions
 
 The [manufacturer's socket drawing](https://www.blucher.com/dfsmedia/0533dbba17714b1ab581ab07a4cbb521/53115-source/639253304450000000/socketinfouk.pdf), linked by the exact 811 product, identifies the following Ø110 family geometry. Its printed revision and numerical tolerances were not recovered. The [25024 / November 2025 installation/materials manual](https://www.blucher.com/dfsmedia/0533dbba17714b1ab581ab07a4cbb521/79313-source/638991498880000000/blucher-europipe-installation-maintenance-material-properties-exp.pdf), printed p12 / PDF p14, supplies the distinct engagement range.
@@ -78,6 +88,8 @@ The useful next decision is a **current, fully disclosed caulked-joint package a
 
 MAT supplies these component findings and the S02 update. BCR/IAS retain geometry and supports; MEP retains sizing, venting, connected foul-drainage design and commissioning. RWT's rainwater compatibility work supplies no sanitary-system approval. Whole-system quantities, quotations, labour, comparative service life and a physical renewal result remain unknown.
 
+The [connected shower-waste interface study](services-shower-waste-interface.md) separately develops installed-connection and first-release budgets at the retained west service face. Its coordinates and component envelope do not transfer to this stack comparison.
+
 The socket, insertion, slip-coupling and Halifax repair pages were visually inspected; the BCR arithmetic was recalculated from its existing JSON. No new test machinery or generated drawing is needed for these stated comparisons. Retrieved-byte SHA-256 values below detect changed source files; they do not certify a product or substitute for a supplied revision.
 
 | Source | SHA-256 |
@@ -88,4 +100,7 @@ The socket, insertion, slip-coupling and Halifax repair pages were visually insp
 | BLÜCHER 25096–UK–JAN2025 catalogue | `10f036b6a3914ce0a8da9163511910951ce3aa2d53f59e9e402cb3ccd05c0ff2` |
 | Halifax Issue 4 / August 2026 | `375231a3f0085676ee40212a7214ccdb7c3f16d7bf213ad2fecf1310dea58c25` |
 | Alumasc October 2015 brochure | `010fecda620c07adb18c83d10b032507b491c4fc43626bee72febb1ee398c8a1` |
+| Hargreaves May 2026 trade catalogue | `7eb98e12301271a3912c73616811be89b99a3422b9dafca4d417c386f632ab0b` |
+
+The Hargreaves access-parts spread was visually checked. Heritage's dated catalogue text was inspected through web retrieval; its direct download was unavailable, so no local-byte fingerprint or visual-inspection claim is supplied for it.
 
