@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 9,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6541790969"
   },
   "claimedAt": "2026-10-31T09:39:55.000Z",
-  "heartbeatAt": "2026-10-31T10:00:31.000Z",
-  "expiresAt": "2026-10-31T10:45:31.000Z",
+  "heartbeatAt": "2026-10-31T10:01:30.000Z",
+  "expiresAt": "2026-10-31T10:01:30.000Z",
   "branch": "work/mvb-chat-6541790969",
   "predecessor": {
     "leaseId": "678ba801-95cf-4d69-8a2b-e00185ef1597",
@@ -39,5 +39,7 @@
     "evidence": "PR #1144 merged at 4d16682a2a9ff4ac8662cdb3cd0f505e313b35dd. Final head 4a0cd63805d237d4153f43336d6c611175641e08 passed full CI 41190592004 and canonical preflight at 09:58:41.658 UTC.",
     "next": "Choose and detail the real replacement boundary: verified separate bowl/kit, or integral top with its actual support, joints, materials, service release and handling arrangement.",
     "blocker": "IAS-03 remains planned. Full-top flat staging fails this field; local wet-top joints/materials and actual connected renewal remain unresolved. Current Franke kit is still unbound."
-  }
+  },
+  "releasedAt": "2026-10-31T10:01:30.000Z",
+  "releaseReason": "handoff"
 }
