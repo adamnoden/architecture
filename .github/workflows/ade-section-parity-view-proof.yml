@@ -1,0 +1,44 @@
+name: ADE orthographic-section visual proof (temporary)
+on:
+  push:
+    branches: [work/ade-section-preflight-1189]
+permissions:
+  contents: read
+jobs:
+  render-current-sections:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: work/ade-section-parity-1187
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Prove current principal and service BOOK/WALL SVGs
+        run: |
+          mkdir -p .ade-section-proof
+          node --import tsx --input-type=module -e '
+            import fs from "node:fs";
+            import { createLayoutSection } from "./compiler/reference-house/georgian/layout-family.ts";
+            import { renderDrawingSceneV2Svg } from "./compiler/publication-drawing-v2/svg.ts";
+            for (const view of ["PRINCIPAL","SERVICE-SECTION"]) {
+              for (const scale of [50,100]) {
+                const scene=createLayoutSection(view,scale);
+                fs.writeFileSync(`.ade-section-proof/${view.toLowerCase()}-${scale}.svg`,renderDrawingSceneV2Svg(scene));
+                fs.writeFileSync(`.ade-section-proof/${view.toLowerCase()}-${scale}.json`,JSON.stringify(scene,null,2));
+                if (!scene.primitives.some(p=>p.kind==="line"&&p.id.startsWith("mesh-"))) throw Error("No actual 3D background");
+                if (scene.primitives.some(p=>p.id.startsWith("beyond-"))) throw Error("Floating legacy apertures reintroduced");
+              }
+            }
+            fs.writeFileSync(".ade-section-proof/head.txt",process.env.GITHUB_SHA+"\n");
+          '
+      - name: Preserve exact-size source vector and semantic proof
+        uses: actions/upload-artifact@v6
+        with:
+          name: ade-current-sections
+          path: .ade-section-proof/
+          if-no-files-found: error
