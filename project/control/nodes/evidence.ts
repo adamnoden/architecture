@@ -60,7 +60,7 @@ export const evidenceNodes = defineNodes([
     owners: ['EPR'],
     title: 'Answer current-house technical review questions through internal evidence and challenge',
     dependencies: ['EPR-REFRESH'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/epr/internal-technical-review.md']
   },

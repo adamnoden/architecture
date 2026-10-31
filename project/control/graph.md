@@ -97,7 +97,6 @@ flowchart LR
   subgraph g_EPR["EPR"]
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
-    n_EPR_DESK_REVIEW["EPR-DESK-REVIEW<br/>Answer current-house technical review questions through internal evidence and challenge<br/><b>READY</b>"]
     n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
   end
   subgraph g_DPL["DPL"]
@@ -250,7 +249,6 @@ flowchart LR
   class n_PHY_02 held;
   class n_PHY_03_ENGINEERING ready;
   class n_PHY_04 ready;
-  class n_EPR_DESK_REVIEW ready;
   class n_EPR_RH11 ready;
   class n_DEL_CURRENT blocked;
   class n_SWE_CONTROL ready;
@@ -462,7 +460,7 @@ flowchart LR
   subgraph g_EPR["EPR"]
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
-    n_EPR_DESK_REVIEW["EPR-DESK-REVIEW<br/>Answer current-house technical review questions through internal evidence and challenge<br/><b>READY</b>"]
+    n_EPR_DESK_REVIEW["EPR-DESK-REVIEW<br/>Answer current-house technical review questions through internal evidence and challenge<br/><b>DONE</b>"]
     n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
     n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>DONE</b>"]
   end
@@ -912,7 +910,7 @@ flowchart LR
   class n_PHY_02 held;
   class n_PHY_03_ENGINEERING ready;
   class n_PHY_04 ready;
-  class n_EPR_DESK_REVIEW ready;
+  class n_EPR_DESK_REVIEW done;
   class n_EPR_RH11 ready;
   class n_DEL_00 done;
   class n_EPR_REFRESH done;
