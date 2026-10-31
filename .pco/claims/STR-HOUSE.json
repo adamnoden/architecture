@@ -9,8 +9,8 @@
     "label": "issue-comment-6541491670"
   },
   "claimedAt": "2026-10-31T09:07:16.000Z",
-  "heartbeatAt": "2026-10-31T09:07:16.000Z",
-  "expiresAt": "2026-10-31T09:52:16.000Z",
+  "heartbeatAt": "2026-10-31T09:30:49.000Z",
+  "expiresAt": "2026-10-31T10:15:49.000Z",
   "branch": "work/mvb-chat-6541491670",
   "predecessor": {
     "leaseId": "b717f35b-d7cc-49c4-bff0-dc440d6fa5da",
@@ -31,5 +31,11 @@
       "evidence": "PR #1122 merged dfb60fd3483839f326a27d16116dad4ce7a45f1e; exact-head CI41148424270 passed f2ba757aa81a258d5d85c3afd4a94d644fa4385a; canonical publication preflight passed00:11:04.335Z against main8d6c7841.",
       "next": "STR-HOUSE stays open. Develop supplier-specific HC150 compatibility, anchorage, upper-wall transmission and temporary works at y6570-7770; widening needs explicit room/service replan."
     }
+  },
+  "pr": 1131,
+  "checkpoint": {
+    "evidence": "PR #1131 head 497049420e2e2193e2a40dc730364b1d42d9b301; four STR files; ten local tests, pinned input blobs and inspected deterministic A3 section",
+    "next": "Reconcile current main, reproduce on Node24, require exact-head CI and canonical merge-check; merge bounded result and release",
+    "blocker": "No support capacity, wet assembly, hydraulic or house selection acceptance; STR-HOUSE remains planned"
   }
 }
