@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "node": "ADE-SECTION-VIEW",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f0c7e09a-bd4c-4849-94d7-dc0793df4253",
   "holder": {
     "kind": "chatgpt",
     "label": "owner-directed-ade-section-view-resume"
   },
   "claimedAt": "2026-10-31T21:44:19.996Z",
-  "heartbeatAt": "2026-10-31T21:44:19.996Z",
-  "expiresAt": "2026-10-31T22:29:19.996Z",
+  "heartbeatAt": "2026-10-31T21:52:52.833Z",
+  "expiresAt": "2026-10-31T21:52:52.833Z",
   "branch": "work/ade-section-view-resume-1187",
   "checkpoint": {
-    "evidence": "Recovered predecessor 605a454 on distinct branch and new draft PR #1189; exact-head independent CI pending",
-    "next": "Establish runner-side native merge preflight on verified exact head then merge; do not merge if unchecked."
+    "evidence": "PR #1189 squash merged to main commit 026e9bbc53a2a77c1dc44c2b2147851905087a7e, exact source head 605a454; all 10 CI green and native preflight attempt 2 passed",
+    "next": "ADE-SECTION-PARITY (separate canonical node) migrates accepted current layout-family principal and service section to source-owned 3D background geometry."
   },
   "predecessor": {
     "leaseId": "ef3a98c4-6fc9-4fbc-8034-913830891a3a",
@@ -26,5 +26,7 @@
       "next": "Reacquire ADE-SECTION-VIEW generation 2 (manual owner-directed), update PR Lease line, inspect exact-head CI, execute native control:merge-check on runner, merge with expected head SHA, release and verify main. Then claim ADE-SECTION-PARITY for accepted layout-family current house migration."
     }
   },
-  "pr": 1189
+  "pr": 1189,
+  "releasedAt": "2026-10-31T21:52:52.833Z",
+  "releaseReason": "completed"
 }
