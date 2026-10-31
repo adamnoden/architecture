@@ -9,8 +9,8 @@
     "label": "swarm-2900-root-coordination"
   },
   "claimedAt": "2026-10-31T17:39:21.979Z",
-  "heartbeatAt": "2026-10-31T17:39:21.979Z",
-  "expiresAt": "2026-10-31T18:24:21.979Z",
+  "heartbeatAt": "2026-10-31T17:57:23.997Z",
+  "expiresAt": "2026-10-31T18:42:23.997Z",
   "branch": "work/swarm-2900-next-20261031",
   "predecessor": {
     "leaseId": "e678fff1-561f-4d83-ba85-2256b2648c26",
@@ -33,5 +33,10 @@
       "next": "Bind actual riser-trimmer section and bearing details, supported floor closure and cabinet support; reconcile receiving-plank, spine and plant-door arch reactions. STR-HOUSE remains planned.",
       "blocker": "The topology and closure comparison selects no structural capacity, complete floor assembly, material exception or construction acceptance."
     }
+  },
+  "checkpoint": {
+    "evidence": "Published source 1cafd7afca71801f7729d41964a55eceda1050b6, tree 69a8a9f8b0ac8a9e703ecdb54393d9402d4a7f95. Independent primary-source, code and rendered reviews passed; original riser JSON/SVG unchanged; repository integrity and docs build passed. Current HAD slider result reconciled. No product or geometry adoption.",
+    "next": "Integrate the independently leased IAS cabinet and floor-closure comparison, require full exact-head CI and fresh publication preflight for both nodes, then merge and hand off the partial results.",
+    "blocker": "Actual HC150 hanger or paired deeper assembly, receiving-panel layout, supported closure/cabinet frame, one-sided spine connection and installed constituents remain unbound. STR-HOUSE remains incomplete."
   }
 }
