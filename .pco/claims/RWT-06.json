@@ -9,8 +9,8 @@
     "label": "swarm-782cae-worker-two-next"
   },
   "claimedAt": "2026-10-31T18:06:01.816Z",
-  "heartbeatAt": "2026-10-31T18:06:01.816Z",
-  "expiresAt": "2026-10-31T18:51:01.816Z",
+  "heartbeatAt": "2026-10-31T18:08:23.987Z",
+  "expiresAt": "2026-10-31T18:53:23.987Z",
   "branch": "work/swarm-782cae-worker-two-next",
   "predecessor": {
     "leaseId": "328b2897-435b-45d5-8a05-2736278c2f43",
@@ -31,5 +31,10 @@
       "next": "Handoff the still-planned RWT-06 packet. Reopen a connected section when current-configuration machine layout or an exact matched retained W2 penetration, renewable W1 joint, support and complete release geometry is available. Preserve1160 and existing threshold/structural/site evidence. Root coordinates a fresh frontier; do not immediately reacquire the unchanged question.",
       "blocker": "Missing matched W2/W1/support/release geometry and current-configuration machine layout; actual receiving and vulnerable-interface conditions remain unbound. This is an evidence limitation, not a publication failure."
     }
+  },
+  "checkpoint": {
+    "evidence": "Read-only verification against accepted main b3a11fa79906619e4d5889fc79c1fc73cb8f2a28 confirms the generation-18 evidence boundary. PR #1160 and existing court/threshold/outer-west-renewal studies already cover the available envelope, inward-pull and retained-body comparisons. No materially distinct witness, source change, feature branch, PR or shipment was earned.",
+    "next": "Re-enter when a matched current AWPT-6454+ outdoor jack/wheel/basket/control/deployment layout with a located task and actual support route is available, or a matched W1/W2/support/joint-release assembly and required site datums are supplied. Preserve predecessor evidence and do not repeat unchanged generic comparisons.",
+    "blocker": "Actual machine contacts, floor support/paver conditions and matched W1/W2 release geometry remain unbound. An indoor 1.75 x 1.55 deployment lead cannot qualify the current 3.0 x 2.8 outdoor comparison. The limitation is missing required evidence, not a publication or transport failure."
   }
 }
