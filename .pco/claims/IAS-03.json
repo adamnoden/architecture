@@ -9,8 +9,8 @@
     "label": "issue-comment-6541529143"
   },
   "claimedAt": "2026-10-31T09:11:04.000Z",
-  "heartbeatAt": "2026-10-31T09:11:04.000Z",
-  "expiresAt": "2026-10-31T09:56:04.000Z",
+  "heartbeatAt": "2026-10-31T09:25:50.000Z",
+  "expiresAt": "2026-10-31T10:10:50.000Z",
   "branch": "work/mvb-chat-6541529143",
   "predecessor": {
     "leaseId": "d54f4929-4f06-42e5-9c40-be3707b0f207",
@@ -33,5 +33,11 @@
       "next": "IAS-03 remains planned. Bind the current sink/waste kit, compatible trap and appliance branch, all constituents and supports; locate actual datums, isolation, full clip/seal release and supported front withdrawal. Other IS-01–06 duties remain open.",
       "blocker": "No current kit/connected assembly, complete material admission or physical maintenance/drying proof; conditional HAD Option B remains unadopted."
     }
+  },
+  "pr": 1129,
+  "checkpoint": {
+    "evidence": "PR #1129 head7e287439 binds current sink service parts and fixing-release duties in three IAS Markdown paths. Independent source/geometry and inherited generator checks passed.",
+    "next": "Verify exact-head full CI, reconcile current main if needed, run fresh canonical preflight, merge partial and release handoff.",
+    "blocker": "Current delivered kit, complete connected fit/material admission and physical renewal remain unproved; IAS-03 stays planned."
   }
 }
