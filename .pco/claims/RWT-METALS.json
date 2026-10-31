@@ -9,8 +9,8 @@
     "label": "swarm-resume-root-983b7ee"
   },
   "claimedAt": "2026-10-31T09:05:14.207Z",
-  "heartbeatAt": "2026-10-31T09:25:12.703Z",
-  "expiresAt": "2026-10-31T10:10:12.703Z",
+  "heartbeatAt": "2026-10-31T09:27:02.245Z",
+  "expiresAt": "2026-10-31T10:12:02.245Z",
   "branch": "work/swarm-resume-root-20261031",
   "predecessor": {
     "leaseId": "834b5455-21ea-4ef4-ba75-0933aeb68c53",
@@ -36,8 +36,7 @@
   },
   "pr": 1128,
   "checkpoint": {
-    "evidence": "PR #1128 corrected head d6b2cdf3c8425e431e8a92a8736f909d4193a835, exact tree2905d56e1d1554bbfb6b7ad7d157b668a4c7c89b matched. Initial CI exposed public-to-internal link; owning public prose corrected and sanitation/repository checks passed. Canonical local health passed tests and outputs to absent Chrome155 figure gate.",
-    "next": "Require full CI on corrected exact head, fresh current-main/lease merge-check and expected-head merge. Preserve partial and physical limits.",
-    "blocker": "Corrected exact-head CI pending; local Chrome155 absent."
+    "evidence": "PR #1128 merged as 1486df666d2c6758ccc0e93212f9d5290f7da7dd. Corrected head d6b2cdf3c8425e431e8a92a8736f909d4193a835 passed full CI41188529412 and fresh canonical preflight2026-10-31T09:26:27.552Z. Main matches all three RWT changed files. Initial public-link CI failure corrected; no check weakened.",
+    "next": "RWT-METALS remains planned. Bind an actual matched108mm repair/joint assembly, fixed W2 outlet, threshold withdrawal/reinstatement, supports and floor/thermal continuity; complete collection, brass-channel and concealed-system comparisons still required. No crossing or hydraulic acceptance."
   }
 }
