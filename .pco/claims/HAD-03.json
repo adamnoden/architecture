@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 11,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3c0342c6-a6c9-4683-b892-2f238354cfb3",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-2900-authorised-resume"
   },
   "claimedAt": "2026-10-31T16:54:40.699Z",
-  "heartbeatAt": "2026-10-31T17:01:31.967Z",
-  "expiresAt": "2026-10-31T17:46:31.967Z",
+  "heartbeatAt": "2026-10-31T17:01:46.745Z",
+  "expiresAt": "2026-10-31T17:01:46.745Z",
   "branch": "work/swarm-2900-had-20261031",
   "predecessor": {
     "leaseId": "01578a4c-862a-45a3-aa70-d52bf32157e7",
@@ -39,5 +39,7 @@
     "evidence": "PR #1151 merged at 20ca2ad086984af13b1054baac8bb2e5b15dc244. Head fadfa3964aa68fd4ec0c991e6b316826ca226ef0 passed full CI 41222154331 and canonical preflight 17:00:47.912 UTC.",
     "next": "Confirm required regular and guest seating and obtain actual paired sections and occupied-use evidence; preserve both unadopted comparisons and opening/conversion limits.",
     "blocker": "HAD-03 remains planned. Six-side envelope study does not select furniture, establish occupied comfort, material admission or actual conversion."
-  }
+  },
+  "releasedAt": "2026-10-31T17:01:46.745Z",
+  "releaseReason": "handoff"
 }
