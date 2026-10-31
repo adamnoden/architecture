@@ -9,9 +9,9 @@
     "label": "swarm-materials-section-983b7ee"
   },
   "claimedAt": "2026-10-31T17:27:12.055Z",
-  "heartbeatAt": "2026-10-31T17:27:12.055Z",
-  "expiresAt": "2026-10-31T18:12:12.055Z",
-  "branch": "work/swarm-interiors-section-20261031",
+  "heartbeatAt": "2026-10-31T17:36:03.529Z",
+  "expiresAt": "2026-10-31T18:21:03.529Z",
+  "branch": "work/swarm-court-access-20261031",
   "predecessor": {
     "leaseId": "5304f182-0e60-4948-87e1-527354d1a11b",
     "generation": 10,
@@ -31,5 +31,11 @@
       "evidence": "PR 1154 merged as 8feba35f3673062555093bed9ac2e80b17b503b7. Accepted tree 50ee298e28ad54fc55a11912d6e6f317d9350db7 equals final head e58f44aafd145aa5945822dcb3c1f2b3eb2c21b2; full CI41224104120 succeeded and fresh canonical preflight passed at17:24:42.779Z. Reviewed copper blobs unchanged through both main reconciliations. Native merge/source ancestry verified; feature ref absent. No lifecycle completion.",
       "next": "RWT-METALS remains planned. Bind the actual pan solder, fabricated outlet/tail section and complete supplied consumables; qualify initial joining and distinct later repair with retained water/support boundaries, material condition and actual heat/withdrawal/cleanup access. Outer receiver and concealed-route assembly/hydraulic duties remain open."
     }
+  },
+  "pr": 1160,
+  "checkpoint": {
+    "evidence": "Root published common PR1160 at d273cbf0807fc9cfa1a0084e2ced1eaae49a8c00, tree5017da3af804e6a8a9561eabd2a95f7bbaf45664, preserving navigation source parent5ef0c8a438362136ea279c7bb37b07bfaf39145a. Reviewed local source3315ad58 fixes four section anchors and five incoming links only; exact reversal and independent review preserve all technical text. Repository/publication source/integrity and docs build passed; all five fragments resolve to actual generated IDs.",
+    "next": "Independently compare the four owner blobs and source ancestry at published common head; require full exact-head CI and fresh canonical preflight before merge. No technical or lifecycle completion.",
+    "blocker": "Full common-head CI and fresh publication preflight pending; local figure validation lacks Chrome155."
   }
 }
