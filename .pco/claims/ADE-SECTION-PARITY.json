@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "node": "ADE-SECTION-PARITY",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "ab2cc511-c16c-4c94-90fa-ccac785aac21",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "ade-section-parity"
+  },
+  "claimedAt": "2026-10-31T21:53:32.902Z",
+  "heartbeatAt": "2026-10-31T21:53:32.902Z",
+  "expiresAt": "2026-10-31T22:38:32.902Z",
+  "branch": "work/ade-section-parity-1187",
+  "checkpoint": {
+    "evidence": "View compiler merged in PR #1189",
+    "next": "Implement and validate current-house section parity"
+  }
+}
