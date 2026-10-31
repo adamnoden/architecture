@@ -84,7 +84,6 @@ export function layoutAperturePrimitives(view:ElevationView,apertures:ReturnType
 
 export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100|50|25){
  const {scene,p,line,text,box,finish}=context(view,scale),station=view==='PRINCIPAL'?layoutFamilySource.cuts.A:layoutFamilySource.cuts.B,m=layoutSectionAt(station)
- for(const w of m.walls)w.holes=w.holes.map(h=>({...h,id:(h.lo>=design.levels.first?'FIRST-':'GROUND-')+h.id}))
  const distance=Math.min(station,design.shell-station),r=design.roof.ridgeInset,c=design.court
  const roofRanges=m.court?[[-200,c.y+200],[c.y+c.depth-200,design.shell+200]]:[[-200,design.shell+200]]
  // The same source-derived cut profile supplies both the filled section and
@@ -174,7 +173,7 @@ export function createLayoutFamilyScene(view:LayoutFamilyView,scale:100|50):Draw
 export function layoutSectionAt(x:number){
  const d=design,c=d.court,e=d.envelope,court=x>c.x&&x<c.x+c.width
  const envelope=court?[{id:'outer-south',lo:0,hi:e,top:d.roof.eaves},{id:'court-south',lo:c.y-e,hi:c.y,top:d.roof.courtEaves},{id:'court-north',lo:c.y+c.depth,hi:c.y+c.depth+e,top:d.roof.courtEaves},{id:'outer-north',lo:d.shell-e,hi:d.shell,top:d.roof.eaves}]:[{id:'outer-south',lo:0,hi:e,top:d.roof.eaves},{id:'outer-north',lo:d.shell-e,hi:d.shell,top:d.roof.eaves}]
- const walls=envelope.map(w=>({...w,holes:(['GROUND','FIRST'] as const).flatMap(level=>revisionOpenings(level).filter(o=>o.wall===w.id&&Math.abs(o.centre-x)<o.width/2).map(o=>({id:o.id,kind:o.kind,lo:(level==='GROUND'?0:d.levels.first)+(o.kind==='door'?0:o.sill??750),hi:(level==='GROUND'?0:d.levels.first)+(o.head??2850)})))}))
+ const walls=envelope.map(w=>({...w,holes:(['GROUND','FIRST'] as const).flatMap(level=>revisionOpenings(level).filter(o=>o.wall===w.id&&Math.abs(o.centre-x)<o.width/2).map(o=>({id:level+'-'+o.id,kind:o.kind,lo:(level==='GROUND'?0:d.levels.first)+(o.kind==='door'?0:o.sill??750),hi:(level==='GROUND'?0:d.levels.first)+(o.head??2850)})))}))
  const partitions=(['GROUND','FIRST'] as const).flatMap(level=>d.partitions[level].filter(w=>w.a[1]===w.b[1]&&x>w.a[0]&&x<w.b[0]).map(w=>({id:w.id,at:w.a[1],base:level==='GROUND'?0:d.levels.first,door:revisionOpenings(level).some(o=>o.wall===w.id&&Math.abs(o.centre-x)<o.width/2)})))
  const floorRuns=court?[[e,c.y-e],[c.y+c.depth+e,d.shell-e]]:[[e,d.shell-e]]
  const voidCut=x>entryVoid.x&&x<entryVoid.x+entryVoid.width
