@@ -9,11 +9,12 @@
     "label": "directed-section-view-20261031"
   },
   "claimedAt": "2026-10-31T21:10:53.737Z",
-  "heartbeatAt": "2026-10-31T21:10:53.737Z",
-  "expiresAt": "2026-10-31T22:40:53.737Z",
+  "heartbeatAt": "2026-10-31T21:16:06.000Z",
+  "expiresAt": "2026-10-31T22:46:06.000Z",
   "branch": "work/ade-section-view-1187",
   "checkpoint": {
-    "evidence": "Owner-directed #1187; registered main 11da37a",
-    "next": "Implement generic orthographic context+host aperture fixture and open exact-head CI PR"
-  }
+    "evidence": "Branch work/ade-section-view-1187, draft PR #1188, first engine module and adversarial unit tests on head 0bb7f2a",
+    "next": "Add contrast scene + provenance tests and contract, inspect exact-head CI; do not merge without fresh runner preflight"
+  },
+  "pr": 1188
 }
