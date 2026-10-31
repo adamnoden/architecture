@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 12,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a4306499-2ae9-43d1-b3df-4e343c541df6",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-782cae-root-rwt"
   },
   "claimedAt": "2026-10-31T17:16:15.611Z",
-  "heartbeatAt": "2026-10-31T17:46:44.724Z",
-  "expiresAt": "2026-10-31T18:31:44.724Z",
+  "heartbeatAt": "2026-10-31T17:47:05.594Z",
+  "expiresAt": "2026-10-31T17:47:05.594Z",
   "branch": "work/swarm-782cae-had-review",
   "predecessor": {
     "leaseId": "3c0342c6-a6c9-4683-b892-2f238354cfb3",
@@ -39,5 +39,7 @@
     "next": "Retain the exposed-pull slider as an unadopted joined-STR comparison. Bind actual hardware/support, material disposition, privacy and use before adoption. A distinct next HAD comparison can test the accepted Study door, desk and chair sequence; use fresh canonical dispatch before execution.",
     "blocker": "HAD-03 remains planned. The 638 opening, 650 reach sensitivity and 5 mm basin reserve do not establish an installed doorset, human suitability or a complete house selection."
   },
-  "pr": 1159
+  "pr": 1159,
+  "releasedAt": "2026-10-31T17:47:05.594Z",
+  "releaseReason": "handoff"
 }
