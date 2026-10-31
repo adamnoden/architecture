@@ -150,6 +150,12 @@ both IAS-03 and HAD-03. A complete next result needs actual fit/product-dependen
 inputs or an explicit owning-source redesign, with downstream reconciliation.
 No maturity, physical evidence or engineering/rated acceptance changes.
 
+The later [family-bath slider comparison](had-03-family-bath-slider.md) addresses
+inside closing and reopening in the separate, unadopted joined STR candidate B.
+It keeps a pull exposed through a reduced opening and checks the connected hall
+route and closed-door approach states. Its reach sensitivity, small margins and
+unselected installed hardware do not transfer a pass to this accepted-house study.
+
 ## Verification
 
 Source datums/apertures and new reservation arithmetic are checked independently.
