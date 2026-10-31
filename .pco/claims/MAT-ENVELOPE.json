@@ -9,8 +9,8 @@
     "label": "swarm-2900-worker-three-mat"
   },
   "claimedAt": "2026-10-31T17:10:34.409Z",
-  "heartbeatAt": "2026-10-31T17:38:05.878Z",
-  "expiresAt": "2026-10-31T18:23:05.878Z",
+  "heartbeatAt": "2026-10-31T17:42:09.935Z",
+  "expiresAt": "2026-10-31T18:27:09.935Z",
   "branch": "work/swarm-2900-interfaces-20261031",
   "predecessor": {
     "leaseId": "456fc77f-d505-42da-8915-c81dbfcb16db",
@@ -33,9 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1157 published at 2c8169e4584c1196e1e0a60dad3cc86226d0e946, tree 0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822. Includes main aa8e85bb and reviewed interior finish source 93676668. Envelope study remains exact to reviewed local f3d011c4 / remote source 376d8b47. Independent NCCT source review passed; repository and documentation validation passed; concurrent I05/I08/S02 and new I02/FINISH-STUDY integration reviewed. No assembly or lifecycle completion.",
-    "next": "Obtain exact-head full CI on PR1157, rerun fresh canonical publication preflight, merge the validated head and release MAT-ENVELOPE with the whole junction still unresolved.",
-    "blocker": "Full CI for the newly integrated head is pending; prior green head failed current-main ancestry after parallel publications."
+    "evidence": "PR1157 merged at 17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree 0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946; full CI 41225448974 passed. MAT-ENVELOPE canonical preflight passed at 17:40:08.475Z against current main aa8e85bb. Fresh main ancestry verified; shared remote branch absent per root verification. Envelope study and G06 preserve independent source review. Bounded partial result only; MAT-ENVELOPE remains planned.",
+    "next": "Resolve one configured wall-base and floor-to-mineral-DPC junction, preserving the clear-cavity/drained-tray alternatives, all retained constituents, structural fill, passive site-water conditions and maintainable-side service access. Reconcile NCCT outlet instructions and its separate inner-leaf membrane interface before any selection.",
+    "blocker": "No exact complete inner-leaf/floor transition, installed membrane/auxiliary disclosure, project outlet setting-out or actual brick/mortar/load qualification; site levels and complete assembly remain unselected."
   },
   "pr": 1157
 }
