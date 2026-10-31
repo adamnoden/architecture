@@ -44,6 +44,13 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --no-audit --no-fund
+
+      - name: Cache verified publication fonts
+        uses: actions/cache@v6
+        with:
+          path: node_modules/.cache/ovids-house/publication-fonts
+          key: ${{ runner.os }}-publication-fonts-v1-${{ hashFiles('publication/fonts.ts') }}
+          restore-keys: ${{ runner.os }}-publication-fonts-v1-
       - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends poppler-utils
       - name: Regenerate historical control and revised architectural source
         run: node --import tsx publication/specimens/plt03b6/prepare.ts

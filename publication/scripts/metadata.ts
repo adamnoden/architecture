@@ -54,7 +54,13 @@ async function publicationPdfMetadata(
     throw new Error(`Publication PDF is missing or empty: ${repoRelativePath}`)
   }
 
-  const inspection = await inspectPdf(absolutePath)
+  const inspection = await inspectPdf(absolutePath, { links: true })
+  const obsoleteLinks = inspection.links!.filter((url) =>
+    /^https?:\/\/adamnoden\.github\.io\/architecture\/docs(?:\/|$)/i.test(url)
+  )
+  if (obsoleteLinks.length) {
+    throw new Error(`${repoRelativePath} contains obsolete website routes in PDF URI annotations:\n${[...new Set(obsoleteLinks)].join('\n')}`)
+  }
   const { widthMm, heightMm } = inspection.pageSize
   const orientation = widthMm === heightMm ? 'square' : widthMm < heightMm ? 'portrait' : 'landscape'
 

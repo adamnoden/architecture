@@ -115,7 +115,6 @@ flowchart LR
   subgraph g_SWE["SWE"]
     direction TB
     n_SWE_CONTROL["SWE-CONTROL<br/>Repair dispatcher selection races and make lease snapshots efficient and coherent<br/><b>READY</b>"]
-    n_SWE_PUBLICATION["SWE-PUBLICATION<br/>Correct PDF routes, persist pinned fonts and preserve Mermaid transformations<br/><b>READY</b>"]
     n_SWE_AUTOMATION["SWE-AUTOMATION<br/>Make briefings source-coherent and reduce evidenced setup and proof overhead<br/><b>READY</b>"]
     n_SWE_IDENTITY["SWE-IDENTITY<br/>Make canonical compiler fingerprints independent of execution locale<br/><b>READY</b>"]
   end
@@ -254,7 +253,6 @@ flowchart LR
   class n_EPR_RH11 ready;
   class n_DEL_CURRENT blocked;
   class n_SWE_CONTROL ready;
-  class n_SWE_PUBLICATION ready;
   class n_SWE_AUTOMATION ready;
   class n_SWE_IDENTITY ready;
 ```
@@ -484,7 +482,7 @@ flowchart LR
     direction TB
     n_SWE_PLAN["SWE-PLAN<br/>Register the owner-directed software audit and bounded implementation packets<br/><b>DONE</b>"]
     n_SWE_CONTROL["SWE-CONTROL<br/>Repair dispatcher selection races and make lease snapshots efficient and coherent<br/><b>READY</b>"]
-    n_SWE_PUBLICATION["SWE-PUBLICATION<br/>Correct PDF routes, persist pinned fonts and preserve Mermaid transformations<br/><b>READY</b>"]
+    n_SWE_PUBLICATION["SWE-PUBLICATION<br/>Correct PDF routes, persist pinned fonts and preserve Mermaid transformations<br/><b>DONE</b>"]
     n_SWE_AUTOMATION["SWE-AUTOMATION<br/>Make briefings source-coherent and reduce evidenced setup and proof overhead<br/><b>READY</b>"]
     n_SWE_IDENTITY["SWE-IDENTITY<br/>Make canonical compiler fingerprints independent of execution locale<br/><b>READY</b>"]
   end
@@ -920,7 +918,7 @@ flowchart LR
   class n_DEL_CURRENT blocked;
   class n_SWE_PLAN done;
   class n_SWE_CONTROL ready;
-  class n_SWE_PUBLICATION ready;
+  class n_SWE_PUBLICATION done;
   class n_SWE_AUTOMATION ready;
   class n_SWE_IDENTITY ready;
 ```

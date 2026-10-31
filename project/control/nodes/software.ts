@@ -18,7 +18,7 @@ export const softwareNodes = defineNodes([
   {
     id: 'SWE-PUBLICATION', owners: ['SWE'],
     title: 'Correct PDF routes, persist pinned fonts and preserve Mermaid transformations',
-    dependencies: ['SWE-PLAN'], lifecycle: 'planned',
+    dependencies: ['SWE-PLAN'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed audit #1174; coordinate publication sources and generated metadata.' },
     closeoutEvidence: ['project/swe/publication-result.md']
   },
