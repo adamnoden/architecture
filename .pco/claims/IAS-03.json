@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 8,
-  "state": "released",
-  "leaseId": "678ba801-95cf-4d69-8a2b-e00185ef1597",
+  "generation": 9,
+  "state": "claimed",
+  "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6541529143"
+    "label": "issue-comment-6541790969"
   },
-  "claimedAt": "2026-10-31T09:11:04.000Z",
-  "heartbeatAt": "2026-10-31T09:34:55.000Z",
-  "expiresAt": "2026-10-31T09:34:55.000Z",
-  "branch": "work/mvb-chat-6541529143",
+  "claimedAt": "2026-10-31T09:39:55.000Z",
+  "heartbeatAt": "2026-10-31T09:39:55.000Z",
+  "expiresAt": "2026-10-31T10:24:55.000Z",
+  "branch": "work/mvb-chat-6541790969",
   "predecessor": {
-    "leaseId": "d54f4929-4f06-42e5-9c40-be3707b0f207",
-    "generation": 7,
-    "branch": "work/swarm-983b7ee4744e-3",
-    "pr": 1123,
+    "leaseId": "678ba801-95cf-4d69-8a2b-e00185ef1597",
+    "generation": 8,
+    "branch": "work/mvb-chat-6541529143",
+    "pr": 1129,
     "checkpoint": {
-      "evidence": "PR #1123 merged; final head f43c6bc8933fa883e8161e00a84783fd93e63554 passed full CI41148846380 and fresh canonical preflight00:14:57.216Z against main dfb60fd3. Source-bound sink section/cutout and renewal direction retained.",
-      "next": "IAS-03 remains planned. Bind the current sink/waste kit, compatible trap and appliance branch, all constituents and supports; locate actual datums, isolation, full clip/seal release and supported front withdrawal. Other IS-01–06 duties remain open.",
-      "blocker": "No current kit/connected assembly, complete material admission or physical maintenance/drying proof; conditional HAD Option B remains unadopted."
+      "evidence": "PR #1129 merged at 74ed890c657d5148a00eb14d9ecb5a5104d30c1b. Final head 61d1eb865ae8a6dd1ae431ae8c9bedf3c1cffd4e passed full CI 41188791019 and canonical preflight at 09:32:07.497 UTC.",
+      "next": "Bind the current delivered kit and complete waste/trap/appliance assembly; locate all fixings and supported withdrawal before claiming material or maintenance acceptance.",
+      "blocker": "IAS-03 remains planned. Model service identities and conditional release duties are earned; actual connected geometry, constituents, drying and physical renewal remain unproved."
     }
   },
   "recoverySource": {
-    "leaseId": "d54f4929-4f06-42e5-9c40-be3707b0f207",
-    "generation": 7,
-    "branch": "work/swarm-983b7ee4744e-3",
-    "pr": 1123,
+    "leaseId": "678ba801-95cf-4d69-8a2b-e00185ef1597",
+    "generation": 8,
+    "branch": "work/mvb-chat-6541529143",
+    "pr": 1129,
     "checkpoint": {
-      "evidence": "PR #1123 merged; final head f43c6bc8933fa883e8161e00a84783fd93e63554 passed full CI41148846380 and fresh canonical preflight00:14:57.216Z against main dfb60fd3. Source-bound sink section/cutout and renewal direction retained.",
-      "next": "IAS-03 remains planned. Bind the current sink/waste kit, compatible trap and appliance branch, all constituents and supports; locate actual datums, isolation, full clip/seal release and supported front withdrawal. Other IS-01–06 duties remain open.",
-      "blocker": "No current kit/connected assembly, complete material admission or physical maintenance/drying proof; conditional HAD Option B remains unadopted."
+      "evidence": "PR #1129 merged at 74ed890c657d5148a00eb14d9ecb5a5104d30c1b. Final head 61d1eb865ae8a6dd1ae431ae8c9bedf3c1cffd4e passed full CI 41188791019 and canonical preflight at 09:32:07.497 UTC.",
+      "next": "Bind the current delivered kit and complete waste/trap/appliance assembly; locate all fixings and supported withdrawal before claiming material or maintenance acceptance.",
+      "blocker": "IAS-03 remains planned. Model service identities and conditional release duties are earned; actual connected geometry, constituents, drying and physical renewal remain unproved."
     }
-  },
-  "pr": 1129,
-  "checkpoint": {
-    "evidence": "PR #1129 merged at 74ed890c657d5148a00eb14d9ecb5a5104d30c1b. Final head 61d1eb865ae8a6dd1ae431ae8c9bedf3c1cffd4e passed full CI 41188791019 and canonical preflight at 09:32:07.497 UTC.",
-    "next": "Bind the current delivered kit and complete waste/trap/appliance assembly; locate all fixings and supported withdrawal before claiming material or maintenance acceptance.",
-    "blocker": "IAS-03 remains planned. Model service identities and conditional release duties are earned; actual connected geometry, constituents, drying and physical renewal remain unproved."
-  },
-  "releasedAt": "2026-10-31T09:34:55.000Z",
-  "releaseReason": "handoff"
+  }
 }
