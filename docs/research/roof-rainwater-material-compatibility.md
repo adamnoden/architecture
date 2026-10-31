@@ -171,7 +171,7 @@ The FELDER p 2 sheets, KD composition page and CDA/Aurubis construction pages we
 
 ### Liner support, movement and release
 
-**31 October 2026 continuation.** The [outer-west seam/support comparison](../../project/rwt/outer-west-receiver-renewal.md#a-supported-seam-must-keep-its-movement-and-release) carries the copper process lead into a local construction question. It retains the existing source identities:
+**31 October 2026 continuation.** The outer-west seam/support comparison carries the copper process lead into a local construction question. It retains the existing source identities:
 
 | Further inspection | Evidence and limit |
 |---|---|
