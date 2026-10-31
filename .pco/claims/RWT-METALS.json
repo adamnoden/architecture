@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-METALS",
   "generation": 12,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "45fa55f9-1e07-4d40-b771-15826efeaf76",
   "holder": {
     "kind": "chatgpt",
     "label": "services-recovery-next-20261031"
   },
   "claimedAt": "2026-10-31T17:53:34.129Z",
-  "heartbeatAt": "2026-10-31T18:19:00.849Z",
-  "expiresAt": "2026-10-31T19:04:00.849Z",
+  "heartbeatAt": "2026-10-31T18:19:48.864Z",
+  "expiresAt": "2026-10-31T18:19:48.864Z",
   "checkpoint": {
     "evidence": "PR1165 merged at 76addac4dfcb64d54ce6a794b07d012de7349435. Accepted tree 25f1c6c0f46afde10bc510305694d3c4eaec0f3d exactly equals the validated head9eb985832ea9fcbb0e297d3e4eeda3036c51410a tree. Full CI41228323275 passed; fresh canonical preflight passed18:17:14.811Z against main7f747d98 and live generation12. Native verification confirms all three reviewed owner blobs, remote source eaa5165f9a368435355eeb18fe58e238d53d3faf and tested-head ancestry. Remote feature ref is absent. The bounded copper sheet-seam fabrication, cleanup, repair and brass recipe-transfer result is integrated; RWT-METALS remains planned.",
     "next": "Release for handoff after verified integration. Next candidate qualification requires the actual pan or trough seam and section, current supplied formulation and retained constituents after demonstrated cleaning, matched joining/repair process, support and movement, water/backwater duty and complete access. Preserve the distinction between removed process aids and installed residues, and between copper and brass joining instructions.",
@@ -37,5 +37,7 @@
       "next": "Navigation repair is integrated and independently checked. Release handoff; RWT-METALS remains planned for actual pan/outlet and carrier construction, supplied consumables, joint duty, support and complete repair access. Preserve the accepted primary-source limits and use coordinated fresh canonical dispatch before new work."
     }
   },
-  "pr": 1165
+  "pr": 1165,
+  "releasedAt": "2026-10-31T18:19:48.864Z",
+  "releaseReason": "handoff"
 }
