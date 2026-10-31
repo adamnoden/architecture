@@ -9,8 +9,8 @@
     "label": "rwt-leak-witness-2144-20261031"
   },
   "claimedAt": "2026-10-31T21:44:14.594Z",
-  "heartbeatAt": "2026-10-31T21:50:28.833Z",
-  "expiresAt": "2026-10-31T22:35:28.833Z",
+  "heartbeatAt": "2026-10-31T21:51:49.897Z",
+  "expiresAt": "2026-10-31T22:36:49.897Z",
   "branch": "work/rwt-metal-leak-witness-20261031",
   "note": "Owner-directed continuation of RWT-METALS: outer-west backed copper receiver first passive leak observation and replacement/repair water consequences. Bounded source-owned study; no hydrostatic or site approval.",
   "predecessor": {
@@ -34,8 +34,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1191 open at head69b0654c0fd2ad45a756cc9eef93e4ceebcbc856 (tree067dccf7905093b62ce03e04fc19fc167adc60e5) from main4e9839d4. Three files committed: independent fault-path research, outboard-vs-contiguous SVG, RWT programme link. All verified on branch. PR1186 backing study already merged; no prior result repeated.",
-    "next": "Review exact-head full CI for PR1191. Reconcile current main, obtain canonical fresh publication preflight via a capable runner before merge; otherwise leave PR open and release for handoff.",
+    "evidence": "PR1191 open with latest head 947c61ebb7bfa0aacd1a8515203ae28907f233ab; 3-file study on branch. SVG adjacency and witness label collision corrected after diagram QA. RWT predecessor PR1186 accepted and generation14 released.",
+    "next": "Observe fresh exact-head CI on corrected diagram; reconcile latest main and obtain canonical publication preflight via runner before merge. Connector-only path must not substitute manual observations for CLI.",
     "blocker": "Local container has no Github DNS/clone; connector alone cannot invoke canonical control:merge-check. CI pending. No physical leak mock-up, support/product/site/hydraulic approval implied."
   },
   "pr": 1191
