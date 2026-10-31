@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 4,
-  "state": "released",
-  "leaseId": "9666a1cd-0d68-4864-8ba1-dd2ab4de6a17",
+  "generation": 5,
+  "state": "claimed",
+  "leaseId": "e678fff1-561f-4d83-ba85-2256b2648c26",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6546346708"
+    "label": "swarm-782cae-worker-two"
   },
-  "claimedAt": "2026-10-31T16:53:38.000Z",
-  "heartbeatAt": "2026-10-31T17:11:14.715Z",
-  "expiresAt": "2026-10-31T17:11:14.715Z",
-  "branch": "work/mvb-chat-6546346708",
+  "claimedAt": "2026-10-31T17:13:43.517Z",
+  "heartbeatAt": "2026-10-31T17:13:43.517Z",
+  "expiresAt": "2026-10-31T17:58:43.517Z",
+  "branch": "work/swarm-782cae-worker-two",
   "predecessor": {
-    "leaseId": "44f12563-59a9-4117-aa66-8bf547550f46",
-    "generation": 3,
-    "branch": "work/mvb-chat-6541491670",
-    "pr": 1131,
+    "leaseId": "9666a1cd-0d68-4864-8ba1-dd2ab4de6a17",
+    "generation": 4,
+    "branch": "work/mvb-chat-6546346708",
+    "pr": 1152,
     "checkpoint": {
-      "evidence": "PR #1131 head 5132b6217269017c2fc6863859de03d6ce838de8 preserves current main b9f64d69 and all four reviewed blobs. Earlier exact-head CI passed and Node24 reproduced ten tests/SVG; main moved before canonical publication, so combined head is being revalidated.",
-      "next": "Observe final-head CI and rerun 41189042508 canonical preflight, re-read main/head/lease, expected-head merge then release.",
-      "blocker": "Parallel main changes require fresh integration checks. Architectural scope remains a bounded support/access comparison, not STR-HOUSE completion."
+      "evidence": "PR #1152 merged as e89b0253bf1a66c14307196bcd80303b72de5c85. Head 826e934017ab6ef525041e5d77f512577f942c52 passed full CI 41222622272 and canonical preflight at 17:08:05.189 UTC. Ten tests, pinned evidence and Inkscape sheet inspection passed.",
+      "next": "STR-HOUSE remains planned. Select the actual threshold support and wet assembly together, retain an independently supported openable room route, and reconcile chosen reactions, abutments, floor boundaries and renewal occupation with RWT.",
+      "blocker": "The recovered comparison rejects two trial arch envelopes; it supplies no selected support, admitted wet assembly, engineering capacity or construction acceptance."
     }
   },
   "recoverySource": {
-    "leaseId": "44f12563-59a9-4117-aa66-8bf547550f46",
-    "generation": 3,
-    "branch": "work/mvb-chat-6541491670",
-    "pr": 1131,
+    "leaseId": "9666a1cd-0d68-4864-8ba1-dd2ab4de6a17",
+    "generation": 4,
+    "branch": "work/mvb-chat-6546346708",
+    "pr": 1152,
     "checkpoint": {
-      "evidence": "PR #1131 head 5132b6217269017c2fc6863859de03d6ce838de8 preserves current main b9f64d69 and all four reviewed blobs. Earlier exact-head CI passed and Node24 reproduced ten tests/SVG; main moved before canonical publication, so combined head is being revalidated.",
-      "next": "Observe final-head CI and rerun 41189042508 canonical preflight, re-read main/head/lease, expected-head merge then release.",
-      "blocker": "Parallel main changes require fresh integration checks. Architectural scope remains a bounded support/access comparison, not STR-HOUSE completion."
+      "evidence": "PR #1152 merged as e89b0253bf1a66c14307196bcd80303b72de5c85. Head 826e934017ab6ef525041e5d77f512577f942c52 passed full CI 41222622272 and canonical preflight at 17:08:05.189 UTC. Ten tests, pinned evidence and Inkscape sheet inspection passed.",
+      "next": "STR-HOUSE remains planned. Select the actual threshold support and wet assembly together, retain an independently supported openable room route, and reconcile chosen reactions, abutments, floor boundaries and renewal occupation with RWT.",
+      "blocker": "The recovered comparison rejects two trial arch envelopes; it supplies no selected support, admitted wet assembly, engineering capacity or construction acceptance."
     }
-  },
-  "pr": 1152,
-  "checkpoint": {
-    "evidence": "PR #1152 merged as e89b0253bf1a66c14307196bcd80303b72de5c85. Head 826e934017ab6ef525041e5d77f512577f942c52 passed full CI 41222622272 and canonical preflight at 17:08:05.189 UTC. Ten tests, pinned evidence and Inkscape sheet inspection passed.",
-    "next": "STR-HOUSE remains planned. Select the actual threshold support and wet assembly together, retain an independently supported openable room route, and reconcile chosen reactions, abutments, floor boundaries and renewal occupation with RWT.",
-    "blocker": "The recovered comparison rejects two trial arch envelopes; it supplies no selected support, admitted wet assembly, engineering capacity or construction acceptance."
-  },
-  "releasedAt": "2026-10-31T17:11:14.715Z",
-  "releaseReason": "handoff"
+  }
 }
