@@ -9,9 +9,9 @@
     "label": "swarm-next-root-983b7ee"
   },
   "claimedAt": "2026-10-31T09:27:55.733Z",
-  "heartbeatAt": "2026-10-31T09:43:52.615Z",
-  "expiresAt": "2026-10-31T10:28:52.615Z",
-  "branch": "work/swarm-next-20261031",
+  "heartbeatAt": "2026-10-31T10:09:40.474Z",
+  "expiresAt": "2026-10-31T10:54:40.474Z",
+  "branch": "work/swarm-materials-integration-20261031",
   "predecessor": {
     "leaseId": "c04b4d58-10c3-48e1-be2c-beb3db9d2129",
     "generation": 5,
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published head8768c44101ba3977f84b05bd243467517bf16f61 tree5a7adac35c92e0e650104409aeda896491f6c08e on mainb9f64d69. Independently reviewed retained court-tail versus separate crossing renewal; exact copper pan/flange/brazed-pipe source family and W1 leakage/open-bore limits. Repository/publication/source/docs/diff checks passed; no geometry, product, pressure or lifecycle pass claimed.",
-    "next": "Reconcile pending envelope and water-service integrations, open bounded PR, require full exact-head CI and fresh canonical preflight, then integrate and reconcile/release. Current source remains RWT-METALS planned with connected assembly and physical qualification open.",
-    "blocker": "Serialising main integration before final PR checks; local Chrome155 missing, full health to be established by exact-head CI."
-  }
+    "evidence": "Draft PR #1145 publishes coordinated head 18a8f2bdf39e3fef253e866a148cfdf1cbbc402a, tree 03bc2783319a7229e9940615449b9c010d73e177 on main 4d16682a. It preserves the reviewed RWT source head 30bce83a as a parent and combines reviewed MAT envelope/services outputs without source changes. Seven-file scope, shared-audit preservation, combined repository/publication/docs validation and independent source review passed.",
+    "next": "Require full exact-head CI on common PR #1145, fresh canonical preflights for all three leases against the same head/current main, expected-head merge preserving ancestry, then own RWT handoff/release and verified source-branch cleanup. RWT-METALS remains planned; retained-tail comparison establishes no connected physical assembly pass.",
+    "blocker": "Combined draft integration awaiting current lease metadata and full exact-head CI; connected assembly qualification remains open."
+  },
+  "pr": 1145
 }
