@@ -14,14 +14,16 @@ Primary sources inspected on 30 October 2026:
 
 | Reference | Bounded fact used | Not established |
 |---|---|---|
-| [Aalberts N1FMGI assortment, item 89604](https://aalberts-ips.co.uk/products/detail/n1fmgi/) | The 108 mm row lists **19 × 220 × 220 mm**, **4.05 kg** | Mating faces, axial assembly, backing-ring removal, gasket, installed pressure duty or constituent compliance |
-| [Aalberts N18, item 89641](https://aalberts-ips.co.uk/products/item/89641/) and [N18 family](https://aalberts-ips.co.uk/products/detail/n18/) | Manufacturer-indexed HTML describes a 108 mm 90° copper end-feed bend, **113 × 195 × 195 mm**, **1.34 kg** | Fabricated terminal envelope, joining approval, working clearance or drainage suitability |
+| [Aalberts N1FMGI, exact item 89604](https://aalberts-ips.co.uk/products/item/89604/) and [assortment](https://aalberts-ips.co.uk/products/detail/n1fmgi/) | The 108 mm item lists **19 × 220 × 220 mm**, **4.05 kg** | Mating faces, axial assembly, backing-ring removal, gasket, installed pressure duty or constituent compliance |
+| [Aalberts N18, exact item 89641](https://aalberts-ips.co.uk/products/item/89641/) and [N18 family](https://aalberts-ips.co.uk/products/detail/n18/) | The item page directly confirms a 108 mm 90° copper end-feed bend, **113 × 195 × 195 mm**, **1.34 kg** | Fabricated terminal envelope, working clearance or drainage suitability |
 | [Aalberts Yorkshire YP11](https://aalberts-ips.co.uk/products/detail/yp11/) | Inspected manufacturer assortment lists unions through 54 mm | A verified 108 mm version. Retail wording cannot extend that range; this does not prove that all larger unions are unavailable |
 | [LP Unions](https://lpunions.it/unions/) | Industrial union family includes metal-to-metal cone/sphere seats and sizes to 6 inches | A matched copper transition, footprint, corrosion result or proportionate domestic solution |
 
 The flange page calls the family gunmetal/bi-metal, while other fields list brass CW617N and bronze. Its generic summary also displays the largest size's dimensions. Use the **89604 assortment row**, not the generic summary; resolve exact material and mating specification before procurement. A metal-sealing classification or absence of supplied gaskets does not authorise a gasketless joint.
 
-The bend's primary indexed HTML was recoverable but direct opening was unreliable. Relevant PDF drawing screenshots were not reliably retrievable. No unseen drawing measurement, certified insertion depth, torque or face clearance is adopted. The envelopes support this bounded comparison, not fabrication. Joining process and consumables must follow exact large-bore instructions; web metadata saying solder does not authorise borrowed small-tube practice.
+**Subsequent source recovery, 30 October:** both exact item pages and the [official 2023 Endex brochure](https://aalberts-ips.co.uk/wp-content/uploads/2023/12/Endex-09969088_56035915_Brochure_2023.pdf) are now directly available. Printed p.42 identifies the 108 mm/89604 flange as a steel outer with gunmetal inserts; its drawing row gives **a=22 mm, Za=2 mm and eight holes**. The website's 19 mm listed length and the drawing's 22 mm dimension have not been reconciled. Neither is an installed pair/gasket/bolt stack, and neither establishes the residual collar diameter after hypothetical backing-ring removal. Exact constituents, any coatings and mating-face details remain procurement questions.
+
+Printed p.37 identifies the 108 mm/89641 bend with **a=135 mm and Za=114 mm**; the item page gives corresponding l1/l2=135 and z1/z2=114. The brochure marks this Endbraze range **for brazing only**. Generic web metadata about solder does not authorise soft solder. These dimensions do not by themselves establish a certified insertion allowance or a fabricated terminal envelope. Joining consumables and method, gasket, torque, face release and full working sweep remain unresolved; do not add catalogue lengths into an invented assembled section.
 
 ## A defined first-removal mechanism
 
@@ -99,3 +101,5 @@ They verify arithmetic and ideal plane gaps, not catalogue accuracy, full collis
 Next is the **connected access and water-boundary section**, with exact mating faces and a disclosed suitable seal inside it. RWT-06/HAD/STR own spatial reconciliation; MAT controls residual materials. More isolated fittings or synthetic clearance drawings cannot substitute for that decision.
 
 The subsequent [RWT-06 raised-terminal section comparison](raised-terminal-section.md) supplies a necessary constraint for that work: the historical 435 mm relative raise does not clear even the centred flange envelope at the historical exterior-interface axis. It does not select the terminal, its removal travel or the connected route.
+
+The [segmented copper-access comparison](segmented-copper-access.md) locates the alternative through the family-room floor and two threshold bands. It identifies conditional depth and renewal constraints without treating an openable floor strip as a completed route or inheriting a shorter garden extraction corridor.

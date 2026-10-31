@@ -192,6 +192,8 @@ After MAT-00, RWT-01 and ROF-02, develop the condition-by-condition comparisons 
 
 After MAT-00 and RWT-04, develop complete copper collection and brass-channel candidates, with justified alternatives and hidden routes included. Reconcile joint/seal/coating constituents, movement, support, material compatibility including runoff, maintenance and renewal. Reuse the existing shared compatibility record. A metal tube with plastic sleeves/spacers is not a completed response.
 
+The [segmented copper-access comparison](segmented-copper-access.md) now locates the access-first north crossing through its occupied-room run and two threshold/support bands. It separates possible modular renewal from unproved joint release, exposes conditional flange/floor-envelope conflicts, and keeps the fixed court-water boundary distinct from removable service joints. The [component source update](copper-access-first-result.md#actual-components-and-evidence-boundaries) recovers exact Endex drawings and brazing-only scope without claiming an installed face/seal assembly. RWT-METALS remains planned.
+
 ### RWT-ROBUSTNESS — independent paths and degraded operation
 
 After RWT-SHED, RWT-METALS and RWT-05, compare full-duty surviving paths under blockage, accessible capacity/freeboard, common debris/frost/backwater and passive final spill. Use actual candidate elevation ledgers and downstream topology. A second outlet must have a reachable and independent path; a clean-system capacity result cannot prove degraded-operation safety.
