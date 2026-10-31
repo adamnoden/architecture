@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-METALS",
   "generation": 4,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "834b5455-21ea-4ef4-ba75-0933aeb68c53",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6535667492"
   },
   "claimedAt": "2026-10-30T23:28:04.000Z",
-  "heartbeatAt": "2026-10-31T00:06:56.000Z",
-  "expiresAt": "2026-10-31T00:51:56.000Z",
+  "heartbeatAt": "2026-10-31T00:08:02.000Z",
+  "expiresAt": "2026-10-31T00:08:02.000Z",
   "branch": "work/mvb-chat-6535667492",
   "predecessor": {
     "leaseId": "26286684-da96-4e05-ae47-8e2024d5b45c",
@@ -39,5 +39,7 @@
     "next": "Develop actual fixed W2 penetration, matched joints/seals and complete threshold/module release with supports, floor/thermal continuity and occupied maintenance states.",
     "blocker": "No installed terminal, dry access, reduced handling corridor, support or hydraulic acceptance. RWT-METALS remains planned."
   },
-  "pr": 1121
+  "pr": 1121,
+  "releasedAt": "2026-10-31T00:08:02.000Z",
+  "releaseReason": "handoff"
 }
