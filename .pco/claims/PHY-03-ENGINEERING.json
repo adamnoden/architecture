@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "PHY-03-ENGINEERING",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "ce5e76d5-bf42-49d0-9f5b-fce70678b3e6",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "swarm-phy-internal-983b7ee"
+  },
+  "claimedAt": "2026-10-31T20:18:44.290Z",
+  "heartbeatAt": "2026-10-31T20:18:44.290Z",
+  "expiresAt": "2026-10-31T21:48:44.290Z",
+  "branch": "work/swarm-floor-edge-internal-20261031"
+}
