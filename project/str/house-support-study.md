@@ -123,6 +123,8 @@ The550×700 gross riser x9410–9960/y4700–5400 fits inside the 600×750 upper
 
 Develop a deliberate structural service bay reaching the wall, for example a **700×800 comparison x9370–10070/y4650–5450**, containing the gross riser. Its perimeter still needs a real frame. Preferred first enquiry: manufacturer-designed trimming of adjacent full planks with a finite east-side header and verified reactions. Alternative: a separately supported cross-span frame, with its actual outer-east and spine reactions. The latter can meet the outer-east plant door aperture; that reaction must return to an arch/pier enquiry, not a plain-wall assumption. No member, cabinet free section or wet/fire/acoustic closure is yet selected. This is a genuine architectural/structural opening boundary, not just product sizing.
 
+The [riser-trim continuation](house-riser-trim-study.md) now binds the local strap topology to a current manufacturer detail, locates the two complete reaction routes, and exposes the floor opening beyond the cabinet footprint. It keeps actual bearing/section dimensions unknown, makes the one-sided spine condition explicit, and requires independent cabinet support and a complete floor closure. Neither the local strap nor the frame is selected or assigned capacity.
+
 ## 7. Roof: corners have a named mechanism
 
 Keep25° principal faces and the represented eaves/ridge geometry. Ordinary tied cross-ring trusses run outer-to-court: NS in the south/north central wings, EW in the east/west central wings. Their ties, top-plane bracing and wall anchorage resist the actual force system, including uplift and reversals. No ridge-bearing wall is invented.

@@ -104,7 +104,7 @@ The foundation concept is a supporting grid under named walls and arch piers, wi
 |---|---|
 | Opposed ends and upper-wall transmission | Develop the supplier-specific tied 140 mm junction at the east-spine full-width trial bay, including actual core alignment, temporary support, upper-wall transmission and remote bearings. The dimensioned 215 mm alternatives require explicit room/service replanning; no drop-in widening is accepted |
 | Stair/bridge frame and landing dogleg | Integrated seat versus changed window/arch/member geometry, with full finite bearings, protection, landing and headroom |
-| Riser and adjacent floor edge | Actual trimmed bay and finite support reactions, including any external opening it loads |
+| Riser and adjacent floor edge | Bind the [source-backed local strap or independent frame](house-riser-trim-study.md) to actual receiving units, one-sided spine support, cabinet support and complete closure; neither route bypasses the ground plant-door arch |
 | Arch thrust and construction | Choose and draw the participating abutment or permanent tie, its anchorage and DPC/foundation path; include centering and staged loads |
 | Roof heel, corners and restraint | One complete support/thermal/ceiling section and finite corner-seat geometry, coordinated with ROF |
 | Occupied rooms and services | Resolve the front-bed head nooks against the actual brief; bind door, wardrobe, wet-system, plant-renewal and furniture states; test greater room allocation or a shell/court rewind if needed |
