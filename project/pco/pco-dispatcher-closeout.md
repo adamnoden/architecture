@@ -1,6 +1,6 @@
 # PCO-DISPATCH — dispatcher closeout
 
-**State:** complete  
+**State:** closeout candidate; final lease release and hygiene reconciliation pending  
 **Date:** 2026-10-29
 
 ## Result
@@ -68,21 +68,20 @@ npm run control:claim-next -- --holder-kind chatgpt --holder-label session-name
 
 ## Protected implementation
 
-The implementation and closeout were protected by the same real ACO lease:
+The implementation was protected through its merge by the real ACO lease:
 
 - node: `PCO-DISPATCH`;
 - generation: `1`;
 - lease id: `47a84b0e-4afa-49dd-98cf-5748a0d2539f`;
 - holder: `architecture-dispatcher-build`;
-- implementation branch: `work/pco-dispatch`.
-
-The lease remained live through implementation merge, durable packet completion and main projection reconciliation. It was released only after `main` had observed `PCO-DISPATCH` as complete.
+- branch: `work/pco-dispatch`;
+- lease remained live through the validated implementation merge and is intentionally retained until this durable closeout reaches `main`.
 
 ## Implementation merge proof
 
-Implementation PR #974 passed the full repository/publication validation pipeline on validated head `1fe049f1a55f70ec5fb7885105ac1af9f144d95d` (workflow run `40848973679`). It was squash-merged while the ACO lease was live as `c8bebd0c7984a81d8ebbdf97ce0eb9e15b5bf525`.
+Implementation PR #974 passed the full repository/publication validation pipeline on validated head `1fe049f1a55f70ec5fb7885105ac1af9f144d95d` (workflow run `40848973679`). It was squash-merged while the ACO lease was still live as `c8bebd0c7984a81d8ebbdf97ce0eb9e15b5bf525`.
 
-The main-branch project-control projection reconciler then completed successfully before later concurrent programme movement.
+The main-branch project-control projection reconciler then completed successfully and advanced `main` to `28d76be03aba42032d763df50a0b638e34a73a83` before later concurrent programme movement.
 
 ## Live dispatcher proof
 
@@ -119,26 +118,20 @@ The live dispatcher also surfaced the existing active/unclaimed handoff candidat
 
 This demonstrates that the dispatcher is not merely a static ranking function: it combined the merged PCO graph with real ACO occupancy and respected both self-service and manual authority boundaries.
 
-## Durable completion and lease release
+## Disposable probe hygiene
 
-Closeout PR #979 passed the full repository/publication pipeline on the reconciled current-main relationship and was squash-merged as `e7ca470eb10f2496f973423177572b16991e8470` while the generation-1 lease remained owned.
+Probe PR #976 was closed unmerged after its evidence was captured. Its temporary source branch is being disposed through the repository cleanup path and is not project authority.
 
-The main project-control projection reconciler then completed successfully and committed `f01030195e4526668fc074cbaca2ba3a168db674`, at which point `PCO-DISPATCH` was durably complete in PCO.
+## Completion state
 
-ACO lease generation `1`, lease id `47a84b0e-4afa-49dd-98cf-5748a0d2539f`, was released on `runtime/claims` at `2026-10-29T09:36:52Z` with release reason `completed` (runtime commit `f99801eee0703ebf9da40c2854d44f1e19d8028d`).
+`PCO-DISPATCH` is durably marked `complete` with its implementation/design/test/operating-contract evidence registered in the PCO node.
 
-The lease was not released early; occupancy protection therefore covered implementation, merge, closeout and main reconciliation end to end.
+The remaining actions are operational only:
 
-## Cleanup
+1. this closeout PR must pass normal validation and merge while the original ACO lease remains controlled;
+2. main projection reconciliation must observe `PCO-DISPATCH` as complete;
+3. the ACO lease must then be released with reason `completed`;
+4. this record must receive one final hygiene reconciliation recording that release;
+5. temporary dispatcher/probe branches must be removed or explicitly reduced to retained infrastructure (`runtime/claims`).
 
-The disposable live-probe PR #976 was closed unmerged. Its source branch was disposed through `delete-me` via #977 and auto-deleted.
-
-The superseded pre-reconciliation closeout branch `work/pco-dispatch-closeout` was neutralised against accepted state and disposed through `delete-me` via #982. The disposal branch itself is explicitly non-authoritative retained cleanup infrastructure and was refreshed using force-with-lease only after confirming its previous head.
-
-`runtime/claims` remains deliberately retained coordination infrastructure. This final hygiene branch exists only to record the completed release/cleanup evidence and should disappear through the repository's normal post-merge head deletion.
-
-## Closeout
-
-`PCO-DISPATCH` is complete. The repository now supports deterministic self-service packet discovery and race-safe automatic claiming without weakening PCO structural authority, ACO occupancy authority, manual evidence gates or owner-directed work.
-
-The dispatcher proves scheduling/coordination coherence only. It does not prove architectural merit, technical adequacy, external validation or elapsed-time optimality.
+Until the lease release and final hygiene reconciliation are recorded, the packet is substantively complete but operational closeout is not yet clean.
