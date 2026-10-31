@@ -117,7 +117,7 @@ export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100
  // the section cut in its stronger line/assembly hierarchy.
  const background=compileCurrentSectionContext({station,roofBuildDepth:layoutFamilySource.roofBuildZone,
   walls:[...m.walls,...cutPartitions],cutRoofFaces:roofCutFaces})
- scene.primitives.push(...spatialSegmentsToDrawingPrimitives(background.background,{
+ scene.primitives.push(...spatialSegmentsToDrawingPrimitives(background.background.filter(segment=>m.court || !segment.meaning.startsWith('hosted-aperture:')),{
   basis:background.basis,paperOrigin:p.point(0,0),paperMmPerModelMm:1/scale,provenance
  }))
  const assemblies=sectionAssemblyModels(m,y=>currentRoofZ(station,y)-layoutFamilySource.roofBuildZone,{firstFloorRuns:m.firstFloorRuns,storageDeckRuns:m.storageDeckRuns})
