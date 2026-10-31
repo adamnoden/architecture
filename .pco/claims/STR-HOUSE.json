@@ -9,8 +9,8 @@
     "label": "swarm-structural-rooms-2043-20261031"
   },
   "claimedAt": "2026-10-31T20:50:13.455Z",
-  "heartbeatAt": "2026-10-31T21:07:58.321Z",
-  "expiresAt": "2026-10-31T22:37:58.321Z",
+  "heartbeatAt": "2026-10-31T21:31:02.199Z",
+  "expiresAt": "2026-10-31T23:01:02.199Z",
   "branch": "work/swarm-next-2043-20261031",
   "predecessor": {
     "leaseId": "5ad665a5-8a14-4779-8cce-ab3434d47091",
@@ -35,7 +35,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "Actual STR-HOUSE generation8 receipt confirmed; predecessor1170 is accepted and requires no recovery. Dedicated branch fast-forwarded to accepted72c6aedf, preserving completed EPR1183 and PHY1185 and all original B/support/riser inputs. Read owning programme and actual B furniture, wall, service, slider and opening records. Initial separate C comparison extends south envelope250mm and paired front spine75mm west to y3700 while retaining central spine/riser/stair. Private exact continuous-axis probe finds eight750-disc entry/window/wardrobe approaches with explicit900x44 parked bedroom leaves; these are static geometric states, not complete door manipulation or human suitability. Primary ADM furniture distinction and NDSS area/width applicability have been independently challenged. No owning source has yet been committed or externally published; no adoption/completion earned.",
-    "next": "Finish separate source-bound C generator, exact areas/alignment/span and opening/service consequences; retain smaller AppendixD bed control and contrary door/wardrobe/window evidence. Independently challenge complete room/structural comparison and render paired plans before root publication, exact-head CI and fresh canonical preflight."
+    "evidence": "Developed a separate unadopted front-allocation B/C/D comparison in project/str/house-front-allocation-study.md and contained house-front-allocation.py/json/svg, preserving the original pinned structural geometry. Peer independently reproduced both 1801-angle finite-door curves and 18 upper whole-segment paths; area convention and own-handle contact limitations are explicit. Complete paired-floor, structural-span, ground-WC/plant, facade/roof, smaller-furniture and material-finish consequences are drafted. Final ground replay found and records the old kitchen route 10 mm clash, testing a declared 20 mm west correction; outputs are regenerating. No geometry adoption or STR-HOUSE completion.",
+    "next": "Finish regenerated ground-path and A3 review, add the owning programme/result links, reconcile current main, run targeted checks and submit the exact reviewed source payload for root publication, full exact-head CI and fresh canonical preflight."
   }
 }
