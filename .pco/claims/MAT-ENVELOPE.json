@@ -9,8 +9,8 @@
     "label": "swarm-2900-worker-three-mat"
   },
   "claimedAt": "2026-10-31T17:10:34.409Z",
-  "heartbeatAt": "2026-10-31T17:18:02.379Z",
-  "expiresAt": "2026-10-31T18:03:02.379Z",
+  "heartbeatAt": "2026-10-31T17:38:05.878Z",
+  "expiresAt": "2026-10-31T18:23:05.878Z",
   "branch": "work/swarm-2900-interfaces-20261031",
   "predecessor": {
     "leaseId": "456fc77f-d505-42da-8915-c81dbfcb16db",
@@ -33,7 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Shared branch work/swarm-2900-interfaces-20261031 published at 9d7189fe54f84645cb6a56fc5a4de490ac8c6992, tree 609c8befafe28c96173c76aac548097aecd13f04. MAT remote source parent 376d8b4742fda0a8ed9584ee9c19df1c946ac47f preserves the independently reviewed three-file NCCT comparison. Local repository integrity, documentation build and whitespace checks passed. No complete assembly or lifecycle completion.",
-    "next": "Open combined PR, obtain exact-head full CI, run canonical publication preflight, merge and release with MAT-ENVELOPE still planned."
-  }
+    "evidence": "PR1157 published at 2c8169e4584c1196e1e0a60dad3cc86226d0e946, tree 0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822. Includes main aa8e85bb and reviewed interior finish source 93676668. Envelope study remains exact to reviewed local f3d011c4 / remote source 376d8b47. Independent NCCT source review passed; repository and documentation validation passed; concurrent I05/I08/S02 and new I02/FINISH-STUDY integration reviewed. No assembly or lifecycle completion.",
+    "next": "Obtain exact-head full CI on PR1157, rerun fresh canonical publication preflight, merge the validated head and release MAT-ENVELOPE with the whole junction still unresolved.",
+    "blocker": "Full CI for the newly integrated head is pending; prior green head failed current-main ancestry after parallel publications."
+  },
+  "pr": 1157
 }
