@@ -9,12 +9,12 @@
     "label": "mat-waste-package-recovery-20261031-1934"
   },
   "claimedAt": "2026-10-31T19:34:04.422Z",
-  "heartbeatAt": "2026-10-31T19:34:04.422Z",
-  "expiresAt": "2026-10-31T20:19:04.422Z",
+  "heartbeatAt": "2026-10-31T19:35:14.750Z",
+  "expiresAt": "2026-10-31T20:20:14.750Z",
   "checkpoint": {
-    "evidence": "Recovering own saved draft PR #1167, head 3a3e79fc9530c6d20e8e1de51084f7b2540e11d5, after generation 9 expired during publication. Three independent reviews and local repository/docs/drawing checks passed. No newer owner was present on fresh read.",
-    "next": "Preserve predecessor branch, integrate current main on this replacement branch, publish a new exact-generation PR and verify full CI before merge.",
-    "blocker": "MAT-INTERIORS stays planned; physical seat, constituents, installed height, support/wall package and renewal remain unresolved."
+    "evidence": "PR #1168 published at aa1f164e39204f34e6a10949b9af1274d9a349e5; exact API/local tree 4d5c281bf9a42ddc6c740e4116f5a0bf193d4705. Current main 1036a9de is an ancestor. Predecessor PR #1167 and commit are preserved. Three independent reviews, source drawing inspections and local repository/docs/generator checks passed.",
+    "next": "Verify full exact-head CI, fresh canonical preflight, merge and reconcile the tracker; release as handoff because this is partial material work.",
+    "blocker": "MAT-INTERIORS remains planned. Current seat, full constituents, coupled hydraulics, installed height, supports, wall package and physical renewal remain unresolved."
   },
   "branch": "work/mat-waste-package-recovery-20261031-1934",
   "predecessor": {
@@ -32,5 +32,6 @@
       "next": "Retain the named Conserv family and 24 mm adverse baseline. Resolve the actual inner-leaf surface, complete key/repair/edge constituents, supported coat thickness and coating/deviation allowance before adopting a thinner assembly or reconciling a finish-depth change. Solo composition and masonry-specific build-up remain unresolved.",
       "blocker": "MAT-INTERIORS remains planned. No complete installed finish, supplied-batch constituent pass, physical bond/repair evidence, owner exception or house source change is accepted."
     }
-  }
+  },
+  "pr": 1168
 }
