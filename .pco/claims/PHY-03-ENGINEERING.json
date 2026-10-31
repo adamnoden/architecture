@@ -9,7 +9,11 @@
     "label": "swarm-phy-internal-983b7ee"
   },
   "claimedAt": "2026-10-31T20:18:44.290Z",
-  "heartbeatAt": "2026-10-31T20:18:44.290Z",
-  "expiresAt": "2026-10-31T21:48:44.290Z",
-  "branch": "work/swarm-floor-edge-internal-20261031"
+  "heartbeatAt": "2026-10-31T20:37:16.843Z",
+  "expiresAt": "2026-10-31T22:07:16.843Z",
+  "branch": "work/swarm-floor-edge-internal-20261031",
+  "checkpoint": {
+    "evidence": "Owned PHY-03-ENGINEERING gen1 after safe a86ad879 dispatch; local draft now reconciled to accepted main1378e249, six STR geometry SHA pins unchanged. Complete draft scope is project/phy/floor-edge-internal-study.md plus studies/floor-edge-internal.py/.json/.svg; no PR or durable remote source yet. Five comparisons: HC150, HC150+75, HC200 untopped at authored top3370/soffit3170, HC200+75 adverse365-before-upper, RC200. Scenario gravity includes seat end strips; shared140 supplier tied topology distinct; heavy walls, asymmetric erection, entrance/stair/riser, restraint/diaphragm/movement, wet/closure/repair and selfweight-loaded specimen limits covered. Preliminary independent arithmetic check passed; final source/recommendation challenge and repo/gallery/docs validation pending. Draft blobs: project/phy/floor-edge-internal-study.md=5e4450ccbd9a42f2abd6c308b3ace4f0379a65db, project/phy/studies/floor-edge-internal.py=96eaa04db3e064f7fa75ed4a76862b824aef268e, project/phy/studies/floor-edge-internal.json=dbd0b14c1433eeae4eaef4523491282185cbf6f8, project/phy/studies/floor-edge-internal.svg=d8faebdedb6fdbd588b20e654b95111fe0482214. Lifecycle remains planned; no structural/material/specimen acceptance.",
+    "next": "Finish services_recovery and root independent challenge; keep all limitations/failed cases and exact source identities. Inspect fifth-family/gallery framing, run deterministic reproducer and current repository/publication/docs checks; only after substantive internal exit is satisfied update PHY lifecycle/programme projections and prepare immutable current-main publication payload for root. Actual supplier/member/substrate/action design and safe specimen release remain ER-STR-01/EPR-RH11; no external-referral stop or physical activity."
+  }
 }
