@@ -9,8 +9,8 @@
     "label": "services-mat-recovery-1936-20261031"
   },
   "claimedAt": "2026-10-31T19:39:42.972Z",
-  "heartbeatAt": "2026-10-31T20:18:57.656Z",
-  "expiresAt": "2026-10-31T21:48:57.656Z",
+  "heartbeatAt": "2026-10-31T20:23:17.641Z",
+  "expiresAt": "2026-10-31T21:53:17.641Z",
   "branch": "work/swarm-mat-recovery-1936-20261031",
   "predecessor": {
     "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1175 preserves reviewed source e9e4c827e21197c43843a48dbe7afd16b2ae57c1 and six exact MAT blobs. Full CI41237104989 passed published head488d82966d2e3ef0adba89976f4ab78792dc25f2. Accepted main through a86ad87950d007f862b6004769bbea56e8bfd946 independently inspected; local reconciliation preserves all six blobs and source ancestry, awaiting remote publication and new exact-head CI. Bounded ventilation study remains a comparison, not installed assembly approval.",
-    "next": "Coordinator publishes reconciled integration on PR1175, then full new exact-head CI and fresh canonical preflight; verify accepted tree, six owner blobs and source ancestry before final checkpoint and release. MAT-ENVELOPE remains planned."
+    "evidence": "PR1175 merged as6e1260eef6e3c209abb62df41ced8964320e0ac5. Accepted tree d479863bb17b30561813e062d92241553ac83813 exactly equals full-CI41238393149 tested head3089e0688bd7106f493231a9acd3835e5d8fc69d. Coordinator fresh canonical preflight passed20:22:11.536Z. Independent Git verification confirms all six reviewed MAT blobs at accepted/current main, sourcee9e4c827 and tested-head ancestry, unchanged original section outputs and absent remote feature ref. Primary-source and architectural reviews passed the corrected outside-body-envelope/aperture distinction.",
+    "next": "Release this completed bounded investigation as handoff. MAT-ENVELOPE remains planned: actual supported air passage, lowest aperture/water exposure, DPC continuity, complete constituents, clearing/replacement and floor/gas assembly require coordinated evidence. Next worker must freshly dispatch and inspect accepted1175 before extending scope."
   },
   "note": "Meaningful source and predecessor reconciliation checkpoint; root alone performs external connector writes.",
   "pr": 1175
