@@ -196,6 +196,8 @@ The [segmented copper-access comparison](segmented-copper-access.md) now locates
 
 The [local repair continuation](segmented-copper-access.md#local-cutting-is-not-yet-a-complete-renewal-method) now tests reinstatement as well as removal: a small coupling envelope does not prove insertion between retained ends or safe joining beside W2 and threshold construction. A primary 108 mm slip-coupling listing keeps conventional repair open as a specific lead, subject to matched assembly evidence; small-bore repair instructions are not extrapolated. The same three-territory renewal test applies to this alternative. No smaller floor reserve, selected joint or complete crossing follows.
 
+The [retained court-tail comparison](segmented-copper-access.md#a-retained-court-tail-changes-the-maintenance-boundary) adds an explicit alternative to a separately renewable threshold piece: keep the fixed pan attachment and threshold tail during ordinary room-carrier renewal, while qualifying their eventual larger repair as a separate operation. Primary copper pan/flange/pipe details ground the construction family; they supply no house fit, backwater rating or movement/release proof. Concealed tail leakage and an open outlet bore during service remain separate water paths to resolve. RWT-METALS remains planned.
+
 ### RWT-ROBUSTNESS — independent paths and degraded operation
 
 After RWT-SHED, RWT-METALS and RWT-05, compare full-duty surviving paths under blockage, accessible capacity/freeboard, common debris/frost/backwater and passive final spill. Use actual candidate elevation ledgers and downstream topology. A second outlet must have a reachable and independent path; a clean-system capacity result cannot prove degraded-operation safety.
