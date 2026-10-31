@@ -36,7 +36,7 @@ jobs:
                 if (scene.primitives.some(p=>p.id.startsWith("beyond-"))) throw Error("Floating legacy apertures reintroduced");
               }
             }
-            fs.writeFileSync(".ade-section-proof/head.txt",process.env.GITHUB_SHA+"\n");
+            // head.txt is written from the actual checked-out source above.
           '
       - name: Preserve exact-size source vector and semantic proof
         uses: actions/upload-artifact@v6
