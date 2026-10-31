@@ -9,8 +9,8 @@
     "label": "swarm-third-root-983b7ee"
   },
   "claimedAt": "2026-10-31T10:27:06.840Z",
-  "heartbeatAt": "2026-10-31T10:43:32.520Z",
-  "expiresAt": "2026-10-31T11:28:32.520Z",
+  "heartbeatAt": "2026-10-31T10:52:27.730Z",
+  "expiresAt": "2026-10-31T11:37:27.730Z",
   "branch": "work/swarm-maintenance-integration-20261031",
   "predecessor": {
     "leaseId": "2e587ba5-88a2-4da1-ac81-7a556a28cdb8",
@@ -36,8 +36,7 @@
   },
   "pr": 1148,
   "checkpoint": {
-    "evidence": "Draft PR #1148 published exact head 90de6288688004c8568f0a0665977e1045f953d8, tree 8967b8d8feea905ccc5cf7582447deca7af351e0, from main adee2d3197fd7af8af06fd5b0668f7acd6c8debd. RWT source parent a3231d6a7ae5b4e5c6eab04bb51e5fc2a86132ab has exact independently reviewed tree 93b1c98fa9c4910aa1d6caaca56c09ff0a532370. Located leak-route bound, 3832.5 mm continuation and max-envelope screen independently reviewed; final sheet inspected. Combined generator, repository, publication source/integrity, docs build and source-preservation guards passed.",
-    "next": "Complete all three unchanged lease bindings, require full exact-head CI and three fresh canonical merge-checks, then expected-head merge and reconcile/release. RWT-METALS remains planned; no installed collector, dry service condition, floor fit or hydraulic acceptance.",
-    "blocker": "Full CI and final publication preflights pending; actual connected assembly and secondary receiver remain unqualified."
+    "evidence": "PR1148 merged at 2512f116e277d3ab724fd0bcf0f13ba1d04533c3; exact accepted tree8967b8d8feea905ccc5cf7582447deca7af351e0 and all source-parent ancestry verified. Full CI41193874119 succeeded at head90de6288688004c8568f0a0665977e1045f953d8; RWT preflight2026-10-31T10:51:39.690Z passed. Retained-tail leak-route comparator and routine-versus-larger-repair distinction accepted as bounded partial evidence, no geometry, hydraulic, installed-material or lifecycle pass.",
+    "next": "Release completed integration lease and re-enter canonical dispatcher. A connected outer-west copper collection and brass or bronze ground-receiver construction comparison is a useful remaining RWT-METALS direction if selected."
   }
 }
