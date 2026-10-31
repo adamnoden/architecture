@@ -9,8 +9,8 @@
     "label": "swarm-983b7ee4744e"
   },
   "claimedAt": "2026-10-30T23:50:27.148Z",
-  "heartbeatAt": "2026-10-31T00:12:19.578Z",
-  "expiresAt": "2026-10-31T00:57:19.578Z",
+  "heartbeatAt": "2026-10-31T00:15:14.574Z",
+  "expiresAt": "2026-10-31T01:00:14.574Z",
   "branch": "work/swarm-983b7ee4744e-3",
   "predecessor": {
     "leaseId": "4fe6938b-652a-4723-977d-c0195b751a97",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1123 head f43c6bc8933fa883e8161e00a84783fd93e63554; source-bound section/cutout and renewal comparison reviewed, rendered and locally validated; reconciled main dfb60fd3.",
-    "next": "Require exact-head full CI and fresh canonical preflight, merge bounded partial and release. Current kit, connected fit, material and physical renewal remain open."
+    "evidence": "PR #1123 merged; final head f43c6bc8933fa883e8161e00a84783fd93e63554 passed full CI41148846380 and fresh canonical preflight00:14:57.216Z against main dfb60fd3. Source-bound sink section/cutout and renewal direction retained.",
+    "next": "IAS-03 remains planned. Bind the current sink/waste kit, compatible trap and appliance branch, all constituents and supports; locate actual datums, isolation, full clip/seal release and supported front withdrawal. Other IS-01–06 duties remain open.",
+    "blocker": "No current kit/connected assembly, complete material admission or physical maintenance/drying proof; conditional HAD Option B remains unadopted."
   },
   "pr": 1123
 }
