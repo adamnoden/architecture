@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {layoutRevision as d,revisionOpenings} from './georgian/layout-revision.js'
 import {layoutFamilySource,layoutSectionAt,roofTop} from './georgian/layout-family.js'
-import {compileCurrentSectionContext,currentCourtyardSectionFacades,sectionCutWallOccluders} from './georgian/section-context.js'
+import {compileCurrentSectionContext,currentCourtyardSectionFacades,sectionCutWallOccluders,currentPartitionOccluders} from './georgian/section-context.js'
 const eq=(a:number,b:number)=>Math.abs(a-b)<1e-5
 
 test('all current courtyard background windows are hosted in original house geometry',()=>{
@@ -54,4 +54,20 @@ test('section source fails closed for unsupported station and unrelated inner/ou
  try{d.roof.courtEaves=saved+50
    assert.throws(()=>compileCurrentSectionContext({station:5900,roofBuildDepth:300}),/eaves mismatch/)
  } finally {d.roof.courtEaves=saved}
+})
+
+test('source-owned service partitions block background glazing, not roof or visible courtyard walls',()=>{
+ const faces=currentPartitionOccluders()
+ const ground=faces.filter(f=>f.id.startsWith('partition-GROUND-service-spine:'))
+ const first=faces.filter(f=>f.id.startsWith('partition-FIRST-wet-spine:'))
+ assert.ok(ground.length>1&&first.length>1)
+ assert.ok(ground.every(f=>f.vertices.every(p=>p.x===9500&&p.z>=0&&p.z<=d.levels.ceilingGround)))
+ assert.ok(first.every(f=>f.vertices.every(p=>p.x===9500&&p.z>=d.levels.first&&p.z<=d.levels.ceilingFirst)))
+ const service=compileCurrentSectionContext({station:layoutFamilySource.cuts.B,
+  roofBuildDepth:layoutFamilySource.roofBuildZone})
+ assert.ok(service.background.some(s=>s.meaning.includes('roof-')))
+ assert.ok(!service.background.some(s=>s.meaning.startsWith('partition-')))
+ const principal=compileCurrentSectionContext({station:layoutFamilySource.cuts.A,
+  roofBuildDepth:layoutFamilySource.roofBuildZone})
+ assert.ok(principal.background.some(s=>s.meaning.includes('court-west')))
 })
