@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 99 · **Cancelled:** 0
+**Structurally ready:** 15 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 100 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -30,7 +30,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
 | `MAT-INTERIORS` | Resolve non-plastic interior and wet-room assembly alternatives | MAT | — |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
-| `PHY-03-ENGINEERING` | Internal floor-edge research, calculations and provisional option reduction | PHY | — |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
 | `SWE-CONTROL` | Repair dispatcher selection races and make lease snapshots efficient and coherent | SWE | — |
