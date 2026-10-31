@@ -9,8 +9,8 @@
     "label": "swarm-resume-envelope-983b7ee"
   },
   "claimedAt": "2026-10-31T09:05:17.339Z",
-  "heartbeatAt": "2026-10-31T09:05:17.339Z",
-  "expiresAt": "2026-10-31T09:50:17.339Z",
+  "heartbeatAt": "2026-10-31T09:12:24.057Z",
+  "expiresAt": "2026-10-31T09:57:24.057Z",
   "branch": "work/swarm-resume-envelope-20261031",
   "predecessor": {
     "leaseId": "b0f79a4c-1354-49b1-b3c4-d31f64293123",
@@ -29,5 +29,11 @@
       "evidence": "Owner interruption before new work. Predecessor PR #1117 head8e6eddb0e2ae2f64c37810bd0a337596a93637d3 remains open and preserved. Local recovery copied its three docs only; worker3 has no remote branch or new output.",
       "next": "Resume from predecessor PR #1117 on a fresh canonical lease and own branch; verify its primary sources, reconcile current main and require exact-head CI/preflight. MAT-ENVELOPE remains planned."
     }
+  },
+  "pr": 1124,
+  "checkpoint": {
+    "evidence": "PR #1124 published at 24b7f82b8408f4582241e220ea83d85eef416443; exact tree 2bada5b4ea5aeff43f51ab9179f7fd06d2b62d65 matches reviewed local recovery of #1117 plus DoP-label precision correction. Final docs build, publication integrity and diff check passed; local full check stopped at missing Chrome155.",
+    "next": "Require full CI on exact remote head, reconcile any moved main without losing parallel MAT rows, run fresh merge-check, then integrate bounded comparison. MAT-ENVELOPE remains planned; complete assemblies remain unresolved.",
+    "blocker": "Full exact-head CI pending; local Chrome155 unavailable."
   }
 }
