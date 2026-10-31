@@ -48,6 +48,7 @@ Historical holds preserve the old source identities and technical learning. Exis
 ## Design comparisons
 
 - [Mineral ground boundary and floor junction comparison](envelope-ground-boundary.md) — MAT-ENVELOPE develops the bonded DPC1/slate comparison, separates floor insulation from moisture/gas and movement duties, and excludes exact lined cellular-glass variants under the default policy. It defines the next wall/floor, internal-support, threshold and penetration junctions; no complete assembly, house geometry or packet closeout is selected.
+- [Water joints, isolation residues and repair access](services-water-joints.md) — MAT-SERVICES develops accessible metal-sealing compression connections, excludes exact polymer-bearing press/valve examples under the default policy, and tests the connection and first-release burden against the existing BCR/IAS service geography. S01 remains unresolved as a complete installed water system; no geometry, exception or packet closeout is selected.
 
 ## Primary-source reconnaissance, accessed 30 October 2026
 
