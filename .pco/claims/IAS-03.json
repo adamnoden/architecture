@@ -9,9 +9,9 @@
     "label": "swarm-2900-worker-one-ias"
   },
   "claimedAt": "2026-10-31T17:09:27.406Z",
-  "heartbeatAt": "2026-10-31T17:09:27.406Z",
-  "expiresAt": "2026-10-31T17:54:27.406Z",
-  "branch": "work/swarm-2900-ias-waste-20261031",
+  "heartbeatAt": "2026-10-31T17:17:53.631Z",
+  "expiresAt": "2026-10-31T18:02:53.631Z",
+  "branch": "work/swarm-2900-interfaces-20261031",
   "predecessor": {
     "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
     "generation": 9,
@@ -33,5 +33,9 @@
       "next": "Choose and detail the real replacement boundary: verified separate bowl/kit, or integral top with its actual support, joints, materials, service release and handling arrangement.",
       "blocker": "IAS-03 remains planned. Full-top flat staging fails this field; local wet-top joints/materials and actual connected renewal remain unresolved. Current Franke kit is still unbound."
     }
+  },
+  "checkpoint": {
+    "evidence": "Published head 9d7189fe54f84645cb6a56fc5a4de490ac8c6992 tree 609c8befafe28c96173c76aac548097aecd13f04; manufacturer source and independent visual reviews passed; sink reproducibility, repository integrity and docs build passed.",
+    "next": "Open combined IAS/MAT PR and require full exact-head CI, reconcile moved main, then canonical publication preflight before expected-head merge."
   }
 }
