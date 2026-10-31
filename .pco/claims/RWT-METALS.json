@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-METALS",
   "generation": 15,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "66f58601-32fa-4b7b-8b10-401db5e3471b",
   "holder": {
     "kind": "chatgpt",
     "label": "rwt-leak-witness-2144-20261031"
   },
   "claimedAt": "2026-10-31T21:44:14.594Z",
-  "heartbeatAt": "2026-10-31T21:51:49.897Z",
-  "expiresAt": "2026-10-31T22:36:49.897Z",
+  "heartbeatAt": "2026-10-31T22:01:37.264Z",
+  "expiresAt": "2026-10-31T22:01:37.264Z",
   "branch": "work/rwt-metal-leak-witness-20261031",
   "note": "Owner-directed continuation of RWT-METALS: outer-west backed copper receiver first passive leak observation and replacement/repair water consequences. Bounded source-owned study; no hydrostatic or site approval.",
   "predecessor": {
@@ -34,9 +34,11 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1191 open with latest head 947c61ebb7bfa0aacd1a8515203ae28907f233ab; 3-file study on branch. SVG adjacency and witness label collision corrected after diagram QA. RWT predecessor PR1186 accepted and generation14 released.",
-    "next": "Observe fresh exact-head CI on corrected diagram; reconcile latest main and obtain canonical publication preflight via runner before merge. Connector-only path must not substitute manual observations for CLI.",
-    "blocker": "Local container has no Github DNS/clone; connector alone cannot invoke canonical control:merge-check. CI pending. No physical leak mock-up, support/product/site/hydraulic approval implied."
+    "evidence": "PR1191 open, final head6965b841dfc01386b80639c69c94d69e4f443a8c; full exact-head PR CI41245931223 SUCCESS (health, PDFs, metadata, nomenclature). Three authored RWT source files, inspected SVG and current programme link preserved. Current main moved independently after last reconciliation and includes owner boundary service-lodge/raceway; source-side overlap checked absent; new rainwater/service separation is consistent. No physical leak/detection/capacity proof or RWT-METALS node completion.",
+    "next": "Reacquire fresh RWT-METALS lease for resumption, inspect latest main and PR1191, reconcile main changes, run exact-head CI, run repository-required canonical control:merge-check on capable GitHub-connected runner bound to fresh lease, then expected-head merge and verify accepted tree, release lease. Existing generation15 must not publish after release.",
+    "blocker": "Connector-only chat cannot run canonical publication preflight; CI packet-check is not a substitute. PR intentionally left unmerged. Actual protected setback, contact/backing, harmless leak/overflow destination, first leak observation and repair access remain unqualified."
   },
-  "pr": 1191
+  "pr": 1191,
+  "releasedAt": "2026-10-31T22:01:37.264Z",
+  "releaseReason": "handoff"
 }
