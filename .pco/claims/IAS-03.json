@@ -9,9 +9,9 @@
     "label": "swarm-2900-worker-two-next"
   },
   "claimedAt": "2026-10-31T17:46:06.841Z",
-  "heartbeatAt": "2026-10-31T17:46:06.841Z",
-  "expiresAt": "2026-10-31T18:31:06.841Z",
-  "branch": "work/swarm-2900-worker-two-next-20261031",
+  "heartbeatAt": "2026-10-31T18:07:45.324Z",
+  "expiresAt": "2026-10-31T18:52:45.324Z",
+  "branch": "work/swarm-2900-next-20261031",
   "predecessor": {
     "leaseId": "73aa7dc9-af13-474b-b663-5780130655fd",
     "generation": 10,
@@ -33,5 +33,6 @@
       "next": "Handoff this merged partial result. Obtain an identified current bowl-seat/downstream waste assembly and bind its full constituents, actual sealing faces, support and withdrawal sequence before further IAS adoption.",
       "blocker": "Current supplied variant, every retained ring and connection, installed clearance and release travel remain unbound; generic assembly diagrams do not resolve those inputs. IAS-03 remains incomplete."
     }
-  }
+  },
+  "note": "Local source e3cc9bfabb829e8653ae43a19e464630c88a99e8 independently reviewed and checked on d81aab99; shared STR/IAS integration pending. No remote publication claimed. A/C cabinet comparison retains pinned HAD sequence conditionally on supported flush floor closure; actual closure, component withdrawal and acceptance remain unresolved."
 }
