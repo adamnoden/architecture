@@ -9,8 +9,8 @@
     "label": "swarm-study-room-2106-20261031"
   },
   "claimedAt": "2026-10-31T21:08:10.713Z",
-  "heartbeatAt": "2026-10-31T21:17:53.394Z",
-  "expiresAt": "2026-10-31T22:47:53.394Z",
+  "heartbeatAt": "2026-10-31T21:30:57.246Z",
+  "expiresAt": "2026-10-31T23:00:57.246Z",
   "branch": "work/swarm-study-room-2106-20261031",
   "predecessor": {
     "leaseId": "effc35dc-f4dc-4156-8817-7f2cee5e030c",
@@ -33,7 +33,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "HAD-03 gen15 whole accepted Study comparison scoped against main72c6aedf and unchanged RH-LAYOUT-REVISION-02/OAS/BAY. Prior1166 is accepted history; original operation and handing outputs remain unchanged. Private first exact geometry check: north-wall1600x700 desk at700,1787.5 with490x600 parked chair1255,1167.5 preserves the retained-low90 unheld entry and same-face close/reopen (body-fixed lower37.1937, arm-fixed44.6915, arm-leaf2.1940mm). Connected closed-door circuit to both south windows and west offset800,1400 clears; west-centre800,1800 remains obstructed. This is exploratory internal geometry, not finished or published source. Primary AD M volume1 current-linked2015/2016 p22 and Ventrolla SRS maintenance instructions distinguish control height, clear working field and multi-step sash removal from merely reaching a standing point. MAT pier+9mm finish sensitivity identified.",
-    "next": "Complete retained/north/rotated whole-room comparisons, ordinary chair/access states, vertical control/desk section and separate sash/full-frame renewal duties. Pin exact original geometry and preserve earlier outputs; independently challenge continuous geometry and architectural recommendation, render and validate new contained source. No room adoption, occupant assumptions, operating-window or ergonomic pass. Reconcile accepted RWT main7223a6b7 before publication."
+    "evidence": "Six-file whole accepted Study draft ready for independent/root review at had-study-room-2106: owning had-03-study-room.md, programme link, deterministic study-room-arrangements.py/JSON and twoA3SVGs. Exact private guard reviewed-draft-blobs.json: study e4a3dd20, generator6cd9201c, JSONada8d4b3, SVG263c1aae/7ff6e097, programmefff7d66d. No remote publication or completed-node claim. Retained/source R, northdesk N and rotated T compared with same1600x700 desk and490x600 chair. N preserves whole relocated1000x900 chair reservation during unchanged low-hinge door proof; complete entry/close, empty-chair150withdrawal/reverse-restow, all3window approach circuit, reverse reopen/exit checked. Window circuit fixedmargin37.5 overall, frontage57.5(source)/53.5(+9southfinish). West centre still blocked; conditional594.643planar reach at trialplane360 leaves80verticaldifference, not actual operation. Source/4oldoutputs unchanged. Reproducer, repository/workflow, publication source/integrity,5gallerychecks and docs build pass; bothactualA3PDFs rendered/visually inspected. Fresh main4e9839d4 has11RWT/controlpaths only, noHAD/source-pin overlap.",
+    "next": "Resolve independent architectural/source/geometry findings, retain section projection and necessary-only reach scope, then immutable sourcecommit on72c6 followed by fresh-main integration preserving all concurrent work. Publish exact six-file bounded result through root, bind actualPR/head, require fullCI and freshcanonicalpreflight, verify accepted result and handoffrelease. Actual occupied workstation, parked-leaf preparation/latch/grip, all3window controls/sash/shade, finish/projection and furniture/sash/fullframe handling remain specific selection obligations; no sourceadoption or HAD03 lifecycle completion."
   }
 }
