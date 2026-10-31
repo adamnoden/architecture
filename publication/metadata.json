@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "workingEdition": {
     "file": "publication/dist/ovids-house.pdf",
-    "pages": 279,
+    "pages": 280,
     "duplexLeaves": 140,
     "pageSize": {
       "format": "A4",
@@ -10,7 +10,7 @@
       "heightMm": 297,
       "orientation": "portrait"
     },
-    "entries": 42,
+    "entries": 41,
     "figures": 5
   },
   "primer": {

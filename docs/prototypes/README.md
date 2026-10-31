@@ -6,8 +6,6 @@ The purpose is not to prove that an assembly can be made once under ideal condit
 
 No current prototype has earned a house-wide technical conclusion merely by being designed. The questions below remain **pre-test** unless a measured result is stated explicitly.
 
-The [current-house applicability review](https://github.com/adamnoden/architecture/blob/main/project/phy/current-house-prototype-applicability.md) distinguishes retained methods from historical geometry and identifies the release conditions for a meaningful current specimen. The old prepared packs are not current build releases.
-
 ## Evidence authority
 
 A specimen can support only the claims it actually tests.
@@ -20,7 +18,7 @@ The controlling rule is:
 
 ## Structural floor edge
 
-The floor-to-masonry edge remains a priority engineering interface. Current entrance and stair interruptions, service crossings and boundary closures must be resolved alongside the ordinary edge.
+The floor-to-masonry edge is the most important unresolved engineering interface in the current Reference House.
 
 The architectural question is not whether a novel connector can be invented. It is whether gravity support, joist stability, wall restraint, diaphragm transfer, movement, tolerance, fire/acoustic closure, durability and realistic repair can be allocated clearly without creating disproportionate structure or serviceability theatre.
 
@@ -45,8 +43,6 @@ A workshop load test is **not structural validation** unless the engineer define
 
 If the credible structural solution needs materially deeper floors, columns in principal rooms, long transfers or a whole-house independent frame, the architecture should reopen rather than hide the consequence inside the junction.
 
-<a id="wall--ceiling-movement-junction"></a>
-
 ## Wall / ceiling movement junction
 
 The second priority interface is where wall and ceiling finishes meet while their supporting assemblies may move differently.
@@ -55,13 +51,11 @@ The proposition is simple:
 
 > **No brittle finish should bridge two assemblies that are expected to move independently.**
 
-The retained prepared comparison contains three families:
+The current physical comparison uses three families:
 
 1. **excellent conventional control**;
 2. **concealed-slip cornice or cover** fixed to one controlling assembly while the other can move behind it;
 3. **restrained metal slip/protection element** only where the metal performs a real function such as edge protection, sliding, location or removable cover.
-
-For the current house, start with the selected ordinary upper termination. The optional local wall-fixed cover needs a real independently moving junction; a house-wide cornice and all three prepared families are not mandatory. Actual movement demand and the applicable primary boundaries must be established before a technical adequacy claim.
 
 The test must keep three verdicts separate:
 

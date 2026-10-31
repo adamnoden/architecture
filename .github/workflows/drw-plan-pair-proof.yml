@@ -11,9 +11,6 @@ on:
       - 'compiler/reference-house/publication-first-floor-plan*.ts'
       - 'compiler/reference-house/generate-publication-ground-plan.ts'
       - 'compiler/reference-house/generate-publication-first-floor-plan.ts'
-      - 'scripts/proof-scope.mjs'
-      - 'scripts/proof-scope.test.mjs'
-      - '.github/workflows/proof-scope.yml'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/drw-plan-pair-proof.yml'
@@ -27,11 +24,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  scope:
-    uses: ./.github/workflows/proof-scope.yml
   proof:
-    needs: scope
-    if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

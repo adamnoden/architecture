@@ -13,8 +13,6 @@ A house should seek **permanence without stasis**.
 
 **Ovid’s House** is an architectural design-research project about how a house can remain durable while the shorter-lived things inside it are maintained, repaired, replaced and changed. It treats those relationships as architecture: access, interfaces, movement, failure, replacement and the geometry needed to work on a building after handover.
 
-The practical purpose is to design and ultimately build the owner’s own home on a later-selected London site. The book is a means of thinking through that architecture and communicating what it teaches; computational tools support consistent design information and bounded checks. The Reference House is the pre-site design study, with real-site adaptation and construction still to be undertaken.
-
 The project does not argue that everything should be demountable, exposed or technically novel. Capacity for change must earn its spatial, material and financial cost. Conventional construction should win where it is the better architectural answer.
 
 The public architectural proposition begins in the [manuscript](docs/manuscript/) and its [governing principles](docs/manuscript/governing-principles.md). The [reading guide](docs/reading-guide.md) is the shortest route through the publication argument.
@@ -82,8 +80,7 @@ The diagram is an **authority and navigation map**, not a claim that every arrow
 | Drawing/publication records | `docs/publication/` | Authored authority, drawing and proof records for publication production |
 | Publication build system | `publication/` | Preparation, validation, metadata, layout and proof machinery |
 | Delivery requirements | [`docs/delivery/`](docs/delivery/) | Mature requirements intended for an appointed project team |
-| Current project state | `STATUS.md` | Generated durable execution state and assessed maturity; query live claims separately |
-| Minimum Viable Bureaucracy (MVB) | [Integrated manual](https://github.com/adamnoden/architecture/blob/main/project/control/README.md) | Workstreams, packets, dependencies, agent leases, validation, integration and recovery |
+| Current project state | `STATUS.md` | Present maturity, active programme state and next meaningful gates |
 | Operating rules | `AGENTS.md` | Durable rules for agents and contributors changing the repository |
 | Durable programme history | `project/` | Audits, programme records, provenance and machine-readable project controls |
 
@@ -97,7 +94,7 @@ Start with the [reading guide](docs/reading-guide.md), then the [Preface](docs/m
 
 ### Developer or contributor
 
-Before changing the repository, read `AGENTS.md` and the [Minimum Viable Bureaucracy (MVB) manual](https://github.com/adamnoden/architecture/blob/main/project/control/README.md). The manual explains the shared execution scaffolding, from workstream and dependency modelling through concurrent agent claims, GitHub automation and recovery. Use `docs/README.md` for documentation ownership, [`docs/computational/README.md`](docs/computational/) for computational proof boundaries and `compiler/README.md` for executable workflow. [`package.json`](package.json) is the command authority.
+Before changing the repository, read `AGENTS.md`. Use `docs/README.md` for documentation ownership, [`docs/computational/README.md`](docs/computational/) for computational proof boundaries and `compiler/README.md` for executable workflow. [`package.json`](package.json) is the command authority.
 
 ### Investigating a decision
 

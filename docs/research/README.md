@@ -27,10 +27,6 @@ The objective is broader than any one psychological measure: domestic space shou
 
 ## Floor and wall systems
 
-[Primary Floors and Roofs](structural-floor-roof-options.md) compares non-timber spanning systems on actual masonry supports and retains an exposed masonry-vault floor as a compression-led alternative. Complete floor and roof depth budgets, declared weight sensitivities and the consequences for services and restraint guide the next house study; they select no construction system.
-
-[Solid Walls and Masonry Arches](solid-walls-and-masonry-arches.md) compares solid wall roles, thickness and weight with genuine internal and external arch families. Located opening and wall sections show where the house needs space, abutments, restraint and an explicit load path. The comparison develops the owner's structural brief without selecting a wall or certifying an arch.
-
 Three options studies test whether more reversible assemblies add enough value to displace excellent conventional construction:
 
 - [Floor-to-Masonry Structural Interface](seated-floor-structure-options.md)
@@ -39,36 +35,8 @@ Three options studies test whether more reversible assemblies add enough value t
 
 They remain evidence and comparison material, not automatic Reference House selections. The current house retains conventional continuous floors and direct quiet wall finishes unless a more complex assembly earns departure through a named task and credible evidence.
 
-## Roof and rainwater
-
-[Rainfall and the Building-side Water Network](rainfall-and-hydraulic-basis.md) establishes the area, rainfall, capacity and failure questions needed to compare gravity drainage systems before a site is selected. Worked arithmetic exposes consequence without selecting a design storm or claiming hydraulic adequacy. [Rainwater Conveyance](rainwater-conveyance-options.md) compares separate drops and shared routes, including the physical crossing needed to take courtyard water outside the house.
-
-[Rainwater Collection: Access and Failure Paths](rainwater-collection-options.md) compares exposed and trapped collection, transfer fittings and court drains by their capture, blockage, access and renewal consequences. It retains conventional exposed collection as a comparator without selecting the house network.
-
-[Roof Shedding and Ground Receivers](roof-shedding-and-ground-receivers.md) maps each house edge against controlled copper collection. Shallow accessible garden receivers remain conditional candidates; the narrow court and occupied door routes favour controlled collection. Source-bound flow and land-take comparisons keep planting, infiltration and physical acceptance distinct.
-
-[Roof and Rainwater Materials](roof-rainwater-material-compatibility.md) compares joints, movement, repair and directional runoff compatibility in one shared candidate record. No material family is selected independently of the roof and network.
-
 ## Maintenance and external access
 
 [External Maintenance Access](external-maintenance-access.md) examines the spatial consequences of maintaining façades, roofs, rainwater goods and external plant with credible ordinary access methods. It treats approach, working position, temporary support, handling and replacement routes as architecture rather than assuming that a hatch or nominal reachability is proof of maintainability.
 
 Across all of these subjects, the controlling question is the same: **what does the evidence justify, and what does it not justify?**
-
-## Roof systems
-
-[Roof Failure and Recovery Evaluation](roof-failure-evaluation.md) establishes a common evidence-bounded comparison of roof water paths, layers, junctions, movement, drying, detection, access and renewal. It supports candidate research without selecting a covering or converting material longevity into whole-roof assurance.
-
-[Roof Topology and Water Paths](roof-topology-families.md) distinguishes hips from valleys, compares courtyard and conventional families, and exposes the height and water-path consequences of simplifying the current roof.
-
-[Roof Covering Families](roof-covering-families.md) compares slate/tile, sheet-metal and flexible waterproofing through seams, movement, substrate, repair and renewal. It exposes the limits of a generic covering choice at the provisional 25° pitch without selecting a system or repealing the no-flat-roof constraint.
-
-[Roof Assemblies: Drying, Support and Renewal](roof-assembly-options.md) compares thermal and moisture boundaries with support, movement and repair. It tests the represented roof reserve and shallow storage space without selecting a build-up or treating a drawn void as access.
-
-[Roof Junction Families](roof-junction-families.md) locates eave, ridge-corner and valley-receiver questions in the current house. It compares water, movement, support and replacement across junction and penetration families without selecting a construction detail or inventing a roof-access route.
-
-[Rainwater Failure and Exceedance](rainwater-failure-and-exceedance.md) traces candidate blockage, leakage and compound-event paths. Inner roof spill transfers load to the court; a safe court escape remains unproved and constrains network selection.
-
-[Roof Access and Renewal](roof-access-and-renewal.md) tests actual court access equipment against source geometry and traces repair, receiver withdrawal and major recovering. Rejected tower options remain visible; no high-level working method is accepted.
-
-[Roof System Candidates](roof-system-candidates.md) combines three topology, covering, assembly and renewal propositions. It exposes the outward-only challenger’s height and exterior-water consequences and retains essential admission conditions without selecting a roof.
