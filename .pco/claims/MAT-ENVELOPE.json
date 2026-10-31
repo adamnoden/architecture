@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 10,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "2118792d-930f-4f5f-bcec-ca847f83c5ab",
   "holder": {
     "kind": "chatgpt",
     "label": "services-mat-recovery-1936-20261031"
   },
   "claimedAt": "2026-10-31T19:39:42.972Z",
-  "heartbeatAt": "2026-10-31T20:23:17.641Z",
-  "expiresAt": "2026-10-31T21:53:17.641Z",
+  "heartbeatAt": "2026-10-31T20:23:54.470Z",
+  "expiresAt": "2026-10-31T20:23:54.470Z",
   "branch": "work/swarm-mat-recovery-1936-20261031",
   "predecessor": {
     "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
@@ -39,5 +39,7 @@
     "next": "Release this completed bounded investigation as handoff. MAT-ENVELOPE remains planned: actual supported air passage, lowest aperture/water exposure, DPC continuity, complete constituents, clearing/replacement and floor/gas assembly require coordinated evidence. Next worker must freshly dispatch and inspect accepted1175 before extending scope."
   },
   "note": "Meaningful source and predecessor reconciliation checkpoint; root alone performs external connector writes.",
-  "pr": 1175
+  "pr": 1175,
+  "releasedAt": "2026-10-31T20:23:54.470Z",
+  "releaseReason": "handoff"
 }
