@@ -53,6 +53,11 @@ test('STR admits both options studies independently and requires both plus exist
     assert.equal(derivedState(get('STR-HOUSE'), nodes), 'ready')
 
     completeBranch('STR-HOUSE')
+    assert.deepEqual(directBlockers(get('STR-RECONCILE'), nodes), ['STR-GROUND'])
+    assert.equal(derivedState(get('STR-RECONCILE'), nodes), 'blocked')
+    // The ground system is a separate research duty, not a hidden assumption
+    // satisfied by completing the masonry and primary-span house design.
+    completeBranch('STR-GROUND')
     assert.equal(derivedState(get('STR-RECONCILE'), nodes), 'ready')
     assert.equal(get('ROF-RWT-GATE').lifecycle, 'planned')
     assert.equal(get('MAT-COORDINATION').lifecycle, 'planned')
@@ -76,4 +81,16 @@ test('roof and selected-house admission each wait for structural reconciliation'
     assert.deepEqual(directBlockers(get(gateId), nodes), [])
     assert.equal(derivedState(get(gateId), nodes), 'ready')
   }
+})
+
+
+test('Boundary Service Lodge study is claimable without blocking the inhabited-house selection', () => {
+  const { nodes, get, completeBranch } = scenario()
+  completeBranch('HAD-01E')
+  assert.deepEqual(directBlockers(get('HAD-BOUNDARY'), nodes), ['DPL-SITE-BRIEF'])
+  completeBranch('DPL-SITE-BRIEF')
+  assert.equal(derivedState(get('HAD-BOUNDARY'), nodes), 'ready')
+  // The outward site-service study is a separate future-site handoff, not
+  // an invented precondition for the already-running interior selection.
+  assert.ok(!get('HAD-03').dependencies.includes('HAD-BOUNDARY'))
 })
