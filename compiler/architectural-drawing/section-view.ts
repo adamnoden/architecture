@@ -69,19 +69,19 @@ const overlap = (a: number, b: number, c: number, d: number): boolean =>
 export function hostedFacadeGeometry(f: HostedFacade): HostedFacadeGeometry {
   if (!f.id.trim()) throw new Error('Hosted facade requires a stable id')
   finite(f.plane, f.start, f.end, f.bottom, f.top)
-  if (f.end <= f.start || f.top <= f.bottom) throw new Error(\`Invalid hosted facade extent: \${f.id}\`)
+  if (f.end <= f.start || f.top <= f.bottom) throw new Error(`Invalid hosted facade extent: ${f.id}`)
   const openingIds = new Set<string>()
   for (const o of f.openings) {
-    if (!o.id.trim() || openingIds.has(o.id)) throw new Error(\`Duplicate/empty facade opening: \${f.id}\`)
+    if (!o.id.trim() || openingIds.has(o.id)) throw new Error(`Duplicate/empty facade opening: ${f.id}`)
     openingIds.add(o.id)
     finite(o.start, o.end, o.sill, o.head)
     if (o.start < f.start - EPS || o.end > f.end + EPS || o.sill < f.bottom - EPS ||
         o.head > f.top + EPS || o.start >= o.end || o.sill >= o.head) {
-      throw new Error(\`Opening \${o.id} does not fit host \${f.id}\`)
+      throw new Error(`Opening ${o.id} does not fit host ${f.id}`)
     }
     if (o.grid && (!Number.isInteger(o.grid.columns) || !Number.isInteger(o.grid.rows) ||
       o.grid.columns < 1 || o.grid.rows < 1 || o.grid.columns > 32 || o.grid.rows > 32)) {
-      throw new Error(\`Invalid hosted aperture grid: \${o.id}\`)
+      throw new Error(`Invalid hosted aperture grid: ${o.id}`)
     }
   }
   for (let i = 0; i < f.openings.length; i++) {
@@ -89,7 +89,7 @@ export function hostedFacadeGeometry(f: HostedFacade): HostedFacadeGeometry {
       const a = f.openings[i], b = f.openings[j]
       if (overlap(a.start, a.end, b.start, b.end) &&
           overlap(a.sill, a.head, b.sill, b.head)) {
-        throw new Error(\`Hosted openings overlap: \${a.id} / \${b.id}\`)
+        throw new Error(`Hosted openings overlap: ${a.id} / ${b.id}`)
       }
     }
   }
@@ -102,7 +102,7 @@ export function hostedFacadeGeometry(f: HostedFacade): HostedFacadeGeometry {
       if (b - a < EPS || high - low < EPS) continue
       if (f.openings.some(o => a >= o.start - EPS && b <= o.end + EPS &&
         low >= o.sill - EPS && high <= o.head + EPS)) continue
-      faces.push({id: \`\${f.id}:material:\${i}:\${j}\`,
+      faces.push({id: `${f.id}:material:${i}:${j}`,
         vertices: [pointOn(f, a, low), pointOn(f, b, low), pointOn(f, b, high), pointOn(f, a, high)]})
     }
   }
@@ -110,15 +110,15 @@ export function hostedFacadeGeometry(f: HostedFacade): HostedFacadeGeometry {
   for (const o of f.openings) {
     if (!o.grid) continue
     const add = (id: string, a: ModelPoint3D, b: ModelPoint3D) =>
-      details.push({id: \`\${f.id}:\${o.id}:\${id}\`, a, b, role: 'secondary',
-        meaning: \`hosted-aperture:\${f.id}/\${o.id}\`})
+      details.push({id: `${f.id}:${o.id}:${id}`, a, b, role: 'secondary',
+        meaning: `hosted-aperture:${f.id}/${o.id}`})
     for (let i = 1; i < o.grid.columns; i++) {
       const u = o.start + (o.end - o.start) * i / o.grid.columns
-      add(\`mullion:\${i}\`, pointOn(f, u, o.sill), pointOn(f, u, o.head))
+      add(`mullion:${i}`, pointOn(f, u, o.sill), pointOn(f, u, o.head))
     }
     for (let j = 1; j < o.grid.rows; j++) {
       const z = o.sill + (o.head - o.sill) * j / o.grid.rows
-      add(\`transom:\${j}\`, pointOn(f, o.start, z), pointOn(f, o.end, z))
+      add(`transom:${j}`, pointOn(f, o.start, z), pointOn(f, o.end, z))
     }
   }
   return {faces, details}
@@ -154,7 +154,7 @@ function validateFace(face: ModelFace3D): void {
   const normal = faceNormal3D(face), a = face.vertices[0]
   for (const q of face.vertices) {
     const distance = (q.x - a.x) * normal[0] + (q.y - a.y) * normal[1] + (q.z - a.z) * normal[2]
-    if (Math.abs(distance) > .001) throw new Error(\`Non-planar section face: \${face.id}\`)
+    if (Math.abs(distance) > .001) throw new Error(`Non-planar section face: ${face.id}`)
   }
 }
 
@@ -168,7 +168,7 @@ export function compileOrthographicSectionView(input: SectionViewInput): Orthogr
   const facades = input.facades ?? [], context = input.contextFaces ?? [], cutFaces = input.cutFaces ?? []
   const facadeIds = new Set<string>()
   const built = facades.map(f => {
-    if (facadeIds.has(f.id)) throw new Error(\`Duplicate hosted facade id: \${f.id}\`)
+    if (facadeIds.has(f.id)) throw new Error(`Duplicate hosted facade id: ${f.id}`)
     facadeIds.add(f.id)
     return hostedFacadeGeometry(f)
   })
@@ -178,12 +178,12 @@ export function compileOrthographicSectionView(input: SectionViewInput): Orthogr
   const ids = new Set<string>()
   for (const face of [...faces, ...cutFaces]) {
     validateFace(face)
-    if (ids.has(face.id)) throw new Error(\`Duplicate section face id: \${face.id}\`)
+    if (ids.has(face.id)) throw new Error(`Duplicate section face id: ${face.id}`)
     ids.add(face.id)
   }
   for (const face of cutFaces) for (const q of face.vertices) {
     if (Math.abs(q[input.section.axis] - input.section.at) > EPS) {
-      throw new Error(\`Cut face \${face.id} is not on the section plane\`)
+      throw new Error(`Cut face ${face.id} is not on the section plane`)
     }
   }
   // Stable independent of caller face enumeration. Cut faces are authored,
