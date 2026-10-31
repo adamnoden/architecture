@@ -9,8 +9,8 @@
     "label": "swarm-782cae-root-materials"
   },
   "claimedAt": "2026-10-31T17:50:42.793Z",
-  "heartbeatAt": "2026-10-31T17:58:06.253Z",
-  "expiresAt": "2026-10-31T18:43:06.253Z",
+  "heartbeatAt": "2026-10-31T18:02:29.262Z",
+  "expiresAt": "2026-10-31T18:47:29.262Z",
   "branch": "work/swarm-782cae-interiors",
   "predecessor": {
     "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
@@ -36,8 +36,8 @@
   },
   "pr": 1162,
   "checkpoint": {
-    "evidence": "PR #1162 published at 86c7c5aab4b44506ca95b900cb8f362771246c92, tree 830edea432e9172c102f2467fdbd7da198b0a1eb. Located Conserv plaster comparison shows 24 mm recommended build-up against 15 mm allowance; authored 14 mm remains conditional. Independent sources/arithmetic/hashes review and local repository validation pass.",
-    "next": "Require full exact-head publication CI and fresh canonical preflight, then expected-head merge, accepted checkpoint and release. Actual substrate, complete preparation/edge constituents and supported thinner build-up remain inputs for adoption.",
-    "blocker": "No complete finish or geometry change is selected. Plaster product descriptions and family SDS do not clear the whole installed assembly; MAT-INTERIORS remains planned."
+    "evidence": "PR #1162 merged as b3a11fa79906619e4d5889fc79c1fc73cb8f2a28. Accepted tree 830edea432e9172c102f2467fdbd7da198b0a1eb equals validated head 86c7c5aab4b44506ca95b900cb8f362771246c92. Full CI 41227047898 passed; fresh canonical preflight passed at 18:01:39.917 UTC. Independent sources, arithmetic, source identities and repository validation passed; remote branch absence verified.",
+    "next": "Retain the named Conserv family and 24 mm adverse baseline. Resolve the actual inner-leaf surface, complete key/repair/edge constituents, supported coat thickness and coating/deviation allowance before adopting a thinner assembly or reconciling a finish-depth change. Solo composition and masonry-specific build-up remain unresolved.",
+    "blocker": "MAT-INTERIORS remains planned. No complete installed finish, supplied-batch constituent pass, physical bond/repair evidence, owner exception or house source change is accepted."
   }
 }
