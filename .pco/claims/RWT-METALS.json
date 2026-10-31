@@ -9,8 +9,8 @@
     "label": "swarm-782cae-rwt-worker"
   },
   "claimedAt": "2026-10-31T19:58:31.071Z",
-  "heartbeatAt": "2026-10-31T19:58:31.071Z",
-  "expiresAt": "2026-10-31T20:43:31.071Z",
+  "heartbeatAt": "2026-10-31T20:15:14.012Z",
+  "expiresAt": "2026-10-31T21:00:14.012Z",
   "branch": "work/swarm-782cae-rwt-1957",
   "note": "Owner-directed RWT-METALS, 31 October 2026: outer-west copper receiver cross-seam bearing, thermal movement and first release. Inspect accepted PR1165 evidence. Worker live_triage executes; root services connector transport and integration.",
   "predecessor": {
@@ -34,5 +34,10 @@
       "next": "Release for handoff after verified integration. Next candidate qualification requires the actual pan or trough seam and section, current supplied formulation and retained constituents after demonstrated cleaning, matched joining/repair process, support and movement, water/backwater duty and complete access. Preserve the distinction between removed process aids and installed residues, and between copper and brass joining instructions.",
       "blocker": "No complete installed pan, brass wet-body or hidden carrier assembly is admitted by this bounded result; actual construction and process qualification remain design duties rather than publication failures."
     }
+  },
+  "checkpoint": {
+    "evidence": "Published source commit 26062b442267ff090981102946fa1af769b808ed, tree a34102f8db1b151291a8303b4568aa4584ab36b3. Seven copper seam/support/first-release study files independently reviewed by two readers; eight focused tests and deterministic artifact checks pass. RWT-METALS remains partial and planned.",
+    "next": "Integrate current main 9ace885f8f9ec305203bc5e6543f146a02708837, verify preserved reviewed blobs, open PR, require exact-head full CI, fresh canonical preflight, merge and release.",
+    "blocker": "No development blocker; PR integration and exact-head full CI pending. Actual liner geometry, formed underside/contact, loads, site temperatures and complete terminal/keeper release remain explicit design-acceptance evidence limits."
   }
 }
