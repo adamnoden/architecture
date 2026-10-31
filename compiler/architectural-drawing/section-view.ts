@@ -68,6 +68,7 @@ const overlap = (a: number, b: number, c: number, d: number): boolean =>
  * The hole and its optional grid share exactly one opening source. */
 export function hostedFacadeGeometry(f: HostedFacade): HostedFacadeGeometry {
   if (!f.id.trim()) throw new Error('Hosted facade requires a stable id')
+  if (f.axis !== 'x' && f.axis !== 'y') throw new Error(`Unsupported hosted facade axis: ${f.id}`)
   finite(f.plane, f.start, f.end, f.bottom, f.top)
   if (f.end <= f.start || f.top <= f.bottom) throw new Error(`Invalid hosted facade extent: ${f.id}`)
   const openingIds = new Set<string>()
