@@ -11,7 +11,7 @@ export const softwareNodes = defineNodes([
   {
     id: 'SWE-CONTROL', owners: ['SWE'],
     title: 'Repair dispatcher selection races and make lease snapshots efficient and coherent',
-    dependencies: ['SWE-PLAN'], lifecycle: 'planned',
+    dependencies: ['SWE-PLAN'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed audit #1174; preserve coordination safety during concurrent implementation.' },
     closeoutEvidence: ['project/swe/control-result.md']
   },

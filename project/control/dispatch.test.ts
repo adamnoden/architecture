@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {
   ClaimConflictError,
+  ClaimStoreUnavailableError,
   type ClaimReadResult,
   type ClaimStore,
   type ClaimWriteResult,
@@ -267,6 +268,67 @@ test('no eligible candidate produces no mutation', async () => {
   const result = await claimNextFromStore(store, nodes, { holder: { kind: 'chatgpt', label: 'worker' } })
   assert.equal(result.selected, null)
   assert.equal(result.claim, null)
+  assert.equal(store.mutations, 0)
+})
+
+for (const temporal of ['live', 'grace'] as const) {
+  test(`claim-next reranks when a ${temporal} competitor appears between listing and acquisition read`, async () => {
+    const store = new MemoryClaimStore(now)
+    const competitor = claim('AAA', 'competitor', temporal === 'live' ? now : new Date(now.getTime() - 120.5 * 60_000), 120)
+    const read = store.read.bind(store)
+    let raced = false
+    store.read = async node => {
+      if (node === 'AAA' && !raced) {
+        raced = true
+        store.records.set(node, { record: competitor, sha: 'competitor-before-read' })
+      }
+      return read(node)
+    }
+    const result = await claimNextFromStore(store, [planned('AAA'), planned('BBB')], {
+      holder: { kind: 'codex', label: 'ours' }, leaseId: 'our-lease'
+    })
+    assert.equal(result.selected?.node.id, 'BBB')
+    assert.equal(result.selectionRaces, 1)
+    assert.equal(store.mutations, 1)
+    assert.equal(store.records.get('AAA')?.record.leaseId, competitor.leaseId)
+    assert.equal(store.records.get('BBB')?.record.leaseId, 'our-lease')
+  })
+}
+
+test('a lost read-stage selection returns an empty frontier when no alternative remains', async () => {
+  const store = new MemoryClaimStore(now)
+  const read = store.read.bind(store)
+  store.read = async node => {
+    store.records.set(node, { record: claim(node, 'competitor'), sha: 'competitor-before-read' })
+    return read(node)
+  }
+  const result = await claimNextFromStore(store, [planned('AAA')], { holder: { kind: 'codex' } })
+  assert.equal(result.selected, null)
+  assert.equal(result.claim, null)
+  assert.equal(result.selectionRaces, 1)
+  assert.equal(store.mutations, 0)
+})
+
+test('read-stage occupancy races retain the selection retry bound', async () => {
+  const store = new MemoryClaimStore(now, [claim('AAA', 'competitor')])
+  let lists = 0
+  store.list = async () => { lists += 1; return { claims: [], observedAt: now } }
+  await assert.rejects(claimNextFromStore(store, [planned('AAA')], {
+    holder: { kind: 'codex' }, maxSelectionRaceRetries: 1
+  }), error => error instanceof ClaimConflictError && /after 2 conflict/.test(error.message))
+  assert.equal(lists, 2)
+  assert.equal(store.mutations, 0)
+})
+
+test('a failed fresh acquisition read is not treated as a selection race', async () => {
+  const store = new MemoryClaimStore(now)
+  const unavailable = new ClaimStoreUnavailableError('simulated unavailable fresh read')
+  let reads = 0
+  store.read = async () => { reads += 1; throw unavailable }
+  await assert.rejects(claimNextFromStore(store, [planned('AAA'), planned('BBB')], {
+    holder: { kind: 'codex' }
+  }), error => error === unavailable)
+  assert.equal(reads, 1)
   assert.equal(store.mutations, 0)
 })
 

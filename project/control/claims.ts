@@ -11,6 +11,14 @@ export const expiryGraceMs = 2 * 60 * 1000
 
 export type ClaimHolderKind = 'chatgpt' | 'codex' | 'human' | 'automation' | 'other'
 export type ClaimState = 'claimed' | 'released'
+
+/** Occupancy may change between dispatcher selection and the fresh acquisition read. */
+export class ClaimOccupiedError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'ClaimOccupiedError'
+  }
+}
 export type LeaseTemporalState = 'live' | 'grace' | 'expired' | 'released'
 
 export interface ClaimHolder {
@@ -320,7 +328,7 @@ export function nextNormalAcquisition(
   if (previous) {
     const state = leaseTemporalState(previous, input.now)
     if (state === 'live' || state === 'grace') {
-      throw new Error(`${previous.node} is already claimed by ${previous.holder.label ?? previous.holder.kind} until ${previous.expiresAt}`)
+      throw new ClaimOccupiedError(`${previous.node} is already claimed by ${previous.holder.label ?? previous.holder.kind} until ${previous.expiresAt}`)
     }
   }
 
