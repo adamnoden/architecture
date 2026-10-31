@@ -9,8 +9,8 @@
     "label": "swarm-983b7ee4744e-independent"
   },
   "claimedAt": "2026-10-30T23:47:51.616Z",
-  "heartbeatAt": "2026-10-31T00:03:36.803Z",
-  "expiresAt": "2026-10-31T00:48:36.803Z",
+  "heartbeatAt": "2026-10-31T00:11:57.997Z",
+  "expiresAt": "2026-10-31T00:56:57.997Z",
   "branch": "work/swarm-983b7ee4744e-worker2",
   "predecessor": {
     "leaseId": "f297f5ec-e390-4475-93d4-7532709a79de",
@@ -34,7 +34,8 @@
   },
   "pr": 1122,
   "checkpoint": {
-    "evidence": "PR #1122 head b423f7eef96573550fc8bea4eef2c9ff61b7d4a2; source-bound shared-bearing study, JSON and A3 verified; independent geometry and supplier review passed.",
-    "next": "Inspect exact-head CI, reconcile main, run fresh publication preflight and merge partial; STR-HOUSE remains open."
-  }
+    "evidence": "PR #1122 merged dfb60fd3483839f326a27d16116dad4ce7a45f1e; exact-head CI41148424270 passed f2ba757aa81a258d5d85c3afd4a94d644fa4385a; canonical publication preflight passed00:11:04.335Z against main8d6c7841.",
+    "next": "STR-HOUSE stays open. Develop supplier-specific HC150 compatibility, anchorage, upper-wall transmission and temporary works at y6570-7770; widening needs explicit room/service replan."
+  },
+  "note": "Partial shared-bearing study integrated; accepted house geometry unchanged."
 }
